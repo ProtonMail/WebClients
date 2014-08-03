@@ -21,3 +21,5 @@ $ grunt
 ```
 
 4. Point your browser at http://localhost:8080, and you should have a client web app available, automatically reloading when changes are detected!
+
+[1]: http://nodejs.org
