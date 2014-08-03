@@ -1,0 +1,35 @@
+{
+  "name": "protonmail-web-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ProtonMail/Angular",
+  "authors": [
+    "Mathieu D'Amours <m@damou.rs>"
+  ],
+  "description": "Angular frontend for protonmail.com",
+  "license": "All Rights Reserved",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.16",
+    "angular-animate": "1.2.16",
+    "angular-cookies": "1.2.16",
+    "angular-loader": "1.2.16",
+    "angular-local-storage": "*",
+    "angular-mocks": "1.2.16",
+    "angular-resource": "1.2.16",
+    "angular-route": "1.2.16",
+    "angular-sanitize": "1.2.16",
+    "angular-ui-router": "~0.2.0",
+    "bourbon": "~3.2.3",
+    "jquery": "2.1.1",
+    "lodash": "~2.4.1",
+    "moment": "~2.6.0",
+    "underscore.string": "~2.3.3"
+  }
+}
