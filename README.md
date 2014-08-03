@@ -20,6 +20,7 @@ Angular Front-End for ProtonMail
     $ grunt
     ```
 
-4. Point your browser at http://localhost:8080, and you should have a client web app available, automatically reloading when changes are detected!
+4. Point your browser at [http://localhost:8080][2], and you should have a client web app available, automatically reloading when changes are detected!
 
 [1]: http://nodejs.org
+[2]: http://localhost:8080
