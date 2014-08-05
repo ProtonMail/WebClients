@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
 </head>
 <body>
-  <ui-view autoscroll="false"></ui-view>
+  <div ng-view autoscroll="false"></div>
   <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
 </body>
 </html>
