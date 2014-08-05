@@ -1,11 +1,12 @@
 angular.module("proton.Routes", [
-  "ngRoute",
-  "proton.Models"
+  "ngRoute"
 ])
 
-.config(function($routeProvider, $locationProvider) {
+.constant("MAILBOXES", [ "drafts", "outbox", "trash", "starred", "spam" ])
 
-  var fetchMessageList = function($routeParams, $location, Message) {
+.config(function($routeProvider, $locationProvider, MAILBOXES) {
+
+  var fetchMessageList = function($routeParams, $location, $q, Message) {
     var mailbox, page;
 
     if ($location.path() == "/") {
@@ -19,16 +20,24 @@ angular.module("proton.Routes", [
       page = 1;
     }
 
-    return Message[mailbox]({page: page});
+    return $q.when("!");
+    // return Message[mailbox]({page: page});
   };
 
   var messageListOptions = {
     controller: "MessageListController",
-    resolve: { messages: fetchMessageList },
+    resolve: {
+      mailbox: function(MAILBOXES, $location) {
+        return _.find(MAILBOXES, function(mailbox) {
+          return $location.path().indexOf(mailbox) == 1;
+        }) || "inbox";
+      },
+      messages: fetchMessageList 
+    },
     templateUrl: "templates/messageList.tpl.html"
   };
 
-  var messageListRedirectOptions = { 
+  var messageListRedirectOptions = {
     redirectTo: function(params, path) {
       if (_.last(path) == "/") {
         return path + "1";
@@ -38,10 +47,10 @@ angular.module("proton.Routes", [
     }
   };
 
-  _.each([ "drafts", "outbox", "trash", "starred", "spam" ], function(box) {
+  _.each(MAILBOXES, function(box) {
     $routeProvider
-      .when("/" + box, messageListRedirectOptions)
       .when("/" + box + "/:page", messageListOptions)
+      .when("/" + box, messageListRedirectOptions)
   });
 
   $routeProvider
@@ -64,7 +73,7 @@ angular.module("proton.Routes", [
     .when("/", messageListRedirectOptions)
 
     .otherwise({ 
-      redirectTo: "/" 
+      redirectTo: "/1"
     });
 
   $locationProvider.html5Mode(true);

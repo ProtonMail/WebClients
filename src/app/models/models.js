@@ -1,4 +1,5 @@
 angular.module("proton.Models", [
+  "ngResource",
   "proton.Auth"
 ])
 
