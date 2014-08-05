@@ -1,9 +1,14 @@
 <!doctype html>
-<html>
-	<head>
-		
-	</head>
-	<body>
-		Hello there!
-	</body>
+<html lang="en" ng-app="proton">
+<head>
+  <meta charset="utf-8">
+  <title>ProtonMail</title>
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <% styles.forEach(function (file) { %>
+  <link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
+</head>
+<body>
+  <ui-view autoscroll="false"></ui-view>
+  <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
+</body>
 </html>
