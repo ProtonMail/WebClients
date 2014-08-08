@@ -97,6 +97,10 @@ angular.module("proton.Auth", [])
           if (pwd) {
             $timeout(function() {
               savePassword(pwd);
+
+              $rootScope.isLoggedIn = true;
+              $rootScope.isLocked = false;
+
               req.resolve(200);
             }, 50);
           } else {
