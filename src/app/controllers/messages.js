@@ -3,8 +3,8 @@ angular.module("proton.Controllers.Messages", [
   "proton.Routes"
 ])
 
-.controller("MessageListController", function($route, $routeParams, $scope, $rootScope, mailbox) {
-  $rootScope.pageName = _.string.capitalize(mailbox);
+.controller("MessageListController", function($state, $stateParams, $scope, $rootScope) {
+  $rootScope.pageName = $state.current.data.mailbox;
 })
 
 .controller("ComposeMessageController", function($rootScope) {

@@ -1,80 +1,89 @@
 angular.module("proton.Routes", [
-  "ngRoute"
+  "ui.router",
+  "proton.Auth"
 ])
 
-.constant("MAILBOXES", [ "drafts", "outbox", "trash", "starred", "spam" ])
+.constant("MAILBOXES", [ "drafts", "sent", "trash", "starred", "spam" ])
 
-.config(function($routeProvider, $locationProvider, MAILBOXES) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, MAILBOXES) {
 
-  var fetchMessageList = function($routeParams, $location, $q, Message) {
-    var mailbox, page;
-
-    if ($location.path() == "/") {
-      mailbox = "inbox";
-    } else {
-      mailbox = $location.path().split("/")[1];
-    }
-
-    page = $routeParams.page;
-    if (!page) {
-      page = 1;
-    }
-
-    return $q.when("!");
-    // return Message[mailbox]({page: page});
+  var messageListOptions = function(url, params) {
+    var opts = _.extend(params || {}, {
+      url: url,
+      controller: "MessageListController",
+      templateUrl: "templates/messageList.tpl.html",
+    });
+    return opts;
   };
 
-  var messageListOptions = {
-    controller: "MessageListController",
-    resolve: {
-      mailbox: function(MAILBOXES, $location) {
-        return _.find(MAILBOXES, function(mailbox) {
-          return $location.path().indexOf(mailbox) == 1;
-        }) || "inbox";
-      },
-      messages: fetchMessageList 
+  $stateProvider.state("secured", {
+    abstract: true,
+    templateUrl: "templates/layout/secured.html",
+    onEnter: function(authentication, $state) {
+      authentication.redirectIfNecessary();
     },
-    templateUrl: "templates/messageList.tpl.html"
-  };
-
-  var messageListRedirectOptions = {
-    redirectTo: function(params, path) {
-      if (_.last(path) == "/") {
-        return path + "1";
-      } else {
-        return path + "/1";
-      }
-    }
-  };
-
-  _.each(MAILBOXES, function(box) {
-    $routeProvider
-      .when("/" + box + "/:page", messageListOptions)
-      .when("/" + box, messageListRedirectOptions)
+    url: "/secured"
   });
 
-  $routeProvider
-    .when("/contacts", {
+  _.each(MAILBOXES, function(box) {
+    $stateProvider
+      .state("secured." + box, messageListOptions("/" + box + "?page", {
+        data: { mailbox: box }
+      }));
+  });
+
+  $stateProvider
+    .state("secured.inbox", messageListOptions("/inbox?page", {
+      data: { mailbox: "inbox" }
+    }))
+
+    .state("secured.contacts", {
+      url: "/contacts",
       controller: "ContactsController",
       templateUrl: "templates/contacts.tpl.html"
     })
 
-    .when("/compose", {
+    .state("secured.compose", {
+      url: "/compose",
       controller: "ComposeMessageController",
       templateUrl: "templates/compose.tpl.html"
     })
 
-    .when("/login", {
-      controller: "LoginController",
-      templateUrl: "templates/login.tpl.html"
+    .state("login", {
+      url: "/login",
+      views: {
+        "main@": {
+          controller: "LoginController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@login": {
+          templateUrl: "templates/partials/login-form.tpl.html"
+        }
+      }
     })
 
-    .when("/:page", messageListOptions)
-    .when("/", messageListRedirectOptions)
-
-    .otherwise({ 
-      redirectTo: "/1"
+    .state("login.unlock", {
+      url: "/unlock",
+      controller: "LoginController",
+      views: {
+        "panel@login": {
+          templateUrl: "templates/unlock.tpl.html"
+        }
+      },
+      onEnter: function(authentication, $state) {
+        if (!authentication.isLoggedIn()) {
+          $state.go("login");
+        } else if (!authentication.isLocked()) {
+          $state.go("secured.inbox");
+        }
+      }
     });
+
+  $urlRouterProvider.otherwise(function($injector) {
+    var $state = $injector.get("$state");
+    var stateName = $injector.get("authentication").state();
+    return $state.href(stateName);
+  });
 
   $locationProvider.html5Mode(true);
 });

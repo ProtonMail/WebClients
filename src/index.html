@@ -1,14 +1,19 @@
 <!doctype html>
 <html lang="en" ng-app="proton">
-<head>
-  <meta charset="utf-8">
-  <title>ProtonMail</title>
-  <link rel="shortcut icon" href="/assets/favicon.ico" />
-  <% styles.forEach(function (file) { %>
-  <link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
-</head>
-<body>
-  <div ng-view autoscroll="false"></div>
-  <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>ProtonMail</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <% styles.forEach(function (file) { %>
+    <link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
+  </head>
+
+  <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn }">
+    <div ui-view="main" autoscroll="false"></div>
+    
+    <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
+    <script type="text/javascript">
+      angular.module("proton").value("protonBuild", <%= JSON.stringify(build) %>);
+    </script>
+  </body>
 </html>

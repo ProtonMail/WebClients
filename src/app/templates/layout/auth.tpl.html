@@ -1,0 +1,11 @@
+<ng-include src="'templates/partials/header.tpl.html'"></ng-include>
+
+<div class="middle-panel">
+  <div class="panel wrap" ui-view="panel"></div>
+
+  <p class="text-center" ng-if="!isLoggedIn">
+    <a href="{{ build.notes }}" class="link">
+      <strong>Version {{ build.version }}</strong>
+    </a> - {{ build.date }}
+  </p>
+</div>

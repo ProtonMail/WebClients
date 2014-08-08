@@ -1,0 +1,33 @@
+<div id="main-header">
+  <a href="/" class="nav-logo" ng-if="'login.**' | includedByState">
+    <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+  </a>
+
+  <p class="hello" ng-if="isLoggedIn">{{ user.name }}<em>@protonmail.ch</em></p>
+
+  <nav id="nav">
+    <li id="nav_bug">
+      <a href="#" ng-click="reportBug()">
+        <span class="fa fa-exclamation-triangle"></span> <strong>Report Bug</strong>
+      </a>
+    </li>
+
+    <li id="nav_settings" ng-if="'secured.**' | includedByState">
+      <a ui-sref="secured.settings">
+        <span class="fa fa-wrench"></span> <strong>Settings</strong>
+      </a>
+    </li>
+
+    <li id="nav_login" ng-if="!isLoggedIn">
+      <a ui-sref="login">
+        <span class="fa fa-power-off"></span> <strong>Login</strong>
+      </a>
+    </li>
+
+    <li id="nav_logout" ng-if="isLoggedIn">
+      <a ng-click="logout()" href="#">
+        <span class="fa fa-power-off"></span> <strong>Logout</strong>
+      </a>
+    </li>
+  </nav>
+</div>

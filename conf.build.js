@@ -35,8 +35,21 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js"
     ],
-    css: [],
-    sass_include_dirs: [],
-    assets: []
+    css: [
+      "vendor/pure/pure.css"
+    ],
+    sass_include_dirs: [
+      "vendor/bourbon/dist",
+      "vendor/font-awesome/scss",
+    ],
+    assets: [
+      "vendor/font-awesome/fonts"
+    ]
+  },
+
+  proton_build: {
+    version: "1.09",
+    notes: "http://protonmail.dev/blog/protonmail-beta-v1-09-release-notes/",
+    date: "6 Aug. 2014"
   }
 };
