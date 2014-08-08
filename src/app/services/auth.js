@@ -94,10 +94,19 @@ angular.module("proton.Auth", [])
         // proves correct (we test this by decrypting a small blob)
         unlockWithPassword: function(pwd) {
           var req = $q.defer();
-          $timeout(function() {
-            savePassword(pwd);
-            req.resolve(200);
-          }, 50);
+          if (pwd) {
+            $timeout(function() {
+              savePassword(pwd);
+
+              $rootScope.isLoggedIn = true;
+              $rootScope.isLocked = false;
+
+              req.resolve(200);
+            }, 50);
+          } else {
+            req.reject({message: "Password is required"});
+          }
+          
           return req.promise;
         },
 
@@ -106,7 +115,7 @@ angular.module("proton.Auth", [])
         loginWithCredentials: function(creds) {
           var req = $q.defer();
           if (!creds.username || !creds.password) {
-            req.reject({error: "Username and password are required to login"});
+            req.reject({message: "Username and password are required to login"});
           } else {
             $timeout(function() {
               saveAuthData({
@@ -137,5 +146,4 @@ angular.module("proton.Auth", [])
 .run(function($rootScope, authentication) {
   $rootScope.isLoggedIn = authentication.isLoggedIn();
   $rootScope.isLocked = authentication.isLocked();
-  $rootScope.logout = authentication.logout;
 });

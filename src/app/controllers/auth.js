@@ -7,13 +7,35 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   
   $rootScope.pageName = "Login";
 
+  var clearErrors = function() {
+    $scope.error = null;
+  };
+
   $scope.build = protonBuild;
-  $scope.submit = function() {
+
+  $scope.logout = function() {
+    clearErrors();
+    authentication.logout();
+  };
+
+  $scope.login = function() {
+    clearErrors();
     authentication.loginWithCredentials({
       username: $("#username").val(),
       password: $("#password").val()
-    }).then(function() {
-      $state.go("login.unlock");
-    });
+    }).then(
+      function() { $state.go("login.unlock"); },
+      function(err) { $scope.error = err; }
+    );
+  };
+
+  $scope.decrypt = function() {
+    clearErrors();
+    authentication
+      .unlockWithPassword($("#mailboxPassword").val())
+      .then(
+        function() { $state.go("secured.inbox"); },
+        function(err) { $scope.error = err; }
+      );
   };
 });
