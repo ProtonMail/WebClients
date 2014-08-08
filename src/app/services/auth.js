@@ -25,8 +25,6 @@ angular.module("proton.Auth", [])
 
       auth.data = _.pick(data, "uid", "access_token");
       auth.data.exp = date;
-
-      console.log(auth.data, window.localStorage);
     };
 
     var savePassword = function(pwd) {
@@ -36,7 +34,6 @@ angular.module("proton.Auth", [])
     // CONFIG-TIME API FUNCTIONS
 
     this.detectAuthenticationState = function() {
-      console.log(window.localStorage);
       auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
       auth.data = {
         uid: window.localStorage[OAUTH_KEY+":uid"],
