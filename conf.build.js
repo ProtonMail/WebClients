@@ -46,5 +46,10 @@ module.exports = {
       "vendor/font-awesome/fonts"
     ]
   },
+
+  proton_build: {
+    version: "1.09",
+    notes: "http://protonmail.dev/blog/protonmail-beta-v1-09-release-notes/",
+    date: "6 Aug. 2014"
   }
 };
