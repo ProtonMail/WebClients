@@ -69,6 +69,23 @@ body.locked {
       padding: 0;
       border: none;
     }
+
+    .pure-form { 
+      div.alert.alert-danger {
+        background: #900;
+        border-bottom: 2px solid rgba(0,0,0,.2);
+        text-shadow: 0 1px 0 rgba(0,0,0,.2);
+        border-radius: 2px;
+
+        p {
+          text-align: left;
+          a {
+            color: #fff;
+            text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          }
+        }
+      }
+    }
   }
 
   form {

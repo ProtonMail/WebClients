@@ -67,7 +67,7 @@ angular.module("proton.Routes", [
       controller: "LoginController",
       views: {
         "panel@login": {
-          templateUrl: "templates/unlock.tpl.html"
+          templateUrl: "templates/partials/unlock.tpl.html"
         }
       },
       onEnter: function(authentication, $state) {
@@ -81,7 +81,7 @@ angular.module("proton.Routes", [
 
   $urlRouterProvider.otherwise(function($injector) {
     var $state = $injector.get("$state");
-    var stateName = $injector.get("authentication").state();
+    var stateName = $injector.get("authentication").state() || "secured.inbox";
     return $state.href(stateName);
   });
 
