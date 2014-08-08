@@ -10,14 +10,23 @@ angular.module("proton.Routes", [
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
       url: url,
-      controller: "MessageListController",
-      templateUrl: "templates/messageList.tpl.html",
+      views: {
+        "content@secured": {
+          controller: "MessageListController",
+          templateUrl: "templates/messageList.tpl.html"
+        }
+      }
     });
     return opts;
   };
 
   $stateProvider.state("secured", {
     abstract: true,
+    views: {
+      "main@": { 
+        templateUrl: "templates/layout/secured.tpl.html" 
+      }
+    },
     templateUrl: "templates/layout/secured.html",
     onEnter: function(authentication, $state) {
       authentication.redirectIfNecessary();
@@ -39,14 +48,18 @@ angular.module("proton.Routes", [
 
     .state("secured.contacts", {
       url: "/contacts",
-      controller: "ContactsController",
-      templateUrl: "templates/contacts.tpl.html"
+      views: {
+        "content@secured": { templateUrl: "templates/contacts.tpl.html" }
+      },
+      controller: "ContactsController"
     })
 
     .state("secured.compose", {
       url: "/compose",
-      controller: "ComposeMessageController",
-      templateUrl: "templates/compose.tpl.html"
+      views: {
+        "content@secured": { templateUrl: "templates/compose.tpl.html" }
+      },
+      controller: "ComposeMessageController"
     })
 
     .state("login", {
