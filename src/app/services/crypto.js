@@ -7,6 +7,11 @@ angular.module("proton.Crypto", [])
   var headerRandomKey = "---BEGIN ENCRYPTED RANDOM KEY---";
   var tailRandomKey = "---END ENCRYPTED RANDOM KEY---";
 
+  var openpgp;
+  require(["openpgp"], function(module) {
+    openpgp = module;
+  });
+
   function pgpEncrypt(randomKey, pubKey) {
     // $('#composeMain').html('<pre>'+pubKey+'</pre>');
     // console.log('pubKey: '+pubKey);
