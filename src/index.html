@@ -13,7 +13,9 @@
     
     <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
     <script type="text/javascript">
-      angular.module("proton").value("protonBuild", <%= JSON.stringify(build) %>);
+      angular.module("proton").run(function($rootScope) {
+        $rootScope.build = <%= JSON.stringify(build) %>;
+      });
     </script>
   </body>
 </html>

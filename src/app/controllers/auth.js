@@ -1,5 +1,6 @@
 angular.module("proton.Controllers.Auth", ["proton.Auth"])
-.controller("LoginController", function($rootScope, $state, $scope, authentication, protonBuild) {
+
+.controller("LoginController", function($rootScope, $state, $scope, authentication) {
   if ($state.is("login") && authentication.isLoggedIn()) {
     $state.go("login.unlock");
     return;
@@ -10,8 +11,6 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   var clearErrors = function() {
     $scope.error = null;
   };
-
-  $scope.build = protonBuild;
 
   $scope.logout = function() {
     clearErrors();
