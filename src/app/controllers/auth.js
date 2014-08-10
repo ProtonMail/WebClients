@@ -37,4 +37,10 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
         function(err) { $scope.error = err; }
       );
   };
+})
+
+.controller("SecuredController", function($scope, authentication) {
+  $scope.logout = function() {
+    authentication.logout();
+  };
 });
