@@ -1,3 +1,8 @@
-<div ui-view="content">
-  
+<div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar"></div>
+<div id="main">
+	<ng-include src="'templates/partials/header.tpl.html'"></ng-include>
+	<div ui-view="content">
+    
+  </div>
+	<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>
 </div>
