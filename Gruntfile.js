@@ -133,9 +133,10 @@ module.exports = function (grunt) {
         files: [
           {
             src: ["<%= vendor_files.js %>"],
-            dest: "<%= build_dir %>/",
+            dest: "<%= build_dir %>/vendor",
             cwd: ".",
-            expand: true
+            expand: true,
+            flatten: true
           }
         ]
       },
