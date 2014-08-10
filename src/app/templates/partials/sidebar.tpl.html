@@ -1,0 +1,80 @@
+<div class="wrap">
+  <a href="/" class="logo">
+    <img src="/assets/img/protonmail_logo_beta.png" width="125" height="16" id="logo" alt="ProtonMail">
+  </a>
+
+  <ul>
+    <li id="compose_button">
+      <a ui-sref="secured.compose" class="pure-button pure-button-default">
+        <span class="fa fa-pencil"></span> Compose
+      </a>
+    </li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <ul class="menu" id="topMenu">
+    <li class="current-li" data-unread="0">
+      <a ui-sref="secured.inbox" ui-sref-active="active">
+        <span class="fa fa-inbox"></span> Inbox
+      </a>
+    </li>
+    <li data-unread="0">
+      <a ui-sref="secured.drafts" ui-sref-active="active">
+        <span class="fa fa-file-text-o"></span> Draft
+      </a>
+    </li>
+    <li data-unread="0">
+      <a ui-sref="secured.sent" ui-sref-active="active">
+        <span class="fa fa-sign-out"></span> Sent
+      </a>
+    </li>
+    <li data-unread="0">
+      <a ui-sref="secured.trash" ui-sref-active="active">
+        <span class="fa fa-trash-o"></span> Trash
+      </a>
+    </li>
+  </ul>
+  
+  <div class="divider"></div>
+
+  <ul class="menu">
+    <li>
+      <a ui-sref="secured.starred" ui-sref-active="active">
+        <span class="fa fa-star"></span> Starred
+      </a>
+    </li>
+    <li>
+      <a ui-sref="secured.spam" ui-sref-active="active">
+        <span class="fa fa-bug"></span> Spam 
+      </a>
+    </li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <ul class="menu">
+    <li><a ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> Contacts</a></li>
+  </ul>
+  
+  <div class="divider"></div>
+
+  <span class="sizebar">Storage:
+    <span class="pull-right mono">0.01/100 MB</span>
+  </span>
+  <div class="sizeBar">
+    <span class="fill" style="width:0.01%"></span>
+  </div> 
+  
+  <br>
+  
+  <span class="sizebar">Msg/month:
+    <span class="pull-right mono">0/1000</span>
+  </span>
+  <div class="sizeBar">
+    <span class="fill" style="width:0%"></span>
+  </div
+  >
+  <br>
+  <p class="versionbottom"><em>Version <a href="{{ build.notes }}" target="_blank">{{ build.version }}</a></em></p>
+</div>
