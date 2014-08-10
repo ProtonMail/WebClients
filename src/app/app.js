@@ -8,6 +8,7 @@ angular.module("proton", [
   // Basic
   "proton.Routes",
   "proton.Auth",
+  "proton.Crypto",
   "proton.Models",
 
   "proton.filters.strings",

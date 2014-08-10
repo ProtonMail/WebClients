@@ -86,13 +86,6 @@ angular.module("proton.Crypto", [])
     hashed = btoa(hashed);
     return hashed; 
   }
-
-  function checkMailboxPw(pubKey, prKey, prKeyPassCode) {
-    var testMsg = "sPKkm9lk6hSSZ49rRFwg";
-    var encrypted = pgpEncrypt(testMsg, pubKey);
-    var decrypted = pgpDecrypt(encrypted, prKey, prKeyPassCode);
-    return (testMsg === decrypted);
-  }
    
   function encode_utf8_base64(data) {
     return btoa(unescape(encodeURIComponent(data))).trim();
@@ -117,21 +110,32 @@ angular.module("proton.Crypto", [])
     mailboxPassword = pwd;
   };
 
-  return {
-    $get: function() {
-      return {
-        decryptPackage: function(pkg) {
-          var encryptedMessage = getEncMessageFromPkg(pkg);
-          if (!_.isEmpty(encryptedMessage)) {
-            var encRandomKey = getEncRandomKeyFromPkg(pkg);
-            var randomKey = pgpDecrypt(encRandomKey, $('#encPrivateKey').val(), mailboxPassword);
-            return decryptMessage(time, encryptedMessage, randomKey);
-          }
-        },
-        encryptMessage: function(msg) {
-          
+  this.$get = function() {
+    return {
+      decryptPackage: function(pkg) {
+        var encryptedMessage = getEncMessageFromPkg(pkg);
+        if (!_.isEmpty(encryptedMessage)) {
+          var encRandomKey = getEncRandomKeyFromPkg(pkg);
+          var randomKey = pgpDecrypt(encRandomKey, $('#encPrivateKey').val(), mailboxPassword);
+          return decryptMessage(time, encryptedMessage, randomKey);
         }
-      };
-    }
-  }
+      },
+      encryptMessage: function(msg) {
+        
+      },
+      setMailboxPassword: function(pubKey, prKey, password) {
+        var testMsg = "sPKkm9lk6hSSZ49rRFwg";
+
+        var encrypted = pgpEncrypt(testMsg, pubKey);
+        var decrypted = pgpDecrypt(encrypted, prKey, password);
+
+        if (testMsg === decrypted) {
+          mailboxPassword = password;
+          return true;
+        } else {
+          return false;
+        }
+      }
+    };
+  };
 });
