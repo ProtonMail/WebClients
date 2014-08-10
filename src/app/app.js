@@ -14,7 +14,8 @@ angular.module("proton", [
 
   "proton.Controllers.Auth",
   "proton.Controllers.Messages",
-  "proton.Controllers.Contacts"
+  "proton.Controllers.Contacts",
+  "proton.Controllers.Settings"
 ])
 
 .run(function($document, $rootScope) {
