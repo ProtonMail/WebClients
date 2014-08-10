@@ -49,7 +49,7 @@ angular.module("proton.Auth", [])
       var api = {
         // Whether a user is logged in at all
         isLoggedIn: function() { 
-          return ! _.isUndefined(auth.data.access_token);
+          return auth.data && ! _.isUndefined(auth.data.access_token);
         },
 
         // Whether the mailbox' password is accessible, or if the user needs to re-enter it
