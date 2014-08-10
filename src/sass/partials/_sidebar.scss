@@ -1,0 +1,104 @@
+#sidebar {
+  width: 12rem;
+  background: #333;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .wrap {
+    padding: 1rem;
+    #logo {
+      display: block;
+      width: auto;
+      height: 1rem;
+      margin: 0 .5rem 1rem;
+      float: left;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(0,0,0,.05);
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: 0;
+    margin: 15px -1.25em;
+    clear: both;
+  }
+
+  ul,
+  ul li {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear: both;
+  }
+
+  ul li {
+    &#compose_button a {
+      @include linear-gradient(#7878b3, #669);
+
+      text-align: left;
+      text-shadow: none;
+      color: #fff;
+      border: none;
+      box-shadow: 0 1px 1px rgba(0,0,0,.25);
+
+      &:hover,
+      &:active {
+        background: #7878b3;
+      }
+
+      .fa { color: #fff; }
+    }
+
+    a {
+      @include transition(color .2s ease);
+
+      text-decoration: none;
+      line-height: 2rem;
+      display: block;
+      padding: 0 1rem;
+      margin: 0 -.5rem;
+      color: #ccc;
+
+      .fa {
+        @include transition(color .2s ease);
+
+        font-size: 14px;
+        display: inline-block;
+        width: 1.25rem;
+        color: #999;
+      }
+
+      &:hover,
+      &:active {
+        color: #fff;
+        .fa { color: #fff; }
+      }
+
+      &.active {
+        @include border-top-radius(2px);
+        @include border-bottom-radius(2px);
+        @include border-left-radius(2px);
+        @include border-right-radius(2px);
+        @include linear-gradient(#666, #555);
+
+        z-index: 4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+        color: #fff;
+
+        .fa { color: #fff; }
+
+        &:hover,
+        &:active {
+          background: #666;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
