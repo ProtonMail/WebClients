@@ -6,7 +6,7 @@ var _ = require("lodash")
 
 var API_TARGETS = {
   local:   "http://apidev.protonmail.com",
-  default: "http://api.protonmail.com",
+  default: "http://protonmail.dev:8080",
   target:  "http://?"
 };
 
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
       options: {
         hostname: "*",
         middleware: rewriteIndexMiddleware,
-        port: 8080 // SauceLabs only proxies certain ports. (This is one.)
+        port: 4002 // SauceLabs only proxies certain ports. (This is one.)
       },
 
       compile: {
