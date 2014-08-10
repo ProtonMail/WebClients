@@ -3,7 +3,13 @@ angular.module("proton.Routes", [
   "proton.Auth"
 ])
 
-.constant("MAILBOXES", [ "drafts", "sent", "trash", "starred", "spam" ])
+.constant("MAILBOXES", [
+  "drafts",
+  "sent",
+  "trash",
+  "starred",
+  "spam"
+])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, MAILBOXES) {
 
@@ -20,47 +26,11 @@ angular.module("proton.Routes", [
     return opts;
   };
 
-  $stateProvider.state("secured", {
-    abstract: true,
-    views: {
-      "main@": { 
-        templateUrl: "templates/layout/secured.tpl.html" 
-      }
-    },
-    templateUrl: "templates/layout/secured.html",
-    onEnter: function(authentication, $state) {
-      authentication.redirectIfNecessary();
-    },
-    url: "/secured"
-  });
-
-  _.each(MAILBOXES, function(box) {
-    $stateProvider
-      .state("secured." + box, messageListOptions("/" + box + "?page", {
-        data: { mailbox: box }
-      }));
-  });
-
   $stateProvider
-    .state("secured.inbox", messageListOptions("/inbox?page", {
-      data: { mailbox: "inbox" }
-    }))
 
-    .state("secured.contacts", {
-      url: "/contacts",
-      views: {
-        "content@secured": { templateUrl: "templates/contacts.tpl.html" }
-      },
-      controller: "ContactsController"
-    })
-
-    .state("secured.compose", {
-      url: "/compose",
-      views: {
-        "content@secured": { templateUrl: "templates/compose.tpl.html" }
-      },
-      controller: "ComposeMessageController"
-    })
+    // ------------
+    // LOGIN ROUTES
+    // ------------
 
     .state("login", {
       url: "/login",
@@ -90,7 +60,75 @@ angular.module("proton.Routes", [
           $state.go("secured.inbox");
         }
       }
+    })
+
+    // -------------------------------------------
+    // SECURED ROUTES
+    // this includes everything after login/unlock
+    // -------------------------------------------
+
+    .state("secured", {
+
+      // This is included in every secured.* sub-controller
+
+      abstract: true,
+      views: {
+        "main@": { 
+          controller: "SecuredController",
+          templateUrl: "templates/layout/secured.tpl.html" 
+        }
+      },
+      url: "/secured",
+
+      onEnter: function(authentication, $state) {
+
+        // This will redirect to some login step if necessary
+
+        authentication.redirectIfNecessary();
+      }
+    })
+
+    .state("secured.inbox", messageListOptions("/inbox?page", {
+      data: {
+        mailbox: "inbox"
+      }
+    }))
+
+    .state("secured.contacts", {
+      url: "/contacts",
+      views: {
+        "content@secured": { 
+          templateUrl: "templates/contacts.tpl.html",
+          controller: "ContactsController"
+        }
+      }
+    })
+
+    .state("secured.compose", {
+      url: "/compose",
+      views: {
+        "content@secured": { 
+          templateUrl: "templates/compose.tpl.html",
+          controller: "ComposeMessageController"
+        }
+      }
+    })
+
+    .state("secured.settings", {
+      url: "/settings",
+      views: {
+        "content@secured": { 
+          templateUrl: "templates/settings.tpl.html",
+          controller: "SettingsController"
+        }
+      }
     });
+
+  _.each(MAILBOXES, function(box) {
+    $stateProvider.state("secured." + box, messageListOptions("/" + box + "?page", {
+      data: { mailbox: box }
+    }));
+  });
 
   $urlRouterProvider.otherwise(function($injector) {
     var $state = $injector.get("$state");
