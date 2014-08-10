@@ -10,10 +10,18 @@
 
   <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn }">
     <div ui-view="main" autoscroll="false"></div>
-    
-    <% scripts.forEach(function (file) { %><script type="text/javascript" src="/<%= file %>"></script><% }); %>
+    <% scripts.forEach(function (file) { %>
+      <script type="text/javascript" src="/<%= file %>"></script>
+    <% }); %>
     <script type="text/javascript">
-      angular.module("proton").value("protonBuild", <%= JSON.stringify(build) %>);
+      angular.module("proton")
+        .run(function($rootScope) { $rootScope.build = <%= JSON.stringify(build) %>; })
+        .config(function(authenticationProvider) { authenticationProvider.setAPIBaseURL("<%= settings.apiUrl %>"); });
+    </script>
+
+    <script type="text/javascript" src="/vendor/require.js"></script>
+    <script type="text/javascript">
+      require.config({ baseUrl: "/vendor" });
     </script>
   </body>
 </html>

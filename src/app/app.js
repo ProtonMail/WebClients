@@ -8,13 +8,15 @@ angular.module("proton", [
   // Basic
   "proton.Routes",
   "proton.Auth",
+  "proton.Crypto",
   "proton.Models",
 
   "proton.filters.strings",
 
   "proton.Controllers.Auth",
   "proton.Controllers.Messages",
-  "proton.Controllers.Contacts"
+  "proton.Controllers.Contacts",
+  "proton.Controllers.Settings"
 ])
 
 .run(function($document, $rootScope) {

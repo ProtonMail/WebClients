@@ -15,9 +15,18 @@ function filterForCSS(files) {
 module.exports = function (grunt) {
   grunt.registerMultiTask("index", "Process index.html template", function () {
     var dirRE = new RegExp("^(" + grunt.config("build_dir") + "|" + grunt.config("compile_dir") + ")\/", "g");
+
+    var excluded = grunt.config("vendor_files.exclude");
     var jsFiles = filterForJS(this.filesSrc).map(function (file) {
+      var cmps = file.split("/");
+      if (cmps[0] == "vendor") {
+        file = [cmps[0], cmps[cmps.length-1]].join("/");
+      }
       return file.replace(dirRE, "");
+    }).filter(function(file) {
+      return ! excluded.some(function(excl) { return file.indexOf(excl) !== -1; });
     });
+
     var cssFiles = filterForCSS(this.filesSrc).map(function (file) {
       return file.replace(dirRE, "");
     });

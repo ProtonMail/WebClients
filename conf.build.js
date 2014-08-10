@@ -30,10 +30,12 @@ module.exports = {
       "vendor/angular-animate/angular-animate.js",
       "vendor/angular-local-storage/angular-local-storage.js",
       "vendor/angular-route/angular-route.js",
+      "vendor/requirejs/require.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
-      "vendor/underscore.string/lib/underscore.string.js"
+      "vendor/underscore.string/lib/underscore.string.js",
+      "vendor/openpgp/*.js"
     ],
     css: [
       "vendor/pure/pure.css"
@@ -44,6 +46,10 @@ module.exports = {
     ],
     assets: [
       "vendor/font-awesome/fonts"
+    ],
+    exclude: [
+      "openpgp",
+      "require"
     ]
   },
 
