@@ -45,7 +45,6 @@ angular.module("proton.Auth", [
     this.detectAuthenticationState = function() {
       auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
       if (auth.mailboxPassword) {
-        console.log(cryptoProvider);
         cryptoProvider.setMailboxPassword(auth.mailboxPassword);
       }
 
