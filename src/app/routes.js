@@ -19,7 +19,7 @@ angular.module("proton.Routes", [
       views: {
         "content@secured": {
           controller: "MessageListController",
-          templateUrl: "templates/messageList.tpl.html"
+          templateUrl: "templates/views/messageList.tpl.html"
         }
       }
     });
@@ -40,7 +40,7 @@ angular.module("proton.Routes", [
           templateUrl: "templates/layout/auth.tpl.html"
         },
         "panel@login": {
-          templateUrl: "templates/partials/login-form.tpl.html"
+          templateUrl: "templates/views/login.tpl.html"
         }
       }
     })
@@ -50,7 +50,7 @@ angular.module("proton.Routes", [
       controller: "LoginController",
       views: {
         "panel@login": {
-          templateUrl: "templates/partials/unlock.tpl.html"
+          templateUrl: "templates/views/unlock.tpl.html"
         }
       },
       onEnter: function(authentication, $state) {
@@ -82,7 +82,7 @@ angular.module("proton.Routes", [
 
       onEnter: function(authentication, $state) {
 
-        // This will redirect to some login step if necessary
+        // This will redirect to a login step if necessary
 
         authentication.redirectIfNecessary();
       }
@@ -108,7 +108,7 @@ angular.module("proton.Routes", [
       url: "/compose",
       views: {
         "content@secured": { 
-          templateUrl: "templates/compose.tpl.html",
+          templateUrl: "templates/views/compose.tpl.html",
           controller: "ComposeMessageController"
         }
       }
@@ -118,7 +118,7 @@ angular.module("proton.Routes", [
       url: "/settings",
       views: {
         "content@secured": { 
-          templateUrl: "templates/settings.tpl.html",
+          templateUrl: "templates/views/settings.tpl.html",
           controller: "SettingsController"
         }
       }
