@@ -138,7 +138,7 @@ angular.module("proton.Auth", [
 
                   req.resolve(200);
                 } else {
-                  req.reject({message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."})
+                  req.reject({message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."});
                 }
               });
             }, 1000);
@@ -157,24 +157,28 @@ angular.module("proton.Auth", [
           if (!creds.username || !creds.password) {
             q.reject({message: "Username and password are required to login"});
           } else {
-            $http.post(baseURL + "/auth/auth", 
+            delete $http.defaults.headers.common.api_version;
+            $http.post(baseURL + "/auth/auth",
               _.extend(_.pick(creds, "username", "password"), {
                 client_id: "this_is_test_app_id",
                 response_type: "password"
               })
             ).then(function(resp) {
               var data = resp.data;
-              if (data.message) {
-                q.reject(_.pick(data, "message"));
+              if (!data.access_token) {
+                q.reject({message: _.pick(data, "message")});
               } else {
                 auth.saveAuthData(_.pick(data, "access_token", "uid", "expires_in"));
-                auth.fetchUserInfo($http);
+                auth.fetchUserInfo();
 
                 $rootScope.isLoggedIn = true;
                 $rootScope.isLocked = true;
 
                 q.resolve(200);
               }
+            },
+            function (error) {
+              console.log(error);
             });
           }
 
@@ -191,6 +195,7 @@ angular.module("proton.Auth", [
       };
 
       auth.fetchUserInfo = function() {
+        $http.defaults.headers.common.api_version = "1";
         $http.defaults.headers.common.uid = auth.data.uid;
         api.user = $injector.get("User").get();
       };
@@ -205,7 +210,6 @@ angular.module("proton.Auth", [
 
 .config(function(authenticationProvider, $httpProvider) {
   authenticationProvider.detectAuthenticationState();
-  $httpProvider.defaults.headers.common.api_version = "1";
 })
 
 .run(function($rootScope, authentication) {
