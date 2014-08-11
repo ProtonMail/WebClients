@@ -3,13 +3,13 @@ angular.module("proton.Models", [
   "proton.Auth"
 ])
 
-.factory("Contact", function($resource, auth) {
+.factory("Contact", function($resource, authentication) {
   var Contact = $resource()
 
   return Contact;
 })
 
-.factory("Message", function($resource, auth) {
+.factory("Message", function($resource, authentication) {
   function Message() {
 
   }
@@ -17,7 +17,7 @@ angular.module("proton.Models", [
   return Message;
 })
 
-.factory("OutsideMessage", function($resource, auth) {
+.factory("OutsideMessage", function($resource, authentication) {
   function OutsideMessage() {
 
   }
@@ -25,18 +25,15 @@ angular.module("proton.Models", [
   return OutsideMessage;
 })
 
-.factory("User", function($resource, auth) {
-  function User() {
-
-  }
-
-  return User;
-})
-
-.factory("UserLevel", function($resource, auth) {
-  function UserLevel() {
-
-  }
-
-  return UserLevel;
+.factory("User", function($resource, $injector) {
+  var authentication = $injector.get("authentication");
+  return $resource(authentication.baseURL + "/users", authentication.params(), {
+    get: {
+      method: 'get',
+      isArray: false,
+      transformResponse: function (data) {
+        return JSON.parse(data);
+      }
+    }
+  });
 });
