@@ -1,12 +1,12 @@
 /* global -_ */
 /* jshint node: true, camelcase: false */
 
-var _ = require("lodash")
-  , util = require("util");
+var _ = require("lodash"), 
+    util = require("util");
 
 var API_TARGETS = {
   local:   "http://apidev.protonmail.com",
-  default: "http://protonmail.dev:8080",
+  default: "http://protonmail.org:8080",
   target:  "http://?"
 };
 
