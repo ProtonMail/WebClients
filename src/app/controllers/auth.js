@@ -5,6 +5,10 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     $state.go("login.unlock");
     return;
   }
+
+  if (authentication.user) {
+    $scope.user = authentication.user;
+  }
   
   $rootScope.pageName = "Login";
 
@@ -23,7 +27,10 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
       username: $("#username").val(),
       password: $("#password").val()
     }).then(
-      function() { $state.go("login.unlock"); },
+      function() { 
+        $state.go("login.unlock");
+        $scope.user = authentication.user;
+      },
       function(err) { $scope.error = err; }
     );
   };
@@ -40,6 +47,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 })
 
 .controller("SecuredController", function($scope, authentication) {
+  $scope.user = authentication.user;
   $scope.logout = function() {
     authentication.logout();
   };
