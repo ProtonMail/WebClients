@@ -166,7 +166,7 @@ angular.module("proton.Auth", [
             ).then(function(resp) {
               var data = resp.data;
               if (!data.access_token) {
-                q.reject({message: _.pick(data, "message")});
+                q.reject({message: data.message});
               } else {
                 auth.saveAuthData(_.pick(data, "access_token", "uid", "expires_in"));
                 auth.fetchUserInfo();
