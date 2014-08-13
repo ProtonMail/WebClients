@@ -44,6 +44,17 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
         function(err) { $scope.error = err; }
       );
   };
+
+  $scope.keypress = function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      if ($state.is("login.unlock")) {
+        $scope.decrypt();
+      } else {
+        $scope.login();
+      }
+    }
+  };
 })
 
 .controller("SecuredController", function($scope, authentication) {
