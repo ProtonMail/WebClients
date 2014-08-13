@@ -37,12 +37,22 @@ module.exports = {
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js"
     ],
-    css: [
-      "vendor/pure/pure.css"
+    bootstrap_components: [
+      "affix",
+      "alert"
     ],
+
+    all_js: function () {
+      return this.bootstrap_components.map(function (cmp){
+        return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
+      }).concat(this.js);
+    },
+
+    css: [],
     sass_include_dirs: [
       "vendor/bourbon/dist",
       "vendor/font-awesome/scss",
+      "vendor/bootstrap-sass-official/assets/stylesheets"
     ],
     assets: [
       "vendor/font-awesome/fonts"
