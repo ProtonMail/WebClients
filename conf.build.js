@@ -43,9 +43,9 @@ module.exports = {
     ],
 
     all_js: function () {
-      return this.bootstrap_components.map(function (cmp){
+      return this.js.concat(this.bootstrap_components.map(function (cmp){
         return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
-      }).concat(this.js);
+      }));
     },
 
     css: [],
