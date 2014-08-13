@@ -1,9 +1,10 @@
+<div class="panel-body">
 <form id="sign_in_form" name="sign_in" action="/login" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
   <h1 class="text-center">
     <span class="fa fa-2x fa-power-off faded"></span>Login
   </h1> 
 
-  <p class="alert alert-warning text-center" id="igg-contributor">
+  <p class="alert alert-warning text-center" role="alert" id="igg-contributor">
     <strong>
       <a href="#">Indiegogo Contributor?</a>
     </strong>
@@ -14,11 +15,12 @@
   <input autocomplete="off" type="text" class="form-control" tabindex="1" id="username" placeholder="Username" name="UserName" required="" autofocus="" value="">
   <input autocomplete="off" type="password" class="form-control" tabindex="2" id="password" name="Password" required="" placeholder="Login Password" value="">
 
-  <a href="/support/reset-password" class="pull-left forgotpass">Forgot Password?</a>
+  <a href="/support/reset-password" class="pull-left btn btn-link">Forgot Password?</a>
 
-  <button type="button" class="pull-right pure-button pure-button-primary" id="login_btn" tabindex="4" ng-click="login()">
+  <button type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">
     <span class="fa fa-sign-in"></span> Login
   </button>
   
   <input type="hidden" id="hashed_pw" name="hashed_pw"> 
 </form>
+</div><!--/.panel-body-->

@@ -1,94 +1,23 @@
 body.login,
 body.locked {
-  .middle-panel {
-    width: 16rem;
-    margin: auto;
-    padding: 4rem 0;
-  }
 
-  .panel {
-    border: 1px
-    solid rgba(0,0,0,.2);
-    border-bottom-width: 2px;
-    background: #fafafa;
-    padding: 1rem;
+  h1 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    text-align: center;
+
+    span.fa {
+      text-shadow: 0 1px 0 #fff;
+      display: block;
+      margin-bottom: .25rem;
+    }
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    margin: 0 0 .5rem 0;
     border-radius: 2px;
-    margin: auto;
-
-    .warning {
-      border-radius: 2px;
-    }
-
-    h1 {
-      margin: 0 0 1rem 0;
-      color: #333;
-      text-align: center;
-
-      span.fa {
-        text-shadow: 0 1px 0 #fff;
-        display: block;
-        margin-bottom: .25rem;
-      }
-    }
-    
-    p {
-      text-align: center;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      margin: 0 0 .5rem 0;
-      border-radius: 2px;
-    }
-
-    button {
-      * {
-        pointer-events: none;
-      }
-
-      &.pure-button {
-        @include linear-gradient(#fff, #e5e5e5);
-        text-shadow: 0 1px 0 #fff;
-        border: 1px solid #ccc;
-      }
-      &.pure-button-primary {
-        @include linear-gradient(#0af, #08c);
-        text-shadow: 0 1px 0 rgba(0,0,0,.25);
-        border: 1px solid #08c;
-      }
-    }
-
-    a.forgotpass,
-    a.login-support {
-      line-height: 1.9rem;
-    }
-
-    fieldset {
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-
-    .pure-form { 
-      div.alert.alert-danger {
-        background: #900;
-        border-bottom: 2px solid rgba(0,0,0,.2);
-        text-shadow: 0 1px 0 rgba(0,0,0,.2);
-        border-radius: 2px;
-
-        p {
-          text-align: left;
-          a {
-            color: #fff;
-            text-shadow: 0 1px 0 rgba(0,0,0,.1);
-          }
-        }
-      }
-    }
   }
 
-  form {
-    @include clearfix;
-  }
 }
