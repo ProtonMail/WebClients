@@ -58,6 +58,7 @@ module.exports = function (grunt) {
   }
 
   var userConfig = require("./conf.build.js");
+  userConfig.vendor_files.js = userConfig.vendor_files.all_js();
 
   var taskConfig = {
     pkg: grunt.file.readJSON("package.json"),
