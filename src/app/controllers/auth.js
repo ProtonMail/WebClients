@@ -23,7 +23,8 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
   $scope.login = function() {
     clearErrors();
-    $('#login_btn').button('loading');
+    $scope.isLoading = true;
+
     authentication.loginWithCredentials({
       username: $("#username").val(),
       password: $("#password").val()
@@ -31,26 +32,42 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
       function() { 
         $state.go("login.unlock");
         $scope.user = authentication.user;
+        $scope.isLoading = false;
       },
-      function(err) { 
-        $('#login_btn').button('reset');
+      function(err) {
         $scope.error = err; 
+        $scope.isLoading = false;
       }
     );
   };
 
   $scope.decrypt = function() {
     clearErrors();
-    $('#enck').button('loading');
+    $scope.isLoading = true;
+
     authentication
       .unlockWithPassword($("#mailboxPassword").val())
       .then(
-        function() { $state.go("secured.inbox"); },
-        function(err) { 
-          $('#enck').button('reset');
+        function() { 
+          $state.go("secured.inbox");
+          $scope.isLoading = false; 
+        },
+        function(err) {
           $scope.error = err; 
+          $scope.isLoading = false;
         }
       );
+  };
+
+  $scope.keypress = function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      if ($state.is("login.unlock")) {
+        $scope.decrypt();
+      } else {
+        $scope.login();
+      }
+    }
   };
 })
 

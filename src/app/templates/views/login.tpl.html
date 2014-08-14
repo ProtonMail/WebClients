@@ -1,5 +1,5 @@
 <div class="panel-body">
-<form id="sign_in_form" name="sign_in" action="/login" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
+<form id="sign_in_form" name="sign_in" action="/login" ng-keypress="keypress($event)" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
   <h1 class="text-center">
     <span class="fa fa-2x fa-power-off faded"></span>Login
   </h1> 
@@ -19,7 +19,11 @@
   </div><!--/.form-group-->
   <a href="/support/reset-password" class="pull-left btn btn-default">Forgot Password?</a>
 
-  <button data-loading-text="Loading..." type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">Login</button>
+  <button type="button" class="pull-right btn btn-primary" ng-class="{disabled: isLoading}" id="login_btn" tabindex="4" ng-click="login()">
+    <span class="fa" ng-class="{ 'fa-sign-in': !isLoading, 'fa-cog fa-spin': isLoading }"></span>
+    <span ng-if="isLoading">Verifying</span>
+    <span ng-if="!isLoading">Login</span>
+  </button>
   
   <input type="hidden" id="hashed_pw" name="hashed_pw"> 
 </form>

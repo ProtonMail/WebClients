@@ -1,5 +1,6 @@
 /* jshint node: true, camelcase: false */
 
+var vendor_files;
 module.exports = {
   build_dir: "build",
   compile_dir: "dist",
@@ -19,10 +20,12 @@ module.exports = {
   },
   test_files: {
     js: [
-      "vendor/angular-mocks/angular-mocks.js"
+      "vendor/angular-mocks/angular-mocks.js",
+      "node_modules/chai-as-promised/lib/chai-as-promised.js",
+      "node_modules/chai-fuzzy/index.js"
     ]
   },
-  vendor_files: {
+  vendor_files: (vendor_files = {
     js: [
       "vendor/angular/angular.js",
       "vendor/angular-resource/angular-resource.js",
@@ -30,23 +33,18 @@ module.exports = {
       "vendor/angular-animate/angular-animate.js",
       "vendor/angular-local-storage/angular-local-storage.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/requirejs/require.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
-      "vendor/openpgp/*.js"
+      "vendor/openpgp/*.js",
     ],
     bootstrap_components: [
       "affix",
       "alert"
     ],
 
-    all_js: function () {
-      return this.js.concat(this.bootstrap_components.map(function (cmp){
-        return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
-      }));
-    },
+    required_js: [],
 
     css: [],
     sass_include_dirs: [
@@ -56,12 +54,8 @@ module.exports = {
     ],
     assets: [
       "vendor/font-awesome/fonts"
-    ],
-    exclude: [
-      "openpgp",
-      "require"
     ]
-  },
+  }),
 
   proton_build: {
     version: "1.09",
@@ -69,3 +63,19 @@ module.exports = {
     date: "6 Aug. 2014"
   }
 };
+
+vendor_files.js = vendor_files.js.concat(vendor_files.bootstrap_components.map(function (cmp){
+  return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
+}));
+
+vendor_files.included_js = vendor_files.js.filter(function (file) {
+  return vendor_files.required_js.every(function (required) {
+    return file.indexOf(required) === -1;
+  });
+});
+
+vendor_files.required_js = vendor_files.js.filter(function (file) {
+  return vendor_files.required_js.some(function (required) {
+    return file.indexOf(required) !== -1;
+  });
+});
