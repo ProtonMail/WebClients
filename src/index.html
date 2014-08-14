@@ -17,8 +17,5 @@
         .run(function($rootScope) { $rootScope.build = <%= JSON.stringify(build) %>; })
         .config(function(authenticationProvider) { authenticationProvider.setAPIBaseURL("<%= settings.apiUrl %>"); });
     </script>
-    <script type="text/javascript">
-      require.config({ baseUrl: "/vendor" });
-    </script>
   </body>
 </html>

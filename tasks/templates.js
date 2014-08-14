@@ -16,8 +16,6 @@ module.exports = function (grunt) {
   grunt.registerMultiTask("index", "Process index.html template", function () {
     var dirRE = new RegExp("^(" + grunt.config("build_dir") + "|" + grunt.config("compile_dir") + ")\/", "g");
 
-    var excluded = grunt.config("vendor_files.exclude");
-
     var jsFiles = filterForJS(this.filesSrc).map(function (file) {
       var cmps = file.split("/");
       if (cmps[0] == "vendor") {
@@ -63,11 +61,13 @@ module.exports = function (grunt) {
       , inFile = "conf." + this.target + ".tpl.js"
       , outFile = grunt.config("build_dir") + "/conf." + this.target + ".js";
 
+    var requiredFiles = grunt.config("vendor_files.required_js");
     grunt.file.copy(inFile, outFile, {
       process: function (contents, path) {
         return grunt.template.process(contents, {
           data: {
-            scripts: jsFiles
+            scripts: jsFiles,
+            requirejs_scripts: requiredFiles
           }
         });
       }
