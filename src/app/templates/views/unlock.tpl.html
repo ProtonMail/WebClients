@@ -11,6 +11,10 @@
   <p class="pull-left">
     <a href="/support/login-form" class="pull-left login-support" target="_blank">Can't login?</a>
   </p>
-  <button type="button" id="enck" class="btn btn-primary pull-right" ng-click="decrypt()">Decrypt Mailbox</button>
+  <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: isLoading}" ng-click="decrypt()">
+    <span class="fa" ng-class="{ 'fa-key': !isLoading, 'fa-cog fa-spin': isLoading }"></span>
+    <span ng-if="isLoading">Decrypting</span>
+    <span ng-if="!isLoading">Decrypt Mailbox</span>
+  </button>
 </fieldset>
 </div><!--/.panel-body-->

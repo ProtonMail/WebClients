@@ -19,7 +19,11 @@
   </div><!--/.form-group-->
   <a href="/support/reset-password" class="pull-left btn btn-link">Forgot Password?</a>
 
-  <button type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">Login</button>
+  <button type="button" class="pull-right btn btn-primary" ng-class="{disabled: isLoading}" id="login_btn" tabindex="4" ng-click="login()">
+    <span class="fa" ng-class="{ 'fa-sign-in': !isLoading, 'fa-cog fa-spin': isLoading }"></span>
+    <span ng-if="isLoading">Verifying</span>
+    <span ng-if="!isLoading">Login</span>
+  </button>
   
   <input type="hidden" id="hashed_pw" name="hashed_pw"> 
 </form>
