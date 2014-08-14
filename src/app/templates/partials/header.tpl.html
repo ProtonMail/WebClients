@@ -1,37 +1,36 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
-<div class="container-fluid">
+  <div class="container-fluid">
 
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
-    <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
-  </a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
+      <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+    </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <p class="navbar-text" ng-if="isLoggedIn">{{ user.UserName }}<em>@protonmail.ch</em></p>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="nav_bug">
+          <a href="#" ng-click="reportBug()"><span class="fa fa-exclamation-triangle"></span> Report Bug</a>
+        </li>
+        <li id="nav_settings" ng-if="'secured.**' | includedByState">
+          <a ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
+        </li>
+        <li id="nav_login" ng-if="!isLoggedIn">
+          <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
+        </li>
+        <li id="nav_logout" ng-if="isLoggedIn">
+          <a ng-click="logout()" href="#"><span class="fa fa-power-off"></span> Logout</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->  
+
   </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <p class="navbar-text" ng-if="isLoggedIn">{{ user.UserName }}<em>@protonmail.ch</em></p>
-    <ul class="nav navbar-nav navbar-right">
-      <li id="nav_bug">
-        <a href="#" ng-click="reportBug()"><span class="fa fa-exclamation-triangle"></span> Report Bug</a>
-      </li>
-      <li id="nav_settings" ng-if="'secured.**' | includedByState">
-        <a ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
-      </li>
-      <li id="nav_login" ng-if="!isLoggedIn">
-        <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
-      </li>
-      <li id="nav_logout" ng-if="isLoggedIn">
-        <a ng-click="logout()" href="#"><span class="fa fa-power-off"></span> Logout</a>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->  
-
-</div>
 
 
-</div>
-</div>
+</nav>
