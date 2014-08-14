@@ -10,6 +10,8 @@ var API_TARGETS = {
   target:  "http://?"
 };
 
+var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
+
 module.exports = function (grunt) {
   grunt.loadTasks("tasks");
   require("load-grunt-tasks")(grunt);
@@ -55,6 +57,15 @@ module.exports = function (grunt) {
         res.end();
       }
     ];
+  }
+
+  // Expose each supported browser as a command-line option
+  function browsers() {
+    var selected = _.filter(BROWSERS, function (browser) {
+      return grunt.option(browser.toLowerCase());
+    });
+
+    return _.isEmpty(selected) ? [BROWSERS[0]] : selected;
   }
 
   var userConfig = require("./conf.build.js");
@@ -211,6 +222,42 @@ module.exports = function (grunt) {
       }
     },
 
+    karma: {
+      options: {
+        configFile: "<%= build_dir %>/conf.unit.js",
+      },
+      watch: {
+        background: true,
+        browsers: browsers()
+      },
+      once: {
+        singleRun: true,
+        browsers: ["PhantomJS"]
+      }
+    },
+
+
+    testconfig: {
+      unit: {
+        src: [
+          "<%= vendor_files.included_js %>",
+          "<%= html2js.app.dest %>",
+          "<%= html2js.common.dest %>",
+          "<%= test_files.js %>"
+        ]
+      }
+    },
+
+    protractor_webdriver: {
+      build: {
+        options: {
+          keepAlive: true,
+          path: "./node_modules/.bin/"
+        }
+      }
+    },
+
+
     ngAnnotate: {
       compile: {
         files: [
@@ -324,7 +371,8 @@ module.exports = function (grunt) {
     "copy:build_vendor_assets",
     "copy:build_appjs",
     "copy:build_vendorjs",
-    "index:build"
+    "index:build",
+    "testconfig"
   ]);
 
   grunt.registerTask("compile", [
