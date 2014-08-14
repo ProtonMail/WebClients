@@ -73,6 +73,7 @@ angular.module("proton.Auth", [
       // RUN-TIME PUBLIC FUNCTIONS
 
       var api = {
+        
         // Whether a user is logged in at all
         isLoggedIn: function() { 
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);
@@ -130,7 +131,7 @@ angular.module("proton.Auth", [
           if (pwd) {
             $timeout(function() {
               self.user.$promise.then(function (user) {
-                if (crypto.setMailboxPassword(user.publicKey, user.encPrivateKey, pwd)) {
+                if (crypto.setMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)) {
                   auth.savePassword(pwd);
 
                   $rootScope.isLoggedIn = true;
