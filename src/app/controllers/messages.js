@@ -8,12 +8,12 @@ angular.module("proton.Controllers.Messages", [
   $scope.messages = Message.query();
 })
 
-.controller("ComposeMessageController", function($rootScope, Message) {
+.controller("ComposeMessageController", function($rootScope, $scope, Message) {
   $rootScope.pageName = "New Message";
   $scope.message = new Message();
 })
 
-.controller("ViewMessageController", function($rootScope, message) {
+.controller("ViewMessageController", function($rootScope, $scope, message) {
   $rootScope.pageName = message.MessageTitle;
   $scope.message = message;
 });
