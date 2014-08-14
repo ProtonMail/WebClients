@@ -24,10 +24,6 @@ module.exports = function (grunt) {
         file = [cmps[0], cmps[cmps.length-1]].join("/");
       }
       return file.replace(dirRE, "");
-    }).filter(function(file) {
-      return ! excluded.some(function(excl) { return file.indexOf(excl) !== -1; });
-    }).sort(function (fileA, fileB) {
-      return fileA < fileB ? 1 : -1;
     });
 
     var sortedJsFiles = jsFiles.filter(function (file) {

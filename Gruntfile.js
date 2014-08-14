@@ -58,7 +58,6 @@ module.exports = function (grunt) {
   }
 
   var userConfig = require("./conf.build.js");
-  userConfig.vendor_files.js = userConfig.vendor_files.all_js();
 
   var taskConfig = {
     pkg: grunt.file.readJSON("package.json"),
@@ -182,7 +181,7 @@ module.exports = function (grunt) {
             "<%= html2js.app.dest %>",
             "<%= html2js.common.dest %>",
           ],
-          "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.js %>"]
+          "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
         }
       }
     },
@@ -246,7 +245,7 @@ module.exports = function (grunt) {
           "<%= html2js.common.dest %>",
           "<%= html2js.app.dest %>",
           "<%= build_dir %>/src/**/*.js",
-          "<%= vendor_files.js %>",
+          "<%= vendor_files.included_js %>",
           "<%= build_dir %>/assets/application.css"
         ]
       },
