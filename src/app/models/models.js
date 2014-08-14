@@ -32,7 +32,9 @@ angular.module("proton.Models", [
       method: 'get',
       isArray: false,
       transformResponse: function (data) {
-        return JSON.parse(data);
+        return _.transform(JSON.parse(data), function (data, value, key){
+          data[key[0].toLowerCase() + key.slice(1)] = value;
+        });
       }
     }
   });

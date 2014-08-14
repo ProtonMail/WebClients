@@ -130,7 +130,7 @@ angular.module("proton.Auth", [
           if (pwd) {
             $timeout(function() {
               self.user.$promise.then(function (user) {
-                if (crypto.setMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)) {
+                if (crypto.setMailboxPassword(user.publicKey, user.encPrivateKey, pwd)) {
                   auth.savePassword(pwd);
 
                   $rootScope.isLoggedIn = true;
