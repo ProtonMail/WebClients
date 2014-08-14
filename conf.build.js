@@ -20,7 +20,9 @@ module.exports = {
   },
   test_files: {
     js: [
-      "vendor/angular-mocks/angular-mocks.js"
+      "vendor/angular-mocks/angular-mocks.js",
+      "node_modules/chai-as-promised/lib/chai-as-promised.js",
+      "node_modules/chai-fuzzy/index.js"
     ]
   },
   vendor_files: (vendor_files = {
@@ -36,16 +38,13 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js",
-      "vendor/requirejs/require.js"
     ],
     bootstrap_components: [
       "affix",
       "alert"
     ],
 
-    required_js: [
-      "openpgp"
-    ],
+    required_js: [],
 
     css: [],
     sass_include_dirs: [

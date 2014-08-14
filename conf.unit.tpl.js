@@ -15,10 +15,11 @@ module.exports = function (karma) {
       "src/**/*.scenario.js"
     ],
     frameworks: ["mocha", "chai-sinon"],
-    reporters: "dots",
+    reporters: ["dots"],
     port: 9018,
     runnerPort: 9100,
     urlRoot: "/",
-    autoWatch: false,
+    autoWatch: false
   });
 };
+
