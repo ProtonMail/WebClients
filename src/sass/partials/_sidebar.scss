@@ -1,104 +1,116 @@
+$sidebar-width: 22rem; // 220px
+
 #sidebar {
-  width: 12rem;
+  width: $sidebar-width;
   background: #333;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 0px rgba(black, 0.5);
   z-index: 9999;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
 
-  .wrap {
-    padding: 1rem;
-    #logo {
-      display: block;
-      width: auto;
-      height: 1rem;
-      margin: 0 .5rem 1rem;
-      float: left;
-    }
+  em {
+    font-style: normal;
   }
 
   .divider {
     height: 1px;
-    background: rgba(0,0,0,.05);
-    border-top: 1px solid rgba(255,255,255,.1);
+    background: rgba(black,.05);
+    border-top: 1px solid rgba(white,.1);
     padding: 0;
-    margin: 15px -1.25em;
+    margin: 15px 0;
     clear: both;
   }
 
-  ul,
-  ul li {
-    display: block;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    clear: both;
+  #compose_button a {
+    background: $light-purple;
+    text-shadow: none;
+    color: #fff;
   }
 
-  ul li {
-    &#compose_button a {
-      @include linear-gradient(#7878b3, #669);
-
-      text-align: left;
-      text-shadow: none;
-      color: #fff;
-      border: none;
-      box-shadow: 0 1px 1px rgba(0,0,0,.25);
-
-      &:hover,
-      &:active {
-        background: #7878b3;
-      }
-
-      .fa { color: #fff; }
-    }
-
-    a {
-      @include transition(color .2s ease);
-
-      text-decoration: none;
-      line-height: 2rem;
+  .logo {
+    line-height: 50px;
+    height: 50px;
+    padding: 17px 0;
+    img {
+      height: 16px;
       display: block;
-      padding: 0 1rem;
-      margin: 0 -.5rem;
-      color: #ccc;
+      margin: auto;
+    }
+  }
 
-      .fa {
-        @include transition(color .2s ease);
+  .sizeBar {
+    margin: 5px 0;
+    width: 100%;
+    height: 1rem;
+    background: rgba(black, 0.25);
+    border: 1px solid rgba(black, 0.1);
+    box-shadow: 0 1px 0 rgba(white, 0.1);
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    .fill {
+      background: #FFF;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#999));
+      background: -webkit-gradient(linear,left top,left bottom,color-stop(#ffffff,0),color-stop(#999,1));
+      background: -webkit-linear-gradient(top, #FFF 0%,#999 100%);
+      background: linear-gradient(top, #fff 0%,#999 100%);
+      background: -webkit-linear-gradient(top, #FFF 0%, #999 100%);
+      background: linear-gradient(top, #fff 0%, #999 100%);
+      background: -webkit-linear-gradient(to bottom, #fff 0%,#999 100%);
+      background: linear-gradient(to bottom, #FFF 0%,#999 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#999',GradientType=0 );
+      height: 100%;
+      clear: both;
+      box-shadow: inset 0 -1px 0 rgba(white, 0.25);
+      border-radius: 1rem;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 
-        font-size: 14px;
-        display: inline-block;
-        width: 1.25rem;
-        color: #999;
-      }
-
-      &:hover,
-      &:active {
-        color: #fff;
-        .fa { color: #fff; }
-      }
-
-      &.active {
-        @include border-top-radius(2px);
-        @include border-bottom-radius(2px);
-        @include border-left-radius(2px);
-        @include border-right-radius(2px);
-        @include linear-gradient(#666, #555);
-
-        z-index: 4;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-        color: #fff;
-
-        .fa { color: #fff; }
-
-        &:hover,
-        &:active {
-          background: #666;
-          color: #fff;
-        }
+  .list-group {
+    padding: 0 10px;
+    margin: 0;
+   &.info {
+      color: #999;
+      text-shadow: none;
+      li {
+        display: block;
       }
     }
   }
+
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    .fa {
+      margin-right: .5rem;
+    }
+    .btn {
+      width: 100%;
+      text-align: left;
+      box-shadow: none;
+      &.active {
+        background: #555;
+      }
+      &.active, &:hover {
+        color: #fff;
+        text-shadow: none
+      }
+    }
+  }
+
+  a {
+    color: #ccc;
+  }
+  
+}
+
+#main {
+  margin-left: $sidebar-width;
 }

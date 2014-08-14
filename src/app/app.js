@@ -20,7 +20,8 @@ angular.module("proton", [
 ])
 
 .run(function($document, $rootScope) {
-  $document.find("title").html("{{ pageName | capitalize }} &middot; ProtonMail");
+  if (typeof(pageName) != "undefined" && pageName !== null)
+    $document.find("title").html("{{ pageName | capitalize }} &middot; ProtonMail");
   $rootScope.reportBug = function() {
     alert("Reported!");
   };
