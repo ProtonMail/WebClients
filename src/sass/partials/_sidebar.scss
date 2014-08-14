@@ -1,8 +1,10 @@
-$sidebar-width: 22rem; // 220px
+$sidebar-width: 20rem; // 200px
+$sidebar-button-lighten: 5%;
+$sidebar-bg:  #333;
 
 #sidebar {
   width: $sidebar-width;
-  background: #333;
+  background: $sidebar-bg;
   text-shadow: 0px 1px 0px rgba(black, 0.5);
   z-index: 9999;
   height: 100%;
@@ -15,7 +17,7 @@ $sidebar-width: 22rem; // 220px
   }
 
   .divider {
-    height: 1px;
+    height: 2px;
     background: rgba(black,.05);
     border-top: 1px solid rgba(white,.1);
     padding: 0;
@@ -24,9 +26,26 @@ $sidebar-width: 22rem; // 220px
   }
 
   #compose_button a {
-    background: $light-purple;
+    @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
     text-shadow: none;
     color: #fff;
+    &:hover {
+      background: lighten($light-purple, ($sidebar-button-lighten/2));
+      border-color: transparent;
+    }
+    &:active {
+      background: darken($light-purple, $sidebar-button-lighten);
+      color: rgba(#fff, .5);
+      border-color: transparent;
+      box-shadow: none;
+    }  
+  }
+
+  #compose_button a,
+  .list-group-item a.active {
+    box-shadow: 0 1px 1px rgba(black, .25);
+    border-top-color: rgba(white, .1);
+    border-bottom-color: transparent;
   }
 
   .logo {
@@ -36,7 +55,7 @@ $sidebar-width: 22rem; // 220px
     img {
       height: 16px;
       display: block;
-      margin: auto;
+      margin: 0 0 0 15px;
     }
   }
 
@@ -89,24 +108,34 @@ $sidebar-width: 22rem; // 220px
     border: none;
     padding: 0;
     .fa {
-      margin-right: .5rem;
+      margin-right: .75rem;
     }
     .btn {
       width: 100%;
       text-align: left;
       box-shadow: none;
       &.active {
-        background: #555;
+        @include linear-gradient(lighten($gray, $sidebar-button-lighten), $gray);
+        &:hover {
+          background: lighten($gray, ($sidebar-button-lighten/2));
+          border-color: transparent;
+        }
+        &:active {
+          background: darken($gray, $sidebar-button-lighten);
+          color: rgba(#fff, .5);
+          border-color: transparent;
+          box-shadow: none;
+        }  
       }
       &.active, &:hover {
         color: #fff;
-        text-shadow: none
+        text-shadow: none;        
       }
     }
   }
 
   a {
-    color: #ccc;
+    color: lighten($sidebar-bg, 50%);
   }
   
 }
