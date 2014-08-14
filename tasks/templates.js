@@ -17,6 +17,7 @@ module.exports = function (grunt) {
     var dirRE = new RegExp("^(" + grunt.config("build_dir") + "|" + grunt.config("compile_dir") + ")\/", "g");
 
     var excluded = grunt.config("vendor_files.exclude");
+
     var jsFiles = filterForJS(this.filesSrc).map(function (file) {
       var cmps = file.split("/");
       if (cmps[0] == "vendor") {
@@ -29,11 +30,22 @@ module.exports = function (grunt) {
       return fileA < fileB ? 1 : -1;
     });
 
+    var sortedJsFiles = jsFiles.filter(function (file) {
+      return file.indexOf("vendor/") === 0;
+    });
+
+    jsFiles.forEach(function (file) {
+      if (file.indexOf("vendor/") === -1) {
+        sortedJsFiles.push(file);
+      }
+    });
+
     var cssFiles = filterForCSS(this.filesSrc).map(function (file) {
       return file.replace(dirRE, "");
     });
+
     var templateData = {
-      scripts: jsFiles,
+      scripts: sortedJsFiles,
       settings: this.options(),
       styles: cssFiles,
       version: grunt.config("pkg.version"),
