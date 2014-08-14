@@ -7,11 +7,6 @@ angular.module("proton.Crypto", [])
   var headerRandomKey = "---BEGIN ENCRYPTED RANDOM KEY---";
   var tailRandomKey = "---END ENCRYPTED RANDOM KEY---";
 
-  var openpgp;
-  require(["openpgp"], function(module) {
-    openpgp = module;
-  });
-
   function pgpEncrypt(randomKey, pubKey) {
     // $('#composeMain').html('<pre>'+pubKey+'</pre>');
     // console.log('pubKey: '+pubKey);
@@ -44,7 +39,7 @@ angular.module("proton.Crypto", [])
     // padding 
     var residual = message.length % 32;
 
-    if (residual != 0) {
+    if (residual !== 0) {
       for (var i = 0; i < 32 - residual; i++) {
         message = message + ' ';
       }
@@ -112,11 +107,11 @@ angular.module("proton.Crypto", [])
 
   this.$get = function() {
     return {
-      decryptPackage: function(pkg) {
+      decryptPackage: function(privateKey, pkg, time) {
         var encryptedMessage = getEncMessageFromPkg(pkg);
         if (!_.isEmpty(encryptedMessage)) {
           var encRandomKey = getEncRandomKeyFromPkg(pkg);
-          var randomKey = pgpDecrypt(encRandomKey, $('#encPrivateKey').val(), mailboxPassword);
+          var randomKey = pgpDecrypt(encRandomKey, privateKey, mailboxPassword);
           return decryptMessage(time, encryptedMessage, randomKey);
         }
       },

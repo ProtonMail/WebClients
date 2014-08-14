@@ -73,6 +73,7 @@ angular.module("proton.Auth", [
       // RUN-TIME PUBLIC FUNCTIONS
 
       var api = {
+        
         // Whether a user is logged in at all
         isLoggedIn: function() { 
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);

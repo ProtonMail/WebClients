@@ -94,6 +94,21 @@ angular.module("proton.Routes", [
       }
     }))
 
+    .state("secured.message", {
+      url: "/message/:MessageID",
+      views: {
+        "content@secured": {
+          controller: "ViewMessageController",
+          templateUrl: "templates/views/message.tpl.html"
+        }
+      },
+      resolve: {
+        message: function (Message, $stateParams) {
+          return Message.get(_.pick($stateParams, 'MessageID')).$promise;
+        }
+      }
+    })
+
     .state("secured.contacts", {
       url: "/contacts",
       views: {
