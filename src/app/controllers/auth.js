@@ -34,8 +34,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
         $scope.user = authentication.user;
         $scope.isLoading = false;
       },
-      function(err) { 
-        $('#login_btn').button('reset');
+      function(err) {
         $scope.error = err; 
         $scope.isLoading = false;
       }
@@ -53,8 +52,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
           $state.go("secured.inbox");
           $scope.isLoading = false; 
         },
-        function(err) { 
-          $('#enck').button('reset');
+        function(err) {
           $scope.error = err; 
           $scope.isLoading = false;
         }
