@@ -35,6 +35,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
         $scope.isLoading = false;
       },
       function(err) { 
+        $('#login_btn').button('reset');
         $scope.error = err; 
         $scope.isLoading = false;
       }
@@ -53,6 +54,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
           $scope.isLoading = false; 
         },
         function(err) { 
+          $('#enck').button('reset');
           $scope.error = err; 
           $scope.isLoading = false;
         }
