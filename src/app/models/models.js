@@ -4,7 +4,7 @@ angular.module("proton.Models", [
 ])
 
 .factory("Contact", function($resource, authentication) {
-  return $resource(authentication.baseURL + "/contacts/:contactID", authentication.params(), {
+  return $resource(authentication.baseURL + "/contacts/:ContactID", authentication.params(), {
     query: {
       method: "get",
       isArray: true,
@@ -15,7 +15,7 @@ angular.module("proton.Models", [
     delete: {
       method: "delete",
       isArray: false,
-      url: "/contacts/:contactID"
+      params: {"ContactID": "@ContactID"}
     }
   });
 })
