@@ -1,11 +1,13 @@
 <div class="wrap">
-  <a href="/" class="logo">
-    <img src="/assets/img/protonmail_logo_beta.png" width="125" height="16" id="logo" alt="ProtonMail">
-  </a>
 
-  <ul>
-    <li id="compose_button">
-      <a ui-sref="secured.compose" class="btn btn-default">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a href="/" class="logo btn">
+        <img src="/assets/img/protonmail_logo_beta.png" width="125" height="16" id="logo" alt="ProtonMail">
+      </a>
+    </li>
+    <li class="list-group-item" id="compose_button">
+      <a class="btn" ui-sref="secured.compose">
         <span class="fa fa-pencil"></span> Compose
       </a>
     </li>
@@ -13,24 +15,24 @@
 
   <div class="divider"></div>
 
-  <ul class="menu" id="topMenu">
-    <li class="current-li" data-unread="0">
-      <a ui-sref="secured.inbox" ui-sref-active="active">
+  <ul class="list-group" id="topMenu">
+    <li class="list-group-item" class="current-li" data-unread="0">
+      <a class="btn" ui-sref="secured.inbox" ui-sref-active="active">
         <span class="fa fa-inbox"></span> Inbox
       </a>
     </li>
-    <li data-unread="0">
-      <a ui-sref="secured.drafts" ui-sref-active="active">
+    <li class="list-group-item" data-unread="0">
+      <a class="btn" ui-sref="secured.drafts" ui-sref-active="active">
         <span class="fa fa-file-text-o"></span> Draft
       </a>
     </li>
-    <li data-unread="0">
-      <a ui-sref="secured.sent" ui-sref-active="active">
+    <li class="list-group-item" data-unread="0">
+      <a class="btn" ui-sref="secured.sent" ui-sref-active="active">
         <span class="fa fa-sign-out"></span> Sent
       </a>
     </li>
-    <li data-unread="0">
-      <a ui-sref="secured.trash" ui-sref-active="active">
+    <li class="list-group-item" data-unread="0">
+      <a class="btn" ui-sref="secured.trash" ui-sref-active="active">
         <span class="fa fa-trash-o"></span> Trash
       </a>
     </li>
@@ -38,14 +40,14 @@
   
   <div class="divider"></div>
 
-  <ul class="menu">
-    <li>
-      <a ui-sref="secured.starred" ui-sref-active="active">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a class="btn" ui-sref="secured.starred" ui-sref-active="active">
         <span class="fa fa-star"></span> Starred
       </a>
     </li>
-    <li>
-      <a ui-sref="secured.spam" ui-sref-active="active">
+    <li class="list-group-item">
+      <a class="btn" ui-sref="secured.spam" ui-sref-active="active">
         <span class="fa fa-bug"></span> Spam 
       </a>
     </li>
@@ -53,28 +55,43 @@
 
   <div class="divider"></div>
 
-  <ul class="menu">
-    <li><a ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> Contacts</a></li>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a class="btn" ui-sref="secured.contacts" ui-sref-active="active">
+        <span class="fa fa-book"></span> Contacts
+      </a>
+    </li>
   </ul>
   
   <div class="divider"></div>
 
-  <span class="sizebar">Storage:
-    <span class="pull-right mono">0.01/100 MB</span>
-  </span>
-  <div class="sizeBar">
-    <span class="fill" style="width:0.01%"></span>
-  </div> 
-  
+  <ul class="list-group info">
+    <li>
+      <span class="sizebar">Storage:
+        <span class="pull-right mono">0.01/100 MB</span>
+      </span>
+    </li>
+    <li>
+      <div class="sizeBar">
+        <span class="fill" style="width:0.01%"></span>
+      </div>
+    </li>
+  </ul>
   <br>
-  
-  <span class="sizebar">Msg/month:
-    <span class="pull-right mono">0/1000</span>
-  </span>
-  <div class="sizeBar">
-    <span class="fill" style="width:0%"></span>
-  </div
-  >
+  <ul class="list-group info">  
+    <li>
+      <span class="sizebar">Msg/month:
+        <span class="pull-right mono">0/1000</span>
+      </span>
+      <div class="sizeBar">
+        <span class="fill" style="width:0%"></span>
+      </div>
+    </li>
+  </ul>
   <br>
-  <p class="versionbottom"><em>Version <a href="{{ build.notes }}" target="_blank">{{ build.version }}</a></em></p>
+  <ul class="list-group info">
+    <li>
+      <p class="versionbottom"><em>Version <a href="{{ build.notes }}" target="_blank">{{ build.version }}</a></em></p>
+    </li>
+  </ul>
 </div>

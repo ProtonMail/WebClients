@@ -6,8 +6,23 @@ $fa-font-path: "fonts";
 @import "font-awesome";
 @import "partials/header";
 
-.col-md-2 .panel {
-  margin-top: 4rem;
+.mono {
+  font-family: $font-family-monospace;
+}
+
+@media (min-width: $screen-sm) {
+  .panel {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
+a, .btn, button, input[type="button"], input[type="submit"] {
+  outline: none !important;
+}
+
+.navbar {
+  border: 0;
 }
 
 body {
@@ -33,10 +48,6 @@ body {
   * {
     -webkit-font-smoothing: antialiased;
   }
-}
-
-#main {
-  margin-left: 12rem;
 }
 
 .faded {

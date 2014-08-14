@@ -11,15 +11,15 @@
   </p> 
  
   <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
-
-  <input autocomplete="off" type="text" class="form-control" tabindex="1" id="username" placeholder="Username" name="UserName" required="" autofocus="" value="">
-  <input autocomplete="off" type="password" class="form-control" tabindex="2" id="password" name="Password" required="" placeholder="Login Password" value="">
-
+  <div class="form-group">
+    <input autocomplete="off" type="text" class="form-control" tabindex="1" id="username" placeholder="Username" name="UserName" required="" autofocus="" value="">
+  </div><!--/.form-group-->
+  <div class="form-group">
+    <input autocomplete="off" type="password" class="form-control" tabindex="2" id="password" name="Password" required="" placeholder="Login Password" value="">
+  </div><!--/.form-group-->
   <a href="/support/reset-password" class="pull-left btn btn-link">Forgot Password?</a>
 
-  <button type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">
-    <span class="fa fa-sign-in"></span> Login
-  </button>
+  <button type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">Login</button>
   
   <input type="hidden" id="hashed_pw" name="hashed_pw"> 
 </form>
