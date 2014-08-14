@@ -1,14 +1,58 @@
 $fa-font-path: "fonts";
 
-@import "protonmail";
 @import "bourbon";
+@import "protonmail";
 @import "bootstrap";
 @import "font-awesome";
 @import "partials/header";
 
+.btn-default {
+  @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
+  &:hover {
+    @include linear-gradient($btn-default-bg, darken($btn-default-bg, 5%));
+  }
+}
+.btn-primary {
+  @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 10%));
+  &:hover {
+    @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 5%));
+  }
+}
+.btn-success {
+  @include linear-gradient($btn-success-bg, darken($btn-success-bg, 10%));
+  &:hover {
+    @include linear-gradient($btn-success-bg, darken($btn-success-bg, 5%)); 
+  }
+}
+.btn-info {
+  @include linear-gradient($btn-info-bg, darken($btn-info-bg, 10%));
+  &:hover {
+    @include linear-gradient($btn-info-bg, darken($btn-info-bg, 5%));
+  }
+}
+.btn-danger {
+  @include linear-gradient($btn-danger-bg, darken($btn-danger-bg, 10%));
+  &:hover {
+    @include linear-gradient($btn-danger-bg, darken($btn-danger-bg, 5%));
+  }
+}
+
+#sidebar .btn,
+.navbar-inverse a {
+  &:hover {
+    @include transition (color 0.1s);      
+  }  
+}
+
 .mono {
   font-family: $font-family-monospace;
 }
+
+body .alert-warning a { color: darken($btn-warning-bg, 25%);}
+body .alert-primary a { color: darken($btn-primary-bg, 25%);}
+body .alert-success a { color: darken($btn-success-bg, 25%);}
+body .alert-info a { color: darken($btn-info-bg, 25%);}
+body .alert-danger a { color: darken($btn-danger-bg, 25%);}
 
 @media (min-width: $screen-sm) {
   .panel {

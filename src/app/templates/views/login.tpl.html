@@ -17,9 +17,9 @@
   <div class="form-group">
     <input autocomplete="off" type="password" class="form-control" tabindex="2" id="password" name="Password" required="" placeholder="Login Password" value="">
   </div><!--/.form-group-->
-  <a href="/support/reset-password" class="pull-left btn btn-link">Forgot Password?</a>
+  <a href="/support/reset-password" class="pull-left btn btn-default">Forgot Password?</a>
 
-  <button type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">Login</button>
+  <button data-loading-text="Loading..." type="button" class="pull-right btn btn-primary" id="login_btn" tabindex="4" ng-click="login()">Login</button>
   
   <input type="hidden" id="hashed_pw" name="hashed_pw"> 
 </form>

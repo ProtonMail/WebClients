@@ -23,6 +23,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
   $scope.login = function() {
     clearErrors();
+    $('#login_btn').button('loading');
     authentication.loginWithCredentials({
       username: $("#username").val(),
       password: $("#password").val()
@@ -31,17 +32,24 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
         $state.go("login.unlock");
         $scope.user = authentication.user;
       },
-      function(err) { $scope.error = err; }
+      function(err) { 
+        $('#login_btn').button('reset');
+        $scope.error = err; 
+      }
     );
   };
 
   $scope.decrypt = function() {
     clearErrors();
+    $('#enck').button('loading');
     authentication
       .unlockWithPassword($("#mailboxPassword").val())
       .then(
         function() { $state.go("secured.inbox"); },
-        function(err) { $scope.error = err; }
+        function(err) { 
+          $('#enck').button('reset');
+          $scope.error = err; 
+        }
       );
   };
 })

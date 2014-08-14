@@ -12,3 +12,12 @@ $light-purple:                #669;
 $dark-purple:                 #336;
 $navbar-height:               50px;
 $navbar-margin-bottom:        $navbar-height;
+
+$padding-base-horizontal:   ($font-size-base*1.1);
+$padding-base-vertical:     ($padding-base-horizontal/2);
+
+$border-radius-base:        2px;
+$border-radius-large:       ($border-radius-base/.75);
+$border-radius-small:       ($border-radius-base/1.25);
+$navbar-inverse-color:      lighten($navbar-inverse-bg, 35%);
+$navbar-inverse-link-color: $navbar-inverse-color;
