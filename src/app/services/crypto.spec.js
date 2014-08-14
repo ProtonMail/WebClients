@@ -19,21 +19,21 @@
     });
 
     it("should accept a correct password", function () {
-      this.timeout(5000);
+      this.timeout(10000);
 
       var didSetPwd = crypto.setMailboxPassword(testData.publicKey, testData.encPrivateKey, testData.password);
       expect(didSetPwd).to.be.true;
     });
 
     it("should reject an incorrect password", function () {
-      this.timeout(5000);
+      this.timeout(10000);
 
       var didSetPwd = crypto.setMailboxPassword(testData.publicKey, testData.encPrivateKey, "wrong");
       expect(didSetPwd).to.be.false;
     });
 
     it("should decrypt a encrypted message correctly", function () {
-      this.timeout(5000);
+      this.timeout(10000);
 
       crypto.setMailboxPassword(testData.publicKey, testData.encPrivateKey, testData.password);
       var message = crypto.decryptPackage(testData.encPrivateKey, testData.encryptedMessage.encPackage, testData.encryptedMessage.messageTime);
