@@ -4,9 +4,20 @@ angular.module("proton.Models", [
 ])
 
 .factory("Contact", function($resource, authentication) {
-  var Contact = $resource()
-
-  return Contact;
+  return $resource(authentication.baseURL + "/contacts/:contactID", authentication.params(), {
+    query: {
+      method: "get",
+      isArray: true,
+      transformResponse: function (data) {
+        return JSON.parse(data).Contacts;
+      }
+    },
+    delete: {
+      method: "delete",
+      isArray: false,
+      url: "/contacts/:contactID"
+    }
+  });
 })
 
 .factory("Message", function($resource, authentication) {
