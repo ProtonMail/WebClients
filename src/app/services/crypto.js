@@ -44,7 +44,7 @@ angular.module("proton.Crypto", [])
     // padding 
     var residual = message.length % 32;
 
-    if (residual != 0) {
+    if (residual !== 0) {
       for (var i = 0; i < 32 - residual; i++) {
         message = message + ' ';
       }
