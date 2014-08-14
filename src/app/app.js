@@ -19,10 +19,11 @@ angular.module("proton", [
   "proton.Controllers.Settings"
 ])
 
-.run(function($document, $rootScope) {
-  if (typeof(pageName) != "undefined" && pageName !== null)
-    $document.find("title").html("{{ pageName | capitalize }} &middot; ProtonMail");
+.run(function($document, $rootScope, $filter) {
   $rootScope.reportBug = function() {
     alert("Reported!");
   };
+  $rootScope.$watch("pageName", function (name) {
+    $document.find("title").html(name ? $filter("capitalize")(name) + " &middot; ProtonMail" : "ProtonMail");
+  });
 });
