@@ -1,7 +1,7 @@
 /* global -_ */
 /* jshint node: true, camelcase: false */
 
-var _ = require("lodash"), 
+var _ = require("lodash"),
     util = require("util");
 
 var API_TARGETS = {
@@ -91,8 +91,8 @@ module.exports = function (grunt) {
       build: {
         files: {
           "./api/index.html": [
-            "./api/specs/main.md", 
-            "./api/specs/messages.md", 
+            "./api/specs/main.md",
+            "./api/specs/messages.md",
             "./api/specs/contacts.md"
           ],
           theme: "default"
@@ -227,7 +227,7 @@ module.exports = function (grunt) {
       },
       compile_api_spec: {
         files: {
-          "./api/blueprint.md": [ 
+          "./api/blueprint.md": [
             "./api/specs/main.md",
             "./api/specs/messages.md",
             "./api/specs/contacts.md"
@@ -394,9 +394,9 @@ module.exports = function (grunt) {
       api_spec: {
         files: ["api/specs/*"],
         tasks: [
-          "aglio:build", 
-          "concat:compile_api_spec", 
-          "forever:mock_server:restart", 
+          "aglio:build",
+          "concat:compile_api_spec",
+          "forever:mock_server:restart",
           "delta"
         ]
       }

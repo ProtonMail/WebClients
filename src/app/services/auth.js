@@ -8,7 +8,7 @@ angular.module("proton.Auth", [
 
 .config(function(
   $provide,
-  MAILBOX_PASSWORD_KEY, 
+  MAILBOX_PASSWORD_KEY,
   OAUTH_KEY
 ) {
   $provide.provider("authentication", function AuthenticationProvider(cryptoProvider) {
@@ -61,7 +61,7 @@ angular.module("proton.Auth", [
         }
       }
     };
-    
+
     this.setAPIBaseURL = function(newBaseURL) {
       if (!baseURL) {
         baseURL = this.baseURL = newBaseURL;
@@ -73,9 +73,9 @@ angular.module("proton.Auth", [
       // RUN-TIME PUBLIC FUNCTIONS
 
       var api = {
-        
+
         // Whether a user is logged in at all
-        isLoggedIn: function() { 
+        isLoggedIn: function() {
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);
           if (loggedIn && api.user === null) {
             auth.fetchUserInfo();
@@ -114,7 +114,7 @@ angular.module("proton.Auth", [
 
           delete auth.data;
           delete auth.mailboxPassword;
-          
+
           this.user = null;
 
           $rootScope.isLoggedIn = false;
@@ -146,7 +146,7 @@ angular.module("proton.Auth", [
           } else {
             req.reject({message: "Password is required"});
           }
-          
+
           return req.promise;
         },
 
@@ -188,7 +188,7 @@ angular.module("proton.Auth", [
         },
 
         params: function (params) {
-          return _.extend({ 
+          return _.extend({
             access_token: function() {
               return auth.data.access_token;
             }
@@ -202,7 +202,7 @@ angular.module("proton.Auth", [
 
         api.user = $injector.get("User").get();
       };
-      
+
       api.baseURL = baseURL;
       api.user = null;
 

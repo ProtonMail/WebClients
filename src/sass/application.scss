@@ -40,13 +40,18 @@ body footer {
 }
 
 .secure {
-  .navbar-inverse,
-  footer {
+  .navbar-inversed,
+  #footer {
     margin-left: $sidebar-width;
   }
-  footer {
+  #footer {
     @include calc(width, '100% - #{$sidebar-width}');
   }
+}
+
+.adminContent {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .btn-default {
@@ -64,7 +69,7 @@ body footer {
 .btn-success {
   @include linear-gradient($btn-success-bg, darken($btn-success-bg, 10%));
   &:hover {
-    @include linear-gradient($btn-success-bg, darken($btn-success-bg, 5%)); 
+    @include linear-gradient($btn-success-bg, darken($btn-success-bg, 5%));
   }
 }
 .btn-info {
@@ -81,11 +86,11 @@ body footer {
 }
 
 #sidebar .btn,
-.navbar-inverse a, 
+.navbar-inverse a,
 footer a {
   &:hover {
-    @include transition (color 0.1s);      
-  }  
+    @include transition (color 0.1s);
+  }
 }
 
 .mono {
@@ -131,7 +136,7 @@ body {
   margin: 0;
   min-height: 100%;
   width: 100%;
-  
+
   background: #fff;
 
   &.login {

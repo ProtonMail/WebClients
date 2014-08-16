@@ -2,14 +2,14 @@
 <form id="sign_in_form" name="sign_in" action="/login" ng-keypress="keypress($event)" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
   <h1 class="text-center">
     <span class="fa fa-2x fa-power-off faded"></span>Login
-  </h1> 
+  </h1>
 
   <p class="alert alert-warning text-center" role="alert" id="igg-contributor">
     <strong>
       <a href="#">Indiegogo Contributor?</a>
     </strong>
-  </p> 
- 
+  </p>
+
   <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
   <div class="form-group">
     <input autocomplete="off" type="text" class="form-control" tabindex="1" id="username" placeholder="Username" name="UserName" required="" autofocus="" value="">
@@ -24,7 +24,7 @@
     <span ng-if="isLoading">Verifying</span>
     <span ng-if="!isLoading">Login</span>
   </button>
-  
-  <input type="hidden" id="hashed_pw" name="hashed_pw"> 
+
+  <input type="hidden" id="hashed_pw" name="hashed_pw">
 </form>
 </div><!--/.panel-body-->
