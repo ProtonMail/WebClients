@@ -1,5 +1,4 @@
 angular.module("proton.Controllers.Messages", [
-  "ngRoute",
   "proton.Routes"
 ])
 
