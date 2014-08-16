@@ -9,7 +9,7 @@ angular.module("proton.Models", [
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).Contacts;
+        return JSON.parse(data).data;
       }
     },
     delete: {
@@ -26,7 +26,7 @@ angular.module("proton.Models", [
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).Messages;
+        return JSON.parse(data).data;
       }
     },
     delete: {
