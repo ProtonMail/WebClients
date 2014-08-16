@@ -6,7 +6,7 @@
         <span class="fa {{ message.isEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}"></span>
         <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
       </td>
-      
+
       <td class="{{ ('secured.sent' | isState) ? 'to' : 'from' }}">
         <span ng-if="'secured.sent' | isState">{{ message.RecipientList }}</span>
         <span ng-if="!('secured.sent' | isState)">{{ message.Sender }}</span>
