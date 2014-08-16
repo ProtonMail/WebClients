@@ -21,7 +21,7 @@ angular.module("proton.Models", [
 })
 
 .factory("Message", function($resource, authentication) {
-  return $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
+  var Message = $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
     query: {
       method: "get",
       isArray: true,
@@ -35,6 +35,12 @@ angular.module("proton.Models", [
       params: {"MessageID": "@MessageID"}
     }
   });
+
+  Message.prototype.readableTime = function() {
+    return moment.unix(this.Time).format('LL');
+  };
+
+  return Message;
 })
 
 .factory("User", function($resource, $injector) {
