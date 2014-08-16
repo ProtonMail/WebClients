@@ -5,8 +5,8 @@ var _ = require("lodash"),
     util = require("util");
 
 var API_TARGETS = {
-  local:   "http://apidev.protonmail.com",
-  default: "http://protonmail.org:8080",
+  local:   "http://0.0.0.0:4003",
+  production: "http://api.protonmail.com",
   target:  "http://?"
 };
 
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       .map(function (host, target) {
         return host.replace("?", grunt.option(target));
       })
-      .first() || API_TARGETS.default;
+      .first() || API_TARGETS.local;
   }
 
   function rewriteIndexMiddleware(connect, options) {
@@ -87,11 +87,34 @@ module.exports = function (grunt) {
       "<%= compile_dir %>"
     ],
 
+    aglio: {
+      build: {
+        files: {
+          "./api/index.html": [
+            "./api/specs/main.md", 
+            "./api/specs/messages.md", 
+            "./api/specs/contacts.md"
+          ],
+          theme: "default"
+        }
+      }
+    },
+
+    forever: {
+      mock_server: {
+        options: {
+          command: './node_modules/api-mock/bin/api-mock ./api/blueprint.md'+ ' -p ' + (grunt.option('api-port') || '4003'),
+          index: '',
+          logDir: 'logs'
+        }
+      }
+    },
+
     connect: {
       options: {
         hostname: "*",
         middleware: rewriteIndexMiddleware,
-        port: 4002 // SauceLabs only proxies certain ports. (This is one.)
+        port: 8080
       },
 
       compile: {
@@ -104,6 +127,13 @@ module.exports = function (grunt) {
         options: {
           base: "<%= build_dir %>",
           livereload: 40093
+        }
+      },
+
+      api_doc: {
+        options: {
+          base: "./api",
+          port: 4001
         }
       }
     },
@@ -194,6 +224,15 @@ module.exports = function (grunt) {
           ],
           "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
         }
+      },
+      compile_api_spec: {
+        files: {
+          "./api/blueprint.md": [ 
+            "./api/specs/main.md",
+            "./api/specs/messages.md",
+            "./api/specs/contacts.md"
+          ]
+        }
       }
     },
 
@@ -227,6 +266,7 @@ module.exports = function (grunt) {
         configFile: "<%= build_dir %>/conf.unit.js",
       },
       watch: {
+        autoWatch: true,
         background: true,
         browsers: browsers()
       },
@@ -349,6 +389,16 @@ module.exports = function (grunt) {
         files: "Gruntfile.js",
         tasks: [],
         options: { livereload: false }
+      },
+
+      api_spec: {
+        files: ["api/specs/*"],
+        tasks: [
+          "aglio:build", 
+          "concat:compile_api_spec", 
+          "forever:mock_server:restart", 
+          "delta"
+        ]
       }
     }
   };
@@ -358,7 +408,12 @@ module.exports = function (grunt) {
   grunt.renameTask("watch", "delta");
   grunt.registerTask("watch", [
     "build",
+    "karma:watch:start",
     "connect:watch",
+    "connect:api_doc",
+    "concat:compile_api_spec",
+    "forever:mock_server:start",
+    "delta",
     "delta"
   ]);
 
@@ -366,6 +421,7 @@ module.exports = function (grunt) {
     "clean",
     "html2js",
     "sass:build",
+    "aglio:build",
     "concat:build_css",
     "copy:build_app_assets",
     "copy:build_vendor_assets",
