@@ -5,8 +5,8 @@ var _ = require("lodash"),
     util = require("util");
 
 var API_TARGETS = {
-  local:   "http://apidev.protonmail.com",
-  default: "http://protonmail.org:8080",
+  local:   "http://0.0.0.0:4003",
+  production: "http://api.protonmail.com",
   target:  "http://?"
 };
 
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       .map(function (host, target) {
         return host.replace("?", grunt.option(target));
       })
-      .first() || API_TARGETS.default;
+      .first() || API_TARGETS.local;
   }
 
   function rewriteIndexMiddleware(connect, options) {
@@ -86,6 +86,24 @@ module.exports = function (grunt) {
       "<%= build_dir %>",
       "<%= compile_dir %>"
     ],
+
+    shell: {
+      mock: {
+        command: function () {
+          if (apiUrl() !== API_TARGETS.local) {
+            return 'echo "Not starting a API mock server"';
+          }
+          
+          var port = grunt.option('api-port') || '4003',
+              inputFile = './api/spec';
+          return './node_modules/api-mock/bin/api-mock ' + inputFile + ' -p ' + port;
+        },
+        options: {
+          stdout: true,
+          stderr: true
+        }
+      }
+    },
 
     connect: {
       options: {
@@ -360,6 +378,7 @@ module.exports = function (grunt) {
     "build",
     "karma:watch:start",
     "connect:watch",
+    "shell:mock",
     "delta"
   ]);
 
