@@ -87,6 +87,15 @@ module.exports = function (grunt) {
       "<%= compile_dir %>"
     ],
 
+    aglio: {
+      build: {
+        files: {
+          "./api/index.html": ["./api/spec"],
+          theme: "default"
+        }
+      }
+    },
+
     shell: {
       mock: {
         command: function () {
@@ -122,6 +131,13 @@ module.exports = function (grunt) {
         options: {
           base: "<%= build_dir %>",
           livereload: 40093
+        }
+      },
+
+      api_doc: {
+        options: {
+          base: "./api",
+          port: 4001
         }
       }
     },
@@ -378,6 +394,7 @@ module.exports = function (grunt) {
     "build",
     "karma:watch:start",
     "connect:watch",
+    "connect:api_doc",
     "shell:mock",
     "delta"
   ]);
@@ -386,6 +403,7 @@ module.exports = function (grunt) {
     "clean",
     "html2js",
     "sass:build",
+    "aglio:build",
     "concat:build_css",
     "copy:build_app_assets",
     "copy:build_vendor_assets",
