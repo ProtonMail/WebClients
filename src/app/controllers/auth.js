@@ -9,7 +9,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   if (authentication.user) {
     $scope.user = authentication.user;
   }
-  
+
   $rootScope.pageName = "Login";
 
   var clearErrors = function() {
@@ -29,13 +29,13 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
       username: $("#username").val(),
       password: $("#password").val()
     }).then(
-      function() { 
+      function() {
         $state.go("login.unlock");
         $scope.user = authentication.user;
         $scope.isLoading = false;
       },
       function(err) {
-        $scope.error = err; 
+        $scope.error = err;
         $scope.isLoading = false;
       }
     );
@@ -48,12 +48,12 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     authentication
       .unlockWithPassword($("#mailboxPassword").val())
       .then(
-        function() { 
+        function() {
           $state.go("secured.inbox");
-          $scope.isLoading = false; 
+          $scope.isLoading = false;
         },
         function(err) {
-          $scope.error = err; 
+          $scope.error = err;
           $scope.isLoading = false;
         }
       );
@@ -72,6 +72,13 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 })
 
 .controller("SecuredController", function($scope, authentication) {
+  $scope.user = authentication.user;
+  $scope.logout = function() {
+    authentication.logout();
+  };
+})
+
+.controller("AdminController", function($scope, authentication) {
   $scope.user = authentication.user;
   $scope.logout = function() {
     authentication.logout();

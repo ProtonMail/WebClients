@@ -73,9 +73,9 @@ angular.module("proton.Routes", [
 
       abstract: true,
       views: {
-        "main@": { 
+        "main@": {
           controller: "SecuredController",
-          templateUrl: "templates/layout/secured.tpl.html" 
+          templateUrl: "templates/layout/secured.tpl.html"
         }
       },
       url: "/secured",
@@ -112,7 +112,7 @@ angular.module("proton.Routes", [
     .state("secured.contacts", {
       url: "/contacts",
       views: {
-        "content@secured": { 
+        "content@secured": {
           templateUrl: "templates/contacts.tpl.html",
           controller: "ContactsController"
         }
@@ -122,7 +122,7 @@ angular.module("proton.Routes", [
     .state("secured.compose", {
       url: "/compose",
       views: {
-        "content@secured": { 
+        "content@secured": {
           templateUrl: "templates/views/compose.tpl.html",
           controller: "ComposeMessageController"
         }
@@ -132,12 +132,60 @@ angular.module("proton.Routes", [
     .state("secured.settings", {
       url: "/settings",
       views: {
-        "content@secured": { 
+        "content@secured": {
           templateUrl: "templates/views/settings.tpl.html",
           controller: "SettingsController"
         }
       }
+    })
+
+    // -------------------------------------------
+    //  ADMIN ROUTES
+    // -------------------------------------------
+
+    .state("admin", {
+      url: "/admin",
+      views: {
+        "main@": {
+          controller: "AdminController",
+          templateUrl: "templates/layout/admin.tpl.html"
+        },
+        "content@admin": {
+          templateUrl: "templates/views/admin.tpl.html"
+        }
+      }
+    })
+
+    .state("admin.invite", {
+      url: "/invite",
+      views: {
+        "content@admin": {
+          templateUrl: "templates/views/admin.invite.tpl.html",
+          controller: "AdminController"
+        }
+      }
+    })
+
+    .state("admin.monitor", {
+      url: "/monitor",
+      views: {
+        "content@admin": {
+          templateUrl: "templates/views/admin.monitor.tpl.html",
+          controller: "AdminController"
+        }
+      }
+    })
+
+    .state("admin.logs", {
+      url: "/logs",
+      views: {
+        "content@admin": {
+          templateUrl: "templates/views/admin.logs.tpl.html",
+          controller: "AdminController"
+        }
+      }
     });
+
 
   _.each(MAILBOXES, function(box) {
     $stateProvider.state("secured." + box, messageListOptions("/" + box + "?page", {

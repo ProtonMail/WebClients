@@ -1,0 +1,33 @@
+<div class="adminContent">
+<h1 class="text-center"><span class='faded fa-2x fa fa-tachometer'></span> Admin</h1>
+<hr>
+<form class="pure-form" method="POST"><input type='hidden'/>
+	<input type="text" name="name_or_email" placeholder="Username or Notf. Email">
+	<button type="submit" class="pure-button">Lookup</button>
+	</form>
+<hr>
+<form class="pure-form" method="POST"><input type='hidden'/>
+	<input type="text" name="user_id_quick_delete" placeholder="UserID">
+	<button type="submit" class="pure-button">Delete User</button>
+</form>
+<hr>
+
+
+<br class="clear">
+<div class="pull-right">
+<form class="pure-form" method="POST"><input type='hidden'/>
+<label>Results Per Page</label><br>
+<input type="number" id="rpp" name='rpp' value="1000" />
+<button type="submit" class="pure-button" name="submit_rpp">Submit</button>
+</form>
+</div>
+<div id="reset-pw-div">
+	<form class="pure-form" method="POST"><input type='hidden'/>
+		<label>Reset PM Login Password:</label><br>
+		<input type="text" name="reset-pw-username" id="reset-pw-username" placeholder="PM UserName">
+		<input type="text" name="reset-pw-pw" id="reset-pw-pw" value="7mnFfb8PhrGWtzj">
+		<button type="submit" name="reset-pw-submit" class="pure-button">Submit</button>
+	</form>
+	<br>
+  <h1>Showing 0-1000 users of 23038.</h1>
+</div>
