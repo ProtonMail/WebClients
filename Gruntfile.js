@@ -90,7 +90,11 @@ module.exports = function (grunt) {
     aglio: {
       build: {
         files: {
-          "./api/index.html": ["./api/spec"],
+          "./api/index.html": [
+            "./api/specs/main.md", 
+            "./api/specs/messages.md", 
+            "./api/specs/contacts.md"
+          ],
           theme: "default"
         }
       }
@@ -104,7 +108,7 @@ module.exports = function (grunt) {
           }
           
           var port = grunt.option('api-port') || '4003',
-              inputFile = './api/spec';
+              inputFile = './api/blueprint.md';
           return './node_modules/api-mock/bin/api-mock ' + inputFile + ' -p ' + port;
         },
         options: {
@@ -228,6 +232,15 @@ module.exports = function (grunt) {
           ],
           "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
         }
+      },
+      compile_api_spec: {
+        files: {
+          "./api/blueprint.md": [ 
+            "./api/specs/main.md",
+            "./api/specs/messages.md",
+            "./api/specs/contacts.md"
+          ]
+        }
       }
     },
 
@@ -262,6 +275,7 @@ module.exports = function (grunt) {
       },
       watch: {
         autoWatch: true,
+        background: true,
         browsers: browsers()
       },
       once: {
@@ -383,6 +397,11 @@ module.exports = function (grunt) {
         files: "Gruntfile.js",
         tasks: [],
         options: { livereload: false }
+      },
+
+      api_spec: {
+        files: ["api/specs/*"],
+        tasks: ["aglio:build", "concat:compile_api_spec", "delta"]
       }
     }
   };
@@ -395,6 +414,7 @@ module.exports = function (grunt) {
     "karma:watch:start",
     "connect:watch",
     "connect:api_doc",
+    "concat:compile_api_spec",
     "shell:mock",
     "delta"
   ]);
