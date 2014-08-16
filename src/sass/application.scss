@@ -6,6 +6,49 @@ $fa-font-path: "fonts";
 @import "font-awesome";
 @import "partials/header";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+.secure #body {
+  min-height: 100%;
+}
+.secure #main {
+
+}
+body,
+#main {
+  margin-bottom: $footer-height;
+}
+body footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: ($footer-height);
+  line-height: ($footer-height);
+  font-size: ($font-size-base*.85);
+  color: $gray-light;
+  background: #ccc;
+  a {
+    color: $gray;
+    margin: 0 0 0 1rem;
+    display: inline-block;
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+}
+
+.secure {
+  .navbar-inverse,
+  footer {
+    margin-left: $sidebar-width;
+  }
+  footer {
+    @include calc(width, '100% - #{$sidebar-width}');
+  }
+}
+
 .btn-default {
   @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
   &:hover {
@@ -38,7 +81,8 @@ $fa-font-path: "fonts";
 }
 
 #sidebar .btn,
-.navbar-inverse a {
+.navbar-inverse a, 
+footer a {
   &:hover {
     @include transition (color 0.1s);      
   }  
@@ -53,6 +97,7 @@ body .alert-primary a { color: darken($btn-primary-bg, 25%);}
 body .alert-success a { color: darken($btn-success-bg, 25%);}
 body .alert-info a { color: darken($btn-info-bg, 25%);}
 body .alert-danger a { color: darken($btn-danger-bg, 25%);}
+.alert a { font-weight: 700 }
 
 @media (min-width: $screen-sm) {
   .panel {
@@ -61,12 +106,24 @@ body .alert-danger a { color: darken($btn-danger-bg, 25%);}
   }
 }
 
+.navbar-brand {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
 a, .btn, button, input[type="button"], input[type="submit"] {
   outline: none !important;
 }
 
 .navbar {
   border: 0;
+  em {
+    font-style: normal;
+  }
+}
+
+.secure .navbar-inverse {
+  margin-bottom: 0
 }
 
 body {

@@ -9,7 +9,7 @@ angular.module("proton.Models", [
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).Contacts;
+        return JSON.parse(data).data;
       }
     },
     delete: {
@@ -21,12 +21,12 @@ angular.module("proton.Models", [
 })
 
 .factory("Message", function($resource, authentication) {
-  return $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
+  var Message = $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
     query: {
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).Messages;
+        return JSON.parse(data).data;
       }
     },
     delete: {
@@ -35,16 +35,22 @@ angular.module("proton.Models", [
       params: {"MessageID": "@MessageID"}
     }
   });
+
+  Message.prototype.readableTime = function() {
+    return moment.unix(this.Time).format('LL');
+  };
+
+  return Message;
 })
 
 .factory("User", function($resource, $injector) {
   var authentication = $injector.get("authentication");
-  return $resource(authentication.baseURL + "/users", authentication.params(), {
+  return $resource(authentication.baseURL + "/user", authentication.params(), {
     get: {
       method: 'get',
       isArray: false,
       transformResponse: function (data) {
-        return JSON.parse(data);
+        return JSON.parse(data).data;
       }
     }
   });

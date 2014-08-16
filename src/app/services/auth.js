@@ -158,18 +158,19 @@ angular.module("proton.Auth", [
           if (!creds.username || !creds.password) {
             q.reject({message: "Username and password are required to login"});
           } else {
-            delete $http.defaults.headers.common.api_version;
-            $http.post(baseURL + "/auth/auth",
+            delete $http.defaults.headers.common.Accept;
+
+            $http.post(baseURL + "/auth",
               _.extend(_.pick(creds, "username", "password"), {
                 client_id: "this_is_test_app_id",
                 response_type: "password"
               })
             ).then(function(resp) {
               var data = resp.data;
-              if (!data.access_token) {
-                q.reject({message: data.message});
+              if ("error" in data) {
+                q.reject({message: data.error.message});
               } else {
-                auth.saveAuthData(_.pick(data, "access_token", "uid", "expires_in"));
+                auth.saveAuthData(_.pick(data.data, "access_token", "uid", "expires_in"));
                 auth.fetchUserInfo();
 
                 $rootScope.isLoggedIn = true;
@@ -196,8 +197,9 @@ angular.module("proton.Auth", [
       };
 
       auth.fetchUserInfo = function() {
-        $http.defaults.headers.common.api_version = "1";
-        $http.defaults.headers.common.uid = auth.data.uid;
+        $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
+        $http.defaults.headers.common.Authorization = auth.data.uid;
+
         api.user = $injector.get("User").get();
       };
       

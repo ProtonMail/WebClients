@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="proton">
+<html lang="en" ng-app="proton" ng-class="{ auth: !isLoggedIn || isLocked, secure: isLoggedIn && !isLocked }">
   <head>
     <meta charset="utf-8">
     <title>ProtonMail</title>
@@ -9,7 +9,7 @@
   </head>
 
   <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn }">
-    <div ui-view="main" autoscroll="false"></div>
+    <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>
     <script type="text/javascript">

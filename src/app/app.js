@@ -21,9 +21,7 @@ angular.module("proton", [
 
 .run(function($document, $rootScope, $filter) {
   $rootScope.reportBug = function() {
-    alert("Reported!");
+    // Do something to report bug, maybe bring up a modal dialog.
   };
-  $rootScope.$watch("pageName", function (name) {
-    $document.find("title").html(name ? $filter("capitalize")(name) + " &middot; ProtonMail" : "ProtonMail");
-  });
+  $document.find("title").html("{{ pageName | capitalize }} &middot; ProtonMail");
 });
