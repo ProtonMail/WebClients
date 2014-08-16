@@ -227,7 +227,7 @@ module.exports = function (grunt) {
         configFile: "<%= build_dir %>/conf.unit.js",
       },
       watch: {
-        background: true,
+        autoWatch: true,
         browsers: browsers()
       },
       once: {
@@ -358,6 +358,7 @@ module.exports = function (grunt) {
   grunt.renameTask("watch", "delta");
   grunt.registerTask("watch", [
     "build",
+    "karma:watch:start",
     "connect:watch",
     "delta"
   ]);
