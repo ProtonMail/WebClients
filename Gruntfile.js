@@ -100,20 +100,12 @@ module.exports = function (grunt) {
       }
     },
 
-    shell: {
-      mock: {
-        command: function () {
-          if (apiUrl() !== API_TARGETS.local) {
-            return 'echo "Not starting a API mock server"';
-          }
-          
-          var port = grunt.option('api-port') || '4003',
-              inputFile = './api/blueprint.md';
-          return './node_modules/api-mock/bin/api-mock ' + inputFile + ' -p ' + port;
-        },
+    forever: {
+      mock_server: {
         options: {
-          stdout: true,
-          stderr: true
+          command: './node_modules/api-mock/bin/api-mock ./api/blueprint.md'+ ' -p ' + (grunt.option('api-port') || '4003'),
+          index: '',
+          logDir: 'logs'
         }
       }
     },
@@ -401,7 +393,12 @@ module.exports = function (grunt) {
 
       api_spec: {
         files: ["api/specs/*"],
-        tasks: ["aglio:build", "concat:compile_api_spec", "delta"]
+        tasks: [
+          "aglio:build", 
+          "concat:compile_api_spec", 
+          "forever:mock_server:restart", 
+          "delta"
+        ]
       }
     }
   };
@@ -415,7 +412,8 @@ module.exports = function (grunt) {
     "connect:watch",
     "connect:api_doc",
     "concat:compile_api_spec",
-    "shell:mock",
+    "forever:mock_server:start",
+    "delta",
     "delta"
   ]);
 
