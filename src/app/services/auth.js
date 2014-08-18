@@ -176,12 +176,11 @@ angular.module("proton.Auth", [
                 q.reject({message: data.error.message});
               } else {
                 auth.saveAuthData(_.pick(data.data, "access_token", "uid", "expires_in"));
-                auth.fetchUserInfo();
-
-                $rootScope.isLoggedIn = true;
-                $rootScope.isLocked = true;
-
-                q.resolve(200);
+                auth.fetchUserInfo().then(function() {
+                  $rootScope.isLoggedIn = true;
+                  $rootScope.isLocked = true;
+                  q.resolve(200);
+                });
               }
             },
             function (error) {
@@ -206,6 +205,7 @@ angular.module("proton.Auth", [
         $http.defaults.headers.common.Authorization = auth.data.uid;
 
         api.user = $injector.get("User").get();
+        return api.user.$promise;
       };
 
       api.baseURL = baseURL;

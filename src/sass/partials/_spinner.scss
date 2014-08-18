@@ -1,0 +1,47 @@
+.spinner {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  margin-left: -35px;
+  width: 70px;
+  text-align: center;
+  opacity: 1;
+
+  @include transition(opacity 0.16s ease-in);
+
+  &.ng-hide {
+    display: block!important;
+    opacity: 0;
+  }
+  &.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+  }
+
+  > div {
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+
+    border-radius: 100%;
+    display: inline-block;
+
+    @include animation(bouncedelay 1.4s infinite ease-in-out);
+    @include animation-fill-mode(both);
+  }
+
+  .bounce1 {
+    @include animation-delay(-0.32s);
+  }
+
+  .bounce2 {
+    @include animation-delay(-0.16s);
+  }
+}
+
+@include keyframes(bouncedelay) {
+  0%, 80%, 100% { 
+    @include transform(scale(0.0));
+  } 40% { 
+    @include transform(scale(1.0));
+  }
+}
