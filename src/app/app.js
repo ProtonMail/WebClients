@@ -23,5 +23,19 @@ angular.module("proton", [
   $rootScope.reportBug = function() {
     // Do something to report bug, maybe bring up a modal dialog.
   };
-  $document.find("title").html("{{ pageName | capitalize }} &middot; ProtonMail");
+
+  var pageTitleTemplate = _.template(
+    "<% if (pageName) { %>" +
+      "${ _.string.capitalize(pageName) }" +
+      "<% if (counter) { %>" +
+        " (&thinsp;${counter}&thinsp;)" +
+      "<% } %> " +
+      "&middot; " +
+    "<% } %>" +
+    "ProtonMail"
+  );
+
+  $rootScope.$watchGroup(["pageName", "counter"], function (values) {
+    $document.find("title").html(pageTitleTemplate({pageName: values[0], counter: values[1]}));
+  });
 });
