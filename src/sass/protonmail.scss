@@ -1,7 +1,7 @@
 .fa {font-size: 14px;}
 
 $font-size-base:              13px;
-$body-bg:                     #fff;
+$body-bg:                     #fff; 
 $panel-bg:                    darken($body-bg, 2%);
 $font-size-h1:                floor(($font-size-base * 2));
 $navbar-inverse-link-color:   darken(white, 20%);
@@ -10,6 +10,7 @@ $navbar-inverse-bg:           darken(white, 66.5%);
 $brand-primary:               #08c;
 $light-purple:                #669;
 $dark-purple:                 #336;
+
 $navbar-height:               50px;
 $navbar-margin-bottom:        $navbar-height;
 $footer-height:               ($navbar-height*.75);
@@ -23,6 +24,8 @@ $border-radius-small:       ($border-radius-base/1.25);
 $navbar-inverse-color:      lighten($navbar-inverse-bg, 35%);
 $navbar-inverse-link-color: $navbar-inverse-color;
 
-$sidebar-width: 20rem; // 200px
-$sidebar-button-lighten: 5%;
-$sidebar-bg:  #333;
+$sidebar-width:             20rem;
+$sidebar-button-lighten:    5%;
+$sidebar-bg:                #333;
+
+$table-cell-padding:        6px 8px;
