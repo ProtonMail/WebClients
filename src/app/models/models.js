@@ -40,11 +40,23 @@ angular.module("proton.Models", [
       transformResponse: function (data) {
         return JSON.parse(data).data;
       }
+    },
+    patch: {
+      method: "patch",
+      isArray: false
     }
   });
 
   Message.prototype.readableTime = function() {
     return moment.unix(this.Time).format('LL');
+  };
+  Message.prototype.toggleStar = function() {
+    this.Tag = this.Tag === "starred" ? "" : "starred";
+    Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
+  };
+  Message.prototype.moveTo = function(location) {
+    this.Location = location;
+    Message.patch({MessageID: this.MessageID}, {Location: this.Location});
   };
 
   return Message;
