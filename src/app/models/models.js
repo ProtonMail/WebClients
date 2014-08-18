@@ -58,6 +58,9 @@ angular.module("proton.Models", [
     moveTo: function(location) {
       this.Location = location;
       return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
+    },
+    delete: function() {
+      return this.$delete();
     }
   });
 
