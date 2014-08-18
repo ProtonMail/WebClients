@@ -14,8 +14,18 @@ angular.module("proton.Models", [
     },
     delete: {
       method: "delete",
+      isArray: false
+    },
+    get: {
+      method: "get",
       isArray: false,
-      params: {"ContactID": "@ContactID"}
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
+    },
+    patch: {
+      method: "patch",
+      isArray: false
     }
   });
 })
@@ -31,8 +41,7 @@ angular.module("proton.Models", [
     },
     delete: {
       method: "delete",
-      isArray: false,
-      params: {"MessageID": "@MessageID"}
+      isArray: false
     },
     get: {
       method: "get",
