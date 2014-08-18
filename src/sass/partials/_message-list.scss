@@ -1,0 +1,44 @@
+table.message-list {
+  tr {
+    @include transition(background-color 0.05s ease-in 0);
+
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+    &.unread {
+      font-weight: bold;
+    }
+
+    td.actions {
+      cursor: default;
+      width: 72px;
+      padding-left: 16px;
+
+      span { 
+        width: 1.5rem;
+        text-align: center;
+      }
+
+      .fa-unlock-alt {      color: #ccc;  }
+      .fa-star-o {          color: rgba(0, 0, 0, 0.5); }
+      .fa-star {            color: orange; }
+      a:hover .fa-star-o {  color: #000; }
+    }
+
+    td.from,
+    td.to {
+      width: 5rem;
+    }
+
+    td.size,
+    td.when {
+      width: 4rem;
+    }
+  }
+
+  border-bottom: 1px solid $table-border-color;
+}
