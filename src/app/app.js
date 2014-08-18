@@ -11,6 +11,8 @@ angular.module("proton", [
   "proton.Crypto",
   "proton.Models",
 
+  "proton.networkActivity",
+
   "proton.tooltip",
 
   "proton.filters.strings",
@@ -21,7 +23,7 @@ angular.module("proton", [
   "proton.Controllers.Settings"
 ])
 
-.run(function($document, $rootScope) {
+.run(function($document, $rootScope, networkActivityTracker) {
   $rootScope.reportBug = function() {
     // Do something to report bug, maybe bring up a modal dialog.
   };
@@ -40,4 +42,5 @@ angular.module("proton", [
   $rootScope.$watchGroup(["pageName", "unreadCount"], function (values) {
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
+  $rootScope.networkActivity = networkActivityTracker;
 });

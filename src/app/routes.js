@@ -25,14 +25,16 @@ angular.module("proton.Routes", [
       },
 
       resolve: {
-        messages: function (Message, mailboxIdentifiers, $state, $stateParams, authentication) {
+        messages: function ($state, $stateParams, $rootScope, authentication, Message, mailboxIdentifiers, networkActivityTracker) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
-            return Message.query({
-              "Location": mailboxIdentifiers[mailbox],
-              "Tag": (mailbox === 'starred') ? mailbox : undefined,
-              "Page": $stateParams.page
-            }).$promise;
+            return networkActivityTracker.track(
+              Message.query({
+                "Location": mailboxIdentifiers[mailbox],
+                "Tag": (mailbox === 'starred') ? mailbox : undefined,
+                "Page": $stateParams.page
+              }).$promise
+            );
           } else {
             return [];
           }
@@ -117,8 +119,11 @@ angular.module("proton.Routes", [
         }
       },
       resolve: {
-        message: function (Message, $stateParams) {
-          return Message.get(_.pick($stateParams, 'MessageID')).$promise;
+        message: function ($rootScope, $stateParams, Message, networkActivityTracker) {
+          return networkActivityTracker.track(
+            Message.get(_.pick($stateParams, 'MessageID'))
+            .$promise
+          );
         }
       }
     })

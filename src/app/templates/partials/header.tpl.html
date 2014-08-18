@@ -18,6 +18,13 @@
         <button type="submit" class="pure-button pure-button-default"><span class="fa fa-search"></span></button>
       </form>
       <p class="navbar-text" ng-if="isLoggedIn">{{ user.UserName }}<em>@protonmail.ch</em></p>
+
+      <div class="spinner" ng-show="networkActivity.loading()">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li id="nav_admin" ng-if="isLoggedIn">
           <a ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>

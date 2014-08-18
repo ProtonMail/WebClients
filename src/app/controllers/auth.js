@@ -1,6 +1,6 @@
 angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
-.controller("LoginController", function($rootScope, $state, $scope, authentication) {
+.controller("LoginController", function($rootScope, $state, $scope, authentication, networkActivityTracker) {
   if ($state.is("login") && authentication.isLoggedIn()) {
     $state.go("login.unlock");
     return;
@@ -23,40 +23,40 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
   $scope.login = function() {
     clearErrors();
-    $scope.isLoading = true;
 
-    authentication.loginWithCredentials({
-      username: $("#username").val(),
-      password: $("#password").val()
-    }).then(
-      function() {
-        $state.go("login.unlock");
-        $scope.user = authentication.user;
-        $scope.isLoading = false;
-      },
-      function(err) {
-        $scope.error = err;
-        $scope.isLoading = false;
-      }
+    networkActivityTracker.track(
+      authentication
+        .loginWithCredentials({
+          username: $("#username").val(),
+          password: $("#password").val()
+        })
+        .then(
+          function() {
+            $state.go("login.unlock");
+            $scope.user = authentication.user;
+          },
+          function(err) {
+            $scope.error = err;
+          }
+        )
     );
   };
 
   $scope.decrypt = function() {
     clearErrors();
-    $scope.isLoading = true;
 
-    authentication
-      .unlockWithPassword($("#mailboxPassword").val())
-      .then(
-        function() {
-          $state.go("secured.inbox");
-          $scope.isLoading = false;
-        },
-        function(err) {
-          $scope.error = err;
-          $scope.isLoading = false;
-        }
-      );
+    networkActivityTracker.track(
+      authentication
+        .unlockWithPassword($("#mailboxPassword").val())
+        .then(
+          function() {
+            $state.go("secured.inbox");
+          },
+          function(err) {
+            $scope.error = err;
+          }
+        )
+    );
   };
 
   $scope.keypress = function (event) {

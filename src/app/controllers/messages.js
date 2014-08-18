@@ -6,7 +6,7 @@ angular.module("proton.Controllers.Messages", [
   $rootScope.pageName = $state.current.data.mailbox;
 
   $scope.messages = messages;
-  $scope.selectMessage = function (event, message) {
+  $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
       $state.go("secured.message", { MessageID: message.MessageID });
     }

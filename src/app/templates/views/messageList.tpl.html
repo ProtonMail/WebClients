@@ -1,8 +1,12 @@
 <table class="table message-list">
   <tbody id="message">
-    <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: !message.IsRead }">
+    <tr ng-repeat="message in messages" 
+        ng-click="navigateToMessage($event, message)" 
+        ng-class="{ unread: !message.IsRead, selected: selected }"
+        >
+      
       <td class="actions">
-        <input type="checkbox" />
+        <input type="checkbox" ng-model="selected" />
         <span 
             class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}" 
             pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
@@ -13,7 +17,7 @@
       </td>
 
       <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-        <span ng-switch-when="true">{{ message.RecipientList }}</span>
+        <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
         <span ng-switch-default>{{ message.Sender }}</span>
       </td>
 
@@ -22,7 +26,7 @@
       </td>
 
       <td class="size">
-        {{ message.TotalSize }}
+        {{ message.TotalSize | humanSize }}
       </td>
 
       <td class="when">
