@@ -3,15 +3,16 @@ angular.module("proton.Routes", [
   "proton.Auth"
 ])
 
-.constant("MAILBOXES", [
-  "drafts",
-  "sent",
-  "trash",
-  "starred",
-  "spam"
-])
+.constant("mailboxIdentifiers", {
+  "inbox": 0,
+  "drafts": 1,
+  "sent": 2,
+  "trash": 3,
+  "spam": 4,
+  "starred": undefined
+})
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider, MAILBOXES) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
 
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
@@ -20,6 +21,21 @@ angular.module("proton.Routes", [
         "content@secured": {
           controller: "MessageListController",
           templateUrl: "templates/views/messageList.tpl.html"
+        }
+      },
+
+      resolve: {
+        messages: function (Message, mailboxIdentifiers, $state, $stateParams, authentication) {
+          var mailbox = this.data.mailbox;
+          if (authentication.isSecured()) {
+            return Message.query({
+              "Location": mailboxIdentifiers[mailbox],
+              "Tag": (mailbox === 'starred') ? mailbox : undefined,
+              "Page": $stateParams.page
+            }).$promise;
+          } else {
+            return [];
+          }
         }
       }
     });
@@ -81,9 +97,7 @@ angular.module("proton.Routes", [
       url: "/secured",
 
       onEnter: function(authentication, $state) {
-
         // This will redirect to a login step if necessary
-
         authentication.redirectIfNecessary();
       }
     })
@@ -186,8 +200,11 @@ angular.module("proton.Routes", [
       }
     });
 
+  _.each(mailboxIdentifiers, function(id_, box) {
+    if (box === 'inbox') {
+      return;
+    }
 
-  _.each(MAILBOXES, function(box) {
     $stateProvider.state("secured." + box, messageListOptions("/" + box + "?page", {
       data: { mailbox: box }
     }));

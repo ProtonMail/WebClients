@@ -1,11 +1,16 @@
 angular.module("proton.Controllers.Messages", [
-  "ngRoute",
   "proton.Routes"
 ])
 
-.controller("MessageListController", function($state, $stateParams, $scope, $rootScope, Message) {
+.controller("MessageListController", function($state, $stateParams, $scope, $rootScope, messages) {
   $rootScope.pageName = $state.current.data.mailbox;
-  $scope.messages = Message.query();
+
+  $scope.messages = messages;
+  $scope.selectMessage = function (event, message) {
+    if (!$(event.target).closest("td").hasClass("actions")) {
+      $state.go("secured.message", { MessageID: message.MessageID });
+    }
+  };
 })
 
 .controller("ComposeMessageController", function($rootScope, $scope, Message) {
