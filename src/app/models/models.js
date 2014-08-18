@@ -14,8 +14,18 @@ angular.module("proton.Models", [
     },
     delete: {
       method: "delete",
+      isArray: false
+    },
+    get: {
+      method: "get",
       isArray: false,
-      params: {"ContactID": "@ContactID"}
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
+    },
+    patch: {
+      method: "patch",
+      isArray: false
     }
   });
 })
@@ -31,14 +41,37 @@ angular.module("proton.Models", [
     },
     delete: {
       method: "delete",
+      isArray: false
+    },
+    get: {
+      method: "get",
       isArray: false,
-      params: {"MessageID": "@MessageID"}
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
+    },
+    patch: {
+      method: "patch",
+      isArray: false
     }
   });
 
-  Message.prototype.readableTime = function() {
-    return moment.unix(this.Time).format('LL');
-  };
+  _.extend(Message.prototype, {
+    readableTime: function() {
+      return moment.unix(this.Time).format('LL');
+    },
+    toggleStar: function() {
+      this.Tag = this.Tag === "starred" ? "" : "starred";
+      return Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
+    },
+    moveTo: function(location) {
+      this.Location = location;
+      return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
+    },
+    delete: function() {
+      return this.$delete();
+    }
+  });
 
   return Message;
 })

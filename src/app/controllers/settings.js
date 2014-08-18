@@ -1,5 +1,4 @@
 angular.module("proton.Controllers.Settings", [
-  "ngRoute",
   "proton.Routes"
 ])
 

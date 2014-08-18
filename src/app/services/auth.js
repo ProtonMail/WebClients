@@ -40,11 +40,6 @@ angular.module("proton.Auth", [
     // CONFIG-TIME API FUNCTIONS
 
     this.detectAuthenticationState = function() {
-      auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
-      if (auth.mailboxPassword) {
-        cryptoProvider.setMailboxPassword(auth.mailboxPassword);
-      }
-
       var dt = window.localStorage[OAUTH_KEY+":exp"];
       if (dt) {
         dt = moment(dt);
@@ -54,6 +49,11 @@ angular.module("proton.Auth", [
             exp: dt,
             access_token: window.localStorage[OAUTH_KEY+":token"]
           };
+
+          auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
+          if (auth.mailboxPassword) {
+            cryptoProvider.setMailboxPassword(auth.mailboxPassword);
+          }
         } else {
           _.each(["uid", "exp", "token"], function(key) {
             delete window.localStorage[OAUTH_KEY+":"+key];
@@ -97,12 +97,17 @@ angular.module("proton.Auth", [
             return "login";
           }
         },
+
         // Redirect to a new authentication state, if required
         redirectIfNecessary: function() {
           var newState = api.state();
           if (newState) {
             $state.go(newState);
           }
+        },
+
+        isSecured: function() {
+          return api.isLoggedIn() && !api.isLocked();
         },
 
         // Removes all connection data
