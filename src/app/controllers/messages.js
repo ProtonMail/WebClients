@@ -4,7 +4,11 @@ angular.module("proton.Controllers.Messages", [
 
 .controller("MessageListController", function($state, $stateParams, $scope, $rootScope, messages) {
   $rootScope.pageName = $state.current.data.mailbox;
+
   $scope.messages = messages;
+  $scope.selectMessage = function (event, message) {
+    $state.go("secured.message", { MessageID: message.MessageID });
+  };
 })
 
 .controller("ComposeMessageController", function($rootScope, $scope, Message) {
