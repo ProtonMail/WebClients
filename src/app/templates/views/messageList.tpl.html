@@ -2,7 +2,7 @@
   <tbody id="message">
     <tr ng-repeat="message in messages" 
         ng-click="navigateToMessage($event, message)" 
-        ng-class="{ unread: !message.IsRead, selected: selected, warning: message.Tag == 'starred' }"
+        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }"
         >
       <td class="actions">
         <input type="checkbox" ng-model="selected" />

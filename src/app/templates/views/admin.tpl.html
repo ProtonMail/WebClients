@@ -1,33 +1,63 @@
 <div class="adminContent">
-<h1 class="text-center"><span class='faded fa-2x fa fa-tachometer'></span> Admin</h1>
-<hr>
-<form class="pure-form" method="POST"><input type='hidden'/>
-	<input type="text" name="name_or_email" placeholder="Username or Notf. Email">
-	<button type="submit" class="pure-button">Lookup</button>
-	</form>
-<hr>
-<form class="pure-form" method="POST"><input type='hidden'/>
-	<input type="text" name="user_id_quick_delete" placeholder="UserID">
-	<button type="submit" class="pure-button">Delete User</button>
-</form>
-<hr>
+	<h1 class="text-center"><span class='faded fa-2x fa fa-tachometer'></span> Admin</h1>
+	<hr>
+
+	<div class="row">
+		<div class="col-md-3">
+			<form role="form" method="POST">
+				<input type='hidden'/>
+				<label for="userlookup">User Lookup</label>
+				<div class="input-group">
+				  <input type="text" name="name_or_email" id="userlookup" placeholder="Username or Notf. Email" class="form-control">
+				  <span class="input-group-btn">
+				    <button class="btn btn-default" type="submit"><span class="fa fa-search"></span> Lookup</button>
+				  </span>
+				</div><!-- /input-group -->
+			</form>
+		</div>
+		<div class="col-md-2">
+			<form role="form" method="POST">
+				<input type='hidden'/>
+				<label for="user_id_quick_delete">Delete User</label>
+				<div class="input-group">
+				  <input type="text" class="form-control" name="user_id_quick_delete" placeholder="UserID">
+				  <span class="input-group-btn">
+				    <button class="btn btn-default" type="submit"><span class="fa fa-trash-o"></span> Delete</button>
+				  </span>
+				</div><!-- /input-group -->
+			</form>
+		</div>
+		<div class="col-md-3">
+			<form role="form" method="POST">
+				<input type='hidden'/>
+				<label for="rpp">Results/Page</label>
+				<div class="input-group">
+				  <input type="number" id="rpp" name='rpp' value="1000" class="form-control">
+				  <span class="input-group-btn">
+				    <button class="btn btn-default" type="submit" name="submit_rpp"><span class="fa fa-refresh"></span> Update</button>
+				  </span>
+				</div><!-- /input-group -->
+			</form>
+		</div>
+		<div id="reset-pw-div" class="col-md-4">
+			<form role="form" method="POST"> 
+				<input type='hidden'/>
+				<label for="pmreset">Reset Login Pw:</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="reset-pw-username" id="pmreset" placeholder="PM UserName">
+				  <span class="input-group-btn">
+				    <button class="btn btn-default" type="submit" name="reset-pw-submit"><span class="fa fa-retweet"></span> Reset</button>
+				    <button class="btn btn-default" type="submit" name="reset-pw-submit" ng-init="setPassword=false" ng-click="setPassword=!setPassword">Set Pw</button>
+				  </span>
+				</div><!-- /input-group -->
+				<div class="well" ng-show="setPassword">
+					<input type="text" class="form-control" name="reset-pw-pw" id="reset-pw-pw" value="7mnFfb8PhrGWtzj">
+				</div>
+			</form>
+		</div>
+	</div><!--/.row-->
 
 
-<br class="clear">
-<div class="pull-right">
-<form class="pure-form" method="POST"><input type='hidden'/>
-<label>Results Per Page</label><br>
-<input type="number" id="rpp" name='rpp' value="1000" />
-<button type="submit" class="pure-button" name="submit_rpp">Submit</button>
-</form>
-</div>
-<div id="reset-pw-div">
-	<form class="pure-form" method="POST"><input type='hidden'/>
-		<label>Reset PM Login Password:</label><br>
-		<input type="text" name="reset-pw-username" id="reset-pw-username" placeholder="PM UserName">
-		<input type="text" name="reset-pw-pw" id="reset-pw-pw" value="7mnFfb8PhrGWtzj">
-		<button type="submit" name="reset-pw-submit" class="pure-button">Submit</button>
-	</form>
 	<br>
-  <h1>Showing 0-1000 users of 23038.</h1>
+  <h1>Showing 0-1000 users of 23038.</h1>	
 </div>

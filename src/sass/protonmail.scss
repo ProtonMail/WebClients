@@ -1,7 +1,7 @@
 .fa {font-size: 14px;}
 
 $font-size-base:              13px;
-$body-bg:                     #fff;
+$body-bg:                     #fff; 
 $panel-bg:                    darken($body-bg, 2%);
 $font-size-h1:                floor(($font-size-base * 2));
 $navbar-inverse-link-color:   darken(white, 20%);
@@ -10,6 +10,7 @@ $navbar-inverse-bg:           darken(white, 66.5%);
 $brand-primary:               #08c;
 $light-purple:                #669;
 $dark-purple:                 #336;
+
 $navbar-height:               50px;
 $navbar-margin-bottom:        $navbar-height;
 $footer-height:               ($navbar-height*.75);

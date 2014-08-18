@@ -13,7 +13,20 @@ table.message-list {
     
     &.unread {
       font-weight: bold;
+      color: #000
     }
+
+    &.starred {
+      background-color: #ffc;
+      &:hover {
+        td {
+          background: transparent;
+        }
+        background-color: darken(#ffc, 5%);
+      }
+    }
+
+    color: $gray-light;
 
     td.actions {
       cursor: default;
@@ -48,7 +61,6 @@ table.message-list {
       width: 4rem;
     }
 
-    td.size { color: #999; }
   }
 
   border-bottom: 1px solid $table-border-color;
