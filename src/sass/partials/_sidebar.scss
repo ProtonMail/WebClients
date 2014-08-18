@@ -21,6 +21,24 @@
     clear: both;
   }
 
+  .label {
+    background-color: white;
+    color: #222;
+    float: right;
+    padding: 0.3em 0.6em 0.4em;
+    opacity: 0;
+    font-size: 84%;
+    font-weight: normal;
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+
+    @include transition(opacity 0.1s ease-in 0.5s);
+
+    &.active {
+      opacity: 0.7;
+    }
+  }
+
   #compose_button a {
     @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
     text-shadow: none;
