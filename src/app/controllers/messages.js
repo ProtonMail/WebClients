@@ -7,7 +7,9 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.messages = messages;
   $scope.selectMessage = function (event, message) {
-    $state.go("secured.message", { MessageID: message.MessageID });
+    if (!$(event.target).closest("td").hasClass("actions")) {
+      $state.go("secured.message", { MessageID: message.MessageID });
+    }
   };
 })
 
