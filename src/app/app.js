@@ -21,7 +21,7 @@ angular.module("proton", [
   "proton.Controllers.Settings"
 ])
 
-.run(function($document, $rootScope, $filter) {
+.run(function($document, $rootScope) {
   $rootScope.reportBug = function() {
     // Do something to report bug, maybe bring up a modal dialog.
   };
@@ -29,15 +29,15 @@ angular.module("proton", [
   var pageTitleTemplate = _.template(
     "<% if (pageName) { %>" +
       "${ _.string.capitalize(pageName) }" +
-      "<% if (counter) { %>" +
-        " (&thinsp;${counter}&thinsp;)" +
+      "<% if (unreadCount) { %>" +
+        " (&thinsp;${unreadCount}&thinsp;)" +
       "<% } %> " +
       "&middot; " +
     "<% } %>" +
     "ProtonMail"
   );
 
-  $rootScope.$watchGroup(["pageName", "counter"], function (values) {
-    $document.find("title").html(pageTitleTemplate({pageName: values[0], counter: values[1]}));
+  $rootScope.$watchGroup(["pageName", "unreadCount"], function (values) {
+    $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
 });
