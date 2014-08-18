@@ -11,6 +11,8 @@ angular.module("proton", [
   "proton.Crypto",
   "proton.Models",
 
+  "proton.tooltip",
+
   "proton.filters.strings",
 
   "proton.Controllers.Auth",

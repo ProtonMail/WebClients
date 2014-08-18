@@ -2,8 +2,11 @@
   <tbody id="message">
     <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: message.IsRead }">
       <td class="actions">
-        <input type="checkbox">
-        <span class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}"></span>
+        <input type="checkbox" />
+        <span 
+            class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}" 
+            pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
+
         <a href="#" ng-click="message.toggleStar()">
           <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
         </a>

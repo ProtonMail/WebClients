@@ -42,7 +42,8 @@ module.exports = {
     bootstrap_components: [
       "affix",
       "alert",
-      "collapse"
+      "collapse",
+      "tooltip"
     ],
 
     required_js: [],
