@@ -33,6 +33,13 @@ angular.module("proton.Models", [
       method: "delete",
       isArray: false,
       params: {"MessageID": "@MessageID"}
+    },
+    get: {
+      method: "get",
+      isArray: false,
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
     }
   });
 
