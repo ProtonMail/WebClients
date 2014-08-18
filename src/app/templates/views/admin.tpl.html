@@ -20,9 +20,9 @@
 				<input type='hidden'/>
 				<label for="user_id_quick_delete">Delete User</label>
 				<div class="input-group">
-				  <input type="text" class="form-control" name="user_id_quick_delete" placeholder="UserID">
+				  <input type="number" class="form-control" name="user_id_quick_delete" placeholder="UserID">
 				  <span class="input-group-btn">
-				    <button class="btn btn-default" type="submit"><span class="fa fa-trash-o"></span> Delete</button>
+				    <button class="btn btn-danger" type="submit"><span class="fa fa-trash-o"></span> Delete</button>
 				  </span>
 				</div><!-- /input-group -->
 			</form>
@@ -47,10 +47,10 @@
 					<input type="text" class="form-control" name="reset-pw-username" id="pmreset" placeholder="PM UserName">
 				  <span class="input-group-btn">
 				    <button class="btn btn-default" type="submit" name="reset-pw-submit"><span class="fa fa-retweet"></span> Reset</button>
-				    <button class="btn btn-default" type="submit" name="reset-pw-submit" ng-init="setPassword=false" ng-click="setPassword=!setPassword">Set Pw</button>
+				    <button class="btn btn-info" type="submit" name="reset-pw-submit" ng-init="setPassword=false" ng-click="setPassword=!setPassword">Set Pw <span class="fa fa-caret-down"></span></button>
 				  </span>
 				</div><!-- /input-group -->
-				<div class="well" ng-show="setPassword">
+				<div class="alert alert-info" ng-show="setPassword">
 					<input type="text" class="form-control" name="reset-pw-pw" id="reset-pw-pw" value="7mnFfb8PhrGWtzj">
 				</div>
 			</form>
