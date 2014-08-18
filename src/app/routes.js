@@ -25,13 +25,17 @@ angular.module("proton.Routes", [
       },
 
       resolve: {
-        messages: function (Message, mailboxIdentifiers, $state, $stateParams) {
+        messages: function (Message, mailboxIdentifiers, $state, $stateParams, authentication) {
           var mailbox = this.data.mailbox;
-          return Message.query({
-            "Location": mailboxIdentifiers[mailbox],
-            "Tag": (mailbox === 'starred') ? mailbox : undefined,
-            "Page": $stateParams.page
-          }).$promise;
+          if (authentication.isSecured()) {
+            return Message.query({
+              "Location": mailboxIdentifiers[mailbox],
+              "Tag": (mailbox === 'starred') ? mailbox : undefined,
+              "Page": $stateParams.page
+            }).$promise;
+          } else {
+            return [];
+          }
         }
       }
     });
@@ -93,9 +97,7 @@ angular.module("proton.Routes", [
       url: "/secured",
 
       onEnter: function(authentication, $state) {
-
         // This will redirect to a login step if necessary
-
         authentication.redirectIfNecessary();
       }
     })
