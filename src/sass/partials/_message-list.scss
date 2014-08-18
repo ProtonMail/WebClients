@@ -25,10 +25,11 @@ table.message-list {
         text-align: center;
       }
 
-      .fa-unlock-alt {      color: #ccc;  }
+      .fa-unlock-alt {      color: rgba(0, 0, 0, 0.25); }
       .fa-star-o {          color: rgba(0, 0, 0, 0.5); }
       .fa-star {            color: orange; }
       a:hover .fa-star-o {  color: #000; }
+      .fa-lock {            color: #336}
 
       .tooltip { font-weight: normal; }
     }
