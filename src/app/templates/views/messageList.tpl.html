@@ -17,7 +17,7 @@
       </td>
 
       <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-        <span ng-switch-when="true">{{ message.RecipientList }}</span>
+        <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
         <span ng-switch-default>{{ message.Sender }}</span>
       </td>
 

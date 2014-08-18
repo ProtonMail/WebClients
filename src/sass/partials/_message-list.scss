@@ -30,19 +30,24 @@ table.message-list {
       .fa-star {            color: orange; }
       a:hover .fa-star-o {  color: #000; }
 
-      .tooltip {
-        font-weight: normal;
-      }
+      .tooltip { font-weight: normal; }
     }
 
     td.recipient {
       width: 5rem;
+
+      .to { 
+        font-weight: normal;
+        color: #999;
+      }
     }
 
     td.size,
     td.when {
       width: 4rem;
     }
+
+    td.size { color: #999; }
   }
 
   border-bottom: 1px solid $table-border-color;
