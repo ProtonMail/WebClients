@@ -1,8 +1,12 @@
 <table class="table message-list">
   <tbody id="message">
-    <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: !message.IsRead }">
+    <tr ng-repeat="message in messages" 
+        ng-click="navigateToMessage($event, message)" 
+        ng-class="{ unread: !message.IsRead, selected: selected }"
+        >
+      
       <td class="actions">
-        <input type="checkbox" />
+        <input type="checkbox" ng-model="selected" />
         <span 
             class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}" 
             pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
