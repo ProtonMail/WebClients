@@ -47,17 +47,19 @@ angular.module("proton.Models", [
     }
   });
 
-  Message.prototype.readableTime = function() {
-    return moment.unix(this.Time).format('LL');
-  };
-  Message.prototype.toggleStar = function() {
-    this.Tag = this.Tag === "starred" ? "" : "starred";
-    Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
-  };
-  Message.prototype.moveTo = function(location) {
-    this.Location = location;
-    Message.patch({MessageID: this.MessageID}, {Location: this.Location});
-  };
+  _.extend(Message.prototype, {
+    readableTime: function() {
+      return moment.unix(this.Time).format('LL');
+    },
+    toggleStar: function() {
+      this.Tag = this.Tag === "starred" ? "" : "starred";
+      return Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
+    },
+    moveTo: function(location) {
+      this.Location = location;
+      return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
+    }
+  });
 
   return Message;
 })
