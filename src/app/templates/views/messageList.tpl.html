@@ -1,10 +1,12 @@
-<table>
+<table class="table message-list">
   <tbody id="message">
-    <tr ng-repeat="message in messages">
+    <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: message.IsRead }">
       <td class="actions">
         <input type="checkbox">
-        <span class="fa {{ message.isEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}"></span>
-        <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
+        <span class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}"></span>
+        <a href="#" ng-click="message.toggleStar()">
+          <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
+        </a>
       </td>
 
       <td class="{{ ('secured.sent' | isState) ? 'to' : 'from' }}">
