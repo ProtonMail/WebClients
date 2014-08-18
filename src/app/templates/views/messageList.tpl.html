@@ -12,9 +12,9 @@
         </a>
       </td>
 
-      <td class="{{ ('secured.sent' | isState) ? 'to' : 'from' }}">
-        <span ng-if="'secured.sent' | isState">{{ message.RecipientList }}</span>
-        <span ng-if="!('secured.sent' | isState)">{{ message.Sender }}</span>
+      <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
+        <span ng-switch-when="true">{{ message.RecipientList }}</span>
+        <span ng-switch-default>{{ message.Sender }}</span>
       </td>
 
       <td class="subject">
