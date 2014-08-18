@@ -13,9 +13,13 @@
     </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form id="search-form" class="pull-left" ng-if="'secured.**' | includedByState">
-        <input type="text" placeholder="Search..." id="search-text" name="q" value="">
-        <button type="submit" class="pure-button pure-button-default"><span class="fa fa-search"></span></button>
+      <form id="search-form" class="navbar-form navbar-left" role="search" ng-if="'secured.**' | includedByState">
+        <div class="input-group form-group">
+          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+          </span>
+        </div><!-- /input-group -->
       </form>
       <p class="navbar-text" ng-if="isLoggedIn">{{ user.UserName }}<em>@protonmail.ch</em></p>
       <ul class="nav navbar-nav navbar-right">

@@ -1,6 +1,6 @@
-<table class="table message-list">
+<table class="table message-list table-hover">
   <tbody id="message">
-    <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: !message.IsRead }">
+    <tr ng-repeat="message in messages" ng-click="selectMessage($event, message)" ng-class="{ unread: !message.IsRead, warning: message.Tag == 'starred' }">
       <td class="actions">
         <input type="checkbox" />
         <span 

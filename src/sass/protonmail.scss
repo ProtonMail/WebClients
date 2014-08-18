@@ -23,6 +23,8 @@ $border-radius-small:       ($border-radius-base/1.25);
 $navbar-inverse-color:      lighten($navbar-inverse-bg, 35%);
 $navbar-inverse-link-color: $navbar-inverse-color;
 
-$sidebar-width: 20rem; // 200px
-$sidebar-button-lighten: 5%;
-$sidebar-bg:  #333;
+$sidebar-width:             20rem;
+$sidebar-button-lighten:    5%;
+$sidebar-bg:                #333;
+
+$table-cell-padding:        6px 8px;
