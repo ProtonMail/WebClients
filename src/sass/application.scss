@@ -9,9 +9,9 @@ $fa-font-path: "fonts";
 html {
   position: relative;
   min-height: 100%;
-}
-.secure #body {
-  min-height: 100%;
+} 
+.secure #body { 
+  min-height: 100%; 
 }
 .secure #main {
 
@@ -58,38 +58,35 @@ body footer {
   @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
   &:hover {
     @include linear-gradient($btn-default-bg, darken($btn-default-bg, 5%));
+    border-color: darken($btn-default-bg, 20%);
   }
 }
 .btn-primary {
   @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 10%));
   &:hover {
     @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 5%));
+    border-color: darken($btn-primary-bg, 5%);
   }
 }
 .btn-success {
   @include linear-gradient($btn-success-bg, darken($btn-success-bg, 10%));
   &:hover {
     @include linear-gradient($btn-success-bg, darken($btn-success-bg, 5%));
+    border-color: darken($btn-success-bg, 5%);
   }
 }
 .btn-info {
   @include linear-gradient($btn-info-bg, darken($btn-info-bg, 10%));
   &:hover {
     @include linear-gradient($btn-info-bg, darken($btn-info-bg, 5%));
+    border-color: darken($btn-info-bg, 5%);
   }
 }
 .btn-danger {
   @include linear-gradient($btn-danger-bg, darken($btn-danger-bg, 10%));
   &:hover {
     @include linear-gradient($btn-danger-bg, darken($btn-danger-bg, 5%));
-  }
-}
-
-#sidebar .btn,
-.navbar-inverse a,
-footer a {
-  &:hover {
-    @include transition (color 0.1s);
+    border-color: darken($btn-danger-bg, 5%);
   }
 }
 
@@ -148,7 +145,11 @@ body {
   }
 
   a {
-    color: #669;
+    color: #333;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
   }
 
   * {
@@ -166,6 +167,14 @@ body {
 
 p {
   margin: 1em 0;
+}
+
+#main .message-list {
+  border-bottom: none;
+  tbody td {
+  border-top: none;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 @import "partials/login";
