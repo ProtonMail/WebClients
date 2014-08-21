@@ -7,7 +7,7 @@
         >
       
       <td class="actions">
-        <input type="checkbox" ng-model="selected" />
+        <input type="checkbox" ng-model="message.selected" />
         <span 
             class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}" 
             pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
