@@ -1,0 +1,84 @@
+<div class="message-list-toolbar">
+  <ul class="nav navbar-nav">
+    <li class="selectAll">
+      <input type="checkbox" name="selectAll" ng-model="allSelected" ng-change="selectAllMessages()" />
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle" 
+         data-toggle="dropdown"
+         ng-class="{ disabled: selectedMessages().length == 0 }">
+        <i class="fa fa-check-square-o"></i> Mark <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-if="selectedMessagesWithReadStatus(false).length > 0"><a href="#"><i class="fa fa-fw fa-eye"></i> Mark as read</a></li>
+        <li ng-if="selectedMessagesWithReadStatus(true).length > 0"><a href="#"><i class="fa fa-fw fa-eye-slash"></i> Mark as unread</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle" 
+         data-toggle="dropdown"
+         ng-class="{ disabled: selectedMessages().length == 0 }">
+        <i class="fa fa-level-down fa-rotate-270"></i> Move <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-if="messagesCanBeMovedTo('inbox')"><a href="#"><i class="fa fa-fw fa-inbox"></i> Inbox</a></li>
+        <li ng-if="messagesCanBeMovedTo('spam')"><a href="#"><i class="fa fa-fw fa-bug"></i> Spam</a></li>
+        <li ng-if="messagesCanBeMovedTo('trash')"><a href="#"><i class="fa fa-fw fa-trash-o"></i> Trash</a></li>
+      </ul>
+    </li>
+
+    <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
+      <a href="#" ng-class="{ disabled: selectedMessages().length == 0 }">
+        <i class="fa fa-times-circle"></i> Delete
+      </a>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-filter"></i> Filter <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="fa fa-fw fa-eye-slash"></i> Filter by Unread</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-eye"></i> Filter by read</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-ban"></i> Remove filter</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-sort"></i> Sort <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-sort-amount-asc"></i> Size: Small to Large</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-sort-amount-desc"></i> Size: Large to Small</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-clock-o"></i> Date: New to Old</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-history"></i> Date: Old to New</a></li>
+      </ul>
+    </li>
+
+    <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
+      <a href="#">
+        <i class="fa fa-warning"></i> Empty folder
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav navbar-nav pull-right navigation">
+    <li>
+      <a href="#">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </li>
+  </ul>
+</div>  
