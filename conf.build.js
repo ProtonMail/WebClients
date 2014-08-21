@@ -43,7 +43,8 @@ module.exports = {
       "affix",
       "alert",
       "collapse",
-      "tooltip"
+      "tooltip",
+      "dropdown"
     ],
 
     required_js: [],

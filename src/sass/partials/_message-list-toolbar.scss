@@ -1,0 +1,87 @@
+.message-list-toolbar {
+  @include linear-gradient(#fff, #e5e5e5);
+  @include clearfix;
+
+  > ul {
+    > li {
+      border-right: 1px solid #ddd;
+
+      &.selectAll {
+        padding-top: 0.8rem;
+        padding-bottom: 0.7rem;
+        padding-left: 15px;
+        padding-right: 15px; 
+      }
+      &.open > a {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      }
+
+      > a {
+        padding-top: 1rem;
+        padding-bottom: 0.8rem;
+        color: #666;
+        text-shadow: 0 1px 0 #fff;
+
+        &:hover {
+          color: #333;
+        }
+
+        input[type="checkbox"] {
+          margin: 0;
+        }
+
+        &:not([href]):hover {
+          background-color: transparent;
+        }
+
+        i:first-child {
+          margin-right: 3px;
+        }
+
+        &.disabled {
+          background-color: #eee;
+          color: #aaa;
+        }
+
+        &.dropdown-toggle {
+          padding-right: 10px;
+
+          i.fa-angle-down {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        opacity: 0.97;
+        background-color: #eeeeee;
+        border-top: 1px solid #d1d1d1;
+        margin-left: -1px;
+        li:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+        li > a {
+          padding: 8px 20px 8px 10px;
+        }
+        a:hover {
+          background-color: #e7e7e7;
+        }
+      }
+    }
+
+    &.navigation {
+      li > a i:first-child {
+        margin-right: 0;
+      }
+      li:first-child {
+        border-left: 1px solid #ddd;
+        a {
+          padding: 1.2rem 13px 0.5em 10px;
+        }
+      }
+      li:last-child a {
+        padding: 1.2rem 10px 0.5em 13px;
+      }
+    }
+  }
+}

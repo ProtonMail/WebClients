@@ -1,11 +1,13 @@
+<ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="message-list-toolbar"></ng-include>
 <table class="table message-list table-hover">
   <tbody id="message">
     <tr ng-repeat="message in messages" 
         ng-click="navigateToMessage($event, message)" 
         ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }"
         >
+      
       <td class="actions">
-        <input type="checkbox" ng-model="selected" />
+        <input type="checkbox" ng-model="message.selected" />
         <span 
             class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}" 
             pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
