@@ -5,10 +5,11 @@ table.message-list {
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
+    color: #444;
 
     &:hover,
     &.selected {
-      background-color: #f5f5f5;
+      color: #111;
     }
     
     &.unread {
