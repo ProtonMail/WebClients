@@ -16,7 +16,7 @@ angular.module("proton.Routes", [
 
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
-      url: url,
+      url: url + "?page&filter&sort",
       views: {
         "content@secured": {
           controller: "MessageListController",
@@ -28,12 +28,23 @@ angular.module("proton.Routes", [
         messages: function ($state, $stateParams, $rootScope, authentication, Message, mailboxIdentifiers, networkActivityTracker) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
+            var params = {
+              "Location": mailboxIdentifiers[mailbox],
+              "Page": $stateParams.page
+            };
+            if (mailbox === 'starred') {
+              params.Tag = mailbox;
+            }
+
+            if ($stateParams.filter) {
+              params.filter = $stateParams.filter;
+            }
+            if ($stateParams.sort) {
+              params.sort = $stateParams.sort;
+            }
+
             return networkActivityTracker.track(
-              Message.query({
-                "Location": mailboxIdentifiers[mailbox],
-                "Tag": (mailbox === 'starred') ? mailbox : undefined,
-                "Page": $stateParams.page
-              }).$promise
+              Message.query(params).$promise
             );
           } else {
             return [];
@@ -104,7 +115,7 @@ angular.module("proton.Routes", [
       }
     })
 
-    .state("secured.inbox", messageListOptions("/inbox?page", {
+    .state("secured.inbox", messageListOptions("/inbox", {
       data: {
         mailbox: "inbox"
       }
@@ -210,7 +221,7 @@ angular.module("proton.Routes", [
       return;
     }
 
-    $stateProvider.state("secured." + box, messageListOptions("/" + box + "?page", {
+    $stateProvider.state("secured." + box, messageListOptions("/" + box, {
       data: { mailbox: box }
     }));
   });

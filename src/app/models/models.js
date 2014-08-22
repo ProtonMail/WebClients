@@ -68,8 +68,12 @@ angular.module("proton.Models", [
       this.Location = location;
       return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
     },
+    setReadStatus: function (status) {
+      this.IsRead = status;
+      return Message.patch({MessageID: this.MessageID}, {IsRead: status});
+    },
     delete: function() {
-      return this.$delete();
+      return this.$delete({MessageID: this.MessageID});
     }
   });
 

@@ -72,4 +72,22 @@ table.message-list {
   }
 
   border-bottom: 1px solid $table-border-color;
+
+  &.empty::after {
+    content: "Empty Mailbox";
+    position: absolute;
+    top: 87px;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    text-align: center;
+    /* vertical-align: middle; */
+    padding-top: 8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 200%;
+    color: #ccc;
+    text-shadow: 2px 2px white;
+    background-color: #f8f8f8;
+  }
 }

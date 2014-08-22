@@ -10,9 +10,18 @@
          ng-class="{ disabled: selectedMessages().length == 0 }">
         <i class="fa fa-check-square-o"></i> Mark <i class="fa fa-angle-down"></i>
       </a>
+
       <ul class="dropdown-menu" role="menu">
-        <li ng-if="selectedMessagesWithReadStatus(false).length > 0"><a href="#"><i class="fa fa-fw fa-eye"></i> Mark as read</a></li>
-        <li ng-if="selectedMessagesWithReadStatus(true).length > 0"><a href="#"><i class="fa fa-fw fa-eye-slash"></i> Mark as unread</a></li>
+        <li ng-if="selectedMessagesWithReadStatus(false).length > 0">
+          <a href="#" ng-click="setMessagesReadStatus(true)">
+            <i class="fa fa-fw fa-eye"></i> Mark as read
+          </a>
+        </li>
+        <li ng-if="selectedMessagesWithReadStatus(true).length > 0">
+          <a href="#" ng-click="setMessagesReadStatus(false)">
+            <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
+          </a>
+        </li>
       </ul>
     </li>
 
@@ -23,14 +32,28 @@
         <i class="fa fa-level-down fa-rotate-270"></i> Move <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li ng-if="messagesCanBeMovedTo('inbox')"><a href="#"><i class="fa fa-fw fa-inbox"></i> Inbox</a></li>
-        <li ng-if="messagesCanBeMovedTo('spam')"><a href="#"><i class="fa fa-fw fa-bug"></i> Spam</a></li>
-        <li ng-if="messagesCanBeMovedTo('trash')"><a href="#"><i class="fa fa-fw fa-trash-o"></i> Trash</a></li>
+        <li ng-if="messagesCanBeMovedTo('inbox')">
+          <a href="#" ng-click="moveMessagesTo('inbox')">
+            <i class="fa fa-fw fa-inbox"></i> Inbox
+          </a>
+        </li>
+        <li ng-if="messagesCanBeMovedTo('spam')">
+          <a href="#" ng-click="moveMessagesTo('spam')">
+            <i class="fa fa-fw fa-bug"></i> Spam
+          </a>
+        </li>
+        <li ng-if="messagesCanBeMovedTo('trash')">
+          <a href="#" ng-click="moveMessagesTo('trash')">
+            <i class="fa fa-fw fa-trash-o"></i> Trash
+          </a>
+        </li>
       </ul>
     </li>
 
     <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
-      <a href="#" ng-class="{ disabled: selectedMessages().length == 0 }">
+      <a  href="#" 
+          ng-class="{ disabled: selectedMessages().length == 0 }"
+          ng-click="moveMessagesTo('delete')">
         <i class="fa fa-times-circle"></i> Delete
       </a>
     </li>
@@ -40,9 +63,19 @@
         <i class="fa fa-filter"></i> Filter <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#"><i class="fa fa-fw fa-eye-slash"></i> Filter by Unread</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-eye"></i> Filter by read</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-ban"></i> Remove filter</a></li>
+        <li ng-class="{selected: selectedFilter == 'unread'}"><a href="#" ng-click="filterBy('unread')">
+          <i class="fa fa-fw fa-eye-slash"></i> Filter by Unread
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedFilter == 'read'}"><a href="#" ng-click="filterBy('read')">
+          <i class="fa fa-fw fa-eye"></i> Filter by read
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-if="selectedFilter" class="clear">
+          <a href="#" ng-click="clearFilter()">
+            <i class="fa fa-fw fa-ban"></i> Remove filter
+          </a>
+        </li>
       </ul>
     </li>
 
@@ -51,14 +84,38 @@
         <i class="fa fa-sort"></i> Sort <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-amount-asc"></i> Size: Small to Large</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-amount-desc"></i> Size: Large to Small</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-clock-o"></i> Date: New to Old</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-history"></i> Date: Old to New</a></li>
+        <li ng-class="{selected: selectedOrder == 'subject'}"><a href="#" ng-click="orderBy('subject')">
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z 
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-subject'}"><a href="#" ng-click="orderBy('-subject')">
+          <i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'to'}"><a href="#" ng-click="orderBy('to')">
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-to'}"><a href="#" ng-click="orderBy('-to')">
+          <i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'size'}"><a href="#" ng-click="orderBy('size')">
+          <i class="fa fa-fw fa-sort-amount-asc"></i> Size: Small to Large
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-size'}"><a href="#" ng-click="orderBy('-size')">
+          <i class="fa fa-fw fa-sort-amount-desc"></i> Size: Large to Small
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-date'}"><a href="#" ng-click="orderBy('-date')">
+          <i class="fa fa-fw fa-clock-o"></i> Date: New to Old
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'date'}"><a href="#" ng-click="orderBy('date')">
+          <i class="fa fa-fw fa-history"></i> Date: Old to New
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
       </ul>
     </li>
 

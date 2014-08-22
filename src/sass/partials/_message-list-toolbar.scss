@@ -61,10 +61,33 @@
           border-bottom: 1px solid #ddd;
         }
         li > a {
-          padding: 8px 20px 8px 10px;
+          padding: 8px 40px 8px 10px;
+          position: relative;
+
+          i.fa-check {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            opacity: 0;
+          }
         }
+        
+        li.selected > a {
+          color: #aaa;
+          pointer-events: none;
+
+          i.fa-check {
+            opacity: 1;
+          }
+        }
+
         a:hover {
           background-color: #e7e7e7;
+        }
+
+        li.clear a {
+          font-weight: bold;
         }
       }
     }

@@ -2,10 +2,22 @@ angular.module("proton.Controllers.Messages", [
   "proton.Routes"
 ])
 
-.controller("MessageListController", function($state, $stateParams, $scope, $rootScope, messages) {
+.controller("MessageListController", function(
+  $state, 
+  $stateParams, 
+  $scope, 
+  $rootScope, 
+  $q,
+  messages, 
+  networkActivityTracker
+) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
   $scope.messages = messages;
+
+  $scope.selectedFilter = $stateParams.filter;
+  $scope.selectedOrder = $stateParams.sort || "-date";
+
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
       $state.go("secured.message", { MessageID: message.MessageID });
@@ -36,8 +48,52 @@ angular.module("proton.Controllers.Messages", [
     } else if (otherMailbox == "trash") {
       return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
     } else if (otherMailbox == "spam") {
-      return _.contains(["inbox", "star red", "trash"], mailbox);
+      return _.contains(["inbox", "starred", "trash"], mailbox);
     }
+  };
+
+  $scope.setMessagesReadStatus = function (status) {
+    networkActivityTracker.track($q.all(
+      _.map($scope.selectedMessagesWithReadStatus(!status), function (message) {
+        $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1);
+        return message.setReadStatus(status);
+      })
+    ));
+  };
+
+  $scope.moveMessagesTo = function (mailbox) {
+    var selectedMessages = $scope.selectedMessages();
+    networkActivityTracker.track($q.all(
+      _.map(selectedMessages, function (message) {
+        if (mailbox == 'delete') {
+          return message.delete();
+        } else {
+          return message.moveTo(mailbox);
+        }
+      })
+    ).then(function () {
+      _.each(selectedMessages, function (message) {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      });
+    }));
+  };
+
+  $scope.filterBy = function (status) {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: status, page: null}));
+  };
+  
+  $scope.clearFilter = function () {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: null, page: null}));
+  };
+
+  $scope.orderBy = function (criterion) {
+    $state.go($state.current.name, _.extend({}, $state.params, {
+      sort: criterion == '-date' ? null : criterion, 
+      page: null
+    }));
   };
 })
 
