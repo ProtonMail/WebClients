@@ -15,6 +15,9 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.messages = messages;
 
+  $scope.selectedFilter = $stateParams.filter;
+  $scope.selectedOrder = $stateParams.sort || "-date";
+
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
       $state.go("secured.message", { MessageID: message.MessageID });
@@ -70,6 +73,21 @@ angular.module("proton.Controllers.Messages", [
       })
     ).then(function () {
       messages = $scope.messages = _.without.apply(_, [messages].concat(selectedMessages));
+    }));
+  };
+
+  $scope.filterBy = function (status) {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: status, page: null}));
+  };
+  
+  $scope.clearFilter = function () {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: null, page: null}));
+  };
+
+  $scope.orderBy = function (criterion) {
+    $state.go($state.current.name, _.extend({}, $state.params, {
+      sort: criterion == '-date' ? null : criterion, 
+      page: null
     }));
   };
 })

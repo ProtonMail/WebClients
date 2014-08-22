@@ -63,9 +63,19 @@
         <i class="fa fa-filter"></i> Filter <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#"><i class="fa fa-fw fa-eye-slash"></i> Filter by Unread</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-eye"></i> Filter by read</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-ban"></i> Remove filter</a></li>
+        <li ng-class="{selected: selectedFilter == 'unread'}"><a href="#" ng-click="filterBy('unread')">
+          <i class="fa fa-fw fa-eye-slash"></i> Filter by Unread
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedFilter == 'read'}"><a href="#" ng-click="filterBy('read')">
+          <i class="fa fa-fw fa-eye"></i> Filter by read
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-if="selectedFilter" class="clear">
+          <a href="#" ng-click="clearFilter()">
+            <i class="fa fa-fw fa-ban"></i> Remove filter
+          </a>
+        </li>
       </ul>
     </li>
 
@@ -74,14 +84,38 @@
         <i class="fa fa-sort"></i> Sort <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-amount-asc"></i> Size: Small to Large</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-sort-amount-desc"></i> Size: Large to Small</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-clock-o"></i> Date: New to Old</a></li>
-        <li><a href="#"><i class="fa fa-fw fa-history"></i> Date: Old to New</a></li>
+        <li ng-class="{selected: selectedOrder == 'subject'}"><a href="#" ng-click="orderBy('subject')">
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z 
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-subject'}"><a href="#" ng-click="orderBy('-subject')">
+          <i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'to'}"><a href="#" ng-click="orderBy('to')">
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-to'}"><a href="#" ng-click="orderBy('-to')">
+          <i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'size'}"><a href="#" ng-click="orderBy('size')">
+          <i class="fa fa-fw fa-sort-amount-asc"></i> Size: Small to Large
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-size'}"><a href="#" ng-click="orderBy('-size')">
+          <i class="fa fa-fw fa-sort-amount-desc"></i> Size: Large to Small
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == '-date'}"><a href="#" ng-click="orderBy('-date')">
+          <i class="fa fa-fw fa-clock-o"></i> Date: New to Old
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
+        <li ng-class="{selected: selectedOrder == 'date'}"><a href="#" ng-click="orderBy('date')">
+          <i class="fa fa-fw fa-history"></i> Date: Old to New
+          <i class="fa fa-fw fa-check"></i>
+        </a></li>
       </ul>
     </li>
 
