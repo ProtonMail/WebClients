@@ -1,5 +1,5 @@
 <ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="message-list-toolbar"></ng-include>
-<table class="table message-list table-hover">
+<table class="table message-list table-hover" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages" 
         ng-click="navigateToMessage($event, message)" 
