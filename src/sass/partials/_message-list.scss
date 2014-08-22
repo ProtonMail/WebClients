@@ -74,7 +74,7 @@ table.message-list {
   border-bottom: 1px solid $table-border-color;
 
   &.empty::after {
-    content: "No emails here";
+    content: "Empty Mailbox";
     position: absolute;
     top: 87px;
     bottom: 0;
