@@ -72,7 +72,12 @@ angular.module("proton.Controllers.Messages", [
         }
       })
     ).then(function () {
-      messages = $scope.messages = _.without.apply(_, [messages].concat(selectedMessages));
+      _.each(selectedMessages, function (message) {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      });
     }));
   };
 
