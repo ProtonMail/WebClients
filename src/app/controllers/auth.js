@@ -92,11 +92,4 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   $scope.$on("$destroy", function () {
     $interval.cancel(updates);
   });
-})
-
-.controller("AdminController", function($scope, authentication) {
-  $scope.user = authentication.user;
-  $scope.logout = function() {
-    authentication.logout();
-  };
 });
