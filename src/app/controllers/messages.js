@@ -58,11 +58,15 @@ angular.module("proton.Controllers.Messages", [
     ));
   };
 
-  $scope.moveMessageTo = function (mailbox) {
+  $scope.moveMessagesTo = function (mailbox) {
     var selectedMessages = $scope.selectedMessages();
     networkActivityTracker.track($q.all(
       _.map(selectedMessages, function (message) {
-        return message.moveTo(mailbox);
+        if (mailbox == 'delete') {
+          return message.delete();
+        } else {
+          return message.moveTo(mailbox);
+        }
       })
     ).then(function () {
       messages = $scope.messages = _.without.apply(_, [messages].concat(selectedMessages));

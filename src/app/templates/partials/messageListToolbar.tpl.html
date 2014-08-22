@@ -33,17 +33,17 @@
       </a>
       <ul class="dropdown-menu" role="menu">
         <li ng-if="messagesCanBeMovedTo('inbox')">
-          <a href="#" ng-click="moveMessageTo('inbox')">
+          <a href="#" ng-click="moveMessagesTo('inbox')">
             <i class="fa fa-fw fa-inbox"></i> Inbox
           </a>
         </li>
         <li ng-if="messagesCanBeMovedTo('spam')">
-          <a href="#" ng-click="moveMessageTo('spam')">
+          <a href="#" ng-click="moveMessagesTo('spam')">
             <i class="fa fa-fw fa-bug"></i> Spam
           </a>
         </li>
         <li ng-if="messagesCanBeMovedTo('trash')">
-          <a href="#" ng-click="moveMessageTo('trash')">
+          <a href="#" ng-click="moveMessagesTo('trash')">
             <i class="fa fa-fw fa-trash-o"></i> Trash
           </a>
         </li>
@@ -51,7 +51,9 @@
     </li>
 
     <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
-      <a href="#" ng-class="{ disabled: selectedMessages().length == 0 }">
+      <a  href="#" 
+          ng-class="{ disabled: selectedMessages().length == 0 }"
+          ng-click="moveMessagesTo('delete')">
         <i class="fa fa-times-circle"></i> Delete
       </a>
     </li>

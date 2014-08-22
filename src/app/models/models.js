@@ -73,7 +73,7 @@ angular.module("proton.Models", [
       return Message.patch({MessageID: this.MessageID}, {IsRead: status});
     },
     delete: function() {
-      return this.$delete();
+      return this.$delete({MessageID: this.MessageID});
     }
   });
 
