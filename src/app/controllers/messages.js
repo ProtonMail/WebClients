@@ -2,10 +2,19 @@ angular.module("proton.Controllers.Messages", [
   "proton.Routes"
 ])
 
-.controller("MessageListController", function($state, $stateParams, $scope, $rootScope, messages) {
+.controller("MessageListController", function(
+  $state, 
+  $stateParams, 
+  $scope, 
+  $rootScope, 
+  $q,
+  messages, 
+  networkActivityTracker
+) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
   $scope.messages = messages;
+
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
       $state.go("secured.message", { MessageID: message.MessageID });
@@ -38,6 +47,26 @@ angular.module("proton.Controllers.Messages", [
     } else if (otherMailbox == "spam") {
       return _.contains(["inbox", "star red", "trash"], mailbox);
     }
+  };
+
+  $scope.setMessagesReadStatus = function (status) {
+    networkActivityTracker.track($q.all(
+      _.map($scope.selectedMessagesWithReadStatus(!status), function (message) {
+        $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1);
+        return message.setReadStatus(status);
+      })
+    ));
+  };
+
+  $scope.moveMessageTo = function (mailbox) {
+    var selectedMessages = $scope.selectedMessages();
+    networkActivityTracker.track($q.all(
+      _.map(selectedMessages, function (message) {
+        return message.moveTo(mailbox);
+      })
+    ).then(function () {
+      messages = $scope.messages = _.without.apply(_, [messages].concat(selectedMessages));
+    }));
   };
 })
 
