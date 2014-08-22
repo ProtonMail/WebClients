@@ -45,7 +45,7 @@ angular.module("proton.Controllers.Messages", [
     } else if (otherMailbox == "trash") {
       return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
     } else if (otherMailbox == "spam") {
-      return _.contains(["inbox", "star red", "trash"], mailbox);
+      return _.contains(["inbox", "starred", "trash"], mailbox);
     }
   };
 
