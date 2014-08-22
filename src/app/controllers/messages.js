@@ -23,7 +23,7 @@ angular.module("proton.Controllers.Messages", [
       $state.go("secured.message", { MessageID: message.MessageID });
     }
   };
-  
+
   $scope.selectAllMessages = function (val) {
     _.forEach($scope.messages, function (message) {
       message.selected = this.allSelected;

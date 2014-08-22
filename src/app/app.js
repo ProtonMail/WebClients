@@ -1,10 +1,10 @@
 angular.module("proton", [
   "ngAnimate",
-  
+
   // templates
   "templates-app",
   "templates-common",
-  
+
   // Basic
   "proton.Routes",
   "proton.Auth",
@@ -17,6 +17,7 @@ angular.module("proton", [
 
   "proton.filters.strings",
 
+  "proton.Controllers.Admin",
   "proton.Controllers.Auth",
   "proton.Controllers.Messages",
   "proton.Controllers.Contacts",
