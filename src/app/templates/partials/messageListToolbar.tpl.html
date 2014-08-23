@@ -32,19 +32,29 @@
         <i class="fa fa-level-down fa-rotate-270"></i> Move <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li ng-if="messagesCanBeMovedTo('inbox')">
+        <li ng-if="pageName != 'inbox'">
           <a href="#" ng-click="moveMessagesTo('inbox')">
             <i class="fa fa-fw fa-inbox"></i> Inbox
           </a>
         </li>
-        <li ng-if="messagesCanBeMovedTo('spam')">
-          <a href="#" ng-click="moveMessagesTo('spam')">
-            <i class="fa fa-fw fa-bug"></i> Spam
+        <li ng-if="pageName != 'drafts'">
+          <a href="#" ng-click="moveMessagesTo('drafts')">
+            <i class="fa fa-fw fa-file-text-o"></i> Drafts
           </a>
         </li>
-        <li ng-if="messagesCanBeMovedTo('trash')">
+        <li ng-if="pageName != 'sent'">
+          <a href="#" ng-click="moveMessagesTo('sent')">
+            <i class="fa fa-fw fa-sign-out"></i> Sent
+          </a>
+        </li>
+        <li ng-if="pageName != 'trash'">
           <a href="#" ng-click="moveMessagesTo('trash')">
             <i class="fa fa-fw fa-trash-o"></i> Trash
+          </a>
+        </li>
+        <li ng-if="pageName != 'spam'">
+          <a href="#" ng-click="moveMessagesTo('spam')">
+            <i class="fa fa-fw fa-bug"></i> Spam
           </a>
         </li>
       </ul>
