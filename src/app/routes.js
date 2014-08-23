@@ -25,7 +25,15 @@ angular.module("proton.Routes", [
       },
 
       resolve: {
-        messages: function ($state, $stateParams, $rootScope, authentication, Message, mailboxIdentifiers, networkActivityTracker) {
+        messages: function (
+          $state, 
+          $stateParams, 
+          $rootScope, 
+          authentication, 
+          Message, 
+          mailboxIdentifiers, 
+          networkActivityTracker
+        ) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
             var params = {
@@ -35,7 +43,6 @@ angular.module("proton.Routes", [
             if (mailbox === 'starred') {
               params.Tag = mailbox;
             }
-
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
@@ -48,6 +55,32 @@ angular.module("proton.Routes", [
             );
           } else {
             return [];
+          }
+        },
+        
+        messageCount: function (
+          $stateParams, 
+          Message, 
+          authentication, 
+          mailboxIdentifiers, 
+          networkActivityTracker
+        ) {
+          var mailbox = this.data.mailbox;
+          if (authentication.isSecured()) {
+            var params = {
+              "Location": mailboxIdentifiers[mailbox],
+              "Page": $stateParams.page
+            };
+            if (mailbox === 'starred') {
+              params.Tag = mailbox;
+            }
+            if ($stateParams.filter) {
+              params.filter = $stateParams.filter;
+            }
+
+            return networkActivityTracker.track(
+              Message.count(params).$promise
+            );
           }
         }
       }
