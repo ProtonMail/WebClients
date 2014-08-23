@@ -53,6 +53,14 @@ angular.module("proton.Models", [
     patch: {
       method: "patch",
       isArray: false
+    },
+    count: {
+      method: "get",
+      url: authentication.baseURL + "/messages/count",
+      isArray: false,
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
     }
   });
 
