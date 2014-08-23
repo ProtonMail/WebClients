@@ -8,15 +8,22 @@ angular.module("proton.Controllers.Messages", [
   $scope, 
   $rootScope, 
   $q,
-  messages, 
+  messages,
+  messageCount,
   networkActivityTracker
 ) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
+  $scope.page = parseInt($stateParams.page || "1");
   $scope.messages = messages;
+  $scope.messageCount = messageCount.count;
 
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
+
+  $scope.hasNextPage = function () {
+    return $scope.messageCount > ($scope.page * 25);
+  };
 
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
@@ -96,6 +103,18 @@ angular.module("proton.Controllers.Messages", [
       sort: criterion == '-date' ? null : criterion, 
       page: null
     }));
+  };
+
+  $scope.goToPage = function (page) {
+    if (page > 0 && $scope.messageCount > ((page - 1) * 25)) {
+      if (page == 1) {
+        page = null;
+      }
+      
+      $state.go($state.current.name, _.extend({}, $state.params, {
+        page: page
+      }));
+    }
   };
 })
 
