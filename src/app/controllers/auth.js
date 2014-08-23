@@ -10,6 +10,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     $scope.user = authentication.user;
   }
 
+
   $rootScope.pageName = "Login";
 
   var clearErrors = function() {
@@ -63,9 +64,9 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     if (event.keyCode === 13) {
       event.preventDefault();
       if ($state.is("login.unlock")) {
-        $scope.decrypt();
+        $scope.tryDecrypt.call(this);
       } else {
-        $scope.login();
+        $scope.tryLogin.call(this);
       }
     }
   };
