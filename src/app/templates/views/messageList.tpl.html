@@ -27,7 +27,9 @@
       </td>
 
       <td class="size">
-        <i class="fa fa-paperclip" ng-class="{active: message.AttachmentIDList != ''}"></i>
+        <i  class="fa fa-paperclip" 
+            ng-class="{active: message.AttachmentIDList != ''}"
+            pt-tooltip="{{ message.numberOfAttachments() + ' attachment(s)' }}"></i>
         {{ message.TotalSize | humanSize }}
       </td>
 

@@ -74,6 +74,9 @@ angular.module("proton.Models", [
     },
     delete: function() {
       return this.$delete({MessageID: this.MessageID});
+    },
+    numberOfAttachments: function () {
+      return this.AttachmentIDList.split(",").length;
     }
   });
 
