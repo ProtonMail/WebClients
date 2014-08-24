@@ -2,6 +2,8 @@
   @include linear-gradient(#fff, #e5e5e5);
   @include clearfix;
 
+  border-bottom: 1px solid #ccc;
+
   > ul {
     > li {
       border-right: 1px solid #ddd;

@@ -30,7 +30,8 @@ angular.module("proton.Models", [
   });
 })
 
-.factory("Message", function($resource, authentication) {
+.factory("Message", function($resource, authentication, mailboxIdentifiers) {
+  mailboxIdentifiers = _.invert(mailboxIdentifiers);
   var Message = $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
     query: {
       method: "get",
@@ -53,12 +54,24 @@ angular.module("proton.Models", [
     patch: {
       method: "patch",
       isArray: false
+    },
+    count: {
+      method: "get",
+      url: authentication.baseURL + "/messages/count",
+      isArray: false,
+      transformResponse: function (data) {
+        return JSON.parse(data).data;
+      }
     }
   });
 
   _.extend(Message.prototype, {
     readableTime: function() {
       return moment.unix(this.Time).format('LL');
+    },
+    longReadableTime: function () {
+      var dt = moment.unix(this.Time);
+      return dt.format('LLL') + " (" + dt.fromNow() + ")";
     },
     toggleStar: function() {
       this.Tag = this.Tag === "starred" ? "" : "starred";
@@ -74,6 +87,12 @@ angular.module("proton.Models", [
     },
     delete: function() {
       return this.$delete({MessageID: this.MessageID});
+    },
+    numberOfAttachments: function () {
+      return this.AttachmentIDList.split(",").length;
+    },
+    location: function () {
+      return mailboxIdentifiers[this.Location];
     }
   });
 

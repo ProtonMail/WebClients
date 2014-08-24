@@ -10,6 +10,7 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     $scope.user = authentication.user;
   }
 
+
   $rootScope.pageName = "Login";
 
   var clearErrors = function() {
@@ -21,14 +22,14 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     authentication.logout();
   };
 
-  $scope.login = function() {
+  $scope.tryLogin = function() {
     clearErrors();
 
     networkActivityTracker.track(
       authentication
         .loginWithCredentials({
-          username: $("#username").val(),
-          password: $("#password").val()
+          username: this.username,
+          password: this.password
         })
         .then(
           function() {
@@ -42,12 +43,12 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     );
   };
 
-  $scope.decrypt = function() {
+  $scope.tryDecrypt = function() {
     clearErrors();
 
     networkActivityTracker.track(
       authentication
-        .unlockWithPassword($("#mailboxPassword").val())
+        .unlockWithPassword(this.mailboxPassword)
         .then(
           function() {
             $state.go("secured.inbox");
@@ -63,9 +64,9 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     if (event.keyCode === 13) {
       event.preventDefault();
       if ($state.is("login.unlock")) {
-        $scope.decrypt();
+        $scope.tryDecrypt.call(this);
       } else {
-        $scope.login();
+        $scope.tryLogin.call(this);
       }
     }
   };

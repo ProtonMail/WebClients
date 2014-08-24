@@ -1,11 +1,28 @@
 table.message-list {
-  tr {
-    @include transition(background-color 0.05s ease-in 0);
+  border-bottom: 1px solid $table-border-color;
 
+  &.empty::after {
+    content: "Empty Mailbox";
+    position: absolute;
+    top: 87px;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    text-align: center;
+    padding-top: 8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 200%;
+    color: #ccc;
+    text-shadow: 2px 2px white;
+    background-color: #f8f8f8;
+  }
+
+  tr {
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
-    color: #444;
+    color: $gray-light;
 
     &:hover,
     &.selected {
@@ -19,15 +36,15 @@ table.message-list {
 
     &.starred {
       background-color: #ffc;
+
       &:hover {
+        background-color: darken(#ffc, 5%);
+
         td {
           background: transparent;
         }
-        background-color: darken(#ffc, 5%);
       }
     }
-
-    color: $gray-light;
 
     td.actions {
       cursor: default;
@@ -69,25 +86,21 @@ table.message-list {
       width: 4rem;
     }
 
-  }
 
-  border-bottom: 1px solid $table-border-color;
+    i.fa-paperclip { 
+      opacity: 0;
+      margin-right: 0.4em;
+      padding: 0.3em;
+      display: inline;
 
-  &.empty::after {
-    content: "Empty Mailbox";
-    position: absolute;
-    top: 87px;
-    bottom: 0;
-    left: 200px;
-    right: 0;
-    text-align: center;
-    /* vertical-align: middle; */
-    padding-top: 8em;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 200%;
-    color: #ccc;
-    text-shadow: 2px 2px white;
-    background-color: #f8f8f8;
+      &:not(.active) {
+        pointer-events: none;
+      }
+      
+      &.active { 
+        opacity: 0.5;
+      }
+    }
+
   }
 }

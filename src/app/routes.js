@@ -14,18 +14,57 @@ angular.module("proton.Routes", [
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
 
+  var messageViewOptions = {
+    url: "/:MessageID",
+    controller: "ViewMessageController as messageViewCtrl",
+    templateUrl: "templates/views/message.tpl.html",
+    resolve: {
+      message: function (
+        $rootScope, 
+        $state, 
+        $stateParams, 
+        Message, 
+        messageCache,
+        authentication,
+        networkActivityTracker
+      ) {
+
+        if (authentication.isLoggedIn()) {
+          var message = messageCache.find($stateParams.MessageID);
+          if (message) {
+            return message;
+          }
+
+          return networkActivityTracker.track(
+            Message
+              .get(_.pick($stateParams, 'MessageID'))
+              .$promise
+          );
+        }
+      }
+    }
+  };
+
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
       url: url + "?page&filter&sort",
       views: {
         "content@secured": {
-          controller: "MessageListController",
+          controller: "MessageListController as messageListCtrl",
           templateUrl: "templates/views/messageList.tpl.html"
         }
       },
 
       resolve: {
-        messages: function ($state, $stateParams, $rootScope, authentication, Message, mailboxIdentifiers, networkActivityTracker) {
+        messages: function (
+          $state, 
+          $stateParams, 
+          $rootScope, 
+          authentication, 
+          Message, 
+          mailboxIdentifiers, 
+          networkActivityTracker
+        ) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
             var params = {
@@ -35,7 +74,6 @@ angular.module("proton.Routes", [
             if (mailbox === 'starred') {
               params.Tag = mailbox;
             }
-
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
@@ -48,6 +86,32 @@ angular.module("proton.Routes", [
             );
           } else {
             return [];
+          }
+        },
+        
+        messageCount: function (
+          $stateParams, 
+          Message, 
+          authentication, 
+          mailboxIdentifiers, 
+          networkActivityTracker
+        ) {
+          var mailbox = this.data.mailbox;
+          if (authentication.isSecured()) {
+            var params = {
+              "Location": mailboxIdentifiers[mailbox],
+              "Page": $stateParams.page
+            };
+            if (mailbox === 'starred') {
+              params.Tag = mailbox;
+            }
+            if ($stateParams.filter) {
+              params.filter = $stateParams.filter;
+            }
+
+            return networkActivityTracker.track(
+              Message.count(params).$promise
+            );
           }
         }
       }
@@ -121,23 +185,7 @@ angular.module("proton.Routes", [
       }
     }))
 
-    .state("secured.message", {
-      url: "/message/:MessageID",
-      views: {
-        "content@secured": {
-          controller: "ViewMessageController",
-          templateUrl: "templates/views/message.tpl.html"
-        }
-      },
-      resolve: {
-        message: function ($rootScope, $stateParams, Message, networkActivityTracker) {
-          return networkActivityTracker.track(
-            Message.get(_.pick($stateParams, 'MessageID'))
-            .$promise
-          );
-        }
-      }
-    })
+    .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.contacts", {
       url: "/contacts",
@@ -221,9 +269,12 @@ angular.module("proton.Routes", [
       return;
     }
 
-    $stateProvider.state("secured." + box, messageListOptions("/" + box, {
+    var stateName = "secured." + box;
+    $stateProvider.state(stateName, messageListOptions("/" + box, {
       data: { mailbox: box }
     }));
+
+    $stateProvider.state("secured." + box + ".message", _.clone(messageViewOptions));
   });
 
   $urlRouterProvider.otherwise(function($injector) {

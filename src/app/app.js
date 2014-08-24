@@ -1,5 +1,9 @@
 angular.module("proton", [
   "ngAnimate",
+  "ngSanitize",
+  
+  "LocalStorageModule",
+  "btford.markdown",
 
   // templates
   "templates-app",
@@ -10,6 +14,7 @@ angular.module("proton", [
   "proton.Auth",
   "proton.Crypto",
   "proton.Models",
+  "proton.Messages",
 
   "proton.networkActivity",
 

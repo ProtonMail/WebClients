@@ -8,19 +8,27 @@ angular.module("proton.Controllers.Messages", [
   $scope, 
   $rootScope, 
   $q,
-  messages, 
+  messages,
+  messageCount,
+  messageCache,
   networkActivityTracker
 ) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
-  $scope.messages = messages;
+  $scope.page = parseInt($stateParams.page || "1");
+  messageCache.setList($scope.messages = messages);
+  $scope.messageCount = messageCount.count;
 
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
 
+  $scope.hasNextPage = function () {
+    return $scope.messageCount > ($scope.page * 25);
+  };
+
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
-      $state.go("secured.message", { MessageID: message.MessageID });
+      $state.go($state.current.name + ".message", { MessageID: message.MessageID });
     }
   };
 
@@ -49,6 +57,8 @@ angular.module("proton.Controllers.Messages", [
       return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
     } else if (otherMailbox == "spam") {
       return _.contains(["inbox", "starred", "trash"], mailbox);
+    } else if (otherMailbox == "drafts") {
+      return _.contains(["trash"], mailbox);
     }
   };
 
@@ -95,6 +105,18 @@ angular.module("proton.Controllers.Messages", [
       page: null
     }));
   };
+
+  $scope.goToPage = function (page) {
+    if (page > 0 && $scope.messageCount > ((page - 1) * 25)) {
+      if (page == 1) {
+        page = null;
+      }
+      
+      $state.go($state.current.name, _.extend({}, $state.params, {
+        page: page
+      }));
+    }
+  };
 })
 
 .controller("ComposeMessageController", function($rootScope, $scope, Message) {
@@ -102,7 +124,35 @@ angular.module("proton.Controllers.Messages", [
   $scope.message = new Message();
 })
 
-.controller("ViewMessageController", function($rootScope, $scope, message) {
+.controller("ViewMessageController", function(
+  $state, 
+  $rootScope, 
+  $scope,
+  $templateCache,
+  $compile,
+  message, 
+  localStorageService
+) {
+
   $rootScope.pageName = message.MessageTitle;
   $scope.message = message;
+  $scope.messageHeadState = "close";
+
+  $scope.toggleHead = function () {
+    $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
+  };
+
+  localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
+  if (!_.contains(["close", "open"], $scope.messageHeadState)) {
+    $scope.messageHeadState = "close";
+  }
+
+  var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
+  var iframe = $("#message-body > iframe");
+  var frame = iframe[0].contentWindow.document;
+  frame.open();
+  frame.close();
+
+  iframe.contents().find("body").append(render($scope));
+  iframe[0].height = iframe[0].contentWindow.document.body.scrollHeight + "px";
 });
