@@ -1,0 +1,31 @@
+<ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
+
+<div class="message-head">
+
+  <div class="btn-group pull-right">
+    <button type="button" class="btn btn-default"><i class="fa fa-reply"></i> Reply</button>
+    <button type="button" class="btn btn-default"><i class="fa fa-reply-all"></i> Reply all</button>
+    <button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i> Forward</button>
+  </div>
+
+  <h1>
+    <a href="#"><i class="fa fa-star-o"></i></a> 
+    {{ message.MessageTitle }}
+  </h1>
+
+  <ul class="infos" ng-if="messageHeadState == 'open'">
+    <li><strong>From</strong> 
+      <span btf-markdown="message.Sender | contrast:'<'"></span>
+    </li>
+    <li><strong>To</strong>
+      <span btf-markdown="message.RecipientList | contrast:'<'"></span>
+    </li>
+    <li><strong>At</strong>
+      <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
+    </li>
+  </ul>
+
+  <div class="toggle-head" ng-click="toggleHead()">
+    <i class="fa" ng-class="{'fa-angle-double-down': messageHeadState == 'close', 'fa-angle-double-up': messageHeadState == 'open'}"></i>
+  </div>
+</div>

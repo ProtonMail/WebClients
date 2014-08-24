@@ -1,0 +1,71 @@
+.message-head {
+  padding: 1em;
+  position: relative;
+  border-bottom: 2px solid #ddd;
+
+  h1 {
+    margin: 0.2em 0 0.2em 0;
+    a i.fa {
+      font-size: inherit;
+    }
+  }
+
+  div.toggle-head {
+    display: block;
+    position: absolute;
+    text-align: center;
+    height: 36px;
+    width: 36px;
+    background-color: white;
+    border-radius: 100%;
+    border: 2px solid #ddd;
+    color: #ddd;
+    bottom: -19px;
+    left: 50%;
+    margin-left: -18px;
+    cursor: pointer;
+
+    @include transition(all 0.1s ease-in-out);
+
+    &:hover {
+      color: white;
+      background-color: #ddd;
+    }
+
+    i {
+      font-size: 24px;
+      line-height: 36px;
+
+      &.fa-angle-double-up {
+        line-height: 32px;
+      }
+    }
+  }
+
+  ul.infos {
+    padding: 0;
+    margin-top: 1.5em;
+
+    li {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    strong {
+      display: inline-block;
+      width: 4em;
+      font-weight: normal;
+      color: #999;
+    }
+    span p {
+      display: inline-block;
+      color: #999;
+      margin: 0;
+
+      em {
+        font-weight: bold;
+        font-style: normal;
+        color: black;
+      }
+    }
+  }
+}
