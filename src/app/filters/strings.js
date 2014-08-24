@@ -23,4 +23,22 @@ angular.module("proton.filters.strings", [])
       return Math.round(size*10/1048576)/10 + " MB";
     }
   };
+})
+
+.filter("contrast", function () {
+  return function (input, character) {
+    var split = input.split(character);
+
+    if (split.length == 1) {
+      return "*" + input + "*";
+
+    } else {
+      if (character == '<') {
+        character = '&lt;';
+        split[1].replace('>', '&gt;');
+      }
+
+      return "*" + _.string.trim(split[0]) + "* " + character + split[1];
+    }
+  };
 });
