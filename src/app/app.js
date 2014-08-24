@@ -13,6 +13,7 @@ angular.module("proton", [
   "proton.Auth",
   "proton.Crypto",
   "proton.Models",
+  "proton.Messages",
 
   "proton.networkActivity",
 

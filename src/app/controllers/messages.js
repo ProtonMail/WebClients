@@ -10,12 +10,13 @@ angular.module("proton.Controllers.Messages", [
   $q,
   messages,
   messageCount,
+  messageCache,
   networkActivityTracker
 ) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
   $scope.page = parseInt($stateParams.page || "1");
-  $scope.messages = messages;
+  messageCache.setList($scope.messages = messages);
   $scope.messageCount = messageCount.count;
 
   $scope.selectedFilter = $stateParams.filter;
