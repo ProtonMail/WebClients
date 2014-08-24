@@ -3,35 +3,41 @@
   <hr>
 
   <div class="row">
-    <div class="col-md-4">
-      <form role="form" method="POST" class="form-inline">
-        <input type='hidden'/>
-        <label for="userlookup">User Lookup</label><br>
-        <input type="number" name="update_invite_notification_email_id" placeholder="UserID" class="form-control">
-        <input type="email" name="update_invite_notification_email" placeholder="New Notf. Email" class="form-control">
-        <button type="submit" class="btn btn-default"><span class="fa fa-refresh"></span> Update</button>
-      </form>
-    </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
       <form role="form" method="POST">
         <input type='hidden'/>
-        <label for="change_unsent_id">Change to Invite Unsent</label>
+        <label for="name_or_email">User Lookup</label>
         <div class="input-group">
-          <input type="number" class="form-control" name="change_unsent_id" placeholder="UserID">
+          <input type="text" id="name_or_email" name='name_or_email' value="User" class="form-control">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"><span class="fa fa-refresh"></span> Update</button>
+            <button class="btn btn-default" type="submit" name="submit_rpp"><span class="fa fa-search"></span> Lookup</button>
           </span>
         </div><!-- /input-group -->
+      </form>
+    </div>  
+    <div class="col-md-3">
+      <form role="form" method="POST">
+        <input type='hidden'/>
+        <label for="userlookup">Change Notf. Email</label><br>
+        <div class="form-group">
+          <input type="text" name="update_invite_notification_email_id" placeholder="User" class="form-control">
+        </div><!--/.form-group-->
+        <div class="form-group">
+          <input type="email" name="update_invite_notification_email" placeholder="New Notf. Email" class="form-control">
+        </div><!--/.form-group-->
+        <div class="form-group text-right">
+          <button type="submit" class="btn btn-default"><span class="fa fa-refresh"></span> Update</button>
+        </div><!--/.form-group-->
       </form>
     </div>
     <div class="col-md-3">
       <form role="form" method="POST">
         <input type='hidden'/>
-        <label for="name_or_email">Results/Page</label>
+        <label for="change_unsent_id">Change to Invite Unsent</label>
         <div class="input-group">
-          <input type="text" id="name_or_email" name='name_or_email' value="Username or Notf. Email" class="form-control">
+          <input type="text" class="form-control" name="change_unsent_id" placeholder="User">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="submit" name="submit_rpp"><span class="fa fa-search"></span> Lookup</button>
+            <button class="btn btn-default" type="submit"><span class="fa fa-refresh"></span> Update</button>
           </span>
         </div><!-- /input-group -->
       </form>
@@ -41,7 +47,7 @@
         <input type='hidden'/>
         <label for="manual_email_or_username">Invite User:</label>
         <div class="input-group">
-          <input type="text" class="form-control" name="manual_email_or_username" id="manual_email_or_username" placeholder="Username or Notf. Email">
+          <input type="text" class="form-control" name="manual_email_or_username" id="manual_email_or_username" placeholder="User">
           <span class="input-group-btn">
             <button class="btn btn-success" type="submit"><span class="fa fa-plus"></span> Invite</button>
           </span>
