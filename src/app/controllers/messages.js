@@ -135,4 +135,7 @@ angular.module("proton.Controllers.Messages", [
   };
 
   localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
+  if (!_.contains(["close", "open"], $scope.messageHeadState)) {
+    $scope.messageHeadState = "close";
+  }
 });
