@@ -14,12 +14,43 @@ angular.module("proton.Routes", [
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
 
+  var messageViewOptions = {
+    url: "/:MessageID",
+    controller: "ViewMessageController as messageViewCtrl",
+    templateUrl: "templates/views/message.tpl.html",
+    resolve: {
+      message: function (
+        $rootScope, 
+        $state, 
+        $stateParams, 
+        Message, 
+        messageCache,
+        authentication,
+        networkActivityTracker
+      ) {
+
+        if (authentication.isLoggedIn()) {
+          var message = messageCache.find($stateParams.MessageID);
+          if (message) {
+            return message;
+          }
+
+          return networkActivityTracker.track(
+            Message
+              .get(_.pick($stateParams, 'MessageID'))
+              .$promise
+          );
+        }
+      }
+    }
+  };
+
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
       url: url + "?page&filter&sort",
       views: {
         "content@secured": {
-          controller: "MessageListController",
+          controller: "MessageListController as messageListCtrl",
           templateUrl: "templates/views/messageList.tpl.html"
         }
       },
@@ -154,23 +185,7 @@ angular.module("proton.Routes", [
       }
     }))
 
-    .state("secured.message", {
-      url: "/message/:MessageID",
-      views: {
-        "content@secured": {
-          controller: "ViewMessageController",
-          templateUrl: "templates/views/message.tpl.html"
-        }
-      },
-      resolve: {
-        message: function ($rootScope, $stateParams, Message, networkActivityTracker) {
-          return networkActivityTracker.track(
-            Message.get(_.pick($stateParams, 'MessageID'))
-            .$promise
-          );
-        }
-      }
-    })
+    .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.contacts", {
       url: "/contacts",
@@ -254,9 +269,12 @@ angular.module("proton.Routes", [
       return;
     }
 
-    $stateProvider.state("secured." + box, messageListOptions("/" + box, {
+    var stateName = "secured." + box;
+    $stateProvider.state(stateName, messageListOptions("/" + box, {
       data: { mailbox: box }
     }));
+
+    $stateProvider.state("secured." + box + ".message", _.clone(messageViewOptions));
   });
 
   $urlRouterProvider.otherwise(function($injector) {

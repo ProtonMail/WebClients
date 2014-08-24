@@ -28,7 +28,7 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
-      $state.go("secured.message", { MessageID: message.MessageID });
+      $state.go($state.current.name + ".message", { MessageID: message.MessageID });
     }
   };
 
