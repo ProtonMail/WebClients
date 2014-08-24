@@ -1,5 +1,8 @@
 angular.module("proton", [
   "ngAnimate",
+  "ngSanitize",
+  
+  "btford.markdown",
 
   // templates
   "templates-app",
