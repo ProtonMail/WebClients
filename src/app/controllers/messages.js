@@ -124,7 +124,15 @@ angular.module("proton.Controllers.Messages", [
   $scope.message = new Message();
 })
 
-.controller("ViewMessageController", function($state, $rootScope, $scope, message, localStorageService) {
+.controller("ViewMessageController", function(
+  $state, 
+  $rootScope, 
+  $scope,
+  $templateCache,
+  $compile,
+  message, 
+  localStorageService
+) {
 
   $rootScope.pageName = message.MessageTitle;
   $scope.message = message;
@@ -138,4 +146,13 @@ angular.module("proton.Controllers.Messages", [
   if (!_.contains(["close", "open"], $scope.messageHeadState)) {
     $scope.messageHeadState = "close";
   }
+
+  var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
+  var iframe = $("#message-body > iframe");
+  var frame = iframe[0].contentWindow.document;
+  frame.open();
+  frame.close();
+
+  iframe.contents().find("body").append(render($scope));
+  iframe[0].height = iframe[0].contentWindow.document.body.scrollHeight + "px";
 });
