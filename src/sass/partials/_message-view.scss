@@ -13,9 +13,9 @@
   div.toggle-head {
     display: block;
     position: absolute;
-    text-align: center;
-    height: 36px;
-    width: 36px;
+    padding-left: 8.5px;
+    height: 32px;
+    width: 23.5px;
     background-color: white;
     border-radius: 100%;
     border: 2px solid #ddd;
@@ -24,6 +24,7 @@
     left: 50%;
     margin-left: -18px;
     cursor: pointer;
+    box-sizing: content-box;
 
     @include transition(all 0.1s ease-in-out);
 
