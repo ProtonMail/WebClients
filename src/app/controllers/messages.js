@@ -124,7 +124,15 @@ angular.module("proton.Controllers.Messages", [
   $scope.message = new Message();
 })
 
-.controller("ViewMessageController", function($rootScope, $scope, message) {
+.controller("ViewMessageController", function($state, $rootScope, $scope, message, localStorageService) {
+
   $rootScope.pageName = message.MessageTitle;
   $scope.message = message;
+  $scope.messageHeadState = "close";
+
+  $scope.toggleHead = function () {
+    $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
+  };
+
+  localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
 });

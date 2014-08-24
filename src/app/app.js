@@ -2,6 +2,7 @@ angular.module("proton", [
   "ngAnimate",
   "ngSanitize",
   
+  "LocalStorageModule",
   "btford.markdown",
 
   // templates
