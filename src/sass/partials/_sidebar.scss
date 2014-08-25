@@ -33,10 +33,9 @@
     text-shadow: none;
     -webkit-font-smoothing: antialiased;
 
-    @include transition(opacity 0.1s ease-in 0.5s);
-
     &.active {
-      opacity: 0.7;
+      opacity: 1;
+      background: darken(#fff, 50%)
     }
   }
 
@@ -143,6 +142,10 @@
       }
       &.active {
         @include linear-gradient(lighten($gray, $sidebar-button-lighten), $gray);
+        .label {
+          background: #fff;
+          color: #000;
+        }
         &:hover {
           background: lighten($gray, ($sidebar-button-lighten/2));
           border-color: transparent;
@@ -157,6 +160,9 @@
       &.active, &:hover {
         color: #fff;
         text-shadow: none;
+        .label {
+          background: #fff;
+        }
       }
     }
   }
