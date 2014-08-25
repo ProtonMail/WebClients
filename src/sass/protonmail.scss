@@ -1,6 +1,7 @@
 .fa {font-size: 14px;}
 
 $font-size-base:              13px;
+$font-size-small:             $font-size-base;
 $body-bg:                     #fff; 
 $panel-bg:                    darken($body-bg, 2%);
 $font-size-h1:                floor(($font-size-base * 2));
@@ -29,3 +30,5 @@ $sidebar-button-lighten:    5%;
 $sidebar-bg:                #333;
 
 $table-cell-padding:        6px 8px;
+
+$tooltip-opacity:           1;
