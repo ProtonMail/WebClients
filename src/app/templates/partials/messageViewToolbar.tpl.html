@@ -18,27 +18,27 @@
       </a>
       <ul class="dropdown-menu" role="menu">
         <li ng-if="message.location() != 'inbox'">
-          <a href="#" ng-click="moveMessagesTo('inbox')">
+          <a href="#" ng-click="moveMessageTo('inbox')">
             <i class="fa fa-fw fa-inbox"></i> Inbox
           </a>
         </li>
         <li ng-if="message.location() != 'drafts'">
-          <a href="#" ng-click="moveMessagesTo('drafts')">
+          <a href="#" ng-click="moveMessageTo('drafts')">
             <i class="fa fa-fw fa-file-text-o"></i> Drafts
           </a>
         </li>
         <li ng-if="message.location() != 'sent'">
-          <a href="#" ng-click="moveMessagesTo('sent')">
+          <a href="#" ng-click="moveMessageTo('sent')">
             <i class="fa fa-fw fa-sign-out"></i> Sent
           </a>
         </li>
         <li ng-if="message.location() != 'trash'">
-          <a href="#" ng-click="moveMessagesTo('trash')">
+          <a href="#" ng-click="moveMessageTo('trash')">
             <i class="fa fa-fw fa-trash-o"></i> Trash
           </a>
         </li>
         <li ng-if="message.location() != 'spam'">
-          <a href="#" ng-click="moveMessagesTo('spam')">
+          <a href="#" ng-click="moveMessageTo('spam')">
             <i class="fa fa-fw fa-bug"></i> Spam
           </a>
         </li>
