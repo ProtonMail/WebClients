@@ -146,6 +146,7 @@ angular.module("proton.Controllers.Messages", [
   };
   $scope.goToMessageList = function () {
     $state.go("^");
+    $rootScope.pageName = $state.current.data.mailbox;
   };
   $scope.moveMessageTo = function (mailbox) {
     networkActivityTracker.track(
