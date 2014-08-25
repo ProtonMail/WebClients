@@ -165,7 +165,7 @@ angular.module("proton.Controllers.Messages", [
   iframeDocument.close();
   iframe.contents().find("body").append(render($scope));
 
-  // HACK: Lets the iframe render its content before we can get an accurent height measurement.
+  // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
   $timeout(function () {
     iframe.height(iframeDocument.body.scrollHeight + "px");
   }, 16);
