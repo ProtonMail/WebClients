@@ -1,12 +1,12 @@
 <div class="message-list-toolbar">
   <ul class="nav navbar-nav">
     <li ng-if="!message.IsRead">
-      <a href="#" ng-click="setMessageReadStatus(true)">
+      <a href="#" ng-click="message.setReadStatus(true)">
         <i class="fa fa-fw fa-eye"></i> Mark as read
       </a>
     </li>
     <li ng-if="message.IsRead">
-      <a href="#" ng-click="setMessageReadStatus(false)">
+      <a href="#" ng-click="message.setReadStatus(false)">
         <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
       </a>
     </li>
