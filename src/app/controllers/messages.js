@@ -150,15 +150,15 @@ angular.module("proton.Controllers.Messages", [
 
   var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
   var iframe = $("#message-body > iframe");
-  var frame = iframe[0].contentWindow.document;
+  var iframeDocument = iframe[0].contentWindow.document;
 
   // HACK: Makes the iframe's content manipulation work in Firefox.
-  frame.open();
-  frame.close();
+  iframeDocument.open();
+  iframeDocument.close();
   iframe.contents().find("body").append(render($scope));
 
   // HACK: Lets the iframe render its content before we can get an accurent height measurement.
   $timeout(function () {
-    iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
+    iframe.height(iframeDocument.body.scrollHeight + "px");
   }, 16);
 });
