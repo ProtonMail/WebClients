@@ -5,8 +5,20 @@
 
   h1 {
     margin: 0.2em 0 0.2em 0;
-    a i.fa {
-      font-size: inherit;
+    a {
+      &.back {
+        @include transition(color 0.07s ease-in-out 0);
+
+        margin-right: 1rem;
+        color: #ddd;
+
+        &:hover {
+          color: #333;
+        }
+      }
+      i.fa {
+        font-size: inherit;
+      }
     }
   }
 
