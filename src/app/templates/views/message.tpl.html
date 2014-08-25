@@ -26,7 +26,7 @@
     </li>
   </ul>
 
-  <div class="toggle-head" ng-click="toggleHead()">
+  <div class="toggle-head" ng-click="toggleHead()" ng-class="{open: messageHeadState == 'open'}">
     <i class="fa" ng-class="{'fa-angle-double-down': messageHeadState == 'close', 'fa-angle-double-up': messageHeadState == 'open'}"></i>
   </div>
 </div>
