@@ -132,7 +132,8 @@ angular.module("proton.Controllers.Messages", [
   $compile,
   $timeout,
   message, 
-  localStorageService
+  localStorageService,
+  networkActivityTracker
 ) {
 
   $rootScope.pageName = message.MessageTitle;
@@ -145,6 +146,17 @@ angular.module("proton.Controllers.Messages", [
   };
   $scope.goToMessageList = function () {
     $state.go("^");
+  };
+  $scope.moveMessageTo = function (mailbox) {
+    networkActivityTracker.track(
+      ( (mailbox === 'delete') ? message.delete() : message.moveTo(mailbox) ).$promise
+      .then(function () {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      })
+    );
   };
 
   if (!message.IsRead) {
