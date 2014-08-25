@@ -1,4 +1,4 @@
-.message-list-toolbar {
+.message-toolbar {
   @include linear-gradient(#fff, #e5e5e5);
   @include clearfix;
 
@@ -100,13 +100,15 @@
       }
       li:first-child {
         border-left: 1px solid #ddd;
-        a {
-          padding: 1.2rem 13px 0.5em 10px;
-        }
       }
-      li:last-child a {
+
+      li.prev-page a {
+        padding: 1.2rem 13px 0.5em 10px;
+      }
+      li.next-page a {
         padding: 1.2rem 10px 0.5em 13px;
       }
+
     }
   }
 }
