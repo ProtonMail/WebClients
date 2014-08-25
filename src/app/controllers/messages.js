@@ -136,11 +136,15 @@ angular.module("proton.Controllers.Messages", [
 ) {
 
   $rootScope.pageName = message.MessageTitle;
+  
   $scope.message = message;
   $scope.messageHeadState = "close";
 
   $scope.toggleHead = function () {
     $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
+  };
+  $scope.goToMessageList = function () {
+    $state.go("^");
   };
 
   localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
