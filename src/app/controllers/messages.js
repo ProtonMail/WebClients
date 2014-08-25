@@ -76,9 +76,9 @@ angular.module("proton.Controllers.Messages", [
     networkActivityTracker.track($q.all(
       _.map(selectedMessages, function (message) {
         if (mailbox == 'delete') {
-          return message.delete();
+          return message.delete().$promise;
         } else {
-          return message.moveTo(mailbox);
+          return message.moveTo(mailbox).$promise;
         }
       })
     ).then(function () {
