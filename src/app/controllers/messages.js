@@ -76,9 +76,9 @@ angular.module("proton.Controllers.Messages", [
     networkActivityTracker.track($q.all(
       _.map(selectedMessages, function (message) {
         if (mailbox == 'delete') {
-          return message.delete();
+          return message.delete().$promise;
         } else {
-          return message.moveTo(mailbox);
+          return message.moveTo(mailbox).$promise;
         }
       })
     ).then(function () {
@@ -130,17 +130,38 @@ angular.module("proton.Controllers.Messages", [
   $scope,
   $templateCache,
   $compile,
+  $timeout,
   message, 
-  localStorageService
+  localStorageService,
+  networkActivityTracker
 ) {
 
   $rootScope.pageName = message.MessageTitle;
+  
   $scope.message = message;
   $scope.messageHeadState = "close";
 
   $scope.toggleHead = function () {
     $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
   };
+  $scope.goToMessageList = function () {
+    $state.go("^");
+  };
+  $scope.moveMessageTo = function (mailbox) {
+    networkActivityTracker.track(
+      ( (mailbox === 'delete') ? message.delete() : message.moveTo(mailbox) ).$promise
+      .then(function () {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      })
+    );
+  };
+
+  if (!message.IsRead) {
+    message.setReadStatus(true);
+  }
 
   localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
   if (!_.contains(["close", "open"], $scope.messageHeadState)) {
@@ -149,10 +170,15 @@ angular.module("proton.Controllers.Messages", [
 
   var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
   var iframe = $("#message-body > iframe");
-  var frame = iframe[0].contentWindow.document;
-  frame.open();
-  frame.close();
+  var iframeDocument = iframe[0].contentWindow.document;
 
+  // HACK: Makes the iframe's content manipulation work in Firefox.
+  iframeDocument.open();
+  iframeDocument.close();
   iframe.contents().find("body").append(render($scope));
-  iframe[0].height = iframe[0].contentWindow.document.body.scrollHeight + "px";
+
+  // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+  $timeout(function () {
+    iframe.height(iframeDocument.body.scrollHeight + "px");
+  }, 16);
 });

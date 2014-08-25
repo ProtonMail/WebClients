@@ -31,7 +31,7 @@ angular.module("proton.Models", [
 })
 
 .factory("Message", function($resource, authentication, mailboxIdentifiers) {
-  mailboxIdentifiers = _.invert(mailboxIdentifiers);
+  var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
   var Message = $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
     query: {
       method: "get",
@@ -78,7 +78,12 @@ angular.module("proton.Models", [
       return Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
     },
     moveTo: function(location) {
-      this.Location = location;
+      if ( _.has(mailboxIdentifiers, location) ) {
+        this.Location = mailboxIdentifiers[location];
+      } else {
+        this.Location = location;
+      }
+      
       return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
     },
     setReadStatus: function (status) {
@@ -92,7 +97,7 @@ angular.module("proton.Models", [
       return this.AttachmentIDList.split(",").length;
     },
     location: function () {
-      return mailboxIdentifiers[this.Location];
+      return invertedMailboxIdentifiers[this.Location];
     }
   });
 

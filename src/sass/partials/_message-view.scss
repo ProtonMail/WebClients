@@ -1,12 +1,45 @@
 .message-head {
-  padding: 1em;
+  padding: 1.4em 1.2em 1.2em 1.2em;
   position: relative;
-  border-bottom: 2px solid #ddd;
+  background-color: #f5f5f5;
 
   h1 {
-    margin: 0.2em 0 0.2em 0;
-    a i.fa {
-      font-size: inherit;
+    margin: 0;
+    a {
+      &.back {
+        @include transition(color 0.07s ease-in-out 0);
+
+        margin-right: 1rem;
+        color: #ccc;
+
+        &:hover {
+          color: #999;
+        }
+      }
+      i.fa {
+        font-size: inherit;
+      }
+
+      .fa-star-o { color: rgba(0, 0, 0, 0.5); }
+      .fa-star {   color: orange; }
+    }
+  }
+
+  .message-actions {
+    margin-right: 1rem;
+
+    a {
+      margin-left: 2rem;
+      font-size: 110%;
+      font-weight: bold;
+      line-height: 2em;
+      color: #999;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+        color: #333;
+      }
     }
   }
 
@@ -16,11 +49,8 @@
     padding-left: 8.5px;
     height: 32px;
     width: 23.5px;
-    background-color: white;
     border-radius: 100%;
-    border: 2px solid #ddd;
-    color: #ddd;
-    bottom: -19px;
+    bottom: -16px;
     left: 50%;
     margin-left: -18px;
     cursor: pointer;
@@ -28,9 +58,16 @@
 
     @include transition(all 0.1s ease-in-out);
 
-    &:hover {
-      color: white;
-      background-color: #ddd;
+    &,
+    &.open:hover {
+      color: #ddd;
+      background-color: white;
+    }
+
+    &:hover,
+    &.open {
+      color: #aaa;
+      background-color: #f5f5f5;
     }
 
     i {
@@ -51,12 +88,14 @@
       list-style: none;
       margin-top: 0.5rem;
     }
+
     strong {
       display: inline-block;
       width: 4em;
       font-weight: normal;
       color: #999;
     }
+    
     span p {
       display: inline-block;
       color: #999;
@@ -74,7 +113,7 @@
 #message-body {
   iframe {
     width: 100%;
-    border: none;
+    border: 0;
     float: left;
   }
 }
