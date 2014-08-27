@@ -1,3 +1,12 @@
+@mixin head-link {
+  @include transition(color 0.07s ease-in-out 0);
+
+  color: #ccc;
+  &:hover {
+    color: #999;
+  }
+}
+
 .message-head {
   padding: 1.4em 1.2em 1.2em 1.2em;
   position: relative;
@@ -7,14 +16,8 @@
     margin: 0;
     a {
       &.back {
-        @include transition(color 0.07s ease-in-out 0);
-
+        @include head-link;
         margin-right: 1rem;
-        color: #ccc;
-
-        &:hover {
-          color: #999;
-        }
       }
       i.fa {
         font-size: inherit;
@@ -29,16 +32,16 @@
     margin-right: 1rem;
 
     a {
+      @include head-link;
+
       margin-left: 2rem;
       font-size: 110%;
       font-weight: bold;
       line-height: 2em;
-      color: #999;
       display: inline-block;
 
       &:hover {
         text-decoration: none;
-        color: #333;
       }
     }
   }
@@ -58,16 +61,14 @@
 
     @include transition(all 0.1s ease-in-out);
 
-    &,
-    &.open:hover {
-      color: #ddd;
-      background-color: white;
-    }
-
-    &:hover,
-    &.open {
+    & {
       color: #aaa;
       background-color: #f5f5f5;
+    }
+
+    &:hover {
+      color: #ddd;
+      background-color: white;
     }
 
     i {
@@ -83,6 +84,7 @@
   ul.infos {
     padding: 0;
     margin-top: 1.5em;
+    margin-left: 0.5em;
 
     li {
       list-style: none;
@@ -107,6 +109,21 @@
         color: black;
       }
     }
+  }
+
+  pre {
+    margin: 1.8em 0 0 0;
+    padding: 1.3em 0.5em;
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace,serif;
+    font-size: 1em;
+    line-height: 1.75em;
+    border-radius: 0;
+    border-width: 1px 0 0 0;
   }
 }
 
