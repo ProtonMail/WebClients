@@ -140,6 +140,7 @@ angular.module("proton.Controllers.Messages", [
   
   $scope.message = message;
   $scope.messageHeadState = "close";
+  $scope.showHeaders = false;
 
   $scope.toggleHead = function () {
     $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
@@ -158,6 +159,14 @@ angular.module("proton.Controllers.Messages", [
         }
       })
     );
+  };
+  $scope.toggleHeaders = function () {
+    if ($scope.showHeaders) {
+      $scope.showHeaders = false;
+    } else {
+      $scope.messageHeadState = "open";
+      $scope.showHeaders = true;
+    }
   };
 
   if (!message.IsRead) {
