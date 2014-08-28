@@ -30,7 +30,7 @@ angular.module("proton.Models", [
   });
 })
 
-.factory("Message", function($resource, authentication, mailboxIdentifiers) {
+.factory("Message", function($resource, authentication, crypto, mailboxIdentifiers) {
   var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
   var Message = $resource(authentication.baseURL + "/messages/:MessageID", authentication.params(), {
     query: {
@@ -98,6 +98,16 @@ angular.module("proton.Models", [
     },
     location: function () {
       return invertedMailboxIdentifiers[this.Location];
+    },
+    clearTextBody: function () {
+      if (this.IsEncrypted) {
+        if (!this._decryptedBody) {
+          this._decryptedBody = crypto.decryptPackage(authentication.user.EncPrivateKey, this.MessageBody, this.Time);
+        }
+        return this._decryptedBody;
+      } else {
+        return this.MessageBody;
+      }
     }
   });
 
