@@ -20,6 +20,17 @@ angular.module("proton.Auth", [
 
     var baseURL;
 
+    var randomString = function (size) {
+      var string = ""
+        , i = 0
+        , chars = "0123456789ABCDEF";
+
+      while (i++ < size) {
+        string += chars[Math.floor(Math.random() * 16)];
+      }
+      return string;
+    };
+
     // PRIVATE FUNCTIONS
 
     auth.saveAuthData = function(data) {
@@ -165,10 +176,14 @@ angular.module("proton.Auth", [
           } else {
             delete $http.defaults.headers.common.Accept;
 
-            $http.post(baseURL + "/auth",
+            $http.post(baseURL + "/auth/auth",
               _.extend(_.pick(creds, "username", "password"), {
-                client_id: "this_is_test_app_id",
-                response_type: "password"
+                client_id: "demoapp",
+                client_secret: "demoapp",
+                hashedpassword: "",
+                grant_type: "password",
+                state: randomString(24),
+                redirect_uri: "https://protonmail.dev"
               })
             ).then(function(resp) {
               var data = resp.data;
