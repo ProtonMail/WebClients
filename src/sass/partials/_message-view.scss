@@ -137,4 +137,11 @@
     border: 0;
     float: left;
   }
+  .alert  {
+    margin: 2em 1em;
+    span.fa {
+      font-size: 290%;
+      display: block;
+    }
+  }
 }

@@ -100,14 +100,22 @@ angular.module("proton.Models", [
     location: function () {
       return invertedMailboxIdentifiers[this.Location];
     },
+
     clearTextBody: function () {
       if (this.IsEncrypted) {
-        if (!this._decryptedBody) {
-          this._decryptedBody = crypto.decryptPackage(
-            authentication.user.EncPrivateKey, 
-            this.MessageBody, 
-            this.Time
-          );
+        if (_.isUndefined(this._decryptedBody)) {
+          try {
+            this._decryptedBody = crypto.decryptPackage(
+              authentication.user.EncPrivateKey, 
+              this.MessageBody, 
+              this.Time
+            );
+            this.failedDecryption = false;
+          } catch(err) {
+            this._decryptedBody = "";
+            this.failedDecryption = true;
+          }
+          
         }
         
         return this._decryptedBody;
