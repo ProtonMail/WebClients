@@ -78,12 +78,13 @@ angular.module("proton.Models", [
       return Message.patch({MessageID: this.MessageID}, {Tag: this.Tag});
     },
     moveTo: function(location) {
+      // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
       if ( _.has(mailboxIdentifiers, location) ) {
         this.Location = mailboxIdentifiers[location];
       } else {
         this.Location = location;
       }
-      
+
       return Message.patch({MessageID: this.MessageID}, {Location: this.Location});
     },
     setReadStatus: function (status) {
@@ -102,8 +103,13 @@ angular.module("proton.Models", [
     clearTextBody: function () {
       if (this.IsEncrypted) {
         if (!this._decryptedBody) {
-          this._decryptedBody = crypto.decryptPackage(authentication.user.EncPrivateKey, this.MessageBody, this.Time);
+          this._decryptedBody = crypto.decryptPackage(
+            authentication.user.EncPrivateKey, 
+            this.MessageBody, 
+            this.Time
+          );
         }
+        
         return this._decryptedBody;
       } else {
         return this.MessageBody;
