@@ -88,7 +88,7 @@
   ul.infos {
     padding: 0;
     margin-top: 1.5em;
-    margin-left: 0.5em;
+    margin-left: 0.2em;
 
     li {
       list-style: none;
@@ -98,8 +98,10 @@
     strong {
       display: inline-block;
       width: 4em;
-      font-weight: normal;
-      color: #999;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 90%;
+      color: #bbb;
     }
     
     span p {

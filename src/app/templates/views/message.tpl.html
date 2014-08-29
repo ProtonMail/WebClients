@@ -19,6 +19,12 @@
     <li><strong>To</strong>
       <span btf-markdown="message.RecipientList | contrast:'<'"></span>
     </li>
+    <li ng-if="message.CCList"><strong>CC</strong>
+      <span btf-markdown="message.CCList | contrast:'<'"></span>
+    </li>
+    <li ng-if="message.BCCList"><strong>BCC</strong>
+      <span btf-markdown="message.BCCList | contrast:'<'"></span>
+    </li>
     <li><strong>At</strong>
       <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </li>
