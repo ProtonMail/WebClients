@@ -15,6 +15,18 @@
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       }
+      &.lock-indicator {
+        border-right: 0;
+
+        > a,
+        > a:hover {
+          color: #888;
+
+          i:first-child { 
+            margin-right: 0; 
+          }
+        }
+      }
 
       > input[type='checkbox'] {
         margin: 1rem 0;

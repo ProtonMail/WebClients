@@ -63,6 +63,10 @@
         <i class="fa fa-code"></i> {{ showHeaders ? 'Hide' : 'View' }} headers
       </a>
     </li>
+
+    <li ng-if="message.IsEncrypted" class="lock-indicator">
+      <a pt-tooltip="Encrypted"><i class="fa fa-lock"></i></a>
+    </li>
   </ul>
 
   <ul class="nav navbar-nav pull-right navigation">
