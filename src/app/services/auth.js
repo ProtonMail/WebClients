@@ -38,9 +38,10 @@ angular.module("proton.Auth", [
 
       window.localStorage[OAUTH_KEY+":uid"] = data.uid;
       window.localStorage[OAUTH_KEY+":exp"] = date.toISOString();
-      window.localStorage[OAUTH_KEY+":token"] = data.access_token;
+      window.localStorage[OAUTH_KEY+":access_token"] = data.access_token;
+      window.localStorage[OAUTH_KEY+":refresh_token"] = data.refresh_token;
 
-      auth.data = _.pick(data, "uid", "access_token");
+      auth.data = _.pick(data, "uid", "access_token", "refresh_token");
       auth.data.exp = date;
     };
 
@@ -58,7 +59,8 @@ angular.module("proton.Auth", [
           auth.data = {
             uid: window.localStorage[OAUTH_KEY+":uid"],
             exp: dt,
-            access_token: window.localStorage[OAUTH_KEY+":token"]
+            access_token: window.localStorage[OAUTH_KEY+":access_token"],
+            refresh_token: window.localStorage[OAUTH_KEY+":refresh_token"]
           };
 
           auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
@@ -179,18 +181,19 @@ angular.module("proton.Auth", [
             $http.post(baseURL + "/auth/auth",
               _.extend(_.pick(creds, "username", "password"), {
                 client_id: "demoapp",
-                client_secret: "demoapp",
+                client_secret: "demopass",
                 hashedpassword: "",
                 grant_type: "password",
                 state: randomString(24),
-                redirect_uri: "https://protonmail.dev"
+                redirect_uri: "https://protonmail.ch",
+                response_type: "token"
               })
             ).then(function(resp) {
               var data = resp.data;
               if ("error" in data) {
                 q.reject({message: data.error.message});
               } else {
-                auth.saveAuthData(_.pick(data.data, "access_token", "uid", "expires_in"));
+                auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
                 auth.fetchUserInfo().then(function() {
                   $rootScope.isLoggedIn = true;
                   $rootScope.isLocked = true;
@@ -207,19 +210,16 @@ angular.module("proton.Auth", [
         },
 
         params: function (params) {
-          return _.extend({
-            access_token: function() {
-              return auth.data.access_token;
-            }
-          }, params);
+          return params;
         }
       };
 
       auth.fetchUserInfo = function() {
         $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
-        $http.defaults.headers.common.Authorization = auth.data.uid;
+        $http.defaults.headers.common.Authorization = "Bearer " + auth.data.access_token;
+        $http.defaults.headers.common["x-pm-uid"] = auth.data.uid;
 
-        api.user = $injector.get("User").get();
+        api.user = $injector.get("User").get({UserID: auth.data.uid});
         return api.user.$promise;
       };
 
