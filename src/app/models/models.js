@@ -37,7 +37,7 @@ angular.module("proton.Models", [
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).data;
+        return JSON.parse(data).Messages;
       }
     },
     delete: {
@@ -48,7 +48,7 @@ angular.module("proton.Models", [
       method: "get",
       isArray: false,
       transformResponse: function (data) {
-        return JSON.parse(data).data;
+        return JSON.parse(data);
       }
     },
     patch: {
@@ -130,12 +130,12 @@ angular.module("proton.Models", [
 
 .factory("User", function($resource, $injector) {
   var authentication = $injector.get("authentication");
-  return $resource(authentication.baseURL + "/user", authentication.params(), {
+  return $resource(authentication.baseURL + "/users/:UserID", authentication.params(), {
     get: {
       method: 'get',
       isArray: false,
       transformResponse: function (data) {
-        return JSON.parse(data).data;
+        return JSON.parse(data);
       }
     }
   });
