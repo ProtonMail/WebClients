@@ -29,6 +29,15 @@
         <div class="bounce3"></div>
       </div>
 
+      <div error-reporter class="alert alert-danger centered ng-hide">
+        <button type="button" class="close" ng-click="errorReporter.active = false">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+
+        {{ errorReporter.error }}
+      </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
           <a ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>
