@@ -1,13 +1,9 @@
 angular.module("proton.errorReporter", [])
 .factory("errorReporter", function ($log, $rootScope, $q) {
-  var api = {
+  var api = _.bindAll({
     catcher: function (msg, promise) {
       return function (error) {
-        $log.error(error.error_description);
-        if (msg) {
-          $rootScope.errorReporter.active = true;
-          $rootScope.errorReporter.error = msg;
-        }
+        this.notify(msg, error);
         if (promise) {
           promise.reject();
         }
@@ -20,22 +16,24 @@ angular.module("proton.errorReporter", [])
           q.resolve(result);
         },
         function (error) {
-          $log.error(error.error_description);
-          if (msg) {
-            $rootScope.errorReporter.active = true;
-            $rootScope.errorReporter.error = msg;
-          }
-          console.log(defaultResult);
+          this.notify(msg, error);
           q.resolve(defaultResult);
         }
       );
 
       return q.promise;
     },
+    notify: function (msg, error) {
+      $log.error(error.error_description);
+      if (msg) {
+        $rootScope.errorReporter.active = true;
+        $rootScope.errorReporter.error = msg;
+      }
+    },
     clear: function () {
       $rootScope.errorReporter.active = false;
     }
-  };
+  });
   return api;
 })
 
