@@ -12,6 +12,9 @@ angular.module("proton.errorReporter", [])
           promise.reject();
         }
       };
+    },
+    clear: function () {
+      $rootScope.errorReporter.active = false;
     }
   };
   return api;
