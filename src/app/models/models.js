@@ -60,7 +60,7 @@ angular.module("proton.Models", [
       url: authentication.baseURL + "/messages/count",
       isArray: false,
       transformResponse: function (data) {
-        return JSON.parse(data).data;
+        return JSON.parse(data);
       }
     }
   });
