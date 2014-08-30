@@ -63,7 +63,8 @@ angular.module("proton.Routes", [
           authentication, 
           Message, 
           mailboxIdentifiers, 
-          networkActivityTracker
+          networkActivityTracker,
+          errorReporter
         ) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
@@ -82,7 +83,11 @@ angular.module("proton.Routes", [
             }
 
             return networkActivityTracker.track(
-              Message.query(params).$promise
+              errorReporter.resolve(
+                "Messages couldn't be queried - please try again later.",
+                Message.query(params).$promise,
+                []
+              )
             );
           } else {
             return [];
@@ -94,6 +99,7 @@ angular.module("proton.Routes", [
           Message, 
           authentication, 
           mailboxIdentifiers, 
+          errorReporter,
           networkActivityTracker
         ) {
           var mailbox = this.data.mailbox;
@@ -110,7 +116,11 @@ angular.module("proton.Routes", [
             }
 
             return networkActivityTracker.track(
-              Message.count(params).$promise
+              errorReporter.resolve(
+                "Message count couldn't be queried - please try again later.",
+                Message.count(params).$promise,
+                {count: 0}
+              )
             );
           }
         }
