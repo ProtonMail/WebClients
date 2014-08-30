@@ -1,31 +1,41 @@
 .message-toolbar {
-  @include linear-gradient(#fff, #e5e5e5);
+  background: #e5e5e5;
+  box-shadow: inset 0 -1px rgba(0,0,0,.1);  
   @include clearfix;
-
-  border-bottom: 1px solid #ccc;
 
   > ul {
     > li {
-      border-right: 1px solid #ddd;
+      border-right: 1px solid rgba(0,0,0,.2);
 
       &.selectAll {
-        padding-top: 0.8rem;
-        padding-bottom: 0.7rem;
-        padding-left: 15px;
-        padding-right: 15px; 
+        padding: 0 15px;
+        @include linear-gradient(#fff, #e5e5e5);
+        box-shadow: inset 0 -1px rgba(0,0,0,.1);        
       }
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       }
 
+      > input[type='checkbox'] {
+        margin: 1rem 0;
+      }
+
       > a {
-        padding-top: 1rem;
-        padding-bottom: 0.8rem;
+        padding: 0 15px;
         color: #666;
-        text-shadow: 0 1px 0 #fff;
+        line-height: 32px;
+        box-shadow: inset 0 -1px rgba(0,0,0,.1);
+        @include linear-gradient(#fff, #e5e5e5);        
 
         &:hover {
-          color: #333;
+          color: #000;
+          box-shadow: inset 0 -1px rgba(0,0,0,.1);
+          @include linear-gradient(#fff, #f2f2f2);
+        }
+
+        &:active {
+          background: transparent;
+          color: #999
         }
 
         input[type="checkbox"] {
@@ -41,8 +51,11 @@
         }
 
         &.disabled {
-          background-color: #eee;
-          color: #aaa;
+          text-shadow: none;
+          opacity: .3;
+          cursor: not-allowed;
+          pointer-events: none;
+          background: transparent;
         }
 
         &.dropdown-toggle {
@@ -59,6 +72,8 @@
         background-color: #eeeeee;
         border-top: 1px solid #d1d1d1;
         margin-left: -1px;
+        padding: 0;
+        top: 98%;
         li:not(:last-child) {
           border-bottom: 1px solid #ddd;
         }
@@ -99,14 +114,7 @@
         margin-right: 0;
       }
       li:first-child {
-        border-left: 1px solid #ddd;
-      }
-
-      li.prev-page a {
-        padding: 1.2rem 13px 0.5em 10px;
-      }
-      li.next-page a {
-        padding: 1.2rem 10px 0.5em 13px;
+        border-left: 1px solid rgba(0,0,0,.2);
       }
 
     }

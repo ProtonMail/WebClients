@@ -48,8 +48,8 @@ table.message-list {
 
     td.actions {
       cursor: default;
-      width: 72px;
-      padding-left: 16px;
+      padding-left: 15px;
+      width: 7.5rem;
 
       span { 
         width: 1.5rem;
@@ -57,7 +57,7 @@ table.message-list {
 
         &.fa-star,
         &.fa-star-o {
-          font-size: 120%;
+          font-size: 14px;
           position: relative;
           top: 1px;
         }

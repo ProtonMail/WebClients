@@ -6,7 +6,6 @@ $fa-font-path: "fonts";
 @import "font-awesome";
 @import "partials/header";
 
-
 html {
   position: relative;
   min-height: 100%;
@@ -14,9 +13,24 @@ html {
 .secure #body { 
   min-height: 100%; 
 }
-.secure #main {
+.secure #main {} 
 
+.modal-body {
+  background: $panel-bg;
 }
+
+h1 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  text-align: center;
+
+  span.fa {
+    text-shadow: 0 1px 0 #fff;
+    display: block;
+    margin-bottom: .25rem;
+  }
+}
+
 body,
 #main {
   margin-bottom: $footer-height;
@@ -47,6 +61,12 @@ body footer {
   }
   #footer {
     @include calc(width, '100% - #{$sidebar-width}');
+    background: #fff;
+    box-shadow: inset 0 1px #e5e5e5;
+    color: #999;
+    a {
+      color: #999
+    }
   }
 }
 
@@ -89,6 +109,13 @@ body footer {
     @include linear-gradient($btn-danger-bg, darken($btn-danger-bg, 5%));
     border-color: darken($btn-danger-bg, 5%);
   }
+}
+
+.btn[disabled],
+.btn.disabled {
+  background: #ccc !important;
+  border-color: darken(#ccc, 10%) !important;
+  color: darken(#ccc, 50%) !important;
 }
 
 .mono {
@@ -158,7 +185,7 @@ body {
 }
 
 .faded {
-  color: rgba(0,0,0,.25);
+  color: rgba(0,0,0,.1);
 }
 
 .text-center {

@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <title>ProtonMail</title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <% styles.forEach(function (file) { %>
-    <link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
+    <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
   </head>
-
   <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn }">
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
