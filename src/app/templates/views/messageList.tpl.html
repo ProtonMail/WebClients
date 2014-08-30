@@ -9,8 +9,8 @@
       <td class="actions">
         <input type="checkbox" ng-model="message.selected" />
         <span
-            class="fa {{ message.IsEncrypted ? 'fa-lock' : 'fa-unlock-alt' }}"
-            pt-tooltip="{{ message.IsEncrypted ? 'Encrypted' : 'Not encrypted' }}"></span>
+            class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}"
+            pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}"></span>
 
         <a href="#" ng-click="message.toggleStar()">
           <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
@@ -28,8 +28,7 @@
 
       <td class="size">
         <i  class="fa fa-paperclip" 
-            ng-class="{active: message.AttachmentIDList != ''}"
-            pt-tooltip="{{ message.numberOfAttachments() + ' attachment(s)' }}"></i>
+            ng-class="{active: message.hasAttachments}"></i>
         {{ message.TotalSize | humanSize }}
       </td>
 
@@ -40,5 +39,4 @@
   </tbody>
 </table>
 
-<ui-view>
-</ui-view>
+<ui-view></ui-view>

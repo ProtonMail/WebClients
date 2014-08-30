@@ -9,7 +9,7 @@ angular.module("proton.Routes", [
   "sent": 2,
   "trash": 3,
   "spam": 4,
-  "starred": undefined
+  "starred": 5
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
@@ -28,17 +28,9 @@ angular.module("proton.Routes", [
         authentication,
         networkActivityTracker
       ) {
-
         if (authentication.isLoggedIn()) {
-          var message = messageCache.find($stateParams.MessageID);
-          if (message) {
-            return message;
-          }
-
           return networkActivityTracker.track(
-            Message
-              .get(_.pick($stateParams, 'MessageID'))
-              .$promise
+            messageCache.get($stateParams.MessageID).$promise
           );
         }
       }
@@ -72,9 +64,12 @@ angular.module("proton.Routes", [
               "Location": mailboxIdentifiers[mailbox],
               "Page": $stateParams.page
             };
-            if (mailbox === 'starred') {
-              params.Tag = mailbox;
-            }
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
@@ -108,9 +103,12 @@ angular.module("proton.Routes", [
               "Location": mailboxIdentifiers[mailbox],
               "Page": $stateParams.page
             };
-            if (mailbox === 'starred') {
-              params.Tag = mailbox;
-            }
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
