@@ -43,6 +43,8 @@ angular.module("proton.Auth", [
 
       auth.data = _.pick(data, "uid", "access_token", "refresh_token");
       auth.data.exp = date;
+
+      auth.setAuthHeaders();
     };
 
     auth.savePassword = function(pwd) {
@@ -68,7 +70,7 @@ angular.module("proton.Auth", [
             cryptoProvider.setMailboxPassword(auth.mailboxPassword);
           }
         } else {
-          _.each(["uid", "exp", "token"], function(key) {
+          _.each(["uid", "exp", "access_token", "refresh_token"], function(key) {
             delete window.localStorage[OAUTH_KEY+":"+key];
           });
         }
@@ -81,7 +83,16 @@ angular.module("proton.Auth", [
       }
     };
 
-    this.$get = function($state, $rootScope, $q, $http, $timeout, crypto, $injector) {
+    this.$get = function(
+      $state, 
+      $rootScope, 
+      $q, 
+      $http, 
+      $timeout, 
+      $injector, 
+      crypto,
+      errorReporter
+    ) {
 
       // RUN-TIME PUBLIC FUNCTIONS
 
@@ -91,6 +102,7 @@ angular.module("proton.Auth", [
         isLoggedIn: function() {
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);
           if (loggedIn && api.user === null) {
+            auth.setAuthHeaders();
             auth.fetchUserInfo();
           }
           return loggedIn;
@@ -99,6 +111,10 @@ angular.module("proton.Auth", [
         // Whether the mailbox' password is accessible, or if the user needs to re-enter it
         isLocked: function() {
           return ! api.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
+        },
+
+        isSecured: function() {
+          return api.isLoggedIn() && !api.isLocked();
         },
 
         // Return a state name to be in in case some user authentication step is required.
@@ -119,13 +135,9 @@ angular.module("proton.Auth", [
           }
         },
 
-        isSecured: function() {
-          return api.isLoggedIn() && !api.isLocked();
-        },
-
         // Removes all connection data
         logout: function() {
-          _.each(["uid", "exp", "token"], function(key) {
+          _.each(["uid", "exp", "access_token", "refresh_token"], function(key) {
             delete window.localStorage[OAUTH_KEY+":"+key];
           });
           delete window.sessionStorage[MAILBOX_PASSWORD_KEY];
@@ -190,19 +202,18 @@ angular.module("proton.Auth", [
               })
             ).then(function(resp) {
               var data = resp.data;
-              if ("error" in data) {
-                q.reject({message: data.error.message});
-              } else {
-                auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
-                auth.fetchUserInfo().then(function() {
+              auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
+              auth.fetchUserInfo().then(
+                function() {
                   $rootScope.isLoggedIn = true;
                   $rootScope.isLocked = true;
                   q.resolve(200);
-                });
-              }
+                },
+                errorReporter.catcher("Please try again later", q)
+              );
             },
             function (error) {
-              console.log(error);
+              q.reject({message: error.error_description});
             });
           }
 
@@ -214,12 +225,17 @@ angular.module("proton.Auth", [
         }
       };
 
-      auth.fetchUserInfo = function() {
+      auth.setAuthHeaders = function () {
+        // API version
         $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
+
+        // credentials
         $http.defaults.headers.common.Authorization = "Bearer " + auth.data.access_token;
         $http.defaults.headers.common["x-pm-uid"] = auth.data.uid;
+      };
 
-        api.user = $injector.get("User").get({UserID: auth.data.uid});
+      auth.fetchUserInfo = function() {
+        api.user = $injector.get("User").get({ UserID: auth.data.uid });
         return api.user.$promise;
       };
 
