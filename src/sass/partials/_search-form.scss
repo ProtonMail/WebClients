@@ -1,6 +1,6 @@
 #search-form {
   width: $sidebar-width;
-  padding-left: 0;
+  padding: 0;
   position: relative;
   input::-webkit-input-placeholder {
     color: #ccc;
@@ -22,6 +22,7 @@
     border-radius: 2rem;
     border-color: transparent;
     color: #fff;
+    width: $sidebar-width;    
     &:focus {
       border-color: #777 #777 lighten(#777,5%);
       outline: 0;

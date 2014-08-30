@@ -58,6 +58,8 @@ body footer {
   }
   #footer {
     @include calc(width, '100% - #{$sidebar-width}');
+    background: #fff;
+    box-shadow: inset 0 1px #e5e5e5;
   }
 }
 
