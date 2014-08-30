@@ -233,6 +233,21 @@ angular.module("proton.Auth", [
 
 .config(function(authenticationProvider, $httpProvider) {
   authenticationProvider.detectAuthenticationState();
+  $httpProvider.interceptors.push(function ($q) {
+    return {
+      // Add an interceptor that will change a HTTP 200 success response containing
+      // a { "error": <something> } body into a failing response
+      response: function (response) {
+        if (response.data.error) {
+          var q = $q.defer();
+          q.reject(response.data);
+          return q.promise;
+        }
+
+        return response;
+      }
+    };
+  });
 })
 
 .run(function($rootScope, authentication) {
