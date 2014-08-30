@@ -30,7 +30,7 @@ angular.module("proton.Models", [
   });
 })
 
-.factory("Message", function($resource, authentication, crypto, mailboxIdentifiers) {
+.factory("Message", function($resource, $rootScope, authentication, crypto, mailboxIdentifiers) {
   var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
   var Message = $resource(
     authentication.baseURL + "/messages/:MessageID",
@@ -60,7 +60,7 @@ angular.module("proton.Models", [
         method: "get",
         url: authentication.baseURL + "/messages/count",
         transformResponse: function (data) {
-          return JSON.parse(data);
+          return JSON.parse(data).MessageCount;
         }
       }
     }
@@ -90,6 +90,7 @@ angular.module("proton.Models", [
     },
     setReadStatus: function (status) {
       this.IsRead = + status;
+      $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1);
       return this.$patch({ action: status ? "read" : "unread" });
     },
     delete: function() {

@@ -72,23 +72,32 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   };
 })
 
-.controller("SecuredController", function($scope, $interval, $rootScope, $http, authentication) {
+.controller("SecuredController", function(
+  $scope, 
+  $interval, 
+  $rootScope, 
+  $http, 
+  authentication, 
+  mailboxIdentifiers
+) {
+  var mailboxes = mailboxIdentifiers;
+
   $scope.user = authentication.user;
   $scope.logout = function() {
     authentication.logout();
   };
 
-  var fetchUpdates = function() {
-    $http.get(authentication.baseURL + "/user/updates").then(function (resp) {
-      if (resp.status === 200) {
-        $rootScope.unreadCount = resp.data.unread;
-        $rootScope.draftsCount = resp.data.drafts;
-      }
+  var fetchCounts = function() {
+    $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function (resp) {
+      $rootScope.unreadCount = resp.data.MessageCount.UnRead;
+    });
+    $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.drafts).then(function (resp) {
+      $rootScope.draftsCount = resp.data.MessageCount.Total;
     });
   };
 
-  var updates = $interval(fetchUpdates, 5000);
-  fetchUpdates();
+  var updates = $interval(fetchCounts, 10000);
+  fetchCounts();
 
   $scope.$on("$destroy", function () {
     $interval.cancel(updates);
