@@ -16,24 +16,30 @@
     margin: 0;
     text-align: left;
     line-height: 34px;
+    font-size: 140%;
+
     a {
-      &.back {
-        @include head-link;
-      }
       i.fa {
+        @include head-link;
         font-size: inherit;
+        margin-right: 0.5rem;
       }
 
-      .fa-star-o { color: rgba(0, 0, 0, 0.5); }
-      .fa-star {   color: orange; }
+      i.fa-star-o { color: #bbb; }
+      i.fa-star,
+      i.fa-star:hover {   color: orange; }
     }
   }
 
   .message-actions {
+    margin-right: 1rem;
 
     a {
       // @include head-link;
+
       margin-left: .25rem;
+      font-size: 110%;
+      font-weight: bold;
       display: inline-block;
       color: #666;
 
@@ -56,6 +62,8 @@
     height: 32px;
     width: 23.5px;
     border-radius: 100%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #e4e4e4;
     bottom: -16px;
     left: 50%;
     margin-left: -18px;
@@ -73,6 +81,8 @@
     &:hover {
       color: #999;
       background-color: white;
+      border-bottom-color: transparent;
+      border-top-color: #e4e4e4;
     }
 
     i {
@@ -88,7 +98,7 @@
   ul.infos {
     padding: 0;
     margin-top: 1.5em;
-    margin-left: 0.5em;
+    margin-left: 0.2em;
 
     li {
       list-style: none;
@@ -98,8 +108,10 @@
     strong {
       display: inline-block;
       width: 4em;
-      font-weight: normal;
-      color: #999;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 90%;
+      color: #bbb;
     }
     
     span p {
@@ -128,6 +140,7 @@
     font-size: 1em;
     line-height: 1.75em;
     border-radius: 0;
+    border-width: 1px 0 0 0;
   }
 }
 
@@ -136,5 +149,12 @@
     width: 100%;
     border: 0;
     float: left;
+  }
+  .alert  {
+    margin: 2em 1em;
+    span.fa {
+      font-size: 290%;
+      display: block;
+    }
   }
 }

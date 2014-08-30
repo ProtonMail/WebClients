@@ -21,12 +21,21 @@
           </span>
         </div><!-- /input-group -->
       </form>
-      <p class="navbar-text" ng-if="isLoggedIn">{{ user.UserName }}<em>@protonmail.ch</em></p>
+      <p class="navbar-text" ng-if="isLoggedIn">{{ user.DisplayName }}<em>@protonmail.ch</em></p>
 
       <div class="spinner" ng-show="networkActivity.loading()">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
+      </div>
+
+      <div error-reporter class="alert alert-danger centered ng-hide">
+        <button type="button" class="close" ng-click="errorReporter.active = false">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+
+        {{ errorReporter.error }}
       </div>
 
       <ul class="nav navbar-nav navbar-right">

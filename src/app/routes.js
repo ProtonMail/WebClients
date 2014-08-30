@@ -9,7 +9,7 @@ angular.module("proton.Routes", [
   "sent": 2,
   "trash": 3,
   "spam": 4,
-  "starred": undefined
+  "starred": 5
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
@@ -28,17 +28,9 @@ angular.module("proton.Routes", [
         authentication,
         networkActivityTracker
       ) {
-
         if (authentication.isLoggedIn()) {
-          var message = messageCache.find($stateParams.MessageID);
-          if (message) {
-            return message;
-          }
-
           return networkActivityTracker.track(
-            Message
-              .get(_.pick($stateParams, 'MessageID'))
-              .$promise
+            messageCache.get($stateParams.MessageID).$promise
           );
         }
       }
@@ -63,7 +55,8 @@ angular.module("proton.Routes", [
           authentication, 
           Message, 
           mailboxIdentifiers, 
-          networkActivityTracker
+          networkActivityTracker,
+          errorReporter
         ) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
@@ -71,9 +64,12 @@ angular.module("proton.Routes", [
               "Location": mailboxIdentifiers[mailbox],
               "Page": $stateParams.page
             };
-            if (mailbox === 'starred') {
-              params.Tag = mailbox;
-            }
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
@@ -82,7 +78,11 @@ angular.module("proton.Routes", [
             }
 
             return networkActivityTracker.track(
-              Message.query(params).$promise
+              errorReporter.resolve(
+                "Messages couldn't be queried - please try again later.",
+                Message.query(params).$promise,
+                []
+              )
             );
           } else {
             return [];
@@ -94,6 +94,7 @@ angular.module("proton.Routes", [
           Message, 
           authentication, 
           mailboxIdentifiers, 
+          errorReporter,
           networkActivityTracker
         ) {
           var mailbox = this.data.mailbox;
@@ -102,15 +103,22 @@ angular.module("proton.Routes", [
               "Location": mailboxIdentifiers[mailbox],
               "Page": $stateParams.page
             };
-            if (mailbox === 'starred') {
-              params.Tag = mailbox;
-            }
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
             if ($stateParams.filter) {
               params.filter = $stateParams.filter;
             }
 
             return networkActivityTracker.track(
-              Message.count(params).$promise
+              errorReporter.resolve(
+                "Message count couldn't be queried - please try again later.",
+                Message.count(params).$promise,
+                {count: 0}
+              )
             );
           }
         }

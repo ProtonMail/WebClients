@@ -9,19 +9,24 @@ angular.module("proton", [
   "templates-app",
   "templates-common",
 
-  // Basic
+  // App
   "proton.Routes",
+  "proton.Models",
+
+  // Services
   "proton.Auth",
   "proton.Crypto",
-  "proton.Models",
+  "proton.errorReporter",
+  "proton.networkActivity",
   "proton.Messages",
 
-  "proton.networkActivity",
-
+  // Directives
   "proton.tooltip",
 
+  // Filters
   "proton.filters.strings",
 
+  // Controllers
   "proton.Controllers.Admin",
   "proton.Controllers.Auth",
   "proton.Controllers.Messages",

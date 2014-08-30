@@ -77,12 +77,12 @@
   <ul class="list-group info">
     <li>
       <span class="sizebar">Storage:
-        <span class="pull-right mono">0.01/100 MB</span>
+        <span class="pull-right mono">{{ user.UsedSpace | humanSize }}/{{ user.MaxSpace | humanSize }}</span>
       </span>
     </li>
     <li>
       <div class="sizeBar">
-        <span class="fill" style="width:0.01%"></span>
+        <span class="fill" style="width:{{ 100 * user.UsedSpace / user.MaxSpace }}%"></span>
       </div>
     </li>
   </ul>
@@ -90,10 +90,10 @@
   <ul class="list-group info">
     <li>
       <span class="sizebar">Msg/month:
-        <span class="pull-right mono">0/1000</span>
+        <span class="pull-right mono">{{ user.NumMessageSentThisMonth }}/{{ user.MaxNumMessageSentThisMonth }}</span>
       </span>
       <div class="sizeBar">
-        <span class="fill" style="width:0%"></span>
+        <span class="fill" style="width:{{ 100 * user.NumMessageSentThisMonth / user.MaxNumMessageSentThisMonth }}%"></span>
       </div>
     </li>
   </ul>

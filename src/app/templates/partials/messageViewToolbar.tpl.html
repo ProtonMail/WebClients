@@ -22,16 +22,6 @@
             <i class="fa fa-fw fa-inbox"></i> Inbox
           </a>
         </li>
-        <li ng-if="message.location() != 'drafts'">
-          <a href="#" ng-click="moveMessageTo('drafts')">
-            <i class="fa fa-fw fa-file-text-o"></i> Drafts
-          </a>
-        </li>
-        <li ng-if="message.location() != 'sent'">
-          <a href="#" ng-click="moveMessageTo('sent')">
-            <i class="fa fa-fw fa-sign-out"></i> Sent
-          </a>
-        </li>
         <li ng-if="message.location() != 'trash'">
           <a href="#" ng-click="moveMessageTo('trash')">
             <i class="fa fa-fw fa-trash-o"></i> Trash
@@ -62,6 +52,10 @@
       <a href="#" ng-click="toggleHeaders()">
         <i class="fa fa-code"></i> {{ showHeaders ? 'Hide' : 'View' }} headers
       </a>
+    </li>
+
+    <li ng-if="message.IsEncrypted" class="lock-indicator">
+      <a pt-tooltip="Encrypted"><i class="fa fa-lock"></i></a>
     </li>
   </ul>
 

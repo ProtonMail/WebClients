@@ -19,6 +19,12 @@
     <li><strong>To</strong>
       <span btf-markdown="message.RecipientList | contrast:'<'"></span>
     </li>
+    <li ng-if="message.CCList"><strong>CC</strong>
+      <span btf-markdown="message.CCList | contrast:'<'"></span>
+    </li>
+    <li ng-if="message.BCCList"><strong>BCC</strong>
+      <span btf-markdown="message.BCCList | contrast:'<'"></span>
+    </li>
     <li><strong>At</strong>
       <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </li>
@@ -28,5 +34,10 @@
   </div><!--/.toggle-head-->
 </div><!--/.message-head-->
 <div id="message-body">
-  <iframe src=""></iframe>
+  <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
+  <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">
+    <span class="pull-left fa fa-exclamation-triangle"></span>
+    <strong>Decryption error</strong><br>
+    Decryption of this message's encryption content failed.
+  </div>
 </div>

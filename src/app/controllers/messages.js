@@ -16,11 +16,12 @@ angular.module("proton.Controllers.Messages", [
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
   $scope.page = parseInt($stateParams.page || "1");
-  messageCache.setList($scope.messages = messages);
+  $scope.messages = messages;
   $scope.messageCount = messageCount.count;
-
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
+
+  messageCache.watchScope($scope, "messages");
 
   $scope.hasNextPage = function () {
     return $scope.messageCount > ($scope.page * 25);
