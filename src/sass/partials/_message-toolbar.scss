@@ -33,6 +33,11 @@
           @include linear-gradient(#fff, #f2f2f2);
         }
 
+        &:active {
+          background: transparent;
+          color: #999
+        }
+
         input[type="checkbox"] {
           margin: 0;
         }

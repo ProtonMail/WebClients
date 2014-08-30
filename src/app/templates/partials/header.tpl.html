@@ -30,11 +30,11 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li id="nav_admin" ng-if="isLoggedIn">
+        <li id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
           <a ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>
         </li>
-        <li id="nav_bug">
-          <a href="#" ng-click="reportBug()"><span class="fa fa-exclamation-triangle"></span> Report Bug</a>
+        <li id="nav_bug" ng-if="isLoggedIn">
+          <a href="#" data-toggle="modal" data-target="#bugForm"><span class="fa fa-exclamation-triangle"></span> Report Bug</a>
         </li>
         <li id="nav_settings" ng-if="'secured.**' | includedByState">
           <a ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
@@ -49,6 +49,5 @@
     </div><!-- /.navbar-collapse -->
 
   </div>
-
 
 </nav>

@@ -5,24 +5,15 @@
     </li>
 
     <li>
-      <a href="#" class="dropdown-toggle" 
-         data-toggle="dropdown"
-         ng-class="{ disabled: selectedMessages().length == 0 }">
-        <i class="fa fa-check-square-o"></i> Mark <i class="fa fa-angle-down"></i>
+      <a href="#" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }">
+        <i class="fa fa-fw fa-eye"></i> Mark as read
       </a>
-
-      <ul class="dropdown-menu" role="menu">
-        <li ng-if="selectedMessagesWithReadStatus(false).length > 0">
-          <a href="#" ng-click="setMessagesReadStatus(true)">
-            <i class="fa fa-fw fa-eye"></i> Mark as read
-          </a>
-        </li>
-        <li ng-if="selectedMessagesWithReadStatus(true).length > 0">
-          <a href="#" ng-click="setMessagesReadStatus(false)">
-            <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
-          </a>
-        </li>
-      </ul>
+    </li>
+    
+    <li>
+      <a href="#" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }">
+        <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
+      </a>
     </li>
 
     <li>

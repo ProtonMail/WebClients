@@ -30,9 +30,6 @@ angular.module("proton", [
 ])
 
 .run(function($document, $rootScope, networkActivityTracker) {
-  $rootScope.reportBug = function() {
-    // Do something to report bug, maybe bring up a modal dialog.
-  };
 
   var pageTitleTemplate = _.template(
     "<% if (pageName) { %>" +
