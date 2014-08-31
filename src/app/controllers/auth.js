@@ -10,7 +10,6 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
     $scope.user = authentication.user;
   }
 
-
   $rootScope.pageName = "Login";
 
   var clearErrors = function() {
@@ -86,6 +85,9 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
   $scope.logout = function() {
     authentication.logout();
   };
+
+  $rootScope.isLoggedIn = true;
+  $rootScope.isLocked = false;
 
   var fetchCounts = function() {
     $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function (resp) {

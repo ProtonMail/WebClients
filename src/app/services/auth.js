@@ -180,10 +180,6 @@ angular.module("proton.Auth", [
               self.user.$promise.then(function (user) {
                 if (crypto.setMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)) {
                   auth.savePassword(pwd);
-
-                  $rootScope.isLoggedIn = true;
-                  $rootScope.isLocked = false;
-
                   req.resolve(200);
                 } else {
                   req.reject({message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."});
@@ -221,10 +217,10 @@ angular.module("proton.Auth", [
               var data = resp.data;
               auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
               auth.fetchUserInfo().then(
-                function() {
+                function() { 
                   $rootScope.isLoggedIn = true;
                   $rootScope.isLocked = true;
-                  q.resolve(200);
+                  q.resolve(200); 
                 },
                 errorReporter.catcher("Please try again later", q)
               );
