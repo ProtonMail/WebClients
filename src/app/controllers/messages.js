@@ -17,7 +17,7 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.page = parseInt($stateParams.page || "1");
   $scope.messages = messages;
-  $scope.messageCount = messageCount.count;
+  $scope.messageCount = messageCount.Total;
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
 
@@ -66,7 +66,6 @@ angular.module("proton.Controllers.Messages", [
   $scope.setMessagesReadStatus = function (status) {
     networkActivityTracker.track($q.all(
       _.map($scope.selectedMessagesWithReadStatus(!status), function (message) {
-        $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1);
         return message.setReadStatus(status);
       })
     ));

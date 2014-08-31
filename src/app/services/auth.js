@@ -57,22 +57,20 @@ angular.module("proton.Auth", [
       var dt = window.localStorage[OAUTH_KEY+":exp"];
       if (dt) {
         dt = moment(dt);
-        if (!dt.isBefore(Date.now())) {
-          auth.data = {
-            uid: window.localStorage[OAUTH_KEY+":uid"],
-            exp: dt,
-            access_token: window.localStorage[OAUTH_KEY+":access_token"],
-            refresh_token: window.localStorage[OAUTH_KEY+":refresh_token"]
-          };
+        auth.data = {
+          uid: window.localStorage[OAUTH_KEY+":uid"],
+          exp: dt,
+          access_token: window.localStorage[OAUTH_KEY+":access_token"],
+          refresh_token: window.localStorage[OAUTH_KEY+":refresh_token"]
+        };
 
-          auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
-          if (auth.mailboxPassword) {
-            cryptoProvider.setMailboxPassword(auth.mailboxPassword);
-          }
-        } else {
-          _.each(["uid", "exp", "access_token", "refresh_token"], function(key) {
-            delete window.localStorage[OAUTH_KEY+":"+key];
-          });
+        if (dt.isBefore(Date.now())) {
+          auth.data.shouldRefresh = true;
+        }
+
+        auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
+        if (auth.mailboxPassword) {
+          cryptoProvider.setMailboxPassword(auth.mailboxPassword);
         }
       }
     };
@@ -132,6 +130,25 @@ angular.module("proton.Auth", [
           var newState = api.state();
           if (newState) {
             $state.go(newState);
+          }
+        },
+
+        refreshIfNecessary: function () {
+          if (auth.data && auth.data.shouldRefresh) {
+            $http.post(
+              baseURL + "/auth/refresh",
+              _.extend(_.pick(auth.data, "access_token", "refresh_token"), {
+                client_id: "demoapp",
+                grant_type: "refresh_token",
+                response_type: "token"
+              })
+            ).then(
+              function(resp) {
+                var data = resp.data;
+                auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
+              },
+              errorReporter.catcher("Something went wrong with authentication")
+            );
           }
         },
 
@@ -267,6 +284,7 @@ angular.module("proton.Auth", [
 })
 
 .run(function($rootScope, authentication) {
+  authentication.refreshIfNecessary();
   $rootScope.isLoggedIn = authentication.isLoggedIn();
   $rootScope.isLocked = authentication.isLocked();
 });
