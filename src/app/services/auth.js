@@ -267,7 +267,7 @@ angular.module("proton.Auth", [
       // Add an interceptor that will change a HTTP 200 success response containing
       // a { "error": <something> } body into a failing response
       response: function (response) {
-        if (response.data.error) {
+        if (response.data && response.data.error) {
           var q = $q.defer();
           q.reject(response.data);
           return q.promise;

@@ -1,3 +1,13 @@
+var getFromJSONResponse = function (name) {
+  return function(data) {
+    var obj = JSON.parse(data);
+    if (!obj.error && name) {
+      return obj[name];
+    }
+    return obj;
+  };
+};
+
 angular.module("proton.Models", [
   "ngResource",
   "proton.Auth"
@@ -34,23 +44,19 @@ angular.module("proton.Models", [
   var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
   var Message = $resource(
     authentication.baseURL + "/messages/:MessageID",
-    authentication.params({ MessageID: "@MessageID" }), 
+    authentication.params({ MessageID: "@MessageID" }),
     {
       query: {
         method: "get",
         isArray: true,
-        transformResponse: function (data) {
-          return JSON.parse(data).Messages;
-        }
+        transformResponse: getFromJSONResponse('Messages')
       },
       delete: {
         method: "delete"
       },
       get: {
         method: "get",
-        transformResponse: function (data) {
-          return JSON.parse(data);
-        }
+        transformResponse: getFromJSONResponse()
       },
       patch: {
         method: "put",
@@ -59,9 +65,7 @@ angular.module("proton.Models", [
       count: {
         method: "get",
         url: authentication.baseURL + "/messages/count",
-        transformResponse: function (data) {
-          return JSON.parse(data).MessageCount;
-        }
+        transformResponse: getFromJSONResponse('MessageCount')
       }
     }
   );
@@ -108,8 +112,8 @@ angular.module("proton.Models", [
         if (_.isUndefined(this._decryptedBody)) {
           try {
             this._decryptedBody = crypto.decryptPackage(
-              authentication.user.EncPrivateKey, 
-              this.MessageBody, 
+              authentication.user.EncPrivateKey,
+              this.MessageBody,
               this.Time
             );
             this.failedDecryption = false;
@@ -117,9 +121,9 @@ angular.module("proton.Models", [
             this._decryptedBody = "";
             this.failedDecryption = true;
           }
-          
+
         }
-        
+
         return this._decryptedBody;
       } else {
         return this.MessageBody;
@@ -136,9 +140,7 @@ angular.module("proton.Models", [
     get: {
       method: 'get',
       isArray: false,
-      transformResponse: function (data) {
-        return JSON.parse(data);
-      }
+      transformResponse: getFromJSONResponse()
     }
   });
 });
