@@ -39,7 +39,7 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
+        <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
           <a ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>
         </li>
         <li id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
