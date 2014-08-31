@@ -22,7 +22,13 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.page = parseInt($stateParams.page || "1");
   $scope.messages = messages;
-  $scope.messageCount = messageCount.Total;
+
+  if ($stateParams.filter) {
+    $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+  } else {
+    $scope.messageCount = messageCount.Total;
+  }
+
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
 

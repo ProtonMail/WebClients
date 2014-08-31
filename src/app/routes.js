@@ -71,10 +71,20 @@ angular.module("proton.Routes", [
             // }
 
             if ($stateParams.filter) {
-              params.filter = $stateParams.filter;
+              params.FilterUnread = + ($stateParams.filter === 'unread');
+            } else {
+              params.FilterUnread = - 2;
             }
+
             if ($stateParams.sort) {
-              params.sort = $stateParams.sort;
+              var sort = $stateParams.sort;
+              var desc = _.string.startsWith(sort, "-");
+              if (desc) {
+                sort = sort.slice(1);
+              }
+
+              params.SortedColumn = _.string.capitalize(sort);
+              params.Order = + desc;
             }
 
             return networkActivityTracker.track(
