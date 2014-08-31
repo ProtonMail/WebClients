@@ -1,5 +1,5 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="message-list-toolbar"></ng-include>
-<table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover" ng-class="{empty: messages.length == 0}">
+<table ng-if="!('secured.*.message' | includedByState) && !isMobile" class="table message-list table-hover" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
         ng-click="navigateToMessage($event, message)"
@@ -35,6 +35,30 @@
       <td class="when">
         {{ message.readableTime() }}
       </td>
+    </tr>
+  </tbody>
+</table>
+
+<table ng-if="!('secured.*.message' | includedByState) && isMobile" class="table message-list table-hover" ng-class="{empty: messages.length == 0, mobile: isMobile}">
+  <tbody id="message">
+    <tr ng-repeat="message in messages"
+        ng-click="navigateToMessage($event, message)"
+        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }"
+        >
+      <td class="subject">
+        <h4>
+          <span
+          class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}"
+          pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
+          </span>{{ message.MessageTitle }}
+        </h4>
+        <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
+          <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
+          <span class="pull-right">{{ message.readableTime() }}</span>
+          <span ng-switch-default>{{ message.Sender }}</span>
+        </div>        
+      </td>
+
     </tr>
   </tbody>
 </table>

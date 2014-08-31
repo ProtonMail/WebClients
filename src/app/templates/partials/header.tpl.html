@@ -1,18 +1,18 @@
-<nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed" role="navigation">
+<nav ng-if="!isMobile" class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed" role="navigation">
   <div class="container-fluid">
 
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
-      <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
-    </a>
+        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+      </a>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbar-collapse">
       <form id="search-form" class="navbar-form navbar-left" role="search" ng-if="'secured.**' | includedByState">
         <div class="input-group form-group">
           <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
@@ -56,7 +56,102 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
-
   </div>
+</nav>
 
+<nav ng-if="isMobile" class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand mobileOnly">
+        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+      </a>    
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="spinner" ng-show="networkActivity.loading()">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>      
+      <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
+        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <form id="search-form-mobile" class="navbar-left" role="search" ng-if="'secured.**' | includedByState">
+        <div class="input-group form-group">
+          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+      <div error-reporter class="alert alert-danger centered ng-hide">
+        <button type="button" class="close" ng-click="errorReporter.active = false">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+
+        {{ errorReporter.error }}
+      </div>
+
+      <table class="table">
+        <tr>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.compose"><span class="fa fa-pencil"></span> Compose</a>
+          </td>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> Inbox<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> Drafts<span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span></a>
+          </td>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> Sent</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> Trash</a>
+          </td>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> Starred</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.spam"
+             ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-bug"></span> Spam</a>
+          </td>
+          <td>
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> Contacts</a>
+          </td>
+        </tr>
+        <tr>
+          <td id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>
+          </td>
+          <td id="nav_bug" ng-if="isLoggedIn">
+            <a href="#" data-toggle="modal" data-target="#bugForm"><span class="fa fa-exclamation-triangle"></span> Report Bug</a>
+          </td>
+        </tr>
+        <tr>
+          <td id="nav_settings" ng-if="'secured.**' | includedByState">
+            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
+          </td>
+          <td id="nav_login" ng-if="!isLoggedIn">
+            <a ui-sref="login"><span class="fa fa-power-off"></span> Sign In</a>
+          </td>
+          <td id="nav_logout" ng-if="isLoggedIn">
+            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href="#"><span class="fa fa-power-off"></span> Sign Out</a>
+          </td>          
+        </tr>
+      </table>
+    </div><!-- /.navbar-collapse -->
+  </div>
 </nav>

@@ -11,6 +11,10 @@ html {
   min-height: 100%;
 }
 
+.mobileOnly {
+  display: none;
+}
+
 .secure #body { 
   min-height: 100%; 
 }
@@ -63,8 +67,8 @@ body footer {
   }
   #footer {
     @include calc(width, '100% - #{$sidebar-width}');
-    background: #fff;
-    box-shadow: inset 0 1px #e5e5e5;
+    background: #e5e5e5;
+    // box-shadow: inset 0 1px #e5e5e5;
     color: #999;
     a {
       color: #999
@@ -227,3 +231,5 @@ p {
 @import "partials/message-view";
 @import "partials/spinner";
 @import "partials/error-reporter";
+@import "responsive";
+

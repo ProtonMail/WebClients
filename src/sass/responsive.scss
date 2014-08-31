@@ -1,0 +1,114 @@
+@media screen and (max-width: 500px) {
+	#sidebar,
+	.message-toolbar {
+		display: none;
+	}
+	.secure .navbar-inversed, 
+	.secure #footer,
+	#main {
+		margin-left: 0;
+		width: 100%;
+	}
+	.message-head h1 {
+		line-height: 20px;
+		padding: 7px 0;
+	}
+	.message-list.mobile {
+		width: 100% !important;
+		table-layout: fixed;
+		td {
+			vertical-align: middle;
+			padding-left: 3.5rem;
+			position: relative;
+			padding-right: 15px;
+		}
+		h4 {
+			margin: 0 0 3px 0;
+			white-space: normal;
+		}
+		.fa-unlock-alt {
+			color: rgba(0, 0, 0, 0.25); 
+		}
+		.fa-lock {
+			color: #336
+		}
+		.fa {
+			width: 2rem;
+			position: absolute;
+			left: 15px;
+			top: 8px;
+		}
+		.recipient {
+			font-size: 12px;
+		}
+	}
+	#search-text {
+		background: #333;
+		border-radius: 0;
+		box-shadow: none;
+		color: #fff;
+		padding-left: 10px;
+		border: 0;
+	}
+	.navbar-brand.mobileOnly {
+		display: inline-block;
+	}
+	.navbar-toggle {
+		border-color: transparent !important;
+		background: rgba(0,0,0,.25);
+	}
+	.navbar-collapse {
+		padding: 0;
+		border: 0;
+	}
+	.navbar {
+		.table {
+			tr, td {
+				border: none;
+				a {
+					color: #fff;
+					text-decoration: none;
+					padding: 1rem;
+					display: block;
+					background: rgba(0,0,0,.1);
+					border-radius: 2px;
+					.fa {
+						margin-right: .5rem;
+					}
+					.label {
+						float: right;
+						background: #555;
+						font-size: 13px;						
+					}
+				}
+			}
+		}
+		form .btn {
+			width: 6.3rem;
+			text-align: right;
+			background: #333;
+			border-color: #333;
+			color: #fff;
+			border-radius: 0;
+		}
+		.form-group,
+		table {
+			margin-bottom: 5px;
+		}
+	}
+	#messageActionsMobile {
+		background: #e5e5e5;
+		box-shadow: inset 0 -1px #ccc;		
+		a {
+			color: #000;
+			display: block;
+		}
+		#mobReplyAll {
+			text-align: center;
+			box-shadow: inset 1px 0 #ccc, inset -1px 0 #ccc;
+		}
+		#mobForward {
+			text-align: right;
+		}
+	}
+}

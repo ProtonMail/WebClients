@@ -1,9 +1,9 @@
 @mixin head-link {
   @include transition(color 0.07s ease-in-out 0);
 
-  color: #ccc;
+  color: rgba(0,0,0,.25);  
   &:hover {
-    color: #999;
+    color: rgba(0,0,0,.5);  
   }
 }
 
@@ -11,6 +11,16 @@
   padding: 15px;
   position: relative;
   box-shadow: inset 0 -1px #e5e5e5;
+  padding-left: 6rem;
+
+  &.unread h1 {
+    font-weight: 700;
+    color: #000;
+  }
+
+  &.starred {
+    background: $starred;
+  }
 
   h1 {
     margin: 0;
@@ -19,10 +29,21 @@
     font-size: 140%;
 
     a {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      line-height: 34px;
+      display: inline-block;
       i.fa {
         @include head-link;
         font-size: inherit;
         margin-right: 0.5rem;
+      }
+      &.back {
+        left: 15px;
+      }
+      &.star {
+        left: 35px;
       }
 
       i.fa-star-o { color: #bbb; }
@@ -38,8 +59,6 @@
       // @include head-link;
 
       margin-left: .25rem;
-      font-size: 110%;
-      font-weight: bold;
       display: inline-block;
       color: #666;
 
@@ -81,8 +100,6 @@
     &:hover {
       color: #999;
       background-color: white;
-      border-bottom-color: transparent;
-      border-top-color: #e4e4e4;
     }
 
     i {
@@ -98,7 +115,7 @@
   ul.infos {
     padding: 0;
     margin-top: 1.5em;
-    margin-left: 0.2em;
+    margin-left: 0;
 
     li {
       list-style: none;
@@ -111,12 +128,12 @@
       text-transform: uppercase;
       font-weight: bold;
       font-size: 90%;
-      color: #bbb;
+      color: rgba(0,0,0,.25);
     }
     
     span p {
       display: inline-block;
-      color: #999;
+      color: rgba(0,0,0,.25);
       margin: 0;
 
       em {
@@ -146,9 +163,8 @@
 
 #message-body {
   iframe {
-    width: 100%;
     border: 0;
-    float: left;
+    width: 100%;
   }
   .alert  {
     margin: 2em 1em;

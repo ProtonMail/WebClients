@@ -36,6 +36,10 @@ angular.module("proton", [
 
 .run(function($document, $rootScope, networkActivityTracker) {
 
+  $(window).bind('resize load',function(){
+    $rootScope.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<500 ) ? true : false;
+  });
+
   var pageTitleTemplate = _.template(
     "<% if (pageName) { %>" +
       "${ _.string.capitalize(pageName) }" +
@@ -51,4 +55,6 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
+
+  
 });
