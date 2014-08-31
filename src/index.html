@@ -2,6 +2,7 @@
 <html lang="en" ng-app="proton" ng-class="{ auth: !isLoggedIn || isLocked, secure: isLoggedIn && !isLocked }">
   <head>
     <meta charset="utf-8">
+    <base href="/">
     <title>ProtonMail</title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
