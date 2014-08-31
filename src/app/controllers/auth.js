@@ -72,19 +72,17 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 })
 
 .controller("SecuredController", function(
-  $scope, 
-  $interval, 
-  $rootScope, 
-  $http, 
-  authentication, 
+  $scope,
+  $interval,
+  $rootScope,
+  $http,
+  authentication,
   mailboxIdentifiers
 ) {
   var mailboxes = mailboxIdentifiers;
 
   $scope.user = authentication.user;
-  $scope.logout = function() {
-    authentication.logout();
-  };
+  $scope.logout = authentication.logout;
 
   $rootScope.isLoggedIn = true;
   $rootScope.isLocked = false;
