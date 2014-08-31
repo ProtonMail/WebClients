@@ -82,12 +82,12 @@ angular.module("proton.Auth", [
     };
 
     this.$get = function(
-      $state, 
-      $rootScope, 
-      $q, 
-      $http, 
-      $timeout, 
-      $injector, 
+      $state,
+      $rootScope,
+      $q,
+      $http,
+      $timeout,
+      $injector,
       crypto,
       errorReporter
     ) {
@@ -217,10 +217,10 @@ angular.module("proton.Auth", [
               var data = resp.data;
               auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
               auth.fetchUserInfo().then(
-                function() { 
+                function() {
                   $rootScope.isLoggedIn = true;
                   $rootScope.isLocked = true;
-                  q.resolve(200); 
+                  q.resolve(200);
                 },
                 errorReporter.catcher("Please try again later", q)
               );
