@@ -72,10 +72,10 @@ angular.module("proton.Models", [
 
   _.extend(Message.prototype, {
     readableTime: function() {
-      return moment.unix(this.Time).format('LL');
+      return moment.unix(parseInt(this.Time)).format('LL');
     },
     longReadableTime: function () {
-      var dt = moment.unix(this.Time);
+      var dt = moment.unix(parseInt(this.Time));
       return dt.format('LLL') + " (" + dt.fromNow() + ")";
     },
     toggleStar: function() {
