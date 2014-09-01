@@ -199,6 +199,12 @@ angular.module("proton.Routes", [
       }
     }))
 
+    .state("secured.inbox.relative", {
+      url: "/{rel:first|last}",
+      controller: function ($scope, $stateParams) {
+        $scope.navigateToMessage(null, $stateParams.rel);
+      }
+    })
     .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.contacts", {
