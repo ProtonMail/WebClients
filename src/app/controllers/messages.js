@@ -14,6 +14,7 @@ angular.module("proton.Controllers.Messages", [
   networkActivityTracker
 ) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
+  var messagesPerPage = $scope.user.NumMessagePerPage;
 
   var unsubscribe = $rootScope.$on("$stateChangeSuccess", function () {
     $rootScope.pageName = $state.current.data.mailbox;
@@ -35,12 +36,18 @@ angular.module("proton.Controllers.Messages", [
   messageCache.watchScope($scope, "messages");
 
   $scope.hasNextPage = function () {
-    return $scope.messageCount > ($scope.page * 25);
+    return $scope.messageCount > ($scope.page * messagesPerPage);
   };
 
   $scope.navigateToMessage = function (event, message) {
-    if (!$(event.target).closest("td").hasClass("actions")) {
-      $state.go($state.current.name + ".message", { MessageID: message.MessageID });
+    if (!event || !$(event.target).closest("td").hasClass("actions")) {
+      if (message === 'last') {
+        message = _.last(messages);
+      } else if (message === 'first') {
+        message = _.first(messages);
+      }
+
+      $state.go("secured." + mailbox + ".message", { MessageID: message.MessageID });
     }
   };
 
@@ -118,14 +125,44 @@ angular.module("proton.Controllers.Messages", [
   };
 
   $scope.goToPage = function (page) {
-    if (page > 0 && $scope.messageCount > ((page - 1) * 25)) {
+    if (page > 0 && $scope.messageCount > ((page - 1) * messagesPerPage)) {
       if (page == 1) {
         page = null;
       }
+      $state.go($state.current.name, _.extend({}, $state.params, { page: page }));
+    }
+  };
 
-      $state.go($state.current.name, _.extend({}, $state.params, {
-        page: page
-      }));
+  $scope.hasAdjacentMessage = function (message, adjacency) {
+    if (adjacency === 1) {
+      if (messages.indexOf(message) === messages.length - 1) {
+        return $scope.hasNextPage();
+      } else {
+        return true;
+      }
+    } else if (adjacency === -1) {
+      if (messages.indexOf(message) === 0) {
+        return $scope.page > 1;
+      } else {
+        return true;
+      }
+    }
+  };
+
+  $scope.goToAdjacentMessage = function (message, adjacency) {
+    var idx = messages.indexOf(message);
+    if (adjacency === 1) {
+      if (idx === messages.length - 1) {
+        $state.go("^.relative", {rel: 'first', page: $scope.page + 1});
+      } else {
+        $scope.navigateToMessage(null, messages[idx + 1]);
+      }
+    } else if (adjacency === -1) {
+      if (messages.indexOf(message) === 0) {
+        $state.go("^.relative", {rel: 'last', page: $scope.page - 1});
+      } else {
+        $scope.navigateToMessage(null, messages[idx - 1]);
+      }
     }
   };
 })
@@ -142,9 +179,10 @@ angular.module("proton.Controllers.Messages", [
   $templateCache,
   $compile,
   $timeout,
-  message,
   localStorageService,
-  networkActivityTracker
+  networkActivityTracker,
+
+  message
 ) {
 
   $rootScope.pageName = message.MessageTitle;
@@ -191,15 +229,33 @@ angular.module("proton.Controllers.Messages", [
 
   var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
   var iframe = $("#message-body > iframe");
-  var iframeDocument = iframe[0].contentWindow.document;
 
-  // HACK: Makes the iframe's content manipulation work in Firefox.
-  iframeDocument.open();
-  iframeDocument.close();
-  iframe.contents().find("body").append(render($scope));
+  iframe.each(function (i) {
+    // HACK:
+    // Apparently, when navigating from a message to one adjacent, there's a time when there
+    // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
+    // Problem is, the content of the rendered template can only be put at one place in the DOM,
+    // so insert it in the each of these two caused it to be put in only the *second* iframe, which
+    // was only there temporarily. So when it disappeared, the content of the rendered template
+    // disappeared with it. With this, we force it to be put in the first iframe, which seems to
+    // be the right one.
+    if (i > 0) {
+      return;
+    }
+
+    var iframeDocument = this.contentWindow.document;
+
+    // HACK: Makes the iframe's content manipulation work in Firefox.
+    iframeDocument.open();
+    iframeDocument.close();
+
+    var content = render($scope);
+    // Put the rendered template's content in the iframe's body
+    $(iframeDocument).find("body").empty().append(content);
+  });
 
   // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
   $timeout(function () {
-    iframe.height(iframeDocument.body.scrollHeight + "px");
+    iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
   }, 16);
 });

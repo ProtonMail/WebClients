@@ -47,10 +47,29 @@ angular.module("proton.Messages", [])
       }
       return data;
     },
-    set: function (id, message) {
+    put: function (id, message) {
       var self = this;
       message.$promise.then(function () {
+        // When the message is downloaded
+        _.each(lists, function (list) {
+          // Loop through each loaded message lists
+          _.find(list, function (msg, i) {
+            // and for each, loop through each of its messages
+            if (msg.MessageID == id) {
+              // replacing matching message excerpts with
+              // this new detailed one.
+              list.splice(i, 1, message);
+
+              // Stopping iteration as soon as there's a match
+              // (returning true in _.find stops iteration)
+              return true;
+            }
+          });
+        });
+
         self.cache[id] = message;
+
+        // Cache a stringified version of the message in session storage
         window.sessionStorage["proton:message:"+id] = JSON.stringify(message);
       });
     }
@@ -61,10 +80,18 @@ angular.module("proton.Messages", [])
 
     lists.push(messageList);
     _.find(messageList, function (other, i) {
+      // For every message in the newly downloaded message list
+
       if ((msg = cachedMessages.get(other.MessageID))) {
+        // If a completely fetched message exists in the cache
+        // replace the instance in the list with the complete cached instance
+        // updating variable fields (IsRead, Tag and Location)
         messageList.splice(i, 1, msg);
         _.extend(msg, _.pick(other, 'IsRead', 'Tag', 'Location'));
+
       } else if (!other.IsRead) {
+        // Otherwise, if the message isn't read, preload it, as there is a
+        // good chance the user will want to read it.
         messagesToPreload.add(other.MessageID);
       }
     });
@@ -85,26 +112,11 @@ angular.module("proton.Messages", [])
     },
     get: function (id) {
       var msg = cachedMessages.get(id);
-      if (msg) {
-        return msg;
-      } else {
-        return this.put(id, Message.get({MessageID: id}));
+      if (!msg) {
+        msg = Message.get({MessageID: id});
+        cachedMessages.put(id, msg);
       }
-    },
-    put: function (id, message) {
-      message.$promise.then(function() {
-        _.each(lists, function (list) {
-          _.find(list, function (msg, i) {
-            if (msg.MessageID == id) {
-              list.splice(i, 1, message);
-              return true;
-            }
-          });
-        });
-      });
-
-      cachedMessages.set(id, message);
-      return message;
+      return msg;
     }
   });
 
