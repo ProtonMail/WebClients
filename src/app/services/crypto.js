@@ -36,7 +36,7 @@ angular.module("proton.Crypto", [])
   function encryptMessage(message, randomKey) {
 
     message = encode_utf8_base64(message);
-    // padding 
+    // padding
     var residual = message.length % 32;
 
     if (residual !== 0) {
@@ -54,14 +54,14 @@ angular.module("proton.Crypto", [])
     if (time > 1399086120) {
       return decode_utf8_base64(openpgp.crypto.cfb.decrypt("aes256",randomKey,encMessage,true));
     } else {
-      return openpgp.crypto.cfb.decrypt("aes256",randomKey,encMessage,true);    
+      return openpgp.crypto.cfb.decrypt("aes256",randomKey,encMessage,true);
     }
   }
 
   function generateEmailPkg(encMessage, encRandomKey) {
     var EmailPM = headerMessage + encMessage + tailMessage;
     EmailPM += "||" + headerRandomKey + encRandomKey + tailRandomKey;
-    return EmailPM; 
+    return EmailPM;
   }
 
   function getEncMessageFromPkg(EmailPM) {
@@ -72,16 +72,16 @@ angular.module("proton.Crypto", [])
 
   function getEncRandomKeyFromPkg(EmailPM) {
     var begin = EmailPM.search(headerRandomKey) + headerRandomKey.length;
-    var end = EmailPM.search(tailRandomKey); 
+    var end = EmailPM.search(tailRandomKey);
     return EmailPM.substring(begin, end);
   }
 
   function getHashedPassword(password) {
     var hashed = openpgp.crypto.hash.sha512(password);
     hashed = btoa(hashed);
-    return hashed; 
+    return hashed;
   }
-   
+
   function encode_utf8_base64(data) {
     return btoa(unescape(encodeURIComponent(data))).trim();
   }
@@ -116,18 +116,23 @@ angular.module("proton.Crypto", [])
         }
       },
       encryptMessage: function(msg) {
-        
+
       },
       setMailboxPassword: function(pubKey, prKey, password) {
         var testMsg = "sPKkm9lk6hSSZ49rRFwg";
 
-        var encrypted = pgpEncrypt(testMsg, pubKey);
-        var decrypted = pgpDecrypt(encrypted, prKey, password);
+        try {
 
-        if (testMsg === decrypted) {
-          mailboxPassword = password;
-          return true;
-        } else {
+          var encrypted = pgpEncrypt(testMsg, pubKey);
+          var decrypted = pgpDecrypt(encrypted, prKey, password);
+
+          if (testMsg === decrypted) {
+            mailboxPassword = password;
+            return true;
+          } else {
+            return false;
+          }
+        } catch (err) {
           return false;
         }
       }
