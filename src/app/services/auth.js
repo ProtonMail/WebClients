@@ -154,10 +154,8 @@ angular.module("proton.Auth", [
 
         // Removes all connection data
         logout: function() {
-          _.each(["uid", "exp", "access_token", "refresh_token"], function(key) {
-            delete window.localStorage[OAUTH_KEY+":"+key];
-          });
-          delete window.sessionStorage[MAILBOX_PASSWORD_KEY];
+          window.localStorage.clear();
+          window.sessionStorage.clear();
 
           delete auth.data;
           delete auth.mailboxPassword;
