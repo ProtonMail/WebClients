@@ -20,10 +20,10 @@ angular.module("proton.Routes", [
     templateUrl: "templates/views/message.tpl.html",
     resolve: {
       message: function (
-        $rootScope, 
-        $state, 
-        $stateParams, 
-        Message, 
+        $rootScope,
+        $state,
+        $stateParams,
+        Message,
         messageCache,
         authentication,
         networkActivityTracker
@@ -49,12 +49,12 @@ angular.module("proton.Routes", [
 
       resolve: {
         messages: function (
-          $state, 
-          $stateParams, 
-          $rootScope, 
-          authentication, 
-          Message, 
-          mailboxIdentifiers, 
+          $state,
+          $stateParams,
+          $rootScope,
+          authentication,
+          Message,
+          mailboxIdentifiers,
           networkActivityTracker,
           errorReporter
         ) {
@@ -71,10 +71,20 @@ angular.module("proton.Routes", [
             // }
 
             if ($stateParams.filter) {
-              params.filter = $stateParams.filter;
+              params.FilterUnread = + ($stateParams.filter === 'unread');
+            } else {
+              params.FilterUnread = - 2;
             }
+
             if ($stateParams.sort) {
-              params.sort = $stateParams.sort;
+              var sort = $stateParams.sort;
+              var desc = _.string.startsWith(sort, "-");
+              if (desc) {
+                sort = sort.slice(1);
+              }
+
+              params.SortedColumn = _.string.capitalize(sort);
+              params.Order = + desc;
             }
 
             return networkActivityTracker.track(
@@ -88,12 +98,12 @@ angular.module("proton.Routes", [
             return [];
           }
         },
-        
+
         messageCount: function (
-          $stateParams, 
-          Message, 
-          authentication, 
-          mailboxIdentifiers, 
+          $stateParams,
+          Message,
+          authentication,
+          mailboxIdentifiers,
           errorReporter,
           networkActivityTracker
         ) {
@@ -108,10 +118,6 @@ angular.module("proton.Routes", [
             // if (mailbox === 'starred') {
             //   params.Tag = mailbox;
             // }
-
-            if ($stateParams.filter) {
-              params.filter = $stateParams.filter;
-            }
 
             return networkActivityTracker.track(
               errorReporter.resolve(

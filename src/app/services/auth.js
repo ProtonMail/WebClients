@@ -154,10 +154,8 @@ angular.module("proton.Auth", [
 
         // Removes all connection data
         logout: function() {
-          _.each(["uid", "exp", "access_token", "refresh_token"], function(key) {
-            delete window.localStorage[OAUTH_KEY+":"+key];
-          });
-          delete window.sessionStorage[MAILBOX_PASSWORD_KEY];
+          window.localStorage.clear();
+          window.sessionStorage.clear();
 
           delete auth.data;
           delete auth.mailboxPassword;
@@ -267,7 +265,7 @@ angular.module("proton.Auth", [
       // Add an interceptor that will change a HTTP 200 success response containing
       // a { "error": <something> } body into a failing response
       response: function (response) {
-        if (response.data.error) {
+        if (response.data && response.data.error) {
           var q = $q.defer();
           q.reject(response.data);
           return q.promise;

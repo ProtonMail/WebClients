@@ -9,7 +9,7 @@
         <i class="fa fa-fw fa-eye"></i> Mark as read
       </a>
     </li>
-    
+
     <li>
       <a href="#" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }">
         <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
@@ -17,7 +17,7 @@
     </li>
 
     <li>
-      <a href="#" class="dropdown-toggle" 
+      <a href="#" class="dropdown-toggle"
          data-toggle="dropdown"
          ng-class="{ disabled: selectedMessages().length == 0 }">
         <i class="fa fa-level-down fa-rotate-270"></i> Move <i class="fa fa-angle-down"></i>
@@ -42,7 +42,7 @@
     </li>
 
     <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
-      <a  href="#" 
+      <a  href="#"
           ng-class="{ disabled: selectedMessages().length == 0 }"
           ng-click="moveMessagesTo('delete')">
         <i class="fa fa-times-circle"></i> Delete
@@ -76,19 +76,19 @@
       </a>
       <ul class="dropdown-menu" role="menu">
         <li ng-class="{selected: selectedOrder == 'subject'}"><a href="#" ng-click="orderBy('subject')">
-          <i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z 
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> Subject: A-Z
           <i class="fa fa-fw fa-check"></i>
         </a></li>
         <li ng-class="{selected: selectedOrder == '-subject'}"><a href="#" ng-click="orderBy('-subject')">
           <i class="fa fa-fw fa-sort-alpha-desc"></i> Subject: Z-A
           <i class="fa fa-fw fa-check"></i>
         </a></li>
-        <li ng-class="{selected: selectedOrder == 'to'}"><a href="#" ng-click="orderBy('to')">
-          <i class="fa fa-fw fa-sort-alpha-asc"></i> To: A-Z
+        <li ng-class="{selected: selectedOrder == 'from'}"><a href="#" ng-click="orderBy('from')">
+          <i class="fa fa-fw fa-sort-alpha-asc"></i> From: A-Z
           <i class="fa fa-fw fa-check"></i>
         </a></li>
-        <li ng-class="{selected: selectedOrder == '-to'}"><a href="#" ng-click="orderBy('-to')">
-          <i class="fa fa-fw fa-sort-alpha-desc"></i> To: Z-A
+        <li ng-class="{selected: selectedOrder == '-from'}"><a href="#" ng-click="orderBy('-from')">
+          <i class="fa fa-fw fa-sort-alpha-desc"></i> From: Z-A
           <i class="fa fa-fw fa-check"></i>
         </a></li>
         <li ng-class="{selected: selectedOrder == 'size'}"><a href="#" ng-click="orderBy('size')">
@@ -119,18 +119,18 @@
 
   <ul class="nav navbar-nav pull-right navigation">
     <li class="prev-page">
-      <a href="#" 
+      <a href="#"
          ng-class="{disabled: page == 1}"
          ng-click="goToPage(page - 1)">
         <i class="fa fa-chevron-left"></i>
       </a>
     </li>
     <li class="next-page">
-      <a href="#" 
+      <a href="#"
          ng-class="{disabled: !hasNextPage()}"
          ng-click="goToPage(page + 1)">
         <i class="fa fa-chevron-right"></i>
       </a>
     </li>
   </ul>
-</div>  
+</div>

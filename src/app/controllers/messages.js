@@ -3,10 +3,10 @@ angular.module("proton.Controllers.Messages", [
 ])
 
 .controller("MessageListController", function(
-  $state, 
-  $stateParams, 
-  $scope, 
-  $rootScope, 
+  $state,
+  $stateParams,
+  $scope,
+  $rootScope,
   $q,
   messages,
   messageCount,
@@ -15,9 +15,20 @@ angular.module("proton.Controllers.Messages", [
 ) {
   var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
+  var unsubscribe = $rootScope.$on("$stateChangeSuccess", function () {
+    $rootScope.pageName = $state.current.data.mailbox;
+  });
+  $scope.$on("$destroy", unsubscribe);
+
   $scope.page = parseInt($stateParams.page || "1");
   $scope.messages = messages;
-  $scope.messageCount = messageCount.Total;
+
+  if ($stateParams.filter) {
+    $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+  } else {
+    $scope.messageCount = messageCount.Total;
+  }
+
   $scope.selectedFilter = $stateParams.filter;
   $scope.selectedOrder = $stateParams.sort || "-date";
 
@@ -94,14 +105,14 @@ angular.module("proton.Controllers.Messages", [
   $scope.filterBy = function (status) {
     $state.go($state.current.name, _.extend({}, $state.params, {filter: status, page: null}));
   };
-  
+
   $scope.clearFilter = function () {
     $state.go($state.current.name, _.extend({}, $state.params, {filter: null, page: null}));
   };
 
   $scope.orderBy = function (criterion) {
     $state.go($state.current.name, _.extend({}, $state.params, {
-      sort: criterion == '-date' ? null : criterion, 
+      sort: criterion == '-date' ? null : criterion,
       page: null
     }));
   };
@@ -111,7 +122,7 @@ angular.module("proton.Controllers.Messages", [
       if (page == 1) {
         page = null;
       }
-      
+
       $state.go($state.current.name, _.extend({}, $state.params, {
         page: page
       }));
@@ -125,19 +136,19 @@ angular.module("proton.Controllers.Messages", [
 })
 
 .controller("ViewMessageController", function(
-  $state, 
-  $rootScope, 
+  $state,
+  $rootScope,
   $scope,
   $templateCache,
   $compile,
   $timeout,
-  message, 
+  message,
   localStorageService,
   networkActivityTracker
 ) {
 
   $rootScope.pageName = message.MessageTitle;
-  
+
   $scope.message = message;
   $scope.messageHeadState = "close";
   $scope.showHeaders = false;

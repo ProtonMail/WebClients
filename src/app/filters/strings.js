@@ -27,6 +27,10 @@ angular.module("proton.filters.strings", [])
 
 .filter("contrast", function () {
   return function (input, character) {
+    if (!input) {
+      return input;
+    }
+
     var split = input.split(character);
 
     if (split.length == 1) {
