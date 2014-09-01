@@ -32,18 +32,23 @@ module.exports = {
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-animate/angular-animate.js",
       "vendor/angular-local-storage/angular-local-storage.js",
+      "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js",
+      "vendor/showdown/compressed/showdown.js",
+      "vendor/angular-markdown-directive/markdown.js"
     ],
     bootstrap_components: [
       "affix",
       "alert",
       "collapse",
-      "tooltip"
+      "tooltip",
+      "dropdown",
+      "modal"
     ],
 
     required_js: [],

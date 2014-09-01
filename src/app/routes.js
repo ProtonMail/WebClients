@@ -9,34 +9,123 @@ angular.module("proton.Routes", [
   "sent": 2,
   "trash": 3,
   "spam": 4,
-  "starred": undefined
+  "starred": 5
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
 
+  var messageViewOptions = {
+    url: "/:MessageID",
+    controller: "ViewMessageController as messageViewCtrl",
+    templateUrl: "templates/views/message.tpl.html",
+    resolve: {
+      message: function (
+        $rootScope,
+        $state,
+        $stateParams,
+        Message,
+        messageCache,
+        authentication,
+        networkActivityTracker
+      ) {
+        if (authentication.isLoggedIn()) {
+          return networkActivityTracker.track(
+            messageCache.get($stateParams.MessageID).$promise
+          );
+        }
+      }
+    }
+  };
+
   var messageListOptions = function(url, params) {
     var opts = _.extend(params || {}, {
-      url: url,
+      url: url + "?page&filter&sort",
       views: {
         "content@secured": {
-          controller: "MessageListController",
+          controller: "MessageListController as messageListCtrl",
           templateUrl: "templates/views/messageList.tpl.html"
         }
       },
 
       resolve: {
-        messages: function ($state, $stateParams, $rootScope, authentication, Message, mailboxIdentifiers, networkActivityTracker) {
+        messages: function (
+          $state,
+          $stateParams,
+          $rootScope,
+          authentication,
+          Message,
+          mailboxIdentifiers,
+          networkActivityTracker,
+          errorReporter
+        ) {
           var mailbox = this.data.mailbox;
           if (authentication.isSecured()) {
+            var params = {
+              "Location": mailboxIdentifiers[mailbox],
+              "Page": $stateParams.page
+            };
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
+            if ($stateParams.filter) {
+              params.FilterUnread = + ($stateParams.filter === 'unread');
+            } else {
+              params.FilterUnread = - 2;
+            }
+
+            if ($stateParams.sort) {
+              var sort = $stateParams.sort;
+              var desc = _.string.startsWith(sort, "-");
+              if (desc) {
+                sort = sort.slice(1);
+              }
+
+              params.SortedColumn = _.string.capitalize(sort);
+              params.Order = + desc;
+            }
+
             return networkActivityTracker.track(
-              Message.query({
-                "Location": mailboxIdentifiers[mailbox],
-                "Tag": (mailbox === 'starred') ? mailbox : undefined,
-                "Page": $stateParams.page
-              }).$promise
+              errorReporter.resolve(
+                "Messages couldn't be queried - please try again later.",
+                Message.query(params).$promise,
+                []
+              )
             );
           } else {
             return [];
+          }
+        },
+
+        messageCount: function (
+          $stateParams,
+          Message,
+          authentication,
+          mailboxIdentifiers,
+          errorReporter,
+          networkActivityTracker
+        ) {
+          var mailbox = this.data.mailbox;
+          if (authentication.isSecured()) {
+            var params = {
+              "Location": mailboxIdentifiers[mailbox],
+              "Page": $stateParams.page
+            };
+
+            // This should replace the starred location when tags are used
+            // if (mailbox === 'starred') {
+            //   params.Tag = mailbox;
+            // }
+
+            return networkActivityTracker.track(
+              errorReporter.resolve(
+                "Message count couldn't be queried - please try again later.",
+                Message.count(params).$promise,
+                {count: 0}
+              )
+            );
           }
         }
       }
@@ -104,29 +193,13 @@ angular.module("proton.Routes", [
       }
     })
 
-    .state("secured.inbox", messageListOptions("/inbox?page", {
+    .state("secured.inbox", messageListOptions("/inbox", {
       data: {
         mailbox: "inbox"
       }
     }))
 
-    .state("secured.message", {
-      url: "/message/:MessageID",
-      views: {
-        "content@secured": {
-          controller: "ViewMessageController",
-          templateUrl: "templates/views/message.tpl.html"
-        }
-      },
-      resolve: {
-        message: function ($rootScope, $stateParams, Message, networkActivityTracker) {
-          return networkActivityTracker.track(
-            Message.get(_.pick($stateParams, 'MessageID'))
-            .$promise
-          );
-        }
-      }
-    })
+    .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.contacts", {
       url: "/contacts",
@@ -210,9 +283,12 @@ angular.module("proton.Routes", [
       return;
     }
 
-    $stateProvider.state("secured." + box, messageListOptions("/" + box + "?page", {
+    var stateName = "secured." + box;
+    $stateProvider.state(stateName, messageListOptions("/" + box, {
       data: { mailbox: box }
     }));
+
+    $stateProvider.state("secured." + box + ".message", _.clone(messageViewOptions));
   });
 
   $urlRouterProvider.otherwise(function($injector) {

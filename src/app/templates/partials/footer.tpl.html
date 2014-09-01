@@ -1,6 +1,6 @@
 <footer id="footer">
   <div class="container-fluid">
-    <span class="pull-right">
+    <span class="pull-right" ng-hide="isMobile">
     <a href="/blog/">Blog</a>
     <a href="/pages/faq">FAQ</a>
     <a href="/pages/security-details">Security Details</a>
@@ -10,8 +10,10 @@
     <a href="//www.facebook.com/protonmail" target="_blank"><i class="fa fa-facebook-square"></i></a>
     </span>
     <span class="copy">&copy; 2014 ProtonMail.ch
-      <span> - Made globally, hosted in Switzerland.</span>
+      <span ng-hide="isMobile"> - Made globally, hosted in Switzerland.</span>
     </span>
 <div class="clear"></div>
   </div><!--/.container-->
 </footer>
+
+<ng-include ng-if="isLoggedIn" src="'templates/partials/bugform.tpl.html'"></ng-include>

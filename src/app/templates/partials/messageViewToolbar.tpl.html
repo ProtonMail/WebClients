@@ -1,0 +1,77 @@
+<div class="message-toolbar">
+  <ul class="nav navbar-nav">
+    <li ng-if="!message.IsRead">
+      <a href="#" ng-click="message.setReadStatus(true)">
+        <i class="fa fa-fw fa-eye"></i> Mark as read
+      </a>
+    </li>
+    <li ng-if="message.IsRead">
+      <a href="#" ng-click="message.setReadStatus(false)">
+        <i class="fa fa-fw fa-eye-slash"></i> Mark as unread
+      </a>
+    </li>
+
+    <li>
+      <a href="#" class="dropdown-toggle" 
+         data-toggle="dropdown">
+        <i class="fa fa-level-down fa-rotate-270"></i> Move <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-if="message.location() != 'inbox'">
+          <a href="#" ng-click="moveMessageTo('inbox')">
+            <i class="fa fa-fw fa-inbox"></i> Inbox
+          </a>
+        </li>
+        <li ng-if="message.location() != 'trash'">
+          <a href="#" ng-click="moveMessageTo('trash')">
+            <i class="fa fa-fw fa-trash-o"></i> Trash
+          </a>
+        </li>
+        <li ng-if="message.location() != 'spam'">
+          <a href="#" ng-click="moveMessageTo('spam')">
+            <i class="fa fa-fw fa-bug"></i> Spam
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
+      <a  href="#" 
+          ng-click="moveMessagesTo('delete')">
+        <i class="fa fa-times-circle"></i> Delete
+      </a>
+    </li>
+
+    <li>
+      <a  href="#">
+        <i class="fa fa-print"></i> Print
+      </a>
+    </li>
+
+    <li>
+      <a href="#" ng-click="toggleHeaders()">
+        <i class="fa fa-code"></i> {{ showHeaders ? 'Hide' : 'View' }} headers
+      </a>
+    </li>
+
+  </ul>
+
+  <ul class="nav navbar-nav pull-right navigation">
+    <li class="prev-message">
+      <a href="#" 
+         ng-class="{disabled: page == 1}"
+         ng-click="goToPage(page - 1)">
+        <i class="fa fa-chevron-up"></i>
+        Previous
+      </a>
+    </li>
+    <li class="next-message">
+      <a href="#" 
+         ng-class="{disabled: !hasNextPage()}"
+         ng-click="goToPage(page + 1)">
+        <i class="fa fa-chevron-down"></i>
+        Next
+      </a>
+    </li>
+  </ul>
+</div>  

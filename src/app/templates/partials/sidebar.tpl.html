@@ -17,24 +17,29 @@
 
   <ul class="list-group" id="topMenu">
     <li class="list-group-item" class="current-li" data-unread="0">
-      <a class="btn" ui-sref="secured.inbox" ui-sref-active="active">
+      <a class="btn" 
+         ui-sref="secured.inbox"
+         ng-class="{ active: ('secured.inbox.**' | includedByState) }">
         <span class="fa fa-inbox"></span> Inbox
         <span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span>
       </a>
     </li>
     <li class="list-group-item" data-unread="0">
-      <a class="btn" ui-sref="secured.drafts" ui-sref-active="active">
-        <span class="fa fa-file-text-o"></span> Draft
+      <a class="btn" ui-sref="secured.drafts"
+         ng-class="{ active: ('secured.drafts.**' | includedByState) }">
+        <span class="fa fa-file-text-o"></span> Drafts
         <span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span>
       </a>
     </li>
     <li class="list-group-item" data-unread="0">
-      <a class="btn" ui-sref="secured.sent" ui-sref-active="active">
+      <a class="btn" ui-sref="secured.sent"
+         ng-class="{ active: ('secured.sent.**' | includedByState) }">
         <span class="fa fa-sign-out"></span> Sent
       </a>
     </li>
     <li class="list-group-item" data-unread="0">
-      <a class="btn" ui-sref="secured.trash" ui-sref-active="active">
+      <a class="btn" ui-sref="secured.trash"
+         ng-class="{ active: ('secured.trash.**' | includedByState) }">
         <span class="fa fa-trash-o"></span> Trash
       </a>
     </li>
@@ -44,12 +49,14 @@
 
   <ul class="list-group">
     <li class="list-group-item">
-      <a class="btn" ui-sref="secured.starred" ui-sref-active="active">
+      <a class="btn" ui-sref="secured.starred"
+         ng-class="{ active: ('secured.starred.**' | includedByState) }">
         <span class="fa fa-star"></span> Starred
       </a>
     </li>
     <li class="list-group-item">
-      <a class="btn" ui-sref="secured.spam" ui-sref-active="active">
+      <a class="btn" ui-sref="secured.spam"
+         ng-class="{ active: ('secured.spam.**' | includedByState) }">
         <span class="fa fa-bug"></span> Spam
       </a>
     </li>
@@ -70,12 +77,12 @@
   <ul class="list-group info">
     <li>
       <span class="sizebar">Storage:
-        <span class="pull-right mono">0.01/100 MB</span>
+        <span class="pull-right mono">{{ user.UsedSpace | humanSize }}/{{ user.MaxSpace | humanSize }}</span>
       </span>
     </li>
     <li>
       <div class="sizeBar">
-        <span class="fill" style="width:0.01%"></span>
+        <span class="fill" style="width:{{ 100 * user.UsedSpace / user.MaxSpace }}%"></span>
       </div>
     </li>
   </ul>
@@ -83,10 +90,10 @@
   <ul class="list-group info">
     <li>
       <span class="sizebar">Msg/month:
-        <span class="pull-right mono">0/1000</span>
+        <span class="pull-right mono">{{ user.NumMessageSentThisMonth }}/{{ user.MaxNumMessageSentThisMonth }}</span>
       </span>
       <div class="sizeBar">
-        <span class="fill" style="width:0%"></span>
+        <span class="fill" style="width:{{ 100 * user.NumMessageSentThisMonth / user.MaxNumMessageSentThisMonth }}%"></span>
       </div>
     </li>
   </ul>

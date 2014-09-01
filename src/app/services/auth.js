@@ -20,6 +20,17 @@ angular.module("proton.Auth", [
 
     var baseURL;
 
+    var randomString = function (size) {
+      var string = ""
+        , i = 0
+        , chars = "0123456789ABCDEF";
+
+      while (i++ < size) {
+        string += chars[Math.floor(Math.random() * 16)];
+      }
+      return string;
+    };
+
     // PRIVATE FUNCTIONS
 
     auth.saveAuthData = function(data) {
@@ -27,10 +38,13 @@ angular.module("proton.Auth", [
 
       window.localStorage[OAUTH_KEY+":uid"] = data.uid;
       window.localStorage[OAUTH_KEY+":exp"] = date.toISOString();
-      window.localStorage[OAUTH_KEY+":token"] = data.access_token;
+      window.localStorage[OAUTH_KEY+":access_token"] = data.access_token;
+      window.localStorage[OAUTH_KEY+":refresh_token"] = data.refresh_token;
 
-      auth.data = _.pick(data, "uid", "access_token");
+      auth.data = _.pick(data, "uid", "access_token", "refresh_token");
       auth.data.exp = date;
+
+      auth.setAuthHeaders();
     };
 
     auth.savePassword = function(pwd) {
@@ -43,21 +57,20 @@ angular.module("proton.Auth", [
       var dt = window.localStorage[OAUTH_KEY+":exp"];
       if (dt) {
         dt = moment(dt);
-        if (!dt.isBefore(Date.now())) {
-          auth.data = {
-            uid: window.localStorage[OAUTH_KEY+":uid"],
-            exp: dt,
-            access_token: window.localStorage[OAUTH_KEY+":token"]
-          };
+        auth.data = {
+          uid: window.localStorage[OAUTH_KEY+":uid"],
+          exp: dt,
+          access_token: window.localStorage[OAUTH_KEY+":access_token"],
+          refresh_token: window.localStorage[OAUTH_KEY+":refresh_token"]
+        };
 
-          auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
-          if (auth.mailboxPassword) {
-            cryptoProvider.setMailboxPassword(auth.mailboxPassword);
-          }
-        } else {
-          _.each(["uid", "exp", "token"], function(key) {
-            delete window.localStorage[OAUTH_KEY+":"+key];
-          });
+        if (dt.isBefore(Date.now())) {
+          auth.data.shouldRefresh = true;
+        }
+
+        auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
+        if (auth.mailboxPassword) {
+          cryptoProvider.setMailboxPassword(auth.mailboxPassword);
         }
       }
     };
@@ -68,7 +81,16 @@ angular.module("proton.Auth", [
       }
     };
 
-    this.$get = function($state, $rootScope, $q, $http, $timeout, crypto, $injector) {
+    this.$get = function(
+      $state,
+      $rootScope,
+      $q,
+      $http,
+      $timeout,
+      $injector,
+      crypto,
+      errorReporter
+    ) {
 
       // RUN-TIME PUBLIC FUNCTIONS
 
@@ -78,6 +100,7 @@ angular.module("proton.Auth", [
         isLoggedIn: function() {
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);
           if (loggedIn && api.user === null) {
+            auth.setAuthHeaders();
             auth.fetchUserInfo();
           }
           return loggedIn;
@@ -86,6 +109,10 @@ angular.module("proton.Auth", [
         // Whether the mailbox' password is accessible, or if the user needs to re-enter it
         isLocked: function() {
           return ! api.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
+        },
+
+        isSecured: function() {
+          return api.isLoggedIn() && !api.isLocked();
         },
 
         // Return a state name to be in in case some user authentication step is required.
@@ -106,16 +133,29 @@ angular.module("proton.Auth", [
           }
         },
 
-        isSecured: function() {
-          return api.isLoggedIn() && !api.isLocked();
+        refreshIfNecessary: function () {
+          if (auth.data && auth.data.shouldRefresh) {
+            $http.post(
+              baseURL + "/auth/refresh",
+              _.extend(_.pick(auth.data, "access_token", "refresh_token"), {
+                client_id: "demoapp",
+                grant_type: "refresh_token",
+                response_type: "token"
+              })
+            ).then(
+              function(resp) {
+                var data = resp.data;
+                auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
+              },
+              errorReporter.catcher("Something went wrong with authentication")
+            );
+          }
         },
 
         // Removes all connection data
         logout: function() {
-          _.each(["uid", "exp", "token"], function(key) {
-            delete window.localStorage[OAUTH_KEY+":"+key];
-          });
-          delete window.sessionStorage[MAILBOX_PASSWORD_KEY];
+          window.localStorage.clear();
+          window.sessionStorage.clear();
 
           delete auth.data;
           delete auth.mailboxPassword;
@@ -138,10 +178,6 @@ angular.module("proton.Auth", [
               self.user.$promise.then(function (user) {
                 if (crypto.setMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)) {
                   auth.savePassword(pwd);
-
-                  $rootScope.isLoggedIn = true;
-                  $rootScope.isLocked = false;
-
                   req.resolve(200);
                 } else {
                   req.reject({message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."});
@@ -165,26 +201,30 @@ angular.module("proton.Auth", [
           } else {
             delete $http.defaults.headers.common.Accept;
 
-            $http.post(baseURL + "/auth",
+            $http.post(baseURL + "/auth/auth",
               _.extend(_.pick(creds, "username", "password"), {
-                client_id: "this_is_test_app_id",
-                response_type: "password"
+                client_id: "demoapp",
+                client_secret: "demopass",
+                hashedpassword: "",
+                grant_type: "password",
+                state: randomString(24),
+                redirect_uri: "https://protonmail.ch",
+                response_type: "token"
               })
             ).then(function(resp) {
               var data = resp.data;
-              if ("error" in data) {
-                q.reject({message: data.error.message});
-              } else {
-                auth.saveAuthData(_.pick(data.data, "access_token", "uid", "expires_in"));
-                auth.fetchUserInfo().then(function() {
+              auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
+              auth.fetchUserInfo().then(
+                function() {
                   $rootScope.isLoggedIn = true;
                   $rootScope.isLocked = true;
                   q.resolve(200);
-                });
-              }
+                },
+                errorReporter.catcher("Please try again later", q)
+              );
             },
             function (error) {
-              console.log(error);
+              q.reject({message: error.error_description});
             });
           }
 
@@ -192,19 +232,21 @@ angular.module("proton.Auth", [
         },
 
         params: function (params) {
-          return _.extend({
-            access_token: function() {
-              return auth.data.access_token;
-            }
-          }, params);
+          return params;
         }
       };
 
-      auth.fetchUserInfo = function() {
+      auth.setAuthHeaders = function () {
+        // API version
         $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
-        $http.defaults.headers.common.Authorization = auth.data.uid;
 
-        api.user = $injector.get("User").get();
+        // credentials
+        $http.defaults.headers.common.Authorization = "Bearer " + auth.data.access_token;
+        $http.defaults.headers.common["x-pm-uid"] = auth.data.uid;
+      };
+
+      auth.fetchUserInfo = function() {
+        api.user = $injector.get("User").get({ UserID: auth.data.uid });
         return api.user.$promise;
       };
 
@@ -218,9 +260,25 @@ angular.module("proton.Auth", [
 
 .config(function(authenticationProvider, $httpProvider) {
   authenticationProvider.detectAuthenticationState();
+  $httpProvider.interceptors.push(function ($q) {
+    return {
+      // Add an interceptor that will change a HTTP 200 success response containing
+      // a { "error": <something> } body into a failing response
+      response: function (response) {
+        if (response.data && response.data.error) {
+          var q = $q.defer();
+          q.reject(response.data);
+          return q.promise;
+        }
+
+        return response;
+      }
+    };
+  });
 })
 
 .run(function($rootScope, authentication) {
+  authentication.refreshIfNecessary();
   $rootScope.isLoggedIn = authentication.isLoggedIn();
   $rootScope.isLocked = authentication.isLocked();
 });

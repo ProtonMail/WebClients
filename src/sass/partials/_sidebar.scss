@@ -24,7 +24,8 @@
   .label {
     background-color: white;
     color: #222;
-    float: right;
+    position: absolute;
+    right: 8px;
     padding: 0.3em 0.6em 0.4em;
     opacity: 0;
     font-size: 84%;
@@ -102,6 +103,11 @@
       left: 0;
       top: 0;
     }
+  }
+
+  .sizebar {
+    display: block;
+    line-height: 18px;
   }
 
   .list-group {

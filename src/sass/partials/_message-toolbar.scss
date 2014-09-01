@@ -1,0 +1,136 @@
+.message-toolbar {
+  background: #e5e5e5;
+  box-shadow: inset 0 -1px rgba(0,0,0,.1);  
+  @include clearfix;
+
+  > ul {
+    > li {
+      border-right: 1px solid rgba(0,0,0,.2);
+
+      &.selectAll {
+        padding: 0 15px;
+        @include linear-gradient(#fff, #e5e5e5);
+        box-shadow: inset 0 -1px rgba(0,0,0,.1);        
+      }
+      &.open > a {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      }
+      &.lock-indicator {
+        border-right: 0;
+
+        > a,
+        > a:hover {
+          color: #888;
+          background: transparent;
+          box-shadow: none;
+
+          i:first-child { 
+            margin-right: 0; 
+          }
+        }
+      }
+
+      > input[type='checkbox'] {
+        margin: 1rem 0;
+      }
+
+      > a {
+        padding: 0 15px;
+        color: #666;
+        line-height: 32px;
+        box-shadow: inset 0 -1px rgba(0,0,0,.1);
+        @include linear-gradient(#fff, #e5e5e5);        
+
+        &:hover {
+          color: #000;
+          box-shadow: inset 0 -1px rgba(0,0,0,.1);
+          @include linear-gradient(#fff, #f2f2f2);
+        }
+
+        &:active {
+          background: transparent;
+          color: #999
+        }
+
+        input[type="checkbox"] {
+          margin: 0;
+        }
+
+        &:not([href]):hover {
+          background-color: transparent;
+        }
+
+        i:first-child {
+          margin-right: 3px;
+        }
+
+        &.disabled {
+          text-shadow: none;
+          opacity: .3;
+          cursor: not-allowed;
+          pointer-events: none;
+          background: transparent;
+        }
+
+        &.dropdown-toggle {
+          padding-right: 10px;
+
+          i.fa-angle-down {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        opacity: 0.97;
+        background-color: #eeeeee;
+        border-top: 1px solid #d1d1d1;
+        margin-left: -1px;
+        padding: 0;
+        top: 98%;
+        li:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+        li > a {
+          padding: 8px 40px 8px 10px;
+          position: relative;
+
+          i.fa-check {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            opacity: 0;
+          }
+        }
+        
+        li.selected > a {
+          color: #aaa;
+          pointer-events: none;
+
+          i.fa-check {
+            opacity: 1;
+          }
+        }
+
+        a:hover {
+          background-color: #e7e7e7;
+        }
+
+        li.clear a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &.navigation {
+      li > a i:first-child {
+        margin-right: 0;
+      }
+      li:first-child {
+        border-left: 1px solid rgba(0,0,0,.2);
+      }
+
+    }
+  }
+}

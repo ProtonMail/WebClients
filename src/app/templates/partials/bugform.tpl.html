@@ -1,0 +1,70 @@
+<div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><span class="fa fa-bug"></span> Report Bug Form</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <form role="form">
+            <div class="col-md-6">
+              <div class="form-group">       
+                <label for="bug_os">Operating System</label>        
+                <select required name="bug_os" id="bug_os" class="form-control">
+                    <option selected="" value="">- Choose -</option>
+                    <option value="osx">Mac OSX</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                    <option value="other">Other</option>
+                </select>    
+              </div><!--/.form-group-->
+            </div><!--/.col-md-6-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bug_device">Device</label>  
+                <select required name="bug_device" id="bug_device" class="form-control">
+                    <option selected="" value="">- Choose -</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="iphone">iPhone</option>
+                    <option value="android">Android Phone</option>
+                    <option value="other">Other</option>
+                </select>
+              </div><!--/.form-group-->   
+            </div><!--/.col-md-6-->
+            <div class="col-md-6">   
+              <div class="form-group">            
+                <label for="bug_location">Where did you find it?</label>                
+                <input required class="form-control" type="text" name="bug_location" id="bug_location" placeholder="URL" value=""> 
+              </div><!--/.form-group-->
+            </div><!--/.col-md-6-->
+            <div class="col-md-6">
+              <div class="form-group">            
+                <label for="bug_browser">Browser</label>                
+                <input required class="form-control" type="text" name="bug_browser" id="bug_browser" placeholder="Browser" value="">
+              </div><!--/.form-group-->
+            </div><!--/.col-md-6-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bug_email">Email</label>                
+                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="Email" value=""> 
+              </div><!--/.form-group-->
+            </div><!--/.col-md-6-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bug_description">What happened?</label>       
+                <textarea class="form-control" required name="bug_description" rows="6" id="bug_description"></textarea>    
+              </div><!--/.form-group-->
+            </div><!--/.col-md-6-->
+          </form>
+        </div><!--/.row-->
+      </div><!--/.modal-body-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary"><span class="fa fa-send"></span> Send Bug Report</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 

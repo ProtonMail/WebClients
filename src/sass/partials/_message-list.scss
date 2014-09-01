@@ -1,14 +1,37 @@
 table.message-list {
-  tr {
-    @include transition(background-color 0.05s ease-in 0);
+  border-bottom: none;
 
+  tbody td {
+    border-top: none;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &.empty::after {
+    content: "Empty Mailbox";
+    position: absolute;
+    top: 82px;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    text-align: center;
+    padding-top: 8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 200%;
+    color: #ccc;
+    text-shadow: 2px 2px white;
+    background-color: #f8f8f8;
+  }
+
+  tr {
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
+    color: $gray-light;
 
     &:hover,
     &.selected {
-      background-color: #f5f5f5;
+      color: #111;
     }
     
     &.unread {
@@ -17,32 +40,39 @@ table.message-list {
     }
 
     &.starred {
-      background-color: #ffc;
+      background-color: $starred;
+
       &:hover {
+        background-color: darken($starred, 5%);
+
         td {
           background: transparent;
         }
-        background-color: darken(#ffc, 5%);
       }
     }
 
-    color: $gray-light;
-
     td.actions {
       cursor: default;
-      width: 72px;
-      padding-left: 16px;
+      padding-left: 15px;
+      width: 7.5rem;
 
       span { 
         width: 1.5rem;
         text-align: center;
+
+        &.fa-star,
+        &.fa-star-o {
+          font-size: 14px;
+          position: relative;
+          top: 1px;
+        }
       }
 
-      .fa-unlock-alt {      color: rgba(0, 0, 0, 0.25); }
+      .fa-unlock-alt, {      color: rgba(0, 0, 0, 0.25); }
       .fa-star-o {          color: rgba(0, 0, 0, 0.5); }
       .fa-star {            color: orange; }
       a:hover .fa-star-o {  color: #000; }
-      .fa-lock {            color: #336}
+      .fa-lock, {            color: #336}
 
       .tooltip { font-weight: normal; }
     }
@@ -61,7 +91,21 @@ table.message-list {
       width: 4rem;
     }
 
-  }
 
-  border-bottom: 1px solid $table-border-color;
+    i.fa-paperclip { 
+      opacity: 0;
+      margin-right: 0.4em;
+      padding: 0.3em;
+      display: inline;
+
+      &:not(.active) {
+        pointer-events: none;
+      }
+      
+      &.active { 
+        opacity: 0.5;
+      }
+    }
+
+  }
 }

@@ -2,13 +2,130 @@ angular.module("proton.Controllers.Messages", [
   "proton.Routes"
 ])
 
-.controller("MessageListController", function($state, $stateParams, $scope, $rootScope, messages) {
-  $rootScope.pageName = $state.current.data.mailbox;
+.controller("MessageListController", function(
+  $state,
+  $stateParams,
+  $scope,
+  $rootScope,
+  $q,
+  messages,
+  messageCount,
+  messageCache,
+  networkActivityTracker
+) {
+  var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
+  var unsubscribe = $rootScope.$on("$stateChangeSuccess", function () {
+    $rootScope.pageName = $state.current.data.mailbox;
+  });
+  $scope.$on("$destroy", unsubscribe);
+
+  $scope.page = parseInt($stateParams.page || "1");
   $scope.messages = messages;
+
+  if ($stateParams.filter) {
+    $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+  } else {
+    $scope.messageCount = messageCount.Total;
+  }
+
+  $scope.selectedFilter = $stateParams.filter;
+  $scope.selectedOrder = $stateParams.sort || "-date";
+
+  messageCache.watchScope($scope, "messages");
+
+  $scope.hasNextPage = function () {
+    return $scope.messageCount > ($scope.page * 25);
+  };
+
   $scope.navigateToMessage = function (event, message) {
     if (!$(event.target).closest("td").hasClass("actions")) {
-      $state.go("secured.message", { MessageID: message.MessageID });
+      $state.go($state.current.name + ".message", { MessageID: message.MessageID });
+    }
+  };
+
+  $scope.selectAllMessages = function (val) {
+    _.forEach($scope.messages, function (message) {
+      message.selected = this.allSelected;
+    }, this);
+  };
+
+  $scope.selectedMessages = function () {
+    return _.select($scope.messages, function (message) {
+      return message.selected === true;
+    });
+  };
+
+  $scope.selectedMessagesWithReadStatus = function (bool) {
+    return _.select($scope.selectedMessages(), function (message) {
+      return message.IsRead == bool;
+    });
+  };
+
+  $scope.messagesCanBeMovedTo = function (otherMailbox) {
+    if (otherMailbox === "inbox") {
+      return _.contains(["spam", "trash"], mailbox);
+    } else if (otherMailbox == "trash") {
+      return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
+    } else if (otherMailbox == "spam") {
+      return _.contains(["inbox", "starred", "trash"], mailbox);
+    } else if (otherMailbox == "drafts") {
+      return _.contains(["trash"], mailbox);
+    }
+  };
+
+  $scope.setMessagesReadStatus = function (status) {
+    networkActivityTracker.track($q.all(
+      _.map($scope.selectedMessagesWithReadStatus(!status), function (message) {
+        return message.setReadStatus(status);
+      })
+    ));
+  };
+
+  $scope.moveMessagesTo = function (mailbox) {
+    var selectedMessages = $scope.selectedMessages();
+    networkActivityTracker.track($q.all(
+      _.map(selectedMessages, function (message) {
+        if (mailbox == 'delete') {
+          return message.delete().$promise;
+        } else {
+          return message.moveTo(mailbox).$promise;
+        }
+      })
+    ).then(function () {
+      _.each(selectedMessages, function (message) {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      });
+    }));
+  };
+
+  $scope.filterBy = function (status) {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: status, page: null}));
+  };
+
+  $scope.clearFilter = function () {
+    $state.go($state.current.name, _.extend({}, $state.params, {filter: null, page: null}));
+  };
+
+  $scope.orderBy = function (criterion) {
+    $state.go($state.current.name, _.extend({}, $state.params, {
+      sort: criterion == '-date' ? null : criterion,
+      page: null
+    }));
+  };
+
+  $scope.goToPage = function (page) {
+    if (page > 0 && $scope.messageCount > ((page - 1) * 25)) {
+      if (page == 1) {
+        page = null;
+      }
+
+      $state.go($state.current.name, _.extend({}, $state.params, {
+        page: page
+      }));
     }
   };
 })
@@ -18,7 +135,71 @@ angular.module("proton.Controllers.Messages", [
   $scope.message = new Message();
 })
 
-.controller("ViewMessageController", function($rootScope, $scope, message) {
+.controller("ViewMessageController", function(
+  $state,
+  $rootScope,
+  $scope,
+  $templateCache,
+  $compile,
+  $timeout,
+  message,
+  localStorageService,
+  networkActivityTracker
+) {
+
   $rootScope.pageName = message.MessageTitle;
+
   $scope.message = message;
+  $scope.messageHeadState = "close";
+  $scope.showHeaders = false;
+
+  $scope.toggleHead = function () {
+    $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
+  };
+  $scope.goToMessageList = function () {
+    $state.go("^");
+    $rootScope.pageName = $state.current.data.mailbox;
+  };
+  $scope.moveMessageTo = function (mailbox) {
+    networkActivityTracker.track(
+      ( (mailbox === 'delete') ? message.delete() : message.moveTo(mailbox) ).$promise
+      .then(function () {
+        var i = $scope.messages.indexOf(message);
+        if (i >= 0) {
+          $scope.messages.splice(i, 1);
+        }
+      })
+    );
+  };
+  $scope.toggleHeaders = function () {
+    if ($scope.showHeaders) {
+      $scope.showHeaders = false;
+    } else {
+      $scope.messageHeadState = "open";
+      $scope.showHeaders = true;
+    }
+  };
+
+  if (!message.IsRead) {
+    message.setReadStatus(true);
+  }
+
+  localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
+  if (!_.contains(["close", "open"], $scope.messageHeadState)) {
+    $scope.messageHeadState = "close";
+  }
+
+  var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
+  var iframe = $("#message-body > iframe");
+  var iframeDocument = iframe[0].contentWindow.document;
+
+  // HACK: Makes the iframe's content manipulation work in Firefox.
+  iframeDocument.open();
+  iframeDocument.close();
+  iframe.contents().find("body").append(render($scope));
+
+  // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+  $timeout(function () {
+    iframe.height(iframeDocument.body.scrollHeight + "px");
+  }, 16);
 });

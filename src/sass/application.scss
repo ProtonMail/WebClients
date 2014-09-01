@@ -6,21 +6,41 @@ $fa-font-path: "fonts";
 @import "font-awesome";
 @import "partials/header";
 
-
 html {
   position: relative;
   min-height: 100%;
-} 
+}
+
+.mobileOnly {
+  display: none;
+}
+
 .secure #body { 
   min-height: 100%; 
 }
-.secure #main {
+.secure #main {} 
 
+.modal-body {
+  background: $panel-bg;
 }
+
+h1 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  text-align: center;
+
+  span.fa {
+    text-shadow: 0 1px 0 #fff;
+    display: block;
+    margin-bottom: .25rem;
+  }
+}
+
 body,
 #main {
   margin-bottom: $footer-height;
 }
+
 body footer {
   position: absolute;
   bottom: 0;
@@ -47,6 +67,12 @@ body footer {
   }
   #footer {
     @include calc(width, '100% - #{$sidebar-width}');
+    background: #e5e5e5;
+    // box-shadow: inset 0 1px #e5e5e5;
+    color: #999;
+    a {
+      color: #999
+    }
   }
 }
 
@@ -91,16 +117,16 @@ body footer {
   }
 }
 
+.btn[disabled],
+.btn.disabled {
+  background: #ccc !important;
+  border-color: darken(#ccc, 10%) !important;
+  color: darken(#ccc, 50%) !important;
+}
+
 .mono {
   font-family: $font-family-monospace;
 }
-
-body .alert-warning a { color: darken($btn-warning-bg, 25%);}
-body .alert-primary a { color: darken($btn-primary-bg, 25%);}
-body .alert-success a { color: darken($btn-success-bg, 25%);}
-body .alert-info a { color: darken($btn-info-bg, 25%);}
-body .alert-danger a { color: darken($btn-danger-bg, 25%);}
-.alert a { font-weight: 700 }
 
 @media (min-width: $screen-sm) {
   .panel {
@@ -155,10 +181,38 @@ body {
   * {
     -webkit-font-smoothing: antialiased;
   }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: ($footer-height);
+    line-height: ($footer-height);
+    font-size: ($font-size-base*.85);
+    color: $gray-light;
+    background: #ccc;
+
+    a {
+      color: $gray;
+      margin: 0 0 0 1rem;
+      display: inline-block;
+      &:hover {
+        color: $gray-dark;
+      }
+    }
+  }
+
+  .alert-warning a { color: darken($btn-warning-bg, 25%);}
+  .alert-primary a { color: darken($btn-primary-bg, 25%);}
+  .alert-success a { color: darken($btn-success-bg, 25%);}
+  .alert-info a { color: darken($btn-info-bg, 25%);}
+  .alert-danger a { color: darken($btn-danger-bg, 25%);}
+
+  .alert a { font-weight: 700 }
 }
 
 .faded {
-  color: rgba(0,0,0,.25);
+  color: rgba(0,0,0,.1);
 }
 
 .text-center {
@@ -169,16 +223,13 @@ p {
   margin: 1em 0;
 }
 
-#main .message-list {
-  border-bottom: none;
-  tbody td {
-  border-top: none;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  }
-}
-
 @import "partials/login";
 @import "partials/sidebar";
 @import "partials/search-form";
 @import "partials/message-list";
+@import "partials/message-toolbar";
+@import "partials/message-view";
 @import "partials/spinner";
+@import "partials/error-reporter";
+@import "responsive";
+

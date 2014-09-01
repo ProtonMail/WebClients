@@ -6,13 +6,12 @@
     <p><a href="/pages/faq#faq1" target="_blank">Related FAQ</a></p>
   </div><!--/#pwcalert-->
   <div class="form-group">
-  <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" id="mailboxPassword" name="MailboxPassword" placeholder="Mailbox Password" value="">
+  <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="">
   </div><!--/.form-group-->
-  <a href="/support/login-form" class="pull-left login-support btn btn-default" target="_blank">Can't login?</a>
-  <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="decrypt()">
+  <a href="/support/login-form" class="pull-left login-support btn btn-link" target="_blank">Need help?</a>
+  <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
     <span class="fa" ng-class="{ 'fa-key': !networkActivity.loading(), 'fa-cog fa-spin': networkActivity.loading() }"></span>
-    <span ng-if="networkActivity.loading()">Decrypting</span>
-    <span ng-if="!networkActivity.loading()">Decrypt Mailbox</span>
+    <span>Decrypt Mailbox</span>
   </button>
 </fieldset>
 </div><!--/.panel-body-->

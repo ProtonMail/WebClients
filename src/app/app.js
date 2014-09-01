@@ -1,22 +1,33 @@
 angular.module("proton", [
   "ngAnimate",
+  "ngSanitize",
   
+  "LocalStorageModule",
+  "btford.markdown",
+
   // templates
   "templates-app",
   "templates-common",
-  
-  // Basic
+
+  // App
   "proton.Routes",
-  "proton.Auth",
-  "proton.Crypto",
   "proton.Models",
 
+  // Services
+  "proton.Auth",
+  "proton.Crypto",
+  "proton.errorReporter",
   "proton.networkActivity",
+  "proton.Messages",
 
+  // Directives
   "proton.tooltip",
 
+  // Filters
   "proton.filters.strings",
 
+  // Controllers
+  "proton.Controllers.Admin",
   "proton.Controllers.Auth",
   "proton.Controllers.Messages",
   "proton.Controllers.Contacts",
@@ -24,9 +35,10 @@ angular.module("proton", [
 ])
 
 .run(function($document, $rootScope, networkActivityTracker) {
-  $rootScope.reportBug = function() {
-    // Do something to report bug, maybe bring up a modal dialog.
-  };
+
+  $(window).bind('resize load',function(){
+    $rootScope.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<500 ) ? true : false;
+  });
 
   var pageTitleTemplate = _.template(
     "<% if (pageName) { %>" +
@@ -43,4 +55,6 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
+
+  
 });
