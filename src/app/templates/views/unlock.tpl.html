@@ -1,4 +1,4 @@
-<div class="panel-body">
+<div class="panel-body panel-thick">
 <h1 class="text-center"><span class="fa fa-2x faded fa-inbox"></span>Decrypt Mailbox</h1>
 <fieldset class="pure-form">
   <div id="pwcalert" class="alert alert-danger" ng-if="error">
@@ -9,9 +9,9 @@
   <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="">
   </div><!--/.form-group-->
   <a href="/support/login-form" class="pull-left login-support btn btn-link" target="_blank">Need help?</a>
-  <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
+  <button type="button" id="enck" class="btn btn-default pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
     <span class="fa" ng-class="{ 'fa-key': !networkActivity.loading(), 'fa-cog fa-spin': networkActivity.loading() }"></span>
-    <span>Decrypt Mailbox</span>
+    <span>Decrypt</span>
   </button>
 </fieldset>
 </div><!--/.panel-body-->

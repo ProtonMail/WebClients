@@ -1,3 +1,18 @@
 .navbar {
   @include transition (color 0.2s ease 0s);
 }
+.navbar-text {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+#searchMob {
+	line-height: 30px;
+	height: 30px;
+	width: 35px;
+	margin: 10px 15px 10px 0;
+	color: #fff;
+	background: #444;
+	text-align: center;
+	border-radius: 2px;
+}

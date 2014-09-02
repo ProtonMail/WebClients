@@ -6,6 +6,35 @@ angular.module("proton.filters.strings", [])
   };
 })
 
+.filter("username", function() {
+  return function(input) {
+    // single email
+    if(input.indexOf(',') === -1) {
+      // split email into array
+      var username = input.split('@');
+      // return everything before the @
+      return username[0];
+    }
+    // email list
+    else {
+      var emails = input.split(',');
+      var usernames = '';
+      // loop through all emails
+      for (var i = 0; i < emails.length; i++) {
+        var username = input.split('@');
+        if (i<(emails.length-1)) {
+          // append a comma if its not the last
+          usernames += username[0]+', ';
+        }
+        else {
+          usernames += username[0];          
+        }
+      }
+      return usernames;
+    }
+  };
+})
+
 .filter("humanSize", function () {
   return function (input) {
     var size;

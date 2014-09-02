@@ -1,4 +1,9 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 991px) {
+	.message-toolbar > ul > li > a {
+		padding: 0 10px;
+	} 
+}
+@media screen and (max-width: 767px) {
 	#sidebar,
 	.message-toolbar {
 		display: none;
@@ -21,6 +26,7 @@
 			padding-left: 3.5rem;
 			position: relative;
 			padding-right: 15px;
+			width: 767px;
 		}
 		h4 {
 			margin: 0 0 3px 0;
