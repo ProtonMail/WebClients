@@ -7,6 +7,21 @@
   }
 }
 
+#headerCode {
+  border-radius: 0;
+  border: none;
+  box-shadow: inset 0 -1px #e5e5e5;
+  padding: 15px;
+  color: #000;
+  position: relative;
+  z-index: 44;
+  &::selection {
+    color: #fff; 
+    background: #333; 
+    text-shadow: 0 1px 0 #000;
+  }  
+}
+
 .message-head {
   padding: 15px;
   position: relative;
@@ -77,15 +92,16 @@
   div.toggle-head {
     display: block;
     position: absolute;
-    padding-left: 8.5px;
-    height: 32px;
-    width: 23.5px;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
     border-radius: 100%;
     border-top: 1px solid transparent;
     border-bottom: 1px solid #e4e4e4;
-    bottom: -16px;
+    bottom: -1rem;
     left: 50%;
-    margin-left: -18px;
+    margin-left: -1rem;
+    margin-top: 1px;
     cursor: pointer;
     border: 1px solid #e5e5e5;
     box-sizing: content-box;
@@ -103,11 +119,11 @@
     }
 
     i {
-      font-size: 24px;
-      line-height: 36px;
+      line-height: 2rem;
 
       &.fa {
-        line-height: 32px;
+        line-height: 2rem;
+        text-align: center;
       }
     }
   }
@@ -161,7 +177,7 @@
   }
 }
 
-#message-body {
+#message-body {  
   iframe {
     border: 0;
     width: 100%;

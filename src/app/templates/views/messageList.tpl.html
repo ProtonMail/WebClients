@@ -1,9 +1,9 @@
-<ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="message-list-toolbar"></ng-include>
-<table ng-if="!('secured.*.message' | includedByState) && !isMobile" class="table message-list table-hover" ng-class="{empty: messages.length == 0}">
+<ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar"></ng-include>
+<table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover hidden-xs" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
-        ng-click="navigateToMessage($event, message)"
-        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }"
+        ng-click="navigateToMessage($event, message)" 
+        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
         >
       
       <td class="actions">
@@ -12,14 +12,14 @@
             class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}"
             pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}"></span>
 
-        <a href="#" ng-click="message.toggleStar()">
+        <a href ng-click="message.toggleStar()">
           <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
         </a>
       </td>
 
       <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-        <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
-        <span ng-switch-default>{{ message.Sender }}</span>
+        <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
+        <span ng-switch-default>{{ message.Sender | username }}</span>
       </td>
 
       <td class="subject">
@@ -39,7 +39,7 @@
   </tbody>
 </table>
 
-<table ng-if="!('secured.*.message' | includedByState) && isMobile" class="table message-list table-hover" ng-class="{empty: messages.length == 0, mobile: isMobile}">
+<table ng-if="!('secured.*.message' | includedByState)" class="visible-xs-block table message-list table-hover mobile" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
         ng-click="navigateToMessage($event, message)"

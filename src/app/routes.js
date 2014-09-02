@@ -162,7 +162,6 @@ angular.module("proton.Routes", [
       },
       onEnter: function(authentication, $state) {
         if (!authentication.isLoggedIn()) {
-          $state.go("login");
         } else if (!authentication.isLocked()) {
           $state.go("secured.inbox");
         }
