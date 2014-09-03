@@ -134,7 +134,7 @@ angular.module("proton.Controllers.Messages", [
   };
 
   $scope.hasAdjacentMessage = function (message, adjacency) {
-    if (adjacency === 1) {
+    if (adjacency === +1) {
       if (messages.indexOf(message) === messages.length - 1) {
         return $scope.hasNextPage();
       } else {
@@ -151,18 +151,12 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.goToAdjacentMessage = function (message, adjacency) {
     var idx = messages.indexOf(message);
-    if (adjacency === 1) {
-      if (idx === messages.length - 1) {
-        $state.go("^.relative", {rel: 'first', page: $scope.page + 1});
-      } else {
-        $scope.navigateToMessage(null, messages[idx + 1]);
-      }
-    } else if (adjacency === -1) {
-      if (messages.indexOf(message) === 0) {
-        $state.go("^.relative", {rel: 'last', page: $scope.page - 1});
-      } else {
-        $scope.navigateToMessage(null, messages[idx - 1]);
-      }
+    if (adjacency === +1 && idx === messages.length - 1) {
+      $state.go("^.relative", {rel: 'first', page: $scope.page + adjacency});
+    } else if (adjacency === -1 && messages.indexOf(message) === 0) {
+      $state.go("^.relative", {rel: 'last', page: $scope.page + adjacency});
+    } else if (Math.abs(adjacency) === 1) {
+      $scope.navigateToMessage(null, messages[idx + adjacency]);
     }
   };
 })
@@ -176,7 +170,6 @@ angular.module("proton.Controllers.Messages", [
     message = $scope.message = new Message({
       MessageBody: "<br><br>" + $scope.user.Signature
     });
-    console.log($scope.alwaysShowBCC, $scope.alwaysShowCC, message.CCList, message.BCCList);
   });
 
   $scope.shouldShowField = function (field) {
@@ -260,6 +253,7 @@ angular.module("proton.Controllers.Messages", [
   }
 
   localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
+
   if (!_.contains(["close", "open"], $scope.messageHeadState)) {
     $scope.messageHeadState = "close";
   }
