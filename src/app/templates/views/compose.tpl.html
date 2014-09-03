@@ -1,0 +1,35 @@
+<ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/composeToolbar.tpl.html'" class="compose-toolbar"></ng-include>
+<form class="form-horizontal" role="form" id="compose">
+  <div class="form-group">
+    <label class="control-label col-xs-1" for="message-to">To</label>
+    <div class="col-xs-11">
+      <input type="text" class="form-control" ng-model="message.RecipientList" id="message-to" placeholder="john@protonmail.ch">
+    </div>
+  </div>
+
+  <div class="form-group" ng-if="shouldShowField('CC')">
+    <label class="control-label col-xs-1" for="message-cc">CC
+      <i class="fa fa-times" ng-click="toggleField('CC')"></i>
+    </label>
+    <div class="col-xs-11">
+      <input type="text" class="form-control" ng-model="message.CCList" id="message-cc" placeholder="john@protonmail.ch">
+    </div>
+  </div>
+
+  <div class="form-group" ng-if="shouldShowField('BCC')">
+    <label class="control-label col-xs-1" for="message-bcc">BCC
+      <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
+    </label>
+    <div class="col-xs-11">
+      <input type="text" class="form-control" ng-model="message.BCCList" id="message-bcc" placeholder="john@protonmail.ch">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-12">
+      <input type="text" class="subject input-lg form-control" ng-model="message.MessageTitle" id="message-title" placeholder="Subject">
+    </div>
+  </div>
+
+  <div class="form-group body" rich-text-editor value="message.MessageBody"></div>
+</form>

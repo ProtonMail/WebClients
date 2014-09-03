@@ -1,0 +1,79 @@
+form#compose {
+  padding: 10px;
+
+  div.form-group {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    top: 0;
+    margin: 0 0 0.6em 0;
+
+    label {
+      text-transform: uppercase;
+      text-align: left;
+      margin-bottom: 0;
+      padding-top: 8.15px;
+      position: static;
+
+      i {
+        color: #ccc;
+        line-height: 18px;
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 10;
+
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+
+    input[type="text"] {
+      border: 0;
+      box-shadow: none;
+      background-color: transparent;
+
+      &.subject {
+        padding-left: 0;
+      }
+    }
+
+    &.body {
+      padding: 10px 15px;
+      text-align: center;
+
+      iframe {
+        width: 100%;
+        height: 500px;
+        font-family: helvetica;
+      }
+
+      textarea {
+        margin: 0px;
+        width: 100%;
+        height: 500px;
+        padding: 10px;
+        font-family: menlo, monaco, monospace;
+        outline: none;
+        background-color: #f6f6f6;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+      }
+
+      .rich-text-toolbar {
+        a.wysihtml5-command-active,
+        a.wysihtml5-action-active {
+          background-color: #7575a3;
+          color: white;
+        }
+        span.separator {
+          height: 10px;
+          width: 20px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

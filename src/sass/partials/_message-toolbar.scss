@@ -1,6 +1,6 @@
 .message-toolbar {
   background: #e5e5e5;
-  box-shadow: inset 0 -1px rgba(0,0,0,.1);  
+  box-shadow: inset 0 -1px rgba(0,0,0,.1);
   @include clearfix;
 
   > ul {
@@ -10,7 +10,7 @@
       &.selectAll {
         padding: 0 15px;
         @include linear-gradient(#fff, #e5e5e5);
-        box-shadow: inset 0 -1px rgba(0,0,0,.1);        
+        box-shadow: inset 0 -1px rgba(0,0,0,.1);
       }
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -24,8 +24,8 @@
           background: transparent;
           box-shadow: none;
 
-          i:first-child { 
-            margin-right: 0; 
+          i:first-child {
+            margin-right: 0;
           }
         }
       }
@@ -39,7 +39,7 @@
         color: #666;
         line-height: 32px;
         box-shadow: inset 0 -1px rgba(0,0,0,.1);
-        @include linear-gradient(#fff, #e5e5e5);        
+        @include linear-gradient(#fff, #e5e5e5);
 
         &:hover {
           color: #000;
@@ -103,11 +103,14 @@
             opacity: 0;
           }
         }
-        
+
         li.selected > a {
           color: #aaa;
           pointer-events: none;
+        }
 
+        li.toggled-on > a,
+        li.selected > a {
           i.fa-check {
             opacity: 1;
           }

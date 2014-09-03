@@ -167,9 +167,46 @@ angular.module("proton.Controllers.Messages", [
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, Message) {
+.controller("ComposeMessageController", function($rootScope, $scope, Message, localStorageService) {
+  var message;
+
   $rootScope.pageName = "New Message";
-  $scope.message = new Message();
+
+  $scope.user.$promise.then(function () {
+    message = $scope.message = new Message({
+      MessageBody: "<br><br>" + $scope.user.Signature
+    });
+    console.log($scope.alwaysShowBCC, $scope.alwaysShowCC, message.CCList, message.BCCList);
+  });
+
+  $scope.shouldShowField = function (field) {
+    if (_.contains(["BCC", "CC"], field)) {
+      return message[field + "List"] || $scope["alwaysShow"+field] == "true";
+    }
+  };
+
+  $scope.toggleField = function (field) {
+    if (_.contains(["BCC", "CC"], field)) {
+      if ($scope.shouldShowField(field)) {
+        message[field + "List"] = "";
+        $scope["alwaysShow"+field] = "false";
+      } else {
+        $scope["alwaysShow"+field] = "true";
+      }
+    }
+  };
+
+  $scope.toggleConfig = function (config) { $scope[config] = !$scope[config]; }
+  $scope.send = function () {
+  }
+
+  localStorageService.bind($scope, 'alwaysShowCC', "true");
+  localStorageService.bind($scope, 'alwaysShowBCC', "true");
+  localStorageService.bind($scope, 'savesDraft', "true");
+  localStorageService.bind($scope, 'savesContacts', "true");
+
+  $scope.savesDraft = $scope.savesDraft == 'true';
+  $scope.savesContacts = $scope.savesContacts == 'true';
 })
 
 .controller("ViewMessageController", function(
