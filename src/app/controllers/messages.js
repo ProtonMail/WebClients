@@ -286,7 +286,12 @@ angular.module("proton.Controllers.Messages", [
     iframeDocument.open();
     iframeDocument.close();
 
-    var content = render($scope);
+    try {
+      var content = render($scope);
+    } catch(err) {
+      console.log(err);
+    }
+
     // Put the rendered template's content in the iframe's body
     $(iframeDocument).find("body").empty().append(content);
   });

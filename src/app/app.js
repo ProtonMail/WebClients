@@ -59,5 +59,13 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
-  
+})
+
+.factory('$exceptionHandler', function ($injector) {
+  return function (exception, cause) {
+    var errorReporter = $injector.get("errorReporter");
+    if (exception.message.indexOf("$sanitize:badparse") >= 0) {
+      errorReporter.notify("There was an error while trying to display this message.", exception);
+    }
+  };
 });
