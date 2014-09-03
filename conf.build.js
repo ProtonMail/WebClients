@@ -40,7 +40,9 @@ module.exports = {
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js",
       "vendor/showdown/compressed/showdown.js",
-      "vendor/angular-markdown-directive/markdown.js"
+      "vendor/angular-markdown-directive/markdown.js",
+      "vendor/wysihtml5x/parser_rules/advanced.js",
+      "vendor/wysihtml5x/dist/wysihtml5x-toolbar.js"
     ],
     bootstrap_components: [
       "affix",
@@ -53,7 +55,9 @@ module.exports = {
 
     required_js: [],
 
-    css: [],
+    css: [
+      "vendor/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css"
+    ],
     sass_include_dirs: [
       "vendor/bourbon/dist",
       "vendor/font-awesome/scss",
