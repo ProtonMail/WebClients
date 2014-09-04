@@ -15,10 +15,10 @@ html {
   display: none;
 }
 
-.secure #body { 
-  min-height: 100%; 
+.secure #body {
+  min-height: 100%;
 }
-.secure #main {} 
+.secure #main {}
 
 .modal-body {
   background: $panel-bg;
@@ -237,6 +237,7 @@ p {
 @import "partials/message-list";
 @import "partials/message-toolbar";
 @import "partials/message-view";
+@import "partials/compose";
 @import "partials/spinner";
 @import "partials/error-reporter";
 @import "responsive";
