@@ -27,7 +27,7 @@ table.message-list {
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
-    color: $gray-light;
+    color: rgba(0,0,0,.5);
 
     &:hover,
     &.selected {
@@ -97,6 +97,10 @@ table.message-list {
     td.size,
     td.when {
       width: 4rem;
+      text-align: right;
+    }
+    td.size {
+      font-family: monospace;      
     }
     td.when {
       padding-right: 15px;

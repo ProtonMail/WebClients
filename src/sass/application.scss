@@ -11,6 +11,8 @@ html {
   min-height: 100%;
 }
 
+.test {}
+
 .mobileOnly {
   display: none;
 }
@@ -81,6 +83,14 @@ body footer {
   margin-right: 15px;
 }
 
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-danger {
+  box-shadow: 0 1px 1px rgba(0,0,0,.075), inset 0 1px 0 rgba(255,255,255,.1);
+}
+
 .btn-default {
   @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
   &:hover {
@@ -119,8 +129,8 @@ body footer {
 
 .btn[disabled],
 .btn.disabled {
-  background: #ccc !important;
-  border-color: darken(#ccc, 10%) !important;
+  background: #e5e5e5 !important;
+  border-color: #ccc !important;
   color: darken(#ccc, 50%) !important;
 }
 

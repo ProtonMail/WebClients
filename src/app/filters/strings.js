@@ -47,7 +47,7 @@ angular.module("proton.filters.strings", [])
     if (size < 1024) {
       return size + " B";
     } else if (size < 1048576) {
-      return Math.round(size*10/1024)/10 + " kB";
+      return Math.round(size*10/1024)/10 + " KB";
     } else {
       return Math.round(size*10/1048576)/10 + " MB";
     }
