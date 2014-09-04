@@ -217,11 +217,37 @@ angular.module("proton.Routes", [
     })
 
     .state("secured.compose", {
-      url: "/compose",
+      url: "/compose?action&message",
       views: {
         "content@secured": {
           templateUrl: "templates/views/compose.tpl.html",
           controller: "ComposeMessageController"
+        }
+      },
+      resolve: {
+        message: function(Message) {
+          return new Message();
+        }
+      }
+    })
+
+    .state("secured.reply", {
+      url: "/{action:reply|replyall|forward}/:id",
+      views: {
+        "content@secured": {
+          templateUrl: "templates/views/compose.tpl.html",
+          controller: "ComposeMessageController"
+        }
+      },
+      resolve: {
+        message: function($stateParams, Message, authentication, networkActivityTracker, messageCache) {
+          if (authentication.isLoggedIn()) {
+            return networkActivityTracker.track(
+              messageCache.get($stateParams.id).$promise.then(function(targetMessage) {
+                return Message[$stateParams.action](targetMessage);
+              })
+            );
+          }
         }
       }
     })
