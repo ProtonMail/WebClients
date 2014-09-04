@@ -21,7 +21,7 @@ angular.module("proton.Models", [
 ])
 
 .factory("Contact", function($resource, authentication) {
-  return $resource(authentication.baseURL + "/contacts/:ContactID", authentication.params(), {
+  var Contact = $resource(authentication.baseURL + "/contacts/:ContactID", authentication.params(), {
     query: {
       method: "get",
       isArray: true,
@@ -45,6 +45,8 @@ angular.module("proton.Models", [
       isArray: false
     }
   });
+
+  return Contact;
 })
 
 .factory("Message", function($resource, $rootScope, authentication, crypto, mailboxIdentifiers) {
@@ -115,6 +117,7 @@ angular.module("proton.Models", [
     },
 
     clearTextBody: function () {
+      var body;
       if (parseInt(this.IsEncrypted)) {
         if (_.isUndefined(this._decryptedBody)) {
           try {
@@ -128,13 +131,13 @@ angular.module("proton.Models", [
             this._decryptedBody = "";
             this.failedDecryption = true;
           }
-
         }
 
-        return this._decryptedBody;
+        body = this._decryptedBody;
       } else {
-        return this.MessageBody;
+        body = this.MessageBody;
       }
+      return body;
     }
   });
 

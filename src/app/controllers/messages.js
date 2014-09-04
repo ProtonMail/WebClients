@@ -134,7 +134,7 @@ angular.module("proton.Controllers.Messages", [
   };
 
   $scope.hasAdjacentMessage = function (message, adjacency) {
-    if (adjacency === 1) {
+    if (adjacency === +1) {
       if (messages.indexOf(message) === messages.length - 1) {
         return $scope.hasNextPage();
       } else {
@@ -151,25 +151,55 @@ angular.module("proton.Controllers.Messages", [
 
   $scope.goToAdjacentMessage = function (message, adjacency) {
     var idx = messages.indexOf(message);
-    if (adjacency === 1) {
-      if (idx === messages.length - 1) {
-        $state.go("^.relative", {rel: 'first', page: $scope.page + 1});
-      } else {
-        $scope.navigateToMessage(null, messages[idx + 1]);
-      }
-    } else if (adjacency === -1) {
-      if (messages.indexOf(message) === 0) {
-        $state.go("^.relative", {rel: 'last', page: $scope.page - 1});
-      } else {
-        $scope.navigateToMessage(null, messages[idx - 1]);
-      }
+    if (adjacency === +1 && idx === messages.length - 1) {
+      $state.go("^.relative", {rel: 'first', page: $scope.page + adjacency});
+    } else if (adjacency === -1 && messages.indexOf(message) === 0) {
+      $state.go("^.relative", {rel: 'last', page: $scope.page + adjacency});
+    } else if (Math.abs(adjacency) === 1) {
+      $scope.navigateToMessage(null, messages[idx + adjacency]);
     }
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, Message) {
+.controller("ComposeMessageController", function($rootScope, $scope, Message, localStorageService) {
+  var message;
+
   $rootScope.pageName = "New Message";
-  $scope.message = new Message();
+
+  $scope.user.$promise.then(function () {
+    message = $scope.message = new Message({
+      MessageBody: "<br><br>" + $scope.user.Signature
+    });
+  });
+
+  $scope.shouldShowField = function (field) {
+    if (_.contains(["BCC", "CC"], field)) {
+      return message[field + "List"] || $scope["alwaysShow"+field] == "true";
+    }
+  };
+
+  $scope.toggleField = function (field) {
+    if (_.contains(["BCC", "CC"], field)) {
+      if ($scope.shouldShowField(field)) {
+        message[field + "List"] = "";
+        $scope["alwaysShow"+field] = "false";
+      } else {
+        $scope["alwaysShow"+field] = "true";
+      }
+    }
+  };
+
+  $scope.toggleConfig = function (config) { $scope[config] = !$scope[config]; }
+  $scope.send = function () {
+  }
+
+  localStorageService.bind($scope, 'alwaysShowCC', "true");
+  localStorageService.bind($scope, 'alwaysShowBCC', "true");
+  localStorageService.bind($scope, 'savesDraft', "true");
+  localStorageService.bind($scope, 'savesContacts', "true");
+
+  $scope.savesDraft = $scope.savesDraft == 'true';
+  $scope.savesContacts = $scope.savesContacts == 'true';
 })
 
 .controller("ViewMessageController", function(
@@ -223,6 +253,7 @@ angular.module("proton.Controllers.Messages", [
   }
 
   localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
+
   if (!_.contains(["close", "open"], $scope.messageHeadState)) {
     $scope.messageHeadState = "close";
   }
@@ -249,7 +280,12 @@ angular.module("proton.Controllers.Messages", [
     iframeDocument.open();
     iframeDocument.close();
 
-    var content = render($scope);
+    try {
+      var content = render($scope);
+    } catch(err) {
+      console.log(err);
+    }
+
     // Put the rendered template's content in the iframe's body
     $(iframeDocument).find("body").empty().append(content);
   });

@@ -1,7 +1,7 @@
 angular.module("proton", [
   "ngAnimate",
   "ngSanitize",
-  
+
   "LocalStorageModule",
   "btford.markdown",
 
@@ -22,6 +22,7 @@ angular.module("proton", [
 
   // Directives
   "proton.tooltip",
+  "proton.richTextEditor",
 
   // Filters
   "proton.filters.strings",
@@ -36,12 +37,14 @@ angular.module("proton", [
 
 .run(function($document, $rootScope, networkActivityTracker) {
 
+  $(window).bind('resize load',function(){
+    $rootScope.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<500 ) ? true : false;
+  });
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     setTimeout( function() {
       $('.panel-body input').eq(0).focus();
     }, 400);
   })
-
   var pageTitleTemplate = _.template(
     "<% if (pageName) { %>" +
       "${ _.string.capitalize(pageName) }" +
@@ -52,10 +55,17 @@ angular.module("proton", [
     "<% } %>" +
     "ProtonMail"
   );
-
   $rootScope.$watchGroup(["pageName", "unreadCount"], function (values) {
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
-  
+})
+
+.factory('$exceptionHandler', function ($injector) {
+  return function (exception, cause) {
+    var errorReporter = $injector.get("errorReporter");
+    if (exception.message.indexOf("$sanitize:badparse") >= 0) {
+      errorReporter.notify("There was an error while trying to display this message.", exception);
+    }
+  };
 });

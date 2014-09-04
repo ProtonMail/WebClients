@@ -247,7 +247,11 @@ angular.module("proton.Auth", [
 
       auth.fetchUserInfo = function() {
         api.user = $injector.get("User").get({ UserID: auth.data.uid });
-        return api.user.$promise;
+        return api.user.$promise.then(function (user) {
+          if (!user.EncPrivateKey) {
+            api.logout();
+          }
+        });
       };
 
       api.baseURL = baseURL;
