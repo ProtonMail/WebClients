@@ -1,7 +1,47 @@
+@media (max-width: 1199px) {
+	.secure {
+		.navbar-inversed,
+		#footer {
+			margin-left: ($sidebar-width)*.9;
+		}
+	}
+	#search-form {
+		width: ($sidebar-width)*.9;
+		input {
+			width: ($sidebar-width)*.9;
+		}
+	}
+	#main {
+		margin-left: ($sidebar-width)*.9;
+	}
+	#sidebar {
+		width: ($sidebar-width)*.9;
+	}
+}
+
+// Tablet
 @media screen and (max-width: 991px) {
 	.message-toolbar > ul > li > a {
 		padding: 0 10px;
 	} 
+	.secure {
+		.navbar-inversed,
+		#footer {
+			margin-left: ($sidebar-width)*.8;
+		}
+	}
+	#search-form {
+		width: ($sidebar-width)*.8;
+		input {
+			width: ($sidebar-width)*.8;
+		}
+	}
+	#main {
+		margin-left: ($sidebar-width)*.8;
+	}
+	#sidebar {
+		width: ($sidebar-width)*.8;
+	}	
 }
 @media screen and (max-width: 767px) {
 	#sidebar,
