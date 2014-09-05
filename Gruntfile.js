@@ -82,10 +82,14 @@ module.exports = function (grunt) {
         " */\n"
     },
 
-    clean: [
-      "<%= build_dir %>",
-      "<%= compile_dir %>"
-    ],
+    clean: {
+      build: [
+        "<%= build_dir %>"
+      ],
+      dist: [
+        "<%= compile_dir %>"
+      ]
+    },
 
     aglio: {
       build: {
@@ -400,6 +404,26 @@ module.exports = function (grunt) {
           "delta"
         ]
       }
+    },
+
+    shell: {
+      setup_dist: {
+        command: [
+          "mkdir dist && cd dist",
+          "git init",
+          "git remote add origin git@github.com:ProtonMail/Angular.git",
+          "git fetch origin",
+          "git checkout -b deploy origin/deploy"
+        ].join("&&")
+      },
+      push: {
+        command: [
+          "cd dist",
+          "git add --all",
+          "git commit -m \"New Release\"",
+          "git push"
+        ].join("&&")
+      }
     }
   };
 
@@ -418,7 +442,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask("build", [
-    "clean",
+    "clean:build",
     "html2js",
     "sass:build",
     "aglio:build",
@@ -432,15 +456,21 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask("compile", [
-    "clean",
     "build",
     "copy:compile_assets",
-    "ngmin",
+    "ngAnnotate",
     "cssmin",
     "concat:compile_js",
     "uglify",
     "index:compile",
     "connect:compile"
+  ]);
+
+  grunt.registerTask("deploy", [
+    "clean:dist",
+    "shell:setup_dist",
+    "compile",
+    "shell:push"
   ]);
 
   grunt.registerTask("default", ["watch"]);
