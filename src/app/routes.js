@@ -216,14 +216,19 @@ angular.module("proton.Routes", [
       url: "/contacts",
       views: {
         "content@secured": {
-          templateUrl: "templates/contacts.tpl.html",
+          templateUrl: "templates/views/contacts.tpl.html",
           controller: "ContactsController"
+        }
+      },
+      resolve: {
+        contacts: function (Contact) {
+          return Contact.query().$promise;
         }
       }
     })
 
     .state("secured.compose", {
-      url: "/compose?action&message",
+      url: "/compose?to",
       views: {
         "content@secured": {
           templateUrl: "templates/views/compose.tpl.html",
