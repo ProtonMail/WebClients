@@ -26,7 +26,10 @@ angular.module("proton.Models", [
       method: "get",
       isArray: true,
       transformResponse: function (data) {
-        return JSON.parse(data).data;
+        var contacts = JSON.parse(data).Contacts;
+        Contact.index.clear();
+        Contact.index.add(contacts);
+        return contacts;
       }
     },
     delete: {
@@ -45,6 +48,22 @@ angular.module("proton.Models", [
       isArray: false
     }
   });
+
+  Contact.index = new Bloodhound({
+    name: "contacts",
+    local: [],
+    datumTokenizer: function (datum) {
+      return _.union(
+        Bloodhound.tokenizers.whitespace(datum.ContactEmail),
+        Bloodhound.tokenizers.whitespace(datum.ContactName)
+      );
+    },
+    queryTokenizer: function (datum) {
+      return Bloodhound.tokenizers.whitespace(datum);
+    }
+  });
+
+  Contact.index.initialize();
 
   return Contact;
 })
