@@ -23,6 +23,7 @@ angular.module("proton", [
   // Directives
   "proton.tooltip",
   "proton.richTextEditor",
+  "proton.emailField",
 
   // Filters
   "proton.filters.strings",
