@@ -1,0 +1,82 @@
+form.searchOrCreateContact {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  position: relative;
+
+  .fa-search {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    color: rgba(0, 0, 0, 0.25);
+  }
+
+  a.add {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.25);
+    &:hover {
+      color: #333;
+    }
+  }
+
+  input {
+    @include box-shadow(none);
+    @include box-sizing(border-box);
+    border: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    outline: none;
+
+    &.name {
+      width: 40%;
+      padding-left: 40px;
+    }
+    &.email {
+      width: 60%;
+    }
+  }
+}
+.contacts {
+  padding: 0 10px;
+
+  li {
+    position: relative;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+
+    span {
+      @include box-sizing(border-box);
+      display: inline-block;
+    }
+    span.name {
+      width: 40%;
+      padding-left: 30px;
+    }
+    span.email {
+      width: 60%;
+      padding-right: 60px;
+    }
+    a {
+      position: absolute;
+      top: 3px;
+      display: inline-block;
+      padding: 5px;
+      color: rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        color: #333;
+      }
+
+      &.compose {
+        left: 5px;
+      }
+      &.edit {
+        right: 30px;
+      }
+      &.remove {
+        right: 5px;
+      }
+    }
+  }
+}
