@@ -161,16 +161,15 @@ angular.module("proton.Controllers.Messages", [
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, Message, localStorageService) {
-  var message;
-
+.controller("ComposeMessageController", function($rootScope, $scope, Message, message, localStorageService) {
   $rootScope.pageName = "New Message";
 
-  $scope.user.$promise.then(function () {
-    message = $scope.message = new Message({
-      MessageBody: "<br><br>" + $scope.user.Signature
+  $scope.message = message;
+  if (!message.MessageBody) {
+    $scope.user.$promise.then(function () {
+      message.MessageBody = "<br><br>" + $scope.user.Signature;
     });
-  });
+  }
 
   $scope.shouldShowField = function (field) {
     if (_.contains(["BCC", "CC"], field)) {
