@@ -227,8 +227,10 @@ angular.module("proton.Routes", [
         }
       },
       resolve: {
-        contacts: function (Contact) {
-          return Contact.query().$promise;
+        contacts: function (Contact, networkActivityTracker) {
+          return networkActivityTracker.track(
+            Contact.query().$promise
+          );
         }
       }
     })
