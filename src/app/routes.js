@@ -149,6 +149,9 @@ angular.module("proton.Routes", [
         "panel@login": {
           templateUrl: "templates/views/login.tpl.html"
         }
+      },
+      onEnter: function() {
+        window.location.href = "/login";
       }
     })
 
