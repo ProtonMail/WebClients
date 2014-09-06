@@ -194,6 +194,17 @@ module.exports = function (grunt) {
             expand: true
           }
         ]
+      },
+      deploy: {
+        files: [
+          {
+            src: [".htaccess"],
+            filter: "isFile",
+            expand: true,
+            dest: "./<%= compile_dir %>/",
+            cwd: "./src"
+          }
+        ]
       }
     },
 
@@ -424,6 +435,14 @@ module.exports = function (grunt) {
           "git push"
         ].join("&&")
       }
+    },
+
+    wait: {
+      push: {
+        options: {
+          delay: 3000
+        }
+      }
     }
   };
 
@@ -470,7 +489,9 @@ module.exports = function (grunt) {
     "clean:dist",
     "shell:setup_dist",
     "compile",
-    "shell:push"
+    "copy:deploy",
+    "shell:push",
+    "wait:push"
   ]);
 
   grunt.registerTask("default", ["watch"]);
