@@ -118,17 +118,27 @@ form#compose {
 
           -webkit-touch-callout: none;
           @include user-select(none);
-          @include transition(opacity 0.2s ease-in-out 0);
+          @include transition(color 0.2s ease-in-out 0);
 
           &:not(.switcher) {
-            top: -10px;
+            top: -3px;
             position: relative;
-            opacity: 0.3;
+            color: #999;
+
+            &:first-child {
+              text-align: right;
+            }
+
+            em {
+              color: #bbb;
+              font-style: normal;
+            }
+
+            &.selected {
+              color: #333;
+            }
           }
 
-          &.selected {
-            opacity: 1;
-          }
           a {
             margin-left: 5px;
           }
