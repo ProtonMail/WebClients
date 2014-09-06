@@ -42,7 +42,10 @@ module.exports = {
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
       "vendor/wysihtml5x/parser_rules/advanced.js",
-      "vendor/wysihtml5x/dist/wysihtml5x-toolbar.js"
+      "vendor/wysihtml5x/dist/wysihtml5x-toolbar.js",
+      "vendor/typeahead.js/dist/typeahead.bundle.js",
+      "vendor/tagmanager/tagmanager.js",
+      "vendor/autosize-input/jquery.autosize.input.js"
     ],
     bootstrap_components: [
       "affix",
@@ -56,8 +59,9 @@ module.exports = {
     required_js: [],
 
     css: [
-      "vendor/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css"
+      "vendor/tagmanager/tagmanager.css"
     ],
+
     sass_include_dirs: [
       "vendor/bourbon/dist",
       "vendor/font-awesome/scss",
