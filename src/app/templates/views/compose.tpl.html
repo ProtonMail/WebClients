@@ -1,9 +1,10 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/composeToolbar.tpl.html'" class="compose-toolbar"></ng-include>
+
 <form class="form-horizontal" role="form" id="compose">
   <div class="form-group">
     <label class="control-label col-xs-1" for="message-to">To</label>
     <div class="col-xs-11">
-      <input type="text" class="form-control" ng-model="message.RecipientList" id="message-to" placeholder="john@protonmail.ch">
+      <input type="text" required email-field ng-model="message.RecipientList" class="form-control" id="message-to" placeholder="example@protonmail.ch">
     </div>
   </div>
 
@@ -12,7 +13,7 @@
       <i class="fa fa-times" ng-click="toggleField('CC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" class="form-control" ng-model="message.CCList" id="message-cc" placeholder="john@protonmail.ch">
+      <input type="text" email-field class="form-control" ng-model="message.CCList" id="message-cc" placeholder="example@protonmail.ch">
     </div>
   </div>
 
@@ -21,15 +22,33 @@
       <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" class="form-control" ng-model="message.BCCList" id="message-bcc" placeholder="john@protonmail.ch">
+      <input type="text" email-field class="form-control" ng-model="message.BCCList" id="message-bcc" placeholder="example@protonmail.ch">
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-xs-12">
-      <input type="text" class="subject input-lg form-control" ng-model="message.MessageTitle" id="message-title" placeholder="Subject">
+      <input type="text" required class="subject input-lg form-control" ng-model="message.MessageTitle" id="message-title" placeholder="Subject">
     </div>
   </div>
 
-  <div class="form-group body" rich-text-editor value="message.MessageBody"></div>
+  <div class="form-group body" rich-text-editor value="message.MessageBody">
+    <div class="encryption">
+    <span ng-click="message.IsEncrypted = '0'" ng-class="{selected: message.IsEncrypted == '0'}">
+      ProtonMail users only
+    </span>
+
+    <span
+      class="switcher {{ message.IsEncrypted == '1' ? 'encrypted' : 'unencrypted' }}"
+      ng-click="message.IsEncrypted = message.IsEncrypted == '0' ? '1' : '0'"
+      >
+      <i class="fa fa-lock"></i>
+    </span>
+
+    <span ng-click="message.IsEncrypted = '1'" ng-class="{selected: message.IsEncrypted == '1'}">
+      Everyone
+      <a href="#" pt-tooltip="Encryption Setting" data-placement="left"><i class="fa fa-cog"></i></a>
+    </span>
+    </div>
+  </div>
 </form>

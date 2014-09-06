@@ -23,6 +23,7 @@ angular.module("proton", [
   // Directives
   "proton.tooltip",
   "proton.richTextEditor",
+  "proton.emailField",
 
   // Filters
   "proton.filters.strings",
@@ -35,7 +36,7 @@ angular.module("proton", [
   "proton.Controllers.Settings"
 ])
 
-.run(function($document, $rootScope, networkActivityTracker) {
+.run(function($document, $state, $rootScope, networkActivityTracker) {
 
   $(window).bind('resize load',function(){
     $rootScope.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<500 ) ? true : false;
@@ -59,6 +60,27 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
+
+  Mousetrap.bind(["ctrl+n", "c"], function () {
+    if ($state.includes("secured.**")) {
+      $state.go("secured.compose");
+    }
+  });
+  Mousetrap.bind(["i"], function () {
+    if ($state.includes("secured.**")) {
+      $state.go("secured.inbox");
+    }
+  });
+  Mousetrap.bind(["s"], function () {
+    if ($state.includes("secured.**")) {
+      $state.go("secured.starred");
+    }
+  });
+  Mousetrap.bind(["d"], function () {
+    if ($state.includes("secured.**")) {
+      $state.go("secured.drafts");
+    }
+  });
 })
 
 .factory('$exceptionHandler', function ($injector) {
