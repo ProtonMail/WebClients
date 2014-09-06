@@ -1,1 +1,14 @@
-In Contacts!
+<form class="searchOrCreateContact">
+  <i class="fa fa-search"></i>
+  <input ng-model="search.ContactName" placeholder="Name" class="name"><input ng-model="search.ContactEmail" placeholder="Email" class="email">
+  <a href="" class="add"><i class="fa fa-plus"></i></a>
+</form>
+
+<ul class="contacts">
+  <li class="" ng-repeat="contact in contacts | filter:search">
+    <a href="" class="compose" pt-tooltip="Send message" ng-click="go('secured.compose', {to: contact.ContactEmail})"><i class="fa fa-paper-plane"></i></a>
+    <span class="name">{{contact.ContactName}}</span><span class="email">{{contact.ContactEmail}}</span>
+    <a href="" class="edit" pt-tooltip="Edit" ng-click=""><i class="fa fa-edit"></i></a>
+    <a href="" class="remove" pt-tooltip="Remove" ng-click=""><i class="fa fa-trash-o"></i></a>
+  </li>
+</ul>
