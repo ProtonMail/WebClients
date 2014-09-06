@@ -3,7 +3,7 @@
   <div class="form-group">
     <label class="control-label col-xs-1" for="message-to">To</label>
     <div class="col-xs-11">
-      <input type="text" required email-field email-list="message.RecipientList" class="form-control" id="message-to" placeholder="example@protonmail.ch">
+      <input type="text" required email-field ng-model="message.RecipientList" class="form-control" id="message-to" placeholder="example@protonmail.ch">
     </div>
   </div>
 
@@ -12,7 +12,7 @@
       <i class="fa fa-times" ng-click="toggleField('CC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" email-field class="form-control" email-list="message.CCList" id="message-cc" placeholder="example@protonmail.ch">
+      <input type="text" email-field class="form-control" ng-model="message.CCList" id="message-cc" placeholder="example@protonmail.ch">
     </div>
   </div>
 
@@ -21,7 +21,7 @@
       <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" email-field class="form-control" email-list="message.BCCList" id="message-bcc" placeholder="example@protonmail.ch">
+      <input type="text" email-field class="form-control" ng-model="message.BCCList" id="message-bcc" placeholder="example@protonmail.ch">
     </div>
   </div>
 

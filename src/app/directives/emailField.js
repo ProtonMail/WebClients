@@ -4,18 +4,23 @@ angular.module("proton.emailField", [])
   var self = this;
   var directive = {
     restrict: "A",
-    scope: { emailList: "=" },
-    link: function ( $scope, $element, $attrs ) {
+    require: 'ngModel',
+    link: function ( $scope, $element, $attrs, $ctrl ) {
       var $$element = $($element[0]);
       var parent = $$element.parent();
       var manager = $$element.tagsManager({
         tagsContainer: parent[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
-        delimiters: [32, 44],
-        prefilled: _.map(($scope.emailList || "").split(","), function (str) {
-          return str.trim();
-        })
+        delimiters: [32, 44]
       });
+
+      $ctrl.$render = function () {
+        _(($ctrl.$viewValue || "").split(","))
+          .map(function (str) { return str.trim(); })
+          .each(function (email) {
+            manager.tagsManager('pushTag', email);
+          })
+      };
 
       var positionInput = function (argument) {
         var tt = $$element.closest(".twitter-typeahead");
@@ -23,13 +28,13 @@ angular.module("proton.emailField", [])
       };
 
       var setValue = function () {
-        $scope.emailList = _(manager.tagsManager('tags').concat([$$element.val()]))
+        $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
           .map(function (element) { return element.trim(); })
           .filter()
           .unique()
           .value()
-          .join(",");
-
+          .join(",")
+        );
         $scope.$apply();
       }
 
