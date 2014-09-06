@@ -35,6 +35,7 @@
   <div class="form-group body" rich-text-editor value="message.MessageBody">
     <div class="encryption">
     <span ng-click="message.IsEncrypted = '0'" ng-class="{selected: message.IsEncrypted == '0'}">
+      <em>Encrypt for</em><br>
       ProtonMail users only
     </span>
 
@@ -46,7 +47,7 @@
     </span>
 
     <span ng-click="message.IsEncrypted = '1'" ng-class="{selected: message.IsEncrypted == '1'}">
-      Everyone
+      <em>Encrypt for</em><br>Everyone
       <a href="#" pt-tooltip="Encryption Setting" data-placement="left"><i class="fa fa-cog"></i></a>
     </span>
     </div>
