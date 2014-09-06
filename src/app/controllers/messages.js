@@ -161,7 +161,7 @@ angular.module("proton.Controllers.Messages", [
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, Message, message, localStorageService) {
+.controller("ComposeMessageController", function($rootScope, $scope, $stateParams, Message, message, localStorageService) {
   $rootScope.pageName = "New Message";
 
   $scope.message = message;
@@ -169,6 +169,10 @@ angular.module("proton.Controllers.Messages", [
     $scope.user.$promise.then(function () {
       message.MessageBody = "<br><br>" + $scope.user.Signature;
     });
+  }
+
+  if ($stateParams.to) {
+    message.RecipientList = $stateParams.to;
   }
 
   $scope.shouldShowField = function (field) {
