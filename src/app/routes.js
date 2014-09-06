@@ -226,7 +226,9 @@ angular.module("proton.Routes", [
       },
       resolve: {
         message: function(Message) {
-          return new Message();
+          return new Message({
+            IsEncrypted: "0"
+          });
         }
       }
     })
