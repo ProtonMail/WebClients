@@ -45,7 +45,8 @@ module.exports = {
       "vendor/wysihtml5x/dist/wysihtml5x-toolbar.js",
       "vendor/typeahead.js/dist/typeahead.bundle.js",
       "vendor/tagmanager/tagmanager.js",
-      "vendor/autosize-input/jquery.autosize.input.js"
+      "vendor/autosize-input/jquery.autosize.input.js",
+      "vendor/mousetrap/mousetrap.js"
     ],
     bootstrap_components: [
       "affix",
