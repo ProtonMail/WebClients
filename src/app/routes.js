@@ -186,6 +186,12 @@ angular.module("proton.Routes", [
       },
       url: "/secured",
 
+      resolve: {
+        user: function (authentication) {
+          return authentication.user.$promise;
+        }
+      },
+
       onEnter: function(authentication, $state) {
         // This will redirect to a login step if necessary
         authentication.redirectIfNecessary();
@@ -245,8 +251,10 @@ angular.module("proton.Routes", [
         message: function($stateParams, Message, authentication, networkActivityTracker, messageCache) {
           if (authentication.isLoggedIn()) {
             return networkActivityTracker.track(
-              messageCache.get($stateParams.id).$promise.then(function(targetMessage) {
-                return Message[$stateParams.action](targetMessage);
+              authentication.user.$promise.then(function (user) {
+                return messageCache.get($stateParams.id).$promise.then(function(targetMessage) {
+                  return Message[$stateParams.action](targetMessage);
+                })
               })
             );
           }
@@ -331,4 +339,8 @@ angular.module("proton.Routes", [
   });
 
   $locationProvider.html5Mode(true);
+})
+
+.run(function ($rootScope, $state) {
+  $rootScope.go = _.bind($state.go, $state);
 });
