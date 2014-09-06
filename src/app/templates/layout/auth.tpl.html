@@ -1,16 +1,3 @@
-<ng-include src="'templates/partials/header.tpl.html'"></ng-include>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-      <div class="panel panel-default wrap" ui-view="panel"></div>
-      <p class="text-center" ng-if="!isLoggedIn">
-        <a href="{{ build.notes }}" class="link">
-          <strong>v{{ build.version }}</strong>
-        </a> - {{ build.date }}
-      </p>
-    </div><!--/.col-md-4-->
-  </div><!--/.row-->
-</div><!--/.container-->
-
-<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>
+<script type="text/javascript">
+  window.location = "/login";
+</script>
