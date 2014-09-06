@@ -182,7 +182,7 @@ angular.module("proton.Models", [
 
     cite: function () {
       var message = new Message();
-      baseBody = this.clearTextBody();
+      var baseBody = this.clearTextBody();
 
       try {
         var _baseBody = $(baseBody);
