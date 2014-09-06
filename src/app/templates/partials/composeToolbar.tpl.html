@@ -28,16 +28,16 @@
     <li>
       <a href="" ng-click="toggleField('CC')">
         <span ng-switch="shouldShowField('CC')">
-          <span ng-switch-when="true"><i class="fa fa-eye-slash"></i> Hide CC</span>
           <span ng-switch-when="false"><i class="fa fa-eye"></i> Show CC</span>
+          <span ng-switch-default><i class="fa fa-eye-slash"></i> Hide CC</span>
         </span>
       </a>
     </li>
     <li>
       <a href="" ng-click="toggleField('BCC')">
         <span ng-switch="shouldShowField('BCC')">
-          <span ng-switch-when="true"><i class="fa fa-eye-slash"></i> Hide BCC</span>
           <span ng-switch-when="false"><i class="fa fa-eye"></i> Show BCC</span>
+          <span ng-switch-default><i class="fa fa-eye-slash"></i> Hide BCC</span>
         </span>
       </a>
     </li>
