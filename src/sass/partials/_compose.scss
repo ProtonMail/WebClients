@@ -46,6 +46,8 @@ form#compose {
       border: none;
       box-shadow: none;
       padding: 4px 8px;
+      float: left;
+      margin-top: 4px;
 
       -webkit-touch-callout: none;
       @include user-select(none);
