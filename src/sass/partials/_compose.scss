@@ -33,9 +33,37 @@ form#compose {
       border: 0;
       box-shadow: none;
       background-color: transparent;
+      width: 100%;
+      padding-left: 0;
+      min-width: 250px;
 
       &.subject {
         padding-left: 0;
+      }
+    }
+
+    .tm-tag {
+      border: none;
+      box-shadow: none;
+      padding: 4px 8px;
+
+      a.tm-tag-remove {
+        padding: 0 3px;
+      }
+    }
+
+    .tt-dropdown-menu {
+      background-color: white;
+      border-radius: 0 0 4px 4px;
+      border: 1px solid #ddd;
+      padding: 5px;
+
+      .tt-suggestion {
+        padding: 1px 10px;
+
+        &.tt-cursor {
+          background-color: #ddd;
+        }
       }
     }
 
