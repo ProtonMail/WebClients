@@ -47,6 +47,9 @@ angular.module("proton.Routes", [
         }
       },
 
+      onEnter: function ($rootScope) { $rootScope.isInMailbox = true; },
+      onExit: function ($rootScope) { $rootScope.isInMailbox = false; },
+
       resolve: {
         messages: function (
           $state,
