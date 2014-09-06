@@ -36,7 +36,11 @@ angular.module("proton", [
   "proton.Controllers.Settings"
 ])
 
-.run(function($document, $state, $rootScope, networkActivityTracker) {
+.run(function(
+  $document,
+  $rootScope,
+  networkActivityTracker
+) {
 
   $(window).bind('resize load',function(){
     $rootScope.isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width()<500 ) ? true : false;
@@ -60,7 +64,16 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
+})
 
+//
+// Setup keyboard bindings
+//
+
+.run(function (
+  $state,
+  $stateParams
+) {
   Mousetrap.bind(["ctrl+n", "c"], function () {
     if ($state.includes("secured.**")) {
       $state.go("secured.compose");
@@ -81,7 +94,27 @@ angular.module("proton", [
       $state.go("secured.drafts");
     }
   });
+  Mousetrap.bind("r", function () {
+    if ($state.includes("secured.*.message")) {
+      $state.go("secured.reply", {
+        action: 'reply',
+        id: $stateParams.MessageID
+      })
+    }
+  });
+  Mousetrap.bind("f", function () {
+    if ($state.includes("secured.*.message")) {
+      $state.go("secured.reply", {
+        action: 'forward',
+        id: $stateParams.MessageID
+      })
+    }
+  });
 })
+
+//
+// Handle some application exceptions
+//
 
 .factory('$exceptionHandler', function ($injector) {
   return function (exception, cause) {
