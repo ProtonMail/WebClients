@@ -1,4 +1,4 @@
-<div ng-show="value">
+<div ng-show="value" ng-class="{'hide-editor': !showEditor()}">
   <div ng-transclude></div>
   <div class="rich-text-toolbar" style="display: none;">
     <span class="undo-history">

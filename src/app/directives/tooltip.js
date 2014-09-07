@@ -5,7 +5,7 @@ angular.module("proton.tooltip", [])
     restrict: 'A',
     link: function (scope, element, attrs) {
       element.attr('title', attrs.ptTooltip);
-      $(element[0]).tooltip({placement: 'top', delay: 300});
+      $(element[0]).tooltip({delay: 300});
     }
   };
 });

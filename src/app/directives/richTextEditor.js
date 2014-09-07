@@ -8,7 +8,8 @@ angular.module("proton.richTextEditor", [])
     replace : true,
     transclude : true,
     scope : {
-      value: "="
+      value: "=",
+      showEditor: "&"
     },
     templateUrl: "templates/directives/richTextEditor.tpl.html",
     link : function( $scope, $element, $attrs ) {

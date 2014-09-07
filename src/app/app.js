@@ -24,6 +24,8 @@ angular.module("proton", [
   "proton.tooltip",
   "proton.richTextEditor",
   "proton.emailField",
+  "proton.Slider",
+  "proton.delayedPassword",
 
   // Filters
   "proton.filters.strings",
