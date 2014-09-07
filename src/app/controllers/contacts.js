@@ -43,11 +43,16 @@ angular.module("proton.Controllers.Contacts", [])
       var existing = _.find(contacts, function (c) {
         return c.ContactEmail === $scope.search.ContactEmail;
       });
-      if (this.contactForm.$valid && !existing) {
-        var contact = new Contact(_.pick($scope.search, 'ContactName', 'ContactEmail'));
-        _.defaults(contact, {ContactName: contact.ContactEmail});
 
-        contact.$save();
+      if (this.contactForm.$valid && !existing) {
+        var newContact = _.pick($scope.search, 'ContactName', 'ContactEmail');
+        _.defaults(newContact, {ContactName: newContact.ContactEmail});
+        var contact = new Contact(newContact);
+
+        contact.$save(null, function(obj) {
+          _.extend(contact, newContact, _.pick(obj, 'ContactID'));
+        });
+
         contacts.unshift(contact);
         Contact.index.add([contact]);
 
