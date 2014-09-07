@@ -9,18 +9,22 @@ angular.module("proton.filters.strings", [])
 .filter("humanDuration", function () {
   return function (input, units) {
     var duration = moment.duration(Math.round(input), units);
-    var string = duration.humanize();
     var days = duration.days();
-    if (days > 0) {
-      duration.subtract(days, 'days');
-      var hours = duration.hours();
-      if (hours === 1) {
-        string += " and an hour";
-      } else if (hours > 1) {
-        string += ", " + hours + " hours";
-      }
+    var cmps = [];
+    if (days === 1) {
+      cmps.push("a day");
+    } else if (days > 1) {
+      cmps.push(days + " days");
     }
-    return string;
+
+    duration.subtract(days, 'days');
+    var hours = duration.hours();
+    if (hours === 1) {
+      cmps.push("an hour");
+    } else if (hours > 1) {
+      cmps.push(hours + " hours");
+    }
+    return cmps.join(" and ");
   }
 })
 
