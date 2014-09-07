@@ -47,6 +47,9 @@ angular.module("proton.Routes", [
         }
       },
 
+      onEnter: function ($rootScope) { $rootScope.isInMailbox = true; },
+      onExit: function ($rootScope) { $rootScope.isInMailbox = false; },
+
       resolve: {
         messages: function (
           $state,
@@ -149,9 +152,16 @@ angular.module("proton.Routes", [
         "panel@login": {
           templateUrl: "templates/views/login.tpl.html"
         }
-      },
-      onEnter: function() {
-        window.location.href = "/login";
+      }
+    })
+
+    .state("login.redirected", {
+      url: "^/angular-login?access_token&refresh_tokn&uid&expires_in",
+      onEnter: function ($state, $stateParams, authentication) {
+        authentication.receivedCredentials(
+          _.pick($stateParams, "access_token", "refresh_token", "uid", "expires_in")
+        );
+        $state.go("login.unlock");
       }
     })
 
@@ -163,10 +173,15 @@ angular.module("proton.Routes", [
           templateUrl: "templates/views/unlock.tpl.html"
         }
       },
-      onEnter: function(authentication, $state) {
+      onEnter: function(authentication, $state, $rootScope) {
         if (!authentication.isLoggedIn()) {
+          $state.go("login");
         } else if (!authentication.isLocked()) {
           $state.go("secured.inbox");
+        } else {
+          authentication.fetchUserInfo().then(function () {
+            $rootScope.user = authentication.user;
+          });
         }
       }
     })
@@ -191,7 +206,7 @@ angular.module("proton.Routes", [
 
       resolve: {
         user: function (authentication) {
-          return authentication.user.$promise;
+          return authentication.fetchUserInfo();
         }
       },
 
@@ -224,8 +239,10 @@ angular.module("proton.Routes", [
         }
       },
       resolve: {
-        contacts: function (Contact) {
-          return Contact.query().$promise;
+        contacts: function (Contact, networkActivityTracker) {
+          return networkActivityTracker.track(
+            Contact.query().$promise
+          );
         }
       }
     })

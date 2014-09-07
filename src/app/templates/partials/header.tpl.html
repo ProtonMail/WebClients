@@ -13,7 +13,9 @@
       </a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-large">
-      <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-if="'secured.**' | includedByState">
+      <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block"
+            role="search"
+            ng-if="('secured.*' | includedByState) && isInMailbox">
         <div class="input-group form-group">
           <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
           <span class="input-group-btn">

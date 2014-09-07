@@ -14,6 +14,10 @@ form#compose {
       padding-top: 8.15px;
       position: static;
 
+      &.optional {
+        color: rgba(0,0,0,0.4);
+      }
+
       i {
         color: #ccc;
         line-height: 18px;
@@ -29,7 +33,8 @@ form#compose {
       }
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="password"] {
       border: 0;
       box-shadow: none;
       background-color: transparent;
@@ -74,6 +79,96 @@ form#compose {
 
     &.body {
       padding: 10px 15px;
+      position: relative;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+
+      iframe,
+      textarea,
+      .rich-text-toolbar,
+      .encryption-options {
+        z-index: 10;
+        position: relative;
+        @include transition(opacity 0.2s ease-in-out 0);
+      }
+
+      .encryption-options {
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        @include calc(width, '100% - 30px');
+
+        a.back,
+        a.done {
+          float: left;
+          color: rgba(0, 0, 0, 0.5);
+          font-weight: bold;
+          margin-right: 10px;
+          font-size: 140%;
+          text-transform: uppercase;
+
+          &.done {
+            float: right;
+            margin-top: 10px;
+          }
+
+          i { font-size: 110%; }
+
+          &:hover {
+            text-decoration: none;
+            color: #333;
+          }
+        }
+
+        .form-group {
+          a.help {
+            position: absolute;
+            top: 9px;
+            z-index: 30;
+          }
+          .tooltip {
+            z-index: 1000;
+          }
+        }
+
+        .duration {
+          color: #333;
+          color: #333;
+          line-height: 33px;
+        }
+        .slider {
+          margin-top: -2px;
+          margin-right: -16px;
+
+          .handle {
+            background-color: $light-purple;
+          }
+        }
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      @include transition(background-color 0.2s ease-in-out);
+
+      &.hide-editor {
+        background-color: #f1f1f1;
+        border-radius: 8px;
+
+        iframe,
+        textarea,
+        .rich-text-toolbar {
+          opacity: 0;
+          z-index: 1;
+        }
+        .encryption-options {
+          opacity: 1;
+          z-index: 10;
+        }
+      }
 
       iframe {
         width: 100%;
@@ -111,6 +206,8 @@ form#compose {
       .encryption {
         display:inline-block;
         float:right;
+        position: relative;
+        z-index: 20;
 
         span {
           font-weight: bold;
@@ -168,11 +265,13 @@ form#compose {
             text-align: center;
             font-size: 130%;
             padding-top: 4px;
-            @include transition(left 0.2s ease-in-out 0);
+            @include transition(all 0.2s ease-in-out 0);
           }
 
           &.encrypted i {
             left: 36px;
+            background-color: $light-purple;
+            color: white;
           }
         }
       }

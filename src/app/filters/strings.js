@@ -6,6 +6,12 @@ angular.module("proton.filters.strings", [])
   };
 })
 
+.filter("humanDuration", function () {
+  return function (input, units) {
+    return moment.duration(Math.round(input), units).humanize();
+  }
+})
+
 .filter("username", function() {
   return function(input) {
     // single email
@@ -27,7 +33,7 @@ angular.module("proton.filters.strings", [])
           usernames += username[0]+', ';
         }
         else {
-          usernames += username[0];          
+          usernames += username[0];
         }
       }
       return usernames;

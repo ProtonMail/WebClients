@@ -43,7 +43,8 @@ module.exports = function (grunt) {
       settings: this.options(),
       styles: cssFiles,
       version: grunt.config("pkg.version"),
-      build: grunt.config("proton_build")
+      build: grunt.config("proton_build"),
+      deployment: this.data.deployment
     };
 
     grunt.file.copy("src/index.html", this.data.dir + "/index.html", {

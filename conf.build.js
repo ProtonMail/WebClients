@@ -46,7 +46,8 @@ module.exports = {
       "vendor/typeahead.js/dist/typeahead.bundle.js",
       "vendor/tagmanager/tagmanager.js",
       "vendor/autosize-input/jquery.autosize.input.js",
-      "vendor/mousetrap/mousetrap.js"
+      "vendor/mousetrap/mousetrap.js",
+      "vendor/dragdealer/src/dragdealer.js"
     ],
     bootstrap_components: [
       "affix",

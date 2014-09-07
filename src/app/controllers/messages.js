@@ -170,6 +170,9 @@ angular.module("proton.Controllers.Messages", [
       message.MessageBody = "<br><br>" + $scope.user.Signature;
     });
   }
+  if (!$scope.message.expirationInHours) {
+    $scope.message.expirationInHours = 336;
+  }
 
   if ($stateParams.to) {
     message.RecipientList = $stateParams.to;
@@ -192,9 +195,28 @@ angular.module("proton.Controllers.Messages", [
     }
   };
 
+  var encryptionOptions = $('#encryption-options').modal({show: false});
+  $scope.encryptionOptions = _.bind(function () {
+    $('#encryption-options').modal.call()
+  }, encryptionOptions);
+
   $scope.toggleConfig = function (config) { $scope[config] = !$scope[config]; }
   $scope.send = function () {
+
   }
+
+  $scope.showOptions = false;
+  $scope.setOptionsVisibility = function (status) {
+    $scope.showOptions = status;
+  };
+
+  $scope.$watch("message.IsEncrypted", function (newValue, oldValue) {
+    if (oldValue === '0' && newValue === '1') {
+      $scope.showOptions = true;
+    } else {
+      $scope.showOptions = false;
+    }
+  });
 
   localStorageService.bind($scope, 'alwaysShowCC', "true");
   localStorageService.bind($scope, 'alwaysShowBCC', "true");
@@ -214,7 +236,6 @@ angular.module("proton.Controllers.Messages", [
   $timeout,
   localStorageService,
   networkActivityTracker,
-
   message
 ) {
 
