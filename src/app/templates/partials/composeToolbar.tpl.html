@@ -1,14 +1,21 @@
 <div class="message-toolbar">
   <ul class="nav navbar-nav">
+    <li class="save">
+      <a href="#"
+         ng-class=""
+         ng-click="">
+        <i class="fa fa-floppy-o"></i> Draft
+      </a>
+    </li>
     <li>
       <a href="#">
-        <i class="fa fa-paperclip"></i> Add Attachment
+        <i class="fa fa-paperclip"></i>
       </a>
     </li>
     <li>
       <a href="#" class="dropdown-toggle"
          data-toggle="dropdown">
-        <i class="fa fa-cog"></i> Configure <i class="fa fa-angle-down"></i>
+        <i class="fa fa-cog"></i> <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
         <li ng-class="{'toggled-on': savesContacts}">
@@ -28,34 +35,25 @@
     <li>
       <a href="" ng-click="toggleField('CC')">
         <span ng-switch="shouldShowField('CC')">
-          <span ng-switch-when="false"><i class="fa fa-eye"></i> Show CC</span>
-          <span ng-switch-default><i class="fa fa-eye-slash"></i> Hide CC</span>
+          <span ng-switch-when="false"><i class="fa fa-eye"></i> CC</span>
+          <span ng-switch-default><i class="fa fa-eye-slash"></i> CC</span>
         </span>
       </a>
     </li>
     <li>
       <a href="" ng-click="toggleField('BCC')">
         <span ng-switch="shouldShowField('BCC')">
-          <span ng-switch-when="false"><i class="fa fa-eye"></i> Show BCC</span>
-          <span ng-switch-default><i class="fa fa-eye-slash"></i> Hide BCC</span>
+          <span ng-switch-when="false"><i class="fa fa-eye"></i> BCC</span>
+          <span ng-switch-default><i class="fa fa-eye-slash"></i> BCC</span>
         </span>
       </a>
     </li>
   </ul>
 
   <ul class="nav navbar-nav pull-right navigation">
-
     <li class="send primary">
       <a href="#" ng-click="send()">
         <i class="fa fa-paper-plane"></i> Send
-      </a>
-    </li>
-
-    <li class="save">
-      <a href="#"
-         ng-class=""
-         ng-click="">
-        <i class="fa fa-floppy-o"></i> Save draft
       </a>
     </li>
   </ul>
