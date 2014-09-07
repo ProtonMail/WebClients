@@ -1,4 +1,4 @@
-<div class="message-toolbar">
+<div class="message-toolbar compose">
   <ul class="nav navbar-nav">
     <li class="save">
       <a href="#"
@@ -51,7 +51,7 @@
   </ul>
 
   <ul class="nav navbar-nav pull-right navigation">
-    <li class="send primary">
+    <li class="send primary" ng-class="{disabled: !composeForm.$valid}">
       <a href="#" ng-click="send()">
         <i class="fa fa-paper-plane"></i> Send
       </a>

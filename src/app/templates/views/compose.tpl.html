@@ -1,4 +1,7 @@
-<ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/composeToolbar.tpl.html'" class="compose-toolbar"></ng-include>
+<ng-include ng-if="!('secured.*.message' | includedByState)"
+            src="'templates/partials/composeToolbar.tpl.html'"
+            class="compose-toolbar">
+</ng-include>
 
 <form class="form-horizontal" name="composeForm" role="form" id="compose">
   <div class="form-group"
@@ -67,7 +70,8 @@
       </a>
       <h3>Encryption options</h3>
 
-      <div class="form-group">
+      <div class="form-group"
+           ng-class="{invalid: composeForm.enc_password.$touched && composeForm.enc_password.$invalid}">
         <label class="control-label col-xs-3" for="enc-password">Password</label>
         <div class="col-xs-7">
           <input type="text"

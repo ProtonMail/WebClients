@@ -55,6 +55,20 @@
         }
       }
 
+      &.disabled {
+        background: none;
+      }
+
+      &.disabled a,
+      & > a.disabled {
+        color: #666;
+        text-shadow: none;
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+        background: rgb(229, 229, 229);
+      }
+
       > a {
         padding: 0 15px;
         color: #666;
@@ -83,14 +97,6 @@
 
         i:first-child {
           margin-right: 3px;
-        }
-
-        &.disabled {
-          text-shadow: none;
-          opacity: .3;
-          cursor: not-allowed;
-          pointer-events: none;
-          background: transparent;
         }
 
         &.dropdown-toggle {
