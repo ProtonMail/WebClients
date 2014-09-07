@@ -198,7 +198,7 @@ module.exports = function (grunt) {
       deploy: {
         files: [
           {
-            src: [".htaccess"],
+            src: [".htaccess", "login.php"],
             filter: "isFile",
             expand: true,
             dest: "./<%= compile_dir %>/",
