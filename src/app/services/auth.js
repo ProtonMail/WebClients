@@ -20,17 +20,6 @@ angular.module("proton.Auth", [
 
     var baseURL;
 
-    var randomString = function (size) {
-      var string = ""
-        , i = 0
-        , chars = "0123456789ABCDEF";
-
-      while (i++ < size) {
-        string += chars[Math.floor(Math.random() * 16)];
-      }
-      return string;
-    };
-
     // PRIVATE FUNCTIONS
 
     auth.saveAuthData = function(data) {
@@ -101,7 +90,6 @@ angular.module("proton.Auth", [
           var loggedIn = auth.data && ! _.isUndefined(auth.data.access_token);
           if (loggedIn && api.user === null) {
             auth.setAuthHeaders();
-            auth.fetchUserInfo();
           }
           return loggedIn;
         },
@@ -191,44 +179,20 @@ angular.module("proton.Auth", [
           return req.promise;
         },
 
-        // Returns an async promise that will be successful only if the server responds with
-        // authentication information, after we've given it a correct username/password pair.
-        loginWithCredentials: function(creds) {
-          var q = $q.defer();
+        receivedCredentials: function (data) {
+          auth.saveAuthData(data);
+        },
 
-          if (!creds.username || !creds.password) {
-            q.reject({message: "Username and password are required to login"});
-          } else {
-            delete $http.defaults.headers.common.Accept;
-
-            $http.post(baseURL + "/auth/auth",
-              _.extend(_.pick(creds, "username", "password"), {
-                client_id: "demoapp",
-                client_secret: "demopass",
-                hashedpassword: "",
-                grant_type: "password",
-                state: randomString(24),
-                redirect_uri: "https://protonmail.ch",
-                response_type: "token"
-              })
-            ).then(function(resp) {
-              var data = resp.data;
-              auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
-              auth.fetchUserInfo().then(
-                function() {
-                  $rootScope.isLoggedIn = true;
-                  $rootScope.isLocked = true;
-                  q.resolve(200);
-                },
-                errorReporter.catcher("Please try again later", q)
-              );
+        fetchUserInfo: function () {
+          var promise = auth.fetchUserInfo();
+          return promise.then(
+            function(user) {
+              $rootScope.isLoggedIn = true;
+              $rootScope.isLocked = true;
+              return user;
             },
-            function (error) {
-              q.reject({message: error.error_description});
-            });
-          }
-
-          return q.promise;
+            errorReporter.catcher("Please try again later")
+          );
         },
 
         params: function (params) {
@@ -246,14 +210,17 @@ angular.module("proton.Auth", [
       };
 
       auth.fetchUserInfo = function() {
+        var q = $q.defer();
         api.user = $injector.get("User").get({ UserID: auth.data.uid });
-        return api.user.$promise.then(function (user) {
+        api.user.$promise.then(function (user) {
           if (!user.EncPrivateKey) {
             api.logout();
           } else {
             $injector.get("Contact").query();
           }
+          q.resolve(user);
         });
+        return q.promise;
       };
 
       api.baseURL = baseURL;

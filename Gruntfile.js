@@ -349,7 +349,8 @@ module.exports = function (grunt) {
           "<%= build_dir %>/src/**/*.js",
           "<%= vendor_files.included_js %>",
           "<%= build_dir %>/assets/application.css"
-        ]
+        ],
+        deployment: false
       },
 
       compile: {
@@ -358,7 +359,8 @@ module.exports = function (grunt) {
           "<%= compile_dir %>/assets/vendor.js",
           "<%= compile_dir %>/assets/app.js",
           "<%= cssmin.compile.dest %>"
-        ]
+        ],
+        deployment: true
       }
     },
 

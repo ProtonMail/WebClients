@@ -1,15 +1,14 @@
 angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
-.controller("LoginController", function($rootScope, $state, $scope, authentication, networkActivityTracker) {
+.controller("LoginController", function($rootScope, $state, $scope, authentication, login, networkActivityTracker) {
+
   if ($state.is("login") && authentication.isLoggedIn()) {
     $state.go("login.unlock");
     return;
-  }
+  } else if ($state.is("login.unlock")) {
 
-  if (authentication.user) {
-    $scope.user = authentication.user;
   }
-
+  $rootScope.user = undefined;
   $rootScope.pageName = "Login";
 
   var clearErrors = function() {
@@ -23,28 +22,12 @@ angular.module("proton.Controllers.Auth", ["proton.Auth"])
 
   $scope.tryLogin = function() {
     clearErrors();
-
-    networkActivityTracker.track(
-      authentication
-        .loginWithCredentials({
-          username: this.username,
-          password: this.password
-        })
-        .then(
-          function() {
-            $state.go("login.unlock");
-            $scope.user = authentication.user;
-          },
-          function(err) {
-            $scope.error = err;
-          }
-        )
-    );
+    console.log(login);
+    login(this);
   };
 
   $scope.tryDecrypt = function() {
     clearErrors();
-
     networkActivityTracker.track(
       authentication
         .unlockWithPassword(this.mailboxPassword)
