@@ -6,6 +6,15 @@ $fa-font-path: "fonts";
 @import "font-awesome";
 @import "partials/header";
 
+@mixin input_placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;

@@ -1,10 +1,19 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/composeToolbar.tpl.html'" class="compose-toolbar"></ng-include>
 
-<form class="form-horizontal" role="form" id="compose">
-  <div class="form-group">
-    <label class="control-label col-xs-1" for="message-to">To</label>
+<form class="form-horizontal" name="composeForm" role="form" id="compose">
+  <div class="form-group"
+       ng-class="{invalid: composeForm.recipient_list.$touched && composeForm.recipient_list.$invalid}">
+    <label class="control-label col-xs-1"
+           for="message-to">To</label>
     <div class="col-xs-11">
-      <input type="text" required email-field ng-model="message.RecipientList" class="form-control" id="message-to" placeholder="example@protonmail.ch">
+      <input type="text"
+             required
+             email-field
+             ng-model="message.RecipientList"
+             class="form-control"
+             id="message-to"
+             placeholder="example@protonmail.ch"
+             name="recipient_list">
     </div>
   </div>
 
@@ -13,7 +22,13 @@
       <i class="fa fa-times" ng-click="toggleField('CC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" email-field class="form-control" ng-model="message.CCList" id="message-cc" placeholder="example@protonmail.ch">
+      <input type="text"
+             email-field
+             class="form-control"
+             ng-model="message.CCList"
+             id="message-cc"
+             placeholder="example@protonmail.ch"
+             name="cc_list">
     </div>
   </div>
 
@@ -22,13 +37,26 @@
       <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
     </label>
     <div class="col-xs-11">
-      <input type="text" email-field class="form-control" ng-model="message.BCCList" id="message-bcc" placeholder="example@protonmail.ch">
+      <input type="text"
+             email-field
+             class="form-control"
+             ng-model="message.BCCList"
+             id="message-bcc"
+             placeholder="example@protonmail.ch"
+             name="bcc_list">
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group"
+       ng-class="{invalid: composeForm.subject.$touched && composeForm.subject.$invalid}">
     <div class="col-xs-12">
-      <input type="text" required class="subject input-lg form-control" ng-model="message.MessageTitle" id="message-title" placeholder="Subject">
+      <input type="text"
+             required
+             class="subject input-lg form-control"
+             ng-model="message.MessageTitle"
+             id="message-title"
+             placeholder="Subject"
+             name="subject">
     </div>
   </div>
 
@@ -42,21 +70,44 @@
       <div class="form-group">
         <label class="control-label col-xs-3" for="enc-password">Password</label>
         <div class="col-xs-7">
-          <input type="text" delayed-password ng-model="message.EncryptionPassword" id="enc-password" name="EncPassword" class="form-control" tabindex="10">
+          <input type="text"
+                 delayed-password
+                 ng-required="message.IsEncrypted == '1'"
+                 ng-model="message.EncryptionPassword"
+                 id="enc-password"
+                 name="enc_password"
+                 class="form-control"
+                 placeholder="Strong password"
+                 tabindex="10">
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="control-label col-xs-3" for="enc-password-conf">Password confirmation</label>
+      <div class="form-group"
+           ng-class="{invalid: composeForm.enc_password_conf.$touched && composeForm.enc_password_conf.$invalid}">
+        <label class="control-label col-xs-3"
+               for="enc-password-conf">Password confirmation</label>
         <div class="col-xs-7">
-          <input type="text" delayed-password ng-model="message.EncryptionPasswordConfirmation" id="enc-password-conf" name="EncPasswordConf" class="form-control" tabindex="10">
+          <input type="text"
+                 delayed-password
+                 ng-required="message.IsEncrypted == '1'"
+                 ng-model="message.EncryptionPasswordConfirmation"
+                 match="message.EncryptionPassword"
+                 id="enc-password-conf"
+                 name="enc_password_conf"
+                 class="form-control"
+                 placeholder="Same strong password"
+                 tabindex="10">
         </div>
       </div>
 
       <div class="form-group">
         <label class="control-label col-xs-3 optional" for="enc-password-hint">Password hint (optional)</label>
         <div class="col-xs-7">
-          <input type="text" ng-model="message.EncryptionPasswordHint" id="enc-password-hint" name="EncPasswordHint" class="form-control" tabindex="10">
+          <input type="text"
+                 ng-model="message.EncryptionPasswordHint"
+                 id="enc-password-hint"
+                 class="form-control"
+                 tabindex="10">
         </div>
       </div>
 
@@ -67,11 +118,18 @@
           <span class="duration">{{message.expirationInHours | humanDuration:"hours"}}</span>
         </div>
         <div class="col-xs-7">
-          <slider min-value="1" max-value="336" steps="335" value="message.expirationInHours"></slider>
+          <slider min-value="1"
+                  max-value="336"
+                  steps="335"
+                  value="message.expirationInHours">
+          </slider>
         </div>
       </div>
 
-      <a href="" class="done" ng-click="setOptionsVisibility(false)"><i class="fa fa-check"></i> Done</a>
+      <a href=""
+         class="done"
+         ng-click="setOptionsVisibility(false)"
+         ng-show="composeForm.enc_password_conf.$valid && message.IsEncrypted == '1'"><i class="fa fa-check"></i> Done</a>
     </div>
 
     <div class="encryption">
@@ -80,10 +138,8 @@
         ProtonMail users only
       </span>
 
-      <span
-        class="switcher {{ message.IsEncrypted == '1' ? 'encrypted' : 'unencrypted' }}"
-        ng-click="message.IsEncrypted = message.IsEncrypted == '0' ? '1' : '0'"
-        >
+      <span class="switcher {{ message.IsEncrypted == '1' ? 'encrypted' : 'unencrypted' }}"
+            ng-click="message.IsEncrypted = message.IsEncrypted == '0' ? '1' : '0'">
         <i class="fa fa-lock"></i>
       </span>
 
