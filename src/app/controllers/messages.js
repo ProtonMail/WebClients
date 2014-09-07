@@ -195,26 +195,39 @@ angular.module("proton.Controllers.Messages", [
     }
   };
 
-  var encryptionOptions = $('#encryption-options').modal({show: false});
-  $scope.encryptionOptions = _.bind(function () {
-    $('#encryption-options').modal.call()
-  }, encryptionOptions);
-
-  $scope.toggleConfig = function (config) { $scope[config] = !$scope[config]; }
+  $scope.toggleConfig = function (config) {
+    $scope[config] = !$scope[config];
+  }
   $scope.send = function () {
 
   }
 
   $scope.showOptions = false;
   $scope.setOptionsVisibility = function (status) {
-    $scope.showOptions = status;
+    if (!status && $scope.message.IsEncrypted !== '0' &&
+        !this.composeForm.enc_password_conf.$valid) {
+
+      $scope.message.IsEncrypted = '0';
+    } else {
+      $scope.showOptions = status;
+    }
   };
+
+  $scope.$watch("composeForm.$pristine", function (isPristine) {
+    if (!isPristine) {
+      window.onbeforeunload = function () {
+        return "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.";
+      }
+    } else {
+      window.onbeforeunload = undefined;
+    }
+  });
 
   $scope.$watch("message.IsEncrypted", function (newValue, oldValue) {
     if (oldValue === '0' && newValue === '1') {
-      $scope.showOptions = true;
+      $scope.setOptionsVisibility(true);
     } else {
-      $scope.showOptions = false;
+      $scope.setOptionsVisibility(false);
     }
   });
 

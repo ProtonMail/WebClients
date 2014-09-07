@@ -1,6 +1,11 @@
+
 angular.module("proton.emailField", [])
 
-.directive('emailField', function ($timeout, $interval, Contact) {
+.constant("EMAIL_REGEXP",
+  /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i
+)
+
+.directive('emailField', function ($timeout, $interval, Contact, EMAIL_REGEXP) {
   var self = this;
   var directive = {
     restrict: "A",
@@ -25,7 +30,9 @@ angular.module("proton.emailField", [])
       var setValue = function () {
         $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
           .map(function (element) { return element.trim(); })
-          .filter()
+          .filter(function (data) {
+            return data && EMAIL_REGEXP.test(data);
+          })
           .unique()
           .value()
           .join(",")
@@ -41,7 +48,10 @@ angular.module("proton.emailField", [])
       var manager = $$element.tagsManager({
         tagsContainer: parent[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
-        delimiters: [32, 44]
+        delimiters: [32, 44],
+        validator: function (input) {
+          return EMAIL_REGEXP.test(input);
+        }
       });
 
       manager.on("tm:pushed", function (ev, tag) {

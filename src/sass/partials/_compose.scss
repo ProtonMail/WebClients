@@ -1,3 +1,10 @@
+.message-toolbar.compose > ul.nav {
+  > li,
+  > li > a {
+    @include transition(all 0.2s ease-in-out);
+  }
+}
+
 form#compose {
   padding: 10px;
 
@@ -7,12 +14,26 @@ form#compose {
     top: 0;
     margin: 0 0 0.6em 0;
 
+    &.invalid {
+      label {
+        color: $brand-danger;
+      }
+      input[type="text"],
+      input[type="password"] {
+        @include input_placeholder {
+          color: $brand-danger;
+        }
+      }
+    }
+
     label {
       text-transform: uppercase;
       text-align: left;
       margin-bottom: 0;
       padding-top: 8.15px;
       position: static;
+
+      @include transition(color 0.2s ease-in-out);
 
       &.optional {
         color: rgba(0,0,0,0.4);
@@ -34,13 +55,19 @@ form#compose {
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="password"],
+    input[type="email"] {
       border: 0;
       box-shadow: none;
       background-color: transparent;
       width: 100%;
       padding-left: 0;
       min-width: 250px;
+
+      @include input_placeholder {
+        color: rgba(0,0,0,0.25);
+        @include transition(color 0.2s ease-in-out);
+      }
 
       &.subject {
         padding-left: 0;
@@ -111,7 +138,7 @@ form#compose {
 
           &.done {
             float: right;
-            margin-top: 10px;
+            margin-top: 30px;
           }
 
           i { font-size: 110%; }
@@ -141,7 +168,6 @@ form#compose {
         .slider {
           margin-top: -2px;
           margin-right: -16px;
-
           .handle {
             background-color: $light-purple;
           }

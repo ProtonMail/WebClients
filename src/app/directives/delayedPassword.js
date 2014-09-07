@@ -3,7 +3,6 @@ angular.module("proton.delayedPassword", [])
   return {
     restrict: "A",
     link: function ($scope, $element) {
-      console.log($element);
       $timeout(function () {
         $element[0].type = 'password';
       }, 50);
