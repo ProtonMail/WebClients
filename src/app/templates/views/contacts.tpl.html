@@ -1,14 +1,34 @@
-<form class="searchOrCreateContact">
-  <i class="fa fa-search"></i>
-  <input ng-model="search.ContactName" placeholder="Name" class="name"><input ng-model="search.ContactEmail" placeholder="Email" class="email">
-  <a href="" class="add"><i class="fa fa-plus"></i></a>
+<form class="searchOrCreateContact" name="contactForm">
+  <i class="fa fa-search search" ng-show="!editing"></i>
+  <i class="fa fa-edit editing" ng-show="editing"></i>
+  <div>
+    <input ng-model="search.ContactName"
+           placeholder="Name"
+           class="name"
+           type="text"
+           ng-keyup="$event.keyCode == 13 && saveContact()"
+           name="name">
+    <input ng-model="search.ContactEmail"
+           placeholder="Email"
+           class="email"
+           type="text"
+           ng-keyup="$event.keyCode == 13 && saveContact()"
+           ng-class="{invalid: contactForm.email.$error.email}" autofocus>
+  </div>
+  <input hidden type="email" required ng-model="search.ContactEmail" name="email">
+
+  <a href="" class="add" ng-show="!editing" ng-click="saveContact()"><i class="fa fa-plus"></i></a>
+  <a href="" class="save" ng-show="editing"  ng-click="saveContact()"><i class="fa fa-check"></i></a>
+  <a href="" class="cancel" ng-show="editing" ng-click="cancelEditing()"><i class="fa fa-times"></i></a>
 </form>
 
-<ul class="contacts">
+<ul class="contacts" ng-show="!editing">
   <li class="" ng-repeat="contact in contacts | filter:search">
-    <a href="" class="compose" pt-tooltip="Send message" ng-click="go('secured.compose', {to: contact.ContactEmail})"><i class="fa fa-paper-plane"></i></a>
-    <span class="name">{{contact.ContactName}}</span><span class="email">{{contact.ContactEmail}}</span>
-    <a href="" class="edit" pt-tooltip="Edit" ng-click=""><i class="fa fa-edit"></i></a>
-    <a href="" class="remove" pt-tooltip="Remove" ng-click=""><i class="fa fa-trash-o"></i></a>
+    <a href="" class="compose" pt-tooltip="Send message" ng-click="go('secured.compose', {to: contact.ContactEmail})">
+      <i class="fa fa-paper-plane"></i>
+    </a>
+    <span class="name">{{ contact.ContactName }}</span><span class="email">{{ contact.ContactEmail }}</span>
+    <a href="" class="edit" pt-tooltip="Edit" ng-click="setEditedContact(contact)"><i class="fa fa-edit"></i></a>
+    <a href="" class="remove" pt-tooltip="Remove" ng-click="deleteContact(contact)"><i class="fa fa-trash-o"></i></a>
   </li>
 </ul>

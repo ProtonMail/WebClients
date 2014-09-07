@@ -21,14 +21,15 @@ angular.module("proton.Models", [
 ])
 
 .factory("Contact", function($resource, authentication) {
-  var Contact = $resource(authentication.baseURL + "/contacts/:ContactID", authentication.params(), {
+  var Contact = $resource(
+    authentication.baseURL + "/contacts/:ContactID",
+    authentication.params({ ContactID: "@ContactID" }), {
     query: {
       method: "get",
       isArray: true,
       transformResponse: function (data) {
         var contacts = JSON.parse(data).Contacts;
-        Contact.index.clear();
-        Contact.index.add(contacts);
+        Contact.index.updateWith(contacts);
         return contacts;
       }
     },
@@ -43,8 +44,8 @@ angular.module("proton.Models", [
         return JSON.parse(data).data;
       }
     },
-    patch: {
-      method: "patch",
+    update: {
+      method: "put",
       isArray: false
     }
   });
@@ -60,6 +61,13 @@ angular.module("proton.Models", [
     },
     queryTokenizer: function (datum) {
       return Bloodhound.tokenizers.whitespace(datum);
+    }
+  });
+
+  _.extend(Contact.index, {
+    updateWith: function (list) {
+      Contact.index.clear();
+      Contact.index.add(list);
     }
   });
 
