@@ -15,9 +15,9 @@ var getFromJSONResponse = function (name) {
   };
 };
 
-angular.module("proton.Models", [
+angular.module("proton.models", [
   "ngResource",
-  "proton.Auth"
+  "proton.authentication"
 ])
 
 .factory("Contact", function($resource, authentication) {
@@ -112,6 +112,15 @@ angular.module("proton.Models", [
         method: "get",
         url: authentication.baseURL + "/messages/count",
         transformResponse: getFromJSONResponse('MessageCount')
+      },
+      saveDraft: {
+        method: "post",
+        url: authentication.baseURL + "/messages/draft",
+        transformResponse: getFromJSONResponse()
+      },
+      updateDraft: {
+        method: "put",
+        url: authentication.baseURL + "/messages/:MessageID/draft"
       }
     }
   );
@@ -188,6 +197,10 @@ angular.module("proton.Models", [
       return invertedMailboxIdentifiers[this.Location];
     },
 
+    isDraft: function () {
+      return this.Location == mailboxIdentifiers.drafts;
+    },
+
     cite: function () {
       var message = new Message();
       var baseBody = this.clearTextBody();
@@ -213,7 +226,9 @@ angular.module("proton.Models", [
 
     clearTextBody: function () {
       var body;
-      if (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted)) {
+      if (this.isDraft() ||
+         (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
+
         if (_.isUndefined(this._decryptedBody)) {
           try {
             this._decryptedBody = crypto.decryptPackage(

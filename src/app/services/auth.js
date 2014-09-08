@@ -1,6 +1,6 @@
-angular.module("proton.Auth", [
-  "proton.Crypto",
-  "proton.Models"
+angular.module("proton.authentication", [
+  "proton.crypto",
+  "proton.models"
 ])
 
 .constant("MAILBOX_PASSWORD_KEY", "proton:mailbox_pwd")

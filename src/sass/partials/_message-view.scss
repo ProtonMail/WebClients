@@ -1,9 +1,9 @@
 @mixin head-link {
   @include transition(color 0.07s ease-in-out 0);
 
-  color: rgba(0,0,0,.25);  
+  color: rgba(0,0,0,.25);
   &:hover {
-    color: rgba(0,0,0,.5);  
+    color: rgba(0,0,0,.5);
   }
 }
 
@@ -16,11 +16,34 @@
   position: relative;
   z-index: 44;
   &::selection {
-    color: #fff; 
-    background: #333; 
+    color: #fff;
+    background: #333;
     text-shadow: 0 1px 0 #000;
-  }  
+  }
 }
+
+ul.attachments {
+    padding: 0;
+    margin: 10px;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      line-height: 18px;
+      margin: 4px 0 5px 5px;
+      padding: 4px 8px 6px 8px;
+      border-radius: 3px;
+      background-color: #ddd;
+      font-weight: bold;
+
+      a {
+        padding: 3px;
+      }
+      .fa-paperclip {
+        margin-right: 3px;
+      }
+    }
+  }
 
 .message-head {
   padding: 15px;
@@ -146,7 +169,7 @@
       font-size: 90%;
       color: rgba(0,0,0,.25);
     }
-    
+
     span p {
       display: inline-block;
       color: rgba(0,0,0,.25);
@@ -177,7 +200,7 @@
   }
 }
 
-#message-body {  
+#message-body {
   iframe {
     border: 0;
     width: 100%;

@@ -27,6 +27,7 @@ module.exports = {
   },
   vendor_files: (vendor_files = {
     js: [
+      "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular/angular.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
@@ -34,6 +35,7 @@ module.exports = {
       "vendor/angular-local-storage/angular-local-storage.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
+      "vendor/angular-file-upload/dist/angular-file-upload.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",

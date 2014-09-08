@@ -3,7 +3,14 @@
             class="compose-toolbar">
 </ng-include>
 
-<form class="form-horizontal" name="composeForm" role="form" id="compose">
+<form
+  class="form-horizontal"
+  name="composeForm"
+  role="form"
+  id="compose"
+  ng-file-drop="selectFile($files)"
+  ng-file-drag-over-class="file-drop">
+
   <div class="form-group"
        ng-class="{invalid: composeForm.recipient_list.$touched && composeForm.recipient_list.$invalid}">
     <label class="control-label col-xs-1"
@@ -63,7 +70,19 @@
     </div>
   </div>
 
-  <div class="form-group body" rich-text-editor value="message.MessageBody" show-editor="!showOptions">
+  <ul ng-if="message.Attachments" class="attachments">
+    <li ng-repeat="attachment in message.Attachments">
+      <i class="fa fa-paperclip"></i>
+      {{ attachment.FileName }}
+      <a href="" ng-click="removeAttachment(attachment)"><i class="fa fa-times"></i></a>
+    </li>
+  </ul>
+
+  <div class="form-group body"
+       rich-text-editor
+       value="message.RawMessageBody"
+       show-editor="!showOptions">
+
     <div class="encryption-options">
       <a href="" ng-click="setOptionsVisibility(false)" class="back">
         <i class="fa fa-times"></i>
@@ -108,7 +127,7 @@
         <label class="control-label col-xs-3 optional" for="enc-password-hint">Password hint (optional)</label>
         <div class="col-xs-7">
           <input type="text"
-                 ng-model="message.EncryptionPasswordHint"
+                 ng-model="message.PasswordHint"
                  id="enc-password-hint"
                  class="form-control"
                  tabindex="10">

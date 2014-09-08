@@ -1,4 +1,4 @@
-angular.module("proton.Messages", [])
+angular.module("proton.messages", [])
 .service('messageCache', function ($q, Message) {
   var lists = [];
 

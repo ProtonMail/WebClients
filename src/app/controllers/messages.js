@@ -1,5 +1,5 @@
-angular.module("proton.Controllers.Messages", [
-  "proton.Routes"
+angular.module("proton.controllers.Messages", [
+  "proton.routes"
 ])
 
 .controller("MessageListController", function(
@@ -47,7 +47,11 @@ angular.module("proton.Controllers.Messages", [
         message = _.first(messages);
       }
 
-      $state.go("secured." + mailbox + ".message", { MessageID: message.MessageID });
+      if ($state.is('secured.drafts')) {
+        $state.go("secured.compose", { draft: message.MessageID });
+      } else {
+        $state.go("secured." + mailbox + ".message", { MessageID: message.MessageID });
+      }
     }
   };
 
@@ -161,21 +165,50 @@ angular.module("proton.Controllers.Messages", [
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, $stateParams, Message, message, localStorageService) {
+.controller("ComposeMessageController", function(
+  $rootScope,
+  $scope,
+  $stateParams,
+  Message,
+  message,
+  localStorageService,
+  attachments,
+  crypto,
+  networkActivityTracker
+) {
   $rootScope.pageName = "New Message";
 
   $scope.message = message;
   if (!message.MessageBody) {
     $scope.user.$promise.then(function () {
-      message.MessageBody = "<br><br>" + $scope.user.Signature;
+      message.RawMessageBody = "<br><br>" + $scope.user.Signature;
     });
   }
+  message.RawMessageBody = message.clearTextBody();
+
   if (!$scope.message.expirationInHours) {
     $scope.message.expirationInHours = 336;
   }
 
   if ($stateParams.to) {
     message.RecipientList = $stateParams.to;
+  }
+
+  $scope.selectFile = function (files) {
+    _.defaults(message, {Attachments: []});
+    message.Attachments.push.apply(
+      message.Attachments,
+      _.map(files, function(file) {
+        return attachments.load(file);
+      })
+    );
+  };
+
+  $scope.removeAttachment = function (attachment) {
+    var idx = message.Attachments.indexOf(attachment);
+    if (idx >= 0) {
+      message.Attachments.splice(idx, 1);
+    }
   }
 
   $scope.shouldShowField = function (field) {
@@ -198,8 +231,44 @@ angular.module("proton.Controllers.Messages", [
   $scope.toggleConfig = function (config) {
     $scope[config] = !$scope[config];
   }
-  $scope.send = function () {
 
+  $scope.send = function () {
+  }
+
+  $scope.saveDraft = function () {
+    var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
+
+    _.defaults(newMessage, {
+      RecipientList: '',
+      CCList: '',
+      BCCList: '',
+      MessageTitle: '',
+      PasswordHint: '',
+      Attachments: []
+    });
+
+    if (message.Attachments) {
+      newMessage.Attachments = _.map(message.Attachments, function (att) {
+        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+      });
+    }
+
+    newMessage.MessageBody = {
+      self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
+      outsiders: ''
+    };
+
+    if (message.MessageID) {
+      newMessage.MessageID = message.MessageID;
+      networkActivityTracker.track(newMessage.$updateDraft(null, function () {
+        $scope.composeForm.$setPristine();
+      }));
+    } else {
+      networkActivityTracker.track(newMessage.$saveDraft(null, function (result) {
+        message.MessageID = parseInt(result.MessageID);
+        $scope.composeForm.$setPristine();
+      }));
+    }
   }
 
   $scope.showOptions = false;
@@ -216,7 +285,8 @@ angular.module("proton.Controllers.Messages", [
   $scope.$watch("composeForm.$pristine", function (isPristine) {
     if (!isPristine) {
       window.onbeforeunload = function () {
-        return "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.";
+        return "By leaving now, you will lose what you have written in this email. " +
+               "You can save a draft if you want to come back to it later on.";
       }
     } else {
       window.onbeforeunload = undefined;
@@ -249,7 +319,8 @@ angular.module("proton.Controllers.Messages", [
   $timeout,
   localStorageService,
   networkActivityTracker,
-  message
+  message,
+  attachments
 ) {
 
   $rootScope.pageName = message.MessageTitle;
@@ -258,6 +329,9 @@ angular.module("proton.Controllers.Messages", [
   $scope.messageHeadState = "close";
   $scope.showHeaders = false;
 
+  $scope.downloadAttachment = function (attachment) {
+    attachments.get(attachment.AttachmentID, attachment.FileName);
+  }
   $scope.toggleHead = function () {
     $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
   };

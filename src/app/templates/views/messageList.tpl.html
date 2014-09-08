@@ -2,17 +2,17 @@
 <table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover hidden-xs" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
-        ng-click="navigateToMessage($event, message)" 
+        ng-click="navigateToMessage($event, message)"
         ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
         >
-      
+
       <td class="actions">
         <input type="checkbox" ng-model="message.selected" />
         <span
-            class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}"
-            pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}"></span>
+            class="fa {{ (message.IsEncrypted == '1' || '**.drafts.**' | includedByState) ? 'fa-lock' : 'fa-unlock-alt' }}"
+            pt-tooltip="{{ (message.IsEncrypted == '1' || '**.drafts.**' | includedByState) ? 'Encrypted' : 'Not encrypted' }}"></span>
 
-        <a href ng-click="message.toggleStar()">
+        <a href ng-click="message.toggleStar()" ng-if="!('**.drafts.**' | includedByState)">
           <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
         </a>
       </td>
@@ -27,8 +27,8 @@
       </td>
 
       <td class="size">
-        <i  class="fa fa-paperclip" 
-            ng-class="{active: message.hasAttachments}"></i>
+        <i  class="fa fa-paperclip"
+            ng-class="{active: message.AttachmentIDList.length}"></i>
         {{ message.TotalSize | humanSize }}
       </td>
 
@@ -56,7 +56,7 @@
           <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
           <span class="pull-right">{{ message.readableTime() }}</span>
           <span ng-switch-default>{{ message.Sender }}</span>
-        </div>        
+        </div>
       </td>
 
     </tr>

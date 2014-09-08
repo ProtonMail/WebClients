@@ -3,14 +3,18 @@
     <li class="save">
       <a href="#"
          ng-class=""
-         ng-click="">
+         ng-click="saveDraft()">
         <i class="fa fa-floppy-o"></i> Draft
       </a>
     </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-paperclip"></i>
-      </a>
+    <li class="attachments">
+      <form>
+        <input type="file"
+               multiple
+               ng-file-select="selectFile($files)"
+               name="file_selector" />
+      </form>
+      <a href="#"><i class="fa fa-paperclip"></i></a>
     </li>
     <li>
       <a href="#" class="dropdown-toggle"
@@ -24,8 +28,8 @@
             <i class="fa fa-fw fa-check"></i>
           </a>
         </li>
-        <li ng-class="{'toggled-on': savesDraft}">
-          <a href="#" ng-click="toggleConfig('savesDraft')">
+        <li ng-class="{'toggled-on': !message.Attachments && savesDraft, disabled: message.Attachments}">
+          <a href="#" ng-click="toggleConfig('savesDraft')" class="">
             <i class="fa fa-fw fa-save"></i> Automatically save draft
             <i class="fa fa-fw fa-check"></i>
           </a>
@@ -47,6 +51,10 @@
           <span ng-switch-default><i class="fa fa-eye-slash"></i> BCC</span>
         </span>
       </a>
+    </li>
+
+    <li ng-if="message.MessageID && composeForm.$pristine" class="saved">
+      <i class="fa fa-check"></i> Saved
     </li>
   </ul>
 

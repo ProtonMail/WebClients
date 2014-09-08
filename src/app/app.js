@@ -4,27 +4,29 @@ angular.module("proton", [
 
   "LocalStorageModule",
   "btford.markdown",
+  "angularFileUpload",
 
   // templates
   "templates-app",
   "templates-common",
 
   // App
-  "proton.Routes",
-  "proton.Models",
+  "proton.routes",
+  "proton.models",
 
   // Services
-  "proton.Auth",
-  "proton.Crypto",
+  "proton.authentication",
+  "proton.crypto",
   "proton.errorReporter",
   "proton.networkActivity",
-  "proton.Messages",
+  "proton.messages",
+  "proton.attachments",
 
   // Directives
   "proton.tooltip",
   "proton.richTextEditor",
   "proton.emailField",
-  "proton.Slider",
+  "proton.slider",
   "proton.delayedPassword",
   "proton.fieldMatch",
 
@@ -32,11 +34,11 @@ angular.module("proton", [
   "proton.filters.strings",
 
   // Controllers
-  "proton.Controllers.Admin",
-  "proton.Controllers.Auth",
-  "proton.Controllers.Messages",
-  "proton.Controllers.Contacts",
-  "proton.Controllers.Settings"
+  "proton.controllers.Admin",
+  "proton.controllers.Auth",
+  "proton.controllers.Messages",
+  "proton.controllers.Contacts",
+  "proton.controllers.Settings"
 ])
 
 .run(function(

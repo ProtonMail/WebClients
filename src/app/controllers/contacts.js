@@ -1,4 +1,4 @@
-angular.module("proton.Controllers.Contacts", [])
+angular.module("proton.controllers.Contacts", [])
 
 .controller("ContactsController", function($rootScope, $scope, contacts, Contact) {
   $rootScope.pageName = "Contacts";
