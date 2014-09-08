@@ -28,8 +28,8 @@
             <i class="fa fa-fw fa-check"></i>
           </a>
         </li>
-        <li ng-class="{'toggled-on': savesDraft}">
-          <a href="#" ng-click="toggleConfig('savesDraft')">
+        <li ng-class="{'toggled-on': !message.Attachments && savesDraft, disabled: message.Attachments}">
+          <a href="#" ng-click="toggleConfig('savesDraft')" class="">
             <i class="fa fa-fw fa-save"></i> Automatically save draft
             <i class="fa fa-fw fa-check"></i>
           </a>
