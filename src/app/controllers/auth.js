@@ -1,4 +1,4 @@
-angular.module("proton.Controllers.Auth", ["proton.Auth"])
+angular.module("proton.controllers.Auth", ["proton.authentication"])
 
 .controller("LoginController", function($rootScope, $state, $scope, authentication, login, networkActivityTracker) {
 

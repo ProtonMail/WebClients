@@ -1,4 +1,4 @@
-angular.module("proton.Controllers.Admin", [])
+angular.module("proton.controllers.Admin", [])
 
 .controller("AdminController", function($scope){
   $scope.formData = {};

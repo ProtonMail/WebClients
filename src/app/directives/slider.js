@@ -1,4 +1,4 @@
-angular.module("proton.Slider", [])
+angular.module("proton.slider", [])
 .directive("slider", function () {
   return {
     restrict: "E",

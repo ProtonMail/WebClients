@@ -1,4 +1,4 @@
-angular.module("proton.Crypto", [])
+angular.module("proton.crypto", [])
 
 .provider("crypto", function cryptoProvider() {
 

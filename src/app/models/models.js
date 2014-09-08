@@ -15,9 +15,9 @@ var getFromJSONResponse = function (name) {
   };
 };
 
-angular.module("proton.Models", [
+angular.module("proton.models", [
   "ngResource",
-  "proton.Auth"
+  "proton.authentication"
 ])
 
 .factory("Contact", function($resource, authentication) {

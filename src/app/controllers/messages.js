@@ -1,5 +1,5 @@
-angular.module("proton.Controllers.Messages", [
-  "proton.Routes"
+angular.module("proton.controllers.Messages", [
+  "proton.routes"
 ])
 
 .controller("MessageListController", function(

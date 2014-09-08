@@ -1,6 +1,6 @@
-angular.module("proton.Routes", [
+angular.module("proton.routes", [
   "ui.router",
-  "proton.Auth"
+  "proton.authentication"
 ])
 
 .constant("mailboxIdentifiers", {
