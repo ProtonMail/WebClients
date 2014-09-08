@@ -3,6 +3,29 @@
   > li > a {
     @include transition(all 0.2s ease-in-out);
   }
+
+  li.attachments {
+    display: relative;
+    a {
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+    }
+    input:hover + a {
+      color: #000;
+      @include box-shadow(inset 0 -1px rgba(0, 0, 0, 0.1));
+      @include linear-gradient(#fff, #f2f2f2);
+    }
+    input[type="file"] {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left:0;
+      width: calc(100% - 2px);
+      height: 100%;
+      cursor: pointer;
+    }
+  }
 }
 
 form#compose {

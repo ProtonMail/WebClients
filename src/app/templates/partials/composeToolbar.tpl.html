@@ -7,10 +7,14 @@
         <i class="fa fa-floppy-o"></i> Draft
       </a>
     </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-paperclip"></i>
-      </a>
+    <li class="attachments">
+      <form>
+        <input type="file"
+               multiple
+               ng-file-select="selectFile($files)"
+               name="file_selector" />
+      </form>
+      <a href="#"><i class="fa fa-paperclip"></i></a>
     </li>
     <li>
       <a href="#" class="dropdown-toggle"
