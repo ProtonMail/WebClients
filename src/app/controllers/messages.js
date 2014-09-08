@@ -47,7 +47,11 @@ angular.module("proton.controllers.Messages", [
         message = _.first(messages);
       }
 
-      $state.go("secured." + mailbox + ".message", { MessageID: message.MessageID });
+      if ($state.is('secured.drafts')) {
+        $state.go("secured.compose", { draft: message.MessageID });
+      } else {
+        $state.go("secured." + mailbox + ".message", { MessageID: message.MessageID });
+      }
     }
   };
 

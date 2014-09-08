@@ -248,7 +248,7 @@ angular.module("proton.routes", [
     })
 
     .state("secured.compose", {
-      url: "/compose?to",
+      url: "/compose?to&draft",
       views: {
         "content@secured": {
           templateUrl: "templates/views/compose.tpl.html",
@@ -256,10 +256,22 @@ angular.module("proton.routes", [
         }
       },
       resolve: {
-        message: function(Message) {
-          return new Message({
-            IsEncrypted: "0"
-          });
+        message: function(Message, $stateParams, networkActivityTracker, messageCache) {
+          console.log($stateParams);
+          if ($stateParams.draft) {
+            return networkActivityTracker.track(
+              messageCache
+                .get(parseInt($stateParams.draft))
+                .$promise
+                .then(function (message) {
+                  message = new Message(message);
+                  message.IsEncrypted = '0';
+                  return message;
+                })
+            );
+          } else {
+            return new Message({ IsEncrypted: "0" });
+          }
         }
       }
     })
