@@ -31,6 +31,48 @@
 form#compose {
   padding: 10px;
 
+  &::after {
+    position: absolute;
+    opacity: 0;
+    @include transition(opacity 0.2s ease-in-out);
+  }
+
+  &.file-drop {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      z-index: 5000;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      background-color: #555;
+      opacity: 0.5;
+      content: "";
+    }
+
+    &::before {
+      position: absolute;
+      content: "\f019";
+      text-align: center;
+      color: white;
+      font-family: FontAwesome;
+      font-size: 500%;
+      z-index: 5001;
+      left: 5px;
+      right: 5px;
+      top: 50%;
+      text-transform: uppercase;
+      @include transform(translateY(-50%));
+    }
+
+    iframe {
+      pointer-events: none;
+    }
+  }
+
   ul.attachments {
     padding: 0;
     margin: 10px 0;
@@ -40,7 +82,7 @@ form#compose {
       display: inline-block;
       line-height: 18px;
       margin: 4px 0 5px 5px;
-      padding: 4px 8px;
+      padding: 4px 8px 6px 8px;
       border-radius: 3px;
       background-color: #ddd;
       font-weight: bold;
@@ -48,6 +90,7 @@ form#compose {
       a {
         margin-left: 3px;
         color: #999;
+        padding: 3px;
       }
       .fa-paperclip {
         margin-right: 3px;

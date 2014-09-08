@@ -3,7 +3,14 @@
             class="compose-toolbar">
 </ng-include>
 
-<form class="form-horizontal" name="composeForm" role="form" id="compose">
+<form
+  class="form-horizontal"
+  name="composeForm"
+  role="form"
+  id="compose"
+  ng-file-drop="selectFile($files)"
+  ng-file-drag-over-class="file-drop">
+
   <div class="form-group"
        ng-class="{invalid: composeForm.recipient_list.$touched && composeForm.recipient_list.$invalid}">
     <label class="control-label col-xs-1"
