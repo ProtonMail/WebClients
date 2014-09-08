@@ -31,12 +31,6 @@
 form#compose {
   padding: 10px;
 
-  &::after {
-    position: absolute;
-    opacity: 0;
-    @include transition(opacity 0.2s ease-in-out);
-  }
-
   &.file-drop {
     position: relative;
 
