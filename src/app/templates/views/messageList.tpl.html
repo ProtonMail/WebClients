@@ -28,7 +28,7 @@
 
       <td class="size">
         <i  class="fa fa-paperclip"
-            ng-class="{active: message.hasAttachments}"></i>
+            ng-class="{active: message.AttachmentIDList.length}"></i>
         {{ message.TotalSize | humanSize }}
       </td>
 

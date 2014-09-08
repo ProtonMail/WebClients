@@ -37,6 +37,14 @@
     <i class="fa" ng-class="{'fa-chevron-down': messageHeadState == 'close', 'fa-chevron-up': messageHeadState == 'open'}"></i>
   </div><!--/.toggle-head-->
 </div><!--/.message-head-->
+
+<ul ng-if="message.AttachmentIDList.length" class="attachments">
+  <li ng-repeat="attachment in message.AttachmentIDList">
+    <i class="fa fa-paperclip"></i>
+    <a href="" ng-click="downloadAttachment(attachment)">{{ attachment.FileName }}</a>
+  </li>
+</ul>
+
 <div id="message-body">
   <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
   <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">

@@ -319,7 +319,8 @@ angular.module("proton.controllers.Messages", [
   $timeout,
   localStorageService,
   networkActivityTracker,
-  message
+  message,
+  attachments
 ) {
 
   $rootScope.pageName = message.MessageTitle;
@@ -328,6 +329,9 @@ angular.module("proton.controllers.Messages", [
   $scope.messageHeadState = "close";
   $scope.showHeaders = false;
 
+  $scope.downloadAttachment = function (attachment) {
+    attachments.get(attachment.AttachmentID, attachment.FileName);
+  }
   $scope.toggleHead = function () {
     $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
   };

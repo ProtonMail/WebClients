@@ -1,5 +1,5 @@
 angular.module("proton.attachments", [])
-.service("attachments", function ($http, $log, $q, $rootScope) {
+.service("attachments", function ($http, $log, $window, $q, $rootScope, authentication, errorReporter) {
   return {
     load: function (file) {
       var q = $q.defer();
@@ -26,20 +26,15 @@ angular.module("proton.attachments", [])
       fileObject.$promise = q.promise;
       return fileObject;
     },
-    get: function (id) {
+    get: function (id, filename) {
       $http
-        .get("/attachments" + id, {responseType: "arraybuffer"})
-        .success(function (data, status, headers) {
-          var filename,
-              octetStreamMime = "application/octet-stream",
+        .get(authentication.baseURL + "/attachments/" + id, {responseType: "arraybuffer"})
+        .success(function (data, status, headers, other) {
+          var octetStreamMime = "application/octet-stream",
               contentType;
 
           // Get the headers
           headers = headers();
-
-          if (!filename) {
-            filename = headers["content-disposition"].split(';')[1].split("=")[1].trim();
-          }
 
           // Determine the content type from the header or default to "application/octet-stream"
           contentType = headers["content-type"] || octetStreamMime;
@@ -68,9 +63,18 @@ angular.module("proton.attachments", [])
               } else {
                 // Prepare a blob URL
                 // Use application/octet-stream when using window.location to force download
-                var blob = new Blob([data], { type: octetStreamMime });
-                var url = urlCreator.createObjectURL(blob);
-                $window.location = url;
+
+                try {
+                  if (_.isNull(data) || data.length == 0) {
+                    throw new TypeError("File has a size of 0");
+                  }
+
+                  var blob = new Blob([data], { type: octetStreamMime });
+                  var url = urlCreator.createObjectURL(blob);
+                  $window.location = url;
+                } catch(err) {
+                  return errorReporter.notify("The file could not be downloaded", err);
+                }
               }
             }
           }
