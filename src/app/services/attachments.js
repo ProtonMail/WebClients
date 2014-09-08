@@ -14,7 +14,8 @@ angular.module("proton.attachments", [])
       var reader = new FileReader();
       reader.onload = function (event) {
         fileObject.FileData = {
-          self: event.target.result.split(",")[1]
+          self_email: event.target.result.split(",")[1],
+          outsiders: ''
         };
         if (fileObject.$promise.resolve) {
           fileObject.$promise.resolve(fileObject);
