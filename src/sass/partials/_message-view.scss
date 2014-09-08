@@ -105,9 +105,11 @@ ul.attachments {
         color: #000;
       }
       &:active {
-        background: #e5e5e5;
+        background: #e5e5e5 !important;
+        border-color: #ccc !important;
+        color: #4d4d4d !important;
+        opacity: .65;
         box-shadow: none;
-        color: #999;
       }
     }
   }

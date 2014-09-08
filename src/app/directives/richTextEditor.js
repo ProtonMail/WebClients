@@ -33,10 +33,16 @@ angular.module("proton.richTextEditor", [])
           $scope.value = textarea.val();
         });
       });
+      $scope.editor.on("load", function () {
+        resizeIframeToFitContent();
+      });
       $scope.$watch('value', function( newValue, oldValue ) {
         $scope.editor.innerHTML = newValue;
         $scope.editor.composer.setValue( newValue );
       });
+      function resizeIframeToFitContent() {
+        alert($("iframe").height($("iframe").contents().find("html").height())); 
+      }      
     }
   }
   return directive;

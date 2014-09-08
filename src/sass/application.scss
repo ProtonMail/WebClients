@@ -15,7 +15,7 @@ $fa-font-path: "fonts";
   }
 }
 
-html {
+html, body {
   position: relative;
   min-height: 100%;
   height: 100%;
@@ -29,10 +29,12 @@ html {
 
 .secure #body {
   min-height: 100%;
+  height: 100%;
 }
 .secure #main,
 #main.secure {
   position: relative;
+  min-height: 100%;
 }
 
 .modal-body {
@@ -57,6 +59,7 @@ h1 {
 
 body footer {
   position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: ($footer-height);
@@ -80,7 +83,7 @@ body footer {
     // box-shadow: inset 0 1px #e5e5e5;
     color: #999;
     a {
-      color: #999
+      color: #999;
     }
   }
 }

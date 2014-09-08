@@ -1,3 +1,9 @@
+table.message-list.mobile tr {
+  h4 {
+    font-size: 17px;
+  }
+}
+
 table.message-list {
   border-bottom: none;
   margin-bottom: 0;
@@ -30,21 +36,33 @@ table.message-list {
     white-space: nowrap;
     color: rgba(0,0,0,.5);
 
-    &:hover,
-    &.selected {
-      color: #111;
+    h4 {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
     }
     
     &.unread {
-      font-weight: bold;
-      color: #000
+      h4 {
+        font-weight: bold;
+        color: #000;
+      }
+      .recipient {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    &:hover {
+      td {
+        background-color: darken(white, 2%);
+      }
     }
 
     &.starred {
       background-color: $starred;
 
       &:hover {
-        background-color: darken($starred, 5%);
+        background-color: darken($starred, 2%);
 
         td {
           background: transparent;
