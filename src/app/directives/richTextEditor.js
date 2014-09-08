@@ -26,9 +26,11 @@ angular.module("proton.richTextEditor", [])
         style: false,
         toolbar: toolbar[0],
         stylesheets: ["/assets/application.css"],
+        stylesheets: ["/assets/app.css"],
         parserRules:  wysihtml5ParserRules
       });
       $scope.editor.on("change", function () {
+        resizeIframeToFitContent();
         $scope.$apply(function () {
           $scope.value = textarea.val();
         });
@@ -38,12 +40,16 @@ angular.module("proton.richTextEditor", [])
         setTimeout( function() {
           resizeIframeToFitContent();
         }), 200;
+        $('.wysihtml5-sandbox').contents().find('body').on("keydown",function() {
+          resizeIframeToFitContent(); 
+        });
       });
       $scope.$watch('value', function( newValue, oldValue ) {
         $scope.editor.innerHTML = newValue;
         $scope.editor.composer.setValue( newValue );
       });
       function resizeIframeToFitContent() {
+        $("iframe").height('');
         var iframeHeight = $("iframe").contents().find("html").outerHeight();
         iframeHeight = iframeHeight*1.1;
         $("iframe").height(iframeHeight);
