@@ -172,7 +172,9 @@ angular.module("proton.controllers.Messages", [
   Message,
   message,
   localStorageService,
-  attachments
+  attachments,
+  crypto,
+  networkActivityTracker
 ) {
   $rootScope.pageName = "New Message";
 
@@ -201,6 +203,7 @@ angular.module("proton.controllers.Messages", [
       })
     );
   };
+
   $scope.removeAttachment = function (attachment) {
     var idx = message.Attachments.indexOf(attachment);
     if (idx >= 0) {
@@ -228,8 +231,44 @@ angular.module("proton.controllers.Messages", [
   $scope.toggleConfig = function (config) {
     $scope[config] = !$scope[config];
   }
-  $scope.send = function () {
 
+  $scope.send = function () {
+  }
+
+  $scope.saveDraft = function () {
+    var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
+
+    _.defaults(newMessage, {
+      RecipientList: '',
+      CCList: '',
+      BCCList: '',
+      MessageTitle: '',
+      PasswordHint: '',
+      Attachments: []
+    });
+
+    if (message.Attachments) {
+      newMessage.Attachments = _.map(message.Attachments, function (att) {
+        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+      });
+    }
+
+    newMessage.MessageBody = {
+      self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
+      outsiders: ''
+    };
+
+    if (message.MessageID) {
+      newMessage.MessageID = message.MessageID;
+      networkActivityTracker.track(newMessage.$updateDraft(null, function () {
+        $scope.composeForm.$setPristine();
+      }));
+    } else {
+      networkActivityTracker.track(newMessage.$saveDraft(null, function (result) {
+        message.MessageID = parseInt(result.MessageID);
+        $scope.composeForm.$setPristine();
+      }));
+    }
   }
 
   $scope.showOptions = false;
@@ -246,7 +285,8 @@ angular.module("proton.controllers.Messages", [
   $scope.$watch("composeForm.$pristine", function (isPristine) {
     if (!isPristine) {
       window.onbeforeunload = function () {
-        return "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.";
+        return "By leaving now, you will lose what you have written in this email. " +
+               "You can save a draft if you want to come back to it later on.";
       }
     } else {
       window.onbeforeunload = undefined;

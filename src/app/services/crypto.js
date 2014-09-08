@@ -8,12 +8,8 @@ angular.module("proton.crypto", [])
   var tailRandomKey = "---END ENCRYPTED RANDOM KEY---";
 
   function pgpEncrypt(randomKey, pubKey) {
-    // $('#composeMain').html('<pre>'+pubKey+'</pre>');
-    // console.log('pubKey: '+pubKey);
     randomKey = encode_utf8_base64(randomKey);
     var _pubKey = openpgp.key.readArmored(pubKey).keys[0];
-    // console.log('_pubKey: '+_pubKey);
-    // console.log('randomKey: '+randomKey);
     return openpgp.encryptMessage([_pubKey], randomKey);
   }
 
@@ -115,8 +111,21 @@ angular.module("proton.crypto", [])
           return decryptMessage(time, encryptedMessage, randomKey);
         }
       },
-      encryptMessage: function(msg) {
+      encryptMessageToPackage: function(msg, pubKey) {
+        var randomKey = generateRandomKey();
 
+        // encrypt the message
+        var encryptedMessageBody = encryptMessage(msg, randomKey);
+
+        // encrypt the random key 256bit
+        var encryptedRandomKey = pgpEncrypt(randomKey, pubKey);
+
+        // concat the encrypted message and encrypted random key
+        return generateEmailPkg(encryptedMessageBody, encryptedRandomKey);
+      },
+      encryptMessageForOutside: function (msg, password) {
+        // encrypt the message symetrically for outside recipients using the message and a hash of the pw
+        return encryptMessage(messageBody, openpgp.crypto.hash.sha256(password));
       },
       setMailboxPassword: function(pubKey, prKey, password) {
         var testMsg = "sPKkm9lk6hSSZ49rRFwg";

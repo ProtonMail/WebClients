@@ -3,7 +3,7 @@
     <li class="save">
       <a href="#"
          ng-class=""
-         ng-click="">
+         ng-click="saveDraft()">
         <i class="fa fa-floppy-o"></i> Draft
       </a>
     </li>
@@ -51,6 +51,10 @@
           <span ng-switch-default><i class="fa fa-eye-slash"></i> BCC</span>
         </span>
       </a>
+    </li>
+
+    <li ng-if="message.MessageID && composeForm.$pristine" class="saved">
+      <i class="fa fa-check"></i> Saved
     </li>
   </ul>
 

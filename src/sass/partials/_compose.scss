@@ -26,6 +26,12 @@
       cursor: pointer;
     }
   }
+
+  li.saved {
+    line-height: 32px;
+    padding: 0 10px;
+    border-right: 0;
+  }
 }
 
 form#compose {

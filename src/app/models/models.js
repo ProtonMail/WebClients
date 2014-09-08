@@ -112,6 +112,15 @@ angular.module("proton.models", [
         method: "get",
         url: authentication.baseURL + "/messages/count",
         transformResponse: getFromJSONResponse('MessageCount')
+      },
+      saveDraft: {
+        method: "post",
+        url: authentication.baseURL + "/messages/draft",
+        transformResponse: getFromJSONResponse()
+      },
+      updateDraft: {
+        method: "put",
+        url: authentication.baseURL + "/messages/:MessageID/draft"
       }
     }
   );
