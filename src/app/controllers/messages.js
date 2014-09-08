@@ -172,6 +172,7 @@ angular.module("proton.controllers.Messages", [
   Message,
   message,
   localStorageService,
+  attachments
 ) {
   $rootScope.pageName = "New Message";
 
@@ -189,6 +190,22 @@ angular.module("proton.controllers.Messages", [
 
   if ($stateParams.to) {
     message.RecipientList = $stateParams.to;
+  }
+
+  $scope.selectFile = function (files) {
+    _.defaults(message, {Attachments: []});
+    message.Attachments.push.apply(
+      message.Attachments,
+      _.map(files, function(file) {
+        return attachments.load(file);
+      })
+    );
+  };
+  $scope.removeAttachment = function (attachment) {
+    var idx = message.Attachments.indexOf(attachment);
+    if (idx >= 0) {
+      message.Attachments.splice(idx, 1);
+    }
   }
 
   $scope.shouldShowField = function (field) {

@@ -63,6 +63,14 @@
     </div>
   </div>
 
+  <ul ng-if="message.Attachments" class="attachments">
+    <li ng-repeat="attachment in message.Attachments">
+      <i class="fa fa-paperclip"></i>
+      {{ attachment.FileName }}
+      <a href="" ng-click="removeAttachment(attachment)"><i class="fa fa-times"></i></a>
+    </li>
+  </ul>
+
   <div class="form-group body"
        rich-text-editor
        value="message.RawMessageBody"
