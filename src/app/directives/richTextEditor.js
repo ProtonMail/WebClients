@@ -35,13 +35,18 @@ angular.module("proton.richTextEditor", [])
       });
       $scope.editor.on("load", function () {
         resizeIframeToFitContent();
+        setTimeout( function() {
+          resizeIframeToFitContent();
+        }), 200;
       });
       $scope.$watch('value', function( newValue, oldValue ) {
         $scope.editor.innerHTML = newValue;
         $scope.editor.composer.setValue( newValue );
       });
       function resizeIframeToFitContent() {
-        alert($("iframe").height($("iframe").contents().find("html").height())); 
+        var iframeHeight = $("iframe").contents().find("html").outerHeight();
+        iframeHeight = iframeHeight*1.1;
+        $("iframe").height(iframeHeight);
       }      
     }
   }
