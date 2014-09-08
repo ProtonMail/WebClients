@@ -165,15 +165,24 @@ angular.module("proton.controllers.Messages", [
   };
 })
 
-.controller("ComposeMessageController", function($rootScope, $scope, $stateParams, Message, message, localStorageService) {
+.controller("ComposeMessageController", function(
+  $rootScope,
+  $scope,
+  $stateParams,
+  Message,
+  message,
+  localStorageService,
+) {
   $rootScope.pageName = "New Message";
 
   $scope.message = message;
   if (!message.MessageBody) {
     $scope.user.$promise.then(function () {
-      message.MessageBody = "<br><br>" + $scope.user.Signature;
+      message.RawMessageBody = "<br><br>" + $scope.user.Signature;
     });
   }
+  message.RawMessageBody = message.clearTextBody();
+
   if (!$scope.message.expirationInHours) {
     $scope.message.expirationInHours = 336;
   }

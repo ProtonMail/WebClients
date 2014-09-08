@@ -188,6 +188,10 @@ angular.module("proton.models", [
       return invertedMailboxIdentifiers[this.Location];
     },
 
+    isDraft: function () {
+      return this.Location == mailboxIdentifiers.drafts;
+    },
+
     cite: function () {
       var message = new Message();
       var baseBody = this.clearTextBody();
@@ -213,7 +217,9 @@ angular.module("proton.models", [
 
     clearTextBody: function () {
       var body;
-      if (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted)) {
+      if (this.isDraft() ||
+         (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
+
         if (_.isUndefined(this._decryptedBody)) {
           try {
             this._decryptedBody = crypto.decryptPackage(

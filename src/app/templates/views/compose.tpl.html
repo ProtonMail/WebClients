@@ -63,7 +63,11 @@
     </div>
   </div>
 
-  <div class="form-group body" rich-text-editor value="message.MessageBody" show-editor="!showOptions">
+  <div class="form-group body"
+       rich-text-editor
+       value="message.RawMessageBody"
+       show-editor="!showOptions">
+
     <div class="encryption-options">
       <a href="" ng-click="setOptionsVisibility(false)" class="back">
         <i class="fa fa-times"></i>
