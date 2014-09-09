@@ -41,6 +41,12 @@ table.message-list {
       padding: 0;
       font-size: 14px;
     }
+
+    td {
+      padding: 0 10px;
+      line-height: $row-height;
+      vertical-align: middle;
+    }
     
     &.unread {
       h4 {

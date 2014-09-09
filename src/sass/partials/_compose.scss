@@ -1,3 +1,21 @@
+#others {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: ($row-height*1.5);
+  height: ($row-height*1.5);
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0;
+    margin-right: 15px;
+    float: left;
+    color: #999;
+    &:hover, & .active {
+      color: #000;
+    }
+  }
+}
 .message-toolbar.compose > ul.nav {
   > li,
   > li > a {
@@ -28,14 +46,13 @@
   }
 
   li.saved {
-    line-height: 32px;
+    line-height: $row-height;
     padding: 0 10px;
     border-right: 0;
   }
 }
 
 form#compose {
-  padding: 10px;
 
   &.file-drop {
     position: relative;
@@ -99,10 +116,15 @@ form#compose {
   }
 
   div.form-group {
-    border-bottom: 1px solid #ddd;
+    box-shadow: inset 0 -1px 0 #e5e5e5;
     position: relative;
     top: 0;
-    margin: 0 0 0.6em 0;
+    margin: 0;
+
+    &.focus {
+      position: relative;
+      z-index: 999;
+    }
 
     &.invalid {
       label {
@@ -120,8 +142,11 @@ form#compose {
       text-transform: uppercase;
       text-align: left;
       margin-bottom: 0;
-      padding-top: 8.15px;
+      padding: 0 15px;
+      line-height: ($row-height*1.5);
+      height: ($row-height*1.5);
       position: static;
+      width: 8rem;
 
       @include transition(color 0.2s ease-in-out);
 
@@ -131,11 +156,13 @@ form#compose {
 
       i {
         color: #ccc;
-        line-height: 18px;
+        line-height: ($row-height*1.5);
+        height: ($row-height*1.5);
+        padding: 0 15px;
         cursor: pointer;
         position: absolute;
-        right: 5px;
-        top: 5px;
+        right: 0;
+        top: 0;
         z-index: 10;
 
         &:hover {
@@ -144,6 +171,20 @@ form#compose {
       }
     }
 
+    .form-control {
+      padding: 0 1rem;
+      line-height: ($row-height*1.5 - 30);
+      height: ($row-height*1.5 - 30);
+      margin: 15px 1rem 15px 0;
+      &.subject {
+        font-size: 22px;
+        color: #000;
+        padding: 0;
+        margin: 0;
+        height: ($row-height*1.5);
+        line-height: ($row-height*1.5);
+      }
+    }
     input[type="text"],
     input[type="password"],
     input[type="email"] {
@@ -167,15 +208,21 @@ form#compose {
     .tm-tag {
       border: none;
       box-shadow: none;
-      padding: 4px 8px;
       float: left;
-      margin-top: 4px;
+      border-radius: 2px;
+      background: #f2f2f2;
+      padding: 0 1.5rem;
+      line-height: ($row-height*1.5 - 10);
+      height: ($row-height*1.5 - 10);
+      margin: 5px 5px 5px 0;
+      color: #000;
 
       -webkit-touch-callout: none;
       @include user-select(none);
 
       a.tm-tag-remove {
-        padding: 0 3px;
+        padding: 0;
+        margin-left: 5px;
       }
     }
 

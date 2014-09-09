@@ -1,5 +1,24 @@
 angular.module("proton.richTextEditor", [])
 
+// Common directive for Focus
+.directive('focus', function($timeout) {
+  return {
+    scope : {
+      trigger : '@focus'
+    },
+    link : function(scope, element) {
+      scope.$watch('trigger', function(value) {
+        if (value === "true") {
+          $timeout(function() {
+            element[0].focus();
+          });
+        }
+      });
+    }
+  };
+}) 
+
+
 .directive('richTextEditor', function( $log, $location ) {
 
   var self = this;
@@ -23,10 +42,9 @@ angular.module("proton.richTextEditor", [])
         }
       });
       $scope.editor = new wysihtml5.Editor(textarea[0], {
-        style: false,
+        style: false, 
         toolbar: toolbar[0],
-        stylesheets: ["/assets/application.css"],
-        stylesheets: ["/assets/app.css"],
+        stylesheets: ["/assets/application.css","/assets/app.css"],
         parserRules:  wysihtml5ParserRules
       });
       $scope.editor.on("change", function () {
@@ -49,10 +67,10 @@ angular.module("proton.richTextEditor", [])
         $scope.editor.composer.setValue( newValue );
       });
       function resizeIframeToFitContent() {
-        $("iframe").height('');
-        var iframeHeight = $("iframe").contents().find("html").outerHeight();
-        iframeHeight = iframeHeight*1.1;
-        $("iframe").height(iframeHeight);
+        $(".wysihtml5-sandbox").css('height','auto');
+        var iframeHeight = $(".wysihtml5-sandbox").contents().find("html").outerHeight();
+        iframeHeight = iframeHeight*1.3;
+        $(".wysihtml5-sandbox").css('height',iframeHeight);
       }      
     }
   }
