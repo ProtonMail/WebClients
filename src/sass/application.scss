@@ -15,9 +15,10 @@ $fa-font-path: "fonts";
   }
 }
 
-html {
+html, body {
   position: relative;
   min-height: 100%;
+  height: 100%;
 }
 
 .test {}
@@ -28,8 +29,13 @@ html {
 
 .secure #body {
   min-height: 100%;
+  height: 100%;
 }
-.secure #main {}
+.secure #main,
+#main.secure {
+  position: relative;
+  min-height: 100%;
+}
 
 .modal-body {
   background: $panel-bg;
@@ -47,13 +53,13 @@ h1 {
   }
 }
 
-body,
 #main {
-  margin-bottom: $footer-height;
+  padding-bottom: $footer-height;
 }
 
 body footer {
   position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: ($footer-height);
@@ -72,17 +78,12 @@ body footer {
 }
 
 .secure {
-  .navbar-inversed,
   #footer {
-    margin-left: $sidebar-width;
-  }
-  #footer {
-    @include calc(width, '100% - #{$sidebar-width}');
     background: #e5e5e5;
     // box-shadow: inset 0 1px #e5e5e5;
     color: #999;
     a {
-      color: #999
+      color: #999;
     }
   }
 }
