@@ -166,6 +166,7 @@ angular.module("proton.controllers.Messages", [
 })
 
 .controller("ComposeMessageController", function(
+  $state,
   $rootScope,
   $scope,
   $stateParams,
@@ -233,6 +234,30 @@ angular.module("proton.controllers.Messages", [
   }
 
   $scope.send = function () {
+    var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
+    _.defaults(newMessage, {
+      RecipientList: '',
+      CCList: '',
+      BCCList: '',
+      MessageTitle: '',
+      PasswordHint: '',
+      Attachments: []
+    });
+    if (message.Attachments) {
+      newMessage.Attachments = _.map(message.Attachments, function (att) {
+        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+      });
+    }
+    newMessage.MessageBody = {
+      'zhj4478@gmail.com':'jkldfjklajflkjasldf',
+      self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
+      outsiders: ''
+    };
+
+    networkActivityTracker.track(newMessage.$send(null, function (result) {
+        $state.go("secured.inbox");
+    }));
+
   }
 
   $scope.saveDraft = function () {

@@ -121,6 +121,10 @@ angular.module("proton.models", [
       updateDraft: {
         method: "put",
         url: authentication.baseURL + "/messages/:MessageID/draft"
+      },
+      send:{
+        method: "post",
+        url: authentication.baseURL + "/messages"
       }
     }
   );
