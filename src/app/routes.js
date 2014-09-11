@@ -257,7 +257,7 @@ angular.module("proton.routes", [
       },
       resolve: {
         message: function(Message, $stateParams, networkActivityTracker, messageCache) {
-          console.log($stateParams);
+          // console.log($stateParams);
           if ($stateParams.draft) {
             return networkActivityTracker.track(
               messageCache

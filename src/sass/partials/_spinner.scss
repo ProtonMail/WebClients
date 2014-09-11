@@ -1,3 +1,14 @@
+#backdrop {
+  background: rgba(25,25,25,.25);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2222;
+  cursor: wait;
+}
+
 .spinner {
   position: absolute;
   top: 17px;
@@ -6,6 +17,7 @@
   width: 70px;
   text-align: center;
   opacity: 1;
+  z-index: 3333;
 
   @include transition(opacity 0.16s ease-in);
 
@@ -20,7 +32,7 @@
   > div {
     width: 10px;
     height: 10px;
-    background-color: #aaa;
+    background-color: #fff;
 
     border-radius: 100%;
     display: inline-block;

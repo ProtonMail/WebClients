@@ -21,12 +21,14 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
   };
 
   $scope.tryLogin = function() {
+    $('input').blur();
     clearErrors();
-    console.log(login);
+    // console.log(login);
     login(this);
   };
 
   $scope.tryDecrypt = function() {
+    $('input').blur();
     clearErrors();
     networkActivityTracker.track(
       authentication

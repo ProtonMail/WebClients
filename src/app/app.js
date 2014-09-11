@@ -29,6 +29,7 @@ angular.module("proton", [
   "proton.slider",
   "proton.delayedPassword",
   "proton.fieldMatch",
+  "proton.fieldFocus",
 
   // Filters
   "proton.filters.strings",

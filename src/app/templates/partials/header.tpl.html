@@ -1,3 +1,8 @@
+<div class="spinner" ng-show="networkActivity.loading()">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div><!--/.spinner-->
 <nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" role="navigation">
   <div class="container-fluid">
 
@@ -25,12 +30,6 @@
       </form>
       <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState"><span class="fa fa-search"></span></a>
       <p class="navbar-text" ng-if="isLoggedIn"><em>Signed in as: </em><strong>{{ user.DisplayName }}</strong></p>
-
-      <div class="spinner" ng-show="networkActivity.loading()">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
 
       <div error-reporter class="alert alert-danger centered ng-hide">
         <button type="button" class="close" ng-click="errorReporter.active = false">

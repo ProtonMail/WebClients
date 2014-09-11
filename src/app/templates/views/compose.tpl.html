@@ -15,8 +15,10 @@
        ng-class="{invalid: composeForm.recipient_list.$touched && composeForm.recipient_list.$invalid}">
     <label class="control-label col-xs-1"
            for="message-to">To</label>
-    <div class="col-xs-11">
-      <input type="text"
+    <div class="col-xs-11" field-focus>
+      <input focus="true"
+             field-focus
+             type="text" 
              required
              email-field
              ng-model="message.RecipientList"
@@ -25,14 +27,29 @@
              placeholder="example@protonmail.ch"
              name="recipient_list">
     </div>
+    <div id="others">
+      <a href="" ng-if="!shouldShowField('CC')" ng-click="toggleField('CC')">
+        <span ng-switch="shouldShowField('CC')" ng-class="{active:!shouldShowField('CC')}">
+          <span ng-switch-when="false">CC</span>
+          <span ng-switch-default>CC</span>
+        </span>
+      </a>
+      <a href="" ng-if="!shouldShowField('BCC')" ng-click="toggleField('BCC')">
+        <span ng-switch="shouldShowField('BCC')" ng-class="{active:!shouldShowField('BCC')}">
+          <span ng-switch-when="false">BCC</span>
+          <span ng-switch-default>BCC</span>
+        </span>
+      </a>      
+    </div><!--/#others-->
   </div>
 
   <div class="form-group" ng-if="shouldShowField('CC')">
     <label class="control-label optional col-xs-1" for="message-cc">CC
       <i class="fa fa-times" ng-click="toggleField('CC')"></i>
     </label>
-    <div class="col-xs-11">
-      <input type="text"
+    <div class="col-xs-11" field-focus>
+      <input field-focus
+             type="text"
              email-field
              class="form-control"
              ng-model="message.CCList"
@@ -46,8 +63,9 @@
     <label class="control-label optional col-xs-1" for="message-bcc">BCC
       <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
     </label>
-    <div class="col-xs-11">
-      <input type="text"
+    <div class="col-xs-11" field-focus>
+      <input field-focus
+             type="text"
              email-field
              class="form-control"
              ng-model="message.BCCList"
@@ -60,7 +78,8 @@
   <div class="form-group"
        ng-class="{invalid: composeForm.subject.$touched && composeForm.subject.$invalid}">
     <div class="col-xs-12">
-      <input type="text"
+      <input field-focus
+             type="text"
              required
              class="subject input-lg form-control"
              ng-model="message.MessageTitle"
