@@ -235,6 +235,7 @@ angular.module("proton.controllers.Messages", [
   }
 
   $scope.send = function () {
+    // get the message meta data
     var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
     _.defaults(newMessage, {
       RecipientList: '',
@@ -249,21 +250,27 @@ angular.module("proton.controllers.Messages", [
         return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
       });
     }
+    // encrypt the message body and set 'outsiders' to empty by default
     newMessage.MessageBody = {
       self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
       outsiders: ''
     };
 
-    emils =  newMessage.RecipientList + (newMessage.CCList == '' ? '' : ','+ newMessage.CCList) + (newMessage.BCCList == '' ? '' : ','+ newMessage.BCCList)
-    base64 = crypto.encode_base64(emils);
+    // concat all recipients
+    emails =  newMessage.RecipientList + (newMessage.CCList == '' ? '' : ','+ newMessage.CCList) + (newMessage.BCCList == '' ? '' : ','+ newMessage.BCCList)
+    base64 = crypto.encode_base64(emails);
 
-
+    // new message object
     var userMessage = new Message();
+    // get users' publickeys
     networkActivityTracker.track(userMessage.$pubkeys({Emails:base64}).then(function (result) {
+      // set defaults
       isOutside = false;
-      mails = emils.split(",");
+      mails = emails.split(",");
       var log = [];
+      // loop through and overwrite defaults
       angular.forEach(mails, function(value) {
+        // encrypt messagebody with each user's keys
         newMessage.MessageBody[value] = crypto.encryptMessageToPackage(message.RawMessageBody, result[value]);
         if(!isOutside)
         {
@@ -273,11 +280,13 @@ angular.module("proton.controllers.Messages", [
            }
         }
       });
-
+      // dont encrypt if its going outside
       if (isOutside) { newMessage.MessageBody['outsiders'] = message.RawMessageBody };
-
+      // send email
       networkActivityTracker.track(newMessage.$send(null, function (result) {
+        // reset form
         $scope.composeForm.$setPristine();
+        // redirect
         $state.go("secured.inbox");
       },function(err){}));
 
