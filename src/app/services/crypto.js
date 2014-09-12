@@ -127,6 +127,10 @@ angular.module("proton.crypto", [])
         // encrypt the message symetrically for outside recipients using the message and a hash of the pw
         return encryptMessage(messageBody, openpgp.crypto.hash.sha256(password));
       },
+      encode_base64: function(data)
+      {
+        return encode_utf8_base64(data);
+      },
       setMailboxPassword: function(pubKey, prKey, password) {
         var testMsg = "sPKkm9lk6hSSZ49rRFwg";
 

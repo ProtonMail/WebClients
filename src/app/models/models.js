@@ -125,6 +125,12 @@ angular.module("proton.models", [
       send:{
         method: "post",
         url: authentication.baseURL + "/messages"
+      },
+      pubkeys: {
+        method: 'get',
+        url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+        isArray: false,
+        transformResponse: getFromJSONResponse()
       }
     }
   );
@@ -258,12 +264,22 @@ angular.module("proton.models", [
   return Message;
 })
 
-.factory("User", function($resource, $injector) {
+.factory("User", function(
+  $resource,
+  $injector){
   var authentication = $injector.get("authentication");
-  return $resource(authentication.baseURL + "/users/:UserID", authentication.params(), {
+  return $resource(
+    authentication.baseURL + "/users/:UserID", authentication.params(),
+    {
     get: {
       method: 'get',
       isArray: false,
+      transformResponse: getFromJSONResponse()
+    },
+    pubkeys: {
+      method: 'get',
+      url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+      isArray: true,
       transformResponse: getFromJSONResponse()
     }
   });

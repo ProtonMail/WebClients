@@ -170,6 +170,7 @@ angular.module("proton.controllers.Messages", [
   $rootScope,
   $scope,
   $stateParams,
+  $injector,
   Message,
   message,
   localStorageService,
@@ -249,15 +250,42 @@ angular.module("proton.controllers.Messages", [
       });
     }
     newMessage.MessageBody = {
-      'zhj4478@gmail.com':'jkldfjklajflkjasldf',
       self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
       outsiders: ''
     };
 
-    networkActivityTracker.track(newMessage.$send(null, function (result) {
-        $state.go("secured.inbox");
-    }));
+    emils =  newMessage.RecipientList + (newMessage.CCList == '' ? '' : ','+ newMessage.CCList) + (newMessage.BCCList == '' ? '' : ','+ newMessage.BCCList)
+    base64 = crypto.encode_base64(emils);
 
+
+    var userMessage = new Message();
+    networkActivityTracker.track(userMessage.$pubkeys({Emails:base64}).then(function (result) {
+      isOutside = false;
+      mails = emils.split(",");
+      var log = [];
+      angular.forEach(mails, function(value) {
+        newMessage.MessageBody[value] = crypto.encryptMessageToPackage(message.RawMessageBody, result[value]);
+        if(!isOutside)
+        {
+           if(!value.indexOf('protonmail') < 0)
+           {
+              isOutside = true;
+           }
+        }
+      });
+
+      if (isOutside) { newMessage.MessageBody['outsiders'] = message.RawMessageBody };
+
+      networkActivityTracker.track(newMessage.$send(null, function (result) {
+        $scope.composeForm.$setPristine();
+        $state.go("secured.inbox");
+      },function(err){}));
+
+    },
+    function(err)
+    {
+      alert(err);
+    }));
   }
 
   $scope.saveDraft = function () {
