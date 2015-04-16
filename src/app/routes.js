@@ -187,6 +187,32 @@ angular.module("proton.routes", [
     })
 
     // -------------------------------------------
+    // SUPPORT ROUTES
+    // -------------------------------------------
+    .state("support", {
+      url: "/support",
+      views: {
+        "main@": {
+          controller: "LoginController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@login": {
+          templateUrl: "templates/views/login.tpl.html"
+        }
+      }
+    })
+
+    .state("support.reset-password", {
+      url: "/reset-password",
+      controller: "ResetController",
+      views: {
+        "panel@support": {
+          templateUrl: "templates/views/reset-password.tpl.html"
+        }
+      }
+    })
+
+    // -------------------------------------------
     // SECURED ROUTES
     // this includes everything after login/unlock
     // -------------------------------------------

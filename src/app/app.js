@@ -2,7 +2,7 @@ angular.module("proton", [
   // "ngAnimate",
   "ngSanitize",
 
-  "LocalStorageModule",
+  // "LocalStorageModule",
   "btford.markdown",
   "angularFileUpload",
 

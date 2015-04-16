@@ -22,14 +22,14 @@
             role="search"
             ng-if="('secured.*' | includedByState) && isInMailbox">
         <div class="input-group form-group">
-          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
+          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search..." autocomplete="off"/>
           <span class="input-group-btn">
             <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
           </span>
         </div><!-- /input-group -->
       </form>
       <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState"><span class="fa fa-search"></span></a>
-      <p class="navbar-text" ng-if="isLoggedIn"><em>Signed in as: </em><strong>{{ user.DisplayName }}</strong></p>
+      <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="user.DisplayName"></em></p>
 
       <div error-reporter class="alert alert-danger centered ng-hide">
         <button type="button" class="close" ng-click="errorReporter.active = false">

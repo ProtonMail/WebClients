@@ -19,16 +19,14 @@
     margin-bottom: 0;
   }
   input {
-    background: #777;
+    background: #444;
     border-radius: 2rem;
     border-color: transparent;
     color: #fff;
-    box-shadow: none;
-    width: $sidebar-width;    
+    box-shadow: 0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1);
+    width: $sidebar-width;
     &:focus {
-      border-color: #777 #777 lighten(#777,5%);
       outline: 0;
-      box-shadow: 0 1px 1px rgba(black, .1);
     }
   }
   button {

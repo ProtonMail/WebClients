@@ -1,8 +1,6 @@
-<div class="panel-body panel-thick">
+<div class="panel-body">
 <form id="sign_in_form" name="sign_in" action="/login.php" ng-keypress="keypress($event)" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
-  <h1 class="text-center">
-    <span class="fa fa-2x fa-power-off faded"></span>Sign In
-  </h1>
+  <h1 class="text-center">Sign In</h1>
 
   <p class="alert alert-warning text-center hide" role="alert" id="igg-contributor">
     <strong>
@@ -11,19 +9,32 @@
   </p>
 
   <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
-  <div class="form-group" id="signInFirst">
-    <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="">
-  </div><!--/.form-group-->
-  <div class="form-group" id="signInSecond">
-    <input autocomplete="off" type="password" ng-model="password" class="form-control" tabindex="2" name="Password" required="" placeholder="Password" value="">
-  </div><!--/.form-group-->
-  <a href="/support/reset-password" class="pull-left btn btn-link">Need Help?</a>
 
-  <button type="button" class="pull-right btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="4" ng-click="tryLogin()">
-    <span class="fa"></span>
-    <span>Sign In</span>
-  </button>
+  <div class="form-group">
+    <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
+  </div>
+  <div class="form-group">
+    <input autocomplete="off" type="password" ng-model="password" class="form-control" tabindex="2" name="Password" required="" placeholder="Password" value="" />
+  </div>
+  <div class="fluid-container">
+    <div class="row">
+      <div class="col-xs-6">
+        <a ui-sref="support.reset-password">Forgot password?</a>
+      </div>
+      <div class="col-xs-6 text-right">
+        <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="4" ng-click="tryLogin()">
+          <span>Sign In</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-  <input type="hidden" id="hashed_pw" name="hashed_pw">
+  <input type="hidden" id="hashed_pw" name="hashed_pw" />
 </form>
-</div><!--/.panel-body-->
+
+<p class="text-center no-margin-bottom">
+  <span class="text-muted">Don't have an account?</span><br />
+  <a href="/invite" class="btn btn-default btn-block"><strong>Request an invite now!</strong></a>
+</p>
+
+</div>

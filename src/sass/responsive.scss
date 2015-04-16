@@ -14,20 +14,32 @@
 @media screen and (max-width: 991px) {
 	.message-toolbar > ul > li > a {
 		padding: 0 10px;
-	} 
+	}
 	#main {
-		margin-left: ($sidebar-width)*.8;
+		margin-left: ($sidebar-width)*.3;
 	}
 	#sidebar {
-		width: ($sidebar-width)*.8;
-	}	
+		width: ($sidebar-width)*.3;
+		.list-group-item {
+			.btn {
+				text-align: center;
+				&.btn-composer {
+					height: 5rem;
+  					line-height: 5rem;
+				}
+			}
+			.fa {
+				margin-right: 0;
+			}
+		}
+	}
 }
 @media screen and (max-width: 767px) {
 	#sidebar,
 	.message-toolbar {
 		display: none;
 	}
-	.secure .navbar-inversed, 
+	.secure .navbar-inversed,
 	.secure #footer,
 	#main {
 		margin-left: 0;
@@ -52,7 +64,7 @@
 			white-space: normal;
 		}
 		.fa-unlock-alt {
-			color: rgba(0, 0, 0, 0.25); 
+			color: rgba(0, 0, 0, 0.25);
 		}
 		.fa-lock {
 			color: #336
@@ -103,7 +115,7 @@
 					.label {
 						float: right;
 						background: #555;
-						font-size: 13px;						
+						font-size: 13px;
 					}
 				}
 			}
@@ -115,6 +127,7 @@
 			border-color: #333;
 			color: #fff;
 			border-radius: 0;
+			box-shadow: none;
 		}
 		.form-group,
 		table {
@@ -123,7 +136,7 @@
 	}
 	#messageActionsMobile {
 		background: #e5e5e5;
-		box-shadow: inset 0 -1px #ccc;		
+		box-shadow: inset 0 -1px #ccc;
 		a {
 			color: #000;
 			display: block;

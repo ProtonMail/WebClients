@@ -79,11 +79,11 @@ body footer {
 
 .secure {
   #footer {
-    background: #e5e5e5;
-    // box-shadow: inset 0 1px #e5e5e5;
-    color: #999;
+    background: #555;
+    color: #ccc;
     a {
-      color: #999;
+      color: #ccc;
+      text-decoration: underline;
     }
   }
 }
@@ -179,7 +179,6 @@ body {
   font-weight: 400;
   min-height: 100%;
   width: 100%;
-
   background: #fff;
 
   &.login {
@@ -241,6 +240,10 @@ body {
 
 p {
   margin: 1em 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
 }
 
 @import "partials/login";
