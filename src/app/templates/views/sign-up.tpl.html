@@ -1,0 +1,47 @@
+<div class="panel panel-default panel-sign-up wrap">
+    <div class="panel-heading">
+        <h1 class="text-center no-margin-bottom">Create your account</h1>
+    </div>
+
+    <div class="panel-body">
+        <div class="alert alert-danger" ng-hide="compatibility">
+            <h4>Browser Not Supported</h4>
+            <p>Sorry, but our code doesn't currently support your browser OR you don't have <kbd>sessionStorage</kbd> enabled. Please try again using one of the following browsers instead:</p>
+            <ul>
+                <li><a target="_blank" href="//www.mozilla.org/en-US/firefox/new/" class="pure-button">Firefox</a></li>
+                <li><a target="_blank" href="//www.google.com/intl/en/chrome/browser/" class="pure-button">Chrome</a></li>
+                <li><a target="_blank" href="//support.apple.com/downloads/#safari" class="pure-button">Safari</a></li>
+            </ul>
+        </div>
+
+        <div class="well well-sm">
+            <p>ProtonMail uses a two password system to secure your account.</p>
+
+            <h4><i class="fa fa-user"></i> Login Password</h4>
+
+            <p>The first password is your <kbd>Login Password</kbd>. This password is sent to our server so we can make sure you are actually the person signing into your account.</p>
+
+            <p>We use this to authenticate you and log you into our system.</p>
+
+            <h4><i class="fa fa-inbox"></i> Mailbox Password</h4>
+
+            <p>The second password is your <kbd>Mailbox Password</kbd>. This password is used to decrypt your messages in your browser. This password never goes to our server so even we can't read your messages.</p>
+
+            <p>We never see this second password, we cannot recover it for you.</p>
+        </div>
+
+        <p class="alert alert-info">
+            ProtonMail uses the latest technology and requires a <strong>fully updated</strong> browser. For best results, we recommend completing the initial account setup using a desktop or laptop computer.
+        </p>
+
+        <p class="alert alert-warning">
+            Password Managers such as <strong>LastPass</strong> may cause login issues and are not recommended for use during our Beta. <a target="_blank" href="/blog/password-managers/">Learn More</a>
+        </p>
+
+        <a ng-click="start();" class="btn btn-primary btn-block btn-lg">Let's get started</a>
+    </div>
+</div>
+
+<p class="text-center">
+    Already have an account? <a ui-sref="login">Log In</a>.
+</p>

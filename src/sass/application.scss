@@ -21,10 +21,17 @@ html, body {
   height: 100%;
 }
 
-.test {}
+.bold {
+  font-weight: bold;
+}
 
 .mobileOnly {
   display: none;
+}
+
+.radio, .checkbox {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .secure #body {
@@ -58,32 +65,21 @@ h1 {
 }
 
 body footer {
-  position: absolute;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: ($footer-height);
   line-height: ($footer-height);
   font-size: ($font-size-base*.85);
-  color: $gray-light;
-  background: #ccc;
+  color: #ccc;
+  background: #555;
   a {
-    color: $gray;
+    color: #ccc;
     margin: 0 0 0 1rem;
     display: inline-block;
+    text-decoration: underline;
     &:hover {
-      color: $gray-dark;
-    }
-  }
-}
-
-.secure {
-  #footer {
-    background: #555;
-    color: #ccc;
-    a {
-      color: #ccc;
-      text-decoration: underline;
+      color: white;
     }
   }
 }
@@ -91,6 +87,10 @@ body footer {
 .adminContent {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.well {
+  box-shadow: none;
 }
 
 .btn-default,
@@ -155,6 +155,10 @@ body footer {
   }
 }
 
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
 .navbar-brand {
   padding-top: 14px;
   padding-bottom: 14px;
@@ -201,26 +205,6 @@ body {
     -webkit-font-smoothing: antialiased;
   }
 
-  footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: ($footer-height);
-    line-height: ($footer-height);
-    font-size: ($font-size-base*.85);
-    color: $gray-light;
-    background: #ccc;
-
-    a {
-      color: $gray;
-      margin: 0 0 0 1rem;
-      display: inline-block;
-      &:hover {
-        color: $gray-dark;
-      }
-    }
-  }
-
   .alert-warning a { color: darken($btn-warning-bg, 25%);}
   .alert-primary a { color: darken($btn-primary-bg, 25%);}
   .alert-success a { color: darken($btn-success-bg, 25%);}
@@ -254,6 +238,7 @@ p {
 @import "partials/message-view";
 @import "partials/compose";
 @import "partials/contacts";
+@import "partials/sign-up";
 @import "partials/spinner";
 @import "partials/slider";
 @import "partials/error-reporter";

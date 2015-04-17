@@ -187,6 +187,43 @@ angular.module("proton.routes", [
     })
 
     // -------------------------------------------
+    // ACCOUNT ROUTES
+    // -------------------------------------------
+    .state("account", {
+      url: "/sign-up",
+      resolve: {
+
+      },
+      views: {
+        "main@": {
+          controller: "AccountController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@account": {
+          templateUrl: "templates/views/sign-up.tpl.html"
+        }
+      }
+    })
+
+    .state("account.step1", {
+      url: "/step-1",
+      views: {
+        "panel@account": {
+          templateUrl: "templates/views/step1.tpl.html"
+        }
+      }
+    })
+
+    .state("account.step2", {
+      url: "/step-2",
+      views: {
+        "panel@account": {
+          templateUrl: "templates/views/step2.tpl.html"
+        }
+      }
+    })
+
+    // -------------------------------------------
     // SUPPORT ROUTES
     // -------------------------------------------
     .state("support", {
@@ -204,8 +241,11 @@ angular.module("proton.routes", [
 
     .state("support.reset-password", {
       url: "/reset-password",
-      controller: "ResetController",
       views: {
+        "main@": {
+          controller: "ResetController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
         "panel@support": {
           templateUrl: "templates/views/reset-password.tpl.html"
         }

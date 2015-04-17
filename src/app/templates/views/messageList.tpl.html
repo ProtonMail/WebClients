@@ -2,6 +2,7 @@
 <table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover hidden-xs" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
+        ng-init="$last ? truncateSubjects() : null"
         ng-click="navigateToMessage($event, message)"
         ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
         >

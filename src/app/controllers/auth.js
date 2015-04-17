@@ -1,6 +1,13 @@
 angular.module("proton.controllers.Auth", ["proton.authentication"])
 
-.controller("LoginController", function($rootScope, $state, $scope, authentication, login, networkActivityTracker) {
+.controller("LoginController", function(
+    $rootScope,
+    $state,
+    $scope,
+    authentication,
+    login,
+    networkActivityTracker
+) {
 
   if ($state.is("login") && authentication.isLoggedIn()) {
     $state.go("login.unlock");
@@ -8,6 +15,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
   } else if ($state.is("login.unlock")) {
 
   }
+
   $rootScope.user = undefined;
   $rootScope.pageName = "Login";
 

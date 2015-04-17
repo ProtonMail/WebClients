@@ -2,7 +2,7 @@ angular.module("proton", [
   // "ngAnimate",
   "ngSanitize",
 
-  // "LocalStorageModule",
+  "LocalStorageModule",
   "btford.markdown",
   "angularFileUpload",
 
@@ -21,6 +21,7 @@ angular.module("proton", [
   "proton.networkActivity",
   "proton.messages",
   "proton.attachments",
+  "proton.tools",
 
   // Directives
   "proton.tooltip",
@@ -35,6 +36,7 @@ angular.module("proton", [
   "proton.filters.strings",
 
   // Controllers
+  "proton.controllers.Account",
   "proton.controllers.Admin",
   "proton.controllers.Auth",
   "proton.controllers.Messages",

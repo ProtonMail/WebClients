@@ -1,0 +1,37 @@
+<div class="panel panel-default panel-sign-up wrap">
+    <div class="panel-heading">
+        <h1 class="text-center">Create your account</h1>
+        <h4 class="text-center no-margin-bottom">Step 2 of 2</h4>
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-info">
+            <div class="bold">Enter a strong password that will be used to secure your mailbox.</div>
+            <p>We don't have access to this password. If you lose it we won't be able to recover your encrypted messages!</p>
+        </div>
+
+        <form ng-submit="finish(step2)" name="step2" novalidate>
+
+            <div class="form-group">
+                <label for="password">Mailbox Password</label>
+                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
+                <div ng-show="step2.$submitted || step2.password.$touched">
+                    <p ng-show="step2.password.$error.required" class="text-danger">Mailbox password is required.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordc">Confirm Mailbox Password</label>
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="Password" required="" />
+                <div ng-show="step2.$submitted || step2.passwordc.$touched">
+                    <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
+                </div>
+            </div>
+
+            <button tabindex="3" type="submit" class="btn btn-primary btn-block btn-lg">Finish Sign Up</button>
+
+        </form>
+
+        <h6 class="text-center">Keep this password safe - it cannot be recovered.</h6>
+
+    </div>
+</div>

@@ -1,16 +1,18 @@
-<div class="panel-body">
-    <h1 class="text-center">Decrypt Mailbox</h1>
-    <fieldset class="pure-form">
-        <div class="alert alert-danger" ng-if="error">
-            <p>{{ error.message }}</p>
-            <p><a href="/pages/faq#faq1" target="_blank">Related FAQ</a></p>
-        </div>
-        <div class="form-group">
-            <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
-        </div>
-        <a href="/support/login-form" class="pull-left login-support btn btn-link" target="_blank">Forgot password?</a>
-        <button type="button" id="enck" class="btn btn-default pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
-            <span>Unlock</span>
-        </button>
-    </fieldset>
+<div class="panel panel-default wrap">
+    <div class="panel-body">
+        <h1 class="text-center">Decrypt Mailbox</h1>
+        <fieldset class="pure-form">
+            <div class="alert alert-danger" ng-if="error">
+                <p>{{ error.message }}</p>
+                <p><a href="/pages/faq#faq1" target="_blank">Related FAQ</a></p>
+            </div>
+            <div class="form-group">
+                <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
+            </div>
+            <a href="/support/login-form" class="pull-left login-support btn btn-link" target="_blank">Forgot password?</a>
+            <button type="button" id="enck" class="btn btn-default pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
+                <span>Unlock</span>
+            </button>
+        </fieldset>
+    </div>
 </div>

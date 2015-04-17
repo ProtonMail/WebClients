@@ -8,6 +8,7 @@ angular.module("proton.controllers.Messages", [
   $scope,
   $rootScope,
   $q,
+  $timeout,
   messages,
   messageCount,
   messageCache,
@@ -34,6 +35,33 @@ angular.module("proton.controllers.Messages", [
   $scope.selectedOrder = $stateParams.sort || "-date";
 
   messageCache.watchScope($scope, "messages");
+
+  $scope.truncateSubjects = function() {
+      $timeout(function() {
+          $('#message .subject h4').hide();
+          var outerWidth = $('#message .subject').eq(0).outerWidth();
+          var width;
+
+          if(!!!outerWidth) {
+            width = 'auto';
+          } else {
+            width = outerWidth - 35;
+          }
+
+          $('#message .subject h4').css('width', width);
+          $('#message .subject h4').show();
+      }, 200);
+  };
+
+  $(window).bind('resize load',function() {
+      $scope.truncateSubjects();
+  });
+
+  $scope.subjectStyle = function() {
+      return {
+          width: $scope.subjectWidth + 'px'
+      };
+  };
 
   $scope.hasNextPage = function () {
     return $scope.messageCount > ($scope.page * messagesPerPage);

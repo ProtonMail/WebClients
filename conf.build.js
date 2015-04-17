@@ -32,7 +32,7 @@ module.exports = {
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-animate/angular-animate.js",
-      "vendor/angular-local-storage/angular-local-storage.js",
+      "vendor/angular-local-storage/dist/angular-local-storage.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
       "vendor/angular-file-upload/dist/angular-file-upload.js",
@@ -77,9 +77,9 @@ module.exports = {
   }),
 
   proton_build: {
-    version: "1.09",
-    notes: "http://protonmail.dev/blog/protonmail-beta-v1-09-release-notes/",
-    date: "6 Aug. 2014"
+    version: "2.0",
+    notes: "http://protonmail.dev/blog/",
+    date: "17 Apr. 2015"
   }
 };
 
