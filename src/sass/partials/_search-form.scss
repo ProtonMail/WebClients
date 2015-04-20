@@ -1,8 +1,18 @@
 #search-form {
   width: $sidebar-width;
+  -webkit-transition: width $duration-of-effect ease-in-out;
+  -moz-transition: width $duration-of-effect ease-in-out;
+  -o-transition: width $duration-of-effect ease-in-out;
+  transition: width $duration-of-effect ease-in-out;
+  &.focus {
+    width: $search-width;
+  }
   padding: 0;
   margin-right: 15px;
   position: relative;
+  .input-group {
+    width: 100%;
+  }
   input::-webkit-input-placeholder {
     color: #ccc;
   }
@@ -24,12 +34,15 @@
     border-color: transparent;
     color: #fff;
     box-shadow: 0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1);
-    width: $sidebar-width;
     &:focus {
       outline: 0;
+      border-color: #333;
     }
   }
   button {
+    &.btn-toggle {
+      right: 30px;
+    }
     background: transparent;
     border: none;
     position: absolute;

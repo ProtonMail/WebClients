@@ -1,0 +1,65 @@
+<div class="modal fade" id="searchForm" tabindex="-1" role="dialog" aria-labelledby="searchFormLabel" aria-hidden="true" ng-controller="SearchController">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" novalidate ng-submit="search()">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Folder</label>
+                                <select name="" id="" class="form-control"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Beween</label>
+                                <div class="fluid-container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Attachments</label>
+                                <div class="radio">
+                                    <label for="" class="radio-inline">
+                                        <input type="radio" name="attachments" /> Yes
+                                    </label>
+                                    <label for="" class="radio-inline">
+                                        <input type="radio" name="attachments" /> No
+                                    </label>
+                                    <label for="" class="radio-inline">
+                                        <input type="radio" name="attachments" /> All
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Sender</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Recipient</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Subject</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-search"></i> <span>Search</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

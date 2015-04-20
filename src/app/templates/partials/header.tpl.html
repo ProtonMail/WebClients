@@ -3,7 +3,7 @@
   <div class="bounce2"></div>
   <div class="bounce3"></div>
 </div><!--/.spinner-->
-<nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" role="navigation">
+<nav id="navbar" class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" role="navigation">
   <div class="container-fluid">
 
     <div class="navbar-header">
@@ -14,20 +14,24 @@
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
-        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail" />
       </a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-large">
-      <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block"
-            role="search"
-            ng-if="('secured.*' | includedByState) && isInMailbox">
-        <div class="input-group form-group">
-          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search..." autocomplete="off"/>
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
-          </span>
-        </div><!-- /input-group -->
-      </form>
+      <div ng-controller="SearchController">
+        <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block"
+              role="search"
+              ng-class="{'focus': !!searchInputFocus}"
+              ng-if="('secured.*' | includedByState) && isInMailbox">
+          <div class="input-group form-group">
+            <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search..." autocomplete="off" ng-model="searchInput" ng-focus="searchInputFocus = true" ng-blur="searchInputFocus = false"/>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-toggle" data-toggle="modal" data-target="#searchForm"><span class="fa fa-caret-down"></span></button>
+              <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+      </div>
       <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState"><span class="fa fa-search"></span></a>
       <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="user.DisplayName"></em></p>
 

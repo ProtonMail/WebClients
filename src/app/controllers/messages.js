@@ -57,12 +57,6 @@ angular.module("proton.controllers.Messages", [
       $scope.truncateSubjects();
   });
 
-  $scope.subjectStyle = function() {
-      return {
-          width: $scope.subjectWidth + 'px'
-      };
-  };
-
   $scope.hasNextPage = function () {
     return $scope.messageCount > ($scope.page * messagesPerPage);
   };
@@ -83,9 +77,23 @@ angular.module("proton.controllers.Messages", [
     }
   };
 
+  $scope.allSelected = function() {
+    var status = true;
+
+    _.forEach($scope.messages, function(message) {
+        if(!!!message.selected) {
+            status = false;
+        }
+    });
+
+    return status;
+  };
+
   $scope.selectAllMessages = function (val) {
+    var status = !!!$scope.allSelected();
+
     _.forEach($scope.messages, function (message) {
-      message.selected = this.allSelected;
+        message.selected = status;
     }, this);
   };
 

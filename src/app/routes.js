@@ -190,9 +190,13 @@ angular.module("proton.routes", [
     // ACCOUNT ROUTES
     // -------------------------------------------
     .state("account", {
-      url: "/sign-up",
-      resolve: {
-
+      url: "/sign-up/:username/:token",
+      onEnter: function($stateParams) {
+        // Check if invite user exist
+        User.checkInviteUser({
+          username: $stateParams.username,
+          token: $stateParams.token
+        });
       },
       views: {
         "main@": {
@@ -230,11 +234,23 @@ angular.module("proton.routes", [
       url: "/support",
       views: {
         "main@": {
-          controller: "LoginController",
+          controller: "SupportController",
           templateUrl: "templates/layout/auth.tpl.html"
-        },
-        "panel@login": {
-          templateUrl: "templates/views/login.tpl.html"
+        }
+      }
+    })
+
+    .state("support.message", {
+      params: {data: null}, // Tip to avoid passing parameters in the URL
+      url: "/message",
+      onEnter: function($state, $stateParams) {
+          if($stateParams.data === null) {
+              $state.go('login');
+          }
+      },
+      views: {
+        "panel@support": {
+          templateUrl: "templates/views/support-message.tpl.html"
         }
       }
     })
@@ -242,12 +258,40 @@ angular.module("proton.routes", [
     .state("support.reset-password", {
       url: "/reset-password",
       views: {
-        "main@": {
-          controller: "ResetController",
-          templateUrl: "templates/layout/auth.tpl.html"
-        },
         "panel@support": {
           templateUrl: "templates/views/reset-password.tpl.html"
+        }
+      }
+    })
+
+    .state("support.confirm-new-password", {
+      url: "/confirm-new-password/:token",
+      onEnter: function($stateParams, $state, User) {
+        var token = $stateParams.token;
+
+        // Check if reset token is valid
+        User.checkResetToken({token: token}).$promise.catch(function(result) {
+            if(result.error) {
+                $state.go("support.message", {data: {
+                  title: result.error,
+                  content: result.error_description,
+                  type: "alert-danger"
+                }});
+            }
+        });
+      },
+      views: {
+        "panel@support": {
+          templateUrl: "templates/views/confirm-new-password.tpl.html"
+        }
+      }
+    })
+
+    .state("support.reset", {
+      url: "/reset",
+      views: {
+        "panel@support": {
+          templateUrl: "templates/views/reset.tpl.html"
         }
       }
     })
@@ -323,7 +367,6 @@ angular.module("proton.routes", [
       },
       resolve: {
         message: function(Message, $stateParams, networkActivityTracker, messageCache) {
-          // console.log($stateParams);
           if ($stateParams.draft) {
             return networkActivityTracker.track(
               messageCache

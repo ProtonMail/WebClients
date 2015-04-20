@@ -269,18 +269,36 @@ angular.module("proton.models", [
   $injector){
   var authentication = $injector.get("authentication");
   return $resource(
-    authentication.baseURL + "/users/:UserID", authentication.params(),
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
     {
-    get: {
-      method: 'get',
-      isArray: false,
-      transformResponse: getFromJSONResponse()
-    },
-    pubkeys: {
-      method: 'get',
-      url: authentication.baseURL + "/users/pubkeys?users=:Emails",
-      isArray: true,
-      transformResponse: getFromJSONResponse()
+      get: {
+        method: 'get',
+        isArray: false,
+        transformResponse: getFromJSONResponse()
+      },
+      pubkeys: {
+        method: 'get',
+        url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+        isArray: true,
+        transformResponse: getFromJSONResponse()
+      },
+      checkInviteToken: {
+        method: 'get',
+        url: authentication.baseURL + "/" // TODO complete with @feng
+      },
+      checkResetToken: {
+        method: 'get',
+        url: authentication.baseURL + "/reset/password/:token",
+      },
+      resetPassword: {
+        method: 'post',
+        url: authentication.baseURL + "/reset/password"
+      },
+      resetLostPassword: {
+        method: 'post',
+        url: authentication.baseURL + "/reset/lost-password"
+      }
     }
-  });
+  );
 });

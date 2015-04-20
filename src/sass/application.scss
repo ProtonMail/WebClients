@@ -29,11 +29,6 @@ html, body {
   display: none;
 }
 
-.radio, .checkbox {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
 .secure #body {
   min-height: 100%;
   height: 100%;
@@ -84,6 +79,10 @@ body footer {
   }
 }
 
+body .secure footer {
+  position: absolute;
+}
+
 .adminContent {
   margin-left: 15px;
   margin-right: 15px;
@@ -109,11 +108,20 @@ body footer {
   }
 }
 .btn-primary {
-  @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 10%));
-  &:hover {
-    @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 5%));
-    border-color: darken($btn-primary-bg, 5%);
-  }
+  @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+    text-shadow: none;
+    color: #fff;
+    border-color: transparent;
+    &:hover {
+      background: lighten($light-purple, ($sidebar-button-lighten/2));
+      border-color: transparent;
+    }
+    &:active {
+      background: darken($light-purple, $sidebar-button-lighten);
+      color: rgba(#fff, .5);
+      border-color: transparent;
+      box-shadow: none;
+    }
 }
 .btn-success {
   @include linear-gradient($btn-success-bg, darken($btn-success-bg, 10%));
@@ -179,6 +187,25 @@ a, .btn, button, input[type="button"], input[type="submit"] {
   margin-bottom: 0
 }
 
+
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-ms-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-moz-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
 body {
   font-weight: 400;
   min-height: 100%;
@@ -187,6 +214,10 @@ body {
 
   &.login {
     background: url('img/cubes.png') 0 0 repeat;
+    animation: animatedBackground 40s linear infinite;
+    -ms-animation: animatedBackground 40s linear infinite;
+    -moz-animation: animatedBackground 40s linear infinite;
+    -webkit-animation: animatedBackground 40s linear infinite;
   }
 
   &.locked {
