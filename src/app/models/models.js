@@ -283,9 +283,25 @@ angular.module("proton.models", [
         isArray: true,
         transformResponse: getFromJSONResponse()
       },
-      checkInviteToken: {
+      createUser: {
+        method: 'post',
+        url: authentication.baseURL + "/users/create"
+      },
+      updateKeypair: {
+        method: 'post',
+        url: authentication.baseURL + "/users/key"
+      },
+      checkUserExist: {
         method: 'get',
-        url: authentication.baseURL + "/" // TODO complete with @feng
+        url: authentication.baseURL + "/users/exist"
+      },
+      checkInvite: {
+        method: 'get',
+        url: authentication.baseURL + "/users/check/:username"
+      },
+      getUserStatus: {
+        method: 'get',
+        url: authentication.baseURL + "/users/status"
       },
       checkResetToken: {
         method: 'get',
@@ -298,6 +314,56 @@ angular.module("proton.models", [
       resetLostPassword: {
         method: 'post',
         url: authentication.baseURL + "/reset/lost-password"
+      }
+    }
+  );
+})
+
+.factory("Setting", function($injector, $resource) {
+  var authentication = $injector.get("authentication");
+
+  return $resource(
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
+    {
+      updatePassword: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/password"
+      },
+      keyPassword: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/keypwd"
+      },
+      notificationEmail: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/noticeemail"
+      },
+      signature: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/signature"
+      },
+      aliases: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/domainorder"
+      },
+      dislayName: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/display"
+      }
+    }
+  );
+})
+
+.factory("Bug", function($injector, $resource) {
+  var authentication = $injector.get("authentication");
+
+  return $resource(
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
+    {
+      bugs: {
+        method: 'post',
+        url: authentication.baseURL + "/bugs"
       }
     }
   );

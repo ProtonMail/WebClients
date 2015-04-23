@@ -36,6 +36,9 @@ table.message-list {
     white-space: nowrap;
     color: rgba(0,0,0,.5);
     background-color: #F2F2F2;
+
+    @include transition(all 0.2s ease-in-out);
+
     h4 {
       margin: 0;
       padding: 0;

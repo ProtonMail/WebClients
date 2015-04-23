@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 <label for="passwordc">Confirm Mailbox Password</label>
-                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="Password" required="" />
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="Password" required="" ng-enter="finish(step2)" />
                 <div ng-show="step2.$submitted || step2.passwordc.$touched">
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
                 </div>

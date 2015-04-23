@@ -1,9 +1,6 @@
 @media (max-width: 1199px) {
-	#main {
+	#main, .secure #navbar, .secure #footer {
 		margin-left: ($sidebar-width)*.9;
-	}
-	.secure #footer {
-		width: 100%;
 	}
 	#sidebar {
 		width: ($sidebar-width)*.9;
@@ -15,7 +12,7 @@
 	.message-toolbar > ul > li > a {
 		padding: 0 10px;
 	}
-	#main {
+	#main, .secure #navbar, .secure #footer {
 		margin-left: ($sidebar-width)*.3;
 	}
 	#sidebar {
@@ -42,6 +39,7 @@
 	.secure .navbar-inversed,
 	.secure #footer,
 	#main {
+		padding-top: 0;
 		margin-left: 0;
 		width: 100%;
 	}

@@ -1,70 +1,100 @@
-<div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title"><span class="fa fa-bug"></span> Report Bug Form</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <form role="form">
-            <div class="col-md-6">
-              <div class="form-group">       
-                <label for="bug_os">Operating System</label>        
-                <select required name="bug_os" id="bug_os" class="form-control">
-                    <option selected="" value="">- Choose -</option>
-                    <option value="osx">Mac OSX</option>
-                    <option value="windows">Windows</option>
-                    <option value="linux">Linux</option>
-                    <option value="other">Other</option>
-                </select>    
-              </div><!--/.form-group-->
-            </div><!--/.col-md-6-->
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="bug_device">Device</label>  
-                <select required name="bug_device" id="bug_device" class="form-control">
-                    <option selected="" value="">- Choose -</option>
-                    <option value="desktop">Desktop</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="tablet">Tablet</option>
-                    <option value="iphone">iPhone</option>
-                    <option value="android">Android Phone</option>
-                    <option value="other">Other</option>
-                </select>
-              </div><!--/.form-group-->   
-            </div><!--/.col-md-6-->
-            <div class="col-md-6">   
-              <div class="form-group">            
-                <label for="bug_location">Where did you find it?</label>                
-                <input required class="form-control" type="text" name="bug_location" id="bug_location" placeholder="URL" value=""> 
-              </div><!--/.form-group-->
-            </div><!--/.col-md-6-->
-            <div class="col-md-6">
-              <div class="form-group">            
-                <label for="bug_browser">Browser</label>                
-                <input required class="form-control" type="text" name="bug_browser" id="bug_browser" placeholder="Browser" value="">
-              </div><!--/.form-group-->
-            </div><!--/.col-md-6-->
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="bug_email">Email</label>                
-                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="Email" value=""> 
-              </div><!--/.form-group-->
-            </div><!--/.col-md-6-->
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="bug_description">What happened?</label>       
-                <textarea class="form-control" required name="bug_description" rows="6" id="bug_description"></textarea>    
-              </div><!--/.form-group-->
-            </div><!--/.col-md-6-->
-          </form>
-        </div><!--/.row-->
-      </div><!--/.modal-body-->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-link pull-left" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary"><span class="fa fa-send"></span> Send Bug Report</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal --> 
+<div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" name="bugReportForm" ng-submit="sendBugReport(bugReportForm)" novalidate>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Report Bug Form</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="alert alert-info text-center">
+                        <strong>Have a question?</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
+                    </p>
+                    <p class="alert alert-warning text-center">
+                        We last updated our system on Apr 23, 2015. Most bugs are related to not clearing cache after an update. Before submitting a bug report, <a href="https://protonmail.ch/blog/clearing-browser-cache/" target="_blank">please clear your cache</a>.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_os.$touched && bugReportForm.bug_os.$error.required}">
+                                <label class="control-label" for="bug_os">Operating System</label>
+                                <select tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control" required>
+                                    <option selected="" disabled value="">- Choose -</option>
+                                    <option value="osx">Mac OSX</option>
+                                    <option value="windows">Windows</option>
+                                    <option value="linux">Linux</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <!--/.form-group-->
+                        </div>
+                        <!--/.col-md-6-->
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_device.$touched && bugReportForm.bug_device.$error.required}">
+                                <label class="control-label" for="bug_device">Device</label>
+                                <select tabindex="2" name="bug_device" id="bug_device" class="form-control" required>
+                                    <option selected="" disabled value="">- Choose -</option>
+                                    <option value="desktop">Desktop</option>
+                                    <option value="laptop">Laptop</option>
+                                    <option value="tablet">Tablet</option>
+                                    <option value="iphone">iPhone</option>
+                                    <option value="android">Android Phone</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <!--/.form-group-->
+                        </div>
+                        <!--/.col-md-6-->
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_location.$touched && bugReportForm.bug_location.$error.required}">
+                                <label class="control-label" for="bug_location">Where did you find it?</label>
+                                <input tabindex="3" required class="form-control" type="text" name="bug_location" id="bug_location" placeholder="URL" ng-model="bug.location">
+                            </div>
+                            <!--/.form-group-->
+                        </div>
+                        <!--/.col-md-6-->
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_browser.$touched && bugReportForm.bug_browser.$error.required}">
+                                <label class="control-label" for="bug_browser">Browser</label>
+                                <input tabindex="4" required class="form-control" type="text" name="bug_browser" id="bug_browser" placeholder="Browser" ng-model="bug.browser">
+                            </div>
+                            <!--/.form-group-->
+                        </div>
+                        <!--/.col-md-6-->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="bug_email">Your Email Address</label>
+                                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="Email" ng-model="bug.email">
+                                <p class="help-block">Please make sure to give us a way to contact you.</p>
+                            </div>
+                            <!--/.form-group-->
+                        </div>
+                        <!--/.col-md-6-->
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_description.$touched && bugReportForm.bug_description.$error.required}">
+                                <label class="control-label" for="bug_description">What happened?</label>
+                                <textarea ng-model="bug.description" class="form-control" required name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
+                            </div>
+                        </div>
+                        <!--/.col-md-12-->
+                        <div class="col-md-12">
+                            <p> We handle these bug reports in Zendesk. If you would like to keep the report within ProtonMail, please email the above info to <a href="mailto:support@protonmail.ch">support@protonmail.ch</a>.</p>
+                            <p class="alert alert-info text-center">Contact us at <a href="mailto:security@protonmail.ch">security@protonmail.ch</a> for critical security issues.</p>
+                        </div>
+                        <!--/.col-md-12-->
+                    </div>
+                    <!--/.row-->
+                </div>
+                <!--/.modal-body-->
+                <div class="modal-footer">
+                    <a class="btn btn-link pull-left" ng-click="close()">Cancel</a>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="fa fa-send"></span> Send Bug Report
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

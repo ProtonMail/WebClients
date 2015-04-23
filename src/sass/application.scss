@@ -25,6 +25,10 @@ html, body {
   font-weight: bold;
 }
 
+.vcenter {
+  vertical-align: middle;
+}
+
 .mobileOnly {
   display: none;
 }
@@ -36,11 +40,25 @@ html, body {
 .secure #main,
 #main.secure {
   position: relative;
-  min-height: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .modal-body {
   background: $panel-bg;
+}
+
+.modal-footer {
+  background-color: $navbar-bg;
+  a {
+    color: #ccc;
+    margin: 0 0 0 1rem;
+    display: inline-block;
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 h1 {
@@ -56,7 +74,12 @@ h1 {
 }
 
 #main {
+  padding-top: $navbar-height;
   padding-bottom: $footer-height;
+  h1 {
+    text-align: left;
+    margin: 1rem 0;
+  }
 }
 
 body footer {
@@ -68,6 +91,12 @@ body footer {
   font-size: ($font-size-base*.85);
   color: #ccc;
   background: #555;
+  .red::selection {
+    background-color: red;
+  }
+  .white::selection {
+    background-color: white;
+  }
   a {
     color: #ccc;
     margin: 0 0 0 1rem;
@@ -79,8 +108,23 @@ body footer {
   }
 }
 
-body .secure footer {
+.secure #navbar {
   position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 33;
+  margin-left: $sidebar-width;
+}
+
+.secure footer {
+  width: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 33;
+  margin-left: $sidebar-width;
 }
 
 .adminContent {
@@ -144,6 +188,9 @@ body .secure footer {
     border-color: darken($btn-danger-bg, 5%);
   }
 }
+.btn-sm {
+  border-radius: 2px;
+}
 
 .btn[disabled],
 .btn.disabled {
@@ -160,6 +207,10 @@ body .secure footer {
   .panel {
     max-width: 300px;
     margin: auto;
+  }
+  .secure .panel {
+    max-width: none;
+    margin-bottom: 18px;
   }
 }
 
@@ -249,6 +300,10 @@ body {
   color: rgba(0,0,0,.1);
 }
 
+.text-purple {
+  color: $dark-purple;
+}
+
 .text-center {
   text-align: center;
 }
@@ -269,6 +324,8 @@ p {
 @import "partials/message-view";
 @import "partials/compose";
 @import "partials/contacts";
+@import "partials/notification";
+@import "partials/setting";
 @import "partials/sign-up";
 @import "partials/spinner";
 @import "partials/slider";

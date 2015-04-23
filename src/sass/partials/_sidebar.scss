@@ -4,9 +4,13 @@
   text-shadow: 0px 1px 0px rgba(black, 0.5);
   z-index: 99;
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include transition(width 0.2s ease-in-out);
 
   em {
     font-style: normal;
@@ -38,19 +42,21 @@
     }
   }
 
-  #compose_button a {
-    @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
-    text-shadow: none;
-    color: #fff;
-    &:hover {
-      background: lighten($light-purple, ($sidebar-button-lighten/2));
-      border-color: transparent;
-    }
-    &:active {
-      background: darken($light-purple, $sidebar-button-lighten);
-      color: rgba(#fff, .5);
-      border-color: transparent;
-      box-shadow: none;
+  #compose_button {
+    a {
+      @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+      text-shadow: none;
+      color: #fff;
+      &:hover {
+        background: lighten($light-purple, ($sidebar-button-lighten/2));
+        border-color: transparent;
+      }
+      &:active {
+        background: darken($light-purple, $sidebar-button-lighten);
+        color: rgba(#fff, .5);
+        border-color: transparent;
+        box-shadow: none;
+      }
     }
   }
 

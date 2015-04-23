@@ -43,6 +43,8 @@ angular.module("proton.tools", [])
         }
 
         var tools = {
+            getBrowser: get_browser(),
+            getBrowserVersion: get_browser_version(),
             isCompatible: function() {
                 var compatible = true;
 

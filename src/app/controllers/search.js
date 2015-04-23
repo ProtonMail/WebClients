@@ -3,28 +3,20 @@ angular.module("proton.controllers.Search", [])
 .controller("SearchController", function($rootScope, $scope, networkActivityTracker) {
     $scope.open = true;
 
-    $scope.search = function() {
+    $scope.params = {};
 
+    $scope.search = function(fromNavbar) {
+        console.log('search');
     };
 
-    $scope.toggle = function() {
-        if($scope.open) {
-            $scope.hide();
-        } else {
-            $scope.show();
-        }
-    };
-
-    $scope.show = function() {
+    $scope.open = function() {
+        $('#searchForm').modal('show');
         $scope.open = true;
     };
 
-    $scope.hide = function() {
-        $scope.open = false;
-    };
-
     $scope.close = function() {
-        $scope.hide();
+        $('#searchForm').modal('hide');
+        $scope.open = false;
     };
 
     $scope.style = function() {
@@ -38,4 +30,8 @@ angular.module("proton.controllers.Search", [])
             display: display
         };
     };
+
+    $rootScope.$on('displayNameChange', function(params) {
+        $rootScope.user.displayName = params.displayName;
+    });
 });

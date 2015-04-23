@@ -27,8 +27,9 @@ module.exports = {
   },
   vendor_files: (vendor_files = {
     js: [
-      "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
+      "vendor/jquery/dist/jquery.js",
       "vendor/angular/angular.js",
+      "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-animate/angular-animate.js",
@@ -36,7 +37,6 @@ module.exports = {
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
       "vendor/angular-file-upload/dist/angular-file-upload.js",
-      "vendor/jquery/dist/jquery.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
@@ -49,7 +49,9 @@ module.exports = {
       "vendor/tagmanager/tagmanager.js",
       "vendor/autosize-input/jquery.autosize.input.js",
       "vendor/mousetrap/mousetrap.js",
-      "vendor/dragdealer/src/dragdealer.js"
+      "vendor/ng-sortable/dist/ng-sortable.js",
+      "vendor/dragdealer/src/dragdealer.js",
+      "vendor/angular-notify/dist/angular-notify.js"
     ],
     bootstrap_components: [
       "affix",
@@ -63,7 +65,9 @@ module.exports = {
     required_js: [],
 
     css: [
-      "vendor/tagmanager/tagmanager.css"
+      "vendor/tagmanager/tagmanager.css",
+      "vendor/ng-sortable/dist/ng-sortable.css",
+      "vendor/angular-notify/dist/angular-notify.css"
     ],
 
     sass_include_dirs: [

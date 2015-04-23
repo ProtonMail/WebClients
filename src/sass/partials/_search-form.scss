@@ -1,9 +1,6 @@
 #search-form {
   width: $sidebar-width;
-  -webkit-transition: width $duration-of-effect ease-in-out;
-  -moz-transition: width $duration-of-effect ease-in-out;
-  -o-transition: width $duration-of-effect ease-in-out;
-  transition: width $duration-of-effect ease-in-out;
+  @include transition(width 0.2s ease-in-out);
   &.focus {
     width: $search-width;
   }
@@ -41,8 +38,10 @@
   }
   button {
     &.btn-toggle {
-      right: 30px;
+      right: 35px;
+      padding-right: 10px;
     }
+    padding-left: 10px;
     background: transparent;
     border: none;
     position: absolute;

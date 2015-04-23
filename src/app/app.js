@@ -1,10 +1,10 @@
 angular.module("proton", [
   // "ngAnimate",
   "ngSanitize",
-
   "LocalStorageModule",
   "btford.markdown",
   "angularFileUpload",
+  "cgNotify",
 
   // templates
   "templates-app",
@@ -39,6 +39,7 @@ angular.module("proton", [
   "proton.controllers.Account",
   "proton.controllers.Admin",
   "proton.controllers.Auth",
+  "proton.controllers.Bug",
   "proton.controllers.Messages",
   "proton.controllers.Contacts",
   "proton.controllers.Settings",
@@ -49,7 +50,8 @@ angular.module("proton", [
 .run(function(
   $document,
   $rootScope,
-  networkActivityTracker
+  networkActivityTracker,
+  notify
 ) {
 
   $(window).bind('resize load',function(){
@@ -74,6 +76,14 @@ angular.module("proton", [
     $document.find("title").html(pageTitleTemplate({pageName: values[0], unreadCount: values[1]}));
   });
   $rootScope.networkActivity = networkActivityTracker;
+  // notification service config
+  notify.config({
+    withCross: true,
+    templateUrl: 'templates/partials/notification.tpl.html',
+    duration: 5000, // The default duration (in milliseconds) of each message. A duration of 0 will prevent messages from closing automatically.
+    position: 'center', // The default position of each message
+    maximumOpen: 5 // The maximum number of total notifications that can be visible at one time. Older notifications will be closed when the maximum is reached.
+  });
 })
 
 //

@@ -80,11 +80,15 @@ angular.module("proton.controllers.Messages", [
   $scope.allSelected = function() {
     var status = true;
 
-    _.forEach($scope.messages, function(message) {
-        if(!!!message.selected) {
-            status = false;
-        }
-    });
+    if($scope.messages.length > 0) {
+      _.forEach($scope.messages, function(message) {
+          if(!!!message.selected) {
+              status = false;
+          }
+      });
+    } else {
+      status = false;
+    }
 
     return status;
   };

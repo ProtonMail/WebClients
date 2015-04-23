@@ -20,8 +20,8 @@
                         <a class="btn" ui-sref="support.reset-password">Forgot password?</a>
                     </div>
                     <div class="col-xs-6 text-right">
-                        <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="4" ng-click="tryLogin()">
-                            <span>Sign In</span>
+                        <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="3" ng-click="tryLogin()">
+                           <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i> <span>Sign In</span>
                         </button>
                     </div>
                 </div>

@@ -191,11 +191,16 @@ angular.module("proton.routes", [
     // -------------------------------------------
     .state("account", {
       url: "/sign-up/:username/:token",
-      onEnter: function($stateParams) {
-        // Check if invite user exist
-        User.checkInviteUser({
+      onEnter: function($stateParams, $state, User) {
+        User.checkInvite({
           username: $stateParams.username,
           token: $stateParams.token
+        }).$promise.catch(function(response) {
+          $state.go("support.message", {data: {
+            title: response.error,
+            content: response.error_description,
+            type: "alert-danger"
+          }});
         });
       },
       views: {
