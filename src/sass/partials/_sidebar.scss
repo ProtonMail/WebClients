@@ -4,9 +4,13 @@
   text-shadow: 0px 1px 0px rgba(black, 0.5);
   z-index: 99;
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include transition(width 0.2s ease-in-out);
 
   em {
     font-style: normal;
@@ -14,10 +18,9 @@
 
   .divider {
     height: 2px;
-    background: rgba(black,.05);
-    border-top: 1px solid rgba(white,.1);
+    background: rgba(255,255,255,.1);
+    border-top: 1px solid rgba(0,0,0,.5);
     padding: 0;
-    margin: 15px 0 14px 0;
     clear: both;
   }
 
@@ -39,19 +42,21 @@
     }
   }
 
-  #compose_button a {
-    @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
-    text-shadow: none;
-    color: #fff;
-    &:hover {
-      background: lighten($light-purple, ($sidebar-button-lighten/2));
-      border-color: transparent;
-    }
-    &:active {
-      background: darken($light-purple, $sidebar-button-lighten);
-      color: rgba(#fff, .5);
-      border-color: transparent;
-      box-shadow: none;
+  #compose_button {
+    a {
+      @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+      text-shadow: none;
+      color: #fff;
+      &:hover {
+        background: lighten($light-purple, ($sidebar-button-lighten/2));
+        border-color: transparent;
+      }
+      &:active {
+        background: darken($light-purple, $sidebar-button-lighten);
+        color: rgba(#fff, .5);
+        border-color: transparent;
+        box-shadow: none;
+      }
     }
   }
 
@@ -106,14 +111,19 @@
   }
 
   .sizebar {
+    margin-top: .5rem;
     display: block;
     line-height: 18px;
   }
 
+  .wrap {
+    padding: 1rem;
+  }
+
   .list-group {
-    padding: 0 1rem;
     margin: 0;
    &.info {
+      padding: 0 1.5rem;
       color: #999;
       text-shadow: none;
       li {
@@ -136,6 +146,7 @@
       text-align: left;
       box-shadow: none;
       border: 0;
+      border-radius: 0;
       padding: 0 1.5rem;
       line-height: $row-height;;
       .label {

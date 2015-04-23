@@ -3,7 +3,7 @@
   <div class="bounce2"></div>
   <div class="bounce3"></div>
 </div><!--/.spinner-->
-<nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" role="navigation">
+<nav id="navbar" class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" role="navigation">
   <div class="container-fluid">
 
     <div class="navbar-header">
@@ -14,22 +14,27 @@
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
-        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
+        <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail" />
       </a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-large">
-      <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block"
-            role="search"
-            ng-if="('secured.*' | includedByState) && isInMailbox">
-        <div class="input-group form-group">
-          <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
-          </span>
-        </div><!-- /input-group -->
-      </form>
-      <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState"><span class="fa fa-search"></span></a>
-      <p class="navbar-text" ng-if="isLoggedIn"><em>Signed in as: </em><strong>{{ user.DisplayName }}</strong></p>
+      <div ng-controller="SearchController">
+        <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block"
+              role="search"
+              ng-submit="search(true)"
+              ng-class="{'focus': !!searchInputFocus}"
+              ng-if="('secured.*' | includedByState) && isInMailbox">
+          <div class="input-group form-group">
+            <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search..." autocomplete="off" ng-model="searchInput" ng-focus="searchInputFocus = true" ng-blur="searchInputFocus = false" ng-enter="$('#search-form').submit()"/>
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-toggle" ng-click="open()"><span class="fa fa-caret-down"></span></button>
+              <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+      </div>
+      <a href id="searchMob" data-toggle="modal" data-target="#searchForm" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState"><span class="fa fa-search"></span></a>
+      <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="user.DisplayName"></em></p>
 
       <div error-reporter class="alert alert-danger centered ng-hide">
         <button type="button" class="close" ng-click="errorReporter.active = false">
@@ -48,7 +53,7 @@
           <a href data-toggle="modal" data-target="#bugForm"><span class="visible-lg-inline-block fa fa-exclamation-triangle"></span> Report Bug</a>
         </li>
         <li id="nav_settings" ng-if="'secured.**' | includedByState">
-          <a ui-sref="secured.settings"><span class="visible-lg-inline-block fa fa-wrench"></span> Settings</a>
+          <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-wrench"></span> Settings</a>
         </li>
         <li id="nav_login" ng-if="!isLoggedIn">
           <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> Sign In</a>

@@ -18,7 +18,7 @@ table.message-list {
     position: absolute;
     top: 82px;
     bottom: 0;
-    left: 200px;
+    left: 0;
     right: 0;
     text-align: center;
     padding-top: 8em;
@@ -35,11 +35,15 @@ table.message-list {
     font-size: 14px;
     white-space: nowrap;
     color: rgba(0,0,0,.5);
+    background-color: #F2F2F2;
+
+    @include transition(all 0.2s ease-in-out);
 
     h4 {
       margin: 0;
       padding: 0;
       font-size: 14px;
+      overflow: hidden;
     }
 
     td {
@@ -47,7 +51,7 @@ table.message-list {
       line-height: $row-height;
       vertical-align: middle;
     }
-    
+
     &.unread {
       h4 {
         font-weight: bold;
@@ -83,7 +87,7 @@ table.message-list {
       padding-left: 15px;
       width: 7.5rem;
 
-      span { 
+      span {
         width: 1.5rem;
         text-align: center;
 
@@ -113,7 +117,7 @@ table.message-list {
       width: 5rem;
       text-transform:capitalize;
 
-      .to { 
+      .to {
         font-weight: normal;
         color: #999;
       }
@@ -125,14 +129,14 @@ table.message-list {
       text-align: right;
     }
     td.size {
-      font-family: monospace;      
+      font-family: monospace;
     }
     td.when {
       padding-right: 15px;
     }
 
 
-    i.fa-paperclip { 
+    i.fa-paperclip {
       opacity: 0;
       margin-right: 0.4em;
       padding: 0.3em;
@@ -141,8 +145,8 @@ table.message-list {
       &:not(.active) {
         pointer-events: none;
       }
-      
-      &.active { 
+
+      &.active {
         opacity: 0.5;
       }
     }

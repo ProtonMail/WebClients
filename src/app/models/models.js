@@ -269,18 +269,102 @@ angular.module("proton.models", [
   $injector){
   var authentication = $injector.get("authentication");
   return $resource(
-    authentication.baseURL + "/users/:UserID", authentication.params(),
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
     {
-    get: {
-      method: 'get',
-      isArray: false,
-      transformResponse: getFromJSONResponse()
-    },
-    pubkeys: {
-      method: 'get',
-      url: authentication.baseURL + "/users/pubkeys?users=:Emails",
-      isArray: true,
-      transformResponse: getFromJSONResponse()
+      get: {
+        method: 'get',
+        isArray: false,
+        transformResponse: getFromJSONResponse()
+      },
+      pubkeys: {
+        method: 'get',
+        url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+        isArray: true,
+        transformResponse: getFromJSONResponse()
+      },
+      createUser: {
+        method: 'post',
+        url: authentication.baseURL + "/users/create"
+      },
+      updateKeypair: {
+        method: 'post',
+        url: authentication.baseURL + "/users/key"
+      },
+      checkUserExist: {
+        method: 'get',
+        url: authentication.baseURL + "/users/exist"
+      },
+      checkInvite: {
+        method: 'get',
+        url: authentication.baseURL + "/users/check/:username"
+      },
+      getUserStatus: {
+        method: 'get',
+        url: authentication.baseURL + "/users/status"
+      },
+      checkResetToken: {
+        method: 'get',
+        url: authentication.baseURL + "/reset/password/:token",
+      },
+      resetPassword: {
+        method: 'post',
+        url: authentication.baseURL + "/reset/password"
+      },
+      resetLostPassword: {
+        method: 'post',
+        url: authentication.baseURL + "/reset/lost-password"
+      }
     }
-  });
+  );
+})
+
+.factory("Setting", function($injector, $resource) {
+  var authentication = $injector.get("authentication");
+
+  return $resource(
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
+    {
+      updatePassword: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/password"
+      },
+      keyPassword: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/keypwd"
+      },
+      notificationEmail: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/noticeemail"
+      },
+      signature: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/signature"
+      },
+      aliases: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/domainorder"
+      },
+      dislayName: {
+        method: 'put',
+        url: authentication.baseURL + "/setting/display"
+      }
+    }
+  );
+})
+
+.factory("Bug", function($injector, $resource) {
+  var authentication = $injector.get("authentication");
+
+  return $resource(
+    authentication.baseURL + "/users/:UserID",
+    authentication.params(),
+    {
+      bugs: {
+        method: 'post',
+        url: authentication.baseURL + "/bugs"
+      }
+    }
+  );
 });

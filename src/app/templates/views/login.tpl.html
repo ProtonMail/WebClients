@@ -1,29 +1,42 @@
-<div class="panel-body panel-thick">
-<form id="sign_in_form" name="sign_in" action="/login.php" ng-keypress="keypress($event)" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
-  <h1 class="text-center">
-    <span class="fa fa-2x fa-power-off faded"></span>Sign In
-  </h1>
+<div class="panel panel-default wrap">
+    <div class="panel-body">
+        <form id="sign_in_form" name="sign_in" action="/login.php" ng-keypress="keypress($event)" method="post" class="pure-form pure-form-stacked" role="form" autocomplete="off">
+            <h1 class="text-center">Sign In</h1>
+            <p class="alert alert-warning text-center hide" role="alert" id="igg-contributor">
+                <strong>
+          <a href>Indiegogo Contributor?</a>
+        </strong>
+            </p>
+            <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
+            <div class="form-group">
+                <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" type="password" ng-model="password" class="form-control" tabindex="2" name="Password" required="" placeholder="Password" value="" />
+            </div>
+            <div class="fluid-container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="btn" ui-sref="support.reset-password">Forgot password?</a>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="3" ng-click="tryLogin()">
+                           <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i> <span>Sign In</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="hashed_pw" name="hashed_pw" />
+        </form>
 
-  <p class="alert alert-warning text-center hide" role="alert" id="igg-contributor">
-    <strong>
-      <a href>Indiegogo Contributor?</a>
-    </strong>
-  </p>
+        <hr />
 
-  <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
-  <div class="form-group" id="signInFirst">
-    <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="">
-  </div><!--/.form-group-->
-  <div class="form-group" id="signInSecond">
-    <input autocomplete="off" type="password" ng-model="password" class="form-control" tabindex="2" name="Password" required="" placeholder="Password" value="">
-  </div><!--/.form-group-->
-  <a href="/support/reset-password" class="pull-left btn btn-link">Need Help?</a>
+        <p class="text-muted text-center">Don't have an account?</p>
 
-  <button type="button" class="pull-right btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="4" ng-click="tryLogin()">
-    <span class="fa"></span>
-    <span>Sign In</span>
-  </button>
+        <a href="/invite" class="btn btn-default btn-block"><strong>Request an invite now!</strong></a>
+    </div>
+</div>
 
-  <input type="hidden" id="hashed_pw" name="hashed_pw">
-</form>
-</div><!--/.panel-body-->
+<p class="text-center"><a href="/username">Forgot username?</a></p>
+<p class="text-center"><a href="/queue">Still on Waiting List?</a></p>
+<p class="text-center"><a href="{{ build.notes }}" target="_blank">Version {{ build.version }}</a> - {{ build.date }}</p>

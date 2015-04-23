@@ -21,7 +21,13 @@ html, body {
   height: 100%;
 }
 
-.test {}
+.bold {
+  font-weight: bold;
+}
+
+.vcenter {
+  vertical-align: middle;
+}
 
 .mobileOnly {
   display: none;
@@ -34,11 +40,25 @@ html, body {
 .secure #main,
 #main.secure {
   position: relative;
-  min-height: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .modal-body {
   background: $panel-bg;
+}
+
+.modal-footer {
+  background-color: $navbar-bg;
+  a {
+    color: #ccc;
+    margin: 0 0 0 1rem;
+    display: inline-block;
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 h1 {
@@ -54,43 +74,66 @@ h1 {
 }
 
 #main {
+  padding-top: $navbar-height;
   padding-bottom: $footer-height;
+  h1 {
+    text-align: left;
+    margin: 1rem 0;
+  }
 }
 
 body footer {
-  position: absolute;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: ($footer-height);
   line-height: ($footer-height);
   font-size: ($font-size-base*.85);
-  color: $gray-light;
-  background: #ccc;
+  color: #ccc;
+  background: #555;
+  .red::selection {
+    background-color: red;
+  }
+  .white::selection {
+    background-color: white;
+  }
   a {
-    color: $gray;
+    color: #ccc;
     margin: 0 0 0 1rem;
     display: inline-block;
+    text-decoration: underline;
     &:hover {
-      color: $gray-dark;
+      color: white;
     }
   }
 }
 
-.secure {
-  #footer {
-    background: #e5e5e5;
-    // box-shadow: inset 0 1px #e5e5e5;
-    color: #999;
-    a {
-      color: #999;
-    }
-  }
+.secure #navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 33;
+  margin-left: $sidebar-width;
+}
+
+.secure footer {
+  width: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 33;
+  margin-left: $sidebar-width;
 }
 
 .adminContent {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.well {
+  box-shadow: none;
 }
 
 .btn-default,
@@ -109,11 +152,20 @@ body footer {
   }
 }
 .btn-primary {
-  @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 10%));
-  &:hover {
-    @include linear-gradient($btn-primary-bg, darken($btn-primary-bg, 5%));
-    border-color: darken($btn-primary-bg, 5%);
-  }
+  @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+    text-shadow: none;
+    color: #fff;
+    border-color: transparent;
+    &:hover {
+      background: lighten($light-purple, ($sidebar-button-lighten/2));
+      border-color: transparent;
+    }
+    &:active {
+      background: darken($light-purple, $sidebar-button-lighten);
+      color: rgba(#fff, .5);
+      border-color: transparent;
+      box-shadow: none;
+    }
 }
 .btn-success {
   @include linear-gradient($btn-success-bg, darken($btn-success-bg, 10%));
@@ -136,6 +188,9 @@ body footer {
     border-color: darken($btn-danger-bg, 5%);
   }
 }
+.btn-sm {
+  border-radius: 2px;
+}
 
 .btn[disabled],
 .btn.disabled {
@@ -153,6 +208,14 @@ body footer {
     max-width: 300px;
     margin: auto;
   }
+  .secure .panel {
+    max-width: none;
+    margin-bottom: 18px;
+  }
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
 }
 
 .navbar-brand {
@@ -175,15 +238,37 @@ a, .btn, button, input[type="button"], input[type="submit"] {
   margin-bottom: 0
 }
 
+
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-ms-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+@-moz-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
 body {
   font-weight: 400;
   min-height: 100%;
   width: 100%;
-
   background: #fff;
 
   &.login {
     background: url('img/cubes.png') 0 0 repeat;
+    animation: animatedBackground 40s linear infinite;
+    -ms-animation: animatedBackground 40s linear infinite;
+    -moz-animation: animatedBackground 40s linear infinite;
+    -webkit-animation: animatedBackground 40s linear infinite;
   }
 
   &.locked {
@@ -202,26 +287,6 @@ body {
     -webkit-font-smoothing: antialiased;
   }
 
-  footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: ($footer-height);
-    line-height: ($footer-height);
-    font-size: ($font-size-base*.85);
-    color: $gray-light;
-    background: #ccc;
-
-    a {
-      color: $gray;
-      margin: 0 0 0 1rem;
-      display: inline-block;
-      &:hover {
-        color: $gray-dark;
-      }
-    }
-  }
-
   .alert-warning a { color: darken($btn-warning-bg, 25%);}
   .alert-primary a { color: darken($btn-primary-bg, 25%);}
   .alert-success a { color: darken($btn-success-bg, 25%);}
@@ -235,12 +300,20 @@ body {
   color: rgba(0,0,0,.1);
 }
 
+.text-purple {
+  color: $dark-purple;
+}
+
 .text-center {
   text-align: center;
 }
 
 p {
   margin: 1em 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
 }
 
 @import "partials/login";
@@ -251,6 +324,9 @@ p {
 @import "partials/message-view";
 @import "partials/compose";
 @import "partials/contacts";
+@import "partials/notification";
+@import "partials/setting";
+@import "partials/sign-up";
 @import "partials/spinner";
 @import "partials/slider";
 @import "partials/error-reporter";

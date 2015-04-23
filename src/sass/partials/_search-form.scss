@@ -1,8 +1,15 @@
 #search-form {
   width: $sidebar-width;
+  @include transition(width 0.2s ease-in-out);
+  &.focus {
+    width: $search-width;
+  }
   padding: 0;
   margin-right: 15px;
   position: relative;
+  .input-group {
+    width: 100%;
+  }
   input::-webkit-input-placeholder {
     color: #ccc;
   }
@@ -19,19 +26,22 @@
     margin-bottom: 0;
   }
   input {
-    background: #777;
+    background: #444;
     border-radius: 2rem;
     border-color: transparent;
     color: #fff;
-    box-shadow: none;
-    width: $sidebar-width;    
+    box-shadow: 0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1);
     &:focus {
-      border-color: #777 #777 lighten(#777,5%);
       outline: 0;
-      box-shadow: 0 1px 1px rgba(black, .1);
+      border-color: #333;
     }
   }
   button {
+    &.btn-toggle {
+      right: 35px;
+      padding-right: 10px;
+    }
+    padding-left: 10px;
     background: transparent;
     border: none;
     position: absolute;

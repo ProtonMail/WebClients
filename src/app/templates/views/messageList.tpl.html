@@ -2,14 +2,15 @@
 <table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover hidden-xs" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
+        ng-init="$last ? truncateSubjects() : null"
         ng-click="navigateToMessage($event, message)"
         ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
         >
 
       <td class="actions">
         <input type="checkbox" ng-model="message.selected" />
-        <span
-            class="fa {{ (message.IsEncrypted == '1' || '**.drafts.**' | includedByState) ? 'fa-lock' : 'fa-unlock-alt' }}"
+        <span class="fa"
+            ng-class="{'fa-lock text-purple': !!(message.IsEncrypted == '1' || '**.drafts.**' | includedByState), 'fa-unlock-alt': !!!(message.IsEncrypted == '1' || '**.drafts.**' | includedByState)}"
             pt-tooltip="{{ (message.IsEncrypted == '1' || '**.drafts.**' | includedByState) ? 'Encrypted' : 'Not encrypted' }}"></span>
 
         <a href ng-click="message.toggleStar()" ng-if="!('**.drafts.**' | includedByState)">

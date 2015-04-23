@@ -1,0 +1,58 @@
+<div class="panel panel-default panel-sign-up wrap">
+    <div class="panel-heading">
+        <h1 class="text-center">Create your account</h1>
+        <h4 class="text-center no-margin-bottom">Step 1 of 2</h4>
+    </div>
+    <div class="panel-body">
+        <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
+
+            <div class="form-group">
+                <label>Username</label>
+                <div class="well well-sm"><strong>{{account.username}}</strong>@protonmail.com</div>
+                <p class="help-block">You can switch to protonmail.ch after account creation.</p>
+            </div>
+
+            <div class="form-group">
+                <span class="pull-right bold" ng-class="{'text-success': strength(account.loginPassword).number > 100000}" ng-bind="strength(account.loginPassword).word"></span>
+                <label for="password">Login Password</label>
+                <input id="password" name="password" ng-model="account.loginPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
+                <div ng-show="step1.$submitted || step1.password.$touched">
+                    <p ng-show="step1.password.$error.required" class="text-danger">Login password is required.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordc">Confirm Login Password</label>
+                <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" tabindex="2" type="password" class="form-control" placeholder="Confirm Password" required="" validator="account.loginPassword !== account.loginPasswordConfirm" />
+                <div ng-show="step1.$submitted || step1.passwordc.$touched">
+                    <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="text-danger">Passwords don't match.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notificationEmail">Notification / Recovery Email</label>
+                <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" tabindex="3" type="email" class="form-control" placeholder="Notification Email" required="" validator="!!!tools.validEmail(account.notificationEmail)" ng-enter="saveContinue(step1)" />
+                <div ng-show="step1.$submitted || step1.notificationEmail.$touched">
+                    <p ng-show="!!!tools.validEmail(account.notificationEmail)" class="text-danger">Invalid email.</p>
+                </div>
+            </div>
+
+            <p class="alert alert-info">
+                This is used to recover your account if you get locked out or forget your login password. <strong>(Recommended)</strong>
+            </p>
+
+            <div class="checkbox">
+                <label for="optIn">
+                    <input id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps!
+                </label>
+            </div>
+
+            <button tabindex="4" type="submit" class="btn btn-primary btn-block btn-lg">Save and continue</button>
+
+        </form>
+    </div>
+</div>
+
+<p class="text-center">
+    Already have an account? <a ui-sref="login">Log In</a>.
+</p>

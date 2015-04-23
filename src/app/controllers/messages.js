@@ -8,6 +8,7 @@ angular.module("proton.controllers.Messages", [
   $scope,
   $rootScope,
   $q,
+  $timeout,
   messages,
   messageCount,
   messageCache,
@@ -35,6 +36,27 @@ angular.module("proton.controllers.Messages", [
 
   messageCache.watchScope($scope, "messages");
 
+  $scope.truncateSubjects = function() {
+      $timeout(function() {
+          $('#message .subject h4').hide();
+          var outerWidth = $('#message .subject').eq(0).outerWidth();
+          var width;
+
+          if(!!!outerWidth) {
+            width = 'auto';
+          } else {
+            width = outerWidth - 35;
+          }
+
+          $('#message .subject h4').css('width', width);
+          $('#message .subject h4').show();
+      }, 200);
+  };
+
+  $(window).bind('resize load',function() {
+      $scope.truncateSubjects();
+  });
+
   $scope.hasNextPage = function () {
     return $scope.messageCount > ($scope.page * messagesPerPage);
   };
@@ -55,9 +77,27 @@ angular.module("proton.controllers.Messages", [
     }
   };
 
+  $scope.allSelected = function() {
+    var status = true;
+
+    if($scope.messages.length > 0) {
+      _.forEach($scope.messages, function(message) {
+          if(!!!message.selected) {
+              status = false;
+          }
+      });
+    } else {
+      status = false;
+    }
+
+    return status;
+  };
+
   $scope.selectAllMessages = function (val) {
+    var status = !!!$scope.allSelected();
+
     _.forEach($scope.messages, function (message) {
-      message.selected = this.allSelected;
+        message.selected = status;
     }, this);
   };
 

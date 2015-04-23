@@ -1,0 +1,46 @@
+.list-group {
+    list-style-type: none !important;
+    .fa-ellipsis-v {
+        margin-right: 10px;
+    }
+    .as-sortable-item {
+        &:hover {
+            background-color: $highlight;
+        }
+    }
+    .as-sortable-item, .as-sortable-placeholder {
+        min-height: 20px;
+        margin: 0;
+        margin-bottom: -1px;
+        border-radius: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+}
+
+
+.as-sortable-item {
+    border: solid 1px darkgrey;
+    background-color: #ffffff;
+    list-style: none outside none;
+}
+
+.as-sortable-item-handle {
+
+}
+
+.as-sortable-placeholder {
+    border: 1px dashed darkgrey;
+    box-sizing: border-box;
+    background-color: #dbdbdb;
+}
+
+.as-sortable-drag {
+    opacity: .8;
+    margin: 0;
+    position: fixed;
+    padding: 0;
+}
+
+.as-sortable-hidden {
+}

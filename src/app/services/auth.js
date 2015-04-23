@@ -25,7 +25,7 @@ angular.module("proton.authentication", [
     auth.saveAuthData = function(data) {
 
       console.log(data);
-      
+
       date = moment(Date.now() + data.expires_in * 1000);
 
       window.localStorage[OAUTH_KEY+":uid"] = data.uid;

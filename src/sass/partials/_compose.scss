@@ -146,7 +146,6 @@ form#compose {
       line-height: ($row-height*1.5);
       height: ($row-height*1.5);
       position: static;
-      width: 8rem;
 
       @include transition(color 0.2s ease-in-out);
 
@@ -244,6 +243,7 @@ form#compose {
     &.body {
       padding: 10px 15px;
       position: relative;
+      box-shadow: none;
       -webkit-backface-visibility: hidden;
       -webkit-perspective: 1000;
 
@@ -289,7 +289,7 @@ form#compose {
         .form-group {
           a.help {
             position: absolute;
-            top: 9px;
+            top: 15px;
             z-index: 30;
           }
           .tooltip {
@@ -359,9 +359,11 @@ form#compose {
           color: white;
         }
         span.separator {
-          height: 10px;
-          width: 20px;
+          height: 15px;
+          width: 1px;
           display: inline-block;
+          background-color: #CCC;
+          vertical-align: middle;
         }
       }
 
