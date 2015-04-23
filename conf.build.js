@@ -67,7 +67,8 @@ module.exports = {
     css: [
       "vendor/tagmanager/tagmanager.css",
       "vendor/ng-sortable/dist/ng-sortable.css",
-      "vendor/angular-notify/dist/angular-notify.css"
+      "vendor/angular-notify/dist/angular-notify.css",
+      "vendor/angular-modal/modal.css"
     ],
 
     sass_include_dirs: [

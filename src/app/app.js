@@ -5,6 +5,7 @@ angular.module("proton", [
   "btford.markdown",
   "angularFileUpload",
   "cgNotify",
+  // "btford.modal",
 
   // templates
   "templates-app",
@@ -20,6 +21,7 @@ angular.module("proton", [
   "proton.errorReporter",
   "proton.networkActivity",
   "proton.messages",
+  "proton.modals",
   "proton.attachments",
   "proton.tools",
 
@@ -27,6 +29,7 @@ angular.module("proton", [
   "proton.tooltip",
   "proton.richTextEditor",
   "proton.emailField",
+  "proton.enter",
   "proton.slider",
   "proton.delayedPassword",
   "proton.fieldMatch",
@@ -40,11 +43,12 @@ angular.module("proton", [
   "proton.controllers.Admin",
   "proton.controllers.Auth",
   "proton.controllers.Bug",
-  "proton.controllers.Messages",
   "proton.controllers.Contacts",
+  "proton.controllers.Header",
+  "proton.controllers.Messages",
+  "proton.controllers.Search",
   "proton.controllers.Settings",
-  "proton.controllers.Support",
-  "proton.controllers.Search"
+  "proton.controllers.Support"
 ])
 
 .run(function(

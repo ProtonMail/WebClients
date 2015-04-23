@@ -1,22 +1,27 @@
 angular.module("proton.controllers.Search", [])
 
 .controller("SearchController", function($rootScope, $scope, networkActivityTracker) {
-    $scope.open = true;
-
-    $scope.params = {};
+    var modalId = 'searchModal';
 
     $scope.search = function(fromNavbar) {
         console.log('search');
+        console.log($scope.params);
     };
 
     $scope.open = function() {
-        $('#searchForm').modal('show');
-        $scope.open = true;
+        // reset params
+        $scope.params = {};
+        // show modal
+        $('#' + modalId).modal('show');
+        // remove dark background modal
+        $('body .modal-backdrop').removeClass('in');
     };
 
     $scope.close = function() {
-        $('#searchForm').modal('hide');
-        $scope.open = false;
+        // add dark background modal
+        $('body .modal-backdrop').removeClass('in');
+        // hide modal
+        $('#' + modalId).modal('hide');
     };
 
     $scope.style = function() {
@@ -31,7 +36,7 @@ angular.module("proton.controllers.Search", [])
         };
     };
 
-    $rootScope.$on('displayNameChange', function(params) {
-        $rootScope.user.displayName = params.displayName;
+    $rootScope.$on('openSearchModal', function() {
+        $scope.open();
     });
 });

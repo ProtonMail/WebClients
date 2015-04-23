@@ -6,18 +6,18 @@
            placeholder="Name"
            class="name"
            type="text"
-           ng-keyup="$event.keyCode == 13 && saveContact()"
+           ng-enter="saveContact()"
            name="name">
     <input ng-model="search.ContactEmail"
            placeholder="Email"
            class="email"
            type="text"
-           ng-keyup="$event.keyCode == 13 && saveContact()"
+           ng-enter="saveContact()"
            ng-class="{invalid: contactForm.email.$error.email}" autofocus>
   </div>
   <input hidden type="email" required ng-model="search.ContactEmail" name="email">
 
-  <a href="" class="add" ng-show="!editing" ng-click="saveContact()"><i class="fa fa-plus"></i></a>
+  <a href="" class="add" ng-show="!editing" ng-click="saveContact()" pt-tooltip="Add contact"><i class="fa fa-plus"></i></a>
   <a href="" class="save" ng-show="editing"  ng-click="saveContact()"><i class="fa fa-check"></i></a>
   <a href="" class="cancel" ng-show="editing" ng-click="cancelEditing()"><i class="fa fa-close"></i></a>
 </form>
@@ -28,7 +28,11 @@
       <i class="fa fa-paper-plane"></i>
     </a>
     <span class="name">{{ contact.ContactName }}</span><span class="email">{{ contact.ContactEmail }}</span>
-    <a href="" class="edit" pt-tooltip="Edit" ng-click="setEditedContact(contact)"><i class="fa fa-edit"></i></a>
-    <a href="" class="remove" pt-tooltip="Remove" ng-click="deleteContact(contact)"><i class="fa fa-trash-o"></i></a>
+    <a href="" class="edit" pt-tooltip="Edit" ng-click="setEditedContact(contact)">
+      <i class="fa fa-edit"></i>
+    </a>
+    <a href="" class="remove" pt-tooltip="Remove" ng-click="deleteContact(contact)">
+      <i class="fa fa-trash-o"></i>
+    </a>
   </li>
 </ul>

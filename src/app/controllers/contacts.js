@@ -1,7 +1,11 @@
-angular.module("proton.controllers.Contacts", [])
+angular.module("proton.controllers.Contacts", [
+  "proton.modals"
+])
 
-.controller("ContactsController", function($rootScope, $scope, contacts, Contact) {
+.controller("ContactsController", function($rootScope, $scope, contacts, Contact, confirmModal) {
   $rootScope.pageName = "Contacts";
+
+  console.log(contacts);
 
   $scope.contacts = contacts;
   $scope.search = {};
@@ -10,15 +14,20 @@ angular.module("proton.controllers.Contacts", [])
   var props;
 
   $scope.deleteContact = function (contact) {
-    if (!confirm("Are you sure you want to delete this contact?")) {
-      return;
-    }
-    var idx = contacts.indexOf(contact);
-    if (idx >= 0) {
-      contact.$delete();
-      contacts.splice(idx, 1);
-      Contact.index.updateWith($scope.contacts);
-    }
+    confirmModal.activate({params: {
+        message: 'Are you sure you want to delete this contact?',
+        confirm: function() {
+          var idx = contacts.indexOf(contact);
+          if (idx >= 0) {
+            contact.$delete();
+            contacts.splice(idx, 1);
+            Contact.index.updateWith($scope.contacts);
+          }
+        },
+        cancel: function() {
+          confirmModal.deactivate();
+        }
+    }});
   }
   $scope.setEditedContact = function (contact) {
     props = _.pick(contact, 'ContactName', 'ContactEmail');

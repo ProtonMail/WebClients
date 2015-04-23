@@ -42,7 +42,32 @@ angular.module("proton.tools", [])
             }
         }
 
+        function get_os() {
+            var OSName = "other"; // Unknown OS
+
+            if (navigator.appVersion.indexOf("Win")!=-1) OSName = "windows";
+            if (navigator.appVersion.indexOf("Mac")!=-1) OSName = "osx";
+            if (navigator.appVersion.indexOf("X11")!=-1) OSName = "linux";
+            if (navigator.appVersion.indexOf("Linux")!=-1) OSName = "linux";
+
+            return OSName;
+        }
+
+        function get_device() {
+            var deviceName = "other";
+
+            // if (navigator.userAgent.match(/Android/i)) deviceName = "android";
+            // if (navigator.userAgent.match(/BlackBerry/i)) deviceName = "blackberry";
+            // if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) deviceName = "ios";
+            // if (navigator.userAgent.match(/Opera Mini/i)) deviceName = "opera";
+            // if (navigator.userAgent.match(/IEMobile/i)) deviceName = "windowsPhone"
+
+            return deviceName;
+        }
+
         var tools = {
+            getOs: get_os(),
+            getDevice: get_device(),
             getBrowser: get_browser(),
             getBrowserVersion: get_browser_version(),
             isCompatible: function() {

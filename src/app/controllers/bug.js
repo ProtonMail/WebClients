@@ -2,6 +2,7 @@ angular.module("proton.controllers.Bug", [])
 
 .controller("BugController", function(
     $scope,
+    $rootScope,
     $state,
     $log,
     tools,
@@ -11,12 +12,15 @@ angular.module("proton.controllers.Bug", [])
 ) {
     var modalId = 'bugForm';
 
-    $scope.bug = {
-        browser: tools.getBrowser + ' ' + tools.getBrowserVersion,
-        location: $state.$current.url.sourcePath
-    };
-
     $scope.open = function() {
+        $scope.bug = {
+            email: '',
+            description: '',
+            browser: tools.getBrowser + ' ' + tools.getBrowserVersion,
+            location: $state.$current.url.sourcePath
+        };
+
+        $('#bug_os').val(tools.getOs);
         $('#' + modalId).modal('show');
     };
 
@@ -41,4 +45,8 @@ angular.module("proton.controllers.Bug", [])
             })
         );
     };
+
+    $rootScope.$on('openReportModal', function() {
+        $scope.open();
+    });
 });

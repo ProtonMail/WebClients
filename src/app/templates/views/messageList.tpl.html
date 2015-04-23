@@ -10,7 +10,7 @@
       <td class="actions">
         <input type="checkbox" ng-model="message.selected" />
         <span class="fa"
-            ng-class="{'fa-lock text-purple': !!(message.IsEncrypted == '1' || '**.drafts.**' | includedByState), 'fa-unlock-alt': !!!(message.IsEncrypted == '1' || '**.drafts.**' | includedByState)}"
+            ng-class="{'fa-lock text-purple': !!(message.IsEncrypted == '1' || ('**.drafts.**' | includedByState)), 'fa-unlock-alt': !!!(message.IsEncrypted == '1' || ('**.drafts.**' | includedByState))}"
             pt-tooltip="{{ (message.IsEncrypted == '1' || '**.drafts.**' | includedByState) ? 'Encrypted' : 'Not encrypted' }}"></span>
 
         <a href ng-click="message.toggleStar()" ng-if="!('**.drafts.**' | includedByState)">

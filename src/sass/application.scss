@@ -55,7 +55,8 @@ html, body {
     margin: 0 0 0 1rem;
     display: inline-block;
     text-decoration: underline;
-    &:hover {
+    &:hover, &:focus {
+      text-decoration: underline;
       color: white;
     }
   }
