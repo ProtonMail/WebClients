@@ -363,7 +363,8 @@ angular.module("proton.models", [
     {
       bugs: {
         method: 'post',
-        url: authentication.baseURL + "/bugs"
+        url: authentication.baseURL + "/bugs",
+        isArray: true
       }
     }
   );

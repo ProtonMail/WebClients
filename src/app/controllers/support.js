@@ -2,7 +2,7 @@ angular.module("proton.controllers.Support", [
     "proton.models"
 ])
 
-.controller("SupportController", function($scope, $state, User, tools) {
+.controller("SupportController", function($scope, $state, $log, User, tools) {
     $scope.tools = tools;
     $scope.params = {};
     $scope.params.recoveryEmail = '';
@@ -39,10 +39,22 @@ angular.module("proton.controllers.Support", [
 
     $scope.confirmNewPassword = function(form) {
         if(form.$valid) {
-            User.confirmNewPassword({
-                reset_token: $scope.params.reset_token,
+            User.resetPassword({
+                reset_token: $state.params.token,
                 new_pwd: $scope.params.password,
                 confirm_pwd: $scope.params.passwordc
+            }).$promise.then(function(response) {
+                $state.go("support.message", {data: {
+                    title: "Password updated",
+                    content: "Your login password is updated, now you can <a href='/login'>log in</a>",
+                    type: "alert-success"
+                }});
+            }, function(response) {
+                $state.go("support.message", {data: {
+                    title: response.error,
+                    content: response.error_description,
+                    type: "alert-danger"
+                }});
             });
         }
     }

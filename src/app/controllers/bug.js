@@ -22,6 +22,7 @@ angular.module("proton.controllers.Bug", [])
 
         $('#bug_os').val(tools.getOs);
         $('#' + modalId).modal('show');
+        $('#bug_os').focus();
     };
 
     $scope.close = function() {
@@ -39,7 +40,7 @@ angular.module("proton.controllers.Bug", [])
                 "bug_email": $scope.bug.email
             }).$promise.then(function(response) {
                 $scope.close();
-                notify('Bug reported');
+                notify('Bug report sent');
             }, function(response) {
                 $log.error(response);
             })

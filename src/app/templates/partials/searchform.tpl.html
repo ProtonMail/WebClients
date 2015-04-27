@@ -12,8 +12,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Folder</label>
-                                <select name="" id="" class="form-control">
+                                <label for="search_folder">Folder</label>
+                                <select name="search_folder" id="search_folder" class="form-control">
                                     <option value="-1" selected="selected">All</option>
                                     <option value="0">Inbox</option>
                                     <option value="1">Draft</option>
@@ -28,10 +28,10 @@
                                 <div class="fluid-container">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
-                                            <input type="text" class="form-control" />
+                                            <input type="date" id="search_begin" name="search_begin" ng-model="params.begin" class="form-control" placeholder="From" />
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input type="text" class="form-control" />
+                                            <input type="date" id="search_end" name="search_begin" ng-model="params.end" class="form-control" placeholder="Until" />
                                         </div>
                                     </div>
                                 </div>
@@ -39,30 +39,30 @@
                             <div class="form-group">
                                 <label for="">Attachments</label>
                                 <div class="radio">
-                                    <label for="yes" class="radio-inline">
-                                        <input id="yes" type="radio" name="attachments" ng-model="params.attachments" value="1" /> Yes
+                                    <label for="search_yes" class="radio-inline">
+                                        <input id="search_yes" type="radio" name="search_attachments" ng-model="params.attachments" value="1" /> Yes
                                     </label>
-                                    <label for="no" class="radio-inline">
-                                        <input id="no" type="radio" name="attachments" ng-model="params.attachments" value="0" /> No
+                                    <label for="search_no" class="radio-inline">
+                                        <input id="search_no" type="radio" name="search_attachments" ng-model="params.attachments" value="0" /> No
                                     </label>
                                     <label for="all" class="radio-inline">
-                                        <input id="all" type="radio" name="attachments" ng-model="params.attachments" value="2" /> All
+                                        <input id="all" type="radio" name="search_attachments" ng-model="params.attachments" value="2" /> All
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Sender</label>
-                                <input type="text" class="form-control" ng-model="params.sender" />
+                                <label for="search_sender">Sender</label>
+                                <input type="text" id="search_sender" name="search_sender" class="form-control" ng-model="params.sender" />
                             </div>
                             <div class="form-group">
-                                <label for="">Recipient</label>
-                                <input type="text" class="form-control" ng-model="params.recipient" />
+                                <label for="search_recipient">Recipient</label>
+                                <input type="text" id="search_recipient" name="search_recipient" class="form-control" ng-model="params.recipient" />
                             </div>
                             <div class="form-group">
-                                <label for="">Subject</label>
-                                <input type="text" class="form-control" ng-model="params.subject" />
+                                <label for="search_subject">Subject</label>
+                                <input type="text" id="search_subject" name="search_subject" class="form-control" ng-model="params.subject" />
                             </div>
                         </div>
                     </div>

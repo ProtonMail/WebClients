@@ -317,6 +317,10 @@ p {
   margin-bottom: 0;
 }
 
+.table-middle > tbody > tr > td {
+    vertical-align: middle;
+}
+
 @import "partials/login";
 @import "partials/sidebar";
 @import "partials/search-form";
@@ -330,6 +334,7 @@ p {
 @import "partials/sign-up";
 @import "partials/spinner";
 @import "partials/slider";
+@import "partials/squire";
 @import "partials/error-reporter";
 @import "responsive";
 @import "print";

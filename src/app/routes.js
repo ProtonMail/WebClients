@@ -190,18 +190,22 @@ angular.module("proton.routes", [
     // ACCOUNT ROUTES
     // -------------------------------------------
     .state("account", {
-      url: "/sign-up/:username/:token",
-      onEnter: function($stateParams, $state, User) {
-        User.checkInvite({
-          username: $stateParams.username,
-          token: $stateParams.token
-        }).$promise.catch(function(response) {
-          $state.go("support.message", {data: {
-            title: response.error,
-            content: response.error_description,
-            type: "alert-danger"
-          }});
-        });
+      url: "/account/:username/:token",
+      resolve: {
+        app: function($stateParams, $state, $q, User) {
+          var defer = $q.defer();
+
+          User.checkInvite({
+            username: $stateParams.username,
+            token: $stateParams.token
+          }).$promise.then(function(response) {
+            defer.resolve();
+          }, function(response) {
+            defer.reject(response);
+          });
+
+          return defer.promise;
+        }
       },
       views: {
         "main@": {

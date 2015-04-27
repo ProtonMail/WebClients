@@ -1,0 +1,89 @@
+<div class='angular-squire'>
+    <div ng-class="{'editor-hide': !isEditorVisible()}" class='editor-container'>
+        <div class="menu">
+            <div class="group">
+                <div title='Bold' ng-click="action('bold')" class="item bold">
+                    <i class="fa fa-bold"></i>
+                </div>
+                <div title='Italic' ng-click="action('italic')" class="item italic">
+                    <i class="fa fa-italic"></i>
+                </div>
+                <div title='Underline' ng-click="action('underline')" class="item underline">
+                    <i class="fa fa-underline"></i>
+                </div>
+            </div>
+            <div class="group">
+                <div title='Insert Link' class="item add-link" ng-click="popoverShow($event)">
+                    <i class="fa fa-link"></i>
+                    <div class="squire-popover">
+                        <div class="arrow"></div>
+                        <div class="content">
+                            <div class="title">Insert Link</div>
+                            <input type="text"
+                                id="edit-link"
+                                placeholder="Link URL"
+                                ng-model="data.link"
+                                ng-keydown="popoverHide($event, 'makeLink')" />
+                            <button class="double r" ng-show="canRemoveLink()"
+                                ng-click="popoverHide($event, 'removeLink')">
+                                <span class="fa fa-remove"></span> Remove Link
+                            </button>
+                            <button class="double l" ng-show="canRemoveLink()"
+                                ng-class="{disabled: !canAddLink()}"
+                                ng-click="popoverHide($event, 'makeLink')">
+                                <span class="fa fa-edit"></span> Update Link
+                            </button>
+                            <button ng-hide="canRemoveLink()"
+                                ng-class="{disabled: !canAddLink()}"
+                                ng-click="popoverHide($event, 'makeLink')">
+                                <span class="fa fa-plus"></span> Insert Link
+                            </button>
+                        </div>
+                        <div class="squire-popover-overlay" ng-click="popoverHide($event, 'makeLink')"></div>
+                    </div>
+                </div>
+                <div title='Insert Numbered List' ng-click="action('makeOrderedList')" class="item olist">
+                    <i class="fa fa-list-ol"></i>
+                </div>
+                <div title='Insert List' ng-click="action('makeUnorderedList')" class="item ulist">
+                    <i class="fa fa-list-ul"></i>
+                </div>
+                <div title='Quote' ng-click="action('increaseQuoteLevel')" class="item quote">
+                    <i class="fa fa-quote-right"></i>
+                </div>
+            </div>
+
+            <div class="group">
+                <div title='Header' ng-click="action('makeHeading')" class="item header">
+                    <i class="fa fa-header"></i>
+                </div>
+                <div title='Align Left' ng-click="action('alignLeft')" class="item aleft">
+                    <i class="fa fa-align-left"></i>
+                </div>
+                <div title='Align Center' ng-click="action('alignCenter')" class="item acenter">
+                    <i class="fa fa-align-center"></i>
+                </div>
+                <div title='Align Right' ng-click="action('alignRight')" class="item aright">
+                    <i class="fa fa-align-right"></i>
+                </div>
+            </div>
+
+            <div class="group">
+                <div title='Undo' ng-click="action('undo')" class="item">
+                    <i class="fa fa-undo"></i>
+                </div>
+                <div title='Redo' ng-click="action('redo')" class="item">
+                    <i class="fa fa-repeat"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}'>
+            <div class='placeholder'>
+                <div ng-show='showPlaceholder()'>{{ placeholder }}</div>
+            </div>
+            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank'></iframe>
+        </div>
+    </div>
+    <ng-transclude></ng-transclude>
+</div>

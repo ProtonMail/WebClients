@@ -31,7 +31,6 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
   $scope.tryLogin = function() {
     $('input').blur();
     clearErrors();
-    // console.log(login);
     login(this);
   };
 

@@ -1,0 +1,269 @@
+$angular-squire-border-radius: 5px !default;
+$angular-squire-container-bg: #dde6e8 !default;
+$angular-squire-border-color: #dde6e8 !default;
+$angular-squire-popover-bg: #FAFAFA !default;
+$angular-squire-highlight-color: #55ACEE !default;
+$angular-squire-wrapper-padding: 5px 0 !default;
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.angular-squire.form-control {
+    height: inherit;
+    padding: 0;
+    border-radius: $angular-squire-border-radius $angular-squire-border-radius 0 0;
+}
+
+.angular-squire {
+    -webkit-transition: transition(all 2s);
+    -moz-transition: transition(all 2s);
+    -o-transition: transition(all 2s);
+    transition: transition(all 2s);
+    outline: none;
+    border: 1px solid $angular-squire-border-color;
+    border-radius: $angular-squire-border-radius $angular-squire-border-radius 0 0;
+    .hl {
+        border-bottom: 2px $angular-squire-highlight-color solid;
+        opacity: 1;
+    }
+    .popover-visible {
+        .squire-popover {
+            display: block;
+        }
+    }
+    .squire-popover {
+        background: $angular-squire-popover-bg;
+        border: 2px solid $angular-squire-container-bg;
+        position: absolute;
+        z-index: 101;
+        top: 45px;
+        display: none;
+        border-radius: 4px;
+        min-width: 250px;
+        &:after, &:before {
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+        &:after {
+            border-color: rgba($angular-squire-popover-bg, 0);
+            border-bottom-color: $angular-squire-popover-bg;
+            border-width: 15px;
+            margin-left: -15px;
+        }
+        &:before {
+            border-color: rgba($angular-squire-container-bg, 0);
+            border-bottom-color: $angular-squire-container-bg;
+            border-width: 18px;
+            margin-left: -18px;
+        }
+        .content {
+            z-index: 110;
+            padding: 10px;
+            .title {
+                font-weight: bold;
+            }
+            input,
+            button {
+                border-radius: 4px;
+                border: 1px solid $angular-squire-container-bg;
+                background-color: #FFF;
+                height: 30px;
+                padding: 2px;
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+                &:hover, &:active {
+                    span.fa {
+                        color: $angular-squire-highlight-color;
+                    }
+                }
+                &.disabled {
+                    opacity: 0.5;
+                    span.fa {
+                        color: inherit;
+                    }
+                }
+            }
+            button.double {
+                width: 48%;
+                margin-bottom: 10px;
+                display: inline-block;
+                &.l {
+                    float: left;
+                }
+                &.r {
+                    float: right;
+                }
+            }
+        }
+        .squire-popover-overlay {
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+    .editor-container {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        height: 100%;
+        background-color: $angular-squire-container-bg;
+        border-radius: $angular-squire-border-radius;
+        .ng-hide {
+            height: 0;
+        }
+        &.editor-hide {
+            height: 0;
+            overflow: hidden;
+        }
+    }
+    .angular-squire-controls,
+    .angular-squire-cover {
+        display: block;
+    }
+    .menu .item {
+        position: relative;
+        opacity: 0.5;
+        font-size: 13px;
+        padding: 1px 5px;
+        color: #000;
+        float: left;
+        background: #FFF;
+        border-left: 1px #EEE solid;
+        border-bottom: 2px transparent solid;
+        -webkit-font-smoothing: subpixel-antialiased
+    }
+    .menu.b .item.bold {
+        @extend .hl;
+    }
+    .menu.i .item.italic {
+        @extend .hl;
+    }
+    .menu.ul .item.ulist {
+        @extend .hl;
+    }
+    .menu.ol .item.olist {
+        @extend .hl;
+    }
+    .menu.u .item.underline {
+        @extend .hl;
+    }
+    .menu.blockquote .item.quote {
+        @extend .hl;
+    }
+    .menu.align-left .item.aleft {
+        @extend .hl;
+    }
+    .menu.align-right .item.aright {
+        @extend .hl;
+    }
+    .menu.align-center .item.acenter {
+        @extend .hl;
+    }
+    .menu.size .item.header {
+        @extend .hl;
+    }
+    .menu .group {
+        display: inline-block;
+        border: 1px #EEE solid;
+    }
+    .menu .group .item:hover,
+    .menu .item:first-child:hover,
+    .menu .item.active:first-child {
+        @extend .hl;
+    }
+    .menu .item:first-child {
+        border-left: none;
+    }
+    .menu {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: right;
+        padding: 4px 4px 0 0;
+        height: 31px;
+    }
+    .angular-squire-wrapper {
+        position: relative;
+        padding: $angular-squire-wrapper-padding;
+        .placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 1em;
+            background: #fff;
+            color: #777;
+            z-index: 0;
+        }
+        iframe {
+            background: transparent;
+            z-index: 10;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: #333;
+            background-repeat: no-repeat;
+            background-position: right center;
+            outline: none;
+        }
+    }
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 10px;
+    }
+}
+
+.angular-squire .angular-squire-wrapper .placeholder div {
+    padding: $angular-squire-wrapper-padding;
+}
+
+html.angular-squire-iframe {
+    height: 100%;
+    body {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 1em;
+        background: transparent;
+        color: #2b2b2b;
+        cursor: text;
+    }
+}

@@ -1,16 +1,12 @@
 <div ng-class="{'hide-editor': !showEditor()}">
   <div ng-transclude></div>
   <div class="rich-text-toolbar" style="display: none;">
-    <span class="undo-history">
-      <a data-wysihtml5-command="undo" class="btn" pt-tooltip="Undo"><i class="fa fa-undo"></i></a>
-      <a data-wysihtml5-command="redo" class="btn" pt-tooltip="Redo"><i class="fa fa-undo fa-flip-horizontal"></i></a>
-    </span>
-
-    <span class="separator"></span>
 
     <a data-wysihtml5-command="bold" class="btn" pt-tooltip="Bold"><i class="fa fa-bold"></i></a>
     <a data-wysihtml5-command="italic" class="btn" pt-tooltip="Italic"><i class="fa fa-italic"></i></a>
     <a data-wysihtml5-command="underline" class="btn" pt-tooltip="Underline"><i class="fa fa-underline"></i></a>
+
+    <span class="separator"></span>
 
     <a data-wysihtml5-command="insertUnorderedList" class="btn" pt-tooltip="Bullets"><i class="fa fa-list-ul"></i></a>
     <a data-wysihtml5-command="insertOrderedList" class="btn"  pt-tooltip="Number bullets"><i class="fa fa-list-ol"></i></a>
@@ -19,8 +15,18 @@
     </a>
 
     <span class="separator"></span>
+
+    <a data-wysihtml5-command="createLink" class="btn" pt-tooltip="Insert a link"><i class="fa fa-link"></i></a>
+    <a data-wysihtml5-command="insertImage" class="btn" pt-tooltip="Insert an image"><i class="fa fa-picture-o"></i></a>
+
+    <!-- <a data-wysihtml5-command="undo" class="btn" pt-tooltip="Undo"><i class="fa fa-undo"></i></a>
+    <a data-wysihtml5-command="redo" class="btn" pt-tooltip="Redo"><i class="fa fa-undo fa-flip-horizontal"></i></a> -->
+
+    <span class="separator"></span>
+
     <a data-wysihtml5-command="insertSpeech" class="btn"><i class="fa fa-microphone"></i></a>
     <a data-wysihtml5-action="change_view" class="btn" pt-tooltip="Raw HTML"><i class="fa fa-code"></i></a>
+
   </div>
   <textarea ng-model="value"></textarea>
 </div>

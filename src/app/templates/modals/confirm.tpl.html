@@ -2,11 +2,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <p>{{ctrl.message}}</p>
+                <p class="alert">{{ctrl.message}}</p>
             </div>
             <div class="modal-footer">
                 <a href class="btn btn-link" ng-click="ctrl.cancel()">Cancel</a>
-                <button type="button" class="btn btn-primary" ng-click="ctrl.confirm()">Confirm</button>
+                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.confirm()">Confirm</button>
             </div>
         </div>
     </div>

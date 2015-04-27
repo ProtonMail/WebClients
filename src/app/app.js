@@ -5,7 +5,6 @@ angular.module("proton", [
   "btford.markdown",
   "angularFileUpload",
   "cgNotify",
-  // "btford.modal",
 
   // templates
   "templates-app",
@@ -87,6 +86,43 @@ angular.module("proton", [
     duration: 5000, // The default duration (in milliseconds) of each message. A duration of 0 will prevent messages from closing automatically.
     position: 'center', // The default position of each message
     maximumOpen: 5 // The maximum number of total notifications that can be visible at one time. Older notifications will be closed when the maximum is reached.
+  });
+})
+
+//
+// Redirection if not authentified
+//
+
+.run(function($rootScope, $location, $state, authentication) {
+    $rootScope.$on( '$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        var isLogin = toState.name.indexOf("login") !== -1;
+        var isSupport = toState.name.indexOf("support") !== -1;
+        var isAccount = toState.name.indexOf("account") !== -1;
+
+        if(isLogin || isSupport || isAccount){
+           return; // no need to redirect
+        }
+
+        // now, redirect only not authenticated
+        if(!!!authentication.isLoggedIn()) {
+            event.preventDefault(); // stop current execution
+            $state.go('login'); // go to login
+        }
+    });
+})
+
+//
+// Rejection manager
+//
+
+.run(function($rootScope, $state, $log) {
+  $rootScope.$on("$routeChangeError", function(event, current, previous, rejection) {
+      $log.error(rejection);
+      $state.go("support.message", {data: {
+        title: rejection.error,
+        content: rejection.error_description,
+        type: "alert-danger"
+      }});
   });
 })
 

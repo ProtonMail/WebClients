@@ -108,7 +108,16 @@
 
 #searchModal {
   .modal-dialog {
-    margin-left: 20rem;
     margin-top: 0;
+    @include transition(margin-left 0.2s ease-in-out);
+    @include responsive(sm) {
+      margin-left: 6rem;
+    }
+    @include responsive(md) {
+      margin-left: 18rem;
+    }
+    @include responsive(lg) {
+      margin-left: 20rem;
+    }
   }
 }

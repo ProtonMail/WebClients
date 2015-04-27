@@ -167,12 +167,12 @@ angular.module("proton.authentication", [
           if (pwd) {
             $timeout(function() {
               self.user.$promise.then(function (user) {
-                if (crypto.setMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)) {
+                crypto.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(function() {
                   auth.savePassword(pwd);
                   req.resolve(200);
-                } else {
+                }, function(rejection) {
                   req.reject({message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."});
-                }
+                });
               });
             }, 1000);
           } else {
