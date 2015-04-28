@@ -33,7 +33,6 @@ angular.module("proton.modals", [])
             });
         }
 
-
         function attach(html, locals) {
             element = angular.element(html);
             if (element.length === 0) {
@@ -90,13 +89,13 @@ angular.module("proton.modals", [])
 
 
             this.confirm = function() {
-                if(angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
+                if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
                     params.confirm();
                 }
             };
 
             this.cancel = function() {
-                if(angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
             };
@@ -117,7 +116,7 @@ angular.module("proton.modals", [])
             this.message = params.message;
 
             this.ok = function() {
-                if(angular.isDefined(params.ok) && angular.isFunction(params.ok)) {
+                if (angular.isDefined(params.ok) && angular.isFunction(params.ok)) {
                     params.ok();
                 }
             };
@@ -128,5 +127,114 @@ angular.module("proton.modals", [])
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alert.tpl.html'
+    });
+})
+
+// contact modal
+.factory('contactModal', function(pmModal) {
+    return pmModal({
+        controller: function(params, $timeout) {
+            this.name = params.name;
+            this.email = params.email;
+
+            this.save = function() {
+                if (angular.isDefined(params.save) && angular.isFunction(params.save)) {
+                    params.save(this.name, this.email);
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            $timeout(function() {
+                this.class = 'in';
+                $('#contactName').focus();
+            }.bind(this), 100);
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/contact.tpl.html'
+    });
+})
+
+// dropzone modal
+.factory('dropzoneModal', function(pmModal) {
+    return pmModal({
+        controller: function(params, notify, $timeout) {
+            var files = [];
+            var fileCount = 0;
+            var idDropzone = 'dropzone';
+            var idSelectedFile = 'selectedFile';
+            var extension;
+            var self = this;
+
+            function init() {
+                var drop = document.getElementById(idDropzone);
+
+                drop.ondrop = function(e) {
+                    e.preventDefault();
+                    extension = e.dataTransfer.files[0].name.substr(e.dataTransfer.files[0].name.length - 4);
+
+                    if (extension != '.csv' && extension != '.vcf') {
+                        notify('Invalid file type');
+                        self.hover = false;
+                    } else {
+                        files = e.dataTransfer.files;
+                        self.fileDropped = files[0].name;
+                        self.hover = false;
+                    }
+                };
+
+                drop.ondragover = function(event) {
+                    event.preventDefault();
+                    self.hover = true;
+                };
+
+                drop.ondragleave = function(event) {
+                    event.preventDefault();
+                    self.hover = false;
+                };
+
+                $('#' + idDropzone).on('click', function() {
+                    $('#' + idSelectedFile).trigger('click');
+                });
+
+                $('#' + idSelectedFile).change(function(e) {
+                    extension = $('#' + idSelectedFile)[0].files[0].name.substr($('#' + idSelectedFile)[0].files[0].name.length - 4);
+
+                    if (extension != '.csv' && extension != '.vcf') {
+                        notify('Invalid file type');
+                    } else {
+                        files = $('#' + idSelectedFile)[0].files;
+                        self.fileDropped = $('#' + idSelectedFile)[0].files[0].name;
+                        self.hover = false;
+                    }
+                });
+            }
+
+            this.title = params.title;
+            this.message = params.message;
+
+            this.import = function() {
+                if (angular.isDefined(params.import) && angular.isFunction(params.import)) {
+                    params.import(files);
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            $timeout(function() {
+                this.class = 'in';
+                init();
+            }.bind(this), 100);
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dropzone.tpl.html'
     });
 });

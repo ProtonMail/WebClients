@@ -1,0 +1,33 @@
+<div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Contact</h4>
+            </div>
+            <form name="contactForm" novalidate ng-submit="ctrl.save()">
+                <div class="modal-body">
+                    <div class="form-group" ng-class="{'has-error': contactForm.contactName.$touched && contactForm.contactName.$error.required}">
+                        <label class="control-label" for="contactName">Name</label>
+                        <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="Contact Name" required />
+                        <div ng-show="contactForm.$submitted || contactForm.contactName.$touched">
+                            <p class="text-danger" ng-show="contactForm.contactName.$error.required">Contact name empty.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': contactForm.contactEmail.$touched && contactForm.contactEmail.$error.required}">
+                        <label class="control-label" for="contactEmail">Email</label>
+                        <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="Contact Email" required />
+                        <div ng-show="contactForm.$submitted || contactForm.contactEmail.$touched">
+                            <p class="text-danger" ng-show="contactForm.contactEmail.$error.email">Email is invalid.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href class="btn btn-link" ng-click="ctrl.cancel()">Cancel</a>
+                    <button tabindex="3" type="submit" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}">    <span ng-hide="networkActivity.loading()">Save</span>
+                        <span ng-show="networkActivity.loading()">Saving...</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

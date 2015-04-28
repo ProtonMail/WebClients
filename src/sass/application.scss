@@ -321,6 +321,19 @@ p {
     vertical-align: middle;
 }
 
+#dropzone {
+  border: 2px dashed $dark-purple;
+  border-radius: $border-radius-base;
+  background-color: $body-bg;
+  padding: 50px 0;
+  cursor: pointer;
+  &.hover {
+    background-color: $highlight;
+    border-color: $light-purple;
+  }
+}
+
+@import "partials/datepicker";
 @import "partials/login";
 @import "partials/sidebar";
 @import "partials/search-form";

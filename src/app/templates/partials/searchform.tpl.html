@@ -5,7 +5,7 @@
                 <div class="modal-body">
                     <div class="text-right">
                         <a href="" ng-click="close()">
-                            <i aria-hidden="true" class="fa fa-times text-muted"></i>
+                            <i aria-hidden="true" title="Close" class="fa fa-times text-muted"></i>
                             <span class="sr-only">Close</span>
                         </a>
                     </div>
@@ -28,10 +28,10 @@
                                 <div class="fluid-container">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
-                                            <input type="date" id="search_begin" name="search_begin" ng-model="params.begin" class="form-control" placeholder="From" />
+                                            <input pikaday="params.begin" on-select="setMin()" class="form-control" placeholder="From" />
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input type="date" id="search_end" name="search_begin" ng-model="params.end" class="form-control" placeholder="Until" />
+                                            <input pikaday="params.end" on-select="setMax()" class="form-control" placeholder="Until" />
                                         </div>
                                     </div>
                                 </div>

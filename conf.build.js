@@ -51,7 +51,9 @@ module.exports = {
       "vendor/mousetrap/mousetrap.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/dragdealer/src/dragdealer.js",
-      "vendor/angular-notify/dist/angular-notify.js"
+      "vendor/angular-notify/dist/angular-notify.js",
+      "vendor/pikaday/pikaday.js",
+      "vendor/pikaday-angular/pikaday-angular.js"
     ],
     bootstrap_components: [
       "affix",
@@ -68,7 +70,8 @@ module.exports = {
       "vendor/tagmanager/tagmanager.css",
       "vendor/ng-sortable/dist/ng-sortable.css",
       "vendor/angular-notify/dist/angular-notify.css",
-      "vendor/angular-modal/modal.css"
+      "vendor/angular-modal/modal.css",
+      "vendor/pikaday/css/pikaday.css"
     ],
 
     sass_include_dirs: [

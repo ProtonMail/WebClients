@@ -1,0 +1,30 @@
+.pika-label {
+    color: $dark-purple;
+}
+
+.pika-table {
+    abbr {
+        border-bottom: none;
+        cursor: default;
+    }
+}
+
+.pika-button {
+    background: $panel-bg;
+    text-align: center;
+    .is-today & {
+        color: $dark-purple;
+    }
+
+    .is-selected & {
+        color: #fff;
+        @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+        border-radius: $border-radius-base;
+        box-shadow: none;
+    }
+
+    &:hover {
+        background: $dark-purple !important;
+        border-radius: $border-radius-base !important;
+    }
+}
