@@ -6,7 +6,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $stateParams,
     $log,
     User,
-    crypto,
+    pmcrypto,
     tools,
     localStorageService
 ) {
@@ -17,7 +17,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     function generateKeys(userID, pass) {
         // Generate KeyPair
-        var keyPair = crypto.generateKeysRSA(userID, pass);
+        var keyPair = pmcrypto.generateKeysRSA(userID, pass);
 
         keyPair.then(function(keyPair) {
 
@@ -40,7 +40,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
                 User.createUser(params).$promise.then(function(response) {
                     // Save the Mailbox pass to sessionStorage (backend can't access this)
-                    localStorageService.bind($scope, 'protonmail_pw', crypto.encode_utf8_base64(pass));
+                    localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
 
                     $state.go('secured.inbox');
                 }, function(response) {

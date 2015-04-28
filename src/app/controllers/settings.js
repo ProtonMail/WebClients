@@ -13,7 +13,7 @@ angular.module("proton.controllers.Settings", [
     Setting,
     user,
     tools,
-    crypto,
+    pmcrypto,
     notify,
     networkActivityTracker
 ) {
@@ -50,7 +50,7 @@ angular.module("proton.controllers.Settings", [
         networkActivityTracker.track(
             Setting.updatePassword({
                 old_pwd: $scope.oldLoginPassword,
-                old_hashed_pwd: crypto.getHashedPassword($scope.oldLoginPassword),
+                old_hashed_pwd: pmcrypto.getHashedPassword($scope.oldLoginPassword),
                 new_pwd: $scope.newLoginPassword
             }).$promise.then(function(response) {
                 notify('Login password updated');

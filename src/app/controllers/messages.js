@@ -215,7 +215,7 @@ angular.module("proton.controllers.Messages", [
   message,
   localStorageService,
   attachments,
-  crypto,
+  pmcrypto,
   networkActivityTracker
 ) {
   $rootScope.pageName = "New Message";
@@ -292,13 +292,13 @@ angular.module("proton.controllers.Messages", [
     }
     // encrypt the message body and set 'outsiders' to empty by default
     newMessage.MessageBody = {
-      self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
+      self: pmcrypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
       outsiders: ''
     };
 
     // concat all recipients
     emails =  newMessage.RecipientList + (newMessage.CCList == '' ? '' : ','+ newMessage.CCList) + (newMessage.BCCList == '' ? '' : ','+ newMessage.BCCList)
-    base64 = crypto.encode_base64(emails);
+    base64 = pmcrypto.encode_base64(emails);
 
     // new message object
     var userMessage = new Message();
@@ -311,7 +311,7 @@ angular.module("proton.controllers.Messages", [
       // loop through and overwrite defaults
       angular.forEach(mails, function(value) {
         // encrypt messagebody with each user's keys
-        newMessage.MessageBody[value] = crypto.encryptMessageToPackage(message.RawMessageBody, result[value]);
+        newMessage.MessageBody[value] = pmcrypto.encryptMessageToPackage(message.RawMessageBody, result[value]);
         if(!isOutside)
         {
            if(!value.indexOf('protonmail') < 0)
@@ -356,7 +356,7 @@ angular.module("proton.controllers.Messages", [
     }
 
     newMessage.MessageBody = {
-      self: crypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
+      self: pmcrypto.encryptMessageToPackage(message.RawMessageBody, $scope.user.PublicKey),
       outsiders: ''
     };
 

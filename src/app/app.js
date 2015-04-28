@@ -16,7 +16,7 @@ angular.module("proton", [
 
   // Services
   "proton.authentication",
-  "proton.crypto",
+  "proton.pmcrypto",
   "proton.errorReporter",
   "proton.networkActivity",
   "proton.messages",

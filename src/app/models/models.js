@@ -83,7 +83,7 @@ angular.module("proton.models", [
   $templateCache,
   $injector,
   authentication,
-  crypto,
+  pmcrypto,
   mailboxIdentifiers
 ) {
 
@@ -241,7 +241,7 @@ angular.module("proton.models", [
 
         if (_.isUndefined(this._decryptedBody)) {
           try {
-            this._decryptedBody = crypto.decryptPackage(
+            this._decryptedBody = pmcrypto.decryptPackage(
               authentication.user.EncPrivateKey,
               this.MessageBody,
               this.Time
