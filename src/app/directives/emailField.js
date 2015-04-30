@@ -49,6 +49,7 @@ angular.module("proton.emailField", [])
         tagsContainer: parent[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
         delimiters: [32, 44],
+        prefilled: 'hello',
         validator: function (input) {
           return EMAIL_REGEXP.test(input);
         }
@@ -81,9 +82,12 @@ angular.module("proton.emailField", [])
         .on("change", setValue)
         .typeahead(null, {
           source: Contact.index.ttAdapter(),
-          displayKey: "ContactName"
+          templates: {
+              suggestion: function(Contact) {
+                  return "<b>" +Contact.ContactName + "</b><br>" + Contact.ContactEmail;
+                }
+            }
         }).on("typeahead:selected", function (e, d) {
-          $$element.val("");
           manager.tagsManager("pushTag", d.ContactEmail);
         });
 
