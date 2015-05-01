@@ -1,21 +1,41 @@
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input autofocus type="text" class="form-control" placeholder="Search Contacts..." ng-model="search" />
-            </div>
-        </form>
-        <button type="button" class="btn btn-default navbar-btn" ng-click="addContact()"><i class="fa fa-plus hidden-xs hidden-sm"></i> Add <span class="hidden-sm">Contact</span></button>
-        <button type="button" class="btn btn-default navbar-btn" ng-click="deleteContacts()" ng-disabled="contactsSelected().length === 0"><i class="fa fa-trash-o hidden-xs hidden-sm"></i> Delete <span class="hidden-sm">Contact</span></button>
-        <button type="button" class="btn btn-default navbar-btn" ng-click="uploadContacts()"><i class="fa fa-upload hidden-xs hidden-sm"></i> Upload <span class="hidden-sm">Contacts</span></button>
-        <button type="button" class="btn btn-default navbar-btn" ng-click="downloadContacts()"><i class="fa fa-download hidden-xs hidden-sm"></i> Download <span class="hidden-sm">Contacts</span></button>
-    </div>
+<div class="message-toolbar">
+    <ul class="nav navbar-nav">
+        <li>
+            <form>
+                <input autofocus type="search" class="form-control" placeholder="Search Contacts..." ng-model="search" />
+            </form>
+        </li>
+        <li>
+            <a href="" ng-click="addContact()">
+                <i class="fa fa-plus hidden-xs hidden-sm"></i> Add <span class="hidden-sm">Contact</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ng-click="deleteContacts()" ng-class="{ disabled: contactsSelected().length === 0 }">
+                <i class="fa fa-trash-o hidden-xs hidden-sm"></i> Delete <span ng-show="contactsSelected().length === 1" class="hidden-sm">Contact</span><span ng-show="contactsSelected().length > 1" class="hidden-sm">Contacts</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="" ng-click="uploadContacts()">
+                <i class="fa fa-upload hidden-xs hidden-sm"></i> Upload <span class="hidden-sm">Contacts</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ng-click="downloadContacts()">
+                <i class="fa fa-download hidden-xs hidden-sm"></i> Download <span class="hidden-sm">Contacts</span>
+            </a>
+        </li>
+    </ul>
 </div>
 <div class="container-fluid">
     <table class="table table-middle table-hover">
         <thead>
             <tr>
-                <th class="text-center"><input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" /></th>
+                <th class="text-center hidden-xs">
+                    <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="Select All Contacts" />
+                </th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Actions</th>
@@ -23,7 +43,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="contact in contacts | filter:search">
-                <td class="text-center">
+                <td class="text-center hidden-xs">
                     <input type="checkbox" ng-model="contact.selected" />
                 </td>
                 <td>
@@ -33,14 +53,14 @@
                     {{ contact.ContactEmail }}
                 </td>
                 <td>
-                    <a href="" class="btn" pt-tooltip="Edit" ng-click="editContact(contact)">
-                        <i class="fa fa-edit"></i>
+                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Edit Contact" ng-click="editContact(contact)">
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
                     </a>
-                    <a href="" class="btn" pt-tooltip="Send message" ng-click="sendMessageTo(contact)">
-                        <i class="fa fa-envelope-o"></i>
+                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Send message" ng-click="sendMessageTo(contact)">
+                        <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">Message</span>
                     </a>
-                    <a href="" class="btn" pt-tooltip="Remove" ng-click="deleteContact(contact)">
-                        <i class="fa fa-trash-o"></i>
+                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Delete Contact" ng-click="deleteContact(contact)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
                     </a>
                 </td>
             </tr>

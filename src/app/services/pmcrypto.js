@@ -342,11 +342,10 @@ angular.module("proton.pmcrypto", [])
         });
     }
 
-    var mailboxPassword;
+    this.mailboxPassword;
 
-    this.setMailboxPassword = function(pubKey, prKey, password) {
-        var testMsg = "sPKkm9lk6hSSZ49rRFwg";
-        return '';
+    this.setMailboxPassword = function(password) {
+        this.mailboxPassword = password;
     };
 
     this.$get = function($q) {

@@ -1,4 +1,5 @@
-angular.module("angular-squire", []).directive("squire", function() {
+angular.module("proton.squire", [])
+.directive("squire", function() {
     return {
         restrict: 'E',
         require: "ngModel",
@@ -11,7 +12,7 @@ angular.module("angular-squire", []).directive("squire", function() {
         },
         replace: true,
         transclude: true,
-        templateUrl: "/templates/directives/squire.tpl.html",
+        templateUrl: "templates/directives/squire.tpl.html",
 
         /* @ngInject */
         controller: function($scope) {
@@ -33,12 +34,14 @@ angular.module("angular-squire", []).directive("squire", function() {
             };
         },
         link: function(scope, element, attrs, ngModel) {
-            var IFRAME_CLASS, LINK_DEFAULT, editor, getLinkAtCursor, haveInteraction, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
-            LINK_DEFAULT = "http://";
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, haveInteraction, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            LINK_DEFAULT = IMAGE_DEFAULT ="http://";
             IFRAME_CLASS = 'angular-squire-iframe';
             editor = scope.editor = null;
             scope.data = {
-                link: LINK_DEFAULT
+                link: LINK_DEFAULT,
+                image: IMAGE_DEFAULT,
+                encrypt: false
             };
             updateModel = function(value) {
                 return scope.$evalAsync(function() {
@@ -74,6 +77,9 @@ angular.module("angular-squire", []).directive("squire", function() {
             scope.canAddLink = function() {
                 return scope.data.link && scope.data.link !== LINK_DEFAULT;
             };
+            scope.canAddImage = function() {
+              return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
+            };
             scope.$on('$destroy', function() {
                 return editor != null ? editor.destroy() : void 0;
             });
@@ -95,8 +101,9 @@ angular.module("angular-squire", []).directive("squire", function() {
                 }
             };
             scope.popoverShow = function(e) {
-                var linkElement, popover;
+                var linkElement, popover, liElement;
                 linkElement = angular.element(e.currentTarget);
+                liElement = angular.element(linkElement).parent();
                 if (angular.element(e.target).closest(".squire-popover").length) {
                     return;
                 }
@@ -111,7 +118,7 @@ angular.module("angular-squire", []).directive("squire", function() {
                 }
                 popover = element.find(".squire-popover").find("input").focus().end();
                 popover.css({
-                    left: -1 * (popover.width() / 2) + linkElement.width() / 2 + 2
+                    left: -1 * (popover.width() / 2) + liElement.width() / 2
                 });
             };
             updateStylesToMatch = function(doc) {
@@ -284,6 +291,9 @@ angular.module("angular-squire", []).directive("squire", function() {
                     });
                     scope.data.link = LINK_DEFAULT;
                     return editor.focus();
+                } else if(action === 'insertImage') {
+                  editor.insertImage(scope.data.image);
+                  return editor.focus();
                 } else {
                     editor[action]();
                     return editor.focus();

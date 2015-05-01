@@ -4,6 +4,8 @@ $font-size-base:              13px;
 $font-size-small:             $font-size-base;
 $body-bg:                     #fff;
 $panel-bg:                    darken($body-bg, 2%);
+$panel-header:                #444;
+$panel-footer:                darken($body-bg, 7%);
 $font-size-h1:                floor(($font-size-base * 2));
 $navbar-inverse-link-color:   darken(white, 20%);
 $navbar-inverse-color:        darken(white, 30%);
@@ -63,4 +65,11 @@ $duration-of-effect:        200ms;
   @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
 }

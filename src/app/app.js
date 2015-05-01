@@ -34,6 +34,7 @@ angular.module("proton", [
     "proton.delayedPassword",
     "proton.fieldMatch",
     "proton.fieldFocus",
+    "proton.squire",
 
     // Filters
     "proton.filters.strings",
@@ -48,6 +49,7 @@ angular.module("proton", [
     "proton.controllers.Messages",
     "proton.controllers.Search",
     "proton.controllers.Settings",
+    "proton.controllers.Sidebar",
     "proton.controllers.Support"
 ])
 

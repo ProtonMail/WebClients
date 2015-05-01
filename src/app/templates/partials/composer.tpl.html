@@ -1,0 +1,65 @@
+<div ng-controller="ComposeMessageController2">
+    <form name="composeForm" novalidate>
+        <div class="composer" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}">
+            <div class="composer-header text-right">
+                <a href="" class="btn btn-sm" ng-click="toggleMinimize(message)">
+                    <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-square': !!message.minimized}"></i>
+                </a>
+                <a href="" class="btn btn-sm" ng-click="close(message)">
+                    <span class="sr-only">Close</span>
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+            <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
+                <div class="form-group">
+                    <select class="form-control" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="From">
+                    </select>
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-2 text-muted" ng-show="message.fields">To</label>
+                        <div ng-class="{'col-md-10': !!message.fields}">
+                            <div class="input-group">
+                                <input type="text" placeholder="To" ng-model="message.RecipientList" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-sm btn-white" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
+                                        <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="message.fields">
+                        <label class="col-md-2 control-label text-muted" for="">CC</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="message.CCList" placeholder="CC" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="message.fields">
+                        <label class="col-md-2 control-label text-muted" for="">BCC</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="message.BCCList" placeholder="BCC" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" title="Subject" class="form-control" ng-model="message.MessageTitle" required />
+                </div>
+                <ul ng-if="message.Attachments" class="attachments">
+                    <li ng-repeat="attachment in message.Attachments">
+                        <i class="fa fa-paperclip"></i> {{ attachment.FileName }}
+                        <a href="" ng-click="removeAttachment(attachment)"><i class="fa fa-times"></i></a>
+                    </li>
+                </ul>
+                <div class="form-group">
+                    <squire ng-model="message.RawMessageBody" height="370px">
+                    </squire>
+                </div>
+            </div>
+            <div class="composer-footer" ng-hide="message.minimized">
+                <button class="btn btn-sm btn-primary" ng-click="send(message)">Send</button>
+                <button class="btn btn-sm btn-default" ng-click=""><i class="fa fa-paperclip"></i></button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,32 +1,42 @@
 <div ng-class="{'hide-editor': !showEditor()}">
-  <div ng-transclude></div>
-  <div class="rich-text-toolbar" style="display: none;">
-
-    <a data-wysihtml5-command="bold" class="btn" pt-tooltip="Bold"><i class="fa fa-bold"></i></a>
-    <a data-wysihtml5-command="italic" class="btn" pt-tooltip="Italic"><i class="fa fa-italic"></i></a>
-    <a data-wysihtml5-command="underline" class="btn" pt-tooltip="Underline"><i class="fa fa-underline"></i></a>
-
-    <span class="separator"></span>
-
-    <a data-wysihtml5-command="insertUnorderedList" class="btn" pt-tooltip="Bullets"><i class="fa fa-list-ul"></i></a>
-    <a data-wysihtml5-command="insertOrderedList" class="btn"  pt-tooltip="Number bullets"><i class="fa fa-list-ol"></i></a>
-    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="blockquote" class="btn" pt-tooltip="Quote">
-      <i class="fa fa-quote-left"></i>
-    </a>
-
-    <span class="separator"></span>
-
-    <a data-wysihtml5-command="createLink" class="btn" pt-tooltip="Insert a link"><i class="fa fa-link"></i></a>
-    <a data-wysihtml5-command="insertImage" class="btn" pt-tooltip="Insert an image"><i class="fa fa-picture-o"></i></a>
-
-    <!-- <a data-wysihtml5-command="undo" class="btn" pt-tooltip="Undo"><i class="fa fa-undo"></i></a>
-    <a data-wysihtml5-command="redo" class="btn" pt-tooltip="Redo"><i class="fa fa-undo fa-flip-horizontal"></i></a> -->
-
-    <span class="separator"></span>
-
-    <a data-wysihtml5-command="insertSpeech" class="btn"><i class="fa fa-microphone"></i></a>
-    <a data-wysihtml5-action="change_view" class="btn" pt-tooltip="Raw HTML"><i class="fa fa-code"></i></a>
-
-  </div>
-  <textarea ng-model="value"></textarea>
+    <div ng-transclude></div>
+    <div class="rich-text-toolbar" style="display: none;">
+        <a data-wysihtml5-command="bold" class="btn" pt-tooltip="Bold"><i class="fa fa-bold"></i></a>
+        <a data-wysihtml5-command="italic" class="btn" pt-tooltip="Italic"><i class="fa fa-italic"></i></a>
+        <a data-wysihtml5-command="underline" class="btn" pt-tooltip="Underline"><i class="fa fa-underline"></i></a>
+        <span class="separator"></span>
+        <a data-wysihtml5-command="insertUnorderedList" class="btn" pt-tooltip="Bullets"><i class="fa fa-list-ul"></i></a>
+        <a data-wysihtml5-command="insertOrderedList" class="btn" pt-tooltip="Number bullets"><i class="fa fa-list-ol"></i></a>
+        <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="blockquote" class="btn" pt-tooltip="Quote">
+            <i class="fa fa-quote-left"></i>
+        </a>
+        <span class="separator"></span>
+        <a data-wysihtml5-command="createLink" class="btn" pt-tooltip="Insert a link"><i class="fa fa-link"></i></a>
+        <a data-wysihtml5-command="insertImage" class="btn" pt-tooltip="Insert an image"><i class="fa fa-picture-o"></i></a>
+        <span class="separator"></span>
+        <a data-wysihtml5-command="insertSpeech" class="btn"><i class="fa fa-microphone"></i></a>
+        <a data-wysihtml5-action="change_view" class="btn" pt-tooltip="Raw HTML"><i class="fa fa-code"></i></a>
+        <div data-wysihtml5-dialog="createLink" class="rich-text-popover" style="display: none;">
+            <label class="control-label">Insert Link</label>
+            <input data-wysihtml5-dialog-field="href" value="http://" class="form-control" />
+            <div class="text-right">
+              <a data-wysihtml5-dialog-action="save" class="btn btn-primary btn-xs">OK</a>
+              <a data-wysihtml5-dialog-action="cancel" class="btn btn-default btn-xs">Cancel</a>
+            </div>
+        </div>
+        <div data-wysihtml5-dialog="insertImage" class="rich-text-popover" style="display: none;">
+            <label class="control-label">Insert Image</label>
+            <input data-wysihtml5-dialog-field="src" value="http://" class="form-control" />
+            <label>
+                Align:
+                <select data-wysihtml5-dialog-field="className">
+                    <option value="" selected="">default</option>
+                    <option value="wysiwyg-float-left">left</option>
+                    <option value="wysiwyg-float-right">right</option>
+                </select>
+            </label>
+            <a data-wysihtml5-dialog-action="save" class="btn btn-primary btn-xs">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel" class="btn btn-default btn-xs">Cancel</a>
+        </div>
+    </div>
+    <textarea ng-model="value"></textarea>
 </div>

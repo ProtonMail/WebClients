@@ -6,7 +6,7 @@ var _ = require("lodash"),
 
 var API_TARGETS = {
   local: "http://localhost:4003",
-  production: "http://protonmail.org",
+  production: "http://protonmail.xyz",
   target: "http://?"
 };
 

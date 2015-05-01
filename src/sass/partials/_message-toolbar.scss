@@ -30,6 +30,14 @@
         }
       }
 
+      input[type='search'] {
+        line-height: 31px;
+        height: auto;
+        border: none;
+        outline: 0;
+        padding: 0 10px;
+      }
+
       > input[type='checkbox'] {
         margin: 1rem 0;
       }

@@ -34,7 +34,9 @@
 @media screen and (max-width: 767px) {
 	#sidebar,
 	.message-toolbar {
-		display: none;
+		& ul {
+			margin: 0;
+		}
 	}
 	.secure .navbar-inversed,
 	.secure #footer,

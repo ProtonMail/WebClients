@@ -57,7 +57,7 @@ angular.module("proton.richTextEditor", [])
         resizeIframeToFitContent();
         setTimeout( function() {
           resizeIframeToFitContent();
-        }), 200;
+        }, 200);
         $('.wysihtml5-sandbox').contents().find('body').on("keydown",function() {
           resizeIframeToFitContent();
         });

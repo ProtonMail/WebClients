@@ -11,7 +11,7 @@
   ng-file-drop="selectFile($files)"
   ng-file-drag-over-class="file-drop">
 
-  <div class="form-group"
+  <div class="form-group form-group-compose"
        ng-class="{invalid: composeForm.recipient_list.$touched && composeForm.recipient_list.$invalid}">
     <label class="control-label col-xs-1"
            for="message-to">To</label>
@@ -43,7 +43,7 @@
     </div><!--/#others-->
   </div>
 
-  <div class="form-group" ng-if="shouldShowField('CC')">
+  <div class="form-group form-group-compose" ng-if="shouldShowField('CC')">
     <label class="control-label optional col-xs-1" for="message-cc">CC
       <i class="fa fa-times" ng-click="toggleField('CC')"></i>
     </label>
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div class="form-group" ng-if="shouldShowField('BCC')">
+  <div class="form-group form-group-compose" ng-if="shouldShowField('BCC')">
     <label class="control-label optional col-xs-1" for="message-bcc">BCC
       <i class="fa fa-times" ng-click="toggleField('BCC')"></i>
     </label>
@@ -75,7 +75,7 @@
     </div>
   </div>
 
-  <div class="form-group"
+  <div class="form-group form-group-compose"
        ng-class="{invalid: composeForm.subject.$touched && composeForm.subject.$invalid}">
     <div class="col-xs-12">
       <input field-focus
@@ -97,100 +97,5 @@
     </li>
   </ul>
 
-  <div class="form-group body"
-       rich-text-editor
-       value="message.RawMessageBody"
-       show-editor="!showOptions">
-
-    <div class="encryption-options">
-      <a href="" ng-click="setOptionsVisibility(false)" class="back">
-        <i class="fa fa-times"></i>
-      </a>
-      <h3>Encryption options</h3>
-
-      <div class="form-group"
-           ng-class="{invalid: composeForm.enc_password.$touched && composeForm.enc_password.$invalid}">
-        <label class="control-label col-xs-3" for="enc-password">Password</label>
-        <div class="col-xs-7">
-          <input type="text"
-                 delayed-password
-                 ng-required="message.IsEncrypted == '1'"
-                 ng-model="message.EncryptionPassword"
-                 id="enc-password"
-                 name="enc_password"
-                 class="form-control"
-                 placeholder="Strong password"
-                 tabindex="10">
-        </div>
-      </div>
-
-      <div class="form-group"
-           ng-class="{invalid: composeForm.enc_password_conf.$touched && composeForm.enc_password_conf.$invalid}">
-        <label class="control-label col-xs-3"
-               for="enc-password-conf">Password confirmation</label>
-        <div class="col-xs-7">
-          <input type="text"
-                 delayed-password
-                 ng-required="message.IsEncrypted == '1'"
-                 ng-model="message.EncryptionPasswordConfirmation"
-                 match="message.EncryptionPassword"
-                 id="enc-password-conf"
-                 name="enc_password_conf"
-                 class="form-control"
-                 placeholder="Same strong password"
-                 tabindex="10">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label col-xs-3 optional" for="enc-password-hint">Password hint (optional)</label>
-        <div class="col-xs-7">
-          <input type="text"
-                 ng-model="message.PasswordHint"
-                 id="enc-password-hint"
-                 class="form-control"
-                 tabindex="10">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <a href="" pt-tooltip="Except for ProtonMail users" class="help" data-placement="right"><i class="fa fa-question"></i></a>
-        <label class="control-label col-xs-3 optional" for="enc-password">Expiration</label>
-        <div class="col-xs-2">
-          <span class="duration">{{message.expirationInHours | humanDuration:"hours"}}</span>
-        </div>
-        <div class="col-xs-7">
-          <slider min-value="1"
-                  max-value="336"
-                  steps="335"
-                  value="message.expirationInHours">
-          </slider>
-        </div>
-      </div>
-
-      <a href=""
-         class="done"
-         ng-click="setOptionsVisibility(false)"
-         ng-show="composeForm.enc_password_conf.$valid && message.IsEncrypted == '1'"><i class="fa fa-check"></i> Done</a>
-    </div>
-
-    <div class="encryption">
-      <span ng-click="message.IsEncrypted = '0'" ng-class="{selected: message.IsEncrypted == '0'}">
-        <em>Encrypt for</em><br>
-        ProtonMail users only
-      </span>
-
-      <span class="switcher {{ message.IsEncrypted == '1' ? 'encrypted' : 'unencrypted' }}"
-            ng-click="message.IsEncrypted = message.IsEncrypted == '0' ? '1' : '0'">
-        <i class="fa fa-lock"></i>
-      </span>
-
-      <span ng-click="message.IsEncrypted = '1'" ng-class="{selected: message.IsEncrypted == '1'}">
-        <em>Encrypt for</em><br>Everyone
-        <a href="#"
-           pt-tooltip="Encryption Setting"
-           ng-click="setOptionsVisibility(true)"><i class="fa fa-cog"></i></a>
-      </span>
-    </div>
-  </div>
+  <squire height="150px" ng-model="message.RawMessageBody" required></squire>
 </form>

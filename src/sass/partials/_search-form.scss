@@ -10,18 +10,6 @@
   .input-group {
     width: 100%;
   }
-  input::-webkit-input-placeholder {
-    color: #ccc;
-  }
-  input:-moz-placeholder {
-    color: #ccc;
-  }
-  input::-moz-placeholder {
-    color: #ccc;
-  }
-  input:-ms-input-placeholder {
-    color: #ccc;
-  }
   .form-group {
     margin-bottom: 0;
   }
@@ -32,6 +20,9 @@
     color: #fff;
     box-shadow: 0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1);
     &:focus {
+      @include placeholder {
+        color: #fff;
+      }
       outline: 0;
       border-color: #333;
     }

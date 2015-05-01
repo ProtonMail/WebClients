@@ -53,7 +53,8 @@ module.exports = {
       "vendor/dragdealer/src/dragdealer.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
-      "vendor/pikaday-angular/pikaday-angular.js"
+      "vendor/pikaday-angular/pikaday-angular.js",
+      "vendor/squire-rte/build/squire.js"
     ],
     bootstrap_components: [
       "affix",

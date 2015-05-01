@@ -11,6 +11,8 @@ angular.module("proton.controllers.Search", ["pikaday"])
         console.log('search');
         console.log($scope.params);
         // TODO
+        // $scope.params.begin.getDate();
+        // $scope.params.end.getDate();
     };
 
     $scope.open = function() {

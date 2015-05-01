@@ -115,7 +115,7 @@ form#compose {
     }
   }
 
-  div.form-group {
+  div.form-group.form-group-compose {
     box-shadow: inset 0 -1px 0 #e5e5e5;
     position: relative;
     top: 0;
@@ -240,6 +240,15 @@ form#compose {
       }
     }
 
+    &.body.pm-squire {
+        padding: 0;
+        border-radius: none;
+        .menu {
+          text-align: left;
+          padding: 0 10px;
+        }
+    }
+
     &.body {
       padding: 10px 15px;
       position: relative;
@@ -286,7 +295,7 @@ form#compose {
           }
         }
 
-        .form-group {
+        .form-group.form-group-compose {
           a.help {
             position: absolute;
             top: 15px;
@@ -345,13 +354,16 @@ form#compose {
         padding: 10px;
         font-family: menlo, monaco, monospace;
         outline: none;
-        background-color: #f6f6f6;
-        border-radius: 8px;
-        border: 1px solid #ddd;
+        color: white;
+        background-color: #333;
+        border-radius: $border-radius-base;
         margin-top: 10px;
+        resize: none;
       }
 
       .rich-text-toolbar {
+        z-index: 100;
+        position: relative;
         display: inline-block;
         a.wysihtml5-command-active,
         a.wysihtml5-action-active {
@@ -364,6 +376,25 @@ form#compose {
           display: inline-block;
           background-color: #CCC;
           vertical-align: middle;
+        }
+        .rich-text-popover {
+          position: absolute;
+          z-index: 101;
+          width: 100%;
+          padding: 10px;
+          background-color: $panel-bg;
+          border-radius: $border-radius-base;
+          border: 1px solid #ccc;
+          label {
+            text-transform: none;
+            padding: 0;
+            height: auto;
+            line-height: normal;
+          }
+          input {
+            padding: inherit;
+            line-height: normal;
+          }
         }
       }
 
@@ -440,5 +471,72 @@ form#compose {
         }
       }
     }
+  }
+}
+
+
+
+.composer {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+  position: absolute;
+  bottom: $footer-height;
+  right: 10px;
+  width: 480px;
+
+  &.minimized {
+    width: 200px;
+  }
+
+  @include responsive(xs) {
+    width: auto;
+    left: 10px;
+    right: 10px;
+  }
+
+  .composer-header {
+    border-top-left-radius: $border-radius-base;
+    border-top-right-radius: $border-radius-base;
+    background-color: $panel-header;
+    color: #fff;
+    a.btn {
+      color: #666;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
+  .composer-body {
+    .form-horizontal {
+      .form-group {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    .form-group {
+      box-shadow: 0 -1px 0 #e5e5e5;
+      position: relative;
+      margin-bottom: 0;
+      .control-label {
+        text-align: left;
+        padding: 7.15px 14.3px;
+        margin: 0;
+        font-weight: normal;
+      }
+      .form-control {
+        z-index: 0;
+        box-shadow: none;
+        border-radius: 0;
+        border: 0;
+        outline: 0;
+      }
+    }
+  }
+
+  .composer-footer {
+    padding: 10px 10px;
+    box-shadow: inset 0 1px 0 #e5e5e5;
+    background-color: $panel-footer;
   }
 }

@@ -128,7 +128,7 @@ angular.module("proton.models", [
       },
       pubkeys: {
         method: 'get',
-        url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+        url: authentication.baseURL + "/users/pubkeys/:Emails",
         isArray: false,
         transformResponse: getFromJSONResponse()
       }
@@ -279,7 +279,7 @@ angular.module("proton.models", [
       },
       pubkeys: {
         method: 'get',
-        url: authentication.baseURL + "/users/pubkeys?users=:Emails",
+        url: authentication.baseURL + "/users/pubkeys/:Emails",
         isArray: true,
         transformResponse: getFromJSONResponse()
       },
