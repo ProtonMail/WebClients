@@ -120,11 +120,14 @@ angular.module("proton.models", [
       },
       updateDraft: {
         method: "put",
-        url: authentication.baseURL + "/messages/:MessageID/draft"
+        url: authentication.baseURL + "/messages/draft"
       },
-      send:{
+      send: {
         method: "post",
-        url: authentication.baseURL + "/messages"
+        url: authentication.baseURL + "/messages",
+        headers: {
+          'Accept': 'application/vnd.protonmail.api+json;apiversion=2;appversion=1'
+        }
       },
       pubkeys: {
         method: 'get',

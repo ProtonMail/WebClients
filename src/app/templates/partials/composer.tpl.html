@@ -5,45 +5,36 @@
                 <a href="" class="btn btn-sm" ng-click="toggleMinimize(message)">
                     <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-square': !!message.minimized}"></i>
                 </a>
-                <a href="" class="btn btn-sm" ng-click="close(message)">
+                <a href="" class="btn btn-sm" ng-click="close(message, true)">
                     <span class="sr-only">Close</span>
                     <i class="fa fa-times"></i>
                 </a>
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select class="form-control" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="From">
+                    <select tabindex="1" class="form-control" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="From">
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <div class="form-group">
-                        <label class="control-label col-md-2 text-muted" ng-show="message.fields">To</label>
-                        <div ng-class="{'col-md-10': !!message.fields}">
-                            <div class="input-group">
-                                <input type="text" placeholder="To" ng-model="message.RecipientList" class="form-control" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-sm btn-white" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
-                                        <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
-                                    </button>
-                                </span>
-                            </div>
+                        <div class="input-group">
+                            <input tabindex="2" type="text" placeholder="To" ng-model="message.RecipientList" class="form-control" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-white" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
+                                    <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
+                                </button>
+                            </span>
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <label class="col-md-2 control-label text-muted" for="">CC</label>
-                        <div class="col-md-10">
-                            <input type="text" ng-model="message.CCList" placeholder="CC" class="form-control" />
-                        </div>
+                        <input tabindex="3" type="text" ng-model="message.CCList" placeholder="CC" class="form-control" />
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <label class="col-md-2 control-label text-muted" for="">BCC</label>
-                        <div class="col-md-10">
-                            <input type="text" ng-model="message.BCCList" placeholder="BCC" class="form-control" />
-                        </div>
+                        <input tabindex="4" type="text" ng-model="message.BCCList" placeholder="BCC" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Subject" title="Subject" class="form-control" ng-model="message.MessageTitle" required />
+                    <input tabindex="5" type="text" placeholder="Subject" title="Subject" class="form-control" ng-model="message.MessageTitle" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
                 </div>
                 <ul ng-if="message.Attachments" class="attachments">
                     <li ng-repeat="attachment in message.Attachments">
@@ -52,7 +43,34 @@
                     </li>
                 </ul>
                 <div class="form-group">
-                    <squire ng-model="message.RawMessageBody" height="370px">
+                    <div ng-show="message.displayOptions" class="options">
+                        <div class="form-group col-md-6">
+                            <label for="" class="control-label">Encrypt for Outside Users</label>
+                            <div>
+                                <toggle-switch ng-model="encryptOutside"><toggle-switch>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="control-label">Expiration Time</label>
+                            <input type="number" min="0" max="672" name="ExpirationTime" id="ExpirationTime" ng-model="message.ExpirationTime" placeholder="0" class="form-control" />
+                        </div>
+                        <div class="form-group col-md-6" ng-show="encryptOutside">
+                            <label for="" class="control-label">Message Password</label>
+                            <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" placeholder="Password" class="form-control"  required="" />
+                        </div>
+                        <div class="form-group col-md-6" ng-show="encryptOutside">
+                            <label for="" class="control-label">Confirm Message Password</label>
+                            <input type="password" autocomplete="off" id="outsidePwConfirm" name="outsidePwConfirm" placeholder="Confirm Password" class="form-control" required="" />
+                        </div>
+                        <div class="form-group col-md-12" ng-show="encryptOutside">
+                            <label for="" class="control-label">Password Hint (Optional)</label>
+                            <input type="text" autocomplete="off" id="outsidePwHint" name="outsidePwHint" placeholder="Hint" class="form-control" />
+                        </div>
+                        <div class="col-md-12">
+                            <p class="help-block">Only email body is encrypted during Beta.</p>
+                        </div>
+                    </div>
+                    <squire ng-model="message.RawMessageBody" message="message" editor="message.editor" height="320px">
                     </squire>
                 </div>
             </div>

@@ -68,53 +68,10 @@
                     </div>
                 </a>
             </li>
-            <!-- <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Quote" ng-click="action('increaseQuoteLevel')">
-                    <i class="fa fa-quote-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Align Left" ng-click="action('alignLeft')">
-                    <i class="fa fa-align-left"></i>
-                </a>
-            </li>
-            <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Align Center" ng-click="action('alignCenter')">
-                    <i class="fa fa-align-center"></i>
-                </a>
-            </li>
-            <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Align Right" ng-click="action('alignRight')">
-                    <i class="fa fa-align-right"></i>
-                </a>
-            </li> -->
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="" ng-click="popoverShow($event)">
-                    <i class="fa fa-lock" ng-class="{'text-purple': displayOptions}"></i>
-                    <div class="squire-popover">
-                        <div class="arrow"></div>
-                        <div class="content content-options">
-                            <div class="panel">
-                                <label for="" class="control-label">Expiration Time</label>
-                                <input type="number" class="form-control" min="0" placeholder="0" />
-                            </div>
-                            <div class="panel">
-                                <input type="checkbox" ng-model="" />
-                                <label for="">Encrypt for Outside Users</label>
-                            </div>
-                            <div class="panel">
-                                <input type="text" class="form-control" placeholder="Password" />
-                            </div>
-                            <div class="panel">
-                                <input type="text" class="form-control" placeholder="Confirm Password" />
-                            </div>
-                            <div class="panel">
-                                <input type="text" class="form-control" placeholder="Hint" />
-                            </div>
-                        </div>
-                        <div class="squire-popover-overlay" ng-click="popoverHide($event, 'insertImage')"></div>
-                    </div>
+                <a href="" class="btn btn-sm" pt-tooltip="Encrypt Panel" ng-click="$parent.toggleEncryptPanel(message)">
+                    <i class="fa fa-lock text-purple"></i>
                 </a>
             </li>
         </ul>

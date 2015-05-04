@@ -341,6 +341,18 @@ angular.module("proton.routes", [
       }
     }))
 
+    .state("secured.search", {
+      url: "/search",
+      onEnter: function ($rootScope) { $rootScope.isInMailbox = true; },
+      onExit: function ($rootScope) { $rootScope.isInMailbox = false; },
+      views: {
+        "content@secured": {
+          controller: "SearchMessageController",
+          templateUrl: "templates/views/search.tpl.html"
+        }
+      }
+    })
+
     .state("secured.inbox.relative", {
       url: "/{rel:first|last}",
       controller: function ($scope, $stateParams) {

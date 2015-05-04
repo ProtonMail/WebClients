@@ -7,8 +7,10 @@ angular.module("proton.squire", [])
             height: '@height',
             width: '@width',
             body: '=body',
+            message: '=message',
             placeholder: '@placeholder',
-            editorClass: '@editorClass'
+            editorClass: '@editorClass',
+            editor: '=editor'
         },
         replace: true,
         transclude: true,
@@ -40,8 +42,7 @@ angular.module("proton.squire", [])
             editor = scope.editor = null;
             scope.data = {
                 link: LINK_DEFAULT,
-                image: IMAGE_DEFAULT,
-                encrypt: false
+                image: IMAGE_DEFAULT
             };
             updateModel = function(value) {
                 return scope.$evalAsync(function() {

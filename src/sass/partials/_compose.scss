@@ -474,8 +474,6 @@ form#compose {
   }
 }
 
-
-
 .composer {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
@@ -483,6 +481,7 @@ form#compose {
   bottom: $footer-height;
   right: 10px;
   width: 480px;
+  @include transition(width: , 0.2s, ease-in-out);
 
   &.minimized {
     width: 200px;
@@ -508,6 +507,24 @@ form#compose {
   }
 
   .composer-body {
+    .options {
+      position: absolute;
+      width: 100%;
+      background-color: $panel-footer;
+      z-index: 1;
+      top: 31px;
+      padding: 10px 0;
+      box-shadow: 0 1px 0 #e5e5e5;
+      .form-group {
+        .form-control {
+          border-radius: $border-radius-base;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          border: 1px solid #ccc;
+        }
+        box-shadow: none;
+        margin-bottom: 10px;
+      }
+    }
     .form-horizontal {
       .form-group {
         margin-left: 0;
@@ -518,12 +535,6 @@ form#compose {
       box-shadow: 0 -1px 0 #e5e5e5;
       position: relative;
       margin-bottom: 0;
-      .control-label {
-        text-align: left;
-        padding: 7.15px 14.3px;
-        margin: 0;
-        font-weight: normal;
-      }
       .form-control {
         z-index: 0;
         box-shadow: none;

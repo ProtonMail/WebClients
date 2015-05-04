@@ -6,6 +6,7 @@ angular.module("proton", [
     "angularFileUpload",
     "cgNotify",
     "pikaday",
+    "toggle-switch",
 
     // templates
     "templates-app",

@@ -36,6 +36,7 @@ module.exports = {
       "vendor/angular-local-storage/dist/angular-local-storage.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
+      "vendor/angular-toggle-switch/angular-toggle-switch.js",
       "vendor/angular-file-upload/dist/angular-file-upload.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
@@ -72,6 +73,8 @@ module.exports = {
       "vendor/ng-sortable/dist/ng-sortable.css",
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/angular-modal/modal.css",
+      "vendor/angular-toggle-switch/angular-toggle-switch.css",
+      "vendor/angular-toggle-switch/angular-toggle-switch-bootstrap.css",
       "vendor/pikaday/css/pikaday.css"
     ],
 

@@ -6,7 +6,9 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
     $scope,
     authentication,
     login,
-    networkActivityTracker
+    localStorageService,
+    networkActivityTracker,
+    pmcrypto
 ) {
 
   if ($state.is("login") && authentication.isLoggedIn()) {
@@ -36,12 +38,14 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
 
   $scope.tryDecrypt = function() {
     $('input').blur();
+    var mailboxPassword = this.mailboxPassword;
     clearErrors();
     networkActivityTracker.track(
       authentication
-        .unlockWithPassword(this.mailboxPassword)
+        .unlockWithPassword(mailboxPassword)
         .then(
           function() {
+            localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(mailboxPassword));
             $state.go("secured.inbox");
           },
           function(err) {

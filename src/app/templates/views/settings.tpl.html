@@ -9,12 +9,10 @@
                         <div class="form-group">
                             <label class="control-label">Daily New Email Notifications</label>
                             <div>
-                                <label class="radio-inline">
-                                    <input type="radio" name="dailyNotifications" ng-model="dailyNotifications" value="1"> Enabled
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="dailyNotifications" ng-model="dailyNotifications" value="0"> Disabled
-                                </label>
+                                <toggle-switch
+                                    ng-model="dailyNotifications"
+                                    on-label="Enabled"
+                                    off-label="Disabled"><toggle-switch>
                             </div>
                         </div>
                         <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$error.required}">
