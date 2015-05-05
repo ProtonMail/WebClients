@@ -3,7 +3,7 @@ angular.module("proton", [
     "ngSanitize",
     "LocalStorageModule",
     "btford.markdown",
-    "angularFileUpload",
+    "ngFileUpload",
     "cgNotify",
     "pikaday",
     "toggle-switch",
