@@ -481,7 +481,7 @@ form#compose {
   bottom: $footer-height;
   right: 10px;
   width: 480px;
-  @include transition(width: , 0.2s, ease-in-out);
+  @include transition(width, 200ms, ease-in-out);
 
   &.minimized {
     width: 200px;
