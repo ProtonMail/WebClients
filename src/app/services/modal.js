@@ -159,6 +159,31 @@ angular.module("proton.modals", [])
     });
 })
 
+// label modal
+.factory('labelModal', function(pmModal) {
+    return pmModal({
+        controller: function(params, $timeout) {
+            this.create = function() {
+                if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
+                    params.create();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            $timeout(function() {
+                this.class = 'in';
+            }.bind(this), 100);
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/label.tpl.html'
+    });
+})
+
 // dropzone modal
 .factory('dropzoneModal', function(pmModal) {
     return pmModal({

@@ -1,0 +1,27 @@
+<div class="labels dropdown-menu" role="menu" ng-click="$event.stopPropagation()">
+    <div class="modal-body">
+        <div class="form-group" ng-show="labels.length > 0">
+            <input type="search" id="searchLabels" placeholder="Filter Labels..." class="form-control" ng-model="searchLabels" />
+        </div>
+        <ul class="list-group" ng-show="labels.length > 0">
+            <li class="list-group-item" ng-class="{'highlight': label.selected}" ng-repeat="label in labels | filter:searchLabels">
+                <input type="checkbox" ng-model="label.selected" />
+                <span class="label label-pm"><i class="fa fa-tag"></i> {{label.name}}</span>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-xs-6">
+                <a ui-sref="secured.labels" title="Add and manage your labels">Manage Labels</a>
+            </div>
+            <div class="col-xs-6 text-right" ng-show="labels.length > 0">
+                <label for="">
+                    <input type="checkbox" /> also Archived
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" ng-show="labels.length > 0">
+        <a class="btn" ng-click="closeLabels()">Cancel</a>
+        <button type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()">Save</button>
+    </div>
+</div>

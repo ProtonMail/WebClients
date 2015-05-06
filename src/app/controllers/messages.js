@@ -192,6 +192,26 @@ angular.module("proton.controllers.Messages", [
         }));
     };
 
+    $scope.openLabels = function() {
+        $scope.labels = [
+            {name: 'Proton'},
+            {name: 'Work'},
+            {name: 'Trip'},
+            {name: 'Shopping'}
+        ];
+        $timeout(function() {
+            $('#searchLabels').focus();
+        });
+    };
+
+    $scope.closeLabels = function() {
+        $('[data-toggle="dropdown"]').parent().removeClass('open');
+    };
+
+    $scope.saveLabels = function() {
+        $scope.closeLabels();
+    };
+
     $scope.goToPage = function(page) {
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page == 1) {

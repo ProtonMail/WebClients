@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Settings", [
     "proton.routes",
-    "ui.sortable"
+    "ui.sortable",
+    "proton.modals"
 ])
 
 .controller("SettingsController", function(
@@ -10,6 +11,7 @@ angular.module("proton.controllers.Settings", [
     $rootScope,
     $log,
     authentication,
+    labelModal,
     Setting,
     user,
     tools,
@@ -107,5 +109,19 @@ angular.module("proton.controllers.Settings", [
                 $log.error(response);
             })
         );
+    };
+
+    $scope.createLabel = function() {
+        labelModal.activate({
+            params: {
+                create: function(files) {
+                    labelModal.deactivate();
+                    notify('Label created');
+                },
+                cancel: function() {
+                    labelModal.deactivate();
+                }
+            }
+        });
     };
 });

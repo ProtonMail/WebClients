@@ -439,6 +439,36 @@ angular.module("proton.routes", [
       }
     })
 
+    .state("secured.labels", {
+      url: "/labels",
+      views: {
+        "content@secured": {
+          templateUrl: "templates/views/labels.tpl.html",
+          controller: "SettingsController"
+        }
+      }
+    })
+
+    .state("secured.security", {
+      url: "/security",
+      views: {
+        "content@secured": {
+          templateUrl: "templates/views/security.tpl.html",
+          controller: "SettingsController"
+        }
+      }
+    })
+
+    .state("secured.theme", {
+      url: "/theme",
+      views: {
+        "content@secured": {
+          templateUrl: "templates/views/theme.tpl.html",
+          controller: "SettingsController"
+        }
+      }
+    })
+
     // -------------------------------------------
     //  ADMIN ROUTES
     // -------------------------------------------

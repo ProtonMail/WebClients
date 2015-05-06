@@ -29,6 +29,30 @@
           }
         }
       }
+      &.open {
+        .labels {
+          display: block;
+          margin-top: 0;
+          width: 300px;
+          position: absolute;
+          background-color: #fff;
+          input[type='search'] {
+            border-radius: 50px;
+            border: 1px solid #ccc;
+          }
+          ul.list-group {
+            max-height: 120px;
+            overflow: auto;
+            input[type='checkbox'] {
+              margin: 0;
+            }
+            .label {
+              float: right;
+            }
+          }
+        }
+
+      }
 
       input[type='search'] {
         line-height: 31px;

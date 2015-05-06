@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="form-group">
+        <button class="btn btn-primary" ng-click="createLabel()">Create Label</button>
+    </div>
+
+    <table class="table table-middle table-hover table-pm">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Side Menu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="label label-lg label-pm"><i class="fa fa-tag"></i> Proton</span>
+                </td>
+                <td>
+                    <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-lg label-pm"><i class="fa fa-tag"></i> Proton</span>
+                </td>
+                <td>
+                    <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-lg label-pm"><i class="fa fa-tag"></i> Proton</span>
+                </td>
+                <td>
+                    <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-lg label-pm"><i class="fa fa-tag"></i> Proton</span>
+                </td>
+                <td>
+                    <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

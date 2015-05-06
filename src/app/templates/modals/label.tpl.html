@@ -1,0 +1,36 @@
+<div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create New Label</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="" class="label-control">Label Name</label>
+                    <input type="text" class="form-control" placeholder="Label Name" />
+                </div>
+                <div class="form-group">
+                    <label>Select a Color</label>
+                    <div class="palette text-center well well-sm">
+                        <div class="form-group">
+                            <a class="color active" style="background-color: red;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                        </div>
+                        <div>
+                            <a class="color" style="background-color: red;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
+                            <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-sm" ng-click="ctrl.cancel()">Cancel</a>
+                <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="ctrl.create()">Create Label</button>
+            </div>
+        </div>
+    </div>
+</div>

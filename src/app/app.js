@@ -136,6 +136,15 @@ angular.module("proton", [
 })
 
 //
+// Console messages
+//
+
+.run(function($log) {
+    $log.info('Find a security bug? security@protonmail.ch');
+    $log.info('We\'re hiring! https://protonmail.ch/pages/join-us');
+})
+
+//
 // Setup keyboard bindings
 //
 
