@@ -21,7 +21,7 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
-                            <input tabindex="2" type="text" placeholder="To" ng-model="message.RecipientList" class="recipient-list form-control" />
+                            <input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" />
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
                                     <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
