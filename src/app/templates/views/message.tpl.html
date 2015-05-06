@@ -1,22 +1,20 @@
 <ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
 <div class="row visible-xs-block" id="messageActionsMobile">
     <div id="mobReply" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-reply"></i> Reply</a></div>
-    <div id="mobReplyAll" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply all</a></div>
+    <div id="mobReplyAll" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
     <div id="mobForward" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> Forward</a></div>
 </div>
-<pre id="headerCode" ng-show="messageHeadState == 'open' && showHeaders">{{ message.Header }}</pre>
+<pre id="headerCode" ng-show="showHeaders">{{ message.Header }}</pre>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
-    <div class="hidden-xs pull-right message-actions btn-group">
-        <a href class="btn btn-default" ng-click="go('secured.reply', {action: 'reply', id: message.MessageID})"><i class="fa fa-reply"></i> Reply</a>
-        <a href class="btn btn-default" ng-click="go('secured.reply', {action: 'replyall', id: message.MessageID})"><i class="fa fa-reply-all"></i> Reply all</a>
-        <a href class="btn btn-default" ng-click="go('secured.reply', {action: 'forward', id: message.MessageID})"><i class="fa fa-mail-forward"></i> Forward</a>
+    <div class="pull-right">
+        <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </div>
     <h1>
-    <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></i></a>
-    <a href class="padlock"><i class="fa" ng-class="{'fa-lock text-purple': message.IsEncrypted == '1', 'fa-unlock-alt text-muted': message.IsEncrypted == '0'}"></i></a>
-    {{ message.MessageTitle }}
-  </h1>
-    <ul class="infos" ng-if="messageHeadState == 'open'">
+        <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></i></a>
+        <a href class="padlock"><i class="fa" ng-class="{'fa-lock text-purple': message.IsEncrypted == '1', 'fa-unlock-alt text-muted': message.IsEncrypted == '0'}"></i></a>
+        {{ message.MessageTitle }}
+      </h1>
+    <ul class="infos">
         <li><strong>From</strong>
             <span btf-markdown="message.Sender | contrast:'<'"></span>
         </li>
@@ -29,14 +27,7 @@
         <li ng-if="message.BCCList"><strong>BCC</strong>
             <span btf-markdown="message.BCCList | contrast:'<'"></span>
         </li>
-        <li><strong>At</strong>
-            <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
-        </li>
     </ul>
-    <div class="toggle-head" ng-click="toggleHead()" ng-class="{open: messageHeadState == 'open'}">
-        <i class="fa" ng-class="{'fa-chevron-down': messageHeadState == 'close', 'fa-chevron-up': messageHeadState == 'open'}"></i>
-    </div>
-    <!--/.toggle-head-->
 </div>
 <!--/.message-head-->
 <ul ng-if="message.AttachmentIDList.length" class="attachments">

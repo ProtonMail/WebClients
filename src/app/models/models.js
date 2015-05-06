@@ -83,6 +83,7 @@ angular.module("proton.models", [
   $templateCache,
   $injector,
   authentication,
+  localStorageService,
   pmcrypto,
   mailboxIdentifiers
 ) {
@@ -239,17 +240,25 @@ angular.module("proton.models", [
 
     clearTextBody: function () {
       var body;
+
       if (this.isDraft() ||
          (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
         if (_.isUndefined(this._decryptedBody)) {
           try {
-            this._decryptedBody = pmcrypto.decryptPackage(
-              authentication.user.EncPrivateKey,
-              this.MessageBody,
-              this.Time
-            );
-            this.failedDecryption = false;
+            var local = localStorageService.get('protonmail_pw');
+            var pw = pmcrypto.decode_base64(local);
+
+            if(!!!this.decrypting) {
+              this.decrypting = true;
+              pmcrypto.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+                  pmcrypto.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
+                      this._decryptedBody = result;
+                      this.failedDecryption = false;
+                      this.decrypting = false;
+                  }.bind(this));
+              }.bind(this));
+            }
           } catch(err) {
             this._decryptedBody = "";
             this.failedDecryption = true;

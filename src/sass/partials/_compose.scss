@@ -483,21 +483,29 @@ form#compose {
   width: 480px;
   @include transition(width, 200ms, ease-in-out);
 
-  &.minimized {
-    width: 200px;
-  }
-
   @include responsive(xs) {
     width: auto;
     left: 10px;
     right: 10px;
+    top: 60px;
+    bottom: inherit;
   }
 
   .composer-header {
+    line-height: 30px;
+    margin-left: 0;
+    margin-right: 0;
     border-top-left-radius: $border-radius-base;
     border-top-right-radius: $border-radius-base;
     background-color: $panel-header;
     color: #fff;
+    span:first-child {
+      overflow: hidden;
+      text-overflow: ellipsis;white-space: nowrap;
+    }
+    span:last-child {
+      padding-right: 0;
+    }
     a.btn {
       color: #666;
       &:hover {

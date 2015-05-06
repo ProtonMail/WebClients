@@ -70,8 +70,13 @@
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Encrypt Panel" ng-click="$parent.toggleEncryptPanel(message)">
-                    <i class="fa fa-lock text-purple"></i>
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="Encryption" ng-click="$parent.togglePanel(message, 'encrypt')">
+                    <i class="fa fa-lock"></i>
+                </a>
+            </li>
+            <li>
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="Expiration" ng-click="$parent.togglePanel(message, 'expiration')">
+                    <i class="fa fa-clock-o" id="clock-icon"></i>
                 </a>
             </li>
         </ul>

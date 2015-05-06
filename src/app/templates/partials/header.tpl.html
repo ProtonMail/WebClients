@@ -62,9 +62,6 @@
     <nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed visible-xs-block" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand mobileOnly">
-                    <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
-                </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-small">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -76,20 +73,16 @@
                     <div class="bounce2"></div>
                     <div class="bounce3"></div>
                 </div>
-                <a href="/" class="navbar-brand" ng-if="'login.**' | includedByState">
-                    <img src="/assets/img/protonmail_logo_beta.png" alt="ProtonMail">
-                </a>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="openSearchModal()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-click="openNewMessage()">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-small">
-                <form id="search-form-mobile" class="navbar-left" role="search" ng-if="'secured.**' | includedByState">
-                    <div class="input-group form-group">
-                        <input type="text" id="search-text" name="q" value="" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
-                        </span>
-                    </div>
-                    <!-- /input-group -->
-                </form>
                 <div error-reporter class="alert alert-danger centered ng-hide">
                     <button type="button" class="close" ng-click="errorReporter.active = false">
                         <span aria-hidden="true">&times;</span>

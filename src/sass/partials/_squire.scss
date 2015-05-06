@@ -75,8 +75,12 @@ $angular-squire-wrapper-padding: 5px 0 !default;
         &:hover {
           color: #333;
         }
-        .fa-lock {
+        .fa-lock, .fa-clock-o {
           color: $light-purple;
+        }
+        &.btn-options.active {
+          background-color: $panel-footer;
+          box-shadow: none;
         }
       }
     }

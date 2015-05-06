@@ -33,6 +33,11 @@ html, body {
   display: none;
 }
 
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+
 .relative {
   position: relative;
 }
@@ -368,6 +373,7 @@ p {
 @import "partials/compose";
 @import "partials/contacts";
 @import "partials/notification";
+@import "partials/range";
 @import "partials/setting";
 @import "partials/sign-up";
 @import "partials/spinner";

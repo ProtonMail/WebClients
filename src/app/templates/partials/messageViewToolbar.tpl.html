@@ -1,89 +1,95 @@
-<div class="message-toolbar">
-  <ul class="nav navbar-nav">
-    <li>
-      <a href ng-click="goToMessageList()" title="Back to message list">
-        <i class="fa fa-fw fa-level-up fa-rotate-270"></i>
-      </a>
-    </li>
-    <li ng-if="!message.IsRead">
-      <a href ng-click="message.setReadStatus(true)">
-        <i class="fa fa-fw fa-eye visible-md-inline-block visible-lg-inline-block"></i> <span class="visible-xs-inline-block visible-md-inline-block">Read</span><span class="visible-lg-inline-block">Mark as read</span>
-      </a>
-    </li>
-    <li ng-if="message.IsRead">
-      <a href ng-click="message.setReadStatus(false)">
-        <i class="fa fa-fw fa-eye-slash visible-md-inline-block visible-lg-inline-block"></i> <span class="visible-xs-inline-block visible-md-inline-block">Unread</span><span class="visible-lg-inline-block">Mark as unread</span>
-      </a>
-    </li>
-
-    <li>
-      <a href class="dropdown-toggle"
-         data-toggle="dropdown">
-        <i class="fa fa-folder visible-md-inline-block visible-lg-inline-block"></i> Move <i class="fa fa-angle-down"></i>
-      </a>
-      <ul class="dropdown-menu" role="menu">
-        <li ng-if="message.location() != 'inbox'">
-          <a href ng-click="moveMessageTo('inbox')">
-            <i class="fa fa-fw fa-inbox"></i> Inbox
-          </a>
+<div class="message-toolbar hidden-xs">
+    <ul class="nav navbar-nav">
+        <li>
+            <a href ng-click="goToMessageList()" title="Back to message list">
+                <i class="fa fa-fw fa-level-up fa-rotate-270"></i>
+            </a>
         </li>
-        <li ng-if="message.location() != 'trash'">
-          <a href ng-click="moveMessageTo('trash')">
-            <i class="fa fa-fw fa-trash-o"></i> Trash
-          </a>
+        <li ng-if="!message.IsRead">
+            <a href ng-click="message.setReadStatus(true)">
+                <i class="fa fa-fw fa-eye visible-md-inline-block visible-lg-inline-block"></i> <span class="visible-xs-inline-block visible-md-inline-block">Read</span><span class="visible-lg-inline-block">Mark as read</span>
+            </a>
         </li>
-        <li ng-if="message.location() != 'spam'">
-          <a href ng-click="moveMessageTo('spam')">
-            <i class="fa fa-fw fa-bug"></i> Spam
-          </a>
+        <li ng-if="message.IsRead">
+            <a href ng-click="message.setReadStatus(false)">
+                <i class="fa fa-fw fa-eye-slash visible-md-inline-block visible-lg-inline-block"></i> <span class="visible-xs-inline-block visible-md-inline-block">Unread</span><span class="visible-lg-inline-block">Mark as unread</span>
+            </a>
         </li>
-      </ul>
-    </li>
-
-    <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
-      <a  href
-          ng-click="moveMessagesTo('delete')">
-        <i class="fa fa-times-circle visible-md-inline-block visible-lg-inline-block"></i> Delete
-      </a>
-    </li>
-
-    <li>
-      <a href class="dropdown-toggle"
-         data-toggle="dropdown">
+        <li>
+            <a href class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-folder visible-md-inline-block visible-lg-inline-block"></i> Move <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-if="message.location() != 'inbox'">
+                    <a href ng-click="moveMessageTo('inbox')">
+                        <i class="fa fa-fw fa-inbox"></i> Inbox
+                    </a>
+                </li>
+                <li ng-if="message.location() != 'trash'">
+                    <a href ng-click="moveMessageTo('trash')">
+                        <i class="fa fa-fw fa-trash-o"></i> Trash
+                    </a>
+                </li>
+                <li ng-if="message.location() != 'spam'">
+                    <a href ng-click="moveMessageTo('spam')">
+                        <i class="fa fa-fw fa-bug"></i> Spam
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
+            <a href ng-click="moveMessagesTo('delete')">
+                <i class="fa fa-times-circle visible-md-inline-block visible-lg-inline-block"></i> Delete
+            </a>
+        </li>
+        <li>
+            <a href class="dropdown-toggle" data-toggle="dropdown">
          More<span class="visible-md-inline-block visible-lg-inline-block">...</span> <i class="fa fa-angle-down"></i>
       </a>
-      <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href onclick="window.print();">
+                        <i class="fa fa-print visible-md-inline-block visible-lg-inline-block"></i> Print
+                    </a>
+                </li>
+                <li>
+                    <a href ng-click="toggleHeaders()">
+                        <i class="fa fa-code visible-md-inline-block visible-lg-inline-block"></i> {{ showHeaders ? 'Hide' : 'View' }} headers
+                    </a>
+                </li>
+                <li>
+                    <a href="" ng-click="viewRaw()">
+                        <i class="fa fa-code visible-md-inline-block visible-lg-inline-block"></i> View raw
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav pull-right navigation">
         <li>
-          <a href onclick="window.print();">
-            <i class="fa fa-print visible-md-inline-block visible-lg-inline-block"></i> Print
-          </a>
+            <a href ng-click="go('secured.reply', {action: 'reply', id: message.MessageID})">
+                <i class="fa fa-reply"></i> Reply
+            </a>
         </li>
         <li>
-          <a href ng-click="toggleHeaders()">
-            <i class="fa fa-code visible-md-inline-block visible-lg-inline-block"></i> {{ showHeaders ? 'Hide' : 'View' }} headers
-          </a>
+            <a href ng-click="go('secured.reply', {action: 'replyall', id: message.MessageID})">
+                <i class="fa fa-reply-all"></i> Replay All
+            </a>
         </li>
-      </ul>
-    </li>
-
-  </ul>
-
-  <ul class="nav navbar-nav pull-right navigation">
-    <li class="prev-message">
-      <a href
-         ng-class="{disabled: !hasAdjacentMessage(message, -1)}"
-         ng-click="goToAdjacentMessage(message, -1)">
-        <i class="fa fa-chevron-up visible-md-inline-block visible-lg-inline-block"></i>
-        Previous
-      </a>
-    </li>
-    <li class="next-message">
-      <a href
-         ng-class="{disabled: !hasAdjacentMessage(message, 1)}"
-         ng-click="goToAdjacentMessage(message, 1)">
-        <i class="fa fa-chevron-down visible-md-inline-block visible-lg-inline-block"></i>
-        Next
-      </a>
-    </li>
-  </ul>
+        <li>
+            <a href ng-click="go('secured.reply', {action: 'forward', id: message.MessageID})">
+                <i class="fa fa-mail-forward"></i> Forward
+            </a>
+        </li>
+        <li class="prev-message">
+            <a href ng-class="{disabled: !hasAdjacentMessage(message, -1)}" ng-click="goToAdjacentMessage(message, -1)">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+        </li>
+        <li class="next-message">
+            <a href ng-class="{disabled: !hasAdjacentMessage(message, 1)}" ng-click="goToAdjacentMessage(message, 1)">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
 </div>

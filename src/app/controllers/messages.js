@@ -15,7 +15,7 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
-    var messagesPerPage = $scope.user.NumMessagePerPage;
+    $scope.messagesPerPage = $scope.user.NumMessagePerPage;
 
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
@@ -35,6 +35,22 @@ angular.module("proton.controllers.Messages", [
     $scope.selectedOrder = $stateParams.sort || "-date";
 
     messageCache.watchScope($scope, "messages");
+
+    $scope.start = function() {
+        return ($scope.page - 1) * $scope.messageCount + 1;
+    };
+
+    $scope.end = function() {
+        var end;
+
+        end = $scope.start() + $scope.messagesPerPage - 1;
+
+        if(end > $scope.messageCount) {
+            end = $scope.messageCount;
+        }
+
+        return end;
+    };
 
     $scope.truncateSubjects = function() {
         $timeout(function() {
@@ -58,7 +74,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.hasNextPage = function() {
-        return $scope.messageCount > ($scope.page * messagesPerPage);
+        return $scope.messageCount > ($scope.page * $scope.messagesPerPage);
     };
 
     $scope.navigateToMessage = function(event, message) {
@@ -177,7 +193,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToPage = function(page) {
-        if (page > 0 && $scope.messageCount > ((page - 1) * messagesPerPage)) {
+        if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page == 1) {
                 page = null;
             }
@@ -470,13 +486,41 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.initMessage = function(message) {
-        if ($scope.messages.length !== 1) { // TODO remove that after
-            $scope.messages.push(message);
-            $scope.completedSignature(message);
-            $scope.clearTextBody(message);
-            $scope.selectAddress(message);
-            $scope.initForm(message);
+        $scope.messages.unshift(message);
+        $scope.completedSignature(message);
+        $scope.clearTextBody(message);
+        $scope.selectAddress(message);
+        $scope.initForm(message);
+        $timeout(function() {
+            $scope.focusComposer(message);
+            $scope.listenEditor(message);
+        })
+    };
+
+    $scope.composerStyle = function(message) {
+        var index = $scope.messages.indexOf(message);
+        var reverseIndex = $scope.messages.length - index;
+        var marginRight = 10; // px
+        var widthComposer = 480; // px
+        var widthWindow = $('#main').width();
+
+        if(Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
+            right = (index * (widthComposer + marginRight)) + marginRight;
+        } else {
+            widthWindow -= 10; // margin left
+            var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
+            right = index * (widthComposer - overlap);
         }
+
+        if(reverseIndex === $scope.messages.length) {
+            right = marginRight;
+            index = $scope.messages.length;
+        }
+
+        return {
+            'z-index': message.zIndex,
+            'right': right + 'px'
+        };
     };
 
     $scope.completedSignature = function(message) {
@@ -510,6 +554,44 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.focusComposer = function(message) {
+        if(!!!message.focussed) {
+            // calculate z-index
+            var index = $scope.messages.indexOf(message);
+            var reverseIndex = $scope.messages.length - index;
+
+            _.each($scope.messages, function(element, iteratee) {
+                if(iteratee > index) {
+                    element.zIndex = $scope.messages.length - (iteratee - index);
+                } else {
+                    element.zIndex = $scope.messages.length;
+                }
+            });
+            // focus correct field
+            var composer = $('.composer')[index];
+
+            if(!!!message.RecipientList) {
+                $(composer).find('.recipient-list').focus();
+            } else if(!!!message.MessageTitle) {
+                $(composer).find('.message-title').focus();
+            } else {
+                message.editor.focus();
+            }
+
+            _.each($scope.messages, function(m) {
+                m.focussed = false;
+            });
+            message.focussed = true;
+            $scope.$apply();
+        }
+    };
+
+    $scope.listenEditor = function(message) {
+        message.editor.addEventListener('focus', function() {
+            $scope.focusComposer(message);
+        });
+    };
+
     $scope.selectAddress = function(message) {
         message.FromEmail = $scope.user.addresses[0];
     };
@@ -538,8 +620,52 @@ angular.module("proton.controllers.Messages", [
         message.fields = !message.fields;
     };
 
-    $scope.toggleEncryptPanel = function(message) {
-        message.displayOptions = !!!message.displayOptions;
+    $scope.togglePanel = function(message, panelName) {
+        if(!!message.displayPanel) {
+            $scope.closePanel(message);
+        } else {
+            $scope.openPanel(message, panelName);
+        }
+    };
+
+    $scope.openPanel = function(message, panelName) {
+        message.panelName = panelName;
+        message.panelUrl = 'templates/partials/' + panelName + '.tpl.html';
+        message.displayPanel = true;
+    };
+
+    $scope.closePanel = function(message) {
+        message.panelName = '';
+        message.panelUrl = '';
+        message.displayPanel = false;
+    };
+
+    $scope.setEncrypt = function(message, params, form) {
+        if(form.$valid) {
+            message.PasswordHint = params.hint;
+            $scope.closePanel(message);
+        }
+    };
+
+    $scope.clearEncrypt = function(message) {
+        delete message.PasswordHint;
+        $scope.closePanel(message);
+    };
+
+    $scope.setExpiration = function(message, params) {
+        message.ExpirationTime = params.expiration;
+        $scope.closePanel(message);
+    };
+
+    $scope.clearExpiration = function(message) {
+        delete message.ExpirationTime;
+        $scope.closePanel(message);
+    };
+
+    $scope.rotateIcon = function(expiration) {
+        var deg = Math.round((expiration * 360) / 672);
+
+        $('#clock-icon').css({'transform': 'rotate(' + deg + 'deg)'});
     };
 
     $scope.send = function(message) {
@@ -739,21 +865,6 @@ angular.module("proton.controllers.Messages", [
     $scope.message = message;
     $scope.messageHeadState = "close";
     $scope.showHeaders = false;
-
-    try {
-        var local = localStorageService.get('protonmail_pw');
-        var pw = pmcrypto.decode_base64(local);
-    } catch(error) {
-        $log.error(error);
-    }
-
-    var decryptedMessage = pmcrypto.decryptPrivateKey($scope.user.EncPrivateKey, pw).then(function(key) {
-        pmcrypto.decryptMessageRSA(message.MessageBody, key, message.Time).then(function(result) {
-            console.log(result);
-        }, function(result) {
-            $log.error(result);
-        });
-    });
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
