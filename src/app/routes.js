@@ -9,7 +9,8 @@ angular.module("proton.routes", [
   "sent": 2,
   "trash": 3,
   "spam": 4,
-  "starred": 5
+  "starred": 5,
+  "archive": 6
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {

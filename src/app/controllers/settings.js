@@ -124,4 +124,12 @@ angular.module("proton.controllers.Settings", [
             }
         });
     };
+
+    $scope.saveTheme = function() {
+        // TODO
+    };
+
+    $scope.clearTheme = function() {
+        // TODO
+    };
 });

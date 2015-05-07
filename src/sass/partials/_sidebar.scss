@@ -78,43 +78,61 @@
     }
   }
 
-  .sizeBar {
-    margin: 5px 0;
-    width: 100%;
-    height: 1rem;
-    background: rgba(black, 0.25);
-    border: 1px solid rgba(black, 0.1);
-    box-shadow: 0 1px 0 rgba(white, 0.1);
-    overflow: hidden;
-    border-radius: 1rem;
-    position: relative;
-    .fill {
-      background: #FFF;
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#999));
-      background: -webkit-gradient(linear,left top,left bottom,color-stop(#ffffff,0),color-stop(#999,1));
-      background: -webkit-linear-gradient(top, #FFF 0%,#999 100%);
-      background: linear-gradient(top, #fff 0%,#999 100%);
-      background: -webkit-linear-gradient(top, #FFF 0%, #999 100%);
-      background: linear-gradient(top, #fff 0%, #999 100%);
-      background: -webkit-linear-gradient(to bottom, #fff 0%,#999 100%);
-      background: linear-gradient(to bottom, #FFF 0%,#999 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#999',GradientType=0 );
-      height: 100%;
-      clear: both;
-      box-shadow: inset 0 -1px 0 rgba(white, 0.25);
+  .storage {
+    position: fixed;
+    left: 0;
+    right: 1rem;
+    bottom: 0;
+    box-sizing: border-box;
+    width: $sidebar-width;
+    @include responsive(sm) {
+      width: 6rem;
+    }
+    @include responsive(md) {
+      width: 18rem;
+    }
+    @include responsive(lg) {
+      width: 20rem;
+    }
+    .sizeBar {
+      margin: 5px 0;
+      width: 100%;
+      height: 1rem;
+      background: rgba(black, 0.25);
+      border: 1px solid rgba(black, 0.1);
+      box-shadow: 0 1px 0 rgba(white, 0.1);
+      overflow: hidden;
       border-radius: 1rem;
+      position: relative;
+      .fill {
+        background: #FFF;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#999));
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(#ffffff,0),color-stop(#999,1));
+        background: -webkit-linear-gradient(top, #FFF 0%,#999 100%);
+        background: linear-gradient(top, #fff 0%,#999 100%);
+        background: -webkit-linear-gradient(top, #FFF 0%, #999 100%);
+        background: linear-gradient(top, #fff 0%, #999 100%);
+        background: -webkit-linear-gradient(to bottom, #fff 0%,#999 100%);
+        background: linear-gradient(to bottom, #FFF 0%,#999 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#999',GradientType=0 );
+        height: 100%;
+        clear: both;
+        box-shadow: inset 0 -1px 0 rgba(white, 0.25);
+        border-radius: 1rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .sizebar {
+      margin-top: .5rem;
       display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
+      line-height: 18px;
     }
   }
 
-  .sizebar {
-    margin-top: .5rem;
-    display: block;
-    line-height: 18px;
-  }
 
   .wrap {
     padding: 1rem;

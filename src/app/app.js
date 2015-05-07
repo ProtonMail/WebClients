@@ -89,7 +89,7 @@ angular.module("proton", [
     // notification service config
     notify.config({
         withCross: true,
-        templateUrl: 'templates/partials/notification.tpl.html',
+        templateUrl: 'templates/notifications/base.tpl.html',
         duration: 5000, // The default duration (in milliseconds) of each message. A duration of 0 will prevent messages from closing automatically.
         position: 'center', // The default position of each message
         maximumOpen: 5 // The maximum number of total notifications that can be visible at one time. Older notifications will be closed when the maximum is reached.
@@ -142,6 +142,24 @@ angular.module("proton", [
 .run(function($log) {
     $log.info('Find a security bug? security@protonmail.ch');
     $log.info('We\'re hiring! https://protonmail.ch/pages/join-us');
+})
+
+//
+// Welcome message
+//
+
+.run(function($rootScope, notify, localStorageService) {
+    var display = localStorageService.get('welcomeDisplayed');
+
+    if(!!!display) {
+        // TODO change message
+        notify({
+            duration: 10000,
+            message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!',
+            templateUrl: 'templates/notifications/welcome.tpl.html'
+        });
+        localStorageService.bind($rootScope, 'welcomeDisplayed', true);
+    }
 })
 
 //

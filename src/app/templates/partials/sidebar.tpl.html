@@ -38,7 +38,7 @@
     <div class="divider"></div>
     <ul class="list-group">
         <li class="list-group-item">
-            <a class="btn" ui-sref="secured.archive">
+            <a class="btn" ui-sref="secured.archive" ng-class="{ active: ('secured.archive.**' | includedByState) }">
                 <span class="fa fa-archive"></span> <span class="hidden-xs hidden-sm">Archive</span>
             </a>
         </li>
@@ -62,27 +62,19 @@
         </li>
     </ul>
     <div class="divider"></div>
-    <ul class="list-group info hidden-xs hidden-sm">
-        <li>
-            <span class="sizebar">Storage:
-            <span class="pull-right">{{ user.UsedSpace | humanSize: true }}/{{ user.MaxSpace | humanSize }}</span>
-            </span>
-        </li>
-        <li>
-            <div class="sizeBar">
-                <span class="fill" style="width:{{ 100 * user.UsedSpace / user.MaxSpace }}%"></span>
-            </div>
-        </li>
-    </ul>
-    <br>
-    <ul class="list-group info hidden-xs hidden-sm">
-        <li>
-            <span class="sizebar">Msg/month:
-            <span class="pull-right">{{ user.NumMessageSentThisMonth }}/{{ user.MaxNumMessageSentThisMonth }}</span>
-            </span>
-            <div class="sizeBar">
-                <span class="fill" style="width:{{ 100 * user.NumMessageSentThisMonth / user.MaxNumMessageSentThisMonth }}%"></span>
-            </div>
-        </li>
-    </ul>
+    <div class="storage">
+        <div class="divider"></div>
+        <ul class="list-group info hidden-xs hidden-sm">
+            <li>
+                <span class="sizebar">Storage:
+                <span class="pull-right">{{ user.UsedSpace | humanSize: true }}/{{ user.MaxSpace | humanSize }}</span>
+                </span>
+            </li>
+            <li>
+                <div class="sizeBar">
+                    <span class="fill" style="width:{{ 100 * user.UsedSpace / user.MaxSpace }}%"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
