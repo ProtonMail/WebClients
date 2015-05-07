@@ -1,5 +1,5 @@
 <div ng-controller="ComposeMessageController2">
-    <form name="composeForm" novalidate>
+    <form name="composeForm" id="composeForm" novalidate>
         <div class="composer" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
@@ -21,19 +21,19 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
-                            <input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" />
+                            <div id="typeahead-container"><input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" /></div>
                             <span class="input-group-btn">
-                                <button class="btn btn-sm btn-white" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
+                                <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
                                     <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
                                 </button>
                             </span>
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <input tabindex="3" type="text" ng-model="message.CCList" placeholder="CC" class="form-control" />
+                        <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="CC" class="form-control" />
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <input tabindex="4" type="text" ng-model="message.BCCList" placeholder="BCC" class="form-control" />
+                        <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="BCC" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">

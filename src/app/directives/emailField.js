@@ -49,7 +49,6 @@ angular.module("proton.emailField", [])
         tagsContainer: parent[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
         delimiters: [32, 44],
-        prefilled: 'hello',
         validator: function (input) {
           return EMAIL_REGEXP.test(input);
         }
