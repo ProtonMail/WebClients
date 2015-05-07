@@ -2,6 +2,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
+                <button type="button" class="close" ng-click="ctrl.cancel()">
+                    <i aria-hidden="true" title="Close" class="fa fa-times"></i>
+                    <span class="sr-only">Close</span>
+                </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
             <div class="modal-body">

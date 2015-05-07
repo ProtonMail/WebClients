@@ -2,13 +2,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form name="contactForm" novalidate ng-submit="ctrl.save()">
+                <div class="modal-header" ng-show="ctrl.title">
+                    <button type="button" class="close" ng-click="ctrl.cancel()">
+                        <i aria-hidden="true" title="Close" class="fa fa-times"></i>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">{{ctrl.title}}</h4>
+                </div>
                 <div class="modal-body">
-                    <div class="text-right">
-                        <a href="" ng-click="ctrl.cancel()">
-                            <i aria-hidden="true" title="Close" class="fa fa-times text-muted"></i>
-                            <span class="sr-only">Close</span>
-                        </a>
-                    </div>
                     <div class="form-group" ng-class="{'has-error': contactForm.contactName.$touched && contactForm.contactName.$error.required}">
                         <label class="control-label" for="contactName">Name</label>
                         <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="Contact Name" required />

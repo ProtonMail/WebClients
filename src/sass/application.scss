@@ -57,6 +57,11 @@ html, body {
   padding: 10px 15px;
   background-color: $panel-header;
   color: #DDD;
+  .close {
+    color: #DDD;
+    text-shadow: none;
+    font-weight: normal;
+  }
 }
 
 .modal-body {
@@ -398,6 +403,7 @@ p {
 
 .palette {
   .color {
+    cursor: pointer;
     border: 2px solid #ccc;
     display: inline-block;
     border-radius: $border-radius-base;

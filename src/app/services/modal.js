@@ -86,7 +86,7 @@ angular.module("proton.modals", [])
     return pmModal({
         controller: function(params, $timeout) {
             this.message = params.message;
-
+            this.title = params.title;
 
             this.confirm = function() {
                 if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
@@ -136,6 +136,7 @@ angular.module("proton.modals", [])
         controller: function(params, $timeout) {
             this.name = params.name;
             this.email = params.email;
+            this.title = params.title;
 
             this.save = function() {
                 if (angular.isDefined(params.save) && angular.isFunction(params.save)) {
@@ -163,6 +164,9 @@ angular.module("proton.modals", [])
 .factory('labelModal', function(pmModal) {
     return pmModal({
         controller: function(params, $timeout) {
+            this.label = params.label;
+            this.title = params.title;
+
             this.create = function() {
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
                     params.create();

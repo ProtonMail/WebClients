@@ -23,9 +23,10 @@ angular.module("proton.controllers.Contacts", [
 
     var props;
 
-    function openContactModal(name, email, save) {
+    function openContactModal(title, name, email, save) {
         contactModal.activate({
             params: {
+                title: title,
                 name: name,
                 email: email,
                 save: save,
@@ -38,15 +39,19 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.deleteContacts = function() {
         var contactsSelected = $scope.contactsSelected();
+        var message, title;
 
         if (contactsSelected === 1) {
+            title = 'Delete Contact';
             message = 'Are you sure you want to delete this contact?';
         } else {
+            title = 'Delete Contacts';
             message = 'Are you sure you want to delete contacts?';
         }
 
         confirmModal.activate({
             params: {
+                title: title,
                 message: message,
                 confirm: function() {
                     _.forEach(contactsSelected, function(contact) {
@@ -70,6 +75,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.deleteContact = function(contact) {
         confirmModal.activate({
             params: {
+                title: 'Delete Contact',
                 message: 'Are you sure you want to delete this contact?<br /><strong>' + contact.ContactEmail + '</strong>',
                 confirm: function() {
                     var idx = contacts.indexOf(contact);
@@ -89,7 +95,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.addContact = function() {
-        openContactModal('', '', function(name, email) {
+        openContactModal('Add New Contact', '', '', function(name, email) {
             var newContact = {
                 ContactName: name,
                 ContactEmail: email
@@ -113,7 +119,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.editContact = function(contact) {
-        openContactModal(contact.ContactName, contact.ContactEmail, function(name, email) {
+        openContactModal('Edit Contact', contact.ContactName, contact.ContactEmail, function(name, email) {
             contact.ContactName = name;
             contact.ContactEmail = email;
             networkActivityTracker.track(contact.$update().then(function(response) {

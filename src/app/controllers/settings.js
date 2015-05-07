@@ -11,6 +11,7 @@ angular.module("proton.controllers.Settings", [
     $rootScope,
     $log,
     authentication,
+    confirmModal,
     labelModal,
     Setting,
     user,
@@ -114,12 +115,46 @@ angular.module("proton.controllers.Settings", [
     $scope.createLabel = function() {
         labelModal.activate({
             params: {
-                create: function(files) {
+                title: 'Create New Label',
+                create: function() {
                     labelModal.deactivate();
                     notify('Label created');
                 },
                 cancel: function() {
                     labelModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.editLabel = function(label) {
+        labelModal.activate({
+            params: {
+                title: 'Edit Label',
+                label: label,
+                create: function() {
+                    labelModal.deactivate();
+                    notify('Labed edited');
+                },
+                cancel: function() {
+                    labelModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.deleteLabel = function(label) {
+        confirmModal.activate({
+            params: {
+                title: 'Delete Label',
+                message: 'Are you sure you want to delete this label?',
+                confirm: function() {
+                    // TODO
+                    confirmModal.deactivate();
+                    notify('Label deleteded');
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
                 }
             }
         });
