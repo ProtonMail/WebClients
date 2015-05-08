@@ -481,7 +481,7 @@ angular.module("proton.controllers.Messages", [
 //     $scope.savesContacts = $scope.savesContacts == 'true';
 // })
 
-.controller("ComposeMessageController2", function(
+.controller("ComposeMessageController", function(
     $rootScope,
     $scope,
     $log,
@@ -510,7 +510,7 @@ angular.module("proton.controllers.Messages", [
         $scope.completedSignature(message);
         $scope.clearTextBody(message);
         $scope.selectAddress(message);
-        $scope.initForm(message);
+        // $scope.initForm(message); // TODO uncomment
         $timeout(function() {
             $scope.focusComposer(message);
             $scope.listenEditor(message);
@@ -559,7 +559,9 @@ angular.module("proton.controllers.Messages", [
         var index = $scope.messages.indexOf(message);
 
         $timeout(function() {
+            console.log($scope);
             var form = $scope.composeForm['composeForm' + index];
+
 
             $scope.$watch(form, function(isPristine) {
                 if (!isPristine) {
@@ -661,10 +663,9 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setEncrypt = function(message, params, form) {
-        if(form.$valid) {
-            message.PasswordHint = params.hint;
-            $scope.closePanel(message);
-        }
+        console.log('setEncrypt');
+        message.PasswordHint = params.hint;
+        $scope.closePanel(message);
     };
 
     $scope.clearEncrypt = function(message) {
@@ -888,14 +889,65 @@ angular.module("proton.controllers.Messages", [
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
-    }
+    };
+
     $scope.toggleHead = function() {
         $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
     };
+
+    function buildMessage(message, action) {
+        var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
+        var blockquoteStart = '<blockquote>';
+        var originalMessage = '-------- Original Message --------<br />';
+        var subject = 'Subject: ' + message.MessageTitle + '<br />';
+        var time = 'Time (GMT): ' + message.Time + '<br />';
+        var from = 'From: ' + message.RecipientList + '<br />';
+        var to = 'To: ' + message.Sender + '<br />';
+        var cc = 'CC: ' + message.CCList + '<br />';
+        var blockquoteEnd = '</blockquote>';
+
+        if(action === 'reply') {
+            message.RecipientList = message.Sender;
+            message.MessageTitle = 'Re: ' + message.MessageTitle;
+        } else if(action === 'reply-all') {
+            message.RecipientList = message.Sender
+            message.MessageTitle = 'Re: ' + message.MessageTitle;
+        } else if (action === 'forward') {
+            message.RecipientList = '';
+            message.MessageTitle = 'Fw: ' + message.MessageTitle;
+        }
+
+        message.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.MessageBody + blockquoteEnd;
+
+        return message;
+    }
+
+    $scope.reply = function(original) {
+        var message = angular.copy(original);
+        var builtMessage = buildMessage(message, 'reply');
+
+        $rootScope.$broadcast('loadMessage', builtMessage);
+    };
+
+    $scope.replyAll = function(message) {
+        var message = angular.copy(original);
+        var builtMessage = buildMessage(message, 'reply-all');
+
+        $rootScope.$broadcast('loadMessage', message);
+    };
+
+    $scope.forward = function(message) {
+        var message = angular.copy(original);
+        var builtMessage = buildMessage(message, 'forward');
+
+        $rootScope.$broadcast('loadMessage', message);
+    };
+
     $scope.goToMessageList = function() {
         $state.go("^");
         $rootScope.pageName = $state.current.data.mailbox;
     };
+
     $scope.moveMessageTo = function(mailbox) {
         networkActivityTracker.track(
             ((mailbox === 'delete') ? message.delete() : message.moveTo(mailbox)).$promise
@@ -907,6 +959,7 @@ angular.module("proton.controllers.Messages", [
             })
         );
     };
+
     $scope.toggleHeaders = function() {
         if ($scope.showHeaders) {
             $scope.showHeaders = false;

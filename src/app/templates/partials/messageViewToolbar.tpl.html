@@ -66,17 +66,17 @@
     </ul>
     <ul class="nav navbar-nav pull-right navigation">
         <li>
-            <a href ng-click="go('secured.reply', {action: 'reply', id: message.MessageID})">
+            <a href ng-click="reply(message)">
                 <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">Reply</span>
             </a>
         </li>
         <li>
-            <a href ng-click="go('secured.reply', {action: 'replyall', id: message.MessageID})">
+            <a href ng-click="replyAll(message)">
                 <i class="fa fa-reply-all"></i> <span class="visible-md-inline-block visible-lg-inline-block">Replay All</span>
             </a>
         </li>
         <li>
-            <a href ng-click="go('secured.reply', {action: 'forward', id: message.MessageID})">
+            <a href ng-click="forward(message)">
                 <i class="fa fa-mail-forward"></i> <span class="visible-md-inline-block visible-lg-inline-block">Forward</span>
             </a>
         </li>

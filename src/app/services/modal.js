@@ -163,7 +163,7 @@ angular.module("proton.modals", [])
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout) {
+        controller: function(params, $timeout, $scope) {
             this.label = params.label;
             this.title = params.title;
 

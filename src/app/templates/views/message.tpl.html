@@ -38,6 +38,10 @@
 </ul>
 <div id="message-body">
     <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
+    <hr />
+    <div class="col-md-12">
+        <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
+    </div>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong>Decryption error</strong>

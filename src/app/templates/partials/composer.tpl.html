@@ -1,5 +1,5 @@
-<div ng-controller="ComposeMessageController2">
-    <form name="composeForm" novalidate>
+<div ng-controller="ComposeMessageController">
+    <ng-form name="composeForm" novalidate>
         <div class="composer" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
@@ -56,5 +56,5 @@
                 <button class="btn btn-sm btn-primary" ng-click="send(message)">Send</button>
             </div>
         </div>
-    </form>
+    </ng-form>
 </div>

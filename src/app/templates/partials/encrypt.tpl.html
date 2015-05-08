@@ -1,19 +1,21 @@
-<div class="form-group col-md-12">
-    <label for="outsidePw" class="control-label text-muted">Message Password</label>
-    <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
-</div>
-<div class="form-group col-md-12">
-    <label for="outsidePwConfirm" class="control-label text-muted">Confirm Message Password</label>
-    <input type="password" autocomplete="off" id="outsidePwConfirm" name="outsidePwConfirm" ng-model="params.confirm"placeholder="Confirm Password" class="form-control" required="" />
-</div>
-<div class="form-group col-md-12">
-    <label for="outsidePwHint" class="control-label text-muted">Password Hint (Optional)</label>
-    <input type="text" autocomplete="off" id="outsidePwHint" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
-</div>
-<div class="col-md-12">
-    <p class="help-block">Only email body is encrypted during Beta.</p>
-</div>
-<div class="col-md-12 text-right">
-    <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">Clear</button>
-    <button type="button" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)">Set</button>
-</div>
+<ng-form novalidate name="encryptForm" ng-submit="setEncrypt(message, params)">
+    <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
+        <label for="outsidePw" class="control-label text-muted">Message Password</label>
+        <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
+    </div>
+    <div class="form-group col-md-12" ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}">
+        <label for="outsidePwConfirm" class="control-label text-muted">Confirm Message Password</label>
+        <input type="password" autocomplete="off" id="outsidePwConfirm" name="outsidePwConfirm" ng-model="params.confirm"placeholder="Confirm Password" class="form-control" required="" />
+    </div>
+    <div class="form-group col-md-12">
+        <label for="outsidePwHint" class="control-label text-muted">Password Hint (Optional)</label>
+        <input type="text" autocomplete="off" id="outsidePwHint" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
+    </div>
+    <div class="col-md-12">
+        <p class="help-block">Only email body is encrypted during Beta.</p>
+    </div>
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">Clear</button>
+        <button type="submit" class="btn btn-primary btn-sm">Set</button>
+    </div>
+</ng-form>

@@ -41,7 +41,7 @@ angular.module("proton.controllers.Contacts", [
         var contactsSelected = $scope.contactsSelected();
         var message, title;
 
-        if (contactsSelected === 1) {
+        if (contactsSelected.length === 1) {
             title = 'Delete Contact';
             message = 'Are you sure you want to delete this contact?';
         } else {

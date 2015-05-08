@@ -8,33 +8,35 @@
                 </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="" class="label-control">Label Name</label>
-                    <input type="text" class="form-control" placeholder="Label Name" required="" />
-                </div>
-                <div class="form-group">
-                    <label>Select a Color</label>
-                    <div class="palette text-center well well-sm">
-                        <div class="form-group">
-                            <a class="color active" style="background-color: red;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
-                        </div>
-                        <div>
-                            <a class="color" style="background-color: red;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
-                            <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+            <form name="labelForm" novalidate ng-submit="ctrl.create()">
+                <div class="modal-body">
+                    <div class="form-group" ng-class="{'has-error': labelForm.name.$touched && labelForm.name.$error.required}">
+                        <label for="labelName" class="control-label">Label Name</label>
+                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="name" ng-model="ctrl.label.name" placeholder="Label Name" required="" />
+                    </div>
+                    <div class="form-group">
+                        <label>Select a Color</label>
+                        <div class="palette text-center well well-sm">
+                            <div class="form-group">
+                                <a class="color active" style="background-color: red;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                            </div>
+                            <div>
+                                <a class="color" style="background-color: red;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <a class="btn btn-sm" ng-click="ctrl.cancel()">Cancel</a>
-                <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="ctrl.create()">Create Label</button>
-            </div>
+                <div class="modal-footer">
+                    <a class="btn btn-sm" ng-click="ctrl.cancel()">Cancel</a>
+                    <button type="submit" class="btn btn-sm btn-primary" ng-disabled="labelForm.$error">Create Label</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
