@@ -32,6 +32,14 @@
 	}
 }
 @media screen and (max-width: 767px) {
+	.secure #main, 
+	#main.secure,
+	.secure #body,
+	html body,
+	html {
+		min-height: 100%;
+		height: auto;
+	}
 	#sidebar,
 	.message-toolbar {
 		& ul {
