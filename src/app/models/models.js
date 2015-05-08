@@ -155,11 +155,13 @@ angular.module("proton.models", [
       var message = base.cite();
       message.RecipientList = [base.Sender, base.CCList, base.BCCList].join(",");
       message.MessageTitle = (Message.REPLY_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Re: " + base.MessageTitle;
+
       return message;
     },
     forward: function (base) {
       var message = base.cite();
       message.MessageTitle = (Message.FORWARD_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Fw: " + base.MessageTitle;
+
       return message;
     }
   });

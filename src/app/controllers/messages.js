@@ -95,6 +95,19 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $scope.toggleStar = function(message) {
+        var inStarred = $state.$current.name === 'secured.starred';
+        var index = $scope.messages.indexOf(message);
+
+        networkActivityTracker.track(
+            message.toggleStar().then(function(result) {
+                if(inStarred) {
+                    $scope.messages.splice(index, 1);
+                }
+            })
+        );
+    };
+
     $scope.allSelected = function() {
         var status = true;
 
@@ -874,6 +887,7 @@ angular.module("proton.controllers.Messages", [
     $timeout,
     localStorageService,
     networkActivityTracker,
+    Message,
     message,
     attachments,
     pmcrypto
@@ -892,29 +906,29 @@ angular.module("proton.controllers.Messages", [
         $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
     };
 
-    function buildMessage(message, action) {
+    function buildMessage(base, action) {
         var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + message.MessageTitle + '<br />';
-        var time = 'Time (GMT): ' + message.Time + '<br />';
-        var from = 'From: ' + message.RecipientList + '<br />';
-        var to = 'To: ' + message.Sender + '<br />';
-        var cc = 'CC: ' + message.CCList + '<br />';
+        var subject = 'Subject: ' + base.MessageTitle + '<br />';
+        var time = 'Time (GMT): ' + base.Time + '<br />';
+        var from = 'From: ' + base.RecipientList + '<br />';
+        var to = 'To: ' + base.Sender + '<br />';
+        var cc = 'CC: ' + base.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
+        message.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + base.MessageBody + blockquoteEnd;
+
         if(action === 'reply') {
-            message.RecipientList = message.Sender;
-            message.MessageTitle = 'Re: ' + message.MessageTitle;
-        } else if(action === 'reply-all') {
-            message.RecipientList = message.Sender
-            message.MessageTitle = 'Re: ' + message.MessageTitle;
+            message.RecipientList = base.Sender;
+            message.MessageTitle = (Message.REPLY_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Re: " + base.MessageTitle;
+        } else if(action === 'replyall') {
+            message.RecipientList = [base.Sender, base.CCList, base.BCCList].join(",");
+            message.MessageTitle = (Message.REPLY_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Re: " + base.MessageTitle;
         } else if (action === 'forward') {
             message.RecipientList = '';
-            message.MessageTitle = 'Fw: ' + message.MessageTitle;
+            message.MessageTitle = (Message.FORWARD_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Fw: " + base.MessageTitle;
         }
-
-        message.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.MessageBody + blockquoteEnd;
 
         return message;
     }
@@ -928,7 +942,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.replyAll = function(message) {
         var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'reply-all');
+        var builtMessage = buildMessage(message, 'replyall');
 
         $rootScope.$broadcast('loadMessage', message);
     };

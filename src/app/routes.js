@@ -70,9 +70,9 @@ angular.module("proton.routes", [
             };
 
             // This should replace the starred location when tags are used
-            // if (mailbox === 'starred') {
-            //   params.Tag = mailbox;
-            // }
+            if (mailbox === 'starred') {
+              params.Tag = mailbox;
+            }
 
             if ($stateParams.filter) {
               params.FilterUnread = + ($stateParams.filter === 'unread');
