@@ -1,8 +1,8 @@
 <ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
 <div class="row visible-xs-block" id="messageActionsMobile">
-    <div id="mobReply" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-reply"></i> Reply</a></div>
-    <div id="mobReplyAll" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
-    <div id="mobForward" class="col-xs-4"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> Forward</a></div>
+    <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link"><i class="fa fa-reply"></i> Reply</a></div>
+    <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
+    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> Forward</a></div>
 </div>
 <pre id="headerCode" ng-show="showHeaders">{{ message.Header }}</pre>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
@@ -39,7 +39,7 @@
 <div id="message-body">
     <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
     <hr />
-    <div class="col-md-12">
+    <div class="col-md-12 form-group">
         <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
     </div>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">

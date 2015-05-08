@@ -1,4 +1,4 @@
-<ng-form novalidate name="encryptForm" ng-submit="setEncrypt(message, params)">
+<div ng-form="encryptForm">
     <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
         <label for="outsidePw" class="control-label text-muted">Message Password</label>
         <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
@@ -16,6 +16,6 @@
     </div>
     <div class="col-md-12 text-right">
         <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">Clear</button>
-        <button type="submit" class="btn btn-primary btn-sm">Set</button>
+        <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">Set</button>
     </div>
-</ng-form>
+</div>

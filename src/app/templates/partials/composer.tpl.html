@@ -5,7 +5,7 @@
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
                 <span class="col-xs-3 text-right">
                     <a href="" class="btn btn-sm" ng-click="toggleMinimize(message)">
-                        <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-square': !!message.minimized}"></i>
+                        <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-plus': !!message.minimized}"></i>
                     </a>
                     <a href="" class="btn btn-sm" ng-click="close(message, true)">
                         <span class="sr-only">Close</span>
@@ -21,7 +21,9 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
-                            <div id="typeahead-container"><input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" /></div>
+                            <div id="typeahead-container">
+                                <input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" />
+                            </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
                                     <i class="fa" ng-class="{'fa-caret-down': !!!message.fields, 'fa-caret-up': !!message.fields}"></i>
@@ -52,7 +54,7 @@
                 </div>
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
-                <button class="btn btn-sm btn-default" ng-click=""><i class="fa fa-paperclip"></i></button>
+                <button class="btn btn-sm btn-default" ng-click="" pt-tooltip="Attach a file"><i class="fa fa-paperclip"></i></button>
                 <button class="btn btn-sm btn-primary" ng-click="send(message)">Send</button>
             </div>
         </div>

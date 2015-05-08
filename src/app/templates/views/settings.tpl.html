@@ -1,18 +1,21 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Notifications</legend>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingNotifications">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#notifications"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#notifications" aria-expanded="true" aria-controls="notifications">Notifications</a>
+                </h4>
+            </div>
+            <div id="notifications" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotifications">
+                <div class="panel-body">
                     <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
                         <div class="form-group">
                             <label class="control-label">Daily New Email Notifications</label>
                             <div>
-                                <toggle-switch
-                                    ng-model="dailyNotifications"
-                                    on-label="Enabled"
-                                    off-label="Disabled"><toggle-switch>
+                                <toggle-switch ng-model="dailyNotifications" on-label="Enabled" off-label="Disabled">
+                                    <toggle-switch>
                             </div>
                         </div>
                         <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$error.required}">
@@ -29,13 +32,18 @@
                             <!-- <button class="btn btn-sm btn-default pull-right" type="button">Delete</button> -->
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Login Password</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingLoginPassword">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password">Login Password</a>
+                </h4>
+            </div>
+            <div id="login-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLoginPassword">
+                <div class="panel-body">
                     <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
                             <label class="control-label" for="">Current Login Password</label>
@@ -56,13 +64,18 @@
                             <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Mailbox Password</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingMailboxPassword">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password">Mailbox Password</a>
+                </h4>
+            </div>
+            <div id="mailbox-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMailboxPassword">
+                <div class="panel-body">
                     <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
                             <label class="control-label" for="oldMailboxPassword">Current Mailbox Password</label>
@@ -84,15 +97,18 @@
                             <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Display Name</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingName">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name">Display Name</a>
+                </h4>
+            </div>
+            <div id="display-name" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingName">
+                <div class="panel-body">
                     <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
                             <label class="control-label" for="displayName">Display Name</label>
@@ -102,13 +118,18 @@
                             <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Signature</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSignature">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature">Signature</a>
+                </h4>
+            </div>
+            <div id="signature" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSignature">
+                <div class="panel-body">
                     <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
                             <label class="signature" for="signature">Signature</label>
@@ -118,13 +139,18 @@
                             <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="well well-sm">
-                <fieldset>
-                    <legend>Aliases</legend>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingAliases">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases">Aliases</a>
+                </h4>
+            </div>
+            <div id="aliases" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAliases">
+                <div class="panel-body">
                     <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
                         <div class="form-group">
                             <label class="control-label" for="">Sort Aliases</label>
@@ -132,7 +158,7 @@
                                 <ul class="list-group" data-as-sortable="dragControlListeners" data-ng-model="aliases">
                                     <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
                                         <div as-sortable-item-handle="">
-                                            <i class="fa fa-ellipsis-v text-muted vcenter"></i> {{alias.Email}} <span ng-show="$index == 0" class="label label-default">default</span>
+                                            <i class="fa fa-ellipsis-v text-muted vcenter"></i> {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
                                         </div>
                                     </li>
                                 </ul>
@@ -144,7 +170,7 @@
                             <button class="pull-right btn btn-sm btn-primary pull-right" type="submit">Save</button>
                         </div>
                     </form>
-                </fieldset>
+                </div>
             </div>
         </div>
     </div>

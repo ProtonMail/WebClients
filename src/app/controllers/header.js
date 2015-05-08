@@ -19,6 +19,10 @@ angular.module("proton.controllers.Header", [])
         $state.go('secured.inbox');
     };
 
+    $scope.openNewMessage = function() {
+        $rootScope.$broadcast('newMessage');
+    };
+
     $scope.openSearchModal = function() {
         $rootScope.$broadcast('openSearchModal');
     };

@@ -2,7 +2,7 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="form-group">
-        <button class="btn btn-primary" ng-click="createLabel()">Create a new label</button>
+        <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> Add Label</button>
     </div>
 
     <table class="table table-middle table-hover table-pm">
@@ -16,7 +16,7 @@
         <tbody>
             <tr>
                 <td>
-                    <span class="label label-lg label-pm"><i class="fa fa-tag"></i> Proton</span>
+                    <span class="label label-pm"><i class="fa fa-tag"></i> Proton</span>
                 </td>
                 <td>
                     <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>

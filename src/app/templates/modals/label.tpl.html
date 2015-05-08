@@ -22,19 +22,26 @@
                                 <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
                                 <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
                                 <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: pink;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: violet;"><i class="fa fa-check"></i></a>
                             </div>
                             <div>
                                 <a class="color" style="background-color: red;"><i class="fa fa-check"></i></a>
                                 <a class="color" style="background-color: blue;"><i class="fa fa-check"></i></a>
                                 <a class="color" style="background-color: yellow;"><i class="fa fa-check"></i></a>
                                 <a class="color" style="background-color: green;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: pink;"><i class="fa fa-check"></i></a>
+                                <a class="color" style="background-color: violet;"><i class="fa fa-check"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <a class="btn btn-sm" ng-click="ctrl.cancel()">Cancel</a>
-                    <button type="submit" class="btn btn-sm btn-primary" ng-disabled="labelForm.$error">Create Label</button>
+                    <button type="submit" class="btn btn-sm btn-primary" ng-disabled="labelForm.$invalid">
+                        <span ng-hide="networkActivity.loading()">Save Label</span>
+                        <span ng-show="networkActivity.loading()">Saving...</span>
+                    </button>
                 </div>
             </form>
         </div>

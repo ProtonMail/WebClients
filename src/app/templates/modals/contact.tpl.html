@@ -27,7 +27,7 @@
                 </div>
                 <div class="modal-footer">
                     <a href class="btn btn-link" ng-click="ctrl.cancel()">Cancel</a>
-                    <button tabindex="3" type="submit" class="btn btn-primary" ng-disabled="contactForm.$error" ng-class="{disabled: networkActivity.loading()}">    <span ng-hide="networkActivity.loading()">Save</span>
+                    <button tabindex="3" type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">    <span ng-hide="networkActivity.loading()">Save Contact</span>
                         <span ng-show="networkActivity.loading()">Saving...</span>
                     </button>
                 </div>

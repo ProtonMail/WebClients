@@ -12,6 +12,7 @@ angular.module("proton.controllers.Contacts", [
     confirmModal,
     contactModal,
     dropzoneModal,
+    Message,
     networkActivityTracker,
     notify
 ) {
@@ -165,7 +166,18 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.sendMessageTo = function(contact) {
-        $state.go('secured.compose', {to: contact.ContactEmail});
+        var message = new Message();
+
+        _.defaults(message, {
+            RecipientList: contact.ContactEmail,
+            CCList: '',
+            BCCList: '',
+            MessageTitle: '',
+            PasswordHint: '',
+            Attachments: []
+        });
+
+        $rootScope.$broadcast('loadMessage', message);
     };
 
     $scope.uploadContacts = function() {

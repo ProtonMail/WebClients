@@ -491,9 +491,21 @@ angular.module("proton.controllers.Messages", [
     attachments,
     pmcrypto,
     networkActivityTracker,
-    notify
+    notify,
+    tools
 ) {
     $scope.messages = [];
+
+    $scope.$watch('messages.length', function(newValue, oldValue) {
+       if($scope.messages.length > 0) {
+            window.onbeforeunload = function() {
+                return "By leaving now, you will lose what you have written in this email. " +
+                    "You can save a draft if you want to come back to it later on.";
+            }
+        } else {
+            window.onbeforeunload = undefined;
+        }
+    });
 
     $rootScope.$on('newMessage', function() {
         var message = new Message();
@@ -510,7 +522,6 @@ angular.module("proton.controllers.Messages", [
         $scope.completedSignature(message);
         $scope.clearTextBody(message);
         $scope.selectAddress(message);
-        // $scope.initForm(message); // TODO uncomment
         $timeout(function() {
             $scope.focusComposer(message);
             $scope.listenEditor(message);
@@ -520,27 +531,37 @@ angular.module("proton.controllers.Messages", [
     $scope.composerStyle = function(message) {
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;
-        var marginRight = 10; // px
-        var widthComposer = 480; // px
+        var styles = {};
         var widthWindow = $('#main').width();
 
-        if(Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
-            right = (index * (widthComposer + marginRight)) + marginRight;
+        if(tools.findBootstrapEnvironment() === 'xs') {
+            var marginTop = 20; // px
+            var top = reverseIndex * 40 + marginTop;
+
+            styles.top = top + 'px';
         } else {
-            widthWindow -= 10; // margin left
-            var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
-            right = index * (widthComposer - overlap);
+            var marginRight = 10; // px
+            var widthComposer = 480; // px
+
+            if(Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
+                right = (index * (widthComposer + marginRight)) + marginRight;
+            } else {
+                widthWindow -= 10; // margin left
+                var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
+                right = index * (widthComposer - overlap);
+            }
+
+            if(reverseIndex === $scope.messages.length) {
+                right = marginRight;
+                index = $scope.messages.length;
+            }
+
+            styles.right = right + 'px';
         }
 
-        if(reverseIndex === $scope.messages.length) {
-            right = marginRight;
-            index = $scope.messages.length;
-        }
+        styles['z-index'] = message.zIndex
 
-        return {
-            'z-index': message.zIndex,
-            'right': right + 'px'
-        };
+        return styles;
     };
 
     $scope.completedSignature = function(message) {
@@ -553,27 +574,6 @@ angular.module("proton.controllers.Messages", [
 
     $scope.clearTextBody = function(message) {
         message.RawMessageBody = message.clearTextBody();
-    };
-
-    $scope.initForm = function(message) {
-        var index = $scope.messages.indexOf(message);
-
-        $timeout(function() {
-            console.log($scope);
-            var form = $scope.composeForm['composeForm' + index];
-
-
-            $scope.$watch(form, function(isPristine) {
-                if (!isPristine) {
-                    window.onbeforeunload = function() {
-                        return "By leaving now, you will lose what you have written in this email. " +
-                            "You can save a draft if you want to come back to it later on.";
-                    }
-                } else {
-                    window.onbeforeunload = undefined;
-                }
-            });
-        });
     };
 
     $scope.focusComposer = function(message) {
@@ -663,22 +663,25 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setEncrypt = function(message, params, form) {
-        console.log('setEncrypt');
+        // TODO
         message.PasswordHint = params.hint;
         $scope.closePanel(message);
     };
 
     $scope.clearEncrypt = function(message) {
+        // TODO
         delete message.PasswordHint;
         $scope.closePanel(message);
     };
 
     $scope.setExpiration = function(message, params) {
+        // TODO
         message.ExpirationTime = params.expiration;
         $scope.closePanel(message);
     };
 
     $scope.clearExpiration = function(message) {
+        // TODO
         delete message.ExpirationTime;
         $scope.closePanel(message);
     };
@@ -691,7 +694,6 @@ angular.module("proton.controllers.Messages", [
 
     $scope.send = function(message) {
         var index = $scope.messages.indexOf(message);
-        var form = $scope.composeForm['composeForm' + index];
         // get the message meta data
         var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
         _.defaults(newMessage, {
@@ -754,8 +756,6 @@ angular.module("proton.controllers.Messages", [
                         newMessage.MessageID = newMessage.MessageID || 0;
                         // send email
                         networkActivityTracker.track(newMessage.$send(null, function(result) {
-                            // reset form
-                            form.$setPristine();
                             notify('Message Sent');
                             $scope.close(message, false);
                         }, function(error) {
@@ -773,7 +773,6 @@ angular.module("proton.controllers.Messages", [
     $scope.saveDraft = function(message) {
         var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
         var index = $scope.messages.indexOf(message);
-        var form = $scope.composeForm['composeForm' + index];
 
         _.defaults(newMessage, {
             RecipientList: '',
@@ -803,13 +802,11 @@ angular.module("proton.controllers.Messages", [
                 networkActivityTracker.track(newMessage.$updateDraft({
                     MessageID: null
                 }, function() {
-                    form.$setPristine();
                     notify('Draft updated');
                 }));
             } else {
                 networkActivityTracker.track(newMessage.$saveDraft(null, function(result) {
                     message.MessageID = parseInt(result.MessageID);
-                    form.$setPristine();
                     notify('Draft saved');
                 }));
             }

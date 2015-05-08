@@ -101,6 +101,9 @@
   .modal-dialog {
     margin-top: 0;
     @include transition(margin-left 0.2s ease-in-out);
+    @include responsive(xs) {
+      margin-top: 60px;
+    }
     @include responsive(sm) {
       margin-left: 6rem;
     }

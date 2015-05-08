@@ -65,7 +65,25 @@ angular.module("proton.tools", [])
             return deviceName;
         }
 
+        function find_bootstrap_environment() {
+            var envs = ['xs', 'sm', 'md', 'lg'];
+
+            $el = $('<div>');
+            $el.appendTo($('body'));
+
+            for (var i = envs.length - 1; i >= 0; i--) {
+                var env = envs[i];
+
+                $el.addClass('hidden-'+env);
+                if ($el.is(':hidden')) {
+                    $el.remove();
+                    return env
+                }
+            };
+        }
+
         var tools = {
+            findBootstrapEnvironment: find_bootstrap_environment,
             getOs: get_os(),
             getDevice: get_device(),
             getBrowser: get_browser(),

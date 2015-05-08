@@ -28,6 +28,10 @@ angular.module("proton.controllers.Settings", [
     $scope.signature = user.Signature;
     $scope.aliases = user.addresses;
 
+    $scope.initCollapse = function() {
+        // $('.collapse').collapse()
+    };
+
     // Drag and Drop configuration
     $scope.dragControlListeners = {
         containment: "#aliases-container",
