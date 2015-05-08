@@ -52,6 +52,52 @@
   }
 }
 
+.twitter-typeahead {
+  float: left;
+  width: 25%;;
+}
+
+form#composeForm {
+  #typeahead-container {
+    width: 100%;
+  }
+  .tm-tag {
+    border: none;
+    box-shadow: none;
+    float: left;
+    border-radius: 2px;
+    background: #f2f2f2;
+    padding: 0 1.5rem;
+    line-height: ($row-height*1.2 - 10);
+    height: ($row-height*1.2 - 10);
+    margin: 5px 5px 5px 0;
+    color: #000;
+
+    -webkit-touch-callout: none;
+    @include user-select(none);
+
+    a.tm-tag-remove {
+      padding: 0;
+      margin-left: 5px;
+    }
+  }
+
+  .tt-dropdown-menu {
+    background-color: white;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #ddd;
+    padding: 5px;
+
+    .tt-suggestion {
+      padding: 1px 10px;
+
+      &.tt-cursor {
+        background-color: #ddd;
+      }
+    }
+  }
+}
+
 form#compose {
 
   &.file-drop {
