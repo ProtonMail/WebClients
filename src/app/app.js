@@ -1,5 +1,5 @@
 angular.module("proton", [
-    // "ngAnimate",
+    "ngAnimate",
     "ngSanitize",
     "LocalStorageModule",
     "btford.markdown",

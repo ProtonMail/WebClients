@@ -1,0 +1,16 @@
+/* you can also define the transition style
+   on the base class as well () */
+.ng-enter,
+.ng-leave {
+  -webkit-transition:0.2s linear all;
+  transition:0.2s linear all;
+}
+
+.ng-enter,
+.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.ng-leave,
+.ng-enter.ng-enter-active {
+  opacity:1;
+}

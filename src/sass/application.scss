@@ -19,6 +19,8 @@ html, body {
   position: relative;
   min-height: 100%;
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden
 }
 
 .bold {
@@ -452,6 +454,7 @@ p {
 @import "partials/squire";
 @import "partials/toggle-switch";
 @import "partials/error-reporter";
+@import "partials/animations";
 @import "responsive";
 @import "print";
 
