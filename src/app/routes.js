@@ -312,7 +312,7 @@ angular.module("proton.routes", [
           templateUrl: "templates/layout/secured.tpl.html"
         }
       },
-      url: "/secured",
+      // url: "/secured", // remove
 
       resolve: {
         user: function (authentication) {

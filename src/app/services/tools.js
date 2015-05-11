@@ -45,10 +45,10 @@ angular.module("proton.tools", [])
         function get_os() {
             var OSName = "other"; // Unknown OS
 
-            if (navigator.appVersion.indexOf("Win")!=-1) OSName = "windows";
-            if (navigator.appVersion.indexOf("Mac")!=-1) OSName = "osx";
-            if (navigator.appVersion.indexOf("X11")!=-1) OSName = "linux";
-            if (navigator.appVersion.indexOf("Linux")!=-1) OSName = "linux";
+            if (navigator.appVersion.indexOf("Win") != -1) OSName = "windows";
+            if (navigator.appVersion.indexOf("Mac") != -1) OSName = "osx";
+            if (navigator.appVersion.indexOf("X11") != -1) OSName = "linux";
+            if (navigator.appVersion.indexOf("Linux") != -1) OSName = "linux";
 
             return OSName;
         }
@@ -74,7 +74,7 @@ angular.module("proton.tools", [])
             for (var i = envs.length - 1; i >= 0; i--) {
                 var env = envs[i];
 
-                $el.addClass('hidden-'+env);
+                $el.addClass('hidden-' + env);
                 if ($el.is(':hidden')) {
                     $el.remove();
                     return env
@@ -82,30 +82,156 @@ angular.module("proton.tools", [])
             };
         }
 
+        function change_separator_to_comma(address_list) {
+            address_list = address_list.replace(';', ',');
+
+            return address_list;
+        }
+
+        function host_reachable() {
+            // Handle IE and more capable browsers
+            var xhr;
+
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            // Open new request as a HEAD to the root hostname with a random param to bust the cache
+            xhr.open("GET", "//" + window.location.hostname + "/?rand=" + Math.floor((1 + Math.random()) * 0x10000), false);
+
+            // Issue request and handle response
+            try {
+                xhr.send();
+                return (xhr.status >= 200 && (xhr.status < 300 || xhr.status === 304));
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function is_email_address_PM(email) {
+            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com'; // TODO ask feng to get that
+
+            protonmail_compose_emailDomain = protonmail_compose_emailDomain.split(",");
+            email = email.trim();
+
+            var parts = email.split('@');
+
+            if (typeof parts[1] !== 'undefined') {
+                parts[1] = parts[1].toLowerCase();
+            }
+
+            if (protonmail_compose_emailDomain.indexOf(parts[1]) > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function break_images(html) {
+            html = html.replace(/src=/g, " data-src=");
+
+            return html;
+        }
+
+        function fix_images(html) {
+            html = html.replace(/data-src=/g, " src=");
+
+            return html;
+        }
+
+        // Squire does this funny thing where it takes style tags, i.e.
+        // <style> *my css here* </style>
+        // and removes the tags but leaves the css text. Need to manually remove the text
+        function remove_style(html) {
+            return html.replace(/<style[\s\S]*?\/style>/ig, " "); // For squire
+        }
+
+        // remove html
+        function html_to_plaintext(html) {
+            var tmp = document.createElement("DIV");
+
+            html = html.replace(/<br\s*\/?>/mg, "\n");
+            tmp.innerHTML = filterXSS(html);
+
+            return tmp.textContent || tmp.innerText || "";
+        }
+
+        function fix_redirect_exploits(html) {
+            /* #Exploits that will log a user out:
+            <link rel="dns-prefetch" href="../../../../../../../../../../sign-out">
+            <video poster="../../../../../../../../../../sign-out" autoplay="true" src="../../../../../../../../../../sign-out"></video>
+            <img src="#" srcset="../../../../../../../../../../sign-out 1x">
+            <p style="content:url('../../../../../../../../../../sign-out')"></p>
+            <object data="../../../../../../../../../../sign-out" type="image/jpeg"></object>
+            <link rel="stylesheet" type="text/css" href="../../../../../../../../../../sign-out">
+            <style type="text/css">@import '../../../../../../../../../../sign-out';</style>
+            <link rel="prefetch" href="../../../../../../../../../../sign-out">
+            */
+
+            // video tags
+            html = html.replace(/<(video*)\b[^>]*>(.*?)<\/\1>/ig, "");
+
+            // object tags
+            html = html.replace(/<(object*)\b[^>]*>(.*?)<\/\1>/ig, "");
+
+            // style tags
+            html = html.replace(/<(style*)\b[^>]*>(.*?)<\/\1>/ig, "");
+            html = html.replace(/<(iframe*)\b[^>]*>(.*?)<\/\1>/ig, "");
+
+            // link tags
+            html = html.replace(/<(link*)\b[^>]*>/ig, "");
+
+            // svg tags
+            html = html.replace(/<(svg*)\b[^>]*>(.*?)<\/\1>/ig, "");
+
+            // remove malicious attributes
+            html = html.replace(/srcset/ig, "");
+            html = html.replace(/content:/ig, "");
+            html = html.replace(/url\(/ig, "");
+            html = html.replace(/dns-prefetch/ig, "");
+            html = html.replace(/@import/ig, "");
+
+            return html;
+        }
+
+        function valid_email(value) {
+            var filter = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
+
+            return String(value).search(filter) != -1;
+        }
+
+        function is_compatible() {
+            var compatible = true;
+
+            if (!has_session_storage()) {
+                compatible = false;
+            }
+
+            if (!is_good_prng_available()) {
+                compatible = false;
+            }
+
+            return compatible;
+        }
+
         var tools = {
+            fixRedirectExploits: fix_redirect_exploits,
+            html2plaintext: html_to_plaintext,
+            removeStyle: remove_style,
+            breakImages: break_images,
+            fixImages: fix_images,
+            isEmailAddressPM: is_email_address_PM,
+            changeSeparatorToComma: change_separator_to_comma,
+            hostReachable: host_reachable,
             findBootstrapEnvironment: find_bootstrap_environment,
             getOs: get_os(),
             getDevice: get_device(),
             getBrowser: get_browser(),
             getBrowserVersion: get_browser_version(),
-            isCompatible: function() {
-                var compatible = true;
-
-                if (!has_session_storage()) {
-                    compatible = false;
-                }
-
-                if (!is_good_prng_available()) {
-                    compatible = false;
-                }
-
-                return compatible;
-            },
-            validEmail: function(value) {
-                var filter = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
-
-                return String(value).search(filter) != -1;
-            }
+            isCompatible: is_compatible,
+            validEmail: valid_email
         };
 
         return tools;

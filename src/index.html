@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
   </head>
-  <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn }">
+  <body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure()}">
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>

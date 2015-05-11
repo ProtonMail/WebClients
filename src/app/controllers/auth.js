@@ -100,6 +100,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
+    $rootScope.isSecure = authentication.isSecured;
 
     var fetchCounts = function() {
         $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
