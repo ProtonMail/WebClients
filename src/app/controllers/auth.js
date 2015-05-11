@@ -98,8 +98,9 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
     $scope.user = authentication.user;
     $scope.logout = authentication.logout;
 
-    $rootScope.isLoggedIn = true;
-    $rootScope.isLocked = false;
+    $rootScope.isLoggedIn = authentication.isLoggedIn();
+    $rootScope.isLocked = authentication.isLocked();
+    $rootScope.isSecured = authentication.isSecured();
 
     var fetchCounts = function() {
         $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
@@ -111,6 +112,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
     };
 
     var updates = $interval(fetchCounts, 10000);
+
     fetchCounts();
 
     $scope.$on("$destroy", function() {

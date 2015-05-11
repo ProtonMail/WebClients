@@ -218,6 +218,18 @@ angular.module("proton", [
     });
 }])
 
+.run(function($rootScope) {
+    $rootScope.build = {
+        "version":"2.0",
+        "notes":"http://protonmail.dev/blog/",
+        "date":"17 Apr. 2015"
+    };
+})
+
+.config(function(authenticationProvider) {
+    authenticationProvider.setAPIBaseURL("http://protonmail.xyz");
+})
+
 //
 // Handle some application exceptions
 //

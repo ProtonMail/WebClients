@@ -508,6 +508,7 @@ angular.module("proton.controllers.Messages", [
     tools
 ) {
     $scope.messages = [];
+    var promiseComposerStyle;
 
     $scope.$watch('messages.length', function(newValue, oldValue) {
        if($scope.messages.length > 0) {
