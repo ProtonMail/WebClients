@@ -1,6 +1,6 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
-        <div class="composer" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
+        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
                 <span class="col-xs-3 text-right">
