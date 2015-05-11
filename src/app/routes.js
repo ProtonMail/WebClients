@@ -147,30 +147,20 @@ angular.module("proton.routes", [
       url: "/login",
       views: {
         "main@": {
-          controller: "LoginController",
           templateUrl: "templates/layout/auth.tpl.html"
         },
         "panel@login": {
+          controller: "LoginController",
           templateUrl: "templates/views/login.tpl.html"
         }
       }
     })
 
-    .state("login.redirected", {
-      url: "^/angular-login?access_token&refresh_tokn&uid&expires_in",
-      onEnter: function ($state, $stateParams, authentication) {
-        authentication.receivedCredentials(
-          _.pick($stateParams, "access_token", "refresh_token", "uid", "expires_in")
-        );
-        $state.go("login.unlock");
-      }
-    })
-
     .state("login.unlock", {
       url: "/unlock",
-      controller: "LoginController",
       views: {
         "panel@login": {
+          controller: "LoginController",
           templateUrl: "templates/views/unlock.tpl.html"
         }
       },

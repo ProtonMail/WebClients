@@ -152,10 +152,10 @@ angular.module("proton", [
     var display = localStorageService.get('welcomeDisplayed');
 
     if(!!!display) {
-        // TODO change message
+
         notify({
             duration: 10000,
-            message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!',
+            message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!', // TODO change message
             templateUrl: 'templates/notifications/welcome.tpl.html'
         });
         localStorageService.bind($rootScope, 'welcomeDisplayed', true);

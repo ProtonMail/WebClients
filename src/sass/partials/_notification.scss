@@ -8,4 +8,14 @@
     padding: 5px 15px;
     text-align: center;
     text-shadow: none;
+
+    &.notification-success {
+        background: #dff0d8;
+        color: #3c763d;
+    }
+
+    &.notification-danger {
+        background: #f2dede;
+        color: #a94442;
+    }
 }
