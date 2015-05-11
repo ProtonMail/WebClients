@@ -149,17 +149,17 @@ angular.module("proton", [
 //
 
 .run(function($rootScope, notify, localStorageService) {
-    var display = localStorageService.get('welcomeDisplayed');
+    // var display = localStorageService.get('welcomeDisplayed');
 
-    if(!!!display) {
+    // if(!!!display) {
 
-        notify({
-            duration: 10000,
-            message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!', // TODO change message
-            templateUrl: 'templates/notifications/welcome.tpl.html'
-        });
-        localStorageService.bind($rootScope, 'welcomeDisplayed', true);
-    }
+    //     notify({
+    //         duration: 10000,
+    //         message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!', // TODO change message
+    //         templateUrl: 'templates/notifications/welcome.tpl.html'
+    //     });
+    //     localStorageService.bind($rootScope, 'welcomeDisplayed', true);
+    // }
 })
 
 //
