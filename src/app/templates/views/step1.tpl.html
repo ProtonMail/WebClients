@@ -6,16 +6,26 @@
     <div class="panel-body">
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
 
-            <div class="form-group">
+            <div class="form-group" ng-show="username!==''">
                 <label>Username</label>
-                <div class="well well-sm"><strong>{{account.username}}</strong>@protonmail.com</div>
+                <div class="well well-sm"><strong>{{username}}</strong>@protonmail.com</div>
+                <p class="help-block">You can switch to protonmail.ch after account creation.</p>
+            </div>
+
+            <div class="form-group" ng-show="username===''">
+                <label>Username</label>
+                <div class="usernameWrap">
+                    <input type="text" name="Username" placeholder="Username" id="Username" class="form-control">
+                    <!-- todo: abs position this over the input field and use padding on the input -->
+                    <em class="usernameDomain">@protonmail.ch</em>
+                </div>
                 <p class="help-block">You can switch to protonmail.ch after account creation.</p>
             </div>
 
             <div class="form-group">
                 <span class="pull-right bold" ng-class="{'text-success': strength(account.loginPassword).number > 100000}" ng-bind="strength(account.loginPassword).word"></span>
                 <label for="password">Login Password</label>
-                <input id="password" name="password" ng-model="account.loginPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
+                <input id="password" name="password" ng-model="account.loginPassword" tabindex="1" type="password" class="form-control" placeholder="Password" autofocus="" required="" />
                 <div ng-show="step1.$submitted || step1.password.$touched">
                     <p ng-show="step1.password.$error.required" class="text-danger">Login password is required.</p>
                 </div>
@@ -47,7 +57,7 @@
                 </label>
             </div>
 
-            <button tabindex="4" type="submit" class="btn btn-primary btn-block btn-lg">Save and continue</button>
+            <button tabindex="4" stype="submit" class="btn btn-primary btn-block btn-lg">Save and continue</button>
 
         </form>
     </div>

@@ -51,7 +51,6 @@ angular.module("proton", [
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
-    "proton.controllers.Signup",
     "proton.controllers.Support"
 ])
 
@@ -103,12 +102,14 @@ angular.module("proton", [
 
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
         var isLogin = toState.name.indexOf("login") !== -1;
         var isSupport = toState.name.indexOf("support") !== -1;
         var isAccount = toState.name.indexOf("account") !== -1;
         var isSignup = toState.name.indexOf("signup") !== -1;
+        var isSteps = toState.name.indexOf("step") !== -1;
 
-        if (isLogin || isSupport || isAccount || isSignup) {
+        if (isLogin || isSupport || isAccount || isSignup || isSteps) {
             return; // no need to redirect
         }
 

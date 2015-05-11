@@ -184,19 +184,6 @@ angular.module("proton.routes", [
       }
     })
 
-    // ------------
-    // ACCOUNT CREATION
-    // ------------
-    .state("signup", { 
-      url: "/signup",
-      views: {
-        "main@": {
-          controller: "SignupController",
-          templateUrl: "templates/layout/signup.tpl.html"
-        }
-      }
-    })
-
     // -------------------------------------------
     // ACCOUNT ROUTES
     // -------------------------------------------
@@ -227,21 +214,47 @@ angular.module("proton.routes", [
           templateUrl: "templates/views/sign-up.tpl.html"
         }
       }
-    })
+    }) 
 
-    .state("account.step1", {
-      url: "/step-1",
+    .state("signup", { 
+      url: "/signup",
       views: {
-        "panel@account": {
-          templateUrl: "templates/views/step1.tpl.html"
+        "main@": {
+          controller: "AccountController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@signup": {
+          templateUrl: "templates/views/sign-up.tpl.html"
         }
       }
     })
 
-    .state("account.step2", {
-      url: "/step-2",
+    .state("step1", {
+      url: "/create/new",
       views: {
-        "panel@account": {
+        "main@": { 
+          controller: "AccountController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@step1": {
+          templateUrl: "templates/views/step1.tpl.html"
+        }
+      },
+      onEnter: function(authentication, $state, $rootScope) {
+        // this is set if a token was set
+        // $rootScope.username = 'testUsername'
+        $rootScope.username = '';
+      }
+    })
+
+    .state("step2", {
+      url: "/create/mbpw",
+      views: {
+        "main@": { 
+          controller: "AccountController",
+          templateUrl: "templates/layout/auth.tpl.html"
+        },
+        "panel@step2": {
           templateUrl: "templates/views/step2.tpl.html"
         }
       }

@@ -13,7 +13,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     var mellt = new Mellt();
 
     $scope.compatibility = tools.isCompatible();
-    $scope.tools = tools;
+    $scope.tools = tools; 
 
     function generateKeys(userID, pass) {
         // Generate KeyPair
@@ -82,12 +82,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             notificationEmail: '',
             optIn: true
         };
-        $state.go('account.step1');
+        $state.go('step1');
     };
 
     $scope.saveContinue = function(form) {
         if (form.$valid) {
-            $state.go('account.step2');
+            $state.go('step2');
         }
     };
 
