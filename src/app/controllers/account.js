@@ -87,6 +87,9 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.saveContinue = function(form) {
         if (form.$valid) {
+            // TODO
+            // do additional validation here such as looking up the username to see if its available
+            // before going to step 2, we need to create the new account and load the user information into the app / log them in.
             $state.go('step2');
         }
     };

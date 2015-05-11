@@ -242,7 +242,7 @@ angular.module("proton.routes", [
       },
       onEnter: function(authentication, $state, $rootScope) {
         // this is set if a token was set
-        // $rootScope.username = 'testUsername'
+        $rootScope.username = 'testUsername';
         $rootScope.username = '';
       }
     })
