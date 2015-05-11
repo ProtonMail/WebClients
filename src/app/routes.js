@@ -142,7 +142,6 @@ angular.module("proton.routes", [
     // ------------
     // LOGIN ROUTES
     // ------------
-
     .state("login", {
       url: "/login",
       views: {
@@ -152,6 +151,13 @@ angular.module("proton.routes", [
         "panel@login": {
           controller: "LoginController",
           templateUrl: "templates/views/login.tpl.html"
+        }
+      },
+      onEnter: function(authentication, $state, $rootScope) {
+        if (!authentication.isLocked()) {
+          $state.go("secured.inbox");
+        } else {
+          $rootScope.isLoggedIn = false;
         }
       }
     })
@@ -170,9 +176,23 @@ angular.module("proton.routes", [
         } else if (!authentication.isLocked()) {
           $state.go("secured.inbox");
         } else {
+          $rootScope.isLoggedIn = true;
           authentication.fetchUserInfo().then(function () {
             $rootScope.user = authentication.user;
           });
+        }
+      }
+    })
+
+    // ------------
+    // ACCOUNT CREATION
+    // ------------
+    .state("signup", { 
+      url: "/signup",
+      views: {
+        "main@": {
+          controller: "SignupController",
+          templateUrl: "templates/layout/signup.tpl.html"
         }
       }
     })

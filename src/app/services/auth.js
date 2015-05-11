@@ -85,6 +85,7 @@ angular.module("proton.authentication", [
 
             var api = {
 
+                // TODO update to more secure PRNG
                 randomString: function(size) {
                     var string = "",
                         i = 0,
@@ -156,6 +157,7 @@ angular.module("proton.authentication", [
                     return !api.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
                 },
 
+                // Logged in and MBPW is set
                 isSecured: function() {
                     return api.isLoggedIn() && !api.isLocked();
                 },
@@ -209,6 +211,7 @@ angular.module("proton.authentication", [
 
                     $rootScope.isLoggedIn = false;
                     $rootScope.isLocked = true;
+                    $rootScope.isSecure = false;
 
                     $state.go("login");
                 },

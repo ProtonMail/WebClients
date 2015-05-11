@@ -39,18 +39,22 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
           authentication.loginWithCredentials({
               username: $scope.username,
               password: $scope.password
-          }).then(function(result) {
-              authentication.receivedCredentials(
-                  _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
-              );
-              $state.go("login.unlock");
-          }, function(result) {
-              $log.error(result);
-              notify({
-                classes: 'notification-danger',
-                message: result.message
-              });
-          })
+          }).then(
+              function(result) {
+                  authentication.receivedCredentials(
+                      _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
+                  );
+                  $state.go("login.unlock");
+              }, 
+              function(result) {
+                  $log.error(result);
+                  notify({
+                    classes: 'notification-danger',
+                    message: result.message
+                  });
+                  $('input[name="Username"]').focus();
+              }
+          )
         );
     };
 
