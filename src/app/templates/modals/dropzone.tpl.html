@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <p ng-bind-html="ctrl.message"></p>
-                <p ng-hide="ctrl.fileDropped" class="text-center" id="dropzone" ng-class="{'hover': hover}">Drop files here or click to upload</p>
+                <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">Drop files here or click to upload</p>
                 <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
                 <input id="selectedFile" type="file" style="display: none;" />
             </div>

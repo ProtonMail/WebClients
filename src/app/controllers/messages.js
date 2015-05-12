@@ -523,8 +523,49 @@ angular.module("proton.controllers.Messages", [
         $scope.initMessage(message);
     });
 
+    $scope.dropzoneConfig = function(message) {
+        return {
+            options: {
+                dictDefaultMessage: 'Drop files here or click to upload',
+                url: "/file/post",
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                accept: function(file, done) {
+                    if (file.name == "justinbieber.jpg") {
+                      done("Naha, you don't.");
+                    }
+                    else { done(); }
+                }
+            },
+            eventHandlers: {
+                dragenter: function(event) {
+                    console.log('on dragenter', event);
+                },
+                dragover: function(event) {
+                    console.log('on dragover', event);
+                },
+                dragleave: function(event) {
+                    console.log('on dragleave', event);
+                },
+                drop: function(event) {
+                    console.log('on drop', event);
+                },
+                addedfile: function(file) {
+                    console.log('on addedfile', file);
+                },
+                removedfile: function(file) {
+                    console.log('on removedfile', file);
+                }
+            }
+        };
+    };
+
     var isFullyEncrypted = function() {
         // TODO
+    };
+
+    $scope.removeAttachment = function() {
+
     };
 
     $scope.initMessage = function(message) {
@@ -653,23 +694,18 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.togglePanel = function(message, panelName) {
-        if (!!message.displayPanel) {
-            $scope.closePanel(message);
-        } else {
-            $scope.openPanel(message, panelName);
-        }
+        message.displayPanel = !!!message.displayPanel;
+        message.panelName = panelName;
     };
 
     $scope.openPanel = function(message, panelName) {
-        message.panelName = panelName;
-        message.panelUrl = 'templates/partials/' + panelName + '.tpl.html';
         message.displayPanel = true;
+        message.panelName = panelName;
     };
 
     $scope.closePanel = function(message) {
-        message.panelName = '';
-        message.panelUrl = '';
         message.displayPanel = false;
+        message.panelName = '';
     };
 
     $scope.setEncrypt = function(message, params, form) {
@@ -684,6 +720,8 @@ angular.module("proton.controllers.Messages", [
             return false;
         }
 
+        message.IsEncrypted = 1;
+        message.Password = params.password;
         message.PasswordHint = params.hint;
         $scope.closePanel(message);
     };
@@ -841,143 +879,10 @@ angular.module("proton.controllers.Messages", [
         return true;
     };
 
-    function packageLooper(message, emailArray, type) {
-        function getPublicKeys() {
-            // Instance promise
-            var deferred = $q.defer();
-            // concat all recipients
-            var emails = emailArray.join(',');
-            var base64 = pmcrypto.encode_base64(emails);
-            // new message object
-            var userMessage = new Message();
-
-            // get users' publickeys
-            userMessage.$pubkeys({
-                Emails: base64
-            }).then(function(result) {
-                deferred.resolve(result.keys);
-            }, function(result) {
-                deferred.reject(result);
-            });
-
-            return deferred.promise;
-        }
-
-        // This is a closure for the local variables to live in, which is necessary for the promise callbacks.
-        // Lexical scoping for the win
-        function makePackage(addressee, publickeys) {
-            addressee = addressee.trim();
-
-            // if it's an internal (PM to PM) email:
-            if (tools.isEmailAddressPM(addressee)) {
-                var deferred = $q.defer();
-                var publicKey;
-                var index = _.findIndex(publickeys, function(k, i) {
-                    if(!_.isUndefined(k[addressee])) {
-                        return true;
-                    }
-                });
-
-                if(index !== -1) {
-                    publicKey = publickeys[index];
-                }
-
-                if (publicKey !== 0 && publicKey !== undefined && publicKey !== 'UserNotExist') {
-                    var arr = [];
-
-                    // TODO
-                    // sessionKeys.forEach(function(element) {
-                    //     arr.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.key)), element.algo, publicKey, []).then(function(keyPacket) {
-                    //         return {
-                    //             id: element.id,
-                    //             keypacket: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
-                    //         };
-                    //     }));
-                    // });
-
-                    var encryptedSessionKeys = Promise.all(arr);
-                    var encryptedMessage = pmcrypto.encryptMessage(messageBody, publicKey);
-
-                    return Promise.all([encryptedMessage, encryptedSessionKeys]).then(function(encArray) {
-                        return [addressee, type].concat(encArray);
-                    });
-                } else if (publicKey === 'UserNotExist') {
-                    return deferred.reject("ProtonMail user '" + addressee + "' does not exist. Please check your spelling and try again.");
-                } else {
-                    return deferred.reject(new Error("Error retrieving public key for ProtonMail user '" + addressee + "'"));
-                }
-
-                promises.push(promise);
-            }
-
-            // non PM recipient (aka Outside)
-            // if the recipient outside email isnt empty:
-            else if (addressee !== '') {
-
-                // if outside recipients are encrypted:
-                if ($('#encOutside').is(':checked')) {
-
-                    var replyToken = generateReplyToken();
-                    var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], $('#outsidePw').val());
-
-                    // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
-                    var arr = [];
-                    sessionKeys.forEach(function(element) {
-                        arr.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function(keyPacket) {
-                            return {
-                                id: element.id,
-                                keypacket: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
-                            };
-                        }));
-                    });
-                    var encryptedSessionKeys = Promise.all(arr);
-
-                    if (outsideBody === null) {
-                        outsideBody = pmcrypto.encryptMessage(messageBody, [], $('#outsidePw').val());
-                    }
-
-                    var outsidePromise = outsideBody.then(function(message) {
-                        return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-                            return [addressee, type, message, replyToken].concat(encArray);
-                        });
-                    });
-
-                    promises.push(outsidePromise);
-                }
-
-                // outside recipient - not encrypted
-                else {
-                    promises.push(Promise.resolve([addressee, type, 'outside_not_encrypted']));
-                }
-            }
-        }
-
-        // track number of recipients
-        var counter = emailArray.length;
-
-        // list of promises for encrypted random keys
-        var promises = [];
-
-        // message body
-        var messageBody = message.MessageBody;
-
-        // outside body
-        var outsideBody = null;
-
-        // var sessionKeys = JSON.parse($('#sessionKeys').val()); // TODO
-        getPublicKeys().then(function(publickeys) {
-            // loop through each recipient
-            for (var index = 0; index < counter; index++) {
-                makePackage(emailArray[index], publickeys);
-            }
-        }, function(result) {
-            $log.error(result);
-        });
-
-
-        // Return array of promises
-        return promises;
-    }
+    var generateReplyToken = function() {
+        // Use a base64-encoded AES256 session key as the reply token
+        return pmcrypto.encode_base64(pmcrypto.generateKeyAES());
+    };
 
     $scope.send = function(message) {
         if (validate(message)) {
@@ -991,7 +896,8 @@ angular.module("proton.controllers.Messages", [
                 BCCList: '',
                 MessageTitle: '',
                 PasswordHint: '',
-                Attachments: []
+                Attachments: [],
+                isEncrypted: 0
             });
 
             if (message.Attachments) {
@@ -1004,126 +910,151 @@ angular.module("proton.controllers.Messages", [
             newMessage.CCList = tools.changeSeparatorToComma(newMessage.CCList);
             newMessage.BCCList = tools.changeSeparatorToComma(newMessage.BCCList);
 
-            // encrypt the message body and set 'outsiders' to empty by default
-            newMessage.MessageBody = {
-                outsiders: ''
-            };
+            // encrypt the message body
+            pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
+                // set 'outsiders' to empty by default
+                newMessage.MessageBody = {
+                    outsiders: '',
+                    self: result
+                };
 
-            var promises = packageLooper(message, message.RecipientList.split(","), 'to');
+                // concat all recipients
+                var emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList);
+                var base64 = pmcrypto.encode_base64(emails);
 
-            if (message.CCList !== '') {
-                promises = promises.concat(packageLooper(message, message.CCList.split(","), 'cc'));
-            }
+                // new message object
+                var userMessage = new Message();
 
-            if (message.BCCList !== '') {
-                promises = promises.concat(packageLooper(message, message.BCCList.split(","), 'bcc'));
-            }
+                // get users' publickeys
+                networkActivityTracker.track(userMessage.$pubkeys({
+                    Emails: base64
+                }).then(function(result) {
+                        // set defaults
+                        var isOutside = false;
+                        emails = emails.split(",");
+                        var promises = [];
+                        // loop through and overwrite defaults
+                        angular.forEach(emails, function(email) {
+                            var publickeys = result.keys;
+                            var publickey;
+                            var index = _.findIndex(publickeys, function(k, i) {
+                                if(!_.isUndefined(k[email])) {
+                                    return true;
+                                }
+                            });
 
-            Promise.all(promises).then(function (totalPackage) {
-                // $('#totalPackage').val(JSON.stringify(totalPackage));
-                // buildDraftOutbox(callback);
-            }, function (err) {
-                // $('#totalPackage').val('');
-                // enableButton($('#compose-actions a, #compose-actions button'));
-                // window.onbeforeunload = confirmExit;
+                            if(index !== -1) {
+                                publickey = publickeys[index][email];
+                                // encrypt messagebody with each user's keys
+                                promises.push(pmcrypto.encryptMessage(message.RawMessageBody, publickey).then(function(result) {
+                                    newMessage.MessageBody[email] = result;
+                                }));
+                            }
+
+                            if (!isOutside) {
+                                if (!tools.isEmailAddressPM(email)) {
+                                    isOutside = true;
+                                }
+                            }
+                        });
+
+                        if(message.isEncrypted === 1) {
+                            var replyToken = generateReplyToken();
+                            var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
+
+                            // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
+                            var arr = [];
+
+                            // TODO
+                            // sessionKeys.forEach(function(element) {
+                            //   arr.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
+                            //     return {
+                            //       id: element.id,
+                            //       keypacket: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
+                            //     };
+                            //   }));
+                            // });
+
+                            var encryptedSessionKeys = Promise.all(arr);
+                            var outsideBody = pmcrypto.encryptMessage(messageBody, [], message.Password);
+
+                            var outsidePromise = outsideBody.then(function(message) {
+                                return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
+                                    return [addressee, type, message, replyToken].concat(encArray);
+                                });
+                            });
+
+                            promises.push(outsidePromise);
+                        }
+
+                        // When all promises are done
+                        Promise.all(promises).then(function() {
+                            // dont encrypt if its going outside
+                            if(isOutside && message.isEncrypted === 0) {
+                                newMessage.MessageBody['outsiders'] = message.RawMessageBody
+                            }
+                            newMessage.MessageID = newMessage.MessageID || 0;
+                            // send email
+                            networkActivityTracker.track(newMessage.$send(null, function(result) {
+                                notify('Message Sent');
+                                $scope.close(message, false);
+                            }, function(error) {
+                                $log.error(error);
+                            }));
+                        });
+                    },
+                    function(error) {
+                        $log.error(error);
+                    }
+                ));
             });
-
-            // pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
-            //     newMessage.MessageBody.self = result;
-
-            //     // concat all recipients
-            //     var emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList);
-            //     var base64 = pmcrypto.encode_base64(emails);
-
-            //     // new message object
-            //     var userMessage = new Message();
-            //     // get users' publickeys
-            //     networkActivityTracker.track(userMessage.$pubkeys({
-            //         Emails: base64
-            //     }).then(function(result) {
-            //             // set defaults
-            //             isOutside = false;
-            //             mails = emails.split(",");
-            //             var promises = [];
-            //             // loop through and overwrite defaults
-            //             angular.forEach(mails, function(value) {
-            //                 var keys = result.keys[0];
-            //                 // encrypt messagebody with each user's keys
-            //                 promises.push(pmcrypto.encryptMessage(message.RawMessageBody, keys[value]).then(function(result) {
-            //                     newMessage.MessageBody[value] = result;
-            //                 }));
-
-            //                 if (!isOutside) {
-            //                     if (!value.indexOf('protonmail') < 0) {
-            //                         isOutside = true;
-            //                     }
-            //                 }
-            //             });
-            //             // When all promises are done
-            //             Promise.all(promises).then(function() {
-            //                 // dont encrypt if its going outside
-            //                 if (isOutside) {
-            //                     newMessage.MessageBody['outsiders'] = message.RawMessageBody
-            //                 };
-            //                 newMessage.MessageID = newMessage.MessageID || 0;
-            //                 // send email
-            //                 networkActivityTracker.track(newMessage.$send(null, function(result) {
-            //                     notify('Message Sent');
-            //                     $scope.close(message, false);
-            //                 }, function(error) {
-            //                     $log.error(error);
-            //                 }));
-            //             });
-            //         },
-            //         function(error) {
-            //             $log.error(error);
-            //         }
-            //     ));
-            // });
         }
     };
 
     $scope.saveDraft = function(message) {
-        var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
-        var index = $scope.messages.indexOf(message);
+        if(validate(message, true)) { // draft mode
+            var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
+            var index = $scope.messages.indexOf(message);
 
-        _.defaults(newMessage, {
-            RecipientList: '',
-            CCList: '',
-            BCCList: '',
-            MessageTitle: '',
-            PasswordHint: '',
-            Attachments: []
-        });
+            _.defaults(newMessage, {
+                RecipientList: '',
+                CCList: '',
+                BCCList: '',
+                MessageTitle: '',
+                PasswordHint: '',
+                Attachments: [],
+                isEncrypted: 0
+            });
 
-        if (message.Attachments) {
-            newMessage.Attachments = _.map(message.Attachments, function(att) {
-                return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+            if (message.Attachments) {
+                newMessage.Attachments = _.map(message.Attachments, function(att) {
+                    return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+                });
+            }
+
+            newMessage.MessageBody = {
+                outsiders: ''
+            };
+
+            pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
+                newMessage.MessageBody.self = result;
+
+                if (message.MessageID) {
+                    newMessage.MessageID = message.MessageID;
+                    newMessage.messageid = message.MessageID; // api fend need messageid parameter in lowercase
+                    networkActivityTracker.track(newMessage.$updateDraft({
+                        MessageID: null
+                    }, function() {
+                        notify('Draft updated');
+                    }));
+                } else {
+                    networkActivityTracker.track(newMessage.$saveDraft(null, function(result) {
+                        message.MessageID = parseInt(result.MessageID);
+                        notify('Draft saved');
+                    }));
+                }
             });
         }
-
-        newMessage.MessageBody = {
-            outsiders: ''
-        };
-
-        pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
-            newMessage.MessageBody.self = result;
-
-            if (message.MessageID) {
-                newMessage.MessageID = message.MessageID;
-                newMessage.messageid = message.MessageID; // api fend need messageid parameter in lowercase
-                networkActivityTracker.track(newMessage.$updateDraft({
-                    MessageID: null
-                }, function() {
-                    notify('Draft updated');
-                }));
-            } else {
-                networkActivityTracker.track(newMessage.$saveDraft(null, function(result) {
-                    message.MessageID = parseInt(result.MessageID);
-                    notify('Draft saved');
-                }));
-            }
-        });
     };
 
     $scope.toggleMinimize = function(message) {
@@ -1157,24 +1088,6 @@ angular.module("proton.controllers.Messages", [
         event.preventDefault();
         message.editor.focus();
     };
-
-    $scope.setOptionsVisibility = function(status) {
-        if (!status && $scope.message.IsEncrypted !== '0' &&
-            !this.composeForm.enc_password_conf.$valid) {
-
-            $scope.message.IsEncrypted = '0';
-        } else {
-            $scope.showOptions = status;
-        }
-    };
-
-    $scope.$watch("message.IsEncrypted", function(newValue, oldValue) {
-        if (oldValue === '0' && newValue === '1') {
-            $scope.setOptionsVisibility(true);
-        } else {
-            $scope.setOptionsVisibility(false);
-        }
-    });
 })
 
 .controller("ViewMessageController", function(

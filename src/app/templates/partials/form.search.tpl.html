@@ -23,6 +23,15 @@
                                     <option value="5">Starred</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="search_label">Label</label>
+                                <select name="search_label" id="search_label" class="form-control">
+                                    <optgroup label="Default"><option value="0">All Messages</option></optgroup>
+                                    <optgroup label="Labels">
+                                        <!-- TODO -->
+                                    </optgroup>
+                                </select>
+                            </div>
                             <div>
                                 <label for="">Between</label>
                                 <div class="fluid-container">
@@ -39,14 +48,14 @@
                             <div class="form-group">
                                 <label for="">Attachments</label>
                                 <div class="radio">
-                                    <label for="search_yes" class="radio-inline">
-                                        <input id="search_yes" type="radio" name="search_attachments" ng-model="params.attachments" value="1" /> Yes
+                                    <label for="attachments_yes" class="radio-inline">
+                                        <input id="attachments_yes" type="radio" name="attachments" ng-model="params.attachments" value="1" /> Yes
                                     </label>
-                                    <label for="search_no" class="radio-inline">
-                                        <input id="search_no" type="radio" name="search_attachments" ng-model="params.attachments" value="0" /> No
+                                    <label for="attachments_no" class="radio-inline">
+                                        <input id="attachments_no" type="radio" name="attachments" ng-model="params.attachments" value="0" /> No
                                     </label>
-                                    <label for="all" class="radio-inline">
-                                        <input id="all" type="radio" name="search_attachments" ng-model="params.attachments" value="2" /> All
+                                    <label for="attachments_all" class="radio-inline">
+                                        <input id="attachments_all" type="radio" name="attachments" ng-model="params.attachments" value="2" /> All
                                     </label>
                                 </div>
                             </div>
@@ -63,6 +72,20 @@
                             <div class="form-group">
                                 <label for="search_subject">Subject</label>
                                 <input type="text" id="search_subject" name="search_subject" class="form-control" ng-model="params.subject" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Is Starred</label>
+                                <div class="radio">
+                                    <label for="starred_yes" class="radio-inline">
+                                        <input id="starred_yes" type="radio" name="starred" ng-model="params.starred" value="1" /> Yes
+                                    </label>
+                                    <label for="starred_no" class="radio-inline">
+                                        <input id="starred_no" type="radio" name="starred" ng-model="params.starred" value="0" /> No
+                                    </label>
+                                    <label for="starred_all" class="radio-inline">
+                                        <input id="starred_all" type="radio" name="starred" ng-model="params.starred" value="2" /> All
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

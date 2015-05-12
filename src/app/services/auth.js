@@ -191,8 +191,7 @@ angular.module("proton.authentication", [
                             })
                         ).then(
                             function(resp) {
-                                var data = resp.data;
-                                auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
+                                auth.saveAuthData(_.pick(resp.data, "access_token", "refresh_token", "uid", "expires_in"));
                             },
                             function(resp) {
                                 if(resp.error) {
@@ -322,7 +321,7 @@ angular.module("proton.authentication", [
 })
 
 .run(function($rootScope, authentication) {
-    authentication.refreshIfNecessary(true);
+    authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
 });

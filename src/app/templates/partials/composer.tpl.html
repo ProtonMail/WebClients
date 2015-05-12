@@ -1,6 +1,6 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
-        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
+        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)" ondragenter="focusComposer(message);openPanel(message, 'attachments')">
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
                 <span class="col-xs-3 text-right">
@@ -52,13 +52,58 @@
                     </li>
                 </ul>
                 <div class="form-group">
-                    <ng-include src="message.panelUrl" ng-show="message.displayPanel" class="options"></ng-include>
+                    <div class="options" ng-show="message.displayPanel && message.panelName == 'attachments'">
+                        <div class="form-group col-md-12">
+                            <div class="dropzone" dropzone="dropzoneConfig(message)"></div>
+                        </div>
+                    </div>
+
+                    <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
+                        <div ng-form="encryptForm">
+                            <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
+                                <label for="outsidePw" class="control-label text-muted">Message Password</label>
+                                <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
+                            </div>
+                            <div class="form-group col-md-12" ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}">
+                                <label for="outsidePwConfirm" class="control-label text-muted">Confirm Message Password</label>
+                                <input type="password" autocomplete="off" id="outsidePwConfirm" name="outsidePwConfirm" ng-model="params.confirm"placeholder="Confirm Password" class="form-control" required="" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="outsidePwHint" class="control-label text-muted">Password Hint (Optional)</label>
+                                <input type="text" autocomplete="off" id="outsidePwHint" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
+                            </div>
+                            <div class="col-md-12">
+                                <p class="help-block">Only email body is encrypted during Beta.</p>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">Clear</button>
+                                <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">Set</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
+                        <ng-form novalidate ng-submit="setExpiration(message, params)">
+                            <div class="form-group col-md-12">
+                                <label for="ExpirationTime" class="control-label text-muted">Expiration Time</label>
+                                <input type="range" min="0" max="{{maxExpiration}}" name="ExpirationTime" id="ExpirationTime" ng-model="params.expiration" placeholder="0" class="form-control" ng-change="rotateIcon(params.expiration);" />
+                            </div>
+                            <div class="form-group col-md-12 text-center" ng-show="params.expiration">
+                                <h2 class="text-purple">{{params.expiration}} hours</h2>
+                                <h4 class="text-muted">{{params.expiration | humanDuration:'hours'}}</h4>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="button" class="btn btn-default btn-sm" ng-click="clearExpiration(message)">Clear</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Set</button>
+                            </div>
+                        </ng-form>
+                    </div>
+
                     <squire ng-model="message.RawMessageBody" message="message" editor="message.editor" height="320px">
                     </squire>
                 </div>
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
-                <button class="btn btn-sm btn-default" ng-click="" pt-tooltip="Attach a file"><i class="fa fa-paperclip"></i></button>
                 <button class="btn btn-sm btn-primary" ng-click="send(message)">Send</button>
             </div>
         </div>

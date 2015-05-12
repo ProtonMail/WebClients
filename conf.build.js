@@ -46,8 +46,6 @@ module.exports = {
       "vendor/openpgp/*.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
-      "vendor/wysihtml5x/parser_rules/advanced.js",
-      "vendor/wysihtml5x/dist/wysihtml5x-toolbar.js",
       "vendor/typeahead.js/dist/typeahead.bundle.js",
       "vendor/tagmanager/tagmanager.js",
       "vendor/autosize-input/jquery.autosize.input.js",
@@ -57,7 +55,8 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
       "vendor/pikaday-angular/pikaday-angular.js",
-      "vendor/squire-rte/build/squire.js"
+      "vendor/squire-rte/build/squire.js",
+      "vendor/dropzone/dist/dropzone.js"
     ],
     bootstrap_components: [
       "affix",
@@ -78,7 +77,8 @@ module.exports = {
       "vendor/angular-modal/modal.css",
       "vendor/angular-toggle-switch/angular-toggle-switch.css",
       "vendor/angular-toggle-switch/angular-toggle-switch-bootstrap.css",
-      "vendor/pikaday/css/pikaday.css"
+      "vendor/pikaday/css/pikaday.css",
+      "vendor/dropzone/dist/dropzone.css"
     ],
 
     sass_include_dirs: [

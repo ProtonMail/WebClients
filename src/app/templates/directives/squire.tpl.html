@@ -70,6 +70,12 @@
             </li>
             <li class="separator"></li>
             <li>
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="Attachments" ng-click="$parent.togglePanel(message, 'attachments')">
+                    <i class="fa fa-paperclip"></i>
+                </a>
+            </li>
+            <li class="separator"></li>
+            <li>
                 <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="Encryption" ng-click="$parent.togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
                 </a>

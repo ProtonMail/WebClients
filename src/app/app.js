@@ -36,6 +36,8 @@ angular.module("proton", [
     "proton.fieldMatch",
     "proton.fieldFocus",
     "proton.squire",
+    "proton.dropzone",
+    "proton.ondrag",
 
     // Filters
     "proton.filters.strings",

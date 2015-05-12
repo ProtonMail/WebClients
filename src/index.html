@@ -15,67 +15,6 @@
       angular.module("proton")
         .run(function($rootScope) { $rootScope.build = <%= JSON.stringify(build) %>; })
         .config(function(authenticationProvider) { authenticationProvider.setAPIBaseURL("<%= settings.apiUrl %>"); })
-
-        <% if (deployment) { %>
-        .factory('login', function () { return function (scope) { $('form#sign_in_form').submit(); }; });
-        <% } else { %>
-        .factory('login', function ($state, $q, $http, networkActivityTracker, authentication) {
-          var randomString = function (size) {
-            var string = ""
-              , i = 0
-              , chars = "0123456789ABCDEF";
-
-            while (i++ < size) {
-              string += chars[Math.floor(Math.random() * 16)];
-            }
-            return string;
-          };
-
-          var loginWithCredentials = function(creds) {
-            var q = $q.defer();
-            if (!creds.username || !creds.password) {
-              q.reject({message: "Username and password are required to login"});
-            } else {
-              delete $http.defaults.headers.common.Accept;
-              $http.post(authentication.baseURL + "/auth/auth",
-                _.extend(_.pick(creds, "username", "password"), {
-                  client_id: "demoapp",
-                  client_secret: "demopass",
-                  hashedpassword: "",
-                  grant_type: "password",
-                  state: randomString(24),
-                  redirect_uri: "https://protonmail.ch",
-                  response_type: "token"
-                })
-              ).then(function(resp) {
-                var data = resp.data;
-                q.resolve(data);
-              },
-              function (error) {
-                q.reject({message: error.error_description});
-              });
-            }
-
-            return q.promise;
-          };
-
-          return function (scope) {
-            networkActivityTracker.track(
-              loginWithCredentials({
-                username: scope.username,
-                password: scope.password
-              }).then(
-                function(data) {
-                  $state.go("login.redirected", _.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
-                },
-                function(err) {
-                  scope.error = err;
-                }
-              )
-            );
-          };
-        });
-        <% } %>
     </script>
   </body>
 </html>
