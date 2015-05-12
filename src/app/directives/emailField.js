@@ -54,14 +54,48 @@ angular.module("proton.emailField", [])
         }
       });
 
-      manager.on("tm:pushed", function (ev, tag) {
+      receivedTag = function (event, ui) {
+        var currentTags = manager.tagsManager('tags');
+        var item = ui.item[0];
+        var email = item.innerText.trim();
+        if (currentTags.indexOf(email) > -1) {
+          ui.sender.sortable('cancel');
+        }
+        else {
+          $(item).find('i').trigger('click');
+          manager.tagsManager("pushTag", email);
+        }
+      };
+
+      $(parent).closest('.typeahead-container').sortable({
+        items: '.tm-tag',
+        connectWith: '.typeahead-container',
+        receive: receivedTag,
+        containment: $(parent).closest('.composer')
+      });
+
+      manager.on("tm:pushed", function (ev, tag, tagId, $el) {
         positionInput();
         if (!tabbing) {
           $$element.focus();
         }
         tabbing = false;
         setValue();
+
+        $($el).on('mouseover', function() {
+          $(this).css('cursor', 'move');
+        });
+
+        $($el).dblclick(function( ) {
+          var input = $(parent).find('.tt-input');
+          $(input).val(tag);
+          $$element.focus();
+          $(input).trigger('change');
+          $(this).find('i').trigger('click');
+        });
+
       });
+
       manager.on("tm:popped tm:spliced", setValue);
 
       $$element

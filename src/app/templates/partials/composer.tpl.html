@@ -21,7 +21,7 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
-                            <div id="typeahead-container">
+                            <div class="typeahead-container" id="to-container">
                                 <input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" />
                             </div>
                             <span class="input-group-btn">
@@ -32,10 +32,14 @@
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="CC" class="form-control" />
+                        <div class="typeahead-container" id="cc-container">
+                            <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="CC" class="form-control" />
+                        </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
-                        <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="BCC" class="form-control" />
+                        <div class="typeahead-container" id="bcc-container">
+                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="BCC" class="form-control" />
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">

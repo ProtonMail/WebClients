@@ -53,19 +53,17 @@
 }
 
 .twitter-typeahead {
-  float: left;
+  display: inline-block;
   width: 25%;;
+  vertical-align: bottom;
 }
 
 #composeForm {
-  #typeahead-container {
-    width: 100%;
-  }
   .tm-tag {
     border: none;
     box-shadow: none;
-    float: left;
     border-radius: 2px;
+    display: inline-block;
     background: #f2f2f2;
     padding: 0 1.5rem;
     line-height: ($row-height*1.2 - 10);
