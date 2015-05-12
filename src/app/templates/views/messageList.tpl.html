@@ -20,8 +20,8 @@
                 !!(message.IsEncrypted == '6'), 
               'fa-unlock-alt': 
                 !!(message.IsEncrypted == '0')
-            }"
-            pt-tooltip="message.encryptionType"></span>
+            }" 
+            pt-tooltip="getMessageEncryptionType(message)"></span>
 
         <a href ng-click="toggleStar(message)">
           <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
