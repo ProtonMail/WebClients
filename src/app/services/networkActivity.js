@@ -1,9 +1,6 @@
 angular.module("proton.networkActivity", [])
 .factory("networkActivityTracker", function ($log, errorReporter) {
-
-  console.log('networkActivityTracker');
-  
-  var promises = [];
+    var promises = [];
   var api = {
     loading: function () {
       return !_.isEmpty(promises);

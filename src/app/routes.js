@@ -258,7 +258,7 @@ angular.module("proton.routes", [
         "panel@step2": {
           templateUrl: "templates/views/step2.tpl.html"
         }
-      },     
+      },
     })
 
     // -------------------------------------------
