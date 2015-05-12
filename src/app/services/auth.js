@@ -180,8 +180,8 @@ angular.module("proton.authentication", [
                     }
                 },
 
-                refreshIfNecessary: function() {
-                    if (auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) {
+                refreshIfNecessary: function(force) {
+                    if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
                         $http.post(
                             baseURL + "/auth/refresh",
                             _.extend(_.pick(auth.data, "access_token", "refresh_token"), {
@@ -194,7 +194,12 @@ angular.module("proton.authentication", [
                                 var data = resp.data;
                                 auth.saveAuthData(_.pick(data, "access_token", "refresh_token", "uid", "expires_in"));
                             },
-                            errorReporter.catcher("Something went wrong with authentication")
+                            function(resp) {
+                                if(resp.error) {
+                                    api.logout();
+                                }
+                                errorReporter.catcher("Something went wrong with authentication");
+                            }
                         );
                     }
                 },
@@ -317,7 +322,7 @@ angular.module("proton.authentication", [
 })
 
 .run(function($rootScope, authentication) {
-    authentication.refreshIfNecessary();
+    authentication.refreshIfNecessary(true);
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
 });

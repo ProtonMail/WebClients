@@ -214,9 +214,9 @@ angular.module("proton.routes", [
           templateUrl: "templates/views/sign-up.tpl.html"
         }
       }
-    }) 
+    })
 
-    .state("signup", { 
+    .state("signup", {
       url: "/signup",
       views: {
         "main@": {
@@ -232,7 +232,7 @@ angular.module("proton.routes", [
     .state("step1", {
       url: "/create/new",
       views: {
-        "main@": { 
+        "main@": {
           controller: "AccountController",
           templateUrl: "templates/layout/auth.tpl.html"
         },
@@ -250,7 +250,7 @@ angular.module("proton.routes", [
     .state("step2", {
       url: "/create/mbpw",
       views: {
-        "main@": { 
+        "main@": {
           controller: "AccountController",
           templateUrl: "templates/layout/auth.tpl.html"
         },
