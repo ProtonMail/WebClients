@@ -53,20 +53,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.truncateSubjects = function() {
-        $timeout(function() {
-            $('#message .subject h4').hide();
-            var outerWidth = $('#message .subject').eq(0).outerWidth();
-            var width;
 
-            if (!!!outerWidth) {
-                width = 'auto';
-            } else {
-                width = outerWidth - 35;
-            }
-
-            $('#message .subject h4').css('width', width);
-            $('#message .subject h4').show();
-        }, 200);
     };
 
     $(window).bind('resize load', function() {

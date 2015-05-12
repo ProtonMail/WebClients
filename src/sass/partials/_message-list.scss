@@ -7,6 +7,7 @@ table.message-list.mobile tr {
 table.message-list {
   border-bottom: none;
   margin-bottom: 0;
+  table-layout: fixed; 
 
   tbody td {
     border-top: none;
@@ -43,16 +44,27 @@ table.message-list {
       margin: 0;
       padding: 0;
       font-size: 14px;
-      overflow: hidden;
+      display: inline-block;
     }
 
     td {
       padding: 0 10px;
       line-height: $row-height;
       vertical-align: middle;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .message-label {
+      background: #c9c;
+      display: inline;
+      padding: .25rem .5rem;
+      font-size: 1.2rem;
+      margin-left: .5rem;
     }
 
     &.unread {
+      background: #fff;
       h4 {
         font-weight: bold;
         color: #000;
@@ -62,22 +74,8 @@ table.message-list {
       }
     }
 
-    &:hover {
-      td {
-        background-color: darken(white, 2%);
-      }
-    }
-
     &.starred {
       background-color: $starred;
-
-      &:hover {
-        background-color: darken($starred, 2%);
-
-        td {
-          background: transparent;
-        }
-      }
     }
 
     &.encrypted td { }
@@ -114,7 +112,7 @@ table.message-list {
     }
 
     td.recipient {
-      width: 5rem;
+      width: 10rem;
       text-transform:capitalize;
 
       .to {
@@ -125,30 +123,24 @@ table.message-list {
 
     td.size,
     td.when {
-      width: 4rem;
-      text-align: right;
+      text-align: right;   
     }
     td.size {
       font-family: monospace;
+      width: 10rem;
     }
     td.when {
       padding-right: 15px;
+      width: 12rem;
     }
 
 
-    i.fa-paperclip {
-      opacity: 0;
-      margin-right: 0.4em;
-      padding: 0.3em;
-      display: inline;
-
-      &:not(.active) {
-        pointer-events: none;
-      }
-
-      &.active {
-        opacity: 0.5;
-      }
+    i.fa-paperclip,
+    i.fa-clock-o {
+      float: right;
+      display: inline-block;
+      line-height: 32px;
+      height: 32px;
     }
 
   }

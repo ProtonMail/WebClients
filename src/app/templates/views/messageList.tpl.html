@@ -1,5 +1,5 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar"></ng-include>
-<table ng-if="!('secured.*.message' | includedByState)" class="table message-list table-hover hidden-xs" ng-class="{empty: messages.length == 0}">
+<table ng-if="!('secured.*.message' | includedByState)" class="table message-list hidden-xs" ng-class="{empty: messages.length == 0}">
   <tbody id="message">
     <tr ng-repeat="message in messages"
         ng-init="$last ? truncateSubjects() : null"
@@ -22,14 +22,14 @@
         <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
         <span ng-switch-default>{{ message.Sender | username }}</span>
       </td>
-
       <td class="subject">
+        <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>
+        <i class="fa fa-paperclip" ng-show="message.AttachmentIDList.length"></i>
         <h4>{{ message.MessageTitle }}</h4>
+        <span class="message-label">Sample Label Title</span>
       </td>
 
       <td class="size">
-        <i  class="fa fa-paperclip"
-            ng-class="{active: message.AttachmentIDList.length}"></i>
         {{ message.TotalSize | humanSize }}
       </td>
 
