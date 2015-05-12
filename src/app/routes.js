@@ -241,6 +241,7 @@ angular.module("proton.routes", [
         }
       },
       onEnter: function(authentication, $state, $rootScope) {
+        // TODO take token?
         // this is set if a token was set
         $rootScope.username = 'testUsername';
         $rootScope.username = '';
@@ -257,7 +258,7 @@ angular.module("proton.routes", [
         "panel@step2": {
           templateUrl: "templates/views/step2.tpl.html"
         }
-      }
+      },     
     })
 
     // -------------------------------------------

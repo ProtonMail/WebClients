@@ -15,7 +15,7 @@
             <div class="form-group" ng-show="username===''">
                 <label>Username</label>
                 <div class="usernameWrap">
-                    <input type="text" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control">
+                    <input type="text" ng-model="account.Username" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control">
                     <!-- todo: abs position this over the input field and use padding on the input -->
                     <em class="usernameDomain">@protonmail.ch</em>
                 </div>

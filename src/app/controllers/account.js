@@ -2,9 +2,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
 .controller("AccountController", function(
     $scope,
+    $rootScope,
     $state,
     $stateParams,
     $log,
+    authentication,
+    networkActivityTracker,
     User,
     pmcrypto,
     tools,
@@ -14,6 +17,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.compatibility = tools.isCompatible();
     $scope.tools = tools; 
+
+    $scope.account = [];
 
     function generateKeys(userID, pass) {
         // Generate KeyPair
@@ -73,24 +78,59 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     }
 
     $scope.start = function() {
-        $scope.account = {
-            username: $stateParams.username,
-            loginPassword: '',
-            loginPasswordConfirm: '',
-            mailboxPassword: '',
-            mailboxPasswordConfirm: '',
-            notificationEmail: '',
-            optIn: true
-        };
         $state.go('step1');
     };
 
+    $scope.tryDecrypt = function() {
+        $('input').blur();
+        var mailboxPassword = this.mailboxPassword;
+        clearErrors();
+        networkActivityTracker.track(
+            authentication
+            .unlockWithPassword(mailboxPassword)
+            .then(
+                function() {
+                    localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(mailboxPassword));
+                    $state.go("secured.inbox");
+                },
+                function(err) {
+                    $scope.error = err;
+                }
+            )
+        );
+    };
+
     $scope.saveContinue = function(form) {
+
         if (form.$valid) {
             // TODO
             // do additional validation here such as looking up the username to see if its available
-            // before going to step 2, we need to create the new account and load the user information into the app / log them in.
-            $state.go('step2');
+            var params = {
+                "response_type": "token",
+                "client_id": "demoapp",
+                "client_secret": "demopass",
+                "grant_type": "password",
+                "redirect_uri": "https://protonmail.ch",
+                "state": "random_string",
+                "username": $scope.account.Username,
+                "password": $scope.account.loginPassword,
+                "email": $scope.account.notificationEmail,
+                "news": !!($scope.account.optIn)
+            };
+
+            networkActivityTracker.track( 
+                User.createUser(params).$promise.then(function(response) {
+                    // Log the user in
+                    authentication.receivedCredentials(
+                        _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
+                    );
+                    $rootScope.isLoggedIn = true;
+                    $state.go('step2');
+                }, function(response) {
+                    $log.error(response);
+                })
+            );
+            // $state.go('step2');
         }
     };
 

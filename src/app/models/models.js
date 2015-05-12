@@ -299,7 +299,7 @@ angular.module("proton.models", [
       },
       createUser: {
         method: 'post',
-        url: authentication.baseURL + "/users/create"
+        url: authentication.baseURL + "/users"
       },
       updateKeypair: {
         method: 'post',
