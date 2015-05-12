@@ -126,12 +126,10 @@
         }
 
         i:first-child {
-          margin-right: 3px;
+          margin-right: 0;
         }
 
         &.dropdown-toggle {
-          padding-right: 15px;
-
           i.fa-angle-down {
             margin-left: 3px;
           }

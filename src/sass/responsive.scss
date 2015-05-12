@@ -5,6 +5,9 @@
 	#sidebar {
 		width: ($sidebar-width)*.9;
 	}
+	.message-toolbar > ul > li > a {
+		padding: 0 .75rem;
+	}
 }
 
 // Tablet
@@ -62,10 +65,11 @@
 		table-layout: fixed;
 		td {
 			vertical-align: middle;
-			padding-left: 3.5rem;
 			position: relative;
 			padding-right: 15px;
 			width: 767px;
+			padding: 1rem 15px 1rem 3.5rem;
+			line-height: 1em;
 		}
 		h4 {
 			margin: 0 0 3px 0;
@@ -81,10 +85,16 @@
 			width: 2rem;
 			position: absolute;
 			left: 15px;
-			top: 8px;
+			top: 1.25rem;
 		}
 		.recipient {
 			font-size: 12px;
+			.sender {
+				display: inline-block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 70%;
+			}
 		}
 	}
 	#search-text {
