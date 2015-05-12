@@ -188,7 +188,12 @@ angular.module("proton.controllers.Contacts", [
                 message: 'Allowed format(s): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
                     // TODO
-                    console.log(files);
+                    console.log(files[0]);
+                    Papa.parse(files[0], {
+                    	complete: function(results) {
+                    		console.log(results);
+                    	}
+                    });
                     dropzoneModal.deactivate();
                     notify($translate('CONTACTS_UPLOADED'));
                 },
@@ -200,6 +205,25 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.downloadContacts = function() {
-        // TODO
+        var contactsArray = [['name', 'email']];
+        var csvRows = [];
+
+        _.forEach($scope.contacts, function(contact) {
+          contactsArray.push([contact.ContactName, contact.ContactEmail]);
+          console.log(contactsArray);
+        });
+
+        for(var i=0, l=contactsArray.length; i<l; ++i){
+            csvRows.push(contactsArray[i].join(','));
+        }
+
+        var csvString = csvRows.join("%0A");
+        var a         = document.createElement('a');
+        a.href        = 'data:attachment/csv,' + csvString;
+        a.target      = '_blank';
+        a.download    = 'myFile.csv';
+
+        document.body.appendChild(a);
+        a.click();
     };
 });
