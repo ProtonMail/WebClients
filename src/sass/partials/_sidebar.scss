@@ -44,13 +44,9 @@
 
   #compose_button {
     a {
-      @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+      background: $light-purple;
       text-shadow: none;
       color: #fff;
-      &:hover {
-        background: lighten($light-purple, ($sidebar-button-lighten/2));
-        border-color: transparent;
-      }
       &:active {
         background: darken($light-purple, $sidebar-button-lighten);
         color: rgba(#fff, .5);
@@ -62,7 +58,7 @@
 
   #compose_button a,
   .list-group-item a.active {
-    box-shadow: 0 1px 1px rgba(black, .25);
+    box-shadow: none;
     border-top-color: rgba(white, .1);
     border-bottom-color: transparent;
   }
@@ -175,13 +171,8 @@
         top: 7px;
       }
       &.active {
-        @include linear-gradient(lighten($gray, $sidebar-button-lighten), $gray);
-        .label {
-          background: #fff;
-          color: #000;
-        }
+        background: lighten($sidebar-bg, 10%);
         &:hover {
-          background: lighten($gray, ($sidebar-button-lighten/2));
           border-color: transparent;
         }
         &:active {
@@ -190,6 +181,10 @@
           border-color: transparent;
           box-shadow: none;
         }
+        .label {
+          background: #fff;
+          color: #000;
+        }        
       }
       &.active, &:hover {
         color: #fff;
