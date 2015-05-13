@@ -210,7 +210,6 @@ angular.module("proton.controllers.Contacts", [
 
         _.forEach($scope.contacts, function(contact) {
           contactsArray.push([contact.ContactName, contact.ContactEmail]);
-          console.log(contactsArray);
         });
 
         for(var i=0, l=contactsArray.length; i<l; ++i){
@@ -221,7 +220,7 @@ angular.module("proton.controllers.Contacts", [
         var a         = document.createElement('a');
         a.href        = 'data:attachment/csv,' + csvString;
         a.target      = '_blank';
-        a.download    = 'myFile.csv';
+        a.download    = 'contacts.csv';
 
         document.body.appendChild(a);
         a.click();
