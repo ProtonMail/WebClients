@@ -14,13 +14,13 @@
             "{
               'fa-lock':
                 !!!(message.IsEncrypted == '0'),
-              'text-purple': 
-                !!(message.IsEncrypted == '1') || 
-                !!(message.IsEncrypted == '5') || 
-                !!(message.IsEncrypted == '6'), 
-              'fa-unlock-alt': 
+              'text-purple':
+                !!(message.IsEncrypted == '1') ||
+                !!(message.IsEncrypted == '5') ||
+                !!(message.IsEncrypted == '6'),
+              'fa-unlock-alt':
                 !!(message.IsEncrypted == '0')
-            }" 
+            }"
             pt-tooltip="getMessageEncryptionType(message)"></span>
 
         <a href ng-click="toggleStar(message)">

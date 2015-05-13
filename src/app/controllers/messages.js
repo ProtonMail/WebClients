@@ -62,7 +62,8 @@ angular.module("proton.controllers.Messages", [
             'Stored Encrypted',
             'End-to-End Encrypted for Outside Reply'
         ];
-        return texts[message.encryptionType];
+
+        return texts[message.IsEncrypted];
     };
 
     $scope.truncateSubjects = function() {

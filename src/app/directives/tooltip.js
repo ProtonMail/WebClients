@@ -3,8 +3,17 @@ angular.module("proton.tooltip", [])
 .directive("ptTooltip", function() {
     return {
         restrict: 'A',
+        scope: {
+            ptTooltip: '&'
+        },
         link: function(scope, element, attrs) {
-            element.attr('title', attrs.ptTooltip);
+            var title = scope.ptTooltip;
+
+            if(angular.isFunction(scope.ptTooltip)) {
+                title = scope.ptTooltip();
+            }
+
+            element.attr('title', title);
             $(element[0]).tooltip({
                 delay: 300,
                 placement: attrs.ptPlacement || 'top',
