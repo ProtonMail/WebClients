@@ -1,22 +1,14 @@
 angular.module("proton.controllers.Header", [])
 
 .controller("HeaderController", function($scope, $state, $rootScope) {
+    $scope.params = {
+        searchInput: ''
+    };
+
     $scope.search = function() {
-        console.log('search ' + $scope.searchInput);
-    };
-
-    $scope.updateSearch = function(input) {
-        $rootScope.$broadcast('updateSearch', input.searchInput);
-    };
-
-    $scope.onFocus = function() {
-        $scope.searchInputFocus = true;
-        $scope.go('secured.search');
-    };
-
-    $scope.onBlur = function() {
-        $scope.searchInputFocus = false;
-        $state.go('secured.inbox');
+        if($scope.params.searchInput.length > 0) {
+            $rootScope.$broadcast('search', $scope.params.searchInput);
+        }
     };
 
     $scope.openNewMessage = function() {

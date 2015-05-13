@@ -62,6 +62,16 @@
         </li>
     </ul>
     <div class="divider"></div>
+    <div class="hidden-xs hidden-sm" ng-show="$parent.bookmarks.length > 0">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="bookmark in $parent.bookmarks">
+                <a href="" class="btn">
+                    <span class="fa fa-tag"></span> <span>{{bookmark}}</span>
+                </a>
+            </li>
+        </ul>
+        <div class="divider"></div>
+    </div>
     <div class="storage">
         <div class="divider"></div>
         <ul class="list-group info hidden-xs hidden-sm">

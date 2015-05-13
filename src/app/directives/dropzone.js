@@ -19,7 +19,7 @@ angular.module('proton.dropzone', [])
             link: function(scope, element, attrs) {
                 var config, dropzone;
 
-                config = scope.dropzoneConfig();
+                config = (angular.isFunction(scope.dropzoneConfig))?scope.dropzoneConfig():scope.dropzoneConfig;
 
                 // create a Dropzone for the element with the given options
                 dropzone = new Dropzone(element[0], config.options);

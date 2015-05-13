@@ -1,7 +1,7 @@
 <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchFormLabel" aria-hidden="true" ng-controller="SearchController">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" novalidate ng-submit="search()">
+            <form role="form" name="searchForm" novalidate ng-submit="search()">
                 <div class="modal-header text-right">
                     <a href="" ng-click="close()">
                         <i aria-hidden="true" title="Close" class="fa fa-times text-muted"></i>
@@ -14,19 +14,20 @@
                             <div class="form-group">
                                 <label for="search_folder">Folder</label>
                                 <select name="search_folder" id="search_folder" class="form-control">
-                                    <option value="-1" selected="selected">All</option>
-                                    <option value="0">Inbox</option>
-                                    <option value="1">Draft</option>
-                                    <option value="2">Sent</option>
-                                    <option value="3">Trash</option>
-                                    <option value="4">Spam</option>
-                                    <option value="5">Starred</option>
+                                    <optgroup label="Default">
+                                        <option value="-1" selected="selected">All</option>
+                                    </optgroup>
+                                    <optgroup label="Folders">
+                                        <option ng-repeat="(key, value) in folders" value="{{folder}}">{{key}}</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="search_label">Label</label>
                                 <select name="search_label" id="search_label" class="form-control">
-                                    <optgroup label="Default"><option value="0">All Messages</option></optgroup>
+                                    <optgroup label="Default">
+                                        <option value="0">All Messages</option>
+                                    </optgroup>
                                     <optgroup label="Labels">
                                         <!-- TODO -->
                                     </optgroup>
@@ -37,10 +38,10 @@
                                 <div class="fluid-container">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
-                                            <input pikaday="params.begin" on-select="setMin()" class="form-control" placeholder="From" />
+                                            <input pikaday="params.begin" name="begin" on-select="setMin()" class="form-control" placeholder="From" />
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input pikaday="params.end" on-select="setMax()" class="form-control" placeholder="Until" />
+                                            <input pikaday="params.end" name="end" on-select="setMax()" class="form-control" placeholder="Until" />
                                         </div>
                                     </div>
                                 </div>
@@ -63,15 +64,15 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="search_sender">Sender</label>
-                                <input type="text" id="search_sender" name="search_sender" class="form-control" ng-model="params.sender" />
+                                <input type="text" id="search_sender" name="search_sender" class="form-control" ng-model="params.from" placeholder="From" />
                             </div>
                             <div class="form-group">
                                 <label for="search_recipient">Recipient</label>
-                                <input type="text" id="search_recipient" name="search_recipient" class="form-control" ng-model="params.recipient" />
+                                <input type="text" id="search_recipient" name="search_recipient" class="form-control" ng-model="params.to" placeholder="To" />
                             </div>
                             <div class="form-group">
                                 <label for="search_subject">Subject</label>
-                                <input type="text" id="search_subject" name="search_subject" class="form-control" ng-model="params.subject" />
+                                <input type="text" id="search_subject" name="search_subject" class="form-control" ng-model="params.subject" placeholder="Subject" />
                             </div>
                             <div class="form-group">
                                 <label for="">Is Starred</label>

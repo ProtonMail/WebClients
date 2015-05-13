@@ -98,6 +98,17 @@ angular.module("proton.models", [
         isArray: true,
         transformResponse: getFromJSONResponse('Messages')
       },
+      search: {
+        method: "get",
+        isArray: true,
+        transformResponse: getFromJSONResponse('Messages'),
+        url: authentication.baseURL + "/messages/search"
+      },
+      advSearch: {
+        method: "get",
+        transformResponse: getFromJSONResponse('Messages'),
+        url: authentication.baseURL + "/messages/adv_search"
+      },
       delete: {
         method: "delete"
       },

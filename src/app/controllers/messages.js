@@ -23,12 +23,17 @@ angular.module("proton.controllers.Messages", [
     $scope.$on("$destroy", unsubscribe);
 
     $scope.page = parseInt($stateParams.page || "1");
-    $scope.messages = messages;
 
-    if ($stateParams.filter) {
-        $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+    if($state.$current.name === 'secured.search') {
+        $scope.messages = messages.Messages;
+        $scope.messageCount = messages.Total;
     } else {
-        $scope.messageCount = messageCount.Total;
+        $scope.messages = messages;
+        if ($stateParams.filter) {
+            $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+        } else {
+            $scope.messageCount = messageCount.Total;
+        }
     }
 
     $scope.selectedFilter = $stateParams.filter;
@@ -37,7 +42,7 @@ angular.module("proton.controllers.Messages", [
     messageCache.watchScope($scope, "messages");
 
     $scope.start = function() {
-        return ($scope.page - 1) * $scope.messageCount + 1;
+        return ($scope.page - 1) * $scope.messagesPerPage + 1;
     };
 
     $scope.end = function() {

@@ -19,12 +19,12 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-large">
-                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-submit="search()" ng-class="{'focus': !!searchInputFocus}" ng-if="('secured.*' | includedByState) && isInMailbox">
+                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="('secured.*' | includedByState) && isInMailbox">
                     <div class="input-group form-group">
-                        <input type="text" class="form-control" placeholder="Search..." autocomplete="off" ng-model="searchInput" ng-focus="onFocus()" ng-blur="onBlur()" ng-enter="search()" ng-change="updateSearch(this)" />
+                        <input type="text" class="form-control" placeholder="Search..." autocomplete="off" ng-model="params.searchInput" ng-enter="search()" />
                         <span class="input-group-btn">
                             <button class="btn btn-default btn-toggle" type="button" ng-click="openSearchModal()"><span class="fa fa-caret-down"></span></button>
-                            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span></button>
+                            <button class="btn btn-default" type="button" ng-click="search()"><span class="fa fa-search"></span></button>
                         </span>
                     </div>
                     <!-- /input-group -->
