@@ -4,7 +4,7 @@ angular.module("proton.tooltip", [])
     return {
         restrict: 'A',
         scope: {
-            ptTooltip: '&'
+            ptTooltip: '@'
         },
         link: function(scope, element, attrs) {
             var title = scope.ptTooltip;

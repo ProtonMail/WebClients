@@ -1,4 +1,6 @@
-angular.module("proton.squire", [])
+angular.module("proton.squire", [
+    "proton.tooltip"
+])
 .directive("squire", function() {
     return {
         restrict: 'E',
