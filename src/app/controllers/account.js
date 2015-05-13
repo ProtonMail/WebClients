@@ -25,35 +25,40 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         // Generate KeyPair
         var keyPair = pmcrypto.generateKeysRSA(userID, pass);
 
-        // TODO add animation
-
-        keyPair.then(function(keyPair) {
-            var params = {
-                "response_type": "token",
-                "client_id": "demoapp",
-                "client_secret": "demopass",
-                "grant_type": "password",
-                "redirect_uri": "https://protonmail.ch",
-                "state": "random_string",
-                "username": $scope.account.username,
-                "password": $scope.account.loginPassword,
-                "email": $scope.account.notificationEmail,
-                "news": !!($scope.account.optIn),
-                "public": keyPair.publicKeyArmored,
-                "private": keyPair.privateKeyArmored
-            };
-            networkActivityTracker.track(
-                User.updateKeypair(params).$promise.then(
-                    function(response) {
-                        localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
-                        $state.go('secured.inbox');
-                    }, 
-                    function(response) {
-                        $log.error(response);
-                    }
-                )
-            );
-        });
+        networkActivityTracker.track(
+            keyPair
+            .then(
+                function(keyPair) {
+                    var params = {
+                        "response_type": "token",
+                        "client_id": "demoapp",
+                        "client_secret": "demopass",
+                        "grant_type": "password",
+                        "redirect_uri": "https://protonmail.ch",
+                        "state": "random_string",
+                        "username": $scope.account.username,
+                        "password": $scope.account.loginPassword,
+                        "email": $scope.account.notificationEmail,
+                        "news": !!($scope.account.optIn),
+                        "public": keyPair.publicKeyArmored,
+                        "private": keyPair.privateKeyArmored
+                    };
+                    User.updateKeypair(params).$promise
+                    .then(
+                        function(response) {
+                            localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
+                            $state.go('secured.inbox');
+                        }, 
+                        function(response) {
+                            $log.error(response);
+                        }
+                    )
+                },
+                function(err) {
+                    $scope.error = err;
+                }
+            )
+        );
 
         keyPair.catch(function(err) {
             console.error(err);
