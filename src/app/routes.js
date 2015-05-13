@@ -446,12 +446,37 @@ angular.module("proton.routes", [
     }))
 
     .state("secured.inbox.relative", {
-            url: "/{rel:first|last}",
-            controller: function($scope, $stateParams) {
-                $scope.navigateToMessage(null, $stateParams.rel);
+        url: "/{rel:first|last}",
+        controller: function($scope, $stateParams) {
+            $scope.navigateToMessage(null, $stateParams.rel);
+        }
+    })
+
+    .state("secured.inbox.message", _.clone(messageViewOptions))
+
+    .state("secured.inbox.print", _.extend(_.clone(messageViewOptions), {
+        url: "/print/:MessageID",
+        onEnter: function($rootScope) { $rootScope.isBlank = true; },
+        onExit: function($rootScope) { $rootScope.isBlank = true; },
+        views: {
+            "main@": {
+                controller: "ViewMessageController",
+                templateUrl: "templates/views/message.print.tpl.html"
             }
-        })
-        .state("secured.inbox.message", _.clone(messageViewOptions))
+        }
+    }))
+
+    .state("secured.inbox.raw", _.extend(_.clone(messageViewOptions), {
+        url: "/raw/:MessageID",
+        onEnter: function($rootScope) { $rootScope.isBlank = true; },
+        onExit: function($rootScope) { $rootScope.isBlank = true; },
+        views: {
+            "main@": {
+                controller: "ViewMessageController",
+                templateUrl: "templates/views/message.raw.tpl.html"
+            }
+        }
+    }))
 
     .state("secured.contacts", {
         url: "/contacts",

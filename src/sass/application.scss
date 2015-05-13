@@ -337,6 +337,10 @@ body {
     background: url('img/low_contrast_linen.png') #333 0 0 repeat !important;
   }
 
+  &.blank {
+    background: #FFF !important;
+  }
+
   a {
     color: #333;
     &:hover {
@@ -356,6 +360,13 @@ body {
   .alert-danger a { color: darken($btn-danger-bg, 25%);}
 
   .alert a { font-weight: 700 }
+}
+
+.alert {
+  &.alert-sm {
+    margin: 0.5em;
+    padding: 10px 15px;
+  }
 }
 
 .faded {

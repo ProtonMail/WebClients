@@ -4,7 +4,6 @@
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
     <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> Forward</a></div>
 </div>
-<pre id="headerCode" ng-show="showHeaders">{{ message.Header }}</pre>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
     <div class="pull-right">
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
@@ -36,6 +35,14 @@
         <a href="" ng-click="downloadAttachment(attachment)">{{ attachment.FileName }}</a>
     </li>
 </ul>
+<div class="col-md-12">
+    <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
+        <a href="" ng-click="message.toggleImages()">
+            <span ng-show="!!message.imagesHidden">Show Images</span>
+            <span ng-hide="!!message.imagesHidden">Hide Images</span>
+        </a>
+    </p>
+</div>
 <div id="message-body">
     <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
     <hr />

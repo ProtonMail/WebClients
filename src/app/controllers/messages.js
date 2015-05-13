@@ -279,14 +279,6 @@ angular.module("proton.controllers.Messages", [
     };
 })
 
-.controller("SearchMessageController", function($location, $scope, $rootScope) {
-    $scope.searchValue = '';
-
-    $rootScope.$on('updateSearch', function(event, value) {
-        $scope.searchValue = value;
-    });
-})
-
 // .controller("ComposeMessageController", function(
 //     $state,
 //     $rootScope,
@@ -1127,15 +1119,9 @@ angular.module("proton.controllers.Messages", [
     $rootScope.pageName = message.MessageTitle;
 
     $scope.message = message;
-    $scope.messageHeadState = "close";
-    $scope.showHeaders = false;
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
-    };
-
-    $scope.toggleHead = function() {
-        $scope.messageHeadState = $scope.messageHeadState === "close" ? "open" : "close";
     };
 
     function buildMessage(base, action) {
@@ -1203,23 +1189,31 @@ angular.module("proton.controllers.Messages", [
         );
     };
 
-    $scope.toggleHeaders = function() {
-        if ($scope.showHeaders) {
-            $scope.showHeaders = false;
-        } else {
-            $scope.messageHeadState = "open";
-            $scope.showHeaders = true;
-        }
+    $scope.initPrint = function() {
+        message.imagesHidden = false;
+        $timeout(function() {
+            window.print();
+        }, 200);
+    };
+
+    $scope.print = function() {
+        var url = $state.href('^.print', {MessageID: message.MessageID});
+
+        window.open(url, '_blank');
+    };
+
+    $scope.viewRaw = function() {
+        var url = $state.href('^.raw', {MessageID: message.MessageID});
+
+        window.open(url, '_blank');
+    };
+
+    $scope.togglePlainHtml = function() {
+        // TODO
     };
 
     if (!message.IsRead) {
         message.setReadStatus(true);
-    }
-
-    localStorageService.bind($scope, 'messageHeadState', 'messageHeadState');
-
-    if (!_.contains(["close", "open"], $scope.messageHeadState)) {
-        $scope.messageHeadState = "close";
     }
 
     var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));

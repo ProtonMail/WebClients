@@ -85,7 +85,8 @@ angular.module("proton.models", [
   authentication,
   localStorageService,
   pmcrypto,
-  mailboxIdentifiers
+  mailboxIdentifiers,
+  tools
 ) {
 
   var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
@@ -251,6 +252,10 @@ angular.module("proton.models", [
       return message;
     },
 
+    toggleImages: function() {
+      this.imagesHidden = !!!this.imagesHidden;
+    },
+
     clearTextBody: function () {
       var body;
 
@@ -282,6 +287,16 @@ angular.module("proton.models", [
       } else {
         body = this.MessageBody;
       }
+
+      // Images
+      if(angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
+        this.imagesHidden = true;
+        body = tools.breakImages(body);
+      } else {
+        this.imagesHidden = false;
+        body = tools.fixImages(body);
+      }
+
       return body;
     }
   });

@@ -1,0 +1,17 @@
+<div class="container" ng-init="initPrint()">
+    <h2>{{message.MessageTitle}}</h2>
+
+    <p>From: <strong>{{message.Sender}}</strong></p>
+    <p>To: <strong>{{message.RecipientList}}</strong></p>
+    <p ng-if="message.CCList">{{message.CCList}}</p>
+    <p>Date: {{message.readableTime()}}</p>
+
+    <hr />
+
+    <div id="message-body">
+        <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
+    </div>
+
+    <hr />
+</div>
+
