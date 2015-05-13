@@ -178,7 +178,14 @@ angular.module("proton.routes", [
         } else {
           $rootScope.isLoggedIn = true;
           authentication.fetchUserInfo().then(function () {
+            $rootScope.pubKey = authentication.user.PublicKey;
             $rootScope.user = authentication.user;
+            if ($rootScope.pubKey==='to be modified') {
+              $state.go('step2');
+            }
+            else {
+              return;
+            }
           });
         }
       }
@@ -245,7 +252,28 @@ angular.module("proton.routes", [
         // this is set if a token was set
         $rootScope.username = 'testUsername';
         $rootScope.username = '';
-      }
+
+        // if not logged in, thats fine
+        if (!authentication.isLoggedIn()) {
+          return;
+        } 
+
+        // if logged in, check if they have keys
+        else if (authentication.isLoggedIn()) {
+          $rootScope.isLoggedIn = true;
+          authentication.fetchUserInfo().then(function () {
+            $rootScope.pubKey = authentication.user.PublicKey;
+            $rootScope.user = authentication.user;
+            if ($rootScope.pubKey==='to be modified') {
+              $state.go('step2');
+            }
+            else {
+              $state.go("login.unlock");
+            }
+          });
+          // $state.go('step2');
+        }
+      }      
     })
 
     .state("step2", {

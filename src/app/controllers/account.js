@@ -21,54 +21,38 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.account = [];
 
     function generateKeys(userID, pass) {
+
         // Generate KeyPair
         var keyPair = pmcrypto.generateKeysRSA(userID, pass);
 
+        // TODO add animation
+
         keyPair.then(function(keyPair) {
-
-            setTimeout(function() {
-
-                var params = {
-                    "response_type": "token",
-                    "client_id": "demoapp",
-                    "client_secret": "demopass",
-                    "grant_type": "password",
-                    "redirect_uri": "https://protonmail.ch",
-                    "state": "random_string",
-                    "username": $scope.account.username,
-                    "password": $scope.account.loginPassword,
-                    "email": $scope.account.notificationEmail,
-                    "news": !!($scope.account.optIn),
-                    "public": keyPair.publicKeyArmored,
-                    "private": keyPair.privateKeyArmored
-                };
-
-                User.createUser(params).$promise.then(function(response) {
-                    // Save the Mailbox pass to sessionStorage (backend can't access this)
-                    localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
-
-                    $state.go('secured.inbox');
-                }, function(response) {
-                    $log.error(response);
-                });
-
-                // // Set a cookie via AJAX (must be set via backend because of HTTPOnly flag)
-                // $.getJSON("/api/set-cookie/protonmail_pw/true", function(data) {
-
-                //     // Redirect to welcome if its the first time
-                //     if ($('#isRegen').val() === 'true') {
-                //         setTimeout(function() {
-                //             window.location = '/inbox';
-                //         }, 2000);
-                //     } else {
-                //         setTimeout(function() {
-                //             window.location = '/welcome';
-                //         }, 2000);
-                //     }
-
-                // })
-            }, 3000);
-
+            var params = {
+                "response_type": "token",
+                "client_id": "demoapp",
+                "client_secret": "demopass",
+                "grant_type": "password",
+                "redirect_uri": "https://protonmail.ch",
+                "state": "random_string",
+                "username": $scope.account.username,
+                "password": $scope.account.loginPassword,
+                "email": $scope.account.notificationEmail,
+                "news": !!($scope.account.optIn),
+                "public": keyPair.publicKeyArmored,
+                "private": keyPair.privateKeyArmored
+            };
+            networkActivityTracker.track(
+                User.updateKeypair(params).$promise.then(
+                    function(response) {
+                        localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
+                        $state.go('secured.inbox');
+                    }, 
+                    function(response) {
+                        $log.error(response);
+                    }
+                )
+            );
         });
 
         keyPair.catch(function(err) {
@@ -127,6 +111,13 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     $rootScope.isLoggedIn = true;
                     $state.go('step2');
                 }, function(response) {
+                    $scope.step1HasError = true;
+                    if (response.error) {
+                        $scope.step1Error = response.error;
+                    }
+                    else {
+                        $scope.step1Error = 'Unable to create account. Sorry about that.';
+                    }
                     $log.error(response);
                 })
             );

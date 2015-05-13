@@ -237,7 +237,7 @@ angular.module("proton.authentication", [
                                     });
                                 });
                             });
-                        }, 1000);
+                        }, 200);
                     } else {
                         req.reject({
                             message: "Password is required"
