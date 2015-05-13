@@ -178,8 +178,9 @@ angular.module("proton.routes", [
         } else {
           $rootScope.isLoggedIn = true;
           authentication.fetchUserInfo().then(function () {
-            $rootScope.pubKey = authentication.user.PublicKey;
+            $rootScope.pubKey = authentication.user.PublicKey; 
             $rootScope.user = authentication.user;
+            $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
             if ($rootScope.pubKey==='to be modified') {
               $state.go('step2');
             }
@@ -264,6 +265,7 @@ angular.module("proton.routes", [
           authentication.fetchUserInfo().then(function () {
             $rootScope.pubKey = authentication.user.PublicKey;
             $rootScope.user = authentication.user;
+            $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
             if ($rootScope.pubKey==='to be modified') {
               $state.go('step2');
             }
@@ -273,7 +275,7 @@ angular.module("proton.routes", [
           });
           // $state.go('step2');
         }
-      }      
+      }
     })
 
     .state("step2", {
@@ -287,6 +289,16 @@ angular.module("proton.routes", [
           templateUrl: "templates/views/step2.tpl.html"
         }
       },
+      onEnter: function(authentication, $state, $rootScope) {
+          if (authentication.isLoggedIn()) {
+          $rootScope.isLoggedIn = true;
+          authentication.fetchUserInfo().then(function () {
+            $rootScope.pubKey = authentication.user.PublicKey;
+            $rootScope.user = authentication.user;
+            $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+          });
+        }
+      }
     })
 
     // -------------------------------------------
