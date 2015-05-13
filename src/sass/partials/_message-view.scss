@@ -67,8 +67,17 @@ ul.attachments {
     text-align: left;
     line-height: 34px;
     font-size: 140%;
-
-    a {
+    .padlock {
+      position: absolute;      
+      top: 40px;
+      left: 22px;
+      cursor: default;
+      i.fa {
+        font-size: inherit;
+        margin-right: 0.5rem;
+      }      
+    }
+    .star {
       position: absolute;
       top: 10px;
       left: 0;
@@ -78,10 +87,6 @@ ul.attachments {
         @include head-link;
         font-size: inherit;
         margin-right: 0.5rem;
-      }
-      &.padlock {
-        top: 40px;
-        left: 22px;
       }
       &.star {
         left: 22px;

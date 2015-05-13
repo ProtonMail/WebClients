@@ -10,7 +10,21 @@
     </div>
     <h1>
         <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></i></a>
-        <a href class="padlock"><i class="fa" ng-class="{'fa-lock text-purple': message.IsEncrypted == '1', 'fa-unlock-alt text-muted': message.IsEncrypted == '0'}"></i></a>
+        <span class="padlock">
+            <i class="fa"
+            ng-class=
+            "{
+              'fa-lock':
+                !!!(message.IsEncrypted == '0'),
+              'text-purple':
+                !!(message.IsEncrypted == '1') ||
+                !!(message.IsEncrypted == '5') ||
+                !!(message.IsEncrypted == '6'),
+              'fa-unlock-alt text-muted':
+                !!(message.IsEncrypted == '0')
+            }"
+            title="{{ getMessageEncryptionType(message) }}"></i>
+        </span>
         {{ message.MessageTitle }}
       </h1>
     <ul class="infos">
