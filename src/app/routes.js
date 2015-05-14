@@ -214,29 +214,6 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        // if no keys redirect to create/mbpw
-        resolve: {
-            app: function(authentication, $state, $rootScope) {
-                if (authentication.isLoggedIn()) {
-                    $rootScope.isLoggedIn = true;
-                    return authentication.fetchUserInfo().then(
-                    function() {
-                        $rootScope.pubKey = authentication.user.PublicKey;
-                        $rootScope.user = authentication.user;
-                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                        if ($rootScope.pubKey === 'to be modified') {
-                            $state.go('step2');
-                            return;
-                        } else {
-                            return;
-                        }
-                    });
-                }
-                else {
-                    return;
-                }
-            }
-        },
         onEnter: function(authentication, $state, $rootScope) {
             if (!authentication.isLoggedIn()) {
                 $state.go("login");
@@ -470,12 +447,6 @@ angular.module("proton.routes", [
         resolve: {
             user: function(authentication) {
                 return authentication.fetchUserInfo();
-            },
-            contacts: function(Contact) {
-                return Contact.query();
-            },
-            labels: function(Label) {
-                return Label.get();
             }
         },
 
