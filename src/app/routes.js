@@ -362,16 +362,6 @@ angular.module("proton.routes", [
                     return;
                 }
             }
-        },    
-        onEnter: function(authentication, $state, $rootScope) {
-            if (authentication.isLoggedIn()) {
-                $rootScope.isLoggedIn = true;
-                authentication.fetchUserInfo().then(function() {
-                    $rootScope.pubKey = authentication.user.PublicKey;
-                    $rootScope.user = authentication.user;
-                    $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                });
-            }
         }
     })
 

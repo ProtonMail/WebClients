@@ -47,7 +47,20 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     .then(
                         function(response) {
                             localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
-                            $state.go('secured.inbox');
+                            // $state.go('secured.inbox');
+                            networkActivityTracker.track(
+                                authentication
+                                .unlockWithPassword(pass)
+                                .then(
+                                    function() {
+                                        localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
+                                        $state.go("secured.inbox");
+                                    },
+                                    function(err) {
+                                        $scope.error = err;
+                                    }
+                                )
+                            );
                         }, 
                         function(response) {
                             $log.error(response);
