@@ -6,14 +6,7 @@
     <div class="panel-body">
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
 
-            <p class="alert alert-danger" ng-show="step1HasError">{{step1Error}}</p>
-            <div class="form-group" ng-show="username!==''">
-                <label>Username</label>
-                <div class="well well-sm"><strong>{{username}}</strong>@protonmail.com</div>
-                <p class="help-block">You can switch to protonmail.ch after account creation.</p>
-            </div>
-
-            <div class="form-group" ng-show="username===''">
+            <div class="form-group">
                 <label>Username</label>
                 <div class="usernameWrap">
                     <input type="text" ng-model="account.Username" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control">
