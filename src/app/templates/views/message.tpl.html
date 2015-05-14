@@ -58,7 +58,8 @@
     </p>
 </div>
 <div id="message-body">
-    <iframe src="" ng-show="message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups"></iframe>
+    <iframe src="" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html' && message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups"></iframe>
+    <code ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></code>
     <hr />
     <div class="col-md-12 form-group">
         <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
@@ -67,5 +68,11 @@
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong>Decryption error</strong>
         <br> Decryption of this message's encryption content failed.
+    </div>
+</div>
+<div id="message-attachments" ng-show="message.AttachmentIDList.length > 0">
+    <strong>Attachments:</strong> {{message.AttachmentIDList.length}} <span ng-show="message.AttachmentIDList.length === 1">file</span><span ng-hide="message.AttachmentIDList.length === 1">files</span> ({{sizeAttachments() | humanSize}})
+    <div class="attachment" ng-repeat="attachment in message.AttachmentIDList">
+        {{attachment.FileName}} - {{attachment.MIMEType}} - {{attachment.FileSize | humanSize}} - <a href="" ng-click="download(attachment)">Download</a>
     </div>
 </div>

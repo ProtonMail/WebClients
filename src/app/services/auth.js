@@ -253,10 +253,12 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
+
                     return promise.then(
                         function(user) {
                             $rootScope.isLoggedIn = true;
                             $rootScope.isLocked = true;
+
                             return user;
                         },
                         errorReporter.catcher("Please try again later")
@@ -279,17 +281,27 @@ angular.module("proton.authentication", [
 
             auth.fetchUserInfo = function() {
                 var q = $q.defer();
+
                 api.user = $injector.get("User").get({
                     UserID: auth.data.uid
                 });
+
                 api.user.$promise.then(function(user) {
                     if (!user.EncPrivateKey) {
                         api.logout();
+                        q.reject();
                     } else {
-                        $injector.get("Contact").query();
+                        $q.all([
+                            $injector.get("Contact").query().$promise,
+                            $injector.get("Label").get().$promise
+                        ]).then(function(result) {
+                            user.contacts = result[0];
+                            user.labels = result[1];
+                            q.resolve(user);
+                        });
                     }
-                    q.resolve(user);
                 });
+
                 return q.promise;
             };
 

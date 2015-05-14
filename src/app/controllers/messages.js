@@ -1209,6 +1209,26 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.togglePlainHtml = function() {
+        if(message.viewMode === 'plain') {
+            message.viewMode = 'html';
+        } else {
+            message.viewMode = 'plain';
+        }
+    };
+
+    $scope.sizeAttachments = function() {
+        var size = 0;
+
+        angular.forEach(message.AttachmentIDList, function(attachment) {
+            if(angular.isDefined(attachment.FileSize)) {
+                size += parseInt(attachment.FileSize);
+            }
+        });
+
+        return size;
+    };
+
+    $scope.download = function(attachment) {
         // TODO
     };
 

@@ -218,7 +218,7 @@ angular.module("proton.tools", [])
 
         var tools = {
             fixRedirectExploits: fix_redirect_exploits,
-            html2plaintext: html_to_plaintext,
+            htmlToPlainText: html_to_plaintext,
             removeStyle: remove_style,
             breakImages: break_images,
             fixImages: fix_images,

@@ -31,7 +31,7 @@
         </li>
         <li class="list-group-item">
             <a class="btn" ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }">
-                <span class="fa fa-star"></span> <span class="hidden-xs hidden-sm">Starred</span>
+                <span class="fa fa-star-o"></span> <span class="hidden-xs hidden-sm">Starred</span>
             </a>
         </li>
     </ul>
@@ -62,11 +62,11 @@
         </li>
     </ul>
     <div class="divider"></div>
-    <div class="hidden-xs hidden-sm" ng-show="$parent.bookmarks.length > 0">
+    <div class="hidden-xs hidden-sm" ng-show="labelsDisplayed().length > 0">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="bookmark in $parent.bookmarks">
-                <a href="" class="btn">
-                    <span class="fa fa-tag"></span> <span>{{bookmark}}</span>
+            <li class="list-group-item" ng-repeat="label in labelsDisplayed()">
+                <a ui-sref="secured.label({ LabelID: '{{label.LabelID}}' })" class="btn" ui-sref-active="active">
+                    <span class="fa fa-tag" style="color: {{label.LabelColor}}"></span> <span>{{label.LabelName}}</span>
                 </a>
             </li>
         </ul>

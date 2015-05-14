@@ -1,6 +1,6 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
-        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)" ondragenter="focusComposer(message);openPanel(message, 'attachments')">
+        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
                 <span class="col-xs-3 text-right">
@@ -15,7 +15,7 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="From">
+                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="From">
                     </select>
                 </div>
                 <div class="form-horizontal">

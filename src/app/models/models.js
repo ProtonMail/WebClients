@@ -101,13 +101,16 @@ angular.module("proton.models", [
       },
       search: {
         method: "get",
-        isArray: true,
-        transformResponse: getFromJSONResponse('Messages'),
+        transformResponse: function(data) {
+          return angular.fromJson(data);
+        },
         url: authentication.baseURL + "/messages/search"
       },
       advSearch: {
         method: "get",
-        transformResponse: getFromJSONResponse('Messages'),
+        transformResponse: function(data) {
+          return angular.fromJson(data);
+        },
         url: authentication.baseURL + "/messages/adv_search"
       },
       delete: {
@@ -147,6 +150,15 @@ angular.module("proton.models", [
         url: authentication.baseURL + "/users/pubkeys/:Emails",
         isArray: false,
         transformResponse: getFromJSONResponse()
+      },
+      // Get all messages with this label
+      labels: {
+        method: 'get',
+        isArray: false,
+        transformResponse: function(data) {
+          return angular.fromJson(data);
+        },
+        url: authentication.baseURL + "/label"
       }
     }
   );
@@ -254,6 +266,12 @@ angular.module("proton.models", [
 
     toggleImages: function() {
       this.imagesHidden = !!!this.imagesHidden;
+    },
+
+    plainText: function() {
+      var body = this._decryptedBody || this.MessageBody;
+
+      return body;
     },
 
     clearTextBody: function () {
@@ -366,26 +384,32 @@ angular.module("proton.models", [
     authentication.baseURL + "/users/:UserID",
     authentication.params(),
     {
+      // Update user's password
       updatePassword: {
         method: 'put',
         url: authentication.baseURL + "/setting/password"
       },
+      // Update mailbox's password
       keyPassword: {
         method: 'put',
         url: authentication.baseURL + "/setting/keypwd"
       },
+      // Update notification email
       notificationEmail: {
         method: 'put',
         url: authentication.baseURL + "/setting/noticeemail"
       },
+      // Update signature
       signature: {
         method: 'put',
         url: authentication.baseURL + "/setting/signature"
       },
+      // Update aliases
       aliases: {
         method: 'put',
         url: authentication.baseURL + "/setting/domainorder"
       },
+      // Update the user's display name
       dislayName: {
         method: 'put',
         url: authentication.baseURL + "/setting/display"
@@ -401,10 +425,33 @@ angular.module("proton.models", [
     authentication.baseURL + "/users/:UserID",
     authentication.params(),
     {
+      // Send bug report
       bugs: {
         method: 'post',
         url: authentication.baseURL + "/bugs",
         isArray: true
+      }
+    }
+  );
+})
+
+.factory("Label", function($resource, $injector) {
+  var authentication = $injector.get("authentication");
+  return $resource(
+    authentication.baseURL + "/labels",
+    authentication.params(),
+    {
+      // Get user's labels
+      get: {
+        method: 'get',
+        isArray: true,
+        url: authentication.baseURL + "/labels"
+      },
+      // Get all messages with this label
+      messages: {
+        method: 'get',
+        isArray: false,
+        url: authentication.baseURL + "/label"
       }
     }
   );

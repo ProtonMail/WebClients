@@ -1,8 +1,8 @@
 angular.module("proton.controllers.Header", [])
 
-.controller("HeaderController", function($scope, $state, $rootScope) {
+.controller("HeaderController", function($scope, $state, $stateParams, $rootScope) {
     $scope.params = {
-        searchInput: ''
+        searchInput: $stateParams.words || ''
     };
 
     $scope.search = function() {

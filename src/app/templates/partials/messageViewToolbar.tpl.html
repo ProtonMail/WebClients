@@ -53,7 +53,12 @@
                 </li>
                 <li>
                     <a href="" ng-click="togglePlainHtml()">
-                        <i class="fa fa-file-o"></i> <span>View Plain</span>
+                        <span ng-show="message.viewMode === 'html'">
+                            <i class="fa fa-file-o"></i> View Plain
+                        </span>
+                        <span ng-show="message.viewMode === 'plain'">
+                            <i class="fa fa-file-photo-o"></i> View HTML
+                        </span>
                     </a>
                 </li>
                 <li>

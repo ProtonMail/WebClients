@@ -11,7 +11,8 @@ angular.module("proton.routes", [
     "spam": 4,
     "starred": 5,
     "archive": 6,
-    "search": 7
+    "search": 7,
+    "label": 8
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
@@ -46,6 +47,7 @@ angular.module("proton.routes", [
         'sort',
         'location',
         'label',
+        'LabelID',
         'from',
         'to',
         'subject',
@@ -122,6 +124,13 @@ angular.module("proton.routes", [
                         if (mailbox === 'search') {
                             params.page = params.Page;
                             messagesPromise = Message.advSearch(_.pick(_.extend(params, $stateParams), 'location', 'label', 'from', 'to', 'subject', 'words', 'begin', 'end', 'attachments', 'starred', 'page')).$promise;
+                        } else if(mailbox === 'label') {
+                            params.LabelID = $stateParams.LabelID;
+                            params.filter = params.FilterUnread;
+                            params.sort = params.Order;
+                            params.page = params.Page;
+                            params = _.pick(params, 'LabelID', 'filter', 'sort', 'page');
+                            messagesPromise = Message.labels(params).$promise;
                         } else {
                             messagesPromise = Message.query(params).$promise;
                         }
@@ -205,7 +214,7 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        // if no keys redirect to create/mbpw 
+        // if no keys redirect to create/mbpw
         resolve: {
             app: function(authentication, $state, $rootScope) {
                 if (authentication.isLoggedIn()) {
@@ -227,7 +236,7 @@ angular.module("proton.routes", [
                     return;
                 }
             }
-        },        
+        },
         onEnter: function(authentication, $state, $rootScope) {
             if (!authentication.isLoggedIn()) {
                 $state.go("login");
@@ -461,6 +470,12 @@ angular.module("proton.routes", [
         resolve: {
             user: function(authentication) {
                 return authentication.fetchUserInfo();
+            },
+            contacts: function(Contact) {
+                return Contact.query();
+            },
+            labels: function(Label) {
+                return Label.get();
             }
         },
 
