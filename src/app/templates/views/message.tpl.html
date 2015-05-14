@@ -58,7 +58,7 @@
     </p>
 </div>
 <div id="message-body">
-    <iframe src="" ng-show="message.clearTextBody() != ''"></iframe>
+    <iframe src="" ng-show="message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups"></iframe>
     <hr />
     <div class="col-md-12 form-group">
         <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
