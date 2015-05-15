@@ -60,7 +60,8 @@ angular.module("proton", [
     $document,
     $rootScope,
     networkActivityTracker,
-    notify
+    notify,
+    authentication
 ) {
 
     $(window).bind('resize load', function() {

@@ -122,12 +122,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
             networkActivityTracker.track( 
                 User.createUser(params).$promise.then(function(response) {
-                    // Log the user in
+                    // Account created!
+                    $state.go('step2');
                     authentication.receivedCredentials(
                         _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
                     );
-                    $rootScope.isLoggedIn = true;
-                    $state.go('step2');
+                    
                 }, function(response) {
                     $scope.step1HasError = true;
                     if (response.error) {

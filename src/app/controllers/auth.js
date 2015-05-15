@@ -12,23 +12,11 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
     pmcrypto
 ) {
 
-    if ($state.is("login") && authentication.isLoggedIn()) {
-        $state.go("login.unlock");
-        return;
-    } else if ($state.is("login.unlock")) {
-
-    }
-
     $rootScope.user = undefined;
     $rootScope.pageName = "Login";
 
     var clearErrors = function() {
         $scope.error = null;
-    };
-
-    $rootScope.logout = function() {
-        clearErrors();
-        authentication.logout();
     };
 
     $rootScope.tryLogin = function() {
@@ -41,10 +29,12 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
               password: $scope.password
           }).then(
               function(result) {
-                  authentication.receivedCredentials(
-                      _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
-                  );
-                  $state.go("login.unlock");
+                // We are logged in!
+                // save API credentials
+                $state.go("login.unlock");
+                authentication.receivedCredentials(
+                  _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
+                );
               }, 
               function(result) {
                   $log.error(result);

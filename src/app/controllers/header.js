@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Header", [])
 
-.controller("HeaderController", function($scope, $state, $stateParams, $rootScope) {
+.controller("HeaderController", function($scope, $state, $stateParams, $rootScope, authentication) {
     $scope.params = {
         searchInput: $stateParams.words || ''
     };
@@ -22,4 +22,5 @@ angular.module("proton.controllers.Header", [])
     $scope.openReportModal = function() {
         $rootScope.$broadcast('openReportModal');
     };
+
 });

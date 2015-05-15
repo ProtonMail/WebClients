@@ -197,11 +197,25 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/login.tpl.html"
             }
         },
-        onEnter: function(authentication, $state, $rootScope) {
-            if (!authentication.isLocked()) {
-                $state.go("secured.inbox");
-            } else {
-                $rootScope.isLoggedIn = false;
+        resolve: {
+            app: function(authentication, $state, $rootScope) {
+                if (authentication.isLoggedIn()) {
+                    return authentication.fetchUserInfo().then(
+                    function() {
+                        $rootScope.pubKey = authentication.user.PublicKey;
+                        $rootScope.user = authentication.user;
+                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                        if ($rootScope.pubKey === 'to be modified') {
+                            $state.go('step2');
+                            return;
+                        } else {
+                            return;
+                        }
+                    });
+                }
+                else {
+                    return;
+                }
             }
         }
     })
@@ -214,25 +228,25 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        onEnter: function(authentication, $state, $rootScope) {
-            if (!authentication.isLoggedIn()) {
-                $state.go("login");
-            } else if (!authentication.isLocked()) {
-                $state.go("secured.inbox");
-            } else {
+        // TODO this view is shown for 1 second to the user before redirect. change to resolve: for better UX.
+        onEnter: function(authentication, $rootScope, $state) {
+            if (authentication.isLoggedIn()) {
                 $rootScope.isLoggedIn = true;
-                authentication.fetchUserInfo().then(function() {
+                authentication.fetchUserInfo().then(
+                function() {
                     $rootScope.pubKey = authentication.user.PublicKey;
                     $rootScope.user = authentication.user;
                     $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
                     if ($rootScope.pubKey === 'to be modified') {
                         $state.go('step2');
+                        return;
                     } else {
                         return;
                     }
                 });
-            }
+            }            
         }
+
     })
 
     // -------------------------------------------
@@ -294,7 +308,6 @@ angular.module("proton.routes", [
         resolve: {
             app: function(authentication, $state, $rootScope) {
                 if (authentication.isLoggedIn()) {
-                    $rootScope.isLoggedIn = true;
                     return authentication.fetchUserInfo().then(
                     function() {
                         $rootScope.pubKey = authentication.user.PublicKey;
@@ -327,26 +340,25 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/step2.tpl.html"
             }
         },
-        resolve: {
-            app: function(authentication, $state, $rootScope) {
-                if (authentication.isLoggedIn()) {
-                    $rootScope.isLoggedIn = true;
-                    return authentication.fetchUserInfo().then(
-                    function() {
-                        $rootScope.pubKey = authentication.user.PublicKey;
-                        $rootScope.user = authentication.user;
-                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                        if ($rootScope.pubKey === 'to be modified') {
-                            return;
-                        } else {
-                            $state.go("login.unlock");
-                            return;
-                        }
-                    });
-                }
-                else {
-                    return;
-                }
+        onEnter: function(authentication, $state, $rootScope) {
+            if (authentication.isLoggedIn()) {
+                $rootScope.isLoggedIn = true;
+                return authentication.fetchUserInfo().then(
+                function() {
+                    $rootScope.pubKey = authentication.user.PublicKey;
+                    $rootScope.user = authentication.user;
+                    $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                    if ($rootScope.pubKey === 'to be modified') {
+                        return;
+                    } else {
+                        $state.go("login.unlock");
+                        return;
+                    }
+                });
+            }
+            else {
+                $state.go("login");
+                return;
             }
         }
     })
@@ -447,6 +459,12 @@ angular.module("proton.routes", [
         resolve: {
             user: function(authentication) {
                 return authentication.fetchUserInfo();
+            },
+            contacts: function(Contact) {
+                return Contact.query();
+            },
+            labels: function(Label) {
+                return Label.get();
             }
         },
 

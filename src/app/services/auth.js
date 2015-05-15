@@ -256,9 +256,7 @@ angular.module("proton.authentication", [
 
                     return promise.then(
                         function(user) {
-                            $rootScope.isLoggedIn = true;
                             $rootScope.isLocked = true;
-
                             return user;
                         },
                         errorReporter.catcher("Please try again later")
@@ -336,4 +334,8 @@ angular.module("proton.authentication", [
     authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
+    $rootScope.logout = function() {
+        authentication.logout();
+        $scope.error = null;
+    }
 });
