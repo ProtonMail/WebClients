@@ -228,11 +228,9 @@ angular.module("proton.authentication", [
                         $timeout(function() {
                             self.user.$promise.then(function(user) {
                                 pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(function() {
-                                    console.log('passe 1')
                                     auth.savePassword(pwd);
                                     req.resolve(200);
                                 }, function(rejection) {
-                                    console.log('passe 2')
                                     req.reject({
                                         message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
                                     });
@@ -254,7 +252,6 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
-
                     return promise.then(
                         function(user) {
                             $rootScope.isLocked = true;
