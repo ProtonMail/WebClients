@@ -244,7 +244,7 @@ angular.module("proton.routes", [
                         return;
                     }
                 });
-            }            
+            }
         }
 
     })
