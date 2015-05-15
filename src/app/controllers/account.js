@@ -11,7 +11,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     User,
     pmcw,
     tools,
-    localStorageService
+    localStorageService,
+    notify
 ) {
     var mellt = new Mellt();
 
@@ -121,23 +122,24 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             };
 
             networkActivityTracker.track(
-                User.createUser(params).$promise.then(function(response) {
-                    // Account created!
-                    $state.go('step2');
-                    authentication.receivedCredentials(
-                        _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
-                    );
-
-                }, function(response) {
-                    $scope.step1HasError = true;
-                    if (response.error) {
-                        $scope.step1Error = response.error;
+                User.createUser(params).$promise
+                .then(
+                    function(response) {
+                        // Account created!
+                        $state.go('step2');
+                        authentication.receivedCredentials(
+                            _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
+                        );
+                    }, 
+                    function(response) {
+                        notify({
+                            classes: 'notification-danger',
+                            message: response.error
+                        });
+                        $('#Username').focus();
+                        $log.error(response);
                     }
-                    else {
-                        $scope.step1Error = 'Unable to create account. Sorry about that.';
-                    }
-                    $log.error(response);
-                })
+                )
             );
             // $state.go('step2');
         }
