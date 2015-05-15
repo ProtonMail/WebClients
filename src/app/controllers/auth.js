@@ -9,7 +9,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
     localStorageService,
     networkActivityTracker,
     notify,
-    pmcrypto
+    pmcw
 ) {
 
     $rootScope.user = undefined;
@@ -35,7 +35,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
                 authentication.receivedCredentials(
                   _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
                 );
-              }, 
+              },
               function(result) {
                   $log.error(result);
                   notify({
@@ -57,7 +57,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
             .unlockWithPassword(mailboxPassword)
             .then(
                 function() {
-                    localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(mailboxPassword));
+                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $state.go("secured.inbox");
                 },
                 function(err) {

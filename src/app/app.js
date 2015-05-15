@@ -18,7 +18,7 @@ angular.module("proton", [
 
     // Services
     "proton.authentication",
-    "proton.pmcrypto",
+    "proton.pmcw",
     "proton.errorReporter",
     "proton.networkActivity",
     "proton.messages",
@@ -28,7 +28,7 @@ angular.module("proton", [
 
     // Directives
     "proton.tooltip",
-    "proton.richTextEditor",
+    // "proton.richTextEditor",
     "proton.emailField",
     "proton.enter",
     "proton.slider",

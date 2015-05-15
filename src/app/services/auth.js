@@ -1,5 +1,5 @@
 angular.module("proton.authentication", [
-    "proton.pmcrypto",
+    "proton.pmcw",
     "proton.models"
 ])
 
@@ -11,8 +11,7 @@ angular.module("proton.authentication", [
     MAILBOX_PASSWORD_KEY,
     OAUTH_KEY
 ) {
-    $provide.provider("authentication", function AuthenticationProvider(pmcryptoProvider) {
-
+    $provide.provider("authentication", function AuthenticationProvider(pmcwProvider) {
         // PRIVATE VARIABLES
 
         var auth = {};
@@ -59,7 +58,7 @@ angular.module("proton.authentication", [
 
                 auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
                 if (auth.mailboxPassword) {
-                    pmcryptoProvider.setMailboxPassword(auth.mailboxPassword);
+                    pmcwProvider.setMailboxPassword(auth.mailboxPassword);
                 }
             }
         };
@@ -77,7 +76,7 @@ angular.module("proton.authentication", [
             $http,
             $timeout,
             $injector,
-            pmcrypto,
+            pmcw,
             errorReporter
         ) {
 
@@ -228,7 +227,7 @@ angular.module("proton.authentication", [
                     if (pwd) {
                         $timeout(function() {
                             self.user.$promise.then(function(user) {
-                                pmcrypto.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(function() {
+                                pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(function() {
                                     auth.savePassword(pwd);
                                     req.resolve(200);
                                 }, function(rejection) {

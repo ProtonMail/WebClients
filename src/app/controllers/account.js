@@ -9,21 +9,21 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     authentication,
     networkActivityTracker,
     User,
-    pmcrypto,
+    pmcw,
     tools,
     localStorageService
 ) {
     var mellt = new Mellt();
 
     $scope.compatibility = tools.isCompatible();
-    $scope.tools = tools; 
+    $scope.tools = tools;
 
     $scope.account = [];
 
     function generateKeys(userID, pass) {
 
         // Generate KeyPair
-        var keyPair = pmcrypto.generateKeysRSA(userID, pass);
+        var keyPair = pmcw.generateKeysRSA(userID, pass);
 
         networkActivityTracker.track(
             keyPair
@@ -46,14 +46,14 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     User.updateKeypair(params).$promise
                     .then(
                         function(response) {
-                            localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
+                            localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
                             // $state.go('secured.inbox');
                             networkActivityTracker.track(
                                 authentication
                                 .unlockWithPassword(pass)
                                 .then(
                                     function() {
-                                        localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(pass));
+                                        localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
                                         $state.go("secured.inbox");
                                     },
                                     function(err) {
@@ -61,7 +61,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                     }
                                 )
                             );
-                        }, 
+                        },
                         function(response) {
                             $log.error(response);
                         }
@@ -92,7 +92,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             .unlockWithPassword(mailboxPassword)
             .then(
                 function() {
-                    localStorageService.bind($scope, 'protonmail_pw', pmcrypto.encode_utf8_base64(mailboxPassword));
+                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $state.go("secured.inbox");
                 },
                 function(err) {
@@ -120,14 +120,14 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 "news": !!($scope.account.optIn)
             };
 
-            networkActivityTracker.track( 
+            networkActivityTracker.track(
                 User.createUser(params).$promise.then(function(response) {
                     // Account created!
                     $state.go('step2');
                     authentication.receivedCredentials(
                         _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
                     );
-                    
+
                 }, function(response) {
                     $scope.step1HasError = true;
                     if (response.error) {

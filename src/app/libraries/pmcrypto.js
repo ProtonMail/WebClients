@@ -1,6 +1,30 @@
-angular.module("proton.pmcrypto", [])
+/*
+* Be VERY careful about changing this file. It is used in both the browser JS package and in the node.js encryption server
+* Just because your changes work in the browser does not mean they work in the encryption server!
+*/
 
-.provider("pmcrypto", function pmcryptoProvider() {
+if (typeof module !== 'undefined' && module.exports) {
+    // node.js
+    btoa = require('btoa');
+    atob = require('atob');
+    /* jshint ignore:start */
+    Promise = require('es6-promise').Promise;
+    /* jshint ignore:end */
+    openpgp = require('./lib/openpgp.min.js');
+    openpgp.config.integrity_protect = true;
+    openpgp.config.useNative = true;
+}
+else {
+    // Browser
+    // Default is true, but just to make sure
+    openpgp.config.useWebCrypto = true;
+    openpgp.config.integrity_protect = true;
+    // Falls back to Web Worker if WebCrypto not available or above set to false
+    openpgp.initWorker('/openpgp.worker.min.js');
+}
+
+var pmcrypto = (function () {
+
     // Deprecated, backwards compatibility
     var protonmail_crypto_headerMessage = "---BEGIN ENCRYPTED MESSAGE---";
     var protonmail_crypto_tailMessage = "---END ENCRYPTED MESSAGE---";
@@ -164,6 +188,9 @@ angular.module("proton.pmcrypto", [])
             if(pubKeys === undefined && passwords === undefined) {
                 return reject(new Error('Missing key'));
             }
+            if(sessionKey.length !== 32) {
+                return reject(new Error('Invalid session key length'));
+            }
 
             var keys;
             if(pubKeys && pubKeys.length) {
@@ -229,7 +256,14 @@ angular.module("proton.pmcrypto", [])
             }
 
             try {
-                resolve(openpgp.decryptSessionKey(key, _encMessage));
+                resolve(openpgp.decryptSessionKey(key, _encMessage).then(function(data) {
+                    if(data.key.length !== 32) {
+                        throw new Error('Invalid session key length');
+                    }
+                    else {
+                        return data;
+                    }
+                }));
             }
             catch(err) {
                 if(err.message == 'CFB decrypt: invalid key') {
@@ -307,91 +341,52 @@ angular.module("proton.pmcrypto", [])
         return result.join('');
     }
 
-    function checkMailboxPassword(pubKey, prKey, prKeyPassCode) {
-        return new Promise(function(resolve, reject) {
-            if (typeof pubKey === 'undefined') {
-                return reject(new Error('Missing public key.'));
-            }
+    var obj = {
+        // returns promise for generated RSA public and encrypted private keys
+        generateKeysRSA: generateKeysRSA,
 
-            if (typeof prKey === 'undefined') {
-                return reject(new Error('Missing private key.'));
-            }
+        // returns a promise, reject with Error
+        encryptMessage: encryptMessage,
+        decryptMessage: decryptMessage,
+        decryptMessageRSA: decryptMessageRSA, // Backwards compatibility wrapper
 
-            if (typeof prKeyPassCode === 'undefined') {
-                return reject(new Error('Missing Mailbox Password.'));
-            }
+        // AES session key generation
+        generateKeyAES: generateKeyAES,
 
-            return resolve(); // TODO remove
+        // Encrypted attachments syntactic sugar
+        encryptFile: encryptFile,
 
-            var testMsg = "sPKkm9lk6hSSZ49rRFwg";
-            var msgPromise = pmcrypto.encryptMessage(testMsg, pubKey, prKeyPassCode); // message, pubKeys, passwords, params
-            var keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
+        // Decrypt private key
+        decryptPrivateKey: decryptPrivateKey,
 
-            Promise.all([msgPromise, keyPromise]).then(function(res) {
-                return pmcrypto.decryptMessage(res[0], res[1]); // encMessage, key, binary, sessionKeyAlgorithm
-            }).then(function(message) {
-                console.log(message);
-                if (message === testMsg) {
-                    return resolve();
-                } else {
-                    return reject(new Error('Encryption test failed.'));
-                }
-            }, function(response) {
-                return reject(new Error('Decrypt message fail.'));
-            });
-        });
-    }
+        // Session key manipulation
+        encryptSessionKey: encryptSessionKey,
+        decryptSessionKey: decryptSessionKey,
 
-    this.mailboxPassword;
+        // Login page
+        getHashedPassword: getHashedPassword,
 
-    this.setMailboxPassword = function(password) {
-        this.mailboxPassword = password;
+        // Javascript string to/from base64-encoded and/or UTF8
+        encode_utf8: encode_utf8,
+        decode_utf8: decode_utf8,
+        encode_base64: encode_base64,
+        decode_base64: decode_base64,
+        encode_utf8_base64: encode_utf8_base64,
+        decode_utf8_base64: decode_utf8_base64,
+
+        //Typed array/binary string conversions
+        arrayToBinaryString: arrayToBinaryString,
+        binaryStringToArray: binaryStringToArray,
+        concatArrays: openpgp.util.concatUint8Array,
+
+        // Settings page
+        getNewEncPrivateKey: getNewEncPrivateKey
     };
 
-    this.$get = function($q) {
-        return {
-            // returns promise to check password
-            checkMailboxPassword: checkMailboxPassword,
+    return obj;
+}());
 
-            // returns promise for generated RSA public and encrypted private keys
-            generateKeysRSA: generateKeysRSA,
-
-            // returns a promise, reject with Error
-            encryptMessage: encryptMessage,
-            decryptMessage: decryptMessage,
-            decryptMessageRSA: decryptMessageRSA, // Backwards compatibility wrapper
-
-            // AES session key generation
-            generateKeyAES: generateKeyAES,
-
-            // Encrypted attachments syntactic sugar
-            encryptFile: encryptFile,
-
-            // Decrypt private key
-            decryptPrivateKey: decryptPrivateKey,
-
-            // Session key manipulation
-            encryptSessionKey: encryptSessionKey,
-            decryptSessionKey: decryptSessionKey,
-
-            // Login page
-            getHashedPassword: getHashedPassword,
-
-            // Javascript string to/from base64-encoded and/or UTF8
-            encode_utf8: encode_utf8,
-            decode_utf8: decode_utf8,
-            encode_base64: encode_base64,
-            decode_base64: decode_base64,
-            encode_utf8_base64: encode_utf8_base64,
-            decode_utf8_base64: decode_utf8_base64,
-
-            //Typed array/binary string conversions
-            arrayToBinaryString: arrayToBinaryString,
-            binaryStringToArray: binaryStringToArray,
-            concatArrays: openpgp.util.concatUint8Array,
-
-            // Settings page
-            getNewEncPrivateKey: getNewEncPrivateKey
-        };
-    };
-});
+//node.js
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = pmcrypto;
+}

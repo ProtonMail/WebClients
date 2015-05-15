@@ -310,7 +310,7 @@ angular.module("proton.controllers.Messages", [
 //     message,
 //     localStorageService,
 //     attachments,
-//     pmcrypto,
+//     pmcw,
 //     networkActivityTracker,
 //     notify
 // ) {
@@ -391,13 +391,13 @@ angular.module("proton.controllers.Messages", [
 
 //         // encrypt the message body and set 'outsiders' to empty by default
 //         newMessage.MessageBody = {
-//             self: pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
+//             self: pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
 //             outsiders: ''
 //         };
 
 //         // concat all recipients
 //         emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList)
-//         base64 = pmcrypto.encode_base64(emails);
+//         base64 = pmcw.encode_base64(emails);
 
 //         // new message object
 //         var userMessage = new Message();
@@ -412,7 +412,7 @@ angular.module("proton.controllers.Messages", [
 //                 // loop through and overwrite defaults
 //                 angular.forEach(mails, function(value) {
 //                     // encrypt messagebody with each user's keys
-//                     newMessage.MessageBody[value] = pmcrypto.encryptMessage(message.RawMessageBody, result[value]);
+//                     newMessage.MessageBody[value] = pmcw.encryptMessage(message.RawMessageBody, result[value]);
 //                     if (!isOutside) {
 //                         if (!value.indexOf('protonmail') < 0) {
 //                             isOutside = true;
@@ -458,7 +458,7 @@ angular.module("proton.controllers.Messages", [
 //         }
 
 //         newMessage.MessageBody = {
-//             self: pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
+//             self: pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
 //             outsiders: ''
 //         };
 
@@ -525,7 +525,7 @@ angular.module("proton.controllers.Messages", [
     Message,
     localStorageService,
     attachments,
-    pmcrypto,
+    pmcw,
     networkActivityTracker,
     notify,
     tools
@@ -913,7 +913,7 @@ angular.module("proton.controllers.Messages", [
 
     var generateReplyToken = function() {
         // Use a base64-encoded AES256 session key as the reply token
-        return pmcrypto.encode_base64(pmcrypto.generateKeyAES());
+        return pmcw.encode_base64(pmcw.generateKeyAES());
     };
 
     $scope.send = function(message) {
@@ -943,7 +943,7 @@ angular.module("proton.controllers.Messages", [
             newMessage.BCCList = tools.changeSeparatorToComma(newMessage.BCCList);
 
             // encrypt the message body
-            pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
+            pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
                 // set 'outsiders' to empty by default
                 newMessage.MessageBody = {
                     outsiders: '',
@@ -952,7 +952,7 @@ angular.module("proton.controllers.Messages", [
 
                 // concat all recipients
                 var emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList);
-                var base64 = pmcrypto.encode_base64(emails);
+                var base64 = pmcw.encode_base64(emails);
 
                 // new message object
                 var userMessage = new Message();
@@ -978,7 +978,7 @@ angular.module("proton.controllers.Messages", [
                             if(index !== -1) {
                                 publickey = publickeys[index][email];
                                 // encrypt messagebody with each user's keys
-                                promises.push(pmcrypto.encryptMessage(message.RawMessageBody, publickey).then(function(result) {
+                                promises.push(pmcw.encryptMessage(message.RawMessageBody, publickey).then(function(result) {
                                     newMessage.MessageBody[email] = result;
                                 }));
                             }
@@ -992,23 +992,23 @@ angular.module("proton.controllers.Messages", [
 
                         if(message.isEncrypted === 1) {
                             var replyToken = generateReplyToken();
-                            var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
+                            var encryptedReplyToken = pmcw.encryptMessage(replyToken, [], message.Password);
 
                             // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
                             var arr = [];
 
                             // TODO
                             // sessionKeys.forEach(function(element) {
-                            //   arr.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
+                            //   arr.push(pmcw.encryptSessionKey(pmcw.binaryStringToArray(pmcw.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
                             //     return {
                             //       id: element.id,
-                            //       keypacket: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
+                            //       keypacket: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
                             //     };
                             //   }));
                             // });
 
                             var encryptedSessionKeys = Promise.all(arr);
-                            var outsideBody = pmcrypto.encryptMessage(messageBody, [], message.Password);
+                            var outsideBody = pmcw.encryptMessage(messageBody, [], message.Password);
 
                             var outsidePromise = outsideBody.then(function(message) {
                                 return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
@@ -1068,7 +1068,7 @@ angular.module("proton.controllers.Messages", [
                 outsiders: ''
             };
 
-            pmcrypto.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
+            pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
                 newMessage.MessageBody.self = result;
 
                 if (message.MessageID) {
@@ -1135,7 +1135,7 @@ angular.module("proton.controllers.Messages", [
     Message,
     message,
     attachments,
-    pmcrypto
+    pmcw
 ) {
 
     message = message.Message;

@@ -84,7 +84,7 @@ angular.module("proton.models", [
   $injector,
   authentication,
   localStorageService,
-  pmcrypto,
+  pmcw,
   mailboxIdentifiers,
   tools
 ) {
@@ -283,12 +283,12 @@ angular.module("proton.models", [
         if (_.isUndefined(this._decryptedBody)) {
           try {
             var local = localStorageService.get('protonmail_pw');
-            var pw = pmcrypto.decode_base64(local);
+            var pw = pmcw.decode_base64(local);
 
             if(!!!this.decrypting) {
               this.decrypting = true;
-              pmcrypto.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
-                  pmcrypto.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
+              pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+                  pmcw.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
                       this._decryptedBody = result;
                       this.failedDecryption = false;
                       this.decrypting = false;
