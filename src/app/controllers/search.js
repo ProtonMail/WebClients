@@ -26,6 +26,8 @@ angular.module("proton.controllers.Search", ["pikaday"])
             params.from = $scope.params.from;
             params.to = $scope.params.to;
             params.subject = $scope.params.subject;
+            params.attachments = parseInt($scope.params.attachments);
+            params.starred = parseInt($scope.params.starred);
 
             if(parseInt($('#search_folder').val()) !== -1) {
                 params.location = parseInt($('#search_folder').val());
@@ -33,14 +35,6 @@ angular.module("proton.controllers.Search", ["pikaday"])
 
             if($('#search_label').val() !== 0) {
                 params.label = $('#search_label').val();
-            }
-
-            if($scope.params.attachments !== 2) {
-                params.attachments = parseInt($scope.params.attachments);
-            }
-
-            if($scope.params.starred !== 2) {
-                params.starred = parseInt($scope.params.starred);
             }
 
             if($scope.searchForm.begin.$touched) {

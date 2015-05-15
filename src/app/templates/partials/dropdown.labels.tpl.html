@@ -4,9 +4,14 @@
             <input type="search" id="searchLabels" placeholder="Filter Labels..." class="form-control" ng-model="searchLabels" />
         </div>
         <ul class="list-group" ng-show="labels.length > 0">
-            <li class="list-group-item" ng-class="{'highlight': label.selected}" ng-repeat="label in labels | filter:searchLabels">
-                <input type="checkbox" ng-model="label.selected" />
-                <span class="label label-pm"><i class="fa fa-tag"></i> {{label.name}}</span>
+            <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels">
+                <!-- <input type="checkbox" ng-model="label.selected" /> -->
+                <a href="" ng-click="toggleLabel(label)">
+                    <i class="fa" ng-class="{'fa-square': label.mode === '', 'fa-minus-square': label.mode === 'minus', 'fa-check-square': label.mode === 'check'}"></i>
+                </a>
+                <span class="label label-pm" style="background-color: {{label.LabelColor}}">
+                    <i class="fa fa-tag"></i> {{label.LabelName}}
+                </span>
             </li>
         </ul>
         <div class="row">
@@ -22,6 +27,6 @@
     </div>
     <div class="modal-footer" ng-show="labels.length > 0">
         <a class="btn" ng-click="closeLabels()">Cancel</a>
-        <button type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()">Save</button>
+        <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()">Save</button>
     </div>
 </div>

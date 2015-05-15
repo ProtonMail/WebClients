@@ -529,58 +529,58 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("secured.compose", {
-        url: "/compose?to&draft",
-        views: {
-            "content@secured": {
-                templateUrl: "templates/views/compose.tpl.html",
-                controller: "ComposeMessageController"
-            }
-        },
-        resolve: {
-            message: function(Message, $stateParams, networkActivityTracker, messageCache) {
-                if ($stateParams.draft) {
-                    return networkActivityTracker.track(
-                        messageCache
-                        .get(parseInt($stateParams.draft))
-                        .$promise
-                        .then(function(message) {
-                            message = new Message(message);
-                            message.IsEncrypted = '0';
-                            return message;
-                        })
-                    );
-                } else {
-                    return new Message({
-                        IsEncrypted: "0"
-                    });
-                }
-            }
-        }
-    })
+    // .state("secured.compose", {
+    //     url: "/compose?to&draft",
+    //     views: {
+    //         "content@secured": {
+    //             templateUrl: "templates/views/compose.tpl.html",
+    //             controller: "ComposeMessageController"
+    //         }
+    //     },
+    //     resolve: {
+    //         message: function(Message, $stateParams, networkActivityTracker, messageCache) {
+    //             if ($stateParams.draft) {
+    //                 return networkActivityTracker.track(
+    //                     messageCache
+    //                     .get(parseInt($stateParams.draft))
+    //                     .$promise
+    //                     .then(function(message) {
+    //                         message = new Message(message);
+    //                         message.IsEncrypted = '0';
+    //                         return message;
+    //                     })
+    //                 );
+    //             } else {
+    //                 return new Message({
+    //                     IsEncrypted: "0"
+    //                 });
+    //             }
+    //         }
+    //     }
+    // })
 
-    .state("secured.reply", {
-        url: "/{action:reply|replyall|forward}/:id",
-        views: {
-            "content@secured": {
-                templateUrl: "templates/views/compose.tpl.html",
-                controller: "ComposeMessageController"
-            }
-        },
-        resolve: {
-            message: function($stateParams, Message, authentication, networkActivityTracker, messageCache) {
-                if (authentication.isLoggedIn()) {
-                    return networkActivityTracker.track(
-                        authentication.user.$promise.then(function(user) {
-                            return messageCache.get($stateParams.id).$promise.then(function(targetMessage) {
-                                return Message[$stateParams.action](targetMessage);
-                            })
-                        })
-                    );
-                }
-            }
-        }
-    })
+    // .state("secured.reply", {
+    //     url: "/{action:reply|replyall|forward}/:id",
+    //     views: {
+    //         "content@secured": {
+    //             templateUrl: "templates/views/compose.tpl.html",
+    //             controller: "ComposeMessageController"
+    //         }
+    //     },
+    //     resolve: {
+    //         message: function($stateParams, Message, authentication, networkActivityTracker, messageCache) {
+    //             if (authentication.isLoggedIn()) {
+    //                 return networkActivityTracker.track(
+    //                     authentication.user.$promise.then(function(user) {
+    //                         return messageCache.get($stateParams.id).$promise.then(function(targetMessage) {
+    //                             return Message[$stateParams.action](targetMessage);
+    //                         })
+    //                     })
+    //                 );
+    //             }
+    //         }
+    //     }
+    // })
 
     .state("secured.settings", {
         url: "/settings",

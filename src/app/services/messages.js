@@ -33,18 +33,22 @@ angular.module("proton.messages", [])
     cache: {},
     get: function (id) {
       var msg;
+
       if ((msg = this.cache[id])) {
         return msg;
       }
 
       var data = window.sessionStorage["proton:message:"+id];
+
       if (data) {
-        data = new Message(JSON.parse(data));
         var q = $q.defer();
+
+        data = new Message(JSON.parse(data));
         data.$promise = q.promise;
         q.resolve(data);
         this.cache[id] = data;
       }
+
       return data;
     },
     put: function (id, message) {

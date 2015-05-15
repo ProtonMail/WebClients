@@ -9,6 +9,7 @@ angular.module("proton.controllers.Messages", [
     $rootScope,
     $q,
     $timeout,
+    authentication,
     messages,
     messageCount,
     messageCache,
@@ -24,7 +25,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.page = parseInt($stateParams.page || "1");
 
-    if($state.$current.name === 'secured.search' || $state.$current.name === 'secured.label') {
+    if($state.is('secured.search') || $state.is('secured.label')) {
         $scope.messages = messages.Messages;
         $scope.messageCount = messages.Total;
     } else {
@@ -102,7 +103,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.toggleStar = function(message) {
-        var inStarred = $state.$current.name === 'secured.starred';
+        var inStarred = $state.is('secured.starred');
         var index = $scope.messages.indexOf(message);
 
         networkActivityTracker.track(
@@ -211,16 +212,35 @@ angular.module("proton.controllers.Messages", [
         }));
     };
 
-    $scope.openLabels = function() {
-        $scope.labels = [{
-            name: 'Proton'
-        }, {
-            name: 'Work'
-        }, {
-            name: 'Trip'
-        }, {
-            name: 'Shopping'
-        }];
+    $scope.toggleLabel = function(label) {
+        if(label.mode === '' || label.mode === 'minus') {
+            label.mode = 'check';
+        } else {
+            label.mode = '';
+        }
+    };
+
+    $scope.openLabels = function(message) {
+        var messages = [];
+        var selectedLabels = [];
+        var labels = authentication.user.labels;
+
+        if(angular.isDefined(message)) {
+            messages.push(message);
+        } else {
+            messages = $scope.selectedMessages();
+        }
+
+        _.each(messages, function(message) {
+            selectedLabels = _.union(selectedLabels, _.map(message.Labels, function(label) { return label.LabelName; }));
+        });
+
+        _.each(labels, function(label) {
+            label.mode = (_.contains(selectedLabels, label.LabelName))?'check':'';
+        });
+
+        $scope.labels = labels;
+
         $timeout(function() {
             $('#searchLabels').focus();
         });
@@ -231,6 +251,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.saveLabels = function() {
+        // TODO
         $scope.closeLabels();
     };
 
@@ -1118,7 +1139,7 @@ angular.module("proton.controllers.Messages", [
 ) {
 
     message = message.Message;
-    
+
     $rootScope.pageName = message.MessageTitle;
 
     $scope.message = message;

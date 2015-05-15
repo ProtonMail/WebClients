@@ -8,6 +8,7 @@
   left: 0;
   top: 0;
   bottom: 0;
+  padding-bottom: 45px;
   overflow-y: auto;
   overflow-x: hidden;
   @include transition(width 0.2s ease-in-out);
@@ -81,6 +82,7 @@
     bottom: 0;
     box-sizing: border-box;
     width: $sidebar-width;
+    background-color: $sidebar-bg;
     @include responsive(sm) {
       width: 6rem;
     }
@@ -184,7 +186,7 @@
         .label {
           background: #fff;
           color: #000;
-        }        
+        }
       }
       &.active, &:hover {
         color: #fff;
