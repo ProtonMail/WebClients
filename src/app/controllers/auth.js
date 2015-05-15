@@ -1,4 +1,7 @@
-angular.module("proton.controllers.Auth", ["proton.authentication"])
+angular.module("proton.controllers.Auth", [
+    "proton.authentication",
+    "proton.pmcw"
+])
 
 .controller("LoginController", function(
     $rootScope,
@@ -61,6 +64,7 @@ angular.module("proton.controllers.Auth", ["proton.authentication"])
                     $state.go("secured.inbox");
                 },
                 function(err) {
+                    $log.error(err);
                     $scope.error = err;
                 }
             )

@@ -326,6 +326,10 @@ module.exports = function (grunt) {
       }
     },
 
+    jshint: {
+      all: ["<%= app_files.js %>"]
+    },
+
     uglify: {
       compile: {
         options: {
@@ -452,6 +456,7 @@ module.exports = function (grunt) {
 
   grunt.renameTask("watch", "delta");
   grunt.registerTask("watch", [
+    // "jshint",
     "build",
     "karma:watch:start",
     "connect:watch",

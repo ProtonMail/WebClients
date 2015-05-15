@@ -57,7 +57,7 @@ angular.module("proton.routes", [
         'starred'
       ];
 
-      return parameters.join('&')
+      return parameters.join('&');
     };
 
     var messageListOptions = function(url, params) {
@@ -456,14 +456,9 @@ angular.module("proton.routes", [
         // url: "/secured", // remove
 
         resolve: {
+            // Contains also labels and contacts
             user: function(authentication) {
                 return authentication.fetchUserInfo();
-            },
-            contacts: function(Contact) {
-                return Contact.query();
-            },
-            labels: function(Label) {
-                return Label.get();
             }
         },
 

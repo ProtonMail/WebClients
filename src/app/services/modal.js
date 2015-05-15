@@ -36,7 +36,7 @@ angular.module("proton.modals", [])
         function attach(html, locals) {
             element = angular.element(html);
             if (element.length === 0) {
-                throw new Error('The template contains no elements; you need to wrap text nodes')
+                throw new Error('The template contains no elements; you need to wrap text nodes');
             }
             scope = $rootScope.$new();
             if (controller) {

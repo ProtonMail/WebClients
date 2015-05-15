@@ -38,9 +38,9 @@ angular.module("proton.attachments", [])
 
           // Determine the content type from the header or default to "application/octet-stream"
           contentType = headers["content-type"] || octetStreamMime;
-
+          var blob, url;
           if (navigator.msSaveBlob) {
-            var blob = new Blob([data], { type: contentType });
+            blob = new Blob([data], { type: contentType });
             navigator.msSaveBlob(blob, filename);
           } else {
             var urlCreator = window.URL || window.webkitURL || window.mozURL || window.msURL;
@@ -50,8 +50,8 @@ angular.module("proton.attachments", [])
 
               if ("download" in link) {
                 // Prepare a blob URL
-                var blob = new Blob([data], { type: contentType });
-                var url = urlCreator.createObjectURL(blob);
+                blob = new Blob([data], { type: contentType });
+                url = urlCreator.createObjectURL(blob);
 
                 link.setAttribute("href", url);
                 link.setAttribute("download", filename);
@@ -65,12 +65,12 @@ angular.module("proton.attachments", [])
                 // Use application/octet-stream when using window.location to force download
 
                 try {
-                  if (_.isNull(data) || data.length == 0) {
+                  if (_.isNull(data) || data.length === 0) {
                     throw new TypeError("File has a size of 0");
                   }
 
-                  var blob = new Blob([data], { type: octetStreamMime });
-                  var url = urlCreator.createObjectURL(blob);
+                  blob = new Blob([data], { type: octetStreamMime });
+                  url = urlCreator.createObjectURL(blob);
                   $window.location = url;
                 } catch(err) {
                   return errorReporter.notify("The file could not be downloaded", err);
@@ -83,4 +83,4 @@ angular.module("proton.attachments", [])
       });
     }
   };
-})
+});

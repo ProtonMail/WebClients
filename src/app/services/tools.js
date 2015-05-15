@@ -77,9 +77,9 @@ angular.module("proton.tools", [])
                 $el.addClass('hidden-' + env);
                 if ($el.is(':hidden')) {
                     $el.remove();
-                    return env
+                    return env;
                 }
-            };
+            }
         }
 
         function change_separator_to_comma(address_list) {

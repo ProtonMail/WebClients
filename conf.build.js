@@ -70,6 +70,10 @@ module.exports = {
 
     required_js: [],
 
+    included_js: [
+      "src/app/libraries/openpgp.worker.min.js"
+    ],
+
     css: [
       "vendor/tagmanager/tagmanager.css",
       "vendor/ng-sortable/dist/ng-sortable.css",
@@ -103,8 +107,8 @@ vendor_files.js = vendor_files.js.concat(vendor_files.bootstrap_components.map(f
 }));
 
 vendor_files.included_js = vendor_files.js.filter(function (file) {
-  return vendor_files.required_js.every(function (required) {
-    return file.indexOf(required) === -1;
+  return vendor_files.included_js.every(function (included) {
+    return file.indexOf(included) === -1;
   });
 });
 
