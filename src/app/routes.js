@@ -228,21 +228,26 @@ angular.module("proton.routes", [
             }
         },
         // TODO this view is shown for 1 second to the user before redirect. change to resolve: for better UX.
-        onEnter: function(authentication, $rootScope, $state) {
-            if (authentication.isLoggedIn()) {
-                $rootScope.isLoggedIn = true;
-                authentication.fetchUserInfo().then(
-                function() {
-                    $rootScope.pubKey = authentication.user.PublicKey;
-                    $rootScope.user = authentication.user;
-                    $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                    if ($rootScope.pubKey === 'to be modified') {
-                        $state.go('step2');
-                        return;
-                    } else {
-                        return;
+        resolve: {
+            user: function(authentication, $rootScope, $state) {
+                return authentication.fetchUserInfo()
+                .then(
+                    function() {
+                        $rootScope.isLoggedIn = true;
+                        $rootScope.pubKey = authentication.user.PublicKey;
+                        $rootScope.user = authentication.user;
+                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                        if ($rootScope.pubKey === 'to be modified') {
+                            $state.go('step2');
+                            return;
+                        } else {
+                            return;
+                        }
+                    },
+                    function() {
+                        alert('?');
                     }
-                });
+                );
             }
         }
 

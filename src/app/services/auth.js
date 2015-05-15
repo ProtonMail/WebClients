@@ -252,7 +252,6 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
-
                     return promise.then(
                         function(user) {
                             $rootScope.isLocked = true;
