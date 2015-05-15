@@ -47,7 +47,6 @@ angular.module("proton.routes", [
         'sort',
         'location',
         'label',
-        'LabelID',
         'from',
         'to',
         'subject',
@@ -125,7 +124,7 @@ angular.module("proton.routes", [
                             params.page = params.Page;
                             messagesPromise = Message.advSearch(_.pick(_.extend(params, $stateParams), 'location', 'label', 'from', 'to', 'subject', 'words', 'begin', 'end', 'attachments', 'starred', 'page')).$promise;
                         } else if(mailbox === 'label') {
-                            params.LabelID = $stateParams.LabelID;
+                            params.LabelID = $stateParams.label;
                             params.filter = params.FilterUnread;
                             params.sort = params.Order;
                             params.page = params.Page;

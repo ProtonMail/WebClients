@@ -24,7 +24,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.page = parseInt($stateParams.page || "1");
 
-    if($state.$current.name === 'secured.search') {
+    if($state.$current.name === 'secured.search' || $state.$current.name === 'secured.label') {
         $scope.messages = messages.Messages;
         $scope.messageCount = messages.Total;
     } else {

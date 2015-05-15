@@ -9,6 +9,6 @@ angular.module("proton.controllers.Sidebar", [])
     $scope.labels = authentication.user.labels;
 
     $scope.labelsDisplayed = function() {
-        return _.where($scope.labels, {Display: 1});
+        return _.where($scope.labels, {Display: 0});
     };
 });
