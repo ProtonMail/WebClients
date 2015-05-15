@@ -22,8 +22,6 @@ angular.module("proton.pmcw", [])
                 return reject(new Error('Missing Mailbox Password.'));
             }
 
-            return resolve(); // TODO remove
-
             var testMsg = "sPKkm9lk6hSSZ49rRFwg";
             var msgPromise = pmcrypto.encryptMessage(testMsg, pubKey, prKeyPassCode); // message, pubKeys, passwords, params
             var keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
@@ -31,7 +29,6 @@ angular.module("proton.pmcw", [])
             Promise.all([msgPromise, keyPromise]).then(function(res) {
                 return pmcrypto.decryptMessage(res[0], res[1]); // encMessage, key, binary, sessionKeyAlgorithm
             }).then(function(message) {
-                console.log(message);
                 if (message === testMsg) {
                     return resolve();
                 } else {
