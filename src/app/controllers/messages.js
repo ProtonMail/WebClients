@@ -1116,6 +1116,9 @@ angular.module("proton.controllers.Messages", [
     attachments,
     pmcrypto
 ) {
+
+    message = message.Message;
+    
     $rootScope.pageName = message.MessageTitle;
 
     $scope.message = message;
