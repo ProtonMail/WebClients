@@ -5,12 +5,14 @@ angular.module("proton.controllers.Search", ["pikaday"])
     $scope,
     $state,
     $stateParams,
+    authentication,
     mailboxIdentifiers,
     networkActivityTracker
 ) {
     var modalId = 'searchModal';
 
     $scope.folders = mailboxIdentifiers;
+    $scope.labels = authentication.user.labels;
 
     $scope.search = function(navbarValue) {
         var params = {};
@@ -29,8 +31,8 @@ angular.module("proton.controllers.Search", ["pikaday"])
                 params.location = parseInt($('#search_folder').val());
             }
 
-            if(parseInt($('#search_label').val()) !== 0) {
-                params.label = parseInt($('#search_label').val());
+            if($('#search_label').val() !== 0) {
+                params.label = $('#search_label').val();
             }
 
             if($scope.params.attachments !== 2) {

@@ -29,7 +29,7 @@
                                         <option value="0">All Messages</option>
                                     </optgroup>
                                     <optgroup label="Labels">
-                                        <!-- TODO -->
+                                        <option value="{{label.LabelID}}" ng-repeat="label in labels">{{label.LabelName}}</option>
                                     </optgroup>
                                 </select>
                             </div>
