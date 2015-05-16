@@ -222,8 +222,8 @@ angular.module("proton.controllers.Messages", [
 
     $scope.openLabels = function(message) {
         var messages = [];
-        var selectedLabels = [];
         var labels = authentication.user.labels;
+        var messagesLabel = [];
 
         if(angular.isDefined(message)) {
             messages.push(message);
@@ -232,12 +232,20 @@ angular.module("proton.controllers.Messages", [
         }
 
         _.each(messages, function(message) {
-            selectedLabels = _.union(selectedLabels, _.map(message.Labels, function(label) { return label.LabelName; }));
+            messagesLabel = _.union(messagesLabel, (_.map(message.Labels, function(label) { return label.LabelName; })));
         });
 
         _.each(labels, function(label) {
-            label.mode = (_.contains(selectedLabels, label.LabelName))?'check':'';
-        });
+            var count = _.filter(messagesLabel, function(m) { return m === label.LabelName; }).length;
+
+            if(count === messages.length) {
+                label.mode = 'check';
+            } else if(count > 0) {
+                label.mode = 'minus';
+            } else {
+                label.mode = '';
+            }
+        })
 
         $scope.labels = labels;
 
