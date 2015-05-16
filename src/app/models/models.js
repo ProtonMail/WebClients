@@ -367,11 +367,11 @@ angular.module("proton.models", [
       },
       resetPassword: {
         method: 'post',
-        url: authentication.baseURL + "/reset/password"
+        url: authentication.baseURL + "/reset/password" // update the password
       },
       resetLostPassword: {
         method: 'post',
-        url: authentication.baseURL + "/reset/lost-password"
+        url: authentication.baseURL + "/reset/lost-password" //sends notification email to the user
       }
     }
   );

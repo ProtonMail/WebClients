@@ -44,24 +44,20 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                         "public": keyPair.publicKeyArmored,
                         "private": keyPair.privateKeyArmored
                     };
-                    User.updateKeypair(params).$promise
+                    return User.updateKeypair(params).$promise
                     .then(
                         function(response) {
                             localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                            // $state.go('secured.inbox');
-                            networkActivityTracker.track(
-                                authentication
-                                .unlockWithPassword(pass)
-                                .then(
-                                    function() {
-                                        localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                                        $state.go("secured.inbox");
-                                    },
-                                    function(err) {
-                                        $scope.error = err;
-                                    }
-                                )
-                            );
+                            return authentication.unlockWithPassword(pass)
+                            .then(
+                                function() {
+                                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
+                                    $state.go("secured.inbox");
+                                },
+                                function(err) {
+                                    $scope.error = err;
+                                }
+                            )
                         },
                         function(response) {
                             $log.error(response);
@@ -125,7 +121,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 User.createUser(params).$promise
                 .then(
                     function(response) {
-                        // Account created!
+                        // Account created!a
                         $state.go('step2');
                         authentication.receivedCredentials(
                             _.pick(response, "access_token", "refresh_token", "uid", "expires_in")

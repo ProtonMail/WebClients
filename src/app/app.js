@@ -60,16 +60,17 @@ angular.module("proton", [
     $document,
     $rootScope,
     networkActivityTracker,
-    notify
+    notify,
+    $state
 ) {
 
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {     
         setTimeout(function() {
             $('.panel-body input').eq(0).focus();
-        }, 400);
+        }, 200);
     })
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
@@ -105,13 +106,23 @@ angular.module("proton", [
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-        var isLogin = toState.name.indexOf("login") !== -1;
-        var isSupport = toState.name.indexOf("support") !== -1;
-        var isAccount = toState.name.indexOf("account") !== -1;
-        var isSignup = toState.name.indexOf("signup") !== -1;
-        var isSteps = toState.name.indexOf("step") !== -1;
+        var isLogin = (toState.name == "login");
+        var isSupport = (toState.name == "support");
+        var isAccount = (toState.name == "account");
+        var isSignup = (toState.name == "signup" || toState.name == "step1" || toState.name == "step2");
+        var isUnlock = (toState.name == "login.unlock");
 
-        if (isLogin || isSupport || isAccount || isSignup || isSteps) {
+        if ($rootScope.isLoggedIn && isLogin) {
+            event.preventDefault();
+            $state.go('login.unlock');
+        }
+
+        else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
+            event.preventDefault();
+            $state.go('secured.inbox');
+        }
+        
+        else if (isLogin || isSupport || isAccount || isSignup) {
             return; // no need to redirect
         }
 
@@ -119,7 +130,7 @@ angular.module("proton", [
         if (!!!authentication.isLoggedIn()) {
             event.preventDefault(); // stop current execution
             $state.go('login'); // go to login
-        }
+        }    
     });
 })
 
@@ -147,24 +158,6 @@ angular.module("proton", [
 .run(function($log) {
     $log.info('Find a security bug? security@protonmail.ch');
     $log.info('We\'re hiring! https://protonmail.ch/pages/join-us');
-})
-
-//
-// Welcome message
-//
-
-.run(function($rootScope, notify, localStorageService) {
-    // var display = localStorageService.get('welcomeDisplayed');
-
-    // if(!!!display) {
-
-    //     notify({
-    //         duration: 10000,
-    //         message: 'Bienvenue GROS sur la prochaine version de ProtonMail, dis aurevoir à Gmail!', // TODO change message
-    //         templateUrl: 'templates/notifications/welcome.tpl.html'
-    //     });
-    //     localStorageService.bind($rootScope, 'welcomeDisplayed', true);
-    // }
 })
 
 //

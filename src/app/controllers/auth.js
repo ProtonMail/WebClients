@@ -33,10 +33,8 @@ angular.module("proton.controllers.Auth", [
             })
             .then(
                 function(result) {
-                    authentication.receivedCredentials(
-                        _.pick(result, "access_token", "refresh_token", "uid", "expires_in")
-                        );
                     $state.go("login.unlock");
+                    return;
                 },
                 function(result) {
                     $log.error(result);

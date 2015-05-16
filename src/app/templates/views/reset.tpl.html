@@ -1,5 +1,5 @@
 <div class="panel panel-default wrap">
-    <div class="panel-body">
+    <div class="panel-body" ng-hide="showForm">
         <h1 class="text-center">Reset Mailbox</h1>
 
         <div class="alert alert-danger">
@@ -10,8 +10,36 @@
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailbox()">Reset</button>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">Reset</button>
         <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
+    </div>
+    <div class="panel-body" ng-show="showForm">
+
+        <h1 class="text-center">Reset Mailbox</h1>
+
+        <form ng-submit="resetMailboxPass(resetMBPW)" name="resetMBPW" novalidate>
+
+            <div class="form-group">
+                <label for="password">New Mailbox Password</label>
+                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
+                <div ng-show="resetMBPW.$submitted || resetMBPW.password.$touched">
+                    <p ng-show="resetMBPW.password.$error.required" class="text-danger">Mailbox password is required.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordc">Confirm New Mailbox Password</label>
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="Password" required="" ng-enter="finish(resetMBPW)" />
+                <div ng-show="resetMBPW.$submitted || resetMBPW.passwordc.$touched">
+                    <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
+                </div>
+            </div>
+
+        </form>
+
+        <button class="btn pull-right btn-primary" title="Reset my Mailbox" ng-click="resetMailboxPass(resetMBPW)">Finish</button>
+        <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
+
     </div>
 </div>
 

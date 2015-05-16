@@ -327,10 +327,6 @@ body {
 
   &.login {
     background: url('img/cubes.png') 0 0 repeat;
-    animation: animatedBackground 40s linear infinite;
-    -ms-animation: animatedBackground 40s linear infinite;
-    -moz-animation: animatedBackground 40s linear infinite;
-    -webkit-animation: animatedBackground 40s linear infinite;
   }
 
   &.locked {

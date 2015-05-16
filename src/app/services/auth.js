@@ -99,7 +99,6 @@ angular.module("proton.authentication", [
 
                 loginWithCredentials: function(creds) {
                     var q = $q.defer();
-
                     if (!creds.username || !creds.password) {
                         q.reject({
                             message: "Username and password are required to login"
@@ -118,7 +117,15 @@ angular.module("proton.authentication", [
                             })
                         ).then(function(resp) {
                                 var data = resp.data;
-                                q.resolve(data);
+                                api.receivedCredentials(
+                                    _.pick(data, "access_token", "refresh_token", "uid", "expires_in")
+                                );
+                                // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
+                                $state.go("login").then(
+                                    function() {
+                                        q.resolve(data);
+                                    }
+                                );
                             },
                             function(error) {
                                 q.reject({
