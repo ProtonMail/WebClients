@@ -77,7 +77,8 @@ angular.module("proton.authentication", [
             $timeout,
             $injector,
             pmcw,
-            errorReporter
+            errorReporter,
+            notify
         ) {
 
             // RUN-TIME PUBLIC FUNCTIONS
@@ -103,7 +104,8 @@ angular.module("proton.authentication", [
                         q.reject({
                             message: "Username and password are required to login"
                         });
-                    } else {
+                    } 
+                    else {
                         delete $http.defaults.headers.common.Accept;
                         $http.post(baseURL + "/auth/auth",
                             _.extend(_.pick(creds, "username", "password"), {
@@ -115,7 +117,8 @@ angular.module("proton.authentication", [
                                 redirect_uri: "https://protonmail.ch",
                                 response_type: "token"
                             })
-                        ).then(function(resp) {
+                        ).then(
+                            function(resp) {
                                 var data = resp.data;
                                 api.receivedCredentials(
                                     _.pick(data, "access_token", "refresh_token", "uid", "expires_in")
@@ -289,21 +292,40 @@ angular.module("proton.authentication", [
                     UserID: auth.data.uid
                 });
 
-                api.user.$promise.then(function(user) {
-                    if (!user.EncPrivateKey) {
-                        api.logout();
-                        q.reject();
-                    } else {
-                        $q.all([
-                            $injector.get("Contact").query().$promise,
-                            $injector.get("Label").get().$promise
-                        ]).then(function(result) {
-                            user.contacts = result[0];
-                            user.labels = result[1];
-                            q.resolve(user);
+                api.user.$promise
+                .then(
+                    function(user) {
+                        if (!user.EncPrivateKey) {
+                            api.logout();
+                            q.reject();
+                        } else {
+                            $q.all([
+                                $injector.get("Contact").query().$promise,
+                                $injector.get("Label").get().$promise
+                            ]).then(
+                                function(result) {
+                                    user.contacts = result[0];
+                                    user.labels = result[1];
+                                    q.resolve(user);
+                                },
+                                function() {
+                                    notify({
+                                        classes: 'notification-danger',
+                                        message: 'Sorry, but we were unable to fully log you in.'
+                                    });
+                                    api.logout();
+                                }
+                            );
+                        }
+                    },
+                    function() {
+                        notify({
+                            classes: 'notification-danger',
+                            message: 'Sorry, but we were unable to log you in.'
                         });
+                        api.logout();
                     }
-                });
+                );
 
                 return q.promise;
             };
