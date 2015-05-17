@@ -60,15 +60,5 @@ angular.module("proton.controllers.Support", [
             });
         }
     }
-
-    $scope.resetMailbox = function(form) {
-        if (form.$valid) { // TODO this is nto valid for some reason :(
-            generateKeys('UserID', $scope.account.mailboxPassword);
-        }
-        // 1. hide the warning, show the form
-        // 2. warning to remember hte password
-        // 3. API call to reset password
-        // 4. on success save, login, redirect
-
-    };
+    
 });

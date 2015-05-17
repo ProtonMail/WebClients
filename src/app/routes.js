@@ -323,8 +323,8 @@ angular.module("proton.routes", [
                 $rootScope.isLoggedIn = true;
                 return authentication.fetchUserInfo().then(
                 function() {
-                    $rootScope.pubKey = authentication.user.PublicKey;
                     $rootScope.user = authentication.user;
+                    $rootScope.pubKey = authentication.user.PublicKey;
                     $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
                     if ($rootScope.pubKey === 'to be modified') {
                         return;
@@ -337,6 +337,19 @@ angular.module("proton.routes", [
             else {
                 $state.go("login");
                 return;
+            }
+        }
+    })
+
+    .state("reset", {
+        url: "/reset",
+        views: {
+            "main@": {
+                controller: "AccountController",
+                templateUrl: "templates/layout/auth.tpl.html"
+            },
+            "panel@reset": {
+                templateUrl: "templates/views/reset.tpl.html"
             }
         }
     })
@@ -407,14 +420,6 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("support.reset", {
-        url: "/reset",
-        views: {
-            "panel@support": {
-                templateUrl: "templates/views/reset.tpl.html"
-            }
-        }
-    })
 
     // -------------------------------------------
     // SECURED ROUTES

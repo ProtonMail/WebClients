@@ -1,4 +1,4 @@
-<div class="panel panel-default wrap">
+<div class="panel panel-default panel-sign-up wrap">
     <div class="panel-body" ng-hide="showForm">
         <h1 class="text-center">Reset Mailbox</h1>
 
@@ -15,9 +15,9 @@
     </div>
     <div class="panel-body" ng-show="showForm">
 
-        <h1 class="text-center">Reset Mailbox</h1>
+        <h1 class="text-center">New Mailbox</h1>
 
-        <form ng-submit="resetMailboxPass(resetMBPW)" name="resetMBPW" novalidate>
+        <form ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate>
 
             <div class="form-group">
                 <label for="password">New Mailbox Password</label>
@@ -34,10 +34,12 @@
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
                 </div>
             </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" title="Reset my Mailbox" ng-class="{disabled: networkActivity.loading()}">Finish</button>
 
         </form>
 
-        <button class="btn pull-right btn-primary" title="Reset my Mailbox" ng-click="resetMailboxPass(resetMBPW)">Finish</button>
+        <h6 class="text-center">Keep this password safe - it cannot be recovered.</h6>        
+
         <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
 
     </div>

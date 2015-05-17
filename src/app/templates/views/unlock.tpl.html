@@ -9,7 +9,7 @@
             <div class="form-group">
                 <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
             </div>
-            <a ui-sref="support.reset" class="login-support btn btn-link">Forgot password?</a>
+            <a ui-sref="reset" class="login-support btn btn-link">Forgot password?</a>
             <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
                 <span>Unlock</span>
             </button>

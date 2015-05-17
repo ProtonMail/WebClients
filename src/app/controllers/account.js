@@ -23,6 +23,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     function generateKeys(userID, pass) {
 
+        console.log('generateKeys');
+
         // Generate KeyPair
         var keyPair = pmcw.generateKeysRSA(userID, pass);
 
@@ -30,6 +32,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             keyPair
             .then(
                 function(keyPair) {
+                    console.log('keyPair');
                     var params = {
                         "response_type": "token",
                         "client_id": "demoapp",
@@ -47,15 +50,28 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     return User.updateKeypair(params).$promise
                     .then(
                         function(response) {
-                            localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                            return authentication.unlockWithPassword(pass)
+                            return authentication.fetchUserInfo()
                             .then(
                                 function() {
                                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                                    $state.go("secured.inbox");
+                                    return authentication.unlockWithPassword(pass)
+                                    .then(
+                                        function() {
+                                            console.log('a');
+                                            localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
+                                            console.log('b');
+                                            $state.go("secured.inbox");
+                                            return;
+                                        },
+                                        function(err) {
+                                            console.log('c');
+                                            $scope.error = err;
+                                            return;
+                                        }
+                                    )
                                 },
-                                function(err) {
-                                    $scope.error = err;
+                                function() {
+
                                 }
                             )
                         },
@@ -143,7 +159,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.finish = function(form) {
         if (form.$valid) {
-            generateKeys('UserID', $scope.account.mailboxPassword);
+            // TODO redirect to inbox. currently redirects to decrypt. does this return a promise?
+            return generateKeys('UserID', $scope.account.mailboxPassword);
         }
     };
 
@@ -170,5 +187,16 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             word: word
         };
     };
+
+    $scope.resetMailbox = function(form) {
+        if (form.$valid) { // TODO this is nto valid for some reason :(
+            generateKeys('UserID', form.password.$modelValue);
+        }
+        // 1. hide the warning, show the form
+        // 2. warning to remember hte password
+        // 3. API call to reset password
+        // 4. on success save, login, redirect
+
+    };    
 
 });
