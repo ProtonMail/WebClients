@@ -21,4 +21,3 @@ angular.module("proton.models", [
     "ngResource",
     "proton.authentication"
 ]);
-

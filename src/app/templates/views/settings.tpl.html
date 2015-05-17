@@ -8,13 +8,13 @@
                     <a data-toggle="collapse" data-parent="#accordion" href="#notifications" aria-expanded="true" aria-controls="notifications">Notifications</a>
                 </h4>
             </div>
-            <div id="notifications" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotifications">
+            <div id="notifications" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotifications">
                 <div class="panel-body">
                     <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
                         <div class="form-group">
                             <label class="control-label">Daily New Email Notifications</label>
                             <div>
-                                <toggle-switch ng-model="dailyNotifications" on-label="Enabled" off-label="Disabled">
+                                <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="Enabled" off-label="Disabled">
                                     <toggle-switch>
                             </div>
                         </div>
@@ -32,6 +32,22 @@
                             <!-- <button class="btn btn-sm btn-default pull-right" type="button">Delete</button> -->
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingAutosaveContacts">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">Autosave Contacts</a>
+                </h4>
+            </div>
+            <div id="autosaveContacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAutosaveContacts">
+                <div class="panel-body">
+                    <label class="control-label">Autosave Contacts</label>
+                    <div>
+                        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="Enabled" off-label="Disabled"><toggle-switch>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,7 +171,7 @@
                         <div class="form-group">
                             <label class="control-label" for="">Sort Aliases</label>
                             <div id="aliases-container">
-                                <ul class="list-group" data-as-sortable="dragControlListeners" data-ng-model="aliases">
+                                <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
                                     <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
                                         <div as-sortable-item-handle="">
                                             <i class="fa fa-ellipsis-v text-muted vcenter"></i> {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
