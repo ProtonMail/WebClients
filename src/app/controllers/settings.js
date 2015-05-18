@@ -13,6 +13,7 @@ angular.module("proton.controllers.Settings", [
     authentication,
     confirmModal,
     labelModal,
+    Label,
     Setting,
     user,
     tools,
@@ -27,6 +28,7 @@ angular.module("proton.controllers.Settings", [
     $scope.dailyNotifications = !!user.DailyNotifications;
     $scope.signature = user.Signature;
     $scope.aliases = user.addresses;
+    $scope.labels = user.labels;
 
     $scope.initCollapse = function() {
         // $('.collapse').collapse()
@@ -120,9 +122,23 @@ angular.module("proton.controllers.Settings", [
         labelModal.activate({
             params: {
                 title: 'Create New Label',
-                create: function() {
-                    labelModal.deactivate();
-                    notify('Label created');
+                create: function(name, color) {
+                    Label.create({
+                        name: name,
+                        color: color
+                    }).$promise.then(function(result) {
+                        if(angular.isDefined(result.id)) {
+                            // TODO add label to labels
+                            labelModal.deactivate();
+                            notify('Label created');
+                        } else {
+                            notify(result.error);
+                            $log.error(result);
+                        }
+                    }, function(result) {
+                        notify(result.error);
+                        $log.error(result);
+                    });
                 },
                 cancel: function() {
                     labelModal.deactivate();
@@ -136,9 +152,18 @@ angular.module("proton.controllers.Settings", [
             params: {
                 title: 'Edit Label',
                 label: label,
-                create: function() {
-                    labelModal.deactivate();
-                    notify('Labed edited');
+                create: function(name, color) {
+                    Label.edit({
+                        label: name,
+                        color: color
+                    }).$promise.then(function(result) {
+                        label.name = name;
+                        label.color = color;
+                        labelModal.deactivate();
+                        notify('Labed edited');
+                    }, function(result) {
+                        $log.error(result);
+                    });
                 },
                 cancel: function() {
                     labelModal.deactivate();
@@ -153,9 +178,13 @@ angular.module("proton.controllers.Settings", [
                 title: 'Delete Label',
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
-                    // TODO
-                    confirmModal.deactivate();
-                    notify('Label deleteded');
+                    Label.delete({id: label.LabelID}).$promise.then(function(result) {
+                        // TODO remove in labels
+                        confirmModal.deactivate();
+                        notify('Label deleteded');
+                    }, function(result) {
+                        $log.error(result);
+                    });
                 },
                 cancel: function() {
                     confirmModal.deactivate();

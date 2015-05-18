@@ -400,15 +400,24 @@ p {
   @include transition(all 0.2s ease-in-out);
   border: 2px dashed $dark-purple;
   border-radius: $border-radius-base;
-  padding: 50px 0;
   cursor: pointer;
   background-color: transparent;
+
   &:hover {
     background-color: $body-bg;
   }
+
   &.hover, &.dz-drag-hover {
     background-color: $highlight;
     border-color: $light-purple;
+  }
+
+  .dz-preview {
+    margin: 10px;
+  }
+
+  .dz-preview.dz-image-preview {
+    background-color: transparent;
   }
 }
 
@@ -424,7 +433,7 @@ p {
     border-radius: $border-radius-base;
     height: 35px;
     width: 35px;
-    margin-right: 20px;
+    margin-right: 10px;
     text-align: center;
     line-height: 35px;
 

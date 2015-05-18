@@ -111,9 +111,7 @@ angular.module("proton.controllers.Contacts", [
                 contactModal.deactivate();
                 notify('Contact added');
             }, function(response) {
-                notify({
-                    message: response.error
-                });
+                notify(response.error);
                 $log.error(response);
             }));
         });

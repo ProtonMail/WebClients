@@ -166,10 +166,20 @@ angular.module("proton.modals", [])
         controller: function(params, $timeout, $scope) {
             this.label = params.label;
             this.title = params.title;
+            this.colors = [
+                '#f66',
+                '#ff9',
+                '#f6f',
+                '#6ff',
+                '#66f',
+                '#6f6',
+                '#999'
+            ];
+            this.color = params.color || this.colors[0];
 
             this.create = function() {
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
-                    params.create();
+                    params.create(this.label, this.color);
                 }
             };
 

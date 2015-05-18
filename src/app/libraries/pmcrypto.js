@@ -1,7 +1,7 @@
 /*
-* Be VERY careful about changing this file. It is used in both the browser JS package and in the node.js encryption server
-* Just because your changes work in the browser does not mean they work in the encryption server!
-*/
+ * Be VERY careful about changing this file. It is used in both the browser JS package and in the node.js encryption server
+ * Just because your changes work in the browser does not mean they work in the encryption server!
+ */
 
 // if (typeof module !== 'undefined' && module.exports) {
 //     // node.js
@@ -23,7 +23,7 @@
 //     openpgp.initWorker('src/app/libraries/openpgp.worker.min.js');
 // }
 
-var pmcrypto = (function () {
+var pmcrypto = (function() {
 
     // Deprecated, backwards compatibility
     var protonmail_crypto_headerMessage = "---BEGIN ENCRYPTED MESSAGE---";
@@ -32,26 +32,26 @@ var pmcrypto = (function () {
     var protonmail_crypto_tailRandomKey = "---END ENCRYPTED RANDOM KEY---";
 
     function generateEmailPM(encMessage, encRandomKey) {
-      var EmailPM = protonmail_crypto_headerMessage + encMessage + protonmail_crypto_tailMessage;
-      EmailPM += "||" + protonmail_crypto_headerRandomKey + encRandomKey + protonmail_crypto_tailRandomKey;
-      return EmailPM;
+        var EmailPM = protonmail_crypto_headerMessage + encMessage + protonmail_crypto_tailMessage;
+        EmailPM += "||" + protonmail_crypto_headerRandomKey + encRandomKey + protonmail_crypto_tailRandomKey;
+        return EmailPM;
     }
 
     function getEncMessageFromEmailPM(EmailPM) {
-        if (EmailPM!==undefined&&typeof EmailPM.search === "function") {
+        if (EmailPM !== undefined && typeof EmailPM.search === "function") {
             var begin = EmailPM.search(protonmail_crypto_headerMessage) + protonmail_crypto_headerMessage.length;
             var end = EmailPM.search(protonmail_crypto_tailMessage);
-            if(begin === -1 || end === -1) return '';
+            if (begin === -1 || end === -1) return '';
             return EmailPM.substring(begin, end);
         }
         return '';
     }
 
     function getEncRandomKeyFromEmailPM(EmailPM) {
-        if (EmailPM!==undefined&&typeof EmailPM.search === "function") {
+        if (EmailPM !== undefined && typeof EmailPM.search === "function") {
             var begin = EmailPM.search(protonmail_crypto_headerRandomKey) + protonmail_crypto_headerRandomKey.length;
             var end = EmailPM.search(protonmail_crypto_tailRandomKey);
-            if(begin === -1 || end === -1) return '';
+            if (begin === -1 || end === -1) return '';
             return EmailPM.substring(begin, end);
         }
         return '';
@@ -60,15 +60,15 @@ var pmcrypto = (function () {
     // Backwards-compatible decrypt RSA message function
     function decryptMessageRSA(encMessage, prKey, messageTime) {
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function(resolve, reject) {
 
-            if(encMessage === undefined || encMessage === '') {
+            if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
             }
-            if(prKey === undefined || prKey === '') {
+            if (prKey === undefined || prKey === '') {
                 return reject(new Error('Missing private key'));
             }
-            if(messageTime === undefined || messageTime === '') {
+            if (messageTime === undefined || messageTime === '') {
                 return reject(new Error('Missing message time'));
             }
 
@@ -76,14 +76,14 @@ var pmcrypto = (function () {
             var oldEncRandomKey = getEncRandomKeyFromEmailPM(encMessage);
 
             // OpenPGP
-            if(oldEncMessage==='' || oldEncRandomKey==='') return resolve(decryptMessage(encMessage, prKey));
+            if (oldEncMessage === '' || oldEncRandomKey === '') return resolve(decryptMessage(encMessage, prKey));
 
             // Old message encryption format
             resolve(decryptMessage(oldEncRandomKey, prKey)
                 .then(decode_utf8_base64)
                 .then(function(randomKey) {
 
-                    if (randomKey==='') {
+                    if (randomKey === '') {
                         return Promise.reject(new Error('Random key is empty'));
                     }
 
@@ -94,12 +94,11 @@ var pmcrypto = (function () {
                         randomKey = pmcrypto.binaryStringToArray(randomKey);
                         oldEncMessage = pmcrypto.binaryStringToArray(oldEncMessage);
                         // cutoff time for enabling multilanguage support
-                        if (messageTime>1399086120) // parseInt($('#messageTime').val())
-                            decryptedMessage = decode_utf8_base64(pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256",randomKey,oldEncMessage,true)));
+                        if (messageTime > 1399086120) // parseInt($('#messageTime').val())
+                            decryptedMessage = decode_utf8_base64(pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256", randomKey, oldEncMessage, true)));
                         else
-                            decryptedMessage = pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256",randomKey,oldEncMessage,true));
-                    }
-                    catch(err) {
+                            decryptedMessage = pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256", randomKey, oldEncMessage, true));
+                    } catch (err) {
                         return Promise.reject(err);
                     }
                     return decryptedMessage;
@@ -108,15 +107,36 @@ var pmcrypto = (function () {
     }
 
     // Current
-    function encode_utf8(data) { if (data!==undefined) return unescape(encodeURIComponent(data)); }
-    function decode_utf8(data) { if (data!==undefined) return decodeURIComponent(escape(data)); }
-    function encode_base64(data) { if (data!==undefined) return btoa(data).trim(); }
-    function decode_base64(data) { if (data!==undefined) return atob(data.trim()); }
-    function encode_utf8_base64(data) { if (data!==undefined) return encode_base64(encode_utf8(data)); }
-    function decode_utf8_base64(data) { if (data!==undefined) return decode_utf8(decode_base64(data)); }
+    function encode_utf8(data) {
+        if (data !== undefined) return unescape(encodeURIComponent(data));
+    }
+
+    function decode_utf8(data) {
+        if (data !== undefined) return decodeURIComponent(escape(data));
+    }
+
+    function encode_base64(data) {
+        if (data !== undefined) return btoa(data).trim();
+    }
+
+    function decode_base64(data) {
+        if (data !== undefined) return atob(data.trim());
+    }
+
+    function encode_utf8_base64(data) {
+        if (data !== undefined) return encode_base64(encode_utf8(data));
+    }
+
+    function decode_utf8_base64(data) {
+        if (data !== undefined) return decode_utf8(decode_base64(data));
+    }
 
     function generateKeysRSA(user, password) {
-        return openpgp.generateKeyPair({numBits: 2048, userId: user, passphrase: password});
+        return openpgp.generateKeyPair({
+            numBits: 2048,
+            userId: user,
+            passphrase: password
+        });
     }
 
     function generateKeyAES() {
@@ -127,8 +147,7 @@ var pmcrypto = (function () {
         var _keys;
         try {
             _keys = openpgp.key.readArmored(keys);
-        }
-        catch(err) {
+        } catch (err) {
             return err;
         }
 
@@ -148,18 +167,18 @@ var pmcrypto = (function () {
 
     function encryptMessage(message, pubKeys, passwords, params) {
 
-        return new Promise(function (resolve, reject) {
-            if(message === undefined) {
+        return new Promise(function(resolve, reject) {
+            if (message === undefined) {
                 return reject(new Error('Missing data'));
             }
-            if(pubKeys === undefined && passwords === undefined) {
+            if (pubKeys === undefined && passwords === undefined) {
                 return reject(new Error('Missing key'));
             }
 
             var keys;
-            if(pubKeys && pubKeys.length) {
+            if (pubKeys && pubKeys.length) {
                 keys = getKeys(pubKeys);
-                if(keys instanceof Error) return reject(keys);
+                if (keys instanceof Error) return reject(keys);
             }
 
             resolve(openpgp.encryptMessage(keys, message, passwords, params));
@@ -178,24 +197,24 @@ var pmcrypto = (function () {
 
     function encryptSessionKey(sessionKey, algo, pubKeys, passwords) {
 
-        return new Promise(function (resolve, reject) {
-            if(sessionKey === undefined) {
+        return new Promise(function(resolve, reject) {
+            if (sessionKey === undefined) {
                 return reject(new Error('Missing session key'));
             }
-            if(algo === undefined) {
+            if (algo === undefined) {
                 return reject(new Error('Missing session key algorithm'));
             }
-            if(pubKeys === undefined && passwords === undefined) {
+            if (pubKeys === undefined && passwords === undefined) {
                 return reject(new Error('Missing key'));
             }
-            if(sessionKey.length !== 32) {
+            if (sessionKey.length !== 32) {
                 return reject(new Error('Invalid session key length'));
             }
 
             var keys;
-            if(pubKeys && pubKeys.length) {
+            if (pubKeys && pubKeys.length) {
                 keys = getKeys(pubKeys);
-                if(keys instanceof Error) return reject(keys);
+                if (keys instanceof Error) return reject(keys);
             }
 
             resolve(openpgp.encryptSessionKey(sessionKey, algo, keys, passwords));
@@ -204,19 +223,18 @@ var pmcrypto = (function () {
 
     function decryptMessage(encMessage, key, binary, sessionKeyAlgorithm) {
 
-        return new Promise(function (resolve, reject) {
-            if(encMessage === undefined || encMessage === '') {
+        return new Promise(function(resolve, reject) {
+            if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
             }
-            if(key === undefined  || key === '') {
+            if (key === undefined || key === '') {
                 return reject(new Error('Missing key'));
             }
 
             var _encMessage;
-            if(Uint8Array.prototype.isPrototypeOf(encMessage)) {
+            if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
                 _encMessage = openpgp.message.read(encMessage);
-            }
-            else {
+            } else {
                 _encMessage = openpgp.message.readArmored(encMessage.trim());
             }
 
@@ -227,9 +245,8 @@ var pmcrypto = (function () {
 
             try {
                 resolve(openpgp.decryptMessage(key, _encMessage, params));
-            }
-            catch(err) {
-                if(err.message == 'CFB decrypt: invalid key') {
+            } catch (err) {
+                if (err.message == 'CFB decrypt: invalid key') {
                     return reject(err.message); //Bad password, reject without Error object
                 }
                 reject(err);
@@ -239,34 +256,31 @@ var pmcrypto = (function () {
 
     function decryptSessionKey(encMessage, key) {
 
-        return new Promise(function (resolve, reject) {
-            if(encMessage === undefined || encMessage === '') {
+        return new Promise(function(resolve, reject) {
+            if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
             }
-            if(key === undefined  || key === '') {
+            if (key === undefined || key === '') {
                 return reject(new Error('Missing password'));
             }
 
             var _encMessage;
-            if(Uint8Array.prototype.isPrototypeOf(encMessage)) {
+            if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
                 _encMessage = openpgp.message.read(encMessage);
-            }
-            else {
+            } else {
                 _encMessage = openpgp.message.readArmored(encMessage.trim());
             }
 
             try {
                 resolve(openpgp.decryptSessionKey(key, _encMessage).then(function(data) {
-                    if(data.key.length !== 32) {
+                    if (data.key.length !== 32) {
                         throw new Error('Invalid session key length');
-                    }
-                    else {
+                    } else {
                         return data;
                     }
                 }));
-            }
-            catch(err) {
-                if(err.message == 'CFB decrypt: invalid key') {
+            } catch (err) {
+                if (err.message == 'CFB decrypt: invalid key') {
                     return reject(err.message); //Bad password, reject without Error object
                 }
                 reject(err);
@@ -276,21 +290,20 @@ var pmcrypto = (function () {
 
     function decryptPrivateKey(prKey, prKeyPassCode) {
 
-        return new Promise(function (resolve, reject) {
-            if(prKey === undefined  || prKey === '') {
+        return new Promise(function(resolve, reject) {
+            if (prKey === undefined || prKey === '') {
                 return reject(new Error('Missing private key'));
             }
-            if(prKeyPassCode === undefined || prKeyPassCode === '') {
+            if (prKeyPassCode === undefined || prKeyPassCode === '') {
                 return reject(new Error('Missing private key passcode'));
             }
 
             keys = getKeys(prKey);
-            if(keys instanceof Error) return reject(keys);
+            if (keys instanceof Error) return reject(keys);
 
-            if(keys[0].decrypt(prKeyPassCode)) {
+            if (keys[0].decrypt(prKeyPassCode)) {
                 resolve(keys[0]);
-            }
-            else reject('Private key decryption failed'); // Do NOT make this an Error object
+            } else reject('Private key decryption failed'); // Do NOT make this an Error object
         });
     }
 
@@ -303,31 +316,28 @@ var pmcrypto = (function () {
 
     function getNewEncPrivateKey(prKey, oldMailPwd, newMailPwd) {
 
-        if(prKey === undefined) {
+        if (prKey === undefined) {
             return new Error('Missing private key.');
-        }
-        else if(oldMailPwd === undefined) {
+        } else if (oldMailPwd === undefined) {
             return new Error('Missing old Mailbox Password.');
-        }
-        else if(newMailPwd === undefined) {
+        } else if (newMailPwd === undefined) {
             return new Error('Missing new Mailbox Password.');
         }
         var _prKey = openpgp.key.readArmored(prKey).keys[0];
-        if(_prKey === undefined) {
+        if (_prKey === undefined) {
             return new Error('Cant read PRK.');
         }
         var ok = _prKey.decrypt(oldMailPwd);
-        if(ok) {
+        if (ok) {
             _prKey.primaryKey.encrypt(newMailPwd);
             _prKey.subKeys[0].subKey.encrypt(newMailPwd);
             return _prKey.armor();
-        }
-        else return -1;
+        } else return -1;
     }
 
     function binaryStringToArray(str) {
         var bytes = new Uint8Array(str.length);
-        for (var i=0; i<str.length; i++) {
+        for (var i = 0; i < str.length; i++) {
             bytes[i] = str.charCodeAt(i);
         }
         return bytes;
@@ -336,7 +346,7 @@ var pmcrypto = (function () {
     function arrayToBinaryString(arr) {
         var result = [];
         for (var i = 0; i < arr.length; i++) {
-          result[i] = String.fromCharCode(arr[i]);
+            result[i] = String.fromCharCode(arr[i]);
         }
         return result.join('');
     }
@@ -388,5 +398,5 @@ var pmcrypto = (function () {
 
 //node.js
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = pmcrypto;
+    module.exports = pmcrypto;
 }

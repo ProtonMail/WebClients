@@ -67,7 +67,7 @@ angular.module("proton", [
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {     
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         setTimeout(function() {
             $('.panel-body input').eq(0).focus();
         }, 200);
@@ -121,7 +121,7 @@ angular.module("proton", [
             event.preventDefault();
             $state.go('secured.inbox');
         }
-        
+
         else if (isLogin || isSupport || isAccount || isSignup) {
             return; // no need to redirect
         }
@@ -130,7 +130,7 @@ angular.module("proton", [
         if (!!!authentication.isLoggedIn()) {
             event.preventDefault(); // stop current execution
             $state.go('login'); // go to login
-        }    
+        }
     });
 })
 
@@ -222,6 +222,15 @@ angular.module("proton", [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
+})
+
+//
+// Constants definition
+//
+.constant('CONSTANTS', {
+    ATTACHMENT_SIZE_LIMIT: 15, // MB
+    ATTACHMENT_NUMBER_LIMIT: 50,
+    MAX_TITLE_LENGTH: 250
 })
 
 .config(function(authenticationProvider) {

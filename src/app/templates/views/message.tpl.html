@@ -43,12 +43,14 @@
     </ul>
 </div>
 <!--/.message-head-->
-<ul ng-if="message.AttachmentIDList.length" class="attachments">
-    <li ng-repeat="attachment in message.AttachmentIDList">
-        <i class="fa fa-paperclip"></i>
-        <a href="" ng-click="downloadAttachment(attachment)">{{ attachment.FileName }}</a>
-    </li>
-</ul>
+<div class="col-md-12">
+    <ul ng-if="message.AttachmentIDList.length" class="attachments">
+        <li ng-repeat="attachment in message.AttachmentIDList">
+            <i class="fa fa-paperclip"></i>
+            <a href="" ng-click="downloadAttachment(attachment)"><strong>{{ attachment.FileName }}</strong></a> <em>{{attachment.FileSize | humanSize}}</em>
+        </li>
+    </ul>
+</div>
 <div class="col-md-12">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
         <a href="" ng-click="message.toggleImages()">
@@ -60,19 +62,13 @@
 <div id="message-body">
     <iframe src="" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html' && message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups"></iframe>
     <code ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></code>
-    <hr />
-    <div class="col-md-12 form-group">
-        <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
-    </div>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong>Decryption error</strong>
         <br> Decryption of this message's encryption content failed.
     </div>
-</div>
-<div id="message-attachments" ng-show="message.AttachmentIDList.length > 0">
-    <strong>Attachments:</strong> {{message.AttachmentIDList.length}} <span ng-show="message.AttachmentIDList.length === 1">file</span><span ng-hide="message.AttachmentIDList.length === 1">files</span> ({{sizeAttachments() | humanSize}})
-    <div class="attachment" ng-repeat="attachment in message.AttachmentIDList">
-        {{attachment.FileName}} - {{attachment.MIMEType}} - {{attachment.FileSize | humanSize}} - <a href="" ng-click="download(attachment)">Download</a>
+    <hr />
+    <div class="col-md-12 form-group">
+        <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
     </div>
 </div>

@@ -118,6 +118,7 @@ angular.module("proton.models", [
       },
       get: {
         method: "get",
+        url: authentication.baseURL + "/messages/:MessageID",
         transformResponse: getFromJSONResponse()
       },
       patch: {
@@ -159,6 +160,11 @@ angular.module("proton.models", [
           return angular.fromJson(data);
         },
         url: authentication.baseURL + "/label"
+      },
+      // Apply labels on messages
+      apply: {
+        method: 'post',
+        url: authentication.baseURL + "/labels/apply"
       }
     }
   );
@@ -438,8 +444,8 @@ angular.module("proton.models", [
 .factory("Label", function($resource, $injector) {
   var authentication = $injector.get("authentication");
   return $resource(
-    authentication.baseURL + "/labels",
-    authentication.params(),
+    authentication.baseURL + "/labels/:LabelID",
+    authentication.params({ LabelID: "@LabelID" }),
     {
       // Get user's labels
       get: {
@@ -451,6 +457,21 @@ angular.module("proton.models", [
       messages: {
         method: 'get',
         isArray: false,
+        url: authentication.baseURL + "/label"
+      },
+      // Create a new label
+      create: {
+        method: 'post',
+        url: authentication.baseURL + "/labels/create"
+      },
+      // Edit label
+      edit: {
+        method: 'put',
+        url: authentication.baseURL + "/labels/edit"
+      },
+      // Delete label
+      delete: {
+        method: 'delete',
         url: authentication.baseURL + "/label"
       }
     }

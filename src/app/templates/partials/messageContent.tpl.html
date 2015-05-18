@@ -7,16 +7,16 @@
     font-size: 14px;
     line-height: 1.4rem;
     font-weight: 400;
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;  
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight:400;
     margin: 0;
   }
-  img { 
-    max-width: 100%; 
+  img {
+    max-width: 100%;
   }
   td, th { font-size: .9rem; padding: 0 .25rem}
   @media print {
     td, th { font-size: 1rem;}
   }
 </style></head>
-<div style="padding: 1rem;" ng-bind-html="message.clearTextBody()"></div>
+<div style="padding: 1rem;" id="content" ng-bind-html="message.clearTextBody()"></div>

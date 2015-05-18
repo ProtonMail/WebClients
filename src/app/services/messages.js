@@ -116,10 +116,12 @@ angular.module("proton.messages", [])
     },
     get: function (id) {
       var msg = cachedMessages.get(id);
+
       if (!msg) {
         msg = Message.get({MessageID: id});
         cachedMessages.put(id, msg);
       }
+
       return msg;
     }
   });

@@ -24,17 +24,16 @@
 
 ul.attachments {
     padding: 0;
-    margin: 10px;
+    margin: 0.5em;
 
     li {
       list-style: none;
       display: inline-block;
       line-height: 18px;
-      margin: 4px 0 5px 5px;
+      margin: 4px 5px 5px 0;
       padding: 4px 8px 6px 8px;
-      border-radius: 3px;
+      border-radius: $border-radius-base;
       background-color: #ddd;
-      font-weight: bold;
 
       a {
         padding: 3px;
@@ -68,14 +67,14 @@ ul.attachments {
     line-height: 34px;
     font-size: 140%;
     .padlock {
-      position: absolute;      
+      position: absolute;
       top: 40px;
       left: 22px;
       cursor: default;
       i.fa {
         font-size: inherit;
         margin-right: 0.5rem;
-      }      
+      }
     }
     .star {
       position: absolute;

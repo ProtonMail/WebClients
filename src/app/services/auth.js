@@ -77,6 +77,7 @@ angular.module("proton.authentication", [
             $timeout,
             $injector,
             pmcw,
+            localStorageService,
             errorReporter,
             notify
         ) {
@@ -98,13 +99,19 @@ angular.module("proton.authentication", [
                     return string;
                 },
 
+                getPrivateKey: function() {
+                    var pw = pmcw.decode_utf8_base64(localStorageService.get('protonmail_pw'));
+
+                    return pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw);
+                },
+
                 loginWithCredentials: function(creds) {
                     var q = $q.defer();
                     if (!creds.username || !creds.password) {
                         q.reject({
                             message: "Username and password are required to login"
                         });
-                    } 
+                    }
                     else {
                         delete $http.defaults.headers.common.Accept;
                         $http.post(baseURL + "/auth/auth",
@@ -249,7 +256,7 @@ angular.module("proton.authentication", [
                                         function() {
                                         }
                                     );
-                                }, 
+                                },
                                 function(rejection) {
                                     req.reject({
                                         message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."

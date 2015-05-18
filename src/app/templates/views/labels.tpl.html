@@ -1,10 +1,8 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-
     <div class="form-group">
         <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> Add Label</button>
     </div>
-
     <table class="table table-middle table-hover table-pm">
         <thead>
             <tr>
@@ -14,12 +12,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr ng-repeat="label in labels">
                 <td>
-                    <span class="label label-pm"><i class="fa fa-tag"></i> Proton</span>
+                    <span class="label label-pm" style="background-color: {{ label.LabelColor }}"><i class="fa fa-tag"></i> {{ label.LabelName }}</span>
                 </td>
                 <td>
-                    <toggle-switch ng-model="label.display" on-label="Show" off-label="Hide"></toggle-switch>
+                    <toggle-switch ng-model="!!!label.Display" on-label="Show" off-label="Hide"></toggle-switch>
                 </td>
                 <td>
                     <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
@@ -32,5 +30,4 @@
             </tr>
         </tbody>
     </table>
-
 </div>

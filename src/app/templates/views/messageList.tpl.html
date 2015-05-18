@@ -36,7 +36,7 @@
         <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>
         <i class="fa fa-paperclip" ng-show="message.AttachmentIDList.length"></i>
         <h4>{{ message.MessageTitle }}</h4>
-        <span class="message-label">Sample Label Title</span>
+        <span ng-repeat="label in message.Labels" class="label label-pm" style="background-color: {{ label.LabelColor }}">{{ label.LabelName }}</span>
       </td>
 
       <td class="size">
