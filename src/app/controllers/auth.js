@@ -55,8 +55,7 @@ angular.module("proton.controllers.Auth", [
         var mailboxPassword = this.mailboxPassword;
         clearErrors();
         networkActivityTracker.track(
-            authentication
-            .unlockWithPassword(mailboxPassword)
+            authentication.unlockWithPassword(mailboxPassword)
             .then(
                 function() {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
@@ -67,6 +66,9 @@ angular.module("proton.controllers.Auth", [
                     $scope.error = err;
                 }
             )
+            .catch(function(err) {
+                alert(err);
+            })
         );
     };
 
