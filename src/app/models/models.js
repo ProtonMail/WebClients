@@ -163,7 +163,7 @@ angular.module("proton.models", [
       },
       // Apply labels on messages
       apply: {
-        method: 'post',
+        method: 'put',
         url: authentication.baseURL + "/labels/apply"
       }
     }

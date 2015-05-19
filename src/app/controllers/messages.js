@@ -13,6 +13,7 @@ angular.module("proton.controllers.Messages", [
     messages,
     messageCount,
     messageCache,
+    Message,
     networkActivityTracker
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
@@ -213,10 +214,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.toggleLabel = function(label) {
-        if (label.mode === '' || label.mode === 'minus') {
-            label.mode = 'check';
+        if (label.mode === 0 || label.mode === 2) {
+            label.mode = 1;
         } else {
-            label.mode = '';
+            label.mode = 0;
         }
     };
 
@@ -243,11 +244,11 @@ angular.module("proton.controllers.Messages", [
             }).length;
 
             if (count === messages.length) {
-                label.mode = 'check';
+                label.mode = 1;
             } else if (count > 0) {
-                label.mode = 'minus';
+                label.mode = 2;
             } else {
-                label.mode = '';
+                label.mode = 0;
             }
         })
 
@@ -262,15 +263,20 @@ angular.module("proton.controllers.Messages", [
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
-    $scope.saveLabels = function() {
-        // TODO
+    $scope.applyLabels = function() {
         Message.apply({
-            messages: _.map($scope.selectedMessages(), function(message) {
-                return message.MessageID
+            messages: _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; }),
+            labels_actions: _.map(_.reject($scope.labels, function(label) {
+                return label.mode === 2;
+            }), function(label) {
+                return {
+                    id: label.LabelID,
+                    action: label.mode
+                };
             }),
-            labels_actions: []
+            archive: ($scope.alsoArchived)?'1':'0'
         }).$promise.then(function(result) {
-            $scope.closeLabels();
+            $state.go($state.current, {}, {reload: true}); // force reload page
         }, function(result) {
             $log.error(result);
         });
