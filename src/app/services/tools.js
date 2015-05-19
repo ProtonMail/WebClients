@@ -111,7 +111,7 @@ angular.module("proton.tools", [])
         }
 
         function is_email_address_PM(email) {
-            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com'; // TODO ask feng to get that
+            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com,protonmail.net'; // TODO ask feng to get that
 
             protonmail_compose_emailDomain = protonmail_compose_emailDomain.split(",");
             email = email.trim();
@@ -122,7 +122,7 @@ angular.module("proton.tools", [])
                 parts[1] = parts[1].toLowerCase();
             }
 
-            if (protonmail_compose_emailDomain.indexOf(parts[1]) > -1) {
+            if (protonmail_compose_emailDomain.indexOf(parts[1]) !== -1) {
                 return true;
             } else {
                 return false;

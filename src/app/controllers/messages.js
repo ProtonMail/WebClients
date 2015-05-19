@@ -1055,7 +1055,7 @@ angular.module("proton.controllers.Messages", [
                                 }));
                             }
 
-                            if (!isOutside && message.IsEncrypted === 0) {
+                            if (!isOutside && newMessage.IsEncrypted === 0) {
                                 if (!tools.isEmailAddressPM(email)) {
                                     isOutside = true;
                                 }
