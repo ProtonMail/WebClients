@@ -471,8 +471,7 @@ angular.module("proton.models", [
       },
       // Delete label
       delete: {
-        method: 'delete',
-        url: authentication.baseURL + "/label"
+        method: 'delete'
       }
     }
   );
