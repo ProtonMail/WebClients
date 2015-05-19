@@ -315,12 +315,17 @@ angular.module("proton.models", [
       }
 
       // Images
-      if(angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
-        this.imagesHidden = true;
-        body = tools.breakImages(body);
+      if(this.containsImage === false || body.match('<img') === null) {
+        this.containsImage = false;
       } else {
-        this.imagesHidden = false;
-        body = tools.fixImages(body);
+        this.containsImage = true;
+        if(angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
+          this.imagesHidden = true;
+          body = tools.breakImages(body);
+        } else {
+          this.imagesHidden = false;
+          body = tools.fixImages(body);
+        }
       }
 
       return body;

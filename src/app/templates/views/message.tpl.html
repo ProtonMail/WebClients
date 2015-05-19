@@ -68,7 +68,7 @@
         </li>
     </ul>
 </div>
-<div class="col-md-12">
+<div class="col-md-12" ng-show="message.containsImage === true">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
         <a href="" ng-click="message.toggleImages()">
             <span ng-show="!!message.imagesHidden">Show Images</span>
