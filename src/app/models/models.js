@@ -1,6 +1,7 @@
 var getFromJSONResponse = function (name) {
   return function(data) {
     var obj;
+
     try {
       obj = JSON.parse(data);
     } catch(err) {
@@ -11,6 +12,7 @@ var getFromJSONResponse = function (name) {
     if (!obj.error && name) {
       return obj[name];
     }
+
     return obj;
   };
 };
@@ -97,7 +99,7 @@ angular.module("proton.models", [
       query: {
         method: "get",
         isArray: true,
-        transformResponse: getFromJSONResponse('Messages')
+        transformResponse: getFromJSONResponse('Messages', true)
       },
       search: {
         method: "get",

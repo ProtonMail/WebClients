@@ -28,17 +28,34 @@
         {{ message.MessageTitle }}
       </h1>
     <ul class="infos">
-        <li><strong>From</strong>
+        <li>
+            <strong>From</strong>
             <span btf-markdown="message.Sender | contrast:'<'"></span>
         </li>
-        <li><strong>To</strong>
-            <span btf-markdown="message.RecipientList | contrast:'<'"></span>
+        <li>
+            <strong>To</strong>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.RecipientList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
-        <li ng-if="message.CCList"><strong>CC</strong>
+        <li ng-if="message.CCList">
+            <strong>CC</strong>
             <span btf-markdown="message.CCList | contrast:'<'"></span>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.CCList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
-        <li ng-if="message.BCCList"><strong>BCC</strong>
-            <span btf-markdown="message.BCCList | contrast:'<'"></span>
+        <li ng-if="message.BCCList">
+            <strong>BCC</strong>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.BCCList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

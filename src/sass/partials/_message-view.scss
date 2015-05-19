@@ -1,227 +1,225 @@
 @mixin head-link {
-  @include transition(color 0.07s ease-in-out 0);
-
-  color: rgba(0,0,0,.25);
-  &:hover {
-    color: rgba(0,0,0,.5);
-  }
+    @include transition(color 0.07s ease-in-out 0);
+    color: rgba(0, 0, 0, .25);
+    &:hover {
+        color: rgba(0, 0, 0, .5);
+    }
 }
 
 #headerCode {
-  border-radius: 0;
-  border: none;
-  box-shadow: inset 0 -1px #e5e5e5;
-  padding: 15px;
-  color: #000;
-  position: relative;
-  z-index: 44;
-  &::selection {
-    color: #fff;
-    background: #333;
-    text-shadow: 0 1px 0 #000;
-  }
+    border-radius: 0;
+    border: none;
+    box-shadow: inset 0 -1px #e5e5e5;
+    padding: 15px;
+    color: #000;
+    position: relative;
+    z-index: 44;
+    &::selection {
+        color: #fff;
+        background: #333;
+        text-shadow: 0 1px 0 #000;
+    }
 }
 
 ul.attachments {
     padding: 0;
     margin: 0.5em;
-
     li {
-      list-style: none;
-      display: inline-block;
-      line-height: 18px;
-      margin: 4px 5px 5px 0;
-      padding: 4px 8px 6px 8px;
-      border-radius: $border-radius-base;
-      background-color: #ddd;
-
-      a {
-        padding: 3px;
-      }
-      .fa-paperclip {
-        margin-right: 3px;
-      }
+        list-style: none;
+        display: inline-block;
+        line-height: 18px;
+        margin: 4px 5px 5px 0;
+        padding: 4px 8px 6px 8px;
+        border-radius: $border-radius-base;
+        background-color: #ddd;
+        a {
+            padding: 3px;
+        }
+        .fa-paperclip {
+            margin-right: 3px;
+        }
     }
-  }
+}
 
 #main .message-head {
-  padding: 10px 20px;
-  position: relative;
-  box-shadow: inset 0 -1px #e5e5e5;
-  background-color: #f0f0f0;
-  padding-left: 6rem;
-  @include transition(all 0.2s ease-in-out);
-
-  &.unread h1 {
-    font-weight: 700;
-    color: #000;
-  }
-
-  &.starred {
-    background: $starred;
-  }
-
-  h1 {
-    margin: 0;
-    text-align: left;
-    line-height: 34px;
-    font-size: 140%;
-    .padlock {
-      position: absolute;
-      top: 40px;
-      left: 22px;
-      cursor: default;
-      i.fa {
-        font-size: inherit;
-        margin-right: 0.5rem;
-      }
-    }
-    .star {
-      position: absolute;
-      top: 10px;
-      left: 0;
-      line-height: 34px;
-      display: inline-block;
-      i.fa {
-        @include head-link;
-        font-size: inherit;
-        margin-right: 0.5rem;
-      }
-      &.star {
-        left: 22px;
-      }
-      i.fa-lock {color: $dark-purple}
-      i.fa-star-o { color: #bbb; }
-      i.fa-star,
-      i.fa-star:hover {   color: orange; }
-    }
-  }
-
-  .message-actions {
-    margin-right: 1rem;
-
-    a {
-      // @include head-link;
-
-      margin-left: .25rem;
-      display: inline-block;
-      color: #666;
-
-      &:hover {
-        text-decoration: none;
-        color: #000;
-      }
-      &:active {
-        background: #e5e5e5 !important;
-        border-color: #ccc !important;
-        color: #4d4d4d !important;
-        opacity: .65;
-        box-shadow: none;
-      }
-    }
-  }
-
-  div.toggle-head {
-    display: block;
-    position: absolute;
-    text-align: center;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 100%;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid #e4e4e4;
-    bottom: -1rem;
-    left: 50%;
-    margin-left: -1rem;
-    margin-top: 1px;
-    cursor: pointer;
-    border: 1px solid #e5e5e5;
-    box-sizing: content-box;
-
-    @include transition(all 0.1s ease-in-out);
-
-    & {
-      color: #ccc;
-      @include linear-gradient(#fff, #e5e5e5);
-    }
-
-    &:hover {
-      color: #999;
-      background-color: white;
-    }
-
-    i {
-      line-height: 2rem;
-
-      &.fa {
-        line-height: 2rem;
-        text-align: center;
-      }
-    }
-  }
-
-  ul.infos {
-    padding: 0;
-    margin-top: 0;
-    margin-left: 0;
-
-    li {
-      list-style: none;
-      margin-top: 0.5rem;
-    }
-
-    strong {
-      display: inline-block;
-      width: 4em;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 90%;
-      color: rgba(0,0,0,.25);
-    }
-
-    span p {
-      display: inline-block;
-      color: rgba(0,0,0,.25);
-      margin: 0;
-
-      em {
-        font-style: normal;
-        color: black;
-      }
-    }
-  }
-
-  pre {
-    margin: -15px -15px 15px;
-    padding: 1.5rem 15px;
-    background-color: #f5f5f5;
-    color: #000;
-    border: 0;
+    padding: 10px 20px;
+    position: relative;
     box-shadow: inset 0 -1px #e5e5e5;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: monospace,serif;
-    font-size: 1em;
-    line-height: 1.75em;
-    border-radius: 0;
-    border-width: 1px 0 0 0;
-  }
+    background-color: #f0f0f0;
+    padding-left: 6rem;
+    @include transition(all 0.2s ease-in-out);
+    &.unread h1 {
+        font-weight: 700;
+        color: #000;
+    }
+    &.starred {
+        background: $starred;
+    }
+    h1 {
+        margin: 0;
+        text-align: left;
+        line-height: 34px;
+        font-size: 140%;
+        .padlock {
+            position: absolute;
+            top: 40px;
+            left: 22px;
+            cursor: default;
+            i.fa {
+                font-size: inherit;
+                margin-right: 0.5rem;
+            }
+        }
+        .star {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            line-height: 34px;
+            display: inline-block;
+            i.fa {
+                @include head-link;
+                font-size: inherit;
+                margin-right: 0.5rem;
+            }
+            &.star {
+                left: 22px;
+            }
+            i.fa-lock {
+                color: $dark-purple
+            }
+            i.fa-star-o {
+                color: #bbb;
+            }
+            i.fa-star,
+            i.fa-star:hover {
+                color: orange;
+            }
+        }
+    }
+    .message-actions {
+        margin-right: 1rem;
+        a {
+            // @include head-link;
+            margin-left: .25rem;
+            display: inline-block;
+            color: #666;
+            &:hover {
+                text-decoration: none;
+                color: #000;
+            }
+            &:active {
+                background: #e5e5e5 !important;
+                border-color: #ccc !important;
+                color: #4d4d4d !important;
+                opacity: .65;
+                box-shadow: none;
+            }
+        }
+    }
+    div.toggle-head {
+        display: block;
+        position: absolute;
+        text-align: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid #e4e4e4;
+        bottom: -1rem;
+        left: 50%;
+        margin-left: -1rem;
+        margin-top: 1px;
+        cursor: pointer;
+        border: 1px solid #e5e5e5;
+        box-sizing: content-box;
+        @include transition(all 0.1s ease-in-out);
+        & {
+            color: #ccc;
+            @include linear-gradient(#fff, #e5e5e5);
+        }
+        &:hover {
+            color: #999;
+            background-color: white;
+        }
+        i {
+            line-height: 2rem;
+            &.fa {
+                line-height: 2rem;
+                text-align: center;
+            }
+        }
+    }
+    ul.infos {
+        padding: 0;
+        margin-top: 0;
+        margin-left: 0;
+        .email {
+            color: #000;
+            text-decoration: none;
+            border-radius: $border-radius-base;
+            border: 1px solid transparent;
+            transition: all .5s ease;
+            background: rgba(0, 0, 0, .1);
+            padding: 0 5px;
+            &:hover {
+              background: #669;
+              border-color: #336;
+              color: #fff;
+            }
+        }
+        li {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        strong {
+            display: inline-block;
+            width: 4em;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 90%;
+            color: rgba(0, 0, 0, .25);
+        }
+        span p {
+            display: inline-block;
+            color: rgba(0, 0, 0, .25);
+            margin: 0;
+            em {
+                font-style: normal;
+                color: black;
+            }
+        }
+    }
+    pre {
+        margin: -15px -15px 15px;
+        padding: 1.5rem 15px;
+        background-color: #f5f5f5;
+        color: #000;
+        border: 0;
+        box-shadow: inset 0 -1px #e5e5e5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: monospace, serif;
+        font-size: 1em;
+        line-height: 1.75em;
+        border-radius: 0;
+        border-width: 1px 0 0 0;
+    }
 }
 
 .wysihtml5-sandbox {
-  min-height: 12rem;
+    min-height: 12rem;
 }
 
 #message-body {
-  iframe {
-    border: 0;
-    width: 100%;
-  }
-  .alert  {
-    margin: 2em 1em;
-    span.fa {
-      font-size: 290%;
-      display: block;
+    iframe {
+        border: 0;
+        width: 100%;
     }
-  }
+    .alert {
+        margin: 2em 1em;
+        span.fa {
+            font-size: 290%;
+            display: block;
+        }
+    }
 }

@@ -681,6 +681,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.initMessage = function(message) {
+        if($scope.messages.length === CONSTANTS.MAX_NUMBER_COMPOSER) {
+            notify('Maximum composer reached');
+            return;
+        }
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.clearTextBody(message);
@@ -1209,14 +1213,31 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     Message,
     message,
+    tools,
     attachments,
     pmcw
 ) {
     $scope.message = message;
     $rootScope.pageName = message.MessageTitle;
+    $scope.tools = tools;
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
+    };
+
+    $scope.sendMessageTo = function(email) {
+        var message = new Message();
+
+        _.defaults(message, {
+            RecipientList: email,
+            CCList: '',
+            BCCList: '',
+            MessageTitle: '',
+            PasswordHint: '',
+            Attachments: []
+        });
+
+        $rootScope.$broadcast('loadMessage', message);
     };
 
     function buildMessage(base, action) {
@@ -1246,25 +1267,16 @@ angular.module("proton.controllers.Messages", [
         return message;
     }
 
-    $scope.reply = function(original) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'reply');
-
-        $rootScope.$broadcast('loadMessage', builtMessage);
+    $scope.reply = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'reply'));
     };
 
-    $scope.replyAll = function(message) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'replyall');
-
-        $rootScope.$broadcast('loadMessage', message);
+    $scope.replyAll = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'replyall'));
     };
 
-    $scope.forward = function(message) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'forward');
-
-        $rootScope.$broadcast('loadMessage', message);
+    $scope.forward = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'forward'));
     };
 
     $scope.goToMessageList = function() {
