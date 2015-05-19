@@ -284,6 +284,9 @@ angular.module("proton.authentication", [
                     var promise = auth.fetchUserInfo();
                     return promise.then(
                         function(user) {
+                            if (user.DisplayName=='') {
+                                user.DisplayName = user.addresses[0].Email;
+                            }
                             $rootScope.isLocked = true;
                             return user;
                         },

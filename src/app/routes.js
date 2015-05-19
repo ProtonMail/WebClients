@@ -210,11 +210,9 @@ angular.module("proton.routes", [
             user: function(authentication, $rootScope, $state) {
                 return authentication.fetchUserInfo()
                 .then(
-                    function() {
+                    function(user) {
                         $rootScope.isLoggedIn = true;
-                        $rootScope.pubKey = authentication.user.PublicKey;
-                        $rootScope.user = authentication.user;
-                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                        $rootScope.User = user;
                         if ($rootScope.pubKey === 'to be modified') {
                             $state.go('step2');
                             return;

@@ -1,11 +1,9 @@
 <div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar" class="hidden-xs"></div>
 
-<ng-include src="'templates/partials/header.tpl.html'"></ng-include>
-
 <div id="main" class="secure">
-	<div ui-view="content"></div>
+	<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
+	<div ui-view="content" id="content"></div>
+	<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>
 </div>
 
 <ng-include src="'templates/partials/composer.tpl.html'"></ng-include>
-
-<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>

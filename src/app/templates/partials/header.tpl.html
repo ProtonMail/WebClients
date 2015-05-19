@@ -30,7 +30,7 @@
                     <!-- /input-group -->
                 </form>
                 <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState" ng-click="openSearchModal()"><span class="fa fa-search"></span></a>
-                <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="user.DisplayName"></em></p>
+                <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="User.DisplayName"></em></p>
                 <div error-reporter class="alert alert-danger centered ng-hide">
                     <button type="button" class="close" ng-click="errorReporter.active = false">
                         <span aria-hidden="true">&times;</span>

@@ -1358,7 +1358,8 @@ angular.module("proton.controllers.Messages", [
 
         // Put the rendered template's content in the iframe's body
         $(iframeDocument).find("body").empty().append(content);
-        $(iframeDocument).find('html').css('overflowX', 'hidden');
+        $(iframeDocument).find('html').css('overflowY', 'hidden');
+        $(iframeDocument).find('html').css('overflowX', 'auto');
     });
 
     // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
