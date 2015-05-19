@@ -263,9 +263,15 @@ angular.module("proton.controllers.Messages", [
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
-    $scope.applyLabels = function() {
+    $scope.saveLabels = function() {
+        $scope.applyLabels();
+    };
+
+    $scope.applyLabels = function(messages) {
+        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+
         Message.apply({
-            messages: _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; }),
+            messages: messages,
             labels_actions: _.map(_.reject($scope.labels, function(label) {
                 return label.mode === 2;
             }), function(label) {
@@ -1223,6 +1229,24 @@ angular.module("proton.controllers.Messages", [
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
+    };
+
+    $scope.detachLabel = function(label) {
+        Message.apply({
+            messages: [{id: message.MessageID}],
+            labels_actions: [{id: label.LabelID, action: '0'}],
+            archive: '0'
+        }).$promise.then(function(result) {
+            var index = message.Labels.indexOf(label);
+
+            message.Labels.splice(index, 1);
+        }, function(result) {
+            $log.error(result);
+        });
+    };
+
+    $scope.saveLabels = function() {
+        $scope.applyLabels([{id: message.MessageID}]);
     };
 
     $scope.sendMessageTo = function(email) {

@@ -13,24 +13,24 @@
     </ul>
     <ul class="list-group" id="topMenu">
         <li class="list-group-item" class="current-li" data-unread="0">
-            <a class="btn" ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.inbox" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                 <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">Inbox</span>
                 <span class="label hidden-xs hidden-sm" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span>
             </a>
         </li>
         <li class="list-group-item" data-unread="0">
-            <a class="btn" ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.drafts" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
                 <span class="fa fa-file-text-o"></span> <span class="hidden-xs hidden-sm">Drafts</span>
                 <span class="label hidden-xs hidden-sm" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span>
             </a>
         </li>
         <li class="list-group-item" data-unread="0">
-            <a class="btn" ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.sent" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.sent.**' | includedByState) }">
                 <span class="fa fa-sign-out"></span> <span class="hidden-xs hidden-sm">Sent</span>
             </a>
         </li>
         <li class="list-group-item">
-            <a class="btn" ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.starred" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.starred.**' | includedByState) }">
                 <span class="fa fa-star-o"></span> <span class="hidden-xs hidden-sm">Starred</span>
             </a>
         </li>
@@ -38,17 +38,17 @@
     <div class="divider"></div>
     <ul class="list-group">
         <li class="list-group-item">
-            <a class="btn" ui-sref="secured.archive" ng-class="{ active: ('secured.archive.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.archive" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.archive.**' | includedByState) }">
                 <span class="fa fa-archive"></span> <span class="hidden-xs hidden-sm">Archive</span>
             </a>
         </li>
         <li class="list-group-item">
-            <a class="btn" ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.spam" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.spam.**' | includedByState) }">
                 <span class="fa fa-bug"></span> <span class="hidden-xs hidden-sm">Spam</span>
             </a>
         </li>
         <li class="list-group-item" data-unread="0">
-            <a class="btn" ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }">
+            <a class="btn" ui-sref="secured.trash" ui-sref-opts="{reload: true}" ng-class="{ active: ('secured.trash.**' | includedByState) }">
                 <span class="fa fa-trash-o"></span> <span class="hidden-xs hidden-sm">Trash</span>
             </a>
         </li>

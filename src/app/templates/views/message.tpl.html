@@ -26,11 +26,15 @@
             title="{{ getMessageEncryptionType(message) }}"></i>
         </span>
         {{ message.MessageTitle }}
+        <span class="label label-pm" style="background-color: {{label.LabelColor}}" ng-repeat="label in message.Labels">
+            {{label.LabelName}} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times text-muted"></i></a>
+        </span>
       </h1>
     <ul class="infos">
         <li>
             <strong>From</strong>
-            <span btf-markdown="message.Sender | contrast:'<'"></span>
+            <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.Sender)"></i>
+            <b>{{message.SenderName}}</b> <{{message.Sender}}>
         </li>
         <li>
             <strong>To</strong>
