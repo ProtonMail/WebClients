@@ -12,8 +12,6 @@
   padding-bottom: 45px;
   overflow-y: auto;
   overflow-x: hidden;
-  @include transition(width 0.2s ease-in-out);
-
   em {
     font-style: normal;
   }

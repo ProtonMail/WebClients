@@ -1,5 +1,5 @@
 @media (max-width: 1199px) {
-	#main, .secure #navbar, .secure #footer {
+	#main {
 		margin-left: ($sidebar-width)*.9;
 	}
 	#sidebar {
@@ -15,7 +15,7 @@
 	.message-toolbar > ul > li > a {
 		padding: 0 10px;
 	}
-	#main, .secure #navbar, .secure #footer {
+	#main {
 		margin-left: ($sidebar-width)*.3;
 	}
 	#sidebar {

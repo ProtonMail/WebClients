@@ -53,11 +53,21 @@ html, body {
   height: 100%;
 }
 .secure #main,
-#main.secure {
+#main.secure,
+#body {
   display: flex;
   min-height: 100vh;
   flex-direction: column; 
   #content {
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+body.login,
+body.locked {
+ .container-fluid {
+    margin: 0;
     flex: 1;
   }
 }
