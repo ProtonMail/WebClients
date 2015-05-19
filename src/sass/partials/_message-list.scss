@@ -1,147 +1,138 @@
 table.message-list.mobile tr {
-  h4 {
-    font-size: 17px;
-  }
+    h4 {
+        font-size: 17px;
+    }
 }
 
 table.message-list {
-  border-bottom: none;
-  margin-bottom: 0;
-  table-layout: fixed; 
-
-  tbody td {
-    border-top: none;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  &.empty::after {
-    content: "Empty Mailbox";
-    position: absolute;
-    top: 82px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding-top: 8em;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 200%;
-    color: #ccc;
-    text-shadow: 2px 2px white;
-    background-color: #f8f8f8;
-  }
-
-  tr {
-    cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
-    color: rgba(0,0,0,.5);
-    background-color: #F2F2F2;
-
-    @include transition(all 0.2s ease-in-out);
-
-    h4 {
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
-      display: inline-block;
+    border-bottom: none;
+    margin-bottom: 0;
+    table-layout: fixed;
+    tbody td {
+        border-top: none;
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     }
-
-    td {
-      padding: 0 10px;
-      line-height: $row-height;
-      vertical-align: middle;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-
-    .message-label {
-      background: #c9c;
-      display: inline;
-      padding: .25rem .5rem;
-      font-size: 1.2rem;
-      margin-left: .5rem;
-    }
-
-    &.unread {
-      background: #fff;
-      h4 {
-        font-weight: bold;
-        color: #000;
-      }
-      .recipient {
-        color: rgba(0, 0, 0, 0.5);
-      }
-    }
-
-    &.starred {
-      background-color: $starred;
-    }
-
-    &.encrypted td { }
-
-    td.actions {
-      cursor: default;
-      padding-left: 15px;
-      width: 7.5rem;
-
-      span {
-        width: 1.5rem;
+    &.empty::after {
+        content: "Empty Mailbox";
+        position: absolute;
+        top: 82px;
+        bottom: 0;
+        left: 0;
+        right: 0;
         text-align: center;
-
-        &.fa-star,
-        &.fa-star-o {
-          font-size: 14px;
-          position: relative;
-          top: 1px;
+        padding-top: 8em;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 200%;
+        color: #ccc;
+        text-shadow: 2px 2px white;
+        background-color: #f8f8f8;
+    }
+    tr {
+        cursor: pointer;
+        font-size: 14px;
+        white-space: nowrap;
+        color: rgba(0, 0, 0, .5);
+        background-color: #F2F2F2;
+        @include transition(all 0.2s ease-in-out);
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            display: inline-block;
         }
-      }
-
-      .fa-unlock-alt, {       color: rgba(0, 0, 0, 0.25); position: relative; top: 1px; }
-      .fa-star-o {            color: rgba(0, 0, 0, 0.5); }
-      .fa-star {              color: orange; }
-      a:hover .fa-star-o {    color: #000; }
-      .fa-lock, {             color: #336; position: relative; top: 1px;}
-
-      .fa-unlock-alt,
-      .fa-lock {
-        margin-left: 2px;
-      }
-
-      .tooltip { font-weight: normal; }
+        td {
+            padding: 0 10px;
+            line-height: $row-height;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &.actions {
+                cursor: default;
+                padding-left: 15px;
+                width: 7.5rem;
+                span {
+                    width: 1.5rem;
+                    text-align: center;
+                    &.fa-star, &.fa-star-o {
+                        font-size: 14px;
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+                .fa-unlock-alt,
+                {
+                    color: rgba(0, 0, 0, 0.25);
+                    position: relative;
+                    top: 1px;
+                }
+                .fa-star-o {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+                .fa-star {
+                    color: orange;
+                }
+                a:hover .fa-star-o {
+                    color: #000;
+                }
+                .fa-lock,
+                {
+                    color: #336;
+                    position: relative;
+                    top: 1px;
+                }
+                .fa-unlock-alt,
+                .fa-lock {
+                    margin-left: 2px;
+                }
+                .tooltip {
+                    font-weight: normal;
+                }
+            }
+            &.recipient {
+                width: 10rem;
+                text-transform: capitalize;
+                .to {
+                    font-weight: normal;
+                    color: #999;
+                }
+            }
+            &.size,
+            &.when {
+                text-align: right;
+            }
+            &.size {
+                font-family: monospace;
+                width: 10rem;
+            }
+            &.when {
+                padding-right: 15px;
+                width: 12rem;
+            }
+            .label {
+              margin-right: 5px;
+            }
+        }
+        &.unread {
+            background: #fff;
+            h4 {
+                font-weight: bold;
+                color: #000;
+            }
+            .recipient {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        &.starred {
+            background-color: $starred;
+        }
+        &.encrypted td {}
+        i.fa-paperclip,
+        i.fa-clock-o {
+            float: right;
+            display: inline-block;
+            line-height: 32px;
+            height: 32px;
+        }
     }
-
-    td.recipient {
-      width: 10rem;
-      text-transform:capitalize;
-
-      .to {
-        font-weight: normal;
-        color: #999;
-      }
-    }
-
-    td.size,
-    td.when {
-      text-align: right;   
-    }
-    td.size {
-      font-family: monospace;
-      width: 10rem;
-    }
-    td.when {
-      padding-right: 15px;
-      width: 12rem;
-    }
-
-
-    i.fa-paperclip,
-    i.fa-clock-o {
-      float: right;
-      display: inline-block;
-      line-height: 32px;
-      height: 32px;
-    }
-
-  }
 }

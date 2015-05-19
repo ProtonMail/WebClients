@@ -7,7 +7,7 @@
             <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels">
                 <!-- <input type="checkbox" ng-model="label.selected" /> -->
                 <a href="" ng-click="toggleLabel(label)">
-                    <i class="fa" ng-class="{'fa-square': label.mode === '', 'fa-minus-square': label.mode === 'minus', 'fa-check-square': label.mode === 'check'}"></i>
+                    <i class="fa text-muted" ng-class="{'fa-square': label.mode === 0, 'fa-minus-square': label.mode === 2, 'fa-check-square': label.mode === 1}"></i>
                 </a>
                 <span class="label label-pm" style="background-color: {{label.LabelColor}}">
                     <i class="fa fa-tag"></i> {{label.LabelName}}
@@ -20,13 +20,13 @@
             </div>
             <div class="col-xs-6 text-right" ng-show="labels.length > 0">
                 <label for="">
-                    <input type="checkbox" /> also Archived
+                    <input type="checkbox" ng-model="alsoArchived" /> also Archived
                 </label>
             </div>
         </div>
     </div>
     <div class="modal-footer" ng-show="labels.length > 0">
         <a class="btn" ng-click="closeLabels()">Cancel</a>
-        <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()">Save</button>
+        <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()" ng-disabled="networkActivity.loading()">Save</button>
     </div>
 </div>

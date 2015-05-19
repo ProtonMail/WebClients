@@ -26,19 +26,40 @@
             title="{{ getMessageEncryptionType(message) }}"></i>
         </span>
         {{ message.MessageTitle }}
+        <span class="label label-pm" style="background-color: {{label.LabelColor}}" ng-repeat="label in message.Labels">
+            {{label.LabelName}} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times text-muted"></i></a>
+        </span>
       </h1>
     <ul class="infos">
-        <li><strong>From</strong>
-            <span btf-markdown="message.Sender | contrast:'<'"></span>
+        <li>
+            <strong>From</strong>
+            <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.Sender)"></i>
+            <b>{{message.SenderName}}</b> <{{message.Sender}}>
         </li>
-        <li><strong>To</strong>
-            <span btf-markdown="message.RecipientList | contrast:'<'"></span>
+        <li>
+            <strong>To</strong>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.RecipientList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
-        <li ng-if="message.CCList"><strong>CC</strong>
+        <li ng-if="message.CCList">
+            <strong>CC</strong>
             <span btf-markdown="message.CCList | contrast:'<'"></span>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.CCList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
-        <li ng-if="message.BCCList"><strong>BCC</strong>
-            <span btf-markdown="message.BCCList | contrast:'<'"></span>
+        <li ng-if="message.BCCList">
+            <strong>BCC</strong>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.BCCList.split(',')">
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>
@@ -51,7 +72,7 @@
         </li>
     </ul>
 </div>
-<div class="col-md-12">
+<div class="col-md-12" ng-show="message.containsImage === true">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
         <a href="" ng-click="message.toggleImages()">
             <span ng-show="!!message.imagesHidden">Show Images</span>

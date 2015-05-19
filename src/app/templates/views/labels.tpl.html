@@ -17,7 +17,7 @@
                     <span class="label label-pm" style="background-color: {{ label.LabelColor }}"><i class="fa fa-tag"></i> {{ label.LabelName }}</span>
                 </td>
                 <td>
-                    <toggle-switch ng-model="!!!label.Display" on-label="Show" off-label="Hide"></toggle-switch>
+                    <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="Show" off-label="Hide"></toggle-switch>
                 </td>
                 <td>
                     <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">

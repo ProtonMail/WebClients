@@ -31,6 +31,10 @@ html, body {
   vertical-align: middle;
 }
 
+.inline {
+  display: inline-block;
+}
+
 .mobileOnly {
   display: none;
 }
@@ -403,6 +407,10 @@ p {
     border-color: $light-purple;
   }
 
+  .dz-message {
+    margin: 4em 0;
+  }
+
   .dz-preview {
     margin: 10px;
   }
@@ -417,6 +425,9 @@ p {
 }
 
 .palette {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
   .color {
     cursor: pointer;
     border: 2px solid #ccc;
@@ -425,6 +436,7 @@ p {
     height: 35px;
     width: 35px;
     margin-right: 10px;
+    margin-bottom: 10px;
     text-align: center;
     line-height: 35px;
 

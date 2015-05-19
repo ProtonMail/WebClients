@@ -230,7 +230,8 @@ angular.module("proton", [
 .constant('CONSTANTS', {
     ATTACHMENT_SIZE_LIMIT: 15, // MB
     ATTACHMENT_NUMBER_LIMIT: 50,
-    MAX_TITLE_LENGTH: 250
+    MAX_TITLE_LENGTH: 250,
+    MAX_NUMBER_COMPOSER: 5
 })
 
 .config(function(authenticationProvider) {

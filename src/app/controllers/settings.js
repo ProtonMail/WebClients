@@ -131,6 +131,7 @@ angular.module("proton.controllers.Settings", [
                             // TODO add label to labels
                             labelModal.deactivate();
                             notify('Label created');
+                            $state.go($state.current, {}, {reload: true}); // force reload page
                         } else {
                             notify(result.error);
                             $log.error(result);
@@ -157,8 +158,8 @@ angular.module("proton.controllers.Settings", [
                         label: name,
                         color: color
                     }).$promise.then(function(result) {
-                        label.name = name;
-                        label.color = color;
+                        label.LabelName = name;
+                        label.LabelColor = color;
                         labelModal.deactivate();
                         notify('Labed edited');
                     }, function(result) {
@@ -178,10 +179,10 @@ angular.module("proton.controllers.Settings", [
                 title: 'Delete Label',
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
-                    Label.delete({id: label.LabelID}).$promise.then(function(result) {
-                        // TODO remove in labels
+                    Label.delete({LabelID: label.LabelID}).$promise.then(function(result) {
                         confirmModal.deactivate();
-                        notify('Label deleteded');
+                        notify('Label ' + label.LabelName + ' deleteded');
+                        $state.go($state.current, {}, {reload: true}); // force reload page
                     }, function(result) {
                         $log.error(result);
                     });
@@ -190,6 +191,21 @@ angular.module("proton.controllers.Settings", [
                     confirmModal.deactivate();
                 }
             }
+        });
+    };
+
+    $scope.toggleDisplayLabel = function(label) {
+        label.Display = (label.Display == 0)?1:0; // toggle display
+        Label.edit({
+            id: label.LabelID,
+            name: label.LabelName,
+            color: label.LabelColor,
+            display: label.Display
+        }).$promise.then(function(result) {
+            notify('Label ' + label.LabelName + ' edited');
+            $state.go($state.current, {}, {reload: true}); // force reload page
+        }, function(result) {
+            $log.error(result);
         });
     };
 

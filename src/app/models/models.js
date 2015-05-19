@@ -1,6 +1,7 @@
 var getFromJSONResponse = function (name) {
   return function(data) {
     var obj;
+
     try {
       obj = JSON.parse(data);
     } catch(err) {
@@ -11,6 +12,7 @@ var getFromJSONResponse = function (name) {
     if (!obj.error && name) {
       return obj[name];
     }
+
     return obj;
   };
 };
@@ -97,7 +99,7 @@ angular.module("proton.models", [
       query: {
         method: "get",
         isArray: true,
-        transformResponse: getFromJSONResponse('Messages')
+        transformResponse: getFromJSONResponse('Messages', true)
       },
       search: {
         method: "get",
@@ -163,7 +165,7 @@ angular.module("proton.models", [
       },
       // Apply labels on messages
       apply: {
-        method: 'post',
+        method: 'put',
         url: authentication.baseURL + "/labels/apply"
       }
     }
@@ -313,12 +315,17 @@ angular.module("proton.models", [
       }
 
       // Images
-      if(angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
-        this.imagesHidden = true;
-        body = tools.breakImages(body);
+      if(this.containsImage === false || body.match('<img') === null) {
+        this.containsImage = false;
       } else {
-        this.imagesHidden = false;
-        body = tools.fixImages(body);
+        this.containsImage = true;
+        if(angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
+          this.imagesHidden = true;
+          body = tools.breakImages(body);
+        } else {
+          this.imagesHidden = false;
+          body = tools.fixImages(body);
+        }
       }
 
       return body;
@@ -471,8 +478,7 @@ angular.module("proton.models", [
       },
       // Delete label
       delete: {
-        method: 'delete',
-        url: authentication.baseURL + "/label"
+        method: 'delete'
       }
     }
   );

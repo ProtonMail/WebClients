@@ -30,7 +30,6 @@ angular.module("proton.attachments", [])
             upload: function(packets) {
                 console.log('upload', packets); // TODO remove
 
-
                 var data = new FormData();
                 var xhr = new XMLHttpRequest();
                 var sessionKeyPromise = $scope.getSessionKey(packets.keys);

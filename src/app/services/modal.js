@@ -173,7 +173,14 @@ angular.module("proton.modals", [])
                 '#6ff',
                 '#66f',
                 '#6f6',
-                '#999'
+                '#999',
+                '#fcc',
+                '#ffc',
+                '#fcf',
+                '#cff',
+                '#ccf',
+                '#cfc',
+                '#ccc'
             ];
             this.color = params.color || this.colors[0];
 

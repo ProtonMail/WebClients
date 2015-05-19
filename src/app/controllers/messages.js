@@ -13,6 +13,7 @@ angular.module("proton.controllers.Messages", [
     messages,
     messageCount,
     messageCache,
+    Message,
     networkActivityTracker
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
@@ -213,10 +214,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.toggleLabel = function(label) {
-        if (label.mode === '' || label.mode === 'minus') {
-            label.mode = 'check';
+        if (label.mode === 0 || label.mode === 2) {
+            label.mode = 1;
         } else {
-            label.mode = '';
+            label.mode = 0;
         }
     };
 
@@ -243,11 +244,11 @@ angular.module("proton.controllers.Messages", [
             }).length;
 
             if (count === messages.length) {
-                label.mode = 'check';
+                label.mode = 1;
             } else if (count > 0) {
-                label.mode = 'minus';
+                label.mode = 2;
             } else {
-                label.mode = '';
+                label.mode = 0;
             }
         })
 
@@ -263,14 +264,25 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.saveLabels = function() {
-        // TODO
+        $scope.applyLabels();
+    };
+
+    $scope.applyLabels = function(messages) {
+        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+
         Message.apply({
-            messages: _.map($scope.selectedMessages(), function(message) {
-                return message.MessageID
+            messages: messages,
+            labels_actions: _.map(_.reject($scope.labels, function(label) {
+                return label.mode === 2;
+            }), function(label) {
+                return {
+                    id: label.LabelID,
+                    action: label.mode
+                };
             }),
-            labels_actions: []
+            archive: ($scope.alsoArchived)?'1':'0'
         }).$promise.then(function(result) {
-            $scope.closeLabels();
+            $state.go($state.current, {}, {reload: true}); // force reload page
         }, function(result) {
             $log.error(result);
         });
@@ -675,6 +687,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.initMessage = function(message) {
+        if($scope.messages.length === CONSTANTS.MAX_NUMBER_COMPOSER) {
+            notify('Maximum composer reached');
+            return;
+        }
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.clearTextBody(message);
@@ -1049,7 +1065,7 @@ angular.module("proton.controllers.Messages", [
                                 }));
                             }
 
-                            if (!isOutside && message.IsEncrypted === 0) {
+                            if (!isOutside && newMessage.IsEncrypted === 0) {
                                 if (!tools.isEmailAddressPM(email)) {
                                     isOutside = true;
                                 }
@@ -1098,6 +1114,7 @@ angular.module("proton.controllers.Messages", [
                             networkActivityTracker.track(newMessage.$send(null, function(result) {
                                 notify('Message Sent');
                                 $scope.close(message, false);
+                                $state.go($state.current, {}, {reload: true}); // force reload page
                             }, function(error) {
                                 $log.error(error);
                             }));
@@ -1202,14 +1219,49 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     Message,
     message,
+    tools,
     attachments,
     pmcw
 ) {
     $scope.message = message;
     $rootScope.pageName = message.MessageTitle;
+    $scope.tools = tools;
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
+    };
+
+    $scope.detachLabel = function(label) {
+        Message.apply({
+            messages: [{id: message.MessageID}],
+            labels_actions: [{id: label.LabelID, action: '0'}],
+            archive: '0'
+        }).$promise.then(function(result) {
+            var index = message.Labels.indexOf(label);
+
+            message.Labels.splice(index, 1);
+        }, function(result) {
+            $log.error(result);
+        });
+    };
+
+    $scope.saveLabels = function() {
+        $scope.applyLabels([{id: message.MessageID}]);
+    };
+
+    $scope.sendMessageTo = function(email) {
+        var message = new Message();
+
+        _.defaults(message, {
+            RecipientList: email,
+            CCList: '',
+            BCCList: '',
+            MessageTitle: '',
+            PasswordHint: '',
+            Attachments: []
+        });
+
+        $rootScope.$broadcast('loadMessage', message);
     };
 
     function buildMessage(base, action) {
@@ -1239,25 +1291,16 @@ angular.module("proton.controllers.Messages", [
         return message;
     }
 
-    $scope.reply = function(original) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'reply');
-
-        $rootScope.$broadcast('loadMessage', builtMessage);
+    $scope.reply = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'reply'));
     };
 
-    $scope.replyAll = function(message) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'replyall');
-
-        $rootScope.$broadcast('loadMessage', message);
+    $scope.replyAll = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'replyall'));
     };
 
-    $scope.forward = function(message) {
-        var message = angular.copy(original);
-        var builtMessage = buildMessage(message, 'forward');
-
-        $rootScope.$broadcast('loadMessage', message);
+    $scope.forward = function(resource) {
+        $rootScope.$broadcast('loadMessage', buildMessage(resource, 'forward'));
     };
 
     $scope.goToMessageList = function() {
