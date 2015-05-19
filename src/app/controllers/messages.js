@@ -1104,6 +1104,7 @@ angular.module("proton.controllers.Messages", [
                             networkActivityTracker.track(newMessage.$send(null, function(result) {
                                 notify('Message Sent');
                                 $scope.close(message, false);
+                                $state.go($state.current, {}, {reload: true}); // force reload page
                             }, function(error) {
                                 $log.error(error);
                             }));
