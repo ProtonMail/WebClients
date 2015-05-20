@@ -56,7 +56,8 @@ module.exports = {
       "vendor/pikaday/pikaday.js",
       "vendor/pikaday-angular/pikaday-angular.js",
       "vendor/squire-rte/build/squire.js",
-      "vendor/dropzone/dist/dropzone.js"
+      "vendor/dropzone/dist/dropzone.js",
+      "vendor/angular-translate/angular-translate.js"
     ],
     bootstrap_components: [
       "affix",

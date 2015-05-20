@@ -7,6 +7,7 @@ angular.module("proton", [
     "cgNotify",
     "pikaday",
     "toggle-switch",
+    "pascalprecht.translate",
 
     // templates
     "templates-app",
@@ -53,7 +54,10 @@ angular.module("proton", [
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
-    "proton.controllers.Support"
+    "proton.controllers.Support",
+
+    // Translations
+    "proton.translations"
 ])
 
 .run(function(
@@ -224,7 +228,9 @@ angular.module("proton", [
     ATTACHMENT_SIZE_LIMIT: 15, // MB
     ATTACHMENT_NUMBER_LIMIT: 50,
     MAX_TITLE_LENGTH: 250,
-    MAX_NUMBER_COMPOSER: 5
+    MAX_NUMBER_COMPOSER: 5,
+    AUTO_SAVE_INTERVAL_TIME: 30000, // 30 seconds
+    MAX_EXPIRATION_TIME: 672 // hours
 })
 
 .config(function(authenticationProvider) {
