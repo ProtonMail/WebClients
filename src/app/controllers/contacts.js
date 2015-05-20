@@ -191,7 +191,47 @@ angular.module("proton.controllers.Contacts", [
                     console.log(files[0]);
                     Papa.parse(files[0], {
                     	complete: function(results) {
-                    		console.log(results);
+                        var emailIndex, nameIndex, lastNameIndex;
+                        var contactObject = [];
+
+                        if (results.data[0].indexOf('Name') > -1) {
+                          nameIndex = results.data[0].indexOf('Name');
+                        }
+                        else if (results.data[0].indexOf('First Name') > -1) {
+                          nameIndex = results.data[0].indexOf('First Name');
+                        }
+                        else if (results.data[0].indexOf('Last Name') > -1) {
+                          nameIndex = results.data[0].indexOf('Last Name');
+                        }
+
+                        if (results.data[0].indexOf('E-mail 1 - Value') > -1) {
+                          emailIndex = results.data[0].indexOf('E-mail 1 - Value');
+                        }
+                        else if (results.data[0].indexOf('E-mail Address') > -1) {
+                          emailIndex = results.data[0].indexOf('E-mail Address');
+                        }
+                        else if (results.data[0].indexOf('Email Address') > -1) {
+                          emailIndex = results.data[0].indexOf('Email Address');
+                        }
+                        else if (results.data[0].indexOf('E-mail') > -1) {
+                          emailIndex = results.data[0].indexOf('E-mail');
+                        }
+                        else if (results.data[0].indexOf('Email') > -1) {
+                          emailIndex = results.data[0].indexOf('Email');
+                        }
+
+                        _.forEach(results.data, function(d, i) {
+                          if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
+                            if (d[nameIndex] !== '') {
+                              contactObject.push([d[nameIndex], d[emailIndex]]);
+                            }
+                            else {
+                              contactObject.push([d[emailIndex], d[emailIndex]]);
+                            }
+                          }
+                        });
+                        console.log(results);
+                        console.log(contactObject);
                     	}
                     });
                     dropzoneModal.deactivate();
