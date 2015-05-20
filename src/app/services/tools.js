@@ -127,6 +127,15 @@ angular.module("proton.tools", [])
             } else {
                 return false;
             }
+        }     
+
+        function is_valid_dkim(header) {
+            if ( (header.indexOf('dkim=none') == -1) && (header.indexOf('dkim=pass') !== -1)) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         function break_images(html) {
@@ -231,7 +240,8 @@ angular.module("proton.tools", [])
             getBrowser: get_browser(),
             getBrowserVersion: get_browser_version(),
             isCompatible: is_compatible,
-            validEmail: valid_email
+            validEmail: valid_email,
+            is_valid_dkim: is_valid_dkim
         };
 
         return tools;

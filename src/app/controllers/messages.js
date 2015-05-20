@@ -21,6 +21,7 @@ angular.module("proton.controllers.Messages", [
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
 
     $scope.Math = window.Math;
+    $scope.CONSTANTS = CONSTANTS;
 
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
