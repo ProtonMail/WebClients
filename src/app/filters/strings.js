@@ -107,4 +107,13 @@ angular.module("proton.filters.strings", [])
       return "*" + _.string.trim(split[0]) + "* " + character + split[1];
     }
   };
-});
+})
+
+.filter('range', function() {
+  return function(val, range) {
+    range = parseInt(range);
+    for (var i=1; i<range; i++)
+      val.push(i);
+    return val;
+  };
+})

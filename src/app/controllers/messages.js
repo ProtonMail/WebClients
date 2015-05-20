@@ -14,10 +14,13 @@ angular.module("proton.controllers.Messages", [
     messageCount,
     messageCache,
     Message,
-    networkActivityTracker
+    networkActivityTracker,
+    CONSTANTS
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
+
+    $scope.Math = window.Math;
 
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
@@ -1221,7 +1224,8 @@ angular.module("proton.controllers.Messages", [
     message,
     tools,
     attachments,
-    pmcw
+    pmcw,
+    CONSTANTS
 ) {
     $scope.message = message;
     $rootScope.pageName = message.MessageTitle;
