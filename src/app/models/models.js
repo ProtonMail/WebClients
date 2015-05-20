@@ -282,6 +282,14 @@ angular.module("proton.models", [
       return body;
     },
 
+    setSessionKey: function() {
+
+    },
+
+    removeSessionKey: function() {
+
+    },
+
     clearTextBody: function () {
       var body;
 

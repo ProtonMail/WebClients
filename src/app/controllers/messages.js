@@ -1063,53 +1063,61 @@ angular.module("proton.controllers.Messages", [
                                 promises.push(pmcw.encryptMessage(message.RawMessageBody, publickey).then(function(result) {
                                     newMessage.MessageBody[email] = result;
                                 }));
-                            }
-
-                            if (!isOutside && newMessage.IsEncrypted === 0) {
-                                if (!tools.isEmailAddressPM(email)) {
-                                    isOutside = true;
+                            } else if(email !== '') {
+                                if (!isOutside && newMessage.IsEncrypted === 0) {
+                                    if (!tools.isEmailAddressPM(email)) {
+                                        isOutside = true;
+                                    }
                                 }
                             }
 
-                            if (message.IsEncrypted === 1) {
-                                var replyToken = generateReplyToken();
-                                var encryptedReplyToken = pmcw.encryptMessage(replyToken, [], message.Password);
-                                // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
-                                var arr = [];
-
-                                // TODO
-                                // sessionKeys.forEach(function(element) {
-                                //   arr.push(pmcw.encryptSessionKey(pmcw.binaryStringToArray(pmcw.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
-                                //     return {
-                                //       id: element.id,
-                                //       keypacket: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                                //     };
-                                //   }));
-                                // });
-
-                                var encryptedSessionKeys = Promise.all(arr);
-                                var outsideBody = pmcw.encryptMessage(message.RawMessageBody, [], message.Password);
-                                var outsidePromise = outsideBody.then(function(result) {
-                                    return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-                                        newMessage.MessageBody[email] = result;
-                                        // TODO token and session keys
-                                        // return [email, message, replyToken].concat(encArray);
-                                    });
-                                }, function(error) {
-                                    $log.error(error);
-                                });
-
-                                promises.push(outsidePromise);
-                            }
                         });
+
+                        var outsidePromise;
+
+                        if (message.IsEncrypted === 1) {
+                            var replyToken = generateReplyToken();
+                            var encryptedReplyToken = pmcw.encryptMessage(replyToken, [], message.Password);
+                            // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
+                            var arr = [];
+
+                            // TODO
+                            // sessionKeys.forEach(function(element) {
+                            //   arr.push(pmcw.encryptSessionKey(pmcw.binaryStringToArray(pmcw.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
+                            //     return {
+                            //       id: element.id,
+                            //       keypacket: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
+                            //     };
+                            //   }));
+                            // });
+
+                            var encryptedSessionKeys = Promise.all(arr);
+                            var outsideBody = pmcw.encryptMessage(message.RawMessageBody, [], message.Password);
+                            outsidePromise = outsideBody.then(function(result) {
+                                return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
+                                    newMessage.MessageBody['outsiders'] = result;
+                                    // TODO token and session keys
+                                    // return [email, message, replyToken].concat(encArray);
+                                });
+                            }, function(error) {
+                                $log.error(error);
+                            });
+
+                        } else if(isOutside && newMessage.IsEncrypted === 0) {
+                            // dont encrypt if its going outside
+                            outsidePromise = new Promise(function(resolve, reject) {
+                                resolve(function() {
+                                    newMessage.MessageBody['outsiders'] = message.RawMessageBody;
+                                });
+                            });
+                        }
+
+                        promises.push(outsidePromise);
+
+                        newMessage.MessageID = newMessage.MessageID || 0;
 
                         // When all promises are done
                         Promise.all(promises).then(function() {
-                            // dont encrypt if its going outside
-                            if (isOutside && newMessage.IsEncrypted === 0) {
-                                newMessage.MessageBody['outsiders'] = message.RawMessageBody
-                            }
-                            newMessage.MessageID = newMessage.MessageID || 0;
                             // send email
                             networkActivityTracker.track(newMessage.$send(null, function(result) {
                                 notify('Message Sent');
