@@ -57,7 +57,7 @@ html, body {
 #body {
   display: flex;
   min-height: 100vh;
-  flex-direction: column; 
+  flex-direction: column;
   #content {
     flex: 1;
     overflow: auto;
@@ -173,6 +173,9 @@ body footer {
     border-color: $dark-purple;
     .fa {
       font-size: inherit;
+    }
+    a {
+      color: inherit;
     }
   }
 }

@@ -14,6 +14,7 @@
     margin-bottom: 0;
   }
   input {
+    @include transition(all 0.2s ease-in-out);
     background: #444;
     border-radius: 2rem;
     border-color: transparent;
@@ -23,8 +24,10 @@
       @include placeholder {
         color: #fff;
       }
+      background-color: #FFF;
+      color: #333;
+      border: none;
       outline: 0;
-      border-color: #333;
     }
   }
   button {

@@ -7,6 +7,7 @@ angular.module("proton", [
     "cgNotify",
     "pikaday",
     "toggle-switch",
+    "pascalprecht.translate",
 
     // templates
     "templates-app",
@@ -53,7 +54,10 @@ angular.module("proton", [
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
-    "proton.controllers.Support"
+    "proton.controllers.Support",
+
+    // Translations
+    "proton.translations"
 ])
 
 .run(function(
@@ -63,15 +67,9 @@ angular.module("proton", [
     notify,
     $state
 ) {
-
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        setTimeout(function() {
-            $('.panel-body input').eq(0).focus();
-        }, 200);
-    })
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ _.string.capitalize(pageName) }" +
@@ -105,7 +103,6 @@ angular.module("proton", [
 
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
         var isLogin = (toState.name == "login");
         var isSupport = (toState.name == "support");
         var isAccount = (toState.name == "account");
@@ -239,6 +236,8 @@ angular.module("proton", [
     ENC_OUT_PLAIN: 4, // sent plain but stored enc
     ENC_STORED_ENC: 5, // such as draft
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
+    AUTO_SAVE_INTERVAL_TIME: 30000, // 30 seconds
+    MAX_EXPIRATION_TIME: 672 // hours
 })
 
 .config(function(authenticationProvider) {
