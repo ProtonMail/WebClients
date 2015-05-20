@@ -11,4 +11,8 @@ angular.module("proton.controllers.Sidebar", [])
     $scope.labelsDisplayed = function() {
         return _.where($scope.labels, {Display: 0});
     };
+
+    $scope.goTo = function(route) {
+        $state.go(route, {}, {reload: $state.is(route)});
+    };
 });

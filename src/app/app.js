@@ -63,15 +63,9 @@ angular.module("proton", [
     notify,
     $state
 ) {
-
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        setTimeout(function() {
-            $('.panel-body input').eq(0).focus();
-        }, 200);
-    })
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ _.string.capitalize(pageName) }" +
@@ -105,7 +99,6 @@ angular.module("proton", [
 
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
         var isLogin = (toState.name == "login");
         var isSupport = (toState.name == "support");
         var isAccount = (toState.name == "account");
