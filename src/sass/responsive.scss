@@ -59,6 +59,9 @@
 	  -ms-flex: initial;
 	  overflow: initial;
 	}
+	body .secure #body {
+		height: auto;
+	}
 	.message-head h1 {
 		line-height: 20px;
 		padding: 7px 0;
