@@ -8,6 +8,7 @@ angular.module("proton", [
     "pikaday",
     "toggle-switch",
     "pascalprecht.translate",
+    "ui.bootstrap",
 
     // templates
     "templates-app",
