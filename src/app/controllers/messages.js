@@ -589,6 +589,9 @@ angular.module("proton.controllers.Messages", [
         $scope.initMessage(message);
     });
 
+    $rootScope.isiOS = false;
+    $rootScope.isiOS = tools.get_browser;
+
     $rootScope.$on('loadMessage', function(event, message) {
         $scope.initMessage(message);
     });
