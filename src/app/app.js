@@ -15,7 +15,15 @@ angular.module("proton", [
 
     // App
     "proton.routes",
+
+    // Models
     "proton.models",
+    "proton.models.label",
+    "proton.models.message",
+    "proton.models.contact",
+    "proton.models.user",
+    "proton.models.setting",
+    "proton.models.bug",
 
     // Services
     "proton.authentication",

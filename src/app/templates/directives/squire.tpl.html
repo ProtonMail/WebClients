@@ -2,34 +2,34 @@
     <div ng-class="{'editor-hide': !isEditorVisible()}" class='editor-container'>
         <ul class="squire-toolbar">
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Bold" ng-click="action('bold')">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Bold" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Italic" ng-click="action('italic')">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Italic" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Underline" ng-click="action('underline')">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Underline" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Unordered List" ng-click="action('makeUnorderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Unordered List" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Ordered List" ng-click="action('makeOrderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Ordered List" ng-click="action('makeOrderedList')">
                     <i class="fa fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Insert Link" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Insert Link" ng-click="popoverShow($event)">
                     <i class="fa fa-link"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="Insert Image" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Insert Image" ng-click="popoverShow($event)">
                     <i class="fa fa-image"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -68,7 +68,6 @@
                     </div>
                 </a>
             </li>
-            <li class="separator"></li>
             <li>
                 <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="Attachments" ng-click="$parent.togglePanel(message, 'attachments')">
                     <i class="fa fa-paperclip"></i>
@@ -85,10 +84,25 @@
                     <i class="fa fa-clock-o" id="clock-icon"></i>
                 </a>
             </li>
+            <li class="separator"></li>
+            <li class="relative">
+                <a href="" class="btn btn-sm btn-options dropdown-toggle" pt-tooltip="More" data-toggle="dropdown">
+                    <i class="fa fa-ellipsis-h"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-show="data.format === 'html'">
+                        <a href="" ng-click="switchTo('plain')">Plain text</a>
+                    </li>
+                    <li ng-show="data.format === 'plain'">
+                        <a href="" ng-click="switchTo('html')">HTML</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
-        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}'>
-            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups"></iframe>
+        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="data.format === 'html'">
+            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups allow-scripts"></iframe>
         </div>
+        <textarea ng-model="ngModel" ng-show="data.format === 'plain'" style="height: {{height}};"></textarea>
     </div>
     <ng-transclude></ng-transclude>
 </div>
