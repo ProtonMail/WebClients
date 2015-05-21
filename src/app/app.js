@@ -110,6 +110,7 @@ angular.module("proton", [
 // Redirection if not authentified
 //
 
+
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name == "login");
@@ -137,6 +138,9 @@ angular.module("proton", [
             event.preventDefault(); // stop current execution
             $state.go('login'); // go to login
         }
+    });
+    $rootScope.$on('$viewContentLoaded', function ($evt, data) {
+        $('#loading-css, #loading').remove();
     });
 })
 
