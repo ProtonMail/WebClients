@@ -18,11 +18,11 @@
                                     <toggle-switch>
                             </div>
                         </div>
-                        <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$error.required}">
+                        <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
                             <label class="control-label" for="notificationEmail">Notification/Recovery Email</label>
-                            <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery Email" ng-model="notificationEmail" required="" />
+                            <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery Email" ng-model="notificationEmail" />
                             <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">
-                                <p ng-show="!!!tools.validEmail(notificationEmail)" class="text-danger">Invalid email.</p>
+                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">Invalid email.</p>
                             </div>
                             <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
                         </div>
