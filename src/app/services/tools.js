@@ -1,5 +1,5 @@
 angular.module("proton.tools", [])
-    .factory("tools", function($log, errorReporter) {
+    .factory("tools", function($log, $sanitize, errorReporter) {
         function has_session_storage() {
             var mod = 'modernizr';
 
@@ -127,13 +127,12 @@ angular.module("proton.tools", [])
             } else {
                 return false;
             }
-        }     
+        }
 
         function is_valid_dkim(header) {
-            if ( (header.indexOf('dkim=none') == -1) && (header.indexOf('dkim=pass') !== -1)) {
+            if ((header.indexOf('dkim=none') == -1) && (header.indexOf('dkim=pass') !== -1)) {
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
         }
@@ -157,14 +156,77 @@ angular.module("proton.tools", [])
             return html.replace(/<style[\s\S]*?\/style>/ig, " "); // For squire
         }
 
-        // remove html
+        // convert html to plaintext
         function html_to_plaintext(html) {
+            html = html.replace(/<a.*?href=["']([^"']*)["'][^>]*>(.*?)<\/a>/igm, "[$2]($1)"); // replace link
+            html = html.replace(/<img.*?src=["']([^"']*)["'][^>]*>/igm, "![image]($1)"); // replace image
+            html = html.replace(/<style([\s\S]*?)<\/style>/gi, '');
+            html = html.replace(/<script([\s\S]*?)<\/script>/gi, '');
+            html = html.replace(/<\/div>/ig, '\n');
+            html = html.replace(/<\/li>/ig, '\n');
+            html = html.replace(/<li>/ig, '  *  ');
+            html = html.replace(/<\/ul>/ig, '\n');
+            html = html.replace(/<\/p>/ig, '\n');
+            html = html.replace(/<br\s*[\/]?>/gi, "\n");
+            html = html.replace(/<[^>]+>/ig, '');
+            html = html.replace(/<\/h(\d)*>/gi, "\n");
+            html = jQuery('<div>').html(html).text();
+            html = html.replace(/</gi, "&lt;");
+            html = html.replace(/>/gi, "&gt;");
+
+            return html;
+        }
+
+        // Replace ::marker:: by <blockquote>
+        function block(html, mode) {
+            if(mode === 'start') {
+                return html.replace(/<blockquote>/g, '::blockquote::open::').replace(/<\/blockquote>/g, '::blockquote::close::');
+            } else if(mode === 'end') {
+                return html.replace(/::blockquote::open::/g, '').replace(/::blockquote::close::/g, '').replace(/\n/g, "<br />");
+            }
+        }
+
+        // Add '>' to the beginning of each <blockquote>
+        function quote(html) {
+            var separator = '::blockquote::open::';
+            var index = html.indexOf(separator);
+            var first = "";
+            var second = "";
+
+            if(index !== -1) {
+                first = html.substring(0, index);
+                second = html.substring(index + '::blockquote::open::'.length).replace(/\n/g, '\n > ');
+                return first + '\n > ' + quote(second);
+            } else {
+                return html;
+            }
+
+            return html;
+        }
+
+        function plaintext_to_html(plain) {
+            // Converting images
+            plain = plain.replace(/!\[(.*?)\]\((.*?)\)/gi, '<img src="$2" alt="$1" title="$1" />');
+            // Converting link
+            html = plain.replace(/\[(.*?)\]\((.*?)\)/gi, '<a href="$2">$1</a>');
+
+            return html;
+        }
+
+        // http://stackoverflow.com/a/2876633
+        function clean_word(in_word_text) {
             var tmp = document.createElement("DIV");
-
-            html = html.replace(/<br\s*\/?>/mg, "\n");
-            tmp.innerHTML = filterXSS(html);
-
-            return tmp.textContent || tmp.innerText || "";
+            tmp.innerHTML = in_word_text;
+            var newString = tmp.textContent || tmp.innerText;
+            // this next piece converts line breaks into break tags
+            // and removes the seemingly endless crap code
+            newString = newString.replace(/\n\n/g, "<br />").replace(/.*<!--.*-->/g, "");
+            // this next piece removes any break tags (up to 10) at beginning
+            for (i = 0; i < 10; i++) {
+                if (newString.substr(0, 6) == "<br />") {
+                    newString = newString.replace("<br />", "");
+                }
+            }
         }
 
         function fix_redirect_exploits(html) {
@@ -226,8 +288,12 @@ angular.module("proton.tools", [])
         }
 
         var tools = {
+            block: block,
+            quote: quote,
             fixRedirectExploits: fix_redirect_exploits,
-            htmlToPlainText: html_to_plaintext,
+            plaintext: html_to_plaintext,
+            html: plaintext_to_html,
+            cleanWord: clean_word,
             removeStyle: remove_style,
             breakImages: break_images,
             fixImages: fix_images,

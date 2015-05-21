@@ -276,11 +276,14 @@ $angular-squire-wrapper-padding: 5px 0 !default;
       outline: none;
     }
   }
-    textarea {
-      width: 100%;
-      border: none;
-      padding: 10px;
-    }
+
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    resize: none;
+    outline: 0;
+  }
 }
 
 .angular-squire .angular-squire-wrapper .placeholder div {

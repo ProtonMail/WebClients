@@ -1,25 +1,25 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function() {
+.directive("squire", function(tools) {
     return {
         restrict: 'E',
         require: "ngModel",
         scope: {
-            height: '@height',
-            width: '@width',
-            body: '=body',
-            message: '=message',
-            placeholder: '@placeholder',
-            editorClass: '@editorClass',
-            editor: '=editor'
+            height: '@',
+            width: '@',
+            message: '=',
+            placeholder: '@',
+            editorClass: '@',
+            editor: '=',
+            ngModel: '='
         },
         replace: true,
         transclude: true,
         templateUrl: "templates/directives/squire.tpl.html",
 
         /* @ngInject */
-        controller: function($scope) {
+        controller: function($scope, $sanitize) {
             var editorVisible;
             editorVisible = true;
             $scope.isEditorVisible = function() {
@@ -44,7 +44,8 @@ angular.module("proton.squire", [
             editor = scope.editor = null;
             scope.data = {
                 link: LINK_DEFAULT,
-                image: IMAGE_DEFAULT
+                image: IMAGE_DEFAULT,
+                format: 'html'
             };
             updateModel = function(value) {
                 return scope.$evalAsync(function() {
@@ -123,6 +124,25 @@ angular.module("proton.squire", [
                 popover.css({
                     left: -1 * (popover.width() / 2) + liElement.width() / 2
                 });
+            };
+            scope.switchTo = function(format) {
+                var value = editor.getHTML();
+                var end;
+
+                if(format === 'plain') {
+                    // TODO manage blockquote
+                    // var start = tools.block(html, 'start');
+                    // var plain = tools.plaintext(start);
+                    // var quote = tools.quote(plain);
+                    // var end = tools.block(quote.replace(/<br\s*[\/]?>/gi, "\n"), 'end');
+                    end = tools.plaintext(value);
+                    scope.data.format = format;
+                } else if (format === 'html') {
+                    end = tools.html(value);
+                    scope.data.format = format;
+                }
+
+                updateModel(end);
             };
             updateStylesToMatch = function(doc) {
                 var head;
