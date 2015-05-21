@@ -205,6 +205,17 @@ module.exports = function (grunt) {
             cwd: "./src"
           }
         ]
+      },
+      htaccess: {
+        files: [
+          {
+            src: [".htaccess"],
+            filter: "isFile",
+            expand: true,
+            dest: "./<%= build_dir %>/",
+            cwd: "./src"
+          }
+        ]
       }
     },
 
@@ -477,7 +488,7 @@ module.exports = function (grunt) {
     "copy:build_vendor_assets",
     "copy:build_appjs",
     "copy:build_vendorjs",
-    "copy:deploy",    
+    "copy:htaccess",
     "index:build",
     "testconfig"
   ]);
@@ -498,6 +509,7 @@ module.exports = function (grunt) {
     "shell:setup_dist",
     "compile",
     "copy:deploy",
+    "copy:htaccess",
     "shell:push",
     "wait:push"
   ]);
