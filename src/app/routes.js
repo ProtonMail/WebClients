@@ -83,6 +83,7 @@ angular.module("proton.routes", [
                     $stateParams,
                     $rootScope,
                     authentication,
+                    Label,
                     Message,
                     mailboxIdentifiers,
                     networkActivityTracker,
@@ -125,11 +126,12 @@ angular.module("proton.routes", [
                             messagesPromise = Message.advSearch(_.pick(_.extend(params, $stateParams), 'location', 'label', 'from', 'to', 'subject', 'words', 'begin', 'end', 'attachments', 'starred', 'page')).$promise;
                         } else if(mailbox === 'label') {
                             params.LabelID = $stateParams.label;
+                            params.id = $stateParams.label;
                             params.filter = params.FilterUnread;
                             params.sort = params.Order;
                             params.page = params.Page;
-                            params = _.pick(params, 'LabelID', 'filter', 'sort', 'page');
-                            messagesPromise = Message.labels(params).$promise;
+                            params = _.pick(params, 'id', 'LabelID', 'filter', 'sort', 'page');
+                            messagesPromise = Label.messages(params).$promise;
                         } else {
                             messagesPromise = Message.query(params).$promise;
                         }
