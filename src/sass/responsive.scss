@@ -41,6 +41,11 @@
 			margin: 0;
 		}
 	}
+	body, html {
+		overflow: auto;
+		height: auto;
+		min-height: initial;
+	}
 	.secure .navbar-inversed,
 	.secure #footer,
 	body #main,
