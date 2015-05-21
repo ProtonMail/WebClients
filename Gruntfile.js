@@ -477,6 +477,7 @@ module.exports = function (grunt) {
     "copy:build_vendor_assets",
     "copy:build_appjs",
     "copy:build_vendorjs",
+    "copy:deploy",    
     "index:build",
     "testconfig"
   ]);
