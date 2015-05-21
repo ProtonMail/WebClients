@@ -43,10 +43,13 @@
 	}
 	.secure .navbar-inversed,
 	.secure #footer,
-	#main {
+	body #main,
+	body #main.secure {
 		padding-top: 0;
 		margin-left: 0;
 		width: 100%;
+		display: block;
+		min-height: auto
 	}
 	.message-head h1 {
 		line-height: 20px;
