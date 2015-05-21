@@ -51,6 +51,14 @@
 		display: block;
 		min-height: auto
 	}
+	body .secure #main #content, 
+	body #main.secure #content, 
+	body #body #content {
+	  flex: initial;
+	  -webkit-flex: initial;
+	  -ms-flex: initial;
+	  overflow: initial;
+	}
 	.message-head h1 {
 		line-height: 20px;
 		padding: 7px 0;
