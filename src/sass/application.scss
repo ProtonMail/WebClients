@@ -56,10 +56,17 @@ html, body {
 #main.secure,
 #body {
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   min-height: 100vh;
   flex-direction: column;
+  -webkit-flex-direction: column;
   #content {
     flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
     overflow: auto;
   }
 }
@@ -69,6 +76,8 @@ body.locked {
  .container-fluid {
     margin: 0;
     flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
   }
 }
 

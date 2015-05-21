@@ -134,9 +134,6 @@
     <ul class="nav navbar-nav pull-right navigation">
         <li class="pageDropdown">
             <a><b>{{start()}}</b> - <b>{{end()}}</b> of <b>{{messageCount}}</b></a>
-            <select >
-                <option ng-repeat="n in [] | range:Math.ceil(messageCount/25)">{{Math.ceil(n)}}</option>
-            </select>
         </li>
         <li class="prev-page">
             <a href ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1)">

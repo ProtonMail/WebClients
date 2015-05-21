@@ -249,7 +249,6 @@ angular.module("proton.authentication", [
                                     return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
                                     .then(
                                         function() {
-                                            $rootScope.isLocked  = false;
                                             auth.savePassword(pwd);
                                             req.resolve(200);
                                         },
