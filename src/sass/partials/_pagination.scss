@@ -1,0 +1,36 @@
+.pageDropdown {
+	line-height: 32px;
+	border-left: none !important;
+	padding: 0 1rem;
+}
+.pagination-li {
+	width: 5rem;
+	position: relative;
+	height: 32px;
+	text-align: center;
+	& > a {
+		position: relative;
+		z-index: 2;
+	}
+}
+.pagination {
+	position: absolute;
+	left: 0;
+	top: 32px;
+	right: 0;
+	margin: 0;
+	height: 320px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background: #fff;
+	z-index: 1;
+	width: 6rem;
+	li, a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		border: none !important;
+		line-height: 32px;
+		height: 32px;
+	}
+}
