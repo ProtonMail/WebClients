@@ -34,6 +34,7 @@ module.exports = {
       "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-bootstrap/ui-bootstrap.js",
+      "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-animate/angular-animate.js",
       "vendor/angular-local-storage/dist/angular-local-storage.js",
