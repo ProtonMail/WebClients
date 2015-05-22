@@ -1,6 +1,6 @@
 <div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar" class="hidden-xs"></div>
 
-<div id="main" class="secure">
+<div id="main" class="secure" ondragenter="onDrag()">
 	<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
 	<div ui-view="content" id="content"></div>
 	<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>

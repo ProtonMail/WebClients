@@ -60,14 +60,27 @@ ul.attachments {
         text-align: left;
         line-height: 34px;
         font-size: 140%;
+        .attachement {
+            position: absolute;
+            top: 70px;
+            left: 22px;
+            .fa {
+                color: #bbb;
+                font-size: inherit;
+                margin-right: 0.5rem;
+            }
+        }
         .padlock {
             position: absolute;
             top: 40px;
             left: 22px;
             cursor: default;
-            i.fa {
+            .fa {
                 font-size: inherit;
                 margin-right: 0.5rem;
+                &.fa-lock {
+                    color: $dark-purple
+                }
             }
         }
         .star {
@@ -83,9 +96,6 @@ ul.attachments {
             }
             &.star {
                 left: 22px;
-            }
-            i.fa-lock {
-                color: $dark-purple
             }
             i.fa-star-o {
                 color: #bbb;

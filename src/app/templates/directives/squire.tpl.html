@@ -2,34 +2,34 @@
     <div ng-class="{'editor-hide': !isEditorVisible()}" class='editor-container'>
         <ul class="squire-toolbar">
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Bold" ng-click="action('bold')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Bold" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Italic" ng-click="action('italic')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Italic" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Underline" ng-click="action('underline')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Underline" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Unordered List" ng-click="action('makeUnorderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Unordered List" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Ordered List" ng-click="action('makeOrderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Ordered List" ng-click="action('makeOrderedList')">
                     <i class="fa fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Insert Link" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Insert Link" ng-click="popoverShow($event)">
                     <i class="fa fa-link"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="data.format === 'plain'" pt-tooltip="Insert Image" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Insert Image" ng-click="popoverShow($event)">
                     <i class="fa fa-image"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -90,20 +90,19 @@
                     <i class="fa fa-ellipsis-h"></i>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-show="data.format === 'html'">
+                    <li ng-show="isHtml()">
                         <a href="" ng-click="switchTo('plain')">Plain text</a>
                     </li>
-                    <li ng-show="data.format === 'plain'">
+                    <li ng-show="isPlain()">
                         <a href="" ng-click="switchTo('html')">HTML</a>
                     </li>
                 </ul>
             </li>
         </ul>
-        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="data.format === 'html'">
-            <iframe ng-hide="$root.isMobile && $root.browser=='Safari'" frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups allow-scripts"></iframe>
-            <textarea ng-show="$root.isMobile && ($root.browser=='Safari')">sajhdajshdjashdjkashd</textarea>
+        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="isHtml()" >
+            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups allow-scripts"></iframe>
         </div>
-        <textarea ng-model="ngModel" ng-show="data.format === 'plain'" style="height: {{height}};"></textarea>
+        <textarea ng-model="ngModel" ng-show="isPlain()" style="height: {{height}};"></textarea>
     </div>
     <ng-transclude></ng-transclude>
 </div>

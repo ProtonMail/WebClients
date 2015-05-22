@@ -3,7 +3,7 @@ angular.module('proton.ondrag', [])
         return {
             restrict: 'A',
             scope: {
-                ondragenter: '&ondragenter'
+                ondragenter: '&'
             },
             link: function(scope, element, attrs) {
                 element[0].addEventListener('dragenter', function(event) {

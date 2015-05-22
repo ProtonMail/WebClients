@@ -352,222 +352,6 @@ angular.module("proton.controllers.Messages", [
     };
 })
 
-// .controller("ComposeMessageController", function(
-//     $state,
-//     $rootScope,
-//     $scope,
-//     $stateParams,
-//     $injector,
-//     Message,
-//     message,
-//     localStorageService,
-//     attachments,
-//     pmcw,
-//     networkActivityTracker,
-//     notify
-// ) {
-//     $rootScope.pageName = "New Message";
-
-//     $scope.message = message;
-//     if (!message.MessageBody) {
-//         $scope.user.$promise.then(function() {
-//             message.RawMessageBody = "<br><br>" + $scope.user.Signature;
-//         });
-//     }
-//     message.RawMessageBody = message.clearTextBody();
-
-//     if (!$scope.message.expirationInHours) {
-//         $scope.message.expirationInHours = 336;
-//     }
-
-//     if ($stateParams.to) {
-//         message.RecipientList = $stateParams.to;
-//     }
-
-//     $scope.selectFile = function(files) {
-//         _.defaults(message, {
-//             Attachments: []
-//         });
-//         message.Attachments.push.apply(
-//             message.Attachments,
-//             _.map(files, function(file) {
-//                 return attachments.load(file);
-//             })
-//         );
-//     };
-
-//     $scope.removeAttachment = function(attachment) {
-//         var idx = message.Attachments.indexOf(attachment);
-//         if (idx >= 0) {
-//             message.Attachments.splice(idx, 1);
-//         }
-//     }
-
-//     $scope.shouldShowField = function(field) {
-//         if (_.contains(["BCC", "CC"], field)) {
-//             return message[field + "List"] || $scope["alwaysShow" + field] == "true";
-//         }
-//     };
-
-//     $scope.toggleField = function(field) {
-//         if (_.contains(["BCC", "CC"], field)) {
-//             if ($scope.shouldShowField(field)) {
-//                 message[field + "List"] = "";
-//                 $scope["alwaysShow" + field] = "false";
-//             } else {
-//                 $scope["alwaysShow" + field] = "true";
-//             }
-//         }
-//     };
-
-//     $scope.toggleConfig = function(config) {
-//         $scope[config] = !$scope[config];
-//     }
-
-//     $scope.send = function() {
-//         // get the message meta data
-//         var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
-//         _.defaults(newMessage, {
-//             RecipientList: '',
-//             CCList: '',
-//             BCCList: '',
-//             MessageTitle: '',
-//             PasswordHint: '',
-//             Attachments: []
-//         });
-//         if (message.Attachments) {
-//             newMessage.Attachments = _.map(message.Attachments, function(att) {
-//                 return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
-//             });
-//         }
-
-//         // encrypt the message body and set 'outsiders' to empty by default
-//         newMessage.MessageBody = {
-//             self: pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
-//             outsiders: ''
-//         };
-
-//         // concat all recipients
-//         emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList)
-//         base64 = pmcw.encode_base64(emails);
-
-//         // new message object
-//         var userMessage = new Message();
-//         // get users' publickeys
-//         networkActivityTracker.track(userMessage.$pubkeys({
-//             Emails: base64
-//         }).then(function(result) {
-//                 // set defaults
-//                 isOutside = false;
-//                 mails = emails.split(",");
-//                 var log = [];
-//                 // loop through and overwrite defaults
-//                 angular.forEach(mails, function(value) {
-//                     // encrypt messagebody with each user's keys
-//                     newMessage.MessageBody[value] = pmcw.encryptMessage(message.RawMessageBody, result[value]);
-//                     if (!isOutside) {
-//                         if (!value.indexOf('protonmail') < 0) {
-//                             isOutside = true;
-//                         }
-//                     }
-//                 });
-//                 // dont encrypt if its going outside
-//                 if (isOutside) {
-//                     newMessage.MessageBody['outsiders'] = message.RawMessageBody
-//                 };
-//                 // send email
-//                 networkActivityTracker.track(newMessage.$send(null, function(result) {
-//                     // reset form
-//                     $scope.composeForm.$setPristine();
-//                     // redirect
-//                     $state.go("secured.inbox");
-//                 }, function(error) {
-//                     console.log(error);
-//                 }));
-
-//             },
-//             function(error) {
-//                 console.log(error);
-//             }));
-//     }
-
-//     $scope.saveDraft = function() {
-//         var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint'));
-
-//         _.defaults(newMessage, {
-//             RecipientList: '',
-//             CCList: '',
-//             BCCList: '',
-//             MessageTitle: '',
-//             PasswordHint: '',
-//             Attachments: []
-//         });
-
-//         if (message.Attachments) {
-//             newMessage.Attachments = _.map(message.Attachments, function(att) {
-//                 return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
-//             });
-//         }
-
-//         newMessage.MessageBody = {
-//             self: pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey),
-//             outsiders: ''
-//         };
-
-//         if (message.MessageID) {
-//             newMessage.MessageID = message.MessageID;
-//             networkActivityTracker.track(newMessage.$updateDraft(null, function() {
-//                 $scope.composeForm.$setPristine();
-//                 notify('Draft updated');
-//             }));
-//         } else {
-//             networkActivityTracker.track(newMessage.$saveDraft(null, function(result) {
-//                 message.MessageID = parseInt(result.MessageID);
-//                 $scope.composeForm.$setPristine();
-//                 notify('Draft saved');
-//             }));
-//         }
-//     };
-
-//     $scope.showOptions = false;
-//     $scope.setOptionsVisibility = function(status) {
-//         if (!status && $scope.message.IsEncrypted !== '0' &&
-//             !this.composeForm.enc_password_conf.$valid) {
-
-//             $scope.message.IsEncrypted = '0';
-//         } else {
-//             $scope.showOptions = status;
-//         }
-//     };
-
-//     $scope.$watch("composeForm.$pristine", function(isPristine) {
-//         if (!isPristine) {
-//             window.onbeforeunload = function() {
-//                 return "By leaving now, you will lose what you have written in this email. " +
-//                     "You can save a draft if you want to come back to it later on.";
-//             }
-//         } else {
-//             window.onbeforeunload = undefined;
-//         }
-//     });
-
-//     $scope.$watch("message.IsEncrypted", function(newValue, oldValue) {
-//         if (oldValue === '0' && newValue === '1') {
-//             $scope.setOptionsVisibility(true);
-//         } else {
-//             $scope.setOptionsVisibility(false);
-//         }
-//     });
-
-//     localStorageService.bind($scope, 'alwaysShowCC', "true");
-//     localStorageService.bind($scope, 'alwaysShowBCC', "true");
-//     localStorageService.bind($scope, 'savesDraft', "true");
-//     localStorageService.bind($scope, 'savesContacts', "true");
-
-//     $scope.savesDraft = $scope.savesDraft == 'true';
-//     $scope.savesContacts = $scope.savesContacts == 'true';
-// })
-
 .controller("ComposeMessageController", function(
     $rootScope,
     $scope,
@@ -598,6 +382,12 @@ angular.module("proton.controllers.Messages", [
         }
     });
 
+    $rootScope.$on('onDrag', function() {
+        _.each($scope.messages, function(message) {
+            $scope.togglePanel(message, 'attachments');
+        });
+    });
+
     $rootScope.$on('newMessage', function() {
         var message = new Message();
 
@@ -605,6 +395,8 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
+        var message = new Message(_.pick(message, 'MessageTitle', 'MessageBody', 'RecipientList', 'CCList', 'BCCList'));
+
         $scope.initMessage(message);
     });
 
@@ -705,6 +497,7 @@ angular.module("proton.controllers.Messages", [
             notify('Maximum composer reached');
             return;
         }
+
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
@@ -713,7 +506,6 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
             $scope.listenEditor(message);
             $scope.initAutoSave(message);
-            $scope.clearTextBody(message);
         });
     };
 
@@ -758,15 +550,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.completedSignature = function(message) {
-        if (!message.MessageBody) {
-            $scope.user.$promise.then(function() {
-                message.RawMessageBody = "<br><br>" + $scope.user.Signature;
-            });
-        }
-    };
-
-    $scope.clearTextBody = function(message) {
-        message.RawMessageBody = message.clearTextBody();
+        $scope.user.$promise.then(function() {
+            if(angular.isUndefined(message.MessageBody)) {
+                message.MessageBody = "<br><br>" + $scope.user.Signature;
+            }
+        });
     };
 
     $scope.focusComposer = function(message) {
@@ -866,7 +654,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setExpiration = function(message, params) {
-        console.log('setExpiration', params.expiration);
         if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
             notify('The maximum expiration is 4 weeks.');
             return false;
@@ -932,7 +719,7 @@ angular.module("proton.controllers.Messages", [
             newMessage.BCCList = tools.changeSeparatorToComma(newMessage.BCCList);
 
             // encrypt the message body
-            pmcw.encryptMessage(message.RawMessageBody, $scope.user.PublicKey).then(function(result) {
+            pmcw.encryptMessage(message.MessageBody, $scope.user.PublicKey).then(function(result) {
                 // set 'outsiders' to empty by default
                 newMessage.MessageBody = {
                     outsiders: '',
@@ -967,14 +754,12 @@ angular.module("proton.controllers.Messages", [
                             if (index !== -1) {
                                 publickey = publickeys[index][email];
                                 // encrypt messagebody with each user's keys
-                                promises.push(pmcw.encryptMessage(message.RawMessageBody, publickey).then(function(result) {
+                                promises.push(pmcw.encryptMessage(message.MessageBody, publickey).then(function(result) {
                                     newMessage.MessageBody[email] = result;
                                 }));
                             } else if(email !== '') {
                                 if (!isOutside && newMessage.IsEncrypted === 0) {
-                                    if (!tools.isEmailAddressPM(email)) {
-                                        isOutside = true;
-                                    }
+                                    isOutside = true;
                                 }
                             }
                         });
@@ -998,7 +783,7 @@ angular.module("proton.controllers.Messages", [
                             // });
 
                             var encryptedSessionKeys = Promise.all(arr);
-                            var outsideBody = pmcw.encryptMessage(message.RawMessageBody, [], message.Password);
+                            var outsideBody = pmcw.encryptMessage(message.MessageBody, [], message.Password);
                             outsidePromise = outsideBody.then(function(result) {
                                 return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
                                     newMessage.MessageBody['outsiders'] = result;
@@ -1012,9 +797,8 @@ angular.module("proton.controllers.Messages", [
                         } else if(isOutside && newMessage.IsEncrypted === 0) {
                             // dont encrypt if its going outside
                             outsidePromise = new Promise(function(resolve, reject) {
-                                resolve(function() {
-                                    newMessage.MessageBody['outsiders'] = message.RawMessageBody;
-                                });
+                                newMessage.MessageBody['outsiders'] = message.MessageBody;
+                                resolve();
                             });
                         }
 
@@ -1148,7 +932,7 @@ angular.module("proton.controllers.Messages", [
         var cc = 'CC: ' + base.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
-        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.MessageBody + blockquoteEnd;
+        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.clearTextBody() + blockquoteEnd;
 
         if (action === 'reply') {
             base.RecipientList = message.Sender;
@@ -1241,41 +1025,44 @@ angular.module("proton.controllers.Messages", [
     }
 
     var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
-    var iframe = $("#message-body > iframe");
 
-    iframe.each(function(i) {
-        // HACK:
-        // Apparently, when navigating from a message to one adjacent, there's a time when there
-        // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
-        // Problem is, the content of the rendered template can only be put at one place in the DOM,
-        // so insert it in the each of these two caused it to be put in only the *second* iframe, which
-        // was only there temporarily. So when it disappeared, the content of the rendered template
-        // disappeared with it. With this, we force it to be put in the first iframe, which seems to
-        // be the right one.
-        if (i > 0) {
-            return;
-        }
+    angular.element(document).ready(function () {
+        var iframe = $("#message-body > iframe");
 
-        var iframeDocument = this.contentWindow.document;
+        iframe.each(function(i) {
+            // HACK:
+            // Apparently, when navigating from a message to one adjacent, there's a time when there
+            // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
+            // Problem is, the content of the rendered template can only be put at one place in the DOM,
+            // so insert it in the each of these two caused it to be put in only the *second* iframe, which
+            // was only there temporarily. So when it disappeared, the content of the rendered template
+            // disappeared with it. With this, we force it to be put in the first iframe, which seems to
+            // be the right one.
+            if (i > 0) {
+                return;
+            }
 
-        // HACK: Makes the iframe's content manipulation work in Firefox.
-        iframeDocument.open();
-        iframeDocument.close();
+            var iframeDocument = this.contentWindow.document;
 
-        try {
-            var content = render($scope);
-        } catch (err) {
-            console.log(err);
-        }
+            // HACK: Makes the iframe's content manipulation work in Firefox.
+            iframeDocument.open();
+            iframeDocument.close();
 
-        // Put the rendered template's content in the iframe's body
-        $(iframeDocument).find("body").empty().append(content);
-        $(iframeDocument).find('html').css('overflowY', 'hidden');
-        $(iframeDocument).find('html').css('overflowX', 'auto');
+            try {
+                var content = render($scope);
+            } catch (err) {
+                console.log(err);
+            }
+
+            // Put the rendered template's content in the iframe's body
+            $(iframeDocument).find("body").empty().append(content);
+            $(iframeDocument).find('html').css('overflowY', 'hidden');
+            $(iframeDocument).find('html').css('overflowX', 'auto');
+        });
+
+        // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+        $timeout(function() {
+            iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
+        }, 1000);
     });
-
-    // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
-    $timeout(function() {
-        iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
-    }, 16);
 });

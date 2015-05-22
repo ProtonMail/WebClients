@@ -25,6 +25,9 @@
             }"
             title="{{ getMessageEncryptionType(message) }}"></i>
         </span>
+        <span class="attachement" ng-show="message.AttachmentIDList.length > 0">
+            <i class="fa fa-paperclip"></i>
+        </span>
         {{ message.MessageTitle }}
         <span class="label label-pm" style="background-color: {{label.LabelColor}}" ng-repeat="label in message.Labels">
             {{label.LabelName}} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times"></i></a>
@@ -66,14 +69,6 @@
     </ul>
 </div>
 <!--/.message-head-->
-<div class="col-md-12">
-    <ul ng-if="message.AttachmentIDList.length" class="attachments">
-        <li ng-repeat="attachment in message.AttachmentIDList">
-            <i class="fa fa-paperclip"></i>
-            <a href="" ng-click="downloadAttachment(attachment)"><strong>{{ attachment.FileName }}</strong></a> <em>{{attachment.FileSize | humanSize}}</em>
-        </li>
-    </ul>
-</div>
 <div class="col-md-12" ng-show="message.containsImage === true">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
         <a href="" ng-click="message.toggleImages()">
@@ -90,8 +85,26 @@
         <strong>Decryption error</strong>
         <br> Decryption of this message's encryption content failed.
     </div>
+</div>
+<div class="col-md-12" ng-if="message.AttachmentIDList.length">
     <hr />
-    <div class="col-md-12 form-group">
-        <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
-    </div>
+    <p>
+        <strong>Attachments</strong> ({{message.AttachmentIDList.length}} <span ng-hide="message.AttachmentIDList.length === 1">files</span><span ng-show="message.AttachmentIDList.length === 1">file</span>, {{sizeAttachments() | humanSize}})
+    </p>
+    <table class="table table-hover">
+        <tbody>
+            <tr ng-repeat="attachment in message.AttachmentIDList">
+                <td>
+                    <strong>{{ attachment.FileName }}</strong> ({{attachment.FileSize | humanSize}})
+                </td>
+                <td class="text-right">
+                    <a href="" ng-click="downloadAttachment(attachment)">Download</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-md-12 form-group">
+    <hr />
+    <a href="" ng-click="reply(message)">Reply</a>, <a href="" ng-click="replyAll(message)">Reply All</a> or <a href="" ng-click="forward(message)">Forward</a>
 </div>

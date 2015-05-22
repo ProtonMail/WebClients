@@ -30,14 +30,17 @@
       }
       &.open {
         .labels {
+          a:hover {
+            background-color: transparent;
+          }
           display: block;
           margin-top: 0;
           width: 300px;
           position: absolute;
           background-color: #fff;
           input[type='search'] {
-            border-radius: 50px;
             border: 1px solid #ccc;
+            outline: 0;
           }
           ul.list-group {
             max-height: 120px;

@@ -223,7 +223,7 @@ angular.module("proton.models.message", [])
                 messageBody = $('#iOSeditor').val();
                 messageBody = messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
             } else {
-                messageBody = this.RawMessageBody;
+                messageBody = this.MessageBody;
             }
 
             messageBody = tools.fixImages(messageBody);

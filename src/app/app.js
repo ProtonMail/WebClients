@@ -144,6 +144,9 @@ angular.module("proton", [
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
         $('#loading-css, #loading').remove();
     });
+    $rootScope.onDrag = function() {
+        $rootScope.$broadcast('onDrag');
+    };
 })
 
 //

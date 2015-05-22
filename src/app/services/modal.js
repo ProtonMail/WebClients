@@ -30,6 +30,10 @@ angular.module("proton.modals", [])
                 if (!element) {
                     attach(html, locals);
                 }
+                $(body).append('<div class="modal-backdrop fade in"></div>');
+                setTimeout(function() {
+                    $('.modal').addClass('in');
+                }, 100);
             });
         }
 
@@ -66,6 +70,7 @@ angular.module("proton.modals", [])
                 scope = null;
                 element.remove();
                 element = null;
+                $('.modal-backdrop').remove();
             });
         }
 
@@ -84,7 +89,7 @@ angular.module("proton.modals", [])
 // confirm modal
 .factory('confirmModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout) {
+        controller: function(params) {
             this.message = params.message;
             this.title = params.title;
 
@@ -99,10 +104,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
-            $timeout(function() {
-                this.class = 'in';
-            }.bind(this), 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/confirm.tpl.html'
@@ -112,7 +113,7 @@ angular.module("proton.modals", [])
 // alert modal
 .factory('alertModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout) {
+        controller: function(params) {
             this.message = params.message;
 
             this.ok = function() {
@@ -120,10 +121,6 @@ angular.module("proton.modals", [])
                     params.ok();
                 }
             };
-
-            $timeout(function() {
-                this.class = 'in';
-            }.bind(this), 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alert.tpl.html'
@@ -151,7 +148,6 @@ angular.module("proton.modals", [])
             };
 
             $timeout(function() {
-                this.class = 'in';
                 $('#contactName').focus();
             }.bind(this), 100);
         },
@@ -163,7 +159,7 @@ angular.module("proton.modals", [])
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout, $scope) {
+        controller: function(params, $scope) {
             this.label = params.label;
             this.title = params.title;
             this.colors = [
@@ -195,10 +191,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
-            $timeout(function() {
-                this.class = 'in';
-            }.bind(this), 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/label.tpl.html'
@@ -276,7 +268,6 @@ angular.module("proton.modals", [])
             };
 
             $timeout(function() {
-                this.class = 'in';
                 init();
             }.bind(this), 100);
         },

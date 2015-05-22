@@ -19,12 +19,38 @@ angular.module("proton.squire", [
         templateUrl: "templates/directives/squire.tpl.html",
 
         /* @ngInject */
-        controller: function($scope, $sanitize, tools) {
+        controller: function($scope, $rootScope, $sanitize, tools) {
             var editorVisible;
             editorVisible = true;
+
             $scope.isEditorVisible = function() {
                 return editorVisible;
             };
+
+            $scope.isPlain = function() {
+                var result = false;
+
+                if($scope.data.format === 'plain') {
+                    result = true;
+                }
+
+                if($rootScope.isMobile && $rootScope.browser === 'Safari') {
+                    result = true;
+                }
+
+                return result;
+            };
+
+            $scope.isHtml = function() {
+                var result = false;
+
+                if($scope.data.format === 'html') {
+                    result = true;
+                }
+
+                return result;
+            };
+
             return $scope.editorVisibility = this.editorVisibility = function(vis) {
                 var _ref;
                 if (arguments.length === 1) {
