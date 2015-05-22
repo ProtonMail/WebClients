@@ -19,7 +19,7 @@ angular.module("proton.squire", [
         templateUrl: "templates/directives/squire.tpl.html",
 
         /* @ngInject */
-        controller: function($scope, $sanitize) {
+        controller: function($scope, $sanitize, tools) {
             var editorVisible;
             editorVisible = true;
             $scope.isEditorVisible = function() {

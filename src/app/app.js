@@ -74,11 +74,13 @@ angular.module("proton", [
     $rootScope,
     networkActivityTracker,
     notify,
-    $state
+    $state,
+    tools
 ) {
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
+    $rootScope.browser = tools.getBrowser;
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ _.string.capitalize(pageName) }" +

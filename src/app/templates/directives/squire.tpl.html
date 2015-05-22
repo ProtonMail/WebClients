@@ -100,8 +100,8 @@
             </li>
         </ul>
         <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="data.format === 'html'">
-            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups allow-scripts"></iframe>
-            <textarea ng-show="isiOS">sajhdajshdjashdjkashd</textarea>
+            <iframe ng-hide="$root.isMobile && $root.browser=='Safari'" frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-popups allow-scripts"></iframe>
+            <textarea ng-show="$root.isMobile && ($root.browser=='Safari')">sajhdajshdjashdjkashd</textarea>
         </div>
         <textarea ng-model="ngModel" ng-show="data.format === 'plain'" style="height: {{height}};"></textarea>
     </div>
