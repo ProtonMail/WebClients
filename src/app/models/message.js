@@ -350,7 +350,7 @@ angular.module("proton.models.message", [])
                     outsiders: ''
                 };
 
-                pmcw.encryptMessage(this.RawMessageBody, authentication.user.PublicKey).then(function(result) {
+                pmcw.encryptMessage(this.MessageBody, authentication.user.PublicKey).then(function(result) {
                     newMessage.MessageBody.self = result;
 
                     var newDraft = angular.isUndefined(this.MessageID);
