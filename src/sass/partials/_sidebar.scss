@@ -9,11 +9,27 @@
   left: 0;
   top: 0;
   bottom: 0;
-  padding-bottom: 45px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   em {
     font-style: normal;
+  }
+
+  #sidebarLabels {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    .btn {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .divider {
@@ -75,10 +91,6 @@
   }
 
   .storage {
-    position: fixed;
-    left: 0;
-    right: 1rem;
-    bottom: 0;
     box-sizing: border-box;
     width: $sidebar-width;
     background-color: $sidebar-bg;
@@ -204,5 +216,5 @@
 }
 
 #main {
-  margin-left: $sidebar-width;
+  padding-left: $sidebar-width;
 }

@@ -1,6 +1,6 @@
 @media (max-width: 1199px) {
 	#main {
-		margin-left: ($sidebar-width)*.9;
+		padding-left: ($sidebar-width)*.9;
 	}
 	#sidebar {
 		width: ($sidebar-width)*.9;
@@ -16,7 +16,7 @@
 		padding: 0 10px;
 	}
 	#main {
-		margin-left: ($sidebar-width)*.3;
+		padding-left: ($sidebar-width)*.3;
 	}
 	#sidebar {
 		width: ($sidebar-width)*.3;

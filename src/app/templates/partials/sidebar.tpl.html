@@ -62,7 +62,7 @@
         </li>
     </ul>
     <div class="divider"></div>
-    <div class="hidden-xs hidden-sm" ng-show="labelsDisplayed().length > 0">
+    <div class="hidden-xs hidden-sm" ng-show="labelsDisplayed().length > 0" id="sidebarLabels">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="label in labelsDisplayed()">
                 <a ui-sref="secured.label({label: '{{label.LabelID}}' })" class="btn" ui-sref-active="active">
