@@ -4,10 +4,10 @@
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}}</span>
                 <span class="col-xs-3 text-right">
-                    <a href="" class="btn btn-sm" ng-click="toggleMinimize(message)">
+                    <a href="" class="btn btn-sm minimize-button hidden-xs" ng-click="toggleMinimize(message)">
                         <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-plus': !!message.minimized}"></i>
                     </a>
-                    <a href="" class="btn btn-sm" ng-click="close(message, true)">
+                    <a href="" class="btn btn-sm close-button" ng-click="close(message, true)">
                         <span class="sr-only">Close</span>
                         <i class="fa fa-times"></i>
                     </a>

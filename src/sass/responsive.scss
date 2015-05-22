@@ -41,6 +41,23 @@
 			margin: 0;
 		}
 	}
+	.composer {
+		top: 0 !important;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1000 !important;
+		box-shadow: none;
+		transition: none !important;
+		height: 100%;
+		overflow: auto;
+		.close-button .fa {
+			color: #fff;
+		}
+	}
+	.squire-toolbar .btn-sm {
+		padding: 5px;
+	}
 	body, html {
 		overflow: auto;
 		height: auto;
@@ -66,6 +83,7 @@
 	}
 	body .secure #body {
 		height: auto;
+		overflow: hidden;
 	}
 	.message-head h1 {
 		line-height: 20px;
