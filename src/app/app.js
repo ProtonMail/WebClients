@@ -1,3 +1,5 @@
+// TODO... when refreshing inbox, displayname vanishes?
+
 angular.module("proton", [
     "ngAnimate",
     "ngSanitize",

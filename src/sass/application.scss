@@ -18,9 +18,9 @@ $fa-font-path: "fonts";
 html, body {
   position: relative;
   min-height: 100%;
-  height: 100%;
   max-width: 100%;
-  overflow-x: hidden
+  overflow-x: hidden;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
 }
 
 .bold {

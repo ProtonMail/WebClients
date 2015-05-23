@@ -49,10 +49,10 @@
                         <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-wrench"></span> Settings</a>
                     </li>
                     <li id="nav_login" ng-if="!isLoggedIn">
-                        <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> Sign In</a>
+                        <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> Login</a>
                     </li>
                     <li id="nav_logout" ng-if="isLoggedIn">
-                        <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> Sign Out</a>
+                        <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> Logout</a>
                     </li>
                 </ul>
             </div>
@@ -136,10 +136,10 @@
                             <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
                         </td>
                         <td id="nav_login" ng-if="!isLoggedIn">
-                            <a ui-sref="login"><span class="fa fa-power-off"></span> Sign In</a>
+                            <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
                         </td>
                         <td id="nav_logout" ng-if="isLoggedIn">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> Sign Out</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> Logout</a>
                         </td>
                     </tr>
                 </table>

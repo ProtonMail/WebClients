@@ -1,7 +1,7 @@
 <div class="panel panel-default wrap">
     <div class="panel-body">
         <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="off">
-            <h1 class="text-center">Sign In</h1> 
+            <h1 class="text-center">Login</h1> 
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
                 <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
@@ -12,26 +12,17 @@
             <div class="fluid-container">
                 <div class="row">
                     <div class="col-xs-6">
-                        <a class="btn" ui-sref="support.reset-password">Forgot password?</a>
+                        <a class="btn" ui-sref="support.reset-password">Need help?</a>
                     </div>
                     <div class="col-xs-6 text-right">
                         <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="3" ng-click="tryLogin()">
-                           <span>Sign In</span>
+                           <span>Login</span>
                         </button>
                     </div>
                 </div>
             </div>
             <input type="hidden" id="hashed_pw" name="hashed_pw" />
         </form>
-
-        <hr />
-
-        <p class="text-muted text-center"><a href="/signup">Don't have an account?</a></p>
-
-        <a href="/invite" class="btn btn-default btn-block"><strong>Request an invite now!</strong></a>
     </div>
 </div>
-
-<p class="text-center"><a href="/username">Forgot username?</a></p>
-<p class="text-center"><a href="/queue">Still on Waiting List?</a></p>
-<p class="text-center"><a href="{{ build.notes }}" target="_blank">Version {{ build.version }}</a> - {{ build.date }}</p>
+<p class="text-center"><a href="/signup">Need an account? Sign Up.</a></p>
