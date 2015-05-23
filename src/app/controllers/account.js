@@ -118,8 +118,13 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.saveContinue = function(form) {
 
         if (form.$valid) {
-            // TODO
-            // do additional validation here such as looking up the username to see if its available
+
+            // custom validation
+            if ($scope.account.loginPasswordConfirm!==$scope.account.loginPassword) {
+                return;
+            }
+
+
             var params = {
                 "response_type": "token",
                 "client_id": "demoapp",
@@ -134,22 +139,47 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             };
 
             networkActivityTracker.track(
-                User.createUser(params).$promise
-                .then(
+                User.checkUserExist({
+                    username: $scope.account.Username
+                })
+                .$promise.then(
                     function(response) {
-                        // Account created!a
-                        $state.go('step2');
-                        authentication.receivedCredentials(
-                            _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
-                        );
+
+                        if (response.error) {
+                            var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
+                            notify({
+                                classes: 'notification-danger',
+                                message: error_message
+                            });
+                            return;
+                        }
+
+                        return User.createUser(params).$promise
+                        .then(
+                            function(response) {
+                                // Account created!
+                                $state.go('step2');
+                                authentication.receivedCredentials(
+                                    _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
+                                );
+                            }, 
+                            function(response) {
+                                var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: error_message
+                                });
+                                $('#Username').focus();
+                                $log.error(response);
+                            }
+                        )                        
                     }, 
                     function(response) {
+                        var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
                         notify({
                             classes: 'notification-danger',
-                            message: response.error
+                            message: error_message
                         });
-                        $('#Username').focus();
-                        $log.error(response);
                     }
                 )
             );
@@ -159,7 +189,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.finish = function(form) {
         if (form.$valid) {
-            // TODO redirect to inbox. currently redirects to decrypt. does this return a promise?
             return generateKeys('UserID', $scope.account.mailboxPassword);
         }
     };
@@ -189,14 +218,13 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     };
 
     $scope.resetMailbox = function(form) {
-        if (form.$valid) { // TODO this is nto valid for some reason :(
+        if (form.$valid) {
             generateKeys('UserID', form.password.$modelValue);
         }
         // 1. hide the warning, show the form
         // 2. warning to remember hte password
         // 3. API call to reset password
         // 4. on success save, login, redirect
-
     };    
 
 });

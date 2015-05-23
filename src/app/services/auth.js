@@ -4,7 +4,7 @@ angular.module("proton.authentication", [
 ])
 
 .constant("MAILBOX_PASSWORD_KEY", "proton:mailbox_pwd")
-    .constant("OAUTH_KEY", "proton:oauth")
+.constant("OAUTH_KEY", "proton:oauth")
 
 .config(function(
     $provide,
@@ -86,8 +86,35 @@ angular.module("proton.authentication", [
 
             var api = {
 
-                // TODO update to more secure PRNG
-                randomString: function(size) {
+                randomString: function(length)
+                {
+                    var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    var i;
+                    var result = "";
+                    var isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]';
+                    if(window.crypto && window.crypto.getRandomValues)
+                    {
+                        values = new Uint32Array(length);
+                        window.crypto.getRandomValues(values);
+                        for(i=0; i<length; i++)
+                        {
+                            result += charset[values[i] % charset.length];
+                        }
+                        return result;
+                    }
+                    else if(isOpera)
+                    {
+                        //Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+                        for(i=0; i<length; i++)
+                        {
+                            result += charset[Math.floor(Math.random()*charset.length)];
+                        }
+                        return result;
+                    }
+                    else return semiRandomString(length);
+                },
+
+                semiRandomString: function(size) {
                     var string = "",
                         i = 0,
                         chars = "0123456789ABCDEF";
@@ -360,23 +387,8 @@ angular.module("proton.authentication", [
     });
 })
 
-.config(function(authenticationProvider, $httpProvider) {
+.config(function(authenticationProvider) {
     authenticationProvider.detectAuthenticationState();
-    $httpProvider.interceptors.push(function($q) {
-        return {
-            // Add an interceptor that will change a HTTP 200 success response containing
-            // a { "error": <something> } body into a failing response
-            response: function(response) {
-                if (response.data && response.data.error) {
-                    var q = $q.defer();
-                    q.reject(response.data);
-                    return q.promise;
-                }
-
-                return response;
-            }
-        };
-    });
 })
 
 .run(function($rootScope, authentication) {
@@ -387,4 +399,4 @@ angular.module("proton.authentication", [
         authentication.logout();
         $scope.error = null;
     };
-});
+})

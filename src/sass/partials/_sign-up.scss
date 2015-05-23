@@ -1,11 +1,18 @@
+$domain-element-width: 12rem;
+
 .panel {
     &.panel-sign-up {
         width: auto;
         max-width: inherit;
+        #Username {
+            padding-right: $domain-element-width;
+            box-sizing: border-box;
+        }
         .usernameWrap {
-        	position: relative;
+        	position: relative; 
         }
         .usernameDomain {
+            width: $domain-element-width;
         	position: absolute;
         	right: 1px;
         	top: 1px;
@@ -17,9 +24,9 @@
         	font-style: normal;
         	pointer-events: none;
         	cursor: default;
-        	width: 13rem;
         	text-align: right;
         	border-radius: 2px;
+            box-sizing: border-box;
         }
     }
 }

@@ -4,6 +4,7 @@ angular.module("proton.models.user", [])
     $resource,
     $injector) {
     var authentication = $injector.get("authentication");
+    // https://docs.angularjs.org/api/ngResource/service/$resource
     return $resource(
         authentication.baseURL + "/users/:UserID",
         authentication.params(), {
@@ -28,7 +29,7 @@ angular.module("proton.models.user", [])
             },
             checkUserExist: {
                 method: 'get',
-                url: authentication.baseURL + "/users/exist"
+                url: authentication.baseURL + "/users/check/:username"
             },
             checkInvite: {
                 method: 'get',
