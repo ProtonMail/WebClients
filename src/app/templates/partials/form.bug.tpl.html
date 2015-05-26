@@ -64,8 +64,8 @@
                         <!--/.col-md-6-->
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="bug_email">Your Email Address</label>
-                                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="Email" ng-model="bug.email">
+                                <label for="bug_email">Your {{ 'EMAIL' | translate }} Address</label>
+                                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.email">
                                 <p class="help-block">Please make sure to give us a way to contact you.</p>
                             </div>
                             <!--/.form-group-->

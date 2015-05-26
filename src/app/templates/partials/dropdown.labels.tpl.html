@@ -1,7 +1,7 @@
 <div class="labels dropdown-menu" role="menu" ng-click="$event.stopPropagation()">
     <div class="modal-body">
         <div class="form-group" ng-show="labels.length > 0">
-            <input type="search" id="searchLabels" placeholder="Filter Labels..." class="form-control" ng-model="searchLabels" />
+            <input type="search" id="searchLabels" placeholder="{{ 'FILTER' | translate }} Labels..." class="form-control" ng-model="searchLabels" />
         </div>
         <ul class="list-group" ng-show="labels.length > 0">
             <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels">
@@ -20,7 +20,7 @@
             </div>
             <div class="col-xs-6 text-right" ng-show="labels.length > 0">
                 <label for="">
-                    <input type="checkbox" ng-model="alsoArchived" /> also Archived
+                    <input type="checkbox" ng-model="alsoArchived" /> also {{ 'ARCHIVE' | translate }}
                 </label>
             </div>
         </div>

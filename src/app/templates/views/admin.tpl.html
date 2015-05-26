@@ -7,7 +7,7 @@
 				<input type='hidden'/>
 				<label for="userlookup">User Lookup</label>
 				<div class="input-group">
-				  <input type="text" ng-model="formData.userLookup" required placeholder="Username or Notf. Email" id = "userlookup" class="form-control">
+				  <input type="text" ng-model="formData.userLookup" required placeholder="Username or Notf. {{ 'EMAIL' | translate }}" id = "userlookup" class="form-control">
 				  <span class="input-group-btn">
 				    <button class="btn btn-default" ng-disabled="lookupForm.$invalid" type="submit"><span class="fa fa-search"></span> Lookup</button>
 				  </span>
@@ -17,11 +17,11 @@
 		<div class="col-md-3">
 			<form name="deleteForm" ng-submit="adminDelete(inputType(formData.userDelete))">
 				<input type='hidden'/>
-				<label for="user_id_quick_delete">Delete User</label>
+				<label for="user_id_quick_delete">{{ 'DELETE' | translate }} User</label>
 				<div class="input-group">
 				  <input type="text" ng-model="formData.userDelete" required class="form-control"  placeholder="User">
 				  <span class="input-group-btn">
-				    <button class="btn btn-danger" ng-disabled="deleteForm.$invalid" type="submit"><span class="fa fa-trash-o"></span> Delete</button>
+				    <button class="btn btn-danger" ng-disabled="deleteForm.$invalid" type="submit"><span class="fa fa-trash-o"></span> {{ 'DELETE' | translate }}</button>
 				  </span>
 				</div><!-- /input-group -->
 			</form>
@@ -60,5 +60,6 @@
 
 
 	<br>
-  <h1>Showing 0-1000 users of 23038.</h1>
+	<!-- TODO TOTAL USERS -->
+  <h1>Showing 0-1000 users of ???.</h1>
 </div>

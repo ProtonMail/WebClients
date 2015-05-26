@@ -12,17 +12,17 @@
                 <div class="panel-body">
                     <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
                         <div class="form-group">
-                            <label class="control-label">Daily New Email Notifications</label>
+                            <label class="control-label">Daily New {{ 'EMAIL' | translate }} Notifications</label>
                             <div>
                                 <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="Enabled" off-label="Disabled">
                                     <toggle-switch>
                             </div>
                         </div>
                         <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
-                            <label class="control-label" for="notificationEmail">Notification/Recovery Email</label>
-                            <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery Email" ng-model="notificationEmail" />
+                            <label class="control-label" for="notificationEmail">Notification/Recovery {{ 'EMAIL' | translate }}</label>
+                            <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
                             <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">
-                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">Invalid email.</p>
+                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">Invalid {{ 'EMAIL' | translate }}.</p>
                             </div>
                             <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
                         </div>
@@ -39,12 +39,12 @@
             <div class="panel-heading" role="tab" id="headingAutosaveContacts">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">Autosave Contacts</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">Autosave {{ 'CONTACTS' | translate }}</a>
                 </h4>
             </div>
             <div id="autosaveContacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAutosaveContacts">
                 <div class="panel-body">
-                    <label class="control-label">Autosave Contacts</label>
+                    <label class="control-label">Autosave {{ 'CONTACTS' | translate }}</label>
                     <div>
                         <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="Enabled" off-label="Disabled"><toggle-switch>
                     </div>

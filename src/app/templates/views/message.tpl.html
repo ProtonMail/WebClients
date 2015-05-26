@@ -2,7 +2,7 @@
 <div class="row visible-xs-block" id="messageActionsMobile">
     <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link"><i class="fa fa-reply"></i> Reply</a></div>
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
-    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> Forward</a></div>
+    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> {{ 'FILTER' | translate }}</a></div>
 </div>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
     <div class="pull-right">
@@ -45,7 +45,7 @@
             <strong>To</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.RecipientList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
                 </li>
             </ul>
         </li>
@@ -54,7 +54,7 @@
             <span btf-markdown="message.CCList | contrast:'<'"></span>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.CCList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
                 </li>
             </ul>
         </li>
@@ -62,7 +62,7 @@
             <strong>BCC</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.BCCList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="Compose to"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
                 </li>
             </ul>
         </li>

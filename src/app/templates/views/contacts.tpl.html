@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
         <li>
             <form>
-                <input autofocus type="search" class="form-control" placeholder="Search Contacts..." ng-model="search" />
+                <input autofocus type="search" class="form-control" placeholder="Search {{ 'CONTACTS' | translate }}..." ng-model="search" />
             </form>
         </li>
         <li>
@@ -12,19 +12,19 @@
         </li>
         <li>
             <a href="" ng-click="deleteContacts()" ng-class="{ disabled: contactsSelected().length === 0 }">
-                <i class="fa fa-trash-o hidden-xs hidden-sm"></i> Delete <span ng-show="contactsSelected().length === 1" class="hidden-sm">Contact</span><span ng-show="contactsSelected().length > 1" class="hidden-sm">Contacts</span>
+                <i class="fa fa-trash-o hidden-xs hidden-sm"></i> {{ 'DELETE' | translate }} <span ng-show="contactsSelected().length === 1" class="hidden-sm">Contact</span><span ng-show="contactsSelected().length > 1" class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li>
             <a href="" ng-click="uploadContacts()">
-                <i class="fa fa-upload hidden-xs hidden-sm"></i> Upload <span class="hidden-sm">Contacts</span>
+                <i class="fa fa-upload hidden-xs hidden-sm"></i> Upload <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
         <li>
             <a href="" ng-click="downloadContacts()">
-                <i class="fa fa-download hidden-xs hidden-sm"></i> Download <span class="hidden-sm">Contacts</span>
+                <i class="fa fa-download hidden-xs hidden-sm"></i> Download <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
     </ul>
@@ -34,10 +34,10 @@
         <thead>
             <tr>
                 <th class="text-center hidden-xs">
-                    <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="Select All Contacts" />
+                    <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="Select All {{ 'CONTACTS' | translate }}" />
                 </th>
                 <th>Name</th>
-                <th>Email</th>
+                <th>{{ 'EMAIL' | translate }}</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -53,14 +53,14 @@
                     {{ contact.ContactEmail }}
                 </td>
                 <td>
-                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Edit Contact" ng-click="editContact(contact)">
+                    <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
                         <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
                     </a>
-                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Send message" ng-click="sendMessageTo(contact)">
-                        <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">Message</span>
+                    <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
+                        <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
                     </a>
-                    <a href="" class="btn btn-default btn-sm" pt-tooltip="Delete Contact" ng-click="deleteContact(contact)">
-                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Delete</span>
+                    <a href="" class="btn btn-default btn-sm" ng-click="deleteContact(contact)">
+                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
                     </a>
                 </td>
             </tr>

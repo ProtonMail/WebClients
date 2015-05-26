@@ -17,12 +17,12 @@
     <div class="col-md-3">
       <form name="updateForm" ng-submit="inviteUpdateEmail(inputType(formData.userUpdated))">
         <input type='hidden'/>
-        <label for="userlookup">Change Notf. Email</label><br>
+        <label for="userlookup">Change Notf. {{ 'EMAIL' | translate }}</label><br>
         <div class="form-group">
           <input type="text" ng-model="formData.userUpdated" required placeholder="User" class="form-control">
         </div><!--/.form-group-->
         <div class="form-group">
-          <input type="email" ng-model="formData.notification_email" required placeholder="New Notf. Email" class="form-control">
+          <input type="email" ng-model="formData.notification_email" required placeholder="New Notf. {{ 'EMAIL' | translate }}" class="form-control">
         </div><!--/.form-group-->
         <div class="form-group text-right">
           <button type="submit" ng-disabled="updateForm.$invalid" class="btn btn-default"><span class="fa fa-refresh"></span> Update</button>
