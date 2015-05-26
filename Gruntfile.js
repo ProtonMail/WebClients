@@ -496,6 +496,7 @@ module.exports = function(grunt) {
         "connect:api_doc",
         "concat:compile_api_spec",
         "forever:mock_server:start",
+        "delta",
         "delta"
     ]);
 
