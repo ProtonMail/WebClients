@@ -308,6 +308,32 @@ angular.module("proton.tools", [])
             return compatible;
         }
 
+        function setIframeHeight() {
+            // apply a 100ms timeout because for some reason it doesnt work if it runs right away
+            setTimeout( function() {
+                var setIframeHeightTries = 0;
+                function loop() {
+                    // we try to calc the height, but some elements might not be ready, so we keep trying.                
+                    if ($('#content iframe').length && setIframeHeightTries < 20) {
+                        // reset heights first!
+                        $('#content iframe, #message-body').css('height', '');
+                        if ($('.message-toolbar').length && $('.message-head').length) {
+                            // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
+                            $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
+                        }
+                        else {
+                            setIframeHeightTries++;
+                            // console.log(setIframeHeightTries);
+                            setTimeout( function() {
+                                loop();
+                            }, 100);
+                        }
+                    }
+                }
+                loop();
+            }, 100);
+        }
+
         var tools = {
             block: block,
             quote: quote,
@@ -328,7 +354,8 @@ angular.module("proton.tools", [])
             getBrowserVersion: get_browser_version(),
             isCompatible: is_compatible,
             validEmail: valid_email,
-            is_valid_dkim: is_valid_dkim
+            is_valid_dkim: is_valid_dkim,
+            setIframeHeight: setIframeHeight
         };
 
         return tools;

@@ -78,8 +78,17 @@ angular.module("proton", [
     $state,
     tools
 ) {
+
+    // window.console = console;
+
+    // var console = {};
+    // console.log = function(){};
+    
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
+        // set iframe height dynamically
+        tools.setIframeHeight();
+
     });
     $rootScope.browser = tools.getBrowser;
     var pageTitleTemplate = _.template(
