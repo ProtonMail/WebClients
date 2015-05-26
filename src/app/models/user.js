@@ -50,6 +50,42 @@ angular.module("proton.models.user", [])
             resetLostPassword: {
                 method: 'post',
                 url: authentication.baseURL + "/reset/lost-password" //sends notification email to the user
+            },
+            updatePassword: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/password"
+            },
+            keyPassword: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/keypwd"
+            },
+            notificationEmail: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/noticeemail"
+            },
+            notify: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/notify"
+            },
+            signature: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/signature"
+            },
+            aliases: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/domainorder"
+            },
+            dislayName: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/display"
+            },
+            autosaveContacts: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/autosave"
+            },
+            theme: {
+                method: 'put',
+                url: authentication.baseURL + "/setting/theme"
             }
         }
     );

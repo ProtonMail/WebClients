@@ -25,7 +25,6 @@ angular.module("proton", [
     "proton.models.message",
     "proton.models.contact",
     "proton.models.user",
-    "proton.models.setting",
     "proton.models.bug",
 
     // Services

@@ -32,7 +32,6 @@ angular.module("proton.controllers.Bug", [])
     $scope.sendBugReport = function(form) {
         networkActivityTracker.track(
             Bug.bugs({
-                "bug_device": $('#bug_device').val(),
                 "bug_os": $('#bug_os').val(),
                 "bug_browser": $scope.bug.browser,
                 "bug_location": $scope.bug.location,
