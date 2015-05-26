@@ -215,7 +215,7 @@ angular.module("proton.modals", [])
                     e.preventDefault();
                     extension = e.dataTransfer.files[0].name.substr(e.dataTransfer.files[0].name.length - 4);
 
-                    if (extension != '.csv' && extension != '.vcf') {
+                    if (extension !== '.csv' && extension !== '.vcf') {
                         notify('Invalid file type');
                         self.hover = false;
                     } else {
@@ -242,7 +242,7 @@ angular.module("proton.modals", [])
                 $('#' + idSelectedFile).change(function(e) {
                     extension = $('#' + idSelectedFile)[0].files[0].name.substr($('#' + idSelectedFile)[0].files[0].name.length - 4);
 
-                    if (extension != '.csv' && extension != '.vcf') {
+                    if (extension !== '.csv' && extension !== '.vcf') {
                         notify('Invalid file type');
                     } else {
                         files = $('#' + idSelectedFile)[0].files;

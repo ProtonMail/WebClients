@@ -91,7 +91,7 @@ angular.module("proton.authentication", [
                     var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
                     var i;
                     var result = "";
-                    var isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]';
+                    var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
                     if(window.crypto && window.crypto.getRandomValues)
                     {
                         values = new Uint32Array(length);
@@ -110,8 +110,9 @@ angular.module("proton.authentication", [
                             result += charset[Math.floor(Math.random()*charset.length)];
                         }
                         return result;
+                    } else {
+                        return semiRandomString(length);
                     }
-                    else return semiRandomString(length);
                 },
 
                 semiRandomString: function(size) {
@@ -310,9 +311,10 @@ angular.module("proton.authentication", [
                     var promise = auth.fetchUserInfo();
                     return promise.then(
                         function(user) {
-                            if (user.DisplayName=='') {
+                            if (user.DisplayName.length === 0) {
                                 user.DisplayName = user.addresses[0].Email;
                             }
+
                             $rootScope.isLocked = true;
                             return user;
                         },
@@ -399,4 +401,4 @@ angular.module("proton.authentication", [
         authentication.logout();
         $scope.error = null;
     };
-})
+});

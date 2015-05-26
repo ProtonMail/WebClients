@@ -51,12 +51,12 @@ angular.module("proton.squire", [
                 return result;
             };
 
-            return $scope.editorVisibility = this.editorVisibility = function(vis) {
+            $scope.editorVisibility = this.editorVisibility = function(vis) {
                 var _ref;
                 if (arguments.length === 1) {
                     editorVisible = vis;
                     if (vis) {
-                        return (_ref = $scope.editor) != null ? _ref.focus() : void 0;
+                    return (_ref = $scope.editor) !== null ? _ref.focus() : void 0;
                     }
                 } else {
                     return editorVisible;
@@ -84,7 +84,7 @@ angular.module("proton.squire", [
                 });
             };
             ngModel.$render = function() {
-                return editor != null ? editor.setHTML(ngModel.$viewValue || '') : void 0;
+                return editor !== null ? editor.setHTML(ngModel.$viewValue || '') : void 0;
             };
             ngModel.$isEmpty = function(value) {
                 if (angular.isString(value)) {
@@ -111,7 +111,7 @@ angular.module("proton.squire", [
               return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
             };
             scope.$on('$destroy', function() {
-                return editor != null ? editor.destroy() : void 0;
+                return editor !== null ? editor.destroy() : void 0;
             });
             scope.showPlaceholder = function() {
                 return ngModel.$isEmpty(ngModel.$viewValue);
@@ -190,8 +190,7 @@ angular.module("proton.squire", [
             menubar = element.find('.menu');
             haveInteraction = false;
             iframeLoaded = function() {
-                var iframeDoc;
-                iframeDoc = iframe[0].contentWindow.document;
+                var iframeDoc = iframe[0].contentWindow.document;
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
                 editor = scope.editor = new Squire(iframeDoc);
@@ -211,16 +210,22 @@ angular.module("proton.squire", [
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
                     scope.editorVisibility(true);
-                    return haveInteraction = true;
+                    haveInteraction = true;
+
+                    return haveInteraction;
                 });
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
+
                     if (ngModel.$pristine && !ngModel.$isEmpty(ngModel.$viewValue)) {
                         ngModel.$setTouched();
                     } else {
                         ngModel.$setPristine();
                     }
-                    return haveInteraction = true;
+
+                    haveInteraction = true;
+
+                    return haveInteraction;
                 });
                 editor.addEventListener("pathChange", function() {
                     var p, _ref;
@@ -230,7 +235,7 @@ angular.module("proton.squire", [
                     } else {
                         element.find('.add-link').removeClass('active');
                     }
-                    return menubar.attr("class", "menu " + ((_ref = p.split("BODY")[1]) != null ? _ref.replace(/>|\.|html|body|div/ig, ' ').toLowerCase() : void 0));
+                    return menubar.attr("class", "menu " + ((_ref = p.split("BODY")[1]) !== null ? _ref.replace(/>|\.|html|body|div/ig, ' ').toLowerCase() : void 0));
                 });
                 editor.alignRight = function() {
                     return editor.setTextAlignment("right");
@@ -244,8 +249,9 @@ angular.module("proton.squire", [
                 editor.alignJustify = function() {
                     return editor.setTextAlignment("justify");
                 };
-                return editor.makeHeading = function() {
+                editor.makeHeading = function() {
                     editor.setFontSize("2em");
+
                     return editor.bold();
                 };
             };
@@ -255,7 +261,9 @@ angular.module("proton.squire", [
             isFF = !isChrome && !isIE;
             loaded = false;
             iframe.on('load', function() {
-                return loaded = true;
+                loaded = true;
+
+                return loaded;
             });
             if (isChrome) {
                 iframeLoaded();
@@ -278,7 +286,8 @@ angular.module("proton.squire", [
                 test = validation.test(p) | this.hasFormat(format);
                 return name === action && test;
             };
-            return scope.action = function(action) {
+
+            scope.action = function(action) {
                 var node, range, selection, test;
                 if (!editor) {
                     return;
@@ -371,7 +380,9 @@ angular.module("proton.squire", [
             return scope.$watch(function() {
                 return editorCtrl.editorVisibility();
             }, function(val) {
-                return showingCover = !val;
+                showingCover = !val;
+
+                return showingCover;
             });
         }
     };
@@ -384,7 +395,7 @@ angular.module("proton.squire", [
         require: "^squire",
         template: "<ng-transclude ng-show=\"isControlsVisible()\"\n    class=\"angular-squire-controls\">\n</ng-transclude>",
         link: function(scope, element, attrs, editorCtrl) {
-            return scope.isControlsVisible = function() {
+            scope.isControlsVisible = function() {
                 return editorCtrl.editorVisibility();
             };
         }

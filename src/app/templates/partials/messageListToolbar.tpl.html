@@ -35,7 +35,7 @@
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
         <li>
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }">
                 More <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -53,7 +53,7 @@
         </li>
         <li>
             <a href class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-filter visible-md-inline-block visible-lg-inline-block"></i> Show <i class="fa fa-caret-down"></i>
+                <i class="fa fa-filter visible-md-inline-block visible-lg-inline-block"></i> Filter <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li ng-class="{selected: selectedFilter == 'unread'}">
@@ -142,7 +142,7 @@
         </li>
         <li class="pagination-li">
             <a href ng-click="showPagination = !showPagination">{{page}}</a>
-            <pagination ng-show="showPagination" ng-change="goToPage(page)" page="currentPage" total-items="messageCount" items-per-page="messagesPerPage" ng-model="page" class="pagination-sm" boundary-links="false" direction-links="false" ></pagination>            
+            <pagination ng-show="showPagination" ng-change="goToPage(page)" page="currentPage" total-items="messageCount" items-per-page="messagesPerPage" ng-model="page" class="pagination-sm" boundary-links="false" direction-links="false" ></pagination>
         </li>
         <li class="next-page">
             <a href ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)">

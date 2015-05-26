@@ -10,7 +10,7 @@ module.exports = {
       "!src/**/*.spec.js",
       "!src/**/*.scenario.js",
       "!src/assets/**/*.js",
-      "!src/app/libraries/openpgp.worker.min.js",
+      "!src/app/libraries/openpgp.worker.min.js"
     ],
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
@@ -59,7 +59,8 @@ module.exports = {
       "vendor/pikaday-angular/pikaday-angular.js",
       "vendor/squire-rte/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
-      "vendor/angular-translate/angular-translate.js"
+      "vendor/angular-translate/angular-translate.js",
+      "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js"
     ],
     bootstrap_components: [
       "affix",

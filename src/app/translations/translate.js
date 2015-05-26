@@ -1,17 +1,11 @@
 angular.module("proton.translations", [])
     .config(['$translateProvider', function($translateProvider) {
 
+        $translateProvider.useStaticFilesLoader({
+            prefix: '/assets/locales/',
+            suffix: '.json'
+        });
+
+        $translateProvider.useSanitizeValueStrategy('escaped');
         $translateProvider.preferredLanguage('en');
-
-        // Example
-        // $translateProvider.translations('en', {
-        //     'TITLE': 'Hello',
-        //     'FOO': 'This is a paragraph'
-        // });
-
-        // $translateProvider.translations('de', {
-        //     'TITLE': 'Hallo',
-        //     'FOO': 'Dies ist ein Absatz'
-        // });
-
     }]);

@@ -68,7 +68,7 @@ angular.module("proton.richTextEditor", [])
       });
       window.onresize = function() {
         resizeIframeToFitContent();
-      }
+      };
       function resizeIframeToFitContent() {
         $(".wysihtml5-sandbox").css('height','auto');
         // var iframeHeight = $(".wysihtml5-sandbox").contents().find("html").outerHeight();
@@ -88,6 +88,6 @@ angular.module("proton.richTextEditor", [])
         $(".wysihtml5-sandbox").css('height', iframeHeight);
       }
     }
-  }
+  };
   return directive;
 });

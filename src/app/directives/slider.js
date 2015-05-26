@@ -29,5 +29,5 @@ angular.module("proton.slider", [])
         console.error(err);
       }
     }
-  }
+  };
 });

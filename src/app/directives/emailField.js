@@ -19,7 +19,7 @@ angular.module("proton.emailField", [])
           .map(function (str) { return str.trim(); })
           .each(function (email) {
             manager.tagsManager('pushTag', email);
-          })
+          });
       };
 
       var positionInput = function (argument) {
@@ -38,7 +38,7 @@ angular.module("proton.emailField", [])
           .join(",")
         );
         $scope.$apply();
-      }
+      };
 
       $timeout(positionInput, 0);
 

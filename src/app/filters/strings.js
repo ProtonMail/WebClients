@@ -25,30 +25,29 @@ angular.module("proton.filters.strings", [])
       cmps.push(hours + " hours");
     }
     return cmps.join(" and ");
-  }
+  };
 })
 
 .filter("username", function() {
   return function(input) {
+    var username;
     // single email
     if(input.indexOf(',') === -1) {
       // split email into array
-      var username = input.split('@');
+      username = input.split('@');
       // return everything before the @
       return username[0];
-    }
-    // email list
-    else {
+    } else { // email list
       var emails = input.split(',');
       var usernames = '';
       // loop through all emails
       for (var i = 0; i < emails.length; i++) {
-        var username = input.split('@');
+        username = input.split('@');
+
         if (i<(emails.length-1)) {
           // append a comma if its not the last
           usernames += username[0]+', ';
-        }
-        else {
+        } else {
           usernames += username[0];
         }
       }
@@ -95,11 +94,11 @@ angular.module("proton.filters.strings", [])
 
     var split = input.split(character);
 
-    if (split.length == 1) {
+    if (split.length === 1) {
       return "*" + input + "*";
 
     } else {
-      if (character == '<') {
+      if (character === '<') {
         character = '&lt;';
         split[1].replace('>', '&gt;');
       }
@@ -112,8 +111,11 @@ angular.module("proton.filters.strings", [])
 .filter('range', function() {
   return function(val, range) {
     range = parseInt(range);
-    for (var i=1; i<range; i++)
+
+    for (var i=1; i<range; i++) {
       val.push(i);
+    }
+
     return val;
   };
-})
+});

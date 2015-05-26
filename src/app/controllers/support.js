@@ -59,6 +59,5 @@ angular.module("proton.controllers.Support", [
                 }});
             });
         }
-    }
-    
+    };
 });

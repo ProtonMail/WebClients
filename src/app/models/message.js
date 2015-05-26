@@ -37,10 +37,17 @@ angular.module("proton.models.message", [])
             },
             advSearch: {
                 method: "get",
+                isArray: true,
+                url: authentication.baseURL + "/messages/adv_search",
                 transformResponse: function(data) {
-                    return angular.fromJson(data);
-                },
-                url: authentication.baseURL + "/messages/adv_search"
+                    var json = angular.fromJson(data);
+
+                    if(angular.isDefined(json.Total)) {
+                        $rootScope.Total = json.Total;
+                    }
+
+                    return json.Messages;
+                }
             },
             delete: {
                 method: "delete"
@@ -84,11 +91,17 @@ angular.module("proton.models.message", [])
             // Get all messages with this label
             labels: {
                 method: 'get',
-                isArray: false,
+                isArray: true,
+                url: authentication.baseURL + "/label",
                 transformResponse: function(data) {
-                    return angular.fromJson(data);
-                },
-                url: authentication.baseURL + "/label"
+                    var json = angular.fromJson(data);
+
+                    if(angular.isDefined(json.Total)) {
+                        $rootScope.Total = json.Total;
+                    }
+
+                    return json.Messages;
+                }
             },
             // Apply labels on messages
             apply: {
@@ -145,7 +158,7 @@ angular.module("proton.models.message", [])
         toggleStar: function() {
             this.Tag = this.Tag === "starred" ? "" : "starred";
             return this.$patch({
-                action: this.Tag == 'starred' ? "star" : "unstar"
+                action: this.Tag === 'starred' ? "star" : "unstar"
             });
         },
         moveTo: function(location) {
@@ -178,7 +191,7 @@ angular.module("proton.models.message", [])
         },
 
         isDraft: function() {
-            return this.Location == mailboxIdentifiers.drafts;
+            return this.Location === mailboxIdentifiers.drafts;
         },
 
         cite: function() {
@@ -219,17 +232,17 @@ angular.module("proton.models.message", [])
 
             // get the message content from either the editor or textarea if its iOS
             // if its iOS / textarea we need to replace natural linebreaks with HTML linebreaks
-            if ($('#iOSeditor').is(':visible')) { // TODO
-                messageBody = $('#iOSeditor').val();
-                messageBody = messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            if ($rootScope.isMobile) {
+                messageBody = this.messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
             } else {
                 messageBody = this.MessageBody;
+                messageBody = tools.fixImages(messageBody);
             }
 
-            messageBody = tools.fixImages(messageBody);
-
             // if there is no message body we "pad" with a line return so encryption and decryption doesnt break
-            if (messageBody.trim().length < 1) messageBody = '\n';
+            if (messageBody.trim().length < 1) {
+                messageBody = '\n';
+            }
             // Set input elements
             this.MessageBody = messageBody;
         },
@@ -342,7 +355,7 @@ angular.module("proton.models.message", [])
 
                 if (this.Attachments) {
                     newMessage.Attachments = _.map(this.Attachments, function(att) {
-                        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+                        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
                     });
                 }
 

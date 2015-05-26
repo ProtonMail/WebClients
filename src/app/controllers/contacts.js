@@ -70,7 +70,7 @@ angular.module("proton.controllers.Contacts", [
                     confirmModal.deactivate();
                 }
             }
-        })
+        });
     };
 
     $scope.deleteContact = function(contact) {

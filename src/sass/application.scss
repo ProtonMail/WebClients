@@ -305,6 +305,12 @@ a, .btn, button, input[type="button"], input[type="submit"] {
   outline: none !important;
 }
 
+textarea {
+  &.no-resize {
+    resize: none;
+  }
+}
+
 .navbar {
   border: 0;
   em {
@@ -501,7 +507,6 @@ p {
 }
 
 @import "partials/datepicker";
-@import "partials/login";
 @import "partials/sidebar";
 @import "partials/pagination";
 @import "partials/search-form";

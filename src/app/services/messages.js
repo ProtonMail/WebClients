@@ -59,7 +59,7 @@ angular.module("proton.messages", [])
                         // Loop through each loaded message lists
                         _.find(list, function(msg, i) {
                             // and for each, loop through each of its messages
-                            if (msg.MessageID == id) {
+                            if (msg.MessageID === id) {
                                 // replacing matching message excerpts with
                                 // this new detailed one.
                                 list.splice(i, 1, message);

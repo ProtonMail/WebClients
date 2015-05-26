@@ -68,17 +68,17 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                             $scope.error = err;
                                             return;
                                         }
-                                    )
+                                    );
                                 },
                                 function() {
 
                                 }
-                            )
+                            );
                         },
                         function(response) {
                             $log.error(response);
                         }
-                    )
+                    );
                 },
                 function(err) {
                     $scope.error = err;
@@ -162,7 +162,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                 authentication.receivedCredentials(
                                     _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
                                 );
-                            }, 
+                            },
                             function(response) {
                                 var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
                                 notify({
@@ -172,8 +172,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                 $('#Username').focus();
                                 $log.error(response);
                             }
-                        )                        
-                    }, 
+                        );
+                    },
                     function(response) {
                         var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
                         notify({
@@ -225,6 +225,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         // 2. warning to remember hte password
         // 3. API call to reset password
         // 4. on success save, login, redirect
-    };    
+    };
 
 });

@@ -30,13 +30,13 @@ angular.module("proton.controllers.Messages", [
 
     $scope.page = parseInt($stateParams.page || "1");
 
-    if ($state.is('secured.search') || $state.is('secured.label')) {
-        $scope.messages = messages.Messages;
-        $scope.messageCount = messages.Total;
+    $scope.messages = messages;
+
+    if($state.is('secured.label') || $state.is('secured.search')) {
+        $scope.messageCount = $rootScope.Total;
     } else {
-        $scope.messages = messages;
         if ($stateParams.filter) {
-            $scope.messageCount = messageCount[$stateParams.filter == 'unread' ? "UnRead" : "Read"];
+            $scope.messageCount = messageCount[$stateParams.filter === 'unread' ? "UnRead" : "Read"];
         } else {
             $scope.messageCount = messageCount.Total;
         }
@@ -47,20 +47,13 @@ angular.module("proton.controllers.Messages", [
 
     messageCache.watchScope($scope, "messages");
 
-    // ...
-    $scope.currentPage = 4;
-
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
     };
 
     $scope.pageChanged = function() {
-    $log.log('Page changed to: ' + $scope.currentPage);
+        $log.log('Page changed to: ' + $scope.currentPage);
     };
-
-    $scope.bigTotalItems = 175;
-    $scope.bigCurrentPage = 1;
-    // ...
 
     $scope.start = function() {
         return ($scope.page - 1) * $scope.messagesPerPage + 1;
@@ -91,14 +84,6 @@ angular.module("proton.controllers.Messages", [
 
         return texts[message.IsEncrypted];
     };
-
-    $scope.truncateSubjects = function() {
-
-    };
-
-    $(window).bind('resize load', function() {
-        $scope.truncateSubjects();
-    });
 
     $scope.hasNextPage = function() {
         return $scope.messageCount > ($scope.page * $scope.messagesPerPage);
@@ -167,18 +152,18 @@ angular.module("proton.controllers.Messages", [
 
     $scope.selectedMessagesWithReadStatus = function(bool) {
         return _.select($scope.selectedMessages(), function(message) {
-            return message.IsRead == bool;
+            return message.IsRead === bool;
         });
     };
 
     $scope.messagesCanBeMovedTo = function(otherMailbox) {
         if (otherMailbox === "inbox") {
             return _.contains(["spam", "trash"], mailbox);
-        } else if (otherMailbox == "trash") {
+        } else if (otherMailbox === "trash") {
             return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
-        } else if (otherMailbox == "spam") {
+        } else if (otherMailbox === "spam") {
             return _.contains(["inbox", "starred", "trash"], mailbox);
-        } else if (otherMailbox == "drafts") {
+        } else if (otherMailbox === "drafts") {
             return _.contains(["trash"], mailbox);
         }
     };
@@ -193,9 +178,11 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessagesTo = function(mailbox) {
         var selectedMessages = $scope.selectedMessages();
+
+
         networkActivityTracker.track($q.all(
             _.map(selectedMessages, function(message) {
-                if (mailbox == 'delete') {
+                if (mailbox === 'delete') {
                     return message.delete().$promise;
                 } else {
                     return message.moveTo(mailbox).$promise;
@@ -203,11 +190,22 @@ angular.module("proton.controllers.Messages", [
             })
         ).then(function() {
             _.each(selectedMessages, function(message) {
-                var i = $scope.messages.indexOf(message);
-                if (i >= 0) {
-                    $scope.messages.splice(i, 1);
+                if(!$state.is('secured.label')) {
+                    var i = $scope.messages.indexOf(message);
+
+                    if (i >= 0) {
+                        $scope.messages.splice(i, 1);
+                    }
+                }
+
+                if(selectedMessages > 1) {
+                    notify('Messages moved');
+                } else {
+                    notify('Message moved');
                 }
             });
+        }, function(result) {
+            $log.error(result);
         }));
     };
 
@@ -227,7 +225,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.orderBy = function(criterion) {
         $state.go($state.current.name, _.extend({}, $state.params, {
-            sort: criterion == '-date' ? null : criterion,
+            sort: criterion === '-date' ? null : criterion,
             page: null
         }));
     };
@@ -269,7 +267,7 @@ angular.module("proton.controllers.Messages", [
             } else {
                 label.mode = 0;
             }
-        })
+        });
 
         $scope.labels = labels;
 
@@ -309,7 +307,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.goToPage = function(page) {
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
-            if (page == 1) {
+            if (page === 1) {
                 page = null;
             }
             $state.go($state.current.name, _.extend({}, $state.params, {
@@ -376,7 +374,7 @@ angular.module("proton.controllers.Messages", [
             window.onbeforeunload = function() {
                 return "By leaving now, you will lose what you have written in this email. " +
                     "You can save a draft if you want to come back to it later on.";
-            }
+            };
         } else {
             window.onbeforeunload = undefined;
         }
@@ -395,7 +393,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        var message = new Message(_.pick(message, 'MessageTitle', 'MessageBody', 'RecipientList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'MessageTitle', 'MessageBody', 'RecipientList', 'CCList', 'BCCList'));
 
         $scope.initMessage(message);
     });
@@ -409,13 +407,8 @@ angular.module("proton.controllers.Messages", [
                 dictDefaultMessage: 'Drop files here or click to upload',
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
                 accept: function(file, done) {
-                    if (file.name == "justinbieber.jpg") {
-                        done("Naha, you don't.");
-                    } else {
-                        done();
-                    }
+
                 }
             },
             eventHandlers: {
@@ -478,7 +471,7 @@ angular.module("proton.controllers.Messages", [
             })
             .catch(function(result) {
                 notify(result);
-                $log.error(result)
+                $log.error(result);
             });
         } else {
             // Attachment size error.
@@ -544,7 +537,7 @@ angular.module("proton.controllers.Messages", [
             styles.right = right + 'px';
         }
 
-        styles['z-index'] = message.zIndex
+        styles['z-index'] = message.zIndex;
 
         return styles;
     };
@@ -636,7 +629,7 @@ angular.module("proton.controllers.Messages", [
             return false;
         }
 
-        if (params.password != params.confirm) {
+        if (params.password !== params.confirm) {
             notify('Message passwords do not match.');
             return false;
         }
@@ -710,7 +703,7 @@ angular.module("proton.controllers.Messages", [
 
             if (message.Attachments) {
                 newMessage.Attachments = _.map(message.Attachments, function(att) {
-                    return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType')
+                    return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
                 });
             }
 
@@ -727,7 +720,7 @@ angular.module("proton.controllers.Messages", [
                 };
 
                 // concat all recipients
-                var emails = newMessage.RecipientList + (newMessage.CCList == '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList == '' ? '' : ',' + newMessage.BCCList);
+                var emails = newMessage.RecipientList + (newMessage.CCList === '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList === '' ? '' : ',' + newMessage.BCCList);
                 var base64 = pmcw.encode_base64(emails);
 
                 // new message object
@@ -786,7 +779,7 @@ angular.module("proton.controllers.Messages", [
                             var outsideBody = pmcw.encryptMessage(message.MessageBody, [], message.Password);
                             outsidePromise = outsideBody.then(function(result) {
                                 return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-                                    newMessage.MessageBody['outsiders'] = result;
+                                    newMessage.MessageBody.outsiders = result;
                                     // TODO token and session keys
                                     // return [email, message, replyToken].concat(encArray);
                                 });
@@ -797,7 +790,7 @@ angular.module("proton.controllers.Messages", [
                         } else if(isOutside && newMessage.IsEncrypted === 0) {
                             // dont encrypt if its going outside
                             outsidePromise = new Promise(function(resolve, reject) {
-                                newMessage.MessageBody['outsiders'] = message.MessageBody;
+                                newMessage.MessageBody.outsiders = message.MessageBody;
                                 resolve();
                             });
                         }
@@ -969,9 +962,12 @@ angular.module("proton.controllers.Messages", [
         networkActivityTracker.track(
             ((mailbox === 'delete') ? message.delete() : message.moveTo(mailbox)).$promise
             .then(function() {
-                var i = $scope.messages.indexOf(message);
-                if (i >= 0) {
-                    $scope.messages.splice(i, 1);
+                if(!$state.is('secured.label')) {
+                    var i = $scope.messages.indexOf(message);
+
+                    if (i >= 0) {
+                        $scope.messages.splice(i, 1);
+                    }
                 }
             })
         );
@@ -1043,13 +1039,14 @@ angular.module("proton.controllers.Messages", [
             }
 
             var iframeDocument = this.contentWindow.document;
+            var content;
 
             // HACK: Makes the iframe's content manipulation work in Firefox.
             iframeDocument.open();
             iframeDocument.close();
 
             try {
-                var content = render($scope);
+                content = render($scope);
             } catch (err) {
                 console.log(err);
             }

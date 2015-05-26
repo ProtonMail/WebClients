@@ -1,0 +1,165 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'forever',
+1 verbose cli   '-g' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose cache add [ 'forever', null ]
+5 verbose cache add name=undefined spec="forever" args=["forever",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'forever',
+6 verbose parsed url   path: 'forever',
+6 verbose parsed url   href: 'forever' }
+7 silly lockFile e07f8c4a-forever forever
+8 verbose lock forever /Users/richard/.npm/e07f8c4a-forever.lock
+9 silly lockFile e07f8c4a-forever forever
+10 silly lockFile e07f8c4a-forever forever
+11 verbose addNamed [ 'forever', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 28ef027b-forever forever@
+14 verbose lock forever@ /Users/richard/.npm/28ef027b-forever.lock
+15 silly addNameRange { name: 'forever', range: '*', hasData: false }
+16 verbose url raw forever
+17 verbose url resolving [ 'https://registry.npmjs.org/', './forever' ]
+18 verbose url resolved https://registry.npmjs.org/forever
+19 info trying registry request attempt 1 at 14:23:52
+20 verbose etag "3QJS5TFT1UFHRTW43JSR5T5C6"
+21 http GET https://registry.npmjs.org/forever
+22 http 304 https://registry.npmjs.org/forever
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Tue, 26 May 2015 12:23:53 GMT',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'cache-control': 'max-age=60',
+23 silly registry.get     etag: '"3QJS5TFT1UFHRTW43JSR5T5C6"',
+23 silly registry.get     age: '0',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'x-served-by': 'cache-ams4134-AMS',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1432643033.006074,VS0,VE93',
+23 silly registry.get     vary: 'Accept' } ]
+24 verbose etag forever from cache
+25 silly addNameRange number 2 { name: 'forever', range: '*', hasData: true }
+26 silly addNameRange versions [ 'forever',
+26 silly addNameRange   [ '0.6.0',
+26 silly addNameRange     '0.6.1',
+26 silly addNameRange     '0.6.2',
+26 silly addNameRange     '0.6.3',
+26 silly addNameRange     '0.6.4',
+26 silly addNameRange     '0.6.5',
+26 silly addNameRange     '0.6.6',
+26 silly addNameRange     '0.6.7',
+26 silly addNameRange     '0.6.8',
+26 silly addNameRange     '0.6.9',
+26 silly addNameRange     '0.7.0',
+26 silly addNameRange     '0.7.1',
+26 silly addNameRange     '0.7.2',
+26 silly addNameRange     '0.7.3',
+26 silly addNameRange     '0.7.4',
+26 silly addNameRange     '0.7.5',
+26 silly addNameRange     '0.8.0',
+26 silly addNameRange     '0.8.1',
+26 silly addNameRange     '0.8.2',
+26 silly addNameRange     '0.8.3',
+26 silly addNameRange     '0.8.4',
+26 silly addNameRange     '0.8.5',
+26 silly addNameRange     '0.9.0',
+26 silly addNameRange     '0.9.1',
+26 silly addNameRange     '0.9.2',
+26 silly addNameRange     '0.10.0',
+26 silly addNameRange     '0.10.5',
+26 silly addNameRange     '0.10.6',
+26 silly addNameRange     '0.10.7',
+26 silly addNameRange     '0.10.8',
+26 silly addNameRange     '0.10.9',
+26 silly addNameRange     '0.10.10',
+26 silly addNameRange     '0.10.11',
+26 silly addNameRange     '0.11.0',
+26 silly addNameRange     '0.11.1',
+26 silly addNameRange     '0.12.0',
+26 silly addNameRange     '0.13.0',
+26 silly addNameRange     '0.14.1' ] ]
+27 verbose addNamed [ 'forever', '0.14.1' ]
+28 verbose addNamed [ '0.14.1', '0.14.1' ]
+29 silly lockFile ce67a8ea-forever-0-14-1 forever@0.14.1
+30 verbose lock forever@0.14.1 /Users/richard/.npm/ce67a8ea-forever-0-14-1.lock
+31 silly lockFile ce67a8ea-forever-0-14-1 forever@0.14.1
+32 silly lockFile ce67a8ea-forever-0-14-1 forever@0.14.1
+33 silly lockFile 28ef027b-forever forever@
+34 silly lockFile 28ef027b-forever forever@
+35 silly resolved [ { name: 'forever',
+35 silly resolved     preferGlobal: 'true',
+35 silly resolved     description: 'A simple CLI tool for ensuring that a given node script runs continuously (i.e. forever)',
+35 silly resolved     version: '0.14.1',
+35 silly resolved     author: { name: 'Charlie Robbins', email: 'charlie.robbins@gmail.com' },
+35 silly resolved     maintainers: [ [Object], [Object] ],
+35 silly resolved     repository: { type: 'git', url: 'http://github.com/nodejitsu/forever.git' },
+35 silly resolved     keywords: [ 'cli', 'fault tolerant', 'sysadmin', 'tools' ],
+35 silly resolved     dependencies:
+35 silly resolved      { colors: '~0.6.2',
+35 silly resolved        cliff: '~0.1.9',
+35 silly resolved        flatiron: '~0.4.2',
+35 silly resolved        'forever-monitor': '~1.5.1',
+35 silly resolved        nconf: '~0.6.9',
+35 silly resolved        nssocket: '~0.5.1',
+35 silly resolved        optimist: '~0.6.0',
+35 silly resolved        timespan: '~2.3.0',
+35 silly resolved        utile: '~0.2.1',
+35 silly resolved        winston: '~0.8.1' },
+35 silly resolved     devDependencies:
+35 silly resolved      { broadway: '~0.3.6',
+35 silly resolved        eventemitter2: '0.4.x',
+35 silly resolved        request: '2.x.x',
+35 silly resolved        vows: '0.7.x' },
+35 silly resolved     bin: { forever: './bin/forever' },
+35 silly resolved     main: './lib/forever',
+35 silly resolved     scripts: { test: 'vows test/**/*-test.js --spec -i' },
+35 silly resolved     engines: { node: '>= 0.8.x' },
+35 silly resolved     readme: '# forever [![Build Status](https://api.travis-ci.org/foreverjs/forever.svg)](https://travis-ci.org/foreverjs/forever) [![Inline docs](http://inch-ci.org/github/foreverjs/forever.svg?branch=master)](http://inch-ci.org/github/foreverjs/forever)\n\nA simple CLI tool for ensuring that a given script runs continuously (i.e. forever).\n\n## Installation\n\n``` bash\n  $ [sudo] npm install forever -g\n```\n\n**Note:** If you are using forever _programmatically_ you should install [forever-monitor][0].\n\n``` bash\n  $ cd /path/to/your/project\n  $ [sudo] npm install forever-monitor\n```\n\n## Usage\nThere are two distinct ways to use forever: through the command line interface, or by requiring the forever module in your own code. **Note:** If you are using forever _programatically_ you should install [forever-monitor][0].\n\n### Using forever from the command line\nYou can use forever to run any kind of script continuously (whether it is written in node.js or not). The usage options are simple:\n\n```\n  $ forever --help\n  usage: forever [action] [options] SCRIPT [script-options]\n\n  Monitors the script specified in the current process or as a daemon\n\n  actions:\n    start               Start SCRIPT as a daemon\n    stop                Stop the daemon SCRIPT by Id|Uid|Pid|Index|Script\n    stopall             Stop all running forever scripts\n    restart             Restart the daemon SCRIPT\n    restartall          Restart all running forever scripts\n    list                List all running forever scripts\n    config              Lists all forever user configuration\n    set <key> <val>     Sets the specified forever config <key>\n    clear <key>         Clears the specified forever config <key>\n    logs                Lists log files for all forever processes\n    logs <script|index> Tails the logs for <script|index>\n    columns add <col>   Adds the specified column to the output in `forever list`\n    columns rm <col>    Removed the specified column from the output in `forever list`\n    columns set <cols>  Set all columns for the output in `forever list`\n    cleanlogs           [CAREFUL] Deletes all historical forever log files\n\n  options:\n    -m  MAX          Only run the specified script MAX times\n    -l  LOGFILE      Logs the forever output to LOGFILE\n    -o  OUTFILE      Logs stdout from child script to OUTFILE\n    -e  ERRFILE      Logs stderr from child script to ERRFILE\n    -p  PATH         Base path for all forever related files (pid files, etc.)\n    -c  COMMAND      COMMAND to execute (defaults to node)\n    -a, --append     Append logs\n    -f, --fifo       Stream logs to stdout\n    -n, --number     Number of log lines to print\n    --pidFile        The pid file\n    --uid            Process uid, useful as a namespace for processes (must wrap in a string)\n                     e.g. forever start --uid "production" app.js\n                         forever stop production\n    --sourceDir      The source directory for which SCRIPT is relative to\n    --workingDir     The working directory in which SCRIPT will execute\n    --minUptime      Minimum uptime (millis) for a script to not be considered "spinning"\n    --spinSleepTime  Time to wait (millis) between launches of a spinning script.\n    --colors         --no-colors will disable output coloring\n    --plain          Disable command line colors\n    -d, --debug      Forces forever to log debug output\n    -v, --verbose    Turns on the verbose messages from Forever\n    -s, --silent     Run the child script silencing stdout and stderr\n    -w, --watch      Watch for file changes\n    --watchDirectory Top-level directory to watch from\n    --watchIgnore    To ignore pattern when watch is enabled (multiple option is allowed)\n    --killSignal     Support exit signal customization (default is SIGKILL),\n                     used for restarting script gracefully e.g. --killSignal=SIGTERM\n    -h, --help       You\'re staring at it\n\n  [Long Running Process]\n    The forever process will continue to run outputting log messages to the console.\n    ex. forever -o out.log -e err.log my-script.js\n\n  [Daemon]\n    The forever process will run as a daemon which will make the target process start\n    in the background. This is extremely useful for remote starting simple node.js scripts\n    without using nohup. It is recommended to run start with -o -l, & -e.\n    ex. forever start -l forever.log -o out.log -e err.log my-daemon.js\n        forever stop my-daemon.js\n```\n\nThere are [several examples][1] designed to test the fault tolerance of forever. Here\'s a simple usage example:\n\n``` bash\n  $ forever -m 5 examples/error-on-timer.js\n```\n\n### Changing where forever writes files\n\nBy default `forever` places all of the files it needs into `/$HOME/.forever`. If you would like to change that location just set the `FOREVER_ROOT` environment variable when you are running forever:\n\n```\nFOREVER_ROOT=/etc/forever forever start index.js\n```\n\nMake sure that the user running the process has the appropriate privileges to read & write to this directory.\n\n## Using forever module from node.js\nIn addition to using a Forever object, the forever module also exposes some useful methods. Each method returns an instance of an EventEmitter which emits when complete. See the [forever cli commands][2] for sample usage.\n\n**Remark:** As of `forever@0.6.0` processes will not automatically be available in `forever.list()`. In order to get your processes into `forever.list()` or `forever list` you must instantiate the `forever` socket server:\n\n``` js\n  forever.startServer(child);\n```\n\nThis method takes multiple `forever.Monitor` instances which are defined in the `forever-monitor` dependency.\n\n### forever.load (config)\n_Synchronously_ sets the specified configuration (config) for the forever module. There are two important options:\n\nOption    | Description                                       | Default\n-------   | ------------------------------------------------- | ---------\nroot      | Directory to put all default forever log files    | `forever.root`\npidPath   | Directory to put all forever *.pid files          | `[root]/pids`\nsockPath  | Directory for sockets for IPC between workers     | `[root]/sock`\nloglength | Number of logs to return in `forever tail`        | 100\ncolumns   | Array of columns to display when `format` is true | `forever.config.get(\'columns\')`\ndebug     | Boolean value indicating to run in debug mode     | false\nstream    | Boolean value indicating if logs will be streamed | false\n\n### forever.start (file, options)\nStarts a script with forever. The `options` object is what is expected by the `Monitor` of `forever-monitor`.\n\n### forever.startDaemon (file, options)\nStarts a script with forever as a daemon. WARNING: Will daemonize the current process. The `options` object is what is expected by the `Monitor` of `forever-monitor`.\n\n### forever.stop (index)\nStops the forever daemon script at the specified index. These indices are the same as those returned by forever.list(). This method returns an EventEmitter that raises the \'stop\' event when complete.\n\n### forever.stopAll (format)\nStops all forever scripts currently running. This method returns an EventEmitter that raises the \'stopAll\' event when complete.\n\nThe `format` parameter is a boolean value indicating whether the returned values should be formatted according to the configured columns which can set with `forever columns` or programmatically `forever.config.set(\'columns\')`.\n\n### forever.list (format, callback)\nReturns a list of metadata objects about each process that is being run using forever. This method will return the list of metadata as such. Only processes which have invoked `forever.startServer()` will be available from `forever.list()`\n\nThe `format` parameter is a boolean value indicating whether the returned values should be formatted according to the configured columns which can set with `forever columns` or programmatically `forever.config.set(\'columns\')`.\n\n### forever.tail (target, options, callback)\nResponds with the logs from the target script(s) from `tail`. There are two options:\n\n* `length` (numeric): is is used as the `-n` parameter to `tail`.\n* `stream` (boolean): is is used as the `-f` parameter to `tail`.\n\n### forever.cleanUp ()\nCleans up any extraneous forever *.pid files that are on the target system. This method returns an EventEmitter that raises the \'cleanUp\' event when complete.\n\n### forever.cleanLogsSync (processes)\nRemoves all log files from the root forever directory that do not belong to current running forever processes. Processes are the value returned from `Monitor.data` in `forever-monitor`.\n\n### forever.startServer (monitor0, monitor1, ..., monitorN)\nStarts the `forever` HTTP server for communication with the forever CLI. **NOTE:** This will change your `process.title`. This method takes multiple `forever.Monitor` instances which are defined in the `forever-monitor` dependency.\n\n## Run Tests\n\n``` bash\n  $ npm test\n```\n\n#### License: MIT\n#### Author: [Charlie Robbins](https://github.com/indexzero)\n#### Contributors: [Fedor Indutny](https://github.com/indutny), [James Halliday](http://substack.net/), [Charlie McConnell](https://github.com/avianflu), [Maciej Malecki](https://github.com/mmalecki), [John Lancaster](http://jlank.com)\n\n[0]: https://github.com/foreverjs/forever-monitor\n[1]: https://github.com/foreverjs/forever-monitor/tree/master/examples\n[2]: https://github.com/foreverjs/forever/blob/master/lib/forever/cli.js\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     bugs: { url: 'https://github.com/nodejitsu/forever/issues' },
+35 silly resolved     _id: 'forever@0.14.1',
+35 silly resolved     _from: 'forever@' } ]
+36 info install forever@0.14.1 into /Users/richard/.npm-packages/lib
+37 info installOne forever@0.14.1
+38 info /Users/richard/.npm-packages/lib/node_modules/forever unbuild
+39 info preuninstall forever@0.14.1
+40 info uninstall forever@0.14.1
+41 verbose true,/Users/richard/.npm-packages/lib/node_modules,/Users/richard/.npm-packages/lib/node_modules unbuild forever@0.14.1
+42 verbose /Users/richard/.npm-packages/bin,[object Object] binRoot
+43 info /Users/richard/.npm-packages/lib/node_modules/forever unbuild
+44 info preuninstall forever@0.14.1
+45 info uninstall forever@0.14.1
+46 verbose true,/Users/richard/.npm-packages/lib/node_modules,/Users/richard/.npm-packages/lib/node_modules unbuild forever@0.14.1
+47 verbose /Users/richard/.npm-packages/bin,[object Object] binRoot
+48 error error rolling back Error: EACCES, unlink '/Users/richard/.npm-packages/bin/forever'
+48 error error rolling back  forever@0.14.1 { [Error: EACCES, unlink '/Users/richard/.npm-packages/bin/forever']
+48 error error rolling back   errno: 3,
+48 error error rolling back   code: 'EACCES',
+48 error error rolling back   path: '/Users/richard/.npm-packages/bin/forever' }
+49 error Error: EACCES, unlink '/Users/richard/.npm-packages/bin/forever'
+49 error  { [Error: EACCES, unlink '/Users/richard/.npm-packages/bin/forever']
+49 error   errno: 3,
+49 error   code: 'EACCES',
+49 error   path: '/Users/richard/.npm-packages/bin/forever' }
+50 error Please try running this command again as root/Administrator.
+51 error System Darwin 14.3.0
+52 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "forever" "-g"
+53 error cwd /Users/richard/Web/Angular
+54 error node -v v0.10.21
+55 error npm -v 1.3.11
+56 error path /Users/richard/.npm-packages/bin/forever
+57 error code EACCES
+58 error errno 3
+59 error stack Error: EACCES, unlink '/Users/richard/.npm-packages/bin/forever'
+60 verbose exit [ 3, true ]

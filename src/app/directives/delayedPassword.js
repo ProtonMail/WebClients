@@ -7,5 +7,5 @@ angular.module("proton.delayedPassword", [])
         $element[0].type = 'password';
       }, 50);
     }
-  }
-})
+  };
+});

@@ -131,7 +131,7 @@ angular.module("proton.routes", [
                             params.sort = params.Order;
                             params.page = params.Page;
                             params = _.pick(params, 'id', 'LabelID', 'filter', 'sort', 'page');
-                            messagesPromise = Label.messages(params).$promise;
+                            messagesPromise = Message.labels(params).$promise;
                         } else {
                             messagesPromise = Message.query(params).$promise;
                         }

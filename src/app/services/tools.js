@@ -17,8 +17,13 @@ angular.module("proton.tools", [])
                 ua = navigator.userAgent,
                 tem;
             var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) M[2] = tem[1];
+
+            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) {
+                M[2] = tem[1];
+            }
+
             M = M ? [M[1], M[2]] : [N, navigator.appVersion, '-?'];
+
             return M[0];
         }
 
@@ -27,8 +32,13 @@ angular.module("proton.tools", [])
                 ua = navigator.userAgent,
                 tem;
             var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) M[2] = tem[1];
+
+            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) {
+                M[2] = tem[1];
+            }
+
             M = M ? [M[1], M[2]] : [N, navigator.appVersion, '-?'];
+
             return M[1];
         }
 
@@ -45,10 +55,21 @@ angular.module("proton.tools", [])
         function get_os() {
             var OSName = "other"; // Unknown OS
 
-            if (navigator.appVersion.indexOf("Win") != -1) OSName = "windows";
-            if (navigator.appVersion.indexOf("Mac") != -1) OSName = "osx";
-            if (navigator.appVersion.indexOf("X11") != -1) OSName = "linux";
-            if (navigator.appVersion.indexOf("Linux") != -1) OSName = "linux";
+            if (navigator.appVersion.indexOf("Win") !== -1) {
+                OSName = "windows";
+            }
+
+            if (navigator.appVersion.indexOf("Mac") !== -1) {
+                OSName = "osx";
+            }
+
+            if (navigator.appVersion.indexOf("X11") !== -1) {
+                OSName = "linux";
+            }
+
+            if (navigator.appVersion.indexOf("Linux") !== -1) {
+                OSName = "linux";
+            }
 
             return OSName;
         }
@@ -130,7 +151,7 @@ angular.module("proton.tools", [])
         }
 
         function is_valid_dkim(header) {
-            if ((header.indexOf('dkim=none') == -1) && (header.indexOf('dkim=pass') !== -1)) {
+            if ((header.indexOf('dkim=none') === -1) && (header.indexOf('dkim=pass') !== -1)) {
                 return true;
             } else {
                 return false;
@@ -223,7 +244,7 @@ angular.module("proton.tools", [])
             newString = newString.replace(/\n\n/g, "<br />").replace(/.*<!--.*-->/g, "");
             // this next piece removes any break tags (up to 10) at beginning
             for (i = 0; i < 10; i++) {
-                if (newString.substr(0, 6) == "<br />") {
+                if (newString.substr(0, 6) === "<br />") {
                     newString = newString.replace("<br />", "");
                 }
             }
@@ -270,7 +291,7 @@ angular.module("proton.tools", [])
         function valid_email(value) {
             var filter = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
 
-            return String(value).search(filter) != -1;
+            return String(value).search(filter) !== -1;
         }
 
         function is_compatible() {

@@ -2,13 +2,11 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="form-group">
         <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> Add Label</button>
-        <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="saveLabelOrder()">
-            <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">Save Order</span>
-        </button>
     </div>
     <table class="table table-middle table-hover table-pm">
         <thead>
             <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Side Menu</th>
                 <th>Actions</th>
@@ -17,6 +15,9 @@
         <tbody data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
             <tr ng-repeat="label in labels" as-sortable-item="">
                 <td as-sortable-item-handle="">
+                    <i class="fa fa-ellipsis-v text-muted vcenter"></i>
+                </td>
+                <td>
                     <span  class="label label-pm" style="background-color: {{ label.LabelColor }}"><i class="fa fa-tag"></i> {{ label.LabelName }}</span>
                 </td>
                 <td>
@@ -32,6 +33,5 @@
                 </td>
             </tr>
         </tbody>
-
     </table>
 </div>

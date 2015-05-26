@@ -38,7 +38,7 @@ angular.module("proton.controllers.Auth", [
                 },
                 function(result) {
                     if (result.message===undefined) {
-                        result.message = 'Sorry, our login server is down. Please try again later.'
+                        result.message = 'Sorry, our login server is down. Please try again later.';
                     }
                     notify({
                         classes: 'notification-danger',
