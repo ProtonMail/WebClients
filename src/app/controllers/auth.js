@@ -33,8 +33,24 @@ angular.module("proton.controllers.Auth", [
             })
             .then(
                 function(result) {
-                    $state.go("login.unlock");
-                    return;
+                	console.log(result);
+                	if (result.access_token) {
+	                    $state.go("login.unlock");
+	                }
+	                else if (result.error) {
+	                	var error  = (result.error_description) ? result.error_description : result.error;
+	                	notify({
+	                        classes: 'notification-danger',
+	                        message: error
+	                    });
+	                }
+	                else {
+	                	notify({
+	                        classes: 'notification-danger',
+	                        message: 'Unable to login.'
+	                    });
+	                }
+	                return;
                 },
                 function(result) {
                     if (result.message===undefined) {
