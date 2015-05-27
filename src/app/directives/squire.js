@@ -64,7 +64,7 @@ angular.module("proton.squire", [
             };
         },
         link: function(scope, element, attrs, ngModel) {
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, haveInteraction, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
             LINK_DEFAULT = IMAGE_DEFAULT ="http://";
             IFRAME_CLASS = 'angular-squire-iframe';
             editor = scope.editor = null;
@@ -188,7 +188,6 @@ angular.module("proton.squire", [
             };
             iframe = element.find('iframe');
             menubar = element.find('.menu');
-            haveInteraction = false;
             iframeLoaded = function() {
                 var iframeDoc = iframe[0].contentWindow.document;
                 updateStylesToMatch(iframeDoc);
@@ -198,21 +197,15 @@ angular.module("proton.squire", [
                 if (scope.body) {
                     editor.setHTML(scope.body);
                     updateModel(scope.body);
-                    haveInteraction = true;
                 }
                 editor.addEventListener("input", function() {
-                    var html;
-                    if (haveInteraction) {
-                        html = editor.getHTML();
-                        return updateModel(html);
-                    }
+                    var html = editor.getHTML();
+
+                    updateModel(html);
                 });
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
                     scope.editorVisibility(true);
-                    haveInteraction = true;
-
-                    return haveInteraction;
                 });
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
@@ -222,10 +215,6 @@ angular.module("proton.squire", [
                     } else {
                         ngModel.$setPristine();
                     }
-
-                    haveInteraction = true;
-
-                    return haveInteraction;
                 });
                 editor.addEventListener("pathChange", function() {
                     var p, _ref;
