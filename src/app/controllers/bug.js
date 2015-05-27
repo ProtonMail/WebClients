@@ -5,6 +5,7 @@ angular.module("proton.controllers.Bug", [])
     $rootScope,
     $state,
     $log,
+    $translate,
     tools,
     Bug,
     networkActivityTracker,
@@ -39,7 +40,7 @@ angular.module("proton.controllers.Bug", [])
                 "bug_email": $scope.bug.email
             }).$promise.then(function(response) {
                 $scope.close();
-                notify('Bug report sent');
+                notify($translate('BUG_REPORT_SENT'));
             }, function(response) {
                 $log.error(response);
             })

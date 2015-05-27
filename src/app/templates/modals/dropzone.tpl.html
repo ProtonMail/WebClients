@@ -3,20 +3,23 @@
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
                 <button type="button" class="close" ng-click="ctrl.cancel()">
-                    <i aria-hidden="true" title="Close" class="fa fa-times"></i>
-                    <span class="sr-only">Close</span>
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                 </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
             <div class="modal-body">
                 <p ng-bind-html="ctrl.message"></p>
-                <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">Drop files here or click to upload</p>
+                <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">
+                    <i class="fa fa-3x fa-cloud-upload text-muted"></i><br />
+                    Drop files here or click to upload
+                </p>
                 <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
                 <input id="selectedFile" type="file" style="display: none;" />
             </div>
             <div class="modal-footer">
-                <a href class="btn btn-link" ng-click="ctrl.cancel()">Cancel</a>
-                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.import()">Import</button>
+                <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.import()">{{ 'UPLOAD' | translate }}</button>
             </div>
         </div>
     </div>

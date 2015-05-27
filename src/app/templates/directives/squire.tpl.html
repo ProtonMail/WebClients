@@ -2,49 +2,49 @@
     <div ng-class="{'editor-hide': !isEditorVisible()}" class='editor-container'>
         <ul class="squire-toolbar">
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Bold" ng-click="action('bold')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Italic" ng-click="action('italic')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Underline" ng-click="action('underline')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Unordered List" ng-click="action('makeUnorderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Ordered List" ng-click="action('makeOrderedList')">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
                     <i class="fa fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Insert Link" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
                     <i class="fa fa-link"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
                         <div class="content">
                             <div class="panel">
-                                <input type="text" id="edit-link" autocomplete="off" placeholder="Link URL" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
+                                <input type="text" id="edit-link" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
                             </div>
                             <button class="btn btn-sm" ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')">
-                                Remove Link
+                                {{ 'REMOVE_LINK' | translate }}
                             </button>
                             <button class="btn btn-sm" ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
-                                Update Link
+                                {{ 'UPDATE_LINK' | translate }}
                             </button>
                             <button class="btn btn-sm btn-primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
-                                Insert Link
+                                {{ 'INSERT_LINK' | translate}}
                             </button>
                         </div>
                         <div class="squire-popover-overlay" ng-click="popoverHide($event, 'makeLink')"></div>
@@ -52,16 +52,16 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="Insert Image" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-click="popoverShow($event)">
                     <i class="fa fa-image"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
                         <div class="content">
                             <div class="panel">
-                                <input type="text" autocomplete="off" placeholder="URL to image" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" class="form-control" />
+                                <input type="text" autocomplete="off" placeholder="{{ 'URL_TO_IMAGE' | translate }}" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" class="form-control" />
                             </div>
                             <button class="btn btn-sm btn-primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}">
-                                Insert Image
+                                {{ 'INSERT_IMAGE' | translate }}
                             </button>
                         </div>
                         <div class="squire-popover-overlay" ng-click="popoverHide($event, 'insertImage')"></div>
@@ -69,18 +69,18 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="Attachments" ng-click="$parent.togglePanel(message, 'attachments')">
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="{{ 'ATTACHMENTS' | translate }}" ng-click="$parent.togglePanel(message, 'attachments')">
                     <i class="fa fa-paperclip"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="Encryption" ng-click="$parent.togglePanel(message, 'encrypt')">
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="$parent.togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="Expiration" ng-click="$parent.togglePanel(message, 'expiration')">
+                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="$parent.togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o" id="clock-icon"></i>
                 </a>
             </li>
@@ -91,7 +91,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li ng-show="isHtml()">
-                        <a href="" ng-click="switchTo('plain')">Plain text</a>
+                        <a href="" ng-click="switchTo('plain')">Plain Text</a>
                     </li>
                     <li ng-show="isPlain()">
                         <a href="" ng-click="switchTo('html')">HTML</a>

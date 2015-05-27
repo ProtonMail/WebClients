@@ -2,9 +2,9 @@
     <h2>{{message.MessageTitle}}</h2>
 
     <p>{{ 'FROM' | translate }}: <strong>{{message.Sender}}</strong></p>
-    <p>To: <strong>{{message.RecipientList}}</strong></p>
-    <p ng-if="message.CCList">{{message.CCList}}</p>
-    <p>Date: {{message.readableTime()}}</p>
+    <p>{{ 'TO' | translate }}: <strong>{{message.RecipientList}}</strong></p>
+    <p ng-if="message.CCList">{{ 'CC' | translate }}: {{message.CCList}}</p>
+    <p>{{ 'DATE' | translate }}: {{message.readableTime()}}</p>
 
     <hr />
 
@@ -20,4 +20,3 @@
         </div>
     </div>
 </div>
-

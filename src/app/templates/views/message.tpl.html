@@ -1,8 +1,8 @@
 <ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
 <div class="row visible-xs-block" id="messageActionsMobile">
-    <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link"><i class="fa fa-reply"></i> Reply</a></div>
-    <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link"><i class="fa fa-reply-all"></i> Reply All</a></div>
-    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link"><i class="fa fa-mail-forward"></i> {{ 'FILTER' | translate }}</a></div>
+    <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link" title="{{ 'REPLY' | translate }}"><i class="fa fa-reply"></i> {{ 'REPLY' | translate }}</a></div>
+    <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>
+    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link" title="{{ 'FORWARD' | translate }}"><i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}</a></div>
 </div>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
     <div class="pull-right">
@@ -72,8 +72,8 @@
 <div class="col-md-12" ng-show="message.containsImage === true">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
         <a href="" ng-click="message.toggleImages()">
-            <span ng-show="!!message.imagesHidden">Show Images</span>
-            <span ng-hide="!!message.imagesHidden">Hide Images</span>
+            <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
+            <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
         </a>
     </p>
 </div>
@@ -89,7 +89,7 @@
 <div class="col-md-12" ng-if="message.AttachmentIDList.length">
     <hr />
     <p>
-        <strong>Attachments</strong> ({{message.AttachmentIDList.length}} <span ng-hide="message.AttachmentIDList.length === 1">files</span><span ng-show="message.AttachmentIDList.length === 1">file</span>, {{sizeAttachments() | humanSize}})
+        <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.AttachmentIDList.length}} <span ng-hide="message.AttachmentIDList.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.AttachmentIDList.length === 1">{{ 'FILE' | translate }}</span>, {{sizeAttachments() | humanSize}})
     </p>
     <table class="table table-hover">
         <tbody>
@@ -98,7 +98,7 @@
                     <strong>{{ attachment.FileName }}</strong> ({{attachment.FileSize | humanSize}})
                 </td>
                 <td class="text-right">
-                    <a href="" ng-click="downloadAttachment(attachment)">Download</a>
+                    <a href="" ng-click="downloadAttachment(attachment)">{{ 'DOWNLOAD' | translate }}</a>
                 </td>
             </tr>
         </tbody>

@@ -29,6 +29,10 @@ angular.module("proton.models.contact", [])
             update: {
                 method: "put",
                 isArray: false
+            },
+            import: {
+                method: "POST",
+                url: authentication.baseURL + "/contacts/import"
             }
         });
 

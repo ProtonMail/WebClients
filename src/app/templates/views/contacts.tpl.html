@@ -2,12 +2,12 @@
     <ul class="nav navbar-nav">
         <li>
             <form>
-                <input autofocus type="search" class="form-control" placeholder="Search {{ 'CONTACTS' | translate }}..." ng-model="search" />
+                <input autofocus type="search" class="form-control" placeholder="{{ 'SEARCH' | translate }}" ng-model="search" />
             </form>
         </li>
         <li>
             <a href="" ng-click="addContact()">
-                <i class="fa fa-plus hidden-xs hidden-sm"></i> Add <span class="hidden-sm">Contact</span>
+                <i class="fa fa-plus hidden-xs hidden-sm"></i> {{ 'ADD_CONTACT' | translate }}</span>
             </a>
         </li>
         <li>
@@ -19,12 +19,12 @@
     <ul class="nav navbar-nav navbar-right">
         <li>
             <a href="" ng-click="uploadContacts()">
-                <i class="fa fa-upload hidden-xs hidden-sm"></i> Upload <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
+                <i class="fa fa-upload hidden-xs hidden-sm"></i> {{ 'UPLOAD' | translate }} <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
         <li>
             <a href="" ng-click="downloadContacts()">
-                <i class="fa fa-download hidden-xs hidden-sm"></i> Download <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
+                <i class="fa fa-download hidden-xs hidden-sm"></i> {{ 'DOWNLOAD' | translate }} <span class="hidden-sm">{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
     </ul>
@@ -36,9 +36,9 @@
                 <th class="text-center hidden-xs">
                     <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="Select All {{ 'CONTACTS' | translate }}" />
                 </th>
-                <th>Name</th>
+                <th>{{ 'NAME' | translate }}</th>
                 <th>{{ 'EMAIL' | translate }}</th>
-                <th>Actions</th>
+                <th>{{ 'ACTIONS' | translate }}</th>
             </tr>
         </thead>
         <tbody>
@@ -54,7 +54,7 @@
                 </td>
                 <td>
                     <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
-                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span>
+                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
                     </a>
                     <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
                         <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>

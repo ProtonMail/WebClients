@@ -5,16 +5,16 @@
             <div class="panel-heading" role="tab" id="headingNotifications">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#notifications"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#notifications" aria-expanded="true" aria-controls="notifications">Notifications</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#notifications" aria-expanded="true" aria-controls="notifications">{{ 'NOTIFICATIONS' | translate }}</a>
                 </h4>
             </div>
             <div id="notifications" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotifications">
                 <div class="panel-body">
                     <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
                         <div class="form-group">
-                            <label class="control-label">Daily New {{ 'EMAIL' | translate }} Notifications</label>
+                            <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
                             <div>
-                                <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="Enabled" off-label="Disabled">
+                                <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}">
                                     <toggle-switch>
                             </div>
                         </div>
@@ -27,9 +27,8 @@
                             <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
                         </div>
                         <div class="clearfix">
-                            <a href="" class="btn btn-link pull-left">How does this work?</a>
-                            <button class="btn btn-sm btn-primary pull-right" type="submit" style="margin-left: 5px;">Save</button>
-                            <!-- <button class="btn btn-sm btn-default pull-right" type="button">Delete</button> -->
+                            <a href="" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            <button class="btn btn-sm btn-primary pull-right" type="submit" style="margin-left: 5px;">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>
@@ -44,9 +43,9 @@
             </div>
             <div id="autosaveContacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAutosaveContacts">
                 <div class="panel-body">
-                    <label class="control-label">Autosave {{ 'CONTACTS' | translate }}</label>
+                    <label class="control-label">{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
                     <div>
-                        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="Enabled" off-label="Disabled"><toggle-switch>
+                        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"><toggle-switch>
                     </div>
                 </div>
             </div>
@@ -62,22 +61,22 @@
                 <div class="panel-body">
                     <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
-                            <label class="control-label" for="">Current Login Password</label>
+                            <label class="control-label" for="">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                             <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" class="form-control" placeholder="Current Login Password" required="" />
                         </div>
                         <div class="form-group" ng-class="{'has-error': loginForm.newLoginPassword.$touched && loginForm.newLoginPassword.$error.required}">
-                            <label class="control-label" for="newLoginPassword">New Login Password</label>
+                            <label class="control-label" for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
                             <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" class="form-control" placeholder="New Login Password" required="" />
                         </div>
                         <div class="form-group" ng-class="{'has-error': loginForm.confirmLoginPassword.$touched && loginForm.confirmLoginPassword.$error.required}">
-                            <label class="control-label" for="confirmLoginPassword">Confirm New Login Password</label>
+                            <label class="control-label" for="confirmLoginPassword">{{ 'CONFIRM_NEW_LOGIN_PASSWORD' | translate }}</label>
                             <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" class="form-control" placeholder="Confirm New Login Password" required="" />
                             <div ng-show="loginForm.$submit || loginForm.confirmLoginPassword.$touched">
-                                <p ng-show="newLoginPassword !== confirmLoginPassword" class="text-danger">Passwords don't match.</p>
+                                <p ng-show="newLoginPassword !== confirmLoginPassword" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                             </div>
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>
@@ -109,8 +108,8 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <a href="" class="btn btn-link pull-left">How does this work?</a>
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                            <a href="" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>
@@ -120,18 +119,18 @@
             <div class="panel-heading" role="tab" id="headingName">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name">Display Name</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name">{{ 'DISPLAY_NAME' | translate }}</a>
                 </h4>
             </div>
             <div id="display-name" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingName">
                 <div class="panel-body">
                     <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
-                            <label class="control-label" for="displayName">Display Name</label>
+                            <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
                             <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" required="" />
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>
@@ -141,18 +140,18 @@
             <div class="panel-heading" role="tab" id="headingSignature">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature">Signature</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature">{{ 'SIGNATURE' | translate }}</a>
                 </h4>
             </div>
             <div id="signature" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSignature">
                 <div class="panel-body">
                     <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                            <label class="signature" for="signature">Signature</label>
+                            <label class="signature" for="signature">{{ 'SIGNATURE' | translate }}</label>
                             <textarea id="signature" name="signature" class="form-control" ng-model="signature" required=""></textarea>
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>
@@ -162,14 +161,14 @@
             <div class="panel-heading" role="tab" id="headingAliases">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases">Aliases</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases">{{ 'ALIASES' | translate }}</a>
                 </h4>
             </div>
             <div id="aliases" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAliases">
                 <div class="panel-body">
                     <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
                         <div class="form-group">
-                            <label class="control-label" for="">{{ 'SORT' | translate }} Aliases</label>
+                            <label class="control-label" for="">{{ 'SORT_ALIASES' | translate }}</label>
                             <div id="aliases-container">
                                 <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
                                     <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
@@ -182,8 +181,8 @@
                             <p class="help-block"><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</p>
                         </div>
                         <div class="clearfix">
-                            <a href="" class="pull-left btn btn-link">What are Aliases?</a>
-                            <button class="pull-right btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                            <a href="" class="pull-left btn btn-link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
+                            <button class="pull-right btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </form>
                 </div>

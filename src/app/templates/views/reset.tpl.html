@@ -1,7 +1,7 @@
 <div class="panel panel-default panel-sign-up wrap">
 
     <div class="panel-body" ng-hide="showForm">
-        <h1 class="text-center">Warning!</h1>
+        <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
 
         <div class="alert alert-danger">
             <div>We don't store your mailbox password for privacy reasons.</div>
@@ -11,29 +11,29 @@
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">Reset</button>
-        <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'RESET' | translate }}</button>
+        <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
 
     <div class="panel-body" ng-show="(showForm && User.NotificatioEmail !== '')">
-        <h1 class="text-center">Check Your {{ 'EMAIL' | translate }}</h1>
+        <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
         We've sent a confirmation email to your 'Recovery / Notification' email address with instructions for resetting your Mailbox.</p>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">Reset</button>
-        <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'RESET' | translate }}</button>
+        <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
     <div class="panel-body" ng-show="(showForm && User.NotificatioEmail == '')">
 
-        <h1 class="text-center">New Mailbox</h1>
+        <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
         <form ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate>
 
             <div class="form-group">
-                <label for="password">New Mailbox Password</label>
+                <label for="password">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
                 <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
                 <div ng-show="resetMBPW.$submitted || resetMBPW.password.$touched">
                     <p ng-show="resetMBPW.password.$error.required" class="text-danger">Mailbox password is required.</p>
@@ -51,10 +51,9 @@
 
         </form>
 
-        <h6 class="text-center">Keep this password safe - it cannot be recovered.</h6>        
+        <h6 class="text-center">Keep this password safe - it cannot be recovered.</h6>
 
-        <a ui-sref="login.unlock" class="btn left btn-link">Cancel</a>
+        <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
 
     </div>
 </div>
-

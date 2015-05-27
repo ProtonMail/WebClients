@@ -7,5 +7,6 @@ angular.module("proton.translations", [])
         });
 
         $translateProvider.useSanitizeValueStrategy('escaped');
-        $translateProvider.preferredLanguage('en');
+        $translateProvider.useLocalStorage(); // App uses a localStorage to remember the user's language.
+        $translateProvider.preferredLanguage('en_US'); // TODO load user preference
     }]);

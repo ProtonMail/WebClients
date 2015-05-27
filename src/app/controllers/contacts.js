@@ -7,6 +7,7 @@ angular.module("proton.controllers.Contacts", [
     $scope,
     $state,
     $log,
+    $translate,
     contacts,
     Contact,
     confirmModal,
@@ -43,10 +44,10 @@ angular.module("proton.controllers.Contacts", [
         var message, title;
 
         if (contactsSelected.length === 1) {
-            title = 'Delete Contact';
+            title = $translate('DELETE_CONTACT');
             message = 'Are you sure you want to delete this contact?';
         } else {
-            title = 'Delete Contacts';
+            title = $translate('DELETE_CONTACTS');
             message = 'Are you sure you want to delete contacts?';
         }
 
@@ -64,7 +65,7 @@ angular.module("proton.controllers.Contacts", [
                         }
                     });
                     confirmModal.deactivate();
-                    notify('Contacts deleteded');
+                    notify($translate('CONTACTS_DELETED'));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -85,7 +86,7 @@ angular.module("proton.controllers.Contacts", [
                         contacts.splice(idx, 1);
                         Contact.index.updateWith($scope.contacts);
                         confirmModal.deactivate();
-                        notify('Contact deleted');
+                        notify($translate('CONTACT_DELETED'));
                     }
                 },
                 cancel: function() {
@@ -109,7 +110,7 @@ angular.module("proton.controllers.Contacts", [
                 contacts.unshift(contact);
                 Contact.index.add([contact]);
                 contactModal.deactivate();
-                notify('Contact added');
+                notify($translate('CONTACT_ADDED'));
             }, function(response) {
                 notify(response.error);
                 $log.error(response);
@@ -123,7 +124,7 @@ angular.module("proton.controllers.Contacts", [
             contact.ContactEmail = email;
             networkActivityTracker.track(contact.$update().then(function(response) {
                 contactModal.deactivate();
-                notify('Contact edited');
+                notify($translate('CONTACT_EDITED'));
             }, function(response) {
                 notify({
                     message: response.error
@@ -187,7 +188,7 @@ angular.module("proton.controllers.Contacts", [
                     // TODO
                     console.log(files);
                     dropzoneModal.deactivate();
-                    notify('Contacts uploaded');
+                    notify($translate('CONTACTS_UPLOADED'));
                 },
                 cancel: function() {
                     dropzoneModal.deactivate();

@@ -4,31 +4,32 @@
             <form name="contactForm" novalidate ng-submit="ctrl.save()">
                 <div class="modal-header" ng-show="ctrl.title">
                     <button type="button" class="close" ng-click="ctrl.cancel()">
-                        <i aria-hidden="true" title="Close" class="fa fa-times"></i>
-                        <span class="sr-only">Close</span>
+                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                     </button>
                     <h4 class="modal-title">{{ctrl.title}}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group" ng-class="{'has-error': contactForm.contactName.$touched && contactForm.contactName.$error.required}">
-                        <label class="control-label" for="contactName">Name</label>
-                        <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="Contact Name" required />
+                        <label class="control-label" for="contactName">{{ 'NAME' | translate }}</label>
+                        <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
                         <div ng-show="contactForm.$submitted || contactForm.contactName.$touched">
-                            <p class="text-danger" ng-show="contactForm.contactName.$error.required">Contact name empty.</p>
+                            <p class="text-danger" ng-show="contactForm.contactName.$error.required">{{ 'CONTACT_NAME_EMPTY' | translate }}.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{'has-error': contactForm.contactEmail.$touched && contactForm.contactEmail.$error.required}">
                         <label class="control-label" for="contactEmail">{{ 'EMAIL' | translate }}</label>
                         <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="Contact {{ 'EMAIL' | translate }}" required />
                         <div ng-show="contactForm.$submitted || contactForm.contactEmail.$touched">
-                            <p class="text-danger" ng-show="contactForm.contactEmail.$error.email">{{ 'EMAIL' | translate }} is invalid.</p>
+                            <p class="text-danger" ng-show="contactForm.contactEmail.$error.email">{{ 'EMAIL_IS_INVALID' | translate }}.</p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href class="btn btn-link" ng-click="ctrl.cancel()">Cancel</a>
-                    <button tabindex="3" type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">    <span ng-hide="networkActivity.loading()">Save Contact</span>
-                        <span ng-show="networkActivity.loading()">Saving...</span>
+                    <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                    <button tabindex="3" type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
+                        <span ng-hide="networkActivity.loading()">{{ 'SAVE_CONTACT' | translate }}</span>
+                        <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
                     </button>
                 </div>
             </form>

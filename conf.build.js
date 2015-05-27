@@ -31,6 +31,7 @@ module.exports = {
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
+      "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-bootstrap/ui-bootstrap.js",
@@ -60,7 +61,9 @@ module.exports = {
       "vendor/squire-rte/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
       "vendor/angular-translate/angular-translate.js",
-      "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js"
+      "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
+      "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
+      "vendor/angular-translate-storage-local/angular-translate-storage-local.js"
     ],
     bootstrap_components: [
       "affix",

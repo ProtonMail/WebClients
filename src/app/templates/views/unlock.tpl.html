@@ -1,17 +1,18 @@
 <div class="panel panel-default wrap">
     <div class="panel-body">
-        <h1 class="text-center">Decrypt Mailbox</h1>
+        <h1 class="text-center">{{ 'DECRYPT_MAILBOX' | translate }}</h1>
         <fieldset class="pure-form">
             <div class="alert alert-danger" ng-if="error">
                 <p>{{ error.message }}</p>
-                <p><a href="/pages/faq#faq1" target="_blank">Related FAQ</a></p>
+                <p><a href="/pages/faq#faq1" target="_blank">{{ 'FAQ' | translate }}</a></p>
             </div>
             <div class="form-group">
                 <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
             </div>
-            <a ui-sref="reset" class="login-support btn">Forgot password?</a>
+            <a ui-sref="reset" class="login-support btn">{{ 'FORGOT_PASSWORD?' | translate }}</a>
             <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
-                <span>Unlock</span>
+                <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
+                <span>{{ 'UNLOCK' | translate }}</span>
             </button>
         </fieldset>
     </div>

@@ -34,13 +34,13 @@
                 <div error-reporter class="alert alert-danger centered ng-hide">
                     <button type="button" class="close" ng-click="errorReporter.active = false">
                         <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                     </button>
                     {{ errorReporter.error }}
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a ui-sref="admin"><span class="visible-lg-inline-block fa fa-tachometer"></span> Admin</a>
+                        <a ui-sref="admin"><span class="visible-lg-inline-block fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
                     </li>
                     <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ng-click="openReportModal()"><span class="visible-lg-inline-block fa fa-exclamation-triangle"></span> {{ 'BUG' | translate }}</a>
@@ -49,7 +49,7 @@
                         <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-wrench"></span> {{ 'SETTINGS' | translate }}</a>
                     </li>
                     <li id="nav_login" ng-if="!isLoggedIn">
-                        <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> Login</a>
+                        <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGIN' | translate }}</a>
                     </li>
                     <li id="nav_logout" ng-if="isLoggedIn">
                         <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
@@ -86,7 +86,7 @@
                 <div error-reporter class="alert alert-danger centered ng-hide">
                     <button type="button" class="close" ng-click="errorReporter.active = false">
                         <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                     </button>
                     {{ errorReporter.error }}
                 </div>
@@ -125,7 +125,7 @@
                     </tr>
                     <tr>
                         <td id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="admin"><span class="fa fa-tachometer"></span> Admin</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="admin"><span class="fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
                         </td>
                         <td id="nav_bug" ng-if="isLoggedIn">
                             <a href ng-click="openReportModal()"><span class="fa fa-exclamation-triangle"></span> {{ 'BUG' | translate }}</a>

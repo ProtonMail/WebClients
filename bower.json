@@ -1,9 +1,11 @@
 {
   "name": "protonmail-web-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/ProtonMail/Angular",
   "authors": [
-    "Mathieu D'Amours <m@damou.rs>"
+    "Richard Tetaz richardtetaz@protonmail.ch",
+    "Jason Stockman jason@protonmail.com",
+    "Dayne Davis daynedavis@protonmail.ch"
   ],
   "description": "Angular frontend for protonmail.com",
   "license": "All Rights Reserved",
@@ -52,6 +54,7 @@
     "dropzone": "~4.0.1",
     "angular-translate": "~2.7.0",
     "angular-bootstrap": "~0.13.0",
-    "angular-translate-loader-static-files": "~2.7.0"
+    "angular-translate-loader-static-files": "~2.7.0",
+    "angular-translate-storage-local": "~2.7.0"
   }
 }

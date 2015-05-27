@@ -4,13 +4,13 @@
             <form role="form" name="bugReportForm" ng-submit="sendBugReport(bugReportForm)" novalidate>
                 <div class="modal-header text-right">
                     <a href="" ng-click="close()">
-                        <i aria-hidden="true" title="Close" class="fa fa-times text-muted"></i>
-                        <span class="sr-only">Close</span>
+                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times text-muted"></i>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                     </a>
                 </div>
                 <div class="modal-body">
                     <p class="alert alert-info text-center">
-                        <strong>Have a question?</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
+                        <strong>{{ 'HAVE_A_QUESTION?' | translate }}</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
                     </p>
                     <p class="alert alert-warning text-center">
                         We last updated our system on Apr 23, 2015. Most bugs are related to not clearing cache after an update. Before submitting a bug report, <a href="https://protonmail.ch/blog/clearing-browser-cache/" target="_blank">please clear your cache</a>.
@@ -18,13 +18,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group" ng-class="{'has-error': bugReportForm.bug_os.$touched && bugReportForm.bug_os.$error.required}">
-                                <label class="control-label" for="bug_os">Operating System</label>
+                                <label class="control-label" for="bug_os">{{ 'OPERATING_SYSTEM' | translate }}</label>
                                 <select tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control" required>
-                                    <option selected="" disabled value="">- Choose -</option>
+                                    <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
                                     <option value="osx">Mac OSX</option>
                                     <option value="windows">Windows</option>
                                     <option value="linux">Linux</option>
-                                    <option value="other">Other</option>
+                                    <option value="other">{{ 'OTHER' | translate}}</option>
                                 </select>
                             </div>
                             <!--/.form-group-->
@@ -32,15 +32,15 @@
                         <!--/.col-md-6-->
                         <div class="col-md-6">
                             <div class="form-group" ng-class="{'has-error': bugReportForm.bug_device.$touched && bugReportForm.bug_device.$error.required}">
-                                <label class="control-label" for="bug_device">Device</label>
+                                <label class="control-label" for="bug_device">{{ 'DEVICE' | translate }}</label>
                                 <select tabindex="2" name="bug_device" id="bug_device" class="form-control" required>
-                                    <option selected="" disabled value="">- Choose -</option>
-                                    <option value="desktop">Desktop</option>
-                                    <option value="laptop">Laptop</option>
-                                    <option value="tablet">Tablet</option>
+                                    <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
+                                    <option value="desktop">{{ 'DESKTOP' | translate }}</option>
+                                    <option value="laptop">{{ 'LAPTOP' | translate }}</option>
+                                    <option value="tablet">{{ 'TABLET' | translate }}</option>
                                     <option value="iphone">iPhone</option>
-                                    <option value="android">Android Phone</option>
-                                    <option value="other">Other</option>
+                                    <option value="android">Android</option>
+                                    <option value="other">{{ 'OTHER' | translate}}</option>
                                 </select>
                             </div>
                             <!--/.form-group-->
@@ -48,7 +48,7 @@
                         <!--/.col-md-6-->
                         <div class="col-md-6">
                             <div class="form-group" ng-class="{'has-error': bugReportForm.bug_location.$touched && bugReportForm.bug_location.$error.required}">
-                                <label class="control-label" for="bug_location">Where did you find it?</label>
+                                <label class="control-label" for="bug_location">{{ 'WHERE_DID_YOU_FIND_IT?' | translate }}</label>
                                 <input tabindex="3" required class="form-control" type="text" name="bug_location" id="bug_location" placeholder="URL" ng-model="bug.location">
                             </div>
                             <!--/.form-group-->
@@ -56,7 +56,7 @@
                         <!--/.col-md-6-->
                         <div class="col-md-6">
                             <div class="form-group" ng-class="{'has-error': bugReportForm.bug_browser.$touched && bugReportForm.bug_browser.$error.required}">
-                                <label class="control-label" for="bug_browser">Browser</label>
+                                <label class="control-label" for="bug_browser">{{ 'BROWSER' | translate }}</label>
                                 <input tabindex="4" required class="form-control" type="text" name="bug_browser" id="bug_browser" placeholder="Browser" ng-model="bug.browser">
                             </div>
                             <!--/.form-group-->
@@ -64,7 +64,7 @@
                         <!--/.col-md-6-->
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="bug_email">Your {{ 'EMAIL' | translate }} Address</label>
+                                <label for="bug_email">{{ 'YOUR_EMAIL_ADDRESS' | translate }}</label>
                                 <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.email">
                                 <p class="help-block">Please make sure to give us a way to contact you.</p>
                             </div>
@@ -73,7 +73,7 @@
                         <!--/.col-md-6-->
                         <div class="col-md-12">
                             <div class="form-group" ng-class="{'has-error': bugReportForm.bug_description.$touched && bugReportForm.bug_description.$error.required}">
-                                <label class="control-label" for="bug_description">What happened?</label>
+                                <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
                                 <textarea ng-model="bug.description" class="form-control" required name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
                             </div>
                         </div>
@@ -88,9 +88,9 @@
                 </div>
                 <!--/.modal-body-->
                 <div class="modal-footer">
-                    <a class="btn btn-link pull-left" ng-click="close()">Cancel</a>
+                    <a class="btn btn-link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
                     <button type="submit" class="btn btn-primary">
-                        <span class="fa fa-send"></span> Send Bug Report
+                        <span class="fa fa-send"></span> {{ 'SEND' | translate }}
                     </button>
                 </div>
             </form>

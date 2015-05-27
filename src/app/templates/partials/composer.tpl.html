@@ -8,7 +8,7 @@
                         <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-plus': !!message.minimized}"></i>
                     </a>
                     <a href="" class="btn btn-sm close-button" ng-click="close(message, true)">
-                        <span class="sr-only">Close</span>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
@@ -33,17 +33,17 @@
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="cc-container">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="CC" class="form-control" />
+                            <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="{{ 'CC' | translate }}" title="{{ 'CC' | translate }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="bcc-container">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="BCC" class="form-control" />
+                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="{{ 'BCC' | translate }}" title="{{ 'BCC' | translate }}" class="form-control" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input tabindex="5" type="text" placeholder="Subject" title="Subject" class="form-control message-title" ng-model="message.MessageTitle" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
+                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control message-title" ng-model="message.MessageTitle" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
                 </div>
                 <ul ng-if="message.Attachments" class="attachments">
                     <li ng-repeat="attachment in message.Attachments">
@@ -61,39 +61,39 @@
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
                             <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
-                                <label for="outsidePw" class="control-label text-muted">Message Password</label>
+                                <label for="outsidePw" class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
                                 <input type="password" autocomplete="off" id="outsidePw" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
                             </div>
                             <div class="form-group col-md-12" ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}">
-                                <label for="outsidePwConfirm" class="control-label text-muted">Confirm Message Password</label>
+                                <label for="outsidePwConfirm" class="control-label text-muted">{{ ' CONFIRM_MESSAGE_PASSWORD' | translate }}</label>
                                 <input type="password" autocomplete="off" id="outsidePwConfirm" name="outsidePwConfirm" ng-model="params.confirm"placeholder="Confirm Password" class="form-control" required="" />
                             </div>
                             <div class="form-group col-md-12">
-                                <label for="outsidePwHint" class="control-label text-muted">Password Hint (Optional)</label>
+                                <label for="outsidePwHint" class="control-label text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
                                 <input type="text" autocomplete="off" id="outsidePwHint" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
                             </div>
                             <div class="col-md-12">
                                 <p class="help-block">Only email body is encrypted during Beta.</p>
                             </div>
                             <div class="col-md-12 text-right">
-                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">Clear</button>
-                                <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">Set</button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">{{ 'CLEAR' | translate }}</button>
+                                <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">{{ 'SET' | translate }}</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
                         <div class="form-group col-md-12">
-                            <label for="ExpirationTime" class="control-label text-muted">Expiration Time</label>
+                            <label for="ExpirationTime" class="control-label text-muted">{{ 'EXPIRATION_TIME' | translate }}</label>
                             <input type="range" min="0" max="{{maxExpiration}}" name="ExpirationTime" id="ExpirationTime" ng-model="params.expiration" placeholder="0" class="form-control" ng-change="rotateIcon(params.expiration);" />
                         </div>
                         <div class="form-group col-md-12 text-center" ng-show="params.expiration">
-                            <h2 class="text-purple">{{params.expiration}} hours</h2>
+                            <h2 class="text-purple">{{params.expiration}} {{ 'HOURS' | translate }}</h2>
                             <h4 class="text-muted">{{params.expiration | humanDuration:'hours'}}</h4>
                         </div>
                         <div class="col-md-12 text-right">
-                            <button type="button" class="btn btn-default btn-sm" ng-click="clearExpiration(message)">Clear</button>
-                            <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">Set</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-click="clearExpiration(message)">{{ 'CLEAR' | translate }}</button>
+                            <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
                         </div>
                     </div>
                     <squire ng-model="message.MessageBody" message="message" editor="message.editor" height="320px">
@@ -101,8 +101,8 @@
                 </div>
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
-                <span class="text-muted pull-left" ng-show="message.BackupDate">Saved at {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
-                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send(message)">Send</button>
+                <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
+                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send(message)">{{ 'SEND' | translate }}</button>
             </div>
         </div>
     </ng-form>

@@ -1,7 +1,7 @@
 <div class="panel panel-default panel-sign-up wrap">
     <div class="panel-heading">
-        <h1 class="text-center">Create your account</h1>
-        <h4 class="text-center no-margin-bottom">Step 2 of 2</h4>
+        <h1 class="text-center">{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h1>
+        <h4 class="text-center no-margin-bottom">{{ 'STEP_2_OF_2' | translate }}</h4>
     </div>
     <div class="panel-body">
         <div class="alert alert-info">
@@ -12,7 +12,7 @@
         <form ng-submit="finish(step2)" name="step2" novalidate>
 
             <div class="form-group">
-                <label for="password">Mailbox Password</label>
+                <label for="password">{{ 'MAILBOX_PASSWORD' | translate }}</label>
                 <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
                 <div ng-show="step2.$submitted || step2.password.$touched">
                     <p ng-show="step2.password.$error.required" class="text-danger">Mailbox password is required.</p>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="form-group">
-                <label for="passwordc">Confirm Mailbox Password</label>
+                <label for="passwordc">{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}</label>
                 <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}"  placeholder="Password" required="" ng-enter="finish(step2)" />
                 <div ng-show="step2.$submitted || step2.passwordc.$touched">
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>

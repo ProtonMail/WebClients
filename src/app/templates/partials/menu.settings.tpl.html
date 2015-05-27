@@ -1,15 +1,14 @@
 <ul class="nav nav-tabs nav-settings">
     <li role="presentation" ng-class="{'active': ('secured.settings.**' | includedByState)}">
-        <a ui-sref="secured.settings">Account {{ 'SETTINGS' | translate }}</a>
+        <a ui-sref="secured.settings">{{ 'ACCOUNT_SETTINGS' | translate }}</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.labels.**' | includedByState)}">
         <a ui-sref="secured.labels">{{ 'LABELS' | translate }}</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.security.**' | includedByState)}">
-        <a ui-sref="secured.security">Keys &amp; Security</a>
+        <a ui-sref="secured.security">{{ 'SECURITY' | translate }}</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.theme.**' | includedByState)}">
-        <a ui-sref="secured.theme">Theme</a>
+        <a ui-sref="secured.theme">{{ 'THEME' | translate }}</a>
     </li>
 </ul>
-

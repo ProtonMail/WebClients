@@ -6,10 +6,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="search_folder">Folder</label>
+                                <label for="search_folder">{{ 'FOLDER' | translate }}</label>
                                 <select name="search_folder" id="search_folder" class="form-control">
                                     <optgroup label="Default">
-                                        <option value="-1" selected="selected">All</option>
+                                        <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
                                     </optgroup>
                                     <optgroup label="Folders">
                                         <option ng-repeat="(key, value) in folders" value="{{folder}}">{{key}}</option>
@@ -17,10 +17,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="search_label">Label</label>
+                                <label for="search_label">{{ 'LABEL' | translate }}</label>
                                 <select name="search_label" id="search_label" class="form-control">
                                     <optgroup label="Default">
-                                        <option value="0">All Messages</option>
+                                        <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
                                     </optgroup>
                                     <optgroup label="{{ 'LABELS' | translate }}">
                                         <option value="{{label.LabelID}}" ng-repeat="label in labels">{{label.LabelName}}</option>
@@ -28,20 +28,20 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="">Between</label>
+                                <label for="">{{ 'BETWEEN' | translate }}</label>
                                 <div class="fluid-container">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
                                             <input pikaday="params.begin" name="begin" on-select="setMin()" class="form-control" placeholder="{{ 'FROM' | translate }}" />
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input pikaday="params.end" name="end" on-select="setMax()" class="form-control" placeholder="Until" />
+                                            <input pikaday="params.end" name="end" on-select="setMax()" class="form-control" placeholder="{{ 'UNTIL' | translate }}" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="">Attachments</label>
+                                <label for="">{{ 'ATTACHMENTS' | translate }}</label>
                                 <div class="radio">
                                     <label for="attachments_yes" class="radio-inline">
                                         <input id="attachments_yes" type="radio" name="attachments" ng-model="params.attachments" value="1" /> Yes
@@ -57,28 +57,28 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="search_sender">Sender</label>
+                                <label for="search_sender">{{ 'SENDER' | translate }}</label>
                                 <input type="text" id="search_sender" name="search_sender" class="form-control" ng-model="params.from" placeholder="{{ 'FROM' | translate }}" />
                             </div>
                             <div class="form-group">
-                                <label for="search_recipient">Recipient</label>
+                                <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
                                 <input type="text" id="search_recipient" name="search_recipient" class="form-control" ng-model="params.to" placeholder="To" />
                             </div>
                             <div class="form-group">
-                                <label for="search_subject">Subject</label>
+                                <label for="search_subject">{{ 'SUBJECT' | translate }}</label>
                                 <input type="text" id="search_subject" name="search_subject" class="form-control" ng-model="params.subject" placeholder="Subject" />
                             </div>
                             <div class="form-group">
-                                <label for="">Is {{ 'STARRED' | translate }}</label>
+                                <label for="">Is Starred</label>
                                 <div class="radio">
                                     <label for="starred_yes" class="radio-inline">
-                                        <input id="starred_yes" type="radio" name="starred" ng-model="params.starred" value="1" /> Yes
+                                        <input id="starred_yes" type="radio" name="starred" ng-model="params.starred" value="1" /> {{ 'YES' | translate }}
                                     </label>
                                     <label for="starred_no" class="radio-inline">
-                                        <input id="starred_no" type="radio" name="starred" ng-model="params.starred" value="0" /> No
+                                        <input id="starred_no" type="radio" name="starred" ng-model="params.starred" value="0" /> {{ 'NO' | translate }}
                                     </label>
                                     <label for="starred_all" class="radio-inline">
-                                        <input id="starred_all" type="radio" name="starred" ng-model="params.starred" value="2" /> All
+                                        <input id="starred_all" type="radio" name="starred" ng-model="params.starred" value="2" /> {{ 'ALL' | translate }}
                                     </label>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="" class="btn" data-dismiss="modal">Cancel</a>
+                    <a href="" class="btn" data-dismiss="modal">{{ 'CANCEL' | translate }}</a>
                     <button type="submit" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}">
                         <i class="fa fa-search" ng-hide="networkActivity.loading()"></i><i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i> <span>{{ 'ADVANCED_SEARCH' | translate }}</span>
                     </button>

@@ -3,6 +3,7 @@
 angular.module("proton", [
     "ngAnimate",
     "ngSanitize",
+    "ngCookies",
     "LocalStorageModule",
     "btford.markdown",
     "ngFileUpload",
@@ -39,10 +40,8 @@ angular.module("proton", [
 
     // Directives
     "proton.tooltip",
-    // "proton.richTextEditor",
     "proton.emailField",
     "proton.enter",
-    "proton.slider",
     "proton.delayedPassword",
     "proton.fieldMatch",
     "proton.fieldFocus",
@@ -83,7 +82,7 @@ angular.module("proton", [
 
     // var console = {};
     // console.log = function(){};
-    
+
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
         // set iframe height dynamically

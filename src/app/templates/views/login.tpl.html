@@ -2,7 +2,7 @@
 <div class="panel panel-default wrap">
     <div class="panel-body">
         <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="off">
-            <h1 class="text-center">Login</h1> 
+            <h1 class="text-center">{{ 'LOGIN' | translate }}</h1>
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
                 <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
@@ -13,11 +13,12 @@
             <div class="fluid-container">
                 <div class="row">
                     <div class="col-xs-6">
-                        <a class="btn" ui-sref="support.reset-password">Need help?</a>
+                        <a class="btn" ui-sref="support.reset-password">{{'NEED_HELP?' | translate }}</a>
                     </div>
                     <div class="col-xs-6 text-right">
                         <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="3" ng-click="tryLogin()">
-                           <span>Login</span>
+                            <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
+                            <span>{{ 'LOGIN' | translate }}</span>
                         </button>
                     </div>
                 </div>
@@ -26,4 +27,4 @@
         </form>
     </div>
 </div>
-<p class="text-center"><a href="/signup">Need an account? Sign Up.</a></p>
+<p class="text-center"><a href="/signup">{{ 'NEED_AN_ACCOUNT?' | translate }} {{ 'SIGN_UP' | translate }}.</a></p>

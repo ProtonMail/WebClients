@@ -1,18 +1,18 @@
 <div class="message-toolbar hidden-xs">
     <ul class="nav navbar-nav">
         <li>
-            <a href ng-click="goToMessageList()" title="Back to message list">
+            <a href ng-click="goToMessageList()" title="{{ 'BACK' | translate }}">
                 <i class="fa fa-fw fa-level-up fa-rotate-270"></i>
             </a>
         </li>
         <li ng-if="!message.IsRead">
             <a href ng-click="message.setReadStatus(true)">
-                <i class="fa fa-fw fa-eye"></i> <span class="visible-md-inline-block">Read</span><span class="visible-lg-inline-block">Mark as read</span>
+                <i class="fa fa-fw fa-eye"></i> <span class="visible-md-inline-block">{{ 'READ' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_READ' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.IsRead">
             <a href ng-click="message.setReadStatus(false)">
-                <i class="fa fa-fw fa-eye-slash"></i> <span class="visible-md-inline-block">Unread</span><span class="visible-lg-inline-block">Mark as unread</span>
+                <i class="fa fa-fw fa-eye-slash"></i> <span class="visible-md-inline-block">{{ 'UNREAD' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_UNREAD' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.location() != 'inbox'">
@@ -32,7 +32,7 @@
         </li>
         <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
             <a href ng-click="moveMessagesTo('delete')">
-                <i class="fa fa-times-circle"></i> <span class="visible-md-inline-block visible-lg-inline-block">Delete</span>
+                <i class="fa fa-times-circle"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'DELETE' | translate }}</span>
             </a>
         </li>
         <li>
@@ -48,22 +48,22 @@
             <ul class="dropdown-menu" role="menu">
                 <li>
                     <a href="" ng-click="print()">
-                        <i class="fa fa-print"></i> Print
+                        <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
                 </li>
                 <li>
                     <a href="" ng-click="togglePlainHtml()">
                         <span ng-show="message.viewMode === 'html'">
-                            <i class="fa fa-file-o"></i> View Plain
+                            <i class="fa fa-file-o"></i> {{ 'VIEW_PLAIN' | translate }}
                         </span>
                         <span ng-show="message.viewMode === 'plain'">
-                            <i class="fa fa-file-photo-o"></i> View HTML
+                            <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
                         </span>
                     </a>
                 </li>
                 <li>
                     <a href="" ng-click="viewRaw()">
-                        <i class="fa fa-code"></i> View raw
+                        <i class="fa fa-code"></i> {{ 'VIEW_RAW' | translate }}
                     </a>
                 </li>
             </ul>
@@ -86,12 +86,12 @@
             </a>
         </li>
         <li class="prev-message">
-            <a href ng-class="{disabled: !hasAdjacentMessage(message, -1)}" ng-click="goToAdjacentMessage(message, -1)" title="Previous">
+            <a href ng-class="{disabled: !hasAdjacentMessage(message, -1)}" ng-click="goToAdjacentMessage(message, -1)" title="{{ 'PREVIOUS' | translate }}">
                 <i class="fa fa-chevron-left"></i>
             </a>
         </li>
         <li class="next-message">
-            <a href ng-class="{disabled: !hasAdjacentMessage(message, 1)}" ng-click="goToAdjacentMessage(message, 1)" title="Next">
+            <a href ng-class="{disabled: !hasAdjacentMessage(message, 1)}" ng-click="goToAdjacentMessage(message, 1)" title="{{ 'NEXT' | translate }}">
                 <i class="fa fa-chevron-right"></i>
             </a>
         </li>

@@ -93,13 +93,13 @@ module.exports = function(grunt) {
 
         i18nextract: {
             default_options: {
-                namespace: true,
                 src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
-                dest: "<%= build_dir %>/assets/locales",
+                dest: "src/assets/locales",
                 lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES'],
                 defaultLang: "en_US",
                 prefix: "",
-                suffix: ".json"
+                suffix: ".json",
+                stringifyOptions: true // the output will be sort (case insensitive)
             }
         },
 
@@ -490,7 +490,6 @@ module.exports = function(grunt) {
         "notify_hooks",
         "build",
         "jshint",
-        "i18nextract",
         "karma:watch:start",
         "connect:watch",
         "connect:api_doc",
@@ -500,10 +499,13 @@ module.exports = function(grunt) {
         "delta"
     ]);
 
+    grunt.registerTask("extract", [
+        "i18nextract"
+    ]);
+
     grunt.registerTask("build", [
         "clean:build",
         "jshint",
-        "i18nextract",
         "html2js",
         "sass:build",
         "aglio:build",

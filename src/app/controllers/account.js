@@ -6,6 +6,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $state,
     $stateParams,
     $log,
+    $translate,
     authentication,
     networkActivityTracker,
     User,

@@ -3,19 +3,19 @@
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
                 <button type="button" class="close" ng-click="ctrl.cancel()">
-                    <i aria-hidden="true" title="Close" class="fa fa-times"></i>
-                    <span class="sr-only">Close</span>
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                 </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
             <form name="labelForm" novalidate ng-submit="ctrl.create()">
                 <div class="modal-body">
                     <div class="form-group" ng-class="{'has-error': labelForm.label.$touched && labelForm.label.$error.required}">
-                        <label for="labelName" class="control-label">Label Name</label>
+                        <label for="labelName" class="control-label">{{ 'NAME' | translate }}</label>
                         <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.label" placeholder="Label Name" required="" />
                     </div>
                     <div class="form-group">
-                        <label>Select a Color</label>
+                        <label>{{ 'COLOR' | translate }}</label>
                         <div class="text-center">
                             <ul class="palette list-inline">
                                 <li ng-repeat="c in ctrl.colors">
@@ -26,10 +26,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-sm" ng-click="ctrl.cancel()">Cancel</a>
+                    <a class="btn btn-sm" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
                     <button type="submit" class="btn btn-sm btn-primary" ng-disabled="labelForm.$invalid">
-                        <span ng-hide="networkActivity.loading()">Save Label</span>
-                        <span ng-show="networkActivity.loading()">Saving...</span>
+                        <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
+                        <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
                     </button>
                 </div>
             </form>
