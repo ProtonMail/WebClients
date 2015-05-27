@@ -61,33 +61,48 @@ angular.module("proton.filters.strings", [])
 
 .filter("humanSize", function () {
   return function (input, withoutUnit) {
-    var size;
+    var bytes;
     var unit = "";
+    var kb = 1024;
+    var mb = kb*1000;
+    var gb = mb*1000;
 
     if (_.isNumber(input)) {
-      size = input;
-    } else if (_.isNaN(size = parseInt(input))) {
-      size = 0;
+      bytes = input;
+    } 
+    else if (_.isNaN(bytes = parseInt(input))) {
+      bytes = 0;
     }
 
-    if (size < 1024) {
-      if(!!!withoutUnit) {
+    if (bytes < kb) {
+      if (!!!withoutUnit) {
         unit = " B";
       }
-      return size + unit;
-    } else if (size < 1048576) {
-      if(!!!withoutUnit) {
+      return (bytes + unit);
+    } 
+    else if (bytes < mb) {
+      if (!!!withoutUnit) {
         unit = " KB";
       }
-      return Math.round(size*10/1024)/10 + unit;
-    } else {
-      if(!!!withoutUnit) {
+      return (Math.round(bytes/1024/10).toFixed(2) + unit);
+    }  
+    else if (bytes < gb) {
+      if (!!!withoutUnit) {
         unit = " MB";
       }
-      return Math.round(size*10/1048576)/10 + unit;
+      return (Math.round(bytes/1024/1000).toFixed(2) + unit);
+    } 
+    else {
+      if (!!!withoutUnit) {
+        unit = " GB";
+      }
+      return (Math.round(bytes/1024/1000000).toFixed(2) + unit);
     }
+
   };
 })
+
+// 1,073,741,824
 
 .filter("contrast", function () {
   return function (input, character) {
