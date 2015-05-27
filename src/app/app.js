@@ -268,7 +268,8 @@ angular.module("proton", [
 })
 
 .config(function(authenticationProvider) {
-    authenticationProvider.setAPIBaseURL("http://protonmail.xyz");
+    // authenticationProvider.setAPIBaseURL("http://protonmail.xyz");
+    authenticationProvider.setAPIBaseURL("https://dev-api.protonmail.ch");
 })
 
 //

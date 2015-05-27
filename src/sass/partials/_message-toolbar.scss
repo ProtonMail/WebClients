@@ -1,6 +1,8 @@
 .message-toolbar {
   background: #e5e5e5;
-  box-shadow: inset 0 -1px rgba(0,0,0,.1);
+  box-shadow: 0 1px rgba(0,0,0,.1);
+  position: relative;
+  z-index: 2;
   @include clearfix;
 
   > ul {
@@ -8,7 +10,15 @@
       border-right: 1px solid rgba(0,0,0,.2);
 
       &.selectAll {
-        padding: 0 15px;
+        label {
+          display: block;
+          padding: 0 15px;
+          line-height: 32px;
+          height: 32px;
+          cursor: pointer;
+          margin: 0;
+        }
+        padding: 0;
         @include linear-gradient(#fff, #e5e5e5);
       }
       &.open > a {
@@ -111,12 +121,11 @@
 
         &:hover {
           color: #000;
-          box-shadow: inset 0 -1px rgba(0,0,0,.1);
           @include linear-gradient(#fff, #f2f2f2);
         }
 
         &:active {
-          background: transparent;
+          background: rgba(0,0,0,.02);
           color: #999
         }
 
