@@ -160,13 +160,11 @@ angular.module("proton.tools", [])
 
         function break_images(html) {
             html = html.replace(/src=/g, " data-src=");
-
             return html;
         }
 
         function fix_images(html) {
             html = html.replace(/data-src=/g, " src=");
-
             return html;
         }
 

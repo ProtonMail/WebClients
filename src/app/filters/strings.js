@@ -2,7 +2,10 @@ angular.module("proton.filters.strings", [])
 
 .filter("capitalize", function() {
   return function(input) {
-    return _.string.capitalize(input);
+    if (input!==null) {
+      input = input.toLowerCase();
+    }
+    return input.substring(0,1).toUpperCase()+input.substring(1);
   };
 })
 
