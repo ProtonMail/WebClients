@@ -48,6 +48,10 @@ ul.attachments {
     background-color: #f0f0f0;
     padding-left: 6rem;
     @include transition(all 0.2s ease-in-out);
+    .pull-right p {
+        margin: 0;
+        line-height: 2rem;
+    }
     &.unread h1 {
         font-weight: 700;
         color: #000;
@@ -86,7 +90,7 @@ ul.attachments {
         }
         .star {
             position: absolute;
-            top: 10px;
+            top: 3px;
             left: 0;
             line-height: 34px;
             display: inline-block;
