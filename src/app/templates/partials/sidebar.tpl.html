@@ -76,7 +76,7 @@
         <ul class="list-group info hidden-xs hidden-sm">
             <li>
                 <span class="sizebar">{{ 'STORAGE' | translate }}:
-                <span class="pull-right">{{ user.UsedSpace | humanSize: true }}/{{ user.MaxSpace | humanSize }}</span>
+                <span class="pull-right">{{ renderStorageBar() }}</span>
                 </span>
             </li>
             <li>

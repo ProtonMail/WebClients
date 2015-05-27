@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Sidebar", [])
 
-.controller('SidebarController', function($scope, $rootScope, $state, authentication) {
+.controller('SidebarController', function($scope, $rootScope, $state, authentication, tools) {
     // Call event to open new composer
     $scope.compose = function() {
         $rootScope.$broadcast('newMessage');
@@ -15,5 +15,9 @@ angular.module("proton.controllers.Sidebar", [])
     $scope.goTo = function(route) {
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
         $state.go(route, {}, {reload: $state.is(route)});
+    };
+
+    $scope.renderStorageBar = function() {
+        return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
 });

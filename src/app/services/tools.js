@@ -105,7 +105,6 @@ angular.module("proton.tools", [])
 
         function change_separator_to_comma(address_list) {
             address_list = address_list.replace(';', ',');
-
             return address_list;
         }
 
@@ -306,7 +305,31 @@ angular.module("proton.tools", [])
             return compatible;
         }
 
-        function setIframeHeight() {
+        // get user max and current storage, and return a string "123.3/456.6 GB"
+        function render_storage_bar(current, max) { 
+            var kb = 1024;
+            var mb = kb*1000;
+            var gb = mb*1000;
+            var cur = current/1024; // kb
+            if (max<gb) {
+                // render bar in terms of MB
+                cur = (cur/1000).toFixed(2);
+                if (parseInt(cur) === 0 && current > 0) {
+                    cur = 0.01;
+                }
+                return cur+'/'+(Math.round(max/1024/1000))+' MB';
+            }
+            else {
+                // render bar in terms of GB
+                cur = (cur/1000000).toFixed(2);
+                if (parseInt(cur) === 0 && current > 0) {
+                    cur = 0.01;
+                }
+                return cur+'/'+(Math.round(max/1024/1000000))+' GB';
+            }
+        }
+
+        function set_iframe_height() {
             // apply a 100ms timeout because for some reason it doesnt work if it runs right away
             setTimeout( function() {
                 var setIframeHeightTries = 0;
@@ -364,7 +387,8 @@ angular.module("proton.tools", [])
             isCompatible: is_compatible,
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
-            setIframeHeight: setIframeHeight
+            setIframeHeight: set_iframe_height,
+            renderStorageBar: render_storage_bar
         };
 
         return tools;
