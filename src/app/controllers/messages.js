@@ -828,7 +828,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.minimize = function(message) {
-        message.save();
+        message.save(true); // silently
         message.minimized = true;
         message.stopAutoSave();
     };
@@ -842,7 +842,7 @@ angular.module("proton.controllers.Messages", [
         var index = $scope.messages.indexOf(message);
 
         if (save === true) {
-            message.save();
+            message.save(true); // silently
         }
 
         $scope.messages.splice(index, 1);
