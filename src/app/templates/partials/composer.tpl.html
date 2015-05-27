@@ -2,7 +2,7 @@
     <ng-form name="composeForm" id="composeForm" novalidate>
         <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
-                <span class="col-xs-9">{{message.MessageTitle}}</span>
+                <span class="col-xs-9">{{message.MessageTitle}} &nbsp;</span>
                 <span class="col-xs-3 text-right">
                     <a href="" class="btn btn-sm minimize-button hidden-xs" ng-click="toggleMinimize(message)">
                         <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-plus': !!message.minimized}"></i>
