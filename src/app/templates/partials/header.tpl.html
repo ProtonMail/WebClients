@@ -46,13 +46,13 @@
                         <a href ng-click="openReportModal()"><span class="visible-lg-inline-block fa fa-exclamation-triangle"></span> {{ 'BUG' | translate }}</a>
                     </li>
                     <li id="nav_settings" ng-if="'secured.**' | includedByState">
-                        <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-wrench"></span> Settings</a>
+                        <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-wrench"></span> {{ 'SETTINGS' | translate }}</a>
                     </li>
                     <li id="nav_login" ng-if="!isLoggedIn">
                         <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> Login</a>
                     </li>
                     <li id="nav_logout" ng-if="isLoggedIn">
-                        <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> Logout</a>
+                        <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +96,7 @@
                             <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.compose"><span class="fa fa-pencil"></span> {{ 'COMPOSE' | translate }}</a>
                         </td>
                         <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> Inbox<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
                         </td>
                     </tr>
                     <tr>
@@ -104,20 +104,20 @@
                             <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}<span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span></a>
                         </td>
                         <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> Sent</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> {{ 'SENT' | translate }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> Trash</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> {{ 'TRASH' | translate }}</a>
                         </td>
                         <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> Starred</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> {{ 'STARRED' | translate }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-bug"></span> Spam</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-bug"></span> {{ 'SPAM' | translate }}</a>
                         </td>
                         <td>
                             <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
@@ -133,13 +133,13 @@
                     </tr>
                     <tr>
                         <td id="nav_settings" ng-if="'secured.**' | includedByState">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-wrench"></span> Settings</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-wrench"></span> {{ 'SETTINGS' | translate }}</a>
                         </td>
                         <td id="nav_login" ng-if="!isLoggedIn">
                             <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
                         </td>
                         <td id="nav_logout" ng-if="isLoggedIn">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> Logout</a>
+                            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
                         </td>
                     </tr>
                 </table>

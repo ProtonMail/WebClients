@@ -169,7 +169,7 @@
                 <div class="panel-body">
                     <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
                         <div class="form-group">
-                            <label class="control-label" for="">Sort Aliases</label>
+                            <label class="control-label" for="">{{ 'SORT' | translate }} Aliases</label>
                             <div id="aliases-container">
                                 <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
                                     <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">

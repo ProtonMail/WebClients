@@ -17,17 +17,17 @@
         </li>
         <li ng-if="message.location() != 'inbox'">
             <a href ng-click="moveMessageTo('inbox')">
-                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">Inbox</span>
+                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.location() != 'trash'">
             <a href ng-click="moveMessageTo('trash')">
-                <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">Trash</span>
+                <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'TRASH' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.location() != 'spam'">
             <a href ng-click="moveMessageTo('spam')">
-                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">Spam</span>
+                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
@@ -37,13 +37,13 @@
         </li>
         <li>
             <a href="" ng-click="openLabels(message);" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">Labels</span> <i class="fa fa-caret-down"></i>
+                <i class="fa fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'LABELS' | translate }}</span> <i class="fa fa-caret-down"></i>
             </a>
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
         <li>
             <a href class="dropdown-toggle" data-toggle="dropdown">
-         More <i class="fa fa-caret-down"></i>
+         {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
       </a>
             <ul class="dropdown-menu" role="menu">
                 <li>
@@ -72,12 +72,12 @@
     <ul class="nav navbar-nav pull-right navigation">
         <li>
             <a href ng-click="reply(message)">
-                <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">Reply</span>
+                <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
             </a>
         </li>
         <li>
             <a href ng-click="replyAll(message)">
-                <i class="fa fa-reply-all"></i> <span class="visible-md-inline-block visible-lg-inline-block">Replay All</span>
+                <i class="fa fa-reply-all"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY_ALL' | translate }}</span>
             </a>
         </li>
         <li>

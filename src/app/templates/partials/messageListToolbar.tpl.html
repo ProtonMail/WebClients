@@ -5,7 +5,7 @@
         </li>
         <li ng-if="pageName != 'inbox'">
             <a href ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">Inbox</span>
+                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'archive'">
@@ -15,7 +15,7 @@
         </li>
         <li ng-if="pageName != 'spam'">
             <a href ng-click="moveMessagesTo('spam')" ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">Spam</span>
+                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'trash'">
@@ -30,13 +30,13 @@
         </li>
         <li>
             <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">Labels</span> <i class="fa fa-caret-down"></i>
+                <i class="fa fa-fw fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'LABELS' | translate }}</span> <i class="fa fa-caret-down"></i>
             </a>
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
         <li>
             <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }">
-                More <i class="fa fa-caret-down"></i>
+                {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li>
@@ -77,7 +77,7 @@
         </li>
         <li>
             <a href class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-sort visible-md-inline-block visible-lg-inline-block"></i> Sort <i class="fa fa-caret-down"></i>
+                <i class="fa fa-sort visible-md-inline-block visible-lg-inline-block"></i> {{ 'SORT' | translate }} <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li ng-class="{selected: selectedOrder == 'subject'}">
@@ -94,13 +94,13 @@
                 </li>
                 <li ng-class="{selected: selectedOrder == 'from'}">
                     <a href ng-click="orderBy('from')">
-                        <i class="fa fa-fw fa-sort-alpha-asc"></i> From: A-Z
+                        <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
                         <i class="fa fa-fw fa-check"></i>
                     </a>
                 </li>
                 <li ng-class="{selected: selectedOrder == '-from'}">
                     <a href ng-click="orderBy('-from')">
-                        <i class="fa fa-fw fa-sort-alpha-desc"></i> From: Z-A
+                        <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
                         <i class="fa fa-fw fa-check"></i>
                     </a>
                 </li>

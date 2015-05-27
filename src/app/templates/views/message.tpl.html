@@ -35,7 +35,7 @@
       </h1>
     <ul class="infos">
         <li>
-            <strong>From</strong>
+            <strong>{{ 'FROM' | translate }}</strong>
             <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.Sender)"></i>
             <b>{{message.SenderName}}</b> &lt;{{message.Sender}}&gt;
             <span class="fa fa-check-circle verified" title="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
