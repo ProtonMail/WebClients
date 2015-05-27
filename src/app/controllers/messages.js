@@ -1053,8 +1053,7 @@ angular.module("proton.controllers.Messages", [
 
             // Put the rendered template's content in the iframe's body
             $(iframeDocument).find("body").empty().append(content);
-            $(iframeDocument).find('html').css('overflowY', 'hidden');
-            $(iframeDocument).find('html').css('overflowX', 'auto');
+            $(iframeDocument).find('body').append('<style>html { overflow: auto; -webkit-overflow-scrolling: auto; }</style>');
 
             // set iframe height
             tools.setIframeHeight();

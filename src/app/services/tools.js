@@ -313,21 +313,32 @@ angular.module("proton.tools", [])
             setTimeout( function() {
                 var setIframeHeightTries = 0;
                 function loop() {
-                    // we try to calc the height, but some elements might not be ready, so we keep trying.                
+                    // we try to calc the height, but some elements might not be ready, so we keep trying.
                     if ($('#content iframe').length && setIframeHeightTries < 20) {
-                        // reset heights first!
-                        $('#content iframe, #message-body').css('height', '');
                         if ($('.message-toolbar').length && $('.message-head').length) {
-                            // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
-                            $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
+                            // reset heights first!
+                            $('#content iframe, #message-body').css('height', '');
+                            // desktop
+                            if ($(window).width()>767) {
+                                // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
+                                $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
+                            }
+                            // mobile
+                            else {
+                                var iFrameID = document.getElementById('messageIframe');
+                                if(iFrameID) {
+                                    iFrameID.height = "";
+                                    iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+ 100 + "px";
+                                  } 
+                            }
                         }
-                        else {
-                            setIframeHeightTries++;
-                            // console.log(setIframeHeightTries);
-                            setTimeout( function() {
-                                loop();
-                            }, 100);
-                        }
+                    }
+                    else {
+                        setIframeHeightTries++;
+                        // console.log(setIframeHeightTries);
+                        setTimeout( function() {
+                            loop();
+                        }, 100);
                     }
                 }
                 loop();

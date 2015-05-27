@@ -41,6 +41,9 @@
 			margin: 0;
 		}
 	}
+	#main {
+		padding-left: 0;
+	}
 	.composer {
 		top: 0 !important;
 		left: 0;
@@ -92,11 +95,12 @@
 	.message-list.mobile {
 		width: 100% !important;
 		table-layout: fixed;
+		display: table !important;
 		td {
 			vertical-align: middle;
 			position: relative;
 			padding-right: 15px;
-			width: 767px;
+			width: auto;
 			padding: 1rem 15px 1rem 3.5rem;
 			line-height: 1em;
 		}
