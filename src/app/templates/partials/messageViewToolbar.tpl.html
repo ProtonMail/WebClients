@@ -27,7 +27,7 @@
         </li>
         <li ng-if="message.location() != 'spam'">
             <a href ng-click="moveMessageTo('spam')">
-                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
+                <i class="fa fa-fw fa-ban"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.location() == 'spam' || message.location() == 'trash'">

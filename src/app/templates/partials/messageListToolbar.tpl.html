@@ -17,7 +17,7 @@
         </li>
         <li ng-if="pageName != 'spam'">
             <a href ng-click="moveMessagesTo('spam')" ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-bug"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
+                <i class="fa fa-fw fa-ban"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'trash'">
