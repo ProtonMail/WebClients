@@ -19,7 +19,6 @@ angular.module("proton.controllers.Messages", [
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
-
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
 
@@ -270,6 +269,10 @@ angular.module("proton.controllers.Messages", [
         });
 
         $scope.labels = labels;
+        $scope.params = {
+            alsoArchived: false
+        };
+
 
         $timeout(function() {
             $('#searchLabels').focus();
@@ -297,9 +300,9 @@ angular.module("proton.controllers.Messages", [
                     action: label.mode
                 };
             }),
-            archive: ($scope.alsoArchived)?'1':'0'
+            archive: ($scope.params.alsoArchived)?'1':'0'
         }).$promise.then(function(result) {
-            $state.go($state.current, {}, {reload: true}); // force reload page
+            $state.go($state.current, {}, {reload: true}); // force reload current page
         }, function(result) {
             $log.error(result);
         });

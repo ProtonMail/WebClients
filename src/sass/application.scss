@@ -16,7 +16,7 @@ body {
     min-height: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
+    font-family: $font-primary;
 }
 
 .fa {
