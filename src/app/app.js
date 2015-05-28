@@ -28,6 +28,9 @@ angular.module("proton", [
     "proton.models.user",
     "proton.models.bug",
 
+    // Config
+    "proton.config",
+
     // Services
     "proton.authentication",
     "proton.pmcw",
@@ -267,9 +270,8 @@ angular.module("proton", [
     MAX_EXPIRATION_TIME: 672 // hours
 })
 
-.config(function(authenticationProvider) {
-    // authenticationProvider.setAPIBaseURL("http://protonmail.xyz");
-    authenticationProvider.setAPIBaseURL("https://dev-api.protonmail.ch");
+.config(function(authenticationProvider, CONFIG) {
+    authenticationProvider.setAPIBaseURL(CONFIG.apiUrl);
 })
 
 //

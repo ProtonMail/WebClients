@@ -6,7 +6,8 @@ var _ = require("lodash"),
 
 var API_TARGETS = {
     local: "http://localhost:4003",
-    production: "http://protonmail.xyz",
+    prod: "https://dev-api.protonmail.ch",
+    dev: "http://protonmail.xyz",
     target: "http://?"
 };
 
@@ -88,6 +89,29 @@ module.exports = function(grunt) {
                 title: "ProtonMail Angular", // defaults to the name in package.json, or will use project directory's name
                 success: false, // whether successful grunt executions should be notified automatically
                 duration: 3 // the duration of notification in seconds, for `notify-send only
+            }
+        },
+
+        ngconstant: {
+            options: {
+                name: 'proton.config',
+                dest: 'src/app/config.js'
+            },
+            dev: {
+                constants: {
+                    CONFIG: {
+                        debug: true,
+                        apiUrl: apiUrl()
+                    }
+                }
+            },
+            prod: {
+                constants: {
+                    CONFIG: {
+                        debug: false,
+                        apiUrl: apiUrl()
+                    }
+                }
             }
         },
 
@@ -484,10 +508,12 @@ module.exports = function(grunt) {
     // Load the grunt plugins
     grunt.loadNpmTasks('grunt-angular-translate');
     grunt.loadNpmTasks('grunt-notify');
+    grunt.loadNpmTasks('grunt-ng-constant');
 
     grunt.renameTask("watch", "delta");
     grunt.registerTask("watch", [
         "notify_hooks",
+        "ngconstant:dev",
         "build",
         "jshint",
         "karma:watch:start",
@@ -520,6 +546,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("compile", [
+        "ngconstant:prod",
         "build",
         "copy:compile_assets",
         "ngAnnotate",
