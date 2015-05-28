@@ -69,31 +69,6 @@
     transition: $transition-property $transition-time $method;
 }
 
-// Gradient Backgrounds
-// @include horizontal(COLOR, COLOR)
-@mixin horizontal($startColor: $white, $endColor: $lightergrey) {
-    background-color: $endColor;
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor));
-    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
-    background-image: -moz-linear-gradient(left, $startColor, $endColor);
-    background-image: -ms-linear-gradient(left, $startColor, $endColor);
-    background-image: -o-linear-gradient(left, $startColor, $endColor);
-    background-image: linear-gradient(left, $startColor, $endColor);
-    background-repeat: repeat-x;
-}
-
-// @include vertical(COLOR, COLOR)
-@mixin vertical($startColor: $white, $endColor: $lightergrey) {
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
-    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
-    background-color: $endColor;
-    background-image: -moz-linear-gradient(top, $startColor, $endColor);
-    background-image: -ms-linear-gradient(top, $startColor, $endColor);
-    background-image: -o-linear-gradient(top, $startColor, $endColor);
-    background-image: linear-gradient(top, $startColor, $endColor);
-    background-repeat: repeat-x;
-}
-
 // Box Styles
 // @include rounded(INT)
 @mixin rounded($radius: 4px) {

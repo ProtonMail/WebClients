@@ -44,10 +44,10 @@ angular.module("proton.controllers.Contacts", [
         var message, title;
 
         if (contactsSelected.length === 1) {
-            title = $translate('DELETE_CONTACT');
+            title = $translate.instant('DELETE_CONTACT');
             message = 'Are you sure you want to delete this contact?';
         } else {
-            title = $translate('DELETE_CONTACTS');
+            title = $translate.instant('DELETE_CONTACTS');
             message = 'Are you sure you want to delete contacts?';
         }
 
@@ -75,9 +75,11 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.deleteContact = function(contact) {
+        var title = $translate.instant('DELETE_CONTACT');
+
         confirmModal.activate({
             params: {
-                title: 'Delete Contact',
+                title: title,
                 message: 'Are you sure you want to delete this contact?<br /><strong>' + contact.ContactEmail + '</strong>',
                 confirm: function() {
                     var idx = contacts.indexOf(contact);
