@@ -188,11 +188,11 @@ angular.module("proton.modals", [])
                 '#cfc',
                 '#ccc'
             ];
-            this.color = params.color || this.colors[0];
+            this.color = params.label.LabelColor || this.colors[0];
 
             this.create = function() {
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
-                    params.create(this.label, this.color);
+                    params.create(this.label.LabelName, this.color);
                 }
             };
 
