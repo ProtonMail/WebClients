@@ -131,10 +131,15 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveSignature = function(form) {
+        var signature = $scope.signature;
+
+        signature = signature.replace(/\n/g, "<br />");
+
         networkActivityTracker.track(
             User.signature({
-                "Signature": $scope.signature
+                "Signature": signature
             }).$promise.then(function(response) {
+                $scope.user.Signature = signature;
                 notify('Signature saved');
             }, function(response) {
                 $log.error(response);
