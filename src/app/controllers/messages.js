@@ -831,7 +831,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.minimize = function(message) {
-        message.save(true); // silently
         message.minimized = true;
         message.stopAutoSave();
     };

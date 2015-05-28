@@ -4,11 +4,14 @@
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.MessageTitle}} &nbsp;</span>
                 <span class="col-xs-3 text-right">
-                    <a href="" class="btn btn-sm minimize-button hidden-xs" ng-click="toggleMinimize(message)">
-                        <i class="fa" ng-class="{'fa-minus': !!!message.minimized, 'fa-plus': !!message.minimized}"></i>
+                    <a href="" ng-show="!!!message.minimized" class="btn btn-sm minimize-button hidden-xs" ng-click="minimize(message)" pt-tooltip="{{ 'MINIMIZE' | translate }}">
+                        <i class="fa fa-minus"></i>
                     </a>
-                    <a href="" class="btn btn-sm close-button" ng-click="close(message, true)">
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
+                    <a href="" ng-show="!!message.minimized" class="btn btn-sm minimize-button hidden-xs" ng-click="expand(message)" pt-tooltip="{{ 'EXPAND' | translate }}">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <a href="" class="btn btn-sm close-button" ng-click="close(message, true)" pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}">
+                        <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
