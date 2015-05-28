@@ -8,6 +8,8 @@ angular.module("proton.controllers.Header", [])
     $scope.search = function() {
         if($scope.params.searchInput.length > 0) {
             $rootScope.$broadcast('search', $scope.params.searchInput);
+        } else {
+            $state.go('secured.inbox');
         }
     };
 
