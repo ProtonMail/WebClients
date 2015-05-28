@@ -1,0 +1,111 @@
+// Ellipsis at end of line, no wrap.
+// @include text-overflow()
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin input_placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+}
+
+// disabled button mixin
+@mixin btn-disabled($bgcolor) {
+  background: darken($bgcolor, 10%) !important;
+  border-color: darken($bgcolor, 20%) !important;
+}
+
+@mixin responsive($class) {
+    @if $class == xs {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $class == sm {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $class == md {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $class == lg {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+}
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+// Gradient Backgrounds
+// @include horizontal(COLOR, COLOR)
+@mixin horizontal($startColor: $white, $endColor: $lightergrey) {
+    background-color: $endColor;
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image: -moz-linear-gradient(left, $startColor, $endColor);
+    background-image: -ms-linear-gradient(left, $startColor, $endColor);
+    background-image: -o-linear-gradient(left, $startColor, $endColor);
+    background-image: linear-gradient(left, $startColor, $endColor);
+    background-repeat: repeat-x;
+}
+
+// @include vertical(COLOR, COLOR)
+@mixin vertical($startColor: $white, $endColor: $lightergrey) {
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-color: $endColor;
+    background-image: -moz-linear-gradient(top, $startColor, $endColor);
+    background-image: -ms-linear-gradient(top, $startColor, $endColor);
+    background-image: -o-linear-gradient(top, $startColor, $endColor);
+    background-image: linear-gradient(top, $startColor, $endColor);
+    background-repeat: repeat-x;
+}
+
+// Box Styles
+// @include rounded(INT)
+@mixin rounded($radius: 4px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//CSS TRANSFORM MIXINS
+@mixin rotate($deg) {
+    -webkit-transform: rotate(#{$deg}deg);
+    -moz-transform: rotate(#{$deg}deg);
+    -ms-transform: rotate(#{$deg}deg);
+    -o-transform: rotate(#{$deg}deg);
+}

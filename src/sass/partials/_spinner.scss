@@ -20,7 +20,7 @@
   z-index: 3333;
   text-align: center;
 
-  @include transition(opacity 0.16s ease-in);
+  @include transition(opacity, 160ms, ease-in);
 
   &.ng-hide {
     display: block!important;
@@ -52,9 +52,9 @@
 }
 
 @include keyframes(bouncedelay) {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     @include transform(scale(0.0));
-  } 40% { 
+  } 40% {
     @include transform(scale(1.0));
   }
 }

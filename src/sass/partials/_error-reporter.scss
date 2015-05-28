@@ -1,4 +1,4 @@
-error-reporter, 
+error-reporter,
 [error-reporter] {
   display: inline-block;
   width: auto;
@@ -12,8 +12,8 @@ error-reporter,
   left: 50%;
   top: 0;
 
-  @include transition(top 0.4s cubic-bezier(.56,0,.27,1));
-  @include transition(top 0.4s cubic-bezier(.56,0,.27,1.53));
+  @include transition(top, 400ms, cubic-bezier(.56,0,.27,1));
+  @include transition(top, 400ms, cubic-bezier(.56,0,.27,1.53));
 
   &.ng-hide {
     display: block!important;

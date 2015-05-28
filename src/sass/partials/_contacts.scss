@@ -36,7 +36,7 @@ form.searchOrCreateContact {
   input {
     @include box-shadow(none);
     @include box-sizing(border-box);
-    @include transition(color 0.2s ease-in-out);
+    @include transition(color, 200ms, ease-in-out);
 
     font-size: 13px;
     border: 0;

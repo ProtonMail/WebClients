@@ -19,7 +19,7 @@
 .message-toolbar.compose > ul.nav {
   > li,
   > li > a {
-    @include transition(all 0.2s ease-in-out);
+    @include transition(all, 200ms, ease-in-out);
   }
 
   li.attachments {
@@ -191,7 +191,7 @@ form#compose {
       height: ($row-height*1.5);
       position: static;
 
-      @include transition(color 0.2s ease-in-out);
+      @include transition(color, 200ms, ease-in-out);
 
       &.optional {
         color: rgba(0,0,0,0.4);
@@ -240,7 +240,7 @@ form#compose {
 
       @include input_placeholder {
         color: rgba(0,0,0,0.25);
-        @include transition(color 0.2s ease-in-out);
+        @include transition(color, 200ms, ease-in-out);
       }
 
       &.subject {
@@ -306,7 +306,7 @@ form#compose {
       .encryption-options {
         z-index: 10;
         position: relative;
-        @include transition(opacity 0.2s ease-in-out 0);
+        @include transition(opacity, 200ms, ease-in-out);
       }
 
       .encryption-options {
@@ -368,7 +368,7 @@ form#compose {
         margin-bottom: 30px;
       }
 
-      @include transition(background-color 0.2s ease-in-out);
+      @include transition(background-color, 200ms, ease-in-out);
 
       &.hide-editor {
         background-color: #f1f1f1;
@@ -456,7 +456,7 @@ form#compose {
 
           -webkit-touch-callout: none;
           @include user-select(none);
-          @include transition(color 0.2s ease-in-out 0);
+          @include transition(color, 200ms, ease-in-out);
 
           &:not(.switcher) {
             top: -3px;
@@ -504,7 +504,7 @@ form#compose {
             text-align: center;
             font-size: 130%;
             padding-top: 4px;
-            @include transition(all 0.2s ease-in-out 0);
+            @include transition(all, 200ms, ease-in-out);
           }
 
           &.encrypted i {

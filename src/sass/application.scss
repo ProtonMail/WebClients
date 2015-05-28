@@ -4,17 +4,11 @@ $fa-font-path: "fonts";
 @import "bootstrap";
 @import "font-awesome";
 @import "partials/header";
+@import "partials/mixins";
+
 #message-body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-}
-@mixin input_placeholder {
-    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
-    @each $placeholder in $placeholders {
-        &:#{$placeholder}-placeholder {
-            @content;
-        }
-    }
 }
 html,
 body {
@@ -24,6 +18,8 @@ body {
     overflow-x: hidden;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
 }
+
+.fa {font-size: 14px;}
 
 // bootstrap override
 .col-xs-1,
@@ -397,7 +393,7 @@ p {
 }
 .dropzone {
     color: #666;
-    @include transition(all 0.2s ease-in-out);
+    @include transition(all, 200ms, ease-in-out);
     border: 2px dashed $dark-purple;
     border-radius: $border-radius-base;
     cursor: pointer;
@@ -461,6 +457,7 @@ p {
         }
     }
 }
+
 @import "partials/button";
 @import "partials/datepicker";
 @import "partials/sidebar";

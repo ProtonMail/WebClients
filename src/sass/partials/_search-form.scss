@@ -1,6 +1,6 @@
 #search-form {
   width: $sidebar-width;
-  @include transition(width 0.2s ease-in-out);
+  @include transition(width, 200ms, ease-in-out);
   &.focus {
     width: $search-width;
   }
@@ -14,7 +14,7 @@
     margin-bottom: 0;
   }
   input {
-    @include transition(all 0.2s ease-in-out);
+    @include transition(all, 200ms, ease-in-out);
     background: #444;
     border-radius: 2rem;
     border-color: transparent;
@@ -103,7 +103,7 @@
 #searchModal {
   .modal-dialog {
     margin-top: 0;
-    @include transition(margin-left 0.2s ease-in-out);
+    @include transition(margin-left, 200ms, ease-in-out);
     @include responsive(xs) {
       margin-top: 60px;
     }

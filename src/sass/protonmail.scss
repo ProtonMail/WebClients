@@ -1,84 +1,42 @@
-.fa {font-size: 14px;}
-
-$font-size-base:              13px;
-$font-size-small:             $font-size-base;
-$body-bg:                     #fff;
-$panel-bg:                    darken($body-bg, 2%);
-$panel-header:                #444;
-$panel-footer:                darken($body-bg, 7%);
-$font-size-h1:                floor(($font-size-base * 2));
-$navbar-inverse-link-color:   darken(white, 20%);
-$navbar-inverse-color:        darken(white, 30%);
-$navbar-inverse-bg:           darken(white, 66.5%);
-$brand-primary:               #08c;
-$light-purple:                #669;
-$dark-purple:                 #336;
-$table-header-bg:             #555;
-
-$navbar-height:               50px;
-$navbar-margin-bottom:        $navbar-height;
-$footer-height:               ($navbar-height*.75);
-
-$padding-base-horizontal:   ($font-size-base*1.1);
-$padding-base-vertical:     ($padding-base-horizontal/2);
-
-$border-radius-base:        2px;
-$border-radius-large:       ($border-radius-base/.75);
-$border-radius-small:       ($border-radius-base/1.25);
-$navbar-inverse-color:      lighten($navbar-inverse-bg, 35%);
+// COLORS
+$light-purple: #669;
+$dark-purple: #336;
+$light-grey: #ccc;
+$dark-grey: #444;
+$white: #fff;
+$black: #000;
+$light-black: #333;
+$yellow: #ffc;
+// ELEMENTS
+$font-size-base: 13px;
+$font-size-small: $font-size-base;
+$body-bg: $white;
+$panel-bg: darken($white, 2%);
+$panel-header: $dark-grey;
+$panel-footer: darken($white, 7%);
+$font-size-h1: floor(($font-size-base * 2));
+$navbar-inverse-link-color: darken(white, 20%);
+$navbar-inverse-color: darken(white, 30%);
+$navbar-inverse-bg: darken(white, 66.5%);
+$navbar-height: 50px;
+$navbar-margin-bottom: $navbar-height;
+$footer-height: ($navbar-height*.75);
+$padding-base-horizontal: ($font-size-base*1.1);
+$padding-base-vertical: ($padding-base-horizontal/2);
+$border-radius-base: 2px;
+$border-radius-large: ($border-radius-base/.75);
+$border-radius-small: ($border-radius-base/1.25);
+$navbar-inverse-color: lighten($navbar-inverse-bg, 35%);
 $navbar-inverse-link-color: $navbar-inverse-color;
-
-$sidebar-width:             20rem;
-$search-width:             30rem;
-$sidebar-button-lighten:    5%;
-$sidebar-bg:                #333;
-$navbar-bg:                 #444;
-
-$table-cell-padding:        6px 8px;
-
-$tooltip-opacity:           1;
-
-$starred:                   #ffc;
-$highlight:					#ffc;
-
-$font-family-monospace:		Consolas,monaco,monospace;
-
-$row-height:				32px;
-$duration-of-effect:        200ms;
-
-@mixin responsive($class) {
-  @if $class == xs {
-    @media (max-width: 767px) { @content; }
-  }
-
-  @else if $class == sm {
-    @media (min-width: 768px) { @content; }
-  }
-
-  @else if $class == md {
-    @media (min-width: 992px) { @content; }
-  }
-
-  @else if $class == lg {
-    @media (min-width: 1200px) { @content; }
-  }
-
-  @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
-  }
-}
-
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}
-}
-
-@mixin transition($transition-property, $transition-time, $method) {
-    -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
-}
+$sidebar-width: 20rem;
+$search-width: 30rem;
+$sidebar-button-lighten: 5%;
+$sidebar-bg: $light-black;
+$navbar-bg: $dark-grey;
+$table-cell-padding: 6px 8px;
+$tooltip-opacity: 1;
+$starred: $yellow;
+$highlight: $yellow;
+$font-family-monospace: Consolas,monaco,monospace;
+$row-height: 32px;
+$duration-of-effect: 200ms;

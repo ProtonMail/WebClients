@@ -1,5 +1,5 @@
 .navbar {
-  @include transition (color 0.2s ease 0s);
+  @include transition (color, 200ms, ease-in-out);
 }
 .navbar-text {
 	margin-right: 0;

@@ -1,10 +1,3 @@
-
-// disabled button mixin
-@mixin btn-disabled($bgcolor) {
-  background: darken($bgcolor, 10%) !important;
-  border-color: darken($bgcolor, 20%) !important;
-}
-
 .btn-default,
 .btn-primary,
 .btn-success,
