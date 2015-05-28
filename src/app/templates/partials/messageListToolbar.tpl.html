@@ -1,7 +1,9 @@
 <div class="message-toolbar">
     <ul class="nav navbar-nav">
         <li class="selectAll">
-            <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" />
+            <label>
+                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" />
+            </label>
         </li>
         <li ng-if="pageName != 'inbox'">
             <a href ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: selectedMessages().length == 0 }">

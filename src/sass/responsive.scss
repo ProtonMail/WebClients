@@ -2,6 +2,9 @@
 	#main {
 		padding-left: ($sidebar-width)*.9;
 	}
+	table.message-list.empty::after {
+		left: ($sidebar-width)*.9;
+	}
 	#sidebar {
 		width: ($sidebar-width)*.9;
 	}
@@ -17,6 +20,9 @@
 	}
 	#main {
 		padding-left: ($sidebar-width)*.3;
+	}
+	table.message-list.empty::after {
+		left: ($sidebar-width)*.3;
 	}
 	#sidebar {
 		width: ($sidebar-width)*.3;
@@ -43,6 +49,9 @@
 	}
 	#main {
 		padding-left: 0;
+	}
+	table.message-list.empty::after {
+		left: 0;
 	}
 	.composer {
 		top: 0 !important;

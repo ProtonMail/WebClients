@@ -3,6 +3,9 @@
   @include transition(width, 200ms, ease-in-out);
   &.focus {
     width: $search-width;
+    .btn:hover {
+      color: #666
+    }
   }
   padding: 0;
   margin-right: 15px;
@@ -40,7 +43,7 @@
     border: none;
     position: absolute;
     right: 0;
-    top: 2px;
+    top: 1px;
     z-index: 3;
     color: #ccc;
     text-shadow: 0 1px 0 rgba(black, .1);

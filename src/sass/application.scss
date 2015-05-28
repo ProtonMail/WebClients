@@ -1,6 +1,6 @@
 $fa-font-path: "fonts";
 @import "bourbon";
-@import "protonmail";
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
 @import "partials/header";
@@ -19,59 +19,10 @@ body {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
 }
 
-.fa {font-size: 14px;}
-
-// bootstrap override
-.col-xs-1,
-.col-sm-1,
-.col-md-1,
-.col-lg-1,
-.col-xs-2,
-.col-sm-2,
-.col-md-2,
-.col-lg-2,
-.col-xs-3,
-.col-sm-3,
-.col-md-3,
-.col-lg-3,
-.col-xs-4,
-.col-sm-4,
-.col-md-4,
-.col-lg-4,
-.col-xs-5,
-.col-sm-5,
-.col-md-5,
-.col-lg-5,
-.col-xs-6,
-.col-sm-6,
-.col-md-6,
-.col-lg-6,
-.col-xs-7,
-.col-sm-7,
-.col-md-7,
-.col-lg-7,
-.col-xs-8,
-.col-sm-8,
-.col-md-8,
-.col-lg-8,
-.col-xs-9,
-.col-sm-9,
-.col-md-9,
-.col-lg-9,
-.col-xs-10,
-.col-sm-10,
-.col-md-10,
-.col-lg-10,
-.col-xs-11,
-.col-sm-11,
-.col-md-11,
-.col-lg-11,
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
-    min-height: 0;
+.fa {
+    font-size: 14px;
 }
+
 .bold {
     font-weight: bold;
 }
@@ -131,34 +82,7 @@ body.locked {
         -ms-flex: 1;
     }
 }
-.modal-header {
-    padding: 10px 15px;
-    background-color: $panel-header;
-    color: #ddd;
-    .close {
-        color: #ddd;
-        text-shadow: none;
-        font-weight: normal;
-    }
-}
-.modal-body {
-    background: $panel-bg;
-}
-.modal-footer {
-    background-color: $panel-footer;
-    padding: 10px 15px;
-    a {
-        color: #666;
-        margin: 0 0 0 1rem;
-        display: inline-block;
-        text-decoration: underline;
-        &:hover,
-        &:focus {
-            text-decoration: underline;
-            color: #333;
-        }
-    }
-}
+
 h1 {
     margin: 0 0 1rem;
     color: #333;
@@ -217,7 +141,7 @@ body footer {
         letter-spacing: 1px;
         text-transform: uppercase;
         background-color: $light-purple;
-        color: white;
+        color: rgba(0,0,0,.5);
         box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
         border-color: $dark-purple;
         .fa {
@@ -260,21 +184,7 @@ textarea {
         resize: none;
     }
 }
-.navbar {
-    border: 0;
-    em {
-        font-style: normal;
-    }
-}
-.nav-tabs {
-    li {
-        &.active {
-            a {
-                box-shadow: inset 0 2px 0 $light-purple;
-            }
-        }
-    }
-}
+
 .secure .navbar-inverse {
     margin-bottom: 0;
 }
@@ -282,38 +192,7 @@ textarea {
     margin-top: 20px;
     margin-bottom: 30px;
 }
-@keyframes animatedBackground {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
-@-webkit-keyframes animatedBackground {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
-@-ms-keyframes animatedBackground {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
-@-moz-keyframes animatedBackground {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
+
 body {
     font-weight: 400;
     min-height: 100%;
@@ -338,31 +217,8 @@ body {
     * {
         -webkit-font-smoothing: antialiased;
     }
-    .alert-warning a {
-        color: darken($btn-warning-bg, 25%);
-    }
-    .alert-primary a {
-        color: darken($btn-primary-bg, 25%);
-    }
-    .alert-success a {
-        color: darken($btn-success-bg, 25%);
-    }
-    .alert-info a {
-        color: darken($btn-info-bg, 25%);
-    }
-    .alert-danger a {
-        color: darken($btn-danger-bg, 25%);
-    }
-    .alert a {
-        font-weight: 700;
-    }
 }
-.alert {
-    &.alert-sm {
-        margin: 0.5em;
-        padding: 10px 15px;
-    }
-}
+
 .faded {
     color: rgba(0,0,0,.1);
 }
@@ -391,6 +247,22 @@ p {
         }
     }
 }
+.list-group li.as-sortable-item {
+    padding: 0;
+    .as-sortable-item-handle {
+        padding: 1rem;
+        display: block;
+        text-align: right;
+        .label-pm {
+            position: relative;
+            top: .5rem;
+        }
+        .btn {
+            margin-left: 1rem;
+        }
+    }
+}
+
 .dropzone {
     color: #666;
     @include transition(all, 200ms, ease-in-out);
@@ -458,7 +330,8 @@ p {
     }
 }
 
-@import "partials/button";
+@import "partials/buttons";
+@import "partials/bootstrap-custom";
 @import "partials/datepicker";
 @import "partials/sidebar";
 @import "partials/pagination";

@@ -17,7 +17,7 @@ table.message-list {
         position: absolute;
         top: 82px;
         bottom: 0;
-        left: 0;
+        left: $sidebar-width;
         right: 0;
         text-align: center;
         padding-top: 8em;
