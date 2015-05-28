@@ -1,5 +1,5 @@
 angular.module("proton.tools", [])
-    .factory("tools", function($log, $sanitize, errorReporter) {
+    .factory("tools", function($log, $sanitize, $compile, $templateCache, $q, errorReporter) {
         function has_session_storage() {
             var mod = 'modernizr';
 
@@ -306,7 +306,7 @@ angular.module("proton.tools", [])
         }
 
         // get user max and current storage, and return a string "123.3/456.6 GB"
-        function render_storage_bar(current, max) { 
+        function render_storage_bar(current, max) {
             var kb = 1024;
             var mb = kb*1000;
             var gb = mb*1000;
@@ -350,7 +350,7 @@ angular.module("proton.tools", [])
                                 if(iFrameID) {
                                     iFrameID.height = "";
                                     iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+ 100 + "px";
-                                  } 
+                                  }
                             }
                         }
                     }
@@ -366,7 +366,33 @@ angular.module("proton.tools", [])
             }, 100);
         }
 
+        function get_template (templateName) {
+          var defer = $q.defer();
+
+          if ($templateCache.get(templateName)) {
+             defer.resolve($templateCache.get(templateName));
+          } else {
+             $http.get(templateName, {cache: $templateCache}).then(function(data){
+                defer.resolve(data);
+             });
+          }
+
+          return defer.promise;
+       }
+
+       function compile_template (templateName) {
+          var defer = $q.defer();
+
+          get_template(templateName).then(function(template){
+             defer.resolve($compile(template));
+          });
+
+          return defer.promise;
+       }
+
         var tools = {
+            getTemplate: get_template,
+            compileTemplate: compile_template,
             block: block,
             quote: quote,
             fixRedirectExploits: fix_redirect_exploits,

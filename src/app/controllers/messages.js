@@ -1022,50 +1022,52 @@ angular.module("proton.controllers.Messages", [
         message.setReadStatus(true);
     }
 
-    var render = $compile($templateCache.get("templates/partials/messageContent.tpl.html"));
+    tools.compileTemplate("templates/partials/messageContent.tpl.html").then(function(template) {
+        angular.element(document).ready(function () {
+            var iframe = $("#message-body > iframe");
 
-    angular.element(document).ready(function () {
-        var iframe = $("#message-body > iframe");
+            iframe.each(function(i) {
+                // HACK:
+                // Apparently, when navigating from a message to one adjacent, there's a time when there
+                // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
+                // Problem is, the content of the rendered template can only be put at one place in the DOM,
+                // so insert it in the each of these two caused it to be put in only the *second* iframe, which
+                // was only there temporarily. So when it disappeared, the content of the rendered template
+                // disappeared with it. With this, we force it to be put in the first iframe, which seems to
+                // be the right one.
+                if (i > 0) {
+                    return;
+                }
 
-        iframe.each(function(i) {
-            // HACK:
-            // Apparently, when navigating from a message to one adjacent, there's a time when there
-            // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
-            // Problem is, the content of the rendered template can only be put at one place in the DOM,
-            // so insert it in the each of these two caused it to be put in only the *second* iframe, which
-            // was only there temporarily. So when it disappeared, the content of the rendered template
-            // disappeared with it. With this, we force it to be put in the first iframe, which seems to
-            // be the right one.
-            if (i > 0) {
-                return;
-            }
+                var iframeDocument = this.contentWindow.document;
+                var content;
 
-            var iframeDocument = this.contentWindow.document;
-            var content;
+                // HACK: Makes the iframe's content manipulation work in Firefox.
+                iframeDocument.open();
+                iframeDocument.close();
 
-            // HACK: Makes the iframe's content manipulation work in Firefox.
-            iframeDocument.open();
-            iframeDocument.close();
+                try {
+                    // Define a new scope
+                    var templateScope = $scope.$new();
 
-            try {
-                content = render($scope);
-            } catch (err) {
-                console.log(err);
-            }
+                    content = template(templateScope);
 
-            console.log(content);
+                    // Put the rendered template's content in the iframe's body
+                    $(iframeDocument).find("body").append(content);
+                } catch (err) {
+                    console.log(err);
+                }
 
-            // Put the rendered template's content in the iframe's body
-            $(iframeDocument).find("body").empty().append(content);
 
-            // set iframe height
-            tools.setIframeHeight();
+                // set iframe height
+                tools.setIframeHeight();
 
+            });
+
+            // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+            $timeout(function() {
+                iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
+            }, 1000);
         });
-
-        // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
-        $timeout(function() {
-            iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
-        }, 1000);
     });
 });

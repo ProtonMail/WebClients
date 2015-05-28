@@ -42,7 +42,7 @@
             <span class="fa fa-check-circle verified" title="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
         </li>
         <li>
-            <strong>To</strong>
+            <strong>{{ 'TO' | translate }}</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.RecipientList.split(',')">
                     <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
@@ -50,7 +50,7 @@
             </ul>
         </li>
         <li ng-if="message.CCList">
-            <strong>CC</strong>
+            <strong>{{ 'CC' | translate }}</strong>
             <span btf-markdown="message.CCList | contrast:'<'"></span>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.CCList.split(',')">
@@ -59,7 +59,7 @@
             </ul>
         </li>
         <li ng-if="message.BCCList">
-            <strong>BCC</strong>
+            <strong>{{ 'BCC' | translate }}</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.BCCList.split(',')">
                     <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
