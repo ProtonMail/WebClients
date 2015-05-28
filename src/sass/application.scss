@@ -254,6 +254,22 @@ p {
         }
     }
 }
+.list-group li.as-sortable-item {
+    padding: 0;
+    .as-sortable-item-handle {
+        padding: 1rem;
+        display: block;
+        text-align: right;
+        .label-pm {
+            position: relative;
+            top: .5rem;
+        }
+        .btn {
+            margin-left: 1rem;
+        }
+    }
+}
+
 .dropzone {
     color: #666;
     @include transition(all 0.2s ease-in-out);
