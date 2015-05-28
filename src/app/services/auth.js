@@ -314,8 +314,8 @@ angular.module("proton.authentication", [
                             if (user.DisplayName.length === 0) {
                                 user.DisplayName = user.addresses[0].Email;
                             }
-
-                            $rootScope.isLocked = true;
+                            $rootScope.isLoggedIn = true;
+                            $rootScope.user = user;
                             return user;
                         },
                         errorReporter.catcher("Please try again later")

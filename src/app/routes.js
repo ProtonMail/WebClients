@@ -187,7 +187,7 @@ angular.module("proton.routes", [
     // ------------
     // LOGIN ROUTES
     // ------------
-        .state("login", {
+    .state("login", {
         url: "/login",
         views: {
             "main@": {
@@ -207,24 +207,7 @@ angular.module("proton.routes", [
                 controller: "LoginController",
                 templateUrl: "templates/views/unlock.tpl.html"
             }
-        },
-        resolve: {
-            user: function(authentication, $rootScope, $state) {
-                return authentication.fetchUserInfo()
-                .then(
-                    function(user) {
-                        $rootScope.isLoggedIn = true;
-                        $rootScope.User = user;
-                        if ($rootScope.pubKey === 'to be modified') {
-                            $state.go('step2');
-                            return;
-                        } else {
-                            return;
-                        }
-                    }
-                );
-            }
-        },
+        }
     })
 
     // -------------------------------------------

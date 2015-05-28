@@ -330,40 +330,23 @@ angular.module("proton.tools", [])
         }
 
         function set_iframe_height() {
-            // apply a 100ms timeout because for some reason it doesnt work if it runs right away
-            setTimeout( function() {
-                var setIframeHeightTries = 0;
-                function loop() {
-                    // we try to calc the height, but some elements might not be ready, so we keep trying.
-                    if ($('#content iframe').length && setIframeHeightTries < 20) {
-                        if ($('.message-toolbar').length && $('.message-head').length) {
-                            // reset heights first!
-                            $('#content iframe, #message-body').css('height', '');
-                            // desktop
-                            if ($(window).width()>767) {
-                                // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
-                                $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
-                            }
-                            // mobile
-                            else {
-                                var iFrameID = document.getElementById('messageIframe');
-                                if(iFrameID) {
-                                    iFrameID.height = "";
-                                    iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+ 100 + "px";
-                                  }
-                            }
-                        }
-                    }
-                    else {
-                        setIframeHeightTries++;
-                        // console.log(setIframeHeightTries);
-                        setTimeout( function() {
-                            loop();
-                        }, 100);
-                    }
+            if ($('#content iframe').length && $('.message-toolbar').length && $('.message-head').length) {
+                // reset heights first!
+                $('#content iframe, #message-body').css('height', '');
+                // desktop
+                if ($(window).width()>767) {
+                    // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
+                    $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
                 }
-                loop();
-            }, 100);
+                // mobile
+                else {
+                    var iFrameID = document.getElementById('messageIframe');
+                    if(iFrameID) {
+                        iFrameID.height = "";
+                        iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+ 100 + "px";
+                      }
+                }
+            }
         }
 
         function get_template (templateName) {

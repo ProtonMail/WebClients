@@ -15,8 +15,16 @@ angular.module("proton.controllers.Auth", [
     pmcw
 ) {
 
-    $rootScope.user = undefined;
     $rootScope.pageName = "Login";
+
+    if ($rootScope.isLoggedIn && $rootScope.user === undefined) {
+        try {
+            $rootScope.user = authentication.fetchUserInfo();
+        }
+        catch(err) {
+            alert(err);
+        }
+    }
 
     var clearErrors = function() {
         $scope.error = null;
@@ -33,9 +41,19 @@ angular.module("proton.controllers.Auth", [
             })
             .then(
                 function(result) {
-                	console.log(result);
                 	if (result.access_token) {
-	                    $state.go("login.unlock");
+                        return authentication.fetchUserInfo()
+                        .then(
+                            function(user) {
+                                if ($rootScope.pubKey === 'to be modified') {
+                                    $state.go('step2');
+                                    return;
+                                } else {
+                                    $state.go("login.unlock");
+                                    return;
+                                }
+                            }
+                        );                     
 	                }
 	                else if (result.error) {
 	                	var error  = (result.error_description) ? result.error_description : result.error;

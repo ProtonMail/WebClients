@@ -1054,13 +1054,10 @@ angular.module("proton.controllers.Messages", [
 
                     // Put the rendered template's content in the iframe's body
                     $(iframeDocument).find("body").append(content);
+
                 } catch (err) {
                     console.log(err);
                 }
-
-
-                // set iframe height
-                tools.setIframeHeight();
 
             });
 
