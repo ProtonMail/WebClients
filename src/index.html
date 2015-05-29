@@ -8,13 +8,11 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
     <style type="text/css" id="loading-css">
-        body,
-        #loading {
+        body {
           font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
           color: #fff;
           -webkit-font-smoothing: antialiased;
           text-align: center;
-          background: #555; 
           overflow: hidden;
           height: 100%;
           width: 100%;
@@ -28,6 +26,7 @@
           bottom: 0;
           z-index: 9999;
           color: #fff;
+          background: #555;          
         }
 
         .higgs {

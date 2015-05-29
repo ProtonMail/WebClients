@@ -207,6 +207,11 @@ angular.module("proton.routes", [
                 controller: "LoginController",
                 templateUrl: "templates/views/unlock.tpl.html"
             }
+        },
+        onEnter: function() {
+            setTimeout( function() {
+                $('input[name="MailboxPassword"').focus();
+            }, 500);
         }
     })
 

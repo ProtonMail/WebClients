@@ -169,9 +169,8 @@ angular.module("proton", [
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
         setTimeout( function() {
             $('.higgs').fadeOut(600, function() {
-                $('#loading').fadeOut(600, function() {
-                    $('#loading-css').remove();
-                });
+                $('#loading-css').remove();
+                $('#loading').fadeOut(600);
             });
         }, 2000); 
     });

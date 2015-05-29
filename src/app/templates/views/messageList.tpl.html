@@ -29,7 +29,7 @@
 
       <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
         <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
-        <span ng-switch-default>{{ message.Sender | username }}</span>
+        <span ng-switch-default pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
       </td>
       <td class="subject">
         <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>

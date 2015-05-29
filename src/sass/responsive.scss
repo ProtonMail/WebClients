@@ -2,8 +2,13 @@
 	#main {
 		padding-left: ($sidebar-width)*.9;
 	}
-	table.message-list.empty::after {
-		left: ($sidebar-width)*.9;
+	table.message-list {
+		.recipient {
+			width: 16rem;
+		}
+		&.empty::after {
+			left: ($sidebar-width)*.9;
+		}
 	}
 	#sidebar {
 		width: ($sidebar-width)*.9;
