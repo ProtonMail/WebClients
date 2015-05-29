@@ -3,19 +3,20 @@ angular.module("proton.controllers.Messages", [
 ])
 
 .controller("MessageListController", function(
+    $q,
+    $rootScope,
+    $scope,
     $state,
     $stateParams,
-    $scope,
-    $rootScope,
-    $q,
     $timeout,
-    authentication,
-    messages,
-    messageCount,
-    messageCache,
+    CONSTANTS,
     Message,
+    authentication,
+    messageCache,
+    messageCount,
+    messages,
     networkActivityTracker,
-    CONSTANTS
+    notify
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
@@ -196,13 +197,13 @@ angular.module("proton.controllers.Messages", [
                         $scope.messages.splice(i, 1);
                     }
                 }
-
-                if(selectedMessages > 1) {
-                    notify('Messages moved');
-                } else {
-                    notify('Message moved');
-                }
             });
+
+            if(selectedMessages > 1) {
+                notify('Messages moved');
+            } else {
+                notify('Message moved');
+            }
         }, function(result) {
             $log.error(result);
         }));
@@ -848,7 +849,7 @@ angular.module("proton.controllers.Messages", [
     $scope.focus = function(message) {
         $log.info('focuss');
         message.blur = false;
-    };    
+    };
 
     $scope.expand = function(message) {
         message.minimized = false;
@@ -935,11 +936,11 @@ angular.module("proton.controllers.Messages", [
         var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + base.MessageTitle + '<br />';
-        var time = 'Time (GMT): ' + base.Time + '<br />';
-        var from = 'From: ' + base.RecipientList + '<br />';
-        var to = 'To: ' + base.Sender + '<br />';
-        var cc = 'CC: ' + base.CCList + '<br />';
+        var subject = 'Subject: ' + message.MessageTitle + '<br />';
+        var time = 'Time (GMT): ' + message.Time + '<br />';
+        var from = 'From: ' + message.RecipientList + '<br />';
+        var to = 'To: ' + message.Sender + '<br />';
+        var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
         base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.clearTextBody() + blockquoteEnd;
@@ -1038,48 +1039,47 @@ angular.module("proton.controllers.Messages", [
     }
 
     tools.compileTemplate("templates/partials/messageContent.tpl.html").then(function(template) {
-        angular.element(document).ready(function () {
-            var iframe = $("#message-body > iframe");
+        var iframe = $("#message-body > iframe");
 
-            iframe.each(function(i) {
-                // HACK:
-                // Apparently, when navigating from a message to one adjacent, there's a time when there
-                // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
-                // Problem is, the content of the rendered template can only be put at one place in the DOM,
-                // so insert it in the each of these two caused it to be put in only the *second* iframe, which
-                // was only there temporarily. So when it disappeared, the content of the rendered template
-                // disappeared with it. With this, we force it to be put in the first iframe, which seems to
-                // be the right one.
-                if (i > 0) {
-                    return;
-                }
+        iframe.each(function(i) {
+            // HACK:
+            // Apparently, when navigating from a message to one adjacent, there's a time when there
+            // seems to be two iframes living in the DOM, so that the iframe array contains two elements.
+            // Problem is, the content of the rendered template can only be put at one place in the DOM,
+            // so insert it in the each of these two caused it to be put in only the *second* iframe, which
+            // was only there temporarily. So when it disappeared, the content of the rendered template
+            // disappeared with it. With this, we force it to be put in the first iframe, which seems to
+            // be the right one.
+            if (i > 0) {
+                return;
+            }
 
-                var iframeDocument = this.contentWindow.document;
-                var content;
+            var iframeDocument = this.contentWindow.document;
+            var content;
 
-                // HACK: Makes the iframe's content manipulation work in Firefox.
-                iframeDocument.open();
-                iframeDocument.close();
+            // HACK: Makes the iframe's content manipulation work in Firefox.
+            iframeDocument.open();
+            iframeDocument.close();
 
-                try {
-                    // Define a new scope
-                    var templateScope = $scope.$new();
+            try {
+                // Define a new scope
+                var templateScope = $scope.$new();
+                console.log(message);
+                templateScope.message = message;
+                content = template(templateScope);
 
-                    content = template(templateScope);
+                // Put the rendered template's content in the iframe's body
+                $(iframeDocument).find("body").append(content);
 
-                    // Put the rendered template's content in the iframe's body
-                    $(iframeDocument).find("body").append(content);
+            } catch (err) {
+                console.log(err);
+            }
 
-                } catch (err) {
-                    console.log(err);
-                }
-
-            });
-
-            // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
-            $timeout(function() {
-                iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
-            }, 1000);
         });
+
+        // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+        $timeout(function() {
+            iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
+        }, 1000);
     });
 });

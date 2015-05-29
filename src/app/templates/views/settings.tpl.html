@@ -19,10 +19,10 @@
                             </div>
                         </div>
                         <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
-                            <label class="control-label" for="notificationEmail">Notification/Recovery {{ 'EMAIL' | translate }}</label>
+                            <label class="control-label" for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }}</label>
                             <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
                             <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">
-                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">Invalid {{ 'EMAIL' | translate }}.</p>
+                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
                             </div>
                             <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
                         </div>
@@ -38,7 +38,7 @@
             <div class="panel-heading" role="tab" id="headingAutosaveContacts">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="autosaveContacts"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">Autosave {{ 'CONTACTS' | translate }}</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">{{ 'AUTOSAVE_CONTACTS' | translate }}</a>
                 </h4>
             </div>
             <div id="autosaveContacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAutosaveContacts">
@@ -54,7 +54,7 @@
             <div class="panel-heading" role="tab" id="headingLoginPassword">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password">Login Password</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password">{{ 'LOGIN_PASSWORD' | translate }}</a>
                 </h4>
             </div>
             <div id="login-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLoginPassword">
@@ -86,22 +86,22 @@
             <div class="panel-heading" role="tab" id="headingMailboxPassword">
                 <h4 class="panel-title clearfix">
                     <a class="btn btn-default btn-xs pull-right" pt-tooltip="Expand" data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password"><i class="fa fa-expand"></i></a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password">Mailbox Password</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password">{{ 'MAILBOX_PASSWORD' | translate }}</a>
                 </h4>
             </div>
             <div id="mailbox-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMailboxPassword">
                 <div class="panel-body">
                     <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                         <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
-                            <label class="control-label" for="oldMailboxPassword">Current Mailbox Password</label>
+                            <label class="control-label" for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
                             <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" class="form-control" placeholder="Current Mailbox Password" required="" />
                         </div>
                         <div class="form-group" ng-class="{'has-error': mailboxForm.newMailboxPassword.$touched && mailboxForm.newMailboxPassword.$error.required}">
-                            <label class="control-label" for="newMailboxPassword">New Mailbox Password</label>
+                            <label class="control-label" for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
                             <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" class="form-control" placeholder="New Mailbox Password" required="" />
                         </div>
                         <div class="form-group" ng-class="{'has-error': mailboxForm.confirmMailboxPassword.$touched && mailboxForm.confirmMailboxPassword.$error.required}">
-                            <label class="control-label" for="confirmMailboxPassword">Confirm New Mailbox Password</label>
+                            <label class="control-label" for="confirmMailboxPassword">{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}</label>
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" class="form-control" placeholder="Confirm New Mailbox Password" required="" />
                             <div ng-show="mailboxForm.$submit || mailboxForm.confirmMailboxPassword.$touched">
                                 <p ng-show="newMailboxPassword !== confirmMailboxPassword" class="text-danger">Passwords don't match.</p>

@@ -32,10 +32,6 @@ angular.module("proton.controllers.Settings", [
     $scope.labels = user.labels;
     $scope.cssTheme = user.user_theme;
 
-    $scope.initCollapse = function() {
-        // $('.collapse').collapse()
-    };
-
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
