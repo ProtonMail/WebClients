@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="proton">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<body ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
+<body ng-app="proton" ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
     <div id="loading">
         <div class="spinner">
             <div class="bounce1"></div>
