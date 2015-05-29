@@ -8,7 +8,7 @@
     }
 
     &.ng-enter,
-    &.ng-leave.ng-leave-active {
+    &.ng-leave.ng-leave-active { 
       opacity: 0;
     }
     &.ng-leave,
@@ -21,3 +21,11 @@
   @include transition(all, 200ms, ease-in-out);
 }
 
+@-webkit-keyframes lateral {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}

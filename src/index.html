@@ -8,19 +8,217 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
     <style type="text/css" id="loading-css">
-        body {
-            background: #669;
+        body,
+        #loading {
+          font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
+          color: #fff;
+          -webkit-font-smoothing: antialiased;
+          text-align: center;
+          background: #555; 
+          overflow: hidden;
+          height: 100%;
+          width: 100%;
+          font-size: 13px;
         }
+        #loading {
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+          color: #fff;
+        }
+
+        .higgs {
+          position: relative;
+          margin: auto;
+          width: 250px;
+        }
+        .orbit,
+        .ring {
+          -webkit-transition: -webkit-transform 500ms linear;
+          -webkit-transform-style: preserve-3d;
+          -moz-transition: -moz-transform 500ms linear;
+          -moz-transform-style: preserve-3d;
+          width: 250px;
+          height: 250px;
+          margin: auto;
+          margin-top: 50px;
+          position: absolute;
+        }
+        .ring {
+          position: absolute;
+          border: 3px solid #aaaaaa;
+          border-radius: 250px;
+          margin: auto;
+        }
+        .ring.inner,
+        .ring.center {
+          border: 2px solid #666666;
+          width: 140px;
+          height: 140px;
+          top: 55px;
+          left: 55px;
+        }
+        .ring.center {
+          background: #ffffff;
+          width: 30px;
+          height: 30px;
+          top: 110px;
+          left: 110px;
+          box-shadow: 0 0 5px #fff;
+        }
+        .wrap-electron {
+          border: 0px solid  #fff;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-animation: electron 1s linear infinite;
+          -moz-animation: electron 1s linear infinite;
+        }
+        .electron {
+          width: 12px;
+          height: 12px;
+          background: #aaaaaa;
+          left: 50%;
+          margin-left: -8px;
+          border: none;
+          top: -7px;
+          -webkit-transform-origin: 50% 50%;
+          box-shadow: 0 0 2rem #fff;
+        }
+        .inner .electron {
+          top: -6px;
+        }
+        .inner .wrap-electron {
+          -webkit-animation: electron .5s linear infinite;
+          -moz-animation: electron .5s linear infinite;
+        }
+        .orbit {
+          border: 0px solid #aaaaaa;
+          -webkit-animation: lateral 4s ease-in-out infinite;
+          -moz-animation: lateral 4s ease-in-out infinite;
+        }
+        .orbit.r {
+          -webkit-animation: lateralRevert 3s linear infinite;
+          -moz-animation: lateralRevert 3s linear infinite;
+        }
+        .vertical {
+          -webkit-animation: vertical 6s linear infinite;
+          -moz-animation: vertical 6s linear infinite;
+        }
+        .horizontal {
+          -webkit-animation: horizontalRevert 4s linear infinite;
+          -moz-animation: horizontalRevert 4s linear infinite;
+        } 
+        .vertical.inner {
+          -webkit-animation: vertical 3s linear infinite;
+          -moz-animation: vertical 3s linear infinite;
+        }
+        .horizontal.inner {
+          -webkit-animation: horizontalRevert 2s linear infinite;
+          -moz-animation: horizontalRevert 2s linear infinite;
+        }
+
+        @-webkit-keyframes electron {
+          0% {
+            -webkit-transform: rotateZ(0deg);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            -webkit-transform: rotateZ(360deg);
+            opacity: 0;
+          }
+        }
+        @-webkit-keyframes horizontal {
+          from {
+            -webkit-transform: rotateY(0deg);
+          }
+          to {
+            -webkit-transform: rotateY(360deg);
+          }
+        }
+        @-webkit-keyframes horizontalRevert {
+          from {
+            -webkit-transform: rotateY(360deg);
+          }
+          to {
+            -webkit-transform: rotateY(0deg);
+          }
+        }
+        @-webkit-keyframes vertical {
+          from {
+            -webkit-transform: rotateX(0deg);
+          }
+          to {
+            -webkit-transform: rotateX(360deg);
+          }
+        }
+        @-webkit-keyframes verticalRevert {
+          from {
+            -webkit-transform: rotateX(360deg);
+          }
+          to {
+            -webkit-transform: rotateX(0deg);
+          }
+        }
+        @-webkit-keyframes lateral {
+          from {
+            -webkit-transform: rotateZ(0deg);
+          }
+          to {
+            -webkit-transform: rotateZ(360deg);
+          }
+        }
+        @-webkit-keyframes lateralRevert {
+          from {
+            -webkit-transform: rotateZ(360deg);
+          }
+          to {
+            -webkit-transform: rotateZ(0deg);
+          }
+        }        
     </style>
 </head>
 <body ng-app="proton" ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
     <div id="loading">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-        <p class="text-center">Loading</p>
+
+<div class="higgs">
+
+  <div class="orbit">
+    <div class="ring horizontal">
+      <div class="wrap-electron">
+        <div class="ring electron"></div>
+      </div>
+    </div>
+    <div class="ring vertical">
+      <div class="wrap-electron">
+        <div class="ring electron"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="orbit r">
+    <div class="ring horizontal inner">
+      <div class="wrap-electron">
+        <div class="ring electron"></div>
+      </div>
+    </div>
+    <div class="ring vertical inner">
+      <div class="wrap-electron">
+        <div class="ring electron"></div>
+      </div>
+    </div>
+    <div class="ring center"></div>
+  </div>
+
+</div>
+
+        <p class="text-center">Loading ProtonMail</p>
     </div>
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>

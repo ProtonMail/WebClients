@@ -91,6 +91,9 @@ angular.module("proton", [
     });
     $(window).bind('load', function() {
         setInterval(tools.setIframeHeight, 40);
+        if (window.location.hash==='#spin') {
+            $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
+        }
     });
 
     // Experimenting with design. Ignore. :)
@@ -165,7 +168,11 @@ angular.module("proton", [
     });
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
         setTimeout( function() {
-            $('#loading-css, #loading').remove();
+            $('.higgs').fadeOut(600, function() {
+                $('#loading').fadeOut(600, function() {
+                    $('#loading-css').remove();
+                });
+            });
         }, 2000); 
     });
     $rootScope.onDrag = function() {
