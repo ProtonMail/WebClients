@@ -525,7 +525,7 @@ form#compose {
   bottom: $footer-height;
   right: 10px;
   width: 480px;
-  @include transition(right, 800ms, ease-in-out);
+  transition: right 600ms linear, opacity 200ms linear;
 
   @include responsive(xs) {
     width: auto;
@@ -555,6 +555,21 @@ form#compose {
       &:hover {
         color: #ccc;
       }
+    }
+  }
+
+  &.blur {
+    background: #f2f2f2 !important;
+    .composer-header {
+      background-color: lighten($panel-header, 10%);
+    }
+    .composer-body * {
+      opacity: .9 !important;
+      background: transparent !important;
+    }
+    * {
+      pointer-events: none;
+      cursor: default !important;
     }
   }
 

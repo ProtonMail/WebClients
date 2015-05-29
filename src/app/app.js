@@ -164,7 +164,9 @@ angular.module("proton", [
         }
     });
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
-        $('#loading-css, #loading').remove();
+        setTimeout( function() {
+            $('#loading-css, #loading').remove();
+        }, 2000); 
     });
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');

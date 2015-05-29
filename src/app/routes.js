@@ -425,7 +425,7 @@ angular.module("proton.routes", [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication) {
-                return authentication.fetchUserInfo();
+                authentication.fetchUserInfo();
             }
         },
 

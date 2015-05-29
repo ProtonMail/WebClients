@@ -553,7 +553,12 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.composerIsSelected = function(message) {
+        return $scope.selected === message;
+    };
+
     $scope.focusComposer = function(message) {
+        $scope.selected = message;
         if (!!!message.focussed) {
             // calculate z-index
             var index = $scope.messages.indexOf(message);
@@ -834,6 +839,16 @@ angular.module("proton.controllers.Messages", [
         message.minimized = true;
         message.stopAutoSave();
     };
+
+    $scope.blur = function(message) {
+        $log.info('blurr');
+        message.blur = true;
+    };
+
+    $scope.focus = function(message) {
+        $log.info('focuss');
+        message.blur = false;
+    };    
 
     $scope.expand = function(message) {
         message.minimized = false;
