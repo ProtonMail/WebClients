@@ -858,12 +858,20 @@ angular.module("proton.controllers.Messages", [
 
     $scope.close = function(message, save) {
         var index = $scope.messages.indexOf(message);
+        var messageFocussed = !!message.focussed;
 
         if (save === true) {
             message.save(true); // silently
         }
 
+        // Remove message in messages
         $scope.messages.splice(index, 1);
+
+        // Message closed and focussed?
+        if(messageFocussed && $scope.messages.length > 0) {
+            // Focus the first message
+            $scope.focusComposer(_.first($scope.messages));
+        }
     };
 
     $scope.focusEditor = function(message, event) {
