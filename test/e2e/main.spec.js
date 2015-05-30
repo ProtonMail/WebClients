@@ -1,10 +1,11 @@
 describe('Proton Mail App', function() {
     var ptor = protractor.getInstance();
+    var timeToSleep = 2000; // 2 sec
 
     ptor.get('http://localhost:8080/login');
 
     beforeEach(function() {
-        ptor.sleep(2000); // 2 sec
+        ptor.sleep(timeToSleep);
     });
 
     it('should log in', function() {
