@@ -172,7 +172,7 @@ angular.module("proton", [
                 $('#loading-css').remove();
                 $('#loading').fadeOut(600);
             });
-        }, 2000); 
+        }, 2000);
     });
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');
@@ -260,6 +260,16 @@ angular.module("proton", [
         format: "MM/DD/YYYY"
     });
 }])
+
+.config(function ($compileProvider, CONFIG) {
+    // By default AngularJS attaches information about binding and scopes to DOM nodes,
+    // and adds CSS classes to data-bound elements
+    // Tools like Protractor and Batarang need this information to run,
+    // but you can disable this in production for a significant performance boost
+    var debugInfo = CONFIG.debug || false;
+
+    $compileProvider.debugInfoEnabled(debugInfo);
+})
 
 .run(function($rootScope) {
     $rootScope.build = {
