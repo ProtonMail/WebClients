@@ -1,4 +1,5 @@
 describe('Proton Mail App', function() {
+
     var ptor = protractor.getInstance();
     var timeToSleep = 2000; // 2 sec
 
@@ -21,7 +22,7 @@ describe('Proton Mail App', function() {
         // TODO test input value
         passwordInput.sendKeys('richard');
         // TODO test input value
-        element(by.id('login_btn')).click();
+        loginButton.click();
     });
 
     it('should unlock', function() {
@@ -50,5 +51,5 @@ describe('Proton Mail App', function() {
         draftsButton.click();
     });
 
-    
+
 });

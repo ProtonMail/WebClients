@@ -33,6 +33,11 @@ angular.module("proton.models.label", [])
             delete: {
                 method: 'delete'
             },
+            // Apply labels
+            apply: {
+                method: 'put',
+                url: authentication.baseURL + "/labels/apply"
+            },
             // Re-order labels
             order: {
                 method: 'put',

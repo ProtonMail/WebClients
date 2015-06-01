@@ -19,7 +19,7 @@ $fa-font-path: "fonts";
   bottom: 0;
   z-index: 9999;
   color: #fff;
-  background: #555;          
+  background: #555;
 }
 
 html,
@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
     font-family: $font-primary;
 }
-  
+
 .blur {
     opacity: 1 !important;
 }
@@ -177,6 +177,9 @@ body footer {
         margin-bottom: 18px;
     }
 }
+.margin-top {
+    margin-top: 20px;
+}
 .no-margin-bottom {
     margin-bottom: 0;
 }
@@ -202,7 +205,7 @@ textarea {
 }
 .nav.nav-settings {
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 body {
