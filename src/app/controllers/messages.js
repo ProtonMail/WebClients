@@ -9,6 +9,7 @@ angular.module("proton.controllers.Messages", [
     $state,
     $stateParams,
     $timeout,
+    $translate,
     CONSTANTS,
     Message,
     authentication,
@@ -41,6 +42,26 @@ angular.module("proton.controllers.Messages", [
             $scope.messageCount = messageCount.Total;
         }
     }
+
+    $scope.draggableOptions = {
+        cursor: "move",
+        helper: function(event) {
+            console.log('selectedMessages', $scope.selectedMessages());
+            var numberOfEmail = $scope.selectedMessages().length;
+            var text = (numberOfEmail > 1)?"Mails":"Mail";
+
+            return $('<span class="well well-sm draggable"><i class="fa fa-envelope-o"></i> <strong>' + numberOfEmail + ' ' + text + '</strong></span>');
+        },
+        containment: "document"
+    };
+
+    $scope.onStartDragging = function(event, ui, message) {
+        if(message && !!!message.selected) {
+            $scope.$apply(function() {
+                message.selected = true;
+            });
+        }
+    };
 
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
@@ -176,6 +197,10 @@ angular.module("proton.controllers.Messages", [
         ));
     };
 
+    $rootScope.$on('moveMessagesTo', function(event, name) {
+        $scope.moveMessagesTo(name);
+    });
+
     $scope.moveMessagesTo = function(mailbox) {
         var selectedMessages = $scope.selectedMessages();
 
@@ -200,9 +225,9 @@ angular.module("proton.controllers.Messages", [
             });
 
             if(selectedMessages > 1) {
-                notify('Messages moved');
+                notify($translate.instant('MESSAGES_MOVED'));
             } else {
-                notify('Message moved');
+                notify($translate.instant('MESSAGE_MOVED'));
             }
         }, function(result) {
             $log.error(result);
@@ -287,6 +312,21 @@ angular.module("proton.controllers.Messages", [
     $scope.saveLabels = function() {
         $scope.applyLabels();
     };
+
+    $rootScope.$on('applyLabels', function(event, LabelID) {
+        var messages = _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+
+        Message.apply({
+            messages: messages,
+            labels_actions: {id: LabelID, action: 1},
+            archive: '1'
+        }).$promise.then(function(result) {
+            $state.go($state.current, {}, {reload: true}); // force reload current page
+            notify($translate('LABEL_APPLY'));
+        }, function(result) {
+            $log.error(result);
+        });
+    });
 
     $scope.applyLabels = function(messages) {
         messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
@@ -491,7 +531,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.initMessage = function(message) {
         if($scope.messages.length === CONSTANTS.MAX_NUMBER_COMPOSER) {
-            notify('Maximum composer reached');
+            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
             return;
         }
 
@@ -908,7 +948,7 @@ angular.module("proton.controllers.Messages", [
     $scope.detachLabel = function(label) {
         Message.apply({
             messages: [{id: message.MessageID}],
-            labels_actions: [{id: label.LabelID, action: '0'}],
+            labels_actions: [{id: label.LabelID, action: 0}],
             archive: '0'
         }).$promise.then(function(result) {
             var index = message.Labels.indexOf(label);

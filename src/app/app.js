@@ -12,6 +12,7 @@ angular.module("proton", [
     "toggle-switch",
     "pascalprecht.translate",
     "ui.bootstrap",
+    "ngDragDrop",
 
     // templates
     "templates-app",

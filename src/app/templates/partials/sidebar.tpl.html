@@ -12,7 +12,7 @@
         </li>
     </ul>
     <ul class="list-group" id="topMenu">
-        <li class="list-group-item" class="current-li" data-unread="0">
+        <li class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.inbox')" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                 <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>
                 <span class="label hidden-xs hidden-sm" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span>
@@ -29,7 +29,7 @@
                 <span class="fa fa-sign-out"></span> <span class="hidden-xs hidden-sm">{{ 'SENT' | translate }}</span>
             </a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.starred')" ng-class="{ active: ('secured.starred.**' | includedByState) }">
                 <span class="fa fa-star-o"></span> <span class="hidden-xs hidden-sm">{{ 'STARRED' | translate }}</span>
             </a>
@@ -37,17 +37,17 @@
     </ul>
     <div class="divider"></div>
     <ul class="list-group">
-        <li class="list-group-item">
+        <li class="list-group-item" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.archive')" ng-class="{ active: ('secured.archive.**' | includedByState) }">
                 <span class="fa fa-archive"></span> <span class="hidden-xs hidden-sm">{{ 'ARCHIVE' | translate }}</span>
             </a>
         </li>
-        <li class="list-group-item">
+        <li class="list-group-item" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.spam')" ng-class="{ active: ('secured.spam.**' | includedByState) }">
                 <span class="fa fa-ban"></span> <span class="hidden-xs hidden-sm">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
-        <li class="list-group-item" data-unread="0">
+        <li class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.trash')" ng-class="{ active: ('secured.trash.**' | includedByState) }">
                 <span class="fa fa-trash-o"></span> <span class="hidden-xs hidden-sm">{{ 'TRASH' | translate }}</span>
             </a>
@@ -64,7 +64,7 @@
     <div class="divider"></div>
     <div class="hidden-xs hidden-sm" id="sidebarLabels">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="label in labelsDisplayed()">
+            <li class="list-group-item" ng-repeat="label in labelsDisplayed()" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.LabelID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
                 <a ui-sref="secured.label({label: '{{label.LabelID}}' })" class="btn" ui-sref-active="active">
                     <span class="fa fa-tag" style="color: {{label.LabelColor}}"></span> <span>{{label.LabelName}}</span>
                 </a>

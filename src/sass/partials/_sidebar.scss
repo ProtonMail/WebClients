@@ -1,219 +1,210 @@
 #sidebar {
-  width: $sidebar-width;
-  background: $sidebar-bg;
-  text-shadow: 0px 1px 0px rgba(black, 0.5);
-  z-index: 99;
-  height: 100%;
-  position: absolute;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  em {
-    font-style: normal;
-  }
-
-  #sidebarLabels {
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex: 1;
-    .btn {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .divider {
-    height: 1px;
-    background: rgba(0,0,0,.2);
-    padding: 0;
-    clear: both;
-  }
-
-  .label {
-    background-color: white;
-    color: #222;
-    position: absolute;
-    right: 8px;
-    padding: 0.3em 0.6em 0.4em;
-    opacity: 0;
-    font-size: 84%;
-    font-weight: normal;
-    text-shadow: none;
-    -webkit-font-smoothing: antialiased;
-
-    &.active {
-      opacity: 1;
-      background: darken(#fff, 50%)
-    }
-  }
-
-  #compose_button {
-    a {
-      background: $light-purple;
-      text-shadow: none;
-      color: #fff;
-      &:active {
-        background: darken($light-purple, $sidebar-button-lighten);
-        color: rgba(#fff, .5);
-        border-color: transparent;
-        box-shadow: none;
-      }
-    }
-  }
-
-  #compose_button a,
-  .list-group-item a.active {
-    box-shadow: none;
-    border-top-color: rgba(white, .1);
-    border-bottom-color: transparent;
-  }
-
-  .logo {
-    line-height: 50px;
-    height: 50px;
-    padding: 17px 0;
-    img {
-      height: 16px;
-      display: block;
-      margin: 17px 0 0 0;
-    }
-  }
-
-  .storage {
-    box-sizing: border-box;
     width: $sidebar-width;
-    background-color: $sidebar-bg;
-    @include responsive(sm) {
-      width: 6rem;
-    }
-    @include responsive(md) {
-      width: 18rem;
-    }
-    @include responsive(lg) {
-      width: 20rem;
-    }
-    .sizeBar {
-      margin: 5px 0;
-      width: 100%;
-      height: 1rem;
-      background: rgba(black, 0.25);
-      border: 1px solid rgba(black, 0.1);
-      box-shadow: 0 1px 0 rgba(white, 0.1);
-      overflow: hidden;
-      border-radius: 1rem;
-      position: relative;
-      .fill {
-        background: #FFF;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#999));
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(#ffffff,0),color-stop(#999,1));
-        background: -webkit-linear-gradient(top, #FFF 0%,#999 100%);
-        background: linear-gradient(top, #fff 0%,#999 100%);
-        background: -webkit-linear-gradient(top, #FFF 0%, #999 100%);
-        background: linear-gradient(top, #fff 0%, #999 100%);
-        background: -webkit-linear-gradient(to bottom, #fff 0%,#999 100%);
-        background: linear-gradient(to bottom, #FFF 0%,#999 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#999',GradientType=0 );
+    background: $sidebar-bg;
+    text-shadow: 0 1px 0 rgba(black, 0.5);
+    z-index: 99;
+    height: 100%;
+    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    & > div {
+        display: flex;
+        flex-direction: column;
         height: 100%;
+    }
+    em {
+        font-style: normal;
+    }
+    #sidebarLabels {
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
+        .btn {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .divider {
+        height: 1px;
+        background: rgba(0,0,0,.2);
+        padding: 0;
         clear: both;
-        box-shadow: inset 0 -1px 0 rgba(white, 0.25);
-        border-radius: 1rem;
-        display: block;
+    }
+    .label {
+        background-color: white;
+        color: #222;
         position: absolute;
-        left: 0;
-        top: 0;
-      }
-    }
-
-    .sizebar {
-      margin-top: .5rem;
-      display: block;
-      line-height: 18px;
-    }
-  }
-
-
-  .wrap {
-    padding: 1rem;
-  }
-
-  .list-group {
-    margin: 0;
-   &.info {
-      padding: 0 1.5rem;
-      color: #999;
-      text-shadow: none;
-      li {
-        display: block;
-      }
-    }
-  }
-
-  .list-group-item {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 0;
-    .fa {
-      margin-right: .75rem;
-      line-height: 2rem;
-    }
-    .btn {
-      width: 100%;
-      text-align: left;
-      box-shadow: none;
-      border: 0;
-      border-radius: 0;
-      padding: 0 1.5rem;
-      line-height: $row-height;;
-      .label {
-        padding: 0 .65rem;
-        line-height: 18px;
-        height: 18px;
-        display: inline-block;
-        top: 7px;
-      }
-      &.active {
-        background: lighten($sidebar-bg, 10%);
-        &:hover {
-          border-color: transparent;
-        }
-        &:active {
-          background: darken($gray, $sidebar-button-lighten);
-          color: rgba(#fff, .5);
-          border-color: transparent;
-          box-shadow: none;
-        }
-        .label {
-          background: #fff;
-          color: #000;
-        }
-      }
-      &.active, &:hover {
-        color: #fff;
+        right: 8px;
+        padding: 0.3em 0.6em 0.4em;
+        opacity: 0;
+        font-size: 84%;
+        font-weight: normal;
         text-shadow: none;
-        .label {
-          background: #fff;
+        -webkit-font-smoothing: antialiased;
+        &.active {
+            opacity: 1;
+            background: darken(#fff, 50%);
         }
-      }
     }
-  }
-
-  a {
-    color: lighten($sidebar-bg, 50%);
-  }
-
+    #compose_button {
+        a {
+            background: $light-purple;
+            text-shadow: none;
+            color: #fff;
+            &:active {
+                background: darken($light-purple, $sidebar-button-lighten);
+                color: rgba(#fff, .5);
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+    #compose_button a,
+    .list-group-item a.active {
+        box-shadow: none;
+        border-top-color: rgba(white, .1);
+        border-bottom-color: transparent;
+    }
+    .logo {
+        line-height: 50px;
+        height: 50px;
+        padding: 17px 0;
+        img {
+            height: 16px;
+            display: block;
+            margin: 17px 0 0;
+        }
+    }
+    .storage {
+        box-sizing: border-box;
+        width: $sidebar-width;
+        background-color: $sidebar-bg;
+        @include responsive(sm) {
+            width: 6rem;
+        }
+        @include responsive(md) {
+            width: 18rem;
+        }
+        @include responsive(lg) {
+            width: 20rem;
+        }
+        .sizeBar {
+            margin: 5px 0;
+            width: 100%;
+            height: 1rem;
+            background: rgba(black, 0.25);
+            border: 1px solid rgba(black, 0.1);
+            box-shadow: 0 1px 0 rgba(white, 0.1);
+            overflow: hidden;
+            border-radius: 1rem;
+            position: relative;
+            .fill {
+                background: #fff;
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#999));
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(#ffffff,0),color-stop(#999,1));
+                background: -webkit-linear-gradient(top, #FFF 0%,#999 100%);
+                background: linear-gradient(top, #fff 0%,#999 100%);
+                background: -webkit-linear-gradient(top, #FFF 0%, #999 100%);
+                background: linear-gradient(top, #fff 0%, #999 100%);
+                background: -webkit-linear-gradient(to bottom, #fff 0%,#999 100%);
+                background: linear-gradient(to bottom, #FFF 0%,#999 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#999',GradientType=0 );
+                height: 100%;
+                clear: both;
+                box-shadow: inset 0 -1px 0 rgba(white, 0.25);
+                border-radius: 1rem;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        .sizebar {
+            margin-top: 0.5rem;
+            display: block;
+            line-height: 18px;
+        }
+    }
+    .wrap {
+        padding: 1rem;
+    }
+    .list-group {
+        margin: 0;
+        &.info {
+            padding: 0 1.5rem;
+            color: #999;
+            text-shadow: none;
+            li {
+                display: block;
+            }
+        }
+    }
+    .list-group-item {
+        &.drop-active {
+            /* TODO change color */
+            background-color: $yellow !important;
+        }
+        &.drop-hover {
+            /* TODO change color */
+            background-color: red !important;
+        }
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-bottom: 0;
+        .fa {
+            margin-right: 0.75rem;
+            line-height: 2rem;
+        }
+        .btn {
+            width: 100%;
+            text-align: left;
+            box-shadow: none;
+            border: 0;
+            border-radius: 0;
+            padding: 0 1.5rem;
+            line-height: $row-height;
+            .label {
+                padding: 0 0.65rem;
+                line-height: 18px;
+                height: 18px;
+                display: inline-block;
+                top: 7px;
+            }
+            &.active {
+                background: lighten($sidebar-bg, 10%);
+                &:hover {
+                    border-color: transparent;
+                }
+                &:active {
+                    background: darken($gray, $sidebar-button-lighten);
+                    color: rgba(#fff, .5);
+                    border-color: transparent;
+                    box-shadow: none;
+                }
+                .label {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+            &.active,
+            &:hover {
+                color: #fff;
+                text-shadow: none;
+                .label {
+                    background: #fff;
+                }
+            }
+        }
+    }
+    a {
+        color: lighten($sidebar-bg, 50%);
+    }
 }
-
 #main {
-  padding-left: $sidebar-width;
+    padding-left: $sidebar-width;
 }
