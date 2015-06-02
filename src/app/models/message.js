@@ -16,7 +16,6 @@ angular.module("proton.models.message", [])
     tools,
     CONSTANTS
 ) {
-
     var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
     var Message = $resource(
         authentication.baseURL + "/messages/:MessageID",

@@ -27,18 +27,20 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.onDropMessage = function(event, ui, name) {
-        var folders = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash'];
+        var folders = ['inbox', 'archive', 'spam', 'trash'];
 
-        // Is it a folder or a label?
-        if(_.contains(folders, name)) {
-            if($state.is('secured.' + name)) {
+        if(_.contains(folders, name)) { // Is it a folder?
+            if($state.is('secured.' + name)) { // Same folder?
                 notify($translate.instant('SAME_FOLDER'));
             } else {
                 $rootScope.$broadcast('moveMessagesTo', name);
             }
+        } else if(name === 'starred') {
+            // Just star selected messages
+            $rootScope.$broadcast('starMessages');
         } else {
             var LabelID = name;
-
+            // Apply label and archive
             $rootScope.$broadcast('applyLabels', LabelID);
         }
     };
