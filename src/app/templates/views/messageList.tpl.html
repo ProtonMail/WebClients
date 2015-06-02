@@ -8,7 +8,7 @@
             data-jqyoui-options="draggableOptions"
             ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
             <td class="actions">
-                <input type="checkbox" ng-model="message.selected" />
+                <input type="checkbox" ng-model="message.selected" ng-click="onSelectMessage($event, message)" />
                 <span class="fa" ng-class="{
               'fa-lock':
                 !!!(message.IsEncrypted == '0'),

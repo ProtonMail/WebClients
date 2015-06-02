@@ -55,6 +55,19 @@ angular.module("proton.controllers.Messages", [
         containment: "document"
     };
 
+    $scope.onSelectMessage = function(event, message) {
+        var messagesSelected = $scope.selectedMessages();
+
+        if (event.shiftKey) {
+            var start = $scope.messages.indexOf(_.first(messagesSelected));
+            var end = $scope.messages.indexOf(_.last(messagesSelected));
+
+            for (var i = start; i < end; i++) {
+                $scope.messages[i].selected = true;
+            }
+        }
+    };
+
     $scope.onStartDragging = function(event, ui, message) {
         if(message && !!!message.selected) {
             $scope.$apply(function() {
