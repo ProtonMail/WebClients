@@ -335,7 +335,7 @@ angular.module("proton.controllers.Messages", [
 
         Message.apply({
             messages: messages,
-            labels_actions: {id: LabelID, action: 1},
+            labels_actions: [{id: LabelID, action: 1}],
             archive: '1'
         }).$promise.then(function(result) {
             $state.go($state.current, {}, {reload: true}); // force reload current page
