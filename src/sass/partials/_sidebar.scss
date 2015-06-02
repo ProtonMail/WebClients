@@ -4,57 +4,57 @@
     text-shadow: 0 1px 0 rgba(black, 0.5);
     z-index: 99;
     height: 100%;
-  }
-
-  em {
-    font-style: normal;
-  }
-
-  #sidebarLabels {
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex: 1;
-    .btn {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .divider {
-    height: 1px;
-    background: rgba(0,0,0,.2);
-    padding: 0;
-    clear: both;
-  }
-
-  .label {
-    background-color: white;
-    color: #222;
     position: absolute;
     position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-    & > div {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+    em {
+        font-style: normal;
     }
-  }
 
-  #compose_button {
-    a {
-      background: $primary-color;
-      text-shadow: none;
-      color: #fff;
-      &:active {
-        @include primary-gradient-dark;
-        color: rgba(#fff, .5);
-        border-color: transparent;
-        box-shadow: none;
-      }
+    #sidebarLabels {
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
+        .btn {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .divider {
+        height: 1px;
+        background: rgba(0,0,0,.2);
+        padding: 0;
+        clear: both;
+    }
+
+    .label {
+        background-color: white;
+        color: #222;
+        position: absolute;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
+    #compose_button {
+        a {
+            background: $primary-color;
+            text-shadow: none;
+            color: #fff;
+            &:active {
+                @include primary-gradient-dark;
+                color: rgba(#fff, .5);
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
     }
     #sidebarLabels {
         overflow-y: auto;
@@ -172,6 +172,7 @@
     }
     .list-group {
         margin: 0;
+        background-size: transparent;
         &.info {
             padding: 0 1.5rem;
             color: #999;
@@ -188,60 +189,60 @@
         }
         &.drop-hover {
             /* TODO change color */
-            background-color: red !important;
+        background-color: red !important;
+    }
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    .fa {
+        margin-right: 0.75rem;
+        line-height: 2rem;
+    }
+    .btn {
+        width: 100%;
+        text-align: left;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+        padding: 0 1.5rem;
+        line-height: $row-height;
+        .label {
+            padding: 0 0.65rem;
+            line-height: 18px;
+            height: 18px;
+            display: inline-block;
+            top: 7px;
         }
-        background-color: transparent;
-        border: none;
-        padding: 0;
-        margin-bottom: 0;
-        .fa {
-            margin-right: 0.75rem;
-            line-height: 2rem;
-        }
-        .btn {
-            width: 100%;
-            text-align: left;
-            box-shadow: none;
-            border: 0;
-            border-radius: 0;
-            padding: 0 1.5rem;
-            line-height: $row-height;
-            .label {
-                padding: 0 0.65rem;
-                line-height: 18px;
-                height: 18px;
-                display: inline-block;
-                top: 7px;
-            }
-            &.active {
-                background: lighten($sidebar-bg, 10%);
-                &:hover {
-                    border-color: transparent;
-                }
-                &:active {
-                    background: darken($gray, $sidebar-button-lighten);
-                    color: rgba(#fff, .5);
-                    border-color: transparent;
-                    box-shadow: none;
-                }
-                .label {
-                    background: #fff;
-                    color: #000;
-                }
-            }
-            &.active,
+        &.active {
+            background: lighten($sidebar-bg, 10%);
             &:hover {
-                color: #fff;
-                text-shadow: none;
-                .label {
-                    background: #fff;
-                }
+                border-color: transparent;
+            }
+            &:active {
+                background: darken($gray, $sidebar-button-lighten);
+                color: rgba(#fff, .5);
+                border-color: transparent;
+                box-shadow: none;
+            }
+            .label {
+                background: #fff;
+                color: #000;
+            }
+        }
+        &.active,
+        &:hover {
+            color: #fff;
+            text-shadow: none;
+            .label {
+                background: #fff;
             }
         }
     }
-    a {
-        color: lighten($sidebar-bg, 50%);
-    }
+}
+a {
+    color: lighten($sidebar-bg, 50%);
+}
 }
 #main {
     padding-left: $sidebar-width;
