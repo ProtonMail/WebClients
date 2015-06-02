@@ -113,7 +113,7 @@ body footer {
     width: 100%;
     line-height: ($footer-height);
     font-size: ($font-size-base*.85);
-    color: #ccc;
+    color: $base-color-darker;
     background: #555;
     clear: both;
     .container-fluid {
@@ -126,7 +126,7 @@ body footer {
         background-color: white;
     }
     a {
-        color: #ccc;
+        color: $base-color-darker;
         margin: 0 0 0 1rem;
         display: inline-block;
         text-decoration: underline;
@@ -152,10 +152,10 @@ body footer {
     &.label-pm {
         letter-spacing: 1px;
         text-transform: uppercase;
-        background-color: $light-purple;
+        background-color: $primary-color;
         color: rgba(0,0,0,.5);
         box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
-        border-color: $dark-purple;
+        border-color: $primary-color-dark;
         .fa {
             font-size: inherit;
         }
@@ -235,7 +235,7 @@ body {
     color: rgba(0,0,0,.1);
 }
 .text-purple {
-    color: $dark-purple;
+    color: $primary-color-dark;
 }
 .text-center {
     text-align: center;
@@ -248,12 +248,12 @@ p {
 }
 .table.table-pm {
     thead {
-        border-bottom: 2px solid #CCC;
+        border-bottom: 2px solid $base-color-darker;
         tr th {
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: normal;
-            background-color: #e5e5e5;
+            background-color: $base-color-darker;
             border-bottom: 0;
             color: #666;
         }
@@ -278,7 +278,7 @@ p {
 .dropzone {
     color: #666;
     @include transition(all, 200ms, ease-in-out);
-    border: 2px dashed $dark-purple;
+    border: 2px dashed $primary-color-dark;
     border-radius: $border-radius-base;
     cursor: pointer;
     background-color: transparent;
@@ -288,7 +288,7 @@ p {
     &.hover,
     &.dz-drag-hover {
         background-color: $highlight;
-        border-color: $light-purple;
+        border-color: $primary-color;
     }
     .dz-message {
         margin: 4em 0;
@@ -314,7 +314,7 @@ p {
     margin-right: auto;
     .color {
         cursor: pointer;
-        border: 2px solid #ccc;
+        border: 2px solid $base-color-darker;
         display: inline-block;
         border-radius: $border-radius-base;
         height: 35px;
@@ -328,7 +328,7 @@ p {
             border-color: #666;
             .fa {
                 visibility: visible;
-                color: #ccc;
+                color: $base-color-darker;
             }
         }
         .fa {

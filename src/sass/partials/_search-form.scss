@@ -45,7 +45,7 @@
     right: 0;
     top: 1px;
     z-index: 3;
-    color: #ccc;
+    color: $base-color-darker;
     text-shadow: 0 1px 0 rgba(black, .1);
     box-shadow: none;
     &:hover {
@@ -91,7 +91,7 @@
       right: 5px;
       top: 14px;
       border-radius: 1rem;
-      color: #ccc;
+      color: $base-color-darker;
       padding: 0 1rem;
       line-height: 2rem;
       height: 2rem;

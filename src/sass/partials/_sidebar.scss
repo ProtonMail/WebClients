@@ -35,7 +35,7 @@
   .divider {
     height: 1px;
     background: rgba(0,0,0,.2);
-    padding: 0;
+    padding: 0; 
     clear: both;
   }
 
@@ -59,11 +59,11 @@
 
   #compose_button {
     a {
-      background: $light-purple;
+      background: $primary-color;
       text-shadow: none;
       color: #fff;
       &:active {
-        background: darken($light-purple, $sidebar-button-lighten);
+        @include primary-gradient-dark;
         color: rgba(#fff, .5);
         border-color: transparent;
         box-shadow: none;

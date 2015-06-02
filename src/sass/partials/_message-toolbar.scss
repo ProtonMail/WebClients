@@ -1,5 +1,5 @@
 .message-toolbar {
-  background: #e5e5e5;
+  background: $base-color-darker;
   box-shadow: 0 1px rgba(0,0,0,.1);
   position: relative;
   z-index: 2;
@@ -19,7 +19,7 @@
           margin: 0;
         }
         padding: 0;
-        @include linear-gradient(#fff, #e5e5e5);
+        @include base-gradient-dark;
       }
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -49,7 +49,7 @@
           position: absolute;
           background-color: #fff;
           input[type='search'] {
-            border: 1px solid #ccc;
+            border: 1px solid $base-color-darker;
             outline: 0;
           }
           ul.list-group {
@@ -80,18 +80,18 @@
 
       &.primary {
         border-right: none;
-        @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+        @include primary-gradient;
         a {
-          @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+          @include primary-gradient;
           color: white;
 
           &:hover {
-            background: lighten($light-purple, ($sidebar-button-lighten/2));
+            background: lighten($primary-color, ($color-offset/2));
             border-color: transparent;
             color: white;
           }
           &:active {
-            background: darken($light-purple, $sidebar-button-lighten);
+            @include primary-gradient-dark;
             color: rgba(#fff, .5);
             border-color: transparent;
             box-shadow: none;
@@ -114,14 +114,13 @@
       }
 
       > a {
+        // TODO CHANGE COLOR AND HOVER STYLES USING EXISTING CLASSES
         padding: 0 15px;
-        color: #666;
         line-height: $row-height;
-        @include linear-gradient(#fff, #e5e5e5);
+        @include base-gradient-dark;
 
         &:hover {
-          color: #000;
-          @include linear-gradient(#fff, #f2f2f2);
+          @include base-gradient;
         }
 
         &:active {
@@ -149,7 +148,6 @@
       }
 
       .dropdown-menu {
-        opacity: 0.97;
         background-color: #eeeeee;
         border-top: 1px solid #d1d1d1;
         margin-left: -1px;
