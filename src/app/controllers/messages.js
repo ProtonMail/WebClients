@@ -45,13 +45,10 @@ angular.module("proton.controllers.Messages", [
     }
 
     $scope.draggableOptions = {
+        cursorAt: {left: 0, top: 0},
         cursor: "move",
         helper: function(event) {
-            console.log('selectedMessages', $scope.selectedMessages());
-            var numberOfEmail = $scope.selectedMessages().length;
-            var text = (numberOfEmail > 1)?"Mails":"Mail";
-
-            return $('<span class="well well-sm draggable"><i class="fa fa-envelope-o"></i> <strong>' + numberOfEmail + ' ' + text + '</strong></span>');
+            return $('<span class="well well-sm draggable"><i class="fa fa-envelope-o"></i> <strong>Mails</strong></span>');
         },
         containment: "document"
     };
@@ -71,9 +68,8 @@ angular.module("proton.controllers.Messages", [
 
     $scope.onStartDragging = function(event, ui, message) {
         if(message && !!!message.selected) {
-            $scope.$apply(function() {
-                message.selected = true;
-            });
+            message.selected = true;
+            $scope.$apply();
         }
     };
 
@@ -142,17 +138,31 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $rootScope.$on('starMessages', function(event) {
+        $scope.toggleStar();
+    });
+
     $scope.toggleStar = function(message) {
         var inStarred = $state.is('secured.starred');
-        var index = $scope.messages.indexOf(message);
+        var messages = [];
 
-        networkActivityTracker.track(
-            message.toggleStar().then(function(result) {
+        if(angular.isDefined(message)) {
+            messages.push(message);
+        } else {
+            messages = $scope.selectedMessages();
+        }
+
+        networkActivityTracker.track($q.all(_.map(messages, function(message) {
+            return message.toggleStar();
+        })).then(function() {
+            _.each(messages, function(message) {
+                var index = $scope.messages.indexOf(message);
+
                 if (inStarred) {
                     $scope.messages.splice(index, 1);
                 }
-            })
-        );
+            });
+        }));
     };
 
     $scope.allSelected = function() {
@@ -217,6 +227,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessagesTo = function(mailbox) {
         var selectedMessages = $scope.selectedMessages();
+
         networkActivityTracker.track(
             $q.all(
                 _.map(selectedMessages, function(message) {
@@ -240,8 +251,7 @@ angular.module("proton.controllers.Messages", [
                     });
                     if(selectedMessages > 1) {
                         notify($translate.instant('MESSAGES_MOVED'));
-                    }
-                    else {
+                    } else {
                         notify($translate.instant('MESSAGE_MOVED'));
                     }
                 },
@@ -340,7 +350,7 @@ angular.module("proton.controllers.Messages", [
             archive: '1'
         }).$promise.then(function(result) {
             $state.go($state.current, {}, {reload: true}); // force reload current page
-            notify($translate('LABEL_APPLY'));
+            notify($translate.instant('LABEL_APPLY'));
         }, function(result) {
             $log.error(result);
         });
