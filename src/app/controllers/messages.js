@@ -624,9 +624,9 @@ angular.module("proton.controllers.Messages", [
 
             _.each($scope.messages, function(element, iteratee) {
                 if (iteratee > index) {
-                    element.zIndex = $scope.messages.length - (iteratee - index);
+                    element.zIndex = ($scope.messages.length - (iteratee - index))*10;
                 } else {
-                    element.zIndex = $scope.messages.length;
+                    element.zIndex = ($scope.messages.length)*10;
                 }
             });
             // focus correct field

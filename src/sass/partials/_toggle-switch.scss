@@ -1,5 +1,6 @@
 .toggle-switch {
   border-radius: $border-radius-base;
+  z-index: 2;
   .switch-left {
     @include primary-gradient;
   }
