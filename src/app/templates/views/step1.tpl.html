@@ -9,10 +9,9 @@
             <div class="form-group">
                 <label for="Username">{{ 'USERNAME' | translate | capitalize }}</label>
                 <div class="usernameWrap">
-                    <input type="text" ng-model="account.Username" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control">
+                    <input type="text" ng-model="account.Username" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control" pt-tooltip="You can switch to protonmail.ch after account creation." pt-placement="bottom">
                     <em class="usernameDomain">@protonmail.ch</em>
                 </div>
-                <p class="help-block">You can switch to protonmail.ch after account creation.</p>
             </div>
 
             <div class="form-group">
@@ -33,17 +32,13 @@
             </div>
 
             <div class="form-group">
-                <em class="pull-right">({{ 'OPTIONAL' | translate }})</em>
+                <em class="pull-right">({{ 'RECOMMANDED' | translate }})</em>
                 <label for="notificationEmail">Notification / Recovery {{ 'EMAIL' | translate }}</label>
-                <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" tabindex="4" type="email" class="form-control" placeholder="Notification {{ 'EMAIL' | translate }}" validator="!!!tools.validEmail(account.notificationEmail)" ng-enter="saveContinue(step1)" />
+                <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" tabindex="4" type="email" class="form-control" placeholder="Notification {{ 'EMAIL' | translate }}" validator="!!!tools.validEmail(account.notificationEmail)" ng-enter="saveContinue(step1)" pt-tooltip="This is used to recover your account if you get locked out or forget your login password." pt-placement="bottom" />
                 <div ng-show="step1.notificationEmail.$touched">
                     <p ng-show="!!!tools.validEmail(account.notificationEmail)" class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
                 </div>
             </div>
-
-            <p class="alert alert-info">
-                This is used to recover your account if you get locked out or forget your login password. <strong>({{ 'RECOMMANDED' | translate }})</strong>
-            </p>
 
             <div class="checkbox">
                 <label for="optIn">

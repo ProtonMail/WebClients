@@ -91,7 +91,7 @@ angular.module("proton.messages", [])
                     // replace the instance in the list with the complete cached instance
                     // updating variable fields (IsRead, Tag and Location)
                     messageList.splice(i, 1, msg);
-                    _.extend(msg, _.pick(other, 'IsRead', 'Tag', 'Location')); // TODO Maybe add 'Labels'
+                    _.extend(msg, _.pick(other, 'IsRead', 'Tag', 'Location', 'Labels'));
 
                 } else if (!other.IsRead) {
                     // Otherwise, if the message isn't read, preload it, as there is a
