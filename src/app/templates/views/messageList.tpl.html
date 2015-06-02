@@ -1,16 +1,15 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar"></ng-include>
 <table ng-if="!('secured.*.message' | includedByState)" class="table message-list hidden-xs" ng-class="{empty: messages.length == 0}">
-  <tbody id="message">
-    <tr ng-repeat="message in messages"
-        ng-click="navigateToMessage($event, message)"
-        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
-        >
-
-      <td class="actions">
-        <input type="checkbox" ng-model="message.selected" />
-        <span class="fa"
-            ng-class=
-            "{
+    <tbody id="message">
+        <tr ng-repeat="message in messages"
+            ng-click="navigateToMessage($event, message)"
+            data-drag="true"
+            jqyoui-draggable="{index: $index, onStart: 'onStartDragging(message)'}"
+            data-jqyoui-options="draggableOptions"
+            ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
+            <td class="actions">
+                <input type="checkbox" ng-model="message.selected" ng-click="onSelectMessage($event, message)" />
+                <span class="fa" ng-class="{
               'fa-lock':
                 !!!(message.IsEncrypted == '0'),
               'text-purple':
@@ -19,58 +18,54 @@
                 !!(message.IsEncrypted == '6'),
               'fa-unlock-alt':
                 !!(message.IsEncrypted == '0')
-            }"
-            title="{{ getMessageEncryptionType(message) }}"></span>
+            }" title="{{ getMessageEncryptionType(message) }}"></span>
 
-        <a href ng-click="toggleStar(message)">
-          <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
-        </a>
-      </td>
+                <a href ng-click="toggleStar(message)">
+                    <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
+                </a>
+            </td>
 
-      <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-        <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
-        <span ng-switch-default pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
-      </td>
-      <td class="subject">
-        <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>
-        <i class="fa fa-paperclip" ng-show="message.AttachmentIDList.length"></i>
-        <h4>{{ message.MessageTitle }}</h4>
-        <span ng-repeat="label in message.Labels" class="label label-pm" style="background-color: {{ label.LabelColor }}">{{ label.LabelName }}</span>
-      </td>
+            <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
+                <span ng-switch-when="true">
+                    <span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
+                <span ng-switch-default pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
+            </td>
+            <td class="subject">
+                <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>
+                <i class="fa fa-paperclip" ng-show="message.AttachmentIDList.length"></i>
+                <h4>{{ message.MessageTitle }}</h4>
+                <span ng-repeat="label in message.Labels" class="label label-pm" style="background-color: {{ label.LabelColor }}">{{ label.LabelName }}</span>
+            </td>
 
-      <td class="size">
-        {{ message.TotalSize | humanSize }}
-      </td>
+            <td class="size">
+                {{ message.TotalSize | humanSize }}
+            </td>
 
-      <td class="when">
-        {{ message.readableTime() }}
-      </td>
-    </tr>
-  </tbody>
+            <td class="when">
+                {{ message.readableTime() }}
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 <table ng-if="!('secured.*.message' | includedByState)" class="visible-xs-block table message-list table-hover mobile" ng-class="{empty: messages.length == 0}">
-  <tbody id="message">
-    <tr ng-repeat="message in messages"
-        ng-click="navigateToMessage($event, message)"
-        ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }"
-        >
-      <td class="subject">
-        <h4>
-          <span
-          class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}"
-          pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
-          </span>{{ message.MessageTitle }}
-        </h4>
-        <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-          <span ng-switch-when="true"><span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
-          <span class="pull-right">{{ message.readableTime() }}</span>
-          <span class="sender" ng-switch-default>{{ message.Sender }}</span>
-        </div>
-      </td>
+    <tbody id="message">
+        <tr ng-repeat="message in messages" ng-click="navigateToMessage($event, message)" ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }">
+            <td class="subject">
+                <h4>
+                    <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}" pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
+                    </span>{{ message.MessageTitle }}
+                </h4>
+                <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
+                    <span ng-switch-when="true">
+                        <span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
+                    <span class="pull-right">{{ message.readableTime() }}</span>
+                    <span class="sender" ng-switch-default>{{ message.Sender }}</span>
+                </div>
+            </td>
 
-    </tr>
-  </tbody>
+        </tr>
+    </tbody>
 </table>
 
 <ui-view></ui-view>

@@ -63,7 +63,8 @@ module.exports = {
       "vendor/angular-translate/angular-translate.js",
       "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
       "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
-      "vendor/angular-translate-storage-local/angular-translate-storage-local.js"
+      "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
+      "vendor/angular-dragdrop/src/angular-dragdrop.js"
     ],
     bootstrap_components: [
       "affix",
