@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Search", ["pikaday"])
+angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
 
 .controller("SearchController", function(
     $rootScope,
@@ -6,12 +6,12 @@ angular.module("proton.controllers.Search", ["pikaday"])
     $state,
     $stateParams,
     authentication,
-    mailboxIdentifiers,
+    CONSTANTS,
     networkActivityTracker
 ) {
     var modalId = 'searchModal';
 
-    $scope.folders = mailboxIdentifiers;
+    $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
     $scope.labels = authentication.user.labels;
 
     $scope.search = function(navbarValue) {

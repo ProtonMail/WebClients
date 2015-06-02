@@ -14,6 +14,9 @@ angular.module("proton", [
     "ui.bootstrap",
     "ngDragDrop",
 
+    // Constant
+    "proton.constants",
+
     // templates
     "templates-app",
     "templates-common",
@@ -278,25 +281,6 @@ angular.module("proton", [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-//
-// Constants definition
-//
-.constant('CONSTANTS', {
-    ATTACHMENT_SIZE_LIMIT: 15, // MB
-    ATTACHMENT_NUMBER_LIMIT: 50,
-    MAX_TITLE_LENGTH: 250,
-    MAX_NUMBER_COMPOSER: 5,
-    ENC_NONE: 0,
-    ENC_INTERNAL: 1, // all within ProtonMail
-    ENC_EXTERNAL: 2, // encrypted from outside
-    ENC_OUT_ENC: 3, // encrypted for outside
-    ENC_OUT_PLAIN: 4, // sent plain but stored enc
-    ENC_STORED_ENC: 5, // such as draft
-    ENC_OUT_ENC_REPLY: 6, // encrypted for outside
-    AUTO_SAVE_INTERVAL_TIME: 30000, // 30 seconds
-    MAX_EXPIRATION_TIME: 672 // hours
 })
 
 .config(function(authenticationProvider, CONFIG) {

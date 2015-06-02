@@ -1,4 +1,4 @@
-angular.module("proton.models.message", [])
+angular.module("proton.models.message", ["proton.constants"])
 
 .factory("Message", function(
     $resource,
@@ -10,14 +10,13 @@ angular.module("proton.models.message", [])
     authentication,
     localStorageService,
     pmcw,
-    mailboxIdentifiers,
+    CONSTANTS,
     networkActivityTracker,
     notify,
-    tools,
-    CONSTANTS
+    tools
 ) {
 
-    var invertedMailboxIdentifiers = _.invert(mailboxIdentifiers);
+    var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
         authentication.baseURL + "/messages/:MessageID",
         authentication.params({
@@ -163,8 +162,8 @@ angular.module("proton.models.message", [])
         },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
-            if (_.has(mailboxIdentifiers, location)) {
-                this.Location = mailboxIdentifiers[location];
+            if (_.has(CONSTANTS.MAILBOX_IDENTIFIERS, location)) {
+                this.Location = CONSTANTS.MAILBOX_IDENTIFIERS[location];
             } else {
                 this.Location = location;
             }
@@ -191,7 +190,7 @@ angular.module("proton.models.message", [])
         },
 
         isDraft: function() {
-            return this.Location === mailboxIdentifiers.drafts;
+            return this.Location === CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
         },
 
         cite: function() {

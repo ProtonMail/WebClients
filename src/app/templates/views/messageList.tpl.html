@@ -19,16 +19,22 @@
               'fa-unlock-alt':
                 !!(message.IsEncrypted == '0')
             }" title="{{ getMessageEncryptionType(message) }}"></span>
-
                 <a href ng-click="toggleStar(message)">
                     <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
                 </a>
             </td>
-
             <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-                <span ng-switch-when="true">
-                    <span class="to">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
-                <span ng-switch-default pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
+                <!-- TODO: use message.Location to show "From" & "To" & location icons
+                <span ng-if="( (message.Location==CONSTANTS.MAILBOX_IDENTIFIERS.drafts) || (message.Location==CONSTANTS.MAILBOX_IDENTIFIERS.sent) )">
+                    <span class="to" pt-tooltip="{{ message.RecipientList | lowercase }}">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
+                </span>
+                <span ng-if="( (message.Location!=CONSTANTS.MAILBOX_IDENTIFIERS.drafts) && (message.Location!=CONSTANTS.MAILBOX_IDENTIFIERS.sent) )">
+                    <span class="to" pt-tooltip="{{ message.Sender | lowercase }}">From&thinsp;: </span>{{ message.Sender | username }}</span>
+                </span>
+                -->
+                <span ng-if="true">
+                    <span pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
+                </span>
             </td>
             <td class="subject">
                 <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>

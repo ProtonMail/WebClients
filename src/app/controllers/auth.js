@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Auth", [
     "proton.authentication",
-    "proton.pmcw"
+    "proton.pmcw",
+    "proton.constants"
 ])
 
 .controller("LoginController", function(
@@ -125,9 +126,9 @@ angular.module("proton.controllers.Auth", [
     $rootScope,
     $http,
     authentication,
-    mailboxIdentifiers
+    CONSTANTS
 ) {
-    var mailboxes = mailboxIdentifiers;
+    var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     $scope.user = authentication.user;
     $scope.logout = authentication.logout;

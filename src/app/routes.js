@@ -1,21 +1,12 @@
+// TODO: inject proton.constants everywhere
+
 angular.module("proton.routes", [
     "ui.router",
-    "proton.authentication"
-])
+    "proton.authentication",
+    "proton.constants"
+]) 
 
-.constant("mailboxIdentifiers", {
-    "inbox": 0,
-    "drafts": 1,
-    "sent": 2,
-    "trash": 3,
-    "spam": 4,
-    "starred": 5,
-    "archive": 6,
-    "search": 7,
-    "label": 8
-})
-
-.config(function($stateProvider, $urlRouterProvider, $locationProvider, mailboxIdentifiers) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
 
     var messageViewOptions = {
         url: "/:MessageID",
@@ -85,7 +76,7 @@ angular.module("proton.routes", [
                     authentication,
                     Label,
                     Message,
-                    mailboxIdentifiers,
+                    CONSTANTS,
                     networkActivityTracker,
                     errorReporter
                 ) {
@@ -93,7 +84,7 @@ angular.module("proton.routes", [
 
                     if (authentication.isSecured()) {
                         var params = {
-                            "Location": mailboxIdentifiers[mailbox],
+                            "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
                             "Page": $stateParams.page
                         };
 
@@ -151,14 +142,14 @@ angular.module("proton.routes", [
                     $stateParams,
                     Message,
                     authentication,
-                    mailboxIdentifiers,
+                    CONSTANTS,
                     errorReporter,
                     networkActivityTracker
                 ) {
                     var mailbox = this.data.mailbox;
                     if (authentication.isSecured()) {
                         var params = {
-                            "Location": mailboxIdentifiers[mailbox],
+                            "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
                             "Page": $stateParams.page
                         };
 
@@ -583,7 +574,7 @@ angular.module("proton.routes", [
         }
     });
 
-    _.each(mailboxIdentifiers, function(id_, box) {
+    _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id_, box) {
         if (box === 'inbox') {
             return;
         }

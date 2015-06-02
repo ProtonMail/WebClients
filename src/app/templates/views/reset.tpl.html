@@ -4,6 +4,7 @@
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
 
         <div class="alert alert-danger">
+            <h1>{{ user.NotificationEmail }}</h1>
             <div>We don't store your mailbox password for privacy reasons.</div>
 
             <p>If you forgot your Mailbox Password, the only way to proceed is to create a new mailbox password. All of your existing Encrypted data will be lost forever.</p>
@@ -11,12 +12,12 @@
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'RESET' | translate }}</button>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'OK' | translate }}</button>
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
 
-    <div class="panel-body" ng-show="(showForm && User.NotificatioEmail !== '')">
+    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '')">
         <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
@@ -26,7 +27,7 @@
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
-    <div class="panel-body" ng-show="(showForm && User.NotificatioEmail == '')">
+    <div class="panel-body" ng-show="(showForm && user.NotificationEmail == '')">
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
