@@ -2,6 +2,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form role="form" name="searchForm" novalidate ng-submit="search()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
+                    </button>
+                    <h4 class="modal-title">{{ 'ADVANCED_SEARCH' | translate }}</h4>
+                </div>            
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -86,7 +93,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="" class="btn" data-dismiss="modal">{{ 'CANCEL' | translate }}</a>
+                    <a href="" class="btn pull-left" data-dismiss="modal">{{ 'CANCEL' | translate }}</a>
                     <button type="submit" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}">
                         <i class="fa fa-search" ng-hide="networkActivity.loading()"></i><i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i> <span>{{ 'ADVANCED_SEARCH' | translate }}</span>
                     </button>

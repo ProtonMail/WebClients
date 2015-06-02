@@ -9,18 +9,18 @@
     background: $panel-bg;
     text-align: center;
     .is-today & {
-        color: $dark-purple;
+        color: $primary-color-dark;
     }
 
     .is-selected & {
         color: #fff;
-        @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+        @include primary-gradient;
         border-radius: $border-radius-base;
         box-shadow: none;
     }
 
     &:hover {
-        background: $dark-purple !important;
+        background: $primary-color-dark !important;
         border-radius: $border-radius-base !important;
     }
 }

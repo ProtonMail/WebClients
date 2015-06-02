@@ -31,29 +31,6 @@ body {
     font-family: $font-primary;
 }
 
-.blur {
-    opacity: 1 !important;
-}
-
-.bold {
-    font-weight: bold;
-}
-.vcenter {
-    vertical-align: middle;
-}
-.inline {
-    display: inline-block;
-}
-.mobileOnly {
-    display: none;
-}
-.navbar-toggle {
-    float: left;
-    margin-left: 15px;
-}
-.relative {
-    position: relative;
-}
 .secure #body {
     min-height: 100%;
     height: 100%;
@@ -95,15 +72,6 @@ body.locked {
     }
 }
 
-h1 {
-    margin: 0 0 1rem;
-    color: #333;
-    span.fa {
-        text-shadow: 0 1px 0 #fff;
-        display: block;
-        margin-bottom: 0.25rem;
-    }
-}
 #main {
     h1 {
         margin: 1rem 0;
@@ -113,8 +81,8 @@ body footer {
     width: 100%;
     line-height: ($footer-height);
     font-size: ($font-size-base*.85);
-    color: #ccc;
-    background: #555;
+    color: $base-color-darker;
+    background: $alt-color-lighter;
     clear: both;
     .container-fluid {
         clear: both;
@@ -126,7 +94,7 @@ body footer {
         background-color: white;
     }
     a {
-        color: #ccc;
+        color: $base-color-darker;
         margin: 0 0 0 1rem;
         display: inline-block;
         text-decoration: underline;
@@ -145,28 +113,7 @@ body footer {
     margin-left: 15px;
     margin-right: 15px;
 }
-.well {
-    box-shadow: none;
-}
-.label {
-    &.label-pm {
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        background-color: $light-purple;
-        color: rgba(0,0,0,.5);
-        box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
-        border-color: $dark-purple;
-        .fa {
-            font-size: inherit;
-        }
-        a {
-            color: inherit;
-        }
-    }
-}
-.mono {
-    font-family: $font-family-monospace;
-}
+
 @media (min-width: $screen-sm) {
     .panel {
         max-width: 300px;
@@ -212,51 +159,29 @@ body {
     font-weight: 400;
     min-height: 100%;
     width: 100%;
-    background: #fff;
+    background: $base-color;
     &.login {
         background: url("img/cubes.png") 0 0 repeat;
     }
     &.locked {
-        background: url("img/low_contrast_linen.png") #333 0 0 repeat !important;
+        background: url("img/low_contrast_linen.png") $alt-color-light 0 0 repeat !important;
     }
     &.blank {
-        background: #fff !important;
-    }
-    a {
-        color: #333;
-        &:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-    }
-    * {
-        -webkit-font-smoothing: antialiased;
+        background: $base-color !important;
     }
 }
 
-.faded {
-    color: rgba(0,0,0,.1);
-}
-.text-purple {
-    color: $dark-purple;
-}
-.text-center {
-    text-align: center;
-}
-p {
-    margin: 1em 0;
-}
 .table-middle > tbody > tr > td {
     vertical-align: middle;
 }
 .table.table-pm {
     thead {
-        border-bottom: 2px solid #CCC;
+        border-bottom: 2px solid $base-color-darker;
         tr th {
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: normal;
-            background-color: #e5e5e5;
+            background-color: $base-color-darker;
             border-bottom: 0;
             color: #666;
         }
@@ -281,7 +206,7 @@ p {
 .dropzone {
     color: #666;
     @include transition(all, 200ms, ease-in-out);
-    border: 2px dashed $dark-purple;
+    border: 2px dashed $primary-color-dark;
     border-radius: $border-radius-base;
     cursor: pointer;
     background-color: transparent;
@@ -291,7 +216,7 @@ p {
     &.hover,
     &.dz-drag-hover {
         background-color: $highlight;
-        border-color: $light-purple;
+        border-color: $primary-color;
     }
     .dz-message {
         margin: 4em 0;
@@ -311,40 +236,54 @@ p {
     position: relative;
     box-shadow: 0 0 4px rgba(0,0,0,.5);
 }
-.palette {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    .color {
-        cursor: pointer;
-        border: 2px solid #ccc;
-        display: inline-block;
-        border-radius: $border-radius-base;
-        height: 35px;
-        width: 35px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-        line-height: 35px;
-        &:hover,
-        &:focus {
-            border-color: #666;
-            .fa {
-                visibility: visible;
-                color: #ccc;
-            }
-        }
-        .fa {
-            visibility: hidden;
-        }
-        &.active {
-            .fa {
-                visibility: visible;
-            }
-        }
-    }
-}
 
+// TODO THIS IS FOR COLOR DEBUGGING on LOGIN VIEW
+#primary-color,
+#primary-color-dark,
+#base-color,
+#base-color-dark,
+#base-color-darker,
+#alt-color,
+#alt-color-light,
+#alt-color-lighter,
+#alt-color-dark,
+#alt-color-darker {
+    height: 4rem;
+    width: 14rem;
+    line-height: 4rem;
+    text-align: center;
+    display: inline-block;
+    margin: .25rem 0;
+}
+#primary-color,
+#primary-color-dark,
+#alt-color,
+#alt-color-light,
+#alt-color-lighter,
+#alt-color-dark,
+#alt-color-darker {
+    color: rgba(white,.25);
+}
+#base-color,
+#base-color-dark,
+#base-color-darker {
+    color: rgba(black,.25);
+}
+#primary-color {        background: $primary-color;}
+#primary-color-dark {   background: $primary-color-dark;}
+#base-color {           background: $base-color;}
+#base-color-dark {      background: $base-color-dark;}
+#base-color-darker {    background: $base-color-darker;}
+#alt-color {            background: $alt-color;}
+#alt-color-light {      background: $alt-color-light;}
+#alt-color-lighter {    background: $alt-color-lighter;}
+#alt-color-dark {       background: $alt-color-dark;}
+#alt-color-darker {     background: $alt-color-darker;}
+// END COLOR DEBUGGING
+
+
+@import "partials/general-classes";
+@import "partials/typography";
 @import "partials/buttons";
 @import "partials/bootstrap-custom";
 @import "partials/datepicker";
@@ -355,6 +294,8 @@ p {
 @import "partials/message-toolbar";
 @import "partials/message-view";
 @import "partials/compose";
+@import "partials/labels";
+@import "partials/palette";
 @import "partials/contacts";
 @import "partials/notification";
 @import "partials/range";

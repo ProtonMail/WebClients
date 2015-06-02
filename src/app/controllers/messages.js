@@ -203,35 +203,39 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessagesTo = function(mailbox) {
         var selectedMessages = $scope.selectedMessages();
-
-
-        networkActivityTracker.track($q.all(
-            _.map(selectedMessages, function(message) {
-                if (mailbox === 'delete') {
-                    return message.delete().$promise;
-                } else {
-                    return message.moveTo(mailbox).$promise;
-                }
-            })
-        ).then(function() {
-            _.each(selectedMessages, function(message) {
-                if(!$state.is('secured.label')) {
-                    var i = $scope.messages.indexOf(message);
-
-                    if (i >= 0) {
-                        $scope.messages.splice(i, 1);
+        networkActivityTracker.track(
+            $q.all(
+                _.map(selectedMessages, function(message) {
+                    if (mailbox === 'delete') {
+                        return message.delete().$promise;
+                    } else {
+                        return message.moveTo(mailbox).$promise;
                     }
-                }
-            });
+                })
+            )
+            .then(
+                function() {
+                    _.each(selectedMessages, function(message) {
+                        if(!$state.is('secured.label')) {
+                            var i = $scope.messages.indexOf(message);
 
-            if(selectedMessages > 1) {
-                notify($translate.instant('MESSAGES_MOVED'));
-            } else {
-                notify($translate.instant('MESSAGE_MOVED'));
-            }
-        }, function(result) {
-            $log.error(result);
-        }));
+                            if (i >= 0) {
+                                $scope.messages.splice(i, 1);
+                            }
+                        }
+                    });
+                    if(selectedMessages > 1) {
+                        notify($translate.instant('MESSAGES_MOVED'));
+                    }
+                    else {
+                        notify($translate.instant('MESSAGE_MOVED'));
+                    }
+                },
+                function(result) {
+                    $log.error(result);
+                }
+            )
+        );
     };
 
     $scope.filterBy = function(status) {
@@ -519,7 +523,7 @@ angular.module("proton.controllers.Messages", [
             });
         } else {
             // Attachment size error.
-            notify('Attachments are limited to ' + sizeLimit + ' MB.<br>Total attached would be: ' + totalSize + '.');
+            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
             // TODO remove file in droparea
             return;
         }
@@ -1027,10 +1031,11 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessageTo = function(mailbox) {
         networkActivityTracker.track(
             ((mailbox === 'delete') ? message.delete() : message.moveTo(mailbox)).$promise
-            .then(function() {
+            .then(
+                function() {
+                // TODO aniamtion to show currently viewed message was deleted, and redirect back to inbox
                 if(!$state.is('secured.label')) {
                     var i = $scope.messages.indexOf(message);
-
                     if (i >= 0) {
                         $scope.messages.splice(i, 1);
                     }
@@ -1112,7 +1117,6 @@ angular.module("proton.controllers.Messages", [
             try {
                 // Define a new scope
                 var templateScope = $scope.$new();
-                console.log(message);
                 templateScope.message = message;
                 content = template(templateScope);
 

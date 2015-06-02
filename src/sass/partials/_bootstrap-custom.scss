@@ -1,3 +1,5 @@
+// TODO move responsive code here if its bootstrap
+
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -59,7 +61,10 @@
         font-weight: normal;
     }
 }
-.modal-body {
+
+.modal-body,
+.panel,
+.panel-body {
     background: $panel-bg;
 }
 .modal-footer {
@@ -88,7 +93,7 @@
     li {
         &.active {
             a {
-                box-shadow: inset 0 2px 0 $light-purple;
+                box-shadow: inset 0 2px 0 $primary-color;
             }
         }
     }
@@ -122,4 +127,9 @@
 .tooltip-inner {
     max-width: none;
     text-transform: none;
+}
+
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
 }

@@ -1,7 +1,7 @@
 .toggle-switch {
   border-radius: $border-radius-base;
   .switch-left {
-    @include linear-gradient(lighten($light-purple, $sidebar-button-lighten), $light-purple);
+    @include primary-gradient;
   }
   .switch-right {
     background-color: #DDD;

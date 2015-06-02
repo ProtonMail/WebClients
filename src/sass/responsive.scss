@@ -126,7 +126,7 @@
 			color: rgba(0, 0, 0, 0.25);
 		}
 		.fa-lock {
-			color: #336
+			color: $primary-color;
 		}
 		.fa {
 			width: 2rem;
@@ -157,7 +157,6 @@
 	}
 	.navbar-toggle {
 		border-color: transparent !important;
-		background: rgba(0,0,0,.25);
 	}
 	.navbar-collapse {
 		padding: 0;
@@ -200,15 +199,15 @@
 		}
 	}
 	#messageActionsMobile {
-		background: #e5e5e5;
-		box-shadow: inset 0 -1px #ccc;
+		background: $base-color-darker;
+		box-shadow: inset 0 -1px $base-color-darker;
 		a {
 			color: #000;
 			display: block;
 		}
 		#mobReplyAll {
 			text-align: center;
-			box-shadow: inset 1px 0 #ccc, inset -1px 0 #ccc;
+			box-shadow: inset 1px 0 $base-color-darker, inset -1px 0 $base-color-darker;
 		}
 		#mobForward {
 			text-align: right;

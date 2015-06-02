@@ -4,6 +4,33 @@
     text-shadow: 0 1px 0 rgba(black, 0.5);
     z-index: 99;
     height: 100%;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  #sidebarLabels {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    .btn {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(0,0,0,.2);
+    padding: 0;
+    clear: both;
+  }
+
+  .label {
+    background-color: white;
+    color: #222;
     position: absolute;
     position: fixed;
     left: 0;
@@ -15,8 +42,19 @@
         flex-direction: column;
         height: 100%;
     }
-    em {
-        font-style: normal;
+  }
+
+  #compose_button {
+    a {
+      background: $primary-color;
+      text-shadow: none;
+      color: #fff;
+      &:active {
+        @include primary-gradient-dark;
+        color: rgba(#fff, .5);
+        border-color: transparent;
+        box-shadow: none;
+      }
     }
     #sidebarLabels {
         overflow-y: auto;

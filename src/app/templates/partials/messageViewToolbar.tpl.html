@@ -31,7 +31,7 @@
             </a>
         </li>
         <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
-            <a href ng-click="moveMessagesTo('delete')">
+            <a href ng-click="moveMessageTo('delete')">
                 <i class="fa fa-times-circle"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'DELETE' | translate }}</span>
             </a>
         </li>

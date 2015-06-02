@@ -24,7 +24,7 @@ table.message-list {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 200%;
-        color: #ccc;
+        color: $base-color-darker;
         text-shadow: 2px 2px white;
         background-color: #f8f8f8;
     }
@@ -33,7 +33,7 @@ table.message-list {
         font-size: 14px;
         white-space: nowrap;
         color: rgba(0, 0, 0, .5);
-        background-color: #F2F2F2;
+        background-color: $base-color-dark;
         @include transition(all, 200ms, ease-in-out);
         h4 {
             margin: 0;
@@ -77,7 +77,7 @@ table.message-list {
                 }
                 .fa-lock,
                 {
-                    color: #336;
+                    color: $primary-color-dark;
                     position: relative;
                     top: 1px;
                 }
