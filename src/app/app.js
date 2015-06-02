@@ -168,11 +168,11 @@ angular.module("proton", [
     });
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
         setTimeout( function() {
-            $('.higgs').fadeOut(600, function() {
+            $('.higgs').fadeOut(400, function() {
                 $('#loading-css').remove();
-                $('#loading').fadeOut(600);
+                $('#loading').fadeOut(400);
             });
-        }, 2000);
+        }, 1000);
     });
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');

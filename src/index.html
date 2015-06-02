@@ -46,9 +46,12 @@
           margin-top: 50px;
           position: absolute;
         }
+        .orbit {
+          border: 0px solid #ffffff;          
+        }
         .ring {
           position: absolute;
-          border: 3px solid #aaaaaa;
+          border: 3px solid #ffffff;
           border-radius: 250px;
           margin: auto;
         }
@@ -67,19 +70,19 @@
           top: 110px;
           left: 110px;
           box-shadow: 0 0 5px #fff;
+          -webkit-animation: electron 2s linear infinite;
+          -moz-animation: electron 2s linear infinite;
         }
         .wrap-electron {
           border: 0px solid  #fff;
           position: absolute;
           width: 100%;
           height: 100%;
-          -webkit-animation: electron 1s linear infinite;
-          -moz-animation: electron 1s linear infinite;
         }
         .electron {
           width: 12px;
           height: 12px;
-          background: #aaaaaa;
+          background: #ffffff;
           left: 50%;
           margin-left: -8px;
           border: none;
@@ -90,35 +93,102 @@
         .inner .electron {
           top: -6px;
         }
+
+        .orbit {
+          -webkit-animation: lateral 6s ease-in-out infinite;
+          -moz-animation: lateral 6s ease-in-out infinite;
+        }
+        .vertical {
+          -webkit-animation: vertical 5s linear infinite;
+          -moz-animation: vertical 5s linear infinite;
+        }
+        .horizontal {
+          -webkit-animation: horizontal 4s linear infinite;
+          -moz-animation: horizontal 4s linear infinite;
+        } 
+        .wrap-electron {
+          -webkit-animation: electron 1s linear infinite;
+          -moz-animation: electron 1s linear infinite;          
+        }
+
+        .orbit.r {
+          -webkit-animation: lateralRevert 1s linear infinite;
+          -moz-animation: lateralRevert 1s linear infinite;
+        }
+        .vertical.inner {
+          -webkit-animation: verticalRevert 1.25s linear infinite;
+          -moz-animation: verticalRevert 1.25s linear infinite;
+        }
+        .horizontal.inner {
+          -webkit-animation: horizontalRevert 1.5s linear infinite;
+          -moz-animation: horizontalRevert 1.5s linear infinite;
+        }
         .inner .wrap-electron {
           -webkit-animation: electron .5s linear infinite;
           -moz-animation: electron .5s linear infinite;
         }
-        .orbit {
-          border: 0px solid #aaaaaa;
-          -webkit-animation: lateral 4s ease-in-out infinite;
-          -moz-animation: lateral 4s ease-in-out infinite;
+
+        @keyframes electron {
+          0% {
+            transform: rotateZ(0deg);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: rotateZ(360deg);
+            opacity: 0;
+          }
         }
-        .orbit.r {
-          -webkit-animation: lateralRevert 3s linear infinite;
-          -moz-animation: lateralRevert 3s linear infinite;
+        @keyframes horizontal {
+          from {
+            transform: rotateY(0deg);
+          }
+          to {
+            transform: rotateY(360deg);
+          }
         }
-        .vertical {
-          -webkit-animation: vertical 6s linear infinite;
-          -moz-animation: vertical 6s linear infinite;
+        @keyframes horizontalRevert {
+          from {
+            transform: rotateY(360deg);
+          }
+          to {
+            transform: rotateY(0deg);
+          }
         }
-        .horizontal {
-          -webkit-animation: horizontalRevert 4s linear infinite;
-          -moz-animation: horizontalRevert 4s linear infinite;
-        } 
-        .vertical.inner {
-          -webkit-animation: vertical 3s linear infinite;
-          -moz-animation: vertical 3s linear infinite;
+        @keyframes vertical {
+          from {
+            transform: rotateX(0deg);
+          }
+          to {
+            transform: rotateX(360deg);
+          }
         }
-        .horizontal.inner {
-          -webkit-animation: horizontalRevert 2s linear infinite;
-          -moz-animation: horizontalRevert 2s linear infinite;
+        @keyframes verticalRevert {
+          from {
+            transform: rotateX(360deg);
+          }
+          to {
+            transform: rotateX(0deg);
+          }
         }
+        @keyframes lateral {
+          from {
+            transform: rotateZ(0deg);
+          }
+          to {
+            transform: rotateZ(360deg);
+          }
+        }
+        @keyframes lateralRevert {
+          from {
+            transform: rotateZ(360deg);
+          }
+          to {
+            transform: rotateZ(0deg);
+          }
+        }  
 
         @-webkit-keyframes electron {
           0% {
@@ -180,7 +250,7 @@
           to {
             -webkit-transform: rotateZ(0deg);
           }
-        }        
+        }  
     </style>
 </head>
 <body ng-app="proton" ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
