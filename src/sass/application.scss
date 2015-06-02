@@ -82,7 +82,7 @@ body footer {
     line-height: ($footer-height);
     font-size: ($font-size-base*.85);
     color: $base-color-darker;
-    background: #555;
+    background: $alt-color-lighter;
     clear: both;
     .container-fluid {
         clear: both;
@@ -164,7 +164,7 @@ body {
         background: url("img/cubes.png") 0 0 repeat;
     }
     &.locked {
-        background: url("img/low_contrast_linen.png") #333 0 0 repeat !important;
+        background: url("img/low_contrast_linen.png") $alt-color-light 0 0 repeat !important;
     }
     &.blank {
         background: $base-color !important;
@@ -238,60 +238,47 @@ body {
 }
 
 // TODO THIS IS FOR COLOR DEBUGGING on LOGIN VIEW
-#primary-color {
-    background: $primary-color;
+#primary-color,
+#primary-color-dark,
+#base-color,
+#base-color-dark,
+#base-color-darker,
+#alt-color,
+#alt-color-light,
+#alt-color-lighter,
+#alt-color-dark,
+#alt-color-darker {
     height: 4rem;
-    width: 8rem;
+    width: 14rem;
+    line-height: 4rem;
+    text-align: center;
     display: inline-block;
+    margin: .25rem 0;
 }
-#primary-color-dark {
-    background: $primary-color-dark;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
+#primary-color,
+#primary-color-dark,
+#alt-color,
+#alt-color-light,
+#alt-color-lighter,
+#alt-color-dark,
+#alt-color-darker {
+    color: rgba(white,.25);
 }
-#base-color-dark {
-    background: $base-color-dark;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
+#base-color,
+#base-color-dark,
 #base-color-darker {
-    background: $base-color-darker;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
+    color: rgba(black,.25);
 }
-#base-color-darkest {
-    background: $base-color-darkest;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
-#alt-color {
-    background: $alt-color;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
-#alt-color-light {
-    background: $alt-color-light;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
-#alt-color-lighter {
-    background: $alt-color-lighter;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
-#alt-color-lightest {
-    background: $alt-color-lightest;
-    height: 4rem;
-    width: 8rem;
-    display: inline-block;
-}
+#primary-color {        background: $primary-color;}
+#primary-color-dark {   background: $primary-color-dark;}
+#base-color {           background: $base-color;}
+#base-color-dark {      background: $base-color-dark;}
+#base-color-darker {    background: $base-color-darker;}
+#alt-color {            background: $alt-color;}
+#alt-color-light {      background: $alt-color-light;}
+#alt-color-lighter {    background: $alt-color-lighter;}
+#alt-color-dark {       background: $alt-color-dark;}
+#alt-color-darker {     background: $alt-color-darker;}
 // END COLOR DEBUGGING
 
 

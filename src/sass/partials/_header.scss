@@ -6,13 +6,14 @@
 	margin-left: 0;
 }
 
+// TODO move to tablet css
 #searchMob {
 	line-height: 30px;
 	height: 30px;
 	width: 35px;
 	margin: 10px 15px 10px 0;
 	color: #fff;
-	background: #444;
+	background: $alt-color-light;
 	text-align: center;
 	border-radius: 2px;
 }

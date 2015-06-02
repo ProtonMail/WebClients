@@ -70,10 +70,8 @@ $angular-squire-wrapper-padding: 5px 0 !default;
         box-shadow: inset -1px 0 0 $base-color-darker;
       }
       a.btn {
-        color: #666;
         position: relative;
         &:hover {
-          color: #333;
         }
         .fa-lock, .fa-clock-o {
           color: $primary-color;

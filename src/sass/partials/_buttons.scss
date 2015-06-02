@@ -87,10 +87,10 @@
 .btn-dark {
   color: #fff;
   border-color: transparent;
-  background-color: #555;
+  background-color: $alt-color-light;
   &:hover {
     color: #fff;
-    background-color: #444;
+    background-color: $alt-color;
   }
 }
 .btn-sm {

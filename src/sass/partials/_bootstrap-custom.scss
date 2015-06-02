@@ -1,3 +1,5 @@
+// TODO move responsive code here if its bootstrap
+
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -125,4 +127,9 @@
 .tooltip-inner {
     max-width: none;
     text-transform: none;
+}
+
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
 }

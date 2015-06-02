@@ -18,7 +18,7 @@
   }
   input {
     @include transition(all, 200ms, ease-in-out);
-    background: #444;
+    background: $alt-color-light;
     border-radius: 2rem;
     border-color: transparent;
     color: #fff;

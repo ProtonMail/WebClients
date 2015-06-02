@@ -3,7 +3,7 @@
 // ============================================================
 
 // Scaled values. Example: `darken(color, $color-offset)`
-$color-offset:                  4%;
+$color-offset:                  5%;
 
 // Colors. Used for buttons and action elements.
 $primary-color:                 #669;
@@ -18,15 +18,16 @@ $yellow:                        #ffc;
 // SECONDARY VARIABLES. BASED OFF OF THEME OPTIONS.
 // ============================================================
 
-$primary-color-dark:            darken($primary-color, ($color-offset*2));
-$base-color-dark:               darken($base-color, $color-offset);
-$base-color-darker:             darken($base-color, ($color-offset*2));
-$base-color-darkest:            darken($base-color, ($color-offset*4));
+$primary-color-dark:            darken($primary-color, ($color-offset*2));				// #52527a (5% offset)
 
-$alt-color:                     invert($base-color-dark);
-$alt-color-light:               lighten(invert($base-color-dark), ($color-offset*4));
-$alt-color-lighter:             lighten(invert($base-color-dark), ($color-offset*8));
-$alt-color-lightest:            lighten(invert($base-color-dark), ($color-offset*12));
+$base-color-dark:               darken($base-color, $color-offset);						// #f2f2f2 (5% offset)
+$base-color-darker:             darken($base-color, ($color-offset*4));					// #ccc (5% offset)
+
+$alt-color:                     invert($base-color-darker);								// #333333 (5% offset)
+$alt-color-lighter:             lighten($alt-color, ($color-offset*4));					// #666666 (5% offset)
+$alt-color-light:               lighten($alt-color, ($color-offset));					// #404040 (5% offset)
+$alt-color-dark:               	darken($alt-color, ($color-offset));					// #262626 (5% offset)
+$alt-color-darker:             	darken($alt-color, ($color-offset*4));					// #000000 (5% offset)
 
 // Gradients. Example: `@include primary-gradient;`
 @mixin primary-gradient() {
@@ -57,8 +58,8 @@ $navbar-inverse-color:          darken($base-color, 30%);
 $navbar-inverse-bg:             darken($base-color, 60%);
 // END UNUSED
 
-$panel-header:                  $alt-color-lightest;
-$sidebar-bg:                    $alt-color-lighter;
+$panel-header:                  $alt-color-lighter;
+$sidebar-bg:                    $alt-color-light;
 
 $border-radius-base:            2px;
 $border-radius-large:           ($border-radius-base/.75);
