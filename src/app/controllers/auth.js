@@ -97,6 +97,7 @@ angular.module("proton.controllers.Auth", [
                 },
                 function(err) {
                     $log.error(err);
+                    angular.element('input[name="MailboxPassword"]').focus();
                     $scope.error = err;
                 }
             )
