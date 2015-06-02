@@ -59,7 +59,10 @@
         font-weight: normal;
     }
 }
-.modal-body {
+
+.modal-body,
+.panel,
+.panel-body {
     background: $panel-bg;
 }
 .modal-footer {

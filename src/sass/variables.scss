@@ -24,12 +24,9 @@ $base-color-darker:             darken($base-color, ($color-offset*2));
 $base-color-darkest:            darken($base-color, ($color-offset*4));
 
 $alt-color:                     invert($base-color-dark);
-$alt-color-light:               lighten(invert($base-color-dark), ($color-offset*2));
-$alt-color-lighter:             lighten(invert($base-color-dark), ($color-offset*4));
-$alt-color-lightest:            lighten(invert($base-color-dark), ($color-offset*8));
-$alt-color-dark:                darken(invert($base-color-dark),  ($color-offset*2));
-$alt-color-darker:              darken(invert($base-color-dark),  ($color-offset*4));
-$alt-color-darkest:             darken(invert($base-color-dark),  ($color-offset*8));
+$alt-color-light:               lighten(invert($base-color-dark), ($color-offset*4));
+$alt-color-lighter:             lighten(invert($base-color-dark), ($color-offset*8));
+$alt-color-lightest:            lighten(invert($base-color-dark), ($color-offset*12));
 
 // Gradients. Example: `@include primary-gradient;`
 @mixin primary-gradient() {

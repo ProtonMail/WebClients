@@ -1,0 +1,38 @@
+.blur {
+    opacity: 1 !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+.vcenter {
+    vertical-align: middle;
+}
+.inline {
+    display: inline-block;
+}
+.mobileOnly {
+    display: none;
+}
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+.relative {
+    position: relative;
+}
+.well {
+    box-shadow: none;
+}
+.mono {
+    font-family: $font-family-monospace;
+}
+.faded {
+    color: rgba(0,0,0,.1);
+}
+.text-purple {
+    color: $primary-color-dark;
+}
+.text-center {
+    text-align: center;
+}

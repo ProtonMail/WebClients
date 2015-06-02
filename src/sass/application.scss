@@ -31,29 +31,6 @@ body {
     font-family: $font-primary;
 }
 
-.blur {
-    opacity: 1 !important;
-}
-
-.bold {
-    font-weight: bold;
-}
-.vcenter {
-    vertical-align: middle;
-}
-.inline {
-    display: inline-block;
-}
-.mobileOnly {
-    display: none;
-}
-.navbar-toggle {
-    float: left;
-    margin-left: 15px;
-}
-.relative {
-    position: relative;
-}
 .secure #body {
     min-height: 100%;
     height: 100%;
@@ -95,15 +72,6 @@ body.locked {
     }
 }
 
-h1 {
-    margin: 0 0 1rem;
-    color: #333;
-    span.fa {
-        text-shadow: 0 1px 0 #fff;
-        display: block;
-        margin-bottom: 0.25rem;
-    }
-}
 #main {
     h1 {
         margin: 1rem 0;
@@ -145,28 +113,7 @@ body footer {
     margin-left: 15px;
     margin-right: 15px;
 }
-.well {
-    box-shadow: none;
-}
-.label {
-    &.label-pm {
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        background-color: $primary-color;
-        color: rgba(0,0,0,.5);
-        box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
-        border-color: $primary-color-dark;
-        .fa {
-            font-size: inherit;
-        }
-        a {
-            color: inherit;
-        }
-    }
-}
-.mono {
-    font-family: $font-family-monospace;
-}
+
 @media (min-width: $screen-sm) {
     .panel {
         max-width: 300px;
@@ -212,7 +159,7 @@ body {
     font-weight: 400;
     min-height: 100%;
     width: 100%;
-    background: #fff;
+    background: $base-color;
     &.login {
         background: url("img/cubes.png") 0 0 repeat;
     }
@@ -220,32 +167,10 @@ body {
         background: url("img/low_contrast_linen.png") #333 0 0 repeat !important;
     }
     &.blank {
-        background: #fff !important;
-    }
-    a {
-        color: #333;
-        &:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-    }
-    * {
-        -webkit-font-smoothing: antialiased;
+        background: $base-color !important;
     }
 }
 
-.faded {
-    color: rgba(0,0,0,.1);
-}
-.text-purple {
-    color: $primary-color-dark;
-}
-.text-center {
-    text-align: center;
-}
-p {
-    margin: 1em 0;
-}
 .table-middle > tbody > tr > td {
     vertical-align: middle;
 }
@@ -311,40 +236,67 @@ p {
     position: relative;
     box-shadow: 0 0 4px rgba(0,0,0,.5);
 }
-.palette {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    .color {
-        cursor: pointer;
-        border: 2px solid $base-color-darker;
-        display: inline-block;
-        border-radius: $border-radius-base;
-        height: 35px;
-        width: 35px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-        line-height: 35px;
-        &:hover,
-        &:focus {
-            border-color: #666;
-            .fa {
-                visibility: visible;
-                color: $base-color-darker;
-            }
-        }
-        .fa {
-            visibility: hidden;
-        }
-        &.active {
-            .fa {
-                visibility: visible;
-            }
-        }
-    }
-}
 
+// TODO THIS IS FOR COLOR DEBUGGING on LOGIN VIEW
+#primary-color {
+    background: $primary-color;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#primary-color-dark {
+    background: $primary-color-dark;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#base-color-dark {
+    background: $base-color-dark;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#base-color-darker {
+    background: $base-color-darker;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#base-color-darkest {
+    background: $base-color-darkest;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#alt-color {
+    background: $alt-color;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#alt-color-light {
+    background: $alt-color-light;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#alt-color-lighter {
+    background: $alt-color-lighter;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+#alt-color-lightest {
+    background: $alt-color-lightest;
+    height: 4rem;
+    width: 8rem;
+    display: inline-block;
+}
+// END COLOR DEBUGGING
+
+
+@import "partials/general-classes";
+@import "partials/typography";
 @import "partials/buttons";
 @import "partials/bootstrap-custom";
 @import "partials/datepicker";
@@ -355,6 +307,8 @@ p {
 @import "partials/message-toolbar";
 @import "partials/message-view";
 @import "partials/compose";
+@import "partials/labels";
+@import "partials/palette";
 @import "partials/contacts";
 @import "partials/notification";
 @import "partials/range";
