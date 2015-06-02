@@ -32,7 +32,7 @@ angular.module("proton.attachments", [])
 
                 var data = new FormData();
                 var xhr = new XMLHttpRequest();
-                var sessionKeyPromise = $scope.getSessionKey(packets.keys);
+                var sessionKeyPromise = this.getSessionKey(packets.keys);
 
                 data.append('keys[]', new Blob([packets.keys]));
                 data.append('data[]', new Blob([packets.data]));
