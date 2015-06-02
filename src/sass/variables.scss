@@ -3,85 +3,85 @@
 // ============================================================
 
 // Scaled values. Example: `darken(color, $color-offset)`
-$color-offset:					4%;
+$color-offset:                  4%;
 
 // Colors. Used for buttons and action elements.
-$primary-color:					#669;
+$primary-color:                 #669;
 
 // Used for panel widgets and forms backgrounds, etc.
 $base-color:                    #fff; 
 
 // Used for starred elements.
-$yellow:                      	#ffc; 
+$yellow:                        #ffc; 
 
 // ============================================================
 // SECONDARY VARIABLES. BASED OFF OF THEME OPTIONS.
 // ============================================================
 
-$primary-color-dark:			darken($primary-color, ($color-offset*2));
+$primary-color-dark:            darken($primary-color, ($color-offset*2));
 $base-color-dark:               darken($base-color, $color-offset);
 $base-color-darker:             darken($base-color, ($color-offset*2));
 $base-color-darkest:            darken($base-color, ($color-offset*4));
 
-$alt-color:                   	invert($base-color-dark);
+$alt-color:                     invert($base-color-dark);
 $alt-color-light:               lighten(invert($base-color-dark), ($color-offset*2));
 $alt-color-lighter:             lighten(invert($base-color-dark), ($color-offset*4));
 $alt-color-lightest:            lighten(invert($base-color-dark), ($color-offset*8));
-$alt-color-dark:				darken(invert($base-color-dark),  ($color-offset*2));
-$alt-color-darker:				darken(invert($base-color-dark),  ($color-offset*4));
-$alt-color-darkest:				darken(invert($base-color-dark),  ($color-offset*8));
+$alt-color-dark:                darken(invert($base-color-dark),  ($color-offset*2));
+$alt-color-darker:              darken(invert($base-color-dark),  ($color-offset*4));
+$alt-color-darkest:             darken(invert($base-color-dark),  ($color-offset*8));
 
 // Gradients. Example: `@include primary-gradient;`
 @mixin primary-gradient() {
-	@include linear-gradient(lighten($primary-color, $color-offset), $primary-color);
+    @include linear-gradient(lighten($primary-color, $color-offset), $primary-color);
 }
 @mixin primary-gradient-dark() {
-	@include linear-gradient(darken($primary-color, $color-offset), $primary-color);
+    @include linear-gradient(darken($primary-color, $color-offset), $primary-color);
 }
 @mixin base-gradient() {
-	@include linear-gradient($base-color, $base-color-dark);
+    @include linear-gradient($base-color, $base-color-dark);
 }
 @mixin base-gradient-dark() {
-	@include linear-gradient($base-color, $base-color-darker);
+    @include linear-gradient($base-color, $base-color-darker);
 }
 
 // ELEMENTS
-$font-size-base:				13px;
-$font-size-h1:					floor(($font-size-base * 2));
+$font-size-base:                13px;
+$font-size-h1:                  floor(($font-size-base * 2));
 
-$body-bg:						$base-color;
-$panel-bg:						$base-color-dark;
-$panel-footer:					$base-color-dark;
+$body-bg:                       $base-color;
+$panel-bg:                      $base-color-dark;
+$panel-footer:                  $base-color-dark;
 
 // TODO: cleanup unused
 // START UNUSED...
-$navbar-inverse-link-color:		darken($base-color, 20%);
-$navbar-inverse-color:			darken($base-color, 30%);
-$navbar-inverse-bg:				darken($base-color, 60%);
+$navbar-inverse-link-color:     darken($base-color, 20%);
+$navbar-inverse-color:          darken($base-color, 30%);
+$navbar-inverse-bg:             darken($base-color, 60%);
 // END UNUSED
 
-$panel-header:					$alt-color-lightest;
-$sidebar-bg:                 	$alt-color-lighter;
+$panel-header:                  $alt-color-lightest;
+$sidebar-bg:                    $alt-color-lighter;
 
-$border-radius-base:			2px;
-$border-radius-large:			($border-radius-base/.75);
-$border-radius-small:			($border-radius-base/1.25);
+$border-radius-base:            2px;
+$border-radius-large:           ($border-radius-base/.75);
+$border-radius-small:           ($border-radius-base/1.25);
 
-$navbar-inverse-color:			lighten($navbar-inverse-bg, 35%);
-$navbar-inverse-link-color: 	$navbar-inverse-color;
+$navbar-inverse-color:          lighten($navbar-inverse-bg, 35%);
+$navbar-inverse-link-color:     $navbar-inverse-color;
 
-$navbar-height:					50px;
-$sidebar-width:					20rem;
-$search-width:					30rem;
-$sidebar-button-lighten:		5%;
-$navbar-margin-bottom:			$navbar-height;
-$footer-height:					($navbar-height*.75);
+$navbar-height:                 50px;
+$sidebar-width:                 20rem;
+$search-width:                  30rem;
+$sidebar-button-lighten:        5%;
+$navbar-margin-bottom:          $navbar-height;
+$footer-height:                 ($navbar-height*.75);
 
-$table-cell-padding:			6px 8px;
-$tooltip-opacity:				1;
-$starred:						$yellow;
-$highlight:						$yellow;
-$font-primary:					'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
-$font-family-monospace:			Consolas,monaco,monospace;
-$row-height:					32px;
-$duration-of-effect:			200ms;
+$table-cell-padding:            6px 8px;
+$tooltip-opacity:               1;
+$starred:                       $yellow;
+$highlight:                     $yellow;
+$font-primary:                  'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
+$font-family-monospace:         Consolas,monaco,monospace;
+$row-height:                    32px;
+$duration-of-effect:            200ms;
