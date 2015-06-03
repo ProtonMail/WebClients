@@ -275,21 +275,22 @@ angular.module("proton.controllers.Messages", [
     $scope.filterBy = function(status) {
         $state.go($state.current.name, _.extend({}, $state.params, {
             filter: status,
-            page: null
+            page: undefined
         }));
     };
 
     $scope.clearFilter = function() {
         $state.go($state.current.name, _.extend({}, $state.params, {
-            filter: null,
-            page: null
+            filter: undefined,
+            page: undefined
         }));
     };
 
     $scope.orderBy = function(criterion) {
+        console.log(criterion);
         $state.go($state.current.name, _.extend({}, $state.params, {
-            sort: criterion === '-date' ? null : criterion,
-            page: null
+            sort: criterion === '-date' ? undefined : criterion,
+            page: undefined
         }));
     };
 
