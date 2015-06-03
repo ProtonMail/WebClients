@@ -124,9 +124,12 @@
     }
 }    
 
-.tooltip-inner {
-    max-width: none;
-    text-transform: none;
+.tooltip {
+    white-space: nowrap;
+    .tooltip-inner {
+        max-width: none;
+        text-transform: none;
+    }
 }
 
 .navbar-toggle {

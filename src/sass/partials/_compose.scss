@@ -515,9 +515,9 @@ form#compose {
       padding-right: 0;
     }
     a.btn {
-      color: #666;
+      color: $base-color-darker;
       &:hover {
-        color: $base-color-darker;
+        color: $base-color;
       }
     }
   }
