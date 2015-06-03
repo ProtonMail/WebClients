@@ -388,9 +388,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToPage = function(page) {
+        console.log(page);
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
-                page = null;
+                page = undefined;
             }
             $state.go($state.current.name, _.extend({}, $state.params, {
                 page: page
