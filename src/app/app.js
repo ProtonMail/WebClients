@@ -150,16 +150,19 @@ angular.module("proton", [
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
         var isUnlock = (toState.name === "login.unlock");
 
+        // If already logged in and on the login page: redirect to unlock page
         if ($rootScope.isLoggedIn && isLogin) {
             event.preventDefault();
             $state.go('login.unlock');
         }
 
+        // If already logged in and unlocked and on the unlock page: redirect to inbox
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
             event.preventDefault();
             $state.go('secured.inbox');
         }
 
+        // if on the login, support, account, or signup pages dont require authentication
         else if (isLogin || isSupport || isAccount || isSignup) {
             return; // no need to redirect
         }
