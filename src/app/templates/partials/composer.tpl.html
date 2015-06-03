@@ -18,14 +18,14 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" title="{{ 'FROM' | translate }}">
+                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field placeholder="To" ng-model="message.RecipientList" class="form-control" />
+                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.RecipientList" class="form-control" />
                             </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
@@ -36,17 +36,17 @@
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="cc-container">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="{{ 'CC' | translate }}" title="{{ 'CC' | translate }}" class="form-control" />
+                            <input tabindex="3" type="text" email-field ng-model="message.CCList" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="bcc-container">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="{{ 'BCC' | translate }}" title="{{ 'BCC' | translate }}" class="form-control" />
+                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control message-title" ng-model="message.MessageTitle" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
+                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" pt-tooltip="{{ 'SUBJECT' | translate }}" pt-placement="left" class="form-control message-title" ng-model="message.MessageTitle" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
                 </div>
                 <ul ng-if="message.Attachments" class="attachments">
                     <li ng-repeat="attachment in message.Attachments">
