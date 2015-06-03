@@ -83,6 +83,10 @@
     }
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    color: $alt-color;
+}
+
 .navbar {
     border: 0;
     em {
