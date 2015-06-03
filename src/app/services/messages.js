@@ -1,8 +1,5 @@
 angular.module("proton.messages", [])
-    // .factory('messageCache', function($cacheFactory) {
-    //     return $cacheFactory('messageCache');
-    // });
-    .service('messageCache', function($q, Message) {
+    .service('messageCache', function($q, Message, CONSTANTS) {
         var lists = [];
 
         var messagesToPreload = _.bindAll({
@@ -99,7 +96,9 @@ angular.module("proton.messages", [])
                 } else if (!other.IsRead) {
                     // Otherwise, if the message isn't read, preload it, as there is a
                     // good chance the user will want to read it.
-                    messagesToPreload.add(other.MessageID);
+                    if(i <= CONSTANTS.NUMBER_OF_MESSAGES_PRELOADING) {
+                        messagesToPreload.add(other.MessageID);
+                    }
                 }
             });
         };
