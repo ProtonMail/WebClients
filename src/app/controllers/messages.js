@@ -228,38 +228,36 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessagesTo = function(mailbox) {
         var selectedMessages = $scope.selectedMessages();
 
-        networkActivityTracker.track(
-            $q.all(
-                _.map(selectedMessages, function(message) {
+        if(mailbox && selectedMessages.length > 0) {
+            networkActivityTracker.track(
+                $q.all(_.map(selectedMessages, function(message) {
                     if (mailbox === 'delete') {
                         return message.delete();
                     } else {
                         return message.moveTo(mailbox);
                     }
-                })
-            )
-            .then(
-                function() {
-                    _.each(selectedMessages, function(message) {
-                        if(!$state.is('secured.label')) {
-                            var i = $scope.messages.indexOf(message);
+                })).then(function() {
+                        _.each(selectedMessages, function(message) {
+                            if(!$state.is('secured.label')) {
+                                var i = $scope.messages.indexOf(message);
 
-                            if (i >= 0) {
-                                $scope.messages.splice(i, 1);
+                                if (i >= 0) {
+                                    $scope.messages.splice(i, 1);
+                                }
                             }
+                        });
+
+                        if(selectedMessages.length > 1) {
+                            notify($translate.instant('MESSAGES_MOVED'));
+                        } else {
+                            notify($translate.instant('MESSAGE_MOVED'));
                         }
-                    });
-                    if(selectedMessages > 1) {
-                        notify($translate.instant('MESSAGES_MOVED'));
-                    } else {
-                        notify($translate.instant('MESSAGE_MOVED'));
+                    }, function(result) {
+                        $log.error(result);
                     }
-                },
-                function(result) {
-                    $log.error(result);
-                }
-            )
-        );
+                )
+            );
+        }
     };
 
     $scope.filterBy = function(status) {
