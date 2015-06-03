@@ -47,6 +47,7 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js",
+      "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
       "vendor/typeahead.js/dist/typeahead.bundle.js",
@@ -64,7 +65,8 @@ module.exports = {
       "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
       "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
       "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
-      "vendor/angular-dragdrop/src/angular-dragdrop.js"
+      "vendor/angular-dragdrop/src/angular-dragdrop.js",
+      "vendor/vcard/src/vcard.js"
     ],
     bootstrap_components: [
       "affix",

@@ -200,10 +200,91 @@ angular.module("proton.controllers.Contacts", [
                 title: 'Upload Contacts',
                 message: 'Allowed format(s): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
-                    // TODO
-                    console.log(files);
+                    var contactArray = [];
+                    var extension = files[0].name.slice(-4);
+
+                    if (extension === '.vcf') {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                          var text = reader.result;
+                          var vcardData = vCard.parse(text);
+
+                          _.forEach(vcardData, function(d, i) {
+                              if (d.fn && d.email) {
+                                  contactArray.push({'ContactName' : d.fn.value, 'ContactEmail' : d.email.value});
+                              }
+                              else if(d.email) {
+                                  contactArray.push({'ContactName' : d.email.value, 'ContactEmail' : d.email.value});
+                              }
+                          });
+
+                          importContacts(contactArray);
+                        };
+
+                        reader.readAsText(files[0]);
+                    }
+                    else if(extension === '.csv') {
+                        Papa.parse(files[0], {
+                        	complete: function(results) {
+                                var csv = results.data;
+                                var nameKeys = ['Name', 'First Name'];
+                                var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
+
+                                nameKey = _.find(nameKeys, function(d, i) {
+                                    return csv[0].indexOf(d) > -1;
+                                });
+
+                                emailKey = _.find(emailKeys, function(d, i) {
+                                    return csv[0].indexOf(d) > -1;
+                                });
+
+                                nameIndex = csv[0].indexOf(nameKey);
+                                emailIndex = csv[0].indexOf(emailKey);
+                                lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
+
+                                _.forEach(csv, function(d, i) {
+                                  if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
+                                    if (d[nameIndex] !== '') {
+                                      contactArray.push({'ContactName' : d[nameIndex], 'ContactEmail' : d[emailIndex]});
+                                    }
+                                    else {
+                                      contactArray.push({'ContactName' : d[emailIndex], 'ContactEmail' : d[emailIndex]});
+                                    }
+                                  }
+                                });
+
+                                importContacts(contactArray);
+                        	}
+                        });
+                    }
+                    else {
+                        notify('Invalid file type');
+                    }
+
+                    importContacts = function(contactArray) {
+                        networkActivityTracker.track(
+                            Contact.import({
+                                "Contacts": contactArray
+                            }).$promise.then(function(response) {
+                                notify($translate.instant('CONTACTS_UPLOADED'));
+                                _.forEach(response.Contacts.reverse(), function(d, i) {
+                                    if (typeof(d.ContactName) !== 'undefined') {
+                                        var newContact = {
+                                            ContactName: d.ContactName,
+                                            ContactEmail: d.ContactEmail
+                                        };
+                                        var contact = new Contact(newContact);
+                                        contacts.unshift(contact);
+                                        Contact.index.add([contact]);
+                                    }
+                                });
+                            }, function(response) {
+                                $log.error(response);
+                            })
+                        );
+                    };
+
                     dropzoneModal.deactivate();
-                    notify($translate.instant('CONTACTS_UPLOADED'));
                 },
                 cancel: function() {
                     dropzoneModal.deactivate();
@@ -213,6 +294,24 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.downloadContacts = function() {
-        // TODO
+        var contactsArray = [['name', 'email']];
+        var csvRows = [];
+
+        _.forEach($scope.contacts, function(contact) {
+          contactsArray.push([contact.ContactName, contact.ContactEmail]);
+        });
+
+        for(var i=0, l=contactsArray.length; i<l; ++i){
+            csvRows.push(contactsArray[i].join(','));
+        }
+
+        var csvString = csvRows.join("%0A");
+        var a         = document.createElement('a');
+        a.href        = 'data:attachment/csv,' + csvString;
+        a.target      = '_blank';
+        a.download    = 'contacts.csv';
+
+        document.body.appendChild(a);
+        a.click();
     };
 });
