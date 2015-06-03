@@ -46,7 +46,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
-        cursor: "move", 
+        cursor: "move",
         helper: function(event) {
             return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
         },
@@ -438,6 +438,7 @@ angular.module("proton.controllers.Messages", [
     $log,
     $timeout,
     $q,
+    $translate,
     authentication,
     Message,
     localStorageService,
