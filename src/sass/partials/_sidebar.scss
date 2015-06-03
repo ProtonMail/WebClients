@@ -176,18 +176,26 @@
         }
     }
     .list-group-item {
+        border-radius: 0;
         &.drop-active {
-            /* TODO change color */
-            background-color: $yellow !important;
+            opacity: 1;
+            background: $base-color-dark;
+            a {
+                color: $alt-color;
+                text-shadow: none;
+            }
         }
         &.drop-hover {
-            /* TODO change color */
-        background-color: red !important;
-    }
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 0;
+            background: $base-color;
+            a {
+                color: $alt-color-dark;
+                text-shadow: none;
+            }
+        }
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-bottom: 0;
     .fa {
         margin-right: 0.75rem;
         line-height: 2rem;

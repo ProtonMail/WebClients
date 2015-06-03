@@ -11,6 +11,16 @@ $fa-font-path: "fonts";
     -webkit-overflow-scrolling: touch;
 }
 
+#dragOverlay {
+    position:fixed;
+    left:$sidebar-width;
+    top:0;
+    right:0;
+    bottom:0;
+    background:rgba($alt-color,.5);
+    z-index:9998;    
+}
+
 #loading {
   position: absolute;
   left: 0;
@@ -69,6 +79,14 @@ body.locked {
         flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
+    }
+}
+
+body.dragging {
+    #sidebar {
+        li {
+            opacity: .25;
+        }
     }
 }
 

@@ -29,3 +29,25 @@
     -webkit-transform: rotateZ(360deg);
   }
 }
+
+
+@-webkit-keyframes blink {
+  0%    {color: rgba(255,255,255, 1);}
+  50%   {color: rgba(255,255,255,.5);}
+  100%  {color: rgba(255,255,255, 1);}
+}
+@-moz-keyframes blink {
+  0%    {color: rgba(255,255,255, 1);}
+  50%   {color: rgba(255,255,255,.5);}
+  100%  {color: rgba(255,255,255, 1);}
+}
+@-o-keyframes blink {
+  0%    {color: rgba(255,255,255, 1);}
+  50%   {color: rgba(255,255,255,.5);}
+  100%  {color: rgba(255,255,255, 1);}
+}
+@keyframes blink {
+  0%    {color: rgba(255,255,255, 1);}
+  50%   {color: rgba(255,255,255,.5);}
+  100%  {color: rgba(255,255,255, 1);}
+}

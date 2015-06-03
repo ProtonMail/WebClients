@@ -46,7 +46,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
-        cursor: "move",
+        cursor: "move", 
         helper: function(event) {
             return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
         },
@@ -67,11 +67,22 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.onStartDragging = function(event, ui, message) {
-        $('#draggableMailsHelper strong b').text($scope.selectedMessages().length);
+        setTimeout( function() {
+            $('#draggableMailsHelper strong b').text($scope.selectedMessages().length);
+        }, 20);
+        $('body').addClass('dragging');
+        $('#main').append('<div id="dragOverlay"></div>');
         if(message && !!!message.selected) {
             message.selected = true;
             $scope.$apply();
         }
+    };
+
+    $scope.onEndDragging = function(event, ui, message) {
+        $('body').removeClass('dragging');
+        $('#dragOverlay').fadeOut(200, function() {
+            $(this).remove();
+        });
     };
 
     $scope.selectedFilter = $stateParams.filter;

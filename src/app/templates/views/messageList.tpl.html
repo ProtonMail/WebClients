@@ -4,7 +4,7 @@
         <tr ng-repeat="message in messages"
             ng-click="navigateToMessage($event, message)"
             data-drag="true"
-            jqyoui-draggable="{index: $index, onStart: 'onStartDragging(message)'}"
+            jqyoui-draggable="{index: $index, onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
             data-jqyoui-options="draggableOptions"
             ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
             <td class="actions">
