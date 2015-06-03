@@ -209,7 +209,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.selectedMessagesWithReadStatus = function(bool) {
         return _.select($scope.selectedMessages(), function(message) {
-            return message.IsRead === bool;
+            return message.IsRead === +bool;
         });
     };
 
