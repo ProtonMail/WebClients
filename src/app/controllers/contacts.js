@@ -65,7 +65,7 @@ angular.module("proton.controllers.Contacts", [
                         }
                     });
                     confirmModal.deactivate();
-                    notify($translate('CONTACTS_DELETED'));
+                    notify($translate.instant('CONTACTS_DELETED'));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -88,7 +88,7 @@ angular.module("proton.controllers.Contacts", [
                         contacts.splice(idx, 1);
                         Contact.index.updateWith($scope.contacts);
                         confirmModal.deactivate();
-                        notify($translate('CONTACT_DELETED'));
+                        notify($translate.instant('CONTACT_DELETED'));
                     }
                 },
                 cancel: function() {
@@ -112,7 +112,7 @@ angular.module("proton.controllers.Contacts", [
                 contacts.unshift(contact);
                 Contact.index.add([contact]);
                 contactModal.deactivate();
-                notify($translate('CONTACT_ADDED'));
+                notify($translate.instant('CONTACT_ADDED'));
             }, function(response) {
                 notify(response.error);
                 $log.error(response);
@@ -126,7 +126,7 @@ angular.module("proton.controllers.Contacts", [
             contact.ContactEmail = email;
             networkActivityTracker.track(contact.$update().then(function(response) {
                 contactModal.deactivate();
-                notify($translate('CONTACT_EDITED'));
+                notify($translate.instant('CONTACT_EDITED'));
             }, function(response) {
                 notify({
                     message: response.error
@@ -160,6 +160,19 @@ angular.module("proton.controllers.Contacts", [
         }, this);
     };
 
+    $scope.onSelectContact = function(event, contact) {
+        var contactsSelected = $scope.contactsSelected();
+
+        if (event.shiftKey) {
+            var start = $scope.contacts.indexOf(_.first(contactsSelected));
+            var end = $scope.contacts.indexOf(_.last(contactsSelected));
+
+            for (var i = start; i < end; i++) {
+                $scope.contacts[i].selected = true;
+            }
+        }
+    };
+
     $scope.contactsSelected = function() {
         return _.filter($scope.contacts, function(contact) {
             return contact.selected === true;
@@ -190,7 +203,7 @@ angular.module("proton.controllers.Contacts", [
                     // TODO
                     console.log(files);
                     dropzoneModal.deactivate();
-                    notify($translate('CONTACTS_UPLOADED'));
+                    notify($translate.instant('CONTACTS_UPLOADED'));
                 },
                 cancel: function() {
                     dropzoneModal.deactivate();
