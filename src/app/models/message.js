@@ -168,6 +168,8 @@ angular.module("proton.models.message", ["proton.constants"])
                 this.Location = location;
             }
 
+            this.selected = false; // unselect the message
+
             return this.$patch({
                 action: invertedMailboxIdentifiers[this.Location]
             });

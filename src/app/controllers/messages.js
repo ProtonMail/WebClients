@@ -951,6 +951,7 @@ angular.module("proton.controllers.Messages", [
 .controller("ViewMessageController", function(
     $log,
     $state,
+    $stateParams,
     $rootScope,
     $scope,
     $templateCache,
@@ -1053,15 +1054,25 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.moveMessageTo = function(mailbox) {
+        var promise;
+
+        if(mailbox === 'delete') {
+            promise = message.delete();
+        } else {
+            promise = message.moveTo(mailbox);
+        }
+
         networkActivityTracker.track(
-            ((mailbox === 'delete') ? message.delete() : message.moveTo(mailbox)).$promise
-            .then(
-                function() {
-                // TODO aniamtion to show currently viewed message was deleted, and redirect back to inbox
-                if(!$state.is('secured.label')) {
-                    var i = $scope.messages.indexOf(message);
-                    if (i >= 0) {
-                        $scope.messages.splice(i, 1);
+            promise.then(function() {
+                // TODO aniamtion to show currently viewed message was deleted
+                if(angular.isDefined($stateParams.MessageID)) {
+                    $scope.goToMessageList();
+                } else {
+                    if(!$state.is('secured.label')) {
+                        var i = $scope.messages.indexOf(message);
+                        if (i >= 0) {
+                            $scope.messages.splice(i, 1);
+                        }
                     }
                 }
             })

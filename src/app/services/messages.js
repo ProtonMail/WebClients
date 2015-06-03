@@ -1,4 +1,7 @@
 angular.module("proton.messages", [])
+    // .factory('messageCache', function($cacheFactory) {
+    //     return $cacheFactory('messageCache');
+    // });
     .service('messageCache', function($q, Message) {
         var lists = [];
 
@@ -89,7 +92,7 @@ angular.module("proton.messages", [])
                 if ((msg = cachedMessages.get(other.MessageID))) {
                     // If a completely fetched message exists in the cache
                     // replace the instance in the list with the complete cached instance
-                    // updating variable fields (IsRead, Tag and Location)
+                    // updating variable fields (IsRead, Tag, Location, Labels)
                     messageList.splice(i, 1, msg);
                     _.extend(msg, _.pick(other, 'IsRead', 'Tag', 'Location', 'Labels'));
 

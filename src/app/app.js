@@ -1,7 +1,7 @@
 // TODO... when refreshing inbox, displayname vanishes?
 
 angular.module("proton", [
-    "ngAnimate",
+    // "ngAnimate", // We can't use the `ngAnimate`, it causes delays on application and also a problem with the iframe sandbox.
     "ngSanitize",
     "ngCookies",
     "LocalStorageModule",
