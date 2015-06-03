@@ -446,7 +446,7 @@ angular.module("proton.routes", [
 
     .state("secured.inbox.message", _.clone(messageViewOptions))
 
-    .state("secured.inbox.print", _.extend(_.clone(messageViewOptions), {
+    .state("secured.print", _.extend(_.clone(messageViewOptions), {
         url: "/print/:MessageID",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = true; },
@@ -458,7 +458,7 @@ angular.module("proton.routes", [
         }
     }))
 
-    .state("secured.inbox.raw", _.extend(_.clone(messageViewOptions), {
+    .state("secured.raw", _.extend(_.clone(messageViewOptions), {
         url: "/raw/:MessageID",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = true; },

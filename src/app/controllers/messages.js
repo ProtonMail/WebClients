@@ -1076,7 +1076,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.print = function() {
-        var url = $state.href('^.print', {
+        var url = $state.href('secured.print', {
             MessageID: message.MessageID
         });
 
@@ -1084,7 +1084,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.viewRaw = function() {
-        var url = $state.href('^.raw', {
+        var url = $state.href('secured.raw', {
             MessageID: message.MessageID
         });
 
