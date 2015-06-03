@@ -890,7 +890,7 @@ angular.module("proton.controllers.Messages", [
                         Promise.all(promises).then(function() {
                             // send email
                             networkActivityTracker.track(newMessage.$send(null, function(result) {
-                                notify('Message Sent');
+                                notify($translate.instant('MESSAGE_SENT'));
                                 $scope.close(message, false);
                                 $state.go($state.current, {}, {reload: true}); // force reload page
                             }, function(error) {

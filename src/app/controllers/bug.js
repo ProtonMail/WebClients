@@ -40,7 +40,7 @@ angular.module("proton.controllers.Bug", [])
                 "bug_email": $scope.bug.email
             }).$promise.then(function(response) {
                 $scope.close();
-                notify($translate('BUG_REPORT_SENT'));
+                notify($translate.instant('BUG_REPORTED'));
             }, function(response) {
                 $log.error(response);
             })

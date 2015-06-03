@@ -31,7 +31,7 @@
             <tbody>
                 <tr ng-repeat="contact in contacts | filter:search">
                     <td class="text-center hidden-xs">
-                        <input type="checkbox" ng-model="contact.selected" />
+                        <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                     </td>
                     <td>
                         {{ contact.ContactName }}
