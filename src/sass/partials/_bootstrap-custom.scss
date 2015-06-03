@@ -67,6 +67,9 @@
 .panel-body {
     background: $panel-bg;
 }
+.panel-collapse .panel-body {
+    background-color: $base-color;
+}
 .modal-footer {
     background-color: $panel-footer;
     padding: 10px 15px;
@@ -126,7 +129,7 @@
         margin: 0.5em;
         padding: 10px 15px;
     }
-}    
+}
 
 .tooltip {
     white-space: nowrap;
