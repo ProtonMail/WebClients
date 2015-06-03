@@ -46,7 +46,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
-        cursor: "move", 
+        cursor: "move",
         helper: function(event) {
             return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
         },
@@ -287,7 +287,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.orderBy = function(criterion) {
-        console.log(criterion);
         $state.go($state.current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
             page: undefined
