@@ -187,55 +187,91 @@ angular.module("proton.controllers.Contacts", [
                 title: 'Upload Contacts',
                 message: 'Allowed format(s): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
-                    // TODO
-                    console.log(files[0]);
-                    Papa.parse(files[0], {
-                    	complete: function(results) {
-                        var emailIndex, nameIndex, lastNameIndex;
-                        var contactObject = [];
+                    var contactArray = [];
+                    var extension = files[0].name.slice(-4);
 
-                        if (results.data[0].indexOf('Name') > -1) {
-                          nameIndex = results.data[0].indexOf('Name');
-                        }
-                        else if (results.data[0].indexOf('First Name') > -1) {
-                          nameIndex = results.data[0].indexOf('First Name');
-                        }
-                        else if (results.data[0].indexOf('Last Name') > -1) {
-                          nameIndex = results.data[0].indexOf('Last Name');
-                        }
+                    if (extension === '.vcf') {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                          var text = reader.result;
+                          var vcardData = vCard.parse(text);
 
-                        if (results.data[0].indexOf('E-mail 1 - Value') > -1) {
-                          emailIndex = results.data[0].indexOf('E-mail 1 - Value');
-                        }
-                        else if (results.data[0].indexOf('E-mail Address') > -1) {
-                          emailIndex = results.data[0].indexOf('E-mail Address');
-                        }
-                        else if (results.data[0].indexOf('Email Address') > -1) {
-                          emailIndex = results.data[0].indexOf('Email Address');
-                        }
-                        else if (results.data[0].indexOf('E-mail') > -1) {
-                          emailIndex = results.data[0].indexOf('E-mail');
-                        }
-                        else if (results.data[0].indexOf('Email') > -1) {
-                          emailIndex = results.data[0].indexOf('Email');
-                        }
+                          _.forEach(vcardData, function(d, i) {
+                              if (d.fn && d.email) {
+                                  contactArray.push({'ContactName' : d.fn.value, 'ContactEmail' : d.email.value});
+                              }
+                              else if(d.email) {
+                                  contactArray.push({'ContactName' : d.email.value, 'ContactEmail' : d.email.value});
+                              }
+                          });
 
-                        _.forEach(results.data, function(d, i) {
-                          if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
-                            if (d[nameIndex] !== '') {
-                              contactObject.push([d[nameIndex], d[emailIndex]]);
-                            }
-                            else {
-                              contactObject.push([d[emailIndex], d[emailIndex]]);
-                            }
-                          }
+                          importContacts(contactArray);
+                        };
+
+                        reader.readAsText(files[0]);
+                    }
+                    else if(extension === '.csv') {
+                        Papa.parse(files[0], {
+                        	complete: function(results) {
+                                var csv = results.data;
+                                var nameKeys = ['Name', 'First Name'];
+                                var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
+
+                                nameKey = _.find(nameKeys, function(d, i) {
+                                    return csv[0].indexOf(d) > -1;
+                                });
+
+                                emailKey = _.find(emailKeys, function(d, i) {
+                                    return csv[0].indexOf(d) > -1;
+                                });
+
+                                nameIndex = csv[0].indexOf(nameKey);
+                                emailIndex = csv[0].indexOf(emailKey);
+                                lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
+
+                                _.forEach(csv, function(d, i) {
+                                  if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
+                                    if (d[nameIndex] !== '') {
+                                      contactArray.push({'ContactName' : d[nameIndex], 'ContactEmail' : d[emailIndex]});
+                                    }
+                                    else {
+                                      contactArray.push({'ContactName' : d[emailIndex], 'ContactEmail' : d[emailIndex]});
+                                    }
+                                  }
+                                });
+
+                                importContacts(contactArray);
+                        	}
                         });
-                        console.log(results);
-                        console.log(contactObject);
-                    	}
-                    });
+                    }
+                    else {
+                        notify('Invalid file type');
+                    }
+
+                    importContacts = function(contactArray) {
+                        networkActivityTracker.track(
+                            Contact.import({
+                                "Contacts": contactArray
+                            }).$promise.then(function(response) {
+                                notify($translate('CONTACTS_UPLOADED'));
+                                _.forEach(response.Contacts.reverse(), function(d, i) {
+                                    if (typeof(d.ContactName) !== 'undefined') {
+                                        var newContact = {
+                                            ContactName: d.ContactName,
+                                            ContactEmail: d.ContactEmail
+                                        };
+                                        var contact = new Contact(newContact);
+                                        contacts.unshift(contact);
+                                        Contact.index.add([contact]);
+                                    }
+                                });
+                            }, function(response) {
+                                $log.error(response);
+                            })
+                        );
+                    };
+
                     dropzoneModal.deactivate();
-                    notify($translate('CONTACTS_UPLOADED'));
                 },
                 cancel: function() {
                     dropzoneModal.deactivate();
