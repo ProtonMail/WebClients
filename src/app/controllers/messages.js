@@ -232,9 +232,9 @@ angular.module("proton.controllers.Messages", [
             $q.all(
                 _.map(selectedMessages, function(message) {
                     if (mailbox === 'delete') {
-                        return message.delete().$promise;
+                        return message.delete();
                     } else {
-                        return message.moveTo(mailbox).$promise;
+                        return message.moveTo(mailbox);
                     }
                 })
             )
