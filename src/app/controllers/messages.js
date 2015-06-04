@@ -219,7 +219,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.selectedMessagesWithReadStatus = function(bool) {
         return _.select($scope.selectedMessages(), function(message) {
-            return message.IsRead === bool;
+            return message.IsRead === +bool;
         });
     };
 
@@ -285,21 +285,21 @@ angular.module("proton.controllers.Messages", [
     $scope.filterBy = function(status) {
         $state.go($state.current.name, _.extend({}, $state.params, {
             filter: status,
-            page: null
+            page: undefined
         }));
     };
 
     $scope.clearFilter = function() {
         $state.go($state.current.name, _.extend({}, $state.params, {
-            filter: null,
-            page: null
+            filter: undefined,
+            page: undefined
         }));
     };
 
     $scope.orderBy = function(criterion) {
         $state.go($state.current.name, _.extend({}, $state.params, {
-            sort: criterion === '-date' ? null : criterion,
-            page: null
+            sort: criterion === '-date' ? undefined : criterion,
+            page: undefined
         }));
     };
 
@@ -398,9 +398,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToPage = function(page) {
+        console.log(page);
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
-                page = null;
+                page = undefined;
             }
             $state.go($state.current.name, _.extend({}, $state.params, {
                 page: page
