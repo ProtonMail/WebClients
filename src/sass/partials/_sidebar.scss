@@ -240,7 +240,10 @@
         }
     }
     a {
-        color: invert($sidebar-bg);
+        color: invert-color($sidebar-bg);
+        &:hover {
+            color: invert-color($sidebar-bg, $color-offset*2);
+        }
     }
 }
 #main {

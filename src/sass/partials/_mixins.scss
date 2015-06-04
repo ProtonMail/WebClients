@@ -84,3 +84,14 @@
     -ms-transform: rotate(#{$deg}deg);
     -o-transform: rotate(#{$deg}deg);
 }
+
+@function invert-color($color, $amount: 0) {
+    @if (lightness($color) > 50) {
+    // the source is light. return a dark color.
+        $newColor: invert($color);
+        @return grayscale(darken($newColor, $amount));
+    } @else {
+        $newColor: invert($color);
+        @return grayscale(lighten($newColor, $amount));
+    }
+}
