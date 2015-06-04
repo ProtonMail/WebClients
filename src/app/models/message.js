@@ -114,29 +114,6 @@ angular.module("proton.models.message", ["proton.constants"])
     Message.REPLY_PREFIX = /re:/i;
     Message.FORWARD_PREFIX = /fw:/i;
 
-    _.extend(Message, {
-        reply: function(base) {
-            var message = base.cite();
-            message.RecipientList = base.Sender;
-            message.MessageTitle = (Message.REPLY_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Re: " + base.MessageTitle;
-
-            return message;
-        },
-        replyall: function(base) {
-            var message = base.cite();
-            message.RecipientList = [base.Sender, base.CCList, base.BCCList].join(",");
-            message.MessageTitle = (Message.REPLY_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Re: " + base.MessageTitle;
-
-            return message;
-        },
-        forward: function(base) {
-            var message = base.cite();
-            message.MessageTitle = (Message.FORWARD_PREFIX.test(base.MessageTitle)) ? base.MessageTitle : "Fw: " + base.MessageTitle;
-
-            return message;
-        }
-    });
-
     _.extend(Message.prototype, {
         readableTime: function() {
             return this.moment().format('LL');
@@ -194,29 +171,6 @@ angular.module("proton.models.message", ["proton.constants"])
 
         isDraft: function() {
             return this.Location === CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
-        },
-
-        cite: function() {
-            var message = new Message();
-            var baseBody = this.clearTextBody();
-
-            try {
-                var _baseBody = $(baseBody);
-                if (_baseBody.find("body").length > 0) {
-                    baseBody = _baseBody.find("body");
-                }
-            } catch (err) {}
-
-            var citeBody = $("<blockquote type=\"cite\">").append(baseBody);
-            var citation = $("<div class=\"moz-cite-prefix\">On " +
-                this.moment().format("l, LT") + ", " +
-                this.SenderName + " wrote:<br><br></div>");
-
-            var signature = $("<div class=\"signature\">" + authentication.user.Signature + "</div>");
-
-            message.MessageBody = $("<div>").append("<br><br>").append(citation).append(citeBody).append(signature).html();
-            message.IsEncrypted = '0';
-            return message;
         },
 
         toggleImages: function() {
@@ -362,7 +316,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
-                console.log(currentMessage, oldMessage); // TODO remove
+
                 return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
             } else {
                 return true;
