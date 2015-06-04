@@ -15,13 +15,13 @@
         <li class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
             <a class="btn" ng-click="goTo('secured.inbox')" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                 <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>
-                <span class="label hidden-xs hidden-sm" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span>
+                <span class="label hidden-xs hidden-sm" ng-class="{active: messageCount.inbox.Unread > 0}">{{messageCount.inbox.Unread}}</span>
             </a>
         </li>
         <li class="list-group-item" data-unread="0">
             <a class="btn" ng-click="goTo('secured.drafts')" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
                 <span class="fa fa-file-text-o"></span> <span class="hidden-xs hidden-sm">{{ 'DRAFTS' | translate }}</span>
-                <span class="label hidden-xs hidden-sm" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span>
+                <span class="label hidden-xs hidden-sm" ng-class="{active: messageCount.drafts.Unread > 0}">{{messageCount.drafts.Unread}}</span>
             </a>
         </li>
         <li class="list-group-item" data-unread="0">

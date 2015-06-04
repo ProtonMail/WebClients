@@ -48,18 +48,26 @@ angular.module("proton.controllers.Sidebar", [])
         }
     };
 
-    var fetchCounts = function() {
+    $rootScope.$on('updateCounters', function(event) {
+        $scope.updateCounters();
+    });
+
+    $scope.updateCounters = function() {
+        $rootScope.unreadCount = $rootScope.unreadCount || {};
+        $rootScope.total = $rootScope.total || {};
+
         $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
-            $rootScope.unreadCount = resp.data.MessageCount.UnRead;
+            $rootScope.messageCount.inbox = resp.data.MessageCount;
         });
+
         $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.drafts).then(function(resp) {
-            $rootScope.draftsCount = resp.data.MessageCount.Total;
+            $rootScope.messageCount.drafts = resp.data.MessageCount;
         });
     };
 
-    var updates = $interval(fetchCounts, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);
+    var updates = $interval($scope.updateCounters, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);
 
-    fetchCounts();
+    $scope.updateCounters();
 
     $scope.$on("$destroy", function() {
         $interval.cancel(updates);

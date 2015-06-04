@@ -16,7 +16,6 @@ angular.module('proton.constants', [])
     ENC_OUT_PLAIN: 4, // sent plain but stored enc
     ENC_STORED_ENC: 5, // such as draft
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
-    AUTO_SAVE_INTERVAL_TIME: 30000, // 30 seconds
     SAVE_TIMEOUT_TIME: 3000, // 3 seconds
     MAX_EXPIRATION_TIME: 672, // hours
     COUNT_UNREAD_INTERVAL_TIME: 10000, // 10 seconds

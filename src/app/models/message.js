@@ -176,11 +176,11 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
         setReadStatus: function(status) {
+            var location = $state.current.name.replace('secured.', '');
+
             this.IsRead = +status;
-            $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1);
-            return this.$patch({
-                action: status ? "read" : "unread"
-            });
+            // $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1); TODO adapt with location
+            return this.$patch({ action: status ? "read" : "unread"});
         },
         delete: function() {
             return this.$delete();
@@ -338,7 +338,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 return false;
             }
 
-            return true;
+            return this.needToSave();
         },
 
         close: function() {
@@ -357,10 +357,35 @@ angular.module("proton.models.message", ["proton.constants"])
             }.bind(this), CONSTANTS.SAVE_TIMEOUT_TIME);
         },
 
+        needToSave: function() {
+            if(angular.isDefined(this.old)) {
+                var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+                var currentMessage = _.pick(this, properties);
+                var oldMessage = _.pick(this.old, properties);
+                console.log(currentMessage, oldMessage); // TODO remove
+                return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+            } else {
+                return true;
+            }
+        },
+
+        saveOld: function() {
+            var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+
+            this.old = _.pick(this, properties);
+
+            _.defaults(this.old, {
+                BCCList: "",
+                CCList: "",
+                MessageTitle: "",
+                RecipientList: ""
+            });
+        },
+
         save: function(silently) {
             if (this.validate(true)) { // draft mode
                 var newMessage = new Message(_.pick(this, 'MessageID', 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-
+                this.saveOld();
                 _.defaults(newMessage, {
                     RecipientList: '',
                     CCList: '',
@@ -411,22 +436,6 @@ angular.module("proton.models.message", ["proton.constants"])
                         networkActivityTracker.track(draftPromise);
                     }
                 }.bind(this));
-            }
-        },
-
-        startAutoSave: function() {
-            if (angular.isDefined(this.saveInterval)) {
-                this.stopAutoSave();
-            }
-
-            this.saveInterval = $interval(function() {
-                this.save(true); // ninja mode
-            }.bind(this), CONSTANTS.AUTO_SAVE_INTERVAL_TIME, 0); // 30 seconds
-        },
-
-        stopAutoSave: function() {
-            if (angular.isDefined(this.saveInterval)) {
-                this.saveInterval.cancel();
             }
         },
 

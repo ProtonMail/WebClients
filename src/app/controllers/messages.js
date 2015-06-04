@@ -236,11 +236,15 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setMessagesReadStatus = function(status) {
+        var messages = $scope.selectedMessagesWithReadStatus(!status);
+
         networkActivityTracker.track($q.all(
-            _.map($scope.selectedMessagesWithReadStatus(!status), function(message) {
+            _.map(messages, function(message) {
                 return message.setReadStatus(status);
             })
-        ));
+        ).then(function() {
+            $rootScope.$broadcast('updateCounters');
+        }));
     };
 
     $rootScope.$on('moveMessagesTo', function(event, name) {
@@ -592,12 +596,8 @@ angular.module("proton.controllers.Messages", [
         $timeout(function() {
             $scope.focusComposer(message);
             $scope.listenEditor(message);
-            $scope.initAutoSave(message);
+            message.saveOld();
         });
-    };
-
-    $scope.initAutoSave = function(message) {
-        message.startAutoSave();
     };
 
     $scope.composerStyle = function(message) {
@@ -931,7 +931,6 @@ angular.module("proton.controllers.Messages", [
 
     $scope.minimize = function(message) {
         message.minimized = true;
-        message.stopAutoSave();
     };
 
     $scope.blur = function(message) {
@@ -946,7 +945,6 @@ angular.module("proton.controllers.Messages", [
 
     $scope.expand = function(message) {
         message.minimized = false;
-        message.startAutoSave();
     };
 
     $scope.close = function(message, save) {
