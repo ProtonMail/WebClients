@@ -19,7 +19,8 @@ angular.module('proton.constants', [])
     AUTO_SAVE_INTERVAL_TIME: 30000, // 30 seconds
     SAVE_TIMEOUT_TIME: 3000, // 3 seconds
     MAX_EXPIRATION_TIME: 672, // hours
-    "MAILBOX_IDENTIFIERS": {
+    COUNT_UNREAD_INTERVAL_TIME: 10000, // 10 seconds
+    MAILBOX_IDENTIFIERS: {
         "inbox": 0,
         "drafts": 1,
         "sent": 2,
