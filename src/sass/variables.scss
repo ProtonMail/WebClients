@@ -14,10 +14,14 @@ $base-color:                    #fff;
 // Used for starred elements.
 $yellow:                        #ffc; 
 
+// Used for selected message rows / drag n drop, etc
+$selected:						#ccf;
+
 // ============================================================
 // SECONDARY VARIABLES. BASED OFF OF THEME OPTIONS.
 // ============================================================
 
+$primary-color-light:           lighten($primary-color, ($color-offset*2));				// #52527a (5% offset)
 $primary-color-dark:            darken($primary-color, ($color-offset*2));				// #52527a (5% offset)
 
 $base-color-dark:               darken($base-color, $color-offset);						// #f2f2f2 (5% offset)

@@ -6,7 +6,7 @@
             data-drag="true"
             jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
             data-jqyoui-options="draggableOptions"
-            ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
+            ng-class="{ unread: !message.IsRead, selected: message.selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
             <td class="actions">
                 <input type="checkbox" ng-model="message.selected" ng-click="onSelectMessage($event, message)" />
                 <span class="fa" ng-class="{

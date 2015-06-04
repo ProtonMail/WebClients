@@ -255,7 +255,12 @@ body {
     box-shadow: 0 0 4px rgba(0,0,0,.5);
 }
 
+tr.selected td {
+    background: $selected;
+}
+
 // TODO THIS IS FOR COLOR DEBUGGING on LOGIN VIEW
+#primary-color-light,
 #primary-color,
 #primary-color-dark,
 #base-color,
@@ -267,12 +272,14 @@ body {
 #alt-color-dark,
 #alt-color-darker {
     height: 4rem;
-    width: 14rem;
+    width: 13rem;
     line-height: 4rem;
     text-align: center;
     display: inline-block;
     margin: .25rem 0;
+    font-size: .9rem;
 }
+#primary-color-light,
 #primary-color,
 #primary-color-dark,
 #alt-color,
@@ -287,6 +294,7 @@ body {
 #base-color-darker {
     color: rgba(black,.25);
 }
+#primary-color-light {  background: $primary-color-light;}
 #primary-color {        background: $primary-color;}
 #primary-color-dark {   background: $primary-color-dark;}
 #base-color {           background: $base-color;}

@@ -177,18 +177,18 @@
     }
     .list-group-item {
         border-radius: 0;
-        &.drop-active {
+        &.drop-active,
+        &.drop-active a {
             opacity: 1;
-            background: $base-color-dark;
             a {
-                color: $alt-color;
+                color: $base-color;
                 text-shadow: none;
             }
         }
         &.drop-hover {
-            background: $base-color;
+            background: lighten($sidebar-bg, 10%) !important;
             a {
-                color: $alt-color-dark;
+                color: $base-color;
                 text-shadow: none;
             }
         }
