@@ -1,5 +1,7 @@
-angular.module("proton.attachments", [])
-    .service("attachments", function($http, $log, $window, $q, $rootScope, authentication, pmcw, errorReporter, CONSTANTS) {
+angular.module("proton.attachments", [
+    "proton.authentication"
+])
+    .service("attachments", function($http, $log, $window, $q, $rootScope, authentication, notify, pmcw, errorReporter, CONSTANTS) {
         return {
             load: function(file) {
                 var q = $q.defer();
@@ -91,7 +93,7 @@ angular.module("proton.attachments", [])
                 xhr.send(data);
             },
             getSessionKey:function(keypacket) {
-                return auth.getPrivateKey().then(function (key) {
+                return authentication.getPrivateKey().then(function (key) {
                     return pmcw.decryptSessionKey(keypacket,key);
                 });
             },

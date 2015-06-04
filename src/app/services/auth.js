@@ -130,7 +130,7 @@ angular.module("proton.authentication", [
                 getPrivateKey: function() {
                     var pw = pmcw.decode_utf8_base64(localStorageService.get('protonmail_pw'));
 
-                    return pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw);
+                    return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
                 },
 
                 loginWithCredentials: function(creds) {
