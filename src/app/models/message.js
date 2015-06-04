@@ -7,6 +7,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $templateCache,
     $injector,
     $interval,
+    $timeout,
     authentication,
     localStorageService,
     pmcw,
@@ -338,6 +339,16 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             return true;
+        },
+
+        saveLater: function(silently) {
+            if(angular.isDefined(this.timeoutSaving)) {
+                $timeout.cancel(this.timeoutSaving);
+            }
+
+            this.timeoutSaving = $timeout(function() {
+                this.save(silently);
+            }.bind(this), CONSTANTS.SAVE_TIMEOUT_TIME);
         },
 
         save: function(silently) {

@@ -674,6 +674,9 @@ angular.module("proton.controllers.Messages", [
         message.editor.addEventListener('focus', function() {
             $scope.focusComposer(message);
         });
+        message.editor.addEventListener('input', function() {
+            message.saveLater(true); // in silence
+        });
     };
 
     $scope.selectAddress = function(message) {
