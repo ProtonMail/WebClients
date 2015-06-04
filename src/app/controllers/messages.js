@@ -1104,13 +1104,6 @@ angular.module("proton.controllers.Messages", [
         );
     };
 
-    $scope.initPrint = function() {
-        message.imagesHidden = false;
-        $timeout(function() {
-            window.print();
-        }, 200);
-    };
-
     $scope.print = function() {
         var url = $state.href('secured.print', {
             MessageID: message.MessageID
@@ -1187,11 +1180,10 @@ angular.module("proton.controllers.Messages", [
                 console.log(err);
             }
 
+            // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
+            $timeout(function() {
+                iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
+            }, 1000);
         });
-
-        // HACK: Lets the iframe render its content before we try to get an accurate height measurement.
-        $timeout(function() {
-            iframe.height(iframe[0].contentWindow.document.body.scrollHeight + "px");
-        }, 1000);
     });
 });

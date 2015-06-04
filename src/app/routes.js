@@ -4,7 +4,7 @@ angular.module("proton.routes", [
     "ui.router",
     "proton.authentication",
     "proton.constants"
-]) 
+])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
 
@@ -153,17 +153,11 @@ angular.module("proton.routes", [
                             "Page": $stateParams.page
                         };
 
-                        // This should replace the starred location when tags are used
-                        // if (mailbox === 'starred') {
-                        //   params.Tag = mailbox;
-                        // }
-
                         return networkActivityTracker.track(
                             errorReporter.resolve(
                                 "Message count couldn't be queried - please try again later.",
-                                Message.count(params).$promise, {
-                                    count: 0
-                                }
+                                Message.count(params).$promise,
+                                {count: 0}
                             )
                         );
                     }
@@ -455,7 +449,7 @@ angular.module("proton.routes", [
     .state("secured.print", _.extend(_.clone(messageViewOptions), {
         url: "/print/:MessageID",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
-        onExit: function($rootScope) { $rootScope.isBlank = true; },
+        onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
             "main@": {
                 controller: "ViewMessageController",
@@ -467,7 +461,7 @@ angular.module("proton.routes", [
     .state("secured.raw", _.extend(_.clone(messageViewOptions), {
         url: "/raw/:MessageID",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
-        onExit: function($rootScope) { $rootScope.isBlank = true; },
+        onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
             "main@": {
                 controller: "ViewMessageController",

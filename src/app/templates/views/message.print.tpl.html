@@ -1,4 +1,4 @@
-<div class="container" ng-init="initPrint()">
+<div class="container">
     <h2>{{message.MessageTitle}}</h2>
 
     <p>{{ 'FROM' | translate }}: <strong>{{message.Sender}}</strong></p>
@@ -19,4 +19,10 @@
             {{attachment.FileName}} - {{attachment.MIMEType}} - {{attachment.FileSize | humanSize}}
         </div>
     </div>
+
+    <script>
+        setTimeout(function() {
+            window.print();
+        }, 2500);
+    </script>
 </div>
