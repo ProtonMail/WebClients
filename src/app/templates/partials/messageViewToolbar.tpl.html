@@ -20,6 +20,11 @@
                 <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
             </a>
         </li>
+        <li ng-if="message.location() != 'archive'">
+            <a href="" ng-click="moveMessageTo('inbox')">
+                <i class="fa fa-fw fa-archive"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'ARCHIVE' | translate }}</span>
+            </a>
+        </li>
         <li ng-if="message.location() != 'trash'">
             <a href ng-click="moveMessageTo('trash')">
                 <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'TRASH' | translate }}</span>
