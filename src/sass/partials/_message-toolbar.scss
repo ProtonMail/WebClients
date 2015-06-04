@@ -1,5 +1,7 @@
 .message-toolbar {
-  background: $base-color-darker;
+  $message-toolbar-bg: $base-color-darker;
+  $color: invert($message-toolbar-bg);
+  background: $message-toolbar-bg;
   box-shadow: 0 1px rgba(0,0,0,.2);
   position: relative;
   z-index: 2;
@@ -8,13 +10,15 @@
   > ul {
     > li {
       border-right: 1px solid rgba(0,0,0,.2);
-
+      a {
+        color: $color;
+      }
       &.selectAll {
         label {
           display: block;
           padding: 0 15px;
-          line-height: 32px;
-          height: 32px;
+          line-height: $row-height;
+          height: $row-height;
           cursor: pointer;
           margin: 0;
         }
@@ -23,20 +27,6 @@
       }
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-      }
-      &.lock-indicator {
-        border-right: 0;
-
-        > a,
-        > a:hover {
-          color: #888;
-          background: transparent;
-          box-shadow: none;
-
-          i:first-child {
-            margin-right: 0;
-          }
-        }
       }
       &.open {
         .labels {
@@ -47,9 +37,9 @@
           margin-top: 0;
           width: 300px;
           position: absolute;
-          background-color: #fff;
+          background-color: $base-color;
           input[type='search'] {
-            border: 1px solid $base-color-darker;
+            border: 1px solid $message-toolbar-bg;
             outline: 0;
           }
           ul.list-group {
@@ -78,39 +68,16 @@
         margin: 1rem 0;
       }
 
-      &.primary {
-        border-right: none;
-        @include primary-gradient;
-        a {
-          @include primary-gradient;
-          color: white;
-
-          &:hover {
-            background: lighten($primary-color, ($color-offset/2));
-            border-color: transparent;
-            color: white;
-          }
-          &:active {
-            @include primary-gradient-dark;
-            color: rgba(#fff, .5);
-            border-color: transparent;
-            box-shadow: none;
-          }
-        }
-      }
-
       &.disabled {
         background: none;
       }
 
       &.disabled a,
       & > a.disabled {
-        color: #666;
         text-shadow: none;
         opacity: 0.3;
         cursor: not-allowed;
         pointer-events: none;
-        background: rgb(229, 229, 229);
       }
 
       > a {

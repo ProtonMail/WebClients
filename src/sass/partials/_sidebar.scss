@@ -1,7 +1,7 @@
 #sidebar {
     width: $sidebar-width;
     background: $sidebar-bg;
-    text-shadow: 0 1px 0 rgba(black, 0.5);
+    text-shadow: 0 1px 0 rgba(darken($sidebar-bg, $color-offset), 0.5);
     z-index: 99;
     height: 100%;
     position: absolute;
@@ -196,54 +196,52 @@
         border: none;
         padding: 0;
         margin-bottom: 0;
-    .fa {
-        margin-right: 0.75rem;
-        line-height: 2rem;
-    }
-    .btn {
-        width: 100%;
-        text-align: left;
-        box-shadow: none;
-        border: 0;
-        border-radius: 0;
-        padding: 0 1.5rem;
-        line-height: $row-height;
-        .label {
-            padding: 0 0.65rem;
-            line-height: 18px;
-            height: 18px;
-            display: inline-block;
-            top: 7px;
+        .fa {
+            margin-right: 0.75rem;
+            line-height: 2rem;
         }
-        &.active {
-            background: lighten($sidebar-bg, 10%);
+        .btn {
+            width: 100%;
+            text-align: left;
+            box-shadow: none;
+            border: 0;
+            border-radius: 0;
+            padding: 0 1.5rem;
+            line-height: $row-height;
+            .label {
+                padding: 0 0.65rem;
+                line-height: 18px;
+                height: 18px;
+                display: inline-block;
+                top: 7px;
+            }
+            &.active {
+                background: lighten($sidebar-bg, 10%);
+                &:hover {
+                    border-color: transparent;
+                }
+                &:active {
+                    background: darken($gray, $sidebar-button-lighten);
+                    border-color: transparent;
+                    box-shadow: none;
+                }
+                .label {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+            &.active,
             &:hover {
-                border-color: transparent;
-            }
-            &:active {
-                background: darken($gray, $sidebar-button-lighten);
-                color: rgba(#fff, .5);
-                border-color: transparent;
-                box-shadow: none;
-            }
-            .label {
-                background: #fff;
-                color: #000;
-            }
-        }
-        &.active,
-        &:hover {
-            color: #fff;
-            text-shadow: none;
-            .label {
-                background: #fff;
+                text-shadow: none;
+                .label {
+                    background: #fff;
+                }
             }
         }
     }
-}
-a {
-    color: lighten($sidebar-bg, 50%);
-}
+    a {
+        color: invert($sidebar-bg);
+    }
 }
 #main {
     padding-left: $sidebar-width;
