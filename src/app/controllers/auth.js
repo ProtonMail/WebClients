@@ -54,7 +54,7 @@ angular.module("proton.controllers.Auth", [
                                     return;
                                 }
                             }
-                        );                     
+                        );
 	                }
 	                else if (result.error) {
 	                	var error  = (result.error_description) ? result.error_description : result.error;
@@ -122,35 +122,13 @@ angular.module("proton.controllers.Auth", [
 
 .controller("SecuredController", function(
     $scope,
-    $interval,
     $rootScope,
-    $http,
-    authentication,
-    CONSTANTS
+    authentication
 ) {
-    var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
-
     $scope.user = authentication.user;
     $scope.logout = authentication.logout;
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $rootScope.isSecure = authentication.isSecured;
-
-    var fetchCounts = function() {
-        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
-            $rootScope.unreadCount = resp.data.MessageCount.UnRead;
-        });
-        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.drafts).then(function(resp) {
-            $rootScope.draftsCount = resp.data.MessageCount.Total;
-        });
-    };
-
-    var updates = $interval(fetchCounts, 10000);
-
-    fetchCounts();
-
-    $scope.$on("$destroy", function() {
-        $interval.cancel(updates);
-    });
 });

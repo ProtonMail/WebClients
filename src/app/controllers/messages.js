@@ -201,6 +201,16 @@ angular.module("proton.controllers.Messages", [
         }, this);
     };
 
+    $rootScope.$on('goToFolder', function(event) {
+        $scope.unselectAllMessages();
+    });
+
+    $scope.unselectAllMessages = function() {
+        _.forEach($scope.messages, function(message) {
+            message.selected = false;
+        }, this);
+    };
+
     $scope.selectedMessages = function() {
         return _.select($scope.messages, function(message) {
             return message.selected === true;
@@ -945,6 +955,8 @@ angular.module("proton.controllers.Messages", [
         if (save === true) {
             message.save(true); // silently
         }
+
+        message.close();
 
         // Remove message in messages
         $scope.messages.splice(index, 1);

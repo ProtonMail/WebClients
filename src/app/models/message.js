@@ -341,6 +341,12 @@ angular.module("proton.models.message", ["proton.constants"])
             return true;
         },
 
+        close: function() {
+            if(angular.isDefined(this.timeoutSaving)) {
+                $timeout.cancel(this.timeoutSaving);
+            }
+        },
+
         saveLater: function(silently) {
             if(angular.isDefined(this.timeoutSaving)) {
                 $timeout.cancel(this.timeoutSaving);

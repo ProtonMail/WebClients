@@ -1,6 +1,8 @@
 angular.module("proton.controllers.Sidebar", [])
 
-.controller('SidebarController', function($scope, $rootScope, $state, $translate, authentication, tools, notify) {
+.controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, authentication, tools, notify, CONSTANTS) {
+    var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
+
     $scope.labels = authentication.user.labels;
     $scope.droppableOptions = {
         accept: '.ui-draggable',
@@ -18,6 +20,7 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.goTo = function(route) {
+        $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
         $state.go(route, {}, {reload: $state.is(route)});
     };
@@ -44,4 +47,21 @@ angular.module("proton.controllers.Sidebar", [])
             $rootScope.$broadcast('applyLabels', LabelID);
         }
     };
+
+    var fetchCounts = function() {
+        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
+            $rootScope.unreadCount = resp.data.MessageCount.UnRead;
+        });
+        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.drafts).then(function(resp) {
+            $rootScope.draftsCount = resp.data.MessageCount.Total;
+        });
+    };
+
+    var updates = $interval(fetchCounts, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);
+
+    fetchCounts();
+
+    $scope.$on("$destroy", function() {
+        $interval.cancel(updates);
+    });
 });
