@@ -78,7 +78,7 @@
 </div>
 <div id="message-body">
 
-    <div id="email" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html' && message.clearTextBody() != ''" ng-bind-html="message.clearTextBody() | unsafe"></div>
+    <div id="email" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html' && message.clearTextBody() != ''" ng-bind-html="message.clearTextBody()"></div>
 
     <code ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></code>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">

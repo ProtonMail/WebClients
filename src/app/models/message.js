@@ -450,8 +450,9 @@ angular.module("proton.models.message", ["proton.constants"])
         clearTextBody: function() {
             var body;
 
-            if (this.isDraft() ||
-                (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
+            console.time("concatenation");
+
+            if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
                 if (_.isUndefined(this._decryptedBody)) {
                     try {
@@ -475,7 +476,8 @@ angular.module("proton.models.message", ["proton.constants"])
                 }
 
                 body = this._decryptedBody; 
-            } else {
+            } 
+            else {
                 body = this.MessageBody;
             }
 
@@ -493,11 +495,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 }
             }
 
-            body = tools.removeStyle(body);
-
-            $timeout(function() {
-                // $('#email').find('style').remove(); 
-            }, 1);
+            console.timeEnd("concatenation");
 
             return body;
         }
