@@ -132,6 +132,7 @@
 }
 
 .tooltip {
+    z-index: 9999999;
     white-space: nowrap;
     .tooltip-inner {
         max-width: none;
