@@ -329,26 +329,6 @@ angular.module("proton.tools", [])
             }
         }
 
-        function set_iframe_height() {
-            if ($('#content iframe').length && $('.message-toolbar').length && $('.message-head').length) {
-                // reset heights first!
-                $('#content iframe, #message-body').css('height', '');
-                // desktop
-                if ($(window).width()>767) {
-                    // we remove 4 pixels... becuase the calc is too large for some reason.. maybe borders?
-                    $('#content iframe, #message-body').css('height', $('#content').outerHeight()-($('.message-toolbar').outerHeight()+$('.message-head').outerHeight()));
-                }
-                // mobile
-                else {
-                    var iFrameID = document.getElementById('messageIframe');
-                    if(iFrameID) {
-                        iFrameID.height = "";
-                        iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+ 100 + "px";
-                      }
-                }
-            }
-        }
-
         function get_template (templateName) {
           var defer = $q.defer();
 
@@ -396,7 +376,6 @@ angular.module("proton.tools", [])
             isCompatible: is_compatible,
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
-            setIframeHeight: set_iframe_height,
             renderStorageBar: render_storage_bar
         };
 

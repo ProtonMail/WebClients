@@ -9,6 +9,10 @@ angular.module("proton.filters.strings", [])
   };
 })
 
+.filter('unsafe', function($sce) {
+  return $sce.trustAsHtml; 
+})
+
 .filter("humanDuration", function () {
   return function (input, units) {
     var duration = moment.duration(Math.round(input), units);
