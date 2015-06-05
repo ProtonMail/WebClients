@@ -92,7 +92,8 @@ table.message-list {
             &.recipient {
                 width: 18rem;
                 text-transform: capitalize;
-                .to {
+                .to,
+                .from {
                     font-weight: normal;
                     color: #999;
                 }

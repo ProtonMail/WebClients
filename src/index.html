@@ -51,13 +51,13 @@
         }
         .ring {
           position: absolute;
-          border: 3px solid #ffffff;
+          border: 1px solid #ffffff;
           border-radius: 250px;
           margin: auto;
         }
         .ring.inner,
         .ring.center {
-          border: 2px solid #666666;
+          border: 1px solid #666666;
           width: 140px;
           height: 140px;
           top: 55px;
@@ -107,8 +107,8 @@
           -moz-animation: horizontal 4s linear infinite;
         } 
         .wrap-electron {
-          -webkit-animation: electron 1s linear infinite;
-          -moz-animation: electron 1s linear infinite;          
+          -webkit-animation: electron 10s linear infinite;
+          -moz-animation: electron 10s linear infinite;
         }
 
         .orbit.r {
@@ -124,8 +124,8 @@
           -moz-animation: horizontalRevert 1.5s linear infinite;
         }
         .inner .wrap-electron {
-          -webkit-animation: electron .5s linear infinite;
-          -moz-animation: electron .5s linear infinite;
+          -webkit-animation: electron 5s linear infinite;
+          -moz-animation: electron 5s linear infinite;
         }
 
         @keyframes electron {
@@ -193,14 +193,17 @@
         @-webkit-keyframes electron {
           0% {
             -webkit-transform: rotateZ(0deg);
-            opacity: 0;
+            opacity: .5;
+            box-shadow: 0;
           }
           50% {
             opacity: 1;
+            box-shadow: 1rem;
           }
           100% {
             -webkit-transform: rotateZ(360deg);
-            opacity: 0;
+            opacity: .5;
+            box-shadow: 0;
           }
         }
         @-webkit-keyframes horizontal {
@@ -259,29 +262,13 @@
 <div class="higgs">
 
   <div class="orbit">
-    <div class="ring horizontal">
-      <div class="wrap-electron">
-        <div class="ring electron"></div>
-      </div>
-    </div>
-    <div class="ring vertical">
-      <div class="wrap-electron">
-        <div class="ring electron"></div>
-      </div>
-    </div>
+    <div class="ring horizontal"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+    <div class="ring vertical"><div class="wrap-electron"><div class="ring electron"></div></div></div>
   </div>
   
   <div class="orbit r">
-    <div class="ring horizontal inner">
-      <div class="wrap-electron">
-        <div class="ring electron"></div>
-      </div>
-    </div>
-    <div class="ring vertical inner">
-      <div class="wrap-electron">
-        <div class="ring electron"></div>
-      </div>
-    </div>
+    <div class="ring horizontal inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+    <div class="ring vertical inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
     <div class="ring center"></div>
   </div>
 

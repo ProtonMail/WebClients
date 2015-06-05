@@ -6,7 +6,8 @@
             data-drag="true"
             jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
             data-jqyoui-options="draggableOptions"
-            ng-class="{ unread: !message.IsRead, selected: message.selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }">
+            ng-class="{ unread: !message.IsRead, selected: message.selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
+            ng-init="message.Location=randLocation()">
             <td class="actions">
                 <input type="checkbox" ng-model="message.selected" ng-click="onSelectMessage($event, message)" />
                 <span class="fa" ng-class="{
@@ -23,15 +24,15 @@
                     <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
                 </a>
             </td>
-            <td class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-                <!-- TODO: use message.Location to show "From" & "To" & location icons
-                <span ng-if="( (message.Location==CONSTANTS.MAILBOX_IDENTIFIERS.drafts) || (message.Location==CONSTANTS.MAILBOX_IDENTIFIERS.sent) )">
+            <td class="recipient">
+                <!-- TODO: use message.Location to show "From" & "To" & location icons -->
+                <span ng-if="showTo(message)">
                     <span class="to" pt-tooltip="{{ message.RecipientList | lowercase }}">To&thinsp;: </span>{{ message.RecipientList | username }}</span>
                 </span>
-                <span ng-if="( (message.Location!=CONSTANTS.MAILBOX_IDENTIFIERS.drafts) && (message.Location!=CONSTANTS.MAILBOX_IDENTIFIERS.sent) )">
-                    <span class="to" pt-tooltip="{{ message.Sender | lowercase }}">From&thinsp;: </span>{{ message.Sender | username }}</span>
+                <span ng-if="showFrom(message)">
+                    <span class="from" pt-tooltip="{{ message.Sender | lowercase }}">From&thinsp;: </span>{{ message.Sender | username }}</span>
                 </span>
-                -->
+               
                 <span ng-if="true">
                     <span pt-tooltip="{{ message.Sender | lowercase }}">{{ message.Sender | username }}</span>
                 </span>

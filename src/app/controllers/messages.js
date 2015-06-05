@@ -11,6 +11,7 @@ angular.module("proton.controllers.Messages", [
     $stateParams,
     $timeout,
     $translate,
+    $filter,
     CONSTANTS,
     Message,
     authentication,
@@ -24,6 +25,57 @@ angular.module("proton.controllers.Messages", [
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
+
+    // TODO this is just for temporary until API works
+    $scope.randLocation = function() {
+        return Math.floor((Math.random()*6)+1);
+    };
+    // END TODO
+
+    $scope.showTo = function(message) {
+        return (
+            $scope.senderIsMe(message) && 
+            (
+                !$filter('isState')('secured.inbox') &&
+                !$filter('isState')('secured.spam')  &&
+                !$filter('isState')('secured.trash')
+            )
+        ) ? true : false;
+    };
+
+    $scope.showFrom = function(message) {
+        return (
+            $scope.recipientIsMe(message) && 
+            (
+                !$filter('isState')('secured.inbox') &&
+                !$filter('isState')('secured.drafts')  &&
+                !$filter('isState')('secured.sent')
+            )
+        ) ? true : false;
+    };
+
+    $scope.senderIsMe = function(message) {
+        var result = false;
+        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
+            if( $scope.user.addresses[i].Email === message.Sender ) {
+                result = true;
+            }
+        }
+        return result;
+    };
+
+    // BROKEN. TODO recipient list needs to be standard for this to work.
+    $scope.recipientIsMe = function(message) {
+        var result = false;
+        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
+            for( var j = 0, lenn = message.RecipientList.length; j < len; i++ ) {
+                if( $scope.user.addresses[i].Email === message.RecipientList[j][0] ) {
+                    result = true;
+                }
+            }
+        }
+        return result;
+    };
 
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
