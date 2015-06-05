@@ -166,6 +166,29 @@ angular.module("proton.modals", [])
     });
 })
 
+// contact modal
+.factory('wizardModal', function(pmModal) {
+    return pmModal({
+        controller: function(params, $timeout) {
+            this.name = params.name;
+            this.email = params.email;
+            this.title = params.title;
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            $timeout(function() {
+                $('#contactName').focus();
+            }.bind(this), 100);
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/wizard.tpl.html'
+    });
+})
+
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({

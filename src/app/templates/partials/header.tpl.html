@@ -39,6 +39,9 @@
                     {{ errorReporter.error }}
                 </div>
                 <ul class="nav navbar-nav navbar-right">
+                    <li id="nav_wizard" ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ng-click="openWizard()"><span class="visible-lg-inline-block fa fa-tachometer"></span> Wizard </a>
+                    </li>
                     <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a ui-sref="admin"><span class="visible-lg-inline-block fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
                     </li>

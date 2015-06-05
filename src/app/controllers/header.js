@@ -1,9 +1,23 @@
 angular.module("proton.controllers.Header", [])
 
-.controller("HeaderController", function($scope, $state, $stateParams, $rootScope) {
+.controller("HeaderController", function($scope, $state, $stateParams, wizardModal, $rootScope) {
     $scope.params = {
         searchInput: $stateParams.words || ''
     };
+
+    function openWizardModal(title, name, email, save) {
+        wizardModal.activate({
+            params: {
+                title: title,
+                name: name,
+                email: email,
+                save: save,
+                cancel: function() {
+                    wizardModal.deactivate();
+                }
+            }
+        });
+    }
 
     $scope.search = function() {
         if($scope.params.searchInput.length > 0) {
@@ -33,5 +47,12 @@ angular.module("proton.controllers.Header", [])
 
     $scope.onFocusSearch = function() {
         $scope.searchInputFocus = true;
+    };
+
+
+    $scope.openWizard = function() {
+        openWizardModal('ProtonMail Wizard', '', '', function(name, email) {
+
+        });
     };
 });

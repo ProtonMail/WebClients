@@ -71,6 +71,7 @@ angular.module("proton", [
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
     "proton.controllers.Support",
+    "proton.controllers.Wizard",
 
     // Translations
     "proton.translations"
