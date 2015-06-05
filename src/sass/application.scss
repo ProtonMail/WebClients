@@ -6,11 +6,6 @@ $fa-font-path: "fonts";
 @import "partials/header";
 @import "partials/mixins";
 
-#message-body {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
 #dragOverlay {
     position:fixed;
     left:$sidebar-width;
@@ -66,12 +61,7 @@ body {
         -webkit-flex-direction: column;
     }
 }
-#message-body {
-    overflow: auto;
-    iframe {
-        float: left;
-    }
-}
+
 body.login,
 body.locked {
     .container-fluid {

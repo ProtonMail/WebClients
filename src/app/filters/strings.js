@@ -1,4 +1,4 @@
-angular.module("proton.filters.strings", [])
+angular.module("proton.filters.strings",[])
 
 .filter("capitalize", function() {
   return function(input) {
@@ -6,6 +6,14 @@ angular.module("proton.filters.strings", [])
       input = input.toLowerCase();
     }
     return input.substring(0,1).toUpperCase()+input.substring(1);
+  };
+})
+
+.filter('purify', function($sce) {
+  // disable ng-sanitize
+  //dompurify (https://github.com/cure53/DOMPurify)
+  return function(value) {
+    return DOMPurify.sanitize($sce.getTrustedHtml(value));
   };
 })
 

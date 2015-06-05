@@ -228,12 +228,9 @@ ul.attachments {
 .wysihtml5-sandbox {
     min-height: 12rem;
 }
-
 #message-body {
-    iframe {
-        border: 0;
-        width: 100%;
-    }
+    padding: 2rem;
+    -webkit-overflow-scrolling: touch;
     .alert {
         margin: 2em 1em;
         span.fa {

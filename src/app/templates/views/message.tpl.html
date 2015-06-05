@@ -70,16 +70,17 @@
 <!--/.message-head-->
 <div class="col-md-12" ng-show="message.containsImage === true">
     <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
-        <a href="" ng-click="message.toggleImages()">
+        <a href="" ng-click="toggleImages()">
             <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
             <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
         </a>
     </p>
 </div>
 <div id="message-body">
-    <iframe src="" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html' && message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups" id="messageIframe"></iframe>
+    <div id="email" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content | purify"></div>
+
     <code ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></code>
-    <div class="alert alert-danger clearfix" role="alert" ng-if="message.clearTextBody() == '' && message.failedDecryption">
+    <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong>Decryption error</strong>
         <br> Decryption of this message's encryption content failed.
