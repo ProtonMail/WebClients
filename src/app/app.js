@@ -274,7 +274,7 @@ angular.module("proton", [
     // Tools like Protractor and Batarang need this information to run,
     // but you can disable this in production for a significant performance boost
     var debugInfo = CONFIG.debug || false;
-
+    //configure routeProvider as usual
     $compileProvider.debugInfoEnabled(debugInfo);
 })
 
