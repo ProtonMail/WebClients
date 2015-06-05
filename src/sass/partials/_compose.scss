@@ -449,7 +449,7 @@ form#compose {
 .composer {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
-  position: absolute;
+  position: fixed;
   bottom: $footer-height;
   right: 10px;
   width: 480px;
