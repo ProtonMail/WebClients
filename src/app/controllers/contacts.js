@@ -203,63 +203,64 @@ angular.module("proton.controllers.Contacts", [
                     var contactArray = [];
                     var extension = files[0].name.slice(-4);
 
-                    if (extension === '.vcf') {
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                          var text = reader.result;
-                          var vcardData = vCard.parse(text);
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var text = unescape(encodeURIComponent(reader.result));
 
-                          _.forEach(vcardData, function(d, i) {
-                              if (d.fn && d.email) {
-                                  contactArray.push({'ContactName' : d.fn.value, 'ContactEmail' : d.email.value});
-                              }
-                              else if(d.email) {
-                                  contactArray.push({'ContactName' : d.email.value, 'ContactEmail' : d.email.value});
-                              }
-                          });
+                        if (extension === '.vcf') {
 
-                          importContacts(contactArray);
-                        };
+                              var vcardData = vCard.parse(text);
 
-                        reader.readAsText(files[0]);
-                    }
-                    else if(extension === '.csv') {
-                        Papa.parse(files[0], {
-                        	complete: function(results) {
-                                var csv = results.data;
-                                var nameKeys = ['Name', 'First Name'];
-                                var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
-
-                                nameKey = _.find(nameKeys, function(d, i) {
-                                    return csv[0].indexOf(d) > -1;
-                                });
-
-                                emailKey = _.find(emailKeys, function(d, i) {
-                                    return csv[0].indexOf(d) > -1;
-                                });
-
-                                nameIndex = csv[0].indexOf(nameKey);
-                                emailIndex = csv[0].indexOf(emailKey);
-                                lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
-
-                                _.forEach(csv, function(d, i) {
-                                  if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
-                                    if (d[nameIndex] !== '') {
-                                      contactArray.push({'ContactName' : d[nameIndex], 'ContactEmail' : d[emailIndex]});
-                                    }
-                                    else {
-                                      contactArray.push({'ContactName' : d[emailIndex], 'ContactEmail' : d[emailIndex]});
-                                    }
+                              _.forEach(vcardData, function(d, i) {
+                                  if (d.fn && d.email) {
+                                      contactArray.push({'ContactName' : d.fn.value, 'ContactEmail' : d.email.value});
                                   }
-                                });
+                                  else if(d.email) {
+                                      contactArray.push({'ContactName' : d.email.value, 'ContactEmail' : d.email.value});
+                                  }
+                              });
 
-                                importContacts(contactArray);
-                        	}
-                        });
-                    }
-                    else {
-                        notify('Invalid file type');
-                    }
+                              importContacts(contactArray);
+                        }
+                        else if(extension === '.csv') {
+                            Papa.parse(text, {
+                            	complete: function(results) {
+                                    var csv = results.data;
+                                    var nameKeys = ['Name', 'First Name'];
+                                    var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
+
+                                    nameKey = _.find(nameKeys, function(d, i) {
+                                        return csv[0].indexOf(d) > -1;
+                                    });
+
+                                    emailKey = _.find(emailKeys, function(d, i) {
+                                        return csv[0].indexOf(d) > -1;
+                                    });
+
+                                    nameIndex = csv[0].indexOf(nameKey);
+                                    emailIndex = csv[0].indexOf(emailKey);
+                                    lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
+                                    _.forEach(csv, function(d, i) {
+                                      if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
+                                        if (d[nameIndex] !== '') {
+                                          contactArray.push({'ContactName' : d[nameIndex], 'ContactEmail' : d[emailIndex]});
+                                        }
+                                        else {
+                                          contactArray.push({'ContactName' : d[emailIndex], 'ContactEmail' : d[emailIndex]});
+                                        }
+                                      }
+                                    });
+
+                                    importContacts(contactArray);
+                            	}
+                            });
+                        }
+                        else {
+                            notify('Invalid file type');
+                        }
+                    };
+
+                    reader.readAsBinaryString(files[0]);
 
                     importContacts = function(contactArray) {
                         networkActivityTracker.track(
