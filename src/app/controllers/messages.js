@@ -1058,7 +1058,7 @@ angular.module("proton.controllers.Messages", [
         var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
-        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + message.clearTextBody() + blockquoteEnd;
+        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
             base.RecipientList = message.Sender;
