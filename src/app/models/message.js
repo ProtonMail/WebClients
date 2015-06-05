@@ -473,6 +473,8 @@ angular.module("proton.models.message", ["proton.constants"])
                         this._decryptedBody = "";
                         this.failedDecryption = true;
                     }
+                } else {
+                    deferred.resolve(this._decryptedBody);
                 }
             } else {
                 deferred.resolve(this.MessageBody);
