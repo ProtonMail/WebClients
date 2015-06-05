@@ -108,7 +108,7 @@
                 <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="message.save()" pt-tooltip="{{ 'SAVE' | translate }}">
                     <i class="fa fa-floppy-o"></i>
                 </button>
-                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>
+                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'SEND' | translate }}</button>
             </div>
         </div>
     </ng-form>
