@@ -9,6 +9,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $interval,
     $timeout,
     $q,
+    $state,
     authentication,
     localStorageService,
     pmcw,
