@@ -207,7 +207,6 @@ angular.module("proton.controllers.Contacts", [
                     reader.onload = function(e) {
                         var text = unescape(encodeURIComponent(reader.result));
 
-
                         if (extension === '.vcf') {
 
                               var vcardData = vCard.parse(text);
@@ -222,13 +221,11 @@ angular.module("proton.controllers.Contacts", [
                               });
 
                               importContacts(contactArray);
-
                         }
                         else if(extension === '.csv') {
                             Papa.parse(text, {
                             	complete: function(results) {
                                     var csv = results.data;
-                                    console.log(csv);
                                     var nameKeys = ['Name', 'First Name'];
                                     var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
 
@@ -243,9 +240,6 @@ angular.module("proton.controllers.Contacts", [
                                     nameIndex = csv[0].indexOf(nameKey);
                                     emailIndex = csv[0].indexOf(emailKey);
                                     lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
-                                    console.log(csv[0][0].trim().substr(-1));
-                                    console.log('E-mail 1 - Value' === csv[0][28].trim());
-                                    console.log(jschardet.detect(csv[0][28]));
                                     _.forEach(csv, function(d, i) {
                                       if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
                                         if (d[nameIndex] !== '') {
