@@ -8,6 +8,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $injector,
     $interval,
     $timeout,
+    $q,
     authentication,
     localStorageService,
     pmcw,
@@ -449,39 +450,38 @@ angular.module("proton.models.message", ["proton.constants"])
 
         clearTextBody: function() {
             var body;
-
-            console.time("concatenation");
+            var deferred = $q.defer();
 
             if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
-                if (_.isUndefined(this._decryptedBody)) {
+                if (_.isUndefined(this._decryptedBody) && !!!this.decrypting) {
+                    this.decrypting = true;
+
                     try {
                         var local = localStorageService.get('protonmail_pw');
                         var pw = pmcw.decode_base64(local);
 
-                        if (!!!this.decrypting) {
-                            this.decrypting = true;
-                            pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
-                                pmcw.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
-                                    this._decryptedBody = result;
-                                    this.failedDecryption = false;
-                                    this.decrypting = false;
-                                }.bind(this));
+                        pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+                            pmcw.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
+                                this._decryptedBody = result;
+                                this.failedDecryption = false;
+                                this.decrypting = false;
+                                deferred.resolve(result);
                             }.bind(this));
-                        }
+                        }.bind(this));
                     } catch (err) {
-                        this._decryptedBody = ""; 
+                        this._decryptedBody = "";
                         this.failedDecryption = true;
                     }
                 }
-
-                body = this._decryptedBody; 
-            } 
-            else {
-                body = this.MessageBody;
+            } else {
+                deferred.resolve(this.MessageBody);
             }
 
-            // Images
+            return deferred.promise;
+        },
+
+        clearImageBody: function(body) {
             if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
             } else {
@@ -494,8 +494,6 @@ angular.module("proton.models.message", ["proton.constants"])
                     body = tools.fixImages(body);
                 }
             }
-
-            console.timeEnd("concatenation");
 
             return body;
         }

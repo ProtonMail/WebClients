@@ -995,6 +995,19 @@ angular.module("proton.controllers.Messages", [
     $rootScope.pageName = message.MessageTitle;
     $scope.tools = tools;
 
+    $scope.displayContent = function() {
+        message.clearTextBody().then(function(result) {
+            var content = message.clearImageBody(result);
+
+            $scope.content = content;
+        });
+    };
+
+    $scope.toggleImages = function() {
+        message.toggleImages();
+        $scope.content = message.clearImageBody($scope.content);
+    };
+
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
     };
