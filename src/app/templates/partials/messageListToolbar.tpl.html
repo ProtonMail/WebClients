@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
         <li class="selectAll">
             <label>
-                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" />
+                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" />
             </label>
         </li>
         <li ng-if="pageName != 'inbox'">

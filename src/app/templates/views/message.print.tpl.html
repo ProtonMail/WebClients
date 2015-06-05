@@ -8,9 +8,7 @@
 
     <hr />
 
-    <div id="message-body">
-        <iframe src="" ng-show="message.clearTextBody() != ''" sandbox="allow-same-origin allow-popups"></iframe>
-    </div>
+    <div ng-init="displayContent()" ng-bind-html="content | purify"></div>
 
     <hr />
 
@@ -23,6 +21,6 @@
     <script>
         setTimeout(function() {
             window.print();
-        }, 2500);
+        },1000);
     </script>
 </div>
