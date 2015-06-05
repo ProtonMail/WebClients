@@ -469,29 +469,35 @@ angular.module("proton.models.message", ["proton.constants"])
                             }.bind(this));
                         }
                     } catch (err) {
-                        this._decryptedBody = "";
+                        this._decryptedBody = ""; 
                         this.failedDecryption = true;
                     }
                 }
 
-                body = this._decryptedBody;
+                body = this._decryptedBody; 
             } else {
                 body = this.MessageBody;
             }
 
             // Images
-            // if (this.containsImage === false || body.match('<img') === null) {
-            //     this.containsImage = false;
-            // } else {
-            //     this.containsImage = true;
-            //     if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
-            //         this.imagesHidden = true;
-            //         body = tools.breakImages(body);
-            //     } else {
-            //         this.imagesHidden = false;
-            //         body = tools.fixImages(body);
-            //     }
-            // }
+            if (this.containsImage === false || body.match('<img') === null) {
+                this.containsImage = false;
+            } else {
+                this.containsImage = true;
+                if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
+                    this.imagesHidden = true;
+                    body = tools.breakImages(body);
+                } else {
+                    this.imagesHidden = false;
+                    body = tools.fixImages(body);
+                }
+            }
+
+            body = tools.removeStyle(body);
+
+            $timeout(function() {
+                // $('#email').find('style').remove(); 
+            }, 1);
 
             return body;
         }

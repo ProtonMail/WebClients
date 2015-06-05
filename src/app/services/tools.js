@@ -154,7 +154,7 @@ angular.module("proton.tools", [])
                 return true;
             } else {
                 return false;
-            }
+            } 
         }
 
         function break_images(html) {
@@ -376,7 +376,7 @@ angular.module("proton.tools", [])
             isCompatible: is_compatible,
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
-            renderStorageBar: render_storage_bar
+            renderStorageBar: render_storage_bar,
         };
 
         return tools;
