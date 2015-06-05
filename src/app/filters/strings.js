@@ -1,4 +1,4 @@
-angular.module("proton.filters.strings", [])
+angular.module("proton.filters.strings",[])
 
 .filter("capitalize", function() {
   return function(input) {
@@ -9,8 +9,12 @@ angular.module("proton.filters.strings", [])
   };
 })
 
-.filter('unsafe', function($sce) {
-  return $sce.trustAsHtml; 
+.filter('purify', function($sce) {
+  // disable ng-sanitize
+  //dompurify (https://github.com/cure53/DOMPurify)
+  return function(value) {
+    return DOMPurify.sanitize($sce.getTrustedHtml(value));
+  };
 })
 
 .filter("humanDuration", function () {
