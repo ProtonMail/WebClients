@@ -20,7 +20,7 @@
     "BOLD": "",
     "BROWSER": "",
     "BUG": "",
-    "BUG_REPORT_SENT": "",
+    "BUG_REPORTED": "",
     "CANCEL": "",
     "CC": "",
     "CHOOSE": "",
@@ -104,6 +104,7 @@
     "MAXIMUM_COMPOSER_REACHED": "",
     "MESSAGE_MOVED": "",
     "MESSAGE_PASSWORD": "",
+    "MESSAGE_SENT": "",
     "MESSAGES_MOVED": "",
     "MINIMIZE": "",
     "MORE": "",
@@ -152,6 +153,7 @@
     "SECURITY": "",
     "SECURITY_DETAILS": "",
     "SEND": "",
+    "SEND_MESSAGE": "",
     "SENDER": "",
     "SENT": "",
     "SET": "",
@@ -197,5 +199,6 @@
     "WHERE_DID_YOU_FIND_IT?": "",
     "YES": "",
     "YOUR_EMAIL_ADDRESS": "",
-    "{{ 'MANAGE_LABELS' | translate }}": ""
+    "{{ 'MANAGE_LABELS' | translate }}": "",
+    "{{ 'SEND' | translate }}": ""
 }

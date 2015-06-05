@@ -5,7 +5,7 @@
     }
     .as-sortable-item {
         &:hover {
-            background-color: $highlight;
+            background-color: $selected;
         }
     }
     .as-sortable-item, .as-sortable-placeholder {
