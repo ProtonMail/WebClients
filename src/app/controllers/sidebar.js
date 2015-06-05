@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Sidebar", [])
 
-.controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, authentication, tools, notify, CONSTANTS) {
+.controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, Message, authentication, tools, notify, CONSTANTS) {
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     $scope.labels = authentication.user.labels;
@@ -53,16 +53,10 @@ angular.module("proton.controllers.Sidebar", [])
     });
 
     $scope.updateCounters = function() {
-        $rootScope.unreadCount = $rootScope.unreadCount || {};
-        $rootScope.total = $rootScope.total || {};
-
-        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.inbox).then(function(resp) {
-            $rootScope.messageCount.inbox = resp.data.MessageCount;
-        });
-
-        $http.get(authentication.baseURL + "/messages/count?Location=" + mailboxes.drafts).then(function(resp) {
-            $rootScope.messageCount.drafts = resp.data.MessageCount;
-        });
+        // TODO
+        // Message.count().then(function(result) {
+        //     console.log(result);
+        // });
     };
 
     var updates = $interval($scope.updateCounters, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);

@@ -92,6 +92,9 @@ angular.module("proton.attachments", [
                 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
                 xhr.send(data);
             },
+            removeAttachment: function(file) {
+
+            },
             getSessionKey:function(keypacket) {
                 return authentication.getPrivateKey().then(function (key) {
                     return pmcw.decryptSessionKey(keypacket,key);

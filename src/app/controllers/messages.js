@@ -581,6 +581,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.removeAttachment = function(file, message) {
         // TODO
+        attachments.removeAttachment();
     };
 
     $scope.initMessage = function(message) {

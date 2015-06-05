@@ -48,12 +48,6 @@
                 <div class="form-group">
                     <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" pt-tooltip="{{ 'SUBJECT' | translate }}" pt-placement="left" class="form-control message-title" ng-model="message.MessageTitle" ng-change="message.saveLater(true)" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
                 </div>
-                <ul ng-if="message.Attachments" class="attachments">
-                    <li ng-repeat="attachment in message.Attachments">
-                        <i class="fa fa-paperclip"></i> {{ attachment.FileName }}
-                        <a href="" ng-click="removeAttachment(attachment)"><i class="fa fa-times"></i></a>
-                    </li>
-                </ul>
                 <div class="form-group">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'attachments'">
                         <div class="form-group col-md-12">
