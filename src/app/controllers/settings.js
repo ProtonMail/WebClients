@@ -32,6 +32,7 @@ angular.module("proton.controllers.Settings", [
     $scope.aliases = user.Addresses;
     $scope.labels = user.Labels;
     $scope.cssTheme = user.Theme;
+    $scope.defaultLanguage = 'English';
 
 
     // Drag and Drop configuration
@@ -86,6 +87,10 @@ angular.module("proton.controllers.Settings", [
               $log.error(response);
           })
         );
+    };
+
+    $scope.saveDefaultLanguage = function(form) {
+        notify('Language preference saved - ' + $scope.defaultLanguage);
     };
 
     $scope.saveLoginPassword = function(form) {

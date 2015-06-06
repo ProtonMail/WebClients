@@ -187,5 +187,27 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingDefaultLanguage">
+                <h4 class="panel-title clearfix">
+                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="autosaveContacts">{{ 'EXPAND' | translate }}</a>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#defaultLanguage" aria-expanded="false" aria-controls="signature">{{ 'DEFAULT_LANGUAGE' | translate }}</a>
+                </h4>
+            </div>
+            <div id="defaultLanguage" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDefaultlanguage">
+                <div class="panel-body">
+                    <label class="control-label">{{ 'DEFAULT_LANGUAGE' | translate }}</label>
+                    <div>
+                        <select class="form-control" ng-model="defaultLanguage" ng-change="saveDefaultLanguage()">
+                            <option>English</option>
+                            <option>French</option>
+                            <option>Italian</option>
+                            <option>Spanish</option>
+                            <option>German</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
