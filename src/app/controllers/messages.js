@@ -34,7 +34,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.showTo = function(message) {
         return (
-            $scope.senderIsMe(message) && 
+            $scope.senderIsMe(message) &&
             (
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.spam')  &&
@@ -45,7 +45,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.showFrom = function(message) {
         return (
-            $scope.recipientIsMe(message) && 
+            $scope.recipientIsMe(message) &&
             (
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
@@ -425,7 +425,7 @@ angular.module("proton.controllers.Messages", [
             labels_actions: [{id: LabelID, action: 1}],
             archive: '1'
         }).$promise.then(function(result) {
-            $state.go($state.current, {}, {reload: true}); // force reload current page
+            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
             notify($translate.instant('LABEL_APPLY'));
         }, function(result) {
             $log.error(result);
