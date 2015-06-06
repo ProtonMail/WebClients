@@ -39,17 +39,17 @@
                     {{ errorReporter.error }}
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="nav_wizard" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ng-click="openWizard()"><span class="visible-lg-inline-block fa fa-tachometer"></span> Wizard </a>
+                    <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-users"></span> {{ 'CONTACTS' | translate }}</a>
                     </li>
-                    <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a ui-sref="admin"><span class="visible-lg-inline-block fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
-                    </li>
+                    <!-- <li id="nav_wizard" ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ng-click="openWizard()"><span class="visible-lg-inline-block fa fa-magic"></span> Wizard </a>
+                    </li> -->
                     <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ng-click="openReportModal()"><span class="visible-lg-inline-block fa fa-bug"></span> {{ 'BUG' | translate }}</a>
                     </li>
                     <li id="nav_settings" ng-if="'secured.**' | includedByState">
-                        <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
+                        <a ui-sref="secured.settings" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
                     </li>
                     <li id="nav_login" ng-if="!isLoggedIn">
                         <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGIN' | translate }}</a>

@@ -54,14 +54,6 @@
         </li>
     </ul>
     <div class="divider"></div>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a class="btn" ui-sref="secured.contacts" ui-sref-active="active">
-                <span class="fa fa-book"></span> <span class="hidden-xs hidden-sm">{{ 'CONTACTS' | translate }}</span>
-            </a>
-        </li>
-    </ul>
-    <div class="divider"></div>
     <div class="hidden-xs hidden-sm" id="sidebarLabels">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="label in labelsDisplayed()" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.LabelID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
