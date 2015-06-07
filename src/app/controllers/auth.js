@@ -37,12 +37,12 @@ angular.module("proton.controllers.Auth", [
 
         networkActivityTracker.track(
             authentication.loginWithCredentials({
-                username: $scope.username,
-                password: $scope.password
+                Username: $scope.username,
+                Password: $scope.password
             })
             .then(
                 function(result) {
-                	if (result.access_token) {
+                	if (result.AccessToken) {
                         return authentication.fetchUserInfo()
                         .then(
                             function(user) {

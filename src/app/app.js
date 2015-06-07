@@ -31,6 +31,8 @@ angular.module("proton", [
     "proton.models.contact",
     "proton.models.user",
     "proton.models.bug",
+    "proton.models.setting",
+    "proton.models.attachment",
 
     // Config
     "proton.config",
