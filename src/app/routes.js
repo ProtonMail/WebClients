@@ -406,9 +406,7 @@ angular.module("proton.routes", [
     // -------------------------------------------
 
     .state("secured", {
-
         // This is included in every secured.* sub-controller
-
         abstract: true,
         views: {
             "main@": {
@@ -416,8 +414,6 @@ angular.module("proton.routes", [
                 templateUrl: "templates/layout/secured.tpl.html"
             }
         },
-        // url: "/secured", // remove
-
         resolve: {
             // Contains also labels and contacts
             user: function(authentication) {

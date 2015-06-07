@@ -88,6 +88,7 @@ angular.module("proton.controllers.Auth", [
     $scope.tryDecrypt = function() {
         $('input').blur();
         var mailboxPassword = this.mailboxPassword;
+
         clearErrors();
         networkActivityTracker.track(
             authentication.unlockWithPassword(mailboxPassword)

@@ -268,11 +268,14 @@ angular.module("proton.authentication", [
                 unlockWithPassword: function(pwd) {
                     var req = $q.defer();
                     var self = this;
+
                     if (pwd) {
                         $timeout(function() {
-                            self.user.$promise
+                            self.user
                             .then(
-                                function(user) {
+                                function(result) {
+                                    var user = result.data;
+                                    
                                     return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
                                     .then(
                                         function() {
@@ -338,26 +341,31 @@ angular.module("proton.authentication", [
             auth.fetchUserInfo = function() {
                 var q = $q.defer();
 
-                // api.user = $injector.get("User").get({
-                //     id: auth.data.Uid
-                // });
+                api.user = $http.get(baseURL + "/users", {
+                    params: {
+                        id: auth.data.Uid
+                    }
+                });
 
-                api.user = $http.get(baseURL + "/users/" + auth.data.Uid);
-
-                api.user.$promise
+                api.user
                 .then(
-                    function(user) {
+                    function(result) {
+                        var user = result.data;
+
                         if (!user.EncPrivateKey) {
                             api.logout();
                             q.reject();
                         } else {
                             $q.all([
-                                $injector.get("Contact").query().$promise,
-                                $injector.get("Label").get().$promise
+                                $http.get(baseURL + "/contacts"),
+                                $http.get(baseURL + "/labels")
                             ]).then(
                                 function(result) {
-                                    user.contacts = result[0];
-                                    user.labels = result[1];
+                                    var contacts = result[0].data.Contacts;
+                                    var labels = result[1].data.Labels;
+
+                                    user.contacts = contacts;
+                                    user.labels = labels;
                                     q.resolve(user);
                                 },
                                 function() {
