@@ -45,18 +45,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <em ng-bind-html="user.addresses[0].Email"></em> <i class="fa fa-caret-down"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-right">
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li>
-                                <a href ng-click="openWizard()"><i class="fa fa-bolt"></i> {{ 'WIZARD' | translate }}</a>
+                                <a href ng-click="openWizard()"><i class="fa fa-magic"></i>{{ 'WIZARD' | translate }}</a>
                             </li>
                             <li>
-                                <a ui-sref="secured.settings"><i class="fa fa-cog"></i> {{ 'SETTINGS' | translate }}</a>
+                                <a ui-sref="secured.settings"><i class="fa fa-cog"></i>{{ 'SETTINGS' | translate }}</a>
                             </li>
                             <li>
-                                <a href ng-click="openReportModal()"><i class="fa fa-bug"></i> {{ 'BUG' | translate }}</a>
+                                <a href ng-click="openReportModal()"><i class="fa fa-bug"></i>{{ 'BUG' | translate }}</a>
                             </li>
                             <li>
-                                <a ng-click="logout()" href><i class="fa fa-power-off"></i> {{ 'LOGOUT' | translate }}</a>
+                                <a ng-click="logout()" href><i class="fa fa-power-off"></i>{{ 'LOGOUT' | translate }}</a>
                             </li>
                         </ul>
                     </li>
