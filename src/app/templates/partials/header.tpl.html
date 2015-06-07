@@ -30,7 +30,6 @@
                     <!-- /input-group -->
                 </form>
                 <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState" ng-click="openSearchModal()"><span class="fa fa-search"></span></a>
-                <p class="navbar-text" ng-if="isLoggedIn"><em ng-bind-html="user.addresses[0].Email"></em></p>
                 <div error-reporter class="alert alert-danger centered ng-hide">
                     <button type="button" class="close" ng-click="errorReporter.active = false">
                         <span aria-hidden="true">&times;</span>
@@ -39,23 +38,27 @@
                     {{ errorReporter.error }}
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="nav_wizard" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ng-click="openWizard()"><span class="visible-lg-inline-block fa fa-tachometer"></span> Wizard </a>
+                    <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-users"></span> {{ 'CONTACTS' | translate }}</a>
                     </li>
-                    <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a ui-sref="admin"><span class="visible-lg-inline-block fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
-                    </li>
-                    <li id="nav_admin" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ng-click="openReportModal()"><span class="visible-lg-inline-block fa fa-bug"></span> {{ 'BUG' | translate }}</a>
-                    </li>
-                    <li id="nav_settings" ng-if="'secured.**' | includedByState">
-                        <a ui-sref="secured.settings" ng-class="{ active: ('secured.settings.**' | includedByState) }"><span class="visible-lg-inline-block fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
-                    </li>
-                    <li id="nav_login" ng-if="!isLoggedIn">
-                        <a ui-sref="login"><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGIN' | translate }}</a>
-                    </li>
-                    <li id="nav_logout" ng-if="isLoggedIn">
-                        <a ng-click="logout()" href><span class="visible-lg-inline-block fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
+                    <li class="dropdown" ng-if="isLoggedIn">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <em ng-bind-html="user.addresses[0].Email"></em> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li>
+                                <a href ng-click="openWizard()"><i class="fa fa-magic"></i>{{ 'WIZARD' | translate }}</a>
+                            </li>
+                            <li>
+                                <a ui-sref="secured.settings"><i class="fa fa-cog"></i>{{ 'SETTINGS' | translate }}</a>
+                            </li>
+                            <li>
+                                <a href ng-click="openReportModal()"><i class="fa fa-bug"></i>{{ 'BUG' | translate }}</a>
+                            </li>
+                            <li>
+                                <a ng-click="logout()" href><i class="fa fa-power-off"></i>{{ 'LOGOUT' | translate }}</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -124,14 +127,6 @@
                         </td>
                         <td>
                             <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="nav_admin" ng-if="isLoggedIn && 'secured.**' | includedByState">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="admin"><span class="fa fa-tachometer"></span> {{ 'ADMIN' | translate }}</a>
-                        </td>
-                        <td id="nav_bug" ng-if="isLoggedIn">
-                            <a href ng-click="openReportModal()"><span class="fa fa-bug"></span> {{ 'BUG' | translate }}</a>
                         </td>
                     </tr>
                     <tr>
