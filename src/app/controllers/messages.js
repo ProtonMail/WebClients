@@ -103,7 +103,7 @@ angular.module("proton.controllers.Messages", [
             var end = $scope.messages.indexOf(_.last(messagesSelected));
 
             for (var i = start; i < end; i++) {
-                $scope.messages[i].selected = true;
+                $scope.messages[i].Selected = true;
             }
         }
     };
@@ -114,8 +114,8 @@ angular.module("proton.controllers.Messages", [
         }, 20);
         $('body').addClass('dragging');
         $('#main').append('<div id="dragOverlay"></div>');
-        if(message && !!!message.selected) {
-            message.selected = true;
+        if(message && !!!message.Selected) {
+            message.Selected = true;
             $scope.$apply();
         }
     };
@@ -239,7 +239,7 @@ angular.module("proton.controllers.Messages", [
         var status = !!!$scope.allSelected();
 
         _.forEach($scope.messages, function(message) {
-            message.selected = status;
+            message.Selected = status;
         }, this);
     };
 
@@ -249,13 +249,13 @@ angular.module("proton.controllers.Messages", [
 
     $scope.unselectAllMessages = function() {
         _.forEach($scope.messages, function(message) {
-            message.selected = false;
+            message.Selected = false;
         }, this);
     };
 
     $scope.selectedMessages = function() {
         return _.select($scope.messages, function(message) {
-            return message.selected === true;
+            return message.Selected === true;
         });
     };
 
@@ -392,7 +392,6 @@ angular.module("proton.controllers.Messages", [
         $scope.params = {
             alsoArchived: false
         };
-
 
         $timeout(function() {
             $('#searchLabels').focus();
@@ -942,7 +941,7 @@ angular.module("proton.controllers.Messages", [
 
                         promises.push(outsidePromise);
 
-                        newMessage.MessageID = newMessage.MessageID || 0;
+                        newMessage.ID = newMessage.ID || 0;
 
                         // When all promises are done
                         Promise.all(promises).then(function() {
@@ -1035,13 +1034,14 @@ angular.module("proton.controllers.Messages", [
     CONSTANTS
 ) {
     $scope.message = message;
-    $rootScope.pageName = message.MessageTitle;
+    $rootScope.pageName = message.Subject;
     $scope.tools = tools;
 
     $scope.displayContent = function() {
         message.clearTextBody().then(function(result) {
             var content = message.clearImageBody(result);
 
+            content = tools.replaceLineBreaks(content);
             $scope.content = content;
         });
     };

@@ -6,10 +6,10 @@
             data-drag="true"
             jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
             data-jqyoui-options="draggableOptions"
-            ng-class="{ unread: !message.IsRead, selected: message.selected, starred: message.Tag == 'starred', encrypted: message.IsEncrypted == '1' }"
+            ng-class="{ unread: !!!message.IsRead, selected: message.Selected, starred: !!message.Starred, encrypted: message.IsEncrypted == '1' }"
             ng-init="message.Location=randLocation()">
             <td class="actions">
-                <input type="checkbox" ng-model="message.selected" ng-click="onSelectMessage($event, message)" />
+                <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
                 <span class="fa" ng-class="{
               'fa-lock':
                 !!!(message.IsEncrypted == '0'),
@@ -21,7 +21,7 @@
                 !!(message.IsEncrypted == '0')
             }" title="{{ getMessageEncryptionType(message) }}"></span>
                 <a href ng-click="toggleStar(message)">
-                    <span class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></span>
+                    <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>
                 </a>
             </td>
             <td class="recipient">

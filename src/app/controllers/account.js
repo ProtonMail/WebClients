@@ -101,6 +101,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $('input').blur();
         var mailboxPassword = this.mailboxPassword;
         clearErrors();
+
         networkActivityTracker.track(
             authentication
             .unlockWithPassword(mailboxPassword)

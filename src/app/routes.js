@@ -9,7 +9,7 @@ angular.module("proton.routes", [
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
 
     var messageViewOptions = {
-        url: "/:MessageID",
+        url: "/:id",
         controller: "ViewMessageController as messageViewCtrl",
         templateUrl: "templates/views/message.tpl.html",
         resolve: {
@@ -24,7 +24,7 @@ angular.module("proton.routes", [
             ) {
                 if (authentication.isLoggedIn()) {
                     return networkActivityTracker.track(
-                        messageCache.get($stateParams.MessageID).$promise
+                        messageCache.get($stateParams.id).$promise
                     );
                 }
             }
@@ -422,7 +422,7 @@ angular.module("proton.routes", [
     .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.print", _.extend(_.clone(messageViewOptions), {
-        url: "/print/:MessageID",
+        url: "/print/:id",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
@@ -434,7 +434,7 @@ angular.module("proton.routes", [
     }))
 
     .state("secured.raw", _.extend(_.clone(messageViewOptions), {
-        url: "/raw/:MessageID",
+        url: "/raw/:id",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
