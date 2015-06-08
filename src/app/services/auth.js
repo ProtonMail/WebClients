@@ -266,12 +266,19 @@ angular.module("proton.authentication", [
                 // Returns an async promise that will be successful only if the mailbox password
                 // proves correct (we test this by decrypting a small blob)
                 unlockWithPassword: function(pwd) {
+
                     var req = $q.defer();
                     var self = this;
 
                     if (pwd) {
-                        self.user
-                        .then(
+
+                        var $getUser = $http.get(baseURL + "/users", {
+                            params: {
+                                id: auth.data.Uid
+                            }
+                        });
+
+                        $getUser.then(
                             function(result) {
                                 var user = result.data;
 
