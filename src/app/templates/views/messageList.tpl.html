@@ -24,6 +24,7 @@
                     <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>
                 </a>
             </td>
+
             <td class="recipient">
                 <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                 <span ng-if="showTo(message)">
@@ -37,11 +38,12 @@
                     <span pt-tooltip="{{ message.SenderAddress | lowercase }}">{{ message.SenderName | username }}</span>
                 </span>
             </td>
+
             <td class="subject">
-                <i class="fa fa-clock-o" ng-show="message.ExpirationTime>0"></i>
+                <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment"></i>
                 <h4>{{ message.Subject }}</h4>
-                <span ng-repeat="label in message.Labels" class="label label-pm" style="background-color: {{ label.LabelColor }}">{{ label.LabelName }}</span>
+                <span ng-repeat="id in message.LabelIDs" class="label label-pm" style="background-color: {{ labels[id].Color }}">{{ labels[id].Name }}</span>
             </td>
 
             <td class="size">

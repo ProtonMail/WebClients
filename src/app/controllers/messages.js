@@ -22,8 +22,12 @@ angular.module("proton.controllers.Messages", [
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
+    $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
+    $scope.page = parseInt($stateParams.page || "1");
+    $scope.messages = messages;
+    $scope.messageCount = $rootScope.Total;
 
     // TODO this is just for temporary until API works
     $scope.randLocation = function() {
@@ -81,10 +85,6 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$on("$destroy", unsubscribe);
-
-    $scope.page = parseInt($stateParams.page || "1");
-    $scope.messages = messages;
-    $scope.messageCount = $rootScope.Total;
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
@@ -207,6 +207,7 @@ angular.module("proton.controllers.Messages", [
         }
 
         networkActivityTracker.track($q.all(_.map(messages, function(message) {
+            console.log(message);
             return message.toggleStar();
         })).then(function() {
             _.each(messages, function(message) {
@@ -388,7 +389,6 @@ angular.module("proton.controllers.Messages", [
             }
         });
 
-        $scope.labels = labels;
         $scope.params = {
             alsoArchived: false
         };

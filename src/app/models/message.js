@@ -46,6 +46,10 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/draft/:id'
             },
             // GET
+            count: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/count'
+            },
             get: {
                 method: 'get',
                 url: authentication.baseURL + '/messages/:id',
@@ -131,10 +135,16 @@ angular.module("proton.models.message", ["proton.constants"])
             return this._moment;
         },
         toggleStar: function() {
-            this.Tag = this.Tag === "starred" ? "" : "starred";
-            return this.$patch({
-                action: this.Tag === 'starred' ? "star" : "unstar"
-            });
+            var promise;
+
+            if(this.Starred === 1) {
+                promise = this.unstar({id: this.ID});
+            } else {
+                promise = this.star({id: this.ID});
+            }
+
+            return promise;
+
         },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
