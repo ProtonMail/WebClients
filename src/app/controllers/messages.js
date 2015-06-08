@@ -359,7 +359,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.openLabels = function(message) {
         var messages = [];
-        var labels = authentication.user.labels;
+        var labels = authentication.user.Labels;
         var messagesLabel = [];
 
         if (angular.isDefined(message)) {

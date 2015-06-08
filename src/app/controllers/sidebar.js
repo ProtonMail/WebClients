@@ -2,8 +2,8 @@ angular.module("proton.controllers.Sidebar", [])
 
 .controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, Message, authentication, tools, notify, CONSTANTS) {
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
-
-    $scope.labels = authentication.user.labels;
+    
+    $scope.labels = authentication.user.Labels;
     $scope.droppableOptions = {
         accept: '.ui-draggable',
         activeClass: 'drop-active',
