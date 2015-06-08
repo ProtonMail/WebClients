@@ -4,13 +4,13 @@
             <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABELS' | translate }}..." class="form-control" ng-model="searchLabels" />
         </div>
         <ul class="list-group" ng-show="labels.length > 0">
-            <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels">
+            <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels | orderBy: 'Order'">
                 <!-- <input type="checkbox" ng-model="label.selected" /> -->
                 <a href="" ng-click="toggleLabel(label)">
                     <i class="fa text-muted" ng-class="{'fa-square': label.mode === 0, 'fa-minus-square': label.mode === 2, 'fa-check-square': label.mode === 1}"></i>
                 </a>
-                <span class="label label-pm" style="background-color: {{label.LabelColor}}">
-                    <i class="fa fa-tag"></i> {{label.LabelName}}
+                <span class="label label-pm" style="background-color: {{label.Color}}">
+                    <i class="fa fa-tag"></i> {{label.Name}}
                 </span>
             </li>
         </ul>

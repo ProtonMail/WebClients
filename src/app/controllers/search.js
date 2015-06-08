@@ -12,7 +12,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     var modalId = 'searchModal';
 
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
-    $scope.labels = authentication.user.labels;
+    $scope.labels = authentication.user.Labels;
 
     $scope.search = function(navbarValue) {
         var params = {};

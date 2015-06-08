@@ -56,9 +56,9 @@
     <div class="divider"></div>
     <div class="hidden-xs hidden-sm" id="sidebarLabels">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="label in labelsDisplayed()" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.LabelID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
-                <a ui-sref="secured.label({label: '{{label.LabelID}}' })" class="btn" ui-sref-active="active">
-                    <span class="fa fa-tag" style="color: {{label.LabelColor}}"></span> <span>{{label.LabelName}}</span>
+            <li class="list-group-item" ng-repeat="label in labelsDisplayed() | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
+                <a ui-sref="secured.label({label: '{{label.ID}}' })" class="btn" ui-sref-active="active">
+                    <span class="fa fa-tag" style="color: {{label.Color}}"></span> <span>{{label.Name}}</span>
                 </a>
             </li>
         </ul>

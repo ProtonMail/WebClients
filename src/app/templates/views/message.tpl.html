@@ -4,12 +4,12 @@
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>
     <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link" title="{{ 'FORWARD' | translate }}"><i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}</a></div>
 </div>
-<div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Tag == 'starred' }">
+<div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
     <div class="pull-right">
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </div>
     <h1>
-        <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Tag == 'starred') ? 'fa-star' : 'fa-star-o' }}"></i></a>
+        <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
         <span class="padlock">
             <i class="fa"
             ng-class=
@@ -28,7 +28,7 @@
         <span class="attachement" ng-show="message.AttachmentIDList.length > 0">
             <i class="fa fa-paperclip"></i>
         </span>
-        {{ message.MessageTitle }}
+        {{ message.Subject }}
         <span class="label label-pm" style="background-color: {{label.LabelColor}}" ng-repeat="label in message.Labels">
             {{label.LabelName}} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times"></i></a>
         </span>
@@ -36,32 +36,32 @@
     <ul class="infos">
         <li>
             <strong>{{ 'FROM' | translate }}</strong>
-            <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.Sender)"></i>
-            <b>{{message.SenderName}}</b> &lt;{{message.Sender}}&gt;
+            <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>
+            <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
             <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
             <span class="fa fa-check-circle verified" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
         </li>
         <li>
             <strong>{{ 'TO' | translate }}</strong>
-            <ul class="list-inline inline" ng-if="message.RecipientList.length">
-                <li ng-repeat="email in message.RecipientList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+            <ul class="list-inline inline" ng-if="message.ToList.length">
+                <li ng-repeat="email in message.ToList">
+                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>
-        <li ng-if="message.CCList">
+        <li ng-if="message.CCList.length > 0">
             <strong>{{ 'CC' | translate }}</strong>
-            <ul class="list-inline inline" ng-if="message.CCList.length">
-                <li ng-repeat="email in message.CCList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.CCList">
+                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>
-        <li ng-if="message.BCCList">
+        <li ng-if="message.BCCList.length > 0">
             <strong>{{ 'BCC' | translate }}</strong>
-            <ul class="list-inline inline" ng-if="message.BCCList.length">
-                <li ng-repeat="email in message.BCCList.split(',')">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email)" class="fa fa-lock text-purple"></i> {{ email }}</a>
+            <ul class="list-inline inline">
+                <li ng-repeat="email in message.BCCList">
+                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>

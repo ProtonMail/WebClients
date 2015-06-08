@@ -318,9 +318,10 @@ angular.module("proton.authentication", [
 
                             $rootScope.isLoggedIn = true;
                             $rootScope.user = user;
+                            this.user = user;
 
                             return user;
-                        },
+                        }.bind(this),
                         errorReporter.catcher("Please try again later")
                     );
                 },

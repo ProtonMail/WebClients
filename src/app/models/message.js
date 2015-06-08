@@ -46,6 +46,19 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/draft/:id'
             },
             // GET
+            count: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/count'
+            },
+            get: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/:id',
+                transformResponse: function(data) {
+                    var json = angular.fromJson(data);
+
+                    return json.Message;
+                }
+            },
             query: {
                 method: 'get',
                 isArray: true,
@@ -122,10 +135,16 @@ angular.module("proton.models.message", ["proton.constants"])
             return this._moment;
         },
         toggleStar: function() {
-            this.Tag = this.Tag === "starred" ? "" : "starred";
-            return this.$patch({
-                action: this.Tag === 'starred' ? "star" : "unstar"
-            });
+            var promise;
+
+            if(this.Starred === 1) {
+                promise = this.unstar({id: this.ID});
+            } else {
+                promise = this.star({id: this.ID});
+            }
+
+            return promise;
+
         },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
@@ -167,7 +186,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         plainText: function() {
-            var body = this._decryptedBody || this.MessageBody;
+            var body = this.DecryptedBody || this.Body;
 
             return body;
         },
@@ -180,7 +199,7 @@ angular.module("proton.models.message", ["proton.constants"])
             if ($rootScope.isMobile) {
                 messageBody = this.messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
             } else {
-                messageBody = this.MessageBody;
+                messageBody = this.Body;
                 messageBody = tools.fixImages(messageBody);
             }
 
@@ -189,7 +208,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 messageBody = '\n';
             }
             // Set input elements
-            this.MessageBody = messageBody;
+            this.Body = messageBody;
         },
 
         validate: function(draft) {
@@ -345,12 +364,12 @@ angular.module("proton.models.message", ["proton.constants"])
                     });
                 }
 
-                newMessage.MessageBody = {
+                newMessage.Body = {
                     outsiders: ''
                 };
 
-                pmcw.encryptMessage(this.MessageBody, authentication.user.PublicKey).then(function(result) {
-                    newMessage.MessageBody.self = result;
+                pmcw.encryptMessage(this.Body, authentication.user.PublicKey).then(function(result) {
+                    newMessage.Body.self = result;
 
                     var newDraft = angular.isUndefined(this.MessageID);
                     var draftPromise;
@@ -396,7 +415,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
-                if (_.isUndefined(this._decryptedBody) && !!!this.decrypting) {
+                if (_.isUndefined(this.DecryptedBody) && !!!this.decrypting) {
                     this.decrypting = true;
 
                     try {
@@ -404,22 +423,22 @@ angular.module("proton.models.message", ["proton.constants"])
                         var pw = pmcw.decode_base64(local);
 
                         pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
-                            pmcw.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
-                                this._decryptedBody = result;
+                            pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
+                                this.DecryptedBody = result;
                                 this.failedDecryption = false;
                                 this.decrypting = false;
                                 deferred.resolve(result);
                             }.bind(this));
                         }.bind(this));
                     } catch (err) {
-                        this._decryptedBody = "";
+                        this.DecryptedBody = "";
                         this.failedDecryption = true;
                     }
                 } else {
-                    deferred.resolve(this._decryptedBody);
+                    deferred.resolve(this.DecryptedBody);
                 }
             } else {
-                deferred.resolve(this.MessageBody);
+                deferred.resolve(this.Body);
             }
 
             return deferred.promise;

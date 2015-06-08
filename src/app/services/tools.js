@@ -154,7 +154,7 @@ angular.module("proton.tools", [])
                 return true;
             } else {
                 return false;
-            } 
+            }
         }
 
         function break_images(html) {
@@ -353,6 +353,10 @@ angular.module("proton.tools", [])
           return defer.promise;
        }
 
+       function replace_line_breaks(content) {
+           return content.replace(/\n/g, '<br />');
+       }
+
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -377,6 +381,7 @@ angular.module("proton.tools", [])
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
             renderStorageBar: render_storage_bar,
+            replaceLineBreaks: replace_line_breaks
         };
 
         return tools;
