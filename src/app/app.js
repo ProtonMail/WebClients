@@ -3,6 +3,7 @@
 angular.module("proton", [
     // "ngAnimate", // We can't use the `ngAnimate`, it causes delays on application and also a problem with the iframe sandbox.
     "ngSanitize",
+    "ngResource",
     "ngCookies",
     "LocalStorageModule",
     "btford.markdown",

@@ -124,7 +124,7 @@ angular.module("proton.routes", [
                             params = _.pick(params, 'id', 'LabelID', 'filter', 'sort', 'page');
                             messagesPromise = Message.labels(params).$promise;
                         } else {
-                            messagesPromise = Message.query(params).$promise;
+                            messagesPromise = Message.get(params).$promise;
                         }
 
                         return networkActivityTracker.track(
@@ -135,31 +135,6 @@ angular.module("proton.routes", [
                         );
                     } else {
                         return [];
-                    }
-                },
-
-                messageCount: function(
-                    $stateParams,
-                    Message,
-                    authentication,
-                    CONSTANTS,
-                    errorReporter,
-                    networkActivityTracker
-                ) {
-                    var mailbox = this.data.mailbox;
-                    if (authentication.isSecured()) {
-                        var params = {
-                            "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                            "Page": $stateParams.page
-                        };
-
-                        return networkActivityTracker.track(
-                            errorReporter.resolve(
-                                "Message count couldn't be queried - please try again later.",
-                                Message.count(params).$promise,
-                                {count: 0}
-                            )
-                        );
                     }
                 }
             }
@@ -417,7 +392,11 @@ angular.module("proton.routes", [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication) {
-                return authentication.fetchUserInfo();
+                if(angular.isDefined(authentication.user) && authentication.user) {
+                    return authentication.user;
+                } else {
+                    return authentication.fetchUserInfo();
+                }
             }
         },
 

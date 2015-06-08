@@ -1,8 +1,6 @@
 angular.module("proton.models.label", [])
 
-.factory("Label", function($resource, $injector) {
-    var authentication = $injector.get('authentication');
-
+.factory("Label", function($resource, authentication) {
     return $resource(
         authentication.baseURL + '/labels/:id',
         authentication.params({

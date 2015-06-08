@@ -270,32 +270,30 @@ angular.module("proton.authentication", [
                     var self = this;
 
                     if (pwd) {
-                        $timeout(function() {
-                            self.user
-                            .then(
-                                function(result) {
-                                    var user = result.data;
-                                    
-                                    return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
-                                    .then(
-                                        function() {
-                                            auth.savePassword(pwd);
-                                            req.resolve(200);
-                                        },
-                                        function(rejection) {
-                                            req.reject({
-                                                message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
-                                            });
-                                        }
-                                    );
-                                },
-                                function(rejection) {
-                                    req.reject({
-                                        message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
-                                    });
-                                }
-                            );
-                        }, 200);
+                        self.user
+                        .then(
+                            function(result) {
+                                var user = result.data;
+
+                                return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
+                                .then(
+                                    function() {
+                                        auth.savePassword(pwd);
+                                        req.resolve(200);
+                                    },
+                                    function(rejection) {
+                                        req.reject({
+                                            message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                        });
+                                    }
+                                );
+                            },
+                            function(rejection) {
+                                req.reject({
+                                    message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                });
+                            }
+                        );
                     } else {
                         req.reject({
                             message: "Password is required"
@@ -311,13 +309,16 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
+
                     return promise.then(
                         function(user) {
                             if (user.DisplayName.length === 0) {
-                                user.DisplayName = user.addresses[0].Email;
+                                user.DisplayName = user.Addresses[0].Email;
                             }
+
                             $rootScope.isLoggedIn = true;
                             $rootScope.user = user;
+
                             return user;
                         },
                         errorReporter.catcher("Please try again later")
@@ -361,11 +362,8 @@ angular.module("proton.authentication", [
                                 $http.get(baseURL + "/labels")
                             ]).then(
                                 function(result) {
-                                    var contacts = result[0].data.Contacts;
-                                    var labels = result[1].data.Labels;
-
-                                    user.contacts = contacts;
-                                    user.labels = labels;
+                                    user.Contacts = result[0].data.Contacts;
+                                    user.Labels = result[1].data.Labels;
                                     q.resolve(user);
                                 },
                                 function() {

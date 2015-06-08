@@ -16,7 +16,6 @@ angular.module("proton.controllers.Messages", [
     Message,
     authentication,
     messageCache,
-    messageCount,
     messages,
     networkActivityTracker,
     notify
@@ -83,18 +82,10 @@ angular.module("proton.controllers.Messages", [
     $scope.$on("$destroy", unsubscribe);
 
     $scope.page = parseInt($stateParams.page || "1");
+    $scope.messages = messages.Messages;
+    $scope.messageCount = messages.Total;
 
-    $scope.messages = messages;
-
-    if($state.is('secured.label') || $state.is('secured.search')) {
-        $scope.messageCount = $rootScope.Total;
-    } else {
-        if ($stateParams.filter) {
-            $scope.messageCount = messageCount[$stateParams.filter === 'unread' ? "UnRead" : "Read"];
-        } else {
-            $scope.messageCount = messageCount.Total;
-        }
-    }
+    console.log(messages);
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},

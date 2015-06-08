@@ -5,7 +5,6 @@ angular.module("proton.models.message", ["proton.constants"])
     $rootScope,
     $compile,
     $templateCache,
-    $injector,
     $interval,
     $timeout,
     $q,
