@@ -193,30 +193,40 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('starMessages', function(event) {
-        $scope.toggleStar();
+        var messagesSelected = $scope.messagesSelected();
+        var ids = [];
+
+        _.each(messagesSelected, function(message) {
+            ids.push(message.ID);
+            message.Starred = 1;
+        });
+
+        Message.star({IDs: ids});
     });
 
     $scope.toggleStar = function(message) {
         var inStarred = $state.is('secured.starred');
-        var messages = [];
+        var index = $scope.messages.indexOf(message);
+        var ids = [];
+        var promise;
 
         if(angular.isDefined(message)) {
-            messages.push(message);
-        } else {
-            messages = $scope.selectedMessages();
+            ids.push(message.ID);
         }
 
-        networkActivityTracker.track($q.all(_.map(messages, function(message) {
-            return message.toggleStar();
-        })).then(function() {
-            _.each(messages, function(message) {
-                var index = $scope.messages.indexOf(message);
+        if(message.Starred === 1) {
+            promise = Message.unstar({IDs: ids}).$promise;
+            message.Starred = 0;
 
-                if (inStarred) {
-                    $scope.messages.splice(index, 1);
-                }
-            });
-        }));
+            if (inStarred) {
+                $scope.messages.splice(index, 1);
+            }
+        } else {
+            promise = Message.star({IDs: ids}).$promise;
+            message.Starred = 1;
+        }
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.allSelected = function() {
