@@ -224,7 +224,7 @@ angular.module("proton.controllers.Messages", [
 
         if ($scope.messages.length > 0) {
             _.forEach($scope.messages, function(message) {
-                if (!!!message.selected) {
+                if (!!!message.Selected) {
                     status = false;
                 }
             });
