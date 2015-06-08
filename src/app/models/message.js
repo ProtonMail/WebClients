@@ -138,9 +138,9 @@ angular.module("proton.models.message", ["proton.constants"])
             var promise;
 
             if(this.Starred === 1) {
-                promise = this.unstar({id: this.ID});
+                promise = this.$unstar({}, {IDs: [this.ID]});
             } else {
-                promise = this.star({id: this.ID});
+                promise = this.$star({}, {IDs: [this.ID]});
             }
 
             return promise;
@@ -166,9 +166,6 @@ angular.module("proton.models.message", ["proton.constants"])
             this.IsRead = +status;
             // $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1); TODO adapt with location
             return this.$patch({ action: status ? "read" : "unread"});
-        },
-        delete: function() {
-            return this.$delete();
         },
         numberOfAttachments: function() {
             return this.AttachmentIDList.split(",").length;

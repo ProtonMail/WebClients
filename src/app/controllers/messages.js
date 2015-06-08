@@ -207,7 +207,6 @@ angular.module("proton.controllers.Messages", [
         }
 
         networkActivityTracker.track($q.all(_.map(messages, function(message) {
-            console.log(message);
             return message.toggleStar();
         })).then(function() {
             _.each(messages, function(message) {
