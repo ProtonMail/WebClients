@@ -138,9 +138,11 @@ angular.module("proton.models.message", ["proton.constants"])
             var promise;
 
             if(this.Starred === 1) {
-                promise = this.$unstar({}, {IDs: [this.ID]});
+                this.Starred = 0;
+                promise = Message.unstar({IDs: [this.ID]});
             } else {
-                promise = this.$star({}, {IDs: [this.ID]});
+                this.Starred = 1;
+                promise = Message.star({IDs: [this.ID]});
             }
 
             return promise;
