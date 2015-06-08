@@ -248,7 +248,7 @@ angular.module("proton", [
         if ($state.includes("secured.*.message")) {
             $state.go("secured.reply", {
                 action: 'reply',
-                id: $stateParams.MessageID
+                id: $stateParams.ID
             });
         }
     });
@@ -256,7 +256,7 @@ angular.module("proton", [
         if ($state.includes("secured.*.message")) {
             $state.go("secured.reply", {
                 action: 'forward',
-                id: $stateParams.MessageID
+                id: $stateParams.ID
             });
         }
     });

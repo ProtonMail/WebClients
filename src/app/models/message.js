@@ -46,6 +46,18 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/draft/:id'
             },
             // GET
+            query: {
+                method: 'get',
+                isArray: true,
+                url: authentication.baseURL + '/messages',
+                transformResponse: function(data) {
+                    var json = angular.fromJson(data);
+
+                    $rootScope.TotalPages = json.TotalPages;
+                    $rootScope.Total = json.Total;
+                    return json.Messages;
+                }
+            },
             latest: {
                 method: 'get',
                 url: authentication.baseURL + '/messages/latest/:time'

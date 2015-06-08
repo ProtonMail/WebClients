@@ -124,7 +124,7 @@ angular.module("proton.routes", [
                             params = _.pick(params, 'id', 'LabelID', 'filter', 'sort', 'page');
                             messagesPromise = Message.labels(params).$promise;
                         } else {
-                            messagesPromise = Message.get(params).$promise;
+                            messagesPromise = Message.query(params).$promise;
                         }
 
                         return networkActivityTracker.track(

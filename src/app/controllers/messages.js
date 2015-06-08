@@ -79,13 +79,12 @@ angular.module("proton.controllers.Messages", [
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
     });
+
     $scope.$on("$destroy", unsubscribe);
 
     $scope.page = parseInt($stateParams.page || "1");
-    $scope.messages = messages.Messages;
-    $scope.messageCount = messages.Total;
-
-    console.log(messages);
+    $scope.messages = messages;
+    $scope.messageCount = $rootScope.Total;
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
@@ -187,7 +186,7 @@ angular.module("proton.controllers.Messages", [
                 $rootScope.$broadcast('loadMessage', message);
             } else {
                 $state.go("secured." + mailbox + ".message", {
-                    MessageID: message.MessageID
+                    id: message.ID
                 });
             }
         }
@@ -409,7 +408,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
-        var messages = _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+        var messages = _.map($scope.selectedMessages(), function(message) { return {id: message.ID}; });
 
         Message.apply({
             messages: messages,
@@ -424,7 +423,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.applyLabels = function(messages) {
-        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.ID}; });
 
         Message.apply({
             messages: messages,
@@ -1058,7 +1057,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.detachLabel = function(label) {
         Message.apply({
-            messages: [{id: message.MessageID}],
+            messages: [{id: message.ID}],
             labels_actions: [{id: label.LabelID, action: 0}],
             archive: '0'
         }).$promise.then(function(result) {
@@ -1071,7 +1070,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.saveLabels = function() {
-        $scope.applyLabels([{id: message.MessageID}]);
+        $scope.applyLabels([{id: message.ID}]);
     };
 
     $scope.sendMessageTo = function(email) {
@@ -1163,7 +1162,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.print = function() {
         var url = $state.href('secured.print', {
-            MessageID: message.MessageID
+            id: message.ID
         });
 
         window.open(url, '_blank');
@@ -1171,7 +1170,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.viewRaw = function() {
         var url = $state.href('secured.raw', {
-            MessageID: message.MessageID
+            id: message.ID
         });
 
         window.open(url, '_blank');
