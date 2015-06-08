@@ -14,6 +14,7 @@ angular.module("proton.controllers.Settings", [
     confirmModal,
     labelModal,
     Label,
+    Setting,
     User,
     user,
     tools,
@@ -26,12 +27,13 @@ angular.module("proton.controllers.Settings", [
     $scope.displayName = user.DisplayName;
     $scope.notificationEmail = user.NotificationEmail;
     $scope.dailyNotifications = !!user.notify_on;
-    $scope.autosaveContacts = !!user.auto_save_contacts;
+    $scope.autosaveContacts = !!user.AutoSaveContacts;
     $scope.signature = user.Signature;
-    $scope.aliases = user.addresses;
-    $scope.labels = user.labels;
-    $scope.cssTheme = user.user_theme;
+    $scope.aliases = user.Addresses;
+    $scope.labels = user.Labels;
+    $scope.cssTheme = user.Theme;
 
+console.log(user);
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
@@ -41,7 +43,7 @@ angular.module("proton.controllers.Settings", [
         orderChanged: function() {
           aliasOrder = [];
           _.forEach($scope.aliases, function(d,i) {
-            aliasOrder[i] = d.AddressID;
+            aliasOrder[i] = d.Send;
           });
           $scope.saveAliases(aliasOrder);
         }
@@ -54,8 +56,7 @@ angular.module("proton.controllers.Settings", [
         orderChanged: function() {
           labelOrder = [];
           _.forEach($scope.labels, function(d,i) {
-            labelOrder[i] = {order: d.LabelNum};
-            $scope.labels[i].LabelNum = i + 1;
+            labelOrder[i] = d.Order;
           });
           $scope.saveLabelOrder(labelOrder);
         }
@@ -63,7 +64,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveNotification = function(form) {
         networkActivityTracker.track(
-            User.notificationEmail({
+            Setting.noticeemail({
                 "NotificationEmail": $scope.notificationEmail
             }).$promise.then(function(response) {
                 user.NotificationEmail = $scope.notificationEmail;
@@ -76,7 +77,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveDailyNotifications = function(form) {
         networkActivityTracker.track(
-          User.notify({
+          Setting.notify({
               "notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
               user.notify_on = +$scope.dailyNotifications;
@@ -89,10 +90,10 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveLoginPassword = function(form) {
         networkActivityTracker.track(
-            User.updatePassword({
-                old_pwd: $scope.oldLoginPassword,
-                old_hashed_pwd: pmcw.getHashedPassword($scope.oldLoginPassword),
-                new_pwd: $scope.newLoginPassword
+            Setting.password({
+                OldPassword: $scope.oldLoginPassword,
+                OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
+                NewPassword: $scope.newLoginPassword
             }).$promise.then(function(response) {
                 notify('Login password updated');
             }, function(response) {
@@ -114,8 +115,9 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveDisplayName = function(form) {
+        console.log($scope.displayName);
         networkActivityTracker.track(
-            User.dislayName({
+            Setting.display({
                 "DisplayName": $scope.displayName
             }).$promise.then(function(response) {
                 notify('Display name saved');
@@ -132,7 +134,7 @@ angular.module("proton.controllers.Settings", [
         signature = signature.replace(/\n/g, "<br />");
 
         networkActivityTracker.track(
-            User.signature({
+            Setting.signature({
                 "Signature": signature
             }).$promise.then(function(response) {
                 $scope.user.Signature = signature;
@@ -145,8 +147,8 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveAliases = function(aliasOrder) {
         networkActivityTracker.track(
-            User.aliases({
-                "order": aliasOrder
+            Setting.addressorder({
+                "Order": aliasOrder
             }).$promise.then(function(response) {
                 notify('Aliases saved');
             }, function(response) {
@@ -157,8 +159,8 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveAutosaveContacts = function(form) {
         networkActivityTracker.track(
-            User.autosaveContacts({
-                "auto_save": +$scope.autosaveContacts
+            Setting.autosave({
+                "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
                 notify('Autosave Preference saved');
                 user.auto_save_contacts = +$scope.autosaveContacts;
@@ -173,15 +175,17 @@ angular.module("proton.controllers.Settings", [
             params: {
                 title: 'Create New Label',
                 create: function(name, color) {
-                    Label.create({
-                        name: name,
-                        color: color
+                    Label.save({
+                        Name: name,
+                        Color: color,
+                        Display: 0
                     }).$promise.then(function(result) {
-                        if(angular.isDefined(result.id)) {
+                        console.log(result);
+                        if(angular.isDefined(result.Label)) {
                             // TODO add label to labels
                             labelModal.deactivate();
                             notify('Label created');
-                            $state.go($state.current, {}, {reload: true}); // force reload page
+                            $scope.labels.push(result.Label);
                         } else {
                             notify(result.error);
                             $log.error(result);
@@ -204,12 +208,15 @@ angular.module("proton.controllers.Settings", [
                 title: 'Edit Label',
                 label: label,
                 create: function(name, color) {
-                    Label.edit({
-                        label: name,
-                        color: color
+                    Label.update({
+                        id: label.ID,
+                        Name: name,
+                        Color: color,
+                        Display: label.Display
+
                     }).$promise.then(function(result) {
-                        label.LabelName = name;
-                        label.LabelColor = color;
+                        label.Name = name;
+                        label.Color = color;
                         labelModal.deactivate();
                         notify('Labed edited');
                     }, function(result) {
@@ -224,15 +231,16 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.deleteLabel = function(label) {
+        console.log($scope.labels);
         confirmModal.activate({
             params: {
                 title: 'Delete Label',
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
-                    Label.delete({LabelID: label.LabelID}).$promise.then(function(result) {
+                    Label.delete({id: label.ID}).$promise.then(function(result) {
                         confirmModal.deactivate();
-                        notify('Label ' + label.LabelName + ' deleteded');
-                        $state.go($state.current, {}, {reload: true}); // force reload page
+                        notify('Label ' + label.Name + ' deleted');
+                        $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
                     }, function(result) {
                         $log.error(result);
                     });
@@ -247,7 +255,7 @@ angular.module("proton.controllers.Settings", [
     $scope.saveLabelOrder = function(labelOrder) {
         networkActivityTracker.track(
             Label.order({
-                "new_order": labelOrder
+                "Order": labelOrder
             }).$promise.then(function(response) {
                 notify('Label order saved');
             }, function(response) {
@@ -258,14 +266,13 @@ angular.module("proton.controllers.Settings", [
 
     $scope.toggleDisplayLabel = function(label) {
         label.Display = (label.Display === 0)?1:0; // toggle display
-        Label.edit({
-            id: label.LabelID,
-            name: label.LabelName,
-            color: label.LabelColor,
-            display: label.Display
+        Label.update({
+            id: label.ID,
+            Name: label.Name,
+            Color: label.Color,
+            Display: label.Display
         }).$promise.then(function(result) {
-            notify('Label ' + label.LabelName + ' edited');
-            $state.go($state.current, {}, {reload: true}); // force reload page
+            notify('Label ' + label.Name + ' edited');
         }, function(result) {
             $log.error(result);
         });
@@ -273,8 +280,8 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveTheme = function(form) {
       networkActivityTracker.track(
-          User.theme({
-              "theme": $scope.cssTheme
+          Setting.theme({
+              "Theme": $scope.cssTheme
           }).$promise.then(function(response) {
               notify('Theme saved');
               user.user_theme = $scope.cssTheme;

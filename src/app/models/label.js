@@ -20,6 +20,11 @@ angular.module("proton.models.label", [])
             remove: {
                 method: 'put',
                 url: authentication.baseURL + '/labels/remove/:id'
+            },
+
+            update: {
+                method: 'put',
+                url: authentication.baseURL + '/labels/:id'
             }
         }
     );
