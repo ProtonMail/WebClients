@@ -9,7 +9,7 @@
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </div>
     <h1>
-        <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
+        <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
         <span class="padlock">
             <i class="fa"
             ng-class=

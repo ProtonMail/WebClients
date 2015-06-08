@@ -82,10 +82,12 @@ angular.module("proton.models.message", ["proton.constants"])
             // PUT
             star: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/star'
             },
             unstar: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unstar'
             },
             read: {
@@ -133,20 +135,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 this._moment = moment.unix(time);
             }
             return this._moment;
-        },
-        toggleStar: function() {
-            var promise;
-
-            if(this.Starred === 1) {
-                this.Starred = 0;
-                promise = Message.unstar({IDs: [this.ID]});
-            } else {
-                this.Starred = 1;
-                promise = Message.star({IDs: [this.ID]});
-            }
-
-            return promise;
-
         },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
