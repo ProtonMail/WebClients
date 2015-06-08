@@ -26,14 +26,13 @@ angular.module("proton.controllers.Settings", [
     $scope.tools = tools;
     $scope.displayName = user.DisplayName;
     $scope.notificationEmail = user.NotificationEmail;
-    $scope.dailyNotifications = !!user.notify_on;
+    $scope.dailyNotifications = !!user.Notify;
     $scope.autosaveContacts = !!user.AutoSaveContacts;
     $scope.signature = user.Signature;
     $scope.aliases = user.Addresses;
     $scope.labels = user.Labels;
     $scope.cssTheme = user.Theme;
 
-console.log(user);
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
@@ -78,9 +77,9 @@ console.log(user);
     $scope.saveDailyNotifications = function(form) {
         networkActivityTracker.track(
           Setting.notify({
-              "notify": +$scope.dailyNotifications
+              "Notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
-              user.notify_on = +$scope.dailyNotifications;
+              user.Notify = +$scope.dailyNotifications;
               notify('Daily Notification Preference Saved');
           }, function(response) {
               $log.error(response);
@@ -115,7 +114,6 @@ console.log(user);
     };
 
     $scope.saveDisplayName = function(form) {
-        console.log($scope.displayName);
         networkActivityTracker.track(
             Setting.display({
                 "DisplayName": $scope.displayName
@@ -163,7 +161,7 @@ console.log(user);
                 "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
                 notify('Autosave Preference saved');
-                user.auto_save_contacts = +$scope.autosaveContacts;
+                user.AutoSaveContacts = +$scope.autosaveContacts;
             }, function(response) {
                 $log.error(response);
             })
@@ -180,7 +178,6 @@ console.log(user);
                         Color: color,
                         Display: 0
                     }).$promise.then(function(result) {
-                        console.log(result);
                         if(angular.isDefined(result.Label)) {
                             // TODO add label to labels
                             labelModal.deactivate();
@@ -231,7 +228,6 @@ console.log(user);
     };
 
     $scope.deleteLabel = function(label) {
-        console.log($scope.labels);
         confirmModal.activate({
             params: {
                 title: 'Delete Label',
@@ -284,7 +280,7 @@ console.log(user);
               "Theme": $scope.cssTheme
           }).$promise.then(function(response) {
               notify('Theme saved');
-              user.user_theme = $scope.cssTheme;
+              user.Theme = $scope.cssTheme;
           }, function(response) {
               $log.error(response);
           })
