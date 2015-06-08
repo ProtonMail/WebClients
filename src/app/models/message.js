@@ -5,7 +5,6 @@ angular.module("proton.models.message", ["proton.constants"])
     $rootScope,
     $compile,
     $templateCache,
-    $injector,
     $interval,
     $timeout,
     $q,
@@ -21,100 +20,88 @@ angular.module("proton.models.message", ["proton.constants"])
 
     var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
-        authentication.baseURL + "/messages/:MessageID",
+        authentication.baseURL + '/messages/:id',
         authentication.params({
-            MessageID: "@MessageID"
+            id: '@id'
         }), {
-            query: {
-                method: "get",
-                isArray: true,
-                transformResponse: getFromJSONResponse('Messages')
-            },
-            search: {
-                method: "get",
-                transformResponse: function(data) {
-                    return angular.fromJson(data);
-                },
-                url: authentication.baseURL + "/messages/search"
-            },
-            advSearch: {
-                method: "get",
-                isArray: true,
-                url: authentication.baseURL + "/messages/adv_search",
-                transformResponse: function(data) {
-                    var json = angular.fromJson(data);
-
-                    if(angular.isDefined(json.Total)) {
-                        $rootScope.Total = json.Total;
-                    }
-
-                    return json.Messages;
-                }
-            },
-            delete: {
-                method: "delete"
-            },
-            get: {
-                method: "get",
-                url: authentication.baseURL + "/messages/:MessageID",
-                transformResponse: getFromJSONResponse()
-            },
-            patch: {
-                method: "put",
-                url: authentication.baseURL + "/messages/:MessageID/:action"
-            },
-            count: {
-                method: "get",
-                url: authentication.baseURL + "/messages/count",
-                transformResponse: getFromJSONResponse('MessageCount')
-            },
-            saveDraft: {
-                method: "post",
-                url: authentication.baseURL + "/messages/draft",
-                transformResponse: getFromJSONResponse()
-            },
-            updateDraft: {
-                method: "put",
-                url: authentication.baseURL + "/messages/draft"
-            },
+            // POST
             send: {
-                method: "post",
-                url: authentication.baseURL + "/messages",
-                headers: {
-                    'Accept': 'application/vnd.protonmail.api+json;apiversion=2;appversion=1'
-                }
+                method: 'post',
+                url: authentication.baseURL + '/messages/send'
             },
-            pubkeys: {
-                method: 'get',
-                url: authentication.baseURL + "/users/pubkeys/:Emails",
-                isArray: false,
-                transformResponse: getFromJSONResponse()
+            reply: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/reply/:id'
             },
-            // Get all messages with this label
-            labels: {
+            replyAll: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/replyall/:id'
+            },
+            forward: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/forward/:id'
+            },
+            draft: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/draft/:id'
+            },
+            // GET
+            query: {
                 method: 'get',
                 isArray: true,
-                url: authentication.baseURL + "/label",
+                url: authentication.baseURL + '/messages',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
-                    if(angular.isDefined(json.Total)) {
-                        $rootScope.Total = json.Total;
-                    }
-
+                    $rootScope.TotalPages = json.TotalPages;
+                    $rootScope.Total = json.Total;
                     return json.Messages;
                 }
             },
-            // Apply labels on messages
-            apply: {
+            latest: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/latest/:time'
+            },
+            unreaded: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/unread'
+            },
+            // PUT
+            star: {
                 method: 'put',
-                url: authentication.baseURL + "/labels/apply"
-            }
+                url: authentication.baseURL + '/messages/star'
+            },
+            unstar: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/unstar'
+            },
+            read: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/read'
+            },
+            unread: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/unread'
+            },
+            trash: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/trash'
+            },
+            inbox: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/inbox'
+            },
+            spam: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/spam'
+            },
+            archive: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/archive'
+            },
+            // DELETE
         }
     );
-
-    Message.REPLY_PREFIX = /re:/i;
-    Message.FORWARD_PREFIX = /fw:/i;
 
     _.extend(Message.prototype, {
         readableTime: function() {

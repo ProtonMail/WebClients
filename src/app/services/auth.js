@@ -13,24 +13,23 @@ angular.module("proton.authentication", [
 ) {
     $provide.provider("authentication", function AuthenticationProvider(pmcwProvider) {
         // PRIVATE VARIABLES
-
         var auth = {};
-        auth.provider = this;
-
         var baseURL;
+
+        auth.provider = this;
 
         // PRIVATE FUNCTIONS
 
         auth.saveAuthData = function(data) {
-            date = moment(Date.now() + data.expires_in * 1000);
+            date = moment(Date.now() + data.ExpiresIn * 1000);
 
-            window.localStorage[OAUTH_KEY + ":uid"] = data.uid;
-            window.localStorage[OAUTH_KEY + ":exp"] = date.toISOString();
-            window.localStorage[OAUTH_KEY + ":access_token"] = data.access_token;
-            window.localStorage[OAUTH_KEY + ":refresh_token"] = data.refresh_token;
+            window.localStorage[OAUTH_KEY + ":Uid"] = data.Uid;
+            window.localStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
+            window.localStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+            window.localStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
 
-            auth.data = _.pick(data, "uid", "access_token", "refresh_token");
-            auth.data.exp = date;
+            auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
+            auth.data.ExpiresIn = date;
 
             auth.setAuthHeaders();
         };
@@ -42,14 +41,14 @@ angular.module("proton.authentication", [
         // CONFIG-TIME API FUNCTIONS
 
         this.detectAuthenticationState = function() {
-            var dt = window.localStorage[OAUTH_KEY + ":exp"];
+            var dt = window.localStorage[OAUTH_KEY + ":ExpiresIn"];
             if (dt) {
                 dt = moment(dt);
                 auth.data = {
-                    uid: window.localStorage[OAUTH_KEY + ":uid"],
-                    exp: dt,
-                    access_token: window.localStorage[OAUTH_KEY + ":access_token"],
-                    refresh_token: window.localStorage[OAUTH_KEY + ":refresh_token"]
+                    Uid: window.localStorage[OAUTH_KEY + ":Uid"],
+                    ExpiresIn: dt,
+                    AccessToken: window.localStorage[OAUTH_KEY + ":AccessToken"],
+                    RefreshToken: window.localStorage[OAUTH_KEY + ":RefreshToken"]
                 };
 
                 if (dt.isBefore(Date.now())) {
@@ -135,28 +134,28 @@ angular.module("proton.authentication", [
 
                 loginWithCredentials: function(creds) {
                     var q = $q.defer();
-                    if (!creds.username || !creds.password) {
+
+                    if (!creds.Username || !creds.Password) {
                         q.reject({
-                            message: "Username and password are required to login"
+                            message: "Username and Password are required to login"
                         });
                     }
                     else {
                         delete $http.defaults.headers.common.Accept;
-                        $http.post(baseURL + "/auth/auth",
-                            _.extend(_.pick(creds, "username", "password"), {
-                                client_id: "demoapp",
-                                client_secret: "demopass",
-                                hashedpassword: "",
-                                grant_type: "password",
-                                state: api.randomString(24),
-                                redirect_uri: "https://protonmail.ch",
-                                response_type: "token"
+                        $http.post(baseURL + "/auth",
+                            _.extend(_.pick(creds, "Username", "Password"), {
+                                ClientID: "demoapp",
+                                ClientSecret: "demopass",
+                                GrantType: "password",
+                                State: api.randomString(24),
+                                RedirectURI: "https://protonmail.ch",
+                                ResponseType: "token"
                             })
                         ).then(
                             function(resp) {
                                 var data = resp.data;
                                 api.receivedCredentials(
-                                    _.pick(data, "access_token", "refresh_token", "uid", "expires_in")
+                                    _.pick(data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn")
                                 );
                                 // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                                 $state.go("login").then(
@@ -177,7 +176,7 @@ angular.module("proton.authentication", [
 
                 // Whether a user is logged in at all
                 isLoggedIn: function() {
-                    var loggedIn = auth.data && !_.isUndefined(auth.data.access_token) && api.refreshTokenIsDefined();
+                    var loggedIn = auth.data && !_.isUndefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
 
                     if (loggedIn && api.user === null) {
                         auth.setAuthHeaders();
@@ -189,7 +188,7 @@ angular.module("proton.authentication", [
                 refreshTokenIsDefined: function() {
                     var isDefined = false;
 
-                    if (auth.data && typeof auth.data.refresh_token !== 'undefined' && auth.data.refresh_token !== 'undefined') {
+                    if (auth.data && typeof auth.data.RefreshToken !== 'undefined' && auth.data.RefreshToken !== 'undefined') {
                         isDefined = true;
                     }
 
@@ -228,14 +227,14 @@ angular.module("proton.authentication", [
                     if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
                         $http.post(
                             baseURL + "/auth/refresh",
-                            _.extend(_.pick(auth.data, "access_token", "refresh_token"), {
-                                client_id: "demoapp",
-                                grant_type: "refresh_token",
-                                response_type: "token"
+                            _.extend(_.pick(auth.data, "AccessToken", "RefreshToken"), {
+                                ClientID: "demoapp",
+                                GrantType: "RefreshToken",
+                                ResponseType: "token"
                             })
                         ).then(
                             function(resp) {
-                                auth.saveAuthData(_.pick(resp.data, "access_token", "refresh_token", "uid", "expires_in"));
+                                auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
                             },
                             function(resp) {
                                 if(resp.error) {
@@ -269,31 +268,32 @@ angular.module("proton.authentication", [
                 unlockWithPassword: function(pwd) {
                     var req = $q.defer();
                     var self = this;
+
                     if (pwd) {
-                        $timeout(function() {
-                            self.user.$promise
-                            .then(
-                                function(user) {
-                                    return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
-                                    .then(
-                                        function() {
-                                            auth.savePassword(pwd);
-                                            req.resolve(200);
-                                        },
-                                        function(rejection) {
-                                            req.reject({
-                                                message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
-                                            });
-                                        }
-                                    );
-                                },
-                                function(rejection) {
-                                    req.reject({
-                                        message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
-                                    });
-                                }
-                            );
-                        }, 200);
+                        self.user
+                        .then(
+                            function(result) {
+                                var user = result.data;
+
+                                return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
+                                .then(
+                                    function() {
+                                        auth.savePassword(pwd);
+                                        req.resolve(200);
+                                    },
+                                    function(rejection) {
+                                        req.reject({
+                                            message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                        });
+                                    }
+                                );
+                            },
+                            function(rejection) {
+                                req.reject({
+                                    message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                });
+                            }
+                        );
                     } else {
                         req.reject({
                             message: "Password is required"
@@ -309,13 +309,16 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
+
                     return promise.then(
                         function(user) {
                             if (user.DisplayName.length === 0) {
-                                user.DisplayName = user.addresses[0].Email;
+                                user.DisplayName = user.Addresses[0].Email;
                             }
+
                             $rootScope.isLoggedIn = true;
                             $rootScope.user = user;
+
                             return user;
                         },
                         errorReporter.catcher("Please try again later")
@@ -332,31 +335,35 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
 
                 // credentials
-                $http.defaults.headers.common.Authorization = "Bearer " + auth.data.access_token;
-                $http.defaults.headers.common["x-pm-uid"] = auth.data.uid;
+                $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
+                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
             };
 
             auth.fetchUserInfo = function() {
                 var q = $q.defer();
 
-                api.user = $injector.get("User").get({
-                    UserID: auth.data.uid
+                api.user = $http.get(baseURL + "/users", {
+                    params: {
+                        id: auth.data.Uid
+                    }
                 });
 
-                api.user.$promise
+                api.user
                 .then(
-                    function(user) {
+                    function(result) {
+                        var user = result.data;
+
                         if (!user.EncPrivateKey) {
                             api.logout();
                             q.reject();
                         } else {
                             $q.all([
-                                $injector.get("Contact").query().$promise,
-                                $injector.get("Label").get().$promise
+                                $http.get(baseURL + "/contacts"),
+                                $http.get(baseURL + "/labels")
                             ]).then(
                                 function(result) {
-                                    user.contacts = result[0];
-                                    user.labels = result[1];
+                                    user.Contacts = result[0].data.Contacts;
+                                    user.Labels = result[1].data.Labels;
                                     q.resolve(user);
                                 },
                                 function() {
