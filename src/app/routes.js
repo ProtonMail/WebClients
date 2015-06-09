@@ -123,6 +123,8 @@ angular.module("proton.routes", [
                             params.Label = $stateParams.label;
                         }
 
+                        _.pick(params, _.identity);
+
                         messagesPromise = Message.query(params).$promise;
 
                         return networkActivityTracker.track(
