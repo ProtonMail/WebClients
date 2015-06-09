@@ -1090,6 +1090,22 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.markAsRead = function() {
+        var promise;
+
+        message.IsRead = 1;
+        promise = Message.read({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.markAsUnread = function() {
+        var promise;
+
+        message.IsRead = 0;
+        promise = Message.unread({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);

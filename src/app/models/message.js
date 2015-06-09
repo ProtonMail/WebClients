@@ -46,9 +46,9 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/draft/:id'
             },
             // GET
-            count: {
+            countUnread: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/count'
+                url: authentication.baseURL + '/messages/unread'
             },
             get: {
                 method: 'get',
@@ -161,14 +161,6 @@ angular.module("proton.models.message", ["proton.constants"])
             return this.$patch({
                 action: invertedMailboxIdentifiers[this.Location]
             });
-        },
-        setReadStatus: function(status) {
-            this.IsRead = +status;
-            // if(status) {
-            //     this.read({id: this.ID});
-            // } else {
-            //     this.unread({id: this.ID});
-            // }
         },
         numberOfAttachments: function() {
             return this.AttachmentIDList.split(",").length;
