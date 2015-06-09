@@ -54,11 +54,16 @@ angular.module("proton.controllers.Sidebar", [])
 
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
+        var tmpArray;
 
         if(mailbox === 'label') {
-            count = _.first(_.where($rootScope.counters.Labels, {LabelID: id})).Count;
+            tmpArray = _.where($rootScope.counters.Labels, {LabelID: id});
         } else {
-            count = _.first(_.where($rootScope.counters.Locations, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]})).Count;
+            tmpArray = _.where($rootScope.counters.Locations, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]});
+        }
+
+        if(tmpArray.length > 0) {
+            count = _.first(tmpArray).Count;
         }
 
         return count;
