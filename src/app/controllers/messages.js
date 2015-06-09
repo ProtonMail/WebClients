@@ -741,10 +741,10 @@ angular.module("proton.controllers.Messages", [
             // focus correct field
             var composer = $('.composer')[index];
 
-            if (!!!message.ToList) {
-                $(composer).find('.recipient-list').focus();
-            } else if (!!!message.Subject) {
-                $(composer).find('.message-title').focus();
+            if (message.ToList.length === 0) {
+                $(composer).find('.to-list')[0].focus();
+            } else if (message.Subject.length === 0) {
+                $(composer).find('.subject')[0].focus();
             } else {
                 message.editor.focus();
             }
@@ -767,7 +767,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = $scope.user.addresses[0];
+        message.FromEmail = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
