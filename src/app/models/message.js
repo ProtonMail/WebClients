@@ -151,11 +151,12 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
         setReadStatus: function(status) {
-            var location = $state.current.name.replace('secured.', '');
-
             this.IsRead = +status;
-            // $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1); TODO adapt with location
-            return this.$patch({ action: status ? "read" : "unread"});
+            // if(status) {
+            //     this.read({id: this.ID});
+            // } else {
+            //     this.unread({id: this.ID});
+            // }
         },
         numberOfAttachments: function() {
             return this.AttachmentIDList.split(",").length;

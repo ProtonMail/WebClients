@@ -295,14 +295,24 @@ angular.module("proton.controllers.Messages", [
 
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
+        var promise;
+        var ids = _.map(messages, function(message) { return message.ID; });
 
-        networkActivityTracker.track($q.all(
-            _.map(messages, function(message) {
-                return message.setReadStatus(status);
-            })
-        ).then(function() {
+        if(status) {
+            promise = Message.read({IDs: ids});
+        } else {
+            promise = Message.unread({IDs: ids});
+        }
+
+        _.each(messages, function(message) {
+            message.IsRead = +status;
+        });
+
+        promise.then(function() {
             $rootScope.$broadcast('updateCounters');
-        }));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $rootScope.$on('moveMessagesTo', function(event, name) {
@@ -1216,7 +1226,7 @@ angular.module("proton.controllers.Messages", [
         return size;
     };
 
-    if (!message.IsRead) {
-        message.setReadStatus(true);
+    if (message.IsRead === 0) {
+        message.IsRead = 1;
     }
 });
