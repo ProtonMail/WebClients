@@ -1176,9 +1176,9 @@ angular.module("proton.controllers.Messages", [
         var inDelete = mailbox === 'delete';
 
         if(inDelete) {
-            promise = Message.delete({IDs: message.ID}).$promise;
+            promise = Message.delete({IDs: [message.ID]}).$promise;
         } else {
-            promise = Message[mailbox]({IDs: message.ID}).$promise;
+            promise = Message[mailbox]({IDs: [message.ID]}).$promise;
         }
 
         promise.then(function(result) {
@@ -1230,6 +1230,6 @@ angular.module("proton.controllers.Messages", [
 
     if (message.IsRead === 0) {
         message.IsRead = 1;
-        Message.read({IDs: message.ID});
+        Message.read({IDs: [message.ID]});
     }
 });
