@@ -9,6 +9,10 @@ angular.module("proton.models.user", [])
         {
             // POST
             updateKeys: {
+                method: 'put',
+                url: authentication.baseURL + '/users/keys'
+            },
+            create: {
                 method: 'post',
                 url: authentication.baseURL + '/users'
             },
@@ -17,9 +21,9 @@ angular.module("proton.models.user", [])
                 method: 'get',
                 url: authentication.baseURL + '/users/pubkeys/:emails'
             },
-            check: {
+            available: {
                 method: 'get',
-                url: authentication.baseURL + '/users/check/:username'
+                url: authentication.baseURL + '/users/available/:username'
             },
             // PUT
             keys: {
