@@ -48,7 +48,16 @@ angular.module("proton.models.message", ["proton.constants"])
             // GET
             countUnread: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/unread'
+                url: authentication.baseURL + '/messages/unread',
+                transformResponse: function(data) {
+                    var json = angular.fromJson(data);
+                    var counters = {};
+
+                    _.each(json.Labels, function(obj) { counters[obj.LabelID] = obj.Count; });
+                    _.each(json.Locations, function(obj) { counters[obj.Location] = obj.Count; });
+
+                    return counters;
+                }
             },
             get: {
                 method: 'get',

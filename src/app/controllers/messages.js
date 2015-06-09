@@ -336,6 +336,8 @@ angular.module("proton.controllers.Messages", [
         }
 
         promise.then(function(result) {
+            $rootScope.$broadcast('updateCounters');
+
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
