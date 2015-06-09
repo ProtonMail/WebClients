@@ -28,6 +28,8 @@ angular.module("proton.emailField", [])
       };
 
       var setValue = function () {
+          Contact.index.updateWith($scope.user.Contacts);
+          console.log(Contact.index);
         $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
           .map(function (element) { return element.trim(); })
           .filter(function (data) {
@@ -117,11 +119,11 @@ angular.module("proton.emailField", [])
           source: Contact.index.ttAdapter(),
           templates: {
               suggestion: function(Contact) {
-                  return "<b>" +Contact.ContactName + "</b><br>" + Contact.ContactEmail;
+                  return "<b>" +Contact.Name + "</b><br>" + Contact.Email;
                 }
             }
         }).on("typeahead:selected", function (e, d) {
-          manager.tagsManager("pushTag", d.ContactEmail);
+          manager.tagsManager("pushTag", d.Email);
         });
 
       $$element.autosizeInput();
