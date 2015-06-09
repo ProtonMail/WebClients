@@ -457,7 +457,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.applyLabels = function(messages) {
-        var messageIDs = messages || _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        var messageIDs = messages || $scope.selectedIds();
         var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
@@ -476,6 +476,7 @@ angular.module("proton.controllers.Messages", [
             });
             $scope.closeLabels();
             $scope.unselectAllLabels();
+            $scope.unselectAllMessages();
             notify($translate.instant('LABELS_APPLY'));
         });
     };
