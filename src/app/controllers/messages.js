@@ -73,8 +73,8 @@ angular.module("proton.controllers.Messages", [
     $scope.recipientIsMe = function(message) {
         var result = false;
         for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
-            for( var j = 0, lenn = message.RecipientList.length; j < len; i++ ) {
-                if( $scope.user.addresses[i].Email === message.RecipientList[j][0] ) {
+            for( var j = 0, lenn = message.ToList.length; j < len; i++ ) {
+                if( $scope.user.addresses[i].Email === message.ToList[j][0] ) {
                     result = true;
                 }
             }
@@ -556,7 +556,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'MessageTitle', 'MessageBody', 'RecipientList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
 
         $scope.initMessage(message);
     });
@@ -703,11 +703,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.completedSignature = function(message) {
-        $scope.user.$promise.then(function() {
-            if(angular.isUndefined(message.MessageBody)) {
-                message.MessageBody = "<br><br>" + $scope.user.Signature;
-            }
-        });
+        message.Body = "<br><br>" + authentication.user.Signature;
     };
 
     $scope.composerIsSelected = function(message) {
@@ -731,9 +727,9 @@ angular.module("proton.controllers.Messages", [
             // focus correct field
             var composer = $('.composer')[index];
 
-            if (!!!message.RecipientList) {
+            if (!!!message.ToList) {
                 $(composer).find('.recipient-list').focus();
-            } else if (!!!message.MessageTitle) {
+            } else if (!!!message.Subject) {
                 $(composer).find('.message-title').focus();
             } else {
                 message.editor.focus();
@@ -857,13 +853,13 @@ angular.module("proton.controllers.Messages", [
         if (message.validate()) {
             var index = $scope.messages.indexOf(message);
             // get the message meta data
-            var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
+            var newMessage = new Message(_.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
 
             _.defaults(newMessage, {
-                RecipientList: '',
-                CCList: '',
-                BCCList: '',
-                MessageTitle: '',
+                ToList: [],
+                CCList: [],
+                BCCList: [],
+                Subject: '',
                 PasswordHint: '',
                 Attachments: [],
                 IsEncrypted: 0
@@ -875,20 +871,16 @@ angular.module("proton.controllers.Messages", [
                 });
             }
 
-            newMessage.RecipientList = tools.changeSeparatorToComma(newMessage.RecipientList);
-            newMessage.CCList = tools.changeSeparatorToComma(newMessage.CCList);
-            newMessage.BCCList = tools.changeSeparatorToComma(newMessage.BCCList);
-
             // encrypt the message body
-            pmcw.encryptMessage(message.MessageBody, $scope.user.PublicKey).then(function(result) {
+            pmcw.encryptMessage(message.Body, $scope.user.PublicKey).then(function(result) {
                 // set 'outsiders' to empty by default
-                newMessage.MessageBody = {
+                newMessage.Body = {
                     outsiders: '',
                     self: result
                 };
 
                 // concat all recipients
-                var emails = newMessage.RecipientList + (newMessage.CCList === '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList === '' ? '' : ',' + newMessage.BCCList);
+                var emails = newMessage.ToList + (newMessage.CCList === '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList === '' ? '' : ',' + newMessage.BCCList);
                 var base64 = pmcw.encode_base64(emails);
 
                 // new message object
@@ -915,8 +907,8 @@ angular.module("proton.controllers.Messages", [
                             if (index !== -1) {
                                 publickey = publickeys[index][email];
                                 // encrypt messagebody with each user's keys
-                                promises.push(pmcw.encryptMessage(message.MessageBody, publickey).then(function(result) {
-                                    newMessage.MessageBody[email] = result;
+                                promises.push(pmcw.encryptMessage(message.Body, publickey).then(function(result) {
+                                    newMessage.Body[email] = result;
                                 }));
                             } else if(email !== '') {
                                 if (!isOutside && newMessage.IsEncrypted === 0) {
@@ -944,10 +936,10 @@ angular.module("proton.controllers.Messages", [
                             // });
 
                             var encryptedSessionKeys = Promise.all(arr);
-                            var outsideBody = pmcw.encryptMessage(message.MessageBody, [], message.Password);
+                            var outsideBody = pmcw.encryptMessage(message.Body, [], message.Password);
                             outsidePromise = outsideBody.then(function(result) {
                                 return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-                                    newMessage.MessageBody.outsiders = result;
+                                    newMessage.Body.outsiders = result;
                                     // TODO token and session keys
                                     // return [email, message, replyToken].concat(encArray);
                                 });
@@ -958,7 +950,7 @@ angular.module("proton.controllers.Messages", [
                         } else if(isOutside && newMessage.IsEncrypted === 0) {
                             // dont encrypt if its going outside
                             outsidePromise = new Promise(function(resolve, reject) {
-                                newMessage.MessageBody.outsiders = message.MessageBody;
+                                newMessage.Body.outsiders = message.Body;
                                 resolve();
                             });
                         }
@@ -1099,10 +1091,10 @@ angular.module("proton.controllers.Messages", [
         var message = new Message();
 
         _.defaults(message, {
-            RecipientList: email,
+            ToList: email,
             CCList: '',
             BCCList: '',
-            MessageTitle: '',
+            Subject: '',
             PasswordHint: '',
             Attachments: []
         });
@@ -1116,24 +1108,24 @@ angular.module("proton.controllers.Messages", [
         var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + message.MessageTitle + '<br />';
+        var subject = 'Subject: ' + message.Subject + '<br />';
         var time = 'Time (GMT): ' + message.Time + '<br />';
-        var from = 'From: ' + message.RecipientList + '<br />';
+        var from = 'From: ' + message.ToList + '<br />';
         var to = 'To: ' + message.Sender + '<br />';
         var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
-        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
-            base.RecipientList = message.Sender;
-            base.MessageTitle = (Message.REPLY_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Re: " + message.MessageTitle;
+            base.ToList = message.Sender;
+            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
         } else if (action === 'replyall') {
-            base.RecipientList = [message.Sender, message.CCList, message.BCCList].join(",");
-            base.MessageTitle = (Message.REPLY_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Re: " + message.MessageTitle;
+            base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
+            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
         } else if (action === 'forward') {
-            base.RecipientList = '';
-            base.MessageTitle = (Message.FORWARD_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Fw: " + message.MessageTitle;
+            base.ToList = '';
+            base.Subject = (Message.FORWARD_PREFIX.test(message.Subject)) ? message.Subject : "Fw: " + message.Subject;
         }
 
         return base;
