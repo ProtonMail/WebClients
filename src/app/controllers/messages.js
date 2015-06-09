@@ -327,14 +327,27 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessagesTo = function(mailbox) {
         var ids = $scope.selectedIds();
         var promise;
+        var inDelete = mailbox === 'delete';
 
-        promise = Message[mailbox]({IDs: ids}).$promise;
+        if(inDelete) {
+            promise = Message.delete({IDs: ids}).$promise;
+        } else {
+            promise = Message[mailbox]({IDs: ids}).$promise;
+        }
 
         promise.then(function(result) {
-            if(ids.length > 1) {
-                notify($translate.instant('MESSAGES_MOVED'));
+            if(inDelete) {
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_DELETED'));
+                } else {
+                    notify($translate.instant('MESSAGE_DELETED'));
+                }
             } else {
-                notify($translate.instant('MESSAGE_MOVED'));
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_MOVED'));
+                } else {
+                    notify($translate.instant('MESSAGE_MOVED'));
+                }
             }
         });
 
@@ -1146,11 +1159,20 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessageTo = function(mailbox) {
         var promise;
+        var inDelete = mailbox === 'delete';
 
-        promise = Message[mailbox]({IDs: message.ID}).$promise;
+        if(inDelete) {
+            promise = Message.delete({IDs: message.ID}).$promise;
+        } else {
+            promise = Message[mailbox]({IDs: message.ID}).$promise;
+        }
 
         promise.then(function(result) {
-            notify($translate.instant('MESSAGE_MOVED'));
+            if(inDelete) {
+                notify($translate.instant('MESSAGE_DELETED'));
+            } else {
+                notify($translate.instant('MESSAGE_MOVED'));
+            }
         });
 
         networkActivityTracker.track(promise);

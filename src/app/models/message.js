@@ -120,6 +120,11 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'put',
                 isArray: true,
                 url: authentication.baseURL + '/messages/archive'
+            },
+            delete: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/delete'
             }
             // DELETE
         }
