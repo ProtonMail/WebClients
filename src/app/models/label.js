@@ -19,6 +19,7 @@ angular.module("proton.models.label", [])
             // Remove label from list of message ids
             remove: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/labels/remove/:id'
             },
 

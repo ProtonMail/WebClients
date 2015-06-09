@@ -1073,14 +1073,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.detachLabel = function(id) {
-        Label.remove({
-            id: id,
-            MessageIDs: [message.ID]
-        }).$promise.then(function(result) {
-            message.LabelIDs = _.without(message.LabelIDs, id);
-        }, function(result) {
-            $log.error(result);
-        });
+        var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
+
+        message.LabelIDs = _.without(message.LabelIDs, id);
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveLabels = function() {
