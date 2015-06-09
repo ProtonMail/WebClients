@@ -183,7 +183,7 @@ angular.module("proton.controllers.Contacts", [
         var message = new Message();
 
         _.defaults(message, {
-            RecipientList: contact.ContactEmail,
+            ToList: [{Address: contact.ContactEmail}],
             CCList: '',
             BCCList: '',
             MessageTitle: '',

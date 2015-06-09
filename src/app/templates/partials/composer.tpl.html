@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.RecipientList" ng-change="message.saveLater(true)" class="form-control" />
+                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.ToList" ng-change="message.saveLater(true)" class="form-control" />
                             </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
