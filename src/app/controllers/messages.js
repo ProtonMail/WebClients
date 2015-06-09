@@ -379,6 +379,12 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.unselectAllLabels = function() {
+        _.forEach($scope.labels, function(label) {
+            label.Selected = false;
+        }, this);
+    };
+
     $scope.openLabels = function(message) {
         var messages = [];
         var messagesLabel = [];
@@ -441,15 +447,20 @@ angular.module("proton.controllers.Messages", [
         var promises = [];
 
         _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}));
         });
 
         _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}));
         });
 
         $q.all(promises).then(function() {
-            $state.go($state.current, {}, {reload: true}); // force reload page
+            _.each($scope.selectedMessages(), function(message) {
+                console.log(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove));
+                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+            });
+            $scope.closeLabels();
+            $scope.unselectAllLabels();
             notify($translate.instant('LABELS_APPLY'));
         });
     };
@@ -1038,6 +1049,7 @@ angular.module("proton.controllers.Messages", [
     localStorageService,
     networkActivityTracker,
     Message,
+    Label,
     message,
     tools,
     attachments,
