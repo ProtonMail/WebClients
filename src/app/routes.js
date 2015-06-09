@@ -456,7 +456,7 @@ angular.module("proton.routes", [
         resolve: {
             contacts: function(Contact, networkActivityTracker) {
                 return networkActivityTracker.track(
-                    Contact.query().$promise
+                    Contact.get().$promise
                 );
             }
         }

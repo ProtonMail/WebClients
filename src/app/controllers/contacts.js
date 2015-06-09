@@ -19,9 +19,11 @@ angular.module("proton.controllers.Contacts", [
 ) {
     $rootScope.pageName = "Contacts";
 
-    $scope.contacts = contacts;
+    $scope.contacts = contacts.Contacts;
     $scope.search = '';
     $scope.editing = false;
+
+    console.log($scope.contacts);
 
     var props;
 
@@ -56,16 +58,31 @@ angular.module("proton.controllers.Contacts", [
                 title: title,
                 message: message,
                 confirm: function() {
+                    deletedContacts = [];
+                    console.log(contactsSelected);
                     _.forEach(contactsSelected, function(contact) {
-                        var idx = contacts.indexOf(contact);
-                        if (idx >= 0) {
-                            contact.$delete();
-                            contacts.splice(idx, 1);
-                            Contact.index.updateWith($scope.contacts);
-                        }
+                        deletedContacts.push(contact.ID);
+                        // var idx = contacts.indexOf(contact);
+                        // if (idx >= 0) {
+                        //     contact.$delete();
+                        //     contacts.splice(idx, 1);
+                        //     Contact.index.updateWith($scope.contacts);
+                        // }
                     });
+
+                        console.log(deletedContacts);
+                    networkActivityTracker.track(
+                        Contact.delete({
+                            "IDs" : deletedContacts
+                        }).$promise.then(function(response) {
+                            // user.NotificationEmail = $scope.notificationEmail;
+                            console.log(response);
+                            notify($translate.instant('CONTACTS_DELETED'));
+                        }, function(response) {
+                            $log.error(response);
+                        })
+                    );
                     confirmModal.deactivate();
-                    notify($translate.instant('CONTACTS_DELETED'));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -80,7 +97,7 @@ angular.module("proton.controllers.Contacts", [
         confirmModal.activate({
             params: {
                 title: title,
-                message: 'Are you sure you want to delete this contact?<br /><strong>' + contact.ContactEmail + '</strong>',
+                message: 'Are you sure you want to delete this contact?<br /><strong>' + contact.Email + '</strong>',
                 confirm: function() {
                     var idx = contacts.indexOf(contact);
                     if (idx >= 0) {
@@ -101,38 +118,49 @@ angular.module("proton.controllers.Contacts", [
     $scope.addContact = function() {
         openContactModal('Add New Contact', '', '', function(name, email) {
             var newContact = {
-                ContactName: name,
-                ContactEmail: email
+                Name: name,
+                Email: email
             };
-            var contact = new Contact(newContact);
-
-            networkActivityTracker.track(contact.$save(null, function(obj) {
-                _.extend(contact, newContact, _.pick(obj, 'ContactID'));
-            }).then(function(response) {
-                contacts.unshift(contact);
-                Contact.index.add([contact]);
-                contactModal.deactivate();
-                notify($translate.instant('CONTACT_ADDED'));
-            }, function(response) {
-                notify(response.error);
-                $log.error(response);
-            }));
+            // var contact = new Contact(newContact);
+            console.log([newContact]);
+            var contactList = [];
+            contactList.push(newContact);
+            console.log(contactList);
+            networkActivityTracker.track(
+                Contact.save({
+                    Contacts : contactList
+                }).$promise.then(function(response) {
+                    // user.NotificationEmail = $scope.notificationEmail;
+                    console.log(response);
+                    notify('Saved');
+                    contactModal.deactivate();
+                }, function(response) {
+                    $log.error(response);
+                })
+            );
         });
     };
 
     $scope.editContact = function(contact) {
-        openContactModal('Edit Contact', contact.ContactName, contact.ContactEmail, function(name, email) {
-            contact.ContactName = name;
-            contact.ContactEmail = email;
-            networkActivityTracker.track(contact.$update().then(function(response) {
-                contactModal.deactivate();
-                notify($translate.instant('CONTACT_EDITED'));
-            }, function(response) {
-                notify({
-                    message: response.error
-                });
-                $log.error(response);
-            }));
+        console.log(Contact);
+        openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
+            contact.Name = name;
+            contact.Email = email;
+            networkActivityTracker.track(
+                Contact.edit({
+                    "Name": name,
+                    "Email": email,
+                    "id": contact.ID
+                }).$promise.then(function(response) {
+                        contactModal.deactivate();
+                        notify($translate.instant('CONTACT_EDITED'));
+                    }, function(response) {
+                        notify({
+                            message: response.error
+                        });
+                        $log.error(response);
+                    })
+            );
         });
     };
 
@@ -264,7 +292,7 @@ angular.module("proton.controllers.Contacts", [
 
                     importContacts = function(contactArray) {
                         networkActivityTracker.track(
-                            Contact.import({
+                            Contact.save({
                                 "Contacts": contactArray
                             }).$promise.then(function(response) {
                                 notify($translate.instant('CONTACTS_UPLOADED'));
@@ -295,11 +323,11 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.downloadContacts = function() {
-        var contactsArray = [['name', 'email']];
+        var contactsArray = [['Name', 'Email']];
         var csvRows = [];
 
         _.forEach($scope.contacts, function(contact) {
-          contactsArray.push([contact.ContactName, contact.ContactEmail]);
+          contactsArray.push([contact.Name, contact.Email]);
         });
 
         for(var i=0, l=contactsArray.length; i<l; ++i){
