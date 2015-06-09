@@ -275,6 +275,10 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.selectedMessagesIds = function() {
+        return _.map($scope.selectedMessages(), function(message) { return message.ID; });
+    };
+
     $scope.selectedMessagesWithReadStatus = function(bool) {
         return _.select($scope.selectedMessages(), function(message) {
             return message.IsRead === +bool;
@@ -299,9 +303,9 @@ angular.module("proton.controllers.Messages", [
         var ids = _.map(messages, function(message) { return message.ID; });
 
         if(status) {
-            promise = Message.read({IDs: ids});
+            promise = Message.read({IDs: ids}).$promise;
         } else {
-            promise = Message.unread({IDs: ids});
+            promise = Message.unread({IDs: ids}).$promise;
         }
 
         _.each(messages, function(message) {
@@ -312,6 +316,8 @@ angular.module("proton.controllers.Messages", [
             $rootScope.$broadcast('updateCounters');
         });
 
+        $scope.unselectAllMessages();
+
         networkActivityTracker.track(promise);
     };
 
@@ -320,38 +326,26 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.moveMessagesTo = function(mailbox) {
-        var selectedMessages = $scope.selectedMessages();
+        var ids = $scope.selectedMessagesIds();
+        var promise;
 
-        if(mailbox && selectedMessages.length > 0) {
-            networkActivityTracker.track(
-                $q.all(_.map(selectedMessages, function(message) {
-                    if (mailbox === 'delete') {
-                        return message.delete();
-                    } else {
-                        return message.moveTo(mailbox);
-                    }
-                })).then(function() {
-                        _.each(selectedMessages, function(message) {
-                            if(!$state.is('secured.label')) {
-                                var i = $scope.messages.indexOf(message);
+        promise = Message[mailbox]({IDs: ids}).$promise;
 
-                                if (i >= 0) {
-                                    $scope.messages.splice(i, 1);
-                                }
-                            }
-                        });
+        promise.then(function(result) {
+            if(ids.length > 1) {
+                notify($translate.instant('MESSAGES_MOVED'));
+            } else {
+                notify($translate.instant('MESSAGE_MOVED'));
+            }
+        });
 
-                        if(selectedMessages.length > 1) {
-                            notify($translate.instant('MESSAGES_MOVED'));
-                        } else {
-                            notify($translate.instant('MESSAGE_MOVED'));
-                        }
-                    }, function(result) {
-                        $log.error(result);
-                    }
-                )
-            );
+        $scope.unselectAllMessages();
+
+        if(!$state.is('secured.label')) {
+            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
         }
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.filterBy = function(status) {
@@ -466,7 +460,6 @@ angular.module("proton.controllers.Messages", [
 
         $q.all(promises).then(function() {
             _.each($scope.selectedMessages(), function(message) {
-                console.log(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove));
                 message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
             });
             $scope.closeLabels();
@@ -1167,27 +1160,13 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessageTo = function(mailbox) {
         var promise;
 
-        if(mailbox === 'delete') {
-            promise = message.delete();
-        } else {
-            promise = message.moveTo(mailbox);
-        }
+        promise = Message[mailbox]({IDs: message.ID}).$promise;
 
-        networkActivityTracker.track(
-            promise.then(function() {
-                // TODO aniamtion to show currently viewed message was deleted
-                if(angular.isDefined($stateParams.MessageID)) {
-                    $scope.goToMessageList();
-                } else {
-                    if(!$state.is('secured.label')) {
-                        var i = $scope.messages.indexOf(message);
-                        if (i >= 0) {
-                            $scope.messages.splice(i, 1);
-                        }
-                    }
-                }
-            })
-        );
+        promise.then(function(result) {
+            notify($translate.instant('MESSAGE_MOVED'));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.print = function() {

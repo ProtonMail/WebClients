@@ -77,6 +77,7 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             unreaded: {
                 method: 'get',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             // PUT
@@ -92,28 +93,34 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             read: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/read'
             },
             unread: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             trash: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/trash'
             },
             inbox: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/inbox'
             },
             spam: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/spam'
             },
             archive: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/archive'
-            },
+            }
             // DELETE
         }
     );
