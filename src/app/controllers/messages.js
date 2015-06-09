@@ -1230,5 +1230,6 @@ angular.module("proton.controllers.Messages", [
 
     if (message.IsRead === 0) {
         message.IsRead = 1;
+        Message.read({IDs: message.ID});
     }
 });
