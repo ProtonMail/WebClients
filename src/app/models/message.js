@@ -120,6 +120,11 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'put',
                 isArray: true,
                 url: authentication.baseURL + '/messages/archive'
+            },
+            delete: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/delete'
             }
             // DELETE
         }
@@ -187,32 +192,32 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         setMsgBody: function() {
-            var messageBody;
+            var body;
 
             // get the message content from either the editor or textarea if its iOS
             // if its iOS / textarea we need to replace natural linebreaks with HTML linebreaks
             if ($rootScope.isMobile) {
-                messageBody = this.messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
+                body = this.Body.replace(/(?:\r\n|\r|\n)/g, '<br />');
             } else {
-                messageBody = this.Body;
-                messageBody = tools.fixImages(messageBody);
+                body = this.Body;
+                body = tools.fixImages(body);
             }
 
             // if there is no message body we "pad" with a line return so encryption and decryption doesnt break
-            if (messageBody.trim().length < 1) {
-                messageBody = '\n';
+            if (body.trim().length < 1) {
+                body = '\n';
             }
             // Set input elements
-            this.Body = messageBody;
+            this.Body = body;
         },
 
         validate: function(draft) {
             _.defaults(this, {
-                RecipientList: '',
-                CCList: '',
-                BCCList: '',
-                MessageTitle: '',
-                MessageBody: ''
+                ToList: [],
+                CCList: [],
+                BCCList: [],
+                Subject: '',
+                Body: ''
             });
 
             // set msgBody input element to editor content
@@ -243,9 +248,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             // Check all emails to make sure they are valid
             var invalidEmails = '';
-            var allEmails = this.RecipientList + this.CCList + this.BCCList;
-
-            allEmails = allEmails.split(',');
+            var allEmails = this.ToList.concat(this.CCList).concat(this.BCCList);
 
             for (i = 0; i < allEmails.length; i++) {
                 if (allEmails[i].trim() !== '') {
@@ -265,32 +268,28 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             // MAX 25 to, cc, bcc
-            var rl = this.RecipientList.split(',');
-            var ccl = this.CCList.split(',');
-            var bccl = this.BCCList.split(',');
-
             if (!!!draft) {
-                if ((rl.length + ccl.length + bccl.length) > 25) {
+                if ((this.ToList.length + this.BCCList.length + this.CCList.length) > 25) {
                     notify('The maximum number (25) of Recipients is 25.');
                     return false;
                 }
 
-                if (this.RecipientList.trim().length === 0 && this.BCCList.trim().length === 0 && this.CCList.trim().length === 0) {
+                if (this.ToList.length === 0 && this.BCCList.length === 0 && this.CCList.length === 0) {
                     notify('Please enter at least one recipient.');
-                    // TODO focus RecipientList
+                    // TODO focus ToList
                     return false;
                 }
             }
 
             // Check title length
-            if (this.MessageTitle && this.MessageTitle.length > CONSTANTS.MAX_TITLE_LENGTH) {
+            if (this.Subject && this.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
                 notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
-                // TODO $('#MessageTitle').focus();
+                // TODO focus Subject
                 return false;
             }
 
             // Check body length
-            if (this.msgBody && this.msgBody.length > 16000000) {
+            if (this.Body.length > 16000000) {
                 notify('The maximum length of the message body is 16,000,000 characters.');
                 return false;
             }
@@ -316,7 +315,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
         needToSave: function() {
             if(angular.isDefined(this.old)) {
-                var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
 
@@ -327,27 +326,29 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         saveOld: function() {
-            var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+            var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted'];
 
             this.old = _.pick(this, properties);
 
             _.defaults(this.old, {
-                BCCList: "",
-                CCList: "",
-                MessageTitle: "",
-                RecipientList: ""
+                ToList: [],
+                BCCList: [],
+                CCList: [],
+                Subject: ""
             });
         },
 
         save: function(silently) {
             if (this.validate(true)) { // draft mode
-                var newMessage = new Message(_.pick(this, 'MessageID', 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
+                var newMessage = new Message(_.pick(this, 'MessageID', 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
+
                 this.saveOld();
+
                 _.defaults(newMessage, {
-                    RecipientList: '',
-                    CCList: '',
-                    BCCList: '',
-                    MessageTitle: '',
+                    ToList: [],
+                    CCList: [],
+                    BCCList: [],
+                    Subject: '',
                     PasswordHint: '',
                     Attachments: [],
                     IsEncrypted: 0
@@ -367,13 +368,7 @@ angular.module("proton.models.message", ["proton.constants"])
                     newMessage.Body.self = result;
 
                     var newDraft = angular.isUndefined(this.MessageID);
-                    var draftPromise;
-
-                    if (newDraft) {
-                        draftPromise = newMessage.$saveDraft();
-                    } else {
-                        draftPromise = newMessage.$updateDraft();
-                    }
+                    var draftPromise = newMessage.draft({ID: this.MessageID}).$promise;
 
                     draftPromise.then(function(result) {
                         if (newDraft) {

@@ -9,6 +9,7 @@ angular.module("proton.models.label", [])
             // Apply labels
             apply: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/labels/apply/:id'
             },
             // Re-order labels
@@ -19,9 +20,10 @@ angular.module("proton.models.label", [])
             // Remove label from list of message ids
             remove: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/labels/remove/:id'
             },
-
+            // Update labels
             update: {
                 method: 'put',
                 url: authentication.baseURL + '/labels/:id'

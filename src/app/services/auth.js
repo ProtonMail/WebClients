@@ -157,12 +157,8 @@ angular.module("proton.authentication", [
                                 api.receivedCredentials(
                                     _.pick(data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn")
                                 );
+                                q.resolve(data);
                                 // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
-                                $state.go("login").then(
-                                    function() {
-                                        q.resolve(data);
-                                    }
-                                );
                             },
                             function(error) {
                                 q.reject({
@@ -281,9 +277,7 @@ angular.module("proton.authentication", [
                         $getUser.then(
                             function(result) {
                                 var user = result.data;
-
-                                return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd)
-                                .then(
+                                return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(
                                     function() {
                                         auth.savePassword(pwd);
                                         req.resolve(200);
@@ -316,7 +310,6 @@ angular.module("proton.authentication", [
 
                 fetchUserInfo: function() {
                     var promise = auth.fetchUserInfo();
-
                     return promise.then(
                         function(user) {
                             if (user.DisplayName.length === 0) {
@@ -356,8 +349,7 @@ angular.module("proton.authentication", [
                     }
                 });
 
-                api.user
-                .then(
+                api.user.then(
                     function(result) {
                         var user = result.data;
 

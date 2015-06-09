@@ -327,14 +327,27 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessagesTo = function(mailbox) {
         var ids = $scope.selectedIds();
         var promise;
+        var inDelete = mailbox === 'delete';
 
-        promise = Message[mailbox]({IDs: ids}).$promise;
+        if(inDelete) {
+            promise = Message.delete({IDs: ids}).$promise;
+        } else {
+            promise = Message[mailbox]({IDs: ids}).$promise;
+        }
 
         promise.then(function(result) {
-            if(ids.length > 1) {
-                notify($translate.instant('MESSAGES_MOVED'));
+            if(inDelete) {
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_DELETED'));
+                } else {
+                    notify($translate.instant('MESSAGE_DELETED'));
+                }
             } else {
-                notify($translate.instant('MESSAGE_MOVED'));
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_MOVED'));
+                } else {
+                    notify($translate.instant('MESSAGE_MOVED'));
+                }
             }
         });
 
@@ -444,7 +457,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.applyLabels = function(messages) {
-        var messageIDs = messages || _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        var messageIDs = messages || $scope.selectedIds();
         var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
@@ -463,6 +476,7 @@ angular.module("proton.controllers.Messages", [
             });
             $scope.closeLabels();
             $scope.unselectAllLabels();
+            $scope.unselectAllMessages();
             notify($translate.instant('LABELS_APPLY'));
         });
     };
@@ -561,6 +575,18 @@ angular.module("proton.controllers.Messages", [
         $scope.initMessage(message);
     });
 
+    $scope.setDefaults = function(message) {
+        _.defaults(message, {
+            ToList: [],
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: [],
+            IsEncrypted: 0
+        });
+    };
+
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
@@ -655,6 +681,7 @@ angular.module("proton.controllers.Messages", [
             return;
         }
 
+        $scope.setDefaults(message);
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
@@ -727,10 +754,10 @@ angular.module("proton.controllers.Messages", [
             // focus correct field
             var composer = $('.composer')[index];
 
-            if (!!!message.ToList) {
-                $(composer).find('.recipient-list').focus();
-            } else if (!!!message.Subject) {
-                $(composer).find('.message-title').focus();
+            if (message.ToList.length === 0) {
+                $(composer).find('.to-list')[0].focus();
+            } else if (message.Subject.length === 0) {
+                $(composer).find('.subject')[0].focus();
             } else {
                 message.editor.focus();
             }
@@ -753,7 +780,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = $scope.user.addresses[0];
+        message.FromEmail = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
@@ -1073,14 +1100,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.detachLabel = function(id) {
-        Label.remove({
-            id: id,
-            MessageIDs: [message.ID]
-        }).$promise.then(function(result) {
-            message.LabelIDs = _.without(message.LabelIDs, id);
-        }, function(result) {
-            $log.error(result);
-        });
+        var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
+
+        message.LabelIDs = _.without(message.LabelIDs, id);
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveLabels = function() {
@@ -1150,11 +1173,20 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessageTo = function(mailbox) {
         var promise;
+        var inDelete = mailbox === 'delete';
 
-        promise = Message[mailbox]({IDs: message.ID}).$promise;
+        if(inDelete) {
+            promise = Message.delete({IDs: message.ID}).$promise;
+        } else {
+            promise = Message[mailbox]({IDs: message.ID}).$promise;
+        }
 
         promise.then(function(result) {
-            notify($translate.instant('MESSAGE_MOVED'));
+            if(inDelete) {
+                notify($translate.instant('MESSAGE_DELETED'));
+            } else {
+                notify($translate.instant('MESSAGE_MOVED'));
+            }
         });
 
         networkActivityTracker.track(promise);
@@ -1198,5 +1230,6 @@ angular.module("proton.controllers.Messages", [
 
     if (message.IsRead === 0) {
         message.IsRead = 1;
+        Message.read({IDs: message.ID});
     }
 });

@@ -133,7 +133,7 @@
             </ul>
         </li>
     </ul>
-    <ul class="nav navbar-nav pull-right navigation">
+    <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount > 0">
         <li class="pageDropdown">
             <b>{{start()}}</b> - <b>{{end()}}</b> of <b>{{messageCount}}</b>
         </li>

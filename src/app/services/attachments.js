@@ -30,7 +30,7 @@ angular.module("proton.attachments", [
                 return q.promise;
             },
             upload: function(packets) {
-                console.log('upload', packets); // TODO remove
+                // console.log('upload', packets); // TODO remove
 
                 var data = new FormData();
                 var xhr = new XMLHttpRequest();
