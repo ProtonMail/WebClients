@@ -23,8 +23,6 @@ angular.module("proton.controllers.Contacts", [
     $scope.search = '';
     $scope.editing = false;
 
-    console.log($scope.contacts);
-
     var props;
 
     function openContactModal(title, name, email, save) {
@@ -41,8 +39,8 @@ angular.module("proton.controllers.Contacts", [
         });
     }
 
-    $scope.deleteContacts = function() {
-        var contactsSelected = $scope.contactsSelected();
+    $scope.deleteContacts = function(contact) {
+        var contactsSelected = contact ? [contact] : $scope.contactsSelected();
         var message, title;
 
         if (contactsSelected.length === 1) {
@@ -58,25 +56,25 @@ angular.module("proton.controllers.Contacts", [
                 title: title,
                 message: message,
                 confirm: function() {
+                    deletedIDs = [];
                     deletedContacts = [];
-                    console.log(contactsSelected);
                     _.forEach(contactsSelected, function(contact) {
-                        deletedContacts.push(contact.ID);
-                        // var idx = contacts.indexOf(contact);
-                        // if (idx >= 0) {
-                        //     contact.$delete();
-                        //     contacts.splice(idx, 1);
-                        //     Contact.index.updateWith($scope.contacts);
-                        // }
+                        deletedIDs.push(contact.ID.toString());
+                        deletedContacts.push(contact);
                     });
 
-                        console.log(deletedContacts);
+                    $scope.contacts = _.difference($scope.contacts, deletedContacts);
+
                     networkActivityTracker.track(
                         Contact.delete({
-                            "IDs" : deletedContacts
+                            "IDs" : deletedIDs
                         }).$promise.then(function(response) {
-                            // user.NotificationEmail = $scope.notificationEmail;
-                            console.log(response);
+                            _.forEach(response, function(d, i) {
+                                if (JSON.parse(d.Response).Code !== 1000) {
+                                    notify(deletedContacts[i].Email +' Not Deleted');
+                                    $scope.contacts.push(deletedContacts[i]);
+                                }
+                            });
                             notify($translate.instant('CONTACTS_DELETED'));
                         }, function(response) {
                             $log.error(response);
@@ -91,58 +89,42 @@ angular.module("proton.controllers.Contacts", [
         });
     };
 
-    $scope.deleteContact = function(contact) {
-        var title = $translate.instant('DELETE_CONTACT');
+    $scope.addContact = function() {
+        openContactModal('Add New Contact', '', '', function(name, email) {
+            var match = _.findWhere($scope.contacts, {Email: email});
 
-        confirmModal.activate({
-            params: {
-                title: title,
-                message: 'Are you sure you want to delete this contact?<br /><strong>' + contact.Email + '</strong>',
-                confirm: function() {
-                    var idx = contacts.indexOf(contact);
-                    if (idx >= 0) {
-                        contact.$delete();
-                        contacts.splice(idx, 1);
-                        Contact.index.updateWith($scope.contacts);
-                        confirmModal.deactivate();
-                        notify($translate.instant('CONTACT_DELETED'));
-                    }
-                },
-                cancel: function() {
-                    confirmModal.deactivate();
-                }
+            if (match) {
+                notify("Contact exists for this email address");
+                contactModal.deactivate();
+            }
+            else {
+                var newContact = {
+                    Name: name,
+                    Email: email
+                };
+                var contactList = [];
+                contactList.push(newContact);
+                networkActivityTracker.track(
+                    Contact.save({
+                        Contacts : contactList
+                    }).$promise.then(function(response) {
+                        if (response[0].Response.Contact) {
+                            $scope.contacts.push(response[0].Response.Contact);
+                            notify('Saved');
+                        }
+                        else {
+                            notify(response[0].Response.Error);
+                        }
+                        contactModal.deactivate();
+                    }, function(response) {
+                        $log.error(response);
+                    })
+                );
             }
         });
     };
 
-    $scope.addContact = function() {
-        openContactModal('Add New Contact', '', '', function(name, email) {
-            var newContact = {
-                Name: name,
-                Email: email
-            };
-            // var contact = new Contact(newContact);
-            console.log([newContact]);
-            var contactList = [];
-            contactList.push(newContact);
-            console.log(contactList);
-            networkActivityTracker.track(
-                Contact.save({
-                    Contacts : contactList
-                }).$promise.then(function(response) {
-                    // user.NotificationEmail = $scope.notificationEmail;
-                    console.log(response);
-                    notify('Saved');
-                    contactModal.deactivate();
-                }, function(response) {
-                    $log.error(response);
-                })
-            );
-        });
-    };
-
     $scope.editContact = function(contact) {
-        console.log(Contact);
         openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
             contact.Name = name;
             contact.Email = email;
@@ -271,10 +253,10 @@ angular.module("proton.controllers.Contacts", [
                                     _.forEach(csv, function(d, i) {
                                       if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
                                         if (d[nameIndex] !== '') {
-                                          contactArray.push({'ContactName' : d[nameIndex], 'ContactEmail' : d[emailIndex]});
+                                          contactArray.push({'Name' : d[nameIndex], 'Email' : d[emailIndex]});
                                         }
                                         else {
-                                          contactArray.push({'ContactName' : d[emailIndex], 'ContactEmail' : d[emailIndex]});
+                                          contactArray.push({'Name' : d[emailIndex], 'Email' : d[emailIndex]});
                                         }
                                       }
                                     });
@@ -295,18 +277,20 @@ angular.module("proton.controllers.Contacts", [
                             Contact.save({
                                 "Contacts": contactArray
                             }).$promise.then(function(response) {
-                                notify($translate.instant('CONTACTS_UPLOADED'));
-                                _.forEach(response.Contacts.reverse(), function(d, i) {
-                                    if (typeof(d.ContactName) !== 'undefined') {
-                                        var newContact = {
-                                            ContactName: d.ContactName,
-                                            ContactEmail: d.ContactEmail
-                                        };
-                                        var contact = new Contact(newContact);
-                                        contacts.unshift(contact);
-                                        Contact.index.add([contact]);
+                                added = 0;
+                                duplicates = 0;
+                                _.forEach(response, function(d) {
+                                    if (d.Response.Contact) {
+                                        $scope.contacts.push(d.Response.Contact);
+                                        added++;
+                                    }
+                                    else {
+                                        duplicates++;
                                     }
                                 });
+                                added = added === 1 ? added + ' contact' : added + ' contacts';
+                                duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
+                                notify(added + ' imported, ' + duplicates + ' already in your contact list');
                             }, function(response) {
                                 $log.error(response);
                             })
