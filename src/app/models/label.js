@@ -9,7 +9,7 @@ angular.module("proton.models.label", [])
             // Apply labels
             apply: {
                 method: 'put',
-                url: authentication.baseURL + '/labels/apply'
+                url: authentication.baseURL + '/labels/apply/:id'
             },
             // Re-order labels
             order: {

@@ -3,29 +3,17 @@
         <div class="form-group" ng-show="labels.length > 0">
             <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABELS' | translate }}..." class="form-control" ng-model="searchLabels" />
         </div>
-        <ul class="list-group" ng-show="labels.length > 0">
-            <li class="list-group-item" ng-repeat="label in labels | filter:searchLabels | orderBy: 'Order'">
-                <!-- <input type="checkbox" ng-model="label.selected" /> -->
-                <a href="" ng-click="toggleLabel(label)">
-                    <i class="fa text-muted" ng-class="{'fa-square': label.mode === 0, 'fa-minus-square': label.mode === 2, 'fa-check-square': label.mode === 1}"></i>
-                </a>
+        <ul class="list-group no-margin-bottom" ng-show="labels.length > 0">
+            <li class="list-group-item" ng-repeat="label in labels | filter: searchLabels | orderBy: 'Order'">
+                <input type="checkbox" ng-model="label.Selected" />
                 <span class="label label-pm" style="background-color: {{label.Color}}">
                     <i class="fa fa-tag"></i> {{label.Name}}
                 </span>
             </li>
         </ul>
-        <div class="row">
-            <div class="col-xs-6">
-                <a ui-sref="secured.labels" title="{{'ADD_AND_MANAGE_YOUR_LABELS' | translate }}">{{ 'MANAGE_LABELS' | translate }}</a>
-            </div>
-            <div class="col-xs-6 text-right" ng-show="labels.length > 0">
-                <label for="">
-                    <input type="checkbox" ng-model="params.alsoArchived" /> {{ 'ALSO_ARCHIVE' | translate }}
-                </label>
-            </div>
-        </div>
     </div>
     <div class="modal-footer" ng-show="labels.length > 0">
+        <a ui-sref="secured.labels" title="{{'ADD_AND_MANAGE_YOUR_LABELS' | translate }}" class="pull-left">{{ 'MANAGE_LABELS' | translate }}</a>
         <a class="btn" ng-click="closeLabels()">{{ 'CANCEL' | translate }}</a>
         <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()" ng-disabled="networkActivity.loading()">{{ 'SAVE' | translate }}</button>
     </div>

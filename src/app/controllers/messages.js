@@ -14,6 +14,7 @@ angular.module("proton.controllers.Messages", [
     $filter,
     CONSTANTS,
     Message,
+    Label,
     authentication,
     messageCache,
     messages,
@@ -21,6 +22,7 @@ angular.module("proton.controllers.Messages", [
     notify
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
+
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
@@ -93,6 +95,10 @@ angular.module("proton.controllers.Messages", [
             return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
         },
         containment: "document"
+    };
+
+    $scope.getLabel = function(id) {
+        return _.where($scope.labels, {ID: id})[0];
     };
 
     $scope.onSelectMessage = function(event, message) {
@@ -367,10 +373,16 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $scope.selectedLabels = function() {
+        return _.select($scope.labels, function(label) {
+            return label.Selected === true;
+        });
+    };
+
     $scope.openLabels = function(message) {
         var messages = [];
-        var labels = authentication.user.Labels;
         var messagesLabel = [];
+        var labels = $scope.labels;
 
         if (angular.isDefined(message)) {
             messages.push(message);
@@ -379,14 +391,14 @@ angular.module("proton.controllers.Messages", [
         }
 
         _.each(messages, function(message) {
-            messagesLabel = messagesLabel.concat(_.map(message.Labels, function(label) {
-                return label.LabelName;
+            messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
+                return id;
             }));
         });
 
         _.each(labels, function(label) {
             var count = _.filter(messagesLabel, function(m) {
-                return m === label.LabelName;
+                return m === label.ID;
             }).length;
 
             if (count === messages.length) {
@@ -397,10 +409,6 @@ angular.module("proton.controllers.Messages", [
                 label.mode = 0;
             }
         });
-
-        $scope.params = {
-            alsoArchived: false
-        };
 
         $timeout(function() {
             $('#searchLabels').focus();
@@ -416,43 +424,37 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
-        var messages = _.map($scope.selectedMessages(), function(message) { return {id: message.ID}; });
+        var messageIDs = _.map($scope.selectedMessages(), function(message) { return message.ID; });
 
-        Message.apply({
-            messages: messages,
-            labels_actions: [{id: LabelID, action: 1}],
-            archive: '1'
-        }).$promise.then(function(result) {
-            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+        Label.apply({
+            id: LabelID,
+            MessageIDs: messageIDs
+        }).then(function(result) {
             notify($translate.instant('LABEL_APPLY'));
-        }, function(result) {
-            $log.error(result);
         });
     });
 
     $scope.applyLabels = function(messages) {
-        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.ID}; });
+        var messageIDs = messages || _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var promises = [];
 
-        Message.apply({
-            messages: messages,
-            labels_actions: _.map(_.reject($scope.labels, function(label) {
-                return label.mode === 2;
-            }), function(label) {
-                return {
-                    id: label.LabelID,
-                    action: label.mode
-                };
-            }),
-            archive: ($scope.params.alsoArchived)?'1':'0'
-        }).$promise.then(function(result) {
-            $state.go($state.current, {}, {reload: true}); // force reload current page
-        }, function(result) {
-            $log.error(result);
+        _.each(toApply, function(labelID) {
+            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        _.each(toRemove, function(labelID) {
+            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        $q.all(promises).then(function() {
+            $state.go($state.current, {}, {reload: true}); // force reload page
+            notify($translate.instant('LABELS_APPLY'));
         });
     };
 
     $scope.goToPage = function(page) {
-        console.log(page);
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
@@ -1064,22 +1066,19 @@ angular.module("proton.controllers.Messages", [
         attachments.get(attachment.AttachmentID, attachment.FileName);
     };
 
-    $scope.detachLabel = function(label) {
-        Message.apply({
-            messages: [{id: message.ID}],
-            labels_actions: [{id: label.LabelID, action: 0}],
-            archive: '0'
+    $scope.detachLabel = function(id) {
+        Label.remove({
+            id: id,
+            MessageIDs: [message.ID]
         }).$promise.then(function(result) {
-            var index = message.Labels.indexOf(label);
-
-            message.Labels.splice(index, 1);
+            message.LabelIDs = _.without(message.LabelIDs, id);
         }, function(result) {
             $log.error(result);
         });
     };
 
     $scope.saveLabels = function() {
-        $scope.applyLabels([{id: message.ID}]);
+        $scope.applyLabels([message.ID]);
     };
 
     $scope.sendMessageTo = function(email) {

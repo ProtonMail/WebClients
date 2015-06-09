@@ -43,7 +43,7 @@
                 <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment"></i>
                 <h4>{{ message.Subject }}</h4>
-                <span ng-repeat="id in message.LabelIDs" class="label label-pm" style="background-color: {{ labels[id].Color }}">{{ labels[id].Name }}</span>
+                <span ng-repeat="id in message.LabelIDs" class="label label-pm" style="background-color: {{ getLabel(id).Color }}">{{ getLabel(id).Name }}</span>
             </td>
 
             <td class="size">
