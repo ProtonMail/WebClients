@@ -83,9 +83,10 @@ angular.module("proton.routes", [
                     var mailbox = this.data.mailbox;
 
                     if (authentication.isSecured()) {
+                        var page =  $stateParams.page || 1;
                         var params = {
                             "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                            "Page": $stateParams.page - 1
+                            "Page": page - 1
                         };
 
                         if ($stateParams.filter) {
