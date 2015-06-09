@@ -22,7 +22,7 @@ angular.module('proton.constants', [])
     MAILBOX_IDENTIFIERS: {
         "inbox": 0,
         "drafts": 1,
-        "sent": 2,
+        "sent": 2, // outbox
         "trash": 3,
         "spam": 4,
         "starred": 5,

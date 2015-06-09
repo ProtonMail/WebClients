@@ -126,7 +126,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 return;
             }
 
-
             var params = {
                 "response_type": "token",
                 "client_id": "demoapp",
@@ -141,7 +140,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             };
 
             networkActivityTracker.track(
-                User.checkUserExist({
+                User.available({
                     username: $scope.account.Username
                 })
                 .$promise.then(

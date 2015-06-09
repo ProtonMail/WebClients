@@ -9,7 +9,7 @@
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
     </div>
     <h1>
-        <a href class="star" ng-click="message.toggleStar()"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
+        <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
         <span class="padlock">
             <i class="fa"
             ng-class=
@@ -29,8 +29,8 @@
             <i class="fa fa-paperclip"></i>
         </span>
         {{ message.Subject }}
-        <span class="label label-pm" style="background-color: {{label.LabelColor}}" ng-repeat="label in message.Labels">
-            {{label.LabelName}} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times"></i></a>
+        <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
+            {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
         </span>
       </h1>
     <ul class="infos">

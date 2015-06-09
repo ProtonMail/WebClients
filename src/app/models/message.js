@@ -77,41 +77,50 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             unreaded: {
                 method: 'get',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             // PUT
             star: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/star'
             },
             unstar: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unstar'
             },
             read: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/read'
             },
             unread: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             trash: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/trash'
             },
             inbox: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/inbox'
             },
             spam: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/spam'
             },
             archive: {
                 method: 'put',
+                isArray: true,
                 url: authentication.baseURL + '/messages/archive'
-            },
+            }
             // DELETE
         }
     );
@@ -134,18 +143,6 @@ angular.module("proton.models.message", ["proton.constants"])
             }
             return this._moment;
         },
-        toggleStar: function() {
-            var promise;
-
-            if(this.Starred === 1) {
-                promise = this.unstar({id: this.ID});
-            } else {
-                promise = this.star({id: this.ID});
-            }
-
-            return promise;
-
-        },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
             if (_.has(CONSTANTS.MAILBOX_IDENTIFIERS, location)) {
@@ -161,14 +158,12 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
         setReadStatus: function(status) {
-            var location = $state.current.name.replace('secured.', '');
-
             this.IsRead = +status;
-            // $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1); TODO adapt with location
-            return this.$patch({ action: status ? "read" : "unread"});
-        },
-        delete: function() {
-            return this.$delete();
+            // if(status) {
+            //     this.read({id: this.ID});
+            // } else {
+            //     this.unread({id: this.ID});
+            // }
         },
         numberOfAttachments: function() {
             return this.AttachmentIDList.split(",").length;
