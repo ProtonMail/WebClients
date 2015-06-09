@@ -183,7 +183,7 @@ angular.module("proton", [
                 $('#loading-css').remove();
                 $('#loading').fadeOut(400);
             });
-        }, 100000);
+        }, 1000);
     });
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');
