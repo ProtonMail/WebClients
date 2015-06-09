@@ -22,7 +22,7 @@ angular.module("proton.models.label", [])
                 isArray: true,
                 url: authentication.baseURL + '/labels/remove/:id'
             },
-
+            // Update labels
             update: {
                 method: 'put',
                 url: authentication.baseURL + '/labels/:id'
