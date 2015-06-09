@@ -575,6 +575,18 @@ angular.module("proton.controllers.Messages", [
         $scope.initMessage(message);
     });
 
+    $scope.setDefaults = function(message) {
+        _.defaults(message, {
+            ToList: [],
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: [],
+            IsEncrypted: 0
+        });
+    };
+
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
@@ -669,6 +681,7 @@ angular.module("proton.controllers.Messages", [
             return;
         }
 
+        $scope.setDefaults(message);
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
