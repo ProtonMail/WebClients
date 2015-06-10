@@ -77,9 +77,9 @@
     </p>
 </div>
 <div id="message-body">
-    <div id="email" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content | purify"></div>
+    <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'"></div>
 
-    <code ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></code>
+    <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong>Decryption error</strong>
