@@ -1,22 +1,4 @@
 // used for all emails!
 #email {
-	* {
-		box-sizing: initial;
-	}
-	img {
-		vertical-align: initial;
-	}
-	a {
-		outline: initial !important;
-		background-color: initial !important;
-		text-decoration: initial !important;
-		color: initial !important;
-	}
-	td, th {
-		padding: initial !important;
-	}
-	table {
-		border-collapse: initial !important;
-		border-spacing: initial !important;
-	}
+	padding: 1rem;
 }

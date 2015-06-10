@@ -1073,13 +1073,20 @@ angular.module("proton.controllers.Messages", [
             var content = message.clearImageBody(result);
 
             content = tools.replaceLineBreaks(content);
+            content = DOMPurify.sanitize(content, {
+                FORBID_TAGS: ['style']
+            });
+
             $scope.content = content;
+
+            $('#email').html(content);
         });
     };
 
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);
+        $('#email').html($scope.content);
     };
 
     $scope.downloadAttachment = function(attachment) {

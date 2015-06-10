@@ -62,6 +62,10 @@
     }
 }
 
+.modal {
+    background: rgba(100,100,100,.75);
+    z-index: 4000;
+}
 .modal-body,
 .panel,
 .panel-body {
