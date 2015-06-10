@@ -38,6 +38,10 @@ angular.module("proton.models.setting", [])
             autosave: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/autosave'
+            },
+            setLanguage: {
+                method: 'put',
+                url: authentication.baseURL + '/settings/language'
             }
         }
     );
