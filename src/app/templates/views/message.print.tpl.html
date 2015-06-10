@@ -1,18 +1,18 @@
 <div class="container">
-    <h2>{{message.MessageTitle}}</h2>
+    <h2>{{message.Subject}}</h2>
 
-    <p>{{ 'FROM' | translate }}: <strong>{{message.Sender}}</strong></p>
-    <p>{{ 'TO' | translate }}: <strong>{{message.RecipientList}}</strong></p>
-    <p ng-if="message.CCList">{{ 'CC' | translate }}: {{message.CCList}}</p>
-    <p>{{ 'DATE' | translate }}: {{message.readableTime()}}</p>
-
-    <hr />
-
-    <div ng-init="displayContent()" id="email"></div>
+    <p>{{ 'FROM' | translate }}: <strong>{{message.SenderName}} {{message.SenderAddress}}</strong></p>
+    <p ng-if="message.ToList.length > 0">{{ 'TO' | translate }}: <strong>{{ getEmails(message.ToList) }}</strong></p>
+    <p ng-if="message.CCList.length > 0">{{ 'CC' | translate }}: {{ getEmails(message.CCList) }}</p>
+    <p>{{ 'DATE' | translate }}: <strong>{{ message.readableTime() }}</strong></p>
 
     <hr />
 
-    <div id="message-attachments" ng-show="message.AttachmentIDList.length > 0">
+    <div ng-init="displayContent()" ng-bind-html="content"></div>
+
+    <hr />
+
+    <div ng-show="message.AttachmentIDList.length > 0">
         <div class="attachment" ng-repeat="attachment in message.AttachmentIDList">
             {{attachment.FileName}} - {{attachment.MIMEType}} - {{attachment.FileSize | humanSize}}
         </div>

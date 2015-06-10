@@ -1166,6 +1166,12 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.getEmails = function(emails) {
+        return _.map(emails, function(m) {
+            return m.Address;
+        }).join(',');
+    };
+
     $scope.markAsRead = function() {
         var promise;
 
