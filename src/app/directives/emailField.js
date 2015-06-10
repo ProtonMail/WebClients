@@ -34,7 +34,7 @@ angular.module("proton.emailField", [])
             return data && EMAIL_REGEXP.test(data);
           })
           .unique()
-          .map(function (element) { return {Name: element, Email: element}; })
+          .map(function (element) { return {Name: element, Address: element}; })
           .value()
         );
         $scope.$apply();
