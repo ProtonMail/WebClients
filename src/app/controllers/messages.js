@@ -616,14 +616,14 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on dragleave', event);
                 },
                 drop: function(event) {
-                    console.log('on drop', event);
+                    // console.log('on drop', event);
                 },
                 addedfile: function(file) {
                     console.log('on addedfile', file);
                     $scope.addAttachment(file, message);
                 },
                 removedfile: function(file) {
-                    console.log('on removedfile', file);
+                    // console.log('on removedfile', file);
                     $scope.removeAttachment(file, message);
                 }
             }
@@ -659,9 +659,14 @@ angular.module("proton.controllers.Messages", [
         totalSize += file.size;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file)
-            .then(function(packets) {
-                attachments.upload(packets);
+            attachments.load(file).then(function(packets) {
+                // TODO: update with REAL messsageID
+                attachments.upload(packets, 14073052).then(
+                    function(result) {
+                        message.Attachments.push(result);
+                        console.log('addAttachment',message.Attachments);
+                    }
+                );
             })
             .catch(function(result) {
                 notify(result);
