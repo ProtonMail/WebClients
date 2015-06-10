@@ -76,6 +76,7 @@ angular.module("proton.controllers.Contacts", [
                                 }
                             });
                             notify($translate.instant('CONTACTS_DELETED'));
+                            Contact.index.updateWith($scope.contacts);
                         }, function(response) {
                             $log.error(response);
                         })
@@ -115,6 +116,7 @@ angular.module("proton.controllers.Contacts", [
                         else {
                             notify(response[0].Response.Error);
                         }
+                        Contact.index.updateWith($scope.contacts);
                         contactModal.deactivate();
                     }, function(response) {
                         $log.error(response);
@@ -136,6 +138,7 @@ angular.module("proton.controllers.Contacts", [
                 }).$promise.then(function(response) {
                         contactModal.deactivate();
                         notify($translate.instant('CONTACT_EDITED'));
+                        Contact.index.updateWith($scope.contacts);
                     }, function(response) {
                         notify({
                             message: response.error

@@ -1,9 +1,8 @@
 angular.module("proton.models.contact", [])
 
-.factory("Contact", function($resource, $injector) {
-    var authentication = $injector.get("authentication");
+.factory("Contact", function($resource, authentication) {
 
-    return $resource(
+    var Contact = $resource(
         authentication.baseURL + "/contacts/:id",
         authentication.params({id: "@id"}),
         {
@@ -23,4 +22,29 @@ angular.module("proton.models.contact", [])
             }
         }
     );
+
+    Contact.index = new Bloodhound({
+        name: "contacts",
+        local: [],
+        datumTokenizer: function(datum) {
+            return _.union(
+                Bloodhound.tokenizers.whitespace(datum.Email),
+                Bloodhound.tokenizers.whitespace(datum.Name)
+            );
+        },
+        queryTokenizer: function(datum) {
+            return Bloodhound.tokenizers.whitespace(datum);
+        }
+    });
+
+    _.extend(Contact.index, {
+        updateWith: function(list) {
+            Contact.index.clear();
+            Contact.index.add(list);
+        }
+    });
+
+    Contact.index.initialize();
+
+    return Contact;
 });
