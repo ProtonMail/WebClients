@@ -891,10 +891,6 @@ angular.module("proton.controllers.Messages", [
         return User.pubkeys({emails: base64}).$promise;
     }
 
-    function madePackage(body) {
-
-    }
-
     function validMessage(message) {
         var deferred = $q.defer();
 
@@ -944,7 +940,7 @@ angular.module("proton.controllers.Messages", [
                 }
 
                 $q.all(promises).then(function() {
-                    console.log(newMessage);
+                    console.log(newMessage); // TODO send
                 });
             });
         });
