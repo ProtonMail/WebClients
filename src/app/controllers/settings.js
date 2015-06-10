@@ -20,7 +20,8 @@ angular.module("proton.controllers.Settings", [
     tools,
     pmcw,
     notify,
-    networkActivityTracker
+    networkActivityTracker,
+    $translate
 ) {
     $rootScope.pageName = "settings";
     $scope.tools = tools;
@@ -32,7 +33,9 @@ angular.module("proton.controllers.Settings", [
     $scope.aliases = user.Addresses;
     $scope.labels = user.Labels;
     $scope.cssTheme = user.Theme;
-    $scope.defaultLanguage = 'English';
+    $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
+    $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
+    $scope.selectedLanguage = 'English';
 
 
     // Drag and Drop configuration
@@ -310,6 +313,25 @@ angular.module("proton.controllers.Settings", [
               $log.error(response);
           })
       );
+    };
+
+    $scope.saveDefaultLanguage = function() {
+        var lang = $scope.locales[$scope.selectedLanguage];
+        $translate.use(lang);
+        notify('Default Language Changed');
+
+        // TODO uncomment when route for change language is working
+        // networkActivityTracker.track(
+        //     Setting.setLanguage({
+        //         "Language": lang
+        //     }).$promise.then(function(response) {
+        //         notify('Default Language Changed');
+        //         console.log(response);
+        //         $translate.use(lang);
+        //     }, function(response) {
+        //         $log.error(response);
+        //     })
+        // );
     };
 
     $scope.clearTheme = function() {

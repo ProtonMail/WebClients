@@ -198,12 +198,8 @@
                 <div class="panel-body">
                     <label class="control-label">{{ 'DEFAULT_LANGUAGE' | translate }}</label>
                     <div>
-                        <select class="form-control" ng-model="defaultLanguage" ng-change="saveDefaultLanguage()">
-                            <option>English</option>
-                            <option>French</option>
-                            <option>Italian</option>
-                            <option>Spanish</option>
-                            <option>German</option>
+                        <select class="form-control" ng-model="selectedLanguage" ng-change="saveDefaultLanguage()">
+                            <option ng-repeat="language in languages">{{language}}</option>
                         </select>
                     </div>
                 </div>
