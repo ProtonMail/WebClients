@@ -884,15 +884,7 @@ angular.module("proton.controllers.Messages", [
             // get the message meta data
             var newMessage = new Message(_.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
 
-            _.defaults(newMessage, {
-                ToList: [],
-                CCList: [],
-                BCCList: [],
-                Subject: '',
-                PasswordHint: '',
-                Attachments: [],
-                IsEncrypted: 0
-            });
+            $scope.setDefaults(newMessage);
 
             if (message.Attachments) {
                 newMessage.Attachments = _.map(message.Attachments, function(att) {
