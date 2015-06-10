@@ -1,3 +1,7 @@
+body,
+#searchModal {
+  padding-right: 0 !important;
+}
 #search-form {
   width: $sidebar-width;
   @include transition(width, 200ms, ease-in-out);

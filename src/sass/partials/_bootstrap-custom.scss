@@ -62,6 +62,10 @@
     }
 }
 
+.modal {
+    background: $overlay;
+    z-index: 4000;
+}
 .modal-body,
 .panel,
 .panel-body {

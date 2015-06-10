@@ -1,48 +1,35 @@
 angular.module("proton.models.contact", [])
 
 .factory("Contact", function($resource, authentication) {
+
     var Contact = $resource(
-        authentication.baseURL + "/contacts/:ContactID",
-        authentication.params({
-            ContactID: "@ContactID"
-        }), {
-            query: {
-                method: "get",
-                isArray: true,
-                transformResponse: function(data) {
-                    var contacts = JSON.parse(data).Contacts;
-                    Contact.index.updateWith(contacts);
-                    return contacts;
-                }
+        authentication.baseURL + "/contacts/:id",
+        authentication.params({id: "@id"}),
+        {
+            edit: {
+                method: 'put',
+                url: authentication.baseURL + "/contacts/:id"
+            },
+            save: {
+                method: 'post',
+                url: authentication.baseURL + "/contacts/",
+                isArray: true
             },
             delete: {
-                method: "delete",
-                isArray: false
-            },
-            get: {
-                method: "get",
-                isArray: false,
-                transformResponse: function(data) {
-                    return JSON.parse(data).data;
-                }
-            },
-            update: {
-                method: "put",
-                isArray: false
-            },
-            import: {
-                method: "POST",
-                url: authentication.baseURL + "/contacts/import"
+                method: 'put',
+                url: authentication.baseURL + "/contacts/delete",
+                isArray: true
             }
-        });
+        }
+    );
 
     Contact.index = new Bloodhound({
         name: "contacts",
         local: [],
         datumTokenizer: function(datum) {
             return _.union(
-                Bloodhound.tokenizers.whitespace(datum.ContactEmail),
-                Bloodhound.tokenizers.whitespace(datum.ContactName)
+                Bloodhound.tokenizers.whitespace(datum.Email),
+                Bloodhound.tokenizers.whitespace(datum.Name)
             );
         },
         queryTokenizer: function(datum) {

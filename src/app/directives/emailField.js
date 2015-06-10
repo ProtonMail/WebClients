@@ -34,8 +34,8 @@ angular.module("proton.emailField", [])
             return data && EMAIL_REGEXP.test(data);
           })
           .unique()
+          .map(function (element) { return {Name: element, Address: element}; })
           .value()
-          .join(",")
         );
         $scope.$apply();
       };
@@ -88,10 +88,10 @@ angular.module("proton.emailField", [])
 
         $($el).dblclick(function( ) {
           var input = $(parent).find('.tt-input');
+          $(this).find('i').trigger('click');
           $(input).val(tag);
           $$element.focus();
-          $(input).trigger('change');
-          $(this).find('i').trigger('click');
+          $(input).trigger('keydown');
         });
 
       });
@@ -117,11 +117,11 @@ angular.module("proton.emailField", [])
           source: Contact.index.ttAdapter(),
           templates: {
               suggestion: function(Contact) {
-                  return "<b>" +Contact.ContactName + "</b><br>" + Contact.ContactEmail;
+                  return "<b>" +Contact.Name + "</b><br>" + Contact.Email;
                 }
             }
         }).on("typeahead:selected", function (e, d) {
-          manager.tagsManager("pushTag", d.ContactEmail);
+          manager.tagsManager("pushTag", d.Email);
         });
 
       $$element.autosizeInput();

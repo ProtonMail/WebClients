@@ -1,0 +1,13 @@
+// used for all emails!
+#message-body {
+	.email {
+		padding: 1rem;
+	}
+	code.email,
+	.email.plain {
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		white-space: pre-wrap;	
+	}
+}

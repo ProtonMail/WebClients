@@ -21,7 +21,7 @@
             <thead>
                 <tr>
                     <th class="text-center hidden-xs">
-                        <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="Select All {{ 'CONTACTS' | translate }}" />
+                        <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'SELECT_ALL_CONTACTS' | translate }}" />
                     </th>
                     <th>{{ 'NAME' | translate }}</th>
                     <th>{{ 'EMAIL' | translate }}</th>
@@ -29,15 +29,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in contacts | filter:search">
+                <tr ng-repeat="contact in contacts | filter:search | orderBy:'Name'">
                     <td class="text-center hidden-xs">
                         <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                     </td>
                     <td>
-                        {{ contact.ContactName }}
+                        {{ contact.Name }}
                     </td>
                     <td class="text-muted">
-                        {{ contact.ContactEmail }}
+                        {{ contact.Email }}
                     </td>
                     <td>
                         <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
@@ -46,7 +46,7 @@
                         <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
                             <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
                         </a>
-                        <a href="" class="btn btn-default btn-sm" ng-click="deleteContact(contact)">
+                        <a href="" class="btn btn-default btn-sm" ng-click="deleteContacts(contact)">
                             <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
                         </a>
                     </td>

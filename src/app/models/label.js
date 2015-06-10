@@ -1,47 +1,32 @@
 angular.module("proton.models.label", [])
 
-.factory("Label", function($resource, $injector) {
-    var authentication = $injector.get("authentication");
+.factory("Label", function($resource, authentication) {
     return $resource(
-        authentication.baseURL + "/labels/:LabelID",
+        authentication.baseURL + '/labels/:id',
         authentication.params({
-            LabelID: "@LabelID"
+            id: '@id'
         }), {
-            // Get user's labels
-            get: {
-                method: 'get',
-                isArray: true,
-                url: authentication.baseURL + "/labels"
-            },
-            // Get all messages with this label
-            messages: {
-                method: 'get',
-                isArray: false,
-                url: authentication.baseURL + "/label"
-            },
-            // Create a new label
-            create: {
-                method: 'post',
-                url: authentication.baseURL + "/labels/create"
-            },
-            // Edit label
-            edit: {
-                method: 'put',
-                url: authentication.baseURL + "/labels/edit"
-            },
-            // Delete label
-            delete: {
-                method: 'delete'
-            },
             // Apply labels
             apply: {
                 method: 'put',
-                url: authentication.baseURL + "/labels/apply"
+                isArray: true,
+                url: authentication.baseURL + '/labels/apply/:id'
             },
             // Re-order labels
             order: {
                 method: 'put',
-                url: authentication.baseURL + "/labels/order"
+                url: authentication.baseURL + '/labels/order'
+            },
+            // Remove label from list of message ids
+            remove: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/labels/remove/:id'
+            },
+            // Update labels
+            update: {
+                method: 'put',
+                url: authentication.baseURL + '/labels/:id'
             }
         }
     );

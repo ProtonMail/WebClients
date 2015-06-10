@@ -154,7 +154,7 @@ angular.module("proton.tools", [])
                 return true;
             } else {
                 return false;
-            } 
+            }
         }
 
         function break_images(html) {
@@ -165,6 +165,10 @@ angular.module("proton.tools", [])
         function fix_images(html) {
             html = html.replace(/data-src=/g, " src=");
             return html;
+        }
+
+        function is_html($string) {
+            return $string.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/);
         }
 
         // Squire does this funny thing where it takes style tags, i.e.
@@ -353,6 +357,12 @@ angular.module("proton.tools", [])
           return defer.promise;
        }
 
+       function replace_line_breaks(content) {
+            return content;
+            // todo make this work (too many BR)
+            // return content.replace(/\n/g, '<br />');
+       }
+
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -377,6 +387,8 @@ angular.module("proton.tools", [])
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
             renderStorageBar: render_storage_bar,
+            replaceLineBreaks: replace_line_breaks,
+            isHtml: is_html
         };
 
         return tools;

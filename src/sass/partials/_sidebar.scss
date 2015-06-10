@@ -2,7 +2,7 @@
     width: $sidebar-width;
     background: $sidebar-bg;
     text-shadow: 0 1px 0 rgba(darken($sidebar-bg, $color-offset), 0.5);
-    z-index: 99;
+    z-index: 2000;
     height: 100%;
     position: absolute;
     position: fixed;
