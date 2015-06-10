@@ -336,6 +336,8 @@ angular.module("proton.controllers.Messages", [
         }
 
         promise.then(function(result) {
+            $rootScope.$broadcast('updateCounters');
+
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
@@ -1090,6 +1092,22 @@ angular.module("proton.controllers.Messages", [
             content = tools.replaceLineBreaks(content);
             $scope.content = content;
         });
+    };
+
+    $scope.markAsRead = function() {
+        var promise;
+
+        message.IsRead = 1;
+        promise = Message.read({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.markAsUnread = function() {
+        var promise;
+
+        message.IsRead = 0;
+        promise = Message.unread({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
     };
 
     $scope.toggleImages = function() {
