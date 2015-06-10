@@ -28,16 +28,14 @@ angular.module("proton.emailField", [])
       };
 
       var setValue = function () {
-          Contact.index.updateWith($scope.user.Contacts);
-          console.log(Contact.index);
         $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
           .map(function (element) { return element.trim(); })
           .filter(function (data) {
             return data && EMAIL_REGEXP.test(data);
           })
           .unique()
+          .map(function (element) { return {Name: element, Email: element}; })
           .value()
-          .join(",")
         );
         $scope.$apply();
       };
@@ -90,10 +88,10 @@ angular.module("proton.emailField", [])
 
         $($el).dblclick(function( ) {
           var input = $(parent).find('.tt-input');
+          $(this).find('i').trigger('click');
           $(input).val(tag);
           $$element.focus();
-          $(input).trigger('change');
-          $(this).find('i').trigger('click');
+          $(input).trigger('keydown');
         });
 
       });

@@ -27,7 +27,6 @@ angular.module("proton.models.contact", [])
         name: "contacts",
         local: [],
         datumTokenizer: function(datum) {
-            console.log(datum);
             return _.union(
                 Bloodhound.tokenizers.whitespace(datum.Email),
                 Bloodhound.tokenizers.whitespace(datum.Name)

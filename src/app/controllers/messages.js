@@ -541,8 +541,10 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     notify,
     tools,
-    CONSTANTS
+    CONSTANTS,
+    Contact
 ) {
+    Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
 
