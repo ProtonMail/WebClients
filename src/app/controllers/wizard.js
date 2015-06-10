@@ -9,5 +9,10 @@ angular.module("proton.controllers.Wizard", [])
     tools,
     networkActivityTracker
 ) {
+    $scope.pages = [1,2,3];
     $scope.selection = 1;
+    $scope.changePage = function(page) {
+        console.log(page);
+        $scope.selection = page;
+    };
 });

@@ -25,11 +25,9 @@
                     </ol>
                 </div>
                 <div class="modal-footer">
-                    <select ng-model="selection">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
+                    <ol id="pagination">
+                        <li  ng-repeat="page in pages" ng-click="changePage(page)"><a href="#" ng-class="{active: page == selection}"></a></li>
+                    </ol>
 
                 </div>
             </form>

@@ -55,7 +55,7 @@ body {
     width: 100%;
     #content {
         position: relative;
-        // z-index: 3000;        
+        // z-index: 3000;
         flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
@@ -325,5 +325,6 @@ tr.selected td {
 @import "partials/error-reporter";
 @import "partials/email";
 @import "partials/animations";
+@import "partials/wizard";
 @import "responsive";
 @import "print";
