@@ -167,6 +167,10 @@ angular.module("proton.tools", [])
             return html;
         }
 
+        function is_html($string) {
+            return $string.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/);
+        }
+
         // Squire does this funny thing where it takes style tags, i.e.
         // <style> *my css here* </style>
         // and removes the tags but leaves the css text. Need to manually remove the text
@@ -383,7 +387,8 @@ angular.module("proton.tools", [])
             validEmail: valid_email,
             is_valid_dkim: is_valid_dkim,
             renderStorageBar: render_storage_bar,
-            replaceLineBreaks: replace_line_breaks
+            replaceLineBreaks: replace_line_breaks,
+            isHtml: is_html
         };
 
         return tools;

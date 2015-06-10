@@ -1084,6 +1084,7 @@ angular.module("proton.controllers.Messages", [
     $scope.message = message;
     $rootScope.pageName = message.Subject;
     $scope.tools = tools;
+    $scope.isPlain = false;
 
     $scope.displayContent = function() {
         message.clearTextBody().then(function(result) {
@@ -1094,9 +1095,14 @@ angular.module("proton.controllers.Messages", [
                 FORBID_TAGS: ['style']
             });
 
+            if (tools.isHtml(content)) {
+                $scope.isPlain = false;
+            }
+            else {
+                $scope.isPlain = true;
+            }
             $scope.content = content;
-
-            $('#email').html(content);
+            $('#message-body .email').html(content);
         });
     };
 
@@ -1119,7 +1125,7 @@ angular.module("proton.controllers.Messages", [
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);
-        $('#email').html($scope.content);
+        $('#message-body .email').html($scope.content);
     };
 
     $scope.downloadAttachment = function(attachment) {

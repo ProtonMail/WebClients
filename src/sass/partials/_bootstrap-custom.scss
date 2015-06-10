@@ -63,7 +63,7 @@
 }
 
 .modal {
-    background: rgba(100,100,100,.75);
+    background: $overlay;
     z-index: 4000;
 }
 .modal-body,
