@@ -213,14 +213,6 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         validate: function(draft) {
-            _.defaults(this, {
-                ToList: [],
-                CCList: [],
-                BCCList: [],
-                Subject: '',
-                Body: ''
-            });
-
             // set msgBody input element to editor content
             this.setMsgBody();
 
@@ -248,23 +240,17 @@ angular.module("proton.models.message", ["proton.constants"])
             // }
 
             // Check all emails to make sure they are valid
-            var invalidEmails = '';
-            var allEmails = this.ToList.concat(this.CCList).concat(this.BCCList);
+            var invalidEmails = [];
+            var allEmails = _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Email.trim(); });
 
-            for (i = 0; i < allEmails.length; i++) {
-                if (allEmails[i].trim() !== '') {
-                    if (!tools.validEmail(allEmails[i])) {
-                        if (invalidEmails === '') {
-                            invalidEmails = allEmails[i].trim();
-                        } else {
-                            invalidEmails += ', ' + allEmails[i].trim();
-                        }
-                    }
+            _.each(allEmails, function(email) {
+                if(!tools.validEmail(email)) {
+                    invalidEmails.push(email);
                 }
-            }
+            });
 
-            if (invalidEmails !== '') {
-                notify('Invalid email(s): ' + invalidEmails + '.');
+            if (invalidEmails.length > 0) {
+                notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
                 return false;
             }
 
@@ -295,7 +281,11 @@ angular.module("proton.models.message", ["proton.constants"])
                 return false;
             }
 
-            return this.needToSave();
+            if(draft) {
+                return this.needToSave();
+            } else {
+                return true;
+            }
         },
 
         close: function() {
@@ -340,56 +330,56 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         save: function(silently) {
-            if (this.validate(true)) { // draft mode
-                var newMessage = new Message(_.pick(this, 'MessageID', 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-
-                this.saveOld();
-
-                _.defaults(newMessage, {
-                    ToList: [],
-                    CCList: [],
-                    BCCList: [],
-                    Subject: '',
-                    PasswordHint: '',
-                    Attachments: [],
-                    IsEncrypted: 0
-                });
-
-                if (this.Attachments) {
-                    newMessage.Attachments = _.map(this.Attachments, function(att) {
-                        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
-                    });
-                }
-
-                newMessage.Body = {
-                    outsiders: ''
-                };
-
-                pmcw.encryptMessage(this.Body, authentication.user.PublicKey).then(function(result) {
-                    newMessage.Body.self = result;
-
-                    var newDraft = angular.isUndefined(this.MessageID);
-                    var draftPromise = newMessage.draft({ID: this.MessageID}).$promise;
-
-                    draftPromise.then(function(result) {
-                        if (newDraft) {
-                            this.MessageID = parseInt(result.MessageID);
-                            if(!!!silently) {
-                                notify('Draft saved');
-                            }
-                        } else {
-                          if(!!!silently) {
-                              notify('Draft updated');
-                          }
-                        }
-                        this.BackupDate = new Date();
-                    }.bind(this));
-
-                    if(!!!silently) {
-                        networkActivityTracker.track(draftPromise);
-                    }
-                }.bind(this));
-            }
+            // if (this.validate(true)) { // draft mode
+            //     var newMessage = new Message(_.pick(this, 'MessageID', 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
+            //
+            //     this.saveOld();
+            //
+            //     _.defaults(newMessage, {
+            //         ToList: [],
+            //         CCList: [],
+            //         BCCList: [],
+            //         Subject: '',
+            //         PasswordHint: '',
+            //         Attachments: [],
+            //         IsEncrypted: 0
+            //     });
+            //
+            //     if (this.Attachments) {
+            //         newMessage.Attachments = _.map(this.Attachments, function(att) {
+            //             return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
+            //         });
+            //     }
+            //
+            //     newMessage.Body = {
+            //         outsiders: ''
+            //     };
+            //
+            //     pmcw.encryptMessage(this.Body, authentication.user.PublicKey).then(function(result) {
+            //         newMessage.Body.self = result;
+            //
+            //         var newDraft = angular.isUndefined(this.MessageID);
+            //         var draftPromise = Message.draft({id: this.MessageID}).$promise;
+            //
+            //         draftPromise.then(function(result) {
+            //             if (newDraft) {
+            //                 this.MessageID = parseInt(result.MessageID);
+            //                 if(!!!silently) {
+            //                     notify('Draft saved');
+            //                 }
+            //             } else {
+            //               if(!!!silently) {
+            //                   notify('Draft updated');
+            //               }
+            //             }
+            //             this.BackupDate = new Date();
+            //         }.bind(this));
+            //
+            //         if(!!!silently) {
+            //             networkActivityTracker.track(draftPromise);
+            //         }
+            //     }.bind(this));
+            // }
         },
 
         setSessionKey: function() {
