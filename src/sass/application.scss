@@ -54,6 +54,8 @@ body {
     float: left;
     width: 100%;
     #content {
+        position: relative;
+        // z-index: 3000;        
         flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
@@ -321,6 +323,7 @@ tr.selected td {
 @import "partials/squire";
 @import "partials/toggle-switch";
 @import "partials/error-reporter";
+@import "partials/email";
 @import "partials/animations";
 @import "responsive";
 @import "print";

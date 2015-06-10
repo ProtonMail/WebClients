@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
         <li class="selectAll">
             <label>
-                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" />
+                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" pt-placement="right" />
             </label>
         </li>
         <li ng-if="pageName != 'inbox'">
@@ -133,7 +133,7 @@
             </ul>
         </li>
     </ul>
-    <ul class="nav navbar-nav pull-right navigation">
+    <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount > 0">
         <li class="pageDropdown">
             <b>{{start()}}</b> - <b>{{end()}}</b> of <b>{{messageCount}}</b>
         </li>

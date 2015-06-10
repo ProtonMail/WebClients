@@ -59,7 +59,7 @@ angular.module("proton.messages", [])
                         // Loop through each loaded message lists
                         _.find(list, function(msg, i) {
                             // and for each, loop through each of its messages
-                            if (msg.MessageID === id) {
+                            if (msg.ID === id) {
                                 // replacing matching message excerpts with
                                 // this new detailed one.
                                 list.splice(i, 1, message);
@@ -86,18 +86,18 @@ angular.module("proton.messages", [])
             _.find(messageList, function(other, i) {
                 // For every message in the newly downloaded message list
 
-                if ((msg = cachedMessages.get(other.MessageID))) {
+                if ((msg = cachedMessages.get(other.ID))) {
                     // If a completely fetched message exists in the cache
                     // replace the instance in the list with the complete cached instance
                     // updating variable fields (IsRead, Tag, Location, Labels)
                     messageList.splice(i, 1, msg);
-                    _.extend(msg, _.pick(other, 'IsRead', 'Tag', 'Location', 'Labels'));
+                    _.extend(msg, _.pick(other, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
 
-                } else if (!other.IsRead) {
+                } else if (other.IsRead === 0) {
                     // Otherwise, if the message isn't read, preload it, as there is a
                     // good chance the user will want to read it.
                     if(i <= CONSTANTS.NUMBER_OF_MESSAGES_PRELOADING) {
-                        messagesToPreload.add(other.MessageID);
+                        messagesToPreload.add(other.ID);
                     }
                 }
             });
@@ -123,7 +123,7 @@ angular.module("proton.messages", [])
 
                 if (!msg) {
                     msg = Message.get({
-                        MessageID: id
+                        id: id
                     });
                     cachedMessages.put(id, msg);
                 }

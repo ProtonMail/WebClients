@@ -2,7 +2,7 @@
     <ng-form name="composeForm" id="composeForm" novalidate>
         <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message)}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
             <div class="composer-header row">
-                <span class="col-xs-9">{{message.MessageTitle}} &nbsp;</span>
+                <span class="col-xs-9">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-3 text-right">
                     <a href="" ng-show="!!!message.minimized" class="btn btn-sm minimize-button hidden-xs" ng-click="minimize(message)" pt-tooltip="{{ 'MINIMIZE' | translate }}">
                         <i class="fa fa-minus"></i>
@@ -18,14 +18,14 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
+                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.Addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
                     </select>
                 </div>
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.RecipientList" ng-change="message.saveLater(true)" class="form-control" />
+                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.ToList" ng-change="message.saveLater(true)" class="form-control to-list" />
                             </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
@@ -36,17 +36,17 @@
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="cc-container">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="message.saveLater(true)" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control" />
+                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="message.saveLater(true)" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control cc-list" />
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
                         <div class="typeahead-container" id="bcc-container">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="message.saveLater(true)" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control" />
+                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="message.saveLater(true)" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control bcc-list" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" pt-tooltip="{{ 'SUBJECT' | translate }}" pt-placement="left" class="form-control message-title" ng-model="message.MessageTitle" ng-change="message.saveLater(true)" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
+                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" pt-tooltip="{{ 'SUBJECT' | translate }}" pt-placement="left" class="form-control subject" ng-model="message.Subject" ng-change="message.saveLater(true)" ng-keydown="$event.which === 9 && focusEditor(message, $event)" required />
                 </div>
                 <div class="form-group">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'attachments'">
@@ -93,7 +93,7 @@
                             <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
                         </div>
                     </div>
-                    <squire ng-model="message.MessageBody" message="message" editor="message.editor" height="320px">
+                    <squire ng-model="message.Body" message="message" editor="message.editor" height="320px">
                     </squire>
                 </div>
             </div>

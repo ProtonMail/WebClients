@@ -9,7 +9,7 @@ angular.module("proton.routes", [
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
 
     var messageViewOptions = {
-        url: "/:MessageID",
+        url: "/:id",
         controller: "ViewMessageController as messageViewCtrl",
         templateUrl: "templates/views/message.tpl.html",
         resolve: {
@@ -24,7 +24,7 @@ angular.module("proton.routes", [
             ) {
                 if (authentication.isLoggedIn()) {
                     return networkActivityTracker.track(
-                        messageCache.get($stateParams.MessageID).$promise
+                        messageCache.get($stateParams.id).$promise
                     );
                 }
             }
@@ -83,49 +83,50 @@ angular.module("proton.routes", [
                     var mailbox = this.data.mailbox;
 
                     if (authentication.isSecured()) {
+                        var page =  $stateParams.page || 1;
                         var params = {
                             "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                            "Page": $stateParams.page
+                            "Page": page - 1
                         };
 
-                        // This should replace the starred location when tags are used
-                        if (mailbox === 'starred') {
-                            params.Tag = mailbox;
-                        }
-
                         if ($stateParams.filter) {
-                            params.FilterUnread = +($stateParams.filter === 'unread');
-                        } else {
-                            params.FilterUnread = -2;
+                            params.Unread = +($stateParams.filter === 'unread');
                         }
 
                         if ($stateParams.sort) {
                             var sort = $stateParams.sort;
                             var desc = _.string.startsWith(sort, "-");
+
                             if (desc) {
                                 sort = sort.slice(1);
                             }
 
-                            params.SortedColumn = _.string.capitalize(sort);
-                            params.Order = +desc;
+                            params.Sort = _.string.capitalize(sort);
+                            params.Desc = +desc;
                         }
 
                         var messagesPromise;
 
                         if (mailbox === 'search') {
-                            params.page = params.Page;
-                            messagesPromise = Message.advSearch(_.pick(_.extend(params, $stateParams), 'location', 'label', 'from', 'to', 'subject', 'words', 'begin', 'end', 'attachments', 'starred', 'page')).$promise;
+                            delete params.Location;
+                            params.Location = $stateParams.location;
+                            params.Keyword = $stateParams.words;
+                            params.To = $stateParams.to;
+                            params.From = $stateParams.from;
+                            params.Subject = $stateParams.subject;
+                            params.Begin = $stateParams.begin;
+                            params.End = $stateParams.end;
+                            params.Attachments = $stateParams.attachments;
+                            params.Starred = $stateParams.starred;
+                            params.Label = $stateParams.label;
                         } else if(mailbox === 'label') {
-                            params.LabelID = $stateParams.label;
-                            params.id = $stateParams.label;
-                            params.filter = params.FilterUnread;
-                            params.sort = params.Order;
-                            params.page = params.Page;
-                            params = _.pick(params, 'id', 'LabelID', 'filter', 'sort', 'page');
-                            messagesPromise = Message.labels(params).$promise;
-                        } else {
-                            messagesPromise = Message.query(params).$promise;
+                            delete params.Location;
+                            params.Label = $stateParams.label;
                         }
+
+                        _.pick(params, _.identity);
+
+                        messagesPromise = Message.query(params).$promise;
 
                         return networkActivityTracker.track(
                             errorReporter.resolve(
@@ -135,31 +136,6 @@ angular.module("proton.routes", [
                         );
                     } else {
                         return [];
-                    }
-                },
-
-                messageCount: function(
-                    $stateParams,
-                    Message,
-                    authentication,
-                    CONSTANTS,
-                    errorReporter,
-                    networkActivityTracker
-                ) {
-                    var mailbox = this.data.mailbox;
-                    if (authentication.isSecured()) {
-                        var params = {
-                            "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                            "Page": $stateParams.page
-                        };
-
-                        return networkActivityTracker.track(
-                            errorReporter.resolve(
-                                "Message count couldn't be queried - please try again later.",
-                                Message.count(params).$promise,
-                                {count: 0}
-                            )
-                        );
                     }
                 }
             }
@@ -406,9 +382,7 @@ angular.module("proton.routes", [
     // -------------------------------------------
 
     .state("secured", {
-
         // This is included in every secured.* sub-controller
-
         abstract: true,
         views: {
             "main@": {
@@ -416,12 +390,14 @@ angular.module("proton.routes", [
                 templateUrl: "templates/layout/secured.tpl.html"
             }
         },
-        // url: "/secured", // remove
-
         resolve: {
             // Contains also labels and contacts
             user: function(authentication) {
-                return authentication.fetchUserInfo();
+                if(angular.isDefined(authentication.user) && authentication.user) {
+                    return authentication.user;
+                } else {
+                    return authentication.fetchUserInfo();
+                }
             }
         },
 
@@ -447,7 +423,7 @@ angular.module("proton.routes", [
     .state("secured.inbox.message", _.clone(messageViewOptions))
 
     .state("secured.print", _.extend(_.clone(messageViewOptions), {
-        url: "/print/:MessageID",
+        url: "/print/:id",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
@@ -459,7 +435,7 @@ angular.module("proton.routes", [
     }))
 
     .state("secured.raw", _.extend(_.clone(messageViewOptions), {
-        url: "/raw/:MessageID",
+        url: "/raw/:id",
         onEnter: function($rootScope) { $rootScope.isBlank = true; },
         onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
@@ -481,7 +457,7 @@ angular.module("proton.routes", [
         resolve: {
             contacts: function(Contact, networkActivityTracker) {
                 return networkActivityTracker.track(
-                    Contact.query().$promise
+                    Contact.get().$promise
                 );
             }
         }
