@@ -22,7 +22,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
             params.words = navbarValue;
         } else {
             // Advanced search
-            params.words = '';
+            params.words = $scope.params.words;
             params.from = $scope.params.from;
             params.to = $scope.params.to;
             params.subject = $scope.params.subject;
@@ -54,6 +54,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         // reset params
         $scope.params.attachments = 2;
         $scope.params.starred = 2;
+        $scope.params.words = '';
 
         // init form
         $scope.searchForm.begin = {};

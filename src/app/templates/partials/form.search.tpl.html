@@ -8,8 +8,16 @@
                         <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                     </button>
                     <h4 class="modal-title">{{ 'ADVANCED_SEARCH' | translate }}</h4>
-                </div>            
+                </div>
                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="search_word">{{ 'KEYWORDS' | translate }}</label>
+                                <input id="search_word" name="search_word" type="text"  class="form-control" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="params.words" />
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

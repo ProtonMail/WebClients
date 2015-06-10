@@ -39,11 +39,11 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-list"></span> {{ 'CONTACTS' | translate }}</a>
+                        <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
                     </li>
                     <li class="dropdown" ng-if="isLoggedIn">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="visible-lg-inline-block fa fa-user"></span> 
+                            <span class="visible-lg-inline-block fa fa-user"></span>
                             <em ng-bind-html="user.DisplayName"></em> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">

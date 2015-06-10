@@ -785,7 +785,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = authentication.user.Addresses[0];
+        message.From = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
@@ -876,16 +876,24 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    var generateReplyToken = function() {
-        // Use a base64-encoded AES256 session key as the reply token
-        return pmcw.encode_base64(pmcw.generateKeyAES());
+    // var generateReplyToken = function() {
+    //     // Use a base64-encoded AES256 session key as the reply token
+    //     return pmcw.encode_base64(pmcw.generateKeyAES());
+    // };
+
+    $scope.save = function(message, silently) {
+        var promise = message.saving().then(function(result) {
+            return Message.draft(result).$promise;
+        });
+
+        if(!!!silently) {
+            networkActivityTracker.track(promise);
+        }
     };
 
     $scope.send = function(message) {
-        var promise = message.sending();
-
-        promise.then(function(result) {
-            Message.send(result);
+        var promise = message.sending().then(function(result) {
+            return Message.send(result).$promise;
         });
 
         networkActivityTracker.track(promise);

@@ -1,5 +1,4 @@
-body,
-#searchModal {
+body {
   padding-right: 0 !important;
 }
 #search-form {
@@ -103,25 +102,6 @@ body,
       display: block;
       box-shadow: none;
       border: none;
-    }
-  }
-}
-
-#searchModal {
-  .modal-dialog {
-    margin-top: 0;
-    @include transition(margin-left, 200ms, ease-in-out);
-    @include responsive(xs) {
-      margin-top: 60px;
-    }
-    @include responsive(sm) {
-      margin-left: 6rem;
-    }
-    @include responsive(md) {
-      margin-left: 18rem;
-    }
-    @include responsive(lg) {
-      margin-left: 20rem;
     }
   }
 }

@@ -18,7 +18,7 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.Addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
+                    <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
                     </select>
                 </div>
                 <div class="form-horizontal">

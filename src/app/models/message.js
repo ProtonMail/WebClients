@@ -242,7 +242,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             // Check all emails to make sure they are valid
             var invalidEmails = [];
-            var allEmails = _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Email.trim(); });
+            var allEmails = _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Address.trim(); });
 
             _.each(allEmails, function(email) {
                 if(!tools.validEmail(email)) {
@@ -343,44 +343,47 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
+        encryptBody: function(body, key) {
+            return pmcw.encryptMessage(body, key);
+        },
+
+        emailsToString: function() {
+            return _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Address; });
+        },
+
+        getPublicKeys: function(emails) {
+            var base64 = pmcw.encode_base64(emails.join(','));
+
+            return User.pubkeys({emails: base64}).$promise;
+        },
+
+        cleanKey: function(key) {
+            return key.replace(/(\r\n|\n|\r)/gm,'');
+        },
+
+        validMessage: function(draft) {
+            var deferred = $q.defer();
+
+            if(this.validate(draft)) {
+                deferred.resolve();
+            } else {
+                deferred.reject(); // TODO add message
+            }
+
+            return deferred.promise;
+        },
+
         sending: function() {
             var deferred = $q.defer();
             var self = this;
 
-            var encryptBody = function(body, key) {
-                return pmcw.encryptMessage(body, key);
-            };
+            self.validMessage().then(function() {
+                var parameters = { Message: _.pick(self, 'Subject', 'ToList', 'CCList', 'BCCList') };
+                var emails = self.emailsToString();
+                var encryptPromise = self.encryptBody(self.Body, authentication.user.PublicKey);
+                var keyPromise = self.getPublicKeys(emails);
 
-            var getEmails = function() {
-                return _.map(self.ToList.concat(self.CCList).concat(self.BCCList), function(email) { return email.Address; });
-            };
-
-            var getPublicKeys = function(emails) {
-                var base64 = pmcw.encode_base64(emails.join(','));
-
-                return User.pubkeys({emails: base64}).$promise;
-            };
-
-            var validMessage = function(draft) {
-                var deferred = $q.defer();
-
-                if(self.validate(draft)) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject(); // TODO add message
-                }
-
-                return deferred.promise;
-            };
-
-
-            validMessage().then(function() {
-                var parameters = {
-                    Message: _.pick(self, 'Subject', 'ToList', 'CCList', 'BCCList')
-                };
-                var emails = getEmails();
-                var encryptPromise = encryptBody(self.Body, authentication.user.PublicKey);
-                var keyPromise = getPublicKeys(emails);
+                parameters.Message.AddressID = self.From.ID;
 
                 $q.all([encryptPromise, keyPromise]).then(function(result) {
                     var encryptedBody = result[0];
@@ -393,12 +396,14 @@ angular.module("proton.models.message", ["proton.constants"])
 
                     _.each(emails, function(email) {
                         if(keys && keys[email]) {
-                            promises.push(encryptBody(self.Body, keys[email]).then(function(result) {
+                            var key = keys[email];
+
+                            promises.push(self.encryptBody(self.Body, key).then(function(result) {
                                 parameters.Packages.push({Address: email, Type: 1, Body: result, KeyPackets: []});
                             }));
                         } else {
                             if(self.IsEncrypted === 1) {
-                                promises.push(encryptBody(self.Body, self.Password).then(function(result) {
+                                promises.push(self.encryptBody(self.Body, self.Password).then(function(result) {
                                     parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: [], PasswordHint: self.PasswordHint});
                                 }));
                             }
@@ -420,65 +425,22 @@ angular.module("proton.models.message", ["proton.constants"])
             return deferred.promise;
         },
 
-        save: function(silently) {
-            // if (this.validate(true)) { // draft mode
-            //     var newMessage = new Message(_.pick(this, 'MessageID', 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-            //
-            //     this.saveOld();
-            //
-            //     _.defaults(newMessage, {
-            //         ToList: [],
-            //         CCList: [],
-            //         BCCList: [],
-            //         Subject: '',
-            //         PasswordHint: '',
-            //         Attachments: [],
-            //         IsEncrypted: 0
-            //     });
-            //
-            //     if (this.Attachments) {
-            //         newMessage.Attachments = _.map(this.Attachments, function(att) {
-            //             return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
-            //         });
-            //     }
-            //
-            //     newMessage.Body = {
-            //         outsiders: ''
-            //     };
-            //
-            //     pmcw.encryptMessage(this.Body, authentication.user.PublicKey).then(function(result) {
-            //         newMessage.Body.self = result;
-            //
-            //         var newDraft = angular.isUndefined(this.MessageID);
-            //         var draftPromise = Message.draft({id: this.MessageID}).$promise;
-            //
-            //         draftPromise.then(function(result) {
-            //             if (newDraft) {
-            //                 this.MessageID = parseInt(result.MessageID);
-            //                 if(!!!silently) {
-            //                     notify('Draft saved');
-            //                 }
-            //             } else {
-            //               if(!!!silently) {
-            //                   notify('Draft updated');
-            //               }
-            //             }
-            //             this.BackupDate = new Date();
-            //         }.bind(this));
-            //
-            //         if(!!!silently) {
-            //             networkActivityTracker.track(draftPromise);
-            //         }
-            //     }.bind(this));
-            // }
-        },
+        saving: function(silently) {
+            var deferred = $q.defer();
+            var self = this;
 
-        setSessionKey: function() {
+            self.validMessage(true).then(function(result) {
+                var parameters = _.pick(self, 'ToList', 'CCList', 'BCCList', 'Subject');
 
-        },
+                parameters.AddressID = self.From.ID;
 
-        removeSessionKey: function() {
+                self.encryptBody(self.Body, authentication.user.PublicKey).then(function(result) {
+                    parameters.Body = result;
+                    deferred.resolve(parameters);
+                });
+            });
 
+            return deferred.promise;
         },
 
         clearTextBody: function() {
