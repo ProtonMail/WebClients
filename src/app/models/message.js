@@ -352,7 +352,7 @@ angular.module("proton.models.message", ["proton.constants"])
             };
 
             var getEmails = function() {
-                return _.map(self.ToList.concat(self.CCList).concat(self.BCCList), function(email) { return email.Email; });
+                return _.map(self.ToList.concat(self.CCList).concat(self.BCCList), function(email) { return email.Address; });
             };
 
             var getPublicKeys = function(emails) {
