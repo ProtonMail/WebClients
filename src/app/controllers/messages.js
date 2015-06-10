@@ -336,6 +336,8 @@ angular.module("proton.controllers.Messages", [
         }
 
         promise.then(function(result) {
+            $rootScope.$broadcast('updateCounters');
+
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
@@ -575,6 +577,18 @@ angular.module("proton.controllers.Messages", [
         $scope.initMessage(message);
     });
 
+    $scope.setDefaults = function(message) {
+        _.defaults(message, {
+            ToList: [],
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: [],
+            IsEncrypted: 0
+        });
+    };
+
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
@@ -669,6 +683,7 @@ angular.module("proton.controllers.Messages", [
             return;
         }
 
+        $scope.setDefaults(message);
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
@@ -741,10 +756,10 @@ angular.module("proton.controllers.Messages", [
             // focus correct field
             var composer = $('.composer')[index];
 
-            if (!!!message.ToList) {
-                $(composer).find('.recipient-list').focus();
-            } else if (!!!message.Subject) {
-                $(composer).find('.message-title').focus();
+            if (message.ToList.length === 0) {
+                $(composer).find('.to-list')[0].focus();
+            } else if (message.Subject.length === 0) {
+                $(composer).find('.subject')[0].focus();
             } else {
                 message.editor.focus();
             }
@@ -767,7 +782,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = $scope.user.addresses[0];
+        message.FromEmail = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
@@ -1083,6 +1098,22 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.markAsRead = function() {
+        var promise;
+
+        message.IsRead = 1;
+        promise = Message.read({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.markAsUnread = function() {
+        var promise;
+
+        message.IsRead = 0;
+        promise = Message.unread({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);
@@ -1170,9 +1201,9 @@ angular.module("proton.controllers.Messages", [
         var inDelete = mailbox === 'delete';
 
         if(inDelete) {
-            promise = Message.delete({IDs: message.ID}).$promise;
+            promise = Message.delete({IDs: [message.ID]}).$promise;
         } else {
-            promise = Message[mailbox]({IDs: message.ID}).$promise;
+            promise = Message[mailbox]({IDs: [message.ID]}).$promise;
         }
 
         promise.then(function(result) {
@@ -1224,5 +1255,6 @@ angular.module("proton.controllers.Messages", [
 
     if (message.IsRead === 0) {
         message.IsRead = 1;
+        Message.read({IDs: [message.ID]});
     }
 });

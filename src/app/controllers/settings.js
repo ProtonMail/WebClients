@@ -33,6 +33,7 @@ angular.module("proton.controllers.Settings", [
     $scope.labels = user.Labels;
     $scope.cssTheme = user.Theme;
 
+
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
@@ -63,7 +64,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveNotification = function(form) {
         networkActivityTracker.track(
-            Setting.noticeemail({
+            Setting.noticeEmail({
                 "NotificationEmail": $scope.notificationEmail
             }).$promise.then(function(response) {
                 user.NotificationEmail = $scope.notificationEmail;
@@ -94,7 +95,12 @@ angular.module("proton.controllers.Settings", [
                 OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
                 NewPassword: $scope.newLoginPassword
             }).$promise.then(function(response) {
-                notify('Login password updated');
+                if (response.Error) {
+                    notify(response.Error);
+                }
+                else {
+                    notify('Login password updated');
+                }
             }, function(response) {
                 $log.error(response);
             })
@@ -145,7 +151,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveAliases = function(aliasOrder) {
         networkActivityTracker.track(
-            Setting.addressorder({
+            Setting.addressOrder({
                 "Order": aliasOrder
             }).$promise.then(function(response) {
                 notify('Aliases saved');
@@ -200,27 +206,39 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.editLabel = function(label) {
+        origName = label.Name;
+        origColor = label.Color;
         labelModal.activate({
             params: {
                 title: 'Edit Label',
                 label: label,
-                create: function(name, color) {
-                    Label.update({
-                        id: label.ID,
-                        Name: name,
-                        Color: color,
-                        Display: label.Display
+                create: function() {
+                    networkActivityTracker.track(
+                        Label.update({
+                            id: label.ID,
+                            Name: label.Name,
+                            Color: label.Color,
+                            Display: label.Display
 
-                    }).$promise.then(function(result) {
-                        label.Name = name;
-                        label.Color = color;
-                        labelModal.deactivate();
-                        notify('Labed edited');
-                    }, function(result) {
-                        $log.error(result);
-                    });
+                        }).$promise.then(function(result) {
+                            if (result.Error) {
+                                notify(result.Error);
+                                label.Name = origName;
+                                label.Color = origColor;
+                            }
+                            else {
+                                notify('Labed edited');
+                            }
+                            labelModal.deactivate();
+
+                        }, function(result) {
+                            $log.error(result);
+                        })
+                    );
                 },
                 cancel: function() {
+                    label.Name = origName;
+                    label.Color = origColor;
                     labelModal.deactivate();
                 }
             }
@@ -233,13 +251,15 @@ angular.module("proton.controllers.Settings", [
                 title: 'Delete Label',
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
-                    Label.delete({id: label.ID}).$promise.then(function(result) {
-                        confirmModal.deactivate();
-                        notify('Label ' + label.Name + ' deleted');
-                        $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
-                    }, function(result) {
-                        $log.error(result);
-                    });
+                    networkActivityTracker.track(
+                        Label.delete({id: label.ID}).$promise.then(function(result) {
+                            confirmModal.deactivate();
+                            notify('Label ' + label.Name + ' deleted');
+                            $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
+                        }, function(result) {
+                            $log.error(result);
+                        })
+                    );
                 },
                 cancel: function() {
                     confirmModal.deactivate();

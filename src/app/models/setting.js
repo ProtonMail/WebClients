@@ -11,7 +11,7 @@ angular.module("proton.models.setting", [])
                 method: 'put',
                 url: authentication.baseURL + '/settings/password'
             },
-            noticeemail: {
+            noticeEmail: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/noticeemail'
             },
@@ -23,7 +23,7 @@ angular.module("proton.models.setting", [])
                 method: 'put',
                 url: authentication.baseURL + '/settings/display'
             },
-            addressorder: {
+            addressOrder: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/addressorder'
             },
