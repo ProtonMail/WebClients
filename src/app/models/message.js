@@ -11,6 +11,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $state,
     authentication,
     localStorageService,
+    User,
     pmcw,
     CONSTANTS,
     networkActivityTracker,
@@ -306,7 +307,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
         needToSave: function() {
             if(angular.isDefined(this.old)) {
-                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted'];
+                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
 
@@ -316,8 +317,20 @@ angular.module("proton.models.message", ["proton.constants"])
             }
         },
 
+        defaults: function() {
+            _.defaults(this, {
+                ToList: [],
+                BCCList: [],
+                CCList: [],
+                Attachments: [],
+                Subject: '',
+                IsEncrypted: 0,
+                PasswordHint: ''
+            });
+        },
+
         saveOld: function() {
-            var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted'];
+            var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
 
             this.old = _.pick(this, properties);
 
@@ -325,8 +338,86 @@ angular.module("proton.models.message", ["proton.constants"])
                 ToList: [],
                 BCCList: [],
                 CCList: [],
+                Attachments: [],
                 Subject: ""
             });
+        },
+
+        sending: function() {
+            var deferred = $q.defer();
+            var self = this;
+
+            var encryptBody = function(body, key) {
+                return pmcw.encryptMessage(body, key);
+            };
+
+            var getEmails = function() {
+                return _.map(self.ToList.concat(self.CCList).concat(self.BCCList), function(email) { return email.Email; });
+            };
+
+            var getPublicKeys = function(emails) {
+                var base64 = pmcw.encode_base64(emails.join(','));
+
+                return User.pubkeys({emails: base64}).$promise;
+            };
+
+            var validMessage = function(draft) {
+                var deferred = $q.defer();
+
+                if(self.validate(draft)) {
+                    deferred.resolve();
+                } else {
+                    deferred.reject(); // TODO add message
+                }
+
+                return deferred.promise;
+            };
+
+
+            validMessage().then(function() {
+                var parameters = {
+                    Message: _.pick(self, 'Subject', 'ToList', 'CCList', 'BCCList')
+                };
+                var emails = getEmails();
+                var encryptPromise = encryptBody(self.Body, authentication.user.PublicKey);
+                var keyPromise = getPublicKeys(emails);
+
+                $q.all([encryptPromise, keyPromise]).then(function(result) {
+                    var encryptedBody = result[0];
+                    var keys = result[1];
+                    var outsiders = false;
+                    var promises = [];
+
+                    parameters.Message.Body = encryptedBody;
+                    parameters.Packages = [];
+
+                    _.each(emails, function(email) {
+                        if(keys && keys[email]) {
+                            promises.push(encryptBody(self.Body, keys[email]).then(function(result) {
+                                parameters.Packages.push({Address: email, Type: 1, Body: result, KeyPackets: []});
+                            }));
+                        } else {
+                            if(self.IsEncrypted === 1) {
+                                promises.push(encryptBody(self.Body, self.Password).then(function(result) {
+                                    parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: [], PasswordHint: self.PasswordHint});
+                                }));
+                            }
+
+                            outsiders = true;
+                        }
+                    });
+
+                    if(outsiders === true && self.IsEncrypted === 0) {
+                        parameters.ClearBody = self.Body;
+                    }
+
+                    $q.all(promises).then(function() {
+                        deferred.resolve(parameters);
+                    });
+                });
+            });
+
+            return deferred.promise;
         },
 
         save: function(silently) {
@@ -428,13 +519,13 @@ angular.module("proton.models.message", ["proton.constants"])
         clearImageBody: function(body) {
             if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
-            } 
+            }
             else {
                 this.containsImage = true;
                 if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
                     this.imagesHidden = true;
                     body = tools.breakImages(body);
-                } 
+                }
                 else {
                     this.imagesHidden = false;
                     body = tools.fixImages(body);

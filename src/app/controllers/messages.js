@@ -881,71 +881,14 @@ angular.module("proton.controllers.Messages", [
         return pmcw.encode_base64(pmcw.generateKeyAES());
     };
 
-    function encryptBody(body, key) {
-        return pmcw.encryptMessage(body, key);
-    }
-
-    function getPublicKeys(emails) {
-        var base64 = pmcw.encode_base64(emails.join(','));
-
-        return User.pubkeys({emails: base64}).$promise;
-    }
-
-    function validMessage(message) {
-        var deferred = $q.defer();
-
-        if(message.validate()) {
-            deferred.resolve();
-        } else {
-            deferred.reject(); // TODO add message
-        }
-
-        return deferred.promise;
-    }
-
     $scope.send = function(message) {
-        var mainPromise;
+        var promise = message.sending();
 
-        mainPromise = validMessage(message).then(function() {
-            var newMessage = _.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted');
-            var emails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) { return email.Email; });
-            var encryptPromise = encryptBody(message.Body, authentication.user.PublicKey);
-            var keyPromise = getPublicKeys(emails);
-
-            $q.all([encryptPromise, keyPromise]).then(function(result) {
-                var encryptedBody = result[0];
-                var keys = result[1];
-                var outsiders = false;
-                var promises = [];
-
-                newMessage.Body = encryptedBody;
-                newMessage.Packages = [];
-
-                _.each(emails, function(email) {
-                    if(keys && keys[email]) {
-                        promises.push(encryptBody(message.Body, keys[email]).then(function(result) {
-                            newMessage.Packages[email] = result;
-                        }));
-                    } else {
-                        outsiders = true;
-                    }
-                });
-
-                if(outsiders === true && message.IsEncrypted === 1) {
-                    promises.push(encryptBody(message.Body, message.Password).then(function(result) {
-                        newMessage.Packages.Outsiders = result;
-                    }));
-                } else if(outsiders === true) {
-                    newMessage.ClearBody = message.Body;
-                }
-
-                $q.all(promises).then(function() {
-                    console.log(newMessage); // TODO send
-                });
-            });
+        promise.then(function(result) {
+            Message.send(result);
         });
 
-        networkActivityTracker.track(mainPromise);
+        networkActivityTracker.track(promise);
 
         // if (message.validate()) {
         //     var index = $scope.messages.indexOf(message);
