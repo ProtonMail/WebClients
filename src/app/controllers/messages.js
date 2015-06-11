@@ -685,7 +685,7 @@ angular.module("proton.controllers.Messages", [
 
         $timeout(function() {
             $scope.listenEditor(message);
-            $scope.save(message, true);
+            $scope.save(message, false);
             $scope.focusComposer(message);
         });
     };
@@ -895,7 +895,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.save = function(message, silently, force) {
         var savePromise;
-        
+
         if(message.validate(force)) {
             var parameters = {
                 Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
@@ -1186,18 +1186,18 @@ angular.module("proton.controllers.Messages", [
 
         if (action === 'reply') {
             base.ToList = message.Sender;
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : 
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
 
-        } 
+        }
         else if (action === 'replyall') {
             base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : 
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
-        } 
+        }
         else if (action === 'forward') {
             base.ToList = '';
-            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : 
+            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
             fw_prefix + ' ' + message.Subject;
         }
 
