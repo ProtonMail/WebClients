@@ -603,14 +603,14 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on dragleave', event);
                 },
                 drop: function(event) {
-                    console.log('on drop', event);
+                    // console.log('on drop', event);
                 },
                 addedfile: function(file) {
                     console.log('on addedfile', file);
                     $scope.addAttachment(file, message);
                 },
                 removedfile: function(file) {
-                    console.log('on removedfile', file);
+                    // console.log('on removedfile', file);
                     $scope.removeAttachment(file, message);
                 }
             }
@@ -633,9 +633,9 @@ angular.module("proton.controllers.Messages", [
         var totalSize = $scope.getAttachmentsSize(message);
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
-        _.defaults(message, {
-            Attachments: []
-        });
+        message.uploading = true;
+
+        _.defaults(message, { Attachments: [] });
 
         if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
             notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
@@ -646,9 +646,14 @@ angular.module("proton.controllers.Messages", [
         totalSize += file.size;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file)
-            .then(function(packets) {
-                attachments.upload(packets);
+            attachments.load(file).then(function(packets) {
+                attachments.upload(packets, 14073538).then( // TODO remove that and replace by message.ID
+                    function(result) {
+                        message.Attachments.push(result);
+                        message.uploading = false;
+                        console.log('addAttachment', message.Attachments);
+                    }
+                );
             })
             .catch(function(result) {
                 notify(result);
@@ -682,6 +687,7 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
             $scope.listenEditor(message);
             message.saveOld();
+            $scope.save(message, true);
         });
     };
 
@@ -812,7 +818,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = authentication.user.Addresses[0];
+        message.From = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
@@ -903,141 +909,27 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    var generateReplyToken = function() {
-        // Use a base64-encoded AES256 session key as the reply token
-        return pmcw.encode_base64(pmcw.generateKeyAES());
+    $scope.save = function(message, silently) {
+        var promise = message.saving().then(function(parameters) {
+            return Message.draft(parameters).$promise.then(function(result) {
+                message.ID = result.Message.ID;
+            });
+        });
+
+        if(!!!silently) {
+            networkActivityTracker.track(promise);
+        }
     };
 
     $scope.send = function(message) {
-        var promise = message.sending();
-
-        promise.then(function(result) {
-            Message.send(result);
+        var promise = message.sending().then(function(parameters) {
+            parameters.id = message.ID;
+            return Message.send(parameters).$promise.then(function(result) {
+                console.log('Message envoye');
+            });
         });
 
         networkActivityTracker.track(promise);
-
-        // if (message.validate()) {
-        //     var index = $scope.messages.indexOf(message);
-        //     // get the message meta data
-        //     var newMessage = new Message(_.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-        //
-        //     $scope.setDefaults(newMessage);
-        //
-        //     if (message.Attachments) {
-        //         newMessage.Attachments = _.map(message.Attachments, function(att) {
-        //             return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
-        //         });
-        //     }
-        //
-        //     // encrypt the message body
-        //     var promiseEncryptBody = encryptBody(message.Body, $scope.user.PublicKey)
-        //
-        //     promiseEncryptBody.then(function(result) {
-        //         // set 'outsiders' to empty by default
-        //         newMessage.Body = {
-        //             outsiders: '',
-        //             self: result
-        //         };
-        //
-        //         // concat all recipients
-        //         var emails = newMessage.ToList + (newMessage.CCList === '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList === '' ? '' : ',' + newMessage.BCCList);
-        //         var base64 = pmcw.encode_base64(emails);
-        //
-        //         // new message object
-        //         var userMessage = new Message();
-        //
-        //         // get users' publickeys
-        //         networkActivityTracker.track(userMessage.$pubkeys({
-        //             Emails: base64
-        //         }).then(function(result) {
-        //                 // set defaults
-        //                 var isOutside = false;
-        //                 emails = emails.split(",");
-        //                 var promises = [];
-        //                 // loop through and overwrite defaults
-        //                 angular.forEach(emails, function(email) {
-        //                     var publickeys = result.keys;
-        //                     var publickey;
-        //                     var index = _.findIndex(publickeys, function(k, i) {
-        //                         if (!_.isUndefined(k[email])) {
-        //                             return true;
-        //                         }
-        //                     });
-        //
-        //                     if (index !== -1) {
-        //                         publickey = publickeys[index][email];
-        //                         // encrypt messagebody with each user's keys
-        //                         promises.push(pmcw.encryptMessage(message.Body, publickey).then(function(result) {
-        //                             newMessage.Body[email] = result;
-        //                         }));
-        //                     } else if(email !== '') {
-        //                         if (!isOutside && newMessage.IsEncrypted === 0) {
-        //                             isOutside = true;
-        //                         }
-        //                     }
-        //                 });
-        //
-        //                 var outsidePromise;
-        //
-        //                 if (message.IsEncrypted === 1) {
-        //                     var replyToken = generateReplyToken();
-        //                     var encryptedReplyToken = pmcw.encryptMessage(replyToken, [], message.Password);
-        //                     // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
-        //                     var arr = [];
-        //
-        //                     // TODO
-        //                     // sessionKeys.forEach(function(element) {
-        //                     //   arr.push(pmcw.encryptSessionKey(pmcw.binaryStringToArray(pmcw.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
-        //                     //     return {
-        //                     //       id: element.id,
-        //                     //       keypacket: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-        //                     //     };
-        //                     //   }));
-        //                     // });
-        //
-        //                     var encryptedSessionKeys = Promise.all(arr);
-        //                     var outsideBody = pmcw.encryptMessage(message.Body, [], message.Password);
-        //                     outsidePromise = outsideBody.then(function(result) {
-        //                         return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-        //                             newMessage.Body.outsiders = result;
-        //                             // TODO token and session keys
-        //                             // return [email, message, replyToken].concat(encArray);
-        //                         });
-        //                     }, function(error) {
-        //                         $log.error(error);
-        //                     });
-        //
-        //                 } else if(isOutside && newMessage.IsEncrypted === 0) {
-        //                     // dont encrypt if its going outside
-        //                     outsidePromise = new Promise(function(resolve, reject) {
-        //                         newMessage.Body.outsiders = message.Body;
-        //                         resolve();
-        //                     });
-        //                 }
-        //
-        //                 promises.push(outsidePromise);
-        //
-        //                 newMessage.ID = newMessage.ID || 0;
-        //
-        //                 // When all promises are done
-        //                 Promise.all(promises).then(function() {
-        //                     // send email
-        //                     networkActivityTracker.track(newMessage.$send(null, function(result) {
-        //                         notify($translate.instant('MESSAGE_SENT'));
-        //                         $scope.close(message, false);
-        //                         $state.go($state.current, {}, {reload: true}); // force reload page
-        //                     }, function(error) {
-        //                         $log.error(error);
-        //                     }));
-        //                 });
-        //             },
-        //             function(error) {
-        //                 $log.error(error);
-        //             }
-        //         ));
-        //     });
-        // }
     };
 
     $scope.toggleMinimize = function(message) {
@@ -1071,7 +963,7 @@ angular.module("proton.controllers.Messages", [
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            message.save(true); // silently
+            $scope.save(message, true); // silently
         }
 
         message.close();
