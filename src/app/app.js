@@ -132,12 +132,12 @@ angular.module("proton", [
     });
     $rootScope.networkActivity = networkActivityTracker;
     // notification service config
+    // https://github.com/cgross/angular-notify
     notify.config({
-        withCross: true,
         templateUrl: 'templates/notifications/base.tpl.html',
-        duration: 5000, // The default duration (in milliseconds) of each message. A duration of 0 will prevent messages from closing automatically.
-        position: 'center', // The default position of each message
-        maximumOpen: 5 // The maximum number of total notifications that can be visible at one time. Older notifications will be closed when the maximum is reached.
+        duration: 0,
+        position: 'center',
+        maximumOpen: 5
     });
 })
 
