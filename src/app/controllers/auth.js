@@ -91,8 +91,7 @@ angular.module("proton.controllers.Auth", [
 
         clearErrors();
         networkActivityTracker.track(
-            authentication.unlockWithPassword(mailboxPassword)
-            .then(
+            authentication.unlockWithPassword(mailboxPassword).then(
                 function() {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $state.go("secured.inbox");

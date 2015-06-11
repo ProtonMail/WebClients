@@ -28,14 +28,19 @@
             <td class="recipient">
                 <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                 <span ng-if="showTo(message)">
-                    <span class="to" pt-tooltip="{{ message.ToList | lowercase }}">To&thinsp;: </span>{{ message.ToList | username }}</span>
+                    <span class="to" pt-tooltip="{{ message.ToList | lowercase }}">
+                        To: </span>{{ message.ToList | username }}
+                    </span>
                 </span>
-                <span ng-if="showFrom(message)">
-                    <span class="from" pt-tooltip="{{ message.SenderAddress | lowercase }}">From&thinsp;: </span>{{ message.SenderName }}</span>
+                <span ng-if="showFrom(message) && !showTo(message)">
+                    <span class="from" pt-tooltip="{{ message.SenderAddress | lowercase }}">
+                        From: </span>{{ message.SenderName }}
+                    </span>
                 </span>
-
-                <span ng-if="true">
-                    <span pt-tooltip="{{ message.SenderAddress | lowercase }}">{{ message.SenderName | username }}</span>
+                <span ng-if="!showTo(message) && !showFrom(message)">
+                    <span pt-tooltip="{{ message.SenderAddress | lowercase }}">
+                        {{ message.SenderName | username }}
+                    </span>
                 </span>
             </td>
 

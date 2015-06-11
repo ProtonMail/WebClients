@@ -58,29 +58,24 @@ angular.module("proton.filters.strings",[])
 .filter("username", function() {
     return function(input) {
         var username;
-        // single email
-        if(input.indexOf(',') === -1) {
-            // split email into array
-            username = input.split('@');
-            // return everything before the @
-            return username[0];
-        } 
-        else { // email list
-            var emails = input.split(',');
-            var usernames = '';
-            // loop through all emails
-            for (var i = 0; i < emails.length; i++) {
-                username = input.split('@');
-                if (i<(emails.length-1)) {
-                    // append a comma if its not the last
-                    usernames += username[0]+', ';
-                } 
-                else {
-                    usernames += username[0];
-                }
+        if (typeof input === "object") {
+            if (input.Name!=='') {
+                username = input.Name;
             }
-            return usernames;
+            else {
+                var firstEmail = input.Address[0];
+                chunks = firstEmail.split('@');
+                username = chunks[0];
+            }
         }
+        else if (typeof input === "string") {
+            username = input;
+        }
+        else {
+            username = "";
+        }
+        // console.log(username);
+        return username;
     };
 })
 

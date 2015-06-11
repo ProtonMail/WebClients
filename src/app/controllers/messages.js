@@ -49,34 +49,21 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.showFrom = function(message) {
-        return (
-            $scope.recipientIsMe(message) &&
-            (
+        return ((
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.sent')
+                !$filter('isState')('secured.sent') && 
+                !$filter('isState')('secured.spam') && 
+                !$filter('isState')('secured.trash')
             )
         ) ? true : false;
     };
 
     $scope.senderIsMe = function(message) {
         var result = false;
-        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
-            if( $scope.user.addresses[i].Email === message.Sender ) {
+        for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
+            if( $scope.user.Addresses[i].Email === message.SenderAddress ) {
                 result = true;
-            }
-        }
-        return result;
-    };
-
-    // BROKEN. TODO recipient list needs to be standard for this to work.
-    $scope.recipientIsMe = function(message) {
-        var result = false;
-        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
-            for( var j = 0, lenn = message.ToList.length; j < len; i++ ) {
-                if( $scope.user.addresses[i].Email === message.ToList[j][0] ) {
-                    result = true;
-                }
             }
         }
         return result;

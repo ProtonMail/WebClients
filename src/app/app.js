@@ -3,6 +3,7 @@
 angular.module("proton", [
     // "ngAnimate", // We can't use the `ngAnimate`, it causes delays on application and also a problem with the iframe sandbox.
     "ngSanitize",
+    "ngResource",
     "ngCookies",
     "LocalStorageModule",
     "btford.markdown",
@@ -31,6 +32,8 @@ angular.module("proton", [
     "proton.models.contact",
     "proton.models.user",
     "proton.models.bug",
+    "proton.models.setting",
+    "proton.models.attachment",
 
     // Config
     "proton.config",
@@ -245,7 +248,7 @@ angular.module("proton", [
         if ($state.includes("secured.*.message")) {
             $state.go("secured.reply", {
                 action: 'reply',
-                id: $stateParams.MessageID
+                id: $stateParams.ID
             });
         }
     });
@@ -253,7 +256,7 @@ angular.module("proton", [
         if ($state.includes("secured.*.message")) {
             $state.go("secured.reply", {
                 action: 'forward',
-                id: $stateParams.MessageID
+                id: $stateParams.ID
             });
         }
     });
