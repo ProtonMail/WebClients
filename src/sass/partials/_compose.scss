@@ -80,6 +80,11 @@
     }
   }
 
+  .tag-container {
+      max-height: 115px; 
+      overflow-y: auto;
+  }
+
   .tt-dropdown-menu {
     background-color: white;
     border-radius: 0 0 4px 4px;
