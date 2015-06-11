@@ -30,9 +30,9 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'post',
                 url: authentication.baseURL + '/messages/send/:id'
             },
-            draft: {
+            createDraft: {
                 method: 'post',
-                url: authentication.baseURL + '/messages/draft/:id'
+                url: authentication.baseURL + '/messages/draft'
             },
             // GET
             countUnread: {
@@ -79,6 +79,10 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/unread'
             },
             // PUT
+            updateDraft: {
+                method: 'put',
+                url: authentication.baseURL + '/messages/draft/:id'
+            },
             star: {
                 method: 'put',
                 isArray: true,
@@ -253,8 +257,15 @@ angular.module("proton.models.message", ["proton.constants"])
                 deferred.reject('The maximum length of the message body is 16,000,000 characters.');
             }
 
-            // TODO use needToSave
-            deferred.resolve(true);
+            if(draft === true) {
+                if(this.needToSave()) {
+                    deferred.resolve(true);
+                } else {
+                    deferred.reject(false);
+                }
+            } else {
+                deferred.resolve(true);
+            }
 
             return deferred.promise;
         },
@@ -263,16 +274,6 @@ angular.module("proton.models.message", ["proton.constants"])
             if(angular.isDefined(this.timeoutSaving)) {
                 $timeout.cancel(this.timeoutSaving);
             }
-        },
-
-        saveLater: function(silently) {
-            if(angular.isDefined(this.timeoutSaving)) {
-                $timeout.cancel(this.timeoutSaving);
-            }
-
-            this.timeoutSaving = $timeout(function() {
-                this.saving(silently);
-            }.bind(this), CONSTANTS.SAVE_TIMEOUT_TIME);
         },
 
         needToSave: function() {
@@ -299,29 +300,16 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
-        saveOld: function() {
-            var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
-
-            this.old = _.pick(this, properties);
-
-            _.defaults(this.old, {
-                ToList: [],
-                BCCList: [],
-                CCList: [],
-                Attachments: [],
-                Subject: ""
-            });
-        },
-
         encryptBody: function(key) {
             return pmcw.encryptMessage(this.Body, key);
         },
 
         encryptPackets: function(key) {
+            var deferred = $q.defer();
             var packets = [];
 
             _.each(this.Attachments, function(element) {
-                packets.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.sessionKey.key)), element.sessionKey.algo, key, []).then(function (keyPacket) {
+                packets.push(pmcrypto.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, key, []).then(function (keyPacket) {
                     return {
                         ID: element.AttachmentID,
                         KeyPackets: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
@@ -329,17 +317,11 @@ angular.module("proton.models.message", ["proton.constants"])
                 }));
             });
 
-            return $q.all(packets);
-        },
-
-        clearPackets: function() {
-            var packets = [];
-
-            _.each(this.Attachments, function(element) {
-                packets.push();
+            $q.all(packets).then(function(result) {
+                deferred.resolve(result);
             });
 
-            return $q.all(packets);
+            return deferred.promise;
         },
 
         emailsToString: function() {
@@ -356,90 +338,9 @@ angular.module("proton.models.message", ["proton.constants"])
             return key.replace(/(\r\n|\n|\r)/gm,'');
         },
 
-        sending: function() {
-            var deferred = $q.defer();
-            var self = this;
-
-            self.validate().then(function() {
-                var parameters = { Message: _.pick(self, 'Subject', 'ToList', 'CCList', 'BCCList') };
-                var emails = self.emailsToString();
-                var encryptPromise = self.encryptBody(authentication.user.PublicKey);
-                var keyPromise = self.getPublicKeys(emails);
-
-                parameters.Message.AddressID = self.From.ID;
-
-                $q.all([encryptPromise, keyPromise]).then(function(result) {
-                    var encryptedBody = result[0];
-                    var keys = result[1];
-                    var outsiders = false;
-                    var promises = [];
-
-                    parameters.Message.Body = encryptedBody;
-                    parameters.Packages = [];
-
-                    _.each(emails, function(email) {
-                        if(keys && keys[email]) {
-                            var key = keys[email];
-
-                            promises.push(self.encryptBody(key).then(function(result) {
-                                var body = result;
-
-                                self.encryptPackets(authentication.user.PublicKey).then(function(result) {
-                                    var keyPackets = result;
-
-                                    parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
-                                });
-                            }));
-                        } else {
-                            if(self.IsEncrypted === 1) {
-                                promises.push(self.encryptBody(self.Password).then(function(result) {
-                                    var body = result;
-
-                                    self.encryptPackets(self.Password).then(function(result) {
-                                        var keyPackets = result;
-
-                                        parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: keyPackets, PasswordHint: self.PasswordHint});
-                                    });
-                                }));
-                            }
-
-                            outsiders = true;
-                        }
-                    });
-
-                    if(outsiders === true && self.IsEncrypted === 0) {
-                        parameters.ClearBody = self.Body;
-                        parameters.AttachmentKeys = [];
-                    }
-
-                    $q.all(promises).then(function() {
-                        deferred.resolve(parameters);
-                    });
-                });
-            });
-
-            return deferred.promise;
-        },
-
-        saving: function(silently) {
-            var deferred = $q.defer();
-            var self = this;
-
-            self.validate(true).then(function(result) {
-                var parameters = {
-                    Message: _.pick(self, 'ToList', 'CCList', 'BCCList', 'Subject')
-                };
-
-                parameters.id = self.ID;
-                parameters.Message.AddressID = self.From.ID;
-
-                self.encryptBody(authentication.user.PublicKey).then(function(result) {
-                    parameters.Message.Body = result;
-                    deferred.resolve(parameters);
-                });
-            });
-
-            return deferred.promise;
+        generateReplyToken: function() {
+            // Use a base64-encoded AES256 session key as the reply token
+            return pmcrypto.encode_base64(pmcrypto.generateKeyAES());
         },
 
         clearTextBody: function() {
