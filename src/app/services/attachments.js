@@ -2,15 +2,15 @@ angular.module("proton.attachments", [
     "proton.authentication"
 ])
 .service("attachments", function(
-    $http, 
-    $log, 
-    $window, 
-    $q, 
-    $rootScope, 
-    authentication, 
-    notify, 
-    pmcw, 
-    errorReporter, 
+    $http,
+    $log,
+    $window,
+    $q,
+    $rootScope,
+    authentication,
+    notify,
+    pmcw,
+    errorReporter,
     CONSTANTS,
     OAUTH_KEY
 ) {
@@ -50,19 +50,12 @@ angular.module("proton.attachments", [
             return q.promise;
         },
         upload: function(packets, MessageID) {
-
             var deferred = $q.defer();
 
             var data = new FormData();
             var xhr = new XMLHttpRequest();
             var sessionKeyPromise = this.getSessionKey(packets.keys);
             var attachmentData = {};
-
-            // Filename
-            // MessageID
-            // MIMEType
-            // KeyPackets
-            // DataPacket
 
             data.append('Filename', packets.Filename);
             data.append('MessageID', MessageID);
@@ -97,30 +90,26 @@ angular.module("proton.attachments", [
                     // Error with the request
                     notify('Unable to upload file. Please try again.');
                     return;
-                } 
-                else if (response.Error !== undefined) {
+                } else if (response.Error !== undefined) {
                     if (validJSON) {
                         // Attachment disallowed by back-end size limit (no change in size)
                         notify(response.Error);
-                    }
-                    else {
+                    } else {
                         notify('Unable to upload.');
                     }
                     // TODO enable this. its disabled cause the API isnt ready.
                     // return;
-                }
-                else { 
-                    // console.log(response.AttachmentID);
+                } else {
                     attachmentData.AttachmentID = response.AttachmentID;
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
                         deferred.resolve(attachmentData);
-                    });                    
+                    });
                 }
             };
 
             xhr.open('post', authentication.baseURL +'/attachments/upload', true); // TODO need API url
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[OAUTH_KEY + ":AccessToken"]);
             xhr.setRequestHeader("x-pm-uid", window.localStorage[OAUTH_KEY + ":Uid"]);
