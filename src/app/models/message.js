@@ -308,7 +308,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             promise.finally(function () {
                 this.promises = _.without(this.promises, promise);
-            });
+            }.bind(this));
 
             return promise;
         },
