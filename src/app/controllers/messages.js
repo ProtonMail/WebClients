@@ -647,7 +647,7 @@ angular.module("proton.controllers.Messages", [
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachments.load(file).then(function(packets) {
-                attachments.upload(packets, 14073538).then( // TODO remove that and replace by message.ID
+                attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -894,7 +894,9 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.save = function(message, silently, force) {
-        var savePromise = message.validate(force).then(function(result) {
+        var savePromise;
+        
+        if(message.validate(force)) {
             var parameters = {
                 Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
             };
@@ -904,7 +906,8 @@ angular.module("proton.controllers.Messages", [
             }
 
             parameters.Message.AddressID = message.From.ID;
-            message.encryptBody(authentication.user.PublicKey).then(function(result) {
+
+            savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
                 var draftPromise;
 
                 parameters.Message.Body = result;
@@ -921,10 +924,10 @@ angular.module("proton.controllers.Messages", [
                     $scope.saveOld(message);
                 });
             });
-        });
 
-        if(!!!silently) {
-            networkActivityTracker.track(savePromise);
+            if(!!!silently) {
+                networkActivityTracker.track(savePromise);
+            }
         }
 
         return savePromise;

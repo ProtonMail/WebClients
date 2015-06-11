@@ -205,20 +205,18 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         validate: function(force) {
-            var deferred = $q.defer();
             // set msgBody input element to editor content
             this.setMsgBody();
 
             // Check internet connection
-            //if ((window.navigator.onLine !== true && location.hostname != 'localhost') ||
-            // if (!tools.hostReachable()) {
-            //     notify('No internet connection. Please wait and try again.');
-            //     return false;
-            // }
+            if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
+                notify('No internet connection. Please wait and try again.');
+                return false;
+            }
 
             // Check if there is an attachment uploading
             if (this.uploading === true) {
-                deferred.reject('Wait for attachment to finish uploading or cancel upload.');
+                notify('Wait for attachment to finish uploading or cancel upload.');
                 return false;
             }
 
@@ -233,41 +231,40 @@ angular.module("proton.models.message", ["proton.constants"])
             });
 
             if (invalidEmails.length > 0) {
-                deferred.reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
+                notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
+                return false;
             }
 
             // MAX 25 to, cc, bcc
             if (force === true) {
                 if ((this.ToList.length + this.BCCList.length + this.CCList.length) > 25) {
-                    deferred.reject('The maximum number (25) of Recipients is 25.');
+                    notify('The maximum number (25) of Recipients is 25.');
+                    return false;
                 }
 
                 if (this.ToList.length === 0 && this.BCCList.length === 0 && this.CCList.length === 0) {
-                    deferred.reject('Please enter at least one recipient.');
+                    notify('Please enter at least one recipient.');
+                    return false;
                 }
             }
 
             // Check title length
             if (this.Subject && this.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                deferred.reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+                notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+                return false;
             }
 
             // Check body length
             if (this.Body.length > 16000000) {
-                deferred.reject('The maximum length of the message body is 16,000,000 characters.');
+                notify('The maximum length of the message body is 16,000,000 characters.');
+                return false;
             }
 
             if(force !== true) {
-                if(this.needToSave()) {
-                    deferred.resolve(true);
-                } else {
-                    deferred.reject(false);
-                }
+                return this.needToSave();
             } else {
-                deferred.resolve(true);
+                return true;
             }
-
-            return deferred.promise;
         },
 
         close: function() {
