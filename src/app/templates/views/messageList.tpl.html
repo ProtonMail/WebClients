@@ -68,11 +68,24 @@
             <td class="subject">
                 <h4>
                     <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}" pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
-                    </span>{{ message.MessageTitle }}
+                    </span>{{ message.Subject }}
                 </h4>
                 <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-                    <span ng-switch-when="true">
-                        <span class="to">To&thinsp;: </span>{{ message.RecipientList }}</span>
+                    <span ng-if="showTo(message)">
+                        <span class="to">
+                            To: </span>{{ message.ToList | username }}
+                        </span>
+                    </span>
+                    <span ng-if="showFrom(message) && !showTo(message)">
+                        <span class="from">
+                            From: </span>{{ message.SenderName }}
+                        </span>
+                    </span>
+                    <span ng-if="!showTo(message) && !showFrom(message)">
+                        <span pt-tooltip="{{ message.SenderAddress | lowercase }}">
+                            {{ message.SenderName | username }}
+                        </span>
+                    </span>
                     <span class="pull-right">{{ message.readableTime() }}</span>
                     <span class="sender" ng-switch-default>{{ message.Sender }}</span>
                 </div>
