@@ -1,6 +1,19 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
         <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message)}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
+            <div class="composer-loader" ng-show="message.loading">
+                <div class="higgs">
+                  <div class="orbit">
+                    <div class="ring horizontal"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring vertical"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                  </div>
+                  <div class="orbit r">
+                    <div class="ring horizontal inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring vertical inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring center"></div>
+                  </div>
+                </div>                
+            </div>
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-3 text-right">
