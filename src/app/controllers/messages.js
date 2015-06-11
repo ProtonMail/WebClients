@@ -644,9 +644,10 @@ angular.module("proton.controllers.Messages", [
         }
 
         totalSize += file.size;
+        var attachmentPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file).then(function(packets) {
+            attachmentPromise = attachments.load(file).then(function(packets) {
                 attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
@@ -659,6 +660,8 @@ angular.module("proton.controllers.Messages", [
                 notify(result);
                 $log.error(result);
             });
+
+            message.track(attachmentPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -765,17 +768,17 @@ angular.module("proton.controllers.Messages", [
                 console.log(bottomTop, bottomZ, clickedTop, clickedZ);
 
                 // todo: swap ???
-                bottom.css({ 
+                bottom.css({
                     top:    clickedTop,
                     zIndex: clickedZ
                 });
-                clicked.css({ 
+                clicked.css({
                     top:    bottomTop,
                     zIndex: bottomZ
                 });
 
                 console.log(bottomTop, bottomZ, clickedTop, clickedZ);
-                
+
             }
 
             else {
@@ -934,7 +937,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.save = function(message, silently, force) {
-        var savePromise;
+        var deferred = $q.defer();
 
         if(message.validate(force)) {
             var parameters = {
@@ -958,40 +961,37 @@ angular.module("proton.controllers.Messages", [
                     draftPromise = Message.updateDraft(parameters).$promise;
                 }
 
-                return draftPromise.then(function(result) {
+                draftPromise.then(function(result) {
                     message.ID = result.Message.ID;
                     message.BackupDate = new Date();
                     $scope.saveOld(message);
+                    deferred.resolve(result);
                 });
             });
-
-            if(!!!silently) {
-                networkActivityTracker.track(savePromise);
-            }
         }
 
-        return savePromise;
+        if(silently !== true) {
+            message.track(deferred.promise);
+        }
+
+        return deferred.promise;
     };
 
     $scope.send = function(message) {
         var mainPromise = $scope.save(message, true, true);
 
         mainPromise.then(function() {
-            var parameters = { Message: _.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList') };
+            var parameters = {};
             var emails = message.emailsToString();
-            var encryptPromise = message.encryptBody(authentication.user.PublicKey);
             var keyPromise = message.getPublicKeys(emails);
 
-            parameters.Message.AddressID = message.From.ID;
             parameters.id = message.ID;
 
-            $q.all([encryptPromise, keyPromise]).then(function(result) {
-                var encryptedBody = result[0];
+            $q.all([keyPromise]).then(function(result) {
                 var keys = result[1];
                 var outsiders = false;
                 var promises = [];
 
-                parameters.Message.Body = encryptedBody;
                 parameters.Packages = [];
 
                 _.each(emails, function(email) {
@@ -1048,7 +1048,7 @@ angular.module("proton.controllers.Messages", [
             console.log(result);
         });
 
-        networkActivityTracker.track(mainPromise);
+        message.track(mainPromise);
     };
 
     $scope.toggleMinimize = function(message) {
