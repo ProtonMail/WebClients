@@ -1072,6 +1072,7 @@ angular.module("proton.controllers.Messages", [
     $templateCache,
     $compile,
     $timeout,
+    $translate,
     localStorageService,
     networkActivityTracker,
     Message,
@@ -1178,19 +1179,29 @@ angular.module("proton.controllers.Messages", [
         var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
+        var re_prefix = $translate.instant('RE:');
+        var fw_prefix = $translate.instant('FW:');
+
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
             base.ToList = message.Sender;
-            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
-        } else if (action === 'replyall') {
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : 
+            re_prefix + ' ' + message.Subject;
+
+        } 
+        else if (action === 'replyall') {
             base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
-            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
-        } else if (action === 'forward') {
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : 
+            re_prefix + ' ' + message.Subject;
+        } 
+        else if (action === 'forward') {
             base.ToList = '';
-            base.Subject = (Message.FORWARD_PREFIX.test(message.Subject)) ? message.Subject : "Fw: " + message.Subject;
+            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : 
+            fw_prefix + ' ' + message.Subject;
         }
 
+        console.log(base);
         return base;
     }
 
