@@ -983,18 +983,18 @@ angular.module("proton.controllers.Messages", [
         $scope.save(message, true, true).then(function() {
             var parameters = {};
             var emails = message.emailsToString();
-            var keyPromise = message.getPublicKeys(emails);
 
             parameters.id = message.ID;
 
-            $q.all([keyPromise]).then(function(result) {
-                var keys = result[1];
+            message.getPublicKeys(emails).then(function(result) {
+                var keys = result;
                 var outsiders = false;
                 var promises = [];
 
                 parameters.Packages = [];
 
                 _.each(emails, function(email) {
+                    console.log(keys[email]);
                     if(keys && keys[email] && keys[email].length > 0) { // inside user
                         var key = keys[email];
 
