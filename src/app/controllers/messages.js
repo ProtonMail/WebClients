@@ -52,8 +52,8 @@ angular.module("proton.controllers.Messages", [
         return ((
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.sent') && 
-                !$filter('isState')('secured.spam') && 
+                !$filter('isState')('secured.sent') &&
+                !$filter('isState')('secured.spam') &&
                 !$filter('isState')('secured.trash')
             )
         ) ? true : false;
@@ -647,7 +647,7 @@ angular.module("proton.controllers.Messages", [
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachments.load(file).then(function(packets) {
-                attachments.upload(packets, 14073538).then( // TODO remove that and replace by message.ID
+                attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -678,16 +678,15 @@ angular.module("proton.controllers.Messages", [
             return;
         }
 
-        $scope.setDefaults(message);
         $scope.messages.unshift(message);
+        $scope.setDefaults(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
 
         $timeout(function() {
-            $scope.focusComposer(message);
             $scope.listenEditor(message);
-            message.saveOld();
-            $scope.save(message, true);
+            $scope.save(message, false);
+            $scope.focusComposer(message);
         });
     };
 
@@ -813,7 +812,7 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
         });
         message.editor.addEventListener('input', function() {
-            message.saveLater(true); // in silence
+            $scope.saveLater(message, true); // in silence
         });
     };
 
@@ -909,27 +908,147 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    $scope.save = function(message, silently) {
-        var promise = message.saving().then(function(parameters) {
-            return Message.draft(parameters).$promise.then(function(result) {
-                message.ID = result.Message.ID;
-            });
-        });
+    $scope.saveOld = function(message) {
+        var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
 
-        if(!!!silently) {
-            networkActivityTracker.track(promise);
+        message.old = _.pick(message, properties);
+
+        _.defaults(message.old, {
+            ToList: [],
+            BCCList: [],
+            CCList: [],
+            Attachments: [],
+            PasswordHint: "",
+            Subject: ""
+        });
+    };
+
+    $scope.saveLater = function(message, silently) {
+        if(angular.isDefined(message.timeoutSaving)) {
+            $timeout.cancel(message.timeoutSaving);
         }
+
+        message.timeoutSaving = $timeout(function() {
+            $scope.save(message, silently);
+        }, CONSTANTS.SAVE_TIMEOUT_TIME);
+    };
+
+    $scope.save = function(message, silently, force) {
+        var savePromise;
+
+        if(message.validate(force)) {
+            var parameters = {
+                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
+            };
+
+            if(angular.isDefined(message.ID)) {
+                parameters.id = message.ID;
+            }
+
+            parameters.Message.AddressID = message.From.ID;
+
+            savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
+                var draftPromise;
+
+                parameters.Message.Body = result;
+
+                if(angular.isUndefined(message.ID)) {
+                    draftPromise = Message.createDraft(parameters).$promise;
+                } else {
+                    draftPromise = Message.updateDraft(parameters).$promise;
+                }
+
+                return draftPromise.then(function(result) {
+                    message.ID = result.Message.ID;
+                    message.BackupDate = new Date();
+                    $scope.saveOld(message);
+                });
+            });
+
+            if(!!!silently) {
+                networkActivityTracker.track(savePromise);
+            }
+        }
+
+        return savePromise;
     };
 
     $scope.send = function(message) {
-        var promise = message.sending().then(function(parameters) {
+        var mainPromise = $scope.save(message, true, true);
+
+        mainPromise.then(function() {
+            var parameters = { Message: _.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList') };
+            var emails = message.emailsToString();
+            var encryptPromise = message.encryptBody(authentication.user.PublicKey);
+            var keyPromise = message.getPublicKeys(emails);
+
+            parameters.Message.AddressID = message.From.ID;
             parameters.id = message.ID;
-            return Message.send(parameters).$promise.then(function(result) {
-                console.log('Message envoye');
+
+            $q.all([encryptPromise, keyPromise]).then(function(result) {
+                var encryptedBody = result[0];
+                var keys = result[1];
+                var outsiders = false;
+                var promises = [];
+
+                parameters.Message.Body = encryptedBody;
+                parameters.Packages = [];
+
+                _.each(emails, function(email) {
+                    if(keys && keys[email]) { // inside user
+                        var key = keys[email];
+
+                        promises.push(message.encryptBody(key).then(function(result) {
+                            var body = result;
+
+                            message.encryptPackets(authentication.user.PublicKey).then(function(result) {
+                                var keyPackets = result;
+
+                                return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
+                            });
+                        }));
+                    } else { // outside user
+                        outsiders = true;
+
+                        if(message.IsEncrypted === 1) {
+                            // TODO
+                            // var replyToken = generateReplyToken();
+                            // var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
+
+                            promises.push(message.encryptBody(message.Password).then(function(result) {
+                                var body = result;
+
+                                message.encryptPackets(message.Password).then(function(result) {
+                                    var keyPackets = result;
+
+                                    return parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: keyPackets, PasswordHint: message.PasswordHint});
+                                });
+                            }));
+                        }
+                    }
+                });
+
+                if(outsiders === true && message.IsEncrypted === 0) {
+                    parameters.ClearBody = message.Body;
+
+                    if(message.Attachments.length > 0) {
+                        parameters.AttachmentKeys = message.clearPackets();
+                    }
+                }
+
+                $q.all(promises).then(function() {
+                    return Message.send(parameters).then(function(result) {
+                        console.log('Message envoye');
+                    });
+                });
             });
         });
 
-        networkActivityTracker.track(promise);
+        mainPromise.catch(function(result) {
+            console.log(result);
+        });
+
+        networkActivityTracker.track(mainPromise);
     };
 
     $scope.toggleMinimize = function(message) {
@@ -993,6 +1112,7 @@ angular.module("proton.controllers.Messages", [
     $templateCache,
     $compile,
     $timeout,
+    $translate,
     localStorageService,
     networkActivityTracker,
     Message,
@@ -1099,19 +1219,29 @@ angular.module("proton.controllers.Messages", [
         var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
+        var re_prefix = $translate.instant('RE:');
+        var fw_prefix = $translate.instant('FW:');
+
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
             base.ToList = message.Sender;
-            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
-        } else if (action === 'replyall') {
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
+            re_prefix + ' ' + message.Subject;
+
+        }
+        else if (action === 'replyall') {
             base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
-            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
-        } else if (action === 'forward') {
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
+            re_prefix + ' ' + message.Subject;
+        }
+        else if (action === 'forward') {
             base.ToList = '';
-            base.Subject = (Message.FORWARD_PREFIX.test(message.Subject)) ? message.Subject : "Fw: " + message.Subject;
+            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
+            fw_prefix + ' ' + message.Subject;
         }
 
+        console.log(base);
         return base;
     }
 
