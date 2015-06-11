@@ -223,9 +223,10 @@ angular.module("proton.authentication", [
                     if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
                         $http.post(
                             baseURL + "/auth/refresh",
-                            _.extend(_.pick(auth.data, "AccessToken", "RefreshToken"), {
+                            _.extend(_.pick(auth.data, "RefreshToken"), {
                                 ClientID: "demoapp",
-                                GrantType: "RefreshToken",
+                                GrantType: "refresh_token",
+                                State: api.randomString(24),
                                 ResponseType: "token"
                             })
                         ).then(

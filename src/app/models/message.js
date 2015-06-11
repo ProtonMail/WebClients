@@ -205,7 +205,7 @@ angular.module("proton.models.message", ["proton.constants"])
             this.Body = body;
         },
 
-        validate: function(draft) {
+        validate: function(force) {
             var deferred = $q.defer();
             // set msgBody input element to editor content
             this.setMsgBody();
@@ -238,7 +238,7 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             // MAX 25 to, cc, bcc
-            if (!!!draft) {
+            if (force === true) {
                 if ((this.ToList.length + this.BCCList.length + this.CCList.length) > 25) {
                     deferred.reject('The maximum number (25) of Recipients is 25.');
                 }
@@ -258,7 +258,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 deferred.reject('The maximum length of the message body is 16,000,000 characters.');
             }
 
-            if(draft === true) {
+            if(force !== true) {
                 if(this.needToSave()) {
                     deferred.resolve(true);
                 } else {
@@ -323,6 +323,21 @@ angular.module("proton.models.message", ["proton.constants"])
             });
 
             return deferred.promise;
+        },
+
+        clearPackets: function() {
+            var deferred = $q.defer();
+            var packets = [];
+
+            _.each(this.Attachments, function(element) {
+                packets.push({
+                    ID: element.AttachmentID,
+                    Key: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(element.sessionKey.key)),
+                    Algo: element.sessionKey.algo
+                });
+            });
+
+            return packets;
         },
 
         emailsToString: function() {
