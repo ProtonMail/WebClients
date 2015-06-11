@@ -98,7 +98,7 @@
                     <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
                 </td>
                 <td class="text-right">
-                    <a href="" ng-click="downloadAttachment(attachment)">{{ 'DOWNLOAD' | translate }}</a>
+                    <a href="" ng-click="downloadAttachment(message, attachment)">{{ 'DOWNLOAD' | translate }}</a>
                 </td>
             </tr>
         </tbody>

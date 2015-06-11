@@ -994,8 +994,7 @@ angular.module("proton.controllers.Messages", [
                 parameters.Packages = [];
 
                 _.each(emails, function(email) {
-                    console.log(keys[email]);
-                    if(keys && keys[email] && keys[email].length > 0) { // inside user
+                    if(keys[email].length > 0) { // inside user
                         var key = keys[email];
 
                         promises.push(message.encryptBody(key).then(function(result) {
@@ -1175,7 +1174,7 @@ angular.module("proton.controllers.Messages", [
         $('#message-body .email').html($scope.content);
     };
 
-    $scope.downloadAttachment = function(attachment) {
+    $scope.downloadAttachment = function(message, attachment) {
         attachments.get(attachment.ID, attachment.Name);
     };
 
