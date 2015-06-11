@@ -12,9 +12,9 @@
 
     <hr />
 
-    <div ng-show="message.AttachmentIDList.length > 0">
-        <div class="attachment" ng-repeat="attachment in message.AttachmentIDList">
-            {{attachment.FileName}} - {{attachment.MIMEType}} - {{attachment.FileSize | humanSize}}
+    <div ng-show="message.Attachments.length > 0">
+        <div class="attachment" ng-repeat="attachment in message.Attachments">
+            {{attachment.Name}} - {{attachment.MIMEType}} - {{attachment.Size | humanSize}}
         </div>
     </div>
 

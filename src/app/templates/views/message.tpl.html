@@ -25,7 +25,7 @@
             }"
             title="{{ getMessageEncryptionType(message) }}"></i>
         </span>
-        <span class="attachement" ng-show="message.AttachmentIDList.length > 0">
+        <span class="attachement" ng-show="message.Attachments.length > 0">
             <i class="fa fa-paperclip"></i>
         </span>
         {{ message.Subject }}
@@ -86,16 +86,19 @@
         <br> Decryption of this message's encryption content failed.
     </div>
 </div>
-<div class="col-md-12" ng-if="message.AttachmentIDList.length">
+<div class="col-md-12" ng-if="message.Attachments.length">
     <hr />
     <p>
-        <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.AttachmentIDList.length}} <span ng-hide="message.AttachmentIDList.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.AttachmentIDList.length === 1">{{ 'FILE' | translate }}</span>, {{sizeAttachments() | humanSize}})
+        <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})
+    </p>
+    <p>
+        {{ message.Attachments }}
     </p>
     <table class="table table-hover">
         <tbody>
-            <tr ng-repeat="attachment in message.AttachmentIDList">
+            <tr ng-repeat="attachment in message.Attachments">
                 <td>
-                    <strong>{{ attachment.FileName }}</strong> ({{attachment.FileSize | humanSize}})
+                    <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
                 </td>
                 <td class="text-right">
                     <a href="" ng-click="downloadAttachment(attachment)">{{ 'DOWNLOAD' | translate }}</a>

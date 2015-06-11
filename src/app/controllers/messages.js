@@ -621,8 +621,8 @@ angular.module("proton.controllers.Messages", [
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.FileSize)) {
-                size += parseInt(attachment.FileSize);
+            if (angular.isDefined(attachment.Size)) {
+                size += parseInt(attachment.Size);
             }
         });
 
@@ -995,7 +995,7 @@ angular.module("proton.controllers.Messages", [
                 parameters.Packages = [];
 
                 _.each(emails, function(email) {
-                    if(keys && keys[email]) { // inside user
+                    if(keys && keys[email] && keys[email].length > 0) { // inside user
                         var key = keys[email];
 
                         promises.push(message.encryptBody(key).then(function(result) {
@@ -1309,7 +1309,7 @@ angular.module("proton.controllers.Messages", [
     $scope.sizeAttachments = function() {
         var size = 0;
 
-        angular.forEach(message.AttachmentIDList, function(attachment) {
+        angular.forEach(message.Attachments, function(attachment) {
             if (angular.isDefined(attachment.FileSize)) {
                 size += parseInt(attachment.FileSize);
             }

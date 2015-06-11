@@ -167,7 +167,7 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
         numberOfAttachments: function() {
-            return this.AttachmentIDList.split(",").length;
+            return this.Attachments.length;
         },
         location: function() {
             return invertedMailboxIdentifiers[this.Location];
