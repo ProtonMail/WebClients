@@ -893,8 +893,8 @@ angular.module("proton.controllers.Messages", [
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
 
-    $scope.save = function(message, silently) {
-        var savePromise = message.validate(true).then(function(result) {
+    $scope.save = function(message, silently, force) {
+        var savePromise = message.validate(force).then(function(result) {
             var parameters = {
                 Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
             };
@@ -904,11 +904,10 @@ angular.module("proton.controllers.Messages", [
             }
 
             parameters.Message.AddressID = message.From.ID;
-
             message.encryptBody(authentication.user.PublicKey).then(function(result) {
-                parameters.Message.Body = result;
-
                 var draftPromise;
+
+                parameters.Message.Body = result;
 
                 if(angular.isUndefined(message.ID)) {
                     draftPromise = Message.createDraft(parameters).$promise;
@@ -932,7 +931,9 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.send = function(message) {
-        var sendPromise = message.validate().then(function() {
+        var mainPromise = $scope.save(message, true, true);
+
+        mainPromise.then(function() {
             var parameters = { Message: _.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList') };
             var emails = message.emailsToString();
             var encryptPromise = message.encryptBody(authentication.user.PublicKey);
@@ -967,6 +968,7 @@ angular.module("proton.controllers.Messages", [
                         outsiders = true;
 
                         if(message.IsEncrypted === 1) {
+                            // TODO
                             // var replyToken = generateReplyToken();
                             // var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
 
@@ -985,9 +987,10 @@ angular.module("proton.controllers.Messages", [
 
                 if(outsiders === true && message.IsEncrypted === 0) {
                     parameters.ClearBody = message.Body;
-                    parameters.AttachmentKeys = [];
 
-                    
+                    if(message.Attachments.length > 0) {
+                        parameters.AttachmentKeys = message.clearPackets();
+                    }
                 }
 
                 $q.all(promises).then(function() {
@@ -998,7 +1001,11 @@ angular.module("proton.controllers.Messages", [
             });
         });
 
-        networkActivityTracker.track(sendPromise);
+        mainPromise.catch(function(result) {
+            console.log(result);
+        });
+
+        networkActivityTracker.track(mainPromise);
     };
 
     $scope.toggleMinimize = function(message) {
