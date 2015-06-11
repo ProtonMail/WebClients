@@ -644,9 +644,10 @@ angular.module("proton.controllers.Messages", [
         }
 
         totalSize += file.size;
+        var attachmentPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file).then(function(packets) {
+            attachmentPromise = attachments.load(file).then(function(packets) {
                 attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
@@ -659,6 +660,8 @@ angular.module("proton.controllers.Messages", [
                 notify(result);
                 $log.error(result);
             });
+
+            message.track(attachmentPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -765,17 +768,17 @@ angular.module("proton.controllers.Messages", [
                 console.log(bottomTop, bottomZ, clickedTop, clickedZ);
 
                 // todo: swap ???
-                bottom.css({ 
+                bottom.css({
                     top:    clickedTop,
                     zIndex: clickedZ
                 });
-                clicked.css({ 
+                clicked.css({
                     top:    bottomTop,
                     zIndex: bottomZ
                 });
 
                 console.log(bottomTop, bottomZ, clickedTop, clickedZ);
-                
+
             }
 
             else {
@@ -965,9 +968,7 @@ angular.module("proton.controllers.Messages", [
                 });
             });
 
-            if(!!!silently) {
-                networkActivityTracker.track(savePromise);
-            }
+            message.track(savePromise);
         }
 
         return savePromise;
@@ -1048,7 +1049,7 @@ angular.module("proton.controllers.Messages", [
             console.log(result);
         });
 
-        networkActivityTracker.track(mainPromise);
+        message.track(mainPromise);
     };
 
     $scope.toggleMinimize = function(message) {
