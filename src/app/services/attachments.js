@@ -2,19 +2,20 @@ angular.module("proton.attachments", [
     "proton.authentication"
 ])
 .service("attachments", function(
-    $http, 
-    $log, 
-    $window, 
-    $q, 
-    $rootScope, 
-    authentication, 
-    notify, 
-    pmcw, 
-    errorReporter, 
+    $http,
+    $log,
+    $window,
+    $q,
+    $rootScope,
+    authentication,
+    notify,
+    pmcw,
+    errorReporter,
     CONSTANTS,
     OAUTH_KEY
 ) {
     return {
+        // read the file locally, and encrypt it. return the encrypted file.
         load: function(file) {
             var q = $q.defer();
             var fileObject = {};
@@ -24,14 +25,16 @@ angular.module("proton.attachments", [
                 q.reject(new TypeError("You did not provide a file"));
             }
 
-            console.log('load, before enc');
             reader.onloadend = function(event) {
+                // encryptFile(data, pubKeys, passwords, filename)
                 var encAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
+
+                // console.log('encAttachment',encAttachment);
 
                 return encAttachment.then(
                     function(packets) {
-                        console.log('load, after enc');
-                        packets.FileName = file.name;
+                        // console.log('packets', packets);
+                        packets.Filename = file.name;
                         packets.MIMEType = file.type;
                         packets.FileSize = file.size;
                         q.resolve(packets);
@@ -46,17 +49,23 @@ angular.module("proton.attachments", [
 
             return q.promise;
         },
-        upload: function(packets) {
-            // console.log('upload', packets); // TODO remove
+        upload: function(packets, MessageID) {
+            var deferred = $q.defer();
 
             var data = new FormData();
             var xhr = new XMLHttpRequest();
             var sessionKeyPromise = this.getSessionKey(packets.keys);
+            var attachmentData = {};
 
-            data.append('keys[]', new Blob([packets.keys]));
-            data.append('data[]', new Blob([packets.data]));
-            data.append('FileName', packets.name);
-            data.append('MIMEType', packets.type);
+            data.append('Filename', packets.Filename);
+            data.append('MessageID', MessageID);
+            data.append('MIMEType', packets.MIMEType);
+            data.append('KeyPackets', new Blob([packets.keys]));
+            data.append('DataPacket', new Blob([packets.data]));
+
+            attachmentData.filename = packets.Filename;
+            attachmentData.fileSize = packets.fileSize;
+            attachmentData.MIMEType = packets.MIMEType;
 
             // TODO if draft id empty
             // notify('No draft for attachments!');
@@ -85,42 +94,30 @@ angular.module("proton.attachments", [
                     if (validJSON) {
                         // Attachment disallowed by back-end size limit (no change in size)
                         notify(response.Error);
-                    }
-                    else {
+                    } else {
                         notify('Unable to upload.');
                     }
                     // TODO enable this. its disabled cause the API isnt ready.
                     // return;
+                } else {
+                    attachmentData.AttachmentID = response.AttachmentID;
+                    sessionKeyPromise.then(function(sessionKey) {
+                        attachmentData.sessionKey = sessionKey;
+                        deferred.resolve(attachmentData);
+                    });
                 }
-
-                sessionKeyPromise.then(function(sessionKey) {
-                    console.log(sessionKey);
-                    // TODO
-                    // var remove = attachID+' .removeBtn';
-                    // var link = attachID+' .attachment-link';
-
-                    // $(remove).removeClass('fileUploading');
-                    // $(remove).attr("data-id", id);
-                    // $(remove).attr("data-size", size);
-                    // $(remove).css({'color' : 'white'});
-                    // changeLoadBar(attachID, 99, 100, 0, 1);
-
-                    // $(link).attr("data-id", id);
-                    // $(link).attr("data-type", packets.type);
-                    // $(link).attr("data-key", pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(sessionKey.key)));
-                    // $(link).attr("data-algo", sessionKey.algo);
-                    // $(link).addClass('finished');
-
-                    // setAttachmentsSize();
-                });
             };
 
             xhr.open('post', authentication.baseURL +'/attachments/upload', true); // TODO need API url
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[OAUTH_KEY + ":AccessToken"]);
             xhr.setRequestHeader("x-pm-uid", window.localStorage[OAUTH_KEY + ":Uid"]);
             xhr.send(data);
+
+            // return attachment object
+
+            return deferred.promise;
 
         },
         removeAttachment: function(file) {

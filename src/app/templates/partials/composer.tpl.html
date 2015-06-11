@@ -18,7 +18,7 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.FromEmail = user.Addresses[0]" ng-model="message.FromEmail" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
+                    <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
                     </select>
                 </div>
                 <div class="form-horizontal">
@@ -99,7 +99,7 @@
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
                 <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
-                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="message.save()" pt-tooltip="{{ 'SAVE' | translate }}">
+                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message)" pt-tooltip="{{ 'SAVE' | translate }}">
                     <i class="fa fa-floppy-o"></i>
                 </button>
                 <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'SEND' | translate }}</button>
