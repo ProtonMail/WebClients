@@ -1176,7 +1176,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.downloadAttachment = function(attachment) {
-        attachments.get(attachment.AttachmentID, attachment.FileName);
+        attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.detachLabel = function(id) {
@@ -1310,8 +1310,8 @@ angular.module("proton.controllers.Messages", [
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.FileSize)) {
-                size += parseInt(attachment.FileSize);
+            if (angular.isDefined(attachment.Size)) {
+                size += parseInt(attachment.Size);
             }
         });
 
