@@ -9,6 +9,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $timeout,
     $q,
     $state,
+    $translate,
     authentication,
     localStorageService,
     User,
