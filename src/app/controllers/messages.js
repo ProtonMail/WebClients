@@ -978,9 +978,9 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.send = function(message) {
-        var mainPromise = $scope.save(message, true, true);
+        var deferred = $q.defer();
 
-        mainPromise.then(function() {
+        $scope.save(message, true, true).then(function() {
             var parameters = {};
             var emails = message.emailsToString();
             var keyPromise = message.getPublicKeys(emails);
@@ -1039,16 +1039,15 @@ angular.module("proton.controllers.Messages", [
                 $q.all(promises).then(function() {
                     return Message.send(parameters).then(function(result) {
                         console.log('Message envoye');
+                        deferred.resolve(result);
                     });
                 });
             });
         });
 
-        mainPromise.catch(function(result) {
-            console.log(result);
-        });
+        message.track(deferred.promise);
 
-        message.track(mainPromise);
+        return deferred.promise;
     };
 
     $scope.toggleMinimize = function(message) {
