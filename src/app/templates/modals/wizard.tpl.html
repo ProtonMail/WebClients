@@ -1,23 +1,7 @@
 <div class="modal fade {{this.class}}" role="dialog" style="display: block;" ng-controller="WizardController">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form name="wizardForm" novalidate ng-submit="ctrl.save()">
-                <div class="modal-header" ng-show="ctrl.title">
-                    <button type="button" class="close" ng-click="ctrl.cancel()">
-                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                    </button>
-                    <h4 class="modal-title">{{ctrl.title}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div ng-repeat="page in version" ng-if="$index == selection">{{page}}</div>
-                </div>
-                <div class="modal-footer">
-                    <ol id="pagination">
-                        <li  ng-repeat="page in version" ng-click="changePage($index)"><a href="#" ng-class="{active: $index == selection}"></a></li>
-                    </ol>
-                </div>
-            </form>
+            <div ng-include src="page"></div>
         </div>
     </div>
 </div>
