@@ -7,6 +7,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $stateParams,
     $log,
     $translate,
+    $q,
     authentication,
     networkActivityTracker,
     User,
@@ -18,79 +19,40 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     var mellt = new Mellt();
 
     $scope.compatibility = tools.isCompatible();
-    $scope.tools = tools;
+    $scope.tools    = tools;
+    $scope.creating = false;
+    $scope.keyGen   = false;
+    $scope.keySave  = false;
+    $scope.FetchAcc = false;
+    $scope.Verify   = false;
+    $scope.Redirect = false;
 
     $scope.account = [];
 
     function generateKeys(userID, pass) {
 
-        console.log('generateKeys');
+        var deferred = $q.defer();
 
         // Generate KeyPair
         var keyPair = pmcw.generateKeysRSA(userID, pass);
 
-        networkActivityTracker.track(
-            keyPair
-            .then(
-                function(keyPair) {
-                    console.log('keyPair');
-                    var params = {
-                        "response_type": "token",
-                        "client_id": "demoapp",
-                        "client_secret": "demopass",
-                        "grant_type": "password",
-                        "redirect_uri": "https://protonmail.ch",
-                        "state": "random_string",
-                        "username": $scope.account.username,
-                        "password": $scope.account.loginPassword,
-                        "email": $scope.account.notificationEmail,
-                        "news": !!($scope.account.optIn),
-                        "public": keyPair.publicKeyArmored,
-                        "private": keyPair.privateKeyArmored
-                    };
-                    return User.updateKeypair(params).$promise
-                    .then(
-                        function(response) {
-                            return authentication.fetchUserInfo()
-                            .then(
-                                function() {
-                                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                                    return authentication.unlockWithPassword(pass)
-                                    .then(
-                                        function() {
-                                            console.log('a');
-                                            localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(pass));
-                                            console.log('b');
-                                            $state.go("secured.inbox");
-                                            return;
-                                        },
-                                        function(err) {
-                                            console.log('c');
-                                            $scope.error = err;
-                                            return;
-                                        }
-                                    );
-                                },
-                                function() {
-
-                                }
-                            );
-                        },
-                        function(response) {
-                            $log.error(response);
-                        }
-                    );
-                },
-                function(err) {
-                    $scope.error = err;
-                }
-            )
+        keyPair.then(
+            function(response) {
+                $scope.account.PublicKey = response.publicKeyArmored;
+                $scope.account.PrivateKey = response.privateKeyArmored;
+                deferred.resolve(response);
+            },
+            function(err) {
+                $scope.error = err;
+                deferred.reject(err);
+            }
         );
 
         keyPair.catch(function(err) {
-            console.error(err);
-            alert('Unable to generate keys.');
+            deferred.reject(err);
         });
+
+        return deferred.promise;
     }
 
     $scope.start = function() {
@@ -101,6 +63,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $('input').blur();
         var mailboxPassword = this.mailboxPassword;
         clearErrors();
+
         networkActivityTracker.track(
             authentication
             .unlockWithPassword(mailboxPassword)
@@ -125,25 +88,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 return;
             }
 
-
-            var params = {
-                "response_type": "token",
-                "client_id": "demoapp",
-                "client_secret": "demopass",
-                "grant_type": "password",
-                "redirect_uri": "https://protonmail.ch",
-                "state": "random_string",
-                "username": $scope.account.Username,
-                "password": $scope.account.loginPassword,
-                "email": $scope.account.notificationEmail,
-                "news": !!($scope.account.optIn)
-            };
+            $scope.creating = true;
 
             networkActivityTracker.track(
-                User.checkUserExist({
+                User.available({
                     username: $scope.account.Username
-                })
-                .$promise.then(
+                }).$promise.then(
                     function(response) {
 
                         if (response.error) {
@@ -155,25 +105,88 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                             return;
                         }
 
-                        return User.createUser(params).$promise
-                        .then(
-                            function(response) {
-                                // Account created!
-                                $state.go('step2');
-                                authentication.receivedCredentials(
-                                    _.pick(response, "access_token", "refresh_token", "uid", "expires_in")
-                                );
+                        return generateKeys('UserID', $scope.account.mailboxPassword).then(
+                            function() {
+
+                                var params = {
+                                    "response_type": "token",
+                                    "client_id": "demoapp",
+                                    "client_secret": "demopass",
+                                    "grant_type": "password",
+                                    "redirect_uri": "https://protonmail.ch",
+                                    "state": "random_string",
+                                    "Username": $scope.account.Username,
+                                    "Password": $scope.account.loginPassword,
+                                    "Email": $scope.account.notificationEmail,
+                                    "News": !!($scope.account.optIn),
+                                    "PublicKey": $scope.account.PublicKey,
+                                    "PrivateKey": $scope.account.PrivateKey,
+                                };
+
+                                $scope.keyGen = true;
+
+                                return User.create(params).$promise.then(
+                                    function(response) {
+
+                                        $scope.keySave  = true;
+
+                                        return authentication.loginWithCredentials({
+                                            Username: $scope.account.Username,
+                                            Password: $scope.account.loginPassword
+                                        }).then(
+                                            function() {
+ 
+                                                return authentication.fetchUserInfo().then(
+                                                    function(user) {
+
+                                                        $scope.FetchAcc = true;
+
+                                                        return authentication.unlockWithPassword($scope.account.mailboxPassword).then(
+                                                            function() {
+
+                                                                $scope.Verify   = true;
+
+                                                                // var deferred = $q.defer();
+                                                                // return deferred.promise;
+
+                                                                localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+
+                                                                setTimeout( function() {
+                                                                    $scope.Redirect   = true;
+                                                                    $state.go("secured.inbox");
+                                                                }, 500);
+                                                            },
+                                                            function(err) {
+                                                                $scope.error = err;
+                                                            }
+                                                        );
+                                                    },
+                                                    function(err) {
+                                                        $scope.error = err;
+                                                    }
+                                                );
+                                            },
+                                            function(err) {
+                                                $scope.error = err;
+                                            }
+                                        );
+                                    },
+                                    function(response) {
+                                        var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
+                                        notify({
+                                            classes: 'notification-danger',
+                                            message: error_message
+                                        });
+                                        $('#Username').focus();
+                                        $log.error(response);
+                                    }
+                                );                                
                             },
                             function(response) {
-                                var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: error_message
-                                });
-                                $('#Username').focus();
                                 $log.error(response);
                             }
                         );
+
                     },
                     function(response) {
                         var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';

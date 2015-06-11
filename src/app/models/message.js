@@ -5,13 +5,13 @@ angular.module("proton.models.message", ["proton.constants"])
     $rootScope,
     $compile,
     $templateCache,
-    $injector,
     $interval,
     $timeout,
     $q,
     $state,
     authentication,
     localStorageService,
+    User,
     pmcw,
     CONSTANTS,
     networkActivityTracker,
@@ -21,100 +21,112 @@ angular.module("proton.models.message", ["proton.constants"])
 
     var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
-        authentication.baseURL + "/messages/:MessageID",
+        authentication.baseURL + '/messages/:id',
         authentication.params({
-            MessageID: "@MessageID"
+            id: '@id'
         }), {
-            query: {
-                method: "get",
-                isArray: true,
-                transformResponse: getFromJSONResponse('Messages')
+            // POST
+            send: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/send/:id'
             },
-            search: {
-                method: "get",
-                transformResponse: function(data) {
-                    return angular.fromJson(data);
-                },
-                url: authentication.baseURL + "/messages/search"
+            draft: {
+                method: 'post',
+                url: authentication.baseURL + '/messages/draft/:id'
             },
-            advSearch: {
-                method: "get",
-                isArray: true,
-                url: authentication.baseURL + "/messages/adv_search",
+            // GET
+            countUnread: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/unread',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
+                    var counters = {};
 
-                    if(angular.isDefined(json.Total)) {
-                        $rootScope.Total = json.Total;
-                    }
+                    _.each(json.Labels, function(obj) { counters[obj.LabelID] = obj.Count; });
+                    _.each(json.Locations, function(obj) { counters[obj.Location] = obj.Count; });
 
-                    return json.Messages;
+                    return counters;
                 }
-            },
-            delete: {
-                method: "delete"
             },
             get: {
-                method: "get",
-                url: authentication.baseURL + "/messages/:MessageID",
-                transformResponse: getFromJSONResponse()
-            },
-            patch: {
-                method: "put",
-                url: authentication.baseURL + "/messages/:MessageID/:action"
-            },
-            count: {
-                method: "get",
-                url: authentication.baseURL + "/messages/count",
-                transformResponse: getFromJSONResponse('MessageCount')
-            },
-            saveDraft: {
-                method: "post",
-                url: authentication.baseURL + "/messages/draft",
-                transformResponse: getFromJSONResponse()
-            },
-            updateDraft: {
-                method: "put",
-                url: authentication.baseURL + "/messages/draft"
-            },
-            send: {
-                method: "post",
-                url: authentication.baseURL + "/messages",
-                headers: {
-                    'Accept': 'application/vnd.protonmail.api+json;apiversion=2;appversion=1'
-                }
-            },
-            pubkeys: {
                 method: 'get',
-                url: authentication.baseURL + "/users/pubkeys/:Emails",
-                isArray: false,
-                transformResponse: getFromJSONResponse()
-            },
-            // Get all messages with this label
-            labels: {
-                method: 'get',
-                isArray: true,
-                url: authentication.baseURL + "/label",
+                url: authentication.baseURL + '/messages/:id',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
-                    if(angular.isDefined(json.Total)) {
-                        $rootScope.Total = json.Total;
-                    }
+                    return json.Message;
+                }
+            },
+            query: {
+                method: 'get',
+                isArray: true,
+                url: authentication.baseURL + '/messages',
+                transformResponse: function(data) {
+                    var json = angular.fromJson(data);
 
+                    $rootScope.TotalPages = json.TotalPages;
+                    $rootScope.Total = json.Total;
                     return json.Messages;
                 }
             },
-            // Apply labels on messages
-            apply: {
+            latest: {
+                method: 'get',
+                url: authentication.baseURL + '/messages/latest/:time'
+            },
+            unreaded: {
+                method: 'get',
+                isArray: true,
+                url: authentication.baseURL + '/messages/unread'
+            },
+            // PUT
+            star: {
                 method: 'put',
-                url: authentication.baseURL + "/labels/apply"
+                isArray: true,
+                url: authentication.baseURL + '/messages/star'
+            },
+            unstar: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/unstar'
+            },
+            read: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/read'
+            },
+            unread: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/unread'
+            },
+            trash: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/trash'
+            },
+            inbox: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/inbox'
+            },
+            spam: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/spam'
+            },
+            archive: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/archive'
+            },
+            delete: {
+                method: 'put',
+                isArray: true,
+                url: authentication.baseURL + '/messages/delete'
             }
+            // DELETE
         }
     );
-
-    Message.REPLY_PREFIX = /re:/i;
-    Message.FORWARD_PREFIX = /fw:/i;
 
     _.extend(Message.prototype, {
         readableTime: function() {
@@ -134,12 +146,6 @@ angular.module("proton.models.message", ["proton.constants"])
             }
             return this._moment;
         },
-        toggleStar: function() {
-            this.Tag = this.Tag === "starred" ? "" : "starred";
-            return this.$patch({
-                action: this.Tag === 'starred' ? "star" : "unstar"
-            });
-        },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
             if (_.has(CONSTANTS.MAILBOX_IDENTIFIERS, location)) {
@@ -153,16 +159,6 @@ angular.module("proton.models.message", ["proton.constants"])
             return this.$patch({
                 action: invertedMailboxIdentifiers[this.Location]
             });
-        },
-        setReadStatus: function(status) {
-            var location = $state.current.name.replace('secured.', '');
-
-            this.IsRead = +status;
-            // $rootScope.unreadCount = $rootScope.unreadCount + (status ? -1 : 1); TODO adapt with location
-            return this.$patch({ action: status ? "read" : "unread"});
-        },
-        delete: function() {
-            return this.$delete();
         },
         numberOfAttachments: function() {
             return this.AttachmentIDList.split(",").length;
@@ -180,52 +176,34 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         plainText: function() {
-            var body = this._decryptedBody || this.MessageBody;
+            var body = this.DecryptedBody || this.Body;
 
             return body;
         },
 
         setMsgBody: function() {
-            var messageBody;
+            var body;
 
             // get the message content from either the editor or textarea if its iOS
             // if its iOS / textarea we need to replace natural linebreaks with HTML linebreaks
             if ($rootScope.isMobile) {
-                messageBody = this.messageBody.replace(/(?:\r\n|\r|\n)/g, '<br />');
+                body = this.Body.replace(/(?:\r\n|\r|\n)/g, '<br />');
             } else {
-                messageBody = this.MessageBody;
-                messageBody = tools.fixImages(messageBody);
+                body = this.Body;
+                body = tools.fixImages(body);
             }
-
             // if there is no message body we "pad" with a line return so encryption and decryption doesnt break
-            if (messageBody.trim().length < 1) {
-                messageBody = '\n';
+            if (body.trim().length < 1) {
+                body = '\n';
             }
             // Set input elements
-            this.MessageBody = messageBody;
+            this.Body = body;
         },
 
         validate: function(draft) {
-            _.defaults(this, {
-                RecipientList: '',
-                CCList: '',
-                BCCList: '',
-                MessageTitle: '',
-                MessageBody: ''
-            });
-
+            var deferred = $q.defer();
             // set msgBody input element to editor content
             this.setMsgBody();
-
-            // TODO
-            // attachment session keys decrypted
-            // if($('.attachment-link.nokey').length) {
-            //     notify('Attachments not ready. Please wait and try again.');
-            //     return false;
-            // }
-
-            // set session keys
-            // setSessionKeys();
 
             // Check internet connection
             //if ((window.navigator.onLine !== true && location.hostname != 'localhost') ||
@@ -235,66 +213,50 @@ angular.module("proton.models.message", ["proton.constants"])
             // }
 
             // Check if there is an attachment uploading
-            // if ($('.fileUploading').length !== 0) {
-            //     notify('Wait for attachment to finish uploading or cancel upload.');
-            //     return false;
-            // }
-
-            // Check all emails to make sure they are valid
-            var invalidEmails = '';
-            var allEmails = this.RecipientList + this.CCList + this.BCCList;
-
-            allEmails = allEmails.split(',');
-
-            for (i = 0; i < allEmails.length; i++) {
-                if (allEmails[i].trim() !== '') {
-                    if (!tools.validEmail(allEmails[i])) {
-                        if (invalidEmails === '') {
-                            invalidEmails = allEmails[i].trim();
-                        } else {
-                            invalidEmails += ', ' + allEmails[i].trim();
-                        }
-                    }
-                }
-            }
-
-            if (invalidEmails !== '') {
-                notify('Invalid email(s): ' + invalidEmails + '.');
+            if (this.uploading === true) {
+                deferred.reject('Wait for attachment to finish uploading or cancel upload.');
                 return false;
             }
 
-            // MAX 25 to, cc, bcc
-            var rl = this.RecipientList.split(',');
-            var ccl = this.CCList.split(',');
-            var bccl = this.BCCList.split(',');
+            // Check all emails to make sure they are valid
+            var invalidEmails = [];
+            var allEmails = _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Address.trim(); });
 
+            _.each(allEmails, function(email) {
+                if(!tools.validEmail(email)) {
+                    invalidEmails.push(email);
+                }
+            });
+
+            if (invalidEmails.length > 0) {
+                deferred.reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
+            }
+
+            // MAX 25 to, cc, bcc
             if (!!!draft) {
-                if ((rl.length + ccl.length + bccl.length) > 25) {
-                    notify('The maximum number (25) of Recipients is 25.');
-                    return false;
+                if ((this.ToList.length + this.BCCList.length + this.CCList.length) > 25) {
+                    deferred.reject('The maximum number (25) of Recipients is 25.');
                 }
 
-                if (this.RecipientList.trim().length === 0 && this.BCCList.trim().length === 0 && this.CCList.trim().length === 0) {
-                    notify('Please enter at least one recipient.');
-                    // TODO focus RecipientList
-                    return false;
+                if (this.ToList.length === 0 && this.BCCList.length === 0 && this.CCList.length === 0) {
+                    deferred.reject('Please enter at least one recipient.');
                 }
             }
 
             // Check title length
-            if (this.MessageTitle && this.MessageTitle.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
-                // TODO $('#MessageTitle').focus();
-                return false;
+            if (this.Subject && this.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
+                deferred.reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
             }
 
             // Check body length
-            if (this.msgBody && this.msgBody.length > 16000000) {
-                notify('The maximum length of the message body is 16,000,000 characters.');
-                return false;
+            if (this.Body.length > 16000000) {
+                deferred.reject('The maximum length of the message body is 16,000,000 characters.');
             }
 
-            return this.needToSave();
+            // TODO use needToSave
+            deferred.resolve(true);
+
+            return deferred.promise;
         },
 
         close: function() {
@@ -309,13 +271,13 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             this.timeoutSaving = $timeout(function() {
-                this.save(silently);
+                this.saving(silently);
             }.bind(this), CONSTANTS.SAVE_TIMEOUT_TIME);
         },
 
         needToSave: function() {
             if(angular.isDefined(this.old)) {
-                var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
 
@@ -325,82 +287,159 @@ angular.module("proton.models.message", ["proton.constants"])
             }
         },
 
+        defaults: function() {
+            _.defaults(this, {
+                ToList: [],
+                BCCList: [],
+                CCList: [],
+                Attachments: [],
+                Subject: '',
+                IsEncrypted: 0,
+                PasswordHint: ''
+            });
+        },
+
         saveOld: function() {
-            var properties = ['MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'MessageBody', 'PasswordHint', 'IsEncrypted'];
+            var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
 
             this.old = _.pick(this, properties);
 
             _.defaults(this.old, {
-                BCCList: "",
-                CCList: "",
-                MessageTitle: "",
-                RecipientList: ""
+                ToList: [],
+                BCCList: [],
+                CCList: [],
+                Attachments: [],
+                Subject: ""
             });
         },
 
-        save: function(silently) {
-            if (this.validate(true)) { // draft mode
-                var newMessage = new Message(_.pick(this, 'MessageID', 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-                this.saveOld();
-                _.defaults(newMessage, {
-                    RecipientList: '',
-                    CCList: '',
-                    BCCList: '',
-                    MessageTitle: '',
-                    PasswordHint: '',
-                    Attachments: [],
-                    IsEncrypted: 0
-                });
+        encryptBody: function(key) {
+            return pmcw.encryptMessage(this.Body, key);
+        },
 
-                if (this.Attachments) {
-                    newMessage.Attachments = _.map(this.Attachments, function(att) {
-                        return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
+        encryptPackets: function(key) {
+            var packets = [];
+
+            _.each(this.Attachments, function(element) {
+                packets.push(pmcrypto.encryptSessionKey(pmcrypto.binaryStringToArray(pmcrypto.decode_base64(element.sessionKey.key)), element.sessionKey.algo, key, []).then(function (keyPacket) {
+                    return {
+                        ID: element.AttachmentID,
+                        KeyPackets: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
+                    };
+                }));
+            });
+
+            return $q.all(packets);
+        },
+
+        clearPackets: function() {
+            var packets = [];
+
+            _.each(this.Attachments, function(element) {
+                packets.push();
+            });
+
+            return $q.all(packets);
+        },
+
+        emailsToString: function() {
+            return _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Address; });
+        },
+
+        getPublicKeys: function(emails) {
+            var base64 = pmcw.encode_base64(emails.join(','));
+
+            return User.pubkeys({emails: base64}).$promise;
+        },
+
+        cleanKey: function(key) {
+            return key.replace(/(\r\n|\n|\r)/gm,'');
+        },
+
+        sending: function() {
+            var deferred = $q.defer();
+            var self = this;
+
+            self.validate().then(function() {
+                var parameters = { Message: _.pick(self, 'Subject', 'ToList', 'CCList', 'BCCList') };
+                var emails = self.emailsToString();
+                var encryptPromise = self.encryptBody(authentication.user.PublicKey);
+                var keyPromise = self.getPublicKeys(emails);
+
+                parameters.Message.AddressID = self.From.ID;
+
+                $q.all([encryptPromise, keyPromise]).then(function(result) {
+                    var encryptedBody = result[0];
+                    var keys = result[1];
+                    var outsiders = false;
+                    var promises = [];
+
+                    parameters.Message.Body = encryptedBody;
+                    parameters.Packages = [];
+
+                    _.each(emails, function(email) {
+                        if(keys && keys[email]) {
+                            var key = keys[email];
+
+                            promises.push(self.encryptBody(key).then(function(result) {
+                                var body = result;
+
+                                self.encryptPackets(authentication.user.PublicKey).then(function(result) {
+                                    var keyPackets = result;
+
+                                    parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
+                                });
+                            }));
+                        } else {
+                            if(self.IsEncrypted === 1) {
+                                promises.push(self.encryptBody(self.Password).then(function(result) {
+                                    var body = result;
+
+                                    self.encryptPackets(self.Password).then(function(result) {
+                                        var keyPackets = result;
+
+                                        parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: keyPackets, PasswordHint: self.PasswordHint});
+                                    });
+                                }));
+                            }
+
+                            outsiders = true;
+                        }
                     });
-                }
 
-                newMessage.MessageBody = {
-                    outsiders: ''
+                    if(outsiders === true && self.IsEncrypted === 0) {
+                        parameters.ClearBody = self.Body;
+                        parameters.AttachmentKeys = [];
+                    }
+
+                    $q.all(promises).then(function() {
+                        deferred.resolve(parameters);
+                    });
+                });
+            });
+
+            return deferred.promise;
+        },
+
+        saving: function(silently) {
+            var deferred = $q.defer();
+            var self = this;
+
+            self.validate(true).then(function(result) {
+                var parameters = {
+                    Message: _.pick(self, 'ToList', 'CCList', 'BCCList', 'Subject')
                 };
 
-                pmcw.encryptMessage(this.MessageBody, authentication.user.PublicKey).then(function(result) {
-                    newMessage.MessageBody.self = result;
+                parameters.id = self.ID;
+                parameters.Message.AddressID = self.From.ID;
 
-                    var newDraft = angular.isUndefined(this.MessageID);
-                    var draftPromise;
+                self.encryptBody(authentication.user.PublicKey).then(function(result) {
+                    parameters.Message.Body = result;
+                    deferred.resolve(parameters);
+                });
+            });
 
-                    if (newDraft) {
-                        draftPromise = newMessage.$saveDraft();
-                    } else {
-                        draftPromise = newMessage.$updateDraft();
-                    }
-
-                    draftPromise.then(function(result) {
-                        if (newDraft) {
-                            this.MessageID = parseInt(result.MessageID);
-                            if(!!!silently) {
-                                notify('Draft saved');
-                            }
-                        } else {
-                          if(!!!silently) {
-                              notify('Draft updated');
-                          }
-                        }
-                        this.BackupDate = new Date();
-                    }.bind(this));
-
-                    if(!!!silently) {
-                        networkActivityTracker.track(draftPromise);
-                    }
-                }.bind(this));
-            }
-        },
-
-        setSessionKey: function() {
-
-        },
-
-        removeSessionKey: function() {
-
+            return deferred.promise;
         },
 
         clearTextBody: function() {
@@ -409,7 +448,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
-                if (_.isUndefined(this._decryptedBody) && !!!this.decrypting) {
+                if (_.isUndefined(this.DecryptedBody) && !!!this.decrypting) {
                     this.decrypting = true;
 
                     try {
@@ -417,22 +456,22 @@ angular.module("proton.models.message", ["proton.constants"])
                         var pw = pmcw.decode_base64(local);
 
                         pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
-                            pmcw.decryptMessageRSA(this.MessageBody, key, this.Time).then(function(result) {
-                                this._decryptedBody = result;
+                            pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
+                                this.DecryptedBody = result;
                                 this.failedDecryption = false;
                                 this.decrypting = false;
                                 deferred.resolve(result);
                             }.bind(this));
                         }.bind(this));
                     } catch (err) {
-                        this._decryptedBody = "";
+                        this.DecryptedBody = "";
                         this.failedDecryption = true;
                     }
                 } else {
-                    deferred.resolve(this._decryptedBody);
+                    deferred.resolve(this.DecryptedBody);
                 }
             } else {
-                deferred.resolve(this.MessageBody);
+                deferred.resolve(this.Body);
             }
 
             return deferred.promise;
@@ -441,12 +480,14 @@ angular.module("proton.models.message", ["proton.constants"])
         clearImageBody: function(body) {
             if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
-            } else {
+            }
+            else {
                 this.containsImage = true;
                 if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
                     this.imagesHidden = true;
                     body = tools.breakImages(body);
-                } else {
+                }
+                else {
                     this.imagesHidden = false;
                     body = tools.fixImages(body);
                 }

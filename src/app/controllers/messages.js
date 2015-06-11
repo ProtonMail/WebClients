@@ -14,17 +14,22 @@ angular.module("proton.controllers.Messages", [
     $filter,
     CONSTANTS,
     Message,
+    Label,
     authentication,
     messageCache,
-    messageCount,
     messages,
     networkActivityTracker,
     notify
 ) {
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
+
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
+    $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
+    $scope.page = parseInt($stateParams.page || "1");
+    $scope.messages = messages;
+    $scope.messageCount = $rootScope.Total;
 
     // TODO this is just for temporary until API works
     $scope.randLocation = function() {
@@ -44,34 +49,21 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.showFrom = function(message) {
-        return (
-            $scope.recipientIsMe(message) &&
-            (
+        return ((
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.sent')
+                !$filter('isState')('secured.sent') && 
+                !$filter('isState')('secured.spam') && 
+                !$filter('isState')('secured.trash')
             )
         ) ? true : false;
     };
 
     $scope.senderIsMe = function(message) {
         var result = false;
-        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
-            if( $scope.user.addresses[i].Email === message.Sender ) {
+        for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
+            if( $scope.user.Addresses[i].Email === message.SenderAddress ) {
                 result = true;
-            }
-        }
-        return result;
-    };
-
-    // BROKEN. TODO recipient list needs to be standard for this to work.
-    $scope.recipientIsMe = function(message) {
-        var result = false;
-        for( var i = 0, len = $scope.user.addresses.length; i < len; i++ ) {
-            for( var j = 0, lenn = message.RecipientList.length; j < len; i++ ) {
-                if( $scope.user.addresses[i].Email === message.RecipientList[j][0] ) {
-                    result = true;
-                }
             }
         }
         return result;
@@ -80,21 +72,8 @@ angular.module("proton.controllers.Messages", [
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
     });
+
     $scope.$on("$destroy", unsubscribe);
-
-    $scope.page = parseInt($stateParams.page || "1");
-
-    $scope.messages = messages;
-
-    if($state.is('secured.label') || $state.is('secured.search')) {
-        $scope.messageCount = $rootScope.Total;
-    } else {
-        if ($stateParams.filter) {
-            $scope.messageCount = messageCount[$stateParams.filter === 'unread' ? "UnRead" : "Read"];
-        } else {
-            $scope.messageCount = messageCount.Total;
-        }
-    }
 
     $scope.draggableOptions = {
         cursorAt: {left: 0, top: 0},
@@ -105,6 +84,10 @@ angular.module("proton.controllers.Messages", [
         containment: "document"
     };
 
+    $scope.getLabel = function(id) {
+        return _.where($scope.labels, {ID: id})[0];
+    };
+
     $scope.onSelectMessage = function(event, message) {
         var messagesSelected = $scope.selectedMessages();
 
@@ -113,7 +96,7 @@ angular.module("proton.controllers.Messages", [
             var end = $scope.messages.indexOf(_.last(messagesSelected));
 
             for (var i = start; i < end; i++) {
-                $scope.messages[i].selected = true;
+                $scope.messages[i].Selected = true;
             }
         }
     };
@@ -124,8 +107,8 @@ angular.module("proton.controllers.Messages", [
         }, 20);
         $('body').addClass('dragging');
         $('#main').append('<div id="dragOverlay"></div>');
-        if(message && !!!message.selected) {
-            message.selected = true;
+        if(message && !!!message.Selected) {
+            message.Selected = true;
             $scope.$apply();
         }
     };
@@ -196,37 +179,46 @@ angular.module("proton.controllers.Messages", [
                 $rootScope.$broadcast('loadMessage', message);
             } else {
                 $state.go("secured." + mailbox + ".message", {
-                    MessageID: message.MessageID
+                    id: message.ID
                 });
             }
         }
     };
 
     $rootScope.$on('starMessages', function(event) {
-        $scope.toggleStar();
+        var messagesSelected = $scope.selectedMessages();
+        var ids = $scope.selectedIds();
+        var promise;
+
+        _.each(messagesSelected, function(message) { message.Starred = 1; });
+        promise = Message.star({IDs: ids}).$promise;
+        networkActivityTracker.track(promise);
+        $scope.unselectAllMessages();
     });
 
     $scope.toggleStar = function(message) {
         var inStarred = $state.is('secured.starred');
-        var messages = [];
+        var index = $scope.messages.indexOf(message);
+        var ids = [];
+        var promise;
 
         if(angular.isDefined(message)) {
-            messages.push(message);
-        } else {
-            messages = $scope.selectedMessages();
+            ids.push(message.ID);
         }
 
-        networkActivityTracker.track($q.all(_.map(messages, function(message) {
-            return message.toggleStar();
-        })).then(function() {
-            _.each(messages, function(message) {
-                var index = $scope.messages.indexOf(message);
+        if(message.Starred === 1) {
+            promise = Message.unstar({IDs: ids}).$promise;
+            message.Starred = 0;
 
-                if (inStarred) {
-                    $scope.messages.splice(index, 1);
-                }
-            });
-        }));
+            if (inStarred) {
+                $scope.messages.splice(index, 1);
+            }
+        } else {
+            promise = Message.star({IDs: ids}).$promise;
+            message.Starred = 1;
+        }
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.allSelected = function() {
@@ -234,7 +226,7 @@ angular.module("proton.controllers.Messages", [
 
         if ($scope.messages.length > 0) {
             _.forEach($scope.messages, function(message) {
-                if (!!!message.selected) {
+                if (!!!message.Selected) {
                     status = false;
                 }
             });
@@ -249,7 +241,7 @@ angular.module("proton.controllers.Messages", [
         var status = !!!$scope.allSelected();
 
         _.forEach($scope.messages, function(message) {
-            message.selected = status;
+            message.Selected = status;
         }, this);
     };
 
@@ -259,14 +251,18 @@ angular.module("proton.controllers.Messages", [
 
     $scope.unselectAllMessages = function() {
         _.forEach($scope.messages, function(message) {
-            message.selected = false;
+            message.Selected = false;
         }, this);
     };
 
     $scope.selectedMessages = function() {
         return _.select($scope.messages, function(message) {
-            return message.selected === true;
+            return message.Selected === true;
         });
+    };
+
+    $scope.selectedIds = function() {
+        return _.map($scope.selectedMessages(), function(message) { return message.ID; });
     };
 
     $scope.selectedMessagesWithReadStatus = function(bool) {
@@ -289,14 +285,26 @@ angular.module("proton.controllers.Messages", [
 
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
+        var promise;
+        var ids = _.map(messages, function(message) { return message.ID; });
 
-        networkActivityTracker.track($q.all(
-            _.map(messages, function(message) {
-                return message.setReadStatus(status);
-            })
-        ).then(function() {
+        if(status) {
+            promise = Message.read({IDs: ids}).$promise;
+        } else {
+            promise = Message.unread({IDs: ids}).$promise;
+        }
+
+        _.each(messages, function(message) {
+            message.IsRead = +status;
+        });
+
+        promise.then(function() {
             $rootScope.$broadcast('updateCounters');
-        }));
+        });
+
+        $scope.unselectAllMessages();
+
+        networkActivityTracker.track(promise);
     };
 
     $rootScope.$on('moveMessagesTo', function(event, name) {
@@ -304,38 +312,41 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.moveMessagesTo = function(mailbox) {
-        var selectedMessages = $scope.selectedMessages();
+        var ids = $scope.selectedIds();
+        var promise;
+        var inDelete = mailbox === 'delete';
 
-        if(mailbox && selectedMessages.length > 0) {
-            networkActivityTracker.track(
-                $q.all(_.map(selectedMessages, function(message) {
-                    if (mailbox === 'delete') {
-                        return message.delete();
-                    } else {
-                        return message.moveTo(mailbox);
-                    }
-                })).then(function() {
-                        _.each(selectedMessages, function(message) {
-                            if(!$state.is('secured.label')) {
-                                var i = $scope.messages.indexOf(message);
-
-                                if (i >= 0) {
-                                    $scope.messages.splice(i, 1);
-                                }
-                            }
-                        });
-
-                        if(selectedMessages.length > 1) {
-                            notify($translate.instant('MESSAGES_MOVED'));
-                        } else {
-                            notify($translate.instant('MESSAGE_MOVED'));
-                        }
-                    }, function(result) {
-                        $log.error(result);
-                    }
-                )
-            );
+        if(inDelete) {
+            promise = Message.delete({IDs: ids}).$promise;
+        } else {
+            promise = Message[mailbox]({IDs: ids}).$promise;
         }
+
+        promise.then(function(result) {
+            $rootScope.$broadcast('updateCounters');
+
+            if(inDelete) {
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_DELETED'));
+                } else {
+                    notify($translate.instant('MESSAGE_DELETED'));
+                }
+            } else {
+                if(ids.length > 1) {
+                    notify($translate.instant('MESSAGES_MOVED'));
+                } else {
+                    notify($translate.instant('MESSAGE_MOVED'));
+                }
+            }
+        });
+
+        if(!$state.is('secured.label')) {
+            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+        }
+
+        $scope.unselectAllMessages();
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.filterBy = function(status) {
@@ -367,10 +378,22 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $scope.selectedLabels = function() {
+        return _.select($scope.labels, function(label) {
+            return label.Selected === true;
+        });
+    };
+
+    $scope.unselectAllLabels = function() {
+        _.forEach($scope.labels, function(label) {
+            label.Selected = false;
+        }, this);
+    };
+
     $scope.openLabels = function(message) {
         var messages = [];
-        var labels = authentication.user.labels;
         var messagesLabel = [];
+        var labels = $scope.labels;
 
         if (angular.isDefined(message)) {
             messages.push(message);
@@ -379,14 +402,14 @@ angular.module("proton.controllers.Messages", [
         }
 
         _.each(messages, function(message) {
-            messagesLabel = messagesLabel.concat(_.map(message.Labels, function(label) {
-                return label.LabelName;
+            messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
+                return id;
             }));
         });
 
         _.each(labels, function(label) {
             var count = _.filter(messagesLabel, function(m) {
-                return m === label.LabelName;
+                return m === label.ID;
             }).length;
 
             if (count === messages.length) {
@@ -397,12 +420,6 @@ angular.module("proton.controllers.Messages", [
                 label.mode = 0;
             }
         });
-
-        $scope.labels = labels;
-        $scope.params = {
-            alsoArchived: false
-        };
-
 
         $timeout(function() {
             $('#searchLabels').focus();
@@ -418,43 +435,42 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
-        var messages = _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+        var messageIDs = _.map($scope.selectedMessages(), function(message) { return message.ID; });
 
-        Message.apply({
-            messages: messages,
-            labels_actions: [{id: LabelID, action: 1}],
-            archive: '1'
-        }).$promise.then(function(result) {
-            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+        Label.apply({
+            id: LabelID,
+            MessageIDs: messageIDs
+        }).then(function(result) {
             notify($translate.instant('LABEL_APPLY'));
-        }, function(result) {
-            $log.error(result);
         });
     });
 
     $scope.applyLabels = function(messages) {
-        messages = messages || _.map($scope.selectedMessages(), function(message) { return {id: message.MessageID}; });
+        var messageIDs = messages || $scope.selectedIds();
+        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var promises = [];
 
-        Message.apply({
-            messages: messages,
-            labels_actions: _.map(_.reject($scope.labels, function(label) {
-                return label.mode === 2;
-            }), function(label) {
-                return {
-                    id: label.LabelID,
-                    action: label.mode
-                };
-            }),
-            archive: ($scope.params.alsoArchived)?'1':'0'
-        }).$promise.then(function(result) {
-            $state.go($state.current, {}, {reload: true}); // force reload current page
-        }, function(result) {
-            $log.error(result);
+        _.each(toApply, function(labelID) {
+            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}));
+        });
+
+        _.each(toRemove, function(labelID) {
+            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}));
+        });
+
+        $q.all(promises).then(function() {
+            _.each($scope.selectedMessages(), function(message) {
+                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+            });
+            $scope.closeLabels();
+            $scope.unselectAllLabels();
+            $scope.unselectAllMessages();
+            notify($translate.instant('LABELS_APPLY'));
         });
     };
 
     $scope.goToPage = function(page) {
-        console.log(page);
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
@@ -514,8 +530,11 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     notify,
     tools,
-    CONSTANTS
+    CONSTANTS,
+    Contact,
+    User
 ) {
+    Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
 
@@ -543,10 +562,22 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'MessageTitle', 'MessageBody', 'RecipientList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
 
         $scope.initMessage(message);
     });
+
+    $scope.setDefaults = function(message) {
+        _.defaults(message, {
+            ToList: [],
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: [],
+            IsEncrypted: 0
+        });
+    };
 
     $scope.dropzoneConfig = function(message) {
         return {
@@ -572,14 +603,14 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on dragleave', event);
                 },
                 drop: function(event) {
-                    console.log('on drop', event);
+                    // console.log('on drop', event);
                 },
                 addedfile: function(file) {
                     console.log('on addedfile', file);
                     $scope.addAttachment(file, message);
                 },
                 removedfile: function(file) {
-                    console.log('on removedfile', file);
+                    // console.log('on removedfile', file);
                     $scope.removeAttachment(file, message);
                 }
             }
@@ -602,9 +633,9 @@ angular.module("proton.controllers.Messages", [
         var totalSize = $scope.getAttachmentsSize(message);
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
-        _.defaults(message, {
-            Attachments: []
-        });
+        message.uploading = true;
+
+        _.defaults(message, { Attachments: [] });
 
         if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
             notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
@@ -615,9 +646,14 @@ angular.module("proton.controllers.Messages", [
         totalSize += file.size;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file)
-            .then(function(packets) {
-                attachments.upload(packets);
+            attachments.load(file).then(function(packets) {
+                attachments.upload(packets, 14073538).then( // TODO remove that and replace by message.ID
+                    function(result) {
+                        message.Attachments.push(result);
+                        message.uploading = false;
+                        console.log('addAttachment', message.Attachments);
+                    }
+                );
             })
             .catch(function(result) {
                 notify(result);
@@ -642,6 +678,7 @@ angular.module("proton.controllers.Messages", [
             return;
         }
 
+        $scope.setDefaults(message);
         $scope.messages.unshift(message);
         $scope.completedSignature(message);
         $scope.selectAddress(message);
@@ -650,6 +687,7 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
             $scope.listenEditor(message);
             message.saveOld();
+            $scope.save(message, true);
         });
     };
 
@@ -690,11 +728,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.completedSignature = function(message) {
-        $scope.user.$promise.then(function() {
-            if(angular.isUndefined(message.MessageBody)) {
-                message.MessageBody = "<br><br>" + $scope.user.Signature;
-            }
-        });
+        message.Body = "<br><br>" + authentication.user.Signature;
     };
 
     $scope.composerIsSelected = function(message) {
@@ -718,10 +752,10 @@ angular.module("proton.controllers.Messages", [
             // focus correct field
             var composer = $('.composer')[index];
 
-            if (!!!message.RecipientList) {
-                $(composer).find('.recipient-list').focus();
-            } else if (!!!message.MessageTitle) {
-                $(composer).find('.message-title').focus();
+            if (message.ToList.length === 0) {
+                $(composer).find('.to-list')[0].focus();
+            } else if (message.Subject.length === 0) {
+                $(composer).find('.subject')[0].focus();
             } else {
                 message.editor.focus();
             }
@@ -744,7 +778,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectAddress = function(message) {
-        message.FromEmail = $scope.user.addresses[0];
+        message.From = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {
@@ -835,143 +869,27 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    var generateReplyToken = function() {
-        // Use a base64-encoded AES256 session key as the reply token
-        return pmcw.encode_base64(pmcw.generateKeyAES());
+    $scope.save = function(message, silently) {
+        var promise = message.saving().then(function(parameters) {
+            return Message.draft(parameters).$promise.then(function(result) {
+                message.ID = result.Message.ID;
+            });
+        });
+
+        if(!!!silently) {
+            networkActivityTracker.track(promise);
+        }
     };
 
     $scope.send = function(message) {
-        if (message.validate()) {
-            var index = $scope.messages.indexOf(message);
-            // get the message meta data
-            var newMessage = new Message(_.pick(message, 'MessageTitle', 'RecipientList', 'CCList', 'BCCList', 'PasswordHint', 'IsEncrypted'));
-
-            _.defaults(newMessage, {
-                RecipientList: '',
-                CCList: '',
-                BCCList: '',
-                MessageTitle: '',
-                PasswordHint: '',
-                Attachments: [],
-                IsEncrypted: 0
+        var promise = message.sending().then(function(parameters) {
+            parameters.id = message.ID;
+            return Message.send(parameters).$promise.then(function(result) {
+                console.log('Message envoye');
             });
+        });
 
-            if (message.Attachments) {
-                newMessage.Attachments = _.map(message.Attachments, function(att) {
-                    return _.pick(att, 'FileName', 'FileData', 'FileSize', 'MIMEType');
-                });
-            }
-
-            newMessage.RecipientList = tools.changeSeparatorToComma(newMessage.RecipientList);
-            newMessage.CCList = tools.changeSeparatorToComma(newMessage.CCList);
-            newMessage.BCCList = tools.changeSeparatorToComma(newMessage.BCCList);
-
-            // encrypt the message body
-            pmcw.encryptMessage(message.MessageBody, $scope.user.PublicKey).then(function(result) {
-                // set 'outsiders' to empty by default
-                newMessage.MessageBody = {
-                    outsiders: '',
-                    self: result
-                };
-
-                // concat all recipients
-                var emails = newMessage.RecipientList + (newMessage.CCList === '' ? '' : ',' + newMessage.CCList) + (newMessage.BCCList === '' ? '' : ',' + newMessage.BCCList);
-                var base64 = pmcw.encode_base64(emails);
-
-                // new message object
-                var userMessage = new Message();
-
-                // get users' publickeys
-                networkActivityTracker.track(userMessage.$pubkeys({
-                    Emails: base64
-                }).then(function(result) {
-                        // set defaults
-                        var isOutside = false;
-                        emails = emails.split(",");
-                        var promises = [];
-                        // loop through and overwrite defaults
-                        angular.forEach(emails, function(email) {
-                            var publickeys = result.keys;
-                            var publickey;
-                            var index = _.findIndex(publickeys, function(k, i) {
-                                if (!_.isUndefined(k[email])) {
-                                    return true;
-                                }
-                            });
-
-                            if (index !== -1) {
-                                publickey = publickeys[index][email];
-                                // encrypt messagebody with each user's keys
-                                promises.push(pmcw.encryptMessage(message.MessageBody, publickey).then(function(result) {
-                                    newMessage.MessageBody[email] = result;
-                                }));
-                            } else if(email !== '') {
-                                if (!isOutside && newMessage.IsEncrypted === 0) {
-                                    isOutside = true;
-                                }
-                            }
-                        });
-
-                        var outsidePromise;
-
-                        if (message.IsEncrypted === 1) {
-                            var replyToken = generateReplyToken();
-                            var encryptedReplyToken = pmcw.encryptMessage(replyToken, [], message.Password);
-                            // Encrypt attachment session keys for new recipient. Nothing is done with this on the back-end yet
-                            var arr = [];
-
-                            // TODO
-                            // sessionKeys.forEach(function(element) {
-                            //   arr.push(pmcw.encryptSessionKey(pmcw.binaryStringToArray(pmcw.decode_base64(element.key)), element.algo, [], $('#outsidePw').val()).then(function (keyPacket) {
-                            //     return {
-                            //       id: element.id,
-                            //       keypacket: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                            //     };
-                            //   }));
-                            // });
-
-                            var encryptedSessionKeys = Promise.all(arr);
-                            var outsideBody = pmcw.encryptMessage(message.MessageBody, [], message.Password);
-                            outsidePromise = outsideBody.then(function(result) {
-                                return Promise.all([encryptedReplyToken, encryptedSessionKeys]).then(function(encArray) {
-                                    newMessage.MessageBody.outsiders = result;
-                                    // TODO token and session keys
-                                    // return [email, message, replyToken].concat(encArray);
-                                });
-                            }, function(error) {
-                                $log.error(error);
-                            });
-
-                        } else if(isOutside && newMessage.IsEncrypted === 0) {
-                            // dont encrypt if its going outside
-                            outsidePromise = new Promise(function(resolve, reject) {
-                                newMessage.MessageBody.outsiders = message.MessageBody;
-                                resolve();
-                            });
-                        }
-
-                        promises.push(outsidePromise);
-
-                        newMessage.MessageID = newMessage.MessageID || 0;
-
-                        // When all promises are done
-                        Promise.all(promises).then(function() {
-                            // send email
-                            networkActivityTracker.track(newMessage.$send(null, function(result) {
-                                notify($translate.instant('MESSAGE_SENT'));
-                                $scope.close(message, false);
-                                $state.go($state.current, {}, {reload: true}); // force reload page
-                            }, function(error) {
-                                $log.error(error);
-                            }));
-                        });
-                    },
-                    function(error) {
-                        $log.error(error);
-                    }
-                ));
-            });
-        }
+        networkActivityTracker.track(promise);
     };
 
     $scope.toggleMinimize = function(message) {
@@ -1005,7 +923,7 @@ angular.module("proton.controllers.Messages", [
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            message.save(true); // silently
+            $scope.save(message, true); // silently
         }
 
         message.close();
@@ -1038,6 +956,7 @@ angular.module("proton.controllers.Messages", [
     localStorageService,
     networkActivityTracker,
     Message,
+    Label,
     message,
     tools,
     attachments,
@@ -1045,52 +964,81 @@ angular.module("proton.controllers.Messages", [
     CONSTANTS
 ) {
     $scope.message = message;
-    $rootScope.pageName = message.MessageTitle;
+    $rootScope.pageName = message.Subject;
     $scope.tools = tools;
+    $scope.isPlain = false;
 
     $scope.displayContent = function() {
         message.clearTextBody().then(function(result) {
             var content = message.clearImageBody(result);
 
+            content = tools.replaceLineBreaks(content);
+            content = DOMPurify.sanitize(content, {
+                FORBID_TAGS: ['style']
+            });
+
+            if (tools.isHtml(content)) {
+                $scope.isPlain = false;
+            }
+            else {
+                $scope.isPlain = true;
+            }
             $scope.content = content;
+            $('#message-body .email').html(content);
         });
+    };
+
+    $scope.getEmails = function(emails) {
+        return _.map(emails, function(m) {
+            return m.Address;
+        }).join(',');
+    };
+
+    $scope.markAsRead = function() {
+        var promise;
+
+        message.IsRead = 1;
+        promise = Message.read({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.markAsUnread = function() {
+        var promise;
+
+        message.IsRead = 0;
+        promise = Message.unread({IDs: [message.ID]}).$promise;
+        networkActivityTracker.track(promise);
     };
 
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);
+        $('#message-body .email').html($scope.content);
     };
 
     $scope.downloadAttachment = function(attachment) {
         attachments.get(attachment.AttachmentID, attachment.FileName);
     };
 
-    $scope.detachLabel = function(label) {
-        Message.apply({
-            messages: [{id: message.MessageID}],
-            labels_actions: [{id: label.LabelID, action: 0}],
-            archive: '0'
-        }).$promise.then(function(result) {
-            var index = message.Labels.indexOf(label);
+    $scope.detachLabel = function(id) {
+        var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
 
-            message.Labels.splice(index, 1);
-        }, function(result) {
-            $log.error(result);
-        });
+        message.LabelIDs = _.without(message.LabelIDs, id);
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveLabels = function() {
-        $scope.applyLabels([{id: message.MessageID}]);
+        $scope.applyLabels([message.ID]);
     };
 
     $scope.sendMessageTo = function(email) {
         var message = new Message();
 
         _.defaults(message, {
-            RecipientList: email,
+            ToList: email,
             CCList: '',
             BCCList: '',
-            MessageTitle: '',
+            Subject: '',
             PasswordHint: '',
             Attachments: []
         });
@@ -1104,24 +1052,24 @@ angular.module("proton.controllers.Messages", [
         var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + message.MessageTitle + '<br />';
+        var subject = 'Subject: ' + message.Subject + '<br />';
         var time = 'Time (GMT): ' + message.Time + '<br />';
-        var from = 'From: ' + message.RecipientList + '<br />';
+        var from = 'From: ' + message.ToList + '<br />';
         var to = 'To: ' + message.Sender + '<br />';
         var cc = 'CC: ' + message.CCList + '<br />';
         var blockquoteEnd = '</blockquote>';
 
-        base.MessageBody = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
-            base.RecipientList = message.Sender;
-            base.MessageTitle = (Message.REPLY_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Re: " + message.MessageTitle;
+            base.ToList = message.Sender;
+            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
         } else if (action === 'replyall') {
-            base.RecipientList = [message.Sender, message.CCList, message.BCCList].join(",");
-            base.MessageTitle = (Message.REPLY_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Re: " + message.MessageTitle;
+            base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
+            base.Subject = (Message.REPLY_PREFIX.test(message.Subject)) ? message.Subject : "Re: " + message.Subject;
         } else if (action === 'forward') {
-            base.RecipientList = '';
-            base.MessageTitle = (Message.FORWARD_PREFIX.test(message.MessageTitle)) ? message.MessageTitle : "Fw: " + message.MessageTitle;
+            base.ToList = '';
+            base.Subject = (Message.FORWARD_PREFIX.test(message.Subject)) ? message.Subject : "Fw: " + message.Subject;
         }
 
         return base;
@@ -1146,33 +1094,28 @@ angular.module("proton.controllers.Messages", [
 
     $scope.moveMessageTo = function(mailbox) {
         var promise;
+        var inDelete = mailbox === 'delete';
 
-        if(mailbox === 'delete') {
-            promise = message.delete();
+        if(inDelete) {
+            promise = Message.delete({IDs: [message.ID]}).$promise;
         } else {
-            promise = message.moveTo(mailbox);
+            promise = Message[mailbox]({IDs: [message.ID]}).$promise;
         }
 
-        networkActivityTracker.track(
-            promise.then(function() {
-                // TODO aniamtion to show currently viewed message was deleted
-                if(angular.isDefined($stateParams.MessageID)) {
-                    $scope.goToMessageList();
-                } else {
-                    if(!$state.is('secured.label')) {
-                        var i = $scope.messages.indexOf(message);
-                        if (i >= 0) {
-                            $scope.messages.splice(i, 1);
-                        }
-                    }
-                }
-            })
-        );
+        promise.then(function(result) {
+            if(inDelete) {
+                notify($translate.instant('MESSAGE_DELETED'));
+            } else {
+                notify($translate.instant('MESSAGE_MOVED'));
+            }
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.print = function() {
         var url = $state.href('secured.print', {
-            MessageID: message.MessageID
+            id: message.ID
         });
 
         window.open(url, '_blank');
@@ -1180,7 +1123,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.viewRaw = function() {
         var url = $state.href('secured.raw', {
-            MessageID: message.MessageID
+            id: message.ID
         });
 
         window.open(url, '_blank');
@@ -1206,7 +1149,8 @@ angular.module("proton.controllers.Messages", [
         return size;
     };
 
-    if (!message.IsRead) {
-        message.setReadStatus(true);
+    if (message.IsRead === 0) {
+        message.IsRead = 1;
+        Message.read({IDs: [message.ID]});
     }
 });

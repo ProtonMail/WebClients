@@ -6,12 +6,12 @@
             </a>
         </li>
         <li ng-if="!message.IsRead">
-            <a href ng-click="message.setReadStatus(true)">
+            <a href ng-click="markAsRead()">
                 <i class="fa fa-fw fa-eye"></i> <span class="visible-md-inline-block">{{ 'READ' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_READ' | translate }}</span>
             </a>
         </li>
         <li ng-if="message.IsRead">
-            <a href ng-click="message.setReadStatus(false)">
+            <a href ng-click="markAsUnread()">
                 <i class="fa fa-fw fa-eye-slash"></i> <span class="visible-md-inline-block">{{ 'UNREAD' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_UNREAD' | translate }}</span>
             </a>
         </li>

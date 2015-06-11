@@ -8,7 +8,7 @@
         <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
             <span as-sortable-item-handle="">
                 <span class="pull-left">
-                    <span  class="label label-pm" style="background-color: {{ label.LabelColor }}">{{ label.LabelName }}</span>
+                    <span  class="label label-pm" style="background-color: {{ label.Color }}">{{ label.Name }}</span>
                 </span>
                 <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="{{ 'SHOW' | translate }}" off-label="Hide"></toggle-switch>
                 <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
