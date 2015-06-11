@@ -1,4 +1,5 @@
 .proton-notification-template {
+
     @include linear-gradient(lighten($highlight, $sidebar-button-lighten), $highlight);
     border-color: transparent;
     border-radius: $border-radius-base;
@@ -8,6 +9,7 @@
     padding: 5px 15px;
     text-align: center;
     text-shadow: none;
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
 
     &.notification-success {
         background: #dff0d8;
@@ -18,4 +20,5 @@
         background: #f2dede;
         color: #a94442;
     }
+    
 }
