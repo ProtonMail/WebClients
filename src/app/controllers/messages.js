@@ -686,14 +686,16 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.composerStyle = function(message) {
+
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
         var widthWindow = $('#main').width();
+        var composerHeight = $('.composer-header').outerHeight();
 
         if (tools.findBootstrapEnvironment() === 'xs') {
-            var marginTop = 20; // px
-            var top = reverseIndex * 40 + marginTop;
+            var marginTop = 80; // px
+            var top = index * $('.composer-header').eq(0).outerHeight() + marginTop;
 
             styles.top = top + 'px';
         } else {
@@ -719,6 +721,7 @@ angular.module("proton.controllers.Messages", [
         styles['z-index'] = message.zIndex;
 
         return styles;
+
     };
 
     $scope.completedSignature = function(message) {
@@ -732,17 +735,54 @@ angular.module("proton.controllers.Messages", [
     $scope.focusComposer = function(message) {
         $scope.selected = message;
         if (!!!message.focussed) {
+
             // calculate z-index
             var index = $scope.messages.indexOf(message);
             var reverseIndex = $scope.messages.length - index;
 
-            _.each($scope.messages, function(element, iteratee) {
-                if (iteratee > index) {
-                    element.zIndex = ($scope.messages.length - (iteratee - index))*10;
-                } else {
-                    element.zIndex = ($scope.messages.length)*10;
-                }
-            });
+            if (tools.findBootstrapEnvironment() === 'xs') {
+
+                _.each($scope.messages, function(element, iteratee) {
+                    if (iteratee > index) {
+                        element.zIndex = ($scope.messages.length + (iteratee - index))*10;
+                    } else {
+                        element.zIndex = ($scope.messages.length)*10;
+                    }
+                });
+
+                var bottom = $('.composer').eq($('.composer').length-1);
+                var bottomTop = bottom.css('top');
+                var bottomZ = bottom.css('zIndex');
+                var clicked = $('.composer').eq(index);
+                var clickedTop = clicked.css('top');
+                var clickedZ = clicked.css('zIndex');
+
+                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+
+                // todo: swap ???
+                bottom.css({ 
+                    top:    clickedTop,
+                    zIndex: clickedZ
+                });
+                clicked.css({ 
+                    top:    bottomTop,
+                    zIndex: bottomZ
+                });
+
+                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+                
+            }
+
+            else {
+                _.each($scope.messages, function(element, iteratee) {
+                    if (iteratee > index) {
+                        element.zIndex = ($scope.messages.length - (iteratee - index))*10;
+                    } else {
+                        element.zIndex = ($scope.messages.length)*10;
+                    }
+                });
+            }
+
             // focus correct field
             var composer = $('.composer')[index];
 
@@ -753,11 +793,11 @@ angular.module("proton.controllers.Messages", [
             } else {
                 message.editor.focus();
             }
-
             _.each($scope.messages, function(m) {
                 m.focussed = false;
             });
             message.focussed = true;
+
             $scope.$apply();
         }
     };

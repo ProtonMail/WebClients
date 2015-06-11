@@ -61,15 +61,12 @@
 		left: 0;
 	}
 	.composer {
-		top: 0 !important;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 1000 !important;
-		box-shadow: none;
+		top: auto;
+		left: 1rem;
+		right: 1rem;
+		z-index: auto;
 		transition: none !important;
-		height: 100%;
-		overflow: auto;
+		overflow: hidden;
 		.close-button .fa {
 			color: #fff;
 		}
