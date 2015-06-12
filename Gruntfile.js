@@ -534,7 +534,6 @@ module.exports = function(grunt) {
         "jshint",
         "html2js",
         "sass:build",
-        "aglio:build",
         "concat:build_css",
         "copy:build_app_assets",
         "copy:build_vendor_assets",
