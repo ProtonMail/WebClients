@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             .map(function(host, target) {
                 return host.replace("?", grunt.option(target));
             })
-            .first() || API_TARGETS.local;
+            .first() || API_TARGETS.dev;
     }
 
     function rewriteIndexMiddleware(connect, options) {
@@ -232,7 +232,7 @@ module.exports = function(grunt) {
             },
             deploy: {
                 files: [{
-                    src: [".htaccess", "login.php"],
+                    src: [".htaccess"],
                     filter: "isFile",
                     expand: true,
                     dest: "./<%= compile_dir %>/",
