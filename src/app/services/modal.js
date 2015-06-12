@@ -216,7 +216,7 @@ angular.module("proton.modals", [])
 
             this.create = function() {
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
-                    params.create(this.label.LabelName, this.color);
+                    params.create(this.label.Name, this.color);
                 }
             };
 
