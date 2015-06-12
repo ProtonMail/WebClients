@@ -1036,8 +1036,9 @@ angular.module("proton.controllers.Messages", [
                 }
 
                 $q.all(promises).then(function() {
-                    return Message.send(parameters).then(function(result) {
-                        console.log('Message envoye');
+                    Message.send(parameters).$promise.then(function(result) {
+                        notify($translate.instant('MESSAGE_SENT'));
+                        $scope.close(message, false);
                         deferred.resolve(result);
                     });
                 });
