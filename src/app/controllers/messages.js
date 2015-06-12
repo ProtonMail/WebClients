@@ -645,10 +645,11 @@ angular.module("proton.controllers.Messages", [
 
         totalSize += file.size;
         var attachmentPromise;
+        var uploadPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachmentPromise = attachments.load(file).then(function(packets) {
-                attachments.upload(packets, message.ID).then(
+                uploadPromise = attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -661,7 +662,7 @@ angular.module("proton.controllers.Messages", [
                 $log.error(result);
             });
 
-            message.track(attachmentPromise);
+            message.track(uploadPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
