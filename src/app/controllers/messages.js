@@ -370,14 +370,6 @@ angular.module("proton.controllers.Messages", [
         }));
     };
 
-    $scope.toggleLabel = function(label) {
-        if (label.mode === 0 || label.mode === 2) {
-            label.mode = 1;
-        } else {
-            label.mode = 0;
-        }
-    };
-
     $scope.selectedLabels = function() {
         return _.select($scope.labels, function(label) {
             return label.Selected === true;
@@ -412,13 +404,7 @@ angular.module("proton.controllers.Messages", [
                 return m === label.ID;
             }).length;
 
-            if (count === messages.length) {
-                label.mode = 1;
-            } else if (count > 0) {
-                label.mode = 2;
-            } else {
-                label.mode = 0;
-            }
+            label.Selected = count > 0;
         });
 
         $timeout(function() {
@@ -427,11 +413,38 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.closeLabels = function() {
+        $scope.unselectAllLabels();
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
     $scope.saveLabels = function() {
-        $scope.applyLabels();
+        var deferred = $q.defer();
+        var messageIDs = messages || $scope.selectedIds();
+        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var promises = [];
+
+        _.each(toApply, function(labelID) {
+            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        _.each(toRemove, function(labelID) {
+            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        $q.all(promises).then(function() {
+            _.each($scope.selectedMessages(), function(message) {
+                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+            });
+            $scope.closeLabels();
+            $scope.unselectAllMessages();
+            notify($translate.instant('LABELS_APPLY'));
+            deferred.resolve();
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
@@ -444,31 +457,6 @@ angular.module("proton.controllers.Messages", [
             notify($translate.instant('LABEL_APPLY'));
         });
     });
-
-    $scope.applyLabels = function(messages) {
-        var messageIDs = messages || $scope.selectedIds();
-        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
-        var promises = [];
-
-        _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}));
-        });
-
-        _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}));
-        });
-
-        $q.all(promises).then(function() {
-            _.each($scope.selectedMessages(), function(message) {
-                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-            });
-            $scope.closeLabels();
-            $scope.unselectAllLabels();
-            $scope.unselectAllMessages();
-            notify($translate.instant('LABELS_APPLY'));
-        });
-    };
 
     $scope.goToPage = function(page) {
         if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
@@ -1073,8 +1061,10 @@ angular.module("proton.controllers.Messages", [
     $compile,
     $timeout,
     $translate,
+    $q,
     localStorageService,
     networkActivityTracker,
+    notify,
     Message,
     Label,
     message,
@@ -1148,7 +1138,30 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.saveLabels = function() {
-        $scope.applyLabels([message.ID]);
+        var deferred = $q.defer();
+        var messageIDs = [message.ID];
+        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var promises = [];
+
+        _.each(toApply, function(labelID) {
+            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        _.each(toRemove, function(labelID) {
+            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+        });
+
+        $q.all(promises).then(function() {
+            message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+            $scope.closeLabels();
+            notify($translate.instant('LABELS_APPLY'));
+            deferred.resolve();
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
     };
 
     $scope.sendMessageTo = function(email) {
