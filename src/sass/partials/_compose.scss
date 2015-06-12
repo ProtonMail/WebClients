@@ -466,7 +466,7 @@ form#compose {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
   right: 10px;
   width: 480px;
   transition: right 600ms linear, opacity 200ms linear;
