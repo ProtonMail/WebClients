@@ -633,24 +633,18 @@ angular.module("proton.controllers.Messages", [
 
         totalSize += file.size;
         var attachmentPromise;
-        var uploadPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachmentPromise = attachments.load(file).then(function(packets) {
-                uploadPromise = attachments.upload(packets, message.ID).then(
+                return attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
-                        console.log('addAttachment', message.Attachments);
                     }
                 );
-            })
-            .catch(function(result) {
-                notify(result);
-                $log.error(result);
             });
 
-            message.track(uploadPromise);
+            message.track(attachmentPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -1070,7 +1064,7 @@ angular.module("proton.controllers.Messages", [
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true); // silently
+            $scope.save(message, true, false); // silently
         }
 
         message.close();

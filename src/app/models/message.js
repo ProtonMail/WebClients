@@ -280,7 +280,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
-
+                
                 return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
             } else {
                 return true;
