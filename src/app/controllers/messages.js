@@ -563,7 +563,7 @@ angular.module("proton.controllers.Messages", [
 
     $rootScope.$on('loadMessage', function(event, message) {
         message = new Message(_.pick(message, 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
-
+        // console.log(message);
         $scope.initMessage(message);
     });
 
@@ -575,7 +575,8 @@ angular.module("proton.controllers.Messages", [
             Subject: '',
             PasswordHint: '',
             Attachments: [],
-            IsEncrypted: 0
+            IsEncrypted: 0,
+            Body: message.Body
         });
     };
 
@@ -681,10 +682,18 @@ angular.module("proton.controllers.Messages", [
             notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
             return;
         }
-
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.completedSignature(message);
+
+        if (message.Body===undefined) {
+            // this sets the Body with the sig
+            $scope.completedSignature(message);
+        }
+
+        // sanitation
+        message.Body = DOMPurify.sanitize(message.Body, {
+            FORBID_TAGS: ['style']
+        });
         $scope.selectAddress(message);
 
         $timeout(function() {
@@ -1078,11 +1087,14 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.close = function(message, save) {
+
         var index = $scope.messages.indexOf(message);
+
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true); // silently
+            $scope.save(message, true); // silently TODO: this fails sometimes!
+            console.log('aaaa');
         }
 
         message.close();
@@ -1095,6 +1107,7 @@ angular.module("proton.controllers.Messages", [
             // Focus the first message
             $scope.focusComposer(_.first($scope.messages));
         }
+
     };
 
     $scope.focusEditor = function(message, event) {
@@ -1241,7 +1254,6 @@ angular.module("proton.controllers.Messages", [
             fw_prefix + ' ' + message.Subject;
         }
 
-        console.log(base);
         return base;
     }
 
