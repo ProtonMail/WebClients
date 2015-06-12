@@ -57,7 +57,7 @@
         }
         .ring.inner,
         .ring.center {
-          border: 1px solid rgba(255,255,255,.5);
+          border: 1px solid #666666;
           width: 140px;
           height: 140px;
           top: 55px;
@@ -70,8 +70,6 @@
           top: 110px;
           left: 110px;
           box-shadow: 0 0 5px #fff;
-          -webkit-animation: electron .5s linear infinite;
-          -moz-animation: electron .5s linear infinite;
         }
         .wrap-electron {
           border: 0px solid  #fff;
@@ -94,52 +92,49 @@
         }
 
         .orbit {
-          -webkit-animation: lateral 6s ease-in-out infinite;
-          -moz-animation: lateral 6s ease-in-out infinite;
-        }
-        .orbit .electron {
-          -webkit-animation: electron 2s linear infinite;
-          -moz-animation: electron 2s linear infinite;
-        }        
+          -webkit-animation: lateral 3s ease-in-out infinite;
+          -moz-animation: lateral 3s ease-in-out infinite;
+        }      
         .vertical {
-          -webkit-animation: vertical 5s linear infinite;
-          -moz-animation: vertical 5s linear infinite;
+          -webkit-animation: vertical 3s linear infinite;
+          -moz-animation: vertical 3s linear infinite;
         }
         .horizontal {
-          -webkit-animation: horizontal 4s linear infinite;
-          -moz-animation: horizontal 4s linear infinite;
+          -webkit-animation: horizontal 3s linear infinite;
+          -moz-animation: horizontal 3s linear infinite;
         } 
 
         .orbit.r {
           -webkit-animation: lateralRevert 1s linear infinite;
           -moz-animation: lateralRevert 1s linear infinite;
-        }
-        .orbit.r .electron {
-          -webkit-animation: electron 1s linear infinite;
-          -moz-animation: electron 1s linear infinite;
-        }        
+        }      
         .vertical.inner {
-          -webkit-animation: verticalRevert 1.25s linear infinite;
-          -moz-animation: verticalRevert 1.25s linear infinite;
+          -webkit-animation: verticalRevert 1s linear infinite;
+          -moz-animation: verticalRevert 1s linear infinite;
         }
         .horizontal.inner {
-          -webkit-animation: horizontalRevert 1.5s linear infinite;
-          -moz-animation: horizontalRevert 1.5s linear infinite;
+          -webkit-animation: horizontalRevert 1s linear infinite;
+          -moz-animation: horizontalRevert 1s linear infinite;
+        }
+
+        .center {
+          -webkit-animation: electron 3s linear infinite;
+          -moz-animation: electron 3s linear infinite;          
         }
 
         @keyframes electron {
           0% {
             -webkit-transform: rotateZ(0deg);
-            opacity: 0;
+            opacity: .9;
             box-shadow: 0;
           }
           50% {
             opacity: 1;
-            box-shadow: 0 0 4rem #fff;
+            box-shadow: 0 0 8rem 1rem #fff;
           }
           100% {
             -webkit-transform: rotateZ(360deg);
-            opacity: 0;
+            opacity: .9;
             box-shadow: 0;
           }
         }
@@ -264,18 +259,17 @@
 <div class="higgs">
 
   <div class="orbit">
-    <div class="ring horizontal"><div class="wrap-electron"><div class="ring electron"></div></div></div>
-    <div class="ring vertical"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+    <div class="ring horizontal"><div class="wrap-electron"></div></div>
+    <div class="ring vertical"><div class="wrap-electron"></div></div>
   </div>
   
   <div class="orbit r">
-    <div class="ring horizontal inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
-    <div class="ring vertical inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+    <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
+    <div class="ring vertical inner"><div class="wrap-electron"></div></div>
     <div class="ring center"></div>
   </div>
 
 </div>
-
         <p class="text-center">Loading ProtonMail</p>
     </div>
     <div ui-view="main" autoscroll="false" id="body"></div>
