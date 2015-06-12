@@ -37,7 +37,6 @@ angular.module("proton.controllers.Settings", [
     $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
     $scope.selectedLanguage = 'English';
 
-
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
@@ -72,7 +71,7 @@ angular.module("proton.controllers.Settings", [
                 "NotificationEmail": $scope.notificationEmail
             }).$promise.then(function(response) {
                 user.NotificationEmail = $scope.notificationEmail;
-                notify('Notification email saved');
+                notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
             }, function(response) {
                 $log.error(response);
             })
@@ -85,15 +84,11 @@ angular.module("proton.controllers.Settings", [
               "Notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
               user.Notify = +$scope.dailyNotifications;
-              notify('Daily Notification Preference Saved');
+              notify($translate.instant('DAILY_NOTIFICATION_PREFERENCE_SAVED'));
           }, function(response) {
               $log.error(response);
           })
         );
-    };
-
-    $scope.saveDefaultLanguage = function(form) {
-        notify('Language preference saved - ' + $scope.defaultLanguage);
     };
 
     $scope.saveLoginPassword = function(form) {
@@ -107,7 +102,7 @@ angular.module("proton.controllers.Settings", [
                     notify(response.Error);
                 }
                 else {
-                    notify('Login password updated');
+                    notify($translate.instant('LOGIN_PASSWORD_UPDATED'));
                 }
             }, function(response) {
                 $log.error(response);
@@ -122,7 +117,7 @@ angular.module("proton.controllers.Settings", [
         var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(user.EncPrivateKey, oldMailPwd, newMailPwd);
 
         if (newEncPrivateKey === -1) {
-            notify('Wrong Current Mailbox Password');
+            notify($translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'));
         }
         else if (newEncPrivateKey.length <50) {
             notify(newEncPrivateKey);
@@ -133,7 +128,7 @@ angular.module("proton.controllers.Settings", [
                     "PublicKey" : user.PublicKey,
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
-                    notify('Mailbox password updated');
+                    notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
                 }, function(response) {
                     $log.error(response);
                 })
@@ -146,7 +141,7 @@ angular.module("proton.controllers.Settings", [
             Setting.display({
                 "DisplayName": $scope.displayName
             }).$promise.then(function(response) {
-                notify('Display name saved');
+                notify($translate.instant('DISPLAY_NAME_SAVED'));
                 $scope.user.DisplayName = $scope.displayName;
             }, function(response) {
                 $log.error(response);
@@ -164,7 +159,7 @@ angular.module("proton.controllers.Settings", [
                 "Signature": signature
             }).$promise.then(function(response) {
                 $scope.user.Signature = signature;
-                notify('Signature saved');
+                notify($translate.instant('SIGNATURE_SAVED'));
             }, function(response) {
                 $log.error(response);
             })
@@ -176,7 +171,7 @@ angular.module("proton.controllers.Settings", [
             Setting.addressOrder({
                 "Order": aliasOrder
             }).$promise.then(function(response) {
-                notify('Aliases saved');
+                notify($translate.instant('ALIASES_SAVED'));
             }, function(response) {
                 $log.error(response);
             })
@@ -188,7 +183,7 @@ angular.module("proton.controllers.Settings", [
             Setting.autosave({
                 "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
-                notify('Autosave Preference saved');
+                notify($translate.instant('AUTOSAVE_PREFERENCE_SAVED'));
                 user.AutoSaveContacts = +$scope.autosaveContacts;
             }, function(response) {
                 $log.error(response);
@@ -199,7 +194,7 @@ angular.module("proton.controllers.Settings", [
     $scope.createLabel = function() {
         labelModal.activate({
             params: {
-                title: 'Create New Label',
+                title: $translate.instant('CREATE_NEW_LABEL'),
                 create: function(name, color) {
                     Label.save({
                         Name: name,
@@ -209,7 +204,7 @@ angular.module("proton.controllers.Settings", [
                         if(angular.isDefined(result.Label)) {
                             // TODO add label to labels
                             labelModal.deactivate();
-                            notify('Label created');
+                            notify($translate.instant('LABEL_CREATED'));
                             $scope.labels.push(result.Label);
                         } else {
                             notify(result.error);
@@ -232,7 +227,7 @@ angular.module("proton.controllers.Settings", [
         origColor = label.Color;
         labelModal.activate({
             params: {
-                title: 'Edit Label',
+                title: $translate.instant('EDIT_LABEL'),
                 label: label,
                 create: function() {
                     networkActivityTracker.track(
@@ -249,7 +244,7 @@ angular.module("proton.controllers.Settings", [
                                 label.Color = origColor;
                             }
                             else {
-                                notify('Labed edited');
+                                notify($translate.instant('LABEL_EDITED'));
                             }
                             labelModal.deactivate();
 
@@ -270,13 +265,13 @@ angular.module("proton.controllers.Settings", [
     $scope.deleteLabel = function(label) {
         confirmModal.activate({
             params: {
-                title: 'Delete Label',
+                title: $translate.instant('DELETE_LABEL'),
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
                     networkActivityTracker.track(
                         Label.delete({id: label.ID}).$promise.then(function(result) {
                             confirmModal.deactivate();
-                            notify('Label ' + label.Name + ' deleted');
+                            notify($translate.instant('LABEL_DELETED'));
                             $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
                         }, function(result) {
                             $log.error(result);
@@ -295,7 +290,7 @@ angular.module("proton.controllers.Settings", [
             Label.order({
                 "Order": labelOrder
             }).$promise.then(function(response) {
-                notify('Label order saved');
+                notify($translate.instant('LABEL_ORDER_SAVED'));
             }, function(response) {
                 $log.error(response);
             })
@@ -310,7 +305,7 @@ angular.module("proton.controllers.Settings", [
             Color: label.Color,
             Display: label.Display
         }).$promise.then(function(result) {
-            notify('Label ' + label.Name + ' edited');
+            notify($translate.instant('LABEL_EDITED'));
         }, function(result) {
             $log.error(result);
         });
@@ -321,7 +316,7 @@ angular.module("proton.controllers.Settings", [
           Setting.theme({
               "Theme": $scope.cssTheme
           }).$promise.then(function(response) {
-              notify('Theme saved');
+              notify($translate.instant('THEME_SAVED'));
               user.Theme = $scope.cssTheme;
           }, function(response) {
               $log.error(response);
@@ -331,8 +326,10 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveDefaultLanguage = function() {
         var lang = $scope.locales[$scope.selectedLanguage];
-        $translate.use(lang);
-        notify('Default Language Changed');
+
+        $translate.use(lang).then(function(result) {
+            notify($translate.instant('DEFAULT_LANGUAGE_CHANGED'));
+        });
 
         // TODO uncomment when route for change language is working
         // networkActivityTracker.track(
