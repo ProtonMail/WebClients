@@ -109,7 +109,7 @@ module.exports = function(grunt) {
                 constants: {
                     CONFIG: {
                         debug: false,
-                        apiUrl:
+                        apiUrl: apiUrl()
                     }
                 }
             }
