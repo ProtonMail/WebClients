@@ -30,13 +30,6 @@
                     <!-- /input-group -->
                 </form>
                 <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState" ng-click="openSearchModal()"><span class="fa fa-search"></span></a>
-                <div error-reporter class="alert alert-danger centered ng-hide">
-                    <button type="button" class="close" ng-click="errorReporter.active = false">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                    </button>
-                    {{ errorReporter.error }}
-                </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
@@ -56,6 +49,7 @@
                             <li>
                                 <a href ng-click="openReportModal()"><i class="fa fa-bug"></i>{{ 'BUG' | translate }}</a>
                             </li>
+                            <li role="presentation" class="divider"></li>
                             <li>
                                 <a ng-click="logout()" href><i class="fa fa-power-off"></i>{{ 'LOGOUT' | translate }}</a>
                             </li>
@@ -90,13 +84,6 @@
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-small">
-                <div error-reporter class="alert alert-danger centered ng-hide">
-                    <button type="button" class="close" ng-click="errorReporter.active = false">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                    </button>
-                    {{ errorReporter.error }}
-                </div>
                 <table class="table">
                     <tr>
                         <td>
