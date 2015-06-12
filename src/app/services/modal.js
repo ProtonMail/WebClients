@@ -170,8 +170,7 @@ angular.module("proton.modals", [])
 .factory('wizardModal', function(pmModal) {
     return pmModal({
         controller: function(params, $timeout) {
-            this.name = params.name;
-            this.email = params.email;
+            this.version = params.version;
             this.title = params.title;
 
             this.cancel = function() {

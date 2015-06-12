@@ -61,15 +61,12 @@
 		left: 0;
 	}
 	.composer {
-		top: 0 !important;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 1000 !important;
-		box-shadow: none;
+		top: auto;
+		left: 1rem;
+		right: 1rem;
+		z-index: auto;
 		transition: none !important;
-		height: 100%;
-		overflow: auto;
+		overflow: hidden;
 		.close-button .fa {
 			color: #fff;
 		}
@@ -116,11 +113,11 @@
 			position: relative;
 			padding-right: 15px;
 			width: auto;
-			padding: 1rem 15px 1rem 3.5rem;
+			padding: 2rem 1rem 2rem 3.5rem;
 			line-height: 1em;
 		}
 		h4 {
-			margin: 0 0 3px 0;
+			margin: 0 0 1rem 0;
 			white-space: normal;
 		}
 		.fa-unlock-alt {
@@ -133,9 +130,12 @@
 			width: 2rem;
 			position: absolute;
 			left: 15px;
-			top: 1.25rem;
+			top: 2.25rem;
 		}
 		.recipient {
+			width: 100%;
+			display: block;
+			clear: both;
 			font-size: 12px;
 			.sender {
 				display: inline-block;

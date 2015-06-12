@@ -51,7 +51,6 @@ angular.module("proton.attachments", [
         },
         upload: function(packets, MessageID) {
             var deferred = $q.defer();
-
             var data = new FormData();
             var xhr = new XMLHttpRequest();
             var sessionKeyPromise = this.getSessionKey(packets.keys);
@@ -66,9 +65,6 @@ angular.module("proton.attachments", [
             attachmentData.filename = packets.Filename;
             attachmentData.fileSize = packets.fileSize;
             attachmentData.MIMEType = packets.MIMEType;
-
-            // TODO if draft id empty
-            // notify('No draft for attachments!');
 
             xhr.onload = function() {
                 var response;
@@ -89,6 +85,7 @@ angular.module("proton.attachments", [
                 if (statusCode !== 200) {
                     // Error with the request
                     notify('Unable to upload file. Please try again.');
+                    deferred.reject();
                     return;
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
@@ -97,8 +94,6 @@ angular.module("proton.attachments", [
                     } else {
                         notify('Unable to upload.');
                     }
-                    // TODO enable this. its disabled cause the API isnt ready.
-                    // return;
                 } else {
                     attachmentData.AttachmentID = response.AttachmentID;
                     sessionKeyPromise.then(function(sessionKey) {
@@ -108,17 +103,14 @@ angular.module("proton.attachments", [
                 }
             };
 
-            xhr.open('post', authentication.baseURL +'/attachments/upload', true); // TODO need API url
+            xhr.open('post', authentication.baseURL +'/attachments/upload', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[OAUTH_KEY + ":AccessToken"]);
             xhr.setRequestHeader("x-pm-uid", window.localStorage[OAUTH_KEY + ":Uid"]);
             xhr.send(data);
 
-            // return attachment object
-
             return deferred.promise;
-
         },
         removeAttachment: function(file) {
 

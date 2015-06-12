@@ -46,7 +46,7 @@ angular.module("proton.emailField", [])
       var tabbing = false;
 
       var manager = $$element.tagsManager({
-        tagsContainer: parent[0],
+        tagsContainer: $(parent).siblings()[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
         delimiters: [32, 44],
         validator: function (input) {

@@ -116,15 +116,29 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveMailboxPassword = function(form) {
-        networkActivityTracker.track(
-            User.keyPassword({
-                // TODO (need @feng)
-            }).$promise.then(function(response) {
-                notify('Mailbox password updated');
-            }, function(response) {
-                $log.error(response);
-            })
-        );
+        var oldMailPwd = $scope.oldMailboxPassword;
+        var newMailPwd = $scope.newMailboxPassword;
+
+        var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(user.EncPrivateKey, oldMailPwd, newMailPwd);
+
+        if (newEncPrivateKey === -1) {
+            notify('Wrong Current Mailbox Password');
+        }
+        else if (newEncPrivateKey.length <50) {
+            notify(newEncPrivateKey);
+        }
+        else {
+            networkActivityTracker.track(
+                User.keys({
+                    "PublicKey" : user.PublicKey,
+                    "PrivateKey": newEncPrivateKey
+                }).$promise.then(function(response) {
+                    notify('Mailbox password updated');
+                }, function(response) {
+                    $log.error(response);
+                })
+            );
+        }
     };
 
     $scope.saveDisplayName = function(form) {

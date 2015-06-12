@@ -609,8 +609,8 @@ angular.module("proton.controllers.Messages", [
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.FileSize)) {
-                size += parseInt(attachment.FileSize);
+            if (angular.isDefined(attachment.Size)) {
+                size += parseInt(attachment.Size);
             }
         });
 
@@ -632,10 +632,12 @@ angular.module("proton.controllers.Messages", [
         }
 
         totalSize += file.size;
+        var attachmentPromise;
+        var uploadPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachments.load(file).then(function(packets) {
-                attachments.upload(packets, message.ID).then(
+            attachmentPromise = attachments.load(file).then(function(packets) {
+                uploadPromise = attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -647,6 +649,8 @@ angular.module("proton.controllers.Messages", [
                 notify(result);
                 $log.error(result);
             });
+
+            message.track(uploadPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -679,14 +683,16 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.composerStyle = function(message) {
+
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
         var widthWindow = $('#main').width();
+        var composerHeight = $('.composer-header').outerHeight();
 
         if (tools.findBootstrapEnvironment() === 'xs') {
-            var marginTop = 20; // px
-            var top = reverseIndex * 40 + marginTop;
+            var marginTop = 80; // px
+            var top = index * $('.composer-header').eq(0).outerHeight() + marginTop;
 
             styles.top = top + 'px';
         } else {
@@ -712,6 +718,7 @@ angular.module("proton.controllers.Messages", [
         styles['z-index'] = message.zIndex;
 
         return styles;
+
     };
 
     $scope.completedSignature = function(message) {
@@ -725,17 +732,54 @@ angular.module("proton.controllers.Messages", [
     $scope.focusComposer = function(message) {
         $scope.selected = message;
         if (!!!message.focussed) {
+
             // calculate z-index
             var index = $scope.messages.indexOf(message);
             var reverseIndex = $scope.messages.length - index;
 
-            _.each($scope.messages, function(element, iteratee) {
-                if (iteratee > index) {
-                    element.zIndex = ($scope.messages.length - (iteratee - index))*10;
-                } else {
-                    element.zIndex = ($scope.messages.length)*10;
-                }
-            });
+            if (tools.findBootstrapEnvironment() === 'xs') {
+
+                _.each($scope.messages, function(element, iteratee) {
+                    if (iteratee > index) {
+                        element.zIndex = ($scope.messages.length + (iteratee - index))*10;
+                    } else {
+                        element.zIndex = ($scope.messages.length)*10;
+                    }
+                });
+
+                var bottom = $('.composer').eq($('.composer').length-1);
+                var bottomTop = bottom.css('top');
+                var bottomZ = bottom.css('zIndex');
+                var clicked = $('.composer').eq(index);
+                var clickedTop = clicked.css('top');
+                var clickedZ = clicked.css('zIndex');
+
+                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+
+                // todo: swap ???
+                bottom.css({
+                    top:    clickedTop,
+                    zIndex: clickedZ
+                });
+                clicked.css({
+                    top:    bottomTop,
+                    zIndex: bottomZ
+                });
+
+                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+
+            }
+
+            else {
+                _.each($scope.messages, function(element, iteratee) {
+                    if (iteratee > index) {
+                        element.zIndex = ($scope.messages.length - (iteratee - index))*10;
+                    } else {
+                        element.zIndex = ($scope.messages.length)*10;
+                    }
+                });
+            }
+
             // focus correct field
             var composer = $('.composer')[index];
 
@@ -746,11 +790,11 @@ angular.module("proton.controllers.Messages", [
             } else {
                 message.editor.focus();
             }
-
             _.each($scope.messages, function(m) {
                 m.focussed = false;
             });
             message.focussed = true;
+
             $scope.$apply();
         }
     };
@@ -882,7 +926,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.save = function(message, silently, force) {
-        var savePromise;
+        var deferred = $q.defer();
 
         if(message.validate(force)) {
             var parameters = {
@@ -906,44 +950,40 @@ angular.module("proton.controllers.Messages", [
                     draftPromise = Message.updateDraft(parameters).$promise;
                 }
 
-                return draftPromise.then(function(result) {
+                draftPromise.then(function(result) {
                     message.ID = result.Message.ID;
                     message.BackupDate = new Date();
                     $scope.saveOld(message);
+                    deferred.resolve(result);
                 });
             });
-
-            if(!!!silently) {
-                networkActivityTracker.track(savePromise);
-            }
         }
 
-        return savePromise;
+        if(silently !== true) {
+            message.track(deferred.promise);
+        }
+
+        return deferred.promise;
     };
 
     $scope.send = function(message) {
-        var mainPromise = $scope.save(message, true, true);
+        var deferred = $q.defer();
 
-        mainPromise.then(function() {
-            var parameters = { Message: _.pick(message, 'Subject', 'ToList', 'CCList', 'BCCList') };
+        $scope.save(message, true, true).then(function() {
+            var parameters = {};
             var emails = message.emailsToString();
-            var encryptPromise = message.encryptBody(authentication.user.PublicKey);
-            var keyPromise = message.getPublicKeys(emails);
 
-            parameters.Message.AddressID = message.From.ID;
             parameters.id = message.ID;
 
-            $q.all([encryptPromise, keyPromise]).then(function(result) {
-                var encryptedBody = result[0];
-                var keys = result[1];
+            message.getPublicKeys(emails).then(function(result) {
+                var keys = result;
                 var outsiders = false;
                 var promises = [];
 
-                parameters.Message.Body = encryptedBody;
                 parameters.Packages = [];
 
                 _.each(emails, function(email) {
-                    if(keys && keys[email]) { // inside user
+                    if(keys[email].length > 0) { // inside user
                         var key = keys[email];
 
                         promises.push(message.encryptBody(key).then(function(result) {
@@ -985,18 +1025,18 @@ angular.module("proton.controllers.Messages", [
                 }
 
                 $q.all(promises).then(function() {
-                    return Message.send(parameters).then(function(result) {
-                        console.log('Message envoye');
+                    Message.send(parameters).$promise.then(function(result) {
+                        notify($translate.instant('MESSAGE_SENT'));
+                        $scope.close(message, false);
+                        deferred.resolve(result);
                     });
                 });
             });
         });
 
-        mainPromise.catch(function(result) {
-            console.log(result);
-        });
+        message.track(deferred.promise);
 
-        networkActivityTracker.track(mainPromise);
+        return deferred.promise;
     };
 
     $scope.toggleMinimize = function(message) {
@@ -1126,8 +1166,8 @@ angular.module("proton.controllers.Messages", [
         $('#message-body .email').html($scope.content);
     };
 
-    $scope.downloadAttachment = function(attachment) {
-        attachments.get(attachment.AttachmentID, attachment.FileName);
+    $scope.downloadAttachment = function(message, attachment) {
+        attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.detachLabel = function(id) {
@@ -1283,9 +1323,9 @@ angular.module("proton.controllers.Messages", [
     $scope.sizeAttachments = function() {
         var size = 0;
 
-        angular.forEach(message.AttachmentIDList, function(attachment) {
-            if (angular.isDefined(attachment.FileSize)) {
-                size += parseInt(attachment.FileSize);
+        angular.forEach(message.Attachments, function(attachment) {
+            if (angular.isDefined(attachment.Size)) {
+                size += parseInt(attachment.Size);
             }
         });
 

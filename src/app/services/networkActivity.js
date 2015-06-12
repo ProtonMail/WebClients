@@ -1,4 +1,4 @@
-angular.module("proton.networkActivity", [])
+angular.module("proton.networkActivity", ["proton.errorReporter"])
 .factory("networkActivityTracker", function ($log, errorReporter) {
   var promises = [];
   var api = {

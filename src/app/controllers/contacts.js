@@ -294,6 +294,7 @@ angular.module("proton.controllers.Contacts", [
                                 added = added === 1 ? added + ' contact' : added + ' contacts';
                                 duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
                                 notify(added + ' imported, ' + duplicates + ' already in your contact list');
+                                Contact.index.updateWith($scope.contacts);
                             }, function(response) {
                                 $log.error(response);
                             })

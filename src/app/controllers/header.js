@@ -5,13 +5,11 @@ angular.module("proton.controllers.Header", [])
         searchInput: $stateParams.words || ''
     };
 
-    function openWizardModal(title, name, email, save) {
+    function openWizardModal(title, version) {
         wizardModal.activate({
             params: {
                 title: title,
-                name: name,
-                email: email,
-                save: save,
+                version: version,
                 cancel: function() {
                     wizardModal.deactivate();
                 }
@@ -51,8 +49,6 @@ angular.module("proton.controllers.Header", [])
 
 
     $scope.openWizard = function() {
-        openWizardModal('ProtonMail Wizard', '', '', function(name, email) {
-
-        });
+        openWizardModal('ProtonMail Wizard', 'startWizard');
     };
 });

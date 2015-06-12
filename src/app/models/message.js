@@ -134,6 +134,7 @@ angular.module("proton.models.message", ["proton.constants"])
     );
 
     _.extend(Message.prototype, {
+        promises: [],
         readableTime: function() {
             return this.moment().format('LL');
         },
@@ -166,7 +167,7 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
         numberOfAttachments: function() {
-            return this.AttachmentIDList.split(",").length;
+            return this.Attachments.length;
         },
         location: function() {
             return invertedMailboxIdentifiers[this.Location];
@@ -296,6 +297,20 @@ angular.module("proton.models.message", ["proton.constants"])
                 IsEncrypted: 0,
                 PasswordHint: ''
             });
+        },
+
+        loading: function() {
+            return !_.isEmpty(this.promises);
+        },
+
+        track: function (promise) {
+            this.promises = _.union(this.promises, [promise]);
+
+            promise.finally(function () {
+                this.promises = _.without(this.promises, promise);
+            }.bind(this));
+
+            return promise;
         },
 
         encryptBody: function(key) {

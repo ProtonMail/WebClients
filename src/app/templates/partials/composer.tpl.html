@@ -1,6 +1,19 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
         <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message)}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
+            <div class="composer-loader" ng-show="message.loading()">
+                <div class="higgs">
+                  <div class="orbit">
+                    <div class="ring horizontal"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring vertical"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                  </div>
+                  <div class="orbit r">
+                    <div class="ring horizontal inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring vertical inner"><div class="wrap-electron"><div class="ring electron"></div></div></div>
+                    <div class="ring center"></div>
+                  </div>
+                </div>
+            </div>
             <div class="composer-header row">
                 <span class="col-xs-9">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-3 text-right">
@@ -24,6 +37,7 @@
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group">
+                            <div class="tag-container"></div>
                             <div class="typeahead-container" id="to-container">
                                 <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
                             </div>
@@ -35,11 +49,13 @@
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
+                        <div class="tag-container"></div>
                         <div class="typeahead-container" id="cc-container">
                             <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control cc-list" />
                         </div>
                     </div>
                     <div class="form-group" ng-show="message.fields">
+                        <div class="tag-container"></div>
                         <div class="typeahead-container" id="bcc-container">
                             <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control bcc-list" />
                         </div>
