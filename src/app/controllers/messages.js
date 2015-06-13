@@ -704,7 +704,7 @@ angular.module("proton.controllers.Messages", [
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
-            var top = index * $('.composer-header').eq(0).outerHeight() + marginTop;
+            var top = marginTop;
 
             styles.top = top + 'px';
         } else {
