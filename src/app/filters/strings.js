@@ -58,7 +58,6 @@ angular.module("proton.filters.strings",[])
 .filter("username", function() {
     return function(input) {
         var username;
-
         if(angular.isArray(input)) {
             var firstEmail = input[0];
 
@@ -104,19 +103,19 @@ angular.module("proton.filters.strings",[])
             if (!!!withoutUnit) {
                 unit = " KB";
             }
-            return (Math.round(bytes/1024/10).toFixed(2) + unit);
+            return (bytes/1024).toFixed(1) + unit;
         }
         else if (bytes < gb) {
             if (!!!withoutUnit) {
                 unit = " MB";
             }
-            return (Math.round(bytes/1024/1000).toFixed(2) + unit);
+            return (bytes/1024/100).toFixed(1) + unit;
         }
         else {
             if (!!!withoutUnit) {
                 unit = " GB";
             }
-            return (Math.round(bytes/1024/1000000).toFixed(2) + unit);
+            return (bytes/1024/100000).toFixed(1) + unit;
         }
 
     };
