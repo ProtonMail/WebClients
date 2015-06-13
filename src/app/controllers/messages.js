@@ -1278,8 +1278,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToMessageList = function() {
-        $state.go("^");
-        $rootScope.pageName = $state.current.data.mailbox;
+        $state.go('^', {}, {reload: true});
     };
 
     $scope.moveMessageTo = function(mailbox) {
