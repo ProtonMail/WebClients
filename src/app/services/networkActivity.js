@@ -1,5 +1,5 @@
 angular.module("proton.networkActivity", ["proton.errorReporter"])
-.factory("networkActivityTracker", function ($log, errorReporter) {
+.factory("networkActivityTracker", function ($log, errorReporter, notify) {
   var promises = [];
   var api = {
     loading: function () {
@@ -8,6 +8,12 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
     track: function (promise) {
       errorReporter.clear();
       promises = _.union(promises, [promise]);
+      promise.catch(function(result) {
+          if(angular.isDefined(result.Error)) {
+              notify(result.Error);
+              $log.error(result);
+          }
+      });
       promise.finally(function () {
         promises = _.without(promises, promise);
       });

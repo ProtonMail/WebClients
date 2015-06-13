@@ -959,6 +959,8 @@ angular.module("proton.controllers.Messages", [
                     deferred.resolve(result);
                 });
             });
+        } else {
+            deferred.resolve();
         }
 
         if(silently !== true) {

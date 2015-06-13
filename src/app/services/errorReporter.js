@@ -3,6 +3,7 @@ angular.module("proton.errorReporter", [])
         var api = _.bindAll({
             catcher: function(msg, promise) {
                 var self = this;
+                
                 return function(error) {
                     self.notify(msg, error);
                     if (promise) {
