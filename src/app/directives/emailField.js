@@ -125,8 +125,18 @@ angular.module("proton.emailField", [])
         });
 
       $$element.autosizeInput();
+
+      var id = $(parent).attr('id');
+      var list = (id === 'to-container') ? "ToList" : (id === 'bcc-container') ? "BCCList" : "CCList";
+      _.forEach($scope.message[list], function(d) {
+        console.log(d);
+        manager.tagsManager("pushTag", d.Address);
+      });
     }
   };
+
+
+
 
   return directive;
 });
