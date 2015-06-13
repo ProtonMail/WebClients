@@ -13,7 +13,7 @@
         </ul>
     </div>
     <div class="modal-footer" ng-show="labels.length > 0">
-        <a ui-sref="secured.labels" title="{{'ADD_AND_MANAGE_YOUR_LABELS' | translate }}" class="pull-left">{{ 'MANAGE_LABELS' | translate }}</a>
+        <a ui-sref="secured.labels" title="{{'ADD_AND_MANAGE_YOUR_LABELS' | translate }}" class="pull-left btn">{{ 'MANAGE_LABELS' | translate }}</a>
         <a class="btn" ng-click="closeLabels()">{{ 'CANCEL' | translate }}</a>
         <button tabindex="1" type="button" class="btn btn-sm btn-primary" ng-click="saveLabels()" ng-disabled="networkActivity.loading()">{{ 'SAVE' | translate }}</button>
     </div>
