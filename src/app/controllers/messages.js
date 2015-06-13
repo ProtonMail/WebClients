@@ -1126,6 +1126,18 @@ angular.module("proton.controllers.Messages", [
     $scope.tools = tools;
     $scope.isPlain = false;
 
+    $scope.getFrom = function() {
+        var result = '';
+
+        if(angular.isDefined(message.SenderName)) {
+            result += '<b>' + message.SenderName + '</b> &lt;' + message.SenderAddress + '&gt;';
+        } else {
+            result += message.SenderAddress;
+        }
+
+        return result;
+    };
+
     $scope.displayContent = function() {
         message.clearTextBody().then(function(result) {
             var content = message.clearImageBody(result);
