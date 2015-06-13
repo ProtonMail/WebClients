@@ -550,8 +550,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
-        // console.log(message);
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
         $scope.initMessage(message);
     });
 
@@ -634,24 +633,18 @@ angular.module("proton.controllers.Messages", [
 
         totalSize += file.size;
         var attachmentPromise;
-        var uploadPromise;
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachmentPromise = attachments.load(file).then(function(packets) {
-                uploadPromise = attachments.upload(packets, message.ID).then(
+                return attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
-                        console.log('addAttachment', message.Attachments);
                     }
                 );
-            })
-            .catch(function(result) {
-                notify(result);
-                $log.error(result);
             });
 
-            message.track(uploadPromise);
+            message.track(attachmentPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -1081,8 +1074,7 @@ angular.module("proton.controllers.Messages", [
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true); // silently TODO: this fails sometimes!
-            console.log('aaaa');
+            $scope.save(message, true, false); // silently TODO: this fails sometimes!
         }
 
         message.close();
