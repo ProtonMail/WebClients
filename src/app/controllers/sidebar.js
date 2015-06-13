@@ -45,6 +45,7 @@ angular.module("proton.controllers.Sidebar", [])
             var LabelID = name;
             // Apply label and archive
             $rootScope.$broadcast('applyLabels', LabelID);
+            $rootScope.$broadcast('moveMessagesTo', 'archive');
         }
     };
 

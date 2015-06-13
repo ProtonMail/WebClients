@@ -31,6 +31,10 @@ angular.module("proton.controllers.Messages", [
     $scope.messages = messages;
     $scope.messageCount = $rootScope.Total;
 
+    $timeout(function() {
+        $scope.unselectAllMessages();
+    });
+
     // TODO this is just for temporary until API works
     $scope.randLocation = function() {
         return Math.floor((Math.random()*6)+1);
