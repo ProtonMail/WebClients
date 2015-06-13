@@ -10,6 +10,7 @@ angular.module("proton.controllers.Settings", [
     $scope,
     $rootScope,
     $log,
+    $window,
     authentication,
     confirmModal,
     labelModal,
@@ -326,6 +327,9 @@ angular.module("proton.controllers.Settings", [
 
     $scope.saveDefaultLanguage = function() {
         var lang = $scope.locales[$scope.selectedLanguage];
+
+        // Forcing a specific page to use HTTPS with angularjs
+        // $window.location.href = $location.absUrl().replace('http', 'https'); // TODO try it on prod
 
         $translate.use(lang).then(function(result) {
             notify($translate.instant('DEFAULT_LANGUAGE_CHANGED'));
