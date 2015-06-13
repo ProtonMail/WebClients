@@ -37,7 +37,7 @@
         <li>
             <strong>{{ 'FROM' | translate }}</strong>
             <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>
-            <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
+            <span ng-bind-html="getFrom()"></span>
             <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
             <span class="fa fa-check-circle verified" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
         </li>

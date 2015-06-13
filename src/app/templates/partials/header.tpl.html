@@ -19,15 +19,20 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-large">
-                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="('secured.*' | includedByState) && isInMailbox">
-                    <div class="input-group form-group">
-                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="search()" ng-focus="onFocusSearch()" ng-blur="onBlurSearch()" />
+                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="isInMailbox || isInContact">
+                    <div class="input-group form-group" ng-if="isInMailbox">
+                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" ng-focus="onFocusSearch()" ng-blur="onBlurSearch()" />
                         <span class="input-group-btn">
                             <button class="btn btn-default btn-toggle" type="button" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom"><span class="fa fa-caret-down"></span></button>
-                            <button class="btn btn-default" type="button" ng-click="search()" pt-tooltip="Search" pt-placement="bottom"><span class="fa fa-search"></span></button>
+                            <button class="btn btn-default" type="button" ng-click="searchMessages()" pt-tooltip="Search" pt-placement="bottom"><span class="fa fa-search"></span></button>
                         </span>
                     </div>
-                    <!-- /input-group -->
+                    <div class="input-group form-group" ng-if="isInContact">
+                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" ng-focus="onFocusSearch()" ng-blur="onBlurSearch()" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="searchContacts()" pt-tooltip="Search" pt-placement="bottom"><span class="fa fa-search"></span></button>
+                        </span>
+                    </div>
                 </form>
                 <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState" ng-click="openSearchModal()"><span class="fa fa-search"></span></a>
                 <ul class="nav navbar-nav navbar-right">

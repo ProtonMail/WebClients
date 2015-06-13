@@ -23,7 +23,7 @@ angular.module("proton.filters.strings",[])
     //     // return DOMPurify.sanitize(dirty);
     // };
     // var c = {
-    //     ALLOWED_TAGS: ['b', 'q'], 
+    //     ALLOWED_TAGS: ['b', 'q'],
     //     ALLOWED_ATTR: ['style']
     // };
     // getTrustedHtml
@@ -58,23 +58,23 @@ angular.module("proton.filters.strings",[])
 .filter("username", function() {
     return function(input) {
         var username;
-        if (typeof input === "object") {
-            if (input.Name!=='') {
-                username = input.Name;
+
+        if(angular.isArray(input)) {
+            var firstEmail = input[0];
+
+            if (angular.isDefined(firstEmail.Name) && firstEmail.Name.length > 0) {
+                username = firstEmail.Name;
+            } else {
+                username = firstEmail.Address.split('@')[0];
             }
-            else {
-                var firstEmail = input.Address[0];
-                chunks = firstEmail.split('@');
-                username = chunks[0];
-            }
-        }
-        else if (typeof input === "string") {
+        } else if (angular.isObject(input)) {
+            username = 'object';
+        } else if (angular.isString(input)) {
             username = input;
-        }
-        else {
+        } else {
             username = "";
         }
-        // console.log(username);
+
         return username;
     };
 })
@@ -89,7 +89,7 @@ angular.module("proton.filters.strings",[])
 
         if (_.isNumber(input)) {
             bytes = input;
-        } 
+        }
         else if (_.isNaN(bytes = parseInt(input))) {
             bytes = 0;
         }
@@ -99,19 +99,19 @@ angular.module("proton.filters.strings",[])
                 unit = " B";
             }
             return (bytes + unit);
-        } 
+        }
         else if (bytes < mb) {
             if (!!!withoutUnit) {
                 unit = " KB";
             }
             return (Math.round(bytes/1024/10).toFixed(2) + unit);
-        }  
+        }
         else if (bytes < gb) {
             if (!!!withoutUnit) {
                 unit = " MB";
             }
             return (Math.round(bytes/1024/1000).toFixed(2) + unit);
-        } 
+        }
         else {
             if (!!!withoutUnit) {
                 unit = " GB";

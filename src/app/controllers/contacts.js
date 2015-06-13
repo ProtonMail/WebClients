@@ -23,6 +23,10 @@ angular.module("proton.controllers.Contacts", [
     $scope.search = '';
     $scope.editing = false;
 
+    $rootScope.$on('searchContacts', function(event, value) {
+        $scope.search = value;
+    });
+
     var props;
 
     function openContactModal(title, name, email, save) {
@@ -196,7 +200,7 @@ angular.module("proton.controllers.Contacts", [
         var message = new Message();
 
         _.defaults(message, {
-            ToList: [{Address: contact.ContactEmail}],
+            ToList: [{Address: contact.Email, Name: contact.Name}],
             CCList: [],
             BCCList: [],
             Subject: '',
