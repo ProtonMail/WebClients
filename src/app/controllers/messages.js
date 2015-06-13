@@ -985,6 +985,7 @@ angular.module("proton.controllers.Messages", [
                 var promises = [];
 
                 parameters.Packages = [];
+                parameters.AttachmentKeys = [];
 
                 _.each(emails, function(email) {
                     if(keys[email].length > 0) { // inside user
