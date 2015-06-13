@@ -51,8 +51,14 @@
     min-height: 0;
 }
 
-.navbar-inverse {
+body .navbar-inverse {
     background: $navbar-color;
+    .navbar-nav > li > a {
+        color: #ccc;
+        &:hover {
+            color: #fff;
+        }
+    }
 }
 
 .dropdown-menu .divider {
