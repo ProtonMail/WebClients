@@ -10,6 +10,12 @@ angular.module("proton.routes", [
 
     var messageViewOptions = {
         url: "/:id",
+        onEnter: function($rootScope) {
+            $rootScope.isInMailbox = true;
+        },
+        onExit: function($rootScope) {
+            $rootScope.isInMailbox = false;
+        },
         controller: "ViewMessageController as messageViewCtrl",
         templateUrl: "templates/views/message.tpl.html",
         resolve: {
@@ -448,6 +454,12 @@ angular.module("proton.routes", [
 
     .state("secured.contacts", {
         url: "/contacts",
+        onEnter: function($rootScope) {
+            $rootScope.isInContact = true;
+        },
+        onExit: function($rootScope) {
+            $rootScope.isInContact = false;
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/contacts.tpl.html",
@@ -465,6 +477,12 @@ angular.module("proton.routes", [
 
     .state("secured.settings", {
         url: "/settings",
+        onEnter: function($rootScope) {
+            $rootScope.isInMailbox = true;
+        },
+        onExit: function($rootScope) {
+            $rootScope.isInMailbox = false;
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/settings.tpl.html",

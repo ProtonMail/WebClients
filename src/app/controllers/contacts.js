@@ -23,6 +23,10 @@ angular.module("proton.controllers.Contacts", [
     $scope.search = '';
     $scope.editing = false;
 
+    $rootScope.$on('searchContacts', function(event, value) {
+        $scope.search = value;
+    });
+
     var props;
 
     function openContactModal(title, name, email, save) {
