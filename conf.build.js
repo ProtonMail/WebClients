@@ -32,7 +32,7 @@ module.exports = {
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
       "vendor/angular-cookies/angular-cookies.js",
-      "vendor/angular-file-upload/dist/angular-file-upload-shim.js",
+      "vendor/ng-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-bootstrap/ui-bootstrap.js",
       "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
@@ -42,7 +42,7 @@ module.exports = {
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
       "vendor/angular-toggle-switch/angular-toggle-switch.js",
-      "vendor/angular-file-upload/dist/ng-file-upload-all.js",
+      "vendor/ng-file-upload/dist/ng-file-upload-all.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
@@ -76,7 +76,7 @@ module.exports = {
       "tooltip",
       "dropdown",
       "modal",
-      "transition"
+      "transition" 
     ],
 
     required_js: [],
