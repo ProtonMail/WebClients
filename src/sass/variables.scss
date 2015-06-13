@@ -11,11 +11,20 @@ $primary-color:                 #669;
 // Used for panel widgets and forms backgrounds, etc.
 $base-color:                    #fff;
 
+// used for sidebar
+$alt-color:                     #333;
+
+// used for top menu and footer
+$navbar-color:					#555;
+
 // Used for starred elements.
 $yellow:                        #ffc;
 
 // Used for selected message rows / drag n drop, etc
 $selected:						#eef;
+
+$overlay:						rgba(100,100,100,.9);
+
 
 // ============================================================
 // SECONDARY VARIABLES. BASED OFF OF THEME OPTIONS.
@@ -27,7 +36,6 @@ $primary-color-dark:            darken($primary-color, ($color-offset*2));				//
 $base-color-dark:               darken($base-color, $color-offset);						// #f2f2f2 (5% offset)
 $base-color-darker:             darken($base-color, ($color-offset*4));					// #ccc (5% offset)
 
-$alt-color:                     invert($base-color-darker);								// #333333 (5% offset)
 $alt-color-lighter:             lighten($alt-color, ($color-offset*4));					// #666666 (5% offset)
 $alt-color-light:               lighten($alt-color, ($color-offset));					// #404040 (5% offset)
 $alt-color-dark:               	darken($alt-color, ($color-offset));					// #262626 (5% offset)
@@ -44,7 +52,7 @@ $alt-color-darker:             	darken($alt-color, ($color-offset*4));					// #0
     @include linear-gradient($base-color, $base-color-dark);
 }
 @mixin base-gradient-dark() {
-    @include linear-gradient($base-color, $base-color-darker);
+    @include linear-gradient($base-color, darken($base-color, $color-offset*2));
 }
 
 // ELEMENTS
@@ -55,24 +63,13 @@ $body-bg:                       $base-color;
 $panel-bg:                      $base-color-dark;
 $panel-footer:                  $base-color-dark;
 
-// TODO: cleanup unused
-// START UNUSED...
-$navbar-inverse-link-color:     darken($base-color, 20%);
-$navbar-inverse-color:          darken($base-color, 30%);
-$navbar-inverse-bg:             darken($base-color, 60%);
-// END UNUSED
-
 $panel-header:                  $alt-color-lighter;
-$sidebar-bg:                    $alt-color-light;
+$sidebar-bg:                    $alt-color;
 
 $border-radius-base:            2px;
 $border-radius-large:           ($border-radius-base/.75);
 $border-radius-small:           ($border-radius-base/1.25);
 
-$navbar-inverse-color:          lighten($navbar-inverse-bg, 35%);
-$navbar-inverse-link-color:     $navbar-inverse-color;
-
-$overlay:						rgba(100,100,100,.9);
 $navbar-height:                 50px;
 $sidebar-width:                 20rem;
 $search-width:                  30rem;

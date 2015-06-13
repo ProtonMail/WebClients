@@ -51,6 +51,10 @@
     min-height: 0;
 }
 
+.navbar-inverse {
+    background: $navbar-color;
+}
+
 .dropdown-menu .divider {
     background: rgba(0,0,0,.2);
 }

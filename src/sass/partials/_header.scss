@@ -2,7 +2,7 @@
   @include transition (color, 200ms, ease-in-out);
 
   .dropdown-menu {
-      background-color: $navbar-inverse-bg;
+      background-color: $navbar-color;
 
       li a {
           line-height: 2em;
