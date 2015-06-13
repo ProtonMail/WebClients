@@ -68,13 +68,11 @@
     </ul>
 </div>
 <!--/.message-head-->
-<div class="col-md-12" ng-show="message.containsImage === true">
-    <p class="alert alert-warning alert-sm text-center" ng-show="!!message.imagesHidden">
-        <a href="" ng-click="toggleImages()">
-            <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
-            <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
-        </a>
-    </p>
+<div ng-show="message.containsImage === true" class="alert alert-warning text-center" ng-show="!!message.imagesHidden" id="showImages">
+    <a href="" ng-click="toggleImages()">
+        <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
+        <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
+    </a>
 </div>
 <div id="message-body">
     <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'"></div>
