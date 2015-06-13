@@ -8,7 +8,7 @@
                 </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
-            <form name="labelForm" novalidate ng-submit="ctrl.create()">
+            <form name="labelForm" novalidate ng-submit="ctrl.create(ctrl)">
                 <div class="modal-body">
                     <div class="form-group" ng-class="{'has-error': labelForm.label.$touched && labelForm.label.$error.required}">
                         <label for="labelName" class="control-label">{{ 'NAME' | translate }}</label>
@@ -19,7 +19,7 @@
                         <div class="text-center">
                             <ul class="palette list-inline">
                                 <li ng-repeat="c in ctrl.colors">
-                                    <a ng-click="ctrl.label.Color = c;" class="color" ng-class="{'active': ctrl.label.Color === c}" style="background-color: {{c}};"><i class="fa fa-check"></i></a>
+                                    <a ng-click="ctrl.label.Color = c; ctrl.color = c;" class="color" ng-class="{'active': ctrl.label.Color === c}" style="background-color: {{c}};"><i class="fa fa-check"></i></a>
                                 </li>
                             </ul>
                         </div>
