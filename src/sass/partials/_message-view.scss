@@ -21,6 +21,15 @@
     }
 }
 
+#showImages {
+    padding: 0;
+        a {
+        display: block;
+        line-height: ($row-height*2);
+        width: 100%;
+    }
+}
+
 ul.attachments {
     padding: 0;
     margin: 0.5em;
