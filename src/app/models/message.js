@@ -136,7 +136,12 @@ angular.module("proton.models.message", ["proton.constants"])
     _.extend(Message.prototype, {
         promises: [],
         readableTime: function() {
-            return this.moment().format('LL');
+            if (this.moment().isSame(moment(), 'day')) {
+                return this.moment().format('h:mm a');
+            }
+            else {
+                return this.moment().format('LL');
+            }
         },
         longReadableTime: function() {
             var dt = this.moment();
