@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
-                <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
+                <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'h:mm' }}</span>
                 <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false, false)" pt-tooltip="{{ 'SAVE' | translate }}">
                     <i class="fa fa-floppy-o"></i>
                 </button>
