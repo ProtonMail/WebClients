@@ -31,7 +31,7 @@ table.message-list {
         cursor: pointer;
         font-size: 14px;
         white-space: nowrap;
-        color: rgba(0, 0, 0, .5);
+        color: #555;
         background-color: $base-color-dark;
         @include transition(all, 200ms, ease-in-out);
         h4 {
