@@ -985,7 +985,6 @@ angular.module("proton.controllers.Messages", [
                 var promises = [];
 
                 parameters.Packages = [];
-                parameters.AttachmentKeys = [];
 
                 _.each(emails, function(email) {
                     if(keys[email].length > 0) { // inside user
@@ -1022,6 +1021,7 @@ angular.module("proton.controllers.Messages", [
                 });
 
                 if(outsiders === true && message.IsEncrypted === 0) {
+                    parameters.AttachmentKeys = [];
                     parameters.ClearBody = message.Body;
 
                     if(message.Attachments.length > 0) {
