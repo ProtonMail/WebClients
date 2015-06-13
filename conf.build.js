@@ -41,7 +41,7 @@ module.exports = {
       "vendor/angular-local-storage/dist/angular-local-storage.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/angular-toggle-switch/angular-toggle-switch.js",
+      "vendor/angular-toggle-switch/angular-toggle-switch.min.js",
       "vendor/ng-file-upload/dist/ng-file-upload-all.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
