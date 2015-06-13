@@ -49,7 +49,7 @@
                 </span>
                 <span ng-if="!showTo(message) && !showFrom(message)">
                     <span pt-tooltip="{{ message.SenderAddress | lowercase }}">
-                        {{ message.SenderName | username }}
+                        {{ message.SenderName || message.SenderAddress | username }}
                     </span>
                 </span>
             </td>

@@ -1,12 +1,4 @@
-<div class="container-fuild">
-    <div class="col-md-12 margin-top">
-        <div class="form-group">
-            <form novalidate>
-                <input autofocus type="search" class="form-control" placeholder="{{ 'SEARCH' | translate }}" ng-model="search" />
-            </form>
-        </div>
-    </div>
-
+<div class="container-fuild margin-top">
     <div class="col-md-6 form-group">
         <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
         <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
@@ -33,12 +25,8 @@
                     <td class="text-center hidden-xs">
                         <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                     </td>
-                    <td>
-                        {{ contact.Name }}
-                    </td>
-                    <td class="text-muted">
-                        {{ contact.Email }}
-                    </td>
+                    <td>{{ contact.Name }}</td>
+                    <td class="text-muted">{{ contact.Email }}</td>
                     <td>
                         <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
                             <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>

@@ -31,6 +31,10 @@ angular.module("proton.controllers.Messages", [
     $scope.messages = messages;
     $scope.messageCount = $rootScope.Total;
 
+    $timeout(function() {
+        $scope.unselectAllMessages();
+    });
+
     // TODO this is just for temporary until API works
     $scope.randLocation = function() {
         return Math.floor((Math.random()*6)+1);
@@ -550,7 +554,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'ToList', 'CCList', 'BCCList'));
         $scope.initMessage(message);
     });
 
@@ -959,6 +963,8 @@ angular.module("proton.controllers.Messages", [
                     deferred.resolve(result);
                 });
             });
+        } else {
+            deferred.resolve();
         }
 
         if(silently !== true) {
@@ -1019,6 +1025,7 @@ angular.module("proton.controllers.Messages", [
                 });
 
                 if(outsiders === true && message.IsEncrypted === 0) {
+                    parameters.AttachmentKeys = [];
                     parameters.ClearBody = message.Body;
 
                     if(message.Attachments.length > 0) {
@@ -1122,6 +1129,18 @@ angular.module("proton.controllers.Messages", [
     $rootScope.pageName = message.Subject;
     $scope.tools = tools;
     $scope.isPlain = false;
+
+    $scope.getFrom = function() {
+        var result = '';
+
+        if(angular.isDefined(message.SenderName)) {
+            result += '<b>' + message.SenderName + '</b> &lt;' + message.SenderAddress + '&gt;';
+        } else {
+            result += message.SenderAddress;
+        }
+
+        return result;
+    };
 
     $scope.displayContent = function() {
         message.clearTextBody().then(function(result) {
@@ -1275,8 +1294,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToMessageList = function() {
-        $state.go("^");
-        $rootScope.pageName = $state.current.data.mailbox;
+        $state.go('^', {}, {reload: true});
     };
 
     $scope.moveMessageTo = function(mailbox) {
