@@ -1,7 +1,14 @@
 // used for all emails!
 #message-body {
+	color: #000;
+	font-size: 15px;
+	line-height: 1.5em;
+	a {
+		text-decoration: underline;
+		color: $primary-color;
+	}
 	.email {
-		padding: 1rem;
+		padding: 2rem;
 	}
 	code.email,
 	.email.plain {
@@ -9,5 +16,15 @@
 		border: 0;
 		border-radius: 0;
 		white-space: pre-wrap;	
+	}
+	blockquote {
+		padding: 0 2rem;
+		margin: 2rem 0;
+		font-size: 1em;
+		border-left: none;
+		blockquote blockquote {
+			border-left: 0;
+			padding: 0; 
+		}
 	}
 }
