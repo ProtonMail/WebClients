@@ -1114,6 +1114,7 @@ angular.module("proton.controllers.Messages", [
     $timeout,
     $translate,
     $q,
+    $sce,
     localStorageService,
     networkActivityTracker,
     notify,
@@ -1157,8 +1158,8 @@ angular.module("proton.controllers.Messages", [
             else {
                 $scope.isPlain = true;
             }
-            $scope.content = content;
-            $('#message-body .email').html(content);
+
+            $scope.content = $sce.trustAsHtml(content);
         });
     };
 
@@ -1186,8 +1187,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.toggleImages = function() {
         message.toggleImages();
-        $scope.content = message.clearImageBody($scope.content);
-        $('#message-body .email').html($scope.content);
+        $scope.displayContent();
     };
 
     $scope.downloadAttachment = function(message, attachment) {
