@@ -6,7 +6,6 @@
 		.recipient {
 			width: 16rem;
 		}
-		&.empty::after,
 		#dragOverlay {
 			left: ($sidebar-width)*.9;
 		}
@@ -27,7 +26,6 @@
 	#main {
 		padding-left: ($sidebar-width)*.3;
 	}
-	table.message-list.empty::after,
 	#dragOverlay {
 		left: ($sidebar-width)*.3;
 	}
@@ -56,9 +54,6 @@
 	}
 	#main {
 		padding-left: 0;
-	}
-	table.message-list.empty::after {
-		left: 0;
 	}
 	.composer {
 		top: auto;

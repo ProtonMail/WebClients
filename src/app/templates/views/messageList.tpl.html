@@ -1,5 +1,5 @@
 <ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar"></ng-include>
-<table ng-if="!('secured.*.message' | includedByState)" class="table message-list hidden-xs" ng-class="{empty: messages.length == 0}">
+<table ng-if="!('secured.*.message' | includedByState)" class="table message-list hidden-xs" ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}">
     <tbody id="message">
         <tr ng-repeat="message in messages"
             ng-click="navigateToMessage($event, message)"
@@ -104,5 +104,10 @@
         </tr>
     </tbody>
 </table>
+
+<div id="noMessages" ng-if="messages.length == 0">
+<span ng-show="!('secured.search' | includedByState)">{{ 'NO_MESSAGES' | translate }}</span>
+<span ng-show="('secured.search' | includedByState)">{{ 'NO_SEARCH_RESULTS' | translate }}</span>
+</div>
 
 <ui-view></ui-view>
