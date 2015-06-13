@@ -92,13 +92,8 @@ angular.module("proton.messages", [])
                     // updating variable fields (IsRead, Tag, Location, Labels)
                     messageList.splice(i, 1, msg);
                     _.extend(msg, _.pick(other, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
-
-                } else if (other.IsRead === 0) {
-                    // Otherwise, if the message isn't read, preload it, as there is a
-                    // good chance the user will want to read it.
-                    if(i <= CONSTANTS.NUMBER_OF_MESSAGES_PRELOADING) {
-                        messagesToPreload.add(other.ID);
-                    }
+                } else {
+                    messagesToPreload.add(other.ID);
                 }
             });
         };
