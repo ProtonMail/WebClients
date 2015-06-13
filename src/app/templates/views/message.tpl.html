@@ -75,8 +75,7 @@
     </a>
 </div>
 <div id="message-body">
-    <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'"></div>
-
+    <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
     <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
         <span class="pull-left fa fa-exclamation-triangle"></span>

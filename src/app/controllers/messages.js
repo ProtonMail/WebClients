@@ -598,8 +598,13 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on drop', event);
                 },
                 addedfile: function(file) {
-                    console.log('on addedfile', file);
-                    $scope.addAttachment(file, message);
+                    if(angular.isUndefined(message.ID)) {
+                        $scope.save(message, false, false).then(function() {
+                            $scope.addAttachment(file, message);
+                        });
+                    } else {
+                        $scope.addAttachment(file, message);
+                    }
                 },
                 removedfile: function(file) {
                     // console.log('on removedfile', file);
@@ -667,11 +672,12 @@ angular.module("proton.controllers.Messages", [
             notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
             return;
         }
+
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
 
-        if (message.Body===undefined) {
-            // this sets the Body with the sig
+        if (angular.isUndefined(message.Body)) {
+            // this sets the Body with the signature
             $scope.completedSignature(message);
         }
 
@@ -683,8 +689,8 @@ angular.module("proton.controllers.Messages", [
 
         $timeout(function() {
             $scope.listenEditor(message);
-            $scope.save(message, false);
             $scope.focusComposer(message);
+            $scope.saveOld();
         });
     };
 
@@ -1114,6 +1120,7 @@ angular.module("proton.controllers.Messages", [
     $timeout,
     $translate,
     $q,
+    $sce,
     localStorageService,
     networkActivityTracker,
     notify,
@@ -1157,8 +1164,8 @@ angular.module("proton.controllers.Messages", [
             else {
                 $scope.isPlain = true;
             }
-            $scope.content = content;
-            $('#message-body .email').html(content);
+
+            $scope.content = $sce.trustAsHtml(content);
         });
     };
 
@@ -1186,8 +1193,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.toggleImages = function() {
         message.toggleImages();
-        $scope.content = message.clearImageBody($scope.content);
-        $('#message-body .email').html($scope.content);
+        $scope.displayContent();
     };
 
     $scope.downloadAttachment = function(message, attachment) {
