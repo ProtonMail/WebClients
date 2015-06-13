@@ -550,7 +550,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
 
         $scope.initMessage(message);
     });
