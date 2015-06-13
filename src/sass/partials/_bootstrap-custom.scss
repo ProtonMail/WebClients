@@ -51,6 +51,10 @@
     min-height: 0;
 }
 
+.dropdown-menu .divider {
+    background: rgba(0,0,0,.2);
+}
+
 .modal-header {
     padding: 10px 15px;
     background-color: $panel-header;
