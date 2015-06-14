@@ -67,9 +67,9 @@ angular.module("proton.emailField", [])
         }
       };
 
-      $(parent).closest('.typeahead-container').sortable({
+      $(parent).closest('.input-container').sortable({
         items: '.tm-tag',
-        connectWith: '.typeahead-container',
+        connectWith: '.input-container',
         receive: receivedTag,
         containment: $(parent).closest('.composer')
       });
