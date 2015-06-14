@@ -1243,7 +1243,7 @@ angular.module("proton.controllers.Messages", [
         var message = new Message();
 
         _.defaults(message, {
-            ToList: [{Address: email}],
+            ToList: [email], // contains { Address, Name }
             CCList: [],
             BCCList: [],
             Attachments: [],
