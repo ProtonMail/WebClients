@@ -180,7 +180,12 @@ angular.module("proton.controllers.Messages", [
             }
 
             if ($state.is('secured.drafts')) {
-                $rootScope.$broadcast('loadMessage', message);
+                Message.get({id: message.ID}).$promise.then(function(m) {
+                    m.decryptBody(m.Body, m.Time).then(function(body) {
+                        m.Body = body;
+                        $rootScope.$broadcast('loadMessage', m);
+                    });
+                });
             } else {
                 $state.go("secured." + mailbox + ".message", {
                     id: message.ID
@@ -554,7 +559,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'ToList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
         $scope.initMessage(message);
     });
 
@@ -704,7 +709,7 @@ angular.module("proton.controllers.Messages", [
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
-            var top = index * $('.composer-header').eq(0).outerHeight() + marginTop;
+            var top = marginTop;
 
             styles.top = top + 'px';
         } else {
@@ -1238,12 +1243,12 @@ angular.module("proton.controllers.Messages", [
         var message = new Message();
 
         _.defaults(message, {
-            ToList: email,
-            CCList: '',
-            BCCList: '',
+            ToList: [email], // contains { Address, Name }
+            CCList: [],
+            BCCList: [],
+            Attachments: [],
             Subject: '',
-            PasswordHint: '',
-            Attachments: []
+            PasswordHint: ''
         });
 
         $rootScope.$broadcast('loadMessage', message);

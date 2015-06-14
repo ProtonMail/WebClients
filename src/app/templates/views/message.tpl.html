@@ -45,7 +45,7 @@
             <strong>{{ 'TO' | translate }}</strong>
             <ul class="list-inline inline" ng-if="message.ToList.length">
                 <li ng-repeat="email in message.ToList">
-                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>
@@ -53,7 +53,7 @@
             <strong>{{ 'CC' | translate }}</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.CCList">
-                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>
@@ -61,7 +61,7 @@
             <strong>{{ 'BCC' | translate }}</strong>
             <ul class="list-inline inline">
                 <li ng-repeat="email in message.BCCList">
-                    <a href="" class="email" ng-click="sendMessageTo(email.Address)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                 </li>
             </ul>
         </li>
