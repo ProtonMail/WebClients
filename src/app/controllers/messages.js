@@ -955,6 +955,7 @@ angular.module("proton.controllers.Messages", [
             }
 
             parameters.Message.AddressID = message.From.ID;
+            parameters.Message.IsRead = 1;
 
             savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
                 var draftPromise;
