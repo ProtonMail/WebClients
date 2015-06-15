@@ -382,7 +382,7 @@ angular.module("proton.routes", [
     })
 
     // -------------------------------------------
-    // ENCRIPTION OUTSIDE
+    // ENCRYPTION OUTSIDE
     // -------------------------------------------
     .state("eo", {
         abstract: true,
@@ -395,15 +395,27 @@ angular.module("proton.routes", [
     })
 
     .state("eo.unlock", {
-        url: "/eo/unlock:id",
+        url: "/eo/:id",
         resolve: {
 
         },
         views: {
-            "content@": {
+            "main@": {
+                templateUrl: "templates/layout/auth.tpl.html"
+            },
+            "panel@eo.unlock": {
                 templateUrl: "templates/views/outside.unlock.tpl.html"
             }
         }
+        // views: {
+        //     "main@": { 
+        //         controller: "OutsideController",
+        //         templateUrl: "templates/layout/outside.tpl.html"
+        //     },
+        //     "panel@": {
+        //         templateUrl: "templates/views/outside.unlock.tpl.html"
+        //     }
+        // }
     })
 
     .state("eo.message", {
