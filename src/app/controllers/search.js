@@ -50,11 +50,11 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         $scope.close();
     };
 
-    $scope.open = function() {
+    $scope.open = function(value) {
         // reset params
         $scope.params.attachments = 2;
         $scope.params.starred = 2;
-        $scope.params.words = '';
+        $scope.params.words = value || '';
 
         // init form
         $scope.searchForm.begin = {};
@@ -97,8 +97,8 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         };
     };
 
-    $rootScope.$on('openSearchModal', function() {
-        $scope.open();
+    $rootScope.$on('openSearchModal', function(event, value) {
+        $scope.open(value);
     });
 
     $rootScope.$on('search', function(event, searchValue) {
