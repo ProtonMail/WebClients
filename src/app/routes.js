@@ -395,9 +395,11 @@ angular.module("proton.routes", [
     })
 
     .state("eo.unlock", {
-        url: "/eo/unlock:id",
+        url: "/eo/unlock/:token",
         resolve: {
-
+            token: function($stateParams, Message) {
+                return Message.token({id: $stateParams.token});
+            }
         },
         views: {
             "content@": {
@@ -409,7 +411,9 @@ angular.module("proton.routes", [
     .state("eo.message", {
         url: "/eo/message:id",
         resolve: {
-
+            message: function(Message) {
+                // return Message.get
+            }
         },
         views: {
             "content@": {
