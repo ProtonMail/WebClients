@@ -156,7 +156,7 @@ angular.module("proton", [
 
         // If already logged in and on the login page: redirect to unlock page
         if ($rootScope.isLoggedIn && isLogin) {
-            event.preventDefault();
+            event.preventDefault(); 
             $state.go('login.unlock');
         }
 
