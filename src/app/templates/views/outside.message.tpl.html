@@ -1,13 +1,17 @@
-<ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
+<ng-include src="'templates/partials/outsideMessageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
+
 <div class="row visible-xs-block" id="messageActionsMobile">
     <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link" title="{{ 'REPLY' | translate }}"><i class="fa fa-reply"></i> {{ 'REPLY' | translate }}</a></div>
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>
     <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link" title="{{ 'FORWARD' | translate }}"><i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}</a></div>
 </div>
+
+<div id="outsideMessageWrap">
+
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
     <div class="pull-right">
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
-    </div>
+    </div> 
     <h1>
         <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
         <span class="padlock">
@@ -99,3 +103,14 @@
         </div>
     </div>
 </div>
+
+
+
+</div>
+    </div>
+
+</div>
+
+</div>
+
+<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>

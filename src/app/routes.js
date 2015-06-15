@@ -401,30 +401,24 @@ angular.module("proton.routes", [
         },
         views: {
             "main@": {
-                templateUrl: "templates/layout/auth.tpl.html"
+                templateUrl: "templates/layout/outside.tpl.html"
             },
             "panel@eo.unlock": {
                 templateUrl: "templates/views/outside.unlock.tpl.html"
             }
         }
-        // views: {
-        //     "main@": { 
-        //         controller: "OutsideController",
-        //         templateUrl: "templates/layout/outside.tpl.html"
-        //     },
-        //     "panel@": {
-        //         templateUrl: "templates/views/outside.unlock.tpl.html"
-        //     }
-        // }
     })
 
     .state("eo.message", {
-        url: "/eo/message:id",
+        url: "/eo/message/:id",
         resolve: {
 
         },
-        views: {
-            "content@": {
+        views: { 
+            "main@": {
+                templateUrl: "templates/layout/outsideMessage.tpl.html"
+            },
+            "panel@eo.message": {
                 templateUrl: "templates/views/outside.message.tpl.html"
             }
         }

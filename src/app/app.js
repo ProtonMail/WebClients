@@ -154,7 +154,7 @@ angular.module("proton", [
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
         var isUnlock = (toState.name === "login.unlock");
-        var isOutside = (toState.name === "eo.unlock"); 
+        var isOutside = (toState.name.includes("eo.")); 
 
         // If already logged in and on the login page: redirect to unlock page
         if ($rootScope.isLoggedIn && isLogin) {
