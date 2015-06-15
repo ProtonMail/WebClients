@@ -13,15 +13,15 @@ angular.module("proton.controllers.Outside", [
     networkActivityTracker
 ) {
     $scope.unlock = function() {
-        
+        $state.go('eo.message');
     };
 
     $scope.reply = function() {
-
+        $state.go('eo.reply');
     };
 
     $scope.send = function() {
-
+        
     };
 
 });
