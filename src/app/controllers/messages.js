@@ -1232,14 +1232,14 @@ angular.module("proton.controllers.Messages", [
         var key = authentication.getPrivateKey().then(
             function(pk) {
                 // decrypt session key from keypackets
-                return pmcw.decryptSessionKey(keyPackets, pk);        
+                return pmcw.decryptSessionKey(keyPackets, pk);
             }
         );
-        
+
         // when we have the session key and attachent:
         $q.all({
             "attObject": att,
-            "key": key 
+            "key": key
          }).then(
             function(obj) {
 
@@ -1253,16 +1253,17 @@ angular.module("proton.controllers.Messages", [
                 var algo = obj.key.algo;
 
                 // decrypt the att
-                pmcrypto.decryptMessage(at, key, true, algo).then( 
+                pmcrypto.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
 
                         var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
 
                         if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
                             // Browser supports a good way to download blobs
-
-                            attachment.decrypting = false;
-                            attachment.decrypted = true;
+                            $scope.$apply(function() {
+                                attachment.decrypting = false;
+                                attachment.decrypted = true;
+                            });
 
                             var href = URL.createObjectURL(blob);
 
@@ -1270,8 +1271,6 @@ angular.module("proton.controllers.Messages", [
                             $this.attr('href', href);
                             $this.attr('target', '_blank');
 
-                            alert('Done!');
-                            
                             deferred.resolve();
 
                         }
