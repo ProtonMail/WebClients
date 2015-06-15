@@ -976,7 +976,11 @@ angular.module("proton.controllers.Messages", [
                 });
             });
         } else {
-            deferred.resolve();
+            if(force === true) {
+                deferred.reject();
+            } else {
+                deferred.resolve();
+            }
         }
 
         if(silently !== true) {
@@ -1053,6 +1057,8 @@ angular.module("proton.controllers.Messages", [
                     });
                 });
             });
+        }, function() {
+            deferred.reject();
         });
 
         message.track(deferred.promise);
@@ -1321,6 +1327,7 @@ angular.module("proton.controllers.Messages", [
 
         promise.then(function(result) {
             if(inDelete) {
+                $scope.goToMessageList();
                 notify($translate.instant('MESSAGE_DELETED'));
             } else {
                 notify($translate.instant('MESSAGE_MOVED'));
