@@ -1123,7 +1123,8 @@ angular.module("proton.controllers.Messages", [
     tools,
     attachments,
     pmcw,
-    CONSTANTS
+    CONSTANTS,
+    authentication
 ) {
     $scope.message = message;
     $rootScope.pageName = message.Subject;
@@ -1188,6 +1189,44 @@ angular.module("proton.controllers.Messages", [
         message.toggleImages();
         $scope.content = message.clearImageBody($scope.content);
         $('#message-body .email').html($scope.content);
+    };
+
+    $scope.decryptAttachment = function(message, attachment) {
+
+        var deferred = $q.defer();
+
+        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+
+        var att = attachments.get(attachment.ID, attachment.Name);
+        var key = authentication.getPrivateKey().then(
+            function(pk) {
+                return pmcw.decryptSessionKey(keyPackets, pk);        
+            }
+        );
+        
+
+        $q.all( { "attachment": att, "key": key } ).then(
+            function(obj) {
+                var at = new Uint8Array(obj.attachment.data);
+                var key = obj.key.key;
+                var algo = obj.key.algo;
+                pmcrypto.decryptMessage(at, key, true, algo).then( 
+                    function(decryptedAtt) {
+
+                        
+                        
+
+                        
+                    }
+                );
+            },
+            function(err) {
+                console.log(err);
+            }
+        );
+
+        // var decryptedAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
+        // attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.downloadAttachment = function(message, attachment) {
