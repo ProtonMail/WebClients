@@ -1,0 +1,18 @@
+<div class="panel panel-default wrap">
+    <div class="panel-body">
+        <h1 class="text-center">{{ 'MESSAGE_PASSWORD' | translate }}</h1>
+        <fieldset class="pure-form">
+            <div class="alert alert-danger" ng-if="error">
+                <p>{{ error.message }}</p>
+                <p><a href="/pages/faq#faq1" target="_blank">{{ 'FAQ' | translate }}</a></p>
+            </div>
+            <div class="form-group">
+                <input class="form-control" autofocus type="password" ng-keypress="keypress($event)" name="MessagePassword" ng-model="MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" value="" />
+            </div>
+            <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecryptOutside()">
+                <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
+                <span>{{ 'DECRYPT_MESSAGE' | translate }}</span>
+            </button>
+        </fieldset>
+    </div>
+</div>

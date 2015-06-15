@@ -382,7 +382,7 @@ angular.module("proton.routes", [
     })
 
     // -------------------------------------------
-    // ENCRIPTION OUTSIDE
+    // ENCRYPTION OUTSIDE
     // -------------------------------------------
     .state("eo", {
         abstract: true,
@@ -402,7 +402,10 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@": {
+            "main@": {
+                templateUrl: "templates/layout/auth.tpl.html"
+            },
+            "panel@eo.unlock": {
                 templateUrl: "templates/views/outside.unlock.tpl.html"
             }
         }

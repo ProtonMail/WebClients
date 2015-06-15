@@ -253,7 +253,7 @@
         }  
     </style>
 </head>
-<body ng-app="proton" ng-class="{ locked: isLoggedIn && isLocked, login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
+<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ('eo.unlock' | isState), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
     <div id="loading">
 
 <div class="higgs">
