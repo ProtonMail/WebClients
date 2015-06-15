@@ -277,7 +277,7 @@ angular.module("proton.authentication", [
 
                         $getUser.then(
                             function(result) {
-                                var user = result.data;
+                                var user = result.data.User;
                                 return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(
                                     function() {
                                         auth.savePassword(pwd);
@@ -352,7 +352,7 @@ angular.module("proton.authentication", [
 
                 api.user.then(
                     function(result) {
-                        var user = result.data;
+                        var user = result.data.User;
 
                         if (!user.EncPrivateKey) {
                             api.logout();
