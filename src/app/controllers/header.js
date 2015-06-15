@@ -37,7 +37,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function() {
-        $rootScope.$broadcast('openSearchModal');
+        $rootScope.$broadcast('openSearchModal', $scope.params.searchInput);
     };
 
     $scope.openReportModal = function() {
