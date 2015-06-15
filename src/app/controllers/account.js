@@ -16,7 +16,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     localStorageService,
     notify
 ) {
-    var mellt = new Mellt();
+    // var mellt = new Mellt(); // TODO FIX?
 
     $scope.compatibility = tools.isCompatible();
     $scope.tools    = tools;

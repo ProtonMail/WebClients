@@ -1142,7 +1142,8 @@ angular.module("proton.controllers.Messages", [
     tools,
     attachments,
     pmcw,
-    CONSTANTS
+    CONSTANTS,
+    authentication
 ) {
     $scope.message = message;
     $rootScope.pageName = message.Subject;
@@ -1209,6 +1210,92 @@ angular.module("proton.controllers.Messages", [
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
+    };
+
+    $scope.decryptAttachment = function(message, attachment, $event) {
+
+        if (attachment.decrypted===true) {
+            return true;
+        }
+
+        attachment.decrypting = true;
+
+        var deferred = $q.defer();
+
+        // decode key packets
+        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+
+        // get enc attachment
+        var att = attachments.get(attachment.ID, attachment.Name);
+
+        // get user's pk
+        var key = authentication.getPrivateKey().then(
+            function(pk) {
+                // decrypt session key from keypackets
+                return pmcw.decryptSessionKey(keyPackets, pk);        
+            }
+        );
+        
+        // when we have the session key and attachent:
+        $q.all({
+            "attObject": att,
+            "key": key 
+         }).then(
+            function(obj) {
+
+                // create new Uint8Array to store decryted attachment
+                var at = new Uint8Array(obj.attObject.data);
+
+                // grab the key
+                var key = obj.key.key;
+
+                // grab the algo
+                var algo = obj.key.algo;
+
+                // decrypt the att
+                pmcrypto.decryptMessage(at, key, true, algo).then( 
+                    function(decryptedAtt) {
+
+                        var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
+
+                        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
+                            // Browser supports a good way to download blobs
+
+                            attachment.decrypting = false;
+                            attachment.decrypted = true;
+
+                            var href = URL.createObjectURL(blob);
+
+                            $this = $($event.target);
+                            $this.attr('href', href);
+                            $this.attr('target', '_blank');
+
+                            alert('Done!');
+                            
+                            deferred.resolve();
+
+                        }
+                        else {
+                            // Bad blob support, make a data URI, don't click it
+                            var reader = new FileReader();
+
+                            reader.onloadend = function () {
+                                link.attr('href',reader.result);
+                            };
+
+                            reader.readAsDataURL(blob);
+                        }
+
+                    }
+                );
+            },
+            function(err) {
+                console.log(err);
+            }
+        );
+
+        // var decryptedAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
+        // attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.downloadAttachment = function(message, attachment) {
