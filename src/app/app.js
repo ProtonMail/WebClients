@@ -70,6 +70,7 @@ angular.module("proton", [
     "proton.controllers.Contacts",
     "proton.controllers.Header",
     "proton.controllers.Messages",
+    "proton.controllers.Outside",
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
@@ -156,7 +157,7 @@ angular.module("proton", [
 
         // If already logged in and on the login page: redirect to unlock page
         if ($rootScope.isLoggedIn && isLogin) {
-            event.preventDefault(); 
+            event.preventDefault();
             $state.go('login.unlock');
         }
 
