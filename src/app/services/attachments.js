@@ -127,7 +127,6 @@ angular.module("proton.attachments", [
                 })
                 .success(function(data, status, headers, other) {
 
-                    console.log(data);
                     return data;
 
                 }).error(function(response) {

@@ -1203,7 +1203,13 @@ angular.module("proton.controllers.Messages", [
         $scope.displayContent();
     };
 
-    $scope.decryptAttachment = function(message, attachment) {
+    $scope.decryptAttachment = function(message, attachment, $event) {
+
+        if (attachment.decrypted===true) {
+            return true;
+        }
+
+        attachment.decrypting = true;
 
         var deferred = $q.defer();
 
@@ -1223,41 +1229,42 @@ angular.module("proton.controllers.Messages", [
         
         // when we have the session key and attachent:
         $q.all({
-            "attachment": att,
+            "attObject": att,
             "key": key 
          }).then(
             function(obj) {
 
-                console.log(obj);
-
                 // create new Uint8Array to store decryted attachment
-                var at = new Uint8Array(obj.attachment.data);
-
-                console.log(at);
+                var at = new Uint8Array(obj.attObject.data);
 
                 // grab the key
                 var key = obj.key.key;
 
-                console.log(key);
-
                 // grab the algo
                 var algo = obj.key.algo;
-
-                console.log(at, key, algo);
 
                 // decrypt the att
                 pmcrypto.decryptMessage(at, key, true, algo).then( 
                     function(decryptedAtt) {
 
-                        console.log(decryptedAtt);
+                        var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
 
-                        var blob = new Blob([decrypted.data], {type: type});
-                        link.attr('download',decrypted.filename);
-
-                        if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
+                        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
                             // Browser supports a good way to download blobs
-                            link.attr('href',URL.createObjectURL(blob));
-                            link[0].click();
+
+                            attachment.decrypting = false;
+                            attachment.decrypted = true;
+
+                            var href = URL.createObjectURL(blob);
+
+                            $this = $($event.target);
+                            $this.attr('href', href);
+                            $this.attr('target', '_blank');
+
+                            alert('Done!');
+                            
+                            deferred.resolve();
+
                         }
                         else {
                             // Bad blob support, make a data URI, don't click it

@@ -83,22 +83,19 @@
         <br> Decryption of this message's encryption content failed.
     </div>
 </div>
-<div class="col-md-12" ng-if="message.Attachments.length">
-    <hr />
-    <p>
+
+<div class="panel panel-default" ng-if="message.Attachments.length" id="attachmentArea">
+    <div class="panel-heading">
         <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})
-    </p>
-    <table class="table table-hover">
-        <tbody>
-            <tr ng-repeat="attachment in message.Attachments">
-                <td>
-                    <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
-                </td>
-                <td class="text-right">
-                    <a href="" ng-click="decryptAttachment(message, attachment)">{{ 'DECRYPT' | translate }}</a>
-                    <!-- <a href="" ng-click="downloadAttachment(message, attachment)">{{ 'DOWNLOAD' | translate }}</a> -->
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active', attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
+                <i ng-show="attachment.decrypting" class="fa fa-circle-o-notch"></i> 
+                <i ng-show="attachment.decrypted" class="fa fa-download"></i> 
+                <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i> 
+                <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+            </a>
+        </div>
+    </div>
 </div>
