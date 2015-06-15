@@ -12,7 +12,6 @@
     "ARCHIVE": "Archive",
     "ATTACHMENTS": "Attachments",
     "AUTOSAVE_CONTACTS": "Autosave Contacts",
-    "AUTOSAVE_PREFERENCE_SAVED": "Autosave Preference Saved",
     "BACK": "Back",
     "BCC": "BCC",
     "BETWEEN": "Between",
@@ -47,7 +46,6 @@
     "CURRENT_LOGIN_PASSWORD": "Current Login Password",
     "CURRENT_MAILBOX_PASSWORD": "Current Mailbox Password",
     "DAILY_EMAIL_NOTIFICATIONS": "Daily Email Notifications",
-    "DAILY_NOTIFICATION_PREFERENCE_SAVED": "Daily Notification Preference Saved",
     "DATE": "Date",
     "DECRYPT_MAILBOX": "Decrypt Mailbox",
     "DEFAULT_LANGUAGE": "Default Language",
@@ -148,6 +146,7 @@
     "PASSWORD_IS_REQUIRED": "Password Is Required",
     "PASSWORDS_DONT_MATCH": "Passwords Don't Match",
     "PASTE_THEME_CODE_HERE": "Paste Theme Code Here",
+    "PREFERENCE_SAVED": "PREFERENCE_SAVED",
     "PREVIOUS": "Previous",
     "PRINT": "Print",
     "PRIVACY_POLICY": "Privacy Policy",
@@ -224,5 +223,7 @@
     "WIZARD": "WIZARD",
     "WRONG_CURRENT_MAILBOX_PASSWORD": "Wrong Current Mailbox Password",
     "YES": "Yes",
-    "YOUR_EMAIL_ADDRESS": "Your Email Address"
+    "YOUR_EMAIL_ADDRESS": "Your Email Address",
+    "{{ 'MANAGE_LABELS' | translate }}": "{{ 'MANAGE_LABELS' | translate }}",
+    "{{ 'SEND' | translate }}": "{{ 'SEND' | translate }}"
 }
