@@ -180,7 +180,12 @@ angular.module("proton.controllers.Messages", [
             }
 
             if ($state.is('secured.drafts')) {
-                $rootScope.$broadcast('loadMessage', message);
+                Message.get({id: message.ID}).$promise.then(function(m) {
+                    m.decryptBody(m.Body, m.Time).then(function(body) {
+                        m.Body = body;
+                        $rootScope.$broadcast('loadMessage', m);
+                    });
+                });
             } else {
                 $state.go("secured." + mailbox + ".message", {
                     id: message.ID
@@ -554,7 +559,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $rootScope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'ToList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
         $scope.initMessage(message);
     });
 
@@ -598,8 +603,13 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on drop', event);
                 },
                 addedfile: function(file) {
-                    console.log('on addedfile', file);
-                    $scope.addAttachment(file, message);
+                    if(angular.isUndefined(message.ID)) {
+                        $scope.save(message, false, false).then(function() {
+                            $scope.addAttachment(file, message);
+                        });
+                    } else {
+                        $scope.addAttachment(file, message);
+                    }
                 },
                 removedfile: function(file) {
                     // console.log('on removedfile', file);
@@ -667,11 +677,12 @@ angular.module("proton.controllers.Messages", [
             notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
             return;
         }
+
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
 
-        if (message.Body===undefined) {
-            // this sets the Body with the sig
+        if (angular.isUndefined(message.Body)) {
+            // this sets the Body with the signature
             $scope.completedSignature(message);
         }
 
@@ -683,8 +694,8 @@ angular.module("proton.controllers.Messages", [
 
         $timeout(function() {
             $scope.listenEditor(message);
-            $scope.save(message, false);
             $scope.focusComposer(message);
+            $scope.saveOld();
         });
     };
 
@@ -698,7 +709,7 @@ angular.module("proton.controllers.Messages", [
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
-            var top = index * $('.composer-header').eq(0).outerHeight() + marginTop;
+            var top = marginTop;
 
             styles.top = top + 'px';
         } else {
@@ -1114,6 +1125,7 @@ angular.module("proton.controllers.Messages", [
     $timeout,
     $translate,
     $q,
+    $sce,
     localStorageService,
     networkActivityTracker,
     notify,
@@ -1158,8 +1170,8 @@ angular.module("proton.controllers.Messages", [
             else {
                 $scope.isPlain = true;
             }
-            $scope.content = content;
-            $('#message-body .email').html(content);
+
+            $scope.content = $sce.trustAsHtml(content);
         });
     };
 
@@ -1187,8 +1199,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.toggleImages = function() {
         message.toggleImages();
-        $scope.content = message.clearImageBody($scope.content);
-        $('#message-body .email').html($scope.content);
+        $scope.displayContent();
     };
 
     $scope.decryptAttachment = function(message, attachment) {
@@ -1271,12 +1282,12 @@ angular.module("proton.controllers.Messages", [
         var message = new Message();
 
         _.defaults(message, {
-            ToList: email,
-            CCList: '',
-            BCCList: '',
+            ToList: [email], // contains { Address, Name }
+            CCList: [],
+            BCCList: [],
+            Attachments: [],
             Subject: '',
-            PasswordHint: '',
-            Attachments: []
+            PasswordHint: ''
         });
 
         $rootScope.$broadcast('loadMessage', message);

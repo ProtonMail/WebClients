@@ -285,7 +285,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
-                
+
                 return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
             } else {
                 return true;
@@ -320,6 +320,20 @@ angular.module("proton.models.message", ["proton.constants"])
 
         encryptBody: function(key) {
             return pmcw.encryptMessage(this.Body, key);
+        },
+
+        decryptBody: function(body, time) {
+            var deferred = $q.defer();
+            var local = localStorageService.get('protonmail_pw');
+            var pw = pmcw.decode_base64(local);
+
+            pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+                pmcw.decryptMessageRSA(body, key, time).then(function(result) {
+                    deferred.resolve(result);
+                });
+            });
+
+            return deferred.promise;
         },
 
         encryptPackets: function(key) {

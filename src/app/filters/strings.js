@@ -58,16 +58,19 @@ angular.module("proton.filters.strings",[])
 .filter("username", function() {
     return function(input) {
         var username;
-        if(angular.isArray(input)) {
-            var firstEmail = input[0];
 
-            if (angular.isDefined(firstEmail.Name) && firstEmail.Name.length > 0) {
-                username = firstEmail.Name;
+        if(angular.isArray(input)) {
+            if(input.length > 0) {
+                var firstEmail = input[0];
+
+                if (angular.isDefined(firstEmail.Name) && firstEmail.Name.length > 0) {
+                    username = firstEmail.Name;
+                } else {
+                    username = firstEmail.Address.split('@')[0];
+                }
             } else {
-                username = firstEmail.Address.split('@')[0];
+                username = "";
             }
-        } else if (angular.isObject(input)) {
-            username = 'object';
         } else if (angular.isString(input)) {
             username = input;
         } else {

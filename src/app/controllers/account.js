@@ -135,7 +135,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                             Password: $scope.account.loginPassword
                                         }).then(
                                             function() {
- 
+
                                                 return authentication.fetchUserInfo().then(
                                                     function(user) {
 
@@ -180,7 +180,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                         $('#Username').focus();
                                         $log.error(response);
                                     }
-                                );                                
+                                );
                             },
                             function(response) {
                                 $log.error(response);

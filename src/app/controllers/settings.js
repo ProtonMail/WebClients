@@ -85,7 +85,7 @@ angular.module("proton.controllers.Settings", [
               "Notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
               user.Notify = +$scope.dailyNotifications;
-              notify($translate.instant('DAILY_NOTIFICATION_PREFERENCE_SAVED'));
+              notify($translate.instant('PREFERENCE_SAVED'));
           }, function(response) {
               $log.error(response);
           })
@@ -184,7 +184,7 @@ angular.module("proton.controllers.Settings", [
             Setting.autosave({
                 "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
-                notify($translate.instant('AUTOSAVE_PREFERENCE_SAVED'));
+                notify($translate.instant('PREFERENCE_SAVED'));
                 user.AutoSaveContacts = +$scope.autosaveContacts;
             }, function(response) {
                 $log.error(response);
