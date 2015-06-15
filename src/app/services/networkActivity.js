@@ -10,7 +10,10 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
       promises = _.union(promises, [promise]);
       promise.catch(function(result) {
           if(angular.isDefined(result.Error)) {
-              notify(result.Error);
+              notify({
+                  message: result.Error,
+                  classes: 'notification-danger'
+              });
               $log.error(result);
           }
       });
