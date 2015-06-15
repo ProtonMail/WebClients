@@ -47,7 +47,7 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/*.js",
-      "vendor/dompurify/purify.js",      
+      "vendor/dompurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
@@ -67,7 +67,9 @@ module.exports = {
       "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
       "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
       "vendor/angular-dragdrop/src/angular-dragdrop.js",
-      "vendor/vcard/src/vcard.js"
+      "vendor/vcard/src/vcard.js",
+      "vendor/mellt/javascript/Mellt.js",
+      "vendor/mellt/javascript/common-passwords.js"
     ],
     bootstrap_components: [
       "affix",
@@ -76,7 +78,7 @@ module.exports = {
       "tooltip",
       "dropdown",
       "modal",
-      "transition" 
+      "transition"
     ],
 
     required_js: [],
