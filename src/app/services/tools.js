@@ -363,6 +363,10 @@ angular.module("proton.tools", [])
             // return content.replace(/\n/g, '<br />');
        }
 
+       function transform_links(id) {
+           $('#' + id).find('a[href^=http]').attr('target','_blank');
+       }
+
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -388,7 +392,8 @@ angular.module("proton.tools", [])
             is_valid_dkim: is_valid_dkim,
             renderStorageBar: render_storage_bar,
             replaceLineBreaks: replace_line_breaks,
-            isHtml: is_html
+            isHtml: is_html,
+            transformLinks: transform_links
         };
 
         return tools;
