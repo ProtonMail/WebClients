@@ -1172,12 +1172,15 @@ angular.module("proton.controllers.Messages", [
 
             if (tools.isHtml(content)) {
                 $scope.isPlain = false;
-            }
-            else {
+            } else {
                 $scope.isPlain = true;
             }
 
             $scope.content = $sce.trustAsHtml(content);
+
+            $timeout(function() {
+                tools.transformLinks('message-body');
+            });
         });
     };
 
