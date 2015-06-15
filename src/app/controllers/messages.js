@@ -1206,28 +1206,69 @@ angular.module("proton.controllers.Messages", [
 
         var deferred = $q.defer();
 
+        // decode key packets
         var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
 
+        // get enc attachment
         var att = attachments.get(attachment.ID, attachment.Name);
+
+        // get user's pk
         var key = authentication.getPrivateKey().then(
             function(pk) {
+                // decrypt session key from keypackets
                 return pmcw.decryptSessionKey(keyPackets, pk);        
             }
         );
         
-
-        $q.all( { "attachment": att, "key": key } ).then(
+        // when we have the session key and attachent:
+        $q.all({
+            "attachment": att,
+            "key": key 
+         }).then(
             function(obj) {
+
+                console.log(obj);
+
+                // create new Uint8Array to store decryted attachment
                 var at = new Uint8Array(obj.attachment.data);
+
+                console.log(at);
+
+                // grab the key
                 var key = obj.key.key;
+
+                console.log(key);
+
+                // grab the algo
                 var algo = obj.key.algo;
+
+                console.log(at, key, algo);
+
+                // decrypt the att
                 pmcrypto.decryptMessage(at, key, true, algo).then( 
                     function(decryptedAtt) {
 
-                        
-                        
+                        console.log(decryptedAtt);
 
-                        
+                        var blob = new Blob([decrypted.data], {type: type});
+                        link.attr('download',decrypted.filename);
+
+                        if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
+                            // Browser supports a good way to download blobs
+                            link.attr('href',URL.createObjectURL(blob));
+                            link[0].click();
+                        }
+                        else {
+                            // Bad blob support, make a data URI, don't click it
+                            var reader = new FileReader();
+
+                            reader.onloadend = function () {
+                                link.attr('href',reader.result);
+                            };
+
+                            reader.readAsDataURL(blob);
+                        }
+
                     }
                 );
             },

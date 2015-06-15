@@ -121,12 +121,13 @@ angular.module("proton.attachments", [
             });
         },
         get: function(id, filename) {
-            $http
+            return $http
                 .get(authentication.baseURL + "/attachments/" + id, {
                     responseType: "arraybuffer"
                 })
                 .success(function(data, status, headers, other) {
 
+                    console.log(data);
                     return data;
 
                 }).error(function(response) {
