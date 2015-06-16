@@ -314,7 +314,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             promise.catch(function(result) {
                 if(angular.isDefined(result.Error)) {
-                    notify({result.Error, classes: 'notification-danger'});
+                    notify({message: result.Error, classes: 'notification-danger'});
                     $log.error(result);
                 }
             });
