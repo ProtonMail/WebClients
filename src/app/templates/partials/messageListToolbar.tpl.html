@@ -6,38 +6,38 @@
             </label>
         </li>
         <li ng-if="pageName != 'inbox'">
-            <a href ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: selectedMessages('9').length == 0 }">
+            <a href ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: messagesSelected.length == 0 }">
                 <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'archive'">
-            <a href="" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: selectedMessages('14').length == 0 }">
+            <a href="" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: messagesSelected.length == 0 }">
                 <i class="fa fa-fw fa-archive"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'ARCHIVE' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'spam'">
-            <a href ng-click="moveMessagesTo('spam')" ng-class="{ disabled: selectedMessages('19').length == 0 }">
+            <a href ng-click="moveMessagesTo('spam')" ng-class="{ disabled: messagesSelected.length == 0 }">
                 <i class="fa fa-fw fa-ban"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
             </a>
         </li>
         <li ng-if="pageName != 'trash'">
-            <a href ng-click="moveMessagesTo('trash')" ng-class="{ disabled: selectedMessages('24').length == 0 }">
+            <a href ng-click="moveMessagesTo('trash')" ng-class="{ disabled: messagesSelected.length == 0 }">
                 <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'TRASH' | translate }}</span>
             </a>
         </li>
         <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
-            <a href ng-class="{ disabled: selectedMessages('29').length == 0 }" ng-click="moveMessagesTo('delete')">
+            <a href ng-class="{ disabled: messagesSelected.length == 0 }" ng-click="moveMessagesTo('delete')">
                 <i class="fa fa-times-circle visible-md-inline-block visible-lg-inline-block"></i> {{ 'DELETE' | translate }}
             </a>
         </li>
         <li>
-            <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages('34').length == 0 }">
+            <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messagesSelected.length == 0 }">
                 <i class="fa fa-fw fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'LABELS' | translate }}</span> <i class="fa fa-caret-down"></i>
             </a>
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
         <li>
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages('40').length == 0 }">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messagesSelected.length == 0 }">
                 {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
