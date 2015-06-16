@@ -1,3 +1,14 @@
+#accessLog {
+    .label {
+        display: block;
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1.5rem;
+    }
+    code {
+        font-size: 1.4rem;
+    }
+}
 .list-group {
     list-style-type: none !important;
     .fa-ellipsis-v {
