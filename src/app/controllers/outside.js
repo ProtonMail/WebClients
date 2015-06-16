@@ -8,13 +8,53 @@ angular.module("proton.controllers.Outside", [
     $scope,
     $state,
     $stateParams,
+    $q,
     authentication,
     CONSTANTS,
     networkActivityTracker,
-    notify
+    notify,
+    pmcw,
+    encryptedToken,
+    token,
+    message
 ) {
     $scope.unlock = function() {
-        $state.go('eo.message');
+        var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
+
+        promise.then(function(decryptToken) {
+            window.sessionStorage["proton:encrypted_password"] = $scope.MessagePassword;
+
+            deferred.resolve(result);
+        });
+
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.toggleImages = function() {
+        message.toggleImages();
+    };
+
+    $scope.displayContent = function() {
+        message.clearTextBody().then(function(result) {
+            var content = message.clearImageBody(result);
+
+            content = tools.replaceLineBreaks(content);
+            content = DOMPurify.sanitize(content, {
+                FORBID_TAGS: ['style']
+            });
+
+            if (tools.isHtml(content)) {
+                $scope.isPlain = false;
+            } else {
+                $scope.isPlain = true;
+            }
+
+            $scope.content = $sce.trustAsHtml(content);
+
+            $timeout(function() {
+                tools.transformLinks('message-body');
+            });
+        });
     };
 
     $scope.reply = function() {

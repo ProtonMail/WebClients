@@ -79,7 +79,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
-            token: {
+            check: {
                 method: 'get',
                 url: authentication.baseURL + '/token/:id'
             },

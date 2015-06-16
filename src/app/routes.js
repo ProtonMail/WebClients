@@ -397,7 +397,7 @@ angular.module("proton.routes", [
     .state("eo.unlock", {
         url: "/eo/unlock/:token",
         resolve: {
-            token: function($stateParams, Message) {
+            encryptedToken: function(Message, $stateParams) {
                 return Message.token({id: $stateParams.token});
             }
         },
@@ -412,10 +412,23 @@ angular.module("proton.routes", [
     })
 
     .state("eo.message", {
-        url: "/eo/message:id",
+        url: "/eo/message/:token",
         resolve: {
+            token: function(Message, $stateParams, pmcw) {
+                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
+                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+
+                Message.token({id: $stateParams.token}).then(function(encryptedToken) {
+                    return pmcw.decryptMessage(encryptedToken, decryptedPassword);
+                });
+            },
             message: function(Message) {
-                // return Message.get
+                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
+                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+
+                Message.message({id: $stateParams.token}).then(function(encryptedMessage) {
+                    return pmcw.decryptMessage(encryptedMessage, decryptedPassword);
+                });
             }
         },
         views: {
@@ -426,9 +439,24 @@ angular.module("proton.routes", [
     })
 
     .state("eo.reply", {
-        url: "/eo/reply:id",
+        url: "/eo/reply/:token",
         resolve: {
+            token: function(Message, $stateParams, pmcw) {
+                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
+                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
 
+                Message.token({id: $stateParams.token}).then(function(encryptedToken) {
+                    return pmcw.decryptMessage(encryptedToken, decryptedPassword);
+                });
+            },
+            message: function(Message) {
+                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
+                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+
+                Message.message({id: $stateParams.token}).then(function(encryptedMessage) {
+                    return pmcw.decryptMessage(encryptedMessage, decryptedPassword);
+                });
+            }
         },
         views: {
             "content@": {
