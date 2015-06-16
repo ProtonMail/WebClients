@@ -269,9 +269,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectedMessages = function() {
-        console.log(_.select($scope.messages, function(message) {
-            return message.Selected === true;
-        }));
         return _.select($scope.messages, function(message) {
             return message.Selected === true;
         });
@@ -322,8 +319,7 @@ angular.module("proton.controllers.Messages", [
 
         networkActivityTracker.track(promise);
     };
-
-    $rootScope.$on('moveMessagesTo', function(event, name) {
+    $scope.$on('moveMessagesTo', function(event, name) {
         $scope.moveMessagesTo(name);
     });
 
@@ -331,6 +327,7 @@ angular.module("proton.controllers.Messages", [
         var ids = $scope.selectedIds();
         var promise;
         var inDelete = mailbox === 'delete';
+
 
         if(inDelete) {
             promise = Message.delete({IDs: ids}).$promise;
@@ -464,7 +461,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
-        console.log($scope.messagesSelected);
         var messageIDs = _.map($scope.messagesSelected, function(message) { return message.ID; });
 
         Label.apply({
