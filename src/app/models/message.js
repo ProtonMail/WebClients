@@ -10,6 +10,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $q,
     $state,
     $translate,
+    $log,
     authentication,
     localStorageService,
     User,
@@ -310,6 +311,13 @@ angular.module("proton.models.message", ["proton.constants"])
 
         track: function (promise) {
             this.promises = _.union(this.promises, [promise]);
+
+            promise.catch(function(result) {
+                if(angular.isDefined(result.Error)) {
+                    notify({result.Error, classes: 'notification-danger'});
+                    $log.error(result);
+                }
+            });
 
             promise.finally(function () {
                 this.promises = _.without(this.promises, promise);

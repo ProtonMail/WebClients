@@ -1027,7 +1027,7 @@ angular.module("proton.controllers.Messages", [
                             // var replyToken = generateReplyToken();
                             // var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
 
-                            promises.push(message.encryptBody(message.Password).then(function(result) {
+                            promises.push(pmcrypto.encryptMessage(message.Body, [], message.Password).then(function(result) {
                                 var body = result;
 
                                 message.encryptPackets(message.Password).then(function(result) {
