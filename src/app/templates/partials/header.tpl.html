@@ -39,6 +39,9 @@
                     <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ui-sref="secured.contacts" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
                     </li>
+                    <li id="nav_settings" ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ui-sref="secured.settings" ui-sref-active="active"><span class="visible-lg-inline-block fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
+                    </li>
                     <li class="dropdown" ng-if="isLoggedIn">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="visible-lg-inline-block fa fa-user"></span>
@@ -47,9 +50,6 @@
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
                             <li>
                                 <a href ng-click="openWizard()"><i class="fa fa-magic"></i>{{ 'WIZARD' | translate }}</a>
-                            </li>
-                            <li>
-                                <a ui-sref="secured.settings"><i class="fa fa-cog"></i>{{ 'SETTINGS' | translate }}</a>
                             </li>
                             <li>
                                 <a href ng-click="openReportModal()"><i class="fa fa-bug"></i>{{ 'BUG' | translate }}</a>
