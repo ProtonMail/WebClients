@@ -197,7 +197,7 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
-    $rootScope.$on('starMessages', function(event) {
+    $scope.$on('starMessages', function(event) {
         $scope.messagesSelected = $scope.selectedMessages();
         var ids = $scope.selectedIds();
         var promise;
@@ -258,7 +258,7 @@ angular.module("proton.controllers.Messages", [
         $scope.messagesSelected = $scope.selectedMessages();
     };
 
-    $rootScope.$on('goToFolder', function(event) {
+    $scope.$on('goToFolder', function(event) {
         $scope.unselectAllMessages();
     });
 
@@ -460,7 +460,7 @@ angular.module("proton.controllers.Messages", [
         return deferred.promise;
     };
 
-    $rootScope.$on('applyLabels', function(event, LabelID) {
+    $scope.$on('applyLabels', function(event, LabelID) {
         var messageIDs = _.map($scope.messagesSelected, function(message) { return message.ID; });
 
         Label.apply({
@@ -550,19 +550,19 @@ angular.module("proton.controllers.Messages", [
         }
     });
 
-    $rootScope.$on('onDrag', function() {
+    $scope.$on('onDrag', function() {
         _.each($scope.messages, function(message) {
             $scope.togglePanel(message, 'attachments');
         });
     });
 
-    $rootScope.$on('newMessage', function() {
+    $scope.$on('newMessage', function() {
         var message = new Message();
 
         $scope.initMessage(message);
     });
 
-    $rootScope.$on('loadMessage', function(event, message) {
+    $scope.$on('loadMessage', function(event, message) {
         message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
         $scope.initMessage(message);
     });
