@@ -47,7 +47,7 @@ angular.module("proton.emailField", [])
       var manager = $$element.tagsManager({
         tagsContainer: $(parent).siblings()[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
-        delimiters: [32, 44],
+        delimiters: [32, 44, 9, 13],
         validator: function (input) {
           return EMAIL_REGEXP.test(input);
         }
