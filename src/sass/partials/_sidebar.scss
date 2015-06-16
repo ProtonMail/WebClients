@@ -1,4 +1,12 @@
 #sidebar {
+    #sidebarWrap {
+        overflow: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 5rem;
+        right: 0;        
+    }
     width: $sidebar-width;
     background: $sidebar-bg;
     text-shadow: 0 1px 0 rgba(darken($sidebar-bg, $color-offset), 0.5);
@@ -114,6 +122,11 @@
         box-sizing: border-box;
         width: $sidebar-width;
         background-color: $sidebar-bg;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5rem;        
         @include responsive(sm) {
             width: 6rem;
         }
