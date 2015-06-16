@@ -8,7 +8,6 @@ angular.module("proton.squire", [
         scope: {
             height: '@',
             width: '@',
-            message: '=',
             placeholder: '@',
             editorClass: '@',
             editor: '=',
