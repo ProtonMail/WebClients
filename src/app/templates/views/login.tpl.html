@@ -1,7 +1,10 @@
 <div class="panel panel-default wrap">
     <div class="panel-body">
         <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="off">
-            <h1 class="text-center">{{ 'LOGIN' | translate }}</h1>
+            <p class="text-center">
+                <i class="fa fa-power-off fa-2x text-muted"></i>
+            </p>
+            <h3 class="text-center margin-bottom">{{ 'LOGIN' | translate }}</h3>
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
                 <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
@@ -27,4 +30,4 @@
     </div>
 </div>
 
-<p class="text-center"><a href="/signup">{{ 'NEED_AN_ACCOUNT?' | translate }} {{ 'SIGN_UP' | translate }}.</a></p>
+<p class="text-center white" ng-show="false"><a href="/signup">{{ 'NEED_AN_ACCOUNT?' | translate }} {{ 'SIGN_UP' | translate }}.</a></p>

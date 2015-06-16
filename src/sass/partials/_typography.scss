@@ -1,6 +1,13 @@
 p {
     margin: 1em 0;
 }
+.white,
+.white a {
+    color: #ccc;
+    &:hover {
+        color: #fff;
+    }
+}
 a {
     color: #333;
     &:hover {

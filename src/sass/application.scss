@@ -136,6 +136,9 @@ body footer {
 .margin-top {
     margin-top: 20px;
 }
+.margin-bottom {
+    margin-bottom: 20px;
+}
 .no-margin {
     margin: 0;
 }
@@ -207,7 +210,6 @@ body {
     .as-sortable-item-handle {
         padding: 1rem;
         display: block;
-        text-align: right;
         .label-pm {
             position: relative;
             top: .5rem;
