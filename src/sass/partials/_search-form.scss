@@ -2,10 +2,10 @@ body {
   padding-right: 0 !important;
 }
 #search-form {
-  width: $sidebar-width;
+  width: $search-width;
   @include transition(width, 200ms, ease-in-out);
   &.focus {
-    width: $search-width;
+    width: $search-max-width;
     .btn:hover {
       color: #666
     }
