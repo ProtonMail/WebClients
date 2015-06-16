@@ -1,4 +1,8 @@
 <div ng-controller="SidebarController">
+    <a href id="sidebarToggle" ng-click="sidebarToggle()" class="hidden-sm">
+        <i ng-show="!toggleSidebar" class="fa fa-compress fa-rotate-90"></i>
+        <i ng-show="toggleSidebar" class="fa fa-expand fa-rotate-90"></i>
+    </a>
     <div id="sidebarWrap">
         <ul class="list-group">
             <li class="list-group-item hidden-xs hidden-sm">

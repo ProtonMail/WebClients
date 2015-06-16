@@ -132,6 +132,7 @@ angular.module("proton", [
         }));
     });
     $rootScope.networkActivity = networkActivityTracker;
+    $rootScope.toggleSidebar = false;
     // notification service config
     // https://github.com/cgross/angular-notify
     notify.config({
