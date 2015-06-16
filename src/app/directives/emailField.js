@@ -29,12 +29,11 @@ angular.module("proton.emailField", [])
 
       var setValue = function () {
         $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
-          .map(function (element) { return element.trim(); })
           .filter(function (data) {
-            return data && EMAIL_REGEXP.test(data);
+            return data && EMAIL_REGEXP.test(data.Email);
           })
           .unique()
-          .map(function (element) { return {Name: element, Address: element}; })
+          .map(function (element) { return {Name: element.Name.trim(), Address: element.Email.trim()}; })
           .value()
         );
         $scope.$apply();
@@ -57,13 +56,14 @@ angular.module("proton.emailField", [])
       receivedTag = function (event, ui) {
         var currentTags = manager.tagsManager('tags');
         var item = ui.item[0];
-        var email = item.innerText.trim();
+        var name = item.innerText.trim();
+        var email = $(item).attr('value');
         if (currentTags.indexOf(email) > -1) {
           ui.sender.sortable('cancel');
         }
         else {
           $(item).find('i').trigger('click');
-          manager.tagsManager("pushTag", email);
+          manager.tagsManager("pushTag", {Name: name, Email: email});
         }
       };
 
@@ -80,7 +80,6 @@ angular.module("proton.emailField", [])
           $$element.focus();
         }
         tabbing = false;
-        setValue();
 
         $($el).on('mouseover', function() {
           $(this).css('cursor', 'move');
@@ -89,11 +88,12 @@ angular.module("proton.emailField", [])
         $($el).dblclick(function( ) {
           var input = $(parent).find('.tt-input');
           $(this).find('i').trigger('click');
-          $(input).val(tag);
+          $(input).val(tag.Email);
           $$element.focus();
           $(input).trigger('keydown');
         });
 
+        setValue();
       });
 
       manager.on("tm:popped tm:spliced", setValue);
@@ -106,9 +106,6 @@ angular.module("proton.emailField", [])
         })
         .on("blur", function () {
           var val = $$element.val();
-          if (val.length > 0) {
-            manager.tagsManager("pushTag", val);
-          }
 
           $timeout(function () { $$element.val(""); }, 0);
         })
@@ -121,7 +118,7 @@ angular.module("proton.emailField", [])
                 }
             }
         }).on("typeahead:selected", function (e, d) {
-          manager.tagsManager("pushTag", d.Email);
+          manager.tagsManager("pushTag", d);
         });
 
       $$element.autosizeInput();
