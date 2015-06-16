@@ -253,25 +253,27 @@
         }  
     </style>
 </head>
-<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ('eo.unlock' | isState), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
+<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ( ('eo.unlock'|isState) || ('eo.message'|isState)), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
+
     <div id="loading">
 
-<div class="higgs">
+      <div class="higgs">
 
-  <div class="orbit">
-    <div class="ring horizontal"><div class="wrap-electron"></div></div>
-    <div class="ring vertical"><div class="wrap-electron"></div></div>
-  </div>
-  
-  <div class="orbit r">
-    <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
-    <div class="ring vertical inner"><div class="wrap-electron"></div></div>
-    <div class="ring center"></div>
-  </div>
+        <div class="orbit">
+          <div class="ring horizontal"><div class="wrap-electron"></div></div>
+          <div class="ring vertical"><div class="wrap-electron"></div></div>
+        </div>
+        
+        <div class="orbit r">
+          <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
+          <div class="ring vertical inner"><div class="wrap-electron"></div></div>
+          <div class="ring center"></div>
+        </div>
 
-</div>
+      </div>
         <p class="text-center">Loading ProtonMail</p>
     </div>
+
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>

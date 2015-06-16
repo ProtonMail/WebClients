@@ -403,7 +403,7 @@ angular.module("proton.routes", [
         },
         views: {
             "main@": {
-                templateUrl: "templates/layout/auth.tpl.html"
+                templateUrl: "templates/layout/outside.tpl.html"
             },
             "panel@eo.unlock": {
                 templateUrl: "templates/views/outside.unlock.tpl.html"
@@ -432,7 +432,10 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@": {
+            "main@": {
+                templateUrl: "templates/layout/outsideMessage.tpl.html"
+            },
+            "panel@eo.message": {
                 templateUrl: "templates/views/outside.message.tpl.html"
             }
         }
