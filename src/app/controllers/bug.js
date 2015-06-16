@@ -47,7 +47,7 @@ angular.module("proton.controllers.Bug", [])
         );
     };
 
-    $rootScope.$on('openReportModal', function() {
+    $scope.$on('openReportModal', function() {
         $scope.open();
     });
 });
