@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-horizontal">
                     <div class="form-group">
-                        <div class="input-group">
+                        <div class="input-group input-container">
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="to-container">
                                 <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
@@ -48,13 +48,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="form-group" ng-show="message.fields">
+                    <div class="form-group input-container" ng-show="message.fields">
                         <div class="tag-container"></div>
                         <div class="typeahead-container" id="cc-container">
                             <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control cc-list" />
                         </div>
                     </div>
-                    <div class="form-group" ng-show="message.fields">
+                    <div class="form-group input-container" ng-show="message.fields">
                         <div class="tag-container"></div>
                         <div class="typeahead-container" id="bcc-container">
                             <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control bcc-list" />

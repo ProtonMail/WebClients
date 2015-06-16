@@ -273,6 +273,7 @@ angular.module("proton.controllers.Settings", [
                         Label.delete({id: label.ID}).$promise.then(function(result) {
                             confirmModal.deactivate();
                             notify($translate.instant('LABEL_DELETED'));
+                            label.Display = 1;
                             $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
                         }, function(result) {
                             $log.error(result);
