@@ -30,6 +30,7 @@ angular.module("proton.controllers.Messages", [
     $scope.page = parseInt($stateParams.page || "1");
     $scope.messages = messages;
     $scope.messageCount = $rootScope.Total;
+    $scope.messagesSelected = [];
 
     $timeout(function() {
         $scope.unselectAllMessages();
@@ -93,15 +94,16 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.onSelectMessage = function(event, message) {
-        var messagesSelected = $scope.selectedMessages();
+        $scope.messagesSelected = $scope.selectedMessages();
 
         if (event.shiftKey) {
-            var start = $scope.messages.indexOf(_.first(messagesSelected));
-            var end = $scope.messages.indexOf(_.last(messagesSelected));
+            var start = $scope.messages.indexOf(_.first($scope.messagesSelected));
+            var end = $scope.messages.indexOf(_.last($scope.messagesSelected));
 
             for (var i = start; i < end; i++) {
                 $scope.messages[i].Selected = true;
             }
+            $scope.messagesSelected = $scope.selectedMessages();
         }
     };
 
@@ -115,6 +117,7 @@ angular.module("proton.controllers.Messages", [
             message.Selected = true;
             $scope.$apply();
         }
+        $scope.messagesSelected = $scope.selectedMessages();
     };
 
     $scope.onEndDragging = function(event, ui, message) {
@@ -195,11 +198,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('starMessages', function(event) {
-        var messagesSelected = $scope.selectedMessages();
+        $scope.messagesSelected = $scope.selectedMessages();
         var ids = $scope.selectedIds();
         var promise;
 
-        _.each(messagesSelected, function(message) { message.Starred = 1; });
+        _.each($scope.messagesSelected, function(message) { message.Starred = 1; });
         promise = Message.star({IDs: ids}).$promise;
         networkActivityTracker.track(promise);
         $scope.unselectAllMessages();
@@ -252,6 +255,7 @@ angular.module("proton.controllers.Messages", [
         _.forEach($scope.messages, function(message) {
             message.Selected = status;
         }, this);
+        $scope.messagesSelected = $scope.selectedMessages();
     };
 
     $rootScope.$on('goToFolder', function(event) {
@@ -271,11 +275,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.selectedIds = function() {
-        return _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        return _.map($scope.messagesSelected, function(message) { return message.ID; });
     };
 
     $scope.selectedMessagesWithReadStatus = function(bool) {
-        return _.select($scope.selectedMessages(), function(message) {
+        return _.select($scope.messagesSelected, function(message) {
             return message.IsRead === +bool;
         });
     };
@@ -315,8 +319,7 @@ angular.module("proton.controllers.Messages", [
 
         networkActivityTracker.track(promise);
     };
-
-    $rootScope.$on('moveMessagesTo', function(event, name) {
+    $scope.$on('moveMessagesTo', function(event, name) {
         $scope.moveMessagesTo(name);
     });
 
@@ -324,6 +327,7 @@ angular.module("proton.controllers.Messages", [
         var ids = $scope.selectedIds();
         var promise;
         var inDelete = mailbox === 'delete';
+
 
         if(inDelete) {
             promise = Message.delete({IDs: ids}).$promise;
@@ -350,7 +354,7 @@ angular.module("proton.controllers.Messages", [
         });
 
         if(!$state.is('secured.label')) {
-            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+            $scope.messages = _.difference($scope.messages, $scope.messagesSelected);
         }
 
         $scope.unselectAllMessages();
@@ -399,7 +403,7 @@ angular.module("proton.controllers.Messages", [
         if (angular.isDefined(message)) {
             messages.push(message);
         } else {
-            messages = $scope.selectedMessages();
+            messages = $scope.messagesSelected;
         }
 
         _.each(messages, function(message) {
@@ -428,7 +432,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.saveLabels = function() {
         var deferred = $q.defer();
-        var messageIDs = messages || $scope.selectedIds();
+        var messageIDs = $scope.selectedIds();
         var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
@@ -442,7 +446,7 @@ angular.module("proton.controllers.Messages", [
         });
 
         $q.all(promises).then(function() {
-            _.each($scope.selectedMessages(), function(message) {
+            _.each($scope.messagesSelected, function(message) {
                 message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
             });
             $scope.closeLabels();
@@ -457,7 +461,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $rootScope.$on('applyLabels', function(event, LabelID) {
-        var messageIDs = _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        var messageIDs = _.map($scope.messagesSelected, function(message) { return message.ID; });
 
         Label.apply({
             id: LabelID,
