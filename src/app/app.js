@@ -179,14 +179,23 @@ angular.module("proton", [
             $state.go('login'); // go to login
         }
     });
+    $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
+
+    }); 
+
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
+
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         setTimeout( function() {
             $('.higgs').fadeOut(400, function() {
                 $('#loading-css').remove();
-                $('#loading').fadeOut(400);
+                $('#loading').fadeOut(200);
             });
-        }, 1000);
+        }, 10);
     });
+
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');
     };
