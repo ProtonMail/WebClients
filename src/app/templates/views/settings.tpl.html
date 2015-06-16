@@ -1,209 +1,130 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingNotifications">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#notifications">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#notifications" aria-expanded="true" aria-controls="notifications">{{ 'NOTIFICATIONS' | translate }}</a>
-                </h4>
-            </div>
-            <div id="notifications" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotifications">
-                <div class="panel-body">
-                    <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
-                        <div class="form-group">
-                            <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
-                            <div>
-                                <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}">
-                                    <toggle-switch>
-                            </div>
-                        </div>
-                        <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
-                            <label class="control-label" for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }}</label>
-                            <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
-                            <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">
-                                <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
-                            </div>
-                            <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
-                        </div>
-                        <div class="clearfix">
-                            <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
-                            <button class="btn btn-sm btn-primary pull-right" type="submit" style="margin-left: 5px;">{{ 'SAVE' | translate }}</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingAutosaveContacts">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="autosaveContacts">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#autosaveContacts" aria-expanded="false" aria-controls="signature">{{ 'AUTOSAVE_CONTACTS' | translate }}</a>
-                </h4>
-            </div>
-            <div id="autosaveContacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAutosaveContacts">
-                <div class="panel-body">
-                    <label class="control-label">{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
+
+    <div class="row">
+        <div class="col-md-4">
+            <legend>NOTIFICATIONS</legend>
+            <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
+                <div class="form-group">
+                    <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
                     <div>
-                        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"><toggle-switch>
+                        <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}">
+                            <toggle-switch>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingLoginPassword">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#login-password" aria-expanded="false" aria-controls="login-password">{{ 'LOGIN_PASSWORD' | translate }}</a>
-                </h4>
-            </div>
-            <div id="login-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLoginPassword">
-                <div class="panel-body">
-                    <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
-                        <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
-                            <label class="control-label" for="">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" class="form-control" placeholder="Current Login Password" required="" />
-                        </div>
-                        <div class="form-group" ng-class="{'has-error': loginForm.newLoginPassword.$touched && loginForm.newLoginPassword.$error.required}">
-                            <label class="control-label" for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
-                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" class="form-control" placeholder="New Login Password" required="" />
-                        </div>
-                        <div class="form-group" ng-class="{'has-error': loginForm.confirmLoginPassword.$touched && loginForm.confirmLoginPassword.$error.required}">
-                            <label class="control-label" for="confirmLoginPassword">{{ 'CONFIRM_NEW_LOGIN_PASSWORD' | translate }}</label>
-                            <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" class="form-control" placeholder="Confirm New Login Password" required="" />
-                            <div ng-show="loginForm.$submit || loginForm.confirmLoginPassword.$touched">
-                                <p ng-show="newLoginPassword !== confirmLoginPassword" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                        </div>
-                    </form>
+                <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
+                    <label class="control-label" for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }}</label>
+                    <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
+                    <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">
+                        <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
+                    </div>
+                    <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingMailboxPassword">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#mailbox-password" aria-expanded="false" aria-controls="mailbox-password">{{ 'MAILBOX_PASSWORD' | translate }}</a>
-                </h4>
-            </div>
-            <div id="mailbox-password" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMailboxPassword">
-                <div class="panel-body">
-                    <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
-                        <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
-                            <label class="control-label" for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
-                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" class="form-control" placeholder="Current Mailbox Password" required="" />
-                        </div>
-                        <div class="form-group" ng-class="{'has-error': mailboxForm.newMailboxPassword.$touched && mailboxForm.newMailboxPassword.$error.required}">
-                            <label class="control-label" for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
-                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" class="form-control" placeholder="New Mailbox Password" required="" />
-                        </div>
-                        <div class="form-group" ng-class="{'has-error': mailboxForm.confirmMailboxPassword.$touched && mailboxForm.confirmMailboxPassword.$error.required}">
-                            <label class="control-label" for="confirmMailboxPassword">{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}</label>
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" class="form-control" placeholder="Confirm New Mailbox Password" required="" />
-                            <div ng-show="mailboxForm.$submit || mailboxForm.confirmMailboxPassword.$touched">
-                                <p ng-show="newMailboxPassword !== confirmMailboxPassword" class="text-danger">Passwords don't match.</p>
-                            </div>
-                        </div>
-                        <div class="clearfix">
-                            <a href="https://protonmail.ch/pages/faq#faq4" target="_blank" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                        </div>
-                    </form>
+                <div class="clearfix">
+                    <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                    <button class="btn btn-sm btn-primary pull-right" type="submit" style="margin-left: 5px;">{{ 'SAVE' | translate }}</button>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingName">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#display-name" aria-expanded="false" aria-controls="display-name">{{ 'DISPLAY_NAME' | translate }}</a>
-                </h4>
-            </div>
-            <div id="display-name" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingName">
-                <div class="panel-body">
-                    <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
-                        <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
-                            <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
-                            <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" required="" />
-                        </div>
-                        <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                        </div>
-                    </form>
+        <div class="col-md-4">
+            <legend>LOGIN PASSWORD</legend>
+            <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
+                <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
+                    <label class="control-label" for="">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                    <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" class="form-control" placeholder="Current Login Password" required="" />
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingSignature">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#signature" aria-expanded="false" aria-controls="signature">{{ 'SIGNATURE' | translate }}</a>
-                </h4>
-            </div>
-            <div id="signature" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSignature">
-                <div class="panel-body">
-                    <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
-                        <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                            <label class="signature" for="signature">{{ 'SIGNATURE' | translate }}</label>
-                            <textarea id="signature" name="signature" class="form-control no-resize" ng-model="signature" required=""></textarea>
-                        </div>
-                        <div class="clearfix">
-                            <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                        </div>
-                    </form>
+                <div class="form-group" ng-class="{'has-error': loginForm.newLoginPassword.$touched && loginForm.newLoginPassword.$error.required}">
+                    <label class="control-label" for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
+                    <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" class="form-control" placeholder="New Login Password" required="" />
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingAliases">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#aliases" aria-expanded="false" aria-controls="aliases">{{ 'ALIASES' | translate }}</a>
-                </h4>
-            </div>
-            <div id="aliases" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAliases">
-                <div class="panel-body">
-                    <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
-                        <div class="form-group">
-                            <label class="control-label" for="">{{ 'SORT_ALIASES' | translate }}</label>
-                            <div id="aliases-container">
-                                <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
-                                    <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
-                                        <div as-sortable-item-handle="">
-                                            {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="help-block"><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</p>
-                        </div>
-                        <div class="clearfix">
-                            <a href="" class="pull-left btn btn-link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingDefaultLanguage">
-                <h4 class="panel-title clearfix">
-                    <a class="btn btn-default btn-xs pull-right" data-toggle="collapse" data-parent="#accordion" href="#defaultLanguage" aria-expanded="false" aria-controls="defaultLanguage">{{ 'EXPAND' | translate }}</a>
-                    <a data-toggle="collapse" data-parent="#accordion" href="#defaultLanguage" aria-expanded="false" aria-controls="signature">{{ 'DEFAULT_LANGUAGE' | translate }}</a>
-                </h4>
-            </div>
-            <div id="defaultLanguage" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDefaultlanguage">
-                <div class="panel-body">
-                    <label class="control-label">{{ 'DEFAULT_LANGUAGE' | translate }}</label>
-                    <div>
-                        <select class="form-control" ng-model="selectedLanguage" ng-change="saveDefaultLanguage()">
-                            <option ng-repeat="language in languages">{{language}}</option>
-                        </select>
+                <div class="form-group" ng-class="{'has-error': loginForm.confirmLoginPassword.$touched && loginForm.confirmLoginPassword.$error.required}">
+                    <label class="control-label" for="confirmLoginPassword">{{ 'CONFIRM_NEW_LOGIN_PASSWORD' | translate }}</label>
+                    <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" class="form-control" placeholder="Confirm New Login Password" required="" />
+                    <div ng-show="loginForm.$submit || loginForm.confirmLoginPassword.$touched">
+                        <p ng-show="newLoginPassword !== confirmLoginPassword" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                     </div>
                 </div>
+                <div class="clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <legend>MAILBOX PASSWORD</legend>
+            <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
+                <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
+                    <label class="control-label" for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
+                    <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" class="form-control" placeholder="Current Mailbox Password" required="" />
+                </div>
+                <div class="form-group" ng-class="{'has-error': mailboxForm.newMailboxPassword.$touched && mailboxForm.newMailboxPassword.$error.required}">
+                    <label class="control-label" for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
+                    <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" class="form-control" placeholder="New Mailbox Password" required="" />
+                </div>
+                <div class="form-group" ng-class="{'has-error': mailboxForm.confirmMailboxPassword.$touched && mailboxForm.confirmMailboxPassword.$error.required}">
+                    <label class="control-label" for="confirmMailboxPassword">{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}</label>
+                    <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" class="form-control" placeholder="Confirm New Mailbox Password" required="" />
+                    <div ng-show="mailboxForm.$submit || mailboxForm.confirmMailboxPassword.$touched">
+                        <p ng-show="newMailboxPassword !== confirmMailboxPassword" class="text-danger">Passwords don't match.</p>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <a href="https://protonmail.ch/pages/faq#faq4" target="_blank" class="btn btn-link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <legend>AUTOSAVE CONTACT LIST</legend>
+            <label class="control-label">{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
+            <div>
+                <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"><toggle-switch>
             </div>
+            <legend class="margin-top">DISPLAY NAME</legend>
+            <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
+                <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
+                    <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
+                    <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" required="" />
+                </div>
+                <div class="clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <legend>SIGNATURE</legend>
+            <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
+                <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
+                    <label class="signature" for="signature">{{ 'SIGNATURE' | translate }}</label>
+                    <textarea id="signature" name="signature" class="form-control no-resize" ng-model="signature" required=""></textarea>
+                </div>
+                <div class="clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <legend>ALIASES</legend>
+            <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
+                <div class="form-group">
+                    <label class="control-label" for="">{{ 'SORT_ALIASES' | translate }}</label>
+                    <div id="aliases-container">
+                        <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
+                            <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
+                                <div as-sortable-item-handle="">
+                                    {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="help-block"><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</p>
+                </div>
+                <div class="clearfix">
+                    <a href="" class="pull-left btn btn-link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
