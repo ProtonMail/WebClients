@@ -395,10 +395,10 @@ angular.module("proton.routes", [
     })
 
     .state("eo.unlock", {
-        url: "/eo/unlock/:tag",
+        url: "/eo/:tag",
         resolve: {
-            encryptedToken: function(Message, $stateParams) {
-                return Message.token({id: $stateParams.tag});
+            encryptedToken: function(Eo, $stateParams) {
+                return Eo.token($stateParams.tag);
             }
         },
         views: {

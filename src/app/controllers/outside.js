@@ -18,6 +18,9 @@ angular.module("proton.controllers.Outside", [
     token,
     message
 ) {
+
+    console.log(encryptedToken);
+    
     $scope.unlock = function() {
         var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
 
