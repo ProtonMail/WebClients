@@ -233,7 +233,58 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.resetMailbox = function(form) {
         if (form.$valid) {
-            generateKeys('UserID', form.password.$modelValue);
+
+            $scope.startGen = true;
+            
+            networkActivityTracker.track(
+                // TODO: need animation here.
+                generateKeys('UserID', $scope.account.mailboxPassword).then(
+                    function() {
+
+                        $scope.generationDone   = true;
+
+                        var params = {
+                            "PublicKey": $scope.account.PublicKey,
+                            "PrivateKey": $scope.account.PrivateKey,
+                        };
+
+                        return User.updateKeys(params).$promise.then(
+                            function(response) {
+                                return authentication.unlockWithPassword($scope.account.mailboxPassword).then(
+                                    function() {
+
+                                        $scope.saved   = true;
+
+                                        // var deferred = $q.defer();
+                                        // return deferred.promise;
+
+                                        localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+
+                                        setTimeout( function() {
+                                            $scope.Redirect   = true;
+                                            $state.go("secured.inbox");
+                                        }, 500);
+                                    },
+                                    function(err) {
+                                        $scope.error = err;
+                                    }
+                                );
+                            },
+                            function(response) {
+                                var error_message = (response.data.Error) ? response.data.Error : (response.statusText) ? response.statusText : 'Error.';
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: error_message
+                                });
+                                $log.error(response);
+                            }
+                        );
+                    },
+                    function(response) {
+                        $log.error(response);
+                    }
+                )
+            );
         }
         // 1. hide the warning, show the form
         // 2. warning to remember hte password

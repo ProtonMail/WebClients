@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '')">
+    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '') && !startGen">
         <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
@@ -26,7 +26,7 @@
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
-    <div class="panel-body" ng-show="(showForm && user.NotificationEmail == '')">
+    <div class="panel-body" ng-show="(showForm && user.NotificationEmail == '') && !startGen">
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
@@ -56,4 +56,31 @@
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
 
     </div>
+
+
+    <div class="panel panel-default panel-sign-up wrap" ng-show="startGen" id="signUpProcess">
+        <div class="panel-heading">
+            <h1 class="text-center">Creating New Mailbox</h1>
+        </div>
+        <div class="panel-body">   
+        <ol>
+            <li ng-class="{ 'done': generationDone }">
+                <i ng-hide="generationDone" class="fa fa-square-o"></i> 
+                <i ng-show="generationDone" class="fa fa-check-square"></i> 
+                Generating Keys
+            </li>
+            <li ng-class="{ 'done': saved }">
+                <i ng-hide="saved" class="fa fa-square-o"></i> 
+                <i ng-show="saved" class="fa fa-check-square"></i> 
+                Saving Encrypted Keys
+            </li>
+            <li ng-class=="{ 'done': Redirect }">
+                <i ng-hide="Redirect" class="fa fa-square-o"></i> 
+                <i ng-show="Redirect" class="fa fa-check-square"></i> 
+                Redirecting
+            </li>
+        </ol>
+        </div>
+    </div>
+
 </div>

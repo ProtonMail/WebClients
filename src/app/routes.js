@@ -309,8 +309,13 @@ angular.module("proton.routes", [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication) {
-                return authentication.fetchUserInfo();
+            user: function(authentication, $rootScope) {
+                if (!$rootScope.user) { 
+                    return authentication.fetchUserInfo();
+                }
+                else {
+                    return $rootScope.user;
+                }
             }
         }
     })
