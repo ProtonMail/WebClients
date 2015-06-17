@@ -49,7 +49,7 @@ angular.module("proton.controllers.Sidebar", [])
         }
     };
 
-    $rootScope.$on('updateCounters', function(event) {
+    $scope.$on('updateCounters', function(event) {
         $scope.updateCounters();
     });
 

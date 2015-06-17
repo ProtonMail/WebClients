@@ -23,7 +23,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.search = '';
     $scope.editing = false;
 
-    $rootScope.$on('searchContacts', function(event, value) {
+    $scope.$on('searchContacts', function(event, value) {
         $scope.search = value;
     });
 
