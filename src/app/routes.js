@@ -433,10 +433,19 @@ angular.module("proton.routes", [
 
                 Eo.message(decrypted_token, token_id).then(function(result) {
                     var message = result.data.Message;
+                    var promises = [];
 
-                    pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                    promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
                         message.Body = body;
+                    }));
 
+                    _.each(message.Replies, function(reply) {
+                        promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then(function(body) {
+                            reply.Body = body;
+                        }));
+                    });
+
+                    $q.all(promises).then(function() {
                         deferred.resolve(message);
                     });
                 });
@@ -449,6 +458,8 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/outside.message.tpl.html",
                 controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
                     $scope.message = message;
+
+                    console.log(message);
 
                     var content = $scope.message.Body;
 
