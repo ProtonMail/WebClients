@@ -459,8 +459,6 @@ angular.module("proton.routes", [
                 controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
                     $scope.message = message;
 
-                    console.log(message);
-
                     var content = $scope.message.Body;
 
                     content = tools.clearImageBody(content);
@@ -482,8 +480,10 @@ angular.module("proton.routes", [
                     $scope.toggleImages = function() {
                         if($scope.imagesHidden === true) {
                             $scope.content = tools.fixImages($scope.content);
+                            $scope.imagesHidden = false;
                         } else {
                             $scope.content = tools.breakImages($scope.content);
+                            $scope.imagesHidden = true;
                         }
                     };
                 }
