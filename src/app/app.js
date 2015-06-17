@@ -149,7 +149,7 @@ angular.module("proton", [
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");
-        var isSupport = (toState.name === "support");
+        var isSupport = (toState.name.includes("support."));
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
         var isUnlock = (toState.name === "login.unlock");
