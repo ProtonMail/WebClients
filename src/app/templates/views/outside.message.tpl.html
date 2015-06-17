@@ -34,7 +34,7 @@
         </a>
     </div>
     <div id="message-body">
-        <div class="email" ng-bind-html="content | purify"></div>
+        <div class="email" ng-bind-html="message.Body | purify"></div>
     </div>
 
     <div class="panel panel-default" ng-if="message.Attachments.length" id="attachmentArea">

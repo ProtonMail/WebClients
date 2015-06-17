@@ -459,19 +459,24 @@ angular.module("proton.routes", [
                 controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
                     $scope.message = message;
 
-                    var content = $scope.message.Body;
-
-                    content = tools.clearImageBody(content);
-                    $scope.imagesHidden = true;
-                    content = tools.replaceLineBreaks(content);
-                    content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
-
-                    $scope.content = content;
-
                     $timeout(function() {
-                        tools.transformLinks('message-body');
-                        $scope.containsImage = tools.containsImage(content);
+                        $scope.clean($scope.message.Body);
+                        $scope.containsImage = tools.containsImage($scope.message.Body);
+                        _.each($scope.message.Replies, function(reply) {
+                            $scope.clean(reply.Body);
+                        });
                     });
+
+                    $scope.clean = function(body) {
+                        var content = angular.copy(body);
+
+                        content = tools.clearImageBody(content);
+                        $scope.imagesHidden = true;
+                        content = tools.replaceLineBreaks(content);
+                        content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
+                        body = content;
+                        tools.transformLinks('message-body');
+                    };
 
                     $scope.reply = function() {
                         $state.go('eo.reply', {tag: $stateParams.tag});
@@ -518,9 +523,10 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/outside.reply.tpl.html",
                 controller: function($scope, message) {
                     $scope.message = message;
+                    $scope.message.Body = '';
 
                     $scope.send = function() {
-
+                        // TODO
                     };
                 }
             }
