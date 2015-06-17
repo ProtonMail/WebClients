@@ -104,6 +104,10 @@ angular.module("proton.controllers.Settings", [
                 }
                 else {
                     notify($translate.instant('LOGIN_PASSWORD_UPDATED'));
+                    $scope.oldLoginPassword = '';
+                    $scope.newLoginPassword = '';
+                    $scope.confirmLoginPassword = '';
+                    form.$setUntouched();
                 }
             }, function(response) {
                 $log.error(response);
@@ -130,6 +134,10 @@ angular.module("proton.controllers.Settings", [
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
                     notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
+                    $scope.oldMailboxPassword = '';
+                    $scope.newMailboxPassword = '';
+                    $scope.confirmMailboxPassword = '';
+                    form.$setUntouched();
                 }, function(response) {
                     $log.error(response);
                 })
@@ -197,24 +205,31 @@ angular.module("proton.controllers.Settings", [
             params: {
                 title: $translate.instant('CREATE_NEW_LABEL'),
                 create: function(name, color) {
-                    Label.save({
-                        Name: name,
-                        Color: color,
-                        Display: 0
-                    }).$promise.then(function(result) {
-                        if(angular.isDefined(result.Label)) {
-                            // TODO add label to labels
-                            labelModal.deactivate();
-                            notify($translate.instant('LABEL_CREATED'));
-                            $scope.labels.push(result.Label);
-                        } else {
-                            notify(result.error);
-                            $log.error(result);
-                        }
-                    }, function(result) {
-                        notify(result.error);
-                        $log.error(result);
-                    });
+                    if (_.find($scope.labels, function(l) {return l.Name === name;}) === undefined) {
+                        labelModal.deactivate();
+                        networkActivityTracker.track(
+                            Label.save({
+                                Name: name,
+                                Color: color,
+                                Display: 0
+                            }).$promise.then(function(result) {
+                                if(angular.isDefined(result.Label)) {
+                                    notify($translate.instant('LABEL_CREATED'));
+                                    $scope.labels.push(result.Label);
+                                } else {
+                                    notify(result.error);
+                                    $log.error(result);
+                                }
+                            }, function(result) {
+                                notify(result.error);
+                                $log.error(result);
+                            })
+                        );
+                    }
+                    else {
+                        notify($translate.instant('LABEL_NAME_ALREADY_EXISTS'));
+                        labelModal.deactivate();
+                    }
                 },
                 cancel: function() {
                     labelModal.deactivate();
@@ -231,13 +246,13 @@ angular.module("proton.controllers.Settings", [
                 title: $translate.instant('EDIT_LABEL'),
                 label: label,
                 create: function() {
+                    labelModal.deactivate();
                     networkActivityTracker.track(
                         Label.update({
                             id: label.ID,
                             Name: label.Name,
                             Color: label.Color,
                             Display: label.Display
-
                         }).$promise.then(function(result) {
                             if (result.Error) {
                                 notify(result.Error);
@@ -247,7 +262,6 @@ angular.module("proton.controllers.Settings", [
                             else {
                                 notify($translate.instant('LABEL_EDITED'));
                             }
-                            labelModal.deactivate();
 
                         }, function(result) {
                             $log.error(result);

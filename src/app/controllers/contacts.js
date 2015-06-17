@@ -132,24 +132,38 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.editContact = function(contact) {
         openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
+            var origName = contact.Name;
+            var origEmail = contact.Email;
             contact.Name = name;
             contact.Email = email;
-            networkActivityTracker.track(
-                Contact.edit({
-                    "Name": name,
-                    "Email": email,
-                    "id": contact.ID
-                }).$promise.then(function(response) {
-                        contactModal.deactivate();
-                        notify($translate.instant('CONTACT_EDITED'));
-                        Contact.index.updateWith($scope.contacts);
-                    }, function(response) {
-                        notify({
-                            message: response.error
-                        });
-                        $log.error(response);
-                    })
-            );
+
+            var match = _.findWhere($scope.contacts, {Email: email});
+
+            if (match) {
+                notify("Contact exists for this email address");
+                contact.Name = origName;
+                contact.Email = origEmail;
+                contactModal.deactivate();
+            }
+            else {
+                networkActivityTracker.track(
+                    Contact.edit({
+                        "Name": name,
+                        "Email": email,
+                        "id": contact.ID
+                    }).$promise.then(function(response) {
+                            contactModal.deactivate();
+                            notify($translate.instant('CONTACT_EDITED'));
+                            Contact.index.updateWith($scope.contacts);
+                        }, function(response) {
+                            notify({
+                                message: response.error
+                            });
+                            $log.error(response);
+                        })
+                );
+            }
+
         });
     };
 

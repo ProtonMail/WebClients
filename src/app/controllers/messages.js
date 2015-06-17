@@ -1373,13 +1373,14 @@ angular.module("proton.controllers.Messages", [
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
-            base.ToList = message.Sender;
+            base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
 
         }
         else if (action === 'replyall') {
-            base.ToList = [message.Sender, message.CCList, message.BCCList].join(",");
+            base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList, message.ToList);
+            base.ToList = _.filter(base.ToList, function (c) { return _.find($scope.user.Addresses, function(a) { return a.Email === c.Address;}) === undefined;});
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
         }
