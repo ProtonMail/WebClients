@@ -349,10 +349,10 @@ angular.module("proton.models.message", ["proton.constants"])
             var packets = [];
 
             _.each(this.Attachments, function(element) {
-                packets.push(pmcrypto.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, key, []).then(function (keyPacket) {
+                packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, key, []).then(function (keyPacket) {
                     return {
                         ID: element.AttachmentID,
-                        KeyPackets: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(keyPacket))
+                        KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
                     };
                 }));
             });
@@ -371,7 +371,7 @@ angular.module("proton.models.message", ["proton.constants"])
             _.each(this.Attachments, function(element) {
                 packets.push({
                     ID: element.AttachmentID,
-                    Key: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(element.sessionKey.key)),
+                    Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
                     Algo: element.sessionKey.algo
                 });
             });
@@ -394,8 +394,9 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         generateReplyToken: function() {
+            console.log('generateReplyToken');
             // Use a base64-encoded AES256 session key as the reply token
-            return pmcrypto.encode_base64(pmcrypto.generateKeyAES());
+            return pmcw.encode_base64(pmcw.generateKeyAES());
         },
 
         clearTextBody: function() {

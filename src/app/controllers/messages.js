@@ -1027,17 +1027,18 @@ angular.module("proton.controllers.Messages", [
                         outsiders = true;
 
                         if(message.IsEncrypted === 1) {
-                            // TODO
-                            // var replyToken = generateReplyToken();
-                            // var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
+                            var replyToken = message.generateReplyToken();
+                            var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
-                            promises.push(pmcrypto.encryptMessage(message.Body, [], message.Password).then(function(result) {
-                                var body = result;
+                            promises.push(replyTokenPromise.then(function(encryptedToken) {
+                                pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                    var body = result;
 
-                                message.encryptPackets(message.Password).then(function(result) {
-                                    var keyPackets = result;
+                                    message.encryptPackets(message.Password).then(function(result) {
+                                        var keyPackets = result;
 
-                                    return parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: keyPackets, PasswordHint: message.PasswordHint});
+                                        return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                    });
                                 });
                             }));
                         }
