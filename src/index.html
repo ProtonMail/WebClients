@@ -253,7 +253,7 @@
         }  
     </style>
 </head>
-<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ( ('eo.unlock'|isState) || ('eo.message'|isState)), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank, 'min': toggleSidebar}">
+<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ( ('eo.unlock'|isState) || ('eo.message'|isState) || ('eo.reply'|isState)), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank, 'min': toggleSidebar}">
 
     <div id="loading">
 

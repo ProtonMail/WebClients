@@ -507,10 +507,18 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/outside.reply.tpl.html",
                 controller: function($scope, message) {
                     $scope.message = message;
-
                     $scope.send = function() {
 
                     };
+                },
+                onEnter: function($scope) {
+                    var iframeDoc = document.getElementById('squireIframe').contentWindow.document;
+                    editor = $scope.editor = new Squire(iframeDoc);
+                    editor.defaultBlockTag = 'P';
+                    if (message.Body) {
+                        editor.setHTML(message.Body);
+                        // updateModel(message.Body);
+                    }
                 }
             }
         }
