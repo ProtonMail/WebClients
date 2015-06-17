@@ -26,7 +26,7 @@
           bottom: 0;
           z-index: 9999;
           color: #fff;
-          background: #555;          
+          background: #555;
         }
 
         .higgs {
@@ -47,7 +47,7 @@
           position: absolute;
         }
         .orbit {
-          border: 0px solid #ffffff;          
+          border: 0px solid #ffffff;
         }
         .ring {
           position: absolute;
@@ -94,7 +94,7 @@
         .orbit {
           -webkit-animation: lateral 3s ease-in-out infinite;
           -moz-animation: lateral 3s ease-in-out infinite;
-        }      
+        }
         .vertical {
           -webkit-animation: vertical 3s linear infinite;
           -moz-animation: vertical 3s linear infinite;
@@ -102,12 +102,12 @@
         .horizontal {
           -webkit-animation: horizontal 3s linear infinite;
           -moz-animation: horizontal 3s linear infinite;
-        } 
+        }
 
         .orbit.r {
           -webkit-animation: lateralRevert 1s linear infinite;
           -moz-animation: lateralRevert 1s linear infinite;
-        }      
+        }
         .vertical.inner {
           -webkit-animation: verticalRevert 1s linear infinite;
           -moz-animation: verticalRevert 1s linear infinite;
@@ -119,7 +119,7 @@
 
         .center {
           -webkit-animation: electron 3s linear infinite;
-          -moz-animation: electron 3s linear infinite;          
+          -moz-animation: electron 3s linear infinite;
         }
 
         @keyframes electron {
@@ -185,7 +185,7 @@
           to {
             transform: rotateZ(0deg);
           }
-        }  
+        }
 
         @-webkit-keyframes electron {
           0% {
@@ -250,28 +250,29 @@
           to {
             -webkit-transform: rotateZ(0deg);
           }
-        }  
+        }
     </style>
 </head>
-<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ('login' | isState), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank}">
+<body ng-app="proton" ng-class="{ locked: (isLoggedIn && isLocked) || ( ('eo.unlock'|isState) || ('eo.message'|isState) || ('eo.reply'|isState)), login: !isLoggedIn, secure: isSecure(), blank: !!isBlank, 'min': toggleSidebar}">
     <div id="loading">
 
-<div class="higgs">
+      <div class="higgs">
 
-  <div class="orbit">
-    <div class="ring horizontal"><div class="wrap-electron"></div></div>
-    <div class="ring vertical"><div class="wrap-electron"></div></div>
-  </div>
-  
-  <div class="orbit r">
-    <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
-    <div class="ring vertical inner"><div class="wrap-electron"></div></div>
-    <div class="ring center"></div>
-  </div>
+        <div class="orbit">
+          <div class="ring horizontal"><div class="wrap-electron"></div></div>
+          <div class="ring vertical"><div class="wrap-electron"></div></div>
+        </div>
 
-</div>
+        <div class="orbit r">
+          <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
+          <div class="ring vertical inner"><div class="wrap-electron"></div></div>
+          <div class="ring center"></div>
+        </div>
+
+      </div>
         <p class="text-center">Loading ProtonMail</p>
     </div>
+
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>

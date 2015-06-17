@@ -1,6 +1,9 @@
 @media (max-width: 1199px) {
 	#main {
 		padding-left: ($sidebar-width)*.9;
+		&.eo {
+			padding: 0;
+		}
 	}
 	table.message-list {
 		.recipient {
@@ -25,6 +28,9 @@
 	}
 	#main {
 		padding-left: ($sidebar-width)*.3;
+		&.eo {
+			padding: 0;
+		}
 	}
 	#dragOverlay {
 		left: ($sidebar-width)*.3;
@@ -55,6 +61,9 @@
 	#main {
 		padding-left: 0;
 	}
+	.eo.navbar {
+		margin-bottom: 0;
+	}	
 	.composer {
 		top: auto;
 		left: 1rem;

@@ -9,10 +9,15 @@ angular.module("proton.controllers.Sidebar", [])
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
     };
+
     $scope.droppedMessages = [];
     // Call event to open new composer
     $scope.compose = function() {
         $rootScope.$broadcast('newMessage');
+    };
+
+    $scope.sidebarToggle = function() {
+        $rootScope.toggleSidebar = !$rootScope.toggleSidebar;
     };
 
     $scope.labelsDisplayed = function() {

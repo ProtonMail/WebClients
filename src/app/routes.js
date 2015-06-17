@@ -309,8 +309,13 @@ angular.module("proton.routes", [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication) {
-                return authentication.fetchUserInfo();
+            user: function(authentication, $rootScope) {
+                if (!$rootScope.user) { 
+                    return authentication.fetchUserInfo();
+                }
+                else {
+                    return $rootScope.user;
+                }
             }
         }
     })
@@ -393,6 +398,182 @@ angular.module("proton.routes", [
         }
     })
 
+    // -------------------------------------------
+    // ENCRYPTION OUTSIDE
+    // -------------------------------------------
+    .state("eo", {
+        abstract: true,
+        views: {
+            "main@": {
+                templateUrl: "templates/layout/outside.tpl.html"
+            }
+        },
+    })
+
+    .state("eo.unlock", {
+        url: "/eo/:tag",
+        resolve: {
+            encryptedToken: function(Eo, $stateParams) {
+                return Eo.token($stateParams.tag);
+            }
+        },
+        views: {
+            "content": {
+                templateUrl: "templates/views/outside.unlock.tpl.html",
+                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker) {
+                    encryptedToken = encryptedToken.data.Token;
+
+                    $scope.unlock = function() {
+                        var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
+
+                        promise.then(function(decryptedToken) {
+                            window.sessionStorage["proton:decrypted_token"] = decryptedToken;
+                            window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.MessagePassword);
+                            $state.go('eo.message', {tag: $stateParams.tag});
+                        });
+
+                        networkActivityTracker.track(promise);
+                    };
+                }
+            }
+        }
+    })
+
+    .state("eo.message", {
+        url: "/eo/message/:tag",
+        resolve: {
+            message: function($stateParams, $q, Eo, pmcw) {
+                var deferred = $q.defer();
+                var token_id = $stateParams.tag;
+                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+
+                Eo.message(decrypted_token, token_id).then(function(result) {
+                    var message = result.data.Message;
+                    var promises = [];
+
+                    promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                        message.Body = body;
+                    }));
+
+                    _.each(message.Replies, function(reply) {
+                        promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then(function(body) {
+                            reply.Body = body;
+                        }));
+                    });
+
+                    $q.all(promises).then(function() {
+                        deferred.resolve(message);
+                    });
+                });
+
+                return deferred.promise;
+            }
+        },
+        views: {
+            "content": {
+                templateUrl: "templates/views/outside.message.tpl.html",
+                controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
+                    $scope.message = message;
+
+                    $timeout(function() {
+                        $scope.message.Body = $scope.clean($scope.message.Body);
+                        $scope.containsImage = tools.containsImage($scope.message.Body);
+                        _.each($scope.message.Replies, function(reply) {
+                            reply.Body = $scope.clean(reply.Body);
+                        });
+                        tools.transformLinks('message-body');
+                    });
+
+                    $scope.clean = function(body) {
+                        var content = angular.copy(body);
+
+                        content = tools.clearImageBody(content);
+                        $scope.imagesHidden = true;
+                        content = tools.replaceLineBreaks(content);
+                        content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
+
+                        return content;
+                    };
+
+                    $scope.reply = function() {
+                        $state.go('eo.reply', {tag: $stateParams.tag});
+                    };
+
+                    $scope.toggleImages = function() {
+                        if($scope.imagesHidden === true) {
+                            $scope.message.Body = tools.fixImages($scope.message.Body);
+                            $scope.imagesHidden = false;
+                        } else {
+                            $scope.message.Body = tools.breakImages($scope.message.Body);
+                            $scope.imagesHidden = true;
+                        }
+                    };
+                }
+            }
+        }
+    })
+
+    .state("eo.reply", {
+        url: "/eo/reply/:tag",
+        resolve: {
+            message: function($stateParams, $q, Eo, pmcw) {
+                var deferred = $q.defer();
+                var token_id = $stateParams.tag;
+                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+
+                Eo.message(decrypted_token, token_id).then(function(result) {
+                    var message = result.data.Message;
+
+                    pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                        message.Body = body;
+
+                        deferred.resolve(message);
+                    });
+                });
+
+                return deferred.promise;
+            }
+        },
+        views: {
+            "content": {
+                templateUrl: "templates/views/outside.reply.tpl.html",
+                controller: function($scope, $state, $stateParams, Eo, message) {
+                    $scope.message = message;
+                    $scope.message.Body = '';
+
+                    var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                    var token_id= $stateParams.tag;
+
+                    $scope.send = function() {
+                        var data = {
+                            'Body': '',
+                            'ReplyBody': '',
+                            'Filename[]': [],
+                            'MIMEType[]': [],
+                            'KeyPackets[]': [],
+                            'DataPacket[]': []
+                        };
+                        Eo.reply(decrypted_token, token_id, data);
+                    };
+
+                    $scope.cancel = function() {
+                        $state.go('eo.message', {tag: $stateParams.tag});
+                    };
+                },
+                onEnter: function($scope) {
+                    var iframeDoc = document.getElementById('squireIframe').contentWindow.document;
+                    editor = $scope.editor = new Squire(iframeDoc);
+                    editor.defaultBlockTag = 'P';
+                    if (message.Body) {
+                        editor.setHTML(message.Body);
+                        // updateModel(message.Body);
+                    }
+                }
+            }
+        }
+    })
 
     // -------------------------------------------
     // SECURED ROUTES

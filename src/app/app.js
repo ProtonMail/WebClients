@@ -35,6 +35,7 @@ angular.module("proton", [
     "proton.models.bug",
     "proton.models.setting",
     "proton.models.attachment",
+    "proton.models.eo",
 
     // Config
     "proton.config",
@@ -71,6 +72,7 @@ angular.module("proton", [
     "proton.controllers.Contacts",
     "proton.controllers.Header",
     "proton.controllers.Messages",
+    "proton.controllers.Outside",
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
@@ -134,6 +136,7 @@ angular.module("proton", [
         }));
     });
     $rootScope.networkActivity = networkActivityTracker;
+    $rootScope.toggleSidebar = false;
     // notification service config
     // https://github.com/cgross/angular-notify
     notify.config({
@@ -156,10 +159,11 @@ angular.module("proton", [
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
         var isUnlock = (toState.name === "login.unlock");
+        var isOutside = (toState.name.includes("eo"));
 
         // If already logged in and on the login page: redirect to unlock page
         if ($rootScope.isLoggedIn && isLogin) {
-            event.preventDefault(); 
+            event.preventDefault();
             $state.go('login.unlock');
         }
 
@@ -170,7 +174,7 @@ angular.module("proton", [
         }
 
         // if on the login, support, account, or signup pages dont require authentication
-        else if (isLogin || isSupport || isAccount || isSignup) {
+        else if (isLogin || isSupport || isAccount || isSignup || isOutside) {
             return; // no need to redirect
         }
 
@@ -180,14 +184,23 @@ angular.module("proton", [
             $state.go('login'); // go to login
         }
     });
+    $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
+
+    });
+
     $rootScope.$on('$viewContentLoaded', function ($evt, data) {
+
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         setTimeout( function() {
             $('.higgs').fadeOut(400, function() {
                 $('#loading-css').remove();
-                $('#loading').fadeOut(400);
+                $('#loading').fadeOut(200);
             });
-        }, 1000);
+        }, 10);
     });
+
     $rootScope.onDrag = function() {
         $rootScope.$broadcast('onDrag');
     };

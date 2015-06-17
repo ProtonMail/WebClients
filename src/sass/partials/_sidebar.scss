@@ -1,3 +1,26 @@
+$minW: 4rem;
+body.min {
+    #sidebar {
+        width: $minW !important;
+        padding-top: 50px;
+        .hidden-xs,
+        .storage {
+            display: none !important;
+        }
+        #sidebarToggle {
+            text-align: center;
+            padding: 0;
+            width: $minW;
+        }
+    }
+    #navbar {
+        display: none;
+    }
+    #main {
+        padding-left: $minW;
+    }
+}
+
 #sidebar {
     width: $sidebar-width;
     background: $sidebar-bg;
@@ -10,6 +33,22 @@
         font-style: normal;
     }
 
+    #sidebarToggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: $navbar-height;
+        line-height: $navbar-height;
+        z-index: 2;
+        padding: 0 1rem;
+        .fa {
+            line-height: $navbar-height;
+            color: rgba(#fff, .5);
+        }
+        &:hover .fa {
+            color: #fff;
+        }
+    }
     #sidebarLabels {
         overflow-y: auto;
         overflow-x: hidden;
@@ -114,6 +153,11 @@
         box-sizing: border-box;
         width: $sidebar-width;
         background-color: $sidebar-bg;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5rem;        
         @include responsive(sm) {
             width: 6rem;
         }

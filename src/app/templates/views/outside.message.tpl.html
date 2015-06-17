@@ -1,0 +1,62 @@
+<div id="outsideMessageWrap">
+    <div class="message-head">
+        <a href ng-click="reply()" class="btn btn-primary pull-right">
+            <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
+        </a>
+        <h1>
+            <span class="attachement" ng-show="message.Attachments.length > 0">
+                <i class="fa fa-paperclip"></i>
+            </span>
+            <span ng-bind-html="message.Subject"></span>
+        </h1>
+        <ul class="infos">
+            <li>
+                <strong>{{ 'FROM' | translate }}</strong>
+
+                <i class="fa fa-lock text-purple"></i>
+                <b>{{ message.SenderName }}</b> &lt;{{ message.SenderAddress }}&gt;
+                <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
+            </li>
+            <li>
+                <strong>{{ 'TO' | translate }}</strong>
+                <ul class="list-inline inline" ng-if="message.ToList.length > 0">
+                    <li ng-repeat="email in message.ToList">
+                        {{ email.Name }} {{ email.Address }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="containsImage === true" class="alert alert-warning text-center" ng-show="!!imagesHidden" id="showImages">
+        <a href="" ng-click="toggleImages()">
+            <span ng-show="!!imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
+            <span ng-hide="!!imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
+        </a>
+    </div>
+    <div id="message-body">
+        <div class="email" ng-bind-html="message.Body | purify"></div>
+    </div>
+
+    <div class="panel panel-default" ng-if="message.Attachments.length" id="attachmentArea">
+        <div class="panel-heading">
+            <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'list-group-item-info': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
+                    <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
+                    <i ng-show="attachment.decrypted" class="fa fa-download"></i>
+                    <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
+                    <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="eo_footer" style="opacity: 1;">
+        <p>Encrypted with ProtonMail. <a href="/sign-up" class="bn btn-link pull-right">Sign Up</a></p>
+    </div>
+
+</div>
+
+<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>

@@ -1,0 +1,16 @@
+<div class="panel panel-default wrap">
+    <div class="panel-body">
+        <h1 class="text-center">{{ 'MESSAGE_PASSWORD' | translate }}</h1>
+        <form ng-submit="unlock()" novalidate>
+            <fieldset class="pure-form">
+                <div class="form-group">
+                    <input class="form-control" autofocus autocomplete="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}">
+                    <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
+                    <span>{{ 'DECRYPT_MESSAGE' | translate }}</span>
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>
