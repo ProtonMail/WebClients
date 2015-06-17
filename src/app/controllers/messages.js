@@ -1356,7 +1356,6 @@ angular.module("proton.controllers.Messages", [
 
     // Return Message object to build response or forward
     function buildMessage(action) {
-        console.log('building', message);
         var base = new Message();
         var signature = '<br /><br />' + $scope.user.Signature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
@@ -1380,7 +1379,8 @@ angular.module("proton.controllers.Messages", [
 
         }
         else if (action === 'replyall') {
-            base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList);
+            base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList, message.ToList);
+            base.ToList = _.filter(base.ToList, function (c) { return _.find($scope.user.Addresses, function(a) { return a.Email === c.Address;}) === undefined;});
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
         }
@@ -1390,7 +1390,6 @@ angular.module("proton.controllers.Messages", [
             fw_prefix + ' ' + message.Subject;
         }
 
-        console.log(base);
         return base;
     }
 
