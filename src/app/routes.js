@@ -543,6 +543,15 @@ angular.module("proton.routes", [
                     $scope.cancel = function() {
                         $state.go('eo.message', {tag: $stateParams.tag});
                     };
+                },
+                onEnter: function($scope) {
+                    var iframeDoc = document.getElementById('squireIframe').contentWindow.document;
+                    editor = $scope.editor = new Squire(iframeDoc);
+                    editor.defaultBlockTag = 'P';
+                    if (message.Body) {
+                        editor.setHTML(message.Body);
+                        // updateModel(message.Body);
+                    }
                 }
             }
         }
