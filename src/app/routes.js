@@ -465,11 +465,12 @@ angular.module("proton.routes", [
                     $scope.message = message;
 
                     $timeout(function() {
-                        $scope.clean($scope.message.Body);
+                        $scope.message.Body = $scope.clean($scope.message.Body);
                         $scope.containsImage = tools.containsImage($scope.message.Body);
                         _.each($scope.message.Replies, function(reply) {
-                            $scope.clean(reply.Body);
+                            reply.Body = $scope.clean(reply.Body);
                         });
+                        tools.transformLinks('message-body');
                     });
 
                     $scope.clean = function(body) {
@@ -479,8 +480,8 @@ angular.module("proton.routes", [
                         $scope.imagesHidden = true;
                         content = tools.replaceLineBreaks(content);
                         content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
-                        body = content;
-                        tools.transformLinks('message-body');
+
+                        return content;
                     };
 
                     $scope.reply = function() {
@@ -489,10 +490,10 @@ angular.module("proton.routes", [
 
                     $scope.toggleImages = function() {
                         if($scope.imagesHidden === true) {
-                            $scope.content = tools.fixImages($scope.content);
+                            $scope.message.Body = tools.fixImages($scope.message.Body);
                             $scope.imagesHidden = false;
                         } else {
-                            $scope.content = tools.breakImages($scope.content);
+                            $scope.message.Body = tools.breakImages($scope.message.Body);
                             $scope.imagesHidden = true;
                         }
                     };
@@ -526,7 +527,7 @@ angular.module("proton.routes", [
         views: {
             "content": {
                 templateUrl: "templates/views/outside.reply.tpl.html",
-                controller: function($scope, $stateParams, Eo, message) {
+                controller: function($scope, $state, $stateParams, Eo, message) {
                     $scope.message = message;
                     $scope.message.Body = '';
 
@@ -543,6 +544,10 @@ angular.module("proton.routes", [
                             'DataPacket[]': []
                         };
                         Eo.reply(decrypted_token, token_id, data);
+                    };
+
+                    $scope.cancel = function() {
+                        $state.go('eo.message', {tag: $stateParams.tag});
                     };
                 },
                 onEnter: function($scope) {

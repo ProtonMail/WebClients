@@ -158,13 +158,11 @@ angular.module("proton.tools", [])
         }
 
         function break_images(html) {
-            html = html.replace(/src=/g, " data-src=");
-            return html;
+            return html.replace(/src=/g, " data-src=");
         }
 
         function fix_images(html) {
-            html = html.replace(/data-src=/g, " src=");
-            return html;
+            return html.replace(/data-src=/g, " src=");
         }
 
         function is_html($string) {
@@ -415,7 +413,8 @@ angular.module("proton.tools", [])
             isHtml: is_html,
             transformLinks: transform_links,
             clearImageBody: clear_image_body,
-            restoreImageBody: restore_image_body
+            restoreImageBody: restore_image_body,
+            containsImage: contains_image
         };
 
         return tools;

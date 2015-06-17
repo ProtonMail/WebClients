@@ -4,22 +4,6 @@
             <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
         </div>
         <h1>
-            <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
-            <span class="padlock">
-                <i class="fa"
-                ng-class=
-                "{
-                  'fa-lock':
-                    !!!(message.IsEncrypted == '0'),
-                  'text-purple':
-                    !!(message.IsEncrypted == '1') ||
-                    !!(message.IsEncrypted == '5') ||
-                    !!(message.IsEncrypted == '6'),
-                  'fa-unlock-alt text-muted':
-                    !!(message.IsEncrypted == '0')
-                }"
-                title="{{ getMessageEncryptionType(message) }}"></i>
-            </span>
             <span class="attachement" ng-show="message.Attachments.length > 0">
                 <i class="fa fa-paperclip"></i>
             </span>
@@ -40,7 +24,7 @@
                 <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length">
                     <li ng-repeat="email in message.ToList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email"><i class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -48,7 +32,7 @@
                 <strong>{{ 'CC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in message.CCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -56,18 +40,11 @@
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in message.BCCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
         </ul>
-    </div>
-    <!--/.message-head-->
-    <div ng-show="message.containsImage === true" class="alert alert-warning text-center" ng-show="!!message.imagesHidden" id="showImages">
-        <a href="" ng-click="toggleImages()">
-            <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
-            <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
-        </a>
     </div>
     <div id="message-body">
         <squire ng-model="message.Body" message="message" editor="message.editor" height="320px"></squire>
@@ -97,8 +74,8 @@
     </div>
 
     <div class="well text-right">
-        <button class="btn btn-default btn-sm pull-left">{{ 'CANCEL' | translate }}</button>
-        <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send(message)" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'REPLY' | translate }}</button>
+        <button class="btn btn-default btn-sm pull-left" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
+        <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send()" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'REPLY' | translate }}</button>
     </div>
 
 </div>
