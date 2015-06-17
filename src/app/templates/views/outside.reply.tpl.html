@@ -1,9 +1,3 @@
-<ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
-<div class="row visible-xs-block" id="messageActionsMobile">
-    <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link" title="{{ 'REPLY' | translate }}"><i class="fa fa-reply"></i> {{ 'REPLY' | translate }}</a></div>
-    <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>
-    <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link" title="{{ 'FORWARD' | translate }}"><i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}</a></div>
-</div>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
     <div class="pull-right">
         <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
@@ -91,9 +85,9 @@
     <div class="panel-body">
         <div class="list-group">
             <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'list-group-item-info': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
-                <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i> 
-                <i ng-show="attachment.decrypted" class="fa fa-download"></i> 
-                <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i> 
+                <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
+                <i ng-show="attachment.decrypted" class="fa fa-download"></i>
+                <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
                 <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
             </a>
         </div>

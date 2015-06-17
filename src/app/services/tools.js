@@ -367,6 +367,26 @@ angular.module("proton.tools", [])
            $('#' + id).find('a[href^=http]').attr('target','_blank');
        }
 
+       function contains_image(content) {
+           return content.match('<img') !== null;
+       }
+
+       function clear_image_body(content) {
+           if(contains_image(content)) {
+               return break_images(content);
+           } else {
+               return content;
+           }
+       }
+
+       function restore_image_body(content) {
+           if(contains_image(content)) {
+               return fix_images(content);
+           } else {
+               return content;
+           }
+       }
+
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -393,7 +413,9 @@ angular.module("proton.tools", [])
             renderStorageBar: render_storage_bar,
             replaceLineBreaks: replace_line_breaks,
             isHtml: is_html,
-            transformLinks: transform_links
+            transformLinks: transform_links,
+            clearImageBody: clear_image_body,
+            restoreImageBody: restore_image_body
         };
 
         return tools;

@@ -386,12 +386,11 @@ angular.module("proton.routes", [
     // -------------------------------------------
     .state("eo", {
         abstract: true,
-        view: {
+        views: {
             "main@": {
-                controller: "OutsideController",
                 templateUrl: "templates/layout/outside.tpl.html"
             }
-        }
+        },
     })
 
     .state("eo.unlock", {
@@ -402,11 +401,23 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "main@": {
-                templateUrl: "templates/layout/outside.tpl.html"
-            },
-            "panel@eo.unlock": {
-                templateUrl: "templates/views/outside.unlock.tpl.html"
+            "content": {
+                templateUrl: "templates/views/outside.unlock.tpl.html",
+                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker) {
+                    encryptedToken = encryptedToken.data.Token;
+
+                    $scope.unlock = function() {
+                        var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
+
+                        promise.then(function(decryptedToken) {
+                            window.sessionStorage["proton:decrypted_token"] = decryptedToken;
+                            window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.MessagePassword);
+                            $state.go('eo.message', {tag: $stateParams.tag});
+                        });
+
+                        networkActivityTracker.track(promise);
+                    };
+                }
             }
         }
     })
@@ -414,29 +425,57 @@ angular.module("proton.routes", [
     .state("eo.message", {
         url: "/eo/message/:tag",
         resolve: {
-            token: function(Message, $stateParams, pmcw) {
-                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
-                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+            message: function($stateParams, $q, Eo, pmcw) {
+                var deferred = $q.defer();
+                var token_id = $stateParams.tag;
+                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
 
-                Message.token({id: $stateParams.tag}).then(function(encryptedToken) {
-                    return pmcw.decryptMessage(encryptedToken, decryptedPassword);
-                });
-            },
-            message: function(Message) {
-                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
-                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+                Eo.message(decrypted_token, token_id).then(function(result) {
+                    var message = result.data.Message;
 
-                Message.message({id: $stateParams.tag}).then(function(encryptedMessage) {
-                    return pmcw.decryptMessage(encryptedMessage, decryptedPassword);
+                    pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                        message.Body = body;
+
+                        deferred.resolve(message);
+                    });
                 });
+
+                return deferred.promise;
             }
         },
         views: {
-            "main@": {
-                templateUrl: "templates/layout/outsideMessage.tpl.html"
-            },
-            "panel@eo.message": {
-                templateUrl: "templates/views/outside.message.tpl.html"
+            "content": {
+                templateUrl: "templates/views/outside.message.tpl.html",
+                controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
+                    $scope.message = message;
+
+                    var content = $scope.message.Body;
+
+                    content = tools.clearImageBody(content);
+                    $scope.imagesHidden = true;
+                    content = tools.replaceLineBreaks(content);
+                    content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
+
+                    $scope.content = content;
+
+                    $timeout(function() {
+                        tools.transformLinks('message-body');
+                        $scope.containsImage = tools.containsImage(content);
+                    });
+
+                    $scope.reply = function() {
+                        $state.go('eo.reply', {tag: $stateParams.tag});
+                    };
+
+                    $scope.toggleImages = function() {
+                        if($scope.imagesHidden === true) {
+                            $scope.content = tools.fixImages($scope.content);
+                        } else {
+                            $scope.content = tools.breakImages($scope.content);
+                        }
+                    };
+                }
             }
         }
     })
@@ -444,26 +483,35 @@ angular.module("proton.routes", [
     .state("eo.reply", {
         url: "/eo/reply/:tag",
         resolve: {
-            token: function(Message, $stateParams, pmcw) {
-                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
-                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+            message: function($stateParams, $q, Eo, pmcw) {
+                var deferred = $q.defer();
+                var token_id = $stateParams.tag;
+                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
 
-                Message.token({id: $stateParams.tag}).then(function(encryptedToken) {
-                    return pmcw.decryptMessage(encryptedToken, decryptedPassword);
-                });
-            },
-            message: function(Message) {
-                var encryptedPassword = window.sessionStorage['proton:encrypted_password'];
-                var decryptedPassword = pmcw.decode_utf8_base64(encrypted_password);
+                Eo.message(decrypted_token, token_id).then(function(result) {
+                    var message = result.data.Message;
 
-                Message.message({id: $stateParams.tag}).then(function(encryptedMessage) {
-                    return pmcw.decryptMessage(encryptedMessage, decryptedPassword);
+                    pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                        message.Body = body;
+
+                        deferred.resolve(message);
+                    });
                 });
+
+                return deferred.promise;
             }
         },
         views: {
-            "content@": {
-                templateUrl: "templates/views/outside.reply.tpl.html"
+            "content": {
+                templateUrl: "templates/views/outside.reply.tpl.html",
+                controller: function($scope, message) {
+                    $scope.message = message;
+
+                    $scope.send = function() {
+
+                    };
+                }
             }
         }
     })

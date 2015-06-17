@@ -428,14 +428,12 @@ angular.module("proton.models.message", ["proton.constants"])
         clearImageBody: function(body) {
             if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
-            }
-            else {
+            } else {
                 this.containsImage = true;
                 if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
                     this.imagesHidden = true;
                     body = tools.breakImages(body);
-                }
-                else {
+                } else {
                     this.imagesHidden = false;
                     body = tools.fixImages(body);
                 }

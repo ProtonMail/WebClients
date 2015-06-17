@@ -9,6 +9,7 @@ angular.module("proton.controllers.Outside", [
     $state,
     $stateParams,
     $q,
+    $translate,
     authentication,
     CONSTANTS,
     networkActivityTracker,
@@ -17,14 +18,15 @@ angular.module("proton.controllers.Outside", [
     encryptedToken,
     token,
     message
-) {    
+) {
     $scope.unlock = function() {
+        console.log('unlock');
         var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
 
         promise.then(function(decryptToken) {
+            console.log(decryptToken);
             window.sessionStorage["proton:encrypted_password"] = $scope.MessagePassword;
-
-            deferred.resolve(result);
+            $state.go('eo.message');
         });
 
         networkActivityTracker.track(promise);
