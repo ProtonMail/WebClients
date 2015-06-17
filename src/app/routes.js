@@ -521,7 +521,7 @@ angular.module("proton.routes", [
         views: {
             "content": {
                 templateUrl: "templates/views/outside.reply.tpl.html",
-                controller: function($scope, $stateParams, Eo, message) {
+                controller: function($scope, $state, $stateParams, Eo, message) {
                     $scope.message = message;
                     $scope.message.Body = '';
 
@@ -538,6 +538,10 @@ angular.module("proton.routes", [
                             'DataPacket[]': []
                         };
                         Eo.reply(decrypted_token, token_id, data);
+                    };
+
+                    $scope.cancel = function() {
+                        $state.go('eo.message', {tag: $stateParams.tag});
                     };
                 }
             }
