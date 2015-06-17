@@ -521,12 +521,23 @@ angular.module("proton.routes", [
         views: {
             "content": {
                 templateUrl: "templates/views/outside.reply.tpl.html",
-                controller: function($scope, message) {
+                controller: function($scope, $stateParams, Eo, message) {
                     $scope.message = message;
                     $scope.message.Body = '';
 
+                    var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                    var token_id= $stateParams.tag;
+
                     $scope.send = function() {
-                        // TODO
+                        var data = {
+                            'Body': '',
+                            'ReplyBody': '',
+                            'Filename[]': [],
+                            'MIMEType[]': [],
+                            'KeyPackets[]': [],
+                            'DataPacket[]': []
+                        };
+                        Eo.reply(decrypted_token, token_id, data);
                     };
                 }
             }
