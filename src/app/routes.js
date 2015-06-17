@@ -356,23 +356,35 @@ angular.module("proton.routes", [
 
     .state("support.confirm-new-password", {
         url: "/confirm-new-password/:token",
-        onEnter: function($stateParams, $state, User) {
+        onEnter: function($stateParams, $state, Reset) {
             var token = $stateParams.token;
 
             // Check if reset token is valid
-            User.checkResetToken({
+            Reset.validateResetToken({
                 token: token
-            }).$promise.catch(function(result) {
-                if (result.error) {
+            }).then(
+                function(response) {
+                    console.log(response.data);
+                    if (response.data.Error) {
+                        $state.go("support.message", {
+                            data: {
+                                title: response.data.Error,
+                                content: response.data.Error,
+                                type: "alert-danger"
+                            }
+                        });
+                    }
+                },
+                function() {
                     $state.go("support.message", {
                         data: {
-                            title: result.error,
-                            content: result.error_description,
+                            title: 'Reset Error',
+                            content: 'Sorry, we are unable to reset your password right now. Please try the link again in a few minutes.',
                             type: "alert-danger"
                         }
                     });
                 }
-            });
+            );
         },
         views: {
             "panel@support": {

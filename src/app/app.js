@@ -31,6 +31,7 @@ angular.module("proton", [
     "proton.models.message",
     "proton.models.contact",
     "proton.models.user",
+    "proton.models.reset",
     "proton.models.bug",
     "proton.models.setting",
     "proton.models.attachment",
@@ -94,6 +95,7 @@ angular.module("proton", [
     // var console = {};
     // console.log = function(){};
 
+
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
     });
@@ -114,6 +116,7 @@ angular.module("proton", [
     // });
 
     $rootScope.browser = tools.getBrowser;
+    $rootScope.terminal = false;
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ _.string.capitalize(pageName) }" +
@@ -224,10 +227,15 @@ angular.module("proton", [
     $state,
     $stateParams
 ) {
+    var terminalInput = document.querySelector("terminalInput");
     Mousetrap.bind(["ctrl+n", "c"], function() {
         if ($state.includes("secured.**")) {
             $state.go("secured.compose");
         }
+    }); 
+    Mousetrap.bind(["t t t"], function() {
+        // TODO, command line ?
+        // $('#terminal').toggle().find('input').focus();
     });
     Mousetrap.bind(["i"], function() {
         if ($state.includes("secured.**")) {

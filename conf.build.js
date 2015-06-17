@@ -78,7 +78,8 @@ module.exports = {
       "tooltip",
       "dropdown",
       "modal",
-      "transition"
+      "transition",
+      "popover"
     ],
 
     required_js: [],

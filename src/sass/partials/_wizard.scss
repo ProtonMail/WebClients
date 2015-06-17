@@ -1,27 +1,25 @@
 #pagination {
     clear:both;
-    width:150px;
-    margin:25px auto 0;
+    margin:0 auto;
     padding:0;
-}
-
-#pagination li {
-    list-style:none;
-    float:left;
-    margin:0 2px;
-}
-
-#pagination li a {
-    display:block;
-    width:10px;
-    height:10px;
-    text-indent:-10000px;
-    background: #C1C1C1;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
-
-#pagination li a.active {
-    background: #72709D;
+    text-align: center;
+    display: block;
+    li {
+        list-style:none;
+        margin:0 .5rem;
+        display: inline-block;
+        a {
+            display: inline-block;
+            width:1.5rem;
+            height:1.5rem;
+            text-indent:-10000px;
+            background: #C1C1C1;
+            border-radius: 1.5rem;
+            -moz-border-radius: 1.5rem;
+            -webkit-border-radius: 1.5rem;
+            &.active {
+                background: #72709D;
+            }
+        }
+    }
 }
