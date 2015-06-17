@@ -86,8 +86,8 @@ angular.module("proton.filters.strings",[])
         var bytes;
         var unit = "";
         var kb = 1024;
-        var mb = kb*1000;
-        var gb = mb*1000;
+        var mb = kb*kb;
+        var gb = mb*kb;
 
         if (_.isNumber(input)) {
             bytes = input;
@@ -106,19 +106,19 @@ angular.module("proton.filters.strings",[])
             if (!!!withoutUnit) {
                 unit = " KB";
             }
-            return (bytes/1024).toFixed(1) + unit;
+            return (bytes/1024).toFixed(0) + unit;
         }
         else if (bytes < gb) {
             if (!!!withoutUnit) {
                 unit = " MB";
             }
-            return (bytes/1024/100).toFixed(1) + unit;
+            return (bytes/1024/1024).toFixed(2) + unit;
         }
         else {
             if (!!!withoutUnit) {
                 unit = " GB";
             }
-            return (bytes/1024/100000).toFixed(1) + unit;
+            return (bytes/1024/1024/1024).toFixed(2) + unit;
         }
 
     };

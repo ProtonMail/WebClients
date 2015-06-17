@@ -555,10 +555,10 @@ angular.module("proton.routes", [
                                 var data = {
                                     'Body': result.Body,
                                     'ReplyBody': result.ReplyBody,
-                                    'Filename[]': [],
-                                    'MIMEType[]': [],
-                                    'KeyPackets[]': [],
-                                    'DataPacket[]': []
+                                    'Filename[]': [], // TODO
+                                    'MIMEType[]': [], // TODO
+                                    'KeyPackets[]': [], // TODO
+                                    'DataPacket[]': [] // TODO
                                 };
 
                                 Eo.reply(decrypted_token, token_id, data);
