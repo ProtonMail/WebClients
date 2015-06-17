@@ -104,6 +104,10 @@ angular.module("proton.controllers.Settings", [
                 }
                 else {
                     notify($translate.instant('LOGIN_PASSWORD_UPDATED'));
+                    $scope.oldLoginPassword = '';
+                    $scope.newLoginPassword = '';
+                    $scope.confirmLoginPassword = '';
+                    form.$setUntouched();
                 }
             }, function(response) {
                 $log.error(response);
@@ -130,6 +134,10 @@ angular.module("proton.controllers.Settings", [
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
                     notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
+                    $scope.oldMailboxPassword = '';
+                    $scope.newMailboxPassword = '';
+                    $scope.confirmMailboxPassword = '';
+                    form.$setUntouched();
                 }, function(response) {
                     $log.error(response);
                 })
