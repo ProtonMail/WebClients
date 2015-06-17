@@ -3,7 +3,12 @@ angular.module("proton.models.eo", [])
 .factory("Eo", function($http, authentication) {
     return {
         token: function(tokenID) {
-            return $http.get(authentication.baseURL + '/eo/token/' + tokenID);
+            return $http.get(authentication.baseURL + '/eo/token/' + encodeURIComponent(tokenID), {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                    'Accept': 'application/vnd.protonmail.v1+json'
+                }
+            });
         },
         message: function(decrypted_token, token_id) {
             return $http.get(authentication.baseURL + '/eo/message', {
