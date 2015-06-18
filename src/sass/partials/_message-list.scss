@@ -101,7 +101,7 @@ table.message-list {
                     width: 7rem;
                     display: inline-block;
                     text-align: left;
-                    padding: 0 .75rem;
+                    padding: 0 5px;
                     font-weight: 400;
                     font-size: .9em;
                     overflow: hidden;
@@ -137,7 +137,6 @@ table.message-list {
               padding: 0 .25rem;
               display: inline-block;
               position: relative;
-              top: -1px;
             }
         }
         &.unread {
