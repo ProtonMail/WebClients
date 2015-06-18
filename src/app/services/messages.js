@@ -62,6 +62,7 @@ angular.module("proton.messages", [])
                             if (msg.ID === id) {
                                 // replacing matching message excerpts with
                                 // this new detailed one.
+                                message.Selected = msg.Selected;
                                 list.splice(i, 1, message);
 
                                 // Stopping iteration as soon as there's a match

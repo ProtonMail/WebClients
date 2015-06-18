@@ -887,6 +887,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setExpiration = function(message, params) {
+        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
+            return tools.isEmailAddressPM(email.Address) !== true;
+        });
+
         if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
             notify('The maximum expiration is 4 weeks.');
             return false;
@@ -897,7 +901,7 @@ angular.module("proton.controllers.Messages", [
             return false;
         }
 
-        if (parseInt(params.expiration) > 0 && message.IsEncrypted !== 1) {
+        if (parseInt(params.expiration) > 0 && message.IsEncrypted !== 1 && emailsNonPM.length > 0) {
             notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
             message.panelName = 'encrypt'; // switch panel
             return false;
@@ -1042,7 +1046,7 @@ angular.module("proton.controllers.Messages", [
                                 // console.log('4');
 
                                 pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-                                    
+
                                     // console.log('5');
 
                                     var body = result;
