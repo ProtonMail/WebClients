@@ -98,6 +98,7 @@ angular.module("proton.attachments", [
                     attachmentData.AttachmentID = response.AttachmentID;
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
+                        // console.log(sessionKey);
                         deferred.resolve(attachmentData);
                     });
                 }

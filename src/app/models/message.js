@@ -349,6 +349,7 @@ angular.module("proton.models.message", ["proton.constants"])
             var packets = [];
 
             _.each(this.Attachments, function(element) {
+                // console.log('????', element);
                 packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, key, []).then(function (keyPacket) {
                     return {
                         ID: element.AttachmentID,
