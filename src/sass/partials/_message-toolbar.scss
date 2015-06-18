@@ -1,5 +1,5 @@
 .message-toolbar {
-  $message-toolbar-bg: $base-color-darker;
+  $message-toolbar-bg: #fff;
   $color: invert($message-toolbar-bg);
   background: $message-toolbar-bg;
   box-shadow: 0 1px rgba(0,0,0,.2);
@@ -7,23 +7,42 @@
   z-index: 2;
   @include clearfix;
 
+  .fa {
+    font-size: 16px;
+    vertical-align: middle;
+    &.fa-caret-down {
+      font-size: 1rem;
+    }
+  }
+
   > ul {
     > li {
-      border-right: 1px solid rgba(0,0,0,.2);
+      // border-right: 1px solid rgba(0,0,0,.2);
+      .backBtn {
+        width: 4rem;
+        text-align: center;
+        padding: 0;
+      }
       a {
         color: $color;
+      }
+      &.seperator {
+        border-right: 1px solid #ccc;
       }
       &.selectAll {
         label {
           display: block;
-          padding: 0 15px;
+          padding: 0;
+          width: 4rem;
+          text-align: center;
           line-height: $row-height;
           height: $row-height;
           cursor: pointer;
           margin: 0;
         }
         padding: 0;
-        @include base-gradient-dark;
+        background: #fff;
+        border-right: 1px solid #ccc;
       }
       &.open > a {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -82,12 +101,15 @@
 
       > a {
         // TODO CHANGE COLOR AND HOVER STYLES USING EXISTING CLASSES
-        padding: 0 12px;
+        padding: 0 1rem;
         line-height: $row-height;
-        @include base-gradient-dark;
+        display: inline-block;
+        text-align: center;
+        background: #fff;
 
         &:hover {
-          @include base-gradient;
+          color: #000;
+          background: #fff;
         }
 
         &:active {
@@ -119,7 +141,7 @@
         border-top: 1px solid #d1d1d1;
         margin-left: -1px;
         padding: 0;
-        top: 98%;
+        top: 100%;
         li:not(:last-child) {
           border-bottom: 1px solid #ddd;
         }

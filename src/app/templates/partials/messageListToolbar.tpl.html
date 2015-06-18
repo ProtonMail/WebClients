@@ -1,141 +1,180 @@
 <div class="message-toolbar">
     <ul class="nav navbar-nav">
-        <li class="selectAll">
+        <li class="seperator selectAll">
             <label>
-                <input type="checkbox" name="selectAll" ng-model="allSelected()" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" pt-placement="right" />
+                <input 
+                type="checkbox" 
+                name="selectAll" 
+                ng-model="allSelected()" 
+                ng-click="selectAllMessages()" 
+                pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" 
+                pt-placement="right" />
             </label>
         </li>
-        <li ng-if="pageName != 'inbox'">
-            <a href ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: messagesSelected.length == 0 }">
-                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
+        <li 
+        ng-if="pageName != 'inbox'"
+        pt-tooltip="{{ 'INBOX' | translate }}"
+        pt-placement="bottom">
+            <a 
+            href 
+            ng-click="moveMessagesTo('inbox')" 
+            ng-class="{ disabled: messagesSelected.length == 0 }">
+                <i class="fa fa-fw fa-inbox"></i>
             </a>
         </li>
-        <li ng-if="pageName != 'archive'">
-            <a href="" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: messagesSelected.length == 0 }">
-                <i class="fa fa-fw fa-archive"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'ARCHIVE' | translate }}</span>
+        <li 
+        ng-if="pageName != 'archive'"
+        pt-tooltip="{{ 'ARCHIVE' | translate }}"
+        pt-placement="bottom">
+            <a 
+            href 
+            ng-click="moveMessagesTo('archive')" 
+            ng-class="{ disabled: messagesSelected.length == 0 }">
+                <i class="fa fa-fw fa-archive"></i>
             </a>
         </li>
-        <li ng-if="pageName != 'spam'">
-            <a href ng-click="moveMessagesTo('spam')" ng-class="{ disabled: messagesSelected.length == 0 }">
-                <i class="fa fa-fw fa-ban"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
+        <li 
+        ng-if="pageName != 'spam'"
+        pt-tooltip="{{ 'SPAM' | translate }}"
+        pt-placement="bottom">
+            <a 
+            href 
+            ng-click="moveMessagesTo('spam')" 
+            ng-class="{ disabled: messagesSelected.length == 0 }">
+                <i class="fa fa-fw fa-ban"></i>
             </a>
         </li>
-        <li ng-if="pageName != 'trash'">
-            <a href ng-click="moveMessagesTo('trash')" ng-class="{ disabled: messagesSelected.length == 0 }">
-                <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'TRASH' | translate }}</span>
+        <li 
+        ng-if="pageName != 'trash'"
+        pt-tooltip="{{ 'TRASH' | translate }}"
+        pt-placement="bottom">
+            <a 
+            href 
+            ng-click="moveMessagesTo('trash')" 
+            ng-class="{ disabled: messagesSelected.length == 0 }">
+                <i class="fa fa-fw fa-trash-o"></i>
             </a>
         </li>
-        <li ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
-            <a href ng-class="{ disabled: messagesSelected.length == 0 }" ng-click="moveMessagesTo('delete')">
-                <i class="fa fa-times-circle visible-md-inline-block visible-lg-inline-block"></i> {{ 'DELETE' | translate }}
+        <li 
+        ng-if="('secured.spam' | isState) || ('secured.trash' | isState)">
+            <a 
+            href 
+            ng-class="{ disabled: messagesSelected.length == 0 }" 
+            ng-click="moveMessagesTo('delete')" 
+            pt-tooltip="{{ 'DELETE' | translate }}"
+            pt-placement="bottom">
+                <i class="fa fa-times-circle"></i>
             </a>
         </li>
-        <li>
+        <li class="seperator">
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: messagesSelected.length == 0 }">
+                {{ 'MARK_AS_READ' | translate }}
+            </a>
+        </li>        
+        <li class="seperator">
             <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messagesSelected.length == 0 }">
-                <i class="fa fa-fw fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'LABELS' | translate }}</span> <i class="fa fa-caret-down"></i>
+                <i class="fa fa-fw fa-tag"></i> 
+                <i class="fa fa-caret-down"></i>
             </a>
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
-        <li>
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messagesSelected.length == 0 }">
+        <li class="seperator">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
                 {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
                 <li>
-                    <a href="" ng-click="setMessagesReadStatus(false)">
-                        <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
+                    <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: messagesSelected.length == 0 }">
+                        {{ 'MARK_AS_UNREAD' | translate }}
                     </a>
                 </li>
-                <li>
-                    <a href="" ng-click="setMessagesReadStatus(true)">
-                        <i class="fa fa-eye"></i> {{ 'MARK_AS_READ' | translate }}
+                <li class="dropdown-submenu">
+                    <a href class="dropdown-toggle" data-toggle="dropdown">
+                        {{ 'SHOW' | translate }} <i class="fa fa-caret-right pull-right"></i>
                     </a>
-                </li>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href ng-click="filterBy('unread')" ng-class="{selected: selectedFilter == 'unread'}">
+                                <i class="fa fa-fw fa-eye-slash"></i> {{ 'UNREAD' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedFilter == 'read'}">
+                            <a href ng-click="filterBy('read')">
+                                <i class="fa fa-fw fa-eye"></i> {{ 'READ' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-if="selectedFilter" class="clear">
+                            <a href ng-click="clearFilter()">
+                                <i class="fa fa-fw fa-ban"></i> {{ 'SHOW_ALL' | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>                
+                <li class="dropdown-submenu">
+                    <a href class="dropdown-toggle" data-toggle="dropdown">
+                        {{ 'SORT' | translate }} <i class="fa fa-caret-right pull-right"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-class="{selected: selectedOrder == 'subject'}">
+                            <a href ng-click="orderBy('subject')">
+                                <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == '-subject'}">
+                            <a href ng-click="orderBy('-subject')">
+                                <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == 'from'}">
+                            <a href ng-click="orderBy('from')">
+                                <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == '-from'}">
+                            <a href ng-click="orderBy('-from')">
+                                <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == 'size'}">
+                            <a href ng-click="orderBy('size')">
+                                <i class="fa fa-fw fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == '-size'}">
+                            <a href ng-click="orderBy('-size')">
+                                <i class="fa fa-fw fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == '-date'}">
+                            <a href ng-click="orderBy('-date')">
+                                <i class="fa fa-fw fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                        <li ng-class="{selected: selectedOrder == 'date'}">
+                            <a href ng-click="orderBy('date')">
+                                <i class="fa fa-fw fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
+                                <i class="fa fa-fw fa-check"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>                
             </ul>
-        </li>
-        <li>
-            <a href class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-filter visible-md-inline-block visible-lg-inline-block"></i> {{ 'FILTER' | translate }} <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li ng-class="{selected: selectedFilter == 'unread'}">
-                    <a href ng-click="filterBy('unread')">
-                        <i class="fa fa-fw fa-eye-slash"></i> {{ 'UNREAD' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedFilter == 'read'}">
-                    <a href ng-click="filterBy('read')">
-                        <i class="fa fa-fw fa-eye"></i> {{ 'READ' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-if="selectedFilter" class="clear">
-                    <a href ng-click="clearFilter()">
-                        <i class="fa fa-fw fa-ban"></i> {{ 'SHOW_ALL' | translate }}
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-sort visible-md-inline-block visible-lg-inline-block"></i> {{ 'SORT' | translate }} <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li ng-class="{selected: selectedOrder == 'subject'}">
-                    <a href ng-click="orderBy('subject')">
-                        <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == '-subject'}">
-                    <a href ng-click="orderBy('-subject')">
-                        <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == 'from'}">
-                    <a href ng-click="orderBy('from')">
-                        <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == '-from'}">
-                    <a href ng-click="orderBy('-from')">
-                        <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == 'size'}">
-                    <a href ng-click="orderBy('size')">
-                        <i class="fa fa-fw fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == '-size'}">
-                    <a href ng-click="orderBy('-size')">
-                        <i class="fa fa-fw fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == '-date'}">
-                    <a href ng-click="orderBy('-date')">
-                        <i class="fa fa-fw fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-                <li ng-class="{selected: selectedOrder == 'date'}">
-                    <a href ng-click="orderBy('date')">
-                        <i class="fa fa-fw fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
-                        <i class="fa fa-fw fa-check"></i>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        </li>        
     </ul>
     <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount > 0">
-        <li class="pageDropdown">
-            <a href ng-click="showPagination = !showPagination">{{start()}} - {{end()}} of {{messageCount}} <i class="fa fa-caret-down"></i></a>
+        <li class="pageDropdown seperator">
+            <a href ng-click="showPagination = !showPagination">
+                {{start()}} - {{end()}} of {{messageCount}} <i class="fa fa-caret-down"></i>
+            </a>
             <pagination ng-show="showPagination" ng-change="goToPage(page)" page="currentPage" total-items="messageCount" items-per-page="messagesPerPage" ng-model="page" class="pagination-sm" boundary-links="false" direction-links="false" ></pagination>
         </li>
         <li class="prev-page">
