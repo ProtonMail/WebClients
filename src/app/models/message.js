@@ -344,13 +344,19 @@ angular.module("proton.models.message", ["proton.constants"])
             return deferred.promise;
         },
 
-        encryptPackets: function(key) {
+        encryptPackets: function(keys, passwords) {
             var deferred = $q.defer();
             var packets = [];
+            if (keys===(undefined||'')) {
+                keys = [];
+            }
+            if (passwords===(undefined||'')) {
+                passwords = [];
+            }
+            console.log(keys, passwords);
 
             _.each(this.Attachments, function(element) {
-                // console.log('????', element);
-                packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, key, []).then(function (keyPacket) {
+                packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
                     return {
                         ID: element.AttachmentID,
                         KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))

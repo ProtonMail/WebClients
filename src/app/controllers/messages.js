@@ -1024,17 +1024,34 @@ angular.module("proton.controllers.Messages", [
                             });
                         }));
                     } else { // outside user
+
+                        // console.log('1');
+
                         outsiders = true;
 
                         if(message.IsEncrypted === 1) {
+
+                            // console.log('2');
+
                             var replyToken = message.generateReplyToken();
                             var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
+                            // console.log('3');
+
                             promises.push(replyTokenPromise.then(function(encryptedToken) {
+
+                                // console.log('4');
+
                                 pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                    
+                                    // console.log('5');
+
                                     var body = result;
 
-                                    message.encryptPackets(message.Password).then(function(result) {
+                                    message.encryptPackets('', message.Password).then(function(result) {
+
+                                        // console.log('6');
+
                                         var keyPackets = result;
 
                                         return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});

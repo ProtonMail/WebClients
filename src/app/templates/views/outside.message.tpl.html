@@ -43,7 +43,7 @@
         </div>
         <div class="panel-body">
             <div class="list-group">
-                <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'list-group-item-info': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
+                <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active ': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
                     <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
                     <i ng-show="attachment.decrypted" class="fa fa-download"></i>
                     <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
