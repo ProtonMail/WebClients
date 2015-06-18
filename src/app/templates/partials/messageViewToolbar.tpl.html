@@ -1,55 +1,78 @@
 <div class="message-toolbar hidden-xs">
     <ul class="nav navbar-nav">
-        <li>
-            <a href ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
+        <li class="seperator">
+            <a href class="backBtn" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
                 <i class="fa fa-fw fa-level-up fa-rotate-270"></i>
             </a>
         </li>
-        <li ng-if="!message.IsRead">
-            <a href ng-click="markAsRead()">
-                <i class="fa fa-fw fa-eye"></i> <span class="visible-md-inline-block">{{ 'READ' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_READ' | translate }}</span>
+        <li 
+            ng-if="message.location() != 'archive'">
+            <a 
+            href 
+            pt-tooltip="{{ 'ARCHIVE' | translate }}" 
+            pt-placement="bottom" 
+            ng-click="moveMessageTo('inbox')">
+                <i class="fa fa-fw fa-archive"></i>
             </a>
         </li>
-        <li ng-if="message.IsRead">
-            <a href ng-click="markAsUnread()">
-                <i class="fa fa-fw fa-eye-slash"></i> <span class="visible-md-inline-block">{{ 'UNREAD' | translate }}</span><span class="visible-lg-inline-block">{{ 'MARK_AS_UNREAD' | translate }}</span>
-            </a>
-        </li>
-        <li ng-if="message.location() != 'inbox'">
-            <a href ng-click="moveMessageTo('inbox')">
-                <i class="fa fa-fw fa-inbox"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'INBOX' | translate }}</span>
-            </a>
-        </li>
-        <li ng-if="message.location() != 'archive'">
-            <a href="" ng-click="moveMessageTo('inbox')">
-                <i class="fa fa-fw fa-archive"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'ARCHIVE' | translate }}</span>
+        <li 
+            ng-if="message.location() != 'spam'">
+            <a 
+            href 
+            pt-tooltip="{{ 'SPAM' | translate }}" 
+            pt-placement="bottom" 
+            ng-click="moveMessageTo('spam')">
+                <i class="fa fa-fw fa-ban"></i>
             </a>
         </li>
         <li ng-if="message.location() != 'trash'">
-            <a href ng-click="moveMessageTo('trash')">
-                <i class="fa fa-fw fa-trash-o"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'TRASH' | translate }}</span>
+            <a 
+            href 
+            pt-tooltip="{{ 'TRASH' | translate }}" 
+            pt-placement="bottom" 
+            ng-click="moveMessageTo('trash')">
+                <i class="fa fa-fw fa-trash-o"></i>
+            </a>
+        </li>        
+        <li 
+            ng-if="message.IsRead" class="seperator">
+            <a 
+            href 
+            ng-click="markAsUnread()">
+                {{ 'MARK_AS_READ' | translate }}
             </a>
         </li>
-        <li ng-if="message.location() != 'spam'">
-            <a href ng-click="moveMessageTo('spam')">
-                <i class="fa fa-fw fa-ban"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'SPAM' | translate }}</span>
+        <li 
+            ng-if="message.location() != 'inbox'">
+            <a 
+            href 
+            pt-tooltip="{{ 'INBOX' | translate }}" 
+            pt-placement="bottom" 
+            ng-click="moveMessageTo('inbox')">
+                <i class="fa fa-fw fa-inbox"></i>
             </a>
         </li>
-        <li ng-if="message.location() == 'spam' || message.location() == 'trash'">
-            <a href ng-click="moveMessageTo('delete')">
-                <i class="fa fa-times-circle"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'DELETE' | translate }}</span>
+        <li 
+            ng-if="message.location() == 'spam' || message.location() == 'trash'">
+            <a 
+            href 
+            pt-tooltip="{{ 'DELETE' | translate }}" 
+            pt-placement="bottom" 
+            ng-click="moveMessageTo('delete')">
+                <i class="fa fa-times-circle"></i>
             </a>
         </li>
-        <li>
+        <li class="seperator">
             <a href="" ng-click="openLabels(message);" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-tag"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'LABELS' | translate }}</span> <i class="fa fa-caret-down"></i>
+                <i class="fa fa-fw fa-tag"></i> 
+                <i class="fa fa-caret-down"></i>
             </a>
             <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
         </li>
-        <li>
+        <li class="seperator">
             <a href class="dropdown-toggle" data-toggle="dropdown">
-         {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
-      </a>
+                {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
+            </a>
             <ul class="dropdown-menu" role="menu">
                 <li>
                     <a href="" ng-click="print()">
@@ -85,7 +108,7 @@
                 <i class="fa fa-reply-all"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY_ALL' | translate }}</span>
             </a>
         </li>
-        <li>
+        <li class="seperator">
             <a href ng-click="forward(message)">
                 <i class="fa fa-mail-forward"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'FORWARD' | translate }}</span>
             </a>
