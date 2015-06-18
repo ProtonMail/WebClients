@@ -1,6 +1,17 @@
 angular.module("proton.networkActivity", ["proton.errorReporter"])
 .factory("networkActivityTracker", function ($log, errorReporter, notify) {
   var promises = [];
+  var notifyError = function(result) {
+      if(angular.isDefined(result.Error) || angular.isDefined(result.data.Error)) {
+          var message = result.Error || result.data.Error;
+
+          notify({
+              message: message,
+              classes: 'notification-danger'
+          });
+          $log.error(result);
+      }
+  };
   var api = {
     loading: function () {
       return !_.isEmpty(promises);
@@ -8,20 +19,15 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
     track: function (promise) {
       errorReporter.clear();
       promises = _.union(promises, [promise]);
-      promise.catch(function(result) {
-          if(angular.isDefined(result.Error)) {
-              notify({
-                  message: result.Error,
-                  classes: 'notification-danger'
-              });
-              $log.error(result);
-          }
-      });
+      promise.then(function(result) { notifyError(result); });
+      promise.catch(function(result) { notifyError(result); });
       promise.finally(function () {
-        promises = _.without(promises, promise);
+          promises = _.without(promises, promise);
       });
+
       return promise;
     }
   };
+
   return api;
 });
