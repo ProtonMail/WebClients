@@ -24,8 +24,8 @@
             <th>IP</th>
         </tr>
     </thead>
-    <tbody ng-repeat="log in logs">
-        <tr>
+    <tbody>
+        <tr ng-repeat="log in logs">
             <th scope="row">
                 <span ng-show="{{ log.event == 0 }}" class="label label-danger">Login Failed</span>
                 <span ng-show="{{ log.event == 1 }}" class="label label-success">Login Success</span>
