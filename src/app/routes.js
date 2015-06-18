@@ -310,7 +310,7 @@ angular.module("proton.routes", [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication, $rootScope) {
-                if (!$rootScope.user) { 
+                if (!$rootScope.user) {
                     return authentication.fetchUserInfo();
                 }
                 else {
@@ -431,8 +431,6 @@ angular.module("proton.routes", [
                             window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.MessagePassword);
                             $state.go('eo.message', {tag: $stateParams.tag});
                         });
-
-                        networkActivityTracker.track(promise);
                     };
                 }
             }
@@ -539,23 +537,33 @@ angular.module("proton.routes", [
         views: {
             "content": {
                 templateUrl: "templates/views/outside.reply.tpl.html",
-                controller: function($scope, $state, $stateParams, Eo, message) {
+                controller: function($scope, $state, $stateParams, Eo, Message, message, pmcw) {
                     $scope.message = message;
                     $scope.message.Body = '';
 
                     var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+                    var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
                     var token_id= $stateParams.tag;
 
                     $scope.send = function() {
-                        var data = {
-                            'Body': '',
-                            'ReplyBody': '',
-                            'Filename[]': [],
-                            'MIMEType[]': [],
-                            'KeyPackets[]': [],
-                            'DataPacket[]': []
-                        };
-                        Eo.reply(decrypted_token, token_id, data);
+                        Message.getPublicKeys(message.SenderAddress).then(function(keys) {
+                            var publicKey = keys[message.SenderAddress];
+                            var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
+                            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, password);
+
+                            $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
+                                var data = {
+                                    'Body': result.Body,
+                                    'ReplyBody': result.ReplyBody,
+                                    'Filename[]': [], // TODO
+                                    'MIMEType[]': [], // TODO
+                                    'KeyPackets[]': [], // TODO
+                                    'DataPacket[]': [] // TODO
+                                };
+
+                                Eo.reply(decrypted_token, token_id, data);
+                            });
+                        });
                     };
 
                     $scope.cancel = function() {
