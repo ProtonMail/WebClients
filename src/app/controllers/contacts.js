@@ -18,8 +18,7 @@ angular.module("proton.controllers.Contacts", [
     notify
 ) {
     $rootScope.pageName = "Contacts";
-
-    $scope.contacts = contacts.Contacts;
+    $rootScope.user.Contacts = contacts.Contacts;
     $scope.search = '';
     $scope.editing = false;
 
@@ -67,7 +66,7 @@ angular.module("proton.controllers.Contacts", [
                         deletedContacts.push(contact);
                     });
 
-                    $scope.contacts = _.difference($scope.contacts, deletedContacts);
+                    $rootScope.user.Contacts = _.difference($rootScope.user.Contacts, deletedContacts);
 
                     networkActivityTracker.track(
                         Contact.delete({
@@ -76,7 +75,7 @@ angular.module("proton.controllers.Contacts", [
                             _.forEach(response, function(d, i) {
                                 if (JSON.parse(d.Response).Code !== 1000) {
                                     notify(deletedContacts[i].Email +' Not Deleted');
-                                    $scope.contacts.push(deletedContacts[i]);
+                                    $rootScope.user.Contacts.push(deletedContacts[i]);
                                 }
                             });
                             notify($translate.instant('CONTACTS_DELETED'));
@@ -96,7 +95,7 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.addContact = function() {
         openContactModal('Add New Contact', '', '', function(name, email) {
-            var match = _.findWhere($scope.contacts, {Email: email});
+            var match = _.findWhere($rootScope.user.Contacts, {Email: email});
 
             if (match) {
                 notify("Contact exists for this email address");
@@ -114,13 +113,13 @@ angular.module("proton.controllers.Contacts", [
                         Contacts : contactList
                     }).$promise.then(function(response) {
                         if (response[0].Response.Contact) {
-                            $scope.contacts.push(response[0].Response.Contact);
+                            $rootScope.user.Contacts.push(response[0].Response.Contact);
                             notify('Saved');
                         }
                         else {
                             notify(response[0].Response.Error);
                         }
-                        Contact.index.updateWith($scope.contacts);
+                        Contact.index.updateWith($rootScope.user.Contacts);
                         contactModal.deactivate();
                     }, function(response) {
                         $log.error(response);
@@ -134,10 +133,11 @@ angular.module("proton.controllers.Contacts", [
         openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
             var origName = contact.Name;
             var origEmail = contact.Email;
+
             contact.Name = name;
             contact.Email = email;
 
-            var match = _.findWhere($scope.contacts, {Email: email});
+            var match = _.findWhere($rootScope.user.Contacts, {Email: email});
 
             if (match && email !== origEmail) {
                 notify("Contact exists for this email address");
@@ -154,7 +154,7 @@ angular.module("proton.controllers.Contacts", [
                     }).$promise.then(function(response) {
                             contactModal.deactivate();
                             notify($translate.instant('CONTACT_EDITED'));
-                            Contact.index.updateWith($scope.contacts);
+                            Contact.index.updateWith($rootScope.user.Contacts);
                         }, function(response) {
                             notify({
                                 message: response.error
@@ -170,8 +170,8 @@ angular.module("proton.controllers.Contacts", [
     $scope.allSelected = function() {
         var status = true;
 
-        if ($scope.contacts.length > 0) {
-            _.forEach($scope.contacts, function(contact) {
+        if ($rootScope.user.Contacts.length > 0) {
+            _.forEach($rootScope.user.Contacts, function(contact) {
                 if (!!!contact.selected) {
                     status = false;
                 }
@@ -186,7 +186,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.selectAllContacts = function() {
         var status = !!!$scope.allSelected();
 
-        _.forEach($scope.contacts, function(contact) {
+        _.forEach($rootScope.user.Contacts, function(contact) {
             contact.selected = status;
         }, this);
     };
@@ -195,17 +195,17 @@ angular.module("proton.controllers.Contacts", [
         var contactsSelected = $scope.contactsSelected();
 
         if (event.shiftKey) {
-            var start = $scope.contacts.indexOf(_.first(contactsSelected));
-            var end = $scope.contacts.indexOf(_.last(contactsSelected));
+            var start = $rootScope.user.Contacts.indexOf(_.first(contactsSelected));
+            var end = $rootScope.user.Contacts.indexOf(_.last(contactsSelected));
 
             for (var i = start; i < end; i++) {
-                $scope.contacts[i].selected = true;
+                $rootScope.user.Contacts[i].selected = true;
             }
         }
     };
 
     $scope.contactsSelected = function() {
-        return _.filter($scope.contacts, function(contact) {
+        return _.filter($rootScope.user.Contacts, function(contact) {
             return contact.selected === true;
         });
     };
@@ -302,7 +302,7 @@ angular.module("proton.controllers.Contacts", [
                                 duplicates = 0;
                                 _.forEach(response, function(d) {
                                     if (d.Response.Contact) {
-                                        $scope.contacts.push(d.Response.Contact);
+                                        $rootScope.user.Contacts.push(d.Response.Contact);
                                         added++;
                                     }
                                     else {
@@ -312,7 +312,7 @@ angular.module("proton.controllers.Contacts", [
                                 added = added === 1 ? added + ' contact' : added + ' contacts';
                                 duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
                                 notify(added + ' imported, ' + duplicates + ' already in your contact list');
-                                Contact.index.updateWith($scope.contacts);
+                                Contact.index.updateWith($rootScope.user.Contacts);
                             }, function(response) {
                                 $log.error(response);
                             })
@@ -332,7 +332,7 @@ angular.module("proton.controllers.Contacts", [
         var contactsArray = [['Name', 'Email']];
         var csvRows = [];
 
-        _.forEach($scope.contacts, function(contact) {
+        _.forEach($rootScope.user.Contacts, function(contact) {
           contactsArray.push([contact.Name, contact.Email]);
         });
 

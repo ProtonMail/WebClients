@@ -49,6 +49,7 @@ angular.module("proton", [
     "proton.modals",
     "proton.attachments",
     "proton.tools",
+    "proton.contacts",
 
     // Directives
     "proton.tooltip",
@@ -246,7 +247,7 @@ angular.module("proton", [
         if ($state.includes("secured.**")) {
             $state.go("secured.compose");
         }
-    }); 
+    });
     Mousetrap.bind(["t t t"], function() {
         // TODO, command line ?
         // $('#terminal').toggle().find('input').focus();

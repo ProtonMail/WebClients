@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in contacts | filter:search | orderBy:'Name'">
+                <tr ng-repeat="contact in user.Contacts | filter:search | orderBy:'Name'">
                     <td class="text-center hidden-xs">
                         <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                     </td>

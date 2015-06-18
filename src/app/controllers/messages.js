@@ -1162,12 +1162,35 @@ angular.module("proton.controllers.Messages", [
     attachments,
     pmcw,
     CONSTANTS,
-    authentication
+    authentication,
+    contactManager
 ) {
     $scope.message = message;
     $rootScope.pageName = message.Subject;
     $scope.tools = tools;
     $scope.isPlain = false;
+
+    $timeout(function() {
+        if($rootScope.user.AutoSaveContacts === 1) {
+            $scope.saveNewContacts();
+        }
+    });
+
+    $scope.saveNewContacts = function() {
+        var newContacts = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
+            return contactManager.isItNew(email);
+        });
+
+        _.each(newContacts, function(email) {
+            contactManager.add(email);
+            email.Email = email.Address;
+            email.Name = email.Name || email.Address;
+        });
+
+        if (newContacts.length > 0) {
+            contactManager.send(newContacts);
+        }
+    };
 
     $scope.getFrom = function() {
         var result = '';
