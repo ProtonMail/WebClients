@@ -1167,9 +1167,15 @@ angular.module("proton.controllers.Messages", [
         return result;
     };
 
-    $scope.displayContent = function() {
+    $scope.displayContent = function(print) {
         message.clearTextBody().then(function(result) {
-            var content = message.clearImageBody(result);
+            var content;
+
+            if(print === true) {
+                content = result;
+            } else {
+                content = message.clearImageBody(result);
+            }
 
             content = tools.replaceLineBreaks(content);
             content = DOMPurify.sanitize(content, {
