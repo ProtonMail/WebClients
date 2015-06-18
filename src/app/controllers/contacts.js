@@ -139,7 +139,7 @@ angular.module("proton.controllers.Contacts", [
 
             var match = _.findWhere($scope.contacts, {Email: email});
 
-            if (match) {
+            if (match && email !== origEmail) {
                 notify("Contact exists for this email address");
                 contact.Name = origName;
                 contact.Email = origEmail;
