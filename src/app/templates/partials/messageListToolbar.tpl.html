@@ -103,8 +103,8 @@
                         {{ 'SHOW' | translate }} <i class="fa fa-caret-right pull-right"></i>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href ng-click="filterBy('unread')" ng-class="{selected: selectedFilter == 'unread'}">
+                        <li ng-class="{selected: selectedFilter == 'unread'}">
+                            <a href ng-click="filterBy('unread')">
                                 <i class="fa fa-fw fa-eye-slash"></i> {{ 'UNREAD' | translate }}
                                 <i class="fa fa-fw fa-check"></i>
                             </a>
