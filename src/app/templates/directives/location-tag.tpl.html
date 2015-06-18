@@ -1,0 +1,18 @@
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.inbox" class="label label-default">
+    <i class="fa fa-inbox"></i>{{ 'INBOX' | translate }}
+</span>
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.drafts" class="label label-default">
+    <i class="fa fa-file-text-o"></i>{{ 'DRAFTS' | translate }}
+</span>
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.sent" class="label label-default">
+    <i class="fa fa-sign-out"></i>{{ 'SENT' | translate }}
+</span>
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.archive" class="label label-default">
+    <i class="fa fa-archive"></i>{{ 'ARCHIVE' | translate }}
+</span>
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.spam" class="label label-default">
+    <i class="fa fa-ban"></i>{{ 'SPAM' | translate }}
+</span>
+<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.trash" class="label label-default">
+    <i class="fa fa-trash-o"></i>{{ 'TRASH' | translate }}
+</span>

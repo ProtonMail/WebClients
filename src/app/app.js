@@ -58,6 +58,7 @@ angular.module("proton", [
     "proton.fieldMatch",
     "proton.fieldFocus",
     "proton.squire",
+    "proton.locationTag",
     "proton.dropzone",
     "proton.ondrag",
 

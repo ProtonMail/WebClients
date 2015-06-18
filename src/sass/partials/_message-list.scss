@@ -33,7 +33,7 @@ table.message-list {
         white-space: nowrap;
         color: #555;
         background-color: $base-color-dark;
-        @include transition(all, 200ms, ease-in-out);
+        @include transition(all, 0, ease-in-out);
         h4 {
             margin: 0;
             padding: 0;
@@ -96,6 +96,29 @@ table.message-list {
                     color: #999;
                 }
             }
+            &.subject {
+                span.label {
+                    width: 7rem;
+                    display: inline-block;
+                    text-align: left;
+                    padding: 0 .75rem;
+                    font-weight: 400;
+                    font-size: .9em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    float: left;
+                    &.label-default {
+                        background: rgba(0,0,0,.1);
+                        color: #555;
+                        .fa {
+                            display: inline-block;
+                            width: 1rem;
+                            margin-right: .5rem
+                        }
+                    }
+                }
+            }            
             &.size,
             &.when {
                 text-align: right;

@@ -36,12 +36,6 @@ angular.module("proton.controllers.Messages", [
         $scope.unselectAllMessages();
     });
 
-    // TODO this is just for temporary until API works
-    $scope.randLocation = function() {
-        return Math.floor((Math.random()*6)+1);
-    };
-    // END TODO
-
     $scope.showTo = function(message) {
         return (
             $scope.senderIsMe(message) &&
