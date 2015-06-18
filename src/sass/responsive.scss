@@ -65,12 +65,21 @@
 		margin-bottom: 0;
 	}	
 	.composer {
-		top: auto;
-		left: 1rem;
-		right: 1rem;
+		top: 0 !important;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 9999 !important;
+		box-shadow: none;
 		z-index: auto;
 		transition: none !important;
 		overflow: hidden;
+        display: flex;
+        flex-direction: column;		
+		& > .composer-body {
+            flex-grow: 1;
+        }
 		.close-button .fa {
 			color: #fff;
 		}

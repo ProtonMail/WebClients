@@ -1,6 +1,11 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
-        <div class="composer animate" ng-repeat="message in messages" ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message)}" ng-style="composerStyle(message)" ng-click="focusComposer(message)">
+        <div 
+        class="composer animate" 
+        ng-repeat="message in messages" 
+        ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message), 'maximized': message.maximized}" 
+        ng-style="composerStyle(message)" 
+        ng-click="focusComposer(message)">
             <div class="composer-loader" ng-show="message.loading()">
                 <div class="higgs">
                   <div class="orbit">
@@ -15,15 +20,45 @@
                 </div>
             </div>
             <div class="composer-header row">
-                <span class="col-xs-9">{{message.Subject}} &nbsp;</span>
-                <span class="col-xs-3 text-right">
-                    <a href="" ng-show="!!!message.minimized" class="btn btn-sm minimize-button hidden-xs" ng-click="minimize(message)" pt-tooltip="{{ 'MINIMIZE' | translate }}">
+                <span class="col-xs-6">{{message.Subject}} &nbsp;</span>
+                <span class="col-xs-6 text-right">
+                    <a 
+                    href 
+                    ng-show="!!!message.minimized && !!!message.maximized" 
+                    class="btn btn-sm minimize-button hidden-xs" 
+                    ng-click="minimize(message)" 
+                    pt-tooltip="{{ 'MINIMIZE' | translate }}">
                         <i class="fa fa-minus"></i>
                     </a>
-                    <a href="" ng-show="!!message.minimized" class="btn btn-sm minimize-button hidden-xs" ng-click="expand(message)" pt-tooltip="{{ 'EXPAND' | translate }}">
+                    <a 
+                    href 
+                    ng-show="!!message.minimized" 
+                    class="btn btn-sm minimize-button hidden-xs" 
+                    ng-click="normalize(message)" 
+                    pt-tooltip="{{ 'EXPAND' | translate }}">
                         <i class="fa fa-plus"></i>
                     </a>
-                    <a href="" class="btn btn-sm close-button" ng-click="close(message, true)" pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}">
+                    <a 
+                    href 
+                    ng-show="!!!message.maximized" 
+                    class="btn btn-sm maximize-button hidden-xs" 
+                    ng-click="maximize(message)" 
+                    pt-tooltip="{{ 'MAXMIMIZE' | translate }}">
+                        <i class="fa fa-expand fa-rotate-90"></i>
+                    </a>
+                    <a 
+                    href 
+                    ng-show="!!message.maximized" 
+                    class="btn btn-sm maximize-button hidden-xs" 
+                    ng-click="normalize(message)" 
+                    pt-tooltip="{{ 'NORMAL' | translate }}">
+                        <i class="fa fa-compress fa-rotate-90"></i>
+                    </a>                    
+                    <a 
+                    href 
+                    class="btn btn-sm close-button" 
+                    ng-click="close(message, true)" 
+                    pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}">
                         <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>

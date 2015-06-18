@@ -53,6 +53,7 @@ body {
     -webkit-flex-direction: column;
     float: left;
     width: 100%;
+    z-index: 2;
     #content {
         position: relative;
         // z-index: 3000;

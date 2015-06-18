@@ -1087,7 +1087,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.toggleMinimize = function(message) {
         if (!!message.minimized) {
-            $scope.expand(message);
+            $scope.normalize(message);
         } else {
             $scope.minimize(message);
         }
@@ -1096,6 +1096,18 @@ angular.module("proton.controllers.Messages", [
     $scope.minimize = function(message) {
         message.minimized = true;
     };
+
+    $scope.toggleMaximized = function(message) {
+        if (!!message.maximized) {
+            $scope.normalize(message);
+        } else {
+            $scope.maximized(message);
+        }
+    };
+
+    $scope.maximize = function(message) {
+        message.maximized = true;
+    };    
 
     $scope.blur = function(message) {
         $log.info('blurr');
@@ -1107,8 +1119,9 @@ angular.module("proton.controllers.Messages", [
         message.blur = false;
     };
 
-    $scope.expand = function(message) {
+    $scope.normalize = function(message) {
         message.minimized = false;
+        message.maximized = false;
     };
 
     $scope.close = function(message, save) {

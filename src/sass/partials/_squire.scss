@@ -299,5 +299,15 @@ html.angular-squire-iframe {
     background: transparent;
     color: #2b2b2b;
     cursor: text;
+    blockquote {
+      padding: 0 2rem;
+      margin: 2rem 0;
+      font-size: 1em;
+      border-left: none;
+      blockquote blockquote {
+        border-left: 0;
+        padding: 0; 
+      }
+    }
   }
 }

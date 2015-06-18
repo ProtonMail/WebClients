@@ -470,7 +470,21 @@ form#compose {
     right: 10px;
     width: 480px;
     transition: right 600ms linear, opacity 200ms linear;
+    border-radius: $border-radius-base*2;
 
+    &.maximized {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100% !important;
+        z-index: 9999 !important;
+        display: flex;
+        flex-direction: column;
+        & > .composer-body {
+            flex-grow: 1;
+        }
+    }
     @include responsive(xs) {
         width: auto;
         left: 10px;
