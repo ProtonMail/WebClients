@@ -36,6 +36,7 @@ angular.module("proton", [
     "proton.models.setting",
     "proton.models.attachment",
     "proton.models.eo",
+    "proton.models.logs",
 
     // Config
     "proton.config",

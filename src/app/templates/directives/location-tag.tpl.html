@@ -1,18 +1,47 @@
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.inbox" class="label label-default">
-    <i class="fa fa-inbox"></i>{{ 'INBOX' | translate }}
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.inbox" 
+class="label label-default"
+pt-tooltip="{{ 'INBOX' | translate }}"
+pt-placement="right">
+    <i class="fa fa-inbox"></i>
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.drafts" class="label label-default">
-    <i class="fa fa-file-text-o"></i>{{ 'DRAFTS' | translate }}
+
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.drafts" 
+class="label label-default"
+pt-tooltip="{{ 'DRAFTS' | translate }}"
+pt-placement="right">
+    <i class="fa fa-file-text-o"></i>
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.sent" class="label label-default">
-    <i class="fa fa-sign-out"></i>{{ 'SENT' | translate }}
+
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.sent" 
+class="label label-default"
+pt-tooltip="{{ 'SENT' | translate }}"
+pt-placement="right">
+    <i class="fa fa-sign-out"></i>
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.archive" class="label label-default">
-    <i class="fa fa-archive"></i>{{ 'ARCHIVE' | translate }}
+
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.archive" 
+class="label label-default"
+pt-tooltip="{{ 'ARCHIVE' | translate }}"
+pt-placement="right">
+    <i class="fa fa-archive"></i>
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.spam" class="label label-default">
-    <i class="fa fa-ban"></i>{{ 'SPAM' | translate }}
+
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.spam" 
+class="label label-default"
+pt-tooltip="{{ 'SPAM' | translate }}"
+pt-placement="right">
+    <i class="fa fa-ban"></i>
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.trash" class="label label-default">
-    <i class="fa fa-trash-o"></i>{{ 'TRASH' | translate }}
+
+<span 
+ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.trash" 
+class="label label-default"
+pt-tooltip="{{ 'TRASH' | translate }}"
+pt-placement="right">
+    <i class="fa fa-trash-o"></i>
 </span>
