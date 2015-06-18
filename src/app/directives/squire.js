@@ -190,7 +190,7 @@ angular.module("proton.squire", [
             iframe = element.find('iframe');
             menubar = element.find('.menu');
             iframeLoaded = function() {
-                var iframeDoc = iframe[0].contentWindow.document;
+                var iframeDoc = document.getElementById('squireIframe').contentWindow.document;
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
                 editor = scope.editor = new Squire(iframeDoc);
