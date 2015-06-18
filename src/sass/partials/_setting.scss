@@ -9,6 +9,12 @@
         font-size: 1.4rem;
     }
 }
+#logHeader {
+    padding: 1rem 0;
+    .pagination {
+        margin: 0;
+    }
+}
 .list-group {
     list-style-type: none !important;
     .fa-ellipsis-v {

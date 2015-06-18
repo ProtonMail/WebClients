@@ -1,202 +1,41 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-    <a href class="pull-right btn btn-default"><i class="fa fa-download"></i> Download Log</a>
     <h1>Account Access Log</h1>
 
-    <table class="table table-bordered table-striped" id="accessLog">
-    	<colgroup>
-    	<col class="col-xs-1">
-    	<col class="col-xs-7">
-    </colgroup>
+    <div class="clear" id="logHeader">
+    <a href class="pull-right btn btn-default"><i class="fa fa-download"></i> Download Log</a>
+    <pagination 
+    ng-show="{logCount>logItemsPerPage}" 
+    ng-change="loadLogs(page)" 
+    total-items="logCount" 
+    items-per-page="logItemsPerPage" 
+    ng-model="currentLogPage" 
+    class="pagination-sm" 
+    boundary-links="false" 
+    direction-links="false" ></pagination>
+    </div>
+
+<table class="table table-bordered table-striped" id="accessLog">
     <thead>
-    	<tr>
-    		<th>Attempt</th>
-    		<th>Time</th>
-    		<th>IP</th>
-    	</tr>
+        <tr>
+            <th>Event</th>
+            <th>Time</th>
+            <th>IP</th>
+        </tr>
     </thead>
-    <tbody>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-danger">Login Failed</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-default">Logout</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-danger">Login Failed</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-danger">Login Failed</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-                <span class="label label-default">Logout</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-danger">Login Failed</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
-    	<tr>
-    		<th scope="row">
-    			<span class="label label-success">Login Success</span>
-    		</th>
-    		<td>2008-11-11, <strong>13:23:44</strong></td>
-    		<td>
-    			<code>92.638.40.16</code>
-    		</td>
-    	</tr>
+    <tbody ng-repeat="log in logs">
+        <tr>
+            <th scope="row">
+                <span ng-show="{{ log.event == 0 }}" class="label label-danger">Login Failed</span>
+                <span ng-show="{{ log.event == 1 }}" class="label label-success">Login Success</span>
+                <span ng-show="{{ log.event == 2 }}" class="label label-default">Logout</span>
+            </th>
+            <td>{{log.time}}</td>
+            <td>
+                <code>{{log.ip}}</code>
+            </td>
+        </tr>
     </tbody>
 </table>
 
