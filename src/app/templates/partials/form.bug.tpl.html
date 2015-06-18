@@ -1,100 +1,76 @@
 <div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" name="bugReportForm" ng-submit="sendBugReport(bugReportForm)" novalidate>
-                <div class="modal-header text-right">
-                    <a href="" ng-click="close()">
-                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times text-muted"></i>
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                    </a>
-                </div>
-                <div class="modal-body">
-                    <p class="alert alert-info text-center">
-                        <strong>{{ 'HAVE_A_QUESTION?' | translate }}</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
-                    </p>
-                    <p class="alert alert-warning text-center">
-                        We last updated our system on Apr 23, 2015. Most bugs are related to not clearing cache after an update. Before submitting a bug report, <a href="https://protonmail.ch/blog/clearing-browser-cache/" target="_blank">please clear your cache</a>.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_os.$touched && bugReportForm.bug_os.$error.required}">
-                                <label class="control-label" for="bug_os">{{ 'OPERATING_SYSTEM' | translate }}</label>
-                                <select tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control" required>
-                                    <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
-                                    <option value="osx">Mac OSX</option>
-                                    <option value="windows">Windows</option>
-                                    <option value="linux">Linux</option>
-                                    <option value="other">{{ 'OTHER' | translate}}</option>
-                                </select>
-                            </div>
-                            <!--/.form-group-->
+            <div class="modal-header text-right">
+                <a href="" ng-click="close()">
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times text-muted"></i>
+                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-info text-center">
+                    <strong>{{ 'HAVE_A_QUESTION?' | translate }}</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_os">{{ 'OPERATING_SYSTEM' | translate }}</label>
+                            <select tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control">
+                                <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
+                                <option value="osx">Mac OSX</option>
+                                <option value="windows">Windows</option>
+                                <option value="linux">Linux</option>
+                                <option value="other">{{ 'OTHER' | translate}}</option>
+                            </select>
                         </div>
-                        <!--/.col-md-6-->
-                        <div class="col-md-6">
-                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_device.$touched && bugReportForm.bug_device.$error.required}">
-                                <label class="control-label" for="bug_device">{{ 'DEVICE' | translate }}</label>
-                                <select tabindex="2" name="bug_device" id="bug_device" class="form-control" required>
-                                    <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
-                                    <option value="desktop">{{ 'DESKTOP' | translate }}</option>
-                                    <option value="laptop">{{ 'LAPTOP' | translate }}</option>
-                                    <option value="tablet">{{ 'TABLET' | translate }}</option>
-                                    <option value="iphone">iPhone</option>
-                                    <option value="android">Android</option>
-                                    <option value="other">{{ 'OTHER' | translate}}</option>
-                                </select>
-                            </div>
-                            <!--/.form-group-->
-                        </div>
-                        <!--/.col-md-6-->
-                        <div class="col-md-6">
-                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_location.$touched && bugReportForm.bug_location.$error.required}">
-                                <label class="control-label" for="bug_location">{{ 'WHERE_DID_YOU_FIND_IT?' | translate }}</label>
-                                <input tabindex="3" required class="form-control" type="text" name="bug_location" id="bug_location" placeholder="URL" ng-model="bug.location">
-                            </div>
-                            <!--/.form-group-->
-                        </div>
-                        <!--/.col-md-6-->
-                        <div class="col-md-6">
-                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_browser.$touched && bugReportForm.bug_browser.$error.required}">
-                                <label class="control-label" for="bug_browser">{{ 'BROWSER' | translate }}</label>
-                                <input tabindex="4" required class="form-control" type="text" name="bug_browser" id="bug_browser" placeholder="Browser" ng-model="bug.browser">
-                            </div>
-                            <!--/.form-group-->
-                        </div>
-                        <!--/.col-md-6-->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="bug_email">{{ 'YOUR_EMAIL_ADDRESS' | translate }}</label>
-                                <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.email">
-                                <p class="help-block">Please make sure to give us a way to contact you.</p>
-                            </div>
-                            <!--/.form-group-->
-                        </div>
-                        <!--/.col-md-6-->
-                        <div class="col-md-12">
-                            <div class="form-group" ng-class="{'has-error': bugReportForm.bug_description.$touched && bugReportForm.bug_description.$error.required}">
-                                <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
-                                <textarea ng-model="bug.description" class="form-control" required name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
-                            </div>
-                        </div>
-                        <!--/.col-md-12-->
-                        <div class="col-md-12">
-                            <p> We handle these bug reports in Zendesk. If you would like to keep the report within ProtonMail, please email the above info to <a href="mailto:support@protonmail.ch">support@protonmail.ch</a>.</p>
-                            <p class="alert alert-info text-center">Contact us at <a href="mailto:security@protonmail.ch">security@protonmail.ch</a> for critical security issues.</p>
-                        </div>
-                        <!--/.col-md-12-->
                     </div>
-                    <!--/.row-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_os_version">{{ 'OS_VERSION' | translate }}</label>
+                            <input tabindex="2" class="form-control" placeholder="{{ 'OS_VERSION' | translate }}" type="text" id="bug_os_version" ng-model="bug.osversion"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_client">{{ 'CLIENT' | translate }}</label>
+                            <input tabindex="3" class="form-control" type="text" name="bug_client" id="bug_client" placeholder="Browser" ng-model="bug.client">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_client_version">{{ 'CLIENT_VERSION' | translate }}</label>
+                            <input tabindex="4" class="form-control" type="text" name="bug_client_version" id="bug_client_version" placeholder="Browser" ng-model="bug.clientversion">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="bug_email">{{ 'YOUR_EMAIL_ADDRESS' | translate }}</label>
+                            <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.email">
+                            <p class="help-block">Please make sure to give us a way to contact you.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="bug_title" class="control-label">{{ 'TITLE' | translate }}</label>
+                            <input type="text" id="bug_title" class="form-control" ng-model="bug.title" placeholder="{{ 'TITLE' | translate }}" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
+                            <textarea ng-model="bug.description" class="form-control" name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <p> We handle these bug reports in Zendesk. If you would like to keep the report within ProtonMail, please email the above info to <a href="mailto:support@protonmail.ch">support@protonmail.ch</a>.</p>
+                        <p class="alert alert-info text-center">Contact us at <a href="mailto:security@protonmail.ch">security@protonmail.ch</a> for critical security issues.</p>
+                    </div>
                 </div>
-                <!--/.modal-body-->
-                <div class="modal-footer">
-                    <a class="btn btn-link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
-                    <button type="submit" class="btn btn-primary">{{ 'SEND' | translate }}</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
+                <button type="button" ng-click="sendBugReport()" class="btn btn-primary">{{ 'SEND' | translate }}</button>
+            </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->

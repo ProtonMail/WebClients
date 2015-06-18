@@ -31,20 +31,27 @@ angular.module("proton.controllers.Bug", [])
     };
 
     $scope.sendBugReport = function(form) {
-        networkActivityTracker.track(
-            Bug.bugs({
-                "bug_os": $('#bug_os').val(),
-                "bug_browser": $scope.bug.browser,
-                "bug_location": $scope.bug.location,
-                "bug_description": $scope.bug.description,
-                "bug_email": $scope.bug.email
-            }).$promise.then(function(response) {
+        var bugPromise = Bug.report({
+            "OS": $('#bug_os').val(),
+            "OSVersion": $scope.bug.osversion,
+            "Client": $scope.bug.client,
+            "ClientVersion": $scope.bug.clientversion,
+            "Title": $scope.bug.title,
+            "Description": $scope.bug.description,
+            "Username": $rootScope.user.DisplayName,
+            "Email": $scope.bug.email
+        });
+
+        bugPromise.then(function(response) {
+            if(angular.isUndefined(response.data.Error)) {
                 $scope.close();
                 notify($translate.instant('BUG_REPORTED'));
-            }, function(response) {
-                $log.error(response);
-            })
-        );
+            }
+
+            return response;
+        });
+
+        networkActivityTracker.track(bugPromise);
     };
 
     $scope.$on('openReportModal', function() {
