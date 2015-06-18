@@ -1,12 +1,27 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-    <h1>Account Access Log</h1>
+    <h1>
+        {{ 'ACCESS_LOG_TITLE' | translate }}     
+        <a href class="btn btn-default btn-sm"ng-click="initLogs()">
+            <i class="fa fa-refresh"></i>
+        </a>
+    </h1>
 
     <div class="clear" id="logHeader">
-    <a href class="pull-right btn btn-default"><i class="fa fa-download"></i> Download Log</a>
+    <div class="btn-group pull-right">
+        <a class="btn btn-default">
+            <i class="fa fa-ban"></i> Clear Log
+        </a>    
+        <a 
+        target="_blank"  
+        href="{{ apiURL + '/logs/auth/csv' }}" 
+        class="btn btn-default">
+            <i class="fa fa-download"></i> Download Log
+        </a> 
+    </div>
     <pagination 
-    ng-show="{logCount>logItemsPerPage}" 
+    ng-show="(logCount > logItemsPerPage)" 
     ng-change="loadLogs(page)" 
     total-items="logCount" 
     items-per-page="logItemsPerPage" 
@@ -16,27 +31,27 @@
     direction-links="false" ></pagination>
     </div>
 
-<table class="table table-bordered table-striped" id="accessLog">
-    <thead>
-        <tr>
-            <th>Event</th>
-            <th>Time</th>
-            <th>IP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="log in logs">
-            <th scope="row">
-                <span ng-show="{{ log.event == 0 }}" class="label label-danger">Login Failed</span>
-                <span ng-show="{{ log.event == 1 }}" class="label label-success">Login Success</span>
-                <span ng-show="{{ log.event == 2 }}" class="label label-default">Logout</span>
-            </th>
-            <td>{{log.time}}</td>
-            <td>
-                <code>{{log.ip}}</code>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Time</th>
+                <th>IP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="log in logs">
+                <th scope="row">
+                    <span ng-show="{{ log.Event == 0 }}" class="label label-danger">Login Failed</span>
+                    <span ng-show="{{ log.Event == 1 }}" class="label label-success">Login Success</span>
+                    <span ng-show="{{ log.Event == 2 }}" class="label label-default">Logout</span>
+                </th>
+                <td>{{log.Time}}</td>
+                <td>
+                    <code>{{log.IP}}</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
