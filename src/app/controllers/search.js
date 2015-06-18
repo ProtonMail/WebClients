@@ -28,6 +28,8 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
             params.subject = $scope.params.subject;
             params.attachments = parseInt($scope.params.attachments);
             params.starred = parseInt($scope.params.starred);
+            params.begin = null;
+            params.end = null;
 
             if(parseInt($('#search_folder').val()) !== -1) {
                 params.location = parseInt($('#search_folder').val());
@@ -37,15 +39,15 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
                 params.label = $('#search_label').val();
             }
 
-            if($scope.searchForm.begin.$touched) {
+            if($scope.searchForm.begin.$touched && $scope.params.begin) {
                 params.begin = $scope.params.begin.getMoment().unix();
             }
 
-            if($scope.searchForm.end.$touched) {
+            if($scope.searchForm.end.$touched && $scope.params.end) {
                 params.end = $scope.params.end.getMoment().unix();
             }
         }
-
+        
         $state.go('secured.search', params);
         $scope.close();
     };
@@ -70,12 +72,20 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
 
     $scope.setMin = function() {
         $scope.searchForm.begin.$touched = true; // emulate touched
-        $scope.params.end.setMinDate($scope.params.begin.getDate());
+        if($scope.params.begin.getDate() === null) {
+            $scope.params.begin = null;
+        } else {
+            $scope.params.end.setMinDate($scope.params.begin.getDate());
+        }
     };
 
     $scope.setMax = function() {
         $scope.searchForm.end.$touched = true; // emulate touched
-        $scope.params.begin.setMaxDate($scope.params.end.getDate());
+        if($scope.params.end.getDate() === null) {
+            $scope.params.end = null;
+        } else {
+            $scope.params.begin.setMaxDate($scope.params.end.getDate());
+        }
     };
 
     $scope.close = function() {
