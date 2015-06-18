@@ -7,6 +7,14 @@
   z-index: 2;
   @include clearfix;
 
+  .fa {
+    font-size: 18px;
+    vertical-align: middle;
+    &.fa-caret-down {
+      font-size: 1em;
+    }
+  }
+
   > ul {
     > li {
       border-right: 1px solid rgba(0,0,0,.2);
@@ -84,6 +92,9 @@
         // TODO CHANGE COLOR AND HOVER STYLES USING EXISTING CLASSES
         padding: 0 12px;
         line-height: $row-height;
+        min-width: 5rem;
+        display: inline-block;
+        text-align: center;
         @include base-gradient-dark;
 
         &:hover {
@@ -119,7 +130,7 @@
         border-top: 1px solid #d1d1d1;
         margin-left: -1px;
         padding: 0;
-        top: 98%;
+        top: 100%;
         li:not(:last-child) {
           border-bottom: 1px solid #ddd;
         }
