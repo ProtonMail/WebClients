@@ -563,7 +563,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments'));
         $scope.initMessage(message);
     });
 
@@ -616,7 +616,6 @@ angular.module("proton.controllers.Messages", [
                     }
                 },
                 removedfile: function(file) {
-                    // console.log('on removedfile', file);
                     $scope.removeAttachment(file, message);
                 }
             }
@@ -1184,9 +1183,15 @@ angular.module("proton.controllers.Messages", [
         return result;
     };
 
-    $scope.displayContent = function() {
+    $scope.displayContent = function(print) {
         message.clearTextBody().then(function(result) {
-            var content = message.clearImageBody(result);
+            var content;
+
+            if(print === true) {
+                content = result;
+            } else {
+                content = message.clearImageBody(result);
+            }
 
             content = tools.replaceLineBreaks(content);
             content = DOMPurify.sanitize(content, {
@@ -1439,11 +1444,11 @@ angular.module("proton.controllers.Messages", [
 
         promise.then(function(result) {
             if(inDelete) {
-                $scope.goToMessageList();
                 notify($translate.instant('MESSAGE_DELETED'));
             } else {
                 notify($translate.instant('MESSAGE_MOVED'));
             }
+            $scope.goToMessageList();
         });
 
         networkActivityTracker.track(promise);

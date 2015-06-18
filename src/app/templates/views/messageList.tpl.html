@@ -38,18 +38,18 @@
             <td class="recipient">
                 <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                 <span ng-if="showTo(message)">
-                    <span class="to" pt-tooltip="{{ message.ToList | lowercase }}">
-                        To: </span>{{ message.ToList | username }}
+                    <span class="to" pt-tooltip="{{ message.ToList | username }}">
+                        To: {{ message.ToList | username | lowercase }}
                     </span>
                 </span>
                 <span ng-if="showFrom(message) && !showTo(message)">
-                    <span class="from" pt-tooltip="{{ message.SenderAddress | lowercase }}">
-                        From: </span>{{ message.SenderName }}
+                    <span class="from" pt-tooltip="{{ message.SenderAddress }}">
+                        From: {{ message.SenderName | username | lowercase }}
                     </span>
                 </span>
                 <span ng-if="!showTo(message) && !showFrom(message)">
-                    <span pt-tooltip="{{ message.SenderAddress | lowercase }}">
-                        {{ message.SenderName || message.SenderAddress | username }}
+                    <span pt-tooltip="{{ message.SenderName || message.SenderAddress | username }}">
+                        {{ message.SenderName || message.SenderAddress | username | lowercase }}
                     </span>
                 </span>
             </td>
@@ -83,12 +83,12 @@
                 <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
                     <span ng-if="showTo(message)">
                         <span class="to">
-                            To: </span>{{ message.ToList | username }}
+                            To: </span>{{ message.ToList | username | lowercase  }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
                         <span class="from">
-                            From: </span>{{ message.SenderName }}
+                            From: </span>{{ message.SenderName | lowercase  }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
