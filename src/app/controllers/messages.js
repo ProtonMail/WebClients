@@ -1422,11 +1422,11 @@ angular.module("proton.controllers.Messages", [
 
         promise.then(function(result) {
             if(inDelete) {
-                $scope.goToMessageList();
                 notify($translate.instant('MESSAGE_DELETED'));
             } else {
                 notify($translate.instant('MESSAGE_MOVED'));
             }
+            $scope.goToMessageList();
         });
 
         networkActivityTracker.track(promise);
