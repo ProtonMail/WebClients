@@ -268,6 +268,16 @@ angular.module("proton.models.message", ["proton.constants"])
                 return false;
             }
 
+            var emailsNonPM = _.filter(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) {
+                return tools.isEmailAddressPM(email.Address) !== true;
+            });
+
+            if (parseInt(this.ExpirationTime) > 0 && this.IsEncrypted !== 1 && emailsNonPM.length > 0) {
+                notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
+                this.panelName = 'encrypt'; // switch panel
+                return false;
+            }
+
             if(force !== true) {
                 return this.needToSave();
             } else {
@@ -283,7 +293,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
         needToSave: function() {
             if(angular.isDefined(this.old)) {
-                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
+                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
                 var currentMessage = _.pick(this, properties);
                 var oldMessage = _.pick(this.old, properties);
 
@@ -347,13 +357,14 @@ angular.module("proton.models.message", ["proton.constants"])
         encryptPackets: function(keys, passwords) {
             var deferred = $q.defer();
             var packets = [];
+
             if (keys===(undefined||'')) {
                 keys = [];
             }
+
             if (passwords===(undefined||'')) {
                 passwords = [];
             }
-            console.log(keys, passwords);
 
             _.each(this.Attachments, function(element) {
                 packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
@@ -401,7 +412,6 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         generateReplyToken: function() {
-            console.log('generateReplyToken');
             // Use a base64-encoded AES256 session key as the reply token
             return pmcw.encode_base64(pmcw.generateKeyAES());
         },

@@ -881,10 +881,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.setExpiration = function(message, params) {
-        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
-            return tools.isEmailAddressPM(email.Address) !== true;
-        });
-
         if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
             notify('The maximum expiration is 4 weeks.');
             return false;
@@ -895,13 +891,7 @@ angular.module("proton.controllers.Messages", [
             return false;
         }
 
-        if (parseInt(params.expiration) > 0 && message.IsEncrypted !== 1 && emailsNonPM.length > 0) {
-            notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
-            message.panelName = 'encrypt'; // switch panel
-            return false;
-        }
-
-        message.ExpirationTime = params.expiration;
+        message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
 
@@ -919,7 +909,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.saveOld = function(message) {
-        var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments'];
+        var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
         message.old = _.pick(message, properties);
 
@@ -999,6 +989,7 @@ angular.module("proton.controllers.Messages", [
             var emails = message.emailsToString();
 
             parameters.id = message.ID;
+            parameters.ExpirationTime = message.ExpirationTime;
 
             message.getPublicKeys(emails).then(function(result) {
                 var keys = result;
@@ -1107,7 +1098,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.maximize = function(message) {
         message.maximized = true;
-    };    
+    };
 
     $scope.blur = function(message) {
         $log.info('blurr');
@@ -1469,6 +1460,8 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
+        var inTrash = mailbox === 'trash';
+        var inSpam = mailbox === 'spam';
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
@@ -1482,7 +1475,10 @@ angular.module("proton.controllers.Messages", [
             } else {
                 notify($translate.instant('MESSAGE_MOVED'));
             }
-            $scope.goToMessageList();
+
+            if(inDelete || inTrash || inSpam) {
+                $scope.goToMessageList();
+            }
         });
 
         networkActivityTracker.track(promise);
