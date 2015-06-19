@@ -58,7 +58,8 @@
                     href 
                     class="btn btn-sm close-button" 
                     ng-click="close(message, true)" 
-                    pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}">
+                    pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}"
+                    pt-placement="left">
                         <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>
@@ -152,7 +153,7 @@
                 <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false, false)" pt-tooltip="{{ 'SAVE' | translate }}">
                     <i class="fa fa-floppy-o"></i>
                 </button>
-                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'SEND' | translate }}</button>
+                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>
             </div>
         </div>
     </ng-form>
