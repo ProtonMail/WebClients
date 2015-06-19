@@ -6,7 +6,7 @@
 </div>
 <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
     <div class="pull-right">
-        <span btf-markdown="message.longReadableTime() | contrast:'('"></span>
+        <span ng-bind="message.longReadableTime()"></span>
     </div>
     <h1>
         <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
@@ -88,9 +88,9 @@
     <p><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})</p>
     <div class="list-group">
         <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active ': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
-            <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i> 
-            <i ng-show="attachment.decrypted" class="fa fa-download"></i> 
-            <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i> 
+            <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
+            <i ng-show="attachment.decrypted" class="fa fa-download"></i>
+            <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
             <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
         </a>
     </div>

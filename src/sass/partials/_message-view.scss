@@ -98,7 +98,6 @@ ul.attachments {
             .fa {
                 color: #bbb;
                 font-size: inherit;
-                margin-right: 0.5rem;
             }
         }
         .padlock {
@@ -108,7 +107,7 @@ ul.attachments {
             cursor: default;
             .fa {
                 font-size: inherit;
-                margin-right: 0.5rem;
+                margin-left: 0.2rem;
                 &.fa-lock {
                     color: $primary-color-dark
                 }
@@ -123,7 +122,6 @@ ul.attachments {
             i.fa {
                 @include head-link;
                 font-size: inherit;
-                margin-right: 0.5rem;
             }
             &.star {
                 left: 22px;
