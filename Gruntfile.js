@@ -8,7 +8,7 @@ var API_TARGETS = {
     local: "http://localhost:4003",
     prod: "https://dev-api.protonmail.ch",
     dev: "https://test-api.protonmail.ch",
-    v2: "https://protonvpn.ch:444",
+    v2: "/api",
     target: "http://?"
 };
 

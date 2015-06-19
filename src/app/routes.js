@@ -172,7 +172,7 @@ angular.module("proton.routes", [
         },
         onEnter: function() {
             setTimeout( function() {
-                $('input[name="MailboxPassword"').focus();
+                $( "[type=password]" ).focus();
             }, 500);
         }
     })
