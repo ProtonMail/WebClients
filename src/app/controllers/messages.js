@@ -98,6 +98,8 @@ angular.module("proton.controllers.Messages", [
             $scope.senderIsMe(message) &&
             (
                 !$filter('isState')('secured.inbox') &&
+                !$filter('isState')('secured.drafts')  &&
+                !$filter('isState')('secured.sent')  &&
                 !$filter('isState')('secured.spam')  &&
                 !$filter('isState')('secured.trash')
             )
