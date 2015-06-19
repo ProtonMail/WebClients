@@ -1,0 +1,25 @@
+<h1>
+    <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
+    <span class="padlock">
+        <i class="fa"
+        ng-class=
+        "{
+          'fa-lock':
+            !!!(message.IsEncrypted == '0'),
+          'text-purple':
+            !!(message.IsEncrypted == '1') ||
+            !!(message.IsEncrypted == '5') ||
+            !!(message.IsEncrypted == '6'),
+          'fa-unlock-alt text-muted':
+            !!(message.IsEncrypted == '0')
+        }"
+        title="{{ getMessageEncryptionType(message) }}"></i>
+    </span>
+    <span class="attachement" ng-show="message.Attachments.length > 0">
+        <i class="fa fa-paperclip"></i>
+    </span>
+    {{ message.Subject }}
+    <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
+        {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
+    </span>
+  </h1>

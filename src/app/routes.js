@@ -7,6 +7,7 @@ angular.module("proton.routes", [
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
+    
     var messageViewOptions = {
         url: "/:id",
         onEnter: function($rootScope) {
