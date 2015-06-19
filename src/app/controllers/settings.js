@@ -72,6 +72,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     $scope.logs = [];
                     $scope.logCount = 0;
+                    notify($translate.instant('LOGS_CLEARED'));
                 }
             )
         );

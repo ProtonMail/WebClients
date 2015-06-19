@@ -110,6 +110,7 @@ angular.module("proton.controllers.Messages", [
         return ((
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
+                !$filter('isState')('secured.archive') &&
                 !$filter('isState')('secured.sent') &&
                 !$filter('isState')('secured.spam') &&
                 !$filter('isState')('secured.trash')
@@ -384,6 +385,7 @@ angular.module("proton.controllers.Messages", [
 
         promise.then(function(result) {
             $rootScope.$broadcast('updateCounters');
+            $rootScope.$broadcast('refreshMessages');
 
             if(inDelete) {
                 if(ids.length > 1) {
@@ -1570,6 +1572,8 @@ angular.module("proton.controllers.Messages", [
         }
 
         promise.then(function(result) {
+            $rootScope.$broadcast('updateCounters');
+
             if(inDelete) {
                 notify($translate.instant('MESSAGE_DELETED'));
             } else {
