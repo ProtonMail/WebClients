@@ -383,18 +383,38 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearPackets: function() {
-            var deferred = $q.defer();
             var packets = [];
+            var promises = [];
+            var deferred = $q.defer();
 
             _.each(this.Attachments, function(element) {
-                packets.push({
-                    ID: element.AttachmentID,
-                    Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
-                    Algo: element.sessionKey.algo
-                });
+                if(element.sessionKey === undefined) {
+                    promises.push(authentication.getPrivateKey().then(function(pk) {
+                        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
+                        return pmcw.decryptSessionKey(keyPackets, pk).then(function(key) {
+                            element.sessionKey = key;
+                            packets.push({
+                                ID: element.ID,
+                                Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
+                                Algo: element.sessionKey.algo
+                            });
+                        });
+                    }));
+                }
+                else {
+                    promises.push(packets.push({
+                        ID: element.AttachmentID,
+                        Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
+                        Algo: element.sessionKey.algo
+                    }));
+                }
             });
 
-            return packets;
+            $q.all(promises).then(function() {
+                deferred.resolve(packets);
+            });
+
+            return deferred.promise;
         },
 
         emailsToString: function() {
