@@ -72,7 +72,6 @@ ul.attachments {
     position: relative;
     box-shadow: inset 0 -1px $base-color-darker;
     background-color: #f0f0f0;
-    padding-left: 6rem;
     @include transition(all, 200ms, ease-in-out);
     .pull-right p {
         margin: 0;
@@ -88,7 +87,7 @@ ul.attachments {
     h1 {
         margin: 0;
         text-align: left;
-        line-height: 1.1em;
+        line-height: $row-height;
         font-size: 140%;
         font-weight: 700;
         .attachement {
@@ -100,37 +99,14 @@ ul.attachments {
                 font-size: inherit;
             }
         }
-        .padlock {
-            position: absolute;
-            top: 40px;
-            left: 22px;
-            cursor: default;
-            .fa {
-                font-size: inherit;
-                margin-left: 0.2rem;
-                &.fa-lock {
-                    color: $primary-color-dark
-                }
-            }
-        }
-        .star {
-            position: absolute;
-            top: 3px;
-            left: 0;
-            line-height: 34px;
-            display: inline-block;
-            i.fa {
-                @include head-link;
-                font-size: inherit;
-            }
-            &.star {
-                left: 22px;
-            }
-            i.fa-star-o {
+        .fa {
+            @include head-link;
+            font-size: inherit;
+            .fa-star-o {
                 color: #bbb;
             }
-            i.fa-star,
-            i.fa-star:hover {
+            .fa-star,
+            .fa-star:hover {
                 color: orange;
             }
         }

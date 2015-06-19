@@ -55,15 +55,21 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: 5;
     left: 0;
     #header {
         height: $navbar-height;
     }
-    #messageListToolbar {
+    #messageListToolbar,
+    #messageViewToolbar {
         height: $row-height;
-    }    
-    #content {
+    } 
+    .message-metadata {
+        padding: 10px;
+        background-color: #f0f0f0;
+    }  
+    #content,
+    #message-body {
         position: relative;
         -webkit-flex: 1;
         overflow-y: auto;
