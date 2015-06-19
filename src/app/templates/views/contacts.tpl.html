@@ -8,12 +8,12 @@
         <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
     </div>
 
-    <pagination 
-    total-items="totalItems" 
-    ng-model="currentPage" 
-    max-size="10" 
-    boundary-links="true" 
-    items-per-page="numPerPage" 
+    <pagination
+    total-items="totalItems"
+    ng-model="currentPage"
+    max-size="10"
+    boundary-links="true"
+    items-per-page="numPerPage"
     class="pagination-sm"
     id="contactPagination">
     </pagination>
@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th class="text-center hidden-xs">
-                        <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'SELECT_ALL_CONTACTS' | translate }}" />
+                        <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
                     </th>
                     <th>{{ 'NAME' | translate }}</th>
                     <th>{{ 'EMAIL' | translate }}</th>
