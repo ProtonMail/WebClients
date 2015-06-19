@@ -1537,7 +1537,9 @@ angular.module("proton.controllers.Messages", [
 
     $scope.goToMessageList = function() {
         $state.go('^');
-        $rootScope.$broadcast('refreshMessages');
+        $timeout(function() {
+            $rootScope.$broadcast('refreshMessages');
+        }, 500);
     };
 
     $scope.moveMessageTo = function(mailbox) {
