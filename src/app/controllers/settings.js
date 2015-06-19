@@ -396,7 +396,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.setLogging = function() {
         var logging;
-        if ($scope.doLogging==true) {
+        if ($scope.doLogging===true) {
             logging = 1;
         }
         else {
