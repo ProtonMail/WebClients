@@ -73,11 +73,13 @@ table.message-list {
                 a:hover .fa-star-o {
                     color: #000;
                 }
-                .fa-lock,
-                {
-                    color: $primary-color-dark;
+                .fa-lock {
                     position: relative;
                     top: 1px;
+                    color: rgba(0, 0, 0, 0.25);
+                }
+                .text-purple {
+                    color: $primary-color-dark;
                 }
                 .fa-unlock-alt,
                 .fa-lock {
