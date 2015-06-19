@@ -257,6 +257,8 @@ angular.module("proton.authentication", [
                     $rootScope.isLocked = true;
                     $rootScope.isSecure = false;
 
+                    $http.delete(baseURL + "/auth");
+
                     $state.go("login");
                 },
 
