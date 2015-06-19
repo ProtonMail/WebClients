@@ -89,57 +89,10 @@ angular.module("proton.routes", [
                     var mailbox = this.data.mailbox;
 
                     if (authentication.isSecured()) {
-                        var page =  $stateParams.page || 1;
-                        var params = {
-                            "Location": CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                            "Page": page - 1
-                        };
+                        var params = Message.parameters(mailbox);
+                        var messagesPromise = Message.query(params).$promise;
 
-                        if ($stateParams.filter) {
-                            params.Unread = +($stateParams.filter === 'unread');
-                        }
-
-                        if ($stateParams.sort) {
-                            var sort = $stateParams.sort;
-                            var desc = _.string.startsWith(sort, "-");
-
-                            if (desc) {
-                                sort = sort.slice(1);
-                            }
-
-                            params.Sort = _.string.capitalize(sort);
-                            params.Desc = +desc;
-                        }
-
-                        var messagesPromise;
-
-                        if (mailbox === 'search') {
-                            delete params.Location;
-                            params.Location = $stateParams.location;
-                            params.Keyword = $stateParams.words;
-                            params.To = $stateParams.to;
-                            params.From = $stateParams.from;
-                            params.Subject = $stateParams.subject;
-                            params.Begin = $stateParams.begin;
-                            params.End = $stateParams.end;
-                            params.Attachments = $stateParams.attachments;
-                            params.Starred = $stateParams.starred;
-                            params.Label = $stateParams.label;
-                        } else if(mailbox === 'label') {
-                            delete params.Location;
-                            params.Label = $stateParams.label;
-                        }
-
-                        _.pick(params, _.identity);
-
-                        messagesPromise = Message.query(params).$promise;
-
-                        return networkActivityTracker.track(
-                            errorReporter.resolve(
-                                "Messages couldn't be queried - please try again later.",
-                                messagesPromise, []
-                            )
-                        );
+                        return networkActivityTracker.track(messagesPromise);
                     } else {
                         return [];
                     }

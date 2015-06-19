@@ -8,7 +8,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $interval,
     $timeout,
     $q,
-    $state,
+    $stateParams,
     $translate,
     $log,
     authentication,
@@ -70,6 +70,49 @@ angular.module("proton.models.message", ["proton.constants"])
                     $rootScope.Total = json.Total;
                     return json.Messages;
                 }
+            },
+            parameters: function(mailbox) {
+                console.log('parameters');
+                var params = {};
+
+                params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                params.Page = ($stateParams.page || 1) - 1;
+
+                if ($stateParams.filter) {
+                    params.Unread = +($stateParams.filter === 'unread');
+                }
+
+                if ($stateParams.sort) {
+                    var sort = $stateParams.sort;
+                    var desc = _.string.startsWith(sort, "-");
+
+                    if (desc) {
+                        sort = sort.slice(1);
+                    }
+
+                    params.Sort = _.string.capitalize(sort);
+                    params.Desc = +desc;
+                }
+
+                if (mailbox === 'search') {
+                    params.Location = $stateParams.location;
+                    params.Keyword = $stateParams.words;
+                    params.To = $stateParams.to;
+                    params.From = $stateParams.from;
+                    params.Subject = $stateParams.subject;
+                    params.Begin = $stateParams.begin;
+                    params.End = $stateParams.end;
+                    params.Attachments = $stateParams.attachments;
+                    params.Starred = $stateParams.starred;
+                    params.Label = $stateParams.label;
+                } else if(mailbox === 'label') {
+                    delete params.Location;
+                    params.Label = $stateParams.label;
+                }
+
+                _.pick(params, _.identity);
+
+                return params;
             },
             latest: {
                 method: 'get',
@@ -383,18 +426,38 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearPackets: function() {
-            var deferred = $q.defer();
             var packets = [];
+            var promises = [];
+            var deferred = $q.defer();
 
             _.each(this.Attachments, function(element) {
-                packets.push({
-                    ID: element.AttachmentID,
-                    Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
-                    Algo: element.sessionKey.algo
-                });
+                if(element.sessionKey === undefined) {
+                    promises.push(authentication.getPrivateKey().then(function(pk) {
+                        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
+                        return pmcw.decryptSessionKey(keyPackets, pk).then(function(key) {
+                            element.sessionKey = key;
+                            packets.push({
+                                ID: element.ID,
+                                Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
+                                Algo: element.sessionKey.algo
+                            });
+                        });
+                    }));
+                }
+                else {
+                    promises.push(packets.push({
+                        ID: element.AttachmentID,
+                        Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
+                        Algo: element.sessionKey.algo
+                    }));
+                }
             });
 
-            return packets;
+            $q.all(promises).then(function() {
+                deferred.resolve(packets);
+            });
+
+            return deferred.promise;
         },
 
         emailsToString: function() {
