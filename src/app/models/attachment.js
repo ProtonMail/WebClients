@@ -11,6 +11,10 @@ angular.module("proton.models.attachment", [])
             upload: {
                 method: 'post',
                 url: authentication.baseURL + '/attachments/upload'
+            },
+            remove: {
+                method: 'put',
+                url: authentication.baseURL + '/attachments/remove'
             }
         }
     );
