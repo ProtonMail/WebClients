@@ -938,7 +938,7 @@ angular.module("proton.controllers.Messages", [
 
         if(message.validate(force)) {
             var parameters = {
-                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'ExpirationTime')
+                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
             };
 
             if(angular.isDefined(message.ID)) {
@@ -989,6 +989,7 @@ angular.module("proton.controllers.Messages", [
             var emails = message.emailsToString();
 
             parameters.id = message.ID;
+            parameters.ExpirationTime = message.ExpirationTime;
 
             message.getPublicKeys(emails).then(function(result) {
                 var keys = result;
