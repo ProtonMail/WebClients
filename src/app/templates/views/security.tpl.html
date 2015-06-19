@@ -1,6 +1,14 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
+    <div class="pull-right selectMode">
+        <select class="form-control" ng-model="doLogging" ng-change="setLogging()">
+            <option value="0">{{ 'OFF' | translate }}</option>
+            <option value="1">{{ 'ON' | translate }}</option>
+            <option value="2">{{ 'ON_WITH_IP' | translate }}</option>
+        </select>
+    </div>
+
     <h1>
         {{ 'AUTHENTICATION_LOGS' | translate }}
         <a
@@ -14,13 +22,6 @@
 
     <div id="logArea" ng-show="doLogging != 0">
         <div class="clear" id="logHeader">
-        <div class="pull-left selectMode">
-            <select class="form-control" ng-model="doLogging" ng-change="setLogging()">
-                <option value="0">{{ 'OFF' | translate }}</option>
-                <option value="1">{{ 'ON' | translate }}</option>
-                <option value="2">{{ 'ON_WITH_IP' | translate }}</option>
-            </select>
-        </div>
         <div class="btn-group pull-right">
             <a class="btn btn-default" ng-click="clearLogs()">
                 <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
