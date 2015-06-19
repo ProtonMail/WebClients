@@ -38,17 +38,17 @@
                 <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                 <span ng-if="showTo(message)">
                     <span class="to" pt-tooltip="{{ message.ToList | username }}">
-                        To: {{ message.ToList | username | lowercase }}
+                        To: {{ message.ToList | username | capitalize }}
                     </span>
                 </span>
                 <span ng-if="showFrom(message) && !showTo(message)">
                     <span class="from" pt-tooltip="{{ message.SenderAddress }}">
-                        From: {{ message.SenderName | username | lowercase }}
+                        From: {{ message.SenderName | username | capitalize }}
                     </span>
                 </span>
                 <span ng-if="!showTo(message) && !showFrom(message)">
                     <span pt-tooltip="{{ message.SenderName || message.SenderAddress | username }}">
-                        {{ message.SenderName || message.SenderAddress | username | lowercase }}
+                        {{ message.SenderName || message.SenderAddress | username | capitalize }}
                     </span>
                 </span>
             </td>
@@ -83,17 +83,17 @@
                 <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
                     <span ng-if="showTo(message)">
                         <span class="to">
-                            To: </span>{{ message.ToList | username | lowercase  }}
+                            To: </span>{{ message.ToList | username | capitalize }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
                         <span class="from">
-                            From: </span>{{ message.SenderName | lowercase  }}
+                            From: </span>{{ message.SenderName | capitalize }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
-                        <span pt-tooltip="{{ message.SenderAddress | lowercase }}">
-                            {{ message.SenderName | username }}
+                        <span pt-tooltip="{{ message.SenderAddress }}">
+                            {{ message.SenderName | username | capitalize }}
                         </span>
                     </span>
                     <span class="pull-right">{{ message.readableTime() }}</span>
