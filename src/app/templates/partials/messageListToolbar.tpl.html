@@ -7,8 +7,8 @@
                 name="selectAll"
                 ng-model="allSelected()"
                 ng-click="selectAllMessages()"
-                pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}"
-                pt-placement="right" />
+                pt-tooltip="{{ 'ALL' | translate }}"
+                pt-placement="bottom" />
             </label>
         </li>
         <li
@@ -18,7 +18,7 @@
             <a
             href
             ng-click="moveMessagesTo('archive')"
-            ng-class="{ disabled: messagesSelected.length == 0 }">
+            ng-class="{ disabled: selectedMessages().length == 0 }">
                 <i class="fa fa-fw fa-archive"></i>
             </a>
         </li>
@@ -29,10 +29,10 @@
             <a
             href
             ng-click="moveMessagesTo('inbox')"
-            ng-class="{ disabled: messagesSelected.length == 0 }">
+            ng-class="{ disabled: selectedMessages().length == 0 }">
                 <i class="fa fa-fw fa-inbox"></i>
             </a>
-        </li>        
+        </li>
         <li
         ng-if="pageName != 'spam' && pageName != 'drafts' && pageName != 'trash'"
         pt-tooltip="{{ 'SPAM' | translate }}"
@@ -40,30 +40,30 @@
             <a
             href
             ng-click="moveMessagesTo('spam')"
-            ng-class="{ disabled: messagesSelected.length == 0 }">
+            ng-class="{ disabled: selectedMessages().length == 0 }">
                 <i class="fa fa-fw fa-ban"></i>
             </a>
         </li>
         <li
-        ng-if="pageName != 'trash' && pageName != 'spam'" 
-        class="seperator" 
+        ng-if="pageName != 'trash' && pageName != 'spam'"
+        class="seperator"
         pt-tooltip="{{ 'TRASH' | translate }}"
         pt-placement="bottom">
             <a
             href
             ng-click="moveMessagesTo('trash')"
-            ng-class="{ disabled: messagesSelected.length == 0 }">
+            ng-class="{ disabled: selectedMessages().length == 0 }">
                 <i class="fa fa-fw fa-trash-o"></i>
             </a>
         </li>
         <li
-        ng-if="('secured.spam' | isState) || ('secured.trash' | isState)" 
-        class="seperator" 
+        ng-if="('secured.spam' | isState) || ('secured.trash' | isState)"
+        class="seperator"
         pt-tooltip="{{ 'DELETE' | translate }}"
-        pt-placement="bottom">        
+        pt-placement="bottom">
             <a
             href
-            ng-class="{ disabled: messagesSelected.length == 0 }"
+            ng-class="{ disabled: selectedMessages().length == 0 }"
             ng-click="moveMessagesTo('delete')"
             pt-tooltip="{{ 'DELETE' | translate }}"
             pt-placement="bottom">
@@ -71,17 +71,17 @@
             </a>
         </li>
         <li>
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: messagesSelected.length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye"></i>
             </a>
         </li>
         <li class="seperator">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: messagesSelected.length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye-slash"></i>
             </a>
         </li>
         <li class="seperator">
-            <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messagesSelected.length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
                 <i class="fa fa-fw fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
