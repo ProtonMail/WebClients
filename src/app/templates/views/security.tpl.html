@@ -1,12 +1,10 @@
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-    <toggle-switch class="pull-right" ng-model="doLogging" ng-click="setLogging()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
-
     <h1>
-        {{ 'ACCESS_LOG_TITLE' | translate }}     
-        <a 
-        href 
+        {{ 'AUTHENTICATION_LOGS' | translate }}
+        <a
+        href
         class="btn btn-default btn-sm"
         ng-class="{ 'disabled': doLogging == 0 }"
         ng-click="initLogs()">
@@ -15,29 +13,35 @@
     </h1>
 
     <div id="logArea" ng-show="doLogging != 0">
-
         <div class="clear" id="logHeader">
+        <div class="pull-left selectMode">
+            <select class="form-control" ng-model="doLogging" ng-change="setLogging()">
+                <option value="0">{{ 'OFF' | translate }}</option>
+                <option value="1">{{ 'ON' | translate }}</option>
+                <option value="2">{{ 'ON_WITH_IP' | translate }}</option>
+            </select>
+        </div>
         <div class="btn-group pull-right">
-            <a class="btn btn-default">
-                <i class="fa fa-ban"></i> Clear Log
-            </a>    
-            <a 
-            target="_blank"  
-            href="{{ apiURL + '/logs/auth/csv' }}" 
+            <a class="btn btn-default" ng-click="clearLogs()">
+                <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
+            </a>
+            <a
+            target="_blank"
+            href="{{ apiURL + '/logs/auth/csv' }}"
             class="btn btn-default">
-                <i class="fa fa-download"></i> Download Log
-            </a> 
-        </div>        
+                <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
+            </a>
+        </div>
 
-        <pagination 
-        ng-show="(logCount > logItemsPerPage)" 
-        ng-change="loadLogs(page)" 
+        <pagination
+        ng-show="(logCount > logItemsPerPage)"
+        ng-change="loadLogs(page)"
         max-size="6"
-        total-items="logCount" 
-        items-per-page="logItemsPerPage" 
-        ng-model="currentLogPage" 
-        class="pagination-sm" 
-        boundary-links="true" 
+        total-items="logCount"
+        items-per-page="logItemsPerPage"
+        ng-model="currentLogPage"
+        class="pagination-sm"
+        boundary-links="true"
         direction-links="false" ></pagination>
         </div>
 
@@ -46,7 +50,7 @@
                 <tr>
                     <th>Event</th>
                     <th>Time</th>
-                    <th>IP</th>
+                    <th ng-show="doLogging == 2">IP</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,8 +60,8 @@
                         <span ng-show="{{ log.Event == 1 }}" class="label label-success">Login Success</span>
                         <span ng-show="{{ log.Event == 2 }}" class="label label-default">Logout</span>
                     </th>
-                    <td>{{log.Time}}</td>
-                    <td>
+                    <td>{{ log.Time * 1000 | date : 'short' }}</td>
+                    <td ng-show="doLogging == 2">
                         <code>{{log.IP}}</code>
                     </td>
                 </tr>

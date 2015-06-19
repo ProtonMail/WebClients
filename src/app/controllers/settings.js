@@ -66,6 +66,17 @@ angular.module("proton.controllers.Settings", [
 
     };
 
+    $scope.clearLogs = function() {
+        networkActivityTracker.track(
+            Logs.clearLogs().then(
+                function(response) {
+                    $scope.logs = [];
+                    $scope.logCount = 0;
+                }
+            )
+        );
+    };
+
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
@@ -395,16 +406,9 @@ angular.module("proton.controllers.Settings", [
     $scope.doLogging = user.LogAuth;
 
     $scope.setLogging = function() {
-        var logging;
-        if ($scope.doLogging===true) {
-            logging = 1;
-        }
-        else {
-            logging = 0;
-        }
         networkActivityTracker.track(
             Setting.setLogging({
-                "LogAuth" : logging
+                "LogAuth" : $scope.doLogging
             }).$promise.then(function(response) {
                 notify('Logging Preference Updated');
             }, function(response) {

@@ -7,8 +7,8 @@ angular.module("proton.models.logs", [])
             return $http.get(authentication.baseURL + '/logs/auth');
         },
         // DELETE
-        deleteLogs: function(Obj) {
+        clearLogs: function(Obj) {
             return $http.delete(authentication.baseURL + '/logs/auth');
-        } 
+        }
     };
-}); 
+});
