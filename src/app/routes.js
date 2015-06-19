@@ -7,7 +7,7 @@ angular.module("proton.routes", [
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
-    
+
     var messageViewOptions = {
         url: "/:id",
         onEnter: function($rootScope) {
@@ -16,8 +16,12 @@ angular.module("proton.routes", [
         onExit: function($rootScope) {
             $rootScope.isInMailbox = false;
         },
-        controller: "ViewMessageController as messageViewCtrl",
-        templateUrl: "templates/views/message.tpl.html",
+        views: {
+            "content@secured": {
+                controller: "ViewMessageController as messageViewCtrl",
+                templateUrl: "templates/views/message.tpl.html"
+            }
+        },
         resolve: {
             message: function(
                 $rootScope,

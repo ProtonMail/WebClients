@@ -1,3 +1,8 @@
+<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
+
+<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageViewToolbar.tpl.html'" id="messageViewToolbar" class="message-view-toolbar"></ng-include>
+<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageHead.tpl.html'" id="messageHead" class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }"></ng-include>
+
 <div class="row visible-xs-block" id="messageActionsMobile">
     <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link" title="{{ 'REPLY' | translate }}"><i class="fa fa-reply"></i> {{ 'REPLY' | translate }}</a></div>
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>

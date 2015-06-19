@@ -1,14 +1,8 @@
 <ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
 
-
-<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageViewToolbar.tpl.html'" id="messageViewToolbar" class="message-view-toolbar"></ng-include>
-<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageHead.tpl.html'" id="messageHead" class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }"></ng-include>
-<ui-view ng-if="('secured.*.message' | includedByState)" id="content"></ui-view>
-
-
-<ng-include ng-if="!('secured.*.message' | includedByState)" src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
-<div id="content" ng-if="!('secured.*.message' | includedByState)">
-    <table ng-if="!('secured.*.message' | includedByState)" class="table message-list hidden-xs" ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}">
+<ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
+<div id="content">
+    <table class="table message-list hidden-xs" ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}">
         <tbody id="message">
             <tr ng-repeat="message in messages"
                 ng-click="navigateToMessage($event, message)"
@@ -76,7 +70,7 @@
             </tr>
         </tbody>
     </table>
-    <table ng-if="!('secured.*.message' | includedByState)" class="visible-xs-block table message-list table-hover mobile" ng-class="{empty: messages.length == 0}">
+    <table class="visible-xs-block table message-list table-hover mobile" ng-class="{empty: messages.length == 0}">
         <tbody id="message">
             <tr ng-repeat="message in messages" ng-click="navigateToMessage($event, message)" ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }">
                 <td class="subject">
