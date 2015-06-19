@@ -517,6 +517,7 @@ angular.module("proton.controllers.Messages", [
     $timeout,
     $q,
     $translate,
+    Attachment,
     authentication,
     Message,
     localStorageService,
@@ -584,7 +585,14 @@ angular.module("proton.controllers.Messages", [
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
                 accept: function(file, done) {
-
+                },
+                init: function(event) {
+                    var that = this;
+                    _.forEach(message.Attachments, function (attachment) {
+                        var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
+                        that.options.addedfile.call(that, mockFile);
+                        that.options.thumbnail.call(that, mockFile, "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEhQUEhQUFBQUFBQUFBQUFBQUFBQUFBQXFxQUFBQYHCggGBwlHBQUITEhJSksLi4uFx8zODMsNygtLiwBCgoKDAwMDgwMDiwZFBksLCwsKywsLDc3Kyw3LCwsLDcsNzcsNyssLCwsLDc3LDcsLCwsLDcsNyw3NzcsNyw3LP/AABEIAOEA4QMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDB//EABkQAQEBAQEBAAAAAAAAAAAAAAABEQJBMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9QoqIpCCwRKjVTAIBgGqIAqKKCsiKmqCoEBEqiAWhQBFQDVRoEZrVSgzgqCurLWIIKkUBFQBUxQQi4AoEFQVBC1FMASBAEVJABQERSAAoIjTPQM6ADrWWkAVFACmgAAAAsEUBFqABFoJaACCgIilBAAWEIAJ0RKDI1gDdSrUAVFAAACAAACiAqKlAEAFEAAoIKgBQAWJFARUoICA6AgC0KBSIsAAAIRQVAASqlBAAVCKAlWoBAQBFQFixIArPSpQAQHSoqAsEXAAAAAFQBQQACAgAJjSRQTRYgFhUKCKigasTFBWbFS0EEAbqWrTAIuoAoAARYBAqSAqVQEouIAYQoJGkKAioCFKYAgtBGmWoAlq1mgmAgOqKgEVFAABRFADFBAQCoqAuloaAGgIKgCAAqAEWJABK0zQTEVAdUWoAqAKIoKJFALQASqzQAUEKAAQ0AwAEpqAtBAWBIAanQz1QTFAHWpWqyAACiKAAABBQEEChQAQFgqABUAAAQoC2oADNarNBFAHWotQUEAUAQWCQFEoCoqUCAQAAAQAoqAAkAAoEXA0GUqs0AMUHRKpUEgaKCooqpagIoIClEBRAAVAAQFEUEAACgAmroJUWs0BWdAdgqVFRYigqUAFSKqBEUAogoEKIAgLUVAFqKCQADEUBAAGVqAgKK6JV1lBSJQFBAWNRICAgqqBoAqURAAAAAANRagLpqYAi6lQFZtWsgirig2lBBFQBTkFVYAIiwABAVq+FARKAKCAi0vxAFKACIAVmqClZUEAEH//2Q==");
+                    });
                 }
             },
             eventHandlers: {
@@ -644,10 +652,11 @@ angular.module("proton.controllers.Messages", [
 
         totalSize += file.size;
         var attachmentPromise;
+        var element = $(file.previewElement);
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachmentPromise = attachments.load(file).then(function(packets) {
-                return attachments.upload(packets, message.ID).then(
+                return attachments.upload(packets, message.ID, element).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -665,8 +674,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.removeAttachment = function(file, message) {
-        // TODO
-        attachments.removeAttachment();
+        var fileID = (file.ID) ? file.ID : file.previewElement.id;
+        Attachment.remove({
+            "MessageID": message.ID,
+            "AttachmentID": fileID
+        });
     };
 
     $scope.initMessage = function(message) {
@@ -1053,12 +1065,12 @@ angular.module("proton.controllers.Messages", [
                 if(outsiders === true && message.IsEncrypted === 0) {
                     parameters.AttachmentKeys = [];
                     parameters.ClearBody = message.Body;
-
                     if(message.Attachments.length > 0) {
-                        parameters.AttachmentKeys = message.clearPackets();
+                         promises.push(message.clearPackets().then(function(packets) {
+                             parameters.AttachmentKeys = packets;
+                        }));
                     }
                 }
-
                 $q.all(promises).then(function() {
                     Message.send(parameters).$promise.then(function(result) {
                         notify($translate.instant('MESSAGE_SENT'));

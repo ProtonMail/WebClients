@@ -49,7 +49,7 @@ angular.module("proton.attachments", [
 
             return q.promise;
         },
-        upload: function(packets, MessageID) {
+        upload: function(packets, MessageID, element) {
             var deferred = $q.defer();
             var data = new FormData();
             var xhr = new XMLHttpRequest();
@@ -96,6 +96,7 @@ angular.module("proton.attachments", [
                     }
                 } else {
                     attachmentData.AttachmentID = response.AttachmentID;
+                    $(element).attr('ID', response.AttachmentID);
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
                         // console.log(sessionKey);
@@ -112,9 +113,6 @@ angular.module("proton.attachments", [
             xhr.send(data);
 
             return deferred.promise;
-        },
-        removeAttachment: function(file) {
-
         },
         getSessionKey:function(keypacket) {
             return authentication.getPrivateKey().then(function (key) {
