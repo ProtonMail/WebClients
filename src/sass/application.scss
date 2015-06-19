@@ -18,6 +18,7 @@ $fa-font-path: "fonts";
 
 #loading {
   position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -63,13 +64,9 @@ body {
     #messageListToolbar,
     #messageViewToolbar {
         height: $row-height;
-    } 
-    .message-metadata {
-        padding: 10px;
-        background-color: #f0f0f0;
     }  
     #content,
-    #message-body {
+    #message-content {
         position: relative;
         -webkit-flex: 1;
         overflow-y: auto;
