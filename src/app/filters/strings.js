@@ -96,17 +96,11 @@ angular.module("proton.filters.strings",[])
             bytes = 0;
         }
 
-        if (bytes < kb) {
-            if (!!!withoutUnit) {
-                unit = " B";
-            }
-            return (bytes + unit);
-        }
-        else if (bytes < mb) {
+        if (bytes < mb) {
             if (!!!withoutUnit) {
                 unit = " KB";
             }
-            return (bytes/1024).toFixed(0) + unit;
+            return (bytes/1024).toFixed(1) + unit;
         }
         else if (bytes < gb) {
             if (!!!withoutUnit) {
