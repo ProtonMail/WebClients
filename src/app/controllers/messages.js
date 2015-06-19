@@ -99,6 +99,7 @@ angular.module("proton.controllers.Messages", [
                 !$filter('isState')('secured.inbox') &&
                 !$filter('isState')('secured.drafts')  &&
                 !$filter('isState')('secured.sent')  &&
+                !$filter('isState')('secured.archive')  &&
                 !$filter('isState')('secured.spam')  &&
                 !$filter('isState')('secured.trash')
             )
