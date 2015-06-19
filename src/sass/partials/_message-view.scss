@@ -1,15 +1,17 @@
-@mixin head-link {
-    @include transition(color, 10ms, ease-in-out);
-    color: rgba(0, 0, 0, .25);
-    &:hover {
-        color: rgba(0, 0, 0, .5);
-    }
+.message-metadata,
+#main .message-head {
+    background-color: #f2f2f2;
 }
-
+.message-metadata {
+    padding: .5rem 2rem;
+} 
 #attachmentArea {
     a {
         display: block;
         text-align: left;
+    }
+    .fa, strong {
+        pointer-events: none;
     }
     border-radius: 0;
     margin: 0;
@@ -23,6 +25,51 @@
     }
 }
 
+.message-metadata {
+    box-shadow: inset 0 -1px #ccc;
+    .pull-right em {
+        font-style: normal;
+        color: rgba(0,0,0,.5);
+    }
+    ul.infos {
+        padding: 0;
+        margin-top: 0;
+        margin-left: 0;
+        .email {
+            color: #000;
+            text-decoration: none;
+            border-radius: $border-radius-base;
+            border: 1px solid transparent;
+            transition: all .5s ease;
+            background: rgba(0, 0, 0, .1);
+            padding: 0 5px;
+            &:hover {
+              background: $primary-color;
+              border-color: $primary-color-dark;
+              color: #fff;
+            }
+        }
+        li {
+            list-style: none;
+            margin-top: 0.25rem;
+        }
+        strong {
+            display: inline-block;
+            width: 4em;
+            font-weight: 400;
+            color: rgba(0, 0, 0, .25);
+        }
+        span p {
+            display: inline-block;
+            color: rgba(0, 0, 0, .25);
+            margin: 0;
+            em {
+                font-style: normal;
+                color: black;
+            }
+        }
+    }    
+}
 #headerCode {
     border-radius: 0;
     border: none;
@@ -39,11 +86,15 @@
 }
 
 #showImages {
-    padding: 0;
+    background: #e5e5e5;
+    box-shadow: inset 0 -1px #ccc;
+    border: none;
+    padding: 0 2rem;
         a {
         display: block;
-        line-height: ($row-height*2);
+        line-height: $row-height;
         width: 100%;
+        text-decoration: underline;
     }
 }
 
@@ -71,8 +122,6 @@ ul.attachments {
     padding: 10px 20px;
     position: relative;
     box-shadow: inset 0 -1px $base-color-darker;
-    background-color: #f0f0f0;
-    padding-left: 6rem;
     @include transition(all, 200ms, ease-in-out);
     .pull-right p {
         margin: 0;
@@ -88,9 +137,11 @@ ul.attachments {
     h1 {
         margin: 0;
         text-align: left;
-        line-height: 1.1em;
+        line-height: $row-height;
         font-size: 140%;
         font-weight: 700;
+        color: #000;
+        word-wrap: break-word;
         .attachement {
             position: absolute;
             top: 70px;
@@ -100,37 +151,11 @@ ul.attachments {
                 font-size: inherit;
             }
         }
-        .padlock {
-            position: absolute;
-            top: 40px;
-            left: 22px;
-            cursor: default;
-            .fa {
-                font-size: inherit;
-                margin-left: 0.2rem;
-                &.fa-lock {
-                    color: $primary-color-dark
-                }
-            }
-        }
-        .star {
-            position: absolute;
-            top: 3px;
-            left: 0;
-            line-height: 34px;
-            display: inline-block;
-            i.fa {
-                @include head-link;
-                font-size: inherit;
-            }
-            &.star {
-                left: 22px;
-            }
-            i.fa-star-o {
-                color: #bbb;
-            }
-            i.fa-star,
-            i.fa-star:hover {
+        .fa {
+            color: #666;
+            font-size: inherit;
+            .fa-star,
+            .fa-star:hover {
                 color: orange;
             }
         }
@@ -138,24 +163,9 @@ ul.attachments {
             font-size: 60%;
             margin-right: 5px;
         }
-    }
-    .message-actions {
-        margin-right: 1rem;
-        a {
-            // @include head-link;
-            margin-left: .25rem;
-            display: inline-block;
-            color: #666;
-            &:hover {
-                text-decoration: none;
-                color: #000;
-            }
-            &:active {
-                background: $base-color-darker !important;
-                border-color: $base-color-darker !important;
-                color: #4d4d4d !important;
-                opacity: .65;
-                box-shadow: none;
+        .btn-group {
+            .fa {
+                color: #fff;
             }
         }
     }
@@ -189,46 +199,6 @@ ul.attachments {
             &.fa {
                 line-height: 2rem;
                 text-align: center;
-            }
-        }
-    }
-    ul.infos {
-        padding: 0;
-        margin-top: 0;
-        margin-left: 0;
-        .email {
-            color: #000;
-            text-decoration: none;
-            border-radius: $border-radius-base;
-            border: 1px solid transparent;
-            transition: all .5s ease;
-            background: rgba(0, 0, 0, .1);
-            padding: 0 5px;
-            &:hover {
-              background: $primary-color;
-              border-color: $primary-color-dark;
-              color: #fff;
-            }
-        }
-        li {
-            list-style: none;
-            margin-top: 0.5rem;
-        }
-        strong {
-            display: inline-block;
-            width: 4em;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 90%;
-            color: rgba(0, 0, 0, .25);
-        }
-        span p {
-            display: inline-block;
-            color: rgba(0, 0, 0, .25);
-            margin: 0;
-            em {
-                font-style: normal;
-                color: black;
             }
         }
     }

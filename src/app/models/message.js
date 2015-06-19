@@ -188,7 +188,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         longReadableTime: function() {
             var dt = this.moment();
-            return dt.format('LLL') + " (" + dt.fromNow() + ")";
+            return dt.format('LLL') + " <em>(" + dt.fromNow() + ")</em>";
         },
         moment: function() {
             if (!this._moment) {

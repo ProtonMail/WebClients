@@ -190,12 +190,9 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        setTimeout( function() {
-            $('.higgs').fadeOut(400, function() {
-                $('#loading-css').remove();
-                $('#loading').fadeOut(200);
-            });
-        }, 10);
+        $('.higgs').remove();
+        $('#loading-css').remove();
+        $('#loading').remove();
     });
 
     $rootScope.onDrag = function() {

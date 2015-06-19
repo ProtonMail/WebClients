@@ -1,96 +1,82 @@
-<ng-include src="'templates/partials/messageViewToolbar.tpl.html'" class="message-view-toolbar"></ng-include>
+<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
+
+<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageViewToolbar.tpl.html'" id="messageViewToolbar" class="message-view-toolbar"></ng-include>
+<ng-include ng-if="('secured.*.message' | includedByState)" src="'templates/partials/messageHead.tpl.html'" id="messageHead" class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }"></ng-include>
+
 <div class="row visible-xs-block" id="messageActionsMobile">
     <div class="col-xs-4" ng-click="reply(message)"><a href class="btn btn-link" title="{{ 'REPLY' | translate }}"><i class="fa fa-reply"></i> {{ 'REPLY' | translate }}</a></div>
     <div class="col-xs-4" ng-click="replyAll(message)"><a href class="btn btn-link" title="{{ 'REPLY_ALL' | translate }}"><i class="fa fa-reply-all"></i> {{ 'REPLY_ALL' | translate }}</a></div>
     <div class="col-xs-4" ng-click="forward(message)"><a href class="btn btn-link" title="{{ 'FORWARD' | translate }}"><i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}</a></div>
 </div>
-<div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
-    <div class="pull-right">
-        <span ng-bind="message.longReadableTime()"></span>
+
+<div id="message-content">
+
+    <div class="message-metadata">
+        <div class="pull-right">
+            <span ng-bind-html="message.longReadableTime()"></span>
+        </div>
+        <ul class="infos">       
+            <li>
+                <strong>{{ 'FROM' | translate }}</strong>
+                <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>
+                <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
+                <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
+                <span class="fa fa-check-circle verified" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
+            </li>
+            <li>
+                <strong>{{ 'TO' | translate }}</strong>
+                <ul class="list-inline inline" ng-if="message.ToList.length">
+                    <li ng-repeat="email in message.ToList">
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-if="message.CCList.length > 0">
+                <strong>{{ 'CC' | translate }}</strong>
+                <ul class="list-inline inline">
+                    <li ng-repeat="email in message.CCList">
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-if="message.BCCList.length > 0">
+                <strong>{{ 'BCC' | translate }}</strong>
+                <ul class="list-inline inline">
+                    <li ng-repeat="email in message.BCCList">
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <h1>
-        <a href class="star" ng-click="toggleStar(message)"><i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i></a>
-        <span class="padlock">
-            <i class="fa"
-            ng-class=
-            "{
-              'fa-lock':
-                !!!(message.IsEncrypted == '0'),
-              'text-purple':
-                !!(message.IsEncrypted == '1') ||
-                !!(message.IsEncrypted == '5') ||
-                !!(message.IsEncrypted == '6'),
-              'fa-unlock-alt text-muted':
-                !!(message.IsEncrypted == '0')
-            }"
-            title="{{ getMessageEncryptionType(message) }}"></i>
-        </span>
-        <span class="attachement" ng-show="message.Attachments.length > 0">
-            <i class="fa fa-paperclip"></i>
-        </span>
-        {{ message.Subject }}
-        <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
-            {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
-        </span>
-      </h1>
-    <ul class="infos">
-        <li>
-            <strong>{{ 'FROM' | translate }}</strong>
-            <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>
-            <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
-            <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
-            <span class="fa fa-check-circle verified" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
-        </li>
-        <li>
-            <strong>{{ 'TO' | translate }}</strong>
-            <ul class="list-inline inline" ng-if="message.ToList.length">
-                <li ng-repeat="email in message.ToList">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
-                </li>
-            </ul>
-        </li>
-        <li ng-if="message.CCList.length > 0">
-            <strong>{{ 'CC' | translate }}</strong>
-            <ul class="list-inline inline">
-                <li ng-repeat="email in message.CCList">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
-                </li>
-            </ul>
-        </li>
-        <li ng-if="message.BCCList.length > 0">
-            <strong>{{ 'BCC' | translate }}</strong>
-            <ul class="list-inline inline">
-                <li ng-repeat="email in message.BCCList">
-                    <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<!--/.message-head-->
-<div ng-show="message.containsImage === true" class="alert alert-warning text-center" ng-show="!!message.imagesHidden" id="showImages">
-    <a href="" ng-click="toggleImages()">
-        <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
-        <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
-    </a>
-</div>
-<div class="well well-sm" ng-if="message.Attachments.length > 0" id="attachmentArea">
-    <div><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})</div>
-    <div class="list-inline no-margin-bottom">
-        <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active ': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
-            <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
-            <i ng-show="attachment.decrypted" class="fa fa-download"></i>
-            <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
-            <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+    <!--/.message-head-->
+    <div ng-show="message.containsImage === true" class="alert alert-warning" ng-show="!!message.imagesHidden" id="showImages">
+        <a href="" ng-click="toggleImages()">
+            <span ng-show="!!message.imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
+            <span ng-hide="!!message.imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
         </a>
     </div>
-</div>
-<div id="message-body">
-    <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
-    <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
-    <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
-        <span class="pull-left fa fa-exclamation-triangle"></span>
-        <strong>Decryption error</strong>
-        <br> Decryption of this message's encryption content failed.
+
+    <div id="message-body">
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
+        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong>Decryption error</strong>
+            <br> Decryption of this message's encryption content failed.
+        </div>
     </div>
+
+    <div class="well well-sm" ng-if="message.Attachments.length > 0" id="attachmentArea">
+        <div><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})</div>
+        <div class="list-inline no-margin-bottom">
+            <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active ': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
+                <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
+                <i ng-show="attachment.decrypted" class="fa fa-download"></i>
+                <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
+                <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+            </a>
+        </div>
+    </div>
+
 </div>

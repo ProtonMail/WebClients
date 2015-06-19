@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-8 col-md-6 col-sm-8 col-xs-12">
+        <h1>
+            <a href class="star" ng-click="toggleStar(message)">
+                <i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i>
+            </a>
+            <i 
+            class="fa {{lockType(message)}}"
+            title="{{ getMessageEncryptionType(message) }}"></i>
+            <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
+            {{ message.Subject }}
+            <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
+                {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
+            </span>
+        </h1>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-4 hidden-xs text-right">
+        <a class='btn btn-primary' href ng-click="reply(message)">
+            <i class="fa fa-reply"></i> 
+            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
+        </a>
+        <a class='btn btn-primary' href ng-click="replyAll(message)">
+            <i class="fa fa-reply-all"></i> 
+            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY_ALL' | translate }}</span>
+        </a>
+        <a class='btn btn-primary' href ng-click="forward(message)">
+            <i class="fa fa-mail-forward"></i> 
+            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'FORWARD' | translate }}</span>
+        </a>
+    </div>
+</div>
