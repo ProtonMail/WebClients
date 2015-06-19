@@ -47,7 +47,7 @@
                     </span>
                 </span>
                 <span ng-if="!showTo(message) && !showFrom(message)">
-                    <span pt-tooltip="{{ message.SenderName || message.SenderAddress | username }}">
+                    <span pt-tooltip="{{ message.SenderAddress | username }}">
                         {{ message.SenderName || message.SenderAddress | username | capitalize }}
                     </span>
                 </span>
