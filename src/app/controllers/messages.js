@@ -767,6 +767,10 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
             $scope.saveOld();
         });
+
+        $timeout(function() {
+            resizeComposer();
+        }, 1000);    
     };
 
     $scope.composerStyle = function(message) {
