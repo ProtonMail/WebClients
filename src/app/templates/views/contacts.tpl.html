@@ -8,6 +8,16 @@
         <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
     </div>
 
+    <pagination 
+    total-items="totalItems" 
+    ng-model="currentPage" 
+    max-size="10" 
+    boundary-links="true" 
+    items-per-page="numPerPage" 
+    class="pagination-sm"
+    id="contactPagination">
+    </pagination>
+
     <div class="col-md-12">
         <table class="table table-middle table-hover table-pm">
             <thead>
@@ -21,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in user.Contacts | filter:search | orderBy:'Name'">
+                <tr ng-repeat="contact in user.Contacts | filter:search | filter:paginate | orderBy:'Name'">
                     <td class="text-center hidden-xs">
                         <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                     </td>

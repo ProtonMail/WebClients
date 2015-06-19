@@ -26,6 +26,17 @@ angular.module("proton.controllers.Contacts", [
         $scope.search = value;
     });
 
+    $scope.totalItems = $rootScope.user.Contacts.length;
+    $scope.currentPage = 1;
+    $scope.numPerPage = 40;
+    $scope.paginate = function(value) {
+        var begin, end, index;
+        begin = ($scope.currentPage - 1) * $scope.numPerPage;
+        end = begin + $scope.numPerPage;
+        index = $rootScope.user.Contacts.indexOf(value);
+        return (begin <= index && index < end);
+    };
+
     var props;
 
     function openContactModal(title, name, email, save) {
