@@ -1274,7 +1274,7 @@ angular.module("proton.controllers.Messages", [
         if (message.IsEncrypted === '1' || message.IsEncrypted === '5' || message.IsEncrypted === '6') {
             lockClass += ' text-purple';
         }
-        
+
         if (message.IsEncrypted === '0') {
             lockClass += ' fa-unlock-alt text-muted';
         }

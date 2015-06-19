@@ -234,15 +234,10 @@ angular.module("proton", [
     $state,
     $stateParams
 ) {
-    var terminalInput = document.querySelector("terminalInput");
     Mousetrap.bind(["ctrl+n", "c"], function() {
         if ($state.includes("secured.**")) {
             $state.go("secured.compose");
         }
-    });
-    Mousetrap.bind(["t t t"], function() {
-        // TODO, command line ?
-        // $('#terminal').toggle().find('input').focus();
     });
     Mousetrap.bind(["i"], function() {
         if ($state.includes("secured.**")) {
