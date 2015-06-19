@@ -1459,6 +1459,8 @@ angular.module("proton.controllers.Messages", [
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
+        var inTrash = mailbox === 'trash';
+        var inSpam = mailbox === 'spam';
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
@@ -1472,7 +1474,10 @@ angular.module("proton.controllers.Messages", [
             } else {
                 notify($translate.instant('MESSAGE_MOVED'));
             }
-            $scope.goToMessageList();
+
+            if(inDelete || inTrash || inSpam) {
+                $scope.goToMessageList();
+            }
         });
 
         networkActivityTracker.track(promise);
