@@ -42,6 +42,10 @@ angular.module("proton.models.setting", [])
             setLanguage: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/language'
+            },
+            setLogging: {
+                method: 'put',
+                url: authentication.baseURL + '/settings/logauth'
             }
         }
     );

@@ -9,7 +9,7 @@
                     <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
                     <div>
                         <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}">
-                            <toggle-switch>
+                            </toggle-switch>
                     </div>
                 </div>
                 <div class="form-group" ng-class="{'has-error': notificationForm.notificationEmail.$invalid}">
@@ -80,7 +80,7 @@
             <legend>AUTOSAVE CONTACT LIST</legend>
             <label class="control-label">{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
             <div>
-                <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"><toggle-switch>
+                <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
             </div>
             <legend class="margin-top">DISPLAY NAME</legend>
             <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>

@@ -55,7 +55,6 @@ angular.module("proton.controllers.Settings", [
         networkActivityTracker.track(
             Logs.getLogs().then(
                 function(response) {
-                    console.log(response);
                     $scope.logs = response.data.Logs;
                     $scope.logCount = $scope.logs.length;
                 }
@@ -391,6 +390,27 @@ angular.module("proton.controllers.Settings", [
         //         $log.error(response);
         //     })
         // );
+    };
+
+    $scope.doLogging = user.LogAuth;
+
+    $scope.setLogging = function() {
+        var logging;
+        if ($scope.doLogging==true) {
+            logging = 1;
+        }
+        else {
+            logging = 0;
+        }
+        networkActivityTracker.track(
+            Setting.setLogging({
+                "LogAuth" : logging
+            }).$promise.then(function(response) {
+                notify('Logging Preference Updated');
+            }, function(response) {
+                $log.error(response);
+            })
+        );
     };
 
     $scope.clearTheme = function() {
