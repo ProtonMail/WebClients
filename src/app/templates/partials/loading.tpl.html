@@ -1,0 +1,246 @@
+<style type="text/css" id="loading-css">
+    body {
+        font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        font-size: 13px;
+    }
+    #loading {
+        position: absolute;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        color: #fff;
+        background: #555;
+    }
+
+    .higgs {
+        position: relative;
+        margin: auto;
+        width: 160px;
+    }
+    .orbit,
+    .ring {
+        -webkit-transition: -webkit-transform 500ms linear;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: -moz-transform 500ms linear;
+        -moz-transform-style: preserve-3d;
+        width: 160px;
+        height: 160px;
+        margin: auto;
+        margin-top: 80px;
+        position: absolute;
+    }
+    .orbit {
+        border: 0px solid #ffffff;
+    }
+    .ring {
+        position: absolute;
+        border: 3px solid #ffffff;
+        border-radius: 160px;
+        margin: auto;
+    }
+    .ring.inner,
+    .ring.center {
+        border: 1px solid rgba(255,255,255,.5);
+        width: 80px;
+        height: 80px;
+        top: 40px;
+        left: 40px;
+    }
+    .ring.center {
+        background: #ffffff;
+        width: 20px;
+        height: 20px;
+        top: 70px;
+        left: 70px;
+        box-shadow: 0 0 5px #fff;
+    }
+    .wrap-electron {
+        border: 0px solid  #fff;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .electron {
+        width: 12px;
+        height: 12px;
+        background: #ffffff;
+        left: 50%;
+        margin-left: -8px;
+        border: none;
+        top: -7px;
+        -webkit-transform-origin: 50% 50%;
+    }
+    .inner .electron {
+        top: -6px;
+    }
+
+    .orbit {
+        -webkit-animation: lateral 3s ease-in-out infinite;
+        -moz-animation: lateral 3s ease-in-out infinite;
+    }
+    .vertical {
+        -webkit-animation: vertical 3s linear infinite;
+        -moz-animation: vertical 3s linear infinite;
+    }
+    .horizontal {
+        -webkit-animation: horizontal 3s linear infinite;
+        -moz-animation: horizontal 3s linear infinite;
+    }
+
+    .orbit.r {
+        -webkit-animation: lateralRevert 1s linear infinite;
+        -moz-animation: lateralRevert 1s linear infinite;
+    }
+    .vertical.inner {
+        -webkit-animation: verticalRevert 1s linear infinite;
+        -moz-animation: verticalRevert 1s linear infinite;
+    }
+    .horizontal.inner {
+        -webkit-animation: horizontalRevert 1s linear infinite;
+        -moz-animation: horizontalRevert 1s linear infinite;
+    }
+
+    .center {
+        -webkit-animation: electron 3s linear infinite;
+        -moz-animation: electron 3s linear infinite;
+    }
+
+    @keyframes electron {
+        0% {
+            -webkit-transform: rotateZ(0deg);
+            opacity: .9;
+            box-shadow: 0;
+        }
+        50% {
+            opacity: 1;
+            box-shadow: 0 0 8rem 1rem #fff;
+        }
+        100% {
+            -webkit-transform: rotateZ(360deg);
+            opacity: .9;
+            box-shadow: 0;
+        }
+    }
+    @keyframes horizontal {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+    @keyframes horizontalRevert {
+        from {
+            transform: rotateY(360deg);
+        }
+        to {
+            transform: rotateY(0deg);
+        }
+    }
+    @keyframes vertical {
+        from {
+            transform: rotateX(0deg);
+        }
+        to {
+            transform: rotateX(360deg);
+        }
+    }
+    @keyframes verticalRevert {
+        from {
+            transform: rotateX(360deg);
+        }
+        to {
+            transform: rotateX(0deg);
+        }
+    }
+    @keyframes lateral {
+        from {
+            transform: rotateZ(0deg);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+    @keyframes lateralRevert {
+        from {
+            transform: rotateZ(360deg);
+        }
+        to {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @-webkit-keyframes electron {
+        0% {
+            -webkit-transform: rotateZ(0deg);
+            opacity: .5;
+            box-shadow: 0;
+        }
+        50% {
+            opacity: 1;
+            box-shadow: 0 0 2rem #fff;
+        }
+        100% {
+            -webkit-transform: rotateZ(360deg);
+            opacity: .5;
+            box-shadow: 0;
+        }
+    }
+    @-webkit-keyframes horizontal {
+        from {
+            -webkit-transform: rotateY(0deg);
+        }
+        to {
+            -webkit-transform: rotateY(360deg);
+        }
+    }
+    @-webkit-keyframes horizontalRevert {
+        from {
+            -webkit-transform: rotateY(360deg);
+        }
+        to {
+            -webkit-transform: rotateY(0deg);
+        }
+    }
+    @-webkit-keyframes vertical {
+        from {
+            -webkit-transform: rotateX(0deg);
+        }
+        to {
+            -webkit-transform: rotateX(360deg);
+        }
+    }
+    @-webkit-keyframes verticalRevert {
+        from {
+            -webkit-transform: rotateX(360deg);
+        }
+        to {
+            -webkit-transform: rotateX(0deg);
+        }
+    }
+    @-webkit-keyframes lateral {
+        from {
+            -webkit-transform: rotateZ(0deg);
+        }
+        to {
+            -webkit-transform: rotateZ(360deg);
+        }
+    }
+    @-webkit-keyframes lateralRevert {
+        from {
+            -webkit-transform: rotateZ(360deg);
+        }
+        to {
+            -webkit-transform: rotateZ(0deg);
+        }
+    }
+</style>
