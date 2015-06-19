@@ -11,6 +11,10 @@ body .navbar-inverse {
     }
 }
 
+body .message-toolbar > ul > li .dropdown-menu li > a {
+    padding-right: 10px;
+}
+
 .dropdown-menu .divider {
     background: rgba(0,0,0,.2);
 }
