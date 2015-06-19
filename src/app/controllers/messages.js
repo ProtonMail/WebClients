@@ -41,14 +41,13 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.refreshMessages = function(mailbox) {
-        console.log('refreshMessages');
         mailbox = mailbox || $state.current.name.replace('secured.', '');
-        console.log(mailbox);
         var params = Message.parameters(mailbox);
-        console.log(params);
-        Message.query(params).$promise.then(function(result) {
+        var promise = Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
         });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.showTo = function(message) {
@@ -509,7 +508,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.goToAdjacentMessage = function(message, adjacency) {
         var idx = messages.indexOf(message);
-        
+
         if (adjacency === +1 && idx === messages.length - 1) {
             $state.go("^.relative", {
                 rel: 'first',
