@@ -44,7 +44,6 @@ table.message-list {
             padding: 0 10px;
             line-height: $row-height;
             vertical-align: middle;
-            text-overflow: ellipsis;
             overflow: hidden;
             &.actions {
                 cursor: default;
@@ -118,7 +117,7 @@ table.message-list {
                         }
                     }
                 }
-            }            
+            }
             &.size,
             &.when {
                 text-align: right;
