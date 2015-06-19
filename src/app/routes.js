@@ -7,7 +7,6 @@ angular.module("proton.routes", [
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
-
     var messageViewOptions = {
         url: "/:id",
         onEnter: function($rootScope) {
@@ -88,8 +87,51 @@ angular.module("proton.routes", [
                 ) {
                     var mailbox = this.data.mailbox;
 
+                    var getMessagesParameters = function(mailbox) {
+                        var params = {};
+
+                        params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                        params.Page = ($stateParams.page || 1) - 1;
+
+                        if ($stateParams.filter) {
+                            params.Unread = +($stateParams.filter === 'unread');
+                        }
+
+                        if ($stateParams.sort) {
+                            var sort = $stateParams.sort;
+                            var desc = _.string.startsWith(sort, "-");
+
+                            if (desc) {
+                                sort = sort.slice(1);
+                            }
+
+                            params.Sort = _.string.capitalize(sort);
+                            params.Desc = +desc;
+                        }
+
+                        if (mailbox === 'search') {
+                            params.Location = $stateParams.location;
+                            params.Keyword = $stateParams.words;
+                            params.To = $stateParams.to;
+                            params.From = $stateParams.from;
+                            params.Subject = $stateParams.subject;
+                            params.Begin = $stateParams.begin;
+                            params.End = $stateParams.end;
+                            params.Attachments = $stateParams.attachments;
+                            params.Starred = $stateParams.starred;
+                            params.Label = $stateParams.label;
+                        } else if(mailbox === 'label') {
+                            delete params.Location;
+                            params.Label = $stateParams.label;
+                        }
+
+                        _.pick(params, _.identity);
+
+                        return params;
+                    };
+
                     if (authentication.isSecured()) {
-                        var params = Message.parameters(mailbox);
+                        var params = getMessagesParameters(mailbox);
                         var messagesPromise = Message.query(params).$promise;
 
                         return networkActivityTracker.track(messagesPromise);

@@ -71,49 +71,6 @@ angular.module("proton.models.message", ["proton.constants"])
                     return json.Messages;
                 }
             },
-            parameters: function(mailbox) {
-                console.log('parameters');
-                var params = {};
-
-                params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                params.Page = ($stateParams.page || 1) - 1;
-
-                if ($stateParams.filter) {
-                    params.Unread = +($stateParams.filter === 'unread');
-                }
-
-                if ($stateParams.sort) {
-                    var sort = $stateParams.sort;
-                    var desc = _.string.startsWith(sort, "-");
-
-                    if (desc) {
-                        sort = sort.slice(1);
-                    }
-
-                    params.Sort = _.string.capitalize(sort);
-                    params.Desc = +desc;
-                }
-
-                if (mailbox === 'search') {
-                    params.Location = $stateParams.location;
-                    params.Keyword = $stateParams.words;
-                    params.To = $stateParams.to;
-                    params.From = $stateParams.from;
-                    params.Subject = $stateParams.subject;
-                    params.Begin = $stateParams.begin;
-                    params.End = $stateParams.end;
-                    params.Attachments = $stateParams.attachments;
-                    params.Starred = $stateParams.starred;
-                    params.Label = $stateParams.label;
-                } else if(mailbox === 'label') {
-                    delete params.Location;
-                    params.Label = $stateParams.label;
-                }
-
-                _.pick(params, _.identity);
-
-                return params;
-            },
             latest: {
                 method: 'get',
                 url: authentication.baseURL + '/messages/latest/:time'
@@ -179,6 +136,48 @@ angular.module("proton.models.message", ["proton.constants"])
 
     _.extend(Message.prototype, {
         promises: [],
+        parameters: function(mailbox) {
+            var params = {};
+
+            params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            params.Page = ($stateParams.page || 1) - 1;
+
+            if ($stateParams.filter) {
+                params.Unread = +($stateParams.filter === 'unread');
+            }
+
+            if ($stateParams.sort) {
+                var sort = $stateParams.sort;
+                var desc = _.string.startsWith(sort, "-");
+
+                if (desc) {
+                    sort = sort.slice(1);
+                }
+
+                params.Sort = _.string.capitalize(sort);
+                params.Desc = +desc;
+            }
+
+            if (mailbox === 'search') {
+                params.Location = $stateParams.location;
+                params.Keyword = $stateParams.words;
+                params.To = $stateParams.to;
+                params.From = $stateParams.from;
+                params.Subject = $stateParams.subject;
+                params.Begin = $stateParams.begin;
+                params.End = $stateParams.end;
+                params.Attachments = $stateParams.attachments;
+                params.Starred = $stateParams.starred;
+                params.Label = $stateParams.label;
+            } else if(mailbox === 'label') {
+                delete params.Location;
+                params.Label = $stateParams.label;
+            }
+
+            _.pick(params, _.identity);
+
+            return params;
+        },
         readableTime: function() {
             if (this.moment().isSame(moment(), 'day')) {
                 return this.moment().format('h:mm a');
