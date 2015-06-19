@@ -36,6 +36,21 @@ angular.module("proton.controllers.Messages", [
         $scope.unselectAllMessages();
     });
 
+    $scope.$on('refreshMessages', function() {
+        $scope.refreshMessages();
+    });
+
+    $scope.refreshMessages = function(mailbox) {
+        console.log('refreshMessages');
+        mailbox = mailbox || $state.current.name.replace('secured.', '');
+        console.log(mailbox);
+        var params = Message.parameters(mailbox);
+        console.log(params);
+        Message.query(params).$promise.then(function(result) {
+            $scope.messages = result;
+        });
+    };
+
     $scope.showTo = function(message) {
         return (
             $scope.senderIsMe(message) &&
@@ -494,6 +509,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.goToAdjacentMessage = function(message, adjacency) {
         var idx = messages.indexOf(message);
+        
         if (adjacency === +1 && idx === messages.length - 1) {
             $state.go("^.relative", {
                 rel: 'first',
@@ -516,6 +532,7 @@ angular.module("proton.controllers.Messages", [
     $log,
     $timeout,
     $q,
+    $state,
     $translate,
     Attachment,
     authentication,
@@ -975,6 +992,12 @@ angular.module("proton.controllers.Messages", [
                     message.ID = result.Message.ID;
                     message.BackupDate = new Date();
                     $scope.saveOld(message);
+
+                    // Add draft in message list
+                    if($state.is('secured.drafts')) {
+                        $rootScope.$broadcast('refreshMessages');
+                    }
+
                     deferred.resolve(result);
                 });
             });
@@ -1075,6 +1098,11 @@ angular.module("proton.controllers.Messages", [
                     Message.send(parameters).$promise.then(function(result) {
                         notify($translate.instant('MESSAGE_SENT'));
                         $scope.close(message, false);
+
+                        if($state.is('secured.drafts') || $state.is('secured.sent')) {
+                            $rootScope.$broadcast('refreshMessages');
+                        }
+
                         deferred.resolve(result);
                     });
                 });

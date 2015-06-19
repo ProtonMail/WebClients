@@ -37,8 +37,6 @@ angular.module("proton.controllers.Contacts", [
         return (begin <= index && index < end);
     };
 
-    var props;
-
     function openContactModal(title, name, email, save) {
         contactModal.activate({
             params: {
