@@ -66,7 +66,7 @@ angular.module("proton.controllers.Auth", [
 	                else {
 	                	notify({
 	                        classes: 'notification-danger',
-	                        message: 'Unable to login.'
+	                        message: 'Wrong Username or Password.'
 	                    });
 	                }
 	                return;
