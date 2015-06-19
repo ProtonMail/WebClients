@@ -22,7 +22,7 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-large">
-                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="isInMailbox || isInContact">
+                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="'secured.**' | includedByState">
                     <div class="input-group form-group" ng-if="isInMailbox">
                         <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" ng-focus="onFocusSearch()" ng-blur="onBlurSearch()" />
                         <span class="input-group-btn">
