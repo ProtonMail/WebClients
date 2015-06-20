@@ -798,7 +798,6 @@ angular.module("proton.controllers.Messages", [
 
         styles['z-index'] = message.zIndex;
 
-        console.log(styles);
         return styles;
 
     };
