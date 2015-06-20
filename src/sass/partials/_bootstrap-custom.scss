@@ -1,5 +1,28 @@
-// TODO move responsive code here if its bootstrap
-
+.btn-default:active {
+  background-color: #fff;
+  background-image: -webkit-radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
+  background-image: -o-radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
+  background-image: radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
+}
+.btn-primary:active {
+  background-color: #fff;
+  background-image: -webkit-radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
+  background-image: -o-radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
+  background-image: radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
+}
+.btn {
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-background-size: 200% 200%;
+    background-size: 200%;
+    background-position: 50%;  
+    &:active {
+        background-repeat: no-repeat;
+        -webkit-background-size: 1000% 1000%;
+        background-size: 1000%;
+    }
+}
 
 body .navbar-inverse {
     background: $navbar-color;
@@ -79,21 +102,6 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
 }
 
 .alert {
-    .alert-warning a {
-        color: darken($btn-warning-bg, 25%);
-    }
-    .alert-primary a {
-        color: darken($btn-primary-bg, 25%);
-    }
-    .alert-success a {
-        color: darken($btn-success-bg, 25%);
-    }
-    .alert-info a {
-        color: darken($btn-info-bg, 25%);
-    }
-    .alert-danger a {
-        color: darken($btn-danger-bg, 25%);
-    }
     .alert a {
         font-weight: 700;
     }
