@@ -355,8 +355,10 @@ module.exports = function(grunt) {
             }
         },
 
-
         ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
             compile: {
                 files: [{
                     src: ["<%= app_files.js %>"],

@@ -72,7 +72,7 @@ angular.module("proton.messages", [])
                         });
                     });
 
-                    this.cache[id] = message;
+                    self.cache[id] = message;
 
                     // Cache a stringified version of the message in session storage
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
@@ -82,10 +82,10 @@ angular.module("proton.messages", [])
                 var data = window.sessionStorage["proton:message:" + id];
 
                 if(data) {
-                    var msg = _.extend(JSON.parse(data), message);
+                    var msg = _.extend(JSON.parse(data), _.pick(message, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
 
-                    this.cache[id] = message;
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
+                    this.cache[id] = msg;
+                    window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
                 }
             }
         });
