@@ -489,11 +489,15 @@ angular.module("proton.controllers.Messages", [
         });
 
         $q.all(promises).then(function() {
-            _.each($scope.selectedMessages(), function(message) {
-                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-            });
-            $scope.closeLabels();
-            $scope.unselectAllMessages();
+            if($state.is('secured.label')) {
+                $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+            } else {
+                _.each($scope.selectedMessages(), function(message) {
+                    message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+                });
+                $scope.unselectAllMessages();
+            }
+
             notify($translate.instant('LABELS_APPLY'));
             deferred.resolve();
         });
