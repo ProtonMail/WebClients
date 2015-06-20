@@ -46,7 +46,7 @@ angular.module("proton.messages", [])
                     data = new Message(JSON.parse(data));
                     data.$promise = q.promise;
                     q.resolve(data);
-                    this.cache[id] = data;
+                    this.cache[''+id] = data;
                 }
 
                 return data;
@@ -72,7 +72,7 @@ angular.module("proton.messages", [])
                         });
                     });
 
-                    this.cache[id] = message;
+                    self.cache[id] = message;
 
                     // Cache a stringified version of the message in session storage
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
