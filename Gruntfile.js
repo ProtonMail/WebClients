@@ -390,7 +390,7 @@ module.exports = function(grunt) {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
+                    // "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
                     "<%= compile_dir %>/assets/vendor.js": "<%= compile_dir %>/assets/vendor.js"
                 }
             }
