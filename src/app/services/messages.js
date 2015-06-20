@@ -19,13 +19,16 @@ angular.module("proton.messages", [])
             },
             fetchNext: function() {
                 var self = this;
-                api.get(this.queue.shift()).$promise.then(function() {
-                    if (self.queue.length === 0) {
-                        self.fetching = false;
-                    } else {
-                        self.fetchNext();
-                    }
-                });
+
+                setTimeout(function() {
+                    api.get(self.queue.shift()).$promise.then(function() {
+                        if (self.queue.length === 0) {
+                            self.fetching = false;
+                        } else {
+                            self.fetchNext();
+                        }
+                    });
+                }, CONSTANTS.TIMEOUT_PRELOAD_MESSAGE);
             }
         });
 
@@ -96,7 +99,6 @@ angular.module("proton.messages", [])
             lists.push(messageList);
             _.find(messageList, function(other, i) {
                 // For every message in the newly downloaded message list
-
                 if ((msg = cachedMessages.get(other.ID))) {
                     // If a completely fetched message exists in the cache
                     // replace the instance in the list with the complete cached instance
