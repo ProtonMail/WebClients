@@ -414,8 +414,18 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.doLogging = user.LogAuth;
+    $scope.doLogging2 = user.LogAuth;
 
     $scope.setLogging = function() {
+        var r;        
+        if ($scope.doLogging==='0') {
+            r = confirm("Disabling logs will also delete your current logs. Are you sure?");
+            if (r === false) {
+                $scope.doLogging = $scope.doLogging2;
+                return;
+            }
+        }
+        $scope.doLogging2 = $scope.doLogging;
         networkActivityTracker.track(
             Setting.setLogging({
                 "LogAuth" : $scope.doLogging
