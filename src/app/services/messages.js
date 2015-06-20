@@ -46,7 +46,7 @@ angular.module("proton.messages", [])
                     data = new Message(JSON.parse(data));
                     data.$promise = q.promise;
                     q.resolve(data);
-                    this.cache[''+id] = data;
+                    this.cache[id] = data;
                 }
 
                 return data;
@@ -82,10 +82,10 @@ angular.module("proton.messages", [])
                 var data = window.sessionStorage["proton:message:" + id];
 
                 if(data) {
-                    var msg = _.extend(JSON.parse(data), message);
+                    var msg = _.extend(JSON.parse(data), _.pick(message, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
 
-                    this.cache[id] = message;
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
+                    this.cache[id] = msg;
+                    window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
                 }
             }
         });
