@@ -380,11 +380,17 @@ module.exports = function(grunt) {
         },
 
         uglify: {
+            options: {
+                sourceMap: true,
+                preserveComments: false,
+                report: 'min'
+            },
             compile: {
                 options: {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
+                    "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
                     "<%= compile_dir %>/assets/vendor.js": "<%= compile_dir %>/assets/vendor.js"
                 }
             }
