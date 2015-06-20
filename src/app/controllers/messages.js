@@ -630,15 +630,51 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
+    $scope.slideDown = function(message) {
+        $('#' + message.previews).slideToggle({direction: "down"}, 200);
+        message.attachmentsToggle = !!!message.attachmentsToggle;
+    };
+
+    $scope.isOver = false;
+    var isOver = false;
+    var interval;
+
+    $(window).on('dragover', function(e) {
+        scope = angular.element("#composer-element").scope();
+        e.preventDefault();
+
+        clearInterval(interval);
+
+        interval = setInterval(function() {
+            isOver = false;
+            scope.$apply(function(){scope.isOver = false;});
+            clearInterval(interval);
+        }, 100);
+
+        if (isOver === false) {
+            isOver = true;
+            scope.$apply(function(){scope.isOver = true;});
+        }
+    });
+
+    $scope.dropzone = 0;
+
     $scope.dropzoneConfig = function(message) {
+        $scope.dropzone++;
+        message.button = 'button' + $scope.dropzone;
+        message.previews = 'previews' + $scope.dropzone;
+
         return {
             options: {
                 maxFilesize: CONSTANTS.ATTACHMENT_SIZE_LIMIT,
                 maxFiles: CONSTANTS.ATTACHMENT_NUMBER_LIMIT,
-                addRemoveLinks: true,
-                dictDefaultMessage: 'Drop files here or click to upload',
+                addRemoveLinks: false,
+                dictDefaultMessage: 'Drop files here to upload',
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
+                previewsContainer: '.previews',
+                previewTemplate: '<button class="btn preview-template"><span class="pull-right fa fa-times preview-close" data-dz-remove></span><p class="name preview-name" data-dz-name></p></button>',
+                createImageThumbnails: false,
                 accept: function(file, done) {
                 },
                 init: function(event) {
@@ -646,7 +682,6 @@ angular.module("proton.controllers.Messages", [
                     _.forEach(message.Attachments, function (attachment) {
                         var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                         that.options.addedfile.call(that, mockFile);
-                        that.options.thumbnail.call(that, mockFile, "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEhQUEhQUFBQUFBQUFBQUFBQUFBQUFBQXFxQUFBQYHCggGBwlHBQUITEhJSksLi4uFx8zODMsNygtLiwBCgoKDAwMDgwMDiwZFBksLCwsKywsLDc3Kyw3LCwsLDcsNzcsNyssLCwsLDc3LDcsLCwsLDcsNyw3NzcsNyw3LP/AABEIAOEA4QMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDB//EABkQAQEBAQEBAAAAAAAAAAAAAAABEQJBMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9QoqIpCCwRKjVTAIBgGqIAqKKCsiKmqCoEBEqiAWhQBFQDVRoEZrVSgzgqCurLWIIKkUBFQBUxQQi4AoEFQVBC1FMASBAEVJABQERSAAoIjTPQM6ADrWWkAVFACmgAAAAsEUBFqABFoJaACCgIilBAAWEIAJ0RKDI1gDdSrUAVFAAACAAACiAqKlAEAFEAAoIKgBQAWJFARUoICA6AgC0KBSIsAAAIRQVAASqlBAAVCKAlWoBAQBFQFixIArPSpQAQHSoqAsEXAAAAAFQBQQACAgAJjSRQTRYgFhUKCKigasTFBWbFS0EEAbqWrTAIuoAoAARYBAqSAqVQEouIAYQoJGkKAioCFKYAgtBGmWoAlq1mgmAgOqKgEVFAABRFADFBAQCoqAuloaAGgIKgCAAqAEWJABK0zQTEVAdUWoAqAKIoKJFALQASqzQAUEKAAQ0AwAEpqAtBAWBIAanQz1QTFAHWpWqyAACiKAAABBQEEChQAQFgqABUAAAQoC2oADNarNBFAHWotQUEAUAQWCQFEoCoqUCAQAAAQAoqAAkAAoEXA0GUqs0AMUHRKpUEgaKCooqpagIoIClEBRAAVAAQFEUEAACgAmroJUWs0BWdAdgqVFRYigqUAFSKqBEUAogoEKIAgLUVAFqKCQADEUBAAGVqAgKK6JV1lBSJQFBAWNRICAgqqBoAqURAAAAAANRagLpqYAi6lQFZtWsgirig2lBBFQBTkFVYAIiwABAVq+FARKAKCAi0vxAFKACIAVmqClZUEAEH//2Q==");
                     });
                 }
             },
@@ -655,6 +690,7 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on dragenter', event);
                 },
                 dragover: function(event) {
+                    clearInterval(interval);
                     // console.log('on dragover', event);
                 },
                 dragleave: function(event) {
@@ -662,6 +698,8 @@ angular.module("proton.controllers.Messages", [
                 },
                 drop: function(event) {
                     // console.log('on drop', event);
+                    $scope.isOver = false;
+                    isOver = false;
                 },
                 addedfile: function(file) {
                     if(angular.isUndefined(message.ID)) {
@@ -730,9 +768,19 @@ angular.module("proton.controllers.Messages", [
 
     $scope.removeAttachment = function(file, message) {
         var fileID = (file.ID) ? file.ID : file.previewElement.id;
+        var attachment = _.findWhere(message.Attachments, {AttachmentID: fileID});
+        message.Attachments = _.filter(message.Attachments, function(a) {return a.AttachmentID !== fileID;});
+            // message.Attachments = [];
         Attachment.remove({
             "MessageID": message.ID,
             "AttachmentID": fileID
+        }).$promise.then(function(response) {
+            if (response.Error) {
+                notify(response.Error);
+                message.Attachments.push(attachment);
+                var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
+                that.options.addedfile.call(that, mockFile);
+            }
         });
     };
 
@@ -1098,32 +1146,26 @@ angular.module("proton.controllers.Messages", [
                         }));
                     } else { // outside user
 
-                        // console.log('1');
 
                         outsiders = true;
 
                         if(message.IsEncrypted === 1) {
 
-                            // console.log('2');
 
                             var replyToken = message.generateReplyToken();
                             var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
-                            // console.log('3');
 
                             promises.push(replyTokenPromise.then(function(encryptedToken) {
 
-                                // console.log('4');
 
                                 pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
 
-                                    // console.log('5');
 
                                     var body = result;
 
                                     message.encryptPackets('', message.Password).then(function(result) {
 
-                                        // console.log('6');
 
                                         var keyPackets = result;
 
