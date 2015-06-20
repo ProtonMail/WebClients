@@ -1,13 +1,19 @@
-<div class="panel panel-default wrap">
+<div class="panel panel-default wrap panel-dark" id="loginPanel">
+    <div class="panel-heading logoWrap">
+        <a href="/"><img src="/assets/img/protonmail.svg" alt="ProtonMail" class="logo" /></a>
+    </div>
     <div class="panel-body">
         <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="off">
-            <h3 class="text-center margin-bottom">{{ 'LOGIN' | translate }}</h3>
+            <h3 class="text-center margin-bottom">
+                <span class="fa fa-user title-icon"></span>
+                {{ 'USER_LOGIN' | translate }}
+            </h3>
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
-                <input autocomplete="off" type="text" ng-model="username" class="form-control" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
+                <input autocomplete="off" type="text" ng-model="username" class="form-control dark" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
             </div>
             <div class="form-group">
-                <input autocomplete="off" type="password" ng-model="password" class="form-control" tabindex="2" name="Password" required="" placeholder="Password" value="" />
+                <input autocomplete="off" type="password" ng-model="password" class="form-control dark" tabindex="2" name="Password" required="" placeholder="Password" value="" />
             </div>
             <div class="fluid-container">
                 <div class="row">

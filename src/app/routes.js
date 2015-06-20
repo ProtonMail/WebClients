@@ -157,7 +157,7 @@ angular.module("proton.routes", [
         url: "/login",
         views: {
             "main@": {
-                templateUrl: "templates/layout/auth.tpl.html"
+                templateUrl: "templates/layout/login.tpl.html"
             },
             "panel@login": {
                 controller: "LoginController",

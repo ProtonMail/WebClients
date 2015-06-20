@@ -1,0 +1,18 @@
+#loginPanel,
+#unlockPanel {
+    .logoWrap {
+        display: block;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        text-align: center;
+        .logo {
+            display: block;
+            height: 2rem;
+            margin: auto;
+        }
+    }
+}
+
+.unlock #body #content {
+    padding: 6rem 0;
+}
