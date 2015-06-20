@@ -1,3 +1,5 @@
+<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
+
 <div class="container-fluid">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
@@ -63,7 +65,7 @@
                     </th>
                     <td>{{ log.Time * 1000 | date : 'short' }}</td>
                     <td ng-show="doLogging == 2">
-                        <code>{{log.IP}}</code>
+                        <code ng-show="log.IP!==''">{{log.IP}}</code>
                     </td>
                 </tr>
             </tbody>

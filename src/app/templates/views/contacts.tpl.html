@@ -1,55 +1,59 @@
-<div class="container-fuild margin-top">
-    <div class="col-md-6 form-group">
-        <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
-        <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
-    </div>
-    <div class="col-md-6 text-right form-group">
-        <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
-        <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
-    </div>
+<ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
 
-    <pagination
-    total-items="totalItems"
-    ng-model="currentPage"
-    max-size="10"
-    boundary-links="true"
-    items-per-page="numPerPage"
-    class="pagination-sm"
-    id="contactPagination">
-    </pagination>
+<div class="container-fluid margin-top">
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
+            <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
+        </div>
+        <div class="col-md-6 text-right form-group">
+            <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
+            <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
+        </div>
 
-    <div class="col-md-12">
-        <table class="table table-middle table-hover table-pm">
-            <thead>
-                <tr>
-                    <th class="text-center hidden-xs">
-                        <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
-                    </th>
-                    <th>{{ 'NAME' | translate }}</th>
-                    <th>{{ 'EMAIL' | translate }}</th>
-                    <th>{{ 'ACTIONS' | translate }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="contact in user.Contacts | filter:search | filter:paginate | orderBy:'Name'">
-                    <td class="text-center hidden-xs">
-                        <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
-                    </td>
-                    <td>{{ contact.Name }}</td>
-                    <td class="text-muted">{{ contact.Email }}</td>
-                    <td>
-                        <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
-                            <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
-                        </a>
-                        <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
-                            <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
-                        </a>
-                        <a href="" class="btn btn-default btn-sm" ng-click="deleteContacts(contact)">
-                            <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <pagination
+        total-items="totalItems"
+        ng-model="currentPage"
+        max-size="10"
+        boundary-links="true"
+        items-per-page="numPerPage"
+        class="pagination-sm"
+        id="contactPagination">
+        </pagination>
+
+        <div class="col-md-12">
+            <table class="table table-middle table-hover table-pm">
+                <thead>
+                    <tr>
+                        <th class="text-center hidden-xs">
+                            <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
+                        </th>
+                        <th>{{ 'NAME' | translate }}</th>
+                        <th>{{ 'EMAIL' | translate }}</th>
+                        <th>{{ 'ACTIONS' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in user.Contacts | filter:search | filter:paginate | orderBy:'Name'">
+                        <td class="text-center hidden-xs">
+                            <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                        </td>
+                        <td>{{ contact.Name }}</td>
+                        <td class="text-muted">{{ contact.Email }}</td>
+                        <td>
+                            <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
+                                <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
+                            </a>
+                            <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
+                                <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
+                            </a>
+                            <a href="" class="btn btn-default btn-sm" ng-click="deleteContacts(contact)">
+                                <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

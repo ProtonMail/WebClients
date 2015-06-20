@@ -1,7 +1,11 @@
 <div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar" class="hidden-xs"></div>
 
-<div id="main" class="secure" ondragenter="onDrag()" ui-view="content">
-</div>
+<div 
+id="main" 
+class="secure" 
+ondragenter="onDrag()" 
+ng-class="{ 'fixed': ('**.message'| includedByState) || messages.length>1 }"
+ui-view="content"></div>
 
 <ng-include src="'templates/partials/composer.tpl.html'"></ng-include>
 <ng-include ng-if="isLoggedIn" src="'templates/partials/form.bug.tpl.html'"></ng-include>
