@@ -9,23 +9,23 @@ $domain-element-width: 12rem;
             box-sizing: border-box;
         }
         .usernameWrap {
-        	position: relative; 
+            position: relative; 
         }
         .usernameDomain {
             width: $domain-element-width;
-        	position: absolute;
-        	right: 1px;
-        	top: 1px;
-        	bottom: 1px;
-        	z-index: 2;
-        	background: #fff;
-        	line-height: 34.3px;
-        	padding: 0 14.3px;
-        	font-style: normal;
-        	pointer-events: none;
-        	cursor: default;
-        	text-align: right;
-        	border-radius: 2px;
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
+            z-index: 2;
+            background: #fff;
+            line-height: 34.3px;
+            padding: 0 14.3px;
+            font-style: normal;
+            pointer-events: none;
+            cursor: default;
+            text-align: right;
+            border-radius: 2px;
             box-sizing: border-box;
         }
     }

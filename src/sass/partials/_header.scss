@@ -19,8 +19,8 @@
   }
 }
 .navbar-text {
-	margin-right: 0;
-	margin-left: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .logo img {
@@ -29,16 +29,16 @@
 
 // TODO move to tablet css
 #searchMob {
-	line-height: 30px;
-	height: 30px;
-	width: 35px;
-	margin: 10px 15px 10px 0;
-	color: $base-color;
-	background: $alt-color-light;
-	text-align: center;
-	border-radius: 2px;
+  line-height: 30px;
+  height: 30px;
+  width: 35px;
+  margin: 10px 15px 10px 0;
+  color: $base-color;
+  background: $alt-color-light;
+  text-align: center;
+  border-radius: 2px;
 }
 
 #main .navbar {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }

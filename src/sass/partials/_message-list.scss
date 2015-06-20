@@ -1,17 +1,11 @@
 #noMessages {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     text-align: center;
-    padding-top: 6em;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 200%;
+    padding: 6rem 0;
     color: $base-color-darker;
     text-shadow: 0px 1px 0 white;
-    background-color: #f8f8f8;
 }
 table.message-list.mobile tr {
     h4 {

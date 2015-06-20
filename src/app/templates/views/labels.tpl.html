@@ -1,24 +1,26 @@
 <ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
 
-<div class="container-fluid">
-    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="form-group">
-        <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> {{ 'ADD_LABEL' | translate }}</button>
-    </div>
-    <ul class="list-group" data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
-        <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
-            <div as-sortable-item-handle="">
-                <span class="label label-pm" style="background-color: {{ label.Color }}">{{ label.Name }}</span>
-                <div class="pull-right">
-                    <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="{{ 'SHOW' | translate }}" off-label="Hide"></toggle-switch>
-                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
-                        <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
-                        <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
-                    </button>
+<div id="content">
+    <div class="container-fluid">
+        <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> {{ 'ADD_LABEL' | translate }}</button>
+        </div>
+        <ul class="list-group" data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
+            <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
+                <div as-sortable-item-handle="">
+                    <span class="label label-pm" style="background-color: {{ label.Color }}">{{ label.Name }}</span>
+                    <div class="pull-right">
+                        <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="{{ 'SHOW' | translate }}" off-label="Hide"></toggle-switch>
+                        <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                            <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                            <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </div>

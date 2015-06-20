@@ -191,6 +191,7 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        // console.log(toState.name);
         $('.higgs').remove();
         $('#loading-css').remove();
         $('#loading').remove();

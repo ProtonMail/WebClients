@@ -479,10 +479,16 @@ form#compose {
         bottom: 0;
         width: 100% !important;
         z-index: 9999 !important;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
         & > .composer-body {
-            flex-grow: 1;
+            -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                    flex-grow: 1;
         }
     }
     @include responsive(xs) {

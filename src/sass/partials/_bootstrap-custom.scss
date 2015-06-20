@@ -1,25 +1,17 @@
 .btn-default:active {
   background-color: #fff;
-  background-image: -webkit-radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
-  background-image: -o-radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
   background-image: radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
 }
 .btn-primary:active {
   background-color: #fff;
-  background-image: -webkit-radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
-  background-image: -o-radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
   background-image: radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
 }
 .btn {
-    -webkit-transition: all 0.1s;
-    -o-transition: all 0.1s;
     transition: all 0.1s;
-    -webkit-background-size: 200% 200%;
     background-size: 200%;
     background-position: 50%;  
     &:active {
         background-repeat: no-repeat;
-        -webkit-background-size: 1000% 1000%;
         background-size: 1000%;
     }
 }
@@ -156,8 +148,6 @@ blockquote {
     left: 100%;
     margin-top: -$border-radius-base;
     margin-left: -1px;
-    -webkit-border-radius: 0 $border-radius-base $border-radius-base $border-radius-base;
-    -moz-border-radius: 0 $border-radius-base $border-radius-base;
     border-radius: 0 $border-radius-base $border-radius-base $border-radius-base;
 }
 
@@ -176,8 +166,6 @@ blockquote {
 .dropdown-submenu.pull-left>.dropdown-menu {
     left: -100%;
     margin-left: 10px;
-    -webkit-border-radius: $border-radius-base 0 $border-radius-base $border-radius-base;
-    -moz-border-radius: $border-radius-base 0 $border-radius-base $border-radius-base;
     border-radius: $border-radius-base 0 $border-radius-base $border-radius-base;
 }
 .col-xs-1,

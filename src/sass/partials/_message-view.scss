@@ -79,6 +79,11 @@
     color: #000;
     position: relative;
     z-index: 44;
+    &::-moz-selection {
+        color: #fff;
+        background: #333;
+        text-shadow: 0 1px 0 #000;
+    }
     &::selection {
         color: #fff;
         background: #333;

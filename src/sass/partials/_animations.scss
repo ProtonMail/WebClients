@@ -3,7 +3,6 @@ on the base class as well () */
 .animate {
     &.ng-enter,
     &.ng-leave {
-        -webkit-transition: 0.2s linear all;
         transition: 0.2s linear all;
     }
 
@@ -32,16 +31,6 @@ on the base class as well () */
 
 
 @-webkit-keyframes blink {
-    0%    {color: rgba(255,255,255, 1);}
-    50%   {color: rgba(255,255,255,.5);}
-    100%  {color: rgba(255,255,255, 1);}
-}
-@-moz-keyframes blink {
-    0%    {color: rgba(255,255,255, 1);}
-    50%   {color: rgba(255,255,255,.5);}
-    100%  {color: rgba(255,255,255, 1);}
-}
-@-o-keyframes blink {
     0%    {color: rgba(255,255,255, 1);}
     50%   {color: rgba(255,255,255,.5);}
     100%  {color: rgba(255,255,255, 1);}
@@ -167,50 +156,62 @@ on the base class as well () */
 }
 @keyframes horizontal {
     from {
-        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
     }
     to {
-        transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
     }
 }
 @keyframes horizontalRevert {
     from {
-        transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
     }
     to {
-        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
     }
 }
 @keyframes vertical {
     from {
-        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
     }
     to {
-        transform: rotateX(360deg);
+        -webkit-transform: rotateX(360deg);
+                transform: rotateX(360deg);
     }
 }
 @keyframes verticalRevert {
     from {
-        transform: rotateX(360deg);
+        -webkit-transform: rotateX(360deg);
+                transform: rotateX(360deg);
     }
     to {
-        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
     }
 }
 @keyframes lateral {
     from {
-        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+                transform: rotateZ(0deg);
     }
     to {
-        transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
     }
 }
 @keyframes lateralRevert {
     from {
-        transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
     }
     to {
-        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+                transform: rotateZ(0deg);
     }
 }  
 

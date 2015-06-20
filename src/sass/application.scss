@@ -43,11 +43,10 @@ body {
 }
 #main.fixed {
     display: flex;
-    display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
     -webkit-flex-direction: column;
     width: 100%;
     z-index: 2;
@@ -107,8 +106,14 @@ body footer {
     .container-fluid {
         clear: both;
     }
+    .red::-moz-selection {
+        background-color: red;
+    }
     .red::selection {
         background-color: red;
+    }
+    .white::-moz-selection {
+        background-color: white;
     }
     .white::selection {
         background-color: white;

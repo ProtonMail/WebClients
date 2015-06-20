@@ -2,9 +2,8 @@
 
 <div 
 id="main" 
-class="secure" 
+class="secure fixed" 
 ondragenter="onDrag()" 
-ng-class="{ 'fixed': ('**.message'| includedByState) || messages.length>1 }"
 ui-view="content"></div>
 
 <ng-include src="'templates/partials/composer.tpl.html'"></ng-include>
