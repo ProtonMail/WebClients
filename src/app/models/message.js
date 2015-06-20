@@ -68,6 +68,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
                     $rootScope.TotalPages = json.TotalPages;
                     $rootScope.Total = json.Total;
+
                     return json.Messages;
                 }
             },
@@ -233,6 +234,16 @@ angular.module("proton.models.message", ["proton.constants"])
             var body = this.DecryptedBody || this.Body;
 
             return body;
+        },
+
+        labels: function() {
+            var labels = [];
+
+            _.each(this.LabelIDs, function(id) {
+                labels.push(_.findWhere(authentication.user.Labels, {ID: id}));
+            });
+
+            return labels;
         },
 
         setMsgBody: function() {

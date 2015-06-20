@@ -81,11 +81,11 @@
             </a>
         </li>
         <li class="seperator">
-            <a href="" ng-click="openLabels();" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
+            <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
                 <i class="fa fa-fw fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
-            <ng-include src="'templates/partials/dropdown.labels.tpl.html'"></ng-include>
+            <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels" />
         </li>
         <li class="seperator">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">

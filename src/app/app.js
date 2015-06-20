@@ -63,6 +63,7 @@ angular.module("proton", [
     "proton.locationTag",
     "proton.dropzone",
     "proton.ondrag",
+    "proton.labels",
 
     // Filters
     "proton.filters.strings",

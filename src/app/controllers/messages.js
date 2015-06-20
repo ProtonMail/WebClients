@@ -263,9 +263,7 @@ angular.module("proton.controllers.Messages", [
         var ids = [];
         var promise;
 
-        if(angular.isDefined(message)) {
-            ids.push(message.ID);
-        }
+        ids.push(message.ID);
 
         if(message.Starred === 1) {
             promise = Message.unstar({IDs: ids}).$promise;
@@ -432,16 +430,10 @@ angular.module("proton.controllers.Messages", [
         }));
     };
 
-    $scope.selectedLabels = function() {
-        return _.select($scope.labels, function(label) {
-            return label.Selected === true;
-        });
-    };
-
     $scope.unselectAllLabels = function() {
         _.forEach($scope.labels, function(label) {
             label.Selected = false;
-        }, this);
+        });
     };
 
     $scope.openLabels = function(message) {
@@ -479,11 +471,11 @@ angular.module("proton.controllers.Messages", [
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
-    $scope.saveLabels = function() {
+    $scope.saveLabels = function(labels) {
         var deferred = $q.defer();
         var messageIDs = $scope.selectedIds();
-        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
 
         _.each(toApply, function(labelID) {
@@ -1246,6 +1238,7 @@ angular.module("proton.controllers.Messages", [
     Message,
     Label,
     message,
+    messageCache,
     tools,
     attachments,
     pmcw,
@@ -1257,12 +1250,35 @@ angular.module("proton.controllers.Messages", [
     $rootScope.pageName = message.Subject;
     $scope.tools = tools;
     $scope.isPlain = false;
+    $scope.labels = authentication.user.Labels;
 
     $timeout(function() {
         if($rootScope.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
         }
     });
+
+    $scope.$watch('message', function() {
+        var msg = _.pick(message, 'Starred',  'Location', 'LabelIDs');
+        messageCache.put(message.ID, msg);
+    });
+
+    $scope.toggleStar = function(message) {
+        var ids = [];
+        var promise;
+
+        ids.push(message.ID);
+
+        if(message.Starred === 1) {
+            promise = Message.unstar({IDs: ids}).$promise;
+            message.Starred = 0;
+        } else {
+            promise = Message.star({IDs: ids}).$promise;
+            message.Starred = 1;
+        }
+
+        networkActivityTracker.track(promise);
+    };
 
     $scope.lockType = function(message) {
         var lockClass = '';
@@ -1462,11 +1478,11 @@ angular.module("proton.controllers.Messages", [
         networkActivityTracker.track(promise);
     };
 
-    $scope.saveLabels = function() {
+    $scope.saveLabels = function(labels) {
         var deferred = $q.defer();
         var messageIDs = [message.ID];
-        var toApply = _.map(_.where($scope.labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where($scope.labels, {Selected: false}), function(label) { return label.ID; });
+        var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
+        var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
 
         _.each(toApply, function(labelID) {
@@ -1479,7 +1495,6 @@ angular.module("proton.controllers.Messages", [
 
         $q.all(promises).then(function() {
             message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-            $scope.closeLabels();
             notify($translate.instant('LABELS_APPLY'));
             deferred.resolve();
         });

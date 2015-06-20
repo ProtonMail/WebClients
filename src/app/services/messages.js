@@ -72,11 +72,21 @@ angular.module("proton.messages", [])
                         });
                     });
 
-                    self.cache[id] = message;
+                    this.cache[id] = message;
 
                     // Cache a stringified version of the message in session storage
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
                 });
+            },
+            fusion: function(id, message) {
+                var data = window.sessionStorage["proton:message:" + id];
+
+                if(data) {
+                    var msg = _.extend(JSON.parse(data), message);
+
+                    this.cache[id] = message;
+                    window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
+                }
             }
         });
 
@@ -125,6 +135,9 @@ angular.module("proton.messages", [])
                 }
 
                 return msg;
+            },
+            put: function(id, msg) {
+                cachedMessages.fusion(id, msg);
             }
         });
 
