@@ -35,14 +35,14 @@ table.message-list {
             display: inline-block;
         }
         td {
-            padding: 0 10px;
+            padding: 0 0 0 2rem;
             line-height: $row-height;
             vertical-align: middle;
             overflow: hidden;
             &.actions {
                 cursor: default;
-                padding-left: 15px;
-                width: 8rem;
+                padding-left: 1rem;
+                width: 7rem;
                 span {
                     width: 1.5rem;
                     text-align: center;
@@ -122,7 +122,7 @@ table.message-list {
                 width: 10rem;
             }
             &.when {
-                padding-right: 15px;
+                padding-right: 1rem;
                 width: 12rem;
             }
             .label {
@@ -140,17 +140,24 @@ table.message-list {
                 font-weight: bold;
                 color: #000;
             }
+            i.fa-paperclip,
+            i.fa-clock-o {
+                background-color: #fff;
+            }
         }
         &.starred {
             background-color: $starred;
         }
-        &.encrypted td {}
         i.fa-paperclip,
         i.fa-clock-o {
             float: right;
             display: inline-block;
             line-height: 32px;
-            height: 32px;
+            height: 30px;
+            position: relative;
+            z-index: 2;
+            padding: 0 1rem;
+            background-color: $base-color-dark;
         }
     }
 }

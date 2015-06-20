@@ -753,14 +753,14 @@ angular.module("proton.controllers.Messages", [
         $scope.selectAddress(message);
 
         $timeout(function() {
-            $scope.listenEditor(message);
             $scope.focusComposer(message);
             $scope.saveOld();
-        });
+        }, 100);
 
         $timeout(function() {
+            $scope.listenEditor(message);
             resizeComposer();
-        }, 1000);
+        }, 200);
     };
 
     $scope.composerStyle = function(message) {
@@ -798,6 +798,7 @@ angular.module("proton.controllers.Messages", [
 
         styles['z-index'] = message.zIndex;
 
+        console.log(styles);
         return styles;
 
     };
@@ -811,22 +812,30 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.focusComposer = function(message) {
+
+        console.log('focusComposer');
         $scope.selected = message;
         if (!!!message.focussed) {
 
+            console.log('?');
             // calculate z-index
             var index = $scope.messages.indexOf(message);
+            // console.log(index);
             var reverseIndex = $scope.messages.length - index;
+            // console.log(reverseIndex);
 
             if (tools.findBootstrapEnvironment() === 'xs') {
 
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
-                        element.zIndex = ($scope.messages.length + (iteratee - index))*10;
+                        $(element).css('z-index', ($scope.messages.length + (iteratee - index))*10);
                     } else {
-                        element.zIndex = ($scope.messages.length)*10;
+                        $(element).css('z-index', ($scope.messages.length)*10);
                     }
                 });
+
+                console.log($(element).css('z-index'));
+                console.log($(element).css('zIndex'));
 
                 var bottom = $('.composer').eq($('.composer').length-1);
                 var bottomTop = bottom.css('top');
@@ -835,7 +844,7 @@ angular.module("proton.controllers.Messages", [
                 var clickedTop = clicked.css('top');
                 var clickedZ = clicked.css('zIndex');
 
-                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+                // console.log(bottomTop, bottomZ, clickedTop, clickedZ);
 
                 // todo: swap ???
                 bottom.css({
@@ -847,7 +856,7 @@ angular.module("proton.controllers.Messages", [
                     zIndex: bottomZ
                 });
 
-                console.log(bottomTop, bottomZ, clickedTop, clickedZ);
+                // console.log(bottomTop, bottomZ, clickedTop, clickedZ);
 
             }
 
