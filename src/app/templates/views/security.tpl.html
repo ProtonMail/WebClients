@@ -57,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="log in logs">
+                <tr ng-repeat="log in logs | filter:paginate">
                     <th scope="row">
                         <span ng-show="{{ log.Event == 0 }}" class="label label-danger">Login Failed</span>
                         <span ng-show="{{ log.Event == 1 }}" class="label label-success">Login Success</span>

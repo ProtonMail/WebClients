@@ -40,15 +40,23 @@ angular.module("proton.controllers.Settings", [
     $scope.selectedLanguage = 'English';
 
     $scope.currentLogPage = 1;
-    $scope.logItemsPerPage = 20;
+    $scope.logItemsPerPage = 10;
     $scope.logCount = 0;
 
     $scope.apiURL = authentication.baseURL;
 
     $scope.loadLogs = function (page) {
-        $scope.currentLogPage = page;
+        $scope.currentLogPage = page; 
         // ajax call here get new logs
 
+    };
+
+    $scope.paginate = function(value) {
+        var begin, end, index;
+        begin = ($scope.currentLogPage - 1) * $scope.logItemsPerPage;
+        end = begin + $scope.logItemsPerPage;
+        index = $scope.logs.indexOf(value);
+        return (begin <= index && index < end);
     };
 
     $scope.initLogs = function() {
@@ -57,6 +65,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     $scope.logs = response.data.Logs;
                     $scope.logCount = $scope.logs.length;
+                    $scope.currentLogPage = 1;
                 }
             )
         );
