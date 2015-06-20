@@ -1,10 +1,10 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" id="composeForm" novalidate>
-        <div 
-        class="composer animate" 
-        ng-repeat="message in messages" 
-        ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message), 'maximized': message.maximized}" 
-        ng-style="composerStyle(message)" 
+        <div
+        class="composer animate"
+        ng-repeat="message in messages"
+        ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message), 'maximized': message.maximized}"
+        ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
             <div class="composer-loader" ng-show="message.loading()">
                 <div class="higgs">
@@ -22,42 +22,42 @@
             <div class="composer-header row">
                 <span class="col-xs-6">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-6 text-right">
-                    <a 
-                    href 
-                    ng-show="!!!message.minimized && !!!message.maximized" 
-                    class="btn btn-sm minimize-button hidden-xs" 
-                    ng-click="minimize(message)" 
+                    <a
+                    href
+                    ng-show="!!!message.minimized && !!!message.maximized"
+                    class="btn btn-sm minimize-button hidden-xs"
+                    ng-click="minimize(message)"
                     pt-tooltip="{{ 'MINIMIZE' | translate }}">
                         <i class="fa fa-minus"></i>
                     </a>
-                    <a 
-                    href 
-                    ng-show="!!message.minimized" 
-                    class="btn btn-sm minimize-button hidden-xs" 
-                    ng-click="normalize(message)" 
+                    <a
+                    href
+                    ng-show="!!message.minimized"
+                    class="btn btn-sm minimize-button hidden-xs"
+                    ng-click="normalize(message)"
                     pt-tooltip="{{ 'EXPAND' | translate }}">
                         <i class="fa fa-plus"></i>
                     </a>
-                    <a 
-                    href 
-                    ng-show="!!!message.maximized" 
-                    class="btn btn-sm maximize-button hidden-xs" 
-                    ng-click="maximize(message)" 
+                    <a
+                    href
+                    ng-show="!!!message.maximized"
+                    class="btn btn-sm maximize-button hidden-xs"
+                    ng-click="maximize(message)"
                     pt-tooltip="{{ 'MAXMIMIZE' | translate }}">
                         <i class="fa fa-expand fa-rotate-90"></i>
                     </a>
-                    <a 
-                    href 
-                    ng-show="!!message.maximized" 
-                    class="btn btn-sm maximize-button hidden-xs" 
-                    ng-click="normalize(message)" 
+                    <a
+                    href
+                    ng-show="!!message.maximized"
+                    class="btn btn-sm maximize-button hidden-xs"
+                    ng-click="normalize(message)"
                     pt-tooltip="{{ 'NORMAL' | translate }}">
                         <i class="fa fa-compress fa-rotate-90"></i>
-                    </a>                    
-                    <a 
-                    href 
-                    class="btn btn-sm close-button" 
-                    ng-click="close(message, true)" 
+                    </a>
+                    <a
+                    href
+                    class="btn btn-sm close-button"
+                    ng-click="close(message, true)"
                     pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}"
                     pt-placement="left">
                         <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
@@ -67,7 +67,7 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" pt-tooltip="{{ 'FROM' | translate }}" pt-placement="left">
+                    <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}">
                     </select>
                 </div>
                 <div class="form-horizontal">
@@ -75,10 +75,10 @@
                         <div class="input-group input-container">
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" pt-tooltip="{{ 'TO' | translate }}" pt-placement="left" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
+                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
                             </div>
                             <span class="input-group-btn">
-                                <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="CC BCC">
+                                <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
                                     <i class="fa fa-caret-left transition" ng-class="{'fa-rotate-270': !!message.fields}"></i>
                                 </button>
                             </span>
@@ -87,18 +87,18 @@
                     <div class="form-group input-container" ng-show="message.fields">
                         <div class="tag-container"></div>
                         <div class="typeahead-container" id="cc-container">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" placeholder="{{ 'CC' | translate }}" pt-tooltip="{{ 'CC' | translate }}" pt-placement="left" class="form-control cc-list" />
+                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" placeholder="{{ 'CC' | translate }}" title="{{ 'CC' | translate }}" class="form-control cc-list" />
                         </div>
                     </div>
                     <div class="form-group input-container" ng-show="message.fields">
                         <div class="tag-container"></div>
                         <div class="typeahead-container" id="bcc-container">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" placeholder="{{ 'BCC' | translate }}" pt-tooltip="{{ 'BCC' | translate }}" pt-placement="left" class="form-control bcc-list" />
+                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" placeholder="{{ 'BCC' | translate }}" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" pt-tooltip="{{ 'SUBJECT' | translate }}" pt-placement="left" class="form-control subject" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message, true)" required />
+                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message, true)" required />
                 </div>
                 <div class="form-group">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'attachments'">
