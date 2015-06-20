@@ -5,6 +5,7 @@
 .message-metadata {
     padding: .5rem 2rem;
 } 
+
 #attachmentArea {
     a {
         display: block;
@@ -157,6 +158,13 @@ ul.attachments {
             .fa-star,
             .fa-star:hover {
                 color: orange;
+            }
+            &.fa-lock,
+            &.fa-unlock-alt {
+                color: rgba(0,0,0,.25)
+            }
+            &.fa-lock.text-purple {
+                color: $primary-color;
             }
         }
         .label {

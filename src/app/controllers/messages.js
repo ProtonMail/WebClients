@@ -1264,6 +1264,20 @@ angular.module("proton.controllers.Messages", [
         }
     });
 
+    $scope.getMessageEncryptionType = function(message) {
+        var texts = [
+            'Unencrypted Message',
+            'End-to-End Encrypted Internal Message',
+            'External Message, Stored Encrypted',
+            'End-to-End Encrypted for Outside',
+            'External Message, Stored Encrypted',
+            'Stored Encrypted',
+            'End-to-End Encrypted for Outside Reply'
+        ];
+
+        return texts[message.IsEncrypted];
+    };
+    
     $scope.lockType = function(message) {
         var lockClass = '';
 
