@@ -35,8 +35,8 @@ angular.module("proton.controllers.Messages", [
         $scope.unselectAllMessages();
     });
 
-    $scope.$on('refreshMessages', function() {
-        $scope.refreshMessages();
+    $scope.$on('refreshMessages', function(event, silently) {
+        $scope.refreshMessages(silently);
     });
 
     $scope.getMessagesParameters = function(mailbox) {
@@ -82,14 +82,16 @@ angular.module("proton.controllers.Messages", [
         return params;
     };
 
-    $scope.refreshMessages = function(mailbox) {
-        mailbox = mailbox || $state.current.name.replace('secured.', '');
+    $scope.refreshMessages = function(silently) {
+        var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
         var promise = Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
         });
 
-        networkActivityTracker.track(promise);
+        if(!!!silently) {
+            networkActivityTracker.track(promise);
+        }
     };
 
     $scope.showTo = function(message) {
@@ -1587,7 +1589,7 @@ angular.module("proton.controllers.Messages", [
     $scope.goToMessageList = function() {
         $state.go('^');
         $timeout(function() {
-            $rootScope.$broadcast('refreshMessages');
+            $rootScope.$broadcast('refreshMessages', true); // in silence
         }, 500);
     };
 
