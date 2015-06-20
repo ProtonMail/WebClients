@@ -62,7 +62,6 @@ angular.module("proton", [
     "proton.squire",
     "proton.locationTag",
     "proton.dropzone",
-    "proton.ondrag",
     "proton.labels",
 
     // Filters
@@ -196,10 +195,6 @@ angular.module("proton", [
         $('#loading-css').remove();
         $('#loading').remove();
     });
-
-    $rootScope.onDrag = function() {
-        $rootScope.$broadcast('onDrag');
-    };
 })
 
 //
