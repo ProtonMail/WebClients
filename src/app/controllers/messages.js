@@ -21,6 +21,7 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     notify
 ) {
+
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
@@ -30,6 +31,25 @@ angular.module("proton.controllers.Messages", [
     $scope.page = parseInt($stateParams.page || "1");
     $scope.messages = messages;
     $scope.messageCount = $rootScope.Total;
+    $scope.selectedFilter = $stateParams.filter;
+    $scope.selectedOrder = $stateParams.sort || "-date";
+
+    var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
+        $rootScope.pageName = $state.current.data.mailbox;
+    });
+
+    $scope.$on("$destroy", unsubscribe);
+
+    $scope.draggableOptions = {
+        cursorAt: {left: 0, top: 0},
+        cursor: "move",
+        helper: function(event) {
+            return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
+        },
+        containment: "document"
+    };
+
+    messageCache.watchScope($scope, "messages");
 
     $timeout(function() {
         $scope.unselectAllMessages();
@@ -130,21 +150,6 @@ angular.module("proton.controllers.Messages", [
         return result;
     };
 
-    var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
-        $rootScope.pageName = $state.current.data.mailbox;
-    });
-
-    $scope.$on("$destroy", unsubscribe);
-
-    $scope.draggableOptions = {
-        cursorAt: {left: 0, top: 0},
-        cursor: "move",
-        helper: function(event) {
-            return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
-        },
-        containment: "document"
-    };
-
     $scope.getLabel = function(id) {
         return _.where($scope.labels, {ID: id})[0];
     };
@@ -178,11 +183,6 @@ angular.module("proton.controllers.Messages", [
             $(this).remove();
         });
     };
-
-    $scope.selectedFilter = $stateParams.filter;
-    $scope.selectedOrder = $stateParams.sort || "-date";
-
-    messageCache.watchScope($scope, "messages");
 
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;

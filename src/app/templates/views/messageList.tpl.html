@@ -21,8 +21,8 @@
                     ENC_STORED_ENC: 5, // such as draft
                     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
                     -->
-                    <span 
-                    class="fa" 
+                    <span
+                    class="fa"
                     ng-class="{
                     'fa-lock':
                     !!!(message.IsEncrypted == '0'),
@@ -33,7 +33,7 @@
                     !!(message.IsEncrypted == '6'),
                     'fa-unlock-alt':
                     !!(message.IsEncrypted == '0')
-                    }" 
+                    }"
                     title="{{ getMessageEncryptionType(message) }}"></span>
                     <a href ng-click="toggleStar(message)">
                         <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>

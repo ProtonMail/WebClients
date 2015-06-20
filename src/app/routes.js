@@ -137,9 +137,8 @@ angular.module("proton.routes", [
 
                     if (authentication.isSecured()) {
                         var params = getMessagesParameters(mailbox);
-                        var messagesPromise = Message.query(params).$promise;
 
-                        return networkActivityTracker.track(messagesPromise);
+                        return networkActivityTracker.track(Message.query(params).$promise);
                     } else {
                         return [];
                     }
