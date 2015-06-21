@@ -69,7 +69,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="{{ 'ATTACHMENTS' | translate }}" ng-click="$parent.togglePanel(message, 'attachments')">
+                <a href="" class="btn btn-sm btn-options" ng-click="selectFile(message)" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="{{ 'ATTACHMENTS' | translate }}">
                     <i class="fa fa-paperclip"></i>
                 </a>
             </li>
@@ -100,7 +100,7 @@
             </li> -->
         </ul>
         <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="isHtml()" >
-            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" id="squireIframe"></iframe>
+            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" id="squireIframe" ondragover="console.log('ughghghg');"></iframe>
         </div>
         <textarea ng-model="ngModel" ng-show="isPlain()" style="height: {{height}};"></textarea>
     </div>

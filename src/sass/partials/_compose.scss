@@ -16,6 +16,64 @@
         }
     }
 }
+.composer-dropzone {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgb(246, 236, 236);
+}
+
+#attachment-bar {
+    width: 100%;
+    height: 32px;
+    text-align: right;
+}
+
+#composeForm .composer .previews .preview-template {
+    position: relative;
+    height: 30px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 5px;
+    background-color: rgb(41, 137, 216) !important;
+    border-color: rgb(25, 101, 149) !important;
+    color: white;
+}
+
+.preview-name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.preview-close {
+    vertical-align: top;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.previews {
+    background-color: #f2f2f2;
+    border-top: 1px solid;
+    border-color: rgb(193, 193, 193);
+    padding-top: 5px;
+    max-height: 110px;
+    overflow-y: scroll;
+}
+
+.attach-collapse {
+    background-color: transparent;
+    position: absolute;
+    right: 0px;
+    bottom: -2px;
+}
+
 .message-toolbar.compose > ul.nav {
     > li,
     > li > a {
@@ -92,7 +150,7 @@
     }
 
     .tag-container {
-        max-height: 115px; 
+        max-height: 115px;
         overflow-y: auto;
     }
 
@@ -525,7 +583,7 @@ form#compose {
     &,
     .composer-footer {
         border-bottom-left-radius: $border-radius-base;
-        border-bottom-right-radius: $border-radius-base;    
+        border-bottom-right-radius: $border-radius-base;
     }
 
     &.blur {
