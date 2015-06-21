@@ -1,6 +1,10 @@
 .message-metadata,
 #main .message-head {
     background-color: #f2f2f2;
+    a:hover,
+    a:focus {
+        text-decoration: none;
+    }
 }
 .message-metadata {
     padding: .5rem 2rem;
@@ -160,8 +164,8 @@ ul.attachments {
         .fa {
             color: #666;
             font-size: inherit;
-            .fa-star,
-            .fa-star:hover {
+            &.fa-star,
+            &.fa-star:hover {
                 color: orange;
             }
             &.fa-lock,

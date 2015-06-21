@@ -41,8 +41,8 @@
                 <thead>
                     <tr>
                         <th width="6rem"></th>
-                        <th>Time</th>
                         <th>Event</th>
+                        <th>Time</th>
                         <th ng-show="doLogging == 2">IP</th>
                     </tr>
                 </thead>
@@ -53,12 +53,12 @@
                             <div ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i></div>
                             <div ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i></div>
                         </th>                        
-                        <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <th scope="row">
                             <span ng-show="{{ log.Event == 0 }}">Login Failed</span>
                             <span ng-show="{{ log.Event == 1 }}">Login Success</span>
                             <span ng-show="{{ log.Event == 2 }}">Logout</span>
                         </th>
+                        <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <td ng-show="doLogging == 2">
                             <kbd ng-show="log.IP!==''">{{log.IP}}</kbd>
                         </td>
