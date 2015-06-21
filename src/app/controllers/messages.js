@@ -817,7 +817,6 @@ angular.module("proton.controllers.Messages", [
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
         var widthWindow = $('#main').width();
-        var composerHeight = $('.composer-header').outerHeight();
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
