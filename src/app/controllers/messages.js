@@ -934,6 +934,12 @@ angular.module("proton.controllers.Messages", [
 
     $scope.listenEditor = function(message) {
         message.editor.addEventListener('focus', function() {
+            $scope.$apply(function() {
+                message.fields = false;
+                message.toUnfocussed = true;
+            });
+            $('.typeahead-container').scrollTop(0);
+            message.fields = false;
             $scope.focusComposer(message);
         });
         message.editor.addEventListener('input', function() {
