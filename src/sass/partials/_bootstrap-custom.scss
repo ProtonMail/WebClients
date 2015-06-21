@@ -60,8 +60,9 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
 }
 .panel-dark {
     border: none;
-    box-shadow: 0 1px 1px rgba(0,0,0,.25);
-    color: #fff;    
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    color: #ccc;
+    border: 5px solid #ccc;
     a {
         color: #999;
         text-decoration: underline;
@@ -71,7 +72,7 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     }
     .fa.title-icon {
         text-shadow: 0 1px 0 rgba(0,0,0,.25);
-        color: #fff;
+        color: #ccc;
     }
     .panel-body {
         background: $navbar-color;

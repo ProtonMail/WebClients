@@ -3,8 +3,11 @@
         <a href="/"><img src="/assets/img/protonmail.svg" alt="ProtonMail" class="logo" /></a>
     </div>
     <div class="panel-body">
-        <h3 class="text-center">{{ 'DECRYPT_MAILBOX' | translate }}</h3>
-        <p class="text-muted text-center">{{ user.Addresses[0].Email }}</p>
+        <h3 class="text-center">
+            <span class="fa fa-inbox title-icon"></span>
+            {{ 'DECRYPT_MAILBOX' | translate }}
+        </h3>
+        <p class="text-center">{{ user.Addresses[0].Email }}</p>
         <fieldset class="pure-form">
             <div class="form-group">
                 <input class="form-control dark" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />

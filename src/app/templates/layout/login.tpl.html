@@ -1,8 +1,23 @@
 <ng-include src="'templates/partials/header.tpl.html'"></ng-include>
 
-<div class="container-fluid" id="content">
+<div class="container-fluid" id="content" ng-class="{ 'robot': domoArigato }">
 
-    <div class="row">
+	<div id="robotLoader" ng-show="domoArigato">
+		<p class="text-center">Decrypting Mailbox...</p>
+	    <div class="higgs">
+	        <div class="orbit">
+	            <div class="ring horizontal"></div>
+	            <div class="ring vertical"></div>
+	        </div>
+	        <div class="orbit r">
+	            <div class="ring horizontal inner"></div>
+	            <div class="ring vertical inner"></div>
+	            <div class="ring center"></div>
+	        </div>
+	    </div>
+	</div>
+
+    <div class="row" ng-hide="domoArigato">
         <div ui-view="panel"></div>
     </div>
 

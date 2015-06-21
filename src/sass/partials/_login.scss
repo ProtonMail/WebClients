@@ -1,5 +1,8 @@
 #loginPanel,
 #unlockPanel {
+    .panel-body {
+        min-height: 24rem;
+    }
     .logoWrap {
         display: block;
         padding: 2rem 0;
@@ -11,8 +14,36 @@
             margin: auto;
         }
     }
+    h3 {
+        text-transform: uppercase;
+        margin: 0;
+        &.margin-bottom {
+            margin-bottom: 2rem;
+        }
+    }
+    p {
+        color: #999;
+        margin-bottom: 2rem;
+    }
 }
 
 .unlock #body #content {
     padding: 6rem 0;
+    &.robot {
+        padding-top: 0;
+    }
+}
+
+#robotLoader {
+    height: 35rem;
+    p {
+        position: relative;
+        top: 4rem;
+        color: #fff;
+    }
+}
+
+.unlock .spinner {
+    display: none !important;
+    opacity: 0;
 }
