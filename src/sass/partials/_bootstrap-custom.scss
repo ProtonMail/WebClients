@@ -12,8 +12,11 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     padding-right: 10px;
 }
 
-.dropdown-menu .divider {
-    background: rgba(0,0,0,.2);
+.dropdown-menu {
+    width: 20rem;
+    .divider {
+        background: rgba(0,0,0,.2);
+    }
 }
 
 .modal-header {
