@@ -720,6 +720,7 @@ angular.module("proton.routes", [
         }
     })
 
+
     .state("secured.theme", {
         url: "/theme",
         views: {
@@ -728,6 +729,32 @@ angular.module("proton.routes", [
                 controller: "SettingsController"
             }
         }
+    })
+
+    .state("secured.themeReset", {
+        url: "/theme-reset",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/theme-reset.tpl.html",
+                controller: "SettingsController"
+            }
+        },
+        onEnter: function(Setting, user, $state) {
+            Setting.theme({
+              "Theme": ''
+            }).$promise.then(
+                function(response) {
+                    user.Theme = '';
+                    $state.go('secured.inbox');
+                    return;
+                },
+                function(response) {
+                    $state.go('secured.inbox');
+                    return;
+                }
+            );
+        }
+        
     })
 
     // -------------------------------------------
