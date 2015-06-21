@@ -85,13 +85,35 @@ angular.module("proton.messages", [])
                 var data = window.sessionStorage["proton:message:" + id];
 
                 if(data) {
-                    var msg = _.extend(JSON.parse(data), _.pick(message, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
+                    var msg = _.extend(JSON.parse(data), _.pick(message, fields));
 
-                    this.cache[id] = msg;
+                    this.cache[id] = message;
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
                 }
             }
         });
+
+        // Parameters shared between api / cache / message view / message list
+        var fields = [
+            "ID",
+            "Subject",
+            "IsRead",
+            "SenderAddress",
+            "SenderName",
+            "ToList",
+            "Time",
+            "Size",
+            "Location",
+            "Starred",
+            "HasAttachment",
+            "IsEncrypted",
+            "ExpirationTime",
+            "IsReplied",
+            "IsRepliedAll",
+            "IsForwarded",
+            "AddressID",
+            "LabelIDs"
+        ];
 
         var addMessageList = function(messageList) {
             var msg;
@@ -104,7 +126,7 @@ angular.module("proton.messages", [])
                     // replace the instance in the list with the complete cached instance
                     // updating variable fields (IsRead, Tag, Location, Labels)
                     messageList.splice(i, 1, msg);
-                    _.extend(msg, _.pick(other, 'IsRead', 'Starred',  'Location', 'LabelIDs'));
+                    _.extend(msg, _.pick(other, fields));
                 } else {
                     messagesToPreload.add(other.ID);
                 }

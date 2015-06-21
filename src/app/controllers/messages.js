@@ -1315,8 +1315,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$watch('message', function() {
-        var msg = _.pick(message, 'Starred',  'Location', 'LabelIDs');
-        messageCache.put(message.ID, msg);
+        messageCache.put(message.ID, message);
     });
 
     $scope.toggleStar = function(message) {
