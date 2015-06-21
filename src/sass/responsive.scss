@@ -39,6 +39,7 @@
 		width: ($sidebar-width)*.3;
 		.list-group-item {
 			.btn {
+				line-height: ($row-height*1.5);
 				text-align: center;
 				&.btn-composer {
 					height: 5rem;
@@ -47,6 +48,7 @@
 			}
 			.fa {
 				margin-right: 0;
+				font-size: 1.5rem;
 			}
 		}
 	}
