@@ -43,7 +43,7 @@
                     <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                     <span ng-if="showTo(message)">
                         <span class="to" pt-tooltip="{{ message.ToList | username }}">
-                            To: {{ message.ToList | username | capitalize }}
+                            To: {{ message.ToList | username }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
@@ -84,7 +84,7 @@
                     <div class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
                         <span ng-if="showTo(message)">
                             <span class="to">
-                                To: </span>{{ message.ToList | username | capitalize }}
+                                To: </span>{{ message.ToList | username }}
                             </span>
                         </span>
                         <span ng-if="showFrom(message) && !showTo(message)">
