@@ -27,7 +27,7 @@
                     ng-show="!!!message.minimized && !!!message.maximized"
                     class="btn btn-sm minimize-button hidden-xs"
                     ng-click="minimize(message)"
-                    pt-tooltip="{{ 'MINIMIZE' | translate }}">
+                    title="{{ 'MINIMIZE' | translate }}">
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
@@ -35,7 +35,7 @@
                     ng-show="!!message.minimized"
                     class="btn btn-sm minimize-button hidden-xs"
                     ng-click="normalize(message)"
-                    pt-tooltip="{{ 'EXPAND' | translate }}">
+                    title="{{ 'EXPAND' | translate }}">
                         <i class="fa fa-plus"></i>
                     </a>
                     <a
@@ -43,7 +43,7 @@
                     ng-show="!!!message.maximized"
                     class="btn btn-sm maximize-button hidden-xs"
                     ng-click="maximize(message)"
-                    pt-tooltip="{{ 'MAXMIMIZE' | translate }}">
+                    title="{{ 'MAXMIMIZE' | translate }}">
                         <i class="fa fa-expand fa-rotate-90"></i>
                     </a>
                     <a
@@ -51,15 +51,14 @@
                     ng-show="!!message.maximized"
                     class="btn btn-sm maximize-button hidden-xs"
                     ng-click="normalize(message)"
-                    pt-tooltip="{{ 'NORMAL' | translate }}">
+                    title="{{ 'NORMAL' | translate }}">
                         <i class="fa fa-compress fa-rotate-90"></i>
                     </a>
                     <a
                     href
                     class="btn btn-sm close-button"
                     ng-click="close(message, true)"
-                    pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}"
-                    pt-placement="left">
+                    title="{{ 'CLOSE_AND_SAVE' | translate }}">
                         <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>
