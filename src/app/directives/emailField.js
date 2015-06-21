@@ -13,6 +13,11 @@ angular.module("proton.emailField", [])
     link: function ( $scope, $element, $attrs, $ctrl ) {
       var $$element = $($element[0]);
       var parent = $$element.parent();
+      var container = $(parent).closest('.input-container');
+
+      $(container).on('click', function() {
+          $$element.focus();
+      });
 
       $ctrl.$render = function () {
         _(($ctrl.$viewValue || "").split(","))
@@ -106,8 +111,11 @@ angular.module("proton.emailField", [])
         })
         .on("blur", function () {
           var val = $$element.val();
+          response = manager.tagsManager("pushTag",{Name: val, Email: val});
 
-          $timeout(function () { $$element.val(""); }, 0);
+          if (response === undefined) {
+              $timeout(function () { $$element.val(""); }, 0);
+          }
         })
         .on("change", setValue)
         .typeahead(null, {
