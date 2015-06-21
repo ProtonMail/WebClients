@@ -64,7 +64,7 @@
                             <span ng-show="{{ log.Event == 1 }}" class="label label-success">Login Success</span>
                             <span ng-show="{{ log.Event == 2 }}" class="label label-default">Logout</span>
                         </th>
-                        <td>{{ log.Time * 1000 | date : 'short' }}</td>
+                        <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <td ng-show="doLogging == 2">
                             <code ng-show="log.IP!==''">{{log.IP}}</code>
                         </td>
