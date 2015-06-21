@@ -77,7 +77,7 @@
                             <div class="input-group-addon">{{ 'TO' | translate }}</div>
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
+                                <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
                             </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
@@ -91,7 +91,7 @@
                             <div class="input-group-addon">{{ 'CC' | translate }}</div>
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="cc-container">
-                                <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
+                                <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
                             </div>
                         </div>
                     </div>
@@ -100,13 +100,13 @@
                             <div class="input-group-addon">{{ 'BCC' | translate }}</div>
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="bcc-container">
-                                <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
+                                <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message, true)" required />
+                    <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
                 <div class="form-group">
 
@@ -158,7 +158,7 @@
             </div>
             <div class="composer-footer text-right" ng-hide="message.minimized">
                 <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
-                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false, false)" pt-tooltip="{{ 'SAVE' | translate }}">
+                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false)" pt-tooltip="{{ 'SAVE' | translate }}">
                     <i class="fa fa-floppy-o"></i>
                 </button>
                 <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>

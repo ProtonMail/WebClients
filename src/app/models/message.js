@@ -272,94 +272,9 @@ angular.module("proton.models.message", ["proton.constants"])
             this.Body = body;
         },
 
-        validate: function(force) {
-            // set msgBody input element to editor content
-            this.setMsgBody();
-
-            // Check internet connection
-            if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
-                notify('No internet connection. Please wait and try again.');
-                return false;
-            }
-
-            // Check if there is an attachment uploading
-            if (this.uploading === true) {
-                notify('Wait for attachment to finish uploading or cancel upload.');
-                return false;
-            }
-
-            // Check all emails to make sure they are valid
-            var invalidEmails = [];
-            var allEmails = _.map(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) { return email.Address.trim(); });
-
-            _.each(allEmails, function(email) {
-                if(!tools.validEmail(email)) {
-                    invalidEmails.push(email);
-                }
-            });
-
-            if (invalidEmails.length > 0) {
-                notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
-                return false;
-            }
-
-            // MAX 25 to, cc, bcc
-            if (force === true) {
-                if ((this.ToList.length + this.BCCList.length + this.CCList.length) > 25) {
-                    notify('The maximum number (25) of Recipients is 25.');
-                    return false;
-                }
-
-                if (this.ToList.length === 0 && this.BCCList.length === 0 && this.CCList.length === 0) {
-                    notify('Please enter at least one recipient.');
-                    return false;
-                }
-            }
-
-            // Check title length
-            if (this.Subject && this.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
-                return false;
-            }
-
-            // Check body length
-            if (this.Body.length > 16000000) {
-                notify('The maximum length of the message body is 16,000,000 characters.');
-                return false;
-            }
-
-            var emailsNonPM = _.filter(this.ToList.concat(this.CCList).concat(this.BCCList), function(email) {
-                return tools.isEmailAddressPM(email.Address) !== true;
-            });
-
-            if (parseInt(this.ExpirationTime) > 0 && this.IsEncrypted !== 1 && emailsNonPM.length > 0) {
-                notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
-                this.panelName = 'encrypt'; // switch panel
-                return false;
-            }
-
-            if(force !== true) {
-                return this.needToSave();
-            } else {
-                return true;
-            }
-        },
-
         close: function() {
             if(angular.isDefined(this.timeoutSaving)) {
                 $timeout.cancel(this.timeoutSaving);
-            }
-        },
-
-        needToSave: function() {
-            if(angular.isDefined(this.old)) {
-                var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
-                var currentMessage = _.pick(this, properties);
-                var oldMessage = _.pick(this.old, properties);
-
-                return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
-            } else {
-                return true;
             }
         },
 

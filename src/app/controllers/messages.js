@@ -701,7 +701,7 @@ angular.module("proton.controllers.Messages", [
                 },
                 addedfile: function(file) {
                     if(angular.isUndefined(message.ID)) {
-                        $scope.save(message, false, false).then(function() {
+                        $scope.save(message, true).then(function() {
                             $scope.addAttachment(file, message);
                         });
                     } else {
@@ -943,7 +943,7 @@ angular.module("proton.controllers.Messages", [
             $scope.focusComposer(message);
         });
         message.editor.addEventListener('input', function() {
-            $scope.saveLater(message, true); // in silence
+            $scope.saveLater(message);
         });
     };
 
@@ -1033,10 +1033,10 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    $scope.saveOld = function(message) {
-        var properties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
+    $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
-        message.old = _.pick(message, properties);
+    $scope.saveOld = function(message) {
+        message.old = _.pick(message, $scope.oldProperties);
 
         _.defaults(message.old, {
             ToList: [],
@@ -1048,62 +1048,133 @@ angular.module("proton.controllers.Messages", [
         });
     };
 
-    $scope.saveLater = function(message, silently) {
+    $scope.needToSave = function(message) {
+        if(angular.isDefined(message.old)) {
+            var currentMessage = _.pick(message, $scope.oldProperties);
+            var oldMessage = _.pick(message.old, $scope.oldProperties);
+
+            return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+        } else {
+            return true;
+        }
+    };
+
+    $scope.saveLater = function(message) {
         if(angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
         }
 
         message.timeoutSaving = $timeout(function() {
-            $scope.save(message, silently);
+            if($scope.needToSave(message)) {
+                $scope.save(message, true);
+            }
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
 
-    $scope.save = function(message, silently, force) {
+    $scope.validate = function(message) {
+        // set msgBody input element to editor content
+        message.setMsgBody();
+
+        // Check internet connection
+        if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
+            notify('No internet connection. Please wait and try again.');
+            return false;
+        }
+
+        // Check if there is an attachment uploading
+        if (message.uploading === true) {
+            notify('Wait for attachment to finish uploading or cancel upload.');
+            return false;
+        }
+
+        // Check all emails to make sure they are valid
+        var invalidEmails = [];
+        var allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) { return email.Address.trim(); });
+
+        _.each(allEmails, function(email) {
+            if(!tools.validEmail(email)) {
+                invalidEmails.push(email);
+            }
+        });
+
+        if (invalidEmails.length > 0) {
+            notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
+            return false;
+        }
+
+        // MAX 25 to, cc, bcc
+        if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
+            notify('The maximum number (25) of Recipients is 25.');
+            return false;
+        }
+
+        if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
+            notify('Please enter at least one recipient.');
+            return false;
+        }
+
+        // Check title length
+        if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
+            notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+            return false;
+        }
+
+        // Check body length
+        if (message.Body.length > 16000000) {
+            notify('The maximum length of the message body is 16,000,000 characters.');
+            return false;
+        }
+
+        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
+            return tools.isEmailAddressPM(email.Address) !== true;
+        });
+
+        if (parseInt(message.ExpirationTime) > 0 && message.IsEncrypted !== 1 && emailsNonPM.length > 0) {
+            notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
+            message.panelName = 'encrypt'; // switch panel
+            return false;
+        }
+
+        return true;
+    };
+
+    $scope.save = function(message, silently) {
         var deferred = $q.defer();
+        var parameters = {
+            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
+        };
 
-        if(message.validate(force)) {
-            var parameters = {
-                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
-            };
+        if(angular.isDefined(message.ID)) {
+            parameters.id = message.ID;
+        }
 
-            if(angular.isDefined(message.ID)) {
-                parameters.id = message.ID;
+        parameters.Message.AddressID = message.From.ID;
+        parameters.Message.IsRead = 1;
+
+        savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
+            var draftPromise;
+
+            parameters.Message.Body = result;
+
+            if(angular.isUndefined(message.ID)) {
+                draftPromise = Message.createDraft(parameters).$promise;
+            } else {
+                draftPromise = Message.updateDraft(parameters).$promise;
             }
 
-            parameters.Message.AddressID = message.From.ID;
-            parameters.Message.IsRead = 1;
+            draftPromise.then(function(result) {
+                message.ID = result.Message.ID;
+                message.BackupDate = new Date();
+                $scope.saveOld(message);
 
-            savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
-                var draftPromise;
-
-                parameters.Message.Body = result;
-
-                if(angular.isUndefined(message.ID)) {
-                    draftPromise = Message.createDraft(parameters).$promise;
-                } else {
-                    draftPromise = Message.updateDraft(parameters).$promise;
+                // Add draft in message list
+                if($state.is('secured.drafts')) {
+                    $rootScope.$broadcast('refreshMessages');
                 }
 
-                draftPromise.then(function(result) {
-                    message.ID = result.Message.ID;
-                    message.BackupDate = new Date();
-                    $scope.saveOld(message);
-
-                    // Add draft in message list
-                    if($state.is('secured.drafts')) {
-                        $rootScope.$broadcast('refreshMessages');
-                    }
-
-                    deferred.resolve(result);
-                });
+                deferred.resolve(result);
             });
-        } else {
-            if(force === true) {
-                deferred.reject();
-            } else {
-                deferred.resolve();
-            }
-        }
+        });
 
         if(silently !== true) {
             message.track(deferred.promise);
@@ -1114,96 +1185,99 @@ angular.module("proton.controllers.Messages", [
 
     $scope.send = function(message) {
         var deferred = $q.defer();
+        var validate = $scope.validate(message);
 
-        $scope.save(message, true, true).then(function() {
-            var parameters = {};
-            var emails = message.emailsToString();
+        if(validate) {
+            $scope.save(message, false).then(function() {
+                var parameters = {};
+                var emails = message.emailsToString();
 
-            parameters.id = message.ID;
-            parameters.ExpirationTime = message.ExpirationTime;
+                parameters.id = message.ID;
+                parameters.ExpirationTime = message.ExpirationTime;
 
-            message.getPublicKeys(emails).then(function(result) {
-                var keys = result;
-                var outsiders = false;
-                var promises = [];
+                message.getPublicKeys(emails).then(function(result) {
+                    var keys = result;
+                    var outsiders = false;
+                    var promises = [];
 
-                parameters.Packages = [];
+                    parameters.Packages = [];
 
-                _.each(emails, function(email) {
-                    if(keys[email].length > 0) { // inside user
-                        var key = keys[email];
+                    _.each(emails, function(email) {
+                        if(keys[email].length > 0) { // inside user
+                            var key = keys[email];
 
-                        promises.push(message.encryptBody(key).then(function(result) {
-                            var body = result;
+                            promises.push(message.encryptBody(key).then(function(result) {
+                                var body = result;
 
-                            message.encryptPackets(authentication.user.PublicKey).then(function(result) {
-                                var keyPackets = result;
+                                message.encryptPackets(authentication.user.PublicKey).then(function(result) {
+                                    var keyPackets = result;
 
-                                return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
-                            });
-                        }));
-                    } else { // outside user
-
-
-                        outsiders = true;
-
-                        if(message.IsEncrypted === 1) {
-
-
-                            var replyToken = message.generateReplyToken();
-                            var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
-
-
-                            promises.push(replyTokenPromise.then(function(encryptedToken) {
-
-
-                                pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-
-
-                                    var body = result;
-
-                                    message.encryptPackets('', message.Password).then(function(result) {
-
-
-                                        var keyPackets = result;
-
-                                        return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
-                                    });
+                                    return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
                                 });
+                            }));
+                        } else { // outside user
+
+
+                            outsiders = true;
+
+                            if(message.IsEncrypted === 1) {
+
+
+                                var replyToken = message.generateReplyToken();
+                                var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
+
+
+                                promises.push(replyTokenPromise.then(function(encryptedToken) {
+
+
+                                    pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+
+
+                                        var body = result;
+
+                                        message.encryptPackets('', message.Password).then(function(result) {
+
+
+                                            var keyPackets = result;
+
+                                            return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                        });
+                                    });
+                                }));
+                            }
+                        }
+                    });
+
+                    if(outsiders === true && message.IsEncrypted === 0) {
+                        parameters.AttachmentKeys = [];
+                        parameters.ClearBody = message.Body;
+                        if(message.Attachments.length > 0) {
+                             promises.push(message.clearPackets().then(function(packets) {
+                                 parameters.AttachmentKeys = packets;
                             }));
                         }
                     }
-                });
+                    $q.all(promises).then(function() {
+                        Message.send(parameters).$promise.then(function(result) {
+                            notify($translate.instant('MESSAGE_SENT'));
+                            $scope.close(message, false);
 
-                if(outsiders === true && message.IsEncrypted === 0) {
-                    parameters.AttachmentKeys = [];
-                    parameters.ClearBody = message.Body;
-                    if(message.Attachments.length > 0) {
-                         promises.push(message.clearPackets().then(function(packets) {
-                             parameters.AttachmentKeys = packets;
-                        }));
-                    }
-                }
-                $q.all(promises).then(function() {
-                    Message.send(parameters).$promise.then(function(result) {
-                        notify($translate.instant('MESSAGE_SENT'));
-                        $scope.close(message, false);
+                            if($state.is('secured.drafts') || $state.is('secured.sent')) {
+                                $rootScope.$broadcast('refreshMessages');
+                            }
 
-                        if($state.is('secured.drafts') || $state.is('secured.sent')) {
-                            $rootScope.$broadcast('refreshMessages');
-                        }
-
-                        deferred.resolve(result);
+                            deferred.resolve(result);
+                        });
                     });
                 });
+            }, function() {
+                deferred.reject();
             });
-        }, function() {
-            deferred.reject();
-        });
 
-        message.track(deferred.promise);
+            message.track(deferred.promise);
 
-        return deferred.promise;
+            return deferred.promise;
+        }
     };
 
     $scope.toggleMinimize = function(message) {
@@ -1252,7 +1326,7 @@ angular.module("proton.controllers.Messages", [
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true, false); // silently TODO: this fails sometimes!
+            $scope.save(message, true);
         }
 
         message.close();
