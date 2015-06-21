@@ -191,10 +191,10 @@ angular.module("proton.squire", [
                     return doc.childNodes[0].className += scope.editorClass;
                 }
             };
-            iframe = element.find('iframe');
+            iframe = element.find('iframe.squireIframe');
             menubar = element.find('.menu');
             iframeLoaded = function() {
-                var iframeDoc = document.getElementById('squireIframe').contentWindow.document;
+                var iframeDoc = iframe[0].contentWindow.document;
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
                 editor = scope.editor = new Squire(iframeDoc);
