@@ -278,8 +278,6 @@ angular.module("proton.controllers.Messages", [
             promise = Message.star({IDs: ids}).$promise;
             message.Starred = 1;
         }
-
-        networkActivityTracker.track(promise);
     };
 
     $scope.allSelected = function() {

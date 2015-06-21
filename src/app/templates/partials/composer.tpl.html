@@ -66,33 +66,42 @@
             </div>
             <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
                 <div class="form-group">
-                    <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}">
-                    </select>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{ 'FROM' | translate }}</div>
+                        <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
+                    </div>
                 </div>
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="input-group input-container">
+                            <div class="input-group-addon">{{ 'TO' | translate }}</div>
                             <div class="tag-container"></div>
                             <div class="typeahead-container" id="to-container">
-                                <input tabindex="2" type="text" email-field placeholder="{{ 'TO' | translate }}" title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
+                                <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message, true)" class="form-control to-list" />
                             </div>
                             <span class="input-group-btn">
                                 <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
-                                    <i class="fa fa-caret-left transition" ng-class="{'fa-rotate-270': !!message.fields}"></i>
+                                    <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
                                 </button>
                             </span>
                         </div>
                     </div>
-                    <div class="form-group input-container" ng-show="message.fields">
-                        <div class="tag-container"></div>
-                        <div class="typeahead-container" id="cc-container">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" placeholder="{{ 'CC' | translate }}" title="{{ 'CC' | translate }}" class="form-control cc-list" />
+                    <div class="form-group" ng-show="message.fields">
+                        <div class="input-group input-container">
+                            <div class="input-group-addon">{{ 'CC' | translate }}</div>
+                            <div class="tag-container"></div>
+                            <div class="typeahead-container" id="cc-container">
+                                <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message, true)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group input-container" ng-show="message.fields">
-                        <div class="tag-container"></div>
-                        <div class="typeahead-container" id="bcc-container">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" placeholder="{{ 'BCC' | translate }}" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
+                    <div class="form-group" ng-show="message.fields">
+                        <div class="input-group input-container">
+                            <div class="input-group-addon">{{ 'BCC' | translate }}</div>
+                            <div class="tag-container"></div>
+                            <div class="typeahead-container" id="bcc-container">
+                                <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message, true)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,7 +149,7 @@
                         </div>
                     </div>
                     <div class="dropzone composer-dropzone" id="{{message.button}}" dropzone="dropzoneConfig(message)" ng-show="isOver && message.focussed"></div>
-                    <squire ng-model="message.Body" message="message" editor="message.editor" height="320px"></squire>
+                    <squire ng-model="message.Body" message="message" editor="message.editor" height="message.height()"></squire>
                     <div class="previews" id="{{message.previews}}" ng-show="message.Attachments.length > 0"></div>
                     <button class="btn btn-sm pull-right attach-collapse" ng-show="message.Attachments.length > 0" ng-click="slideDown(message)">
                         <i class="fa fa-caret-left transition" ng-class="{'fa-rotate-270': message.attachmentsToggle}"></i>
