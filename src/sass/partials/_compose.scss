@@ -630,6 +630,10 @@ form#compose {
             box-shadow: 0 -1px 0 $base-color-darker;
             position: relative;
             margin-bottom: 0;
+            .input-group-addon {
+                background-color: $base-color;
+                border: none;
+            }
             .form-control {
                 z-index: 0;
                 box-shadow: none;
