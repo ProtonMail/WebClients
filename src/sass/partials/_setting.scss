@@ -12,6 +12,12 @@
         width: 12rem;
         display: block;
     }
+    .fa {
+        font-size: 2rem;
+        &.fa-times-circle {
+            color: #c33;
+        }
+    }
 }
 #logHeader {
     padding: 1rem 0;
@@ -22,8 +28,8 @@
         margin: 0;
     }
 }
-.selectMode {
-    width: 200px;
+#main .securityTitle {
+    margin: 0 1rem 0 0;
 }
 .list-group {
     list-style-type: none !important;

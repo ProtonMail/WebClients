@@ -98,7 +98,7 @@ angular.module("proton.controllers.Auth", [
                     $rootScope.domoArigato = true;
                     $timeout(function() {
                         $state.go("secured.inbox");
-                    }, 2000);                    
+                    }, 750);                    
                 },
                 function(err) {
                     $log.error(err);
