@@ -179,6 +179,13 @@ angular.module("proton.models.message", ["proton.constants"])
 
             return params;
         },
+        height: function() {
+            if(this.fields === true) {
+                return '256px';
+            } else {
+                return '320px';
+            }
+        },
         readableTime: function() {
             if (this.moment().isSame(moment(), 'day')) {
                 return this.moment().format('h:mm a');

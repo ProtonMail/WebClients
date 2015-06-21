@@ -6,7 +6,7 @@ angular.module("proton.squire", [
         restrict: 'E',
         require: "ngModel",
         scope: {
-            height: '@',
+            height: '=',
             width: '@',
             placeholder: '@',
             editorClass: '@',
