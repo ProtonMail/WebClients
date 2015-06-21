@@ -1,21 +1,3 @@
-.btn-default:active {
-  background-color: #fff;
-  background-image: radial-gradient(circle, #f0f0f0 10%, #ffffff 11%);
-}
-.btn-primary:active {
-  background-color: #fff;
-  background-image: radial-gradient(circle, darken($primary-color, 10%) 10%, $primary-color 11%);
-}
-.btn {
-    transition: all 0.1s;
-    background-size: 200%;
-    background-position: 50%;  
-    &:active {
-        background-repeat: no-repeat;
-        background-size: 1000%;
-    }
-}
-
 body .navbar-inverse {
     background: $navbar-color;
     .navbar-nav > li > a {
@@ -39,9 +21,14 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     background-color: $panel-header;
     color: #ddd;
     .close {
-        color: #ddd;
+        opacity: 1;
+        color: #ccc;
         text-shadow: none;
         font-weight: normal;
+        &:hover {
+            opacity: 1;
+            color: #fff;
+        }
     }
 }
 
@@ -49,7 +36,10 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     &.dark {
         background-color: darken($navbar-color, $color-offset);
         border-color: darken($navbar-color, $color-offset*2);
-        color: #fff
+        color: #fff;
+    }
+    &:focus {
+        box-shadow: 0 0 0px 1px #669;
     }
 }
 

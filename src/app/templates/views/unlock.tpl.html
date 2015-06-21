@@ -6,10 +6,6 @@
         <h3 class="text-center">{{ 'DECRYPT_MAILBOX' | translate }}</h3>
         <p class="text-muted text-center">{{ user.Addresses[0].Email }}</p>
         <fieldset class="pure-form">
-            <div class="alert alert-danger" ng-if="error">
-                <p>{{ error.message }}</p>
-                <p><a href="/pages/faq#faq1" target="_blank">{{ 'FAQ' | translate }}</a></p>
-            </div>
             <div class="form-group">
                 <input class="form-control dark" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
             </div>

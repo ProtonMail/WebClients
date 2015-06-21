@@ -12,7 +12,7 @@
             <div class="well well-sm">
                 <div class="form-group" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                     <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                    <textarea class="form-control no-resize" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" required maxlength="9000"></textarea>
+                    <textarea class="form-control no-resize" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" required maxlength="200000"></textarea>
                     <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
                 </div>
                 <div class="text-right">

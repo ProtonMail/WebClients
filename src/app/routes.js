@@ -174,10 +174,19 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
+        resolve: {
+            user: function(authentication) {
+                if(angular.isDefined(authentication.user) && authentication.user) {
+                    return authentication.user;
+                } else {
+                    return authentication.fetchUserInfo();
+                }
+            }
+        },
         onEnter: function() {
             setTimeout( function() {
                 $( "[type=password]" ).focus();
-            }, 500);
+            }, 200);
         }
     })
 

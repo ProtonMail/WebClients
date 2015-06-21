@@ -277,6 +277,8 @@ angular.module("proton.authentication", [
                             }
                         });
 
+                        var error = "Wrong decryption password.asd";
+
                         $getUser.then(
                             function(result) {
                                 var user = result.data.User;
@@ -286,15 +288,23 @@ angular.module("proton.authentication", [
                                         req.resolve(200);
                                     },
                                     function(rejection) {
+                                        notify({
+                                            classes: 'notification-danger',
+                                            message: error
+                                        });
                                         req.reject({
-                                            message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                            message: error
                                         });
                                     }
                                 );
                             },
                             function(rejection) {
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: error
+                                });
                                 req.reject({
-                                    message: "We are unable to decrypt your mailbox, most likely, you entered the wrong decryption password. Please try again."
+                                    message: error
                                 });
                             }
                         );
