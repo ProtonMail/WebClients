@@ -109,6 +109,33 @@
             </ul>
         </li>
     </ul>
+
+    <ul class="nav navbar-nav pull-right navigation">
+        <li>
+            <a href ng-click="reply(message)">
+                <i class="fa fa-reply"></i>
+                <span class="visible-md-inline-block visible-lg-inline-block">
+                    {{ 'REPLY' | translate }}
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href ng-click="replyAll(message)">
+                <i class="fa fa-reply-all"></i>
+                <span class="visible-md-inline-block visible-lg-inline-block">
+                    {{ 'REPLY_ALL' | translate }}
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href ng-click="forward(message)">
+                <i class="fa fa-mail-forward"></i>
+                <span class="visible-md-inline-block visible-lg-inline-block">
+                    {{ 'FORWARD' | translate }}
+                </span>
+            </a>
+        </li>
+    </ul>
     <!-- <ul class="nav navbar-nav pull-right navigation">
         <li class="prev-message seperator">
             <a href ng-class="{disabled: !hasAdjacentMessage(message, -1)}" ng-click="goToAdjacentMessage(message, -1)" title="{{ 'PREVIOUS' | translate }}">

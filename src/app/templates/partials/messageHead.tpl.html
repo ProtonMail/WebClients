@@ -1,42 +1,24 @@
-<div class="row">
-    <div class="col-lg-8 col-md-6 col-sm-8 col-xs-12">
-        <h1>
-            <a href class="star" ng-click="toggleStar(message)">
-                <i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i>
-            </a>
-            <i
-            class="fa"
-            ng-class="{
-            'fa-lock':
-            !!!(message.IsEncrypted == '0'),
-            'text-purple':
-            !!(message.IsEncrypted == '1') ||
-            !!(message.IsEncrypted == '3') ||
-            !!(message.IsEncrypted == '5') ||
-            !!(message.IsEncrypted == '6'),
-            'fa-unlock-alt':
-            !!(message.IsEncrypted == '0')
-            }" 
-            title="{{ getMessageEncryptionType(message) }}"></i>
-            <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
-            {{ message.Subject }}
-            <span class="label label-pm" style="background-color: {{ label.Color }}" ng-repeat="label in message.labels()">
-                {{ label.Name }} <a href="" ng-click="detachLabel(label.ID)"><i class="fa fa-times"></i></a>
-            </span>
-        </h1>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-4 hidden-xs text-right">
-        <a class='btn btn-primary' href ng-click="reply(message)">
-            <i class="fa fa-reply"></i>
-            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
-        </a>
-        <a class='btn btn-primary' href ng-click="replyAll(message)">
-            <i class="fa fa-reply-all"></i>
-            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY_ALL' | translate }}</span>
-        </a>
-        <a class='btn btn-primary' href ng-click="forward(message)">
-            <i class="fa fa-mail-forward"></i>
-            <span class="visible-md-inline-block visible-lg-inline-block">{{ 'FORWARD' | translate }}</span>
-        </a>
-    </div>
-</div>
+<h1>
+    <a href class="star" ng-click="toggleStar(message)">
+        <i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i>
+    </a>
+    <i
+    class="fa"
+    ng-class="{
+    'fa-lock':
+    !!!(message.IsEncrypted == '0'),
+    'text-purple':
+    !!(message.IsEncrypted == '1') ||
+    !!(message.IsEncrypted == '3') ||
+    !!(message.IsEncrypted == '5') ||
+    !!(message.IsEncrypted == '6'),
+    'fa-unlock-alt':
+    !!(message.IsEncrypted == '0')
+    }" 
+    title="{{ getMessageEncryptionType(message) }}"></i>
+    <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
+    {{ message.Subject }}
+    <span class="label label-pm" style="background-color: {{ label.Color }}" ng-repeat="label in message.labels()">
+        {{ label.Name }} <a href="" ng-click="detachLabel(label.ID)"><i class="fa fa-times"></i></a>
+    </span>
+</h1>
