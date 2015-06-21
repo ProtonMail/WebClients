@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-        <div class="btn-group pull-right">
+        <div class="btn-group pull-right" ng-hide="doLogging == 0">
             <a class="btn btn-default" ng-click="clearLogs()">
                 <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
             </a>
@@ -26,17 +26,18 @@
             <i class="fa fa-refresh"></i>
         </a>
 
-        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
+        <toggle-switch ng-model="doLogging" ng-click="setLogging()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
 
-        <span class="checkbox" id="loggingOption">
+        <span class="checkbox" id="loggingOption" ng-hide="doLogging == 0">
             <label>
-                <input type="checkbox"> Log IPs
+                <input type="checkbox" ng-true-value="2" ng-false-value="1" ng-change="setLogging()" ng-model="doLogging"> Log IPs
             </label>
         </span>
 
         <div id="logArea" ng-show="doLogging != 0">
 
-            <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()">
+            <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
+            <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()" ng-show="logs.length>1">
                 <thead>
                     <tr>
                         <th width="6rem"></th>
@@ -65,7 +66,7 @@
                 </tbody>
             </table>
 
-            <div class="well" id="logHeader">
+            <div class="well" id="logHeader" ng-show="(logCount > logItemsPerPage)">
 
                 <pagination
                 ng-show="(logCount > logItemsPerPage)"
