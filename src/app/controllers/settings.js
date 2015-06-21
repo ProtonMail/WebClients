@@ -40,7 +40,7 @@ angular.module("proton.controllers.Settings", [
     $scope.selectedLanguage = 'English';
 
     $scope.currentLogPage = 1;
-    $scope.logItemsPerPage = 10;
+    $scope.logItemsPerPage = 20;
     $scope.logCount = 0;
 
     $scope.apiURL = authentication.baseURL;

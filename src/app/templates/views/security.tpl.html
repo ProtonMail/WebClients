@@ -4,29 +4,35 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-            <div class="btn-group pull-right">
-                <a class="btn btn-default" ng-click="clearLogs()">
-                    <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
-                </a>
-                <a
-                target="_blank"
-                href="{{ apiURL + '/logs/auth/csv' }}"
-                class="btn btn-default">
-                    <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
-                </a>
-            </div>
-
-            <h1 class="securityTitle pull-left">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
-
-            <a
-            href
-            class="btn btn-default btn-sm"
-            ng-class="{ 'disabled': doLogging == 0 }"
-            ng-click="initLogs()">
-                <i class="fa fa-refresh"></i>
+        <div class="btn-group pull-right">
+            <a class="btn btn-default" ng-click="clearLogs()">
+                <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
             </a>
+            <a
+            target="_blank"
+            href="{{ apiURL + '/logs/auth/csv' }}"
+            class="btn btn-default">
+                <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
+            </a>
+        </div>
 
-            <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>        
+        <h1 class="securityTitle pull-left">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
+
+        <a
+        href
+        class="btn btn-default btn-sm"
+        ng-class="{ 'disabled': doLogging == 0 }"
+        ng-click="initLogs()">
+            <i class="fa fa-refresh"></i>
+        </a>
+
+        <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
+
+        <span class="checkbox" id="loggingOption">
+            <label>
+                <input type="checkbox"> Log IPs
+            </label>
+        </span>
 
         <div id="logArea" ng-show="doLogging != 0">
 
