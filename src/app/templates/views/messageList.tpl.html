@@ -48,12 +48,12 @@
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
                         <span class="from" pt-tooltip="{{ message.SenderAddress }}">
-                            From: {{ message.SenderName | username | capitalize }}
+                            From: {{ message.SenderName | username }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
-                        <span pt-tooltip="{{ message.SenderAddress | username }}">
-                            {{ message.SenderName || message.SenderAddress | username | capitalize }}
+                        <span pt-tooltip="{{ message.SenderAddress }}">
+                            {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
                 </td>
@@ -89,12 +89,12 @@
                         </span>
                         <span ng-if="showFrom(message) && !showTo(message)">
                             <span class="from">
-                                From: </span>{{ message.SenderName | capitalize }}
+                                From: </span>{{ message.SenderName }}
                             </span>
                         </span>
                         <span ng-if="!showTo(message) && !showFrom(message)">
                             <span pt-tooltip="{{ message.SenderAddress }}">
-                                {{ message.SenderName | username | capitalize }}
+                                {{ message.SenderName }}
                             </span>
                         </span>
                         <span class="pull-right">{{ message.readableTime() }}</span>
