@@ -816,7 +816,6 @@ angular.module("proton.controllers.Messages", [
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
         var widthWindow = $('#main').width();
-        var composerHeight = $('.composer-header').outerHeight();
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
@@ -935,7 +934,14 @@ angular.module("proton.controllers.Messages", [
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                $scope.focusComposer(message);
+                message.fields = false;
+                message.toUnfocussed = true;
+                $scope.$apply();
+                $timeout(function() {
+                    message.height();
+                    $('.typeahead-container').scrollTop(0);
+                    $scope.focusComposer(message);
+                });
             });
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
