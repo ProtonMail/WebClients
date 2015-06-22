@@ -1673,7 +1673,7 @@ angular.module("proton.controllers.Messages", [
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
-        var time = 'Time (GMT): ' + $filter('readableTime')(message.Time) + '<br />';
+        var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
         var from = 'From: ' + tools.contactsToString(message.ToList) + '<br />';
         var to = 'To: ' + message.SenderAddress + '<br />';
         var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
