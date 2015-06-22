@@ -26,13 +26,11 @@
             <i class="fa fa-refresh"></i>
         </a>
 
-        <toggle-switch disabled="true" ng-model="doLogging" ng-click="setLogging()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
-
-        <span class="checkbox" id="loggingOption" ng-hide="doLogging == 0">
-            <label>
-                <input type="checkbox" ng-true-value="2" ng-false-value="1" ng-change="setLogging()" ng-model="doLogging"> Log IPs
-            </label>
-        </span>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">Disabled</button>
+            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 1}" ng-click="setLogging(1)">Basic Logging</button>
+            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 2}" ng-click="setLogging(2)">Advanced Logging</button>
+        </div>
 
         <div id="logArea" ng-show="doLogging != 0">
 

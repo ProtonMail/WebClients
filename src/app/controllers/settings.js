@@ -34,6 +34,7 @@ angular.module("proton.controllers.Settings", [
     $scope.signature = user.Signature;
     $scope.aliases = user.Addresses;
     $scope.labels = user.Labels;
+    $scope.doLogging = user.LogAuth;
     $scope.cssTheme = user.Theme;
     $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
     $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
@@ -412,16 +413,15 @@ angular.module("proton.controllers.Settings", [
         // );
     };
 
-    $scope.doLogging = user.LogAuth === 1;
-
-    $scope.setLogging = function() {
-        if($scope.doLogging === true) {
+    $scope.setLogging = function(value) {
+        if(value === 0) {
             confirmModal.activate({
                 params: {
                     message: 'This will delete all access logs, do you want to continue?',
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
-                        $scope.doLogging = false;
+                        $scope.doLogging = 0;
+                        user.LogAuth = 0;
                         notify('Logging Preference Updated');
                         confirmModal.deactivate();
                     },
@@ -431,8 +431,9 @@ angular.module("proton.controllers.Settings", [
                 }
             });
         } else {
-            $scope.doLogging = true;
-            Setting.setLogging({LogAuth: 1});
+            $scope.doLogging = value;
+            user.LogAuth = value;
+            Setting.setLogging({LogAuth: value});
             notify('Logging Preference Updated');
         }
     };
