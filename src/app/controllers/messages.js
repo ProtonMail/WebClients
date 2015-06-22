@@ -118,24 +118,24 @@ angular.module("proton.controllers.Messages", [
         return (
             $scope.senderIsMe(message) &&
             (
-                !$filter('isState')('secured.inbox') &&
-                !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.sent')  &&
-                !$filter('isState')('secured.archive')  &&
-                !$filter('isState')('secured.spam')  &&
-                !$filter('isState')('secured.trash')
+                !$state.is('secured.inbox') &&
+                !$state.is('secured.drafts')  &&
+                !$state.is('secured.sent')  &&
+                !$state.is('secured.archive')  &&
+                !$state.is('secured.spam')  &&
+                !$state.is('secured.trash')
             )
         ) ? true : false;
     };
 
     $scope.showFrom = function(message) {
         return ((
-                !$filter('isState')('secured.inbox') &&
-                !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.archive') &&
-                !$filter('isState')('secured.sent') &&
-                !$filter('isState')('secured.spam') &&
-                !$filter('isState')('secured.trash')
+                !$state.is('secured.inbox') &&
+                !$state.is('secured.drafts')  &&
+                !$state.is('secured.archive') &&
+                !$state.is('secured.sent') &&
+                !$state.is('secured.spam') &&
+                !$state.is('secured.trash')
             )
         ) ? true : false;
     };
@@ -788,16 +788,6 @@ angular.module("proton.controllers.Messages", [
 
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-
-        if (angular.isUndefined(message.Body)) {
-            // this sets the Body with the signature
-            $scope.completedSignature(message);
-        }
-
-        // sanitation
-        message.Body = DOMPurify.sanitize(message.Body, {
-            FORBID_TAGS: ['style']
-        });
         $scope.selectAddress(message);
 
         $timeout(function() {
@@ -807,8 +797,17 @@ angular.module("proton.controllers.Messages", [
 
         $timeout(function() {
             $scope.listenEditor(message);
+            if (angular.isUndefined(message.Body)) {
+                // this sets the Body with the signature
+                $scope.completedSignature(message);
+            }
+
+            // sanitation
+            message.Body = DOMPurify.sanitize(message.Body, {
+                FORBID_TAGS: ['style']
+            });
             resizeComposer();
-        }, 200);
+        }, 500);
     };
 
     $scope.composerStyle = function(message) {
@@ -933,19 +932,21 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.listenEditor = function(message) {
-        message.editor.addEventListener('focus', function() {
-            message.fields = false;
-            message.toUnfocussed = true;
-            $scope.$apply();
-            $timeout(function() {
-                message.height();
-                $('.typeahead-container').scrollTop(0);
-                $scope.focusComposer(message);
+        if(message.editor) {
+            message.editor.addEventListener('focus', function() {
+                message.fields = false;
+                message.toUnfocussed = true;
+                $scope.$apply();
+                $timeout(function() {
+                    message.height();
+                    $('.typeahead-container').scrollTop(0);
+                    $scope.focusComposer(message);
+                });
             });
-        });
-        message.editor.addEventListener('input', function() {
-            $scope.saveLater(message);
-        });
+            message.editor.addEventListener('input', function() {
+                $scope.saveLater(message);
+            });
+        }
     };
 
     $scope.selectAddress = function(message) {
@@ -1359,6 +1360,7 @@ angular.module("proton.controllers.Messages", [
     $compile,
     $timeout,
     $translate,
+    $filter,
     $q,
     $sce,
     localStorageService,
@@ -1668,10 +1670,10 @@ angular.module("proton.controllers.Messages", [
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
-        var time = 'Time (GMT): ' + message.Time + '<br />';
-        var from = 'From: ' + message.ToList + '<br />';
-        var to = 'To: ' + message.Sender + '<br />';
-        var cc = 'CC: ' + message.CCList + '<br />';
+        var time = 'Time (GMT): ' + $filter('readableTime')(message.Time) + '<br />';
+        var from = 'From: ' + tools.contactsToString(message.ToList) + '<br />';
+        var to = 'To: ' + message.SenderAddress + '<br />';
+        var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
         var blockquoteEnd = '</blockquote>';
 
         var re_prefix = $translate.instant('RE:');
