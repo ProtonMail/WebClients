@@ -13,6 +13,15 @@ angular.module("proton.emailField", [])
     link: function ( $scope, $element, $attrs, $ctrl ) {
       var $$element = $($element[0]);
       var parent = $$element.parent();
+      var container = $(parent).closest('.input-container');
+      
+      if (parent[0].id === 'to-container') {
+          $scope.message.toContainer = parent[0];
+      }
+
+      $(container).on('click', function() {
+          $$element.focus();
+      });
 
       $ctrl.$render = function () {
         _(($ctrl.$viewValue || "").split(","))
@@ -45,7 +54,7 @@ angular.module("proton.emailField", [])
       var tabbing = false;
 
       var manager = $$element.tagsManager({
-        tagsContainer: $(parent).siblings()[0],
+        tagsContainer: parent[0],
         tagCloseIcon: "<i class=\"fa fa-times\">",
         delimiters: [32, 44, 9, 13],
         validator: function (input) {
@@ -106,8 +115,11 @@ angular.module("proton.emailField", [])
         })
         .on("blur", function () {
           var val = $$element.val();
+          response = manager.tagsManager("pushTag",{Name: val, Email: val});
 
-          $timeout(function () { $$element.val(""); }, 0);
+          if (response === undefined) {
+              $timeout(function () { $$element.val(""); }, 0);
+          }
         })
         .on("change", setValue)
         .typeahead(null, {

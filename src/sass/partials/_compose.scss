@@ -110,9 +110,14 @@
     }
 }
 
+.unfocussed {
+    max-height: 38px;
+    overflow-y: auto;
+}
+
 .twitter-typeahead {
     display: inline-block;
-    width: 100%;;
+    width: 25%;;
     vertical-align: bottom;
 }
 
@@ -147,11 +152,6 @@
             padding: 0;
             margin-left: 5px;
         }
-    }
-
-    .tag-container {
-        max-height: 115px;
-        overflow-y: auto;
     }
 
     .tt-dropdown-menu {
