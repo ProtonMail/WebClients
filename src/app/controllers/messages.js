@@ -1680,7 +1680,6 @@ angular.module("proton.controllers.Messages", [
         var fw_prefix = $translate.instant('FW:');
 
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
-
         if (action === 'reply') {
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
@@ -1697,6 +1696,7 @@ angular.module("proton.controllers.Messages", [
             base.ToList = '';
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
             fw_prefix + ' ' + message.Subject;
+            base.Attachments = message.Attachments;
         }
 
         return base;
