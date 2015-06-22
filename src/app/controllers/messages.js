@@ -30,7 +30,6 @@ angular.module("proton.controllers.Messages", [
     $scope.CONSTANTS = CONSTANTS;
     $scope.page = parseInt($stateParams.page || "1");
     $scope.messages = messages;
-    $scope.messageCount = $rootScope.Total;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
 
@@ -58,6 +57,10 @@ angular.module("proton.controllers.Messages", [
     $scope.$on('refreshMessages', function(event, silently) {
         $scope.refreshMessages(silently);
     });
+
+    $scope.messageCount = function() {
+        return $rootScope.Total;
+    };
 
     $scope.getMessagesParameters = function(mailbox) {
         var params = {};
@@ -201,8 +204,8 @@ angular.module("proton.controllers.Messages", [
 
         end = $scope.start() + $scope.messagesPerPage - 1;
 
-        if (end > $scope.messageCount) {
-            end = $scope.messageCount;
+        if (end > $scope.messageCount()) {
+            end = $scope.messageCount();
         }
 
         return end;
@@ -223,7 +226,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.hasNextPage = function() {
-        return $scope.messageCount > ($scope.page * $scope.messagesPerPage);
+        return $scope.messageCount() > ($scope.page * $scope.messagesPerPage);
     };
 
     $scope.navigateToMessage = function(event, message) {
@@ -517,7 +520,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.goToPage = function(page) {
-        if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
+        if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
             }
