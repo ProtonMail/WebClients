@@ -65,7 +65,6 @@ body.min {
     .label {
         background-color: white;
         color: #222;
-        position: absolute;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -110,7 +109,7 @@ body.min {
         height: 1px;
         background: rgba(255,255,255,.1);
         padding: 0;
-        clear: both;        
+        clear: both;
     }
     .label {
         background-color: white;
@@ -165,7 +164,7 @@ body.min {
         left: 0;
         right: 0;
         bottom: 0;
-        height: 5rem;        
+        height: 5rem;
         @include responsive(sm) {
             width: 6rem;
         }
@@ -245,6 +244,14 @@ body.min {
         .fa {
             margin-right: 0.75rem;
             line-height: 2rem;
+            &.fa-refresh {
+                right: 0px;
+                padding: 0.4em 0.6em 0.4em;
+                position: absolute;
+                &.unread {
+                    right: 25px;
+                }
+            }
         }
         .btn {
             width: 100%;
