@@ -754,8 +754,6 @@ angular.module("proton.controllers.Messages", [
                     }
                 );
             });
-
-            message.track(attachmentPromise);
         } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -861,12 +859,9 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.focusComposer = function(message) {
-
-        console.log('focusComposer');
         $scope.selected = message;
-        if (!!!message.focussed) {
 
-            console.log('?');
+        if (!!!message.focussed) {
             // calculate z-index
             var index = $scope.messages.indexOf(message);
             // console.log(index);
