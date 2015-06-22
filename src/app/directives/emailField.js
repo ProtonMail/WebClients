@@ -14,6 +14,10 @@ angular.module("proton.emailField", [])
       var $$element = $($element[0]);
       var parent = $$element.parent();
       var container = $(parent).closest('.input-container');
+      
+      if (parent[0].id === 'to-container') {
+          $scope.message.toContainer = parent[0];
+      }
 
       $(container).on('click', function() {
           $$element.focus();
