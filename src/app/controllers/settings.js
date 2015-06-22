@@ -414,6 +414,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.setLogging = function(value) {
+        console.log('...',value);
         if(value === 0) {
             confirmModal.activate({
                 params: {

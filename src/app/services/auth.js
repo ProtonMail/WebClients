@@ -253,14 +253,17 @@ angular.module("proton.authentication", [
 
                     this.user = null;
 
-                    $rootScope.isLoggedIn = false;
-                    $rootScope.isLocked = true;
-                    $rootScope.isSecure = false;
-                    $rootScope.domoArigato = false;
+                    // HACKY ASS BUG
+                    $http.delete(baseURL + "/auth").then( function() {
+                        location.reload();
+                    });
 
-                    $http.delete(baseURL + "/auth");
+                    // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
+                    // $rootScope.isLoggedIn = false;
+                    // $rootScope.isLocked = true;
+                    // $rootScope.isSecure = false;
+                    // $rootScope.domoArigato = false;
 
-                    $state.go("login");
                 },
 
                 // Returns an async promise that will be successful only if the mailbox password

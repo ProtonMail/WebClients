@@ -35,7 +35,7 @@
         <div id="logArea" ng-show="doLogging != 0">
 
             <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
-            <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()" ng-show="logs.length>1">
+            <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                 <thead>
                     <tr>
                         <th width="6rem"></th>
