@@ -186,28 +186,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 return '320px';
             }
         },
-        readableTime: function() {
-            if (this.moment().isSame(moment(), 'day')) {
-                return this.moment().format('h:mm a');
-            }
-            else {
-                return this.moment().format('LL');
-            }
-        },
-        longReadableTime: function() {
-            var dt = this.moment();
-            return dt.format('LLL') + " <em>(" + dt.fromNow() + ")</em>";
-        },
-        moment: function() {
-            if (!this._moment) {
-                var time = this.Time;
-                if (_.isString(time)) {
-                    time = parseInt(time);
-                }
-                this._moment = moment.unix(time);
-            }
-            return this._moment;
-        },
         moveTo: function(location) {
             // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
             if (_.has(CONSTANTS.MAILBOX_IDENTIFIERS, location)) {

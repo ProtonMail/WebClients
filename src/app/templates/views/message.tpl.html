@@ -13,9 +13,9 @@
 
     <div class="message-metadata">
         <div class="pull-right">
-            <span ng-bind-html="message.longReadableTime()"></span>
+            <span ng-bind-html="message.Time | longReadableTime"></span>
         </div>
-        <ul class="infos">       
+        <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
                 <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>

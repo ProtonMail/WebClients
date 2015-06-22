@@ -9,6 +9,26 @@ angular.module("proton.filters.strings",[])
     };
 })
 
+.filter('readableTime', function() {
+    return function(time) {
+        var m = moment.unix(time);
+
+        if (m.isSame(moment(), 'day')) {
+            return m.format('h:mm a');
+        }
+        else {
+            return m.format('LL');
+        }
+    };
+})
+
+.filter('longReadableTime', function() {
+    return function(time) {
+        var m = moment.unix(time);
+
+        return m.format('LLL') + " <em>(" + m.fromNow() + ")</em>";
+    };
+})
 // unused
 .filter('purify', function($sce) {
     // var dirty = $sce.trustAsHtml(value);
