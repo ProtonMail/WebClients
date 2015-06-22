@@ -8,8 +8,10 @@
 
 .btn-default {
   @include linear-gradient($btn-default-bg, darken($btn-default-bg, ($color-offset*2)));
+  background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, ($color-offset*2)));
   &:hover {
     @include linear-gradient($btn-default-bg, darken($btn-default-bg, $color-offset));
+    background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, $color-offset));
     border-color: darken($btn-default-bg, 20%);
   }
   &[disabled],

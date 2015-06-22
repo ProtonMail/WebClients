@@ -10,6 +10,7 @@ $primary-color:                 #666699;
 
 // Used for panel widgets and forms backgrounds, etc.
 $base-color:                    #ffffff;
+$btn-default-bg: 				#ffffff;
 
 // used for sidebar
 $alt-color:                     #333333;
@@ -44,6 +45,7 @@ $alt-color-darker:             	darken($alt-color, ($color-offset*4));					// #0
 // Gradients. Example: `@include primary-gradient;`
 @mixin primary-gradient() {
     @include linear-gradient(lighten($primary-color, $color-offset), $primary-color);
+    background: -moz-linear-gradient(lighten($primary-color, $color-offset), $primary-color);
 }
 @mixin primary-gradient-dark() {
     @include linear-gradient(darken($primary-color, $color-offset), $primary-color);

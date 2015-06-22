@@ -265,6 +265,7 @@ body {
 }
 .toggle-switch .knob {
     @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
+    background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
     position: relative;
     box-shadow: 0 0 4px rgba(0,0,0,.5);
 }
