@@ -68,7 +68,7 @@
                     {{ message.Size | humanSize }}
                 </td>
                 <td class="when">
-                    {{ message.readableTime() }}
+                    {{ message.Time | readableTime }}
                 </td>
             </tr>
         </tbody>
@@ -97,7 +97,7 @@
                                 {{ message.SenderName }}
                             </span>
                         </span>
-                        <span class="pull-right">{{ message.readableTime() }}</span>
+                        <span class="pull-right">{{ message.Time | readableTime }}</span>
                         <span class="sender" ng-switch-default>{{ message.Sender }}</span>
                     </div>
                 </td>

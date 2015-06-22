@@ -4,7 +4,7 @@
     <p>{{ 'FROM' | translate }}: <strong>{{message.SenderName}} {{message.SenderAddress}}</strong></p>
     <p ng-if="message.ToList.length > 0">{{ 'TO' | translate }}: <strong>{{ getEmails(message.ToList) }}</strong></p>
     <p ng-if="message.CCList.length > 0">{{ 'CC' | translate }}: {{ getEmails(message.CCList) }}</p>
-    <p>{{ 'DATE' | translate }}: <strong>{{ message.readableTime() }}</strong></p>
+    <p>{{ 'DATE' | translate }}: <strong>{{ message.Time | readableTime }}</strong></p>
 
     <hr />
 
