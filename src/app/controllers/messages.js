@@ -1574,7 +1574,6 @@ angular.module("proton.controllers.Messages", [
                     function(decryptedAtt) {
 
                         var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
-
                         if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
                             // Browser supports a good way to download blobs
                             $scope.$apply(function() {
@@ -1587,6 +1586,7 @@ angular.module("proton.controllers.Messages", [
                             $this = $($event.target);
                             $this.attr('href', href);
                             $this.attr('target', '_blank');
+                            $this.attr('download', attachment.Name);
 
                             deferred.resolve();
 
