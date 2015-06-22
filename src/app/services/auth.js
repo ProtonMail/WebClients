@@ -277,7 +277,7 @@ angular.module("proton.authentication", [
                             }
                         });
 
-                        var error = "Wrong decryption password.asd";
+                        var error = "Wrong decryption password.";
 
                         $getUser.then(
                             function(result) {

@@ -10,10 +10,8 @@ angular.module("proton.squire", [
             width: '@',
             placeholder: '@',
             editorClass: '@',
-            editor: '=',
             ngModel: '=',
             message: '='
-
         },
         replace: true,
         transclude: true,
@@ -70,6 +68,7 @@ angular.module("proton.squire", [
         },
         link: function(scope, element, attrs, ngModel) {
             var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
+
             LINK_DEFAULT = IMAGE_DEFAULT ="http://";
             IFRAME_CLASS = 'angular-squire-iframe';
             editor = scope.editor = null;
@@ -78,6 +77,7 @@ angular.module("proton.squire", [
                 image: IMAGE_DEFAULT,
                 format: 'html'
             };
+
             updateModel = function(value) {
                 return scope.$evalAsync(function() {
                     ngModel.$setViewValue(value);
@@ -191,13 +191,12 @@ angular.module("proton.squire", [
                     return doc.childNodes[0].className += scope.editorClass;
                 }
             };
-            iframe = element.find('iframe.squireIframe');
-            menubar = element.find('.menu');
             iframeLoaded = function() {
                 var iframeDoc = iframe[0].contentWindow.document;
+
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
-                editor = scope.editor = new Squire(iframeDoc);
+                editor = new Squire(iframeDoc);
                 editor.defaultBlockTag = 'P';
                 if (scope.body) {
                     editor.setHTML(scope.body);
@@ -248,30 +247,23 @@ angular.module("proton.squire", [
 
                     return editor.bold();
                 };
+                scope.message.editor = editor;
             };
+            iframe = element.find('iframe.squireIframe');
+            menubar = element.find('.menu');
             ua = navigator.userAgent;
             isChrome = /Chrome/.test(ua);
             isIE = /rv:11.0|IE/.test(ua);
             isFF = !isChrome && !isIE;
             loaded = false;
-            iframe.on('load', function() {
-                loaded = true;
 
-                return loaded;
-            });
-            if (isChrome) {
+            if(isChrome) {
+                loaded = true;
                 iframeLoaded();
             } else {
-                element.one("mouseenter", function() {
-                    if (isFF) {
-                        if (loaded) {
-                            return iframeLoaded();
-                        } else {
-                            return iframe.on('load', iframeLoaded);
-                        }
-                    } else {
-                        return iframeLoaded();
-                    }
+                iframe.on('load', function() {
+                    loaded = true;
+                    iframeLoaded();
                 });
             }
             Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {

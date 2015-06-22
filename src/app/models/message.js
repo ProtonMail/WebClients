@@ -181,9 +181,13 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         height: function() {
             if(this.fields === true) {
-                return '256px';
+                height = 256 + 32 - $(this.toContainer).height();
+                height = (height < 130) ? 130 : height;
+                return height + 'px';
             } else {
-                return '320px';
+                height = 320 + 32 - $(this.toContainer).height();
+                height = (height < 130) ? 130 : height;
+                return height + 'px';
             }
         },
         moveTo: function(location) {

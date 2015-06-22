@@ -386,6 +386,10 @@ angular.module("proton.tools", [])
            }
        }
 
+       function contacts_to_string(contacts) {
+           return _.map(contacts, function(m) { return m.Address; }).join(',');
+       }
+
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -415,7 +419,8 @@ angular.module("proton.tools", [])
             transformLinks: transform_links,
             clearImageBody: clear_image_body,
             restoreImageBody: restore_image_body,
-            containsImage: contains_image
+            containsImage: contains_image,
+            contactsToString: contacts_to_string
         };
 
         return tools;
