@@ -129,7 +129,7 @@ ul.attachments {
 }
 
 #main .message-head {
-    padding: 10px 20px;
+    padding: 0 2rem;
     position: relative;
     box-shadow: inset 0 -1px $base-color-darker;
     @include transition(all, 200ms, ease-in-out);
