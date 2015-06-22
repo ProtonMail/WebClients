@@ -110,9 +110,9 @@
         </li>
     </ul>
 
-    <ul class="nav navbar-nav pull-right navigation">
+    <ul class="nav navbar-nav pull-right navigation" id="messageActionGroup">
         <li>
-            <a href ng-click="reply(message)">
+            <a href ng-click="reply(message)" class="btn btn-primary">
                 <i class="fa fa-reply"></i>
                 <span class="visible-md-inline-block visible-lg-inline-block">
                     {{ 'REPLY' | translate }}
@@ -120,7 +120,7 @@
             </a>
         </li>
         <li>
-            <a href ng-click="replyAll(message)">
+            <a href ng-click="replyAll(message)" class="btn btn-primary">
                 <i class="fa fa-reply-all"></i>
                 <span class="visible-md-inline-block visible-lg-inline-block">
                     {{ 'REPLY_ALL' | translate }}
@@ -128,7 +128,7 @@
             </a>
         </li>
         <li>
-            <a href ng-click="forward(message)">
+            <a href ng-click="forward(message)" class="btn btn-primary">
                 <i class="fa fa-mail-forward"></i>
                 <span class="visible-md-inline-block visible-lg-inline-block">
                     {{ 'FORWARD' | translate }}
