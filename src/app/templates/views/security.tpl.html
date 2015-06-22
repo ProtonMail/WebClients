@@ -26,7 +26,7 @@
             <i class="fa fa-refresh"></i>
         </a>
 
-        <toggle-switch ng-model="doLogging" ng-click="setLogging()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
+        <toggle-switch disabled="true" ng-model="doLogging" ng-click="setLogging()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}" class="selectMode"></toggle-switch>
 
         <span class="checkbox" id="loggingOption" ng-hide="doLogging == 0">
             <label>
@@ -52,7 +52,7 @@
                             <div ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle"></i></div>
                             <div ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i></div>
                             <div ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i></div>
-                        </th>                        
+                        </th>
                         <th scope="row">
                             <span ng-show="{{ log.Event == 0 }}">Login Failed</span>
                             <span ng-show="{{ log.Event == 1 }}">Login Success</span>
