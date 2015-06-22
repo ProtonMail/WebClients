@@ -70,7 +70,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             .then(
                 function() {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
-                    $scope.domoArigato = true;
+                    $rootScope.domoArigato = true;
                     $state.go("secured.inbox");
                 },
                 function(err) {
@@ -236,7 +236,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         if (form.$valid) {
 
             $scope.startGen = true;
-            
+
             networkActivityTracker.track(
                 // TODO: need animation here.
                 generateKeys('UserID', $scope.account.mailboxPassword).then(

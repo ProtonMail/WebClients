@@ -256,6 +256,7 @@ angular.module("proton.authentication", [
                     $rootScope.isLoggedIn = false;
                     $rootScope.isLocked = true;
                     $rootScope.isSecure = false;
+                    $rootScope.domoArigato = false;
 
                     $http.delete(baseURL + "/auth");
 
