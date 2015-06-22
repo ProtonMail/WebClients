@@ -611,7 +611,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
         $scope.initMessage(message);
     });
 
@@ -875,9 +875,6 @@ angular.module("proton.controllers.Messages", [
                         $(element).css('z-index', ($scope.messages.length)*10);
                     }
                 });
-
-                console.log($(element).css('z-index'));
-                console.log($(element).css('zIndex'));
 
                 var bottom = $('.composer').eq($('.composer').length-1);
                 var bottomTop = bottom.css('top');
@@ -1146,6 +1143,11 @@ angular.module("proton.controllers.Messages", [
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
         };
 
+        if(angular.isDefined(message.ParentID)) {
+            parameters.ParentID = message.ParentID;
+            parameters.Action = message.Action;
+        }
+
         if(angular.isDefined(message.ID)) {
             parameters.id = message.ID;
             parameters.Message.IsRead = 1;
@@ -1159,7 +1161,7 @@ angular.module("proton.controllers.Messages", [
             var draftPromise;
 
             parameters.Message.Body = result;
-            console.log(parameters);
+
             if(angular.isUndefined(message.ID)) {
                 draftPromise = Message.createDraft(parameters).$promise;
             } else {
@@ -1220,7 +1222,6 @@ angular.module("proton.controllers.Messages", [
                                 });
                             }));
                         } else { // outside user
-
 
                             outsiders = true;
 
@@ -1681,20 +1682,25 @@ angular.module("proton.controllers.Messages", [
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
 
+        base.ParentID = message.ID;
+
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
+
         if (action === 'reply') {
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
-
+            base.Action = 0;
         }
         else if (action === 'replyall') {
+            base.Action = 1;
             base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList, message.ToList);
             base.ToList = _.filter(base.ToList, function (c) { return _.find($scope.user.Addresses, function(a) { return a.Email === c.Address;}) === undefined;});
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
+            base.Action = 2;
             base.ToList = '';
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
             fw_prefix + ' ' + message.Subject;
