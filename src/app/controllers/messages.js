@@ -788,16 +788,6 @@ angular.module("proton.controllers.Messages", [
 
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-
-        if (angular.isUndefined(message.Body)) {
-            // this sets the Body with the signature
-            $scope.completedSignature(message);
-        }
-
-        // sanitation
-        message.Body = DOMPurify.sanitize(message.Body, {
-            FORBID_TAGS: ['style']
-        });
         $scope.selectAddress(message);
 
         $timeout(function() {
@@ -807,8 +797,17 @@ angular.module("proton.controllers.Messages", [
 
         $timeout(function() {
             $scope.listenEditor(message);
+            if (angular.isUndefined(message.Body)) {
+                // this sets the Body with the signature
+                $scope.completedSignature(message);
+            }
+
+            // sanitation
+            message.Body = DOMPurify.sanitize(message.Body, {
+                FORBID_TAGS: ['style']
+            });
             resizeComposer();
-        }, 200);
+        }, 500);
     };
 
     $scope.composerStyle = function(message) {
@@ -934,12 +933,14 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.listenEditor = function(message) {
-        message.editor.addEventListener('focus', function() {
-            $scope.focusComposer(message);
-        });
-        message.editor.addEventListener('input', function() {
-            $scope.saveLater(message);
-        });
+        if(message.editor) {
+            message.editor.addEventListener('focus', function() {
+                $scope.focusComposer(message);
+            });
+            message.editor.addEventListener('input', function() {
+                $scope.saveLater(message);
+            });
+        }
     };
 
     $scope.selectAddress = function(message) {

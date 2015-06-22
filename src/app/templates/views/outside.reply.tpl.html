@@ -24,7 +24,7 @@
         </ul>
     </div>
     <div id="message-body">
-        <squire ng-model="message.Body" message="message" editor="message.editor" height="320px"></squire>
+        <squire ng-model="message.Body" message="message" height="320px"></squire>
         <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
