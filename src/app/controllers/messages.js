@@ -671,7 +671,7 @@ angular.module("proton.controllers.Messages", [
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
                 previewsContainer: '.previews',
-                previewTemplate: '<button class="btn preview-template"><span class="pull-right fa fa-times preview-close" data-dz-remove></span><p class="name preview-name" data-dz-name></p></button>',
+                previewTemplate: '<div class="btn preview-template"><span class="pull-right fa fa-times preview-close" data-dz-remove></span><p class="name preview-name" data-dz-name></p></div>',
                 createImageThumbnails: false,
                 accept: function(file, done) {
                 },
@@ -1157,7 +1157,7 @@ angular.module("proton.controllers.Messages", [
             var draftPromise;
 
             parameters.Message.Body = result;
-
+            console.log(parameters);
             if(angular.isUndefined(message.ID)) {
                 draftPromise = Message.createDraft(parameters).$promise;
             } else {
