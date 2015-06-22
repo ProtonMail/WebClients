@@ -118,24 +118,24 @@ angular.module("proton.controllers.Messages", [
         return (
             $scope.senderIsMe(message) &&
             (
-                !$filter('isState')('secured.inbox') &&
-                !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.sent')  &&
-                !$filter('isState')('secured.archive')  &&
-                !$filter('isState')('secured.spam')  &&
-                !$filter('isState')('secured.trash')
+                !$state.is('secured.inbox') &&
+                !$state.is('secured.drafts')  &&
+                !$state.is('secured.sent')  &&
+                !$state.is('secured.archive')  &&
+                !$state.is('secured.spam')  &&
+                !$state.is('secured.trash')
             )
         ) ? true : false;
     };
 
     $scope.showFrom = function(message) {
         return ((
-                !$filter('isState')('secured.inbox') &&
-                !$filter('isState')('secured.drafts')  &&
-                !$filter('isState')('secured.archive') &&
-                !$filter('isState')('secured.sent') &&
-                !$filter('isState')('secured.spam') &&
-                !$filter('isState')('secured.trash')
+                !$state.is('secured.inbox') &&
+                !$state.is('secured.drafts')  &&
+                !$state.is('secured.archive') &&
+                !$state.is('secured.sent') &&
+                !$state.is('secured.spam') &&
+                !$state.is('secured.trash')
             )
         ) ? true : false;
     };
@@ -1360,6 +1360,7 @@ angular.module("proton.controllers.Messages", [
     $compile,
     $timeout,
     $translate,
+    $filter,
     $q,
     $sce,
     localStorageService,
