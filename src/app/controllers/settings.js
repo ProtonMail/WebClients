@@ -45,7 +45,7 @@ angular.module("proton.controllers.Settings", [
     $scope.apiURL = authentication.baseURL;
 
     $scope.loadLogs = function (page) {
-        $scope.currentLogPage = page; 
+        $scope.currentLogPage = page;
         // ajax call here get new logs
 
     };
@@ -412,24 +412,29 @@ angular.module("proton.controllers.Settings", [
         // );
     };
 
-    $scope.doLogging = user.LogAuth;
+    $scope.doLogging = user.LogAuth === 1;
 
     $scope.setLogging = function() {
-        if ($scope.doLogging===true) {
-            $scope.doLogging = 1;
+        if($scope.doLogging === true) {
+            confirmModal.activate({
+                params: {
+                    message: 'This will delete all access logs, do you want to continue?',
+                    confirm: function() {
+                        Setting.setLogging({LogAuth: 0});
+                        $scope.doLogging = false;
+                        notify('Logging Preference Updated');
+                        confirmModal.deactivate();
+                    },
+                    cancel: function() {
+                        confirmModal.deactivate();
+                    }
+                }
+            });
+        } else {
+            $scope.doLogging = true;
+            Setting.setLogging({LogAuth: 1});
+            notify('Logging Preference Updated');
         }
-        else if ($scope.doLogging===false) {
-            $scope.doLogging = 0;
-        }
-        networkActivityTracker.track(
-            Setting.setLogging({
-                "LogAuth" : $scope.doLogging
-            }).$promise.then(function(response) {
-                notify('Logging Preference Updated');
-            }, function(response) {
-                $log.error(response);
-            })
-        );
     };
 
     $scope.clearTheme = function() {

@@ -63,7 +63,7 @@ body {
     #messageListToolbar,
     #messageViewToolbar {
         height: $row-height;
-    }  
+    }
     #content,
     #message-content {
         position: relative;
@@ -233,6 +233,10 @@ body {
             margin-left: 1rem;
         }
     }
+}
+
+.toggle-switch.disabled > div > span.knob {
+    background: transparent;
 }
 
 .dropzone {
