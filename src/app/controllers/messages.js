@@ -1350,6 +1350,34 @@ angular.module("proton.controllers.Messages", [
 
     };
 
+    $scope.discard = function(message) {
+
+        var index = $scope.messages.indexOf(message);
+
+        var messageFocussed = !!message.focussed;
+
+        if (message.ID) {
+            Message.delete({IDs: [message.ID]}).$promise.then(function(response) {
+                if (response[0] && response[0].Error === undefined) {
+                    $rootScope.$broadcast('updateCounters');
+                    $rootScope.$broadcast('refreshMessages');
+                }
+            });
+        }
+
+        message.close();
+
+        // Remove message in messages
+        $scope.messages.splice(index, 1);
+
+        // Message closed and focussed?
+        if(messageFocussed && $scope.messages.length > 0) {
+            // Focus the first message
+            $scope.focusComposer(_.first($scope.messages));
+        }
+
+    };
+
     $scope.focusEditor = function(message, event) {
         event.preventDefault();
         message.editor.focus();
