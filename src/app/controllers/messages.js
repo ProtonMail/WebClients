@@ -1146,6 +1146,10 @@ angular.module("proton.controllers.Messages", [
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
         };
 
+        if (typeof parameters.Message.ToList === 'string') {
+            parameters.Message.ToList = [];
+        }
+
         if(angular.isDefined(message.ParentID)) {
             parameters.ParentID = message.ParentID;
             parameters.Action = message.Action;
@@ -1193,6 +1197,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.send = function(message) {
+        console.log(message);
         var deferred = $q.defer();
         var validate = $scope.validate(message);
 
