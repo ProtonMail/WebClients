@@ -103,6 +103,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.labelsDragControlListeners = {
+        containment: "#labelContainer",
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
