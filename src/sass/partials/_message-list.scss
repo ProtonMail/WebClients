@@ -147,6 +147,16 @@ table.message-list {
         }
         &.starred {
             background-color: $starred;
+            i.fa-paperclip,
+            i.fa-clock-o {
+                background-color: $starred;
+            }
+        }
+        &.selected {
+            i.fa-paperclip,
+            i.fa-clock-o {
+                background-color: $selected;
+            }
         }
         i.fa-paperclip,
         i.fa-clock-o {
