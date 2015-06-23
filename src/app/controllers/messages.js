@@ -573,6 +573,7 @@ angular.module("proton.controllers.Messages", [
     $q,
     $state,
     $translate,
+    $interval,
     Attachment,
     authentication,
     Message,
@@ -641,20 +642,18 @@ angular.module("proton.controllers.Messages", [
     var interval;
 
     $(window).on('dragover', function(e) {
-        scope = angular.element("#composer-element").scope();
         e.preventDefault();
+        $interval.cancel($scope.intervalComposer);
 
-        clearInterval(interval);
-
-        interval = setInterval(function() {
+        $scope.intervalComposer = $interval(function() {
             isOver = false;
-            scope.$apply(function(){scope.isOver = false;});
-            clearInterval(interval);
+            $scope.isOver = false;
+            $interval.cancel($scope.intervalComposer);
         }, 100);
 
         if (isOver === false) {
             isOver = true;
-            scope.$apply(function(){scope.isOver = true;});
+            $scope.isOver = true;
         }
     });
 
@@ -691,7 +690,7 @@ angular.module("proton.controllers.Messages", [
                     // console.log('on dragenter', event);
                 },
                 dragover: function(event) {
-                    clearInterval(interval);
+                    $interval.cancel($scope.intervalComposer);
                     // console.log('on dragover', event);
                 },
                 dragleave: function(event) {
