@@ -30,7 +30,6 @@ angular.module("proton.controllers.Messages", [
     $scope.CONSTANTS = CONSTANTS;
     $scope.page = parseInt($stateParams.page || "1");
     $scope.messages = messages;
-    $scope.messageCount = $rootScope.Total;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
 
@@ -58,6 +57,10 @@ angular.module("proton.controllers.Messages", [
     $scope.$on('refreshMessages', function(event, silently) {
         $scope.refreshMessages(silently);
     });
+
+    $scope.messageCount = function() {
+        return $rootScope.Total;
+    };
 
     $scope.getMessagesParameters = function(mailbox) {
         var params = {};
@@ -201,8 +204,8 @@ angular.module("proton.controllers.Messages", [
 
         end = $scope.start() + $scope.messagesPerPage - 1;
 
-        if (end > $scope.messageCount) {
-            end = $scope.messageCount;
+        if (end > $scope.messageCount()) {
+            end = $scope.messageCount();
         }
 
         return end;
@@ -223,7 +226,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.hasNextPage = function() {
-        return $scope.messageCount > ($scope.page * $scope.messagesPerPage);
+        return $scope.messageCount() > ($scope.page * $scope.messagesPerPage);
     };
 
     $scope.navigateToMessage = function(event, message) {
@@ -517,7 +520,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.goToPage = function(page) {
-        if (page > 0 && $scope.messageCount > ((page - 1) * $scope.messagesPerPage)) {
+        if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
             }
@@ -1347,6 +1350,34 @@ angular.module("proton.controllers.Messages", [
 
     };
 
+    $scope.discard = function(message) {
+
+        var index = $scope.messages.indexOf(message);
+
+        var messageFocussed = !!message.focussed;
+
+        if (message.ID) {
+            Message.delete({IDs: [message.ID]}).$promise.then(function(response) {
+                if (response[0] && response[0].Error === undefined) {
+                    $rootScope.$broadcast('updateCounters');
+                    $rootScope.$broadcast('refreshMessages');
+                }
+            });
+        }
+
+        message.close();
+
+        // Remove message in messages
+        $scope.messages.splice(index, 1);
+
+        // Message closed and focussed?
+        if(messageFocussed && $scope.messages.length > 0) {
+            // Focus the first message
+            $scope.focusComposer(_.first($scope.messages));
+        }
+
+    };
+
     $scope.focusEditor = function(message, event) {
         event.preventDefault();
         message.editor.focus();
@@ -1673,7 +1704,7 @@ angular.module("proton.controllers.Messages", [
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
-        var time = 'Time (GMT): ' + $filter('readableTime')(message.Time) + '<br />';
+        var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
         var from = 'From: ' + tools.contactsToString(message.ToList) + '<br />';
         var to = 'To: ' + message.SenderAddress + '<br />';
         var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';

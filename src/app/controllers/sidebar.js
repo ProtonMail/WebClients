@@ -79,15 +79,24 @@ angular.module("proton.controllers.Sidebar", [])
         return count;
     };
 
-    $scope.updateCounters = function() {
+    $scope.updateCounters = function(firstTime) {
         Message.countUnread().$promise.then(function(result) {
-            $rootScope.counters  = result;
+            if(JSON.stringify($rootScope.counters) !== JSON.stringify(result)) {
+                var mailbox = tools.getCurrentMailbox();
+                var location = tools.getCurrentLocation();
+
+                if(firstTime !== true && mailbox !== false && $state.is('secured.' + mailbox) && $rootScope.counters[location] !== result[location]) {
+                    $rootScope.$broadcast('refreshMessages');
+                }
+
+                $rootScope.counters  = result;
+            }
         });
     };
 
     var updates = $interval($scope.updateCounters, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);
 
-    $scope.updateCounters();
+    $scope.updateCounters(true);
 
     $scope.$on("$destroy", function() {
         $interval.cancel(updates);

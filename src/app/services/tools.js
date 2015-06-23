@@ -1,5 +1,5 @@
 angular.module("proton.tools", [])
-    .factory("tools", function($log, $sanitize, $compile, $templateCache, $q, errorReporter) {
+    .factory("tools", function($log, $sanitize, $state, $compile, $templateCache, $q, errorReporter, CONSTANTS) {
         function has_session_storage() {
             var mod = 'modernizr';
 
@@ -386,10 +386,6 @@ angular.module("proton.tools", [])
            }
        }
 
-       function contacts_to_string(contacts) {
-           return _.map(contacts, function(m) { return m.Address; }).join(',');
-       }
-
         var tools = {
             getTemplate: get_template,
             compileTemplate: compile_template,
@@ -420,7 +416,27 @@ angular.module("proton.tools", [])
             clearImageBody: clear_image_body,
             restoreImageBody: restore_image_body,
             containsImage: contains_image,
-            contactsToString: contacts_to_string
+            contactsToString: function(contacts) {
+                return _.map(contacts, function(m) { return m.Address; }).join(',');
+            },
+            getCurrentLocation: function() {
+                var mailbox = tools.getCurrentMailbox();
+
+                if(mailbox) {
+                    return CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                } else {
+                    return false;
+                }
+            },
+            getCurrentMailbox: function() {
+                var mailbox = $state.current.name.replace('secured.', '');
+
+                if(_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
+                    return mailbox;
+                } else {
+                    return false;
+                }
+            }
         };
 
         return tools;

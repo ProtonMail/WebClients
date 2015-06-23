@@ -22,6 +22,14 @@ angular.module("proton.filters.strings",[])
     };
 })
 
+.filter('utcReadableTime', function() {
+    return function(time) {
+        var m = moment.unix(time);
+
+        return m.utc().format('LL h:mm a');
+    };
+})
+
 .filter('longReadableTime', function() {
     return function(time) {
         var m = moment.unix(time);
