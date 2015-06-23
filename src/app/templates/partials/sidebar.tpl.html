@@ -20,7 +20,6 @@
             <li class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.inbox')" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                     <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>
-                    <span title="{{ 'REFRESH' | translate }}" class="fa fa-refresh hidden-xs hidden-sm" ng-class="{unread: getUnread('inbox') > 0}"></span>
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('inbox') > 0}">{{ getUnread('inbox') }}</span>
                 </a>
             </li>

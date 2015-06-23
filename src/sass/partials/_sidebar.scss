@@ -244,14 +244,6 @@ body.min {
         .fa {
             margin-right: 0.75rem;
             line-height: 2rem;
-            &.fa-refresh {
-                right: 0px;
-                padding: 0.4em 0.6em 0.4em;
-                position: absolute;
-                &.unread {
-                    right: 25px;
-                }
-            }
         }
         .btn {
             width: 100%;

@@ -11,6 +11,11 @@
                 pt-placement="bottom" />
             </label>
         </li>
+        <li class="seperator" pt-tooltip="{{ 'REFRESH' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="refreshMessages(false)">
+                <i class="fa fa-refresh"></i>
+            </a>
+        </li>
         <li
         ng-if="pageName != 'archive'"
         pt-tooltip="{{ 'ARCHIVE' | translate }}"
