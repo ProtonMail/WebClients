@@ -14,9 +14,17 @@ angular.module("proton.emailField", [])
       var $$element = $($element[0]);
       var parent = $$element.parent();
       var container = $(parent).closest('.input-container');
-      
+
       if (parent[0].id === 'to-container') {
           $scope.message.toContainer = parent[0];
+      }
+
+      if (parent[0].id === 'bcc-container') {
+          $scope.message.bccContainer = parent[0];
+      }
+
+      if (parent[0].id === 'cc-container') {
+          $scope.message.ccContainer = parent[0];
       }
 
       $(container).on('click', function() {
