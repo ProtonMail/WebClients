@@ -182,11 +182,12 @@
         </li>
     </ul>
     <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount() > 0">
+        <li>{{ page }}</li>
         <li class="pageDropdown seperator">
             <a href ng-click="showPagination = !showPagination">
                 {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
             </a>
-            <pagination ng-show="showPagination" ng-change="goToPage(page)" page="currentPage" total-items="messageCount()" items-per-page="messagesPerPage" ng-model="page" class="pagination-sm" boundary-links="false" direction-links="false" ></pagination>
+            <select ng-model="page" ng-init="page=jason[0]" ng-options="item.value as item.label for item in jason" ng-change="goToPage()">
         </li>
         <li class="prev-page seperator">
             <a href ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1)">
