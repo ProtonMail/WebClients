@@ -28,6 +28,9 @@ table.message-list {
         color: #555;
         background-color: $base-color-dark;
         @include transition(all, 0, ease-in-out);
+        &.hovered {
+            background: red !important;
+        }
         h4 {
             margin: 0;
             padding: 0;

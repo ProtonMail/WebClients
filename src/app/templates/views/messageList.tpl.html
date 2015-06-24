@@ -2,14 +2,19 @@
 
 <ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
 <div id="content">
-    <table class="table message-list hidden-xs" ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}">
+    <table 
+    class="table message-list hidden-xs" 
+    ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}"
+    >
         <tbody id="message">
             <tr ng-repeat="message in messages"
                 ng-click="navigateToMessage($event, message)"
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
                 data-jqyoui-options="draggableOptions"
-                ng-class="{ unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }">
+                ng-class="{ hovered: hovered, unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
+                ng-mouseover="hovered = true"
+                ng-mouseleave="hovered = false">
                 <td class="actions">
                     <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
                     <!--

@@ -230,6 +230,59 @@ angular.module("proton", [
 })
 
 //
+// Setup keyboard bindings
+//
+
+.run(function(
+    $state,
+    $stateParams
+) {
+    Mousetrap.bind(["r"], function() {
+        if ($state.includes("secured.**")) {
+            console.log('1');
+            $('tr.hovered').find('input[type="checkbox"]').prop('checked', true);
+            message.setMessagesReadStatus(true);
+        }
+    });    
+    // Mousetrap.bind(["ctrl+n", "c"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.compose");
+    //     }
+    // });
+    // Mousetrap.bind(["i"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.inbox");
+    //     }
+    // });
+    // Mousetrap.bind(["s"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.starred");
+    //     }
+    // });
+    // Mousetrap.bind(["d"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.drafts");
+    //     }
+    // });
+    // Mousetrap.bind("r", function() {
+    //     if ($state.includes("secured.*.message")) {
+    //         $state.go("secured.reply", {
+    //             action: 'reply',
+    //             id: $stateParams.ID
+    //         });
+    //     }
+    // });
+    // Mousetrap.bind("f", function() {
+    //     if ($state.includes("secured.*.message")) {
+    //         $state.go("secured.reply", {
+    //             action: 'forward',
+    //             id: $stateParams.ID
+    //         });
+    //     }
+    // });
+})
+
+//
 // Pikaday config (datepicker)
 //
 
