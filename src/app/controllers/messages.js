@@ -28,10 +28,33 @@ angular.module("proton.controllers.Messages", [
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    $scope.page = parseInt($stateParams.page || "1");
+    $scope.page = parseInt($stateParams.page || 1);
     $scope.messages = messages;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
+
+    $scope.dropdownPages = function() {
+        var ddp = [];
+        var ddp2 = [];
+        var makeRangeCounter = 0;
+
+        for (var i = 0; i <= parseInt($rootScope.Total); i++) {
+            ddp[i] = i;
+        }
+
+        function makeRange(element, index, array) {
+            if(index%25 === 0) {
+                ddp2.push((index+1) + ' - ' + (index+25));
+                makeRangeCounter++;
+            }
+        }
+
+        ddp.forEach(makeRange);
+
+        return ddp2;
+    };
+
+    $scope.pages = $scope.dropdownPages();
 
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
@@ -520,6 +543,7 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.goToPage = function(page) {
+        $scope.page = page;
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
