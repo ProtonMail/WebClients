@@ -1,6 +1,6 @@
 body {
-    font-size: 14px;
-    -webkit-font-smoothing: antialiased;
+    font-size: $pm-font-size-base;
+    font-family: $font-primary;    
 }
 .fa {
     font-size: 14px;

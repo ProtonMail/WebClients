@@ -121,7 +121,6 @@ body.min {
         font-size: 84%;
         font-weight: normal;
         text-shadow: none;
-        -webkit-font-smoothing: antialiased;
         &.active {
             opacity: 1;
             background: darken(#fff, 50%);

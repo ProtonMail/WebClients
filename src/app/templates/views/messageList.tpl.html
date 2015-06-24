@@ -42,17 +42,25 @@
                 <td class="recipient">
                     <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                     <span ng-if="showTo(message)">
-                        <span class="to" pt-tooltip="{{ message.ToList | username }}">
+                        <span 
+                        class="to" 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.ToList | username }}">
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
-                        <span class="from" pt-tooltip="{{ message.SenderAddress }}">
+                        <span 
+                        class="from" 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.SenderAddress }}">
                             From: {{ message.SenderName | username }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
-                        <span pt-tooltip="{{ message.SenderAddress }}">
+                        <span 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.SenderAddress }}">
                             {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
