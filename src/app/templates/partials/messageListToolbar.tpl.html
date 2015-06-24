@@ -183,10 +183,12 @@
     </ul>
     <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount() > 0">
         <li class="pageDropdown seperator">
+             <a href ng-click="showPagination = !showPagination">
+                {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
+            </a>
             <select ng-model="page" ng-change="goToPage(page)">
                 <option ng-repeat="label in pages" value="{{$index + 1}}">{{ label }}</option>
             </select>
-            of {{messageCount()}}
         </li>
         <li class="prev-page seperator">
             <a href ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1)">
