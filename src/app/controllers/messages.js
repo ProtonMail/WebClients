@@ -32,12 +32,37 @@ angular.module("proton.controllers.Messages", [
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
     $scope.page = parseInt($stateParams.page || 1);
+    $scope.params = {
+        messageHovered: null
+    };
+
     $timeout(function() {
         $('#page').val($scope.page);
         $('#page').change(function(event) {
             $scope.goToPage();
         });
+        $scope.initHotkeys();
     });
+
+    $scope.initHotkeys = function() {
+        Mousetrap.bind(["s"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.toggleStar($scope.params.messageHovered);
+            }
+        });
+        Mousetrap.bind(["r"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.params.messageHovered.Selected = true;
+                $scope.setMessagesReadStatus(true);
+            }
+        });
+        Mousetrap.bind(["u"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.params.messageHovered.Selected = true;
+                $scope.setMessagesReadStatus(false);
+            }
+        });
+    };
 
     $scope.dropdownPages = function() {
         var ddp = [];
@@ -268,12 +293,13 @@ angular.module("proton.controllers.Messages", [
             }
 
             if ($state.is('secured.drafts')) {
+                networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
                     m.decryptBody(m.Body, m.Time).then(function(body) {
                         m.Body = body;
                         $rootScope.$broadcast('loadMessage', m);
                     });
-                });
+                }));
             } else {
                 $state.go("secured." + mailbox + ".message", {
                     id: message.ID

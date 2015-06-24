@@ -2,8 +2,8 @@
 
 <ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
 <div id="content">
-    <table 
-    class="table message-list hidden-xs" 
+    <table
+    class="table message-list hidden-xs"
     ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}"
     >
         <tbody id="message">
@@ -12,9 +12,9 @@
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
                 data-jqyoui-options="draggableOptions"
-                ng-class="{ hovered: hovered, unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
-                ng-mouseover="hovered = true"
-                ng-mouseleave="hovered = false">
+                ng-class="{ hovered: params.messageHovered === message, unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
+                ng-mouseover="params.messageHovered = message"
+                ng-mouseleave="params.messageHovered = null">
                 <td class="actions">
                     <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
                     <!--
@@ -47,24 +47,24 @@
                 <td class="recipient">
                     <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                     <span ng-if="showTo(message)">
-                        <span 
-                        class="to" 
-                        pt-placement="right" 
+                        <span
+                        class="to"
+                        pt-placement="right"
                         pt-tooltip="{{ message.ToList | username }}">
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
-                        <span 
-                        class="from" 
-                        pt-placement="right" 
+                        <span
+                        class="from"
+                        pt-placement="right"
                         pt-tooltip="{{ message.SenderAddress }}">
                             From: {{ message.SenderName | username }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
-                        <span 
-                        pt-placement="right" 
+                        <span
+                        pt-placement="right"
                         pt-tooltip="{{ message.SenderAddress }}">
                             {{ message.SenderName || message.SenderAddress }}
                         </span>
@@ -72,7 +72,7 @@
                 </td>
                 <td class="subject">
                     <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
-                    <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>                
+                    <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
