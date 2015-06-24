@@ -73,31 +73,6 @@
                     <i class="fa fa-paperclip"></i>
                 </a>
             </li>
-            <li ng-hide="('eo.reply' | isState)" class="separator"></li>
-            <li ng-hide="('eo.reply' | isState)">
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="$parent.togglePanel(message, 'encrypt')">
-                    <i class="fa fa-lock"></i>
-                </a>
-            </li>
-            <li ng-hide="('eo.reply' | isState)">
-                <a href="" class="btn btn-sm btn-options" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="$parent.togglePanel(message, 'expiration')">
-                    <i class="fa fa-clock-o" id="clock-icon"></i>
-                </a>
-            </li>
-            <!-- <li class="separator"></li>
-            <li class="relative">
-                <a href="" class="btn btn-sm btn-options dropdown-toggle" pt-tooltip="{{ 'MORE' | translate }}" data-toggle="dropdown">
-                    <i class="fa fa-ellipsis-h"></i>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li ng-show="isHtml()">
-                        <a href="" ng-click="switchTo('plain')">Plain Text</a>
-                    </li>
-                    <li ng-show="isPlain()">
-                        <a href="" ng-click="switchTo('html')">HTML</a>
-                    </li>
-                </ul>
-            </li> -->
         </ul>
         <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="isHtml()" >
             <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" class="squireIframe"></iframe>
