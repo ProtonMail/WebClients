@@ -19,6 +19,10 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     }
 }
 
+body .input-group-addon {
+    font-size: $pm-font-size-base;
+}
+
 .modal-header {
     padding: 10px 15px;
     background-color: $panel-header;
@@ -35,7 +39,8 @@ body .message-toolbar > ul > li .dropdown-menu li > a {
     }
 }
 
-.form-control {
+body .form-control {
+    font-size: $pm-font-size-base;
     &.dark {
         background-color: darken($navbar-color, $color-offset);
         border-color: darken($navbar-color, $color-offset*2);
