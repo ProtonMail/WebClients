@@ -74,7 +74,6 @@ angular.module("proton.authentication", [
             $q,
             $http,
             $timeout,
-            $injector,
             pmcw,
             localStorageService,
             errorReporter,
@@ -172,7 +171,7 @@ angular.module("proton.authentication", [
 
                 // Whether a user is logged in at all
                 isLoggedIn: function() {
-                    var loggedIn = auth.data && !_.isUndefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
+                    var loggedIn = auth.data && angular.isDefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
 
                     if (loggedIn && api.user === null) {
                         auth.setAuthHeaders();
