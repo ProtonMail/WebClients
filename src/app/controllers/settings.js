@@ -209,6 +209,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveSignature = function(form) {
+
         var signature = $scope.signature;
 
         signature = signature.replace(/\n/g, "<br />");
