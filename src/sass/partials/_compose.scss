@@ -1,3 +1,8 @@
+.composerMeta {
+    .form-horizontal {
+        clear: both;
+    }
+}
 #others {
     position: absolute;
     right: 0;
@@ -639,6 +644,8 @@ form#compose {
             margin-bottom: 0;
             &.fromGroup {
                 box-shadow: none;
+                float: left;
+                width: 100%;
             }            
             .input-group-addon {
                 background-color: $base-color;
