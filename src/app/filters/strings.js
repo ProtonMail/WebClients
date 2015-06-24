@@ -17,7 +17,7 @@ angular.module("proton.filters.strings",[])
             return m.format('h:mm a');
         }
         else {
-            return m.format('LL');
+            return m.format('ll');
         }
     };
 })
