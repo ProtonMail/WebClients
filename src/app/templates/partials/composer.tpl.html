@@ -154,15 +154,23 @@
                     </button>
                 </div>
             </div>
-            <div class="composer-footer text-right" ng-hide="message.minimized">
-                <span class="text-muted pull-left" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
-                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="discard(message)" pt-tooltip="{{ 'DISCARD' | translate }}">
-                    <i class="fa fa-ban"></i>
+            <div class="composer-footer" ng-hide="message.minimized">
+                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="togglePanel(message, 'encrypt')">
+                    <i class="fa fa-lock"></i>
                 </button>
-                <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false)" pt-tooltip="{{ 'SAVE' | translate }}">
-                    <i class="fa fa-floppy-o"></i>
+                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="togglePanel(message, 'expiration')">
+                    <i class="fa fa-clock-o"></i>
                 </button>
-                <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>
+                <span class="text-muted" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
+                <div class="pull-right">
+                    <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="discard(message)" pt-tooltip="{{ 'DISCARD' | translate }}">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                    <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false)" pt-tooltip="{{ 'SAVE' | translate }}">
+                        <i class="fa fa-floppy-o"></i>
+                    </button>
+                    <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>
+                </div>
             </div>
         </div>
     </ng-form>

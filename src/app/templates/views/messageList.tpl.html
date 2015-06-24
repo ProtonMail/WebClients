@@ -2,14 +2,19 @@
 
 <ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
 <div id="content">
-    <table class="table message-list hidden-xs" ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}">
+    <table 
+    class="table message-list hidden-xs" 
+    ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}"
+    >
         <tbody id="message">
             <tr ng-repeat="message in messages"
                 ng-click="navigateToMessage($event, message)"
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
                 data-jqyoui-options="draggableOptions"
-                ng-class="{ unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }">
+                ng-class="{ hovered: hovered, unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
+                ng-mouseover="hovered = true"
+                ng-mouseleave="hovered = false">
                 <td class="actions">
                     <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
                     <!--
@@ -42,27 +47,35 @@
                 <td class="recipient">
                     <!-- TODO: use message.Location to show "From" & "To" & location icons -->
                     <span ng-if="showTo(message)">
-                        <span class="to" pt-tooltip="{{ message.ToList | username }}">
+                        <span 
+                        class="to" 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.ToList | username }}">
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
                     <span ng-if="showFrom(message) && !showTo(message)">
-                        <span class="from" pt-tooltip="{{ message.SenderAddress }}">
+                        <span 
+                        class="from" 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.SenderAddress }}">
                             From: {{ message.SenderName | username }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)">
-                        <span pt-tooltip="{{ message.SenderAddress }}">
+                        <span 
+                        pt-placement="right" 
+                        pt-tooltip="{{ message.SenderAddress }}">
                             {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
                 </td>
                 <td class="subject">
+                    <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
+                    <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>                
                     <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-                    <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
-                    <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>
                     <h4>{{ message.Subject }}</h4>
                     <span ng-repeat="id in message.LabelIDs" class="label label-pm" style="background-color: {{ getLabel(id).Color }}">{{ getLabel(id).Name }}</span>
@@ -111,4 +124,5 @@
         <span ng-show="!('secured.search' | includedByState)">{{ 'NO_MESSAGES' | translate }}</span>
         <span ng-show="('secured.search' | includedByState)">{{ 'NO_SEARCH_RESULTS' | translate }}</span>
     </div>
+    <div id="pageBottom"></div>
 </div>

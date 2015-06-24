@@ -10,7 +10,7 @@
   background: $message-toolbar-bg;
   box-shadow: 0 1px rgba(0,0,0,.2);
   position: relative;
-  z-index: 2;
+  z-index: 4;
   @include clearfix;
 
   .fa {

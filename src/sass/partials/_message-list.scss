@@ -28,6 +28,9 @@ table.message-list {
         color: #555;
         background-color: $base-color-dark;
         @include transition(all, 0, ease-in-out);
+        &.hovered {
+            background: red !important;
+        }
         h4 {
             margin: 0;
             padding: 0;
@@ -123,7 +126,7 @@ table.message-list {
             }
             &.when {
                 padding-right: 1rem;
-                width: 12rem;
+                width: 14rem;
             }
             .label {
               line-height: $row-height/2;

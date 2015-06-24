@@ -80,18 +80,24 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.updateCounters = function(firstTime) {
-        Message.countUnread().$promise.then(function(result) {
-            if(JSON.stringify($rootScope.counters) !== JSON.stringify(result)) {
-                var mailbox = tools.getCurrentMailbox();
-                var location = tools.getCurrentLocation();
+        if(angular.isUndefined(window.sessionStorage['proton:mailbox_pwd'])) {
+            authentication.logout();
+            notify('Session expired, you need to login please.');
+        } else {
+            Message.countUnread().$promise.then(function(result) {
 
-                if(firstTime !== true && mailbox !== false && $state.is('secured.' + mailbox) && $rootScope.counters[location] !== result[location]) {
-                    $rootScope.$broadcast('refreshMessages');
+                if(JSON.stringify($rootScope.counters) !== JSON.stringify(result)) {
+                    var mailbox = tools.getCurrentMailbox();
+                    var location = tools.getCurrentLocation();
+
+                    if(firstTime !== true && mailbox !== false && $state.is('secured.' + mailbox) && $rootScope.counters[location] !== result[location]) {
+                        $rootScope.$broadcast('refreshMessages');
+                    }
+
+                    $rootScope.counters  = result;
                 }
-
-                $rootScope.counters  = result;
-            }
-        });
+            });
+        }
     };
 
     var updates = $interval($scope.updateCounters, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);

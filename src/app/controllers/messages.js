@@ -69,6 +69,7 @@ angular.module("proton.controllers.Messages", [
     $scope.$on("$destroy", unsubscribe);
 
     $scope.draggableOptions = {
+        appendTo: "html",
         cursorAt: {left: 0, top: 0},
         cursor: "move",
         helper: function(event) {
@@ -562,6 +563,11 @@ angular.module("proton.controllers.Messages", [
                 page: page
             }));
         }
+    };
+
+    $scope.scrollToBottom = function() {
+        $rootScope.scrollToBottom = true;
+        // state change success if true, scroll and unset
     };
 
     $scope.hasAdjacentMessage = function(message, adjacency) {

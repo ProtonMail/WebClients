@@ -190,7 +190,14 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        // console.log(toState.name);
+        if ($rootScope.scrollToBottom===true) {
+            setTimeout(function() {
+                $('#content').animate({
+                    scrollTop: $("#pageBottom").offset().top
+                }, 1);
+            }, 100);
+            $rootScope.scrollToBottom = false;
+        }
         $('#loading-css').remove();
         $('#loading').remove();
     });
@@ -220,6 +227,59 @@ angular.module("proton", [
 .run(function($log) {
     $log.info('Find a security bug? security@protonmail.ch');
     $log.info('We\'re hiring! https://protonmail.ch/pages/join-us');
+})
+
+//
+// Setup keyboard bindings
+//
+
+.run(function(
+    $state,
+    $stateParams
+) {
+    Mousetrap.bind(["r"], function() {
+        if ($state.includes("secured.**")) {
+            console.log('1');
+            $('tr.hovered').find('input[type="checkbox"]').prop('checked', true);
+            message.setMessagesReadStatus(true);
+        }
+    });    
+    // Mousetrap.bind(["ctrl+n", "c"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.compose");
+    //     }
+    // });
+    // Mousetrap.bind(["i"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.inbox");
+    //     }
+    // });
+    // Mousetrap.bind(["s"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.starred");
+    //     }
+    // });
+    // Mousetrap.bind(["d"], function() {
+    //     if ($state.includes("secured.**")) {
+    //         $state.go("secured.drafts");
+    //     }
+    // });
+    // Mousetrap.bind("r", function() {
+    //     if ($state.includes("secured.*.message")) {
+    //         $state.go("secured.reply", {
+    //             action: 'reply',
+    //             id: $stateParams.ID
+    //         });
+    //     }
+    // });
+    // Mousetrap.bind("f", function() {
+    //     if ($state.includes("secured.*.message")) {
+    //         $state.go("secured.reply", {
+    //             action: 'forward',
+    //             id: $stateParams.ID
+    //         });
+    //     }
+    // });
 })
 
 //
