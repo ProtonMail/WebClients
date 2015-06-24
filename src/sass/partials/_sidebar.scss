@@ -261,7 +261,7 @@ body.min {
                 top: 7px;
             }
             &.active {
-                background: lighten($sidebar-bg, 10%);
+                background: lighten($sidebar-bg, $color-offset);
                 &:hover {
                     border-color: transparent;
                 }
@@ -285,8 +285,9 @@ body.min {
         }
     }
     a {
-        color: invert-color($sidebar-bg);
-        &:hover {
+        color: darken(invert-color($sidebar-bg), $color-offset*2);
+        &:hover,
+        &.active {
             color: invert-color($sidebar-bg, $color-offset*2);
         }
     }

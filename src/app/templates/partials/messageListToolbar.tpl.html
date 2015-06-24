@@ -16,6 +16,16 @@
                 <i class="fa fa-refresh"></i>
             </a>
         </li>
+        <li>
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+                <i class="fa fa-eye"></i>
+            </a>
+        </li>
+        <li class="seperator">
+            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+                <i class="fa fa-eye-slash"></i>
+            </a>
+        </li>        
         <li
         ng-if="pageName != 'archive'"
         pt-tooltip="{{ 'ARCHIVE' | translate }}"
@@ -73,16 +83,6 @@
             pt-tooltip="{{ 'DELETE' | translate }}"
             pt-placement="bottom">
                 <i class="fa fa-times-circle"></i>
-            </a>
-        </li>
-        <li>
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
-                <i class="fa fa-eye"></i>
-            </a>
-        </li>
-        <li class="seperator">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
-                <i class="fa fa-eye-slash"></i>
             </a>
         </li>
         <li class="seperator">
