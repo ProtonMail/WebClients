@@ -186,7 +186,7 @@
              <a href ng-click="showPagination = !showPagination">
                 {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
             </a>
-            <select ng-model="page" ng-change="goToPage(page)">
+            <select id="page">
                 <option ng-repeat="label in pages" value="{{$index + 1}}">{{ label }}</option>
             </select>
         </li>

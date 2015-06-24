@@ -28,10 +28,16 @@ angular.module("proton.controllers.Messages", [
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    $scope.page = parseInt($stateParams.page || 1);
     $scope.messages = messages;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
+    $scope.page = parseInt($stateParams.page || 1);
+    $timeout(function() {
+        $('#page').val($scope.page);
+        $('#page').change(function(event) {
+            $scope.goToPage();
+        });
+    });
 
     $scope.dropdownPages = function() {
         var ddp = [];
@@ -543,6 +549,9 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.goToPage = function(page) {
+        if(angular.isUndefined(page)) {
+            page = parseInt($('#page').val());
+        }
         $scope.page = page;
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
@@ -1361,13 +1370,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.close = function(message, save) {
-
         var index = $scope.messages.indexOf(message);
-
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true);
+            $scope.saveLater(message);
         }
 
         message.close();

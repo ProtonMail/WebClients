@@ -5,11 +5,9 @@ var _ = require("lodash"),
     util = require("util");
 
 var API_TARGETS = {
-    local: "http://localhost:4003",
-    prod: "https://dev-api.protonmail.ch",
+    prod: "https://api.protonmail.ch",
     dev: "https://test-api.protonmail.ch",
-    v2: "/api",
-    target: "http://?"
+    build: "/api"
 };
 
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
