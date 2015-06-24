@@ -267,12 +267,13 @@ angular.module("proton.controllers.Messages", [
             }
 
             if ($state.is('secured.drafts')) {
+                networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
                     m.decryptBody(m.Body, m.Time).then(function(body) {
                         m.Body = body;
                         $rootScope.$broadcast('loadMessage', m);
                     });
-                });
+                }));
             } else {
                 $state.go("secured." + mailbox + ".message", {
                     id: message.ID
