@@ -1,36 +1,30 @@
 .pageDropdown {
+	position: relative;
 	line-height: 32px;
-	.pagination-li {
-		width: 5rem;
-		position: relative;
-		height: 32px;
-		text-align: center;
-		& > a {
-			position: relative;
-			z-index: 2;
-		}
-	}
-	.pagination {
+	a {
 		position: absolute;
 		left: 0;
-		top: 32px;
+		top: 0;
 		right: 0;
-		margin: 0;
-		max-height: 320px;
-		overflow-y: auto;
-		overflow-x: hidden;
-		background: #fff;
+		bottom: 0;
 		z-index: 1;
-		width: 10rem;
-		border-top: 1px solid $base-color-darker;
-		li, a {
-			display: block;
-			width: 100%;
-			text-align: center;
-			border: none !important;
-			line-height: 32px;
-			height: 32px;
-			padding: 0;
-		}
+	}
+	select {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		cursor: pointer;
+		opacity: 0;
+        height: $row-height;
+        line-height: $row-height;
+        display: block;
+        width: 100%;
+        border-radius: 0;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+		        appearance: none;
 	}
 }

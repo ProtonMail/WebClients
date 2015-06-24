@@ -103,6 +103,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.labelsDragControlListeners = {
+        containment: "#labelContainer",
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
@@ -208,6 +209,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveSignature = function(form) {
+
         var signature = $scope.signature;
 
         signature = signature.replace(/\n/g, "<br />");

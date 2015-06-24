@@ -6,9 +6,10 @@
         <div class="form-group">
             <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> {{ 'ADD_LABEL' | translate }}</button>
         </div>
-        <ul class="list-group" data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
+        <ul class="list-group" data-as-sortable="labelsDragControlListeners" data-ng-model="labels" id="labelContainer">
             <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
                 <div as-sortable-item-handle="">
+                    <i class="fa fa-sort"></i> 
                     <span class="label label-pm" style="background-color: {{ label.Color }}">{{ label.Name }}</span>
                     <div class="pull-right">
                         <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="{{ 'SHOW' | translate }}" off-label="Hide"></toggle-switch>

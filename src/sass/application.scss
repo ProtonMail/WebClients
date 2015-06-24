@@ -6,6 +6,10 @@ $fa-font-path: "fonts";
 @import "partials/header";
 @import "partials/mixins";
 
+.fa-sort {
+    opacity: .5;
+    margin-right: 1rem;
+}
 #dragOverlay {
     position:fixed;
     left:$sidebar-width;
