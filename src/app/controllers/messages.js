@@ -1365,13 +1365,11 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.close = function(message, save) {
-
         var index = $scope.messages.indexOf(message);
-
         var messageFocussed = !!message.focussed;
 
         if (save === true) {
-            $scope.save(message, true);
+            $scope.saveLater(message);
         }
 
         message.close();
