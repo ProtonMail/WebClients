@@ -554,6 +554,11 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $scope.scrollToBottom = function() {
+        $rootScope.scrollToBottom = true;
+        // state change success if true, scroll and unset
+    };
+
     $scope.hasAdjacentMessage = function(message, adjacency) {
         if (adjacency === +1) {
             if (messages.indexOf(message) === messages.length - 1) {

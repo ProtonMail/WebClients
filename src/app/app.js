@@ -190,7 +190,14 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        // console.log(toState.name);
+        if ($rootScope.scrollToBottom===true) {
+            setTimeout(function() {
+                $('#content').animate({
+                    scrollTop: $("#pageBottom").offset().top
+                }, 1);
+            }, 100);
+            $rootScope.scrollToBottom = false;
+        }
         $('#loading-css').remove();
         $('#loading').remove();
     });
