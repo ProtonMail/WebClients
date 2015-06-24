@@ -69,6 +69,7 @@ angular.module("proton.controllers.Messages", [
     $scope.$on("$destroy", unsubscribe);
 
     $scope.draggableOptions = {
+        appendTo: "html",
         cursorAt: {left: 0, top: 0},
         cursor: "move",
         helper: function(event) {
