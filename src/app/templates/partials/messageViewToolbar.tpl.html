@@ -6,6 +6,28 @@
             </a>
         </li>
         <li
+            class="seperator" 
+            ng-class="{ disabled: !message.IsRead }">
+            <a
+            href
+            ng-click="markAsUnread()"
+            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
+            pt-placement="bottom">
+                <i class="fa fa-eye-slash"></i>
+            </a>
+        </li>
+        <li
+            class="seperator" 
+            ng-class="{ disabled: message.IsRead }">
+            <a
+            href
+            ng-click="markAsRead()"
+            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
+            pt-placement="bottom">
+                <i class="fa fa-eye"></i>
+            </a>
+        </li>        
+        <li
             ng-if="message.location() != 'archive'">
             <a
             href
@@ -25,33 +47,13 @@
                 <i class="fa fa-fw fa-ban"></i>
             </a>
         </li>
-        <li ng-if="message.location() != 'trash'">
+        <li ng-if="message.location() != 'trash'" class="seperator">
             <a
             href
             pt-tooltip="{{ 'TRASH' | translate }}"
             pt-placement="bottom"
             ng-click="moveMessageTo('trash')">
                 <i class="fa fa-fw fa-trash-o"></i>
-            </a>
-        </li>
-        <li
-            ng-if="message.IsRead" class="seperator">
-            <a
-            href
-            ng-click="markAsUnread()"
-            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
-            pt-placement="bottom">
-                <i class="fa fa-eye-slash"></i>
-            </a>
-        </li>
-        <li
-            ng-if="!message.IsRead" class="seperator">
-            <a
-            href
-            ng-click="markAsRead()"
-            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
-            pt-placement="bottom">
-                <i class="fa fa-eye"></i>
             </a>
         </li>
         <li
