@@ -128,7 +128,9 @@ angular.module("proton.messages", [])
                     messageList.splice(i, 1, msg);
                     _.extend(msg, _.pick(other, fields));
                 } else {
-                    messagesToPreload.add(other.ID);
+                    if(other.IsRead === 0) {
+                        messagesToPreload.add(other.ID);
+                    }
                 }
             });
         };
