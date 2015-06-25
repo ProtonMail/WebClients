@@ -95,6 +95,8 @@ angular.module("proton.controllers.Messages", [
 
     $scope.draggableOptions = {
         appendTo: "html",
+        delay: 100,
+        cancel: ".starLink",
         cursorAt: {left: 0, top: 0},
         cursor: "move",
         helper: function(event) {

@@ -40,7 +40,7 @@
                     !!(message.IsEncrypted == '0')
                     }"
                     title="{{ getMessageEncryptionType(message) }}"></span>
-                    <a href ng-click="toggleStar(message)">
+                    <a href ng-click="toggleStar(message)" class="starLink">
                         <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>
                     </a>
                 </td>
