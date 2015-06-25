@@ -179,6 +179,12 @@ ul.attachments {
         .label {
             font-size: 60%;
             margin-right: 5px;
+            position: relative;
+            top: -4px;
+            display: inline-block;
+            .fa {
+                position: relative;
+            }
         }
         .btn-group {
             .fa {
