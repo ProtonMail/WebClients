@@ -4,132 +4,164 @@ angular.module("proton.controllers.Outside", [
 ])
 
 .controller("OutsideController", function(
-    $rootScope,
     $scope,
+    $timeout,
     $state,
     $stateParams,
     $q,
-    $translate,
+
     authentication,
-    CONSTANTS,
-    networkActivityTracker,
-    notify,
+    Message,
+    tools,
     pmcw,
-    encryptedToken,
-    token,
+
     message
 ) {
-    $scope.unlock = function() {
-        console.log('unlock');
-        var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
+    $scope.message = message;
 
-        promise.then(function(decryptToken) {
-            console.log(decryptToken);
-            window.sessionStorage["proton:encrypted_password"] = $scope.MessagePassword;
-            $state.go('eo.message');
-        });
+    var decrypted_token = window.sessionStorage["proton:decrypted_token"];
+    var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+    var token_id = $stateParams.tag;
 
-        networkActivityTracker.track(promise);
-    };
-
-    $scope.toggleImages = function() {
-        message.toggleImages();
-    };
-
-    $scope.displayContent = function() {
-        message.clearTextBody().then(function(result) {
-            var content = message.clearImageBody(result);
-
-            content = tools.replaceLineBreaks(content);
-            content = DOMPurify.sanitize(content, {
-                FORBID_TAGS: ['style']
+    if(message.displayMessage === true) {
+        $timeout(function() {
+            $scope.message.Body = $scope.clean($scope.message.Body);
+            $scope.containsImage = tools.containsImage($scope.message.Body);
+            _.each($scope.message.Replies, function(reply) {
+                reply.Body = $scope.clean(reply.Body);
             });
+            tools.transformLinks('message-body');
+        });
+    }
 
-            if (tools.isHtml(content)) {
-                $scope.isPlain = false;
-            } else {
-                $scope.isPlain = true;
-            }
+    $scope.send = function() {
+        Message.getPublicKeys(message.SenderAddress).then(function(keys) {
+            var publicKey = keys[message.SenderAddress];
+            var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
+            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, password);
 
-            $scope.content = $sce.trustAsHtml(content);
+            $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
+                var data = {
+                    'Body': result.Body,
+                    'ReplyBody': result.ReplyBody,
+                    'Filename[]': [], // TODO
+                    'MIMEType[]': [], // TODO
+                    'KeyPackets[]': [], // TODO
+                    'DataPacket[]': [] // TODO
+                };
 
-            $timeout(function() {
-                tools.transformLinks('message-body');
+                Eo.reply(decrypted_token, token_id, data);
             });
         });
+    };
+
+    $scope.cancel = function() {
+        $state.go('eo.message', {tag: $stateParams.tag});
+    };
+
+
+    $scope.clean = function(body) {
+        var content = angular.copy(body);
+
+        content = tools.clearImageBody(content);
+        $scope.imagesHidden = true;
+        content = tools.replaceLineBreaks(content);
+        content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
+
+        return content;
     };
 
     $scope.reply = function() {
-        $state.go('eo.reply');
+        $state.go('eo.reply', {tag: $stateParams.tag});
     };
 
-    $scope.send = function(message) {
+    $scope.toggleImages = function() {
+        if($scope.imagesHidden === true) {
+            $scope.message.Body = tools.fixImages($scope.message.Body);
+            $scope.imagesHidden = false;
+        } else {
+            $scope.message.Body = tools.breakImages($scope.message.Body);
+            $scope.imagesHidden = true;
+        }
+    };
+
+    $scope.decryptAttachment = function(attachment, $event) {
+        if (attachment.decrypted===true) {
+            return true;
+        }
+
+        attachment.decrypting = true;
+
         var deferred = $q.defer();
-        var parameters = {};
-        var emails = message.emailsToString();
 
-        parameters.id = message.ID;
+        // decode key packets
+        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
 
-        message.getPublicKeys(emails).then(function(result) {
-            var keys = result;
-            var outsiders = false;
-            var promises = [];
+        // get enc attachment
+        var att = attachments.get(attachment.ID, attachment.Name);
 
-            parameters.Packages = [];
-
-            _.each(emails, function(email) {
-                if(keys[email].length > 0) { // inside user
-                    var key = keys[email];
-
-                    promises.push(message.encryptBody(key).then(function(result) {
-                        var body = result;
-
-                        message.encryptPackets(authentication.user.PublicKey).then(function(result) {
-                            var keyPackets = result;
-
-                            return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
-                        });
-                    }));
-                } else { // outside user
-                    outsiders = true;
-
-                    if(message.IsEncrypted === 1) {
-                        // TODO
-                        // var replyToken = generateReplyToken();
-                        // var encryptedReplyToken = pmcrypto.encryptMessage(replyToken, [], message.Password);
-
-                        promises.push(message.encryptBody(message.Password).then(function(result) {
-                            var body = result;
-
-                            message.encryptPackets(message.Password).then(function(result) {
-                                var keyPackets = result;
-
-                                return parameters.Packages.push({Address: email, Type: 2, Body: result, KeyPackets: keyPackets, PasswordHint: message.PasswordHint});
-                            });
-                        }));
-                    }
-                }
-            });
-
-            if(outsiders === true && message.IsEncrypted === 0) {
-                parameters.AttachmentKeys = [];
-                parameters.ClearBody = message.Body;
-
-                if(message.Attachments.length > 0) {
-                    parameters.AttachmentKeys = message.clearPackets();
-                }
+        // get user's pk
+        var key = authentication.getPrivateKey().then(
+            function(pk) {
+                // decrypt session key from keypackets
+                return pmcw.decryptSessionKey(keyPackets, pk);
             }
+        );
 
-            $q.all(promises).then(function() {
-                Message.send(parameters).$promise.then(function(result) {
-                    notify($translate.instant('MESSAGE_SENT'));
-                    deferred.resolve(result);
-                });
-            });
-        });
+        // when we have the session key and attachent:
+        $q.all({
+            "attObject": att,
+            "key": key
+         }).then(
+            function(obj) {
+                // create new Uint8Array to store decryted attachment
+                var at = new Uint8Array(obj.attObject.data);
 
-        message.track(deferred.promise);
+                // grab the key
+                var key = obj.key.key;
 
-        return deferred.promise;
+                // grab the algo
+                var algo = obj.key.algo;
+
+                // decrypt the att
+                pmcw.decryptMessage(at, key, true, algo).then(
+                    function(decryptedAtt) {
+                        var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
+                        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
+                            // Browser supports a good way to download blobs
+                            $scope.$apply(function() {
+                                attachment.decrypting = false;
+                                attachment.decrypted = true;
+                            });
+
+                            var href = URL.createObjectURL(blob);
+
+                            $this = $($event.target);
+                            $this.attr('href', href);
+                            $this.attr('target', '_blank');
+                            $this.attr('download', attachment.Name);
+                            $this.triggerHandler('click');
+
+                            deferred.resolve();
+
+                        }
+                        else {
+                            // Bad blob support, make a data URI, don't click it
+                            var reader = new FileReader();
+
+                            reader.onloadend = function () {
+                                link.attr('href',reader.result);
+                            };
+
+                            reader.readAsDataURL(blob);
+                        }
+
+                    }
+                );
+            },
+            function(err) {
+                console.log(err);
+            }
+        );
     };
 });

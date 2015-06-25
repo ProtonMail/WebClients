@@ -68,7 +68,7 @@
     </div>
 
     <div class="well well-sm" ng-if="message.Attachments.length > 0" id="attachmentArea">
-        <div><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})</div>
+        <div><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ message.sizeAttachments() | humanSize }})</div>
         <div class="list-inline no-margin-bottom">
             <a ng-repeat="attachment in message.Attachments" class="list-group-item" ng-class="{ 'disabled': attachment.decrypting, 'active ': attachment.decrypted }" data-download-text="{{ 'DOWNLOAD' | translate }}" href ng-click="decryptAttachment(message, attachment, $event)">
                 <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>

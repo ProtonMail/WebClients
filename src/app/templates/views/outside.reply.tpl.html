@@ -1,7 +1,7 @@
 <div id="outsideMessageWrap">
     <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
         <div class="pull-right">
-            <span ng-bind="message.Time | longReadableTime"></span>
+            <span ng-bind-html="message.Time | longReadableTime"></span>
         </div>
         <h1>
             <span class="attachement" ng-show="message.Attachments.length > 0">
@@ -24,7 +24,7 @@
         </ul>
     </div>
     <div id="message-body">
-        <squire ng-model="message.Body" message="message" height="320px"></squire>
+        <squire ng-model="message.Body" message="message"></squire>
         <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
@@ -36,7 +36,7 @@
 
     <div class="panel panel-default" ng-if="message.Attachments.length" id="attachmentArea">
         <div class="panel-heading">
-            <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ sizeAttachments() | humanSize }})
+            <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ message.sizeAttachments() | humanSize }})
         </div>
         <div class="panel-body">
             <div class="list-group">
