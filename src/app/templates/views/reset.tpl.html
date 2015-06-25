@@ -1,4 +1,4 @@
-<div class="panel panel-default panel-sign-up wrap">
+<div class="panel panel-default wrap">
 
     <div class="panel-body" ng-hide="showForm">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
@@ -11,7 +11,7 @@
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'OK' | translate }}</button>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">{{ 'OK' | translate }}</button>
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
@@ -21,9 +21,6 @@
 
         <p class="alert alert-info">
         We've sent a confirmation email to your 'Recovery / Notification' email address with instructions for resetting your Mailbox.</p>
-
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="showForm=true">{{ 'RESET' | translate }}</button>
-        <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 
     <div class="panel-body" ng-show="(showForm && user.NotificationEmail == '') && !startGen">

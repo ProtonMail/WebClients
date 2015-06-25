@@ -29,6 +29,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.account = [];
 
+
+    $scope.resetMailboxInit = function() {
+        $scope.showForm = true;
+        alert('hello');
+    };
+    
     function generateKeys(userID, pass) {
 
         var deferred = $q.defer();
