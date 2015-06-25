@@ -74,8 +74,8 @@ angular.module("proton.controllers.Messages", [
         }
 
         function makeRange(element, index, array) {
-            if(index%25 === 0) {
-                ddp2.push((index+1) + ' - ' + (index+25));
+            if(index%CONSTANTS.MESSAGES_PER_PAGE === 0) {
+                ddp2.push((index+1) + ' - ' + (index+CONSTANTS.MESSAGES_PER_PAGE));
                 makeRangeCounter++;
             }
         }
@@ -580,6 +580,7 @@ angular.module("proton.controllers.Messages", [
             page = parseInt($('#page').val());
         }
         $scope.page = page;
+
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
