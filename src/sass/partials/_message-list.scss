@@ -1,3 +1,13 @@
+$tr-read: $base-color-dark;
+$tr-unread: #fff;
+$tr-starred: $starred;
+$tr-selected: $selected;
+
+$tr-read-hovered: darken($base-color-dark, 2%);
+$tr-unread-hovered: darken(#fff, 2%);
+$tr-starred-hovered: darken($starred, 2%);
+$tr-selected-hovered: darken($selected, 2%);
+
 #noMessages {
     text-align: center;
     text-transform: uppercase;
@@ -26,8 +36,16 @@ table.message-list {
         font-size: 14px;
         white-space: nowrap;
         color: #555;
-        background-color: $base-color-dark;
+        background-color: $tr-read;
         @include transition(all, 0, ease-in-out);
+        &.hovered,
+        &:active {
+            i.fa-paperclip,
+            i.fa-clock-o,
+            td {
+               background-color: $tr-read-hovered;
+            }
+        }
         h4 {
             margin: 0;
             padding: 0;
@@ -134,7 +152,7 @@ table.message-list {
             }
         }
         &.unread {
-            background: #fff;
+            background: $tr-unread;
             h4,
             td {
                 font-weight: bold;
@@ -144,18 +162,44 @@ table.message-list {
             i.fa-clock-o {
                 background-color: #fff;
             }
+            &.hovered,
+            &:active {
+                i.fa-paperclip,
+                i.fa-clock-o,
+                td {
+                    background-color: $tr-unread-hovered;
+                }
+            }
         }
         &.starred {
-            background-color: $starred;
+            background-color: $tr-starred;
             i.fa-paperclip,
-            i.fa-clock-o {
-                background-color: $starred;
+            i.fa-clock-o,
+            td {
+                background-color: $tr-starred;
+            }
+            &.hovered,
+            &:active {
+                i.fa-paperclip,
+                i.fa-clock-o,
+                td {
+                    background-color: $tr-starred-hovered;
+                }
             }
         }
         &.selected {
             i.fa-paperclip,
-            i.fa-clock-o {
-                background-color: $selected;
+            i.fa-clock-o,
+            td {
+                background-color: $tr-selected;
+            }
+            &.hovered,
+            &:active {
+                i.fa-paperclip,
+                i.fa-clock-o,
+                td {
+                    background-color: $tr-selected-hovered;
+                }
             }
         }
         i.fa-paperclip,
