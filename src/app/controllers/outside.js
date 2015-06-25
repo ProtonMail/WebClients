@@ -14,6 +14,7 @@ angular.module("proton.controllers.Outside", [
     Message,
     tools,
     pmcw,
+    attachments,
 
     message
 ) {
@@ -100,13 +101,8 @@ angular.module("proton.controllers.Outside", [
         // get enc attachment
         var att = attachments.get(attachment.ID, attachment.Name);
 
-        // get user's pk
-        var key = authentication.getPrivateKey().then(
-            function(pk) {
-                // decrypt session key from keypackets
-                return pmcw.decryptSessionKey(keyPackets, pk);
-            }
-        );
+        // decrypt session key
+        var key = pmcw.decryptSessionKey(keyPackets, password);
 
         // when we have the session key and attachent:
         $q.all({
@@ -143,7 +139,6 @@ angular.module("proton.controllers.Outside", [
                             $this.triggerHandler('click');
 
                             deferred.resolve();
-
                         }
                         else {
                             // Bad blob support, make a data URI, don't click it
@@ -155,7 +150,9 @@ angular.module("proton.controllers.Outside", [
 
                             reader.readAsDataURL(blob);
                         }
-
+                    },
+                    function(error) {
+                        console.log(error);
                     }
                 );
             },
