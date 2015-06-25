@@ -20,7 +20,7 @@
     }"
     title="{{ getMessageEncryptionType(message) }}"></i>
     <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
-    {{ message.Subject }}
+    <span class="subject" ng-bind-html="message.Subject"></span> 
     <span class="label label-pm" style="background-color: {{ label.Color }}" ng-repeat="label in message.labels()">
         {{ label.Name }} <a href="" ng-click="detachLabel(label.ID)"><i class="fa fa-times"></i></a>
     </span>

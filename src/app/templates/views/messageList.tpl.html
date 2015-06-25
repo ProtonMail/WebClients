@@ -77,7 +77,7 @@
                     <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-                    <h4>{{ message.Subject }}</h4>
+                    <h4 ng-bind-html="message.Subject"></h4>
                     <span ng-repeat="id in message.LabelIDs" class="label label-pm" style="background-color: {{ getLabel(id).Color }}">{{ getLabel(id).Name }}</span>
                 </td>
                 <td class="size">
