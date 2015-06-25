@@ -35,7 +35,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
                 params.location = parseInt($('#search_folder').val());
             }
 
-            if($('#search_label').val() !== 0) {
+            if(parseInt($('#search_label').val()) !== 0) {
                 params.label = $('#search_label').val();
             }
 
