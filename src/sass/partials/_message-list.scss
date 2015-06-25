@@ -59,8 +59,13 @@ table.message-list {
             overflow: hidden;
             &.actions {
                 cursor: default;
-                padding-left: 1rem;
+                padding-left: 0;
                 width: 7rem;
+                label {
+                    display: inline-block;
+                    width: 4rem;
+                    text-align: center;
+                }
                 span {
                     width: 1.5rem;
                     text-align: center;
@@ -95,7 +100,7 @@ table.message-list {
                 }
                 .fa-unlock-alt,
                 .fa-lock {
-                    margin-left: 2px;
+                    margin-left: -1.25rem;
                 }
                 .tooltip {
                     font-weight: normal;

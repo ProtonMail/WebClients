@@ -6,7 +6,6 @@
             </a>
         </li>
         <li
-            class="seperator" 
             ng-class="{ disabled: !message.IsRead }">
             <a
             href
@@ -17,23 +16,12 @@
             </a>
         </li>
         <li
-            class="seperator" 
-            ng-class="{ disabled: message.IsRead }">
-            <a
-            href
-            ng-click="markAsRead()"
-            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
-            pt-placement="bottom">
-                <i class="fa fa-eye"></i>
-            </a>
-        </li>        
-        <li
             ng-if="message.location() != 'archive'">
             <a
             href
             pt-tooltip="{{ 'ARCHIVE' | translate }}"
             pt-placement="bottom"
-            ng-click="moveMessageTo('inbox')">
+            ng-click="moveMessageTo('archive')">
                 <i class="fa fa-fw fa-archive"></i>
             </a>
         </li>
@@ -110,6 +98,18 @@
                 </li>
             </ul>
         </li>
+        <li
+            class="seperator" 
+            ng-hide="true"
+            ng-class="{ disabled: message.IsRead }">
+            <a
+            href
+            ng-click="markAsRead()"
+            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
+            pt-placement="bottom">
+                <i class="fa fa-eye"></i>
+            </a>
+        </li>        
     </ul>
 
     <ul class="nav navbar-nav pull-right navigation" id="messageActionGroup">

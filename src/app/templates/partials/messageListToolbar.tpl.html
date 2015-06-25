@@ -12,11 +12,6 @@
             </label>
         </li>
         <li>
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
-                <i class="fa fa-eye"></i>
-            </a>
-        </li>
-        <li class="seperator">
             <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye-slash"></i>
             </a>
@@ -56,7 +51,6 @@
         </li>
         <li
         ng-if="pageName != 'trash' && pageName != 'spam'"
-        class="seperator"
         pt-tooltip="{{ 'TRASH' | translate }}"
         pt-placement="bottom">
             <a
@@ -68,7 +62,6 @@
         </li>
         <li
         ng-if="('secured.spam' | isState) || ('secured.trash' | isState)"
-        class="seperator"
         pt-tooltip="{{ 'DELETE' | translate }}"
         pt-placement="bottom">
             <a
@@ -80,6 +73,11 @@
                 <i class="fa fa-times-circle"></i>
             </a>
         </li>
+        <li class="seperator">
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+                <i class="fa fa-eye"></i>
+            </a>
+        </li>        
         <li class="seperator">
             <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
                 <i class="fa fa-fw fa-tag"></i>

@@ -16,7 +16,9 @@
                 ng-mouseover="params.messageHovered = message"
                 ng-mouseleave="params.messageHovered = null">
                 <td class="actions">
-                    <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
+                    <label>
+                        <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
+                    </label>
                     <!--
                     ENC_NONE: 0,
                     ENC_INTERNAL: 1, // all within ProtonMail

@@ -38,7 +38,8 @@
       &.selectAll {
         label {
           display: block;
-          padding: 0 1rem;
+          padding: 0;
+          width: 4rem;
           text-align: center;
           line-height: $row-height;
           height: $row-height;
