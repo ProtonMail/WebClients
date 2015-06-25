@@ -28,6 +28,7 @@ module.exports = {
   },
   vendor_files: (vendor_files = {
     js: [
+      "vendor/es6-shim/es6-shim.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",

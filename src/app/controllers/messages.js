@@ -1685,9 +1685,8 @@ angular.module("proton.controllers.Messages", [
                             $this.attr('href', href);
                             $this.attr('target', '_blank');
                             $this.attr('download', attachment.Name);
-                            alert('a');
                             $this.triggerHandler('click');
-                            alert('b');
+
                             deferred.resolve();
 
                         }
