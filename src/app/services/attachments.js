@@ -119,15 +119,11 @@ angular.module("proton.attachments", [
                 return pmcw.decryptSessionKey(keypacket,key);
             });
         },
-        get: function(id, filename) {
+        get: function(id) {
             return $http
-                .get(authentication.baseURL + "/attachments/" + id, {
-                    responseType: "arraybuffer"
-                })
+                .get(authentication.baseURL + "/attachments/" + id, {responseType: "arraybuffer"})
                 .success(function(data, status, headers, other) {
-
                     return data;
-
                 }).error(function(response) {
                     $log.debug(response);
                 });

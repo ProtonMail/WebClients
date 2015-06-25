@@ -37,3 +37,9 @@
 		background: darken($base-color, $color-offset);
 	}
 }
+
+#dropzone {
+	position: absolute;
+	opacity: 0.0;
+	filter: alpha(opacity=0);
+}

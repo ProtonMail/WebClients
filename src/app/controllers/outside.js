@@ -15,6 +15,7 @@ angular.module("proton.controllers.Outside", [
     tools,
     pmcw,
     attachments,
+    Eo,
 
     message
 ) {
@@ -86,6 +87,10 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
+    $scope.selectFile = function() {
+        $('#dropzone').click();
+    };
+
     $scope.decryptAttachment = function(attachment, $event) {
         if (attachment.decrypted===true) {
             return true;
@@ -99,7 +104,7 @@ angular.module("proton.controllers.Outside", [
         var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
 
         // get enc attachment
-        var att = attachments.get(attachment.ID, attachment.Name);
+        var att = Eo.attachment(decrypted_token, token_id, attachment.ID);
 
         // decrypt session key
         var key = pmcw.decryptSessionKey(keyPackets, password);
@@ -145,7 +150,7 @@ angular.module("proton.controllers.Outside", [
                             var reader = new FileReader();
 
                             reader.onloadend = function () {
-                                link.attr('href',reader.result);
+                                link.attr('href', reader.result);
                             };
 
                             reader.readAsDataURL(blob);

@@ -20,6 +20,7 @@ angular.module("proton.models.eo", [])
         },
         attachment: function(decrypted_token, token_id, attachmentID) {
             return $http.get(authentication.baseURL + '/eo/attachment/' + attachmentID, {
+                responseType: "arraybuffer",
                 headers: {
                     'Authorization': decrypted_token,
                     'x-eo-uid': token_id
