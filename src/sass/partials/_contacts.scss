@@ -1,6 +1,23 @@
 #contactPagination {
   margin: 0 15px;
 }
+#contactSearchGroup {
+  position: relative;
+  a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 1rem;
+    line-height: $row-height;
+    height: $row-height;
+    display: block;
+    z-index: 2;
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
 form.searchOrCreateContact {
   border-bottom: 1px solid #eee;
   padding: 10px;

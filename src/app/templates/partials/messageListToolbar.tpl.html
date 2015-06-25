@@ -11,11 +11,6 @@
                 pt-placement="bottom" />
             </label>
         </li>
-        <li class="seperator" pt-tooltip="{{ 'REFRESH' | translate }}" pt-placement="bottom">
-            <a href="" ng-click="refreshMessages(false)">
-                <i class="fa fa-refresh"></i>
-            </a>
-        </li>
         <li>
             <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye"></i>

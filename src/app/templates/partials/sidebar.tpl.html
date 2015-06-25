@@ -17,10 +17,11 @@
             </li>
         </ul>
         <ul class="list-group" id="topMenu">
-            <li class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
+            <li id="inbox-li" class="list-group-item" data-unread="0" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.inbox')" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                     <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>
-                    <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('inbox') > 0}">{{ getUnread('inbox') }}</span>
+                    <span class="label hidden-xs hidden-sm" ng-hide="getUnread('inbox')<1" ng-class="{active: getUnread('inbox') > 0}">{{ getUnread('inbox') }}</span>
+                    <i class="fa fa-refresh pull-right hidden-xs hidden-sm"></i>
                 </a>
             </li>
             <li class="list-group-item" data-unread="0">

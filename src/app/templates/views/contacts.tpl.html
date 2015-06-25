@@ -3,24 +3,22 @@
 <div id="content">
     <div class="container-fluid margin-top">
         <div class="row">
-            <div class="col-md-6 form-group">
+            <div class="col-md-4 form-group">
                 <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
                 <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
             </div>
-            <div class="col-md-6 text-right form-group">
+            <div class="col-md-4 form-group">
+                <div class="input-group form-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
+                    <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" />
+                    <a href ng-click="params.searchContactInput = ''; searchContacts()">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-right form-group">
                 <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
                 <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
             </div>
-
-            <pagination
-            total-items="totalItems"
-            ng-model="currentPage"
-            max-size="10"
-            boundary-links="true"
-            items-per-page="numPerPage"
-            class="pagination-sm"
-            id="contactPagination">
-            </pagination>
 
             <div class="col-md-12">
                 <table class="table table-middle table-hover table-pm">
@@ -41,21 +39,21 @@
                             </td>
                             <td>{{ contact.Name }}</td>
                             <td class="text-muted">{{ contact.Email }}</td>
-                            <td>
-                                <a href="" class="btn btn-default btn-sm" ng-click="editContact(contact)">
-                                    <i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{ 'EDIT' | translate }}</span>
+                            <td class="text-right">
+                                <a pt-tooltip="{{ 'EDIT' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="editContact(contact)">
+                                    <i class="fa fa-edit"></i>
                                 </a>
-                                <a href="" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
-                                    <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
+                                <a pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="deleteContacts(contact)">
+                                    <i class="fa fa-trash-o"></i>
                                 </a>
-                                <a href="" class="btn btn-default btn-sm" ng-click="deleteContacts(contact)">
-                                    <i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">{{ 'DELETE' | translate }}</span>
-                                </a>
+                                <a pt-tooltip="{{ 'COMPOSE' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
+                                    <i class="fa fa-send"></i>
+                                </a>                                
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div><!--/.row-->
     </div>
 </div>

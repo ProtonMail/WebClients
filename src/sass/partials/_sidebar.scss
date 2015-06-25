@@ -114,8 +114,9 @@ body.min {
     .label {
         background-color: white;
         color: #222;
-        position: absolute;
-        right: 8px;
+        position: relative;
+        float: right;
+        margin-right: -8px;
         padding: 0.3em 0.6em 0.4em;
         opacity: 0;
         font-size: 84%;
@@ -144,6 +145,14 @@ body.min {
         box-shadow: none;
         border-top-color: rgba(white, .1);
         border-bottom-color: transparent;
+    }
+    #inbox-li {
+        .label {
+            margin-left: 1.5rem;
+        }
+        .fa-refresh {
+            margin-right: -8px;
+        }
     }
     .logo {
         line-height: 50px;
@@ -242,7 +251,10 @@ body.min {
         margin-bottom: 0;
         .fa {
             margin-right: 0.75rem;
-            line-height: 2rem;
+            line-height: $row-height;
+        }
+        .fa.fa-refresh {
+            margin-right: 0;
         }
         .btn {
             width: 100%;

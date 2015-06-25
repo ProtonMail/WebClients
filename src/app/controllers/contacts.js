@@ -8,6 +8,7 @@ angular.module("proton.controllers.Contacts", [
     $state,
     $log,
     $translate,
+    $stateParams,
     contacts,
     Contact,
     confirmModal,
@@ -17,6 +18,12 @@ angular.module("proton.controllers.Contacts", [
     networkActivityTracker,
     notify
 ) {
+
+    $scope.params = {
+        searchInput: $stateParams.words || '',
+        searchContactInput: ''
+    };
+
     $rootScope.pageName = "Contacts";
     $rootScope.user.Contacts = contacts.Contacts;
     $scope.search = '';
@@ -25,6 +32,15 @@ angular.module("proton.controllers.Contacts", [
     $scope.$on('searchContacts', function(event, value) {
         $scope.search = value;
     });
+
+    $scope.searchContacts = function() {
+        if($scope.params.searchContactInput.length > 0) {
+            $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
+        }
+        else {
+            $scope.search = undefined;
+        }
+    };
 
     $scope.totalItems = $rootScope.user.Contacts.length;
     $scope.currentPage = 1;
