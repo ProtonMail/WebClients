@@ -434,7 +434,7 @@ angular.module("proton.routes", [
     .state("eo.message", {
         url: "/eo/message/:tag",
         resolve: {
-            message: function($stateParams, $q, Eo, pmcw) {
+            message: function($stateParams, $q, Eo, Message, pmcw) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
                 var decrypted_token = window.sessionStorage["proton:decrypted_token"];
@@ -455,7 +455,8 @@ angular.module("proton.routes", [
                     });
 
                     $q.all(promises).then(function() {
-                        deferred.resolve(message);
+                        message.displayMessage = true;
+                        deferred.resolve(new Message(message));
                     });
                 });
 
@@ -464,44 +465,8 @@ angular.module("proton.routes", [
         },
         views: {
             "content": {
-                templateUrl: "templates/views/outside.message.tpl.html",
-                controller: function($scope, $state, $stateParams, $sce, $timeout, message, tools) {
-                    $scope.message = message;
-
-                    $timeout(function() {
-                        $scope.message.Body = $scope.clean($scope.message.Body);
-                        $scope.containsImage = tools.containsImage($scope.message.Body);
-                        _.each($scope.message.Replies, function(reply) {
-                            reply.Body = $scope.clean(reply.Body);
-                        });
-                        tools.transformLinks('message-body');
-                    });
-
-                    $scope.clean = function(body) {
-                        var content = angular.copy(body);
-
-                        content = tools.clearImageBody(content);
-                        $scope.imagesHidden = true;
-                        content = tools.replaceLineBreaks(content);
-                        content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
-
-                        return content;
-                    };
-
-                    $scope.reply = function() {
-                        $state.go('eo.reply', {tag: $stateParams.tag});
-                    };
-
-                    $scope.toggleImages = function() {
-                        if($scope.imagesHidden === true) {
-                            $scope.message.Body = tools.fixImages($scope.message.Body);
-                            $scope.imagesHidden = false;
-                        } else {
-                            $scope.message.Body = tools.breakImages($scope.message.Body);
-                            $scope.imagesHidden = true;
-                        }
-                    };
-                }
+                controller: "OutsideController",
+                templateUrl: "templates/views/outside.message.tpl.html"
             }
         }
     })
@@ -509,7 +474,7 @@ angular.module("proton.routes", [
     .state("eo.reply", {
         url: "/eo/reply/:tag",
         resolve: {
-            message: function($stateParams, $q, Eo, pmcw) {
+            message: function($stateParams, $q, Eo, Message, pmcw) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
                 var decrypted_token = window.sessionStorage["proton:decrypted_token"];
@@ -519,9 +484,10 @@ angular.module("proton.routes", [
                     var message = result.data.Message;
 
                     pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
-                        message.Body = body;
-
-                        deferred.resolve(message);
+                        message.Body = '';
+                        message.Attachments = [];
+                        message.replyMessage = true;
+                        deferred.resolve(new Message(message));
                     });
                 });
 
@@ -530,49 +496,8 @@ angular.module("proton.routes", [
         },
         views: {
             "content": {
-                templateUrl: "templates/views/outside.reply.tpl.html",
-                controller: function($scope, $state, $stateParams, Eo, Message, message, pmcw) {
-                    $scope.message = message;
-                    $scope.message.Body = '';
-
-                    var decrypted_token = window.sessionStorage["proton:decrypted_token"];
-                    var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
-                    var token_id= $stateParams.tag;
-
-                    $scope.send = function() {
-                        Message.getPublicKeys(message.SenderAddress).then(function(keys) {
-                            var publicKey = keys[message.SenderAddress];
-                            var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
-                            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, password);
-
-                            $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
-                                var data = {
-                                    'Body': result.Body,
-                                    'ReplyBody': result.ReplyBody,
-                                    'Filename[]': [], // TODO
-                                    'MIMEType[]': [], // TODO
-                                    'KeyPackets[]': [], // TODO
-                                    'DataPacket[]': [] // TODO
-                                };
-
-                                Eo.reply(decrypted_token, token_id, data);
-                            });
-                        });
-                    };
-
-                    $scope.cancel = function() {
-                        $state.go('eo.message', {tag: $stateParams.tag});
-                    };
-                }
-                // onEnter: function($scope) {
-                //     var iframeDoc = $('.squireIframe')[0].contentWindow.document;
-                //     editor = $scope.editor = new Squire(iframeDoc);
-                //     editor.defaultBlockTag = 'P';
-                //     if (message.Body) {
-                //         editor.setHTML(message.Body);
-                //         // updateModel(message.Body);
-                //     }
-                // }
+                controller: "OutsideController",
+                templateUrl: "templates/views/outside.reply.tpl.html"
             }
         }
     })

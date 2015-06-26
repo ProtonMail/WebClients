@@ -211,6 +211,17 @@ angular.module("proton.models.message", ["proton.constants"])
         numberOfAttachments: function() {
             return this.Attachments.length;
         },
+        sizeAttachments: function() {
+            var size = 0;
+
+            angular.forEach(this.Attachments, function(attachment) {
+                if (angular.isDefined(attachment.Size)) {
+                    size += parseInt(attachment.Size);
+                }
+            });
+
+            return size;
+        },
         location: function() {
             return invertedMailboxIdentifiers[this.Location];
         },
