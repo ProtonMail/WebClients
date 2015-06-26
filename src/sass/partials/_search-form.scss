@@ -20,19 +20,13 @@ body {
     margin-bottom: 0;
   }
   input {
-    @include transition(all, 200ms, ease-in-out);
+    @include transition(all, 0, linear);
     background: $alt-color-light;
     border-radius: 2rem;
     border-color: transparent;
     color: #fff;
     box-shadow: 0 1px 0 rgba(255,255,255,.1),inset 0 1px 0 rgba(0,0,0,.1);
     &:focus {
-      @include placeholder {
-        color: #fff;
-      }
-      background-color: $base-color;
-      color: #333;
-      border: none;
       outline: 0;
     }
   }

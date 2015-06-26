@@ -34,17 +34,6 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('openReportModal');
     };
 
-    $scope.onBlurSearch = function() {
-        if($scope.params.searchInput.length === 0) {
-            $scope.searchInputFocus = false;
-        }
-    };
-
-    $scope.onFocusSearch = function() {
-        $scope.searchInputFocus = true;
-    };
-
-
     $scope.openWizard = function() {
         openWizardModal('ProtonMail Wizard', 'startWizard');
     };
