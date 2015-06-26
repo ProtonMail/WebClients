@@ -208,6 +208,8 @@ angular.module("proton.routes", [
         }
     })
 
+    /* Unused for 2.0, Keep for 3.0
+
     .state("signup", {
         url: "/signup",
         views: {
@@ -289,6 +291,8 @@ angular.module("proton.routes", [
             }
         }
     })
+
+    */
 
     .state("reset", {
         url: "/reset",

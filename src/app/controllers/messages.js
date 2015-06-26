@@ -912,10 +912,15 @@ angular.module("proton.controllers.Messages", [
 
     $scope.composerStyle = function(message) {
 
+        var margin = 10;
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
         var widthWindow = $('#main').width();
+
+        if ($('html').hasClass('ua-windows_nt')) {
+            margin = 40;
+        }
 
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
@@ -923,13 +928,13 @@ angular.module("proton.controllers.Messages", [
 
             styles.top = top + 'px';
         } else {
-            var marginRight = 10; // px
+            var marginRight = margin; // px
             var widthComposer = 480; // px
 
             if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
                 right = (index * (widthComposer + marginRight)) + marginRight;
             } else {
-                widthWindow -= 10; // margin left
+                widthWindow -= margin; // margin left
                 var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
                 right = index * (widthComposer - overlap);
             }

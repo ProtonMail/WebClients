@@ -24,26 +24,29 @@
                 <span class="col-xs-6 text-right">
                     <a
                     href
-                    ng-show="!!!message.minimized && !!!message.maximized"
+                    ng-show="!!!message.minimized"
                     class="btn btn-sm minimize-button hidden-xs"
-                    ng-click="minimize(message)"
-                    title="{{ 'MINIMIZE' | translate }}">
+                    ng-click="normalize(message); minimize(message)" 
+                    pt-tooltip="{{ 'MINIMIZE' | translate }}"
+                    pt-placement="left">
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
                     href
                     ng-show="!!message.minimized"
-                    class="btn btn-sm minimize-button hidden-xs"
+                    class="btn btn-sm expand-button hidden-xs"
                     ng-click="normalize(message)"
-                    title="{{ 'EXPAND' | translate }}">
-                        <i class="fa fa-plus"></i>
+                    pt-tooltip="{{ 'EXPAND' | translate }}"
+                    pt-placement="left">
+                        <i class="fa fa-minus"></i>
                     </a>
                     <a
                     href
                     ng-show="!!!message.maximized"
                     class="btn btn-sm maximize-button hidden-xs"
                     ng-click="maximize(message)"
-                    title="{{ 'MAXMIMIZE' | translate }}">
+                    pt-tooltip="{{ 'FULLSCREEN' | translate }}"
+                    pt-placement="left">
                         <i class="fa fa-expand fa-rotate-90"></i>
                     </a>
                     <a
@@ -51,14 +54,16 @@
                     ng-show="!!message.maximized"
                     class="btn btn-sm maximize-button hidden-xs"
                     ng-click="normalize(message)"
-                    title="{{ 'NORMAL' | translate }}">
+                    pt-tooltip="{{ 'EXIT_FULLSCREEN' | translate }}"
+                    pt-placement="left">
                         <i class="fa fa-compress fa-rotate-90"></i>
                     </a>
                     <a
                     href
                     class="btn btn-sm close-button"
                     ng-click="close(message, true)"
-                    title="{{ 'CLOSE_AND_SAVE' | translate }}">
+                    pt-tooltip="{{ 'CLOSE_AND_SAVE' | translate }}"
+                    pt-placement="left">
                         <span class="sr-only">{{ 'CLOSE_AND_SAVE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>

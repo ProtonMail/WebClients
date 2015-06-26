@@ -3,6 +3,15 @@
         clear: both;
     }
 }
+.minimize-button .fa {
+    position: relative;
+    top: .5rem;
+}
+.expand-button .fa {
+    position: relative;
+    top: -.5rem;
+}
+
 #others {
     position: absolute;
     right: 0;
@@ -529,7 +538,7 @@ form#compose {
     box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
     position: fixed;
     bottom: 1rem;
-    right: 10px;
+    right: 2rem;
     width: 480px;
     transition: right 600ms linear, opacity 200ms linear;
     border-radius: $border-radius-base*2;
