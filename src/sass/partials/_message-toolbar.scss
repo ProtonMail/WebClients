@@ -56,7 +56,8 @@
           margin: 0;
         }
         padding: 0;
-        background: #fff;
+        @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
+        background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
         border-right: 1px solid #ccc;
       }
       &.open > a {

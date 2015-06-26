@@ -1,0 +1,12 @@
+.us-windows_nt.ua-firefox {
+    table.message-list tbody input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
+}
+.ua-mac_os_x.ua-firefox {
+    table.message-list tbody input[type="checkbox"] {
+        position: relative;
+        top: 1px;
+    }    
+}
