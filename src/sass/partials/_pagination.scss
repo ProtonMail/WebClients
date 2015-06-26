@@ -1,6 +1,7 @@
 .pageDropdown {
 	position: relative;
-	line-height: 32px;
+	line-height: $row-height;
+	border-left: 1px solid #ccc;
 	a {
 		position: absolute;
 		left: 0;

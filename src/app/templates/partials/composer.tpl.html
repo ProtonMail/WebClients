@@ -69,7 +69,7 @@
                     <div class="form-group fromGroup">
                         <div class="input-group">
                             <div class="input-group-addon">{{ 'FROM' | translate }}</div>
-                            <select tabindex="1" class="form-control" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
+                            <select tabindex="1" class="form-control seperator" ng-init="message.From = user.Addresses[0]" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
                         </div>
                     </div>
                     <div class="form-horizontal">
