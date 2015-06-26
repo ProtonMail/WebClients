@@ -66,16 +66,6 @@ angular.module("proton.controllers.Contacts", [
         $scope.contacts = $scope.contactsFiltered(searching);
     };
 
-    // $scope.paginate = function(value) {
-    //     var begin, end, index;
-    //
-    //     begin = ($scope.currentPage - 1) * $scope.numPerPage;
-    //     end = begin + $scope.numPerPage;
-    //     index = $rootScope.user.Contacts.indexOf(value);
-    //
-    //     return (begin <= index && index < end);
-    // };
-
     function openContactModal(title, name, email, save) {
         contactModal.activate({
             params: {
