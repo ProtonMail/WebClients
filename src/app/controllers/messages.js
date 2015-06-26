@@ -21,7 +21,6 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     notify
 ) {
-
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;

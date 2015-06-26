@@ -43,6 +43,7 @@ angular.module("proton.messages", [])
         var sentOneMetaData = Message.query(sentOneParams).$promise;
 
         $q.all([inboxOneMetaData, inboxTwoMetaData]).then(function(result) {
+                addMessageList(result[0]);
                 addMessageList(result[1]);
         });
 
