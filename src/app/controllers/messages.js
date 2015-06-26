@@ -111,8 +111,8 @@ angular.module("proton.controllers.Messages", [
         $scope.unselectAllMessages();
     });
 
-    $scope.$on('refreshMessages', function(event, silently) {
-        $scope.refreshMessages(silently);
+    $scope.$on('refreshMessages', function(event, silently, empty) {
+        $scope.refreshMessages(silently, empty);
     });
 
     $scope.messageCount = function() {
@@ -162,11 +162,14 @@ angular.module("proton.controllers.Messages", [
         return params;
     };
 
-    $scope.refreshMessages = function(silently) {
+    $scope.refreshMessages = function(silently, empty) {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
         var promise = Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
+            if(!!!empty) {
+                $scope.emptying = false;
+            }
         });
 
         if(!!!silently) {
@@ -489,6 +492,29 @@ angular.module("proton.controllers.Messages", [
             sort: criterion === '-date' ? undefined : criterion,
             page: undefined
         }));
+    };
+
+    $scope.emptyFolder = function(location) {
+        $scope.emptying = true;
+        if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
+            promise = Message.emptyDraft().$promise;
+        }
+        else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
+            promise = Message.emptySpam().$promise;
+        }
+        else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+            promise = Message.emptyTrash().$promise;
+        }
+        promise.then(
+            function(result) {
+                $rootScope.$broadcast('updateCounters');
+                $rootScope.$broadcast('refreshMessages', true, true);
+                notify($translate.instant('FOLDER EMPTIED'));
+            },
+            function(result) {
+                $scope.emptying = false;
+            }
+        );
     };
 
     $scope.unselectAllLabels = function() {

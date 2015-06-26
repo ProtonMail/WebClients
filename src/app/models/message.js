@@ -130,8 +130,20 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'put',
                 isArray: true,
                 url: authentication.baseURL + '/messages/delete'
-            }
+            },
             // DELETE
+            emptyDraft: {
+                method: 'delete',
+                url: authentication.baseURL + '/messages/draft'
+            },
+            emptySpam: {
+                method: 'delete',
+                url: authentication.baseURL + '/messages/spam'
+            },
+            emptyTrash: {
+                method: 'delete',
+                url: authentication.baseURL + '/messages/trash'
+            },
         }
     );
 

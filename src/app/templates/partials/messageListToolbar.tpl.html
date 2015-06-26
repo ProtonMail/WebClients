@@ -173,6 +173,39 @@
                 </li>
             </ul>
         </li>
+        <li 
+        class="seperator" 
+        ng-if="('secured.drafts' | isState)">
+            <a
+            href
+            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)"
+            pt-placement="bottom">
+                <i class="fa fa-warning"></i> 
+                {{ 'EMPTY_DRAFTS' | translate}}
+            </a>
+        </li>
+        <li 
+        class="seperator" 
+        ng-if="('secured.spam' | isState)">
+            <a
+            href
+            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.spam)"
+            pt-placement="bottom">
+                <i class="fa fa-warning"></i> 
+                {{ 'EMPTY_SPAM' | translate}}
+            </a>
+        </li>
+        <li 
+        class="seperator" 
+        ng-if="('secured.trash' | isState)">
+            <a
+            href
+            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.trash)"
+            pt-placement="bottom">
+                <i class="fa fa-warning"></i> 
+                {{ 'EMPTY_TRASH' | translate}}
+            </a>
+        </li>
     </ul>
     <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount() > 0">
         <li class="pageDropdown seperator">
