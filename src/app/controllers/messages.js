@@ -877,6 +877,10 @@ angular.module("proton.controllers.Messages", [
                 FORBID_TAGS: ['style']
             });
             resizeComposer();
+
+            message.selectFile = function() {
+                $('#' + message.button).click();
+            };
         }, 500);
     };
 
@@ -1671,7 +1675,7 @@ angular.module("proton.controllers.Messages", [
                 var algo = obj.key.algo;
 
                 // decrypt the att
-                pmcrypto.decryptMessage(at, key, true, algo).then(
+                pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
 
                         var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
@@ -1882,18 +1886,6 @@ angular.module("proton.controllers.Messages", [
         } else {
             message.viewMode = 'plain';
         }
-    };
-
-    $scope.sizeAttachments = function() {
-        var size = 0;
-
-        angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.Size)) {
-                size += parseInt(attachment.Size);
-            }
-        });
-
-        return size;
     };
 
     if (message.IsRead === 0) {
