@@ -140,9 +140,11 @@ table.message-list {
             &.size,
             &.when {
                 text-align: right;
+                font-size: .9em;
             }
             &.size {
-                width: 10rem;
+                width: 8rem;
+                padding-left: 0;
             }
             &.when {
                 padding-right: 1rem;
@@ -219,6 +221,9 @@ table.message-list {
             padding: 0 1rem;
             top: 1px;
             background-color: $base-color-dark;
+        }
+        i.fa-paperclip {
+            padding-right: 0;
         }
     }
 }
