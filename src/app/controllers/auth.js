@@ -96,9 +96,7 @@ angular.module("proton.controllers.Auth", [
                 function() {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
-                    $timeout(function() {
-                        $state.go("secured.inbox");
-                    }, 750);                    
+                    $state.go("secured.inbox");
                 },
                 function(err) {
                     $log.error(err);
