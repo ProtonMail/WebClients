@@ -22,10 +22,6 @@ angular.module("proton.squire", [
             var editorVisible;
             editorVisible = true;
 
-            $scope.selectFile = function(message) {
-                $('#' + message.button).click();
-            };
-
             $scope.isEditorVisible = function() {
                 return editorVisible;
             };

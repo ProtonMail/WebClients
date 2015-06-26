@@ -874,6 +874,10 @@ angular.module("proton.controllers.Messages", [
                 FORBID_TAGS: ['style']
             });
             resizeComposer();
+
+            message.selectFile = function() {
+                $('#' + message.button).click();
+            };
         }, 500);
     };
 

@@ -16,10 +16,14 @@ angular.module("proton.attachments", [
 ) {
     return {
         // read the file locally, and encrypt it. return the encrypted file.
-        load: function(file) {
+        load: function(file, key) {
             var q = $q.defer();
             var fileObject = {};
             var reader = new FileReader();
+
+            if(angular.isUndefined(key)) {
+                key = authentication.user.PublicKey;
+            }
 
             if (!file) {
                 q.reject(new TypeError("You did not provide a file"));
@@ -27,7 +31,7 @@ angular.module("proton.attachments", [
 
             reader.onloadend = function(event) {
                 // encryptFile(data, pubKeys, passwords, filename)
-                var encAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
+                var encAttachment = pmcw.encryptFile(new Uint8Array(reader.result), key, [], file.name);
 
                 // console.log('encAttachment',encAttachment);
 

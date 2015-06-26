@@ -16,6 +16,8 @@ angular.module("proton.controllers.Outside", [
     pmcw,
     attachments,
     Eo,
+    CONSTANTS,
+    notify,
 
     message
 ) {
@@ -24,6 +26,10 @@ angular.module("proton.controllers.Outside", [
     var decrypted_token = window.sessionStorage["proton:decrypted_token"];
     var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
     var token_id = $stateParams.tag;
+    var Filename = [];
+    var MIMEType = [];
+    var KeyPackets = [];
+    var DataPacket = [];
 
     if(message.displayMessage === true) {
         $timeout(function() {
@@ -36,23 +42,44 @@ angular.module("proton.controllers.Outside", [
         });
     }
 
+    $timeout(function() {
+        $('#inputFile').change(function(event) {
+            event.preventDefault();
+
+            var files = $('#inputFile')[0].files;
+            var file_array = [];
+
+            for(var i = 0; i<files.length; i++) {
+                file_array.push(files[i]);
+            }
+
+            $scope.addAttachment(file_array);
+        });
+    }, 100);
+
+    $scope.message.selectFile = function() {
+        $('#inputFile').click();
+    };
+
     $scope.send = function() {
-        Message.getPublicKeys(message.SenderAddress).then(function(keys) {
+        message.getPublicKeys([message.SenderAddress]).then(function(keys) {
             var publicKey = keys[message.SenderAddress];
             var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
-            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, password);
-
+            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
+            
             $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
                 var data = {
                     'Body': result.Body,
                     'ReplyBody': result.ReplyBody,
-                    'Filename[]': [], // TODO
-                    'MIMEType[]': [], // TODO
-                    'KeyPackets[]': [], // TODO
-                    'DataPacket[]': [] // TODO
+                    'Filename[]': Filename,
+                    'MIMEType[]': MIMEType,
+                    'KeyPackets[]': KeyPackets,
+                    'DataPacket[]': DataPacket
                 };
 
-                Eo.reply(decrypted_token, token_id, data);
+                Eo.reply(decrypted_token, token_id, data).then(function(result) {
+                    console.log(result);
+                });
             });
         });
     };
@@ -87,8 +114,44 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
-    $scope.selectFile = function() {
-        $('#dropzone').click();
+    $scope.addAttachment = function(files) {
+        var file = files[0];
+        var totalSize = message.sizeAttachments();
+        var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+        message.uploading = true;
+
+        _.defaults(message, { Attachments: [] });
+
+        if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+            notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+            // TODO remove file in droparea
+            return;
+        }
+
+        totalSize += file.size;
+
+        var attachmentPromise;
+        var element = $(file.previewElement);
+
+        if (totalSize < (sizeLimit * 1024 * 1024)) {
+            message.getPublicKeys([message.SenderAddress]).then(function(keys) {
+                var publicKey = keys[message.SenderAddress];
+
+                attachments.load(file, publicKey).then(function(packets) {
+                    Filename.push(packets.Filename);
+                    MIMEType.push(packets.MIMEType);
+                    KeyPackets.push(new Blob([packets.keys]));
+                    DataPacket.push(new Blob([packets.data]));
+                    message.uploading = false;
+                });
+            });
+        } else {
+            // Attachment size error.
+            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+            // TODO remove file in droparea
+            return;
+        }
     };
 
     $scope.decryptAttachment = function(attachment, $event) {

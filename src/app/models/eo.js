@@ -1,6 +1,6 @@
 angular.module("proton.models.eo", [])
 
-.factory("Eo", function($http, authentication, transformRequestAsFormPost) {
+.factory("Eo", function($http, $q, authentication) {
     return {
         token: function(tokenID) {
             return $http.get(authentication.baseURL + '/eo/token/' + encodeURIComponent(tokenID), {
@@ -28,90 +28,56 @@ angular.module("proton.models.eo", [])
             });
         },
         reply: function(decrypted_token, token_id, data) {
-            return $http({
-                url: authentication.baseURL + '/eo/reply',
-                transformRequest: transformRequestAsFormPost,
-                data: data,
-                headers: {
-                    'Authorization': decrypted_token,
-                    'x-eo-uid': token_id
+            var deferred = $q.defer();
+            var fd = new FormData();
+            var xhr = new XMLHttpRequest();
+
+            _.each(Object.keys(data), function(key) {
+                if(angular.isArray(data[key])) {
+                    _.each(data[key], function(v) {
+                        fd.append(key, v);
+                    });
+                } else {
+                    fd.append(key+'', data[key]);
                 }
             });
-        }
-    };
-})
 
-.factory(
-    "transformRequestAsFormPost",
-    function() {
+            xhr.onload = function() {
+                var response;
+                var validJSON;
+                var statusCode = this.status;
 
-        // I prepare the request data for the form post.
-        function transformRequest( data, getHeaders ) {
-
-            var headers = getHeaders();
-
-            headers[ "Content-type" ] = "application/x-www-form-urlencoded; charset=utf-8";
-
-            return( serializeData( data ) );
-
-        }
-
-
-        // Return the factory value.
-        return( transformRequest );
-
-
-        // ---
-        // PRVIATE METHODS.
-        // ---
-
-
-        // I serialize the given Object into a key-value pair string. This
-        // method expects an object and will default to the toString() method.
-        // --
-        // NOTE: This is an atered version of the jQuery.param() method which
-        // will serialize a data collection for Form posting.
-        // --
-        // https://github.com/jquery/jquery/blob/master/src/serialize.js#L45
-        function serializeData( data ) {
-
-            // If this is not an object, defer to native stringification.
-            if ( ! angular.isObject( data ) ) {
-
-                return( ( data === null ) ? "" : data.toString() );
-
-            }
-
-            var buffer = [];
-
-            // Serialize each key in the object.
-            for ( var name in data ) {
-
-                if ( ! data.hasOwnProperty( name ) ) {
-
-                    continue;
-
+                try {
+                    response = JSON.parse(this.responseText);
+                    validJSON = true;
+                } catch (error) {
+                    response = {
+                        'Error': 'JSON parsing error: ' + this.responseText
+                    };
+                    validJSON = false;
                 }
 
-                var value = data[ name ];
+                if(statusCode !== 200) {
+                    deferred.reject('Unable to send the message');
+                } else if (response.Error !== undefined) {
+                    if (validJSON) {
+                        deferred.reject(response.Error);
+                    } else {
+                        deferred.reject('Unable to send the message.');
+                    }
+                } else {
+                    deferred.resolve('Message send');
+                }
+            };
 
-                buffer.push(
-                    encodeURIComponent( name ) +
-                    "=" +
-                    encodeURIComponent( ( value === null ) ? "" : value )
-                );
+            xhr.open('post', authentication.baseURL + '/eo/reply', true);
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+            xhr.setRequestHeader("Authorization", decrypted_token);
+            xhr.setRequestHeader("x-eo-uid", token_id);
+            xhr.send(fd);
 
-            }
-
-            // Serialize the buffer and clean it up for transportation.
-            var source = buffer
-                .join( "&" )
-                .replace( /%20/g, "+" )
-            ;
-
-            return( source );
-
+            return deferred.promise;
         }
-
-    }
-);
+    };
+});
