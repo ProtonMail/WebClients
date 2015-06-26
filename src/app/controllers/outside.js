@@ -9,6 +9,7 @@ angular.module("proton.controllers.Outside", [
     $state,
     $stateParams,
     $q,
+    $translate,
 
     authentication,
     Message,
@@ -66,7 +67,7 @@ angular.module("proton.controllers.Outside", [
             var publicKey = keys[message.SenderAddress];
             var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
             var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
-            
+
             $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
                 var data = {
                     'Body': result.Body,
@@ -78,7 +79,8 @@ angular.module("proton.controllers.Outside", [
                 };
 
                 Eo.reply(decrypted_token, token_id, data).then(function(result) {
-                    console.log(result);
+                    $state.go('eo.message');
+                    notify($translate.instant('MESSAGE_SENT'));
                 });
             });
         });
@@ -144,6 +146,10 @@ angular.module("proton.controllers.Outside", [
                     KeyPackets.push(new Blob([packets.keys]));
                     DataPacket.push(new Blob([packets.data]));
                     message.uploading = false;
+                    message.Attachments.push({
+                        Name: file.name,
+                        Size: file.size
+                    });
                 });
             });
         } else {
