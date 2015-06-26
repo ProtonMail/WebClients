@@ -9,6 +9,7 @@ angular.module("proton.controllers.Contacts", [
     $log,
     $translate,
     $stateParams,
+    $filter,
     contacts,
     Contact,
     confirmModal,
@@ -18,40 +19,62 @@ angular.module("proton.controllers.Contacts", [
     networkActivityTracker,
     notify
 ) {
-
     $scope.params = {
-        searchInput: $stateParams.words || '',
         searchContactInput: ''
     };
 
     $rootScope.pageName = "Contacts";
     $rootScope.user.Contacts = contacts.Contacts;
-    $scope.search = '';
     $scope.editing = false;
-
-    $scope.$on('searchContacts', function(event, value) {
-        $scope.search = value;
-    });
-
-    $scope.searchContacts = function() {
-        if($scope.params.searchContactInput.length > 0) {
-            $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
-        }
-        else {
-            $scope.search = undefined;
-        }
-    };
-
-    $scope.totalItems = $rootScope.user.Contacts.length;
     $scope.currentPage = 1;
     $scope.numPerPage = 40;
-    $scope.paginate = function(value) {
-        var begin, end, index;
-        begin = ($scope.currentPage - 1) * $scope.numPerPage;
-        end = begin + $scope.numPerPage;
-        index = $rootScope.user.Contacts.indexOf(value);
-        return (begin <= index && index < end);
+
+    $scope.contactsFiltered = function(searching) {
+        var contacts = $rootScope.user.Contacts;
+
+        function pagination(contacts) {
+            var begin, end;
+
+            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            end = begin + $scope.numPerPage;
+
+            return contacts.slice(begin, end);
+        }
+
+        function orderBy(contacts) {
+            var result = $filter('orderBy')(contacts, 'Name');
+
+            $scope.totalItems = result.length;
+
+            return result;
+        }
+
+        function search(contacts) {
+            return $filter('filter')(contacts, $scope.params.searchContactInput);
+        }
+
+        if(searching === true) {
+            $scope.currentPage = 1;
+        }
+
+        return pagination(orderBy(search($rootScope.user.Contacts)));
     };
+
+    $scope.contacts = $scope.contactsFiltered();
+
+    $scope.refreshContacts = function(searching) {
+        $scope.contacts = $scope.contactsFiltered(searching);
+    };
+
+    // $scope.paginate = function(value) {
+    //     var begin, end, index;
+    //
+    //     begin = ($scope.currentPage - 1) * $scope.numPerPage;
+    //     end = begin + $scope.numPerPage;
+    //     index = $rootScope.user.Contacts.indexOf(value);
+    //
+    //     return (begin <= index && index < end);
+    // };
 
     function openContactModal(title, name, email, save) {
         contactModal.activate({

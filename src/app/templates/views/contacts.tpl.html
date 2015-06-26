@@ -8,11 +8,11 @@
                 <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
                 <br><br>
                 <div class="input-group form-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
-                    <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" />
-                    <a href ng-click="params.searchContactInput = ''; searchContacts()">
+                    <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}" ng-change="refreshContacts(true)" />
+                    <a href ng-click="params.searchContactInput = '';refreshContacts(true)">
                         <i class="fa fa-times"></i>
                     </a>
-                </div>                
+                </div>
             </div>
             <div class="col-md-6 text-right form-group">
                 <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
@@ -21,14 +21,14 @@
                 <pagination
                 total-items="totalItems"
                 ng-model="currentPage"
+                ng-change="refreshContacts()"
                 max-size="10"
                 boundary-links="true"
                 items-per-page="numPerPage"
                 class="pagination-sm"
                 id="contactPagination">
-                </pagination>                
+                </pagination>
             </div>
-
             <div class="col-md-12">
                 <table class="table table-middle table-hover table-pm">
                     <thead>
@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="contact in user.Contacts | filter:search | filter:paginate | orderBy:'Name'">
+                        <tr ng-repeat="contact in contacts">
                             <td class="text-center hidden-xs">
                                 <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                             </td>
@@ -57,7 +57,7 @@
                                 </a>
                                 <a pt-tooltip="{{ 'COMPOSE' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
                                     <i class="fa fa-send"></i>
-                                </a>                                
+                                </a>
                             </td>
                         </tr>
                     </tbody>
