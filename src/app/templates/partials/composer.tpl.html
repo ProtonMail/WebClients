@@ -155,10 +155,10 @@
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">
-                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="togglePanel(message, 'encrypt')">
+                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-placement="right" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
                 </button>
-                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="togglePanel(message, 'expiration')">
+                <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-placement="right" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
                 </button>
                 <span class="text-muted" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>

@@ -1,4 +1,4 @@
-<div class="panel panel-default panel-sign-up wrap" ng-show="creating" id="signUpProcess">
+<div class="panel panel-default wrap" ng-show="creating" id="signUpProcess">
     <div class="panel-heading">
         <h1 class="text-center">Creating Account...</h1>
     </div>
@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<div class="panel panel-default panel-sign-up wrap" ng-hide="creating">
+<div class="panel panel-default wrap" ng-hide="creating">
     <div class="panel-heading">
         <h1 class="text-center">{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h1>
         <h4 class="text-center no-margin-bottom">{{ 'STEP_1_OF_2' | translate }}</h4>
@@ -83,7 +83,7 @@
             </div>
             
             <div class="form-group">
-                <em class="pull-right">({{ 'RECOMMANDED' | translate }})</em>
+                <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
                 <label for="notificationEmail">Notification / Recovery {{ 'EMAIL' | translate }}</label>
                 <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" tabindex="4" type="email" class="form-control" placeholder="Notification {{ 'EMAIL' | translate }}" validator="!!!tools.validEmail(account.notificationEmail)" ng-enter="saveContinue(step1)" pt-tooltip="This is used to recover your account if you get locked out or forget your login password." pt-placement="bottom" />
                 <div ng-show="step1.notificationEmail.$touched">

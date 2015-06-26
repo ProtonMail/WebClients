@@ -7,7 +7,8 @@
 .message-toolbar {
   $message-toolbar-bg: #fff;
   $color: invert($message-toolbar-bg);
-  background: $message-toolbar-bg;
+  @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
+  background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
   box-shadow: 0 1px rgba(0,0,0,.2);
   position: relative;
   z-index: 4;

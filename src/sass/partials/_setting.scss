@@ -1,6 +1,17 @@
 #logArea {
     clear: both;
 }
+#appearanceForm {
+    .radio {
+        padding-left: 2rem;
+        label,
+        input[type="radio"] {
+            line-height: 32px;
+            height: 32px;
+            margin: 0 0 0 -2rem;
+        }
+    }
+}
 #accessLog {
     .label {
         display: block;

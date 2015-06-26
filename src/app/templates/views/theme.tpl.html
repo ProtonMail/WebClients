@@ -1,24 +1,58 @@
 <ng-include src="'templates/partials/header.tpl.html'" id="header"></ng-include>
 <div id="content">
-    <div class="container-fluid">
+    <div class="container-fluid form-group">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-        <p class="alert alert-warning">
-            Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.
-        </p>
-        <p class="alert alert-warning">
-            We update our codebase constantly. Themes may be unstable or not work between updates.
-        </p>
+        <div class="row" id="appearanceForm">
+            <div class="col-md-6">
+                <legend>Message Buttons</legend>
+                <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="msgBtnMode" value="read" checked>
+                    <img src="/assets/img/1.png">
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="msgBtnMode" value="unread">
+                    <img src="/assets/img/2.png">
+                  </label>
+                </div>
+                <div class="clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <legend>Composer</legend>
+                <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="composerModeRadio" value="popout" checked>
+                    Popup
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="composerModeRadio" value="fullscreen">
+                    Maximized
+                  </label>
+                </div>
+                <div class="clearfix">
+                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                </div>
+            </div>
+        </div>        
         <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm">
-            <div class="well well-sm">
-                <div class="form-group" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
-                    <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                    <textarea class="form-control no-resize" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" required maxlength="200000"></textarea>
-                    <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
-                </div>
-                <div class="text-right">
-                    <button type="button" class="btn btn-sm btn-default" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
-                    <button type="submit" class="btn btn-sm btn-primary">{{ 'SAVE' | translate }}</button>
-                </div>
+            <legend>Custom Theme</legend>
+            <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
+                <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>            
+                <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
+                <textarea class="form-control no-resize" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" required maxlength="200000"></textarea>
+                <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-sm btn-default" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
+                <button type="submit" class="btn btn-sm btn-primary">{{ 'SAVE' | translate }}</button>
             </div>
         </form>
     </div>
