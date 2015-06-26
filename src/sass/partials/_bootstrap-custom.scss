@@ -39,6 +39,10 @@ body .input-group-addon {
     }
 }
 
+body .nav > li > a:focus {
+    background: initial;
+}
+
 body .form-control {
     font-size: $pm-font-size-base;
     &.dark {
