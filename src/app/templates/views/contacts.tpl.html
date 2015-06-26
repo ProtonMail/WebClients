@@ -3,21 +3,30 @@
 <div id="content">
     <div class="container-fluid margin-top">
         <div class="row">
-            <div class="col-md-4 form-group">
+            <div class="col-md-6 form-group">
                 <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
                 <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
-            </div>
-            <div class="col-md-4 form-group">
+                <br><br>
                 <div class="input-group form-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
                     <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" />
                     <a href ng-click="params.searchContactInput = ''; searchContacts()">
                         <i class="fa fa-times"></i>
                     </a>
-                </div>
+                </div>                
             </div>
-            <div class="col-md-4 text-right form-group">
+            <div class="col-md-6 text-right form-group">
                 <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
                 <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
+                <br><br>
+                <pagination
+                total-items="totalItems"
+                ng-model="currentPage"
+                max-size="10"
+                boundary-links="true"
+                items-per-page="numPerPage"
+                class="pagination-sm"
+                id="contactPagination">
+                </pagination>                
             </div>
 
             <div class="col-md-12">

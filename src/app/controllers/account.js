@@ -32,9 +32,9 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.resetMailboxInit = function() {
         $scope.showForm = true;
-        alert('hello');
+
     };
-    
+
     function generateKeys(userID, pass) {
 
         var deferred = $q.defer();
@@ -109,6 +109,15 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                 classes: 'notification-danger',
                                 message: error_message
                             });
+                            $scope.creating = false;
+                            return;
+                        }
+                        else if (parseInt(response.Available)===0) {
+                            notify({
+                                classes: 'notification-danger',
+                                message: 'Username taken.'
+                            });
+                            $scope.creating = false;
                             return;
                         }
 
