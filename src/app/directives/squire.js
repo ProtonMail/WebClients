@@ -11,7 +11,8 @@ angular.module("proton.squire", [
             placeholder: '@',
             editorClass: '@',
             ngModel: '=',
-            message: '='
+            message: '=',
+            hideAttachment: '@'
         },
         replace: true,
         transclude: true,
