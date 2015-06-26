@@ -1,5 +1,5 @@
 angular.module("proton.messages", [])
-    .service('messageCache', function($q, Message, CONSTANTS) {
+    .service('messageCache', function($q, Message, CONSTANTS, $rootScope) {
         var lists = [];
 
         var messagesToPreload = _.bindAll({
@@ -30,6 +30,20 @@ angular.module("proton.messages", [])
                     });
                 }, CONSTANTS.TIMEOUT_PRELOAD_MESSAGE);
             }
+        });
+
+
+
+        var inboxOneParams = {Location: 0, Page: 0};
+        var inboxTwoParams = {Location: 0, Page: 1};
+        var sentOneParams = {Location: 2, Page: 0};
+
+        var inboxOneMetaData = Message.query(inboxOneParams).$promise;
+        var inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
+        var sentOneMetaData = Message.query(sentOneParams).$promise;
+
+        $q.all([inboxOneMetaData, inboxTwoMetaData]).then(function(result) {
+                addMessageList(result[1]);
         });
 
         var cachedMessages = _.bindAll({
@@ -149,6 +163,20 @@ angular.module("proton.messages", [])
                 });
 
                 scope.$on("$destroy", unsubscribe);
+            },
+            query: function(params) {
+                if (_.isEqual(params, inboxOneParams)) {
+                    return inboxOneMetaData;
+                }
+                else if (_.isEqual(params, inboxTwoParams)) {
+                    return inboxTwoMetaData;
+                }
+                else if (_.isEqual(params, sentOneParams)) {
+                    return sentOneMetaData;
+                }
+                else {
+                    return Message.query(params).$promise;
+                }
             },
             get: function(id) {
                 var msg = cachedMessages.get(id);
