@@ -4,6 +4,8 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
+        <h1 class="securityTitle">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
+
         <div class="btn-group pull-right" ng-hide="doLogging == 0">
             <a class="btn btn-default" ng-click="clearLogs()">
                 <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
@@ -15,8 +17,6 @@
                 <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
             </a>
         </div>
-
-        <h1 class="securityTitle pull-left">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
 
         <a
         href
@@ -59,6 +59,7 @@
                         <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <td ng-show="doLogging == 2">
                             <kbd ng-show="log.IP!==''">{{log.IP}}</kbd>
+                            <kbd ng-show="log.IP===''">--</kbd>
                         </td>
                     </tr>
                 </tbody>

@@ -27,28 +27,32 @@
 		padding: 0 10px;
 	}
 	#main {
-		padding-left: ($sidebar-width)*.3;
+		padding-left: ($sidebar-width)*.5;
 		&.eo {
 			padding: 0;
 		}
+		&.fixed {
+			display: block;
+			position: static;
+		}
 	}
 	#dragOverlay {
-		left: ($sidebar-width)*.3;
+		left: ($sidebar-width)*.5;
 	}
 	#sidebar {
-		width: ($sidebar-width)*.3;
+		width: ($sidebar-width)*.5;
 		.list-group-item {
 			.btn {
-				line-height: ($row-height*1.5);
+				line-height: ($row-height*2);
 				text-align: center;
 				&.btn-composer {
-					height: 5rem;
-  					line-height: 5rem;
+					height: 6rem;
+  					line-height: 6rem;
 				}
 			}
 			.fa {
 				margin-right: 0;
-				font-size: 1.5rem;
+				font-size: 2rem;
 			}
 		}
 	}
