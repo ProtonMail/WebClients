@@ -3,6 +3,7 @@ angular.module("proton.event", [])
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
+		var UPDATE_FLAG = 3;
 		var EVENT_ID = "proton:eventid";
 		var eventModel = {
 			get: function() {
@@ -59,7 +60,7 @@ angular.module("proton.event", [])
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
-					this.manageCounter(data.Unread);
+					// this.manageCounter(data.Unread);
 					this.manageMessages(data.Messages);
 					this.manageID(data.EventID);
 				}

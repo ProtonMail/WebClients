@@ -14,8 +14,7 @@ angular.module("proton.controllers.Auth", [
     localStorageService,
     networkActivityTracker,
     notify,
-    pmcw,
-    eventManager
+    pmcw
 ) {
 
     $rootScope.pageName = "Login";

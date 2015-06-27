@@ -4,6 +4,7 @@ angular.module("proton.messages", [])
         var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
+		var UPDATE_FLAG = 3;
 
         var messagesToPreload = _.bindAll({
             fetching: false,
@@ -163,35 +164,28 @@ angular.module("proton.messages", [])
                 scope.$on("$destroy", unsubscribe);
             },
             start: function() {
-                var deferred = $q.defer();
+                inboxOneMetaData = Message.query(inboxOneParams).$promise;
+                inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
+                sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                if(cachedMessages.inbox && cachedMessages.sent) {
-                    deferred.resolve();
-                } else {
-                    inboxOneMetaData = Message.query(inboxOneParams).$promise;
-                    inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
-                    sentOneMetaData = Message.query(sentOneParams).$promise;
+                $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
+                        addMessageList(result.inboxOne);
+                        addMessageList(result.inboxTwo);
 
-                    $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                            addMessageList(result.inboxOne);
-                            addMessageList(result.inboxTwo);
+                        cachedMessages.inbox = result.inboxOne.concat(result.inboxTwo);
+                        cachedMessages.sent = result.sentOne;
 
-                            cachedMessages.inbox = result.inboxOne.concat(result.inboxTwo);
-                            cachedMessages.sent = result.sentOne;
-
-                            deferred.resolve();
-                    });
-                }
-
-                return deferred.promise;
+                        deferred.resolve();
+                });
             },
             set: function(messages) {
+                console.log(messages);
                 var currentLocation = tools.getCurrentLocation();
 
                 _.each(messages, function(message) {
                     var inInbox = message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
                     var inSent = message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.sent;
-                    var location = function() {
+                    var getLocation = function() {
                         if(_.where(cachedMessages.inbox, {ID: message.ID}).length > 0) {
                             return 'inbox';
                         } else if(_.where(cachedMessages.sent, {ID: message.ID}).length > 0) {
@@ -200,16 +194,18 @@ angular.module("proton.messages", [])
                             return false;
                         }
                     };
-
-                    if(location) {
+                    var loc = getLocation();
+                    if(loc) {
                         if(message.Action === DELETE) {
-                            messageCache[location] = _.filter(messageCache[location], function(m) { return m.ID !== message.ID; });
+                            cachedMessages[loc] = _.filter(cachedMessages[loc], function(m) { return m.ID !== message.ID; });
                         } else if(message.Action === CREATE) {
-                            messageCache[location].push(message.Message);
-                            messageCache[inbox].pop();
-                        } else if (message.Action === UPDATE) {
-                            var index = _.findIndex(messageCache[location], function(m) { return m.ID === message.Message.ID; });
-                            messageCache[location][index] = _.extend(messageCache[location][index], message);
+                            cachedMessages[loc].push(message.Message);
+                            cachedMessages[loc].pop();
+                        } else if (message.Action === UPDATE_FLAG) {
+                            console.log(loc, cachedMessages);
+                            var index = _.findIndex(cachedMessages[loc], function(m) { return m.ID === message.ID; });
+                            console.log(index);
+                            cachedMessages[loc][index] = _.extend(cachedMessages[loc][index], message.Message);
                         }
                     }
                 });
@@ -217,36 +213,37 @@ angular.module("proton.messages", [])
             query: function(params) {
                 var deferred = $q.defer();
 
-                this.start().then(function() {
-                    if (_.isEqual(params, inboxOneParams)) {
-                        if(cachedMessages.inbox === null) {
-                            return inboxOneMetaData;
-                        } else {
-                            deferred.resolve(cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE - 1));
-                            return deferred.promise;
-                        }
+                if (_.isEqual(params, inboxOneParams)) {
+                    if(cachedMessages.inbox === null) {
+                        this.start();
+                        return inboxOneMetaData;
+                    } else {
+                        deferred.resolve(cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE - 1));
+                        return deferred.promise;
                     }
-                    else if (_.isEqual(params, inboxTwoParams)) {
-                        if(cachedMessages.inbox === null) {
-                            return inboxTwoMetaData;
-                        } else {
-                            deferred.resolve(cachedMessages.inbox.slice(-CONSTANTS.MESSAGES_PER_PAGE));
-                            return deferred.promise;
-                        }
+                }
+                else if (_.isEqual(params, inboxTwoParams)) {
+                    if(cachedMessages.inbox === null) {
+                        this.start();
+                        return inboxTwoMetaData;
+                    } else {
+                        deferred.resolve(cachedMessages.inbox.slice(-CONSTANTS.MESSAGES_PER_PAGE));
+                        return deferred.promise;
                     }
-                    else if (_.isEqual(params, sentOneParams)) {
-                        if(cachedMessages.sent === null) {
-                            return sentOneMetaData;
-                        } else {
-                            deferred.resolve(cachedMessages.sent);
-                            return deferred.promise;
-                        }
+                }
+                else if (_.isEqual(params, sentOneParams)) {
+                    if(cachedMessages.sent === null) {
+                        this.start();
+                        return sentOneMetaData;
+                    } else {
+                        deferred.resolve(cachedMessages.sent);
+                        return deferred.promise;
                     }
-                    else {
-                        console.log('query message');
-                        return Message.query(params).$promise;
-                    }
-                });
+                }
+                else {
+                    console.log('query message');
+                    return Message.query(params).$promise;
+                }
             },
             get: function(id) {
                 var msg = cachedMessages.get(id);
