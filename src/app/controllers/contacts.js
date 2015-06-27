@@ -28,6 +28,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.editing = false;
     $scope.currentPage = 1;
     $scope.numPerPage = 40;
+    $scope.sortBy = 'Name';
 
     $scope.contactsFiltered = function(searching) {
         var contacts = $rootScope.user.Contacts;
@@ -42,7 +43,7 @@ angular.module("proton.controllers.Contacts", [
         }
 
         function orderBy(contacts) {
-            var result = $filter('orderBy')(contacts, 'Name');
+            var result = $filter('orderBy')(contacts, $scope.sortBy);
 
             $scope.totalItems = result.length;
 
@@ -64,6 +65,11 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.refreshContacts = function(searching) {
         $scope.contacts = $scope.contactsFiltered(searching);
+    };
+
+    $scope.setSortBy = function(sort) {
+        $scope.sortBy = sort;
+        $scope.refreshContacts();
     };
 
     function openContactModal(title, name, email, save) {

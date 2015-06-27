@@ -84,6 +84,9 @@
                 <div>
                     <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
                 </div>
+                <div>
+                    <a href="https://support.protonmail.ch/knowledge-base/autosave-contact-list" target="_blank" class="btn btn-link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                </div>
                 <legend class="margin-top">DISPLAY NAME</legend>
                 <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
@@ -116,7 +119,7 @@
                             <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
                                 <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
                                     <div as-sortable-item-handle="">
-                                        <i class="fa fa-sort"></i> 
+                                        <i class="fa fa-sort"></i>
                                         {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
                                     </div>
                                 </li>

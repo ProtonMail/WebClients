@@ -20,13 +20,13 @@
                 </div>
             </div>
             <div class="composer-header row">
-                <span class="col-xs-6">{{message.Subject}} &nbsp;</span>
-                <span class="col-xs-6 text-right">
+                <span class="col-xs-8">{{message.Subject}} &nbsp;</span>
+                <span class="col-xs-4 text-right">
                     <a
                     href
                     ng-show="!!!message.minimized"
                     class="btn btn-sm minimize-button hidden-xs"
-                    ng-click="normalize(message); minimize(message)" 
+                    ng-click="normalize(message); minimize(message)"
                     pt-tooltip="{{ 'MINIMIZE' | translate }}"
                     pt-placement="left">
                         <i class="fa fa-minus"></i>
