@@ -4,8 +4,6 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-        <pre>{{ user.PublicKey }}</pre>
-        <pre>{{ user.EncPrivateKey }}</pre>
         <div class="btn-group pull-right" ng-hide="doLogging == 0">
             <a class="btn btn-default" ng-click="clearLogs()">
                 <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
@@ -29,7 +27,7 @@
         </a>
 
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">Disabled</button>
+            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</button>
             <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 1}" ng-click="setLogging(1)">Basic Logging</button>
             <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 2}" ng-click="setLogging(2)">Advanced Logging</button>
         </div>

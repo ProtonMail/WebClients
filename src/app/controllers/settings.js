@@ -39,6 +39,11 @@ angular.module("proton.controllers.Settings", [
     $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
     $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
     $scope.selectedLanguage = 'English';
+    $scope.disabledText = $translate.instant('DISABLE');
+
+    if (parseInt($scope.doLogging)===0) {
+        $scope.disabledText = $translate.instant('DISABLED');
+    }
 
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
@@ -416,7 +421,6 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.setLogging = function(value) {
-        console.log('...',value);
         if(value === 0) {
             confirmModal.activate({
                 params: {
@@ -427,6 +431,7 @@ angular.module("proton.controllers.Settings", [
                         user.LogAuth = 0;
                         notify('Logging Preference Updated');
                         confirmModal.deactivate();
+                        $scope.disabledText = $translate.instant('DISABLED');
                     },
                     cancel: function() {
                         confirmModal.deactivate();
@@ -438,6 +443,7 @@ angular.module("proton.controllers.Settings", [
             user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
             notify('Logging Preference Updated');
+            $scope.disabledText = $translate.instant('DISABLE');
         }
     };
 
