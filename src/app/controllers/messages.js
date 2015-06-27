@@ -176,6 +176,16 @@ angular.module("proton.controllers.Messages", [
         }
     };
 
+    $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
+    
+    $scope.refreshMessagesCache = function () {
+        var mailbox = $state.current.name.replace('secured.', '');
+        var params = $scope.getMessagesParameters(mailbox);
+        messageCache.query(params).then(function(messages) {
+            $scope.messages = messages;
+        });
+    };
+
     $scope.showTo = function(message) {
         return (
             $scope.senderIsMe(message) &&

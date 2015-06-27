@@ -1,5 +1,5 @@
 angular.module("proton.event", [])
-	.service("eventManager", function ($interval, $state, $stateParams, Contact, CONSTANTS, Events, messageCache) {
+	.service("eventManager", function ($interval, $state, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache) {
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -25,17 +25,19 @@ angular.module("proton.event", [])
 				});
 			},
 			manageContacts: function(contacts) {
-				_.each(contacts, function(contact) {
-					if(contact.Action === DELETE) {
-						authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.Contact.ID; });
-					} else if(contact.Action === CREATE) {
-						authentication.user.Contacts.push(contact.Contact);
-					} else if (contact.Action === UPDATE) {
-						var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
-						authentication.user.Contacts[index] = contact.Contact;
-					}
-					Contact.index.updateWith(authentication.user.Contacts);
-				});
+				if (angular.isDefined(contacts)) {
+					_.each(contacts, function(contact) {
+						if(contact.Action === DELETE) {
+							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.Contact.ID; });
+						} else if(contact.Action === CREATE) {
+							authentication.user.Contacts.push(contact.Contact);
+						} else if (contact.Action === UPDATE) {
+							var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
+							authentication.user.Contacts[index] = contact.Contact;
+						}
+						Contact.index.updateWith(authentication.user.Contacts);
+					});
+				}
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
@@ -48,14 +50,17 @@ angular.module("proton.event", [])
 				}
 			},
 			manageMessages: function(messages) {
-				// Update caching
-				messageCache.set(messages);
+				if (angular.isDefined(messages)) {
+					messageCache.set(messages);
+				}
 			},
 			manageID: function(id) {
+				console.log('managingID', id);
 				this.ID = id;
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
+				console.log(data);
 				if (this.isDifferent(data.EventID)){
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
