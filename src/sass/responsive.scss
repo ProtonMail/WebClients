@@ -19,12 +19,62 @@
 	.message-toolbar > ul > li > a {
 		padding: 0 .75rem;
 	}
+	body .composer.maximized {
+        left: ($sidebar-width)*.9;
+        top: 6rem !important;
+    }
+}
+
+// CSSUA
+.cssua.ua.mobile {
+	#main.fixed,
+	#main.fixed #content, 
+	#main.fixed #message-content {
+		display: block;
+		position: static;
+	}
 }
 
 // Tablet
 @media screen and (max-width: 991px) {
+	body .composer .composer-header {
+		background: #222;
+	}
+	body #navbar li a {
+		padding: 0 2rem;
+		line-height: 6rem;
+		height: 6rem;
+	}
+	body table.message-list tr td.recipient {
+		width: 14rem;
+	}
+	table .size {
+		display: none;
+	}
+	body #messageActionGroup .btn {
+		padding: 0 3rem;
+	}
+	html body .navbar-inverse {
+		background-color: #333;
+	}
 	.message-toolbar > ul > li > a {
 		padding: 0 10px;
+	}
+	#searchMob {
+		margin: 0;
+		width: 10rem;
+		background-color: #404040;
+		.fa {
+			font-size: 2rem;
+		}
+	}
+	#searchMob,
+	.secure #navbar {
+		height: 6rem;
+		line-height: 6rem;
+		.container-fluid {
+			padding-left: 0;
+		}
 	}
 	#main {
 		padding-left: ($sidebar-width)*.5;
@@ -35,6 +85,13 @@
 			display: block;
 			position: static;
 		}
+	}
+	body .composer.maximized {
+        left: ($sidebar-width)*.5;
+    }
+	#main.fixed #content, 
+	#main.fixed #message-content {
+		display: block;
 	}
 	#dragOverlay {
 		left: ($sidebar-width)*.5;
@@ -57,6 +114,7 @@
 		}
 	}
 }
+
 @media screen and (max-width: 767px) {
 	#sidebar,
 	.message-toolbar {

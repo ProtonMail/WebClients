@@ -888,6 +888,16 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.initMessage = function(message) {
+
+        // if tablet we maximize by default
+        if (tools.findBootstrapEnvironment()==='sm') {
+            if ($scope.messages.length>0) {
+                notify.closeAll();
+                notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));                
+                return;
+            }
+        }
+
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.focusComposer(message);
@@ -910,6 +920,7 @@ angular.module("proton.controllers.Messages", [
             message.selectFile = function() {
                 $('#' + message.button).click();
             };
+
         }, 10);
     }; 
 

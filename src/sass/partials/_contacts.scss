@@ -1,6 +1,21 @@
 #contactPagination {
   margin: 0 15px;
 }
+.actionsTh {
+  width: 13rem;
+}
+.checkboxTh {
+  width: 2rem;
+}
+#contactsTable {
+  table-layout: fixed;  
+}
+#contactsTable tbody td span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
 #contactSearchGroup {
   position: relative;
   a {

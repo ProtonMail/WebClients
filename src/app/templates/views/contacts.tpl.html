@@ -30,10 +30,10 @@
                 </pagination>
             </div>
             <div class="col-md-12">
-                <table class="table table-middle table-hover table-pm">
+                <table class="table table-middle table-hover table-pm" id="contactsTable">
                     <thead>
                         <tr>
-                            <th class="text-center hidden-xs">
+                            <th class="text-center hidden-xs checkboxTh">
                                 <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
                             </th>
                             <th>
@@ -46,7 +46,7 @@
                                 <a href="" ng-click="setSortBy('Email')" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-caret-up"></i></a>
                                 <a href="" ng-click="setSortBy('-Email')" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-caret-down"></i></a>
                             </th>
-                            <th>{{ 'ACTIONS' | translate }}</th>
+                            <th class="text-right actionsTh">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,8 +54,12 @@
                             <td class="text-center hidden-xs">
                                 <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
                             </td>
-                            <td>{{ contact.Name }}</td>
-                            <td class="text-muted">{{ contact.Email }}</td>
+                            <td>
+                                <span>{{ contact.Name }}</span>
+                            </td>
+                            <td class="text-muted">
+                                <span>{{ contact.Email }}</span>
+                            </td>
                             <td class="text-right">
                                 <a pt-tooltip="{{ 'EDIT' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="editContact(contact)">
                                     <i class="fa fa-edit"></i>
