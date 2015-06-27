@@ -92,7 +92,8 @@ angular.module("proton", [
     networkActivityTracker,
     notify,
     $state,
-    tools
+    tools,
+    authentication
 ) {
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
@@ -113,6 +114,19 @@ angular.module("proton", [
     //         $('#sidebar .list-group').eq(3).after('<div class="divider"></div><ul class="list-group"><li class="list-group-item"><a class="btn" ui-sref="secured.settings" ui-sref-active="active" href="/settings"><span class="fa fa-cog"></span> <span class="hidden-xs hidden-sm ng-binding">Settings</span></a></li></ul>');
     //     }, 3000);
     // });
+    
+    $rootScope.firstNameOnly = function() {
+        var firstNameOnly;
+        var emailFirst = authentication.user.DisplayName.split('@');
+        if (emailFirst[0]===authentication.user.Name) {
+            firstNameOnly = emailFirst[0];
+        }
+        else {
+            firstNameOnly = authentication.user.DisplayName.split(' ');
+            firstNameOnly = firstNameOnly[0];
+        }
+        return firstNameOnly;
+    };
 
     $rootScope.browser = tools.getBrowser;
     $rootScope.terminal = false;

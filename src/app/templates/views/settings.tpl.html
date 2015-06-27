@@ -88,7 +88,7 @@
                 <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
                         <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
-                        <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" required="" />
+                        <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" />
                     </div>
                     <div class="clearfix">
                         <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
