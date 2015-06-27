@@ -1,12 +1,12 @@
 angular.module("proton.event", [])
-	.service("eventManager", function ($interval, $state, $stateParams, Contact, CONSTANTS, Events) {
+	.service("eventManager", function ($interval, $state, $stateParams, Contact, CONSTANTS, Events, messageCache) {
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
 		var EVENT_ID = "proton:eventid";
 		var eventModel = {
 			get: function() {
-				return Events.get(this.ID).$promise;
+				return Events.get(this.ID);
 			},
 			isDifferent: function (eventID) {
 				return this.ID !== eventID;
@@ -54,14 +54,14 @@ angular.module("proton.event", [])
 				this.ID = id;
 				window.sessionStorage[EVENT_ID] = id;
 			},
-			manage: function (result) {
-				if (this.isDifferent(result.EventID)){
-					this.manageLabels(result.Labels);
-					this.manageContacts(result.Contacts);
-					this.manageUser(result.User);
-					this.manageCounter(result.Unread);
-					this.manageMessages(result.Messages);
-					this.manageID(result.EventID);
+			manage: function (data) {
+				if (this.isDifferent(data.EventID)){
+					this.manageLabels(data.Labels);
+					this.manageContacts(data.Contacts);
+					this.manageUser(data.User);
+					this.manageCounter(data.Unread);
+					this.manageMessages(data.Messages);
+					this.manageID(data.EventID);
 				}
 			}
 		};
@@ -70,7 +70,7 @@ angular.module("proton.event", [])
 					eventModel.ID = window.sessionStorage[EVENT_ID];
 					eventModel.promiseCancel = $interval(function () {
 						eventModel.get().then(function (result) {
-							eventModel.manage(result);
+							eventModel.manage(result.data);
 						});
 					}, CONSTANTS.INTERVAL_EVENT_TIMER);
 				},
