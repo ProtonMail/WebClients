@@ -38,18 +38,9 @@ angular.module("proton.messages", [])
         var inboxOneParams = {Location: 0, Page: 0};
         var inboxTwoParams = {Location: 0, Page: 1};
         var sentOneParams = {Location: 2, Page: 0};
-
-        var inboxOneMetaData = Message.query(inboxOneParams).$promise;
-        var inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
-        var sentOneMetaData = Message.query(sentOneParams).$promise;
-
-        $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                addMessageList(result.inboxOne);
-                addMessageList(result.inboxTwo);
-
-                cachedMessages.inbox = result.inboxOne.concat(result.inboxTwo);
-                cachedMessages.sent = result.sentOne;
-        });
+        var inboxOneMetaData;
+        var inboxTwoMetaData;
+        var sentOneMetaData;
 
         var cachedMessages = _.bindAll({
             cache: {},
@@ -171,6 +162,29 @@ angular.module("proton.messages", [])
 
                 scope.$on("$destroy", unsubscribe);
             },
+            start: function() {
+                var deferred = $q.defer();
+
+                if(cachedMessages.inbox && cachedMessages.sent) {
+                    deferred.resolve();
+                } else {
+                    inboxOneMetaData = Message.query(inboxOneParams).$promise;
+                    inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
+                    sentOneMetaData = Message.query(sentOneParams).$promise;
+
+                    $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
+                            addMessageList(result.inboxOne);
+                            addMessageList(result.inboxTwo);
+
+                            cachedMessages.inbox = result.inboxOne.concat(result.inboxTwo);
+                            cachedMessages.sent = result.sentOne;
+
+                            deferred.resolve();
+                    });
+                }
+
+                return deferred.promise;
+            },
             set: function(messages) {
                 var currentLocation = tools.getCurrentLocation();
 
@@ -203,33 +217,36 @@ angular.module("proton.messages", [])
             query: function(params) {
                 var deferred = $q.defer();
 
-                if (_.isEqual(params, inboxOneParams)) {
-                    if(cachedMessages.inbox === null) {
-                        return inboxOneMetaData;
-                    } else {
-                        deferred.resolve(cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE - 1));
-                        return deferred.promise;
+                this.start().then(function() {
+                    if (_.isEqual(params, inboxOneParams)) {
+                        if(cachedMessages.inbox === null) {
+                            return inboxOneMetaData;
+                        } else {
+                            deferred.resolve(cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE - 1));
+                            return deferred.promise;
+                        }
                     }
-                }
-                else if (_.isEqual(params, inboxTwoParams)) {
-                    if(cachedMessages.inbox === null) {
-                        return inboxTwoMetaData;
-                    } else {
-                        deferred.resolve(cachedMessages.inbox.slice(-CONSTANTS.MESSAGES_PER_PAGE));
-                        return deferred.promise;
+                    else if (_.isEqual(params, inboxTwoParams)) {
+                        if(cachedMessages.inbox === null) {
+                            return inboxTwoMetaData;
+                        } else {
+                            deferred.resolve(cachedMessages.inbox.slice(-CONSTANTS.MESSAGES_PER_PAGE));
+                            return deferred.promise;
+                        }
                     }
-                }
-                else if (_.isEqual(params, sentOneParams)) {
-                    if(cachedMessages.sent === null) {
-                        return sentOneMetaData;
-                    } else {
-                        deferred.resolve(cachedMessages.sent);
-                        return deferred.promise;
+                    else if (_.isEqual(params, sentOneParams)) {
+                        if(cachedMessages.sent === null) {
+                            return sentOneMetaData;
+                        } else {
+                            deferred.resolve(cachedMessages.sent);
+                            return deferred.promise;
+                        }
                     }
-                }
-                else {
-                    return Message.query(params).$promise;
-                }
+                    else {
+                        console.log('query message');
+                        return Message.query(params).$promise;
+                    }
+                });
             },
             get: function(id) {
                 var msg = cachedMessages.get(id);
