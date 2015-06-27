@@ -509,7 +509,7 @@ angular.module("proton.controllers.Messages", [
             function(result) {
                 $rootScope.$broadcast('updateCounters');
                 $rootScope.$broadcast('refreshMessages', true, true);
-                notify($translate.instant('FOLDER EMPTIED'));
+                notify($translate.instant('FOLDER_EMPTIED'));
             },
             function(result) {
                 $scope.emptying = false;
