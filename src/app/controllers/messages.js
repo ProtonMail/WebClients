@@ -1658,6 +1658,7 @@ angular.module("proton.controllers.Messages", [
         message.IsRead = 0;
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
+        $scope.goToMessageList();
     };
 
     $scope.toggleImages = function() {
