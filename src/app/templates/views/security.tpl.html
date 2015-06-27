@@ -4,6 +4,8 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
+        <pre>{{ user.PublicKey }}</pre>
+        <pre>{{ user.EncPrivateKey }}</pre>
         <div class="btn-group pull-right" ng-hide="doLogging == 0">
             <a class="btn btn-default" ng-click="clearLogs()">
                 <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}

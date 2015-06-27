@@ -11,6 +11,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     authentication,
     networkActivityTracker,
     User,
+    Reset,
     pmcw,
     tools,
     localStorageService,
@@ -28,11 +29,34 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.Redirect = false;
 
     $scope.account = [];
+    $scope.resetMailboxToken = $rootScope.resetMailboxToken;
+    if ($scope.resetMailboxToken!==undefined) {
+        $scope.showForm = true;
+    }
+    else {
+        $scope.showForm = false;
+    }
 
 
     $scope.resetMailboxInit = function() {
-        $scope.showForm = true;
-
+        var promise = Reset.getMailboxResetToken().then(
+            function(response) {
+                if (response.data.Error || response.data.Code !== 1000) { 
+                    notify(response.data.Error);
+                }
+                else {
+                    if (response.data.Token) {
+                        $rootScope.resetMailboxToken = response.data.Token;
+                    }
+                    $scope.showForm = true;
+                    return;
+                }
+            },
+            function() {
+                notify('Unable to reset password. Please try again in a few minutes.');
+            }
+        );
+        networkActivityTracker.track(promise);
     };
 
     function generateKeys(userID, pass) {
@@ -250,6 +274,11 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.resetMailbox = function(form) {
         if (form.$valid) {
 
+            if ($rootScope.resetMailboxToken===undefined) {
+                notify('Missing reset token.');
+                return;
+            }
+
             $scope.startGen = true;
 
             networkActivityTracker.track(
@@ -262,29 +291,53 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                         var params = {
                             "PublicKey": $scope.account.PublicKey,
                             "PrivateKey": $scope.account.PrivateKey,
+                            "Token": $rootScope.resetMailboxToken
                         };
 
-                        return User.updateKeys(params).$promise.then(
+                        return Reset.resetMailbox(params).then(
                             function(response) {
-                                return authentication.unlockWithPassword($scope.account.mailboxPassword).then(
-                                    function() {
 
-                                        $scope.saved   = true;
+                                if (response.status !== 200) {
+                                    notify('Error, try again in a few minutes.');
+                                    $scope.startGen = false;
 
-                                        // var deferred = $q.defer();
-                                        // return deferred.promise;
+                                    return;
+                                }
+                                else if (response.data.Error) {
+                                    if (response.data.ErrorDescription!=='') {
+                                        notify(response.data.ErrorDescription);
+                                        $scope.startGen = false;
 
-                                        localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-
-                                        setTimeout( function() {
-                                            $scope.Redirect   = true;
-                                            $state.go("secured.inbox");
-                                        }, 500);
-                                    },
-                                    function(err) {
-                                        $scope.error = err;
+                                        return;
                                     }
-                                );
+                                    else {
+                                        notify(response.data.Error);
+                                        $scope.startGen = false;
+
+                                        return;
+                                    }
+                                }
+                                else {
+                                    return authentication.unlockWithPassword($scope.account.mailboxPassword).then(
+                                        function() {
+
+                                            $scope.saved   = true;
+
+                                            // var deferred = $q.defer();
+                                            // return deferred.promise;
+
+                                            localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+
+                                            setTimeout( function() {
+                                                $scope.Redirect   = true;
+                                                $state.go("secured.inbox");
+                                            }, 500);
+                                        },
+                                        function(err) {
+                                            $scope.error = err;
+                                        }
+                                    );
+                                }
                             },
                             function(response) {
                                 var error_message = (response.data.Error) ? response.data.Error : (response.statusText) ? response.statusText : 'Error.';

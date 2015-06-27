@@ -16,14 +16,14 @@
     </div>
 
 
-    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '') && !startGen">
+    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '') && !startGen && (resetMailboxToken===undefined)">
         <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
         We've sent a confirmation email to your 'Recovery / Notification' email address with instructions for resetting your Mailbox.</p>
     </div>
 
-    <div class="panel-body" ng-show="(showForm && user.NotificationEmail == '') && !startGen">
+    <div class="panel-body" ng-show="((showForm && user.NotificationEmail == '') || resetMailboxToken) && !startGen">
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
