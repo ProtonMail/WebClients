@@ -102,7 +102,7 @@
                 <legend>SIGNATURE</legend>
                 <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                        <label class="signature" for="signature">{{ 'SIGNATURE' | translate }}</label>
+                        <label class="signature" for="signature">{{ 'SIGNATURE_CONTENT' | translate }}</label>
                         <squire hide-attachment="true" id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
                     </div>
                     <div class="clearfix">
