@@ -153,6 +153,9 @@
         li:not(:last-child) {
           border-bottom: 1px solid #ddd;
         }
+        .label {
+          padding: .4rem;
+        }
         li > a {
           padding: 8px 40px 8px 10px;
           position: relative;
