@@ -3,6 +3,9 @@
   border: none;
   color: #fff;
   box-shadow: inset 1px 0 0 rgba(0,0,0,.25);
+  &:focus {
+    background: $primary-color;
+  }
 }
 .message-toolbar {
   $message-toolbar-bg: #fff;
