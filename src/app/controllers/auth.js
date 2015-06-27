@@ -97,7 +97,6 @@ angular.module("proton.controllers.Auth", [
                 function() {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
-                    eventManager.start(authentication.user.EventID);
                     $state.go("secured.inbox");
                 },
                 function(err) {
@@ -127,10 +126,13 @@ angular.module("proton.controllers.Auth", [
 .controller("SecuredController", function(
     $scope,
     $rootScope,
-    authentication
+    authentication,
+    eventManager
 ) {
     $scope.user = authentication.user;
     $scope.logout = authentication.logout;
+
+    eventManager.start(authentication.user.EventID);
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;

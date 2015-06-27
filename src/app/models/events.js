@@ -1,8 +1,8 @@
 angular.module("proton.models.events", [])
-	.factory("Events", function ($http) {
+	.factory("Events", function ($http, authentication) {
 		return {
-			get: function (eventID) {
-				return $http.get(authentication.baseURL + '/events/' + eventID);
+			get: function (id) {
+				return $http.get(authentication.baseURL + '/events/' + id);
 			}
 		};
 	});

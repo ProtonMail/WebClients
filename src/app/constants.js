@@ -15,7 +15,7 @@ angular.module('proton.constants', [])
     ENC_OUT_ENC: 3, // encrypted for outside
     ENC_OUT_PLAIN: 4, // sent plain but stored enc
     ENC_STORED_ENC: 5, // such as draft
-    INTERVAL_EVENT_TIMER: 15,
+    INTERVAL_EVENT_TIMER: 5000,
     TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
     SAVE_TIMEOUT_TIME: 3000, // 3 seconds
