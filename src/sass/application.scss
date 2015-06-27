@@ -37,7 +37,6 @@ body {
     position: relative;
     min-height: 100%;
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 .secure #body {
@@ -363,4 +362,3 @@ tr.selected td {
 @import "responsive";
 @import "print";
 @import "partials/custom-browser-fixes";
-
