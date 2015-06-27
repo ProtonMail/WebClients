@@ -537,11 +537,11 @@ form#compose {
     background-color: #fff;
     box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
     position: fixed;
-    bottom: 1rem;
-    right: 2rem;
+    bottom: 2rem;
+    right: 1.5rem;
     width: 480px;
     z-index: 6;
-    // transition: right 600ms linear, opacity 200ms linear;
+    transition: bottom 100ms linear;
     border-radius: $border-radius-base*2;
 
     &.maximized {
@@ -610,6 +610,8 @@ form#compose {
 
     &.blur {
         background: $base-color-dark !important;
+        bottom: 1rem;
+        transition: none;        
         .composer-header {
             background-color: lighten($panel-header, 10%);
         }

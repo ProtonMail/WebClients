@@ -79,7 +79,9 @@
     <div class="storage">
         <ul class="list-group info hidden-xs hidden-sm">
             <li>
-                <span class="sizebar">{{ 'STORAGE' | translate }}:
+                <span class="sizebar">
+                    <a href="" pt-placement="top" pt-tooltip="At this time the maximum size of your inbox is {{ user.MaxSpace | humanSize }}. ProtonMail will offer premium features for purchase in the future, including additional storage."><i class="fa fa-info-circle"></i></a>
+                    {{ 'STORAGE' | translate }}:
                     <span class="pull-right">{{ renderStorageBar() }}</span>
                 </span>
             </li>

@@ -107,11 +107,11 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         };
     };
 
-    $rootScope.$on('openSearchModal', function(event, value) {
+    $scope.$on('openSearchModal', function(event, value) {
         $scope.open(value);
     });
 
-    $rootScope.$on('search', function(event, searchValue) {
+    $scope.$on('search', function(event, searchValue) {
         $scope.search(searchValue);
     });
 });

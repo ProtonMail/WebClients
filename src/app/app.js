@@ -209,7 +209,7 @@ angular.module("proton", [
                 $('#content').animate({
                     scrollTop: $("#pageBottom").offset().top
                 }, 1);
-            }, 100);
+            }, 10);
             $rootScope.scrollToBottom = false;
         }
         $('#loading-css').remove();

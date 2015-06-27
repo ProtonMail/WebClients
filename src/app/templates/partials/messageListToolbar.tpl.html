@@ -15,9 +15,9 @@
             <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye-slash"></i>
             </a>
-        </li>        
+        </li>
         <li
-        ng-if="pageName != 'archive'"
+        ng-if="pageName != 'archive' && pageName != 'drafts'"
         pt-tooltip="{{ 'ARCHIVE' | translate }}"
         pt-placement="bottom">
             <a
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'inbox' && pageName != 'sent' && pageName != 'starred'"
+        ng-if="pageName != 'inbox' && pageName != 'sent' && pageName != 'starred' && pageName != 'drafts'"
         pt-tooltip="{{ 'INBOX' | translate }}"
         pt-placement="bottom">
             <a
@@ -39,7 +39,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'spam' && pageName != 'drafts' && pageName != 'trash'"
+        ng-if="pageName != 'spam' && pageName != 'drafts' && pageName != 'trash' && pageName != 'sent'"
         pt-tooltip="{{ 'SPAM' | translate }}"
         pt-placement="bottom">
             <a
@@ -77,7 +77,7 @@
             <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye"></i>
             </a>
-        </li>        
+        </li>
         <li class="seperator">
             <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
                 <i class="fa fa-fw fa-tag"></i>
@@ -173,36 +173,36 @@
                 </li>
             </ul>
         </li>
-        <li 
-        class="seperator" 
+        <li
+        class="seperator"
         ng-if="('secured.drafts' | isState)">
             <a
             href
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)"
             pt-placement="bottom">
-                <i class="fa fa-warning"></i> 
+                <i class="fa fa-warning"></i>
                 {{ 'EMPTY_DRAFTS' | translate}}
             </a>
         </li>
-        <li 
-        class="seperator" 
+        <li
+        class="seperator"
         ng-if="('secured.spam' | isState)">
             <a
             href
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.spam)"
             pt-placement="bottom">
-                <i class="fa fa-warning"></i> 
+                <i class="fa fa-warning"></i>
                 {{ 'EMPTY_SPAM' | translate}}
             </a>
         </li>
-        <li 
-        class="seperator" 
+        <li
+        class="seperator"
         ng-if="('secured.trash' | isState)">
             <a
             href
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.trash)"
             pt-placement="bottom">
-                <i class="fa fa-warning"></i> 
+                <i class="fa fa-warning"></i>
                 {{ 'EMPTY_TRASH' | translate}}
             </a>
         </li>

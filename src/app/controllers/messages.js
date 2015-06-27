@@ -703,13 +703,24 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$on('newMessage', function() {
-        var message = new Message();
-        $scope.initMessage(message);
+        if(($scope.messages.length) === CONSTANTS.MAX_NUMBER_COMPOSER) {
+            notify.closeAll();
+            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
+        } else {
+            var message = new Message();
+            $scope.initMessage(message);
+        }
     });
 
     $scope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
-        $scope.initMessage(message);
+        if(($scope.messages.length) === CONSTANTS.MAX_NUMBER_COMPOSER) {
+            notify.closeAll();
+            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
+        } else {
+            message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
+            message.IsRead = 1;
+            $scope.initMessage(message);
+        }
     });
 
     $scope.setDefaults = function(message) {
@@ -877,11 +888,6 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.initMessage = function(message) {
-        if($scope.messages.length === CONSTANTS.MAX_NUMBER_COMPOSER) {
-            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
-            return;
-        }
-
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.focusComposer(message);
@@ -925,7 +931,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.composerStyle = function(message) {
 
-        var margin = 10;
+        var margin = 20;
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;
         var styles = {};
@@ -1292,7 +1298,7 @@ angular.module("proton.controllers.Messages", [
                 $scope.saveOld(message);
 
                 // Add draft in message list
-                if($state.is('secured.drafts')) {
+                if($state.is('secured.drafts') && silently !== true) {
                     $rootScope.$broadcast('refreshMessages');
                 }
 
