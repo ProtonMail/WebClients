@@ -36,8 +36,16 @@
                             <th class="text-center hidden-xs">
                                 <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
                             </th>
-                            <th>{{ 'NAME' | translate }}</th>
-                            <th>{{ 'EMAIL' | translate }}</th>
+                            <th>
+                                {{ 'NAME' | translate }}
+                                <a href="" ng-click="setSortBy('Name')" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-caret-up"></i></a>
+                                <a href="" ng-click="setSortBy('-Name')" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-caret-down"></i></a>
+                            </th>
+                            <th>
+                                {{ 'EMAIL' | translate }}
+                                <a href="" ng-click="setSortBy('Email')" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-caret-up"></i></a>
+                                <a href="" ng-click="setSortBy('-Email')" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-caret-down"></i></a>
+                            </th>
                             <th>{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
