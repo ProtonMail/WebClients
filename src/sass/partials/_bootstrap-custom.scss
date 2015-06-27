@@ -8,6 +8,10 @@ body .navbar-inverse {
     }
 }
 
+body.modal-open {
+    overflow: auto !important;
+}
+
 body .message-toolbar > ul > li .dropdown-menu li > a {
     padding-right: 10px;
 }
