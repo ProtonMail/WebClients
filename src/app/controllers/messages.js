@@ -704,7 +704,6 @@ angular.module("proton.controllers.Messages", [
 
     $scope.$on('newMessage', function() {
         var message = new Message();
-
         $scope.initMessage(message);
     });
 
@@ -722,7 +721,8 @@ angular.module("proton.controllers.Messages", [
             PasswordHint: '',
             Attachments: [],
             IsEncrypted: 0,
-            Body: message.Body
+            Body: message.Body,
+            From: authentication.user.Addresses[0]
         });
     };
 
@@ -884,14 +884,11 @@ angular.module("proton.controllers.Messages", [
 
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.selectAddress(message);
+        $scope.focusComposer(message);
 
-        $timeout(function() {
-            $scope.focusComposer(message);
+        $timeout( function() {
+
             $scope.saveOld();
-        }, 100);
-
-        $timeout(function() {
             $scope.listenEditor(message);
             if (angular.isUndefined(message.Body)) {
                 // this sets the Body with the signature
@@ -907,7 +904,23 @@ angular.module("proton.controllers.Messages", [
             message.selectFile = function() {
                 $('#' + message.button).click();
             };
-        }, 500);
+        }, 10);
+    }; 
+
+    $scope.editorStyle = function(message) {
+        var styles = {};
+        if (message.maximized===true) {
+            var composer = $('.composer:visible');
+            var composerHeight = composer.outerHeight();
+            var composerHeader = composer.find('.composer-header').outerHeight();
+            var composerFooter = composer.find('.composer-footer').outerHeight();
+            var composerMeta = composer.find('.composerMeta').outerHeight();
+            styles.height = composerHeight - (composerHeader+composerFooter+composerFooter+composerMeta); 
+        }
+        else {
+            styles.height = 'auto';   
+        }
+        return styles;
     };
 
     $scope.composerStyle = function(message) {
@@ -1042,17 +1055,13 @@ angular.module("proton.controllers.Messages", [
                 $timeout(function() {
                     message.height();
                     $('.typeahead-container').scrollTop(0);
-                    $scope.focusComposer(message);
+                    // $scope.focusComposer(message);
                 });
             });
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
         }
-    };
-
-    $scope.selectAddress = function(message) {
-        message.From = authentication.user.Addresses[0];
     };
 
     $scope.selectFile = function(message, files) {

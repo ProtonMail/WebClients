@@ -192,18 +192,23 @@ angular.module("proton.models.message", ["proton.constants"])
             return params;
         },
         height: function() {
-            to = $(this.toContainer).height();
-            bcc = $(this.bccContainer).height();
-            cc = $(this.ccContainer).height();
-            recipientsHeight = to + bcc + cc;
-            if(this.fields === true) {
-                height = 352 - recipientsHeight;
-                height = (height < 130) ? 130 : height;
-                return height + 'px';
-            } else {
-                height = 352 - to;
-                height = (height < 130) ? 130 : height;
-                return height + 'px';
+            if (this.maximized === true) {
+                return '100%';
+            }
+            else {
+                to = $(this.toContainer).height();
+                bcc = $(this.bccContainer).height();
+                cc = $(this.ccContainer).height();
+                recipientsHeight = to + bcc + cc;
+                if(this.fields === true) {
+                    height = 352 - recipientsHeight;
+                    height = (height < 130) ? 130 : height;
+                    return height + 'px';
+                } else {
+                    height = 352 - to;
+                    height = (height < 130) ? 130 : height;
+                    return height + 'px';
+                }
             }
         },
         moveTo: function(location) {

@@ -110,9 +110,9 @@
                     </div>
                     <div class="form-group">
                         <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
-                    </div>
+                    </div> 
                 </div>
-                <div class="form-group">
+                <div class="form-group composeEditor" ng-style="editorStyle(message)">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
                             <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">

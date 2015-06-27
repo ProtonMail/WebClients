@@ -540,7 +540,8 @@ form#compose {
     bottom: 1rem;
     right: 2rem;
     width: 480px;
-    transition: right 600ms linear, opacity 200ms linear;
+    z-index: 6;
+    // transition: right 600ms linear, opacity 200ms linear;
     border-radius: $border-radius-base*2;
 
     &.maximized {
