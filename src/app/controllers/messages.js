@@ -710,6 +710,7 @@ angular.module("proton.controllers.Messages", [
 
     $scope.$on('loadMessage', function(event, message) {
         message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
+        message.IsRead = 1;
         $scope.initMessage(message);
     });
 
