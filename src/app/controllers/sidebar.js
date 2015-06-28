@@ -4,6 +4,11 @@ angular.module("proton.controllers.Sidebar", [])
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     $scope.labels = authentication.user.Labels;
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+    $scope.updateLabels = function () {
+        $scope.labels = authentication.user.Labels;
+    };
+
     $scope.droppableOptions = {
         accept: '.ui-draggable',
         activeClass: 'drop-active',

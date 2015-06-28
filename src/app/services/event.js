@@ -1,5 +1,5 @@
 angular.module("proton.event", [])
-	.service("eventManager", function ($interval, $state, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache) {
+	.service("eventManager", function ($interval, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache) {
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -15,12 +15,13 @@ angular.module("proton.event", [])
 			manageLabels: function(labels) {
 				_.each(labels, function(label) {
 					if(label.Action === DELETE) {
-						authentication.user.Labels = _.filter(authentication.user.Labels, function(l) { return l.ID !== label.Label.ID; });
+						authentication.user.Labels = _.filter(authentication.user.Labels, function(l) { return l.ID !== label.ID; });
+						$rootScope.$broadcast('updateLabels');
 					} else if(label.Action === CREATE) {
 						authentication.user.Labels.push(label.Label);
 					} else if(label.Action === UPDATE) {
 						var index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
-						authentication.user.Labels[index] = label.Label;
+						authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
 					}
 				});
 			},
@@ -28,7 +29,7 @@ angular.module("proton.event", [])
 				if (angular.isDefined(contacts)) {
 					_.each(contacts, function(contact) {
 						if(contact.Action === DELETE) {
-							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.Contact.ID; });
+							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.ID; });
 						} else if(contact.Action === CREATE) {
 							authentication.user.Contacts.push(contact.Contact);
 						} else if (contact.Action === UPDATE) {
@@ -60,12 +61,12 @@ angular.module("proton.event", [])
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
-				console.log(data);
 				if (this.isDifferent(data.EventID)){
+					console.log(data);
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
-					// this.manageCounter(data.Unread);
+					this.manageCounter(data.Unread);
 					this.manageMessages(data.Messages);
 					this.manageID(data.EventID);
 				}

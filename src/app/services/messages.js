@@ -39,9 +39,7 @@ angular.module("proton.messages", [])
         var inboxOneParams = {Location: 0, Page: 0};
         var inboxTwoParams = {Location: 0, Page: 1};
         var sentOneParams = {Location: 2, Page: 0};
-        var inboxOneMetaData;
-        var inboxTwoMetaData;
-        var sentOneMetaData;
+        var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
 
         var cachedMessages = _.bindAll({
             cache: {},
@@ -240,7 +238,7 @@ angular.module("proton.messages", [])
                         cachedMessages.update(cacheLoc, loc, message);
                     }
 
-                    // UPDATE - message not in cache, but in inbox or sent
+                    // UPDATE - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
                         if (message.Message.Time > cachedMessages[loc][cachedMessages[loc].length -1].Time) {
                             Message.get({id: message.ID}).$promise.then(function(m) {
