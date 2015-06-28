@@ -52,7 +52,7 @@ $angular-squire-wrapper-padding: 5px 0 !default;
     border: none;
     box-shadow: inset 0 -1px 0 $base-color-darker;
     @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
-    background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));    
+    background: -moz-linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
     li {
       vertical-align: top;
       display: inline-block;
@@ -292,13 +292,12 @@ html.angular-squire-iframe {
     color: #2b2b2b;
     cursor: text;
     blockquote {
+        border-color: $base-color-darker;
       padding: 0 2rem;
       margin: 2rem 0;
       font-size: 1em;
-      border-left: none;
       blockquote blockquote {
-        border-left: 0;
-        padding: 0; 
+        padding: 0;
       }
     }
     p {
