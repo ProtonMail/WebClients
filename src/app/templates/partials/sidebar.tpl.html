@@ -76,11 +76,16 @@
             </ul>
         </div>
     </div>
-    <div class="storage">
+    <div
+    class="storage"
+    popover-placement="top"
+    popover-toggle="popover"
+    popover-trigger="mouseenter"
+    popover="At this time the maximum size of your inbox is {{ user.MaxSpace | humanSize }}. ProtonMail will offer premium features for purchase in the future, including additional storage."
+    >
         <ul class="list-group info hidden-xs hidden-sm">
             <li>
                 <span class="sizebar">
-                    <a href="" title="At this time the maximum size of your inbox is {{ user.MaxSpace | humanSize }}. ProtonMail will offer premium features for purchase in the future, including additional storage."><i class="fa fa-info-circle"></i></a>
                     {{ 'STORAGE' | translate }}:
                     <span class="pull-right">{{ renderStorageBar() }}</span>
                 </span>
