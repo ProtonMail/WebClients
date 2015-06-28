@@ -399,13 +399,13 @@ angular.module("proton.routes", [
     .state("support.reset-mailbox", {
         url: "/reset-mailbox/:token",
         onEnter: function($stateParams, $state, $rootScope, authentication) {
-            $rootScope.resetMailboxToken = $stateParams.token;            
+            $rootScope.resetMailboxToken = $stateParams.token;
             if (!!!authentication.isLoggedIn()) {
                 event.preventDefault();
                 $state.go('login');
             }
             else {
-                $state.go('reset');                
+                $state.go('reset');
             }
         },
         views: {
@@ -424,7 +424,7 @@ angular.module("proton.routes", [
             "main@": {
                 templateUrl: "templates/layout/outside.tpl.html"
             }
-        },
+        }
     })
 
     .state("eo.unlock", {

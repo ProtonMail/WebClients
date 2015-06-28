@@ -69,7 +69,7 @@ body .form-control {
     background: $panel-bg;
 }
 .panel-collapse .panel-body {
-    background-color: $base-color; 
+    background-color: $base-color;
 }
 .panel-dark {
     border: none;
@@ -162,18 +162,18 @@ blockquote {
   padding: 1rem 2rem;
   margin: 1rem 0;
   font-size: 1em;
-  border-left: .35rem solid #eeeeee; 
+  border-left: .35rem solid #eeeeee;
 }
 
 
 .pagination > .active {
     & > a,
     & > span {
-        background-color: $primary-color; 
+        background-color: $primary-color;
         border-color: $primary-color;
         &:hover,
         &:focus {
-            background-color: $primary-color; 
+            background-color: $primary-color;
             border-color: $primary-color;
         }
     }
@@ -259,3 +259,8 @@ blockquote {
     min-height: 0;
 }
 
+.popover {
+    background-color: $sidebar-bg;
+    color: $base-color;
+    border-color: $base-color;
+}
