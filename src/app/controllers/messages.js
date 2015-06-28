@@ -703,24 +703,14 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.$on('newMessage', function() {
-        if(($scope.messages.length) === CONSTANTS.MAX_NUMBER_COMPOSER) {
-            notify.closeAll();
-            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
-        } else {
-            var message = new Message();
-            $scope.initMessage(message);
-        }
+        var message = new Message();
+        $scope.initMessage(message);
     });
 
     $scope.$on('loadMessage', function(event, message) {
-        if(($scope.messages.length) === CONSTANTS.MAX_NUMBER_COMPOSER) {
-            notify.closeAll();
-            notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
-        } else {
-            message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
-            message.IsRead = 1;
-            $scope.initMessage(message);
-        }
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
+        message.IsRead = 1;
+        $scope.initMessage(message);
     });
 
     $scope.setDefaults = function(message) {
@@ -888,24 +878,24 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.initMessage = function(message) {
-
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment()==='sm') {
             if ($scope.messages.length>0) {
                 notify.closeAll();
-                notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));                
+                notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
                 return;
             }
         }
 
         $scope.messages.unshift(message);
+        $scope.$apply();
         $scope.setDefaults(message);
-        $scope.focusComposer(message);
 
         $timeout( function() {
-
-            $scope.saveOld();
+            $scope.saveOld(message);
             $scope.listenEditor(message);
+            $scope.focusComposer(message);
+            
             if (angular.isUndefined(message.Body)) {
                 // this sets the Body with the signature
                 $scope.completedSignature(message);
@@ -920,9 +910,8 @@ angular.module("proton.controllers.Messages", [
             message.selectFile = function() {
                 $('#' + message.button).click();
             };
-
         }, 10);
-    }; 
+    };
 
     $scope.editorStyle = function(message) {
         var styles = {};
@@ -932,10 +921,10 @@ angular.module("proton.controllers.Messages", [
             var composerHeader = composer.find('.composer-header').outerHeight();
             var composerFooter = composer.find('.composer-footer').outerHeight();
             var composerMeta = composer.find('.composerMeta').outerHeight();
-            styles.height = composerHeight - (composerHeader+composerFooter+composerFooter+composerMeta); 
+            styles.height = composerHeight - (composerHeader+composerFooter+composerFooter+composerMeta);
         }
         else {
-            styles.height = 'auto';   
+            styles.height = 'auto';
         }
         return styles;
     };
@@ -997,9 +986,7 @@ angular.module("proton.controllers.Messages", [
         if (!!!message.focussed) {
             // calculate z-index
             var index = $scope.messages.indexOf(message);
-            // console.log(index);
             var reverseIndex = $scope.messages.length - index;
-            // console.log(reverseIndex);
 
             if (tools.findBootstrapEnvironment() === 'xs') {
 
@@ -1018,8 +1005,6 @@ angular.module("proton.controllers.Messages", [
                 var clickedTop = clicked.css('top');
                 var clickedZ = clicked.css('zIndex');
 
-                // console.log(bottomTop, bottomZ, clickedTop, clickedZ);
-
                 // todo: swap ???
                 bottom.css({
                     top:    clickedTop,
@@ -1029,9 +1014,6 @@ angular.module("proton.controllers.Messages", [
                     top:    bottomTop,
                     zIndex: bottomZ
                 });
-
-                // console.log(bottomTop, bottomZ, clickedTop, clickedZ);
-
             }
 
             else {
@@ -1048,18 +1030,17 @@ angular.module("proton.controllers.Messages", [
             var composer = $('.composer')[index];
 
             if (message.ToList.length === 0) {
-                $(composer).find('.to-list')[0].focus();
+                $(composer).find('.to-list').focus();
             } else if (message.Subject.length === 0) {
-                $(composer).find('.subject')[0].focus();
+                $(composer).find('.subject').focus();
             } else {
                 message.editor.focus();
             }
             _.each($scope.messages, function(m) {
                 m.focussed = false;
             });
-            message.focussed = true;
 
-            $scope.$apply();
+            message.focussed = true;
         }
     };
 
@@ -1068,11 +1049,9 @@ angular.module("proton.controllers.Messages", [
             message.editor.addEventListener('focus', function() {
                 message.fields = false;
                 message.toUnfocussed = true;
-                $scope.$apply();
                 $timeout(function() {
                     message.height();
                     $('.typeahead-container').scrollTop(0);
-                    // $scope.focusComposer(message);
                 });
             });
             message.editor.addEventListener('input', function() {
