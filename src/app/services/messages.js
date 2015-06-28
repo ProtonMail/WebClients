@@ -210,7 +210,6 @@ angular.module("proton.messages", [])
                 });
             },
             set: function(messages) {
-                console.log(messages);
                 var currentLocation = tools.getCurrentLocation();
 
                 _.each(messages, function(message) {
@@ -222,7 +221,6 @@ angular.module("proton.messages", [])
 
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : false;
-
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
                         cachedMessages.delete(cacheLoc);

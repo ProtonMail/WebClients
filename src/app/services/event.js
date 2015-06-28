@@ -56,13 +56,11 @@ angular.module("proton.event", [])
 				}
 			},
 			manageID: function(id) {
-				console.log('managingID', id);
 				this.ID = id;
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
 				if (this.isDifferent(data.EventID)){
-					console.log(data);
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
