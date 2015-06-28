@@ -109,7 +109,7 @@ angular.module("proton.authentication", [
                         }
                         return result;
                     } else {
-                        return semiRandomString(length);
+                        return api.semiRandomString(length);
                     }
                 },
 
