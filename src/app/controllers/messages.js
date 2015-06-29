@@ -1531,6 +1531,7 @@ angular.module("proton.controllers.Messages", [
         if($rootScope.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
         }
+        $('#attachmentArea a').click();        
     });
 
     $scope.$watch('message', function() {

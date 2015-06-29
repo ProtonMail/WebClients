@@ -83,7 +83,14 @@
         </span>, 
         {{ message.sizeAttachments() | humanSize }})
     </span>
-    <a ng-repeat="attachment in message.Attachments" decrypt-attachments="decryptAttachments" class="btn btn-grid" ng-class="{ 'disabled': attachment.decrypting }" id="attachment-{{$index}}" data-download-text="{{ 'DOWNLOAD' | translate }}" href>
+    <a 
+    ng-repeat="attachment in message.Attachments" 
+    class="btn btn-grid" 
+    ng-class="{ 'disabled': attachment.decrypting }" 
+    id="attachment-{{$index}}" 
+    data-download-text="{{ 'DOWNLOAD' | translate }}" 
+    href 
+    ng-click="attachment.decrypted||decryptAttachment(message, attachment, $event)">
         <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
         <i ng-show="attachment.decrypted" class="fa fa-download"></i>
         <i ng-show="!attachment.decrypting && !attachment.decrypted" class="fa fa-lock"></i>
