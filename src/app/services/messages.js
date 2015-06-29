@@ -41,10 +41,55 @@ angular.module("proton.messages", [])
         var sentOneParams = {Location: 2, Page: 0};
         var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
 
-        var cachedMessages = _.bindAll({
-            cache: {},
+        var cachedMetadata = _.bindAll({
             inbox: null,
             sent: null,
+            sync: function(cacheLoc) {
+                if (cacheLoc === 'inbox') {
+                    Message.query(inboxTwoParams).$promise.then(function(result) {
+                        cachedMetadata.inbox = cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
+                        addMessageList(cachedMetadata.inbox);
+                        $rootScope.$broadcast('refreshMessagesCache');
+                    });
+                }
+                else if (cacheLoc === 'sent') {
+                    Message.query(sentOneParams).$promise.then(function(result) {
+                        cachedMetadata.sent = result;
+                        addMessageList(cachedMetadata.sent);
+                        $rootScope.$broadcast('refreshMessagesCache');
+                    });
+                }
+            },
+            delete: function(cacheLoc, message) {
+                cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
+                cachedMetadata.sync(cacheLoc);
+            },
+            update: function(cacheLoc, loc, message){
+                if (cacheLoc === loc) {
+                    var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
+                    cachedMetadata[cacheLoc][index] = _.extend(cachedMetadata[cacheLoc][index], message.Message);
+                    addMessageList(cachedMetadata.inbox);
+                    addMessageList(cachedMetadata.sent);
+                } else {
+                    cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
+                    $rootScope.$broadcast('refreshMessagesCache');
+                    cachedMetadata.sync(cacheLoc);
+                }
+            },
+            updateLabels: function(cacheLoc, message) {
+                var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
+                cachedMetadata[cacheLoc][index].LabelIDs = message.LabelIDs;
+            },
+            create: function(loc, message) {
+                index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
+                cachedMetadata[loc].pop();
+                cachedMetadata[loc].splice(index, 0, message);
+                $rootScope.$broadcast('refreshMessagesCache');
+            }
+        });
+
+        var cachedMessages = _.bindAll({
+            cache: {},
             get: function(id) {
                 var msg;
 
@@ -102,48 +147,7 @@ angular.module("proton.messages", [])
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
                 }
             },
-            sync: function(cacheLoc) {
-                if (cacheLoc === 'inbox') {
-                    Message.query(inboxTwoParams).$promise.then(function(result) {
-                        cachedMessages.inbox = cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
-                        addMessageList(cachedMessages.inbox);
-                        $rootScope.$broadcast('refreshMessagesCache');
-                    });
-                }
-                else if (cacheLoc === 'sent') {
-                    Message.query(sentOneParams).$promise.then(function(result) {
-                        cachedMessages.sent = result;
-                        addMessageList(cachedMessages.sent);
-                        $rootScope.$broadcast('refreshMessagesCache');
-                    });
-                }
-            },
-            delete: function(cacheLoc, message) {
-                cachedMessages[cacheLoc] = _.filter(cachedMessages[cacheLoc], function(m) { return m.ID !== message.ID; });
-                cachedMessages.sync(cacheLoc);
-            },
-            update: function(cacheLoc, loc, message){
-                if (cacheLoc === loc) {
-                    var index = _.findIndex(cachedMessages[cacheLoc], function(m) { return m.ID === message.ID; });
-                    cachedMessages[cacheLoc][index] = _.extend(cachedMessages[cacheLoc][index], message.Message);
-                    addMessageList(cachedMessages.inbox);
-                    addMessageList(cachedMessages.sent);
-                } else {
-                    cachedMessages[cacheLoc] = _.filter(cachedMessages[cacheLoc], function(m) { return m.ID !== message.ID; });
-                    $rootScope.$broadcast('refreshMessagesCache');
-                    cachedMessages.sync(cacheLoc);
-                }
-            },
-            updateLabels: function(cacheLoc, message) {
-                var index = _.findIndex(cachedMessages[cacheLoc], function(m) { return m.ID === message.ID; });
-                cachedMessages[cacheLoc][index].LabelIDs = message.LabelIDs;
-            },
-            create: function(loc, message) {
-                index = _.sortedIndex(cachedMessages[loc], message, function(a) {return -a.Time;});
-                cachedMessages[loc].pop();
-                cachedMessages[loc].splice(index, 0, message);
-                $rootScope.$broadcast('refreshMessagesCache');
-            }
+
         });
 
         // Parameters shared between api / cache / message view / message list
@@ -211,25 +215,24 @@ angular.module("proton.messages", [])
                 $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
                         addMessageList(result.inboxOne);
                         addMessageList(result.inboxTwo);
-                        cachedMessages.inbox = result.inboxOne.concat(result.inboxTwo);
-                        cachedMessages.sent = result.sentOne;
+                        cachedMetadata.inbox = result.inboxOne.concat(result.inboxTwo);
+                        cachedMetadata.sent = result.sentOne;
 
                         deferred.resolve();
                 });
             },
             reset: function() {
                 cachedMessages.cache = {};
-                cachedMessages.inbox = null;
-                cachedMessages.sent = null;
+                cachedMetadata.inbox = null;
+                cachedMetadata.sent = null;
                 this.start();
             },
             set: function(messages) {
-                console.log(messages);
                 var currentLocation = tools.getCurrentLocation();
 
                 _.each(messages, function(message) {
-                    var inInboxCache = (_.where(cachedMessages.inbox, {ID: message.ID}).length > 0);
-                    var inSentCache = (_.where(cachedMessages.sent, {ID: message.ID}).length > 0);
+                    var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
+                    var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
                     var inSent = (message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.sent);
 
@@ -238,24 +241,24 @@ angular.module("proton.messages", [])
 
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
-                        cachedMessages.delete(cacheLoc);
+                        cachedMetadata.delete(cacheLoc);
                     }
 
                     // CREATE - location is either inbox or sent
                     else if(message.Action === CREATE && loc) {
-                        cachedMessages.create(loc, message.Message);
+                        cachedMetadata.create(loc, message.Message);
                     }
 
                     // UPDATE - message in cache
                     else if (message.Action === UPDATE_FLAG && cacheLoc) {
-                        cachedMessages.update(cacheLoc, loc, message);
+                        cachedMetadata.update(cacheLoc, loc, message);
                     }
 
                     // UPDATE - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
-                        if (message.Message.Time > cachedMessages[loc][cachedMessages[loc].length -1].Time) {
+                        if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time) {
                             Message.get({id: message.ID}).$promise.then(function(m) {
-                                cachedMessages.create(loc, m);
+                                cachedMetadata.create(loc, m);
                             });
                         }
                     }
@@ -263,41 +266,41 @@ angular.module("proton.messages", [])
             },
             setLabels: function(messages) {
                 _.each(messages, function(message) {
-                    var inInboxCache = (_.where(cachedMessages.inbox, {ID: message.ID}).length > 0);
-                    var inSentCache = (_.where(cachedMessages.sent, {ID: message.ID}).length > 0);
+                    var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
+                    var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
 
                     if (cacheLoc) {
-                        cachedMessages.updateLabels(cacheLoc, message);
+                        cachedMetadata.updateLabels(cacheLoc, message);
                     }
                 });
             },
             query: function(params) {
                 var deferred = $q.defer();
                 if (_.isEqual(params, inboxOneParams)) {
-                    if(cachedMessages.inbox === null) {
+                    if(cachedMetadata.inbox === null) {
                         this.start();
                         return inboxOneMetaData;
                     } else {
-                        deferred.resolve(cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
+                        deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
                         return deferred.promise;
                     }
                 }
                 else if (_.isEqual(params, inboxTwoParams)) {
-                    if(cachedMessages.inbox === null) {
+                    if(cachedMetadata.inbox === null) {
                         this.start();
                         return inboxTwoMetaData;
                     } else {
-                        deferred.resolve(cachedMessages.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                        deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
                         return deferred.promise;
                     }
                 }
                 else if (_.isEqual(params, sentOneParams)) {
-                    if(cachedMessages.sent === null) {
+                    if(cachedMetadata.sent === null) {
                         this.start();
                         return sentOneMetaData;
                     } else {
-                        deferred.resolve(cachedMessages.sent);
+                        deferred.resolve(cachedMetadata.sent);
                         return deferred.promise;
                     }
                 }
