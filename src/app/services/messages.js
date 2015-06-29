@@ -224,6 +224,7 @@ angular.module("proton.messages", [])
                 this.start();
             },
             set: function(messages) {
+                console.log(messages);
                 var currentLocation = tools.getCurrentLocation();
 
                 _.each(messages, function(message) {
@@ -287,7 +288,7 @@ angular.module("proton.messages", [])
                         this.start();
                         return inboxTwoMetaData;
                     } else {
-                        deferred.resolve(cachedMessages.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 100));
+                        deferred.resolve(cachedMessages.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
                         return deferred.promise;
                     }
                 }

@@ -63,6 +63,7 @@ angular.module("proton.event", [])
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
+				console.log(data);
 				if (data.Refresh === 1) {
 					messageCache.reset();
 				}
