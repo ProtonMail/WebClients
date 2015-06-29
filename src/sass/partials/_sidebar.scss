@@ -150,7 +150,8 @@ body.min {
         .label {
             margin-left: 1.5rem;
         }
-        .fa-refresh {
+        .fa-refresh,
+        .fa-repeat {
             margin-right: -8px;
         }
     }
@@ -253,7 +254,8 @@ body.min {
             margin-right: 0.75rem;
             line-height: $row-height;
         }
-        .fa.fa-refresh {
+        .fa.fa-refresh,
+        .fa.fa-repeat {
             margin-right: 0;
         }
         .btn {
