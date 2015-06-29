@@ -106,12 +106,14 @@ angular.module("proton.messages", [])
                 if (cacheLoc === 'inbox') {
                     Message.query(inboxTwoParams).$promise.then(function(result) {
                         cachedMessages.inbox = cachedMessages.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
+                        addMessageList(cachedMessages.inbox);
                         $rootScope.$broadcast('refreshMessagesCache');
                     });
                 }
                 else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMessages.sent = result;
+                        addMessageList(cachedMessages.sent);
                         $rootScope.$broadcast('refreshMessagesCache');
                     });
                 }
@@ -124,11 +126,17 @@ angular.module("proton.messages", [])
                 if (cacheLoc === loc) {
                     var index = _.findIndex(cachedMessages[cacheLoc], function(m) { return m.ID === message.ID; });
                     cachedMessages[cacheLoc][index] = _.extend(cachedMessages[cacheLoc][index], message.Message);
+                    addMessageList(cachedMessages.inbox);
+                    addMessageList(cachedMessages.sent);
                 } else {
                     cachedMessages[cacheLoc] = _.filter(cachedMessages[cacheLoc], function(m) { return m.ID !== message.ID; });
                     $rootScope.$broadcast('refreshMessagesCache');
                     cachedMessages.sync(cacheLoc);
                 }
+            },
+            updateLabels: function(cacheLoc, message) {
+                var index = _.findIndex(cachedMessages[cacheLoc], function(m) { return m.ID === message.ID; });
+                cachedMessages[cacheLoc][index].LabelIDs = message.LabelIDs;
             },
             create: function(loc, message) {
                 index = _.sortedIndex(cachedMessages[loc], message, function(a) {return -a.Time;});
@@ -209,11 +217,16 @@ angular.module("proton.messages", [])
                         deferred.resolve();
                 });
             },
+            reset: function() {
+                cachedMessages.cache = {};
+                cachedMessages.inbox = null;
+                cachedMessages.sent = null;
+                this.start();
+            },
             set: function(messages) {
                 var currentLocation = tools.getCurrentLocation();
 
                 _.each(messages, function(message) {
-
                     var inInboxCache = (_.where(cachedMessages.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMessages.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
@@ -221,6 +234,7 @@ angular.module("proton.messages", [])
 
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : false;
+
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
                         cachedMessages.delete(cacheLoc);
@@ -243,6 +257,17 @@ angular.module("proton.messages", [])
                                 cachedMessages.create(loc, m);
                             });
                         }
+                    }
+                });
+            },
+            setLabels: function(messages) {
+                _.each(messages, function(message) {
+                    var inInboxCache = (_.where(cachedMessages.inbox, {ID: message.ID}).length > 0);
+                    var inSentCache = (_.where(cachedMessages.sent, {ID: message.ID}).length > 0);
+                    var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
+
+                    if (cacheLoc) {
+                        cachedMessages.updateLabels(cacheLoc, message);
                     }
                 });
             },

@@ -64,7 +64,7 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.$on('updateCounters', function(event) {
-        $scope.updateCounters();
+        $scope.getUnread();
     });
 
     $scope.getUnread = function(mailbox, id) {
@@ -72,9 +72,17 @@ angular.module("proton.controllers.Sidebar", [])
         var value;
 
         if(mailbox === 'label') {
-            value = $rootScope.counters[id];
+            _.forEach($rootScope.counters.Labels, function(label) {
+                if (label.LabelID === id) {
+                    value = label.Count;
+                }
+            }) ;
         } else {
-            value = $rootScope.counters[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            _.forEach($rootScope.counters.Locations, function(location) {
+                if (location.Location === CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]) {
+                    value = location.Count;
+                }
+            }) ;
         }
 
         if(angular.isDefined(value)) {

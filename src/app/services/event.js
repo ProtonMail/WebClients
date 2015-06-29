@@ -55,17 +55,24 @@ angular.module("proton.event", [])
 					messageCache.set(messages);
 				}
 			},
+			manageMessageLabels: function(messages) {
+				messageCache.setLabels(messages);
+			},
 			manageID: function(id) {
 				this.ID = id;
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
-				if (this.isDifferent(data.EventID)){
+				if (data.Refresh === 1) {
+					messageCache.reset();
+				}
+				else if (this.isDifferent(data.EventID)){
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageCounter(data.Unread);
 					this.manageMessages(data.Messages);
+					this.manageMessageLabels(data.MessageLabels);
 					this.manageID(data.EventID);
 				}
 			}
@@ -73,11 +80,13 @@ angular.module("proton.event", [])
 		var api = _.bindAll({
 				start: function () {
 					eventModel.ID = window.sessionStorage[EVENT_ID];
-					eventModel.promiseCancel = $interval(function () {
+					interval = function() {
 						eventModel.get().then(function (result) {
 							eventModel.manage(result.data);
 						});
-					}, CONSTANTS.INTERVAL_EVENT_TIMER);
+					};
+					interval();
+					eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
 				},
 				stop: function () {
 					if (angular.isDefinded(eventModel.promiseCancel)) {

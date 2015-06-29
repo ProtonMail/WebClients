@@ -177,7 +177,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
-    
+
     $scope.refreshMessagesCache = function () {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
@@ -425,10 +425,17 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.moveMessagesTo = function(mailbox) {
+
         var ids = $scope.selectedIds();
         var promise;
         var inDelete = mailbox === 'delete';
 
+        messages = [];
+        _.forEach($scope.selectedMessages(), function (message) {
+            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            messages.push({Action: 3, ID: message.ID, Message: message});
+        });
+		messageCache.set(messages);
 
         if(inDelete) {
             promise = Message.delete({IDs: ids}).$promise;
