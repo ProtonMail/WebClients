@@ -239,6 +239,19 @@ angular.module("proton.models.message", ["proton.constants"])
 
             return size;
         },
+        encryptionType: function() {
+            var texts = [
+                $translate.instant('UNENCRYPTED_MESSAGE'),
+                $translate.instant('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
+                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
+                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
+                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
+                $translate.instant('STORED_ENCRYPTED'),
+                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY')
+            ];
+
+            return texts[this.IsEncrypted];
+        },
         location: function() {
             return invertedMailboxIdentifiers[this.Location];
         },

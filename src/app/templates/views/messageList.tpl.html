@@ -42,7 +42,7 @@
                     'fa-unlock-alt':
                     !!(message.IsEncrypted == '0')
                     }"
-                    title="{{ getMessageEncryptionType(message) }}"></span>
+                    title="{{ message.encryptionType() }}"></span>
                     <a href ng-click="toggleStar(message)" class="starLink">
                         <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>
                     </a>
@@ -74,7 +74,7 @@
                     </span>
                 </td>
                 <td class="subject">
-                    <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>                
+                    <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>
                     <i class="fa fa-clock-o" ng-show="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>

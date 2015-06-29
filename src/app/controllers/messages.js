@@ -251,10 +251,6 @@ angular.module("proton.controllers.Messages", [
         $scope.currentPage = pageNo;
     };
 
-    $scope.pageChanged = function() {
-        $log.log('Page changed to: ' + $scope.currentPage);
-    };
-
     $scope.start = function() {
         return ($scope.page - 1) * $scope.messagesPerPage + 1;
     };
@@ -269,20 +265,6 @@ angular.module("proton.controllers.Messages", [
         }
 
         return end;
-    };
-
-    $scope.getMessageEncryptionType = function(message) {
-        var texts = [
-            'Unencrypted Message',
-            'End-to-End Encrypted Internal Message',
-            'External Message, Stored Encrypted',
-            'End-to-End Encrypted for Outside',
-            'External Message, Stored Encrypted',
-            'Stored Encrypted',
-            'End-to-End Encrypted for Outside Reply'
-        ];
-
-        return texts[message.IsEncrypted];
     };
 
     $scope.hasNextPage = function() {
@@ -764,7 +746,7 @@ angular.module("proton.controllers.Messages", [
                 maxFilesize: CONSTANTS.ATTACHMENT_SIZE_LIMIT,
                 maxFiles: CONSTANTS.ATTACHMENT_NUMBER_LIMIT,
                 addRemoveLinks: false,
-                dictDefaultMessage: 'Drop files here to upload',
+                dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
                 previewsContainer: '.previews',
@@ -895,7 +877,7 @@ angular.module("proton.controllers.Messages", [
             $scope.saveOld(message);
             $scope.listenEditor(message);
             $scope.focusComposer(message);
-            
+
             if (angular.isUndefined(message.Body)) {
                 // this sets the Body with the signature
                 $scope.completedSignature(message);
@@ -1528,14 +1510,23 @@ angular.module("proton.controllers.Messages", [
     $scope.labels = authentication.user.Labels;
 
     $timeout(function() {
-        if($rootScope.user.AutoSaveContacts === 1) {
-            $scope.saveNewContacts();
-        }
+        $scope.initView();
     });
 
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
     });
+
+    $scope.initView = function() {
+        if($rootScope.user.AutoSaveContacts === 1) {
+            $scope.saveNewContacts();
+        }
+
+        if (message.IsRead === 0) {
+            message.IsRead = 1;
+            Message.read({IDs: [message.ID]});
+        }
+    };
 
     $scope.toggleStar = function(message) {
         var ids = [];
@@ -1552,20 +1543,6 @@ angular.module("proton.controllers.Messages", [
         }
 
         networkActivityTracker.track(promise);
-    };
-
-    $scope.getMessageEncryptionType = function(message) {
-        var texts = [
-            'Unencrypted Message',
-            'End-to-End Encrypted Internal Message',
-            'External Message, Stored Encrypted',
-            'End-to-End Encrypted for Outside',
-            'External Message, Stored Encrypted',
-            'Stored Encrypted',
-            'End-to-End Encrypted for Outside Reply'
-        ];
-
-        return texts[message.IsEncrypted];
     };
 
     $scope.lockType = function(message) {
@@ -1752,9 +1729,6 @@ angular.module("proton.controllers.Messages", [
                 console.log(err);
             }
         );
-
-        // var decryptedAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
-        // attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.downloadAttachment = function(message, attachment) {
@@ -1821,12 +1795,10 @@ angular.module("proton.controllers.Messages", [
         var to = 'To: ' + message.SenderAddress + '<br />';
         var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
         var blockquoteEnd = '</blockquote>';
-
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
 
         base.ParentID = message.ID;
-
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
@@ -1924,9 +1896,4 @@ angular.module("proton.controllers.Messages", [
             message.viewMode = 'plain';
         }
     };
-
-    if (message.IsRead === 0) {
-        message.IsRead = 1;
-        Message.read({IDs: [message.ID]});
-    }
 });
