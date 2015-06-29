@@ -10,6 +10,10 @@
     padding: .5rem 2rem;
 }
 
+#attachmentWrap {
+    overflow: auto;
+    max-height: (3*$row-height);
+}
 #attachmentArea {
     border-radius: 0;
     margin: 0;
@@ -18,9 +22,13 @@
     .attachmentTitle {
         line-height: $row-height;
         height: $row-height;
-        padding: 0 2rem;
+        padding: 0 0 0 2rem;
         display: block;
         background-color: #e5e5e5;
+        border-bottom: 1px solid #ccc;
+        .btn-sm {
+            background-color: transparent;
+        }
     }
     a {
         display: block;

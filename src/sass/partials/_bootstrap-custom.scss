@@ -32,7 +32,7 @@ body .input-group-addon {
     display: block;
     height: $row-height;
     line-height: $row-height;
-    box-shadow: inset 0 1px 0 #ccc, inset -1px 0 0 #ccc;
+    box-shadow: inset 0 -1px 0 #ccc, inset -1px 0 0 #ccc;
     border: none;
     border-radius: 0;
     padding: 0 1rem;
@@ -44,9 +44,6 @@ body .input-group-addon {
     background-color: #f2f2f2;
     &:hover {
         background-color: #fff;
-    }
-    &:nth-child(even){
-        clear: both;
     }
 }
 
