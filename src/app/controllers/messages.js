@@ -495,6 +495,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.emptyFolder = function(location) {
+        var c = confirm("Are you sure? This cannot be undone.");
+        if (c !== true) {
+            return;
+        }        
         $scope.emptying = true;
         if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
             promise = Message.emptyDraft().$promise;
