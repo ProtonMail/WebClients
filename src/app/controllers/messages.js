@@ -801,6 +801,7 @@ angular.module("proton.controllers.Messages", [
                     isOver = false;
                 },
                 addedfile: function(file) {
+                    // add file here and then show progress
                     if(angular.isUndefined(message.ID)) {
                         $scope.save(message, true).then(function() {
                             $scope.addAttachment(file, message);
@@ -846,16 +847,20 @@ angular.module("proton.controllers.Messages", [
         var attachmentPromise;
         var element = $(file.previewElement);
 
+
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachmentPromise = attachments.load(file).then(function(packets) {
-                return attachments.upload(packets, message.ID, element).then(
-                    function(result) {
-                        message.Attachments.push(result);
-                        message.uploading = false;
-                    }
-                );
-            });
-        } else {
+            attachmentPromise = attachments.load(file).then(
+                function(packets) {
+                    return attachments.upload(packets, message.ID, element).then(
+                        function(result) {
+                            message.Attachments.push(result);
+                            message.uploading = false;
+                        }
+                    );
+                }
+            );
+        } 
+        else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
             // TODO remove file in droparea
@@ -1535,7 +1540,7 @@ angular.module("proton.controllers.Messages", [
         if($rootScope.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
         }
-        $('#attachmentArea a').click();        
+        // $('#attachmentArea a').click();        
     });
 
     $scope.$watch('message', function() {
@@ -1682,6 +1687,10 @@ angular.module("proton.controllers.Messages", [
             return true;
         }
 
+        $this = $($event.target);
+        $this.attr('target', '_blank');
+        $this.attr('download', attachment.Name);        
+
         attachment.decrypting = true;
 
         var deferred = $q.defer();
@@ -1730,18 +1739,28 @@ angular.module("proton.controllers.Messages", [
 
                             var href = URL.createObjectURL(blob);
 
-                            $this = $($event.target);
-                            $this.attr('href', href);
-                            $this.attr('target', '_blank');
-                            $this.attr('download', attachment.Name);
-                            $this.triggerHandler('click');
+                            if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
+                                // Browser supports a good way to download blobs
+                                $this.attr('href', href);
+                                $(this).click();
+                            }
+                            else {
+                                // Bad blob support, make a data URI, don't click it
+                                reader = new FileReader();
+
+                                reader.onloadend = function () {
+                                    $this.attr('href', reader.result);
+                                };
+
+                                reader.readAsDataURL(blob);
+                            }
 
                             deferred.resolve();
 
                         }
                         else {
                             // Bad blob support, make a data URI, don't click it
-                            var reader = new FileReader();
+                            reader = new FileReader();
 
                             reader.onloadend = function () {
                                 link.attr('href',reader.result);
@@ -1758,12 +1777,6 @@ angular.module("proton.controllers.Messages", [
             }
         );
 
-        // var decryptedAttachment = pmcw.encryptFile(new Uint8Array(reader.result), authentication.user.PublicKey, [], file.name);
-        // attachments.get(attachment.ID, attachment.Name);
-    };
-
-    $scope.downloadAttachment = function(message, attachment) {
-        attachments.get(attachment.ID, attachment.Name);
     };
 
     $scope.detachLabel = function(id) {

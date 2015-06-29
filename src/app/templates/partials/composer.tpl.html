@@ -3,22 +3,9 @@
         <div
         class="composer animate"
         ng-repeat="message in messages"
-        ng-class="{'minimized': message.minimized, blur: !!!composerIsSelected(message), 'maximized': message.maximized}"
+        ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized}"
         ng-style="composerStyle(message)"
-        ng-click="focusComposer(message)">
-            <div class="composer-loader" ng-show="message.loading()">
-                <div class="higgs">
-                  <div class="orbit">
-                    <div class="ring horizontal"></div>
-                    <div class="ring vertical"></div>
-                  </div>
-                  <div class="orbit r">
-                    <div class="ring horizontal inner"></div>
-                    <div class="ring vertical inner"></div>
-                    <div class="ring center"></div>
-                  </div>
-                </div>
-            </div>
+        ng-click="focusComposer(message)">      
             <div class="composer-header row">
                 <span class="col-xs-8">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-4 text-right">
@@ -166,15 +153,38 @@
                 <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-placement="right" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
                 </button>
-                <span class="text-muted" ng-show="message.BackupDate">{{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}</span>
+                <span class="text-muted" ng-show="message.BackupDate">
+                {{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}
+                </span>
                 <div class="pull-right">
-                    <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="discard(message)" pt-tooltip="{{ 'DISCARD' | translate }}">
+                    <button 
+                    ng-class="{ disabled: message.loading() }"
+                    class="btn btn-sm btn-default" 
+                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" 
+                    ng-click="discard(message)" 
+                    pt-tooltip="{{ 'DISCARD' | translate }}">
                         <i class="fa fa-trash-o"></i>
                     </button>
-                    <button class="btn btn-sm btn-default" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="save(message, false)" pt-tooltip="{{ 'SAVE' | translate }}">
+                    <button 
+                    ng-class="{ disabled: message.loading() }"
+                    class="btn btn-sm btn-default" 
+                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" 
+                    ng-click="save(message, false)" 
+                    pt-tooltip="{{ 'SAVE' | translate }}">
                         <i class="fa fa-floppy-o"></i>
                     </button>
-                    <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" ng-click="send(message)">{{ 'SEND' | translate }}</button>
+                    <button 
+                    ng-hide="message.loading()"
+                    class="btn btn-sm btn-primary" 
+                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)" 
+                    ng-click="send(message)">
+                        {{ 'SEND' | translate }}
+                    </button>
+                    <button
+                    ng-show="message.loading()"
+                    class="btn btn-sm btn-primary disabled">
+                        {{ 'SENDING' | translate }}
+                    </button>
                 </div>
             </div>
         </div>
