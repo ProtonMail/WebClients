@@ -583,18 +583,6 @@ angular.module("proton.routes", [
         }
     }))
 
-    .state("secured.raw", _.extend(_.clone(messageViewOptions), {
-        url: "/raw/:id",
-        onEnter: function($rootScope) { $rootScope.isBlank = true; },
-        onExit: function($rootScope) { $rootScope.isBlank = false; },
-        views: {
-            "main@": {
-                controller: "ViewMessageController",
-                templateUrl: "templates/views/message.raw.tpl.html"
-            }
-        }
-    }))
-
     .state("secured.contacts", {
         url: "/contacts",
         views: {

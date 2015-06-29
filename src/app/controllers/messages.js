@@ -1928,11 +1928,12 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.viewRaw = function() {
-        var url = $state.href('secured.raw', {
-            id: message.ID
-        });
-
+        var link = document.createElement('a');
+        link.setAttribute("target", "_blank");
+        link.href = 'data:text/plain;base64,'+btoa(message.Header+'\n\r'+message.Body);
+        link.click();
         window.open(url, '_blank');
+        console.log('?');
     };
 
     $scope.togglePlainHtml = function() {
