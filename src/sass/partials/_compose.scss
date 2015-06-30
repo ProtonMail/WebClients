@@ -553,33 +553,6 @@ form#compose {
     z-index: 6;
     transition: bottom 100ms linear;
     border-radius: $border-radius-base*2;
-
-    &.maximized {
-        left: $sidebar-width;
-        border-radius: 0;
-        right: 0 !important;
-        top: $navbar-height;
-        bottom: 0;
-        width: auto !important;
-        z-index: 9999 !important;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        box-shadow: none;
-        transition: none;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        & > .composer-body {
-            -webkit-flex-grow: 1;
-                -ms-flex-positive: 1;
-                    flex-grow: 1;
-        }
-        & .composer-header,
-        & .composer-footer {
-            border-radius: 0;
-        }
-    }
     @include responsive(xs) {
         width: auto;
         left: 10px;

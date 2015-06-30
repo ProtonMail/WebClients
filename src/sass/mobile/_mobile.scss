@@ -7,23 +7,6 @@
 	}
 }	
 
-.btn-dark,
-.navbar-toggle {
-	margin: 0 !important;
-	padding: 0;
-	line-height: 6rem;
-	height: 6rem;
-	width: 6rem;
-	text-align: center;
-	background: transparent !important;
-	.icon-bar {
-		margin: auto;
-	}
-	&.disabled {
-		opacity: .25;
-	}
-}
-
 	#sidebar,
 	.message-toolbar {
 		& ul {
@@ -94,47 +77,6 @@
 	.message-head h1 {
 		line-height: 20px;
 		padding: 7px 0;
-	}
-	.message-list.mobile {
-		width: 100% !important;
-		table-layout: fixed;
-		display: table !important;
-		td {
-			vertical-align: middle;
-			position: relative;
-			padding-right: 15px;
-			width: auto;
-			padding: 2rem 1rem 2rem 3.5rem;
-			line-height: 1em;
-		}
-		h4 {
-			margin: 0 0 1rem 0;
-			white-space: normal;
-		}
-		.fa-unlock-alt {
-			color: rgba(0, 0, 0, 0.25);
-		}
-		.fa-lock {
-			color: $primary-color;
-		}
-		.fa {
-			width: 2rem;
-			position: absolute;
-			left: 15px;
-			top: 2.25rem;
-		}
-		.recipient {
-			width: 100%;
-			display: block;
-			clear: both;
-			font-size: 12px;
-			.sender {
-				display: inline-block;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				width: 70%;
-			}
-		}
 	}
 	#search-text {
 		background: #333;

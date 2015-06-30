@@ -59,9 +59,6 @@ body {
     bottom: 0;
     z-index: 5;
     left: 0;
-    #header {
-        height: $navbar-height;
-    }
     #messageListToolbar,
     #messageViewToolbar {
         height: $row-height;
@@ -132,9 +129,6 @@ body footer {
             color: white;
         }
     }
-}
-.secure #navbar {
-    height: 50px;
 }
 .secure footer {
     width: auto;
@@ -344,6 +338,8 @@ tr.selected td {
 @import "partials/message-toolbar";
 @import "partials/message-view";
 @import "partials/compose";
+@import "partials/minimized";
+@import "partials/maximized";
 @import "partials/outside";
 @import "partials/labels";
 @import "partials/palette";
@@ -364,6 +360,10 @@ tr.selected td {
 @import "partials/wizard";
 @import "responsive";
 @import "tablet/tablet";
+@import "tablet/tablet-header";
+@import "tablet/tablet-maximized";
 @import "mobile/mobile";
+@import "mobile/mobile-header";
+@import "mobile/mobile-message-list";
 @import "print";
 @import "partials/custom-browser-fixes";

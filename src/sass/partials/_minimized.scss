@@ -1,0 +1,18 @@
+// THIS HAS BEEN REMOVED? :(
+$minW: 4rem;
+body.min {
+    #sidebar {
+        width: $minW !important;
+        padding-top: 50px;
+        .hidden-xs,
+        .storage {
+            display: none !important;
+        }       
+    }
+    #navbar {
+        display: none;
+    }
+    #main {
+        padding-left: $minW;
+    }
+}

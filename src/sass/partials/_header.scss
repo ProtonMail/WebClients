@@ -1,4 +1,5 @@
 #header {
+    height: $navbar-height;
     .navbar {
         @include transition (color, 200ms, ease-in-out);
         .dropdown-menu {
