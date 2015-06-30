@@ -82,6 +82,9 @@ body.locked {
         flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
+        & > .row {
+            margin: 0;
+        }
     }
 }
 
