@@ -116,6 +116,14 @@
 }
 
 @media screen and (max-width: 767px) {
+
+.unlock #body #content {
+	padding: 0;
+	.panel-dark {
+		border: none;
+	}
+}	
+
 	#sidebar,
 	.message-toolbar {
 		& ul {

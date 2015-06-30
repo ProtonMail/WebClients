@@ -1,44 +1,40 @@
-.navbar {
-  @include transition (color, 200ms, ease-in-out);
+#header {
+    .navbar {
+        @include transition (color, 200ms, ease-in-out);
+        .dropdown-menu {
+            background-color: $navbar-color;
+            li a {
+                line-height: 2em;
+                color: $base-color;
 
-  .dropdown-menu {
-      background-color: $navbar-color;
+                &:hover {
+                    background-color: $alt-color-light;
+                }
 
-      li a {
-          line-height: 2em;
-          color: $base-color;
-
-          &:hover {
-              background-color: $alt-color-light;
-          }
-
-          .fa {
-              margin-right: 20px;
-          }
-      }
-  }
-}
-.navbar-text {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.logo img {
-    height: 20px;
-}
-
-// TODO move to tablet css
-#searchMob {
-  line-height: 30px;
-  height: 30px;
-  width: 35px;
-  margin: 10px 15px 10px 0;
-  color: $base-color;
-  background: $alt-color-light;
-  text-align: center;
-  border-radius: 2px;
-}
-
-#main .navbar {
-  margin-bottom: 0;
+                .fa {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    .navbar-text {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .logo img {
+        height: 20px;
+    }
+    #searchMob {
+        line-height: 30px;
+        height: 30px;
+        width: 35px;
+        margin: 10px 15px 10px 0;
+        color: $base-color;
+        background: $alt-color-light;
+        text-align: center;
+        border-radius: 2px;
+    }
+    #main .navbar {
+        margin-bottom: 0;
+    }
 }
