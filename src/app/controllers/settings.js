@@ -33,7 +33,7 @@ angular.module("proton.controllers.Settings", [
     $scope.autosaveContacts = !!user.AutoSaveContacts;
     $scope.signature = user.Signature;
     $scope.aliases = user.Addresses;
-    $scope.labels = user.Labels;
+    $scope.labels = authentication.user.Labels;
     $scope.doLogging = user.LogAuth;
     $scope.cssTheme = user.Theme;
     $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
@@ -116,9 +116,15 @@ angular.module("proton.controllers.Settings", [
           labelOrder = [];
           _.forEach($scope.labels, function(d,i) {
             labelOrder[i] = d.Order;
+            d.Order = i;
           });
           $scope.saveLabelOrder(labelOrder);
         }
+    };
+
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+    $scope.updateLabels = function () {
+            $scope.labels = authentication.user.Labels;
     };
 
     $scope.saveNotification = function(form) {

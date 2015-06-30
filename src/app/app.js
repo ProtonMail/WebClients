@@ -37,6 +37,7 @@ angular.module("proton", [
     "proton.models.attachment",
     "proton.models.eo",
     "proton.models.logs",
+    "proton.models.events",
 
     // Config
     "proton.config",
@@ -51,6 +52,7 @@ angular.module("proton", [
     "proton.attachments",
     "proton.tools",
     "proton.contacts",
+    "proton.event",
 
     // Directives
     "proton.tooltip",

@@ -5,11 +5,13 @@ angular.module("proton.authentication", [
 
 .constant("MAILBOX_PASSWORD_KEY", "proton:mailbox_pwd")
 .constant("OAUTH_KEY", "proton:oauth")
+.constant("EVENT_ID", "proton:eventid")
 
 .config(function(
     $provide,
     MAILBOX_PASSWORD_KEY,
-    OAUTH_KEY
+    OAUTH_KEY,
+    EVENT_ID
 ) {
     $provide.provider("authentication", function AuthenticationProvider(pmcwProvider) {
         // PRIVATE VARIABLES
@@ -32,6 +34,10 @@ angular.module("proton.authentication", [
             auth.data.ExpiresIn = date;
 
             auth.setAuthHeaders();
+        };
+
+        auth.saveEventId = function(id) {
+            window.sessionStorage[EVENT_ID] = id;
         };
 
         auth.savePassword = function(pwd) {
@@ -154,7 +160,7 @@ angular.module("proton.authentication", [
                             function(resp) {
                                 var data = resp.data;
                                 api.receivedCredentials(
-                                    _.pick(data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn")
+                                    _.pick(data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn", "EventID")
                                 );
                                 q.resolve(data);
                                 // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
@@ -322,6 +328,8 @@ angular.module("proton.authentication", [
 
                 receivedCredentials: function(data) {
                     auth.saveAuthData(data);
+                    console.log(data);
+                    auth.saveEventId(data.EventID);
                 },
 
                 fetchUserInfo: function() {
@@ -416,12 +424,13 @@ angular.module("proton.authentication", [
     authenticationProvider.detectAuthenticationState();
 })
 
-.run(function($rootScope, authentication) {
+.run(function($rootScope, authentication, eventManager) {
     authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.logout = function() {
         authentication.logout();
+        eventManager.stop();
         $scope.error = null;
     };
 });

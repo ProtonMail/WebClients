@@ -4,6 +4,11 @@ angular.module("proton.controllers.Sidebar", [])
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     $scope.labels = authentication.user.Labels;
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+    $scope.updateLabels = function () {
+        $scope.labels = authentication.user.Labels;
+    };
+
     $scope.droppableOptions = {
         accept: '.ui-draggable',
         activeClass: 'drop-active',
@@ -59,17 +64,31 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.$on('updateCounters', function(event) {
-        $scope.updateCounters();
+        $scope.getUnread();
     });
+
+    if (typeof $rootScope.counters === 'undefined') {
+        Message.unreaded({}).$promise.then(function(response) {
+            $rootScope.counters = response;
+        });
+    }
 
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
 
         if(mailbox === 'label') {
-            value = $rootScope.counters[id];
+            _.forEach($rootScope.counters.Labels, function(label) {
+                if (label.LabelID === id) {
+                    value = label.Count;
+                }
+            }) ;
         } else {
-            value = $rootScope.counters[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            _.forEach($rootScope.counters.Locations, function(location) {
+                if (location.Location === CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]) {
+                    value = location.Count;
+                }
+            }) ;
         }
 
         if(angular.isDefined(value)) {
@@ -78,31 +97,6 @@ angular.module("proton.controllers.Sidebar", [])
 
         return count;
     };
-
-    $scope.updateCounters = function(firstTime) {
-        if(angular.isUndefined(window.sessionStorage['proton:mailbox_pwd'])) {
-            authentication.logout();
-            notify('Session expired, you need to login please.');
-        } else {
-            Message.countUnread().$promise.then(function(result) {
-
-                if(JSON.stringify($rootScope.counters) !== JSON.stringify(result)) {
-                    var mailbox = tools.getCurrentMailbox();
-                    var location = tools.getCurrentLocation();
-
-                    if(firstTime !== true && mailbox !== false && $state.is('secured.' + mailbox) && $rootScope.counters[location] !== result[location]) {
-                        $rootScope.$broadcast('refreshMessages');
-                    }
-
-                    $rootScope.counters  = result;
-                }
-            });
-        }
-    };
-
-    var updates = $interval($scope.updateCounters, CONSTANTS.COUNT_UNREAD_INTERVAL_TIME);
-
-    $scope.updateCounters(true);
 
     $scope.$on("$destroy", function() {
         $interval.cancel(updates);

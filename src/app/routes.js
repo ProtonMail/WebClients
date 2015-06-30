@@ -71,6 +71,7 @@ angular.module("proton.routes", [
                     $rootScope,
                     authentication,
                     Label,
+                    messageCache,
                     Message,
                     CONSTANTS,
                     networkActivityTracker,
@@ -123,8 +124,7 @@ angular.module("proton.routes", [
 
                     if (authentication.isSecured()) {
                         var params = getMessagesParameters(mailbox);
-
-                        return networkActivityTracker.track(Message.query(params).$promise);
+                        return networkActivityTracker.track(messageCache.query(params));
                     } else {
                         return [];
                     }

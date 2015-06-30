@@ -125,10 +125,13 @@ angular.module("proton.controllers.Auth", [
 .controller("SecuredController", function(
     $scope,
     $rootScope,
-    authentication
+    authentication,
+    eventManager
 ) {
     $scope.user = authentication.user;
     $scope.logout = authentication.logout;
+
+    eventManager.start(authentication.user.EventID);
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;

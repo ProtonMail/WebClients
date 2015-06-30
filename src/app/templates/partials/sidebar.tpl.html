@@ -17,13 +17,13 @@
             </li>
         </ul>
         <ul class="list-group" id="topMenu">
-            <li 
-            id="inbox-li" 
-            class="list-group-item" 
-            data-unread="0" 
-            data-drop="true" 
-            jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" 
-            data-jqyoui-options="droppableOptions" 
+            <li
+            id="inbox-li"
+            class="list-group-item"
+            data-unread="0"
+            data-drop="true"
+            jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}"
+            data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.inbox')" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-hide="getUnread('inbox')<1" ng-class="{active: getUnread('inbox') > 0}">{{ getUnread('inbox') }}</span>
@@ -31,27 +31,27 @@
                     <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>
                 </a>
             </li>
-            <li 
-            class="list-group-item" 
+            <li
+            class="list-group-item"
             data-unread="0">
                 <a class="btn" ng-click="goTo('secured.drafts')" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('drafts') > 0}">{{ getUnread('drafts') }}</span>
                     <span class="fa fa-file-text-o"></span> <span class="hidden-xs hidden-sm">{{ 'DRAFTS' | translate }}</span>
                 </a>
             </li>
-            <li 
-            class="list-group-item" 
+            <li
+            class="list-group-item"
             data-unread="0">
                 <a class="btn" ng-click="goTo('secured.sent')" ng-class="{ active: ('secured.sent.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('sent') > 0}">{{ getUnread('sent') }}</span>
                     <span class="fa fa-sign-out"></span> <span class="hidden-xs hidden-sm">{{ 'SENT' | translate }}</span>
                 </a>
             </li>
-            <li 
-            class="list-group-item" 
-            data-drop="true" 
-            jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}" 
-            data-jqyoui-options="droppableOptions" 
+            <li
+            class="list-group-item"
+            data-drop="true"
+            jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}"
+            data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.starred')" ng-class="{ active: ('secured.starred.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('starred') > 0}">{{ getUnread('starred') }}</span>
@@ -61,34 +61,34 @@
         </ul>
         <div class="divider"></div>
         <ul class="list-group">
-            <li 
-            class="list-group-item" 
-            data-drop="true" 
-            jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}" 
-            data-jqyoui-options="droppableOptions" 
+            <li
+            class="list-group-item"
+            data-drop="true"
+            jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}"
+            data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.archive')" ng-class="{ active: ('secured.archive.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('archive') > 0}">{{ getUnread('archive') }}</span>
                     <span class="fa fa-archive"></span> <span class="hidden-xs hidden-sm">{{ 'ARCHIVE' | translate }}</span>
                 </a>
             </li>
-            <li 
-            class="list-group-item" 
-            data-drop="true" 
-            jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}" 
-            data-jqyoui-options="droppableOptions" 
+            <li
+            class="list-group-item"
+            data-drop="true"
+            jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}"
+            data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.spam')" ng-class="{ active: ('secured.spam.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('spam') > 0}">{{ getUnread('spam') }}</span>
                     <span class="fa fa-ban"></span> <span class="hidden-xs hidden-sm">{{ 'SPAM' | translate }}</span>
                 </a>
             </li>
-            <li 
-            class="list-group-item" 
-            data-unread="0" 
-            data-drop="true" 
-            jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}" 
-            data-jqyoui-options="droppableOptions" 
+            <li
+            class="list-group-item"
+            data-unread="0"
+            data-drop="true"
+            jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}"
+            data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.trash')" ng-class="{ active: ('secured.trash.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('trash') > 0}">{{ getUnread('trash') }}</span>
@@ -99,13 +99,13 @@
         <div class="divider"></div>
         <div class="hidden-xs hidden-sm" id="sidebarLabels">
             <ul class="list-group">
-                <li 
-                class="list-group-item" 
-                ng-repeat="label in labels | orderBy: 'label.Order'" 
-                ng-hide="label.Display" 
-                data-drop="true" 
-                jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" 
-                data-jqyoui-options="droppableOptions" 
+                <li
+                class="list-group-item"
+                ng-repeat="label in labels | orderBy: 'Order'"
+                ng-hide="label.Display"
+                data-drop="true"
+                jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}"
+                data-jqyoui-options="droppableOptions"
                 ng-model="droppedMessages">
                     <a ui-sref="secured.label({label: '{{label.ID}}' })" class="btn" ui-sref-active="active">
                         <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('label', label.ID) > 0}">{{ getUnread('label', label.ID) }}</span>

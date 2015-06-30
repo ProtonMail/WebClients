@@ -21,7 +21,6 @@ angular.module("proton.controllers.Messages", [
     networkActivityTracker,
     notify
 ) {
-
     var mailbox = $rootScope.pageName = $state.current.data.mailbox;
 
     $scope.messagesPerPage = $scope.user.NumMessagePerPage;
@@ -175,6 +174,16 @@ angular.module("proton.controllers.Messages", [
         if(!!!silently) {
             networkActivityTracker.track(promise);
         }
+    };
+
+    $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
+
+    $scope.refreshMessagesCache = function () {
+        var mailbox = $state.current.name.replace('secured.', '');
+        var params = $scope.getMessagesParameters(mailbox);
+        messageCache.query(params).then(function(messages) {
+            $scope.messages = messages;
+        });
     };
 
     $scope.showTo = function(message) {
@@ -416,10 +425,17 @@ angular.module("proton.controllers.Messages", [
     });
 
     $scope.moveMessagesTo = function(mailbox) {
+
         var ids = $scope.selectedIds();
         var promise;
         var inDelete = mailbox === 'delete';
 
+        messages = [];
+        _.forEach($scope.selectedMessages(), function (message) {
+            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            messages.push({Action: 3, ID: message.ID, Message: message});
+        });
+		messageCache.set(messages);
 
         if(inDelete) {
             promise = Message.delete({IDs: ids}).$promise;
@@ -657,6 +673,7 @@ angular.module("proton.controllers.Messages", [
     Attachment,
     authentication,
     Message,
+    messageCache,
     localStorageService,
     attachments,
     pmcw,
@@ -1378,6 +1395,8 @@ angular.module("proton.controllers.Messages", [
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             notify($translate.instant('MESSAGE_SENT'));
+                            messageCache.put(message.ID, message);
+                            messageCache.set([{Action: 1, ID: message.ID, Message: message}]);
                             $scope.close(message, false);
 
                             if($state.is('secured.drafts') || $state.is('secured.sent')) {
