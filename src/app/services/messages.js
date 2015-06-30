@@ -39,13 +39,13 @@ angular.module("proton.messages", [])
         var inboxOneParams = {Location: 0, Page: 0};
         var inboxTwoParams = {Location: 0, Page: 1};
         var sentOneParams = {Location: 2, Page: 0};
-        var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
+        var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData, refreshMessagesCache;
         var started = false;
 
         var cachedMetadata = _.bindAll({
             inbox: null,
             sent: null,
-            // Function to pull data to keep inbox cache at 100 messages and sent to 50 messages. 
+            // Function to pull data to keep inbox cache at 100 messages and sent to 50 messages.
             // Will eventually have a pool of extra messages and only call for the messges needed instead of whole page
             // when implemented in API
             sync: function(cacheLoc) {
@@ -53,15 +53,14 @@ angular.module("proton.messages", [])
                     Message.query(inboxTwoParams).$promise.then(function(result) {
                         cachedMetadata.inbox = cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
                         addMessageList(cachedMetadata.inbox);
-                        $rootScope.$broadcast('refreshMessagesCache');
                     });
                 } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
-                        $rootScope.$broadcast('refreshMessagesCache');
                     });
                 }
+                refreshMessagesCache = true;
             },
             delete: function(cacheLoc, message) {
                 cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
@@ -74,7 +73,6 @@ angular.module("proton.messages", [])
                     addMessageList(cachedMetadata[loc]);
                 } else {
                     cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
-                    $rootScope.$broadcast('refreshMessagesCache');
                     cachedMetadata.sync(cacheLoc);
                 }
             },
@@ -86,7 +84,7 @@ angular.module("proton.messages", [])
                 index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
                 cachedMetadata[loc].pop();
                 cachedMetadata[loc].splice(index, 0, message);
-                $rootScope.$broadcast('refreshMessagesCache');
+                refreshMessagesCache = true;
             }
         });
 
@@ -234,6 +232,7 @@ angular.module("proton.messages", [])
             // Function for dealing with message cache updates
             set: function(messages) {
                 var currentLocation = tools.getCurrentLocation();
+                refreshMessagesCache = false;
                 _.each(messages, function(message) {
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
@@ -280,6 +279,9 @@ angular.module("proton.messages", [])
                         }
                     }
                 });
+                if (refreshMessagesCache) {
+                    $rootScope.$broadcast('refreshMessagesCache');
+                }
             },
             // Function for dealing with Messge Label cache updates
             setLabels: function(messages) {
