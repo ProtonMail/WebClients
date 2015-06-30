@@ -1,0 +1,18 @@
+@media screen and (max-width: 991px) {
+    body#login,
+    body#login-unlock,
+    body#support-reset-password {
+    	#header {
+    		.container-fluid {
+    			padding-left: 2rem;
+    			.logo {
+    				padding: 0;
+    				margin: 0;
+    				img {
+    					margin: 2rem 0;
+    				}
+    			}
+    		}	
+    	}
+    }
+}

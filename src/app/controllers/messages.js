@@ -952,25 +952,23 @@ angular.module("proton.controllers.Messages", [
         if (tools.findBootstrapEnvironment() === 'xs') {
             var marginTop = 80; // px
             var top = marginTop;
-
             styles.top = top + 'px';
-        } else {
+        } 
+        else {
             var marginRight = margin; // px
             var widthComposer = 480; // px
-
             if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
                 right = (index * (widthComposer + marginRight)) + marginRight;
-            } else {
+            } 
+            else {
                 widthWindow -= margin; // margin left
                 var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
                 right = index * (widthComposer - overlap);
             }
-
             if (reverseIndex === $scope.messages.length) {
                 right = marginRight;
                 index = $scope.messages.length;
             }
-
             styles.right = right + 'px';
         }
 
