@@ -68,7 +68,10 @@ angular.module("proton.event", [])
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
-				if (data.Refresh === 1) {
+				// Check if eventID is sent
+				if (data.Error) {
+					console.log(data.Error);
+				} else if (data.Refresh === 1) {
 					messageCache.reset();
 				} else if (this.isDifferent(data.EventID)){
 					this.manageLabels(data.Labels);

@@ -78,7 +78,6 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             unreaded: {
                 method: 'get',
-                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             // PUT

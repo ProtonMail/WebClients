@@ -67,6 +67,12 @@ angular.module("proton.controllers.Sidebar", [])
         $scope.getUnread();
     });
 
+    if (typeof $rootScope.counters === 'undefined') {
+        Message.unreaded({}).$promise.then(function(response) {
+            $rootScope.counters = response;
+        });
+    }
+
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
