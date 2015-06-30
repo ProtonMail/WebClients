@@ -13,17 +13,19 @@ angular.module("proton.event", [])
 				return this.ID !== eventID;
 			},
 			manageLabels: function(labels) {
-				_.each(labels, function(label) {
-					if(label.Action === DELETE) {
-						authentication.user.Labels = _.filter(authentication.user.Labels, function(l) { return l.ID !== label.ID; });
-						$rootScope.$broadcast('updateLabels');
-					} else if(label.Action === CREATE) {
-						authentication.user.Labels.push(label.Label);
-					} else if(label.Action === UPDATE) {
-						var index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
-						authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
-					}
-				});
+				if (angular.isDefined(labels)) {
+					_.each(labels, function(label) {
+						if(label.Action === DELETE) {
+							authentication.user.Labels = _.filter(authentication.user.Labels, function(l) { return l.ID !== label.ID; });
+							$rootScope.$broadcast('updateLabels');
+						} else if(label.Action === CREATE) {
+							authentication.user.Labels.push(label.Label);
+						} else if(label.Action === UPDATE) {
+							var index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
+							authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
+						}
+					});
+				}
 			},
 			manageContacts: function(contacts) {
 				if (angular.isDefined(contacts)) {
@@ -58,22 +60,24 @@ angular.module("proton.event", [])
 			manageMessageLabels: function(messages) {
 				messageCache.setLabels(messages);
 			},
+			manageStorage: function(storage) {
+				authentication.user.UsedSpace = storage;
+			},
 			manageID: function(id) {
 				this.ID = id;
 				window.sessionStorage[EVENT_ID] = id;
 			},
 			manage: function (data) {
-				console.log(data);
 				if (data.Refresh === 1) {
 					messageCache.reset();
-				}
-				else if (this.isDifferent(data.EventID)){
+				} else if (this.isDifferent(data.EventID)){
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageCounter(data.Unread);
 					this.manageMessages(data.Messages);
 					this.manageMessageLabels(data.MessageLabels);
+					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
 			}

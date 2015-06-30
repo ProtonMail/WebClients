@@ -673,6 +673,7 @@ angular.module("proton.controllers.Messages", [
     Attachment,
     authentication,
     Message,
+    messageCache,
     localStorageService,
     attachments,
     pmcw,
@@ -1394,6 +1395,8 @@ angular.module("proton.controllers.Messages", [
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             notify($translate.instant('MESSAGE_SENT'));
+                            messageCache.put(message.ID, message);
+                            messageCache.set([{Action: 1, ID: message.ID, Message: message}]);
                             $scope.close(message, false);
 
                             if($state.is('secured.drafts') || $state.is('secured.sent')) {

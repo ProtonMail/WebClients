@@ -51,8 +51,7 @@ angular.module("proton.messages", [])
                         addMessageList(cachedMetadata.inbox);
                         $rootScope.$broadcast('refreshMessagesCache');
                     });
-                }
-                else if (cacheLoc === 'sent') {
+                } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
@@ -146,8 +145,7 @@ angular.module("proton.messages", [])
                     this.cache[id] = message;
                     window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
                 }
-            },
-
+            }
         });
 
         // Parameters shared between api / cache / message view / message list
@@ -245,7 +243,7 @@ angular.module("proton.messages", [])
                     }
 
                     // CREATE - location is either inbox or sent
-                    else if(message.Action === CREATE && loc) {
+                    else if(message.Action === CREATE && loc && !cacheLoc) {
                         cachedMetadata.create(loc, message.Message);
                     }
 
