@@ -1,53 +1,23 @@
-$minW: 4rem;
-body.min {
-    #sidebar {
-        width: $minW !important;
-        padding-top: 50px;
-        .hidden-xs,
-        .storage {
-            display: none !important;
-        }
-        #sidebarToggle {
-            text-align: center;
-            padding: 0;
-            width: $minW;
-        }
-    }
-    #navbar {
-        display: none;
-    }
-    #main {
-        padding-left: $minW;
-    }
-}
-
 #sidebar {
     width: $sidebar-width;
     background: $sidebar-bg;
     text-shadow: 0 1px 0 rgba(darken($sidebar-bg, $color-offset), 0.5);
     z-index: 2000;
-    height: 100%;
     position: absolute;
     position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    #sidebarWrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 5rem;
+        overflow: auto;
+    }
     em {
         font-style: normal;
-    }
-
-    #sidebarToggle {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: $navbar-height;
-        line-height: $navbar-height;
-        z-index: 2;
-        padding: 0 1rem;
-        .fa {
-            line-height: $navbar-height;
-            color: rgba(#fff, .5);
-        }
-        &:hover .fa {
-            color: #fff;
-        }
     }
     #sidebarLabels {
         overflow-y: auto;
@@ -61,7 +31,6 @@ body.min {
             text-overflow: ellipsis;
         }
     }
-
     .label {
         background-color: white;
         color: #222;
@@ -79,7 +48,6 @@ body.min {
             height: 100%;
         }
     }
-
     #compose_button {
         a {
             background: $primary-color;
@@ -91,18 +59,6 @@ body.min {
                 border-color: transparent;
                 box-shadow: none;
             }
-        }
-    }
-    #sidebarLabels {
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-flex: 1;
-            -ms-flex: 1;
-                flex: 1;
-        .btn {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
     }
     .divider {

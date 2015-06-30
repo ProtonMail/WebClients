@@ -21,10 +21,6 @@ angular.module("proton.controllers.Sidebar", [])
         $rootScope.$broadcast('newMessage');
     };
 
-    $scope.sidebarToggle = function() {
-        $rootScope.toggleSidebar = !$rootScope.toggleSidebar;
-    };
-
     $scope.labelsDisplayed = function() {
         return _.where($scope.labels, {Display: 0});
     };

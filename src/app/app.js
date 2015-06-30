@@ -108,15 +108,6 @@ angular.module("proton", [
         }
     });
 
-    // Experimenting with design. Ignore. :)
-    // $( function() {
-    //     setTimeout( function() {
-    //         $('#sidebar .list-group').eq(0).find('li').eq(0).remove();
-    //         $('#navbar, .sizeBar, #footer').remove();
-    //         $('#sidebar .list-group').eq(3).after('<div class="divider"></div><ul class="list-group"><li class="list-group-item"><a class="btn" ui-sref="secured.settings" ui-sref-active="active" href="/settings"><span class="fa fa-cog"></span> <span class="hidden-xs hidden-sm ng-binding">Settings</span></a></li></ul>');
-    //     }, 3000);
-    // });
-
     $rootScope.firstNameOnly = function() {
         var firstNameOnly;
         var emailFirst = authentication.user.DisplayName.split('@');

@@ -92,25 +92,6 @@
         }
     }
 }
-#headerCode {
-    border-radius: 0;
-    border: none;
-    box-shadow: inset 0 -1px $base-color-darker;
-    padding: 15px;
-    color: #000;
-    position: relative;
-    z-index: 44;
-    &::-moz-selection {
-        color: #fff;
-        background: #333;
-        text-shadow: 0 1px 0 #000;
-    }
-    &::selection {
-        color: #fff;
-        background: #333;
-        text-shadow: 0 1px 0 #000;
-    }
-}
 
 #showImages {
     background: #e5e5e5;
