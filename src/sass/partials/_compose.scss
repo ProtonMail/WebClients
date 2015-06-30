@@ -144,6 +144,15 @@
         bottom: 0;
         background: rgba(0,0,0,.5);
         z-index: 3;
+        h1 {
+            color: #fff;
+            text-shadow: 0 1px 1px rgba(0,0,0,.25);
+            padding: 4rem 0;
+            display: block;
+            .fa {
+                font-size: 1em;
+            }
+        }
     }
 
     .tm-tag {
@@ -151,13 +160,14 @@
         box-shadow: none;
         border-radius: 2px;
         display: inline-block;
-        background: $base-color-dark;
-        padding: 0 1.5rem;
-        line-height: ($row-height*1.2 - 10);
-        height: ($row-height*1.2 - 10);
+        background: darken($base-color-dark, $color-offset);
+        padding: 0 1rem;
+        line-height: ($row-height - 10);
+        height: ($row-height - 10);
         margin: 5px 0 5px 5px;
         color: #000;
-
+        font-size: $pm-font-size-base;
+        font-family: $font-primary;
         -webkit-touch-callout: none;
         @include user-select(none);
 
@@ -537,7 +547,7 @@ form#compose {
     background-color: #fff;
     box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
     position: fixed;
-    bottom: 2rem;
+    bottom: 1rem;
     right: 1.5rem;
     width: 480px;
     z-index: 6;

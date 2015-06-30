@@ -84,7 +84,7 @@
                 <li>
                     <a href="" ng-click="togglePlainHtml()">
                         <span ng-show="message.viewMode === 'html'">
-                            <i class="fa fa-file-o"></i> {{ 'VIEW_SOURCE' | translate }}
+                            <i class="fa fa-file-text-o"></i> {{ 'VIEW_SOURCE' | translate }}
                         </span>
                         <span ng-show="message.viewMode === 'plain'">
                             <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
@@ -92,7 +92,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" ng-click="viewRaw()">
+                    <a ng-click="viewRaw()" href="#">
                         <i class="fa fa-code"></i> {{ 'PGP_PAYLOAD' | translate }}
                     </a>
                 </li>

@@ -197,7 +197,7 @@ var pmcrypto = (function() {
 
     function encryptSessionKey(sessionKey, algo, pubKeys, passwords) {
 
-        console.log(pubKeys, passwords);
+        // console.log(pubKeys, passwords);
 
         return new Promise(function(resolve, reject) {
             if (sessionKey === undefined) {
