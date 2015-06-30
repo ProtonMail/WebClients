@@ -67,66 +67,62 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <button type="button" class="btn btn-dark navbar-btn" ng-click="openSearchModal()">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button type="button" style="margin-right: 15px;" class="btn btn-dark navbar-btn" ng-click="openNewMessage()">
+                    <i class="fa fa-pencil"></i>
+                </button>                
                 <div class="spinner" ng-show="networkActivity.loading()">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
                     <div class="bounce3"></div>
                 </div>
                 <div class="pull-right">
-                    <button type="button" class="btn btn-dark navbar-btn" ng-click="openSearchModal()">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <button type="button" style="margin-right: 15px;" class="btn btn-dark navbar-btn" ng-click="openNewMessage()">
-                        <i class="fa fa-pencil"></i>
-                    </button>
+                    <a ng-if="messages.length>0" href class="btn btn-dark" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1); scrollToBottom()">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a ng-if="messages.length>0" href class="btn btn-dark" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-small">
-                <table class="table">
-                    <tr>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.compose"><span class="fa fa-pencil"></span> {{ 'COMPOSE' | translate }}</a>
-                        </td>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}<span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span></a>
-                        </td>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> {{ 'SENT' | translate }}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> {{ 'TRASH' | translate }}</a>
-                        </td>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> {{ 'STARRED' | translate }}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-ban"></span> {{ 'SPAM' | translate }}</a>
-                        </td>
-                        <td>
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="nav_settings" ng-if="'secured.**' | includedByState">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
-                        </td>
-                        <td id="nav_login" ng-if="!isLoggedIn">
-                            <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
-                        </td>
-                        <td id="nav_logout" ng-if="isLoggedIn">
-                            <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
-                        </td>
-                    </tr>
-                </table>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.compose"><span class="fa fa-pencil"></span> {{ 'COMPOSE' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}<span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> {{ 'SENT' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> {{ 'TRASH' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> {{ 'STARRED' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-ban"></span> {{ 'SPAM' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
+                    </li>
+                    <li id="nav_settings" ng-if="'secured.**' | includedByState" class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
+                    </li>
+                    <li id="nav_login" ng-if="!isLoggedIn" class="list-group-item">
+                        <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
+                    </li>
+                    <li id="nav_logout" ng-if="isLoggedIn" class="list-group-item">
+                        <a onclick='javascript:$(".navbar-toggle").click()' ng-click="logout()" href><span class="fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>

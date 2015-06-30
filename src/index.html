@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="{{ toState }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -48,6 +48,8 @@
         <p class="text-center">Loading ProtonMail</p>
     </div>
 
+  <!-- <pre>{{ toState }}</pre> -->
+  
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>

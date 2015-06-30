@@ -363,5 +363,7 @@ tr.selected td {
 @import "partials/animations";
 @import "partials/wizard";
 @import "responsive";
+@import "tablet/tablet";
+@import "mobile/mobile";
 @import "print";
 @import "partials/custom-browser-fixes";
