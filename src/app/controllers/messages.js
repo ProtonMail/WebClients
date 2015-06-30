@@ -688,6 +688,8 @@ angular.module("proton.controllers.Messages", [
     Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
+    $scope.sending = false;
+    $scope.saving = false;
 
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
@@ -809,10 +811,7 @@ angular.module("proton.controllers.Messages", [
                     } else {
                         $scope.addAttachment(file, message);
                     }
-                },
-                removedfile: function(file) {
-                    $scope.removeAttachment(file, message);
-                }
+                }  
             }
         };
     };
@@ -830,6 +829,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.addAttachment = function(file, message) {
+
         var totalSize = $scope.getAttachmentsSize(message);
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -1257,6 +1257,8 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.save = function(message, silently) {
+
+        $scope.saving = true;
         var deferred = $q.defer();
         var parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
@@ -1295,6 +1297,7 @@ angular.module("proton.controllers.Messages", [
                 message.ID = result.Message.ID;
                 message.BackupDate = new Date();
                 $scope.saveOld(message);
+                $scope.saving = false;
 
                 // Add draft in message list
                 if($state.is('secured.drafts') && silently !== true) {
@@ -1313,7 +1316,10 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.send = function(message) {
-        console.log(message);
+
+        $scope.saving = false;
+        $scope.sending = true;
+
         var deferred = $q.defer();
         var validate = $scope.validate(message);
 
@@ -1368,7 +1374,7 @@ angular.module("proton.controllers.Messages", [
 
 
                                             var keyPackets = result;
-
+                                            $scope.sending = false;
                                             return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                         });
                                     });
@@ -1383,6 +1389,7 @@ angular.module("proton.controllers.Messages", [
                         if(message.Attachments.length > 0) {
                              promises.push(message.clearPackets().then(function(packets) {
                                  parameters.AttachmentKeys = packets;
+                                 $scope.sending = false;
                             }));
                         }
                     }
@@ -1394,18 +1401,22 @@ angular.module("proton.controllers.Messages", [
                             if($state.is('secured.drafts') || $state.is('secured.sent')) {
                                 $rootScope.$broadcast('refreshMessages');
                             }
-
+                            $scope.sending = false;
                             deferred.resolve(result);
                         });
                     });
                 });
             }, function() {
+                $scope.sending = false;
                 deferred.reject();
             });
 
             message.track(deferred.promise);
 
             return deferred.promise;
+        }
+        else {
+            $scope.sending = false;
         }
     };
 

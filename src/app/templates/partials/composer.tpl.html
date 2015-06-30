@@ -181,9 +181,14 @@
                         {{ 'SEND' | translate }}
                     </button>
                     <button
-                    ng-show="message.loading()"
+                    ng-show="message.loading() && sending"
                     class="btn btn-sm btn-primary disabled">
                         {{ 'SENDING' | translate }}
+                    </button>
+                    <button
+                    ng-show="message.loading() && saving && !sending"
+                    class="btn btn-sm btn-primary disabled">
+                        {{ 'SAVING' | translate }}
                     </button>
                 </div>
             </div>
