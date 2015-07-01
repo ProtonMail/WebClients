@@ -1911,7 +1911,7 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.goToMessageList = function() {
-        $state.go('^', {}, {reload: true});
+        $state.go('^');
         $timeout(function() {
             $rootScope.$broadcast('refreshMessages', true); // in silence
         }, 500);
