@@ -683,7 +683,8 @@ angular.module("proton.controllers.Messages", [
     tools,
     CONSTANTS,
     Contact,
-    User
+    User,
+    closeModal
 ) {
     Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
@@ -1460,24 +1461,37 @@ angular.module("proton.controllers.Messages", [
     };
 
     $scope.close = function(message, save) {
-        var index = $scope.messages.indexOf(message);
-        var messageFocussed = !!message.focussed;
+        closeModal.activate({
+            params: {
+                save: function() {
+                    closeModal.deactivate();
+                    var index = $scope.messages.indexOf(message);
+                    var messageFocussed = !!message.focussed;
 
-        if (save === true) {
-            $scope.saveLater(message);
-        }
+                    if (save === true) {
+                        $scope.saveLater(message);
+                    }
 
-        message.close();
+                    message.close();
 
-        // Remove message in messages
-        $scope.messages.splice(index, 1);
+                    // Remove message in messages
+                    $scope.messages.splice(index, 1);
 
-        // Message closed and focussed?
-        if(messageFocussed && $scope.messages.length > 0) {
-            // Focus the first message
-            $scope.focusComposer(_.first($scope.messages));
-        }
-
+                    // Message closed and focussed?
+                    if(messageFocussed && $scope.messages.length > 0) {
+                        // Focus the first message
+                        $scope.focusComposer(_.first($scope.messages));
+                    }
+                },
+                discard: function() {
+                    closeModal.deactivate();
+                    $scope.discard(message);
+                },
+                cancel: function() {
+                    closeModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.discard = function(message) {
