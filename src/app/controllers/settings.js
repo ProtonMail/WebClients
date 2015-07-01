@@ -92,6 +92,29 @@ angular.module("proton.controllers.Settings", [
         );
     };
 
+    $scope.downloadLogs = function () {
+        var logsArray = [['Event', 'Time', 'IP']];
+        var csvRows = [];
+
+        _.forEach($scope.logs, function(log) {
+          logsArray.push([log.Event, moment(log.Time * 1000), log.IP]);
+        });
+
+        for(var i=0, l=logsArray.length; i<l; ++i){
+            csvRows.push(logsArray[i].join(','));
+        }
+
+        var csvString = csvRows.join("%0A");
+        var a         = document.createElement('a');
+        a.href        = 'data:attachment/csv,' + csvString;
+        a.target      = '_blank';
+        a.download    = 'logs.csv';
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    };
+
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",

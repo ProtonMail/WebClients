@@ -63,6 +63,11 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.contacts = $scope.contactsFiltered();
 
+    $scope.$on('updateContacts', function() {$scope.updateContacts();});
+    $scope.updateContacts = function (){
+        $scope.contacts = $scope.contactsFiltered();
+    };
+
     $scope.refreshContacts = function(searching) {
         $scope.contacts = $scope.contactsFiltered(searching);
     };
@@ -111,6 +116,7 @@ angular.module("proton.controllers.Contacts", [
                     });
 
                     $rootScope.user.Contacts = _.difference($rootScope.user.Contacts, deletedContacts);
+                    $scope.contacts = $scope.contactsFiltered();
 
                     networkActivityTracker.track(
                         Contact.delete({
@@ -158,6 +164,7 @@ angular.module("proton.controllers.Contacts", [
                     }).$promise.then(function(response) {
                         if (response[0].Response.Contact) {
                             $rootScope.user.Contacts.push(response[0].Response.Contact);
+                            $scope.contacts = $scope.contactsFiltered();
                             notify('Saved');
                         }
                         else {
@@ -356,6 +363,7 @@ angular.module("proton.controllers.Contacts", [
                                 added = added === 1 ? added + ' contact' : added + ' contacts';
                                 duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
                                 notify(added + ' imported, ' + duplicates + ' already in your contact list');
+                                $scope.contacts = $scope.contactsFiltered();
                                 Contact.index.updateWith($rootScope.user.Contacts);
                             }, function(response) {
                                 $log.error(response);
@@ -392,5 +400,6 @@ angular.module("proton.controllers.Contacts", [
 
         document.body.appendChild(a);
         a.click();
+        a.remove();
     };
 });
