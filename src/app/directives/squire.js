@@ -75,12 +75,6 @@ angular.module("proton.squire", [
                 format: 'html'
             };
 
-            // TODO. Ticket #428
-            console.log(ngModel.$viewValue);
-            setTimeout( function() {
-                console.log(ngModel.$viewValue);
-            }, 100);
-
             updateModel = function(value) {
                 return scope.$evalAsync(function() {
                     ngModel.$setViewValue(value);
@@ -251,7 +245,10 @@ angular.module("proton.squire", [
 
                     return editor.bold();
                 };
-                scope.message.editor = editor;
+
+                if(angular.isDefined(scope.message)) {
+                    scope.message.editor = editor;
+                }
             };
             iframe = element.find('iframe.squireIframe');
             menubar = element.find('.menu');

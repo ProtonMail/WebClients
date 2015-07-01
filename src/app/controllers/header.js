@@ -15,8 +15,8 @@ angular.module("proton.controllers.Header", [])
     }
 
     $scope.searchMessages = function() {
-        if($scope.params.searchInput.length > 0) {
-            $rootScope.$broadcast('search', $scope.params.searchInput);
+        if($scope.searchInput.length > 0) {
+            $rootScope.$broadcast('search', $scope.searchInput);
         } else {
             $state.go('secured.inbox');
         }
@@ -27,7 +27,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function() {
-        $rootScope.$broadcast('openSearchModal', $scope.params.searchInput);
+        $rootScope.$broadcast('openSearchModal', $scope.searchInput);
     };
 
     $scope.openReportModal = function() {

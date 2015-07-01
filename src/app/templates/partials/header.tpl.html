@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-large">
                 <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="'secured.**' | includedByState">
                     <div class="input-group form-group">
-                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" />
+                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="searchInput" ng-enter="searchMessages()" />
                         <span class="input-group-btn">
                             <button class="btn btn-default btn-toggle" type="button" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom"><span class="fa fa-caret-down"></span></button>
                             <button class="btn btn-default" type="button" ng-click="searchMessages()" pt-tooltip="Search" pt-placement="bottom"><span class="fa fa-search"></span></button>
@@ -72,7 +72,7 @@
                 </button>
                 <button type="button" style="margin-right: 15px;" class="btn btn-dark navbar-btn" ng-click="openNewMessage()">
                     <i class="fa fa-pencil"></i>
-                </button>                
+                </button>
                 <div class="spinner" ng-show="networkActivity.loading()">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>

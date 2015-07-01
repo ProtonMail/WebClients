@@ -10,6 +10,7 @@ angular.module("proton.controllers.Settings", [
     $scope,
     $rootScope,
     $log,
+    $timeout,
     $window,
     authentication,
     confirmModal,
@@ -31,7 +32,7 @@ angular.module("proton.controllers.Settings", [
     $scope.notificationEmail = user.NotificationEmail;
     $scope.dailyNotifications = !!user.Notify;
     $scope.autosaveContacts = !!user.AutoSaveContacts;
-    $scope.signature = user.Signature;
+
     $scope.aliases = user.Addresses;
     $scope.labels = authentication.user.Labels;
     $scope.doLogging = user.LogAuth;
@@ -44,6 +45,12 @@ angular.module("proton.controllers.Settings", [
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
     }
+
+    $timeout(function() {
+        if(angular.isDefined(user.Signature)) {
+            $scope.signature = user.Signature;
+        }
+    }, 1000);
 
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
