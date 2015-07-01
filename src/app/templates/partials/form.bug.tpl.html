@@ -1,11 +1,12 @@
 <div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header text-right">
-                <a href="" ng-click="close()">
-                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times text-muted"></i>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
                     <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                </a>
+                </button>
+                <h4 class="modal-title">{{ 'REPORT_BUG' | translate }}</h4>
             </div>
             <div class="modal-body">
                 <p class="alert alert-info text-center">
