@@ -60,8 +60,15 @@ angular.module("proton.controllers.Sidebar", [])
     });
 
     if (typeof $rootScope.counters === 'undefined') {
-        Message.unreaded({}).$promise.then(function(response) {
-            $rootScope.counters = response;
+        Message.unreaded({}).$promise.then(function(json) {
+            console.log(json);
+            var counters = {Labels:{}, Locations:{}};
+
+            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
+            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
+
+            console.log(counters);
+            $rootScope.counters = counters;
         });
     }
 
@@ -70,17 +77,9 @@ angular.module("proton.controllers.Sidebar", [])
         var value;
 
         if(mailbox === 'label') {
-            _.forEach($rootScope.counters.Labels, function(label) {
-                if (label.LabelID === id) {
-                    value = label.Count;
-                }
-            }) ;
+            value = $rootScope.counters.Labels[id];
         } else {
-            _.forEach($rootScope.counters.Locations, function(location) {
-                if (location.Location === CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]) {
-                    value = location.Count;
-                }
-            }) ;
+            value = $rootScope.counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
         }
 
         if(angular.isDefined(value)) {

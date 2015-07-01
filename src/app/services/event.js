@@ -48,8 +48,11 @@ angular.module("proton.event", [])
 					authentication.user = _.extend(authentication.user, user);
 				}
 			},
-			manageCounter: function(counters) {
-				if(angular.isDefined(counters)) {
+			manageCounter: function(json) {
+				if(angular.isDefined(json)) {
+					var counters = {Labels:{}, Locations:{}};
+		            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
+		            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
                     $rootScope.counters  = counters;
 				}
 			},
@@ -72,6 +75,7 @@ angular.module("proton.event", [])
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 				} else if (this.isDifferent(data.EventID)){
+					console.log(data);
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);

@@ -400,6 +400,31 @@ angular.module("proton.controllers.Messages.List", [])
         }
     };
 
+    $scope.updateCounters = function(messages, status) {
+        var counterUpdates = {Locations: {}, Labels: {}};
+        _.each(messages, function(message) {
+            mID = counterUpdates.Locations[message.Location];
+            mID = (typeof mID === 'undefined') ? 0 : mID;
+            counterUpdates.Locations[message.Location] = (status) ? mID - 1 : mID + 1;
+            _.each(message.LabelIDs, function(labelID) {
+                lID = counterUpdates.Labels[labelID];
+                lID = (typeof lID === 'undefined') ? 0 : lID;
+                counterUpdates.Labels[labelID] = (status) ? lID - 1 : lID + 1;
+            });
+        });
+
+        _.each(counterUpdates.Locations, function(val, id) {
+            locID = $rootScope.counters.Locations[id];
+            locID = (typeof locID === 'undefined') ? val : locID + val;
+            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
+        });
+        _.each(counterUpdates.Labels, function(val, id) {
+            labID = $rootScope.counters.Labels[id];
+            labID = (typeof labID === 'undefined') ? val : labID + val;
+            $rootScope.counters.Labels[id] = (labID < 0) ? 0 : labID;
+        });
+    };
+
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
         var promise;
@@ -414,6 +439,8 @@ angular.module("proton.controllers.Messages.List", [])
         _.each(messages, function(message) {
             message.IsRead = +status;
         });
+
+        $scope.updateCounters(messages, status);
 
         promise.then(function() {
             $rootScope.$broadcast('updateCounters');
