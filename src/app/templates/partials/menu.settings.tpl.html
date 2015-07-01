@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs nav-settings">
+<ul class="nav nav-tabs nav-settings hidden-xs">
     <li role="presentation" ng-class="{'active': ('secured.settings.**' | includedByState)}">
         <a ui-sref="secured.settings">{{ 'ACCOUNT_SETTINGS' | translate }}</a>
     </li>
@@ -12,3 +12,18 @@
         <a ui-sref="secured.theme">{{ 'THEME' | translate }}</a>
     </li>
 </ul>
+
+<div class="list-group hidden-sm hidden-md hidden-lg" id="mobileSettingsMenu">
+    <li class="list-group-item" role="presentation" ng-class="{'active': ('secured.settings.**' | includedByState)}">
+        <a ui-sref="secured.settings">{{ 'ACCOUNT_SETTINGS' | translate }}</a>
+    </li>
+    <li class="list-group-item" role="presentation" ng-class="{'active': ('secured.labels.**' | includedByState)}">
+        <a ui-sref="secured.labels">{{ 'LABELS' | translate }}</a>
+    </li>
+    <li class="list-group-item" role="presentation" ng-class="{'active': ('secured.security.**' | includedByState)}">
+        <a ui-sref="secured.security">{{ 'SECURITY' | translate }}</a>
+    </li>
+    <li class="list-group-item" role="presentation" ng-class="{'active': ('secured.theme.**' | includedByState)}">
+        <a ui-sref="secured.theme">{{ 'THEME' | translate }}</a>
+    </li>
+</div>
