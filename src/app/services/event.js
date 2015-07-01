@@ -31,14 +31,15 @@ angular.module("proton.event", [])
 				if (angular.isDefined(contacts)) {
 					_.each(contacts, function(contact) {
 						if(contact.Action === DELETE) {
-							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.ID; });
+							$rootScope.user.Contacts = _.filter($rootScope.user.Contacts, function(c) { return c.ID !== contact.ID; });
 						} else if(contact.Action === CREATE) {
-							authentication.user.Contacts.push(contact.Contact);
+							$rootScope.user.Contacts.push(contact.Contact);
 						} else if (contact.Action === UPDATE) {
-							var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
-							authentication.user.Contacts[index] = contact.Contact;
+							var index = _.findIndex($rootScope.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
+							$rootScope.user.Contacts[index] = contact.Contact;
 						}
-						Contact.index.updateWith(authentication.user.Contacts);
+						$rootScope.$broadcast('updateContacts');
+						Contact.index.updateWith($rootScope.user.Contacts);
 					});
 				}
 			},
