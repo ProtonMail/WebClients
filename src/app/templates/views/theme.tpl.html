@@ -3,46 +3,71 @@
     <div class="container-fluid form-group">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
         <div class="row" id="appearanceForm">
-            <div class="col-md-6">
-                <legend>Message Buttons</legend>
-                <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="msgBtnMode" value="read" checked>
-                    <img src="/assets/img/1.png">
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="msgBtnMode" value="unread">
-                    <img src="/assets/img/2.png">
-                  </label>
-                </div>
-                <div class="clearfix">
-                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                </div>
+            <div class="col-md-4">
+                <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons">
+                    <legend>Message Buttons</legend>
+                    <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="0">
+                        <img src="/assets/img/1.png">
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="1">
+                        <img src="/assets/img/2.png">
+                      </label>
+                    </div>
+                    <div class="clearfix">
+                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6">
-                <legend>Composer</legend>
-                <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="composerModeRadio" value="popout" checked>
-                    Popup
-                  </label>
-                </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="composerModeRadio" value="fullscreen">
-                    Maximized
-                  </label>
-                </div>
-                <div class="clearfix">
-                    <button class="btn btn-sm btn-primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
-                </div>
+            <div class="col-md-4">
+                <form novalidate ng-submit="saveComposerMode(composerMode)" name="composerMode">
+                    <legend>Composer</legend>
+                    <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="0">
+                        Popup
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="1">
+                        Maximized
+                      </label>
+                    </div>
+                    <div class="clearfix">
+                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
             </div>
+            <div class="col-md-4">
+                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages">
+                    <legend>Email Images</legend>
+                    <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="ShowImages" name="showImagesMode" value="0">
+                        Show Images by Default
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="ShowImages" name="showImagesMode" value="1">
+                        Hide Images by Default
+                      </label>
+                    </div>
+                    <div class="clearfix">
+                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
+            </div>            
         </div>        
-        <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm">
+        <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
             <legend>Custom Theme</legend>
             <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                 <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>            

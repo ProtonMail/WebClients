@@ -42,6 +42,12 @@ angular.module("proton.controllers.Settings", [
     $scope.selectedLanguage = 'English';
     $scope.disabledText = $translate.instant('DISABLE');
 
+    $scope.ComposerMode = user.ComposerMode;
+    $scope.MessageButtons = user.MessageButtons;
+    $scope.ShowImages = user.ShowImages;
+
+    console.log($scope.composerModeRadio, $scope.msgBtnMode);
+
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
     }
@@ -419,6 +425,54 @@ angular.module("proton.controllers.Settings", [
         });
     };
 
+    $scope.saveMessageButtons = function(form) {
+        networkActivityTracker.track(
+            Setting.setMessageStyle({
+                "MessageButtons": parseInt($scope.MessageButtons)
+            }).$promise.then(
+                function(response) {
+                    notify($translate.instant('THEME_SAVED'));
+                    user.Theme = $scope.MessageButtons;
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
+        );
+    };
+
+    $scope.saveComposerMode = function(form) {
+        networkActivityTracker.track(
+            Setting.setComposerMode({
+                "ComposerMode": parseInt($scope.ComposerMode)
+            }).$promise.then(
+                function(response) {
+                    notify($translate.instant('THEME_SAVED'));
+                    user.Theme = $scope.ComposerMode;
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
+        );
+    };
+
+    $scope.saveShowImages = function(form) {
+        networkActivityTracker.track(
+            Setting.setShowImages({
+                "ShowImages": parseInt($scope.ShowImages)
+            }).$promise.then(
+                function(response) {
+                    notify($translate.instant('THEME_SAVED'));
+                    user.Theme = $scope.ShowImages;
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
+        );
+    };
+
     $scope.saveTheme = function(form) {
       networkActivityTracker.track(
           Setting.theme({
@@ -430,7 +484,7 @@ angular.module("proton.controllers.Settings", [
               $log.error(response);
           })
       );
-    };
+    };        
 
     $scope.saveDefaultLanguage = function() {
         var lang = $scope.locales[$scope.selectedLanguage];
