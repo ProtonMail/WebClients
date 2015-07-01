@@ -126,20 +126,15 @@ angular.module("proton.controllers.Messages.Compose", [])
                 }
             },
             eventHandlers: {
-                dragenter: function(event) {
-                    // console.log('on dragenter', event);
-                },
                 dragover: function(event) {
                     $interval.cancel($scope.intervalComposer);
-                    // console.log('on dragover', event);
-                },
-                dragleave: function(event) {
-                    // console.log('on dragleave', event);
                 },
                 drop: function(event) {
-                    // console.log('on drop', event);
                     $scope.isOver = false;
                     isOver = false;
+                },
+                removedfile: function(file) {
+                    $scope.removeAttachment(file, message);
                 },
                 addedfile: function(file) {
                     // add file here and then show progress
@@ -192,6 +187,7 @@ angular.module("proton.controllers.Messages.Compose", [])
                 function(packets) {
                     return attachments.upload(packets, message.ID, element).then(
                         function(result) {
+                            console.log(result);
                             message.Attachments.push(result);
                             message.uploading = false;
                         }

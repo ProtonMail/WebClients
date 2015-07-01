@@ -594,7 +594,7 @@ form#compose {
     &.blur {
         background: $base-color-dark !important;
         bottom: 1rem;
-        transition: none;        
+        transition: none;
         .composer-header {
             background-color: lighten($panel-header, 10%);
         }
@@ -641,7 +641,7 @@ form#compose {
                 box-shadow: none;
                 float: left;
                 width: 100%;
-            }            
+            }
             .input-group-addon {
                 background-color: $base-color;
                 border: none;
