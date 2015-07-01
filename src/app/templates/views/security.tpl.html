@@ -12,7 +12,7 @@
             </a>
             <a
             target="_blank"
-            href="{{ apiURL + '/logs/auth/csv' }}"
+            ng-click="downloadLogs()"
             class="btn btn-default">
                 <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
             </a>

@@ -400,5 +400,6 @@ angular.module("proton.controllers.Contacts", [
 
         document.body.appendChild(a);
         a.click();
+        a.remove();
     };
 });
