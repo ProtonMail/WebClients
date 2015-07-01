@@ -1697,9 +1697,9 @@ angular.module("proton.controllers.Messages", [
             return true;
         }
 
-        $this = $($event.target);
-        $this.attr('target', '_blank');
-        $this.attr('download', attachment.Name);
+        linkElement = $($event.target);
+        linkElement.attr('target', '_blank');
+        linkElement.attr('download', attachment.Name);
 
         attachment.decrypting = true;
 
@@ -1740,6 +1740,7 @@ angular.module("proton.controllers.Messages", [
                     function(decryptedAtt) {
 
                         var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
+
                         if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
                             // Browser supports a good way to download blobs
                             $scope.$apply(function() {
@@ -1750,16 +1751,21 @@ angular.module("proton.controllers.Messages", [
                             var href = URL.createObjectURL(blob);
 
                             if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
-                                // Browser supports a good way to download blobs
-                                $this.attr('href', href);
-                                $(this).click();
-                            }
-                            else {
+                                // A fake link and will dispatch a click event on this fake link
+                                var url  = window.URL || window.webkitURL;
+                                var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+                                link.href = url.createObjectURL(blob);
+                                link.download = attachment.Name;
+
+                                var event = document.createEvent("MouseEvents");
+                                event.initEvent("click", true, false);
+                                link.dispatchEvent(event);
+                            } else {
                                 // Bad blob support, make a data URI, don't click it
                                 reader = new FileReader();
 
                                 reader.onloadend = function () {
-                                    $this.attr('href', reader.result);
+                                    linkElement.attr('href', reader.result);
                                 };
 
                                 reader.readAsDataURL(blob);
