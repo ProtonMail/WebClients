@@ -173,10 +173,15 @@ angular.module("proton.controllers.Messages.List", [])
         }
     };
 
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+
+    $scope.updateLabels = function () {
+        $scope.labels = authentication.user.Labels;
+    };
+
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
 
     $scope.refreshMessagesCache = function () {
-        console.log('refreshing cache');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
         messageCache.query(params).then(function(messages) {

@@ -58,9 +58,6 @@ angular.module("proton.event", [])
 					messageCache.set(messages);
 				}
 			},
-			manageMessageLabels: function(messages) {
-				messageCache.setLabels(messages);
-			},
 			manageStorage: function(storage) {
 				authentication.user.UsedSpace = storage;
 			},
@@ -80,7 +77,6 @@ angular.module("proton.event", [])
 					this.manageUser(data.User);
 					this.manageCounter(data.Unread);
 					this.manageMessages(data.Messages);
-					this.manageMessageLabels(data.MessageLabels);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
