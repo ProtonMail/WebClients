@@ -75,6 +75,12 @@ angular.module("proton.squire", [
                 format: 'html'
             };
 
+            // TODO. Ticket #428
+            console.log(ngModel.$viewValue);
+            setTimeout( function() {
+                console.log(ngModel.$viewValue);
+            }, 100);
+
             updateModel = function(value) {
                 return scope.$evalAsync(function() {
                     ngModel.$setViewValue(value);
@@ -189,6 +195,7 @@ angular.module("proton.squire", [
                 }
             };
             iframeLoaded = function() {
+
                 var iframeDoc = iframe[0].contentWindow.document;
 
                 updateStylesToMatch(iframeDoc);

@@ -8,6 +8,11 @@
     left: 0;
     top: 0;
     bottom: 0;
+    .popover {
+        background-color: $sidebar-bg;
+        color: $base-color;
+        border-color: $base-color;
+    }
     #sidebarWrap {
         position: absolute;
         left: 0;
