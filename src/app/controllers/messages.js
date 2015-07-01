@@ -919,7 +919,7 @@ angular.module("proton.controllers.Messages", [
             message.selectFile = function() {
                 $('#' + message.button).click();
             };
-        }, 10);
+        }, 100);
     };
 
     $scope.editorStyle = function(message) {
@@ -954,13 +954,13 @@ angular.module("proton.controllers.Messages", [
             var marginTop = 80; // px
             var top = marginTop;
             styles.top = top + 'px';
-        } 
+        }
         else {
             var marginRight = margin; // px
             var widthComposer = 480; // px
             if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
                 right = (index * (widthComposer + marginRight)) + marginRight;
-            } 
+            }
             else {
                 widthWindow -= margin; // margin left
                 var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
