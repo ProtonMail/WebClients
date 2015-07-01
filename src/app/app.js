@@ -200,7 +200,6 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        console.log(toState.name);
         $rootScope.toState = toState.name.replace(".", "-");
         if ($rootScope.scrollToBottom===true) {
             setTimeout(function() {

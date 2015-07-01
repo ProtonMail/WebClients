@@ -28,7 +28,7 @@ angular.module("proton.controllers.Sidebar", [])
     $scope.goTo = function(route) {
         $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
-        $state.go(route, {page: 1, filter: null, sort: null});
+        $state.go(route, {page: undefined, filter: undefined, sort: undefined});
     };
 
     $scope.renderStorageBar = function() {
