@@ -35,7 +35,7 @@ angular.module("proton.squire", [
                 }
 
                 if($rootScope.isMobile && $rootScope.browser === 'Safari') {
-                    result = true;
+                    // result = true;
                 }
 
                 return result;

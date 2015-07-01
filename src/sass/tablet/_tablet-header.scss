@@ -3,6 +3,9 @@
 	#header {
 		height: $navbar-height;
 		line-height: $navbar-height; 
+		.spinner {
+			top: 0 !important;
+		}		
 		#navbar {
 			height: $navbar-height;
 			line-height: $navbar-height;
