@@ -136,6 +136,8 @@
 	#messageActionsMobile {
 		background: $primary-color;
 		box-shadow: 0 1px $base-color-darker;
+		margin: 0;
+		width: 100%;
 		a {
 			color: #fff;
 			display: block;
