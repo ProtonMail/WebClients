@@ -46,8 +46,6 @@ angular.module("proton.controllers.Settings", [
     $scope.MessageButtons = user.MessageButtons;
     $scope.ShowImages = user.ShowImages;
 
-    console.log($scope.composerModeRadio, $scope.msgBtnMode);
-
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
     }
@@ -448,7 +446,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    user.Theme = $scope.ComposerMode;
+                    user.ComposerMode = $scope.ComposerMode;
                 }, 
                 function(response) {
                     $log.error(response);
@@ -464,7 +462,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    user.Theme = $scope.ShowImages;
+                    user.ShowImages = $scope.ShowImages;
                 }, 
                 function(response) {
                     $log.error(response);

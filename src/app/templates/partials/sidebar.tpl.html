@@ -1,4 +1,4 @@
-<div ng-controller="SidebarController">
+<div ng-controller="SidebarController" ng-click="defocusComposer($event);">
     <div id="sidebarWrap">
         <ul class="list-group">
             <li class="list-group-item hidden-xs hidden-sm">
@@ -7,7 +7,7 @@
                 </a>
             </li>
             <li class="list-group-item" id="compose_button">
-                <a class="btn btn-composer" ng-click="compose()">
+                <a class="btn btn-composer" ng-click="compose()" id="composeBtn">
                     <span class="fa fa-pencil"></span> <span class="hidden-xs hidden-sm">{{ 'COMPOSE' | translate }}</span>
                 </a>
             </li>

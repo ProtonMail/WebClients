@@ -6,7 +6,7 @@
         ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized}"
         ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
-            <div class="composer-header row">
+            <div class="composer-header row" ng-hide="user.ComposerMode===1">
                 <span class="col-xs-8">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-4 text-right">
                     <a
@@ -26,15 +26,6 @@
                     pt-tooltip="{{ 'EXPAND' | translate }}"
                     pt-placement="left">
                         <i class="fa fa-minus"></i>
-                    </a>
-                    <a
-                    href
-                    ng-show="!!!message.maximized"
-                    class="btn btn-sm maximize-button hidden-xs hidden-sm"
-                    ng-click="maximize(message)"
-                    pt-tooltip="{{ 'FULLSCREEN' | translate }}"
-                    pt-placement="left">
-                        <i class="fa fa-expand fa-rotate-90"></i>
                     </a>
                     <a
                     href
@@ -149,9 +140,11 @@
             <div class="composer-footer" ng-hide="message.minimized">
                 <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" pt-placement="right" pt-tooltip="{{ 'ENCRYPTION' | translate }}" ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
+                    <span ng-show="user.ComposerMode===1"> {{ 'ENCRYPTION' | translate }}</span>
                 </button>
                 <button class="btn btn-sm btn-default" ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" pt-placement="right" pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
+                    <span ng-show="user.ComposerMode===1"> {{ 'EXPIRATION_TIME' | translate }}</span>
                 </button>
                 <span class="text-muted" ng-show="message.BackupDate">
                 {{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}
@@ -164,6 +157,7 @@
                     ng-click="discard(message)"
                     pt-tooltip="{{ 'DISCARD' | translate }}">
                         <i class="fa fa-trash-o"></i>
+                        <span ng-show="user.ComposerMode===1"> {{ 'DISCARD' | translate }}</span>
                     </button>
                     <button
                     ng-class="{ disabled: message.loading() }"
@@ -172,17 +166,20 @@
                     ng-click="save(message, false)"
                     pt-tooltip="{{ 'SAVE' | translate }}">
                         <i class="fa fa-floppy-o"></i>
+                        <span ng-show="user.ComposerMode===1"> {{ 'SAVE' | translate }}</span>
                     </button>
                     <button
                     ng-hide="message.loading()"
                     class="btn btn-sm btn-primary"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
                     ng-click="send(message)">
+                        <i class="fa fa-send" ng-show="user.ComposerMode===1"></i>
                         {{ 'SEND' | translate }}
                     </button>
                     <button
                     ng-show="message.loading() && sending"
                     class="btn btn-sm btn-primary disabled">
+                        <i class="fa fa-send" ng-show="user.ComposerMode===1"></i>
                         {{ 'SENDING' | translate }}
                     </button>
                     <button

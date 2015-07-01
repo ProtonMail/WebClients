@@ -33,6 +33,13 @@ angular.module("proton.controllers.Messages.View", [])
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
 
+    $timeout( function() {
+        if ($rootScope.user.ShowImages===1) {
+            message.toggleImages();
+            $scope.displayContent();
+        }        
+    }, 20);
+
     $timeout(function() {
         $scope.initView();
 

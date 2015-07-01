@@ -3,6 +3,12 @@ angular.module("proton.controllers.Sidebar", [])
 .controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, Message, authentication, tools, notify, CONSTANTS) {
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
+    $scope.defocusComposer = function($event) {
+        if ($event.target.id!=='composeBtn') {
+            $rootScope.$broadcast('defocusComposer');
+        }
+    };
+
     $scope.labels = authentication.user.Labels;
     $scope.$on('updateLabels', function(){$scope.updateLabels();});
     $scope.updateLabels = function () {

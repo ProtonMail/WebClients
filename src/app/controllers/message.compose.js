@@ -30,11 +30,16 @@ angular.module("proton.controllers.Messages.Compose", [])
     $scope.sending = false;
     $scope.saving = false;
 
+    $scope.$on('defocusComposer', function(event, args) {
+        if ($scope.messages.length!==0) {
+            $scope.openCloseModal($scope.messages[0], true);
+        }
+    });
+
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
             window.onbeforeunload = function() {
-                return "By leaving now, you will lose what you have written in this email. " +
-                    "You can save a draft if you want to come back to it later on.";
+                return $translate.instant('MESSAGE_LEAVE_WARNING');
             };
         } else {
             window.onbeforeunload = undefined;
@@ -222,8 +227,13 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.initMessage = function(message) {
+
+        if ($rootScope.user.ComposerMode===1) {
+            message.maximized=true;
+        }
+
         // if tablet we maximize by default
-        if (tools.findBootstrapEnvironment()==='sm') {
+        if (tools.findBootstrapEnvironment()==='sm' || message.maximized) {
             if ($scope.messages.length>0) {
                 notify.closeAll();
                 notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));

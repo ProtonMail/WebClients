@@ -328,7 +328,6 @@ angular.module("proton.authentication", [
 
                 receivedCredentials: function(data) {
                     auth.saveAuthData(data);
-                    console.log(data);
                     auth.saveEventId(data.EventID);
                 },
 
