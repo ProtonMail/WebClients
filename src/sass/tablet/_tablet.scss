@@ -1,6 +1,15 @@
 
 // Tablet
 @media screen and (max-width: 991px) {
+	#header #navbar {
+		position: fixed;
+		right: 0;
+		left: ($sidebar-width)*.5;
+		top: 0;
+	}
+	#main {
+		padding-top: 6rem;
+	}
 	body .composer .composer-header {
 		background: #222;
 	}
