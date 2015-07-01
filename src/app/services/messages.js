@@ -49,6 +49,7 @@ angular.module("proton.messages", [])
             // Will eventually have a pool of extra messages and only call for the messges needed instead of whole page
             // when implemented in API
             sync: function(cacheLoc) {
+                refreshMessagesCache = true;
                 if (cacheLoc === 'inbox') {
                     Message.query(inboxTwoParams).$promise.then(function(result) {
                         cachedMetadata.inbox = cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
@@ -60,7 +61,6 @@ angular.module("proton.messages", [])
                         addMessageList(cachedMetadata.sent);
                     });
                 }
-                refreshMessagesCache = true;
             },
             delete: function(cacheLoc, message) {
                 cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
