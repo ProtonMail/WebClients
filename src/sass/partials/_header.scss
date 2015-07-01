@@ -4,12 +4,15 @@
         @include transition (color, 200ms, ease-in-out);
         .dropdown-menu {
             background-color: $navbar-color;
+            font-size: 1em;
             li a {
                 line-height: 2em;
-                color: $base-color;
-
-                &:hover {
-                    background-color: $alt-color-light;
+                color: #ccc;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $base-color;
+                    background-color: transparent;
                 }
 
                 .fa {
