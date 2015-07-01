@@ -1460,28 +1460,12 @@ angular.module("proton.controllers.Messages", [
         message.maximized = false;
     };
 
-    $scope.close = function(message, save) {
+    $scope.openCloseModal = function(message, save) {
         closeModal.activate({
             params: {
                 save: function() {
                     closeModal.deactivate();
-                    var index = $scope.messages.indexOf(message);
-                    var messageFocussed = !!message.focussed;
-
-                    if (save === true) {
-                        $scope.saveLater(message);
-                    }
-
-                    message.close();
-
-                    // Remove message in messages
-                    $scope.messages.splice(index, 1);
-
-                    // Message closed and focussed?
-                    if(messageFocussed && $scope.messages.length > 0) {
-                        // Focus the first message
-                        $scope.focusComposer(_.first($scope.messages));
-                    }
+                    $scope.close(message, save);
                 },
                 discard: function() {
                     closeModal.deactivate();
@@ -1492,6 +1476,27 @@ angular.module("proton.controllers.Messages", [
                 }
             }
         });
+
+    };
+
+    $scope.close = function(message, save) {
+        var index = $scope.messages.indexOf(message);
+        var messageFocussed = !!message.focussed;
+
+        if (save === true) {
+            $scope.saveLater(message);
+        }
+
+        message.close();
+
+        // Remove message in messages
+        $scope.messages.splice(index, 1);
+
+        // Message closed and focussed?
+        if(messageFocussed && $scope.messages.length > 0) {
+            // Focus the first message
+            $scope.focusComposer(_.first($scope.messages));
+        }
     };
 
     $scope.discard = function(message) {
