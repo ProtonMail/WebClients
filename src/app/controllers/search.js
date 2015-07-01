@@ -47,7 +47,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
                 params.end = $scope.params.end.getMoment().unix();
             }
         }
-        
+
         $state.go('secured.search', params);
         $scope.close();
     };
