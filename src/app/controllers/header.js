@@ -1,6 +1,9 @@
 angular.module("proton.controllers.Header", [])
 
 .controller("HeaderController", function($scope, $state, $stateParams, wizardModal, $rootScope) {
+    $scope.params = {
+        searchInput: ''
+    };
 
     function openWizardModal(title, version) {
         wizardModal.activate({
@@ -14,9 +17,10 @@ angular.module("proton.controllers.Header", [])
         });
     }
 
+
     $scope.searchMessages = function() {
-        if($scope.searchInput.length > 0) {
-            $rootScope.$broadcast('search', $scope.searchInput);
+        if($scope.params.searchInput.length > 0) {
+            $rootScope.$broadcast('search', $scope.params.searchInput);
         } else {
             $state.go('secured.inbox');
         }
@@ -27,7 +31,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function() {
-        $rootScope.$broadcast('openSearchModal', $scope.searchInput);
+        $rootScope.$broadcast('openSearchModal', $scope.params.searchInput);
     };
 
     $scope.openReportModal = function() {
