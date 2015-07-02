@@ -49,6 +49,7 @@ angular.module("proton.messages", [])
             // Will eventually have a pool of extra messages and only call for the messges needed instead of whole page
             // when implemented in API
             sync: function(cacheLoc) {
+                console.log('sync');
                 refreshMessagesCache = true;
                 if (cacheLoc === 'inbox') {
                     Message.query(inboxTwoParams).$promise.then(function(result) {
@@ -64,7 +65,6 @@ angular.module("proton.messages", [])
             },
             delete: function(cacheLoc, message) {
                 cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
-                cachedMetadata.sync(cacheLoc);
             },
             update: function(cacheLoc, loc, message){
                 if (cacheLoc === loc) {
@@ -73,7 +73,6 @@ angular.module("proton.messages", [])
                     addMessageList(cachedMetadata[loc]);
                 } else {
                     cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
-                    cachedMetadata.sync(cacheLoc);
                 }
             },
             updateLabels: function(cacheLoc, labelsChanged, message) {
@@ -288,6 +287,12 @@ angular.module("proton.messages", [])
                 });
                 if (refreshMessagesCache) {
                     $rootScope.$broadcast('refreshMessagesCache');
+                }
+                if (cachedMetadata.inbox.length < 100) {
+                    cachedMetadata.sync('inbox');
+                }
+                if (cachedMetadata.sent.length < 50) {
+                    cachedMetadata.sync('sent');
                 }
             },
             // Function for returning cached data if available or returning promise if not
