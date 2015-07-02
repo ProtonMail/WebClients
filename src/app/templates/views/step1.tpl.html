@@ -1,108 +1,159 @@
-<div class="panel panel-default wrap" ng-show="creating" id="signUpProcess">
+<div class="panel panel-default wrap panel-wide" ng-show="creating" id="signUpProcess">
     <div class="panel-heading">
         <h1 class="text-center">Creating Account...</h1>
     </div>
     <div class="panel-body">   
-    <ol>
-        <li ng-class="{ 'done': keyGen }">
-            <i ng-hide="keyGen" class="fa fa-square-o"></i> 
-            <i ng-show="keyGen" class="fa fa-check-square"></i> 
-            Generating Keys
-        </li>
-        <li ng-class="{ 'done': keySave }">
-            <i ng-hide="keySave" class="fa fa-square-o"></i> 
-            <i ng-show="keySave" class="fa fa-check-square"></i> 
-            Saving Encrypted Keys
-        </li>
-        <li ng-class="{ 'done': FetchAcc }">
-            <i ng-hide="FetchAcc" class="fa fa-square-o"></i> 
-            <i ng-show="FetchAcc" class="fa fa-check-square"></i> 
-            Loading New Account
-        </li>
-        <li ng-class="{ 'done': Verify }">
-            <i ng-hide="Verify" class="fa fa-square-o"></i> 
-            <i ng-show="Verify" class="fa fa-check-square"></i> 
-            Verifying New Account
-        </li>
-        <li ng-class="{ 'done': Redirect }">
-            <i ng-hide="Redirect" class="fa fa-square-o"></i> 
-            <i ng-show="Redirect" class="fa fa-check-square"></i> 
-            Redirecting
-        </li>
-    </ol>
+        <ol>
+            <li ng-class="{ 'done': keyGen }">
+                <i ng-hide="keyGen" class="fa fa-square-o"></i> 
+                <i ng-show="keyGen" class="fa fa-check-square"></i> 
+                Generating Keys
+            </li>
+            <li ng-class="{ 'done': keySave }">
+                <i ng-hide="keySave" class="fa fa-square-o"></i> 
+                <i ng-show="keySave" class="fa fa-check-square"></i> 
+                Saving Encrypted Keys
+            </li>
+            <li ng-class="{ 'done': FetchAcc }">
+                <i ng-hide="FetchAcc" class="fa fa-square-o"></i> 
+                <i ng-show="FetchAcc" class="fa fa-check-square"></i> 
+                Loading New Account
+            </li>
+            <li ng-class="{ 'done': Verify }">
+                <i ng-hide="Verify" class="fa fa-square-o"></i> 
+                <i ng-show="Verify" class="fa fa-check-square"></i> 
+                Verifying New Account
+            </li>
+            <li ng-class="{ 'done': Redirect }">
+                <i ng-hide="Redirect" class="fa fa-square-o"></i> 
+                <i ng-show="Redirect" class="fa fa-check-square"></i> 
+                Redirecting
+            </li>
+        </ol>
     </div>
 </div>
-
-<div class="panel panel-default wrap" ng-hide="creating">
+<div class="panel panel-default wrap panel-wide" ng-hide="creating">
     <div class="panel-heading">
         <h1 class="text-center">{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h1>
         <h4 class="text-center no-margin-bottom">{{ 'STEP_1_OF_2' | translate }}</h4>
     </div>
     <div class="panel-body">
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
-
             <div class="form-group">
                 <label for="Username">{{ 'USERNAME' | translate | capitalize }}</label>
                 <div class="usernameWrap">
-                    <input type="text" ng-model="account.Username" name="Username" tabindex="1" placeholder="Username" id="Username" class="form-control" pt-tooltip="You can switch to protonmail.ch after account creation." pt-placement="bottom">
+                    <input 
+                    type="text" 
+                    ng-model="account.Username" 
+                    name="Username" 
+                    tabindex="1" 
+                    placeholder="Username" 
+                    autofocus 
+                    required 
+                    id="Username" 
+                    class="form-control" 
+                    pt-tooltip="You can switch to protonmail.ch after account creation." 
+                    pt-placement="bottom">
                     <em class="usernameDomain">@protonmail.ch</em>
                 </div>
             </div>
-
             <div class="form-group">
-                <span class="pull-right bold" ng-class="{'text-success': strength(account.loginPassword).number > 100000}" ng-bind="strength(account.loginPassword).word"></span>
+                <span 
+                class="pull-right bold" 
+                ng-class="{'text-success': strength(account.loginPassword).number > 100000}" 
+                ng-bind="strength(account.loginPassword).word"></span>
                 <label for="password">{{ 'LOGIN_PASSWORD' | translate }}</label>
-                <input id="password" name="password" ng-model="account.loginPassword" tabindex="2" type="password" class="form-control" placeholder="Password" autofocus="" required="" />
+                <input 
+                id="password" 
+                name="password" 
+                ng-model="account.loginPassword" 
+                tabindex="2" 
+                type="password" 
+                class="form-control" 
+                placeholder="Password" 
+                required />
                 <div ng-show="step1.$submitted || step1.password.$touched">
                     <p ng-show="step1.password.$error.required" class="text-danger">Login password is required.</p>
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="passwordc">{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}</label>
-                <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" tabindex="3" type="password" class="form-control" placeholder="Confirm Password" required="" validator="account.loginPassword !== account.loginPasswordConfirm" />
+                <input 
+                id="passwordc" 
+                name="passwordc" 
+                ng-model="account.loginPasswordConfirm" 
+                tabindex="3" 
+                type="password" 
+                class="form-control" 
+                placeholder="Confirm Password" 
+                required=
+                validator="account.loginPassword !== account.loginPasswordConfirm" />
                 <div ng-show="step1.$submitted || step1.passwordc.$touched">
                     <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="password">{{ 'MAILBOX_PASSWORD' | translate }}</label>
-                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
+                <input 
+                id="password" 
+                name="password" 
+                ng-model="account.mailboxPassword" 
+                tabindex="4" 
+                type="password" 
+                class="form-control"  
+                placeholder="Password" 
+                required />
                 <div ng-show="step2.$submitted || step2.password.$touched">
                     <p ng-show="step2.password.$error.required" class="text-danger">Mailbox password is required.</p>
                 </div>
             </div>
-
             <div class="form-group">
                 <label for="passwordc">{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}</label>
-                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}"  placeholder="Password" required="" ng-enter="finish(step2)" />
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="5" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}"  placeholder="Password" required="" ng-enter="finish(step2)" />
                 <div ng-show="step2.$submitted || step2.passwordc.$touched">
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
                 </div>
             </div>
-            
             <div class="form-group">
                 <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
                 <label for="notificationEmail">Notification / Recovery {{ 'EMAIL' | translate }}</label>
-                <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" tabindex="4" type="email" class="form-control" placeholder="Notification {{ 'EMAIL' | translate }}" validator="!!!tools.validEmail(account.notificationEmail)" ng-enter="saveContinue(step1)" pt-tooltip="This is used to recover your account if you get locked out or forget your login password." pt-placement="bottom" />
+                <input 
+                id="notificationEmail" 
+                name="notificationEmail" 
+                ng-model="account.notificationEmail" 
+                tabindex="6" 
+                type="email" 
+                class="form-control" 
+                placeholder="Notification {{ 'EMAIL' | translate }}" 
+                validator="!!!tools.validEmail(account.notificationEmail)" 
+                ng-enter="saveContinue(step1)" 
+                pt-tooltip="This is used to recover your account if you get locked out or forget your login password." 
+                pt-placement="bottom" />
                 <div ng-show="step1.notificationEmail.$touched">
-                    <p ng-show="!!!tools.validEmail(account.notificationEmail)" class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
+                    <p 
+                    ng-show="!!!tools.validEmail(account.notificationEmail)" 
+                    class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
                 </div>
             </div>
-
             <div class="checkbox">
                 <label for="optIn">
-                    <input tabindex="5" id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps!
+                    <input 
+                    tabindex="7" 
+                    id="optIn" 
+                    name="optIn" 
+                    ng-init="account.optIn = true" 
+                    ng-model="account.optIn" 
+                    type="checkbox" /> Keep me updated about new features such as mobile apps!
                 </label>
             </div>
-
-            <button tabindex="6" stype="submit" class="btn btn-primary btn-block btn-lg" ng-class="{disabled: networkActivity.loading()}">{{ 'SAVE_AND_CONTINUE' | translate }}</button>
-
+            <button 
+            tabindex="8" 
+            type="submit" 
+            class="btn btn-primary btn-block btn-lg" 
+            ng-class="{disabled: networkActivity.loading()}">{{ 'SAVE_AND_CONTINUE' | translate }}</button>
         </form>
     </div>
 </div>
-
 <p class="text-center" ng-hide="creating">
-    Already have an account? <a ui-sref="login">{{ 'LOG_IN' | translate }}</a>.
+    Already have an account? <a ui-sref="login" class="btn btn-default">{{ 'LOG_IN' | translate }}</a>
 </p>

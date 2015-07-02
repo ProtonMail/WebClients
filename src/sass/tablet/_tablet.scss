@@ -7,6 +7,10 @@
 		left: ($sidebar-width)*.5;
 		top: 0;
 	}
+	.panel-medium,
+	.panel-wide {
+	    width: auto;
+	}	
 	#main {
 		padding-top: 6rem;
 	}

@@ -117,6 +117,14 @@ body .form-control {
     }
     background: $navbar-color;
 }
+.panel-medium {
+    width: 300px;
+    margin: auto;
+}
+.panel-wide {
+    width: 400px;
+    margin: auto;
+}
 .modal-footer {
     background-color: $panel-footer;
     padding: 10px 15px;

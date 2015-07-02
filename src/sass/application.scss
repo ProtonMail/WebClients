@@ -138,16 +138,6 @@ body footer {
     margin-right: 15px;
 }
 
-@media (min-width: $screen-sm) {
-    .panel {
-        max-width: 300px;
-        margin: auto;
-    }
-    .secure .panel {
-        max-width: none;
-        margin-bottom: 18px;
-    }
-}
 .margin-top {
     margin-top: 20px;
 }

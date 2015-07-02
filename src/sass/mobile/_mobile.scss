@@ -1,6 +1,17 @@
 @media screen and (max-width: 767px) {
 
 
+body.login .container-fluid, 
+body.locked .container-fluid {
+	padding: 0;
+}
+
+#signup,
+#step1 {
+	.spinner {
+		display: none !important;
+	}
+}
 .unlock #body #content {
 	padding: 0;
 	.panel-dark {

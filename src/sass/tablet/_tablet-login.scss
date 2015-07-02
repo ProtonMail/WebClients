@@ -1,8 +1,14 @@
 @media screen and (max-width: 991px) {
     body#login,
     body#login-unlock,
-    body#support-reset-password {
+    body#support-reset-password,
+    body#step1,
+    body#signup { 
     	#header {
+            #navbar {
+                position: static;
+                left: 0 !important;
+            }
     		.container-fluid {
     			padding-left: 2rem;
     			.logo {
