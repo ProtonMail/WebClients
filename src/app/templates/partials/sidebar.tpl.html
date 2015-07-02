@@ -1,4 +1,4 @@
-<div ng-controller="SidebarController" ng-click="defocusComposer($event);">
+<div ng-controller="SidebarController">
     <div id="sidebarWrap">
         <ul class="list-group">
             <li class="list-group-item hidden-xs hidden-sm">
@@ -21,13 +21,13 @@
             jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}"
             data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
-                <a 
-                class="btn" 
-                ng-click="goTo('secured.inbox'); spinIcon();" 
+                <a
+                class="btn"
+                ng-click="goTo('secured.inbox'); spinIcon();"
                 ng-class="{ active: ('secured.inbox.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-hide="getUnread('inbox')<1" ng-class="{active: getUnread('inbox') > 0}">{{ getUnread('inbox') }}</span>
                     <i
-                    class="fa fa-repeat pull-right hidden-xs hidden-sm" 
+                    class="fa fa-repeat pull-right hidden-xs hidden-sm"
                     ng-class="{ 'spinMe': spinMe }"
                     ng-show="getUnread('inbox')>-1"></i>
                     <span class="fa fa-inbox"></span> <span class="hidden-xs hidden-sm">{{ 'INBOX' | translate }}</span>

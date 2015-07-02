@@ -30,12 +30,6 @@ angular.module("proton.controllers.Messages.Compose", [])
     $scope.sending = false;
     $scope.saving = false;
 
-    $scope.$on('defocusComposer', function(event, args) {
-        if ($scope.messages.length!==0) {
-            $scope.openCloseModal($scope.messages[0], true);
-        }
-    });
-
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
             window.onbeforeunload = function() {
@@ -282,11 +276,10 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.squireHeight = function(message) {
-        var composer = $('#uid' + message.uid);
-
         if (message.maximized === true) {
             return '100%';
         } else {
+            var composer = $('#uid' + message.uid);
             var to = composer.find('.to-container').outerHeight();
             var bcc = composer.find('.bcc-container').outerHeight();
             var cc = composer.find('.cc-container').outerHeight();

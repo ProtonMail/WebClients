@@ -1,13 +1,13 @@
-<div ng-controller="HeaderController" ng-click="defocusComposer($event);">
+<div ng-controller="HeaderController">
     <div class="spinner" ng-show="networkActivity.loading()">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
     </div>
     <!--/.spinner-->
-    <nav 
-    id="navbar" 
-    class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs" 
+    <nav
+    id="navbar"
+    class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs"
     role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -35,19 +35,19 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ui-sref="secured.contacts" ui-sref-active="active">
-                            <span class="visible-lg-inline-block fa fa-book"></span> 
+                            <span class="visible-lg-inline-block fa fa-book"></span>
                             {{ 'CONTACTS' | translate }}
                         </a>
                     </li>
                     <li id="nav_settings" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ui-sref="secured.settings" ui-sref-active="active">
-                            <span class="visible-lg-inline-block fa fa-cog"></span> 
+                            <span class="visible-lg-inline-block fa fa-cog"></span>
                             {{ 'SETTINGS' | translate }}
                         </a>
                     </li>
                     <li>
                         <a id="ignoreComposerReportBug" href ng-click="openReportModal()">
-                            <i class="fa fa-bug"></i> 
+                            <i class="fa fa-bug"></i>
                             {{ 'REPORT_BUG' | translate }}
                         </a>
                     </li>
