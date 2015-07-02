@@ -4,6 +4,14 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
+        <h1>Key Export</h1>
+        <p>Download your PublicKey for use in other PGP compatible services.</p>
+        <a href ng-click="exportPublicKey()" class="btn btn-default">
+            <i class="fa fa-download"></i> Download PublicKey
+        </a>
+
+        <hr>
+
         <h1 class="securityTitle">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
 
         <div class="btn-group pull-right" ng-hide="doLogging == 0">

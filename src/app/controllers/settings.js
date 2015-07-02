@@ -126,6 +126,33 @@ angular.module("proton.controllers.Settings", [
         a.remove();
     };
 
+    $scope.exportPublicKey = function () {
+
+        var pbk = btoa(authentication.user.PublicKey);
+        var a         = document.createElement('a');
+        a.href        = 'data:text/plain;base64,' + pbk;
+        a.target      = '_blank';
+        a.download    = 'protonmail_public_'+authentication.user.Name+'.txt';
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    }; 
+
+    // NOT USED
+    $scope.exportEncPrivateKey = function () {
+
+        var pbk = btoa(authentication.user.EncPrivateKey);
+        var a         = document.createElement('a');
+        a.href        = 'data:text/plain;base64,' + pbk;
+        a.target      = '_blank';
+        a.download    = 'protonmail_private_'+authentication.user.Name+'.txt';
+
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    };        
+
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "#aliases-container",
