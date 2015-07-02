@@ -2,7 +2,27 @@ angular.module("proton.messages.counts", [])
     .service('messageCounts', function($q, Message, CONSTANTS, $rootScope, tools) {
 		    var totalCounts = _.bindAll({
                 move: function(messages) {
+                    var counterUpdates = {Locations: {}, Labels: {}};
                     console.log(messages, $rootScope);
+                    _.each(messages, function(message) {
+                        if (message.Location !== message.OldLocation) {
+                            mID = counterUpdates.Locations[message.Location];
+                            mID = (typeof mID === 'undefined') ? 0 : mID;
+                            counterUpdates.Locations[message.Location] = mID + 1;
+
+                            curID = counterUpdates.Locations[message.OldLocation];
+                            curID = (typeof curID === 'undefined') ? 0 : curID;
+                            counterUpdates.Locations[message.OldLocation] = curID - 1;
+                        }
+                    });
+                    this.update('Locations', counterUpdates.Locations);
+                },
+                update: function(location, updates) {
+                    _.each(updates, function(val, id) {
+                        ID = $rootScope.messageTotals[location][id];
+                        ID = (typeof ID === 'undefined') ? val : ID + val;
+                        $rootScope.counters[location][id] = (ID < 0) ? 0 : ID;
+                    });
                 }
             });
 

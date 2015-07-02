@@ -112,8 +112,35 @@ angular.module("proton.controllers.Messages.List", [])
         $scope.refreshMessages(silently, empty);
     });
 
+    if (typeof $rootScope.messageTotals === 'undefined') {
+        Message.totalCount().$promise.then(function(totals) {
+            var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
+            _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+            _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+            $rootScope.messageTotals = total;
+        });
+    }
+
     $scope.messageCount = function() {
-        return $rootScope.Total;
+        if (mailbox === 'label') {
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
+                return $rootScope.messageTotals.Labels[$stateParams.label];
+            } else {
+                return $rootScope.Total;
+            }
+        } else if(mailbox === 'starred'){
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
+                return $rootScope.messageTotals.Starred;
+            } else {
+                return $rootScope.Total;
+            }
+        } else {
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]) {
+                return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            } else {
+                return $rootScope.Total;
+            }
+        }
     };
 
     $scope.getMessagesParameters = function(mailbox) {
