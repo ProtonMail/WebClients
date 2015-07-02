@@ -24,13 +24,7 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    
-    if (messages.constructor === Array) {
-        $scope.messages = messages;
-    } else {
-        console.log('not Array');
-        console.log(messages);
-    }
+    $scope.messages = messages;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
     $scope.page = parseInt($stateParams.page || 1);
