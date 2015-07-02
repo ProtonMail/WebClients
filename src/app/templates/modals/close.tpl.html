@@ -1,20 +1,17 @@
 <div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-close">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="alert no-margin-bottom">
-                    Do you want to save, discard or cancel this message?
+                    Would you like to discard this draft?
                 </div>
             </div>
             <div class="modal-footer">
-                <a href class="btn btn-link pull-left" ng-click="ctrl.cancel()">
-                {{ 'CANCEL' | translate }}
+                <a href class="btn btn-default pull-left" ng-click="ctrl.cancel()">
+                {{ 'NO' | translate }}
                 </a>
-                <button class="btn btn-default" type="button" ng-click="ctrl.discard()">
-                {{ 'DISCARD' | translate }}
-                </button>
-                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.save()">
-                {{ 'SAVE' | translate }}
+                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.discard()">
+                {{ 'YES' | translate }}
                 </button>
             </div>
         </div>

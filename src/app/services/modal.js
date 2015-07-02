@@ -140,12 +140,6 @@ angular.module("proton.modals", [])
 .factory('closeModal', function(pmModal) {
     return pmModal({
         controller: function(params) {
-            this.save = function() {
-                if(angular.isDefined(params.save) && angular.isFunction(params.save)) {
-                    params.save();
-                }
-            };
-
             this.discard = function() {
                 if(angular.isDefined(params.discard) && angular.isFunction(params.discard)) {
                     params.discard();

@@ -805,22 +805,19 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.openCloseModal = function(message, save) {
-        closeModal.activate({
-            params: {
-                save: function() {
-                    closeModal.deactivate();
-                    $scope.close(message, save);
-                },
-                discard: function() {
-                    closeModal.deactivate();
-                    $scope.discard(message);
-                },
-                cancel: function() {
-                    closeModal.deactivate();
-                }
-            }
-        });
-
+        $scope.close(message, true);
+        // closeModal.activate({
+        //     params: {
+        //         discard: function() {
+        //             closeModal.deactivate();
+        //             $scope.discard(message);
+        //         },
+        //         cancel: function() {
+        //             closeModal.deactivate();
+        //             $scope.close(message, true);
+        //         }
+        //     }
+        // });
     };
 
     $scope.close = function(message, save) {
