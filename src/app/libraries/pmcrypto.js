@@ -230,7 +230,9 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing encrypted message'));
             }
             if (key === undefined || key === '') {
-                return reject(new Error('Missing key'));
+                // unencrypted message
+                var result = { data: encMessage };
+                resolve(result);
             }
 
             var _encMessage;
@@ -278,7 +280,11 @@ var pmcrypto = (function() {
 
             try {
                 resolve(openpgp.decryptSessionKey(key, _encMessage).then(function(data) {
-                    if (data.key.length !== 32) {
+                    if (data.key===undefined) {
+                        // unencrypted attachment?
+                        return "unencrypted";
+                    }
+                    else if (data.key.length !== 32) {
                         throw new Error('Invalid session key length');
                     } else {
                         return data;
