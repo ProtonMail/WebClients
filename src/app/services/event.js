@@ -70,8 +70,11 @@ angular.module("proton.event", [])
 			},
 			manage: function (data) {
 				// Check if eventID is sent
+				console.log('managing');
 				if (data.Error) {
-					console.log(data.Error);
+					Events.getLatestID({}).then(function(response) {
+						eventModel.manageID(response.data.EventID);
+					});
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 				} else if (this.isDifferent(data.EventID)){
@@ -86,16 +89,20 @@ angular.module("proton.event", [])
 				}
 			}
 		};
+		var started = false;
 		var api = _.bindAll({
 				start: function () {
-					eventModel.ID = window.sessionStorage[EVENT_ID];
-					interval = function() {
-						eventModel.get().then(function (result) {
-							eventModel.manage(result.data);
-						});
-					};
-					interval();
-					eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					if (!started) {
+						eventModel.ID = window.sessionStorage[EVENT_ID];
+						interval = function() {
+							eventModel.get().then(function (result) {
+								eventModel.manage(result.data);
+							});
+						};
+						interval();
+						eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+						started = true;
+					}
 				},
 				stop: function () {
 					if (angular.isDefinded(eventModel.promiseCancel)) {

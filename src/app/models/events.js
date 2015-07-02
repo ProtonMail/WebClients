@@ -3,6 +3,9 @@ angular.module("proton.models.events", [])
 		return {
 			get: function (id) {
 				return $http.get(authentication.baseURL + '/events/' + id);
+			},
+			getLatestID: function () {
+				return $http.get(authentication.baseURL + '/events/latest');
 			}
 		};
 	});
