@@ -71,7 +71,9 @@ angular.module("proton.event", [])
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
-					console.log(data.Error);
+					Events.getLatestID({}).then(function(response) {
+						eventModel.manageID(response.data.EventID);
+					});
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 				} else if (this.isDifferent(data.EventID)){
