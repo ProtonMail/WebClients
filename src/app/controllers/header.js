@@ -18,6 +18,12 @@ angular.module("proton.controllers.Header", [])
     }
 
 
+    $scope.defocusComposer = function($event) {
+        if ($event.target.id !== 'ignoreComposerReportBug') {
+            $rootScope.$broadcast('defocusComposer');
+        }
+    };
+
     $scope.searchMessages = function() {
         if($scope.params.searchInput.length > 0) {
             $rootScope.$broadcast('search', $scope.params.searchInput);

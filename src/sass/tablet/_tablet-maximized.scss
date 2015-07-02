@@ -1,6 +1,7 @@
 @media screen and (max-width: 991px) {
+	
     .composer.maximized {
         left: ($sidebar-width)*.5;
-        top: 6rem;
+        top: 6rem !important;
     }
 }

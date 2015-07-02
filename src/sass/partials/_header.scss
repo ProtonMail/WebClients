@@ -1,6 +1,10 @@
 #header {
     height: $navbar-height;
     .navbar {
+        .dropdown {
+            position: relative;
+            z-index: 200;
+        }
         @include transition (color, 200ms, ease-in-out);
         .dropdown-menu {
             background-color: $navbar-color;

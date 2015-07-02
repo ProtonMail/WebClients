@@ -46,6 +46,18 @@ angular.module("proton.models.setting", [])
             setLogging: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/logauth'
+            },
+            setComposerMode: {
+                method: 'put',
+                url: authentication.baseURL + '/settings/composermode'
+            },
+            setMessageStyle: {
+                method: 'put',
+                url: authentication.baseURL + '/settings/messagebuttons'
+            },
+            setShowImages: {
+                method: 'put',
+                url: authentication.baseURL + '/settings/showimages'
             }
         }
     );
