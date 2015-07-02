@@ -250,23 +250,37 @@ angular.module("proton.squire", [
                     scope.message.editor = editor;
                 }
             };
+
             iframe = element.find('iframe.squireIframe');
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
             menubar = element.find('.menu');
-            ua = navigator.userAgent;
-            isChrome = /Chrome/.test(ua);
-            isIE = /rv:11.0|IE/.test(ua);
-            isFF = !isChrome && !isIE;
             loaded = false;
 
-            if(isChrome) {
-                loaded = true;
-                iframeLoaded();
-            } else {
-                iframe.on('load', function() {
+            // Check if browser is Webkit (Safari/Chrome) or Opera
+            if(jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) {
+                // Start timer when loaded.
+                $(iframe).load(function () {
                     loaded = true;
                     iframeLoaded();
                 });
+
+                // Safari and Opera need a kick-start.
+                var source = $(iframe).attr('src');
+                $(iframe).attr('src', '');
+                $(iframe).attr('src', source);
+            } else {
+                // For other browsers.
+                if(iframeDoc && iframeDoc.readyState  === 'complete') {
+                    loaded = true;
+                    iframeLoaded();
+                } else {
+                    $(iframe).load(function() {
+                        loaded = true;
+                        iframeLoaded();
+                    });
+                }
             }
+
             Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {
                 var p, test;
                 p = this.getPath();
