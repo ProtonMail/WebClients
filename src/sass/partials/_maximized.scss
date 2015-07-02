@@ -1,27 +1,21 @@
 .composer.maximized {
-    left: $sidebar-width;
+    left: ($sidebar-width+1); //rem
     border-radius: 0;
-    right: 0 !important;
-    top: $navbar-height;
-    bottom: 0;
+    top: ($navbar-height+10);
+    right: 20px !important;
     width: auto !important;
     z-index: 100 !important;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    box-shadow: none;
-    transition: none;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    transition: none;   
     & > .composer-body {
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-    }
-    & .composer-header,
-    & .composer-footer {
-        border-radius: 0;
     }
     .angular-squire {
         height: 100%;

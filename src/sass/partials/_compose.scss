@@ -535,7 +535,7 @@ form#compose {
     right: 1.5rem;
     width: 480px;
     z-index: 6;
-    transition: bottom 100ms linear;
+    transition: none;
     border-radius: $border-radius-base*2;
     @include responsive(xs) {
         width: auto;
