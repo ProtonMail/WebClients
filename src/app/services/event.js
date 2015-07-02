@@ -70,7 +70,6 @@ angular.module("proton.event", [])
 			},
 			manage: function (data) {
 				// Check if eventID is sent
-				console.log('managing');
 				if (data.Error) {
 					Events.getLatestID({}).then(function(response) {
 						eventModel.manageID(response.data.EventID);
