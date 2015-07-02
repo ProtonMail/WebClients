@@ -14,6 +14,7 @@ angular.module("proton.controllers.Messages.List", [])
     Label,
     authentication,
     messageCache,
+    messageCounts,
     messages,
     networkActivityTracker,
     notify
@@ -401,77 +402,22 @@ angular.module("proton.controllers.Messages.List", [])
         }
     };
 
-    $scope.updateCounters = function(messages, status) {
-        var counterUpdates = {Locations: {}, Labels: {}};
-        _.each(messages, function(message) {
-            mID = counterUpdates.Locations[message.Location];
-            mID = (typeof mID === 'undefined') ? 0 : mID;
-            counterUpdates.Locations[message.Location] = (status) ? mID - 1 : mID + 1;
-            _.each(message.LabelIDs, function(labelID) {
-                lID = counterUpdates.Labels[labelID];
-                lID = (typeof lID === 'undefined') ? 0 : lID;
-                counterUpdates.Labels[labelID] = (status) ? lID - 1 : lID + 1;
-            });
-        });
-
-        _.each(counterUpdates.Locations, function(val, id) {
-            locID = $rootScope.counters.Locations[id];
-            locID = (typeof locID === 'undefined') ? val : locID + val;
-            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
-        });
-        _.each(counterUpdates.Labels, function(val, id) {
-            labID = $rootScope.counters.Labels[id];
-            labID = (typeof labID === 'undefined') ? val : labID + val;
-            $rootScope.counters.Labels[id] = (labID < 0) ? 0 : labID;
-        });
-    };
-
-    $scope.updateCountersMove = function(messages) {
-        var counterUpdates = {Locations: {}, Labels: {}};
-        _.each(messages, function(message) {
-            if (message.Location !== message.OldLocation) {
-                mID = counterUpdates.Locations[message.Location];
-                mID = (typeof mID === 'undefined') ? 0 : mID;
-                counterUpdates.Locations[message.Location] = (message.IsRead === 0) ? mID + 1 : mID;
-
-                curID = counterUpdates.Locations[message.OldLocation];
-                curID = (typeof curID === 'undefined') ? 0 : curID;
-                counterUpdates.Locations[message.OldLocation] = (message.IsRead === 0) ? curID - 1 : curID;
-            }
-        });
-
-        _.each(counterUpdates.Locations, function(val, id) {
-            locID = $rootScope.counters.Locations[id];
-            locID = (typeof locID === 'undefined') ? val : locID + val;
-            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
-        });
-    };
-
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
-        var promise;
         var ids = _.map(messages, function(message) { return message.ID; });
-
-        if(status) {
-            promise = Message.read({IDs: ids}).$promise;
-        } else {
-            promise = Message.unread({IDs: ids}).$promise;
-        }
+        var promise = (status) ? Message.read({IDs: ids}).$promise : Message.unread({IDs: ids}).$promise;
 
         _.each(messages, function(message) {
             message.IsRead = +status;
         });
 
-        $scope.updateCounters(messages, status);
-
-        promise.then(function() {
-            $rootScope.$broadcast('updateCounters');
-        });
+        messageCounts.updateUnread('mark', messages, status);
 
         $scope.unselectAllMessages();
 
         networkActivityTracker.track(promise);
     };
+
     $scope.$on('moveMessagesTo', function(event, name) {
         $scope.moveMessagesTo(name);
     });
@@ -479,31 +425,23 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.moveMessagesTo = function(mailbox) {
 
         var ids = $scope.selectedIds();
-        var promise;
         var inDelete = mailbox === 'delete';
+        var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
 
         messages = [];
         movedMessages = [];
+
         _.forEach($scope.selectedMessages(), function (message) {
-            m = {};
-            m.LabelIDs = message.LabelIDs;
-            m.OldLocation = message.Location;
-            m.IsRead = message.IsRead;
-            m.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]};
             movedMessages.push(m);
 
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             messages.push({Action: 3, ID: message.ID, Message: message});
         });
+
 		messageCache.set(messages);
-
-        $scope.updateCountersMove(movedMessages);
-
-        if(inDelete) {
-            promise = Message.delete({IDs: ids}).$promise;
-        } else {
-            promise = Message[mailbox]({IDs: ids}).$promise;
-        }
+        messageCounts.updateUnread('move', movedMessages);
+        messageCounts.updateTotals('move', movedMessages);
 
         promise.then(function(result) {
             $rootScope.$broadcast('refreshMessages');

@@ -48,6 +48,7 @@ angular.module("proton", [
     "proton.errorReporter",
     "proton.networkActivity",
     "proton.messages",
+    "proton.messages.counts",
     "proton.modals",
     "proton.attachments",
     "proton.tools",
