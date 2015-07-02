@@ -18,7 +18,8 @@
     'fa-unlock-alt':
     !!(message.IsEncrypted == '0')
     }"
-    title="{{ message.encryptionType() }}"></i>
+    pt-placement="right"
+    pt-tooltip="{{ message.encryptionType() }}"></i>
     <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
     <span class="subject" ng-bind-html="message.Subject"></span>
     <span class="label label-pm" style="background-color: {{ label.Color }}" ng-repeat="label in message.labels()">
