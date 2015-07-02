@@ -32,7 +32,7 @@
                     href
                     ng-show="!!!message.maximized"
                     class="btn btn-sm maximize-button hidden-xs hidden-sm"
-                    ng-click="maximize(message)"
+                    ng-click="normalize(message);maximize(message)"
                     pt-tooltip="{{ 'FULLSCREEN' | translate }}"
                     pt-placement="left">
                         <i class="fa fa-expand fa-rotate-90"></i>
