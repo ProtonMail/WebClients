@@ -425,6 +425,27 @@ angular.module("proton.controllers.Messages.List", [])
         });
     };
 
+    $scope.updateCountersMove = function(messages) {
+        var counterUpdates = {Locations: {}, Labels: {}};
+        _.each(messages, function(message) {
+            if (message.Location !== message.OldLocation) {
+                mID = counterUpdates.Locations[message.Location];
+                mID = (typeof mID === 'undefined') ? 0 : mID;
+                counterUpdates.Locations[message.Location] = (message.IsRead === 0) ? mID + 1 : mID;
+
+                curID = counterUpdates.Locations[message.OldLocation];
+                curID = (typeof curID === 'undefined') ? 0 : curID;
+                counterUpdates.Locations[message.OldLocation] = (message.IsRead === 0) ? curID - 1 : curID;
+            }
+        });
+
+        _.each(counterUpdates.Locations, function(val, id) {
+            locID = $rootScope.counters.Locations[id];
+            locID = (typeof locID === 'undefined') ? val : locID + val;
+            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
+        });
+    };
+
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
         var promise;
@@ -461,11 +482,21 @@ angular.module("proton.controllers.Messages.List", [])
         var inDelete = mailbox === 'delete';
 
         messages = [];
+        movedMessages = [];
         _.forEach($scope.selectedMessages(), function (message) {
+            m = {};
+            m.LabelIDs = message.LabelIDs;
+            m.OldLocation = message.Location;
+            m.IsRead = message.IsRead;
+            m.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            movedMessages.push(m);
+
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             messages.push({Action: 3, ID: message.ID, Message: message});
         });
 		messageCache.set(messages);
+
+        $scope.updateCountersMove(movedMessages);
 
         if(inDelete) {
             promise = Message.delete({IDs: ids}).$promise;
@@ -474,7 +505,6 @@ angular.module("proton.controllers.Messages.List", [])
         }
 
         promise.then(function(result) {
-            $rootScope.$broadcast('updateCounters');
             $rootScope.$broadcast('refreshMessages');
 
             if(inDelete) {

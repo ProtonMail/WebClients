@@ -61,13 +61,11 @@ angular.module("proton.controllers.Sidebar", [])
 
     if (typeof $rootScope.counters === 'undefined') {
         Message.unreaded({}).$promise.then(function(json) {
-            console.log(json);
             var counters = {Labels:{}, Locations:{}};
 
             _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
             _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
 
-            console.log(counters);
             $rootScope.counters = counters;
         });
     }
