@@ -337,6 +337,9 @@ angular.module("proton.messages", [])
             },
             put: function(id, msg) {
                 cachedMessages.fusion(id, msg);
+            },
+            getMetaData: function() {
+                return cachedMetadata.inbox;
             }
         });
 
