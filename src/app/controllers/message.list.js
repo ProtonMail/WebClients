@@ -24,7 +24,12 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    $scope.messages = messages;
+    console.log('controller');
+    if (messages.constructor === Array) {
+        $scope.messages = messages;
+    } else {
+        console.log(messages);
+    }
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
     $scope.page = parseInt($stateParams.page || 1);
@@ -182,6 +187,7 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
 
     $scope.refreshMessagesCache = function () {
+        console.log('reload message cache');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
         messageCache.query(params).then(function(messages) {
@@ -552,7 +558,7 @@ angular.module("proton.controllers.Messages.List", [])
         }));
     };
 
-    $scope.emptyFolder = function(location) {      
+    $scope.emptyFolder = function(location) {
         var c = confirm("Are you sure? This cannot be undone.");
         if (c !== true) {
             return;
