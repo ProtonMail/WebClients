@@ -78,8 +78,8 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.slideDown = function(message) {
-        $('#' + message.previews).slideToggle({direction: "down"}, 200);
         message.attachmentsToggle = !!!message.attachmentsToggle;
+        $scope.$apply();
     };
 
     $scope.isOver = false;
@@ -102,13 +102,7 @@ angular.module("proton.controllers.Messages.Compose", [])
         }
     });
 
-    $scope.dropzone = 0;
-
     $scope.dropzoneConfig = function(message) {
-        $scope.dropzone++;
-        message.button = 'button' + $scope.dropzone;
-        message.previews = 'previews' + $scope.dropzone;
-
         return {
             options: {
                 maxFilesize: CONSTANTS.ATTACHMENT_SIZE_LIMIT,
@@ -118,7 +112,7 @@ angular.module("proton.controllers.Messages.Compose", [])
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
                 previewsContainer: '.previews',
-                previewTemplate: '<div class="btn preview-template"><span class="pull-right fa fa-times preview-close" data-dz-remove></span><p class="name preview-name" data-dz-name></p></div>',
+                previewTemplate: '<span class="preview-template"><span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span></span>',
                 createImageThumbnails: false,
                 accept: function(file, done) {
                 },
@@ -186,15 +180,14 @@ angular.module("proton.controllers.Messages.Compose", [])
         var attachmentPromise;
         var element = $(file.previewElement);
 
-
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             attachmentPromise = attachments.load(file).then(
                 function(packets) {
                     return attachments.upload(packets, message.ID, element).then(
                         function(result) {
-                            console.log(result);
                             message.Attachments.push(result);
                             message.uploading = false;
+                            message.attachmentsToggle = true;
                         }
                     );
                 }
@@ -226,6 +219,8 @@ angular.module("proton.controllers.Messages.Compose", [])
         });
     };
 
+    $scope.uid = 1;
+
     $scope.initMessage = function(message) {
 
         if ($rootScope.user.ComposerMode===1) {
@@ -241,6 +236,7 @@ angular.module("proton.controllers.Messages.Compose", [])
             }
         }
 
+        message.uid = $scope.uid++;
         $scope.messages.unshift(message);
         $scope.$apply();
         $scope.setDefaults(message);
@@ -262,29 +258,49 @@ angular.module("proton.controllers.Messages.Compose", [])
             resizeComposer();
 
             message.selectFile = function() {
-                $('#' + message.button).click();
+                $('#uid' + message.uid + ' .dropzone').click();
             };
         }, 100);
     };
 
     $scope.editorStyle = function(message) {
         var styles = {};
+
         if (message.maximized===true) {
             var composer = $('.composer:visible');
             var composerHeight = composer.outerHeight();
             var composerHeader = composer.find('.composer-header').outerHeight();
             var composerFooter = composer.find('.composer-footer').outerHeight();
             var composerMeta = composer.find('.composerMeta').outerHeight();
-            styles.height = composerHeight - (composerHeader+composerFooter+composerFooter+composerMeta);
-        }
-        else {
+
+            styles.height = composerHeight - (composerHeader + composerFooter + composerFooter + composerMeta);
+        } else {
             styles.height = 'auto';
         }
+
         return styles;
     };
 
-    $scope.composerStyle = function(message) {
+    $scope.squireHeight = function(message) {
+        var composer = $('#uid' + message.uid);
 
+        if (message.maximized === true) {
+            return '100%';
+        } else {
+            var to = composer.find('.to-container').outerHeight();
+            var bcc = composer.find('.bcc-container').outerHeight();
+            var cc = composer.find('.cc-container').outerHeight();
+            var previewHeight = composer.find('.previews').outerHeight();
+            var recipientsHeight = to + bcc + cc;
+            var height = 352 - recipientsHeight - previewHeight;
+
+            height = (height < 130) ? 130 : height;
+
+            return height + 'px';
+        }
+    };
+
+    $scope.composerStyle = function(message) {
         var margin = 20;
         var index = $scope.messages.indexOf(message);
         var reverseIndex = $scope.messages.length - index;

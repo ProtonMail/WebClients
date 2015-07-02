@@ -15,18 +15,6 @@ angular.module("proton.emailField", [])
       var parent = $$element.parent();
       var container = $(parent).closest('.input-container');
 
-      if (parent[0].id === 'to-container') {
-          $scope.message.toContainer = parent[0];
-      }
-
-      if (parent[0].id === 'bcc-container') {
-          $scope.message.bccContainer = parent[0];
-      }
-
-      if (parent[0].id === 'cc-container') {
-          $scope.message.ccContainer = parent[0];
-      }
-
       $(container).on('click', function() {
           $$element.focus();
       });
@@ -144,8 +132,8 @@ angular.module("proton.emailField", [])
 
       $$element.autosizeInput();
 
-      var id = $(parent).attr('id');
-      var list = (id === 'to-container') ? "ToList" : (id === 'bcc-container') ? "BCCList" : "CCList";
+      var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
+
       _.forEach($scope.message[list], function(d) {
           if (typeof d.Name === 'undefined' || d.Name === '') {
               d.Name = d.Address;

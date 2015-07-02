@@ -35,7 +35,7 @@
                         <div class="arrow"></div>
                         <div class="content">
                             <div class="panel">
-                                <input type="text" id="edit-link" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
+                                <input type="text" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
                             </div>
                             <button class="btn btn-sm" ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')">
                                 {{ 'REMOVE_LINK' | translate }}
