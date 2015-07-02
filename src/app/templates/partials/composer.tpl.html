@@ -141,7 +141,7 @@
                     </div>
                     <div class="dropzone composer-dropzone" dropzone="dropzoneConfig(message)" ng-show="isOver && message.focussed"></div>
                     <squire ng-model="message.Body" message="message" height="squireHeight(message)"></squire>
-                    <button class="btn btn-sm attach-collapse" ng-show="message.Attachments.length > 0" ng-click="slideDown(message)">
+                    <button class="btn btn-sm attach-collapse" ng-show="message.Attachments.length > 0" ng-click="slideDown(message)" title="{{ 'TOGGLE_DISPLAY_ATTACHMENTS' }}">
                         <i class="fa fa-caret-up transition" ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
                     <div class="previews" ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true"></div>

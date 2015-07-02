@@ -108,7 +108,6 @@ angular.module("proton.emailField", [])
           if (e.which === 9) {
             tabbing = true;
           }
-          $timeout($scope.message.height());
         })
         .on("blur", function () {
           var val = $$element.val();
