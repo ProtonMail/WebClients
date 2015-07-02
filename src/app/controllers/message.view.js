@@ -37,7 +37,7 @@ angular.module("proton.controllers.Messages.View", [])
         if ($rootScope.user.ShowImages===1) {
             message.toggleImages();
             $scope.displayContent();
-        }        
+        }
     }, 20);
 
     $timeout(function() {
@@ -391,9 +391,6 @@ angular.module("proton.controllers.Messages.View", [])
 
     $scope.goToMessageList = function() {
         $state.go('^', {}, {reload: true});
-        $timeout(function() {
-            $rootScope.$broadcast('refreshMessages', true); // in silence
-        }, 500);
     };
 
     $scope.moveMessageTo = function(mailbox) {
