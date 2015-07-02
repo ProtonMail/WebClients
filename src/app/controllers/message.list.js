@@ -495,7 +495,7 @@ angular.module("proton.controllers.Messages.List", [])
         }));
     };
 
-    $scope.emptyFolder = function(location) {
+    $scope.emptyFolder = function(location) {      
         var c = confirm("Are you sure? This cannot be undone.");
         if (c !== true) {
             return;

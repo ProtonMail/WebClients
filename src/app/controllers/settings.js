@@ -447,6 +447,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
                     user.ComposerMode = $scope.ComposerMode;
+                    $scope.apply();
                 }, 
                 function(response) {
                     $log.error(response);
@@ -463,6 +464,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
                     user.ShowImages = $scope.ShowImages;
+                    $scope.apply();
                 }, 
                 function(response) {
                     $log.error(response);
