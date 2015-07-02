@@ -16,6 +16,18 @@ on the base class as well () */
     }
 }
 
+.spinMe {
+    -webkit-animation: spin .5s infinite linear;
+    -moz-animation: spin .5s infinite linear;
+    -o-animation: spin .5s infinite linear;
+    animation: spin .5s infinite linear;
+    -webkit-animation-iteration-count:1;
+    -moz-animation-iteration-count:1;
+    -ms-animation-iteration-count:1;
+    -o-animation-iteration-count:1; 
+    animation-iteration-count:1; 
+}
+
 .transition {
     @include transition(all, 200ms, ease-in-out);
 }

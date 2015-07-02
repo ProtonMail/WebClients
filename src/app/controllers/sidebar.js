@@ -1,6 +1,18 @@
 angular.module("proton.controllers.Sidebar", [])
 
-.controller('SidebarController', function($scope, $rootScope, $state, $http, $translate, $interval, Message, authentication, tools, notify, CONSTANTS) {
+.controller('SidebarController', function(
+    $scope, 
+    $rootScope, 
+    $state, 
+    $http, 
+    $translate, 
+    $interval, 
+    Message, 
+    authentication, 
+    tools, 
+    notify, 
+    CONSTANTS, 
+    $timeout) {
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     $scope.defocusComposer = function($event) {
@@ -19,6 +31,13 @@ angular.module("proton.controllers.Sidebar", [])
         accept: '.ui-draggable',
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
+    };
+
+    $scope.spinIcon = function() {
+        $scope.spinMe = true;
+        $timeout(function() {
+            $scope.spinMe = false;
+        }, 510);        
     };
 
     $scope.droppedMessages = [];
