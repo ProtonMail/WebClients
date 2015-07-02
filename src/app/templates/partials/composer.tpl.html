@@ -13,7 +13,7 @@
                     <a
                     href
                     ng-show="!!!message.minimized"
-                    class="btn btn-sm minimize-button hidden-xs hidden-sm"
+                    class="btn btn-sm minimize-button hidden-xs"
                     ng-click="normalize(message); minimize(message)"
                     pt-tooltip="{{ 'MINIMIZE' | translate }}"
                     pt-placement="left">
@@ -31,7 +31,7 @@
                     <a
                     href
                     ng-show="!!!message.maximized"
-                    class="btn btn-sm maximize-button hidden-xs"
+                    class="btn btn-sm maximize-button hidden-xs hidden-sm"
                     ng-click="maximize(message)"
                     pt-tooltip="{{ 'FULLSCREEN' | translate }}"
                     pt-placement="left">

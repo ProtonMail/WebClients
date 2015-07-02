@@ -10,40 +10,6 @@
 	#main {
 		padding-top: 6rem;
 	}
-	body .composer .composer-header {
-		background: #222;
-	}
-	.composer {
-		top: 0 !important;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		z-index: 9999 !important;
-		height: auto !important;
-		box-shadow: none;
-		z-index: auto;
-		border-radius: 0;
-		transition: none !important;
-		overflow: hidden;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;		
-		& > .composer-body {
-            -webkit-flex-grow: 1;
-                -ms-flex-positive: 1;
-                    flex-grow: 1;
-        }
-		.close-button .fa {
-			color: #fff;
-		}
-		.composer-header {
-			border-radius: 0;
-		}
-	}
 	body table.message-list tr td.recipient {
 		width: 14rem;
 	}
