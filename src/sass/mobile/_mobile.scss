@@ -12,6 +12,12 @@ body.locked .container-fluid {
 		display: none !important;
 	}
 }
+
+	.panel-medium,
+	.panel-wide {
+	    width: auto;
+	}	
+	
 .unlock #body #content {
 	padding: 0;
 	.panel-dark {
