@@ -594,7 +594,7 @@ angular.module("proton.routes", [
         resolve: {
             contacts: function(Contact, networkActivityTracker) {
                 return networkActivityTracker.track(
-                    Contact.get().$promise
+                    Contact.get()
                 );
             }
         }

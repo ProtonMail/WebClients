@@ -1,27 +1,24 @@
 angular.module("proton.models.contact", [])
 
-.factory("Contact", function($resource, authentication) {
+.factory("Contact", function($http, authentication) {
 
-    var Contact = $resource(
-        authentication.baseURL + "/contacts/:id",
-        authentication.params({id: "@id"}),
-        {
-            edit: {
-                method: 'put',
-                url: authentication.baseURL + "/contacts/:id"
-            },
-            save: {
-                method: 'post',
-                url: authentication.baseURL + "/contacts/",
-                isArray: true
-            },
-            delete: {
-                method: 'put',
-                url: authentication.baseURL + "/contacts/delete",
-                isArray: true
-            }
+    var Contact = {
+        get: function() {
+            return $http.get(authentication.baseURL + '/contacts');
+        },
+        edit: function(contact) {
+            return $http.put(authentication.baseURL + '/contacts/' + contact.ID, contact);
+        },
+        save: function(contact) {
+            return $http.post(authentication.baseURL + '/contacts', contact);
+        },
+        delete: function(contact) {
+            return $http.put(authentication.baseURL + '/contacts/delete', contact);
+        },
+        clear: function() {
+            return $http.delete(authentication.baseURL + '/contacts');
         }
-    );
+    };
 
     Contact.index = new Bloodhound({
         name: "contacts",

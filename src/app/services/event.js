@@ -77,7 +77,6 @@ angular.module("proton.event", [])
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 				} else if (this.isDifferent(data.EventID)){
-					console.log(data);
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);

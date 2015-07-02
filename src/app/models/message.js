@@ -66,7 +66,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
-                    $rootScope.TotalPages = json.TotalPages;
                     $rootScope.Total = json.Total;
 
                     return json.Messages;
@@ -87,47 +86,38 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             star: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/star'
             },
             unstar: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/unstar'
             },
             read: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/read'
             },
             unread: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/unread'
             },
             trash: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/trash'
             },
             inbox: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/inbox'
             },
             spam: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/spam'
             },
             archive: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/archive'
             },
             delete: {
                 method: 'put',
-                isArray: true,
                 url: authentication.baseURL + '/messages/delete'
             },
             // DELETE
