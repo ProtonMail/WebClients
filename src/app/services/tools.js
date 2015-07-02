@@ -357,9 +357,7 @@ angular.module("proton.tools", [])
        }
 
        function replace_line_breaks(content) {
-            return content;
-            // todo make this work (too many BR)
-            // return content.replace(/\n/g, '<br />');
+            return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
        }
 
        function transform_links(id) {

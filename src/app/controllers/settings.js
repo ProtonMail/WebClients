@@ -52,7 +52,7 @@ angular.module("proton.controllers.Settings", [
 
     $timeout(function() {
         if(angular.isDefined(user.Signature)) {
-            $scope.signature = user.Signature;
+            $scope.signature = tools.replaceLineBreaks(user.Signature);
         }
     }, 1000);
 
@@ -137,7 +137,7 @@ angular.module("proton.controllers.Settings", [
         document.body.appendChild(a);
         a.click();
         a.remove();
-    }; 
+    };
 
     // NOT USED
     $scope.exportEncPrivateKey = function () {
@@ -151,7 +151,7 @@ angular.module("proton.controllers.Settings", [
         document.body.appendChild(a);
         a.click();
         a.remove();
-    };        
+    };
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -458,7 +458,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
                     user.Theme = $scope.MessageButtons;
-                }, 
+                },
                 function(response) {
                     $log.error(response);
                 }
@@ -475,7 +475,7 @@ angular.module("proton.controllers.Settings", [
                     notify($translate.instant('THEME_SAVED'));
                     user.ComposerMode = $scope.ComposerMode;
                     $scope.apply();
-                }, 
+                },
                 function(response) {
                     $log.error(response);
                 }
@@ -492,7 +492,7 @@ angular.module("proton.controllers.Settings", [
                     notify($translate.instant('THEME_SAVED'));
                     user.ShowImages = $scope.ShowImages;
                     $scope.apply();
-                }, 
+                },
                 function(response) {
                     $log.error(response);
                 }
@@ -511,7 +511,7 @@ angular.module("proton.controllers.Settings", [
               $log.error(response);
           })
       );
-    };        
+    };
 
     $scope.saveDefaultLanguage = function() {
         var lang = $scope.locales[$scope.selectedLanguage];

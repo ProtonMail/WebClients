@@ -137,7 +137,6 @@ angular.module("proton.controllers.Messages.View", [])
                 content = message.clearImageBody(result);
             }
 
-            content = tools.replaceLineBreaks(content);
             content = DOMPurify.sanitize(content, {
                 FORBID_TAGS: ['style']
             });

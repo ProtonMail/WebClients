@@ -24,7 +24,7 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    console.log('controller', messages);
+    
     if (messages.constructor === Array) {
         $scope.messages = messages;
     } else {

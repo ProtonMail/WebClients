@@ -325,7 +325,7 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.completedSignature = function(message) {
-        message.Body = "<br><br>" + authentication.user.Signature;
+        message.Body = "<br><br>" + tools.replaceLineBreaks(authentication.user.Signature);
     };
 
     $scope.composerIsSelected = function(message) {

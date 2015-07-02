@@ -96,7 +96,6 @@ angular.module("proton.controllers.Outside", [
 
         content = tools.clearImageBody(content);
         $scope.imagesHidden = true;
-        content = tools.replaceLineBreaks(content);
         content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
 
         return content;
