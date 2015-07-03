@@ -197,11 +197,21 @@ angular.module("proton.controllers.Messages.View", [])
 
         var deferred = $q.defer();
 
-        // decode key packets
-        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
         // get enc attachment
         var att = attachments.get(attachment.ID, attachment.Name);
+
+        if (attachment.KeyPackets===undefined) {
+            return att.then( function(result) {
+                var data = { data: result.data };
+                console.log(data, attachment);
+                $scope.downloadAttachment(data, attachment);
+                return;
+            });
+        }
+        else {
+            // decode key packets
+            var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));            
+        }
 
         // get user's pk
         var key = authentication.getPrivateKey().then(
@@ -230,53 +240,7 @@ angular.module("proton.controllers.Messages.View", [])
                 // decrypt the att
                 pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
-
-                        var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
-
-                        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
-                            // Browser supports a good way to download blobs
-                            $scope.$apply(function() {
-                                attachment.decrypting = false;
-                                attachment.decrypted = true;
-                            });
-
-                            var href = URL.createObjectURL(blob);
-
-                            if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
-                                // A fake link and will dispatch a click event on this fake link
-                                var url  = window.URL || window.webkitURL;
-                                var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
-                                link.href = url.createObjectURL(blob);
-                                link.download = attachment.Name;
-
-                                var event = document.createEvent("MouseEvents");
-                                event.initEvent("click", true, false);
-                                link.dispatchEvent(event);
-                            } else {
-                                // Bad blob support, make a data URI, don't click it
-                                reader = new FileReader();
-
-                                reader.onloadend = function () {
-                                    linkElement.attr('href', reader.result);
-                                };
-
-                                reader.readAsDataURL(blob);
-                            }
-
-                            deferred.resolve();
-
-                        }
-                        else {
-                            // Bad blob support, make a data URI, don't click it
-                            reader = new FileReader();
-
-                            reader.onloadend = function () {
-                                link.attr('href',reader.result);
-                            };
-
-                            reader.readAsDataURL(blob);
-                        }
-
+                        $scope.downloadAttachment(decryptedAtt, attachment);
                     }
                 );
             },
@@ -287,6 +251,55 @@ angular.module("proton.controllers.Messages.View", [])
                 console.log(algo);
             }
         );
+    };
+
+    $scope.downloadAttachment = function(data, meta) {
+
+        console.log(data, meta);
+
+        var blob = new Blob([data.data], {type: meta.MIMEType});
+
+        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
+            // Browser supports a good way to download blobs
+            $scope.$apply(function() {
+                meta.decrypting = false;
+                meta.decrypted = true;
+            });
+
+            var href = URL.createObjectURL(blob);
+
+            if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
+                // A fake link and will dispatch a click event on this fake link
+                var url  = window.URL || window.webkitURL;
+                var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+                link.href = url.createObjectURL(blob);
+                link.download = meta.Name;
+
+                var event = document.createEvent("MouseEvents");
+                event.initEvent("click", true, false);
+                link.dispatchEvent(event);
+            } else {
+                // Bad blob support, make a data URI, don't click it
+                reader = new FileReader();
+
+                reader.onloadend = function () {
+                    linkElement.attr('href', reader.result);
+                };
+
+                reader.readAsDataURL(blob);
+            }
+
+        }
+        else {
+            // Bad blob support, make a data URI, don't click it
+            reader = new FileReader();
+
+            reader.onloadend = function () {
+                link.attr('href',reader.result);
+            };
+
+            reader.readAsDataURL(blob);
+        }
     };
 
     $scope.detachLabel = function(id) {
