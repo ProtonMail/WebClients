@@ -630,6 +630,8 @@ form#compose {
                 }
             }
             .input-group-addon {
+                min-width: 50px;
+                text-align: left;
                 background-color: $base-color;
                 border: none;
             }
