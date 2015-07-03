@@ -196,9 +196,9 @@ angular.module("proton.squire", [
                 ngModel.$setPristine();
                 editor = new Squire(iframeDoc);
                 editor.defaultBlockTag = 'P';
-                if (scope.body) {
-                    editor.setHTML(scope.body);
-                    updateModel(scope.body);
+                if (scope.ngModel) {
+                    editor.setHTML(scope.ngModel);
+                    updateModel(scope.ngModel);
                 }
                 editor.addEventListener("input", function() {
                     var html = editor.getHTML();
