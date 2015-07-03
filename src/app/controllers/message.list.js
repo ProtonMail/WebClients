@@ -471,8 +471,7 @@ angular.module("proton.controllers.Messages.List", [])
         movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            console.log(message);
-            m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
+            var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
             movedMessages.push(m);
 
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
