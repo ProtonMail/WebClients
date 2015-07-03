@@ -45,9 +45,15 @@ angular.module("proton.controllers.Sidebar", [])
     };
 
     $scope.goTo = function(route) {
+        var needReload = $state.current.name === route;
+
         $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
-        $state.go(route, {page: undefined, filter: undefined, sort: undefined}, {reload: true}); // remove the older parameters
+        $state.go(route, {page: undefined, filter: undefined, sort: undefined}); // remove the older parameters
+
+        if(needReload) {
+            $rootScope.$broadcast('refreshMessages', false);
+        }
     };
 
     $scope.renderStorageBar = function() {
