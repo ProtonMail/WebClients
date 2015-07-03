@@ -185,11 +185,9 @@ angular.module("proton.controllers.Messages.View", [])
     };
 
     $scope.decryptAttachment = function(message, attachment, $event) {
-
         if (attachment.decrypted===true) {
             return true;
         }
-
 
         attachment.decrypting = true;
 
@@ -207,10 +205,9 @@ angular.module("proton.controllers.Messages.View", [])
                 attachment.decrypted = true;
                 return;
             });
-        }
-        else {
+        } else {
             // decode key packets
-            var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));            
+            var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
         }
 
         // get user's pk
@@ -246,40 +243,34 @@ angular.module("proton.controllers.Messages.View", [])
             },
             function(err) {
                 console.log(err);
-                // console.log(at);
-                // console.log(key);
-                // console.log(algo);
             }
         );
     };
 
     $scope.downloadAttachment = function(data, meta, $event) {
-
-        linkElement = $($event.target);
-        linkElement.attr('target', '_blank');
-        linkElement.attr('download', meta.Name);
-
-        // console.log(data, meta);
-
+        var linkElement = $($event.target);
         var blob = new Blob([data.data], {type: meta.MIMEType});
 
-        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
+        linkElement.attr('download', meta.Name);
+
+        if(navigator.msSaveOrOpenBlob || angular.isDefined(URL.createObjectURL)) {
             // Browser supports a good way to download blobs
             $scope.$apply(function() {
                 meta.decrypting = false;
                 meta.decrypted = true;
             });
 
-            var href = URL.createObjectURL(blob);
-
             if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
                 // A fake link and will dispatch a click event on this fake link
                 var url  = window.URL || window.webkitURL;
                 var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+
                 link.href = url.createObjectURL(blob);
+                linkElement.attr('href', url.createObjectURL(blob));
                 link.download = meta.Name;
 
                 var event = document.createEvent("MouseEvents");
+
                 event.initEvent("click", true, false);
                 link.dispatchEvent(event);
             } else {
@@ -293,8 +284,7 @@ angular.module("proton.controllers.Messages.View", [])
                 reader.readAsDataURL(blob);
             }
 
-        }
-        else {
+        } else {
             // Bad blob support, make a data URI, don't click it
             reader = new FileReader();
 
