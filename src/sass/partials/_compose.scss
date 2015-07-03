@@ -46,10 +46,11 @@
     border: 1px solid $primary-color-dark;
     border-radius: $border-radius-base;
     margin-left: 10px;
-    padding: 2px;
+    padding: 2px 5px;
     margin-bottom: 5px;
     display: inline-block;
     font-weight: normal;
+    font-size: 12px;
 }
 
 .preview-close {

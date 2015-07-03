@@ -2,7 +2,7 @@ angular.module("proton.controllers.Header", [])
 
 .controller("HeaderController", function($scope, $state, $stateParams, wizardModal, $rootScope) {
     $scope.params = {
-        searchInput: ''
+        searchInput: $stateParams.words || ''
     };
 
     function openWizardModal(title, version) {
