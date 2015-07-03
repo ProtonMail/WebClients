@@ -14,6 +14,7 @@ angular.module("proton.controllers.Messages.List", [])
     Label,
     authentication,
     messageCache,
+    messageCounts,
     messages,
     networkActivityTracker,
     notify
@@ -111,8 +112,35 @@ angular.module("proton.controllers.Messages.List", [])
         $scope.refreshMessages(silently, empty);
     });
 
+    if (typeof $rootScope.messageTotals === 'undefined') {
+        Message.totalCount().$promise.then(function(totals) {
+            var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
+            _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+            _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+            $rootScope.messageTotals = total;
+        });
+    }
+
     $scope.messageCount = function() {
-        return $rootScope.Total;
+        if (mailbox === 'label') {
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
+                return $rootScope.messageTotals.Labels[$stateParams.label];
+            } else {
+                return $rootScope.Total;
+            }
+        } else if(mailbox === 'starred'){
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
+                return $rootScope.messageTotals.Starred;
+            } else {
+                return $rootScope.Total;
+            }
+        } else {
+            if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]) {
+                return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            } else {
+                return $rootScope.Total;
+            }
+        }
     };
 
     $scope.getMessagesParameters = function(mailbox) {
@@ -292,6 +320,10 @@ angular.module("proton.controllers.Messages.List", [])
                 message = _.first(messages);
             }
 
+            if(message.IsRead === 0) {
+                messageCounts.updateUnread('mark', [message], true);
+            }
+
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
@@ -328,14 +360,22 @@ angular.module("proton.controllers.Messages.List", [])
 
         if(message.Starred === 1) {
             promise = Message.unstar({IDs: ids}).$promise;
+            $rootScope.messageTotals.Starred--;
             message.Starred = 0;
 
+            if (message.IsRead === 0) {
+                $rootScope.counters.Starred--;
+            }
             if (inStarred) {
                 $scope.messages.splice(index, 1);
             }
         } else {
             promise = Message.star({IDs: ids}).$promise;
+            $rootScope.messageTotals.Starred++;
             message.Starred = 1;
+            if (message.IsRead === 0) {
+                $rootScope.counters.Starred++;
+            }
         }
     };
 
@@ -401,77 +441,22 @@ angular.module("proton.controllers.Messages.List", [])
         }
     };
 
-    $scope.updateCounters = function(messages, status) {
-        var counterUpdates = {Locations: {}, Labels: {}};
-        _.each(messages, function(message) {
-            mID = counterUpdates.Locations[message.Location];
-            mID = (typeof mID === 'undefined') ? 0 : mID;
-            counterUpdates.Locations[message.Location] = (status) ? mID - 1 : mID + 1;
-            _.each(message.LabelIDs, function(labelID) {
-                lID = counterUpdates.Labels[labelID];
-                lID = (typeof lID === 'undefined') ? 0 : lID;
-                counterUpdates.Labels[labelID] = (status) ? lID - 1 : lID + 1;
-            });
-        });
-
-        _.each(counterUpdates.Locations, function(val, id) {
-            locID = $rootScope.counters.Locations[id];
-            locID = (typeof locID === 'undefined') ? val : locID + val;
-            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
-        });
-        _.each(counterUpdates.Labels, function(val, id) {
-            labID = $rootScope.counters.Labels[id];
-            labID = (typeof labID === 'undefined') ? val : labID + val;
-            $rootScope.counters.Labels[id] = (labID < 0) ? 0 : labID;
-        });
-    };
-
-    $scope.updateCountersMove = function(messages) {
-        var counterUpdates = {Locations: {}, Labels: {}};
-        _.each(messages, function(message) {
-            if (message.Location !== message.OldLocation) {
-                mID = counterUpdates.Locations[message.Location];
-                mID = (typeof mID === 'undefined') ? 0 : mID;
-                counterUpdates.Locations[message.Location] = (message.IsRead === 0) ? mID + 1 : mID;
-
-                curID = counterUpdates.Locations[message.OldLocation];
-                curID = (typeof curID === 'undefined') ? 0 : curID;
-                counterUpdates.Locations[message.OldLocation] = (message.IsRead === 0) ? curID - 1 : curID;
-            }
-        });
-
-        _.each(counterUpdates.Locations, function(val, id) {
-            locID = $rootScope.counters.Locations[id];
-            locID = (typeof locID === 'undefined') ? val : locID + val;
-            $rootScope.counters.Locations[id] = (locID < 0) ? 0 : locID;
-        });
-    };
-
     $scope.setMessagesReadStatus = function(status) {
         var messages = $scope.selectedMessagesWithReadStatus(!status);
-        var promise;
         var ids = _.map(messages, function(message) { return message.ID; });
-
-        if(status) {
-            promise = Message.read({IDs: ids}).$promise;
-        } else {
-            promise = Message.unread({IDs: ids}).$promise;
-        }
+        var promise = (status) ? Message.read({IDs: ids}).$promise : Message.unread({IDs: ids}).$promise;
 
         _.each(messages, function(message) {
             message.IsRead = +status;
         });
 
-        $scope.updateCounters(messages, status);
-
-        promise.then(function() {
-            $rootScope.$broadcast('updateCounters');
-        });
+        messageCounts.updateUnread('mark', messages, status);
 
         $scope.unselectAllMessages();
 
         networkActivityTracker.track(promise);
     };
+
     $scope.$on('moveMessagesTo', function(event, name) {
         $scope.moveMessagesTo(name);
     });
@@ -479,31 +464,24 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.moveMessagesTo = function(mailbox) {
 
         var ids = $scope.selectedIds();
-        var promise;
         var inDelete = mailbox === 'delete';
+        var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
 
         messages = [];
         movedMessages = [];
+
         _.forEach($scope.selectedMessages(), function (message) {
-            m = {};
-            m.LabelIDs = message.LabelIDs;
-            m.OldLocation = message.Location;
-            m.IsRead = message.IsRead;
-            m.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            console.log(message);
+            m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
             movedMessages.push(m);
 
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             messages.push({Action: 3, ID: message.ID, Message: message});
         });
+
 		messageCache.set(messages);
-
-        $scope.updateCountersMove(movedMessages);
-
-        if(inDelete) {
-            promise = Message.delete({IDs: ids}).$promise;
-        } else {
-            promise = Message[mailbox]({IDs: ids}).$promise;
-        }
+        messageCounts.updateUnread('move', movedMessages);
+        messageCounts.updateTotals('move', movedMessages);
 
         promise.then(function(result) {
             $rootScope.$broadcast('refreshMessages');
@@ -627,6 +605,9 @@ angular.module("proton.controllers.Messages.List", [])
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
+
+        messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
+        messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
 
         _.each(toApply, function(labelID) {
             promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);

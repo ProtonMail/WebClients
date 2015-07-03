@@ -50,11 +50,17 @@ angular.module("proton.event", [])
 			},
 			manageCounter: function(json) {
 				if(angular.isDefined(json)) {
-					var counters = {Labels:{}, Locations:{}};
+					var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
 		            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
 		            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
                     $rootScope.counters  = counters;
 				}
+			},
+			manageTotals: function(totals) {
+				var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
+				_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+				_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+				$rootScope.messageTotals = total;
 			},
 			manageMessages: function(messages) {
 				if (angular.isDefined(messages)) {
@@ -81,6 +87,7 @@ angular.module("proton.event", [])
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageCounter(data.Unread);
+ 					this.manageTotals(data.Total);
 					this.manageMessages(data.Messages);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);

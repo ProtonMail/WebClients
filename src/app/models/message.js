@@ -59,6 +59,10 @@ angular.module("proton.models.message", ["proton.constants"])
                     return json.Message;
                 }
             },
+             totalCount: {
+                    method: 'get',
+                    url: authentication.baseURL + '/messages/total',
+            },
             query: {
                 method: 'get',
                 isArray: true,

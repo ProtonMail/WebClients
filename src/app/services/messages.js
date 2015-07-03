@@ -49,7 +49,6 @@ angular.module("proton.messages", [])
             // Will eventually have a pool of extra messages and only call for the messges needed instead of whole page
             // when implemented in API
             sync: function(cacheLoc) {
-                console.log('sync');
                 refreshMessagesCache = true;
                 if (cacheLoc === 'inbox') {
                     Message.query(inboxTwoParams).$promise.then(function(result) {
