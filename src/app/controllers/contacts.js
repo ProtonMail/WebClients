@@ -163,7 +163,7 @@ angular.module("proton.controllers.Contacts", [
                     Contact.save({
                         Contacts : contactList
                     }).then(function(response) {
-                        if(response.data.Responses[0].Code === 1000) {
+                        if(response.data.Code === 1001) {
                             $rootScope.user.Contacts.push(response.data.Responses[0].Response.Contact);
                             $scope.contacts = $scope.contactsFiltered();
                             notify($translate.instant('CONTACT_ADDED'));
@@ -203,7 +203,7 @@ angular.module("proton.controllers.Contacts", [
                         "Email": email,
                         "id": contact.ID
                     }).then(function(response) {
-                            if(response.data.Responses[0].Code === 1000) {
+                            if(response.data.Code === 1000) {
                                 contactModal.deactivate();
                                 notify($translate.instant('CONTACT_EDITED'));
                                 Contact.index.updateWith($rootScope.user.Contacts);

@@ -7,7 +7,7 @@ angular.module("proton.models.contact", [])
             return $http.get(authentication.baseURL + '/contacts');
         },
         edit: function(contact) {
-            return $http.put(authentication.baseURL + '/contacts/' + contact.ID, contact);
+            return $http.put(authentication.baseURL + '/contacts/' + contact.id, contact);
         },
         save: function(contact) {
             return $http.post(authentication.baseURL + '/contacts', contact);
