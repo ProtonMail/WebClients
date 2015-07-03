@@ -131,13 +131,7 @@ angular.module("proton.controllers.Messages.Compose", [])
                 },
                 addedfile: function(file) {
                     // add file here and then show progress
-                    if(angular.isUndefined(message.ID)) {
-                        $scope.save(message, true).then(function() {
-                            $scope.addAttachment(file, message);
-                        });
-                    } else {
-                        $scope.addAttachment(file, message);
-                    }
+                    $scope.addAttachment(file, message);
                 }
             }
         };
@@ -156,7 +150,6 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.addAttachment = function(file, message) {
-
         var totalSize = $scope.getAttachmentsSize(message);
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -198,8 +191,9 @@ angular.module("proton.controllers.Messages.Compose", [])
     $scope.removeAttachment = function(file, message) {
         var fileID = (file.ID) ? file.ID : file.previewElement.id;
         var attachment = _.findWhere(message.Attachments, {AttachmentID: fileID});
-        message.Attachments = _.filter(message.Attachments, function(a) {return a.AttachmentID !== fileID;});
-            // message.Attachments = [];
+
+        message.Attachments = _.without(message.Attachments, attachment);
+
         Attachment.remove({
             "MessageID": message.ID,
             "AttachmentID": fileID
@@ -216,9 +210,8 @@ angular.module("proton.controllers.Messages.Compose", [])
     $scope.uid = 1;
 
     $scope.initMessage = function(message) {
-
-        if ($rootScope.user.ComposerMode===1) {
-            message.maximized=true;
+        if ($rootScope.user.ComposerMode === 1) {
+            message.maximized = true;
         }
 
         // if tablet we maximize by default
@@ -245,16 +238,28 @@ angular.module("proton.controllers.Messages.Compose", [])
                 $scope.completedSignature(message);
             }
 
+            $scope.onAddFile(message);
+
             // sanitation
             message.Body = DOMPurify.sanitize(message.Body, {
                 FORBID_TAGS: ['style']
             });
             resizeComposer();
-
-            message.selectFile = function() {
-                $('#uid' + message.uid + ' .dropzone').click();
-            };
         }, 100);
+    };
+
+    $scope.onAddFile = function(message) {
+        $('#uid' + message.uid).find('.btn-add-attachment').on('click', function() {
+            if(angular.isUndefined(message.ID)) {
+                $scope.save(message, true); // We need to save to get an ID
+            }
+            
+            $scope.addFile(message);
+        });
+    };
+
+    $scope.addFile = function(message) {
+        $('#uid' + message.uid + ' .dropzone').click();
     };
 
     $scope.editorStyle = function(message) {
@@ -425,6 +430,7 @@ angular.module("proton.controllers.Messages.Compose", [])
         _.defaults(message, {
             Attachments: []
         });
+
         message.Attachments.push.apply(
             message.Attachments,
             _.map(files, function(file) {
