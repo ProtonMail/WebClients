@@ -80,7 +80,7 @@ angular.module("proton.controllers.Sidebar", [])
 
     if (typeof $rootScope.counters === 'undefined') {
         Message.unreaded({}).$promise.then(function(json) {
-            var counters = {Labels:{}, Locations:{}};
+            var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
 
             _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
             _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
@@ -95,6 +95,8 @@ angular.module("proton.controllers.Sidebar", [])
 
         if(mailbox === 'label') {
             value = $rootScope.counters.Labels[id];
+        } else if (mailbox === 'starred'){
+            value = $rootScope.counters.Starred;
         } else {
             value = $rootScope.counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
         }

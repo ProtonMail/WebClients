@@ -320,6 +320,10 @@ angular.module("proton.controllers.Messages.List", [])
                 message = _.first(messages);
             }
 
+            if(message.IsRead === 0) {
+                messageCounts.updateUnread('mark', [message], true);
+            }
+
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
@@ -356,14 +360,22 @@ angular.module("proton.controllers.Messages.List", [])
 
         if(message.Starred === 1) {
             promise = Message.unstar({IDs: ids}).$promise;
+            $rootScope.messageTotals.Starred--;
             message.Starred = 0;
 
+            if (message.IsRead === 0) {
+                $rootScope.counters.Starred--;
+            }
             if (inStarred) {
                 $scope.messages.splice(index, 1);
             }
         } else {
             promise = Message.star({IDs: ids}).$promise;
+            $rootScope.messageTotals.Starred++;
             message.Starred = 1;
+            if (message.IsRead === 0) {
+                $rootScope.counters.Starred++;
+            }
         }
     };
 
@@ -459,7 +471,8 @@ angular.module("proton.controllers.Messages.List", [])
         movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]};
+            console.log(message);
+            m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
             movedMessages.push(m);
 
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
@@ -592,6 +605,9 @@ angular.module("proton.controllers.Messages.List", [])
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
+
+        messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
+        messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
 
         _.each(toApply, function(labelID) {
             promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);

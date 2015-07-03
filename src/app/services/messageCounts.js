@@ -3,7 +3,6 @@ angular.module("proton.messages.counts", [])
 		    var totalCounts = _.bindAll({
                 move: function(messages) {
                     var counterUpdates = {Locations: {}, Labels: {}};
-                    console.log(messages, $rootScope);
                     _.each(messages, function(message) {
                         if (message.Location !== message.OldLocation) {
                             mID = counterUpdates.Locations[message.Location];
@@ -17,11 +16,28 @@ angular.module("proton.messages.counts", [])
                     });
                     this.update('Locations', counterUpdates.Locations);
                 },
+                label: function(messages, add, remove) {
+                    var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
+                    _.each(add.concat(remove), function(id) {counterUpdates.Labels[id] = 0;});
+
+                    _.each(messages, function(message) {
+                            _.each(add, function(id) {
+                                count = counterUpdates.Labels[id];
+                                counterUpdates.Labels[id] = (_.indexOf(message.LabelIDs, id) === -1) ? count + 1 : count;
+                            });
+                            _.each(remove, function(id) {
+                                count = counterUpdates.Labels[id];
+                                counterUpdates.Labels[id] = (_.indexOf(message.LabelIDs, id) !== -1) ? count - 1 : count;
+                            });
+                    });
+
+                    this.update('Labels', counterUpdates.Labels);
+                },
                 update: function(location, updates) {
                     _.each(updates, function(val, id) {
                         ID = $rootScope.messageTotals[location][id];
                         ID = (typeof ID === 'undefined') ? val : ID + val;
-                        $rootScope.counters[location][id] = (ID < 0) ? 0 : ID;
+                        $rootScope.messageTotals[location][id] = (ID < 0) ? 0 : ID;
                     });
                 }
             });
@@ -30,7 +46,7 @@ angular.module("proton.messages.counts", [])
                 move :  function(messages) {
 
                     // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
-                    var counterUpdates = {Locations: {}, Labels: {}};
+                    var counterUpdates = {Locations: {}, Labels: {}, Starred : 0};
 
                     // Checks each message to see if count should increase decrease or stay the same
                     _.each(messages, function(message) {
@@ -50,13 +66,16 @@ angular.module("proton.messages.counts", [])
                 mark : function(messages, status) {
 
                     // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
-                    var counterUpdates = {Locations: {}, Labels: {}};
+                    var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
 
                     // Checks each message and each label for each message to see if count should increase decrease or stay the same
                     _.each(messages, function(message) {
+                        starred = (message.Starred === 1);
+                        sID = counterUpdates.Starred;
                         mID = counterUpdates.Locations[message.Location];
                         mID = (typeof mID === 'undefined') ? 0 : mID;
                         counterUpdates.Locations[message.Location] = (status) ? mID - 1 : mID + 1;
+                        counterUpdates.Starred = (starred && status) ? sID - 1 : (starred && !status) ? sID + 1 : sID;
                         _.each(message.LabelIDs, function(labelID) {
                             lID = counterUpdates.Labels[labelID];
                             lID = (typeof lID === 'undefined') ? 0 : lID;
@@ -64,7 +83,27 @@ angular.module("proton.messages.counts", [])
                         });
                     });
 
+                    $rootScope.counters.Starred = $rootScope.counters.Starred + counterUpdates.Starred;
                     this.update('Locations', counterUpdates.Locations);
+                    this.update('Labels', counterUpdates.Labels);
+                },
+                label: function(messages, add, remove) {
+                    var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
+                    _.each(add.concat(remove), function(id) {counterUpdates.Labels[id] = 0;});
+
+                    _.each(messages, function(message) {
+                        if (message.IsRead === 0) {
+                            _.each(add, function(id) {
+                                count = counterUpdates.Labels[id];
+                                counterUpdates.Labels[id] = (_.indexOf(message.LabelIDs, id) === -1) ? count + 1 : count;
+                            });
+                            _.each(remove, function(id) {
+                                count = counterUpdates.Labels[id];
+                                counterUpdates.Labels[id] = (_.indexOf(message.LabelIDs, id) !== -1) ? count - 1 : count;
+                            });
+                        }
+                    });
+
                     this.update('Labels', counterUpdates.Labels);
                 },
 
@@ -82,17 +121,15 @@ angular.module("proton.messages.counts", [])
                 updateTotals: function(action, messages) {
                     totalCounts[action](messages);
 
-                    // Delete Message
+                    // Delete Message *
 
-                    // Receive Message
+                    // Receive Message *
 
-                    // Move Messages
+                    // Move Messages *
 
-                    // Star Messages
+                    // Star Messages *
 
                     // Change Label
-
-                    // Receive Message
 
                     // Create Sent Message
 
@@ -106,17 +143,23 @@ angular.module("proton.messages.counts", [])
 
                     // Move Message *
 
-                    // Star Message
+                    // Star Message *
 
                     // Change Label
 
                     // Mark Unread in Message List *
 
-                    // Mark Unread in Message View
+                    // Mark Unread in Message View *
 
-                    // Message View to Mailbox
+                    // Message View to Mailbox *
 
                 },
+                updateUnreadLabels: function(messages, add, remove) {
+                    unreadCounts.label(messages, add, remove);
+                },
+                updateTotalLabels: function(messages, add, remove) {
+                    totalCounts.label(messages, add, remove);
+                }
             });
 
             return api;

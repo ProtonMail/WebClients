@@ -20,6 +20,7 @@ angular.module("proton.controllers.Messages.View", [])
     Label,
     message,
     messageCache,
+    messageCounts,
     tools,
     attachments,
     pmcw,
@@ -171,7 +172,7 @@ angular.module("proton.controllers.Messages.View", [])
 
     $scope.markAsUnread = function() {
         var promise;
-
+        messageCounts.updateUnread('mark', [message], false);
         message.IsRead = 0;
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
@@ -318,6 +319,8 @@ angular.module("proton.controllers.Messages.View", [])
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
+
+        messageCounts.updateTotalLabels([message], toApply, toRemove);
 
         _.each(toApply, function(labelID) {
             promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
