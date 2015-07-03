@@ -1,4 +1,4 @@
-<div class="panel panel-default wrap">
+<div class="panel panel-default wrap panel-medium">
 
     <div class="panel-body" ng-hide="showForm">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
@@ -11,7 +11,10 @@
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">{{ 'OK' | translate }}</button>
+        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">
+            <span ng-if="user.NotificationEmail !== ''">{{ 'SEND_RESET_EMAIL' | translate }}</span>
+            <span ng-if="user.NotificationEmail === ''">{{ 'RESET_NOW' | translate }}</span>
+        </button>
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
     </div>
 

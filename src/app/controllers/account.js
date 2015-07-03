@@ -119,13 +119,13 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 return;
             }
 
-            $scope.creating = true;
-
             networkActivityTracker.track(
                 User.available({
                     username: $scope.account.Username
                 }).$promise.then(
                     function(response) {
+
+                        $scope.creating = true;
 
                         if (response.error) {
                             var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
@@ -134,6 +134,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                 message: error_message
                             });
                             $scope.creating = false;
+                            $('#Username').focus();
                             return;
                         }
                         else if (parseInt(response.Available)===0) {
@@ -142,6 +143,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                 message: 'Username taken.'
                             });
                             $scope.creating = false;
+                            $('#Username').focus();
                             return;
                         }
 
