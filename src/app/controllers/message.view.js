@@ -189,9 +189,6 @@ angular.module("proton.controllers.Messages.View", [])
             return true;
         }
 
-        linkElement = $($event.target);
-        linkElement.attr('target', '_blank');
-        linkElement.attr('download', attachment.Name);
 
         attachment.decrypting = true;
 
@@ -203,8 +200,10 @@ angular.module("proton.controllers.Messages.View", [])
         if (attachment.KeyPackets===undefined) {
             return att.then( function(result) {
                 var data = { data: result.data };
-                console.log(data, attachment);
-                $scope.downloadAttachment(data, attachment);
+                // console.log(data, attachment);
+                $scope.downloadAttachment(data, attachment, $event);
+                attachment.decrypting = false;
+                attachment.decrypted = true;
                 return;
             });
         }
@@ -240,22 +239,26 @@ angular.module("proton.controllers.Messages.View", [])
                 // decrypt the att
                 pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
-                        $scope.downloadAttachment(decryptedAtt, attachment);
+                        $scope.downloadAttachment(decryptedAtt, attachment, $event);
                     }
                 );
             },
             function(err) {
-                // console.log(err);
+                console.log(err);
                 // console.log(at);
-                console.log(key);
-                console.log(algo);
+                // console.log(key);
+                // console.log(algo);
             }
         );
     };
 
-    $scope.downloadAttachment = function(data, meta) {
+    $scope.downloadAttachment = function(data, meta, $event) {
 
-        console.log(data, meta);
+        linkElement = $($event.target);
+        linkElement.attr('target', '_blank');
+        linkElement.attr('download', meta.Name);
+
+        // console.log(data, meta);
 
         var blob = new Blob([data.data], {type: meta.MIMEType});
 
