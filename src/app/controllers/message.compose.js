@@ -253,7 +253,7 @@ angular.module("proton.controllers.Messages.Compose", [])
             if(angular.isUndefined(message.ID)) {
                 $scope.save(message, true); // We need to save to get an ID
             }
-            
+
             $scope.addFile(message);
         });
     };
@@ -652,17 +652,29 @@ angular.module("proton.controllers.Messages.Compose", [])
             }
 
             draftPromise.then(function(result) {
-                message.ID = result.Message.ID;
-                message.BackupDate = new Date();
-                $scope.saveOld(message);
-                $scope.saving = false;
+                var process = function(result) {
+                    message.ID = result.Message.ID;
+                    message.BackupDate = new Date();
+                    $scope.saveOld(message);
+                    $scope.saving = false;
 
-                // Add draft in message list
-                if($state.is('secured.drafts') && silently !== true) {
-                    $rootScope.$broadcast('refreshMessages');
+                    // Add draft in message list
+                    if($state.is('secured.drafts') && silently !== true) {
+                        $rootScope.$broadcast('refreshMessages');
+                    }
+
+                    deferred.resolve(result);
+                };
+
+                if(result.Code === 15034) { // Draft ID does not correspond to a draft
+                    var saveMePromise = Message.createDraft(parameters).$promise;
+
+                    saveMePromise.then(function(result) {
+                        process(result);
+                    });
+                } else {
+                    process(result);
                 }
-
-                deferred.resolve(result);
             });
         });
 
