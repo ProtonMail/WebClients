@@ -189,16 +189,12 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.refreshMessages = function(silently, empty) {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
-        var promise = Message.query(params).$promise.then(function(result) {
+        Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
             if(!!!empty) {
                 $scope.emptying = false;
             }
         });
-
-        if(!!!silently) {
-            networkActivityTracker.track(promise);
-        }
     };
 
     $scope.$on('updateLabels', function(){$scope.updateLabels();});
@@ -210,7 +206,6 @@ angular.module("proton.controllers.Messages.List", [])
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
 
     $scope.refreshMessagesCache = function () {
-        console.log('reload message cache');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
         messageCache.query(params).then(function(messages) {
@@ -453,8 +448,6 @@ angular.module("proton.controllers.Messages.List", [])
         messageCounts.updateUnread('mark', messages, status);
 
         $scope.unselectAllMessages();
-
-        networkActivityTracker.track(promise);
     };
 
     $scope.$on('moveMessagesTo', function(event, name) {
@@ -483,19 +476,13 @@ angular.module("proton.controllers.Messages.List", [])
         messageCounts.updateTotals('move', movedMessages);
 
         promise.then(function(result) {
-            $rootScope.$broadcast('refreshMessages');
+            $rootScope.$broadcast('refreshMessagesCache');
 
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
                 } else {
                     notify($translate.instant('MESSAGE_DELETED'));
-                }
-            } else {
-                if(ids.length > 1) {
-                    notify($translate.instant('MESSAGES_MOVED'));
-                } else {
-                    notify($translate.instant('MESSAGE_MOVED'));
                 }
             }
         });
@@ -505,8 +492,6 @@ angular.module("proton.controllers.Messages.List", [])
         }
 
         $scope.unselectAllMessages();
-
-        networkActivityTracker.track(promise);
     };
 
     $scope.filterBy = function(status) {
@@ -626,7 +611,6 @@ angular.module("proton.controllers.Messages.List", [])
                 $scope.unselectAllMessages();
             }
 
-            notify($translate.instant('LABELS_APPLY'));
             deferred.resolve();
         });
 
@@ -642,7 +626,9 @@ angular.module("proton.controllers.Messages.List", [])
             id: LabelID,
             MessageIDs: messageIDs
         }).then(function(result) {
-            notify($translate.instant('LABEL_APPLY'));
+            if (result.Error) {
+                console.log(result.Error);
+            }
         });
     });
 

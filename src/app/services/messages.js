@@ -72,6 +72,7 @@ angular.module("proton.messages", [])
                     addMessageList(cachedMetadata[loc]);
                 } else {
                     cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
+                    refreshMessagesCache = true;
                 }
             },
             updateLabels: function(cacheLoc, labelsChanged, message) {
