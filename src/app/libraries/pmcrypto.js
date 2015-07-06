@@ -317,8 +317,7 @@ var pmcrypto = (function() {
     }
 
     function getHashedPassword(password) {
-
-        var hashed = arrayToBinaryString(window.openpgp.crypto.hash.sha512(password));
+        var hashed = arrayToBinaryString(window.openpgp.crypto.hash.sha512(binaryStringToArray(password)));
         hashed = btoa(hashed);
         return hashed;
     }

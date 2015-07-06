@@ -148,7 +148,7 @@ angular.module("proton.authentication", [
                     else {
                         delete $http.defaults.headers.common.Accept;
                         $http.post(baseURL + "/auth",
-                            _.extend(_.pick(creds, "Username", "Password"), {
+                            _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
                                 ClientID: "demoapp",
                                 ClientSecret: "demopass",
                                 GrantType: "password",
@@ -232,7 +232,7 @@ angular.module("proton.authentication", [
                                 ClientID: "demoapp",
                                 GrantType: "refresh_token",
                                 State: api.randomString(24),
-                                ResponseType: "token"
+                                ResponseType: "token",
                             })
                         ).then(
                             function(resp) {
