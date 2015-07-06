@@ -315,6 +315,22 @@ angular.module("proton.routes", [
     })
 
     // -------------------------------------------
+    // UPGRADE ROUTES
+    // -------------------------------------------
+    .state("upgrade", {
+        url: "/upgrade",
+        views: {
+            "main@": {
+                templateUrl: "templates/layout/auth.tpl.html"
+            },
+            "panel@upgrade": {
+                controller: "UpgradeController",
+                templateUrl: "templates/views/upgrade.tpl.html"
+            }
+        }
+    })
+
+    // -------------------------------------------
     // SUPPORT ROUTES
     // -------------------------------------------
     .state("support", {

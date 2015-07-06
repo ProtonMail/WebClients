@@ -86,6 +86,7 @@ angular.module("proton", [
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
     "proton.controllers.Support",
+    "proton.controllers.Upgrade",
     "proton.controllers.Wizard",
 
     // Translations
@@ -163,6 +164,7 @@ angular.module("proton", [
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");
+        var isUpgrade = (toState.name === "upgrade");
         var isSupport = (toState.name.includes("support."));
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
@@ -182,7 +184,7 @@ angular.module("proton", [
         }
 
         // if on the login, support, account, or signup pages dont require authentication
-        else if (isLogin || isSupport || isAccount || isSignup || isOutside) {
+        else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade) {
             return; // no need to redirect
         }
 
