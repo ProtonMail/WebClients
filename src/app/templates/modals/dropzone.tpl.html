@@ -11,7 +11,8 @@
             <div class="modal-body">
                 <p ng-bind-html="ctrl.message"></p>
                 <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">
-                    <i class="fa fa-3x fa-cloud-upload text-muted"></i><br />
+                    <br />
+                    <br />
                     Drop files here or click to upload
                 </p>
                 <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
