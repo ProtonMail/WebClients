@@ -159,7 +159,29 @@ angular.module("proton", [
 //
 // Redirection if not authentified
 //
+.factory('authHttpResponseInterceptor',['$q','$location',function($q, $location, $state){
+    return {
+        response: function(response) {
+            if (response.status === 401) {
+                $state.go('login');
+            }
 
+            return response || $q.when(response);
+        },
+        responseError: function(rejection) {
+            console.log(rejection);
+            if (rejection.status === 401) {
+                window.location = "/login";
+            }
+
+            return $q.reject(rejection);
+        }
+    };
+}])
+.config(function($httpProvider) {
+    //Http Intercpetor to check auth failures for xhr requests
+    $httpProvider.interceptors.push('authHttpResponseInterceptor');
+})
 
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
