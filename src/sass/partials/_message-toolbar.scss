@@ -30,7 +30,7 @@
         li.prev-page,
         li.next-page{
             a {
-                padding: 0 1.5rem; 
+                padding: 0 1.5rem;
             }
         }
     }
@@ -81,7 +81,7 @@
                     position: absolute;
                     background-color: $base-color;
                     input[type='search'] {
-                        border: 1px solid $message-toolbar-bg;
+                        border: 1px solid $base-color-darker;
                         outline: 0;
                     }
                     ul.list-group {
