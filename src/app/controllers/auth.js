@@ -32,21 +32,6 @@ angular.module("proton.controllers.Auth", [
         $scope.error = null;
     };
 
-
-function loginHPW() {
-    var pw = $('#Password').val();
-    if ($('#username').val()!=='') {
-        var salt = $('#username').val().toLowerCase();
-        if (salt.indexOf("@") > -1) {
-            salt = salt.match(/^([^@]*)@/)[1];
-            salt = salt.toLowerCase();
-        }
-        var hashed_pw = pmcrypto.getHashedPassword(salt+pw);
-        $('#hashed_pw').val(hashed_pw);         
-    }   
-}
-
-
     // this does not add security and was only active for less than a day in 2013.
     // required for accounts created back then.
     // goal was to obfuscate the password in a basic manner.
