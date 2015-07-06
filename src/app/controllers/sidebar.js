@@ -4,6 +4,7 @@ angular.module("proton.controllers.Sidebar", [])
     $scope,
     $rootScope,
     $state,
+    $stateParams,
     $http,
     $translate,
     $interval,
@@ -46,10 +47,11 @@ angular.module("proton.controllers.Sidebar", [])
 
     $scope.goTo = function(route) {
         var sameFolder = $state.current.name === route;
+        var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
 
         $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
-        if(sameFolder === true) {
+        if(sameFolder === true && firstPage === true) {
             // Do nothing
             // Chut...
         } else {
