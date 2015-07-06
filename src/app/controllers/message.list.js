@@ -61,29 +61,6 @@ angular.module("proton.controllers.Messages.List", [])
         });
     };
 
-    $scope.dropdownPages = function() {
-        var ddp = [];
-        var ddp2 = [];
-        var makeRangeCounter = 0;
-
-        for (var i = 0; i <= parseInt($rootScope.Total); i++) {
-            ddp[i] = i;
-        }
-
-        function makeRange(element, index, array) {
-            if(index%CONSTANTS.MESSAGES_PER_PAGE === 0) {
-                ddp2.push((index+1) + ' - ' + (index+CONSTANTS.MESSAGES_PER_PAGE));
-                makeRangeCounter++;
-            }
-        }
-
-        ddp.forEach(makeRange);
-
-        return ddp2;
-    };
-
-    $scope.pages = $scope.dropdownPages();
-
     var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
         $rootScope.pageName = $state.current.data.mailbox;
     });
@@ -142,6 +119,29 @@ angular.module("proton.controllers.Messages.List", [])
             }
         }
     };
+
+    $scope.dropdownPages = function() {
+        var ddp = [];
+        var ddp2 = [];
+        var makeRangeCounter = 0;
+
+        for (var i = 0; i <= parseInt($scope.messageCount()); i++) {
+            ddp[i] = i;
+        }
+
+        function makeRange(element, index, array) {
+            if(index%CONSTANTS.MESSAGES_PER_PAGE === 0) {
+                ddp2.push((index+1) + ' - ' + (index+CONSTANTS.MESSAGES_PER_PAGE));
+                makeRangeCounter++;
+            }
+        }
+
+        ddp.forEach(makeRange);
+
+        return ddp2;
+    };
+
+    $scope.pages = $scope.dropdownPages();
 
     $scope.getMessagesParameters = function(mailbox) {
         var params = {};

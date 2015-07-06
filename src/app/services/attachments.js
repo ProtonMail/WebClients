@@ -69,6 +69,7 @@ angular.module("proton.attachments", [
             attachmentData.filename = packets.Filename;
             attachmentData.fileSize = packets.fileSize;
             attachmentData.MIMEType = packets.MIMEType;
+            attachmentData.loading = true;
 
             xhr.onload = function() {
                 var response;
@@ -89,6 +90,7 @@ angular.module("proton.attachments", [
                 if (statusCode !== 200) {
                     // Error with the request
                     notify('Unable to upload file. Please try again.');
+                    attachmentData.loading = false;
                     deferred.reject();
                     return;
                 } else if (response.Error !== undefined) {
@@ -98,12 +100,13 @@ angular.module("proton.attachments", [
                     } else {
                         notify('Unable to upload.');
                     }
+                    attachmentData.loading = false;
                 } else {
                     attachmentData.AttachmentID = response.AttachmentID;
                     $(element).attr('ID', response.AttachmentID);
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
-                        // console.log(sessionKey);
+                        attachmentData.loading = false;
                         deferred.resolve(attachmentData);
                     });
                 }

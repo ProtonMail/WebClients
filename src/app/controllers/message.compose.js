@@ -106,7 +106,9 @@ angular.module("proton.controllers.Messages.Compose", [])
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
                 previewsContainer: '.previews',
-                previewTemplate: '<span title="Attachment" class="preview-template"><span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span></span>',
+                previewTemplate: '<span title="Attachment" class="preview-template">' +
+                                    '<span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span>' +
+                                 '</span>',
                 createImageThumbnails: false,
                 accept: function(file, done) {
                 },
