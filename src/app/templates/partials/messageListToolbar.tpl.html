@@ -29,7 +29,7 @@
             href
             ng-click="moveMessagesTo('archive')"
             ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-archive"></i>
+                <i class="fa fa-archive"></i>
             </a>
         </li>
         <li
@@ -40,7 +40,7 @@
             href
             ng-click="moveMessagesTo('inbox')"
             ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-inbox"></i>
+                <i class="fa fa-inbox"></i>
             </a>
         </li>
         <li
@@ -51,7 +51,7 @@
             href
             ng-click="moveMessagesTo('spam')"
             ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-ban"></i>
+                <i class="fa fa-spam-flame"></i>
             </a>
         </li>
         <li
@@ -62,7 +62,7 @@
             href
             ng-click="moveMessagesTo('trash')"
             ng-class="{ disabled: selectedMessages().length == 0 }">
-                <i class="fa fa-fw fa-trash-o"></i>
+                <i class="fa fa-trash-o"></i>
             </a>
         </li>
         <li
@@ -90,7 +90,7 @@
         </li>        
         <li class="seperator">
             <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
-                <i class="fa fa-fw fa-tag"></i>
+                <i class="fa fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
             <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels" />
@@ -108,19 +108,19 @@
                     <ul class="dropdown-menu" role="menu">
                         <li ng-class="{selected: selectedFilter == 'unread'}">
                             <a href ng-click="filterBy('unread')">
-                                <i class="fa fa-fw fa-eye-slash"></i> {{ 'UNREAD' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-eye-slash"></i> {{ 'UNREAD' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedFilter == 'read'}">
                             <a href ng-click="filterBy('read')">
-                                <i class="fa fa-fw fa-eye"></i> {{ 'READ' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-eye"></i> {{ 'READ' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-if="selectedFilter" class="clear">
                             <a href ng-click="clearFilter()">
-                                <i class="fa fa-fw fa-ban"></i> {{ 'SHOW_ALL' | translate }}
+                                <i class="fa fa-ban"></i> {{ 'SHOW_ALL' | translate }}
                             </a>
                         </li>
                     </ul>
@@ -133,50 +133,50 @@
                     <ul class="dropdown-menu" role="menu">
                         <li ng-class="{selected: selectedOrder == 'subject'}">
                             <a href ng-click="orderBy('subject')">
-                                <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == '-subject'}">
                             <a href ng-click="orderBy('-subject')">
-                                <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == 'from'}">
                             <a href ng-click="orderBy('from')">
-                                <i class="fa fa-fw fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == '-from'}">
                             <a href ng-click="orderBy('-from')">
-                                <i class="fa fa-fw fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == 'size'}">
                             <a href ng-click="orderBy('size')">
-                                <i class="fa fa-fw fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == '-size'}">
                             <a href ng-click="orderBy('-size')">
-                                <i class="fa fa-fw fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == '-date'}">
                             <a href ng-click="orderBy('-date')">
-                                <i class="fa fa-fw fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                         <li ng-class="{selected: selectedOrder == 'date'}">
                             <a href ng-click="orderBy('date')">
-                                <i class="fa fa-fw fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
-                                <i class="fa fa-fw fa-check"></i>
+                                <i class="fa fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
+                                <i class="fa fa-check"></i>
                             </a>
                         </li>
                     </ul>

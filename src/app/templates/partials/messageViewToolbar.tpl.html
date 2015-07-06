@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
         <li class="seperator">
             <a href class="backBtn" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
-                <i class="fa fa-fw fa-level-up fa-rotate-270"></i>
+                <i class="fa fa-level-up fa-rotate-270"></i>
             </a>
         </li>
         <li
@@ -22,7 +22,7 @@
             pt-tooltip="{{ 'ARCHIVE' | translate }}"
             pt-placement="bottom"
             ng-click="moveMessageTo('archive')">
-                <i class="fa fa-fw fa-archive"></i>
+                <i class="fa fa-archive"></i>
             </a>
         </li>
         <li
@@ -32,7 +32,7 @@
             pt-tooltip="{{ 'SPAM' | translate }}"
             pt-placement="bottom"
             ng-click="moveMessageTo('spam')">
-                <i class="fa fa-fw fa-ban"></i>
+                <i class="fa fa-spam-flame"></i>
             </a>
         </li>
         <li ng-if="message.location() != 'trash'" class="seperator">
@@ -41,7 +41,7 @@
             pt-tooltip="{{ 'TRASH' | translate }}"
             pt-placement="bottom"
             ng-click="moveMessageTo('trash')">
-                <i class="fa fa-fw fa-trash-o"></i>
+                <i class="fa fa-trash-o"></i>
             </a>
         </li>
         <li
@@ -51,7 +51,7 @@
             pt-tooltip="{{ 'INBOX' | translate }}"
             pt-placement="bottom"
             ng-click="moveMessageTo('inbox')">
-                <i class="fa fa-fw fa-inbox"></i>
+                <i class="fa fa-inbox"></i>
             </a>
         </li>
         <li
@@ -66,7 +66,7 @@
         </li>
         <li class="seperator">
             <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: messages().length == 0 }" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
-                <i class="fa fa-fw fa-tag"></i>
+                <i class="fa fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
             <dropdown-labels labels="labels" messages="[message]" save="saveLabels" />

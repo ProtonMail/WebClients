@@ -82,7 +82,7 @@
             ng-model="droppedMessages">
                 <a class="btn" ng-click="goTo('secured.spam')" ng-class="{ active: ('secured.spam.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('spam') > 0}">{{ getUnread('spam') }}</span>
-                    <span class="fa fa-ban"></span> <span class="hidden-xs hidden-sm">{{ 'SPAM' | translate }}</span>
+                    <span class="fa fa-spam-flame"></span> <span class="hidden-xs hidden-sm">{{ 'SPAM' | translate }}</span>
                 </a>
             </li>
             <li
