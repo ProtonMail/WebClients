@@ -45,8 +45,8 @@
                             {{ 'SETTINGS' | translate }}
                         </a>
                     </li>
-                    <li>
-                        <a id="ignoreComposerReportBug" href ng-click="openReportModal()">
+                    <li ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                        <a href ng-click="openReportModal()">
                             <i class="fa fa-bug"></i>
                             {{ 'REPORT_BUG' | translate }}
                         </a>
