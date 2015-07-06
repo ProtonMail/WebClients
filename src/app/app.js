@@ -169,7 +169,6 @@ angular.module("proton", [
             return response || $q.when(response);
         },
         responseError: function(rejection) {
-            console.log(rejection);
             if (rejection.status === 401) {
                 window.location = "/login";
             }
