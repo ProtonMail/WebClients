@@ -1,5 +1,5 @@
 // Windows
-.ua-windows_nt
+.ua-windows_nt {
 	// All Browsers
 	table.message-list tbody input[type="checkbox"] {
 		position: relative;
@@ -19,7 +19,7 @@
 }
 
 // OSX
-.ua-mac_os_x
+.ua-mac_os_x {
 	// Firefox
 	&.ua-firefox {
 	    table.message-list tbody input[type="checkbox"] {
