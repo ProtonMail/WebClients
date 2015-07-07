@@ -120,12 +120,12 @@ angular.module("proton.controllers.Messages.List", [])
         }
     };
 
-    $scope.dropdownPages = function() {
+    $scope.makeDropdownPages = function() {
         var ddp = [];
         var ddp2 = [];
         var makeRangeCounter = 0;
 
-        for (var i = 0; i <= parseInt($scope.messageCount()); i++) {
+        for (var i = 0; i <= parseInt($scope.messageCount() - 1); i++) {
             ddp[i] = i;
         }
 
@@ -140,8 +140,6 @@ angular.module("proton.controllers.Messages.List", [])
 
         return ddp2;
     };
-
-    $scope.pages = $scope.dropdownPages();
 
     $scope.getMessagesParameters = function(mailbox) {
         var params = {};

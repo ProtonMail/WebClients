@@ -222,7 +222,7 @@
                 {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
             </a>
             <select id="page">
-                <option ng-repeat="label in pages" value="{{$index + 1}}">{{ label }}</option>
+                <option ng-repeat="label in makeDropdownPages()" value="{{$index + 1}}">{{ label }}</option>
             </select>
         </li>
         <li class="prev-page seperator">

@@ -365,10 +365,10 @@ angular.module("proton.controllers.Messages.View", [])
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
+            base.Action = 0;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
             re_prefix + ' ' + message.Subject;
-            base.Action = 0;
         }
         else if (action === 'replyall') {
             base.Action = 1;
