@@ -1,12 +1,30 @@
-.us-windows_nt.ua-firefox {
-    table.message-list tbody input[type="checkbox"] {
-        position: relative;
-        top: 2px;
-    }
+// Windows
+.ua-windows_nt
+	// All Browsers
+	table.message-list tbody input[type="checkbox"] {
+		position: relative;
+	}
+	// Firefox
+	&.ua-firefox {
+	    table.message-list tbody input[type="checkbox"] {
+	        top: 3px;
+	    }
+	}
+	// Chrome
+	&.ua-chrome {
+	    table.message-list tbody input[type="checkbox"] {
+	        top: 4px;
+	    }
+	}
 }
-.ua-mac_os_x.ua-firefox {
-    table.message-list tbody input[type="checkbox"] {
-        position: relative;
-        top: 1px;
-    }    
+
+// OSX
+.ua-mac_os_x
+	// Firefox
+	&.ua-firefox {
+	    table.message-list tbody input[type="checkbox"] {
+	        position: relative;
+	        top: 1px;
+	    }
+	}
 }
