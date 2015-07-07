@@ -35,15 +35,6 @@
                 <i class="fa fa-spam-flame"></i>
             </a>
         </li>
-        <li ng-if="message.location() != 'trash'" class="seperator">
-            <a
-            href
-            pt-tooltip="{{ 'TRASH' | translate }}"
-            pt-placement="bottom"
-            ng-click="moveMessageTo('trash')">
-                <i class="fa fa-trash-o"></i>
-            </a>
-        </li>
         <li
             ng-if="message.location() != 'inbox'">
             <a
@@ -52,6 +43,15 @@
             pt-placement="bottom"
             ng-click="moveMessageTo('inbox')">
                 <i class="fa fa-inbox"></i>
+            </a>
+        </li>
+        <li ng-if="message.location() != 'trash'" class="seperator">
+            <a
+            href
+            pt-tooltip="{{ 'TRASH' | translate }}"
+            pt-placement="bottom"
+            ng-click="moveMessageTo('trash')">
+                <i class="fa fa-trash-o"></i>
             </a>
         </li>
         <li

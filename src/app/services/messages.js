@@ -84,8 +84,12 @@ angular.module("proton.messages", [])
                 }
             },
             create: function(loc, message) {
-                index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
-                cachedMetadata[loc].pop();
+                var index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
+                
+                if(cachedMetadata[loc].length > CONSTANTS.MESSAGES_PER_PAGE) {
+                    cachedMetadata[loc].pop();
+                }
+
                 cachedMetadata[loc].splice(index, 0, message);
                 refreshMessagesCache = true;
             }

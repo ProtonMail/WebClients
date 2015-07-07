@@ -401,7 +401,7 @@ angular.module("proton.controllers.Messages.View", [])
     };
 
     $scope.goToMessageList = function() {
-        $state.go('^', {}, {reload: true});
+        $state.go('^');
     };
 
     $scope.moveMessageTo = function(mailbox) {

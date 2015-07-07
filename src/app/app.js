@@ -150,7 +150,7 @@ angular.module("proton", [
     // https://github.com/cgross/angular-notify
     notify.config({
         templateUrl: 'templates/notifications/base.tpl.html',
-        duration: 60000,
+        duration: 6000,
         position: 'center',
         maximumOpen: 5
     });

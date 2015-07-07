@@ -229,25 +229,22 @@ angular.module("proton.controllers.Messages.Compose", [])
         $scope.messages.unshift(message);
         $scope.$apply();
         $scope.setDefaults(message);
+        $scope.saveOld(message);
+        $scope.listenEditor(message);
+        $scope.focusComposer(message);
 
-        $timeout( function() {
-            $scope.saveOld(message);
-            $scope.listenEditor(message);
-            $scope.focusComposer(message);
+        if (angular.isUndefined(message.Body)) {
+            // this sets the Body with the signature
+            $scope.completedSignature(message);
+        }
 
-            if (angular.isUndefined(message.Body)) {
-                // this sets the Body with the signature
-                $scope.completedSignature(message);
-            }
+        $scope.onAddFile(message);
 
-            $scope.onAddFile(message);
-
-            // sanitation
-            message.Body = DOMPurify.sanitize(message.Body, {
-                FORBID_TAGS: ['style']
-            });
-            resizeComposer();
-        }, 100);
+        // sanitation
+        message.Body = DOMPurify.sanitize(message.Body, {
+            FORBID_TAGS: ['style']
+        });
+        resizeComposer();
     };
 
     $scope.onAddFile = function(message) {
