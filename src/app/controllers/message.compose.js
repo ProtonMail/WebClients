@@ -212,6 +212,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.uid = 1;
 
     $scope.initMessage = function(message) {
+
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
         }
@@ -225,12 +226,22 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             }
         }
 
+        console.log(message);
+
         message.uid = $scope.uid++;
+        console.log('1');
         $scope.messages.unshift(message);
+        console.log('2');
         $scope.$apply();
+        console.log('3');
         $scope.setDefaults(message);
+        console.log('4');
         $scope.saveOld(message);
+        console.log('5');
         $scope.listenEditor(message);
+
+        console.log(message);
+
         $scope.focusComposer(message);
 
         if (angular.isUndefined(message.Body)) {
@@ -245,6 +256,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             FORBID_TAGS: ['style']
         });
         resizeComposer();
+
     };
 
     $scope.onAddFile = function(message) {

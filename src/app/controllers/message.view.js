@@ -372,7 +372,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         }
         else if (action === 'forward') {
             base.Action = 2;
-            base.ToList = '';
+            base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
             fw_prefix + ' ' + message.Subject;
             base.Attachments = message.Attachments;
