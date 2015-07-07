@@ -5,7 +5,7 @@
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
         <div class="row">
             <div class="col-md-4">
-                <legend>NOTIFICATIONS</legend>
+                <legend>{{ 'NOTIFICATIONS' | translate }}</legend>
                 <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
                     <div class="form-group">
                         <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
@@ -29,7 +29,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <legend>LOGIN PASSWORD</legend>
+                <legend>{{ 'LOGIN_PASSWORD' | translate }}</legend>
                 <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
                         <label class="control-label" for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
@@ -52,7 +52,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <legend>MAILBOX PASSWORD</legend>
+                <legend>{{ 'MAILBOX_PASSWORD' | translate }}</legend>
                 <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
                         <label class="control-label" for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
@@ -79,7 +79,7 @@
 
         <div class="row form-group bottomRow">
             <div class="col-md-4">
-                <legend>AUTOSAVE CONTACT LIST</legend>
+                <legend>{{ 'AUTOSAVE_CONTACT_LIST' | translate }}</legend>
                 <label class="control-label">{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
                 <div>
                     <toggle-switch ng-model="autosaveContacts" ng-click="saveAutosaveContacts()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
@@ -87,7 +87,7 @@
                 <div>
                     <a href="https://support.protonmail.ch/knowledge-base/autosave-contact-list" target="_blank" class="btn btn-link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                 </div>
-                <legend class="margin-top">DISPLAY NAME</legend>
+                <legend class="margin-top">{{ 'DISPLAY_NAME' | translate }}</legend>
                 <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
                         <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
@@ -99,7 +99,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <legend>SIGNATURE</legend>
+                <legend>{{ 'SIGNATURE' | translate }}</legend>
                 <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
                     <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
                         <label class="signature" for="signature">{{ 'SIGNATURE_CONTENT' | translate }}</label>
@@ -111,7 +111,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <legend>ALIASES</legend>
+                <legend>{{ 'ALIASES' | translate }}</legend>
                 <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
                     <div class="form-group">
                         <label class="control-label" for="">{{ 'SORT_ALIASES' | translate }}</label>
