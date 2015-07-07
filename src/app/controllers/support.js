@@ -41,8 +41,11 @@ angular.module("proton.controllers.Support", [
                     NotificationEmail: $scope.params.recoveryEmail
                 }).then(
                     function(response) {
-                        if (response.data.Error) { 
-                            notify(response.data.Error);
+                        if (response.data.Code!==1000) { 
+                            notify({
+                                classes: 'notification-danger',
+                                message: 'Wrong username or recovery email.'
+                            });
                         }
                         else {
                             $state.go("support.message", {
