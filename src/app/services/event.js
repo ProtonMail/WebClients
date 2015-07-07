@@ -45,7 +45,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
-					authentication.user = _.extend(authentication.user, user);
+					authentication.user = angular.merge(authentication.user, user);
 				}
 			},
 			manageCounter: function(json) {
