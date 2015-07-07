@@ -1,4 +1,4 @@
-angular.module("proton.messages", [])
+angular.module("proton.messages", ["proton.constants"])
     .service('messageCache', function($q, Message, CONSTANTS, $rootScope, tools) {
         var lists = [];
         var DELETE = 0;
@@ -85,7 +85,7 @@ angular.module("proton.messages", [])
             },
             create: function(loc, message) {
                 var index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
-                
+
                 if(cachedMetadata[loc].length > CONSTANTS.MESSAGES_PER_PAGE) {
                     cachedMetadata[loc].pop();
                 }
@@ -238,8 +238,8 @@ angular.module("proton.messages", [])
             },
             // Function for dealing with message cache updates
             set: function(messages) {
-                var currentLocation = tools.getCurrentLocation();
                 refreshMessagesCache = false;
+
                 _.each(messages, function(message) {
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
@@ -258,6 +258,7 @@ angular.module("proton.messages", [])
 
                     // CREATE - location is either inbox or sent
                     else if(message.Action === CREATE && loc && !cacheLoc) {
+                        console.log(1);
                         cachedMetadata.create(loc, message.Message);
                     }
 

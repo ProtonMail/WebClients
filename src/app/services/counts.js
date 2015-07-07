@@ -1,4 +1,4 @@
-angular.module("proton.messages.counts", [])
+angular.module("proton.messages.counts", ["proton.constants"])
     .service('messageCounts', function($q, Message, CONSTANTS, $rootScope, tools) {
 		    var totalCounts = _.bindAll({
                 move: function(messages) {

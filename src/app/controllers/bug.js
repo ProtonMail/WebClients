@@ -6,6 +6,7 @@ angular.module("proton.controllers.Bug", [])
     $state,
     $log,
     $translate,
+    authentication,
     tools,
     Bug,
     networkActivityTracker,
@@ -38,7 +39,7 @@ angular.module("proton.controllers.Bug", [])
             "ClientVersion": $scope.bug.clientversion,
             "Title": $scope.bug.title,
             "Description": $scope.bug.description,
-            "Username": $rootScope.user.DisplayName,
+            "Username": authentication.user.DisplayName,
             "Email": $scope.bug.email
         });
 

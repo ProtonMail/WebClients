@@ -1,4 +1,4 @@
-angular.module("proton.tools", [])
+angular.module("proton.tools", ["proton.constants"])
     .factory("tools", function($log, $sanitize, $state, $compile, $templateCache, $q, errorReporter, CONSTANTS) {
         function has_session_storage() {
             var mod = 'modernizr';
@@ -131,7 +131,7 @@ angular.module("proton.tools", [])
         }
 
         function is_email_address_PM(email) {
-            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com,protonmail.net'; // TODO ask feng to get that
+            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com,protonmail.net';
 
             protonmail_compose_emailDomain = protonmail_compose_emailDomain.split(",");
             email = email.trim();

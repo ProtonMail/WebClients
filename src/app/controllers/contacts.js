@@ -10,7 +10,7 @@ angular.module("proton.controllers.Contacts", [
     $translate,
     $stateParams,
     $filter,
-
+    authentication,
     contacts,
     Contact,
     confirmModal,
@@ -25,14 +25,14 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $rootScope.pageName = "Contacts";
-    $rootScope.user.Contacts = contacts.data.Contacts;
+    authentication.user.Contacts = contacts.data.Contacts;
     $scope.editing = false;
     $scope.currentPage = 1;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
 
     $scope.contactsFiltered = function(searching) {
-        var contacts = $rootScope.user.Contacts;
+        var contacts = authentication.user.Contacts;
 
         function pagination(contacts) {
             var begin, end;
@@ -59,7 +59,7 @@ angular.module("proton.controllers.Contacts", [
             $scope.currentPage = 1;
         }
 
-        return pagination(orderBy(search($rootScope.user.Contacts)));
+        return pagination(orderBy(search(authentication.user.Contacts)));
     };
 
     $scope.contacts = $scope.contactsFiltered();
@@ -116,7 +116,7 @@ angular.module("proton.controllers.Contacts", [
                         deletedContacts.push(contact);
                     });
 
-                    $rootScope.user.Contacts = _.difference($rootScope.user.Contacts, deletedContacts);
+                    authentication.user.Contacts = _.difference(authentication.user.Contacts, deletedContacts);
                     $scope.contacts = $scope.contactsFiltered();
 
                     networkActivityTracker.track(
@@ -126,7 +126,7 @@ angular.module("proton.controllers.Contacts", [
                             _.forEach(response.data.Responses, function(d, i) {
                                 if(d.Response.Code !== 1000) {
                                     notify(deletedContacts[i].Email +' Not Deleted');
-                                    $rootScope.user.Contacts.push(deletedContacts[i]);
+                                    authentication.user.Contacts.push(deletedContacts[i]);
                                 }
                             });
                             notify($translate.instant('CONTACTS_DELETED'));
@@ -146,7 +146,7 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.addContact = function() {
         openContactModal('Add New Contact', '', '', function(name, email) {
-            var match = _.findWhere($rootScope.user.Contacts, {Email: email});
+            var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
                 notify("Contact exists for this email address");
@@ -164,11 +164,11 @@ angular.module("proton.controllers.Contacts", [
                         Contacts : contactList
                     }).then(function(response) {
                         if(response.data.Code === 1001) {
-                            $rootScope.user.Contacts.push(response.data.Responses[0].Response.Contact);
+                            authentication.user.Contacts.push(response.data.Responses[0].Response.Contact);
                             $scope.contacts = $scope.contactsFiltered();
                             notify($translate.instant('CONTACT_ADDED'));
                             contactModal.deactivate();
-                            Contact.index.updateWith($rootScope.user.Contacts);
+                            Contact.index.updateWith(authentication.user.Contacts);
                         } else {
                             notify(response.data.Responses[0].Error);
                         }
@@ -188,7 +188,7 @@ angular.module("proton.controllers.Contacts", [
             contact.Name = name;
             contact.Email = email;
 
-            var match = _.findWhere($rootScope.user.Contacts, {Email: email});
+            var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match && email !== origEmail) {
                 notify("Contact exists for this email address");
@@ -206,7 +206,7 @@ angular.module("proton.controllers.Contacts", [
                             if(response.data.Code === 1000) {
                                 contactModal.deactivate();
                                 notify($translate.instant('CONTACT_EDITED'));
-                                Contact.index.updateWith($rootScope.user.Contacts);
+                                Contact.index.updateWith(authentication.user.Contacts);
                             } else {
                                 notify(response.data.Response[0].Error);
                             }
@@ -223,8 +223,8 @@ angular.module("proton.controllers.Contacts", [
     $scope.allSelected = function() {
         var status = true;
 
-        if ($rootScope.user.Contacts.length > 0) {
-            _.forEach($rootScope.user.Contacts, function(contact) {
+        if (authentication.user.Contacts.length > 0) {
+            _.forEach(authentication.user.Contacts, function(contact) {
                 if (!!!contact.selected) {
                     status = false;
                 }
@@ -239,7 +239,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.selectAllContacts = function() {
         var status = !!!$scope.allSelected();
 
-        _.forEach($rootScope.user.Contacts, function(contact) {
+        _.forEach(authentication.user.Contacts, function(contact) {
             contact.selected = status;
         }, this);
     };
@@ -248,17 +248,17 @@ angular.module("proton.controllers.Contacts", [
         var contactsSelected = $scope.contactsSelected();
 
         if (event.shiftKey) {
-            var start = $rootScope.user.Contacts.indexOf(_.first(contactsSelected));
-            var end = $rootScope.user.Contacts.indexOf(_.last(contactsSelected));
+            var start = authentication.user.Contacts.indexOf(_.first(contactsSelected));
+            var end = authentication.user.Contacts.indexOf(_.last(contactsSelected));
 
             for (var i = start; i < end; i++) {
-                $rootScope.user.Contacts[i].selected = true;
+                authentication.user.Contacts[i].selected = true;
             }
         }
     };
 
     $scope.contactsSelected = function() {
-        return _.filter($rootScope.user.Contacts, function(contact) {
+        return _.filter(authentication.user.Contacts, function(contact) {
             return contact.selected === true;
         });
     };
@@ -355,7 +355,7 @@ angular.module("proton.controllers.Contacts", [
                                 duplicates = 0;
                                 _.forEach(response, function(d) {
                                     if (d.Response.Contact) {
-                                        $rootScope.user.Contacts.push(d.Response.Contact);
+                                        authentication.user.Contacts.push(d.Response.Contact);
                                         added++;
                                     }
                                     else {
@@ -366,7 +366,7 @@ angular.module("proton.controllers.Contacts", [
                                 duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
                                 notify(added + ' imported, ' + duplicates + ' already in your contact list');
                                 $scope.contacts = $scope.contactsFiltered();
-                                Contact.index.updateWith($rootScope.user.Contacts);
+                                Contact.index.updateWith(authentication.user.Contacts);
                             }, function(response) {
                                 $log.error(response);
                             })
@@ -386,7 +386,7 @@ angular.module("proton.controllers.Contacts", [
         var contactsArray = [['Name', 'Email']];
         var csvRows = [];
 
-        _.forEach($rootScope.user.Contacts, function(contact) {
+        _.forEach(authentication.user.Contacts, function(contact) {
           contactsArray.push([contact.Name, contact.Email]);
         });
 

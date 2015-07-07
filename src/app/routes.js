@@ -1,5 +1,3 @@
-// TODO: inject proton.constants everywhere
-
 angular.module("proton.routes", [
     "ui.router",
     "proton.authentication",
@@ -561,7 +559,6 @@ angular.module("proton.routes", [
                 }
             }
         },
-
         onEnter: function(authentication, $state) {
             // This will redirect to a login step if necessary
             authentication.redirectIfNecessary();

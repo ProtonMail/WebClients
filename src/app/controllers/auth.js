@@ -16,7 +16,6 @@ angular.module("proton.controllers.Auth", [
     notify,
     pmcw
 ) {
-
     $rootScope.pageName = "Login";
 
     if ($rootScope.isLoggedIn && $rootScope.user === undefined) {

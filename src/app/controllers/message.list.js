@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Messages.List", [])
+angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
 .controller("MessageListController", function(
     $q,

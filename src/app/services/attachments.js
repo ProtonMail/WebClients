@@ -1,5 +1,6 @@
 angular.module("proton.attachments", [
-    "proton.authentication"
+    "proton.authentication",
+    "proton.constants"
 ])
 .service("attachments", function(
     $http,

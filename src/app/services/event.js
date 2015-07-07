@@ -1,4 +1,4 @@
-angular.module("proton.event", [])
+angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function ($interval, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache) {
 		var DELETE = 0;
 		var CREATE = 1;
@@ -51,16 +51,22 @@ angular.module("proton.event", [])
 			manageCounter: function(json) {
 				if(angular.isDefined(json)) {
 					var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
+
 		            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
 		            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
+
                     $rootScope.counters  = counters;
 				}
 			},
 			manageTotals: function(totals) {
-				var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
-				_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-				_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-				$rootScope.messageTotals = total;
+				if(angular.isDefined(totals)) {
+					var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
+
+					_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+					_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+
+					$rootScope.messageTotals = total;
+				}
 			},
 			manageMessages: function(messages) {
 				if (angular.isDefined(messages)) {

@@ -17,8 +17,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     localStorageService,
     notify
 ) {
-    var mellt = new Mellt(); // TODO FIX?
-
+    var mellt = new Mellt();
+    
     $scope.compatibility = tools.isCompatible();
     $scope.tools    = tools;
     $scope.creating = false;
@@ -41,7 +41,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.resetMailboxInit = function() {
         var promise = Reset.getMailboxResetToken().then(
             function(response) {
-                if (response.data.Error || response.data.Code !== 1000) { 
+                if (response.data.Error || response.data.Code !== 1000) {
                     notify(response.data.Error);
                 }
                 else {

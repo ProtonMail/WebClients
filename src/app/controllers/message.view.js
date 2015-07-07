@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Messages.View", [])
+angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
 .controller("ViewMessageController", function(
     $log,
@@ -34,34 +34,27 @@ angular.module("proton.controllers.Messages.View", [])
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
 
-    $timeout( function() {
-        if ($rootScope.user.ShowImages===1) {
-            message.toggleImages();
-            $scope.displayContent();
-        }
-    }, 20);
-
     $timeout(function() {
         $scope.initView();
-
-        if($rootScope.user.AutoSaveContacts === 1) {
-            $scope.saveNewContacts();
-        }
-        // $('#attachmentArea a').click();
-    });
+    }, 100);
 
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
     });
 
     $scope.initView = function() {
-        if($rootScope.user.AutoSaveContacts === 1) {
+        if(authentication.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
         }
 
-        if (message.IsRead === 0) {
+        if(message.IsRead === 0) {
             message.IsRead = 1;
             Message.read({IDs: [message.ID]});
+        }
+
+        if(authentication.user.ShowImages===1) {
+            message.toggleImages();
+            $scope.displayContent();
         }
     };
 
@@ -407,14 +400,11 @@ angular.module("proton.controllers.Messages.View", [])
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
-        var inTrash = mailbox === 'trash';
-        var inSpam = mailbox === 'spam';
 
         messages = [];
         message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         messages.push({Action: 3, ID: message.ID, Message: message});
 		messageCache.set(messages);
-
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
@@ -431,9 +421,7 @@ angular.module("proton.controllers.Messages.View", [])
                 notify($translate.instant('MESSAGE_MOVED'));
             }
 
-            if(inDelete || inTrash || inSpam) {
-                $scope.goToMessageList();
-            }
+            $scope.goToMessageList();
         });
 
         networkActivityTracker.track(promise);

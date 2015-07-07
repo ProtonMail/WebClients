@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Sidebar", [])
+angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
 .controller('SidebarController', function(
     $scope,
@@ -122,8 +122,4 @@ angular.module("proton.controllers.Sidebar", [])
 
         return count;
     };
-
-    $scope.$on("$destroy", function() {
-        $interval.cancel(updates);
-    });
 });

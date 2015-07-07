@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Messages.Compose", [])
+angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
 .controller("ComposeMessageController", function(
     $rootScope,
@@ -212,7 +212,7 @@ angular.module("proton.controllers.Messages.Compose", [])
     $scope.uid = 1;
 
     $scope.initMessage = function(message) {
-        if ($rootScope.user.ComposerMode === 1) {
+        if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
         }
 
@@ -370,7 +370,7 @@ angular.module("proton.controllers.Messages.Compose", [])
                 var clickedTop = clicked.css('top');
                 var clickedZ = clicked.css('zIndex');
 
-                // todo: swap ???
+                // TODO: swap ???
                 bottom.css({
                     top:    clickedTop,
                     zIndex: clickedZ
@@ -614,7 +614,6 @@ angular.module("proton.controllers.Messages.Compose", [])
     };
 
     $scope.save = function(message, silently) {
-
         $scope.saving = true;
         var deferred = $q.defer();
         var parameters = {
@@ -641,26 +640,34 @@ angular.module("proton.controllers.Messages.Compose", [])
 
         savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
             var draftPromise;
+            var CREATE = 1;
+    		var UPDATE = 2;
+            var action;
 
             parameters.Message.Body = result;
 
             if(angular.isUndefined(message.ID)) {
                 draftPromise = Message.createDraft(parameters).$promise;
+                action = CREATE;
             } else {
                 draftPromise = Message.updateDraft(parameters).$promise;
+                action = UPDATE;
             }
 
             draftPromise.then(function(result) {
                 var process = function(result) {
                     message.ID = result.Message.ID;
                     message.BackupDate = new Date();
+                    message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
                     $scope.saveOld(message);
                     $scope.saving = false;
 
                     // Add draft in message list
-                    if($state.is('secured.drafts') && silently !== true) {
+                    if($state.is('secured.drafts')) {
                         $rootScope.$broadcast('refreshMessages');
                     }
+                    // messageCache.put(message.ID, message);
+                    // messageCache.set([{Action: action, ID: message.ID, Message: message}]);
 
                     deferred.resolve(result);
                 };
@@ -768,10 +775,6 @@ angular.module("proton.controllers.Messages.Compose", [])
                             messageCache.put(message.ID, message);
                             messageCache.set([{Action: 1, ID: message.ID, Message: message}]);
                             $scope.close(message, false);
-
-                            if($state.is('secured.drafts') || $state.is('secured.sent')) {
-                                $rootScope.$broadcast('refreshMessages');
-                            }
                             $scope.sending = false;
                             deferred.resolve(result);
                         });

@@ -19,7 +19,6 @@ angular.module("proton.controllers.Settings", [
     Logs,
     Setting,
     User,
-    user,
     tools,
     pmcw,
     notify,
@@ -28,31 +27,29 @@ angular.module("proton.controllers.Settings", [
 ) {
     $rootScope.pageName = "settings";
     $scope.tools = tools;
-    $scope.displayName = user.DisplayName;
-    $scope.notificationEmail = user.NotificationEmail;
-    $scope.dailyNotifications = !!user.Notify;
-    $scope.autosaveContacts = !!user.AutoSaveContacts;
-
-    $scope.aliases = user.Addresses;
+    $scope.displayName = authentication.user.DisplayName;
+    $scope.notificationEmail = authentication.user.NotificationEmail;
+    $scope.dailyNotifications = !!authentication.user.Notify;
+    $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
+    $scope.aliases = authentication.user.Addresses;
     $scope.labels = authentication.user.Labels;
-    $scope.doLogging = user.LogAuth;
-    $scope.cssTheme = user.Theme;
+    $scope.doLogging = authentication.user.LogAuth;
+    $scope.cssTheme = authentication.user.Theme;
     $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
     $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
     $scope.selectedLanguage = 'English';
     $scope.disabledText = $translate.instant('DISABLE');
-
-    $scope.ComposerMode = user.ComposerMode;
-    $scope.MessageButtons = user.MessageButtons;
-    $scope.ShowImages = user.ShowImages;
+    $scope.ComposerMode = authentication.user.ComposerMode;
+    $scope.MessageButtons = authentication.user.MessageButtons;
+    $scope.ShowImages = authentication.user.ShowImages;
 
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
     }
 
     $timeout(function() {
-        if(angular.isDefined(user.Signature)) {
-            $scope.signature = tools.replaceLineBreaks(user.Signature);
+        if(angular.isDefined(authentication.user.Signature)) {
+            $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         }
     }, 1000);
 
@@ -193,7 +190,7 @@ angular.module("proton.controllers.Settings", [
             Setting.noticeEmail({
                 "NotificationEmail": $scope.notificationEmail
             }).$promise.then(function(response) {
-                user.NotificationEmail = $scope.notificationEmail;
+                authentication.user.NotificationEmail = $scope.notificationEmail;
                 notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
             }, function(response) {
                 $log.error(response);
@@ -206,7 +203,7 @@ angular.module("proton.controllers.Settings", [
           Setting.notify({
               "Notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
-              user.Notify = +$scope.dailyNotifications;
+              authentication.user.Notify = +$scope.dailyNotifications;
               notify($translate.instant('PREFERENCE_SAVED'));
           }, function(response) {
               $log.error(response);
@@ -241,7 +238,7 @@ angular.module("proton.controllers.Settings", [
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
 
-        var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(user.EncPrivateKey, oldMailPwd, newMailPwd);
+        var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
 
         if (newEncPrivateKey === -1) {
             notify($translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'));
@@ -252,7 +249,7 @@ angular.module("proton.controllers.Settings", [
         else {
             networkActivityTracker.track(
                 User.keys({
-                    "PublicKey" : user.PublicKey,
+                    "PublicKey" : authentication.user.PublicKey,
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
                     notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
@@ -273,7 +270,7 @@ angular.module("proton.controllers.Settings", [
                 "DisplayName": $scope.displayName
             }).$promise.then(function(response) {
                 notify($translate.instant('DISPLAY_NAME_SAVED'));
-                $scope.user.DisplayName = $scope.displayName;
+                authentication.user.DisplayName = $scope.displayName;
             }, function(response) {
                 $log.error(response);
             })
@@ -290,7 +287,7 @@ angular.module("proton.controllers.Settings", [
             Setting.signature({
                 "Signature": signature
             }).$promise.then(function(response) {
-                $scope.user.Signature = signature;
+                authentication.user.Signature = signature;
                 notify($translate.instant('SIGNATURE_SAVED'));
             }, function(response) {
                 $log.error(response);
@@ -316,7 +313,7 @@ angular.module("proton.controllers.Settings", [
                 "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
                 notify($translate.instant('PREFERENCE_SAVED'));
-                user.AutoSaveContacts = +$scope.autosaveContacts;
+                authentication.user.AutoSaveContacts = +$scope.autosaveContacts;
             }, function(response) {
                 $log.error(response);
             })
@@ -457,7 +454,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    user.Theme = $scope.MessageButtons;
+                    authentication.user.Theme = $scope.MessageButtons;
                 },
                 function(response) {
                     $log.error(response);
@@ -473,7 +470,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    user.ComposerMode = $scope.ComposerMode;
+                    authentication.user.ComposerMode = $scope.ComposerMode;
                     $scope.apply();
                 },
                 function(response) {
@@ -490,7 +487,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    user.ShowImages = $scope.ShowImages;
+                    authentication.user.ShowImages = $scope.ShowImages;
                     $scope.apply();
                 },
                 function(response) {
@@ -506,7 +503,7 @@ angular.module("proton.controllers.Settings", [
               "Theme": $scope.cssTheme
           }).$promise.then(function(response) {
               notify($translate.instant('THEME_SAVED'));
-              user.Theme = $scope.cssTheme;
+              authentication.user.Theme = $scope.cssTheme;
           }, function(response) {
               $log.error(response);
           })
@@ -545,7 +542,7 @@ angular.module("proton.controllers.Settings", [
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;
-                        user.LogAuth = 0;
+                        authentication.user.LogAuth = 0;
                         notify('Logging Preference Updated');
                         confirmModal.deactivate();
                         $scope.disabledText = $translate.instant('DISABLED');
@@ -557,7 +554,7 @@ angular.module("proton.controllers.Settings", [
             });
         } else {
             $scope.doLogging = value;
-            user.LogAuth = value;
+            authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
             notify('Logging Preference Updated');
             $scope.disabledText = $translate.instant('DISABLE');
