@@ -41,6 +41,12 @@ angular.module("proton.controllers.Sidebar", [])
         $rootScope.$broadcast('newMessage');
     };
 
+    $scope.color = function(label) {
+        return {
+            color: label.Color
+        };
+    };
+
     $scope.labelsDisplayed = function() {
         return _.where($scope.labels, {Display: 0});
     };

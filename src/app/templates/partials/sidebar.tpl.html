@@ -111,7 +111,7 @@
                 ng-model="droppedMessages">
                     <a ui-sref="secured.label({label: '{{label.ID}}' })" class="btn" ui-sref-active="active">
                         <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('label', label.ID) > 0}">{{ getUnread('label', label.ID) }}</span>
-                        <span class="fa fa-tag" style="color: {{label.Color}}"></span> <span>{{label.Name}}</span>
+                        <span class="fa fa-tag" ng-style="color(label)"></span> <span>{{label.Name}}</span>
                     </a>
                 </li>
             </ul>
