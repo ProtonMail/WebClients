@@ -666,8 +666,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     if($state.is('secured.drafts')) {
                         $rootScope.$broadcast('refreshMessages');
                     }
-                    // messageCache.put(message.ID, message);
-                    // messageCache.set([{Action: action, ID: message.ID, Message: message}]);
 
                     deferred.resolve(result);
                 };
@@ -772,8 +770,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             notify($translate.instant('MESSAGE_SENT'));
+                            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.sent;
                             messageCache.put(message.ID, message);
                             messageCache.set([{Action: 1, ID: message.ID, Message: message}]);
+
+                            // if($state.is('secured.inbox') || $state.is('secured.sent')) {
+                            //     $rootScope.$broadcast('refreshMessages');
+                            // }
+
                             $scope.close(message, false);
                             $scope.sending = false;
                             deferred.resolve(result);

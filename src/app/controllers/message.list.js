@@ -189,6 +189,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var params = $scope.getMessagesParameters(mailbox);
         Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
+
             if(!!!empty) {
                 $scope.emptying = false;
             }
