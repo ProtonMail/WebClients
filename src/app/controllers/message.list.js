@@ -630,10 +630,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     });
 
-    $scope.goToPage = function(page) {
+    $scope.goToPage = function(page, scrollToBottom) {
         if(angular.isUndefined(page)) {
             page = parseInt($('#page').val());
         }
+
+        $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.page = page;
 
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
@@ -644,11 +646,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 page: page
             }));
         }
-    };
-
-    $scope.scrollToBottom = function() {
-        $rootScope.scrollToBottom = true;
-        // state change success if true, scroll and unset
     };
 
     $scope.hasAdjacentMessage = function(message, adjacency) {
