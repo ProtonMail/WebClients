@@ -245,7 +245,7 @@ angular.module("proton.messages", ["proton.constants"])
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
                     var inSent = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                    var labelsChanged = (message.Message.LabelIDsAdded) ? 'added' : (message.Message.LabelIDsRemoved) ? 'removed': false;
+                    var labelsChanged = (message.Message && message.Message.LabelIDsAdded) ? 'added' : (message.Message && message.Message.LabelIDsRemoved) ? 'removed': false;
                     // False if message not in cache, otherwise value is which cache it is in
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     // False if message is not in inbox or sent, otherwise value is which one it is in
