@@ -51,10 +51,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.initMessage(message);
     });
 
-    $scope.$on('loadMessage', function(event, message) {
+    $scope.$on('loadMessage', function(event, message, save) {
         message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle'));
         message.IsRead = 1;
-        $scope.initMessage(angular.copy(message));
+        $scope.initMessage(angular.copy(message), save);
     });
 
     $scope.setDefaults = function(message) {
@@ -105,12 +105,30 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
-                previewsContainer: '.previews',
-                previewTemplate: '<span title="Attachment" class="preview-template">' +
-                                    '<span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span>' +
-                                 '</span>',
+                // previewsContainer: '.previews',
+                // previewTemplate: '<span title="Attachment" class="preview-template">' +
+                //                     '<span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span>' +
+                //                  '</span>',
                 createImageThumbnails: false,
                 accept: function(file, done) {
+                    var totalSize = $scope.getAttachmentsSize(message);
+                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+                    totalSize += file.size;
+
+                    if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                        console.log(1);
+                        done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+                        notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+                    } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
+                        console.log(2);
+                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+                    } else {
+                        console.log(3);
+                        done();
+                        $scope.addAttachment(file, message);
+                    }
                 },
                 init: function(event) {
                     var that = this;
@@ -127,13 +145,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 drop: function(event) {
                     $scope.isOver = false;
                     isOver = false;
-                },
-                removedfile: function(file) {
-                    $scope.removeAttachment(file, message);
-                },
-                addedfile: function(file) {
-                    // add file here and then show progress
-                    $scope.addAttachment(file, message);
                 }
             }
         };
@@ -152,53 +163,29 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.addAttachment = function(file, message) {
-        var totalSize = $scope.getAttachmentsSize(message);
-        var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
-        message.uploading = true;
-
-        _.defaults(message, { Attachments: [] });
-
-        if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-            notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
-            // TODO remove file in droparea
-            return;
-        }
-
-        totalSize += file.size;
         var attachmentPromise;
         var element = $(file.previewElement);
 
-        if (totalSize < (sizeLimit * 1024 * 1024)) {
-            attachmentPromise = attachments.load(file).then(
-                function(packets) {
-                    return attachments.upload(packets, message.ID, element).then(
-                        function(result) {
-                            message.Attachments.push(result);
-                            message.uploading = false;
-                            message.attachmentsToggle = true;
-                        }
-                    );
-                }
-            );
-        }
-        else {
-            // Attachment size error.
-            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
-            // TODO remove file in droparea
-            return;
-        }
+        message.uploading = true;
+        attachmentPromise = attachments.load(file).then(
+            function(packets) {
+                return attachments.upload(packets, message.ID, element).then(
+                    function(result) {
+                        message.Attachments.push(result);
+                        message.uploading = false;
+                        message.attachmentsToggle = true;
+                    }
+                );
+            }
+        );
     };
 
-    $scope.removeAttachment = function(file, message) {
-        var fileID = (file.ID) ? file.ID : file.previewElement.id;
-        var attachment = _.findWhere(message.Attachments, {AttachmentID: fileID});
-
+    $scope.removeAttachment = function(attachment, message) {
         message.Attachments = _.without(message.Attachments, attachment);
 
         Attachment.remove({
             "MessageID": message.ID,
-            "AttachmentID": fileID
+            "AttachmentID": attachment.AttachmentID || attachment.ID
         }).$promise.then(function(response) {
             if (response.Error) {
                 notify(response.Error);
@@ -211,8 +198,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.uid = 1;
 
-    $scope.initMessage = function(message) {
-
+    $scope.initMessage = function(message, save) {
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
         }
@@ -238,6 +224,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $timeout(function() {
             $scope.onAddFile(message);
             resizeComposer();
+
+            if(save === true) {
+                $scope.save(message, true, true);
+            }
         });
     };
 
@@ -617,7 +607,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return true;
     };
 
-    $scope.save = function(message, silently) {
+    $scope.save = function(message, silently, forward) {
         $scope.saving = true;
         var deferred = $q.defer();
         var parameters = {
@@ -661,6 +651,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             draftPromise.then(function(result) {
                 var process = function(result) {
                     message.ID = result.Message.ID;
+
+                    if(forward === true && result.Message.Attachments.length > 0) {
+                        message.Attachments = result.Message.Attachments;
+                        message.attachmentsToggle = true;
+                    }
+
                     message.BackupDate = new Date();
                     message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
                     $scope.saveOld(message);

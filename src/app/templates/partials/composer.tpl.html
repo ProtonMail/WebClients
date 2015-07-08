@@ -144,7 +144,11 @@
                     <button class="btn btn-sm attach-collapse" ng-show="message.Attachments.length > 0" ng-click="slideDown(message)" pt-placement="left" pt-tooltip="{{ 'TOGGLE_DISPLAY_ATTACHMENTS' | translate }}">
                         <i class="fa fa-caret-up transition" ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
-                    <div class="previews" ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true"></div>
+                    <div class="previews" ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
+                        <span title="Attachment" class="preview-template" ng-repeat="attachment in message.Attachments">
+                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span> <a href="" class="preview-close" ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">

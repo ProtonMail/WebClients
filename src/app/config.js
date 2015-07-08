@@ -1,5 +1,5 @@
 angular.module('proton.config', [])
 
-.constant('CONFIG', {debug:false,apiUrl:'https://api.protonmail.ch'})
+.constant('CONFIG', {debug:true,apiUrl:'https://api.protonmail.ch'})
 
 ;

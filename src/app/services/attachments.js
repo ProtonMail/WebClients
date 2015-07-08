@@ -1,6 +1,5 @@
 angular.module("proton.attachments", [
-    "proton.authentication",
-    "proton.constants"
+    "proton.authentication"
 ])
 .service("attachments", function(
     $http,
@@ -12,7 +11,6 @@ angular.module("proton.attachments", [
     notify,
     pmcw,
     errorReporter,
-    CONSTANTS,
     OAUTH_KEY
 ) {
     return {
@@ -33,8 +31,6 @@ angular.module("proton.attachments", [
             reader.onloadend = function(event) {
                 // encryptFile(data, pubKeys, passwords, filename)
                 var encAttachment = pmcw.encryptFile(new Uint8Array(reader.result), key, [], file.name);
-
-                // console.log('encAttachment',encAttachment);
 
                 return encAttachment.then(
                     function(packets) {

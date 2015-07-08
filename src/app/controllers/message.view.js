@@ -375,7 +375,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
             fw_prefix + ' ' + message.Subject;
-            base.Attachments = message.Attachments;
+
+            if(message.Attachments.length > 0) {
+                message.attachmentsToggle = true;
+            }
         }
 
         return base;
@@ -390,7 +393,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.forward = function() {
-        $rootScope.$broadcast('loadMessage', buildMessage('forward'));
+        $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 
     $scope.goToMessageList = function() {
