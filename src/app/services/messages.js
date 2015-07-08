@@ -258,7 +258,6 @@ angular.module("proton.messages", ["proton.constants"])
 
                     // CREATE - location is either inbox or sent
                     else if(message.Action === CREATE && loc && !cacheLoc) {
-                        console.log(1);
                         cachedMetadata.create(loc, message.Message);
                     }
 
