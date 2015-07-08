@@ -218,7 +218,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.messages = messages;
         });
     };
-    
+
     $scope.refreshMessagesCache();
 
     $scope.showTo = function(message) {
@@ -463,6 +463,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.unselectAllMessages();
     };
+
+    $scope.$on('discardDraft', function(event, message) {
+        $scope.messages = _.filter($scope.messages, function(m) { return m.ID !== message.ID;});
+        $rootScope.$broadcast('refreshMessagesCache');
+    });
 
     $scope.$on('moveMessagesTo', function(event, name) {
         $scope.moveMessagesTo(name);

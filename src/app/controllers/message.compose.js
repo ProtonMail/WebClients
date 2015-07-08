@@ -890,7 +890,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.close();
 
         // Remove message in messages
-        $scope.messages.splice(index, 1);
+        $rootScope.$broadcast('discardDraft', message);
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
