@@ -243,15 +243,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             FORBID_TAGS: ['style']
         });
 
-        $scope.$apply();
-
-        $scope.onAddFile(message);
-
-        resizeComposer();
+        $timeout(function() {
+            $scope.onAddFile(message);
+            resizeComposer();
+        });
     };
 
     $scope.onAddFile = function(message) {
-        console.log($('#uid' + message.uid + ' .btn-add-attachment'));
         $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
                 $scope.save(message, true); // We need to save to get an ID
