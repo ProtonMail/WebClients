@@ -62,6 +62,7 @@ body {
     #messageListToolbar,
     #messageViewToolbar {
         height: $row-height;
+        min-height: $row-height;
     }
     #content,
     #message-content {

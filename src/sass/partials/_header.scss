@@ -1,5 +1,6 @@
 #header {
     height: $navbar-height;
+    min-height: $navbar-height;
     .navbar {
         .dropdown {
             position: relative;

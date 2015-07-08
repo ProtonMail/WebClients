@@ -4,6 +4,18 @@
 	table.message-list tbody input[type="checkbox"] {
 		position: relative;
 	}
+	// Chrome
+	&.ua-ie {
+	    table.message-list tbody input[type="checkbox"],
+    	table.message-list tbody .fa-lock,
+    	table.message-list tbody .fa-unlock-alt {
+	        top: 3px;
+	    }
+	    table.message-list tbody .starLink {
+	    	position: relative;
+	    	top: 2px;
+	    }
+	}
 	// Firefox
 	&.ua-firefox {
 	    table.message-list tbody input[type="checkbox"] {
