@@ -342,6 +342,7 @@ angular.module("proton.authentication", [
                             $rootScope.isLoggedIn = true;
                             $rootScope.user = user;
                             this.user = user;
+                            this.user.Theme = atob(user.Theme);
 
                             return user;
                         }.bind(this),

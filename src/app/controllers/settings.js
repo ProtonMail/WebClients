@@ -500,7 +500,7 @@ angular.module("proton.controllers.Settings", [
     $scope.saveTheme = function(form) {
       networkActivityTracker.track(
           Setting.theme({
-              "Theme": $scope.cssTheme
+              "Theme": btoa($scope.cssTheme)
           }).$promise.then(function(response) {
               notify($translate.instant('THEME_SAVED'));
               authentication.user.Theme = $scope.cssTheme;
