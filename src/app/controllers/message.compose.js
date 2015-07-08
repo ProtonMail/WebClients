@@ -242,7 +242,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.onAddFile = function(message) {
-        console.log('onAddFile');
         $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
                 $scope.save(message, true); // We need to save to get an ID
