@@ -38,7 +38,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $('#page').change(function(event) {
             $scope.goToPage();
         });
+
         $scope.initHotkeys();
+
+        if($rootScope.reloadMessages === true) {
+            $rootScope.reloadMessages = false;
+            $rootScope.$broadcast('refreshMessages', true);
+        }
     });
 
     $scope.initHotkeys = function() {
@@ -187,6 +193,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.refreshMessages = function(silently, empty) {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
+
         Message.query(params).$promise.then(function(result) {
             $scope.messages = result;
 
@@ -328,7 +335,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                             m.attachmentsToggle = true;
 
                         }
-                        
+
                         $rootScope.$broadcast('loadMessage', m);
                     });
                 }));
