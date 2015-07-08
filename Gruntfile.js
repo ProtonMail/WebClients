@@ -299,6 +299,14 @@ module.exports = function(grunt) {
             }
         },
 
+        uncss: {
+            dist: {
+                files: {
+                    "<%= compile_dir %>/assets/app.css": "<%= compile_dir %>/assets/app.css"
+                }
+            }
+        },
+
         html2js: {
             app: {
                 options: {
@@ -391,7 +399,7 @@ module.exports = function(grunt) {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    // "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
+                    "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
                     "<%= compile_dir %>/assets/vendor.js": "<%= compile_dir %>/assets/vendor.js"
                 }
             }
@@ -517,6 +525,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-translate');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-uncss');
 
     grunt.renameTask("watch", "delta");
     grunt.registerTask("watch", [
@@ -558,6 +567,7 @@ module.exports = function(grunt) {
         "copy:compile_assets",
         "ngAnnotate",
         "cssmin",
+        // "uncss",
         "concat:compile_js",
         "uglify",
         "index:compile",
