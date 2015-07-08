@@ -323,7 +323,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 Message.get({id: message.ID}).$promise.then(function(m) {
                     m.decryptBody(m.Body, m.Time).then(function(body) {
                         m.Body = body;
-                        m.attachmentsToggle = true;
+
+                        if(m.Attachments && m.Attachments.length > 0) {
+                            m.attachmentsToggle = true;
+
+                        }
+                        
                         $rootScope.$broadcast('loadMessage', m);
                     });
                 }));
