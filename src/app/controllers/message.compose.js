@@ -231,17 +231,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.setDefaults(message);
         $scope.saveOld(message);
         $scope.listenEditor(message);
+        $scope.completedSignature(message);
+        $scope.sanitizeBody(message);
         $scope.focusComposer(message);
-
-        if (angular.isUndefined(message.Body)) {
-            // this sets the Body with the signature
-            $scope.completedSignature(message);
-        }
-
-        // sanitation
-        message.Body = DOMPurify.sanitize(message.Body, {
-            FORBID_TAGS: ['style']
-        });
 
         $timeout(function() {
             $scope.onAddFile(message);
@@ -250,6 +242,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.onAddFile = function(message) {
+        console.log('onAddFile');
         $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
                 $scope.save(message, true); // We need to save to get an ID
@@ -261,6 +254,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.addFile = function(message) {
         $('#uid' + message.uid + ' .dropzone').click();
+    };
+
+    $scope.sanitizeBody = function(message) {
+        message.Body = DOMPurify.sanitize(message.Body, {
+            FORBID_TAGS: ['style']
+        });
     };
 
     $scope.editorStyle = function(message) {
@@ -340,7 +339,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.completedSignature = function(message) {
-        message.Body = "<br><br>" + tools.replaceLineBreaks(authentication.user.Signature);
+        if (angular.isUndefined(message.Body)) {
+            message.Body = "<br><br>" + tools.replaceLineBreaks(authentication.user.Signature);
+        }
     };
 
     $scope.composerIsSelected = function(message) {
@@ -401,7 +402,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else {
-                message.editor.focus();
+                $timeout(function() {
+                    message.editor.focus();
+                }, 500);
             }
             _.each($scope.messages, function(m) {
                 m.focussed = false;
