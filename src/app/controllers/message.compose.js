@@ -238,18 +238,21 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.completedSignature(message);
         }
 
-        $scope.onAddFile(message);
-
         // sanitation
         message.Body = DOMPurify.sanitize(message.Body, {
             FORBID_TAGS: ['style']
         });
-        resizeComposer();
 
+        $scope.$apply();
+
+        $scope.onAddFile(message);
+
+        resizeComposer();
     };
 
     $scope.onAddFile = function(message) {
-        $('#uid' + message.uid).find('.btn-add-attachment').on('click', function() {
+        console.log($('#uid' + message.uid + ' .btn-add-attachment'));
+        $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
                 $scope.save(message, true); // We need to save to get an ID
             }
