@@ -218,6 +218,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.messages = messages;
         });
     };
+    
+    $scope.refreshMessagesCache();
 
     $scope.showTo = function(message) {
         return (
