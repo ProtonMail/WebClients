@@ -41,7 +41,7 @@
                     </li>
                     <li id="nav_settings" ng-if="isLoggedIn && ('secured.**' | includedByState)">
                         <a href ui-sref="secured.settings" ui-sref-active="active">
-                            <span class="visible-lg-inline-block fa fa-cog"></span>
+                            <span class="visible-lg-inline-block fa fa-wrench"></span>
                             {{ 'SETTINGS' | translate }}
                         </a>
                     </li>
@@ -126,7 +126,7 @@
                         <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
                     </li>
                     <li id="nav_settings" ng-if="'secured.**' | includedByState" class="list-group-item">
-                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-cog"></span> {{ 'SETTINGS' | translate }}</a>
+                        <a onclick='javascript:$(".navbar-toggle").click()' ui-sref="secured.settings"><span class="fa fa-wrench"></span> {{ 'SETTINGS' | translate }}</a>
                     </li>
                     <li id="nav_login" ng-if="!isLoggedIn" class="list-group-item">
                         <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
