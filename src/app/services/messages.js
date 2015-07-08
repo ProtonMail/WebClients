@@ -75,13 +75,15 @@ angular.module("proton.messages", ["proton.constants"])
                     refreshMessagesCache = true;
                 }
             },
-            updateLabels: function(cacheLoc, labelsChanged, message) {
+            updateLabels: function(cacheLoc, loc, labelsChanged, message) {
                 var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
                 if (labelsChanged === 'added') {
                     cachedMetadata[cacheLoc][index].LabelIDs = cachedMetadata[cacheLoc][index].LabelIDs.concat(message.Message.LabelIDsAdded);
                 } else if (labelsChanged === 'removed'){
                     cachedMetadata[cacheLoc][index].LabelIDs = _.difference(cachedMetadata[cacheLoc][index].LabelIDs, message.Message.LabelIDsRemoved);
                 }
+                message.Message = _.omit(message.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
+                this.update(cacheLoc, loc, message);
             },
             create: function(loc, message) {
                 var index = _.sortedIndex(cachedMetadata[loc], message, function(a) {return -a.Time;});
@@ -245,11 +247,12 @@ angular.module("proton.messages", ["proton.constants"])
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
                     var inSent = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                    var hasLocation = (!inInbox && !inSent && message.Message.Location) ? true : false;
                     var labelsChanged = (message.Message && message.Message.LabelIDsAdded) ? 'added' : (message.Message && message.Message.LabelIDsRemoved) ? 'removed': false;
                     // False if message not in cache, otherwise value is which cache it is in
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     // False if message is not in inbox or sent, otherwise value is which one it is in
-                    var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : (cacheLoc) ? cacheLoc : false;
+                    var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : (!hasLocation && cacheLoc) ? cacheLoc : false;
 
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
@@ -264,7 +267,7 @@ angular.module("proton.messages", ["proton.constants"])
                     // UPDATE_FLAG - message in cache
                     else if (message.Action === UPDATE_FLAG && cacheLoc) {
                         if (labelsChanged) {
-                            cachedMetadata.updateLabels(cacheLoc, labelsChanged, message);
+                            cachedMetadata.updateLabels(cacheLoc, loc, labelsChanged, message);
                         } else {
                             cachedMetadata.update(cacheLoc, loc, message);
                         }
