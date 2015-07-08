@@ -52,7 +52,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     });
 
     $scope.$on('loadMessage', function(event, message) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID'));
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle'));
         message.IsRead = 1;
         $scope.initMessage(angular.copy(message));
     });
