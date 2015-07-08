@@ -99,6 +99,12 @@ angular.module("proton.routes", [
                             params.Desc = +desc;
                         }
 
+                        // Used by the starred folder
+                        if(angular.isDefined($stateParams.starred)) {
+                            params.Starred = $stateParams.starred;
+                            delete params.Location;
+                        }
+
                         if (mailbox === 'search') {
                             params.Location = $stateParams.location;
                             params.Keyword = $stateParams.words;
