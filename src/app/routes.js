@@ -80,7 +80,6 @@ angular.module("proton.routes", [
                     var getMessagesParameters = function(mailbox) {
                         var params = {};
 
-                        params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
                         params.Page = ($stateParams.page || 1) - 1;
 
                         if ($stateParams.filter) {
@@ -99,12 +98,6 @@ angular.module("proton.routes", [
                             params.Desc = +desc;
                         }
 
-                        // Used by the starred folder
-                        if(params.Location === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
-                            params.Starred = 1;
-                            delete params.Location;
-                        }
-
                         if (mailbox === 'search') {
                             params.Location = $stateParams.location;
                             params.Keyword = $stateParams.words;
@@ -117,8 +110,14 @@ angular.module("proton.routes", [
                             params.Starred = $stateParams.starred;
                             params.Label = $stateParams.label;
                         } else if(mailbox === 'label') {
-                            delete params.Location;
                             params.Label = $stateParams.label;
+                        } else {
+                            params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                        }
+
+                        if(parseInt(params.Location) === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
+                            params.Starred = 1;
+                            delete params.Location;
                         }
 
                         _.pick(params, _.identity);
