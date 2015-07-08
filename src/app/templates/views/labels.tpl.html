@@ -10,7 +10,7 @@
             <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
                 <div as-sortable-item-handle="">
                     <i class="fa fa-sort"></i> 
-                    <span class="label label-pm" style="background-color: {{ label.Color }}">{{ label.Name }}</span>
+                    <span class="label label-pm" ng-style="{ 'background-color': label.Color }">{{ label.Name }}</span>
                     <div class="pull-right">
                         <toggle-switch ng-model="!!!label.Display" ng-click="toggleDisplayLabel(label)" on-label="{{ 'SHOW' | translate }}" off-label="Hide"></toggle-switch>
                         <button type="button" class="btn btn-default btn-sm" pt-tooltip="Edit Label" ng-click="editLabel(label)">
