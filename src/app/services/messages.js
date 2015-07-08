@@ -249,7 +249,7 @@ angular.module("proton.messages", ["proton.constants"])
                     // False if message not in cache, otherwise value is which cache it is in
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     // False if message is not in inbox or sent, otherwise value is which one it is in
-                    var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : false;
+                    var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : (cacheLoc) ? cacheLoc : false;
 
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
