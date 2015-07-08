@@ -100,8 +100,8 @@ angular.module("proton.routes", [
                         }
 
                         // Used by the starred folder
-                        if(angular.isDefined($stateParams.starred)) {
-                            params.Starred = $stateParams.starred;
+                        if(params.Location === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
+                            params.Starred = 1;
                             delete params.Location;
                         }
 

@@ -54,7 +54,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.goTo = function(route) {
         var sameFolder = $state.current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
-        var isStarred = route === 'secured.starred';
 
         $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
@@ -63,10 +62,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             // Chut...
         } else {
             var params = {page: undefined, filter: undefined, sort: undefined};
-
-            if(isStarred) {
-                params.starred = 1;
-            }
 
             $state.go(route, params); // remove the older parameters
         }
