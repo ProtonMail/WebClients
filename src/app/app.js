@@ -157,11 +157,37 @@ angular.module("proton", [
 //
 // Redirection if not authentified
 //
-.factory('authHttpResponseInterceptor',['$q','$location',function($q, $location, $state){
+.factory('authHttpResponseInterceptor', function($q, $injector){
     return {
         response: function(response) {
             if (response.status === 401) {
-                $state.go('login');
+                $injector.get('$state').go('login');
+            }
+            if (response.data.Code!==undefined) {
+                // app update needd
+                if (response.data.Code===5003) {
+                    $injector.get('notify')('A new version of ProtonMail is available. Refresh to automatically update.');
+                }
+                else if(response.data.Code===5004) {
+                    $injector.get('notify')({
+                        classes: 'notification-danger',
+                        message: 'Non-integer API version requested.'
+                    });
+                }
+                // unsupported api
+                else if (response.data.Code===5005) {
+                    $injector.get('notify')({
+                        classes: 'notification-danger',
+                        message: 'Unsupported API version.'
+                    });
+                }
+                // site offline
+                else if (response.data.Code===7001) {
+                    $injector.get('notify')({
+                        classes: 'notification-danger',
+                        message: 'Unable to connect to API server.'
+                    });
+                }
             }
 
             return response || $q.when(response);
@@ -174,7 +200,7 @@ angular.module("proton", [
             return $q.reject(rejection);
         }
     };
-}])
+})
 .config(function($httpProvider, CONFIG) {
     //Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');

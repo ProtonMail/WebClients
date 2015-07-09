@@ -68,8 +68,8 @@ angular.module("proton.controllers.Auth", [
                             }
                         );
 	                }
-	                else if (result.error) {
-	                	var error  = (result.error_description) ? result.error_description : result.error;
+	                else if (result.Error) {
+	                	var error  = (result.error_description) ? result.error_description : result.Error;
 	                	notify({
 	                        classes: 'notification-danger',
 	                        message: error
