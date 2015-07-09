@@ -41,7 +41,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.initHotkeys();
 
-        $scope.$apply();
+        // Force redisplay with the caching system
+        $scope.$apply(); // Don't change that, discuss with @dayne or @richard before
     });
 
     $scope.initHotkeys = function() {
@@ -214,6 +215,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
+            $scope.$apply();
         });
     };
 
