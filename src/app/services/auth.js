@@ -83,7 +83,8 @@ angular.module("proton.authentication", [
             pmcw,
             localStorageService,
             errorReporter,
-            notify
+            notify,
+            CONFIG
         ) {
 
             // RUN-TIME PUBLIC FUNCTIONS
@@ -364,8 +365,8 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
 
                 // Force Upgrade
-                $http.defaults.headers.common["x-pm-appversion"] = 'Web_2.0.0';
-                $http.defaults.headers.common["x-pm-apiversion"] = 1;
+                $http.defaults.headers.common["x-pm-appversion"] = 'Web_'+CONFIG.app_version;
+                $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
             };
 
             auth.fetchUserInfo = function() {
