@@ -402,12 +402,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             messages.push({Action: 3, ID: message.ID, Message: message});
     		messageCache.set(messages);
 
-            if(inDelete) {
-                notify($translate.instant('MESSAGE_DELETED'));
-            } else {
-                notify($translate.instant('MESSAGE_MOVED'));
-            }
-
             $scope.goToMessageList();
         });
 
