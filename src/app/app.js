@@ -175,9 +175,11 @@ angular.module("proton", [
         }
     };
 }])
-.config(function($httpProvider) {
+.config(function($httpProvider, CONFIG) {
     //Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
+    $httpProvider.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
+    $httpProvider.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
 })
 
 .run(function($rootScope, $location, $state, authentication) {
