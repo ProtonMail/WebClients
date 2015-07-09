@@ -562,6 +562,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.clearTheme = function() {
-        // TODO
+        $scope.cssTheme = '';
+        $scope.saveTheme();
     };
 });
