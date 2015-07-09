@@ -16,6 +16,13 @@ on the base class as well () */
     }
 }
 
+body .fa-spin {
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;  
+    animation: spin 1s infinite linear;
+}
+
 .spinMe {
     -webkit-animation: spin .5s infinite linear;
     -moz-animation: spin .5s infinite linear;
@@ -291,3 +298,20 @@ on the base class as well () */
         -webkit-transform: rotateZ(0deg);
     }
 }  
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
