@@ -166,42 +166,27 @@ angular.module("proton", [
             if (response.data.Code!==undefined) {
                 // app update needd
                 if (response.data.Code===5003) {
-                    console.log('a');
-                    $injector.get('notify')({
-                        classes: 'notification-danger',
-                        message: 'A new version of ProtonMail is available. Refresh to automatically update.'
-                    });
-                    console.log('b');
+                    $injector.get('notify')('A new version of ProtonMail is available. Refresh to automatically update.');
                 }
                 else if(response.data.Code===5004) {
-                    console.log('a');
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Non-integer API version requested.'
                     });
-                    console.log('b');
                 }
                 // unsupported api
                 else if (response.data.Code===5005) {
-                    console.log('a');
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Unsupported API version.'
                     });
-                    console.log('b');
                 }
                 // site offline
                 else if (response.data.Code===7001) {
-                    var message = response.data.ErrorDescription;
-                    if (message===undefined) {
-                        message = 'ProtonMail is offline for maintenance. Attempting to recconnect...';
-                    }
-                    console.log('a');
                     $injector.get('notify')({
                         classes: 'notification-danger',
-                        message: message
+                        message: 'Unable to connect to API server.'
                     });
-                    console.log('b');
                 }
             }
 
