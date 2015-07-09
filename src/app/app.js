@@ -157,11 +157,44 @@ angular.module("proton", [
 //
 // Redirection if not authentified
 //
-.factory('authHttpResponseInterceptor',['$q','$location',function($q, $location, $state){
+.factory('authHttpResponseInterceptor',['$q','$location',function($q, $location, $injector){
     return {
         response: function(response) {
             if (response.status === 401) {
-                $state.go('login');
+                // $state.go('login');
+            }
+            if (response.data.Code!==undefined) {
+                // app update needd
+                if (response.data.Code===5003) {
+                    console.log('a');
+                    $injector('notify')({
+                        classes: 'notification-danger',
+                        message: 'A new version of ProtonMail is available. Refresh to automatically update.'
+                    });
+                    console.log('b');
+                }
+                // unsupported api
+                else if (response.data.Code===5005) {
+                    console.log('a');
+                    $injector('notify')({
+                        classes: 'notification-danger',
+                        message: 'Unsupported API version.'
+                    });
+                    console.log('b');
+                }
+                // site offline
+                else if (response.data.Code===7001) {
+                    var message = response.data.ErrorDescription;
+                    if (message===undefined) {
+                        message = 'ProtonMail is offline for maintenance. Attempting to recconnect...';
+                    }
+                    console.log('a');
+                    $injector('notify')({
+                        classes: 'notification-danger',
+                        message: message
+                    });
+                    console.log('b');
+                }
             }
 
             return response || $q.when(response);
