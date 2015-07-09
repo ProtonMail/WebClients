@@ -66,7 +66,7 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
-            LINK_DEFAULT = IMAGE_DEFAULT ="http://";
+            LINK_DEFAULT = IMAGE_DEFAULT ="";
             IFRAME_CLASS = 'angular-squire-iframe';
             editor = scope.editor = null;
             scope.data = {
