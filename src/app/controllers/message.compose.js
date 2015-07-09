@@ -770,8 +770,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             notify($translate.instant('MESSAGE_SENT'));
-                            messageCache.put(message.ID, message);
-                            messageCache.set([{Action: 1, ID: message.ID, Message: message}]);
+                            messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
 
                             // if($state.is('secured.inbox') || $state.is('secured.sent')) {
                             //     $rootScope.$broadcast('refreshMessages');

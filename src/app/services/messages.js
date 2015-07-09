@@ -95,10 +95,6 @@ angular.module("proton.messages", ["proton.constants"])
                     return -element.Time;
                 });
 
-                if(cachedMetadata[loc].length > CONSTANTS.MESSAGES_PER_PAGE) {
-                    cachedMetadata[loc].pop();
-                }
-
                 cachedMetadata[loc].splice(index, 0, message);
 
                 refreshMessagesCache();
@@ -300,7 +296,12 @@ angular.module("proton.messages", ["proton.constants"])
                     else if (message.Action === UPDATE && loc) {
                         if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
                             Message.get({id: message.ID}).$promise.then(function(m) {
-                                cachedMetadata.create(loc, m);
+                                if (!cacheLoc) {
+                                    cachedMetadata.create(loc, m);
+                                } else {
+                                    cachedMetadata.update(cacheLoc, loc, m);
+                                }
+
                             });
                         }
                     }
