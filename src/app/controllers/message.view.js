@@ -228,7 +228,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         linkElement.attr('download', meta.Name);
 
-        if(navigator.msSaveOrOpenBlob || angular.isDefined(URL.createObjectURL)) {
+        if(window.navigator.msSaveOrOpenBlob) { // IE 10 / 11
+            window.navigator.msSaveOrOpenBlob(blob, meta.Name);
+        } else if(angular.isDefined(URL.createObjectURL)) {
             // Browser supports a good way to download blobs
             $scope.$apply(function() {
                 meta.decrypting = false;
