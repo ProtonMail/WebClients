@@ -364,8 +364,8 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
 
-                // Force Upgrade
-                $http.defaults.headers.common["x-pm-appversion"] = 'Web_'+CONFIG.app_version;
+                // Upgrade
+                $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
                 $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
             };
 

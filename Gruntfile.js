@@ -100,7 +100,9 @@ module.exports = function(grunt) {
                 constants: {
                     CONFIG: {
                         debug: true,
-                        apiUrl: apiUrl()
+                        apiUrl: apiUrl(),
+                        app_version: '2.0.0',
+                        api_version: '1'
                     }
                 }
             },
@@ -108,7 +110,9 @@ module.exports = function(grunt) {
                 constants: {
                     CONFIG: {
                         debug: false,
-                        apiUrl: apiUrl()
+                        apiUrl: apiUrl(),
+                        app_version: '2.0.0',
+                        api_version: '1'
                     }
                 }
             }
