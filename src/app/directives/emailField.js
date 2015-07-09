@@ -116,6 +116,7 @@ angular.module("proton.emailField", [])
           if (response === undefined) {
               $timeout(function () { $$element.val(""); }, 0);
           }
+        setValue();
         })
         .on("change", setValue)
         .typeahead(null, {
@@ -126,7 +127,10 @@ angular.module("proton.emailField", [])
                 }
             }
         }).on("typeahead:selected", function (e, d) {
-          manager.tagsManager("pushTag", d);
+            if (typeof d.Name === 'undefined' || d.Name === '') {
+                d.Name = d.Email;
+            }
+            manager.tagsManager("pushTag", d);
         });
 
       $$element.autosizeInput();
