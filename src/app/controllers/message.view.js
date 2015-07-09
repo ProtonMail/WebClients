@@ -75,24 +75,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         networkActivityTracker.track(promise);
     };
 
-    $scope.lockType = function(message) {
-        var lockClass = '';
-
-        if (message.IsEncrypted !== '0') {
-            lockClass += ' fa-lock';
-        }
-
-        if (message.IsEncrypted === '1' || message.IsEncrypted === '5' || message.IsEncrypted === '6') {
-            lockClass += ' text-purple';
-        }
-
-        if (message.IsEncrypted === '0') {
-            lockClass += ' fa-unlock-alt text-muted';
-        }
-
-        return lockClass;
-    };
-
     $scope.saveNewContacts = function() {
         var newContacts = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
             return contactManager.isItNew(email);
@@ -403,11 +385,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
+        var messages = [];
 
-        messages = [];
-        message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-        messages.push({Action: 3, ID: message.ID, Message: message});
-		messageCache.set(messages);
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
@@ -417,6 +396,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         promise.then(function(result) {
             $rootScope.$broadcast('updateCounters');
+            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            messages.push({Action: 3, ID: message.ID, Message: message});
+    		messageCache.set(messages);
 
             if(inDelete) {
                 notify($translate.instant('MESSAGE_DELETED'));
