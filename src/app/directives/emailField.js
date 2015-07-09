@@ -116,6 +116,7 @@ angular.module("proton.emailField", [])
           if (response === undefined) {
               $timeout(function () { $$element.val(""); }, 0);
           }
+        setValue();
         })
         .on("change", setValue)
         .typeahead(null, {
