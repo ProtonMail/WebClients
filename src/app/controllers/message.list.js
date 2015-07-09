@@ -41,10 +41,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.initHotkeys();
 
-        if($rootScope.reloadMessages === true) {
-            $rootScope.reloadMessages = false;
-            $rootScope.$broadcast('refreshMessages', true);
-        }
+        $scope.$apply();
     });
 
     $scope.initHotkeys = function() {
@@ -214,6 +211,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.refreshMessagesCache = function () {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
+
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
         });
