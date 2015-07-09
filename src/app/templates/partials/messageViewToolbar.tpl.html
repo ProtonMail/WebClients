@@ -92,10 +92,10 @@
                     </a>
                 </li>
                 <li>
-                    <a ng-click="viewRaw()" href="#" ng-if="(message.IsEncrypted != '0')">
+                    <a ng-click="viewPgp()" href="#" ng-if="(message.IsEncrypted != '0')">
                         <i class="fa fa-code"></i> {{ 'PGP_PAYLOAD' | translate }}
                     </a>
-                    <a ng-click="viewRaw()" href="#" ng-if="(message.IsEncrypted == '0')">
+                    <a ng-click="viewPgp()" href="#" ng-if="(message.IsEncrypted == '0')">
                         <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
                     </a>
                 </li>

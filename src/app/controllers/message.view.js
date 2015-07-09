@@ -422,12 +422,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         window.open(url, '_blank');
     };
 
-    $scope.viewRaw = function() {
-        var link = document.createElement('a');
-        link.setAttribute("target", "_blank");
-        link.href = 'data:text/plain;base64,'+btoa(message.Header+'\n\r'+message.Body);
-        link.click();
-        window.open(url, '_blank');
+    $scope.viewPgp = function() {
+        window.open('data:text/plain;base64,'+btoa(message.Header+'\n\r'+message.Body), '_blank');
     };
 
     $scope.togglePlainHtml = function() {
