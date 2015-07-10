@@ -158,11 +158,13 @@ angular.module("proton.tools", ["proton.constants"])
         }
 
         function break_images(html) {
-            return html.replace(/src=/g, " data-src=");
+            html = html.replace(/src=/g, " data-src=");
+            return html.replace(/url\(/g, "data-url(");
         }
 
         function fix_images(html) {
-            return html.replace(/data-src=/g, " src=");
+            html = html.replace(/data-src=/g, " src=");
+            return html.replace(/data-url\(/g,  "url(");
         }
 
         function is_html($string) {
