@@ -11,7 +11,8 @@ angular.module("proton.attachments", [
     notify,
     pmcw,
     errorReporter,
-    OAUTH_KEY
+    OAUTH_KEY,
+    CONFIG
 ) {
     return {
         // read the file locally, and encrypt it. return the encrypted file.
@@ -112,6 +113,8 @@ angular.module("proton.attachments", [
             xhr.open('post', authentication.baseURL +'/attachments/upload', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+            xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
+            xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
             xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[OAUTH_KEY + ":AccessToken"]);
             xhr.setRequestHeader("x-pm-uid", window.localStorage[OAUTH_KEY + ":Uid"]);
             xhr.send(data);
