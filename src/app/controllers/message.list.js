@@ -41,6 +41,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.initHotkeys();
         $scope.refreshMessagesCache();
+        $scope.$apply();
     });
 
     $scope.initHotkeys = function() {
