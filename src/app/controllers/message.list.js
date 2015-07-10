@@ -370,6 +370,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var index = $scope.messages.indexOf(message);
         var ids = [];
         var promise;
+        var counters = messageCounts.get();
 
         ids.push(message.ID);
 
@@ -379,7 +380,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             message.Starred = 0;
 
             if (message.IsRead === 0) {
-                $rootScope.counters.Starred--;
+                counters.Starred--;
+                messageCounts.update(counters);
             }
             if (inStarred) {
                 $scope.messages.splice(index, 1);
@@ -389,7 +391,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $rootScope.messageTotals.Starred++;
             message.Starred = 1;
             if (message.IsRead === 0) {
-                $rootScope.counters.Starred++;
+                counters.Starred++;
+                messageCounts.update(counters);
             }
         }
     };
@@ -470,8 +473,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.unselectAllMessages();
     };
 
-    $scope.$on('discardDraft', function(event, message) {
-        $scope.messages = _.filter($scope.messages, function(m) { return m.ID !== message.ID;});
+    $scope.$on('discardDraft', function(event, id) {
+        $scope.messages = _.filter($scope.messages, function(m) {
+            return m.ID !== id;
+        });
         $rootScope.$broadcast('refreshMessagesCache');
     });
 

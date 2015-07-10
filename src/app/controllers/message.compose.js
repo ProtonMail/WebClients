@@ -872,13 +872,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.discard = function(message) {
-
         var index = $scope.messages.indexOf(message);
-
         var messageFocussed = !!message.focussed;
+        var id = message.ID;
 
-        if (message.ID) {
-            Message.delete({IDs: [message.ID]}).$promise.then(function(response) {
+        if (id) {
+            Message.delete({IDs: [id]}).$promise.then(function(response) {
                 if (response[0] && response[0].Error === undefined) {
                     $rootScope.$broadcast('updateCounters');
                     $rootScope.$broadcast('refreshMessages');
@@ -888,8 +887,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.close();
 
-        // Remove message in messages
-        $rootScope.$broadcast('discardDraft', message);
+        // Remove message in composer controller
+        $scope.messages.splice(index, 1);
+
+        // Remove message in message list controller
+        $rootScope.$broadcast('discardDraft', id);
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {

@@ -10,6 +10,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $interval,
     Message,
     authentication,
+    messageCounts,
     tools,
     notify,
     CONSTANTS,
@@ -91,31 +92,27 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }
     };
 
+    $scope.counters = function() {
+        return messageCounts.get();
+    };
+
     $scope.$on('updateCounters', function(event) {
-        $scope.getUnread();
+        messageCounts.refresh();
     });
-
-    if (typeof $rootScope.counters === 'undefined') {
-        Message.unreaded({}).$promise.then(function(json) {
-            var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
-
-            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
-            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
-
-            $rootScope.counters = counters;
-        });
-    }
 
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
+        var counters = $scope.counters();
+
+        // console.log(counters);
 
         if(mailbox === 'label') {
-            value = $rootScope.counters.Labels[id];
+            value = counters.Labels[id];
         } else if (mailbox === 'starred'){
-            value = $rootScope.counters.Starred;
+            value = counters.Starred;
         } else {
-            value = $rootScope.counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
         }
 
         if(angular.isDefined(value)) {

@@ -1,5 +1,5 @@
 angular.module("proton.event", ["proton.constants"])
-	.service("eventManager", function ($interval, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache) {
+	.service("eventManager", function ($interval, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache, messageCounts) {
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -55,7 +55,7 @@ angular.module("proton.event", ["proton.constants"])
 		            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
 		            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
 
-                    $rootScope.counters  = counters;
+                    messageCounts.update(counters);
 				}
 			},
 			manageTotals: function(totals) {

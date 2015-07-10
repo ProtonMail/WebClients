@@ -86,7 +86,7 @@ angular.module("proton.messages.counts", ["proton.constants"])
                         });
                     });
 
-                    $rootScope.counters.Starred = $rootScope.counters.Starred + counterUpdates.Starred;
+                    api.counters.Starred = api.counters.Starred + counterUpdates.Starred;
                     this.update('Locations', counterUpdates.Locations);
                     this.update('Labels', counterUpdates.Labels);
                 },
@@ -114,14 +114,28 @@ angular.module("proton.messages.counts", ["proton.constants"])
                 // Updates counters with the update object
                 update: function(location, updates) {
                     _.each(updates, function(val, id) {
-                        var ID = $rootScope.counters[location][id];
+                        var ID = api.counters[location][id];
                         ID = (typeof ID === 'undefined') ? val : ID + val;
-                        $rootScope.counters[location][id] = (ID < 0) ? 0 : ID;
+                        api.counters[location][id] = (ID < 0) ? 0 : ID;
                     });
                 }
             });
 
             var api = _.bindAll({
+                counters: {Labels:{}, Locations:{}, Starred: 0},
+                get: function() {
+                    return this.counters;
+                },
+                update: function(counters) {
+                    this.counters = counters;
+                },
+                refresh: function() {
+                    Message.unreaded({}).$promise.then(function(json) {
+                        this.counters.Starred = json.Starred;
+                        _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; });
+                        _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; });
+                    }.bind(this));
+                },
                 updateTotals: function(action, messages) {
                     totalCounts[action](messages);
 
