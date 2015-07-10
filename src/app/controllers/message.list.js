@@ -103,23 +103,27 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     }
 
     $scope.messageCount = function() {
-        if (mailbox === 'label') {
-            if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
-                return $rootScope.messageTotals.Labels[$stateParams.label];
-            } else {
-                return $rootScope.Total;
-            }
-        } else if(mailbox === 'starred'){
-            if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
-                return $rootScope.messageTotals.Starred;
-            } else {
-                return $rootScope.Total;
-            }
+        if(angular.isDefined($stateParams.filter)) {
+            return $rootScope.Total;
         } else {
-            if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]) {
-                return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            if (mailbox === 'label') {
+                if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
+                    return $rootScope.messageTotals.Labels[$stateParams.label];
+                } else {
+                    return $rootScope.Total;
+                }
+            } else if(mailbox === 'starred'){
+                if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
+                    return $rootScope.messageTotals.Starred;
+                } else {
+                    return $rootScope.Total;
+                }
             } else {
-                return $rootScope.Total;
+                if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]) {
+                    return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                } else {
+                    return $rootScope.Total;
+                }
             }
         }
     };
