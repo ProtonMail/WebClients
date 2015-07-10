@@ -401,7 +401,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var inDelete = mailbox === 'delete';
         var messages = [];
 
-
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
         } else {

@@ -5,6 +5,31 @@ angular.module("proton.messages", ["proton.constants"])
 		var CREATE = 1;
 		var UPDATE = 2;
 		var UPDATE_FLAG = 3;
+        var inboxOneParams = {Location: 0, Page: 0};
+        var inboxTwoParams = {Location: 0, Page: 1};
+        var sentOneParams = {Location: 2, Page: 0};
+        var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
+        // Parameters shared between api / cache / message view / message list
+        var fields = [
+            "ID",
+            "Subject",
+            "IsRead",
+            "SenderAddress",
+            "SenderName",
+            "ToList",
+            "Time",
+            "Size",
+            "Location",
+            "Starred",
+            "HasAttachment",
+            "IsEncrypted",
+            "ExpirationTime",
+            "IsReplied",
+            "IsRepliedAll",
+            "IsForwarded",
+            "AddressID",
+            "LabelIDs"
+        ];
 
         var messagesToPreload = _.bindAll({
             fetching: false,
@@ -36,12 +61,6 @@ angular.module("proton.messages", ["proton.constants"])
             }
         });
 
-        var inboxOneParams = {Location: 0, Page: 0};
-        var inboxTwoParams = {Location: 0, Page: 1};
-        var sentOneParams = {Location: 2, Page: 0};
-        var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData, refreshMessagesCache;
-        var started = false;
-
         var cachedMetadata = _.bindAll({
             inbox: null,
             sent: null,
@@ -49,20 +68,25 @@ angular.module("proton.messages", ["proton.constants"])
             // Will eventually have a pool of extra messages and only call for the messages needed instead of whole page
             // when implemented in API
             sync: function(cacheLoc) {
+                var deferred = $q.defer();
+
                 if (cacheLoc === 'inbox') {
                     Message.query(inboxTwoParams).$promise.then(function(result) {
                         cachedMetadata.inbox = cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
                         addMessageList(cachedMetadata.inbox);
-                        refreshMessagesCache();
+                        deferred.resolve();
                     });
                 } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
-                        refreshMessagesCache();
+                        deferred.resolve();
                     });
+                } else {
+                    deferred.reject();
                 }
 
+                return deferred.promise;
             },
             delete: function(cacheLoc, message) {
                 cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
@@ -75,8 +99,6 @@ angular.module("proton.messages", ["proton.constants"])
                 } else {
                     cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
                 }
-
-                refreshMessagesCache();
             },
             updateLabels: function(cacheLoc, loc, labelsChanged, message) {
                 var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
@@ -89,7 +111,6 @@ angular.module("proton.messages", ["proton.constants"])
 
                 message.Message = _.omit(message.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
                 this.update(cacheLoc, loc, message);
-                refreshMessagesCache();
             },
             create: function(loc, message) {
                 var index = _.sortedIndex(cachedMetadata[loc], message, function(element) {
@@ -97,8 +118,6 @@ angular.module("proton.messages", ["proton.constants"])
                 });
 
                 cachedMetadata[loc].splice(index, 0, message);
-
-                refreshMessagesCache();
             }
         });
 
@@ -163,28 +182,6 @@ angular.module("proton.messages", ["proton.constants"])
             }
         });
 
-        // Parameters shared between api / cache / message view / message list
-        var fields = [
-            "ID",
-            "Subject",
-            "IsRead",
-            "SenderAddress",
-            "SenderName",
-            "ToList",
-            "Time",
-            "Size",
-            "Location",
-            "Starred",
-            "HasAttachment",
-            "IsEncrypted",
-            "ExpirationTime",
-            "IsReplied",
-            "IsRepliedAll",
-            "IsForwarded",
-            "AddressID",
-            "LabelIDs"
-        ];
-
         var addMessageList = function(messageList) {
             var msg;
 
@@ -205,11 +202,12 @@ angular.module("proton.messages", ["proton.constants"])
             });
         };
 
-        refreshMessagesCache = function() {
+        var refreshMessagesCache = function() {
             $rootScope.$broadcast('refreshMessagesCache');
         };
 
         var api = _.bindAll({
+            started: false,
             watchScope: function(scope, listName) {
                 var messageList = scope[listName];
 
@@ -228,7 +226,6 @@ angular.module("proton.messages", ["proton.constants"])
             start: function() {
                 var deferred = $q.defer();
 
-                started = true;
                 inboxOneMetaData = Message.query(inboxOneParams).$promise;
                 inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
@@ -238,15 +235,15 @@ angular.module("proton.messages", ["proton.constants"])
                         addMessageList(result.inboxTwo);
                         cachedMetadata.inbox = result.inboxOne.concat(result.inboxTwo);
                         cachedMetadata.sent = result.sentOne;
-                        started = false;
+                        this.started = true;
 
                         deferred.resolve();
-                });
+                }.bind(this));
 
                 return deferred.promise;
             },
             reset: function() {
-                started = false;
+                this.started = false;
                 cachedMessages.cache = {};
                 cachedMetadata.inbox = null;
                 cachedMetadata.sent = null;
@@ -254,8 +251,9 @@ angular.module("proton.messages", ["proton.constants"])
             },
             // Function for dealing with message cache updates
             set: function(messages) {
+                var promises = [];
+
                 _.each(messages, function(message) {
-                    console.log(message);
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
@@ -266,6 +264,7 @@ angular.module("proton.messages", ["proton.constants"])
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     // False if message is not in inbox or sent, otherwise value is which one it is in
                     var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : (!hasLocation && cacheLoc) ? cacheLoc : false;
+                    var messagePromise;
 
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
@@ -289,7 +288,9 @@ angular.module("proton.messages", ["proton.constants"])
                     // UPDATE_FLAG - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
                         if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
-                            Message.get({id: message.ID}).$promise.then(function(m) {
+                            messagePromise = Message.get({id: message.ID}).$promise;
+                            promises.push(messagePromise);
+                            messagePromise.then(function(m) {
                                 cachedMetadata.create(loc, m);
                             });
                         }
@@ -299,7 +300,9 @@ angular.module("proton.messages", ["proton.constants"])
                     // currently same as previous case
                     else if (message.Action === UPDATE && loc) {
                         if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
-                            Message.get({id: message.ID}).$promise.then(function(m) {
+                            messagePromise = Message.get({id: message.ID}).$promise;
+                            promises.push(messagePromise);
+                            messagePromise.then(function(m) {
                                 if (!cacheLoc) {
                                     cachedMetadata.create(loc, m);
                                 } else {
@@ -310,12 +313,18 @@ angular.module("proton.messages", ["proton.constants"])
                         }
                     }
                 });
+
                 if (cachedMetadata.inbox.length < 100) {
-                    cachedMetadata.sync('inbox');
+                    promises.push(cachedMetadata.sync('inbox'));
                 }
+
                 if (cachedMetadata.sent.length < 50) {
-                    cachedMetadata.sync('sent');
+                    promises.push(cachedMetadata.sync('sent'));
                 }
+
+                $q.all(promises).then(function() {
+                    refreshMessagesCache();
+                });
             },
             // Function for returning cached data if available or returning promise if not
             query: function(params) {
@@ -347,7 +356,7 @@ angular.module("proton.messages", ["proton.constants"])
                     }
                 };
 
-                if (!started) {
+                if (this.started === false) {
                     return this.start().then(function() {
                         return process();
                     });

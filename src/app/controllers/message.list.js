@@ -40,9 +40,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.initHotkeys();
-
-        // Force redisplay with the caching system
-        $scope.$apply(); // Don't change that, discuss with @dayne or @richard before
+        $scope.refreshMessagesCache();
     });
 
     $scope.initHotkeys = function() {
@@ -205,7 +203,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
+    $scope.$on('refreshMessagesCache', function(){
+        $scope.refreshMessagesCache();
+    });
 
     $scope.refreshMessagesCache = function () {
         var mailbox = $state.current.name.replace('secured.', '');
@@ -487,29 +487,27 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     });
 
     $scope.moveMessagesTo = function(mailbox) {
-
         var ids = $scope.selectedIds();
         var inDelete = mailbox === 'delete';
         var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
-
-        messages = [];
-        movedMessages = [];
+        var events = [];
+        var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
             var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
-            movedMessages.push(m);
+            var index = $scope.messages.indexOf(message);
 
+            movedMessages.push(m);
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            messages.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: message});
+            $scope.messages.splice(index, 1);
         });
 
-		messageCache.set(messages);
+		messageCache.set(events);
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
         promise.then(function(result) {
-            $rootScope.$broadcast('refreshMessagesCache');
-
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
@@ -518,10 +516,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
             }
         });
-
-        if(!$state.is('secured.label')) {
-            $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
-        }
 
         $scope.unselectAllMessages();
     };
