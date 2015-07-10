@@ -100,12 +100,14 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         messageCounts.refresh();
     });
 
+    $timeout(function() {
+        messageCounts.refresh();
+    });
+
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
         var counters = $scope.counters();
-
-        // console.log(counters);
 
         if(mailbox === 'label') {
             value = counters.Labels[id];

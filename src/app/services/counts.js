@@ -132,8 +132,8 @@ angular.module("proton.messages.counts", ["proton.constants"])
                 refresh: function() {
                     Message.unreaded({}).$promise.then(function(json) {
                         this.counters.Starred = json.Starred;
-                        _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; });
-                        _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; });
+                        _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; }.bind(this));
+                        _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; }.bind(this));
                     }.bind(this));
                 },
                 updateTotals: function(action, messages) {
