@@ -261,6 +261,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return _.where($scope.labels, {ID: id})[0];
     };
 
+    $scope.getColorLabel = function(id) {
+        return {
+            backgroundColor: $scope.getLabel(id).Color
+        };
+    };
+
     $scope.onSelectMessage = function(event, message) {
         if (event.shiftKey) {
             var start = $scope.messages.indexOf(_.first($scope.selectedMessages()));

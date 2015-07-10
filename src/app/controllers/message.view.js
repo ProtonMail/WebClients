@@ -280,6 +280,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         networkActivityTracker.track(promise);
     };
 
+    $scope.getColorLabel = function(label) {
+        return {
+            backgroundColor: label.Color
+        };
+    };
+
     $scope.saveLabels = function(labels) {
         var deferred = $q.defer();
         var messageIDs = [message.ID];
