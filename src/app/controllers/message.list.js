@@ -189,6 +189,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.refreshMessages = function(silently, empty) {
+        console.log('refreshMessages');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
 
@@ -201,15 +202,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.$on('updateLabels', function(){$scope.updateLabels();});
-
-    $scope.updateLabels = function () {
-        $scope.labels = authentication.user.Labels;
-    };
-
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
 
     $scope.refreshMessagesCache = function () {
+        console.log('refreshMessagesCache');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
 
@@ -219,7 +215,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.refreshMessagesCache();
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+
+    $scope.updateLabels = function () {
+        $scope.labels = authentication.user.Labels;
+    };
 
     $scope.showTo = function(message) {
         return (
