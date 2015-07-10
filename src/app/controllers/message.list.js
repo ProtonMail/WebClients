@@ -189,7 +189,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.refreshMessages = function(silently, empty) {
-        console.log('refreshMessages');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
 
@@ -205,7 +204,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.$on('refreshMessagesCache', function(){$scope.refreshMessagesCache();});
 
     $scope.refreshMessagesCache = function () {
-        console.log('refreshMessagesCache');
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
 
