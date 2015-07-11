@@ -265,7 +265,6 @@ angular.module("proton.messages", ["proton.constants"])
                     // False if message is not in inbox or sent, otherwise value is which one it is in
                     var loc = (inInbox) ? 'inbox' : (inSent) ? 'sent' : (!hasLocation && cacheLoc) ? cacheLoc : false;
                     var messagePromise;
-
                     // DELETE - message in cache
                     if (message.Action === DELETE && cacheLoc) {
                         cachedMetadata.delete(cacheLoc);

@@ -410,7 +410,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         promise.then(function(result) {
             $rootScope.$broadcast('updateCounters');
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            messages.push({Action: 3, ID: message.ID, Message: message});
+            messages.push({Action: 3, ID: message.ID, Message: {message: message}});
     		messageCache.set(messages);
 
             $scope.goToMessageList();

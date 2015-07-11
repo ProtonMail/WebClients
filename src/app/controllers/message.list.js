@@ -500,7 +500,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             movedMessages.push(m);
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            events.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: {message: message}});
             $scope.messages.splice(index, 1);
         });
 

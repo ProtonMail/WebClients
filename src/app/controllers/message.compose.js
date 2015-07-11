@@ -125,7 +125,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                         notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                     } else {
-                        console.log(3);
                         done();
                         $scope.addAttachment(file, message);
                     }
@@ -465,6 +464,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.IsEncrypted = 1;
         message.Password = params.password;
         message.PasswordHint = params.hint;
+        console.log(message);
         $scope.closePanel(message);
     };
 
@@ -644,6 +644,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 draftPromise = Message.createDraft(parameters).$promise;
                 action = CREATE;
             } else {
+                console.log(parameters);
                 draftPromise = Message.updateDraft(parameters).$promise;
                 action = UPDATE;
             }
@@ -690,7 +691,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.send = function(message) {
-
         $scope.saving = false;
         $scope.sending = true;
 
@@ -704,7 +704,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                 parameters.id = message.ID;
                 parameters.ExpirationTime = message.ExpirationTime;
-
                 message.getPublicKeys(emails).then(function(result) {
                     var keys = result;
                     var outsiders = false;
@@ -726,28 +725,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 });
                             }));
                         } else { // outside user
-
                             outsiders = true;
 
                             if(message.IsEncrypted === 1) {
-
-
                                 var replyToken = message.generateReplyToken();
                                 var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
-
                                 promises.push(replyTokenPromise.then(function(encryptedToken) {
-
-
                                     pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-
-
                                         var body = result;
 
                                         message.encryptPackets('', message.Password).then(function(result) {
-
-
                                             var keyPackets = result;
+
                                             $scope.sending = false;
                                             return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                         });
@@ -768,14 +758,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         }
                     }
                     $q.all(promises).then(function() {
+                        console.log(parameters);
                         Message.send(parameters).$promise.then(function(result) {
+                            console.log(result);
                             notify($translate.instant('MESSAGE_SENT'));
-                            messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
-
-                            // if($state.is('secured.inbox') || $state.is('secured.sent')) {
-                            //     $rootScope.$broadcast('refreshMessages');
-                            // }
-
+                            messageCache.set([{Action: 1, ID: message.ID, Message: {message: result.Sent}}]);
                             $scope.close(message, false);
                             $scope.sending = false;
                             deferred.resolve(result);
