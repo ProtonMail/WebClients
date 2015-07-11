@@ -212,7 +212,6 @@ angular.module("proton.modals", [])
 .factory('labelModal', function(pmModal) {
     return pmModal({
         controller: function(params, $scope) {
-            this.label = params.label;
             this.title = params.title;
             this.colors = [
                 '#f66',
@@ -231,11 +230,17 @@ angular.module("proton.modals", [])
                 '#ccc'
             ];
 
-            this.color = (typeof this.label === 'undefined') ? this.colors[0] : this.label.LabelColor;
+            if(angular.isDefined(params.label)) {
+                this.name = params.label.Name;
+                this.color = params.label.Color;
+            } else {
+                this.name = '';
+                this.color = this.colors[0];
+            }
 
             this.create = function() {
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
-                    params.create(this.label.Name, this.color);
+                    params.create(this.name, this.color);
                 }
             };
 
