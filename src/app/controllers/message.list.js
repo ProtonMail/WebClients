@@ -333,6 +333,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             }
 
             if(message.IsRead === 0) {
+                message.IsRead = 1;
                 messageCounts.updateUnread('mark', [message], true);
             }
 
@@ -344,7 +345,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
                         if(m.Attachments && m.Attachments.length > 0) {
                             m.attachmentsToggle = true;
-
                         }
 
                         $rootScope.$broadcast('loadMessage', m);

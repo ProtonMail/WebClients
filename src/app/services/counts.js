@@ -171,6 +171,8 @@ angular.module("proton.messages.counts", ["proton.constants"])
 
                     // Message View to Mailbox *
 
+                    // Open a message (view or draft)
+
                 },
                 updateUnreadLabels: function(messages, add, remove) {
                     unreadCounts.label(messages, add, remove);

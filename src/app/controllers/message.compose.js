@@ -52,8 +52,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle'));
-        message.IsRead = 1;
+        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
         $scope.initMessage(angular.copy(message), save);
     });
 
@@ -644,7 +643,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 draftPromise = Message.createDraft(parameters).$promise;
                 action = CREATE;
             } else {
-                console.log(parameters);
                 draftPromise = Message.updateDraft(parameters).$promise;
                 action = UPDATE;
             }
