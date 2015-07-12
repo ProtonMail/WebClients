@@ -760,7 +760,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         Message.send(parameters).$promise.then(function(result) {
                             console.log(result);
                             notify($translate.instant('MESSAGE_SENT'));
-                            messageCache.set([{Action: 1, ID: message.ID, Message: {message: result.Sent}}]);
+                            messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
                             $scope.close(message, false);
                             $scope.sending = false;
                             deferred.resolve(result);
