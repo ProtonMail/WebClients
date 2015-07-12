@@ -1,5 +1,11 @@
 angular.module("proton.messages", ["proton.constants"])
-    .service('messageCache', function($q, Message, CONSTANTS, $rootScope, tools) {
+    .service('messageCache', function(
+        $q,
+        $rootScope,
+        Message,
+        CONSTANTS,
+        tools
+     ) {
         var lists = [];
         var DELETE = 0;
 		var CREATE = 1;

@@ -40,8 +40,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.initHotkeys();
-        $scope.refreshMessagesCache();
-        $scope.$apply();
     });
 
     $scope.initHotkeys = function() {
@@ -214,7 +212,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
-            $scope.$apply();
         });
     };
 
@@ -477,9 +474,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.$on('discardDraft', function(event, id) {
-        var message = _.find($scope.messages, function(message) { return message.ID === id; });
-
-        messageCache.set([{Action: 0, ID: id, Message: message}]);
+        $scope.messages = _.filter($scope.messages, function(message) { return message.ID !== id; });
+        // TODO update unread
     });
 
     $scope.$on('moveMessagesTo', function(event, name) {
@@ -499,11 +495,33 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             movedMessages.push(m);
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            events.push({Action: 3, ID: message.ID, Message: message});
-            $scope.messages.splice(index, 1);
+
+            if(!$state.is('secured.label')) {
+                if(
+                    ($state.is('secured.inbox') && $stateParams.page === undefined) ||
+                    ($state.is('secured.inbox') && $stateParams.page === 0) ||
+                    ($state.is('secured.inbox') && $stateParams.page === 1) ||
+                    ($state.is('secured.sent') && $stateParams.page === 0)
+                ) {
+                    // Delete in cache
+                    events.push({Action: 3, ID: message.ID, Message: message});
+                } else {
+                    $scope.messages.splice(index, 1);
+                }
+            }
+
+            // Add in cache if the dest is inbox or sent
+            if(mailbox === 'inbox' || mailbox === 'sent') {
+                events.push({Action: 1, ID: message.ID, Message: message});
+            }
         });
 
-		messageCache.set(events);
+        $scope.unselectAllMessages();
+
+        if(events.length > 0) {
+		    messageCache.set(events);
+        }
+
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
@@ -516,8 +534,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
             }
         });
-
-        $scope.unselectAllMessages();
     };
 
     $scope.filterBy = function(status) {

@@ -8,7 +8,7 @@
     ng-hide="emptying"
     >
         <tbody id="message">
-            <tr ng-repeat="message in messages"
+            <tr ng-repeat="message in messages track by message.ID"
                 ng-click="navigateToMessage($event, message)"
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
@@ -93,7 +93,7 @@
     </table>
     <div class="visible-xs-block message-list mobile" ng-class="{empty: messages.length == 0}">
         <ul id="message" class="list-group">
-            <li ng-repeat="message in messages" ng-click="navigateToMessage($event, message)" ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }" class="list-group-item">
+            <li ng-repeat="message in messages track by message.ID" ng-click="navigateToMessage($event, message)" ng-class="{ unread: !message.IsRead, selected: selected, starred: message.Tag == 'starred' }" class="list-group-item">
                 <h4>
                     <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}" pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
                     </span>{{ message.Subject }}
