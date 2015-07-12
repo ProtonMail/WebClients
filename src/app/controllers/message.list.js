@@ -477,10 +477,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.$on('discardDraft', function(event, id) {
-        $scope.messages = _.filter($scope.messages, function(m) {
-            return m.ID !== id;
-        });
-        $rootScope.$broadcast('refreshMessagesCache');
+        var message = _.find($scope.messages, function(message) { return message.ID === id; });
+
+        messageCache.set([{Action: 0, ID: id, Message: message}]);
     });
 
     $scope.$on('moveMessagesTo', function(event, name) {

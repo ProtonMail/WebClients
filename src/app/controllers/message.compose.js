@@ -756,9 +756,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         }
                     }
                     $q.all(promises).then(function() {
-                        console.log(parameters);
                         Message.send(parameters).$promise.then(function(result) {
-                            console.log(result);
                             notify($translate.instant('MESSAGE_SENT'));
                             messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
                             $scope.close(message, false);
