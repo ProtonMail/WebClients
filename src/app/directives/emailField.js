@@ -5,7 +5,7 @@ angular.module("proton.emailField", [])
   /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i
 )
 
-.directive('emailField', function ($timeout, $interval, Contact, EMAIL_REGEXP) {
+.directive('emailField', function ($timeout, $interval, Contact, EMAIL_REGEXP, $sanitize) {
   var self = this;
   var directive = {
     restrict: "A",
@@ -123,7 +123,7 @@ angular.module("proton.emailField", [])
           source: Contact.index.ttAdapter(),
           templates: {
               suggestion: function(Contact) {
-                  return "<b>" +Contact.Name + "</b><br>" + Contact.Email;
+                  return "<b>" +$sanitize(Contact.Name) + "</b><br>" + $sanitize(Contact.Email);
                 }
             }
         }).on("typeahead:selected", function (e, d) {
