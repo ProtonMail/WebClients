@@ -474,8 +474,21 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.$on('discardDraft', function(event, id) {
-        $scope.messages = _.filter($scope.messages, function(message) { return message.ID !== id; });
-        // TODO update unread
+        var movedMessages = [];
+        var message = _.findWhere($scope.messages, {ID: id});
+
+        movedMessages.push({
+            LabelIDs: message.LabelIDs,
+            OldLocation: message.Location,
+            IsRead: message.IsRead,
+            Location: CONSTANTS.MAILBOX_IDENTIFIERS['trash'],
+            Starred: message.Starred
+        });
+
+        messageCounts.updateUnread('move', movedMessages);
+        messageCounts.updateTotals('move', movedMessages);
+        
+        $scope.messages = _.without($scope.messages, message);
     });
 
     $scope.$on('moveMessagesTo', function(event, name) {
