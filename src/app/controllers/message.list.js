@@ -510,17 +510,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
             if(!$state.is('secured.label')) {
-                if(
-                    ($state.is('secured.inbox') && $stateParams.page === undefined) ||
-                    ($state.is('secured.inbox') && $stateParams.page === 0) ||
-                    ($state.is('secured.inbox') && $stateParams.page === 1) ||
-                    ($state.is('secured.sent') && $stateParams.page === 0)
-                ) {
-                    // Delete in cache
-                    events.push({Action: 3, ID: message.ID, Message: message});
-                } else {
-                    $scope.messages.splice(index, 1);
-                }
+                $scope.messages.splice(index, 1);
             }
 
             // Update in cache if the dest is inbox or sent
