@@ -18,7 +18,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     notify
 ) {
     var mellt = new Mellt();
-    
+
     $scope.compatibility = tools.isCompatible();
     $scope.tools    = tools;
     $scope.creating = false;
@@ -60,7 +60,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     };
 
     function generateKeys(userID, pass) {
-
         var deferred = $q.defer();
 
         // Generate KeyPair
@@ -73,14 +72,11 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 deferred.resolve(response);
             },
             function(err) {
+                $log.error(err);
                 $scope.error = err;
                 deferred.reject(err);
             }
         );
-
-        keyPair.catch(function(err) {
-            deferred.reject(err);
-        });
 
         return deferred.promise;
     }
