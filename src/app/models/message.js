@@ -341,12 +341,14 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             _.each(this.Attachments, function(element) {
-                packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
-                    return {
-                        ID: element.AttachmentID,
-                        KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                    };
-                }));
+                var encSessionKey = pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
+                        return {
+                            ID: element.AttachmentID,
+                            KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
+                        };
+                    }
+                );
+                packets.push(encSessionKey);
             });
 
             $q.all(packets).then(function(result) {

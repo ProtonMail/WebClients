@@ -116,11 +116,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     totalSize += file.size;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-                        console.log(1);
+                        // console.log(1);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
-                        console.log(2);
+                        // console.log(2);
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                         notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                     } else {
@@ -463,7 +463,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.IsEncrypted = 1;
         message.Password = params.password;
         message.PasswordHint = params.hint;
-        console.log(message);
+        // console.log(message);
         $scope.closePanel(message);
     };
 
@@ -716,7 +716,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             promises.push(message.encryptBody(key).then(function(result) {
                                 var body = result;
 
-                                message.encryptPackets(authentication.user.PublicKey).then(function(result) {
+                                message.encryptPackets(key).then(function(result) {
                                     var keyPackets = result;
 
                                     return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});

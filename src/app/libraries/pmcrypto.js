@@ -258,9 +258,6 @@ var pmcrypto = (function() {
 
     function decryptSessionKey(encMessage, key) {
 
-        // console.log(encMessage);
-        // console.log(key);
-
         return new Promise(function(resolve, reject) {
             if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
