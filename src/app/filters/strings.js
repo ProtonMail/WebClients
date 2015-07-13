@@ -15,9 +15,9 @@ angular.module("proton.filters.strings",[])
         var difference = m.diff(moment(), 'hours');
 
         if(difference > 1) {
-            return 'This message expire in ' + difference  + ' hours';
+            return 'Message expires in ' + difference  + ' hours';
         } else {
-            return 'This message expire in ' + difference + ' hour';
+            return 'Message expires in ' + difference + ' hour';
         }
     };
 })
