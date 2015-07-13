@@ -25,7 +25,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    $scope.messages = messages;
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
     $scope.page = parseInt($stateParams.page || 1);
@@ -33,14 +32,23 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageHovered: null
     };
 
-    $timeout(function() {
-        $('#page').val($scope.page);
-        $('#page').change(function(event) {
-            $scope.goToPage();
-        });
+    $scope.init = function() {
+        $scope.messages = messages;
 
-        $scope.initHotkeys();
-    });
+        if($rootScope.forceUseCache === true) {
+            $rootScope.forceUseCache = false;
+            $scope.refreshMessagesCache();
+        }
+
+        $timeout(function() {
+            $('#page').val($scope.page);
+            $('#page').change(function(event) {
+                $scope.goToPage();
+            });
+
+            $scope.initHotkeys();
+        });
+    };
 
     $scope.initHotkeys = function() {
         Mousetrap.bind(["s"], function() {
@@ -729,4 +737,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.navigateToMessage(null, messages[idx + adjacency]);
         }
     };
+
+    $scope.init();
 });
