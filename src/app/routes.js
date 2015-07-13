@@ -47,7 +47,8 @@ angular.module("proton.routes", [
         'begin',
         'end',
         'attachments',
-        'starred'
+        'starred',
+        'reload'
       ];
 
       return parameters.join('&');

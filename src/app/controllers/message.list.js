@@ -25,7 +25,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.Math = window.Math;
     $scope.CONSTANTS = CONSTANTS;
-    $scope.messages = messages;
+
+    if($stateParams.reload === true) {
+        $scope.refreshMessagesCache();
+    } else {
+        $scope.messages = messages;
+    }
+
     $scope.selectedFilter = $stateParams.filter;
     $scope.selectedOrder = $stateParams.sort || "-date";
     $scope.page = parseInt($stateParams.page || 1);

@@ -393,7 +393,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.goToMessageList = function() {
-        $state.go('^'); // We can't use `{reload: true}` here because it close the composer
+        $state.go('^', {reload: true});
     };
 
     $scope.moveMessageTo = function(mailbox) {
