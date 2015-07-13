@@ -110,7 +110,7 @@ angular.module("proton.messages", ["proton.constants"])
                 var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
 
                 if (labelsChanged === 'added') {
-                    cachedMetadata[cacheLoc][index].LabelIDs = cachedMetadata[cacheLoc][index].LabelIDs.concat(message.Message.LabelIDsAdded);
+                    cachedMetadata[cacheLoc][index].LabelIDs = _.uniq(cachedMetadata[cacheLoc][index].LabelIDs.concat(message.Message.LabelIDsAdded));
                 } else if (labelsChanged === 'removed') {
                     cachedMetadata[cacheLoc][index].LabelIDs = _.difference(cachedMetadata[cacheLoc][index].LabelIDs, message.Message.LabelIDsRemoved);
                 }
