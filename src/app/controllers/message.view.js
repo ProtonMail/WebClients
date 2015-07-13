@@ -393,7 +393,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.goToMessageList = function() {
-        $state.go('^', {reload: true});
+        $state.go('^');
+        $rootScope.$broadcast('refreshMessagesCache');
     };
 
     $scope.moveMessageTo = function(mailbox) {

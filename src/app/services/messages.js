@@ -100,6 +100,7 @@ angular.module("proton.messages", ["proton.constants"])
             update: function(cacheLoc, loc, message) {
                 if (cacheLoc === loc) {
                     var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
+
                     cachedMetadata[cacheLoc][index] = _.extend(cachedMetadata[cacheLoc][index], message.Message);
                     addMessageList(cachedMetadata[loc]);
                 } else {
@@ -286,7 +287,11 @@ angular.module("proton.messages", ["proton.constants"])
                         if (labelsChanged) {
                             cachedMetadata.updateLabels(cacheLoc, loc, labelsChanged, message);
                         } else {
-                            cachedMetadata.update(cacheLoc, loc, message);
+                            if(inInbox || inSent) {
+                                cachedMetadata.update(cacheLoc, loc, message);
+                            } else {
+                                cachedMetadata.delete(cacheLoc, message);
+                            }
                         }
                     }
 
