@@ -218,6 +218,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
+            $scope.$apply();
         });
     };
 
