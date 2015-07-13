@@ -207,7 +207,6 @@ angular.module("proton", [
     $httpProvider.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
     $httpProvider.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
 })
-
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");

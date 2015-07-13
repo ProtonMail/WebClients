@@ -1,6 +1,6 @@
 angular.module("proton.models.eo", [])
 
-.factory("Eo", function($http, $q, authentication) {
+.factory("Eo", function($http, $q, authentication, CONFIG) {
     return {
         token: function(tokenID) {
             return $http.get(authentication.baseURL + '/eo/token/' + encodeURIComponent(tokenID), {
@@ -73,6 +73,8 @@ angular.module("proton.models.eo", [])
             xhr.open('post', authentication.baseURL + '/eo/reply', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+            xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
+            xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
             xhr.setRequestHeader("Authorization", decrypted_token);
             xhr.setRequestHeader("x-eo-uid", token_id);
             xhr.send(fd);
