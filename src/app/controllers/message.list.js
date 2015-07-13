@@ -481,13 +481,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             LabelIDs: message.LabelIDs,
             OldLocation: message.Location,
             IsRead: message.IsRead,
-            Location: CONSTANTS.MAILBOX_IDENTIFIERS['trash'],
+            Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
             Starred: message.Starred
         });
 
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
-        
+
         $scope.messages = _.without($scope.messages, message);
     });
 
@@ -523,9 +523,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
             }
 
-            // Add in cache if the dest is inbox or sent
+            // Update in cache if the dest is inbox or sent
             if(mailbox === 'inbox' || mailbox === 'sent') {
-                events.push({Action: 1, ID: message.ID, Message: message});
+                events.push({Action: 3, ID: message.ID, Message: message});
             }
         });
 
