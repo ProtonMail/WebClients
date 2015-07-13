@@ -131,6 +131,7 @@ angular.module("proton.messages", ["proton.constants"])
         var cachedMessages = _.bindAll({
             cache: {},
             get: function(id) {
+
                 var msg;
 
                 if ((msg = this.cache[id])) {

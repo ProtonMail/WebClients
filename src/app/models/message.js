@@ -55,7 +55,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: authentication.baseURL + '/messages/:id',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
-
                     return json.Message;
                 }
             },

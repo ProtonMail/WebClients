@@ -29,7 +29,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     contactManager
 ) {
     $scope.message = message;
-    $rootScope.pageName = message.Subject;
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
