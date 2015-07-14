@@ -68,6 +68,9 @@ body {
     #message-content {
         position: relative;
         -webkit-flex: 1;
+        -webkit-flex-grow:1;
+            -ms-flex-positive:1;
+                flex-grow:1;
         overflow-y: auto;
         min-height: 0px;
     }
