@@ -79,8 +79,10 @@ angular.module("proton.controllers.Outside", [
                 };
 
                 Eo.reply(decrypted_token, token_id, data).then(function(result) {
-                    $state.go('eo.message');
+                    $state.go('eo.message', {tag: $stateParams.tag});
                     notify($translate.instant('MESSAGE_SENT'));
+                }, function(error) {
+                    notify(error);
                 });
             });
         });
