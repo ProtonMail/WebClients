@@ -10,26 +10,26 @@
     <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
     <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">{{ user.Theme }}</style>
 </head>
-<body 
-ng-app="proton" 
+<body
+ng-app="proton"
 id="{{ toState }}"
-ng-class="{ 
-  locked: 
-    (isLoggedIn && isLocked) || 
-    ('login'|isState) || 
-    ('eo.unlock'|isState) || 
-    ('eo.message'|isState) || 
+ng-class="{
+  locked:
+    (isLoggedIn && isLocked) ||
+    ('login'|isState) ||
+    ('eo.unlock'|isState) ||
+    ('eo.message'|isState) ||
     ('reset'|isState) ||
-    ('eo.reply'|isState), 
-  login: 
-    !isLoggedIn, 
-  unlock: 
-    isLocked,   
-  secure: 
-    isSecure(), 
-  blank: 
-    !!isBlank, 
-  'min': 
+    ('eo.reply'|isState),
+  login:
+    !isLoggedIn,
+  unlock:
+    isLocked,
+  secure:
+    isSecure(),
+  blank:
+    !!isBlank,
+  'min':
     toggleSidebar
   }">
     <div id="loading">
@@ -51,9 +51,8 @@ ng-class="{
         <p class="text-center">Loading ProtonMail</p>
     </div>
 
-  <!-- <pre>{{ toState }}</pre> -->
-  
     <div ui-view="main" autoscroll="false" id="body"></div>
+    <script type="text/javascript" src="/openpgp.min.js"></script>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>
     <script type="text/javascript">

@@ -3,25 +3,25 @@
  * Just because your changes work in the browser does not mean they work in the encryption server!
  */
 
-// if (typeof module !== 'undefined' && module.exports) {
-//     // node.js
-//     btoa = require('btoa');
-//     atob = require('atob');
-//     /* jshint ignore:start */
-//     Promise = require('es6-promise').Promise;
-//     /* jshint ignore:end */
-//     openpgp = require('./lib/openpgp.min.js');
-//     openpgp.config.integrity_protect = true;
-//     openpgp.config.useNative = true;
-// }
-// else {
-//     // Browser
-//     // Default is true, but just to make sure
-//     openpgp.config.useWebCrypto = true;
-//     openpgp.config.integrity_protect = true;
-//     // Falls back to Web Worker if WebCrypto not available or above set to false
-//     openpgp.initWorker('src/app/libraries/openpgp.worker.min.js');
-// }
+if (typeof module !== 'undefined' && module.exports) {
+    // node.js
+    btoa = require('btoa');
+    atob = require('atob');
+    /* jshint ignore:start */
+    Promise = require('es6-promise').Promise;
+    /* jshint ignore:end */
+    openpgp = require('./lib/openpgp.min.js');
+    openpgp.config.integrity_protect = true;
+    openpgp.config.useNative = true;
+}
+else {
+    // Browser
+    // Default is true, but just to make sure
+    openpgp.config.useWebCrypto = true;
+    openpgp.config.integrity_protect = true;
+    // Falls back to Web Worker if WebCrypto not available or above set to false
+    openpgp.initWorker('openpgp.worker.min.js');
+}
 
 var pmcrypto = (function() {
 

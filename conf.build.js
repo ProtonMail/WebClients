@@ -9,8 +9,7 @@ module.exports = {
       "src/**/*.js",
       "!src/**/*.spec.js",
       "!src/**/*.scenario.js",
-      "!src/assets/**/*.js",
-      "!src/app/libraries/openpgp.worker.min.js"
+      "!src/assets/**/*.js"
     ],
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
@@ -18,6 +17,9 @@ module.exports = {
     ctpl: ["src/common/**/*.tpl.html"],
     html: ["src/index.html", "src/admin.html"],
     sass: ["src/sass/application.scss", "src/sass/admin.scss"]
+  },
+  external_files: {
+    openpgp: ["openpgp.worker.min.js", "openpgp.min.js"]
   },
   test_files: {
     js: [
@@ -28,7 +30,7 @@ module.exports = {
   },
   vendor_files: (vendor_files = {
     js: [
-      "vendor/es6-shim/es6-shim.js",
+      "vendor/es6-promise/es6-promise.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
@@ -47,7 +49,7 @@ module.exports = {
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
-      "vendor/openpgp/*.js",
+      "vendor/openpgp/openpgp.min.js",
       "vendor/dompurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
@@ -85,9 +87,7 @@ module.exports = {
 
     required_js: [],
 
-    included_js: [
-      "src/app/libraries/openpgp.worker.min.js"
-    ],
+    included_js: [],
 
     css: [
       "vendor/tagmanager/tagmanager.css",

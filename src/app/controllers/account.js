@@ -159,6 +159,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                     "News": !!($scope.account.optIn),
                                     "PublicKey": $scope.account.PublicKey,
                                     "PrivateKey": $scope.account.PrivateKey,
+                                    "token": "bypass" // this needs to be from their email in the future
                                 };
 
                                 $scope.keyGen = true;

@@ -242,6 +242,18 @@ module.exports = function(grunt) {
                     cwd: "./src"
                 }]
             },
+            build_worker: {
+                files: [{
+                    src: ["<%= external_files.openpgp %>"],
+                    dest: "./<%= build_dir %>/"
+                }]
+            },
+            compile_worker: {
+                files: [{
+                    src: ["<%= external_files.openpgp %>"],
+                    dest: "./<%= compile_dir %>/assets"
+                }]
+            },
             htaccess: {
                 files: [{
                     src: [".htaccess"],
@@ -562,6 +574,7 @@ module.exports = function(grunt) {
         "copy:build_vendorjs",
         "copy:htaccess",
         "index:build",
+        "copy:build_worker",
         "testconfig"
     ]);
 
@@ -575,6 +588,7 @@ module.exports = function(grunt) {
         "concat:compile_js",
         "uglify",
         "index:compile",
+        "copy:compile_worker",
         "connect:compile"
     ]);
 
