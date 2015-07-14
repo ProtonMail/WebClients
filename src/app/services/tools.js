@@ -130,23 +130,9 @@ angular.module("proton.tools", ["proton.constants"])
             }
         }
 
-        function is_email_address_PM(email) {
-            var protonmail_compose_emailDomain = 'protonmail.ch,protonmail.com,protonmail.net';
+        function is_email_address_PM(contact) {
 
-            protonmail_compose_emailDomain = protonmail_compose_emailDomain.split(",");
-            email = email.trim();
-
-            var parts = email.split('@');
-
-            if (typeof parts[1] !== 'undefined') {
-                parts[1] = parts[1].toLowerCase();
-            }
-
-            if (protonmail_compose_emailDomain.indexOf(parts[1]) !== -1) {
-                return true;
-            } else {
-                return false;
-            }
+            console.log(contact);
         }
 
         function is_valid_dkim(header) {

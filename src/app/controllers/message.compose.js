@@ -593,8 +593,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
-            return tools.isEmailAddressPM(email.Address) !== true;
+        // returns an array of nonPM emails
+        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(contact) {
+            return tools.isEmailAddressPM(contact) !== true;
         });
 
         if (parseInt(message.ExpirationTime) > 0 && message.IsEncrypted !== 1 && emailsNonPM.length > 0) {

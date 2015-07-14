@@ -38,7 +38,13 @@ angular.module("proton.emailField", [])
             return data && EMAIL_REGEXP.test(data.Email);
           })
           .unique()
-          .map(function (element) { return {Name: element.Name.trim(), Address: element.Email.trim()}; })
+          .map(function (element) { 
+            return {
+              Name: element.Name.trim(), 
+              Address: element.Email.trim(),
+              PublicKey: 'derp'
+            }; 
+          })
           .value()
         );
         $scope.$apply();
@@ -68,7 +74,11 @@ angular.module("proton.emailField", [])
         }
         else {
           $(item).find('i').trigger('click');
-          manager.tagsManager("pushTag", {Name: name, Email: email});
+          manager.tagsManager("pushTag", {
+            Name: name, 
+            Email: email,
+            PublicKey: 'derp'
+          });
         }
       };
 
@@ -79,7 +89,15 @@ angular.module("proton.emailField", [])
         containment: $(parent).closest('.composer')
       });
 
+      manager.on("tm:pushing", function (ev, tag, tagId, $el) {
+        console.log(ev);
+        console.log(tag);
+        console.log(tagId);
+        console.log($el);
+      });
+
       manager.on("tm:pushed", function (ev, tag, tagId, $el) {
+
         positionInput();
         if (!tabbing) {
           $$element.focus();
@@ -111,7 +129,11 @@ angular.module("proton.emailField", [])
         })
         .on("blur", function () {
           var val = $$element.val();
-          response = manager.tagsManager("pushTag",{Name: val, Email: val});
+          response = manager.tagsManager("pushTag",{
+            Name: val, 
+            Email: val,
+            PublicKey: 'derp'
+          });
 
           if (response === undefined) {
               $timeout(function () { $$element.val(""); }, 0);
@@ -141,7 +163,11 @@ angular.module("proton.emailField", [])
           if (typeof d.Name === 'undefined' || d.Name === '') {
               d.Name = d.Address;
           }
-          manager.tagsManager("pushTag", {Name: d.Name, Email: d.Address});
+          manager.tagsManager("pushTag", {
+            Name: d.Name, 
+            Email: d.Address,
+            PublicKey: 'derp'
+          });
       });
     }
   };

@@ -18,7 +18,7 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 5rem;
+        bottom: 6rem;
         overflow: auto;
     }
     em {
@@ -134,7 +134,12 @@
         left: 0;
         right: 0;
         bottom: 0;
-        height: 5rem;
+        height: 6rem;
+        .version {
+            height: 1rem;
+            line-height: 1rem;
+            color: #ccc;
+        }
         @include responsive(sm) {
             width: 6rem;
         }

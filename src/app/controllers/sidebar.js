@@ -14,6 +14,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     tools,
     notify,
     CONSTANTS,
+    CONFIG,
     $timeout) {
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
 
@@ -22,6 +23,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
     };
+
+    $scope.appVersion = CONFIG.app_version;
 
     $scope.droppableOptions = {
         accept: '.ui-draggable',
