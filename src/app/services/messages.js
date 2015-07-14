@@ -259,7 +259,6 @@ angular.module("proton.messages", ["proton.constants"])
             // Function for dealing with message cache updates
             set: function(messages) {
                 var promises = [];
-
                 _.each(messages, function(message) {
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
