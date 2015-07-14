@@ -350,10 +350,10 @@ angular.module("proton.controllers.Contacts", [
                         networkActivityTracker.track(
                             Contact.save({
                                 "Contacts": contactArray
-                            }).$promise.then(function(response) {
+                            }).then(function(response) {
                                 added = 0;
                                 duplicates = 0;
-                                _.forEach(response, function(d) {
+                                _.forEach(response.data.Responses, function(d) {
                                     if (d.Response.Contact) {
                                         authentication.user.Contacts.push(d.Response.Contact);
                                         added++;
