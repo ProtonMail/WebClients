@@ -123,6 +123,8 @@ angular.module("proton.messages.counts", ["proton.constants"])
 
             var api = _.bindAll({
                 counters: {Labels:{}, Locations:{}, Starred: 0},
+                unreadChangedLocally : false,
+                totalChangedLocally : false,
                 get: function() {
                     return this.counters;
                 },
@@ -138,6 +140,7 @@ angular.module("proton.messages.counts", ["proton.constants"])
                 },
                 updateTotals: function(action, messages) {
                     totalCounts[action](messages);
+                    this.totalChangedLocally = true;
 
                     // Delete Message *
 
@@ -154,6 +157,7 @@ angular.module("proton.messages.counts", ["proton.constants"])
                 },
                 updateUnread: function(action, messages, status) {
                     unreadCounts[action](messages, status);
+                    this.unreadChangedLocally = true;
 
                     // Delete Message *
 
