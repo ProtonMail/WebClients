@@ -5,7 +5,10 @@ angular.module("proton.models.user", [])
 
     return $resource(
         authentication.baseURL + "/users/:id",
-        authentication.params({ id: "@id" }),
+        authentication.params({
+            id: "@id",
+            token: "@token"
+        }),
         {
             // POST
             updateKeys: {
@@ -14,7 +17,7 @@ angular.module("proton.models.user", [])
             },
             create: {
                 method: 'post',
-                url: authentication.baseURL + '/users'
+                url: authentication.baseURL + '/users/:token'
             },
             // GET
             pubkeys: {
