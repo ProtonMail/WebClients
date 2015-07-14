@@ -9,8 +9,7 @@ module.exports = {
       "src/**/*.js",
       "!src/**/*.spec.js",
       "!src/**/*.scenario.js",
-      "!src/assets/**/*.js",
-      "!src/app/libraries/openpgp.worker.min.js"
+      "!src/assets/**/*.js"
     ],
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
@@ -18,6 +17,9 @@ module.exports = {
     ctpl: ["src/common/**/*.tpl.html"],
     html: ["src/index.html", "src/admin.html"],
     sass: ["src/sass/application.scss", "src/sass/admin.scss"]
+  },
+  external_files: {
+    worker: ["openpgp.worker.min.js"]
   },
   test_files: {
     js: [
