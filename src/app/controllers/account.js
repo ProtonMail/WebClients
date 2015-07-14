@@ -164,8 +164,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
                                 $scope.keyGen = true;
 
-                                console.log(params);
-
                                 return User.create(params).$promise.then(
                                     function(response) {
 
