@@ -524,10 +524,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 $scope.messages.splice(index, 1);
             }
 
-            // Update in cache if the dest is inbox or sent
-            if(mailbox === 'inbox' || mailbox === 'sent') {
-                events.push({Action: 3, ID: message.ID, Message: message});
-            }
+            events.push({Action: 3, ID: message.ID, Message: message});
         });
 
         $scope.unselectAllMessages();
@@ -589,7 +586,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
             promise = Message.emptyTrash().$promise;
         }
-        
+
         promise.then(
             function(result) {
                 $rootScope.$broadcast('updateCounters');

@@ -366,13 +366,13 @@ angular.module("proton.controllers.Settings", [
             params: {
                 title: $translate.instant('EDIT_LABEL'),
                 label: label,
-                create: function() {
+                create: function(name, color) {
                     labelModal.deactivate();
                     networkActivityTracker.track(
                         Label.update({
                             id: label.ID,
-                            Name: label.Name,
-                            Color: label.Color,
+                            Name: name,
+                            Color: color,
                             Display: label.Display
                         }).$promise.then(function(result) {
                             if (result.Error) {
@@ -381,6 +381,8 @@ angular.module("proton.controllers.Settings", [
                                 label.Color = origColor;
                             }
                             else {
+                                label.Color = color;
+                                label.Name = name;
                                 notify($translate.instant('LABEL_EDITED'));
                             }
                         }, function(result) {
