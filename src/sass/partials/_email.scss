@@ -13,14 +13,4 @@
 		border-radius: 0;
 		white-space: pre-wrap;
 	}
-	blockquote {
-		padding: 0 2rem;
-		margin: 2rem 0;
-		font-size: 1em;
-		border-left: none;
-		blockquote blockquote {
-			border-left: 0;
-			padding: 0;
-		}
-	}
 }

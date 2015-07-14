@@ -523,7 +523,7 @@ angular.module("proton.routes", [
                     var message = result.data.Message;
 
                     pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
-                        message.Body = '';
+                        message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
                         message.Attachments = [];
                         message.replyMessage = true;
                         deferred.resolve(new Message(message));

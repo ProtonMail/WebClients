@@ -197,6 +197,17 @@ angular.module("proton.models.message", ["proton.constants"])
                 action: invertedMailboxIdentifiers[this.Location]
             });
         },
+        countdown: function() {
+            if(this.ExpirationTime) {
+                var difference = moment(this.ExpirationTime).diff();
+                var duration = moment.duration(difference);
+                var interval = 1000;
+
+                // $timeout(function() {
+                //
+                // }, interval);
+            }
+        },
         numberOfAttachments: function() {
             return this.Attachments.length;
         },

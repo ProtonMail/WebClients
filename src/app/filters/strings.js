@@ -9,19 +9,6 @@ angular.module("proton.filters.strings",[])
     };
 })
 
-.filter('delayInHours', function() {
-    return function(expiration) {
-        var m = moment.unix(expiration);
-        var difference = m.diff(moment(), 'hours');
-
-        if(difference > 1) {
-            return 'Message expires in ' + difference  + ' hours';
-        } else {
-            return 'Message expires in ' + difference + ' hour';
-        }
-    };
-})
-
 .filter('readableTime', function() {
     return function(time) {
         var m = moment.unix(time);

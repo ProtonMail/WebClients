@@ -573,10 +573,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.emptyFolder = function(location) {
         var c = confirm("Are you sure? This cannot be undone.");
+
         if (c !== true) {
             return;
         }
+
         $scope.emptying = true;
+
         if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
             promise = Message.emptyDraft().$promise;
         }
@@ -586,6 +589,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
             promise = Message.emptyTrash().$promise;
         }
+        
         promise.then(
             function(result) {
                 $rootScope.$broadcast('updateCounters');
