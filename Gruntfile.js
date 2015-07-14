@@ -251,7 +251,7 @@ module.exports = function(grunt) {
             compile_worker: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
-                    dest: "./<%= compile_dir %>/assets"
+                    dest: "./<%= compile_dir %>/"
                 }]
             },
             htaccess: {
