@@ -69,7 +69,7 @@ angular.module("proton.controllers.Auth", [
                         );
 	                }
 	                else if (result.Error) {
-	                	var error  = (result.error_description) ? result.error_description : result.Error;
+	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.error_description) ? result.error_description : result.Error;
 	                	notify({
 	                        classes: 'notification-danger',
 	                        message: error
