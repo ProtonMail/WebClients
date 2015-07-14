@@ -359,8 +359,9 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.editLabel = function(label) {
-        origName = label.Name;
-        origColor = label.Color;
+        var origName = label.Name;
+        var origColor = label.Color;
+
         labelModal.activate({
             params: {
                 title: $translate.instant('EDIT_LABEL'),
@@ -382,7 +383,6 @@ angular.module("proton.controllers.Settings", [
                             else {
                                 notify($translate.instant('LABEL_EDITED'));
                             }
-
                         }, function(result) {
                             $log.error(result);
                         })

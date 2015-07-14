@@ -198,10 +198,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
-            $timeout(function() {
-                $('#contactName').focus();
-            }.bind(this), 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/wizard.tpl.html'
@@ -211,7 +207,7 @@ angular.module("proton.modals", [])
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $scope) {
+        controller: function(params, $timeout) {
             this.title = params.title;
             this.colors = [
                 '#f66',
@@ -249,6 +245,10 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+
+            $timeout(function() {
+                $('#labelName').focus();
+            }.bind(this), 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/label.tpl.html'
