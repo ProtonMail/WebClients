@@ -340,6 +340,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             if(message.IsRead === 0) {
                 message.IsRead = 1;
+                Message.read({IDs: [message.ID]});
                 messageCounts.updateUnread('mark', [message], true);
             }
 
@@ -517,6 +518,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             movedMessages.push(m);
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            message.Selected = false;
 
             if(!$state.is('secured.label')) {
                 $scope.messages.splice(index, 1);

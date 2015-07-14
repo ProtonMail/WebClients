@@ -400,6 +400,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var promise;
         var inDelete = mailbox === 'delete';
         var messages = [];
+        var movedMessages = [];
+
+        var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
+        movedMessages.push(m);
+        messageCounts.updateUnread('move', movedMessages);
+        messageCounts.updateTotals('move', movedMessages);
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;

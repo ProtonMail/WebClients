@@ -52,20 +52,26 @@ angular.module("proton.event", ["proton.constants"])
 				if(angular.isDefined(json)) {
 					var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
 
-		            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
-		            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
-
-                    messageCounts.update(counters);
+					if (messageCounts.unreadChangedLocally) {
+						messageCounts.unreadChangedLocally = false;
+					} else {
+			            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
+			            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
+                    	messageCounts.update(counters);
+					}
 				}
 			},
 			manageTotals: function(totals) {
 				if(angular.isDefined(totals)) {
 					var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
 
-					_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-					_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-
-					$rootScope.messageTotals = total;
+					if (messageCounts.totalChangedLocally) {
+						messageCounts.totalChangedLocally = false;
+					} else {
+						_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+						_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+						$rootScope.messageTotals = total;
+					}
 				}
 			},
 			manageMessages: function(messages) {
@@ -88,6 +94,7 @@ angular.module("proton.event", ["proton.constants"])
 					});
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
+					eventModel.manageID(response.data.EventID);
 				} else if (this.isDifferent(data.EventID)) {
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
