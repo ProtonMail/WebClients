@@ -116,11 +116,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     totalSize += file.size;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-                        // console.log(1);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
-                        // console.log(2);
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                         notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
                     } else {
@@ -232,10 +230,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.onAddFile = function(message) {
         $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
-                $scope.save(message, true); // We need to save to get an ID
+                // We need to save to get an ID
+                $scope.save(message, true).then(function() {
+                    $scope.addFile(message);
+                });
+            } else {
+                $scope.addFile(message);
             }
-
-            $scope.addFile(message);
         });
     };
 
