@@ -37,7 +37,6 @@
     "moment": "~2.6.0",
     "papaparse": "~4.1.1",
     "underscore.string": "~2.3.3",
-    "openpgp": "https://github.com/ProtonMail/OpenPGP.git",
     "requirejs": "~2.1.14",
     "bootstrap": "~3.3.4",
     "bootstrap-sass-official": "https://github.com/ProtonMail/bootstrap-sass.git",
@@ -60,7 +59,7 @@
     "vcard": "https://github.com/ProtonMail/vcard.git#master",
     "dompurify": "~0.6.4",
     "mellt": "https://github.com/ProtonMail/Mellt.git",
-    "es6-shim": "~0.32.3"
+    "es6-promise": "https://github.com/jakearchibald/es6-promise.git"
   },
   "resolutions": {
     "angular": "1.4.2"
