@@ -5,7 +5,6 @@ angular.module("proton.models.message", ["proton.constants"])
     $rootScope,
     $compile,
     $templateCache,
-    $interval,
     $timeout,
     $q,
     $stateParams,
@@ -141,6 +140,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
     _.extend(Message.prototype, {
         promises: [],
+        countdown: 0,
         parameters: function(mailbox) {
             var params = {};
 
@@ -196,17 +196,6 @@ angular.module("proton.models.message", ["proton.constants"])
             return this.$patch({
                 action: invertedMailboxIdentifiers[this.Location]
             });
-        },
-        countdown: function() {
-            if(this.ExpirationTime) {
-                var difference = moment(this.ExpirationTime).diff();
-                var duration = moment.duration(difference);
-                var interval = 1000;
-
-                // $timeout(function() {
-                //
-                // }, interval);
-            }
         },
         numberOfAttachments: function() {
             return this.Attachments.length;
@@ -475,6 +464,22 @@ angular.module("proton.models.message", ["proton.constants"])
             return body;
         }
     });
+
+    // if(this.ExpirationTime) {
+    //     var interval = 1000; // 1 sec
+    //     var timer;
+    //     var tick = function() {
+    //         timer = $timeout(function() {
+    //             if(Message.countdown > 0) {
+    //                 Message.countdown -= 1000;
+    //
+    //                 if(Message.countdown > 0) {
+    //                     tick();
+    //                 }
+    //             }
+    //         }, interval);
+    //     };
+    // }
 
     return Message;
 });
