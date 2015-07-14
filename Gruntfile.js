@@ -244,13 +244,13 @@ module.exports = function(grunt) {
             },
             build_worker: {
                 files: [{
-                    src: ["<%= external_files.worker %>"],
+                    src: ["<%= external_files.openpgp %>"],
                     dest: "./<%= build_dir %>/"
                 }]
             },
             compile_worker: {
                 files: [{
-                    src: ["<%= external_files.worker %>"],
+                    src: ["<%= external_files.openpgp %>"],
                     dest: "./<%= compile_dir %>/assets"
                 }]
             },
