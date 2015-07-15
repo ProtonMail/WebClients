@@ -740,6 +740,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             }));
                         }
                     }
+
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             $scope.sending = false;

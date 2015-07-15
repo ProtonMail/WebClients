@@ -130,11 +130,6 @@ angular.module("proton.tools", ["proton.constants"])
             }
         }
 
-        function is_email_address_PM(contact) {
-
-            console.log(contact);
-        }
-
         function is_valid_dkim(header) {
             if ((header.indexOf('dkim=none') === -1) && (header.indexOf('dkim=pass') !== -1)) {
                 return true;
@@ -386,7 +381,6 @@ angular.module("proton.tools", ["proton.constants"])
             removeStyle: remove_style,
             breakImages: break_images,
             fixImages: fix_images,
-            isEmailAddressPM: is_email_address_PM,
             changeSeparatorToComma: change_separator_to_comma,
             hostReachable: host_reachable,
             findBootstrapEnvironment: find_bootstrap_environment,
