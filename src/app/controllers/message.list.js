@@ -192,6 +192,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             params.Label = $stateParams.label;
         }
 
+        if(parseInt(params.Location) === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
+            params.Starred = 1;
+            delete params.Location;
+        }
+
         _.pick(params, _.identity);
 
         return params;
@@ -671,7 +676,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             } else {
                 messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
                 messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
-                
+
                 if($state.is('secured.label')) {
                     $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
                 } else {
