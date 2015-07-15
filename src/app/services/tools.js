@@ -132,7 +132,6 @@ angular.module("proton.tools", ["proton.constants"])
 
         function is_email_address_PM(contact) {
 
-            console.log(contact);
         }
 
         function is_valid_dkim(header) {
