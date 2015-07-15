@@ -157,6 +157,23 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return size;
     };
 
+    $scope.decryptAttachments = function(message) {
+        if(message.Attachments && message.Attachments.length > 0) {
+            _.each(message.Attachments, function(attachment) {
+                // decode key packets
+                var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+
+                // get user's pk
+                var key = authentication.getPrivateKey().then(function(pk) {
+                    // decrypt session key from keypackets
+                    pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
+                        attachment.sessionKey = sessionKey;
+                    });
+                });
+            });
+        }
+    };
+
     $scope.addAttachment = function(file, message) {
         var attachmentPromise;
         message.uploading = true;
@@ -213,13 +230,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.focusComposer(message);
+        $scope.decryptAttachments(message);
 
         $timeout(function() {
             $scope.onAddFile(message);
             resizeComposer();
-
+            // forward case: we need to save to get the attachments
             if(save === true) {
-                $scope.save(message, true, true);
+                $scope.save(message, true, true).then(function() {
+                    $scope.decryptAttachments(message);
+                });
             }
         });
     };
@@ -701,9 +721,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             promises.push(message.encryptBody(key).then(function(result) {
                                 var body = result;
 
-                                message.encryptPackets(key).then(function(result) {
-                                    var keyPackets = result;
-
+                                return message.encryptPackets(key).then(function(keyPackets) {
                                     return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
                                 });
                             }));
@@ -745,8 +763,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         Message.send(parameters).$promise.then(function(result) {
                             $scope.sending = false;
 
-                            if(result.Code === 15009) {
-                                notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
+                            if(angular.isDefined(result.Error)) {
+                                notify(result.Error);
                                 deferred.reject();
                             } else {
                                 notify($translate.instant('MESSAGE_SENT'));
