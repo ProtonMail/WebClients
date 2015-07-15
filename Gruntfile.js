@@ -242,13 +242,13 @@ module.exports = function(grunt) {
                     cwd: "./src"
                 }]
             },
-            build_worker: {
+            build_external: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
                     dest: "./<%= build_dir %>/"
                 }]
             },
-            compile_worker: {
+            compile_external: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
                     dest: "./<%= compile_dir %>/"
@@ -430,6 +430,8 @@ module.exports = function(grunt) {
                 src: [
                     "<%= html2js.common.dest %>",
                     "<%= html2js.app.dest %>",
+                    "<%= build_dir %>/openpgp.min.js",
+                    "<%= build_dir %>/pmcrypto.js",
                     "<%= build_dir %>/src/**/*.js",
                     "<%= vendor_files.included_js %>",
                     "<%= build_dir %>/assets/application.css"
@@ -441,6 +443,8 @@ module.exports = function(grunt) {
                 dir: "<%= compile_dir %>",
                 src: [
                     "<%= compile_dir %>/assets/vendor.js",
+                    "<%= compile_dir %>/openpgp.min.js",
+                    "<%= compile_dir %>/pmcrypto.js",
                     "<%= compile_dir %>/assets/app.js",
                     "<%= cssmin.compile.dest %>"
                 ],
@@ -573,8 +577,8 @@ module.exports = function(grunt) {
         "copy:build_appjs",
         "copy:build_vendorjs",
         "copy:htaccess",
+        "copy:build_external",
         "index:build",
-        "copy:build_worker",
         "testconfig"
     ]);
 
@@ -587,8 +591,8 @@ module.exports = function(grunt) {
         // "uncss",
         "concat:compile_js",
         "uglify",
+        "copy:compile_external",
         "index:compile",
-        "copy:compile_worker",
         "connect:compile"
     ]);
 

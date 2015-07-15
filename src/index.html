@@ -52,7 +52,6 @@ ng-class="{
     </div>
 
     <div ui-view="main" autoscroll="false" id="body"></div>
-    <script type="text/javascript" src="/openpgp.min.js"></script>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>
     <script type="text/javascript">
