@@ -51,7 +51,7 @@ angular.module("proton.attachments", [
 
             return q.promise;
         },
-        upload: function(packets, MessageID, element) {
+        upload: function(packets, MessageID) {
             var deferred = $q.defer();
             var data = new FormData();
             var xhr = new XMLHttpRequest();
@@ -101,7 +101,6 @@ angular.module("proton.attachments", [
                     attachmentData.loading = false;
                 } else {
                     attachmentData.AttachmentID = response.AttachmentID;
-                    $(element).attr('ID', response.AttachmentID);
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
                         attachmentData.loading = false;

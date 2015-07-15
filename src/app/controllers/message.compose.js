@@ -48,10 +48,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.$on('newMessage', function() {
         var message = new Message();
-        $scope.initMessage(message);
+        message.saved = 0;
+        $scope.initMessage(message, true);
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
+        message.saved = 2;
         message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
         $scope.initMessage(angular.copy(message), save);
     });
@@ -104,11 +106,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
                 url: "/file/post",
                 paramName: "file", // The name that will be used to transfer the file
-                // previewsContainer: '.previews',
-                // previewTemplate: '<span title="Attachment" class="preview-template">' +
-                //                     '<span class="name preview-name" data-dz-name></span> <span class="fa fa-times preview-close" data-dz-remove></span>' +
-                //                  '</span>',
-                createImageThumbnails: false,
+                previewTemplate: '<div style="display:none"></div>',
+                previewsContainer: '.previews',
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -160,12 +159,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.addAttachment = function(file, message) {
         var attachmentPromise;
-        var element = $(file.previewElement);
-
         message.uploading = true;
         attachmentPromise = attachments.load(file).then(
             function(packets) {
-                return attachments.upload(packets, message.ID, element).then(
+                return attachments.upload(packets, message.ID).then(
                     function(result) {
                         message.Attachments.push(result);
                         message.uploading = false;
@@ -231,9 +228,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
             if(angular.isUndefined(message.ID)) {
                 // We need to save to get an ID
-                $scope.save(message, true).then(function() {
                     $scope.addFile(message);
-                });
             } else {
                 $scope.addFile(message);
             }
@@ -464,7 +459,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.IsEncrypted = 1;
         message.Password = params.password;
         message.PasswordHint = params.hint;
-        // console.log(message);
         $scope.closePanel(message);
     };
 
@@ -609,7 +603,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.save = function(message, silently, forward) {
-        $scope.saving = true;
+        message.saved++;
         var deferred = $q.defer();
         var parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
@@ -821,7 +815,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
-        $scope.close(message, true);
+        if (message.saved < 2) {
+            $scope.close(message, false);
+            $scope.discard(message);
+        } else {
+            $scope.close(message, true);
+        }
         // closeModal.activate({
         //     params: {
         //         discard: function() {
