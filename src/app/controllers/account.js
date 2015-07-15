@@ -85,27 +85,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $state.go('step1');
     };
 
-    $scope.tryDecrypt = function() {
-        $('input').blur();
-        var mailboxPassword = this.mailboxPassword;
-        clearErrors();
-
-        networkActivityTracker.track(
-            authentication
-            .unlockWithPassword(mailboxPassword)
-            .then(
-                function() {
-                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
-                    $rootScope.domoArigato = true;
-                    $state.go("secured.inbox");
-                },
-                function(err) {
-                    $scope.error = err;
-                }
-            )
-        );
-    };
-
     $scope.saveContinue = function(form) {
 
         if (form.$valid) {
@@ -173,44 +152,84 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                                             Username: $scope.account.Username,
                                             Password: $scope.account.loginPassword
                                         }).then(
-                                            function() {
+                                            function(response) {
 
-                                                return authentication.fetchUserInfo().then(
-                                                    function(user) {
+                                                // console.log(response.data);
 
-                                                        $scope.FetchAcc = true;
+                                                var EncAccessToken = response.data.AccessToken;
+                                                var EncPrivateKey = response.data.EncPrivateKey;
+                                                var RefreshToken = response.data.RefreshToken;
+                                                var ExpiresIn = response.data.ExpiresIn;
+                                                var Uid = response.data.Uid;
+                                                var EventID = response.data.EventID;
+                                                var mbpw = $scope.account.mailboxPassword;
 
-                                                        return authentication.unlockWithPassword($scope.account.mailboxPassword).then(
-                                                            function() {
+                                                pmcw.decryptPrivateKey(EncPrivateKey, mbpw)
+                                                .then(
+                                                    function(resp) {
+                                                        var PrivateKey = resp;
+                                                        return pmcrypto.decryptMessage(EncAccessToken, PrivateKey)
+                                                        .then(
+                                                            function(AccessToken) {
 
-                                                                $scope.Verify   = true;
+                                                                return authentication.unlockWithPassword(EncPrivateKey, $scope.account.mailboxPassword, EncAccessToken, response.data)
+                                                                .then(
+                                                                    function() {
 
-                                                                // var deferred = $q.defer();
-                                                                // return deferred.promise;
+                                                                        $scope.Verify   = true;
 
-                                                                localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
 
-                                                                setTimeout( function() {
-                                                                    $scope.Redirect   = true;
-                                                                    $state.go("secured.inbox");
-                                                                }, 500);
+                                                                        return authentication.fetchUserInfo(Uid)
+                                                                        .then(
+
+                                                                            function(user) {
+
+                                                                                $scope.FetchAcc = true;
+
+                                                                                localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+
+                                                                                setTimeout( function() {
+                                                                                    $scope.Redirect   = true;
+                                                                                    $state.go("secured.inbox");
+                                                                                }, 500);
+
+                                                                            },
+                                                                            function(err) {
+                                                                                console.log(err);
+                                                                                $scope.error = err;
+                                                                            }
+                                                                        );
+
+                                                                        // var deferred = $q.defer();
+                                                                        // return deferred.promise;
+
+                                                                    },
+                                                                    function(err) {
+                                                                        console.log(err);
+                                                                        $scope.error = err;
+                                                                    }
+                                                                );
+                                                               
                                                             },
                                                             function(err) {
-                                                                $scope.error = err;
+                                                                console.log(err);
                                                             }
                                                         );
                                                     },
                                                     function(err) {
-                                                        $scope.error = err;
+                                                        console.log(err);
                                                     }
                                                 );
+
                                             },
                                             function(err) {
+                                                console.log(err);
                                                 $scope.error = err;
                                             }
                                         );
                                     },
                                     function(response) {
+                                        console.log(response);
                                         var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
                                         notify({
                                             classes: 'notification-danger',

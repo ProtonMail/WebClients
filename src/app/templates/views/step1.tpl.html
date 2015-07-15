@@ -14,16 +14,16 @@
                 <i ng-show="keySave" class="fa fa-check-square"></i> 
                 Saving Encrypted Keys
             </li>
-            <li ng-class="{ 'done': FetchAcc }">
-                <i ng-hide="FetchAcc" class="fa fa-square-o"></i> 
-                <i ng-show="FetchAcc" class="fa fa-check-square"></i> 
-                Loading New Account
-            </li>
             <li ng-class="{ 'done': Verify }">
                 <i ng-hide="Verify" class="fa fa-square-o"></i> 
                 <i ng-show="Verify" class="fa fa-check-square"></i> 
                 Verifying New Account
             </li>
+            <li ng-class="{ 'done': FetchAcc }">
+                <i ng-hide="FetchAcc" class="fa fa-square-o"></i> 
+                <i ng-show="FetchAcc" class="fa fa-check-square"></i> 
+                Loading New Account
+            </li>            
             <li ng-class="{ 'done': Redirect }">
                 <i ng-hide="Redirect" class="fa fa-square-o"></i> 
                 <i ng-show="Redirect" class="fa fa-check-square"></i> 

@@ -323,10 +323,14 @@ angular.module("proton.authentication", [
                     auth.saveEventId(data.EventID);
                 },
 
-                fetchUserInfo: function() {
-                    var promise = auth.fetchUserInfo();
+                fetchUserInfo: function(uid) {
+
+                    var promise = auth.fetchUserInfo(uid);
                     return promise.then(
                         function(user) {
+
+                            // console.log(user);
+
                             if (user.DisplayName.length === 0) {
                                 user.DisplayName = user.Addresses[0].Email;
                             }
@@ -364,17 +368,21 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
             };
 
-            auth.fetchUserInfo = function() {
+            auth.fetchUserInfo = function(uid) {
+
                 var q = $q.defer();
 
                 api.user = $http.get(baseURL + "/users", {
                     params: {
-                        id: auth.data.Uid
+                        id: uid
                     }
                 });
 
                 api.user.then(
                     function(result) {
+
+                        // console.log(result);
+
                         var user = result.data.User;
 
                         if (!user.EncPrivateKey) {
@@ -400,7 +408,8 @@ angular.module("proton.authentication", [
                             );
                         }
                     },
-                    function() {
+                    function(err) {
+                        console.log(err);
                         notify({
                             classes: 'notification-danger',
                             message: 'Sorry, but we were unable to log you in.'
