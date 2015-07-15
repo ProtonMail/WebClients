@@ -355,21 +355,18 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         if (action === 'reply') {
             base.Action = 0;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
-            re_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'replyall') {
             base.Action = 1;
             base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList, message.ToList);
             base.ToList = _.filter(base.ToList, function (c) { return _.find($scope.user.Addresses, function(a) { return a.Email === c.Address;}) === undefined;});
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject :
-            re_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
             base.Action = 2;
             base.ToList = [];
-            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject :
-            fw_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : fw_prefix + ' ' + message.Subject;
 
             if(message.Attachments.length > 0) {
                 message.attachmentsToggle = true;
