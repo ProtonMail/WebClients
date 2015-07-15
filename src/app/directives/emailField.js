@@ -38,12 +38,11 @@ angular.module("proton.emailField", [])
             return data && EMAIL_REGEXP.test(data.Email);
           })
           .unique()
-          .map(function (element) { 
+          .map(function (element) {
             return {
-              Name: element.Name.trim(), 
-              Address: element.Email.trim(),
-              PublicKey: 'derp'
-            }; 
+              Name: element.Name.trim(),
+              Address: element.Email.trim()
+            };
           })
           .value()
         );
@@ -75,9 +74,8 @@ angular.module("proton.emailField", [])
         else {
           $(item).find('i').trigger('click');
           manager.tagsManager("pushTag", {
-            Name: name, 
-            Email: email,
-            PublicKey: 'derp'
+            Name: name,
+            Email: email
           });
         }
       };
@@ -87,13 +85,6 @@ angular.module("proton.emailField", [])
         connectWith: '.input-container',
         receive: receivedTag,
         containment: $(parent).closest('.composer')
-      });
-
-      manager.on("tm:pushing", function (ev, tag, tagId, $el) {
-        console.log(ev);
-        console.log(tag);
-        console.log(tagId);
-        console.log($el);
       });
 
       manager.on("tm:pushed", function (ev, tag, tagId, $el) {
@@ -130,9 +121,8 @@ angular.module("proton.emailField", [])
         .on("blur", function () {
           var val = $$element.val();
           response = manager.tagsManager("pushTag",{
-            Name: val, 
-            Email: val,
-            PublicKey: 'derp'
+            Name: val,
+            Email: val
           });
 
           if (response === undefined) {
@@ -164,16 +154,12 @@ angular.module("proton.emailField", [])
               d.Name = d.Address;
           }
           manager.tagsManager("pushTag", {
-            Name: d.Name, 
-            Email: d.Address,
-            PublicKey: 'derp'
+            Name: d.Name,
+            Email: d.Address
           });
       });
     }
   };
-
-
-
 
   return directive;
 });
