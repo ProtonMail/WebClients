@@ -647,9 +647,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
 
-        messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
-        messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
-
         _.each(toApply, function(labelID) {
             promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
         });
@@ -658,14 +655,31 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
         });
 
-        $q.all(promises).then(function() {
-            if($state.is('secured.label')) {
-                $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
-            } else {
-                _.each($scope.selectedMessages(), function(message) {
-                    message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+        $q.all(promises).then(function(results) {
+            var tooManyLabels = false;
+
+            _.each(results, function(result) {
+                _.each(result.Responses, function(Response) {
+                    if(Response.Response.Code === 14035) {
+                        tooManyLabels = true;
+                    }
                 });
-                $scope.unselectAllMessages();
+            });
+
+            if(tooManyLabels) {
+                notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
+            } else {
+                messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
+                messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
+                
+                if($state.is('secured.label')) {
+                    $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
+                } else {
+                    _.each($scope.selectedMessages(), function(message) {
+                        message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+                    });
+                    $scope.unselectAllMessages();
+                }
             }
 
             deferred.resolve();
