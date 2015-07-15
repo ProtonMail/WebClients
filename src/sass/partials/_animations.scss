@@ -17,21 +17,14 @@ on the base class as well () */
 }
 
 body .fa-spin {
-    -webkit-animation: spin 1s infinite linear;
-    -moz-animation: spin 1s infinite linear;
-    -o-animation: spin 1s infinite linear;  
+    -webkit-animation: spin 1s infinite linear;  
     animation: spin 1s infinite linear;
 }
 
 .spinMe {
     -webkit-animation: spin .5s infinite linear;
-    -moz-animation: spin .5s infinite linear;
-    -o-animation: spin .5s infinite linear;
     animation: spin .5s infinite linear;
-    -webkit-animation-iteration-count:1;
-    -moz-animation-iteration-count:1;
-    -ms-animation-iteration-count:1;
-    -o-animation-iteration-count:1; 
+    -webkit-animation-iteration-count:1; 
     animation-iteration-count:1; 
 }
 
@@ -39,69 +32,49 @@ body .fa-spin {
     @include transition(all, 200ms, ease-in-out);
 }
 
-@-webkit-keyframes lateral {
-    from {
-        -webkit-transform: rotateZ(0deg);
-    }
-    to {
-        -webkit-transform: rotateZ(360deg);
-    }
-}
-
-
-@-webkit-keyframes blink {
-    0%    {color: rgba(255,255,255, 1);}
-    50%   {color: rgba(255,255,255,.5);}
-    100%  {color: rgba(255,255,255, 1);}
-}
-@keyframes blink {
-    0%    {color: rgba(255,255,255, 1);}
-    50%   {color: rgba(255,255,255,.5);}
-    100%  {color: rgba(255,255,255, 1);}
-}
-
-
-
 .higgs {
-    position: relative;
-    margin: auto;
-    width: $orbitWidth;
-
+        position: relative;
+        margin: auto;
+        width: 160px;
     .orbit,
     .ring {
         -webkit-transition: -webkit-transform 500ms linear;
         -webkit-transform-style: preserve-3d;
         -moz-transition: -moz-transform 500ms linear;
         -moz-transform-style: preserve-3d;
-        width: $orbitWidth;
-        height: $orbitWidth;
+        -webkit-transform: preserve-3d 500ms linear;
+                transform: preserve-3d 500ms linear;
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+        width: 160px;
+        height: 160px;
         margin: auto;
-        margin-top: $orbitWidth/2;
+        margin-top: 80px;
         position: absolute;
     }
     .orbit {
-        border: 0px solid #ffffff;          
+        border: 0px solid #ffffff;
     }
     .ring {
         position: absolute;
         border: 3px solid #ffffff;
-        border-radius: $orbitWidth; 
+        border-radius: 160px;
         margin: auto;
     }
     .ring.inner,
     .ring.center {
         border: 1px solid rgba(255,255,255,.5);
-        width: $orbitWidth/2;
-        height: $orbitWidth/2;
-        top: $orbitWidth/4;
-        left: $orbitWidth/4;
+        width: 80px;
+        height: 80px;
+        top: 40px;
+        left: 40px;
     }
     .ring.center {
         background: #ffffff;
-        width: $nucleus;
-        height: $nucleus;
-        top: ($orbitWidth - $nucleus)/2;
-        left: ($orbitWidth - $nucleus)/2;
+        width: 20px;
+        height: 20px;
+        top: 70px;
+        left: 70px;
         box-shadow: 0 0 5px #fff;
     }
     .wrap-electron {
@@ -119,6 +92,7 @@ body .fa-spin {
         border: none;
         top: -7px;
         -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
     .inner .electron {
         top: -6px;
@@ -126,192 +100,32 @@ body .fa-spin {
 
     .orbit {
         -webkit-animation: lateral 3s ease-in-out infinite;
-        -moz-animation: lateral 3s ease-in-out infinite;
-    }      
+        animation: lateral 3s ease-in-out infinite;
+    }
     .vertical {
         -webkit-animation: vertical 3s linear infinite;
-        -moz-animation: vertical 3s linear infinite;
+        animation: vertical 3s linear infinite;
     }
     .horizontal {
         -webkit-animation: horizontal 3s linear infinite;
-        -moz-animation: horizontal 3s linear infinite;
-    } 
+        animation: horizontal 3s linear infinite;
+    }
 
     .orbit.r {
         -webkit-animation: lateralRevert 1s linear infinite;
-        -moz-animation: lateralRevert 1s linear infinite;
-    }      
+        animation: lateralRevert 1s linear infinite;
+    }
     .vertical.inner {
         -webkit-animation: verticalRevert 1s linear infinite;
-        -moz-animation: verticalRevert 1s linear infinite;
+        animation: lateralRevert 1s linear infinite;
     }
     .horizontal.inner {
         -webkit-animation: horizontalRevert 1s linear infinite;
-        -moz-animation: horizontalRevert 1s linear infinite;
+        animation: horizontalRevert 1s linear infinite;
     }
 
     .center {
         -webkit-animation: electron 3s linear infinite;
-        -moz-animation: electron 3s linear infinite;          
+        animation: electron 3s linear infinite;
     }
-
-}
-
-@keyframes electron {
-    0% {
-        -webkit-transform: rotateZ(0deg);
-        opacity: .9;
-        box-shadow: 0;
-    }
-    50% {
-        opacity: 1;
-        box-shadow: 0 0 8rem 1rem #fff;
-    }
-    100% {
-        -webkit-transform: rotateZ(360deg);
-        opacity: .9;
-        box-shadow: 0;
-    }
-}
-@keyframes horizontal {
-    from {
-        -webkit-transform: rotateY(0deg);
-                transform: rotateY(0deg);
-    }
-    to {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-}
-@keyframes horizontalRevert {
-    from {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-    to {
-        -webkit-transform: rotateY(0deg);
-                transform: rotateY(0deg);
-    }
-}
-@keyframes vertical {
-    from {
-        -webkit-transform: rotateX(0deg);
-                transform: rotateX(0deg);
-    }
-    to {
-        -webkit-transform: rotateX(360deg);
-                transform: rotateX(360deg);
-    }
-}
-@keyframes verticalRevert {
-    from {
-        -webkit-transform: rotateX(360deg);
-                transform: rotateX(360deg);
-    }
-    to {
-        -webkit-transform: rotateX(0deg);
-                transform: rotateX(0deg);
-    }
-}
-@keyframes lateral {
-    from {
-        -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
-    }
-    to {
-        -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
-    }
-}
-@keyframes lateralRevert {
-    from {
-        -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
-    }
-    to {
-        -webkit-transform: rotateZ(0deg);
-                transform: rotateZ(0deg);
-    }
-}  
-
-@-webkit-keyframes electron {
-    0% {
-        -webkit-transform: rotateZ(0deg);
-        opacity: .5;
-        box-shadow: 0;
-    }
-    50% {
-        opacity: 1;
-        box-shadow: 0 0 2rem #fff;
-    }
-    100% {
-        -webkit-transform: rotateZ(360deg);
-        opacity: .5;
-        box-shadow: 0;
-    }
-}
-@-webkit-keyframes horizontal {
-    from {
-        -webkit-transform: rotateY(0deg);
-    }
-    to {
-        -webkit-transform: rotateY(360deg);
-    }
-}
-@-webkit-keyframes horizontalRevert {
-    from {
-        -webkit-transform: rotateY(360deg);
-    }
-    to {
-        -webkit-transform: rotateY(0deg);
-    }
-}
-@-webkit-keyframes vertical {
-    from {
-        -webkit-transform: rotateX(0deg);
-    }
-    to {
-        -webkit-transform: rotateX(360deg);
-    }
-}
-@-webkit-keyframes verticalRevert {
-    from {
-        -webkit-transform: rotateX(360deg);
-    }
-    to {
-        -webkit-transform: rotateX(0deg);
-    }
-}
-@-webkit-keyframes lateral {
-    from {
-        -webkit-transform: rotateZ(0deg);
-    }
-    to {
-        -webkit-transform: rotateZ(360deg);
-    }
-}
-@-webkit-keyframes lateralRevert {
-    from {
-        -webkit-transform: rotateZ(360deg);
-    }
-    to {
-        -webkit-transform: rotateZ(0deg);
-    }
-}  
-
-@keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }
