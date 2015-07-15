@@ -588,17 +588,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        // returns an array of nonPM emails
-        var emailsNonPM = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(contact) {
-            return tools.isEmailAddressPM(contact) !== true;
-        });
-
-        if (parseInt(message.ExpirationTime) > 0 && message.IsEncrypted !== 1 && emailsNonPM.length > 0) {
-            notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
-            message.panelName = 'encrypt'; // switch panel
-            return false;
-        }
-
         return true;
     };
 
@@ -753,11 +742,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     }
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
-                            notify($translate.instant('MESSAGE_SENT'));
-                            messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
-                            $scope.close(message, false);
                             $scope.sending = false;
-                            deferred.resolve(result);
+
+                            if(result.Code === 15009) {
+                                notify('Expiration times can only be set on fully encrypted messages. Please set a password for your non-ProtonMail recipients.');
+                                deferred.reject();
+                            } else {
+                                notify($translate.instant('MESSAGE_SENT'));
+                                messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
+                                $scope.close(message, false);
+                                deferred.resolve(result);
+                            }
                         });
                     });
                 });
