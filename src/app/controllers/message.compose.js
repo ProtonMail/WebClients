@@ -733,14 +733,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
                                 promises.push(replyTokenPromise.then(function(encryptedToken) {
-                                    pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                    return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
                                         var body = result;
 
                                         message.encryptPackets('', message.Password).then(function(result) {
                                             var keyPackets = result;
 
                                             $scope.sending = false;
-                                            return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                            parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                         });
                                     });
                                 }));
