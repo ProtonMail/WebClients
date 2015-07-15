@@ -103,6 +103,9 @@
                 <div class="form-group composeEditor" ng-style="editorStyle(message)">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
+                            <div class="form-group col-md-12 bold">
+                                Encrypt for non-ProtonMail users
+                            </div>
                             <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
                                 <label class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
                                 <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
@@ -115,11 +118,8 @@
                                 <label class="control-label text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
                                 <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
                             </div>
-                            <div class="col-md-12">
-                                <p class="help-block">Only email body is encrypted during Beta.</p>
-                            </div>
                             <div class="col-md-12 text-right">
-                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">{{ 'CLEAR' | translate }}</button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">{{ 'CANCEL' | translate }}</button>
                                 <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">{{ 'SET' | translate }}</button>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             <h4 class="text-muted">{{params.expiration | humanDuration:'hours'}}</h4>
                         </div>
                         <div class="col-md-12 text-right">
-                            <button type="button" class="btn btn-default btn-sm" ng-click="clearExpiration(message)">{{ 'CLEAR' | translate }}</button>
+                            <button type="button" class="btn btn-default btn-sm" ng-click="clearExpiration(message)">{{ 'CANCEL' | translate }}</button>
                             <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
                         </div>
                     </div>
