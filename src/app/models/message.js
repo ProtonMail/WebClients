@@ -342,12 +342,11 @@ angular.module("proton.models.message", ["proton.constants"])
 
             _.each(this.Attachments, function(element) {
                 packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
-                        return {
-                            ID: element.AttachmentID,
-                            KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                        };
-                    }
-                ));
+                    return {
+                        ID: element.AttachmentID || element.ID,
+                        KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
+                    };
+                }));
             }, function(error) {
                 console.log(error);
             });

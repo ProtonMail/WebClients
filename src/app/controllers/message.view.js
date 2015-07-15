@@ -367,10 +367,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.Action = 2;
             base.ToList = [];
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : fw_prefix + ' ' + message.Subject;
-
-            if(message.Attachments.length > 0) {
-                message.attachmentsToggle = true;
-            }
         }
 
         return base;
