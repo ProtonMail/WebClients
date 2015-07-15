@@ -696,16 +696,17 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.$on('applyLabels', function(event, LabelID) {
-        var messageIDs = _.map($scope.selectedMessages(), function(message) { return message.ID; });
+        var labels = [];
 
-        Label.apply({
-            id: LabelID,
-            MessageIDs: messageIDs
-        }).then(function(result) {
-            if (result.Error) {
-                console.log(result.Error);
+        _.each($scope.labels, function(label) {
+            if(label.ID === LabelID) {
+                label.Selected = true;
             }
+
+            labels.push(label);
         });
+
+        $scope.saveLabels(labels);
     });
 
     $scope.goToPage = function(page, scrollToBottom) {

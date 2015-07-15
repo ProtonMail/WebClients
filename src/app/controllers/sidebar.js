@@ -89,9 +89,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             $rootScope.$broadcast('starMessages');
         } else {
             var LabelID = name;
-            // Apply label and archive
+            // Apply label
             $rootScope.$broadcast('applyLabels', LabelID);
-            $rootScope.$broadcast('moveMessagesTo', 'archive');
         }
     };
 
