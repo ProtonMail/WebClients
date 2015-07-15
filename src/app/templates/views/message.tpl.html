@@ -18,7 +18,6 @@
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
-                <i class="fa fa-lock text-purple" ng-if="tools.isEmailAddressPM(message.SenderAddress)"></i>
                 <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
@@ -27,7 +26,7 @@
                 <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length">
                     <li ng-repeat="email in message.ToList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -35,7 +34,7 @@
                 <strong>{{ 'CC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in message.CCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -43,7 +42,7 @@
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in message.BCCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}"><i ng-show="tools.isEmailAddressPM(email.Address)" class="fa fa-lock text-purple"></i> {{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -71,35 +70,35 @@
 
 <div ng-if="message.Attachments.length > 0" id="attachmentArea">
     <span class="attachmentTitle">
-        <button 
-        class="btn btn-sm pull-right" 
-        ng-click="attachmentToggle=!attachmentToggle" 
-        pt-tooltip="Show/Hide Attachments" 
-        pt-placement="left" 
-        title="" 
+        <button
+        class="btn btn-sm pull-right"
+        ng-click="attachmentToggle=!attachmentToggle"
+        pt-tooltip="Show/Hide Attachments"
+        pt-placement="left"
+        title=""
         data-original-title="Show/Hide Attachments">
             <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': attachmentToggle}"></i>
         </button>
         <strong>
             {{ 'ATTACHMENTS' | translate }}
-        </strong> 
-        ({{message.Attachments.length}} 
+        </strong>
+        ({{message.Attachments.length}}
         <span ng-hide="message.Attachments.length === 1">
             {{ 'FILES' | translate }}
         </span>
         <span ng-show="message.Attachments.length === 1">
             {{ 'FILE' | translate }}
-        </span>, 
+        </span>,
         {{ message.sizeAttachments() | humanSize }})
     </span>
     <div id="attachmentWrap" ng-hide="attachmentToggle">
-        <a 
-        ng-repeat="attachment in message.Attachments" 
-        class="btn btn-grid" 
-        ng-class="{ 'disabled': attachment.decrypting }" 
-        id="attachment-{{$index}}" 
-        data-download-text="{{ 'DOWNLOAD' | translate }}" 
-        href 
+        <a
+        ng-repeat="attachment in message.Attachments"
+        class="btn btn-grid"
+        ng-class="{ 'disabled': attachment.decrypting }"
+        id="attachment-{{$index}}"
+        data-download-text="{{ 'DOWNLOAD' | translate }}"
+        href
         ng-click="decryptAttachment(message, attachment, $event)">
             <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
             <i ng-show="attachment.decrypted" class="fa fa-download"></i>
