@@ -8,7 +8,7 @@
         ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
             <div class="composer-header row" ng-hide="user.ComposerMode===1">
-                <span class="col-xs-8">{{message.Subject}} &nbsp;</span>
+                <span ng-click="normalize(message);" class="col-xs-8">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-4 text-right">
                     <a
                     href
