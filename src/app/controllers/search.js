@@ -14,8 +14,25 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
     $scope.labels = authentication.user.Labels;
 
-    $scope.search = function(navbarValue) {
+    function initParams() {
         var params = {};
+
+        params.words = null;
+        params.from = null;
+        params.to = null;
+        params.subject = null;
+        params.attachments = null;
+        params.starred = null;
+        params.begin = null;
+        params.end = null;
+        params.location = null;
+        params.label = null;
+
+        return params;
+    }
+
+    $scope.search = function(navbarValue) {
+        var params = initParams();
 
         if(angular.isDefined(navbarValue)) {
             // Simple search
@@ -28,8 +45,6 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
             params.subject = $scope.params.subject;
             params.attachments = parseInt($scope.params.attachments);
             params.starred = parseInt($scope.params.starred);
-            params.begin = null;
-            params.end = null;
 
             if(parseInt($('#search_folder').val()) !== -1) {
                 params.location = parseInt($('#search_folder').val());
