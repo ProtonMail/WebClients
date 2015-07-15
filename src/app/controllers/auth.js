@@ -18,7 +18,7 @@ angular.module("proton.controllers.Auth", [
 ) {
     $rootScope.pageName = "Login";
 
-    if ($rootScope.isLoggedIn && $rootScope.user === undefined) {
+    if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
         try {
             $rootScope.user = authentication.fetchUserInfo();
         }
@@ -54,19 +54,29 @@ angular.module("proton.controllers.Auth", [
             })
             .then(
                 function(result) {
-                	if (result.AccessToken) {
-                        return authentication.fetchUserInfo()
-                        .then(
-                            function(user) {
-                                if ($rootScope.pubKey === 'to be modified') {
-                                    $state.go('step2');
-                                    return;
-                                } else {
+                    // console.log('loginWithCredentials done', result);
+                	if (result.data.AccessToken) {
+                        $rootScope.isLoggedIn = true;
+                        if (result.data.AccessToken.length < 50) {
+                            return authentication.fetchUserInfo()
+                            .then(
+                                function(response) {
                                     $state.go("login.unlock");
-                                    return;
+                                    if ($rootScope.pubKey === 'to be modified') {
+                                        $state.go('step2');
+                                        return;
+                                    } else {
+                                        $state.go("login.unlock");
+                                        return;
+                                    }
                                 }
-                            }
-                        );
+                            );
+                        }
+                        else {
+                            // console.log('Going to unlock page.');
+                            $state.go("login.unlock");
+                            return;
+                        }
 	                }
 	                else if (result.Error) {
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.error_description) ? result.error_description : result.Error;
@@ -84,6 +94,7 @@ angular.module("proton.controllers.Auth", [
 	                return;
                 },
                 function(result) {
+                    console.log(result);
                     if (result.message===undefined) {
                         result.message = 'Sorry, our login server is down. Please try again later.';
                     }
@@ -103,16 +114,20 @@ angular.module("proton.controllers.Auth", [
 
         clearErrors();
         networkActivityTracker.track(
-            authentication.unlockWithPassword(mailboxPassword).then(
-                function() {
+            authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
+            .then(
+                function(resp) {
                     localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
                     $state.go("secured.inbox");
                 },
                 function(err) {
-                    $log.error(err);
+                    // console.log(err);
+                    notify({
+                        classes: 'notification-danger',
+                        message: err.message
+                    });
                     $( "[type=password]" ).focus();
-                    $scope.error = err;
                 }
             )
             .catch(function(err) {

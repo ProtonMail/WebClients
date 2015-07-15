@@ -164,16 +164,12 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        resolve: {
-            user: function(authentication) {
-                if(angular.isDefined(authentication.user) && authentication.user) {
-                    return authentication.user;
-                } else {
-                    return authentication.fetchUserInfo();
-                }
+        onEnter: function($rootScope, $state, authentication) {
+            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
+                $rootScope.isLoggedIn = false;
+                authentication.logout();
+                $state.go('login');
             }
-        },
-        onEnter: function() {
             setTimeout( function() {
                 $( "[type=password]" ).focus();
             }, 200);
@@ -288,7 +284,7 @@ angular.module("proton.routes", [
                 });
             }
             else {
-                $state.go("login");
+                $state.go('login');
                 return;
             }
         }
@@ -560,8 +556,9 @@ angular.module("proton.routes", [
             user: function(authentication) {
                 if(angular.isDefined(authentication.user) && authentication.user) {
                     return authentication.user;
-                } else {
-                    return authentication.fetchUserInfo();
+                } 
+                else {
+                    return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }
             }
         },

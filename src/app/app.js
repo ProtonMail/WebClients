@@ -217,16 +217,24 @@ angular.module("proton", [
         var isUnlock = (toState.name === "login.unlock");
         var isOutside = (toState.name.includes("eo"));
 
+        // console.log(toState.name);
+
+        if (isUnlock && $rootScope.isLoggedIn) {
+            return;
+        }
+
         // If already logged in and on the login page: redirect to unlock page
-        if ($rootScope.isLoggedIn && isLogin) {
+        else if ($rootScope.isLoggedIn && isLogin) {
             event.preventDefault();
             $state.go('login.unlock');
+            return;
         }
 
         // If already logged in and unlocked and on the unlock page: redirect to inbox
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
             event.preventDefault();
             $state.go('secured.inbox');
+            return;
         }
 
         // if on the login, support, account, or signup pages dont require authentication

@@ -23,11 +23,14 @@ angular.module("proton.authentication", [
         // PRIVATE FUNCTIONS
 
         auth.saveAuthData = function(data) {
-            date = moment(Date.now() + data.ExpiresIn * 1000);
 
             window.localStorage[OAUTH_KEY + ":Uid"] = data.Uid;
+        
+            date = moment(Date.now() + data.ExpiresIn * 1000);
             window.localStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
+        
             window.localStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+        
             window.localStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
 
             auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
@@ -155,18 +158,20 @@ angular.module("proton.authentication", [
                                 GrantType: "password",
                                 State: api.randomString(24),
                                 RedirectURI: "https://protonmail.ch",
-                                ResponseType: "token"
+                                ResponseType: "token",
+                                Scope: "full" // 'full' or 'reset'
                             })
                         ).then(
                             function(resp) {
-                                var data = resp.data;
-                                api.receivedCredentials(
-                                    _.pick(data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn", "EventID")
-                                );
-                                q.resolve(data);
+                                // console.log(resp.data);
+                                $rootScope.TemporaryAccessData = resp.data;
+                                $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
+                                $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
+                                q.resolve(resp);
                                 // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                             },
                             function(error) {
+                                console.log(error);
                                 q.reject({
                                     message: error.error_description
                                 });
@@ -274,51 +279,37 @@ angular.module("proton.authentication", [
 
                 // Returns an async promise that will be successful only if the mailbox password
                 // proves correct (we test this by decrypting a small blob)
-                unlockWithPassword: function(pwd) {
+                unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
+
+                    // console.log(epk, pwd, accessToken, TemporaryAccessData);
 
                     var req = $q.defer();
                     var self = this;
 
                     if (pwd) {
 
-                        var $getUser = $http.get(baseURL + "/users", {
-                            params: {
-                                id: auth.data.Uid
-                            }
-                        });
-
-                        var error = "Wrong decryption password.";
-
-                        $getUser.then(
-                            function(result) {
-                                var user = result.data.User;
-                                return pmcw.checkMailboxPassword(user.PublicKey, user.EncPrivateKey, pwd).then(
-                                    function() {
-                                        auth.savePassword(pwd);
-                                        req.resolve(200);
-                                    },
-                                    function(rejection) {
-                                        notify({
-                                            classes: 'notification-danger',
-                                            message: error
-                                        });
-                                        req.reject({
-                                            message: error
-                                        });
-                                    }
-                                );
+                        pmcw.checkMailboxPassword(epk, pwd, accessToken)
+                        .then(
+                            function(response) {                             
+                                auth.savePassword(pwd);
+                                api.receivedCredentials({
+                                    "AccessToken": response,
+                                    "RefreshToken": TemporaryAccessData.RefreshToken,
+                                    "Uid": TemporaryAccessData.Uid,
+                                    "ExpiresIn": TemporaryAccessData.ExpiresIn, 
+                                    "EventID": TemporaryAccessData.EventID
+                                }); 
+                                req.resolve(200);
                             },
                             function(rejection) {
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: error
-                                });
+                                // console.log(rejection);
                                 req.reject({
-                                    message: error
+                                    message: "Wrong decryption password."
                                 });
                             }
                         );
-                    } else {
+                    } 
+                    else {
                         req.reject({
                             message: "Password is required"
                         });
@@ -361,8 +352,12 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
 
                 // credentials
-                $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
-                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
+                if (auth.data.AccessToken) {
+                    $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
+                }
+                if (auth.data.Uid) {
+                    $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
+                }
 
                 // Upgrade
                 $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
