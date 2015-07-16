@@ -28,11 +28,8 @@ angular.module("proton.authentication", [
         
             date = moment(Date.now() + data.ExpiresIn * 1000);
             window.localStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
-        
             window.localStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-        
             window.localStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
-
             auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             auth.data.ExpiresIn = date;
 
@@ -175,7 +172,26 @@ angular.module("proton.authentication", [
                                 q.reject({
                                     message: error.error_description
                                 });
-                            });
+                            }
+                        )
+                        .then(
+                            $http.post(baseURL + "/auth",
+                                _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
+                                    ClientID: "demoapp",
+                                    ClientSecret: "demopass",
+                                    GrantType: "password",
+                                    State: api.randomString(24),
+                                    RedirectURI: "https://protonmail.ch",
+                                    ResponseType: "token",
+                                    Scope: "reset" // 'full' or 'reset'
+                                })
+                            ).then(
+                                function(resp) {
+                                    $rootScope.resetToken = resp.data.AccessToken;
+                                    $rootScope.resetUID = resp.data.Uid;
+                                }
+                            )
+                        );
                     }
 
                     return q.promise;
@@ -316,6 +332,17 @@ angular.module("proton.authentication", [
                     }
 
                     return req.promise;
+                },
+
+                setTokenUID: function(data) {
+                    // console.log(data);
+                    if (data.AccessToken) {
+                        $http.defaults.headers.common.Authorization = "Bearer " + data.AccessToken;
+                    }
+                    if (data.Uid) {
+                        $http.defaults.headers.common["x-pm-uid"] = data.Uid;
+                    }
+                    // console.log($http.defaults.headers.common);
                 },
 
                 receivedCredentials: function(data) {

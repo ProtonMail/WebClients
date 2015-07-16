@@ -300,17 +300,6 @@ angular.module("proton.routes", [
             "panel@reset": {
                 templateUrl: "templates/views/reset.tpl.html"
             }
-        },
-        resolve: {
-            // Contains also labels and contacts
-            user: function(authentication, $rootScope) {
-                if (!$rootScope.user) {
-                    return authentication.fetchUserInfo();
-                }
-                else {
-                    return $rootScope.user;
-                }
-            }
         }
     })
 
