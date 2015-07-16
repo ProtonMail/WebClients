@@ -247,13 +247,6 @@ angular.module("proton", [
             $state.go('login'); // go to login
         }
     });
-    $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
-
-    });
-
-    $rootScope.$on('$viewContentLoaded', function ($evt, data) {
-
-    });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $rootScope.toState = toState.name.replace(".", "-");
