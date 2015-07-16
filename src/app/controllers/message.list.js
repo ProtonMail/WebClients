@@ -19,119 +19,138 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     networkActivityTracker,
     notify
 ) {
-    var mailbox = $rootScope.pageName = $state.current.data.mailbox;
+    var watchMessages;
 
-    $scope.messagesPerPage = $scope.user.NumMessagePerPage;
-    $scope.labels = authentication.user.Labels;
-    $scope.Math = window.Math;
-    $scope.CONSTANTS = CONSTANTS;
-    $scope.selectedFilter = $stateParams.filter;
-    $scope.selectedOrder = $stateParams.sort || "-date";
-    $scope.page = parseInt($stateParams.page || 1);
-    $scope.params = {
-        messageHovered: null
+    $scope.initialization = function() {
+        // Variables
+        $scope.mailbox = $rootScope.pageName = $state.current.data.mailbox;
+        $scope.messages = messages;
+        $scope.messagesPerPage = $scope.user.NumMessagePerPage;
+        $scope.labels = authentication.user.Labels;
+        $scope.Math = window.Math;
+        $scope.CONSTANTS = CONSTANTS;
+        $scope.selectedFilter = $stateParams.filter;
+        $scope.selectedOrder = $stateParams.sort || "-date";
+        $scope.page = parseInt($stateParams.page || 1);
+        $scope.params = { messageHovered: null };
+        $scope.draggableOptions = {
+            appendTo: "html",
+            delay: 100,
+            cancel: ".starLink",
+            cursorAt: {left: 0, top: 0},
+            cursor: "move",
+            helper: function(event) {
+                return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
+            },
+            containment: "document"
+        };
+
+        if (typeof $rootScope.messageTotals === 'undefined') {
+            Message.totalCount().$promise.then(function(totals) {
+                var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
+
+                _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
+                _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
+                $rootScope.messageTotals = total;
+            });
+        }
+
+        $scope.startWatchingEvent();
+
+        $timeout(function() {
+            $scope.actionsDelayed();
+        });
     };
 
-    $scope.init = function() {
-        $scope.messages = messages;
+    $scope.startWatchingEvent = function() {
+        messageCache.watchScope($scope, "messages");
+
+        $scope.$on('refreshMessages', function(event, silently, empty) {
+            $scope.refreshMessages(silently, empty);
+        });
+
+        watchMessages = $scope.$watch('messages', function() {
+            $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
+        }, true);
+
+        $scope.$on('refreshMessagesCache', function(){
+            $scope.refreshMessagesCache();
+        });
+
+        $scope.$on('updateLabels', function() {
+            $scope.updateLabels();
+        });
+
+        $scope.$on('goToFolder', function(event) {
+            $scope.unselectAllMessages();
+        });
+
+        $scope.$on('discardDraft', function(event, id) {
+            $scope.discardDraft(id);
+        });
+
+        $scope.$on('applyLabels', function(event, LabelID) {
+            $scope.applyLabels(LabelID);
+        });
+
+        $scope.$on('moveMessagesTo', function(event, name) {
+            $scope.moveMessagesTo(name);
+        });
+
+        $scope.$on('starMessages', function(event) {
+            var ids = $scope.selectedIds();
+            var promise;
+
+            _.each($scope.selectedMessages(), function(message) { message.Starred = 1; });
+            promise = Message.star({IDs: ids}).$promise;
+            networkActivityTracker.track(promise);
+            $scope.unselectAllMessages();
+        });
+
+        $scope.$on('$destroy', $scope.stopWatchingEvent);
+    };
+
+    $scope.stopWatchingEvent = function() {
+        watchMessages();
+    };
+
+    $scope.actionsDelayed = function() {
+        $scope.unselectAllMessages();
+
+        $('#page').val($scope.page);
+        $('#page').change(function(event) {
+            $scope.goToPage();
+        });
+
+        $scope.initHotkeys();
 
         if(
-            (mailbox === 'inbox' && $stateParams.page === undefined || mailbox === 'inbox' && $stateParams.page === 1 || mailbox === 'inbox' && $stateParams.page === 2) ||
-            (mailbox === 'sent' && $stateParams.page === undefined || mailbox === 'sent' && $stateParams.page === 1)
+            ($scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
+            ($scope.mailbox === 'sent' && $stateParams.page === undefined || $scope.mailbox === 'sent' && $stateParams.page === 1)
         ) {
             $scope.refreshMessagesCache();
         }
-
-        $timeout(function() {
-            $('#page').val($scope.page);
-            $('#page').change(function(event) {
-                $scope.goToPage();
-            });
-
-            $scope.initHotkeys();
-        });
     };
-
-    $scope.initHotkeys = function() {
-        Mousetrap.bind(["s"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.toggleStar($scope.params.messageHovered);
-            }
-        });
-        Mousetrap.bind(["r"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.params.messageHovered.Selected = true;
-                $scope.setMessagesReadStatus(true);
-            }
-        });
-        Mousetrap.bind(["u"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.params.messageHovered.Selected = true;
-                $scope.setMessagesReadStatus(false);
-            }
-        });
-
-        $scope.$on('$destroy', function() {
-            Mousetrap.reset();
-        });
-    };
-
-    var unsubscribe = $rootScope.$on("$stateChangeSuccess", function() {
-        $rootScope.pageName = $state.current.data.mailbox;
-    });
-
-    $scope.$on("$destroy", unsubscribe);
-
-    $scope.draggableOptions = {
-        appendTo: "html",
-        delay: 100,
-        cancel: ".starLink",
-        cursorAt: {left: 0, top: 0},
-        cursor: "move",
-        helper: function(event) {
-            return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
-        },
-        containment: "document"
-    };
-
-    messageCache.watchScope($scope, "messages");
-
-    $timeout(function() {
-        $scope.unselectAllMessages();
-    });
-
-    $scope.$on('refreshMessages', function(event, silently, empty) {
-        $scope.refreshMessages(silently, empty);
-    });
-
-    if (typeof $rootScope.messageTotals === 'undefined') {
-        Message.totalCount().$promise.then(function(totals) {
-            var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
-            _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-            _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-            $rootScope.messageTotals = total;
-        });
-    }
 
     $scope.messageCount = function() {
         if(angular.isDefined($stateParams.filter)) {
             return $rootScope.Total;
         } else {
-            if (mailbox === 'label') {
+            if ($scope.mailbox === 'label') {
                 if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
                     return $rootScope.messageTotals.Labels[$stateParams.label];
                 } else {
                     return $rootScope.Total;
                 }
-            } else if(mailbox === 'starred'){
+            } else if($scope.mailbox === 'starred'){
                 if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
                     return $rootScope.messageTotals.Starred;
                 } else {
                     return $rootScope.Total;
                 }
             } else {
-                if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]) {
-                    return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]]) {
+                    return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
                 } else {
                     return $rootScope.Total;
                 }
@@ -158,6 +177,30 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         ddp.forEach(makeRange);
 
         return ddp2;
+    };
+
+    $scope.initHotkeys = function() {
+        Mousetrap.bind(["s"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.toggleStar($scope.params.messageHovered);
+            }
+        });
+        Mousetrap.bind(["r"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.params.messageHovered.Selected = true;
+                $scope.setMessagesReadStatus(true);
+            }
+        });
+        Mousetrap.bind(["u"], function() {
+            if ($state.includes("secured.**") && $scope.params.messageHovered) {
+                $scope.params.messageHovered.Selected = true;
+                $scope.setMessagesReadStatus(false);
+            }
+        });
+
+        $scope.$on('$destroy', function() {
+            Mousetrap.reset();
+        });
     };
 
     $scope.getMessagesParameters = function(mailbox) {
@@ -221,10 +264,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.$on('refreshMessagesCache', function(){
-        $scope.refreshMessagesCache();
-    });
-
     $scope.refreshMessagesCache = function () {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
@@ -233,8 +272,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.$apply();
         });
     };
-
-    $scope.$on('updateLabels', function(){$scope.updateLabels();});
 
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
@@ -368,22 +405,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     });
                 }));
             } else {
-                $state.go("secured." + mailbox + ".message", {
+                $state.go("secured." + $scope.mailbox + ".message", {
                     id: message.ID
                 });
             }
         }
     };
-
-    $scope.$on('starMessages', function(event) {
-        var ids = $scope.selectedIds();
-        var promise;
-
-        _.each($scope.selectedMessages(), function(message) { message.Starred = 1; });
-        promise = Message.star({IDs: ids}).$promise;
-        networkActivityTracker.track(promise);
-        $scope.unselectAllMessages();
-    });
 
     $scope.toggleStar = function(message) {
         var inStarred = $state.is('secured.starred');
@@ -441,10 +468,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.$on('goToFolder', function(event) {
-        $scope.unselectAllMessages();
-    });
-
     $scope.unselectAllMessages = function() {
         _.forEach($scope.messages, function(message) {
             message.Selected = false;
@@ -469,13 +492,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.messagesCanBeMovedTo = function(otherMailbox) {
         if (otherMailbox === "inbox") {
-            return _.contains(["spam", "trash"], mailbox);
+            return _.contains(["spam", "trash"], $scope.mailbox);
         } else if (otherMailbox === "trash") {
-            return _.contains(["inbox", "drafts", "spam", "sent", "starred"], mailbox);
+            return _.contains(["inbox", "drafts", "spam", "sent", "starred"], $scope.mailbox);
         } else if (otherMailbox === "spam") {
-            return _.contains(["inbox", "starred", "trash"], mailbox);
+            return _.contains(["inbox", "starred", "trash"], $scope.mailbox);
         } else if (otherMailbox === "drafts") {
-            return _.contains(["trash"], mailbox);
+            return _.contains(["trash"], $scope.mailbox);
         }
     };
 
@@ -493,7 +516,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.unselectAllMessages();
     };
 
-    $scope.$on('discardDraft', function(event, id) {
+    $scope.discardDraft = function(id) {
         var movedMessages = [];
         var message = _.findWhere($scope.messages, {ID: id});
 
@@ -509,11 +532,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateTotals('move', movedMessages);
 
         $scope.messages = _.without($scope.messages, message);
-    });
-
-    $scope.$on('moveMessagesTo', function(event, name) {
-        $scope.moveMessagesTo(name);
-    });
+    };
 
     $scope.moveMessagesTo = function(mailbox) {
         var ids = $scope.selectedIds();
@@ -699,7 +718,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.$on('applyLabels', function(event, LabelID) {
+    $scope.applyLabels = function(LabelID) {
         var labels = [];
 
         _.each($scope.labels, function(label) {
@@ -711,7 +730,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.saveLabels(labels);
-    });
+    };
 
     $scope.goToPage = function(page, scrollToBottom) {
         if(angular.isUndefined(page)) {
@@ -765,5 +784,5 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }
     };
 
-    $scope.init();
+    $scope.initialization();
 });

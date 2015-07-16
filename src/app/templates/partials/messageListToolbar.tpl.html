@@ -12,12 +12,12 @@
             </label>
         </li>
         <li ng-show="!user.MessageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }">
+            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye-slash"></i>
             </a>
         </li>
         <li ng-show="user.MessageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }">
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye"></i>
             </a>
         </li>
@@ -28,7 +28,7 @@
             <a
             href
             ng-click="moveMessagesTo('archive')"
-            ng-class="{ disabled: selectedMessages().length == 0 }">
+            ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-archive"></i>
             </a>
         </li>
@@ -39,7 +39,7 @@
             <a
             href
             ng-click="moveMessagesTo('inbox')"
-            ng-class="{ disabled: selectedMessages().length == 0 }">
+            ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-inbox"></i>
             </a>
         </li>
@@ -50,7 +50,7 @@
             <a
             href
             ng-click="moveMessagesTo('spam')"
-            ng-class="{ disabled: selectedMessages().length == 0 }">
+            ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-spam-flame"></i>
             </a>
         </li>
@@ -61,7 +61,7 @@
             <a
             href
             ng-click="moveMessagesTo('trash')"
-            ng-class="{ disabled: selectedMessages().length == 0 }">
+            ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-trash-o"></i>
             </a>
         </li>
@@ -71,24 +71,24 @@
         pt-placement="bottom">
             <a
             href
-            ng-class="{ disabled: selectedMessages().length == 0 }"
+            ng-class="{ disabled: numberSelectedMessages == 0 }"
             ng-click="moveMessagesTo('delete')"
             >
                 <i class="fa fa-times-circle"></i>
             </a>
         </li>
         <li class="seperator" ng-show="!user.MessageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: selectedMessages().length == 0 }">
+            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye"></i>
             </a>
         </li>
         <li class="seperator" ng-show="user.MessageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: selectedMessages().length == 0 }">
+            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye-slash"></i>
             </a>
         </li>
         <li class="seperator" pt-tooltip="{{ 'LABELS' | translate }}" pt-placement="bottom">
-            <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: selectedMessages().length == 0 }">
+            <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
