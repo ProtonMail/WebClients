@@ -542,7 +542,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
+            var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location,
+                IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
+                Starred: message.Starred};
             var index = $scope.messages.indexOf(message);
 
             movedMessages.push(m);
@@ -561,7 +563,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
-        promise.then(function(result) {
+        promiseAction = function(result) {
             if(events.length > 0) {
     		    messageCache.set(events);
             }
@@ -572,7 +574,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     notify($translate.instant('MESSAGE_DELETED'));
                 }
             }
-        });
+        };
+
+        if ($scope.messages.length === 0) {
+            networkActivityTracker.track(promise.then(promiseAction));
+        } else {
+            promise.then(promiseAction);
+        }
     };
 
     $scope.filterBy = function(status) {
