@@ -166,10 +166,10 @@
         background-color: white;
         border-radius: 0 0 4px 4px;
         border: 1px solid #ddd;
-        padding: 5px;
 
         .tt-suggestion {
             padding: 1px 10px;
+            border-bottom: 1px solid #ddd;
 
             &.tt-cursor {
                 background-color: #ddd;
