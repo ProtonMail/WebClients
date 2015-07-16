@@ -218,8 +218,6 @@ angular.module("proton", [
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));
 
-        console.log(toState.name);
-
         if (isUnlock && $rootScope.isLoggedIn) {
             return;
         }

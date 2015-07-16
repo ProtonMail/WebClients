@@ -35,8 +35,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.init = function() {
         $scope.messages = messages;
 
-        if($rootScope.forceUseCache === true) {
-            $rootScope.forceUseCache = false;
+        if(
+            (mailbox === 'inbox' && $stateParams.page === undefined || mailbox === 'inbox' && $stateParams.page === 1 || mailbox === 'inbox' && $stateParams.page === 2) ||
+            (mailbox === 'sent' && $stateParams.page === undefined || mailbox === 'sent' && $stateParams.page === 1)
+        ) {
             $scope.refreshMessagesCache();
         }
 
@@ -67,6 +69,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 $scope.params.messageHovered.Selected = true;
                 $scope.setMessagesReadStatus(false);
             }
+        });
+
+        $scope.$on('$destroy', function() {
+            Mousetrap.reset();
         });
     };
 

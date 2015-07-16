@@ -385,7 +385,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.goToMessageList = function() {
-        $rootScope.forceUseCache = true;
         $state.go('^');
     };
 
