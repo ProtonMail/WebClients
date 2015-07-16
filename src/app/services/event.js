@@ -105,6 +105,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
+				messageCache.manageExpire();
 			}
 		};
 		var started = false;

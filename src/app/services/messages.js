@@ -331,6 +331,25 @@ angular.module("proton.messages", ["proton.constants"])
                     refreshMessagesCache();
                 });
             },
+            manageExpire: function() {
+                var now = Date.now()/1000;
+                var removed = 0;
+                cachedMetadata.inbox = _.filter(cachedMetadata.inbox, function(message) {
+                    expTime = message.ExpirationTime;
+                    var response = (expTime !== 0 && expTime < now) ? false : true;
+                    if (!response) { removed++; }
+                    return response;
+                });
+                cachedMetadata.sent = _.filter(cachedMetadata.sent, function(message) {
+                    expTime = message.ExpirationTime;
+                    var response = (expTime !== 0 && expTime < now) ? false : true;
+                    if (!response) { removed++; }
+                    return response;
+                });
+                if (removed > 0) {
+                    refreshMessagesCache();
+                }
+            },
             // Function for returning cached data if available or returning promise if not
             query: function(params) {
                 var deferred = $q.defer();
