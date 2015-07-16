@@ -337,7 +337,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     // Return Message object to build response or forward
     function buildMessage(action) {
         var base = new Message();
-        var signature = '<br /><br />' + tools.replaceLineBreaks($scope.user.Signature) + '<br /><br />';
+        var contentSignature = tools.replaceLineBreaks($scope.user.Signature);
+        var signature = (contentSignature.length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
