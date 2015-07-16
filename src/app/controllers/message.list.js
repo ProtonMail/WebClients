@@ -222,7 +222,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.refreshMessagesCache = function () {
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
-
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
             $scope.$apply();
@@ -534,14 +533,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.unselectAllMessages();
 
-        if(events.length > 0) {
-		    messageCache.set(events);
-        }
-
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
         promise.then(function(result) {
+            if(events.length > 0) {
+    		    messageCache.set(events);
+            }
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
