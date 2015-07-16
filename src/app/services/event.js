@@ -94,7 +94,7 @@ angular.module("proton.event", ["proton.constants"])
 					});
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
-					eventModel.manageID(response.data.EventID);
+					eventModel.manageID(data.EventID);
 				} else if (this.isDifferent(data.EventID)) {
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
