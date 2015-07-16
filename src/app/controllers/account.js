@@ -39,24 +39,30 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
 
     $scope.resetMailboxInit = function() {
-        var promise = Reset.getMailboxResetToken().then(
-            function(response) {
-                if (response.data.Error || response.data.Code !== 1000) {
-                    notify(response.data.Error);
-                }
-                else {
-                    if (response.data.Token) {
-                        $rootScope.resetMailboxToken = response.data.Token;
+        authentication.setTokenUID({
+            "AccessToken": $rootScope.resetToken, 
+            "Uid": $rootScope.resetUID
+        });
+        setTimeout( function() {
+            var promise = Reset.getMailboxResetToken().then(
+                function(response) {
+                    if (response.data.Error || response.data.Code !== 1000) {
+                        notify(response.data.Error);
                     }
-                    $scope.showForm = true;
-                    return;
+                    else {
+                        if (response.data.Token) {
+                            $rootScope.resetMailboxToken = response.data.Token;
+                        }
+                        $scope.showForm = true;
+                        return;
+                    }
+                },
+                function() {
+                    notify('Unable to reset password. Please try again in a few minutes.');
                 }
-            },
-            function() {
-                notify('Unable to reset password. Please try again in a few minutes.');
-            }
-        );
-        networkActivityTracker.track(promise);
+            );
+            networkActivityTracker.track(promise);
+        }, 2000);
     };
 
     function generateKeys(userID, pass) {

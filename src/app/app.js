@@ -216,8 +216,9 @@ angular.module("proton", [
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2");
         var isUnlock = (toState.name === "login.unlock");
         var isOutside = (toState.name.includes("eo"));
+        var isReset = (toState.name.includes("reset"));
 
-        // console.log(toState.name);
+        console.log(toState.name);
 
         if (isUnlock && $rootScope.isLoggedIn) {
             return;
@@ -238,7 +239,7 @@ angular.module("proton", [
         }
 
         // if on the login, support, account, or signup pages dont require authentication
-        else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade) {
+        else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset) {
             return; // no need to redirect
         }
 
