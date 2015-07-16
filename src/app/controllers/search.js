@@ -17,16 +17,16 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     function initParams() {
         var params = {};
 
-        params.words = null;
-        params.from = null;
-        params.to = null;
-        params.subject = null;
-        params.attachments = null;
-        params.starred = null;
-        params.begin = null;
-        params.end = null;
-        params.location = null;
-        params.label = null;
+        params.words = undefined;
+        params.from = undefined;
+        params.to = undefined;
+        params.subject = undefined;
+        params.attachments = undefined;
+        params.starred = undefined;
+        params.begin = undefined;
+        params.end = undefined;
+        params.location = undefined;
+        params.label = undefined;
 
         return params;
     }
@@ -54,11 +54,11 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
                 params.label = $('#search_label').val();
             }
 
-            if($scope.searchForm.begin.$touched && $scope.params.begin) {
+            if($('#beginDate').val().length > 0) {
                 params.begin = $scope.params.begin.getMoment().unix();
             }
 
-            if($scope.searchForm.end.$touched && $scope.params.end) {
+            if($('#endDate').val().length > 0) {
                 params.end = $scope.params.end.getMoment().unix();
             }
         }
@@ -86,7 +86,6 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     };
 
     $scope.setMin = function() {
-        $scope.searchForm.begin.$touched = true; // emulate touched
         if($scope.params.begin.getDate() === null) {
             $scope.params.begin = null;
         } else {
@@ -95,7 +94,6 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     };
 
     $scope.setMax = function() {
-        $scope.searchForm.end.$touched = true; // emulate touched
         if($scope.params.end.getDate() === null) {
             $scope.params.end = null;
         } else {
