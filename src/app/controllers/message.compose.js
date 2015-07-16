@@ -830,23 +830,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.openCloseModal = function(message, save) {
         if (message.saved < 2) {
-            $scope.close(message, false);
             $scope.discard(message);
         } else {
             $scope.close(message, true);
         }
-        // closeModal.activate({
-        //     params: {
-        //         discard: function() {
-        //             closeModal.deactivate();
-        //             $scope.discard(message);
-        //         },
-        //         cancel: function() {
-        //             closeModal.deactivate();
-        //             $scope.close(message, true);
-        //         }
-        //     }
-        // });
     };
 
     $scope.close = function(message, save) {
