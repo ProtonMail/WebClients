@@ -761,6 +761,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
+                            var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
+                            if (result.Parent) {
+                                updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                            }
                             $scope.sending = false;
 
                             if(angular.isDefined(result.Error)) {
@@ -768,7 +772,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 deferred.reject();
                             } else {
                                 notify($translate.instant('MESSAGE_SENT'));
-                                messageCache.set([{Action: 1, ID: message.ID, Message: result.Sent}]);
+                                messageCache.set(updateMessages);
                                 $scope.close(message, false);
                                 deferred.resolve(result);
                             }

@@ -101,7 +101,6 @@ angular.module("proton.messages", ["proton.constants"])
                 if (cacheLoc === loc) {
                     var index = _.findIndex(cachedMetadata[cacheLoc], function(m) { return m.ID === message.ID; });
                     cachedMetadata[cacheLoc][index] = _.extend(cachedMetadata[cacheLoc][index], message.Message);
-                    addMessageList(cachedMetadata[loc]);
                 } else {
                     cachedMetadata[cacheLoc] = _.filter(cachedMetadata[cacheLoc], function(m) { return m.ID !== message.ID; });
                 }
@@ -130,7 +129,6 @@ angular.module("proton.messages", ["proton.constants"])
         var cachedMessages = _.bindAll({
             cache: {},
             get: function(id) {
-
                 var msg;
 
                 if ((msg = this.cache[id])) {
@@ -293,11 +291,20 @@ angular.module("proton.messages", ["proton.constants"])
                     // UPDATE_FLAG - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
                         if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
-                            messagePromise = Message.get({id: message.ID}).$promise;
-                            promises.push(messagePromise);
-                            messagePromise.then(function(m) {
-                                cachedMetadata.create(loc, m);
-                            });
+                            // if message contains subject you moved on this device so no need to query for message content
+                            if (message.Message.Subject) {
+                                if (!cacheLoc) {
+                                    cachedMetadata.create(loc, message.Message);
+                                } else {
+                                    cachedMetadata.update(cacheLoc, loc, message.Message);
+                                }
+                            } else {
+                                messagePromise = Message.get({id: message.ID}).$promise;
+                                promises.push(messagePromise);
+                                messagePromise.then(function(m) {
+                                    cachedMetadata.create(loc, m);
+                                });
+                            }
                         }
                     }
 
