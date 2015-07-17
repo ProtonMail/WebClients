@@ -605,32 +605,28 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.emptyFolder = function(location) {
-        var c = confirm("Are you sure? This cannot be undone.");
+        var confirmation = confirm("Are you sure? This cannot be undone.");
+        var promise;
 
-        if (c !== true) {
+        if (confirmation !== true) {
             return;
         }
 
-        $scope.emptying = true;
-
-        if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
+        if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
             promise = Message.emptyDraft().$promise;
         }
-        else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
+        else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
             promise = Message.emptySpam().$promise;
         }
-        else if (parseInt(location)===CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+        else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
             promise = Message.emptyTrash().$promise;
         }
 
         promise.then(
             function(result) {
                 $rootScope.$broadcast('updateCounters');
-                $rootScope.$broadcast('refreshMessages', true, true);
+                $rootScope.$broadcast('refreshMessagesCache');
                 notify($translate.instant('FOLDER_EMPTIED'));
-            },
-            function(result) {
-                $scope.emptying = false;
             }
         );
     };

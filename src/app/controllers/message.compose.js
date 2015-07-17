@@ -674,7 +674,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     deferred.resolve(result);
                 };
 
-                if(result.Code === 15034) { // Draft ID does not correspond to a draft
+                if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
                     var saveMePromise = Message.createDraft(parameters).$promise;
 
                     saveMePromise.then(function(result) {
