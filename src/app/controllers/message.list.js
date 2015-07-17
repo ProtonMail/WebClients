@@ -621,6 +621,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         promise.then(
             function(result) {
+                messageCounts.empty(location);
                 $rootScope.$broadcast('updateCounters');
                 $rootScope.$broadcast('refreshMessagesCache');
                 notify($translate.instant('FOLDER_EMPTIED'));
