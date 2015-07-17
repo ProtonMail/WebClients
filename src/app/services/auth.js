@@ -41,7 +41,7 @@ angular.module("proton.authentication", [
         };
 
         auth.savePassword = function(pwd) {
-            window.sessionStorage[MAILBOX_PASSWORD_KEY] = auth.mailboxPassword = pwd;
+            window.sessionStorage[MAILBOX_PASSWORD_KEY] = pwd;
         };
 
         auth.getPassword = function() {
@@ -312,6 +312,7 @@ angular.module("proton.authentication", [
                         .then(
                             function(response) {
                                 auth.savePassword(pwd);
+                                auth.mailboxPassword = pwd;
                                 api.receivedCredentials({
                                     "AccessToken": response,
                                     "RefreshToken": TemporaryAccessData.RefreshToken,
