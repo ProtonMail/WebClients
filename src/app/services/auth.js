@@ -41,11 +41,11 @@ angular.module("proton.authentication", [
         };
 
         auth.savePassword = function(pwd) {
-            window.sessionStorage[MAILBOX_PASSWORD_KEY] = pwd;
+            window.sessionStorage[MAILBOX_PASSWORD_KEY] = pmcwProvider.encode_utf8_base64(pwd);
         };
 
         auth.getPassword = function() {
-            return window.sessionStorage[MAILBOX_PASSWORD_KEY];
+            return pmcwProvider.decode_utf8_base64(window.sessionStorage[MAILBOX_PASSWORD_KEY]);
         };
 
         // CONFIG-TIME API FUNCTIONS
