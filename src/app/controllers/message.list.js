@@ -45,6 +45,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
+        if(
+            ($scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
+            ($scope.mailbox === 'sent' && $stateParams.page === undefined || $scope.mailbox === 'sent' && $stateParams.page === 1)
+        ) {
+            $scope.refreshMessagesCache();
+        }
+
         if (typeof $rootScope.messageTotals === 'undefined') {
             Message.totalCount().$promise.then(function(totals) {
                 var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
@@ -123,13 +130,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.initHotkeys();
-
-        if(
-            ($scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
-            ($scope.mailbox === 'sent' && $stateParams.page === undefined || $scope.mailbox === 'sent' && $stateParams.page === 1)
-        ) {
-            $scope.refreshMessagesCache();
-        }
     };
 
     $scope.messageCount = function() {
