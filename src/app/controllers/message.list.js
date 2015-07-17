@@ -520,6 +520,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
         var message = _.findWhere($scope.messages, {ID: id});
 
+        Message.trash({IDs: [id]});
+
         movedMessages.push({
             LabelIDs: message.LabelIDs,
             OldLocation: message.Location,

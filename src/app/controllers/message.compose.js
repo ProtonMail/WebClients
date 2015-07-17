@@ -865,15 +865,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var messageFocussed = !!message.focussed;
         var id = message.ID;
 
-        if (id) {
-            Message.delete({IDs: [id]}).$promise.then(function(response) {
-                if (response[0] && response[0].Error === undefined) {
-                    $rootScope.$broadcast('updateCounters');
-                    $rootScope.$broadcast('refreshMessages');
-                }
-            });
-        }
-
         message.close();
 
         // Remove message in composer controller
