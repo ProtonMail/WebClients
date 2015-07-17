@@ -736,11 +736,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                     return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
                                         var body = result;
 
-                                        message.encryptPackets('', message.Password).then(function(result) {
+                                        return message.encryptPackets('', message.Password).then(function(result) {
                                             var keyPackets = result;
 
                                             $scope.sending = false;
-                                            parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                            return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                         });
                                     });
                                 }));
