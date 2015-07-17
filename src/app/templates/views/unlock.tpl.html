@@ -10,7 +10,7 @@
         <p class="text-center">{{ user.Addresses[0].Email }}</p>
         <fieldset class="pure-form">
             <div class="form-group">
-                <input cautocomplete="off" lass="form-control dark" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
+                <input autocomplete="off" class="form-control dark password" autofocus type="password" ng-keypress="keypress($event)" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
             </div>
             <a ui-sref="reset" class="login-support btn">{{ 'FORGOT_PASSWORD?' | translate }}</a>
             <button type="button" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" ng-click="tryDecrypt()">
