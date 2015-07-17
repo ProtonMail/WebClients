@@ -18,6 +18,10 @@ angular.module("proton.controllers.Auth", [
 ) {
     $rootScope.pageName = "Login";
 
+    if ($rootScope.tempUser===undefined) {
+        $rootScope.tempUser = [];
+    }
+
     if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
         try {
             $rootScope.user = authentication.fetchUserInfo();
@@ -57,6 +61,9 @@ angular.module("proton.controllers.Auth", [
                     // console.log('loginWithCredentials done', result);
                 	if (result.data.AccessToken) {
                         $rootScope.isLoggedIn = true;
+                        $rootScope.tempUser = [];
+                        $rootScope.tempUser.username = $scope.username;
+                        $rootScope.tempUser.password = $scope.password;
                         if (result.data.AccessToken.length < 50) {
                             return authentication.fetchUserInfo()
                             .then(

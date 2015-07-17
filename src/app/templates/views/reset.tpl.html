@@ -1,6 +1,6 @@
 <div class="panel panel-default wrap panel-medium">
 
-    <div class="panel-body" ng-hide="showForm">
+    <div class="panel-body" ng-hide="showForm || showEmailMessage">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
 
         <div class="alert alert-danger">
@@ -19,14 +19,23 @@
     </div>
 
 
-    <div class="panel-body" ng-show="(showForm && user.NotificationEmail !== '') && !startGen && (resetMailboxToken===undefined)">
+    <div class="panel-body" ng-show="showEmailMessage">
         <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
-        We've sent a confirmation email to your 'Recovery / Notification' email address with instructions for resetting your Mailbox.</p>
+        We've sent a verification code to your <strong>Recovery Email</strong>. Enter it below to continue.</p>
+        <form ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm">
+            <div class="form-group">
+                <label for="resetMbCode">Verification Code</label>
+                <input type="text" ng-model="account.resetMbCode" id="resetMbCode" class="form-control">
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="btn btn-primary">Reset Mailbox</button>
+            </div>
+        </form>
     </div>
 
-    <div class="panel-body" ng-show="((showForm && user.NotificationEmail == '') || resetMailboxToken) && !startGen">
+    <div class="panel-body" ng-show="showForm">
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 

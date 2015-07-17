@@ -17,7 +17,7 @@ angular.module("proton.models.reset", [])
         },
         // GET
         validateResetToken: function(Obj) {
-            return $http.get(authentication.baseURL + '/reset/' + encodeURIComponent(Obj.token));
+            return $http.get(authentication.baseURL + '/reset/' + Obj.username + '/' + encodeURIComponent(Obj.token));
         }
     };
 });
