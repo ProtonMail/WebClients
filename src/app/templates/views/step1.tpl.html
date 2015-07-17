@@ -2,31 +2,42 @@
     <div class="panel-heading">
         <h1 class="text-center">Creating Account...</h1>
     </div>
+
     <div class="panel-body">   
-        <ol>
-            <li ng-class="{ 'done': keyGen }">
-                <i ng-hide="keyGen" class="fa fa-square-o"></i> 
-                <i ng-show="keyGen" class="fa fa-check-square"></i> 
-                Generating Keys
+        <ol id="creationList">
+            <li ng-class="{ 'done': genNewKeys }">
+                <i ng-hide="genNewKeys" class="fa fa-square-o"></i> 
+                <i ng-show="genNewKeys" class="fa fa-check-square"></i> 
+                Generating Encryption Keys
             </li>
-            <li ng-class="{ 'done': keySave }">
-                <i ng-hide="keySave" class="fa fa-square-o"></i> 
-                <i ng-show="keySave" class="fa fa-check-square"></i> 
-                Saving Encrypted Keys
+            <li ng-class="{ 'done': createUser }">
+                <i ng-hide="createUser" class="fa fa-square-o"></i> 
+                <i ng-show="createUser" class="fa fa-check-square"></i> 
+                Creating New User
             </li>
-            <li ng-class="{ 'done': Verify }">
-                <i ng-hide="Verify" class="fa fa-square-o"></i> 
-                <i ng-show="Verify" class="fa fa-check-square"></i> 
+            <li ng-class="{ 'done': logUserIn }">
+                <i ng-hide="logUserIn" class="fa fa-square-o"></i> 
+                <i ng-show="logUserIn" class="fa fa-check-square"></i> 
                 Verifying New Account
             </li>
-            <li ng-class="{ 'done': FetchAcc }">
-                <i ng-hide="FetchAcc" class="fa fa-square-o"></i> 
-                <i ng-show="FetchAcc" class="fa fa-check-square"></i> 
-                Loading New Account
+            <li ng-class="{ 'done': decryptAccessToken }">
+                <i ng-hide="decryptAccessToken" class="fa fa-square-o"></i> 
+                <i ng-show="decryptAccessToken" class="fa fa-check-square"></i> 
+                Verifying Encryption Keys
             </li>            
-            <li ng-class="{ 'done': Redirect }">
-                <i ng-hide="Redirect" class="fa fa-square-o"></i> 
-                <i ng-show="Redirect" class="fa fa-check-square"></i> 
+            <li ng-class="{ 'done': mailboxLogin }">
+                <i ng-hide="mailboxLogin" class="fa fa-square-o"></i> 
+                <i ng-show="mailboxLogin" class="fa fa-check-square"></i> 
+                Loading New Account
+            </li>
+            <li ng-class="{ 'done': getUserInfo }">
+                <i ng-hide="getUserInfo" class="fa fa-square-o"></i> 
+                <i ng-show="getUserInfo" class="fa fa-check-square"></i> 
+                Done!
+            </li>
+            <li ng-class="{ 'done': finishCreation }">
+                <i ng-hide="finishCreation" class="fa fa-square-o"></i> 
+                <i ng-show="finishCreation" class="fa fa-check-square"></i> 
                 Redirecting
             </li>
         </ol>
