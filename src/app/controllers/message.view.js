@@ -360,8 +360,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         }
         else if (action === 'replyall') {
             base.Action = 1;
-            base.ToList = _.union([{Name: message.SenderName, Address: message.SenderAddress}], message.CCList, message.BCCList, message.ToList);
-            base.ToList = _.filter(base.ToList, function (c) { return _.find($scope.user.Addresses, function(a) { return a.Email === c.Address;}) === undefined;});
+            base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
+            base.CCList = _.union(message.ToList, message.CCList);
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
