@@ -12,6 +12,18 @@ var API_TARGETS = {
 
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 
+function randomString(length) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < length; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+var passphrase = randomString(10);
+
 module.exports = function(grunt) {
     grunt.loadTasks("tasks");
     require("load-grunt-tasks")(grunt);
@@ -102,7 +114,8 @@ module.exports = function(grunt) {
                         debug: true,
                         apiUrl: apiUrl(),
                         app_version: '2.0.0',
-                        api_version: '1'
+                        api_version: '1',
+                        passphrase: passphrase
                     }
                 }
             },
@@ -112,7 +125,8 @@ module.exports = function(grunt) {
                         debug: false,
                         apiUrl: apiUrl(),
                         app_version: '2.0.0',
-                        api_version: '1'
+                        api_version: '1',
+                        passphrase: passphrase
                     }
                 }
             }
