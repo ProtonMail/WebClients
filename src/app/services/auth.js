@@ -25,7 +25,7 @@ angular.module("proton.authentication", [
         auth.saveAuthData = function(data) {
 
             window.localStorage[OAUTH_KEY + ":Uid"] = data.Uid;
-        
+
             date = moment(Date.now() + data.ExpiresIn * 1000);
             window.localStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
             window.localStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
@@ -42,6 +42,10 @@ angular.module("proton.authentication", [
 
         auth.savePassword = function(pwd) {
             window.sessionStorage[MAILBOX_PASSWORD_KEY] = auth.mailboxPassword = pwd;
+        };
+
+        auth.getPassword = function() {
+            return window.sessionStorage[MAILBOX_PASSWORD_KEY];
         };
 
         // CONFIG-TIME API FUNCTIONS
@@ -61,7 +65,7 @@ angular.module("proton.authentication", [
                     auth.data.shouldRefresh = true;
                 }
 
-                auth.mailboxPassword = window.sessionStorage[MAILBOX_PASSWORD_KEY];
+                auth.mailboxPassword = auth.getPassword();
                 if (auth.mailboxPassword) {
                     pmcwProvider.setMailboxPassword(auth.mailboxPassword);
                 }
@@ -306,15 +310,15 @@ angular.module("proton.authentication", [
 
                         pmcw.checkMailboxPassword(epk, pwd, accessToken)
                         .then(
-                            function(response) {                             
+                            function(response) {
                                 auth.savePassword(pwd);
                                 api.receivedCredentials({
                                     "AccessToken": response,
                                     "RefreshToken": TemporaryAccessData.RefreshToken,
                                     "Uid": TemporaryAccessData.Uid,
-                                    "ExpiresIn": TemporaryAccessData.ExpiresIn, 
+                                    "ExpiresIn": TemporaryAccessData.ExpiresIn,
                                     "EventID": TemporaryAccessData.EventID
-                                }); 
+                                });
                                 req.resolve(200);
                             },
                             function(rejection) {
@@ -324,7 +328,7 @@ angular.module("proton.authentication", [
                                 });
                             }
                         );
-                    } 
+                    }
                     else {
                         req.reject({
                             message: "Password is required"
