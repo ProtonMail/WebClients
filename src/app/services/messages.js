@@ -13,7 +13,9 @@ angular.module("proton.messages", ["proton.constants"])
 		var UPDATE_FLAG = 3;
         var inboxOneParams = {Location: 0, Page: 0};
         var inboxTwoParams = {Location: 0, Page: 1};
+        var inboxBufferParams = {Location: 0, Page: 6, PageSize: 20};
         var sentOneParams = {Location: 2, Page: 0};
+        var cachedParams = [JSON.stringify(inboxOneParams), JSON.stringify(inboxTwoParams), JSON.stringify(sentOneParams)];
         var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
         // Parameters shared between api / cache / message view / message list
         var fields = [
@@ -233,16 +235,19 @@ angular.module("proton.messages", ["proton.constants"])
 
                 inboxOneMetaData = Message.query(inboxOneParams).$promise;
                 inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
+                inboxBufferMetaData = Message.query(inboxBufferParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                        addMessageList(result.inboxOne);
-                        addMessageList(result.inboxTwo);
-                        cachedMetadata.inbox = result.inboxOne.concat(result.inboxTwo);
-                        cachedMetadata.sent = result.sentOne;
-                        this.started = true;
+                $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, inboxBuffer: inboxBufferMetaData, sentOne: sentOneMetaData}).then(function(result) {
+                    console.log(result.inboxBuffer);
+                    addMessageList(result.inboxOne);
+                    addMessageList(result.inboxTwo);
+                    cachedMetadata.inbox = result.inboxOne.concat(result.inboxTwo.concat(result.inboxBuffer));
+                    console.log(cachedMetadata.inbox[100]);
+                    cachedMetadata.sent = result.sentOne;
+                    this.started = true;
 
-                        deferred.resolve();
+                    deferred.resolve();
                 }.bind(this));
 
                 return deferred.promise;
@@ -255,7 +260,7 @@ angular.module("proton.messages", ["proton.constants"])
                 this.start();
             },
             // Function for dealing with message cache updates
-            set: function(messages) {
+            set: function(messages, preventRefresh, params) {
                 var promises = [];
                 _.each(messages, function(message) {
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
@@ -325,7 +330,16 @@ angular.module("proton.messages", ["proton.constants"])
                         }
                     }
                 });
-
+                $q.all(promises).then(function() {
+                    // Does not refresh if you move messages on your device on a non-cached page
+                    // This prevents the messages from reapearing for a few seconds
+                    if (!preventRefresh || cachedParams.indexOf(JSON.stringify(params)) !== -1) {
+                        refreshMessagesCache();
+                    }
+                });
+            },
+            sync: function() {
+                var promises = [];
                 if (cachedMetadata.inbox.length < 100) {
                     promises.push(cachedMetadata.sync('inbox'));
                 }
