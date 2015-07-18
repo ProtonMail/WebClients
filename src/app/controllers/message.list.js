@@ -566,7 +566,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         promiseAction = function(result) {
             if(events.length > 0) {
-                // messageCache.sync();
+                messageCache.sync();
             }
             if(inDelete) {
                 if(ids.length > 1) {
