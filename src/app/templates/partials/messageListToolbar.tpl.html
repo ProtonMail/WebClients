@@ -187,6 +187,7 @@
         ng-if="('secured.drafts' | isState)">
             <a
             href
+            ng-class="{ disabled: messages == 0 }"
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)"
             pt-placement="bottom">
                 <i class="fa fa-warning"></i>
@@ -198,6 +199,7 @@
         ng-if="('secured.spam' | isState)">
             <a
             href
+            ng-class="{ disabled: messages == 0 }"
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.spam)"
             pt-placement="bottom">
                 <i class="fa fa-warning"></i>
@@ -209,6 +211,7 @@
         ng-if="('secured.trash' | isState)">
             <a
             href
+            ng-class="{ disabled: messages == 0 }"
             ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.trash)"
             pt-placement="bottom">
                 <i class="fa fa-warning"></i>
