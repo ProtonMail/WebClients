@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <base href="/">
     <title>ProtonMail</title>
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="https://protonmail.ch/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon_57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicon_57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon_72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon_114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon_120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon_144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon_152.png">
+    <meta name="application-name" content="ProtonMail">
+    <meta name="msapplication-TileImage" content="/assets/favicon_144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
     <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
     <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">{{ user.Theme }}</style>
