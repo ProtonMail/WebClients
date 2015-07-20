@@ -555,10 +555,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        if(events.length > 0) {
-            messageCache.set(events, true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
-        }
-
         $scope.unselectAllMessages();
 
         messageCounts.updateUnread('move', movedMessages);
@@ -566,7 +562,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         promiseAction = function(result) {
             if(events.length > 0) {
-                messageCache.sync();
+    		    messageCache.set(events);
             }
             if(inDelete) {
                 if(ids.length > 1) {
