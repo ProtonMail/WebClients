@@ -105,7 +105,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             number: daysToCrack,
             word: word
         };
-    }; 
+    };
 
     $scope.generateKeys = function(userID, pass) {
         //var deferred = $q.defer();
@@ -129,7 +129,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.checkAvailability = function() {
         console.log('checkAvailability');
         return User.available({ username: $scope.account.Username }).$promise
-        .then( 
+        .then(
             function(response) {
                 var promise = $q.defer();
                 if (response.error) {
@@ -142,7 +142,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     return promise.reject('Username taken.');
                 }
                 else {
-                    $scope.creating = true;                           
+                    $scope.creating = true;
                     return promise.resolve(200);
                 }
             }
@@ -198,7 +198,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.doDecryptAccessToken = function(response) {
         $scope.authResponse = response.data;
         console.log('doDecryptAccessToken', $scope.authResponse.EncPrivateKey, $scope.account.mailboxPassword);
-        $scope.decryptAccessToken = true;         
+        $scope.decryptAccessToken = true;
         return pmcw.decryptPrivateKey($scope.authResponse.EncPrivateKey, $scope.account.mailboxPassword);
     };
 
@@ -245,7 +245,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 .then( $scope.newMailbox )
                 .then( function(response) { $scope.resetMailboxTokenResponse(response); })
                 .then( $scope.doLogUserIn )
-                .then( function(response) { $scope.doDecryptAccessToken(response); } )                
+                .then( function(response) { $scope.doDecryptAccessToken(response); } )
                 .then( $scope.doMailboxLogin )
                 .then( $scope.finishRedirect )
                 .catch( function(err) {
@@ -256,10 +256,9 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     };
 
     $scope.verifyResetCode = function(form) {
-        if ($scope.account.resetMbCode===undefined || $scope.account.resetMbCode==='') {
+        if (angular.isUndefined($scope.account.resetMbCode) || $scope.account.resetMbCode.length === 0) {
             notify('Verification Code required');
-        }
-        else {
+        } else {
             Reset.validateResetToken({
                 username: $rootScope.tempUser.username,
                 token: $scope.account.resetMbCode
@@ -267,9 +266,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             .then( function(response) {
                 if (response.data.Code!==1000) {
                     notify('Invalid Verification Code.');
-                }
-                else {
-                    $scope.mailboxResetToken = response.data.Code;
+                } else {
+                    $scope.resetMailboxToken = $scope.account.resetMbCode;
                     $scope.showForm = true;
                     $scope.showEmailMessage = false;
                 }
@@ -279,7 +277,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.resetMailboxInit = function() {
         authentication.setTokenUID({
-            "AccessToken": $rootScope.resetToken, 
+            "AccessToken": $rootScope.resetToken,
             "Uid": $rootScope.resetUID
         });
         var getMBToken = function() {
@@ -354,7 +352,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         }
         else {
             promise.resolve(200);
-        } 
+        }
         return promise;
     };
 
