@@ -38,7 +38,7 @@
                     </li>
                 </ul>
             </li>
-            <li ng-if="message.BCCList.length > 0">
+            <li ng-if="message.BCCList.length > 0 && 'secured.sent.**' | includedByState">
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in message.BCCList">
