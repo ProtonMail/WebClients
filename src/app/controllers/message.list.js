@@ -555,7 +555,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        messageCache.set(events);
+        if(events.length > 0) {
+            messageCache.set(events, true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+        }
+        
         $scope.unselectAllMessages();
 
         messageCounts.updateUnread('move', movedMessages);
