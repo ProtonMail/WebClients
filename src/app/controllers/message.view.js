@@ -362,6 +362,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.Action = 1;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.CCList = _.union(message.ToList, message.CCList);
+            _.each(authentication.user.Addresses, function(address) {
+                base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
+                base.CCList = _.filter(base.CCList, function(contact) { return contact.Address !== address.Email; });
+            });
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
