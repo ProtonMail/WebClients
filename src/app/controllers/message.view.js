@@ -52,7 +52,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         }
 
         if(authentication.user.ShowImages===1) {
-            message.toggleImages();
+            message.imagesHidden = false;
             $scope.displayContent();
         }
     };
