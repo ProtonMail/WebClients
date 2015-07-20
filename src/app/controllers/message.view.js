@@ -362,6 +362,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.Action = 1;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.CCList = _.union(message.ToList, message.CCList);
+            // Remove user address in CCList and ToList
             _.each(authentication.user.Addresses, function(address) {
                 base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
                 base.CCList = _.filter(base.CCList, function(contact) { return contact.Address !== address.Email; });
