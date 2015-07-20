@@ -300,6 +300,12 @@ angular.module("proton.routes", [
             "panel@reset": {
                 templateUrl: "templates/views/reset.tpl.html"
             }
+        },
+        onEnter: function($rootScope, $state) {
+            if ($rootScope.TemporaryAccessData===undefined) {
+                $state.go('login');
+                return;
+            }
         }
     })
 
