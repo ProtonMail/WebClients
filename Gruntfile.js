@@ -466,6 +466,20 @@ module.exports = function(grunt) {
             }
         },
 
+        cacheBust: {
+            options: {
+                deleteOriginals: true,
+                ignorePatterns: [
+                    'openpgp.min.js'
+                ]
+            },
+            assets: {
+                files: [{
+                    src: ['<%= compile_dir %>/index.html']
+                }]
+            }
+        },
+
         delta: {
             options: {
                 livereload: 40093,
@@ -602,11 +616,11 @@ module.exports = function(grunt) {
         "copy:compile_assets",
         "ngAnnotate",
         "cssmin",
-        // "uncss",
         "concat:compile_js",
         "uglify",
         "copy:compile_external",
         "index:compile",
+        "cacheBust",
         "connect:compile"
     ]);
 
