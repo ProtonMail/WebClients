@@ -77,13 +77,11 @@ angular.module("proton.messages", ["proton.constants"])
             // when implemented in API
             sync: function(cacheLoc) {
                 var deferred = $q.defer();
-                console.log('sync', cachedMetadata.inbox.length);
                 if (cacheLoc === 'inbox') {
                     var lastMessage = _.last(cachedMetadata.inbox);
                     var numMessages = 120 - cachedMetadata.inbox.length;
                     Message.query({Location: 0, Page: 0, PageSize: numMessages, End: lastMessage.Time}).$promise.then(function(result) {
                         angular.copy(cachedMetadata.inbox.concat(result), cachedMetadata.inbox);
-                        console.log(cachedMetadata.inbox.length);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
                     });
@@ -339,7 +337,6 @@ angular.module("proton.messages", ["proton.constants"])
             sync: function() {
                 var promises = [];
                 if (cachedMetadata.inbox.length < 100) {
-                    console.log('sync inbox');
                     promises.push(cachedMetadata.sync('inbox'));
                 }
 
@@ -378,7 +375,6 @@ angular.module("proton.messages", ["proton.constants"])
                             deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
                             return deferred.promise;
                     } else if (_.isEqual(params, inboxTwoParams)) {
-                            console.log(cachedMetadata.inbox.length);
                             deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
                             return deferred.promise;
                     } else if (_.isEqual(params, sentOneParams)) {
