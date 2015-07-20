@@ -188,13 +188,25 @@ angular.module("proton.controllers.Settings", [
     $scope.saveNotification = function(form) {
         networkActivityTracker.track(
             Setting.noticeEmail({
+                "Password": $scope.noticeePassword,
                 "NotificationEmail": $scope.notificationEmail
-            }).$promise.then(function(response) {
-                authentication.user.NotificationEmail = $scope.notificationEmail;
-                notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
-            }, function(response) {
-                $log.error(response);
-            })
+            }).$promise
+            .then(
+                function(response) {
+                    if (response && response.Code===1000) {
+                        authentication.user.NotificationEmail = $scope.notificationEmail;
+                        notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
+                    }
+                    else {
+                        if (response.Error) {
+                            notify($translate.instant(response.Error));
+                        }
+                    }
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
         );
     };
 

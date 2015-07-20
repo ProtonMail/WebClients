@@ -66,7 +66,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 .then( $scope.generateNewKeys )
                 .then( $scope.doCreateUser )
                 .then( $scope.doLogUserIn )
-                .then( function(response) { $scope.doDecryptAccessToken(response); } )
+                .then( $scope.doDecryptAccessToken )
                 .then( $scope.doMailboxLogin )
                 .then( $scope.doGetUserInfo )
                 .then( $scope.finishRedirect )
@@ -115,20 +115,21 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.generateKeys = function(userID, pass) {
         $log.debug('generateKeys');
-        //var deferred = $q.defer();
         var keyPair = pmcw.generateKeysRSA(userID, pass);
         return keyPair.then(
             function(response) {
+                var deferred = $q.defer();
                 $scope.account.PublicKey = response.publicKeyArmored;
                 $scope.account.PrivateKey = response.privateKeyArmored;
-                return response;
-                //return deferred.resolve(response);
+                deferred.resolve(response);
+                return deferred;
             },
             function(err) {
+                var deferred = $q.defer();
                 $log.error(err);
                 $scope.error = err;
-                return err;
-                //return deferred.reject(err);
+                deferred.reject(err); 
+                return deferred;
             }
         );
     };
@@ -244,10 +245,12 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         );
         delete $rootScope.tempUser;
         $timeout( function() {
-            $state.go("secured.inbox");
+            // TODO: not all promises are resolved, so we simply refresh.
+            // $state.go("secured.inbox");
+            window.location = '/inbox';
         }, 100);
         deferred.resolve(200);
-        return deferred.promise;
+        return deferred.promise; 
     };
 
     // ---------------------------------------------------
@@ -263,15 +266,18 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 $rootScope.resetMailboxToken===undefined && 
                 $scope.resetMailboxToken===undefined
             ) {
-                notify('Missing reset token.');
+                notify({
+                    classes: "notification-danger",
+                    message: 'Missing reset token.'
+                });
                 return;
             }
             networkActivityTracker.track(
                 $scope.generateNewKeys()
                 .then( $scope.newMailbox )
-                .then( function(response) { $scope.resetMailboxTokenResponse(response); })
+                .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )
-                .then( function(response) { $scope.doDecryptAccessToken(response); } )
+                .then( $scope.doDecryptAccessToken )
                 .then( $scope.doMailboxLogin )
                 .then( $scope.finishRedirect )
                 .catch( function(err) {
@@ -326,29 +332,30 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         };
         var tokenResponse = function(response) {
             $log.debug('tokenResponse', response);
-            var promise = $q.defer();
+            var deferred = $q.defer();
             if (response.data.Error || response.data.Code !== 1000) {
-                notify(response.data.Error);
-                promise.reject(response.data.Error);
+                notify(response);
+                $log.error(response);
+                deferred.reject(response.data.Error);
             }
             else {
                 if (response.data.Token) {
                     $log.debug('No reset email. token received.');
                     $scope.resetMailboxToken = response.data.Token;
                     $scope.showForm = true;
-                    promise.resolve(200);
+                    deferred.resolve(200);
                 }
                 else {
                     $log.debug('Check email for token..');
                     $scope.showEmailMessage = true;
-                    promise.resolve(200);
+                    deferred.resolve(200);
                 }
             }
-            return promise;
+            return deferred.promise;
         };
         networkActivityTracker.track(
             getMBToken()
-            .then( function(response) { tokenResponse(response); })
+            .then( tokenResponse )
         );
     };
 
@@ -383,11 +390,13 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         else if (response.data.Error) {
             if (response.data.ErrorDescription!=='') {
                 notify(response.data.ErrorDescription);
+                $log.error(response);
                 $scope.startGen = false;
                 promise.reject(response.data.ErrorDescription);
             }
             else {
                 notify(response);
+                $log.error(response);
                 $scope.startGen = false;
                 promise.reject(response);
             }

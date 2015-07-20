@@ -34,10 +34,12 @@ angular.module("proton.controllers.Support", [
     };
 
     $scope.resetLostPassword = function(form) {
+        $log.debug('resetLostPassword');
         if(form.$valid) {
+            $log.debug('resetLostPassword: form valid');
             networkActivityTracker.track(
                 Reset.requestResetToken({
-                    Name: $scope.params.username,
+                    Username: $scope.params.username,
                     NotificationEmail: $scope.params.recoveryEmail
                 }).then(
                     function(response) {

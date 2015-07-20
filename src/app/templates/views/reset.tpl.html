@@ -12,7 +12,7 @@
         </div>
 
         <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">
-            <span ng-if="user.NotificationEmail !== ''">{{ 'SEND_RESET_EMAIL' | translate }}</span>
+            <span ng-if="user.NotificationEmail !== ''">{{ 'RESET' | translate }}</span>
             <span ng-if="user.NotificationEmail === ''">{{ 'RESET_NOW' | translate }}</span>
         </button>
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
