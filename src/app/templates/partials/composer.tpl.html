@@ -185,7 +185,7 @@
                     <button
                     ng-hide="message.loading()"
                     class="btn btn-sm btn-primary"
-                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
+                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message) || message.uploading"
                     ng-click="send(message)">
                         <i class="fa fa-send" ng-show="user.ComposerMode===1"></i>
                         {{ 'SEND' | translate }}
