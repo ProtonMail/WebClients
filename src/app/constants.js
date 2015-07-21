@@ -18,7 +18,7 @@ angular.module('proton.constants', [])
     INTERVAL_EVENT_TIMER: 15000, // time between querying the event log
     TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
-    SAVE_TIMEOUT_TIME: 3000, // 3 seconds
+    SAVE_TIMEOUT_TIME: 2000, // 2 seconds
     MAX_EXPIRATION_TIME: 672, // hours
     MESSAGES_PER_PAGE: 50,
     COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
