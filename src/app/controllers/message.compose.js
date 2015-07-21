@@ -175,15 +175,23 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.addAttachment = function(file, message) {
-        var attachmentPromise;
+        var tempPacket = {};
+
+        tempPacket.filename = file.name;
+        tempPacket.uploading = true;
+
         message.uploading = true;
-        attachmentPromise = attachments.load(file).then(
+        message.attachmentsToggle = true;
+        message.Attachments.push(tempPacket);
+
+        attachments.load(file).then(
             function(packets) {
                 return attachments.upload(packets, message.ID).then(
                     function(result) {
-                        message.Attachments.push(result);
+                        var index = message.Attachments.indexOf(tempPacket);
+
+                        message.Attachments.splice(index, 1, result);
                         message.uploading = false;
-                        message.attachmentsToggle = true;
                     }
                 );
             }

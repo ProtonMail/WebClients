@@ -146,7 +146,7 @@
                     </button>
                     <div class="previews" ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
                         <span title="Attachment" class="preview-template" ng-repeat="attachment in message.Attachments">
-                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span> <a href="" class="preview-close" ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
+                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span> <i ng-show="!!attachment.uploading" class="fa fa-spin fa-circle-o-notch"></i><a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
                         </span>
                     </div>
                 </div>
