@@ -81,7 +81,7 @@ angular.module("proton.messages", ["proton.constants"])
                     var lastMessage = _.last(cachedMetadata.inbox);
                     var numMessages = 120 - cachedMetadata.inbox.length;
                     Message.query({Location: 0, Page: 0, PageSize: numMessages, End: lastMessage.Time}).$promise.then(function(result) {
-                        angular.merge(cachedMetadata.inbox, result);
+                        angular.copy(cachedMetadata.inbox.concat(result), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
                     });
@@ -372,14 +372,14 @@ angular.module("proton.messages", ["proton.constants"])
                 var deferred = $q.defer();
                 var process = function() {
                     if (_.isEqual(params, inboxOneParams)) {
-                            deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
-                            return deferred.promise;
+                        deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
+                        return deferred.promise;
                     } else if (_.isEqual(params, inboxTwoParams)) {
-                            deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
-                            return deferred.promise;
+                        deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                        return deferred.promise;
                     } else if (_.isEqual(params, sentOneParams)) {
-                            deferred.resolve(cachedMetadata.sent);
-                            return deferred.promise;
+                        deferred.resolve(cachedMetadata.sent);
+                        return deferred.promise;
                     } else {
                         return Message.query(params).$promise;
                     }
