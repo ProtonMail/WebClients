@@ -379,7 +379,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 }
                 else {
                     promises.push(packets.push({
-                        ID: element.AttachmentID,
+                        ID: element.AttachmentID || element.ID,
                         Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
                         Algo: element.sessionKey.algo
                     }));
