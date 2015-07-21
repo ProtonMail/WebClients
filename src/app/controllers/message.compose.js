@@ -53,6 +53,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
+        $log.debug('loadMessage');
         message.saved = 2;
         message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
         $scope.initMessage(angular.copy(message), save);
