@@ -45,7 +45,7 @@
                             {{ 'SETTINGS' | translate }}
                         </a>
                     </li>
-                    <li ng-if="isLoggedIn && ('secured.**' | includedByState)">
+                    <li>
                         <a href ng-click="openReportModal()">
                             <i class="fa fa-bug"></i>
                             {{ 'REPORT_BUG' | translate }}
