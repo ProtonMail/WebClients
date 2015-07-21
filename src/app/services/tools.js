@@ -301,18 +301,21 @@ angular.module("proton.tools", ["proton.constants"])
 
             if (max < gb) {
                 // render bar in terms of MB
-                cur = (cur/kb).toPrecision(2);
+                cur = (cur/kb).toFixed(2);
+
                 if (parseInt(cur) === 0 && current > 0) {
                     cur = 0.01;
                 }
+
                 return cur+'/'+(Math.round(max/kb/kb))+' MB';
-            }
-            else {
+            } else {
                 // render bar in terms of GB
                 cur = (cur/(kb*kb)).toPrecision(2);
+
                 if (parseInt(cur) === 0 && current > 0) {
                     cur = 0.01;
                 }
+
                 return cur+'/'+(Math.round(max/kb/kb/kb))+' GB';
             }
         }

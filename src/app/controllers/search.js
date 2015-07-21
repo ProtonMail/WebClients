@@ -17,6 +17,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     function initParams() {
         var params = {};
 
+        params.page = undefined;
         params.words = undefined;
         params.from = undefined;
         params.to = undefined;
