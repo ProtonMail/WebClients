@@ -16,20 +16,32 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     CONSTANTS,
     CONFIG,
     $timeout) {
+    // Variables
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
-
     $scope.labels = authentication.user.Labels;
-    $scope.$on('updateLabels', function(){$scope.updateLabels();});
-    $scope.updateLabels = function () {
-        $scope.labels = authentication.user.Labels;
-    };
-
     $scope.appVersion = CONFIG.app_version;
-
+    $scope.droppedMessages = [];
     $scope.droppableOptions = {
         accept: '.ui-draggable',
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
+    };
+    // Listeners
+    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+    $scope.$on('updateCounters', function(event) {
+        messageCounts.refresh();
+    });
+
+    $scope.initialization = function() {
+        $scope.storage = $scope.renderStorageBar();
+        // Actions delayed
+        $timeout(function() {
+            messageCounts.refresh();
+        });
+    };
+
+    $scope.updateLabels = function () {
+        $scope.labels = authentication.user.Labels;
     };
 
     $scope.spinIcon = function() {
@@ -39,7 +51,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }, 510);
     };
 
-    $scope.droppedMessages = [];
     // Call event to open new composer
     $scope.compose = function() {
         $rootScope.$broadcast('newMessage');
@@ -98,14 +109,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         return messageCounts.get();
     };
 
-    $scope.$on('updateCounters', function(event) {
-        messageCounts.refresh();
-    });
-
-    $timeout(function() {
-        messageCounts.refresh();
-    });
-
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
@@ -125,4 +128,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
         return count;
     };
+
+    $scope.initialization();
 });
