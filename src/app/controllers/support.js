@@ -33,6 +33,42 @@ angular.module("proton.controllers.Support", [
         return $state.params.data.type || "";
     };
 
+    $scope.resetLoginPass = function(form) {
+        $log.debug('resetLoginPass');
+        if (
+            angular.isUndefined($scope.params.resetLoginCode) || 
+            $scope.params.resetLoginCode.length === 0
+        ) {
+            $log.error('Verification Code required');
+            notify('Verification Code required');
+        } 
+        else {
+            if (form.$valid) {
+                $log.debug('finishLoginReset: form valid');
+                Reset.validateResetToken({
+                    username: $scope.params.username,
+                    token: $scope.params.resetLoginCode
+                })
+                .then( function(response) {
+                    if (response.data.Code!==1000) {
+                        notify({
+                            classes: 'notification-danger',
+                            message: 'Invalid Verification Code.'
+                        });
+                    } 
+                    else {
+                        // show the form.
+                        $scope.newLoginInput = true;
+                    }
+                });
+            }
+        }
+    };
+
+    $scope.finishLoginPassReset = function(form) {
+
+    };
+
     $scope.resetLostPassword = function(form) {
         $log.debug('resetLostPassword');
         if(form.$valid) {
@@ -50,13 +86,7 @@ angular.module("proton.controllers.Support", [
                             });
                         }
                         else {
-                            $state.go("support.message", {
-                                data: {
-                                    title: "Check your Email",
-                                    content: "We've emailed you a secure link to reset your password.",
-                                    type: "alert-info"
-                                }
-                            });
+                            $scope.inputResetToken = true;
                         }
                     },
                     function() {
@@ -68,15 +98,22 @@ angular.module("proton.controllers.Support", [
     };
 
     $scope.confirmNewPassword = function(form) {
+        $log.debug('confirmNewPassword');
         if(form.$valid) {
+                $log.debug('confirmNewPassword: form valid');
                 networkActivityTracker.track(
                 Reset.resetPassword({
-                    Token: $state.params.token,
-                    NewPassword: $scope.params.password,
+                    Username: $scope.params.username,
+                    Token: $scope.params.resetLoginCode,
+                    NewPassword: $scope.loginPassword,
                 }).then(
                     function(response) {
+                        $log.debug(response);
                         if (response.data.Error) {
-                            notify(response.data.Error);
+                            notify({
+                                classes: "notification-danger",
+                                message: response.data.Error
+                            });
                         }
                         else {
                             $state.go("support.message", {data: {
@@ -87,11 +124,10 @@ angular.module("proton.controllers.Support", [
                         }
                     }, 
                     function(response) {
-                        $state.go("support.message", {data: {
-                            title: response.data.Error,
-                            content: response.data.Error,
-                            type: "alert-danger"
-                        }});
+                        notify({
+                            classes: "notification-danger",
+                            message: response.data.Error
+                        });
                     }
                 )
             );
