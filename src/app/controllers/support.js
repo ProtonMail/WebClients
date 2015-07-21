@@ -3,10 +3,10 @@ angular.module("proton.controllers.Support", [
 ])
 
 .controller("SupportController", function(
-    $scope, 
-    $state, 
-    $log, 
-    User, 
+    $scope,
+    $state,
+    $log,
+    User,
     tools,
     notify,
     Reset,
@@ -36,12 +36,12 @@ angular.module("proton.controllers.Support", [
     $scope.resetLoginPass = function(form) {
         $log.debug('resetLoginPass');
         if (
-            angular.isUndefined($scope.params.resetLoginCode) || 
+            angular.isUndefined($scope.params.resetLoginCode) ||
             $scope.params.resetLoginCode.length === 0
         ) {
             $log.error('Verification Code required');
             notify('Verification Code required');
-        } 
+        }
         else {
             if (form.$valid) {
                 $log.debug('finishLoginReset: form valid');
@@ -55,7 +55,7 @@ angular.module("proton.controllers.Support", [
                             classes: 'notification-danger',
                             message: 'Invalid Verification Code.'
                         });
-                    } 
+                    }
                     else {
                         // show the form.
                         $scope.newLoginInput = true;
@@ -79,7 +79,7 @@ angular.module("proton.controllers.Support", [
                     NotificationEmail: $scope.params.recoveryEmail
                 }).then(
                     function(response) {
-                        if (response.data.Code!==1000) { 
+                        if (response.data.Code!==1000) {
                             notify({
                                 classes: 'notification-danger',
                                 message: 'Wrong username or recovery email.'
@@ -105,7 +105,7 @@ angular.module("proton.controllers.Support", [
                 Reset.resetPassword({
                     Username: $scope.params.username,
                     Token: $scope.params.resetLoginCode,
-                    NewPassword: $scope.loginPassword,
+                    NewPassword: $scope.params.loginPassword,
                 }).then(
                     function(response) {
                         $log.debug(response);
@@ -122,7 +122,7 @@ angular.module("proton.controllers.Support", [
                                 type: "alert-success"
                             }});
                         }
-                    }, 
+                    },
                     function(response) {
                         notify({
                             classes: "notification-danger",
