@@ -400,6 +400,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var messages = [];
         var movedMessages = [];
 
+        $rootScope.refreshMessageList = true;
         var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
         movedMessages.push(m);
         messageCounts.updateUnread('move', movedMessages);
