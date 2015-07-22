@@ -84,6 +84,7 @@ angular.module("proton.authentication", [
             $q,
             $http,
             $timeout,
+            $log,
             pmcw,
             errorReporter,
             notify,
@@ -350,6 +351,9 @@ angular.module("proton.authentication", [
                             $rootScope.isLoggedIn = true;
                             $rootScope.user = user;
                             this.user = user;
+                            $log.debug(user.Theme);
+                            $log.debug(btoa(user.Theme));
+                            $log.debug(atob(user.Theme));
                             this.user.Theme = atob(user.Theme);
 
                             return user;
