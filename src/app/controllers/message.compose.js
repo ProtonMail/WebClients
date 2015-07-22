@@ -237,7 +237,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
-        $scope.focusComposer(message);
         $scope.decryptAttachments(message);
 
         $timeout(function() {
@@ -250,6 +249,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 });
             }
         });
+
+        $timeout(function() {
+            $scope.focusComposer(message);
+        }, 100);
     };
 
     $scope.onAddFile = function(message) {
@@ -393,9 +396,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     top:    bottomTop,
                     zIndex: bottomZ
                 });
-            }
-
-            else {
+            } else {
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
                         element.zIndex = ($scope.messages.length - (iteratee - index))*10;
@@ -406,7 +407,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             }
 
             // focus correct field
-            var composer = $('.composer')[index];
+            var composer = $('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
                 $(composer).find('.to-list').focus();
@@ -417,6 +418,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     message.editor.focus();
                 }, 500);
             }
+
             _.each($scope.messages, function(m) {
                 m.focussed = false;
             });
