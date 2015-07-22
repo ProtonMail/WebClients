@@ -139,72 +139,71 @@
                             <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
                         </div>
                     </div>
-                    <div 
-                    class="dropzone composer-dropzone" 
-                    dropzone="dropzoneConfig(message)" 
+                    <div
+                    class="dropzone composer-dropzone"
+                    dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed"></div>
-                    <squire 
-                    ng-model="message.Body" 
-                    message="message" 
+                    <squire
+                    ng-model="message.Body"
+                    message="message"
                     height="squireHeight(message)"></squire>
-                    <button 
-                    class="btn btn-sm attach-collapse" 
-                    ng-show="message.Attachments.length > 0" 
-                    ng-click="slideDown(message)" 
-                    pt-placement="left" 
+                    <button
+                    class="btn btn-sm attach-collapse"
+                    ng-show="message.Attachments.length > 0"
+                    ng-click="slideDown(message)"
+                    pt-placement="left"
                     pt-tooltip="{{ 'TOGGLE_DISPLAY_ATTACHMENTS' | translate }}">
-                        <i 
-                        class="fa fa-caret-up transition" 
+                        <i
+                        class="fa fa-caret-up transition"
                         ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
-                    <div 
-                    class="previews" 
+                    <div
+                    class="previews"
                     ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
-                        <span 
-                        title="Attachment" 
-                        class="preview-template" 
+                        <span
+                        title="Attachment"
+                        class="preview-template"
                         ng-repeat="attachment in message.Attachments">
-                            <span 
-                            class="preview-name" 
-                            ng-bind="attachment.filename || attachment.Name"></span> 
-                            <i 
-                            ng-show="!!attachment.uploading" 
+                            <span
+                            class="preview-name"
+                            ng-bind="attachment.filename || attachment.Name"></span>
+                            <i
+                            ng-show="!!attachment.uploading"
                             class="fa fa-spin fa-circle-o-notch"></i>
-                            <a 
-                            href="" 
-                            ng-show="!!!attachment.uploading" 
-                            class="preview-close" 
+                            <a
+                            href=""
+                            ng-show="!!!attachment.uploading"
+                            class="preview-close"
                             ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">
-                <span ng-hide="hideAttachment">
-                    <a 
-                    href=""
-                    class="btn btn-sm btn-primary btn-options btn-add-attachment"
-                    ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}"
-                    pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
-                    pt-placement="right"
-                    >
-                        <i class="fa fa-paperclip"></i>
-                    </a>
-                </span>            
-                <button 
-                class="btn btn-sm btn-default" 
-                ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}" 
-                pt-placement="right" 
-                pt-tooltip="{{ 'ENCRYPTION' | translate }}" 
+
+                <button
+                href=""
+                class="btn btn-sm btn-default btn-add-attachment"
+                ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}"
+                pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
+                pt-placement="right"
+                >
+                    <i class="fa fa-paperclip"></i>
+                </button>
+                <button
+                class="btn btn-sm btn-default"
+                ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}"
+                pt-placement="right"
+                pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
                     <span ng-show="user.ComposerMode===1"> {{ 'ENCRYPTION' | translate }}</span>
                 </button>
-                <button 
-                class="btn btn-sm btn-default" 
-                ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}" 
-                pt-placement="right" 
-                pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}" 
+                <button
+                class="btn btn-sm btn-default"
+                ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}"
+                pt-placement="right"
+                pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
                     <span ng-show="user.ComposerMode===1"> {{ 'EXPIRATION_TIME' | translate }}</span>
