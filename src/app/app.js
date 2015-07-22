@@ -3,7 +3,6 @@ angular.module("proton", [
     "ngSanitize",
     "ngResource",
     "ngCookies",
-    "LocalStorageModule",
     "btford.markdown",
     "ngFileUpload",
     "cgNotify",

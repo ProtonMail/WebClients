@@ -24,12 +24,12 @@ angular.module("proton.authentication", [
 
         auth.saveAuthData = function(data) {
 
-            window.localStorage[OAUTH_KEY + ":Uid"] = data.Uid;
+            window.sessionStorage[OAUTH_KEY + ":Uid"] = data.Uid;
 
             date = moment(Date.now() + data.ExpiresIn * 1000);
-            window.localStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
-            window.localStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-            window.localStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
+            window.sessionStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
+            window.sessionStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+            window.sessionStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
             auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             auth.data.ExpiresIn = date;
 
@@ -51,14 +51,14 @@ angular.module("proton.authentication", [
         // CONFIG-TIME API FUNCTIONS
 
         this.detectAuthenticationState = function() {
-            var dt = window.localStorage[OAUTH_KEY + ":ExpiresIn"];
+            var dt = window.sessionStorage[OAUTH_KEY + ":ExpiresIn"];
             if (dt) {
                 dt = moment(dt);
                 auth.data = {
-                    Uid: window.localStorage[OAUTH_KEY + ":Uid"],
+                    Uid: window.sessionStorage[OAUTH_KEY + ":Uid"],
                     ExpiresIn: dt,
-                    AccessToken: window.localStorage[OAUTH_KEY + ":AccessToken"],
-                    RefreshToken: window.localStorage[OAUTH_KEY + ":RefreshToken"]
+                    AccessToken: window.sessionStorage[OAUTH_KEY + ":AccessToken"],
+                    RefreshToken: window.sessionStorage[OAUTH_KEY + ":RefreshToken"]
                 };
 
                 if (dt.isBefore(Date.now())) {
@@ -85,7 +85,6 @@ angular.module("proton.authentication", [
             $http,
             $timeout,
             pmcw,
-            localStorageService,
             errorReporter,
             notify,
             CONFIG
@@ -137,7 +136,7 @@ angular.module("proton.authentication", [
                 },
 
                 getPrivateKey: function() {
-                    var pw = pmcw.decode_utf8_base64(localStorageService.get('protonmail_pw'));
+                    var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem('protonmail_pw'));
 
                     return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
                 },
@@ -276,9 +275,9 @@ angular.module("proton.authentication", [
 
                 // Removes all connection data
                 logout: function() {
-                    window.localStorage.clear();
+                    // Completely clear sessionstorage
                     window.sessionStorage.clear();
-
+                    
                     delete auth.data;
                     delete auth.mailboxPassword;
 

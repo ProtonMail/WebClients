@@ -14,7 +14,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $q,
     $sanitize,
     $sce,
-    localStorageService,
     networkActivityTracker,
     notify,
     Message,

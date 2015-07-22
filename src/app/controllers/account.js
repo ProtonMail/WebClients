@@ -15,7 +15,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     Reset,
     pmcw,
     tools,
-    localStorageService,
     notify
 ) {
     var mellt = new Mellt();
@@ -132,7 +131,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 var deferred = $q.defer();
                 $log.error(err);
                 $scope.error = err;
-                deferred.reject(err); 
+                deferred.reject(err);
                 return deferred;
             }
         );
@@ -202,7 +201,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.doLogUserIn = function() {
         $log.debug('doLogUserIn');
         $log.debug(
-            $rootScope.tempUser.username, 
+            $rootScope.tempUser.username,
             $rootScope.tempUser.password
         );
         $scope.logUserIn   = true;
@@ -217,7 +216,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $scope.authResponse = response.data;
         $scope.decryptAccessToken = true;
         return pmcw.decryptPrivateKey(
-            $scope.authResponse.EncPrivateKey, 
+            $scope.authResponse.EncPrivateKey,
             $scope.account.mailboxPassword
         );
     };
@@ -226,9 +225,9 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $log.debug('doMailboxLogin');
         $scope.mailboxLogin  = true;
         return authentication.unlockWithPassword(
-            $scope.authResponse.EncPrivateKey, 
-            $scope.account.mailboxPassword, 
-            $scope.authResponse.AccessToken, 
+            $scope.authResponse.EncPrivateKey,
+            $scope.account.mailboxPassword,
+            $scope.authResponse.AccessToken,
             $scope.authResponse
         );
     };
@@ -243,8 +242,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $log.debug('finishRedirect');
         var deferred = $q.defer();
         $scope.finishCreation = true;
-        localStorageService.bind(
-            $scope, 'protonmail_pw', 
+        window.sessionStorage.setItem(
+            'protonmail_pw',
             pmcw.encode_utf8_base64($scope.account.mailboxPassword)
         );
         delete $rootScope.tempUser;
@@ -254,7 +253,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             window.location = '/inbox';
         }, 100);
         deferred.resolve(200);
-        return deferred.promise; 
+        return deferred.promise;
     };
 
     // ---------------------------------------------------
@@ -267,7 +266,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $log.debug('resetMailbox');
         if (form.$valid) {
             if (
-                $rootScope.resetMailboxToken===undefined && 
+                $rootScope.resetMailboxToken===undefined &&
                 $scope.resetMailboxToken===undefined
             ) {
                 notify({
@@ -298,11 +297,11 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.verifyResetCode = function(form) {
         $log.debug('verifyResetCode');
         if (
-            angular.isUndefined($scope.account.resetMbCode) || 
+            angular.isUndefined($scope.account.resetMbCode) ||
             $scope.account.resetMbCode.length === 0
         ) {
             notify('Verification Code required');
-        } 
+        }
         else {
             Reset.validateResetToken({
                 username: $rootScope.tempUser.username,
@@ -314,7 +313,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                         classes: 'notification-danger',
                         message: 'Invalid Verification Code.'
                     });
-                } 
+                }
                 else {
                     $scope.resetMailboxToken = $scope.account.resetMbCode;
                     $scope.showForm = true;
