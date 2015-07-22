@@ -301,6 +301,21 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/reset.tpl.html"
             }
         },
+        resolve: {
+            token: function($http, $rootScope, authentication) {
+                return $http.post(authentication.baseURL + "/auth",
+                    _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
+                        ClientID: "demoapp",
+                        ClientSecret: "demopass",
+                        GrantType: "password",
+                        State: authentication.randomString(24),
+                        RedirectURI: "https://protonmail.ch",
+                        ResponseType: "token",
+                        Scope: "reset"
+                    })
+                );
+            }
+        },
         onEnter: function($rootScope, $state) {
             if ($rootScope.TemporaryAccessData===undefined) {
                 $state.go('login');
@@ -551,7 +566,7 @@ angular.module("proton.routes", [
             user: function(authentication) {
                 if(angular.isDefined(authentication.user) && authentication.user) {
                     return authentication.user;
-                } 
+                }
                 else {
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }

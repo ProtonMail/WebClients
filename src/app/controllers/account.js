@@ -15,7 +15,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     Reset,
     pmcw,
     tools,
-    notify
+    notify,
+    token
 ) {
     var mellt = new Mellt();
 
@@ -38,6 +39,11 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $scope.showForm = ($scope.resetMailboxToken!==undefined) ? true : false;
         if ($rootScope.tempUser===undefined) {
             $rootScope.tempUser = [];
+        }
+
+        if(angular.isDefined(token) && angular.isDefined(token.data)) {
+            $scope.resetToken = token.data.AccessToken;
+            $scope.resetUID = token.data.Uid;
         }
     };
 
@@ -326,8 +332,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $scope.resetMailboxInit = function() {
         $log.debug('resetMailboxInit');
         authentication.setTokenUID({
-            "AccessToken": $rootScope.resetToken,
-            "Uid": $rootScope.resetUID
+            "AccessToken": $scope.resetToken,
+            "Uid": $scope.resetUID
         });
         var getMBToken = function() {
             $log.debug('getMBToken');

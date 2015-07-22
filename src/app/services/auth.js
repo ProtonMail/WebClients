@@ -148,9 +148,9 @@ angular.module("proton.authentication", [
                         q.reject({
                             message: "Username and Password are required to login"
                         });
-                    }
-                    else {
+                    } else {
                         delete $http.defaults.headers.common.Accept;
+                        $rootScope.creds = creds;
                         $http.post(baseURL + "/auth",
                             _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
                                 ClientID: "demoapp",
@@ -163,7 +163,6 @@ angular.module("proton.authentication", [
                             })
                         ).then(
                             function(resp) {
-                                // console.log(resp.data);
                                 $rootScope.TemporaryAccessData = resp.data;
                                 $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
                                 $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
@@ -176,24 +175,6 @@ angular.module("proton.authentication", [
                                     message: error.error_description
                                 });
                             }
-                        )
-                        .then(
-                            $http.post(baseURL + "/auth",
-                                _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
-                                    ClientID: "demoapp",
-                                    ClientSecret: "demopass",
-                                    GrantType: "password",
-                                    State: api.randomString(24),
-                                    RedirectURI: "https://protonmail.ch",
-                                    ResponseType: "token",
-                                    Scope: "reset" // 'full' or 'reset'
-                                })
-                            ).then(
-                                function(resp) {
-                                    $rootScope.resetToken = resp.data.AccessToken;
-                                    $rootScope.resetUID = resp.data.Uid;
-                                }
-                            )
                         );
                     }
 
@@ -277,7 +258,7 @@ angular.module("proton.authentication", [
                 logout: function() {
                     // Completely clear sessionstorage
                     window.sessionStorage.clear();
-                    
+
                     delete auth.data;
                     delete auth.mailboxPassword;
 
