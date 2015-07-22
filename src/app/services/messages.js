@@ -81,7 +81,7 @@ angular.module("proton.messages", ["proton.constants"])
                     var lastMessage = _.last(cachedMetadata.inbox);
                     var numMessages = 120 - cachedMetadata.inbox.length;
                     Message.query({Location: 0, Page: 0, PageSize: numMessages, End: lastMessage.Time}).$promise.then(function(result) {
-                        angular.copy(cachedMetadata.inbox.concat(result), cachedMetadata.inbox);
+                        angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
                     });
