@@ -113,6 +113,13 @@ table.message-list {
                     font-weight: normal;
                     color: #999;
                 }
+                .recipSpan {
+                    display: block;
+                    white-space: nowrap;
+                    width: 16rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
             &.subject {
                 span.location {
