@@ -123,7 +123,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             }
 
             // for the welcome email, we need to change the path to the welcome image lock
-            content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");            
+            content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
             $scope.content = $sce.trustAsHtml(content);
 
@@ -339,53 +339,28 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     // Return Message object to build response or forward
     function buildMessage(action) {
-        $log.debug('buildMessage');
-        $log.debug('buildMessage: start');
         var base = new Message();
-
-        $log.debug('buildMessage: newMessage');
-
         var contentSignature = tools.replaceLineBreaks($scope.user.Signature);
-
-        $log.debug('buildMessage: toolsReplaceLineBreaks');
-
-        var signature = (contentSignature.length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
-
-        $log.debug('1');
+        var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
-        $log.debug('2');
         var originalMessage = '-------- Original Message --------<br />';
-        $log.debug('3');
         var subject = 'Subject: ' + message.Subject + '<br />';
-        $log.debug('4');
         var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
-        $log.debug('5');
         var from = 'From: ' + tools.contactsToString(message.ToList) + '<br />';
-        $log.debug('6');
         var to = 'To: ' + message.SenderAddress + '<br />';
-        $log.debug('7');
         var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
-        $log.debug('8');
         var blockquoteEnd = '</blockquote>';
-        $log.debug('9');
         var re_prefix = $translate.instant('RE:');
-        $log.debug('10');
         var fw_prefix = $translate.instant('FW:');
-        $log.debug('11');
-
-        $log.debug('buildMessage: vars done');
 
         base.ParentID = message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
-            $log.debug('buildMessage: reply');
             base.Action = 0;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
-        }
-        else if (action === 'replyall') {
-            $log.debug('buildMessage: replyall');
+        } else if (action === 'replyall') {
             base.Action = 1;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
             base.CCList = _.union(message.ToList, message.CCList);
@@ -397,29 +372,23 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
-            $log.debug('buildMessage: forward');
             base.Action = 2;
             base.ToList = [];
             base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : fw_prefix + ' ' + message.Subject;
         }
 
-        $log.debug('buildMessage: end');
-
         return base;
     }
 
     $scope.reply = function() {
-        $log.debug('reply');
         $rootScope.$broadcast('loadMessage', buildMessage('reply'));
     };
 
     $scope.replyAll = function() {
-        $log.debug('replyAll');
         $rootScope.$broadcast('loadMessage', buildMessage('replyall'));
     };
 
     $scope.forward = function() {
-        $log.debug('forward');
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 

@@ -355,7 +355,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            message.Body = "<br><br>" + tools.replaceLineBreaks(authentication.user.Signature);
+            var signature = tools.replaceLineBreaks(authentication.user.Signature);
+    
+            message.Body = ($(signature).text().length === 0)? "" : "<br /><br />" + signature;
         }
     };
 
