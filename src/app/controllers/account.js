@@ -89,6 +89,10 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         }
     };
 
+    $scope.finishLoginReset = function(form) {
+        $log.debug('finishLoginReset');
+    };
+
     $scope.strength = function(password) {
         var daysToCrack = mellt.CheckPassword(password);
         var word;
