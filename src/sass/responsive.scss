@@ -5,12 +5,12 @@
 			padding: 0;
 		}
 	}
+	#dragOverlay {
+		left: ($sidebar-width)*.9;
+	}	
 	table.message-list {
 		.recipient {
 			width: 16rem;
-		}
-		#dragOverlay {
-			left: ($sidebar-width)*.9;
 		}
 	}
 	#sidebar {
