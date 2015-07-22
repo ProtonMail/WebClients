@@ -1,5 +1,5 @@
 angular.module("proton.event", ["proton.constants"])
-	.service("eventManager", function ($interval, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache, messageCounts) {
+	.service("eventManager", function ($interval, $window, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache, messageCounts) {
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -95,6 +95,8 @@ angular.module("proton.event", ["proton.constants"])
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 					eventModel.manageID(data.EventID);
+				} else if (data.Reload === 1) {
+					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
