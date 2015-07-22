@@ -122,6 +122,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 $scope.isPlain = true;
             }
 
+            // for the welcome email, we need to change the path to the welcome image lock
+            content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");            
+
             $scope.content = $sce.trustAsHtml(content);
 
             $timeout(function() {
