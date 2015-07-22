@@ -58,6 +58,10 @@ angular.module("proton.models.setting", [])
             setShowImages: {
                 method: 'put',
                 url: authentication.baseURL + '/settings/showimages'
+            },
+            apiTest: {
+                method: 'get',
+                url: authentication.baseURL + '/tests/error'
             }
         }
     );

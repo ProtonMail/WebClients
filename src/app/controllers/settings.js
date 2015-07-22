@@ -522,16 +522,21 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveTheme = function(form) {
-      networkActivityTracker.track(
-          Setting.theme({
-              "Theme": btoa($scope.cssTheme)
-          }).$promise.then(function(response) {
-              notify($translate.instant('THEME_SAVED'));
-              authentication.user.Theme = $scope.cssTheme;
-          }, function(response) {
-              $log.error(response);
-          })
-      );
+        $log.debug('saveTheme');
+        networkActivityTracker.track(
+            Setting.theme({
+                "Theme": btoa($scope.cssTheme)
+            }).$promise
+            .then(
+                function(response) {
+                    notify($translate.instant('THEME_SAVED'));
+                    authentication.user.Theme = atob($scope.cssTheme);
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
+        );
     };
 
     $scope.saveDefaultLanguage = function() {
@@ -589,4 +594,18 @@ angular.module("proton.controllers.Settings", [
         $scope.cssTheme = '';
         $scope.saveTheme();
     };
+
+    // This is used for general debugging for any purpose. feel free to change:
+    $scope.apiTest = function() {
+        Setting.apiTest().$promise
+        .then(
+            function(response) {
+                $log.debug(response);
+            }, 
+            function(response) {
+                $log.error(response);
+            }
+        );
+    };
+
 });
