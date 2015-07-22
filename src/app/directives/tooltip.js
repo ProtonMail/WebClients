@@ -16,6 +16,7 @@ angular.module("proton.tooltip", [])
             element.attr('title', title);
             $(element[0]).tooltip({
                 delay: 300,
+                container: 'body',
                 placement: attrs.ptPlacement || 'top',
                 html: attrs.ptHtml || false
             });

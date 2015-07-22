@@ -16,7 +16,7 @@
                     class="btn btn-sm minimize-button hidden-xs"
                     ng-click="normalize(message); minimize(message)"
                     pt-tooltip="{{ 'MINIMIZE' | translate }}"
-                    pt-placement="left">
+                    pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
@@ -25,7 +25,7 @@
                     class="btn btn-sm expand-button hidden-xs"
                     ng-click="normalize(message)"
                     pt-tooltip="{{ 'EXPAND' | translate }}"
-                    pt-placement="left">
+                    pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
@@ -34,7 +34,7 @@
                     class="btn btn-sm maximize-button hidden-xs hidden-sm"
                     ng-click="normalize(message);maximize(message)"
                     pt-tooltip="{{ 'FULLSCREEN' | translate }}"
-                    pt-placement="left">
+                    pt-placement="top">
                         <i class="fa fa-expand"></i>
                     </a>
                     <a
@@ -43,7 +43,7 @@
                     class="btn btn-sm maximize-button hidden-xs"
                     ng-click="normalize(message)"
                     pt-tooltip="{{ 'EXIT_FULLSCREEN' | translate }}"
-                    pt-placement="left">
+                    pt-placement="top">
                         <i class="fa fa-compress"></i>
                     </a>
                     <a
@@ -51,7 +51,7 @@
                     class="btn btn-sm close-button"
                     ng-click="openCloseModal(message, true)"
                     pt-tooltip="{{ 'CLOSE' | translate }}"
-                    pt-placement="left">
+                    pt-placement="top">
                         <span class="sr-only">{{ 'CLOSE' | translate }}</span>
                         <i class="fa fa-times"></i>
                     </a>
@@ -186,14 +186,14 @@
                 class="btn btn-sm btn-default btn-add-attachment"
                 ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
-                pt-placement="right"
+                pt-placement="top"
                 >
                     <i class="fa fa-paperclip"></i>
                 </button>
                 <button
                 class="btn btn-sm btn-default"
                 ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}"
-                pt-placement="right"
+                pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
@@ -202,7 +202,7 @@
                 <button
                 class="btn btn-sm btn-default"
                 ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}"
-                pt-placement="right"
+                pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
@@ -217,7 +217,8 @@
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
                     ng-click="discard(message)"
-                    pt-tooltip="{{ 'DISCARD' | translate }}">
+                    pt-tooltip="{{ 'DISCARD' | translate }}"
+                    pt-placement="top">
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="user.ComposerMode===1"> {{ 'DISCARD' | translate }}</span>
                     </button>
@@ -226,7 +227,8 @@
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
                     ng-click="save(message, false)"
-                    pt-tooltip="{{ 'SAVE' | translate }}">
+                    pt-tooltip="{{ 'SAVE' | translate }}"
+                    pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="user.ComposerMode===1"> {{ 'SAVE' | translate }}</span>
                     </button>
