@@ -10,21 +10,25 @@ angular.module("proton.controllers.Bug", [])
     tools,
     Bug,
     networkActivityTracker,
-    notify
+    notify,
+    CONFIG
 ) {
     var modalId = 'bugForm';
 
     $scope.initialization = function() {
         // $log.debug($state);
+        var Username = (!$rootScope.isLocked && authentication.user !== undefined && authentication.user.Name !== undefined) ? authentication.user.Name : '';
         $scope.useragent = angular.element('html').attr('class');
         $scope.bug = {
             OS:             tools.getOs,
             OSVersion:      '',
-            Client:         tools.getBrowser,
-            ClientVersion:  tools.getBrowserVersion,
+            Browser:         tools.getBrowser,
+            BrowserVersion:  tools.getBrowserVersion,
+            Client:         'Angular',
+            ClientVersion:  CONFIG.app_version,
             Title:          '[Angular] Bug ['+$state.$current.name+ ']',
             Description:    '',
-            Username:       '',
+            Username:        Username,
             Email:          ''
         };
         // $log.debug($scope.bug);
