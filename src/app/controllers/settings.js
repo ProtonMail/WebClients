@@ -186,15 +186,37 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveNotification = function(form) {
+        // $log.debug($scope.noticeePassword);
+        if ($scope.noticeePassword===undefined) {
+            notify({
+                classes: "notificaton-danger",
+                message: "Enter your current login password."
+            });
+            angular.element('#noticeePassword').focus();
+            return;
+        }
+
         networkActivityTracker.track(
             Setting.noticeEmail({
+                "Password": $scope.noticeePassword,
                 "NotificationEmail": $scope.notificationEmail
-            }).$promise.then(function(response) {
-                authentication.user.NotificationEmail = $scope.notificationEmail;
-                notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
-            }, function(response) {
-                $log.error(response);
-            })
+            }).$promise
+            .then(
+                function(response) {
+                    if (response && response.Code===1000) {
+                        authentication.user.NotificationEmail = $scope.notificationEmail;
+                        notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
+                    }
+                    else {
+                        if (response.Error) {
+                            notify($translate.instant(response.Error));
+                        }
+                    }
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
         );
     };
 
@@ -500,16 +522,21 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveTheme = function(form) {
-      networkActivityTracker.track(
-          Setting.theme({
-              "Theme": btoa($scope.cssTheme)
-          }).$promise.then(function(response) {
-              notify($translate.instant('THEME_SAVED'));
-              authentication.user.Theme = $scope.cssTheme;
-          }, function(response) {
-              $log.error(response);
-          })
-      );
+        $log.debug('saveTheme');
+        networkActivityTracker.track(
+            Setting.theme({
+                "Theme": btoa($scope.cssTheme)
+            }).$promise
+            .then(
+                function(response) {
+                    notify($translate.instant('THEME_SAVED'));
+                    authentication.user.Theme = atob($scope.cssTheme);
+                }, 
+                function(response) {
+                    $log.error(response);
+                }
+            )
+        );
     };
 
     $scope.saveDefaultLanguage = function() {
@@ -567,4 +594,18 @@ angular.module("proton.controllers.Settings", [
         $scope.cssTheme = '';
         $scope.saveTheme();
     };
+
+    // This is used for general debugging for any purpose. feel free to change:
+    $scope.apiTest = function() {
+        Setting.apiTest().$promise
+        .then(
+            function(response) {
+                $log.debug(response);
+            }, 
+            function(response) {
+                $log.error(response);
+            }
+        );
+    };
+
 });

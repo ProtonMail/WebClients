@@ -68,11 +68,6 @@
                     </div>
                 </a>
             </li>
-            <li ng-hide="hideAttachment">
-                <a href="" class="btn btn-sm btn-options btn-add-attachment" ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}" pt-tooltip="{{ 'ATTACHMENTS' | translate }}">
-                    <i class="fa fa-paperclip"></i>
-                </a>
-            </li>
         </ul>
         <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="isHtml()" >
             <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" class="squireIframe"></iframe>

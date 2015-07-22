@@ -16,8 +16,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label" for="bug_os">{{ 'OPERATING_SYSTEM' | translate }}</label>
-                            <select tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control">
-                                <option selected="" disabled value="">- {{ 'CHOOSE' | translate }} -</option>
+                            <select ng-model="bug.OS" tabindex="1" autofocus name="bug_os" id="bug_os" class="form-control">
+                                <option disabled value="">- {{ 'CHOOSE' | translate }} -</option>
                                 <option value="osx">Mac OSX</option>
                                 <option value="windows">Windows</option>
                                 <option value="linux">Linux</option>
@@ -28,38 +28,38 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label" for="bug_os_version">{{ 'OS_VERSION' | translate }}</label>
-                            <input tabindex="2" class="form-control" placeholder="{{ 'OS_VERSION' | translate }}" type="text" id="bug_os_version" ng-model="bug.osversion"/>
+                            <input tabindex="2" class="form-control" placeholder="{{ 'OS_VERSION' | translate }}" type="text" id="bug_os_version" ng-model="bug.OSVersion"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label" for="bug_client">{{ 'CLIENT' | translate }}</label>
-                            <input tabindex="3" class="form-control" type="text" name="bug_client" id="bug_client" placeholder="Browser" ng-model="bug.client">
+                            <input tabindex="3" class="form-control" type="text" name="bug_client" id="bug_client" placeholder="Browser" ng-model="bug.Client">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label" for="bug_client_version">{{ 'CLIENT_VERSION' | translate }}</label>
-                            <input tabindex="4" class="form-control" type="text" name="bug_client_version" id="bug_client_version" placeholder="Browser" ng-model="bug.clientversion">
+                            <input tabindex="4" class="form-control" type="text" name="bug_client_version" id="bug_client_version" placeholder="Browser" ng-model="bug.ClientVersion">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="bug_email">{{ 'YOUR_EMAIL_ADDRESS' | translate }}</label>
-                            <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.email">
+                            <input type="email" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.Email">
                             <p class="help-block">Please make sure to give us a way to contact you.</p>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12" ng-if="false">
                         <div class="form-group">
                             <label for="bug_title" class="control-label">{{ 'TITLE' | translate }}</label>
-                            <input type="text" id="bug_title" class="form-control" ng-model="bug.title" placeholder="{{ 'TITLE' | translate }}" />
+                            <input type="text" id="bug_title" class="form-control" ng-model="bug.Title" placeholder="{{ 'TITLE' | translate }}" />
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
-                            <textarea ng-model="bug.description" class="form-control" name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
+                            <textarea ng-model="bug.Description" class="form-control" name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -70,7 +70,7 @@
             </div>
             <div class="modal-footer">
                 <a class="btn btn-link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
-                <button type="button" ng-click="sendBugReport()" class="btn btn-primary">{{ 'SEND' | translate }}</button>
+                <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="btn btn-primary">{{ 'SEND' | translate }}</button>
             </div>
         </div>
     </div>

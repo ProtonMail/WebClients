@@ -72,13 +72,16 @@
             <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                 <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>            
                 <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                <textarea class="form-control no-resize" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
+                <textarea class="form-control" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
                 <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
             </div>
             <div class="text-right">
                 <button type="button" class="btn btn-sm btn-default" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
                 <button type="submit" class="btn btn-sm btn-primary">{{ 'SAVE' | translate }}</button>
             </div>
+        </form>
+        <form ng-submit="apiTest()" ng-if="false">
+            <button type="submit" class="btn btn-sm btn-warning">API Test</button>
         </form>
     </div>
 </div>

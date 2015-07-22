@@ -46,10 +46,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         };
 
         if(
-            ($scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
+            ($rootScope.refreshMessageList || $scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
             ($scope.mailbox === 'sent' && $stateParams.page === undefined || $scope.mailbox === 'sent' && $stateParams.page === 1)
         ) {
             $scope.refreshMessagesCache();
+            $rootScope.refreshMessageList = false;
         }
 
         if (typeof $rootScope.messageTotals === 'undefined') {

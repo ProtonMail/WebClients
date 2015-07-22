@@ -47,7 +47,7 @@
                     </a>
                 </td>
                 <td class="recipient">
-                    <span ng-if="showTo(message)">
+                    <span ng-if="showTo(message)" class="recipSpan">
                         <span
                         class="to"
                         pt-placement="right"
@@ -55,7 +55,7 @@
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
-                    <span ng-if="showFrom(message) && !showTo(message)">
+                    <span ng-if="showFrom(message) && !showTo(message)" class="recipSpan">
                         <span
                         class="from"
                         pt-placement="right"
@@ -63,7 +63,7 @@
                             From: {{ message.SenderName | username }}
                         </span>
                     </span>
-                    <span ng-if="!showTo(message) && !showFrom(message)">
+                    <span ng-if="!showTo(message) && !showFrom(message)" class="recipSpan">
                         <span
                         pt-placement="right"
                         pt-tooltip="{{ message.SenderAddress }}">

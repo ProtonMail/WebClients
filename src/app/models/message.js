@@ -253,6 +253,9 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         setMsgBody: function() {
+
+            $log.debug('setMsgBody');
+
             var body;
 
             // get the message content from either the editor or textarea if its iOS
@@ -263,10 +266,12 @@ angular.module("proton.models.message", ["proton.constants"])
                 body = this.Body;
                 body = tools.fixImages(body);
             }
+
             // if there is no message body we "pad" with a line return so encryption and decryption doesnt break
             if (body.trim().length < 1) {
                 body = '\n';
             }
+
             // Set input elements
             this.Body = body;
         },
