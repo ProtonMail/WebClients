@@ -291,7 +291,7 @@ angular.module("proton.messages", ["proton.constants"])
 
                     // UPDATE_FLAG - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
-                        if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
+                        if (cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE || message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time) {
                             // if message contains subject you moved on this device so no need to query for message content
                             if (message.Message.Subject) {
                                 if (!cacheLoc) {
