@@ -186,6 +186,16 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveNotification = function(form) {
+        // $log.debug($scope.noticeePassword);
+        if ($scope.noticeePassword===undefined) {
+            notify({
+                classes: "notificaton-danger",
+                message: "Enter your current login password."
+            });
+            angular.element('#noticeePassword').focus();
+            return;
+        }
+
         networkActivityTracker.track(
             Setting.noticeEmail({
                 "Password": $scope.noticeePassword,
