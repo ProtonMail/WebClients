@@ -6,6 +6,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $log,
     $timeout,
     $q,
+    $sanitize,
     $state,
     $translate,
     $interval,
@@ -355,8 +356,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            var signature = tools.replaceLineBreaks(authentication.user.Signature);
-    
+            var signature = $sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>');
+
             message.Body = ($(signature).text().length === 0)? "" : "<br /><br />" + signature;
         }
     };

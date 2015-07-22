@@ -536,6 +536,7 @@ module.exports = function(grunt) {
             push: {
                 command: [
                     "cd dist",
+                    // "for file in `ls | grep -E ‘*[a-f0-9]{16}*’`; do git rm $file; done",
                     "git add --all",
                     "git commit -m \"New Release\"",
                     "git push"

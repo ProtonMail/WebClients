@@ -154,6 +154,7 @@ angular.module("proton.messages.counts", ["proton.constants"])
 
                     // Create Sent Message
 
+                    // Empty Folder
                 },
                 updateUnread: function(action, messages, status) {
                     unreadCounts[action](messages, status);

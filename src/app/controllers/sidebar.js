@@ -27,10 +27,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
     // Listeners
-    $scope.$on('updateLabels', function(){$scope.updateLabels();});
-    $scope.$on('updateCounters', function(event) {
-        messageCounts.refresh();
-    });
+    $scope.$on('updateLabels', function(){ $scope.updateLabels(); });
+    $scope.$on('updateCounters', function(event) { messageCounts.refresh(); });
 
     $scope.initialization = function() {
         $scope.storage = $scope.renderStorageBar();
@@ -105,14 +103,10 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }
     };
 
-    $scope.counters = function() {
-        return messageCounts.get();
-    };
-
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
-        var counters = $scope.counters();
+        var counters = messageCounts.get();
 
         if(mailbox === 'label') {
             value = counters.Labels[id];

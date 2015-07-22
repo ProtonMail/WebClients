@@ -12,6 +12,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $translate,
     $filter,
     $q,
+    $sanitize,
     $sce,
     localStorageService,
     networkActivityTracker,
@@ -340,7 +341,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     // Return Message object to build response or forward
     function buildMessage(action) {
         var base = new Message();
-        var contentSignature = tools.replaceLineBreaks($scope.user.Signature);
+        var contentSignature = $sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
