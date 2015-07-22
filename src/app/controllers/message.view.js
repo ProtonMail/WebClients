@@ -352,6 +352,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
+        var re_length = re_prefix.length;
+        var fw_length = fw_prefix.length;
 
         base.ParentID = message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
@@ -359,7 +361,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         if (action === 'reply') {
             base.Action = 0;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
         } else if (action === 'replyall') {
             base.Action = 1;
             base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
@@ -369,12 +371,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
                 base.CCList = _.filter(base.CCList, function(contact) { return contact.Address !== address.Email; });
             });
-            base.Subject = (message.Subject.includes(re_prefix)) ? message.Subject : re_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
         }
         else if (action === 'forward') {
             base.Action = 2;
             base.ToList = [];
-            base.Subject = (message.Subject.includes(fw_prefix)) ? message.Subject : fw_prefix + ' ' + message.Subject;
+            base.Subject = (message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? message.Subject : fw_prefix + ' ' + message.Subject;
         }
 
         return base;

@@ -201,7 +201,6 @@ angular.module("proton.squire", [
                 }
                 editor.addEventListener("input", function() {
                     var html = editor.getHTML();
-
                     updateModel(html);
                 });
                 editor.addEventListener("focus", function() {
