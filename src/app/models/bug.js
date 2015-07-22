@@ -1,9 +1,9 @@
 angular.module("proton.models.bug", [])
 
-.factory("Bug", function($http, authentication) {
+.factory("Bug", function($http, $rootScope) {
     return {
         report: function(data) {
-            return $http.post(authentication.baseURL + '/bugs', data);
+            return $http.post($rootScope.baseURL + '/bugs', data);
         }
     };
 });

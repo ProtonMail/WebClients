@@ -369,16 +369,15 @@ angular.module("proton", [
     $compileProvider.debugInfoEnabled(debugInfo);
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, CONFIG) {
+    // Set baseURL from grunt CONFIG
+    $rootScope.baseURL = CONFIG.apiUrl;
+    // Set build config
     $rootScope.build = {
         "version":"2.0",
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-.config(function(authenticationProvider, CONFIG) {
-    authenticationProvider.setAPIBaseURL(CONFIG.apiUrl);
 })
 
 //

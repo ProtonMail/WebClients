@@ -1,20 +1,20 @@
 angular.module("proton.models.attachment", [])
 
-.factory("Attachment", function($resource, $injector) {
+.factory("Attachment", function($resource, $injector, $rootScope) {
     var authentication = $injector.get("authentication");
 
     return $resource(
-        authentication.baseURL + "/attachments/:id",
+        $rootScope.baseURL + "/attachments/:id",
         authentication.params({ id: "@id" }),
         {
             // POST
             upload: {
                 method: 'post',
-                url: authentication.baseURL + '/attachments/upload'
+                url: $rootScope.baseURL + '/attachments/upload'
             },
             remove: {
                 method: 'put',
-                url: authentication.baseURL + '/attachments/remove'
+                url: $rootScope.baseURL + '/attachments/remove'
             }
         }
     );

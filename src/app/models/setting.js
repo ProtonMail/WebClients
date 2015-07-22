@@ -1,67 +1,67 @@
 angular.module("proton.models.setting", [])
 
-.factory("Setting", function($resource, $injector) {
+.factory("Setting", function($resource, $injector, $rootScope) {
     var authentication = $injector.get("authentication");
 
     return $resource(
-        authentication.baseURL + "/settings/:id",
+        $rootScope.baseURL + "/settings/:id",
         authentication.params({ id: "@id" }),
         {
             password: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/password'
+                url: $rootScope.baseURL + '/settings/password'
             },
             noticeEmail: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/noticeemail'
+                url: $rootScope.baseURL + '/settings/noticeemail'
             },
             signature: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/signature'
+                url: $rootScope.baseURL + '/settings/signature'
             },
             display: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/display'
+                url: $rootScope.baseURL + '/settings/display'
             },
             addressOrder: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/addressorder'
+                url: $rootScope.baseURL + '/settings/addressorder'
             },
             theme: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/theme'
+                url: $rootScope.baseURL + '/settings/theme'
             },
             notify: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/notify'
+                url: $rootScope.baseURL + '/settings/notify'
             },
             autosave: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/autosave'
+                url: $rootScope.baseURL + '/settings/autosave'
             },
             setLanguage: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/language'
+                url: $rootScope.baseURL + '/settings/language'
             },
             setLogging: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/logauth'
+                url: $rootScope.baseURL + '/settings/logauth'
             },
             setComposerMode: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/composermode'
+                url: $rootScope.baseURL + '/settings/composermode'
             },
             setMessageStyle: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/messagebuttons'
+                url: $rootScope.baseURL + '/settings/messagebuttons'
             },
             setShowImages: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/showimages'
+                url: $rootScope.baseURL + '/settings/showimages'
             },
             apiTest: {
                 method: 'get',
-                url: authentication.baseURL + '/tests/error'
+                url: $rootScope.baseURL + '/tests/error'
             }
         }
     );

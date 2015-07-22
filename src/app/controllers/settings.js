@@ -56,7 +56,7 @@ angular.module("proton.controllers.Settings", [
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
 
-    $scope.apiURL = authentication.baseURL;
+    $scope.apiURL = $rootScope.baseURL;
 
     $scope.loadLogs = function (page) {
         $scope.currentLogPage = page;

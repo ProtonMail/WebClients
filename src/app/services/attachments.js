@@ -109,7 +109,7 @@ angular.module("proton.attachments", [
                 }
             };
 
-            xhr.open('post', authentication.baseURL +'/attachments/upload', true);
+            xhr.open('post', $rootScope.baseURL +'/attachments/upload', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
@@ -127,7 +127,7 @@ angular.module("proton.attachments", [
         },
         get: function(id) {
             return $http
-                .get(authentication.baseURL + "/attachments/" + id, {responseType: "arraybuffer"})
+                .get($rootScope.baseURL + "/attachments/" + id, {responseType: "arraybuffer"})
                 .success(function(data, status, headers, other) {
                     return data;
                 }).error(function(response) {

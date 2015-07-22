@@ -14,6 +14,7 @@ angular.module("proton.models.message", ["proton.constants"])
     User,
     pmcw,
     CONSTANTS,
+    CONFIG,
     networkActivityTracker,
     notify,
     tools
@@ -21,23 +22,23 @@ angular.module("proton.models.message", ["proton.constants"])
 
     var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
-        authentication.baseURL + '/messages/:id',
+        $rootScope.baseURL + '/messages/:id',
         authentication.params({
             id: '@id'
         }), {
             // POST
             send: {
                 method: 'post',
-                url: authentication.baseURL + '/messages/send/:id'
+                url: $rootScope.baseURL + '/messages/send/:id'
             },
             createDraft: {
                 method: 'post',
-                url: authentication.baseURL + '/messages/draft'
+                url: $rootScope.baseURL + '/messages/draft'
             },
             // GET
             countUnread: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/unread',
+                url: $rootScope.baseURL + '/messages/unread',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
                     var counters = {};
@@ -50,7 +51,7 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             get: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/:id',
+                url: $rootScope.baseURL + '/messages/:id',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
                     return json.Message;
@@ -58,12 +59,12 @@ angular.module("proton.models.message", ["proton.constants"])
             },
              totalCount: {
                     method: 'get',
-                    url: authentication.baseURL + '/messages/total',
+                    url: $rootScope.baseURL + '/messages/total',
             },
             query: {
                 method: 'get',
                 isArray: true,
-                url: authentication.baseURL + '/messages',
+                url: $rootScope.baseURL + '/messages',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
@@ -74,65 +75,65 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             latest: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/latest/:time'
+                url: $rootScope.baseURL + '/messages/latest/:time'
             },
             unreaded: {
                 method: 'get',
-                url: authentication.baseURL + '/messages/unread'
+                url: $rootScope.baseURL + '/messages/unread'
             },
             // PUT
             updateDraft: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/draft/:id'
+                url: $rootScope.baseURL + '/messages/draft/:id'
             },
             star: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/star'
+                url: $rootScope.baseURL + '/messages/star'
             },
             unstar: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/unstar'
+                url: $rootScope.baseURL + '/messages/unstar'
             },
             read: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/read'
+                url: $rootScope.baseURL + '/messages/read'
             },
             unread: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/unread'
+                url: $rootScope.baseURL + '/messages/unread'
             },
             trash: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/trash'
+                url: $rootScope.baseURL + '/messages/trash'
             },
             inbox: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/inbox'
+                url: $rootScope.baseURL + '/messages/inbox'
             },
             spam: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/spam'
+                url: $rootScope.baseURL + '/messages/spam'
             },
             archive: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/archive'
+                url: $rootScope.baseURL + '/messages/archive'
             },
             delete: {
                 method: 'put',
-                url: authentication.baseURL + '/messages/delete'
+                url: $rootScope.baseURL + '/messages/delete'
             },
             // DELETE
             emptyDraft: {
                 method: 'delete',
-                url: authentication.baseURL + '/messages/draft'
+                url: $rootScope.baseURL + '/messages/draft'
             },
             emptySpam: {
                 method: 'delete',
-                url: authentication.baseURL + '/messages/spam'
+                url: $rootScope.baseURL + '/messages/spam'
             },
             emptyTrash: {
                 method: 'delete',
-                url: authentication.baseURL + '/messages/trash'
+                url: $rootScope.baseURL + '/messages/trash'
             },
         }
     );
@@ -320,10 +321,8 @@ angular.module("proton.models.message", ["proton.constants"])
 
         decryptBody: function(body, time) {
             var deferred = $q.defer();
-            var local = window.sessionStorage.getItem('protonmail_pw');
-            var pw = pmcw.decode_base64(local);
 
-            pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+            authentication.getPrivateKey().then(function(key) {
                 pmcw.decryptMessageRSA(body, key, time).then(function(result) {
                     deferred.resolve(result);
                 });
@@ -426,10 +425,7 @@ angular.module("proton.models.message", ["proton.constants"])
                     this.decrypting = true;
 
                     try {
-                        var local = window.sessionStorage.getItem('protonmail_pw');
-                        var pw = pmcw.decode_base64(local);
-
-                        pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
+                        authentication.getPrivateKey().then(function(key) {
                             pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
                                 this.DecryptedBody = result;
                                 this.failedDecryption = false;

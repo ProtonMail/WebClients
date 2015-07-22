@@ -1,9 +1,9 @@
 angular.module("proton.models.eo", [])
 
-.factory("Eo", function($http, $q, authentication, CONFIG) {
+.factory("Eo", function($http, $q, $rootScope, CONFIG) {
     return {
         token: function(tokenID) {
-            return $http.get(authentication.baseURL + '/eo/token/' + encodeURIComponent(tokenID), {
+            return $http.get($rootScope.baseURL + '/eo/token/' + encodeURIComponent(tokenID), {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8',
                     'Accept': 'application/vnd.protonmail.v1+json'
@@ -11,7 +11,7 @@ angular.module("proton.models.eo", [])
             });
         },
         message: function(decrypted_token, token_id) {
-            return $http.get(authentication.baseURL + '/eo/message', {
+            return $http.get($rootScope.baseURL + '/eo/message', {
                 headers: {
                     'Authorization': decrypted_token,
                     'x-eo-uid': token_id,
@@ -21,7 +21,7 @@ angular.module("proton.models.eo", [])
             });
         },
         attachment: function(decrypted_token, token_id, attachmentID) {
-            return $http.get(authentication.baseURL + '/eo/attachment/' + attachmentID, {
+            return $http.get($rootScope.baseURL + '/eo/attachment/' + attachmentID, {
                 responseType: "arraybuffer",
                 headers: {
                     'Authorization': decrypted_token,
@@ -72,7 +72,7 @@ angular.module("proton.models.eo", [])
                 }
             };
 
-            xhr.open('post', authentication.baseURL + '/eo/reply', true);
+            xhr.open('post', $rootScope.baseURL + '/eo/reply', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
