@@ -14,7 +14,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     authentication,
     Message,
     messageCache,
-    localStorageService,
     attachments,
     pmcw,
     networkActivityTracker,

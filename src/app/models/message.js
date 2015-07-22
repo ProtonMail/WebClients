@@ -11,7 +11,6 @@ angular.module("proton.models.message", ["proton.constants"])
     $translate,
     $log,
     authentication,
-    localStorageService,
     User,
     pmcw,
     CONSTANTS,
@@ -321,7 +320,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
         decryptBody: function(body, time) {
             var deferred = $q.defer();
-            var local = localStorageService.get('protonmail_pw');
+            var local = window.sessionStorage.getItem('protonmail_pw');
             var pw = pmcw.decode_base64(local);
 
             pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {
@@ -427,7 +426,7 @@ angular.module("proton.models.message", ["proton.constants"])
                     this.decrypting = true;
 
                     try {
-                        var local = localStorageService.get('protonmail_pw');
+                        var local = window.sessionStorage.getItem('protonmail_pw');
                         var pw = pmcw.decode_base64(local);
 
                         pmcw.decryptPrivateKey(authentication.user.EncPrivateKey, pw).then(function(key) {

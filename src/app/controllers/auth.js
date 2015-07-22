@@ -11,7 +11,6 @@ angular.module("proton.controllers.Auth", [
     $log,
     $timeout,
     authentication,
-    localStorageService,
     networkActivityTracker,
     notify,
     pmcw
@@ -124,7 +123,7 @@ angular.module("proton.controllers.Auth", [
             authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
             .then(
                 function(resp) {
-                    localStorageService.bind($scope, 'protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
+                    window.sessionStorage.setItem('protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
                     $state.go("secured.inbox");
                 },

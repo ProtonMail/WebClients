@@ -41,7 +41,6 @@ module.exports = {
       "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-animate/angular-animate.js",
-      "vendor/angular-local-storage/dist/angular-local-storage.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
       "vendor/angular-toggle-switch/angular-toggle-switch.min.js",
