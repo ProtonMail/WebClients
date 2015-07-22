@@ -261,6 +261,9 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
+
         $rootScope.toState = toState.name.replace(".", "-");
         if ($rootScope.scrollToBottom===true) {
             setTimeout(function() {
