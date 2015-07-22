@@ -58,7 +58,7 @@ angular.module("proton.controllers.Outside", [
         });
     }, 100);
 
-    $scope.message.selectFile = function() {
+    $scope.selectFile = function() {
         $('#inputFile').click();
     };
 

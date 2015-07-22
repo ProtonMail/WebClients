@@ -24,7 +24,6 @@
         </ul>
     </div>
     <div id="message-body">
-        <input type="file" id="inputFile" />
         <squire ng-model="message.Body" message="message"></squire>
         <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
@@ -51,7 +50,9 @@
 
     <div class="well text-right">
         <button class="btn btn-default btn-sm pull-left" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
-        <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send()" pt-tooltip="{{ 'SEND_MESSAGE' | translate }}">{{ 'REPLY' | translate }}</button>
+        <button class="btn btn-default btn-sm" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
+        <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'REPLY' | translate }}</button>
     </div>
 
+    <input type="file" id="inputFile" />
 </div>
