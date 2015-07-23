@@ -41,6 +41,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         messageCache.put(message.ID, message);
     });
 
+    $scope.$on('updateReplied', function(e, m) {
+        $scope.message = _.extend($scope.message, m);
+    });
+    
     $scope.initView = function() {
         if(authentication.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();

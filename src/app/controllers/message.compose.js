@@ -776,6 +776,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
                             if (result.Parent) {
                                 updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
                             }
                             $scope.sending = false;
 
