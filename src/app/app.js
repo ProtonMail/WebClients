@@ -186,7 +186,7 @@ angular.module("proton", [
             if (response.status === 401) {
                 $injector.get('$state').go('login');
             }
-            if (response.data.Code!==undefined) {
+            else if (response.data.Code!==undefined) {
                 // app update needd
                 if (response.data.Code===5003) {
                     if ($rootScope.updateMessage===false) {
@@ -217,8 +217,8 @@ angular.module("proton", [
                 // site offline
                 else if (response.data.Code===7001) {
                     $injector.get('notify')({
-                        classes: 'notification-danger',
-                        message: 'Unable to connect to API server.'
+                        classes: 'notification-info',
+                        message: 'The ProtonMail API is offline: '+response.data.ErrorDescription
                     });
                 }
             }

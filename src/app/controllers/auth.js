@@ -57,34 +57,42 @@ angular.module("proton.controllers.Auth", [
                 HashedPassword: $scope.basicObfuscate($scope.username, $scope.password)
             })
             .then(
-                function(result) {
-                    // console.log('loginWithCredentials done', result);
-                	if (result.data.AccessToken) {
-                        $rootScope.isLoggedIn = true;
-                        $rootScope.tempUser = [];
-                        $rootScope.tempUser.username = $scope.username;
-                        $rootScope.tempUser.password = $scope.password;
-                        if (result.data.AccessToken.length < 50) {
-                            return authentication.fetchUserInfo()
-                            .then(
-                                function(response) {
-                                    $state.go("login.unlock");
-                                    if ($rootScope.pubKey === 'to be modified') {
-                                        $state.go('step2');
-                                        return;
-                                    } else {
+                function(result) { 
+                    $log.debug('loginWithCredentials:result.data ', result);
+                    if (result.data.Code!==undefined) {
+                        if (result.data.Code===401) {
+                            notify({
+                                classes: 'notification-danger',
+                                message: result.data.ErrorDescription
+                            });
+                        }
+                    	else if (result.data.AccessToken) {
+                            $rootScope.isLoggedIn = true;
+                            $rootScope.tempUser = [];
+                            $rootScope.tempUser.username = $scope.username;
+                            $rootScope.tempUser.password = $scope.password;
+                            if (result.data.AccessToken.length < 50) {
+                                return authentication.fetchUserInfo()
+                                .then(
+                                    function(response) {
                                         $state.go("login.unlock");
-                                        return;
+                                        if ($rootScope.pubKey === 'to be modified') {
+                                            $state.go('step2');
+                                            return;
+                                        } else {
+                                            $state.go("login.unlock");
+                                            return;
+                                        }
                                     }
-                                }
-                            );
-                        }
-                        else {
-                            // console.log('Going to unlock page.');
-                            $state.go("login.unlock");
-                            return;
-                        }
-	                }
+                                );
+                            }
+                            else {
+                                // console.log('Going to unlock page.');
+                                $state.go("login.unlock");
+                                return;
+                            }
+    	                }
+                    }
 	                else if (result.Error) {
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.error_description) ? result.error_description : result.Error;
 	                	notify({
@@ -95,7 +103,7 @@ angular.module("proton.controllers.Auth", [
 	                else {
 	                	notify({
 	                        classes: 'notification-danger',
-	                        message: 'Wrong Username or Password.'
+	                        message: 'Unable to log you in.'
 	                    });
 	                }
 	                return;
