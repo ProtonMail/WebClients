@@ -386,12 +386,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 message = _.first(messages);
             }
 
-            if(message.IsRead === 0) {
-                message.IsRead = 1;
-                Message.read({IDs: [message.ID]});
-                messageCounts.updateUnread('mark', [message], true);
-            }
-
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {

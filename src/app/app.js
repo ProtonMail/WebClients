@@ -135,13 +135,13 @@ angular.module("proton", [
     $rootScope.firstNameOnly = function() {
         var firstNameOnly;
         var emailFirst = authentication.user.DisplayName.split('@');
-        if (emailFirst[0]===authentication.user.Name) {
+
+        if (emailFirst[0] === authentication.user.Name) {
             firstNameOnly = emailFirst[0];
+        } else {
+            firstNameOnly = authentication.user.DisplayName;
         }
-        else {
-            firstNameOnly = authentication.user.DisplayName.split(' ');
-            firstNameOnly = firstNameOnly[0];
-        }
+
         return firstNameOnly;
     };
 

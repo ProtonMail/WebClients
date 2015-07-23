@@ -642,9 +642,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         if(angular.isDefined(message.ID)) {
             parameters.id = message.ID;
-            parameters.Message.IsRead = 1;
         } else {
-            parameters.Message.IsRead = 0;
+            parameters.Message.IsRead = 1;
         }
 
         parameters.Message.AddressID = message.From.ID;
