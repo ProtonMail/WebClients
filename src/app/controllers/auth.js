@@ -71,7 +71,7 @@ angular.module("proton.controllers.Auth", [
                             $rootScope.tempUser = {};
                             $rootScope.tempUser.username = $scope.username;
                             $rootScope.tempUser.password = $scope.password;
-                            console.log($rootScope.tempUser.username);
+                        
                             if (result.data.AccessToken.length < 50) {
                                 return authentication.fetchUserInfo()
                                 .then(
