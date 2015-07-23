@@ -60,7 +60,7 @@
                         class="from"
                         pt-placement="right"
                         pt-tooltip="{{ message.SenderAddress }}">
-                            From: {{ message.SenderName | username }}
+                            From: {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
                     <span ng-if="!showTo(message) && !showFrom(message)" class="recipSpan">
