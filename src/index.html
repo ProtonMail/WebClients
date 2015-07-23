@@ -15,9 +15,13 @@
     <meta name="application-name" content="ProtonMail">
     <meta name="msapplication-TileImage" content="/assets/favicon_128.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
+    <% styles.forEach(function (file) { %>
+    <link rel="stylesheet" type="text/css" href="/<%= file %>" />
+    <% }); %>
     <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
-    <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">{{ user.Theme }}</style>
+    <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">
+    {{ user.Theme }}
+    </style>
 </head>
 <body
 id="{{ toState }}"

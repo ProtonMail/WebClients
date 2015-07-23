@@ -531,7 +531,7 @@ angular.module("proton.controllers.Settings", [
             .then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    authentication.user.Theme = atob($scope.cssTheme);
+                    authentication.user.Theme = $scope.cssTheme;
                 },
                 function(response) {
                     $log.error(response);

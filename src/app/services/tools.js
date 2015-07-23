@@ -301,7 +301,7 @@ angular.module("proton.tools", ["proton.constants"])
 
             if (max < gb) {
                 // render bar in terms of MB
-                cur = (cur/kb).toFixed(2);
+                cur = (cur/kb).toFixed(1);
 
                 if (parseInt(cur) === 0 && current > 0) {
                     cur = 0.01;

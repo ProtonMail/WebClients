@@ -3,21 +3,22 @@
         <a href ng-click="reply()" class="btn btn-primary pull-right">
             <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
         </a>
-        <h1>
+        <h1 class="no-margin-bottom">
             <span class="attachement" ng-show="message.Attachments.length > 0">
                 <i class="fa fa-paperclip"></i>
             </span>
             <span ng-bind-html="message.Subject"></span>
         </h1>
+    </div>
+    <div class="message-metadata">
         <ul class="infos">
             <li>
-                <span class="text-muted">{{ 'FROM' | translate }}</span>
-                <i class="fa fa-lock text-purple"></i>
+                <strong>{{ 'FROM' | translate }}</strong>
                 <b>{{ message.SenderName }}</b> &lt;{{ message.SenderAddress }}&gt;
                 <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
             </li>
             <li>
-                <span class="text-muted">{{ 'TO' | translate }}</span>
+                <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length > 0">
                     <li ng-repeat="email in message.ToList">
                         <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
