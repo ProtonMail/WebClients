@@ -79,12 +79,12 @@
                     pt-tooltip="{{message.countdown()}}"
                     pt-placement="left"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
-                    <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
-                    <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
-                    <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                     <span class="labels">
                         <span ng-repeat="id in message.LabelIDs" class="label label-pm" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
                     </span>
+                    <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
+                    <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
+                    <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                     <h4 ng-bind="message.Subject"></h4>
                 </td>
                 <td class="size">
