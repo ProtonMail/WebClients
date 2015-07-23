@@ -356,7 +356,7 @@ angular.module("proton.authentication", [
                     message: "Password is required"
                 });
             }
-            
+
             return req.promise;
         },
 

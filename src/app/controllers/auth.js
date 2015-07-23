@@ -10,6 +10,7 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $log,
     $timeout,
+    CONSTANTS,
     authentication,
     networkActivityTracker,
     notify,
