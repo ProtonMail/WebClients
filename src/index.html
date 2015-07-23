@@ -18,7 +18,6 @@
     <% styles.forEach(function (file) { %>
     <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
-    <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
     <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">
     {{ user.Theme }}
     </style>
@@ -46,22 +45,18 @@ ng-class="{
   }">
     <div id="loading">
       <div class="higgs">
-
         <div class="orbit">
           <div class="ring horizontal"><div class="wrap-electron"></div></div>
           <div class="ring vertical"><div class="wrap-electron"></div></div>
         </div>
-
         <div class="orbit r">
           <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
           <div class="ring vertical inner"><div class="wrap-electron"></div></div>
           <div class="ring center"></div>
         </div>
-
       </div>
         <p class="text-center">Loading ProtonMail</p>
     </div>
-
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>

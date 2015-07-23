@@ -194,8 +194,8 @@ angular.module("proton.authentication", [
                 $rootScope.creds = creds;
                 $http.post(url.get() + "/auth",
                     _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
-                        ClientID: "demoapp",
-                        ClientSecret: "demopass",
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
                         State: api.randomString(24),
                         RedirectURI: "https://protonmail.ch",
@@ -276,7 +276,8 @@ angular.module("proton.authentication", [
                 $http.post(
                     url.get() + "/auth/refresh",
                     _.extend(_.pick(auth.data, "RefreshToken"), {
-                        ClientID: "demoapp",
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret,
                         GrantType: "refresh_token",
                         State: api.randomString(24),
                         ResponseType: "token",

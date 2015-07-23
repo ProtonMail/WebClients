@@ -294,7 +294,6 @@ angular.module("proton", [
             }, 10);
             $rootScope.scrollToBottom = false;
         }
-        $('#loading-css').remove();
         $('#loading').remove();
     });
 })
