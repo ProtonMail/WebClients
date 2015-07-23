@@ -302,8 +302,8 @@ angular.module("proton.routes", [
             }
         },
         resolve: {
-            token: function($http, $rootScope, authentication) {
-                return $http.post($rootScope.baseURL + "/auth",
+            token: function($http, $rootScope, authentication, url) {
+                return $http.post(url.get() + "/auth",
                     _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
                         ClientID: "demoapp",
                         ClientSecret: "demopass",

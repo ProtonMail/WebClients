@@ -15,6 +15,7 @@ angular.module("proton.controllers.Settings", [
     authentication,
     confirmModal,
     labelModal,
+    url,
     Label,
     Logs,
     Setting,
@@ -56,7 +57,7 @@ angular.module("proton.controllers.Settings", [
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
 
-    $scope.apiURL = $rootScope.baseURL;
+    $scope.apiURL = url.get();
 
     $scope.loadLogs = function (page) {
         $scope.currentLogPage = page;
@@ -212,7 +213,7 @@ angular.module("proton.controllers.Settings", [
                             notify($translate.instant(response.Error));
                         }
                     }
-                }, 
+                },
                 function(response) {
                     $log.error(response);
                 }
@@ -531,7 +532,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
                     authentication.user.Theme = atob($scope.cssTheme);
-                }, 
+                },
                 function(response) {
                     $log.error(response);
                 }
@@ -601,7 +602,7 @@ angular.module("proton.controllers.Settings", [
         .then(
             function(response) {
                 $log.debug(response);
-            }, 
+            },
             function(response) {
                 $log.error(response);
             }

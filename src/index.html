@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="proton">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,10 +18,8 @@
     <% styles.forEach(function (file) { %><link rel="stylesheet" type="text/css" href="/<%= file %>" /><% }); %>
     <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
     <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">{{ user.Theme }}</style>
-    <base href="" />
 </head>
 <body
-ng-app="proton"
 id="{{ toState }}"
 ng-class="{
   locked:

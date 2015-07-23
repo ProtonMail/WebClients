@@ -18,6 +18,7 @@ angular.module("proton.authentication", [
     $http,
     $timeout,
     errorReporter,
+    url,
     notify,
     CONFIG
 ) {
@@ -43,7 +44,7 @@ angular.module("proton.authentication", [
         fetchUserInfo: function(uid) {
             var deferred = $q.defer();
 
-            api.user = $http.get($rootScope.baseURL + "/users", {
+            api.user = $http.get(url.get() + "/users", {
                 params: {
                     id: uid
                 }
@@ -58,8 +59,8 @@ angular.module("proton.authentication", [
                         deferred.reject();
                     } else {
                         $q.all([
-                            $http.get($rootScope.baseURL + "/contacts"),
-                            $http.get($rootScope.baseURL + "/labels")
+                            $http.get(url.get() + "/contacts"),
+                            $http.get(url.get() + "/labels")
                         ]).then(
                             function(result) {
                                 user.Contacts = result[0].data.Contacts;
@@ -197,7 +198,7 @@ angular.module("proton.authentication", [
             } else {
                 delete $http.defaults.headers.common.Accept;
                 $rootScope.creds = creds;
-                $http.post($rootScope.baseURL + "/auth",
+                $http.post(url.get() + "/auth",
                     _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
                         ClientID: "demoapp",
                         ClientSecret: "demopass",
@@ -279,7 +280,7 @@ angular.module("proton.authentication", [
         refreshIfNecessary: function(force) {
             if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
                 $http.post(
-                    $rootScope.baseURL + "/auth/refresh",
+                    url.get() + "/auth/refresh",
                     _.extend(_.pick(auth.data, "RefreshToken"), {
                         ClientID: "demoapp",
                         GrantType: "refresh_token",
@@ -311,7 +312,7 @@ angular.module("proton.authentication", [
             this.user = null;
 
             // HACKY ASS BUG
-            $http.delete($rootScope.baseURL + "/auth").then( function() {
+            $http.delete(url.get() + "/auth").then( function() {
                 location.reload();
             });
 

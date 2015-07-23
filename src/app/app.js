@@ -90,6 +90,28 @@ angular.module("proton", [
     "proton.translations"
 ])
 
+// Set base url from grunt config
+.provider('url', function urlProvider() {
+    var base;
+
+    this.setBaseUrl = function(newUrl) {
+        base = newUrl;
+    };
+
+    this.$get = function() {
+        return {
+            get: function() {
+                return base;
+            }
+        };
+    };
+})
+
+.config(function(urlProvider, CONFIG) {
+    urlProvider.setBaseUrl(CONFIG.apiUrl);
+})
+
+
 .run(function(
     $document,
     $rootScope,
@@ -369,9 +391,7 @@ angular.module("proton", [
     $compileProvider.debugInfoEnabled(debugInfo);
 })
 
-.run(function($rootScope, CONFIG) {
-    // Set baseURL from grunt CONFIG
-    $rootScope.baseURL = CONFIG.apiUrl;
+.run(function($rootScope) {
     // Set build config
     $rootScope.build = {
         "version":"2.0",

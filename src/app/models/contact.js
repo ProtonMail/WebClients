@@ -1,22 +1,22 @@
 angular.module("proton.models.contact", [])
 
-.factory("Contact", function($http, $rootScope) {
+.factory("Contact", function($http, url) {
 
     var Contact = {
         get: function() {
-            return $http.get($rootScope.baseURL + '/contacts');
+            return $http.get(url.get() + '/contacts');
         },
         edit: function(contact) {
-            return $http.put($rootScope.baseURL + '/contacts/' + contact.id, contact);
+            return $http.put(url.get() + '/contacts/' + contact.id, contact);
         },
         save: function(contact) {
-            return $http.post($rootScope.baseURL + '/contacts', contact);
+            return $http.post(url.get() + '/contacts', contact);
         },
         delete: function(contact) {
-            return $http.put($rootScope.baseURL + '/contacts/delete', contact);
+            return $http.put(url.get() + '/contacts/delete', contact);
         },
         clear: function() {
-            return $http.delete($rootScope.baseURL + '/contacts');
+            return $http.delete(url.get() + '/contacts');
         }
     };
 

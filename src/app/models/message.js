@@ -11,6 +11,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $translate,
     $log,
     authentication,
+    url,
     User,
     pmcw,
     CONSTANTS,
@@ -19,26 +20,25 @@ angular.module("proton.models.message", ["proton.constants"])
     notify,
     tools
 ) {
-
     var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
-        $rootScope.baseURL + '/messages/:id',
+        url.get() + '/messages/:id',
         authentication.params({
             id: '@id'
         }), {
             // POST
             send: {
                 method: 'post',
-                url: $rootScope.baseURL + '/messages/send/:id'
+                url: url.get() + '/messages/send/:id'
             },
             createDraft: {
                 method: 'post',
-                url: $rootScope.baseURL + '/messages/draft'
+                url: url.get() + '/messages/draft'
             },
             // GET
             countUnread: {
                 method: 'get',
-                url: $rootScope.baseURL + '/messages/unread',
+                url: url.get() + '/messages/unread',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
                     var counters = {};
@@ -51,7 +51,7 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             get: {
                 method: 'get',
-                url: $rootScope.baseURL + '/messages/:id',
+                url: url.get() + '/messages/:id',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
                     return json.Message;
@@ -59,12 +59,12 @@ angular.module("proton.models.message", ["proton.constants"])
             },
              totalCount: {
                     method: 'get',
-                    url: $rootScope.baseURL + '/messages/total',
+                    url: url.get() + '/messages/total',
             },
             query: {
                 method: 'get',
                 isArray: true,
-                url: $rootScope.baseURL + '/messages',
+                url: url.get() + '/messages',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
@@ -75,65 +75,65 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             latest: {
                 method: 'get',
-                url: $rootScope.baseURL + '/messages/latest/:time'
+                url: url.get() + '/messages/latest/:time'
             },
             unreaded: {
                 method: 'get',
-                url: $rootScope.baseURL + '/messages/unread'
+                url: url.get() + '/messages/unread'
             },
             // PUT
             updateDraft: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/draft/:id'
+                url: url.get() + '/messages/draft/:id'
             },
             star: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/star'
+                url: url.get() + '/messages/star'
             },
             unstar: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/unstar'
+                url: url.get() + '/messages/unstar'
             },
             read: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/read'
+                url: url.get() + '/messages/read'
             },
             unread: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/unread'
+                url: url.get() + '/messages/unread'
             },
             trash: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/trash'
+                url: url.get() + '/messages/trash'
             },
             inbox: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/inbox'
+                url: url.get() + '/messages/inbox'
             },
             spam: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/spam'
+                url: url.get() + '/messages/spam'
             },
             archive: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/archive'
+                url: url.get() + '/messages/archive'
             },
             delete: {
                 method: 'put',
-                url: $rootScope.baseURL + '/messages/delete'
+                url: url.get() + '/messages/delete'
             },
             // DELETE
             emptyDraft: {
                 method: 'delete',
-                url: $rootScope.baseURL + '/messages/draft'
+                url: url.get() + '/messages/draft'
             },
             emptySpam: {
                 method: 'delete',
-                url: $rootScope.baseURL + '/messages/spam'
+                url: url.get() + '/messages/spam'
             },
             emptyTrash: {
                 method: 'delete',
-                url: $rootScope.baseURL + '/messages/trash'
+                url: url.get() + '/messages/trash'
             },
         }
     );

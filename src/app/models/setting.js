@@ -4,64 +4,64 @@ angular.module("proton.models.setting", [])
     var authentication = $injector.get("authentication");
 
     return $resource(
-        $rootScope.baseURL + "/settings/:id",
+        url.get() + "/settings/:id",
         authentication.params({ id: "@id" }),
         {
             password: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/password'
+                url: url.get() + '/settings/password'
             },
             noticeEmail: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/noticeemail'
+                url: url.get() + '/settings/noticeemail'
             },
             signature: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/signature'
+                url: url.get() + '/settings/signature'
             },
             display: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/display'
+                url: url.get() + '/settings/display'
             },
             addressOrder: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/addressorder'
+                url: url.get() + '/settings/addressorder'
             },
             theme: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/theme'
+                url: url.get() + '/settings/theme'
             },
             notify: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/notify'
+                url: url.get() + '/settings/notify'
             },
             autosave: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/autosave'
+                url: url.get() + '/settings/autosave'
             },
             setLanguage: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/language'
+                url: url.get() + '/settings/language'
             },
             setLogging: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/logauth'
+                url: url.get() + '/settings/logauth'
             },
             setComposerMode: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/composermode'
+                url: url.get() + '/settings/composermode'
             },
             setMessageStyle: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/messagebuttons'
+                url: url.get() + '/settings/messagebuttons'
             },
             setShowImages: {
                 method: 'put',
-                url: $rootScope.baseURL + '/settings/showimages'
+                url: url.get() + '/settings/showimages'
             },
             apiTest: {
                 method: 'get',
-                url: $rootScope.baseURL + '/tests/error'
+                url: url.get() + '/tests/error'
             }
         }
     );
