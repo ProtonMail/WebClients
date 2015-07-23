@@ -4,6 +4,9 @@ angular.module('proton.constants', [])
 // Constants definition
 //
 .constant('CONSTANTS', {
+    MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
+    OAUTH_KEY: "proton:oauth",
+    EVENT_ID: "proton:eventid",
     ATTACHMENT_SIZE_LIMIT: 15, // MB
     ATTACHMENT_NUMBER_LIMIT: 50,
     MAX_TITLE_LENGTH: 250,

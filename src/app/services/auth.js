@@ -3,15 +3,9 @@ angular.module("proton.authentication", [
     "proton.models"
 ])
 
-.constant("MAILBOX_PASSWORD_KEY", "proton:mailbox_pwd")
-.constant("OAUTH_KEY", "proton:oauth")
-.constant("EVENT_ID", "proton:eventid")
-
 .factory('authentication', function(
     pmcw,
-    MAILBOX_PASSWORD_KEY,
-    OAUTH_KEY,
-    EVENT_ID,
+    CONSTANTS,
     $state,
     $rootScope,
     $q,
@@ -91,32 +85,32 @@ angular.module("proton.authentication", [
         },
 
         saveAuthData: function(data) {
-            window.sessionStorage[OAUTH_KEY + ":Uid"] = data.Uid;
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
             date = moment(Date.now() + data.ExpiresIn * 1000);
-            window.sessionStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
-            window.sessionStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-            window.sessionStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
             auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             auth.data.ExpiresIn = date;
             auth.setAuthHeaders();
         },
 
         saveEventId: function(id) {
-            window.sessionStorage[EVENT_ID] = id;
+            window.sessionStorage[CONSTANTS.EVENT_ID] = id;
         }
     };
 
     // RUN-TIME PUBLIC FUNCTIONS
     var api = {
         detectAuthenticationState: function() {
-            var dt = window.sessionStorage[OAUTH_KEY + ":ExpiresIn"];
+            var dt = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"];
             if (dt) {
                 dt = moment(dt);
                 auth.data = {
-                    Uid: window.sessionStorage[OAUTH_KEY + ":Uid"],
+                    Uid: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"],
                     ExpiresIn: dt,
-                    AccessToken: window.sessionStorage[OAUTH_KEY + ":AccessToken"],
-                    RefreshToken: window.sessionStorage[OAUTH_KEY + ":RefreshToken"]
+                    AccessToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"],
+                    RefreshToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"]
                 };
 
                 if (dt.isBefore(Date.now())) {
@@ -132,11 +126,11 @@ angular.module("proton.authentication", [
         },
 
         savePassword: function(pwd) {
-            window.sessionStorage[MAILBOX_PASSWORD_KEY] = pmcw.encode_base64(pwd);
+            window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_base64(pwd);
         },
 
         getPassword: function() {
-            var pwd = window.sessionStorage[MAILBOX_PASSWORD_KEY];
+            var pwd = window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY];
 
             return pmcw.decode_base64(pwd);
         },
@@ -183,7 +177,7 @@ angular.module("proton.authentication", [
         },
 
         getPrivateKey: function() {
-            var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem('protonmail_pw'));
+            var pw = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
 
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
         },

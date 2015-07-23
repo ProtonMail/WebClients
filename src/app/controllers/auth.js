@@ -123,7 +123,7 @@ angular.module("proton.controllers.Auth", [
             authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
             .then(
                 function(resp) {
-                    window.sessionStorage.setItem('protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
+                    window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
                     $state.go("secured.inbox");
                 },
