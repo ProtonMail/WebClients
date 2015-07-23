@@ -180,7 +180,8 @@ table.message-list {
                 color: #000;
             }
             i.fa-paperclip,
-            i.fa-clock-o {
+            i.fa-clock-o,
+            span.labels {
                 background-color: #fff;
             }
             &.hovered,
@@ -237,7 +238,6 @@ table.message-list {
             height: 30px;
             position: relative;
             z-index: 2;
-            padding: 0 1rem;
             top: 1px;
             background-color: $base-color-dark;
         }
