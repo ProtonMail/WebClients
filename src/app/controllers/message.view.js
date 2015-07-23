@@ -454,6 +454,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.viewPgp = function() {
+        $log.debug(message);
         window.open('data:text/plain;base64,'+btoa(message.Header+'\n\r'+message.Body), '_blank');
     };
 

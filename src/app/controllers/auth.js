@@ -127,7 +127,6 @@ angular.module("proton.controllers.Auth", [
     $scope.tryDecrypt = function() {
         $('input').blur();
         var mailboxPassword = this.mailboxPassword;
-        $rootScope.domoArigato = true;
         clearErrors();
         networkActivityTracker.track(
             authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
