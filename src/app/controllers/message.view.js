@@ -360,12 +360,21 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         if (action === 'reply') {
             base.Action = 0;
-            base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
+            if($state.is('secured.sent.message')) {
+                base.ToList = message.ToList;
+            } else {
+                base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
+            }
             base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
         } else if (action === 'replyall') {
             base.Action = 1;
-            base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
-            base.CCList = _.union(message.ToList, message.CCList);
+            if($state.is('secured.sent.message')) {
+                base.ToList = message.ToList;
+                base.CCList = message.CCList;
+            } else {
+                base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
+                base.CCList = _.union(message.ToList, message.CCList);
+            }
             // Remove user address in CCList and ToList
             _.each(authentication.user.Addresses, function(address) {
                 base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
