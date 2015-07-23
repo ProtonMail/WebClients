@@ -193,7 +193,7 @@ angular.module("proton", [
                         $rootScope.updateMessage = true;
                         $injector.get('notify')({
                             classes: 'notification-info',
-                            message: 'A new version of ProtonMail is available. Refresh to automatically update.',
+                            message: 'A new version of ProtonMail is available. Logout and log back in to automatically update.',
                             duration: 10000
                         });
                         setTimeout( function() {
