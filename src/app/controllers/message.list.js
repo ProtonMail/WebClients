@@ -737,6 +737,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.saveLabels(labels);
+        $scope.unselectAllLabels();
     };
 
     $scope.goToPage = function(page, scrollToBottom) {
