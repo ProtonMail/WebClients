@@ -816,6 +816,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.minimize = function(message) {
         message.minimized = true;
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
     };
 
     $scope.toggleMaximized = function(message) {
@@ -865,6 +867,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in messages
         $scope.messages.splice(index, 1);
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
@@ -882,6 +886,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in composer controller
         $scope.messages.splice(index, 1);
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
 
         // Remove message in message list controller
         $rootScope.$broadcast('discardDraft', id);
