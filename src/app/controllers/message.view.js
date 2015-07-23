@@ -44,7 +44,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.$on('updateReplied', function(e, m) {
         $scope.message = _.extend($scope.message, m);
     });
-    
+
     $scope.initView = function() {
         if(authentication.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
@@ -76,6 +76,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         }
 
         networkActivityTracker.track(promise);
+        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
     };
 
     $scope.saveNewContacts = function() {
@@ -149,6 +150,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         message.IsRead = 1;
         promise = Message.read({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
+        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
     };
 
     $scope.markAsUnread = function() {
@@ -157,6 +159,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         message.IsRead = 0;
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
+        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
         $scope.goToMessageList();
     };
 
@@ -311,7 +314,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         $q.all(promises).then(function() {
             message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-
+            messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+            
             if(toApply.length > 1 || toRemove.length > 1) {
                 notify($translate.instant('LABELS_APPLIED'));
             } else {
