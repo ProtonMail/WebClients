@@ -13,7 +13,9 @@ angular.module("proton.messages", ["proton.constants"])
 		var UPDATE_FLAG = 3;
         var inboxOneParams = {Location: 0, Page: 0};
         var inboxTwoParams = {Location: 0, Page: 1};
+        var inboxInitParams = {Location: 0, Page: 0, PageSize: 120};
         var sentOneParams = {Location: 2, Page: 0};
+        var cachedParams = [JSON.stringify(inboxOneParams), JSON.stringify(inboxTwoParams), JSON.stringify(sentOneParams)];
         var inboxOneMetaData, inboxTwoMetaData, sentOneMetaData;
         // Parameters shared between api / cache / message view / message list
         var fields = [
@@ -75,10 +77,11 @@ angular.module("proton.messages", ["proton.constants"])
             // when implemented in API
             sync: function(cacheLoc) {
                 var deferred = $q.defer();
-
                 if (cacheLoc === 'inbox') {
-                    Message.query(inboxTwoParams).$promise.then(function(result) {
-                        cachedMetadata.inbox = cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE).concat(result);
+                    var lastMessage = _.last(cachedMetadata.inbox);
+                    var numMessages = 120 - cachedMetadata.inbox.length;
+                    Message.query({Location: 0, Page: 0, PageSize: numMessages, End: lastMessage.Time}).$promise.then(function(result) {
+                        angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
                     });
@@ -231,18 +234,16 @@ angular.module("proton.messages", ["proton.constants"])
             start: function() {
                 var deferred = $q.defer();
 
-                inboxOneMetaData = Message.query(inboxOneParams).$promise;
-                inboxTwoMetaData = Message.query(inboxTwoParams).$promise;
+                inboxMetaData = Message.query(inboxInitParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                $q.all({inboxOne: inboxOneMetaData, inboxTwo: inboxTwoMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                        addMessageList(result.inboxOne);
-                        addMessageList(result.inboxTwo);
-                        cachedMetadata.inbox = result.inboxOne.concat(result.inboxTwo);
-                        cachedMetadata.sent = result.sentOne;
-                        this.started = true;
+                $q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(function(result) {
+                    cachedMetadata.inbox = result.inbox;
+                    addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                    cachedMetadata.sent = result.sentOne;
+                    this.started = true;
 
-                        deferred.resolve();
+                    deferred.resolve();
                 }.bind(this));
 
                 return deferred.promise;
@@ -255,7 +256,7 @@ angular.module("proton.messages", ["proton.constants"])
                 this.start();
             },
             // Function for dealing with message cache updates
-            set: function(messages) {
+            set: function(messages, preventRefresh, params) {
                 var promises = [];
                 _.each(messages, function(message) {
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
@@ -290,7 +291,7 @@ angular.module("proton.messages", ["proton.constants"])
 
                     // UPDATE_FLAG - message not in cache, but in inbox or sent. Check if time after last message
                     else if (message.Action === UPDATE_FLAG && loc) {
-                        if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
+                        if (cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE || message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time) {
                             // if message contains subject you moved on this device so no need to query for message content
                             if (message.Message.Subject) {
                                 if (!cacheLoc) {
@@ -325,7 +326,16 @@ angular.module("proton.messages", ["proton.constants"])
                         }
                     }
                 });
-
+                $q.all(promises).then(function() {
+                    // Does not refresh if you move messages on your device on a non-cached page
+                    // This prevents the messages from reapearing for a few seconds
+                    if (!preventRefresh || cachedParams.indexOf(JSON.stringify(params)) !== -1) {
+                        refreshMessagesCache();
+                    }
+                });
+            },
+            sync: function() {
+                var promises = [];
                 if (cachedMetadata.inbox.length < 100) {
                     promises.push(cachedMetadata.sync('inbox'));
                 }
@@ -362,26 +372,14 @@ angular.module("proton.messages", ["proton.constants"])
                 var deferred = $q.defer();
                 var process = function() {
                     if (_.isEqual(params, inboxOneParams)) {
-                        if(cachedMetadata.inbox === null) {
-                            return inboxOneMetaData;
-                        } else {
-                            deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
-                            return deferred.promise;
-                        }
+                        deferred.resolve(cachedMetadata.inbox.slice(0, CONSTANTS.MESSAGES_PER_PAGE));
+                        return deferred.promise;
                     } else if (_.isEqual(params, inboxTwoParams)) {
-                        if(cachedMetadata.inbox === null) {
-                            return inboxTwoMetaData;
-                        } else {
-                            deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
-                            return deferred.promise;
-                        }
+                        deferred.resolve(cachedMetadata.inbox.slice(CONSTANTS.MESSAGES_PER_PAGE, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                        return deferred.promise;
                     } else if (_.isEqual(params, sentOneParams)) {
-                        if(cachedMetadata.sent === null) {
-                            return sentOneMetaData;
-                        } else {
-                            deferred.resolve(cachedMetadata.sent);
-                            return deferred.promise;
-                        }
+                        deferred.resolve(cachedMetadata.sent);
+                        return deferred.promise;
                     } else {
                         return Message.query(params).$promise;
                     }

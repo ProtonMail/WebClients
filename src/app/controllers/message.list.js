@@ -386,6 +386,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 message = _.first(messages);
             }
 
+            if(message.IsRead === 0) {
+                message.IsRead = 1;
+                Message.read({IDs: [message.ID]});
+                messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+                messageCounts.updateUnread('mark', [message], true);
+            }
+
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
@@ -555,6 +562,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             events.push({Action: 3, ID: message.ID, Message: message});
         });
 
+        if(events.length > 0) {
+            messageCache.set(events, true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+        }
+
         $scope.unselectAllMessages();
 
         messageCounts.updateUnread('move', movedMessages);
@@ -562,7 +573,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         promiseAction = function(result) {
             if(events.length > 0) {
-    		    messageCache.set(events);
+                messageCache.sync();
             }
             if(inDelete) {
                 if(ids.length > 1) {
@@ -621,6 +632,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         promise.then(
             function(result) {
+                messageCounts.empty(location);
                 $rootScope.$broadcast('updateCounters');
                 $rootScope.$broadcast('refreshMessagesCache');
                 notify($translate.instant('FOLDER_EMPTIED'));
