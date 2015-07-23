@@ -255,6 +255,12 @@ angular.module("proton.messages", ["proton.constants"])
                 cachedMetadata.sent = null;
                 this.start();
             },
+            empty: function() {
+                this.started = false;
+                cachedMessages.cache = {};
+                cachedMetadata.inbox = null;
+                cachedMetadata.sent = null;
+            },
             // Function for dealing with message cache updates
             set: function(messages, preventRefresh, params) {
                 var promises = [];

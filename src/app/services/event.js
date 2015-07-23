@@ -125,6 +125,7 @@ angular.module("proton.event", ["proton.constants"])
 					}
 				},
 				stop: function () {
+					messageCache.empty();
 					if (angular.isDefinded(eventModel.promiseCancel)) {
 						$interval.cancel(eventModel.promiseCancel);
 					}

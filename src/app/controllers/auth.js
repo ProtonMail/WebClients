@@ -71,7 +71,7 @@ angular.module("proton.controllers.Auth", [
                             $rootScope.tempUser = {};
                             $rootScope.tempUser.username = $scope.username;
                             $rootScope.tempUser.password = $scope.password;
-                        
+
                             if (result.data.AccessToken.length < 50) {
                                 return authentication.fetchUserInfo()
                                 .then(
@@ -170,7 +170,7 @@ angular.module("proton.controllers.Auth", [
     eventManager
 ) {
     $scope.user = authentication.user;
-    $scope.logout = authentication.logout;
+    $scope.logout = $rootScope.logout;
 
     eventManager.start(authentication.user.EventID);
 
