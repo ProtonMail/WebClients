@@ -61,6 +61,10 @@ table.message-list {
                 cursor: default;
                 padding-left: 0;
                 width: 7rem;
+                input {
+                    position: relative;
+                    top: 1px;
+                }
                 label {
                     display: inline-block;
                     width: 4rem;
@@ -72,14 +76,14 @@ table.message-list {
                     &.fa-star, &.fa-star-o {
                         font-size: 14px;
                         position: relative;
-                        top: 1px;
+                        top: 3px;
                     }
                 }
                 .fa-unlock-alt,
                 {
                     color: rgba(0, 0, 0, 0.25);
                     position: relative;
-                    top: 1px;
+                    top: 2px;
                 }
                 .fa-star-o {
                     color: rgba(0, 0, 0, 0.5);
@@ -89,10 +93,11 @@ table.message-list {
                 }
                 a:hover .fa-star-o {
                     color: #000;
+                    text-decoration: none;
                 }
                 .fa-lock {
                     position: relative;
-                    top: 1px;
+                    top: 3px;
                     color: rgba(0, 0, 0, 0.25);
                 }
                 .text-purple {
