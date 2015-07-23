@@ -57,7 +57,7 @@ angular.module("proton.controllers.Auth", [
                 HashedPassword: $scope.basicObfuscate($scope.username, $scope.password)
             })
             .then(
-                function(result) { 
+                function(result) {
                     $log.debug('loginWithCredentials:result.data ', result);
                     if (result.data.Code!==undefined) {
                         if (result.data.Code===401) {
@@ -68,9 +68,10 @@ angular.module("proton.controllers.Auth", [
                         }
                     	else if (result.data.AccessToken) {
                             $rootScope.isLoggedIn = true;
-                            $rootScope.tempUser = [];
+                            $rootScope.tempUser = {};
                             $rootScope.tempUser.username = $scope.username;
                             $rootScope.tempUser.password = $scope.password;
+                            console.log($rootScope.tempUser.username);
                             if (result.data.AccessToken.length < 50) {
                                 return authentication.fetchUserInfo()
                                 .then(

@@ -315,7 +315,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $q.all(promises).then(function() {
             message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
             messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
-            
+
             if(toApply.length > 1 || toRemove.length > 1) {
                 notify($translate.instant('LABELS_APPLIED'));
             } else {
