@@ -1,6 +1,6 @@
 angular.module("proton.models.setting", [])
 
-.factory("Setting", function($resource, $injector, $rootScope) {
+.factory("Setting", function($resource, $injector, url) {
     var authentication = $injector.get("authentication");
 
     return $resource(
