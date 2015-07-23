@@ -90,6 +90,28 @@ angular.module("proton", [
     "proton.translations"
 ])
 
+// Set base url from grunt config
+.provider('url', function urlProvider() {
+    var base;
+
+    this.setBaseUrl = function(newUrl) {
+        base = newUrl;
+    };
+
+    this.$get = function() {
+        return {
+            get: function() {
+                return base;
+            }
+        };
+    };
+})
+
+.config(function(urlProvider, CONFIG) {
+    urlProvider.setBaseUrl(CONFIG.apiUrl);
+})
+
+
 .run(function(
     $document,
     $rootScope,
@@ -370,15 +392,12 @@ angular.module("proton", [
 })
 
 .run(function($rootScope) {
+    // Set build config
     $rootScope.build = {
         "version":"2.0",
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-.config(function(authenticationProvider, CONFIG) {
-    authenticationProvider.setAPIBaseURL(CONFIG.apiUrl);
 })
 
 //

@@ -1,11 +1,11 @@
 angular.module("proton.models.events", [])
-	.factory("Events", function ($http, authentication) {
+	.factory("Events", function ($http, url) {
 		return {
 			get: function (id) {
-				return $http.get(authentication.baseURL + '/events/' + id);
+				return $http.get(url.get() + '/events/' + id);
 			},
 			getLatestID: function () {
-				return $http.get(authentication.baseURL + '/events/latest');
+				return $http.get(url.get() + '/events/latest');
 			}
 		};
 	});

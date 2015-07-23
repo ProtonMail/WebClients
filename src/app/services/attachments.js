@@ -9,9 +9,10 @@ angular.module("proton.attachments", [
     $rootScope,
     authentication,
     notify,
+    url,
     pmcw,
     errorReporter,
-    OAUTH_KEY,
+    CONSTANTS,
     CONFIG
 ) {
     return {
@@ -109,13 +110,13 @@ angular.module("proton.attachments", [
                 }
             };
 
-            xhr.open('post', authentication.baseURL +'/attachments/upload', true);
+            xhr.open('post', url.get() +'/attachments/upload', true);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
             xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
-            xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[OAUTH_KEY + ":AccessToken"]);
-            xhr.setRequestHeader("x-pm-uid", window.localStorage[OAUTH_KEY + ":Uid"]);
+            xhr.setRequestHeader("Authorization", "Bearer " + window.localStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"]);
+            xhr.setRequestHeader("x-pm-uid", window.localStorage[CONSTANTS.OAUTH_KEY + ":Uid"]);
             xhr.send(data);
 
             return deferred.promise;
@@ -127,7 +128,7 @@ angular.module("proton.attachments", [
         },
         get: function(id) {
             return $http
-                .get(authentication.baseURL + "/attachments/" + id, {responseType: "arraybuffer"})
+                .get(url.get() + "/attachments/" + id, {responseType: "arraybuffer"})
                 .success(function(data, status, headers, other) {
                     return data;
                 }).error(function(response) {

@@ -1,67 +1,67 @@
 angular.module("proton.models.setting", [])
 
-.factory("Setting", function($resource, $injector) {
+.factory("Setting", function($resource, $injector, $rootScope) {
     var authentication = $injector.get("authentication");
 
     return $resource(
-        authentication.baseURL + "/settings/:id",
+        url.get() + "/settings/:id",
         authentication.params({ id: "@id" }),
         {
             password: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/password'
+                url: url.get() + '/settings/password'
             },
             noticeEmail: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/noticeemail'
+                url: url.get() + '/settings/noticeemail'
             },
             signature: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/signature'
+                url: url.get() + '/settings/signature'
             },
             display: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/display'
+                url: url.get() + '/settings/display'
             },
             addressOrder: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/addressorder'
+                url: url.get() + '/settings/addressorder'
             },
             theme: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/theme'
+                url: url.get() + '/settings/theme'
             },
             notify: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/notify'
+                url: url.get() + '/settings/notify'
             },
             autosave: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/autosave'
+                url: url.get() + '/settings/autosave'
             },
             setLanguage: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/language'
+                url: url.get() + '/settings/language'
             },
             setLogging: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/logauth'
+                url: url.get() + '/settings/logauth'
             },
             setComposerMode: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/composermode'
+                url: url.get() + '/settings/composermode'
             },
             setMessageStyle: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/messagebuttons'
+                url: url.get() + '/settings/messagebuttons'
             },
             setShowImages: {
                 method: 'put',
-                url: authentication.baseURL + '/settings/showimages'
+                url: url.get() + '/settings/showimages'
             },
             apiTest: {
                 method: 'get',
-                url: authentication.baseURL + '/tests/error'
+                url: url.get() + '/tests/error'
             }
         }
     );
