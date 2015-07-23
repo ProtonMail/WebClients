@@ -642,9 +642,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         if(angular.isDefined(message.ID)) {
             parameters.id = message.ID;
-            parameters.Message.IsRead = 1;
         } else {
-            parameters.Message.IsRead = 0;
+            parameters.Message.IsRead = 1;
         }
 
         parameters.Message.AddressID = message.From.ID;
@@ -777,6 +776,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
                             if (result.Parent) {
                                 updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
                             }
                             $scope.sending = false;
 
