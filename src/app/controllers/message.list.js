@@ -386,13 +386,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 message = _.first(messages);
             }
 
-            if(message.IsRead === 0) {
-                message.IsRead = 1;
-                Message.read({IDs: [message.ID]});
-                messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
-                messageCounts.updateUnread('mark', [message], true);
-            }
-
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
                 Message.get({id: message.ID}).$promise.then(function(m) {
@@ -407,6 +400,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     });
                 }));
             } else {
+                if(message.IsRead === 0) {
+                    message.IsRead = 1;
+                    Message.read({IDs: [message.ID]});
+                    messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+                    messageCounts.updateUnread('mark', [message], true);
+                }
                 $state.go("secured." + $scope.mailbox + ".message", {
                     id: message.ID
                 });

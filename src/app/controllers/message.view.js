@@ -170,7 +170,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.decryptAttachment = function(message, attachment, $event) {
         if (attachment.decrypted===true) {
-            return true;
+            $scope.downloadAttachment(attachment);
+            return;
         }
 
         attachment.decrypting = true;
@@ -182,11 +183,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         if (attachment.KeyPackets===undefined) {
             return att.then( function(result) {
-                var data = { data: result.data };
-                // console.log(data, attachment);
-                $scope.downloadAttachment(data, attachment, $event);
-                attachment.decrypting = false;
-                attachment.decrypted = true;
+                attachment.data = result.data;
+                $scope.$apply(function() {
+                    attachment.decrypting = false;
+                    attachment.decrypted = true;
+                });
+                $scope.downloadAttachment(attachment);
                 return;
             });
         } else {
@@ -202,7 +204,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             }
         );
 
-        // when we have the session key and attachent:
+        // when we have the session key and attachment:
         $q.all({
             "attObject": att,
             "key": key
@@ -221,7 +223,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 // decrypt the att
                 pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
-                        $scope.downloadAttachment(decryptedAtt, attachment, $event);
+                        $scope.$apply(function() {
+                            attachment.decrypting = false;
+                            attachment.decrypted = true;
+                        });
+                        attachment.data = decryptedAtt.data;
+                        $scope.downloadAttachment(attachment);
                     }
                 );
             },
@@ -231,56 +238,34 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         );
     };
 
-    $scope.downloadAttachment = function(data, meta, $event) {
-        var linkElement = $($event.target);
-        var blob = new Blob([data.data], {type: meta.MIMEType});
-
-        linkElement.attr('download', meta.Name);
+    $scope.downloadAttachment = function(attachment) {
+        var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+        var url  = window.URL || window.webkitURL;
 
         if(window.navigator.msSaveOrOpenBlob) { // IE 10 / 11
-            window.navigator.msSaveOrOpenBlob(blob, meta.Name);
-        } else if(angular.isDefined(URL.createObjectURL)) {
-            // Browser supports a good way to download blobs
-            $scope.$apply(function() {
-                meta.decrypting = false;
-                meta.decrypted = true;
-            });
+            window.navigator.msSaveOrOpenBlob(blob, attachment.Name);
+        } else if(angular.isDefined(url.createObjectURL)) { // Browser supports a good way to download blobs
+            var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+            // A fake link and will dispatch a click event on this fake link
+            var event = document.createEvent("MouseEvents");
 
-            if(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob) {
-                // A fake link and will dispatch a click event on this fake link
-                var url  = window.URL || window.webkitURL;
-                var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
-
-                link.href = url.createObjectURL(blob);
-                linkElement.attr('href', url.createObjectURL(blob));
-                link.download = meta.Name;
-
-                var event = document.createEvent("MouseEvents");
-
-                event.initEvent("click", true, false);
-                link.dispatchEvent(event);
-            } else {
-                // Bad blob support, make a data URI, don't click it
-                reader = new FileReader();
-
-                reader.onloadend = function () {
-                    linkElement.attr('href', reader.result);
-                };
-
-                reader.readAsDataURL(blob);
-            }
-
+            link.href = url.createObjectURL(blob);
+            link.download = attachment.Name;
+            event.initEvent("click", true, false);
+            link.dispatchEvent(event);
         } else {
             // Bad blob support, make a data URI, don't click it
-            reader = new FileReader();
+            var reader = new FileReader();
 
             reader.onloadend = function () {
-                link.attr('href',reader.result);
+                link.attr('href', reader.result);
             };
 
             reader.readAsDataURL(blob);
         }
     };
+
+
 
     $scope.detachLabel = function(id) {
         var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
