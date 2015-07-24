@@ -120,9 +120,21 @@ angular.module("proton.controllers.Auth", [
 
         clearErrors();
         networkActivityTracker.track(
-            authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
+            authentication.unlockWithPassword(
+                $rootScope.TemporaryEncryptedPrivateKeyChallenge, 
+                mailboxPassword, 
+                $rootScope.TemporaryEncryptedAccessToken, 
+                $rootScope.TemporaryAccessData
+            )
             .then(
                 function(resp) {
+                    $log.debug('unlockWithPassword:resp'+resp);
+                    return authentication.setAuthCookie();
+                }
+            )
+            .then(
+                function(resp) {
+                    $log.debug('setAuthCookie:resp'+resp);
                     window.sessionStorage.setItem('protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
                     $state.go("secured.inbox");

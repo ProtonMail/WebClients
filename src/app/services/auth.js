@@ -142,6 +142,39 @@ angular.module("proton.authentication", [
                     return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
                 },
 
+                setAuthCookie: function() {
+                    var deferred = $q.defer();
+                    $http.post(baseURL + "/auth/cookies",
+                    {
+                        ResponseType: "token",
+                        ClientID: CONFIG.clientID,
+                        GrantType: "refresh_token",
+                        RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
+                        RedirectURI: "https://protonmail.ch",
+                        State: api.randomString(24)
+                    })
+                    .then(
+                        function(response) {
+                            $log.debug(response);
+                            if (response.data.code===1000) {
+                                deferred.resolve(200);
+                                // forget x-pm-uid
+                                // forget accessToken
+                                // forget refreshToken
+                            }
+                            else {
+                                deferred.reject();
+                                $log.error('setAuthCookie', response);
+                            }
+                        },
+                        function(err) {
+                            deferred.reject();
+                            $log.error('setAuthCookie', err);
+                        }
+                    );
+                    return deferred.promise;
+                },
+
                 loginWithCredentials: function(creds) {
                     var q = $q.defer();
 
