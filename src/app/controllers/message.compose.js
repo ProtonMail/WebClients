@@ -628,7 +628,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.saved++;
         var deferred = $q.defer();
         var parameters = {
-            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
+            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
         if (typeof parameters.Message.ToList === 'string') {
@@ -667,6 +667,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             draftPromise.then(function(result) {
                 var process = function(result) {
                     message.ID = result.Message.ID;
+                    message.IsRead = result.Message.IsRead;
 
                     if(forward === true && result.Message.Attachments.length > 0) {
                         message.Attachments = result.Message.Attachments;
