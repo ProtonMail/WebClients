@@ -136,7 +136,7 @@ angular.module("proton", [
         var firstNameOnly;
         if(authentication.user) {
             var emailFirst = authentication.user.DisplayName.split('@');
-            
+
             if (emailFirst[0] === authentication.user.Name) {
                 firstNameOnly = emailFirst[0];
             } else {

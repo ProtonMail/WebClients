@@ -98,7 +98,6 @@
         ng-class="{ 'disabled': attachment.decrypting }"
         id="attachment-{{$index}}"
         data-download-text="{{ 'DOWNLOAD' | translate }}"
-        href
         ng-click="decryptAttachment(message, attachment, $event)">
             <i ng-show="attachment.decrypting" class="fa fa-cog fa-spin"></i>
             <i ng-show="attachment.decrypted" class="fa fa-download"></i>
