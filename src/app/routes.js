@@ -302,11 +302,11 @@ angular.module("proton.routes", [
             }
         },
         resolve: {
-            token: function($http, $rootScope, authentication) {
-                return $http.post(authentication.baseURL + "/auth",
+            token: function($http, $rootScope, authentication, url) {
+                return $http.post(url.get() + "/auth",
                     _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
-                        ClientID: "demoapp",
-                        ClientSecret: "demopass",
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
                         State: authentication.randomString(24),
                         RedirectURI: "https://protonmail.ch",

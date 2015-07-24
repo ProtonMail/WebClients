@@ -3,486 +3,447 @@ angular.module("proton.authentication", [
     "proton.models"
 ])
 
-.constant("MAILBOX_PASSWORD_KEY", "proton:mailbox_pwd")
-.constant("OAUTH_KEY", "proton:oauth")
-.constant("EVENT_ID", "proton:eventid")
-
-.config(function(
-    $provide,
-    MAILBOX_PASSWORD_KEY,
-    OAUTH_KEY,
-    EVENT_ID
+.factory('authentication', function(
+    pmcw,
+    CONSTANTS,
+    $state,
+    $rootScope,
+    $q,
+    $http,
+    $timeout,
+    errorReporter,
+    url,
+    notify,
+    CONFIG
 ) {
-    $provide.provider("authentication", function AuthenticationProvider(pmcwProvider) {
-        // PRIVATE VARIABLES
-        var auth = {};
-        var baseURL;
+    // PRIVATE FUNCTIONS
+    var auth = {
+        setAuthHeaders: function() {
+            // API version
+            $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
 
-        auth.provider = this;
+            // credentials
+            if (auth.data.AccessToken) {
+                $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
+            }
+            if (auth.data.Uid) {
+                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
+            }
 
-        // PRIVATE FUNCTIONS
+            // Upgrade
+            $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
+            $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
+        },
 
-        auth.saveAuthData = function(data) {
+        fetchUserInfo: function(uid) {
+            var deferred = $q.defer();
 
-            window.sessionStorage[OAUTH_KEY + ":Uid"] = data.Uid;
+            api.user = $http.get(url.get() + "/users", {
+                params: {
+                    id: uid
+                }
+            });
 
+            api.user.then(
+                function(result) {
+                    var user = result.data.User;
+
+                    if (!user.EncPrivateKey) {
+                        api.logout();
+                        deferred.reject();
+                    } else {
+                        $q.all([
+                            $http.get(url.get() + "/contacts"),
+                            $http.get(url.get() + "/labels")
+                        ]).then(
+                            function(result) {
+                                user.Contacts = result[0].data.Contacts;
+                                user.Labels = result[1].data.Labels;
+                                deferred.resolve(user);
+                            },
+                            function() {
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: 'Sorry, but we were unable to fully log you in.'
+                                });
+                                api.logout();
+                            }
+                        );
+                    }
+                },
+                function(err) {
+                    console.log(err);
+                    notify({
+                        classes: 'notification-danger',
+                        message: 'Sorry, but we were unable to log you in.'
+                    });
+                    api.logout();
+                }
+            );
+
+            return deferred.promise;
+        },
+
+        saveAuthData: function(data) {
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
             date = moment(Date.now() + data.ExpiresIn * 1000);
-            window.sessionStorage[OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
-            window.sessionStorage[OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-            window.sessionStorage[OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
             auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             auth.data.ExpiresIn = date;
-
             auth.setAuthHeaders();
-        };
+        },
 
-        auth.saveEventId = function(id) {
-            window.sessionStorage[EVENT_ID] = id;
-        };
+        saveEventId: function(id) {
+            window.sessionStorage[CONSTANTS.EVENT_ID] = id;
+        }
+    };
 
-        auth.savePassword = function(pwd) {
-            window.sessionStorage[MAILBOX_PASSWORD_KEY] = pwd;
-        };
-
-        auth.getPassword = function() {
-            return window.sessionStorage[MAILBOX_PASSWORD_KEY];
-        };
-
-        // CONFIG-TIME API FUNCTIONS
-
-        this.detectAuthenticationState = function() {
-            var dt = window.sessionStorage[OAUTH_KEY + ":ExpiresIn"];
+    // RUN-TIME PUBLIC FUNCTIONS
+    var api = {
+        detectAuthenticationState: function() {
+            var dt = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"];
             if (dt) {
                 dt = moment(dt);
                 auth.data = {
-                    Uid: window.sessionStorage[OAUTH_KEY + ":Uid"],
+                    Uid: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"],
                     ExpiresIn: dt,
-                    AccessToken: window.sessionStorage[OAUTH_KEY + ":AccessToken"],
-                    RefreshToken: window.sessionStorage[OAUTH_KEY + ":RefreshToken"]
+                    AccessToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"],
+                    RefreshToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"]
                 };
 
                 if (dt.isBefore(Date.now())) {
                     auth.data.shouldRefresh = true;
                 }
 
-                auth.mailboxPassword = auth.getPassword();
+                auth.mailboxPassword = api.getPassword();
+
                 if (auth.mailboxPassword) {
-                    pmcwProvider.setMailboxPassword(auth.mailboxPassword);
+                    pmcw.setMailboxPassword(auth.mailboxPassword);
                 }
             }
-        };
+        },
 
-        this.setAPIBaseURL = function(newBaseURL) {
-            if (!baseURL) {
-                baseURL = this.baseURL = newBaseURL;
-            }
-        };
+        savePassword: function(pwd) {
+            window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_base64(pwd);
+        },
 
-        this.$get = function(
-            $state,
-            $rootScope,
-            $q,
-            $http,
-            $timeout,
-            $log,
-            pmcw,
-            errorReporter,
-            notify,
-            CONFIG
-        ) {
+        getPassword: function() {
+            var pwd = window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY];
 
-            // RUN-TIME PUBLIC FUNCTIONS
+            return pmcw.decode_base64(pwd);
+        },
 
-            var api = {
-
-                randomString: function(length)
+        randomString: function(length)
+        {
+            var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var i;
+            var result = "";
+            var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
+            if(window.crypto && window.crypto.getRandomValues)
+            {
+                values = new Uint32Array(length);
+                window.crypto.getRandomValues(values);
+                for(i=0; i<length; i++)
                 {
-                    var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-                    var i;
-                    var result = "";
-                    var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
-                    if(window.crypto && window.crypto.getRandomValues)
-                    {
-                        values = new Uint32Array(length);
-                        window.crypto.getRandomValues(values);
-                        for(i=0; i<length; i++)
-                        {
-                            result += charset[values[i] % charset.length];
-                        }
-                        return result;
-                    }
-                    else if(isOpera)
-                    {
-                        //Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
-                        for(i=0; i<length; i++)
-                        {
-                            result += charset[Math.floor(Math.random()*charset.length)];
-                        }
-                        return result;
-                    } else {
-                        return api.semiRandomString(length);
-                    }
-                },
+                    result += charset[values[i] % charset.length];
+                }
+                return result;
+            }
+            else if(isOpera)
+            {
+                //Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+                for(i=0; i<length; i++)
+                {
+                    result += charset[Math.floor(Math.random()*charset.length)];
+                }
+                return result;
+            } else {
+                return api.semiRandomString(length);
+            }
+        },
 
-                semiRandomString: function(size) {
-                    var string = "",
-                        i = 0,
-                        chars = "0123456789ABCDEF";
+        semiRandomString: function(size) {
+            var string = "",
+                i = 0,
+                chars = "0123456789ABCDEF";
 
-                    while (i++ < size) {
-                        string += chars[Math.floor(Math.random() * 16)];
-                    }
+            while (i++ < size) {
+                string += chars[Math.floor(Math.random() * 16)];
+            }
 
-                    return string;
-                },
+            return string;
+        },
 
-                getPrivateKey: function() {
-                    var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem('protonmail_pw'));
+        getPrivateKey: function() {
+            var pw = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
 
-                    return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
-                },
+            return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
+        },
 
-                setAuthCookie: function() {
-                    var deferred = $q.defer();
-                    $http.post(baseURL + "/auth/cookies",
-                    {
-                        ResponseType: "token",
-                        ClientID: CONFIG.clientID,
-                        GrantType: "refresh_token",
-                        RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
-                        RedirectURI: "https://protonmail.ch",
-                        State: api.randomString(24)
-                    })
-                    .then(
-                        function(response) {
-                            $log.debug(response);
-                            if (response.data.code===1000) {
-                                deferred.resolve(200);
-                                // forget x-pm-uid
-                                // forget accessToken
-                                // forget refreshToken
-                            }
-                            else {
-                                deferred.reject();
-                                $log.error('setAuthCookie', response);
-                            }
-                        },
-                        function(err) {
-                            deferred.reject();
-                            $log.error('setAuthCookie', err);
-                        }
-                    );
-                    return deferred.promise;
-                },
-
-                loginWithCredentials: function(creds) {
-                    var q = $q.defer();
-
-                    if (!creds.Username || !creds.Password) {
-                        q.reject({
-                            message: "Username and Password are required to login"
-                        });
-                    } else {
-                        delete $http.defaults.headers.common.Accept;
-                        $rootScope.creds = creds;
-                        $http.post(baseURL + "/auth",
-                            _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
-                                ClientID: "demoapp",
-                                ClientSecret: "demopass",
-                                GrantType: "password",
-                                State: api.randomString(24),
-                                RedirectURI: "https://protonmail.ch",
-                                ResponseType: "token",
-                                Scope: "full" // 'full' or 'reset'
-                            })
-                        ).then(
-                            function(resp) {
-                                $rootScope.TemporaryAccessData = resp.data;
-                                $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
-                                $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
-                                q.resolve(resp);
-                                // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
-                            },
-                            function(error) {
-                                console.log(error);
-                                q.reject({
-                                    message: error.error_description
-                                });
-                            }
-                        );
-                    }
-
-                    return q.promise;
-                },
-
-                // Whether a user is logged in at all
-                isLoggedIn: function() {
-                    var loggedIn = auth.data && angular.isDefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
-
-                    if (loggedIn && api.user === null) {
-                        auth.setAuthHeaders();
-                    }
-
-                    return loggedIn;
-                },
-
-                refreshTokenIsDefined: function() {
-                    var isDefined = false;
-
-                    if (auth.data && typeof auth.data.RefreshToken !== 'undefined' && auth.data.RefreshToken !== 'undefined') {
-                        isDefined = true;
-                    }
-
-                    return isDefined;
-                },
-
-                // Whether the mailbox' password is accessible, or if the user needs to re-enter it
-                isLocked: function() {
-                    return !api.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
-                },
-
-                // Logged in and MBPW is set
-                isSecured: function() {
-                    return api.isLoggedIn() && !api.isLocked();
-                },
-
-                // Return a state name to be in in case some user authentication step is required.
-                // This will null if the logged in and unlocked.
-                state: function() {
-                    if (api.isLoggedIn()) {
-                        return api.isLocked() ? "login.unlock" : null;
-                    } else {
-                        return "login";
-                    }
-                },
-
-                // Redirect to a new authentication state, if required
-                redirectIfNecessary: function() {
-                    var newState = api.state();
-                    if (newState) {
-                        $state.go(newState);
-                    }
-                },
-
-                refreshIfNecessary: function(force) {
-                    if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
-                        $http.post(
-                            baseURL + "/auth/refresh",
-                            _.extend(_.pick(auth.data, "RefreshToken"), {
-                                ClientID: "demoapp",
-                                GrantType: "refresh_token",
-                                State: api.randomString(24),
-                                ResponseType: "token",
-                            })
-                        ).then(
-                            function(resp) {
-                                auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
-                            },
-                            function(resp) {
-                                if(resp.error) {
-                                    api.logout();
-                                }
-                                errorReporter.catcher("Something went wrong with authentication");
-                            }
-                        );
-                    }
-                },
-
-                // Removes all connection data
-                logout: function() {
-                    // Completely clear sessionstorage
-                    window.sessionStorage.clear();
-
-                    delete auth.data;
-                    delete auth.mailboxPassword;
-
-                    this.user = null;
-
-                    // HACKY ASS BUG
-                    $http.delete(baseURL + "/auth").then( function() {
-                        location.reload();
-                    });
-
-                    // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
-                    // $rootScope.isLoggedIn = false;
-                    // $rootScope.isLocked = true;
-                    // $rootScope.isSecure = false;
-                    // $rootScope.domoArigato = false;
-
-                },
-
-                // Returns an async promise that will be successful only if the mailbox password
-                // proves correct (we test this by decrypting a small blob)
-                unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
-
-                    // console.log(epk, pwd, accessToken, TemporaryAccessData);
-
-                    var req = $q.defer();
-                    var self = this;
-
-                    if (pwd) {
-
-                        pmcw.checkMailboxPassword(epk, pwd, accessToken)
-                        .then(
-                            function(response) {
-                                auth.savePassword(pwd);
-                                auth.mailboxPassword = pwd;
-                                api.receivedCredentials({
-                                    "AccessToken": response,
-                                    "RefreshToken": TemporaryAccessData.RefreshToken,
-                                    "Uid": TemporaryAccessData.Uid,
-                                    "ExpiresIn": TemporaryAccessData.ExpiresIn,
-                                    "EventID": TemporaryAccessData.EventID
-                                });
-                                req.resolve(200);
-                            },
-                            function(rejection) {
-                                // console.log(rejection);
-                                req.reject({
-                                    message: "Wrong decryption password."
-                                });
-                            }
-                        );
+        setAuthCookie: function() {
+            var deferred = $q.defer();
+            $http.post(baseURL + "/auth/cookies",
+            {
+                ResponseType: "token",
+                ClientID: CONFIG.clientID,
+                GrantType: "refresh_token",
+                RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
+                RedirectURI: "https://protonmail.ch",
+                State: api.randomString(24)
+            })
+            .then(
+                function(response) {
+                    $log.debug(response);
+                    if (response.data.code===1000) {
+                        deferred.resolve(200);
+                        // forget x-pm-uid
+                        // forget accessToken
+                        // forget refreshToken
                     }
                     else {
-                        req.reject({
-                            message: "Password is required"
-                        });
+                        deferred.reject();
+                        $log.error('setAuthCookie', response);
                     }
-
-                    return req.promise;
                 },
-
-                setTokenUID: function(data) {
-                    // console.log(data);
-                    if (data.AccessToken) {
-                        $http.defaults.headers.common.Authorization = "Bearer " + data.AccessToken;
-                    }
-                    if (data.Uid) {
-                        $http.defaults.headers.common["x-pm-uid"] = data.Uid;
-                    }
-                    // console.log($http.defaults.headers.common);
-                },
-
-                receivedCredentials: function(data) {
-                    auth.saveAuthData(data);
-                    auth.saveEventId(data.EventID);
-                },
-
-                fetchUserInfo: function(uid) {
-
-                    var promise = auth.fetchUserInfo(uid);
-                    return promise.then(
-                        function(user) {
-
-                            // console.log(user);
-
-                            if (user.DisplayName.length === 0) {
-                                user.DisplayName = user.Addresses[0].Email;
-                            }
-
-                            $rootScope.isLoggedIn = true;
-                            $rootScope.user = user;
-                            this.user = user;
-                            $log.debug(user.Theme);
-                            $log.debug(btoa(user.Theme));
-                            $log.debug(atob(user.Theme));
-                            this.user.Theme = atob(user.Theme);
-
-                            return user;
-                        }.bind(this),
-                        errorReporter.catcher("Please try again later")
-                    );
-                },
-
-                params: function(params) {
-                    return params;
+                function(err) {
+                    deferred.reject();
+                    $log.error('setAuthCookie', err);
                 }
-            };
+            );
+            return deferred.promise;
+        },
 
-            auth.setAuthHeaders = function() {
-                // API version
-                $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
+        loginWithCredentials: function(creds) {
+                    var q = $q.defer();
 
-                // credentials
-                if (auth.data.AccessToken) {
-                    $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
-                }
-                if (auth.data.Uid) {
-                    $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
-                }
-
-                // Upgrade
-                $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
-                $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
-            };
-
-            auth.fetchUserInfo = function(uid) {
-
-                var q = $q.defer();
-
-                api.user = $http.get(baseURL + "/users", {
-                    params: {
-                        id: uid
-                    }
+            if (!creds.Username || !creds.Password) {
+                q.reject({
+                    message: "Username and Password are required to login"
                 });
-
-                api.user.then(
-                    function(result) {
-
-                        // console.log(result);
-
-                        var user = result.data.User;
-
-                        if (!user.EncPrivateKey) {
-                            api.logout();
-                            q.reject();
-                        } else {
-                            $q.all([
-                                $http.get(baseURL + "/contacts"),
-                                $http.get(baseURL + "/labels")
-                            ]).then(
-                                function(result) {
-                                    user.Contacts = result[0].data.Contacts;
-                                    user.Labels = result[1].data.Labels;
-                                    q.resolve(user);
-                                },
-                                function() {
-                                    notify({
-                                        classes: 'notification-danger',
-                                        message: 'Sorry, but we were unable to fully log you in.'
-                                    });
-                                    api.logout();
-                                }
-                            );
-                        }
+            } else {
+                delete $http.defaults.headers.common.Accept;
+                $rootScope.creds = creds;
+                $http.post(url.get() + "/auth",
+                    _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret,
+                        GrantType: "password",
+                        State: api.randomString(24),
+                        RedirectURI: "https://protonmail.ch",
+                        ResponseType: "token",
+                        Scope: "full" // 'full' or 'reset'
+                    })
+                ).then(
+                    function(resp) {
+                        $rootScope.TemporaryAccessData = resp.data;
+                        $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
+                        $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
+                        q.resolve(resp);
+                        // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                     },
-                    function(err) {
-                        console.log(err);
-                        notify({
-                            classes: 'notification-danger',
-                            message: 'Sorry, but we were unable to log you in.'
+                    function(error) {
+                        console.log(error);
+                        q.reject({
+                            message: error.error_description
                         });
-                        api.logout();
                     }
                 );
+            }
 
-                return q.promise;
-            };
+            return q.promise;
+        },
 
-            api.baseURL = baseURL;
-            api.user = null;
+        // Whether a user is logged in at all
+        isLoggedIn: function() {
+            var loggedIn = auth.data && angular.isDefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
 
-            return typeof Object.seal !== "undefined" ? Object.seal(api) : api;
-        };
-    });
+            if (loggedIn && api.user === null) {
+                auth.setAuthHeaders();
+            }
+
+            return loggedIn;
+        },
+
+        refreshTokenIsDefined: function() {
+            var isDefined = false;
+
+            if (auth.data && typeof auth.data.RefreshToken !== 'undefined' && auth.data.RefreshToken !== 'undefined') {
+                isDefined = true;
+            }
+
+            return isDefined;
+        },
+
+        // Whether the mailbox' password is accessible, or if the user needs to re-enter it
+        isLocked: function() {
+            return !api.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
+        },
+
+        // Logged in and MBPW is set
+        isSecured: function() {
+            return api.isLoggedIn() && !api.isLocked();
+        },
+
+        // Return a state name to be in in case some user authentication step is required.
+        // This will null if the logged in and unlocked.
+        state: function() {
+            if (api.isLoggedIn()) {
+                return api.isLocked() ? "login.unlock" : null;
+            } else {
+                return "login";
+            }
+        },
+
+        // Redirect to a new authentication state, if required
+        redirectIfNecessary: function() {
+            var newState = api.state();
+            if (newState) {
+                $state.go(newState);
+            }
+        },
+
+        refreshIfNecessary: function(force) {
+            if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
+                $http.post(
+                    url.get() + "/auth/refresh",
+                    _.extend(_.pick(auth.data, "RefreshToken"), {
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret,
+                        GrantType: "refresh_token",
+                        State: api.randomString(24),
+                        ResponseType: "token",
+                    })
+                ).then(
+                    function(resp) {
+                        auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
+                    },
+                    function(resp) {
+                        if(resp.error) {
+                            api.logout();
+                        }
+                        errorReporter.catcher("Something went wrong with authentication");
+                    }
+                );
+            }
+        },
+
+        // Removes all connection data
+        logout: function() {
+            // Completely clear sessionstorage
+            window.sessionStorage.clear();
+
+            delete auth.data;
+            delete auth.mailboxPassword;
+
+            this.user = null;
+
+            // HACKY ASS BUG
+            $http.delete(url.get() + "/auth").then( function() {
+                location.reload();
+            });
+
+            // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
+            // $rootScope.isLoggedIn = false;
+            // $rootScope.isLocked = true;
+            // $rootScope.isSecure = false;
+            // $rootScope.domoArigato = false;
+
+        },
+
+        // Returns an async promise that will be successful only if the mailbox password
+        // proves correct (we test this by decrypting a small blob)
+        unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
+
+            // console.log(epk, pwd, accessToken, TemporaryAccessData);
+
+            var req = $q.defer();
+            var self = this;
+
+            if (pwd) {
+
+                pmcw.checkMailboxPassword(epk, pwd, accessToken)
+                .then(
+                    function(response) {
+                        api.savePassword(pwd);
+                        auth.mailboxPassword = pwd;
+                        api.receivedCredentials({
+                            "AccessToken": response,
+                            "RefreshToken": TemporaryAccessData.RefreshToken,
+                            "Uid": TemporaryAccessData.Uid,
+                            "ExpiresIn": TemporaryAccessData.ExpiresIn,
+                            "EventID": TemporaryAccessData.EventID
+                        });
+                        req.resolve(200);
+                    },
+                    function(rejection) {
+                        // console.log(rejection);
+                        req.reject({
+                            message: "Wrong decryption password."
+                        });
+                    }
+                );
+            }
+            else {
+                req.reject({
+                    message: "Password is required"
+                });
+            }
+
+            return req.promise;
+        },
+
+        setTokenUID: function(data) {
+            // console.log(data);
+            if (data.AccessToken) {
+                $http.defaults.headers.common.Authorization = "Bearer " + data.AccessToken;
+            }
+            if (data.Uid) {
+                $http.defaults.headers.common["x-pm-uid"] = data.Uid;
+            }
+            // console.log($http.defaults.headers.common);
+        },
+
+        receivedCredentials: function(data) {
+            auth.saveAuthData(data);
+            auth.saveEventId(data.EventID);
+        },
+
+        fetchUserInfo: function(uid) {
+            var promise = auth.fetchUserInfo(uid);
+            return promise.then(
+                function(user) {
+
+                    // console.log(user);
+
+                    if (user.DisplayName.length === 0) {
+                        user.DisplayName = user.Addresses[0].Email;
+                    }
+
+                    $rootScope.isLoggedIn = true;
+                    $rootScope.user = user;
+                    this.user = user;
+                    this.user.Theme = atob(user.Theme);
+
+                    return user;
+                }.bind(this),
+                errorReporter.catcher("Please try again later")
+            );
+        },
+
+        params: function(params) {
+            return params;
+        }
+    };
+
+    api.user = null;
+
+    return api;
 })
 
-.config(function(authenticationProvider) {
-    authenticationProvider.detectAuthenticationState();
-})
-
-.run(function($rootScope, authentication, eventManager) {
+.run(function($rootScope, authentication, eventManager, CONFIG) {
+    authentication.detectAuthenticationState();
     authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();

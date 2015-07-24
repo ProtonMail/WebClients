@@ -10,6 +10,7 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $log,
     $timeout,
+    CONSTANTS,
     authentication,
     networkActivityTracker,
     notify,
@@ -57,33 +58,42 @@ angular.module("proton.controllers.Auth", [
             })
             .then(
                 function(result) {
-                    // console.log('loginWithCredentials done', result);
-                	if (result.data.AccessToken) {
-                        $rootScope.isLoggedIn = true;
-                        $rootScope.tempUser = [];
-                        $rootScope.tempUser.username = $scope.username;
-                        $rootScope.tempUser.password = $scope.password;
-                        if (result.data.AccessToken.length < 50) {
-                            return authentication.fetchUserInfo()
-                            .then(
-                                function(response) {
-                                    $state.go("login.unlock");
-                                    if ($rootScope.pubKey === 'to be modified') {
-                                        $state.go('step2');
-                                        return;
-                                    } else {
+                    $log.debug('loginWithCredentials:result.data ', result);
+                    if (result.data.Code!==undefined) {
+                        if (result.data.Code===401) {
+                            notify({
+                                classes: 'notification-danger',
+                                message: result.data.ErrorDescription
+                            });
+                        }
+                    	else if (result.data.AccessToken) {
+                            $rootScope.isLoggedIn = true;
+                            $rootScope.tempUser = {};
+                            $rootScope.tempUser.username = $scope.username;
+                            $rootScope.tempUser.password = $scope.password;
+
+                            if (result.data.AccessToken.length < 50) {
+                                return authentication.fetchUserInfo()
+                                .then(
+                                    function(response) {
                                         $state.go("login.unlock");
-                                        return;
+                                        if ($rootScope.pubKey === 'to be modified') {
+                                            $state.go('step2');
+                                            return;
+                                        } else {
+                                            $state.go("login.unlock");
+                                            return;
+                                        }
                                     }
-                                }
-                            );
-                        }
-                        else {
-                            // console.log('Going to unlock page.');
-                            $state.go("login.unlock");
-                            return;
-                        }
-	                }
+                                );
+                            }
+                            else {
+                                // console.log('Going to unlock page.');
+                                $state.go("login.unlock");
+                                return;
+                            }
+    	                }
+                    }
 	                else if (result.Error) {
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.error_description) ? result.error_description : result.Error;
 	                	notify({
@@ -94,7 +104,7 @@ angular.module("proton.controllers.Auth", [
 	                else {
 	                	notify({
 	                        classes: 'notification-danger',
-	                        message: 'Wrong Username or Password.'
+	                        message: 'Unable to log you in.'
 	                    });
 	                }
 	                return;
@@ -117,7 +127,6 @@ angular.module("proton.controllers.Auth", [
     $scope.tryDecrypt = function() {
         $('input').blur();
         var mailboxPassword = this.mailboxPassword;
-
         clearErrors();
         networkActivityTracker.track(
             authentication.unlockWithPassword(
@@ -135,7 +144,7 @@ angular.module("proton.controllers.Auth", [
             .then(
                 function(resp) {
                     $log.debug('setAuthCookie:resp'+resp);
-                    window.sessionStorage.setItem('protonmail_pw', pmcw.encode_utf8_base64(mailboxPassword));
+                    window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
                     $rootScope.domoArigato = true;
                     $state.go("secured.inbox");
                 },
@@ -173,7 +182,7 @@ angular.module("proton.controllers.Auth", [
     eventManager
 ) {
     $scope.user = authentication.user;
-    $scope.logout = authentication.logout;
+    $scope.logout = $rootScope.logout;
 
     eventManager.start(authentication.user.EventID);
 

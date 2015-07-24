@@ -140,12 +140,16 @@ angular.module("proton.tools", ["proton.constants"])
 
         function break_images(html) {
             html = html.replace(/src=/g, " data-src=");
+            html = html.replace(/xlink:href=/g, "data-xlink:href=");
+            html = html.replace(/poster=/g, " data-poster=");
             html = html.replace(/background=/g, " data-background=");
             return html.replace(/url\(/g, "data-url(");
         }
 
         function fix_images(html) {
             html = html.replace(/data-src=/g, " src=");
+            html = html.replace(/data-xlink:href=/g, "xlink:href=");
+            html = html.replace(/data-poster=/g, " poster=");
             html = html.replace(/data-background=/g, " background=");
             return html.replace(/data-url\(/g,  "url(");
         }

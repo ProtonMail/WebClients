@@ -297,10 +297,10 @@ angular.module("proton.controllers.Contacts", [
 
                               _.forEach(vcardData, function(d, i) {
                                   if (d.fn && d.email) {
-                                      contactArray.push({'ContactName' : d.fn.value, 'ContactEmail' : d.email.value});
+                                      contactArray.push({'Name' : d.fn.value, 'Email' : d.email.value});
                                   }
                                   else if(d.email) {
-                                      contactArray.push({'ContactName' : d.email.value, 'ContactEmail' : d.email.value});
+                                      contactArray.push({'Name' : d.email.value, 'Email' : d.email.value});
                                   }
                               });
 
@@ -334,7 +334,6 @@ angular.module("proton.controllers.Contacts", [
                                         }
                                       }
                                     });
-
                                     importContacts(contactArray);
                             	}
                             });

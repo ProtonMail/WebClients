@@ -43,7 +43,33 @@
         <div id="logArea" ng-show="doLogging != 0">
 
             <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
-            <table class="table table-bordered table-striped" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
+            <ul class="visible-xs-block list-group">
+                <li 
+                class="list-group-item" 
+                ng-repeat="log in logs | filter:paginate" 
+                ng-class="{ 'danger': (log.Event == 0) }">
+                    <div>
+                        <span ng-show="{{ log.Event == 0 }}">
+                            <i class="fa fa-times-circle"></i>
+                        </span>
+                        <span ng-show="{{ log.Event == 1 }}">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <span ng-show="{{ log.Event == 2 }}">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <strong ng-show="{{ log.Event == 0 }}">Login Failed</strong>
+                        <strong ng-show="{{ log.Event == 1 }}">Login Success</strong>
+                        <strong ng-show="{{ log.Event == 2 }}">Logout</strong>
+                    </div>
+                    <div>{{ log.Time * 1000 | date : 'medium' }}</div>
+                    <div ng-show="doLogging == 2">
+                        <kbd ng-show="log.IP!==''">{{log.IP}}</kbd>
+                        <kbd ng-show="log.IP===''">--</kbd>
+                    </div>
+                </tr>
+            </ul>
+            <table class="table table-bordered table-striped hidden-xs" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                 <thead>
                     <tr>
                         <th width="6rem"></th>

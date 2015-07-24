@@ -140,6 +140,12 @@
         }
     }
 
+    .typeahead-container.to-container {
+        width: 400px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
     .tm-tag {
         border: none;
         box-shadow: none;
@@ -153,6 +159,10 @@
         color: #000;
         font-size: $pm-font-size-base;
         font-family: $font-primary;
+        max-width: 32rem !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;        
         -webkit-touch-callout: none;
         @include user-select(none);
 

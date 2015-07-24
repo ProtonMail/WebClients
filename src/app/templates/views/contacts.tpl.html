@@ -38,13 +38,13 @@
                             </th>
                             <th>
                                 {{ 'NAME' | translate }}
-                                <a href="" ng-click="setSortBy('Name')" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-caret-up"></i></a>
-                                <a href="" ng-click="setSortBy('-Name')" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-caret-down"></i></a>
+                                <a href="" ng-click="setSortBy('Name')" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                                <a href="" ng-click="setSortBy('-Name')" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
                             </th>
                             <th>
                                 {{ 'EMAIL' | translate }}
-                                <a href="" ng-click="setSortBy('Email')" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-caret-up"></i></a>
-                                <a href="" ng-click="setSortBy('-Email')" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-caret-down"></i></a>
+                                <a href="" ng-click="setSortBy('Email')" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                                <a href="" ng-click="setSortBy('-Email')" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
                             </th>
                             <th class="text-right actionsTh">{{ 'ACTIONS' | translate }}</th>
                         </tr>
@@ -68,7 +68,7 @@
                                     <i class="fa fa-trash-o"></i>
                                 </a>
                                 <a pt-tooltip="{{ 'COMPOSE' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
-                                    <i class="fa fa-send"></i>
+                                    <i class="fa fa-pencil"></i>
                                 </a>
                             </td>
                         </tr>

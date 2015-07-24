@@ -90,6 +90,28 @@ angular.module("proton", [
     "proton.translations"
 ])
 
+// Set base url from grunt config
+.provider('url', function urlProvider() {
+    var base;
+
+    this.setBaseUrl = function(newUrl) {
+        base = newUrl;
+    };
+
+    this.$get = function() {
+        return {
+            get: function() {
+                return base;
+            }
+        };
+    };
+})
+
+.config(function(urlProvider, CONFIG) {
+    urlProvider.setBaseUrl(CONFIG.apiUrl);
+})
+
+
 .run(function(
     $document,
     $rootScope,
@@ -112,14 +134,18 @@ angular.module("proton", [
 
     $rootScope.firstNameOnly = function() {
         var firstNameOnly;
-        var emailFirst = authentication.user.DisplayName.split('@');
-        if (emailFirst[0]===authentication.user.Name) {
-            firstNameOnly = emailFirst[0];
+        if(authentication.user) {
+            var emailFirst = authentication.user.DisplayName.split('@');
+
+            if (emailFirst[0] === authentication.user.Name) {
+                firstNameOnly = emailFirst[0];
+            } else {
+                firstNameOnly = authentication.user.DisplayName;
+            }
+        } else {
+            firstNameOnly = $rootScope.tempUser.username;
         }
-        else {
-            firstNameOnly = authentication.user.DisplayName.split(' ');
-            firstNameOnly = firstNameOnly[0];
-        }
+
         return firstNameOnly;
     };
 
@@ -164,14 +190,14 @@ angular.module("proton", [
             if (response.status === 401) {
                 $injector.get('$state').go('login');
             }
-            if (response.data.Code!==undefined) {
+            else if (response.data.Code!==undefined) {
                 // app update needd
                 if (response.data.Code===5003) {
                     if ($rootScope.updateMessage===false) {
                         $rootScope.updateMessage = true;
                         $injector.get('notify')({
                             classes: 'notification-info',
-                            message: 'A new version of ProtonMail is available. Refresh to automatically update.',
+                            message: 'A new version of ProtonMail is available. Logout and log back in to automatically update.',
                             duration: 10000
                         });
                         setTimeout( function() {
@@ -195,8 +221,8 @@ angular.module("proton", [
                 // site offline
                 else if (response.data.Code===7001) {
                     $injector.get('notify')({
-                        classes: 'notification-danger',
-                        message: 'Unable to connect to API server.'
+                        classes: 'notification-info',
+                        message: 'The ProtonMail API is offline: '+response.data.ErrorDescription
                     });
                 }
             }
@@ -272,7 +298,6 @@ angular.module("proton", [
             }, 10);
             $rootScope.scrollToBottom = false;
         }
-        $('#loading-css').remove();
         $('#loading').remove();
     });
 })
@@ -370,15 +395,12 @@ angular.module("proton", [
 })
 
 .run(function($rootScope) {
+    // Set build config
     $rootScope.build = {
         "version":"2.0",
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-.config(function(authenticationProvider, CONFIG) {
-    authenticationProvider.setAPIBaseURL(CONFIG.apiUrl);
 })
 
 //

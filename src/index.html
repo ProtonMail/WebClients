@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="proton">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <base href="/">
     <title>ProtonMail</title>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="https://protonmail.ch/favicon.ico">
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon_57.png">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicon_57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon_72.png">
@@ -18,13 +18,11 @@
     <% styles.forEach(function (file) { %>
     <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
-    <ng-include src="'templates/partials/loading.tpl.html'"></ng-include>
     <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">
     {{ user.Theme }}
     </style>
 </head>
 <body
-ng-app="proton"
 id="{{ toState }}"
 ng-class="{
   locked:
@@ -46,31 +44,21 @@ ng-class="{
     toggleSidebar
   }">
     <div id="loading">
-
       <div class="higgs">
-
         <div class="orbit">
           <div class="ring horizontal"><div class="wrap-electron"></div></div>
           <div class="ring vertical"><div class="wrap-electron"></div></div>
         </div>
-
         <div class="orbit r">
           <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
           <div class="ring vertical inner"><div class="wrap-electron"></div></div>
           <div class="ring center"></div>
         </div>
-
       </div>
         <p class="text-center">Loading ProtonMail</p>
     </div>
-
     <div ui-view="main" autoscroll="false" id="body"></div>
     <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script><% }); %>
-    <script type="text/javascript">
-        angular.module("proton")
-        .run(function($rootScope) { $rootScope.build = <%= JSON.stringify(build) %>; })
-        .config(function(authenticationProvider) { authenticationProvider.setAPIBaseURL("<%= settings.apiUrl %>"); })
-    </script>
 </body>
 </html>

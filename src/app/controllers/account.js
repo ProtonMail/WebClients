@@ -9,6 +9,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $translate,
     $q,
     $timeout,
+    CONSTANTS,
     authentication,
     networkActivityTracker,
     User,
@@ -249,8 +250,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         var deferred = $q.defer();
         $scope.finishCreation = true;
         window.sessionStorage.setItem(
-            'protonmail_pw',
-            pmcw.encode_utf8_base64($scope.account.mailboxPassword)
+            CONSTANTS.MAILBOX_PASSWORD_KEY,
+            pmcw.encode_base64($scope.account.mailboxPassword)
         );
         delete $rootScope.tempUser;
         $timeout( function() {

@@ -101,8 +101,10 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: true,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.0',
-                        api_version: '1'
+                        app_version: '2.0.1',
+                        api_version: '1',
+                        clientID: 'Angular',
+                        clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
                     }
                 }
             },
@@ -111,8 +113,10 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: false,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.0',
-                        api_version: '1'
+                        app_version: '2.0.1',
+                        api_version: '1',
+                        clientID: 'Angular',
+                        clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
                     }
                 }
             }
@@ -406,7 +410,7 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 mangle: false,
-                sourceMap: true,
+                sourceMap: false,
                 preserveComments: false,
                 report: 'min'
             },
@@ -536,7 +540,7 @@ module.exports = function(grunt) {
             push: {
                 command: [
                     "cd dist",
-                    // "for file in `ls | grep -E ‘*[a-f0-9]{16}*’`; do git rm $file; done",
+                    "for file in `ls | grep -E ‘*[a-f0-9]{16}*’`; do git rm $file; done",
                     "git add --all",
                     "git commit -m \"New Release\"",
                     "git push"

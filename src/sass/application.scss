@@ -6,6 +6,17 @@ $fa-font-path: "fonts";
 @import "partials/header";
 @import "partials/mixins";
 
+// http://i.imgur.com/g514QpM.png
+
+.preload {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
 .fa-sort {
     opacity: .5;
     margin-right: 1rem;

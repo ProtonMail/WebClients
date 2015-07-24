@@ -141,49 +141,19 @@ angular.module("proton.messages.counts", ["proton.constants"])
                 updateTotals: function(action, messages) {
                     totalCounts[action](messages);
                     this.totalChangedLocally = true;
-
-                    // Delete Message *
-
-                    // Receive Message *
-
-                    // Move Messages *
-
-                    // Star Messages *
-
-                    // Change Label
-
-                    // Create Sent Message
-
-                    // Empty Folder
                 },
                 updateUnread: function(action, messages, status) {
                     unreadCounts[action](messages, status);
                     this.unreadChangedLocally = true;
-
-                    // Delete Message *
-
-                    // Receive Message
-
-                    // Move Message *
-
-                    // Star Message *
-
-                    // Change Label
-
-                    // Mark Unread in Message List *
-
-                    // Mark Unread in Message View *
-
-                    // Message View to Mailbox *
-
-                    // Open a message (view or draft)
-
                 },
                 updateUnreadLabels: function(messages, add, remove) {
                     unreadCounts.label(messages, add, remove);
                 },
                 updateTotalLabels: function(messages, add, remove) {
                     totalCounts.label(messages, add, remove);
+                },
+                empty: function(location) {
+                    this.counters.Locations[location] = 0;
                 }
             });
 

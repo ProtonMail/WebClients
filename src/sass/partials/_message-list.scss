@@ -31,6 +31,9 @@ table.message-list {
         border-top: none;
         box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     }
+    a:hover {
+        text-decoration: none;
+    }
     tr {
         cursor: pointer;
         font-size: 14px;
@@ -42,6 +45,7 @@ table.message-list {
         &:active {
             i.fa-paperclip,
             i.fa-clock-o,
+            span.labels,
             td {
                background-color: $tr-read-hovered;
             }
@@ -179,13 +183,15 @@ table.message-list {
                 color: #000;
             }
             i.fa-paperclip,
-            i.fa-clock-o {
+            i.fa-clock-o,
+            span.labels {
                 background-color: #fff;
             }
             &.hovered,
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,
+                span.labels,
                 td {
                     background-color: $tr-unread-hovered;
                 }
@@ -195,6 +201,7 @@ table.message-list {
             background-color: $tr-starred;
             i.fa-paperclip,
             i.fa-clock-o,
+            span.labels,
             td {
                 background-color: $tr-starred;
             }
@@ -202,6 +209,7 @@ table.message-list {
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,
+                span.labels,
                 td {
                     background-color: $tr-starred-hovered;
                 }
@@ -210,6 +218,7 @@ table.message-list {
         &.selected {
             i.fa-paperclip,
             i.fa-clock-o,
+            span.labels,
             td {
                 background-color: $tr-selected;
             }
@@ -217,20 +226,21 @@ table.message-list {
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,
+                span.labels,
                 td {
                     background-color: $tr-selected-hovered;
                 }
             }
         }
         i.fa-paperclip,
-        i.fa-clock-o {
+        i.fa-clock-o,
+        span.labels {
             float: right;
             display: inline-block;
             line-height: 32px;
             height: 30px;
             position: relative;
             z-index: 2;
-            padding: 0 1rem;
             top: 1px;
             background-color: $base-color-dark;
         }

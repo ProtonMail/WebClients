@@ -628,7 +628,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.saved++;
         var deferred = $q.defer();
         var parameters = {
-            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject')
+            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
         if (typeof parameters.Message.ToList === 'string') {
@@ -642,9 +642,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         if(angular.isDefined(message.ID)) {
             parameters.id = message.ID;
-            parameters.Message.IsRead = 1;
         } else {
-            parameters.Message.IsRead = 0;
+            parameters.Message.IsRead = 1;
         }
 
         parameters.Message.AddressID = message.From.ID;
@@ -668,6 +667,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             draftPromise.then(function(result) {
                 var process = function(result) {
                     message.ID = result.Message.ID;
+                    message.IsRead = result.Message.IsRead;
 
                     if(forward === true && result.Message.Attachments.length > 0) {
                         message.Attachments = result.Message.Attachments;
@@ -777,6 +777,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
                             if (result.Parent) {
                                 updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
                             }
                             $scope.sending = false;
 
@@ -816,6 +817,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.minimize = function(message) {
         message.minimized = true;
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
     };
 
     $scope.toggleMaximized = function(message) {
@@ -865,6 +868,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in messages
         $scope.messages.splice(index, 1);
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
@@ -882,6 +887,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in composer controller
         $scope.messages.splice(index, 1);
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
 
         // Remove message in message list controller
         $rootScope.$broadcast('discardDraft', id);

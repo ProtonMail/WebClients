@@ -1,4 +1,7 @@
 @media screen and (max-width: 767px) {
+    .as-sortable-item-handle > .pull-right {
+        float: none !important;
+    }
     #mobileSettingsMenu {
         margin-top: 2rem;
         li {
@@ -17,5 +20,8 @@
 	        	color: #333;
 	        }
         }
+    }
+    #secured-security .btn {
+        margin-bottom: 1rem;
     }
 }

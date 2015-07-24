@@ -1,10 +1,10 @@
 angular.module("proton.models.user", [])
 
-.factory("User", function($resource, $injector) {
+.factory("User", function($resource, $injector, url) {
     var authentication = $injector.get("authentication");
 
     return $resource(
-        authentication.baseURL + "/users/:id",
+        url.get() + "/users/:id",
         authentication.params({
             id: "@id",
             token: "@token"
@@ -13,25 +13,25 @@ angular.module("proton.models.user", [])
             // POST
             updateKeys: {
                 method: 'put',
-                url: authentication.baseURL + '/users/keys'
+                url: url.get() + '/users/keys'
             },
             create: {
                 method: 'post',
-                url: authentication.baseURL + '/users/:token'
+                url: url.get() + '/users/:token'
             },
             // GET
             pubkeys: {
                 method: 'get',
-                url: authentication.baseURL + '/users/pubkeys/:emails'
+                url: url.get() + '/users/pubkeys/:emails'
             },
             available: {
                 method: 'get',
-                url: authentication.baseURL + '/users/available/:username'
+                url: url.get() + '/users/available/:username'
             },
             // PUT
             keys: {
                 method: 'put',
-                url: authentication.baseURL + '/users/keys'
+                url: url.get() + '/users/keys'
             }
         }
     );

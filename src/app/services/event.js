@@ -4,7 +4,6 @@ angular.module("proton.event", ["proton.constants"])
 		var CREATE = 1;
 		var UPDATE = 2;
 		var UPDATE_FLAG = 3;
-		var EVENT_ID = "proton:eventid";
 		var eventModel = {
 			get: function() {
 				return Events.get(this.ID);
@@ -84,7 +83,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageID: function(id) {
 				this.ID = id;
-				window.sessionStorage[EVENT_ID] = id;
+				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manage: function (data) {
 				// Check if eventID is sent
@@ -114,7 +113,7 @@ angular.module("proton.event", ["proton.constants"])
 		var api = _.bindAll({
 				start: function () {
 					if (!started) {
-						eventModel.ID = window.sessionStorage[EVENT_ID];
+						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
 						interval = function() {
 							eventModel.get().then(function (result) {
 								eventModel.manage(result.data);
@@ -126,6 +125,7 @@ angular.module("proton.event", ["proton.constants"])
 					}
 				},
 				stop: function () {
+					messageCache.empty();
 					if (angular.isDefinded(eventModel.promiseCancel)) {
 						$interval.cancel(eventModel.promiseCancel);
 					}

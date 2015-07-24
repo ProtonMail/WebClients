@@ -4,7 +4,7 @@ angular.module("proton.pmcw", [])
 .provider("pmcw", function pmcwProvider() {
     pmcrypto.mailboxPassword = '';
 
-    this.setMailboxPassword = function(password) {
+    pmcrypto.setMailboxPassword = function(password) {
         pmcrypto.mailboxPassword = password;
     };
 
@@ -39,7 +39,7 @@ angular.module("proton.pmcw", [])
                 },
                 function(err) {
                     return reject(new Error('Wrong Mailbox Password.'));
-                }   
+                }
             );
         });
     };
