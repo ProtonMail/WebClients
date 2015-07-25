@@ -138,23 +138,23 @@ angular.module("proton.controllers.Auth", [
             .then(
                 function(resp) {
                     $log.debug('unlockWithPassword:resp'+resp);
-                    return authentication.setAuthCookie();
-                }
-            )
-            .then(
-                function(resp) {
-                    $log.debug('setAuthCookie:resp'+resp);
-                    window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
-                    $rootScope.domoArigato = true;
-                    $state.go("secured.inbox");
-                },
-                function(err) {
-                    // console.log(err);
-                    notify({
-                        classes: 'notification-danger',
-                        message: err.message
-                    });
-                    $( "[type=password]" ).focus();
+                    return authentication.setAuthCookie()
+                    .then(
+                        function(resp) {
+                            $log.debug('setAuthCookie:resp'+resp);
+                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
+                            $rootScope.domoArigato = true;
+                            $state.go("secured.inbox");
+                        },
+                        function(err) {
+                            // console.log(err);
+                            notify({
+                                classes: 'notification-danger',
+                                message: err.message
+                            });
+                            $( "[type=password]" ).focus();
+                        }
+                    );
                 }
             )
             .catch(function(err) {

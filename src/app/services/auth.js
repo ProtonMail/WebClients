@@ -11,6 +11,7 @@ angular.module("proton.authentication", [
     $q,
     $http,
     $timeout,
+    $log,
     errorReporter,
     url,
     notify,
@@ -183,8 +184,7 @@ angular.module("proton.authentication", [
         },
 
         setAuthCookie: function() {
-            var deferred = $q.defer();
-            $http.post(baseURL + "/auth/cookies",
+            return $http.post(url.get() + "/auth/cookies",
             {
                 ResponseType: "token",
                 ClientID: CONFIG.clientID,
@@ -196,7 +196,8 @@ angular.module("proton.authentication", [
             .then(
                 function(response) {
                     $log.debug(response);
-                    if (response.data.code===1000) {
+                    var deferred = $q.defer();
+                    if (response.data.Code===1000) {
                         deferred.resolve(200);
                         // forget x-pm-uid
                         // forget accessToken
@@ -206,13 +207,15 @@ angular.module("proton.authentication", [
                         deferred.reject();
                         $log.error('setAuthCookie', response);
                     }
+                    return deferred.promise;
                 },
                 function(err) {
-                    deferred.reject();
                     $log.error('setAuthCookie', err);
+                    var deferred = $q.defer();
+                    deferred.reject();
+                    return deferred.promise;
                 }
             );
-            return deferred.promise;
         },
 
         loginWithCredentials: function(creds) {
