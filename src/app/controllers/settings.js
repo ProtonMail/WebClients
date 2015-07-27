@@ -205,6 +205,7 @@ angular.module("proton.controllers.Settings", [
             .then(
                 function(response) {
                     if (response && response.Code===1000) {
+                        $scope.noticeePassword = '';
                         authentication.user.NotificationEmail = $scope.notificationEmail;
                         notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
                     }
