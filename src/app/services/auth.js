@@ -298,6 +298,7 @@ angular.module("proton.authentication", [
 
         // Removes all connection data
         logout: function() {
+            var accessToken = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"];
             // Completely clear sessionstorage
             window.sessionStorage.clear();
 
@@ -307,9 +308,13 @@ angular.module("proton.authentication", [
             this.user = null;
 
             // HACKY ASS BUG
-            $http.delete(url.get() + "/auth").then( function() {
+            if(angular.isDefined(accessToken)) {
+                $http.delete(url.get() + "/auth").then( function() {
+                    location.reload();
+                });
+            } else {
                 location.reload();
-            });
+            }
 
             // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
             // $rootScope.isLoggedIn = false;

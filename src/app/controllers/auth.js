@@ -90,14 +90,8 @@ angular.module("proton.controllers.Auth", [
                                 );
                             }
                             else {
-                                // pmcw.decryptMessage(result.data.AccessToken, $scope.password, true).then(function(token) {
-                                //     authentication.setTokenUID({
-                                //         AccessToken: token,
-                                //         Uid: result.data.Uid
-                                //     });
-                                    $state.go("login.unlock");
-                                    return;
-                                // });
+                                $state.go("login.unlock");
+                                return;
                             }
     	                }
                     }
