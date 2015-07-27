@@ -73,11 +73,7 @@
                 </td>
                 <td class="subject">
                     <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>
-                    <i
-                    class="fa fa-clock-o"
-                    ng-show="message.ExpirationTime > 0"
-                    pt-tooltip="{{message.countdown()}}"
-                    pt-placement="left"></i>
+                    <i class="fa fa-clock-o expiration" countdown="{{message.ExpirationTime}}" ng-if="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <span class="labels">
                         <span ng-repeat="id in message.LabelIDs" class="label label-pm" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
