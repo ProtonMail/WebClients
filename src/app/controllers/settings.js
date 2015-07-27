@@ -272,14 +272,19 @@ angular.module("proton.controllers.Settings", [
         else {
             networkActivityTracker.track(
                 User.keys({
-                    "PublicKey" : authentication.user.PublicKey,
+                    "Password": $scope.newMailboxPassword,
+                    "PublicKey": authentication.user.PublicKey,
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
-                    notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
-                    $scope.oldMailboxPassword = '';
-                    $scope.newMailboxPassword = '';
-                    $scope.confirmMailboxPassword = '';
-                    form.$setUntouched();
+                    if(response.Error) {
+                        notify(response.Error);
+                    } else {
+                        notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
+                        $scope.oldMailboxPassword = '';
+                        $scope.newMailboxPassword = '';
+                        $scope.confirmMailboxPassword = '';
+                        form.$setUntouched();
+                    }
                 }, function(response) {
                     $log.error(response);
                 })
