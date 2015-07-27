@@ -244,7 +244,7 @@ angular.module("proton.routes", [
                             $state.go('step2');
                             return;
                         } else {
-                            $state.go("login.unlock");
+                            // $state.go('login.unlock");
                             return;
                         }
                     });
@@ -278,7 +278,7 @@ angular.module("proton.routes", [
                     if ($rootScope.pubKey === 'to be modified') {
                         return;
                     } else {
-                        $state.go("login.unlock");
+                        // $state.go('login.unlock");
                         return;
                     }
                 });
