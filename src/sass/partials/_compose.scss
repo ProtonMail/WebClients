@@ -162,9 +162,9 @@
         max-width: 32rem !important;
         white-space: nowrap;
         text-overflow: ellipsis;
-        overflow: hidden;        
+        overflow: hidden;
         -webkit-touch-callout: none;
-        @include user-select(none);
+        // @include user-select(none);
 
         a.tm-tag-remove {
             padding: 0;
