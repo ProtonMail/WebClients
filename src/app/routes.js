@@ -302,7 +302,7 @@ angular.module("proton.routes", [
             }
         },
         resolve: {
-            token: function($http, $rootScope, authentication, url) {
+            token: function($http, $rootScope, authentication, url, CONFIG) {
                 return $http.post(url.get() + "/auth",
                     _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
                         ClientID: CONFIG.clientID,
