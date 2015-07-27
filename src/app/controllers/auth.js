@@ -49,6 +49,7 @@ angular.module("proton.controllers.Auth", [
     $rootScope.tryLogin = function() {
         $('input').blur();
         clearErrors();
+        $scope.username = $scope.username.toLowerCase().split('@')[0];
 
         networkActivityTracker.track(
             authentication.loginWithCredentials({
