@@ -332,10 +332,6 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.resetMailboxInit = function() {
         $log.debug('resetMailboxInit');
-        authentication.setTokenUID({
-            "AccessToken": $scope.resetToken,
-            "Uid": $scope.resetUID
-        });
         var getMBToken = function() {
             $log.debug('getMBToken');
             return Reset.getMailboxResetToken();

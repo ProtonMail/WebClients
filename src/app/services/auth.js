@@ -19,19 +19,19 @@ angular.module("proton.authentication", [
 ) {
     // PRIVATE FUNCTIONS
     var auth = {
+        // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
         setAuthHeaders: function() {
             // API version
-            $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
-
-            // credentials
-            if (auth.data.AccessToken) {
+            $log.debug('setAuthHeaders');
+            if ($http.defaults.headers.common["x-pm-session"]!==undefined) {
+                $http.defaults.headers.common.Authorization = undefined;
+                $http.defaults.headers.common["x-pm-uid"] = undefined;
+            }
+            else {
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
+                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid; 
             }
-            if (auth.data.Uid) {
-                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
-            }
-
-            // Upgrade
+            $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";           
             $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
             $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
         },
@@ -86,6 +86,7 @@ angular.module("proton.authentication", [
         },
 
         saveAuthData: function(data) {
+            $log.debug('saveAuthData');
             window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
             date = moment(Date.now() + data.ExpiresIn * 1000);
             window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
@@ -183,7 +184,8 @@ angular.module("proton.authentication", [
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
         },
 
-        setAuthCookie: function() {
+        setAuthCookie: function(type) {
+            $log.debug('setAuthCookie');
             return $http.post(url.get() + "/auth/cookies",
             {
                 ResponseType: "token",
@@ -198,19 +200,28 @@ angular.module("proton.authentication", [
                     $log.debug(response);
                     var deferred = $q.defer();
                     if (response.data.Code===1000) {
+                        $log.debug('/auth/cookies:',response);
+                        $log.debug('/auth/cookies1: resolved');
+                        $rootScope.domoArigato = true;
+                        // forget the old headers, set the new ones
+                        $log.debug('/auth/cookies2: resolved');
+                        $http.defaults.headers.common["x-pm-session"] = response.data.SessionToken;
+                        $http.defaults.headers.common.Authorization = '';
+                        $http.defaults.headers.common["x-pm-uid"] = '';
                         deferred.resolve(200);
+                        $log.debug('headers change', $http.defaults.headers);
                         // forget x-pm-uid
                         // forget accessToken
                         // forget refreshToken
                     }
                     else {
                         deferred.reject();
-                        $log.error('setAuthCookie', response);
+                        $log.error('setAuthCookie1', response);
                     }
                     return deferred.promise;
                 },
                 function(err) {
-                    $log.error('setAuthCookie', err);
+                    $log.error('setAuthCookie2', err);
                     var deferred = $q.defer();
                     deferred.reject();
                     return deferred.promise;
@@ -230,12 +241,12 @@ angular.module("proton.authentication", [
                 $rootScope.creds = creds;
                 $http.post(url.get() + "/auth",
                     _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
+                        ResponseType: "token",
                         ClientID: CONFIG.clientID,
                         ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
-                        State: api.randomString(24),
                         RedirectURI: "https://protonmail.ch",
-                        ResponseType: "token",
+                        State: api.randomString(24),
                         Scope: "full" // 'full' or 'reset'
                     })
                 ).then(
@@ -395,17 +406,6 @@ angular.module("proton.authentication", [
             }
 
             return req.promise;
-        },
-
-        setTokenUID: function(data) {
-            // console.log(data);
-            if (data.AccessToken) {
-                $http.defaults.headers.common.Authorization = "Bearer " + data.AccessToken;
-            }
-            if (data.Uid) {
-                $http.defaults.headers.common["x-pm-uid"] = data.Uid;
-            }
-            // console.log($http.defaults.headers.common);
         },
 
         receivedCredentials: function(data) {

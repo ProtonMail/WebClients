@@ -563,11 +563,13 @@ angular.module("proton.routes", [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication) {
+            user: function(authentication, $log) {
+                $log.debug('user:resolve:');
                 if(angular.isDefined(authentication.user) && authentication.user) {
                     return authentication.user;
                 }
                 else {
+                    $log.debug('user:resolve:fetchUserInfo');
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }
             }

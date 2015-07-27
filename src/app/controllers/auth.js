@@ -10,6 +10,7 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $log,
     $timeout,
+    $http,
     CONSTANTS,
     authentication,
     networkActivityTracker,
@@ -66,32 +67,16 @@ angular.module("proton.controllers.Auth", [
                                 message: result.data.ErrorDescription
                             });
                         }
+                        // TODO: where is tempUser used?
                     	else if (result.data.AccessToken) {
                             $rootScope.isLoggedIn = true;
                             $rootScope.tempUser = {};
                             $rootScope.tempUser.username = $scope.username;
                             $rootScope.tempUser.password = $scope.password;
 
-                            if (result.data.AccessToken.length < 50) {
-                                return authentication.fetchUserInfo()
-                                .then(
-                                    function(response) {
-                                        $state.go("login.unlock");
-                                        if ($rootScope.pubKey === 'to be modified') {
-                                            $state.go('step2');
-                                            return;
-                                        } else {
-                                            $state.go("login.unlock");
-                                            return;
-                                        }
-                                    }
-                                );
-                            }
-                            else {
-                                // console.log('Going to unlock page.');
-                                $state.go("login.unlock");
-                                return;
-                            }
+                            // console.log('Going to unlock page.');
+                            $state.go("login.unlock");
+                            return;
     	                }
                     }
 	                else if (result.Error) {
@@ -142,8 +127,7 @@ angular.module("proton.controllers.Auth", [
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
-                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
-                            $rootScope.domoArigato = true;
+                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));                            
                             $state.go("secured.inbox");
                         },
                         function(err) {
