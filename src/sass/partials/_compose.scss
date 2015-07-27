@@ -116,7 +116,7 @@
 
 .twitter-typeahead {
     vertical-align: bottom;
-    width: 4rem;
+    width: auto;
 }
 
 .composer {
@@ -140,17 +140,16 @@
         }
     }
 
-    .typeahead-container.to-container {
+    .typeahead-container {
         width: 400px;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow: hidden !important;
     }
 
     .tm-tag {
         border: none;
+        display:inline-block;
         box-shadow: none;
         border-radius: 2px;
-        display: inline-block;
         background: darken($base-color-dark, $color-offset);
         padding: 0 1rem;
         line-height: ($row-height - 10);
@@ -159,16 +158,24 @@
         color: #000;
         font-size: $pm-font-size-base;
         font-family: $font-primary;
-        max-width: 32rem !important;
         white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
         -webkit-touch-callout: none;
         // @include user-select(none);
 
         a.tm-tag-remove {
-            padding: 0;
-            margin-left: 5px;
+            i {
+                padding-top: 4px;
+                margin-left: 5px;
+                float: right;
+            }
+        }
+
+        span {
+             display:inline-block;
+             max-width: 30rem;
+             white-space: nowrap;
+             overflow:hidden !important;
+             text-overflow: ellipsis;
         }
     }
 
