@@ -188,7 +188,7 @@ angular.module("proton", [
     return {
         response: function(response) {
             if (response.status === 401) {
-                $injector.get('$state').go('login');
+                // $injector.get('$state').go('login');
             }
             else if (response.data.Code!==undefined) {
                 // app update needd
@@ -231,7 +231,7 @@ angular.module("proton", [
         },
         responseError: function(rejection) {
             if (rejection.status === 401) {
-                window.location = "/login";
+                // window.location = "/login";
             }
 
             return $q.reject(rejection);

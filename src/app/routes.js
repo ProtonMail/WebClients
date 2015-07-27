@@ -168,7 +168,7 @@ angular.module("proton.routes", [
             if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
                 $rootScope.isLoggedIn = false;
                 authentication.logout();
-                $state.go('login');
+                // $state.go('login');
             }
             setTimeout( function() {
                 $( "[type=password]" ).focus();
@@ -284,7 +284,7 @@ angular.module("proton.routes", [
                 });
             }
             else {
-                $state.go('login');
+                // $state.go('login');
                 return;
             }
         }
@@ -318,7 +318,7 @@ angular.module("proton.routes", [
         },
         onEnter: function($rootScope, $state) {
             if ($rootScope.TemporaryAccessData===undefined) {
-                $state.go('login');
+                // $state.go('login');
                 return;
             }
         }
@@ -360,7 +360,7 @@ angular.module("proton.routes", [
         url: "/message",
         onEnter: function($state, $stateParams) {
             if ($stateParams.data === null) {
-                $state.go('login');
+                // $state.go('login');
             }
         },
         views: {
@@ -424,7 +424,7 @@ angular.module("proton.routes", [
             $rootScope.resetMailboxToken = $stateParams.token;
             if (!!!authentication.isLoggedIn()) {
                 event.preventDefault();
-                $state.go('login');
+                // $state.go('login');
             }
             else {
                 $state.go('reset');
