@@ -49,6 +49,7 @@ angular.module("proton.controllers.Auth", [
     $rootScope.tryLogin = function() {
         $('input').blur();
         clearErrors();
+        // transform to lowercase and remove the domain
         $scope.username = $scope.username.toLowerCase().split('@')[0];
 
         networkActivityTracker.track(
@@ -89,9 +90,14 @@ angular.module("proton.controllers.Auth", [
                                 );
                             }
                             else {
-                                // console.log('Going to unlock page.');
-                                $state.go("login.unlock");
-                                return;
+                                // pmcw.decryptMessage(result.data.AccessToken, $scope.password, true).then(function(token) {
+                                //     authentication.setTokenUID({
+                                //         AccessToken: token,
+                                //         Uid: result.data.Uid
+                                //     });
+                                    $state.go("login.unlock");
+                                    return;
+                                // });
                             }
     	                }
                     }
