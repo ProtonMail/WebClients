@@ -301,22 +301,22 @@ angular.module("proton.tools", ["proton.constants"])
             var kb = 1024;
             var mb = kb*kb;
             var gb = mb*kb;
-            var cur = current / kb;
+            var cur = current / kb; // convert to KB
 
             if (max < gb) {
                 // render bar in terms of MB
                 cur = (cur/kb).toFixed(1);
 
-                if (parseInt(cur) === 0 && current > 0) {
+                if (cur < 0.01) {
                     cur = 0.01;
                 }
 
                 return cur+'/'+(Math.round(max/kb/kb))+' MB';
             } else {
                 // render bar in terms of GB
-                cur = (cur/kb/kb).toPrecision(2);
+                cur = (cur/kb/kb).toFixed(2);
 
-                if (parseInt(cur) === 0 && current > 0) {
+                if (cur < 0.01) {
                     cur = 0.01;
                 }
 
