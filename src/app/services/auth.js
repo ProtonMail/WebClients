@@ -31,9 +31,6 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid; 
             }
-            $http.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";           
-            $http.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
-            $http.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
         },
 
         fetchUserInfo: function(uid) {

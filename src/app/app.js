@@ -188,7 +188,7 @@ angular.module("proton", [
     return {
         response: function(response) {
             if (response.status === 401) {
-                // $injector.get('$state').go('login');
+                $injector.get('$state').go('login');
             }
             else if (response.data.Code!==undefined) {
                 // app update needd
@@ -231,7 +231,7 @@ angular.module("proton", [
         },
         responseError: function(rejection) {
             if (rejection.status === 401) {
-                // window.location = "/login";
+                $injector.get('$state').go('login');
             }
 
             return $q.reject(rejection);
@@ -243,6 +243,8 @@ angular.module("proton", [
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
     $httpProvider.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
     $httpProvider.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
+    $httpProvider.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
+    $httpProvider.defaults.withCredentials = true;
 })
 .run(function($rootScope, $location, $state, authentication) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
@@ -281,7 +283,7 @@ angular.module("proton", [
         // now, redirect only not authenticated
         if (!!!authentication.isLoggedIn()) {
             event.preventDefault(); // stop current execution
-            // $state.go('login'); // go to login
+            $state.go('login'); // go to login
         }
     });
 

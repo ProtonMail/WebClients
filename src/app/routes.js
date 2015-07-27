@@ -168,7 +168,7 @@ angular.module("proton.routes", [
             if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
                 $rootScope.isLoggedIn = false;
                 authentication.logout();
-                // $state.go('login');
+                $state.go('login');
             }
             setTimeout( function() {
                 $( "[type=password]" ).focus();
@@ -244,7 +244,7 @@ angular.module("proton.routes", [
                             $state.go('step2');
                             return;
                         } else {
-                            // $state.go('login.unlock");
+                            $state.go("login.unlock");
                             return;
                         }
                     });
@@ -278,13 +278,13 @@ angular.module("proton.routes", [
                     if ($rootScope.pubKey === 'to be modified') {
                         return;
                     } else {
-                        // $state.go('login.unlock");
+                        $state.go("login.unlock");
                         return;
                     }
                 });
             }
             else {
-                // $state.go('login');
+                $state.go('login');
                 return;
             }
         }
@@ -318,7 +318,7 @@ angular.module("proton.routes", [
         },
         onEnter: function($rootScope, $state) {
             if ($rootScope.TemporaryAccessData===undefined) {
-                // $state.go('login');
+                $state.go('login');
                 return;
             }
         }
@@ -360,7 +360,7 @@ angular.module("proton.routes", [
         url: "/message",
         onEnter: function($state, $stateParams) {
             if ($stateParams.data === null) {
-                // $state.go('login');
+                $state.go('login');
             }
         },
         views: {
@@ -424,7 +424,7 @@ angular.module("proton.routes", [
             $rootScope.resetMailboxToken = $stateParams.token;
             if (!!!authentication.isLoggedIn()) {
                 event.preventDefault();
-                // $state.go('login');
+                $state.go('login');
             }
             else {
                 $state.go('reset');

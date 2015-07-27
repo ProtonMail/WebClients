@@ -14,9 +14,7 @@ angular.module("proton.models.eo", [])
             return $http.get(url.get() + '/eo/message', {
                 headers: {
                     'Authorization': decrypted_token,
-                    'x-eo-uid': token_id,
-                    'x-pm-appversion': 'Web_' + CONFIG.app_version,
-                    'x-pm-apiversion': CONFIG.api_version
+                    'x-eo-uid': token_id
                 }
             });
         },
