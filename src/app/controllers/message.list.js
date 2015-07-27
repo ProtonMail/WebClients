@@ -131,6 +131,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.initHotkeys();
+
+        if($rootScope.scrollPosition) {
+            $('#content').scrollTop($rootScope.scrollPosition);
+            $rootScope.scrollPosition = null;
+        }
     };
 
     $scope.messageCount = function() {
@@ -284,7 +289,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             (
                 !$state.is('secured.inbox') &&
                 !$state.is('secured.drafts')  &&
-                !$state.is('secured.sent')  &&
                 !$state.is('secured.archive')  &&
                 !$state.is('secured.spam')  &&
                 !$state.is('secured.trash')
@@ -406,6 +410,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
                     messageCounts.updateUnread('mark', [message], true);
                 }
+                $rootScope.scrollPosition = $('#content').scrollTop();
                 $state.go("secured." + $scope.mailbox + ".message", {
                     id: message.ID
                 });

@@ -465,21 +465,21 @@ angular.module("proton.models.message", ["proton.constants"])
         }
     });
 
-    // if(this.ExpirationTime) {
-    //     var interval = 1000; // 1 sec
-    //     var timer;
-    //     var tick = function() {
-    //         timer = $timeout(function() {
-    //             if(Message.countdown > 0) {
-    //                 Message.countdown -= 1000;
-    //
-    //                 if(Message.countdown > 0) {
-    //                     tick();
-    //                 }
-    //             }
-    //         }, interval);
-    //     };
-    // }
+    if(this.ExpirationTime) {
+        var interval = 1000; // 1 sec
+        var timer;
+        var tick = function() {
+            timer = $timeout(function() {
+                if(Message.countdown > 0) {
+                    Message.countdown -= 1000;
+
+                    if(Message.countdown > 0) {
+                        tick();
+                    }
+                }
+            }, interval);
+        };
+    }
 
     return Message;
 });

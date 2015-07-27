@@ -72,6 +72,7 @@ angular.module("proton.controllers.Support", [
     $scope.resetLostPassword = function(form) {
         $log.debug('resetLostPassword');
         if(form.$valid) {
+            $scope.params.username = $scope.params.username.toLowerCase().split('@')[0];
             $log.debug('resetLostPassword: form valid');
             networkActivityTracker.track(
                 Reset.requestResetToken({
