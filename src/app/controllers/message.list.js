@@ -284,7 +284,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             (
                 !$state.is('secured.inbox') &&
                 !$state.is('secured.drafts')  &&
-                !$state.is('secured.sent')  &&
                 !$state.is('secured.archive')  &&
                 !$state.is('secured.spam')  &&
                 !$state.is('secured.trash')
