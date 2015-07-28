@@ -101,7 +101,7 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: true,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.1',
+                        app_version: '2.0.2',
                         api_version: '1',
                         clientID: 'Angular',
                         clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: false,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.1',
+                        app_version: '2.0.2',
                         api_version: '1',
                         clientID: 'Angular',
                         clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
