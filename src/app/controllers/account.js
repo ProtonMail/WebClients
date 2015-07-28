@@ -125,33 +125,36 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     };
 
     $scope.generateKeys = function(userID, pass) {
+        var deferred = $q.defer();
+
         $log.debug('generateKeys');
-        return pmcw.generateKeysRSA(userID, pass).then(
+
+        pmcw.generateKeysRSA(userID, pass).then(
             function(response) {
                 $log.debug(response);
-                var deferred = $q.defer();
                 $scope.account.PublicKey = response.publicKeyArmored;
                 $scope.account.PrivateKey = response.privateKeyArmored;
-                deferred.resolve(response);
                 $log.debug('pmcw.generateKeysRSA:resolved');
-                return deferred.promise;
+                deferred.resolve(response);
             },
             function(err) {
-                var deferred = $q.defer();
                 $log.error(err);
                 $scope.error = err;
                 deferred.reject(err);
-                return deferred.promise;
             }
         );
+
+        return deferred.promise;
     };
 
     $scope.checkAvailability = function() {
+        var deferred = $q.defer();
+
         $log.debug('checkAvailability');
-        return User.available({ username: $scope.account.Username }).$promise
+        
+        User.available({ username: $scope.account.Username }).$promise
         .then(
             function(response) {
-                var deferred = $q.defer();
                 if (response.error) {
                     var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
                     $('#Username').focus();
@@ -166,9 +169,10 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     $scope.creating = true;
                     deferred.resolve(200);
                 }
-                return deferred.promise;
             }
         );
+
+        return deferred.promise;
     };
 
     $scope.generateNewKeys = function() {
@@ -238,14 +242,14 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             $scope.account.mailboxPassword,
             $scope.authResponse.AccessToken,
             $scope.authResponse
-        ).then( 
+        ).then(
             function(response) {
                 $log.debug('doMailboxLogin:unlockWithPassword:',response);
                 return authentication.setAuthCookie()
                 .then(
                     function(resp) {
                         $log.debug('setAuthCookie:resp'+resp);
-                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64($scope.account.mailboxPassword));                            
+                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64($scope.account.mailboxPassword));
                         $state.go("secured.inbox");
                     }
                 );
@@ -347,7 +351,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $log.debug('resetMailboxInit');
         $log.info(token);
         $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
-        $http.defaults.headers.common["x-pm-uid"] = token.data.Uid; 
+        $http.defaults.headers.common["x-pm-uid"] = token.data.Uid;
 
         var getMBToken = function() {
             $log.debug('getMBToken');
