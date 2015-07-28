@@ -25,6 +25,11 @@
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
+    .typeahead-container {
+        width: auto;
+        overflow: hidden !important;
+    }
 }
 
 .composer.normalized {
@@ -53,6 +58,11 @@
         -ms-flex-direction: column;
         flex-direction: column;
 
+    }
+
+    .typeahead-container {
+        width: 400px;
+        overflow: hidden !important;
     }
 
 }
