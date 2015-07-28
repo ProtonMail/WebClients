@@ -182,8 +182,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         tempPacket.uploading = true;
 
         message.uploading = true;
-        message.attachmentsToggle = true;
         message.Attachments.push(tempPacket);
+        message.attachmentsToggle = true;
 
         attachments.load(file).then(
             function(packets) {
@@ -294,7 +294,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         return styles;
     };
+    var composer = $('#uid' + message.uid);
+    $scope.previewHeight = composer.find('.previews').outerHeight();
 
+// Use directives use horizontal form height for to, bcc, cc
     $scope.squireHeight = function(message) {
         if (message.maximized === true) {
             return '100%';
