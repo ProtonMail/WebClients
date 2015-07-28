@@ -275,7 +275,7 @@ angular.module("proton", [
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));
 
-        $log.info(toState.name);
+        $log.debug(toState.name);
 
         if (isUnlock && $rootScope.isLoggedIn) {
             $log.debug('1');
@@ -418,6 +418,16 @@ angular.module("proton", [
     var debugInfo = CONFIG.debug || false;
     //configure routeProvider as usual
     $compileProvider.debugInfoEnabled(debugInfo);
+})
+
+.config(function ($logProvider, CONFIG) {
+    // By default AngularJS attaches information about binding and scopes to DOM nodes,
+    // and adds CSS classes to data-bound elements
+    // Tools like Protractor and Batarang need this information to run,
+    // but you can disable this in production for a significant performance boost
+    var debugInfo = CONFIG.debug || false;
+    //configure routeProvider as usual
+    $logProvider.debugEnabled(debugInfo);
 })
 
 .run(function($rootScope) {
