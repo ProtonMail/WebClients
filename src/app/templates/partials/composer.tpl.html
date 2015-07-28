@@ -187,6 +187,7 @@
                 ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
+                ng-disabled="message.uploading"
                 >
                     <i class="fa fa-paperclip"></i>
                 </button>
