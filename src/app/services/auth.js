@@ -27,6 +27,8 @@ angular.module("proton.authentication", [
                 $log.debug('setAuthHeaders:1');
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
+                window.sessionStorage.removeItem('x-pm-uid');
+                window.sessionStorage.removeItem('x-pm-session');
             }
             else {
                 // we need the old stuff for now
