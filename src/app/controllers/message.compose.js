@@ -434,19 +434,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        if(message.editor) {
-            message.editor.addEventListener('focus', function() {
-                message.fields = false;
-                message.toUnfocussed = true;
-                $timeout(function() {
-                    message.height();
-                    $('.typeahead-container').scrollTop(0);
+        $timeout(function() {
+            if(message.editor) {
+                message.editor.addEventListener('focus', function() {
+                    message.fields = false;
+                    message.toUnfocussed = true;
+                    $timeout(function() {
+                        $('.typeahead-container').scrollTop(0);
+                    });
                 });
-            });
-            message.editor.addEventListener('input', function() {
-                $scope.saveLater(message);
-            });
-        }
+                message.editor.addEventListener('input', function() {
+                    $scope.saveLater(message);
+                });
+            }
+        }, 250);
     };
 
     $scope.selectFile = function(message, files) {
