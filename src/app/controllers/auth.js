@@ -28,6 +28,7 @@ angular.module("proton.controllers.Auth", [
             $rootScope.user = authentication.fetchUserInfo();
         }
         catch(err) {
+            $log.error('appjs',err);
             alert(err);
         }
     }
@@ -144,6 +145,7 @@ angular.module("proton.controllers.Auth", [
                 }
             )
             .catch(function(err) {
+                $log.error('tryDecrypt',err);
                 alert(err);
             })
         );

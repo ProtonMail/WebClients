@@ -9,6 +9,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     $translate,
     $q,
     $timeout,
+    $http,
     CONSTANTS,
     authentication,
     networkActivityTracker,
@@ -125,21 +126,22 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.generateKeys = function(userID, pass) {
         $log.debug('generateKeys');
-        var keyPair = pmcw.generateKeysRSA(userID, pass);
-        return keyPair.then(
+        return pmcw.generateKeysRSA(userID, pass).then(
             function(response) {
+                $log.debug(response);
                 var deferred = $q.defer();
                 $scope.account.PublicKey = response.publicKeyArmored;
                 $scope.account.PrivateKey = response.privateKeyArmored;
                 deferred.resolve(response);
-                return deferred;
+                $log.debug('pmcw.generateKeysRSA:resolved');
+                return deferred.promise;
             },
             function(err) {
                 var deferred = $q.defer();
                 $log.error(err);
                 $scope.error = err;
                 deferred.reject(err);
-                return deferred;
+                return deferred.promise;
             }
         );
     };
@@ -236,6 +238,18 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             $scope.account.mailboxPassword,
             $scope.authResponse.AccessToken,
             $scope.authResponse
+        ).then( 
+            function(response) {
+                $log.debug('doMailboxLogin:unlockWithPassword:',response);
+                return authentication.setAuthCookie()
+                .then(
+                    function(resp) {
+                        $log.debug('setAuthCookie:resp'+resp);
+                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64($scope.account.mailboxPassword));                            
+                        $state.go("secured.inbox");
+                    }
+                );
+            }
         );
     };
 
@@ -253,10 +267,9 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             CONSTANTS.MAILBOX_PASSWORD_KEY,
             pmcw.encode_base64($scope.account.mailboxPassword)
         );
-        delete $rootScope.tempUser;
+        // delete $rootScope.tempUser;
         $timeout( function() {
             // TODO: not all promises are resolved, so we simply refresh.
-            // $state.go("secured.inbox");
             window.location = '/inbox';
         }, 100);
         deferred.resolve(200);
@@ -332,6 +345,10 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
     $scope.resetMailboxInit = function() {
         $log.debug('resetMailboxInit');
+        $log.info(token);
+        $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
+        $http.defaults.headers.common["x-pm-uid"] = token.data.Uid; 
+
         var getMBToken = function() {
             $log.debug('getMBToken');
             return Reset.getMailboxResetToken();

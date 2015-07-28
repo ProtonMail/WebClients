@@ -22,12 +22,15 @@ angular.module("proton.authentication", [
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
         setAuthHeaders: function() {
             // API version
-            $log.debug('setAuthHeaders');
             if ($http.defaults.headers.common["x-pm-session"]!==undefined) {
+                // we have a session header, so we can remove the old stuff
+                $log.debug('setAuthHeaders:1');
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
             }
             else {
+                // we need the old stuff for now
+                $log.debug('setAuthHeaders:2');
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid; 
             }
@@ -207,6 +210,8 @@ angular.module("proton.authentication", [
                         $http.defaults.headers.common["x-pm-uid"] = '';
                         deferred.resolve(200);
                         $log.debug('headers change', $http.defaults.headers);
+
+                        window.sessionStorage.setItem('proton:oauth:SessionToken', pmcw.encode_base64(response.data.SessionToken));
                         // forget x-pm-uid
                         // forget accessToken
                         // forget refreshToken
@@ -268,12 +273,17 @@ angular.module("proton.authentication", [
 
         // Whether a user is logged in at all
         isLoggedIn: function() {
+            // $log.debug('isLoggedIn');
+            // console.log(auth);
+            // console.log(auth.data);
+            // console.log(api.refreshTokenIsDefined());
+
             var loggedIn = auth.data && angular.isDefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
 
             if (loggedIn && api.user === null) {
                 auth.setAuthHeaders();
             }
-
+            // $log.debug('isLoggedIn:',loggedIn);
             return loggedIn;
         },
 
