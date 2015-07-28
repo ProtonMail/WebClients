@@ -10,6 +10,7 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $log,
     $timeout,
+    $http,
     CONSTANTS,
     authentication,
     networkActivityTracker,
@@ -27,6 +28,7 @@ angular.module("proton.controllers.Auth", [
             $rootScope.user = authentication.fetchUserInfo();
         }
         catch(err) {
+            $log.error('appjs',err);
             alert(err);
         }
     }
@@ -77,31 +79,16 @@ angular.module("proton.controllers.Auth", [
                                 message: result.data.ErrorDescription
                             });
                         }
+                        // TODO: where is tempUser used?
                     	else if (result.data.AccessToken) {
                             $rootScope.isLoggedIn = true;
                             $rootScope.tempUser = {};
                             $rootScope.tempUser.username = $scope.username;
                             $rootScope.tempUser.password = $scope.password;
 
-                            if (result.data.AccessToken.length < 50) {
-                                return authentication.fetchUserInfo()
-                                .then(
-                                    function(response) {
-                                        $state.go("login.unlock");
-                                        if ($rootScope.pubKey === 'to be modified') {
-                                            $state.go('step2');
-                                            return;
-                                        } else {
-                                            $state.go("login.unlock");
-                                            return;
-                                        }
-                                    }
-                                );
-                            }
-                            else {
-                                $state.go("login.unlock");
-                                return;
-                            }
+                            // console.log('Going to unlock page.');
+                            $state.go("login.unlock");
+                            return;
     	                }
                     }
 	                else if (result.Error) {
@@ -139,23 +126,35 @@ angular.module("proton.controllers.Auth", [
         var mailboxPassword = this.mailboxPassword;
         clearErrors();
         networkActivityTracker.track(
-            authentication.unlockWithPassword($rootScope.TemporaryEncryptedPrivateKeyChallenge, mailboxPassword, $rootScope.TemporaryEncryptedAccessToken, $rootScope.TemporaryAccessData)
+            authentication.unlockWithPassword(
+                $rootScope.TemporaryEncryptedPrivateKeyChallenge, 
+                mailboxPassword, 
+                $rootScope.TemporaryEncryptedAccessToken, 
+                $rootScope.TemporaryAccessData
+            )
             .then(
                 function(resp) {
-                    window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
-                    $rootScope.domoArigato = true;
-                    $state.go("secured.inbox");
-                },
-                function(err) {
-                    // console.log(err);
-                    notify({
-                        classes: 'notification-danger',
-                        message: err.message
-                    });
-                    $( "[type=password]" ).focus();
+                    $log.debug('unlockWithPassword:resp'+resp);
+                    return authentication.setAuthCookie()
+                    .then(
+                        function(resp) {
+                            $log.debug('setAuthCookie:resp'+resp);
+                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));                            
+                            $state.go("secured.inbox");
+                        },
+                        function(err) {
+                            // console.log(err);
+                            notify({
+                                classes: 'notification-danger',
+                                message: err.message
+                            });
+                            $( "[type=password]" ).focus();
+                        }
+                    );
                 }
             )
             .catch(function(err) {
+                $log.error('tryDecrypt',err);
                 alert(err);
             })
         );

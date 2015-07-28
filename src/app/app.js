@@ -232,7 +232,7 @@ angular.module("proton", [
         },
         responseError: function(rejection) {
             if (rejection.status === 401) {
-                window.location = "/login";
+                $injector.get('$state').go('login');
             }
 
             return $q.reject(rejection);
@@ -244,8 +244,10 @@ angular.module("proton", [
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
     $httpProvider.defaults.headers.common["x-pm-appversion"] = 'Web_' + CONFIG.app_version;
     $httpProvider.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
+    $httpProvider.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
+    $httpProvider.defaults.withCredentials = true;
 })
-.run(function($rootScope, $location, $state, authentication) {
+.run(function($rootScope, $location, $state, authentication, $log) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");
         var isUpgrade = (toState.name === "upgrade");
@@ -256,12 +258,16 @@ angular.module("proton", [
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));
 
+        $log.info(toState.name);
+
         if (isUnlock && $rootScope.isLoggedIn) {
+            $log.debug('1');
             return;
         }
 
         // If already logged in and on the login page: redirect to unlock page
         else if ($rootScope.isLoggedIn && isLogin) {
+            $log.debug('2');
             event.preventDefault();
             $state.go('login.unlock');
             return;
@@ -269,6 +275,7 @@ angular.module("proton", [
 
         // If already logged in and unlocked and on the unlock page: redirect to inbox
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
+            $log.debug('3');
             event.preventDefault();
             $state.go('secured.inbox');
             return;
@@ -276,6 +283,7 @@ angular.module("proton", [
 
         // if on the login, support, account, or signup pages dont require authentication
         else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset) {
+            $log.debug('4');
             return; // no need to redirect
         }
 

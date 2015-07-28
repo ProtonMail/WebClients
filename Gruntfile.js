@@ -5,7 +5,7 @@ var _ = require("lodash"),
     util = require("util");
 
 var API_TARGETS = {
-    prod: "https://api.protonmail.ch",
+    prod: "https://dev.protonmail.ch/api",
     dev: "https://test-api.protonmail.ch",
     build: "/api"
 };

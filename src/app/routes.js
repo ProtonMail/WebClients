@@ -164,8 +164,9 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        onEnter: function($rootScope, $state, authentication) {
+        onEnter: function($rootScope, $state, authentication, $log) {
             if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
+                $log.debug('login.unlock.onEnter:1');
                 $rootScope.isLoggedIn = false;
                 authentication.logout();
                 $state.go('login');
@@ -267,7 +268,7 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/step2.tpl.html"
             }
         },
-        onEnter: function(authentication, $state, $rootScope) {
+        onEnter: function(authentication, $state, $rootScope, $log) {
             if (authentication.isLoggedIn()) {
                 $rootScope.isLoggedIn = true;
                 return authentication.fetchUserInfo().then(
@@ -284,6 +285,7 @@ angular.module("proton.routes", [
                 });
             }
             else {
+                $log.debug('step2.onEnter:1');
                 $state.go('login');
                 return;
             }
@@ -302,7 +304,7 @@ angular.module("proton.routes", [
             }
         },
         resolve: {
-            token: function($http, $rootScope, authentication, url) {
+            token: function($http, $rootScope, authentication, url, CONFIG) {
                 return $http.post(url.get() + "/auth",
                     _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
                         ClientID: CONFIG.clientID,
@@ -316,8 +318,9 @@ angular.module("proton.routes", [
                 );
             }
         },
-        onEnter: function($rootScope, $state) {
+        onEnter: function($rootScope, $state, $log) {
             if ($rootScope.TemporaryAccessData===undefined) {
+                $log.debug('reset.onEnter:1');
                 $state.go('login');
                 return;
             }
@@ -563,11 +566,17 @@ angular.module("proton.routes", [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication) {
+            user: function(authentication, $log, $http, pmcw) {
+                $log.debug('user:resolve:');
                 if(angular.isDefined(authentication.user) && authentication.user) {
                     return authentication.user;
                 }
                 else {
+                    $log.debug('user:resolve:fetchUserInfo');
+                    $log.debug(window.sessionStorage.getItem('proton:oauth:SessionToken'));
+                    if (window.sessionStorage.getItem('proton:oauth:SessionToken')!==undefined) {
+                        $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem('proton:oauth:SessionToken'));
+                    }
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }
             }
