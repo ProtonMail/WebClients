@@ -349,7 +349,9 @@ angular.module("proton.squire", [
                     scope.data.link = LINK_DEFAULT;
                     return editor.focus();
                 } else if(action === 'insertImage') {
-                  editor.insertImage(scope.data.image);
+                    if(scope.data.image.length > 0) {
+                        editor.insertImage(scope.data.image);
+                    }
                   return editor.focus();
                 } else {
                     editor[action]();
