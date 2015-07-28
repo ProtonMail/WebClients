@@ -185,13 +185,10 @@ angular.module("proton", [
 //
 // Redirection if not authentified
 //
-.factory('authHttpResponseInterceptor', function($q, $injector, $rootScope){
+.factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
     return {
         response: function(response) {
-            if (response.status === 401) {
-                $injector.get('$state').go('login');
-            }
-            else if (response.data.Code!==undefined) {
+            if (response.data.Code!==undefined) {
                 // app update needd
                 if (response.data.Code===5003) {
                     if ($rootScope.updateMessage===false) {
@@ -227,14 +224,34 @@ angular.module("proton", [
                     });
                 }
             }
-
             return response || $q.when(response);
         },
         responseError: function(rejection) {
+            console.log(rejection);
+            console.log(rejection.config);
             if (rejection.status === 401) {
-                $injector.get('$state').go('login');
+                if ($rootScope.doRefresh===true) {
+                    $rootScope.doRefresh = false;
+                    $injector.get('authentication').getRefreshCookie()
+                    .then(
+                        function() {
+                            var $http = $injector.get('$http');
+                            console.log(rejection.config);
+                            // rejection.config.headers.common['x-pm-session']
+                            _.extend(rejection.config.headers, $http.defaults.headers.common);
+                            return $http(rejection.config);
+                        },
+                        function() {
+                            $injector.get('authentication').logout();
+                            $injector.get('$state').go('login');
+                        }
+                    );
+                }
+                else {
+                    $injector.get('authentication').logout();
+                    $injector.get('$state').go('login');
+                }
             }
-
             return $q.reject(rejection);
         }
     };

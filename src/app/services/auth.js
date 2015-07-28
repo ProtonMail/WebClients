@@ -184,6 +184,28 @@ angular.module("proton.authentication", [
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
         },
 
+        getRefreshCookie: function() {
+            $log.debug('getRefreshCookie');
+            return $http.post(url.get() + "/auth/refresh",
+            {})
+            .then(
+                function(response) {
+                    $log.debug(response);
+                    if (response.data.SessionToken!==undefined) {
+                        $log.debug('new token',response.data.SessionToken);
+                        $log.debug('before',$http.defaults.headers.common['x-pm-session']);
+                        $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
+                        window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                        $log.debug('after',$http.defaults.headers.common['x-pm-session']);   
+                        $rootScope.doRefresh = true;
+                    }
+                },
+                function(err) {
+                    $log.error(err);
+                }
+            );
+        },
+
         setAuthCookie: function(type) {
             $log.debug('setAuthCookie');
             return $http.post(url.get() + "/auth/cookies",
@@ -211,7 +233,9 @@ angular.module("proton.authentication", [
                         deferred.resolve(200);
                         $log.debug('headers change', $http.defaults.headers);
 
-                        window.sessionStorage.setItem('proton:oauth:SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                        window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+
+                        $rootScope.doRefresh = true;
                         // forget x-pm-uid
                         // forget accessToken
                         // forget refreshToken
@@ -352,7 +376,8 @@ angular.module("proton.authentication", [
 
         // Removes all connection data
         logout: function() {
-            var accessToken = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"];
+            var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
+            var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
             // Completely clear sessionstorage
             window.sessionStorage.clear();
 
@@ -362,7 +387,7 @@ angular.module("proton.authentication", [
             this.user = null;
 
             // HACKY ASS BUG
-            if(angular.isDefined(accessToken)) {
+            if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
                 $http.delete(url.get() + "/auth").then( function() {
                     location.reload();
                 });

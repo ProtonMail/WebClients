@@ -573,9 +573,9 @@ angular.module("proton.routes", [
                 }
                 else {
                     $log.debug('user:resolve:fetchUserInfo');
-                    $log.debug(window.sessionStorage.getItem('proton:oauth:SessionToken'));
-                    if (window.sessionStorage.getItem('proton:oauth:SessionToken')!==undefined) {
-                        $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem('proton:oauth:SessionToken'));
+                    $log.debug(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
+                    if (window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')!==undefined) {
+                        $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }

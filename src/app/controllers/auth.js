@@ -155,7 +155,11 @@ angular.module("proton.controllers.Auth", [
             )
             .catch(function(err) {
                 $log.error('tryDecrypt',err);
-                alert(err);
+                notify({
+                    classes: 'notification-danger',
+                    message: err.message
+                });
+                // alert(err);
             })
         );
     };

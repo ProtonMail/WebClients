@@ -116,7 +116,7 @@ angular.module("proton.attachments", [
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
             xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
-            xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(window.sessionStorage.getItem('proton:oauth:SessionToken')));
+            xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
             xhr.send(data);
 
             return deferred.promise;
