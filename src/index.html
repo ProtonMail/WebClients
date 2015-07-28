@@ -18,7 +18,7 @@
     <% styles.forEach(function (file) { %>
     <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
-    <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked)">
+    <style type="text/css" id="customTheme" ng-if="(isLoggedIn && !isLocked) && false">
     {{ user.Theme }}
     </style>
 </head>
