@@ -52,6 +52,15 @@ angular.module("proton.controllers.Auth", [
         // transform to lowercase and remove the domain
         $scope.username = $scope.username.toLowerCase().split('@')[0];
 
+        // custom validation
+        if (pmcw.encode_base64($scope.password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
+            notify({
+                classes: 'notification-danger',
+                message: 'Passwords are limited to '+CONSTANTS.LOGIN_PW_MAX_LEN+' characters.'
+            });
+            return;
+        }
+
         networkActivityTracker.track(
             authentication.loginWithCredentials({
                 Username: $scope.username,
