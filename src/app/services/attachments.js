@@ -111,6 +111,7 @@ angular.module("proton.attachments", [
             };
 
             xhr.open('post', url.get() +'/attachments/upload', true);
+            xhr.withCredentials = true;
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
