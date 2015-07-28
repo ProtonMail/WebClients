@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ProtonMail - Secure email based in Switzerland</title><meta name="description" content="Secure email with absolutely no compromises. Get your free encrypted email account today.">    <meta property="og:image" content="https://protonmail.ch/img/facebook_logo.jpg"/>
+    <meta property="og:title" content="Encrypted email, based in Switzerland."/>
+    <meta property="og:url" content="https://protonmail.ch"/>
+    <meta property="og:site_name" content="ProtonMail"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link type="text/css" rel="stylesheet" href="/theme.css">    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" sizes="192x192" href="/img/android/launcher-icon-4x.png">
+
+<body id="page-home" class="external">
+
+    <noscript id="jsNeeded">
+    Javascript must be enabled in order to encrypt and decrypt messages in your browser.
+    </noscript>
+
+    <nav id="navMain">
+
+        <div class="container">
+            <ul class="menu-left">
+        
+            <li><a href="/" class="logo pull-left"><img src="/img/logo-beta-dark.svg" alt="Secure Email Provider ProtonMail Logo" title="ProtonMail"></a><span class="headerlink">ProtonMail Home</span></li>    </ul><a id="mobileMenuLink"><em class="fa fa-bars fa-2x"></em></a>
+            
+            <ul id="menuMain" class="pull-right">
+                
+                <li id="nav-about"><a href="/pages/about">About</a></li>
+                <li id="nav-blog"><a href="https://blog.protonmail.ch">Blog</a></li>
+                <li id="nav-security"><a href="/pages/why-protonmail">Why<span> ProtonMail</span>?</a></li>
+                <li id="nav-donate"><a href="/donate">Donate</a></li>
+                                <li id="nav-login">
+                    <a href="/login" id="nav-login-link" onclick="return showLogin();"><strong>Sign In</strong></a>
+                    <form name="sign_in" class="hide" action="/log-in" method="post" role="form" autocomplete="off" id="sign_in_form" onsubmit="return login();">
+                        <input id="UserName" class="bordered" name="UserName" type="text" placeholder="Email / Username">
+                        <input id="Password" class="bordered" name="Password" type="password" placeholder="Password">
+                        <button name="submit_button" type="submit" class="button button-default"><em id="sign_in_button" class="fa fa-circle-o-notch fa-spin hide"></em> Sign In</button>
+                    </form> 
+                </li>                <li id="nav-login2"><a href="/login">Sign In</a></li>
+                            </ul>
+</div>
+</nav>
+
+<section id="hero" class="b-lazy">
+    <div class="container">
+        <div id="heroLeft" class="text-center">
+            <h1>Secure Your Email With ProtonMail
+                <span>Get your free encrypted email account</span>
+            </h1>
+                            <p class="text-center"><a href="/create-account"
+                                          id="heroCTA" class="button button-primary">Sign Up</a></p>
+                    </div>
+        <div id="heroRight" class="text-center donate-area">
+            <img src="/img/home/screen.png" alt="Screenshot of secure email in ProtonMail">
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <ul>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-shield"></em></span></p>
+                <h4>Secure Email Servers</h4>
+
+                <p class="summary">Swiss Data Security</p>
+
+                <p class="details">Our email service safeguards user data with strict privacy protections and our secure
+                    datacenter facility hidden inside a Swiss granite mountain.</p>
+            </li>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-lock"></em></span></p>
+                <h4>Zero Access Provider</h4>
+
+                <p class="summary">End-To-End Encryption</p>
+
+                <p class="details">Your emails are automatically end-to-end encrypted inside our email service. Because
+                    of this, we cannot decrypt or share your data with third parties.</p>
+            </li>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-eye-slash"></em></span></p>
+                <h4>Stay Anonymous</h4>
+
+                <p class="summary">Private Email Service</p>
+
+                <p class="details">No personal information is required to create your secure email account. We don't
+                    keep IP logs which can be linked to your username. We take privacy seriously.</p>
+            </li>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-signal"></em></span></p>
+                <h4>100% Free Service</h4>
+
+                <p class="summary">Free for everyone</p>
+
+                <p class="details">ProtonMail is committed to providing free private email service for everyone with all
+                    end-to-end encryption and privacy features and no hidden costs.</p>
+            </li>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-check"></em></span></p>
+                <h4>Easy to Use</h4>
+
+                <p class="summary">Stress-Free Email Provider</p>
+
+                <p class="details">Use any device with a modern web browser to access our secure email service.
+                    ProtonMail sends and receives email just like regular email providers.</p>
+            </li>
+            </li>
+            <li class="container panel">
+                <p class="icon"><span><em class="fa fa-2x fa-laptop"></em></span></p>
+                <h4>Modern Email Design</h4>
+
+                <p class="summary">Security With Productivity</p>
+
+                <p class="details">Each detail within our secure email service is optimized to help you better read,
+                    organize, and send email.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="press">
+    <div class="container text-center content">
+        <h3>In the Press</h3>
+        <blockquote>"A new email service being developed by a group from MIT and CERN promises to bring secure,
+            encrypted email to the masses and keep sensitive information away from prying
+            eyes."<span>– Boston Herald</span></blockquote>
+        <blockquote>"...[ProtonMail's] security measures are intense: end-to-end encryption and user authentication
+            protocols so rigorous even the creators can't read user emails."<span>- Huffington Post</span></blockquote>
+        <blockquote>"ProtonMail hosts its servers in Switzerland... so all user data is protected by strict Swiss
+            privacy laws."<span>- Wall Street Journal</span></blockquote>
+        <div class="clear"></div>
+        <br>
+        <ul>
+            <li id="press-forbes" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.forbes.com/sites/hollieslade/2014/05/19/the-only-email-system-the-nsa-cant-access/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/forbes_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="Forbes logo for article about secure email">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-wsj" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://blogs.wsj.com/digits/2014/08/14/is-encrypted-messaging-entering-the-mainstream/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/wsj_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="Wall Street Journal logo for article about secure email">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-guardian" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.theguardian.com/technology/2014/jul/02/paypal-protonmail-secure-email-indiegogo"
+                               target="_blank">
+                                <img data-src="/img/home/logos/guardian_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="The Guardian logo for article about encrypted email">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-foxnews" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.foxnews.com/tech/2014/07/16/startup-crowdfunds-416000-to-take-on-nsa-spying/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/foxnews_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="FoxNews logo for article about secure email providers">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-huffington" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.huffingtonpost.com/2014/05/20/protonmail-privacy-email_n_5352530.html"
+                               target="_blank">
+                                <img data-src="/img/home/logos/huffingtonpost_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="The Huffington Post logo for article about secure email services">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-german" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://blogs.faz.net/digitaltwin/2014/07/10/die-wissenschaftler-erobern-das-internet-zurueck-756/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/faz_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="FAZ logo for article about secure email providers">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-french" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.lemonde.fr/banc-essai/breve/2014/07/01/paypal-gele-le-compte-du-projet-d-e-mail-securise-protonmail_4448703_4409046.html"
+                               target="_blank">
+                                <img data-src="/img/home/logos/lemonde_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="Le Monde logo for article about encrypted email providers">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-tc" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://techcrunch.com/2014/06/23/protonmail-is-a-swiss-secure-mail-provider-that-wont-give-you-up-to-the-nsa/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/techcrunch_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="TechCrunch logo for article about encrypted email services">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-npr" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.npr.org/2014/07/12/330751548/switzerland-from-banking-paradise-to-data-safe-zone"
+                               target="_blank">
+                                <img data-src="/img/home/logos/npr_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="NPR logo for article about private email providers">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li id="press-dd" class="featured">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="http://www.dailydot.com/politics/protonmail-fundraising-indiegogo-record/"
+                               target="_blank">
+                                <img data-src="/img/home/logos/dailydot_logo.png"
+                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     class="b-lazy" alt="DailyDot logo for article about private email services">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</section>
+
+<section id="register" class="clear">
+  <div class="container">
+    <h4>Sign Up for ProtonMail</h4>
+    <form method="GET" action="/invite">
+      <em class="status"></em>
+      <input type="text" placeholder="Username" name="u" class="bordered">
+            <button type="submit" class="button larger"">Sign Up</button>
+          </form>
+  </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h3 class="text-center">Contact Us</h3>
+
+        <div id="ch" class="contact">
+            <img src="/img/home/flag_ch.png" alt="ProtonMail's secure email service is based in Switzerland">
+            <h4>Switzerland</h4>
+            <address>
+                Proton Technologies AG<br>
+                Chemin du Pré-Fleuri, 3<br>
+                CH-1228 Plan-les-Ouates, Geneva<br>
+                Switzerland
+            </address>
+            <p class="phone"><span class="fa fa-phone"></span> +41 022 575 46 99</p>
+        </div>
+        <div id="us" class="contact">
+            <img src="/img/home/flag_us.png" alt="North America support for ProtonMail">
+            <h4>North America</h4>
+            <address>
+                9:00AM - 6:00PM Pacific Time<br>
+                English Tech Support<br>
+
+                <p class="phone"><span class="fa fa-phone"></span> 1 (415) 212 8747</p>
+                English Media Inquiries<br>
+
+                <p class="phone"><span class="fa fa-phone"></span> 1 (415) 580 1117</p>
+            </address>
+        </div>
+        <div id="em" class="contact">
+            <img src="/img/home/icon_email.png" alt="Contact ProtonMail through email">
+            <h4>Email</h4>
+            <table>
+                <tr>
+                    <th>General</th>
+                    <td><span class="email"><a
+                                href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;">
+                                &#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;</a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Media</th>
+                    <td><span class="email"><a
+                                href="mailto:&#109;&#101;&#100;&#105;&#097;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;">
+                                &#109;&#101;&#100;&#105;&#097;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;</a></span>
+                    </td>
+                </tr>
+            </table>
+            <p><em>For security related discussions:<br><span class="email"><a
+                            href="mailto:&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;">
+                            &#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;</a></span></em>
+            </p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+
+<section id="partners">
+    <div class="container text-center">
+        <h3>Partners &amp; Sponsors</h3>
+        <ul>
+            <li>
+                <a href="https://www.alpinedc.ch/en/" target="_blank">
+                    <img src="/img/home/partners/alpine.png" alt="Alpine logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.namecheap.com/" target="_blank">
+                    <img src="/img/home/partners/namecheap.png" alt="NameCheap logo">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.synova-solutions.ch/" target="_blank">
+                    <img src="/img/home/partners/synova.png" alt="Synova logo">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.deltalis.com/" target="_blank">
+                    <img src="/img/home/partners/deltalis.png" alt="Deltalis logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.bitcoinfoundation.org/election-results/" target="_blank">
+                    <img src="/img/home/partners/oliver_janssens.png" alt="Oliver Janssens logo">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.fongit.ch/" target="_blank">
+                    <img src="/img/home/partners/fongit.png" alt="FongIt logo">
+                </a>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</section>
+
+    <section id="footer">
+        <div class="container">
+            <ul>
+                <li class="header">Learn More</li>
+                <li><a href="https://blog.protonmail.ch/protonmail-threat-model/">Threat Model</a></li>
+                <li><a href="/pages/why-protonmail">Why ProtonMail?</a></li>
+                <li><a href="/pages/press">Press</a></li>
+                <li><br></li>
+            </ul>
+            <ul>
+                <li class="header">Support</li>
+                <li><a href="https://protonmail.uservoice.com">Request Feature</a></li>
+                <li><a href="https://support.protonmail.ch">Knowledge Base</a></li>
+                <li><a href="/report-bug">Report Bug</a></li>
+            </ul>
+            <ul>
+                <li class="header">Company</li> 
+                <li><a href="/pages/media">Media Kit</a></li>
+                <li><a href="/pages/about#about-team">Our Team</a></li>
+                <li><a href="https://blog.protonmail.ch">Blog</a></li>
+            </ul>
+            <ul id="latestNews">
+                <li class="header">Latest News</li>
+                <li><a href="https://blog.protonmail.ch/protonmail-at-ted-global/"><strong>ProtonMail at TED Global</strong></a></li>                
+                <li><a href="https://blog.protonmail.ch/protonmail-beta-v1-14-release-notes/"><strong>ProtonMail BETA v1.14 Release Notes</strong></a></li>
+                <li><a href="https://blog.protonmail.ch/privacy-under-attack/"><strong>Why Privacy Is Under Attack</strong></a></li>
+            </ul>
+            <div class="clear"></div>        
+        </div>
+    </section>
+
+    <section id="bottom">
+        <div class="container">
+            <p class="copy pull-left">&copy; 2015 Proton Technologies AG. <span>All Rights Reserved.</span></p>
+            <p class="links">
+                <a href="/">Home</a> |
+                <a href="/login">Sign In</a> |
+                <a href="/donate">Donate</a> | 
+                <a href="/pages/careers"><strong>We're Hiring!</strong></a> | 
+                <a href="/pages/privacy-policy">Privacy<span> Policy</span></a> | 
+                <a href="/pages/terms-and-conditions">Terms<span> &amp; Conditions</span></a>    
+                <a class="social" href="https://fb.com/protonmail"><i class="fa fa-facebook"></i></a>
+                <a class="social" href="https://twitter.com/protonmail"><i class="fa fa-twitter"></i></a>                
+            </p>
+            <div class="clear"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+
+    // Support Dropdown Menu
+    var navSupport = document.getElementById('nav-support');
+    if (navSupport!==null) {
+        navSupport.addEventListener("click",function(e){
+            document.getElementById('subNav').classList.toggle('hide');
+        },false);
+    }
+ 
+    // Mobile / Tablet Dropdown Menu
+    document.getElementById('mobileMenuLink').addEventListener("click",function(e){
+        document.getElementsByTagName('body')[0].className = 'dropdown';
+        return false;
+    },false);
+
+    // Detect is JS is enabled
+    var elems = document.querySelectorAll("html");
+    [].forEach.call(elems, function(el) {
+        el.classList.remove("no-js");
+    });
+    </script>
+
+    
+<script type="text/javascript" defer>
+var script = document.createElement('script');
+script.src = "/ext.js";
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
+
+<script type="text/javascript">
+/*!
+  hey, [be]Lazy.js - v1.2.2 - 2014.05.04
+  A lazy loading and multi-serving image script
+  (c) Bjoern Klinggaard - @bklinggaard - http://dinbror.dk/blazy
+*/
+(function(e){"function"===typeof define&&define.amd?define(e):window.Blazy=e()})(function(){function e(b){if(!document.querySelectorAll){var f=document.createStyleSheet();document.querySelectorAll=function(b,a,e,c,g){g=document.all;a=[];b=b.replace(/\[for\b/gi,"[htmlFor").split(",");for(e=b.length;e--;){f.addRule(b[e],"k:v");for(c=g.length;c--;)g[c].currentStyle.k&&a.push(g[c]);f.removeRule(0)}return a}}k=!0;g=[];a=b||{};a.error=a.error||!1;a.offset=a.offset||100;a.success=a.success||!1;a.selector=a.selector||".b-lazy";a.separator=a.separator||"|";a.container=a.container?document.querySelectorAll(a.container):!1;a.errorClass=a.errorClass||"b-error";a.breakpoints=a.breakpoints||!1;a.successClass=a.successClass||"b-loaded";a.src=p=a.src||"data-src";r=1<window.devicePixelRatio;c=s(t,25);q=s(u,50);u();l(a.breakpoints,function(b){if(b.width>=window.screen.width)return p=b.src,!1});v()}function v(){y(a.selector);k&&(k=!1,a.container&&l(a.container,function(b){m(b,"scroll",c)}),m(window,"resize",q),m(window,"resize",c),m(window,"scroll",c));t()}function t(){for(var b=0;b<h;b++){var f=g[b],d=f.getBoundingClientRect(),c=w+a.offset;if(0<=d.left&&d.right<=x+a.offset&&(0<=d.top&&d.top<=c||d.bottom<=c&&d.bottom>=0-a.offset)||-1!==(" "+f.className+" ").indexOf(" "+a.successClass+" "))e.prototype.load(f),g.splice(b,1),h--,b--}0===h&&e.prototype.destroy()}function z(b){if(0<b.offsetWidth&&0<b.offsetHeight){var f=b.getAttribute(p)||b.getAttribute(a.src);if(f){var f=f.split(a.separator),d=f[r&&1<f.length?1:0],f=new Image;l(a.breakpoints,function(a){b.removeAttribute(a.src)});b.removeAttribute(a.src);f.onerror=function(){a.error&&a.error(b,"invalid");b.className=b.className+" "+a.errorClass};f.onload=function(){"img"===b.nodeName.toLowerCase()?b.src=d:b.style.backgroundImage='url("'+d+'")';b.className=b.className+" "+a.successClass;a.success&&a.success(b)};f.src=d}else a.error&&a.error(b,"missing"),b.className=b.className+" "+a.errorClass}}function y(b){b=document.querySelectorAll(b);for(var a=h=b.length;a--;g.unshift(b[a]));}function u(){w=window.innerHeight||document.documentElement.clientHeight;x=window.innerWidth||document.documentElement.clientWidth}function m(b,a,d){b.attachEvent?b.attachEvent&&b.attachEvent("on"+a,d):b.addEventListener(a,d,!1)}function n(b,a,d){b.detachEvent?b.detachEvent&&b.detachEvent("on"+a,d):b.removeEventListener(a,d,!1)}function l(b,a){if(b&&a)for(var d=b.length,c=0;c<d&&!1!==a(b[c],c);c++);}function s(a,c){var d=0;return function(){var e=+new Date;e-d<c||(d=e,a.apply(g,arguments))}}var p,a,x,w,g,h,r,k,c,q;e.prototype.revalidate=function(){v()};e.prototype.load=function(b){-1===(" "+b.className+" ").indexOf(" "+a.successClass+" ")&&z(b)};e.prototype.destroy=function(){a.container&&l(a.container,function(a){n(a,"scroll",c)});n(window,"scroll",c);n(window,"resize",c);n(window,"resize",q);h=0;g.length=0;k=!0};return e});
+
+// lazy loading via bLazy
+var bLazy = new Blazy();  
+</script>
+    <script type="text/javascript">
+    
+    </script>
+    
+<!-- Piwik -->
+<script type="text/javascript">
+      var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["setCookieDomain", "*.protonmail.ch"]);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+  var u="//stats.protonmail.ch/";
+  _paq.push(['setTrackerUrl', u+'piwik.php']);
+  _paq.push(['setSiteId', 1]);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<noscript id="piwik-pixel"><p><img src="//stats.protonmail.ch/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+<script type="text/javascript">
+
+    var showLoginBool = 0;
+    var navloginlink = document.getElementById('nav-login-link');
+    if (navloginlink) {
+        navloginlink.href = '#';
+    }
+
+    function login() {
+        if (document.getElementById('UserName').value.length === 0) {
+            document.getElementById('UserName').focus();
+            document.getElementById('sign_in_button').className = "fa fa-circle-o-notch fa-spin hide";
+            return false;
+        }
+        else if (document.getElementById('Password').value.length === 0) {
+            document.getElementById('Password').focus();
+            document.getElementById('sign_in_button').className = "fa fa-circle-o-notch fa-spin hide";
+            return false;
+        }
+        else {
+            document.getElementById('sign_in_button').className = "fa fa-circle-o-notch fa-spin";
+            return true;
+        }
+    }
+
+    function showLogin() {
+        if (showLoginBool == 0) {
+            document.getElementById('sign_in_form').className = "";
+            showLoginBool = 1;
+        }
+        else {
+            document.getElementById('sign_in_form').className = "hide";
+            showLoginBool = 0;
+        }
+        return false;
+    }
+</script>
+
+</html>

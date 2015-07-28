@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subtle Pattern Demo</title>
+<style>
+body , html { padding:0;margin:0;height:100%; }
+body { background:#ccc none repeat 0 0; }
+form { padding:10px;text-align:center;background:#FFF;border-bottom:1px solid #000; }
+</style>
+</head>
+<body>
+<form>
+<select id="image">
+  <option selected>Downloading Pattern Names...</option>
+</select>
+</form>
+
+<script>
+var loadPatterns = function () {
+  var ajax, ajaxTimeout, requrl;
+  ajax = (window.ActiveXObject) ? new ActiveXObject("Microsoft.XMLHTTP") : (XMLHttpRequest && new XMLHttpRequest()) || null;
+  
+  ajaxTimeout = window.setTimeout(function () {
+    ajax.abort();
+  }, 6000);
+  
+  ajax.onreadystatechange = function () {
+    var selectEle, itemsArray, itemsString, i;
+    if (ajax.readyState === 4) {
+      if (ajax.status === 200) {
+        clearTimeout(ajaxTimeout);
+        if (ajax.status !== 200) {
+          
+        } else {
+          selectEle = document.getElementById('image');
+          itemsArray = JSON.parse(ajax.responseText);
+          itemsString = '';
+          for(i = 0; i < itemsArray.length; i++) {
+            if(itemsArray[i].name.indexOf('.png') !== -1) {
+              itemsString += '<option value="'+itemsArray[i].html_url.replace("blob", "raw")+'">'+itemsArray[i].name+'</option>';
+            }
+          }
+          selectEle.innerHTML = itemsString;
+          selectEle.setAttribute("onchange", "setPattern(this.value);"); // = setPattern(selectEle.value);
+        }
+      }
+    }
+  };
+  
+  requrl = 'https://api.github.com/repos/subtlepatterns/SubtlePatterns/contents';
+  ajax.open("GET", requrl, true);
+  ajax.send();
+}
+
+var setPattern = function (url) {
+  var bodyEle = document.getElementsByTagName('body')[0];
+  bodyEle.style.backgroundImage = 'url("'+url+'")';
+}
+
+window.onload = loadPatterns();
+</script>
+</body>
+</html>

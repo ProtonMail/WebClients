@@ -47,8 +47,8 @@ module.exports = function(grunt) {
         return [
             connect.static(base),
             function(req, res, next) {
-                // no file found; send index.html
-                var file = base + "/index.html";
+                // no file found; send app.html
+                var file = base + "/app.html";
                 if (grunt.file.exists(file)) {
                     require("fs").createReadStream(file).pipe(res);
                     return;
@@ -217,6 +217,14 @@ module.exports = function(grunt) {
                     src: ["<%= app_files.js %>"],
                     dest: "<%= build_dir %>/",
                     cwd: ".",
+                    expand: true
+                }]
+            },
+            build_statichtml: {
+                files: [{
+                    src: ["**"],
+                    dest: "<%= build_dir %>/",
+                    cwd: "./src/static",
                     expand: true
                 }]
             },
@@ -396,7 +404,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            files: ["<%= app_files.js %>", "!src/app/libraries/**/*.js"],
+            files: ["<%= app_files.js %>", "!src/app/libraries/**/*.js", "!src/static/**"],
             options: {
                 curly: true, // This option requires you to always put curly braces around blocks in loops and conditionals.
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
@@ -465,7 +473,7 @@ module.exports = function(grunt) {
             },
             assets: {
                 files: [{
-                    src: ['<%= compile_dir %>/index.html']
+                    src: ['<%= compile_dir %>/app.html']
                 }]
             }
         },
@@ -594,6 +602,7 @@ module.exports = function(grunt) {
         "copy:build_app_assets",
         "copy:build_vendor_assets",
         "copy:build_appjs",
+        "copy:build_statichtml",
         "copy:build_vendorjs",
         "copy:htaccess",
         "copy:build_external",

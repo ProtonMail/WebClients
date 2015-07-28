@@ -15,7 +15,7 @@ module.exports = {
     jse2e: ["src/**/*.scenario.js"],
     atpl: ["src/app/**/*.tpl.html"],
     ctpl: ["src/common/**/*.tpl.html"],
-    html: ["src/index.html", "src/admin.html"],
+    html: ["src/app.html", "src/admin.html"],
     sass: ["src/sass/application.scss", "src/sass/admin.scss"]
   },
   external_files: {
