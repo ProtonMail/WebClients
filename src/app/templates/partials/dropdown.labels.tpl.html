@@ -1,10 +1,10 @@
 <div class="labels dropdown-menu" role="menu" ng-click="$event.stopPropagation()">
     <div class="modal-body">
         <div class="form-group" ng-show="labels.length > 0">
-            <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABELS' | translate }}..." class="form-control" ng-model="searchLabels" />
+            <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABELS' | translate }}..." class="form-control" ng-model="searchLabels" ng-minlength="1" />
         </div>
         <ul class="list-group no-margin-bottom" ng-show="labels.length > 0">
-            <li class="list-group-item" ng-repeat="label in labels | filter: searchLabels | orderBy: 'Order'">
+            <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                 <input type="checkbox" ng-model="label.Selected" />
                 <span class="label label-pm" style="background-color: {{label.Color}}" ng-click="label.Selected = !!!label.Selected">
                     <i class="fa fa-tag"></i> {{label.Name}}
