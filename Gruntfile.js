@@ -290,8 +290,8 @@ module.exports = function(grunt) {
 
         includes: {
             files: {
-                src: [ '*.html', 'pages/*.html' ],                
-                dest: 'src/static/pages',
+                src: [ '*.html' ],                
+                dest: '<%= build_dir %>',
                 cwd: 'src/static/pages',
                 options: {
                     flatten: true,
@@ -608,7 +608,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask("build", [
         "clean:build",
-        "includes",        
         "jshint",
         "html2js",
         "sass:build",
@@ -620,6 +619,7 @@ module.exports = function(grunt) {
         "copy:build_vendorjs",
         "copy:htaccess",
         "copy:build_external",
+        "includes",
         "index:build",
         "testconfig"
     ]);
