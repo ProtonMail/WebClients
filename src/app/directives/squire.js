@@ -7,9 +7,6 @@ angular.module("proton.squire", [
         require: "ngModel",
         scope: {
             height: '=',
-            width: '@',
-            placeholder: '@',
-            editorClass: '@',
             ngModel: '=',
             message: '='
         },
@@ -48,18 +45,6 @@ angular.module("proton.squire", [
                 }
 
                 return result;
-            };
-
-            $scope.editorVisibility = this.editorVisibility = function(vis) {
-                var _ref;
-                if (arguments.length === 1) {
-                    editorVisible = vis;
-                    if (vis) {
-                    return (_ref = $scope.editor) !== null ? _ref.focus() : void 0;
-                    }
-                } else {
-                    return editorVisible;
-                }
             };
         },
         link: function(scope, element, attrs, ngModel) {
@@ -109,14 +94,11 @@ angular.module("proton.squire", [
                 return scope.data.link && scope.data.link !== LINK_DEFAULT;
             };
             scope.canAddImage = function() {
-              return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
+                return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
             };
             scope.$on('$destroy', function() {
                 return editor !== null ? editor.destroy() : void 0;
             });
-            scope.showPlaceholder = function() {
-                return ngModel.$isEmpty(ngModel.$viewValue);
-            };
             scope.popoverHide = function(e, name) {
                 var hide;
                 hide = function() {
@@ -205,7 +187,6 @@ angular.module("proton.squire", [
                 });
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
-                    scope.editorVisibility(true);
                 });
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
@@ -217,14 +198,14 @@ angular.module("proton.squire", [
                     }
                 });
                 editor.addEventListener("pathChange", function() {
-                    var p, _ref;
+                    var p, ref;
+
                     p = editor.getPath();
                     if (/>A\b/.test(p) || editor.hasFormat('A')) {
                         element.find('.add-link').addClass('active');
                     } else {
                         element.find('.add-link').removeClass('active');
                     }
-                    return menubar.attr("class", "menu " + ((_ref = p.split("BODY")[1]) !== null ? _ref.replace(/>|\.|html|body|div/ig, ' ').toLowerCase() : void 0));
                 });
                 editor.alignRight = function() {
                     return editor.setTextAlignment("right");
@@ -352,39 +333,12 @@ angular.module("proton.squire", [
                     if(scope.data.image.length > 0) {
                         editor.insertImage(scope.data.image);
                     }
-                  return editor.focus();
+                    return editor.focus();
                 } else {
                     editor[action]();
                     return editor.focus();
                 }
             };
-        }
-    };
-}).directive("squireCover", function() {
-    return {
-        restrict: 'E',
-        replace: true,
-        transclude: true,
-        require: "^squire",
-        template: "<ng-transclude ng-show=\"isCoverVisible()\"\n    ng-click='hideCover()'\n    class=\"angular-squire-cover\">\n</ng-transclude>",
-        link: function(scope, element, attrs, editorCtrl) {
-            var showingCover;
-            showingCover = true;
-            scope.isCoverVisible = function() {
-                return showingCover;
-            };
-            scope.hideCover = function() {
-                showingCover = false;
-                return editorCtrl.editorVisibility(true);
-            };
-            editorCtrl.editorVisibility(!showingCover);
-            return scope.$watch(function() {
-                return editorCtrl.editorVisibility();
-            }, function(val) {
-                showingCover = !val;
-
-                return showingCover;
-            });
         }
     };
 }).directive("squireControls", function() {
@@ -394,11 +348,9 @@ angular.module("proton.squire", [
         replace: true,
         transclude: true,
         require: "^squire",
-        template: "<ng-transclude ng-show=\"isControlsVisible()\"\n    class=\"angular-squire-controls\">\n</ng-transclude>",
+        template: "<ng-transclude class=\"angular-squire-controls\">\n</ng-transclude>",
         link: function(scope, element, attrs, editorCtrl) {
-            scope.isControlsVisible = function() {
-                return editorCtrl.editorVisibility();
-            };
+
         }
     };
 });
