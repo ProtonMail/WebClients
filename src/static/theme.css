@@ -121,6 +121,7 @@ body #navMain {
   padding: 0 1rem;
   margin: auto;
   box-sizing: border-box;
+  box-shadow: 0 1px 1px rgba(0,0,0,.25);
 }
 body #navMain .logo {
   display: block;
@@ -2747,7 +2748,7 @@ li#nav-login2 {
   display: block;
   border-radius: 2px;
   padding: 0 0 0 8rem;
-  height: 8rem;
+  height: auto;
   overflow: hidden;
   margin-bottom: 0.5rem;
   position: relative;
@@ -3032,6 +3033,17 @@ li#nav-login2 {
 
 #page-thanks {
   background: url("/img/patterns/whitey.png") #f0f0f0 0 0 repeat;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p {
+	padding: 0;
+	margin: 1rem 0;
 }
 
 @media only screen and (max-width: 500px) {

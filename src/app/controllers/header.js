@@ -34,6 +34,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openReportModal = function() {
+        $log.debug('openReportModal:broadcast');
         $rootScope.$broadcast('openReportModal');
     };
 

@@ -298,6 +298,16 @@ module.exports = function(grunt) {
                     flatten: true,
                     includePath: "src/static/pages"
                 }
+            },
+            app: {
+                src: [ "*.html" ],
+                dest: "<%= build_dir %>/",
+                cwd: "src/static",
+                options: {
+                    duplicates: false,
+                    flatten: true,
+                    includePath: "src/static"
+                }
             }
         },
 
