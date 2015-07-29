@@ -59,6 +59,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.initMessage(angular.copy(message), save);
     });
 
+    $scope.$on('listenEditor', function(event, message) {
+        $scope.listenEditor(message);
+    });
+
     $scope.setDefaults = function(message) {
         _.defaults(message, {
             ToList: [],
@@ -235,7 +239,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.saveOld(message);
-        $scope.listenEditor(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
