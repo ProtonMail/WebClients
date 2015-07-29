@@ -220,7 +220,7 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
-            build_statichtml: {
+            build_static: {
                 files: [{
                     src: ["**"],
                     dest: "<%= build_dir %>/",
@@ -290,12 +290,13 @@ module.exports = function(grunt) {
 
         includes: {
             files: {
-                src: [ '*.html' ],                
-                dest: '<%= build_dir %>',
-                cwd: 'src/static/pages',
+                src: [ "*.html" ],
+                dest: "<%= build_dir %>",
+                cwd: "src/static/pages",
                 options: {
+                    duplicates: false,
                     flatten: true,
-                    includePath: 'src/static/pages'
+                    includePath: "src/static/pages"
                 }
             }
         },
@@ -615,12 +616,12 @@ module.exports = function(grunt) {
         "copy:build_app_assets",
         "copy:build_vendor_assets",
         "copy:build_appjs",
-        "copy:build_statichtml",
+        "copy:build_static",
         "copy:build_vendorjs",
         "copy:htaccess",
         "copy:build_external",
-        "includes",
         "index:build",
+        "includes",
         "testconfig"
     ]);
 
