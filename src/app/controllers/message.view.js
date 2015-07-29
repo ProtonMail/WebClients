@@ -396,8 +396,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 
-    $scope.goToMessageList = function() {
-        $state.go('^');
+    $scope.goToMessageList = function(reload) {
+        if (reload) {
+            $state.go('^', {}, {reload: true});
+        } else {
+            $state.go('^');
+        }
     };
 
     $scope.moveMessageTo = function(mailbox) {
@@ -423,8 +427,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             messages.push({Action: 3, ID: message.ID, Message: message});
     		messageCache.set(messages);
+            $rootScope.refreshMessageList = true;
 
-            $scope.goToMessageList();
+            $scope.goToMessageList(true);
         });
 
         networkActivityTracker.track(promise);
