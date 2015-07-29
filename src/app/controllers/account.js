@@ -272,8 +272,8 @@ angular.module("proton.controllers.Account", ["proton.tools"])
             pmcw.encode_base64($scope.account.mailboxPassword)
         );
         // delete $rootScope.tempUser;
+        // TODO: not all promises are resolved, so we simply refresh.
         $timeout( function() {
-            // TODO: not all promises are resolved, so we simply refresh.
             window.location = '/inbox';
         }, 100);
         deferred.resolve(200);

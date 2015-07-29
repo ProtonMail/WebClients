@@ -27,6 +27,8 @@ angular.module("proton.authentication", [
                 $log.debug('setAuthHeaders:1');
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
+                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
+                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
             }
             else {
                 // we need the old stuff for now
@@ -112,7 +114,8 @@ angular.module("proton.authentication", [
                     Uid: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"],
                     ExpiresIn: dt,
                     AccessToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"],
-                    RefreshToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"]
+                    RefreshToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"],
+                    SessionToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"]
                 };
 
                 if (dt.isBefore(Date.now())) {
@@ -302,7 +305,7 @@ angular.module("proton.authentication", [
             // console.log(auth.data);
             // console.log(api.refreshTokenIsDefined());
 
-            var loggedIn = auth.data && angular.isDefined(auth.data.AccessToken) && api.refreshTokenIsDefined();
+            var loggedIn = auth.data && api.refreshTokenIsDefined();
 
             if (loggedIn && api.user === null) {
                 auth.setAuthHeaders();

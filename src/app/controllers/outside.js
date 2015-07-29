@@ -10,7 +10,7 @@ angular.module("proton.controllers.Outside", [
     $stateParams,
     $q,
     $translate,
-
+    $log,
     authentication,
     Message,
     tools,
@@ -31,6 +31,8 @@ angular.module("proton.controllers.Outside", [
     var MIMEType = [];
     var KeyPackets = [];
     var DataPacket = [];
+
+    // $log.debug($scope.message.publicKey);
 
     if(message.displayMessage === true) {
         $timeout(function() {
@@ -63,12 +65,24 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.send = function() {
-        message.getPublicKeys([message.SenderAddress]).then(function(keys) {
-            var publicKey = keys[message.SenderAddress];
-            var bodyPromise = pmcw.encryptMessage($scope.message.Body, publicKey);
-            var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
+        var publicKey = $scope.message.publicKey;
+        $log.debug(publicKey);
+        $log.debug('$scope.message',$scope.message);
+        $log.debug('message',message);
+        var bodyPromise = pmcw.encryptMessage($scope.message.Body, $scope.message.publicKey);
+        $log.debug('b');
+        var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
+        $log.debug('c');
 
-            $q.all({Body: bodyPromise, ReplyBody: replyBodyPromise}).then(function(result) {
+        $q.all({
+            Body: bodyPromise, 
+            ReplyBody: replyBodyPromise
+        })
+        .then(
+            function(result) {
+
+                $log.debug('d');
+
                 var data = {
                     'Body': result.Body,
                     'ReplyBody': result.ReplyBody,
@@ -78,14 +92,23 @@ angular.module("proton.controllers.Outside", [
                     'DataPacket[]': DataPacket
                 };
 
-                Eo.reply(decrypted_token, token_id, data).then(function(result) {
-                    $state.go('eo.message', {tag: $stateParams.tag});
-                    notify($translate.instant('MESSAGE_SENT'));
-                }, function(error) {
-                    notify(error);
-                });
-            });
-        });
+                Eo.reply(decrypted_token, token_id, data)
+                .then(
+                    function(result) {
+                        $log.debug('e');
+                        $state.go('eo.message', {tag: $stateParams.tag});
+                        notify($translate.instant('MESSAGE_SENT'));
+                    }, 
+                    function(error) {
+                        $log.debug('f');
+                        notify(error);
+                    }
+                );
+            },
+            function(err) {
+                $log.debug('g');
+            }
+        );
     };
 
     $scope.cancel = function() {
@@ -138,22 +161,20 @@ angular.module("proton.controllers.Outside", [
         var element = $(file.previewElement);
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
-            message.getPublicKeys([message.SenderAddress]).then(function(keys) {
-                var publicKey = keys[message.SenderAddress];
-
-                attachments.load(file, publicKey).then(function(packets) {
-                    Filename.push(packets.Filename);
-                    MIMEType.push(packets.MIMEType);
-                    KeyPackets.push(new Blob([packets.keys]));
-                    DataPacket.push(new Blob([packets.data]));
-                    message.uploading = false;
-                    message.Attachments.push({
-                        Name: file.name,
-                        Size: file.size
-                    });
+            var publicKey = $scope.message.publicKey;
+            attachments.load(file, publicKey).then(function(packets) {
+                Filename.push(packets.Filename);
+                MIMEType.push(packets.MIMEType);
+                KeyPackets.push(new Blob([packets.keys]));
+                DataPacket.push(new Blob([packets.data]));
+                message.uploading = false;
+                message.Attachments.push({
+                    Name: file.name,
+                    Size: file.size
                 });
             });
-        } else {
+        } 
+        else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
             // TODO remove file in droparea
