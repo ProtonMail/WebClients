@@ -288,7 +288,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.senderIsMe(message) &&
             (
                 !$state.is('secured.inbox') &&
-                !$state.is('secured.drafts')  &&
                 !$state.is('secured.archive')  &&
                 !$state.is('secured.spam')  &&
                 !$state.is('secured.trash')
