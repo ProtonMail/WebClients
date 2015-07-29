@@ -499,7 +499,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.closePanel(message);
     };
 
-    $scope.clearEncrypt = function(message) {
+    $scope.clearEncrypt = function(message, params, form) {
+        params.password = '';
+        params.confirm = '';
+        params.hint = '';
+        form.$setUntouched();
         delete message.PasswordHint;
         message.IsEncrypted = 0;
         $scope.closePanel(message);

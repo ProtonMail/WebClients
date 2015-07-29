@@ -119,7 +119,7 @@
                                 <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
                             </div>
                             <div class="col-md-12 text-right">
-                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message)">{{ 'CANCEL' | translate }}</button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="clearEncrypt(message, params, encryptForm);">{{ 'CANCEL' | translate }}</button>
                                 <button type="submit" class="btn btn-primary btn-sm" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">{{ 'SET' | translate }}</button>
                             </div>
                         </div>
