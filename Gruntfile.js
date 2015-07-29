@@ -288,6 +288,18 @@ module.exports = function(grunt) {
             }
         },
 
+        includes: {
+            files: {
+                src: [ '*.html', 'pages/*.html' ],                
+                dest: 'src/static/pages',
+                cwd: 'src/static/pages',
+                options: {
+                    flatten: true,
+                    includePath: 'src/static/pages'
+                }
+            }
+        },
+
         concat: {
             build_css: {
                 src: [
@@ -573,6 +585,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
     grunt.loadNpmTasks('grunt-uncss');
+    grunt.loadNpmTasks('grunt-includes');
 
     grunt.renameTask("watch", "delta");
     grunt.registerTask("watch", [
@@ -595,6 +608,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask("build", [
         "clean:build",
+        "includes",        
         "jshint",
         "html2js",
         "sass:build",
