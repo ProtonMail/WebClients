@@ -214,19 +214,19 @@ h1 .fa, h2 .fa, h3 .fa, h4 .fa, h5 .fa, h6 .fa {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 h5 {
@@ -659,7 +659,7 @@ p.narrow {
   text-align: right;
   font-size: .8rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  opacity: 0;
+  opacity: 1;
 }
 #bottom.sticky {
   position: absolute;

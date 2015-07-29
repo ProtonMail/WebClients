@@ -291,7 +291,7 @@ module.exports = function(grunt) {
         includes: {
             files: {
                 src: [ "*.html" ],
-                dest: "<%= build_dir %>",
+                dest: "<%= build_dir %>/pages",
                 cwd: "src/static/pages",
                 options: {
                     duplicates: false,
