@@ -36,7 +36,7 @@ angular.module("proton.emailField", [])
               return entityMap[s];
           });
       };
-      
+
       $ctrl.$render = function () {
         _(($ctrl.$viewValue || "").split(","))
           .map(function (str) { return str.trim(); })
@@ -163,7 +163,7 @@ angular.module("proton.emailField", [])
           source: Contact.index.ttAdapter(),
           templates: {
               suggestion: function(Contact) {
-                  return "<b>" +$sanitize(Contact.Name) + "</b><br>" + $sanitize(Contact.Email);
+                  return "<b>" +$sanitize(htmlEscape(Contact.Name)) + "</b><br>" + $sanitize(htmlEscape(Contact.Email));
                 }
             }
         }).on("typeahead:selected", function (e, d) {
