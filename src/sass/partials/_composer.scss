@@ -11,13 +11,86 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    transition: none;   
+    transition: none;
     & > .composer-body {
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
-        flex-grow: 1;
+        flex-grow: 1 ;
+
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
-    .angular-squire {
-        height: 100%;
+
+    .typeahead-container {
+        width: auto;
+        overflow: hidden !important;
     }
+}
+
+.composer.normalized {
+    border-radius: 0;
+    height: 530px !important;
+    width: 480px !important;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    transition: none;
+    & > .composer-body {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1 ;
+
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+    }
+
+    .typeahead-container {
+        width: 400px;
+        overflow: hidden !important;
+    }
+
+}
+
+.composeEditor {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.angular-squire {
+    height: 100%;
+
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1 ;
+}
+.previews {
+    box-shadow: inset 0 1px 0 $base-color-darker;
+    background-color: $panel-footer;
+    padding-top: 5px;
+    max-height: 110px;
+    overflow-y: auto;
 }

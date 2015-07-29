@@ -182,8 +182,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         tempPacket.uploading = true;
 
         message.uploading = true;
-        message.attachmentsToggle = true;
         message.Attachments.push(tempPacket);
+        message.attachmentsToggle = true;
 
         attachments.load(file).then(
             function(packets) {
@@ -294,7 +294,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         return styles;
     };
+    var composer = $('#uid' + message.uid);
+    $scope.previewHeight = composer.find('.previews').outerHeight();
 
+// Use directives use horizontal form height for to, bcc, cc
     $scope.squireHeight = function(message) {
         if (message.maximized === true) {
             return '100%';
@@ -431,19 +434,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        if(message.editor) {
-            message.editor.addEventListener('focus', function() {
-                message.fields = false;
-                message.toUnfocussed = true;
-                $timeout(function() {
-                    message.height();
-                    $('.typeahead-container').scrollTop(0);
+        $timeout(function() {
+            if(message.editor) {
+                message.editor.addEventListener('focus', function() {
+                    message.fields = false;
+                    message.toUnfocussed = true;
+                    $timeout(function() {
+                        $('.typeahead-container').scrollTop(0);
+                    });
                 });
-            });
-            message.editor.addEventListener('input', function() {
-                $scope.saveLater(message);
-            });
-        }
+                message.editor.addEventListener('input', function() {
+                    $scope.saveLater(message);
+                });
+            }
+        }, 250);
     };
 
     $scope.selectFile = function(message, files) {

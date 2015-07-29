@@ -4,7 +4,7 @@
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
-        ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized}"
+        ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized, 'normalized': !message.maximized && !message.minimized}"
         ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
             <div class="composer-header row" ng-hide="user.ComposerMode===1">
@@ -146,7 +146,7 @@
                     <squire
                     ng-model="message.Body"
                     message="message"
-                    height="squireHeight(message)"></squire>
+                    ></squire>
                     <button
                     class="btn btn-sm attach-collapse"
                     ng-show="message.Attachments.length > 0"
