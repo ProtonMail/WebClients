@@ -85,10 +85,24 @@
             $('#invite-form').on('submit', function(event) {
                 // prevent form submission. we will do an API call instead
                 event.preventDefault();
+
                 // disable button
                 $('#invite-button').attr('disabled', true);
 
                 // make api call
+                $.ajax({
+                    type:"GET",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                        request.setRequestHeader("x-pm-appversion", "Other");
+                        request.setRequestHeader("x-pm-apiversion", "1");
+                        request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+                    },
+                    url: "https://protonmail.ch/api/users/available/"+$('#username').val(),
+                    success: function(msg) {
+                        console.log("The result =" + StringifyPretty(msg));
+                    }
+                });                
             });
         });
         function getUrlParameter(sParam) {
