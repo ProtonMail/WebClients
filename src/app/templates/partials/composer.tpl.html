@@ -7,7 +7,7 @@
         ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized, 'normalized': !message.maximized && !message.minimized}"
         ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
-            <div class="composer-header row" ng-hide="user.ComposerMode===1">
+            <div class="composer-header row">
                 <span ng-click="normalize(message);" class="col-xs-8">{{message.Subject}} &nbsp;</span>
                 <span class="col-xs-4 text-right">
                     <a
