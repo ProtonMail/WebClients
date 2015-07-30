@@ -83,6 +83,7 @@ angular.module("proton", [
     "proton.controllers.Search",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
+    "proton.controllers.Signup",
     "proton.controllers.Support",
     "proton.controllers.Upgrade",
     "proton.controllers.Wizard",
