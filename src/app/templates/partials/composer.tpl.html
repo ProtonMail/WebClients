@@ -198,7 +198,7 @@
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
-                    <span ng-show="user.ComposerMode===1"> {{ 'ENCRYPTION' | translate }}</span>
+                    <span ng-show="!!message.maximized"> {{ 'ENCRYPTION' | translate }}</span>
                 </button>
                 <button
                 class="btn btn-sm btn-default"
@@ -207,7 +207,7 @@
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
-                    <span ng-show="user.ComposerMode===1"> {{ 'EXPIRATION_TIME' | translate }}</span>
+                    <span ng-show="!!message.maximized"> {{ 'EXPIRATION_TIME' | translate }}</span>
                 </button>
                 <span class="text-muted" ng-show="message.BackupDate">
                 {{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}
@@ -221,7 +221,7 @@
                     pt-tooltip="{{ 'DISCARD' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-trash-o"></i>
-                        <span ng-show="user.ComposerMode===1"> {{ 'DISCARD' | translate }}</span>
+                        <span ng-show="!!message.maximized"> {{ 'DISCARD' | translate }}</span>
                     </button>
                     <button
                     ng-class="{ disabled: message.loading() }"
@@ -231,20 +231,20 @@
                     pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
-                        <span ng-show="user.ComposerMode===1"> {{ 'SAVE' | translate }}</span>
+                        <span ng-show="!!message.maximized"> {{ 'SAVE' | translate }}</span>
                     </button>
                     <button
                     ng-hide="message.loading()"
                     class="btn btn-sm btn-primary"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message) || message.uploading"
                     ng-click="send(message)">
-                        <i class="fa fa-send" ng-show="user.ComposerMode===1"></i>
+                        <i class="fa fa-send" ng-show="!!message.maximized"></i>
                         {{ 'SEND' | translate }}
                     </button>
                     <button
                     ng-show="message.loading() && sending"
                     class="btn btn-sm btn-primary disabled">
-                        <i class="fa fa-send" ng-show="user.ComposerMode===1"></i>
+                        <i class="fa fa-send" ng-show="!!message.maximized"></i>
                         {{ 'SENDING' | translate }}
                     </button>
                     <button
