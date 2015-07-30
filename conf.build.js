@@ -9,7 +9,8 @@ module.exports = {
       "src/**/*.js",
       "!src/**/*.spec.js",
       "!src/**/*.scenario.js",
-      "!src/assets/**/*.js"
+      "!src/assets/**/*.js",
+      "!src/static/*.js"
     ],
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
