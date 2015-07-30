@@ -30,6 +30,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
+    $scope.uid = 1;
+    $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
@@ -216,8 +218,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             }
         });
     };
-
-    $scope.uid = 1;
 
     $scope.initMessage = function(message, save) {
         $log.debug('initMessage:start');
@@ -547,8 +547,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             'transform': 'rotate(' + deg + 'deg)'
         });
     };
-
-    $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
     $scope.saveOld = function(message) {
         message.old = _.pick(message, $scope.oldProperties);
