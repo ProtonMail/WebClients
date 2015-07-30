@@ -256,6 +256,14 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
+            compile_static: {
+                files: [{
+                    src: ["**"],
+                    dest: "<%= compile_dir %>/",
+                    cwd: "./src/static",
+                    expand: true
+                }]
+            },
             build_vendorjs: {
                 files: [{
                     src: ["<%= vendor_files.js %>"],
@@ -330,6 +338,26 @@ module.exports = function(grunt) {
             app: {
                 src: [ "*.html" ],
                 dest: "<%= build_dir %>/",
+                cwd: "src/static",
+                options: {
+                    duplicates: false,
+                    flatten: true,
+                    includePath: "src/static"
+                }
+            },
+            static_files: {
+                src: [ "*.html" ],
+                dest: "<%= compile_dir %>/pages",
+                cwd: "src/static/pages",
+                options: {
+                    duplicates: false,
+                    flatten: true,
+                    includePath: "src/static/pages"
+                }
+            },
+            static_app: {
+                src: [ "*.html" ],
+                dest: "<%= compile_dir %>/",
                 cwd: "src/static",
                 options: {
                     duplicates: false,
@@ -660,7 +688,8 @@ module.exports = function(grunt) {
         "copy:htaccess",
         "copy:build_external",
         "index:build",
-        "includes",
+        "includes:app",
+        "includes:files",
         "replace",
         "testconfig"
     ]);
@@ -668,6 +697,9 @@ module.exports = function(grunt) {
     grunt.registerTask("compile", [
         "ngconstant:prod",
         "build",
+        "includes:static_app",
+        "includes:static_files",
+        "copy:compile_static",
         "copy:compile_assets",
         "ngAnnotate",
         "cssmin",
