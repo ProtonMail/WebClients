@@ -52,12 +52,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             });
         }
 
-        $scope.refreshMessagesCache();
-        $scope.unselectAllMessages();
-        $scope.startWatchingEvent();
-
-        $timeout(function() {
+        $scope.refreshMessagesCache().then(function() {
             $scope.actionsDelayed();
+            $scope.startWatchingEvent();
         });
     };
 
@@ -121,8 +118,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.goToPage();
         });
 
-        $scope.initHotkeys();
-
         if($rootScope.scrollPosition) {
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
@@ -174,30 +169,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         ddp.forEach(makeRange);
 
         return ddp2;
-    };
-
-    $scope.initHotkeys = function() {
-        // Mousetrap.bind(["s"], function() {
-        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
-        //         $scope.toggleStar($scope.params.messageHovered);
-        //     }
-        // });
-        // Mousetrap.bind(["r"], function() {
-        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
-        //         $scope.params.messageHovered.Selected = true;
-        //         $scope.setMessagesReadStatus(true);
-        //     }
-        // });
-        // Mousetrap.bind(["u"], function() {
-        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
-        //         $scope.params.messageHovered.Selected = true;
-        //         $scope.setMessagesReadStatus(false);
-        //     }
-        // });
-        //
-        // $scope.$on('$destroy', function() {
-        //     Mousetrap.reset();
-        // });
     };
 
     $scope.getMessagesParameters = function(mailbox) {
@@ -262,12 +233,17 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.refreshMessagesCache = function () {
+        var deferred = $q.defer();
         var mailbox = $state.current.name.replace('secured.', '');
         var params = $scope.getMessagesParameters(mailbox);
+
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
             $scope.$apply();
+            deferred.resolve();
         });
+
+        return deferred.promise;
     };
 
     $scope.updateLabels = function () {
