@@ -17,6 +17,10 @@
 		border-radius: 0;
 		white-space: pre-wrap;
 	}
+	blockquote blockquote blockquote {
+		border-left: none;
+		padding: 1rem 0;
+	}
 	a {
 		text-decoration: underline;
 		color: $primary-color;

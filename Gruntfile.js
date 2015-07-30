@@ -240,6 +240,14 @@ module.exports = function(grunt) {
                     flatten: true
                 }]
             },
+            build_fonts: {
+                files: [{
+                    src: ["**"],
+                    dest: "<%= build_dir %>/fonts",
+                    cwd: "./src/assets/fonts",
+                    expand: true
+                }]
+            },
             build_appjs: {
                 files: [{
                     src: ["<%= app_files.js %>"],
@@ -278,6 +286,14 @@ module.exports = function(grunt) {
                     src: ["**", "!*.css"],
                     dest: "<%= compile_dir %>/assets",
                     cwd: "<%= build_dir %>/assets",
+                    expand: true
+                }]
+            },
+            compile_fonts: {
+                files: [{
+                    src: ["**"],
+                    dest: "<%= compile_dir %>/fonts",
+                    cwd: "./src/assets/fonts",
                     expand: true
                 }]
             },
@@ -687,6 +703,7 @@ module.exports = function(grunt) {
         "copy:build_vendorjs",
         "copy:htaccess",
         "copy:build_external",
+        "copy:build_fonts",
         "index:build",
         "includes:app",
         "includes:files",
@@ -697,10 +714,11 @@ module.exports = function(grunt) {
     grunt.registerTask("compile", [
         "ngconstant:prod",
         "build",
+        "copy:compile_static",
+        "copy:compile_assets",        
         "includes:static_app",
         "includes:static_files",
-        "copy:compile_static",
-        "copy:compile_assets",
+        "copy:compile_fonts",
         "ngAnnotate",
         "cssmin",
         "concat:compile_js",
