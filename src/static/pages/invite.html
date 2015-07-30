@@ -35,40 +35,44 @@
     <div class="container narrow">
         <div class="content">
 
-            <p class="text-center alert alert-info"><span class="fa fa-info-circle fa-2x"></span><br>Due to high demand, we have hit our capacity limit. We are adding servers constantly and will send you an invitation as soon as possible.</p>
+            <div id="inviteSuccess" style="display:none" class="container panel round">
+                <h3>Success!</h3>
+                <p class="lead">You've successfully reserved your username. We'll notify you when space becomes available in our public beta.</p>
+                <p class="text-center">Follow us for the latest updates:</p>
+                <p class="text-center">
+                    <a href="http://twitter.com/ProtonMail" target="_blank"><i class="fa fa-3x fa-twitter"></i></a>
+                    &nbsp; &nbsp; &nbsp; <a href="http://facebook.com/ProtonMail" target="_blank"><i class="fa fa-3x fa-facebook"></i></a>
+                </p>
+            </div>
 
-            <form id="invite-form" name="request_invite" class="container panel round">
-
-                <legend>Request an invitation for ProtonMail</legend>
-
-                <span id="usernameCheck">
-                    <input class="bordered" autocomplete="off" pattern="^\S[\w.-\s-]{0,32}\S$" title="This field is required" type="text" required id="username" name="username" value="" maxlength="32" placeholder="Username">
-                    <input type="text" disabled value="@protonmail.com" class="readonly">
-                    <span style="display:none" class="usrname_status" id="usr_loading">
-                        <em class="hastip" title="Checking Username..."><i class="fa fa-circle-o-notch fa-spin"></i></em>
+            <div id="inviteForm">
+                <p class="text-center alert alert-info"><span class="fa fa-info-circle fa-2x"></span><br>Due to high demand, we have hit our capacity limit. We are adding servers constantly and will send you an invitation as soon as possible.</p>
+                <form id="invite-form" name="request_invite" class="container panel round">
+                    <legend>Request an invitation for ProtonMail</legend>
+                    <span id="usernameCheck">
+                        <input class="bordered" autocomplete="off" pattern="^\S[\w.-\s-]{0,32}\S$" title="This field is required" type="text" required id="username" name="username" value="" maxlength="32" placeholder="Username">
+                        <input type="text" disabled value="@protonmail.com" class="readonly">
+                        <span style="display:none" class="usrname_status" id="usr_loading">
+                            <em class="hastip" title="Checking Username..."><i class="fa fa-circle-o-notch fa-spin"></i></em>
+                        </span>
+                        <span style="display:none" class="usrname_status" id="usr_avail">
+                            <em class="hastip" title="Username Available!"><i class="fa fa-check"></i></em>
+                        </span>
+                        <span style="display:none" class="usrname_status" id="usr_taken">
+                            <em class="hastip" title="Username Taken."><i class="fa fa-times"></i></em>
+                        </span>
+                        <span style="display:none" class="usrname_status" id="usr_invalid">
+                            <em class="hastip" title="Invalid Username."><i class="fa fa-warning"></i></em>
+                        </span>
                     </span>
-                    <span style="display:none" class="usrname_status" id="usr_avail">
-                        <em class="hastip" title="Username Available!"><i class="fa fa-check"></i></em>
-                    </span>
-                    <span style="display:none" class="usrname_status" id="usr_taken">
-                        <em class="hastip" title="Username Taken."><i class="fa fa-times"></i></em>
-                    </span>
-                    <span style="display:none" class="usrname_status" id="usr_invalid">
-                        <em class="hastip" title="Invalid Username."><i class="fa fa-warning"></i></em>
-                    </span>
-                </span>
-
-                <input class="bordered hastip" type="email" required id="notification_email" name="notification_email" placeholder="Your current email" value="">
-
-                <p class="details text-center"><small><em>Used to contact you when your account is ready. This should be your current email (Gmail, Hotmail, Yahoo!, etc).</em></small></p>
-
-                <button type="submit" name="submit" class="button button-primary pull-right" id="invite-button">Request Invite</button>
-
-                <div class="clear"></div>
-                <br>
-                <p class="text-center clear details"><small>We will never share your details with anyone. Your notification email is only used for sending you information such as when your account is ready.</small></p>
-
-            </form>
+                    <input class="bordered hastip" type="email" required id="notification_email" name="notification_email" placeholder="Your current email" value="">
+                    <p class="details text-center"><small><em>Used to contact you when your account is ready. This should be your current email (Gmail, Hotmail, Yahoo!, etc).</em></small></p>
+                    <button type="submit" name="submit" class="button button-primary pull-right" id="invite-button">Request Invite</button>
+                    <div class="clear"></div>
+                    <br>
+                    <p class="text-center clear details"><small>We will never share your details with anyone. Your notification email is only used for sending you information such as when your account is ready.</small></p>
+                </form>
+            </div>
 
         </div><!--/.content-->
     </div><!--/.container-->
@@ -85,12 +89,68 @@
             $('#invite-form').on('submit', function(event) {
                 // prevent form submission. we will do an API call instead
                 event.preventDefault();
+
                 // disable button
                 $('#invite-button').attr('disabled', true);
 
                 // make api call
+                $.ajax({
+                    type:"GET",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                        request.setRequestHeader("x-pm-appversion", "Other");
+                        request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
+                        request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+                    },
+                    url: "https://dev.protonmail.ch/api/users/available/"+$('#username').val(),
+                    success: function(msg) {
+                        if (msg.Code===1000) {
+                            if (msg.Available===1) {
+                                // alert('Username available!');
+                                createInvite();
+                            }
+                            else if (msg.Available===0) {
+                                alert('Username taken.');
+                                $('#invite-button').attr('disabled', false);
+                            }
+                        }
+                        else {
+                            alert('Something went wrong.');
+                            $('#invite-button').attr('disabled', false);
+                        }
+                        console.log(msg);
+                    }
+                });
             });
         });
+        function  createInvite() {
+            $.ajax({
+                type:"POST",
+                beforeSend: function (request) {
+                    request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                    request.setRequestHeader("x-pm-appversion", "Other");
+                    request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
+                    request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+                },
+                url: "https://dev.protonmail.ch/api/users/invite",
+                data: JSON.stringify({
+                    "Username": $('#username').val(),
+                    "Email": $('#notification_email').val()
+                }),
+                success: function(msg) {
+                    if (msg.Code===1000) {
+                        // success
+                        $('#inviteSuccess').fadeIn();
+                        $('#inviteForm').hide();
+                    }
+                    else if (msg.Code!==undefined) {
+                        alert(msg.Error);
+                        $('#invite-button').attr('disabled', false);
+                    }
+                    console.log(msg);
+                }
+            });
+        }
         function getUrlParameter(sParam) {
             var sPageURL = decodeURIComponent(window.location.search.substring(1)),
             sURLVariables = sPageURL.split('&'),

@@ -2,13 +2,18 @@
 /* jshint node: true, camelcase: false */
 
 var _ = require("lodash"),
-    util = require("util");
+util = require("util");
 
 var API_TARGETS = {
     prod: "https://dev.protonmail.ch/api",
     dev: "https://test-api.protonmail.ch",
     build: "/api"
 };
+
+var appVersion = '2.0.3';
+var apiVersion = '1';
+var clientID = 'Angular';
+var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 
@@ -29,13 +34,13 @@ module.exports = function(grunt) {
     // behavior.
     function apiUrl() {
         return _(API_TARGETS)
-            .pick(function(host, target) {
-                return grunt.option(target);
-            })
-            .map(function(host, target) {
-                return host.replace("?", grunt.option(target));
-            })
-            .first() || API_TARGETS.dev;
+        .pick(function(host, target) {
+            return grunt.option(target);
+        })
+        .map(function(host, target) {
+            return host.replace("?", grunt.option(target));
+        })
+        .first() || API_TARGETS.dev;
     }
 
     function rewriteIndexMiddleware(connect, options) {
@@ -74,11 +79,11 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON("package.json"),
         meta: {
             banner: "/**\n" +
-                " * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today('yyyy-mm-dd HH:MM:ss') %>\n" +
-                " *\n" +
-                " * copyright <%= grunt.template.today('yyyy') %> <%= pkg.author %>\n" +
-                " * <%= pkg.license %>\n" +
-                " */\n"
+            " * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today('yyyy-mm-dd HH:MM:ss') %>\n" +
+            " *\n" +
+            " * copyright <%= grunt.template.today('yyyy') %> <%= pkg.author %>\n" +
+            " * <%= pkg.license %>\n" +
+            " */\n"
         },
 
         notify_hooks: {
@@ -101,10 +106,10 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: true,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.3',
-                        api_version: '1',
-                        clientID: 'Angular',
-                        clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
+                        app_version: appVersion,
+                        api_version: apiVersion,
+                        clientID: clientID,
+                        clientSecret: clientSecret
                     }
                 }
             },
@@ -113,12 +118,35 @@ module.exports = function(grunt) {
                     CONFIG: {
                         debug: false,
                         apiUrl: apiUrl(),
-                        app_version: '2.0.3',
-                        api_version: '1',
-                        clientID: 'Angular',
-                        clientSecret: '00a11965ac0b47782ec7359c5af4dd79'
+                        app_version: appVersion,
+                        api_version: apiVersion,
+                        clientID: clientID,
+                        clientSecret: clientSecret
                     }
                 }
+            }
+        },
+
+        replace: {
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            json: {
+                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
+                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
+                            }
+                        }
+                    ]
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ["<%= build_dir %>/pages/**"],
+                        dest: "<%= build_dir %>/pages"
+                    }
+                ]
             }
         },
 
@@ -597,6 +625,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ng-constant');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-replace');
 
     grunt.renameTask("watch", "delta");
     grunt.registerTask("watch", [
@@ -632,6 +661,7 @@ module.exports = function(grunt) {
         "copy:build_external",
         "index:build",
         "includes",
+        "replace",
         "testconfig"
     ]);
 
