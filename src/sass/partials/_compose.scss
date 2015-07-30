@@ -166,6 +166,12 @@
              overflow:hidden !important;
              text-overflow: ellipsis;
         }
+
+        .fa-lock {
+            line-height: ($row-height - 10);
+            margin-right: .5rem;
+            float: left;
+        }
     }
 
     .tt-dropdown-menu {

@@ -1,6 +1,7 @@
 <div class="panel panel-default wrap panel-wide" ng-show="creating" id="signUpProcess">
     <div class="panel-heading">
-        <h1 class="text-center">Creating Account...</h1>
+        <h1 class="text-center" ng-show="!signupError">Creating Account...</h1>
+        <h1 class="text-center" ng-show="signupError">Sign Up Failed</h1>
     </div>
 
     <div class="panel-body">   
@@ -46,7 +47,6 @@
 <div class="panel panel-default wrap panel-wide" ng-hide="creating">
     <div class="panel-heading">
         <h1 class="text-center">{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h1>
-        <h4 class="text-center no-margin-bottom">{{ 'STEP_1_OF_2' | translate }}</h4>
     </div>
     <div class="panel-body">
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
@@ -68,6 +68,7 @@
                     <em class="usernameDomain">@protonmail.ch</em>
                 </div>
             </div>
+            <hr>
             <div class="form-group">
                 <span 
                 class="pull-right bold" 
@@ -103,6 +104,7 @@
                     <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                 </div>
             </div>
+            <hr>
             <div class="form-group">
                 <label for="password">{{ 'MAILBOX_PASSWORD' | translate }}</label>
                 <input 
@@ -125,6 +127,7 @@
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
                 </div>
             </div>
+            <hr>
             <div class="form-group">
                 <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
                 <label for="notificationEmail">Notification / Recovery {{ 'EMAIL' | translate }}</label>
@@ -146,6 +149,7 @@
                     class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
                 </div>
             </div>
+            <hr>
             <div class="checkbox">
                 <label for="optIn">
                     <input 
@@ -161,7 +165,7 @@
             tabindex="8" 
             type="submit" 
             class="btn btn-primary btn-block btn-lg" 
-            ng-class="{disabled: networkActivity.loading()}">{{ 'SAVE_AND_CONTINUE' | translate }}</button>
+            ng-class="{disabled: networkActivity.loading()}">{{ 'FINISH' | translate }}</button>
         </form>
     </div>
 </div>

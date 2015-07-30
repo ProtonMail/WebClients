@@ -218,6 +218,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.uid = 1;
 
     $scope.initMessage = function(message, save) {
+        $log.debug('initMessage:start');
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
         }
@@ -254,6 +255,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $timeout(function() {
             $scope.focusComposer(message);
         }, 100);
+
+        $log.debug('initMessage:end');
     };
 
     $scope.onAddFile = function(message) {

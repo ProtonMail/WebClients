@@ -1,3 +1,13 @@
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
+
 @keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -13,7 +23,7 @@
 @-webkit-keyframes electron {
     0% {
         -webkit-transform: rotateZ(0deg);
-        opacity: .9;
+        opacity: 0;
         box-shadow: 0;
     }
 
@@ -24,7 +34,7 @@
 
     100% {
         -webkit-transform: rotateZ(360deg);
-        opacity: .9;
+        opacity: 0;
         box-shadow: 0;
     };
 }
@@ -35,7 +45,7 @@
                 transform: rotateZ(0deg);
         -webkit-transform: rotateZ(0deg);
                 transform: rotateZ(0deg);
-        opacity: .9;
+        opacity: 0;
         box-shadow: 0;
     }
 
@@ -49,7 +59,7 @@
                 transform: rotateZ(360deg);
         -webkit-transform: rotateZ(0deg);
                 transform: rotateZ(0deg);
-        opacity: .9;
+        opacity: 0;
         box-shadow: 0;
     };
 }
@@ -144,24 +154,39 @@
 }
 
 @keyframes lateral {
-    from {
+    0% {
         -webkit-transform: rotateZ(0deg);
                 transform: rotateZ(0deg);
+                opacity: 1;
     }
 
-    to {
+    50% {
+        -webkit-transform: rotateZ(180deg);
+                transform: rotateZ(180deg);
+                opacity: .5;
+    }
+
+    100% {
         -webkit-transform: rotateZ(360deg);
                 transform: rotateZ(360deg);
+                opacity: 1;
     };
 }
 
 @-webkit-keyframes lateral {
-    from {
+    0% {
         -webkit-transform: rotateZ(0deg);
+        opacity: 1;
     }
 
-    to {
+    50% {
+        -webkit-transform: rotateZ(180deg);
+                opacity: .5;
+    }
+
+    100% {
         -webkit-transform: rotateZ(360deg);
+        opacity: 1;
     };
 }
 

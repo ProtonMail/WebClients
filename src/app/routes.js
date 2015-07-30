@@ -209,24 +209,25 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("signup", {
-        url: "/signup",
-        views: {
-            "main@": {
-                controller: "AccountController",
-                templateUrl: "templates/layout/auth.tpl.html"
-            },
-            "panel@signup": {
-                templateUrl: "templates/views/sign-up.tpl.html"
-            }
-        }
-    })
+    // DISBALED FOR NOW :)
+    // .state("signup", {
+    //     url: "/signup",
+    //     views: {
+    //         "main@": {
+    //             controller: "SignupController",
+    //             templateUrl: "templates/layout/auth.tpl.html"
+    //         },
+    //         "panel@signup": {
+    //             templateUrl: "templates/views/sign-up.tpl.html"
+    //         }
+    //     }
+    // })
 
     .state("step1", {
         url: "/create/new",
         views: {
             "main@": {
-                controller: "AccountController",
+                controller: "SignupController",
                 templateUrl: "templates/layout/auth.tpl.html"
             },
             "panel@step1": {
@@ -261,7 +262,7 @@ angular.module("proton.routes", [
         url: "/create/mbpw",
         views: {
             "main@": {
-                controller: "AccountController",
+                controller: "SignupController",
                 templateUrl: "templates/layout/auth.tpl.html"
             },
             "panel@step2": {
