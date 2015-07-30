@@ -4,7 +4,8 @@ angular.module("proton.messages", ["proton.constants"])
         $rootScope,
         Message,
         CONSTANTS,
-        tools
+        tools,
+        networkActivityTracker
      ) {
         var lists = [];
         var DELETE = 0;
@@ -387,7 +388,7 @@ angular.module("proton.messages", ["proton.constants"])
                         deferred.resolve(cachedMetadata.sent);
                         return deferred.promise;
                     } else {
-                        return Message.query(params).$promise;
+                        return networkActivityTracker.track(Message.query(params).$promise);
                     }
                 };
 

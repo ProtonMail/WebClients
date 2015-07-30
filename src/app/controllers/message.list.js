@@ -15,7 +15,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     authentication,
     messageCache,
     messageCounts,
-    messages,
     networkActivityTracker,
     notify
 ) {
@@ -24,7 +23,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = $rootScope.pageName = $state.current.data.mailbox;
-        $scope.messages = messages;
         $scope.messagesPerPage = $scope.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.Math = window.Math;
@@ -44,14 +42,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        if(
-            ($rootScope.refreshMessageList || $scope.mailbox === 'inbox' && $stateParams.page === undefined || $scope.mailbox === 'inbox' && $stateParams.page === 1 || $scope.mailbox === 'inbox' && $stateParams.page === 2) ||
-            ($scope.mailbox === 'sent' && $stateParams.page === undefined || $scope.mailbox === 'sent' && $stateParams.page === 1)
-        ) {
-            $scope.refreshMessagesCache();
-            $rootScope.refreshMessageList = false;
-        }
-
         if (typeof $rootScope.messageTotals === 'undefined') {
             Message.totalCount().$promise.then(function(totals) {
                 var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
@@ -62,6 +52,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             });
         }
 
+        $scope.refreshMessagesCache();
+        $scope.unselectAllMessages();
         $scope.startWatchingEvent();
 
         $timeout(function() {
@@ -211,7 +203,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.getMessagesParameters = function(mailbox) {
         var params = {};
 
-        params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         params.Page = ($stateParams.page || 1) - 1;
 
         if ($stateParams.filter) {
@@ -242,8 +233,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             params.Starred = $stateParams.starred;
             params.Label = $stateParams.label;
         } else if(mailbox === 'label') {
-            delete params.Location;
             params.Label = $stateParams.label;
+        } else {
+            params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         }
 
         if(parseInt(params.Location) === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
