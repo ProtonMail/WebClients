@@ -1,7 +1,7 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools) {
+.directive("squire", function(tools, $rootScope) {
     return {
         restrict: 'E',
         require: "ngModel",
@@ -227,6 +227,7 @@ angular.module("proton.squire", [
 
                 if(angular.isDefined(scope.message)) {
                     scope.message.editor = editor;
+                    $rootScope.$broadcast('listenEditor', scope.message);
                 }
             };
 

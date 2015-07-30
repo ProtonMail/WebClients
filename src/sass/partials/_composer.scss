@@ -85,7 +85,73 @@
 
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1 ;
+    flex-grow: 1;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    .editor-container {
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        .angular-squire-wrapper {
+            height: 100%;
+
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            iframe {
+                height: 100%;
+
+                -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+
+                .angular-squire-iframe {
+                    height: 100%;
+
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
 }
 .previews {
     box-shadow: inset 0 1px 0 $base-color-darker;

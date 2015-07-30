@@ -59,6 +59,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.initMessage(angular.copy(message), save);
     });
 
+    $scope.$on('listenEditor', function(event, message) {
+        $scope.listenEditor(message);
+    });
+
     $scope.setDefaults = function(message) {
         _.defaults(message, {
             ToList: [],
@@ -79,7 +83,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.isOver = false;
-    var isOver = false;
     var interval;
 
     $(window).on('dragover', function(e) {
@@ -87,13 +90,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $interval.cancel($scope.intervalComposer);
 
         $scope.intervalComposer = $interval(function() {
-            isOver = false;
             $scope.isOver = false;
             $interval.cancel($scope.intervalComposer);
         }, 100);
 
-        if (isOver === false) {
-            isOver = true;
+        if ($scope.isOver === false) {
             $scope.isOver = true;
         }
     });
@@ -140,7 +141,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 },
                 drop: function(event) {
                     $scope.isOver = false;
-                    isOver = false;
+                },
+                dragleave: function(event) {
+                    $scope.isOver = false;
+                    $scope.$apply();
                 }
             }
         };
@@ -236,7 +240,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.saveOld(message);
-        $scope.listenEditor(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
@@ -297,10 +300,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         return styles;
     };
-    var composer = $('#uid' + message.uid);
-    $scope.previewHeight = composer.find('.previews').outerHeight();
 
-// Use directives use horizontal form height for to, bcc, cc
     $scope.squireHeight = function(message) {
         if (message.maximized === true) {
             return '100%';
@@ -437,20 +437,30 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        $timeout(function() {
-            if(message.editor) {
-                message.editor.addEventListener('focus', function() {
-                    message.fields = false;
-                    message.toUnfocussed = true;
-                    $timeout(function() {
-                        $('.typeahead-container').scrollTop(0);
-                    });
+        if(message.editor) {
+            message.editor.addEventListener('focus', function() {
+                message.fields = false;
+                message.toUnfocussed = true;
+                $timeout(function() {
+                    $('.typeahead-container').scrollTop(0);
                 });
-                message.editor.addEventListener('input', function() {
-                    $scope.saveLater(message);
-                });
-            }
-        }, 250);
+            });
+            message.editor.addEventListener('input', function() {
+                $scope.saveLater(message);
+            });
+            message.editor.addEventListener('dragenter', function(e) {
+                $scope.isOver = true;
+                $scope.$apply();
+            });
+            message.editor.addEventListener('dragover', function(e) {
+                $scope.isOver = true;
+                $scope.$apply();
+            });
+            message.editor.addEventListener('dragleave', function(e) {
+                $scope.isOver = false;
+                $scope.$apply();
+            });
+        }
     };
 
     $scope.selectFile = function(message, files) {

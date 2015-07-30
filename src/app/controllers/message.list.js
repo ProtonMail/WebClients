@@ -558,7 +558,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             message.Selected = false;
 
-            if(!$state.is('secured.label')) {
+            if(!$state.is('secured.label') && !$state.is('secured.starred')) {
                 $scope.messages.splice(index, 1);
             }
 
