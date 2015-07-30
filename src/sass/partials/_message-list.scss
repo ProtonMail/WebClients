@@ -41,7 +41,7 @@ table.message-list {
         color: #555;
         background-color: $tr-read;
         @include transition(all, 0, ease-in-out);
-        &.hovered,
+        &:hover,
         &:active {
             i.fa-paperclip,
             i.fa-clock-o,
@@ -187,7 +187,7 @@ table.message-list {
             span.labels {
                 background-color: #fff;
             }
-            &.hovered,
+            &:hover,
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,
@@ -205,7 +205,7 @@ table.message-list {
             td {
                 background-color: $tr-starred;
             }
-            &.hovered,
+            &:hover,
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,
@@ -222,7 +222,7 @@ table.message-list {
             td {
                 background-color: $tr-selected;
             }
-            &.hovered,
+            &:hover,
             &:active {
                 i.fa-paperclip,
                 i.fa-clock-o,

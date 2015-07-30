@@ -32,7 +32,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
-        $scope.params = { messageHovered: null };
         $scope.draggableOptions = {
             appendTo: "html",
             delay: 100,
@@ -186,27 +185,27 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.initHotkeys = function() {
-        Mousetrap.bind(["s"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.toggleStar($scope.params.messageHovered);
-            }
-        });
-        Mousetrap.bind(["r"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.params.messageHovered.Selected = true;
-                $scope.setMessagesReadStatus(true);
-            }
-        });
-        Mousetrap.bind(["u"], function() {
-            if ($state.includes("secured.**") && $scope.params.messageHovered) {
-                $scope.params.messageHovered.Selected = true;
-                $scope.setMessagesReadStatus(false);
-            }
-        });
-
-        $scope.$on('$destroy', function() {
-            Mousetrap.reset();
-        });
+        // Mousetrap.bind(["s"], function() {
+        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
+        //         $scope.toggleStar($scope.params.messageHovered);
+        //     }
+        // });
+        // Mousetrap.bind(["r"], function() {
+        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
+        //         $scope.params.messageHovered.Selected = true;
+        //         $scope.setMessagesReadStatus(true);
+        //     }
+        // });
+        // Mousetrap.bind(["u"], function() {
+        //     if ($state.includes("secured.**") && $scope.params.messageHovered) {
+        //         $scope.params.messageHovered.Selected = true;
+        //         $scope.setMessagesReadStatus(false);
+        //     }
+        // });
+        //
+        // $scope.$on('$destroy', function() {
+        //     Mousetrap.reset();
+        // });
     };
 
     $scope.getMessagesParameters = function(mailbox) {

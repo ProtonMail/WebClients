@@ -12,9 +12,8 @@
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
                 data-jqyoui-options="draggableOptions"
-                ng-class="{ hovered: params.messageHovered === message, unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
-                ng-mouseover="params.messageHovered = message"
-                ng-mouseleave="params.messageHovered = null">
+                ng-class="{ unread: message.IsRead === 0, selected: message.Selected, starred: message.Starred === 1, encrypted: message.IsEncrypted == '1' }"
+                >
                 <td class="actions">
                     <label>
                         <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
