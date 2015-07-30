@@ -65,6 +65,12 @@
     bottom: 0;
     background-color: transparent;
     z-index: 10;
+    display: block;
+    right: 1rem;
+    width: 3rem;
+    line-height: 3rem;
+    padding: 0;
+    text-align: center;
 }
 
 .message-toolbar.compose > ul.nav {

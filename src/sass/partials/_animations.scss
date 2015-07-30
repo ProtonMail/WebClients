@@ -129,3 +129,11 @@ body .fa-spin {
     -webkit-animation: electron 2s linear infinite;
     animation: electron 2s linear infinite;
 }
+
+.fa-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    display: inline-block;
+}
