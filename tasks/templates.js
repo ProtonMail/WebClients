@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       deployment: this.data.deployment
     };
 
-    grunt.file.copy("src/index.html", this.data.dir + "/index.html", {
+    grunt.file.copy("src/app.html", this.data.dir + "/app.html", {
       process: function (contents, path) {
         return grunt.template.process(contents, {
           data: templateData
