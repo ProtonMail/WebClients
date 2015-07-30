@@ -190,6 +190,7 @@
                 ng-disabled="message.uploading"
                 >
                     <i class="fa fa-paperclip"></i>
+                    <span ng-show="!!message.maximized"> {{ 'ATTACHMENTS' | translate }}</span>
                 </button>
                 <button
                 class="btn btn-sm btn-default"
