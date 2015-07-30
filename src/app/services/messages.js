@@ -4,7 +4,8 @@ angular.module("proton.messages", ["proton.constants"])
         $rootScope,
         Message,
         CONSTANTS,
-        tools
+        tools,
+        networkActivityTracker
      ) {
         var lists = [];
         var DELETE = 0;
@@ -237,14 +238,14 @@ angular.module("proton.messages", ["proton.constants"])
                 inboxMetaData = Message.query(inboxInitParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                $q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(function(result) {
+                networkActivityTracker.track($q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(function(result) {
                     cachedMetadata.inbox = result.inbox;
                     addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
                     cachedMetadata.sent = result.sentOne;
                     this.started = true;
 
                     deferred.resolve();
-                }.bind(this));
+                }.bind(this)));
 
                 return deferred.promise;
             },
@@ -387,7 +388,7 @@ angular.module("proton.messages", ["proton.constants"])
                         deferred.resolve(cachedMetadata.sent);
                         return deferred.promise;
                     } else {
-                        return Message.query(params).$promise;
+                        return networkActivityTracker.track(Message.query(params).$promise);
                     }
                 };
 
