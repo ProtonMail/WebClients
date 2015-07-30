@@ -48,7 +48,6 @@ $alt-color-darker:             	darken($alt-color, ($color-offset*4));					// #0
 @mixin primary-gradient() {
 	background: $primary-color;
     @include linear-gradient(lighten($primary-color, $color-offset), $primary-color);
-    background: -moz-linear-gradient(lighten($primary-color, $color-offset), $primary-color);
 }
 @mixin primary-gradient-dark() {
 	background: darken($primary-color, $color-offset);
@@ -59,7 +58,7 @@ $alt-color-darker:             	darken($alt-color, ($color-offset*4));					// #0
     @include linear-gradient($base-color, $base-color-dark);
 }
 @mixin base-gradient-dark() {
-	background: darken($base-color, $color-offset*2);
+	background: darken($base-color, $color-offset*2); 
     @include linear-gradient($base-color, darken($base-color, $color-offset*2));
 }
 
