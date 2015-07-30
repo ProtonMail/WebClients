@@ -438,6 +438,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 messageCounts.update(counters);
             }
         }
+
+        messageCache.set([{Action: 3, ID: message.ID, Message: message}], true);
     };
 
     $scope.allSelected = function() {
@@ -502,12 +504,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var messages = $scope.selectedMessagesWithReadStatus(!status);
         var ids = _.map(messages, function(message) { return message.ID; });
         var promise = (status) ? Message.read({IDs: ids}).$promise : Message.unread({IDs: ids}).$promise;
+        var events = [];
 
         _.each(messages, function(message) {
             message.IsRead = +status;
+            events.push({Action: 3, ID: message.ID, Message: message});
         });
 
         messageCounts.updateUnread('mark', messages, status);
+        messageCache.set(events, true);
 
         $scope.unselectAllMessages();
     };
