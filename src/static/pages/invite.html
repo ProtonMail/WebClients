@@ -40,7 +40,7 @@
                 <p class="lead">You've successfully reserved your username. We'll notify you when space becomes available in our public beta.</p>
                 <p class="text-center">Follow us for the latest updates:</p>
                 <p class="text-center">
-                    <a href="http://twitter.com/ProtonMail" target="_blank"><i class="fa fa-3x fa-twitter"></i></a> 
+                    <a href="http://twitter.com/ProtonMail" target="_blank"><i class="fa fa-3x fa-twitter"></i></a>
                     &nbsp; &nbsp; &nbsp; <a href="http://facebook.com/ProtonMail" target="_blank"><i class="fa fa-3x fa-facebook"></i></a>
                 </p>
             </div>
@@ -99,7 +99,7 @@
                     beforeSend: function (request) {
                         request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
                         request.setRequestHeader("x-pm-appversion", "Other");
-                        request.setRequestHeader("x-pm-apiversion", "1");
+                        request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                         request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                     },
                     url: "https://dev.protonmail.ch/api/users/available/"+$('#username').val(),
@@ -129,7 +129,7 @@
                 beforeSend: function (request) {
                     request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
                     request.setRequestHeader("x-pm-appversion", "Other");
-                    request.setRequestHeader("x-pm-apiversion", "1");
+                    request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                     request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                 },
                 url: "https://dev.protonmail.ch/api/users/invite",
