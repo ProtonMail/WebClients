@@ -593,13 +593,13 @@ module.exports = function(grunt) {
                     "git init",
                     "git remote add origin git@github.com:ProtonMail/Angular.git",
                     "git fetch origin",
-                    "git checkout -b deploy origin/deploy"
+                    "git checkout -b deploy origin/deploy",
+                    "for file in `ls assets | grep -E '.*[a-f0-9]{16}\..*'`; do git rm assets/$file; done"
                 ].join("&&")
             },
             push: {
                 command: [
                     "cd dist",
-                    "for file in `ls assets | grep -E '.*[a-f0-9]{16}\..*'`; do git rm assets/$file; done",
                     "git add --all",
                     "git commit -m \"New Release\"",
                     "git push"
