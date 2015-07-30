@@ -52,7 +52,10 @@ angular.module("proton.controllers.Contacts", [
         }
 
         function search(contacts) {
-            return $filter('filter')(contacts, $scope.params.searchContactInput);
+            var byName = $filter('filter')(contacts, {Name: $scope.params.searchContactInput});
+            var byEmail = $filter('filter')(contacts, {Email: $scope.params.searchContactInput});
+
+            return _.union(byName, byEmail);
         }
 
         if(searching === true) {
