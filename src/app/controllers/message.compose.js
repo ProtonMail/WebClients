@@ -29,6 +29,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var promiseComposerStyle;
     $scope.sending = false;
     $scope.saving = false;
+    $scope.isOver = false;
 
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
@@ -63,6 +64,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
+    $(window).on('dragover', function(e) {
+        e.preventDefault();
+        $interval.cancel($scope.intervalComposer);
+
+        $scope.intervalComposer = $interval(function() {
+            $scope.isOver = false;
+            $interval.cancel($scope.intervalComposer);
+        }, 100);
+
+        if ($scope.isOver === false) {
+            $scope.isOver = true;
+        }
+    });
+
     $scope.setDefaults = function(message) {
         _.defaults(message, {
             ToList: [],
@@ -81,23 +96,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.attachmentsToggle = !!!message.attachmentsToggle;
         $scope.$apply();
     };
-
-    $scope.isOver = false;
-    var interval;
-
-    $(window).on('dragover', function(e) {
-        e.preventDefault();
-        $interval.cancel($scope.intervalComposer);
-
-        $scope.intervalComposer = $interval(function() {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalComposer);
-        }, 100);
-
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
-    });
 
     $scope.dropzoneConfig = function(message) {
         return {
