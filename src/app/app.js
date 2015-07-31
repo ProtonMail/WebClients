@@ -277,9 +277,8 @@ angular.module("proton", [
         var isReset = (toState.name.includes("reset"));
 
         $log.debug(toState.name);
-        $log.debug($rootScope.isLoggedIn);
-        $log.debug($rootScope.isLoggedIn);
-        $log.debug($rootScope.isLocked);
+        $log.debug('isLoggedIn',$rootScope.isLoggedIn);
+        $log.debug('isLocked',$rootScope.isLocked);
 
         if (isUnlock && $rootScope.isLoggedIn) {
             $log.debug('1');
