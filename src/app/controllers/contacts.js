@@ -104,7 +104,7 @@ angular.module("proton.controllers.Contacts", [
             message = 'Are you sure you want to delete this contact?';
         } else {
             title = $translate.instant('DELETE_CONTACTS');
-            message = 'Are you sure you want to delete contacts?';
+            message = 'Are you sure you want to delete contacts selected?';
         }
 
         confirmModal.activate({
