@@ -150,6 +150,18 @@ body.locked .container-fluid {
 			margin-bottom: 5px;
 		}
 	}
+	.message-metadata {
+		& > .pull-right {
+			float: none !important;
+			margin-bottom: 9px;
+			em {
+				font-size: 90%;
+			}
+		}
+		ul.infos strong {
+			display: block;
+		}
+	}
 	#messageActionsMobile {
 		background: $primary-color;
 		box-shadow: 0 1px $base-color-darker;
@@ -160,6 +172,7 @@ body.locked .container-fluid {
 			display: block;
 			line-height: 4rem;
 			background-color: $primary-color;
+			padding: 0;
 		}
 		#mobReplyAll {
 			text-align: center;

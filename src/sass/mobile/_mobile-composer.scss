@@ -2,4 +2,8 @@
 	.composer.maximized {
 	    left: 0;
 	}
+	html .composer.normalized {
+		width: 100% !important;
+		position: static; 
+	}
 }
