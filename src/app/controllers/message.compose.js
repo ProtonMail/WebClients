@@ -27,6 +27,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
+    var enteredElements = [];
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
@@ -66,19 +67,49 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
-    $(window).on('dragover', function(e) {
-        e.preventDefault();
-        $interval.cancel($scope.intervalComposer);
-
-        $scope.intervalComposer = $interval(function() {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalComposer);
-        }, 100);
-
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
+    $(document).on('dragenter', function(event) {
+        $scope.dragenter(event);
     });
+
+    $(document).on('dragleave', function(event) {
+        $scope.dragleave(event);
+    });
+
+    $scope.dragenter = function(event) {
+        event.preventDefault(); // needed for IE
+
+        try {
+            if(event.relatedTarget.nodeType === 3) { return; }
+        } catch(err) {
+
+        }
+
+        if(event.target === event.relatedTarget) { return; }
+
+        enteredElements.push(event.target);
+
+        if(enteredElements.length === 1) {
+            $scope.isOver = true;
+            $scope.$apply();
+        }
+    };
+
+    $scope.dragleave = function(event) {
+        try{
+            if(event.relatedTarget.nodeType === 3) { return; }
+        } catch(err) {
+
+        }
+
+        if(event.target === event.relatedTarget) { return; }
+
+        enteredElements = _.filter(enteredElements, function(element) { return element !== event.target; });
+
+        if(enteredElements.length === 0) {
+            $scope.isOver = false;
+            $scope.$apply();
+        }
+    };
 
     $scope.setDefaults = function(message) {
         _.defaults(message, {
@@ -136,15 +167,15 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 }
             },
             eventHandlers: {
-                dragover: function(event) {
-                    $interval.cancel($scope.intervalComposer);
+                dragenter: function(event) {
+                    $scope.dragenter(event);
                 },
                 drop: function(event) {
+                    enteredElements = [];
                     $scope.isOver = false;
                 },
                 dragleave: function(event) {
-                    $scope.isOver = false;
-                    $scope.$apply();
+                    $scope.dragleave(event);
                 }
             }
         };
@@ -239,7 +270,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $rootScope.mobileComposerIsOpen = true;
         }
         else {
-            $rootScope.mobileComposerIsOpen = false;   
+            $rootScope.mobileComposerIsOpen = false;
         }
 
         message.uid = $scope.uid++;
@@ -454,18 +485,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             });
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
-            });
-            message.editor.addEventListener('dragenter', function(e) {
-                $scope.isOver = true;
-                $scope.$apply();
-            });
-            message.editor.addEventListener('dragover', function(e) {
-                $scope.isOver = true;
-                $scope.$apply();
-            });
-            message.editor.addEventListener('dragleave', function(e) {
-                $scope.isOver = false;
-                $scope.$apply();
             });
         }
     };
