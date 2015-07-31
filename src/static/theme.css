@@ -807,6 +807,9 @@ li#nav-login2 {
     max-width: 100%;
     overflow: hidden;
   }
+  html .container.content {
+  	padding: 0 1rem;
+  }
   html body .container.panel {
     box-shadow: none;
     margin: 0 auto;
@@ -864,7 +867,6 @@ li#nav-login2 {
     display: none;
   }
   html body #navMain #menuMain #subNav {
-    left: -.5rem;
     top: 3rem;
   }
   html body #navMain #menuMain #subNav a {
@@ -1655,7 +1657,7 @@ li#nav-login2 {
     width: auto;
     float: none;
     clear: both;
-    height: 17rem;
+    height: auto;
   }
   body#page-home #features li h4 {
     font-size: 1.5rem;
@@ -1831,6 +1833,7 @@ li#nav-login2 {
   border-radius: .25rem;
   overflow: hidden;
   position: relative;
+  background: #fff;
 }
 #page-about #about-team li .front,
 #page-about #about-team li .back {
@@ -1977,7 +1980,6 @@ li#nav-login2 {
   #page-about #about-story .button-group a {
     display: block;
     text-align: center;
-    margin: -.5rem 0;
   }
   #page-about #about-footer .button {
     display: block;
@@ -1998,13 +2000,13 @@ li#nav-login2 {
     right: 0;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {	
   #page-about .container {
     padding: 0 1rem;
   }
   #page-about #about-team li {
     width: 100%;
-    height: 30rem;
+    height: 22rem;
     margin: 0 0 1rem 0;
   }
   #page-about #about-team h3 {
@@ -2215,7 +2217,6 @@ li#nav-login2 {
     padding: 2rem 0;
   }
   #page-careers #join-about .button-group a {
-    margin: -.5rem 0;
     display: block;
     text-align: center;
   }
@@ -2818,7 +2819,6 @@ li#nav-login2 {
   }
   #page-press .button-group a {
     display: block;
-    margin: -.5rem 0;
   }
 }
 @media only screen and (max-width: 500px) {
