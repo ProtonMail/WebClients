@@ -34,7 +34,7 @@ angular.module("proton.authentication", [
                 // we need the old stuff for now
                 $log.debug('setAuthHeaders:2');
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
-                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid; 
+                $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
             }
         },
 
@@ -199,7 +199,7 @@ angular.module("proton.authentication", [
                         $log.debug('before',$http.defaults.headers.common['x-pm-session']);
                         $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
                         window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
-                        $log.debug('after',$http.defaults.headers.common['x-pm-session']);   
+                        $log.debug('after',$http.defaults.headers.common['x-pm-session']);
                         $rootScope.doRefresh = true;
                     }
                 },
@@ -210,8 +210,11 @@ angular.module("proton.authentication", [
         },
 
         setAuthCookie: function(type) {
+            var deferred = $q.defer();
+
             $log.debug('setAuthCookie');
-            return $http.post(url.get() + "/auth/cookies",
+
+            $http.post(url.get() + "/auth/cookies",
             {
                 ResponseType: "token",
                 ClientID: CONFIG.clientID,
@@ -223,8 +226,8 @@ angular.module("proton.authentication", [
             .then(
                 function(response) {
                     $log.debug(response);
-                    var deferred = $q.defer();
-                    if (response.data.Code===1000) {
+
+                    if (response.data.Code === 1000) {
                         $log.debug('/auth/cookies:',response);
                         $log.debug('/auth/cookies1: resolved');
                         $rootScope.domoArigato = true;
@@ -242,27 +245,25 @@ angular.module("proton.authentication", [
                         // forget x-pm-uid
                         // forget accessToken
                         // forget refreshToken
-                    }
-                    else {
-                        deferred.reject();
+                    } else {
+                        deferred.reject({message: response.data.Error});
                         $log.error('setAuthCookie1', response);
                     }
-                    return deferred.promise;
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    var deferred = $q.defer();
-                    deferred.reject();
-                    return deferred.promise;
+                    deferred.reject({message: err});
                 }
             );
+
+            return deferred.promise;
         },
 
         loginWithCredentials: function(creds) {
-                    var q = $q.defer();
+            var deferred = $q.defer();
 
             if (!creds.Username || !creds.Password) {
-                q.reject({
+                deferred.reject({
                     message: "Username and Password are required to login"
                 });
             } else {
@@ -283,19 +284,19 @@ angular.module("proton.authentication", [
                         $rootScope.TemporaryAccessData = resp.data;
                         $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
                         $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
-                        q.resolve(resp);
+                        deferred.resolve(resp);
                         // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                     },
                     function(error) {
                         console.log(error);
-                        q.reject({
+                        deferred.reject({
                             message: error.error_description
                         });
                     }
                 );
             }
 
-            return q.promise;
+            return deferred.promise;
         },
 
         // Whether a user is logged in at all

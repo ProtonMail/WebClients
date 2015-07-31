@@ -127,9 +127,9 @@ angular.module("proton.controllers.Auth", [
         clearErrors();
         networkActivityTracker.track(
             authentication.unlockWithPassword(
-                $rootScope.TemporaryEncryptedPrivateKeyChallenge, 
-                mailboxPassword, 
-                $rootScope.TemporaryEncryptedAccessToken, 
+                $rootScope.TemporaryEncryptedPrivateKeyChallenge,
+                mailboxPassword,
+                $rootScope.TemporaryEncryptedAccessToken,
                 $rootScope.TemporaryAccessData
             )
             .then(
@@ -139,11 +139,11 @@ angular.module("proton.controllers.Auth", [
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
-                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));                            
+                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
                             $state.go("secured.inbox");
                         },
                         function(err) {
-                            // console.log(err);
+                            $log.error('tryDecrypt', err);
                             notify({
                                 classes: 'notification-danger',
                                 message: err.message
@@ -154,12 +154,11 @@ angular.module("proton.controllers.Auth", [
                 }
             )
             .catch(function(err) {
-                $log.error('tryDecrypt',err);
+                $log.error('tryDecrypt', err);
                 notify({
                     classes: 'notification-danger',
                     message: err.message
                 });
-                // alert(err);
             })
         );
     };
