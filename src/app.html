@@ -16,46 +16,19 @@
     <meta name="msapplication-TileImage" content="/assets/favicon_128.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <% styles.forEach(function (file) { %>
-    <link rel="stylesheet" type="text/css" href="/<%= file %>" />
+        <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
+    <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
 <body
 id="{{ toState }}"
-ng-class="{
-  locked:
-    (isLoggedIn && isLocked) ||
-    ('login'|isState) ||
-    ('eo.unlock'|isState) ||
-    ('eo.message'|isState) ||
-    ('reset'|isState) ||
-    ('eo.reply'|isState),
-  login:
-    !isLoggedIn,
-  unlock:
-    isLocked,
-  secure:
-    isSecure(),
-  blank:
-    !!isBlank,
-  'min':
-    toggleSidebar
-  }">
-    <div id="loading">
-      <div class="higgs">
-        <div class="orbit">
-          <div class="ring horizontal"><div class="wrap-electron"></div></div>
-          <div class="ring vertical"><div class="wrap-electron"></div></div>
-        </div>
-        <div class="orbit r">
-          <div class="ring horizontal inner"><div class="wrap-electron"></div></div>
-          <div class="ring vertical inner"><div class="wrap-electron"></div></div>
-          <div class="ring center"></div>
-        </div>
-      </div>
-        <p class="text-center">Loading ProtonMail</p>
-    </div>
-    <div ui-view="main" autoscroll="false" id="body"></div>
-    <% scripts.forEach(function (file) { %>
-    <script type="text/javascript" src="/<%= file %>"></script><% }); %>
+ng-class="{locked: (isLoggedIn && isLocked) || ('login'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),login:!isLoggedIn,unlock:isLocked,secure:isSecure(),blank:!!isBlank}">
+<div id="loading">
+    <ng-include src="'templates/partials/loader.tpl.html'"></ng-include>
+</div>
+<div ui-view="main" autoscroll="false" id="body"></div>
+<% scripts.forEach(function (file) { %>
+    <script type="text/javascript" src="/<%= file %>"></script>
+<% }); %>
 </body>
 </html>

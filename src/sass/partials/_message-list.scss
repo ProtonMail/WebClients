@@ -67,12 +67,13 @@ table.message-list {
                 width: 7rem;
                 input {
                     position: relative;
-                    top: 1px;
+                    top: -1px;
                 }
                 label {
                     display: inline-block;
                     width: 4rem;
                     text-align: center;
+                    margin: 0;
                 }
                 span {
                     width: 1.5rem;
@@ -80,14 +81,14 @@ table.message-list {
                     &.fa-star, &.fa-star-o {
                         font-size: 14px;
                         position: relative;
-                        top: 3px;
+                        top: 1px;
                     }
                 }
                 .fa-unlock-alt,
                 {
                     color: rgba(0, 0, 0, 0.25);
                     position: relative;
-                    top: 2px;
+                    top: 1px;
                 }
                 .fa-star-o {
                     color: rgba(0, 0, 0, 0.5);
@@ -101,7 +102,7 @@ table.message-list {
                 }
                 .fa-lock {
                     position: relative;
-                    top: 3px;
+                    top: 1px;
                     color: rgba(0, 0, 0, 0.25);
                 }
                 .text-purple {

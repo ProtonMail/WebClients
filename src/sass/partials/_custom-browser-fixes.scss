@@ -9,7 +9,7 @@
 	    table.message-list tbody input[type="checkbox"],
     	table.message-list tbody .fa-lock,
     	table.message-list tbody .fa-unlock-alt {
-	        top: 3px;
+	        top: 1px;
 	    }
 	    table.message-list tbody .starLink {
 	    	position: relative;
@@ -19,7 +19,7 @@
 	// Firefox
 	&.ua-firefox {
 	    table.message-list tbody input[type="checkbox"] {
-	        top: 3px;
+	        top: 1px;
 	    }
 	}
 	// Chrome
@@ -27,11 +27,15 @@
 	    table.message-list tbody input[type="checkbox"],
     	table.message-list tbody .fa-lock,
     	table.message-list tbody .fa-unlock-alt {
-	        top: 4px;
+	        top: 1px;
+	    }
+	    .selectAll input[type="checkbox"] {
+	    	position: relative;
+	    	top: 2px;
 	    }
 	    table.message-list tbody .starLink {
 	    	position: relative;
-	    	top: 1px;
+	    	top: 0px;
 	    	&:hover {
 				text-decoration: none;
 	    	}

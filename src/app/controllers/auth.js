@@ -12,12 +12,17 @@ angular.module("proton.controllers.Auth", [
     $timeout,
     $http,
     CONSTANTS,
+    CONFIG,
     authentication,
     networkActivityTracker,
     notify,
     pmcw
 ) {
     $rootScope.pageName = "Login";
+
+    console.log(CONFIG);
+
+    $rootScope.app_version = CONFIG.app_version;
 
     if ($rootScope.tempUser===undefined) {
         $rootScope.tempUser = [];
