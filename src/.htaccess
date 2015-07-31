@@ -2,10 +2,12 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-Redirect 301 /donate /pages/donate.html
-Redirect 301 /report-bug /pages/report-bug.html
-Redirect 301 /careers /pages/join-us.html
-Redirect 301 /create-account /invite.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+Redirect 301 /create-account /invite
+Redirect 301 /pages/join-us /pages/careers
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
