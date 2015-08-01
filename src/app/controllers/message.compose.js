@@ -8,6 +8,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $q,
     $sanitize,
     $state,
+    $stateParams,
     $translate,
     $interval,
     Attachment,
@@ -239,7 +240,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $rootScope.mobileComposerIsOpen = true;
         }
         else {
-            $rootScope.mobileComposerIsOpen = false;   
+            $rootScope.mobileComposerIsOpen = false;
         }
 
         message.uid = $scope.uid++;
@@ -801,18 +802,24 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $q.all(promises).then(function() {
                         Message.send(parameters).$promise.then(function(result) {
                             var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
+
                             if (result.Parent) {
                                 updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                 $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
+
+                                if(result.Parent.ID === $stateParams.id) {
+                                    $state.go('^');
+                                }
                             }
+
                             $scope.sending = false;
 
                             if(angular.isDefined(result.Error)) {
                                 notify(result.Error);
                                 deferred.reject();
                             } else {
-                                notify($translate.instant('MESSAGE_SENT'));
                                 messageCache.set(updateMessages);
+                                notify($translate.instant('MESSAGE_SENT'));
                                 $scope.close(message, false);
                                 deferred.resolve(result);
                             }
