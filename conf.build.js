@@ -72,7 +72,8 @@ module.exports = {
       "vendor/angular-dragdrop/src/angular-dragdrop.js",
       "vendor/vcard/src/vcard.js",
       "vendor/mellt/javascript/Mellt.js",
-      "vendor/mellt/javascript/common-passwords.js"
+      "vendor/mellt/javascript/common-passwords.js",
+      "vendor/dragster/lib/dragster.js"
     ],
     bootstrap_components: [
       "affix",

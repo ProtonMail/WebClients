@@ -28,6 +28,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
+    var dragsters = [];
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
@@ -67,19 +68,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
-    $(window).on('dragover', function(e) {
-        e.preventDefault();
-        $interval.cancel($scope.intervalComposer);
+    document.addEventListener( "dragster:enter", function (event) {
+        event.preventDefault();
 
-        $scope.intervalComposer = $interval(function() {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalComposer);
-        }, 100);
+        $scope.isOver = true;
+        $scope.$apply();
+    }, false );
 
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
-    });
+    document.addEventListener( "dragster:leave", function (event) {
+        event.preventDefault();
+
+        // $scope.isOver = false;
+        $scope.$apply();
+    }, false );
 
     $scope.setDefaults = function(message) {
         _.defaults(message, {
@@ -137,13 +138,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 }
             },
             eventHandlers: {
-                dragover: function(event) {
-                    $interval.cancel($scope.intervalComposer);
-                },
                 drop: function(event) {
-                    $scope.isOver = false;
-                },
-                dragleave: function(event) {
+                    event.preventDefault();
+
                     $scope.isOver = false;
                     $scope.$apply();
                 }
@@ -453,20 +450,24 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $('.typeahead-container').scrollTop(0);
                 });
             });
+
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
-            message.editor.addEventListener('dragenter', function(e) {
+
+            message.editor.addEventListener('dragenter', function(event) {
+                event.preventDefault();
+
                 $scope.isOver = true;
                 $scope.$apply();
             });
-            message.editor.addEventListener('dragover', function(e) {
-                $scope.isOver = true;
-                $scope.$apply();
+
+            _.each(dragsters, function(dragster) {
+                dragster.removeListeners();
             });
-            message.editor.addEventListener('dragleave', function(e) {
-                $scope.isOver = false;
-                $scope.$apply();
+
+            _.each($('.composer '), function(composer) {
+                dragsters.push(new Dragster(composer));
             });
         }
     };
