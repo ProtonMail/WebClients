@@ -22,13 +22,15 @@ angular.module("proton.authentication", [
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
         setAuthHeaders: function() {
             // API version
-            if ($http.defaults.headers.common["x-pm-session"]!==undefined) {
-                // we have a session header, so we can remove the old stuff
+            if ( auth.data.SessionToken ) {
+                // we have a session token, so we can remove the old stuff
                 $log.debug('setAuthHeaders:1');
+                $http.defaults.headers.common["x-pm-session"] = auth.data.SessionToken;
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
+                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
             }
             else {
                 // we need the old stuff for now
@@ -89,13 +91,16 @@ angular.module("proton.authentication", [
 
         saveAuthData: function(data) {
             $log.debug('saveAuthData');
-            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
-            date = moment(Date.now() + data.ExpiresIn * 1000);
-            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"] = date.toISOString();
-            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-            window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
-            auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
-            auth.data.ExpiresIn = date;
+            if ( data.SessionToken ) {
+                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"] = pmcw.encode_base64(data.SessionToken);
+                auth.data = data;
+            }
+            else {
+                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
+                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
+                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
+                auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
+            }
             auth.setAuthHeaders();
         },
 
@@ -107,20 +112,11 @@ angular.module("proton.authentication", [
     // RUN-TIME PUBLIC FUNCTIONS
     var api = {
         detectAuthenticationState: function() {
-            var dt = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":ExpiresIn"];
-            if (dt) {
-                dt = moment(dt);
+            var session = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"];
+            if (session) {
                 auth.data = {
-                    Uid: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"],
-                    ExpiresIn: dt,
-                    AccessToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"],
-                    RefreshToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"],
-                    SessionToken: window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"]
+                    SessionToken: session
                 };
-
-                if (dt.isBefore(Date.now())) {
-                    auth.data.shouldRefresh = true;
-                }
 
                 auth.mailboxPassword = api.getPassword();
 
@@ -233,18 +229,18 @@ angular.module("proton.authentication", [
                         $rootScope.domoArigato = true;
                         // forget the old headers, set the new ones
                         $log.debug('/auth/cookies2: resolved');
-                        $http.defaults.headers.common["x-pm-session"] = response.data.SessionToken;
-                        $http.defaults.headers.common.Authorization = '';
-                        $http.defaults.headers.common["x-pm-uid"] = '';
                         deferred.resolve(200);
                         $log.debug('headers change', $http.defaults.headers);
 
-                        window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                        var data = {
+                            SessionToken: response.data.SessionToken
+                        };
 
+                        auth.saveAuthData( data );
+
+                        $rootScope.isLocked = false;
                         $rootScope.doRefresh = true;
-                        // forget x-pm-uid
-                        // forget accessToken
-                        // forget refreshToken
+
                     } else {
                         deferred.reject({message: response.data.Error});
                         $log.error('setAuthCookie1', response);
@@ -306,7 +302,7 @@ angular.module("proton.authentication", [
             // console.log(auth.data);
             // console.log(api.refreshTokenIsDefined());
 
-            var loggedIn = auth.data && api.refreshTokenIsDefined();
+            var loggedIn = auth.data && api.sessionTokenIsDefined();
 
             if (loggedIn && api.user === null) {
                 auth.setAuthHeaders();
@@ -315,10 +311,10 @@ angular.module("proton.authentication", [
             return loggedIn;
         },
 
-        refreshTokenIsDefined: function() {
+        sessionTokenIsDefined: function() {
             var isDefined = false;
 
-            if (auth.data && typeof auth.data.RefreshToken !== 'undefined' && auth.data.RefreshToken !== 'undefined') {
+            if (auth.data && typeof auth.data.SessionToken !== 'undefined' && auth.data.SessionToken !== 'undefined') {
                 isDefined = true;
             }
 
@@ -353,30 +349,30 @@ angular.module("proton.authentication", [
             }
         },
 
-        refreshIfNecessary: function(force) {
-            if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
-                $http.post(
-                    url.get() + "/auth/refresh",
-                    _.extend(_.pick(auth.data, "RefreshToken"), {
-                        ClientID: CONFIG.clientID,
-                        ClientSecret: CONFIG.clientSecret,
-                        GrantType: "refresh_token",
-                        State: api.randomString(24),
-                        ResponseType: "token",
-                    })
-                ).then(
-                    function(resp) {
-                        auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
-                    },
-                    function(resp) {
-                        if(resp.error) {
-                            api.logout();
-                        }
-                        errorReporter.catcher("Something went wrong with authentication");
-                    }
-                );
-            }
-        },
+        // refreshIfNecessary: function(force) {
+        //     if ((auth.data && auth.data.shouldRefresh && api.refreshTokenIsDefined()) || !!force) {
+        //         $http.post(
+        //             url.get() + "/auth/refresh",
+        //             _.extend(_.pick(auth.data, "RefreshToken"), {
+        //                 ClientID: CONFIG.clientID,
+        //                 ClientSecret: CONFIG.clientSecret,
+        //                 GrantType: "refresh_token",
+        //                 State: api.randomString(24),
+        //                 ResponseType: "token",
+        //             })
+        //         ).then(
+        //             function(resp) {
+        //                 auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
+        //             },
+        //             function(resp) {
+        //                 if(resp.error) {
+        //                     api.logout();
+        //                 }
+        //                 errorReporter.catcher("Something went wrong with authentication");
+        //             }
+        //         );
+        //     }
+        // },
 
         // Removes all connection data
         logout: function() {
@@ -488,9 +484,10 @@ angular.module("proton.authentication", [
 
 .run(function($rootScope, authentication, eventManager, CONFIG) {
     authentication.detectAuthenticationState();
-    authentication.refreshIfNecessary();
+    //authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
+    console.log('hello there',$rootScope.isLocked);
     $rootScope.logout = function() {
         authentication.logout();
         eventManager.stop();
