@@ -102,7 +102,7 @@
                         request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                         request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                     },
-                    url: "https://dev.protonmail.ch/api/users/available/"+$('#username').val(),
+                    url: "/api/users/available/"+$('#username').val(),
                     success: function(msg) {
                         if (msg.Code===1000) {
                             if (msg.Available===1) {
@@ -132,7 +132,7 @@
                     request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                     request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                 },
-                url: "https://dev.protonmail.ch/api/users/invite",
+                url: "/api/users/invite",
                 data: JSON.stringify({
                     "Username": $('#username').val(),
                     "Email": $('#notification_email').val()
