@@ -18,7 +18,8 @@ noscript#jsNeeded {
 }
 
 #page-donate,
-#page-compatibility {
+#page-compatibility,
+#page-support {
   background: url("/img/patterns/whitey.png") #f0f0f0 0 0 repeat;
 }
 
@@ -3059,6 +3060,16 @@ li#nav-login2 {
 
 #page-compatibility table a {
 	color: #333;
+}
+
+#page-support input,
+#page-support textarea,
+#page-support select {
+	border: 1px solid #ccc;
+}
+
+#page-support textarea {
+	height: 10rem;
 }
 
 /*!
