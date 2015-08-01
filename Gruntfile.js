@@ -143,7 +143,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ["<%= build_dir %>/**/**"],
+                        src: ["<%= build_dir %>/**"],
                         dest: "<%= build_dir %>/"
                     }
                 ]
@@ -715,7 +715,7 @@ module.exports = function(grunt) {
         "ngconstant:prod",
         "build",
         "copy:compile_static",
-        "copy:compile_assets",        
+        "copy:compile_assets",
         "includes:static_app",
         "includes:static_files",
         "copy:compile_fonts",
