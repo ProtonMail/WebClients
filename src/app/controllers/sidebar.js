@@ -123,5 +123,22 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         return count;
     };
 
+    $scope.labelScroller = function() {
+        console.log('labelScroller');
+        var sidebarWrapHeight = $('#sidebarWrap').outerHeight();
+        var sidebarMenuHeight = 0;
+        $('#sidebarWrap > .list-group').each( function() {
+            sidebarMenuHeight += $(this).outerHeight();
+        });
+        if (sidebarMenuHeight > 0) {
+            $('#sidebarLabels').css('height', (sidebarWrapHeight - sidebarMenuHeight));
+        }
+        console.log((sidebarWrapHeight - sidebarMenuHeight));
+    };
+
+    setInterval( function() {
+        $scope.labelScroller();
+    }, 600);
+
     $scope.initialization();
 });
