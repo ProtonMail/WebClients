@@ -339,8 +339,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
         var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
-        var from = 'From: ' + tools.contactsToString(message.ToList) + '<br />';
-        var to = 'To: ' + message.SenderAddress + '<br />';
+        var from = 'From: ' + message.SenderAddress + '<br />';
+        var to = 'To: ' + tools.contactsToString(message.ToList) + '<br />';
         var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
@@ -349,7 +349,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var fw_length = fw_prefix.length;
 
         base.ParentID = message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + $scope.content + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + $scope.content + blockquoteEnd;
 
         if (action === 'reply') {
             base.Action = 0;
@@ -362,7 +362,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         } else if (action === 'replyall') {
             base.Action = 1;
 
-            if(_.where(authentication.user.Addresses, {Email: message.SenderAddress}).length > 0) {    
+            if(_.where(authentication.user.Addresses, {Email: message.SenderAddress}).length > 0) {
                 base.ToList = message.ToList;
                 base.CCList = message.CCList;
             } else {
