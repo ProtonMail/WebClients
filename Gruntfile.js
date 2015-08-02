@@ -10,7 +10,7 @@ var API_TARGETS = {
     build: "/api"
 };
 
-var appVersion = '2.0.3';
+var appVersion = '2.0.4';
 var apiVersion = '1';
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';

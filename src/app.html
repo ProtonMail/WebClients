@@ -22,7 +22,11 @@
 </head>
 <body
 id="{{ toState }}"
-ng-class="{locked: (isLoggedIn && isLocked) || ('login'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),login:!isLoggedIn,unlock:isLocked,secure:isSecure(),blank:!!isBlank}">
+ng-class="{
+    locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),
+    login:!isLoggedIn,unlock:isLocked,secure:isSecure(),
+    blank:!!isBlank}
+">
 <div id="loading">
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
     <ng-include src="'templates/partials/loader.tpl.html'"></ng-include>
