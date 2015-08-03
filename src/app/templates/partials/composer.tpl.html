@@ -4,8 +4,8 @@
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
+        ng-style="{'z-index': message.zIndex}"
         ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized, 'normalized': !message.maximized && !message.minimized}"
-        ng-style="composerStyle(message)"
         ng-click="focusComposer(message)">
             <div class="composer-header row">
                 <span ng-click="normalize(message);" class="col-xs-8">{{message.Subject}} &nbsp;</span>

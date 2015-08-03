@@ -29,6 +29,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.messages = [];
     var promiseComposerStyle;
     var dragsters = [];
+    var timeoutStyle;
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
@@ -66,6 +67,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.$on('listenEditor', function(event, message) {
         $scope.listenEditor(message);
+    });
+
+    $(window).on('resize', function() {
+        clearTimeout(timeoutStyle);
+        timeoutStyle = setTimeout(function() {
+            composerStyle();
+        }, 250);
     });
 
     document.addEventListener( "dragster:enter", function (event) {
@@ -251,6 +259,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $timeout(function() {
             $scope.onAddFile(message);
+            composerStyle();
             resizeComposer();
             // forward case: we need to save to get the attachments
             if(save === true) {
@@ -325,44 +334,47 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
-    $scope.composerStyle = function(message) {
-        var margin = 20;
-        var index = $scope.messages.indexOf(message);
-        var reverseIndex = $scope.messages.length - index;
-        var styles = {};
-        var widthWindow = $('#main').width();
+    composerStyle = function() {
+        var composers = $('.composer');
 
-        if ($('html').hasClass('ua-windows_nt')) {
-            margin = 40;
-        }
+        _.each(composers, function(composer, index) {
+            var margin = 20;
+            var reverseIndex = $scope.messages.length - index;
+            var styles = {};
+            var widthWindow = $('#main').width();
 
-        if (tools.findBootstrapEnvironment() === 'xs') {
-            var marginTop = 80; // px
-            var top = marginTop;
-            styles.top = top + 'px';
-        }
-        else {
-            var marginRight = margin; // px
-            var widthComposer = 480; // px
-            if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
-                right = (index * (widthComposer + marginRight)) + marginRight;
+            if ($('html').hasClass('ua-windows_nt')) {
+                margin = 40;
+            }
+
+            if (tools.findBootstrapEnvironment() === 'xs') {
+                var marginTop = 80; // px
+                var top = marginTop;
+
+                styles.top = top + 'px';
             }
             else {
-                widthWindow -= margin; // margin left
-                var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
-                right = index * (widthComposer - overlap);
+                var marginRight = margin; // px
+                var widthComposer = 480; // px
+
+                if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
+                    right = (index * (widthComposer + marginRight)) + marginRight;
+                }
+                else {
+                    widthWindow -= margin; // margin left
+                    var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
+                    right = index * (widthComposer - overlap);
+                }
+                if (reverseIndex === $scope.messages.length) {
+                    right = marginRight;
+                    index = $scope.messages.length;
+                }
+
+                styles.right = right + 'px';
             }
-            if (reverseIndex === $scope.messages.length) {
-                right = marginRight;
-                index = $scope.messages.length;
-            }
-            styles.right = right + 'px';
-        }
 
-        styles['z-index'] = message.zIndex;
-
-        return styles;
-
+            $(composer).css(styles);
+        });
     };
 
     $scope.completedSignature = function(message) {
