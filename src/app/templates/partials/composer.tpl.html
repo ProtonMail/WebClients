@@ -67,9 +67,9 @@
                     </div>
                     <div class="form-horizontal">
                         <div class="form-group">
-                            <div class="input-group input-container" ng-click="message.toUnfocussed = false">
+                            <div class="input-group input-container">
                                 <div class="input-group-addon">{{ 'TO' | translate }}</div>
-                                <div class="typeahead-container to-container" ng-class="{unfocussed: message.toUnfocussed}">
+                                <div class="typeahead-container to-container">
                                     <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
                                 </div>
                                 <span class="input-group-btn">
