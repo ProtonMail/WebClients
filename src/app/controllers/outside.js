@@ -183,13 +183,7 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
-        if (attachment.decrypted===true) {
-            return true;
-        }
-
         attachment.decrypting = true;
-
-        var deferred = $q.defer();
 
         // decode key packets
         var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
@@ -222,9 +216,11 @@ angular.module("proton.controllers.Outside", [
                             var isFileSaverSupported = !!new Blob();
 
                             if(isFileSaverSupported) {
-                                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+                                var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
 
                                 saveAs(blob, attachment.Name);
+                                attachment.decrypting = false;
+                                $scope.$apply();
                             }
                         } catch (error) {
                             console.log(error);

@@ -169,73 +169,53 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.decryptAttachment = function(message, attachment, $event) {
-        if (attachment.decrypted===true) {
-            $scope.downloadAttachment(attachment);
-            return;
-        }
-
-        attachment.decrypting = true;
-
-        var deferred = $q.defer();
-
         // get enc attachment
         var att = attachments.get(attachment.ID, attachment.Name);
 
-        if (attachment.KeyPackets===undefined) {
+        attachment.decrypting = true;
+
+        if (attachment.KeyPackets === undefined) {
             return att.then( function(result) {
-                attachment.data = result.data;
-                $scope.$apply(function() {
-                    attachment.decrypting = false;
-                    attachment.decrypted = true;
-                });
                 $scope.downloadAttachment(attachment);
-                return;
             });
         } else {
             // decode key packets
             var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+            // get user's pk
+            var key = authentication.getPrivateKey().then(
+                function(pk) {
+                    // decrypt session key from keypackets
+                    return pmcw.decryptSessionKey(keyPackets, pk);
+                }
+            );
+
+            // when we have the session key and attachment:
+            $q.all({
+                "attObject": att,
+                "key": key
+             }).then(
+                function(obj) {
+                    // create new Uint8Array to store decryted attachment
+                    var at = new Uint8Array(obj.attObject.data);
+
+                    // grab the key
+                    var key = obj.key.key;
+
+                    // grab the algo
+                    var algo = obj.key.algo;
+
+                    // decrypt the att
+                    pmcw.decryptMessage(at, key, true, algo).then(
+                        function(decryptedAtt) {
+                            $scope.downloadAttachment(attachment);
+                        }
+                    );
+                },
+                function(err) {
+                    console.log(err);
+                }
+            );
         }
-
-        // get user's pk
-        var key = authentication.getPrivateKey().then(
-            function(pk) {
-                // decrypt session key from keypackets
-                return pmcw.decryptSessionKey(keyPackets, pk);
-            }
-        );
-
-        // when we have the session key and attachment:
-        $q.all({
-            "attObject": att,
-            "key": key
-         }).then(
-            function(obj) {
-
-                // create new Uint8Array to store decryted attachment
-                var at = new Uint8Array(obj.attObject.data);
-
-                // grab the key
-                var key = obj.key.key;
-
-                // grab the algo
-                var algo = obj.key.algo;
-
-                // decrypt the att
-                pmcw.decryptMessage(at, key, true, algo).then(
-                    function(decryptedAtt) {
-                        $scope.$apply(function() {
-                            attachment.decrypting = false;
-                            attachment.decrypted = true;
-                        });
-                        attachment.data = decryptedAtt.data;
-                        $scope.downloadAttachment(attachment);
-                    }
-                );
-            },
-            function(err) {
-                console.log(err);
-            }
-        );
     };
 
     $scope.downloadAttachment = function(attachment) {
@@ -246,13 +226,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 var blob = new Blob([attachment.data], {type: attachment.MIMEType});
 
                 saveAs(blob, attachment.Name);
+                attachment.decrypting = false;
+                $scope.$apply();
             }
         } catch (error) {
             console.log(error);
         }
     };
-
-
 
     $scope.detachLabel = function(id) {
         var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
