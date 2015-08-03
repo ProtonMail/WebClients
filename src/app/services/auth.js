@@ -41,6 +41,7 @@ angular.module("proton.authentication", [
         },
 
         fetchUserInfo: function(uid) {
+
             var deferred = $q.defer();
 
             api.user = $http.get(url.get() + "/users", {
@@ -51,12 +52,14 @@ angular.module("proton.authentication", [
 
             api.user.then(
                 function(result) {
+
                     var user = result.data.User;
 
                     if (!user.EncPrivateKey) {
                         api.logout();
                         deferred.reject();
-                    } else {
+                    } 
+                    else {
                         $q.all([
                             $http.get(url.get() + "/contacts"),
                             $http.get(url.get() + "/labels")
@@ -64,7 +67,7 @@ angular.module("proton.authentication", [
                             function(result) {
                                 user.Contacts = result[0].data.Contacts;
                                 user.Labels = result[1].data.Labels;
-                                deferred.resolve(user);
+                                return deferred.resolve(user);
                             },
                             function() {
                                 notify({
@@ -343,6 +346,7 @@ angular.module("proton.authentication", [
 
         // Redirect to a new authentication state, if required
         redirectIfNecessary: function() {
+            $log.debug('refreshIfNecessary');
             var newState = api.state();
             if (newState) {
                 $state.go(newState);

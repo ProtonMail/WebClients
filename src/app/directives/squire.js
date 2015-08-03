@@ -159,7 +159,7 @@ angular.module("proton.squire", [
 
                 var a;
                 a = doc.createElement('link');
-                a.setAttribute('href', '/editor.css');
+                a.setAttribute('href', '/assets/editor.css');
                 a.setAttribute('type', 'text/css');
                 a.setAttribute('rel', 'stylesheet');
                 head.appendChild(a);

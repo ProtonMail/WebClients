@@ -296,6 +296,28 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
+            build_editor: {
+                files: [{
+                    src: ["application**"],
+                    dest: "<%= build_dir %>/assets/",
+                    cwd: "<%= build_dir %>/assets/",
+                    rename: function(dest, src) {
+                        return dest + 'editor.css';
+                    },
+                    expand: true
+                }]
+            },
+            compile_editor: {
+                files: [{
+                    src: ["application**"],
+                    dest: "<%= compile_dir %>/assets/",
+                    cwd: "<%= compile_dir %>/assets/",
+                    rename: function(dest, src) {
+                        return dest + 'editor.css';
+                    },
+                    expand: true
+                }]
+            },
             deploy: {
                 files: [{
                     src: [".htaccess"],
@@ -703,6 +725,7 @@ module.exports = function(grunt) {
         "copy:htaccess",
         "copy:build_external",
         "copy:build_fonts",
+        "copy:build_editor",
         "index:build",
         "includes:app",
         "includes:files",
@@ -734,6 +757,7 @@ module.exports = function(grunt) {
         "compile",
         "copy:deploy",
         "copy:htaccess",
+        "copy:compile_editor",
         "shell:push",
         "wait:push"
     ]);

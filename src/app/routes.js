@@ -518,7 +518,7 @@ angular.module("proton.routes", [
                 }
             }
         },
-        onEnter: function(authentication, $state) {
+        onEnter: function(authentication, $state, $log) {
             // This will redirect to a login step if necessary
             authentication.redirectIfNecessary();
         }
