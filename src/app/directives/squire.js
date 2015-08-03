@@ -156,14 +156,14 @@ angular.module("proton.squire", [
             updateStylesToMatch = function(doc) {
                 var head;
                 head = doc.head;
-                _.each(angular.element('link'), function(el) {
-                    var a;
-                    a = doc.createElement('link');
-                    a.setAttribute('href', el.href);
-                    a.setAttribute('type', 'text/css');
-                    a.setAttribute('rel', 'stylesheet');
-                    return head.appendChild(a);
-                });
+
+                var a;
+                a = doc.createElement('link');
+                a.setAttribute('href', '/editor.css');
+                a.setAttribute('type', 'text/css');
+                a.setAttribute('rel', 'stylesheet');
+                head.appendChild(a);
+
                 doc.childNodes[0].className = IFRAME_CLASS + " ";
                 if (scope.editorClass) {
                     return doc.childNodes[0].className += scope.editorClass;
