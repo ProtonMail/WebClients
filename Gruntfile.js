@@ -142,7 +142,6 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        flatten: true,
                         src: ["<%= build_dir %>/**"],
                         dest: "<%= build_dir %>/"
                     }
