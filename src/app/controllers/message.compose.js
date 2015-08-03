@@ -335,6 +335,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     composerStyle = function() {
+        console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
@@ -924,6 +925,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in messages
         $scope.messages.splice(index, 1);
+
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
@@ -932,10 +934,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             // Focus the first message
             $scope.focusComposer(_.first($scope.messages));
         }
+
+        setTimeout(function () {
+            composerStyle();
+        }, 250);
     };
 
     $scope.discard = function(message) {
-
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
         if (tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = false;
@@ -949,6 +954,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Remove message in composer controller
         $scope.messages.splice(index, 1);
+
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
@@ -961,6 +967,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.focusComposer(_.first($scope.messages));
         }
 
+        setTimeout(function () {
+            composerStyle();
+        }, 250);
     };
 
     $scope.focusEditor = function(message, event) {
