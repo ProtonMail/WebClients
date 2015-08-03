@@ -17,6 +17,7 @@ angular.module("proton.emailField", [])
 
       $(container).on('click', function() {
           var selection = getSelection().toString();
+
           if (!selection) {
               $$element.focus();
           }
