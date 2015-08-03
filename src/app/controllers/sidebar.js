@@ -42,6 +42,10 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $(window).bind('resize', function() {
             $scope.labelScroller();
         });
+        
+        $scope.$on("$destroy", function() {
+            $(window).unbind('resize');
+        });
     };
 
     $scope.updateLabels = function () {
