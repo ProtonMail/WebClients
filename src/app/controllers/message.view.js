@@ -423,4 +423,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             message.viewMode = 'plain';
         }
     };
+
+    $scope.setMessageHeadHeight = function() {
+        var messageHeadH1 = $('#messageHead h1').outerHeight();
+        $('#messageHead').css('minHeight', messageHeadH1+20); // 10 for top & bottom margin
+    };
 });
