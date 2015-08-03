@@ -45,6 +45,14 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.message = _.extend($scope.message, m);
     });
 
+    $(window).on('resize', function() {
+        $scope.setMessageHeadHeight();
+    });
+
+    $scope.$on('$destroy', function() {
+        $(window).off('resize');
+    });
+
     $scope.initView = function() {
         if(authentication.user.AutoSaveContacts === 1) {
             $scope.saveNewContacts();
