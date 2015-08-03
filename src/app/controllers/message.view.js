@@ -177,6 +177,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         if (attachment.KeyPackets === undefined) {
             return att.then( function(result) {
                 $scope.downloadAttachment(attachment);
+                attachment.decrypting = false;
+                $scope.$apply();
             });
         } else {
             // decode key packets
@@ -207,7 +209,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                     // decrypt the att
                     pmcw.decryptMessage(at, key, true, algo).then(
                         function(decryptedAtt) {
-                            $scope.downloadAttachment(attachment);
+                            $scope.downloadAttachment({
+                                data: decryptedAtt.data,
+                                Name: decryptedAtt.filename,
+                                MIMEType: attachment.MIMEType
+                            });
+                            attachment.decrypting = false;
+                            $scope.$apply();
                         }
                     );
                 },
@@ -226,8 +234,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 var blob = new Blob([attachment.data], {type: attachment.MIMEType});
 
                 saveAs(blob, attachment.Name);
-                attachment.decrypting = false;
-                $scope.$apply();
             }
         } catch (error) {
             console.log(error);
