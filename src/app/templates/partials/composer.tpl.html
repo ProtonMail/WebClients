@@ -184,7 +184,9 @@
                 <button
                 href=""
                 class="btn btn-sm btn-default btn-add-attachment"
-                ng-class="{'active': message.displayPanel && message.panelName == 'attachments'}"
+                ng-class="{
+                    'active': message.displayPanel && message.panelName == 'attachments'
+                }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
                 ng-disabled="message.uploading"
@@ -194,7 +196,9 @@
                 </button>
                 <button
                 class="btn btn-sm btn-default"
-                ng-class="{'active': message.displayPanel && message.panelName == 'encrypt'}"
+                ng-class="{
+                    'active': message.displayPanel && message.panelName == 'encrypt'
+                }"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
@@ -203,7 +207,9 @@
                 </button>
                 <button
                 class="btn btn-sm btn-default"
-                ng-class="{'active': message.displayPanel && message.panelName == 'expiration'}"
+                ng-class="{
+                    'active': message.displayPanel && message.panelName == 'expiration'
+                }"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
