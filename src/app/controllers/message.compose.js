@@ -243,6 +243,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.uid = $scope.uid++;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
+        $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
         $scope.saveOld(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
@@ -444,7 +445,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                message.fields = message.CCList || message.BCCList;
+                message.fields = false;
                 $timeout(function() {
                     $('.typeahead-container').scrollTop(0);
                 });
