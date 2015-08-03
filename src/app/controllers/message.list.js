@@ -19,6 +19,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     notify
 ) {
     var watchMessages;
+    var lastChecked = null;
 
     $scope.initialization = function() {
         // Variables
@@ -295,13 +296,19 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.onSelectMessage = function(event, message) {
-        if (event.shiftKey) {
-            var start = $scope.messages.indexOf(_.first($scope.selectedMessages()));
-            var end = $scope.messages.indexOf(_.last($scope.selectedMessages()));
+        if(!lastChecked) {
+            lastChecked = message;
+        } else {
+            if (event.shiftKey) {
+                var start = _.indexOf($scope.messages, message);
+                var end = _.indexOf($scope.messages, lastChecked);
 
-            for (var i = start; i < end; i++) {
-                $scope.messages[i].Selected = true;
+                _.each($scope.messages.slice(Math.min(start, end), Math.max(start, end) + 1), function(message) {
+                    message.Selected = true;
+                });
             }
+
+            lastChecked = message;
         }
     };
 
