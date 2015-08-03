@@ -322,7 +322,7 @@ angular.module("proton.routes", [
                 token: token
             }).then(
                 function(response) {
-                    console.log(response.data);
+                    // console.log(response.data);
                     if (response.data.Error) {
                         $state.go("support.message", {
                             data: {

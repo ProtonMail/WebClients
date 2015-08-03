@@ -228,8 +228,8 @@ angular.module("proton", [
             return response || $q.when(response);
         },
         responseError: function(rejection) {
-            console.log(rejection);
-            console.log(rejection.config);
+            // console.log(rejection);
+            // console.log(rejection.config);
             if (rejection.status === 401) {
                 if ($rootScope.doRefresh===true) {
                     $rootScope.doRefresh = false;
@@ -237,7 +237,7 @@ angular.module("proton", [
                     .then(
                         function() {
                             var $http = $injector.get('$http');
-                            console.log(rejection.config);
+                            // console.log(rejection.config);
                             // rejection.config.headers.common['x-pm-session']
                             _.extend(rejection.config.headers, $http.defaults.headers.common);
                             return $http(rejection.config);

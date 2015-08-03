@@ -487,7 +487,6 @@ angular.module("proton.authentication", [
     //authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
-    console.log('hello there',$rootScope.isLocked);
     $rootScope.logout = function() {
         authentication.logout();
         eventManager.stop();
