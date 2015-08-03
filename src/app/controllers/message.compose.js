@@ -25,6 +25,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     User,
     closeModal
 ) {
+    // Variables
     Contact.index.updateWith($scope.user.Contacts);
     $scope.messages = [];
     var promiseComposerStyle;
@@ -36,6 +37,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
+    // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
             window.onbeforeunload = function() {
@@ -76,6 +78,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }, 250);
     });
 
+    $scope.$on('$destroy', function() {
+        $(window).off('resize');
+    });
+
     document.addEventListener( "dragster:enter", function (event) {
         event.preventDefault();
 
@@ -89,6 +95,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // $scope.isOver = false;
         $scope.$apply();
     }, false );
+
+    // Functions
 
     $scope.setDefaults = function(message) {
         _.defaults(message, {
