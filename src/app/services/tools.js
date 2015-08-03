@@ -311,7 +311,7 @@ angular.module("proton.tools", ["proton.constants"])
                     cur = 0.01;
                 }
 
-                return cur+'/'+(Math.round(max/kb/kb))+' MB';
+                return Number(cur) + '/' + Number(Math.round(max/kb/kb)) + ' MB';
             } else {
                 // render bar in terms of GB
                 cur = (cur/kb/kb).toFixed(2);
@@ -320,7 +320,7 @@ angular.module("proton.tools", ["proton.constants"])
                     cur = 0.01;
                 }
 
-                return cur+'/'+(Math.round(max/kb/kb/kb))+' GB';
+                return Number(cur) + '/' + Number(Math.round(max/kb/kb/kb)) + ' GB';
             }
         }
 
