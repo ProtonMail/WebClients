@@ -75,7 +75,7 @@ angular.module("proton.controllers.Outside", [
         $log.debug('c');
 
         $q.all({
-            Body: bodyPromise, 
+            Body: bodyPromise,
             ReplyBody: replyBodyPromise
         })
         .then(
@@ -98,7 +98,7 @@ angular.module("proton.controllers.Outside", [
                         $log.debug('e');
                         $state.go('eo.message', {tag: $stateParams.tag});
                         notify($translate.instant('MESSAGE_SENT'));
-                    }, 
+                    },
                     function(error) {
                         $log.debug('f');
                         notify(error);
@@ -173,7 +173,7 @@ angular.module("proton.controllers.Outside", [
                     Size: file.size
                 });
             });
-        } 
+        }
         else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
@@ -218,33 +218,16 @@ angular.module("proton.controllers.Outside", [
                 // decrypt the att
                 pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
-                        var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
-                        if(navigator.msSaveOrOpenBlob || URL.createObjectURL!==undefined) {
-                            // Browser supports a good way to download blobs
-                            $scope.$apply(function() {
-                                attachment.decrypting = false;
-                                attachment.decrypted = true;
-                            });
+                        try {
+                            var isFileSaverSupported = !!new Blob();
 
-                            var href = URL.createObjectURL(blob);
+                            if(isFileSaverSupported) {
+                                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
 
-                            $this = $($event.target);
-                            $this.attr('href', href);
-                            $this.attr('target', '_blank');
-                            $this.attr('download', attachment.Name);
-                            $this.triggerHandler('click');
-
-                            deferred.resolve();
-                        }
-                        else {
-                            // Bad blob support, make a data URI, don't click it
-                            var reader = new FileReader();
-
-                            reader.onloadend = function () {
-                                link.attr('href', reader.result);
-                            };
-
-                            reader.readAsDataURL(blob);
+                                saveAs(blob, attachment.Name);
+                            }
+                        } catch (error) {
+                            console.log(error);
                         }
                     },
                     function(error) {

@@ -239,29 +239,16 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.downloadAttachment = function(attachment) {
-        var blob = new Blob([attachment.data], {type: attachment.MIMEType});
-        var url  = window.URL || window.webkitURL;
+        try {
+            var isFileSaverSupported = !!new Blob();
 
-        if(window.navigator.msSaveOrOpenBlob) { // IE 10 / 11
-            window.navigator.msSaveOrOpenBlob(blob, attachment.Name);
-        } else if(angular.isDefined(url.createObjectURL)) { // Browser supports a good way to download blobs
-            var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
-            // A fake link and will dispatch a click event on this fake link
-            var event = document.createEvent("MouseEvents");
+            if(isFileSaverSupported) {
+                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
 
-            link.href = url.createObjectURL(blob);
-            link.download = attachment.Name;
-            event.initEvent("click", true, false);
-            link.dispatchEvent(event);
-        } else {
-            // Bad blob support, make a data URI, don't click it
-            var reader = new FileReader();
-
-            reader.onloadend = function () {
-                link.attr('href', reader.result);
-            };
-
-            reader.readAsDataURL(blob);
+                saveAs(blob, attachment.Name);
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 
