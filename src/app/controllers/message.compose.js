@@ -445,7 +445,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                message.fields = false;
                 $timeout(function() {
                     $('.typeahead-container').scrollTop(0);
                 });
