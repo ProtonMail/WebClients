@@ -197,7 +197,8 @@
                 <button
                 class="btn btn-sm btn-default"
                 ng-class="{
-                    'active': message.displayPanel && message.panelName == 'encrypt'
+                    'active': message.displayPanel && message.panelName == 'encrypt',
+                    'btn-primary': message.IsEncrypted === 1
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
@@ -208,7 +209,8 @@
                 <button
                 class="btn btn-sm btn-default"
                 ng-class="{
-                    'active': message.displayPanel && message.panelName == 'expiration'
+                    'active': message.displayPanel && message.panelName == 'expiration',
+                    'btn-primary': message.ExpirationTime > 0
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
