@@ -343,7 +343,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     composerStyle = function() {
-        console.log('composerStyle');
+        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {

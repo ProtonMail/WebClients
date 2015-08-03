@@ -20,7 +20,7 @@ angular.module("proton.controllers.Auth", [
 ) {
     $rootScope.pageName = "Login";
 
-    console.log(CONFIG);
+    // console.log(CONFIG);
 
     $rootScope.app_version = CONFIG.app_version;
 
@@ -112,7 +112,7 @@ angular.module("proton.controllers.Auth", [
 	                return;
                 },
                 function(result) {
-                    console.log(result);
+                    // console.log(result);
                     if (result.message===undefined) {
                         result.message = 'Sorry, our login server is down. Please try again later.';
                     }
