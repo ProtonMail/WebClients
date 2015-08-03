@@ -1,4 +1,4 @@
-<h1>
+<h1 ng-init="setMessageHeadHeight()">
     <a href class="star" ng-click="toggleStar(message)">
         <i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i>
     </a>
@@ -8,7 +8,7 @@
     <i
     class="fa fa-clock-o"
     ng-show="message.ExpirationTime > 0"
-    pt-tooltip="{{message.countDown()}}" 
+    pt-tooltip="{{message.countDown()}}"
     pt-placement="right"></i>
     <i
     class="fa"
