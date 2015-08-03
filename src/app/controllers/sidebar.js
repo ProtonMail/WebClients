@@ -31,8 +31,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.$on('updateCounters', function(event) { messageCounts.refresh(); });
 
     $scope.initialization = function() {
-        $scope.storage = $scope.renderStorageBar();
-
         // Actions delayed
         $timeout(function() {
             messageCounts.refresh();
@@ -42,7 +40,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $(window).bind('resize', function() {
             $scope.labelScroller();
         });
-        
+
         $scope.$on("$destroy", function() {
             $(window).unbind('resize');
         });

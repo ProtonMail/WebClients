@@ -79,7 +79,9 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			manageStorage: function(storage) {
-				authentication.user.UsedSpace = storage;
+				if(angular.isDefined(storage)) {
+					authentication.user.UsedSpace = storage;
+				}
 			},
 			manageID: function(id) {
 				this.ID = id;
