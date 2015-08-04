@@ -146,9 +146,9 @@ angular.module("proton.event", ["proton.constants"])
 						};
 						notice = function() {
 							eventModel.checkNotice().then( function(result) {
-								if (result.data.Notices!=='') {
+								if (result.data.Notices.length>) {
 									notify({
-										message: result.data.Notices
+										message: result.data.Notices[0]
 									});
 								}
 							});
