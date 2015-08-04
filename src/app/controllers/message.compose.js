@@ -78,7 +78,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $(window).on('resize', function() {
         clearTimeout(timeoutStyle);
         timeoutStyle = setTimeout(function() {
-            composerStyle();
+            $scope.composerStyle();
         }, 250);
     });
 
@@ -271,7 +271,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $timeout(function() {
             $scope.onAddFile(message);
-            composerStyle();
+            $scope.composerStyle();
             resizeComposer();
             // forward case: we need to save to get the attachments
             if(save === true) {
@@ -312,9 +312,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.editorStyle = function(message) {
         var styles = {};
+        var composer = $('.composer:visible');
 
         if (message.maximized === true) {
-            var composer = $('.composer:visible');
             var composerHeight = composer.outerHeight();
             var composerHeader = composer.find('.composer-header').outerHeight();
             var composerFooter = composer.find('.composer-footer').outerHeight();
@@ -322,26 +322,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
             styles.height = composerHeight - (composerHeader + composerFooter + composerFooter + composerMeta);
         } else {
-            styles.height = '300px';
-        }
-
-        return styles;
-    };
-
-    // Note: Never called?
-    $scope.squireHeight = function(message) {
-        var styles = {};
-
-        if (message.maximized === true) {
-            styles.height = '100%';
-        } else {
-            var composer = $('#uid' + message.uid);
-            var to = composer.find('.to-container').outerHeight();
             var bcc = composer.find('.bcc-container').outerHeight();
             var cc = composer.find('.cc-container').outerHeight();
-            var previewHeight = composer.find('.previews').outerHeight();
-            var recipientsHeight = to + bcc + cc;
-            var height = 352 - recipientsHeight - previewHeight;
+            var preview = composer.find('.previews').outerHeight();
+            var height = 300 - bcc - cc - preview;
 
             height = (height < 130) ? 130 : height;
 
@@ -351,8 +335,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return styles;
     };
 
-    composerStyle = function() {
-        var composers = $('.composer:visible');
+    $scope.composerStyle = function() {
+        var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
             var margin = 20;
@@ -392,7 +376,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             }
 
             $(composer).css(styles);
-            $(composer).find('.composeEditor').css($scope.editorStyle(message));
+
+            setTimeout(function() {
+                $(composer).find('.composeEditor').css($scope.editorStyle(message));
+            });
         });
     };
 
@@ -517,6 +504,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.toggleFields = function(message) {
         message.fields = !message.fields;
+        $scope.composerStyle();
     };
 
     $scope.togglePanel = function(message, panelName) {
@@ -946,7 +934,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         setTimeout(function () {
-            composerStyle();
+            $scope.composerStyle();
         }, 250);
     };
 
@@ -978,7 +966,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         setTimeout(function () {
-            composerStyle();
+            $scope.composerStyle();
         }, 250);
     };
 
