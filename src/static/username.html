@@ -36,7 +36,7 @@
 
 <div class="container narrow">
     <div class="container panel round">
-        <form class="pure-form" action="/username" method="POST">
+        <form class="pure-form" action="/username" method="POST" id="forgotUsernameForm">
             <label for="forgotUsername-email">Notification/Recovery Email:</label>
             <input type="text" id="forgotUsername-email" name="forgotUsername-email" autofocus placeholder="Email" required class="bordered">
             <button id="forgotUsername-button" class="button button-primary pull-right" data-loading>
@@ -48,6 +48,52 @@
 </div>
 
 
+
+    <script type="text/javascript" src="/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $( function() {
+            var email = $('#forgotUsername-email').val();
+            if (email!==undefined) {
+                $('#forgotUsernameForm').on('submit', function(event) {
+                    // prevent form submission. we will do an API call instead
+                    event.preventDefault();
+
+                    // disable button
+                    $('#forgotUsername-button').attr('disabled', true);
+
+                    var formData = {
+                        NotificationEmail:email,
+                    };
+
+                    // make api call
+                    $.ajax({
+                        type:"POST",
+                        beforeSend: function (request) {
+                            request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                            request.setRequestHeader("x-pm-appversion", "Other");
+                            request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
+                            request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+                        },
+                        url: "/api/reset/username",
+                        data: formData,
+                        success: function(msg) {
+                            if (msg.Code===1000) {
+                                if (msg.Available===1) {
+                                    // alert('Username available!');
+                                    createInvite();
+                                }
+                            }
+                            else {
+                                alert('Something went wrong.');
+                                $('#forgotUsername-button').attr('disabled', false);
+                            }
+                            console.log(msg);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 
 
     include "pages/_footer.html"
