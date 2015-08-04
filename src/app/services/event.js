@@ -146,7 +146,7 @@ angular.module("proton.event", ["proton.constants"])
 						};
 						notice = function() {
 							eventModel.checkNotice().then( function(result) {
-								if (result.data.Notices.length>) {
+								if (result.data.Notices.length>0) {
 									notify({
 										message: result.data.Notices[0]
 									});
