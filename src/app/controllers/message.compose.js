@@ -309,7 +309,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.editorStyle = function(message) {
         var styles = {};
 
-        if (message.maximized===true) {
+        if (message.maximized === true) {
             var composer = $('.composer:visible');
             var composerHeight = composer.outerHeight();
             var composerHeader = composer.find('.composer-header').outerHeight();
@@ -324,9 +324,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return styles;
     };
 
+    // Note: Never called?
     $scope.squireHeight = function(message) {
+        var styles = {};
+
         if (message.maximized === true) {
-            return '100%';
+            styles.height = '100%';
         } else {
             var composer = $('#uid' + message.uid);
             var to = composer.find('.to-container').outerHeight();
@@ -338,17 +341,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
             height = (height < 130) ? 130 : height;
 
-            return height + 'px';
+            styles.height = height + 'px';
         }
+
+        return styles;
     };
 
     composerStyle = function() {
-        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
             var margin = 20;
             var reverseIndex = $scope.messages.length - index;
+            var message = $scope.messages[index];
             var styles = {};
             var widthWindow = $('#main').width();
 
@@ -383,6 +388,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             }
 
             $(composer).css(styles);
+            $(composer).find('.composeEditor').css($scope.editorStyle(message));
         });
     };
 
