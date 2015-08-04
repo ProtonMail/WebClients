@@ -6,9 +6,7 @@ angular.module("proton.squire", [
         restrict: 'E',
         require: "ngModel",
         scope: {
-            height: '=',
-            ngModel: '=',
-            message: '='
+            ngModel: '=' // body
         },
         replace: true,
         transclude: true,
@@ -64,8 +62,8 @@ angular.module("proton.squire", [
             };
 
             scope.canRemoveLink = function() {
-                var href;
-                href = getLinkAtCursor();
+                var href = getLinkAtCursor();
+
                 return href && href !== LINK_DEFAULT;
             };
 
@@ -78,11 +76,12 @@ angular.module("proton.squire", [
             };
 
             scope.popoverHide = function(e, name) {
-                var hide;
-                hide = function() {
+                var hide = function() {
                     angular.element(e.target).closest(".popover-visible").removeClass("popover-visible");
+
                     return scope.action(name);
                 };
+
                 if (e.keyCode) {
                     if (e.keyCode === 13) {
                         return hide();
@@ -116,9 +115,10 @@ angular.module("proton.squire", [
 
             updateStylesToMatch = function(doc) {
                 var head;
+                var a;
+
                 head = doc.head;
 
-                var a;
                 a = doc.createElement('link');
                 a.setAttribute('href', '/assets/editor.css');
                 a.setAttribute('type', 'text/css');
@@ -137,18 +137,22 @@ angular.module("proton.squire", [
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
                 editor = new Squire(iframeDoc);
-                
+
                 if (scope.ngModel) {
                     editor.setHTML(scope.ngModel);
                     updateModel(scope.ngModel);
                 }
+
                 editor.addEventListener("input", function() {
                     var html = editor.getHTML();
+
                     updateModel(html);
                 });
+
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
                 });
+
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
 
@@ -158,6 +162,7 @@ angular.module("proton.squire", [
                         ngModel.$setPristine();
                     }
                 });
+
                 editor.addEventListener("pathChange", function() {
                     var p, ref;
 
@@ -168,28 +173,30 @@ angular.module("proton.squire", [
                         element.find('.add-link').removeClass('active');
                     }
                 });
+
                 editor.alignRight = function() {
                     return editor.setTextAlignment("right");
                 };
+
                 editor.alignCenter = function() {
                     return editor.setTextAlignment("center");
                 };
+
                 editor.alignLeft = function() {
                     return editor.setTextAlignment("left");
                 };
+
                 editor.alignJustify = function() {
                     return editor.setTextAlignment("justify");
                 };
+
                 editor.makeHeading = function() {
                     editor.setFontSize("2em");
 
                     return editor.bold();
                 };
 
-                if(angular.isDefined(scope.message)) {
-                    scope.message.editor = editor;
-                    $rootScope.$broadcast('listenEditor', scope.message);
-                }
+                $rootScope.$broadcast('editorLoaded', element, editor);
             };
 
             iframe = element.find('iframe.squireIframe');
@@ -250,6 +257,7 @@ angular.module("proton.squire", [
                         return a === action && this.value !== "";
                     }
                 };
+
                 if (test.testBold || test.testItalic || test.testUnderline || test.testOrderedList || test.testUnorderedList || test.testQuote || test.testLink) {
                     if (test.testBold) {
                         editor.removeBold();
@@ -276,32 +284,36 @@ angular.module("proton.squire", [
                 } else if (test.isNotValue("removeLink")) {
 
                 } else if (action === 'makeLink') {
-                    if (!scope.canAddLink()) {
-                        return;
+                    if (scope.canAddLink()) {
+                        node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
+
+                        if (node) {
+                            range = iframe[0].contentWindow.document.createRange();
+                            range.selectNodeContents(node);
+                            selection = iframe[0].contentWindow.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+                        }
+
+                        editor.makeLink(scope.data.link, {
+                            target: '_blank',
+                            title: scope.data.link,
+                            rel: "nofollow"
+                        });
+
+                        scope.data.link = LINK_DEFAULT;
+
+                        editor.focus();
                     }
-                    node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
-                    if (node) {
-                        range = iframe[0].contentWindow.document.createRange();
-                        range.selectNodeContents(node);
-                        selection = iframe[0].contentWindow.getSelection();
-                        selection.removeAllRanges();
-                        selection.addRange(range);
-                    }
-                    editor.makeLink(scope.data.link, {
-                        target: '_blank',
-                        title: scope.data.link,
-                        rel: "nofollow"
-                    });
-                    scope.data.link = LINK_DEFAULT;
-                    return editor.focus();
                 } else if(action === 'insertImage') {
                     if(scope.data.image.length > 0) {
                         editor.insertImage(scope.data.image);
                     }
-                    return editor.focus();
+
+                    editor.focus();
                 } else {
                     editor[action]();
-                    return editor.focus();
+                    editor.focus();
                 }
             };
         }

@@ -66,7 +66,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.initMessage(angular.copy(message), save);
     });
 
-    $scope.$on('listenEditor', function(event, message) {
+    $scope.$on('editorLoaded', function(event, element, editor) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        message.editor = editor;
         $scope.listenEditor(message);
     });
 
@@ -574,14 +579,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.clearExpiration = function(message) {
         delete message.ExpirationTime;
         $scope.closePanel(message);
-    };
-
-    $scope.rotateIcon = function(expiration) {
-        var deg = Math.round((expiration * 360) / 672);
-
-        $('#clock-icon').css({
-            'transform': 'rotate(' + deg + 'deg)'
-        });
     };
 
     $scope.saveOld = function(message) {
