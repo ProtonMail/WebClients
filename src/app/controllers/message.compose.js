@@ -269,9 +269,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
 
+        // This timeout is really important to load the structure of Squire
         $timeout(function() {
-            $scope.onAddFile(message);
             $scope.composerStyle();
+            $scope.onAddFile(message);
             resizeComposer();
             // forward case: we need to save to get the attachments
             if(save === true) {
