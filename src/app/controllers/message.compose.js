@@ -79,6 +79,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         clearTimeout(timeoutStyle);
         timeoutStyle = setTimeout(function() {
             $scope.composerStyle();
+
         }, 250);
     });
 
@@ -207,6 +208,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
+        $scope.composerStyle();
+
         attachments.load(file).then(
             function(packets) {
                 return attachments.upload(packets, message.ID).then(
@@ -273,7 +276,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $timeout(function() {
             $scope.composerStyle();
             $scope.onAddFile(message);
-            resizeComposer();
             // forward case: we need to save to get the attachments
             if(save === true) {
                 $scope.save(message, true, true).then(function() {
@@ -345,6 +347,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             var message = $scope.messages[index];
             var styles = {};
             var widthWindow = $('#main').width();
+            var navbar = $('#navbar').outerHeight();
+            var windowHeight = $(window).height() - margin - navbar;
+            var composerHeight = $(composer).outerHeight();
 
             if ($('html').hasClass('ua-windows_nt')) {
                 margin = 40;
@@ -376,10 +381,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 styles.right = right + 'px';
             }
 
+			styles.overflowY = 'auto'; // TODO move this propertie to CSS
+
+        	// Height
+        	if(windowHeight < composerHeight) {
+        		styles.height = windowHeight + 'px';
+        	} else {
+        		styles.height = 'auto';
+        	}
+
             $(composer).css(styles);
 
             setTimeout(function() {
-                $(composer).find('.composeEditor').css($scope.editorStyle(message));
+                $(composer).find('.angular-squire').css($scope.editorStyle(message));
             });
         });
     };

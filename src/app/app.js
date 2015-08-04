@@ -125,10 +125,8 @@ angular.module("proton", [
 ) {
     $(window).bind('resize load', function() {
         $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
-        resizeComposer();
     });
     $(window).bind('load', function() {
-        resizeComposer();
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
         }
