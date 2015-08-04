@@ -752,12 +752,12 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
+        "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
         "compile",
         "copy:deploy",
         "copy:htaccess",
-        "copy:compile_editor",
         "shell:push",
         "wait:push"
     ]);
