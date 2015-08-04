@@ -1,5 +1,23 @@
 angular.module("proton.event", ["proton.constants"])
-	.service("eventManager", function ($interval, $window, $state, $rootScope, $stateParams, authentication, Contact, CONSTANTS, Events, messageCache, messageCounts) {
+	.service("eventManager", function (
+		$interval, 
+		$window, 
+		$state, 
+		$rootScope, 
+		$stateParams, 
+		authentication, 
+		Contact, 
+		CONSTANTS, 
+		Events, 
+		messageCache, 
+		messageCounts,
+		notify
+	) {
+
+		function getRandomInt(min, max) {
+		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -10,6 +28,11 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			isDifferent: function (eventID) {
 				return this.ID !== eventID;
+			},
+			checkNotice: function() {
+				return Events.getNoticies({}).then(function(response) {
+					return response;
+				});
 			},
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
@@ -121,9 +144,20 @@ angular.module("proton.event", ["proton.constants"])
 								eventModel.manage(result.data);
 							});
 						};
+						notice = function() {
+							eventModel.checkNotice().then( function(result) {
+								if (result.data.Notices!=='') {
+									notify({
+										message: result.data.Notices
+									});
+								}
+							});
+						};
 						interval();
+						notice();
 						eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
 						started = true;
+						$interval(notice, getRandomInt(30000,40000));
 					}
 				},
 				stop: function () {
