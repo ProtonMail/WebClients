@@ -1,10 +1,11 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools, $rootScope) {
+.directive("squire", function(tools, $rootScope, $timeout) {
     return {
         restrict: 'E',
         require: "ngModel",
+        priority: 99,
         scope: {
             ngModel: '=' // body
         },
@@ -14,7 +15,7 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
 
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
@@ -29,13 +30,16 @@ angular.module("proton.squire", [
 
             updateModel = function(value) {
                 scope.$evalAsync(function() {
-                    ngModel.$setViewValue(value);
+                    $timeout.cancel(debounce);
+                    debounce = $timeout(function() {
+                        ngModel.$setViewValue(value);
 
-                    if (ngModel.$isEmpty(value)) {
-                        element.removeClass('squire-has-value');
-                    } else {
-                        element.addClass('squire-has-value');
-                    }
+                        if (ngModel.$isEmpty(value)) {
+                            element.removeClass('squire-has-value');
+                        } else {
+                            element.addClass('squire-has-value');
+                        }
+                    }, 200);
                 });
             };
 
