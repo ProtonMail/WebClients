@@ -100,7 +100,7 @@
                         <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                     </div>
                 </div>
-                <div class="form-group composeEditor" ng-style="editorStyle(message)">
+                <div class="form-group composeEditor" ng-init="params = {}">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
                             <div class="form-group col-md-12 bold">
@@ -128,7 +128,7 @@
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
                         <div class="form-group col-md-12">
                             <label class="control-label text-muted">{{ 'EXPIRATION_TIME' | translate }}</label>
-                            <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-model="params.expiration" class="form-control" ng-change="rotateIcon(params.expiration);" />
+                            <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-model="params.expiration" ng-model-options="{debounce: {'default': 50}}" class="form-control" />
                         </div>
                         <div class="form-group col-md-12 text-center" ng-show="params.expiration">
                             <h2 class="text-purple">{{params.expiration}} {{ 'HOURS' | translate }}</h2>
@@ -143,10 +143,7 @@
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed"></div>
-                    <squire
-                    ng-model="message.Body"
-                    message="message"
-                    ></squire>
+                    <squire ng-model="message.Body"></squire>
                     <button
                     class="btn btn-sm attach-collapse"
                     ng-show="message.Attachments.length > 0"

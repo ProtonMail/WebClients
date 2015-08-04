@@ -987,12 +987,9 @@ li#nav-login2 {
   position: relative;
   width: 6rem;
 }
-#page-home #navMain #nav-home a {
+#navMain #nav-home a {
   pointer-events: none;
   color: #000;
-}
-#page-home #navMain #nav-login a#nav-login-link strong {
-  text-decoration: underline;
 }
 #page-home #hero {
   background: url("/img/home/matterhorn.jpg") center center no-repeat;
@@ -2002,7 +1999,7 @@ li#nav-login2 {
     right: 0;
   }
 }
-@media only screen and (max-width: 500px) {	
+@media only screen and (max-width: 500px) {
   #page-about .container {
     padding: 0 1rem;
   }

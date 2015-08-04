@@ -3,19 +3,16 @@
 
 var _ = require("lodash"),
 util = require("util");
-
+var appVersion = '2.0.4';
+var apiVersion = '1';
+var clientID = 'Angular';
+var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
+var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 var API_TARGETS = {
     prod: "https://dev.protonmail.ch/api",
     dev: "https://test-api.protonmail.ch",
     build: "/api"
 };
-
-var appVersion = '2.0.4';
-var apiVersion = '1';
-var clientID = 'Angular';
-var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
-
-var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 
 module.exports = function(grunt) {
     grunt.loadTasks("tasks");
@@ -142,7 +139,8 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ["<%= build_dir %>/**"],
+                        flatten: true,
+                        src: ["<%= build_dir %>/**/*.html"],
                         dest: "<%= build_dir %>/"
                     }
                 ]
@@ -298,7 +296,7 @@ module.exports = function(grunt) {
             },
             build_editor: {
                 files: [{
-                    src: ["application**"],
+                    src: ["application.css"],
                     dest: "<%= build_dir %>/assets/",
                     cwd: "<%= build_dir %>/assets/",
                     rename: function(dest, src) {
@@ -309,7 +307,7 @@ module.exports = function(grunt) {
             },
             compile_editor: {
                 files: [{
-                    src: ["application**"],
+                    src: ["app.css"],
                     dest: "<%= compile_dir %>/assets/",
                     cwd: "<%= compile_dir %>/assets/",
                     rename: function(dest, src) {
@@ -584,7 +582,8 @@ module.exports = function(grunt) {
             options: {
                 deleteOriginals: true,
                 ignorePatterns: [
-                    'openpgp.min.js'
+                    'openpgp.min.js',
+                    'editor.css'
                 ]
             },
             assets: {
@@ -746,6 +745,7 @@ module.exports = function(grunt) {
         "concat:compile_js",
         "uglify",
         "copy:compile_external",
+        "copy:compile_editor",
         "index:compile",
         "cacheBust",
         "connect:compile"
