@@ -317,7 +317,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
             styles.height = composerHeight - (composerHeader + composerFooter + composerFooter + composerMeta);
         } else {
-            styles.height = 'auto';
+            styles.height = '300px';
         }
 
         return styles;
@@ -347,7 +347,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     composerStyle = function() {
-        var composers = $('.composer');
+        var composers = $('.composer:visible');
 
         _.each(composers, function(composer, index) {
             var margin = 20;

@@ -1,7 +1,8 @@
 // Resize the height of the composer
 function resizeComposer() {
 	var margin = 20;
-	var windowHeight = $(window).height() - margin;
+	var navbar = $('#navbar').outerHeight();
+	var windowHeight = $(window).height() - margin - navbar;
 	var composerHeight = $('.composer').outerHeight();
 
 	if(windowHeight < composerHeight) {
