@@ -298,7 +298,7 @@ module.exports = function(grunt) {
             },
             build_editor: {
                 files: [{
-                    src: ["application**"],
+                    src: ["application.css"],
                     dest: "<%= build_dir %>/assets/",
                     cwd: "<%= build_dir %>/assets/",
                     rename: function(dest, src) {
@@ -309,7 +309,7 @@ module.exports = function(grunt) {
             },
             compile_editor: {
                 files: [{
-                    src: ["application**"],
+                    src: ["app.css"],
                     dest: "<%= compile_dir %>/assets/",
                     cwd: "<%= compile_dir %>/assets/",
                     rename: function(dest, src) {
@@ -584,7 +584,8 @@ module.exports = function(grunt) {
             options: {
                 deleteOriginals: true,
                 ignorePatterns: [
-                    'openpgp.min.js'
+                    'openpgp.min.js',
+                    'editor.css'
                 ]
             },
             assets: {
@@ -746,6 +747,7 @@ module.exports = function(grunt) {
         "concat:compile_js",
         "uglify",
         "copy:compile_external",
+        "copy:compile_editor",
         "index:compile",
         "cacheBust",
         "connect:compile"
@@ -757,7 +759,6 @@ module.exports = function(grunt) {
         "compile",
         "copy:deploy",
         "copy:htaccess",
-        "copy:compile_editor",
         "shell:push",
         "wait:push"
     ]);
