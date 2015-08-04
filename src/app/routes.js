@@ -152,6 +152,20 @@ angular.module("proton.routes", [
     //     }
     // })
 
+    // .state("pre-invite", {
+    //     url: "/pre-invite/:user/:token",
+    //     view: {
+    //         "main@": {
+    //             controller: "SignupController",
+    //         }
+    //     },
+    //     onEnter: function($stateParams, $state, $rootScope, authentication) {
+    //         // API route to validate token
+    //         $stateParams.user = '';
+    //         $stateParams.token = '';
+    //     }
+    // })
+
     .state("step1", {
         url: "/create/new",
         views: {
