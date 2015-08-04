@@ -1,35 +1,35 @@
 <div class='angular-squire'>
-    <div ng-class="{'editor-hide': !isEditorVisible()}" class='editor-container'>
+    <div class='editor-container'>
         <ul class="squire-toolbar">
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
                     <i class="fa fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
+                <a href="" class="btn btn-sm" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
                     <i class="fa fa-link"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -69,10 +69,9 @@
                 </a>
             </li>
         </ul>
-        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}' ng-show="isHtml()" >
+        <div class='angular-squire-wrapper' ng-style='{width: width, height: height}'>
             <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" class="squireIframe"></iframe>
         </div>
-        <textarea ng-model="ngModel" ng-show="isPlain()" style="height: {{height}};"></textarea>
     </div>
     <ng-transclude></ng-transclude>
 </div>

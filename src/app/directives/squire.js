@@ -13,65 +13,48 @@ angular.module("proton.squire", [
         replace: true,
         transclude: true,
         templateUrl: "templates/directives/squire.tpl.html",
-
-        /* @ngInject */
-        controller: function($scope, $rootScope, $sanitize, tools) {
-            var editorVisible;
-            editorVisible = true;
-
-            $scope.isEditorVisible = function() {
-                return editorVisible;
-            };
-
-            $scope.isPlain = function() {
-                var result = false;
-
-                if($scope.data.format === 'plain') {
-                    result = true;
-                }
-
-                if($rootScope.isMobile && $rootScope.browser === 'Safari') {
-                    // result = true;
-                }
-
-                return result;
-            };
-
-            $scope.isHtml = function() {
-                var result = false;
-
-                if($scope.data.format === 'html') {
-                    result = true;
-                }
-
-                return result;
-            };
-        },
         link: function(scope, element, attrs, ngModel) {
+            if (!ngModel) { return; } // do nothing if no ng-model
+
             var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
-            LINK_DEFAULT = IMAGE_DEFAULT ="";
+            LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
             editor = scope.editor = null;
-            scope.data = {
-                link: LINK_DEFAULT,
-                image: IMAGE_DEFAULT,
-                format: 'html'
-            };
+            scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
+
+            scope.$on('$destroy', function() {
+                if(editor) {
+                    editor.destroy();
+                }
+            });
 
             updateModel = function(value) {
-                return scope.$evalAsync(function() {
+                scope.$evalAsync(function() {
                     ngModel.$setViewValue(value);
+
                     if (ngModel.$isEmpty(value)) {
-                        return element.removeClass('squire-has-value');
+                        element.removeClass('squire-has-value');
                     } else {
-                        return element.addClass('squire-has-value');
+                        element.addClass('squire-has-value');
                     }
                 });
             };
-            ngModel.$render = function() {
-                return editor !== null ? editor.setHTML(ngModel.$viewValue || '') : void 0;
+
+            getLinkAtCursor = function() {
+                if (!editor) {
+                    return LINK_DEFAULT;
+                }
+                return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
             };
+
+            // Specify how UI should be updated
+            ngModel.$render = function() {
+                if(editor) {
+                    editor.setHTML(ngModel.$viewValue || '');
+                }
+            };
+
             ngModel.$isEmpty = function(value) {
                 if (angular.isString(value)) {
                     return angular.element("<div>" + value + "</div>").text().trim().length === 0;
@@ -79,26 +62,21 @@ angular.module("proton.squire", [
                     return !value;
                 }
             };
-            getLinkAtCursor = function() {
-                if (!editor) {
-                    return LINK_DEFAULT;
-                }
-                return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
-            };
+
             scope.canRemoveLink = function() {
                 var href;
                 href = getLinkAtCursor();
                 return href && href !== LINK_DEFAULT;
             };
+
             scope.canAddLink = function() {
                 return scope.data.link && scope.data.link !== LINK_DEFAULT;
             };
+
             scope.canAddImage = function() {
                 return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
             };
-            scope.$on('$destroy', function() {
-                return editor !== null ? editor.destroy() : void 0;
-            });
+
             scope.popoverHide = function(e, name) {
                 var hide;
                 hide = function() {
@@ -113,6 +91,7 @@ angular.module("proton.squire", [
                     return hide();
                 }
             };
+
             scope.popoverShow = function(e) {
                 var linkElement, popover, liElement;
                 linkElement = angular.element(e.currentTarget);
@@ -134,25 +113,7 @@ angular.module("proton.squire", [
                     left: -1 * (popover.width() / 2) + liElement.width() / 2
                 });
             };
-            scope.switchTo = function(format) {
-                var value = editor.getHTML();
-                var end;
 
-                if(format === 'plain') {
-                    // TODO manage blockquote
-                    // var start = tools.block(html, 'start');
-                    // var plain = tools.plaintext(start);
-                    // var quote = tools.quote(plain);
-                    // var end = tools.block(quote.replace(/<br\s*[\/]?>/gi, "\n"), 'end');
-                    end = tools.plaintext(value);
-                    scope.data.format = format;
-                } else if (format === 'html') {
-                    end = tools.html(value);
-                    scope.data.format = format;
-                }
-
-                updateModel(end);
-            };
             updateStylesToMatch = function(doc) {
                 var head;
                 head = doc.head;
@@ -169,14 +130,14 @@ angular.module("proton.squire", [
                     return doc.childNodes[0].className += scope.editorClass;
                 }
             };
-            iframeLoaded = function() {
 
+            iframeLoaded = function() {
                 var iframeDoc = iframe[0].contentWindow.document;
 
                 updateStylesToMatch(iframeDoc);
                 ngModel.$setPristine();
                 editor = new Squire(iframeDoc);
-                editor.defaultBlockTag = 'P';
+                
                 if (scope.ngModel) {
                     editor.setHTML(scope.ngModel);
                     updateModel(scope.ngModel);
@@ -246,6 +207,7 @@ angular.module("proton.squire", [
 
                 // Safari and Opera need a kick-start.
                 var source = $(iframe).attr('src');
+
                 $(iframe).attr('src', '');
                 $(iframe).attr('src', source);
             } else {
@@ -270,9 +232,11 @@ angular.module("proton.squire", [
 
             scope.action = function(action) {
                 var node, range, selection, test;
+
                 if (!editor) {
                     return;
                 }
+
                 test = {
                     value: action,
                     testBold: editor.testPresenceinSelection("bold", action, "B", />B\b/),
@@ -340,18 +304,6 @@ angular.module("proton.squire", [
                     return editor.focus();
                 }
             };
-        }
-    };
-}).directive("squireControls", function() {
-    return {
-        restrict: 'E',
-        scope: false,
-        replace: true,
-        transclude: true,
-        require: "^squire",
-        template: "<ng-transclude class=\"angular-squire-controls\">\n</ng-transclude>",
-        link: function(scope, element, attrs, editorCtrl) {
-
         }
     };
 });
