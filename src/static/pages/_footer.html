@@ -49,15 +49,28 @@
 
     <script type="text/javascript">
     var mobileMenu = false;
+
     function toggleMobileMenu() {
         if (!mobileMenu) {
             document.getElementById('menuMain').style.display = "block";
         }
         else {
-            document.getElementById('menuMain').style.display = "none";   
+            document.getElementById('menuMain').style.display = "none";
         }
         mobileMenu = !mobileMenu;
     }
+
+    function toggleLoginButtons() {
+        if(window.sessionStorage.getItem('proton:oauth:SessionToken') === null) {
+            document.getElementById('nav-login').style.display = "block";
+            document.getElementById('nav-login2').style.display = "none";
+        } else {
+            document.getElementById('nav-login').style.display = "none";
+            document.getElementById('nav-login2').style.display = "block";
+        }
+    }
+
+    toggleLoginButtons();
     </script>
 </body>
 </html>
