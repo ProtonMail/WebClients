@@ -12,7 +12,6 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     var modalId = 'searchModal';
 
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
-    $scope.labels = authentication.user.Labels;
 
     function initParams() {
         var params = {};
@@ -69,6 +68,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     };
 
     $scope.open = function(value) {
+        $scope.labels = authentication.user.Labels;
         // reset params
         $scope.params.attachments = 2;
         $scope.params.starred = 2;
