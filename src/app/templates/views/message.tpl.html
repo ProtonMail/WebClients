@@ -99,7 +99,10 @@
         id="attachment-{{$index}}"
         data-download-text="{{ 'DOWNLOAD' | translate }}"
         ng-click="decryptAttachment(message, attachment, $event)">
-            <i class="fa" ng-class="{'fa-paperclip': !!!attachment.decrypting, 'fa-cog fa-spin': attachment.decrypting}"></i>
+            <i class="fa" ng-class="{
+            'fa-paperclip': (!!!attachment.decrypting && !!!attachment.decrypted), 
+            'fa-cog fa-spin': attachment.decrypting
+            }"></i>
             <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
         </a>
     </div>
