@@ -48,7 +48,7 @@ angular.module("proton.countdown", [])
 
             $($element[0]).tooltip({
                 container: 'body',
-                placement: 'left'
+                placement: 'top'
             });
 
             $element.bind('$destroy', function() {
