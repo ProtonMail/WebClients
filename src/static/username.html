@@ -52,17 +52,18 @@
     <script type="text/javascript" src="/jquery-2.1.4.min.js"></script>
     <script type="text/javascript">
         $( function() {
-            var email = $('#forgotUsername-email').val();
-            if (email!==undefined) {
-                $('#forgotUsernameForm').on('submit', function(event) {
-                    // prevent form submission. we will do an API call instead
-                    event.preventDefault();
+            $('#forgotUsernameForm').on('submit', function(event) {
+                // prevent form submission. we will do an API call instead
+                event.preventDefault();
 
+                var email = $('#forgotUsername-email').val();
+
+                if (typeof email !== 'undefined') {
                     // disable button
                     $('#forgotUsername-button').attr('disabled', true);
 
                     var formData = {
-                        NotificationEmail:email,
+                        NotificationEmail: email,
                     };
 
                     // make api call
@@ -77,21 +78,19 @@
                         url: "/api/reset/username",
                         data: formData,
                         success: function(msg) {
-                            if (msg.Code===1000) {
-                                if (msg.Available===1) {
-                                    // alert('Username available!');
+                            if (msg.Code === 1000) {
+                                if (msg.Available === 1) {
                                     createInvite();
                                 }
-                            }
-                            else {
+                            } else {
                                 alert('Something went wrong.');
                                 $('#forgotUsername-button').attr('disabled', false);
                             }
                             console.log(msg);
                         }
                     });
-                });
-            }
+                }
+            });
         });
     </script>
 
