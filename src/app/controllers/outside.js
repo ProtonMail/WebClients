@@ -182,7 +182,20 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
+    $scope.isFileSaverSupported = ('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob;
+
     $scope.decryptAttachment = function(attachment, $event) {
+
+        $event.preventDefault();
+
+        var link = angular.element($event.target);
+        var href = link.attr('href');
+
+        if(href !== undefined && href.search(/^data.*/)!==-1) {
+            alert("Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.");
+            return false;
+        }
+
         attachment.decrypting = true;
 
         // decode key packets
@@ -213,15 +226,18 @@ angular.module("proton.controllers.Outside", [
                 pmcw.decryptMessage(at, key, true, algo).then(
                     function(decryptedAtt) {
                         try {
-                            var isFileSaverSupported = !!new Blob();
-
-                            if(isFileSaverSupported) {
-                                var blob = new Blob([decryptedAtt.data], {type: attachment.MIMEType});
-
-                                saveAs(blob, attachment.Name);
-                                attachment.decrypting = false;
-                                $scope.$apply();
+                            $scope.downloadAttachment({
+                                data: decryptedAtt.data,
+                                Name: decryptedAtt.filename,
+                                MIMEType: attachment.MIMEType,
+                                el: $event.target,
+                            });
+                            attachment.decrypting = false;
+                            if(!$scope.isFileSaverSupported) {
+                                $($event.currentTarget)
+                                .prepend('<span class="fa fa-download"></span>');
                             }
+                            $scope.$apply();
                         } catch (error) {
                             console.log(error);
                         }
@@ -236,4 +252,28 @@ angular.module("proton.controllers.Outside", [
             }
         );
     };
+
+     $scope.downloadAttachment = function(attachment) {
+
+        try {
+            var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+            var link = $(attachment.el);
+            if($scope.isFileSaverSupported) {
+                saveAs(blob, attachment.Name);
+            }
+            else {
+                // Bad blob support, make a data URI, don't click it
+                var reader = new FileReader();
+
+                reader.onloadend = function () {
+                    link.attr('href',reader.result);
+                };
+
+                reader.readAsDataURL(blob);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
 });
