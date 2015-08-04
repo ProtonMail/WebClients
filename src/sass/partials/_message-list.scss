@@ -240,6 +240,8 @@ table.message-list {
             display: inline-block;
             line-height: 32px;
             height: 30px;
+            min-width: 25px;
+            text-align: center;
             position: relative;
             z-index: 2;
             top: 1px;
