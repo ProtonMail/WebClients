@@ -56,9 +56,46 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     // ---------------------------------------------------
     // ---------------------------------------------------
 
+    $scope.generateNewKeys = function() {
+        $log.debug('generateNewKeys');
+        $scope.genNewKeys   = true;
+        var mbpw;
+        if ($scope.account.mailboxPasswordConfirm!==undefined) {
+            mbpw = $scope.account.mailboxPasswordConfirm;
+        }
+        else if ($scope.account.mailboxPassword!==undefined) {
+            mbpw = $scope.account.mailboxPassword;
+        }
+        return $scope.generateKeys('UserID', mbpw);
+    };
+
+    $scope.generateKeys = function(userID, pass) {
+        var deferred = $q.defer();
+
+        $log.debug('generateKeys');
+
+        pmcw.generateKeysRSA(userID, pass).then(
+            function(response) {
+                $log.debug(response);
+                $scope.account.PublicKey = response.publicKeyArmored;
+                $scope.account.PrivateKey = response.privateKeyArmored;
+                $log.debug('pmcw.generateKeysRSA:resolved');
+                deferred.resolve(response);
+            },
+            function(err) {
+                $log.error(err);
+                $scope.error = err;
+                deferred.reject(err);
+            }
+        );
+
+        return deferred.promise;
+    };
+
     $scope.resetMailbox = function(form) {
         $log.debug('resetMailbox');
         if (form.$valid) {
+            $log.debug('resetMailbox:formvalid');
             if (
                 $rootScope.resetMailboxToken===undefined &&
                 $scope.resetMailboxToken===undefined
@@ -86,6 +123,67 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 })
             );
         }
+    };
+
+    $scope.doLogUserIn = function(response) {
+        $log.debug('doLogUserIn', response);
+        $log.debug(
+            $rootScope.tempUser.username,
+            $rootScope.tempUser.password
+        );
+        return authentication.loginWithCredentials({
+            Username: $rootScope.tempUser.username,
+            Password: $rootScope.tempUser.password
+        });
+    };
+
+    $scope.doDecryptAccessToken = function(response) {
+        $log.debug('doDecryptAccessToken', response);
+        $scope.authResponse = response.data;
+        $scope.decryptAccessToken = true;
+        return pmcw.decryptPrivateKey(
+            $scope.authResponse.EncPrivateKey,
+            $scope.account.mailboxPassword
+        );
+    };
+
+    $scope.doMailboxLogin = function() {
+        $log.debug('doMailboxLogin');
+        $scope.mailboxLogin  = true;
+        return authentication.unlockWithPassword(
+            $scope.authResponse.EncPrivateKey,
+            $scope.account.mailboxPassword,
+            $scope.authResponse.AccessToken,
+            $scope.authResponse
+        ).then(
+            function(response) {
+                $log.debug('doMailboxLogin:unlockWithPassword:',response);
+                return authentication.setAuthCookie()
+                .then(
+                    function(resp) {
+                        $log.debug('setAuthCookie:resp'+resp);
+                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64($scope.account.mailboxPassword));
+                        $state.go("secured.inbox");
+                    }
+                );
+            }
+        );
+    };    
+
+    $scope.finishRedirect = function() {
+        $log.debug('finishRedirect');
+        var deferred = $q.defer();
+        $scope.finishCreation = true;
+        $rootScope.isLoggedIn = true;
+        window.sessionStorage.setItem(
+            CONSTANTS.MAILBOX_PASSWORD_KEY,
+            pmcw.encode_base64($scope.account.mailboxPassword)
+        );
+        // delete $rootScope.tempUser;
+        // TODO: not all promises are resolved, so we simply refresh.
+        $state.go('secured.inbox');
+        deferred.resolve(200);
+        return deferred.promise;
     };
 
     $scope.verifyResetCode = function(form) {
