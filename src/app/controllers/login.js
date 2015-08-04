@@ -41,9 +41,11 @@ angular.module("proton.controllers.Auth", [
     // goal was to obfuscate the password in a basic manner.
     $scope.basicObfuscate = function(username, password) {
         var salt = username.toLowerCase();
+
         if (salt.indexOf("@") > -1) {
             salt = salt.match(/^([^@]*)@/)[1];
         }
+
         return pmcrypto.getHashedPassword(salt+password);
     };
 
