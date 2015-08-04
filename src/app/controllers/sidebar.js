@@ -7,7 +7,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $stateParams,
     $http,
     $translate,
-    $interval,
     Message,
     authentication,
     messageCounts,

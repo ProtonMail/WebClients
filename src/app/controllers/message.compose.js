@@ -10,7 +10,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $state,
     $stateParams,
     $translate,
-    $interval,
     Attachment,
     authentication,
     Message,
