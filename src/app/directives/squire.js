@@ -29,18 +29,16 @@ angular.module("proton.squire", [
             });
 
             updateModel = function(value) {
-                scope.$evalAsync(function() {
-                    $timeout.cancel(debounce);
-                    debounce = $timeout(function() {
-                        ngModel.$setViewValue(value);
+                $timeout.cancel(debounce);
+                debounce = $timeout(function() {
+                    ngModel.$setViewValue(value);
 
-                        if (ngModel.$isEmpty(value)) {
-                            element.removeClass('squire-has-value');
-                        } else {
-                            element.addClass('squire-has-value');
-                        }
-                    }, 200);
-                });
+                    if (ngModel.$isEmpty(value)) {
+                        element.removeClass('squire-has-value');
+                    } else {
+                        element.addClass('squire-has-value');
+                    }
+                }, 200);
             };
 
             getLinkAtCursor = function() {
