@@ -6,12 +6,13 @@ angular.module("proton.countdown", [])
             var interval = 1000; // 1 second
             var intervalCountdown = $interval(function() {
                 updateTime();
-            }, interval);
+            }, interval, false); // don't invoke apply
 
             function updateTime() {
                 // get the current moment
                 var now = moment(),
-        	    then = moment($attrs.countdown * 1000),
+                countdown = $attrs.countdown,
+                then = moment(countdown * 1000),
         	    // get the difference from now to then in ms
         	    ms = then.diff(now, 'milliseconds', true);
 
