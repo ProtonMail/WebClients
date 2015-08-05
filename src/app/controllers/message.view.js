@@ -63,7 +63,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             Message.read({IDs: [message.ID]});
         }
 
-        if(authentication.user.ShowImages===1) {
+        if (message.SenderAddress==="notify@protonmail.ch" && message.IsEncrypted===0) {
+            message.imagesHidden = false;
+            $scope.displayContent();
+        }
+        else if(authentication.user.ShowImages===1) {
             message.imagesHidden = false;
             $scope.displayContent();
         }
