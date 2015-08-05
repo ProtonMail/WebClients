@@ -44,12 +44,14 @@ $angular-squire-wrapper-padding: 5px 0 !default;
         }
     }
 
+    $squire-toolbar-height: 3rem;
+
     .squire-toolbar {
         margin: 0;
         padding: 0;
         list-style: none;
         font-size: 14px;
-        line-height: 1;
+        line-height: $squire-toolbar-height;
         border: none;
         box-shadow: inset 0 -1px 0 $base-color-darker;
         @include linear-gradient($btn-default-bg, darken($btn-default-bg, 10%));
@@ -62,13 +64,19 @@ $angular-squire-wrapper-padding: 5px 0 !default;
             outline: none;
             list-style: none;
             box-sizing: content-box;
+            line-height: $squire-toolbar-height;
             &.separator {
                 width: 1px;
-                height: 30px;
+                height: $squire-toolbar-height;
                 box-shadow: inset -1px 0 0 $base-color-darker;
             }
             a.btn {
                 position: relative;
+                line-height: $squire-toolbar-height;
+                padding: 0 1rem;
+                display: inline-block;
+                margin: 0;
+                border: none;
                 &:hover {
                 }
                 .fa-lock, .fa-clock-o {
