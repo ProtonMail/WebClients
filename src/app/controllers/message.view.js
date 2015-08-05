@@ -119,6 +119,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         return result;
     };
 
+    $scope.openSafariWarning = function() {
+        $('#safariModal').modal('show');
+    };
+
     $scope.displayContent = function(print) {
         message.clearTextBody().then(function(result) {
             var content;
@@ -127,6 +131,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 content = result;
             } else {
                 content = message.clearImageBody(result);
+            }
+
+            // safari warning
+            if(!$scope.isFileSaverSupported) {
+                $scope.safariWarning = true;
             }
 
             content = DOMPurify.sanitize(content, {
