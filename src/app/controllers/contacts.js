@@ -10,6 +10,7 @@ angular.module("proton.controllers.Contacts", [
     $translate,
     $stateParams,
     $filter,
+    tools,
     authentication,
     contacts,
     Contact,
@@ -384,26 +385,37 @@ angular.module("proton.controllers.Contacts", [
         });
     };
 
+    $scope.openSafariWarning = function() {
+        $('#safariContactsModal').modal('show');
+    };
+
     $scope.downloadContacts = function() {
-        var contactsArray = [['Name', 'Email']];
-        var csvRows = [];
 
-        _.forEach(authentication.user.Contacts, function(contact) {
-          contactsArray.push([contact.Name, contact.Email]);
-        });
+        if (tools.getBrowser==='Safari') {
+            $scope.openSafariWarning();
+        }
+        else {
+            var contactsArray = [['Name', 'Email']];
+            var csvRows = [];
+            _.forEach(authentication.user.Contacts, function(contact) {
+                contactsArray.push([contact.Name, contact.Email]);
+            });
+            for(var i=0, l=contactsArray.length; i<l; ++i){
+                csvRows.push(contactsArray[i].join(','));
+            }
+            var csvString = csvRows.join("%0A");
 
-        for(var i=0, l=contactsArray.length; i<l; ++i){
-            csvRows.push(contactsArray[i].join(','));
+            if (tools.getBrowser==='Safari') {
+                $scope.openSafariWarning();
+            }
+            var a         = document.createElement('a');
+            a.href        = 'data:attachment/csv,' + csvString;
+            a.target      = '_blank';
+            a.download    = 'contacts.csv';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
         }
 
-        var csvString = csvRows.join("%0A");
-        var a         = document.createElement('a');
-        a.href        = 'data:attachment/csv,' + csvString;
-        a.target      = '_blank';
-        a.download    = 'contacts.csv';
-
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
     };
 });

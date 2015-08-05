@@ -120,7 +120,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.openSafariWarning = function() {
-        $('#safariModal').modal('show');
+        $('#safariAttachmentModal').modal('show');
     };
 
     $scope.displayContent = function(print) {
