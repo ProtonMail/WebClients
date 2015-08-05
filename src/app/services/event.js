@@ -5,6 +5,8 @@ angular.module("proton.event", ["proton.constants"])
 		$state, 
 		$rootScope, 
 		$stateParams, 
+		$cookies,
+		$log,
 		authentication, 
 		Contact, 
 		CONSTANTS, 
@@ -150,6 +152,9 @@ angular.module("proton.event", ["proton.constants"])
 									notify({
 										message: result.data.Notices[0]
 									});
+									// var hash = atob(result.data.Notices[0]).substring(0,9);
+									// $cookies.put(hash, '1337');
+									// $cookies.put('derp', '1337');
 								}
 							});
 						};
