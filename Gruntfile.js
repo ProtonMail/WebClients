@@ -125,7 +125,7 @@ module.exports = function(grunt) {
         },
 
         replace: {
-            dist: {
+            build: {
                 options: {
                     patterns: [
                         {
@@ -142,6 +142,38 @@ module.exports = function(grunt) {
                         flatten: true,
                         src: ["<%= build_dir %>/**/*.html"],
                         dest: "<%= build_dir %>/"
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ["<%= build_dir %>/pages/**/*.html"],
+                        dest: "<%= build_dir %>/pages"
+                    }
+                ]
+            },
+            compile: {
+                options: {
+                    patterns: [
+                        {
+                            json: {
+                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
+                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
+                            }
+                        }
+                    ]
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ["<%= compile_dir %>/**/*.html"],
+                        dest: "<%= compile_dir %>/"
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ["<%= compile_dir %>/pages/**/*.html"],
+                        dest: "<%= compile_dir %>/pages"
                     }
                 ]
             }
@@ -728,7 +760,7 @@ module.exports = function(grunt) {
         "index:build",
         "includes:app",
         "includes:files",
-        "replace",
+        "replace:build",
         "testconfig"
     ]);
 
@@ -739,6 +771,7 @@ module.exports = function(grunt) {
         "copy:compile_assets",
         "includes:static_app",
         "includes:static_files",
+        "replace:compile",
         "copy:compile_fonts",
         "ngAnnotate",
         "cssmin",
