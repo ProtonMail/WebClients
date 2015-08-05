@@ -12,9 +12,11 @@
         margin-bottom: 10px;
         text-align: center;
         line-height: 35px;
+        text-decoration: none;
         &:hover,
         &:focus {
             border-color: #666;
+            text-decoration: none;
             .fa {
                 visibility: visible;
                 color: $base-color-darker;

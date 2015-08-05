@@ -435,14 +435,20 @@ angular.module("proton.controllers.Settings", [
                 message: 'Are you sure you want to delete this label?',
                 confirm: function() {
                     networkActivityTracker.track(
-                        Label.delete({id: label.ID}).$promise.then(function(result) {
-                            confirmModal.deactivate();
-                            notify($translate.instant('LABEL_DELETED'));
-                            label.Display = 1;
-                            $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
-                        }, function(result) {
-                            $log.error(result);
-                        })
+                        Label.delete({id: label.ID}).$promise
+                        .then(
+                            function(result) {
+                                confirmModal.deactivate();
+                                if (result.data.Code===1000) {
+                                    notify($translate.instant('LABEL_DELETED'));
+                                    label.Display = 1;
+                                    $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
+                                }
+                            }, 
+                            function(result) {
+                                $log.error(result);
+                            }
+                        )
                     );
                 },
                 cancel: function() {
