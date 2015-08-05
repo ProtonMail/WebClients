@@ -25,6 +25,7 @@ $angular-squire-wrapper-padding: 5px 0 !default;
 
 .angular-squire.form-control {
     height: inherit;
+    min-height: 14rem;
     padding: 0;
 }
 
