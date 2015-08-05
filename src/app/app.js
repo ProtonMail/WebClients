@@ -279,21 +279,21 @@ angular.module("proton", [
         $log.debug('isLocked',$rootScope.isLocked);
 
         if (isUnlock && $rootScope.isLoggedIn) {
-            $log.debug('1');
+            $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');
             return;
         }
 
         // If already logged in and on the login page: redirect to unlock page
         else if ($rootScope.isLoggedIn && isLogin) {
-            $log.debug('2');
+            $log.debug('appjs:($rootScope.isLoggedIn && isLogin)');
             event.preventDefault();
-            $state.go('login.unlock');
+            $state.go('secured.inbox');
             return;
         }
 
         // If already logged in and unlocked and on the unlock page: redirect to inbox
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
-            $log.debug('3');
+            $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
             event.preventDefault();
             $state.go('secured.inbox');
             return;
@@ -301,7 +301,7 @@ angular.module("proton", [
 
         // if on the login, support, account, or signup pages dont require authentication
         else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset) {
-            $log.debug('4');
+            $log.debug('appjs:(isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset)');
             return; // no need to redirect
         }
 
