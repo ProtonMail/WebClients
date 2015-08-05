@@ -29,6 +29,10 @@ $angular-squire-wrapper-padding: 5px 0 !default;
     padding: 0;
 }
 
+#eo-reply .angular-squire {
+    min-height: 24rem;
+}
+
 .angular-squire {
     transition: transition(all 2s);
     outline: none;
@@ -77,6 +81,8 @@ $angular-squire-wrapper-padding: 5px 0 !default;
                 display: inline-block;
                 margin: 0;
                 border: none;
+                color: #333 !important;
+                text-decoration: none !important;
                 &:hover {
                 }
                 .fa-lock, .fa-clock-o {
