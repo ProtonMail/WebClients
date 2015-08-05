@@ -142,29 +142,37 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.checkAvailability = function() {
+
         var deferred = $q.defer();
 
         $log.debug('checkAvailability');
-        
-        User.available({ username: $scope.account.Username }).$promise
-        .then(
-            function(response) {
-                if (response.error) {
-                    var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
-                    $('#Username').focus();
-                    deferred.reject(error_message);
+
+        // user came from pre-invite so we can not check if it exists
+        if ($rootScope.allowedNewAccount===true) {
+            $scope.creating = true;
+            deferred.resolve(200);
+        }
+        else {
+            User.available({ username: $scope.account.Username }).$promise
+            .then(
+                function(response) {
+                    if (response.error) {
+                        var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
+                        $('#Username').focus();
+                        deferred.reject(error_message);
+                    }
+                    else if (parseInt(response.Available)===0) {
+                        $('#Username').focus();
+                        deferred.reject('Username already taken.');
+                        $log.debug('username taken');
+                    }
+                    else {
+                        $scope.creating = true;
+                        deferred.resolve(200);
+                    }
                 }
-                else if (parseInt(response.Available)===0) {
-                    $('#Username').focus();
-                    deferred.reject('Username already taken.');
-                    $log.debug('username taken');
-                }
-                else {
-                    $scope.creating = true;
-                    deferred.resolve(200);
-                }
-            }
-        );
+            );
+        }
 
         return deferred.promise;
     };
@@ -183,29 +191,37 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doCreateUser = function() {
-        $log.debug('doCreateUser');
-        $scope.createUser  = true;
-        var params = {
-            "response_type": "token",
-            "client_id": "demoapp",
-            "client_secret": "demopass",
-            "grant_type": "password",
-            "redirect_uri": "https://protonmail.ch",
-            "state": "random_string",
-            "Username": $scope.account.Username,
-            "Password": $scope.account.loginPassword,
-            "Email": $scope.account.notificationEmail,
-            "News": !!($scope.account.optIn),
-            "PublicKey": $scope.account.PublicKey,
-            "PrivateKey": $scope.account.PrivateKey,
-            "token": "bypass" // this needs to be from their email in the future
-        };
-        if ($rootScope.tempUser===undefined) {
-            $rootScope.tempUser = [];
+        $log.debug('doCreateUser', $rootScope.inviteToken);
+        if ($rootScope.inviteToken===undefined) {
+            notify({
+                message: "Invalid or missing invite token."
+            });
+            return;
         }
-        $rootScope.tempUser.username = $scope.account.Username;
-        $rootScope.tempUser.password = $scope.account.loginPassword;
-        return User.create(params).$promise;
+        else {
+            $scope.createUser  = true;
+            var params = {
+                "response_type": "token",
+                "client_id": "demoapp",
+                "client_secret": "demopass",
+                "grant_type": "password",
+                "redirect_uri": "https://protonmail.ch",
+                "state": "random_string",
+                "Username": $scope.account.Username,
+                "Password": $scope.account.loginPassword,
+                "Email": $scope.account.notificationEmail,
+                "News": !!($scope.account.optIn),
+                "PublicKey": $scope.account.PublicKey,
+                "PrivateKey": $scope.account.PrivateKey,
+                "token": $rootScope.inviteToken // this needs to be from their email in the future. will be captcha when we remove the waiting list
+            };
+            if ($rootScope.tempUser===undefined) {
+                $rootScope.tempUser = [];
+            }
+            $rootScope.tempUser.username = $scope.account.Username;
+            $rootScope.tempUser.password = $scope.account.loginPassword;
+            return User.create(params).$promise;
+        }
     };
 
     $scope.doLogUserIn = function(response) {

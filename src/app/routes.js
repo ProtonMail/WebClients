@@ -139,32 +139,54 @@ angular.module("proton.routes", [
     })
 
     // DISBALED FOR NOW :)
-    // .state("signup", {
-    //     url: "/signup",
-    //     views: {
-    //         "main@": {
-    //             controller: "SignupController",
-    //             templateUrl: "templates/layout/auth.tpl.html"
-    //         },
-    //         "panel@signup": {
-    //             templateUrl: "templates/views/sign-up.tpl.html"
-    //         }
-    //     }
-    // })
+    .state("signup", {
+        url: "/signup",
+        views: {
+            "main@": {
+                controller: "SignupController",
+                templateUrl: "templates/layout/auth.tpl.html"
+            },
+            "panel@signup": {
+                templateUrl: "templates/views/sign-up.tpl.html"
+            }
+        },
+        onEnter: function($rootScope, $state) {
+            if ($rootScope.allowedNewAccount!==true) {
+                $state.go('login');
+            }
+        }
+    })
 
-    // .state("pre-invite", {
-    //     url: "/pre-invite/:user/:token",
-    //     view: {
-    //         "main@": {
-    //             controller: "SignupController",
-    //         }
-    //     },
-    //     onEnter: function($stateParams, $state, $rootScope, authentication) {
-    //         // API route to validate token
-    //         $stateParams.user = '';
-    //         $stateParams.token = '';
-    //     }
-    // })
+    .state("pre-invite", {
+        url: "/pre-invite/:user/:token",
+        view: {
+            "main@": {
+                controller: "SignupController",
+            }
+        },
+        resolve: {
+            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope) {
+                $http.post(
+                    url.get() + "/users/" + $stateParams.token + "/check", 
+                    {Username: $stateParams.user}
+                )
+                .then( 
+                    function( response) {
+                        if (response.data.Valid===1) {
+                            $rootScope.allowedNewAccount = true;
+                            $rootScope.inviteToken = $stateParams.token;
+                            $state.go('signup'); 
+                            return;
+                        }
+                        else {
+                            $state.go('login');
+                            return;
+                        }
+                    }
+                );
+            }
+        }
+    })
 
     .state("step1", {
         url: "/create/new",
@@ -198,6 +220,11 @@ angular.module("proton.routes", [
                     return;
                 }
             }
+        },
+        onEnter: function($rootScope, $state) {
+            if ($rootScope.allowedNewAccount!==true) {
+                $state.go('login');
+            }
         }
     })
 
@@ -213,6 +240,9 @@ angular.module("proton.routes", [
             }
         },
         onEnter: function(authentication, $state, $rootScope, $log) {
+            if ($rootScope.allowedNewAccount!==true) {
+                $state.go('login');
+            }
             if (authentication.isLoggedIn()) {
                 $rootScope.isLoggedIn = true;
                 return authentication.fetchUserInfo().then(
