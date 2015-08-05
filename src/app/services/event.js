@@ -149,12 +149,20 @@ angular.module("proton.event", ["proton.constants"])
 						notice = function() {
 							eventModel.checkNotice().then( function(result) {
 								if (result.data.Notices.length>0) {
-									notify({
-										message: result.data.Notices[0]
-									});
-									// var hash = atob(result.data.Notices[0]).substring(0,9);
-									// $cookies.put(hash, '1337');
-									// $cookies.put('derp', '1337');
+									var message = result.data.Notices[0];
+
+									var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
+									if ( !$cookies.get( cookie_name ) ) {
+										notify({
+											message: message
+										});
+
+										// 2 week expiration
+										var now = new Date();
+    									var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
+
+										$cookies.put(cookie_name, 'true', { expires: expires });
+									}
 								}
 							});
 						};
