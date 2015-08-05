@@ -767,6 +767,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
+
+            notify({
+                message: 'Encrypting...',
+                classes: 'notification-info'
+            }); 
+
             $scope.save(message, false).then(function() {
                 var parameters = {};
                 var emails = message.emailsToString();
@@ -776,7 +782,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 message.getPublicKeys(emails).then(function(result) {
                     var keys = result;
                     var outsiders = false;
-                    var promises = [];
+                    var promises = []; 
 
                     parameters.Packages = [];
 
@@ -826,30 +832,39 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     }
 
                     $q.all(promises).then(function() {
-                        Message.send(parameters).$promise.then(function(result) {
-                            var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
-
-                            if (result.Parent) {
-                                updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
-                                $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
-
-                                if(result.Parent.ID === $stateParams.id) {
-                                    $state.go('^');
-                                }
-                            }
-
-                            $scope.sending = false;
-
-                            if(angular.isDefined(result.Error)) {
-                                notify(result.Error);
-                                deferred.reject();
-                            } else {
-                                messageCache.set(updateMessages);
-                                notify($translate.instant('MESSAGE_SENT'));
-                                $scope.close(message, false);
-                                deferred.resolve(result);
-                            }
+                        notify({
+                            message: 'Sending...',
+                            classes: 'notification-info'
                         });
+                        Message.send(parameters).$promise
+                        .then(
+                            function(result) {
+                                alert(result);
+                                var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
+                                if (result.Parent) {
+                                    updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                    $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
+                                    if(result.Parent.ID === $stateParams.id) {
+                                        $state.go('^');
+                                    }
+                                }
+                                $scope.sending = false;
+                                if(angular.isDefined(result.Error)) {
+                                    notify(result.Error);
+                                    deferred.reject();
+                                } 
+                                else {
+                                    messageCache.set(updateMessages);
+                                    notify({
+                                        message: $translate.instant('MESSAGE_SENT'),
+                                        classes: 'notification-success'
+                                    });
+                                    $scope.close(message, false);
+                                    deferred.resolve(result);
+                                }
+                                return deferred.promise;
+                            }
+                        );
                     });
                 });
             }, function() {

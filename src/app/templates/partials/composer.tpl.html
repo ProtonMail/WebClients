@@ -182,7 +182,8 @@
                 href=""
                 class="btn btn-sm btn-default btn-add-attachment"
                 ng-class="{
-                    'active': message.displayPanel && message.panelName == 'attachments'
+                    'active': message.displayPanel && message.panelName == 'attachments',
+                    disabled: message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -195,7 +196,8 @@
                 class="btn btn-sm btn-default"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'encrypt',
-                    'btn-primary': message.IsEncrypted === 1
+                    'btn-primary': message.IsEncrypted === 1,
+                    disabled: message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
@@ -207,7 +209,8 @@
                 class="btn btn-sm btn-default"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'expiration',
-                    'btn-primary': message.ExpirationTime > 0
+                    'btn-primary': message.ExpirationTime > 0,
+                    disabled: message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"

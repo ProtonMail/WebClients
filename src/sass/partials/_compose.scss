@@ -601,8 +601,7 @@ form#compose {
             background-color: lighten($panel-header, 10%);
         }
         .composer-body * {
-            opacity: .9 !important;
-            background: transparent !important;
+            opacity: .8 !important;
         }
         * {
             pointer-events: none;
