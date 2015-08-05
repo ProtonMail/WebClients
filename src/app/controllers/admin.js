@@ -1,3 +1,5 @@
+// UNUSED. TODO: clean these up as they are a separate repository now
+
 angular.module("proton.controllers.Admin", [
     "proton.modals"
 ])

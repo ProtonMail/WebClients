@@ -839,7 +839,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         Message.send(parameters).$promise
                         .then(
                             function(result) {
-                                alert(result);
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
                                 if (result.Parent) {
                                     updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
