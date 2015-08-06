@@ -113,8 +113,8 @@ angular.module("proton.event", ["proton.constants"])
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manageNotices: function(notices) {
-				if (notices.length>0) {
-					var message = notices[0];
+				for(var i = 0; i<notices.length; i++) {
+					var message = notices[i];
 
 					var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 					if ( !$cookies.get( cookie_name ) ) {
