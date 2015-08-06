@@ -301,8 +301,6 @@ angular.module("proton.squire", [
 
                         if(!reg.test(scope.data.link)) { scope.data.link = "http://" + scope.data.link; }
 
-                        console.log(scope.data.link);
-
                         editor.makeLink(scope.data.link, {
                             target: '_blank',
                             title: scope.data.link,
