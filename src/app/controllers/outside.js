@@ -121,7 +121,10 @@ angular.module("proton.controllers.Outside", [
 
         content = tools.clearImageBody(content);
         $scope.imagesHidden = true;
-        content = DOMPurify.sanitize(content, { FORBID_TAGS: ['style'] });
+        content = DOMPurify.sanitize(content, {
+            ADD_ATTR: ['target'],
+            FORBID_TAGS: ['style']
+        });
 
         return content;
     };
