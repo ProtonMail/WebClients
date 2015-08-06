@@ -738,7 +738,6 @@ module.exports = function(grunt) {
         "copy:build_appjs",
         "copy:build_static",
         "copy:build_vendorjs",
-        "copy:htaccess",
         "copy:build_external",
         "copy:build_fonts",
         "copy:build_editor",
