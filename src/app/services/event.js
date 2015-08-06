@@ -32,9 +32,12 @@ angular.module("proton.event", ["proton.constants"])
 				return this.ID !== eventID;
 			},
 			checkNotice: function() {
-				return Events.getNoticies({}).then(function(response) {
-					return response;
-				});
+				return Events.getNoticies({})
+				.then(
+					function(response) {
+						return response;
+					}
+				);
 			},
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
@@ -154,7 +157,8 @@ angular.module("proton.event", ["proton.constants"])
 									var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 									if ( !$cookies.get( cookie_name ) ) {
 										notify({
-											message: message
+											message: message,
+											duration: '0' // https://github.com/cgross/angular-notify/issues/25
 										});
 
 										// 2 week expiration

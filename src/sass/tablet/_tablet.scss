@@ -1,22 +1,13 @@
-
 // Tablet
 @media screen and (max-width: 991px) {
-	#header #navbar {
-		position: fixed;
-		right: 0;
-		left: ($sidebar-width)*.5;
-		top: 0;
-	}
-	.panel-medium,
-	.panel-wide {
-	    width: 50%;
-	}
-	#main {
-		padding-top: 6rem;
-	}
-	body table.message-list tr td.recipient {
-		width: 14rem;
-	}
+	@import "_app.scss";
+	@import "_tablet-header.scss";
+	@import "_tablet-login.scss";
+	@import "_tablet-composer.scss";
+	@import "_message-list.scss";
+	@import "_tablet-eo.scss";
+}
+html.ua-mobile-ipad {
 	table .size {
 		display: none;
 	}
@@ -27,7 +18,6 @@
 		padding: 0 10px;
 	}
 	#main {
-		padding-left: ($sidebar-width)*.5;
 		&.eo {
 			padding: 0;
 		}
@@ -42,22 +32,5 @@
 	}
 	#dragOverlay {
 		left: ($sidebar-width)*.5;
-	}
-	#sidebar {
-		width: ($sidebar-width)*.5;
-		.list-group-item {
-			.btn {
-				line-height: ($row-height*2);
-				text-align: center;
-				&.btn-composer {
-					height: 6rem;
-  					line-height: 6rem;
-				}
-			}
-			.fa {
-				margin-right: 0;
-				font-size: 2rem;
-			}
-		}
 	}
 }

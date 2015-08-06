@@ -8,6 +8,20 @@ $fa-font-path: "fonts";
 
 // http://i.imgur.com/g514QpM.png
 
+#safariWarning {
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-top: none;
+    border-bottom-color: #ccc;
+    padding: 0 2rem;
+    line-height: $row-height;
+    height: $row-height;
+    strong {
+        text-decoration: underline;
+    }
+}
 .preload {
     position: absolute;
     left: 0;
@@ -322,10 +336,6 @@ tr.selected td {
 @import "responsive";
 
 @import "tablet/tablet";
-@import "tablet/tablet-header";
-@import "tablet/tablet-composer";
-@import "tablet/tablet-login";
-@import "tablet/message-list";
 
 @import "mobile/mobile";
 @import "mobile/mobile-header";

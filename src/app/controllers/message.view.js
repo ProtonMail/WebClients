@@ -63,7 +63,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             Message.read({IDs: [message.ID]});
         }
 
-        if(authentication.user.ShowImages===1) {
+        if (message.SenderAddress==="notify@protonmail.ch" && message.IsEncrypted===0) {
+            message.imagesHidden = false;
+            $scope.displayContent();
+        }
+        else if(authentication.user.ShowImages===1) {
             message.imagesHidden = false;
             $scope.displayContent();
         }
@@ -115,6 +119,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         return result;
     };
 
+    $scope.openSafariWarning = function() {
+        $('#safariAttachmentModal').modal('show');
+    };
+
     $scope.displayContent = function(print) {
         message.clearTextBody().then(function(result) {
             var content;
@@ -123,6 +131,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 content = result;
             } else {
                 content = message.clearImageBody(result);
+            }
+
+            // safari warning
+            if(!$scope.isFileSaverSupported) {
+                $scope.safariWarning = true;
             }
 
             content = DOMPurify.sanitize(content, {

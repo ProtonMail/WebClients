@@ -256,7 +256,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='xs') {
+        if (tools.findBootstrapEnvironment()==='sm') {
             $rootScope.mobileComposerIsOpen = true;
         }
         else {
@@ -839,7 +839,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         Message.send(parameters).$promise
                         .then(
                             function(result) {
-                                alert(result);
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
                                 if (result.Parent) {
                                     updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
@@ -925,7 +924,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.openCloseModal = function(message, save) {
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='xs') {
+        if (tools.findBootstrapEnvironment()==='sm') {
             $rootScope.mobileComposerIsOpen = false;
         }
 
@@ -947,7 +946,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.close();
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='xs') {
+        if (tools.findBootstrapEnvironment()==='sm') {
             $rootScope.mobileComposerIsOpen = false;
         }
 
@@ -970,7 +969,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.discard = function(message) {
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='xs') {
+        if (tools.findBootstrapEnvironment()==='sm') {
             $rootScope.mobileComposerIsOpen = false;
         }
 

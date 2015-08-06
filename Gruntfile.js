@@ -125,7 +125,7 @@ module.exports = function(grunt) {
         },
 
         replace: {
-            build: {
+            dist: {
                 options: {
                     patterns: [
                         {
@@ -142,38 +142,6 @@ module.exports = function(grunt) {
                         flatten: true,
                         src: ["<%= build_dir %>/**/*.html"],
                         dest: "<%= build_dir %>/"
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= build_dir %>/pages/**/*.html"],
-                        dest: "<%= build_dir %>/pages"
-                    }
-                ]
-            },
-            compile: {
-                options: {
-                    patterns: [
-                        {
-                            json: {
-                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
-                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
-                            }
-                        }
-                    ]
-                },
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= compile_dir %>/**/*.html"],
-                        dest: "<%= compile_dir %>/"
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= compile_dir %>/pages/**/*.html"],
-                        dest: "<%= compile_dir %>/pages"
                     }
                 ]
             }
@@ -197,6 +165,23 @@ module.exports = function(grunt) {
             ],
             dist: [
                 "<%= compile_dir %>"
+            ],
+            after: [
+                "<%= build_dir %>/_footer.html",
+                "<%= build_dir %>/_nav.html",
+                "<%= build_dir %>/about.html",
+                "<%= build_dir %>/faq.html",
+                "<%= build_dir %>/invite.html",
+                "<%= build_dir %>/join-us.html",
+                "<%= build_dir %>/media.html",
+                "<%= build_dir %>/perks.html",
+                "<%= build_dir %>/press.html",
+                "<%= build_dir %>/privacy-policy.html",
+                "<%= build_dir %>/security-details.html",
+                "<%= build_dir %>/technical-details.html",
+                "<%= build_dir %>/terms-and-conditions.html",
+                "<%= build_dir %>/why-protonmail.html",
+                "<%= build_dir %>/privacy-policy.html"
             ]
         },
 
@@ -760,8 +745,9 @@ module.exports = function(grunt) {
         "index:build",
         "includes:app",
         "includes:files",
-        "replace:build",
-        "testconfig"
+        "replace",
+        "testconfig",
+        "clean:after"
     ]);
 
     grunt.registerTask("compile", [
@@ -771,7 +757,6 @@ module.exports = function(grunt) {
         "copy:compile_assets",
         "includes:static_app",
         "includes:static_files",
-        "replace:compile",
         "copy:compile_fonts",
         "ngAnnotate",
         "cssmin",
@@ -791,6 +776,7 @@ module.exports = function(grunt) {
         "compile",
         "copy:deploy",
         "copy:htaccess",
+        "clean:after",
         "shell:push",
         "wait:push"
     ]);
