@@ -119,7 +119,8 @@ angular.module("proton.event", ["proton.constants"])
 					var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 					if ( !$cookies.get( cookie_name ) ) {
 						notify({
-							message: message
+							message: message,
+							duration: '0'
 						});
 
 						// 2 week expiration
