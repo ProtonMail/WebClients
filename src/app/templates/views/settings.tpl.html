@@ -20,7 +20,7 @@
                             <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }}</label>
+                            <label class="control-label" for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }} / Password Recovery Email</label>
                             <input type="email" id="notificationEmail" name="notificationEmail" class="form-control" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
                         </div>
                         <div ng-show="notificationForm.$submitted || notificationForm.notificationEmail.$touched">

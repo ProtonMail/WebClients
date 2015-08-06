@@ -131,7 +131,7 @@ module.exports = function(grunt) {
                         {
                             json: {
                                 "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
-                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
+                                "apiVersion": apiVersion, // replaces "@@apiVersion" to the value of 'apiVersion' variable
                             }
                         }
                     ]
@@ -142,6 +142,26 @@ module.exports = function(grunt) {
                         flatten: true,
                         src: ["<%= build_dir %>/**/*.html"],
                         dest: "<%= build_dir %>/"
+                    }
+                ]
+            },
+            dist2: {
+                options: {
+                    patterns: [
+                        {
+                            json: {
+                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
+                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
+                            }
+                        }
+                    ]
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ["<%= build_dir %>/pages/*.html"],
+                        dest: "<%= build_dir %>/pages/"
                     }
                 ]
             }
@@ -744,7 +764,7 @@ module.exports = function(grunt) {
         "copy:build_editor",
         "index:build",
         "includes:app",
-        "includes:files",
+        "includes:files", 
         "replace",
         "testconfig",
         "clean:after"
