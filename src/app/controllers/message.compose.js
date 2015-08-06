@@ -33,6 +33,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
+    $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
 
