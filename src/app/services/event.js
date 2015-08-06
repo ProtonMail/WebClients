@@ -32,12 +32,9 @@ angular.module("proton.event", ["proton.constants"])
 				return this.ID !== eventID;
 			},
 			checkNotice: function() {
-				return Events.getNoticies({})
-				.then(
-					function(response) {
-						return response;
-					}
-				);
+				return Events.getNoticies({}).then(function(response) {
+					return response;
+				});
 			},
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
@@ -115,6 +112,25 @@ angular.module("proton.event", ["proton.constants"])
 				this.ID = id;
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
+			manageNotices: function(notices) {
+				for(var i = 0; i<notices.length; i++) {
+					var message = notices[i];
+
+					var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
+					if ( !$cookies.get( cookie_name ) ) {
+						notify({
+							message: message,
+							duration: '0'
+						});
+
+						// 2 week expiration
+						var now = new Date();
+						var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
+
+						$cookies.put(cookie_name, 'true', { expires: expires });
+					}
+				}
+			},
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
@@ -136,6 +152,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
+				this.manageNotices(data.Notices);
 				messageCache.manageExpire();
 			}
 		};
@@ -149,32 +166,9 @@ angular.module("proton.event", ["proton.constants"])
 								eventModel.manage(result.data);
 							});
 						};
-						notice = function() {
-							eventModel.checkNotice().then( function(result) {
-								if (result.data.Notices.length>0) {
-									var message = result.data.Notices[0];
-
-									var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
-									if ( !$cookies.get( cookie_name ) ) {
-										notify({
-											message: message,
-											duration: '0' // https://github.com/cgross/angular-notify/issues/25
-										});
-
-										// 2 week expiration
-										var now = new Date();
-    									var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
-
-										$cookies.put(cookie_name, 'true', { expires: expires });
-									}
-								}
-							});
-						};
 						interval();
-						notice();
 						eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
 						started = true;
-						$interval(notice, getRandomInt(30000,40000));
 					}
 				},
 				stop: function () {
