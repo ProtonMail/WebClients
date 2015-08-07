@@ -10,6 +10,7 @@ angular.module("proton.labels", [])
             var messagesLabel = [];
             var messages = scope.getMessages();
 
+            scope.alsoArchive = true;
             scope.labels = scope.getLabels();
 
             _.each(messages, function(message) {
@@ -32,7 +33,7 @@ angular.module("proton.labels", [])
         };
 
         scope.save = function() {
-            scope.saveLabels(scope.labels);
+            scope.saveLabels(scope.labels, scope.alsoArchive);
             scope.close();
         };
 

@@ -1,32 +1,32 @@
 angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
 .controller("ViewMessageController", function(
-    $log,
-    $state,
-    $stateParams,
-    $rootScope,
-    $scope,
-    $templateCache,
     $compile,
-    $timeout,
-    $translate,
     $filter,
+    $log,
     $q,
+    $rootScope,
     $sanitize,
     $sce,
-    networkActivityTracker,
-    notify,
-    Message,
+    $scope,
+    $state,
+    $stateParams,
+    $templateCache,
+    $timeout,
+    $translate,
+    CONSTANTS,
     Label,
+    Message,
+    attachments,
+    authentication,
+    contactManager,
     message,
     messageCache,
     messageCounts,
-    tools,
-    attachments,
+    networkActivityTracker,
+    notify,
     pmcw,
-    CONSTANTS,
-    authentication,
-    contactManager
+    tools
 ) {
     $scope.message = message;
     $scope.tools = tools;
@@ -302,37 +302,47 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         };
     };
 
-    $scope.saveLabels = function(labels) {
+    $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
         var messageIDs = [message.ID];
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
 
-        messageCounts.updateTotalLabels([message], toApply, toRemove);
+        // Detect if the current message will have too many labels
+        if(_.difference(_.uniq(angular.copy(message.LabelIDs).concat(toApply)), toRemove).length > 5) {
+            notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
+            deferred.reject();
+        } else {
+            messageCounts.updateTotalLabels([message], toApply, toRemove);
 
-        _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
-        });
+            _.each(toApply, function(labelID) {
+                promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+            });
 
-        _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
-        });
+            _.each(toRemove, function(labelID) {
+                promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+            });
 
-        $q.all(promises).then(function() {
-            message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-            messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+            $q.all(promises).then(function() {
+                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
+                messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
 
-            if(toApply.length > 1 || toRemove.length > 1) {
-                notify($translate.instant('LABELS_APPLIED'));
-            } else {
-                notify($translate.instant('LABEL_APPLIED'));
-            }
+                if(alsoArchive === true) {
+                    deferred.resolve($scope.moveMessageTo('archive'));
+                } else {
+                    if(toApply.length > 1 || toRemove.length > 1) {
+                        notify($translate.instant('LABELS_APPLIED'));
+                    } else {
+                        notify($translate.instant('LABEL_APPLIED'));
+                    }
 
-            deferred.resolve();
-        });
+                    deferred.resolve();
+                }
+            });
 
-        networkActivityTracker.track(deferred.promise);
+            networkActivityTracker.track(deferred.promise);
+        }
 
         return deferred.promise;
     };
