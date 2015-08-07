@@ -2960,8 +2960,14 @@ li#nav-login2 {
   #page-invite {
     background: #fff;
   }
+  #usernameCheck .readonly {
+  	display: none !important;
+  }
   #page-invite #invite-hero h3 {
     padding: 0;
+  }
+  #invite-form legend {
+  	text-align: center;
   }
   #page-invite .note {
     padding: 0 1rem;
@@ -2972,7 +2978,7 @@ li#nav-login2 {
     border-radius: .25rem;
   }
   #page-invite #usernameCheck {
-    padding-right: 12rem;
+    padding-right: 0;
     margin-bottom: 1rem;
     height: 2rem;
     border: 1px solid #ccc;
