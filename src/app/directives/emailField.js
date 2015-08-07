@@ -15,6 +15,7 @@ angular.module("proton.emailField", [])
       var parent = $$element.parent();
       var container = $(parent).closest('.input-container');
       var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
+      $scope.message.recipientFields[list] = parent[0];
 
       $(container).on('click', function() {
           var selection = getSelection().toString();

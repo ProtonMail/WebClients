@@ -267,6 +267,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.uid = $scope.uid++;
         message.numTags = [];
+        message.recipientFields = [];
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
@@ -525,10 +526,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         );
     };
 
-    $scope.toFieldEllipsis = function(message) {
-            to = document.getElementsByClassName('to-container');
-            message.recipientFieldFocussed = 1;
-            if (to[0].scrollHeight - to[0].offsetHeight > 20) {
+    $scope.recipientFieldEllipsis = function(message, list) {
+            if ((message.recipientFields[list].scrollHeight - message.recipientFields[list].offsetHeight) > 20) {
                 return true;
             } else {
                 return false;

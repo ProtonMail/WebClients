@@ -72,7 +72,7 @@
                                 <div class="typeahead-container to-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
                                     <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
                                 </div>
-                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && toFieldEllipsis()">
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
                                 </span>
                                 <span class="input-group-btn" ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
@@ -91,7 +91,7 @@
                                 <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
                                     <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
                                 </div>
-                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields">
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
                                 </span>
                             </div>
@@ -102,7 +102,7 @@
                                 <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
                                     <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
                                 </div>
-                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields">
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
                                 </span>
                             </div>
