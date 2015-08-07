@@ -96,6 +96,35 @@ angular.module("proton.controllers.Contacts", [
         });
     }
 
+    $scope.deleteAllContacts = function() {
+        var title = $translate.instant('DELETE_ALL_CONTACTS');
+        var message = 'Are you sure you want to delete all the contacts?';
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    authentication.user.Contacts = [];
+                    $scope.contacts = $scope.contactsFiltered();
+
+                    networkActivityTracker.track(
+                        Contact.clear().then(function(response) {
+                            notify($translate.instant('CONTACTS_DELETED'));
+                            Contact.index.updateWith($scope.contacts);
+                        }, function(response) {
+                            $log.error(response);
+                        })
+                    );
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
     $scope.deleteContacts = function(contact) {
         var contactsSelected = contact ? [contact] : $scope.contactsSelected();
         var message, title;
@@ -222,30 +251,6 @@ angular.module("proton.controllers.Contacts", [
             }
 
         });
-    };
-
-    $scope.allSelected = function() {
-        var status = true;
-
-        if (authentication.user.Contacts.length > 0) {
-            _.forEach(authentication.user.Contacts, function(contact) {
-                if (!!!contact.selected) {
-                    status = false;
-                }
-            });
-        } else {
-            status = false;
-        }
-
-        return status;
-    };
-
-    $scope.selectAllContacts = function() {
-        var status = !!!$scope.allSelected();
-
-        _.forEach(authentication.user.Contacts, function(contact) {
-            contact.selected = status;
-        }, this);
     };
 
     $scope.onSelectContact = function(event, contact) {

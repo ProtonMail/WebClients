@@ -4,10 +4,11 @@
     <div class="container-fluid margin-top">
         <div class="row">
             <div class="col-md-6 form-group">
-                <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
-                <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
-                <br><br>
-                <div class="input-group form-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
+                <div class="form-group">
+                    <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
+                    <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
+                </div>
+                <div class="input-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
                     <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}" ng-change="refreshContacts(true)" />
                     <a href ng-click="params.searchContactInput = '';refreshContacts(true)">
                         <i class="fa fa-times"></i>
@@ -15,9 +16,11 @@
                 </div>
             </div>
             <div class="col-md-6 text-right form-group">
-                <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
-                <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
-                <br><br>
+                <div class="form-group">
+                    <button type="button" class="btn btn-default" ng-click="deleteAllContacts()"><i class="fa fa-trash"></i> {{ 'DELETE_ALL_CONTACTS' | translate }}</button>
+                    <button type="button" class="btn btn-default" ng-click="uploadContacts()"><i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}</button>
+                    <button type="button" class="btn btn-default" ng-click="downloadContacts()"><i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}</button>
+                </div>
                 <pagination
                 total-items="totalItems"
                 ng-model="currentPage"
@@ -33,9 +36,7 @@
                 <table class="table table-middle table-hover table-pm" id="contactsTable">
                     <thead>
                         <tr>
-                            <th class="text-center hidden-xs checkboxTh">
-                                <input type="checkbox" ng-model="allSelected()" ng-click="selectAllContacts()" pt-tooltip="{{ 'ALL' | translate }}" />
-                            </th>
+                            <th class="text-center hidden-xs checkboxTh"></th>
                             <th>
                                 {{ 'NAME' | translate }}
                                 <a href="" ng-click="setSortBy('Name')" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
