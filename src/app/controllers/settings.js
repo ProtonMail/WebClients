@@ -261,19 +261,18 @@ angular.module("proton.controllers.Settings", [
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
-
         var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
 
         if (newEncPrivateKey === -1) {
             notify($translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'));
         }
-        else if (newEncPrivateKey.length <50) {
+        else if (newEncPrivateKey.length < 50) {
             notify(newEncPrivateKey);
         }
         else {
             networkActivityTracker.track(
                 User.keys({
-                    "Password": $scope.newMailboxPassword,
+                    "Password": newMailPwd,
                     "PublicKey": authentication.user.PublicKey,
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
@@ -444,7 +443,7 @@ angular.module("proton.controllers.Settings", [
                                     label.Display = 1;
                                     $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
                                 }
-                            }, 
+                            },
                             function(result) {
                                 $log.error(result);
                             }
