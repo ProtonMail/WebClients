@@ -67,11 +67,17 @@
                     </div>
                     <div class="form-horizontal">
                         <div class="form-group">
-                            <div class="input-group input-container">
+                            <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 1">
                                 <div class="input-group-addon">{{ 'TO' | translate }}</div>
-                                <div class="typeahead-container to-container">
+                                <div class="typeahead-container to-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
                                     <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
                                 </div>
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && toFieldEllipsis()">
+                                    <button class="btn btn-sm btn-white pull-right elf">...</button>
+                                </span>
+                                <span class="input-group-btn" ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
+                                    <button class="btn btn-sm btn-white pull-right elf">{{message.numTags.CCList + message.numTags.BCCList}}</button>
+                                </span>
                                 <span class="input-group-btn">
                                     <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
                                         <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
@@ -80,24 +86,30 @@
                             </div>
                         </div>
                         <div class="form-group" ng-show="message.fields">
-                            <div class="input-group input-container">
+                            <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 2">
                                 <div class="input-group-addon">{{ 'CC' | translate }}</div>
-                                <div class="typeahead-container cc-container">
+                                <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
                                     <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
                                 </div>
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields">
+                                    <button class="btn btn-sm btn-white pull-right elf">...</button>
+                                </span>
                             </div>
                         </div>
                         <div class="form-group" ng-show="message.fields">
-                            <div class="input-group input-container">
+                            <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 3">
                                 <div class="input-group-addon">{{ 'BCC' | translate }}</div>
-                                <div class="typeahead-container bcc-container">
+                                <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
                                     <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
                                 </div>
+                                <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields">
+                                    <button class="btn btn-sm btn-white pull-right elf">...</button>
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                        <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false; message.recipientFieldFocussed = 0" ng-model="message.Subject" ng-model-options="{updateOn: 'default', debounce: {'default': 500}}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                     </div>
                 </div>
                 <div class="form-group composeEditor" ng-init="params = {}">

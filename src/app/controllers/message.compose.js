@@ -36,6 +36,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
+    $scope.numTags = [];
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -265,6 +266,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         message.uid = $scope.uid++;
+        message.numTags = [];
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
@@ -287,6 +289,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $timeout(function() {
             $scope.focusComposer(message);
+            message.recipientFieldFocussed = 1;
         }, 100);
 
         $log.debug('initMessage:end');
@@ -388,8 +391,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         	// Height
         	if(windowHeight < composerHeight) {
         		styles.height = windowHeight + 'px';
-        	} else {
-        		styles.height = 'auto';
         	}
 
             $(composer).css(styles);
@@ -484,6 +485,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
+                    message.fields = false;
+                    message.recipientFieldFocussed = 0;
                     $('.typeahead-container').scrollTop(0);
                 });
             });
@@ -522,8 +525,22 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         );
     };
 
+    $scope.toFieldEllipsis = function(message) {
+            to = document.getElementsByClassName('to-container');
+            message.recipientFieldFocussed = 1;
+            if (to[0].scrollHeight - to[0].offsetHeight > 20) {
+                return true;
+            } else {
+                return false;
+            }
+    };
+
     $scope.toggleFields = function(message) {
         message.fields = !message.fields;
+        $timeout(function() {
+            message.recipientFieldFocussed = (message.fields) ? 4 : 0;
+            $scope.apply();
+        });
         $scope.composerStyle();
     };
 

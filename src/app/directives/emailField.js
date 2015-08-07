@@ -14,6 +14,7 @@ angular.module("proton.emailField", [])
       var $$element = $($element[0]);
       var parent = $$element.parent();
       var container = $(parent).closest('.input-container');
+      var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
 
       $(container).on('click', function() {
           var selection = getSelection().toString();
@@ -66,6 +67,7 @@ angular.module("proton.emailField", [])
           .value()
         );
         $scope.$apply();
+        $scope.message.numTags[list] = manager.tagsManager('tags').length;
       };
 
       $timeout(positionInput, 0);
@@ -175,8 +177,6 @@ angular.module("proton.emailField", [])
         });
 
       $$element.autosizeInput();
-
-      var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
 
       _.forEach($scope.message[list], function(d) {
           if (typeof d.Name === 'undefined' || d.Name === '') {
