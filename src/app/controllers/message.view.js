@@ -462,7 +462,16 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.viewPgp = function() {
         $log.debug(message);
-        window.open('data:text/plain;base64,'+btoa(message.Header+'\n\r'+message.Body), '_blank');
+
+        var content = btoa(message.Header + '\n\r' + message.Body);
+        var blob = new Blob([content], { type: 'data:text/plain;base64;' });
+        var filename = 'pgp.txt';
+
+        if(navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            window.open('data:text/plain;base64,' + content, '_blank');
+        }
     };
 
     $scope.togglePlainHtml = function() {
