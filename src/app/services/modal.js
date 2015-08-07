@@ -93,16 +93,6 @@ angular.module("proton.modals", [])
             this.message = params.message;
             this.title = params.title;
 
-            $('body').bind("keydown keypress", function(event) {
-                if(event.which === 13) { // ENTER
-                    this.confirm();
-                }
-
-                if(event.which === 27) { // ESCAPE
-                    this.cancel();
-                }
-            }.bind(this));
-
             this.confirm = function() {
                 if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
                     params.confirm();
