@@ -130,7 +130,10 @@ angular.module("proton.authentication", [
         },
 
         savePassword: function(pwd) {
+            // Why is this saved in three different places?
             window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_base64(pwd);
+            auth.mailboxPassword = pwd;
+            pmcw.setMailboxPassword(pwd);
         },
 
         getPassword: function() {
