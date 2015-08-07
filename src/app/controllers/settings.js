@@ -104,6 +104,7 @@ angular.module("proton.controllers.Settings", [
     $scope.downloadLogs = function () {
         var logsArray = [['Event', 'Time', 'IP']];
         var csvRows = [];
+        var filename = 'logs.csv';
 
         _.forEach($scope.logs, function(log) {
           logsArray.push([log.Event, moment(log.Time * 1000), log.IP]);
@@ -114,41 +115,74 @@ angular.module("proton.controllers.Settings", [
         }
 
         var csvString = csvRows.join("%0A");
-        var a         = document.createElement('a');
-        a.href        = 'data:attachment/csv,' + csvString;
-        a.target      = '_blank';
-        a.download    = 'logs.csv';
+        var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+        if(navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement('a');
+
+            if (typeof link.download !== 'undefined') { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
     };
 
     $scope.exportPublicKey = function () {
-
         var pbk = btoa(authentication.user.PublicKey);
-        var a         = document.createElement('a');
-        a.href        = 'data:text/plain;base64,' + pbk;
-        a.target      = '_blank';
-        a.download    = 'protonmail_public_'+authentication.user.Name+'.txt';
+        var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
+        var filename = 'protonmail_public_' + authentication.user.Name + '.txt';
 
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+        if(navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement('a');
+
+            if (typeof link.download !== 'undefined') { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
     };
 
     // NOT USED
     $scope.exportEncPrivateKey = function () {
-
         var pbk = btoa(authentication.user.EncPrivateKey);
-        var a         = document.createElement('a');
-        a.href        = 'data:text/plain;base64,' + pbk;
-        a.target      = '_blank';
-        a.download    = 'protonmail_private_'+authentication.user.Name+'.txt';
+        var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
+        var filename = 'protonmail_private_'+authentication.user.Name+'.txt';
 
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+        if(navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement('a');
+
+            if (typeof link.download !== 'undefined') { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
     };
 
     // Drag and Drop configuration
