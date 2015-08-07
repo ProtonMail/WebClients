@@ -283,6 +283,7 @@ angular.module("proton.controllers.Settings", [
                         $scope.oldMailboxPassword = '';
                         $scope.newMailboxPassword = '';
                         $scope.confirmMailboxPassword = '';
+                        authentication.user.EncPrivateKey = newEncPrivateKey;
                         form.$setUntouched();
                     }
                 }, function(response) {
