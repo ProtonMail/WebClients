@@ -769,11 +769,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         if(validate) {
 
-            notify({
-                message: 'Encrypting...',
-                classes: 'notification-info'
-            }); 
-
             $scope.save(message, false).then(function() {
                 var parameters = {};
                 var emails = message.emailsToString();
@@ -833,10 +828,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     }
 
                     $q.all(promises).then(function() {
-                        notify({
-                            message: 'Sending...',
-                            classes: 'notification-info'
-                        });
                         Message.send(parameters).$promise
                         .then(
                             function(result) {
