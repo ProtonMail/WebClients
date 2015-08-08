@@ -32,6 +32,12 @@ angular.module("proton.labels", [])
             });
         };
 
+        scope.color = function(label) {
+            return {
+                backgroundColor: label.Color
+            };
+        };
+
         scope.save = function() {
             scope.saveLabels(scope.labels, scope.alsoArchive);
             scope.close();
