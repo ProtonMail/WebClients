@@ -397,6 +397,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             if(_.where(authentication.user.Addresses, {Email: message.SenderAddress}).length > 0) {
                 base.ToList = message.ToList;
                 base.CCList = message.CCList;
+                base.BCCList = messsage.BCCList;
             } else {
                 base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
                 base.CCList = _.union(message.ToList, message.CCList);
