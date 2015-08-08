@@ -65,14 +65,10 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.send = function() {
+        var deferred = $q.defer();
         var publicKey = $scope.message.publicKey;
-        $log.debug(publicKey);
-        $log.debug('$scope.message',$scope.message);
-        $log.debug('message',message);
         var bodyPromise = pmcw.encryptMessage($scope.message.Body, $scope.message.publicKey);
-        $log.debug('b');
         var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
-        $log.debug('c');
 
         $q.all({
             Body: bodyPromise,
@@ -80,9 +76,6 @@ angular.module("proton.controllers.Outside", [
         })
         .then(
             function(result) {
-
-                $log.debug('d');
-
                 var data = {
                     'Body': result.Body,
                     'ReplyBody': result.ReplyBody,
@@ -95,20 +88,22 @@ angular.module("proton.controllers.Outside", [
                 Eo.reply(decrypted_token, token_id, data)
                 .then(
                     function(result) {
-                        $log.debug('e');
                         $state.go('eo.message', {tag: $stateParams.tag});
                         notify($translate.instant('MESSAGE_SENT'));
+                        deferred.resolve(result);
                     },
                     function(error) {
-                        $log.debug('f');
                         notify(error);
+                        deferred.reject(error);
                     }
                 );
             },
             function(err) {
-                $log.debug('g');
+                deferred.reject(err);
             }
         );
+
+        return networkActivityTracker.track(deferred.promise);
     };
 
     $scope.cancel = function() {
