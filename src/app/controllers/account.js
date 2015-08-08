@@ -168,7 +168,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 );
             }
         );
-    };    
+    };
 
     $scope.finishRedirect = function() {
         $log.debug('finishRedirect');
@@ -223,7 +223,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
 
         var getMBToken = function() {
             $log.debug('getMBToken');
-            return Reset.getMailboxResetToken();
+            return Reset.getMailboxResetToken({});
         };
         var tokenResponse = function(response) {
             $log.debug('tokenResponse', response);
