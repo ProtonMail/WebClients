@@ -383,6 +383,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         base.ParentID = message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + $scope.content + blockquoteEnd;
 
+        if(angular.isDefined(message.AddressID)) {
+            base.From = _.findWhere(authentication.user.Addresses, {ID: message.AddressID});
+        }
+
         if (action === 'reply') {
             base.Action = 0;
             if($state.is('secured.sent.message')) {
@@ -397,7 +401,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             if(_.where(authentication.user.Addresses, {Email: message.SenderAddress}).length > 0) {
                 base.ToList = message.ToList;
                 base.CCList = message.CCList;
-                base.BCCList = messsage.BCCList;
+                base.BCCList = message.BCCList;
             } else {
                 base.ToList = [{Name: message.SenderName, Address: message.SenderAddress}];
                 base.CCList = _.union(message.ToList, message.CCList);

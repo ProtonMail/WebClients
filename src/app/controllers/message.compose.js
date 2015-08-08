@@ -61,10 +61,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
-        $log.debug('loadMessage');
-        message.saved = 2;
-        message = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
-        $scope.initMessage(angular.copy(message), save);
+        var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
+
+        mess.saved = 2;
+        $scope.initMessage(mess, save);
     });
 
     $scope.$on('editorLoaded', function(event, element, editor) {
@@ -778,7 +778,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 message.getPublicKeys(emails).then(function(result) {
                     var keys = result;
                     var outsiders = false;
-                    var promises = []; 
+                    var promises = [];
 
                     parameters.Packages = [];
 
@@ -843,7 +843,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 if(angular.isDefined(result.Error)) {
                                     notify(result.Error);
                                     deferred.reject();
-                                } 
+                                }
                                 else {
                                     messageCache.set(updateMessages);
                                     notify({
