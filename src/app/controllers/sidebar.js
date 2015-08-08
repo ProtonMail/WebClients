@@ -87,6 +87,12 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }
     };
 
+    $scope.sizeBar = function() {
+        return {
+            width: (100 * authentication.user.UsedSpace / authentication.user.MaxSpace) + '%'
+        };
+    };
+
     $scope.renderStorageBar = function() {
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };

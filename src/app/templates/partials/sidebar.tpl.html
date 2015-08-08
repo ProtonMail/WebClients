@@ -131,7 +131,7 @@
             </li>
             <li>
                 <div class="sizeBar">
-                    <span class="fill" style="width:{{ 100 * user.UsedSpace / user.MaxSpace }}%"></span>
+                    <span class="fill" ng-style="sizeBar()"></span>
                 </div>
             </li>
         </ul>
