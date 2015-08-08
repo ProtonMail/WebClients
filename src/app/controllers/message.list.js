@@ -43,16 +43,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        if (typeof $rootScope.messageTotals === 'undefined') {
-            Message.totalCount().$promise.then(function(totals) {
-                var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
-
-                _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-                _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-                $rootScope.messageTotals = total;
-            });
-        }
-
         $scope.refreshMessagesCache().then(function() {
             $scope.actionsDelayed();
             $scope.startWatchingEvent();
@@ -521,6 +511,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.moveMessagesTo = function(mailbox) {
+        var deferred = $q.defer();
         var ids = $scope.selectedIds();
         var inDelete = mailbox === 'delete';
         var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
@@ -553,10 +544,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
-        promiseAction = function(result) {
+        var promiseAction = function(result) {
             if(events.length > 0) {
                 messageCache.sync();
             }
+
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));
@@ -564,6 +556,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     notify($translate.instant('MESSAGE_DELETED'));
                 }
             }
+
+            deferred.resolve();
         };
 
         if ($scope.messages.length === 0) {
@@ -571,6 +565,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         } else {
             promise.then(promiseAction);
         }
+
+        return deferred.promise;
     };
 
     $scope.filterBy = function(status) {
@@ -628,87 +624,64 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.openLabels = function(message) {
-        var messages = [];
-        var messagesLabel = [];
-        var labels = $scope.labels;
-
-        if (angular.isDefined(message)) {
-            messages.push(message);
-        } else {
-            messages = $scope.selectedMessages();
-        }
-
-        _.each(messages, function(message) {
-            messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
-                return id;
-            }));
-        });
-
-        _.each(labels, function(label) {
-            var count = _.filter(messagesLabel, function(m) {
-                return m === label.ID;
-            }).length;
-
-            label.Selected = count > 0;
-        });
-
-        $timeout(function() {
-            $('#searchLabels').focus();
-        });
-    };
-
     $scope.closeLabels = function() {
         $scope.unselectAllLabels();
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
-    $scope.saveLabels = function(labels) {
+    $scope.saveLabels = function(labels, alsoArchive) {
+        console.log('message.list.js@saveLabels');
         var deferred = $q.defer();
         var messageIDs = $scope.selectedIds();
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
+        var tooManyLabels = false;
+        var selectedMessages = $scope.selectedMessages();
 
-        _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
+        // Detect if a message will have too many labels
+        _.each(selectedMessages, function(message) {
+            if(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove).length > 5) {
+                tooManyLabels = true;
+            }
         });
 
-        _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
-        });
-
-        $q.all(promises).then(function(results) {
-            var tooManyLabels = false;
-
-            _.each(results, function(result) {
-                _.each(result.Responses, function(Response) {
-                    if(Response.Response.Code === 14035) {
-                        tooManyLabels = true;
-                    }
-                });
+        if(tooManyLabels) {
+            notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
+            deferred.reject();
+        } else {
+            _.each(toApply, function(labelID) {
+                promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
             });
 
-            if(tooManyLabels) {
-                notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
-            } else {
+            _.each(toRemove, function(labelID) {
+                promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
+            });
+
+            $q.all(promises).then(function(results) {
                 messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
                 messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
 
-                if($state.is('secured.label')) {
+                if(alsoArchive === true) {
+                    deferred.resolve($scope.moveMessagesTo('archive'));
+                }
+
+                if($state.is('secured.label') && toRemove.indexOf($stateParams.id) !== -1) {
                     $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
-                } else {
+                }
+
+                if(alsoArchive === false) {
                     _.each($scope.selectedMessages(), function(message) {
                         message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
                     });
+
                     $scope.unselectAllMessages();
+                    deferred.resolve();
                 }
-            }
+            });
 
-            deferred.resolve();
-        });
-
-        networkActivityTracker.track(deferred.promise);
+            networkActivityTracker.track(deferred.promise);
+        }
 
         return deferred.promise;
     };
@@ -724,8 +697,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             labels.push(label);
         });
 
-        $scope.saveLabels(labels);
-        $scope.unselectAllLabels();
+        $scope.saveLabels(labels, true);
     };
 
     $scope.goToPage = function(page, scrollToBottom) {
