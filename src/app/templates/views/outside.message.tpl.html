@@ -17,11 +17,19 @@
                 <b>{{ message.SenderName }}</b> &lt;{{ message.SenderAddress }}&gt;
                 <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
             </li>
-            <li>
+            <li ng-if="message.ToList.length > 0">
                 <strong>{{ 'TO' | translate }}</strong>
-                <ul class="list-inline inline" ng-if="message.ToList.length > 0">
+                <ul class="list-inline inline">
                     <li ng-repeat="email in message.ToList">
                         <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                    </li>
+                </ul>
+            </li>
+            <li ng-if="message.CCList.length > 0">
+                <strong>{{ 'CC' | translate }}</strong>
+                <ul class="list-inline inline">
+                    <li ng-repeat="email in message.CCList">
+                        {{ email.Address }}
                     </li>
                 </ul>
             </li>
