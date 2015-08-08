@@ -257,7 +257,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm') {
+        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = true;
         }
         else {
@@ -916,7 +916,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.openCloseModal = function(message, save) {
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm') {
+        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = false;
         }
 
@@ -938,7 +938,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.close();
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm') {
+        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = false;
         }
 
@@ -961,7 +961,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.discard = function(message) {
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm') {
+        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = false;
         }
 
