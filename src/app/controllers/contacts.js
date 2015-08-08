@@ -395,31 +395,46 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.downloadContacts = function() {
-
         if (tools.getBrowser==='Safari') {
             $scope.openSafariWarning();
-        }
-        else {
+        } else {
             var contactsArray = [['Name', 'Email']];
             var csvRows = [];
+            var filename = 'contacts.csv';
+
             _.forEach(authentication.user.Contacts, function(contact) {
                 contactsArray.push([contact.Name, contact.Email]);
             });
+
             for(var i=0, l=contactsArray.length; i<l; ++i){
                 csvRows.push(contactsArray[i].join(','));
             }
+
             var csvString = csvRows.join("%0A");
 
             if (tools.getBrowser==='Safari') {
                 $scope.openSafariWarning();
             }
-            var a         = document.createElement('a');
-            a.href        = 'data:attachment/csv,' + csvString;
-            a.target      = '_blank';
-            a.download    = 'contacts.csv';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
+
+            var blob = new Blob([csvString], { type: 'data:attachment/csv;' });
+
+            if(navigator.msSaveBlob) { // IE 10+
+                navigator.msSaveBlob(blob, filename);
+            } else {
+                var link = document.createElement('a');
+
+                if (typeof link.download !== 'undefined') { // feature detection
+                    // Browsers that support HTML5 download attribute
+                    var url = URL.createObjectURL(blob);
+
+                    link.setAttribute("href", url);
+                    link.setAttribute("download", filename);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            }
         }
 
     };
