@@ -489,6 +489,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     message.fields = false;
                     message.recipientFieldFocussed = 0;
                     $('.typeahead-container').scrollTop(0);
+                    $scope.$apply();
                 });
             });
 
