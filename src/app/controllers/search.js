@@ -70,11 +70,11 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     $scope.open = function(value) {
         $scope.labels = authentication.user.Labels;
         // reset params
-        $scope.params.attachments = 2;
-        $scope.params.starred = 2;
+        $scope.params.attachments = $scope.params.attachments || 2;
+        $scope.params.starred = $scope.params.starred || 2;
         $scope.params.words = value || '';
 
-        // init form
+        // init form for date picker
         $scope.searchForm.begin = {};
         $scope.searchForm.end = {};
 
