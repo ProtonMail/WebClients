@@ -1,7 +1,7 @@
 <div id="outsideMessageWrap">
     <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
         <div class="pull-right">
-            <span ng-bind-html="message.Time | longReadableTime"></span>
+            <span ng-bind-html="ago"></span>
         </div>
         <h1>
             <span class="attachement" ng-show="message.Attachments.length > 0">

@@ -13,7 +13,7 @@
 
     <div class="message-metadata">
         <div class="pull-right">
-            <span ng-bind-html="message.Time | longReadableTime"></span>
+            <span ng-bind-html="ago"></span>
         </div>
         <ul class="infos">
             <li>
@@ -68,7 +68,7 @@
 
 </div>
 
-<div ng-if="message.Attachments.length > 0" id="attachmentArea"> 
+<div ng-if="message.Attachments.length > 0" id="attachmentArea">
     <span class="alert alert-info" id="safariWarning" ng-show="safariWarning" ng-click="openSafariWarning()">
         <strong>Need help</strong> downloading attachments?
     </span>
@@ -103,7 +103,7 @@
         data-download-text="{{ 'DOWNLOAD' | translate }}"
         ng-click="decryptAttachment(message, attachment, $event)">
             <i class="fa" ng-class="{
-            'fa-paperclip': (!!!attachment.decrypting && !!!attachment.decrypted), 
+            'fa-paperclip': (!!!attachment.decrypting && !!!attachment.decrypted),
             'fa-cog fa-spin': attachment.decrypting
             }"></i>
             <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})

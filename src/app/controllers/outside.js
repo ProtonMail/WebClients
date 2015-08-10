@@ -4,23 +4,24 @@ angular.module("proton.controllers.Outside", [
 ])
 
 .controller("OutsideController", function(
+    $filter,
+    $interval,
+    $log,
+    $q,
     $scope,
-    $timeout,
     $state,
     $stateParams,
-    $q,
+    $timeout,
     $translate,
-    $log,
-    authentication,
-    Message,
-    tools,
-    pmcw,
-    attachments,
-    Eo,
     CONSTANTS,
+    Eo,
+    Message,
+    attachments,
+    authentication,
+    message,
     notify,
-
-    message
+    pmcw,
+    tools
 ) {
     $scope.message = message;
 
@@ -59,6 +60,18 @@ angular.module("proton.controllers.Outside", [
             $scope.addAttachment(file_array);
         });
     }, 100);
+
+    // start timer ago
+    $scope.agoTimer = $interval(function() {
+        var time = $filter('longReadableTime')($scope.message.Time);
+
+        $scope.ago = time;
+    }, 1000);
+
+    $scope.$on('$destroy', function() {
+        // cancel timer ago
+        $interval.cancel($scope.agoTimer);
+    });
 
     $scope.selectFile = function() {
         $('#inputFile').click();

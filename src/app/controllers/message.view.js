@@ -4,6 +4,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $compile,
     $filter,
     $log,
+    $interval,
     $q,
     $rootScope,
     $sanitize,
@@ -51,6 +52,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.$on('$destroy', function() {
         $(window).off('resize');
+        // cancel timer ago
+        $interval.cancel($scope.agoTimer);
     });
 
     $scope.initView = function() {
@@ -71,6 +74,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             message.imagesHidden = false;
             $scope.displayContent();
         }
+
+        // start timer ago
+        $scope.agoTimer = $interval(function() {
+            var time = $filter('longReadableTime')($scope.message.Time);
+
+            $scope.ago = time;
+        }, 1000);
     };
 
     $scope.toggleStar = function(message) {
