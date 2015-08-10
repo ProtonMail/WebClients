@@ -20,6 +20,8 @@ angular.module('proton.constants', [])
     ENC_STORED_ENC: 5, // such as draft
     INTERVAL_EVENT_TIMER: 15000, // time between querying the event log
     TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
+    UPLOAD_GRADIENT_DARK: '134, 132, 191', // dark rgb color for upload progress bar
+    UPLOAD_GRADIENT_LIGHT: '147, 145, 209', // light rgb color for upload progress bar
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
     SAVE_TIMEOUT_TIME: 2000, // 2 seconds
     MAX_EXPIRATION_TIME: 672, // hours

@@ -78,6 +78,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
+    $scope.$on('uploadProgress', function() {$scope.$apply();});
+
     $(window).on('resize', function() {
         clearTimeout(timeoutStyle);
         timeoutStyle = setTimeout(function() {
@@ -225,6 +227,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
+        tempPacket.uploadBar = {
+            'background': 'gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' +
+                                  0 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'
+        };
 
         message.uploading = true;
         message.Attachments.push(tempPacket);
@@ -234,11 +240,15 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         attachments.load(file).then(
             function(packets) {
-                return attachments.upload(packets, message.ID).then(
+                return attachments.upload(packets, message.ID, tempPacket).then(
                     function(result) {
                         var index = message.Attachments.indexOf(tempPacket);
 
-                        message.Attachments.splice(index, 1, result);
+                        if (result === 'aborted') {
+                            message.Attachments.splice(index, 1);
+                        } else {
+                            message.Attachments.splice(index, 1, result);
+                        }
                         message.uploading = false;
                     }
                 );
