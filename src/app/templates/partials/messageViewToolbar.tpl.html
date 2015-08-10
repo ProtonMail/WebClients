@@ -1,5 +1,5 @@
-<div class="message-toolbar hidden-xs">
-    <ul class="nav navbar-nav">
+<div class="message-toolbar">
+    <ul class="nav navbar-nav" id="messageActionButtons">
         <li class="seperator">
             <a href class="backBtn" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
                 <i class="fa fa-long-arrow-left"></i>
@@ -115,7 +115,7 @@
         </li>
     </ul>
 
-    <ul class="nav navbar-nav pull-right navigation" id="messageActionGroup">
+    <ul class="nav navbar-nav pull-right navigation hidden-xs" id="messageActionGroup">
         <li>
             <a href ng-click="reply(message)" class="btn btn-primary">
                 <i class="fa fa-reply"></i>

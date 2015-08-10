@@ -4,12 +4,21 @@
 	left: ($sidebar-width)*.5;
 	top: 0;
 }
+#messageActionButtons {
+	height: 3rem;
+	line-height: 3rem;
+	li {
+		display: inline-block;
+		height: 3rem;
+		line-height: 3rem;
+	}
+}
 .panel-medium,
 .panel-wide {
     width: 50%;
 }
 #main {
-	padding-top: 6rem;
+	padding-top: 5rem;
 }
 body table.message-list tr td.recipient {
 	width: 14rem;
