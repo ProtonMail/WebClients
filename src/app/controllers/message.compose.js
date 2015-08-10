@@ -222,15 +222,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
+    $scope.getElement = function(tempPacket, index) {
+        console.log(tempPacket, index);
+        tempPacket.id = '#attachment' + index;
+    };
+
     $scope.addAttachment = function(file, message) {
         var tempPacket = {};
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
-        tempPacket.uploadBar = {
-            'background': 'gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' +
-                                  0 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'
-        };
+        // tempPacket.uploadBar = {
+        //     'background': 'gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' +
+        //                           0 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'
+        // };
 
         message.uploading = true;
         message.Attachments.push(tempPacket);

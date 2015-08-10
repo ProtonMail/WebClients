@@ -172,8 +172,9 @@
                         <span
                         title="Attachment"
                         class="preview-template"
-                        ng-style="attachment.uploadBar"
-                        ng-repeat="attachment in message.Attachments">
+                        id="attachment{{$index}}"
+                        ng-repeat="attachment in message.Attachments"
+                        ng-init="getElement(attachment, $index)">
                             <span
                             class="preview-name"
                             ng-bind="attachment.filename || attachment.Name"></span>
