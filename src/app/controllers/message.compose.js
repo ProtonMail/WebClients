@@ -310,6 +310,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.sanitizeBody = function(message) {
         message.Body = DOMPurify.sanitize(message.Body, {
+            ADD_ATTR: ['target'],
             FORBID_TAGS: ['style']
         });
     };

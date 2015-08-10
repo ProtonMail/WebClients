@@ -139,6 +139,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             }
 
             content = DOMPurify.sanitize(content, {
+                ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style']
             });
 
