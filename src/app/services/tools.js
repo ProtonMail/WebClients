@@ -13,18 +13,22 @@ angular.module("proton.tools", ["proton.constants"])
         }
 
         function get_browser() {
-            var N = navigator.appName,
-                ua = navigator.userAgent,
-                tem;
-            var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+            var browser;
+            var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+            // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+            var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+            var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+            // At least Safari 3+: "[object HTMLElementConstructor]"
+            var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+            var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
-            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) {
-                M[2] = tem[1];
-            }
+            if(isOpera) { browser = 'Opera'; }
+            if(isFirefox) { browser = 'Firefox'; }
+            if(isSafari) { browser = 'Safari'; }
+            if(isChrome) { browser = 'Chrome'; }
+            if(isIE) { browser = 'Internet Explorer'; }
 
-            M = M ? [M[1], M[2]] : [N, navigator.appVersion, '-?'];
-
-            return M[0];
+            return browser;
         }
 
         function get_browser_version() {
