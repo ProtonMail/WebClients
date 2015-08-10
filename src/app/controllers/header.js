@@ -32,6 +32,10 @@ angular.module("proton.controllers.Header", [])
         }
     };
 
+    $scope.closeMobileDropdown = function() {
+        $(".navbar-toggle").click();
+    };
+
     $scope.openNewMessage = function() {
         $rootScope.$broadcast('newMessage');
     };
