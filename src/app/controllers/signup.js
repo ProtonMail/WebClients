@@ -38,6 +38,13 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         $scope.account = [];
 
+        // Prepoppulate the username if from an invite link
+        // and mark as read only
+        if ($rootScope.username!==undefined) {
+            $scope.account.Username = $rootScope.username;
+            $scope.readOnlyUsername = true;
+        }
+
     };
 
     // ---------------------------------------------------

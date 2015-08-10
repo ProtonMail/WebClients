@@ -61,11 +61,12 @@
                     placeholder="Username" 
                     autofocus 
                     required 
+                    ng-readonly="readOnlyUsername"
                     id="Username" 
                     class="form-control" 
                     pt-tooltip="You can switch to protonmail.ch after account creation." 
                     pt-placement="bottom">
-                    <em class="usernameDomain">@protonmail.ch</em>
+                    <em class="usernameDomain">@protonmail.com</em>
                 </div>
             </div>
             <hr>
@@ -85,7 +86,7 @@
                 placeholder="Password" 
                 required />
                 <div ng-show="step1.$submitted || step1.password.$touched">
-                    <p ng-show="step1.password.$error.required" class="text-danger">Login password is required.</p>
+                    <p ng-show="step1.$submitted && step1.password.$error.required" class="text-danger">Login password is required.</p>
                 </div>
             </div>
             <div class="form-group">
@@ -98,7 +99,7 @@
                 type="password" 
                 class="form-control" 
                 placeholder="Confirm Password" 
-                required=
+                required
                 validator="account.loginPassword !== account.loginPasswordConfirm" />
                 <div ng-show="step1.$submitted || step1.passwordc.$touched">
                     <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
@@ -108,28 +109,37 @@
             <div class="form-group">
                 <label for="password">{{ 'MAILBOX_PASSWORD' | translate }}</label>
                 <input 
-                id="password" 
-                name="password" 
+                id="MBpassword" 
+                name="MBpassword" 
                 ng-model="account.mailboxPassword" 
                 tabindex="4" 
                 type="password" 
                 class="form-control"  
                 placeholder="Password" 
                 required />
-                <div ng-show="step2.$submitted || step2.password.$touched">
-                    <p ng-show="step2.password.$error.required" class="text-danger">Mailbox password is required.</p>
+                <div ng-show="step1.$submitted || step1.MBpassword.$touched">
+                    <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="text-danger">Mailbox password is required.</p>
                 </div>
             </div>
             <div class="form-group">
                 <label for="passwordc">{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}</label>
-                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="5" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}"  placeholder="Password" required="" ng-enter="finish(step2)" />
-                <div ng-show="step2.$submitted || step2.passwordc.$touched">
-                    <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
+                <input 
+                id="MBpasswordc" 
+                name="MBpasswordc" 
+                ng-model="account.mailboxPasswordConfirm" 
+                tabindex="5" 
+                type="password" 
+                class="form-control" 
+                ng-class="{disabled: networkActivity.loading()}"  
+                placeholder="Password" 
+                required 
+                ng-enter="finish(step1)" />
+                <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
+                    <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                 </div>
             </div>
             <hr>
             <div class="form-group">
-                <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
                 <label for="notificationEmail">Notification / Password Recovery Email</label>
                 <input 
                 id="notificationEmail" 
@@ -143,10 +153,9 @@
                 ng-enter="saveContinue(step1)" 
                 pt-tooltip="This is used to recover your account if you get locked out or forget your login password." 
                 pt-placement="bottom" />
-                <div ng-show="step1.notificationEmail.$touched">
-                    <p 
-                    ng-show="!!!tools.validEmail(account.notificationEmail)" 
-                    class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
+                <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
+                <div ng-show="step1.notificationEmail.$error.email">
+                    <p class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
                 </div>
             </div>
             <hr>
@@ -165,7 +174,7 @@
             tabindex="8" 
             type="submit" 
             class="btn btn-primary btn-block btn-lg" 
-            ng-class="{disabled: networkActivity.loading()}">{{ 'FINISH' | translate }}</button>
+            ng-class="{ disabled: (networkActivity.loading() || !step1.$valid) }">{{ 'FINISH' | translate }}</button>
         </form>
     </div>
 </div>

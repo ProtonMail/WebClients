@@ -159,13 +159,13 @@ angular.module("proton.routes", [
 
     .state("pre-invite", {
         url: "/pre-invite/:user/:token",
-        view: {
+        views: {
             "main@": {
-                controller: "SignupController",
+                templateUrl: "templates/layout/pre.tpl.html"
             }
         },
         resolve: {
-            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope) {
+            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify) {
                 $http.post(
                     url.get() + "/users/" + $stateParams.token + "/check", 
                     {Username: $stateParams.user}
@@ -175,10 +175,16 @@ angular.module("proton.routes", [
                         if (response.data.Valid===1) {
                             $rootScope.allowedNewAccount = true;
                             $rootScope.inviteToken = $stateParams.token;
+                            $rootScope.preInvited = true;
+                            $rootScope.username = $stateParams.user;
                             $state.go('signup'); 
                             return;
                         }
                         else {
+                            notify({
+                                message: "Invalid Invite Link.",
+                                classes: "notification-danger"
+                            });
                             $state.go('login');
                             return;
                         }
