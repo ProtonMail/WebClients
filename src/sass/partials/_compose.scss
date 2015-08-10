@@ -642,9 +642,6 @@ form#compose {
                 box-shadow: none;
                 float: left;
                 width: 100%;
-                select::-ms-expand{
-                    display:none;
-                }
             }
             .input-group-addon {
                 min-width: 50px;
