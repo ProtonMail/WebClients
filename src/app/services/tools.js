@@ -21,12 +21,14 @@ angular.module("proton.tools", ["proton.constants"])
             // At least Safari 3+: "[object HTMLElementConstructor]"
             var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
             var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
+            var isEdge = (/Edge\/12./i).test(navigator.userAgent);
 
             if(isOpera) { browser = 'Opera'; }
             if(isFirefox) { browser = 'Firefox'; }
             if(isSafari) { browser = 'Safari'; }
             if(isChrome) { browser = 'Chrome'; }
             if(isIE) { browser = 'Internet Explorer'; }
+            if(isEdge) { browser = 'Edge'; }
 
             return browser;
         }
