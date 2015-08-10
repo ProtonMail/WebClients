@@ -262,6 +262,15 @@ angular.module("proton", [
     $httpProvider.defaults.headers.common["x-pm-apiversion"] = CONFIG.api_version;
     $httpProvider.defaults.headers.common.Accept = "application/vnd.protonmail.v1+json";
     $httpProvider.defaults.withCredentials = true;
+
+    //initialize get if not there
+    if (angular.isUndefined($httpProvider.defaults.headers.get)) {
+        $httpProvider.defaults.headers.get = {};
+    }
+
+    //disable IE ajax request caching (don't use If-Modified-Since)
+    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+    $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
 .run(function($rootScope, $location, $state, authentication, $log) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
