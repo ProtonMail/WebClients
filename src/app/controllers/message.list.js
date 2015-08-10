@@ -48,9 +48,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.startWatchingEvent();
         });
 
-        console.log($scope.mailbox);
-        console.log(authentication.user.Labels);
-
         if($scope.mailbox === 'label') {
             $rootScope.pageName = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
         } else {
