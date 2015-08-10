@@ -11,7 +11,7 @@
                 </span>
             </li>
         </ul>
-        <div class="checkbox">
+        <div class="checkbox" ng-show="labelsSelected().length > 0">
             <label>
                 <input type="checkbox" ng-model="alsoArchive" /> {{ 'AND_ALSO_ARCHIVE' | translate }}
             </label>

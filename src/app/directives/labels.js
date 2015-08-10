@@ -46,6 +46,10 @@ angular.module("proton.labels", [])
         scope.close = function() {
             $('[data-toggle="dropdown"]').parent().removeClass('open');
         };
+
+        scope.labelsSelected = function() {
+            return _.where(scope.labels, {Selected: true});
+        };
     }
 
     return {
