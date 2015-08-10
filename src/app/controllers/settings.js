@@ -480,7 +480,7 @@ angular.module("proton.controllers.Settings", [
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    authentication.user.Theme = $scope.MessageButtons;
+                    authentication.user.MessageButtons = $scope.MessageButtons;
                 },
                 function(response) {
                     $log.error(response);

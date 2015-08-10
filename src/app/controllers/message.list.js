@@ -26,6 +26,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.mailbox = $state.current.data.mailbox;
         $scope.messagesPerPage = $scope.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
+        $scope.messageButtons = authentication.user.MessageButtons;
         $scope.Math = window.Math;
         $scope.CONSTANTS = CONSTANTS;
         $scope.selectedFilter = $stateParams.filter;

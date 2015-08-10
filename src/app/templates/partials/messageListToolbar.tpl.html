@@ -11,12 +11,12 @@
                 pt-placement="bottom" />
             </label>
         </li>
-        <li ng-show="!user.MessageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+        <li ng-show="!messageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
             <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye-slash"></i>
             </a>
         </li>
-        <li ng-show="user.MessageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+        <li ng-show="messageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
             <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye"></i>
             </a>
@@ -77,12 +77,12 @@
                 <i class="fa fa-times-circle"></i>
             </a>
         </li>
-        <li class="seperator" ng-show="!user.MessageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+        <li class="seperator" ng-show="!messageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
             <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye"></i>
             </a>
         </li>
-        <li class="seperator" ng-show="user.MessageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+        <li class="seperator" ng-show="messageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
             <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages == 0 }">
                 <i class="fa fa-eye-slash"></i>
             </a>
