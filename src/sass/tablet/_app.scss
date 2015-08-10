@@ -5,13 +5,27 @@
 	top: 0;
 }
 #messageActionButtons {
-	height: 3rem;
-	line-height: 3rem;
-	li {
+	height: 4rem;
+	line-height: 4rem;
+	& > li {
 		display: inline-block;
-		height: 3rem;
-		line-height: 3rem;
+		height: 4rem;
+		line-height: 4rem;
+		float: left;
+		position: static;
 	}
+	ul > li {
+		line-height: 2rem;
+		height: 4rem;
+	}
+}
+#labelDropdownThing,
+#miscMobileActions {
+	width: 100%
+}
+#miscMobileActions {
+	position: absolute;
+	background: #ececec;
 }
 .panel-medium,
 .panel-wide {

@@ -69,13 +69,13 @@
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
-            <dropdown-labels labels="labels" messages="[message]" save="saveLabels" />
+            <dropdown-labels id="labelDropdownThing" labels="labels" messages="[message]" save="saveLabels" />
         </li>
         <li class="seperator">
             <a href class="dropdown-toggle" data-toggle="dropdown">
                 {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu" role="menu" id="miscMobileActions">
                 <li>
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
