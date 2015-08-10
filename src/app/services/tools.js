@@ -37,7 +37,7 @@ angular.module("proton.tools", ["proton.constants"])
             var N = navigator.appName,
                 ua = navigator.userAgent,
                 tem;
-            var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+            var M = ua.match(/(opera|chrome|safari|firefox|msie|edge)\/?\s*(\.?\d+(\.\d+)*)/i);
 
             if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) {
                 M[2] = tem[1];

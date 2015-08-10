@@ -402,9 +402,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            var signature = $sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>');
+            var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style']
+            });
 
-            message.Body = ($(signature).text().length === 0)? "" : "<br /><br />" + signature;
+            message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
         }
     };
 
