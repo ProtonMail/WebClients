@@ -5,6 +5,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope,
     $log,
     $timeout,
+    $interval,
     $q,
     $sanitize,
     $state,
@@ -36,6 +37,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
+    $scope.numTags = [];
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -88,19 +90,38 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $(window).off('resize');
     });
 
-    document.addEventListener( "dragster:enter", function (event) {
-        event.preventDefault();
+    $scope.isOver = false;
 
-        $scope.isOver = true;
-        $scope.$apply();
-    }, false );
+    $(window).on('dragover', function(e) {
+        e.preventDefault();
+        $interval.cancel($scope.intervalComposer);
+        $interval.cancel($scope.intervalDropzone);
 
-    document.addEventListener( "dragster:leave", function (event) {
-        event.preventDefault();
+        $scope.intervalComposer = $interval(function() {
+            $scope.isOver = false;
+            $interval.cancel($scope.intervalComposer);
+        }, 100);
 
-        // $scope.isOver = false;
-        $scope.$apply();
-    }, false );
+        if ($scope.isOver === false) {
+            $scope.isOver = true;
+        }
+    });
+
+    // Function used for dragover listener on the dropzones
+    var dragover = function(e) {
+        e.preventDefault();
+        $interval.cancel($scope.intervalComposer);
+        $interval.cancel($scope.intervalDropzone);
+
+        $scope.intervalDropzone = $interval(function() {
+            $scope.isOver = false;
+            $interval.cancel($scope.intervalDropzone);
+        }, 100);
+
+        if ($scope.isOver === false) {
+            $scope.isOver = true;
+        }
+    };
 
     // Functions
 
@@ -265,6 +286,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         message.uid = $scope.uid++;
+        message.numTags = [];
+        message.recipientFields = [];
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
@@ -287,6 +310,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $timeout(function() {
             $scope.focusComposer(message);
+            message.recipientFieldFocussed = 1;
         }, 100);
 
         $log.debug('initMessage:end');
@@ -388,8 +412,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         	// Height
         	if(windowHeight < composerHeight) {
         		styles.height = windowHeight + 'px';
-        	} else {
-        		styles.height = 'auto';
         	}
 
             $(composer).css(styles);
@@ -484,7 +506,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
+                    message.fields = false;
+                    message.recipientFieldFocussed = 0;
                     $('.typeahead-container').scrollTop(0);
+                    $scope.$apply();
                 });
             });
 
@@ -492,19 +517,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 $scope.saveLater(message);
             });
 
-            message.editor.addEventListener('dragenter', function(event) {
-                event.preventDefault();
-
+            message.editor.addEventListener('dragenter', function(e) {
+                $scope.isOver = true;
+                $scope.$apply();
+            });
+            message.editor.addEventListener('dragover', function(e) {
                 $scope.isOver = true;
                 $scope.$apply();
             });
 
-            _.each(dragsters, function(dragster) {
-                dragster.removeListeners();
-            });
-
-            _.each($('.composer '), function(composer) {
-                dragsters.push(new Dragster(composer));
+            _.each($('.composer-dropzone'), function(dropzone) {
+                dropzone.removeEventListener('dragover', dragover);
+                dropzone.addEventListener('dragover', dragover);
             });
         }
     };
@@ -522,8 +546,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         );
     };
 
+    $scope.recipientFieldEllipsis = function(message, list) {
+            if ((message.recipientFields[list].scrollHeight - message.recipientFields[list].offsetHeight) > 20) {
+                return true;
+            } else {
+                return false;
+            }
+    };
+
     $scope.toggleFields = function(message) {
         message.fields = !message.fields;
+        $timeout(function() {
+            message.recipientFieldFocussed = (message.fields) ? 4 : 0;
+            $scope.apply();
+        });
         $scope.composerStyle();
     };
 
@@ -918,6 +954,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
+
+        message.editor.removeEventListener('input', function() {
+            $scope.saveLater(message);
+        });
+
+        message.editor.removeEventListener('dragenter', function(e) {
+            $scope.isOver = true;
+            $scope.$apply();
+        });
+        message.editor.removeEventListener('dragover', function(e) {
+            $scope.isOver = true;
+            $scope.$apply();
+        });
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
         if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
