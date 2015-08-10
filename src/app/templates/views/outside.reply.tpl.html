@@ -14,18 +14,25 @@
           </h1>
         <ul class="infos">
             <li>
-                <strong>{{ 'FROM' | translate }}</strong>
+                <strong>{{ 'FROM' | translate }}:</strong>
                 {{ message.Recipient }}
             </li>
             <li>
-                <strong>{{ 'TO' | translate }}</strong>
+                <strong>{{ 'TO' | translate }}:</strong>
                 <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
+            </li>
+
+            <li ng-if="message.CCList.length > 0">
+                <strong>{{ 'CC' | translate }}:</strong>
+                <span ng-repeat="email in message.CCList">
+                    &lt;{{ email.Address }}&gt; 
+                </span>
             </li>
         </ul>
     </div>
     <div id="message-body">
         <squire ng-model="message.Body"></squire>
-        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
+        <!-- <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div> -->
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>

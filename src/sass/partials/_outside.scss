@@ -22,6 +22,10 @@
 			margin: 0;
 			list-style-type: none;
 			display: block;
+			strong {
+				display: inline-block;
+				width: 6rem;
+			}
 			li {
 				list-style-type: none;
 				display: block;
