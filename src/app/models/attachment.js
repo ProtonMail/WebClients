@@ -7,11 +7,6 @@ angular.module("proton.models.attachment", [])
         url.get() + "/attachments/:id",
         authentication.params({ id: "@id" }),
         {
-            // POST
-            upload: {
-                method: 'post',
-                url: url.get() + '/attachments/upload'
-            },
             remove: {
                 method: 'put',
                 url: url.get() + '/attachments/remove'
