@@ -23,7 +23,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.initialization = function() {
         // Variables
-        $scope.mailbox = $rootScope.pageName = $state.current.data.mailbox;
+        $scope.mailbox = $state.current.data.mailbox;
         $scope.messagesPerPage = $scope.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.Math = window.Math;
@@ -47,6 +47,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.actionsDelayed();
             $scope.startWatchingEvent();
         });
+
+        console.log($scope.mailbox);
+        console.log(authentication.user.Labels);
+
+        if($scope.mailbox === 'label') {
+            $rootScope.pageName = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+        } else {
+            $rootScope.pageName = $scope.mailbox;
+        }
     };
 
     $scope.startWatchingEvent = function() {
