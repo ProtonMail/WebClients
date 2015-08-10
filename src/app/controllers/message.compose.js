@@ -91,7 +91,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     });
 
     $scope.isOver = false;
-    var interval;
 
     $(window).on('dragover', function(e) {
         e.preventDefault();
