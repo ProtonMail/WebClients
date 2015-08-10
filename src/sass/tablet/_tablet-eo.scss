@@ -1,3 +1,4 @@
+body#eo-unlock,
 body#eo-message,
 body#eo-reply {
 	#header #navbar {
@@ -9,4 +10,8 @@ body#eo-reply {
 	#outsideMessageWrap {
 		margin-top: 10rem;
 	}
+}
+
+body#eo-unlock .panel {
+	margin-top: 10rem;
 }
