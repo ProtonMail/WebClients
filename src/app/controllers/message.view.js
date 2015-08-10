@@ -304,6 +304,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
 
         message.LabelIDs = _.without(message.LabelIDs, id);
+        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
         networkActivityTracker.track(promise);
     };
 
