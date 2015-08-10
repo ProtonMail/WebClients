@@ -12,6 +12,9 @@
 					color: #000;
 				}
 			}
+			&.starred {
+				background: $starred; 
+			}
 			h4 {
 				word-break: break-word;
 				font-size: 14px;
