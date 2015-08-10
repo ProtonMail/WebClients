@@ -170,11 +170,11 @@
                     class="previews"
                     ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
                         <span
-                        title="Attachment"
+                        title="{{attachment.filename || attachment.Name}}"
                         class="preview-template"
                         id="attachment{{$index}}"
                         ng-repeat="attachment in message.Attachments"
-                        ng-init="getElement(attachment, $index)">
+                        ng-init="initAttachment(attachment, $index)">
                             <span
                             class="preview-name"
                             ng-bind="attachment.filename || attachment.Name"></span>

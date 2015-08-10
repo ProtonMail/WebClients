@@ -78,8 +78,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
-    $scope.$on('uploadProgress', function() {$scope.$apply();});
-
     $(window).on('resize', function() {
         clearTimeout(timeoutStyle);
         timeoutStyle = setTimeout(function() {
@@ -222,9 +220,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
-    $scope.getElement = function(tempPacket, index) {
-        console.log(tempPacket, index);
-        tempPacket.id = '#attachment' + index;
+    $scope.initAttachment = function(tempPacket, index) {
+        if (tempPacket.uploading) {
+            tempPacket.id = '#attachment' + index;
+
+            $timeout(function() {
+                $(tempPacket.id).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-moz-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-o-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-ms-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : 'linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            });
+        }
     };
 
     $scope.addAttachment = function(file, message) {
@@ -232,10 +239,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
-        // tempPacket.uploadBar = {
-        //     'background': 'gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' +
-        //                           0 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'
-        // };
 
         message.uploading = true;
         message.Attachments.push(tempPacket);
