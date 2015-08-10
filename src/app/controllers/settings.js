@@ -117,23 +117,7 @@ angular.module("proton.controllers.Settings", [
         var csvString = csvRows.join("%0A");
         var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
-        if(navigator.msSaveBlob) { // IE 10+
-            navigator.msSaveBlob(blob, filename);
-        } else {
-            var link = document.createElement('a');
-
-            if (typeof link.download !== 'undefined') { // feature detection
-                // Browsers that support HTML5 download attribute
-                var url = URL.createObjectURL(blob);
-
-                link.setAttribute("href", url);
-                link.setAttribute("download", filename);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        }
+        saveAs(blob, filename);
     };
 
     $scope.exportPublicKey = function () {
@@ -141,23 +125,7 @@ angular.module("proton.controllers.Settings", [
         var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
         var filename = 'protonmail_public_' + authentication.user.Name + '.txt';
 
-        if(navigator.msSaveBlob) { // IE 10+
-            navigator.msSaveBlob(blob, filename);
-        } else {
-            var link = document.createElement('a');
-
-            if (typeof link.download !== 'undefined') { // feature detection
-                // Browsers that support HTML5 download attribute
-                var url = URL.createObjectURL(blob);
-
-                link.setAttribute("href", url);
-                link.setAttribute("download", filename);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        }
+        saveAs(blob, filename);
     };
 
     // NOT USED
@@ -166,23 +134,7 @@ angular.module("proton.controllers.Settings", [
         var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
         var filename = 'protonmail_private_'+authentication.user.Name+'.txt';
 
-        if(navigator.msSaveBlob) { // IE 10+
-            navigator.msSaveBlob(blob, filename);
-        } else {
-            var link = document.createElement('a');
-
-            if (typeof link.download !== 'undefined') { // feature detection
-                // Browsers that support HTML5 download attribute
-                var url = URL.createObjectURL(blob);
-
-                link.setAttribute("href", url);
-                link.setAttribute("download", filename);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        }
+        saveAs(blob, filename);
     };
 
     // Drag and Drop configuration
