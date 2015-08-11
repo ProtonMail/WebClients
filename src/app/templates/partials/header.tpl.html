@@ -120,6 +120,9 @@
                         <a ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> {{ 'STARRED' | translate }}</a>
                     </li>
                     <li class="list-group-item">
+                        <a ui-sref="secured.archive" ng-class="{ active: ('secured.archive.**' | includedByState) }"><span class="fa fa-archive"></span> {{ 'ARCHIVE' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
                         <a ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-spam-flame"></span> {{ 'SPAM' | translate }}</a>
                     </li>
                     <li class="list-group-item">
