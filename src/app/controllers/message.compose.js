@@ -227,12 +227,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $timeout(function() {
                 tempPacket.elem = document.getElementById(id);
                 tempPacket.elem.removeAttribute('id');
-                
-                $(tempPacket.elem).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.elem).css({'background' : '-moz-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.elem).css({'background' : '-o-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.elem).css({'background' : '-ms-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.elem).css({'background' : 'linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+
+                attachments.uploadProgress(1, tempPacket.elem);
             });
         }
     };
@@ -243,7 +239,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
 
-        message.uploading = true;
+        message.uploading++;
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
@@ -260,7 +256,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         } else {
                             message.Attachments.splice(index, 1, result);
                         }
-                        message.uploading = false;
+                        message.uploading--;
                     }
                 );
             }
@@ -309,6 +305,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];
+        message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
