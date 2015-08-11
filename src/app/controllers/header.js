@@ -1,10 +1,10 @@
 angular.module("proton.controllers.Header", [])
 
 .controller("HeaderController", function(
-    $scope, 
-    $state, 
-    $stateParams, 
-    wizardModal, 
+    $scope,
+    $state,
+    $stateParams,
+    wizardModal,
     $rootScope,
     $log
 ) {
@@ -30,6 +30,10 @@ angular.module("proton.controllers.Header", [])
         } else {
             $state.go('secured.inbox');
         }
+    };
+
+    $scope.closeMobileDropdown = function() {
+        $(".navbar-toggle").click();
     };
 
     $scope.openNewMessage = function() {
