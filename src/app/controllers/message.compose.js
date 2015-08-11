@@ -899,7 +899,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 }
                                 $scope.sending = false;
                                 if(angular.isDefined(result.Error)) {
-                                    notify(result.Error);
+                                    notify({
+                                        message: result.Error,
+                                        classes: 'notification-danger'
+                                    });
                                     deferred.reject();
                                 }
                                 else {
