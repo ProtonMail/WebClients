@@ -631,6 +631,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
+        if(message.IsEncrypted === 0) {
+            notify("Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, click here."); // TODO add link
+            return false;
+        }
+
         message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
