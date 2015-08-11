@@ -64,7 +64,6 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
-    "proton.countdownx",
 
     // Filters
     "proton.filters.strings",
