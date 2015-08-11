@@ -325,6 +325,9 @@ angular.module("proton", [
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
+        // Close navbar on mobile
+        $(".navbar-toggle").click();
+
         $rootScope.toState = toState.name.replace(".", "-");
         if ($rootScope.scrollToBottom===true) {
             setTimeout(function() {
