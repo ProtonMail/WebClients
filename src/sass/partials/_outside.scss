@@ -2,6 +2,10 @@
 	padding-left: 0
 }
 
+#expirationMessage {
+	margin-bottom: 0;
+}
+
 #outsideMessageWrap {
 	background: $base-color;
 	.message-head {
@@ -18,6 +22,10 @@
 			margin: 0;
 			list-style-type: none;
 			display: block;
+			strong {
+				display: inline-block;
+				width: 6rem;
+			}
 			li {
 				list-style-type: none;
 				display: block;

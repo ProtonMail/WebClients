@@ -1,4 +1,10 @@
 <div id="outsideMessageWrap">
+    <div class="alert alert-warning" ng-if="true" id="expirationMessage">
+        This message expires in 
+        <strong countdownx="{{message.ExpirationTime}}">
+            <i class="fa fa-spin fa-circle-o-notch"></i>
+        </strong>.
+    </div>
     <div class="message-head">
         <a href ng-click="reply()" class="btn btn-primary pull-right">
             <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
