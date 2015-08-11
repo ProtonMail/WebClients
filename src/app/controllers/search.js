@@ -5,11 +5,18 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     $scope,
     $state,
     $stateParams,
+    $timeout,
     authentication,
     CONSTANTS,
     networkActivityTracker
 ) {
     var modalId = 'searchModal';
+
+    $('#'+modalId).on('hide.bs.modal', function (event) {
+        $timeout(function() {
+            $rootScope.advSearchIsOpen = false;
+        }, 100);
+    });
 
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
 
@@ -64,10 +71,12 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         }
 
         $state.go('secured.search', params);
+        $rootScope.advSearchIsOpen = false;
         $scope.close();
     };
 
     $scope.open = function(value) {
+        $rootScope.advSearchIsOpen = true;
         $scope.labels = authentication.user.Labels;
         // reset params
         $scope.params.attachments = $scope.params.attachments || 2;
@@ -103,6 +112,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     };
 
     $scope.close = function() {
+        $rootScope.advSearchIsOpen = false;
         // add dark background modal
         $('body .modal-backdrop').removeClass('in');
         // hide modal
@@ -114,6 +124,10 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
 
         if($scope.open) {
             display = 'block';
+            $rootScope.advSearchIsOpen = true;
+        }
+        else {
+            $rootScope.advSearchIsOpen = false;
         }
 
         return {
