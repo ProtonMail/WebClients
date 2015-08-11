@@ -36,7 +36,6 @@ angular.module("proton.attachments", [
 
                 return encAttachment.then(
                     function(packets) {
-                        // console.log('packets', packets);
                         packets.Filename = file.name;
                         packets.MIMEType = file.type;
                         packets.FileSize = file.size;
