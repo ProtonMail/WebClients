@@ -64,7 +64,7 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
-    "proton.countdownx",    
+    "proton.countdownx",
 
     // Filters
     "proton.filters.strings",
@@ -135,14 +135,9 @@ angular.module("proton", [
 
     $rootScope.firstNameOnly = function() {
         var firstNameOnly;
-        if(authentication.user) {
-            var emailFirst = authentication.user.DisplayName.split('@');
 
-            if (emailFirst[0] === authentication.user.Name) {
-                firstNameOnly = emailFirst[0];
-            } else {
-                firstNameOnly = authentication.user.DisplayName;
-            }
+        if(authentication.user) {
+            firstNameOnly = authentication.user.DisplayName;
         } else {
             firstNameOnly = $rootScope.tempUser.username;
         }

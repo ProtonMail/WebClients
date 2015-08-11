@@ -58,7 +58,7 @@ angular.module("proton.authentication", [
                     if (!user.EncPrivateKey) {
                         api.logout();
                         deferred.reject();
-                    } 
+                    }
                     else {
                         $q.all([
                             $http.get(url.get() + "/contacts"),
@@ -465,7 +465,7 @@ angular.module("proton.authentication", [
                     // console.log(user);
 
                     if (user.DisplayName.length === 0) {
-                        user.DisplayName = user.Addresses[0].Email;
+                        user.DisplayName = user.Name;
                     }
 
                     $rootScope.isLoggedIn = true;
