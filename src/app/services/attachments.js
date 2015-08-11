@@ -36,7 +36,6 @@ angular.module("proton.attachments", [
 
                 return encAttachment.then(
                     function(packets) {
-                        // console.log('packets', packets);
                         packets.Filename = file.name;
                         packets.MIMEType = file.type;
                         packets.FileSize = file.size;
@@ -52,7 +51,7 @@ angular.module("proton.attachments", [
 
             return q.promise;
         },
-        upload: function(packets, MessageID) {
+        upload: function(packets, MessageID, tempPacket) {
             var deferred = $q.defer();
             var data = new FormData();
             var xhr = new XMLHttpRequest();
@@ -69,6 +68,21 @@ angular.module("proton.attachments", [
             attachmentData.fileSize = packets.fileSize;
             attachmentData.MIMEType = packets.MIMEType;
             attachmentData.loading = true;
+
+            tempPacket.cancel = function() {
+                xhr.abort();
+                deferred.resolve('aborted');
+            };
+
+            xhr.upload.onprogress = function (event) {
+                var progress = (event.loaded / event.total)*99;
+
+                $(tempPacket.id).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-moz-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-o-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : '-ms-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                $(tempPacket.id).css({'background' : 'linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            };
 
             xhr.onload = function() {
                 var response;

@@ -170,15 +170,19 @@
                     class="previews"
                     ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
                         <span
-                        title="Attachment"
+                        title="{{attachment.filename || attachment.Name}}"
                         class="preview-template"
-                        ng-repeat="attachment in message.Attachments">
+                        id="attachment{{$index}}"
+                        ng-repeat="attachment in message.Attachments"
+                        ng-init="initAttachment(attachment, $index)">
                             <span
                             class="preview-name"
                             ng-bind="attachment.filename || attachment.Name"></span>
-                            <i
+                            <a
+                            href=""
                             ng-show="!!attachment.uploading"
-                            class="fa fa-spin fa-circle-o-notch"></i>
+                            class="preview-close"
+                            ng-click="attachment.cancel()"><i class="fa fa-times"></i></a>
                             <a
                             href=""
                             ng-show="!!!attachment.uploading"
