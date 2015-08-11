@@ -199,6 +199,7 @@
                 class="btn btn-sm btn-default btn-add-attachment"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
+                    'btn-primary': message.Attachments && message.Attachments.length > 0,
                     disabled: message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
