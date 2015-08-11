@@ -167,17 +167,17 @@ angular.module("proton.routes", [
         resolve: {
             validate: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify) {
                 $http.post(
-                    url.get() + "/users/" + $stateParams.token + "/check", 
+                    url.get() + "/users/" + $stateParams.token + "/check",
                     {Username: $stateParams.user}
                 )
-                .then( 
+                .then(
                     function( response) {
                         if (response.data.Valid===1) {
                             $rootScope.allowedNewAccount = true;
                             $rootScope.inviteToken = $stateParams.token;
                             $rootScope.preInvited = true;
                             $rootScope.username = $stateParams.user;
-                            $state.go('signup'); 
+                            $state.go('signup');
                             return;
                         }
                         else {
@@ -443,7 +443,12 @@ angular.module("proton.routes", [
             "content": {
                 templateUrl: "templates/views/outside.unlock.tpl.html",
                 controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker) {
-                    encryptedToken = encryptedToken.data.Token;
+                    if(encryptedToken.data.Error) {
+                        $scope.tokenError = true;
+                    } else {
+                        $scope.tokenError = false;
+                        encryptedToken = encryptedToken.data.Token;
+                    }
 
                     $scope.unlock = function() {
                         var promise = pmcw.decryptMessage(encryptedToken, $scope.MessagePassword);
