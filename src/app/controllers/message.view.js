@@ -167,6 +167,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             $timeout(function() {
                 tools.transformLinks('message-body');
             });
+
+            if(print) {
+                setTimeout(function() {
+                    window.print();
+                    window.history.back();
+                }, 1000);
+            }
         });
     };
 
@@ -480,11 +487,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.print = function() {
-        var url = $state.href('secured.print', {
-            id: message.ID
-        });
-
-        window.open(url, '_blank');
+        $state.go('secured.print', { id: message.ID });
     };
 
     $scope.viewPgp = function() {
