@@ -76,7 +76,7 @@
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
                                 </span>
                                 <span class="input-group-btn" ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
-                                    <button class="btn btn-sm btn-white pull-right elf">{{message.numTags.CCList + message.numTags.BCCList}}</button>
+                                    <button class="btn btn-sm btn-white pull-right elf">+{{message.numTags.CCList + message.numTags.BCCList}}</button>
                                 </span>
                                 <span class="input-group-btn">
                                     <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
