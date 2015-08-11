@@ -147,7 +147,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
-                maxFilesize: CONSTANTS.ATTACHMENT_SIZE_LIMIT,
                 maxFiles: CONSTANTS.ATTACHMENT_NUMBER_LIMIT,
                 addRemoveLinks: false,
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
@@ -158,15 +157,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
                     totalSize += file.size;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
-                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
-                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
+                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                     } else {
                         done();
                         $scope.addAttachment(file, message);
@@ -195,11 +193,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.Size)) {
-                size += parseInt(attachment.Size);
+            if (angular.isDefined(attachment.fileSize)) {
+                size += parseInt(attachment.fileSize);
             }
         });
-
         return size;
     };
 
@@ -238,6 +235,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
+        tempPacket.fileSize = file.size;
 
         message.uploading++;
         message.Attachments.push(tempPacket);

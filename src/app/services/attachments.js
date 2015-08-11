@@ -66,7 +66,7 @@ angular.module("proton.attachments", [
             data.append('DataPacket', new Blob([packets.data]));
 
             attachmentData.filename = packets.Filename;
-            attachmentData.fileSize = packets.fileSize;
+            attachmentData.fileSize = packets.FileSize;
             attachmentData.MIMEType = packets.MIMEType;
             attachmentData.loading = true;
 
