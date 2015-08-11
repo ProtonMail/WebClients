@@ -13,11 +13,9 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     var modalId = 'searchModal';
 
     $('#'+modalId).on('hide.bs.modal', function (event) {
-        $rootScope.advSearchIsOpen = false;
-        $timeout( function() {
-            $scope.apply();
+        $timeout(function() {
+            $rootScope.advSearchIsOpen = false;
         }, 100);
-        return;
     });
 
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
