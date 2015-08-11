@@ -1,5 +1,5 @@
-<div class="message-toolbar hidden-xs">
-    <ul class="nav navbar-nav">
+<div class="message-toolbar">
+    <ul class="nav navbar-nav" id="messageActionButtons">
         <li class="seperator">
             <a href class="backBtn" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
                 <i class="fa fa-long-arrow-left"></i>
@@ -69,13 +69,13 @@
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-caret-down"></i>
             </a>
-            <dropdown-labels labels="labels" messages="[message]" save="saveLabels" />
+            <dropdown-labels id="labelDropdownThing" labels="labels" messages="[message]" save="saveLabels" />
         </li>
         <li class="seperator">
             <a href class="dropdown-toggle" data-toggle="dropdown">
                 {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu" role="menu" id="miscMobileActions">
                 <li>
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
@@ -115,7 +115,7 @@
         </li>
     </ul>
 
-    <ul class="nav navbar-nav pull-right navigation" id="messageActionGroup">
+    <ul class="nav navbar-nav pull-right navigation hidden-xs" id="messageActionGroup">
         <li>
             <a href ng-click="reply(message)" class="btn btn-primary">
                 <i class="fa fa-reply"></i>
