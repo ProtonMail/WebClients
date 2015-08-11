@@ -7,7 +7,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $timeout,
     $interval,
     $q,
-    $sanitize,
     $state,
     $stateParams,
     $translate,
