@@ -632,7 +632,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         if(message.IsEncrypted === 0) {
-            notify("Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, click here."); // TODO add link
+            notify({
+                message: "Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, click here.", // TODO add link
+                classes: 'notification-danger',
+                duration: 10000 // 10 seconds
+            });
+            $scope.closePanel(message);
+            $scope.openPanel(message, 'encrypt');
             return false;
         }
 
