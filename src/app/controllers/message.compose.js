@@ -146,7 +146,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
-                maxFilesize: CONSTANTS.ATTACHMENT_SIZE_LIMIT,
                 maxFiles: CONSTANTS.ATTACHMENT_NUMBER_LIMIT,
                 addRemoveLinks: false,
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
@@ -157,15 +156,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
                     totalSize += file.size;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
-                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
-                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
+                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                     } else {
                         done();
                         $scope.addAttachment(file, message);
@@ -194,11 +192,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.Size)) {
-                size += parseInt(attachment.Size);
+            if (angular.isDefined(attachment.fileSize)) {
+                size += parseInt(attachment.fileSize);
             }
         });
-
         return size;
     };
 
@@ -221,14 +218,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.initAttachment = function(tempPacket, index) {
         if (tempPacket.uploading) {
-            tempPacket.id = '#attachment' + index;
+            var id = 'attachment' + index;
 
             $timeout(function() {
-                $(tempPacket.id).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-moz-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-o-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-ms-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : 'linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + 1 + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                tempPacket.elem = document.getElementById(id);
+                tempPacket.elem.removeAttribute('id');
+
+                attachments.uploadProgress(1, tempPacket.elem);
             });
         }
     };
@@ -238,8 +234,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
+        tempPacket.fileSize = file.size;
 
-        message.uploading = true;
+        message.uploading++;
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
@@ -256,7 +253,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         } else {
                             message.Attachments.splice(index, 1, result);
                         }
-                        message.uploading = false;
+                        message.uploading--;
                     }
                 );
             }
@@ -305,6 +302,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];
+        message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;

@@ -57,6 +57,7 @@ angular.module("proton.attachments", [
             var xhr = new XMLHttpRequest();
             var sessionKeyPromise = this.getSessionKey(packets.keys);
             var attachmentData = {};
+            var that = this;
 
             data.append('Filename', packets.Filename);
             data.append('MessageID', MessageID);
@@ -65,7 +66,7 @@ angular.module("proton.attachments", [
             data.append('DataPacket', new Blob([packets.data]));
 
             attachmentData.filename = packets.Filename;
-            attachmentData.fileSize = packets.fileSize;
+            attachmentData.fileSize = packets.FileSize;
             attachmentData.MIMEType = packets.MIMEType;
             attachmentData.loading = true;
 
@@ -76,12 +77,7 @@ angular.module("proton.attachments", [
 
             xhr.upload.onprogress = function (event) {
                 var progress = (event.loaded / event.total)*99;
-
-                $(tempPacket.id).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-moz-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-o-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : '-ms-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
-                $(tempPacket.id).css({'background' : 'linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+                that.uploadProgress(progress, tempPacket.elem);
             };
 
             xhr.onload = function() {
@@ -148,6 +144,13 @@ angular.module("proton.attachments", [
                 }).error(function(response) {
                     $log.debug(response);
                 });
+        },
+        uploadProgress: function(progress, elem) {
+            $(elem).css({'background' : '-webkit-linear-gradient(left, rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            $(elem).css({'background' : '-moz-linear-gradient(left,    rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            $(elem).css({'background' : '-o-linear-gradient(left,      rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            $(elem).css({'background' : '-ms-linear-gradient(left,     rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
+            $(elem).css({'background' : 'linear-gradient(left,         rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 0.5) ' + 0 + '%)'});
         }
     };
 });
