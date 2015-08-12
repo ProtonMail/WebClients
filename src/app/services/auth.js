@@ -131,7 +131,7 @@ angular.module("proton.authentication", [
 
         savePassword: function(pwd) {
             // Why is this saved in three different places?
-            window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_base64(pwd);
+            window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_utf8_base64(pwd);
             auth.mailboxPassword = pwd;
             pmcw.setMailboxPassword(pwd);
         },
@@ -139,7 +139,7 @@ angular.module("proton.authentication", [
         getPassword: function() {
             var pwd = window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY];
 
-            return pmcw.decode_base64(pwd);
+            return pmcw.decode_utf8_base64(pwd);
         },
 
         randomString: function(length)
@@ -184,7 +184,7 @@ angular.module("proton.authentication", [
         },
 
         getPrivateKey: function() {
-            var pw = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
+            var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
 
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
         },

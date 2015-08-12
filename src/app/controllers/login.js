@@ -56,7 +56,7 @@ angular.module("proton.controllers.Auth", [
         $scope.username = $scope.username.toLowerCase().split('@')[0];
 
         // custom validation
-        if (pmcw.encode_base64($scope.password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
+        if (pmcw.encode_utf8($scope.password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
             notify({
                 classes: 'notification-danger',
                 message: 'Passwords are limited to '+CONSTANTS.LOGIN_PW_MAX_LEN+' characters.'
@@ -140,7 +140,7 @@ angular.module("proton.controllers.Auth", [
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
-                            window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64(mailboxPassword));
+                            authentication.savePassword(mailboxPassword);
                             $state.go("secured.inbox");
                         },
                         function(err) {
