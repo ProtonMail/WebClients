@@ -941,26 +941,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
-    $scope.toggleMinimize = function(message) {
-        if (!!message.minimized) {
-            $scope.normalize(message);
-        } else {
-            $scope.minimize(message);
-        }
-    };
-
     $scope.minimize = function(message) {
         message.minimized = true;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
-    };
-
-    $scope.toggleMaximized = function(message) {
-        if (!!message.maximized) {
-            $scope.normalize(message);
-        } else {
-            $scope.maximized(message);
-        }
     };
 
     $scope.maximize = function(message) {
