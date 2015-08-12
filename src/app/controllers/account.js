@@ -162,7 +162,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 .then(
                     function(resp) {
                         $log.debug('setAuthCookie:resp'+resp);
-                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_base64($scope.account.mailboxPassword));
+                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
                         $state.go("secured.inbox");
                     }
                 );
@@ -177,7 +177,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         $rootScope.isLoggedIn = true;
         window.sessionStorage.setItem(
             CONSTANTS.MAILBOX_PASSWORD_KEY,
-            pmcw.encode_base64($scope.account.mailboxPassword)
+            pmcw.encode_utf8_base64($scope.account.mailboxPassword)
         );
         // delete $rootScope.tempUser;
         // TODO: not all promises are resolved, so we simply refresh.
