@@ -428,10 +428,10 @@ angular.module("proton.controllers.Settings", [
                         .then(
                             function(result) {
                                 confirmModal.deactivate();
-                                if (result.data.Code===1000) {
+                                if (result.Code === 1000) {
                                     notify($translate.instant('LABEL_DELETED'));
-                                    label.Display = 1;
-                                    $scope.labels = _.filter($scope.labels, function (d) { return d.ID !== label.ID; });
+                                    authentication.user.Labels = _.without(authentication.user.Labels, label);
+                                    $scope.labels = authentication.user.Labels;
                                 }
                             },
                             function(result) {
