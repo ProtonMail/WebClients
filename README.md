@@ -7,7 +7,6 @@ Official AngularJS web client for ProtonMail users.
 
 ### Development
 We are very open to bug reports via Issues as well as Pull Requests. 
-To directly contact the lead developers you can email jason at protonmail dot ch.
 
 ## License
 
