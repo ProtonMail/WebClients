@@ -1,5 +1,10 @@
 .proton-notification-template {
 
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
     @include linear-gradient(lighten($highlight, $sidebar-button-lighten), $highlight);
     border-color: transparent;
     border-radius: $border-radius-base;
