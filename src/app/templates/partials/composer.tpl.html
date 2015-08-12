@@ -115,8 +115,8 @@
                 <div class="form-group composeEditor" ng-init="params = {}">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
-                            <div class="form-group col-md-12 bold">
-                                Encrypt for non-ProtonMail users
+                            <div class="form-group col-md-12">
+                                <strong>Encrypt for non-ProtonMail users</strong> <a href="https://support.protonmail.ch/knowledge-base/encrypt-for-outside-users/" target="_blank"><i class="fa fa-info-circle"></i></a>
                             </div>
                             <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
                                 <label class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
@@ -139,7 +139,9 @@
 
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
                         <div class="form-group col-md-12">
-                            <label class="control-label text-muted">{{ 'EXPIRATION_TIME' | translate }}</label>
+                            <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
+                        </div>
+                        <div class="form-group col-md-12">
                             <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-init="params.expiration = 42" ng-model="params.expiration" ng-model-options="{debounce: {'default': 50}}" />
                         </div>
                         <div class="form-group col-md-12 text-center" ng-show="params.expiration">
