@@ -10,7 +10,7 @@ angular.module("proton.labels", [])
             var messagesLabel = [];
             var messages = scope.getMessages();
 
-            scope.alsoArchive = true;
+            scope.alsoArchive = false;
             scope.labels = scope.getLabels();
 
             _.each(messages, function(message) {
