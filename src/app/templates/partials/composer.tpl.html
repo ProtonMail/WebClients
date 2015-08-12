@@ -14,7 +14,7 @@
                     href
                     ng-show="!!!message.minimized"
                     class="btn btn-sm minimize-button hidden-xs"
-                    ng-click="normalize(message); minimize(message)"
+                    ng-click="minimize(message)"
                     pt-tooltip="{{ 'MINIMIZE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
@@ -23,7 +23,7 @@
                     href
                     ng-show="!!message.minimized"
                     class="btn btn-sm expand-button hidden-xs"
-                    ng-click="normalize(message)"
+                    ng-click="unminimize(message)"
                     pt-tooltip="{{ 'EXPAND' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>

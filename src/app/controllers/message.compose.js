@@ -943,6 +943,15 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.minimize = function(message) {
         message.minimized = true;
+        message.previousMaximized = message.maximized;
+        message.maximized = false;
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
+    };
+
+    $scope.unminimize = function(message) {
+        message.minimized = false;
+        message.maximized = message.previousMaximized;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
     };
@@ -951,19 +960,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.maximized = true;
     };
 
+    $scope.normalize = function(message) {
+        message.minimized = false;
+        message.maximized = false;
+    };
+
     $scope.blur = function(message) {
-        $log.info('blurr');
         message.blur = true;
     };
 
     $scope.focus = function(message) {
-        $log.info('focuss');
         message.blur = false;
-    };
-
-    $scope.normalize = function(message) {
-        message.minimized = false;
-        message.maximized = false;
     };
 
     $scope.openCloseModal = function(message, save) {
