@@ -75,6 +75,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             $scope.displayContent();
         }
 
+        // fix for firefox
+        var messageHeadH1 = $('.message-head h1').outerHeight()+20;
+        $('.message-head').css({
+            minHeight: messageHeadH1
+        });
+
         // start timer ago
         $scope.agoTimer = $interval(function() {
             var time = $filter('longReadableTime')($scope.message.Time);
@@ -479,7 +485,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             $rootScope.$broadcast('updateCounters');
             message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
             messages.push({Action: 3, ID: message.ID, Message: message});
-    		messageCache.set(messages);
+            messageCache.set(messages);
             $scope.goToMessageList();
         });
 
