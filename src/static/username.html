@@ -75,7 +75,7 @@
                             request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                             request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                         },
-                        url: "/api/reset/username",
+                        url: "https://api.protonmail.ch/reset/username",
                         data: formData,
                         success: function(msg) {
                             if (msg.Code === 1000) {
