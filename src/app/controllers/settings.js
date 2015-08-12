@@ -432,6 +432,7 @@ angular.module("proton.controllers.Settings", [
                                     notify($translate.instant('LABEL_DELETED'));
                                     authentication.user.Labels = _.without(authentication.user.Labels, label);
                                     $scope.labels = authentication.user.Labels;
+                                    $rootScope.$broadcast('updateLabels');
                                 }
                             },
                             function(result) {
