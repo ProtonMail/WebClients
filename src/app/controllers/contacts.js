@@ -215,21 +215,15 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.editContact = function(contact) {
         openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
-            var origName = contact.Name;
-            var origEmail = contact.Email;
-
-            contact.Name = name;
-            contact.Email = email;
-
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
-            if (match && email !== origEmail) {
+            if (match && email !== contact.Email) {
                 notify("Contact exists for this email address");
-                contact.Name = origName;
-                contact.Email = origEmail;
                 contactModal.deactivate();
             }
             else {
+                contact.Name = name;
+                contact.Email = email;
                 networkActivityTracker.track(
                     Contact.edit({
                         "Name": name,
