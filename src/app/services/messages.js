@@ -207,7 +207,7 @@ angular.module("proton.messages", ["proton.constants"])
                     _.extend(msg, _.pick(other, fields));
                 } else {
                     if(other.IsRead === 0) {
-                        //messagesToPreload.add(other.ID);
+                        messagesToPreload.add(other.ID);
                     }
                 }
             });
