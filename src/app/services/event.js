@@ -1,6 +1,6 @@
 angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function (
-		$interval, 
+		$timeout, 
 		$window, 
 		$state, 
 		$rootScope, 
@@ -30,11 +30,6 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			isDifferent: function (eventID) {
 				return this.ID !== eventID;
-			},
-			checkNotice: function() {
-				return Events.getNoticies({}).then(function(response) {
-					return response;
-				});
 			},
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
@@ -134,9 +129,16 @@ angular.module("proton.event", ["proton.constants"])
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
-					Events.getLatestID({}).then(function(response) {
-						eventModel.manageID(response.data.EventID);
-					});
+					if ( int(data.Code) === 5003 ) {
+						// Force upgrade, kill event loop
+						eventModel.promiseCancel = undefined;
+						return;
+					}
+					else {
+						Events.getLatestID({}).then(function(response) {
+							eventModel.manageID(response.data.EventID);
+						});
+					}
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 					eventModel.manageID(data.EventID);
@@ -154,27 +156,30 @@ angular.module("proton.event", ["proton.constants"])
 				}
 				this.manageNotices(data.Notices);
 				messageCache.manageExpire();
+
+				if (angular.isDefined(eventModel.promiseCancel)) {
+					eventModel.promiseCancel = $timeout(this.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+				}
+			},
+			interval: function() {
+				eventModel.get().then(function (result) {
+					eventModel.manage(result.data);
+				});
 			}
 		};
-		var started = false;
+
 		var api = _.bindAll({
 				start: function () {
-					if (!started) {
+					if (angular.isUndefined(eventModel.promiseCancel)) {
 						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
-						interval = function() {
-							eventModel.get().then(function (result) {
-								eventModel.manage(result.data);
-							});
-						};
-						interval();
-						eventModel.promiseCancel = $interval(interval, CONSTANTS.INTERVAL_EVENT_TIMER);
-						started = true;
+						eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 					}
 				},
 				stop: function () {
 					messageCache.empty();
-					if (angular.isDefinded(eventModel.promiseCancel)) {
-						$interval.cancel(eventModel.promiseCancel);
+					if (angular.isDefined(eventModel.promiseCancel)) {
+						$timeout.cancel(eventModel.promiseCancel);
+						eventModel.promiseCancel = undefined;
 					}
 				}
 
