@@ -39,7 +39,7 @@ angular.module("proton.countdown", [])
         	    var newTitle = days + ' days ' + hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
 
                 // Show how many days, hours, minutes and seconds are left
-                if($attr.outside === true) {
+                if($attrs.outside) {
                     $($element).text(newTitle);
                 } else {
                     $($element).attr('title', newTitle)
