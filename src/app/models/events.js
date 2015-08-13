@@ -6,9 +6,6 @@ angular.module("proton.models.events", [])
 			},
 			getLatestID: function () {
 				return $http.get(url.get() + '/events/latest');
-			},
-			getNoticies: function () {
-				return $http.get(url.get() + '/events/notices');
 			}
 		};
 	});
