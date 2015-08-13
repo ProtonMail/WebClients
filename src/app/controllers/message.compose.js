@@ -283,7 +283,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         // if tablet we maximize by default
-        if (tools.findBootstrapEnvironment()==='sm' || message.maximized) {
+        if (tools.findBootstrapEnvironment() === 'sm') {
             if ($scope.messages.length>0) {
                 notify.closeAll();
                 notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
@@ -292,7 +292,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
+        if (tools.findBootstrapEnvironment() === 'sm' || tools.findBootstrapEnvironment()==='xs') {
             $rootScope.mobileComposerIsOpen = true;
         }
         else {
