@@ -287,14 +287,6 @@ angular.module("proton", [
             return;
         }
 
-        // If already logged in and on the login page: redirect to unlock page
-        else if ($rootScope.isLoggedIn && isLogin) {
-            $log.debug('appjs:($rootScope.isLoggedIn && isLogin)');
-            event.preventDefault();
-            $state.go('secured.inbox');
-            return;
-        }
-
         // If already logged in and unlocked and on the unlock page: redirect to inbox
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
             $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
