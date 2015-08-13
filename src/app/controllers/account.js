@@ -107,7 +107,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 return;
             }
             networkActivityTracker.track(
-                $scope.generateNewKeys($rootScope.tempUser.username)
+                $scope.generateNewKeys($rootScope.tempUser.username + '@protonmail.ch')
                 .then( $scope.newMailbox )
                 .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )
