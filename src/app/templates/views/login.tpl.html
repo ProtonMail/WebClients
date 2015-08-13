@@ -1,3 +1,6 @@
+<p class="text-center white">
+    <a href="https://protonmail.ch/invite" class="underline">{{ 'REQUEST_AN_INVITE' | translate }}</a>
+</p>
 <div class="panel panel-default wrap panel-dark panel-medium" id="loginPanel">
     <div class="panel-heading logoWrap">
         <a href="/"><img src="/assets/img/protonmail.svg" alt="ProtonMail" class="logo" /></a>
@@ -26,11 +29,13 @@
                         </button>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="https://protonmail.ch/username" class="btn">{{ 'FORGOT_USERNAME?' | translate }}</a>
+                    </div>
+                </div>
             </div>
             <input type="hidden" id="hashed_pw" name="hashed_pw" />
         </form>
     </div>
 </div>
-<p class="text-center white" ng-if="false">
-    <a ui-sref="signup">{{ 'SIGN_UP' | translate }}</a>
-</p>

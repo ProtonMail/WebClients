@@ -20,6 +20,7 @@ angular.module("proton.controllers.Auth", [
 ) {
     $rootScope.pageName = "Login";
     $rootScope.app_version = CONFIG.app_version;
+    $rootScope.date_version = CONFIG.date_version;
     $rootScope.tempUser = $rootScope.tempUser || [];
 
     if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
