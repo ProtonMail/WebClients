@@ -412,7 +412,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
         generateReplyToken: function() {
             // Use a base64-encoded AES256 session key as the reply token
-            return pmcw.encode_base64(pmcw.generateKeyAES());
+            return pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()));
         },
 
         clearTextBody: function() {
