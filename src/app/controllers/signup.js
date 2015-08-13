@@ -93,7 +93,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $log.debug('finish');
         if (form.$valid) {
             $log.debug('finish: form valid');
-            return $scope.generateKeys('UserID', $scope.account.mailboxPassword);
+            return $scope.generateKeys($scope.account.Username, $scope.account.mailboxPassword);
         }
     };
 
@@ -182,19 +182,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         }
 
         return deferred.promise;
-    };
-
-    $scope.generateNewKeys = function() {
-        $log.debug('generateNewKeys');
-        $scope.genNewKeys   = true;
-        var mbpw;
-        if ($scope.account.mailboxPasswordConfirm!==undefined) {
-            mbpw = $scope.account.mailboxPasswordConfirm;
-        }
-        else if ($scope.account.mailboxPassword!==undefined) {
-            mbpw = $scope.account.mailboxPassword;
-        }
-        return $scope.generateKeys('UserID', mbpw);
     };
 
     $scope.doCreateUser = function() {
