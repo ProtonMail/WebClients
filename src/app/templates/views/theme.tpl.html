@@ -70,7 +70,8 @@
         <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
             <legend>Custom Theme</legend>
             <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
-                <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>            
+                <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                <p class="alert alert-info">Themes are currently disabled because they are not compatible between versions 1.16 and 2.0. In the next few weeks, all current themes will be deleted and then custom themes will be re-enabled. <strong>Please archive any custom theme code you wish to keep.</strong></p>                
                 <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
                 <textarea class="form-control" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
                 <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>

@@ -18,7 +18,7 @@
     <% styles.forEach(function (file) { %>
         <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
-    <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
+    <ng-include ng-if="false" src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
 <body
 id="{{ toState }}"
