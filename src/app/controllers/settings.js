@@ -122,7 +122,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.exportPublicKey = function () {
         var pbk = authentication.user.PublicKey;
-        var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
+        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
         var filename = 'protonmail_public_' + authentication.user.Name + '.txt';
 
         saveAs(blob, filename);
@@ -131,7 +131,7 @@ angular.module("proton.controllers.Settings", [
     // NOT USED
     $scope.exportEncPrivateKey = function () {
         var pbk = authentication.user.EncPrivateKey;
-        var blob = new Blob([pbk], { type: 'data:text/plain;base64;' });
+        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
         var filename = 'protonmail_private_'+authentication.user.Name+'.txt';
 
         saveAs(blob, filename);
