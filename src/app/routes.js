@@ -442,7 +442,7 @@ angular.module("proton.routes", [
         views: {
             "content": {
                 templateUrl: "templates/views/outside.unlock.tpl.html",
-                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker) {
+                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify) {
                     $scope.params = {};
                     $scope.params.MessagePassword = '';
 
@@ -460,6 +460,8 @@ angular.module("proton.routes", [
                             window.sessionStorage["proton:decrypted_token"] = decryptedToken;
                             window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
                             $state.go('eo.message', {tag: $stateParams.tag});
+                        }, function(error) {
+                            notify({message: error, classes: 'notification-danger'});
                         });
                     };
                 }
