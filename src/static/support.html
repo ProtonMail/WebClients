@@ -34,7 +34,8 @@
 
 
     <div class="container narrow">
-        <div class="container panel round">
+
+        <div class="container panel round" id="supportForm">
             <form name="supportRequest" id="supportRequest" class="pure-form pure-form-stacked" role="form" autocomplete="off">
                 <h1 class="text-center"><span class="fa fa-life-ring faded"></span>Support Form</h1> 
                 <div class="alert alert-warning text-center">
@@ -53,15 +54,6 @@
                     <input required type="text" name="bug_browser" id="bug_browser" placeholder="Browser" value="">
                     <label for="bug_plugins">Browser plugins being used</label>
                     <input type="text" name="bug_plugins" id="bug_plugins" placeholder="Browser Plugins" value="">
-                    <label for="bug_browser"><strong class="pull-right">(Required)</strong>Device</label>  
-                    <select required name="bug_device" id="bug_device" >
-                        <option selected value="">- Choose -</option>
-                        <option value="desktop">Desktop</option>
-                        <option value="tablet">Tablet</option>
-                        <option value="iphone">iPhone</option>
-                        <option value="android">Android Phone</option>
-                        <option value="other">Other</option>
-                    </select>
                 </div><!--/.wrap--> 
                 <div class="wrap">
                     <label for="bug_email">External email address we can reach you at (if you are unable to get into your ProtonMail account)</label>
@@ -74,7 +66,7 @@
                 <div class="wrap">
                     <label for="bug_description">Please describe the problem and include any error messages:</label>
                     <textarea required name="bug_description" rows="6" id="bug_description"></textarea>
-                    <button type="submit" class="button button-primary" name="bug_submit"><span class="fa fa-send"></span> Submit Bug</button>
+                    <button type="submit" class="button button-primary" name="bug_submit"><span class="fa fa-send"></span> Send Support Request</button>
                     <br><br>
                     <div class="alert alert-info"><i class="fa fa-info-circle"></i> We handle these bug reports in Zendesk. If you would like to keep the report within ProtonMail, please email the above info to <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#104;</a>.</div>
                 </div><!--/.wrap-->
@@ -83,6 +75,12 @@
                 </div><!--/.text-right-->
             </form>
         </div><!--/.wider-->
+
+        <div id="supportSuccess" style="display:none" class="container panel round">
+            <h3>Support Request Sent!</h3>
+            <p class="lead alert alert-info">We have your support request and will get back to you as soon as possible - usually within 1-2 days.</p>
+        </div>
+
     </div><!--/.middlepanel-->
 
 
@@ -109,18 +107,26 @@
                     request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                     request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                 },
-                url: "https://dev.protonmail.ch/api/users/invite",
+                url: "https://api.protonmail.ch/bugs",
                 data: JSON.stringify({
-                    "Username": $('#username').val(),
-                    "Email": $('#notification_email').val()
+                    "OS": $('#bug_os').val(),
+                    "OSVersion": "Unknown",
+                    "Browser": $('#bug_browser').val(),
+                    "BrowserExtensions": $('#bug_plugins').val(),
+                    "Client": "Web",
+                    "ClientVersion" : "2.0.0",
+                    "Title": "Support Form Entry",
+                    "Description": $('#bug_description').val(),
+                    "Username": $('#bug_acc').val(),
+                    "Email":     $('#bug_email').val()
                 }),
                 success: function(msg) {
-                    if (msg.Code===1000) {
+                    if (msg.Code==1000) {
                         // success
-                        $('#inviteSuccess').fadeIn();
-                        $('#inviteForm').hide();
+                        $('#supportSuccess').fadeIn();
+                        $('#supportForm').hide();
                     }
-                    else if (msg.Code!==undefined) {
+                    else if (msg.Code!=undefined) {
                         alert(msg.Error);
                         $('#invite-button').attr('disabled', false);
                     }

@@ -35,7 +35,8 @@
 
 
 <div class="container narrow">
-    <div class="container panel round">
+
+    <div class="container panel round" id="usernameForm">
         <form class="pure-form" action="/username" method="POST" id="forgotUsernameForm">
             <label for="forgotUsername-email">Notification/Recovery Email:</label>
             <input type="text" id="forgotUsername-email" name="forgotUsername-email" autofocus placeholder="Email" required class="bordered">
@@ -45,6 +46,11 @@
             <div class="clear"></div>
         </form>
     </div>
+
+    <div id="usernameSuccess" style="display:none" class="container panel round">
+        <p class="lead">If you entered a valid notification email we will send you an email with your usernames in the next minute.</p>
+    </div>
+
 </div>
 
 
@@ -62,9 +68,9 @@
                     // disable button
                     $('#forgotUsername-button').attr('disabled', true);
 
-                    var formData = {
+                    var formData = JSON.stringify({
                         NotificationEmail: email,
-                    };
+                    });
 
                     // make api call
                     $.ajax({
@@ -78,10 +84,9 @@
                         url: "https://api.protonmail.ch/reset/username",
                         data: formData,
                         success: function(msg) {
-                            if (msg.Code === 1000) {
-                                if (msg.Available === 1) {
-                                    createInvite();
-                                }
+                            if (msg.Code == 1000) {
+                                $('#usernameSuccess').fadeIn();
+                                $('#usernameForm').hide();
                             } else {
                                 alert('Something went wrong.');
                                 $('#forgotUsername-button').attr('disabled', false);
