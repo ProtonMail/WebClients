@@ -129,16 +129,25 @@ body.dragging {
 }
 body footer {
     width: 100%;
-    height: $footer-height;
-    line-height: $footer-height;
+    line-height: ($footer-height);
     font-size: ($font-size-base*.85);
     color: $base-color-darker;
-    background: $navbar-color;
-    position: absolute;
-    bottom: 0;
+    background: $alt-color-lighter;
     clear: both;
     .container-fluid {
         clear: both;
+    }
+    .red::-moz-selection {
+        background-color: red;
+    }
+    .red::selection {
+        background-color: red;
+    }
+    .white::-moz-selection {
+        background-color: white;
+    }
+    .white::selection {
+        background-color: white;
     }
     a {
         color: $base-color-darker;
