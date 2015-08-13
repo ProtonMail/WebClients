@@ -48,7 +48,7 @@ angular.module("proton.controllers.Bug", [])
 
         $log.debug('sendBugReport');
 
-        $log.info($scope.bug);
+        $log.debug($scope.bug);
 
         var bugPromise = Bug.report($scope.bug);
 
