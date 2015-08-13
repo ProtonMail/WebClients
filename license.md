@@ -1,6 +1,6 @@
 Copyright (c) 2013-2015
 Proton Technologies A.G. (Switzerland)
-Email: admin@protonmail.ch
+Email: contact@protonmail.ch
 
 The MIT License (MIT)
 
