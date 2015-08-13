@@ -330,7 +330,7 @@ var pmcrypto = (function() {
         }
         var _prKey = openpgp.key.readArmored(prKey).keys[0];
         if (_prKey === undefined) {
-            return new Error('Cant read PRK.');
+            return new Error('Cannot read private key.');
         }
         var ok = _prKey.decrypt(oldMailPwd);
         if (ok) {

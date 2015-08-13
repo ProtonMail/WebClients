@@ -247,14 +247,16 @@ angular.module("proton.controllers.Settings", [
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
+
         var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
         var currentMailboxPassword = $scope.currentMailboxPassword;
 
         if (newEncPrivateKey === -1) {
             notify($translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'));
         }
-        else if (newEncPrivateKey.length < 50) {
-            notify(newEncPrivateKey);
+        else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
+            // Error messages from OpenPGP.js
+            notify(newEncPrivateKey.message);
         }
         else {
             networkActivityTracker.track(
