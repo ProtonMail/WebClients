@@ -5,7 +5,7 @@
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
         <h1>Key Export</h1>
-        <p>Download your PublicKey for use in other PGP compatible services.</p>
+        <p>Download your Public Key for use in other PGP compatible services.</p>
         <a href ng-click="exportPublicKey()" class="btn btn-default">
             <i class="fa fa-download"></i> Download PublicKey
         </a>
@@ -44,9 +44,9 @@
 
             <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
             <ul class="visible-xs-block list-group">
-                <li 
-                class="list-group-item" 
-                ng-repeat="log in logs | filter:paginate" 
+                <li
+                class="list-group-item"
+                ng-repeat="log in logs | filter:paginate"
                 ng-class="{ 'danger': (log.Event == 0) }">
                     <div>
                         <span ng-show="{{ log.Event == 0 }}">
