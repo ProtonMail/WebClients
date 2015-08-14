@@ -51,8 +51,7 @@
     "sinon": "^1.9.1",
     "sinon-chai": "^2.5.0"
   },
-  "private": true,
-  "license": "All rights reserved.",
+  "license": "MIT",
   "scripts": {
     "test": "grunt compile"
   }
