@@ -164,6 +164,10 @@ angular.module("proton.event", ["proton.constants"])
 			interval: function() {
 				eventModel.get().then(function (result) {
 					eventModel.manage(result.data);
+				},
+				function(err) {
+					// Try again later
+					eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
 				});
 			}
 		};
