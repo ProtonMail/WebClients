@@ -56,7 +56,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
     // ---------------------------------------------------
     // ---------------------------------------------------
 
-    $scope.generateNewKeys = function() {
+    $scope.generateNewKeys = function(userID) {
         $log.debug('generateNewKeys');
         $scope.genNewKeys   = true;
         var mbpw;
@@ -66,7 +66,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
         else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
-        return $scope.generateKeys('UserID', mbpw);
+        return $scope.generateKeys(userID, mbpw);
     };
 
     $scope.generateKeys = function(userID, pass) {
@@ -107,7 +107,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                 return;
             }
             networkActivityTracker.track(
-                $scope.generateNewKeys()
+                $scope.generateNewKeys($rootScope.tempUser.username + '@protonmail.ch')
                 .then( $scope.newMailbox )
                 .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )

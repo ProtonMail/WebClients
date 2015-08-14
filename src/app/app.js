@@ -188,13 +188,10 @@ angular.module("proton", [
                     if ($rootScope.updateMessage===false) {
                         $rootScope.updateMessage = true;
                         $injector.get('notify')({
-                            classes: 'notification-info',
-                            message: 'A new version of ProtonMail is available. Logout and log back in to automatically update.',
-                            duration: 10000
+                            classes: 'notification-info noclose',
+                            message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
+                            duration: '0'
                         });
-                        setTimeout( function() {
-                            $rootScope.updateMessage = false;
-                        }, 11000);
                     }
                 }
                 else if(response.data.Code===5004) {

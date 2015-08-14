@@ -27,6 +27,10 @@ error-reporter,
   }
 }
 
+.cg-notify-message.noclose {
+  pointer-events: none;
+}
+
 
 .alert a {
   text-decoration: underline;
