@@ -1,6 +1,14 @@
 angular.module("proton.modals", [])
 
-.factory('pmModal', ['$animate', '$compile', '$rootScope', '$controller', '$q', '$http', '$templateCache', function($animate, $compile, $rootScope, $controller, $q, $http, $templateCache) {
+.factory('pmModal', function(
+    $animate,
+    $compile,
+    $rootScope,
+    $controller,
+    $q,
+    $http,
+    $templateCache
+) {
     return function modalFactory(config) {
         if (!(!config.template ^ !config.templateUrl)) {
             throw new Error('Expected modal to have exacly one of either template or templateUrl');
@@ -84,7 +92,7 @@ angular.module("proton.modals", [])
             active: active
         };
     };
-}])
+})
 
 // confirm modal
 .factory('confirmModal', function(pmModal) {
@@ -150,12 +158,14 @@ angular.module("proton.modals", [])
 // contact modal
 .factory('contactModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout) {
+        controller: function(params, $timeout, $sanitize) {
             this.name = params.name;
             this.email = params.email;
             this.title = params.title;
 
             this.save = function() {
+                this.name = $sanitize(this.name);
+                this.email = $sanitize(this.email);
                 if (angular.isDefined(params.save) && angular.isFunction(params.save)) {
                     params.save(this.name, this.email);
                 }
@@ -197,7 +207,7 @@ angular.module("proton.modals", [])
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout) {
+        controller: function(params, $timeout, $sanitize) {
             this.title = params.title;
             this.colors = [
                 '#7272a7',
@@ -221,20 +231,6 @@ angular.module("proton.modals", [])
                 '#c6cd97',
                 '#e7d292',
                 '#dfb286'
-                // '#f66',
-                // '#ff9',
-                // '#f6f',
-                // '#6ff',
-                // '#66f',
-                // '#6f6',
-                // '#999',
-                // '#fcc',
-                // '#ffc',
-                // '#fcf',
-                // '#cff',
-                // '#ccf',
-                // '#cfc',
-                // '#ccc'
             ];
 
             if(angular.isDefined(params.label)) {
@@ -246,6 +242,8 @@ angular.module("proton.modals", [])
             }
 
             this.create = function() {
+                // sanitize
+                this.name = $sanitize(this.name);
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
                     params.create(this.name, this.color);
                 }

@@ -5,26 +5,26 @@ angular.module("proton.controllers.Settings", [
 ])
 
 .controller("SettingsController", function(
+    $log,
+    $rootScope,
+    $scope,
     $state,
     $stateParams,
-    $scope,
-    $rootScope,
-    $log,
     $timeout,
+    $translate,
     $window,
-    authentication,
-    confirmModal,
-    labelModal,
-    url,
     Label,
     Logs,
     Setting,
     User,
-    tools,
-    pmcw,
-    notify,
+    authentication,
+    confirmModal,
+    labelModal,
     networkActivityTracker,
-    $translate
+    notify,
+    pmcw,
+    tools,
+    url
 ) {
     $rootScope.pageName = "settings";
     $scope.tools = tools;
