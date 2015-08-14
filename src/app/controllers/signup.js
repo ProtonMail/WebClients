@@ -184,6 +184,19 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         return deferred.promise;
     };
 
+    $scope.generateNewKeys = function() {
+        $log.debug('generateNewKeys');
+        $scope.genNewKeys   = true;
+        var mbpw;
+        if ($scope.account.mailboxPasswordConfirm!==undefined) {
+            mbpw = $scope.account.mailboxPasswordConfirm;
+        }
+        else if ($scope.account.mailboxPassword!==undefined) {
+            mbpw = $scope.account.mailboxPassword;
+        }
+        return $scope.generateKeys($scope.account.Username + '@protonmail.ch', mbpw);
+    };
+
     $scope.doCreateUser = function() {
         $log.debug('doCreateUser', $rootScope.inviteToken);
         if ($rootScope.inviteToken===undefined) {
