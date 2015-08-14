@@ -631,17 +631,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        if(message.IsEncrypted === 0) {
-            notify({
-                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
-                classes: 'notification-danger',
-                duration: 10000 // 10 seconds
-            });
-            $scope.closePanel(message);
-            $scope.openPanel(message, 'encrypt');
-            return false;
-        }
-
         message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
@@ -890,6 +879,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                  parameters.AttachmentKeys = packets;
                                  $scope.sending = false;
                             }));
+                        }
+                        if (message.ExpirationTime) {
+                            notify({
+                                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
+                                classes: 'notification-danger',
+                                duration: 10000 // 10 seconds
+                            });
+                            $scope.sending = false;
+                            deferred.reject();
+                            return false;
                         }
                     }
 
