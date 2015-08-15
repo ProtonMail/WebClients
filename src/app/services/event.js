@@ -128,17 +128,6 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manage: function (data) {
 
-				// Check for force upgrade
-				if ( data.Code && parseInt(data.Code) === 5003 ) {
-					// Force upgrade, kill event loop
-					eventModel.promiseCancel = undefined;
-					return;
-				}
-
-				// Schedule next event API call, do it here so a crash in handling events doesn't kill the loop forever
-				eventModel.promiseCancel = $timeout(this.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
-
-
 				// Check if eventID is sent
 				if (data.Error) {
 					Events.getLatestID({}).then(function(response) {
@@ -164,6 +153,17 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {
+
+					// Check for force upgrade
+					if ( result.data.Code && parseInt(result.data.Code) === 5003 ) {
+						// Force upgrade, kill event loop
+						eventModel.promiseCancel = undefined;
+						return;
+					}
+
+					// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
+					eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+
 					eventModel.manage(result.data);
 				},
 				function(err) {
