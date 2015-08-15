@@ -57,7 +57,7 @@
                     </a>
                 </span>
             </div>
-            <div class="composer-body" ng-hide="message.minimized" ng-form="composeForm{{$index}}">
+            <div class="composer-body" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="composerMeta">
                     <div class="form-group fromGroup">
                         <div class="input-group">
