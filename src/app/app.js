@@ -390,6 +390,23 @@ angular.module("proton", [
     };
 })
 
+/**
+ * Offline manager
+ */
+.run(function($rootScope, $window, notify) {
+    $rootScope.online = navigator.onLine;
+
+    $window.addEventListener('offline', function() {
+        $rootScope.online = false;
+        notify({message: 'Your are not connected to the Internet', classes: 'notification-danger', duration: 0});
+    });
+
+    $window.addEventListener('online', function() {
+        $rootScope.online = true;
+        notify.closeAll();
+    });
+})
+
 //
 // Handle some application exceptions
 //
