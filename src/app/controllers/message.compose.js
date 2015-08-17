@@ -756,7 +756,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.saveNewContacts = function(message) {
-        contactManager.save(message);
+        // contactManager.save(message);
     };
 
     $scope.save = function(message, silently, forward) {

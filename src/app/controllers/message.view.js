@@ -110,7 +110,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.saveNewContacts = function() {
-        contactManager.save(message);
+        // contactManager.save(message);
     };
 
     $scope.getFrom = function() {
