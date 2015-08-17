@@ -162,7 +162,9 @@ angular.module("proton.event", ["proton.constants"])
 					}
 
 					// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
-					eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					if ( angular.isDefined(eventModel.promiseCancel) ) {
+						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					}
 
 					eventModel.manage(result.data);
 				},
