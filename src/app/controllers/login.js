@@ -180,8 +180,10 @@ angular.module("proton.controllers.Auth", [
 .controller("SecuredController", function(
     $scope,
     $rootScope,
+    $window,
     authentication,
     eventManager,
+    notify,
     Message
 ) {
     $scope.user = authentication.user;
@@ -189,6 +191,7 @@ angular.module("proton.controllers.Auth", [
 
     eventManager.start(authentication.user.EventID);
 
+    $rootScope.online = navigator.onLine;
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $rootScope.isSecure = authentication.isSecured;
@@ -200,5 +203,14 @@ angular.module("proton.controllers.Auth", [
         _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
 
         $rootScope.messageTotals = total;
+    });
+
+    $window.addEventListener('offline', function() {
+        $rootScope.online = false;
+        notify({message: 'You are offline', classes: 'notification-danger'});
+    });
+
+    $window.addEventListener('online', function() {
+        $rootScope.online = true;
     });
 });
