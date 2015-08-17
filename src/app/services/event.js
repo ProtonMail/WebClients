@@ -170,7 +170,9 @@ angular.module("proton.event", ["proton.constants"])
 				},
 				function(err) {
 					// Try again later
-					eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					if ( angular.isDefined(eventModel.promiseCancel) ) {
+						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					}
 				});
 			}
 		};
