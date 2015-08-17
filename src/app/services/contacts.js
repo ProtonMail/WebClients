@@ -3,11 +3,16 @@ angular.module("proton.contacts", [])
 
         return {
             save: function(message) {
-                var newContacts = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList).concat([{
-                    Address: message.SenderAddress,
-                    Name: message.SenderName || message.SenderAddress
-                }]), function(email) {
+                var list = message.ToList.concat(message.CCList).concat(message.BCCList);
 
+                if(angular.isDefined(message.SenderAddress)) {
+                    list.push({
+                        Address: message.SenderAddress,
+                        Name: message.SenderName || message.SenderAddress
+                    });
+                }
+
+                var newContacts = _.filter(list, function(email) {
                     return this.isItNew(email);
                 }.bind(this));
 
