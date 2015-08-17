@@ -664,14 +664,21 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
     };
 
+    /**
+     * Determine if we need to save the message
+     */
     $scope.needToSave = function(message) {
-        if(angular.isDefined(message.old)) {
-            var currentMessage = _.pick(message, $scope.oldProperties);
-            var oldMessage = _.pick(message.old, $scope.oldProperties);
-
-            return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+        if($scope.saving === true) { // Current backup
+            return false;
         } else {
-            return true;
+            if(angular.isDefined(message.old)) {
+                var currentMessage = _.pick(message, $scope.oldProperties);
+                var oldMessage = _.pick(message.old, $scope.oldProperties);
+
+                return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+            } else {
+                return true;
+            }
         }
     };
 
@@ -746,10 +753,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.save = function(message, silently, forward) {
         message.saved++;
+
         var deferred = $q.defer();
         var parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
+
+        $scope.saving = true;
 
         if (typeof parameters.Message.ToList === 'string') {
             parameters.Message.ToList = [];
@@ -974,7 +984,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
-
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });
