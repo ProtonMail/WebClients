@@ -13,10 +13,30 @@
             </h3>
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
-                <input autocomplete="off" type="text" ng-model="username" class="form-control dark" tabindex="1" name="Username" placeholder="Username" required="" autofocus="" value="" />
+                <input 
+                autocomplete="off" 
+                type="text" 
+                ng-model="username" 
+                class="form-control dark" 
+                tabindex="1" 
+                name="Username" 
+                placeholder="Username" 
+                required="" 
+                autofocus="" 
+                value="" />
             </div>
             <div class="form-group">
-                <input autocomplete="off" type="password" ng-model="password" class="form-control dark password" tabindex="2" name="Password" required="" placeholder="Password" value="" />
+                <input 
+                maxlength="{{ maxPW }}" 
+                autocomplete="off" 
+                type="password" 
+                ng-model="password" 
+                class="form-control dark password" 
+                tabindex="2" 
+                name="Password" 
+                required="" 
+                placeholder="Password" 
+                value="" />
             </div>
             <div class="fluid-container">
                 <div class="row">

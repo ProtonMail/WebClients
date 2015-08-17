@@ -36,6 +36,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
 
+        $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
+
         $scope.account = [];
 
         // Prepoppulate the username if from an invite link

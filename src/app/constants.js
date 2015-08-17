@@ -27,7 +27,7 @@ angular.module('proton.constants', [])
     MAX_EXPIRATION_TIME: 672, // hours
     MESSAGES_PER_PAGE: 50,
     COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
-    LOGIN_PW_MAX_LEN: 250,
+    LOGIN_PW_MAX_LEN: 500,
     MAILBOX_IDENTIFIERS: {
         "inbox": 0,
         "drafts": 1,

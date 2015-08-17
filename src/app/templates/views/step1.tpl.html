@@ -84,6 +84,7 @@
                 type="password" 
                 class="form-control" 
                 placeholder="Password" 
+                maxlength="{{ maxPW }}" 
                 required />
                 <div ng-show="step1.$submitted || step1.password.$touched">
                     <p ng-show="step1.$submitted && step1.password.$error.required" class="text-danger">Login password is required.</p>
