@@ -16,7 +16,7 @@
 #attachmentWrap {
     overflow: auto;
     max-height: (3*$row-height);
-    background-color: #f2f2f2;    
+    background-color: #f2f2f2;
 }
 #attachmentArea {
     border-radius: 0;
@@ -143,9 +143,6 @@ ul.attachments {
     &.unread h1 {
         font-weight: 700;
         color: #000;
-    }
-    &.starred {
-        background: $starred;
     }
     h1 {
         margin: 0;
