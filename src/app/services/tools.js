@@ -359,7 +359,7 @@ angular.module("proton.tools", ["proton.constants"])
        }
 
        function transform_links(id) {
-           $('#' + id).find('a[href^=http]').attr('target','_blank');
+           $('#' + id).find('a[href^=http]').attr('target','_blank').attr('rel', 'noreferrer');
        }
 
        function contains_image(content) {
