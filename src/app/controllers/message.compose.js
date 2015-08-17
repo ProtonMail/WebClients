@@ -1,28 +1,29 @@
 angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
 .controller("ComposeMessageController", function(
+    $interval,
+    $log,
+    $q,
     $rootScope,
     $scope,
-    $log,
-    $timeout,
-    $interval,
-    $q,
     $state,
     $stateParams,
+    $timeout,
     $translate,
     Attachment,
-    authentication,
-    Message,
-    messageCache,
-    attachments,
-    pmcw,
-    networkActivityTracker,
-    notify,
-    tools,
     CONSTANTS,
     Contact,
+    Message,
     User,
-    closeModal
+    attachments,
+    authentication,
+    closeModal,
+    contactManager,
+    messageCache,
+    networkActivityTracker,
+    notify,
+    pmcw,
+    tools
 ) {
     // Variables
     Contact.index.updateWith($scope.user.Contacts);
@@ -751,6 +752,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return true;
     };
 
+    $scope.saveNewContacts = function(message) {
+        contactManager.save(message);
+    };
+
     $scope.save = function(message, silently, forward) {
         message.saved++;
 
@@ -844,6 +849,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
+            if(authentication.user.AutoSaveContacts === 1) {
+                $scope.saveNewContacts(message);
+            }
 
             $scope.save(message, false).then(function() {
                 var parameters = {};
