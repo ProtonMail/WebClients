@@ -313,8 +313,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         setTimeout( function() {
             $('#draggableMailsHelper strong b').text($scope.selectedMessages().length);
         }, 20);
+
         $('body').addClass('dragging');
         $('#main').append('<div id="dragOverlay"></div>');
+
         if(message && !!!message.Selected) {
             message.Selected = true;
             $scope.$apply();
@@ -323,6 +325,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.onEndDragging = function(event, ui, message) {
         $('body').removeClass('dragging');
+
         $('#dragOverlay').fadeOut(200, function() {
             $(this).remove();
         });
@@ -447,8 +450,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.unselectAllMessages = function() {
-        _.forEach($scope.messages, function(message) {
-            message.Selected = false;
+        $scope.$apply(function() {
+            _.forEach($scope.messages, function(message) {
+                message.Selected = false;
+            });
         });
     };
 
@@ -685,6 +690,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     $scope.unselectAllMessages();
                     deferred.resolve();
                 }
+
+                $scope.unselectAllLabels();
             });
 
             networkActivityTracker.track(deferred.promise);
