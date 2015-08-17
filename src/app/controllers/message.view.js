@@ -46,12 +46,14 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.message = _.extend($scope.message, m);
     });
 
-    $(window).on('resize', function() {
+    function onResize() {
         $scope.setMessageHeadHeight();
-    });
+    }
+
+    $(window).on('resize', onResize);
 
     $scope.$on('$destroy', function() {
-        $(window).off('resize');
+        $(window).off('resize', onResize);
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
     });

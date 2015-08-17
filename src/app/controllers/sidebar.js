@@ -36,13 +36,15 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             $scope.labelScroller();
         });
 
-        $(window).bind('resize', function() {
-            $scope.labelScroller();
-        });
+        $(window).bind('resize', $scope.onResize);
 
         $scope.$on("$destroy", function() {
-            $(window).unbind('resize');
+            $(window).unbind('resize', $scope.onResize);
         });
+    };
+
+    $scope.onResize = function() {
+        $scope.labelScroller();
     };
 
     $scope.updateLabels = function () {

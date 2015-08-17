@@ -31,6 +31,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
+    $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
@@ -78,22 +79,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
-    $(window).on('resize', function() {
+    function onResize() {
         clearTimeout(timeoutStyle);
+
         timeoutStyle = setTimeout(function() {
             $scope.composerStyle();
-
         }, 250);
-    });
+    }
 
-    $scope.$on('$destroy', function() {
-        $(window).off('resize');
-    });
-
-    $scope.isOver = false;
-
-    $(window).on('dragover', function(e) {
-        e.preventDefault();
+    function onDragOver(event) {
+        event.preventDefault();
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
 
@@ -105,6 +100,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if ($scope.isOver === false) {
             $scope.isOver = true;
         }
+    }
+
+    $(window).on('resize', onResize);
+    $(window).on('dragover', onDragOver);
+
+    $scope.$on('$destroy', function() {
+        $(window).off('resize', onResize);
+        $(window).off('dragover', onDragOver);
     });
 
     // Function used for dragover listener on the dropzones
