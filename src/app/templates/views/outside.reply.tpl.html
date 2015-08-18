@@ -25,7 +25,7 @@
             <li ng-if="message.CCList.length > 0">
                 <strong>{{ 'CC' | translate }}:</strong>
                 <span ng-repeat="email in message.CCList">
-                    &lt;{{ email.Address }}&gt; 
+                    &lt;{{ email.Address }}&gt;
                 </span>
             </li>
         </ul>
@@ -46,12 +46,15 @@
             <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ message.sizeAttachments() | humanSize }})
         </div>
         <div class="panel-body">
-            <div class="list-group no-margin-bottom">
-                <a href="" ng-repeat="attachment in message.Attachments" class="list-group-item">
+            <ul class="list-group no-margin-bottom">
+                <li href="" ng-repeat="attachment in message.Attachments" class="list-group-item">
+                    <a href="" class="pull-right" ng-click="removeAttachment(attachment)" title="Remove attachment">
+                        <i class="fa fa-times"></i>
+                    </a>
                     <i class="fa fa-lock"></i>
                     <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
-                </a>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 
