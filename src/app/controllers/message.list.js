@@ -504,22 +504,22 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-        var message = _.findWhere($scope.messages, {ID: id});
+        var message = messageCache.get(id).then(function(message) {
+            Message.trash({IDs: [id]});
 
-        Message.trash({IDs: [id]});
+            movedMessages.push({
+                LabelIDs: message.LabelIDs,
+                OldLocation: message.Location,
+                IsRead: message.IsRead,
+                Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                Starred: message.Starred
+            });
 
-        movedMessages.push({
-            LabelIDs: message.LabelIDs,
-            OldLocation: message.Location,
-            IsRead: message.IsRead,
-            Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-            Starred: message.Starred
+            messageCounts.updateUnread('move', movedMessages);
+            messageCounts.updateTotals('move', movedMessages);
+
+            $scope.messages = _.without($scope.messages, message);
         });
-
-        messageCounts.updateUnread('move', movedMessages);
-        messageCounts.updateTotals('move', movedMessages);
-
-        $scope.messages = _.without($scope.messages, message);
     };
 
     $scope.moveMessagesTo = function(mailbox) {

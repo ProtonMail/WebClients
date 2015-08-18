@@ -404,16 +404,18 @@ angular.module("proton.messages", ["proton.constants"])
                 }
             },
             get: function(id) {
+                var deferred = $q.defer();
                 var msg = cachedMessages.get(id);
 
                 if (!msg) {
-                    msg = Message.get({
-                        id: id
-                    });
+                    msg = Message.get({ id: id });
                     cachedMessages.put(id, msg);
+                    deferred.resolve(msg.$promise);
+                } else {
+                    deferred.resolve(msg);
                 }
 
-                return msg;
+                return deferred.promise;
             },
             put: function(id, msg) {
                 cachedMessages.fusion(id, msg);
