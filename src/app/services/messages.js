@@ -59,7 +59,7 @@ angular.module("proton.messages", ["proton.constants"])
                 var self = this;
 
                 setTimeout(function() {
-                    api.get(self.queue.shift()).$promise.then(function() {
+                    api.get(self.queue.shift()).then(function() {
                         if (self.queue.length === 0) {
                             self.fetching = false;
                         } else {
