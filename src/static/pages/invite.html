@@ -33,7 +33,6 @@
 
     include "_nav.html"
 
-
     <div class="container narrow">
         <div class="content">
 
@@ -85,9 +84,11 @@
     <script type="text/javascript">
         $( function() {
             var username = getUrlParameter('u');
+
             if (username!==undefined) {
                 $('#username').val(username);
             }
+            
             $('#invite-form').on('submit', function(event) {
                 // prevent form submission. we will do an API call instead
                 event.preventDefault();
@@ -104,23 +105,19 @@
                         request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
                         request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
                     },
-                    url: "https://api.protonmail.ch/users/available/"+$('#username').val(),
+                    url: "https://api.protonmail.ch/users/available/" + $('#username').val(),
                     success: function(msg) {
-                        if (msg.Code===1000) {
-                            if (msg.Available===1) {
-                                // alert('Username available!');
+                        if (msg.Code === 1000) {
+                            if (msg.Available === 1) {
                                 createInvite();
-                            }
-                            else if (msg.Available===0) {
+                            } else if (msg.Available === 0) {
                                 alert('Username taken.');
                                 $('#invite-button').attr('disabled', false);
                             }
-                        }
-                        else {
-                            alert('Something went wrong.');
+                        } else {
+                            alert(msg.Error);
                             $('#invite-button').attr('disabled', false);
                         }
-                        console.log(msg);
                     }
                 });
             });
