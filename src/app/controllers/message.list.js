@@ -450,10 +450,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.unselectAllMessages = function() {
-        $scope.$apply(function() {
-            _.forEach($scope.messages, function(message) {
-                message.Selected = false;
-            });
+        _.forEach($scope.messages, function(message) {
+            message.Selected = false;
         });
     };
 
@@ -720,6 +718,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }
 
         $rootScope.scrollToBottom = scrollToBottom === true;
+        $scope.unselectAllMessages();
         $scope.page = page;
 
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
