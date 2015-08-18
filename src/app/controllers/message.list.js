@@ -44,14 +44,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        $scope.startWatchingEvent();
         $scope.updatePageName();
-
+        $scope.startWatchingEvent();
         $scope.refreshMessagesCache().then(function() {
             $scope.actionsDelayed();
-
             messageCache.watchScope($scope, "messages");
-
             watchMessages = $scope.$watch('messages', function() {
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
@@ -64,17 +61,19 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var unread = '';
         var counters = messageCounts.get();
 
-        // get unread number
-        if($scope.mailbox === 'label') {
-            value = counters.Labels[id];
-        } else if ($scope.mailbox === 'starred'){
-            value = counters.Starred;
-        } else {
-            value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
-        }
+        if(counters) {
+            // get unread number
+            if($scope.mailbox === 'label') {
+                value = counters.Labels[$stateParams.label];
+            } else if ($scope.mailbox === 'starred'){
+                value = counters.Starred;
+            } else {
+                value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
+            }
 
-        if(angular.isDefined(value) && value > 0) {
-            unread = '(' + value + ') ';
+            if(angular.isDefined(value) && value > 0) {
+                unread = '(' + value + ') ';
+            }
         }
 
         // get name
@@ -139,7 +138,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.actionsDelayed = function() {
         $scope.unselectAllMessages();
-
         $('#page').val($scope.page);
         $('#page').change(function(event) {
             $scope.goToPage();
