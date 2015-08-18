@@ -635,17 +635,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        if(message.IsEncrypted === 0) {
-            notify({
-                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
-                classes: 'notification-danger',
-                duration: 10000 // 10 seconds
-            });
-            $scope.closePanel(message);
-            $scope.openPanel(message, 'encrypt');
-            return false;
-        }
-
         message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
@@ -841,11 +830,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.send = function(message) {
-        $scope.saving = false;
-        $scope.sending = true;
-
         var deferred = $q.defer();
         var validate = $scope.validate(message);
+
+        $scope.saving = false;
+        $scope.sending = true;
 
         if(validate) {
             $scope.save(message, false).then(function() {
@@ -898,6 +887,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     if(outsiders === true && message.IsEncrypted === 0) {
                         parameters.AttachmentKeys = [];
                         parameters.ClearBody = message.Body;
+
                         if(message.Attachments.length > 0) {
                              promises.push(message.clearPackets().then(function(packets) {
                                  parameters.AttachmentKeys = packets;
@@ -907,10 +897,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     }
 
                     $q.all(promises).then(function() {
-                        Message.send(parameters).$promise
-                        .then(
-                            function(result) {
+                        if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
+                            notify({
+                                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
+                                classes: 'notification-danger',
+                                duration: 10000 // 10 seconds
+                            });
+                            $scope.sending = false;
+                            deferred.reject();
+                        } else {
+                            Message.send(parameters).$promise.then(function(result) {
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
+
                                 if (result.Parent) {
                                     updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                     $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
@@ -918,15 +916,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                         $state.go('^');
                                     }
                                 }
+
                                 $scope.sending = false;
+
                                 if(angular.isDefined(result.Error)) {
                                     notify({
                                         message: result.Error,
                                         classes: 'notification-danger'
                                     });
                                     deferred.reject();
-                                }
-                                else {
+                                } else {
                                     messageCache.set(updateMessages);
                                     notify({
                                         message: $translate.instant('MESSAGE_SENT'),
@@ -935,9 +934,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                     $scope.close(message, false);
                                     deferred.resolve(result);
                                 }
-                                return deferred.promise;
-                            }
-                        );
+                            });
+                        }
                     });
                 });
             }, function() {
@@ -947,11 +945,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
             message.track(deferred.promise);
 
-            return deferred.promise;
-        }
-        else {
+        } else {
             $scope.sending = false;
+            deferred.reject();
         }
+
+        return deferred.promise;
     };
 
     $scope.minimize = function(message) {
