@@ -99,10 +99,10 @@
                         <a ng-click="openNewMessage();closeMobileDropdown();"><span class="fa fa-pencil"></span> {{ 'COMPOSE' | translate }}</a>
                     </li>
                     <li class="list-group-item">
-                        <a ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}<span class="label" ng-class="{active: unreadCount > 0}">{{unreadCount}}</span></a>
+                        <a ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}</a>
                     </li>
                     <li class="list-group-item">
-                        <a ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}<span class="label" ng-class="{active: draftsCount > 0}">{{draftsCount}}</span></a>
+                        <a ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}</a>
                     </li>
                     <li class="list-group-item">
                         <a ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> {{ 'SENT' | translate }}</a>

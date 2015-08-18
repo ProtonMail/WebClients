@@ -150,22 +150,19 @@ angular.module("proton", [
 
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
-        "${ _.string.capitalize(pageName) }" +
-        "<% if (unreadCount) { %>" +
-        " (&thinsp;${unreadCount}&thinsp;)" +
-        "<% } %> " +
+        "${ pageName }" +
         "&middot; " +
         "<% } %>" +
         "ProtonMail"
     );
-    $rootScope.$watchGroup(["pageName", "unreadCount"], function(values) {
-        $document.find("title").html(pageTitleTemplate({
-            pageName: values[0],
-            unreadCount: values[1]
-        }));
+
+    $rootScope.$watch('pageName', function(newVal, oldVal) {
+        $document.find("title").html(pageTitleTemplate({ pageName: newVal }));
     });
+
     $rootScope.networkActivity = networkActivityTracker;
     $rootScope.toggleSidebar = false;
+
     // notification service config
     // https://github.com/cgross/angular-notify
     notify.config({
