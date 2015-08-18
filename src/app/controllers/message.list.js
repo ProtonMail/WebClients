@@ -44,28 +44,53 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
+        $scope.startWatchingEvent();
+        $scope.updatePageName();
+
         $scope.refreshMessagesCache().then(function() {
             $scope.actionsDelayed();
-            $scope.startWatchingEvent();
-        });
 
+            messageCache.watchScope($scope, "messages");
+
+            watchMessages = $scope.$watch('messages', function() {
+                $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
+            }, true);
+        });
+    };
+
+    $scope.updatePageName = function() {
+        var name;
+        var value;
+        var unread = '';
+        var counters = messageCounts.get();
+
+        // get unread number
         if($scope.mailbox === 'label') {
-            $rootScope.pageName = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+            value = counters.Labels[id];
+        } else if ($scope.mailbox === 'starred'){
+            value = counters.Starred;
         } else {
-            $rootScope.pageName = $scope.mailbox;
+            value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
         }
+
+        if(angular.isDefined(value) && value > 0) {
+            unread = '(' + value + ') ';
+        }
+
+        // get name
+        if($scope.mailbox === 'label') {
+            name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+        } else {
+            name = $scope.mailbox;
+        }
+
+        $rootScope.pageName = unread + _.string.capitalize(name);
     };
 
     $scope.startWatchingEvent = function() {
-        messageCache.watchScope($scope, "messages");
-
         $scope.$on('refreshMessages', function(event, silently, empty) {
             $scope.refreshMessages(silently, empty);
         });
-
-        watchMessages = $scope.$watch('messages', function() {
-            $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
-        }, true);
 
         $scope.$on('refreshMessagesCache', function(){
             $scope.refreshMessagesCache();
@@ -81,6 +106,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.$on('discardDraft', function(event, id) {
             $scope.discardDraft(id);
+        });
+
+        $scope.$on('updatePageName', function(event) {
+            $scope.updatePageName();
         });
 
         $scope.$on('applyLabels', function(event, LabelID) {
