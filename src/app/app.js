@@ -151,7 +151,7 @@ angular.module("proton", [
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ pageName }" +
-        "&middot; " +
+        " - " +
         "<% } %>" +
         "ProtonMail"
     );
