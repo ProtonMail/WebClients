@@ -101,7 +101,7 @@ angular.module("proton.controllers.Outside", [
                 var KeyPackets = [];
                 var DataPacket = [];
 
-                _.each($scope.message.attachments, function(attachment) {
+                _.each($scope.message.Attachments, function(attachment) {
                     Filename.push(attachment.Filename);
                     MIMEType.push(attachment.MIMEType);
                     KeyPackets.push(attachment.KeyPackets);
@@ -308,10 +308,5 @@ angular.module("proton.controllers.Outside", [
 
     $scope.removeAttachment = function(attachment) {
         $scope.message.Attachments = _.without(message.Attachments, attachment);
-
-        Attachment.remove({
-            "MessageID": $scope.message.ID,
-            "AttachmentID": attachment.ID
-        });
     };
 });
