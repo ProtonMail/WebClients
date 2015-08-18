@@ -165,8 +165,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             User.available({ username: $scope.account.Username }).$promise
             .then(
                 function(response) {
-                    if (response.error) {
-                        var error_message = (response.error) ? response.error : (response.statusText) ? response.statusText : 'Error.';
+                    if (response.Error) {
+                        var error_message = (response.Error) ? response.Error : (response.statusText) ? response.statusText : 'Error.';
                         $('#Username').focus();
                         deferred.reject(error_message);
                     }
