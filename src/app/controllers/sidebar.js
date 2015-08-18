@@ -31,11 +31,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.$on('updateCounters', function(event) { $scope.refreshCounters(); });
 
     $scope.initialization = function() {
-        // Actions delayed
-        $timeout(function() {
-            $scope.refreshCounters();
-            $scope.labelScroller();
-        });
+        $scope.refreshCounters();
 
         $(window).bind('resize', $scope.onResize);
 
@@ -47,6 +43,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.refreshCounters = function() {
         messageCounts.refresh().then(function() {
             $rootScope.$broadcast('updatePageName');
+            $scope.labelScroller();
         });
     };
 
