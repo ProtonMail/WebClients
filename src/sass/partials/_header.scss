@@ -26,6 +26,13 @@
             }
         }
     }
+    #headerDisplayName {
+        width: 14rem;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
     .navbar-text {
         margin-right: 0;
         margin-left: 0;
