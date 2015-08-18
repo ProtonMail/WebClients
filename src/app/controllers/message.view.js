@@ -15,6 +15,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $templateCache,
     $timeout,
     $translate,
+    confirmModal,
     CONSTANTS,
     Label,
     Message,
@@ -122,47 +123,54 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.displayContent = function(print) {
-        message.clearTextBody().then(function(result) {
-            var content;
+        message.clearTextBody()
+        .then(
+            function(result) {
 
-            if(print === true) {
-                content = result;
-            } else {
-                content = message.clearImageBody(result);
+                var content;
+
+                if(print === true) {
+                    content = result;
+                } else {
+                    content = message.clearImageBody(result);
+                }
+
+                // safari warning
+                if(!$scope.isFileSaverSupported) {
+                    $scope.safariWarning = true;
+                }
+
+                content = DOMPurify.sanitize(content, {
+                    ADD_ATTR: ['target'],
+                    FORBID_TAGS: ['style']
+                });
+
+                if (tools.isHtml(content)) {
+                    $scope.isPlain = false;
+                } else {
+                    $scope.isPlain = true;
+                }
+
+                // for the welcome email, we need to change the path to the welcome image lock
+                content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
+
+                $scope.content = $sce.trustAsHtml(content);
+
+                $timeout(function() {
+                    tools.transformLinks('message-body');
+                });
+
+                if(print) {
+                    setTimeout(function() {
+                        window.print();
+                        window.history.back();
+                    }, 1000);
+                }
+            },
+            function(err) {
+                $scope.togglePlainHtml();
             }
-
-            // safari warning
-            if(!$scope.isFileSaverSupported) {
-                $scope.safariWarning = true;
-            }
-
-            content = DOMPurify.sanitize(content, {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style']
-            });
-
-            if (tools.isHtml(content)) {
-                $scope.isPlain = false;
-            } else {
-                $scope.isPlain = true;
-            }
-
-            // for the welcome email, we need to change the path to the welcome image lock
-            content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
-
-            $scope.content = $sce.trustAsHtml(content);
-
-            $timeout(function() {
-                tools.transformLinks('message-body');
-            });
-
-            if(print) {
-                setTimeout(function() {
-                    window.print();
-                    window.history.back();
-                }, 1000);
-            }
-        });
+        );
     };
 
     $scope.getEmails = function(emails) {
@@ -260,11 +268,26 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                                 .prepend('<span class="fa fa-download"></span>');
                             }
                             $scope.$apply();
+                        },
+                        function(err) {
+                            $log.error(err);
                         }
                     );
                 },
                 function(err) {
-                    console.log(err);
+                    attachment.decrypting = false;
+                    confirmModal.activate({
+                        params: {
+                            title: 'Unable to decrypt attachment.',
+                            message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.ch</kbd></p>',
+                            confirm: function() {
+                                confirmModal.deactivate();
+                            },
+                            cancel: function() {
+                                confirmModal.deactivate();
+                            }
+                        }
+                    });
                 }
             );
         }

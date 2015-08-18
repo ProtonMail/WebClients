@@ -416,24 +416,38 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearTextBody: function() {
+
+            $log.debug('clearTextBody');
             var body;
             var deferred = $q.defer();
 
             if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
 
+
                 if (_.isUndefined(this.DecryptedBody) && !!!this.decrypting) {
                     this.decrypting = true;
 
                     try {
-                        authentication.getPrivateKey().then(function(key) {
-                            pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
-                                this.DecryptedBody = result;
-                                this.failedDecryption = false;
-                                this.decrypting = false;
-                                deferred.resolve(result);
-                            }.bind(this));
-                        }.bind(this));
-                    } catch (err) {
+                        authentication.getPrivateKey()
+                        .then(
+                            function(key) {
+                                pmcw.decryptMessageRSA(this.Body, key, this.Time)
+                                .then(
+                                    function(result) {
+                                        this.DecryptedBody = result;
+                                        this.failedDecryption = false;
+                                        this.decrypting = false;
+                                        deferred.resolve(result); 
+                                    }.bind(this),
+                                    function(err) {
+                                        this.failedDecryption = true;
+                                        deferred.reject(err);
+                                    }.bind(this)
+                                );
+                            }.bind(this)
+                        );
+                    } 
+                    catch (err) {
                         this.DecryptedBody = "";
                         this.failedDecryption = true;
                     }

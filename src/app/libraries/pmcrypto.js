@@ -59,7 +59,7 @@ var pmcrypto = (function() {
 
     // Backwards-compatible decrypt RSA message function
     function decryptMessageRSA(encMessage, prKey, messageTime) {
-
+        // console.log('decryptMessageRSA');
         return new Promise(function(resolve, reject) {
 
             if (encMessage === undefined || encMessage === '') {
