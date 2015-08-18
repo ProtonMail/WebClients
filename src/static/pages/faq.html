@@ -36,38 +36,39 @@
 
 
     <div class="container">
+        <p>&nbsp;</p>
     	<h1>Frequently Asked Questions</h1>
     	<dl>
-    		<dt><a href="#faq1" id="faq1" class="pure-button"><i class="fa fa-plus-square"></i> How can ProtonMail tell if I entered the wrong decryption password without knowing my decryption password?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq1answer');" href="#faq1" id="faq1" class="pure-button"><i class="fa fa-plus-square"></i> How can ProtonMail tell if I entered the wrong decryption password without knowing my decryption password?</a></dt>
+    		<dd style="display:none" id="faq1answer">
     			<p>ProtonMail also encrypts an unique string of characters using the same method used when we encrypt your data on your browser. When you attempt to unlock your mailbox, this string of characters is decrypted locally on your machine with the decryption password you supply. If the decrypted result does not match the unique string for your account, then we know your <kbd>Mailbox Password</kbd> is probably incorrect.</p>
     		</dd>
-    		<dt><a href="#faq2" id="faq2" class="pure-button"><i class="fa fa-plus-square"></i> Can I change my Username?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq2answer');" href="#faq2" id="faq2" class="pure-button"><i class="fa fa-plus-square"></i> Can I change my Username?</a></dt>
+    		<dd style="display:none" id="faq2answer">
     			<p>Your username is your email address and cannot be changed. You can change your <kbd>Display Name</kbd> on the <kbd>Settings</kbd> page.</p>
     		</dd>
-    		<dt><a href="#faq3" id="faq3" class="pure-button"><i class="fa fa-plus-square"></i> I forgot my Mailbox Password, can you recover it for me?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq3answer');" href="#faq3" id="faq3" class="pure-button"><i class="fa fa-plus-square"></i> I forgot my Mailbox Password, can you recover it for me?</a></dt>
+    		<dd style="display:none" id="faq3answer">
     			<p>Unfortunately, it is impossible for us to recover your <kbd>Mailbox Password</kbd> because we do NOT save this information on our servers. We never have access to your decryption password and as a result, we cannot recover something we don't have. The only option is to create a new account or lose all of your previous encrypted emails with a reset.</p>
     		</dd>
-    		<dt><a href="#faq4" id="faq4" class="pure-button"><i class="fa fa-plus-square"></i> Can I change or reset my Mailbox password?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq4answer');" href="#faq4" id="faq4" class="pure-button"><i class="fa fa-plus-square"></i> Can I change or reset my Mailbox password?</a></dt>
+    		<dd style="display:none" id="faq4answer">
     			<p>With ProtonMail Beta Version >= 1.07, your <kbd>Mailbox Password</kbd> can be changed by you if you know the old one. The update happens in your browser so we don't have access to it. If you forget the <kbd>Mailbox Password</kbd>, we don't have the ability to recover it for you.</p>
     		</dd>
-    		<dt><a href="#faq5" id="faq5" class="pure-button"><i class="fa fa-plus-square"></i> What's the difference between my Login and Mailbox password?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq5answer');" href="#faq5" id="faq5" class="pure-button"><i class="fa fa-plus-square"></i> What's the difference between my Login and Mailbox password?</a></dt>
+    		<dd style="display:none" id="faq5answer">
     			<p>ProtonMail uses a 2 password system to secure your account.</p>
     			<p>The first password is your <kbd>Login Password</kbd> and is sent to us so we can authenticate you and log you into our system.</p>
     			<p>The second password is your <kbd>Mailbox Password</kbd> and is not sent to us, it's only within your browser where the encryption and decryption takes place.</p>
     		</dd>
-    		<dt><a href="#faq6" id="faq6" class="pure-button"><i class="fa fa-plus-square"></i> Why does ProtonMail use 2 passwords?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq6answer');" href="#faq6" id="faq6" class="pure-button"><i class="fa fa-plus-square"></i> Why does ProtonMail use 2 passwords?</a></dt>
+    		<dd style="display:none" id="faq6answer">
     			<p>ProtonMail uses a 2 password system to secure your account.</p>
     			<p>The first password is your <kbd>Login Password</kbd> and is sent to us so we can authenticate you and log you into our system.</p>
     			<p>The second password is your <kbd>Mailbox Password</kbd> and is not sent to us, it's only within your browser where the encryption and decryption takes place.</p>
     		</dd>
-    		<dt><a href="#faq7" id="faq7" class="pure-button"><i class="fa fa-plus-square"></i> Is ProtonMail incompatible with certain browser extensions?</a></dt>
-    		<dd style="display:none">
+    		<dt><a onclick="openFAQ('faq7answer');" href="#faq7" id="faq7" class="pure-button"><i class="fa fa-plus-square"></i> Is ProtonMail incompatible with certain browser extensions?</a></dt>
+    		<dd style="display:none" id="faq7answer">
     			<p>Yes. ProtonMail has a unique login and encryption system that certain browser extensions are incompatible with.</p>
     			<p>While this list isn't complete, if you're having trouble logging in or viewing messages, try disabling these extensions if you have them.</p>
     			<ul>
@@ -77,8 +78,13 @@
     	</dl>
     </div><!--/.container-->
 
-
-
+    <script type="text/javascript">
+    function openFAQ(id) {
+        console.log(id);
+        console.log(document.getElementById(id));
+        document.getElementById(id).style.display = 'block';
+    }
+    </script>
 
 
     include "_footer.html"

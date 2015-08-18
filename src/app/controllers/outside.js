@@ -60,10 +60,15 @@ angular.module("proton.controllers.Outside", [
             $scope.addAttachment(file_array);
         });
     }, 100);
-
+// http://localhost:8080/eo/fABD0Izp5boBsA3Q7BaP7F-nNeGvOPVLNIwW_oqUcHWqTlCojye_qm9-mHQLVjlbBCtw4W2vpyJBSdTccBxzGA==
     // start timer ago
     $scope.agoTimer = $interval(function() {
         var time = $filter('longReadableTime')($scope.message.Time);
+
+        if($scope.isExpired()) {
+            // Redirect to unlock view if the message is expire
+            $state.go('eo.unlock', {tag: $stateParams.tag});
+        }
 
         $scope.ago = time;
     }, 1000);
@@ -72,6 +77,16 @@ angular.module("proton.controllers.Outside", [
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
     });
+
+    /**
+     * Determine if the message is expire
+     */
+    $scope.isExpired = function() {
+        var time = moment.unix($scope.message.Time);
+        var current = moment.unix();
+
+        return current.isAfter(time);
+    };
 
     $scope.selectFile = function() {
         $('#inputFile').click();

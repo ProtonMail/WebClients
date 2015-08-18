@@ -1,28 +1,29 @@
 angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
 .controller("ComposeMessageController", function(
+    $interval,
+    $log,
+    $q,
     $rootScope,
     $scope,
-    $log,
-    $timeout,
-    $interval,
-    $q,
     $state,
     $stateParams,
+    $timeout,
     $translate,
     Attachment,
-    authentication,
-    Message,
-    messageCache,
-    attachments,
-    pmcw,
-    networkActivityTracker,
-    notify,
-    tools,
     CONSTANTS,
     Contact,
+    Message,
     User,
-    closeModal
+    attachments,
+    authentication,
+    closeModal,
+    contactManager,
+    messageCache,
+    networkActivityTracker,
+    notify,
+    pmcw,
+    tools
 ) {
     // Variables
     Contact.index.updateWith($scope.user.Contacts);
@@ -30,6 +31,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
+    $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
@@ -77,22 +79,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.listenEditor(message);
     });
 
-    $(window).on('resize', function() {
+    function onResize() {
         clearTimeout(timeoutStyle);
+
         timeoutStyle = setTimeout(function() {
             $scope.composerStyle();
-
         }, 250);
-    });
+    }
 
-    $scope.$on('$destroy', function() {
-        $(window).off('resize');
-    });
-
-    $scope.isOver = false;
-
-    $(window).on('dragover', function(e) {
-        e.preventDefault();
+    function onDragOver(event) {
+        event.preventDefault();
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
 
@@ -104,6 +100,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if ($scope.isOver === false) {
             $scope.isOver = true;
         }
+    }
+
+    $(window).on('resize', onResize);
+    $(window).on('dragover', onDragOver);
+
+    $scope.$on('$destroy', function() {
+        $(window).off('resize', onResize);
+        $(window).off('dragover', onDragOver);
     });
 
     // Function used for dragover listener on the dropzones
@@ -653,14 +657,21 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
     };
 
+    /**
+     * Determine if we need to save the message
+     */
     $scope.needToSave = function(message) {
-        if(angular.isDefined(message.old)) {
-            var currentMessage = _.pick(message, $scope.oldProperties);
-            var oldMessage = _.pick(message.old, $scope.oldProperties);
-
-            return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+        if($scope.saving === true) { // Current backup
+            return false;
         } else {
-            return true;
+            if(angular.isDefined(message.old)) {
+                var currentMessage = _.pick(message, $scope.oldProperties);
+                var oldMessage = _.pick(message.old, $scope.oldProperties);
+
+                return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+            } else {
+                return true;
+            }
         }
     };
 
@@ -735,10 +746,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.save = function(message, silently, forward) {
         message.saved++;
+
         var deferred = $q.defer();
         var parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
+
+        $scope.saving = true;
 
         if (typeof parameters.Message.ToList === 'string') {
             parameters.Message.ToList = [];
@@ -972,7 +986,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
-
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });

@@ -26,7 +26,7 @@ angular.module("proton.routes", [
             ) {
                 if (authentication.isLoggedIn()) {
                     return networkActivityTracker.track(
-                        messageCache.get($stateParams.id).$promise
+                        messageCache.get($stateParams.id)
                     );
                 }
             }

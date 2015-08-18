@@ -352,52 +352,6 @@ angular.module("proton", [
 })
 
 //
-// Setup keyboard bindings
-//
-
-.run(function(
-    $state,
-    $stateParams
-) {
-    // Mousetrap.bind(["ctrl+n", "c"], function() {
-    //     if ($state.includes("secured.**")) {
-    //         $state.go("secured.compose");
-    //     }
-    // });
-    // Mousetrap.bind(["i"], function() {
-    //     if ($state.includes("secured.**")) {
-    //         $state.go("secured.inbox");
-    //     }
-    // });
-    // Mousetrap.bind(["s"], function() {
-    //     if ($state.includes("secured.**")) {
-    //         $state.go("secured.starred");
-    //     }
-    // });
-    // Mousetrap.bind(["d"], function() {
-    //     if ($state.includes("secured.**")) {
-    //         $state.go("secured.drafts");
-    //     }
-    // });
-    // Mousetrap.bind("r", function() {
-    //     if ($state.includes("secured.*.message")) {
-    //         $state.go("secured.reply", {
-    //             action: 'reply',
-    //             id: $stateParams.ID
-    //         });
-    //     }
-    // });
-    // Mousetrap.bind("f", function() {
-    //     if ($state.includes("secured.*.message")) {
-    //         $state.go("secured.reply", {
-    //             action: 'forward',
-    //             id: $stateParams.ID
-    //         });
-    //     }
-    // });
-})
-
-//
 // Pikaday config (datepicker)
 //
 
@@ -434,6 +388,23 @@ angular.module("proton", [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
+})
+
+/**
+ * Offline manager
+ */
+.run(function($rootScope, $window, notify) {
+    $rootScope.online = navigator.onLine;
+
+    $window.addEventListener('offline', function() {
+        $rootScope.online = false;
+        notify({message: 'Your are not connected to the Internet', classes: 'notification-danger', duration: 0});
+    });
+
+    $window.addEventListener('online', function() {
+        $rootScope.online = true;
+        notify.closeAll();
+    });
 })
 
 //

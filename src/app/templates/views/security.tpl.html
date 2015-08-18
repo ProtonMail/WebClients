@@ -4,8 +4,8 @@
     <div class="container-fluid">
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-        <h1>Key Export</h1>
-        <p>Download your Public Key for use in other PGP compatible services.</p>
+        <h1>Key Export (Experimental)</h1>
+        <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
         <a href ng-click="exportPublicKey()" class="btn btn-default">
             <i class="fa fa-download"></i> Download PublicKey
         </a>

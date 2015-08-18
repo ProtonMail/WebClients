@@ -25,24 +25,33 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
     };
+
     // Listeners
-    $scope.$on('updateLabels', function(){ $scope.updateLabels(); });
-    $scope.$on('updateCounters', function(event) { messageCounts.refresh(); });
+    $scope.$on('updateLabels', function(event) { $scope.updateLabels(); });
+    $scope.$on('updateCounters', function(event) { $scope.refreshCounters(); });
 
     $scope.initialization = function() {
         // Actions delayed
         $timeout(function() {
-            messageCounts.refresh();
+            $scope.refreshCounters();
             $scope.labelScroller();
         });
 
-        $(window).bind('resize', function() {
-            $scope.labelScroller();
-        });
+        $(window).bind('resize', $scope.onResize);
 
         $scope.$on("$destroy", function() {
-            $(window).unbind('resize');
+            $(window).unbind('resize', $scope.onResize);
         });
+    };
+
+    $scope.refreshCounters = function() {
+        messageCounts.refresh().then(function() {
+            $rootScope.$broadcast('updatePageName');
+        });
+    };
+
+    $scope.onResize = function() {
+        $scope.labelScroller();
     };
 
     $scope.updateLabels = function () {

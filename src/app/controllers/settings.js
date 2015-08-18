@@ -357,11 +357,11 @@ angular.module("proton.controllers.Settings", [
                                     notify($translate.instant('LABEL_CREATED'));
                                     $scope.labels.push(result.Label);
                                 } else {
-                                    notify(result.error);
+                                    notify(result.Error);
                                     $log.error(result);
                                 }
                             }, function(result) {
-                                notify(result.error);
+                                notify(result.Error);
                                 $log.error(result);
                             })
                         );

@@ -26,4 +26,28 @@ html.angular-squire-iframe {
 		text-decoration: underline;
 		color: $primary-color;
 	}
+	table {
+		display: table;
+		box-sizing: initial;
+	}
+	thead {
+		display: table-header-group;
+		box-sizing: initial;
+	}
+	tfoot {
+		display: table-footer-group;
+		box-sizing: initial;
+	}
+	tbody {
+		display: table-row-group;
+		box-sizing: initial;
+	}
+	tr {
+		display: table-row;
+		box-sizing: initial;
+	}
+	td {
+		display: table-cell;
+		box-sizing: initial;
+	}
 }

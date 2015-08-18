@@ -46,21 +46,19 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.message = _.extend($scope.message, m);
     });
 
-    $(window).on('resize', function() {
+    function onResize() {
         $scope.setMessageHeadHeight();
-    });
+    }
+
+    $(window).on('resize', onResize);
 
     $scope.$on('$destroy', function() {
-        $(window).off('resize');
+        $(window).off('resize', onResize);
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
     });
 
     $scope.initView = function() {
-        if(authentication.user.AutoSaveContacts === 1) {
-            $scope.saveNewContacts();
-        }
-
         if(message.IsRead === 0) {
             message.IsRead = 1;
             Message.read({IDs: [message.ID]});
@@ -105,22 +103,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         networkActivityTracker.track(promise);
         messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
-    };
-
-    $scope.saveNewContacts = function() {
-        var newContacts = _.filter(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) {
-            return contactManager.isItNew(email);
-        });
-
-        _.each(newContacts, function(email) {
-            contactManager.add(email);
-            email.Email = email.Address;
-            email.Name = email.Name || email.Address;
-        });
-
-        if (newContacts.length > 0) {
-            contactManager.send(newContacts);
-        }
     };
 
     $scope.getFrom = function() {

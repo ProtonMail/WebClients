@@ -22,6 +22,7 @@ angular.module("proton.controllers.Auth", [
     $rootScope.app_version = CONFIG.app_version;
     $rootScope.date_version = CONFIG.date_version;
     $rootScope.tempUser = $rootScope.tempUser || [];
+    $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
     if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
         try {

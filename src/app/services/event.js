@@ -127,18 +127,12 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			manage: function (data) {
+
 				// Check if eventID is sent
 				if (data.Error) {
-					if ( int(data.Code) === 5003 ) {
-						// Force upgrade, kill event loop
-						eventModel.promiseCancel = undefined;
-						return;
-					}
-					else {
-						Events.getLatestID({}).then(function(response) {
-							eventModel.manageID(response.data.EventID);
-						});
-					}
+					Events.getLatestID({}).then(function(response) {
+						eventModel.manageID(response.data.EventID);
+					});
 				} else if (data.Refresh === 1) {
 					messageCache.reset();
 					eventModel.manageID(data.EventID);
@@ -156,18 +150,29 @@ angular.module("proton.event", ["proton.constants"])
 				}
 				this.manageNotices(data.Notices);
 				messageCache.manageExpire();
-
-				if (angular.isDefined(eventModel.promiseCancel)) {
-					eventModel.promiseCancel = $timeout(this.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
-				}
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {
+
+					// Check for force upgrade
+					if ( result.data.Code && parseInt(result.data.Code) === 5003 ) {
+						// Force upgrade, kill event loop
+						eventModel.promiseCancel = undefined;
+						return;
+					}
+
+					// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
+					if ( angular.isDefined(eventModel.promiseCancel) ) {
+						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					}
+
 					eventModel.manage(result.data);
 				},
 				function(err) {
 					// Try again later
-					eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					if ( angular.isDefined(eventModel.promiseCancel) ) {
+						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+					}
 				});
 			}
 		};

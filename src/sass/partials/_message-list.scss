@@ -198,24 +198,6 @@ table.message-list {
                 }
             }
         }
-        &.starred {
-            background-color: $tr-starred;
-            i.fa-paperclip,
-            i.fa-clock-o,
-            span.labels,
-            td {
-                background-color: $tr-starred;
-            }
-            &:hover,
-            &:active {
-                i.fa-paperclip,
-                i.fa-clock-o,
-                span.labels,
-                td {
-                    background-color: $tr-starred-hovered;
-                }
-            }
-        }
         &.selected {
             i.fa-paperclip,
             i.fa-clock-o,
