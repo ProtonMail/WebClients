@@ -59,10 +59,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     });
 
     $scope.initView = function() {
-        if(authentication.user.AutoSaveContacts === 1) {
-            $scope.saveNewContacts();
-        }
-
         if(message.IsRead === 0) {
             message.IsRead = 1;
             Message.read({IDs: [message.ID]});
@@ -107,10 +103,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         networkActivityTracker.track(promise);
         messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
-    };
-
-    $scope.saveNewContacts = function() {
-        // contactManager.save(message);
     };
 
     $scope.getFrom = function() {

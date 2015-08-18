@@ -755,10 +755,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return true;
     };
 
-    $scope.saveNewContacts = function(message) {
-        // contactManager.save(message);
-    };
-
     $scope.save = function(message, silently, forward) {
         message.saved++;
 
@@ -852,10 +848,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
-            if(authentication.user.AutoSaveContacts === 1) {
-                $scope.saveNewContacts(message);
-            }
-
             $scope.save(message, false).then(function() {
                 var parameters = {};
                 var emails = message.emailsToString();
