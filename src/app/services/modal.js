@@ -158,14 +158,12 @@ angular.module("proton.modals", [])
 // contact modal
 .factory('contactModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout, $sanitize) {
+        controller: function(params, $timeout) {
             this.name = params.name;
             this.email = params.email;
             this.title = params.title;
 
             this.save = function() {
-                this.name = $sanitize(this.name);
-                this.email = $sanitize(this.email);
                 if (angular.isDefined(params.save) && angular.isFunction(params.save)) {
                     params.save(this.name, this.email);
                 }
@@ -207,7 +205,7 @@ angular.module("proton.modals", [])
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
-        controller: function(params, $timeout, $sanitize) {
+        controller: function(params, $timeout) {
             this.title = params.title;
             this.colors = [
                 '#7272a7',
@@ -242,8 +240,6 @@ angular.module("proton.modals", [])
             }
 
             this.create = function() {
-                // sanitize
-                this.name = $sanitize(this.name);
                 if (angular.isDefined(params.create) && angular.isFunction(params.create)) {
                     params.create(this.name, this.color);
                 }
