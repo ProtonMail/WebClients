@@ -200,18 +200,17 @@ angular.module("proton.messages", ["proton.constants"])
             var msg;
 
             lists.push(messageList);
-            _.find(messageList, function(other, i) {
+
+            _.each(messageList, function(other, i) {
                 // For every message in the newly downloaded message list
                 if ((msg = cachedMessages.get(other.ID))) {
                     // If a completely fetched message exists in the cache
                     // replace the instance in the list with the complete cached instance
-                    // updating variable fields (IsRead, Tag, Location, Labels)
+                    // updating variable fields
                     messageList.splice(i, 1, msg);
                     _.extend(msg, _.pick(other, fields));
-                } else {
-                    if(other.IsRead === 0) {
-                        messagesToPreload.add(other.ID);
-                    }
+                } else if(other.IsRead === 0) {
+                    messagesToPreload.add(other.ID);
                 }
             });
         };
@@ -223,12 +222,6 @@ angular.module("proton.messages", ["proton.constants"])
         var api = _.bindAll({
             started: false,
             watchScope: function(scope, listName) {
-                var messageList = scope[listName];
-
-                if (_.isArray(messageList)) {
-                    addMessageList(messageList);
-                }
-
                 var unsubscribe = scope.$watch(listName, function(newVal, oldVal) {
                     lists = _.without(lists, oldVal);
                     addMessageList(newVal);
@@ -364,18 +357,21 @@ angular.module("proton.messages", ["proton.constants"])
             manageExpire: function() {
                 var now = Date.now()/1000;
                 var removed = 0;
+
                 cachedMetadata.inbox = _.filter(cachedMetadata.inbox, function(message) {
                     expTime = message.ExpirationTime;
                     var response = (expTime !== 0 && expTime < now) ? false : true;
                     if (!response) { removed++; }
                     return response;
                 });
+
                 cachedMetadata.sent = _.filter(cachedMetadata.sent, function(message) {
                     expTime = message.ExpirationTime;
                     var response = (expTime !== 0 && expTime < now) ? false : true;
                     if (!response) { removed++; }
                     return response;
                 });
+
                 if (removed > 0) {
                     refreshMessagesCache();
                 }
