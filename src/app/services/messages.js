@@ -43,6 +43,9 @@ angular.module("proton.messages", ["proton.constants"])
         var messagesToPreload = _.bindAll({
             fetching: false,
             queue: [],
+            empty: function() {
+                this.queue = [];
+            },
             add: function(id) {
                 if (!_.contains(this, id)) {
                     this.queue.push(id);
