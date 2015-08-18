@@ -13,6 +13,7 @@ angular.module("proton.controllers.Outside", [
     $stateParams,
     $timeout,
     $translate,
+    Attachment,
     CONSTANTS,
     Eo,
     Message,
@@ -28,12 +29,6 @@ angular.module("proton.controllers.Outside", [
     var decrypted_token = window.sessionStorage["proton:decrypted_token"];
     var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
     var token_id = $stateParams.tag;
-    var Filename = [];
-    var MIMEType = [];
-    var KeyPackets = [];
-    var DataPacket = [];
-
-    // $log.debug($scope.message.publicKey);
 
     if(message.displayMessage === true) {
         $timeout(function() {
@@ -101,6 +96,18 @@ angular.module("proton.controllers.Outside", [
         })
         .then(
             function(result) {
+                var Filename = [];
+                var MIMEType = [];
+                var KeyPackets = [];
+                var DataPacket = [];
+
+                _.each($scope.message.Attachments, function(attachment) {
+                    Filename.push(attachment.Filename);
+                    MIMEType.push(attachment.MIMEType);
+                    KeyPackets.push(attachment.KeyPackets);
+                    DataPacket.push(attachment.DataPacket);
+                });
+
                 var data = {
                     'Body': result.Body,
                     'ReplyBody': result.ReplyBody,
@@ -185,19 +192,19 @@ angular.module("proton.controllers.Outside", [
 
         if (totalSize < (sizeLimit * 1024 * 1024)) {
             var publicKey = $scope.message.publicKey;
+
             attachments.load(file, publicKey).then(function(packets) {
-                Filename.push(packets.Filename);
-                MIMEType.push(packets.MIMEType);
-                KeyPackets.push(new Blob([packets.keys]));
-                DataPacket.push(new Blob([packets.data]));
                 message.uploading = false;
                 message.Attachments.push({
                     Name: file.name,
-                    Size: file.size
+                    Size: file.size,
+                    Filename: packets.Filename,
+                    MIMEType: packets.MIMEType,
+                    KeyPackets: new Blob([packets.keys]),
+                    DataPacket: new Blob([packets.data])
                 });
             });
-        }
-        else {
+        } else {
             // Attachment size error.
             notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
             // TODO remove file in droparea
@@ -299,4 +306,7 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
+    $scope.removeAttachment = function(attachment) {
+        $scope.message.Attachments = _.without(message.Attachments, attachment);
+    };
 });
