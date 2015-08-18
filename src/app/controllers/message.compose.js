@@ -959,6 +959,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.maximized = false;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
+        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
+            $rootScope.mobileComposerIsOpen = false;
+        }
     };
 
     $scope.unminimize = function(message) {

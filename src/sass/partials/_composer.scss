@@ -1,3 +1,9 @@
+#composerFrame {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+}
 .composer.maximized {
     left: ($sidebar-width+1); //rem
     border-radius: 0;

@@ -9,4 +9,7 @@
 	.composer-footer .text-muted {
 		display: none;
 	}
+	#composerFrame {
+		position: static !important;
+	}
 }
