@@ -272,7 +272,7 @@ angular.module("proton.authentication", [
                 delete $http.defaults.headers.common.Accept;
                 $rootScope.creds = creds;
                 $http.post(url.get() + "/auth",
-                    _.extend(_.pick(creds, "Username", "Password", "HashedPassword"), {
+                    _.extend(_.pick(creds, "Username", "Password"), {
                         ResponseType: "token",
                         ClientID: CONFIG.clientID,
                         ClientSecret: CONFIG.clientSecret,
