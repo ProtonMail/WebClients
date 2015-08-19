@@ -77,7 +77,7 @@
                     </span>
                 </td>
                 <td class="subject">
-                    <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>
+                    <location-tag ng-if="message.showFrom || message.showTo"></location-tag>
                     <i class="fa fa-clock-o expiration" countdown="{{message.ExpirationTime}}" ng-if="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <span class="labels">
