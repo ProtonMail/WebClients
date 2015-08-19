@@ -4,6 +4,10 @@
     bottom: 0;
     z-index: 6;
 }
+.composer.minimized {
+    top: auto !important;
+    height: auto !important;
+} 
 .composer.maximized {
     left: ($sidebar-width+1); //rem
     border-radius: 0;
