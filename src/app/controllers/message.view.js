@@ -34,6 +34,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
+    $scope.isFileSaverSupported = ('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob;
 
     $timeout(function() {
         $scope.initView();
@@ -293,17 +294,15 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         }
     };
 
-    $scope.isFileSaverSupported = ('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob;
-
     $scope.downloadAttachment = function(attachment) {
 
         try {
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
+
             if($scope.isFileSaverSupported) {
                 saveAs(blob, attachment.Name);
-            }
-            else {
+            } else {
                 // Bad blob support, make a data URI, don't click it
                 var reader = new FileReader();
 
