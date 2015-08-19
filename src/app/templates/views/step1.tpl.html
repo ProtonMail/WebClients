@@ -51,6 +51,11 @@
     <div class="panel-body">
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
             <div class="form-group">
+                <p class="alert alert-warning">
+                Password Managers such as <strong>LastPass</strong> may cause login issues 
+                and are not recommended for use during our Beta. 
+                <a target="_blank" href="https://blog.protonmail.ch/password-managers/">Learn More</a>
+                </p>            
                 <label for="Username">{{ 'USERNAME' | translate | capitalize }}</label>
                 <div class="usernameWrap">
                     <input 
