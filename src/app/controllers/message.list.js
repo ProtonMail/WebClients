@@ -47,11 +47,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.updatePageName();
         $scope.startWatchingEvent();
         $scope.refreshMessagesCache().then(function() {
-            $scope.actionsDelayed();
             messageCache.watchScope($scope, "messages");
             watchMessages = $scope.$watch('messages', function() {
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
+            $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
+            // I consider this trick like a bug in the angular application
         });
     };
 
@@ -259,8 +260,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.refreshMessagesCache = function () {
         var deferred = $q.defer();
-        var mailbox = $state.current.name.replace('secured.', '');
-        var params = $scope.getMessagesParameters(mailbox);
+        var params = $scope.getMessagesParameters($scope.mailbox);
 
         messageCache.query(params).then(function(messages) {
             $scope.messages = messages;
