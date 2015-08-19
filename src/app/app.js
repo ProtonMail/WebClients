@@ -141,6 +141,10 @@ angular.module("proton", [
             firstNameOnly = $rootScope.tempUser.username;
         }
 
+        if (firstNameOnly.length>20) {
+            firstNameOnly = firstNameOnly.substring(0,17)+'...';
+        }
+
         return firstNameOnly;
     };
 

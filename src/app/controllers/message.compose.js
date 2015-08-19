@@ -281,6 +281,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.initMessage = function(message, save) {
+
+        $rootScope.activeComposer = true;
+
         $log.debug('initMessage:start');
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
@@ -293,14 +296,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
                 return;
             }
-        }
-
-        // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment() === 'sm' || tools.findBootstrapEnvironment()==='xs') {
-            $rootScope.mobileComposerIsOpen = true;
-        }
-        else {
-            $rootScope.mobileComposerIsOpen = false;
         }
 
         message.uid = $scope.uid++;
@@ -635,7 +630,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
+        message.ExpirationTime = params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
 
@@ -954,6 +949,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.minimize = function(message) {
+        $rootScope.activeComposer = false;
         message.minimized = true;
         message.previousMaximized = message.maximized;
         message.maximized = false;
@@ -962,6 +958,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.unminimize = function(message) {
+        $rootScope.activeComposer = true;
         message.minimized = false;
         message.maximized = message.previousMaximized;
         // Hide all the tooltip
@@ -969,6 +966,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.maximize = function(message) {
+        $rootScope.activeComposer = true;
         message.maximized = true;
     };
 
@@ -999,11 +997,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.$apply();
         });
 
-        // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
-            $rootScope.mobileComposerIsOpen = false;
-        }
-
         if (message.saved < 2) {
             $scope.discard(message);
         } else {
@@ -1012,6 +1005,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.close = function(message, save) {
+        $rootScope.activeComposer = false;
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
 
@@ -1020,11 +1014,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
 
         message.close();
-
-        // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
-            $rootScope.mobileComposerIsOpen = false;
-        }
 
         // Remove message in messages
         $scope.messages.splice(index, 1);
@@ -1044,10 +1033,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.discard = function(message) {
-        // We need to hide EVERYHTING on mobile, otherwise we get lag.
-        if (tools.findBootstrapEnvironment()==='sm' || tools.findBootstrapEnvironment()==='xs') {
-            $rootScope.mobileComposerIsOpen = false;
-        }
+        $rootScope.activeComposer = false;
 
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;

@@ -78,13 +78,9 @@ $( function() {
 					$('#usr_invalid').removeClass('hide');
 					$('#username').focus();
 				}
-				// alert(data.message);
 			})			
 			.fail(function() { 
 				alert("Error: Can't check username.");
-			})
-			.always(function() {
-				//console.log( "finished" );
 			});	
 		}
 	});
@@ -92,7 +88,6 @@ $( function() {
 	.on('keydown', function(e) {
 		var code = e.keyCode || e.which;
 		if(code == 13) {
-			console.log('?');
 			$('#check_username').trigger('click');
 			return false;
 		}		

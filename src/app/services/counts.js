@@ -129,7 +129,6 @@ angular.module("proton.messages.counts", ["proton.constants"])
                     return this.counters;
                 },
                 update: function(counters) {
-                    console.log('update');
                     this.counters = counters;
                     $rootScope.$broadcast('updatePageName');
                 },

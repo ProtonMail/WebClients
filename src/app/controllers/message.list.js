@@ -667,7 +667,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.saveLabels = function(labels, alsoArchive) {
-        console.log('message.list.js@saveLabels');
+
         var deferred = $q.defer();
         var messageIDs = $scope.selectedIds();
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });

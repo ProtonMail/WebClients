@@ -9,6 +9,12 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 Redirect 301 /create-account /invite
 Redirect 301 /pages/join-us /pages/careers
 
+Redirect 301 /webby /pages/why-protonmail
+Redirect 301 /swissnex /pages/why-protonmail
+Redirect 301 /blogsofwar /pages/why-protonmail
+Redirect 301 /bolehvpn /pages/why-protonmail
+Redirect 301 /privacyforall /pages/why-protonmail
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d

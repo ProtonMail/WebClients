@@ -1,3 +1,9 @@
+#composerFrame {
+	z-index: 999999;
+}
+.activeComposer #content {
+    display: none !important;
+}
 body .composer {
 	&,
 	&.maximized,
@@ -35,10 +41,10 @@ body .composer {
 	}
 	&.minimized {
 		top: auto !important;
-		left: $sidebar-width !important; //rem
-		right: 1rem;
+		left: 2rem !important; //rem
+		right: 2rem !important;
 		bottom: 1rem;
-		width: auto;
+		width: auto !important;
 		z-index: inherit !important;
 		height: auto !important;
 		box-shadow: none;
