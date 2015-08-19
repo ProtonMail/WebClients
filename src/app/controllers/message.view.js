@@ -34,7 +34,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
-    $scope.isFileSaverSupported = ('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob;
 
     $timeout(function() {
         $scope.initView();
@@ -137,7 +136,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 }
 
                 // safari warning
-                if(!$scope.isFileSaverSupported) {
+                if(!$rootScope.isFileSaverSupported) {
                     $scope.safariWarning = true;
                 }
 
@@ -264,7 +263,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                                 el: $event.target,
                             });
                             attachment.decrypting = false;
-                            if(!$scope.isFileSaverSupported) {
+                            if(!$rootScope.isFileSaverSupported) {
                                 $($event.currentTarget)
                                 .prepend('<span class="fa fa-download"></span>');
                             }
@@ -299,7 +298,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
 
-            if($scope.isFileSaverSupported) {
+            if($rootScope.isFileSaverSupported) {
                 saveAs(blob, attachment.Name);
             } else {
                 // Bad blob support, make a data URI, don't click it

@@ -8,6 +8,7 @@ angular.module("proton.controllers.Outside", [
     $interval,
     $log,
     $q,
+    $rootScope,
     $scope,
     $state,
     $stateParams,
@@ -25,7 +26,6 @@ angular.module("proton.controllers.Outside", [
     tools
 ) {
     $scope.message = message;
-    $scope.isFileSaverSupported = ('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob;
 
     var decrypted_token = window.sessionStorage["proton:decrypted_token"];
     var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
@@ -262,7 +262,7 @@ angular.module("proton.controllers.Outside", [
                                 el: $event.target,
                             });
                             attachment.decrypting = false;
-                            if(!$scope.isFileSaverSupported) {
+                            if(!$rootScope.isFileSaverSupported) {
                                 $($event.currentTarget)
                                 .prepend('<span class="fa fa-download"></span>');
                             }
@@ -287,7 +287,7 @@ angular.module("proton.controllers.Outside", [
         try {
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
-            if($scope.isFileSaverSupported) {
+            if($rootScope.isFileSaverSupported) {
                 saveAs(blob, attachment.Name);
             }
             else {
