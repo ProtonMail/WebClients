@@ -281,10 +281,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.initMessage = function(message, save) {
-
         $rootScope.activeComposer = true;
 
-        $log.debug('initMessage:start');
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
         }

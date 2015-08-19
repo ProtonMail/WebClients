@@ -493,14 +493,16 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveComposerMode = function(form) {
+        var value = parseInt($scope.ComposerMode);
+
+        authentication.user.ComposerMode = value;
+        
         networkActivityTracker.track(
             Setting.setComposerMode({
-                "ComposerMode": parseInt($scope.ComposerMode)
+                "ComposerMode": value
             }).$promise.then(
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
-                    authentication.user.ComposerMode = $scope.ComposerMode;
-                    $scope.apply();
                 },
                 function(response) {
                     $log.error(response);
