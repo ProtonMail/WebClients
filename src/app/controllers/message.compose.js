@@ -630,7 +630,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             return false;
         }
 
-        message.ExpirationTime = parseInt((new Date().getTime() / 1000).toFixed(0)) + params.expiration * 3600; // seconds
+        message.ExpirationTime = params.expiration * 3600; // seconds
         $scope.closePanel(message);
     };
 
