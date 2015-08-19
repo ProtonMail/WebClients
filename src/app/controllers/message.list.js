@@ -301,11 +301,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.senderIsMe = function(message) {
         var result = false;
+
         for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
             if( $scope.user.Addresses[i].Email === message.SenderAddress ) {
                 result = true;
             }
         }
+
         return result;
     };
 
