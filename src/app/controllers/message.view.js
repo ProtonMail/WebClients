@@ -295,7 +295,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.downloadAttachment = function(attachment) {
-
         try {
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
