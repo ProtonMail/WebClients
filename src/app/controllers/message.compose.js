@@ -324,9 +324,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.focusComposer(message);
             message.recipientFieldFocussed = 1;
         }, 100);
-
-        $log.debug('initMessage:end');
-
     };
 
     $scope.onAddFile = function(message) {

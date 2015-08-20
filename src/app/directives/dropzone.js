@@ -30,6 +30,11 @@ angular.module('proton.dropzone', [])
                 angular.forEach(config.eventHandlers, function(handler, event) {
                     dropzone.on(event, handler);
                 });
+
+                // remove the dropzone instance
+                scope.$on('$destroy', function() {
+                    dropzone.disable();
+                });
             }
         };
     });

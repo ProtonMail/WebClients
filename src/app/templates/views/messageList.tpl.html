@@ -3,6 +3,7 @@
 <ng-include src="'templates/partials/messageListToolbar.tpl.html'" class="hidden-xs message-list-toolbar" id="messageListToolbar"></ng-include>
 <div id="content">
     <table
+    ng-if="!isMobile"
     class="table message-list hidden-xs"
     ng-class="{empty: messages.length == 0, searchResults: ('secured.search' | includedByState)}"
     >
@@ -12,11 +13,11 @@
                 data-drag="true"
                 jqyoui-draggable="{onStart: 'onStartDragging(message)', onStop: 'onEndDragging(message)'}"
                 data-jqyoui-options="draggableOptions"
-                ng-class="{ 
-                unread: message.IsRead === 0, 
-                selected: message.Selected, 
-                starred: message.Starred === 1, 
-                encrypted: message.IsEncrypted == '1' 
+                ng-class="{
+                unread: message.IsRead === 0,
+                selected: message.Selected,
+                starred: message.Starred === 1,
+                encrypted: message.IsEncrypted == '1'
                 }"
                 >
                 <td class="actions">
@@ -51,7 +52,7 @@
                     </a>
                 </td>
                 <td class="recipient">
-                    <span ng-if="showTo(message)" class="recipSpan">
+                    <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo" class="recipSpan">
                         <span
                         class="to"
                         pt-placement="right"
@@ -59,7 +60,7 @@
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
-                    <span ng-if="showFrom(message) && !showTo(message)" class="recipSpan">
+                    <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom" class="recipSpan">
                         <span
                         class="from"
                         pt-placement="right"
@@ -67,7 +68,7 @@
                             From: {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
-                    <span ng-if="!showTo(message) && !showFrom(message)" class="recipSpan">
+                    <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault" class="recipSpan">
                         <span
                         pt-placement="right"
                         pt-tooltip="{{ message.SenderAddress }}">
@@ -76,7 +77,7 @@
                     </span>
                 </td>
                 <td class="subject">
-                    <location-tag ng-if="showFrom(message) || showTo(message)"></location-tag>
+                    <location-tag ng-if="message.showFrom || message.showTo"></location-tag>
                     <i class="fa fa-clock-o expiration" countdown="{{message.ExpirationTime}}" ng-if="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <span class="labels">
@@ -96,25 +97,25 @@
             </tr>
         </tbody>
     </table>
-    <div class="visible-xs-block message-list mobile" ng-class="{empty: messages.length == 0}">
+    <div class="visible-xs-block message-list mobile" ng-class="{empty: messages.length == 0}" ng-if="isMobile">
         <ul id="message" class="list-group">
-            <li ng-repeat="message in messages track by message.ID" ng-click="navigateToMessage($event, message)" ng-class="{ 
-                unread: !message.IsRead, 
-                selected: selected, 
-                starred: message.Starred === 1, 
+            <li ng-repeat="message in messages track by message.ID" ng-click="navigateToMessage($event, message)" ng-class="{
+                unread: !message.IsRead,
+                selected: selected,
+                starred: message.Starred === 1,
                 }" class="list-group-item">
                 <h4>
                     <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}" pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
                     </span>{{ message.Subject }}
                 </h4>
-                <span class="recipient" ng-switch="('secured.sent' | isState) || ('secured.drafts' | isState)">
-                    <span ng-if="showTo(message)">
+                <span class="recipient">
+                    <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo">
                         <span class="to">To: </span>{{ message.ToList | username }}
                     </span>
-                    <span ng-if="showFrom(message) && !showTo(message)">
+                    <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom">
                         <span class="from">From: </span>{{ message.SenderName }}
                     </span>
-                    <span ng-if="!showTo(message) && !showFrom(message)">
+                    <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault">
                         <span pt-tooltip="{{ message.SenderAddress }}">
                             {{ message.SenderName }}
                         </span>
