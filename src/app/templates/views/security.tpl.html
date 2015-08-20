@@ -93,7 +93,7 @@
                         </th>
                         <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <td ng-show="doLogging == 2">
-                            <kbd ng-show="log.IP!==''">{{log.IP}}</kbd>
+                            <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
                             <kbd ng-show="log.IP===''">--</kbd>
                         </td>
                     </tr>
