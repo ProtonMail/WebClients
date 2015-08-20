@@ -400,7 +400,7 @@ angular.module("proton", [
 
     $window.addEventListener('offline', function() {
         $rootScope.online = false;
-        notify({message: 'Your are not connected to the Internet', classes: 'notification-danger', duration: 0});
+        notify({message: 'You are not connected to the Internet.', classes: 'notification-danger', duration: 0});
     });
 
     $window.addEventListener('online', function() {
