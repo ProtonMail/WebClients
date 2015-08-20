@@ -693,53 +693,6 @@ angular.module("proton.routes", [
             );
         }
 
-    })
-
-    // -------------------------------------------
-    //  ADMIN ROUTES
-    // -------------------------------------------
-
-    .state("admin", {
-        url: "/admin",
-        views: {
-            "main@": {
-                controller: "AdminController",
-                templateUrl: "templates/layout/admin.tpl.html"
-            },
-            "content@admin": {
-                templateUrl: "templates/views/admin.tpl.html"
-            }
-        }
-    })
-
-    .state("admin.invite", {
-        url: "/invite",
-        views: {
-            "content@admin": {
-                templateUrl: "templates/views/admin.invite.tpl.html",
-                controller: "AdminController"
-            }
-        }
-    })
-
-    .state("admin.monitor", {
-        url: "/monitor",
-        views: {
-            "content@admin": {
-                templateUrl: "templates/views/admin.monitor.tpl.html",
-                controller: "AdminController"
-            }
-        }
-    })
-
-    .state("admin.logs", {
-        url: "/logs",
-        views: {
-            "content@admin": {
-                templateUrl: "templates/views/admin.logs.tpl.html",
-                controller: "AdminController"
-            }
-        }
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id_, box) {

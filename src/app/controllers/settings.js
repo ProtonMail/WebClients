@@ -43,6 +43,7 @@ angular.module("proton.controllers.Settings", [
     $scope.ComposerMode = authentication.user.ComposerMode;
     $scope.MessageButtons = authentication.user.MessageButtons;
     $scope.ShowImages = authentication.user.ShowImages;
+    $scope.isSafari = jQuery.browser.name === 'safari';
 
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
@@ -496,7 +497,7 @@ angular.module("proton.controllers.Settings", [
         var value = parseInt($scope.ComposerMode);
 
         authentication.user.ComposerMode = value;
-        
+
         networkActivityTracker.track(
             Setting.setComposerMode({
                 "ComposerMode": value

@@ -11,11 +11,16 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     networkActivityTracker
 ) {
     var modalId = 'searchModal';
-
-    $('#'+modalId).on('hide.bs.modal', function (event) {
+    var hideBsModal = function(event) {
         $timeout(function() {
             $rootScope.advSearchIsOpen = false;
         }, 100);
+    };
+
+    $('#' + modalId).on('hide.bs.modal', hideBsModal);
+
+    $scope.$on('$destroy', function() {
+        $('#' + modalId).off('hide.bs.modal', hideBsModal);
     });
 
     $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;

@@ -13,6 +13,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     Message,
     Label,
     authentication,
+    confirmModal,
     messageCache,
     messageCounts,
     networkActivityTracker,
@@ -301,11 +302,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.senderIsMe = function(message) {
         var result = false;
+
         for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
             if( $scope.user.Addresses[i].Email === message.SenderAddress ) {
                 result = true;
             }
         }
+
         return result;
     };
 
@@ -628,31 +631,39 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.emptyFolder = function(location) {
-        var confirmation = confirm("Are you sure? This cannot be undone.");
+        var title = "Confirmation";
+        var message = "Are you sure? This cannot be undone.";
         var promise;
 
-        if (confirmation !== true) {
-            return;
-        }
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
+                        promise = Message.emptyDraft().$promise;
+                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
+                        promise = Message.emptySpam().$promise;
+                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+                        promise = Message.emptyTrash().$promise;
+                    }
 
-        if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
-            promise = Message.emptyDraft().$promise;
-        }
-        else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
-            promise = Message.emptySpam().$promise;
-        }
-        else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
-            promise = Message.emptyTrash().$promise;
-        }
+                    promise.then(
+                        function(result) {
+                            messageCounts.empty(location);
+                            $rootScope.$broadcast('updateCounters');
+                            $rootScope.$broadcast('refreshMessagesCache');
+                            notify($translate.instant('FOLDER_EMPTIED'));
+                        }
+                    );
 
-        promise.then(
-            function(result) {
-                messageCounts.empty(location);
-                $rootScope.$broadcast('updateCounters');
-                $rootScope.$broadcast('refreshMessagesCache');
-                notify($translate.instant('FOLDER_EMPTIED'));
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
             }
-        );
+        });
     };
 
     $scope.unselectAllLabels = function() {

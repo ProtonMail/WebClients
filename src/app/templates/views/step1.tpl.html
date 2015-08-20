@@ -4,41 +4,41 @@
         <h1 class="text-center" ng-show="signupError">Sign Up Failed</h1>
     </div>
 
-    <div class="panel-body">   
+    <div class="panel-body">
         <ol id="creationList">
             <li ng-class="{ 'done': genNewKeys }">
-                <i ng-hide="genNewKeys" class="fa fa-square-o"></i> 
-                <i ng-show="genNewKeys" class="fa fa-check-square"></i> 
+                <i ng-hide="genNewKeys" class="fa fa-square-o"></i>
+                <i ng-show="genNewKeys" class="fa fa-check-square"></i>
                 Generating Encryption Keys
             </li>
             <li ng-class="{ 'done': createUser }">
-                <i ng-hide="createUser" class="fa fa-square-o"></i> 
-                <i ng-show="createUser" class="fa fa-check-square"></i> 
+                <i ng-hide="createUser" class="fa fa-square-o"></i>
+                <i ng-show="createUser" class="fa fa-check-square"></i>
                 Creating New User
             </li>
             <li ng-class="{ 'done': logUserIn }">
-                <i ng-hide="logUserIn" class="fa fa-square-o"></i> 
-                <i ng-show="logUserIn" class="fa fa-check-square"></i> 
+                <i ng-hide="logUserIn" class="fa fa-square-o"></i>
+                <i ng-show="logUserIn" class="fa fa-check-square"></i>
                 Verifying New Account
             </li>
             <li ng-class="{ 'done': decryptAccessToken }">
-                <i ng-hide="decryptAccessToken" class="fa fa-square-o"></i> 
-                <i ng-show="decryptAccessToken" class="fa fa-check-square"></i> 
+                <i ng-hide="decryptAccessToken" class="fa fa-square-o"></i>
+                <i ng-show="decryptAccessToken" class="fa fa-check-square"></i>
                 Verifying Encryption Keys
-            </li>            
+            </li>
             <li ng-class="{ 'done': mailboxLogin }">
-                <i ng-hide="mailboxLogin" class="fa fa-square-o"></i> 
-                <i ng-show="mailboxLogin" class="fa fa-check-square"></i> 
+                <i ng-hide="mailboxLogin" class="fa fa-square-o"></i>
+                <i ng-show="mailboxLogin" class="fa fa-check-square"></i>
                 Loading New Account
             </li>
             <li ng-class="{ 'done': getUserInfo }">
-                <i ng-hide="getUserInfo" class="fa fa-square-o"></i> 
-                <i ng-show="getUserInfo" class="fa fa-check-square"></i> 
+                <i ng-hide="getUserInfo" class="fa fa-square-o"></i>
+                <i ng-show="getUserInfo" class="fa fa-check-square"></i>
                 Done!
             </li>
             <li ng-class="{ 'done': finishCreation }">
-                <i ng-hide="finishCreation" class="fa fa-square-o"></i> 
-                <i ng-show="finishCreation" class="fa fa-check-square"></i> 
+                <i ng-hide="finishCreation" class="fa fa-square-o"></i>
+                <i ng-show="finishCreation" class="fa fa-check-square"></i>
                 Redirecting
             </li>
         </ol>
@@ -52,44 +52,44 @@
         <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
             <div class="form-group">
                 <p class="alert alert-warning">
-                Password Managers such as <strong>LastPass</strong> may cause login issues 
-                and are not recommended for use during our Beta. 
+                Password Managers such as <strong>LastPass</strong> may cause login issues
+                and are not recommended for use during our Beta.
                 <a target="_blank" href="https://blog.protonmail.ch/password-managers/">Learn More</a>
-                </p>            
+                </p>
                 <label for="Username">{{ 'USERNAME' | translate | capitalize }}</label>
                 <div class="usernameWrap">
-                    <input 
-                    type="text" 
-                    ng-model="account.Username" 
-                    name="Username" 
-                    tabindex="1" 
-                    placeholder="Username" 
-                    autofocus 
-                    required 
+                    <input
+                    type="text"
+                    ng-model="account.Username"
+                    name="Username"
+                    tabindex="1"
+                    placeholder="Username"
+                    autofocus
+                    required
                     ng-readonly="readOnlyUsername"
-                    id="Username" 
-                    class="form-control" 
-                    pt-tooltip="You can switch to protonmail.ch after account creation." 
+                    id="Username"
+                    class="form-control"
+                    pt-tooltip="You can switch to protonmail.ch after account creation."
                     pt-placement="bottom">
                     <em class="usernameDomain">@protonmail.com</em>
                 </div>
             </div>
             <hr>
             <div class="form-group">
-                <span 
-                class="pull-right bold" 
-                ng-class="{'text-success': strength(account.loginPassword).number > 100000}" 
+                <span
+                class="pull-right bold"
+                ng-class="{'text-success': strength(account.loginPassword).number > 100000}"
                 ng-bind="strength(account.loginPassword).word"></span>
                 <label for="password">{{ 'LOGIN_PASSWORD' | translate }}</label>
-                <input 
-                id="password" 
-                name="password" 
-                ng-model="account.loginPassword" 
-                tabindex="2" 
-                type="password" 
-                class="form-control" 
-                placeholder="Password" 
-                maxlength="{{ maxPW }}" 
+                <input
+                id="password"
+                name="password"
+                ng-model="account.loginPassword"
+                tabindex="2"
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                maxlength="{{ maxPW }}"
                 required />
                 <div ng-show="step1.$submitted || step1.password.$touched">
                     <p ng-show="step1.$submitted && step1.password.$error.required" class="text-danger">Login password is required.</p>
@@ -97,14 +97,14 @@
             </div>
             <div class="form-group">
                 <label for="passwordc">{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}</label>
-                <input 
-                id="passwordc" 
-                name="passwordc" 
-                ng-model="account.loginPasswordConfirm" 
-                tabindex="3" 
-                type="password" 
-                class="form-control" 
-                placeholder="Confirm Password" 
+                <input
+                id="passwordc"
+                name="passwordc"
+                ng-model="account.loginPasswordConfirm"
+                tabindex="3"
+                type="password"
+                class="form-control"
+                placeholder="Confirm Password"
                 required
                 validator="account.loginPassword !== account.loginPasswordConfirm" />
                 <div ng-show="step1.$submitted || step1.passwordc.$touched">
@@ -114,14 +114,14 @@
             <hr>
             <div class="form-group">
                 <label for="password">{{ 'MAILBOX_PASSWORD' | translate }}</label>
-                <input 
-                id="MBpassword" 
-                name="MBpassword" 
-                ng-model="account.mailboxPassword" 
-                tabindex="4" 
-                type="password" 
-                class="form-control"  
-                placeholder="Password" 
+                <input
+                id="MBpassword"
+                name="MBpassword"
+                ng-model="account.mailboxPassword"
+                tabindex="4"
+                type="password"
+                class="form-control"
+                placeholder="Password"
                 required />
                 <div ng-show="step1.$submitted || step1.MBpassword.$touched">
                     <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="text-danger">Mailbox password is required.</p>
@@ -129,37 +129,36 @@
             </div>
             <div class="form-group">
                 <label for="passwordc">{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}</label>
-                <input 
-                id="MBpasswordc" 
-                name="MBpasswordc" 
-                ng-model="account.mailboxPasswordConfirm" 
-                tabindex="5" 
-                type="password" 
-                class="form-control" 
-                ng-class="{disabled: networkActivity.loading()}"  
-                placeholder="Password" 
-                required 
+                <input
+                id="MBpasswordc"
+                name="MBpasswordc"
+                ng-model="account.mailboxPasswordConfirm"
+                tabindex="5"
+                type="password"
+                class="form-control"
+                ng-class="{disabled: networkActivity.loading()}"
+                placeholder="Password"
+                required
                 ng-enter="finish(step1)" />
                 <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
                 </div>
             </div>
-            <hr>
+            <hr />
             <div class="form-group">
                 <label for="notificationEmail">Notification / Password Recovery Email</label>
-                <input 
-                id="notificationEmail" 
-                name="notificationEmail" 
-                ng-model="account.notificationEmail" 
-                tabindex="6" 
-                type="email" 
-                class="form-control" 
-                placeholder="Notification {{ 'EMAIL' | translate }}" 
-                validator="!!!tools.validEmail(account.notificationEmail)" 
-                ng-enter="saveContinue(step1)" 
-                pt-tooltip="This is used to recover your account if you get locked out or forget your login password." 
+                <input
+                id="notificationEmail"
+                name="notificationEmail"
+                ng-model="account.notificationEmail"
+                tabindex="6"
+                type="email"
+                class="form-control"
+                placeholder="Notification {{ 'EMAIL' | translate }}"
+                validator="!!!tools.validEmail(account.notificationEmail)"
+                ng-enter="saveContinue(step1)"
+                pt-tooltip="This is used to recover your account if you get locked out or forget your login password."
                 pt-placement="bottom" />
-                <em class="pull-right">({{ 'RECOMMENDED' | translate }})</em>
                 <div ng-show="step1.notificationEmail.$error.email">
                     <p class="text-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
                 </div>
@@ -167,19 +166,19 @@
             <hr>
             <div class="checkbox">
                 <label for="optIn">
-                    <input 
-                    tabindex="7" 
-                    id="optIn" 
-                    name="optIn" 
-                    ng-init="account.optIn = true" 
-                    ng-model="account.optIn" 
+                    <input
+                    tabindex="7"
+                    id="optIn"
+                    name="optIn"
+                    ng-init="account.optIn = true"
+                    ng-model="account.optIn"
                     type="checkbox" /> Keep me updated about new features such as mobile apps!
                 </label>
             </div>
-            <button 
-            tabindex="8" 
-            type="submit" 
-            class="btn btn-primary btn-block btn-lg" 
+            <button
+            tabindex="8"
+            type="submit"
+            class="btn btn-primary btn-block btn-lg"
             ng-class="{ disabled: (networkActivity.loading() || !step1.$valid) }">{{ 'FINISH' | translate }}</button>
         </form>
     </div>

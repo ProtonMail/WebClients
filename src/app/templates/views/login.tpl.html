@@ -6,7 +6,7 @@
         <a href="/"><img src="/assets/img/protonmail.svg" alt="ProtonMail" class="logo" /></a>
     </div>
     <div class="panel-body">
-        <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on">
+        <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="tryLogin()">
             <h3 class="text-center margin-bottom">
                 <span class="fa fa-user title-icon"></span>
                 {{ 'USER_LOGIN' | translate }}
@@ -15,6 +15,7 @@
             <div class="form-group">
                 <input
                 autocomplete="on"
+                autocapitalize="none"
                 type="text"
                 ng-model="username"
                 class="form-control dark"
@@ -44,8 +45,8 @@
                         <a class="btn" ui-sref="support.reset-password">{{'RESET_PASSWORD' | translate }}</a>
                     </div>
                     <div class="col-xs-6 text-right">
-                        <button type="button" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" id="login_btn" tabindex="3" ng-click="tryLogin()">
-                            <span>{{ 'LOGIN' | translate }}</span>
+                        <button type="submit" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" tabindex="3">
+                            {{ 'LOGIN' | translate }}
                         </button>
                     </div>
                 </div>

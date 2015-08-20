@@ -56,9 +56,6 @@ angular.module("proton", [
     "proton.tooltip",
     "proton.emailField",
     "proton.enter",
-    "proton.delayedPassword",
-    "proton.fieldMatch",
-    "proton.fieldFocus",
     "proton.squire",
     "proton.locationTag",
     "proton.dropzone",
@@ -70,7 +67,6 @@ angular.module("proton", [
 
     // Controllers
     "proton.controllers.Account",
-    "proton.controllers.Admin",
     "proton.controllers.Auth",
     "proton.controllers.Bug",
     "proton.controllers.Contacts",
@@ -117,15 +113,22 @@ angular.module("proton", [
 .run(function(
     $document,
     $rootScope,
+    $state,
+    $timeout,
+    authentication,
     networkActivityTracker,
     notify,
-    $state,
-    tools,
-    authentication
+    tools
 ) {
+    var debounce;
+
     $(window).bind('resize load', function() {
-        $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
+        $timeout.cancel(debounce);
+        $timeout(function() {
+            $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 767) ? true : false;
+        }, 100);
     });
+
     $(window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
@@ -314,14 +317,17 @@ angular.module("proton", [
         $(".navbar-toggle").click();
 
         $rootScope.toState = toState.name.replace(".", "-");
-        if ($rootScope.scrollToBottom===true) {
+
+        if($rootScope.scrollToBottom === true) {
             setTimeout(function() {
                 $('#content').animate({
                     scrollTop: $("#pageBottom").offset().top
                 }, 1);
             }, 10);
+
             $rootScope.scrollToBottom = false;
         }
+
         $('#loading').remove();
     });
 })

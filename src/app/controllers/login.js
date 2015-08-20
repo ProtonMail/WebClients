@@ -36,6 +36,7 @@ angular.module("proton.controllers.Auth", [
 
     var clearErrors = function() {
         $scope.error = null;
+        notify.closeAll();
     };
 
     // this does not add security and was only active for less than a day in 2013.
@@ -54,10 +55,25 @@ angular.module("proton.controllers.Auth", [
     $rootScope.tryLogin = function() {
         $('input').blur();
         clearErrors();
-        // transform to lowercase and remove the domain
+
+        // Transform to lowercase and remove the domain
         $scope.username = $scope.username.toLowerCase().split('@')[0];
 
-        // custom validation
+        // Check username and password
+        if(
+            angular.isUndefined($scope.username) ||
+            angular.isUndefined($scope.password) ||
+            $scope.username.length === 0 ||
+            $scope.password.length === 0
+        ) {
+            notify({
+                classes: 'notification-danger',
+                message: 'Please enter your username and password to log in.'
+            });
+            return;
+        }
+
+        // Custom validation
         try {
             if (pmcw.encode_utf8($scope.password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
                 notify({
@@ -66,8 +82,7 @@ angular.module("proton.controllers.Auth", [
                 });
                 return;
             }
-        }
-        catch(err) {
+        } catch(err) {
             notify({
                 classes: 'notification-danger',
                 message: err.message
@@ -116,14 +131,15 @@ angular.module("proton.controllers.Auth", [
 	                return;
                 },
                 function(result) {
-                    // console.log(result);
-                    if (result.message===undefined) {
+                    if (result.message === undefined) {
                         result.message = 'Sorry, our login server is down. Please try again later.';
                     }
+
                     notify({
                         classes: 'notification-danger',
                         message: result.message
                     });
+
                     $('input[name="Username"]').focus();
                 }
             )

@@ -6,7 +6,8 @@
 
         <h1>Key Export (Experimental)</h1>
         <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
-        <a href ng-click="exportPublicKey()" class="btn btn-default">
+        <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
+        <a href ng-click="exportPublicKey()" class="btn btn-default" ng-disabled="isSafari">
             <i class="fa fa-download"></i> Download PublicKey
         </a>
 
@@ -92,7 +93,7 @@
                         </th>
                         <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                         <td ng-show="doLogging == 2">
-                            <kbd ng-show="log.IP!==''">{{log.IP}}</kbd>
+                            <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
                             <kbd ng-show="log.IP===''">--</kbd>
                         </td>
                     </tr>

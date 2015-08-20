@@ -7,25 +7,23 @@
     <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
     <i
     class="fa fa-clock-o"
-    countdown="{{message.ExpirationTime}}"
-    ng-show="message.ExpirationTime > 0"></i>
+    countdown="{{ ::message.ExpirationTime }}"
+    ng-show="::message.ExpirationTime > 0"></i>
     <i
     class="fa"
     ng-class="{
-    'fa-lock':
-    !!!(message.IsEncrypted == '0'),
-    'text-purple':
-    !!(message.IsEncrypted == '1') ||
-    !!(message.IsEncrypted == '3') ||
-    !!(message.IsEncrypted == '5') ||
-    !!(message.IsEncrypted == '6'),
-    'fa-unlock-alt':
-    !!(message.IsEncrypted == '0')
+        'fa-lock': !!!(message.IsEncrypted == '0'),
+        'text-purple':
+            !!(message.IsEncrypted == '1') ||
+            !!(message.IsEncrypted == '3') ||
+            !!(message.IsEncrypted == '5') ||
+            !!(message.IsEncrypted == '6'),
+        'fa-unlock-alt': !!(message.IsEncrypted == '0')
     }"
     pt-placement="right"
     pt-tooltip="{{ message.encryptionType() }}"></i>
-    <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
-    <span class="subject" ng-bind="message.Subject"></span>
+    <i class="fa fa-paperclip" ng-show="::message.Attachments.length > 0"></i>
+    <span class="subject" ng-bind="::message.Subject"></span>
     <span class="label label-pm" ng-style="getColorLabel(label)" ng-repeat="label in message.labels()">
         {{ label.Name }} <a href="" ng-click="detachLabel(label.ID)"><i class="fa fa-times"></i></a>
     </span>
