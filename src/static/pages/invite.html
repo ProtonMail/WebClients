@@ -88,6 +88,48 @@
             if (username!==undefined) {
                 $('#username').val(username);
             }
+
+            var delay = (function(){
+                var timer = 0;
+                return function(callback, ms){
+                    clearTimeout (timer);
+                    timer = setTimeout(callback, ms);
+                };
+            })();
+
+            $('#username').keyup(function() {
+                delay(function(){
+                    $('.usrname_status').hide();
+                    $('#usr_loading').show();
+                    $.ajax({
+                        type:"GET",
+                        beforeSend: function (request) {
+                            request.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+                            request.setRequestHeader("x-pm-appversion", "Other");
+                            request.setRequestHeader("x-pm-apiversion", "@@apiVersion");
+                            request.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
+                        },
+                        url: "https://api.protonmail.ch/users/available/" + $('#username').val(),
+                        success: function(msg) {
+                            if (msg.Code === 1000) {
+                                if (msg.Available === 1) {
+                                    $('.usrname_status').hide();
+                                    $('#usr_avail').show();
+                                    $('#invite-button').attr('disabled', false);
+                                } else if (msg.Available === 0) {
+                                    $('.usrname_status').hide();
+                                    $('#usr_taken').show();
+                                    $('#invite-button').attr('disabled', false);
+                                }
+                            } else {
+                                    $('.usrname_status').hide();
+                                    $('#usr_invalid').show();
+                                    $('#invite-button').attr('disabled', false);
+                            }
+                        }
+                    });
+                }, 600 );
+            });
             
             $('#invite-form').on('submit', function(event) {
                 // prevent form submission. we will do an API call instead
