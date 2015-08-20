@@ -393,6 +393,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     // Return Message object to build response or forward
     function buildMessage(action) {
         var base = new Message();
+        var br = '<br />';
         var contentSignature = $sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
@@ -401,7 +402,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
         var from = 'From: ' + message.SenderAddress + '<br />';
         var to = 'To: ' + tools.contactsToString(message.ToList) + '<br />';
-        var cc = 'CC: ' + tools.contactsToString(message.CCList) + '<br />';
+        var cc = (message.CCList.length > 0)?('CC: ' + tools.contactsToString(message.CCList) + '<br />'):('');
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
@@ -409,7 +410,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var fw_length = fw_prefix.length;
 
         base.ParentID = message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + $scope.content + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.content + blockquoteEnd;
 
         if(angular.isDefined(message.AddressID)) {
             base.From = _.findWhere(authentication.user.Addresses, {ID: message.AddressID});
