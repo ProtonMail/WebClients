@@ -22,7 +22,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'archive' && pageName != 'drafts'"
+        ng-if="mailbox != 'archive' && mailbox != 'drafts'"
         pt-tooltip="{{ 'ARCHIVE' | translate }}"
         pt-placement="bottom">
             <a
@@ -33,7 +33,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'inbox' && pageName != 'sent' && pageName != 'drafts'"
+        ng-if="mailbox != 'inbox' && mailbox != 'sent' && mailbox != 'drafts'"
         pt-tooltip="{{ 'INBOX' | translate }}"
         pt-placement="bottom">
             <a
@@ -44,7 +44,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'spam' && pageName != 'drafts' && pageName != 'trash' && pageName != 'sent'"
+        ng-if="mailbox != 'spam' && mailbox != 'drafts' && mailbox != 'trash' && mailbox != 'sent'"
         pt-tooltip="{{ 'SPAM' | translate }}"
         pt-placement="bottom">
             <a
@@ -55,7 +55,7 @@
             </a>
         </li>
         <li
-        ng-if="pageName != 'trash' && pageName != 'spam'"
+        ng-if="mailbox != 'trash' && mailbox != 'spam'"
         pt-tooltip="{{ 'TRASH' | translate }}"
         pt-placement="bottom">
             <a
