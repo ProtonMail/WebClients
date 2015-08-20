@@ -53,25 +53,17 @@
                 </td>
                 <td class="recipient">
                     <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo" class="recipSpan">
-                        <span
-                        class="to"
-                        pt-placement="right"
-                        pt-tooltip="{{ message.ToList | username }}">
+                        <span class="to" title="{{ message.ToList | username }}">
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
                     <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom" class="recipSpan">
-                        <span
-                        class="from"
-                        pt-placement="right"
-                        pt-tooltip="{{ message.SenderAddress }}">
+                        <span class="from" title="{{ message.SenderAddress }}">
                             From: {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
                     <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault" class="recipSpan">
-                        <span
-                        pt-placement="right"
-                        pt-tooltip="{{ message.SenderAddress }}">
+                        <span title="{{ message.SenderAddress }}">
                             {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
@@ -105,7 +97,7 @@
                 starred: message.Starred === 1,
                 }" class="list-group-item">
                 <h4>
-                    <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}" pt-tooltip="{{ message.IsEncrypted == '1' ? 'Encrypted' : 'Not encrypted' }}">
+                    <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}">
                     </span>{{ message.Subject }}
                 </h4>
                 <span class="recipient">
@@ -116,9 +108,7 @@
                         <span class="from">From: </span>{{ message.SenderName }}
                     </span>
                     <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault">
-                        <span pt-tooltip="{{ message.SenderAddress }}">
-                            {{ message.SenderName }}
-                        </span>
+                        <span>{{ message.SenderName }}</span>
                     </span>
                     <span class="pull-right">{{ message.Time | readableTime }}</span>
                 </span>
