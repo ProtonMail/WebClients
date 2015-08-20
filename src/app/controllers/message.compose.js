@@ -108,6 +108,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
         $(window).off('dragover', onDragOver);
+        $interval.cancel($scope.intervalComposer);
+        $interval.cancel($scope.intervalDropzone);
     });
 
     // Function used for dragover listener on the dropzones

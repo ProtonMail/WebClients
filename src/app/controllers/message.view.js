@@ -54,6 +54,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $(window).on('resize', onResize);
 
     $scope.$on('$destroy', function() {
+        // off resize
         $(window).off('resize', onResize);
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
