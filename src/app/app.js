@@ -114,15 +114,22 @@ angular.module("proton", [
 .run(function(
     $document,
     $rootScope,
+    $state,
+    $timeout,
+    authentication,
     networkActivityTracker,
     notify,
-    $state,
-    tools,
-    authentication
+    tools
 ) {
+    var debounce;
+
     $(window).bind('resize load', function() {
-        $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
+        $timeout.cancel(debounce);
+        $timeout(function() {
+            $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
+        }, 100);
     });
+
     $(window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
@@ -321,7 +328,7 @@ angular.module("proton", [
 
             $rootScope.scrollToBottom = false;
         }
-        
+
         $('#loading').remove();
     });
 })
