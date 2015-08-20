@@ -126,7 +126,7 @@ angular.module("proton", [
     $(window).bind('resize load', function() {
         $timeout.cancel(debounce);
         $timeout(function() {
-            $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 500) ? true : false;
+            $rootScope.isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 767) ? true : false;
         }, 100);
     });
 
