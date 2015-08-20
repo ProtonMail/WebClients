@@ -311,14 +311,17 @@ angular.module("proton", [
         $(".navbar-toggle").click();
 
         $rootScope.toState = toState.name.replace(".", "-");
-        if ($rootScope.scrollToBottom===true) {
+
+        if($rootScope.scrollToBottom === true) {
             setTimeout(function() {
                 $('#content').animate({
                     scrollTop: $("#pageBottom").offset().top
                 }, 1);
             }, 10);
+
             $rootScope.scrollToBottom = false;
         }
+        
         $('#loading').remove();
     });
 })
