@@ -43,6 +43,7 @@ angular.module("proton.controllers.Settings", [
     $scope.ComposerMode = authentication.user.ComposerMode;
     $scope.MessageButtons = authentication.user.MessageButtons;
     $scope.ShowImages = authentication.user.ShowImages;
+    $scope.browser = tools.getBrowser;
 
     if (parseInt($scope.doLogging)===0) {
         $scope.disabledText = $translate.instant('DISABLED');
