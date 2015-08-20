@@ -131,14 +131,15 @@ angular.module("proton.controllers.Auth", [
 	                return;
                 },
                 function(result) {
-                    // console.log(result);
-                    if (result.message===undefined) {
+                    if (result.message === undefined) {
                         result.message = 'Sorry, our login server is down. Please try again later.';
                     }
+
                     notify({
                         classes: 'notification-danger',
                         message: result.message
                     });
+
                     $('input[name="Username"]').focus();
                 }
             )

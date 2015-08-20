@@ -1,9 +1,7 @@
 
 angular.module("proton.emailField", [])
 
-.constant("EMAIL_REGEXP",
-/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i
-)
+.constant("EMAIL_REGEXP", /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/)
 
 .directive('emailField', function ($timeout, Contact, EMAIL_REGEXP, $sanitize) {
     var self = this;
@@ -40,6 +38,16 @@ angular.module("proton.emailField", [])
                 return String(str).replace(/[&<>"'\/]/g, function (s) {
                     return entityMap[s];
                 });
+            };
+
+            var cleanEmail = function(email) {
+                var extract = EMAIL_REGEXP.exec(email);
+
+                if(extract === null) {
+                    return email;
+                } else {
+                    return extract[0];
+                }
             };
 
             $ctrl.$render = function () {
@@ -144,7 +152,8 @@ angular.module("proton.emailField", [])
             }
         })
         .on("blur", function () {
-            var val = $$element.val();
+            var val = cleanEmail($$element.val());
+
             response = manager.tagsManager("pushTag",{
                 Name: val,
                 Email: val
