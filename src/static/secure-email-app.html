@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>ProtonMail - Secure email based in Switzerland</title>
+    <meta name="description" content="Secure email with absolutely no compromises. Get your free encrypted email account today.">
+    <meta property="og:image" content="https://protonmail.ch/img/facebook_logo.jpg"/>
+    <meta property="og:title" content="Encrypted email, based in Switzerland."/>
+    <meta property="og:url" content="https://protonmail.ch"/>
+    <meta property="og:site_name" content="ProtonMail"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link type="text/css" rel="stylesheet" href="/theme.css">    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" sizes="192x192" href="/img/android/launcher-icon-4x.png">
+
+    <style type="text/css">
+    .head {
+        float: right;
+        width: 45%;
+    }
+    .phones {
+        width: 400px;
+        max-width: 100%;
+        display: inline-block;
+        position: relative;
+    }
+    .phone {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .frame {
+        position: absolute;
+        z-index: 3;
+        background: #000;
+        top: 72px;
+        left: 12px;
+        bottom: 108px;
+        right: 12px;
+        overflow: hidden;
+    }
+    .screen {
+        width: 100%;
+        display: block;
+        position: relative;
+        left: -1px;
+    }
+    #mobileBeta p {
+        margin-bottom: 2rem;
+    }
+    #mobileBeta p strong {
+        font-weight: 700;
+    }
+    @media screen and (max-width: 900px) {
+        .head {
+            width: 100%;
+            display: block;
+            clear: both;
+            float: none;
+            text-align: center;
+        }
+        .phones {
+            display: block;
+            margin: 2rem auto;
+        }
+    }
+    </style>
+</head>
+
+<body id="page-support" class="external">
+
+    include "pages/_nav.html"
+
+
+
+
+    <div class="container">
+
+        <div class="container panel round" id="mobileBeta">
+            <div class="head">
+                <h1>Encrypted Email on the go!</h1>
+                <h3>Announcing ProtonMail Mobile Beta</h3>
+                <p><strong>We are proud to announce ProtonMail Mobile Beta with apps for iOS and Android.</strong></p>
+                <p>If you are an IndieGogo supporter from last year with the Mobile Beta perk, expect an email from us today with instructions on how to join our beta program.</p>
+                <p>For everyone else, you can apply to join our Mobile Beta program. We will be letting people on slowly over the next few weeks and hope to have both apps ready for the app stores soon.</p>
+                <p><strong>Available for:</strong></p>
+                <a target="_blank" href="https://blog.protonmail.ch/ios-form/" class="button larger">iOS</a>
+                <a target="_blank" href="https://blog.protonmail.ch/android-form/" class="button larger">Android</a>
+            </div>        
+            <div class="phones">
+                <img src="/img/mobile_page/mobile_device.png" class="phone" />
+                <div class="frame">
+                    <img src="/img/mobile_page/pm-android-09.jpg" class="screen" />
+                    <img src="/img/mobile_page/pm-android-01.jpg" class="screen" />
+                    <img src="/img/mobile_page/pm-android-05.jpg" class="screen" />
+                    <img src="/img/mobile_page/pm-android-08.jpg" class="screen" />
+                    <img src="/img/mobile_page/pm-android-14.jpg" class="screen" />
+                </div>
+            </div>        
+            <div class="clear"></div>
+        </div>
+
+    </div><!--/.middlepanel-->
+
+
+<script type="text/javascript" src="/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    $( function() {
+
+        var counter = 1;
+        var total = $('.screen').length;
+        var intv = window.setInterval(cycle, 4500);
+
+        function cycle() {
+            $('.screen').stop(1,1).fadeOut(500);
+            $('.screen').eq(counter).fadeIn(1000);
+            counter++;
+            if (counter>=total) {
+                counter = 0;
+            }            
+        }
+
+        $('.frame').on('mouseover', function() {
+            window.clearInterval(intv);
+        });
+
+        $('.frame').on('mouseleave', function() {
+            intv = window.setInterval(cycle, 4500);
+        });
+
+        $('.screen').on('click', function() {
+            window.clearInterval(intv);
+            cycle();
+            intv = window.setInterval(cycle, 4500);
+        });
+
+    });
+</script>
+
+include "pages/_footer.html"
