@@ -34,18 +34,7 @@ angular.module("proton.tools", ["proton.constants"])
         }
 
         function get_browser_version() {
-            var N = navigator.appName,
-                ua = navigator.userAgent,
-                tem;
-            var M = ua.match(/(opera|chrome|safari|firefox|msie|edge)\/?\s*(\.?\d+(\.\d+)*)/i);
-
-            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) !== null) {
-                M[2] = tem[1];
-            }
-
-            M = M ? [M[1], M[2]] : [N, navigator.appVersion, '-?'];
-
-            return M[1];
+            return jQuery.browser.version;
         }
 
         function is_good_prng_available() {
