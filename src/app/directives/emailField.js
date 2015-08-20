@@ -17,13 +17,15 @@ angular.module("proton.emailField", [])
             var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
             $scope.message.recipientFields[list] = parent[0];
 
-            $(container).on('click', function() {
+            var click = function(event) {
                 var selection = getSelection().toString();
 
                 if (!selection) {
                     $$element.focus();
                 }
-            });
+            };
+
+            $(container).on('click', click);
 
             var htmlEscape = function(str) {
                 var entityMap = {
