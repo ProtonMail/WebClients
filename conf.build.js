@@ -32,10 +32,10 @@ module.exports = {
   vendor_files: (vendor_files = {
     js: [
       "vendor/es6-promise/es6-promise.js",
-      "vendor/autofill-event/src/autofill-event.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
+      "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/ng-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",

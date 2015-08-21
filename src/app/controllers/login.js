@@ -65,7 +65,7 @@ angular.module("proton.controllers.Auth", [
         ) {
             notify({
                 classes: 'notification-danger',
-                message: 'Please enter your username and password to log in.'
+                message: 'Please enter your username and password.'
             });
             return;
         }
