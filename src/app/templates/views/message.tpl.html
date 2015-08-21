@@ -18,7 +18,7 @@
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
-                <b>{{ ::message.SenderName }}</b> &lt;{{ ::message.SenderAddress }}&gt;
+                <a href="" class="email" ng-click="sendMessageTo(message.SenderAddress)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><b>{{ ::message.SenderName }}</b> &lt;{{ ::message.SenderAddress }}&gt;</a>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
             </li>
@@ -26,7 +26,7 @@
                 <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length">
                     <li ng-repeat="email in ::message.ToList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -34,7 +34,7 @@
                 <strong>{{ 'CC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.CCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
@@ -42,7 +42,7 @@
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.BCCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE' | translate }}">{{ email.Address }}</a>
+                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email.Address }}</a>
                     </li>
                 </ul>
             </li>
