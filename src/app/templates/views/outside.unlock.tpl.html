@@ -4,7 +4,7 @@
         <form ng-submit="unlock()" novalidate>
             <fieldset class="pure-form">
                 <div class="form-group">
-                    <input class="form-control" autofocus autocomplete="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="params.MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
+                    <input class="form-control" autofocus autocomplete="off" autocapitalize="off" autocorrect="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="params.MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
                 </div>
                 <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}">
                     <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
