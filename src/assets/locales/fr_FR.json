@@ -146,6 +146,7 @@
     "MINIMIZE": "Minimiser",
     "MORE": "Plus",
     "MORE_INFORMATION": "",
+    "MORE_OPTIONS": "",
     "NAME": "Nom",
     "NEW_LOGIN_PASSWORD": "Nouveau Mot De Passe De Connexion",
     "NEW_MAILBOX": "Nouvelle Mailbox",
@@ -166,6 +167,7 @@
     "ORDERED_LIST": "",
     "OS_VERSION": "",
     "OTHER": "Autre",
+    "PAGINATION": "",
     "PASSWORD_HINT": "",
     "PASSWORD_IS_REQUIRED": "",
     "PASSWORDS_DONT_MATCH": "",
@@ -196,6 +198,7 @@
     "SEARCH_MESSAGES": "",
     "SECURITY": "",
     "SECURITY_DETAILS": "",
+    "SELECT_ALL_MESSAGES": "",
     "SEND": "",
     "SENDER": "",
     "SENDING": "",
@@ -214,6 +217,7 @@
     "SORT": "",
     "SORT_ALIASES": "",
     "SPAM": "",
+    "STAR_MESSAGE": "",
     "STARRED": "",
     "STEP_2_OF_2": "",
     "STORAGE": "Espace De Stockage",
@@ -254,5 +258,6 @@
     "YES": "Oui",
     "YOUR_EMAIL_ADDRESS": "",
     "{{ 'MANAGE_LABELS' | translate }}": "",
-    "{{ email.Address }}": ""
+    "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;": "",
+    "{{ email | contact }}": ""
 }

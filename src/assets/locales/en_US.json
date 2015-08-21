@@ -146,6 +146,7 @@
     "MINIMIZE": "Minimize",
     "MORE": "More",
     "MORE_INFORMATION": "More Information",
+    "MORE_OPTIONS": "More Options",
     "NAME": "Name",
     "NEW_LOGIN_PASSWORD": "New Login Password",
     "NEW_MAILBOX": "New Mailbox",
@@ -166,6 +167,7 @@
     "ORDERED_LIST": "Ordered List",
     "OS_VERSION": "OS Version",
     "OTHER": "Other",
+    "PAGINATION": "Pagination",
     "PASSWORD_HINT": "Password Hint",
     "PASSWORD_IS_REQUIRED": "Password Is Required",
     "PASSWORDS_DONT_MATCH": "Passwords Don't Match",
@@ -196,6 +198,7 @@
     "SEARCH_MESSAGES": "Search Messages",
     "SECURITY": "Security",
     "SECURITY_DETAILS": "Security Details",
+    "SELECT_ALL_MESSAGES": "Select All Messages",
     "SEND": "Send",
     "SENDER": "Sender",
     "SENDING": "Sending",
@@ -214,6 +217,7 @@
     "SORT": "Sort",
     "SORT_ALIASES": "Sort Aliases",
     "SPAM": "Spam",
+    "STAR_MESSAGE": "Star Message",
     "STARRED": "Starred",
     "STEP_2_OF_2": "Step 2 of 2",
     "STORAGE": "Storage",
@@ -254,5 +258,6 @@
     "YES": "Yes",
     "YOUR_EMAIL_ADDRESS": "Your Email Address",
     "{{ 'MANAGE_LABELS' | translate }}": "{{ 'MANAGE_LABELS' | translate }}",
-    "{{ email.Address }}": "{{ email.Address }}"
+    "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;": "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;",
+    "{{ email | contact }}": "{{ email | contact }}"
 }
