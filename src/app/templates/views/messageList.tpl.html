@@ -52,17 +52,17 @@
                     </a>
                 </td>
                 <td class="recipient">
-                    <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo" class="recipSpan">
+                    <span ng-if="showTo(message)" class="recipSpan">
                         <span class="to" title="{{ message.ToList | username }}">
                             To: {{ message.ToList | username }}
                         </span>
                     </span>
-                    <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom" class="recipSpan">
+                    <span ng-if="showFrom(message) && !showTo(message)" class="recipSpan">
                         <span class="from" title="{{ message.SenderAddress }}">
                             From: {{ message.SenderName || message.SenderAddress }}
                         </span>
                     </span>
-                    <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault" class="recipSpan">
+                    <span ng-if="!showTo(message) && !showFrom(message)" class="recipSpan">
                         <span title="{{ message.SenderAddress }}">
                             {{ message.SenderName || message.SenderAddress }}
                         </span>
@@ -101,13 +101,13 @@
                     </span>{{ message.Subject }}
                 </h4>
                 <span class="recipient">
-                    <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo">
+                    <span ng-if="showTo(message)">
                         <span class="to">To: </span>{{ message.ToList | username }}
                     </span>
-                    <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom">
+                    <span ng-if="showFrom(message) && !showTo(message)">
                         <span class="from">From: </span>{{ message.SenderName }}
                     </span>
-                    <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault">
+                    <span ng-if="!showTo(message) && !showFrom(message)">
                         <span>{{ message.SenderName }}</span>
                     </span>
                     <span class="pull-right">{{ message.Time | readableTime }}</span>
