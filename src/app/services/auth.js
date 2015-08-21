@@ -349,8 +349,8 @@ angular.module("proton.authentication", [
 
         // Redirect to a new authentication state, if required
         redirectIfNecessary: function() {
-            $log.debug('refreshIfNecessary');
             var newState = api.state();
+            
             if (newState) {
                 $state.go(newState);
             }

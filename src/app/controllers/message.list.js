@@ -585,7 +585,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateTotals('move', movedMessages);
 
         var promiseAction = function(result) {
-            if(events.length > 0) {
+            // $scope.messages.length > 0 in the case where we Drag and Drop one message to Label and when you have only one message in messages before
+            if(events.length > 0 && $scope.messages.length > 0) {
                 messageCache.sync();
             }
 
@@ -678,7 +679,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.saveLabels = function(labels, alsoArchive) {
-
         var deferred = $q.defer();
         var messageIDs = $scope.selectedIds();
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
