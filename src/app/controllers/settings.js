@@ -26,7 +26,7 @@ angular.module("proton.controllers.Settings", [
     tools,
     url
 ) {
-    $rootScope.pageName = "settings";
+    $rootScope.pageName = "Settings";
     $scope.tools = tools;
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
