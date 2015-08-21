@@ -7,7 +7,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $interval,
     $q,
     $rootScope,
-    $sanitize,
     $sce,
     $scope,
     $state,
@@ -394,7 +393,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     function buildMessage(action) {
         var base = new Message();
         var br = '<br />';
-        var contentSignature = $sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
+        var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote>';
         var originalMessage = '-------- Original Message --------<br />';
