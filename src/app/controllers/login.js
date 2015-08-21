@@ -56,9 +56,6 @@ angular.module("proton.controllers.Auth", [
         $('input').blur();
         clearErrors();
 
-        // Transform to lowercase and remove the domain
-        $scope.username = $scope.username.toLowerCase().split('@')[0];
-
         // Check username and password
         if(
             angular.isUndefined($scope.username) ||
@@ -72,6 +69,9 @@ angular.module("proton.controllers.Auth", [
             });
             return;
         }
+
+        // Transform to lowercase and remove the domain
+        $scope.username = $scope.username.toLowerCase().split('@')[0];
 
         // Custom validation
         try {
