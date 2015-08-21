@@ -14,6 +14,8 @@ angular.module("proton.tooltip", [])
             }
 
             element.attr('title', title);
+            element.attr('aria-label', title);
+            
             $(element[0]).tooltip({
                 delay: 300,
                 container: 'body',

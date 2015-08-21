@@ -23,6 +23,7 @@
             ng-model="droppedMessages">
                 <a
                 href="/inbox"
+                title="{{ 'INBOX' | translate }}"
                 class="btn"
                 ng-click="goTo('secured.inbox'); spinIcon();"
                 ng-class="{ active: ('secured.inbox.**' | includedByState) }">
@@ -37,7 +38,7 @@
             <li
             class="list-group-item"
             data-unread="0">
-                <a href="/drafts" class="btn" ng-click="goTo('secured.drafts')" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
+                <a href="/drafts" title="{{ 'DRAFTS' | translate }}" class="btn" ng-click="goTo('secured.drafts')" ng-class="{ active: ('secured.drafts.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('drafts') > 0}">{{ getUnread('drafts') }}</span>
                     <span class="fa fa-file-text-o"></span> <span class="hidden-xs hidden-sm">{{ 'DRAFTS' | translate }}</span>
                 </a>
@@ -45,7 +46,7 @@
             <li
             class="list-group-item"
             data-unread="0">
-                <a href="/sent" class="btn" ng-click="goTo('secured.sent')" ng-class="{ active: ('secured.sent.**' | includedByState) }">
+                <a href="/sent" title="{{ 'SENT' | translate }}" class="btn" ng-click="goTo('secured.sent')" ng-class="{ active: ('secured.sent.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('sent') > 0}">{{ getUnread('sent') }}</span>
                     <span class="fa fa-sign-out"></span> <span class="hidden-xs hidden-sm">{{ 'SENT' | translate }}</span>
                 </a>
@@ -56,7 +57,7 @@
             jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}"
             data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
-                <a href="/starred" class="btn" ng-click="goTo('secured.starred')" ng-class="{ active: ('secured.starred.**' | includedByState) }">
+                <a href="/starred" title="{{ 'STARRED' | translate }}" class="btn" ng-click="goTo('secured.starred')" ng-class="{ active: ('secured.starred.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('starred') > 0}">{{ getUnread('starred') }}</span>
                     <span class="fa fa-star-o"></span> <span class="hidden-xs hidden-sm">{{ 'STARRED' | translate }}</span>
                 </a>
@@ -70,7 +71,7 @@
             jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}"
             data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
-                <a href="/archive" class="btn" ng-click="goTo('secured.archive')" ng-class="{ active: ('secured.archive.**' | includedByState) }">
+                <a href="/archive" title="{{ 'ARCHIVE' | translate }}" class="btn" ng-click="goTo('secured.archive')" ng-class="{ active: ('secured.archive.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('archive') > 0}">{{ getUnread('archive') }}</span>
                     <span class="fa fa-archive"></span> <span class="hidden-xs hidden-sm">{{ 'ARCHIVE' | translate }}</span>
                 </a>
@@ -81,7 +82,7 @@
             jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}"
             data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
-                <a href="/spam" class="btn" ng-click="goTo('secured.spam')" ng-class="{ active: ('secured.spam.**' | includedByState) }">
+                <a href="/spam" title="{{ 'SPAM' | translate }}" class="btn" ng-click="goTo('secured.spam')" ng-class="{ active: ('secured.spam.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('spam') > 0}">{{ getUnread('spam') }}</span>
                     <span class="fa fa-spam-flame"></span> <span class="hidden-xs hidden-sm">{{ 'SPAM' | translate }}</span>
                 </a>
@@ -93,7 +94,7 @@
             jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}"
             data-jqyoui-options="droppableOptions"
             ng-model="droppedMessages">
-                <a href="trash" class="btn" ng-click="goTo('secured.trash')" ng-class="{ active: ('secured.trash.**' | includedByState) }">
+                <a href="trash" title="{{ 'TRASH' | translate }}" class="btn" ng-click="goTo('secured.trash')" ng-class="{ active: ('secured.trash.**' | includedByState) }">
                     <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('trash') > 0}">{{ getUnread('trash') }}</span>
                     <span class="fa fa-trash-o"></span> <span class="hidden-xs hidden-sm">{{ 'TRASH' | translate }}</span>
                 </a>
@@ -110,9 +111,9 @@
                 jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}"
                 data-jqyoui-options="droppableOptions"
                 ng-model="droppedMessages">
-                    <a ui-sref="secured.label({label: '{{label.ID}}' })" class="btn" ui-sref-active="active">
+                    <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn" ui-sref-active="active">
                         <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('label', label.ID) > 0}">{{ getUnread('label', label.ID) }}</span>
-                        <span class="fa fa-tag" ng-style="color(label)"></span> <span>{{label.Name}}</span>
+                        <span class="fa fa-tag" ng-style="color(label)"></span> <span>{{ label.Name }}</span>
                     </a>
                 </li>
             </ul>
@@ -121,7 +122,7 @@
     <div class="storage">
         <ul class="list-group info hidden-xs hidden-sm">
             <li>
-                <a href="https://blog.protonmail.ch/category/release-notes/" target="_blank">Beta {{ appVersion }}</a>
+                <a href="https://blog.protonmail.ch/category/release-notes/" title="Blog ProtonMail" target="_blank">Beta {{ appVersion }}</a>
             </li>
             <li>
                 <a title="{{ 'MORE_INFORMATION' | translate }}" href="https://support.protonmail.ch/knowledge-base/increase-storage-space/" target="_blank" class="sizebar">

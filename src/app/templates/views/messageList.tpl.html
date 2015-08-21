@@ -47,8 +47,8 @@
                     !!(message.IsEncrypted == '0')
                     }"
                     title="{{ message.encryptionType() }}"></span>
-                    <a href ng-click="toggleStar(message)" class="starLink">
-                        <span class="fa {{ (!!message.Starred) ? 'fa-star' : 'fa-star-o' }}"></span>
+                    <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                        <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
                     </a>
                 </td>
                 <td class="recipient">
@@ -72,18 +72,18 @@
                     <location-tag ng-if="('secured.starred' | includedByState) || ('secured.label' | includedByState)"></location-tag>
                     <i class="fa fa-clock-o expiration" countdown="{{message.ExpirationTime}}" ng-if="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
-                    <span class="labels">
-                        <span ng-repeat="id in message.LabelIDs" class="label label-pm" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+                    <span class="labels" ng-if="message.LabelIDs">
+                        <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="label label-pm" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
                     </span>
                     <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-                    <h4 ng-bind="message.Subject"></h4>
+                    <h4 ng-bind="message.Subject" title="{{ message.Subject }}"></h4>
                 </td>
-                <td class="size">
+                <td class="size" title="{{ message.Size | humanSize }}">
                     {{ message.Size | humanSize }}
                 </td>
-                <td class="when">
+                <td class="when" title="{{ message.Time | readableTime }}">
                     {{ message.Time | readableTime }}
                 </td>
             </tr>
