@@ -21,13 +21,6 @@
                 <strong>{{ 'TO' | translate }}:</strong>
                 <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
             </li>
-
-            <li ng-if="message.CCList.length > 0">
-                <strong>{{ 'CC' | translate }}:</strong>
-                <span ng-repeat="email in message.CCList">
-                    &lt;{{ email.Address }}&gt;
-                </span>
-            </li>
         </ul>
     </div>
     <div id="message-body">
