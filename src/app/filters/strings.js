@@ -83,6 +83,19 @@ angular.module("proton.filters.strings",[])
     };
 })
 
+.filter('contact', function() {
+    return function(contact) {
+        var same = contact.Address === contact.Name;
+        var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
+
+        if(same || alone) {
+            return contact.Address;
+        } else {
+            return contact.Name + ' <' + contact.Address + '>';
+        }
+    };
+})
+
 .filter("username", function() {
     return function(input) {
         var username;

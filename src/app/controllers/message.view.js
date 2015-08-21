@@ -106,18 +106,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
     };
 
-    $scope.getFrom = function() {
-        var result = '';
-
-        if(angular.isDefined(message.SenderName)) {
-            result += '<b>' + message.SenderName + '</b> &lt;' + message.SenderAddress + '&gt;';
-        } else {
-            result += message.SenderAddress;
-        }
-
-        return result;
-    };
-
     $scope.openSafariWarning = function() {
         $('#safariAttachmentModal').modal('show');
     };
