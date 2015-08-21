@@ -31,12 +31,16 @@
     }
 
     if(!isSessionStorage_available()) { 
-        alert('Error: sessionStorage is required to use ProtonMail.')
-        window.location = 'https://support.protonmail.ch/knowledge-base/sessionstorage/';
+        alert('Error: sessionStorage is required to use ProtonMail.');
+        setTimeout( function() {
+            window.location = 'https://support.protonmail.ch/knowledge-base/sessionstorage/';            
+        }, 1000);
     }
     if (!is_good_prng_available()) {
-        alert('Error: a PRNG is required to use ProtonMail.')
-        window.location = 'https://support.protonmail.ch/knowledge-base/prng/';
+        alert('Error: a PRNG is required to use ProtonMail.');
+        setTimeout( function() {
+            window.location = 'https://support.protonmail.ch/knowledge-base/prng/';
+        }, 1000);
     }
 
     </script>
