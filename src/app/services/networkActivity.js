@@ -20,10 +20,10 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
         track: function (promise) {
             errorReporter.clear();
             promises = _.union(promises, [promise]);
-            promise.then(function(result) { 
+            promise.then(function(result) {
 
             });
-            promise.catch(function(result) { 
+            promise.catch(function(result) {
 
             });
             promise.finally(function () {

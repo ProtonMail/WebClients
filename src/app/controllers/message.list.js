@@ -585,8 +585,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateTotals('move', movedMessages);
 
         var promiseAction = function(result) {
-            // $scope.messages.length > 0 in the case where we Drag and Drop one message to Label and when you have only one message in messages before
-            if(events.length > 0 && $scope.messages.length > 0) {
+            if(events.length > 0) {
                 messageCache.sync();
             }
 

@@ -85,8 +85,13 @@ angular.module("proton.messages", ["proton.constants"])
                 if (cacheLoc === 'inbox') {
                     var lastMessage = _.last(cachedMetadata.inbox);
                     var numMessages = 120 - cachedMetadata.inbox.length;
+                    var parameters = {Location: 0, Page: 0, PageSize: numMessages};
 
-                    Message.query({Location: 0, Page: 0, PageSize: numMessages, End: lastMessage.Time}).$promise.then(function(result) {
+                    if(lastMessage) {
+                        parameters.End = lastMessage.Time;
+                    }
+
+                    Message.query(parameters).$promise.then(function(result) {
                         angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
@@ -342,6 +347,7 @@ angular.module("proton.messages", ["proton.constants"])
             },
             sync: function() {
                 var promises = [];
+
                 if (cachedMetadata.inbox.length < 100) {
                     promises.push(cachedMetadata.sync('inbox'));
                 }
