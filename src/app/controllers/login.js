@@ -147,13 +147,12 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.tryDecrypt = function() {
-        $('input').blur();
-        var mailboxPassword = this.mailboxPassword;
         clearErrors();
+
         networkActivityTracker.track(
             authentication.unlockWithPassword(
                 $rootScope.TemporaryEncryptedPrivateKeyChallenge,
-                mailboxPassword,
+                $scope.mailboxPassword,
                 $rootScope.TemporaryEncryptedAccessToken,
                 $rootScope.TemporaryAccessData
             )
@@ -164,7 +163,7 @@ angular.module("proton.controllers.Auth", [
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
-                            authentication.savePassword(mailboxPassword);
+                            authentication.savePassword($scope.mailboxPassword);
                             $state.go("secured.inbox");
                         },
                         function(err) {
