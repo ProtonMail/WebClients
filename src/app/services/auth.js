@@ -254,7 +254,7 @@ angular.module("proton.authentication", [
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    deferred.reject({message: err});
+                    deferred.reject({message: err.message });
                 }
             );
 
@@ -445,7 +445,7 @@ angular.module("proton.authentication", [
             }
             else {
                 req.reject({
-                    message: "Password is required"
+                    message: "Password is required."
                 });
             }
 

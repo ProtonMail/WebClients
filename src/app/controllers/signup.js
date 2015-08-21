@@ -82,7 +82,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 .catch( function(err) {
                     notify({
                         classes: 'notification-danger',
-                        message: err
+                        message: err.message
                     });
                     $log.error(err);
                     $scope.signupError= true;

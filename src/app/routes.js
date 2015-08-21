@@ -460,8 +460,8 @@ angular.module("proton.routes", [
                             window.sessionStorage["proton:decrypted_token"] = decryptedToken;
                             window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
                             $state.go('eo.message', {tag: $stateParams.tag});
-                        }, function(error) {
-                            notify({message: error, classes: 'notification-danger'});
+                        }, function(err) {
+                            notify({message: err.message, classes: 'notification-danger'});
                         });
                     };
                 }

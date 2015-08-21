@@ -118,7 +118,7 @@ angular.module("proton.controllers.Account", ["proton.tools"])
                     $log.error(err);
                     notify({
                         classes: "notification-danger",
-                        message: errr
+                        message: err.message
                     });
                 })
             );
