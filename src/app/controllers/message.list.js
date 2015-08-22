@@ -55,6 +55,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         });
+
+        $scope.paginiationMessageCount = $scope.messageCount();
     };
 
     $scope.updatePageName = function() {
