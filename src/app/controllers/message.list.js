@@ -56,7 +56,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             // I consider this trick like a bug in the angular application
         });
 
-        $scope.paginiationMessageCount = $scope.messageCount();
+        $scope.paginationMessageCount = $scope.messageCount();
     };
 
     $scope.updatePageName = function() {
