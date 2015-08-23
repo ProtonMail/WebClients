@@ -176,15 +176,15 @@ angular.module("proton.controllers.Auth", [
                             $( "[type=password]" ).focus();
                         }
                     );
+                },
+                function(err) {
+                    $log.error('tryDecrypt', err);
+                    notify({
+                        classes: 'notification-danger',
+                        message: err.message
+                    });
                 }
             )
-            .catch(function(err) {
-                $log.error('tryDecrypt', err);
-                notify({
-                    classes: 'notification-danger',
-                    message: err.message
-                });
-            })
         );
     };
 

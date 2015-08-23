@@ -254,7 +254,7 @@ angular.module("proton.authentication", [
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    deferred.reject(err);
+                    deferred.reject({ message: "Error setting authentication cookies." });
                 }
             );
 
@@ -290,6 +290,7 @@ angular.module("proton.authentication", [
                         // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                     },
                     function(error) {
+                        // TODO: This is almost certainly broken, not sure it needs to work though?
                         console.log(error);
                         deferred.reject({
                             message: error.error_description
