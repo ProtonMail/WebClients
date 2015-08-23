@@ -254,7 +254,7 @@ angular.module("proton.authentication", [
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    deferred.reject({message: err.message });
+                    deferred.reject(err);
                 }
             );
 
