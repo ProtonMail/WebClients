@@ -13,6 +13,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     Message,
     Label,
     authentication,
+    cacheMessages,
     confirmModal,
     messageCache,
     messageCounts,
@@ -261,9 +262,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.refreshMessagesCache = function () {
         var deferred = $q.defer();
-        var params = $scope.getMessagesParameters($scope.mailbox);
+        var request = $scope.getMessagesParameters($scope.mailbox);
 
-        messageCache.query(params).then(function(messages) {
+        cacheMessages.query(request).then(function(messages) {
             $scope.messages = messages;
             deferred.resolve();
         });

@@ -40,17 +40,18 @@ angular.module("proton", [
     "proton.config",
 
     // Services
+    "proton.attachments",
     "proton.authentication",
-    "proton.pmcw",
+    "proton.cache",
+    "proton.contacts",
     "proton.errorReporter",
-    "proton.networkActivity",
+    "proton.event",
     "proton.messages",
     "proton.messages.counts",
     "proton.modals",
-    "proton.attachments",
+    "proton.networkActivity",
+    "proton.pmcw",
     "proton.tools",
-    "proton.contacts",
-    "proton.event",
 
     // Directives
     "proton.tooltip",

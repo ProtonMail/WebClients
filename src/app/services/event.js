@@ -1,17 +1,18 @@
 angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function (
-		$timeout, 
-		$window, 
-		$state, 
-		$rootScope, 
-		$stateParams, 
+		$timeout,
+		$window,
+		$state,
+		$rootScope,
+		$stateParams,
 		$cookies,
 		$log,
-		authentication, 
-		Contact, 
-		CONSTANTS, 
-		Events, 
-		messageCache, 
+		authentication,
+		cacheMessages,
+		Contact,
+		CONSTANTS,
+		Events,
+		messageCache,
 		messageCounts,
 		notify
 	) {
@@ -95,7 +96,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessages: function(messages) {
 				if (angular.isDefined(messages)) {
-					messageCache.set(messages);
+					cacheMessages.event(messages);
 				}
 			},
 			manageStorage: function(storage) {
