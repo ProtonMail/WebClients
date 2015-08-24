@@ -189,6 +189,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
+        $scope.$apply();
     };
 
     $scope.decryptAttachment = function(message, attachment, $event) {
