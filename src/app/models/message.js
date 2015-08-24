@@ -416,14 +416,10 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearTextBody: function() {
-
-            $log.debug('clearTextBody');
             var body;
             var deferred = $q.defer();
 
             if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
-
-
                 if (_.isUndefined(this.DecryptedBody) && !!!this.decrypting) {
                     this.decrypting = true;
 
@@ -437,7 +433,7 @@ angular.module("proton.models.message", ["proton.constants"])
                                         this.DecryptedBody = result;
                                         this.failedDecryption = false;
                                         this.decrypting = false;
-                                        deferred.resolve(result); 
+                                        deferred.resolve(result);
                                     }.bind(this),
                                     function(err) {
                                         this.failedDecryption = true;
@@ -446,7 +442,7 @@ angular.module("proton.models.message", ["proton.constants"])
                                 );
                             }.bind(this)
                         );
-                    } 
+                    }
                     catch (err) {
                         this.DecryptedBody = "";
                         this.failedDecryption = true;
@@ -466,6 +462,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 this.containsImage = false;
             } else {
                 this.containsImage = true;
+
                 if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
                     this.imagesHidden = true;
                     body = tools.breakImages(body);

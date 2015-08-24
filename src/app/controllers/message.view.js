@@ -112,10 +112,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.displayContent = function(print) {
-        message.clearTextBody()
-        .then(
+        message.clearTextBody().then(
             function(result) {
-
                 var content;
 
                 if(print === true) {
@@ -190,7 +188,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
-        $scope.$apply();
     };
 
     $scope.decryptAttachment = function(message, attachment, $event) {
