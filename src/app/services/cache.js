@@ -10,9 +10,12 @@ angular.module("proton.cache", [])
 
     /**
      * Check if the request is in a cache context
+     * @param {Object} request
      */
     var cacheContext = function(request) {
-        return Object.keys(request).length === 2 && angular.isDefined(request.page) && angular.isDefined(request.location);
+        var result = Object.keys(request).length === 2 && angular.isDefined(request.page) && angular.isDefined(request.location);
+
+        return result;
     };
 
     /**
@@ -20,6 +23,7 @@ angular.module("proton.cache", [])
      * @param {Object} request
      */
     api.query = function(request) {
+        console.log('cacheMessages.query');
         var deferred = $q.defer();
 
         // In cache context?
@@ -60,12 +64,17 @@ angular.module("proton.cache", [])
      * @param {Integer} location Integer
      */
     api.store = function(request, messages) {
-        if(angular.isUndefined(cache[request.location])) {
-            cache[request.location] = [];
+        var page = request.page || 0;
+        var index = page * CONSTANTS.MESSAGES_PER_PAGE;
+        var howmany = messages.length;
+        var location = request.location;
+
+        if(angular.isUndefined(cache[location])) {
+            cache[location] = [];
         }
 
-
-        cache[request.location] = messages;
+        // Store messages at the correct placement
+        cache[location].splice(index, howmany, messages);
     };
 
     /**
@@ -73,16 +82,23 @@ angular.module("proton.cache", [])
      * @param {Object} message
      */
     api.save = function(message) {
+        var location = message.Location;
 
+        if(angular.isUndefined(cache[location])) {
+            cache[location] = [];
+        }
+
+        // Save the message at the correct placement
+        // cache[location] =
     };
 
     /**
-     * Delete message in each request
+     * Delete message in each location
      * @param {Object} message
      */
     api.delete = function(message) {
-        _.each(cache, function(request) {
-
+        _.each(cache, function(location) {
+            cache[location] = _.without(cache[location], message);
         });
     };
 
