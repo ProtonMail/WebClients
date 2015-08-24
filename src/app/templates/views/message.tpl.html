@@ -98,6 +98,7 @@
         <a
         ng-repeat="attachment in message.Attachments"
         class="btn btn-grid"
+        ng-init="attachment.decrypted = false"
         ng-class="{ 'disabled': attachment.decrypting }"
         id="attachment-{{$index}}"
         data-download-text="{{ 'DOWNLOAD' | translate }}"
