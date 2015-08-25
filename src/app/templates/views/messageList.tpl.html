@@ -69,7 +69,7 @@
                     </span>
                 </td>
                 <td class="subject">
-                    <location-tag ng-if="('secured.starred' | includedByState) || ('secured.label' | includedByState)"></location-tag>
+                    <location-tag ng-if="('secured.starred' | includedByState) || ('secured.search' | includedByState) || ('secured.label' | includedByState)"></location-tag>
                     <i class="fa fa-clock-o expiration" countdown="{{message.ExpirationTime}}" ng-if="message.ExpirationTime > 0"></i>
                     <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
                     <span class="labels" ng-if="message.LabelIDs">
