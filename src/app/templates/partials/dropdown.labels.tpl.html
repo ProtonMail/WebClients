@@ -6,8 +6,8 @@
         <ul class="list-group" ng-show="labels.length > 0">
             <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                 <input type="checkbox" ng-model="label.Selected" />
-                <span class="label label-pm" ng-style="color(label)" ng-click="label.Selected = !!!label.Selected">
-                    <i class="fa fa-tag"></i> {{label.Name}}
+                <span class="label label-pm" ng-style="color(label)" ng-click="label.Selected = !!!label.Selected" title="{{ label.Name }}">
+                    <i class="fa fa-tag"></i> {{ label.Name | limitTo: 20 }}
                 </span>
             </li>
         </ul>
