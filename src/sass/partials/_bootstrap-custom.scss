@@ -38,8 +38,7 @@ body .input-group-addon {
 }
 
 .btn.btn-grid {
-    float: left;
-    display: block;
+    display: inline-block;
     height: $row-height;
     line-height: $row-height;
     min-height: $row-height;
