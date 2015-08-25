@@ -23,6 +23,7 @@
     margin: 0;
     max-width: none; // conflict with panel
     border-top: 1px solid #ccc;
+    min-height: 6rem;
     .attachmentTitle {
         line-height: $row-height;
         height: $row-height;
