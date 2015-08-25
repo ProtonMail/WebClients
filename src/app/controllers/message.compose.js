@@ -616,6 +616,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.closePanel(message);
     };
 
+    $scope.initExpiration = function(message, params) {
+        var expiration;
+
+        if(message.ExpirationTime) {
+            expiration = message.ExpirationTime / 3600;
+        }
+        
+        params.expiration = expiration || 42;
+    };
+
     $scope.setExpiration = function(message, params) {
         if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
             notify('The maximum expiration is 4 weeks.');
