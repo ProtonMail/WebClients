@@ -257,7 +257,7 @@
                     ng-class="{ disabled: message.loading() }"
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
-                    ng-click="save(message, false)"
+                    ng-click="save(message, false, false, true)"
                     pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>

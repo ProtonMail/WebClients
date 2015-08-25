@@ -736,7 +736,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return true;
     };
 
-    $scope.save = function(message, silently, forward) {
+    $scope.save = function(message, silently, forward, notification) {
         message.saved++;
 
         var deferred = $q.defer();
@@ -797,6 +797,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     // Add draft in message list
                     if($state.is('secured.drafts')) {
                         $rootScope.$broadcast('refreshMessages');
+                    }
+
+                    if(notification === true) {
+                        notify({message: "Message saved", classes: 'notification-success'});
                     }
 
                     deferred.resolve(result);
