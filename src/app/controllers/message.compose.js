@@ -259,7 +259,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         } else {
                             message.Attachments.splice(index, 1, result);
                         }
+
                         message.uploading--;
+                        onResize();
                     }
                 );
             }
@@ -622,7 +624,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if(message.ExpirationTime) {
             expiration = message.ExpirationTime / 3600;
         }
-        
+
         params.expiration = expiration || 42;
     };
 
