@@ -61,6 +61,7 @@ angular.module("proton.emailField", [])
 
             var positionInput = function (argument) {
                 var tt = $$element.closest(".twitter-typeahead");
+
                 tt.appendTo(tt.parent());
             };
 
@@ -77,6 +78,7 @@ angular.module("proton.emailField", [])
                     };
                 })
                 .value());
+
                 $scope.message.numTags[list] = manager.tagsManager('tags').length;
             };
 
@@ -91,11 +93,9 @@ angular.module("proton.emailField", [])
                 if (response === undefined) {
                     var input = $(parent).find('.tt-input');
 
-                    $timeout(function () {
-                        $$element.val('');
-                        $(input).val('');
-                        $(input).trigger('keydown');
-                    }, 0);
+                    $(input).val('');
+                    $$element.typeahead('val', '');
+                    $(input).trigger('keydown');
                 }
 
                 setValue();
@@ -107,8 +107,8 @@ angular.module("proton.emailField", [])
                 });
             };
 
-            var keydown = function (e) {
-                if (e.which === 9) {
+            var keydown = function (event) {
+                if (event.which === 9) {
                     tabbing = true;
                 }
             };
@@ -117,6 +117,7 @@ angular.module("proton.emailField", [])
                 if (typeof d.Name === 'undefined' || d.Name === '') {
                     d.Name = d.Email;
                 }
+
                 manager.tagsManager("pushTag", d);
             };
 
@@ -140,6 +141,7 @@ angular.module("proton.emailField", [])
 
                 $($el).dblclick(function() {
                     var input = $(parent).find('.tt-input');
+
                     $(this).find('i').trigger('click');
                     $(input).val(tag.Email);
                     $$element.focus();
@@ -149,9 +151,10 @@ angular.module("proton.emailField", [])
                 setValue();
             });
 
-            manager.on("tm:popped tm:spliced", setValue);
+            manager.on("tm:popped", setValue);
+            manager.on("tm:spliced", setValue);
 
-            $$element.on("keydown", keydown);
+            // $$element.on("keydown", keydown);
             $$element.on("blur", blur);
             $$element.on("focus", focus);
             $$element.on("change", setValue);
@@ -165,7 +168,7 @@ angular.module("proton.emailField", [])
                 source: Contact.index.ttAdapter(),
                 templates: {
                     suggestion: function(Contact) {
-                        return "<b>" +$sanitize(htmlEscape(Contact.Name)) + "</b><br>" + $sanitize(htmlEscape(Contact.Email));
+                        return "<b>" + $sanitize(htmlEscape(Contact.Name)) + "</b><br>" + $sanitize(htmlEscape(Contact.Email));
                     }
                 }
             });
