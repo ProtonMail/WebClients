@@ -135,22 +135,6 @@ angular.module("proton", [
         }
     });
 
-    $rootScope.firstNameOnly = function() {
-        var firstNameOnly;
-
-        if(authentication.user) {
-            firstNameOnly = authentication.user.DisplayName;
-        } else {
-            firstNameOnly = $rootScope.tempUser.username;
-        }
-
-        if (firstNameOnly.length>20) {
-            firstNameOnly = firstNameOnly.substring(0,17)+'...';
-        }
-
-        return firstNameOnly;
-    };
-
     $rootScope.browser = tools.getBrowser;
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
