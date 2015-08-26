@@ -188,7 +188,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.displayContent();
     };
 
-    $scope.decryptAttachment = function(message, attachment, $event) {
+    $scope.decryptAttachment = function(attachment, $event) {
         $event.preventDefault();
 
         var link = angular.element($event.target);
