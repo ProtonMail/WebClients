@@ -10,19 +10,13 @@
                     <h4 class="modal-title">{{ctrl.title}}</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group" ng-class="{'has-error': contactForm.contactName.$touched && contactForm.contactName.$error.required}">
+                    <div class="form-group">
                         <label class="control-label" for="contactName">{{ 'NAME' | translate }}</label>
                         <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
-                        <div ng-show="contactForm.$submitted || contactForm.contactName.$touched">
-                            <p class="text-danger" ng-show="contactForm.contactName.$error.required">{{ 'CONTACT_NAME_EMPTY' | translate }}.</p>
-                        </div>
                     </div>
-                    <div class="form-group" ng-class="{'has-error': contactForm.contactEmail.$touched && contactForm.contactEmail.$error.required}">
+                    <div class="form-group">
                         <label class="control-label" for="contactEmail">{{ 'EMAIL' | translate }}</label>
                         <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="Contact {{ 'EMAIL' | translate }}" required />
-                        <div ng-show="contactForm.$submitted || contactForm.contactEmail.$touched">
-                            <p class="text-danger" ng-show="contactForm.contactEmail.$error.email">{{ 'EMAIL_IS_INVALID' | translate }}.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
