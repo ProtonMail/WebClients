@@ -9,12 +9,23 @@ angular.module("proton.emailField", [])
         restrict: "A",
         require: 'ngModel',
         link: function ( $scope, $element, $attrs, $ctrl ) {
+            // Variables
             var $$element = $($element[0]);
             var parent = $$element.parent();
             var container = $(parent).closest('.input-container');
             var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
-            $scope.message.recipientFields[list] = parent[0];
+            var emails = [];
+            var tabbing = false;
+            var manager = $$element.tagsManager({
+                tagsContainer: parent[0],
+                tagCloseIcon: "<i class=\"fa fa-times\">",
+                delimiters: [32, 44, 9, 13],
+                validator: function (input) {
+                    return EMAIL_REGEXP.test(input);
+                }
+            });
 
+            // Functions
             var click = function(event) {
                 var selection = getSelection().toString();
 
@@ -22,8 +33,6 @@ angular.module("proton.emailField", [])
                     $$element.focus();
                 }
             };
-
-            $(container).on('click', click);
 
             var htmlEscape = function(str) {
                 var entityMap = {
@@ -50,14 +59,6 @@ angular.module("proton.emailField", [])
                 }
             };
 
-            $ctrl.$render = function () {
-                _(($ctrl.$viewValue || "").split(","))
-                .map(function (str) { return str.trim(); })
-                .each(function (email) {
-                    manager.tagsManager('pushTag', email);
-                });
-            };
-
             var positionInput = function (argument) {
                 var tt = $$element.closest(".twitter-typeahead");
                 tt.appendTo(tt.parent());
@@ -75,135 +76,129 @@ angular.module("proton.emailField", [])
                         Address: element.Email.trim()
                     };
                 })
-                .value()
-            );
-            $scope.message.numTags[list] = manager.tagsManager('tags').length;
-        };
+                .value());
+                $scope.message.numTags[list] = manager.tagsManager('tags').length;
+            };
 
-        $timeout(positionInput, 0);
+            var blur = function () {
+                var val = cleanEmail($$element.val());
 
-        var emails = [];
-        var tabbing = false;
+                response = manager.tagsManager("pushTag",{
+                    Name: val,
+                    Email: val
+                });
 
-        var manager = $$element.tagsManager({
-            tagsContainer: parent[0],
-            tagCloseIcon: "<i class=\"fa fa-times\">",
-            delimiters: [32, 44, 9, 13],
-            validator: function (input) {
-                return EMAIL_REGEXP.test(input);
-            }
-        });
+                if (response === undefined) {
+                    var input = $(parent).find('.tt-input');
 
-        //   Disable drag and drop of tags
-        //
-        //   receivedTag = function (event, ui) {
-        //     var currentTags = manager.tagsManager('tags');
-        //     var item = ui.item[0];
-        //     var name = item.innerText.trim();
-        //     var email = $(item).attr('value');
-        //     if (currentTags.indexOf(email) > -1) {
-        //       ui.sender.sortable('cancel');
-        //     }
-        //     else {
-        //       $(item).find('i').trigger('click');
-        //       manager.tagsManager("pushTag", {
-        //         Name: name,
-        //         Email: email
-        //       });
-        //     }
-        //   };
-
-        //   $(parent).closest('.input-container').sortable({
-        //     items: '.tm-tag',
-        //     connectWith: '.input-container',
-        //     receive: receivedTag,
-        //     containment: $(parent).closest('.composer')
-        //   });
-
-        manager.on("tm:pushed", function (ev, tag, tagId, $el) {
-
-            positionInput();
-            if (!tabbing) {
-                $$element.focus();
-            }
-            tabbing = false;
-
-            // $($el).on('mouseover', function() {
-            //   $(this).css('cursor', 'move');
-            // });
-
-            $($el).dblclick(function( ) {
-                var input = $(parent).find('.tt-input');
-                $(this).find('i').trigger('click');
-                $(input).val(tag.Email);
-                $$element.focus();
-                $(input).trigger('keydown');
-            });
-
-            setValue();
-        });
-
-        manager.on("tm:popped tm:spliced", setValue);
-        $$element
-        .on("keydown", function (e) {
-            if (e.which === 9) {
-                tabbing = true;
-            }
-        })
-        .on("blur", function () {
-            var val = cleanEmail($$element.val());
-
-            response = manager.tagsManager("pushTag",{
-                Name: val,
-                Email: val
-            });
-            if (response === undefined) {
-                var input = $(parent).find('.tt-input');
-                $timeout(function () {
-                    $$element.val("");
-                    $(input).val('');
-                    $(input).trigger('keydown');
-                }, 0);
-            }
-            setValue();
-        })
-        .on("focus", function() {
-            $timeout(function() {
-                $('.typeahead-container').scrollTop(0);
-            });
-        })
-        .on("change", setValue)
-        .typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 1
-        }, {
-            source: Contact.index.ttAdapter(),
-            templates: {
-                suggestion: function(Contact) {
-                    return "<b>" +$sanitize(htmlEscape(Contact.Name)) + "</b><br>" + $sanitize(htmlEscape(Contact.Email));
+                    $timeout(function () {
+                        $$element.val('');
+                        $(input).val('');
+                        $(input).trigger('keydown');
+                    }, 0);
                 }
-            }
-        }).on("typeahead:selected", function (e, d) {
-            if (typeof d.Name === 'undefined' || d.Name === '') {
-                d.Name = d.Email;
-            }
-            manager.tagsManager("pushTag", d);
-        });
 
-        $$element.autosizeInput();
+                setValue();
+            };
 
-        _.forEach($scope.message[list], function(d) {
-            if (typeof d.Name === 'undefined' || d.Name === '') {
-                d.Name = d.Address;
-            }
-            manager.tagsManager("pushTag", {
-                Name: d.Name,
-                Email: d.Address
+            var focus = function() {
+                $timeout(function() {
+                    $('.typeahead-container').scrollTop(0);
+                });
+            };
+
+            var keydown = function (e) {
+                if (e.which === 9) {
+                    tabbing = true;
+                }
+            };
+
+            var selected = function (e, d) {
+                if (typeof d.Name === 'undefined' || d.Name === '') {
+                    d.Name = d.Email;
+                }
+                manager.tagsManager("pushTag", d);
+            };
+
+            $ctrl.$render = function () {
+                _(($ctrl.$viewValue || "").split(","))
+                .map(function (str) { return str.trim(); })
+                .each(function (email) {
+                    manager.tagsManager('pushTag', email);
+                });
+            };
+
+            // Listeners
+            manager.on("tm:pushed", function (ev, tag, tagId, $el) {
+                positionInput();
+
+                if (!tabbing) {
+                    $$element.focus();
+                }
+
+                tabbing = false;
+
+                $($el).dblclick(function() {
+                    var input = $(parent).find('.tt-input');
+                    $(this).find('i').trigger('click');
+                    $(input).val(tag.Email);
+                    $$element.focus();
+                    $(input).trigger('keydown');
+                });
+
+                setValue();
             });
-        });
-    }
-};
 
-return directive;
+            manager.on("tm:popped tm:spliced", setValue);
+
+            $$element.on("keydown", keydown);
+            $$element.on("blur", blur);
+            $$element.on("focus", focus);
+            $$element.on("change", setValue);
+            $$element.on("typeahead:selected", selected);
+
+            $$element.typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                source: Contact.index.ttAdapter(),
+                templates: {
+                    suggestion: function(Contact) {
+                        return "<b>" +$sanitize(htmlEscape(Contact.Name)) + "</b><br>" + $sanitize(htmlEscape(Contact.Email));
+                    }
+                }
+            });
+
+            $(container).on('click', click);
+
+            $scope.$on('$destroy', function() {
+                $$element.off("keydown", keydown);
+                $$element.off("blur", blur);
+                $$element.off("focus", focus);
+                $$element.off("change", setValue);
+                $$element.off("typeahead:selected", selected);
+                $(container).off('click', click);
+            });
+
+            // Initialization
+            $scope.message.recipientFields[list] = parent[0];
+
+            $timeout(positionInput, 0);
+
+            $$element.autosizeInput();
+
+            _.forEach($scope.message[list], function(d) {
+                if (typeof d.Name === 'undefined' || d.Name === '') {
+                    d.Name = d.Address;
+                }
+                manager.tagsManager("pushTag", {
+                    Name: d.Name,
+                    Email: d.Address
+                });
+            });
+        }
+    };
+
+    return directive;
 });
