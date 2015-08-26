@@ -289,27 +289,24 @@ angular.module("proton.controllers.Contacts", [
                 import: function(files) {
                     var contactArray = [];
                     var extension = files[0].name.slice(-4);
-
                     var reader = new FileReader();
+
                     reader.onload = function(e) {
                         var text = unescape(encodeURIComponent(reader.result));
 
-                        if (extension === '.vcf') {
-
+                        if(extension === '.vcf') {
                               var vcardData = vCard.parse(text);
 
                               _.forEach(vcardData, function(d, i) {
                                   if (d.fn && d.email) {
-                                      contactArray.push({'Name' : d.fn.value, 'Email' : d.email.value});
-                                  }
-                                  else if(d.email) {
-                                      contactArray.push({'Name' : d.email.value, 'Email' : d.email.value});
+                                      contactArray.push({'Name' : String(d.fn.value), 'Email' : String(d.email.value)});
+                                  } else if(d.email) {
+                                      contactArray.push({'Name' : String(d.email.value), 'Email' : String(d.email.value)});
                                   }
                               });
 
                               importContacts(contactArray);
-                        }
-                        else if(extension === '.csv') {
+                        } else if(extension === '.csv') {
                             Papa.parse(text, {
                             	complete: function(results) {
                                     var csv = results.data;
@@ -327,16 +324,17 @@ angular.module("proton.controllers.Contacts", [
                                     nameIndex = csv[0].indexOf(nameKey);
                                     emailIndex = csv[0].indexOf(emailKey);
                                     lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
+
                                     _.forEach(csv, function(d, i) {
                                       if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
                                         if (d[nameIndex] !== '') {
-                                          contactArray.push({'Name' : d[nameIndex], 'Email' : d[emailIndex]});
-                                        }
-                                        else {
-                                          contactArray.push({'Name' : d[emailIndex], 'Email' : d[emailIndex]});
+                                          contactArray.push({'Name' : String(d[nameIndex]), 'Email' : String(d[emailIndex])});
+                                        } else {
+                                          contactArray.push({'Name' : String(d[emailIndex]), 'Email' : String(d[emailIndex])});
                                         }
                                       }
                                     });
+
                                     importContacts(contactArray);
                             	}
                             });
@@ -355,6 +353,7 @@ angular.module("proton.controllers.Contacts", [
                             }).then(function(response) {
                                 added = 0;
                                 duplicates = 0;
+
                                 _.forEach(response.data.Responses, function(d) {
                                     if (d.Response.Contact) {
                                         authentication.user.Contacts.push(d.Response.Contact);
@@ -364,6 +363,7 @@ angular.module("proton.controllers.Contacts", [
                                         duplicates++;
                                     }
                                 });
+
                                 added = added === 1 ? added + ' contact' : added + ' contacts';
                                 duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
                                 notify(added + ' imported, ' + duplicates + ' already in your contact list');

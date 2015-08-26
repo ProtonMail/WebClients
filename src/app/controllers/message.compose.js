@@ -259,7 +259,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         } else {
                             message.Attachments.splice(index, 1, result);
                         }
+
                         message.uploading--;
+                        onResize();
                     }
                 );
             }
@@ -616,6 +618,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.closePanel(message);
     };
 
+    $scope.initExpiration = function(message, params) {
+        var expiration;
+
+        if(message.ExpirationTime) {
+            expiration = message.ExpirationTime / 3600;
+        }
+
+        params.expiration = expiration || 42;
+    };
+
     $scope.setExpiration = function(message, params) {
         if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
             notify('The maximum expiration is 4 weeks.');
@@ -736,7 +748,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         return true;
     };
 
-    $scope.save = function(message, silently, forward) {
+    $scope.save = function(message, silently, forward, notification) {
         message.saved++;
 
         var deferred = $q.defer();
@@ -797,6 +809,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     // Add draft in message list
                     if($state.is('secured.drafts')) {
                         $rootScope.$broadcast('refreshMessages');
+                    }
+
+                    if(notification === true) {
+                        notify({message: "Message saved", classes: 'notification-success'});
                     }
 
                     deferred.resolve(result);

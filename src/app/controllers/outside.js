@@ -207,7 +207,7 @@ angular.module("proton.controllers.Outside", [
             });
         } else {
             // Attachment size error.
-            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + totalSize + '.');
+            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
             // TODO remove file in droparea
             return;
         }

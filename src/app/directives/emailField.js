@@ -77,7 +77,6 @@ angular.module("proton.emailField", [])
                 })
                 .value()
             );
-            $scope.$apply();
             $scope.message.numTags[list] = manager.tagsManager('tags').length;
         };
 

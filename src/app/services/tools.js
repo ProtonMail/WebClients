@@ -302,7 +302,7 @@ angular.module("proton.tools", ["proton.constants"])
                 // render bar in terms of MB
                 cur = (cur/kb).toFixed(1);
 
-                if (cur < 0.01) {
+                if (cur > 0 && cur < 0.01) {
                     cur = 0.01;
                 }
 
@@ -311,7 +311,7 @@ angular.module("proton.tools", ["proton.constants"])
                 // render bar in terms of GB
                 cur = (cur/kb/kb).toFixed(2);
 
-                if (cur < 0.01) {
+                if (cur > 0 && cur < 0.01) {
                     cur = 0.01;
                 }
 

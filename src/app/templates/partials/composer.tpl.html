@@ -145,7 +145,7 @@
                             <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-init="params.expiration = 42" ng-model="params.expiration" ng-model-options="{debounce: {'default': 50}}" />
+                            <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" ng-model-options="{debounce: {'default': 50}}" />
                         </div>
                         <div class="form-group col-md-12 text-center" ng-show="params.expiration">
                             <h2 class="text-purple">{{params.expiration}} {{ 'HOURS' | translate }}</h2>
@@ -257,7 +257,7 @@
                     ng-class="{ disabled: message.loading() }"
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
-                    ng-click="save(message, false)"
+                    ng-click="save(message, false, false, true)"
                     pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>

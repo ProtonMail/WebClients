@@ -66,17 +66,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             Message.read({IDs: [message.ID]});
         }
 
-        if (message.SenderAddress==="notify@protonmail.ch" && message.IsEncrypted===0) {
-            message.imagesHidden = false;
-            $scope.displayContent();
-        }
-        else if(authentication.user.ShowImages===1) {
-            message.imagesHidden = false;
-            $scope.displayContent();
-        }
-
         // fix for firefox
-        var messageHeadH1 = $('.message-head h1').outerHeight()+20;
+        var messageHeadH1 = $('.message-head h1').outerHeight() + 20;
+
         $('.message-head').css({
             minHeight: messageHeadH1
         });
@@ -112,6 +104,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.displayContent = function(print) {
+        if (message.SenderAddress === "notify@protonmail.ch" && message.IsEncrypted === 0) {
+            message.imagesHidden = false;
+        } else if(authentication.user.ShowImages === 1) {
+            message.imagesHidden = false;
+        }
+
         message.clearTextBody().then(
             function(result) {
                 var content;
@@ -190,7 +188,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.displayContent();
     };
 
-    $scope.decryptAttachment = function(message, attachment, $event) {
+    $scope.decryptAttachment = function(attachment, $event) {
         $event.preventDefault();
 
         var link = angular.element($event.target);

@@ -129,7 +129,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
         if(mailbox === 'label') {
             value = counters.Labels[id];
-        } else if (mailbox === 'starred'){
+        } else if (mailbox === 'starred') {
             value = counters.Starred;
         } else {
             value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];

@@ -14,8 +14,6 @@
 }
 
 #attachmentWrap {
-    overflow: auto;
-    max-height: (3*$row-height);
     background-color: #f2f2f2;
 }
 #attachmentArea {
@@ -23,6 +21,9 @@
     margin: 0;
     max-width: none; // conflict with panel
     border-top: 1px solid #ccc;
+    overflow: auto;
+    min-height: ($row-height*3);
+    height: ($row-height*3);
     .attachmentTitle {
         line-height: $row-height;
         height: $row-height;
@@ -35,7 +36,6 @@
         }
     }
     a {
-        display: block;
         text-align: left;
     }
     .fa, strong {
