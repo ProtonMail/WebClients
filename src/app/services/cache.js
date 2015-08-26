@@ -108,7 +108,14 @@ angular.module("proton.cache", [])
      * @param {Integer} id
      */
     var getMessage = function(id) {
+        var deferred = $q.defer();
 
+        Message.get({ id: id }).$promise.then(function(message) {
+            api.update({ Message: message });
+            deferred.resolve(message);
+        });
+
+        return deferred.promise;
     };
 
     /**
@@ -214,6 +221,7 @@ angular.module("proton.cache", [])
         console.log('api.update');
         var location = inCache(event.ID);
 
+        // Present in the current cache?
         if(location !== false) {
             var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
             var sameLocation = cache[location][index].Location === event.Message.Location;
@@ -229,6 +237,7 @@ angular.module("proton.cache", [])
                 api.create(event);
             }
         } else {
+            // Create a new message in the cache
             api.create(event);
         }
     };
@@ -279,7 +288,7 @@ angular.module("proton.cache", [])
     return api;
 })
 
-.service("preloadMessageContent", function($interval, Message) {
+.service("preloadMessageContent", function($interval, Message, cacheMessages) {
     var api = {};
     var messages = [];
     var queue = [];
@@ -295,6 +304,13 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Reset current queue
+     */
+    api.reset = function() {
+        queue = [];
+    };
+
+    /**
      * Add unread messages to the queue
      */
     api.add = function() {
@@ -305,21 +321,19 @@ angular.module("proton.cache", [])
      * Preload messages present in the queue
      */
     api.preload = function() {
-        // Get the first message in queue
+        // Get the first message in the queue
         var message  = _.first(queue);
 
         if(angular.isDefined(message)) {
             // Preload the first message
-
-            // Save it
-
-            // Remove first in queue
+            cacheMessages.getMessage(message.ID);
+            // Remove first in the queue
             queue = _.without(queue, message);
         }
     };
 
     /**
-     * Loop around messages present in queue to preload the Body
+     * Loop around messages present in the queue to preload the Body
      */
     api.loop = function() {
         var looping = $interval(function() {
