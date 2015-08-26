@@ -63,6 +63,19 @@ angular.module("proton.cache", [])
         return result;
     };
 
+    /**
+     * Create the location in the cache if it not defined
+     */
+    var exist = function(location) {
+        if(angular.isUndefined(cache[location])) {
+            cache[location] = [];
+        }
+    };
+
+    /**
+     * Check if we need to refresh the view
+     * @param {Object} event
+     */
     var needRefresh = function(event) {
         var mailbox = $state.current.name.replace('secured.', '');
         var location = inCache(event.ID);
@@ -150,9 +163,7 @@ angular.module("proton.cache", [])
         var location = request.Location;
         var context = cacheContext(request);
 
-        if(angular.isUndefined(cache[location])) {
-            cache[location] = [];
-        }
+        exist(location);
 
         if(context && messages.length > 0) {
             // Store messages at the correct placement
@@ -165,8 +176,11 @@ angular.module("proton.cache", [])
      * @param {Object} message
      */
     api.delete = function(event) {
-        _.each(cache, function(location) {
-            location = _.filter(location, function(message) {
+        console.log('api.delete');
+        var keys = Object.keys(cache);
+
+        _.each(keys, function(key) {
+            cache[key] = _.filter(cache[key], function(message) {
                 return message.ID !== event.ID;
              });
         });
@@ -176,22 +190,18 @@ angular.module("proton.cache", [])
      * Add a new message in the cache
      */
     api.create = function(event) {
+        console.log('api.create');
         var message = event.Message;
         var location = message.Location;
         var index;
-        var cached = inCache(message.ID);
 
-        if(angular.isUndefined(cache[location])) {
-            cache[location] = [];
-        }
+        exist(location);
 
         index = _.sortedIndex(cache[location], message, function(element) {
             return -element.Time;
         });
 
-        if(cached === false) {
-            cache[location].splice(index, 0, message);
-        }
+        cache[location].splice(index, 0, message);
     };
 
     /**
@@ -201,22 +211,25 @@ angular.module("proton.cache", [])
      * @param {Integer} location
      */
     api.update = function(event) {
+        console.log('api.update');
         var location = inCache(event.ID);
 
         if(location !== false) {
             var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
+            var sameLocation = cache[location][index].Location === event.Message.Location;
+            var currentMessage = cache[location][index];
 
-            cache[location][index] = _.extend(cache[location][index], event.Message);
-        }
-    };
-
-    api.labels = function(event) {
-        var location = inCache(event.ID);
-
-        if(location !== false) {
-            var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
-
-            cache[location][index] = _.extend(cache[location][index], event.Message);
+            if(sameLocation) {
+                cache[location][index] = _.extend(currentMessage, event.Message);
+            } else {
+                // Remove the message in the current location
+                api.delete(event);
+                // Add the message in the new location
+                event.Message = _.extend(currentMessage, event.Message);
+                api.create(event);
+            }
+        } else {
+            api.create(event);
         }
     };
 
@@ -244,7 +257,7 @@ angular.module("proton.cache", [])
                     break;
                 case UPDATE_FLAG:
                     console.log('UPDATE_FLAG', event);
-                    api.labels(event);
+                    api.update(event);
                     break;
                 default:
                     break;
