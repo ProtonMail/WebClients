@@ -417,6 +417,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     index = $scope.messages.length;
                 }
 
+                styles.top = 'initial';
                 styles.right = right + 'px';
             }
 
@@ -425,7 +426,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         	// Height
         	if(windowHeight < composerHeight) {
         		styles.height = windowHeight + 'px';
-        	}
+        	} else {
+                styles.height = 'auto';
+            }
 
             $(composer).css(styles);
 
