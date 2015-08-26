@@ -6,7 +6,8 @@ angular.module("proton.cache", [])
     $q,
     $rootScope,
     $state,
-    $stateParams
+    $stateParams,
+    networkActivityTracker
 ) {
     var api = {};
     var cache = {};
@@ -73,22 +74,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Check if we need to refresh the view
-     * @param {Object} event
-     */
-    var needRefresh = function(event) {
-        var mailbox = $state.current.name.replace('secured.', '');
-        var location = inCache(event.ID);
-
-        if(location !== false) {
-            // Check if the message is located in the current view
-            return location === CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-        } else {
-            return true;
-        }
-    };
-
-    /**
      * Call the API to get messages
      * @param {Object} request
      */
@@ -99,6 +84,8 @@ angular.module("proton.cache", [])
             api.store(request, messages);
             deferred.resolve(messages);
         });
+
+        networkActivityTracker.track(deferred.promise);
 
         return deferred.promise;
     };
@@ -129,21 +116,20 @@ angular.module("proton.cache", [])
         // In cache context?
         if(cacheContext(request)) {
             // Messages present in cache?
-            if(angular.isDefined(cache[location])) {
-                var page = request.Page || 0;
-                var start = page * CONSTANTS.MESSAGES_PER_PAGE;
-                var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var page = request.Page || 0;
+            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
+            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+
+            if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length > 0) {
                 var messages = cache[location].slice(start, end);
 
                 deferred.resolve(messages);
-            }
-            // Else we call the API
-            else {
+            } else {
+                // Else we call the API
                 deferred.resolve(queryMessages(request));
             }
-        }
-        // Else we call the API
-        else {
+        } else {
+            // Else we call the API
             deferred.resolve(queryMessages(request));
         }
 
@@ -159,11 +145,12 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Store messages in cache location
+     * Save messages in cache location
      * @param {Object} request
      * @param {Integer} location Integer
      */
     api.store = function(request, messages) {
+        console.log('api.store', request, messages);
         var page = request.Page || 0;
         var index = page * CONSTANTS.MESSAGES_PER_PAGE;
         var howmany = messages.length;
@@ -237,8 +224,12 @@ angular.module("proton.cache", [])
                 api.create(event);
             }
         } else {
-            // Create a new message in the cache
-            api.create(event);
+            getMessage(event.ID).then(function() {
+                // Create a new message in the cache
+                api.create(event);
+                // Force refresh in this special case
+                api.refreshMessages();
+            });
         }
     };
 
@@ -246,11 +237,7 @@ angular.module("proton.cache", [])
      * Manage the cache when a new event comes
      */
     api.events = function(events) {
-        var refresh = false;
-
         _.each(events, function(event) {
-            refresh = refresh || needRefresh(event);
-
             switch (event.Action) {
                 case DELETE:
                     console.log('DELETE', event);
@@ -273,9 +260,7 @@ angular.module("proton.cache", [])
             }
         });
 
-        if(refresh) {
-            api.refreshMessages();
-        }
+        api.refreshMessages();
     };
 
     /**
@@ -314,7 +299,8 @@ angular.module("proton.cache", [])
      * Add unread messages to the queue
      */
     api.add = function() {
-        queue = _.union(queue, _.where(messages, {IsRead: 0})); // Add only unread messages to the queue
+        // queue = _.union(queue, _.where(messages, {IsRead: 0})); // Add only unread messages to the queue
+        queue = messages; // Temporary test
     };
 
     /**
