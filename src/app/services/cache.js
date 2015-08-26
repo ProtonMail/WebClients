@@ -3,7 +3,10 @@ angular.module("proton.cache", [])
 .service("cacheMessages", function(
     CONSTANTS,
     Message,
-    $q
+    $q,
+    $rootScope,
+    $state,
+    $stateParams
 ) {
     var api = {};
     var cache = {};
@@ -48,13 +51,28 @@ angular.module("proton.cache", [])
      * @param {Integer} id - message ID searched
      */
     var inCache = function(id) {
-        _.each(cache, function(cacheLocation, key) {
-            if(_.where(cacheLocation, { ID: id }).length > 0) {
-                return key;
+        var keys = Object.keys(cache);
+        var result = false;
+
+        _.each(keys, function(key) {
+            if(_.where(cache[key], { ID: id }).length > 0) {
+                result = key;
             }
         });
 
-        return false;
+        return result;
+    };
+
+    var needRefresh = function(event) {
+        var mailbox = $state.current.name.replace('secured.', '');
+        var location = inCache(event.ID);
+
+        if(location !== false) {
+            // Check if the message is located in the current view
+            return location === CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        } else {
+            return true;
+        }
     };
 
     /**
@@ -143,7 +161,7 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Delete message in the cache if the list is present
+     * Delete message in the cache if the message is present
      * @param {Object} message
      */
     api.delete = function(event) {
@@ -161,6 +179,7 @@ angular.module("proton.cache", [])
         var message = event.Message;
         var location = message.Location;
         var index;
+        var cached = inCache(message.ID);
 
         if(angular.isUndefined(cache[location])) {
             cache[location] = [];
@@ -170,7 +189,9 @@ angular.module("proton.cache", [])
             return -element.Time;
         });
 
-        cache[location].splice(index, 0, message);
+        if(cached === false) {
+            cache[location].splice(index, 0, message);
+        }
     };
 
     /**
@@ -180,7 +201,9 @@ angular.module("proton.cache", [])
      * @param {Integer} location
      */
     api.update = function(event) {
-        if(var location = inCache(event.ID)) {
+        var location = inCache(event.ID);
+
+        if(location !== false) {
             var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
 
             cache[location][index] = _.extend(cache[location][index], event.Message);
@@ -188,33 +211,56 @@ angular.module("proton.cache", [])
     };
 
     api.labels = function(event) {
-        if(var location = inCache(event.ID)) {
-            
+        var location = inCache(event.ID);
+
+        if(location !== false) {
+            var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
+
+            cache[location][index] = _.extend(cache[location][index], event.Message);
         }
     };
 
     /**
      * Manage the cache when a new event comes
      */
-    api.event = function(events) {
+    api.events = function(events) {
+        var refresh = false;
+
         _.each(events, function(event) {
+            refresh = refresh || needRefresh(event);
+
             switch (event.Action) {
                 case DELETE:
+                    console.log('DELETE', event);
                     api.delete(event);
                     break;
                 case CREATE:
+                    console.log('CREATE', event);
                     api.create(event);
                     break;
                 case UPDATE:
+                    console.log('UPDATE', event);
                     api.update(event);
                     break;
                 case UPDATE_FLAG:
+                    console.log('UPDATE_FLAG', event);
                     api.labels(event);
                     break;
                 default:
                     break;
             }
         });
+
+        if(refresh) {
+            api.refreshMessages();
+        }
+    };
+
+    /**
+     * Ask to the message list controller to refresh the messages
+     */
+    api.refreshMessages = function() {
+        $rootScope.$broadcast('refreshMessagesCache');
     };
 
     return api;
