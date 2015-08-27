@@ -1,12 +1,13 @@
 angular.module("proton.cache", [])
 
 .service("cacheMessages", function(
-    CONSTANTS,
-    Message,
     $q,
     $rootScope,
     $state,
     $stateParams,
+    CONSTANTS,
+    Message,
+    messageCounts,
     networkActivityTracker
 ) {
     var api = {};
@@ -66,6 +67,7 @@ angular.module("proton.cache", [])
 
     /**
      * Create the location in the cache if it not defined
+     * @param {String} location
      */
     var exist = function(location) {
         if(angular.isUndefined(cache[location])) {
@@ -78,6 +80,7 @@ angular.module("proton.cache", [])
      * @param {Object} request
      */
     var queryMessages = function(request) {
+        console.log('queryMessages');
         var deferred = $q.defer();
 
         Message.query(request).$promise.then(function(messages) {
@@ -92,13 +95,14 @@ angular.module("proton.cache", [])
 
     /**
      * Call the API to get message
-     * @param {Integer} id
+     * @param {String} id
      */
     var getMessage = function(id) {
+        console.log('getMessage', id);
         var deferred = $q.defer();
 
         Message.get({ id: id }).$promise.then(function(message) {
-            api.update({ Message: message });
+            api.update({ ID: message.ID, Message: message });
             deferred.resolve(message);
         });
 
@@ -110,24 +114,20 @@ angular.module("proton.cache", [])
      * @param {Object} request
      */
     api.query = function(request) {
+        console.log('api.query', request);
         var deferred = $q.defer();
         var location = request.Location;
 
         // In cache context?
         if(cacheContext(request)) {
-            // Messages present in cache?
             var page = request.Page || 0;
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var counters = messageCounts.get();
 
-            // Nombre de message present dans le cache === Nombre de message suppose dans la page
-
-
-            // We can improve this condition: cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE
-            if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) {
-                var messages = cache[location].slice(start, end);
-
-                deferred.resolve(messages);
+            // Messages present in cache?
+            if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length > 0) { // TODO Improve
+                deferred.resolve(cache[location].slice(start, end));
             } else {
                 // Else we call the API
                 deferred.resolve(queryMessages(request));
@@ -141,7 +141,32 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Return message specified by the id
+     * Return messages from cache if they are in
+     * @param {Object} request
+     */
+    api.fromCache = function(request) {
+        var location = request.Location;
+        var result = false;
+
+        // In cache context?
+        if(cacheContext(request)) {
+            // Messages present in cache?
+            var page = request.Page || 0;
+            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
+            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+
+            if(angular.isDefined(cache[location])) {
+                var messages = cache[location].slice(start, end);
+
+                result = messages;
+            }
+        }
+
+        return result;
+    };
+
+    /**
+     * Return the message specified by the id from the cache or the back-end
      * @param {String} id
      */
     api.get = function(id) {
@@ -167,7 +192,7 @@ angular.module("proton.cache", [])
     /**
      * Save messages in cache location
      * @param {Object} request
-     * @param {Integer} location Integer
+     * @param {Array} messages
      */
     api.store = function(request, messages) {
         console.log('api.store');
@@ -187,21 +212,20 @@ angular.module("proton.cache", [])
 
     /**
      * Delete message in the cache if the message is present
-     * @param {Object} message
+     * @param {Object} event
      */
     api.delete = function(event) {
         console.log('api.delete');
         var keys = Object.keys(cache);
 
         _.each(keys, function(key) {
-            cache[key] = _.filter(cache[key], function(message) {
-                return message.ID !== event.ID;
-             });
+            cache[key] = _.filter(cache[key], function(message) { return message.ID !== event.ID; });
         });
     };
 
     /**
      * Add a new message in the cache
+     * @param {Object} event
      */
     api.create = function(event) {
         console.log('api.create');
@@ -220,9 +244,7 @@ angular.module("proton.cache", [])
 
     /**
      * Update message attached to the id specified
-     * @param {Integer} id
-     * @param {Object} message
-     * @param {Integer} location
+     * @param {Object} event
      */
     api.update = function(event) {
         console.log('api.update');
@@ -248,9 +270,8 @@ angular.module("proton.cache", [])
             } else {
                 // Remove the message in the current location
                 api.delete(event);
-
-                event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
                 // Add the message in the new location
+                event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
                 event.Message = _.extend(currentMessage, event.Message);
                 api.create(event);
             }
@@ -291,32 +312,37 @@ angular.module("proton.cache", [])
             }
         });
 
-        api.refreshMessages();
+        api.callRefresh();
     };
 
     /**
      * Ask to the message list controller to refresh the messages
+     * First with the cache
+     * Second with the query call
      */
-    api.refreshMessages = function() {
+    api.callRefresh = function() {
+        console.log('callRefresh');
         $rootScope.$broadcast('refreshMessagesCache');
     };
 
     return api;
 })
 
-.service("preloadMessageContent", function($interval, Message, cacheMessages) {
+.service("preloadMessage", function(
+    $interval,
+    cacheMessages
+) {
     var api = {};
-    var messages = [];
     var queue = [];
-    var interval = 15000; // 15 seconds
+    var interval = 5000; // 15 seconds // TODO edit
 
     /**
      * Set current messages viewed
      * @param {Array} messages
      */
     api.set = function(messages) {
-        messages = messages; // Set messages
-        api.add(); // Add unread messages to the queue
+        api.reset();
+        api.add(messages); // Add unread messages to the queue
     };
 
     /**
@@ -328,10 +354,12 @@ angular.module("proton.cache", [])
 
     /**
      * Add unread messages to the queue
+     * @param {Array} messages
      */
-    api.add = function() {
-        // queue = _.union(queue, _.where(messages, {IsRead: 0})); // Add only unread messages to the queue
-        queue = messages; // Temporary test
+    api.add = function(messages) {
+        // Add only unread messages to the queue
+        // Filter by message where the Body is undefined
+        queue = _.union(queue, _.where(messages, { IsRead: 0, Body: undefined }));
     };
 
     /**
@@ -343,8 +371,8 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(message)) {
             // Preload the first message
-            cacheMessages.getMessage(message.ID);
-            // Remove first in the queue
+            cacheMessages.get(message.ID);
+            // Remove the first message in the queue
             queue = _.without(queue, message);
         }
     };
@@ -353,6 +381,7 @@ angular.module("proton.cache", [])
      * Loop around messages present in the queue to preload the Body
      */
     api.loop = function() {
+        console.log('api.loop');
         var looping = $interval(function() {
             api.preload();
         }, interval);

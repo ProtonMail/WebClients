@@ -13,9 +13,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     Message,
     Label,
     authentication,
-    cacheMessages,
+    cacheMessages, // NEW
+    preloadMessage, // NEW
     confirmModal,
-    messageCache,
     messageCounts,
     networkActivityTracker,
     notify
@@ -48,9 +48,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.updatePageName();
         $scope.startWatchingEvent();
-        $scope.refreshMessagesCache().then(function() {
-            messageCache.watchScope($scope, "messages");
-            watchMessages = $scope.$watch('messages', function() {
+        $scope.refreshMessages().then(function() {
+            watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
+                preloadMessage.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -90,8 +90,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-        $scope.$on('refreshMessages', function(event, silently, empty) {
-            $scope.refreshMessages(silently, empty);
+        $scope.$on('refreshMessages', function() {
+            $scope.refreshMessages();
         });
 
         $scope.$on('refreshMessagesCache', function(){
@@ -137,6 +137,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.stopWatchingEvent = function() {
         watchMessages();
+        preloadMessage.reset();
     };
 
     $scope.actionsDelayed = function() {
@@ -247,29 +248,25 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return params;
     };
 
-    $scope.refreshMessages = function(silently, empty) {
-        var mailbox = $state.current.name.replace('secured.', '');
-        var params = $scope.getMessagesParameters(mailbox);
-
-        Message.query(params).$promise.then(function(result) {
-            $scope.messages = result;
-
-            if(!!!empty) {
-                $scope.emptying = false;
-            }
-        });
-    };
-
-    $scope.refreshMessagesCache = function () {
+    $scope.refreshMessages = function() {
         var deferred = $q.defer();
         var request = $scope.getMessagesParameters($scope.mailbox);
 
         cacheMessages.query(request).then(function(messages) {
             $scope.messages = messages;
-            deferred.resolve();
+            deferred.resolve(messages);
         });
 
         return deferred.promise;
+    };
+
+    $scope.refreshMessagesCache = function () {
+        var request = $scope.getMessagesParameters($scope.mailbox);
+        var cache = cacheMessages.fromCache(request);
+
+        if(cache !== false) {
+            $scope.messages = cache;
+        }
     };
 
     $scope.updateLabels = function () {
@@ -410,7 +407,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 if(message.IsRead === 0) {
                     message.IsRead = 1;
                     Message.read({IDs: [message.ID]});
-                    messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+                    cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
                     messageCounts.updateUnread('mark', [message], true);
                 }
                 $rootScope.scrollPosition = $('#content').scrollTop();
@@ -452,7 +449,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             }
         }
 
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}], true);
+        cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
     };
 
     $scope.allSelected = function() {
@@ -525,14 +522,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         messageCounts.updateUnread('mark', messages, status);
-        messageCache.set(events, true);
+        cacheMessages.set(events);
 
         $scope.unselectAllMessages();
     };
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-        var message = messageCache.get(id).then(function(message) {
+
+        var message = cacheMessages.get(id).then(function(message) {
             Message.trash({IDs: [id]});
 
             movedMessages.push({
@@ -543,10 +541,17 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 Starred: message.Starred
             });
 
+            cacheMessages.events([{
+                Action: 3,
+                ID: message.ID,
+                Message: {
+                    ID: message.ID,
+                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
+                }
+            }]);
+
             messageCounts.updateUnread('move', movedMessages);
             messageCounts.updateTotals('move', movedMessages);
-
-            $scope.messages = _.without($scope.messages, message);
         });
     };
 
@@ -559,36 +564,27 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location,
-                IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                Starred: message.Starred};
-            var index = $scope.messages.indexOf(message);
+            var event = {
+                Action: 3,
+                ID: message.ID,
+                Message: {
+                    ID: message.ID,
+                    Selected: false, // Unselect the message moved
+                    Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]
+                }
+            };
 
-            movedMessages.push(m);
-            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            message.Selected = false;
-
-            if(!$state.is('secured.label') && !$state.is('secured.starred')) {
-                $scope.messages.splice(index, 1);
-            }
-
-            events.push({Action: 3, ID: message.ID, Message: message});
+            events.push(event);
         });
 
         if(events.length > 0) {
-            messageCache.set(events, true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+            cacheMessages.events(events);
         }
-
-        $scope.unselectAllMessages();
 
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
         var promiseAction = function(result) {
-            if(events.length > 0) {
-                messageCache.sync();
-            }
-
             if(inDelete) {
                 if(ids.length > 1) {
                     notify($translate.instant('MESSAGES_DELETED'));

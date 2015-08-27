@@ -21,13 +21,12 @@ angular.module("proton.routes", [
                 $stateParams,
                 Message,
                 messageCache,
+                cacheMessages,
                 authentication,
                 networkActivityTracker
             ) {
                 if (authentication.isLoggedIn()) {
-                    return networkActivityTracker.track(
-                        messageCache.get($stateParams.id)
-                    );
+                    return networkActivityTracker.track(cacheMessages.get($stateParams.id));
                 }
             }
         }
