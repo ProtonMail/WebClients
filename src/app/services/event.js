@@ -155,7 +155,7 @@ angular.module("proton.event", ["proton.constants"])
 				eventModel.get().then(function (result) {
 
 					// Check for force upgrade
-					if ( result.data.Code && parseInt(result.data.Code) === 5003 ) {
+					if ( angular.isDefined(result.data) && angular.isDefined(result.data.Code) && parseInt(result.data.Code) === 5003 ) {
 						// Force upgrade, kill event loop
 						eventModel.promiseCancel = undefined;
 						return;
