@@ -72,8 +72,12 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.email = function() {
-        var address = _.findWhere(authentication.user.Addresses, {Send: 1});
-
-        return address.Email;
+        if (authentication.user) {
+            var address = _.findWhere(authentication.user.Addresses, {Send: 1});
+            return address.Email;
+        }
+        else {
+            return '';
+        }
     };
 });
