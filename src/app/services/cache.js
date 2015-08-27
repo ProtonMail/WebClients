@@ -120,6 +120,9 @@ angular.module("proton.cache", [])
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
+            // Nombre de message present dans le cache === Nombre de message suppose dans la page
+
+
             // We can improve this condition: cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE
             if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) {
                 var messages = cache[location].slice(start, end);
@@ -138,11 +141,27 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Return message specified by id
-     * @param {Integer} id
+     * Return message specified by the id
+     * @param {String} id
      */
     api.get = function(id) {
-        return {};
+        console.log('api.get');
+        var deferred = $q.defer();
+        var location = inCache(id);
+
+        if(location !== false) {
+            var message = _.findWhere(cache[location], { ID: id });
+
+            if(angular.isDefined(message.Body)) {
+                deferred.resolve(message);
+            } else {
+                deferred.resolve(getMessage(id));
+            }
+        } else {
+            deferred.resolve(getMessage(id));
+        }
+
+        return deferred.promise;
     };
 
     /**
