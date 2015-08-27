@@ -264,10 +264,6 @@ angular.module("proton", [
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));
 
-        $log.debug(toState.name);
-        $log.debug('isLoggedIn',$rootScope.isLoggedIn);
-        $log.debug('isLocked',$rootScope.isLocked);
-
         if (isUnlock && $rootScope.isLoggedIn) {
             $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');
             return;
