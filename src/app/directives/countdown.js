@@ -41,12 +41,15 @@ angular.module("proton.countdown", [])
                 // Show how many days, hours, minutes and seconds are left
                 if($attrs.outside) {
                     $($element).text(newTitle);
-                } else {
-                    $($element).attr('title', newTitle)
-                        .tooltip('fixTitle')
-                        .data('bs.tooltip')
-                        .$tip.find('.tooltip-inner')
-                        .text(newTitle);
+                } 
+                else {
+                    $($element).attr('title', newTitle);
+                    $($element).tooltip('fixTitle');
+                    $($element).data('bs.tooltip');
+                    $($element).text(newTitle);
+                    if ($($element).$tip) {
+                        $($element).$tip.find('.tooltip-inner');
+                    }
                 }
             }
 

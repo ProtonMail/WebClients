@@ -74,9 +74,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
-
-        message.editor = editor;
-        $scope.listenEditor(message);
+        if (message) {
+            message.editor = editor;
+            $scope.listenEditor(message);
+        }
     });
 
     function onResize() {

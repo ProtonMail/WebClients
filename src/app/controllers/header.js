@@ -64,7 +64,7 @@ angular.module("proton.controllers.Header", [])
         }
 
         // Truncate
-        if (displayName.length > 20) {
+        if (displayName && displayName.length > 20) {
             displayName = displayName.substring(0, 17) + '...';
         }
 
@@ -74,7 +74,12 @@ angular.module("proton.controllers.Header", [])
     $scope.email = function() {
         if (authentication.user) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});
-            return address.Email;
+            if (address) {
+                return address.Email;    
+            }
+            else {
+                return '';
+            }
         }
         else {
             return '';
