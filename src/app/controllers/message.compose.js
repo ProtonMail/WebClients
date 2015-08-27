@@ -235,6 +235,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
+    $scope.cancelAttachment = function(attachment, message) {
+        // Cancel the request
+        attachment.cancel();
+        // Remove the attachment in the view
+        message.Attachments = _.without(message.Attachments, attachment);
+    };
+
     $scope.addAttachment = function(file, message) {
         var tempPacket = {};
 
