@@ -503,7 +503,7 @@ angular.module("proton.controllers.Settings", [
                 "ComposerMode": value
             }).$promise.then(
                 function(response) {
-                    notify($translate.instant('THEME_SAVED'));
+                    notify($translate.instant('MODE_SAVED'));
                 },
                 function(response) {
                     $log.error(response);
