@@ -120,7 +120,8 @@ angular.module("proton.cache", [])
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
-            if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length > 0) {
+            // We can improve this condition: cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE
+            if(angular.isDefined(cache[location]) && cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) {
                 var messages = cache[location].slice(start, end);
 
                 deferred.resolve(messages);
@@ -150,7 +151,7 @@ angular.module("proton.cache", [])
      * @param {Integer} location Integer
      */
     api.store = function(request, messages) {
-        console.log('api.store', request, messages);
+        console.log('api.store');
         var page = request.Page || 0;
         var index = page * CONSTANTS.MESSAGES_PER_PAGE;
         var howmany = messages.length;
@@ -214,11 +215,22 @@ angular.module("proton.cache", [])
             var sameLocation = cache[location][index].Location === event.Message.Location;
             var currentMessage = cache[location][index];
 
+            // Manage labels
+            if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                event.Message.LabelIDs = _.uniq(currentMessage.LabelIDs.concat(event.Message.LabelIDsAdded));
+            }
+
+            if(angular.isDefined(event.Message.LabelIDsRemoved)) {
+                event.Message.LabelIDs = _.difference(currentMessage.LabelIDs, event.Message.LabelIDsRemoved);
+            }
+
             if(sameLocation) {
                 cache[location][index] = _.extend(currentMessage, event.Message);
             } else {
                 // Remove the message in the current location
                 api.delete(event);
+
+                event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
                 // Add the message in the new location
                 event.Message = _.extend(currentMessage, event.Message);
                 api.create(event);
