@@ -393,6 +393,7 @@ angular.module("proton.authentication", [
             delete auth.mailboxPassword;
 
             this.user = null;
+            window.onbeforeunload = undefined;
 
             // HACKY ASS BUG
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
