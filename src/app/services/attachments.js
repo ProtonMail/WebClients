@@ -105,6 +105,7 @@ angular.module("proton.attachments", [
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
                         // Attachment disallowed by back-end size limit (no change in size)
+                        notify.closeAll();
                         notify(response.Error);
                     } else {
                         notify('Unable to upload.');

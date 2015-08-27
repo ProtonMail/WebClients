@@ -49,14 +49,25 @@ angular.module("proton.emailField", [])
                 });
             };
 
-            var cleanEmail = function(email) {
-                var extract = EMAIL_REGEXP.exec(email);
+            var extractEmails = function(value) {
+                var emails = [];
+                var result = value.match(/([.^\S]+@[.^\S]+\.[.^\S]+)/gi);
 
-                if(extract === null) {
-                    return email;
-                } else {
-                    return extract[0];
+                if(result) {
+                    emails = result;
                 }
+
+                return emails;
+            };
+
+            var clean = function(email) {
+                return email
+                    .replace(/</g, '')
+                    .replace(/>/g, '')
+                    .replace(/"/g, '')
+                    .replace(/'/g, '')
+                    .replace(/,/g, '')
+                    .trim();
             };
 
             var positionInput = function (argument) {
@@ -83,22 +94,23 @@ angular.module("proton.emailField", [])
             };
 
             var blur = function () {
-                var val = cleanEmail($$element.val());
+                var emails = extractEmails($$element.val());
+                var input = $(parent).find('.tt-input');
 
-                response = manager.tagsManager("pushTag",{
-                    Name: val,
-                    Email: val
+                _.each(emails, function(email) {
+                    manager.tagsManager("pushTag",{
+                        Name: clean(email),
+                        Email: clean(email)
+                    });
                 });
 
-                if (response === undefined) {
-                    var input = $(parent).find('.tt-input');
-
-                    $(input).val('');
-                    $$element.typeahead('val', '');
-                    $(input).trigger('keydown');
-                }
+                $(input).val('');
+                $$element.typeahead('val', '');
+                $(input).trigger('keydown');
 
                 setValue();
+
+                // user1@protonmail.ch, user2@protonmail.ch, user3@protonmail.ch
             };
 
             var focus = function() {

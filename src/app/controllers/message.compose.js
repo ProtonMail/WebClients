@@ -235,6 +235,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     };
 
+    $scope.cancelAttachment = function(attachment, message) {
+        // Cancel the request
+        attachment.cancel();
+        // Remove the attachment in the view
+        message.Attachments = _.without(message.Attachments, attachment);
+    };
+
     $scope.addAttachment = function(file, message) {
         var tempPacket = {};
 
@@ -399,8 +406,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 var top = marginTop;
 
                 styles.top = top + 'px';
-            }
-            else {
+            } else {
                 var marginRight = margin; // px
                 var widthComposer = 480; // px
 
@@ -417,7 +423,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     index = $scope.messages.length;
                 }
 
-                styles.top = 'initial';
                 styles.right = right + 'px';
             }
 

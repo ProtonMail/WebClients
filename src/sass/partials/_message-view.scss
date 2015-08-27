@@ -22,8 +22,6 @@
     max-width: none; // conflict with panel
     border-top: 1px solid #ccc;
     overflow: auto;
-    min-height: ($row-height*3);
-    height: ($row-height*3);
     .attachmentTitle {
         line-height: $row-height;
         height: $row-height;

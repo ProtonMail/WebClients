@@ -66,13 +66,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             Message.read({IDs: [message.ID]});
         }
 
-        // fix for firefox
-        var messageHeadH1 = $('.message-head h1').outerHeight() + 20;
-
-        $('.message-head').css({
-            minHeight: messageHeadH1
-        });
-
         // start timer ago
         $scope.agoTimer = $interval(function() {
             var time = $filter('longReadableTime')($scope.message.Time);
@@ -528,6 +521,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.setMessageHeadHeight = function() {
         var messageHeadH1 = $('#messageHead h1').outerHeight();
-        $('#messageHead').css('minHeight', messageHeadH1+20); // 10 for top & bottom margin
+
+        $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
     };
 });
