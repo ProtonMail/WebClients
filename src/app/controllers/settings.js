@@ -464,7 +464,6 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.toggleDisplayLabel = function(label) {
-        label.Display = (label.Display === 0)?1:0; // toggle display
         Label.update({
             id: label.ID,
             Name: label.Name,

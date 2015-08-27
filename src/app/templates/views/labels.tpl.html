@@ -13,6 +13,7 @@
                     <span class="label label-pm" ng-style="{ 'background-color': label.Color }">{{ label.Name }}</span>
                     <div class="pull-right">
                         <toggle-switch 
+                        ng-click="toggleDisplayLabel(label)"
                         ng-model="label.Display" 
                         on-label="{{ 'SHOW' | translate }}" 
                         off-label="Hide"
