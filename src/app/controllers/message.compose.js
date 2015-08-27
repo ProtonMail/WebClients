@@ -417,7 +417,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     index = $scope.messages.length;
                 }
 
-                styles.top = 'initial';
                 styles.right = right + 'px';
             }
 
