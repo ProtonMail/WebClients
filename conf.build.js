@@ -45,7 +45,7 @@ module.exports = {
       "vendor/angular-animate/angular-animate.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/angular-toggle-switch/angular-toggle-switch.min.js",
+      "vendor/angular-toggle-switch/angular-toggle-switch.js",
       "vendor/ng-file-upload/dist/ng-file-upload-all.js",
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
