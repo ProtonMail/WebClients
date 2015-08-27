@@ -61,6 +61,7 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
+    "proton.attachmentHeight",
 
     // Filters
     "proton.filters.strings",

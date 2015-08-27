@@ -68,20 +68,11 @@
 
 </div>
 
-<div ng-if="::message.Attachments.length > 0" id="attachmentArea">
+<div ng-if="::message.Attachments.length > 0" id="attachmentArea" attachment-height attachmentCount="{{ message.Attachments.length }}">
     <span class="alert alert-info" id="safariWarning" ng-show="safariWarning" ng-click="openSafariWarning()">
         <strong>Need help</strong> downloading attachments?
     </span>
     <span class="attachmentTitle">
-        <button
-        class="btn btn-sm pull-right"
-        ng-click="attachmentToggle=!attachmentToggle"
-        pt-tooltip="Show/Hide Attachments"
-        pt-placement="left"
-        title=""
-        data-original-title="Show/Hide Attachments">
-            <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': attachmentToggle}"></i>
-        </button>
         <strong>
             {{ 'ATTACHMENTS' | translate }}
         </strong>
