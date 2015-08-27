@@ -399,8 +399,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 var top = marginTop;
 
                 styles.top = top + 'px';
-            }
-            else {
+            } else {
                 var marginRight = margin; // px
                 var widthComposer = 480; // px
 
