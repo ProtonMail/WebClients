@@ -4,6 +4,7 @@
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
+        ng-init="params = {}"
         ng-style="{'z-index': message.zIndex}"
         ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized, 'normalized': !message.maximized && !message.minimized}"
         ng-click="focusComposer(message)">
@@ -112,7 +113,7 @@
                         <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false; message.recipientFieldFocussed = 0" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                     </div>
                 </div>
-                <div class="form-group composeEditor" ng-init="params = {}">
+                <div class="form-group composeEditor">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
                             <div class="form-group col-md-12">
