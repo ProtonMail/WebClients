@@ -105,7 +105,7 @@ angular.module("proton.emailField", [])
                 });
 
                 $(input).val('');
-                $$element.typeahead('val', '');
+                // $$element.typeahead('val', '');
                 $(input).trigger('keydown');
 
                 setValue();
