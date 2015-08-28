@@ -388,16 +388,8 @@ angular.module("proton.authentication", [
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
 
             // HACKY ASS BUG
-            var promise;
-            if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
-                promise = $http.delete(url.get() + "/auth");
-            } else {
-                var deferred = $q.defer();
-                deferred.resolve();
-                promise = deferred.promise;
-            }
+            var clearData = function() {
 
-            promise.then(function () {
                 // Completely clear sessionstorage
                 window.sessionStorage.clear();
 
@@ -407,7 +399,13 @@ angular.module("proton.authentication", [
                 this.user = null;
                 window.onbeforeunload = undefined;
                 location.reload();
-            });
+            };
+
+            if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
+                $http.delete(url.get() + "/auth").then( clearData, clearData );
+            } else {
+                clearData();
+            }
 
             // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
             // $rootScope.isLoggedIn = false;
