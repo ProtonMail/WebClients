@@ -147,7 +147,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.slideDown = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
-        $scope.$apply();
     };
 
     $scope.dropzoneConfig = function(message) {
