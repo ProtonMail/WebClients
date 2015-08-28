@@ -743,7 +743,7 @@ module.exports = function(grunt) {
             },
             bower: {
                 command: [
-                    "sudo bower install --allow-root"
+                    "bower update"
                 ].join("&&")
             }
         },
@@ -830,7 +830,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
-        "bower",
+        // "bower", // Just comment bower task for the moment
         "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
