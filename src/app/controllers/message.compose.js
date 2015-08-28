@@ -328,6 +328,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             if(save === true) {
                 $scope.save(message, true, true).then(function() {
                     $scope.decryptAttachments(message);
+                    $scope.composerStyle();
                 });
             }
         });
