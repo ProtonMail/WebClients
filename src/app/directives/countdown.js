@@ -42,8 +42,11 @@ angular.module("proton.countdown", [])
                 if($attrs.outside) {
                     $($element).text(newTitle);
                 } else {
-                    // http://stackoverflow.com/questions/9501921/change-twitter-bootstrap-tooltip-content-on-click
                     $($element).attr('data-original-title', newTitle);
+
+                    if(angular.isDefined($($element).data('bs.tooltip').$tip)) {
+                        $($element).data('bs.tooltip').$tip.find('.tooltip-inner').text(newTitle);
+                    }
                 }
             }
 
