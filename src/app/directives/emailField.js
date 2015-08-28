@@ -104,13 +104,13 @@ angular.module("proton.emailField", [])
                     });
                 });
 
-                $(input).val('');
-                // $$element.typeahead('val', '');
-                $(input).trigger('keydown');
+                $timeout(function() {
+                    $$element.val('');
+                    $(input).val('');
+                    $(input).trigger('keydown');
+                }, 0);
 
                 setValue();
-
-                // user1@protonmail.ch, user2@protonmail.ch, user3@protonmail.ch
             };
 
             var focus = function() {
