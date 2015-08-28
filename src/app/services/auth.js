@@ -386,23 +386,28 @@ angular.module("proton.authentication", [
         logout: function() {
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
-            // Completely clear sessionstorage
-            window.sessionStorage.clear();
-
-            delete auth.data;
-            delete auth.mailboxPassword;
-
-            this.user = null;
-            window.onbeforeunload = undefined;
 
             // HACKY ASS BUG
+            var promise;
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
-                $http.delete(url.get() + "/auth").then( function() {
-                    location.reload();
-                });
+                promise = $http.delete(url.get() + "/auth");
             } else {
-                location.reload();
+                var deferred = $q.defer();
+                deferred.resolve();
+                promise = deferred.promise;
             }
+
+            promise.then(function () {
+                // Completely clear sessionstorage
+                window.sessionStorage.clear();
+
+                delete auth.data;
+                delete auth.mailboxPassword;
+
+                this.user = null;
+                window.onbeforeunload = undefined;
+                location.reload();
+            });
 
             // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
             // $rootScope.isLoggedIn = false;
@@ -497,8 +502,7 @@ angular.module("proton.authentication", [
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.logout = function() {
-        authentication.logout();
         eventManager.stop();
-        $scope.error = null;
+        authentication.logout();
     };
 });
