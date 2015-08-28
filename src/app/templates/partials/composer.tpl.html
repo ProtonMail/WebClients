@@ -275,12 +275,13 @@
                     <button
                     ng-show="message.loading() && sending"
                     class="btn btn-sm btn-primary disabled">
-                        <i class="fa fa-send" ng-show="!!message.maximized"></i>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
                         {{ 'SENDING' | translate }}
                     </button>
                     <button
                     ng-show="message.loading() && saving && !sending"
                     class="btn btn-sm btn-primary disabled">
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
                         {{ 'SAVING' | translate }}
                     </button>
                 </div>
