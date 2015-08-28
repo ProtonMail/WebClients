@@ -209,16 +209,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.decryptAttachments = function(message) {
         if(message.Attachments && message.Attachments.length > 0) {
             _.each(message.Attachments, function(attachment) {
-                // decode key packets
-                var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
-                // get user's pk
-                var key = authentication.getPrivateKey().then(function(pk) {
-                    // decrypt session key from keypackets
-                    pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
-                        attachment.sessionKey = sessionKey;
+                try {
+                    // decode key packets
+                    var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+                    // get user's pk
+                    var key = authentication.getPrivateKey().then(function(pk) {
+                        // decrypt session key from keypackets
+                        pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
+                            attachment.sessionKey = sessionKey;
+                        });
                     });
-                });
+                } catch (error) {
+                    $log.error(error);
+                    notify({message: 'An error occurs with ' + attachment.Name, classes: 'notification-danger'});
+                }
             });
         }
     };
