@@ -148,7 +148,7 @@ angular.module("proton", [
     );
 
     $rootScope.$watch('pageName', function(newVal, oldVal) {
-        $document.find("title").html(pageTitleTemplate({ pageName: newVal }));
+        $document.find("title").text(pageTitleTemplate({ pageName: newVal }));
     });
 
     $rootScope.networkActivity = networkActivityTracker;
