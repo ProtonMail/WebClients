@@ -97,7 +97,20 @@
                 starred: message.Starred === 1,
                 }" class="list-group-item">
                 <h4>
-                    <span class="fa {{ message.IsEncrypted == '1' ? 'fa-lock' : 'fa-unlock-alt' }}">
+                    <span
+                    class="fa"
+                    ng-class="{
+                    'fa-lock':
+                    !!!(message.IsEncrypted == '0'),
+                    'text-purple':
+                    !!(message.IsEncrypted == '1') ||
+                    !!(message.IsEncrypted == '3') ||
+                    !!(message.IsEncrypted == '5') ||
+                    !!(message.IsEncrypted == '6'),
+                    'fa-unlock-alt':
+                    !!(message.IsEncrypted == '0')
+                    }"
+                    title="{{ message.encryptionType() }}">
                     </span>{{ message.Subject }}
                 </h4>
                 <span class="recipient">
