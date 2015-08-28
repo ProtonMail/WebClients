@@ -85,7 +85,7 @@
         </span>,
         {{ message.sizeAttachments() | humanSize }})
     </span>
-    <div id="attachmentWrap" ng-hide="attachmentToggle">
+    <div id="attachmentWrap">
         <a
         ng-repeat="attachment in message.Attachments"
         class="btn btn-grid"
