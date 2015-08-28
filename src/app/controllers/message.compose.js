@@ -221,7 +221,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     });
                 } catch (error) {
                     $log.error(error);
-                    notify({message: 'An error occurs with ' + attachment.Name, classes: 'notification-danger'});
                 }
             });
         }
