@@ -740,6 +740,11 @@ module.exports = function(grunt) {
                     "git commit -m \"New Release\"",
                     "git push"
                 ].join("&&")
+            },
+            bower: {
+                command: [
+                    "sudo bower install --allow-root"
+                ].join("&&")
             }
         },
 
@@ -825,6 +830,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
+        "bower",
         "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
@@ -834,6 +840,10 @@ module.exports = function(grunt) {
         "clean:after",
         "shell:push",
         "wait:push"
+    ]);
+
+    grunt.registerTask("bower", [
+        "shell:bower"
     ]);
 
     grunt.registerTask("default", ["watch"]);
