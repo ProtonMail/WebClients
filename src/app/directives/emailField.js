@@ -96,19 +96,24 @@ angular.module("proton.emailField", [])
             var blur = function () {
                 var emails = extractEmails($$element.val());
                 var input = $(parent).find('.tt-input');
+                var undefinedResult = false;
 
                 _.each(emails, function(email) {
-                    manager.tagsManager("pushTag",{
+                    var managerResult = manager.tagsManager("pushTag",{
                         Name: clean(email),
                         Email: clean(email)
                     });
+
+                    if(angular.isUndefined) {
+                        undefinedResult = true;
+                    }
                 });
 
-                $timeout(function() {
-                    $$element.val('');
+                if(undefinedResult) {
+                    $$element.typeahead('val', '');
                     $(input).val('');
                     $(input).trigger('keydown');
-                }, 0);
+                }
 
                 setValue();
             };
