@@ -44,13 +44,11 @@ angular.module("proton.authentication", [
 
             var deferred = $q.defer();
 
-            api.user = $http.get(url.get() + "/users", {
+            $http.get(url.get() + "/users", {
                 params: {
                     id: uid
                 }
-            });
-
-            api.user.then(
+            }).then(
                 function(result) {
 
                     var user = result.data.User;
@@ -186,7 +184,11 @@ angular.module("proton.authentication", [
         getPrivateKey: function() {
             var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
 
-            return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw);
+            return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw).catch( function(err) {
+                $log.error( this.user.EncPrivateKey );
+                $log.error( 'Mailbox Password: '+pw );
+                throw err;
+            }.bind(this));
         },
 
         getRefreshCookie: function() {
@@ -474,8 +476,10 @@ angular.module("proton.authentication", [
                     }
 
                     $rootScope.isLoggedIn = true;
+                    // Why are we setting this in two places?
                     $rootScope.user = user;
                     this.user = user;
+                    // TODO what the fuck is this? atob is going to break with an non-ASCII, and why would we base64 the theme?
                     this.user.Theme = atob(user.Theme);
 
                     return user;
