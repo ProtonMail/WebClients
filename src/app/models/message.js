@@ -451,6 +451,7 @@ angular.module("proton.models.message", ["proton.constants"])
                         deferred.reject(err);
                     }
                 } else {
+                    this.failedDecryption = false;
                     deferred.resolve(this.DecryptedBody);
                 }
             } else {

@@ -116,7 +116,7 @@ angular.module("proton.authentication", [
             var session = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"];
             if (session) {
                 auth.data = {
-                    SessionToken: session
+                    SessionToken: pmcw.decode_base64(session)
                 };
 
                 auth.mailboxPassword = api.getPassword();
