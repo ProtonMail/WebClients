@@ -214,7 +214,9 @@ angular.module("proton.controllers.Auth", [
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
-    $rootScope.isSecure = authentication.isSecured;
+    $rootScope.isSecure = function() {
+        return authentication.isSecured();
+    };
 
     Message.totalCount().$promise.then(function(totals) {
         var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
