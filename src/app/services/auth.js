@@ -186,7 +186,6 @@ angular.module("proton.authentication", [
 
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw).catch( function(err) {
                 $log.error( this.user.EncPrivateKey );
-                $log.error( 'Mailbox Password: '+pw );
                 throw err;
             }.bind(this));
         },
