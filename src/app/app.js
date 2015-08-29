@@ -404,14 +404,14 @@ angular.module("proton", [
 // Handle some application exceptions
 //
 
-.factory('$exceptionHandler', function($injector, $log) {
+.factory('$exceptionHandler', function($log) { // function($injector, $log) {
     return function(exception, cause) {
-        var errorReporter = $injector.get("errorReporter");
-        if (exception.message.indexOf("$sanitize:badparse") >= 0) {
-            errorReporter.notify("There was an error while trying to display this message.", exception);
-        }
-        else {
-            $log.error( exception );
-        }
+        // var errorReporter = $injector.get("errorReporter");
+        // if (exception.message.indexOf("$sanitize:badparse") >= 0) {
+        //     errorReporter.notify("There was an error while trying to display this message.", exception);
+        // }
+        //else {
+        $log.error( exception );
+        //}
     };
 });
