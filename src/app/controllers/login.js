@@ -148,12 +148,16 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.tryDecrypt = function() {
+
+        // Make local so extensions (or Angular) can't mess with it by clearing the form too early
+        var mailboxPassword = $scope.mailboxPassword;
+
         clearErrors();
 
         networkActivityTracker.track(
             authentication.unlockWithPassword(
                 $rootScope.TemporaryEncryptedPrivateKeyChallenge,
-                $scope.mailboxPassword,
+                mailboxPassword,
                 $rootScope.TemporaryEncryptedAccessToken,
                 $rootScope.TemporaryAccessData
             )
@@ -164,7 +168,7 @@ angular.module("proton.controllers.Auth", [
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
-                            authentication.savePassword($scope.mailboxPassword);
+                            authentication.savePassword(mailboxPassword);
                             $state.go("secured.inbox");
                         },
                         function(err) {
