@@ -413,7 +413,7 @@ angular.module("proton", [
         localStorage.test = 2;
     } catch (error) {
       notify({
-          message: 'You are in Privacy Mode\nPlease deactivate Privacy Mode and then reload the page.',
+          message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
           classes: 'notification-danger',
           duration: 0
       });
