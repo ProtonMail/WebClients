@@ -9,6 +9,7 @@ angular.module("proton.messages.counts", [
     $rootScope, 
     tools
 ) {
+
     var totalCounts = _.bindAll({
 
         /**
@@ -17,9 +18,10 @@ angular.module("proton.messages.counts", [
          */                
         move: function(messages) {
 
-            console.log(messages);
+            // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased            
             var counterUpdates = {Locations: {}, Labels: {}};
 
+            // Checks each message to see if count should increase decrease or stay the same
             _.each(messages, function(message) {
                 if (message.Location !== message.OldLocation) {
                     var mID = counterUpdates.Locations[message.Location];
@@ -35,18 +37,21 @@ angular.module("proton.messages.counts", [
         },
 
         /**
-         * Returns the number of unread messages in a location
+         * Sets the count of messages for all labels
          * @param messages {Array} of Message Resources
          * @param add {Array} of LabelIDs
          * @param remove {Array} of LabelIDs
          */  
         label: function(messages, add, remove) {
 
+            // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
             var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
 
-            // What does this do? - Jason.. stopped here basically
+            // Initialize each label to zero count
+            // "add.concat(remove)" is a combined list.
             _.each(add.concat(remove), function(id) {counterUpdates.Labels[id] = 0;});
 
+            // Checks each message to see if count should increase decrease or stay the same
             _.each(messages, function(message) {
                 _.each(add, function(id) {
                     var count = counterUpdates.Labels[id];
@@ -60,7 +65,18 @@ angular.module("proton.messages.counts", [
 
             this.update('Labels', counterUpdates.Labels);
         },
+
+        /**
+         * Updates $rootScope.messageTotals.
+         // TODO this is updates in various places. Better to make it a service?
+         * @param location {String}
+         * @param updates {Array} of Labels objects with a { labelID: count } structure where labelID is a unique hash
+         */  
         update: function(location, updates) {
+
+            // updates {Object} such as:
+            // {-0bGYCZ_xBk4tnm00HacTL28ybGylp-feOnQ9U8MalzOvXsfw4oeoDs1Hv1_avbcEQW0f7fdHwOqwiQEMygcyA==: 2}
+
             _.each(updates, function(val, id) {
                 var ID = $rootScope.messageTotals[location][id];
                 ID = (typeof ID === 'undefined') ? val : ID + val;
@@ -91,6 +107,7 @@ angular.module("proton.messages.counts", [
             this.update('Locations', counterUpdates.Locations);
         },
         mark : function(messages, status) {
+
             // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
             var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
 
@@ -115,6 +132,13 @@ angular.module("proton.messages.counts", [
             this.update('Locations', counterUpdates.Locations);
             this.update('Labels', counterUpdates.Labels);
         },
+
+        /**
+         * Sets the count of messages for all labels
+         * @param messages {Array} of Message Resources
+         * @param add {Array} of LabelIDs
+         * @param remove {Array} of LabelIDs
+         */ 
         label: function(messages, add, remove) {
             var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
 
@@ -136,7 +160,11 @@ angular.module("proton.messages.counts", [
             this.update('Labels', counterUpdates.Labels);
         },
 
-        // Updates counters with the update object
+        /**
+         * Updates the local api.counters
+         * @param location {String}
+         * @param updates {Array} of Labels objects with a { labelID: count } structure where labelID is a unique hash
+         */ 
         update: function(location, updates) {
             _.each(updates, function(val, id) {
                 var ID = api.counters[location][id];
