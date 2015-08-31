@@ -206,6 +206,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.decryptAttachments = function(message) {
+        var removeAttachments = [];
+
         if(message.Attachments && message.Attachments.length > 0) {
             _.each(message.Attachments, function(attachment) {
                 try {
@@ -218,9 +220,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             attachment.sessionKey = sessionKey;
                         });
                     });
-                } catch (error) {
-                    $log.error(error);
+                } catch(error) {
+                    removeAttachments.push(attachment);
                 }
+            });
+        }
+
+        if(removeAttachments.length > 0) {
+            _.each(removeAttachments, function(attachment) {
+                notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
+                $scope.removeAttachment(attachment, message);
             });
         }
     };
