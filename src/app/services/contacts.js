@@ -21,10 +21,6 @@ angular.module("proton.contacts", [])
                     email.Email = email.Address;
                     email.Name = email.Name || email.Address;
                 }.bind(this));
-
-                if (newContacts.length > 0) {
-                    this.send(newContacts);
-                }
             },
             isItNew: function(email) {
                 return typeof _.findWhere($rootScope.user.Contacts, {Email: email.Address}) === 'undefined';

@@ -147,6 +147,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             },
             function(err) {
                 $scope.togglePlainHtml();
+                //TODO error reporter?
+                $log.error(err);
             }
         );
     };

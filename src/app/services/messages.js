@@ -135,8 +135,9 @@ angular.module("proton.messages", ["proton.constants"])
                 var index = _.sortedIndex(cachedMetadata[loc], message, function(element) {
                     return -element.Time;
                 });
-
-                cachedMetadata[loc].splice(index, 0, message);
+                if (cachedMetadata[loc]) {
+                    cachedMetadata[loc].splice(index, 0, message);
+                }
             }
         });
 

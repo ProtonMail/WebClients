@@ -74,9 +74,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
-
-        message.editor = editor;
-        $scope.listenEditor(message);
+        if (message) {
+            message.editor = editor;
+            $scope.listenEditor(message);
+        }
     });
 
     function onResize() {
@@ -146,7 +147,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.slideDown = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
-        $scope.$apply();
     };
 
     $scope.dropzoneConfig = function(message) {
@@ -208,16 +208,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.decryptAttachments = function(message) {
         if(message.Attachments && message.Attachments.length > 0) {
             _.each(message.Attachments, function(attachment) {
-                // decode key packets
-                var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
-                // get user's pk
-                var key = authentication.getPrivateKey().then(function(pk) {
-                    // decrypt session key from keypackets
-                    pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
-                        attachment.sessionKey = sessionKey;
+                try {
+                    // decode key packets
+                    var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+                    // get user's pk
+                    var key = authentication.getPrivateKey().then(function(pk) {
+                        // decrypt session key from keypackets
+                        pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
+                            attachment.sessionKey = sessionKey;
+                        });
                     });
-                });
+                } catch (error) {
+                    $log.error(error);
+                }
             });
         }
     };
@@ -327,6 +330,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             if(save === true) {
                 $scope.save(message, true, true).then(function() {
                     $scope.decryptAttachments(message);
+                    $scope.composerStyle();
                 });
             }
         });
@@ -931,6 +935,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                     if(result.Parent.ID === $stateParams.id) {
                                         $state.go('^');
                                     }
+                                }
+
+                                if(!!authentication.user.AutoSaveContacts) {
+                                    contactManager.save(message);
                                 }
 
                                 $scope.sending = false;

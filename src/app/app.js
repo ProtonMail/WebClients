@@ -62,6 +62,7 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
+    "proton.attachmentHeight",
 
     // Filters
     "proton.filters.strings",
@@ -149,7 +150,7 @@ angular.module("proton", [
     );
 
     $rootScope.$watch('pageName', function(newVal, oldVal) {
-        $document.find("title").html(pageTitleTemplate({ pageName: newVal }));
+        $document.find("title").text(pageTitleTemplate({ pageName: newVal }));
     });
 
     $rootScope.networkActivity = networkActivityTracker;
@@ -387,7 +388,11 @@ angular.module("proton", [
 
     $window.addEventListener('offline', function() {
         $rootScope.online = false;
-        notify({message: 'You are not connected to the Internet.', classes: 'notification-danger', duration: 0});
+        notify({
+            message: 'You are not connected to the Internet.',
+            classes: 'notification-danger',
+            duration: 0
+        });
     });
 
     $window.addEventListener('online', function() {
@@ -396,15 +401,34 @@ angular.module("proton", [
     });
 })
 
+/**
+ * Detect if the user use safari private mode
+ */
+.run(function(notify) {
+    try {
+        // try to use localStorage
+        localStorage.test = 2;
+    } catch (error) {
+      notify({
+          message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
+          classes: 'notification-danger',
+          duration: 0
+      });
+    }
+})
+
 //
 // Handle some application exceptions
 //
 
-.factory('$exceptionHandler', function($injector) {
+.factory('$exceptionHandler', function($log) { // function($injector, $log) {
     return function(exception, cause) {
-        var errorReporter = $injector.get("errorReporter");
-        if (exception.message.indexOf("$sanitize:badparse") >= 0) {
-            errorReporter.notify("There was an error while trying to display this message.", exception);
-        }
+        // var errorReporter = $injector.get("errorReporter");
+        // if (exception.message.indexOf("$sanitize:badparse") >= 0) {
+        //     errorReporter.notify("There was an error while trying to display this message.", exception);
+        // }
+        //else {
+        $log.error( exception );
+        //}
     };
 });

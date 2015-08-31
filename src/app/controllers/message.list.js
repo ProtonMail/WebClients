@@ -455,7 +455,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.allSelected = function() {
         var status = true;
 
-        if ($scope.messages.length > 0) {
+        if ($scope.messages && $scope.messages.length > 0) {
             _.forEach($scope.messages, function(message) {
                 if (!!!message.Selected) {
                     status = false;

@@ -66,6 +66,10 @@ angular.module("proton.tools", ["proton.constants"])
                 OSName = "linux";
             }
 
+            if(/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
+                OSName = "ios";
+            }
+
             return OSName;
         }
 

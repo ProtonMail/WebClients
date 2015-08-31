@@ -285,14 +285,15 @@ angular.module("proton.controllers.Contacts", [
         dropzoneModal.activate({
             params: {
                 title: 'Upload Contacts',
-                message: 'Allowed format(s): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
+                message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
                     var contactArray = [];
                     var extension = files[0].name.slice(-4);
                     var reader = new FileReader();
 
                     reader.onload = function(e) {
-                        var text = unescape(encodeURIComponent(reader.result));
+
+                        var text = reader.result;
 
                         if(extension === '.vcf') {
                               var vcardData = vCard.parse(text);
@@ -328,9 +329,13 @@ angular.module("proton.controllers.Contacts", [
                                     _.forEach(csv, function(d, i) {
                                       if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
                                         if (d[nameIndex] !== '') {
-                                          contactArray.push({'Name' : String(d[nameIndex]), 'Email' : String(d[emailIndex])});
+                                            var name = String(d[nameIndex]);
+                                            if ( lastNameIndex !== undefined ) {
+                                                name = name + ' ' + String(d[lastNameIndex]);
+                                            }
+                                            contactArray.push({'Name' : name, 'Email' : String(d[emailIndex])});
                                         } else {
-                                          contactArray.push({'Name' : String(d[emailIndex]), 'Email' : String(d[emailIndex])});
+                                            contactArray.push({'Name' : String(d[emailIndex]), 'Email' : String(d[emailIndex])});
                                         }
                                       }
                                     });
@@ -344,7 +349,7 @@ angular.module("proton.controllers.Contacts", [
                         }
                     };
 
-                    reader.readAsBinaryString(files[0]);
+                    reader.readAsText(files[0], 'utf-8');
 
                     importContacts = function(contactArray) {
                         networkActivityTracker.track(

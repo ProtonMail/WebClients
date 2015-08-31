@@ -42,11 +42,11 @@ angular.module("proton.countdown", [])
                 if($attrs.outside) {
                     $($element).text(newTitle);
                 } else {
-                    $($element).attr('title', newTitle)
-                        .tooltip('fixTitle')
-                        .data('bs.tooltip')
-                        .$tip.find('.tooltip-inner')
-                        .text(newTitle);
+                    $($element).attr('data-original-title', newTitle);
+
+                    if(angular.isDefined($($element).data('bs.tooltip').$tip)) {
+                        $($element).data('bs.tooltip').$tip.find('.tooltip-inner').text(newTitle);
+                    }
                 }
             }
 

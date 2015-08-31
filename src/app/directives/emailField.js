@@ -96,21 +96,26 @@ angular.module("proton.emailField", [])
             var blur = function () {
                 var emails = extractEmails($$element.val());
                 var input = $(parent).find('.tt-input');
+                var undefinedResult = false;
 
                 _.each(emails, function(email) {
-                    manager.tagsManager("pushTag",{
+                    var managerResult = manager.tagsManager("pushTag",{
                         Name: clean(email),
                         Email: clean(email)
                     });
+
+                    if(angular.isUndefined) {
+                        undefinedResult = true;
+                    }
                 });
 
-                $(input).val('');
-                $$element.typeahead('val', '');
-                $(input).trigger('keydown');
+                if(undefinedResult) {
+                    $$element.typeahead('val', '');
+                    $(input).val('');
+                    $(input).trigger('keydown');
+                }
 
                 setValue();
-
-                // user1@protonmail.ch, user2@protonmail.ch, user3@protonmail.ch
             };
 
             var focus = function() {

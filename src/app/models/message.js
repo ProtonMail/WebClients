@@ -432,7 +432,6 @@ angular.module("proton.models.message", ["proton.constants"])
                                     function(result) {
                                         this.DecryptedBody = result;
                                         this.failedDecryption = false;
-                                        this.decrypting = false;
                                         deferred.resolve(result);
                                     }.bind(this),
                                     function(err) {
@@ -440,20 +439,26 @@ angular.module("proton.models.message", ["proton.constants"])
                                         deferred.reject(err);
                                     }.bind(this)
                                 );
+                            }.bind(this),
+                            function(err) {
+                                this.failedDecryption = true;
+                                deferred.reject(err);
                             }.bind(this)
                         );
                     }
                     catch (err) {
-                        this.DecryptedBody = "";
                         this.failedDecryption = true;
+                        deferred.reject(err);
                     }
                 } else {
+                    this.failedDecryption = false;
                     deferred.resolve(this.DecryptedBody);
                 }
             } else {
                 deferred.resolve(this.Body);
             }
 
+            this.decrypting = false;
             return deferred.promise;
         },
 

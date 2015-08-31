@@ -3,9 +3,9 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '2.0.16';
+var appVersion = '2.0.20';
 var apiVersion = '1';
-var dateVersion = '26 August 2015';
+var dateVersion = '30 August 2015';
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
@@ -740,6 +740,11 @@ module.exports = function(grunt) {
                     "git commit -m \"New Release\"",
                     "git push"
                 ].join("&&")
+            },
+            bower: {
+                command: [
+                    "bower update"
+                ].join("&&")
             }
         },
 
@@ -825,6 +830,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
+        // "bower", // Just comment bower task for the moment
         "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
@@ -834,6 +840,10 @@ module.exports = function(grunt) {
         "clean:after",
         "shell:push",
         "wait:push"
+    ]);
+
+    grunt.registerTask("bower", [
+        "shell:bower"
     ]);
 
     grunt.registerTask("default", ["watch"]);
