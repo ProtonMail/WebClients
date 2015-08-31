@@ -136,12 +136,18 @@ angular.module("proton.messages.counts", ["proton.constants"])
                     var deferred = $q.defer();
 
                     this.counters = {Labels:{}, Locations:{}, Starred: 0};
-                    Message.unreaded({}).$promise.then(function(json) {
-                        this.counters.Starred = json.Starred;
-                        _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; }.bind(this));
-                        _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; }.bind(this));
-                        deferred.resolve();
-                    }.bind(this));
+                    Message.unreaded({}).$promise
+                    .then(
+                        function(json) {
+                            this.counters.Starred = json.Starred;
+                            _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; }.bind(this));
+                            _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; }.bind(this));
+                            deferred.resolve();
+                        },
+                        function(err) {
+                            deferred.reject(err);
+                        }
+                    .bind(this));
 
                     return deferred.promise;
                 },
