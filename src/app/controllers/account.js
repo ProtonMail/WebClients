@@ -32,10 +32,9 @@ angular.module("proton.controllers.Account", [
         $scope.account = [];
 
         $scope.process = {};
-        $scope.process.genNewKeys =         false;
-        $scope.process.decryptAccessToken = false;
-        $scope.process.mailboxLogin =       false;
-        $scope.process.finishCreation =     false;
+        $scope.process.generatingKeys =     false;
+        $scope.process.savingKeys =         false;
+        $scope.process.redirecting =        false;
 
         $scope.showForm = ($scope.resetMailboxToken!==undefined) ? true : false;
         if ($rootScope.tempUser===undefined) {
@@ -108,7 +107,7 @@ angular.module("proton.controllers.Account", [
                 return;
             }
             networkActivityTracker.track(
-                $scope.generateKeys($rootScope.tempUser.username + '@protonmail.ch')
+                $scope.generateKeys($rootScope.tempUser.username + '@protonmail.ch', $scope.account.mailboxPassword)
                 .then( $scope.newMailbox )
                 .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )
@@ -149,11 +148,11 @@ angular.module("proton.controllers.Account", [
      * @return {Promise}
      */
     $scope.doDecryptAccessToken = function(response) {
-        $scope.process.decryptAccessToken = true;
+        $scope.process.savingKeys = true;
         if (!response) {
             var deferred = $q.defer();
             deferred.reject( new Error('Missing Authentication Resposne.') );
-            $scope.process.decryptAccessToken = false;
+            $scope.process.savingKeys = false;
             return deferred.promise;
         }
         else {
@@ -171,7 +170,6 @@ angular.module("proton.controllers.Account", [
      * TODO: error logging
      */
     $scope.doMailboxLogin = function() {
-        $scope.process.mailboxLogin  = true;
         return authentication.unlockWithPassword(
             $scope.authResponse.EncPrivateKey,
             $scope.account.mailboxPassword,
@@ -182,7 +180,7 @@ angular.module("proton.controllers.Account", [
                 return authentication.setAuthCookie()
                 .then(
                     function(resp) {
-                        $scope.process.finishCreation = true;
+                        $scope.process.redirecting = true;
                         $rootScope.isLoggedIn = true;                        
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
                         $state.go("secured.inbox");
@@ -326,7 +324,7 @@ angular.module("proton.controllers.Account", [
                 classes: "notification-danger",
                 message: 'Error, try again in a few minutes.'
             });
-            $scope.startGen = false;
+            $scope.process.generatingKeys = false;
             promise.reject( new Error('Status Error: Unable to save new keys.') );
         }
         else if (response.data.Error) {
@@ -336,7 +334,7 @@ angular.module("proton.controllers.Account", [
                     message: response.data.ErrorDescription
                 });
                 $log.error(response);
-                $scope.startGen = false;
+                $scope.process.generatingKeys = false;
                 promise.reject( new Error(response.data.ErrorDescription) );
             }
             else {
@@ -345,11 +343,12 @@ angular.module("proton.controllers.Account", [
                     message: response.data.Error
                 });
                 $log.error(response);
-                $scope.startGen = false;
+                $scope.process.generatingKeys = false;
                 promise.reject( new Error(response.data.Error) );
             }
         }
         else {
+            $scope.process.generatingKeys = true;
             promise.resolve(200);
         }
         return promise;
