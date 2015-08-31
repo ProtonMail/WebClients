@@ -174,6 +174,7 @@ angular.module("proton.messages.counts", [
         }
     });
 
+    // Used by the event log
     var api = _.bindAll({
         counters: false,
         unreadChangedLocally : false,
