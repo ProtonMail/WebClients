@@ -206,9 +206,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.decryptAttachments = function(message) {
+        var removeAttachments = [];
+
         if(message.Attachments && message.Attachments.length > 0) {
             _.each(message.Attachments, function(attachment) {
-                try {
+                if(attachment.Size > 0) {
                     // decode key packets
                     var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
                     // get user's pk
@@ -218,9 +220,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             attachment.sessionKey = sessionKey;
                         });
                     });
-                } catch (error) {
-                    $log.error(error);
+                } else {
+                    removeAttachments.push(attachment);
                 }
+            });
+        }
+
+        // We remove the attachments with Size === 0
+        if(removeAttachments.length > 0) {
+            _.each(removeAttachments, function(attachment) {
+                $scope.removeAttachment(attachment, message);
             });
         }
     };
