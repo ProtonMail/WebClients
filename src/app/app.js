@@ -391,13 +391,33 @@ angular.module("proton", [
 
     $window.addEventListener('offline', function() {
         $rootScope.online = false;
-        notify({message: 'You are not connected to the Internet.', classes: 'notification-danger', duration: 0});
+        notify({
+            message: 'You are not connected to the Internet.',
+            classes: 'notification-danger',
+            duration: 0
+        });
     });
 
     $window.addEventListener('online', function() {
         $rootScope.online = true;
         notify.closeAll();
     });
+})
+
+/**
+ * Detect if the user use safari private mode
+ */
+.run(function(notify) {
+    try {
+        // try to use localStorage
+        localStorage.test = 2;
+    } catch (error) {
+      notify({
+          message: 'You are in Privacy Mode\nPlease deactivate Privacy Mode and then reload the page.',
+          classes: 'notification-danger',
+          duration: 0
+      });
+    }
 })
 
 //
