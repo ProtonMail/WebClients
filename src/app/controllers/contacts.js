@@ -24,7 +24,7 @@ angular.module("proton.controllers.Contacts", [
 ) {
     // Variables
     $scope.params = { searchContactInput: '' };
-    $rootScope.pageName = $translate.instant('CONTACTS');
+    $rootScope.pageName = 'Contacts';
     authentication.user.Contacts = contacts.data.Contacts;
     $scope.editing = false;
     $scope.currentPage = 1;
