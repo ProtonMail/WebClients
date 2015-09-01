@@ -13,12 +13,19 @@ angular.module("proton.controllers.Bug", [])
     notify,
     CONFIG
 ) {
+    // Variables
     var modalId = 'bugForm';
 
+    // Listeners
+    $scope.$on('openReportModal', function() {
+        $log.debug('openReportModal:open');
+        $scope.open();
+    });
+
+    // Methods
     $scope.initialization = function() {
-        var Username = (!$rootScope.isLocked && authentication.user !== undefined && authentication.user.Name !== undefined) ? authentication.user.Name : '';
-        
-        $scope.useragent = angular.element('html').attr('class');
+        var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
+
         $scope.bug = {
             OS:             tools.getOs,
             OSVersion:      '',
@@ -28,10 +35,9 @@ angular.module("proton.controllers.Bug", [])
             ClientVersion:  CONFIG.app_version,
             Title:          '[Angular] Bug [' + $state.$current.name + ']',
             Description:    '',
-            Username:        Username,
+            Username:        username,
             Email:          ''
         };
-        // $log.debug($scope.bug);
     };
 
     $scope.open = function() {
@@ -45,35 +51,33 @@ angular.module("proton.controllers.Bug", [])
     };
 
     $scope.sendBugReport = function(form) {
-
-        $log.debug('sendBugReport');
-
-        $log.debug($scope.bug);
-
+        var deferred = $q.defer();
         var bugPromise = Bug.report($scope.bug);
 
-        $log.debug('sendBugReport');
+        $log.debug('sendBugReport', $scope.bug);
 
         bugPromise.then(
             function(response) {
                 $log.debug(response);
+
                 if(angular.isUndefined(response.data.Error)) {
                     $scope.close();
-                    notify($translate.instant('BUG_REPORTED'));
+                    deferred.resolve(response);
+                    notify({message: $translate.instant('BUG_REPORTED'), classes: 'notification-success'});
+                } else {
+                    deferred.reject(response);
+                    notify({message: response.data.Error, classes: 'notification-danger'});
                 }
-                return response;
             },
-            function(err) {
-                $log.error(err);
+            function(error) {
+                notify({message: error, classes: 'notification-danger'});
+                $log.error(error);
+                deferred.reject(error);
             }
         );
 
-        networkActivityTracker.track(bugPromise);
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
     };
-
-    $scope.$on('openReportModal', function() {
-        $log.debug('openReportModal:open');
-        $scope.open();
-    });
-
 });
