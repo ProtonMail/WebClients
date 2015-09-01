@@ -59,6 +59,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.$on('newMessage', function() {
         var message = new Message();
+
         message.saved = 0;
         $scope.initMessage(message, true);
     });
@@ -74,6 +75,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
+
         if (message) {
             message.editor = editor;
             $scope.listenEditor(message);
@@ -130,7 +132,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     // Functions
-
     $scope.setDefaults = function(message) {
         _.defaults(message, {
             ToList: [],
@@ -166,10 +167,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
-                        notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+                        notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
-                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
                         done();
                         $scope.addAttachment(file, message);
@@ -218,7 +219,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         // decrypt session key from keypackets
                         pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
                             attachment.sessionKey = sessionKey;
+                        }, function(error) {
+                            notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
+                            $log.error(error);
                         });
+                    }, function(error) {
+                        notify({message: 'Error during getting of the private key', classes: 'notification-danger'});
+                        $log.error(error);
                     });
                 } catch(error) {
                     removeAttachments.push(attachment);
@@ -281,8 +288,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                         message.uploading--;
                         onResize();
+                    },
+                    function(error) {
+                        notify({message: 'Error during the uploading', classes: 'notification-danger'});
+                        $log.error(error);
                     }
                 );
+            },
+            function(error) {
+                notify({message: 'Error during the encryption of attachment', classes: 'notification-danger'});
+                $log.error(error);
             }
         );
     };
@@ -295,11 +310,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             "AttachmentID": attachment.AttachmentID || attachment.ID
         }).$promise.then(function(response) {
             if (response.Error) {
-                notify(response.Error);
+                notify({message: response.Error, classes: 'notification-danger'});
                 message.Attachments.push(attachment);
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 that.options.addedfile.call(that, mockFile);
             }
+        }, function(error) {
+            notify({message: 'Error during the remove request', classes: 'notification-danger'});
+            $log.error(error);
         });
     };
 
@@ -312,9 +330,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment() === 'sm') {
-            if ($scope.messages.length>0) {
+            if ($scope.messages.length > 0) {
                 notify.closeAll();
-                notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
+                notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
                 return;
             }
         }
@@ -340,6 +358,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 $scope.save(message, true, true).then(function() {
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
+                }, function(error) {
+                    $log.error(error);
                 });
             }
         });
@@ -614,12 +634,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.setEncrypt = function(message, params, form) {
         if (params.password.length === 0) {
-            notify('Please enter a password for this email.');
+            notify({message: 'Please enter a password for this email.', classes: 'notification-danger'});
             return false;
         }
 
         if (params.password !== params.confirm) {
-            notify('Message passwords do not match.');
+            notify({message: 'Message passwords do not match.', classes: 'notification-danger'});
             return false;
         }
 
@@ -650,13 +670,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.setExpiration = function(message, params) {
-        if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
-            notify('The maximum expiration is 4 weeks.');
+        if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
+            notify({message: 'The maximum expiration is 4 weeks.', classes: 'notification-danger'});
             return false;
         }
 
         if (isNaN(params.expiration)) {
-            notify('Invalid expiration time.');
+            notify({message: 'Invalid expiration time.', classes: 'notification-danger'});
             return false;
         }
 
@@ -718,13 +738,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Check internet connection
         if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
-            notify('No internet connection. Please wait and try again.');
+            notify({message: 'No internet connection. Please wait and try again.', classes: 'notification-danger'});
             return false;
         }
 
         // Check if there is an attachment uploading
         if (message.uploading === true) {
-            notify('Wait for attachment to finish uploading or cancel upload.');
+            notify({message: 'Wait for attachment to finish uploading or cancel upload.', classes: 'notification-danger'});
             return false;
         }
 
@@ -739,30 +759,30 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
 
         if (invalidEmails.length > 0) {
-            notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
+            notify({message: 'Invalid email(s): ' + invalidEmails.join(',') + '.', classes: 'notification-danger'});
             return false;
         }
 
         // MAX 25 to, cc, bcc
         if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
-            notify('The maximum number (25) of Recipients is 25.');
+            notify({message: 'The maximum number (25) of Recipients is 25.', classes: 'notification-danger'});
             return false;
         }
 
         if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
-            notify('Please enter at least one recipient.');
+            notify({message: 'Please enter at least one recipient.', classes: 'notification-danger'});
             return false;
         }
 
         // Check title length
         if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-            notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+            notify({message: 'The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.', classes: 'notification-danger'});
             return false;
         }
 
         // Check body length
         if (message.Body.length > 16000000) {
-            notify('The maximum length of the message body is 16,000,000 characters.');
+            notify({message: 'The maximum length of the message body is 16,000,000 characters.', classes: 'notification-danger'});
             return false;
         }
 
@@ -844,11 +864,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     saveMePromise.then(function(result) {
                         process(result);
+                    }, function(error) {
+                        $log.error(error);
+                        deferred.reject('Error during the draft creation');
                     });
                 } else {
                     process(result);
                 }
+            }, function(error) {
+                $log.error(error);
+                deferred.reject('Error during the draft request');
             });
+        }, function(error) {
+            $log.error(error);
+            deferred.reject('Error during the encryption');
         });
 
         if(silently !== true) {
@@ -906,8 +935,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                                             $scope.sending = false;
                                             return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                        }, function(error) {
+                                            $log.error(error);
                                         });
+                                    }, function(error) {
+                                        $log.error(error);
                                     });
+                                }, function(error) {
+                                    $log.error(error);
                                 }));
                             }
                         }
@@ -921,19 +956,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                              promises.push(message.clearPackets().then(function(packets) {
                                  parameters.AttachmentKeys = packets;
                                  $scope.sending = false;
+                            }, function(error) {
+                                $log.error(error);
                             }));
                         }
                     }
 
                     $q.all(promises).then(function() {
                         if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
-                            notify({
-                                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
-                                classes: 'notification-danger',
-                                duration: 10000 // 10 seconds
-                            });
                             $scope.sending = false;
-                            deferred.reject();
+                            $log.error(message);
+                            deferred.reject('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.');
                         } else {
                             Message.send(parameters).$promise.then(function(result) {
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
@@ -953,26 +986,32 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 $scope.sending = false;
 
                                 if(angular.isDefined(result.Error)) {
-                                    notify({
-                                        message: result.Error,
-                                        classes: 'notification-danger'
-                                    });
-                                    deferred.reject();
+                                    deferred.reject(result.Error);
                                 } else {
                                     messageCache.set(updateMessages);
-                                    notify({
-                                        message: $translate.instant('MESSAGE_SENT'),
-                                        classes: 'notification-success'
-                                    });
+                                    notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
                                     $scope.close(message, false);
                                     deferred.resolve(result);
                                 }
+                            }, function(error) {
+                                $scope.sending = false;
+                                $log.error(error);
+                                deferred.reject('Error during the sending');
                             });
                         }
+                    }, function(error) {
+                        $scope.sending = false;
+                        $log.error(error);
+                        deferred.reject('Error during the promise preparation');
                     });
+                }, function(error) {
+                    $scope.sending = false;
+                    $log.error(error);
+                    deferred.reject('Error during the getting of the public key');
                 });
-            }, function() {
+            }, function(error) {
                 $scope.sending = false;
+                $log.error(error);
                 deferred.reject();
             });
 
@@ -980,7 +1019,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         } else {
             $scope.sending = false;
-            deferred.reject();
+            deferred.reject(); // Error during the validation
         }
 
         return deferred.promise;
