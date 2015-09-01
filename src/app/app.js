@@ -407,16 +407,13 @@ angular.module("proton", [
 /**
  * Detect if the user use safari private mode
  */
-.run(function(notify) {
-    try {
-        // try to use sessionStorage
-        sessionStorage.test = 2;
-    } catch (error) {
-      notify({
-          message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
-          classes: 'notification-danger',
-          duration: 0
-      });
+.run(function(notify, tools) {
+    if(tools.inPrivateMode() === true) {
+        notify({
+            message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
+            classes: 'notification-danger',
+            duration: 0
+        });
     }
 })
 
