@@ -95,12 +95,16 @@ angular.module("proton.messages", ["proton.constants"])
                         angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else {
                     deferred.reject();
