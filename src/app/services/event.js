@@ -1,17 +1,17 @@
 angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function (
-		$timeout, 
-		$window, 
-		$state, 
-		$rootScope, 
-		$stateParams, 
+		$timeout,
+		$window,
+		$state,
+		$rootScope,
+		$stateParams,
 		$cookies,
 		$log,
-		authentication, 
-		Contact, 
-		CONSTANTS, 
-		Events, 
-		messageCache, 
+		authentication,
+		Contact,
+		CONSTANTS,
+		Events,
+		messageCache,
 		messageCounts,
 		notify
 	) {
@@ -50,15 +50,15 @@ angular.module("proton.event", ["proton.constants"])
 				if (angular.isDefined(contacts)) {
 					_.each(contacts, function(contact) {
 						if(contact.Action === DELETE) {
-							$rootScope.user.Contacts = _.filter($rootScope.user.Contacts, function(c) { return c.ID !== contact.ID; });
+							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.ID; });
 						} else if(contact.Action === CREATE) {
-							$rootScope.user.Contacts.push(contact.Contact);
+							authentication.user.Contacts.push(contact.Contact);
 						} else if (contact.Action === UPDATE) {
-							var index = _.findIndex($rootScope.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
-							$rootScope.user.Contacts[index] = contact.Contact;
+							var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
+							authentication.user.Contacts[index] = contact.Contact;
 						}
 						$rootScope.$broadcast('updateContacts');
-						Contact.index.updateWith($rootScope.user.Contacts);
+						Contact.index.updateWith(authentication.user.Contacts);
 					});
 				}
 			},
