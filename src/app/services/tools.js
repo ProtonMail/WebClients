@@ -1,5 +1,5 @@
 angular.module("proton.tools", ["proton.constants"])
-.factory("tools", function($log, $sanitize, $state, $compile, $templateCache, $q, errorReporter, CONSTANTS) {
+.factory("tools", function($log, $state, $compile, $templateCache, $q, CONSTANTS) {
     var tools = {};
 
     tools.hasSessionStorage = function() {
