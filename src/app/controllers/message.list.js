@@ -273,8 +273,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.messages = messages;
             deferred.resolve();
         }, function(error) {
-            deferred.reject('Error during refresh messages from cache');
-            $log.error(error);
+            error.message = 'Error during refresh messages from cache';
+            deferred.reject(error);
         });
 
         return deferred.promise;
@@ -625,8 +625,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         };
 
         var promiseError = function(error) {
-            $log.error(error);
-            deferred.reject('Error during the move request');
+            error.message = 'Error during the move request';
+            deferred.reject(error);
         };
 
         if ($scope.messages.length === 0) {
@@ -727,7 +727,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         if(tooManyLabels) {
-            deferred.reject($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
+            deferred.reject(new Error($translate.instant('TOO_MANY_LABELS_ON_MESSAGE')));
         } else {
             _.each(toApply, function(labelID) {
                 promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
@@ -760,8 +760,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
                 $scope.unselectAllLabels();
             }, function(error) {
-                $log.error(error);
-                deferred.reject('Error during the labels request');
+                error.message = 'Error during the labels request';
+                deferred.reject(error);
             });
 
             networkActivityTracker.track(deferred.promise);

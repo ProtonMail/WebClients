@@ -5,6 +5,7 @@ angular.module("proton.controllers.Bug", [])
     $rootScope,
     $state,
     $log,
+    $q,
     $translate,
     authentication,
     tools,
@@ -27,10 +28,10 @@ angular.module("proton.controllers.Bug", [])
         var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
 
         $scope.bug = {
-            OS:             tools.getOs,
+            OS:             tools.getOs(),
             OSVersion:      '',
-            Browser:         tools.getBrowser,
-            BrowserVersion:  tools.getBrowserVersion,
+            Browser:         tools.getBrowser(),
+            BrowserVersion:  tools.getBrowserVersion(),
             Client:         'Angular',
             ClientVersion:  CONFIG.app_version,
             Title:          '[Angular] Bug [' + $state.$current.name + ']',
@@ -58,20 +59,17 @@ angular.module("proton.controllers.Bug", [])
 
         bugPromise.then(
             function(response) {
-                $log.debug(response);
-
-                if(angular.isUndefined(response.data.Error)) {
+                if(response.data.Code === 1000) {
                     $scope.close();
                     deferred.resolve(response);
                     notify({message: $translate.instant('BUG_REPORTED'), classes: 'notification-success'});
-                } else {
+                } else if (angular.isDefined(response.data.Error)) {
+                    response.message = response.data.Error;
                     deferred.reject(response);
-                    notify({message: response.data.Error, classes: 'notification-danger'});
                 }
             },
             function(error) {
-                notify({message: error, classes: 'notification-danger'});
-                $log.error(error);
+                error.message = 'Error during the sending request';
                 deferred.reject(error);
             }
         );

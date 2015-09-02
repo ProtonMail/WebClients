@@ -133,14 +133,14 @@ angular.module("proton.controllers.Outside", [
                         deferred.resolve(result);
                     },
                     function(error) {
-                        $log.error(error); // TODO send to back-end
-                        deferred.reject('Error during the reply process');
+                        error.message = 'Error during the reply process'; // TODO send to back-end
+                        deferred.reject(error);
                     }
                 );
             },
             function(error) {
-                $log.error(error); // TODO send to back-end
-                deferred.reject('Error during the encryption');
+                error.message = 'Error during the encryption'; // TODO send to back-end
+                deferred.reject(error);
             }
         );
 

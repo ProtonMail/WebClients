@@ -136,7 +136,7 @@ angular.module("proton", [
         }
     });
 
-    $rootScope.browser = tools.getBrowser;
+    $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
 
@@ -232,6 +232,7 @@ angular.module("proton", [
                     $injector.get('$state').go('login');
                 }
             }
+            
             return $q.reject(rejection);
         }
     };

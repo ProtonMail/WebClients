@@ -865,19 +865,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     saveMePromise.then(function(result) {
                         process(result);
                     }, function(error) {
-                        $log.error(error);
-                        deferred.reject('Error during the draft creation');
+                        error.message = 'Error during the draft creation';
+                        deferred.reject(error);
                     });
                 } else {
                     process(result);
                 }
             }, function(error) {
-                $log.error(error);
-                deferred.reject('Error during the draft request');
+                error.message = 'Error during the draft request';
+                deferred.reject(error);
             });
         }, function(error) {
-            $log.error(error);
-            deferred.reject('Error during the encryption');
+            error.message = 'Error during the encryption';
+            deferred.reject(error);
         });
 
         if(silently !== true) {
@@ -966,7 +966,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                             $scope.sending = false;
                             $log.error(message);
-                            deferred.reject('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.');
+                            deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.'));
                         } else {
                             Message.send(parameters).$promise.then(function(result) {
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
@@ -986,7 +986,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 $scope.sending = false;
 
                                 if(angular.isDefined(result.Error)) {
-                                    deferred.reject(result.Error);
+                                    deferred.reject(new Error(result.Error));
                                 } else {
                                     messageCache.set(updateMessages);
                                     notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
@@ -995,31 +995,30 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 }
                             }, function(error) {
                                 $scope.sending = false;
-                                $log.error(error);
-                                deferred.reject('Error during the sending');
+                                error.message = 'Error during the sending';
+                                deferred.reject(error);
                             });
                         }
                     }, function(error) {
                         $scope.sending = false;
-                        $log.error(error);
-                        deferred.reject('Error during the promise preparation');
+                        error.message = 'Error during the promise preparation';
+                        deferred.reject(error);
                     });
                 }, function(error) {
                     $scope.sending = false;
-                    $log.error(error);
-                    deferred.reject('Error during the getting of the public key');
+                    error.message = 'Error during the getting of the public key';
+                    deferred.reject(error);
                 });
             }, function(error) {
                 $scope.sending = false;
-                $log.error(error);
-                deferred.reject();
+                deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
             });
 
             message.track(deferred.promise);
 
         } else {
             $scope.sending = false;
-            deferred.reject(); // Error during the validation
+            deferred.reject();
         }
 
         return deferred.promise;

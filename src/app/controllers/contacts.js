@@ -414,7 +414,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.downloadContacts = function() {
-        if (tools.getBrowser === 'Safari') {
+        if (tools.getBrowser() === 'Safari') {
             $scope.openSafariWarning();
         } else {
             var contactsArray = [['Name', 'Email']];
