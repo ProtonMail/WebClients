@@ -1,14 +1,14 @@
 <div class="panel panel-default wrap panel-medium">
 
-    <div class="panel-body" ng-hide="showForm || showEmailMessage">
+    <div class="panel-body" ng-hide="(showForm || showEmailMessage || process.generatingKeys)">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
 
         <div class="alert alert-danger">
             <div>We don't store your mailbox password for privacy reasons.</div>
 
-            <p>If you forgot your Mailbox Password, the only way to proceed is to create a new mailbox.</p>
+            <p>If you forget your Mailbox Password, the only way to proceed is to create a new mailbox.</p>
 
-            <p>All of your existing Encrypted data will be lost forever.</p>
+            <p>All of your existing encrypted data will be lost forever.</p>
 
             <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
         </div>
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="panel-body" ng-show="showEmailMessage">
+    <div class="panel-body" ng-show="showEmailMessage && !process.generatingKeys">
         <h1 class="text-center">Check Your Email</h1>
 
         <p class="alert alert-info">
@@ -37,7 +37,7 @@
         </form>
     </div>
 
-    <div class="panel-body" ng-show="showForm">
+    <div class="panel-body" ng-show="showForm && !process.generatingKeys">
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
@@ -69,25 +69,25 @@
     </div>
 
 
-    <div class="panel panel-default wrap" ng-show="startGen" id="signUpProcess">
+    <div class="panel panel-default wrap" ng-show="process.generatingKeys" id="signUpProcess">
         <div class="panel-heading">
             <h1 class="text-center">Creating New Mailbox</h1>
         </div>
         <div class="panel-body">   
         <ol>
-            <li ng-class="{ 'done': generationDone }">
-                <i ng-hide="generationDone" class="fa fa-square-o"></i> 
-                <i ng-show="generationDone" class="fa fa-check-square"></i> 
+            <li ng-class="{ 'done': process.generatingKeys }">
+                <i ng-hide="process.generatingKeys" class="fa fa-square-o"></i> 
+                <i ng-show="process.generatingKeys" class="fa fa-check-square"></i> 
                 Generating Keys
             </li>
-            <li ng-class="{ 'done': saved }">
-                <i ng-hide="saved" class="fa fa-square-o"></i> 
-                <i ng-show="saved" class="fa fa-check-square"></i> 
+            <li ng-class="{ 'done': process.savingKeys }">
+                <i ng-hide="process.savingKeys" class="fa fa-square-o"></i> 
+                <i ng-show="process.savingKeys" class="fa fa-check-square"></i> 
                 Saving Encrypted Keys
             </li>
-            <li ng-class=="{ 'done': Redirect }">
-                <i ng-hide="Redirect" class="fa fa-square-o"></i> 
-                <i ng-show="Redirect" class="fa fa-check-square"></i> 
+            <li ng-class="{ 'done': process.redirecting }">
+                <i ng-hide="process.redirecting" class="fa fa-square-o"></i> 
+                <i ng-show="process.redirecting" class="fa fa-check-square"></i> 
                 Redirecting
             </li>
         </ol>

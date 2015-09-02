@@ -400,6 +400,7 @@ angular.module("proton.routes", [
         }
     })
 
+    // Deprecated?
     .state("support.reset-mailbox", {
         url: "/reset-mailbox/:token",
         onEnter: function($stateParams, $state, $rootScope, authentication) {
