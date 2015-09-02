@@ -10,7 +10,7 @@ angular.module("proton.cache", [])
     networkActivityTracker
 ) {
     var api = {};
-    var cache = {};
+    var cache = {}; // cache: { 0: [Resources], 1: [Resources]}
     var DELETE = 0;
     var CREATE = 1;
     var UPDATE = 2;
@@ -124,7 +124,7 @@ angular.module("proton.cache", [])
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
             // Messages present in the cache?
-            if(angular.isDefined(cache[location]) && angular.isDefined($rootScope.messageTotals)) {
+            if(angular.isDefined(cache[location])) {
                 // var total;
                 // var totalPage;
                 //
@@ -141,8 +141,10 @@ angular.module("proton.cache", [])
                 // }
                 //
                 // totalPage = (total + CONSTANTS.MESSAGES_PER_PAGE - 1) / CONSTANTS.MESSAGES_PER_PAGE;
+                //
 
-                if(cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) {
+                // NOTE The difficult case!!!
+                if(cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) { // TODO improve
                     deferred.resolve(cache[location].slice(start, end));
                 } else {
                     callApi();
@@ -186,7 +188,6 @@ angular.module("proton.cache", [])
      * @param {Array} messages
      */
     api.store = function(request, messages) {
-
         var page = request.Page || 0;
         var index = page * CONSTANTS.MESSAGES_PER_PAGE;
         var howmany = messages.length;
@@ -349,7 +350,6 @@ angular.module("proton.cache", [])
             console.log('All promises are complete');
             api.callRefresh();
         });
-
     };
 
     /**
