@@ -127,81 +127,6 @@ module.exports = function(grunt) {
             }
         },
 
-        replace: {
-            build: {
-                options: {
-                    patterns: [
-                        {
-                            json: {
-                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
-                                "apiVersion": apiVersion, // replaces "@@apiVersion" to the value of 'apiVersion' variable
-                            }
-                        }
-                    ]
-                },
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= build_dir %>/**/*.html"],
-                        dest: "<%= build_dir %>/"
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= build_dir %>/pages/**/*.html"],
-                        dest: "<%= build_dir %>/pages"
-                    }
-                ]
-            },
-            compile: {
-                options: {
-                    patterns: [
-                        {
-                            json: {
-                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
-                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
-                            }
-                        }
-                    ]
-                },
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= compile_dir %>/**/*.html"],
-                        dest: "<%= compile_dir %>/"
-                    },
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= compile_dir %>/pages/**/*.html"],
-                        dest: "<%= compile_dir %>/pages"
-                    }
-                ]
-            },
-            dist2: {
-                options: {
-                    patterns: [
-                        {
-                            json: {
-                                "appVersion": appVersion, // replaces "@@appVersion" to the value of 'appVersion' variable
-                                "apiVersion": apiVersion // replaces "@@apiVersion" to the value of 'apiVersion' variable
-                            }
-                        }
-                    ]
-                },
-                files: [
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["<%= build_dir %>/pages/*.html"],
-                        dest: "<%= build_dir %>/pages/"
-                    }
-                ]
-            }
-        },
-
         i18nextract: {
             default_options: {
                 src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
@@ -706,8 +631,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
     grunt.loadNpmTasks('grunt-uncss');
-    grunt.loadNpmTasks('grunt-includes');
-    grunt.loadNpmTasks('grunt-replace');
 
     grunt.renameTask("watch", "delta");
     grunt.registerTask("watch", [
@@ -742,7 +665,6 @@ module.exports = function(grunt) {
         "copy:build_fonts",
         "copy:build_editor",
         "index:build",
-        "replace:build",
         "testconfig",
         "clean:after"
     ]);
@@ -751,7 +673,6 @@ module.exports = function(grunt) {
         "ngconstant:prod",
         "build",
         "copy:compile_assets",
-        "replace:compile",
         "copy:compile_fonts",
         "ngAnnotate",
         "cssmin",
