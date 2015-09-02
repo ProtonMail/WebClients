@@ -475,6 +475,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             status = false;
         }
 
+        $scope.allSelectedCheckbox = status;
+
         return status;
     };
 
