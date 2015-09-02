@@ -156,8 +156,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             return $rootScope.Total;
         } else {
             if ($scope.mailbox === 'label') {
-                if ($rootScope.messageTotals && $rootScope.messageTotals.Labels[$stateParams.label]) {
-                    return $rootScope.messageTotals.Labels[$stateParams.label];
+                if ($rootScope.messageTotals) {
+                    if($rootScope.messageTotals.Labels[$stateParams.label]) {
+                        return $rootScope.messageTotals.Labels[$stateParams.label];
+                    } else {
+                        return 0;
+                    }
                 } else {
                     return $rootScope.Total;
                 }
@@ -168,8 +172,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     return $rootScope.Total;
                 }
             } else {
-                if ($rootScope.messageTotals && $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]]) {
-                    return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
+                if ($rootScope.messageTotals) {
+                    if($rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]]) {
+                        return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
+                    } else {
+                        return 0;
+                    }
                 } else {
                     return $rootScope.Total;
                 }

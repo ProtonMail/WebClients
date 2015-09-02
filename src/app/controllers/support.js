@@ -12,7 +12,9 @@ angular.module("proton.controllers.Support", [
     Reset,
     networkActivityTracker
 ) {
+
     $scope.tools = tools;
+
     $scope.params = {};
     $scope.params.recoveryEmail = '';
     $scope.params.username = '';
@@ -33,52 +35,72 @@ angular.module("proton.controllers.Support", [
         return $state.params.data.type || "";
     };
 
+    /**
+     * Validates the token and shows the last form
+     * @param form {Form}
+     */     
     $scope.resetLoginPass = function(form) {
-        $log.debug('resetLoginPass');
         if (
             angular.isUndefined($scope.params.resetLoginCode) ||
             $scope.params.resetLoginCode.length === 0
         ) {
             $log.error('Verification Code required');
-            notify('Verification Code required');
+            notify({
+                classes: 'notification-danger',
+                message: 'Verification Code required'
+            });
         }
         else {
             if (form.$valid) {
-                $log.debug('finishLoginReset: form valid');
                 Reset.validateResetToken({
                     username: $scope.params.username,
                     token: $scope.params.resetLoginCode
                 })
-                .then( function(response) {
-                    if (response.data.Code!==1000) {
+                .then( 
+                    function(response) {
+                        if (response.data.Code!==1000) {
+                            notify({
+                                classes: 'notification-danger',
+                                message: 'Invalid Verification Code.'
+                            });
+                        }
+                        else {
+                            // show the form.
+                            $scope.newLoginInput = true;
+                        }
+                    },
+                    function(err) {
+                        // TODO error handling?
+                        $log.error(err);
                         notify({
                             classes: 'notification-danger',
-                            message: 'Invalid Verification Code.'
+                            message: 'Unable to verify reset code / token.'
                         });
                     }
-                    else {
-                        // show the form.
-                        $scope.newLoginInput = true;
-                    }
+                );
+            }
+            else {
+                notify({
+                    classes: 'notification-danger',
+                    message: "Invalid input. Fill all required fields."
                 });
             }
         }
     };
 
-    $scope.finishLoginPassReset = function(form) {
-
-    };
-
+    /**
+     * Request a token to reset login pass. Some validation first.
+     * Shows errors otherwise sets a flag to show a different form
+     */ 
     $scope.resetLostPassword = function(form) {
-        $log.debug('resetLostPassword');
         if(form.$valid) {
             $scope.params.username = $scope.params.username.toLowerCase().split('@')[0];
-            $log.debug('resetLostPassword: form valid');
             networkActivityTracker.track(
                 Reset.requestResetToken({
                     Username: $scope.params.username,
                     NotificationEmail: $scope.params.recoveryEmail
-                }).then(
+                })
+                .then(
                     function(response) {
                         if (response.data.Code!==1000) {
                             notify({
@@ -90,26 +112,40 @@ angular.module("proton.controllers.Support", [
                             $scope.inputResetToken = true;
                         }
                     },
-                    function() {
-                        notify('Unable to reset password. Please try again in a few minutes.');
+                    function(err) {
+                        // TODO error handling?
+                        $log.error(err);
+                        notify({
+                            classes: 'notification-danger',
+                            message: 'Unable to reset password. Please try again in a few minutes.'
+                        });
                     }
                 )
             );
         }
+        else {
+            notify({
+                classes: 'notification-danger',
+                message: "Invalid input. Please fill all required fields."
+            });
+        }
     };
 
+
+    /**
+     * Saves new login pass. Shows success page.
+     * @param form {Form}
+     */     
     $scope.confirmNewPassword = function(form) {
-        $log.debug('confirmNewPassword');
         if(form.$valid) {
-                $log.debug('confirmNewPassword: form valid');
                 networkActivityTracker.track(
                 Reset.resetPassword({
                     Username: $scope.params.username,
                     Token: $scope.params.resetLoginCode,
                     NewPassword: $scope.params.loginPassword,
-                }).then(
+                })
+                .then(
                     function(response) {
-                        $log.debug(response);
                         if (response.data.Error) {
                             notify({
                                 classes: "notification-danger",
@@ -117,14 +153,18 @@ angular.module("proton.controllers.Support", [
                             });
                         }
                         else {
-                            $state.go("support.message", {data: {
-                                title: "Password updated",
-                                content: "Your login password is updated, now you can <a href='/login'>log in</a>",
-                                type: "alert-success"
-                            }});
+                            $state.go("support.message", {
+                                data: {
+                                    title: "Password updated",
+                                    content: "Your login password is updated, now you can <a href='/login'>log in</a>",
+                                    type: "alert-success"
+                                }
+                            });
                         }
                     },
                     function(response) {
+                        $log.error(response);
+                        // TODO error handling?
                         notify({
                             classes: "notification-danger",
                             message: response.data.Error
@@ -132,6 +172,12 @@ angular.module("proton.controllers.Support", [
                     }
                 )
             );
+        }
+        else {
+            notify({
+                classes: 'notification-danger',
+                message: "Error: Please complete all required fields."
+            });
         }
     };
 });

@@ -3,10 +3,10 @@ angular.module("proton.messages.counts", [
 ])
 
 .service('messageCounts', function(
-    $q, 
-    Message, 
-    CONSTANTS, 
-    $rootScope, 
+    $q,
+    Message,
+    CONSTANTS,
+    $rootScope,
     tools
 ) {
 
@@ -15,10 +15,10 @@ angular.module("proton.messages.counts", [
         /**
          * Updates counters when moving a message between locations
          * @param messages {Array} of Message objects
-         */                
+         */
         move: function(messages) {
 
-            // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased            
+            // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
             var counterUpdates = {Locations: {}, Labels: {}};
 
             // Checks each message to see if count should increase decrease or stay the same
@@ -41,7 +41,7 @@ angular.module("proton.messages.counts", [
          * @param messages {Array} of Message Resources
          * @param add {Array} of LabelIDs
          * @param remove {Array} of LabelIDs
-         */  
+         */
         label: function(messages, add, remove) {
 
             // Object to hold the changes to each count. Can be positive or negative depending if increased or decreased
@@ -71,7 +71,7 @@ angular.module("proton.messages.counts", [
          // TODO this is updates in various places. Better to make it a service?
          * @param location {String}
          * @param updates {Array} of Labels objects with a { labelID: count } structure where labelID is a unique hash
-         */  
+         */
         update: function(location, updates) {
 
             // updates {Object} such as:
@@ -103,7 +103,7 @@ angular.module("proton.messages.counts", [
                     counterUpdates.Locations[message.OldLocation] = (message.IsRead === 0) ? curID - 1 : curID;
                 }
             });
-
+            
             this.update('Locations', counterUpdates.Locations);
         },
         mark : function(messages, status) {
@@ -138,7 +138,7 @@ angular.module("proton.messages.counts", [
          * @param messages {Array} of Message Resources
          * @param add {Array} of LabelIDs
          * @param remove {Array} of LabelIDs
-         */ 
+         */
         label: function(messages, add, remove) {
             var counterUpdates = {Locations: {}, Labels: {}, Starred: 0};
 
@@ -164,7 +164,7 @@ angular.module("proton.messages.counts", [
          * Updates the local api.counters
          * @param location {String}
          * @param updates {Array} of Labels objects with a { labelID: count } structure where labelID is a unique hash
-         */ 
+         */
         update: function(location, updates) {
             _.each(updates, function(val, id) {
                 var ID = api.counters[location][id];
