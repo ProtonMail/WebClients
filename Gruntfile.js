@@ -325,22 +325,6 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
-            build_static: {
-                files: [{
-                    src: ["**"],
-                    dest: "<%= build_dir %>/",
-                    cwd: "./src/static",
-                    expand: true
-                }]
-            },
-            compile_static: {
-                files: [{
-                    src: ["**"],
-                    dest: "<%= compile_dir %>/",
-                    cwd: "./src/static",
-                    expand: true
-                }]
-            },
             build_vendorjs: {
                 files: [{
                     src: ["<%= vendor_files.js %>"],
@@ -427,49 +411,6 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "<%= build_dir %>/assets/application.css": "<%= app_files.sass %>"
-                }
-            }
-        },
-
-        includes: {
-            files: {
-                src: [ "*.html" ],
-                dest: "<%= build_dir %>/pages",
-                cwd: "src/static/pages",
-                options: {
-                    duplicates: false,
-                    flatten: true,
-                    includePath: "src/static/pages"
-                }
-            },
-            app: {
-                src: [ "*.html" ],
-                dest: "<%= build_dir %>/",
-                cwd: "src/static",
-                options: {
-                    duplicates: false,
-                    flatten: true,
-                    includePath: "src/static"
-                }
-            },
-            static_files: {
-                src: [ "*.html" ],
-                dest: "<%= compile_dir %>/pages",
-                cwd: "src/static/pages",
-                options: {
-                    duplicates: false,
-                    flatten: true,
-                    includePath: "src/static/pages"
-                }
-            },
-            static_app: {
-                src: [ "*.html" ],
-                dest: "<%= compile_dir %>/",
-                cwd: "src/static",
-                options: {
-                    duplicates: false,
-                    flatten: true,
-                    includePath: "src/static"
                 }
             }
         },
@@ -796,14 +737,11 @@ module.exports = function(grunt) {
         "copy:build_app_assets",
         "copy:build_vendor_assets",
         "copy:build_appjs",
-        "copy:build_static",
         "copy:build_vendorjs",
         "copy:build_external",
         "copy:build_fonts",
         "copy:build_editor",
         "index:build",
-        "includes:app",
-        "includes:files",
         "replace:build",
         "testconfig",
         "clean:after"
@@ -812,10 +750,7 @@ module.exports = function(grunt) {
     grunt.registerTask("compile", [
         "ngconstant:prod",
         "build",
-        "copy:compile_static",
         "copy:compile_assets",
-        "includes:static_app",
-        "includes:static_files",
         "replace:compile",
         "copy:compile_fonts",
         "ngAnnotate",
