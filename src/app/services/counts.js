@@ -143,11 +143,11 @@ angular.module("proton.messages.counts", ["proton.constants"])
                             _.each(json.Labels, function(obj) { this.counters.Labels[obj.LabelID] = obj.Count; }.bind(this));
                             _.each(json.Locations, function(obj) { this.counters.Locations[obj.Location] = obj.Count; }.bind(this));
                             deferred.resolve();
-                        },
+                        }.bind(this),
                         function(err) {
                             deferred.reject(err);
-                        }
-                    .bind(this));
+                        }.bind(this)
+                    );
 
                     return deferred.promise;
                 },
