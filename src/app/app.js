@@ -427,6 +427,29 @@ angular.module("proton", [
 .factory('$exceptionHandler', function($log, $injector, CONFIG) { // function($injector, $log) {
     return function(exception, cause) {
         $log.error( exception );
+
+        var debug;
+        if ( exception instanceof Error ) {
+            debug = exception.stack;
+        }
+        else if ( angular.isString( exception ) ) {
+            debug = exception;
+        }
+        else {
+            try {
+                var json = angular.toJson( exception );
+                if ( $.isEmptyObject( json ) ) {
+                    debug = exception.toString();
+                }
+                else {
+                    debug = exception;
+                }
+            }
+            catch(err) {
+                debug = err.message;
+            }
+        }
+
         var url = $injector.get("url");
         var $http = $injector.get("$http");
         var tools = $injector.get("tools");
@@ -438,8 +461,7 @@ angular.module("proton", [
             BrowserVersion:  tools.getBrowserVersion,
             Client:         'Angular',
             ClientVersion:  CONFIG.app_version,
-            Description:          '[Angular] Bug [' + $state.$current.name + ']',
-            Debug: exception.toString(),
+            Debug: { 'state': $state.$current.name, 'error': debug },
         };
         crashPromise = $http.post( url.get() + '/bugs/crash', crashData );
     };
