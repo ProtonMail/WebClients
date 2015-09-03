@@ -5,38 +5,29 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Take care of index
 RewriteRule ^$ static/index.html [L]
 
-# Try simple static prepend
+# HTML files
+RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
+RewriteRule ^(.*?)(\.html)?$ static/$1.html [NC,L]
+
+# Simple static prepend for non-HTML files
 RewriteCond %{DOCUMENT_ROOT}/static/$1 -f
 RewriteRule ^(.*)$ static/$1 [NC,L]
 
-# Try adding .html
+# If pages, 301 redirect
 RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
-RewriteRule ^([^\.]*)$ static/$1.html [NC,L]
-
-# If main directory, try pages
-RewriteCond %{DOCUMENT_ROOT}/static/pages/$1 -f
-RewriteRule ^(.*)$ static/pages/$1 [NC,L]
-
-# If main directory, try pages with .html
-RewriteCond %{DOCUMENT_ROOT}/static/pages/$1.html -f
-RewriteRule ^([^\.]*)$ static/pages/$1.html [NC,L]
-
-# If pages, try main directory
-RewriteCond %{DOCUMENT_ROOT}/static/$1 -f
-RewriteRule ^pages/(.*)$ static/$1 [NC,L]
-
-# If pages, try main directory with html
-RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
-RewriteRule ^pages/([^\.]*)$ static/$1.html [NC,L]
+RewriteRule ^pages/(.*?)(\.html)?$ /$1 [NC,L,R=301]
 
 Redirect 301 /create-account /invite
-Redirect 301 /pages/join-us /pages/careers
+Redirect 301 /pages/join-us /careers
 
-Redirect 301 /webby /pages/why-protonmail
-Redirect 301 /swissnex /pages/why-protonmail
-Redirect 301 /blogsofwar /pages/why-protonmail
-Redirect 301 /bolehvpn /pages/why-protonmail
-Redirect 301 /privacyforall /pages/why-protonmail
+Redirect 301 /webby /why-protonmail
+Redirect 301 /swissnex /why-protonmail
+Redirect 301 /blogsofwar /why-protonmail
+Redirect 301 /bolehvpn /why-protonmail
+Redirect 301 /privacyforall /why-protonmail
+
+# Hide static, doesn't work
+#RewriteRule ^static.* /app.html [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]

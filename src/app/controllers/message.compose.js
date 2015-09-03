@@ -17,7 +17,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     User,
     attachments,
     authentication,
-    closeModal,
     contactManager,
     messageCache,
     networkActivityTracker,
@@ -61,7 +60,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var message = new Message();
 
         message.saved = 0;
-        $scope.initMessage(message, true);
+        $scope.initMessage(message, false);
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
@@ -612,7 +611,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.fields = !message.fields;
         $timeout(function() {
             message.recipientFieldFocussed = (message.fields) ? 4 : 0;
-            $scope.apply();
         });
         $scope.composerStyle();
     };
@@ -859,7 +857,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     deferred.resolve(result);
                 };
 
-                if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
+                if(result.Code === 1000) {
+                    process(result);
+                } else if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
                     var saveMePromise = Message.createDraft(parameters).$promise;
 
                     saveMePromise.then(function(result) {
@@ -869,7 +869,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         deferred.reject(error);
                     });
                 } else {
-                    process(result);
+                    $log.error(result);
+                    deferred.reject(result);
                 }
             }, function(error) {
                 error.message = 'Error during the draft request';
@@ -1066,54 +1067,25 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.editor.removeEventListener('dragenter', function(e) {
             $scope.isOver = true;
-            $scope.$apply();
-        });
-        message.editor.removeEventListener('dragover', function(e) {
-            $scope.isOver = true;
-            $scope.$apply();
         });
 
-        if (message.saved < 2) {
-            $scope.discard(message);
-        } else {
-            $scope.close(message, true);
-        }
+        message.editor.removeEventListener('dragover', function(e) {
+            $scope.isOver = true;
+        });
+
+        $scope.close(message, message.saved > 2);
     };
 
     $scope.close = function(message, save) {
-        $rootScope.activeComposer = false;
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
+        var id = message.ID;
+
+        $rootScope.activeComposer = false;
 
         if (save === true) {
             $scope.saveLater(message);
         }
-
-        message.close();
-
-        // Remove message in messages
-        $scope.messages.splice(index, 1);
-
-        // Hide all the tooltip
-        $('.tooltip').not(this).hide();
-
-        // Message closed and focussed?
-        if(messageFocussed && $scope.messages.length > 0) {
-            // Focus the first message
-            $scope.focusComposer(_.first($scope.messages));
-        }
-
-        setTimeout(function () {
-            $scope.composerStyle();
-        }, 250);
-    };
-
-    $scope.discard = function(message) {
-        $rootScope.activeComposer = false;
-
-        var index = $scope.messages.indexOf(message);
-        var messageFocussed = !!message.focussed;
-        var id = message.ID;
 
         message.close();
 
@@ -1123,8 +1095,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
-        // Remove message in message list controller
-        $rootScope.$broadcast('discardDraft', id);
+        if(angular.isDefined(id)) {
+            // Remove message in message list controller
+            $rootScope.$broadcast('discardDraft', id);
+        }
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {

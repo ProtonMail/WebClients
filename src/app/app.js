@@ -171,7 +171,7 @@ angular.module("proton", [
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
     return {
         response: function(response) {
-            if (response.data.Code!==undefined) {
+            if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code===5003) {
                     if ($rootScope.updateMessage===false) {
