@@ -60,7 +60,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.$on('newMessage', function() {
         var message = new Message();
         message.saved = 0;
-        $scope.initMessage(message, true);
+        $scope.initMessage(message, false);
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
