@@ -14,6 +14,7 @@
             <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
             <div class="form-group">
                 <input
+                autofocus="on"
                 autocomplete="on"
                 autocapitalize="off"
                 autocorrect="off"
@@ -23,8 +24,7 @@
                 tabindex="1"
                 name="Username"
                 placeholder="Username"
-                required=""
-                value="" />
+                required="" />
             </div>
             <div class="form-group">
                 <input
@@ -38,25 +38,16 @@
                 tabindex="2"
                 name="Password"
                 required=""
-                placeholder="Password"
-                value="" />
+                placeholder="Password" />
             </div>
-            <div class="fluid-container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <a class="btn" ui-sref="support.reset-password">{{'RESET_PASSWORD' | translate }}</a>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <button type="submit" class="btn btn-primary" ng-class="{disabled: networkActivity.loading()}" tabindex="3">
-                            {{ 'LOGIN' | translate }}
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <a href="https://protonmail.ch/username" target="_self" class="btn">{{ 'FORGOT_USERNAME?' | translate }}</a>
-                    </div>
-                </div>
+            <div class="form-group clearfix">
+                <a class="btn pull-left" ui-sref="support.reset-password">{{'RESET_PASSWORD' | translate }}</a>
+                <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" tabindex="3">
+                    {{ 'LOGIN' | translate }}
+                </button>
+            </div>
+            <div>
+                <a href="https://protonmail.ch/username" target="_self" class="btn">{{ 'FORGOT_USERNAME?' | translate }}</a>
             </div>
             <input type="hidden" id="hashed_pw" name="hashed_pw" />
         </form>
