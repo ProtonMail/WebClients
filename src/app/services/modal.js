@@ -135,26 +135,6 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('closeModal', function(pmModal) {
-    return pmModal({
-        controller: function(params) {
-            this.discard = function() {
-                if(angular.isDefined(params.discard) && angular.isFunction(params.discard)) {
-                    params.discard();
-                }
-            };
-
-            this.cancel = function() {
-                if(angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/close.tpl.html'
-    });
-})
-
 // contact modal
 .factory('contactModal', function(pmModal) {
     return pmModal({

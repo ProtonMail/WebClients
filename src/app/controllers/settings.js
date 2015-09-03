@@ -519,7 +519,7 @@ angular.module("proton.controllers.Settings", [
                 function(response) {
                     notify($translate.instant('THEME_SAVED'));
                     authentication.user.ShowImages = $scope.ShowImages;
-                    $scope.apply();
+                    $scope.$apply();
                 },
                 function(response) {
                     $log.error(response);

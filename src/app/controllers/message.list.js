@@ -19,7 +19,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     networkActivityTracker,
     notify
 ) {
-    var watchMessages;
     var lastChecked = null;
 
     $scope.initialization = function() {
@@ -49,7 +48,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.startWatchingEvent();
         $scope.refreshMessagesCache().then(function() {
             messageCache.watchScope($scope, "messages");
-            watchMessages = $scope.$watch('messages', function() {
+            $scope.$watch('messages', function() {
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -135,7 +134,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        watchMessages();
+
     };
 
     $scope.actionsDelayed = function() {
