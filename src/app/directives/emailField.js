@@ -109,7 +109,7 @@ angular.module("proton.emailField", [])
                     }
                 });
 
-                if(undefinedResult || emails.length === 0) {
+                if(undefinedResult) {
                     $$element.typeahead('val', '');
                     $(input).val('');
                     $(input).trigger('keydown');
