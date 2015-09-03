@@ -1,10 +1,6 @@
 <div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar" class="hidden-xs"></div>
 
-<div
-id="main"
-class="secure fixed"
-ui-view="content"
-ng-hide="advSearchIsOpen"></div>
+<div id="main" class="secure fixed" ui-view="content" ng-hide="advSearchIsOpen"></div>
 
 <ng-include src="'templates/partials/composer.tpl.html'" id="composerFrame"></ng-include>
 <ng-include src="'templates/partials/form.bug.tpl.html'"></ng-include>
