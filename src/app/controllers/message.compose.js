@@ -34,6 +34,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.sending = false;
     $scope.saving = false;
     $scope.isOver = false;
+    $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
@@ -73,7 +74,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
-        
+
         if (message) {
             message.editor = editor;
             $scope.listenEditor(message);
@@ -105,8 +106,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     }
 
+    function onDragStart(event) {
+        $scope.preventDropbox = true;
+    }
+
+    function onDragEnd(event) {
+        event.preventDefault();
+        $scope.preventDropbox = false;
+        $scope.isOver = false;
+    }
+
     $(window).on('resize', onResize);
     $(window).on('dragover', onDragOver);
+    $(window).on('dragstart', onDragStart);
+    $(window).on('dragend', onDragEnd);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
@@ -545,7 +558,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
-
+            message.editor.addEventListener('dragstart', onDragStart);
+            message.editor.addEventListener('dragend', onDragEnd);
             message.editor.addEventListener('dragenter', function(e) {
                 $scope.isOver = true;
                 $scope.$apply();
@@ -1030,6 +1044,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.editor.removeEventListener('dragover', function(e) {
             $scope.isOver = true;
         });
+
+        message.editor.removeEventListener('dragstart', onDragStart);
+        message.editor.removeEventListener('dragend', onDragEnd);
 
         $scope.close(message, false);
     };
