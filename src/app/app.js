@@ -424,14 +424,23 @@ angular.module("proton", [
 // Handle some application exceptions
 //
 
-.factory('$exceptionHandler', function($log) { // function($injector, $log) {
+.factory('$exceptionHandler', function($log, $injector, CONFIG) { // function($injector, $log) {
     return function(exception, cause) {
-        // var errorReporter = $injector.get("errorReporter");
-        // if (exception.message.indexOf("$sanitize:badparse") >= 0) {
-        //     errorReporter.notify("There was an error while trying to display this message.", exception);
-        // }
-        //else {
         $log.error( exception );
-        //}
+        var url = $injector.get("url");
+        var $http = $injector.get("$http");
+        var tools = $injector.get("tools");
+        var $state = $injector.get("$state");
+        var crashData = {
+            OS:             tools.getOs,
+            OSVersion:      '',
+            Browser:         tools.getBrowser,
+            BrowserVersion:  tools.getBrowserVersion,
+            Client:         'Angular',
+            ClientVersion:  CONFIG.app_version,
+            Description:          '[Angular] Bug [' + $state.$current.name + ']',
+            Debug: exception.toString(),
+        };
+        crashPromise = $http.post( url.get() + '/bugs/crash', crashData );
     };
 });
