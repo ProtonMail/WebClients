@@ -6,6 +6,8 @@ angular.module("proton.controllers.Bug", [])
     $state,
     $log,
     $translate,
+    $timeout,
+    $q,
     authentication,
     tools,
     Bug,
@@ -31,13 +33,61 @@ angular.module("proton.controllers.Bug", [])
             Username:        Username,
             Email:          ''
         };
+
         // $log.debug($scope.bug);
     };
 
+    // Take a screenshot before we open the modal. then upload it if requested.
+    $scope.takeScreenshot = function() {
+        if (html2canvas) {
+            html2canvas(document.body, {
+                onrendered: function(canvas) {
+                    try {
+                        $scope.screen = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+                    } catch(e) {
+                        $scope.screen = canvas.toDataURL().split(',')[1];
+                    }
+                }
+            });
+        }
+    };
+
+    // Returns a promise
+    $scope.uploadScreenshot = function() {
+        var deferred = $q.defer();
+        $.ajax({ 
+            url: 'https://api.imgur.com/3/image',
+            headers: {
+                'Authorization': 'Client-ID 864920c2f37d63f'
+            },
+            type: 'POST',
+            data: {
+                'image': $scope.screen
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response && response.data && response.data.link) {
+                    $scope.bug.Description = $scope.bug.Description+'\n\n\n\n'+response.data.link;
+                    deferred.resolve();
+                }
+                else {
+                    deferred.reject();
+                }
+            },
+            error: function() {
+                deferred.reject();
+            }
+        });
+        return deferred.promise;
+    };
+
     $scope.open = function() {
-        $scope.initialization();
-        $('#' + modalId).modal('show');
-        $('#bug_os').focus();
+        $scope.takeScreenshot();
+        $timeout( function() {
+            $scope.initialization();
+            $('#' + modalId).modal('show');
+            $('#bug_os').focus();            
+        }, 100);
     };
 
     $scope.close = function() {
@@ -46,29 +96,40 @@ angular.module("proton.controllers.Bug", [])
 
     $scope.sendBugReport = function(form) {
 
-        $log.debug('sendBugReport');
+        function sendReport() {
+            $log.debug('sendBugReport');
 
-        $log.debug($scope.bug);
+            $log.debug($scope.bug);
 
-        var bugPromise = Bug.report($scope.bug);
+            var bugPromise = Bug.report($scope.bug);
 
-        $log.debug('sendBugReport');
+            $log.debug('sendBugReport');
 
-        bugPromise.then(
-            function(response) {
-                $log.debug(response);
-                if(angular.isUndefined(response.data.Error)) {
-                    $scope.close();
-                    notify($translate.instant('BUG_REPORTED'));
+            bugPromise.then(
+                function(response) {
+                    $log.debug(response);
+                    if(angular.isUndefined(response.data.Error)) {
+                        notify($translate.instant('BUG_REPORTED'));
+                    }
+                    return response;
+                },
+                function(err) {
+                    $log.error(err);
                 }
-                return response;
-            },
-            function(err) {
-                $log.error(err);
-            }
-        );
+            );
 
-        networkActivityTracker.track(bugPromise);
+            networkActivityTracker.track(bugPromise);
+        }
+
+        $scope.close();
+        notify($translate.instant('SENDING_BUG_REPORT'));
+        if ($scope.attachScreenshot) {
+            $scope.uploadScreenshot()
+            .then( sendReport );
+        }
+        else {
+            sendReport();
+        }
     };
 
     $scope.$on('openReportModal', function() {
