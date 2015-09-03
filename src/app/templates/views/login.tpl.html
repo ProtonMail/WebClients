@@ -41,13 +41,10 @@
                 placeholder="Password" />
             </div>
             <div class="form-group clearfix">
-                <a class="btn pull-left" ui-sref="support.reset-password">{{'RESET_PASSWORD' | translate }}</a>
+                <a class="btn pull-left" ng-click="getLoginHelp()">{{'NEED_HELP' | translate }}</a>
                 <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" tabindex="3">
                     {{ 'LOGIN' | translate }}
                 </button>
-            </div>
-            <div>
-                <a href="https://protonmail.ch/username" target="_self" class="btn">{{ 'FORGOT_USERNAME?' | translate }}</a>
             </div>
             <input type="hidden" id="hashed_pw" name="hashed_pw" />
         </form>
