@@ -425,44 +425,56 @@ angular.module("proton", [
 //
 
 .factory('$exceptionHandler', function($log, $injector, CONFIG) { // function($injector, $log) {
+    var n_reports = 0;
     return function(exception, cause) {
+        n_reports++;
         $log.error( exception );
 
-        var debug;
-        if ( exception instanceof Error ) {
-            debug = exception.stack;
-        }
-        else if ( angular.isString( exception ) ) {
-            debug = exception;
-        }
-        else {
+        if ( n < 6 ) {
+            var debug;
+            if ( exception instanceof Error ) {
+                debug = exception.stack;
+            }
+            else if ( angular.isString( exception ) ) {
+                debug = exception;
+            }
+            else {
+                try {
+                    var json = angular.toJson( exception );
+                    if ( $.isEmptyObject( json ) ) {
+                        debug = exception.toString();
+                    }
+                    else {
+                        debug = exception;
+                    }
+                }
+                catch(err) {
+                    debug = err.message;
+                }
+            }
+
             try {
-                var json = angular.toJson( exception );
-                if ( $.isEmptyObject( json ) ) {
-                    debug = exception.toString();
-                }
-                else {
-                    debug = exception;
-                }
+                var url = $injector.get("url");
+                var $http = $injector.get("$http");
+                var tools = $injector.get("tools");
+                var $state = $injector.get("$state");
+                var crashData = {
+                    OS:             tools.getOs,
+                    OSVersion:      '',
+                    Browser:         tools.getBrowser,
+                    BrowserVersion:  tools.getBrowserVersion,
+                    Client:         'Angular',
+                    ClientVersion:  CONFIG.app_version,
+                    Debug: { 'state': $state.$current.name, 'error': debug },
+                };
+                crashPromise = $http.post( url.get() + '/bugs/crash', crashData )
+                    .catch(function(err) {
+                        // Do nothing
+                    });
             }
             catch(err) {
-                debug = err.message;
+                // Do nothing
             }
         }
-
-        var url = $injector.get("url");
-        var $http = $injector.get("$http");
-        var tools = $injector.get("tools");
-        var $state = $injector.get("$state");
-        var crashData = {
-            OS:             tools.getOs,
-            OSVersion:      '',
-            Browser:         tools.getBrowser,
-            BrowserVersion:  tools.getBrowserVersion,
-            Client:         'Angular',
-            ClientVersion:  CONFIG.app_version,
-            Debug: { 'state': $state.$current.name, 'error': debug },
-        };
-        crashPromise = $http.post( url.get() + '/bugs/crash', crashData );
     };
 });
