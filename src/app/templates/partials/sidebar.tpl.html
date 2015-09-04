@@ -101,7 +101,7 @@
             </li>
         </ul>
         <div class="divider"></div>
-        <div class="hidden-xs hidden-sm" id="sidebarLabels">
+        <div class="hidden-xs" id="sidebarLabels">
             <ul class="list-group">
                 <li
                 class="list-group-item"
@@ -113,7 +113,7 @@
                 ng-model="droppedMessages">
                     <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn" ui-sref-active="active">
                         <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('label', label.ID) > 0}">{{ getUnread('label', label.ID) }}</span>
-                        <span class="fa fa-tag" ng-style="color(label)"></span> <span>{{ label.Name }}</span>
+                        <span class="fa fa-tag" ng-style="color(label)"></span> <span class="hidden-xs hidden-sm">{{ label.Name }}</span>
                     </a>
                 </li>
             </ul>
