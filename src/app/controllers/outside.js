@@ -23,7 +23,8 @@ angular.module("proton.controllers.Outside", [
     message,
     notify,
     pmcw,
-    tools
+    tools,
+    networkActivityTracker
 ) {
     $scope.message = message;
 
