@@ -296,9 +296,12 @@ angular.module("proton.controllers.Contacts", [
                     var extension = '';
                     var reader = new FileReader();
 
-                    if( angular.isDefined(files) && angular.isDefined(files[0] && files[0].name ) ) {
-                        extension = files[0].name.slice(-4);
+                    if( angular.isUndefined(files) || files.length === 0 ) {
+                        notify({message: $translate.instant('NO_FILE'), classes: 'notification-danger'}); //TODO translate
+                        return;
                     }
+
+                    extension = files[0].name.slice(-4);
 
                     reader.onload = function(e) {
                         var text = reader.result;
