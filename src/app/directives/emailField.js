@@ -166,6 +166,7 @@ angular.module("proton.emailField", [])
                 });
 
                 setValue();
+                $$element.typeahead('val', '');
             });
 
             manager.on("tm:popped", setValue);
