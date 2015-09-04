@@ -248,7 +248,7 @@
                     ng-class="{ disabled: message.loading() }"
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
-                    ng-click="close(message)"
+                    ng-click="close(message, true)"
                     pt-tooltip="{{ 'DISCARD' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-trash-o"></i>
