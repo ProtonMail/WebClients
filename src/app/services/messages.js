@@ -4,7 +4,6 @@ angular.module("proton.messages", ["proton.constants"])
         $rootScope,
         Message,
         CONSTANTS,
-        tools,
         networkActivityTracker
      ) {
         var lists = [];
@@ -95,12 +94,16 @@ angular.module("proton.messages", ["proton.constants"])
                         angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else {
                     deferred.reject();
@@ -221,14 +224,20 @@ angular.module("proton.messages", ["proton.constants"])
                 inboxMetaData = Message.query(inboxInitParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                networkActivityTracker.track($q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                    cachedMetadata.inbox = result.inbox;
-                    addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
-                    cachedMetadata.sent = result.sentOne;
-                    this.started = true;
+                networkActivityTracker.track($q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(
+                    function(result) {
+                        cachedMetadata.inbox = result.inbox;
+                        addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                        cachedMetadata.sent = result.sentOne;
+                        this.started = true;
 
-                    deferred.resolve();
-                }.bind(this)));
+                        deferred.resolve();
+                    }.bind(this),
+                    function(error) {
+                        error.message = 'Error during the messages request for inbox and sent';
+                        deferred.reject(error);
+                    }
+                ));
 
                 return deferred.promise;
             },

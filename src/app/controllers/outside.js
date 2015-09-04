@@ -26,11 +26,12 @@ angular.module("proton.controllers.Outside", [
     tools,
     networkActivityTracker
 ) {
-    $scope.message = message;
-
+    // Variables
     var decrypted_token = window.sessionStorage["proton:decrypted_token"];
     var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
     var token_id = $stateParams.tag;
+
+    $scope.message = message;
 
     if(message.displayMessage === true) {
         $timeout(function() {
@@ -82,10 +83,16 @@ angular.module("proton.controllers.Outside", [
         return $scope.message.ExpirationTime < moment().unix();
     };
 
+    /**
+     * Simulate click event on the input file
+     */
     $scope.selectFile = function() {
         $('#inputFile').click();
     };
 
+    /**
+     * Send message
+     */
     $scope.send = function() {
         var deferred = $q.defer();
         var publicKey = $scope.message.publicKey;
@@ -123,17 +130,18 @@ angular.module("proton.controllers.Outside", [
                 .then(
                     function(result) {
                         $state.go('eo.message', {tag: $stateParams.tag});
-                        notify($translate.instant('MESSAGE_SENT'));
+                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                         deferred.resolve(result);
                     },
                     function(error) {
-                        notify(error);
+                        error.message = 'Error during the reply process'; // TODO send to back-end
                         deferred.reject(error);
                     }
                 );
             },
-            function(err) {
-                deferred.reject(err);
+            function(error) {
+                error.message = 'Error during the encryption'; // TODO send to back-end
+                deferred.reject(error);
             }
         );
 
@@ -182,40 +190,43 @@ angular.module("proton.controllers.Outside", [
         _.defaults(message, { Attachments: [] });
 
         if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-            notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+            notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
+            message.uploading = false;
             // TODO remove file in droparea
-            return;
-        }
-
-        totalSize += file.size;
-
-        var attachmentPromise;
-        var element = $(file.previewElement);
-
-        if (totalSize < (sizeLimit * 1024 * 1024)) {
-            var publicKey = $scope.message.publicKey;
-
-            attachments.load(file, publicKey).then(function(packets) {
-                message.uploading = false;
-                message.Attachments.push({
-                    Name: file.name,
-                    Size: file.size,
-                    Filename: packets.Filename,
-                    MIMEType: packets.MIMEType,
-                    KeyPackets: new Blob([packets.keys]),
-                    DataPacket: new Blob([packets.data])
-                });
-            });
         } else {
-            // Attachment size error.
-            notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
-            // TODO remove file in droparea
-            return;
+            totalSize += file.size;
+
+            var attachmentPromise;
+            var element = $(file.previewElement);
+
+            if (totalSize < (sizeLimit * 1024 * 1024)) {
+                var publicKey = $scope.message.publicKey;
+
+                attachments.load(file, publicKey).then(function(packets) {
+                    message.uploading = false;
+                    message.Attachments.push({
+                        Name: file.name,
+                        Size: file.size,
+                        Filename: packets.Filename,
+                        MIMEType: packets.MIMEType,
+                        KeyPackets: new Blob([packets.keys]),
+                        DataPacket: new Blob([packets.data])
+                    });
+                }, function(error) {
+                    message.uploading = false;
+                    notify({message: 'Error ', classes: 'notification-danger'});
+                    $log.error(error);
+                });
+            } else {
+                // Attachment size error.
+                notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
+                message.uploading = false;
+                // TODO remove file in droparea
+            }
         }
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
-
         $event.preventDefault();
 
         var link = angular.element($event.target);
@@ -231,10 +242,10 @@ angular.module("proton.controllers.Outside", [
         // decode key packets
         var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
 
-        // get enc attachment
+        // get enc attachment promise
         var att = Eo.attachment(decrypted_token, token_id, attachment.ID);
 
-        // decrypt session key
+        // decrypt session key promise
         var key = pmcw.decryptSessionKey(keyPackets, password);
 
         // when we have the session key and attachent:
@@ -260,38 +271,36 @@ angular.module("proton.controllers.Outside", [
                                 data: decryptedAtt.data,
                                 Name: decryptedAtt.filename,
                                 MIMEType: attachment.MIMEType,
-                                el: $event.target,
+                                el: $event.target
                             });
                             attachment.decrypting = false;
                             if(!$rootScope.isFileSaverSupported) {
-                                $($event.currentTarget)
-                                .prepend('<span class="fa fa-download"></span>');
+                                $($event.currentTarget).prepend('<span class="fa fa-download"></span>');
                             }
                             $scope.$apply();
                         } catch (error) {
-                            console.log(error);
+                            $log.error(error);
                         }
                     },
                     function(error) {
-                        console.log(error);
+                        $log.error(error);
                     }
                 );
             },
-            function(err) {
-                console.log(err);
+            function(error) {
+                $log.error(error);
             }
         );
     };
 
      $scope.downloadAttachment = function(attachment) {
-
         try {
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
+
             if($rootScope.isFileSaverSupported) {
                 saveAs(blob, attachment.Name);
-            }
-            else {
+            } else {
                 // Bad blob support, make a data URI, don't click it
                 var reader = new FileReader();
 
@@ -302,7 +311,7 @@ angular.module("proton.controllers.Outside", [
                 reader.readAsDataURL(blob);
             }
         } catch (error) {
-            console.log(error);
+            $log.error(error);
         }
     };
 

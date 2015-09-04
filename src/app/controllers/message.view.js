@@ -20,7 +20,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     Message,
     attachments,
     authentication,
-    contactManager,
     message,
     messageCache,
     messageCounts,

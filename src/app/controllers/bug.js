@@ -5,9 +5,9 @@ angular.module("proton.controllers.Bug", [])
     $rootScope,
     $state,
     $log,
+    $q,
     $translate,
     $timeout,
-    $q,
     authentication,
     tools,
     Bug,
@@ -15,26 +15,31 @@ angular.module("proton.controllers.Bug", [])
     notify,
     CONFIG
 ) {
+    // Variables
     var modalId = 'bugForm';
 
+    // Listeners
+    $scope.$on('openReportModal', function() {
+        $log.debug('openReportModal:open');
+        $scope.open();
+    });
+
+    // Methods
     $scope.initialization = function() {
-        var Username = (!$rootScope.isLocked && authentication.user !== undefined && authentication.user.Name !== undefined) ? authentication.user.Name : '';
-        
-        $scope.useragent = angular.element('html').attr('class');
+        var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
+
         $scope.bug = {
-            OS:             tools.getOs,
+            OS:             tools.getOs(),
             OSVersion:      '',
-            Browser:         tools.getBrowser,
-            BrowserVersion:  tools.getBrowserVersion,
+            Browser:         tools.getBrowser(),
+            BrowserVersion:  tools.getBrowserVersion(),
             Client:         'Angular',
             ClientVersion:  CONFIG.app_version,
             Title:          '[Angular] Bug [' + $state.$current.name + ']',
             Description:    '',
-            Username:        Username,
+            Username:        username,
             Email:          ''
         };
-
-        // $log.debug($scope.bug);
     };
 
     // Take a screenshot before we open the modal. then upload it if requested.
@@ -55,7 +60,7 @@ angular.module("proton.controllers.Bug", [])
     // Returns a promise
     $scope.uploadScreenshot = function() {
         var deferred = $q.defer();
-        $.ajax({ 
+        $.ajax({
             url: 'https://api.imgur.com/3/image',
             headers: {
                 'Authorization': 'Client-ID 864920c2f37d63f'
@@ -86,7 +91,7 @@ angular.module("proton.controllers.Bug", [])
         $timeout( function() {
             $scope.initialization();
             $('#' + modalId).modal('show');
-            $('#bug_os').focus();            
+            $('#bug_os').focus();
         }, 100);
     };
 
@@ -95,46 +100,36 @@ angular.module("proton.controllers.Bug", [])
     };
 
     $scope.sendBugReport = function(form) {
-
         function sendReport() {
-            $log.debug('sendBugReport');
-
-            $log.debug($scope.bug);
-
             var bugPromise = Bug.report($scope.bug);
-
-            $log.debug('sendBugReport');
+            var deferred = $q.defer();
 
             bugPromise.then(
                 function(response) {
-                    $log.debug(response);
-                    if(angular.isUndefined(response.data.Error)) {
-                        notify($translate.instant('BUG_REPORTED'));
+                    if(response.data.Code === 1000) {
+                        $scope.close();
+                        deferred.resolve(response);
+                        notify({message: $translate.instant('SENDING_BUG_REPORT'), classes: 'notification-success'});
+                    } else if (angular.isDefined(response.data.Error)) {
+                        response.message = response.data.Error;
+                        deferred.reject(response);
                     }
-                    return response;
                 },
                 function(err) {
-                    $log.error(err);
+                    error.message = 'Error during the sending request';
+                    deferred.reject(error);
                 }
             );
 
-            networkActivityTracker.track(bugPromise);
+            networkActivityTracker.track(deferred.promise);
+
+            return deferred.promise;
         }
 
-        $scope.close();
-        notify($translate.instant('SENDING_BUG_REPORT'));
         if ($scope.attachScreenshot) {
-            $scope.uploadScreenshot()
-            .then( sendReport );
-        }
-        else {
+            $scope.uploadScreenshot().then(sendReport);
+        } else {
             sendReport();
         }
     };
-
-    $scope.$on('openReportModal', function() {
-        $log.debug('openReportModal:open');
-        $scope.open();
-    });
-
 });

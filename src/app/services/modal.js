@@ -122,7 +122,14 @@ angular.module("proton.modals", [])
 .factory('alertModal', function(pmModal) {
     return pmModal({
         controller: function(params) {
+            this.title = params.title;
             this.message = params.message;
+
+            if(angular.isDefined(params.alert)) {
+                this.alert = params.alert;
+            } else {
+                this.alert = 'alert-info';
+            }
 
             this.ok = function() {
                 if (angular.isDefined(params.ok) && angular.isFunction(params.ok)) {
