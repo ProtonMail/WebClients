@@ -209,7 +209,7 @@ angular.module("proton.squire", [
             // Check if browser is Webkit (Safari/Chrome) or Opera
             if(
                 ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) || 
-                ( $('body').hassClass('ua-safari') || $('body').hassClass('ua-opera') || $('body').hassClass('ua-chrome'))
+                ( $('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
             ) {
                 // Start timer when loaded.
                 $(iframe).load(function () {
