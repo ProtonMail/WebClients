@@ -433,7 +433,7 @@ angular.module("proton", [
         if ( n_reports < 6 ) {
             var debug;
             if ( exception instanceof Error ) {
-                debug = exception.stack;
+                debug = { 'message': exception.message, 'stack': exception.stack };
             }
             else if ( angular.isString( exception ) ) {
                 debug = exception;
