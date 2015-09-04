@@ -302,9 +302,14 @@ angular.module("proton.models.message", ["proton.constants"])
             this.promises = _.union(this.promises, [promise]);
 
             promise.catch(function(result) {
-                if(angular.isDefined(result.Error)) {
-                    notify({message: result.Error, classes: 'notification-danger'});
+                if(angular.isDefined(result)) {
                     $log.error(result);
+                    if (angular.isDefined(result.Error)) {
+                        notify({message: result.Error, classes: 'notification-danger'});
+                    }
+                    else {
+                        notify({message: result, classes: 'notification-danger'});
+                    }
                 }
             });
 
