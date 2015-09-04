@@ -296,7 +296,7 @@ angular.module("proton.controllers.Contacts", [
                     var extension = '';
                     var reader = new FileReader();
 
-                    if(angular.isDefined(files)) {
+                    if( angular.isDefined(files) && angular.isDefined(files[0] && files[0].name ) ) {
                         extension = files[0].name.slice(-4);
                     }
 
