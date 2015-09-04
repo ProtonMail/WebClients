@@ -80,11 +80,17 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 .then( $scope.doGetUserInfo )
                 .then( $scope.finishRedirect )
                 .catch( function(err) {
+                    var msg = err;
+                    if (typeof msg !== "string") {
+                        msg = err.toString();
+                    }
+                    if (typeof msg !== "string") {
+                        msg = "Something went wrong";
+                    }
                     notify({
                         classes: 'notification-danger',
-                        message: err.message
+                        message: msg
                     });
-                    $log.error(err);
                     $scope.signupError= true;
                 })
             );
@@ -141,8 +147,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             User.available({ username: $scope.account.Username }).$promise
             .then(
                 function(response) {
-                    if (response.Error) {
-                        var error_message = (response.Error) ? response.Error : (response.statusText) ? response.statusText : 'Error.';
+                    if (response.data) {
+                        var error_message = (response.data.Error) ? response.data.Error : (response.statusText) ? response.statusText : 'Error.';
                         $('#Username').focus();
                         deferred.reject(error_message);
                     }
@@ -184,7 +190,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             return;
         }
         else {
-            $scope.createUser  = true;
             var params = {
                 "response_type": "token",
                 "client_id": "demoapp",
@@ -205,7 +210,13 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             }
             $rootScope.tempUser.username = $scope.account.Username;
             $rootScope.tempUser.password = $scope.account.loginPassword;
-            return User.create(params).$promise;
+            return User.create(params).$promise.then( function(response) {
+                $log.debug(response);
+                if (response.Code===1000) {
+                    $scope.createUser  = true;
+                }
+                return response;
+            });
         }
     };
 
