@@ -266,6 +266,9 @@ angular.module("proton.modals", [])
             var extension;
             var self = this;
 
+            this.title = params.title;
+            this.message = params.message;
+
             function init() {
                 var drop = document.getElementById(idDropzone);
 
@@ -309,9 +312,6 @@ angular.module("proton.modals", [])
                     }
                 });
             }
-
-            this.title = params.title;
-            this.message = params.message;
 
             this.import = function() {
                 if (angular.isDefined(params.import) && angular.isFunction(params.import)) {
