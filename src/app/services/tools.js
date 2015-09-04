@@ -14,17 +14,6 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
-    tools.inPrivateMode = function() {
-        try {
-            // try to use sessionStorage
-            sessionStorage.setItem('test', 2);
-            sessionStorage.removeItem('test');
-            return false;
-        } catch (error) {
-            return true;
-        }
-    };
-
     tools.getBrowser = function() {
         var browser;
         var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;

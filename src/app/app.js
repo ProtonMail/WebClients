@@ -110,6 +110,38 @@ angular.module("proton", [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
+.run(function(CONSTANTS) {
+    // This function clears junk from session storage. Should not be needed forever
+    try {
+        var whitelist = [
+            CONSTANTS.EVENT_ID,
+            CONSTANTS.MAILBOX_PASSWORD_KEY,
+            CONSTANTS.OAUTH_KEY+":SessionToken",
+            CONSTANTS.OAUTH_KEY + ":Uid",
+            CONSTANTS.OAUTH_KEY + ":AccessToken",
+            CONSTANTS.OAUTH_KEY + ":RefreshToken",
+            "proton:decrypted_token",
+            "proton:encrypted_password"
+        ];
+
+        var data = {};
+        for( var i=0; i<whitelist.length; i++) {
+            var item = window.sessionStorage.getItem(whitelist[i]);
+            if( angular.isString(item) ) {
+                data[whitelist[i]] = item;
+            }
+        }
+        
+        window.sessionStorage.clear();
+
+        for (var key in data) {
+            window.sessionStorage.setItem(key, data[key]);
+        }
+    }
+    catch(err) {
+        // Do nothing, session storage support checked for elsewhere
+    }
+})
 
 .run(function(
     $document,
@@ -409,9 +441,9 @@ angular.module("proton", [
  * Detect if the user use safari private mode
  */
 .run(function(notify, tools) {
-    if(tools.inPrivateMode() === true) {
+    if(tools.hasSessionStorage() === false) {
         notify({
-            message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
+            message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
             classes: 'notification-danger',
             duration: 0
         });
