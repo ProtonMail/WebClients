@@ -78,9 +78,11 @@ angular.module("proton.messages.counts", [
             // {-0bGYCZ_xBk4tnm00HacTL28ybGylp-feOnQ9U8MalzOvXsfw4oeoDs1Hv1_avbcEQW0f7fdHwOqwiQEMygcyA==: 2}
 
             _.each(updates, function(val, id) {
-                var ID = $rootScope.messageTotals[location][id];
-                ID = (typeof ID === 'undefined') ? val : ID + val;
-                $rootScope.messageTotals[location][id] = (ID < 0) ? 0 : ID;
+                if ($rootScope.messageTotals && $rootScope.messageTotals[location]) {
+                    var ID = $rootScope.messageTotals[location][id];
+                    ID = (typeof ID === 'undefined') ? val : ID + val;
+                    $rootScope.messageTotals[location][id] = (ID < 0) ? 0 : ID;
+                }
             });
         }
     });
