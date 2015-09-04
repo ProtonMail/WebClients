@@ -34,8 +34,6 @@ angular.module("proton.controllers.Bug", [])
             Email:          ''
         };
 
-        $scope.asidasd = sadadasdasd;
-
         // $log.debug($scope.bug);
     };
 
