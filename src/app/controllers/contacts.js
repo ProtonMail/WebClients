@@ -240,7 +240,7 @@ angular.module("proton.controllers.Contacts", [
                             notify({message: $translate.instant('CONTACT_EDITED'), classes: 'notification-success'});
                             Contact.index.updateWith(authentication.user.Contacts);
                         } else {
-                            notify({message: response.data.Response[0].Error, classes: 'notification-danger'});
+                            notify({message: response.data.Error, classes: 'notification-danger'});
                         }
                     }, function(response) {
                         notify({message: response, classes: 'notification-danger'});
