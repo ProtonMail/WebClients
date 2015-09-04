@@ -225,7 +225,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             $log.error(error);
                         });
                     }, function(error) {
-                        notify({message: 'Error during getting of the private key', classes: 'notification-danger'});
+                        notify({message: 'Error during decryption of the private key', classes: 'notification-danger'});
                         $log.error(error);
                     });
                 } catch(error) {
@@ -291,13 +291,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         onResize();
                     },
                     function(error) {
-                        notify({message: 'Error during the uploading', classes: 'notification-danger'});
+                        notify({message: 'Error during file upload', classes: 'notification-danger'});
                         $log.error(error);
                     }
                 );
             },
             function(error) {
-                notify({message: 'Error during the encryption of attachment', classes: 'notification-danger'});
+                notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
                 $log.error(error);
             }
         );
@@ -860,7 +860,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     saveMePromise.then(function(result) {
                         process(result);
                     }, function(error) {
-                        error.message = 'Error during the draft creation';
+                        error.message = 'Error creating draft';
                         deferred.reject(error);
                     });
                 } else {
@@ -872,7 +872,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 deferred.reject(error);
             });
         }, function(error) {
-            error.message = 'Error during the encryption';
+            error.message = 'Error encrypting message';
             deferred.reject(error);
         });
 

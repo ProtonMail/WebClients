@@ -102,7 +102,7 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.deleteAllContacts = function() {
         var title = $translate.instant('DELETE_ALL_CONTACTS');
-        var message = 'Are you sure you want to delete all the contacts?'; // TODO translate
+        var message = 'Are you sure you want to delete all your contacts?'; // TODO translate
 
         confirmModal.activate({
             params: {
@@ -138,7 +138,7 @@ angular.module("proton.controllers.Contacts", [
             message = 'Are you sure you want to delete this contact?'; // TODO translate
         } else {
             title = $translate.instant('DELETE_CONTACTS');
-            message = 'Are you sure you want to delete contacts selected?'; // TODO translate
+            message = 'Are you sure you want to delete the selected contacts?'; // TODO translate
         }
 
         confirmModal.activate({
