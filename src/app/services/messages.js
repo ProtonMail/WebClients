@@ -144,24 +144,13 @@ angular.module("proton.messages", ["proton.constants"])
         var cachedMessages = _.bindAll({
             cache: {},
             get: function(id) {
-                var msg;
+                var msg = false;
 
-                if ((msg = this.cache[id])) {
-                    return msg;
+                if (angular.isDefined(this.cache[id])) {
+                    msg = this.cache[id];
                 }
 
-                var data = window.sessionStorage["proton:message:" + id];
-
-                if (data) {
-                    var q = $q.defer();
-
-                    data = new Message(JSON.parse(data));
-                    data.$promise = q.promise;
-                    q.resolve(data);
-                    this.cache[id] = data;
-                }
-
-                return data;
+                return msg;
             },
             put: function(id, message) {
                 var self = this;
@@ -185,20 +174,10 @@ angular.module("proton.messages", ["proton.constants"])
                     });
 
                     self.cache[id] = message;
-
-                    // Cache a stringified version of the message in session storage
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
                 });
             },
             fusion: function(id, message) {
-                var data = window.sessionStorage["proton:message:" + id];
-
-                if(data) {
-                    var msg = _.extend(JSON.parse(data), _.pick(message, fields));
-
-                    this.cache[id] = message;
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
-                }
+                this.cache[id] = message;
             }
         });
 
