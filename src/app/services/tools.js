@@ -17,7 +17,8 @@ angular.module("proton.tools", ["proton.constants"])
     tools.inPrivateMode = function() {
         try {
             // try to use sessionStorage
-            sessionStorage.test = 2;
+            sessionStorage.setItem('test', 2);
+            sessionStorage.removeItem('test');
             return false;
         } catch (error) {
             return true;
