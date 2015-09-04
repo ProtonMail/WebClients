@@ -22,7 +22,8 @@ angular.module("proton.controllers.Account", [
     notify,
     token
 ) {
-    var mellt = new Mellt();
+    
+    // var mellt = new Mellt();
 
     $scope.initialization = function() {
         // Variables

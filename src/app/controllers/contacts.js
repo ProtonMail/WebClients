@@ -293,8 +293,12 @@ angular.module("proton.controllers.Contacts", [
                 message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
                     var contactArray = [];
-                    var extension = files[0].name.slice(-4);
+                    var extension = '';
                     var reader = new FileReader();
+
+                    if(angular.isDefined(files)) {
+                        extension = files[0].name.slice(-4);
+                    }
 
                     reader.onload = function(e) {
                         var text = reader.result;

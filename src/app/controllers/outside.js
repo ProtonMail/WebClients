@@ -23,7 +23,8 @@ angular.module("proton.controllers.Outside", [
     message,
     notify,
     pmcw,
-    tools
+    tools,
+    networkActivityTracker
 ) {
     // Variables
     var decrypted_token = window.sessionStorage["proton:decrypted_token"];

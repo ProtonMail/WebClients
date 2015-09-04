@@ -78,6 +78,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if (message) {
             message.editor = editor;
             $scope.listenEditor(message);
+            $scope.focusComposer(message);
+            message.recipientFieldFocussed = 1;
         }
     });
 
@@ -362,11 +364,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 });
             }
         });
-
-        $timeout(function() {
-            $scope.focusComposer(message);
-            message.recipientFieldFocussed = 1;
-        }, 100);
     };
 
     $scope.onAddFile = function(message) {
@@ -542,9 +539,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else {
-                $timeout(function() {
-                    message.editor.focus();
-                }, 500);
+                message.editor.focus();
             }
 
             _.each($scope.messages, function(m) {
@@ -1073,17 +1068,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.isOver = true;
         });
 
-        $scope.close(message, message.saved > 2);
+        $scope.close(message, false);
     };
 
-    $scope.close = function(message, save) {
+    $scope.close = function(message, discard) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
         var id = message.ID;
 
         $rootScope.activeComposer = false;
 
-        if (save === true) {
+        if (discard === false) {
             $scope.saveLater(message);
         }
 
@@ -1095,7 +1090,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
-        if(angular.isDefined(id)) {
+        if(discard === true && angular.isDefined(id)) {
             // Remove message in message list controller
             $rootScope.$broadcast('discardDraft', id);
         }

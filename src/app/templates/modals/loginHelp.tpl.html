@@ -1,0 +1,38 @@
+<div class="modal fade {{this.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="ctrl.cancel()">
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
+                </button>
+                <h4 class="modal-title">Login Help</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>
+                    <a class="btn btn-primary" ui-sref="support.reset-password" ng-click="ctrl.cancel()">
+                        {{'RESET_PASSWORD' | translate }}
+                    </a>
+                </p>
+                <p>
+                    <a href="https://protonmail.ch/username" target="_self" class="btn btn-primary">
+                        {{ 'FORGOT_USERNAME?' | translate }}
+                    </a>
+                </p>
+                <p>
+                    <a href="https://support.protonmail.ch/knowledge-base/common-login-problems/" target="_self" class="btn btn-primary">
+                        Common Login Problems
+                    </a>
+                </p>
+                <p>
+                    <a href="https://protonmail.ch/support" target="_self" class="btn btn-primary">
+                        Email our Support Team
+                    </a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+            </div>
+        </div>
+    </div> 
+</div>

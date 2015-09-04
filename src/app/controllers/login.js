@@ -16,6 +16,7 @@ angular.module("proton.controllers.Auth", [
     authentication,
     networkActivityTracker,
     notify,
+    loginModal,
     pmcw
 ) {
     $rootScope.pageName = "Login";
@@ -33,6 +34,16 @@ angular.module("proton.controllers.Auth", [
             alert(err);
         }
     }
+
+    $scope.getLoginHelp = function() {
+        loginModal.activate({
+            params: {
+                cancel: function() {
+                    loginModal.deactivate();
+                }
+            }
+        });
+    };
 
     var clearErrors = function() {
         $scope.error = null;

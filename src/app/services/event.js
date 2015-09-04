@@ -108,21 +108,23 @@ angular.module("proton.event", ["proton.constants"])
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manageNotices: function(notices) {
-				for(var i = 0; i<notices.length; i++) {
-					var message = notices[i];
+				if(angular.isDefined(notices)) {
+					for(var i = 0; i < notices.length; i++) {
+						var message = notices[i];
+						var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 
-					var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
-					if ( !$cookies.get( cookie_name ) ) {
-						notify({
-							message: message,
-							duration: '0'
-						});
+						if ( !$cookies.get( cookie_name ) ) {
+							notify({
+								message: message,
+								duration: '0'
+							});
 
-						// 2 week expiration
-						var now = new Date();
-						var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
+							// 2 week expiration
+							var now = new Date();
+							var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
 
-						$cookies.put(cookie_name, 'true', { expires: expires });
+							$cookies.put(cookie_name, 'true', { expires: expires });
+						}
 					}
 				}
 			},

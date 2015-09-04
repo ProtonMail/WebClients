@@ -76,10 +76,6 @@
             </div>
             <hr>
             <div class="form-group">
-                <span
-                class="pull-right bold"
-                ng-class="{'text-success': strength(account.loginPassword).number > 100000}"
-                ng-bind="strength(account.loginPassword).word"></span>
                 <label for="password">{{ 'LOGIN_PASSWORD' | translate }}</label>
                 <input
                 id="password"
