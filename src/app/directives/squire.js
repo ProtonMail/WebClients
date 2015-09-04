@@ -207,7 +207,10 @@ angular.module("proton.squire", [
             loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
-            if(jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) {
+            if(
+                ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) || 
+                ( $('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
+            ) {
                 // Start timer when loaded.
                 $(iframe).load(function () {
                     loaded = true;

@@ -240,7 +240,7 @@ angular.module("proton.controllers.Contacts", [
                             notify({message: $translate.instant('CONTACT_EDITED'), classes: 'notification-success'});
                             Contact.index.updateWith(authentication.user.Contacts);
                         } else {
-                            notify({message: response.data.Response[0].Error, classes: 'notification-danger'});
+                            notify({message: response.data.Error, classes: 'notification-danger'});
                         }
                     }, function(response) {
                         notify({message: response, classes: 'notification-danger'});
@@ -296,9 +296,12 @@ angular.module("proton.controllers.Contacts", [
                     var extension = '';
                     var reader = new FileReader();
 
-                    if(angular.isDefined(files)) {
-                        extension = files[0].name.slice(-4);
+                    if( angular.isUndefined(files) || files.length === 0 ) {
+                        notify({message: $translate.instant('NO_FILE'), classes: 'notification-danger'}); //TODO translate
+                        return;
                     }
+
+                    extension = files[0].name.slice(-4);
 
                     reader.onload = function(e) {
                         var text = reader.result;
