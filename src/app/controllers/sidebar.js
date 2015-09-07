@@ -52,31 +52,33 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         var value;
         var unread = '';
         var counters = messageCounts.get();
-        var mailbox = $state.current.data.mailbox;
+        var mailbox = $state.current.data && $state.current.data.mailbox;
 
-        // get unread number
-        if(counters) {
+        if(mailbox) {
+            // get unread number
+            if(counters) {
+                if(mailbox === 'label') {
+                    value = counters.Labels[$stateParams.label];
+                } else if (mailbox === 'starred'){
+                    value = counters.Starred;
+                } else {
+                    value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                }
+
+                if(angular.isDefined(value) && value > 0) {
+                    unread = '(' + value + ') ';
+                }
+            }
+
+            // get name
             if(mailbox === 'label') {
-                value = counters.Labels[$stateParams.label];
-            } else if (mailbox === 'starred'){
-                value = counters.Starred;
+                name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
             } else {
-                value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                name = mailbox;
             }
 
-            if(angular.isDefined(value) && value > 0) {
-                unread = '(' + value + ') ';
-            }
+            $rootScope.pageName = unread + _.string.capitalize(name);
         }
-
-        // get name
-        if(mailbox === 'label') {
-            name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
-        } else {
-            name = mailbox;
-        }
-
-        $rootScope.pageName = unread + _.string.capitalize(name);
     };
 
     /**
