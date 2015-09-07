@@ -366,8 +366,8 @@ angular.module("proton.controllers.Contacts", [
                             Contact.save({
                                 "Contacts": contactArray
                             }).then(function(response) {
-                                added = 0;
-                                duplicates = 0;
+                                var added = 0;
+                                var duplicates = 0;
 
                                 _.forEach(response.data.Responses, function(d) {
                                     if (d.Response.Contact) {
@@ -385,9 +385,9 @@ angular.module("proton.controllers.Contacts", [
                                 }
 
                                 if(duplicates === 1) {
-                                    notify({message: duplicates + ' ' + $translate.instant('CONTACT_WAS_ALREADY_IN_YOUR_CONTACT_LIST'), classes: 'notification-danger'});
+                                    notify({message: duplicates + ' ' + $translate.instant('CONTACT_WAS_DUPLICATE'), classes: 'notification-warning'});
                                 } else {
-                                    notify({message: duplicates + ' ' + $translate.instant('CONTACTS_WERE_ALREADY_IN_YOUR_CONTACT_LIST'), classes: 'notification-danger'});
+                                    notify({message: duplicates + ' ' + $translate.instant('CONTACTS_WERE_DUPLICATE'), classes: 'notification-warning'});
                                 }
 
                                 $scope.contacts = $scope.contactsFiltered();
