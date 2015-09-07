@@ -160,7 +160,7 @@
                     <div
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
-                    ng-show="isOver && message.focussed"></div>
+                    ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body"></squire>
                     <button
                     class="btn btn-sm attach-collapse"
