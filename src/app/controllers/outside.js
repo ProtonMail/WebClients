@@ -49,13 +49,11 @@ angular.module("proton.controllers.Outside", [
             event.preventDefault();
 
             var files = $('#inputFile')[0].files;
-            var file_array = [];
 
             for(var i = 0; i<files.length; i++) {
-                file_array.push(files[i]);
+                $scope.addAttachment(files[i]);
             }
 
-            $scope.addAttachment(file_array);
         });
     }, 100);
 
@@ -180,8 +178,7 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
-    $scope.addAttachment = function(files) {
-        var file = files[0];
+    $scope.addAttachment = function(file) {
         var totalSize = message.sizeAttachments();
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
