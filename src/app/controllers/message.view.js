@@ -36,10 +36,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $rootScope.$broadcast('updatePageName');
 
-    $timeout(function() {
-        $scope.initView();
-    }, 100);
-
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
     });
@@ -527,4 +523,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
     };
+
+    $scope.initView();
 });
