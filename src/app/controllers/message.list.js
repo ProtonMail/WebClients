@@ -45,7 +45,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        $scope.updatePageName();
+        $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
         $scope.refreshMessagesCache().then(function() {
             messageCache.watchScope($scope, "messages");
@@ -57,37 +57,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }, function(error) {
             $log.error(error);
         });
-    };
-
-    $scope.updatePageName = function() {
-        var name;
-        var value;
-        var unread = '';
-        var counters = messageCounts.get();
-
-        if(counters) {
-            // get unread number
-            if($scope.mailbox === 'label') {
-                value = counters.Labels[$stateParams.label];
-            } else if ($scope.mailbox === 'starred'){
-                value = counters.Starred;
-            } else {
-                value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
-            }
-
-            if(angular.isDefined(value) && value > 0) {
-                unread = '(' + value + ') ';
-            }
-        }
-
-        // get name
-        if($scope.mailbox === 'label') {
-            name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
-        } else {
-            name = $scope.mailbox;
-        }
-
-        $rootScope.pageName = unread + _.string.capitalize(name);
     };
 
     $scope.startWatchingEvent = function() {
@@ -109,10 +78,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.$on('discardDraft', function(event, id) {
             $scope.discardDraft(id);
-        });
-
-        $scope.$on('updatePageName', function(event) {
-            $scope.updatePageName();
         });
 
         $scope.$on('applyLabels', function(event, LabelID) {

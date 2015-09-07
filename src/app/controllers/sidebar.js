@@ -29,7 +29,11 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     // Listeners
     $scope.$on('updateLabels', function(event) { $scope.updateLabels(); });
     $scope.$on('updateCounters', function(event) { $scope.refreshCounters(); });
+    $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
+    /**
+     * Called at the beginning
+     */
     $scope.initialization = function() {
         $scope.refreshCounters();
 
@@ -41,8 +45,43 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
+     * Update the browser title to display the current mailbox and the number of unread messages in this folder
+     */
+    $scope.updatePageName = function() {
+        var name;
+        var value;
+        var unread = '';
+        var counters = messageCounts.get();
+        var mailbox = $state.current.data.mailbox;
+
+        // get unread number
+        if(counters) {
+            if(mailbox === 'label') {
+                value = counters.Labels[$stateParams.label];
+            } else if (mailbox === 'starred'){
+                value = counters.Starred;
+            } else {
+                value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            }
+
+            if(angular.isDefined(value) && value > 0) {
+                unread = '(' + value + ') ';
+            }
+        }
+
+        // get name
+        if(mailbox === 'label') {
+            name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+        } else {
+            name = mailbox;
+        }
+
+        $rootScope.pageName = unread + _.string.capitalize(name);
+    };
+
+    /**
      * Manipulates the DOM (labelScroller), sets unread count, and updates the title of the page
-     */  
+     */
     $scope.refreshCounters = function() {
         messageCounts.refresh()
         .then(
@@ -61,7 +100,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     /**
      * Animates the inbox refresh icon
-     */  
+     */
     $scope.spinIcon = function() {
         $scope.spinMe = true;
         $timeout(function() {
@@ -71,7 +110,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     /**
      * Call event to open new composer
-     */  
+     */
     $scope.compose = function() {
         $rootScope.$broadcast('newMessage');
     };
@@ -79,9 +118,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Returns a hexidecimal string for label colors
      * @return {String} "#333" or "#cc9999"
-     */  
+     */
     $scope.color = function(label) {
-        if (label && label.Color) { 
+        if (label && label.Color) {
             return {
                 color: label.Color
             };
@@ -113,7 +152,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Returns a string for the storage bar used for CSS
      * @return {String} "12.5%"
-     */  
+     */
     $scope.sizeBar = function() {
         if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return {
@@ -129,7 +168,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Returns a string for the storage bar
      * @return {String} "1.25/10 GB"
-     */    
+     */
     $scope.renderStorageBar = function() {
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
@@ -137,7 +176,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     /**
      * "jqyoui-droppable" event handler. Moves or labels messages when drag & dropped
-     */  
+     */
     $scope.onDropMessage = function(event, ui, name) {
         var folders = ['inbox', 'archive', 'spam', 'trash'];
 
@@ -162,7 +201,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param mailbox {String} name indentifier for folder
      * @param id {Integer} labelID for a label
      * @return {Integer}
-     */ 
+     */
     $scope.getUnread = function(mailbox, id) {
         var count = 0;
         var value;
@@ -186,7 +225,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Manipulates the DOM height for the scrollable labels area
      * TODO: Should be a directive?
-     */  
+     */
     $scope.labelScroller = function() {
         var sidebarWrapHeight = $('#sidebarWrap').outerHeight();
         var sidebarMenuHeight = 0;

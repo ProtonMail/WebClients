@@ -34,6 +34,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];
 
+    $rootScope.$broadcast('updatePageName');
+
     $timeout(function() {
         $scope.initView();
     }, 100);
