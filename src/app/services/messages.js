@@ -312,7 +312,7 @@ angular.module("proton.messages", ["proton.constants"])
                     // UPDATE - message not in cache, but in inbox or sent. Check if time after last message. This case used more when we cache current
                     // currently same as previous case
                     else if (message.Action === UPDATE && loc) {
-                        if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
+                        if (cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE || message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time) {
                             messagePromise = Message.get({id: message.ID}).$promise;
                             promises.push(messagePromise);
                             messagePromise.then(function(m) {
@@ -321,7 +321,6 @@ angular.module("proton.messages", ["proton.constants"])
                                 } else {
                                     cachedMetadata.update(cacheLoc, loc, m);
                                 }
-
                             });
                         }
                     }
