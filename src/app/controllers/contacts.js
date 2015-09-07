@@ -387,7 +387,7 @@ angular.module("proton.controllers.Contacts", [
                                 if(duplicates === 1) {
                                     notify({message: duplicates + ' ' + $translate.instant('CONTACT_WAS_ALREADY_IN_YOUR_CONTACT_LIST'), classes: 'notification-danger'});
                                 } else {
-                                    notify({message: duplicates + ' ' + $translate.instant('CONTACT_WERE_ALREADY_IN_YOUR_CONTACT_LIST'), classes: 'notification-danger'});
+                                    notify({message: duplicates + ' ' + $translate.instant('CONTACTS_WERE_ALREADY_IN_YOUR_CONTACT_LIST'), classes: 'notification-danger'});
                                 }
 
                                 $scope.contacts = $scope.contactsFiltered();
