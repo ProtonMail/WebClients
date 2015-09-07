@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings", [
 .controller("SettingsController", function(
     $log,
     $rootScope,
+    $sanitize,
     $scope,
     $state,
     $stateParams,
@@ -285,12 +286,19 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveDisplayName = function(form) {
+        var displayName = $sanitize($scope.displayName);
+
         networkActivityTracker.track(
             Setting.display({
-                "DisplayName": $scope.displayName
+                "DisplayName": displayName
             }).$promise.then(function(response) {
-                notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
-                authentication.user.DisplayName = $scope.displayName;
+                if(response.Code === 1000) {
+                    notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
+                    authentication.user.DisplayName = displayName;
+                    $scope.displayName = displayName;
+                } else if(angular.isDefined(response.Error)) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                }
             }, function(error) {
                 notify({message: 'Error during the display name request', classes: 'notification-danger'});
                 $log.error(error);
