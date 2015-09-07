@@ -7,7 +7,8 @@ angular.module("proton.attachmentHeight", [])
         var maxHeight = (buttonHeight * 4);
 
         if (count > 6) {
-        	element.css('maxHeight', maxHeight);
+        	element.css('minHeight', maxHeight);
+			element.css('maxHeight', maxHeight);
         } else {
 			element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + 1);
         }
