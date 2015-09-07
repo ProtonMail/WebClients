@@ -286,7 +286,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.saveDisplayName = function(form) {
-        var displayName = $sanitize($scope.displayName);
+        var displayName = $scope.displayName;
 
         networkActivityTracker.track(
             Setting.display({
