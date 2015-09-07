@@ -196,9 +196,9 @@ angular.module("proton.controllers.Settings", [
                         if (response && response.Code === 1000) {
                             $scope.noticeePassword = '';
                             authentication.user.NotificationEmail = $scope.notificationEmail;
-                            notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
+                            notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
                         } else if (response.Error) {
-                            notify({message: $translate.instant(response.Error), classes: 'notification-success'});
+                            notify({message: $translate.instant(response.Error), classes: 'notification-danger'});
                         }
                     },
                     function(error) {

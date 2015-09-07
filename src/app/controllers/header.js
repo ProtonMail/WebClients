@@ -75,7 +75,7 @@ angular.module("proton.controllers.Header", [])
         if (authentication.user) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});
             if (address) {
-                return address.Email;    
+                return address.Email;
             }
             else {
                 return '';
