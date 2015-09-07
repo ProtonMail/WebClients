@@ -89,6 +89,16 @@ angular.module("proton.controllers.Outside", [
     };
 
     /**
+     * Reset input file
+     */
+    $scope.resetFile = function() {
+        var element = $('#inputFile');
+
+        element.wrap('<form>').closest('form').get(0).reset();
+        element.unwrap();
+    };
+
+    /**
      * Send message
      */
     $scope.send = function() {
@@ -189,6 +199,7 @@ angular.module("proton.controllers.Outside", [
         if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
             notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
             message.uploading = false;
+            $scope.resetFile();
             // TODO remove file in droparea
         } else {
             totalSize += file.size;
@@ -218,6 +229,7 @@ angular.module("proton.controllers.Outside", [
                 // Attachment size error.
                 notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                 message.uploading = false;
+                $scope.resetFile();
                 // TODO remove file in droparea
             }
         }
