@@ -1000,7 +1000,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 } else {
                                     messageCache.set(updateMessages);
                                     notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
-                                    $scope.close(message, false);
+                                    $scope.close(message, false, false);
                                     deferred.resolve(result);
                                 }
                             }, function(error) {
@@ -1085,18 +1085,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.editor.removeEventListener('dragstart', onDragStart);
         message.editor.removeEventListener('dragend', onDragEnd);
 
-        $scope.close(message, false);
+        $scope.close(message, false, true);
     };
 
-    $scope.close = function(message, discard) {
+    $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
         var id = message.ID;
 
         $rootScope.activeComposer = false;
 
-        if (discard === false) {
-            $scope.saveLater(message);
+        if (save === false) {
+            $scope.save(message, true, false, false);
         }
 
         message.close();
@@ -1110,6 +1110,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if(discard === true && angular.isDefined(id)) {
             // Remove message in message list controller
             $rootScope.$broadcast('discardDraft', id);
+            notify({message: 'Message Discard', classes: 'notification-success'}); // TODO translate
         }
 
         // Message closed and focussed?
