@@ -253,9 +253,6 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         setMsgBody: function() {
-
-            $log.debug('setMsgBody');
-
             var body;
 
             // get the message content from either the editor or textarea if its iOS

@@ -205,7 +205,7 @@ angular.module("proton.emailField", [])
             // Initialization
             $scope.message.recipientFields[list] = parent[0];
 
-            $timeout(positionInput, 0);
+            positionInput();
 
             $$element.autosizeInput();
 
