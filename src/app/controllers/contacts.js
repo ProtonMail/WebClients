@@ -23,11 +23,10 @@ angular.module("proton.controllers.Contacts", [
     notify
 ) {
     // Variables
-    $scope.params = { searchContactInput: '' };
+    $scope.params = { searchContactInput: '', currentPage: 1 };
     $rootScope.pageName = 'Contacts';
     authentication.user.Contacts = contacts.data.Contacts;
     $scope.editing = false;
-    $scope.currentPage = 1;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
 
@@ -45,7 +44,7 @@ angular.module("proton.controllers.Contacts", [
         function pagination(contacts) {
             var begin, end;
 
-            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            begin = ($scope.params.currentPage - 1) * $scope.numPerPage;
             end = begin + $scope.numPerPage;
 
             return contacts.slice(begin, end);
@@ -67,7 +66,7 @@ angular.module("proton.controllers.Contacts", [
         }
 
         if(searching === true) {
-            $scope.currentPage = 1;
+            $scope.params.currentPage = 1;
         }
 
         return pagination(orderBy(search(authentication.user.Contacts)));
