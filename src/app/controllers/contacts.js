@@ -396,20 +396,20 @@ angular.module("proton.controllers.Contacts", [
                                     if (d.Response.Contact) {
                                         authentication.user.Contacts.push(d.Response.Contact);
                                         added++;
-                                    } else {
+                                    } else if(d.Response.Code === 13002) { // Contact already exist with this address email
                                         duplicates++;
                                     }
                                 });
 
                                 if(added === 1) {
                                     notify({message: added + ' ' + $translate.instant('CONTACT_IMPORTED'), classes: 'notification-success'});
-                                } else {
+                                } else if(added > 1) {
                                     notify({message: added + ' ' + $translate.instant('CONTACTS_IMPORTED'), classes: 'notification-success'});
                                 }
 
                                 if(duplicates === 1) {
                                     notify({message: duplicates + ' ' + $translate.instant('CONTACT_WAS_DUPLICATE'), classes: 'notification-warning'});
-                                } else {
+                                } else if(duplicates > 1) {
                                     notify({message: duplicates + ' ' + $translate.instant('CONTACTS_WERE_DUPLICATE'), classes: 'notification-warning'});
                                 }
 
