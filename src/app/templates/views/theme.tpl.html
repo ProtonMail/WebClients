@@ -4,7 +4,7 @@
         <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
         <div class="row" id="appearanceForm">
             <div class="col-md-4">
-                <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons">
+                <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons" method="post">
                     <legend>Message Buttons</legend>
                     <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
                     <div class="radio">
@@ -25,7 +25,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <form novalidate ng-submit="saveComposerMode(composerMode)" name="composerMode">
+                <form novalidate ng-submit="saveComposerMode(composerMode)" name="composerMode" method="post">
                     <legend>Composer</legend>
                     <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
                     <div class="radio">
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages">
+                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
                     <legend>{{ 'EMAILS' | translate }}</legend>
                     <label for="composerMode" class="control-label">{{ 'EMAIL_IMAGES' | translate }}</label><br>
                     <div class="radio">
@@ -67,7 +67,7 @@
                 </form>
             </div>
         </div>
-        <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
+        <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
             <legend>Custom Theme</legend>
             <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                 <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
@@ -81,7 +81,7 @@
                 <button type="submit" class="btn btn-sm btn-primary">{{ 'SAVE' | translate }}</button>
             </div>
         </form>
-        <form ng-submit="apiTest()" ng-if="false">
+        <form ng-submit="apiTest()" ng-if="false" method="post">
             <button type="submit" class="btn btn-sm btn-warning">API Test</button>
         </form>
     </div>
