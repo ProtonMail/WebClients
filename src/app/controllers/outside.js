@@ -212,6 +212,7 @@ angular.module("proton.controllers.Outside", [
 
                 attachments.load(file, publicKey).then(function(packets) {
                     message.uploading = false;
+                    $scope.resetFile();
                     message.Attachments.push({
                         Name: file.name,
                         Size: file.size,
@@ -222,6 +223,7 @@ angular.module("proton.controllers.Outside", [
                     });
                 }, function(error) {
                     message.uploading = false;
+                    $scope.resetFile();
                     notify({message: 'Error ', classes: 'notification-danger'});
                     $log.error(error);
                 });
