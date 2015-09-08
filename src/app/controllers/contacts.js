@@ -285,6 +285,30 @@ angular.module("proton.controllers.Contacts", [
         $rootScope.$broadcast('loadMessage', message);
     };
 
+    $scope.composeContacts = function() {
+        var contactsSelected = $scope.contactsSelected();
+        var message = new Message();
+        var ToList = [];
+
+        _.each(contactsSelected, function(contact) {
+            ToList.push({
+                Address: contact.Email,
+                Name: contact.Name
+            });
+        });
+
+        _.defaults(message, {
+            ToList: ToList,
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: []
+        });
+
+        $rootScope.$broadcast('loadMessage', message);
+    };
+
     $scope.uploadContacts = function() {
         dropzoneModal.activate({
             params: {

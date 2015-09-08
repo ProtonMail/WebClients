@@ -6,7 +6,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
-                    <button class="btn btn-default" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
+                    <button class="btn btn-default" ng-disabled="contactsSelected().length === 0" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
+                    <button class="btn btn-default" ng-disabled="contactsSelected().length === 0" ng-click="composeContacts()"><i class="fa fa-send"></i> {{ 'COMPOSE_TO' | translate }}</button>
                 </div>
             </div>
             <div class="col-md-6 text-right">
