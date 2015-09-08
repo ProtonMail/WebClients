@@ -390,14 +390,14 @@ angular.module("proton.controllers.Contacts", [
                                 "Contacts": contactArray
                             }).then(function(response) {
                                 var added = 0;
-                                var duplicates = 0;
+                                var errors = [];
 
                                 _.forEach(response.data.Responses, function(d) {
                                     if (d.Response.Contact) {
                                         authentication.user.Contacts.push(d.Response.Contact);
                                         added++;
-                                    } else if(d.Response.Code === 13002) { // Contact already exist with this address email
-                                        duplicates++;
+                                    } else if(angular.isDefined(d.Response.Error) && angular.isDefined(d.Response.Code)) {
+                                        errors[d.Response.Code] = d.Response.Error;
                                     }
                                 });
 
@@ -407,11 +407,9 @@ angular.module("proton.controllers.Contacts", [
                                     notify({message: added + ' ' + $translate.instant('CONTACTS_IMPORTED'), classes: 'notification-success'});
                                 }
 
-                                if(duplicates === 1) {
-                                    notify({message: duplicates + ' ' + $translate.instant('CONTACT_WAS_DUPLICATE'), classes: 'notification-warning'});
-                                } else if(duplicates > 1) {
-                                    notify({message: duplicates + ' ' + $translate.instant('CONTACTS_WERE_DUPLICATE'), classes: 'notification-warning'});
-                                }
+                                _.each(Object.keys(errors), function(key) {
+                                    notify({message: errors[key], classes: 'notification-danger'});
+                                });
 
                                 $scope.contacts = $scope.contactsFiltered();
                                 Contact.index.updateWith(authentication.user.Contacts);
