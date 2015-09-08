@@ -610,6 +610,7 @@ module.exports = function(grunt) {
             },
             bower: {
                 command: [
+                    "[ -d vendor/ ] && rm -r vendor/",
                     "bower update"
                 ].join("&&")
             }
@@ -687,7 +688,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
-        // "bower", // Just comment bower task for the moment
+        "bower",
         "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
