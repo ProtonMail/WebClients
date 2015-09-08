@@ -571,6 +571,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             }
 
             events.push({Action: 3, ID: message.ID, Message: message});
+
+            if(inDelete) {
+                $rootScope.$broadcast('deleteMessage', message.ID);
+            }
         });
 
         if(events.length > 0) {
