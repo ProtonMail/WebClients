@@ -610,7 +610,7 @@ module.exports = function(grunt) {
             },
             bower: {
                 command: [
-                    "[ -d vendor/ ] && rm -r vendor/",
+                    // "[ -d vendor/ ] && rm -r vendor",
                     "bower update"
                 ].join("&&")
             }
