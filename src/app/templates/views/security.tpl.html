@@ -101,10 +101,9 @@
             </table>
 
             <div class="well" id="logHeader" ng-show="(logCount > logItemsPerPage)">
-
                 <pagination
                 ng-show="(logCount > logItemsPerPage)"
-                ng-change="loadLogs(page)"
+                ng-change="loadLogs()"
                 max-size="6"
                 total-items="logCount"
                 items-per-page="logItemsPerPage"

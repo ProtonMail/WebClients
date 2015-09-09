@@ -91,8 +91,7 @@ angular.module("proton.controllers.Settings", [
 
     $scope.$on('updateLabels', $scope.updateLabels);
 
-    $scope.loadLogs = function (page) {
-        $scope.currentLogPage = page;
+    $scope.loadLogs = function () {
         // ajax call here get new logs
     };
 
