@@ -499,7 +499,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.print = function() {
-        $state.go('secured.print', { id: message.ID });
+        var url = $state.href('secured.print', { id: message.ID });
+
+        window.open(url, '_blank');
     };
 
     $scope.viewPgp = function() {
