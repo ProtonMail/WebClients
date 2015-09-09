@@ -141,7 +141,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 if(print) {
                     setTimeout(function() {
                         window.print();
-                        window.history.back();
                     }, 1000);
                 }
             },
