@@ -165,6 +165,10 @@ angular.module("proton.squire", [
                     }
                 });
 
+                editor.addEventListener("mscontrolselect", function(event) {
+                    event.preventDefault();
+                });
+
                 editor.addEventListener("pathChange", function() {
                     var p, ref;
 
@@ -208,7 +212,7 @@ angular.module("proton.squire", [
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
             if(
-                ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) || 
+                ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) ||
                 ( $('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
             ) {
                 // Start timer when loaded.
