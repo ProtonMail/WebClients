@@ -168,6 +168,23 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
     };
 
+    $scope.truncateSubject = function(message) {
+        var subject = message.Subject;
+        var original = subject;
+
+        if(subject.length > 0) {
+            while (pmcw.encode_utf8(subject).length > 251) {
+                subject = subject.substring(0, subject.length - 1);
+            }
+
+            if(original !== subject) {
+                subject += '...';
+            }
+        }
+
+        message.Subject = subject;
+    };
+
     $scope.slideDown = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };
@@ -195,7 +212,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
                         done();
-                        $scope.addAttachment(file, message);
+                        if(angular.isUndefined(message.ID)) {
+                            $scope.save(message, false, false, false).then(function() {
+                                $scope.addAttachment(file, message);
+                            });
+                        } else {
+                            $scope.addAttachment(file, message);
+                        }
                     }
                 },
                 init: function(event) {
@@ -365,6 +388,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
+        $scope.truncateSubject(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
