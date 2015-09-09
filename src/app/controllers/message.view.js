@@ -46,6 +46,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     function onResize() {
         $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     }
 
     $(window).on('resize', onResize);
@@ -133,6 +134,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                 $timeout(function() {
                     tools.transformLinks('message-body');
+                    $scope.setMessageHeadHeight();
+                    $scope.setAttachmentHeight();
                 });
 
                 if(print) {
@@ -178,6 +181,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
+        $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -522,6 +527,20 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var messageHeadH1 = $('#messageHead h1').outerHeight();
 
         $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
+    };
+
+    $scope.setAttachmentHeight = function() {
+        var count = parseInt(message.Attachments.length);
+        var buttonHeight = 32;
+        var maxHeight = (buttonHeight * 4);
+        var element = $('#attachmentArea');
+
+        if (count > 6) {
+            element.css('minHeight', maxHeight);
+            element.css('maxHeight', maxHeight);
+        } else {
+            element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
+        }
     };
 
     $scope.initView();

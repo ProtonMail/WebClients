@@ -61,7 +61,6 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
-    "proton.attachmentHeight",
 
     // Filters
     "proton.filters.strings",
@@ -131,7 +130,7 @@ angular.module("proton", [
                 data[whitelist[i]] = item;
             }
         }
-        
+
         window.sessionStorage.clear();
 
         for (var key in data) {
@@ -264,7 +263,7 @@ angular.module("proton", [
                     $injector.get('$state').go('login');
                 }
             }
-            
+
             return $q.reject(rejection);
         }
     };
