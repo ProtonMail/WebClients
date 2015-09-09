@@ -99,17 +99,18 @@ angular.module("proton.attachments", [
 
                 if (statusCode !== 200) {
                     // Error with the request
-                    notify('Unable to upload file. Please try again.');
+                    notify({message: 'Unable to upload file. Please try again.', classes: 'notification-danger'}); // TODO translate
                     attachmentData.loading = false;
                     deferred.reject();
-                    return;
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
                         // Attachment disallowed by back-end size limit (no change in size)
                         notify.closeAll();
-                        notify(response.Error);
+                        notify({message: response.Error, classes: 'notification-danger'});
+                        deferred.reject();
                     } else {
-                        notify('Unable to upload.');
+                        notify({message: $translate.instant('UNABLE_TO_UPLOAD'), classes: 'notification-danger'});
+                        deferred.reject();
                     }
                     attachmentData.loading = false;
                 } else {

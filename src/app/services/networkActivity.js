@@ -35,6 +35,8 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
 
                     if(angular.isDefined(error.message)) {
                         message = error.message;
+                    } else if(angular.isDefined(error.Error)) {
+                        message = error.Error;
                     } else {
                         message = 'An error has occurred. Please try again.';
                     }

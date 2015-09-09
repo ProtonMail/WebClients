@@ -366,7 +366,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
-        $scope.saveOld(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
@@ -377,7 +376,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
-                $scope.save(message, true, true).then(function() {
+                $scope.save(message, true, true, false).then(function() { // message, silently, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
                 }, function(error) {
@@ -600,6 +599,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 dropzone.removeEventListener('dragover', dragover);
                 dropzone.addEventListener('dragover', dragover);
             });
+
+            $scope.saveOld(message);
         }
     };
 
@@ -742,7 +743,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.timeoutSaving = $timeout(function() {
             if($scope.needToSave(message)) {
-                $scope.save(message, true);
+                $scope.save(message, true, false, false); // message, silently, forward, notification
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
