@@ -389,7 +389,12 @@ angular.module("proton.authentication", [
         // },
 
         // Removes all connection data
-        logout: function() {
+        logout: function(reload) {
+
+            if (reload===undefined) {
+                reload = true;
+            }
+            
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
 
@@ -406,7 +411,9 @@ angular.module("proton.authentication", [
 
                 this.user = null;
                 window.onbeforeunload = undefined;
-                location.reload();
+                if (reload) {
+                    location.reload();
+                }
             };
 
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
