@@ -35,6 +35,19 @@ angular.module("proton.controllers.Auth", [
         }
     }
 
+    $scope.initialization = function() {
+        var ua = window.navigator.userAgent;
+        var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+        var webkit = !!ua.match(/WebKit/i);
+        var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+        if (iOSSafari) {
+            // Don't focus the input field
+        } else {
+            $('input.focus').focus();
+        }
+    };
+
     $scope.getLoginHelp = function() {
         loginModal.activate({
             params: {
@@ -213,6 +226,8 @@ angular.module("proton.controllers.Auth", [
             }
         }
     };
+
+    $scope.initialization();
 })
 
 .controller("SecuredController", function(
