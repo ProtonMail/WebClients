@@ -7,7 +7,7 @@
                 <div class="form-group">
                     <button class="btn btn-primary" ng-click="addContact()"><i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}</button>
                     <button class="btn btn-default" ng-disabled="contactsSelected().length === 0" ng-click="deleteContacts()"><i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}</button>
-                    <button class="btn btn-default" ng-disabled="contactsSelected().length === 0" ng-click="composeContacts()"><i class="fa fa-pencil"></i> {{ 'COMPOSE_TO' | translate }}</button>
+                    <button class="btn btn-default" ng-disabled="contactsSelected().length === 0" ng-click="composeContacts()"><i class="fa fa-envelope-o"></i> {{ 'COMPOSE_TO' | translate }}</button>
                 </div>
             </div>
             <div class="col-md-6 text-right">
@@ -79,7 +79,7 @@
                                     <i class="fa fa-trash-o"></i>
                                 </a>
                                 <a pt-tooltip="{{ 'COMPOSE' | translate }}" pt-placement="left" class="btn btn-default btn-sm" ng-click="sendMessageTo(contact)">
-                                    <i class="fa fa-pencil"></i>
+                                    <i class="fa fa-envelope-o"></i>
                                 </a>
                             </td>
                         </tr>

@@ -18,7 +18,7 @@
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
-                {{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt; <a href="" class="email" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-pencil"></i></a>
+                {{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt; <a href="" class="email" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
             </li>
@@ -26,7 +26,7 @@
                 <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length">
                     <li ng-repeat="email in ::message.ToList">
-                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-pencil"></i></a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
@@ -34,7 +34,7 @@
                 <strong>{{ 'CC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.CCList">
-                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-pencil"></i></a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
@@ -42,7 +42,7 @@
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.BCCList">
-                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-pencil"></i></a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
