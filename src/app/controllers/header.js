@@ -55,16 +55,12 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.displayName = function() {
-        var displayName;
+        var displayName = '';
 
         if(authentication.user) {
-            displayName = authentication.user.DisplayName;
-        } 
-        else if($rootScope.tempUser && $rootScope.tempUser.username) {
+            displayName = authentication.user.DisplayName || authentication.user.Name;
+        } else if($rootScope.tempUser && $rootScope.tempUser.username) {
             displayName = $rootScope.tempUser.username;
-        }
-        else {
-            displayName = '';
         }
 
         // Truncate
