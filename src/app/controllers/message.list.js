@@ -317,6 +317,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             lastChecked = message;
         }
+
+        $scope.allSelected();
     };
 
     $scope.onStartDragging = function(event, ui, message) {
