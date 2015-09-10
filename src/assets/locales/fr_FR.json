@@ -49,11 +49,9 @@
     "CONTACT_EDITED": "Contact Edite",
     "CONTACT_IMPORTED": "",
     "CONTACT_NAME": "Nom Du Contact",
-    "CONTACT_WAS_DUPLICATE": "",
     "CONTACTS": "Contacts",
     "CONTACTS_DELETED": "",
     "CONTACTS_IMPORTED": "",
-    "CONTACTS_WERE_DUPLICATE": "",
     "CREATE_NEW_LABEL": "Cree Un Nouveau Label",
     "CREATE_YOUR_ACCOUNT": "",
     "CSS_THEME_CODE": "",
@@ -84,6 +82,7 @@
     "EDIT_CONTACT": "",
     "EDIT_LABEL": "Editer Le Label",
     "EMAIL": "Email",
+    "EMAIL_ADDRESS": "",
     "EMAIL_IMAGES": "",
     "EMAILS": "",
     "EMPTY_DRAFTS": "",
@@ -245,6 +244,7 @@
     "TOGGLE_DISPLAY_ATTACHMENTS": "",
     "TOO_MANY_LABELS_ON_MESSAGE": "",
     "TRASH": "Corbeille",
+    "UNABLE_TO_UPLOAD": "",
     "UNDERLINE": "Souligner",
     "UNENCRYPTED_MESSAGE": "",
     "UNLOCK": "Deverouiller",
@@ -269,8 +269,5 @@
     "WIZARD": "Assistant",
     "WRONG_CURRENT_MAILBOX_PASSWORD": "",
     "YES": "Oui",
-    "YOUR_EMAIL_ADDRESS": "",
-    "{{ 'MANAGE_LABELS' | translate }}": "",
-    "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;": "",
-    "{{ email | contact }}": ""
+    "{{ 'MANAGE_LABELS' | translate }}": ""
 }

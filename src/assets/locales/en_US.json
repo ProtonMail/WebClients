@@ -49,11 +49,9 @@
     "CONTACT_EDITED": "Contact Edited",
     "CONTACT_IMPORTED": "Contact Imported",
     "CONTACT_NAME": "Contact Name",
-    "CONTACT_WAS_DUPLICATE": "Contact Was Duplicate",
     "CONTACTS": "Contacts",
     "CONTACTS_DELETED": "Contacts Deleted",
     "CONTACTS_IMPORTED": "Contacts Imported",
-    "CONTACTS_WERE_DUPLICATE": "Contacts Were Duplicate",
     "CREATE_NEW_LABEL": "Create New Label",
     "CREATE_YOUR_ACCOUNT": "Create Your Account",
     "CSS_THEME_CODE": "CSS Theme Code",
@@ -84,6 +82,7 @@
     "EDIT_CONTACT": "Edit Contact",
     "EDIT_LABEL": "Edit Label",
     "EMAIL": "Email",
+    "EMAIL_ADDRESS": "Email Address",
     "EMAIL_IMAGES": "Email Images",
     "EMAILS": "Emails",
     "EMPTY_DRAFTS": "Empty Drafts",
@@ -245,6 +244,7 @@
     "TOGGLE_DISPLAY_ATTACHMENTS": "Toggle Display Attachments",
     "TOO_MANY_LABELS_ON_MESSAGE": "Too Many Labels On Message",
     "TRASH": "Trash",
+    "UNABLE_TO_UPLOAD": "UNABLE_TO_UPLOAD",
     "UNDERLINE": "Underline",
     "UNENCRYPTED_MESSAGE": "Unencrypted Message",
     "UNLOCK": "Unlock",
@@ -269,8 +269,5 @@
     "WIZARD": "Wizard",
     "WRONG_CURRENT_MAILBOX_PASSWORD": "Wrong Current Mailbox Password",
     "YES": "Yes",
-    "YOUR_EMAIL_ADDRESS": "Your Email Address",
-    "{{ 'MANAGE_LABELS' | translate }}": "{{ 'MANAGE_LABELS' | translate }}",
-    "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;": "{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;",
-    "{{ email | contact }}": "{{ email | contact }}"
+    "{{ 'MANAGE_LABELS' | translate }}": "{{ 'MANAGE_LABELS' | translate }}"
 }
