@@ -567,7 +567,7 @@ angular.module("proton.controllers.Settings", [
     $scope.saveTheme = function(form) {
         networkActivityTracker.track(
             Setting.theme({
-                "Theme": btoa($scope.cssTheme)
+                "Theme": $scope.cssTheme
             }).$promise
             .then(
                 function(response) {
