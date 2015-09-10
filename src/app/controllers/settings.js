@@ -440,7 +440,7 @@ angular.module("proton.controllers.Settings", [
                             function(result) {
                                 if (result.Code === 1000) {
                                     confirmModal.deactivate();
-                                    notify($translate.instant('LABEL_DELETED'));
+                                    notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
                                     authentication.user.Labels = _.without(authentication.user.Labels, label);
                                     $scope.labels = authentication.user.Labels;
                                     $rootScope.$broadcast('updateLabels');
