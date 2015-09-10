@@ -128,6 +128,20 @@ angular.module("proton.controllers.Auth", [
                             message: result.data.ErrorDescription
                         });
                     }
+                    else if (result.data.Code!==undefined && result.data.Code===10002) {
+                        var err;
+                        if (result.data.Error) {
+                            err = result.data.Error;
+                        }
+                        else {
+                            err = "Your account has been disabled.";
+                        }
+                        // Account is disabled.
+                        notify({
+                            classes: 'notification-danger',
+                            message: err
+                        });
+                    }
                     else if (result.data.AccessToken) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
