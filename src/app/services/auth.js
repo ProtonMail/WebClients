@@ -492,8 +492,7 @@ angular.module("proton.authentication", [
                     // Why are we setting this in two places?
                     $rootScope.user = user;
                     this.user = user;
-                    // TODO what the fuck is this? atob is going to break with an non-ASCII, and why would we base64 the theme?
-                    this.user.Theme = atob(user.Theme);
+                    this.user.Theme = user.Theme;
 
                     return user;
                 }.bind(this),
