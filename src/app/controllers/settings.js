@@ -365,7 +365,7 @@ angular.module("proton.controllers.Settings", [
                             }).$promise.then(function(result) {
                                 if(angular.isDefined(result.Label)) {
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
-                                    $scope.labels.push(result.Label);
+                                    authentication.user.Labels.push(result.Label);
                                 } else {
                                     notify({message: result.Error, classes: 'notification-danger'});
                                     $log.error(result);
