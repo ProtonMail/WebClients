@@ -123,6 +123,10 @@ angular.module("proton.controllers.Auth", [
                 function(result) {
                     $log.debug('loginWithCredentials:result.data ', result);
                     if (result.data.Code!==undefined && result.data.Code===401) {
+
+                        // clear password field for the user
+                        $scope.password = '';
+
                         notify({
                             classes: 'notification-danger',
                             message: result.data.ErrorDescription
@@ -217,6 +221,10 @@ angular.module("proton.controllers.Auth", [
                 },
                 function(err) {
                     $log.error('tryDecrypt', err);
+
+                    // clear password for user
+                    $scope.mailboxPassword = '';
+                    
                     notify({
                         classes: 'notification-danger',
                         message: err.message
