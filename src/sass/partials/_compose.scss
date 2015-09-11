@@ -565,6 +565,7 @@ form#compose {
 
     .composer-header {
         height: $row-height;
+        min-height: $row-height;
         line-height: $row-height;
         margin-left: 0;
         margin-right: 0;
