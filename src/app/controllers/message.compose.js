@@ -19,26 +19,26 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     authentication,
     contactManager,
     messageCache,
-    networkActivityTracker,
     notify,
     pmcw,
     tools
 ) {
     // Variables
-    Contact.index.updateWith($scope.user.Contacts);
-    $scope.messages = [];
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
+
+    $scope.messages = [];
     $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
-    $scope.isOver = false;
     $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
+
+    Contact.index.updateWith($scope.user.Contacts);
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -440,6 +440,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
+        console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
@@ -478,6 +479,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     index = $scope.messages.length;
                 }
 
+                styles.top = 'auto';
                 styles.right = right + 'px';
             }
 
@@ -1134,7 +1136,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.focusComposer(_.first($scope.messages));
         }
 
-        setTimeout(function () {
+        $timeout(function () {
             $scope.composerStyle();
         }, 250);
     };

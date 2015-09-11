@@ -127,13 +127,11 @@ angular.module("proton.controllers.Auth", [
                             classes: 'notification-danger',
                             message: result.data.ErrorDescription
                         });
-                    }
-                    else if (result.data.Code!==undefined && result.data.Code===10002) {
+                    } else if (result.data.Code!==undefined && result.data.Code===10002) {
                         var err;
                         if (result.data.Error) {
                             err = result.data.Error;
-                        }
-                        else {
+                        } else {
                             err = "Your account has been disabled.";
                         }
                         // Account is disabled.
@@ -141,8 +139,7 @@ angular.module("proton.controllers.Auth", [
                             classes: 'notification-danger',
                             message: err
                         });
-                    }
-                    else if (result.data.AccessToken) {
+                    } else if (result.data.AccessToken) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
                         $rootScope.tempUser = {};
@@ -152,16 +149,15 @@ angular.module("proton.controllers.Auth", [
                         // console.log('Going to unlock page.');
                         $state.go("login.unlock");
                         return;
-                    }
-	                else if (result.Error) {
+                    } else if (result.Error) {
                         // TODO: This might be buggy
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.ErrorDescription) ? result.ErrorDescription : result.Error;
-	                	notify({
+
+                        notify({
 	                        classes: 'notification-danger',
 	                        message: error
 	                    });
-	                }
-	                else {
+	                } else {
 	                	notify({
 	                        classes: 'notification-danger',
 	                        message: 'Unable to log you in.'
