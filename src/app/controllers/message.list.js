@@ -119,7 +119,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.messageCount = function() {
-        if(angular.isDefined($stateParams.filter)) {
+        if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
             return $rootScope.Total;
         } else {
             if ($scope.mailbox === 'label') {
