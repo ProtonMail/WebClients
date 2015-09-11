@@ -440,7 +440,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
-        console.log('composerStyle');
+        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
@@ -479,7 +479,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     index = $scope.messages.length;
                 }
 
-                styles.top = 'auto';
                 styles.right = right + 'px';
             }
 
