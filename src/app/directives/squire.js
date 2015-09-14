@@ -23,7 +23,7 @@ angular.module("proton.squire", [
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
             scope.$on('$destroy', function() {
-                if(editor) {
+                if(angular.isDefined(editor)) {
                     editor.destroy();
                 }
             });

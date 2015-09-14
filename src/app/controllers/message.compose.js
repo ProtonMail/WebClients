@@ -365,7 +365,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 return;
             }
         }
-
+        
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];

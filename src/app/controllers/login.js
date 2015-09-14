@@ -224,7 +224,7 @@ angular.module("proton.controllers.Auth", [
 
                     // clear password for user
                     $scope.mailboxPassword = '';
-                    
+
                     notify({
                         classes: 'notification-danger',
                         message: err.message
