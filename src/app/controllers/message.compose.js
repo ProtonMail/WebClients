@@ -300,6 +300,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
+        $scope.isOver = false;
         $scope.composerStyle();
 
         attachments.load(file).then(
