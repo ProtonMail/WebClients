@@ -55,23 +55,26 @@
     <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
 <body
+ng-init="$rootScope.testMode=true"
 ontouchstart 
 id="{{ toState }}"
 ng-class="{
     locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),
     login:!isLoggedIn,unlock:isLocked,secure:isSecure(),
     blank:!!isBlank,
-    rows:!testMode,
-    columns:testMode,
+    rows:$rootScope.testMode,
+    columns:!$rootScope.testMode,
     activeComposer:activeComposer}
 ">
+
+{{ testMode }}
 <div id="loading">
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
     <ng-include src="'templates/partials/loader.tpl.html'"></ng-include>
 </div>
 
 <div style="display:block; z-index:9999999; position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff;" ng-if="networkActivity.loading()">
-    <img src="https://31.media.tumblr.com/tumblr_m1cvznb1881rqfhi2o1_400.gif" style="width: 100%; height: 100%; display: block">
+    <img src="http://www.scribblelive.com/wp-content/uploads/2014/01/panda.gif" style="width: 100%; height: 100%; display: block">
 </div>
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>

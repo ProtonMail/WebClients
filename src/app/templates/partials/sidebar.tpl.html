@@ -70,9 +70,9 @@
         </ul>
     </div>
     <div class="footer">
-        <div class="storage">
-            <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
-        </a>
-        <a href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
+        <div class="storage" ng-click="$rootScope.testMode=false">
+            <strong>{{ storagePercentage() }}</strong> {{ $rootScope.testMode }}
+        </div>
+        <a ng-click="$rootScope.testMode=true" data-href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
     </div>
 </section>
