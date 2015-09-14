@@ -156,7 +156,8 @@ angular.module("proton.controllers.Settings", [
         saveAs(blob, filename);
     };
 
-    $scope.exportPublicKey = function () {
+    $scope.exportPublicKey = function (clickEvent) {
+        var element = angular.element(clickEvent.target);
         var pbk = authentication.user.PublicKey;
         var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
         var filename = 'protonmail_public_' + authentication.user.Name + '.txt';

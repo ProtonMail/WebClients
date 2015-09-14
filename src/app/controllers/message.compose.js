@@ -468,17 +468,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                 if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
                     right = (index * (widthComposer + marginRight)) + marginRight;
-                }
-                else {
+                } else {
                     widthWindow -= margin; // margin left
                     var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
                     right = index * (widthComposer - overlap);
                 }
+
                 if (reverseIndex === $scope.messages.length) {
                     right = marginRight;
                     index = $scope.messages.length;
                 }
 
+                styles.top = '';
                 styles.right = right + 'px';
             }
 
