@@ -1,244 +1,130 @@
-<div class="message-toolbar">
-    <ul class="nav navbar-nav">
-        <li class="seperator selectAll">
-            <label>
-                <input
-                type="checkbox"
-                name="selectAll"
-                ng-model="allSelectedCheckbox"
-                ng-click="selectAllMessages()"
-                pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" />
-            </label>
-        </li>
-        <li ng-show="!messageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-eye-slash"></i>
-            </a>
-        </li>
-        <li ng-show="messageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" >
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-eye"></i>
-            </a>
-        </li>
-        <li
-        ng-if="mailbox != 'archive' && mailbox != 'drafts'"
-        pt-tooltip="{{ 'ARCHIVE' | translate }}"
-        >
-            <a
-            href
-            ng-click="moveMessagesTo('archive')"
-            ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-archive"></i>
-            </a>
-        </li>
-        <li
-        ng-if="mailbox != 'inbox' && mailbox != 'sent' && mailbox != 'drafts'"
-        pt-tooltip="{{ 'INBOX' | translate }}"
-        >
-            <a
-            href
-            ng-click="moveMessagesTo('inbox')"
-            ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-inbox"></i>
-            </a>
-        </li>
-        <li
-        ng-if="mailbox != 'spam' && mailbox != 'drafts' && mailbox != 'trash' && mailbox != 'sent'"
-        pt-tooltip="{{ 'SPAM' | translate }}"
-        >
-            <a
-            href
-            ng-click="moveMessagesTo('spam')"
-            ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-spam-flame"></i>
-            </a>
-        </li>
-        <li
-        ng-if="mailbox != 'trash' && mailbox != 'spam'"
-        pt-tooltip="{{ 'TRASH' | translate }}"
-        >
-            <a
-            href
-            ng-click="moveMessagesTo('trash')"
-            ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-trash-o"></i>
-            </a>
-        </li>
-        <li
-        ng-if="('secured.spam' | isState) || ('secured.trash' | isState) || ('secured.drafts' | isState)"
-        pt-tooltip="{{ 'DELETE' | translate }}"
-        >
-            <a
-            href
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
-            ng-click="moveMessagesTo('delete')"
-            >
-                <i class="fa fa-times-circle"></i>
-            </a>
-        </li>
-        <li class="seperator" ng-show="!messageButtons" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
-            <a href="" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-eye"></i>
-            </a>
-        </li>
-        <li class="seperator" ng-show="messageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
-            <a href="" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }">
-                <i class="fa fa-eye-slash"></i>
-            </a>
-        </li>
-        <li class="seperator" pt-tooltip="{{ 'LABELS' | translate }}">
-            <a href="" id="open-label" class="dropdown-toggle" data-toggle="dropdown" ng-class="{ disabled: numberSelectedMessages === 0 }">
+<nav id="pm_toolbar">
+
+    <div class="main">
+        <label>
+            <input type="checkbox" name="selectAll" ng-model="allSelectedCheckbox" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+        </label>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="pm_trigger">
                 <i class="fa fa-tag"></i>
-                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-angle-down"></i>
             </a>
-            <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels" />
-        </li>
-        <li class="seperator">
-            <a href="" pt-tooltip="{{ 'MORE_OPTIONS' | translate }}" class="dropdown-toggle" data-toggle="dropdown">
-                {{ 'MORE' | translate }} <i class="fa fa-caret-down"></i>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="pm_trigger">
+                <strong>More</strong> <i class="fa fa-angle-down"></i>
             </a>
-            <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-submenu">
-                    <a href class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-caret-right pull-right"></i>
-                        {{ 'SHOW' | translate }}
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li ng-class="{selected: selectedFilter == 'unread'}">
-                            <a href ng-click="filterBy('unread')">
-                                <i class="fa fa-eye-slash"></i> {{ 'UNREAD' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedFilter == 'read'}">
-                            <a href ng-click="filterBy('read')">
-                                <i class="fa fa-eye"></i> {{ 'READ' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-if="selectedFilter" class="clear">
-                            <a href ng-click="clearFilter()">
-                                <i class="fa fa-ban"></i> {{ 'SHOW_ALL' | translate }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown-submenu">
-                    <a href class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-caret-right pull-right"></i>
-                        {{ 'SORT' | translate }}
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li ng-class="{selected: selectedOrder == 'subject'}">
-                            <a href ng-click="orderBy('subject')">
-                                <i class="fa fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == '-subject'}">
-                            <a href ng-click="orderBy('-subject')">
-                                <i class="fa fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == 'from'}">
-                            <a href ng-click="orderBy('from')">
-                                <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == '-from'}">
-                            <a href ng-click="orderBy('-from')">
-                                <i class="fa fa-sort-alpha-desc"></i> {{ 'FROM' | translate }}: Z-A
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == 'size'}">
-                            <a href ng-click="orderBy('size')">
-                                <i class="fa fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == '-size'}">
-                            <a href ng-click="orderBy('-size')">
-                                <i class="fa fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == '-date'}">
-                            <a href ng-click="orderBy('-date')">
-                                <i class="fa fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                        <li ng-class="{selected: selectedOrder == 'date'}">
-                            <a href ng-click="orderBy('date')">
-                                <i class="fa fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
-                                <i class="fa fa-check"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li
-        class="seperator"
-        ng-if="('secured.drafts' | isState)">
-            <a
-            href
-            title="{{ 'EMPTY_DRAFTS' | translate}}"
-            ng-class="{ disabled: messages == 0 }"
-            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)"
-            >
-                <i class="fa fa-warning"></i>
-                {{ 'EMPTY_DRAFTS' | translate }}
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>    
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-list"></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
+            <span class="pm_buttons divider hidden-xs">
+                <a href="#" class="pm_trigger">
+                    <strong>{{messageCount()}}</strong> <i class="fa fa-angle-down"></i>
+                </a>
+                <span class="pm_dropdown">
+                    <a href="#">Submenu 1</a>
+                    <a href="#">Submenu 2</a>
+                    <a href="#">Submenu 3</a>
+                </span>
+            </span>
+            <a href="#" class="fa fa-chevron-right divider" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)"></a>
+        </span>
+    </div>
+
+    <div class="mobileMain">
+        <span class="pm_checkbox">
+            <input type="checkbox">
+            <label>
+                <span class="fa fa-check"></span>
+            </label>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-star-o"></a>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-eye-slash hidden-xs" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-trash-o"></a>
+            <a href="#" class="fa fa-archive divider hidden-xs"></a>
+            <a href="#" class="fa fa-smile-o divider hidden-xs"></a>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="pm_trigger">
+                <i class="fa fa-tag"></i> 
+                <i class="fa fa-angle-down"></i> 
             </a>
-        </li>
-        <li
-        class="seperator"
-        ng-if="('secured.spam' | isState)">
-            <a
-            href
-            title="{{ 'EMPTY_SPAM' | translate }}"
-            ng-class="{ disabled: messages == 0 }"
-            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.spam)"
-            >
-                <i class="fa fa-warning"></i>
-                {{ 'EMPTY_SPAM' | translate }}
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+    </div>
+
+    <div class="mobileSecondary">
+        <span class="pm_buttons">
+            <a href="#" class="pm_trigger">
+                <strong>More</strong> <i class="fa fa-angle-down"></i>
             </a>
-        </li>
-        <li
-        class="seperator"
-        ng-if="('secured.trash' | isState)">
-            <a
-            href
-            title="{{ 'EMPTY_TRASH' | translate }}"
-            ng-class="{ disabled: messages == 0 }"
-            ng-click="emptyFolder(CONSTANTS.MAILBOX_IDENTIFIERS.trash)"
-            >
-                <i class="fa fa-warning"></i>
-                {{ 'EMPTY_TRASH' | translate }}
-            </a>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount() > 0">
-        <li class="pageDropdown seperator">
-             <a href title="{{ 'PAGINATION' | translate }}" ng-click="showPagination = !showPagination">
-                {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
-            </a>
-            <select id="page">
-                <option ng-repeat="label in makeDropdownPages()" value="{{$index + 1}}">{{ label }}</option>
-            </select>
-        </li>
-        <li class="prev-page seperator">
-            <a href title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-        </li>
-        <li class="next-page">
-            <a href title="{{ 'NEXT' | translate }}" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)">
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </li>
-    </ul>
-</div>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
+            <span class="pm_buttons divider hidden-xs">
+                <a href="#" class="pm_trigger">
+                    <strong>{{messageCount()}}</strong> <i class="fa fa-angle-down"></i>
+                </a>
+                <span class="pm_dropdown">
+                    <a href="#">Submenu 1</a>
+                    <a href="#">Submenu 2</a>
+                    <a href="#">Submenu 3</a>
+                </span>
+            </span>
+            <a href="#" class="fa fa-chevron-right divider" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)"></a>
+        </span>
+    </div>
+
+</nav>

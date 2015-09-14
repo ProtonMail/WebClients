@@ -221,7 +221,11 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             count = value;
         }
 
-        return count;
+        if (count===0) {
+            return;
+        }
+
+        return '('+count+')';
     };
 
     /**

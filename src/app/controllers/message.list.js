@@ -298,7 +298,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.getColorLabel = function(id) {
         return {
-            backgroundColor: $scope.getLabel(id).Color
+            color: $scope.getLabel(id).Color,
+            borderColor: $scope.getLabel(id).Color
         };
     };
 

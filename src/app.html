@@ -16,6 +16,10 @@
     <meta name="msapplication-TileImage" content="/assets/favicon_128.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,300italic,400italic,600italic,700italic,800italic,800' rel='stylesheet' type='text/css'>        
+    <link  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
     <script type="text/javascript">
     function is_good_prng_available() {
         if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
@@ -53,6 +57,7 @@
 <body
 ontouchstart 
 id="{{ toState }}"
+class="rows"
 ng-class="{
     locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),
     login:!isLoggedIn,unlock:isLocked,secure:isSecure(),
@@ -67,5 +72,6 @@ ng-class="{
 <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script>
 <% }); %>
+
 </body>
 </html>

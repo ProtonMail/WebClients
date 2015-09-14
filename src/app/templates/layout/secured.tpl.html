@@ -1,9 +1,27 @@
-<div ng-include src="'templates/partials/sidebar.tpl.html'" id="sidebar" class="hidden-xs"></div>
+<div ng-include src="'templates/partials/header.tpl.html'"></div>
+<div ng-include src="'templates/partials/sidebar.tpl.html'"></div>
+<div ng-include src="'templates/partials/messageListToolbar.tpl.html'"></div>
 
-<div id="main" class="secure fixed" ui-view="content" ng-hide="advSearchIsOpen"></div>
+<div id="pm_main">
+        
+    <section id="pm_columns">
+        include "includes/columns.html"
+        <div id="pm_view">
+            include "includes/placeholder.html"
+            include "includes/messageView.html"
+        </div>
+    </section>
 
-<ng-include src="'templates/partials/composer.tpl.html'" id="composerFrame"></ng-include>
-<ng-include src="'templates/partials/form.bug.tpl.html'"></ng-include>
-<ng-include src="'templates/partials/safari.attachment.warning.tpl.html'"></ng-include>
-<ng-include ng-if="isLoggedIn" src="'templates/partials/form.search.tpl.html'"></ng-include>
-<div id="backdrop" ng-show="networkActivity.loading()"></div>
+    <section id="pm_rows" ui-view="content">
+        include "includes/rows.html"                
+    </section>
+
+</div>
+
+<!-- <div id="main" class="secure fixed" ui-view="content" ng-hide="advSearchIsOpen"></div> -->
+
+<!-- <ng-include src="'templates/partials/composer.tpl.html'" id="composerFrame"></ng-include> -->
+<!-- <ng-include src="'templates/partials/form.bug.tpl.html'"></ng-include> -->
+<!-- <ng-include src="'templates/partials/safari.attachment.warning.tpl.html'"></ng-include> -->
+<!-- <ng-include ng-if="isLoggedIn" src="'templates/partials/form.search.tpl.html'"></ng-include> -->
+<!-- <div id="backdrop" ng-show="networkActivity.loading()"></div> -->

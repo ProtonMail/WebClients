@@ -1,139 +1,43 @@
-<div ng-controller="HeaderController">
-    <div class="spinner" ng-if="networkActivity.loading()">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-    </div>
-    <!--/.spinner-->
-    <nav
-    id="navbar"
-    class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed hidden-xs"
-    role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="/" target="_self" class="navbar-brand logo" ng-if="!isSecure">
-                    <img src="/assets/img/protonmail.svg" alt="ProtonMail" />
-                </a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <form id="search-form" class="navbar-form navbar-left visible-md-block visible-lg-block" role="search" ng-class="{'focus': !!searchInputFocus}" ng-if="'secured.**' | includedByState" method="post">
-                    <div class="input-group form-group">
-                        <input type="text" class="form-control" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-default btn-toggle" type="button" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom"><span class="fa fa-caret-down"></span></button>
-                            <button class="btn btn-default" type="button" ng-click="searchMessages()" pt-tooltip="Search" pt-placement="bottom"><span class="fa fa-search"></span></button>
-                        </span>
-                    </div>
-                </form>
-                <a href id="searchMob" class="visible-sm-block visible-xs-block pull-left" role="search" ng-if="'secured.**' | includedByState" ng-click="openSearchModal()"><span class="fa fa-search"></span></a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="nav_contact" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ui-sref="secured.contacts" ui-sref-active="active">
-                            <span class="visible-lg-inline-block fa fa-book"></span>
-                            {{ 'CONTACTS' | translate }}
-                        </a>
-                    </li>
-                    <li id="nav_settings" ng-if="isLoggedIn && ('secured.**' | includedByState)">
-                        <a href ui-sref="secured.settings" ui-sref-active="active">
-                            <span class="visible-lg-inline-block fa fa-wrench"></span>
-                            {{ 'SETTINGS' | translate }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href ng-click="openReportModal()">
-                            <span class="visible-lg-inline-block fa fa-bug"></span>
-                            {{ 'REPORT_BUG' | translate }}
-                        </a>
-                    </li>
-                    <li class="dropdown" ng-if="isLoggedIn">
-                        <a href class="dropdown-toggle" data-toggle="dropdown" title="{{ email() }}">
-                            <span class="visible-lg-inline-block fa fa-user"></span>
-                            <em ng-bind="displayName()"></em> <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <!-- <li>
-                                <a href ng-click="openWizard()"><i class="fa fa-magic"></i>{{ 'WIZARD' | translate }}</a>
-                            </li> -->
-                            <li>
-                                <a ng-click="logout()" href><i class="fa fa-power-off"></i>{{ 'LOGOUT' | translate }}</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-    </nav>
-    <nav ng-if="isLoggedIn" class="navbar navbar-default navbar-static-top navbar-inverse navbar-inversed visible-xs-block" role="navigation" ng-class="{'eo': (('eo.unlock'|isState) || ('eo.message'|isState)) }">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle btn btn-dark" data-toggle="collapse" data-target="#navbar-collapse-small">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <button type="button" class="btn btn-dark navbar-btn" ng-click="openSearchModal()">
-                    <i class="fa fa-search"></i>
-                </button>
-                <button type="button" style="margin-right: 15px;" class="btn btn-dark navbar-btn" ng-click="openNewMessage()">
-                    <i class="fa fa-pencil"></i>
-                </button>
-                <div class="spinner" ng-show="networkActivity.loading()">
-                    <div class="bounce1"></div>
-                    <div class="bounce2"></div>
-                    <div class="bounce3"></div>
-                </div>
-                <div class="pull-right">
-                    <a ng-if="messages.length>0" href class="btn btn-dark" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);">
-                        <i class="fa fa-chevron-left"></i>
-                    </a>
-                    <a ng-if="messages.length>0" href class="btn btn-dark" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)">
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-small">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a ng-click="openNewMessage();closeMobileDropdown();"><span class="fa fa-pencil"></span> {{ 'COMPOSE' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.inbox" ng-class="{ active: ('secured.inbox.**' | includedByState) }"><span class="fa fa-inbox"></span> {{ 'INBOX' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.drafts" ng-class="{ active: ('secured.drafts.**' | includedByState) }"><span class="fa fa-file-text-o"></span> {{ 'DRAFTS' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.sent" ng-class="{ active: ('secured.sent.**' | includedByState) }"><span class="fa fa-sign-out"></span> {{ 'SENT' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.trash" ng-class="{ active: ('secured.trash.**' | includedByState) }"><span class="fa fa-trash-o"></span> {{ 'TRASH' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.starred" ng-class="{ active: ('secured.starred.**' | includedByState) }"><span class="fa fa-star"></span> {{ 'STARRED' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.archive" ng-class="{ active: ('secured.archive.**' | includedByState) }"><span class="fa fa-archive"></span> {{ 'ARCHIVE' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.spam" ng-class="{ active: ('secured.spam.**' | includedByState) }"><span class="fa fa-spam-flame"></span> {{ 'SPAM' | translate }}</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a ui-sref="secured.contacts" ui-sref-active="active"><span class="fa fa-book"></span> {{ 'CONTACTS' | translate }}</a>
-                    </li>
-                    <li id="nav_settings" ng-if="'secured.**' | includedByState" class="list-group-item">
-                        <a ui-sref="secured.settings"><span class="fa fa-wrench"></span> {{ 'SETTINGS' | translate }}</a>
-                    </li>
-                    <li id="nav_login" ng-if="!isLoggedIn" class="list-group-item">
-                        <a ui-sref="login"><span class="fa fa-power-off"></span> Login</a>
-                    </li>
-                    <li id="nav_logout" ng-if="isLoggedIn" class="list-group-item">
-                        <a ng-click="logout();closeMobileDropdown();"><span class="fa fa-power-off"></span> {{ 'LOGOUT' | translate }}</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-    </nav>
-</div>
+<header id="pm_header" class="clearfix pm_opensans" ng-controller="HeaderController">
+    <a href="#" class="logo"><img src="/assets/img/logo.png"></a>
+    <a href="#" class="logoMobile"><img src="/assets/img/logo_mobile.png"></a>
+    <span class="location">Inbox</span>
+    <a href="#" class="compose"><i class="fa fa-pencil"></i> <span>Compose</span></a>
+    <a href="#" class="searchBtn"><i class="fa fa-search"></i></a>
+    <form class="searchForm" ng-submit="searchMessages()">
+        <label>
+            <i class="fa fa-search"></i>
+        </label>
+        <button type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+            <i class="fa fa-angle-down"></i>
+        </button>
+        <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" class="query">
+        <a href="#" class="fa fa-times"></a>
+    </form>
+    <ul class="navigation">
+        <li ui-sref-active="active">
+            <a href="#" ui-sref="secured.inbox">
+                <i class="fa fa-envelope-o"></i>
+                <strong>Mailbox</strong>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a href="#" ui-sref="secured.contacts">
+                <i class="fa fa-users"></i>
+                <strong>{{ 'CONTACTS' | translate }}</strong>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a href="#" ui-sref="secured.settings">
+                <i class="fa fa-cogs"></i>
+                <strong>{{ 'SETTINGS' | translate }}</strong>
+            </a>
+        </li>
+        <li>
+            <a href="#" ng-click="logout()">
+                <i class="fa fa-power-off"></i>
+                <strong>{{ 'LOGOUT' | translate }}</strong>
+            </a>
+        </li>
+    </ul>
+</header>

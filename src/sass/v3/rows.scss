@@ -94,17 +94,19 @@
 				text-align: center;
 			}
 			.sender {
-				width: 250px;
-				min-width: 250px;
+				cursor: pointer;
+				width: 170px;
+				min-width: 170px;
 				span {
 					display: block;
-					width: 250px;
+					width: 170px;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 				}
 			}
 			.subject {
+				cursor: pointer;
 				flex-grow: 1;
 				position: relative;
 				height: 38px;
