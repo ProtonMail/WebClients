@@ -8,6 +8,7 @@
 		max-height: 40rem;
 		padding: 1px 20px 1px 15px;	
 		position: relative;
+		flex-grow: 1;
 		.message {
 			height: $rowHeight;
 			line-height: $rowHeight;

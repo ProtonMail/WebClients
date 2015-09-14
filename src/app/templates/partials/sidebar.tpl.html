@@ -71,7 +71,7 @@
     </div>
     <div class="footer">
         <div class="storage" ng-click="$rootScope.testMode=false">
-            <strong>{{ storagePercentage() }}</strong> {{ $rootScope.testMode }}
+            <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
         </div>
         <a ng-click="$rootScope.testMode=true" data-href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
     </div>

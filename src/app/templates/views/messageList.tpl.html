@@ -1,29 +1,68 @@
-<div class="list pm_opensans maxheight">
-<div class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
-        <span class="pm_checkbox">
-            <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
-            <label for="pm_mobile_messageList_message{{$index}}">
-                <span class="fa fa-check"></span>
-            </label>
-        </span>
-        <span class="star">
-            <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
-                <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
-            </a>
-        </span>
-        <span class="sender" ng-click="navigateToMessage($event, message)">
-            <span>{{ message.SenderName || message.SenderAddress }}</span>
-        </span>
-        <span class="readIndicator"><span></span></span>
-        <span class="subject" ng-click="navigateToMessage($event, message)">
-            <span>{{ message.Subject }}</span>
-            <span class="pm_labels" ng-if="message.LabelIDs">
-                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
-            </span>
-        </span>
-        <span class="size">{{ message.Size | humanSize }}</span>
-        <i class="fa fa-paperclip"></i>
-        <span class="time">{{ message.Time | readableTime }}</span>
-
+<section id="pm_columns">
+    <div class="list pm_opensans maxheight">
+        <div class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
+            <aside>
+                <label>
+                    <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
+                </label>
+                <span>
+                    <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                        <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
+                    </a>
+                </span>
+                <span>
+                    <span class="readIndicator"></span>
+                </span>
+                <span>
+                    <span class="fa fa-paperclip"></span>
+                </span>
+            </aside>
+            <header>
+                <p>
+                    <strong>{{ message.SenderName || message.SenderAddress }}</strong>
+                    <span class="time">{{ message.Time | readableTime }}</span>
+                </p>
+            </header>
+            <article>
+                <p class="pm_labels" ng-if="message.LabelIDs.length">
+                    <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+                </p>
+                <p>{{ message.Subject }}</p>
+            </article>
+        </div><!--/.message-->
+    </div><!--/.list-->
+    <div id="pm_view">
+        <img src="https://31.media.tumblr.com/tumblr_m1cvznb1881rqfhi2o1_400.gif" style="width: 100%; height: 100%; display: block">
     </div>
-</div>
+</section>
+
+<section id="pm_rows" ui-view="content">
+    <div class="list pm_opensans maxheight">
+        <div class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
+            <span class="pm_checkbox">
+                <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
+                <label for="pm_mobile_messageList_message{{$index}}">
+                    <span class="fa fa-check"></span>
+                </label>
+            </span>
+            <span class="star">
+                <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                    <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
+                </a>
+            </span>
+            <span class="sender" ng-click="navigateToMessage($event, message)">
+                <span>{{ message.SenderName || message.SenderAddress }}</span>
+            </span>
+            <span class="readIndicator"><span></span></span>
+            <span class="subject" ng-click="navigateToMessage($event, message)">
+                <span>{{ message.Subject }}</span>
+                <span class="pm_labels" ng-if="message.LabelIDs">
+                    <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+                </span>
+            </span>
+            <span class="size">{{ message.Size | humanSize }}</span>
+            <i class="fa fa-paperclip"></i>
+            <span class="time">{{ message.Time | readableTime }}</span>
+        </div><!--/.message-->
+    </div><!--/.list-->
+</section>
