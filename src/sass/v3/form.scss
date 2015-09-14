@@ -1,0 +1,43 @@
+@import "variables";
+
+.pm_checkbox {
+	display: inline-block;
+	font-size: 10px;
+	height: 2em;
+	line-height: 2em;	
+	input[type="checkbox"] + label {
+		display: inline-block;
+		text-align: center;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		border-radius: 2px;
+		border: 1px solid #ededed;
+		cursor: pointer;
+		background: #fff;
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			opacity: 0;
+			float: left;
+			width: 2em;
+			height: 2em;
+			line-height: 2em;
+			text-align: center;
+			-webkit-transition: opacity .2s ease;
+			   -moz-transition: opacity .2s ease;
+			    -ms-transition: opacity .2s ease;
+			     -o-transition: opacity .2s ease;
+			        transition: opacity .2s ease;		
+		}
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+	input[type="checkbox"] + label:hover span {
+		opacity: .25;
+	}
+	input[type="checkbox"]:checked + label span {
+		opacity: 1;
+	}
+}

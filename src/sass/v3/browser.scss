@@ -1,0 +1,14 @@
+@import "variables";
+
+.ua-chrome {
+    // Custom Scrollbars
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        background: #eeeeee
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #9397cd;
+        border-radius: 2px;
+    }
+}

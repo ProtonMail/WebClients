@@ -1,0 +1,24 @@
+@import "variables";
+
+#pm_placeholder {
+	display: none;
+	text-align: center;
+	padding-top: 250px;
+	color: #555;
+	.fa {
+		font-size: 1.5rem;
+	}
+	h2 {
+		font-weight: 400;
+	}
+	.pm_buttons {
+		float: none;
+		display: inline-block;
+		a {
+			font-size: 14px;
+			display: inline-block;
+			margin: auto;
+			float: none;
+		}
+	}
+}

@@ -1,0 +1,107 @@
+@import "variables";
+
+#pm_toolbar {
+    padding: 14px 0 14px 11px;
+    height: $toolbarHeight;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+    margin-left: $sidebarWidth;
+    .main {
+        & > label {
+            float: left;
+            display: block;
+            line-height: 35px;
+            height: 35px;
+            padding: 0 10px 0 14px;
+        }
+    }
+    .mobileMain,
+    .mobileSecondary {
+        display: none;
+    }
+    .mobileMain {
+        float: left;
+        padding-left: 14px;
+        .pm_checkbox {
+            float: left;
+            margin: 8px 10px 0 0;
+        }
+    }
+    .mobileSecondary {
+        float: right;
+        padding-right: 40px;
+        .pm_buttons {
+            a {
+                padding: 0 8px
+            }
+        }
+        .pm_dropdown {
+            left: auto;
+            right: -1px;
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    #pm_toolbar {
+        display: block;
+        float: none;
+        margin-right: 27px;
+        margin-left: 17px;
+        .mobileMain {
+            padding-left: 0;
+            position: relative;
+            left: -2px;
+            .pm_buttons {
+                a {
+                    padding: 0 11px;
+                }
+                margin-right: 0 10px 0 0;
+                .pm_buttons {
+                    margin: 0;
+                }
+            }            
+            .pm_checkbox {
+                margin-top: 6px;
+            }
+        }
+        .mobileSecondary {
+            padding: 0;
+            .pm_buttons {
+                a {
+                    padding: 0 11px;
+                }
+                margin: 0 0 0 10px;
+                .pm_buttons {
+                    margin: 0;
+                }
+            }            
+        }
+    }
+}
+
+@media (max-width: 660px) {
+
+}
+
+@media (max-width: 600px) {
+    #pm_toolbar {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0;
+        .mobileMain {
+            left: 0;
+            .pm_buttons {
+                a {
+                    padding: 0 8px;
+                }
+            }
+        }
+        .fa.fa-eye.divider {
+            border: none;
+        }
+    }
+
+}

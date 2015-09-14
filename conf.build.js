@@ -17,7 +17,7 @@ module.exports = {
     atpl: ["src/app/**/*.tpl.html"],
     ctpl: ["src/common/**/*.tpl.html"],
     html: ["src/app.html", "src/admin.html", "src/static/**.html"],
-    sass: ["src/sass/application.scss", "src/sass/admin.scss"]
+    sass: ["src/sass/v3/application.scss"]
   },
   external_files: {
     openpgp: ["openpgp.worker.min.js", "openpgp.min.js"]

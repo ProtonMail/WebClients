@@ -1,0 +1,184 @@
+@import "variables";
+
+section#pm_sidebar {
+    display: block;
+    padding: 15px 25px;
+    width: $sidebarWidth; 
+    min-width: $sidebarWidth;
+    box-sizing: border-box;
+    float: left;
+    a.compose {
+        height: 35px;
+        line-height: 35px;
+        border-radius: 2px;
+        background-color: #9397cd;
+        display: block;
+        text-align: center;
+        color: #fff; 
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-bottom: 15px;
+        font-size: 12px;
+        padding-right: .5rem;
+        width: 135px;
+        box-sizing: border-box;
+        &:hover {
+            background-color: #7e82b4;
+        }
+        &:active {
+            background-color: #66669a;
+        }
+        .fa {
+            display: inline-block;
+            width: 1rem;
+        }
+    }
+    ul.menu { 
+        padding: 0;
+        margin: 0;
+        display: block;
+        list-style-type: none;
+        font-size: 14px;
+        margin-bottom: 30px;
+        li {
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            margin-bottom: 10px;
+            a {
+                text-decoration: none;
+                height: 30px;
+                line-height: 30px;
+                color: #7a7982;
+                display: block;
+                border: 1px solid transparent;
+                i.fa {
+                    height: 30px;
+                    line-height: 30px;
+                    display: block;
+                    float: left;
+                    width: 40px;
+                    text-align: center;
+                    color: #ccc;
+                }
+                .fa-repeat {
+                    color: #d2d2d2;
+                    float: right;
+                    display: block;
+                    line-height: 30px;
+                    height: 30px;
+                    padding-right: .5rem;
+                }
+                em {
+                    font-style: normal;
+                    font-weight: 400;
+                    color: #d2d2d2;
+                }
+            }
+            &.active {
+                a {
+                    background-color: #f6f6f6;
+                    border-color: #efefef;
+                    font-weight: 700;
+                    color: #669;
+                    i.fa {
+                        color: #669;
+                    }
+                }
+            }
+        }
+    }
+
+    div.labels {
+        font-size: 14px;   
+        margin-bottom: 30px;
+        form {
+            input {
+                display: inline-block;
+                border: none;
+                border-bottom: 1px solid #ededed;
+                padding-left: 10px;
+                line-height: 30px;
+                height: 30px;
+                width: 5rem;
+                font-size: 12px;
+                box-sizing: border-box;
+                margin-left: -10px;
+            }
+            ::-webkit-input-placeholder {
+               color: #d9d9d9;
+            }
+            :-moz-placeholder { 
+               color: #d9d9d9;  
+            }
+            ::-moz-placeholder {  
+               color: #d9d9d9;  
+            }
+            :-ms-input-placeholder {  
+               color: #d9d9d9;  
+            }        
+            .fa-plus {
+                display: inline-block;
+                font-size: 10px;
+                color: #9397cd;
+                width: 40px;
+                text-align: center;
+            }
+        }
+        ul {
+            display: block;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            height: 175px;
+            overflow: auto;
+            li {
+                display: block;
+                padding: 0;
+                margin: 0;
+                a {
+                    display: block;
+                    height: 35px;
+                    line-height: 35px;
+                    text-decoration: none;
+                    color: #7a7982;
+                    .fa-tag {
+                        display: inline-block;
+                        width: 40px;
+                        text-align: center;
+                        float: left;
+                    }
+                    strong {
+                        float: left;
+                        display: block;
+                        font-weight: 400;
+                    }
+                }
+            }
+            
+        }
+    }
+    div.footer {
+        font-size: 12px;
+        color: #bbb;
+        text-transform: uppercase;
+        text-align: center;
+        div.storage {
+            strong {
+                color: #9397cd
+            }
+        }
+        a {
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: #cececf;
+            font-size: 10px;
+        }        
+    }
+}
+
+@media (max-width: 1024px) {
+    section#pm_sidebar {
+        display: none;
+    }
+}

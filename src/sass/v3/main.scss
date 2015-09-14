@@ -1,0 +1,104 @@
+@import "variables";
+
+/* 
+Be extremely careful what goes here. 
+It will conflict with email rendering if the selectors are not specific or nested properly
+*/
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.fa-paperclip {
+	color: #aba7be;
+	display: inline-block;
+	text-align: center;
+	width: 1.5rem;
+	min-width: 1.5rem;
+}
+
+.pm_opensans {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.pm_view {
+	float: left;
+	flex-grow: 1;
+	padding-right: 40px;
+}
+
+body.columns {
+	#pm_columns {
+		display: flex;
+	}
+	#pm_rows {
+		display: none;
+	}
+	#pm_toolbar {
+        .main {
+            display: block;
+        }
+        .mobileMain,
+        .mobileSecondary {
+            display: none;
+        }
+	}
+}
+
+body.rows {
+	#pm_columns {
+		display: none;
+	}
+	#pm_rows {
+		display: flex;
+	}
+	#pm_toolbar {
+        .main {
+            display: none;
+        }
+        .mobileMain,
+        .mobileSecondary {
+            display: block;
+        }
+	}
+}
+
+@media (max-width: 1024px) {
+	#pm_toolbar {
+		padding-left: 25px;
+		padding-right: 15px;
+        .main {
+            display: none;
+        }
+        .mobileMain,
+        .mobileSecondary {
+            display: block;
+        }
+	}
+	.pm_view {
+		display: none;
+	}
+	#pm_list {
+		width: 100%;
+		padding: 0;
+		div#pm_mobile_messageList {
+			table {
+				tr {
+					td.action {
+						padding-left: 25px;
+					}
+					td.time {
+						padding-right: 25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.hidden-xs {
+		display: none !important;
+	}
+}

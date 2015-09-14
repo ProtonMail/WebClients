@@ -1,0 +1,147 @@
+@import "variables";
+
+#pm_columns {
+	margin-left: $sidebarWidth;
+	display: flex;
+	.list {
+		width: 490px;
+		min-width: 490px;
+		box-sizing: border-box;
+		padding-left: 15px;		
+		overflow-y: auto;
+		overflow-x: hidden;
+		max-height: 40rem; 
+		padding-right: 25px;
+		div.message {
+			position: relative;
+			border: 1px solid transparent;		
+			border-top-color: #ededed;
+			padding: 12px 0 12px 45px;
+			cursor: pointer;
+			border-radius: 2px;
+			margin: 0 5px;
+			color: #666;
+			&.active {
+				background-color: #f6f6f6;
+				border-color: #efefef;	
+				margin: 0 -5px;
+				padding-left: 55px;
+				padding-right: 10px;
+				box-shadow: 0 1px 0 #fff;
+				z-index: 2;
+				aside {
+					left: 10px;
+				}
+				article {
+					.pm_labels {
+						margin-right: 0;
+						background-color: #f6f6f6;
+						.pm_label {
+							background-color: #f6f6f6;
+							box-shadow: 0 0 0 4px #f6f6f6;
+						}
+					}
+				}
+			}
+			&.unread * {
+				font-weight: 700;
+				color: #333;
+				&.fa {
+					font-weight: 400;
+				}
+				span.readIndicator {
+					opacity: 1;
+				}
+			}
+			strong {
+				font-weight: 400;
+			}
+			.fa-paperclip {
+				color: #bababa !important;
+			}
+			aside {
+				display: inline-block;
+				width: 40px;
+				position: absolute;
+				left: 0;
+				top: 12px;
+				bottom: 12px;
+				right: auto;
+				z-index: 2;
+				& > * {
+					display: inline-block;
+					width: 20px;
+					line-height: 20px;
+					height: 20px;
+					text-align: center;
+					vertical-align: middle;
+					float: left;
+				}
+				a {
+					text-decoration: none;
+				}
+				.fa {
+					font-size: 13px;
+				}
+			}
+			a.fa-star-o {
+				color: #9397cd
+			}
+			a.fa-star {
+				color: #e7d360
+			}
+			span.readIndicator {
+				background: #a8d24c;
+				display: inline-block;
+				border-radius: 10px;
+				width: 10px;
+				height: 10px;
+				opacity: 0
+			}
+			header {
+				line-height: 20px;
+				height: 20px;
+				color: #666;
+				font-size: 14px;
+				p {
+					margin: 0;
+					padding: 0;
+				}
+				span.time {
+					float: right;
+				}
+			}
+			article {
+				line-height: 18px;
+				height: 18px;
+				color: #666;
+				font-size: 14px;
+				.pm_labels {
+					position: absolute;
+					right: 0;
+					bottom: 12px;
+					margin-right: -10px;
+				}
+				p {
+					height: 18px;
+					line-height: 18px;
+					white-space: nowrap;
+					overflow: hidden;					
+					margin: 0;
+					padding: 0;
+					display: inline-block;
+					text-overflow: ellipsis
+				}
+
+			}
+		}
+	}	
+	#pm_view {
+		flex-grow: 1;
+		padding: 0 20px 0 15px;
+		box-sizing: border-box;
+		margin-top: -$toolbarHeight;
+		position: relative;
+		z-index: 6;
+	}
+}

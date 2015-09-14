@@ -1,0 +1,31 @@
+@import "variables";
+
+.pm_dropdown {
+	position: absolute;
+	left: 0-1px;
+	top: 100%;
+	background: #fff;
+	border: 1px solid #ededed;
+	padding: 5px 15px;
+	z-index: 2;
+	margin-top: 5px;
+	display: none;
+	&.open {
+		display: block;
+	}
+	a {
+		display: block;
+		line-height: 25px !important;
+		height: 25px !important;
+		padding: 0 !important;
+		border-bottom: 1px solid #ededed;
+		white-space: nowrap;
+		&:hover {
+			background-color: transparent !important;
+			color: #333 !important;
+		}
+	}
+	a:last-child {
+		border-bottom: none;
+	}
+}
