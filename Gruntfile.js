@@ -3,9 +3,9 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '2.0.21';
+var appVersion = '2.0.24';
 var apiVersion = '1';
-var dateVersion = '31 August 2015';
+var dateVersion = '11 September 2015';
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
@@ -596,12 +596,13 @@ module.exports = function(grunt) {
                     "git remote add origin git@github.com:ProtonMail/Angular.git",
                     "git fetch origin",
                     "git checkout -b deploy origin/deploy",
-                    "for file in `ls assets | grep -E '.*[a-f0-9]{16}\..*'`; do git rm assets/$file; done"
+                    "rm -rf *"
                 ].join("&&")
             },
             push: {
                 command: [
                     "cd dist",
+                    "git ls-files --deleted -z | xargs -0 git rm",
                     "git add --all",
                     "git commit -m \"New Release\"",
                     "git push"
@@ -609,6 +610,7 @@ module.exports = function(grunt) {
             },
             bower: {
                 command: [
+                    // "[ -d vendor/ ] && rm -r vendor",
                     "bower update"
                 ].join("&&")
             }
@@ -686,7 +688,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
-        // "bower", // Just comment bower task for the moment
+        "bower",
         "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",

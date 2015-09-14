@@ -20,7 +20,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     Message,
     attachments,
     authentication,
-    contactManager,
     message,
     messageCache,
     messageCounts,
@@ -35,9 +34,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];
 
-    $timeout(function() {
-        $scope.initView();
-    }, 100);
+    $rootScope.$broadcast('updatePageName');
 
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
@@ -49,6 +46,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     function onResize() {
         $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     }
 
     $(window).on('resize', onResize);
@@ -136,12 +134,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                 $timeout(function() {
                     tools.transformLinks('message-body');
+                    $scope.setMessageHeadHeight();
+                    $scope.setAttachmentHeight();
                 });
 
                 if(print) {
                     setTimeout(function() {
                         window.print();
-                        window.history.back();
                     }, 1000);
                 }
             },
@@ -181,6 +180,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
+        $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -396,7 +397,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var br = '<br />';
         var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
-        var blockquoteStart = '<blockquote>';
+        var blockquoteStart = '<blockquote class="protonmail_quote">';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
         var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
@@ -497,7 +498,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.print = function() {
-        $state.go('secured.print', { id: message.ID });
+        var url = $state.href('secured.print', { id: message.ID });
+
+        window.open(url, '_blank');
     };
 
     $scope.viewPgp = function() {
@@ -526,4 +529,20 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
     };
+
+    $scope.setAttachmentHeight = function() {
+        var count = parseInt(message.Attachments.length);
+        var buttonHeight = 32;
+        var maxHeight = (buttonHeight * 4);
+        var element = $('#attachmentArea');
+
+        if (count > 6) {
+            element.css('minHeight', maxHeight);
+            element.css('maxHeight', maxHeight);
+        } else {
+            element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
+        }
+    };
+
+    $scope.initView();
 });

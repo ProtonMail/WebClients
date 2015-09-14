@@ -26,6 +26,9 @@ Redirect 301 /blogsofwar /why-protonmail
 Redirect 301 /bolehvpn /why-protonmail
 Redirect 301 /privacyforall /why-protonmail
 
+# Hide .git stuff
+RewriteRule ^.*?\.git.* /app.html [NC,L]
+
 # Hide static, doesn't work
 #RewriteRule ^static.* /app.html [NC,L]
 

@@ -61,7 +61,6 @@ angular.module("proton", [
     "proton.dropzone",
     "proton.labels",
     "proton.countdown",
-    "proton.attachmentHeight",
 
     // Filters
     "proton.filters.strings",
@@ -110,6 +109,38 @@ angular.module("proton", [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
+.run(function(CONSTANTS) {
+    // This function clears junk from session storage. Should not be needed forever
+    try {
+        var whitelist = [
+            CONSTANTS.EVENT_ID,
+            CONSTANTS.MAILBOX_PASSWORD_KEY,
+            CONSTANTS.OAUTH_KEY+":SessionToken",
+            CONSTANTS.OAUTH_KEY + ":Uid",
+            CONSTANTS.OAUTH_KEY + ":AccessToken",
+            CONSTANTS.OAUTH_KEY + ":RefreshToken",
+            "proton:decrypted_token",
+            "proton:encrypted_password"
+        ];
+
+        var data = {};
+        for( var i=0; i<whitelist.length; i++) {
+            var item = window.sessionStorage.getItem(whitelist[i]);
+            if( angular.isString(item) ) {
+                data[whitelist[i]] = item;
+            }
+        }
+
+        window.sessionStorage.clear();
+
+        for (var key in data) {
+            window.sessionStorage.setItem(key, data[key]);
+        }
+    }
+    catch(err) {
+        // Do nothing, session storage support checked for elsewhere
+    }
+})
 
 .run(function(
     $document,
@@ -136,7 +167,7 @@ angular.module("proton", [
         }
     });
 
-    $rootScope.browser = tools.getBrowser;
+    $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
 
@@ -171,7 +202,7 @@ angular.module("proton", [
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
     return {
         response: function(response) {
-            if (response.data.Code!==undefined) {
+            if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code===5003) {
                     if ($rootScope.updateMessage===false) {
@@ -232,6 +263,7 @@ angular.module("proton", [
                     $injector.get('$state').go('login');
                 }
             }
+
             return $q.reject(rejection);
         }
     };
@@ -386,37 +418,34 @@ angular.module("proton", [
 /**
  * Offline manager
  */
-.run(function($rootScope, $window, notify) {
+.run(function($rootScope, notify) {
     $rootScope.online = navigator.onLine;
 
-    $window.addEventListener('offline', function() {
+    window.addEventListener('offline', function() {
         $rootScope.online = false;
         notify({
             message: 'You are not connected to the Internet.',
             classes: 'notification-danger',
             duration: 0
         });
-    });
+    }, true);
 
-    $window.addEventListener('online', function() {
+    window.addEventListener('online', function() {
         $rootScope.online = true;
         notify.closeAll();
-    });
+    }, true);
 })
 
 /**
  * Detect if the user use safari private mode
  */
-.run(function(notify) {
-    try {
-        // try to use sessionStorage
-        sessionStorage.test = 2;
-    } catch (error) {
-      notify({
-          message: 'You are in Privacy Mode or have Session Storage disabled.\nPlease deactivate Privacy Mode and then reload the page.',
-          classes: 'notification-danger',
-          duration: 0
-      });
+.run(function(notify, tools) {
+    if(tools.hasSessionStorage() === false) {
+        notify({
+            message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
+            classes: 'notification-danger',
+            duration: 0
+        });
     }
 })
 
@@ -424,14 +453,57 @@ angular.module("proton", [
 // Handle some application exceptions
 //
 
-.factory('$exceptionHandler', function($log) { // function($injector, $log) {
+.factory('$exceptionHandler', function($log, $injector, CONFIG) { // function($injector, $log) {
+    var n_reports = 0;
     return function(exception, cause) {
-        // var errorReporter = $injector.get("errorReporter");
-        // if (exception.message.indexOf("$sanitize:badparse") >= 0) {
-        //     errorReporter.notify("There was an error while trying to display this message.", exception);
-        // }
-        //else {
+        n_reports++;
         $log.error( exception );
-        //}
+
+        if ( n_reports < 6 ) {
+            var debug;
+            if ( exception instanceof Error ) {
+                debug = { 'message': exception.message, 'stack': exception.stack };
+            }
+            else if ( angular.isString( exception ) ) {
+                debug = exception;
+            }
+            else {
+                try {
+                    var json = angular.toJson( exception );
+                    if ( $.isEmptyObject( json ) ) {
+                        debug = exception.toString();
+                    }
+                    else {
+                        debug = exception;
+                    }
+                }
+                catch(err) {
+                    debug = err.message;
+                }
+            }
+
+            try {
+                var url = $injector.get("url");
+                var $http = $injector.get("$http");
+                var tools = $injector.get("tools");
+                var $state = $injector.get("$state");
+                var crashData = {
+                    OS:             tools.getOs,
+                    OSVersion:      '',
+                    Browser:         tools.getBrowser,
+                    BrowserVersion:  tools.getBrowserVersion,
+                    Client:         'Angular',
+                    ClientVersion:  CONFIG.app_version,
+                    Debug: { 'state': $state.$current.name, 'error': debug },
+                };
+                crashPromise = $http.post( url.get() + '/bugs/crash', crashData )
+                    .catch(function(err) {
+                        // Do nothing
+                    });
+            }
+            catch(err) {
+                // Do nothing
+            }
+        }
     };
 });

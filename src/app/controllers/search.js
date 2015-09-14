@@ -10,6 +10,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     CONSTANTS,
     networkActivityTracker
 ) {
+    // Variables
     var modalId = 'searchModal';
     var hideBsModal = function(event) {
         $timeout(function() {
@@ -17,17 +18,27 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         }, 100);
     };
 
+    $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
+
+    // Listeners
     $('#' + modalId).on('hide.bs.modal', hideBsModal);
+
+    $scope.$on('openSearchModal', function(event, value) {
+        $scope.open(value);
+    });
+
+    $scope.$on('search', function(event, searchValue) {
+        $scope.search(searchValue);
+    });
 
     $scope.$on('$destroy', function() {
         $('#' + modalId).off('hide.bs.modal', hideBsModal);
     });
 
-    $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
-
+    // Methods
     function initParams() {
         var params = {};
-
+        // We re-init each params to remove it in the route
         params.page = undefined;
         params.words = undefined;
         params.from = undefined;
@@ -130,8 +141,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         if($scope.open) {
             display = 'block';
             $rootScope.advSearchIsOpen = true;
-        }
-        else {
+        } else {
             $rootScope.advSearchIsOpen = false;
         }
 
@@ -139,12 +149,4 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
             display: display
         };
     };
-
-    $scope.$on('openSearchModal', function(event, value) {
-        $scope.open(value);
-    });
-
-    $scope.$on('search', function(event, searchValue) {
-        $scope.search(searchValue);
-    });
 });

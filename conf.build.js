@@ -74,7 +74,8 @@ module.exports = {
       "vendor/vcard/src/vcard.js",
       "vendor/mellt/javascript/Mellt.js",
       "vendor/mellt/javascript/common-passwords.js",
-      "vendor/dragster/lib/dragster.js"
+      "vendor/dragster/lib/dragster.js",
+      "vendor/html2canvas/build/html2canvas.js"
     ],
     bootstrap_components: [
       "affix",

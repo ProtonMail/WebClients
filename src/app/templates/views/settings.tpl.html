@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-4">
                 <legend>{{ 'NOTIFICATIONS' | translate }}</legend>
-                <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate>
+                <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate method="post">
                     <div class="form-group">
                         <label class="control-label">{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
                         <div>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-4">
                 <legend>{{ 'LOGIN_PASSWORD' | translate }}</legend>
-                <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
+                <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': loginForm.oldLoginPassword.$touched && loginForm.oldLoginPassword.$error.required}">
                         <label class="control-label" for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" class="form-control" placeholder="Current Login Password" required="" />
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-4">
                 <legend>{{ 'MAILBOX_PASSWORD' | translate }}</legend>
-                <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
+                <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': mailboxForm.currentLoginPassword.$touched && mailboxForm.currentLoginPassword.$error.required}">
                         <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" class="form-control" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
@@ -98,7 +98,7 @@
                     <a href="https://support.protonmail.ch/knowledge-base/autosave-contact-list" target="_blank" class="btn btn-link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                 </div>
                 <legend class="margin-top">{{ 'DISPLAY_NAME' | translate }}</legend>
-                <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate>
+                <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': displayNameForm.displayName.$error.required}">
                         <label class="control-label" for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
                         <input id="displayName" type="text" class="form-control" name="displayName" ng-model="displayName" />
@@ -111,7 +111,7 @@
             </div>
             <div class="col-md-4">
                 <legend>{{ 'SIGNATURE' | translate }}</legend>
-                <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate>
+                <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
                         <label class="signature" for="signature">{{ 'SIGNATURE_CONTENT' | translate }}</label>
                         <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
@@ -123,7 +123,7 @@
             </div>
             <div class="col-md-4">
                 <legend>{{ 'ALIASES' | translate }}</legend>
-                <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm">
+                <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm" method="post">
                     <div class="form-group">
                         <label class="control-label" for="">{{ 'SORT_ALIASES' | translate }}</label>
                         <div id="aliases-container">

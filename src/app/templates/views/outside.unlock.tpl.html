@@ -1,7 +1,7 @@
 <div class="panel panel-default panel-medium">
     <div class="panel-body" ng-if="tokenError === false">
         <h1 class="text-center">{{ 'MESSAGE_PASSWORD' | translate }}</h1>
-        <form ng-submit="unlock()" novalidate>
+        <form ng-submit="unlock()" novalidate method="post">
             <fieldset class="pure-form">
                 <div class="form-group">
                     <input class="form-control" autofocus autocomplete="off" autocapitalize="off" autocorrect="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="params.MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />

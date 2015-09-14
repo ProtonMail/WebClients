@@ -103,7 +103,7 @@ angular.module("proton.messages.counts", [
                     counterUpdates.Locations[message.OldLocation] = (message.IsRead === 0) ? curID - 1 : curID;
                 }
             });
-            
+
             this.update('Locations', counterUpdates.Locations);
         },
         mark : function(messages, status) {

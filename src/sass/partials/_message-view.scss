@@ -65,7 +65,6 @@
             border-radius: $border-radius-base;
             border: 1px solid transparent;
             transition: all .5s ease;
-            background: rgba(0, 0, 0, .1);
             padding: 0 5px;
             &:hover {
               background: $primary-color;

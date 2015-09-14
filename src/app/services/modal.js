@@ -122,7 +122,14 @@ angular.module("proton.modals", [])
 .factory('alertModal', function(pmModal) {
     return pmModal({
         controller: function(params) {
+            this.title = params.title;
             this.message = params.message;
+
+            if(angular.isDefined(params.alert)) {
+                this.alert = params.alert;
+            } else {
+                this.alert = 'alert-info';
+            }
 
             this.ok = function() {
                 if (angular.isDefined(params.ok) && angular.isFunction(params.ok)) {
@@ -135,23 +142,18 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('closeModal', function(pmModal) {
+// login help modal
+.factory('loginModal', function(pmModal) {
     return pmModal({
         controller: function(params) {
-            this.discard = function() {
-                if(angular.isDefined(params.discard) && angular.isFunction(params.discard)) {
-                    params.discard();
-                }
-            };
-
             this.cancel = function() {
-                if(angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
             };
         },
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/close.tpl.html'
+        templateUrl: 'templates/modals/loginHelp.tpl.html'
     });
 })
 
@@ -271,6 +273,9 @@ angular.module("proton.modals", [])
             var extension;
             var self = this;
 
+            this.title = params.title;
+            this.message = params.message;
+
             function init() {
                 var drop = document.getElementById(idDropzone);
 
@@ -314,9 +319,6 @@ angular.module("proton.modals", [])
                     }
                 });
             }
-
-            this.title = params.title;
-            this.message = params.message;
 
             this.import = function() {
                 if (angular.isDefined(params.import) && angular.isFunction(params.import)) {

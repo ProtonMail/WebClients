@@ -55,11 +55,11 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.displayName = function() {
-        var displayName;
+        var displayName = '';
 
         if(authentication.user) {
-            displayName = authentication.user.DisplayName;
-        } else {
+            displayName = authentication.user.DisplayName || authentication.user.Name;
+        } else if($rootScope.tempUser && $rootScope.tempUser.username) {
             displayName = $rootScope.tempUser.username;
         }
 
@@ -75,7 +75,7 @@ angular.module("proton.controllers.Header", [])
         if (authentication.user) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});
             if (address) {
-                return address.Email;    
+                return address.Email;
             }
             else {
                 return '';

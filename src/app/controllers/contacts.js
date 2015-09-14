@@ -16,21 +16,27 @@ angular.module("proton.controllers.Contacts", [
     Contact,
     confirmModal,
     contactModal,
+    alertModal,
     dropzoneModal,
     Message,
     networkActivityTracker,
     notify
 ) {
-    $scope.params = {
-        searchContactInput: ''
-    };
-
-    $rootScope.pageName = "Contacts";
+    // Variables
+    $scope.params = { searchContactInput: '', currentPage: 1 };
+    $rootScope.pageName = 'Contacts';
     authentication.user.Contacts = contacts.data.Contacts;
     $scope.editing = false;
-    $scope.currentPage = 1;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
+
+    // Listeners
+    $scope.$on('updateContacts', $scope.updateContacts);
+
+    // Methods
+    $scope.initialization = function() {
+        $scope.contacts = $scope.contactsFiltered();
+    };
 
     $scope.contactsFiltered = function(searching) {
         var contacts = authentication.user.Contacts;
@@ -38,7 +44,7 @@ angular.module("proton.controllers.Contacts", [
         function pagination(contacts) {
             var begin, end;
 
-            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            begin = ($scope.params.currentPage - 1) * $scope.numPerPage;
             end = begin + $scope.numPerPage;
 
             return contacts.slice(begin, end);
@@ -60,15 +66,12 @@ angular.module("proton.controllers.Contacts", [
         }
 
         if(searching === true) {
-            $scope.currentPage = 1;
+            $scope.params.currentPage = 1;
         }
 
         return pagination(orderBy(search(authentication.user.Contacts)));
     };
 
-    $scope.contacts = $scope.contactsFiltered();
-
-    $scope.$on('updateContacts', function() {$scope.updateContacts();});
     $scope.updateContacts = function (){
         $scope.contacts = $scope.contactsFiltered();
     };
@@ -98,7 +101,7 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.deleteAllContacts = function() {
         var title = $translate.instant('DELETE_ALL_CONTACTS');
-        var message = 'Are you sure you want to delete all the contacts?';
+        var message = 'Are you sure you want to delete all your contacts?'; // TODO translate
 
         confirmModal.activate({
             params: {
@@ -110,7 +113,7 @@ angular.module("proton.controllers.Contacts", [
 
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
-                            notify($translate.instant('CONTACTS_DELETED'));
+                            notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
                             Contact.index.updateWith($scope.contacts);
                         }, function(response) {
                             $log.error(response);
@@ -131,10 +134,10 @@ angular.module("proton.controllers.Contacts", [
 
         if (contactsSelected.length === 1) {
             title = $translate.instant('DELETE_CONTACT');
-            message = 'Are you sure you want to delete this contact?';
+            message = 'Are you sure you want to delete this contact?'; // TODO translate
         } else {
             title = $translate.instant('DELETE_CONTACTS');
-            message = 'Are you sure you want to delete contacts selected?';
+            message = 'Are you sure you want to delete the selected contacts?'; // TODO translate
         }
 
         confirmModal.activate({
@@ -158,17 +161,18 @@ angular.module("proton.controllers.Contacts", [
                         }).then(function(response) {
                             _.forEach(response.data.Responses, function(d, i) {
                                 if(d.Response.Code !== 1000) {
-                                    notify(deletedContacts[i].Email +' Not Deleted');
+                                    notify({message: deletedContacts[i].Email + ' ' + $translate.instant('NOT_DELETED'), classes: 'notification-danger'});
                                     authentication.user.Contacts.push(deletedContacts[i]);
                                 }
                             });
-                            notify($translate.instant('CONTACTS_DELETED'));
+                            notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
+                            confirmModal.deactivate();
                             Contact.index.updateWith($scope.contacts);
-                        }, function(response) {
-                            $log.error(response);
+                        }, function(error) {
+                            notify({message: error, classes: 'notification-danger'});
+                            $log.error(error);
                         })
                     );
-                    confirmModal.deactivate();
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -178,14 +182,13 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.addContact = function() {
-        openContactModal('Add New Contact', '', '', function(name, email) {
+        openContactModal($translate.instant('ADD_NEW_CONTACT'), '', '', function(name, email) {
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify("Contact exists for this email address");
+                notify("Contact exists for this email address"); // TODO translate
                 contactModal.deactivate();
-            }
-            else {
+            } else {
                 var newContact = {
                     Name: name,
                     Email: email
@@ -199,14 +202,16 @@ angular.module("proton.controllers.Contacts", [
                         if(response.data.Code === 1001) {
                             authentication.user.Contacts.push(response.data.Responses[0].Response.Contact);
                             $scope.contacts = $scope.contactsFiltered();
-                            notify($translate.instant('CONTACT_ADDED'));
-                            contactModal.deactivate();
+                            notify({message: $translate.instant('CONTACT_ADDED'), classes: 'notification-success'});
                             Contact.index.updateWith(authentication.user.Contacts);
+                            contactModal.deactivate();
                         } else {
-                            notify(response.data.Responses[0].Error);
+                            notify({message: response.data.Responses[0].Error, classes: 'notification-danger'});
+                            $log.error(response);
                         }
-                    }, function(response) {
-                        $log.error(response);
+                    }, function(error) {
+                        notify({message: error, classes: 'notification-danger'});
+                        $log.error(error);
                     })
                 );
             }
@@ -214,14 +219,13 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.editContact = function(contact) {
-        openContactModal('Edit Contact', contact.Name, contact.Email, function(name, email) {
+        openContactModal($translate.instant('EDIT_CONTACT'), contact.Name, contact.Email, function(name, email) {
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match && email !== contact.Email) {
-                notify("Contact exists for this email address");
+                notify({message: "Contact exists for this email address", classes: 'notification-danger'}); // TODO translate
                 contactModal.deactivate();
-            }
-            else {
+            } else {
                 contact.Name = name;
                 contact.Email = email;
                 networkActivityTracker.track(
@@ -230,17 +234,17 @@ angular.module("proton.controllers.Contacts", [
                         "Email": email,
                         "id": contact.ID
                     }).then(function(response) {
-                            if(response.data.Code === 1000) {
-                                contactModal.deactivate();
-                                notify($translate.instant('CONTACT_EDITED'));
-                                Contact.index.updateWith(authentication.user.Contacts);
-                            } else {
-                                notify(response.data.Response[0].Error);
-                            }
-                        }, function(response) {
-                            notify('Error');
-                            $log.error(response);
-                        })
+                        if(response.data.Code === 1000) {
+                            contactModal.deactivate();
+                            notify({message: $translate.instant('CONTACT_EDITED'), classes: 'notification-success'});
+                            Contact.index.updateWith(authentication.user.Contacts);
+                        } else {
+                            notify({message: response.data.Error, classes: 'notification-danger'});
+                        }
+                    }, function(response) {
+                        notify({message: response, classes: 'notification-danger'});
+                        $log.error(response);
+                    })
                 );
             }
 
@@ -281,35 +285,65 @@ angular.module("proton.controllers.Contacts", [
         $rootScope.$broadcast('loadMessage', message);
     };
 
+    $scope.composeContacts = function() {
+        var contactsSelected = $scope.contactsSelected();
+        var message = new Message();
+        var ToList = [];
+
+        _.each(contactsSelected, function(contact) {
+            ToList.push({
+                Address: contact.Email,
+                Name: contact.Name
+            });
+        });
+
+        _.defaults(message, {
+            ToList: ToList,
+            CCList: [],
+            BCCList: [],
+            Subject: '',
+            PasswordHint: '',
+            Attachments: []
+        });
+
+        $rootScope.$broadcast('loadMessage', message);
+    };
+
     $scope.uploadContacts = function() {
         dropzoneModal.activate({
             params: {
-                title: 'Upload Contacts',
+                title: $translate.instant('UPLOAD_CONTACTS'),
                 message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="/blog/exporting-contacts" target="_blank">Need help?</a>',
                 import: function(files) {
                     var contactArray = [];
-                    var extension = files[0].name.slice(-4);
+                    var extension = '';
                     var reader = new FileReader();
 
-                    reader.onload = function(e) {
+                    if( angular.isUndefined(files) || files.length === 0 ) {
+                        notify({message: $translate.instant('NO_FILE'), classes: 'notification-danger'}); //TODO translate
+                        return;
+                    }
 
+                    extension = files[0].name.slice(-4);
+
+                    reader.onload = function(e) {
                         var text = reader.result;
 
                         if(extension === '.vcf') {
-                              var vcardData = vCard.parse(text);
+                            var vcardData = vCard.parse(text);
 
-                              _.forEach(vcardData, function(d, i) {
-                                  if (d.fn && d.email) {
-                                      contactArray.push({'Name' : String(d.fn.value), 'Email' : String(d.email.value)});
-                                  } else if(d.email) {
-                                      contactArray.push({'Name' : String(d.email.value), 'Email' : String(d.email.value)});
-                                  }
-                              });
+                            _.forEach(vcardData, function(d, i) {
+                                if (d.fn && d.email) {
+                                    contactArray.push({'Name' : String(d.fn.value), 'Email' : String(d.email.value)});
+                                } else if(d.email) {
+                                    contactArray.push({'Name' : String(d.email.value), 'Email' : String(d.email.value)});
+                                }
+                            });
 
-                              importContacts(contactArray);
+                            importContacts(contactArray);
                         } else if(extension === '.csv') {
                             Papa.parse(text, {
-                            	complete: function(results) {
+                                complete: function(results) {
                                     var csv = results.data;
                                     var nameKeys = ['Name', 'First Name'];
                                     var emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
@@ -327,25 +361,24 @@ angular.module("proton.controllers.Contacts", [
                                     lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
 
                                     _.forEach(csv, function(d, i) {
-                                      if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
-                                        if (d[nameIndex] !== '') {
-                                            var name = String(d[nameIndex]);
-                                            if ( lastNameIndex !== undefined ) {
-                                                name = name + ' ' + String(d[lastNameIndex]);
+                                        if (i > 0 && typeof(d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
+                                            if (d[nameIndex] !== '') {
+                                                var name = String(d[nameIndex]);
+                                                if ( lastNameIndex !== undefined ) {
+                                                    name = name + ' ' + String(d[lastNameIndex]);
+                                                }
+                                                contactArray.push({'Name' : name, 'Email' : String(d[emailIndex])});
+                                            } else {
+                                                contactArray.push({'Name' : String(d[emailIndex]), 'Email' : String(d[emailIndex])});
                                             }
-                                            contactArray.push({'Name' : name, 'Email' : String(d[emailIndex])});
-                                        } else {
-                                            contactArray.push({'Name' : String(d[emailIndex]), 'Email' : String(d[emailIndex])});
                                         }
-                                      }
                                     });
 
                                     importContacts(contactArray);
-                            	}
+                                }
                             });
-                        }
-                        else {
-                            notify('Invalid file type');
+                        } else {
+                            notify({message: $translate.instant('INVALID_FILE_TYPE'), classes: 'notification-danger'});
                         }
                     };
 
@@ -356,26 +389,32 @@ angular.module("proton.controllers.Contacts", [
                             Contact.save({
                                 "Contacts": contactArray
                             }).then(function(response) {
-                                added = 0;
-                                duplicates = 0;
+                                var added = 0;
+                                var errors = [];
 
                                 _.forEach(response.data.Responses, function(d) {
                                     if (d.Response.Contact) {
                                         authentication.user.Contacts.push(d.Response.Contact);
                                         added++;
-                                    }
-                                    else {
-                                        duplicates++;
+                                    } else if(angular.isDefined(d.Response.Error) && angular.isDefined(d.Response.Code)) {
+                                        errors[d.Response.Code] = d.Response.Error;
                                     }
                                 });
 
-                                added = added === 1 ? added + ' contact' : added + ' contacts';
-                                duplicates = duplicates === 1 ? duplicates + ' contact was' : duplicates + ' contacts were';
-                                notify(added + ' imported, ' + duplicates + ' already in your contact list');
+                                if(added === 1) {
+                                    notify({message: added + ' ' + $translate.instant('CONTACT_IMPORTED'), classes: 'notification-success'});
+                                } else if(added > 1) {
+                                    notify({message: added + ' ' + $translate.instant('CONTACTS_IMPORTED'), classes: 'notification-success'});
+                                }
+
+                                _.each(Object.keys(errors), function(key) {
+                                    notify({message: errors[key], classes: 'notification-danger'});
+                                });
+
                                 $scope.contacts = $scope.contactsFiltered();
                                 Contact.index.updateWith(authentication.user.Contacts);
-                            }, function(response) {
-                                $log.error(response);
+                            }, function(error) {
+                                $log.error(error);
                             })
                         );
                     };
@@ -390,11 +429,20 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.openSafariWarning = function() {
-        $('#safariContactsModal').modal('show');
+        alertModal.activate({
+            params: {
+                title: $translate.instant('DOWNLOAD_CONTACTS'),
+                alert: 'alert-warning',
+                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                ok: function() {
+                    alertModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.downloadContacts = function() {
-        if (tools.getBrowser==='Safari') {
+        if (tools.getBrowser() === 'Safari') {
             $scope.openSafariWarning();
         } else {
             var contactsArray = [['Name', 'Email']];
@@ -405,20 +453,16 @@ angular.module("proton.controllers.Contacts", [
                 contactsArray.push([contact.Name, contact.Email]);
             });
 
-            for(var i=0, l=contactsArray.length; i<l; ++i){
+            for(var i=0, l=contactsArray.length; i<l; ++i) {
                 csvRows.push(contactsArray[i].join(','));
             }
 
             var csvString = csvRows.join("%0A");
-
-            if (tools.getBrowser==='Safari') {
-                $scope.openSafariWarning();
-            }
-
             var blob = new Blob([csvString], { type: 'data:attachment/csv;' });
 
             saveAs(blob, filename);
         }
-
     };
+
+    $scope.initialization();
 });

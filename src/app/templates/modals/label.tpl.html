@@ -8,7 +8,7 @@
                 </button>
                 <h4 class="modal-title">{{ctrl.title}}</h4>
             </div>
-            <form name="labelForm" novalidate ng-submit="ctrl.create(ctrl)">
+            <form name="labelForm" novalidate ng-submit="ctrl.create(ctrl)" method="post">
                 <div class="modal-body">
                     <div class="form-group" ng-class="{'has-error': labelForm.label.$touched && labelForm.label.$error.required}">
                         <label for="labelName" class="control-label">{{ 'NAME' | translate }}</label>

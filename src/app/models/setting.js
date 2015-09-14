@@ -1,8 +1,6 @@
 angular.module("proton.models.setting", [])
 
-.factory("Setting", function($resource, $injector, url) {
-    var authentication = $injector.get("authentication");
-
+.factory("Setting", function($resource, $injector, url, authentication) {
     return $resource(
         url.get() + "/settings/:id",
         authentication.params({ id: "@id" }),

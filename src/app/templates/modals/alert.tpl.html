@@ -1,8 +1,15 @@
 <div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header" ng-show="ctrl.title">
+                <button type="button" class="close" ng-click="ctrl.ok()">
+                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
+                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
+                </button>
+                <h4 class="modal-title">{{ ctrl.title }}</h4>
+            </div>
             <div class="modal-body">
-                <p class="alert">{{ctrl.message}}</p>
+                <p class="alert {{ ctrl.alert }}" ng-bind-html="ctrl.message"></p>
             </div>
             <div class="modal-footer">
                 <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.ok()">{{ 'OK' | translate }}</button>

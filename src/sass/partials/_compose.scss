@@ -565,6 +565,7 @@ form#compose {
 
     .composer-header {
         height: $row-height;
+        min-height: $row-height;
         line-height: $row-height;
         margin-left: 0;
         margin-right: 0;
@@ -663,6 +664,8 @@ form#compose {
         padding: 10px 10px;
         box-shadow: inset 0 1px 0 $base-color-darker;
         background-color: $panel-footer;
+        box-sizing: border-box;
+        min-height: 50px;
         span {
             margin-top: 7px;
         }

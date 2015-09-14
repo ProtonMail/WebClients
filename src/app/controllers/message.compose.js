@@ -17,28 +17,28 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     User,
     attachments,
     authentication,
-    closeModal,
     contactManager,
     messageCache,
-    networkActivityTracker,
     notify,
     pmcw,
     tools
 ) {
     // Variables
-    Contact.index.updateWith($scope.user.Contacts);
-    $scope.messages = [];
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
+
+    $scope.messages = [];
     $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
-    $scope.isOver = false;
+    $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
+
+    Contact.index.updateWith($scope.user.Contacts);
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -59,8 +59,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.$on('newMessage', function() {
         var message = new Message();
+
         message.saved = 0;
-        $scope.initMessage(message, true);
+        $scope.initMessage(message, false);
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
@@ -70,13 +71,24 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.initMessage(mess, save);
     });
 
+    $scope.$on('deleteMessage', function(event, id) {
+        _.each($scope.messages, function(message) {
+            if(message.ID === id) {
+                $scope.close(message, false, false);
+            }
+        });
+    });
+
     $scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
+
         if (message) {
             message.editor = editor;
             $scope.listenEditor(message);
+            $scope.focusComposer(message);
+            message.recipientFieldFocussed = 1;
         }
     });
 
@@ -103,8 +115,20 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     }
 
+    function onDragStart(event) {
+        $scope.preventDropbox = true;
+    }
+
+    function onDragEnd(event) {
+        event.preventDefault();
+        $scope.preventDropbox = false;
+        $scope.isOver = false;
+    }
+
     $(window).on('resize', onResize);
     $(window).on('dragover', onDragOver);
+    $(window).on('dragstart', onDragStart);
+    $(window).on('dragend', onDragEnd);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
@@ -130,7 +154,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     // Functions
-
     $scope.setDefaults = function(message) {
         _.defaults(message, {
             ToList: [],
@@ -166,13 +189,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
-                        notify('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
+                        notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
-                        notify('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
                         done();
-                        $scope.addAttachment(file, message);
+                        if(angular.isUndefined(message.ID)) {
+                            $scope.save(message, false, false, false).then(function() {
+                                $scope.addAttachment(file, message);
+                            });
+                        } else {
+                            $scope.addAttachment(file, message);
+                        }
                     }
                 },
                 init: function(event) {
@@ -218,7 +247,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         // decrypt session key from keypackets
                         pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
                             attachment.sessionKey = sessionKey;
+                        }, function(error) {
+                            notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
+                            $log.error(error);
                         });
+                    }, function(error) {
+                        notify({message: 'Error during decryption of the private key', classes: 'notification-danger'});
+                        $log.error(error);
                     });
                 } catch(error) {
                     removeAttachments.push(attachment);
@@ -265,6 +300,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
+        $scope.isOver = false;
         $scope.composerStyle();
 
         attachments.load(file).then(
@@ -281,8 +317,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                         message.uploading--;
                         onResize();
+                    },
+                    function(error) {
+                        notify({message: 'Error during file upload', classes: 'notification-danger'});
+                        $log.error(error);
                     }
                 );
+            },
+            function(error) {
+                notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
+                $log.error(error);
             }
         );
     };
@@ -295,11 +339,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             "AttachmentID": attachment.AttachmentID || attachment.ID
         }).$promise.then(function(response) {
             if (response.Error) {
-                notify(response.Error);
+                notify({message: response.Error, classes: 'notification-danger'});
                 message.Attachments.push(attachment);
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 that.options.addedfile.call(that, mockFile);
             }
+        }, function(error) {
+            notify({message: 'Error during the remove request', classes: 'notification-danger'});
+            $log.error(error);
         });
     };
 
@@ -312,13 +359,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment() === 'sm') {
-            if ($scope.messages.length>0) {
+            if ($scope.messages.length > 0) {
                 notify.closeAll();
-                notify($translate.instant('MAXIMUM_COMPOSER_REACHED'));
+                notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
                 return;
             }
         }
-
+        
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];
@@ -326,7 +373,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
-        $scope.saveOld(message);
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
@@ -337,17 +383,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
-                $scope.save(message, true, true).then(function() {
+                $scope.save(message, true, true, false).then(function() { // message, silently, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
+                }, function(error) {
+                    $log.error(error);
                 });
             }
         });
-
-        $timeout(function() {
-            $scope.focusComposer(message);
-            message.recipientFieldFocussed = 1;
-        }, 100);
     };
 
     $scope.onAddFile = function(message) {
@@ -398,6 +441,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
+        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
@@ -425,17 +469,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                 if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
                     right = (index * (widthComposer + marginRight)) + marginRight;
-                }
-                else {
+                } else {
                     widthWindow -= margin; // margin left
                     var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
                     right = index * (widthComposer - overlap);
                 }
+
                 if (reverseIndex === $scope.messages.length) {
                     right = marginRight;
                     index = $scope.messages.length;
                 }
 
+                styles.top = '';
                 styles.right = right + 'px';
             }
 
@@ -523,9 +568,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else {
-                $timeout(function() {
-                    message.editor.focus();
-                }, 500);
+                message.editor.focus();
             }
 
             _.each($scope.messages, function(m) {
@@ -550,7 +593,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
-
+            message.editor.addEventListener('dragstart', onDragStart);
+            message.editor.addEventListener('dragend', onDragEnd);
             message.editor.addEventListener('dragenter', function(e) {
                 $scope.isOver = true;
                 $scope.$apply();
@@ -564,6 +608,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 dropzone.removeEventListener('dragover', dragover);
                 dropzone.addEventListener('dragover', dragover);
             });
+
+            $scope.saveOld(message);
         }
     };
 
@@ -592,7 +638,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.fields = !message.fields;
         $timeout(function() {
             message.recipientFieldFocussed = (message.fields) ? 4 : 0;
-            $scope.apply();
         });
         $scope.composerStyle();
     };
@@ -614,12 +659,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.setEncrypt = function(message, params, form) {
         if (params.password.length === 0) {
-            notify('Please enter a password for this email.');
+            notify({message: 'Please enter a password for this email.', classes: 'notification-danger'});
             return false;
         }
 
         if (params.password !== params.confirm) {
-            notify('Message passwords do not match.');
+            notify({message: 'Message passwords do not match.', classes: 'notification-danger'});
             return false;
         }
 
@@ -650,13 +695,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.setExpiration = function(message, params) {
-        if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) {
-            notify('The maximum expiration is 4 weeks.');
+        if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
+            notify({message: 'The maximum expiration is 4 weeks.', classes: 'notification-danger'});
             return false;
         }
 
         if (isNaN(params.expiration)) {
-            notify('Invalid expiration time.');
+            notify({message: 'Invalid expiration time.', classes: 'notification-danger'});
             return false;
         }
 
@@ -707,7 +752,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.timeoutSaving = $timeout(function() {
             if($scope.needToSave(message)) {
-                $scope.save(message, true);
+                $scope.save(message, true, false, false); // message, silently, forward, notification
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
@@ -718,13 +763,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // Check internet connection
         if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
-            notify('No internet connection. Please wait and try again.');
+            notify({message: 'No internet connection. Please wait and try again.', classes: 'notification-danger'});
             return false;
         }
 
         // Check if there is an attachment uploading
         if (message.uploading === true) {
-            notify('Wait for attachment to finish uploading or cancel upload.');
+            notify({message: 'Wait for attachment to finish uploading or cancel upload.', classes: 'notification-danger'});
             return false;
         }
 
@@ -739,30 +784,30 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
 
         if (invalidEmails.length > 0) {
-            notify('Invalid email(s): ' + invalidEmails.join(',') + '.');
+            notify({message: 'Invalid email(s): ' + invalidEmails.join(',') + '.', classes: 'notification-danger'});
             return false;
         }
 
         // MAX 25 to, cc, bcc
         if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
-            notify('The maximum number (25) of Recipients is 25.');
+            notify({message: 'The maximum number (25) of Recipients is 25.', classes: 'notification-danger'});
             return false;
         }
 
         if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
-            notify('Please enter at least one recipient.');
+            notify({message: 'Please enter at least one recipient.', classes: 'notification-danger'});
             return false;
         }
 
         // Check title length
         if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-            notify('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+            notify({message: 'The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.', classes: 'notification-danger'});
             return false;
         }
 
         // Check body length
         if (message.Body.length > 16000000) {
-            notify('The maximum length of the message body is 16,000,000 characters.');
+            notify({message: 'The maximum length of the message body is 16,000,000 characters.', classes: 'notification-danger'});
             return false;
         }
 
@@ -839,16 +884,28 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     deferred.resolve(result);
                 };
 
-                if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
+                if(result.Code === 1000) {
+                    process(result);
+                } else if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
                     var saveMePromise = Message.createDraft(parameters).$promise;
 
                     saveMePromise.then(function(result) {
                         process(result);
+                    }, function(error) {
+                        error.message = 'Error creating draft';
+                        deferred.reject(error);
                     });
                 } else {
-                    process(result);
+                    $log.error(result);
+                    deferred.reject(result);
                 }
+            }, function(error) {
+                error.message = 'Error during the draft request';
+                deferred.reject(error);
             });
+        }, function(error) {
+            error.message = 'Error encrypting message';
+            deferred.reject(error);
         });
 
         if(silently !== true) {
@@ -906,8 +963,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                                             $scope.sending = false;
                                             return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                        }, function(error) {
+                                            $log.error(error);
                                         });
+                                    }, function(error) {
+                                        $log.error(error);
                                     });
+                                }, function(error) {
+                                    $log.error(error);
                                 }));
                             }
                         }
@@ -921,19 +984,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                              promises.push(message.clearPackets().then(function(packets) {
                                  parameters.AttachmentKeys = packets;
                                  $scope.sending = false;
+                            }, function(error) {
+                                $log.error(error);
                             }));
                         }
                     }
 
                     $q.all(promises).then(function() {
                         if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
-                            notify({
-                                message: 'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.',
-                                classes: 'notification-danger',
-                                duration: 10000 // 10 seconds
-                            });
                             $scope.sending = false;
-                            deferred.reject();
+                            $log.error(message);
+                            deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.'));
                         } else {
                             Message.send(parameters).$promise.then(function(result) {
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
@@ -953,27 +1014,32 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 $scope.sending = false;
 
                                 if(angular.isDefined(result.Error)) {
-                                    notify({
-                                        message: result.Error,
-                                        classes: 'notification-danger'
-                                    });
-                                    deferred.reject();
+                                    deferred.reject(new Error(result.Error));
                                 } else {
                                     messageCache.set(updateMessages);
-                                    notify({
-                                        message: $translate.instant('MESSAGE_SENT'),
-                                        classes: 'notification-success'
-                                    });
-                                    $scope.close(message, false);
+                                    notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
+                                    $scope.close(message, false, false);
                                     deferred.resolve(result);
                                 }
+                            }, function(error) {
+                                $scope.sending = false;
+                                error.message = 'Error during the sending';
+                                deferred.reject(error);
                             });
                         }
+                    }, function(error) {
+                        $scope.sending = false;
+                        error.message = 'Error during the promise preparation';
+                        deferred.reject(error);
                     });
+                }, function(error) {
+                    $scope.sending = false;
+                    error.message = 'Error during the getting of the public key';
+                    deferred.reject(error);
                 });
-            }, function() {
+            }, function(error) {
                 $scope.sending = false;
-                deferred.reject();
+                deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
             });
 
             message.track(deferred.promise);
@@ -1028,54 +1094,28 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         message.editor.removeEventListener('dragenter', function(e) {
             $scope.isOver = true;
-            $scope.$apply();
         });
+
         message.editor.removeEventListener('dragover', function(e) {
             $scope.isOver = true;
-            $scope.$apply();
         });
 
-        if (message.saved < 2) {
-            $scope.discard(message);
-        } else {
-            $scope.close(message, true);
-        }
+        message.editor.removeEventListener('dragstart', onDragStart);
+        message.editor.removeEventListener('dragend', onDragEnd);
+
+        $scope.close(message, false, true);
     };
 
-    $scope.close = function(message, save) {
-        $rootScope.activeComposer = false;
-        var index = $scope.messages.indexOf(message);
-        var messageFocussed = !!message.focussed;
-
-        if (save === true) {
-            $scope.saveLater(message);
-        }
-
-        message.close();
-
-        // Remove message in messages
-        $scope.messages.splice(index, 1);
-
-        // Hide all the tooltip
-        $('.tooltip').not(this).hide();
-
-        // Message closed and focussed?
-        if(messageFocussed && $scope.messages.length > 0) {
-            // Focus the first message
-            $scope.focusComposer(_.first($scope.messages));
-        }
-
-        setTimeout(function () {
-            $scope.composerStyle();
-        }, 250);
-    };
-
-    $scope.discard = function(message) {
-        $rootScope.activeComposer = false;
-
+    $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
         var id = message.ID;
+
+        $rootScope.activeComposer = false;
+
+        if (save === true) {
+            $scope.save(message, true, false, false);
+        }
 
         message.close();
 
@@ -1085,8 +1125,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
-        // Remove message in message list controller
-        $rootScope.$broadcast('discardDraft', id);
+        if(discard === true && angular.isDefined(id)) {
+            // Remove message in message list controller
+            $rootScope.$broadcast('discardDraft', id);
+            notify({message: 'Message Discard', classes: 'notification-success'}); // TODO translate
+        }
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
@@ -1094,7 +1137,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.focusComposer(_.first($scope.messages));
         }
 
-        setTimeout(function () {
+        $timeout(function () {
             $scope.composerStyle();
         }, 250);
     };

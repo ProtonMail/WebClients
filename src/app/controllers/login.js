@@ -16,6 +16,7 @@ angular.module("proton.controllers.Auth", [
     authentication,
     networkActivityTracker,
     notify,
+    loginModal,
     pmcw
 ) {
     $rootScope.pageName = "Login";
@@ -33,6 +34,29 @@ angular.module("proton.controllers.Auth", [
             alert(err);
         }
     }
+
+    $scope.initialization = function() {
+        var ua = window.navigator.userAgent;
+        var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+        var webkit = !!ua.match(/WebKit/i);
+        var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+        if (iOSSafari) {
+            // Don't focus the input field
+        } else {
+            $('input.focus').focus();
+        }
+    };
+
+    $scope.getLoginHelp = function() {
+        loginModal.activate({
+            params: {
+                cancel: function() {
+                    loginModal.deactivate();
+                }
+            }
+        });
+    };
 
     var clearErrors = function() {
         $scope.error = null;
@@ -99,12 +123,27 @@ angular.module("proton.controllers.Auth", [
                 function(result) {
                     $log.debug('loginWithCredentials:result.data ', result);
                     if (result.data.Code!==undefined && result.data.Code===401) {
+
+                        // clear password field for the user
+                        $scope.password = '';
+
                         notify({
                             classes: 'notification-danger',
                             message: result.data.ErrorDescription
                         });
-                    }
-                    else if (result.data.AccessToken) {
+                    } else if (result.data.Code!==undefined && result.data.Code===10002) {
+                        var err;
+                        if (result.data.Error) {
+                            err = result.data.Error;
+                        } else {
+                            err = "Your account has been disabled.";
+                        }
+                        // Account is disabled.
+                        notify({
+                            classes: 'notification-danger',
+                            message: err
+                        });
+                    } else if (result.data.AccessToken) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
                         $rootScope.tempUser = {};
@@ -114,16 +153,15 @@ angular.module("proton.controllers.Auth", [
                         // console.log('Going to unlock page.');
                         $state.go("login.unlock");
                         return;
-                    }
-	                else if (result.Error) {
+                    } else if (result.Error) {
                         // TODO: This might be buggy
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.ErrorDescription) ? result.ErrorDescription : result.Error;
-	                	notify({
+
+                        notify({
 	                        classes: 'notification-danger',
 	                        message: error
 	                    });
-	                }
-	                else {
+	                } else {
 	                	notify({
 	                        classes: 'notification-danger',
 	                        message: 'Unable to log you in.'
@@ -183,6 +221,10 @@ angular.module("proton.controllers.Auth", [
                 },
                 function(err) {
                     $log.error('tryDecrypt', err);
+
+                    // clear password for user
+                    $scope.mailboxPassword = '';
+
                     notify({
                         classes: 'notification-danger',
                         message: err.message
@@ -202,6 +244,8 @@ angular.module("proton.controllers.Auth", [
             }
         }
     };
+
+    $scope.initialization();
 })
 
 .controller("SecuredController", function(

@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings", [
 .controller("SettingsController", function(
     $log,
     $rootScope,
+    $sanitize,
     $scope,
     $state,
     $stateParams,
@@ -44,99 +45,9 @@ angular.module("proton.controllers.Settings", [
     $scope.MessageButtons = authentication.user.MessageButtons;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.isSafari = jQuery.browser.name === 'safari';
-
-    if (parseInt($scope.doLogging)===0) {
-        $scope.disabledText = $translate.instant('DISABLED');
-    }
-
-    $timeout(function() {
-        if(angular.isDefined(authentication.user.Signature)) {
-            $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
-        }
-    }, 1000);
-
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
-
     $scope.apiURL = url.get();
-
-    $scope.loadLogs = function (page) {
-        $scope.currentLogPage = page;
-        // ajax call here get new logs
-
-    };
-
-    $scope.paginate = function(value) {
-        var begin, end, index;
-        begin = ($scope.currentLogPage - 1) * $scope.logItemsPerPage;
-        end = begin + $scope.logItemsPerPage;
-        index = $scope.logs.indexOf(value);
-        return (begin <= index && index < end);
-    };
-
-    $scope.initLogs = function() {
-        networkActivityTracker.track(
-            Logs.getLogs().then(
-                function(response) {
-                    $scope.logs = response.data.Logs;
-                    $scope.logCount = $scope.logs.length;
-                    $scope.currentLogPage = 1;
-                }
-            )
-        );
-    };
-
-    $scope.loadLogs = function() {
-
-    };
-
-    $scope.clearLogs = function() {
-        networkActivityTracker.track(
-            Logs.clearLogs().then(
-                function(response) {
-                    $scope.logs = [];
-                    $scope.logCount = 0;
-                    notify($translate.instant('LOGS_CLEARED'));
-                }
-            )
-        );
-    };
-
-    $scope.downloadLogs = function () {
-        var logsArray = [['Event', 'Time', 'IP']];
-        var csvRows = [];
-        var filename = 'logs.csv';
-
-        _.forEach($scope.logs, function(log) {
-          logsArray.push([log.Event, moment(log.Time * 1000), log.IP]);
-        });
-
-        for(var i=0, l=logsArray.length; i<l; ++i){
-            csvRows.push(logsArray[i].join(','));
-        }
-
-        var csvString = csvRows.join("%0A");
-        var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
-
-        saveAs(blob, filename);
-    };
-
-    $scope.exportPublicKey = function () {
-        var pbk = authentication.user.PublicKey;
-        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
-        var filename = 'protonmail_public_' + authentication.user.Name + '.txt';
-
-        saveAs(blob, filename);
-    };
-
-    // NOT USED
-    $scope.exportEncPrivateKey = function () {
-        var pbk = authentication.user.EncPrivateKey;
-        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
-        var filename = 'protonmail_private_'+authentication.user.Name+'.txt';
-
-        saveAs(blob, filename);
-    };
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -168,45 +79,141 @@ angular.module("proton.controllers.Settings", [
         }
     };
 
-    $scope.$on('updateLabels', function(){$scope.updateLabels();});
+    if (parseInt($scope.doLogging)===0) {
+        $scope.disabledText = $translate.instant('DISABLED');
+    }
+
+    $timeout(function() {
+        if(angular.isDefined(authentication.user.Signature)) {
+            $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
+        }
+    }, 1000);
+
+    $scope.$on('updateLabels', $scope.updateLabels);
+
+    $scope.loadLogs = function () {
+        // ajax call here get new logs
+    };
+
+    $scope.paginate = function(value) {
+        var begin, end, index;
+
+        begin = ($scope.currentLogPage - 1) * $scope.logItemsPerPage;
+        end = begin + $scope.logItemsPerPage;
+        index = $scope.logs.indexOf(value);
+
+        return (begin <= index && index < end);
+    };
+
+    $scope.initLogs = function() {
+        networkActivityTracker.track(
+            Logs.getLogs().then(
+                function(response) {
+                    $scope.logs = response.data.Logs;
+                    $scope.logCount = $scope.logs.length;
+                    $scope.currentLogPage = 1;
+                },
+                function(error) {
+                    notify({message: 'Error during the initialization of logs', classes: 'notification-danger'});
+                    $log.error(error);
+                }
+            )
+        );
+    };
+
+    $scope.clearLogs = function() {
+        networkActivityTracker.track(
+            Logs.clearLogs().then(
+                function(response) {
+                    $scope.logs = [];
+                    $scope.logCount = 0;
+                    notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
+                },
+                function(error) {
+                    notify({message: 'Error during the clear logs request', classes: 'notification-danger'});
+                    $log.error(error);
+                }
+            )
+        );
+    };
+
+    $scope.downloadLogs = function () {
+        var logsArray = [['Event', 'Time', 'IP']];
+        var csvRows = [];
+        var filename = 'logs.csv';
+
+        _.forEach($scope.logs, function(log) {
+          logsArray.push([log.Event, moment(log.Time * 1000), log.IP]);
+        });
+
+        for(var i=0, l=logsArray.length; i<l; ++i){
+            csvRows.push(logsArray[i].join(','));
+        }
+
+        var csvString = csvRows.join("%0A");
+        var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+
+        saveAs(blob, filename);
+    };
+
+    $scope.exportPublicKey = function (clickEvent) {
+        var element = angular.element(clickEvent.target);
+        var pbk = authentication.user.PublicKey;
+        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
+        var filename = 'protonmail_public_' + authentication.user.Name + '.txt';
+
+        try {
+            saveAs(blob, filename);
+        } catch (e) {
+            $log.error(e);
+        } finally {
+            $log.debug('saveAs');
+        }
+    };
+
+    // NOT USED
+    $scope.exportEncPrivateKey = function () {
+        var pbk = authentication.user.EncPrivateKey;
+        var blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
+        var filename = 'protonmail_private_'+authentication.user.Name+'.txt';
+
+        saveAs(blob, filename);
+    };
+
     $scope.updateLabels = function () {
             $scope.labels = authentication.user.Labels;
     };
 
     $scope.saveNotification = function(form) {
-        // $log.debug($scope.noticeePassword);
-        if ($scope.noticeePassword===undefined) {
+        if (angular.isUndefined($scope.noticeePassword)) {
             notify({
-                classes: "notificaton-danger",
+                classes: "notification-danger",
                 message: "Enter your current login password."
             });
             angular.element('#noticeePassword').focus();
-            return;
-        }
-
-        networkActivityTracker.track(
-            Setting.noticeEmail({
-                "Password": $scope.noticeePassword,
-                "NotificationEmail": $scope.notificationEmail
-            }).$promise
-            .then(
-                function(response) {
-                    if (response && response.Code===1000) {
-                        $scope.noticeePassword = '';
-                        authentication.user.NotificationEmail = $scope.notificationEmail;
-                        notify($translate.instant('NOTIFICATION_EMAIL_SAVED'));
-                    }
-                    else {
-                        if (response.Error) {
-                            notify($translate.instant(response.Error));
+        } else {
+            networkActivityTracker.track(
+                Setting.noticeEmail({
+                    "Password": $scope.noticeePassword,
+                    "NotificationEmail": $scope.notificationEmail
+                }).$promise
+                .then(
+                    function(response) {
+                        if (response && response.Code === 1000) {
+                            $scope.noticeePassword = '';
+                            authentication.user.NotificationEmail = $scope.notificationEmail;
+                            notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
+                        } else if (response.Error) {
+                            notify({message: $translate.instant(response.Error), classes: 'notification-danger'});
                         }
+                    },
+                    function(error) {
+                        notify({message: 'Error during the notification request', classes: 'notification-danger'});
+                        $log.error(error);
                     }
-                },
-                function(response) {
-                    $log.error(response);
-                }
-            )
-        );
+                )
+            );
+        }
     };
 
     $scope.saveDailyNotifications = function(form) {
@@ -215,9 +222,10 @@ angular.module("proton.controllers.Settings", [
               "Notify": +$scope.dailyNotifications
           }).$promise.then(function(response) {
               authentication.user.Notify = +$scope.dailyNotifications;
-              notify($translate.instant('PREFERENCE_SAVED'));
-          }, function(response) {
-              $log.error(response);
+              notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
+          }, function(error) {
+              notify({message: 'Error during the daily notification request', classes: 'notification-danger'});
+              $log.error(error);
           })
         );
     };
@@ -230,17 +238,17 @@ angular.module("proton.controllers.Settings", [
                 NewPassword: $scope.newLoginPassword
             }).$promise.then(function(response) {
                 if (response.Error) {
-                    notify(response.Error);
-                }
-                else {
-                    notify($translate.instant('LOGIN_PASSWORD_UPDATED'));
+                    notify({message: response.Error, classes: 'notification-danger'});
+                } else {
+                    notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
                     $scope.oldLoginPassword = '';
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
                 }
-            }, function(response) {
-                $log.error(response);
+            }, function(error) {
+                notify({message: 'Error during the login password request', classes: 'notification-danger'});
+                $log.error(error);
             })
         );
     };
@@ -248,18 +256,15 @@ angular.module("proton.controllers.Settings", [
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
-
         var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
         var currentLoginPassword = $scope.currentLoginPassword;
 
         if (newEncPrivateKey === -1) {
-            notify($translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'));
-        }
-        else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
+            notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
+        } else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
             // Error messages from OpenPGP.js
-            notify(newEncPrivateKey.message);
-        }
-        else {
+            notify({message: newEncPrivateKey.message, classes: 'notification-danger'});
+        } else {
             networkActivityTracker.track(
                 User.keys({
                     "Password": currentLoginPassword,
@@ -267,9 +272,9 @@ angular.module("proton.controllers.Settings", [
                     "PrivateKey": newEncPrivateKey
                 }).$promise.then(function(response) {
                     if(response.Error) {
-                        notify(response.Error);
+                        notify({message: response.Error, classes: 'notification-danger'});
                     } else {
-                        notify($translate.instant('MAILBOX_PASSWORD_UPDATED'));
+                        notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
                         $scope.oldMailboxPassword = '';
                         $scope.newMailboxPassword = '';
                         $scope.confirmMailboxPassword = '';
@@ -278,28 +283,36 @@ angular.module("proton.controllers.Settings", [
                         authentication.savePassword(newMailPwd);
                         form.$setUntouched();
                     }
-                }, function(response) {
-                    $log.error(response);
+                }, function(error) {
+                    notify({message: 'Error during the mailbox password request', classes: 'notification-danger'});
+                    $log.error(error);
                 })
             );
         }
     };
 
     $scope.saveDisplayName = function(form) {
+        var displayName = $scope.displayName;
+
         networkActivityTracker.track(
             Setting.display({
-                "DisplayName": $scope.displayName
+                "DisplayName": displayName
             }).$promise.then(function(response) {
-                notify($translate.instant('DISPLAY_NAME_SAVED'));
-                authentication.user.DisplayName = $scope.displayName;
-            }, function(response) {
-                $log.error(response);
+                if(response.Code === 1000) {
+                    notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
+                    authentication.user.DisplayName = displayName;
+                    $scope.displayName = displayName;
+                } else if(angular.isDefined(response.Error)) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                }
+            }, function(error) {
+                notify({message: 'Error during the display name request', classes: 'notification-danger'});
+                $log.error(error);
             })
         );
     };
 
     $scope.saveSignature = function(form) {
-
         var signature = $scope.signature;
 
         signature = signature.replace(/\n/g, "<br />");
@@ -309,9 +322,10 @@ angular.module("proton.controllers.Settings", [
                 "Signature": signature
             }).$promise.then(function(response) {
                 authentication.user.Signature = signature;
-                notify($translate.instant('SIGNATURE_SAVED'));
-            }, function(response) {
-                $log.error(response);
+                notify({message: $translate.instant('SIGNATURE_SAVED'), classes: 'notification-success'});
+            }, function(error) {
+                notify({message: 'Error during the signature request', classes : 'notification-danger'});
+                $log.error(error);
             })
         );
     };
@@ -321,9 +335,10 @@ angular.module("proton.controllers.Settings", [
             Setting.addressOrder({
                 "Order": aliasOrder
             }).$promise.then(function(response) {
-                notify($translate.instant('ALIASES_SAVED'));
-            }, function(response) {
-                $log.error(response);
+                notify({message: $translate.instant('ALIASES_SAVED'), classes: 'notification-success'});
+            }, function(error) {
+                notify({message: 'Error during the aliases request', classes : 'notification-danger'});
+                $log.error(error);
             })
         );
     };
@@ -333,10 +348,11 @@ angular.module("proton.controllers.Settings", [
             Setting.autosave({
                 "AutoSaveContacts": +$scope.autosaveContacts
             }).$promise.then(function(response) {
-                notify($translate.instant('PREFERENCE_SAVED'));
+                notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
                 authentication.user.AutoSaveContacts = +$scope.autosaveContacts;
-            }, function(response) {
-                $log.error(response);
+            }, function(error) {
+                notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
+                $log.error(error);
             })
         );
     };
@@ -355,20 +371,19 @@ angular.module("proton.controllers.Settings", [
                                 Display: 0
                             }).$promise.then(function(result) {
                                 if(angular.isDefined(result.Label)) {
-                                    notify($translate.instant('LABEL_CREATED'));
-                                    $scope.labels.push(result.Label);
+                                    notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
+                                    authentication.user.Labels.push(result.Label);
                                 } else {
-                                    notify(result.Error);
+                                    notify({message: result.Error, classes: 'notification-danger'});
                                     $log.error(result);
                                 }
-                            }, function(result) {
-                                notify(result.Error);
-                                $log.error(result);
+                            }, function(error) {
+                                notify({message: 'Error during the label creation request', classes: 'notification-danger'});
+                                $log.error(error);
                             })
                         );
-                    }
-                    else {
-                        notify($translate.instant('LABEL_NAME_ALREADY_EXISTS'));
+                    } else {
+                        notify({message: $translate.instant('LABEL_NAME_ALREADY_EXISTS'), classes: 'notification-danger'});
                         labelModal.deactivate();
                     }
                 },
@@ -397,17 +412,17 @@ angular.module("proton.controllers.Settings", [
                             Display: label.Display
                         }).$promise.then(function(result) {
                             if (result.Error) {
-                                notify(result.Error);
+                                notify({message: result.Error, classes: 'notification-danger'});
                                 label.Name = origName;
                                 label.Color = origColor;
-                            }
-                            else {
+                            } else {
                                 label.Color = color;
                                 label.Name = name;
-                                notify($translate.instant('LABEL_EDITED'));
+                                notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});
                             }
-                        }, function(result) {
-                            $log.error(result);
+                        }, function(error) {
+                            notify({message: 'Error during the label edition request', classes: 'notification-danger'});
+                            $log.error(error);
                         })
                     );
                 },
@@ -424,22 +439,26 @@ angular.module("proton.controllers.Settings", [
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_LABEL'),
-                message: 'Are you sure you want to delete this label?',
+                message: 'Are you sure you want to delete this label?', // TODO translate
                 confirm: function() {
                     networkActivityTracker.track(
                         Label.delete({id: label.ID}).$promise
                         .then(
                             function(result) {
-                                confirmModal.deactivate();
                                 if (result.Code === 1000) {
-                                    notify($translate.instant('LABEL_DELETED'));
+                                    confirmModal.deactivate();
+                                    notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
                                     authentication.user.Labels = _.without(authentication.user.Labels, label);
                                     $scope.labels = authentication.user.Labels;
                                     $rootScope.$broadcast('updateLabels');
+                                } else if(result.Error) {
+                                    notify({message: result.Error, classes: 'notification-danger'});
+                                    $log.error(result);
                                 }
                             },
-                            function(result) {
-                                $log.error(result);
+                            function(error) {
+                                notify({message: 'Error during the label deletion request ', classes: 'notification-danger'});
+                                $log.error(error);
                             }
                         )
                     );
@@ -456,9 +475,15 @@ angular.module("proton.controllers.Settings", [
             Label.order({
                 "Order": labelOrder
             }).$promise.then(function(response) {
-                notify($translate.instant('LABEL_ORDER_SAVED'));
-            }, function(response) {
-                $log.error(response);
+                if (response.Code === 1000) {
+                    notify({message: $translate.instant('LABEL_ORDER_SAVED'), classes: 'notification-success'});
+                } else if (response.Error) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                    $log.error(response);
+                }
+            }, function(error) {
+                notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
+                $log.error(error);
             })
         );
     };
@@ -470,9 +495,14 @@ angular.module("proton.controllers.Settings", [
             Color: label.Color,
             Display: label.Display
         }).$promise.then(function(result) {
-            notify($translate.instant('LABEL_EDITED'));
-        }, function(result) {
-            $log.error(result);
+            if (result.Code === 1000) {
+                notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});
+            } else if (result.Error) {
+                notify({message: result.Error, classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
+            $log.error(error);
         });
     };
 
@@ -482,11 +512,16 @@ angular.module("proton.controllers.Settings", [
                 "MessageButtons": parseInt($scope.MessageButtons)
             }).$promise.then(
                 function(response) {
-                    notify($translate.instant('THEME_SAVED'));
-                    authentication.user.MessageButtons = $scope.MessageButtons;
+                    if(response.Code === 1000) {
+                        notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
+                        authentication.user.MessageButtons = $scope.MessageButtons;
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
                 },
-                function(response) {
-                    $log.error(response);
+                function(error) {
+                    notify({message: 'Error during the appearance edition request', classes: 'notification-danger'});
+                    $log.error(error);
                 }
             )
         );
@@ -495,17 +530,21 @@ angular.module("proton.controllers.Settings", [
     $scope.saveComposerMode = function(form) {
         var value = parseInt($scope.ComposerMode);
 
-        authentication.user.ComposerMode = value;
-
         networkActivityTracker.track(
             Setting.setComposerMode({
                 "ComposerMode": value
             }).$promise.then(
                 function(response) {
-                    notify($translate.instant('MODE_SAVED'));
+                    if(response.Code === 1000) {
+                        authentication.user.ComposerMode = value;
+                        notify({message: $translate.instant('MODE_SAVED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
                 },
-                function(response) {
-                    $log.error(response);
+                function(error) {
+                    notify({message: 'Error during the composer preference request', classes: 'notification-danger'});
+                    $log.error(error);
                 }
             )
         );
@@ -517,30 +556,38 @@ angular.module("proton.controllers.Settings", [
                 "ShowImages": parseInt($scope.ShowImages)
             }).$promise.then(
                 function(response) {
-                    notify($translate.instant('THEME_SAVED'));
-                    authentication.user.ShowImages = $scope.ShowImages;
-                    $scope.apply();
+                    if(response.Code === 1000) {
+                        authentication.user.ShowImages = $scope.ShowImages;
+                        notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
                 },
-                function(response) {
-                    $log.error(response);
+                function(error) {
+                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
+                    $log.error(error);
                 }
             )
         );
     };
 
     $scope.saveTheme = function(form) {
-        $log.debug('saveTheme');
         networkActivityTracker.track(
             Setting.theme({
-                "Theme": btoa($scope.cssTheme)
+                "Theme": $scope.cssTheme
             }).$promise
             .then(
                 function(response) {
-                    notify($translate.instant('THEME_SAVED'));
-                    authentication.user.Theme = $scope.cssTheme;
+                    if(response.Code === 1000) {
+                        authentication.user.Theme = $scope.cssTheme;
+                        notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
                 },
-                function(response) {
-                    $log.error(response);
+                function(error) {
+                    notify({message: 'Error during the theme edition request', classes: 'notification-danger'});
+                    $log.error(error);
                 }
             )
         );
@@ -574,12 +621,12 @@ angular.module("proton.controllers.Settings", [
         if(value === 0) {
             confirmModal.activate({
                 params: {
-                    message: 'This will delete all access logs, do you want to continue?',
+                    message: 'This will delete all access logs, do you want to continue?', // TODO translate
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;
                         authentication.user.LogAuth = 0;
-                        notify('Logging Preference Updated');
+                        notify({message: 'Logging Preference Updated', classes: 'notification-success'});
                         confirmModal.deactivate();
                         $scope.disabledText = $translate.instant('DISABLED');
                     },
@@ -592,7 +639,7 @@ angular.module("proton.controllers.Settings", [
             $scope.doLogging = value;
             authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
-            notify('Logging Preference Updated');
+            notify({message: 'Logging Preference Updated', classes: 'notification-success'});
             $scope.disabledText = $translate.instant('DISABLE');
         }
     };
@@ -614,5 +661,4 @@ angular.module("proton.controllers.Settings", [
             }
         );
     };
-
 });

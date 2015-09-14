@@ -45,7 +45,7 @@
     "dragster": "~0.1.3",
     "dropzone": "~4.0.1",
     "es6-promise": "https://github.com/jakearchibald/es6-promise.git",
-    "jquery": "2.1.1",
+    "jquery": "https://github.com/jquery/jquery.git",
     "jquery-ui": "~1.10.0",
     "lodash": "~2.4.1",
     "mellt": "https://github.com/ProtonMail/Mellt.git",
@@ -65,5 +65,8 @@
   },
   "resolutions": {
     "angular": "~1.4.x"
+  },
+  "devDependencies": {
+    "html2canvas": "~0.4.1"
   }
 }

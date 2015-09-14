@@ -4,7 +4,6 @@ angular.module("proton.messages", ["proton.constants"])
         $rootScope,
         Message,
         CONSTANTS,
-        tools,
         networkActivityTracker
      ) {
         var lists = [];
@@ -95,12 +94,16 @@ angular.module("proton.messages", ["proton.constants"])
                         angular.copy(cachedMetadata.inbox.concat(result.splice(1, numMessages - 1)), cachedMetadata.inbox);
                         addMessageList(cachedMetadata.inbox);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else if (cacheLoc === 'sent') {
                     Message.query(sentOneParams).$promise.then(function(result) {
                         cachedMetadata.sent = result;
                         addMessageList(cachedMetadata.sent);
                         deferred.resolve();
+                    }, function(error) {
+                        deferred.reject();
                     });
                 } else {
                     deferred.reject();
@@ -144,24 +147,13 @@ angular.module("proton.messages", ["proton.constants"])
         var cachedMessages = _.bindAll({
             cache: {},
             get: function(id) {
-                var msg;
+                var msg = false;
 
-                if ((msg = this.cache[id])) {
-                    return msg;
+                if (angular.isDefined(this.cache[id])) {
+                    msg = this.cache[id];
                 }
 
-                var data = window.sessionStorage["proton:message:" + id];
-
-                if (data) {
-                    var q = $q.defer();
-
-                    data = new Message(JSON.parse(data));
-                    data.$promise = q.promise;
-                    q.resolve(data);
-                    this.cache[id] = data;
-                }
-
-                return data;
+                return msg;
             },
             put: function(id, message) {
                 var self = this;
@@ -185,20 +177,10 @@ angular.module("proton.messages", ["proton.constants"])
                     });
 
                     self.cache[id] = message;
-
-                    // Cache a stringified version of the message in session storage
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(message);
                 });
             },
             fusion: function(id, message) {
-                var data = window.sessionStorage["proton:message:" + id];
-
-                if(data) {
-                    var msg = _.extend(JSON.parse(data), _.pick(message, fields));
-
-                    this.cache[id] = message;
-                    window.sessionStorage["proton:message:" + id] = JSON.stringify(msg);
-                }
+                this.cache[id] = message;
             }
         });
 
@@ -242,14 +224,20 @@ angular.module("proton.messages", ["proton.constants"])
                 inboxMetaData = Message.query(inboxInitParams).$promise;
                 sentOneMetaData = Message.query(sentOneParams).$promise;
 
-                networkActivityTracker.track($q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(function(result) {
-                    cachedMetadata.inbox = result.inbox;
-                    addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
-                    cachedMetadata.sent = result.sentOne;
-                    this.started = true;
+                networkActivityTracker.track($q.all({inbox: inboxMetaData, sentOne: sentOneMetaData}).then(
+                    function(result) {
+                        cachedMetadata.inbox = result.inbox;
+                        addMessageList(cachedMetadata.inbox.slice(0, 2 * CONSTANTS.MESSAGES_PER_PAGE));
+                        cachedMetadata.sent = result.sentOne;
+                        this.started = true;
 
-                    deferred.resolve();
-                }.bind(this)));
+                        deferred.resolve();
+                    }.bind(this),
+                    function(error) {
+                        error.message = 'Error during the messages request for inbox and sent';
+                        deferred.reject(error);
+                    }
+                ));
 
                 return deferred.promise;
             },
@@ -324,7 +312,7 @@ angular.module("proton.messages", ["proton.constants"])
                     // UPDATE - message not in cache, but in inbox or sent. Check if time after last message. This case used more when we cache current
                     // currently same as previous case
                     else if (message.Action === UPDATE && loc) {
-                        if (message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time || cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE) {
+                        if (cachedMetadata[loc].length < CONSTANTS.MESSAGES_PER_PAGE || message.Message.Time > cachedMetadata[loc][cachedMetadata[loc].length -1].Time) {
                             messagePromise = Message.get({id: message.ID}).$promise;
                             promises.push(messagePromise);
                             messagePromise.then(function(m) {
@@ -333,7 +321,6 @@ angular.module("proton.messages", ["proton.constants"])
                                 } else {
                                     cachedMetadata.update(cacheLoc, loc, m);
                                 }
-
                             });
                         }
                     }
