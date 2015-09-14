@@ -1,11 +1,11 @@
 <header id="pm_header" class="clearfix pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo"><img src="/assets/img/logo.png"></a>
+    <a href="#" class="logo" ng-click="testMode = !testMode"><img src="/assets/img/logo.png"></a>
     <a href="#" class="logoMobile"><img src="/assets/img/logo_mobile.png"></a>
     <span class="location">Inbox</span>
     <a href="#" class="compose"><i class="fa fa-pencil"></i> <span>Compose</span></a>
     <a href="#" class="searchBtn"><i class="fa fa-search"></i></a>
     <form class="searchForm" ng-submit="searchMessages()">
-        <label>
+        <label ng-click="searchMessages()">
             <i class="fa fa-search"></i>
         </label>
         <button type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">

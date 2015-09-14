@@ -70,8 +70,8 @@
         </ul>
     </div>
     <div class="footer">
-        <a href="" class="storage" title="{{ renderStorageBar() }}">
-            <strong>24%</strong> {{ 'STORAGE_USED' | translate }}
+        <div class="storage">
+            <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
         </a>
         <a href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
     </div>

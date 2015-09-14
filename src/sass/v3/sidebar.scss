@@ -142,6 +142,9 @@ section#pm_sidebar {
                     line-height: 35px;
                     text-decoration: none;
                     color: #7a7982;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     .fa-tag {
                         display: inline-block;
                         width: 40px;
