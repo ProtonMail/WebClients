@@ -22,12 +22,6 @@ It will conflict with email rendering if the selectors are not specific or neste
 	font-family: 'Open Sans', sans-serif;
 }
 
-.pm_view {
-	float: left;
-	flex-grow: 1;
-	padding-right: 40px;
-}
-
 body.columns {
 	#pm_columns {
 		display: flex;
@@ -75,9 +69,6 @@ body.rows {
         .mobileSecondary {
             display: block;
         }
-	}
-	.pm_view {
-		display: none;
 	}
 	#pm_list {
 		width: 100%;

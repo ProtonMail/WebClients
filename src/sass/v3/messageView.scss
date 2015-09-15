@@ -2,12 +2,18 @@
 
 #pm_view {
 	display: block;
+	padding-left: 15px;
+	&.rows {
+		width: 100%;
+	}
     & > header {
     	display: block;
     	float: left;
     	width: 100%;
 		border-bottom: 1px solid #ededed;
 		height: $toolbarHeight;
+		box-sizing: border-box;
+		padding-right: 25px;
 	    h1 {
 	        font-size: 24px;
 	        font-weight: 400;
@@ -74,6 +80,8 @@
     			display: block;
     			float: left;
     			width: 1.5rem;
+    			line-height: 20px;
+    			height: 20px;
     		}
     		.fa-star-o {
 				color: #9397cd;
@@ -94,15 +102,19 @@
     	}
 		.sub {
 			padding-left: 1.5rem;
+			padding-right: 145px;
 			position: relative;
 			color: #999;
-			padding-right: 145px;
 			font-size: 14px;
 			margin-top: -5px;
 			line-height: 20px;
 			margin-bottom: 10px;
+			clear: both;
 			em {
     			color: #669;
+    		}
+    		.meta {
+    			padding-top: 5px;
     		}
 			.actions {
 				text-align: right;

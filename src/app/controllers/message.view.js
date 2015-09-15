@@ -137,6 +137,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                     tools.transformLinks('message-body');
                     $scope.setMessageHeadHeight();
                     $scope.setAttachmentHeight();
+
+                    // broken images
+                    $("img").error(function () {
+                        $(this).unbind("error").addClass("pm_broken");
+                    });
+
                 });
 
                 if(print) {

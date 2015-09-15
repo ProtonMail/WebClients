@@ -146,6 +146,7 @@ angular.module("proton", [
     $document,
     $rootScope,
     $state,
+    $stateParams,
     $timeout,
     authentication,
     networkActivityTracker,
@@ -170,6 +171,9 @@ angular.module("proton", [
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
 
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +

@@ -1,37 +1,116 @@
-<div class="message-metadata">
-    <div class="pull-right">
-        <span ng-bind-html="ago"></span>
+<!-- repeat 3 times to simulate threads -->
+<article class="message" ng-init="derp1 = true" ng-class="{ 'collapsed': derp1 }">
+    <header ng-click="derp1 = !derp1">
+        <a href class="fa fa-star"></a>
+        <span class="meta">
+            <i class="fa fa-paperclip"></i>
+            <i class="fa fa-lock"></i>
+            <span class="time">13.07.2015 03:54 pm</span>
+        </span>
+        <span class="from">
+            {{ 'FROM' | translate }} <em>{{ ::message.SenderName }}</em>
+        </span>
+    </header>
+    <div class="sub">
+        <div class="actions"></div>
+        <i class="fa fa-mail-forward"></i>
+        {{ 'TO' | translate }} 
+        <span ng-if="message.ToList.length">
+            <em ng-repeat="email in ::message.ToList">{{ email | contact }}</em>
+        </span>
+        <div class="meta">
+            <a href="#" class="fa fa-plus-square-o"></a>
+            <span class="pm_labels inline">
+                <span class="pm_label">IMPORTANT</span> 
+                <span class="pm_label">PROTONMAIL</span> 
+            </span>
+        </div>
+    </div>      
+    <div class="frame">
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>        
+        <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong>Decryption error</strong>
+            <br> Decryption of this message's content failed.
+        </div>
+        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
-    <ul class="infos">
-        <li>
-            <strong>{{ 'FROM' | translate }}</strong>
-            {{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt; <a href="" class="email" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
-            <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
-            <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
-        </li>
-        <li>
-            <strong>{{ 'TO' | translate }}</strong>
-            <ul class="list-inline inline" ng-if="message.ToList.length">
-                <li ng-repeat="email in ::message.ToList">
-                    {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
-                </li>
-            </ul>
-        </li>
-        <li ng-if="::message.CCList.length > 0">
-            <strong>{{ 'CC' | translate }}</strong>
-            <ul class="list-inline inline">
-                <li ng-repeat="email in ::message.CCList">
-                    {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
-                </li>
-            </ul>
-        </li>
-        <li ng-if="::message.BCCList.length > 0 && 'secured.sent.**' | includedByState">
-            <strong>{{ 'BCC' | translate }}</strong>
-            <ul class="list-inline inline">
-                <li ng-repeat="email in ::message.BCCList">
-                    {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
+</article>
+
+<article class="message" ng-init="derp2 = true" ng-class="{ 'collapsed': derp2 }">
+    <header ng-click="derp2 = !derp2">
+        <a href class="fa fa-star"></a>
+        <span class="meta">
+            <i class="fa fa-paperclip"></i>
+            <i class="fa fa-lock"></i>
+            <span class="time">13.07.2015 03:54 pm</span>
+        </span>
+        <span class="from">
+            {{ 'FROM' | translate }} <em>{{ ::message.SenderName }}</em>
+        </span>
+    </header>
+    <div class="sub">
+        <div class="actions"></div>
+        <i class="fa fa-mail-forward"></i>
+        {{ 'TO' | translate }} 
+        <span ng-if="message.ToList.length">
+            <em ng-repeat="email in ::message.ToList">
+                {{ email | contact }}<span ng-if="!$last">, </span>
+            </em>
+        </span>
+        <div class="meta">
+            <a href="#" class="fa fa-plus-square-o"></a>
+            <span class="pm_labels inline">
+                <span class="pm_label">IMPORTANT</span> 
+                <span class="pm_label">PROTONMAIL</span> 
+            </span>
+        </div>
+    </div>      
+    <div class="frame">
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>        
+        <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong>Decryption error</strong>
+            <br> Decryption of this message's content failed.
+        </div>
+        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+    </div>
+</article>
+
+<article class="message" ng-init="derp3 = false" ng-class="{ 'collapsed': derp3 }">
+    <header ng-click="derp3 = !derp3">
+        <a href class="fa fa-star"></a>
+        <span class="meta">
+            <i class="fa fa-paperclip"></i>
+            <i class="fa fa-lock"></i>
+            <span class="time">13.07.2015 03:54 pm</span>
+        </span>
+        <span class="from">
+            {{ 'FROM' | translate }} <em>{{ ::message.SenderName }}</em>
+        </span>
+    </header>
+    <div class="sub">
+        <div class="actions"></div>
+        <i class="fa fa-mail-forward"></i>
+        {{ 'TO' | translate }} 
+        <span ng-if="message.ToList.length">
+            <em ng-repeat="email in ::message.ToList">{{ email | contact }}</em>
+        </span>
+        <div class="meta">
+            <a href="#" class="fa fa-plus-square-o"></a>
+            <span class="pm_labels inline">
+                <span class="pm_label">IMPORTANT</span> 
+                <span class="pm_label">PROTONMAIL</span> 
+            </span>
+        </div>
+    </div>      
+    <div class="frame">
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>        
+        <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong>Decryption error</strong>
+            <br> Decryption of this message's content failed.
+        </div>
+        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+    </div>
+</article>
