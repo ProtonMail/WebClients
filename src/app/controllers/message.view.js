@@ -130,30 +130,57 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 // for the welcome email, we need to change the path to the welcome image lock
                 content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
-                // Facebook
-                if ( message.IsEncrypted === 7 || message.IsEncrypted === 8 ) {
-                    // one more check just to be sure... not foolproof by any means...
-                    if (message.SenderAddress.indexOf("@facebook")) {
-                        var boundary, html;
-                        boundary = content.split(/Content-Transfer-Encoding: 7bit/);
-                        html = boundary[2]; // this has a boundary on the end..
-                        content = html.split(/--(.*?)--/)[0];
-                    }
+
+                var showMessage = function(content) {
+                    $scope.content = $sce.trustAsHtml(content);
+
+                    $timeout(function() {
+                        tools.transformLinks('message-body');
+                        $scope.setMessageHeadHeight();
+                        $scope.setAttachmentHeight();
+                    });
+
+                    if(print) {
+                        setTimeout(function() {
+                            window.print();
+                        }, 1000);
+                    }                    
+                };
+
+                // PGP/MIME
+                if ( message.IsEncrypted === 8 ) {
+
+                    var mailparser = new MailParser({
+                        defaultCharset: 'UTF-8'
+                    });
+
+                    mailparser.on('end', function(mail) {
+
+                        if (mail.html) {
+                            content = mail.html;
+                        }
+                        else if (mail.text) {
+                            content = mail.text;
+                        }
+                        else {
+                            content = "Empty Message";
+                        }
+
+                        if (mail.attachments) {
+                            content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
+                        }
+
+                        showMessage(content);
+
+                    });
+
+                    mailparser.write(content);
+                    mailparser.end();
+                }
+                else {
+                    showMessage(content);
                 }
 
-                $scope.content = $sce.trustAsHtml(content);
-
-                $timeout(function() {
-                    tools.transformLinks('message-body');
-                    $scope.setMessageHeadHeight();
-                    $scope.setAttachmentHeight();
-                });
-
-                if(print) {
-                    setTimeout(function() {
-                        window.print();
-                    }, 1000);
-                }
             },
             function(err) {
                 $scope.togglePlainHtml();
