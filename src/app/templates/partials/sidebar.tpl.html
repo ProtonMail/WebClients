@@ -41,7 +41,7 @@
         </li>
         <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
-                <i class="fa fa-spam-flame"></i>
+                <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="getUnread('spam')"></em>
             </a>
