@@ -185,7 +185,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
                     totalSize += file.size;
+
+                    $scope.isOver = false;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
@@ -300,7 +303,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
-        $scope.isOver = false;
         $scope.composerStyle();
 
         attachments.load(file).then(
@@ -365,7 +367,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 return;
             }
         }
-        
+
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];
