@@ -15,7 +15,7 @@
 			border-bottom: 1px solid #ededed;
 			font-size: 14px;
 			padding: 0;
-			color: #666;
+			color: #777;
 			clear: both;
 			display: flex;
 			padding-right: 5px;
@@ -27,6 +27,15 @@
 				line-height: $rowHeight;
 			}
 			&.unread {
+				font-weight: 700;
+				color: #000;
+				.readIndicator {
+					span {
+						opacity: 1;
+					}
+				}				
+			}
+			&.selected {
 				border-color: transparent;
 				background: #f6f6f6;
 				position: relative;
@@ -35,15 +44,6 @@
 				padding: 0 5px 0 14px;
 				box-shadow: 0 0 0 1px #efefef;
 				border-radius: 2px;
-				font-weight: 700;
-				td {
-					color: #333;
-				}
-				.readIndicator {
-					span {
-						opacity: 1;
-					}
-				}
 				.subject {
 					.pm_labels {
 						background-color: #f6f6f6;
@@ -211,7 +211,7 @@
 					}
 				}
 			}
-			&.active {
+			&.selected {
 				background-color: #f6f6f6;
 			}
 			.size {
@@ -299,7 +299,7 @@
 					}
 				}
 			}
-			&.active {
+			&.selected {
 				.time {
 					background-color: #f6f6f6;
 				}

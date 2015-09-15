@@ -56,7 +56,7 @@
             <span class="readIndicator"><span></span></span>
             <span class="subject" ng-click="navigateToMessage($event, message)">
                 <span>{{ message.Subject }}</span>
-                <span class="pm_labels" ng-if="message.LabelIDs">
+                <span class="pm_labels" ng-if="message.LabelIDs.length">
                     <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
                 </span>
             </span>
