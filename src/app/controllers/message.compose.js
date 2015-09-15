@@ -126,8 +126,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     }
 
     function onMouseOver(event) {
-        console.log('onMouseOver');
-        $scope.isOver = false;
+        if($scope.isOver === true) {
+            $scope.isOver = false;
+        }
     }
 
     function onDragEnd(event) {
