@@ -32,6 +32,8 @@
                     ENC_OUT_PLAIN: 4, // sent plain but stored enc
                     ENC_STORED_ENC: 5, // such as draft
                     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
+                    ENCRYPTED_PGP: 7, // inline PGP from outside
+                    ENCRYPTED_PGP_MIME: 8, // PGP/MIME
                     -->
                     <span
                     class="fa"
@@ -109,7 +111,8 @@
                     !!(message.IsEncrypted == '5') ||
                     !!(message.IsEncrypted == '6'),
                     'fa-unlock-alt':
-                    !!(message.IsEncrypted == '0')
+                    !!(message.IsEncrypted == '0'),
+                    'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
                     }"
                     title="{{ message.encryptionType() }}">
                     </span>{{ message.Subject }}
