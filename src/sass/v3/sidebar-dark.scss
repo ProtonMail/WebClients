@@ -1,0 +1,10 @@
+@import "variables";
+
+section#pm_sidebar {
+    background: #515061;
+}
+
+@media (max-width: 1024px) {
+    section#pm_sidebar {
+    }
+}
