@@ -2,6 +2,14 @@
 
 section#pm_sidebar {
     background: #515061;
+    ul.menu {
+        li.active {
+            a {
+                border-color: #3e3d4c; 
+                background: #4e4d5c;
+            }
+        }
+    }
 }
 
 @media (max-width: 1024px) {
