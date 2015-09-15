@@ -24,7 +24,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.initialization = function() {
         // Variables
-        $scope.mailbox = $state.current.data.mailbox;
+        $scope.mailbox = $state.current.name.replace('secured.', '');
         $scope.messagesPerPage = $scope.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -406,7 +406,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     messageCounts.updateUnread('mark', [message], true);
                 }
                 $rootScope.scrollPosition = $('#content').scrollTop();
-                $state.go("secured." + $scope.mailbox + ".message", {
+                $state.go("secured." + $scope.mailbox, {
                     id: message.ID
                 });
             }

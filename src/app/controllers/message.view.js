@@ -59,6 +59,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     });
 
     $scope.initView = function() {
+
         if(message.IsRead === 0) {
             message.IsRead = 1;
             Message.read({IDs: [message.ID]});

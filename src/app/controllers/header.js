@@ -85,4 +85,12 @@ angular.module("proton.controllers.Header", [])
             return '';
         }
     };
+
+    $scope.toggleLayoutMode = function() {
+        if($rootScope.layoutMode === 'rows') {
+            $rootScope.layoutMode = 'columns';
+        } else {
+            $rootScope.layoutMode = 'rows';
+        }
+    };
 });

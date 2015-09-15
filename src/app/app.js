@@ -407,6 +407,7 @@ angular.module("proton", [
 
 .run(function($rootScope) {
     $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
+    $rootScope.layoutMode = 'rows';
     // Set build config
     $rootScope.build = {
         "version":"2.0",

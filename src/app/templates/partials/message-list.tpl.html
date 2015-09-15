@@ -1,8 +1,9 @@
+<ng-include src="'templates/partials/message-list-toolbar.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
     <aside>
-        <label>
-            <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
+        <label for="pm_mobile_messageList_message{{$index}}">
+            <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
         </label>
         <span>
             <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
@@ -32,7 +33,7 @@
 
 <div ng-if="layoutMode === 'rows'" class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
     <span class="pm_checkbox">
-        <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
+        <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
         <label for="pm_mobile_messageList_message{{$index}}">
             <span class="fa fa-check"></span>
         </label>

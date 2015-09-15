@@ -1,0 +1,19 @@
+<section id="pm_rows" ng-if="layoutMode === 'rows'">
+    <div class="pm_opensans maxheight list" ui-view="list" ng-if="!idDefined()"></div>
+    <div id="pm_view" ui-view="view" ng-if="idDefined()"></div>
+</section>
+<section id="pm_columns" ng-if="layoutMode === 'columns'">
+    <div class="pm_opensans maxheight list" ui-view="list"></div>
+    <div id="pm_view" ui-view="view" ng-if="idDefined()"></div>
+    <div id="pm_view" ng-if="!idDefined()">
+        <section id="pm_placeholder">
+        	<i class="fa fa-check-square"></i>
+        	<h2>{{ numberSelectedMessages }} Messages selected</h2>
+        	<span class="pm_buttons">
+        		<a href="">
+                    <strong>{{ 'DESELECT_ALL' | translate }}</strong>
+                </a>
+        	</span>
+        </section>
+    </div>
+</section>

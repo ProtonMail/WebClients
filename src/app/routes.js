@@ -6,35 +6,9 @@ angular.module("proton.routes", [
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
 
-    var messageViewOptions = {
-        url: "/:id",
-        views: {
-            "content@secured": {
-                controller: "ViewMessageController as messageViewCtrl",
-                templateUrl: "templates/views/message.tpl.html"
-            }
-        },
-        resolve: {
-            message: function(
-                $rootScope,
-                $state,
-                $stateParams,
-                Message,
-                messageCache,
-                authentication,
-                networkActivityTracker
-            ) {
-                if (authentication.isLoggedIn()) {
-                    return networkActivityTracker.track(
-                        messageCache.get($stateParams.id)
-                    );
-                }
-            }
-        }
-    };
-
     var messageParameters = function() {
       var parameters = [
+        'id',
         'page',
         'filter',
         'sort',
@@ -54,17 +28,36 @@ angular.module("proton.routes", [
       return parameters.join('&');
     };
 
-    var messageListOptions = function(url, params) {
-        var opts = _.extend(params || {}, {
-            url: url + "?" + messageParameters(),
-            views: {
-                "content@secured": {
-                    controller: "MessageListController as messageListCtrl",
-                    templateUrl: "templates/views/messageList.tpl.html"
+    var messageListOptions = function(mailbox) {
+        var options = {
+            url: '/' + mailbox + '?' + messageParameters(),
+            views: {}
+        };
+
+        options.views["content@secured"] = {
+            templateUrl: "templates/layout/messages.tpl.html"
+        };
+
+        options.views["list@secured." + mailbox] = {
+            templateUrl: "templates/partials/message-list.tpl.html",
+            controller: "MessageListController as messageListCtrl"
+        };
+
+        options.views["view@secured." + mailbox] = {
+            templateUrl: "templates/partials/message-view.tpl.html",
+            controller: "ViewMessageController as messageViewCtrl",
+            resolve: {
+                message: function($stateParams, messageCache) {
+                    if(angular.isDefined($stateParams.id)) {
+                        return messageCache.get($stateParams.id);
+                    } else {
+                        return true;
+                    }
                 }
             }
-        });
-        return opts;
+        };
+
+        return options;
     };
 
     $stateProvider
@@ -594,32 +587,32 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("secured.inbox", messageListOptions("/inbox", {
-        data: {
-            mailbox: "inbox"
-        }
-    }))
+    // .state("secured.inbox", messageListOptions("/inbox", {
+    //     data: {
+    //         mailbox: "inbox"
+    //     }
+    // }))
+    //
+    // .state("secured.inbox.relative", {
+    //     url: "/{rel:first|last}",
+    //     controller: function($scope, $stateParams) {
+    //         $scope.navigateToMessage(null, $stateParams.rel);
+    //     }
+    // })
 
-    .state("secured.inbox.relative", {
-        url: "/{rel:first|last}",
-        controller: function($scope, $stateParams) {
-            $scope.navigateToMessage(null, $stateParams.rel);
-        }
-    })
-
-    .state("secured.inbox.message", _.clone(messageViewOptions))
-
-    .state("secured.print", _.extend(_.clone(messageViewOptions), {
-        url: "/print/:id",
-        onEnter: function($rootScope) { $rootScope.isBlank = true; },
-        onExit: function($rootScope) { $rootScope.isBlank = false; },
-        views: {
-            "main@": {
-                controller: "ViewMessageController",
-                templateUrl: "templates/views/message.print.tpl.html"
-            }
-        }
-    }))
+    // .state("secured.inbox.message", _.clone(messageViewOptions))
+    //
+    // .state("secured.print", _.extend(_.clone(messageViewOptions), {
+    //     url: "/print/:id",
+    //     onEnter: function($rootScope) { $rootScope.isBlank = true; },
+    //     onExit: function($rootScope) { $rootScope.isBlank = false; },
+    //     views: {
+    //         "main@": {
+    //             controller: "ViewMessageController",
+    //             templateUrl: "templates/views/message.print.tpl.html"
+    //         }
+    //     }
+    // }))
 
     .state("secured.contacts", {
         url: "/contacts",
@@ -705,19 +698,10 @@ angular.module("proton.routes", [
 
     });
 
-    _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id_, box) {
-        if (box === 'inbox') {
-            return;
-        }
-
+    _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
         var stateName = "secured." + box;
-        $stateProvider.state(stateName, messageListOptions("/" + box, {
-            data: {
-                mailbox: box
-            }
-        }));
 
-        $stateProvider.state("secured." + box + ".message", _.clone(messageViewOptions));
+        $stateProvider.state(stateName, messageListOptions(box));
     });
 
     $urlRouterProvider.otherwise(function($injector) {
@@ -729,6 +713,9 @@ angular.module("proton.routes", [
     $locationProvider.html5Mode(true);
 })
 
-.run(function($rootScope, $state) {
+.run(function($rootScope, $state, $stateParams) {
     $rootScope.go = _.bind($state.go, $state);
+    $rootScope.idDefined = function() {
+        return angular.isDefined($stateParams.id);
+    };
 });
