@@ -219,7 +219,9 @@ angular.module("proton.models.message", ["proton.constants"])
                 $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
                 $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
                 $translate.instant('STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY')
+                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
+                $translate.instant('ENCRYPTED_PGP'),
+                $translate.instant('ENCRYPTED_PGP_MIME'),
             ];
 
             return texts[this.IsEncrypted];

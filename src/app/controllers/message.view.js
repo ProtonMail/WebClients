@@ -130,6 +130,17 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 // for the welcome email, we need to change the path to the welcome image lock
                 content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
+                // Facebook
+                if ( message.IsEncrypted === 7 || message.IsEncrypted === 8 ) {
+                    // one more check just to be sure... not foolproof by any means...
+                    if (message.SenderAddress.indexOf("@facebook")) {
+                        var boundary, html;
+                        boundary = content.split(/Content-Transfer-Encoding: 7bit/);
+                        html = boundary[2]; // this has a boundary on the end..
+                        content = html.split(/--(.*?)--/)[0];
+                    }
+                }
+
                 $scope.content = $sce.trustAsHtml(content);
 
                 $timeout(function() {
