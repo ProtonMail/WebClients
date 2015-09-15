@@ -9,7 +9,7 @@
         </h3>
         <p class="text-center">{{ user.Addresses[0].Email }}</p>
         <fieldset class="pure-form">
-            <form novalidate role="form" autocomplete="on" ng-submit="tryDecrypt()" method="post">
+            <form novalidate role="form" autocomplete="on" ng-submit="tryUnlock()" method="post">
                 <div class="form-group">
                     <input autocomplete="on" autocapitalize="off" autocorrect="off" class="form-control dark password focus" type="password" ng-keypress="keypress($event)" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
                 </div>
