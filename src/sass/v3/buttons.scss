@@ -12,7 +12,7 @@
     position: relative;
     .disabled,
     [disabled] {
-        opacity: .3;
+        color: rgba(0,0,0,.2) !important;
         pointer-events: none
     }
     .fa {
@@ -54,7 +54,7 @@
         }
     }
     strong {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 400;
         text-transform: uppercase;
     }

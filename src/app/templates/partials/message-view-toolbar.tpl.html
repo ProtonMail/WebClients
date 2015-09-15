@@ -1,4 +1,25 @@
 <nav id="pm_toolbar">
+    <div class="messageActions">
+        <span class="pm_buttons">
+            <a href="" ng-click="reply(message)">
+                <i class="fa fa-reply"></i> <strong>{{ 'REPLY' | translate }}</strong>
+            </a>
+            <a href="" ng-click="replyAll(message)" class="divider">
+                <i class="fa fa-reply-all"></i> <strong>{{ 'REPLY_ALL' | translate }}</strong>
+            </a>
+            <a href="" ng-click="forward(message)" class="divider">
+                <i class="fa fa-mail-forward"></i> <strong>{{ 'FORWARD' | translate }}</strong>
+            </a>
+        </span>
+        <span class="pm_buttons">
+            <a href="">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a href="" class="divider">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </span>        
+    </div>
     <span class="pm_buttons">
         <a href="#" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
             <i class="fa fa-long-arrow-left"></i>
@@ -13,10 +34,10 @@
         <a href="" ng-click="moveMessageTo('inbox')" ng-if="message.location() !== 'inbox'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'INBOX' | translate }}" pt-placement="bottom">
             <i class="fa fa-inbox"></i>
         </a>
-        <a href="" ng-click="moveMessageTo('delete')" ng-if="message.location() === 'spam' || message.location() === 'trash'" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom" class="divider">
+        <a href="" ng-click="moveMessageTo('delete')" ng-if="message.location() === 'spam' || message.location() === 'trash'" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
             <i class="fa fa-times-circle"></i>
         </a>
-        <a href="" ng-click="moveMessageTo('trash')" ng-if="message.location() !== 'trash'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'TRASH' | translate }}" pt-placement="bottom" class="divider">
+        <a href="" ng-click="moveMessageTo('trash')" ng-if="message.location() !== 'trash'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'TRASH' | translate }}" pt-placement="bottom">
             <i class="fa fa-trash-o"></i>
         </a>
         <a href="" ng-click="moveMessageTo('archive')" ng-if="message.location() !== 'archive'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
@@ -24,25 +45,6 @@
         </a>
         <a href="" ng-click="moveMessageTo('spam')" ng-if="message.location() !== 'spam' && message.location() !== 'sent'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'SPAM' | translate }}" pt-placement="bottom" class="divider">
             <i class="fa fa-ban"></i>
-        </a>
-    </span>
-    <span class="pm_buttons">
-        <a href="" ng-click="reply(message)">
-            <i class="fa fa-reply"></i> <strong>{{ 'REPLY' | translate }}</strong>
-        </a>
-        <a href="" ng-click="replyAll(message)" class="divider">
-            <i class="fa fa-reply-all"></i> <strong>{{ 'REPLY_ALL' | translate }}</strong>
-        </a>
-        <a href="" ng-click="forward(message)" class="divider">
-            <i class="fa fa-mail-forward"></i> <strong>{{ 'FORWARD' | translate }}</strong>
-        </a>
-    </span>
-    <span class="pm_buttons">
-        <a href="">
-            <i class="fa fa-chevron-left"></i>
-        </a>
-        <a href="" class="divider">
-            <i class="fa fa-chevron-right"></i>
         </a>
     </span>
 </nav>
