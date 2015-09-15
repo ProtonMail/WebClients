@@ -26,7 +26,7 @@
         border: none;
         border-radius: 0;
         margin: 0;
-    }        
+    }
     a {
         text-decoration: none;
         color: #838897;
@@ -44,6 +44,14 @@
         &:active {
             background-color: #f4f4f4;
         }
+        &.primary {
+            background-color: $primaryBackground;// purple background
+            color: $primaryFont;// white font
+        }
+        &.secondary {
+            // white background
+            // purple font
+        }
     }
     strong {
         font-size: 10px;
@@ -52,7 +60,7 @@
     }
     .divider {
         border-left: 1px solid #ededed;
-    }        
+    }
     & > *:first-child {
         border-radius: 2px 0 0 2px;
     }
