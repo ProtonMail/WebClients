@@ -13,6 +13,8 @@ angular.module("proton.controllers.Header", [])
         searchInput: $stateParams.words || ''
     };
 
+    $scope.showSidebar = $rootScope.showSidebar;
+
     function openWizardModal(title, version) {
         wizardModal.activate({
             params: {
@@ -24,6 +26,10 @@ angular.module("proton.controllers.Header", [])
             }
         });
     }
+
+    $scope.sidebarToggle = function() {
+        $rootScope.$broadcast('sidebarMobileToggle');
+    };
 
     $scope.searchMessages = function() {
         if($scope.params.searchInput.length > 0) {

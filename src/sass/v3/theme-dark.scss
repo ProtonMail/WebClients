@@ -1,7 +1,27 @@
 @import "variables";
 
+header#pm_header {
+    position: relative;
+    z-index: 2;
+    .logo {
+        background: #515061;
+    }
+}
+#pm_background {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background: #515061;
+    z-index: 1;
+    width: $sidebarWidth;
+}
 section#pm_sidebar {
     background: #515061;
+    padding-top: 16px; // was 15
+    position: relative;
+    top: -1px;
+    z-index: 3;
     ul.menu {
         li.active {
             a {
@@ -64,6 +84,9 @@ section#pm_sidebar {
 }
 
 @media (max-width: 1024px) {
+    #pm_background {
+        display: none;
+    }
     section#pm_sidebar {
     }
 }

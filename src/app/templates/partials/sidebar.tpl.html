@@ -1,4 +1,4 @@
-<section id="pm_sidebar" class="pm_opensans" ng-controller="SidebarController">
+<section id="pm_sidebar" class="pm_opensans" ng-controller="SidebarController" ng-class="{ 'show': showSidebar }" ng-mouseleave="hideMobileSidebar()">
     <a href="#" class="compose" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
     </a>

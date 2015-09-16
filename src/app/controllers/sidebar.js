@@ -14,7 +14,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     notify,
     CONSTANTS,
     CONFIG,
-    $timeout) {
+    $timeout) 
+{
+
     // Variables
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
     $scope.labels = authentication.user.Labels;
@@ -24,6 +26,14 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         accept: '.ui-draggable',
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
+    };
+
+    // Less than 1024
+    $scope.$on('sidebarMobileToggle', function() {
+        $scope.showSidebar = !$scope.showSidebar;
+    });
+    $scope.hideMobileSidebar = function() {
+        $scope.showSidebar = false;
     };
 
     // Listeners

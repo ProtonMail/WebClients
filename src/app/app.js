@@ -171,6 +171,7 @@ angular.module("proton", [
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
+    $rootScope.showSidebar = false;
 
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;

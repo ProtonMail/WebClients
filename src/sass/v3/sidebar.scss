@@ -20,7 +20,7 @@ section#pm_sidebar {
         margin-bottom: 15px;
         font-size: 12px;
         padding-right: .5rem;
-        width: 135px;
+        width: ($sidebarWidth - 50);
         box-sizing: border-box;
         &:hover {
             background-color: #7e82b4;
@@ -183,7 +183,27 @@ section#pm_sidebar {
 }
 
 @media (max-width: 1024px) {
-    section#pm_sidebar {
-        display: none;
+    body section#pm_sidebar {
+        position: fixed;
+        left: -$sidebarWidth;
+        top: 0;
+        bottom: 0;
+        z-index: 9;
+        opacity: 0;
+        box-shadow: 0 1rem 1rem rgba(0,0,0,.5);
+        -webkit-transition: left .5s linear, opacity .25s;
+           -moz-transition: left .5s linear, opacity .25s;
+            -ms-transition: left .5s linear, opacity .25s;
+             -o-transition: left .5s linear, opacity .25s;
+                transition: left .5s linear, opacity .25s;
+        &.show {
+            left: 0;
+            opacity: 1;
+            -webkit-transition: left .15s ease-out, opacity .15s;
+               -moz-transition: left .15s ease-out, opacity .15s;
+                -ms-transition: left .15s ease-out, opacity .15s;
+                 -o-transition: left .15s ease-out, opacity .15s;
+                    transition: left .15s ease-out, opacity .15s;
+        }
     }
 }
