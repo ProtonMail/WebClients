@@ -4,15 +4,20 @@
     <a href="#" class="logoMobile" ng-click="sidebarToggle()"><img src="/assets/img/logo_mobile.png"></a>
     <a href="#" class="compose"><i class="fa fa-pencil"></i> <span>Compose</span></a>
     <a href="#" class="searchBtn"><i class="fa fa-search"></i></a>
-    <form class="searchForm" ng-submit="searchMessages()">
-        <label ng-click="searchMessages()">
+    <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()">
+        <label>
             <i class="fa fa-search"></i>
         </label>
-        <button type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+        <button  type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom" ng-if="includedByState">
             <i class="fa fa-angle-down"></i>
         </button>
-        <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchInput" ng-enter="searchMessages()" class="query">
-        <a href="#" class="fa fa-times"></a>
+        <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
+    </form>
+    <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
+        <label>
+            <i class="fa fa-search"></i>
+        </label>
+        <input type="text" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
     </form>
     <ul class="navigation">
         <li ui-sref-active="active">

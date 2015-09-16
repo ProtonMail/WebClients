@@ -10,7 +10,8 @@ angular.module("proton.controllers.Header", [])
     wizardModal
 ) {
     $scope.params = {
-        searchInput: $stateParams.words || ''
+        searchMessageInput: $stateParams.words || '',
+        searchContactInput: ''
     };
 
     $scope.showSidebar = $rootScope.showSidebar;
@@ -27,15 +28,27 @@ angular.module("proton.controllers.Header", [])
         });
     }
 
+    $scope.isContactsView = function() {
+        return $state.is('secured.contacts');
+    };
+
     $scope.sidebarToggle = function() {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
     $scope.searchMessages = function() {
-        if($scope.params.searchInput.length > 0) {
-            $rootScope.$broadcast('search', $scope.params.searchInput);
+        if($scope.params.searchMessageInput.length > 0) {
+            $rootScope.$broadcast('searchMessages', $scope.params.searchMessageInput);
         } else {
             $state.go('secured.inbox');
+        }
+    };
+
+    $scope.searchContacts = function() {
+        if($scope.params.searchContactInput.length > 0) {
+            $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
+        } else {
+            $state.go('secured.contacts');
         }
     };
 
@@ -48,7 +61,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function() {
-        $rootScope.$broadcast('openSearchModal', $scope.params.searchInput);
+        $rootScope.$broadcast('openSearchModal', $scope.params.searchMessageInput);
     };
 
     $scope.openReportModal = function() {

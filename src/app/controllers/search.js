@@ -27,7 +27,7 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         $scope.open(value);
     });
 
-    $scope.$on('search', function(event, searchValue) {
+    $scope.$on('searchMessages', function(event, searchValue) {
         $scope.search(searchValue);
     });
 
