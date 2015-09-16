@@ -252,6 +252,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return deferred.promise;
     };
 
+    $scope.displayed = function(message) {
+        return message.ID === $stateParams.id;
+    };
+
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
     };

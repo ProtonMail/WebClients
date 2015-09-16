@@ -37,7 +37,7 @@
     </article>
 </div>
 
-<div ng-if="layoutMode === 'rows'" class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
+<div ng-if="layoutMode === 'rows'" class="message" ng-repeat="message in messages track by message.ID" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
     <span class="pm_checkbox">
         <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
         <label for="pm_mobile_messageList_message{{$index}}">
