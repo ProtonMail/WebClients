@@ -76,6 +76,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.unselectAllMessages();
         });
 
+        $scope.$on('unselectAllMessages', function(event) {
+            $scope.unselectAllMessages();
+        });
+
         $scope.$on('discardDraft', function(event, id) {
             $scope.discardDraft(id);
         });

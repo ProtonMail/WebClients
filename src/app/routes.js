@@ -715,7 +715,12 @@ angular.module("proton.routes", [
 
 .run(function($rootScope, $state, $stateParams) {
     $rootScope.go = _.bind($state.go, $state);
+
     $rootScope.idDefined = function() {
         return angular.isDefined($stateParams.id);
+    };
+
+    $rootScope.deselectAll = function() {
+        $rootScope.$broadcast('unselectAllMessages');
     };
 });
