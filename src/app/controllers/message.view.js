@@ -473,7 +473,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.goToMessageList = function() {
-        $state.go('^');
+        var mailbox = $state.current.name.replace('secured.', '');
+
+        $state.go("secured." + mailbox, {
+            id: null // remove ID
+        });
     };
 
     $scope.moveMessageTo = function(mailbox) {
