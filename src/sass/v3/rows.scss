@@ -7,7 +7,7 @@
 	.list {
 		overflow-y: auto;
 		overflow-x: hidden;
-		max-height: 40rem;
+		max-height: $maxHeight;
 		padding: 1px 20px 1px 15px;	
 		position: relative;
 		flex-grow: 1;

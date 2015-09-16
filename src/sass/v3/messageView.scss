@@ -49,7 +49,7 @@
     }
     #pm_thread {
     	padding-right: 25px;
-    	max-height: 40rem;
+    	max-height: $maxHeight;
     	overflow-y: auto;
     	overflow-x: hidden; 
     }

@@ -10,8 +10,12 @@ section#pm_sidebar {
     a.compose {
         margin-bottom: 15px;
         font-size: 12px;
-        padding-right: .5rem;
-        width: ($sidebarWidth - 50);
+        padding-right: 1rem;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        border-color: transparent;
+        display: block;
         .fa {
             display: inline-block;
             width: 1rem;
@@ -36,6 +40,7 @@ section#pm_sidebar {
                 color: #7a7982;
                 display: block;
                 border: 1px solid transparent;
+                border-radius: 2px;
                 i.fa {
                     height: 30px;
                     line-height: 30px;
@@ -77,6 +82,7 @@ section#pm_sidebar {
         font-size: 14px;   
         margin-bottom: 30px;
         form {
+            margin-bottom: .5rem;
             input {
                 display: inline-block;
                 border: none;
@@ -84,7 +90,7 @@ section#pm_sidebar {
                 padding-left: 10px;
                 line-height: 30px;
                 height: 30px;
-                width: 5rem;
+                width: 7rem;
                 font-size: 12px;
                 box-sizing: border-box;
                 margin-left: -10px;

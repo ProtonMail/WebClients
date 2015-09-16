@@ -4,13 +4,13 @@
 	margin-left: $sidebarWidth;
 	display: flex;
 	.list {
-		width: 490px;
-		min-width: 490px;
+		width: 515px;
+		min-width: 515px;
 		box-sizing: border-box;
 		padding-left: 15px;		
 		overflow-y: auto;
 		overflow-x: hidden;
-		max-height: 40rem; 
+		max-height: $maxHeight; 
 		padding-right: 25px;
 		div.message {
 			position: relative;
@@ -82,6 +82,12 @@
 				}
 				.fa {
 					font-size: 13px;
+					width: auto;
+					min-width: auto;
+				}
+				label {
+					position: relative;
+					top: -1px;
 				}
 			}
 			a.fa-star-o {

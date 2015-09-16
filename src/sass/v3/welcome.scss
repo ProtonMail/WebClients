@@ -1,7 +1,7 @@
 @import "variables";
 
 #pm_welcome {
-	max-height: 40rem;
+	max-height: $maxHeight;
 	overflow-y: auto;
 	overflow-x: hidden; 
 	iframe {

@@ -15,7 +15,7 @@
             <span class="readIndicator"></span>
         </span>
         <span>
-            <span class="fa fa-paperclip"></span>
+            <span class="fa fa-paperclip" ng-class="{ 'show': (message.HasAttachment || message.Attachments.length > 0) }"></span>
         </span>
     </aside>
     <header>
@@ -55,6 +55,6 @@
         </span>
     </span>
     <span class="size">{{ message.Size | humanSize }}</span>
-    <i class="fa fa-paperclip"></i>
+    <i class="fa fa-paperclip" ng-class="{ 'show': (message.HasAttachment || message.Attachments.length > 0) }"></i>
     <span class="time">{{ message.Time | readableTime }}</span>
 </div>
