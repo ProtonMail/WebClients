@@ -7,8 +7,59 @@ section#pm_sidebar {
             a {
                 border-color: #3e3d4c; 
                 background: #4e4d5c;
+                color: #fff;
+                i.fa {
+                    color: #9397cd;
+                }
             }
         }
+        li {
+            a {
+                color: #dadae5;
+                i.fa {
+                    color: #6e6f80;
+                }
+            }
+        }
+    }
+    div.labels {
+        ul {
+            li {
+                a {
+                    color: #dadae5;
+                }
+            }
+        }
+        form {
+            input {
+                border-color: #6e6f80;
+                color: #fff;
+            }
+            ::-webkit-input-placeholder {
+               color: #6e6f80;
+            }
+            :-moz-placeholder { 
+               color: #6e6f80;  
+            }
+            ::-moz-placeholder {  
+               color: #6e6f80;  
+            }
+            :-ms-input-placeholder {  
+               color: #6e6f80;  
+            }
+        }
+    }
+    div.footer {
+        color: #6e6f80;
+        a {
+            color: #6e6f80;
+        }
+    }
+}
+
+.ua-chrome section#pm_sidebar {
+    ::-webkit-scrollbar {
+        background: #3e3d4c
     }
 }
 

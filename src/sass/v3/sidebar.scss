@@ -104,19 +104,20 @@ section#pm_sidebar {
                 font-size: 12px;
                 box-sizing: border-box;
                 margin-left: -10px;
+                background: transparent;
             }
             ::-webkit-input-placeholder {
                color: #d9d9d9;
             }
             :-moz-placeholder { 
-               color: #d9d9d9;  
+               color: #d9d9d9;
             }
-            ::-moz-placeholder {  
-               color: #d9d9d9;  
+            ::-moz-placeholder {
+               color: #d9d9d9;
             }
-            :-ms-input-placeholder {  
-               color: #d9d9d9;  
-            }        
+            :-ms-input-placeholder {
+               color: #d9d9d9;
+            }
             .fa-plus {
                 display: inline-block;
                 font-size: 10px;
