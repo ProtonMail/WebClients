@@ -1,5 +1,32 @@
 @import "variables";
 
+.pm_button {
+    text-decoration: none;
+    color: #838897;
+    padding: 0 10px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #ededed;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: inline-block;
+    &:hover {
+        background-color: #fafafa;
+    }
+    &:active {
+        background-color: #f4f4f4;
+    }
+    &.primary {
+        background-color: #9397cd;
+        color: #fff;
+        &:hover {
+            background-color: #7e82b4;
+        }
+        &:active {
+            background-color: #66669a;
+        }
+    }
+}
 .pm_buttons {
     border: 1px solid #ededed;
     border-radius: 2px;
@@ -43,10 +70,6 @@
         }
         &:active {
             background-color: #f4f4f4;
-        }
-        &.primary {
-            background-color: $primaryBackground;// purple background
-            color: $primaryFont;// white font
         }
         &.secondary {
             // white background

@@ -8,26 +8,10 @@ section#pm_sidebar {
     box-sizing: border-box;
     float: left;
     a.compose {
-        height: 35px;
-        line-height: 35px;
-        border-radius: 2px;
-        background-color: #9397cd;
-        display: block;
-        text-align: center;
-        color: #fff; 
-        text-transform: uppercase;
-        text-decoration: none;
         margin-bottom: 15px;
         font-size: 12px;
         padding-right: .5rem;
         width: ($sidebarWidth - 50);
-        box-sizing: border-box;
-        &:hover {
-            background-color: #7e82b4;
-        }
-        &:active {
-            background-color: #66669a;
-        }
         .fa {
             display: inline-block;
             width: 1rem;
