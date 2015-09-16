@@ -133,18 +133,17 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                 var showMessage = function(content) {
                     $scope.content = $sce.trustAsHtml(content);
+                    $scope.$apply();
 
-                    $timeout(function() {
-                        tools.transformLinks('message-body');
-                        $scope.setMessageHeadHeight();
-                        $scope.setAttachmentHeight();
-                    });
+                    tools.transformLinks('message-body');
+                    $scope.setMessageHeadHeight();
+                    $scope.setAttachmentHeight();
 
                     if(print) {
                         setTimeout(function() {
                             window.print();
                         }, 1000);
-                    }                    
+                    }
                 };
 
                 // PGP/MIME
