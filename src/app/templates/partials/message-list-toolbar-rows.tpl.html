@@ -3,7 +3,7 @@
     <div class="main">
         <div class="pull-right">
             <span class="pm_buttons">
-                <a href="#" class="pm_trigger">
+                <a href="#" class="pm_trigger" ng-dropdown>
                     <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown">
@@ -14,7 +14,7 @@
             </span>
             <span class="pm_buttons">
                 <a href="#" class="fa fa-list"></a>
-                <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+                <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
                 <span class="pm_dropdown">
                     <a href="#">Submenu 1</a>
                     <a href="#">Submenu 2</a>
@@ -24,7 +24,7 @@
             <span class="pm_buttons">
                 <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
                 <span class="pm_buttons divider hidden-xs">
-                    <a href="#" class="pm_trigger">
+                    <a href="#" class="pm_trigger" ng-dropdown>
                         <strong><small>{{messageCount()}}</small></strong> <i class="fa fa-angle-down"></i>
                     </a>
                     <span class="pm_dropdown">
@@ -49,7 +49,7 @@
             <a href="#" class="fa fa-smile-o divider" ng-click="moveMessagesTo('spam')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger">
+            <a href="#" class="pm_trigger" ng-dropdown>
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -78,7 +78,7 @@
             <a href="#" class="fa fa-ban divider hidden-xs"></a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger">
+            <a href="#" class="pm_trigger" ng-dropdown>
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -92,7 +92,7 @@
 
     <div class="mobileSecondary">
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger">
+            <a href="#" class="pm_trigger" ng-dropdown>
                 <strong>More</strong> <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown">
@@ -104,7 +104,7 @@
         <span class="pm_buttons">
             <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
             <span class="pm_buttons divider hidden-xs">
-                <a href="#" class="pm_trigger">
+                <a href="#" class="pm_trigger" ng-dropdown>
                     <strong>{{messageCount()}}</strong> <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown">

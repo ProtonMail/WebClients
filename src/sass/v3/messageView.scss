@@ -11,7 +11,7 @@
     	float: left;
     	width: 100%;
 		border-bottom: 1px solid #ededed;
-		height: $toolbarHeight;
+		height: ($toolbarHeight+1);
 		box-sizing: border-box;
 		padding-right: 25px;
 	    h1 {

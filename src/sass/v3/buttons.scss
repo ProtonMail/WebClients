@@ -73,7 +73,8 @@
         &:hover {
             background-color: #fafafa;
         }
-        &:active {
+        &:active,
+        &.active {
             background-color: #f4f4f4;
         }
         &.secondary {
