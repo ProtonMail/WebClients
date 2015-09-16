@@ -1,3 +1,4 @@
+
 <nav id="pm_toolbar">
 
     <div class="main">
@@ -40,13 +41,22 @@
             <input type="checkbox" name="selectAll" ng-model="allSelectedCheckbox" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-eye-slash" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
         </span>
         <span class="pm_buttons">
             <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-archive divider" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-smile-o divider" ng-click="moveMessagesTo('spam')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
         </span>
         <span class="pm_buttons">
             <a href="#" class="pm_trigger" ng-dropdown>
