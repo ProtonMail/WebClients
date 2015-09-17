@@ -51,7 +51,7 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/openpgp.min.js",
-      "vendor/dompurify/purify.js",
+      "vendor/dompurify/src/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
