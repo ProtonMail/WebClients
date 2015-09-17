@@ -18,7 +18,7 @@
     -->
     <span class="pm_buttons">
         <a href="" ng-class="{ disabled: contacts.length === 0 }" ng-click="deleteAllContacts()">
-            <i class="fa fa-trash"></i> <strong>{{ 'DELETE_CONTACT' | translate }}</strong>
+            <i class="fa fa-trash"></i> <strong>{{ 'DELETE_ALL_CONTACTS' | translate }}</strong>
         </a>
     </span>
     <span class="pm_buttons">
@@ -31,4 +31,21 @@
             <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_CONTACTS' | translate }}</strong>
         </a>
     </span>
+
+    <div class="pull-right">
+        <span class="pm_buttons">
+            <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
+            <span class="pm_buttons divider hidden-xs">
+                <a href="#" class="pm_trigger" ng-dropdown>
+                    <strong>{{totalItems}}</strong> <i class="fa fa-angle-down"></i>
+                </a>
+                <span class="pm_dropdown">
+                    <a href="#">Submenu 1</a>
+                    <a href="#">Submenu 2</a>
+                    <a href="#">Submenu 3</a>
+                </span>
+            </span>
+            <a href="#" class="fa fa-chevron-right divider" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)"></a>
+        </span>
+    </div>
 </nav>

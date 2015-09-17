@@ -62,6 +62,7 @@ angular.module("proton", [
     "proton.labels",
     "proton.countdown",
     "proton.dropdown",
+    "proton.height",
 
     // Filters
     "proton.filters.strings",
@@ -149,6 +150,7 @@ angular.module("proton", [
     $state,
     $stateParams,
     $timeout,
+    $window,
     authentication,
     networkActivityTracker,
     notify,
@@ -156,14 +158,16 @@ angular.module("proton", [
 ) {
     var debounce;
 
-    $(window).bind('resize load', function() {
+    // Broadcast window resize event
+    angular.element($window).bind('resize load', function() {
         $timeout.cancel(debounce);
         $timeout(function() {
             $rootScope.isMobile = tools.findBootstrapEnvironment() === 'xs';
-        }, 100);
+            $rootScope.$broadcast('resized');
+        }, 10);
     });
 
-    $(window).bind('load', function() {
+    angular.element($window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
         }

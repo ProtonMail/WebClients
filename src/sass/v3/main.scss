@@ -42,6 +42,9 @@ body.columns {
             display: none;
         }
 	}
+	#pm_list {
+
+	}
 }
 
 body.rows {
@@ -59,6 +62,10 @@ body.rows {
         .mobileSecondary {
             display: block;
         }
+	}
+	#pm_list {
+		padding-right: 25px;
+		margin-right: -25px;
 	}
 }
 

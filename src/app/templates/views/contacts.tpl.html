@@ -2,20 +2,15 @@
 
 <!-- <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}" ng-change="refreshContacts(true)" /> -->
 
-<pagination
-    total-items="totalItems"
-    ng-model="params.currentPage"
-    ng-change="refreshContacts()"
-    max-size="5"
-    boundary-links="true"
-    items-per-page="numPerPage"
-    class="pagination-sm"
-    id="contactPagination">
-</pagination>
-
+<!-- TODO: need styles for alerts. ui kit psd has them? -->
 <p class="alert alert-info text-center" ng-if="contacts.length === 0">You have no contacts</p>
 
 <table ng-if="contacts.length > 0">
+
+<div class="pm_list">
+
+</div>
+
     <thead>
         <tr>
             <th class="text-center hidden-xs checkboxTh"></th>

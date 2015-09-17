@@ -1,14 +1,14 @@
 @import "variables";
 
 #pm_rows {
-	padding: 0 20px 0 11px;
+	padding: 0 25px;
 	display: flex;
 
 	.list {
 		overflow-y: auto;
 		overflow-x: hidden;
 		max-height: $maxHeight;
-		padding: 1px 20px 1px 15px;
+		padding: 0 25px 0 0;
 		position: relative;
 		flex-grow: 1;
 		.message {

@@ -61,8 +61,8 @@ ng-class="{
     locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState),
     login:!isLoggedIn,unlock:isLocked,secure:isSecure(),
     blank:!!isBlank,
-    rows: ($rootScope.layoutMode=='rows'),
-    columns: ($rootScope.layoutMode=='columns'),
+    rows: (layoutMode==='rows'),
+    columns: (layoutMode==='columns'),
     activeComposer:activeComposer}
 ">
 

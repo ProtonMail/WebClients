@@ -1,19 +1,27 @@
+// Custom Modules
 @import "header.scss";
 @import "sidebar.scss";
 @import "toolbar.scss";
 @import "messageView.scss";
 @import "messagePlaceholder.scss";
 @import "welcome.scss";
-@import "form.scss";
-@import "label.scss";
-@import "dropdown.scss";
 @import "main.scss";
 @import "columns.scss";
 @import "rows.scss";
+@import "contacts.scss";
 @import "settings.scss";
-@import "buttons.scss";
 @import "browser.scss";
 @import "typography.scss";
 @import "email.scss";
 
+// Global Classes
+@import "pm-button.scss";
+@import "pm-checkbox.scss";
+@import "pm-dropdown.scss";
+@import "pm-label.scss";
+
+// Directives
+@import "ng-height.scss";
+
+// Dark Sidebar Theme
 @import "theme-dark.scss";
