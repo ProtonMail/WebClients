@@ -41,7 +41,7 @@
         </label>
         <span class="pm_buttons">
             <a href="#" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <span class="pm_dropdown">
                 <a href="#">Submenu 1</a>
                 <a href="#">Submenu 2</a>
@@ -50,7 +50,7 @@
         </span>
         <span class="pm_buttons">
             <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">></a>
             <span class="pm_dropdown">
                 <a href="#">Submenu 1</a>
                 <a href="#">Submenu 2</a>

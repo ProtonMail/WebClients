@@ -1,9 +1,9 @@
 <section id="pm_rows" ng-if="layoutMode === 'rows'">
-    <div class="pm_opensans maxheight list" ui-view="list" ng-if="!idDefined()"></div>
+    <div class="pm_opensans list" ui-view="list" ng-if="!idDefined()"></div>
     <div id="pm_view" class="rows" ui-view="view" ng-if="idDefined()"></div>
 </section>
 <section id="pm_columns" ng-if="layoutMode === 'columns'">
-    <div class="pm_opensans maxheight list" ui-view="list"></div>
+    <div class="pm_opensans list" ui-view="list"></div>
     <div id="pm_view" class="columns" ui-view="view" ng-if="idDefined() &&  numberSelectedMessages === 0"></div>
     <div id="pm_view" class="columns" ng-if="!idDefined() || numberSelectedMessages > 0">
         <section id="pm_placeholder">

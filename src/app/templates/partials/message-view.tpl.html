@@ -6,7 +6,7 @@
     <h1 ng-bind="::message.Subject"></h1>
 </header>
 
-<div id="pm_thread" class="maxheight">
+<div id="pm_thread" ng-height>
     <ng-include src="'templates/partials/message-single.tpl.html'"></ng-include>
 </div>
 

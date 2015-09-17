@@ -3,4 +3,11 @@
 	img.pm_broken {
 		background-color: #ccc;
 	}
+	* {
+		word-break: break-word;
+	}
+	blockquote blockquote blockquote {
+		padding-left: 0;
+		margin-left: 0;
+	}
 }

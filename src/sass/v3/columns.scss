@@ -20,12 +20,11 @@
 			padding: 12px 0 12px 45px;
 			cursor: pointer;
 			border-radius: 2px;
-			margin: 0 5px;
 			color: #666;
 			&.selected {
 				background-color: #f6f6f6;
 				border-color: #efefef;	
-				margin: 0 -5px;
+				margin: 0 -10px;
 				padding-left: 55px;
 				padding-right: 10px;
 				box-shadow: 0 1px 0 #fff;
@@ -152,9 +151,11 @@
 	}	
 	#pm_view {
 		flex-grow: 1;
-		padding: 0 20px 0 15px;
+		padding: 0 25px;
 		box-sizing: border-box;
 		position: relative;
 		z-index: 6;
+		width: 100%;
+		overflow: auto;
 	}
 }
