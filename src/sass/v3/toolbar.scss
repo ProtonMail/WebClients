@@ -65,11 +65,11 @@
         display: block;
         float: none;
         margin-right: 27px;
-        margin-left: 17px;
+        width: 100%;
+        box-sizing: border-box;
         .mobileMain {
             padding-left: 0;
             position: relative;
-            left: -2px;
             .pm_buttons {
                 a {
                     padding: 0 11px;

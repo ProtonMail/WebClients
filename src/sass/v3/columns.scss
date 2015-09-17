@@ -159,3 +159,23 @@
 		overflow: auto;
 	}
 }
+
+@media (max-width: 1024px) {
+    #pm_columns {
+    	margin: 0;
+    	.main > label {
+    		padding-left: 0;
+    	}
+    }
+}
+
+@media (max-width: 660px) {
+
+}
+
+@media (max-width: 600px) {
+    #pm_columns {
+
+    }
+
+}
