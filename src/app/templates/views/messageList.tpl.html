@@ -115,7 +115,13 @@
                     'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
                     }"
                     title="{{ message.encryptionType() }}">
-                    </span>{{ message.Subject }}
+                    </span>
+                    <i class="fa fa-clock-o expiration" countdown="{{ message.ExpirationTime }}" ng-if="message.ExpirationTime > 0"></i>
+                    <i class="fa fa-paperclip" ng-show="message.HasAttachment || message.Attachments.length > 0"></i>
+                    <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                        <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
+                    </a>
+                    {{ message.Subject }}
                 </h4>
                 <span class="recipient">
                     <span ng-init="message.showTo = showTo(message)" ng-show="::message.showTo">
