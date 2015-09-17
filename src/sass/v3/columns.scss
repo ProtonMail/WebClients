@@ -6,12 +6,13 @@
 	.list {
 		width: 515px;
 		min-width: 515px;
-		box-sizing: border-box;
-		padding-left: 15px;		
+		box-sizing: border-box;		
 		overflow-y: auto;
 		overflow-x: hidden;
 		max-height: $maxHeight; 
-		padding-right: 25px;
+		#pm_list {
+			padding: 0 25px;
+		}
 		div.message {
 			position: relative;
 			border: 1px solid transparent;		
@@ -51,6 +52,7 @@
 				}
 				span.readIndicator {
 					opacity: 1;
+					margin-left: 1px;
 				}
 			}
 			strong {
@@ -73,9 +75,11 @@
 					width: 20px;
 					line-height: 20px;
 					height: 20px;
-					text-align: center;
 					vertical-align: middle;
 					float: left;
+				}
+				& > *:nth-child(even) {
+					text-align: center;
 				}
 				a {
 					text-decoration: none;
@@ -88,6 +92,10 @@
 				label {
 					position: relative;
 					top: -1px;
+					text-align: left;
+					input {
+						margin-left: 0;
+					}
 				}
 			}
 			a.fa-star-o {

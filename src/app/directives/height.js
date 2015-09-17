@@ -16,14 +16,12 @@ angular.module("proton.height", [])
         }
 
         scope.$on('resized', function() {
-            $log.debug('resized');
             setHeight();
         });
 
         var init = setInterval( setHeight, 120);
         setTimeout( function() {
             clearInterval(init);
-            $log.info('end');
         }, 2400);
 
     };

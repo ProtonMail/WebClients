@@ -3,7 +3,7 @@
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" ng-height>
     <div  ng-repeat="message in messages track by message.ID" 
-    class="message" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
+    class="message" ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
         <aside>
             <label for="pm_mobile_messageList_message{{$index}}">
                 <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
@@ -42,7 +42,7 @@
 
 <div ng-if="layoutMode === 'rows'" id="pm_list" ng-height>
     <div ng-repeat="message in messages track by message.ID" 
-    class="message" ng-class="{unread: message.IsRead === 0,selected: message.Selected,starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
+    class="message" ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
         <span class="pm_checkbox">
             <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
             <label for="pm_mobile_messageList_message{{$index}}">

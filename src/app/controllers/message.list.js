@@ -413,6 +413,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
                     messageCounts.updateUnread('mark', [message], true);
                 }
+
+                // TODO: Richard, we need to unset all of the other messages somehow?
+                message.Active = true;
+
                 $rootScope.scrollPosition = $('#content').scrollTop();
                 $state.go("secured." + $scope.mailbox, {
                     id: message.ID
