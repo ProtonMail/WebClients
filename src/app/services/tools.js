@@ -305,25 +305,27 @@ angular.module("proton.tools", ["proton.constants"])
 
     // get user max and current storage, and return a string "123.3/456.6 GB"
     tools.renderStorageBar = function(current, max) {
+
         var kb = 1024;
         var mb = kb*kb;
         var gb = mb*kb;
-        var cur = current / kb; // convert to KB
+
+        var cur = (current/kb).toFixed(0); // convert to KB
 
         if (max < gb) {
-            // render bar in terms of MB
+            // render bar in terms of MB such as "785.4 MB"
             cur = (cur/kb).toFixed(1);
 
-            if (cur > 0 && cur < 0.01) {
+            if (0 < cur < 1) {
                 cur = 0.01;
             }
 
             return Number(cur) + '/' + Number(Math.round(max/kb/kb)) + ' MB';
         } else {
-            // render bar in terms of GB
+            // render bar in terms of GB such as "15.23 GB"
             cur = (cur/kb/kb).toFixed(2);
 
-            if (cur > 0 && cur < 0.01) {
+            if (0 < cur < 1) {
                 cur = 0.01;
             }
 
