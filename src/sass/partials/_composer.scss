@@ -107,6 +107,9 @@
     -ms-flex-direction: column;
     flex-direction: column;
 
+    height: auto !important;
+    min-height: 10rem !important;
+    
     .editor-container {
         height: 100%;
         width: 100%;

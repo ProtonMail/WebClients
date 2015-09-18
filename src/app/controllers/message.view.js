@@ -133,8 +133,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                 var showMessage = function(content) {
                     $scope.content = $sce.trustAsHtml(content);
-                    $scope.$apply();
-
                     tools.transformLinks('message-body');
                     $scope.setMessageHeadHeight();
                     $scope.setAttachmentHeight();

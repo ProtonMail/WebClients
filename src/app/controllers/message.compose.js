@@ -505,12 +505,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
 			styles.overflowY = 'auto'; // TODO move this propertie to CSS
 
-        	// Height
-        	if(windowHeight < composerHeight) {
-        		styles.height = windowHeight + 'px';
-        	} else {
-                styles.height = 'auto';
-            }
+        	// Height - depreciated. pure css solution - Jason
+        	// if(windowHeight < composerHeight) {
+        		// styles.height = windowHeight + 'px';
+        	// } else {
+                // styles.height = 'auto';
+            // }
 
             $(composer).css(styles);
 
