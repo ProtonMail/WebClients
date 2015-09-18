@@ -12,7 +12,7 @@
     background: #fff;
     z-index: 9999;
     box-sizing: border-box;
-    &:after {
+    .modal-overlay {
         content: "";
         display: block;
         position: fixed;
@@ -20,12 +20,12 @@
         top: 0;
         right: 0;
         bottom: 0;
-        z-index: 9997;
+        z-index: 1;
         background: rgba(0,0,0,.1);       
     }
     .modal-dialog {
         position: relative;
-        z-index: 9998;
+        z-index: 2;
         background: #fff;
         .modal-header {
             padding: 50px 50px 25px 50px;

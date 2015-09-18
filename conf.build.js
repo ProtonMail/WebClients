@@ -51,7 +51,7 @@ module.exports = {
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/openpgp/openpgp.min.js",
-      "vendor/dompurify/purify.js",
+      "vendor/dompurify/src/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
@@ -100,7 +100,8 @@ module.exports = {
       "vendor/angular-toggle-switch/angular-toggle-switch.css",
       "vendor/angular-toggle-switch/angular-toggle-switch-bootstrap.css",
       "vendor/pikaday/css/pikaday.css",
-      "vendor/dropzone/dist/dropzone.css"
+      "vendor/dropzone/dist/dropzone.css",
+      "vendor/open-sans-fontface/open-sans.css"
     ],
 
     sass_include_dirs: [

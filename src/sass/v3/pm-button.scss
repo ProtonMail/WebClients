@@ -24,9 +24,11 @@
         color: #fff;
         &:hover {
             background-color: #7e82b4;
+            border-color: #7e82b4;
         }
         &:active {
             background-color: #66669a;
+            border-color: #66669a;
         }
     }
     &.link {
@@ -51,7 +53,13 @@
         &:active {
             background-color: #f4f4f4;
         }
-    }    
+    }
+    &[disabled],
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+        cursor: default;
+    }
 }
 
 .pull-right .pm_buttons {
