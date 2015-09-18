@@ -33,6 +33,9 @@
 // Dark Sidebar Theme
 @import "theme-dark.scss";
 
+body {
+	overflow-y: hidden;
+}
 body.login,
 body.locked {
 	background: #4c4c5d;
