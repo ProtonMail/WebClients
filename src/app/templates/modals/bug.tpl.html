@@ -1,12 +1,9 @@
-<div class="modal fade" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController">
+<div class="pm_modal pm_fadeIn" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content pm_form">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">
-                    <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
-                    <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                </button>
-                <h4 class="modal-title">{{ 'REPORT_BUG' | translate }}</h4>
+                <button type="button" ng-click="close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+                <h3 class="modal-title">{{ 'REPORT_BUG' | translate }}</h3>
             </div>
             <div class="modal-body">
                 <p class="alert alert-info text-center">
@@ -78,9 +75,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
-                <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="btn btn-primary">{{ 'SEND' | translate }}</button>
+                <a class="pm_button link pull-left" ng-click="close()">{{ 'CANCEL' | translate }}</a>
+                <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="pm_button primary">{{ 'SEND' | translate }}</button>
             </div>
         </div>
     </div>
+    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>    
 </div>
