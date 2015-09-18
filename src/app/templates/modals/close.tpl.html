@@ -1,4 +1,4 @@
-<div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
+<div class="pm_modal fade {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog modal-close">
         <div class="modal-content">
             <div class="modal-body">
@@ -6,11 +6,11 @@
                     Would you like to discard this draft?
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer text-right">
                 <a href class="btn btn-default pull-left" ng-click="ctrl.cancel()">
                 {{ 'NO' | translate }}
                 </a>
-                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.discard()">
+                <button tabindex="1" autofocus type="button" class="pm_button primary" ng-click="ctrl.discard()">
                 {{ 'YES' | translate }}
                 </button>
             </div>

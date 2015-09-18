@@ -1,53 +1,54 @@
-<p class="text-center white">
-    <a href="https://protonmail.ch/invite" target="_self" class="underline">{{ 'SIGN_UP_FOR_PROTONMAIL' | translate }}</a>
-</p>
-<div class="panel panel-default wrap panel-dark panel-medium" id="loginPanel">
-    <div class="panel-heading logoWrap">
-        <a href="/"><img src="/assets/img/protonmail.svg" alt="ProtonMail" class="logo" /></a>
+<form 
+id="pm_login" 
+class="pm_panel pm_form" 
+novalidate 
+ng-keypress="keypress($event)" 
+role="form" 
+autocomplete="on" 
+ng-submit="tryLogin()" 
+method="post">
+
+    <img src="/assets/img/logo.png" alt="ProtonMail" class="logo" />
+
+    <h3 class="text-center margin-bottom">
+        <span class="fa fa-user title-icon"></span>
+        {{ 'USER_LOGIN' | translate }}
+    </h3>
+
+    <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
+
+    <input
+    autocomplete="on"
+    autocapitalize="off"
+    autocorrect="off"
+    type="text"
+    ng-model="username"
+    tabindex="1"
+    id="username"
+    name="Username"
+    placeholder="Username"
+    class="margin"
+    required="" />
+
+    <input
+    maxlength="{{ ::maxPW }}"
+    autocomplete="on"
+    autocapitalize="off"
+    autocorrect="off"
+    type="password"
+    ng-model="password"
+    tabindex="2"
+    id="password"
+    name="Password"
+    class="margin"
+    required=""
+    placeholder="Password" />
+
+    <div class="clearfix">
+        <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP' | translate }}</a>
+        <a class="pm_button primary pull-right" ng-click="tryLogin()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>    
     </div>
-    <div class="panel-body">
-        <form id="sign_in_form" name="sign_in" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="tryLogin()" method="post">
-            <h3 class="text-center margin-bottom">
-                <span class="fa fa-user title-icon"></span>
-                {{ 'USER_LOGIN' | translate }}
-            </h3>
-            <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
-            <div class="form-group">
-                <input
-                autocomplete="on"
-                autocapitalize="off"
-                autocorrect="off"
-                type="text"
-                ng-model="username"
-                class="form-control dark focus"
-                tabindex="1"
-                id="username"
-                name="Username"
-                placeholder="Username"
-                required="" />
-            </div>
-            <div class="form-group">
-                <input
-                maxlength="{{ ::maxPW }}"
-                autocomplete="on"
-                autocapitalize="off"
-                autocorrect="off"
-                type="password"
-                ng-model="password"
-                class="form-control dark password"
-                tabindex="2"
-                id="password"
-                name="Password"
-                required=""
-                placeholder="Password" />
-            </div>
-            <div class="form-group clearfix">
-                <a class="btn pull-left" ng-click="getLoginHelp()">{{'NEED_HELP' | translate }}</a>
-                <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}" tabindex="3">
-                    {{ 'LOGIN' | translate }}
-                </button>
-            </div>
-            <input type="hidden" id="hashed_pw" name="hashed_pw" />
-        </form>
-    </div>
-</div>
+
+    <input type="hidden" id="hashed_pw" name="hashed_pw" />    
+
+</form>

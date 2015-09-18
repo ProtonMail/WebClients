@@ -132,6 +132,18 @@ header#pm_header {
 			}
 		}
 	}
+	&.no-auth {
+		background: #505061;
+		border-bottom-color: transparent;
+		a {
+			text-decoration: none;
+			color: #fff;
+			padding: 0 25px;
+			&.pm_button.primary {
+				margin-right: 25px;
+			}
+		}
+	}
 }
 
 @media (max-width: 1024px) {

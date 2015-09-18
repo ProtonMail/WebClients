@@ -1,4 +1,4 @@
-<div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
+<div class="pm_modal fade {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
@@ -7,9 +7,9 @@
             <div class="modal-body">
                 <div class="alert no-margin-bottom" ng-bind-html="ctrl.message"></div>
             </div>
-            <div class="modal-footer">
-                <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                <button tabindex="1" type="button" class="btn btn-primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
+            <div class="modal-footer text-right">
+                <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
             </div>
         </div>
     </div>

@@ -29,6 +29,10 @@
             background-color: #66669a;
         }
     }
+    &.link {
+        background-color: transparent;
+        border-color: transparent;
+    }
     &.round {
         display: inline-block;
         height: 30px;

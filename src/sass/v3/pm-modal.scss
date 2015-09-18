@@ -1,6 +1,6 @@
 @import "variables";
 
-.modal {
+.pm_modal {
     position: fixed;
     left: 50%;
     top: 7rem;
@@ -8,6 +8,7 @@
     margin-left: -25rem;
     border: 5px solid #9397cd;
     display: block;
+    display: none;
     background: #fff;
     z-index: 9999;
     box-sizing: border-box;

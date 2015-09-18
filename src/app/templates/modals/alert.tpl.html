@@ -1,4 +1,4 @@
-<div class="modal fade {{ctrl.class}}" role="dialog" style="display: block;">
+<div class="pm_modal fade {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
@@ -11,8 +11,8 @@
             <div class="modal-body">
                 <p class="alert {{ ctrl.alert }}" ng-bind-html="ctrl.message"></p>
             </div>
-            <div class="modal-footer">
-                <button tabindex="1" autofocus type="button" class="btn btn-primary" ng-click="ctrl.ok()">{{ 'OK' | translate }}</button>
+            <div class="modal-footer text-right">
+                <button tabindex="1" autofocus type="button" class="pm_button primary" ng-click="ctrl.ok()">{{ 'OK' | translate }}</button>
             </div>
         </div>
     </div>

@@ -9,6 +9,7 @@
 @import "messagePlaceholder.scss";
 @import "welcome.scss";
 @import "main.scss";
+@import "login.scss";
 @import "columns.scss";
 @import "rows.scss";
 @import "contacts.scss";
@@ -24,9 +25,20 @@
 @import "pm-label.scss";
 @import "pm-modal.scss";
 @import "pm-form.scss";
+@import "pm-panel.scss";
 
 // Directives
 @import "ng-height.scss";
 
 // Dark Sidebar Theme
 @import "theme-dark.scss";
+
+body.login,
+body.locked {
+	background: #4c4c5d;
+}
+h1, h2, h3, h4, h5, h6 {
+	.fa {
+		display: block;
+	}
+}

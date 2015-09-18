@@ -1,4 +1,4 @@
-<div class="modal fade {{this.class}}" role="dialog" style="display: block;">
+<div class="pm_modal fade {{this.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,28 +10,28 @@
             </div>
             <div class="modal-body text-center">
                 <p>
-                    <a class="btn btn-primary" ui-sref="support.reset-password" ng-click="ctrl.cancel()">
+                    <a class="pm_button primary" ui-sref="support.reset-password" ng-click="ctrl.cancel()">
                         {{'RESET_PASSWORD' | translate }}
                     </a>
                 </p>
                 <p>
-                    <a href="https://protonmail.ch/username" target="_self" class="btn btn-primary">
+                    <a href="https://protonmail.ch/username" target="_self" class="pm_button primary">
                         {{ 'FORGOT_USERNAME?' | translate }}
                     </a>
                 </p>
                 <p>
-                    <a href="https://support.protonmail.ch/knowledge-base/common-login-problems/" target="_self" class="btn btn-primary">
+                    <a href="https://support.protonmail.ch/knowledge-base/common-login-problems/" target="_self" class="pm_button primary">
                         Common Login Problems
                     </a>
                 </p>
                 <p>
-                    <a href="https://protonmail.ch/support" target="_self" class="btn btn-primary">
+                    <a href="https://protonmail.ch/support" target="_self" class="pm_button primary">
                         Email our Support Team
                     </a>
                 </p>
             </div>
-            <div class="modal-footer">
-                <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+            <div class="modal-footer text-right">
+                <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
             </div>
         </div>
     </div> 

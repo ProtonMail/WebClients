@@ -1,0 +1,24 @@
+@import "variables";
+
+#pm_login {
+	&.pm_panel {
+		background: rgba(255,255,255,.1);
+		border: 1px solid rgba(255,255,255,.25);
+		margin-top: 8rem;
+		margin-bottom: 2rem;
+		a {
+			color: #fff;
+		}
+	}
+	input[type="text"],
+	input[type="password"] {
+		border-color: #dfdfdf;
+		background: rgba(255,255,255,.1);
+		color: #dfdfdf;
+		line-height: 38px;
+		height: 38px;
+		&:active {
+			color: #fff;
+		}
+	}
+}
