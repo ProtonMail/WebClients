@@ -1,27 +1,32 @@
-<div class="modal fade {{this.class}}" role="dialog" style="display: block;">
+<div class="modal pm_fadeIn {{this.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content pm_form alt">
             <form name="contactForm" novalidate ng-submit="ctrl.save()" method="post">
                 <div class="modal-header" ng-show="ctrl.title">
-                    <button type="button" class="close" ng-click="ctrl.cancel()">
-                        <i aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times"></i>
-                        <span class="sr-only">{{ 'CLOSE' | translate }}</span>
-                    </button>
-                    <h4 class="modal-title">{{ctrl.title}}</h4>
+                    <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+                    <h3 class="modal-title">{{ctrl.title}}</h3>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label" for="contactName">{{ 'NAME' | translate }}</label>
-                        <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
+                        <span class="col">
+                            <label class="control-label" for="contactName">{{ 'NAME' | translate }}</label>
+                        </span>
+                        <span class="col wide">
+                            <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
+                        </span>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="contactEmail">{{ 'EMAIL' | translate }}</label>
-                        <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="Contact {{ 'EMAIL' | translate }}" required />
+                        <span class="col">
+                            <label class="control-label" for="contactEmail">{{ 'EMAIL' | translate }}</label>
+                        </span>
+                        <span class="col wide">
+                            <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="Contact {{ 'EMAIL' | translate }}" required />
+                        </span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <a href class="btn btn-link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                    <button tabindex="3" type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
+                <div class="modal-footer text-right">
+                    <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                    <button tabindex="3" type="submit" class="pm_button primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
                         <span ng-hide="networkActivity.loading()">{{ 'SAVE_CONTACT' | translate }}</span>
                         <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
                     </button>

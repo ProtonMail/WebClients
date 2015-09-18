@@ -20,6 +20,12 @@
     .messageActions {
         float: right;
     }
+    .pull-right {
+        float: right;
+    }
+    .pull-left {
+        float: left;
+    }
     .main {
         & > label {
             float: left;

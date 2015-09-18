@@ -124,24 +124,6 @@
 				top: 0;
 				z-index: 2;
 				width: 145px;
-				a {
-					display: inline-block;
-					height: 30px;
-					line-height: 30px;
-					width: 30px;
-					text-align: center;
-					border: 1px solid #ddd;
-					border-radius: 30px;
-					.fa {
-						color: #9397cd;
-					}
-    				&:hover {
-		                background-color: #fafafa;
-		            }
-		            &:active {
-		                background-color: #f4f4f4;
-		            }
-	            }
 			}
 			& > .fa-mail-forward,
 			& > .fa-mail-reply,

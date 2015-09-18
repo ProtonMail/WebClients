@@ -1,0 +1,62 @@
+@import "variables";
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 7rem;
+    width: 50rem;
+    margin-left: -25rem;
+    border: 5px solid #9397cd;
+    display: block;
+    background: #fff;
+    z-index: 9999;
+    box-sizing: border-box;
+    &:after {
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9997;
+        background: rgba(0,0,0,.1);       
+    }
+    .modal-dialog {
+        position: relative;
+        z-index: 9998;
+        background: #fff;
+        .modal-header {
+            padding: 50px 50px 25px 50px;
+        }
+        .modal-body {
+            padding: 25px 50px;
+        }
+        .modal-footer {
+            padding: 0 50px 50px;
+        }
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            padding: 0;
+            color: #fff;
+            background: #9397cd;
+            cursor: pointer;
+            display: block;
+            outline: none;
+            border: none;
+        }
+        h1, h2, h3, h4 {
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 400;
+            color: #555;
+        }
+        color: #555;
+    }
+}

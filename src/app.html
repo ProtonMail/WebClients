@@ -73,7 +73,7 @@ ng-class="{
     <ng-include src="'templates/partials/loader.tpl.html'"></ng-include>
 </div>
 
-<div style="display:block; z-index:9999999; position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: #fff;" ng-if="networkActivity.loading()">
+<div style="display:block; z-index:9999999; position: fixed; left: 0; top: 0; right: 0; bottom: 0;" ng-if="networkActivity.loading()">
     <img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/21-0.gif" style="display: block; opacity: .8; position: absolute; right: 1rem; bottom: 1rem">
 </div>
 <div ui-view="main" autoscroll="false" id="body"></div>

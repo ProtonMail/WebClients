@@ -1,0 +1,57 @@
+@import "variables";
+
+.pm_form {
+    legend {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        border-bottom: 1px solid #ededed;
+        line-height: 1.5em;
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 1rem;
+        border: 1px solid #ededed;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        font-size: 1em;
+    }
+    textarea {
+        line-height: 30px;
+        padding: 1rem 1rem;
+        border: 1px solid #ededed;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        font-size: 1em;
+    }
+    label {
+        height: 32px;
+        line-height: 32px;
+        display: block;
+    }
+    .col {
+        display: inline-block;
+        width: 48%;
+        min-width: 48%;
+        box-sizing: border-box;
+        padding-bottom: 1rem;
+    } 
+    &.alt {
+        .col {
+            width: 25%;
+            min-width: 25%;
+            &.wide {
+                width: 70%;
+                min-width: 70%;
+            }
+        }
+    }     
+}

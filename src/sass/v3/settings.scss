@@ -12,40 +12,6 @@
 			float: left;
 			box-sizing: border-box;
 			padding: 0 2rem;
-			legend {
-				padding: 0;
-				margin: 0;
-				font-size: 20px;
-				border-bottom: 1px solid #ededed;
-				line-height: 1.5em;
-				display: block;
-				width: 100%;
-				margin-bottom: 1rem;
-			}
-			.col {
-				display: inline-block;
-				width: 48%;
-				min-width: 48%;
-				box-sizing: border-box;
-				padding-bottom: 1rem;
-				input[type="text"],
-				input[type="password"],
-				input[type="email"] {
-					height: 30px;
-					line-height: 30px;
-					padding: 0 1rem;
-					border: 1px solid #ededed;
-					box-sizing: border-box;
-					display: block;
-					width: 100%;
-					font-size: 14px;
-				}
-				label {
-					height: 32px;
-					line-height: 32px;
-					display: block;
-				}
-			}
 		}
 		border-bottom: 1px solid #ededed;
 	}
