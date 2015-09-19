@@ -27,6 +27,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
+    var dropzone;
 
     $scope.messages = [];
     $scope.isOver = false;
@@ -115,8 +116,19 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     }
 
+    function onDragEnter(event) {
+        $scope.isOver = true;
+        $scope.$apply();
+    }
+
     function onDragStart(event) {
         $scope.preventDropbox = true;
+    }
+
+    function onMouseOver(event) {
+        if($scope.isOver === true) {
+            $scope.isOver = false;
+        }
     }
 
     function onDragEnd(event) {
@@ -129,10 +141,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
+    $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
         $(window).off('dragover', onDragOver);
+        $(window).off('mouseover', onMouseOver);
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
     });
@@ -185,7 +199,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
                     totalSize += file.size;
+
+                    $scope.isOver = false;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
@@ -205,10 +222,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     }
                 },
                 init: function(event) {
-                    var that = this;
+                    var dropzone = this;
+
                     _.forEach(message.Attachments, function (attachment) {
                         var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-                        that.options.addedfile.call(that, mockFile);
+
+                        dropzone.options.addedfile.call(dropzone, mockFile);
                     });
                 }
             },
@@ -300,7 +319,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
 
-        $scope.isOver = false;
         $scope.composerStyle();
 
         attachments.load(file).then(
@@ -342,7 +360,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 notify({message: response.Error, classes: 'notification-danger'});
                 message.Attachments.push(attachment);
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-                that.options.addedfile.call(that, mockFile);
+
+                dropzone.options.addedfile.call(dropzone, mockFile);
             }
         }, function(error) {
             notify({message: 'Error during the remove request', classes: 'notification-danger'});
@@ -365,7 +384,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 return;
             }
         }
-        
+
         message.uid = $scope.uid++;
         message.numTags = [];
         message.recipientFields = [];
@@ -486,12 +505,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
 			styles.overflowY = 'auto'; // TODO move this propertie to CSS
 
-        	// Height
-        	if(windowHeight < composerHeight) {
-        		styles.height = windowHeight + 'px';
-        	} else {
-                styles.height = 'auto';
-            }
+        	// Height - depreciated. pure css solution - Jason
+        	// if(windowHeight < composerHeight) {
+        		// styles.height = windowHeight + 'px';
+        	// } else {
+                // styles.height = 'auto';
+            // }
 
             $(composer).css(styles);
 
@@ -593,16 +612,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
+
             message.editor.addEventListener('dragstart', onDragStart);
             message.editor.addEventListener('dragend', onDragEnd);
-            message.editor.addEventListener('dragenter', function(e) {
-                $scope.isOver = true;
-                $scope.$apply();
-            });
-            message.editor.addEventListener('dragover', function(e) {
-                $scope.isOver = true;
-                $scope.$apply();
-            });
+            message.editor.addEventListener('dragenter', onDragEnter);
+            message.editor.addEventListener('dragover', onDragOver);
 
             _.each($('.composer-dropzone'), function(dropzone) {
                 dropzone.removeEventListener('dragover', dragover);
@@ -1092,14 +1106,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             $scope.saveLater(message);
         });
 
-        message.editor.removeEventListener('dragenter', function(e) {
-            $scope.isOver = true;
-        });
-
-        message.editor.removeEventListener('dragover', function(e) {
-            $scope.isOver = true;
-        });
-
+        message.editor.removeEventListener('dragenter', onDragEnter);
+        message.editor.removeEventListener('dragover', onDragOver);
         message.editor.removeEventListener('dragstart', onDragStart);
         message.editor.removeEventListener('dragend', onDragEnd);
 

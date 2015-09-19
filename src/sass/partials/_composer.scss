@@ -95,8 +95,6 @@
     flex-direction: column;
 }
 .angular-squire {
-    height: 100% !important;
-
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -109,6 +107,9 @@
     -ms-flex-direction: column;
     flex-direction: column;
 
+    height: auto !important;
+    min-height: 10rem !important;
+    
     .editor-container {
         height: 100%;
         width: 100%;

@@ -248,17 +248,20 @@ angular.module("proton", [
             return response || $q.when(response);
         },
         responseError: function(rejection) {
-            // console.log(rejection);
-            // console.log(rejection.config);
-            if (rejection.status === 401) {
-                if ($rootScope.doRefresh===true) {
+            if(rejection.status === 0) {
+                $injector.get('notify')({
+                    message: 'You are not connected to the Internet.',
+                    classes: 'notification-danger',
+                    duration: 0
+                });
+            } else if (rejection.status === 401) {
+                if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;
                     $injector.get('authentication').getRefreshCookie()
                     .then(
                         function() {
                             var $http = $injector.get('$http');
-                            // console.log(rejection.config);
-                            // rejection.config.headers.common['x-pm-session']
+
                             _.extend(rejection.config.headers, $http.defaults.headers.common);
                             return $http(rejection.config);
                         },
@@ -267,8 +270,7 @@ angular.module("proton", [
                             $injector.get('$state').go('login');
                         }
                     );
-                }
-                else {
+                } else {
                     $injector.get('authentication').logout();
                     $injector.get('$state').go('login');
                 }
@@ -424,27 +426,6 @@ angular.module("proton", [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-/**
- * Offline manager
- */
-.run(function($rootScope, notify) {
-    $rootScope.online = navigator.onLine;
-
-    window.addEventListener('offline', function() {
-        $rootScope.online = false;
-        notify({
-            message: 'You are not connected to the Internet.',
-            classes: 'notification-danger',
-            duration: 0
-        });
-    }, true);
-
-    window.addEventListener('online', function() {
-        $rootScope.online = true;
-        notify.closeAll();
-    }, true);
 })
 
 /**

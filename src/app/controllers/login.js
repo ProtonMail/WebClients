@@ -122,38 +122,37 @@ angular.module("proton.controllers.Auth", [
             .then(
                 function(result) {
                     $log.debug('loginWithCredentials:result.data ', result);
-                    if (result.data.Code!==undefined && result.data.Code===401) {
+                    if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 401) {
 
-                        // clear password field for the user
-                        $scope.password = '';
+                        $scope.selectPassword();
 
                         notify({
                             classes: 'notification-danger',
                             message: result.data.ErrorDescription
                         });
-                    } else if (result.data.Code!==undefined && result.data.Code===10002) {
-                        var err;
+                    } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 10002) {
+                        var message;
+
                         if (result.data.Error) {
-                            err = result.data.Error;
+                            message = result.data.Error;
                         } else {
-                            err = "Your account has been disabled.";
+                            message = "Your account has been disabled.";
                         }
-                        // Account is disabled.
+                        // This account is disabled.
                         notify({
                             classes: 'notification-danger',
-                            message: err
+                            message: message
                         });
-                    } else if (result.data.AccessToken) {
+                    } else if (angular.isDefined(result.data) && angular.isDefined(result.data.AccessToken)) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
                         $rootScope.tempUser = {};
                         $rootScope.tempUser.username = $scope.username;
                         $rootScope.tempUser.password = $scope.password;
 
-                        // console.log('Going to unlock page.');
                         $state.go("login.unlock");
                         return;
-                    } else if (result.Error) {
+                    } else if (angular.isDefined(result.Error)) {
                         // TODO: This might be buggy
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.ErrorDescription) ? result.ErrorDescription : result.Error;
 
@@ -167,7 +166,6 @@ angular.module("proton.controllers.Auth", [
 	                        message: 'Unable to log you in.'
 	                    });
 	                }
-	                return;
                 },
                 function(result) {
                     if (result.message === undefined) {
@@ -185,8 +183,7 @@ angular.module("proton.controllers.Auth", [
         );
     };
 
-    $scope.tryDecrypt = function() {
-
+    $scope.tryUnlock = function() {
         // Make local so extensions (or Angular) can't mess with it by clearing the form too early
         var mailboxPassword = $scope.mailboxPassword;
 
@@ -210,7 +207,7 @@ angular.module("proton.controllers.Auth", [
                             $state.go("secured.inbox");
                         },
                         function(err) {
-                            $log.error('tryDecrypt', err);
+                            $log.error('tryUnlock', err);
                             notify({
                                 classes: 'notification-danger',
                                 message: err.message
@@ -220,10 +217,10 @@ angular.module("proton.controllers.Auth", [
                     );
                 },
                 function(err) {
-                    $log.error('tryDecrypt', err);
+                    $log.error('tryUnlock', err);
 
                     // clear password for user
-                    $scope.mailboxPassword = '';
+                    $scope.selectPassword();
 
                     notify({
                         classes: 'notification-danger',
@@ -238,11 +235,18 @@ angular.module("proton.controllers.Auth", [
         if (event.keyCode === 13) {
             event.preventDefault();
             if ($state.is("login.unlock")) {
-                $scope.tryDecrypt.call(this);
+                $scope.tryUnlock.call(this);
             } else {
                 $scope.tryLogin.call(this);
             }
         }
+    };
+
+    $scope.selectPassword = function() {
+        var input = $('#password');
+
+        input.focus();
+        input.select();
     };
 
     $scope.initialization();

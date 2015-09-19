@@ -160,8 +160,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var ddp = [];
         var ddp2 = [];
         var makeRangeCounter = 0;
+        var count = $scope.messageCount();
 
-        for (var i = 0; i <= parseInt($scope.messageCount() - 1); i++) {
+        for (var i = 0; i <= parseInt(count - 1); i++) {
             ddp[i] = i;
         }
 

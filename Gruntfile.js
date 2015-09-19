@@ -3,9 +3,9 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '2.0.24';
+var appVersion = '2.0.25';
 var apiVersion = '1';
-var dateVersion = '11 September 2015';
+var dateVersion = '15 September 2015';
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
@@ -231,7 +231,8 @@ module.exports = function(grunt) {
                     dest: "<%= build_dir %>/assets/",
                     cwd: ".",
                     expand: true,
-                    flatten: true
+                    flatten: true,
+                    nonull: true
                 }]
             },
             build_fonts: {
@@ -247,7 +248,8 @@ module.exports = function(grunt) {
                     src: ["<%= app_files.js %>"],
                     dest: "<%= build_dir %>/",
                     cwd: ".",
-                    expand: true
+                    expand: true,
+                    nonull: true
                 }]
             },
             build_vendorjs: {
@@ -256,7 +258,8 @@ module.exports = function(grunt) {
                     dest: "<%= build_dir %>/vendor",
                     cwd: ".",
                     expand: true,
-                    flatten: true
+                    flatten: true,
+                    nonull: true
                 }]
             },
             compile_assets: {
@@ -283,7 +286,8 @@ module.exports = function(grunt) {
                     rename: function(dest, src) {
                         return dest + 'editor.css';
                     },
-                    expand: true
+                    expand: true,
+                    nonull: true
                 }]
             },
             compile_editor: {
@@ -294,7 +298,8 @@ module.exports = function(grunt) {
                     rename: function(dest, src) {
                         return dest + 'editor.css';
                     },
-                    expand: true
+                    expand: true,
+                    nonull: true
                 }]
             },
             deploy: {
@@ -303,19 +308,22 @@ module.exports = function(grunt) {
                     filter: "isFile",
                     expand: true,
                     dest: "./<%= compile_dir %>/",
-                    cwd: "./src"
+                    cwd: "./src",
+                    nonull: true
                 }]
             },
             build_external: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
-                    dest: "./<%= build_dir %>/"
+                    dest: "./<%= build_dir %>/",
+                    nonull: true
                 }]
             },
             compile_external: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
-                    dest: "./<%= compile_dir %>/"
+                    dest: "./<%= compile_dir %>/",
+                    nonull: true
                 }]
             },
             htaccess: {
@@ -324,7 +332,8 @@ module.exports = function(grunt) {
                     filter: "isFile",
                     expand: true,
                     dest: "./<%= build_dir %>/",
-                    cwd: "./src"
+                    cwd: "./src",
+                    nonull: true
                 }]
             }
         },
@@ -346,7 +355,8 @@ module.exports = function(grunt) {
                     "<%= vendor_files.css %>",
                     "<%= build_dir %>/assets/application.css"
                 ],
-                dest: "<%= build_dir %>/assets/application.css"
+                dest: "<%= build_dir %>/assets/application.css",
+                nonull: true
             },
             compile_js: {
                 options: {
@@ -359,7 +369,8 @@ module.exports = function(grunt) {
                         "<%= html2js.common.dest %>",
                     ],
                     "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
-                }
+                },
+                nonull: true
             },
             compile_api_spec: {
                 files: {
@@ -368,7 +379,8 @@ module.exports = function(grunt) {
                         "./api/specs/messages.md",
                         "./api/specs/contacts.md"
                     ]
-                }
+                },
+                nonull: true
             }
         },
 
@@ -679,7 +691,7 @@ module.exports = function(grunt) {
         "ngAnnotate",
         "cssmin",
         "concat:compile_js",
-        "uglify",
+        // "uglify",
         "copy:compile_external",
         "copy:compile_editor",
         "index:compile",
@@ -689,7 +701,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask("deploy", [
         "bower",
-        "copy:compile_editor",
         "clean:dist",
         "shell:setup_dist",
         "compile",
