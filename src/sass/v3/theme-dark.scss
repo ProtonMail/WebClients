@@ -77,11 +77,11 @@ section#pm_sidebar {
     }
 }
 
-.ua-chrome section#pm_sidebar {
-    ::-webkit-scrollbar {
-        background: #3e3d4c
-    }
-}
+// .ua-chrome section#pm_sidebar {
+//     ::-webkit-scrollbar {
+//         background: #3e3d4c
+//     }
+// }
 
 @media (max-width: 1024px) {
     #pm_background {

@@ -9,6 +9,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
     .modal-overlay {
         content: "";
         display: block;
@@ -21,17 +22,17 @@
         background: rgba(0,0,0,.2);       
     }
     .modal-dialog {
-        position: fixed;
+        position: absolute;
         z-index: 2;
         background: #fff;
         left: 50%;
         top: 5rem;
-        bottom: 5rem;
         width: 50rem;
         margin-left: -25rem;
         border: 5px solid #9397cd;
         box-sizing: border-box;
         overflow: auto;
+        margin-bottom: 5rem;
         .modal-header {
             padding: 50px 50px 25px 50px;
         }

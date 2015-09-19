@@ -1,13 +1,16 @@
 <ng-include src="'templates/partials/header-no-auth.tpl.html'"></ng-include>
 
 <div id="robotLoader" ng-show="domoArigato">
-	<p class="text-center">Decrypting Mailbox</p>
+    <img src="assets/img/loader.gif" class="fa fa-spin">
 </div>
 
 <div class="row" ng-hide="domoArigato">
     <div ui-view="panel"></div>
 </div>
     
-    <!-- <p class="text-center white"><a href="https://blog.protonmail.ch/category/release-notes/" class="underline" target="_blank">v{{ app_version }} - {{ date_version }}</a></p> -->
+<div id="pm_footer">
+    <p>
+    &copy; 2015 ProtonMail.ch - Made globally, hosted in Switzerland. v<a href="https://blog.protonmail.ch/category/release-notes/" target="_blank">{{ app_version }}</a></p>
+</div>
 
 <ng-include src="'templates/modals/bug.tpl.html'"></ng-include>

@@ -5,8 +5,6 @@
 	display: flex;
 
 	.list {
-		overflow-y: auto;
-		overflow-x: hidden;
 		max-height: $maxHeight;
 		padding: 0 25px 0 0;
 		position: relative;
