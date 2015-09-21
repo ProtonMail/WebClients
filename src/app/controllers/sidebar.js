@@ -152,6 +152,22 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
+     * Go to label folder + reset parameters
+     */
+    $scope.goToLabel = function(label) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
+
+        $state.go('secured.label', params);
+    };
+
+    /**
+     * Return if the folder need to be `active`
+     */
+    $scope.activeLabel = function(label) {
+        return $stateParams.label === label.ID;
+    };
+
+    /**
      * Returns a string for the storage bar used for CSS
      * @return {String} "12.5%"
      */

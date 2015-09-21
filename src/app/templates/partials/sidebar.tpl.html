@@ -111,7 +111,7 @@
                 jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}"
                 data-jqyoui-options="droppableOptions"
                 ng-model="droppedMessages">
-                    <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn" ui-sref-active="active">
+                    <a ng-click="goToLabel(label)" title="{{ label.Name }}" class="btn" ng-class="{'active': activeLabel(label) }">
                         <span class="label hidden-xs hidden-sm" ng-class="{active: getUnread('label', label.ID) > 0}">{{ getUnread('label', label.ID) }}</span>
                         <span class="fa fa-tag" ng-style="color(label)"></span> <span class="hidden-xs hidden-sm">{{ label.Name }}</span>
                     </a>
