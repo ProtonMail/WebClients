@@ -35,6 +35,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
+    $scope.currentMessage = null;
 
     Contact.index.updateWith($scope.user.Contacts);
 
@@ -212,19 +213,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     /**
      * Simulate click event on the input file
      */
-    $scope.selectFile = function(event) {
-        var button = angular.element(event.target);
-        var input = angular.element(button).prev();
+    $scope.selectFile = function(message) {
+        var input = $('#inputFile');
 
+        $scope.currentMessage = message;
         input.click();
     };
 
     /**
      * Reset input file
      */
-    $scope.resetFile = function(message) {
-        var id = '#inputFile' + message.uid;
-        var input = $(id);
+    $scope.resetFile = function() {
+        var input = $('#inputFile');
 
         input.wrap('<form>').closest('form').get(0).reset();
         input.unwrap();
@@ -337,7 +337,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
-            $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
                 $scope.save(message, true, true, false).then(function() { // message, silently, forward, notification
@@ -352,13 +351,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
     };
 
-    $scope.onAddFile = function(message) {
-        var id = '#inputFile' + message.uid;
-
-        $(id).change(function(event) {
+    $scope.onAddFile = function() {
+        $('#inputFile').change(function(event) {
             event.preventDefault();
 
-            var files = $(id)[0].files;
+            var message = $scope.currentMessage;
+            var files = $('#inputFile')[0].files;
             var loop = function() {
                 for(var i = 0; i < files.length; i++) {
                     var file = files[i];
@@ -375,6 +373,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         $scope.addAttachment(file, message);
                     }
                 }
+
+                $scope.resetFile();
             };
 
             if(angular.isUndefined(message.ID)) {
@@ -1083,4 +1083,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         event.preventDefault();
         message.editor.focus();
     };
+
+    $scope.onAddFile();
 });
