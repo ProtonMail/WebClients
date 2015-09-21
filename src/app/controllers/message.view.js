@@ -58,6 +58,25 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $interval.cancel($scope.agoTimer);
     });
 
+    $scope.attHeight = function() {
+        var rowHeight = 32;
+        var attachmentAreaHeight = (rowHeight*2);
+        var attachmentSize = message.Attachments.length;
+        if (attachmentSize) {
+            if (attachmentSize<3) {
+                attachmentAreaHeight = (rowHeight*2);
+            }
+            else if (attachmentSize<5) {
+                attachmentAreaHeight = (rowHeight*3);
+            }
+            else {
+                attachmentAreaHeight = (rowHeight*4);
+            }
+        }
+        $log.debug(attachmentAreaHeight);
+        return attachmentAreaHeight;
+    };
+
     $scope.initView = function() {
         if(message.IsRead === 0) {
             message.IsRead = 1;
