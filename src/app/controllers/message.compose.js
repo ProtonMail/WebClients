@@ -216,9 +216,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var button = angular.element(event.target);
         var input = angular.element(button).prev();
 
-        console.log('click start');
         input.click();
-        console.log('click end');
     };
 
     /**
