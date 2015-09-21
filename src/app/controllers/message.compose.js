@@ -141,12 +141,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
-    $(window).on('mouseover', onMouseOver);
+    // $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
         $(window).off('dragover', onDragOver);
-        $(window).off('mouseover', onMouseOver);
+        // $(window).off('mouseover', onMouseOver);
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
     });
