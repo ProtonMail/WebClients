@@ -1,7 +1,10 @@
+@import "variables";
+
 // Animations
 @import "animations.scss";
 
 // Custom Modules
+@import "general.scss";
 @import "header.scss";
 @import "sidebar.scss";
 @import "toolbar.scss";
@@ -32,47 +35,3 @@
 
 // Dark Sidebar Theme
 @import "theme-dark.scss";
-
-body {
-	overflow-y: hidden;
-}
-body.login,
-body.locked {
-	background: #4c4c5d;
-}
-h1, h2, h3, h4, h5, h6 {
-	.fa {
-		display: block;
-	}
-}
-
-#pm_footer {
-	position: absolute;
-	text-align: center;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	color: #fff;
-	a {
-		color: #fff;
-		text-decoration: none;
-		&:hover {
-			color: #e5e5e5;
-		}
-	}
-}
-
-#robotLoader {
-	position: fixed;
-	z-index: 99999;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	background: #fff;
-	text-align: center;
-	box-sizing: border-box;
-	height: 100%;
-	width: 100%;
-	padding-top: 7rem;
-}

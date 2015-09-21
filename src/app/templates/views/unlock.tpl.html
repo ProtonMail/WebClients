@@ -14,7 +14,7 @@ method="post">
         {{ 'DECRYPT_MAILBOX' | translate }}
     </h3>
 
-    <p class="text-center">{{ user.Addresses[0].Email }}</p>
+    <p class="text-center">{{ tempUser.username }}@protonmail.ch</p>
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
@@ -28,7 +28,7 @@ method="post">
     id="password" 
     name="MailboxPassword" 
     ng-model="mailboxPassword" 
-    placeholder="Mailbox Password" 
+    placeholder="MAILBOX PASSWORD" 
     value="" />
 
     <div class="clearfix">
