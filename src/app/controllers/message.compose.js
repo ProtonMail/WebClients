@@ -141,12 +141,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
-    $(window).on('mouseover', onMouseOver);
+    // $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
         $(window).off('dragover', onDragOver);
-        $(window).off('mouseover', onMouseOver);
+        // $(window).off('mouseover', onMouseOver);
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
     });
@@ -601,12 +601,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                $timeout(function() {
-                    message.fields = false;
-                    message.recipientFieldFocussed = 0;
-                    $('.typeahead-container').scrollTop(0);
-                    $scope.$apply();
-                });
+                message.fields = false;
+                message.recipientFieldFocussed = 0;
+                $('.typeahead-container').scrollTop(0);
+                $scope.$apply();
             });
 
             message.editor.addEventListener('input', function() {

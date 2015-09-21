@@ -181,19 +181,13 @@
                         id="attachment{{$index}}"
                         ng-repeat="attachment in message.Attachments"
                         ng-init="initAttachment(attachment, $index)">
-                            <span
-                            class="preview-name"
-                            ng-bind="attachment.filename || attachment.Name"></span>
-                            <a
-                            href=""
-                            ng-show="!!attachment.uploading"
-                            class="preview-close"
-                            ng-click="cancelAttachment(attachment, message)"><i class="fa fa-times"></i></a>
-                            <a
-                            href=""
-                            ng-show="!!!attachment.uploading"
-                            class="preview-close"
-                            ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
+                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+                            <a href="" ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                                <i class="fa fa-times"></i>
+                            </a>
                         </span>
                     </div>
                 </div>
