@@ -157,6 +157,10 @@
                             <button type="button" class="btn btn-primary btn-sm" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
                         </div>
                     </div>
+                    <div
+                    class="dropzone composer-dropzone"
+                    dropzone="dropzoneConfig(message)"
+                    ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body"></squire>
                     <button
                     class="btn btn-sm attach-collapse"
@@ -189,12 +193,12 @@
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">
-                <button ng-click="selectFile(message)"
-                class="btn btn-sm btn-default"
+                <button
+                class="btn btn-sm btn-default btn-add-attachment"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'btn-primary': message.Attachments && message.Attachments.length > 0,
-                    'disabled': message.loading()
+                    disabled: message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -276,5 +280,4 @@
             </div>
         </div>
     </ng-form>
-    <input type="file" id="inputFile" class="input-file" multiple="" />    
 </div>
