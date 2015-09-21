@@ -1,13 +1,10 @@
-
+html, body {
+	height: 100%;
+}
 
 body {
 	overflow-y: hidden;
 	background: #505061;	
-}
-
-body.login,
-body.locked {
-	background: #4c4c5d;
 }
 
 body.secure {
