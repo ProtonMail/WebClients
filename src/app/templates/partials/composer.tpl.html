@@ -189,13 +189,12 @@
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">
-                <input type="file" id="inputFile{{ message.uid }}" class="input-file" multiple="" />
-                <button ng-click="selectFile($event)"
+                <button ng-click="selectFile(message)"
                 class="btn btn-sm btn-default"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'btn-primary': message.Attachments && message.Attachments.length > 0,
-                    disabled: message.loading()
+                    'disabled': message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -277,4 +276,5 @@
             </div>
         </div>
     </ng-form>
+    <input type="file" id="inputFile" class="input-file" multiple="" />    
 </div>
