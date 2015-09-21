@@ -27,13 +27,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var promiseComposerStyle;
     var dragsters = [];
     var timeoutStyle;
-    var dropzone;
 
     $scope.messages = [];
-    $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
-    $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
@@ -50,12 +47,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         } else {
             window.onbeforeunload = undefined;
         }
-    });
-
-    $scope.$on('onDrag', function() {
-        _.each($scope.messages, function(message) {
-            $scope.togglePanel(message, 'attachments');
-        });
     });
 
     $scope.$on('newMessage', function() {
@@ -101,71 +92,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }, 250);
     }
 
-    function onDragOver(event) {
-        event.preventDefault();
-        $interval.cancel($scope.intervalComposer);
-        $interval.cancel($scope.intervalDropzone);
-
-        $scope.intervalComposer = $interval(function() {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalComposer);
-        }, 100);
-
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
-    }
-
-    function onDragEnter(event) {
-        $scope.isOver = true;
-        $scope.$apply();
-    }
-
-    function onDragStart(event) {
-        $scope.preventDropbox = true;
-    }
-
-    function onMouseOver(event) {
-        if($scope.isOver === true) {
-            $scope.isOver = false;
-        }
-    }
-
-    function onDragEnd(event) {
-        event.preventDefault();
-        $scope.preventDropbox = false;
-        $scope.isOver = false;
-    }
-
     $(window).on('resize', onResize);
-    $(window).on('dragover', onDragOver);
-    $(window).on('dragstart', onDragStart);
-    $(window).on('dragend', onDragEnd);
-    $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
         $(window).off('resize', onResize);
-        $(window).off('dragover', onDragOver);
-        $(window).off('mouseover', onMouseOver);
-        $interval.cancel($scope.intervalComposer);
-        $interval.cancel($scope.intervalDropzone);
     });
-
-    // Function used for dragover listener on the dropzones
-    var dragover = function(e) {
-        e.preventDefault();
-        $interval.cancel($scope.intervalComposer);
-        $interval.cancel($scope.intervalDropzone);
-
-        $scope.intervalDropzone = $interval(function() {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalDropzone);
-        }, 100);
-
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
-    };
 
     // Functions
     $scope.setDefaults = function(message) {
@@ -202,8 +133,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     totalSize += file.size;
 
-                    $scope.isOver = false;
-
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
@@ -229,14 +158,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                         dropzone.options.addedfile.call(dropzone, mockFile);
                     });
-                }
-            },
-            eventHandlers: {
-                drop: function(event) {
-                    event.preventDefault();
-
-                    $scope.isOver = false;
-                    $scope.$apply();
                 }
             }
         };
@@ -286,6 +207,29 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 $scope.removeAttachment(attachment, message);
             });
         }
+    };
+
+    /**
+     * Simulate click event on the input file
+     */
+    $scope.selectFile = function(event) {
+        var button = angular.element(event.target);
+        var input = angular.element(button).prev();
+
+        console.log('click start');
+        input.click();
+        console.log('click end');
+    };
+
+    /**
+     * Reset input file
+     */
+    $scope.resetFile = function(message) {
+        var id = '#inputFile' + message.uid;
+        var input = $(id);
+
+        input.wrap('<form>').closest('form').get(0).reset();
+        input.unwrap();
     };
 
     $scope.initAttachment = function(tempPacket, index) {
@@ -359,9 +303,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             if (response.Error) {
                 notify({message: response.Error, classes: 'notification-danger'});
                 message.Attachments.push(attachment);
-                var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-
-                dropzone.options.addedfile.call(dropzone, mockFile);
             }
         }, function(error) {
             notify({message: 'Error during the remove request', classes: 'notification-danger'});
@@ -398,7 +339,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
-            $scope.composerStyle();
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
@@ -408,23 +348,45 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 }, function(error) {
                     $log.error(error);
                 });
+            } else {
+                $scope.composerStyle();
             }
         });
     };
 
     $scope.onAddFile = function(message) {
-        $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
+        var id = '#inputFile' + message.uid;
+
+        $(id).change(function(event) {
+            event.preventDefault();
+
+            var files = $(id)[0].files;
+            var loop = function() {
+                for(var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    var totalSize = $scope.getAttachmentsSize(message);
+                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+                    totalSize += file.size;
+
+                    if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                        notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
+                    } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
+                    } else {
+                        $scope.addAttachment(file, message);
+                    }
+                }
+            };
+
             if(angular.isUndefined(message.ID)) {
-                // We need to save to get an ID
-                    $scope.addFile(message);
+                $scope.save(message, false, false, false).then(function() {
+                    loop();
+                });
             } else {
-                $scope.addFile(message);
+                loop();
             }
         });
-    };
-
-    $scope.addFile = function(message) {
-        $('#uid' + message.uid + ' .dropzone').click();
     };
 
     $scope.sanitizeBody = function(message) {
@@ -460,7 +422,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
-        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
@@ -601,43 +562,18 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                $timeout(function() {
-                    message.fields = false;
-                    message.recipientFieldFocussed = 0;
-                    $('.typeahead-container').scrollTop(0);
-                    $scope.$apply();
-                });
+                message.fields = false;
+                message.recipientFieldFocussed = 0;
+                $('.typeahead-container').scrollTop(0);
+                $scope.$apply();
             });
 
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
 
-            message.editor.addEventListener('dragstart', onDragStart);
-            message.editor.addEventListener('dragend', onDragEnd);
-            message.editor.addEventListener('dragenter', onDragEnter);
-            message.editor.addEventListener('dragover', onDragOver);
-
-            _.each($('.composer-dropzone'), function(dropzone) {
-                dropzone.removeEventListener('dragover', dragover);
-                dropzone.addEventListener('dragover', dragover);
-            });
-
             $scope.saveOld(message);
         }
-    };
-
-    $scope.selectFile = function(message, files) {
-        _.defaults(message, {
-            Attachments: []
-        });
-
-        message.Attachments.push.apply(
-            message.Attachments,
-            _.map(files, function(file) {
-                return attachments.load(file);
-            })
-        );
     };
 
     $scope.recipientFieldEllipsis = function(message, list) {
@@ -1105,11 +1041,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });
-
-        message.editor.removeEventListener('dragenter', onDragEnter);
-        message.editor.removeEventListener('dragover', onDragOver);
-        message.editor.removeEventListener('dragstart', onDragStart);
-        message.editor.removeEventListener('dragend', onDragEnd);
 
         $scope.close(message, false, true);
     };

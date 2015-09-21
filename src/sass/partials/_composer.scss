@@ -109,7 +109,7 @@
 
     height: auto !important;
     min-height: 10rem !important;
-    
+
     .editor-container {
         height: 100%;
         width: 100%;
@@ -175,4 +175,8 @@
     max-height: 110px;
     overflow-y: auto;
     padding-right: 4rem;
+}
+
+input[type="file"].input-file {
+    display: none;
 }
