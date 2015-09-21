@@ -7,33 +7,41 @@ autocomplete="on"
 ng-submit="tryDecrypt()" 
 method="post">
 
-    <img src="assets/img/logo.svg" alt="ProtonMail" class="logo" />
+    <div ng-hide="domoArigato">
 
-    <h3 class="text-center">
-        <span class="fa fa-inbox title-icon"></span>
-        {{ 'DECRYPT_MAILBOX' | translate }}
-    </h3>
+        <img src="assets/img/logo.svg" alt="ProtonMail" class="logo" />
 
-    <p class="text-center">{{ tempUser.username }}@protonmail.ch</p>
+        <h3 class="text-center">
+            <span class="fa fa-inbox title-icon"></span>
+            {{ 'DECRYPT_MAILBOX' | translate }}
+        </h3>
 
-    <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
+        <p class="text-center">{{ tempUser.username }}@protonmail.ch</p>
 
-    <input 
-    autocomplete="on" 
-    autocapitalize="off" 
-    autocorrect="off" 
-    class="margin" 
-    type="password" 
-    ng-keypress="keypress($event)" 
-    id="password" 
-    name="MailboxPassword" 
-    ng-model="mailboxPassword" 
-    placeholder="MAILBOX PASSWORD" 
-    value="" />
+        <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <div class="clearfix">
-        <a ui-sref="reset" class="login-support btn pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-        <a class="pm_button primary pull-right" ng-click="tryDecrypt()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>    
+        <input 
+        autocomplete="on" 
+        autocapitalize="off" 
+        autocorrect="off" 
+        class="margin" 
+        type="password" 
+        ng-keypress="keypress($event)" 
+        id="password" 
+        name="MailboxPassword" 
+        ng-model="mailboxPassword" 
+        placeholder="MAILBOX PASSWORD" 
+        value="" />
+
+        <div class="clearfix">
+            <a ui-sref="reset" class="login-support btn pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
+            <a class="pm_button primary pull-right" ng-click="tryDecrypt()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>    
+        </div>
+
+    </div>
+
+    <div id="robotLoader" ng-show="domoArigato">
+        <p><img src="assets/img/loader.gif" class="fa fa-spin"></p>
     </div>
 
 </form>

@@ -1,10 +1,6 @@
 <ng-include src="'templates/partials/header-no-auth.tpl.html'"></ng-include>
 
-<div id="robotLoader" ng-show="domoArigato">
-    <img src="assets/img/loader.gif" class="fa fa-spin">
-</div>
-
-<div class="row" ng-hide="domoArigato">
+<div class="row">
     <div ui-view="panel"></div>
 </div>
     
