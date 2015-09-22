@@ -1,0 +1,21 @@
+<div role="menu" ng-click="$event.stopPropagation()" class="pm_form">
+    <div class="margin">
+        <a href="">{{ 'CREATE_A_NEW_LABEL' | translate }}</a>
+    </div>
+    <div ng-show="labels.length > 0" class="margin">
+        <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}..." class="form-control" ng-model="searchLabels" ng-minlength="1" />
+    </div>
+    <ul class="list-group" ng-show="labels.length > 0">
+        <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
+            <input type="checkbox" ng-model="label.Selected" />
+            <span class="label label-pm" ng-style="color(label)" ng-click="label.Selected = !!!label.Selected" title="{{ label.Name }}">
+                <i class="fa fa-tag"></i> {{ label.Name | limitTo: 20 }}
+            </span>
+        </li>
+    </ul>
+    <label ng-show="labelsSelected().length > 0">
+        <input type="checkbox" ng-model="alsoArchive" /> {{ 'ALSO_ARCHIVE' | translate }}
+    </label>
+    <button class="pm_button" type="button" ng-click="close()">{{ 'CANCEL' | translate }}</button>
+    <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY' | translate }}</button>
+</div>

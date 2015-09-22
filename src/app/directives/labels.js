@@ -54,7 +54,7 @@ angular.module("proton.labels", [])
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/partials/dropdown.labels.tpl.html',
+        templateUrl: 'templates/directives/dropdown.labels.tpl.html',
         link: link,
         replace: true,
         scope: {

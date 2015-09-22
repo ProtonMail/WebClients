@@ -1,6 +1,6 @@
 angular.module("proton.dropdown", [])
 
-.directive('ngDropdown', ['$timeout', function ($timeout) {
+.directive('ngDropdown', function ($timeout) {
     return function (scope, element, attrs) {
 
         // lower is faster. 1000 = 1 second.
@@ -68,4 +68,46 @@ angular.module("proton.dropdown", [])
         }
 
     };
-}]);
+})
+
+.directive('paginator', function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'templates/directives/paginator.tpl.html',
+        scope: {
+            page: '=',
+            totalItems: '=',
+            itemsPerPage: '=',
+            change: '=',
+            next: '@',
+            previous: '@'
+        },
+        link: function(scope, element, attrs) {
+            scope.pages = [];
+
+            scope.select = function(p) {
+                scope.change(p);
+            };
+
+            var buildPages = function() {
+                var pages;
+                var temp = [];
+
+                if((scope.totalItems % scope.itemsPerPage) === 0) {
+                    pages = scope.totalItems / scope.itemsPerPage;
+                } else {
+                    pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
+                }
+
+                for (var i = 1; i !== pages; ++i) {
+                    temp.push(i);
+                }
+
+                scope.pages = temp;
+            };
+
+            buildPages();
+        }
+    };
+});

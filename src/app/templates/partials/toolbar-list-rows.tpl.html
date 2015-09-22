@@ -63,9 +63,7 @@
                 <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+                <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels" />
             </span>
         </span>
     </div>
@@ -77,19 +75,17 @@
             <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-trash-o"></a>
-            <a href="#" class="fa fa-archive divider hidden-xs"></a>
-            <a href="#" class="fa fa-ban divider hidden-xs"></a>
+            <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')"></a>
+            <a href="#" class="fa fa-archive divider hidden-xs" ng-click="moveMessagesTo('archive')"></a>
+            <a href="#" class="fa fa-ban divider hidden-xs" ng-click=""></a>
         </span>
         <span class="pm_buttons">
             <a href="#" class="pm_trigger" ng-dropdown>
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
-            <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+            <span class="pm_dropdown pm_labels">
+                <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels" />
             </span>
         </span>
     </div>

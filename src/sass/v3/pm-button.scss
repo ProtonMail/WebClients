@@ -60,6 +60,11 @@
         pointer-events: none;
         cursor: default;
     }
+    strong {
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
 }
 
 .pull-right .pm_buttons {

@@ -14,7 +14,7 @@
 	&.open {
 		display: block;
 	}
-	a {
+	> a {
 		display: block;
 		line-height: 25px !important;
 		height: 25px !important;
@@ -26,7 +26,7 @@
 			color: #333 !important;
 		}
 	}
-	a:last-child {
+	> a:last-child {
 		border-bottom: none;
 	}
 }

@@ -10,41 +10,31 @@
 
     <div class="pull-right">
 
-        <span class="pm_buttons pull-right">
-            <a href="#" class="fa fa-chevron-left" title="{{ 'PREVIOUS' | translate }}" ng-class="{disabled: page == 1}" ng-click="goToPage(page - 1, true);"></a>
-            <span class="pm_buttons divider hidden-xs">
-                <a href="#" class="pm_trigger" ng-dropdown>
-                    <span>{{totalItems}}</span> <i class="fa fa-angle-down"></i>
-                </a>
-                <span class="pm_dropdown">
-                    <a href="#">Submenu 1</a>
-                    <a href="#">Submenu 2</a>
-                    <a href="#">Submenu 3</a>
-                </span>
-            </span>
-            <a href="#" class="fa fa-chevron-right divider" ng-class="{disabled: !hasNextPage()}" ng-click="goToPage(page + 1)"></a>
+        <span class="pull-right">
+            <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" previous="goToPage(page + 1)" next="goToPage(page - 1, true);" />
         </span>
 
         <a class="pm_button" href="" ng-class="{ disabled: contacts.length === 0 }" ng-click="deleteAllContacts()">
-            <i class="fa fa-trash"></i> <span>{{ 'DELETE_ALL_CONTACTS' | translate }}</span>
+            <i class="fa fa-trash"></i> <strong>{{ 'DELETE_ALL_CONTACTS' | translate }}</strong>
         </a>
 
         <a class="pm_button" href="" ng-class="{ disabled: contacts.length === 0 }" ng-click="downloadContacts()">
-            <i class="fa fa-download"></i> <span>{{ 'DOWNLOAD_CONTACTS' | translate }}</span>
+            <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_CONTACTS' | translate }}</strong>
         </a>
 
         <a class="pm_button" href="" ng-click="uploadContacts()">
-            <i class="fa fa-upload"></i> <span>{{ 'UPLOAD_CONTACTS' | translate }}</span>
+            <i class="fa fa-upload"></i> <strong>{{ 'UPLOAD_CONTACTS' | translate }}</strong>
         </a>
+
 
     </div>
 
-    <a class="pm_button" href="" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()">
-        <i class="fa fa-trash-o"></i> <span>{{ 'DELETE_CONTACT' | translate }}</span>
+    <a class="pm_button primary" href="" ng-click="addContact()">
+        <i class="fa fa-plus"></i> <strong>{{ 'ADD_CONTACT' | translate }}</strong>
     </a>
-    
-    <a class="pm_button" href="" ng-click="addContact()">
-        <i class="fa fa-plus"></i> <span>{{ 'ADD_CONTACT' | translate }}</span>
+
+    <a class="pm_button" href="" ng-class="{ disabled: contactsSelected().length === 0 }" ng-click="deleteContacts()">
+        <i class="fa fa-trash-o"></i> <strong>{{ 'DELETE_CONTACT' | translate }}</strong>
     </a>
 
 </nav>
