@@ -48,7 +48,7 @@ module.exports = {
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
-      "vendor/dompurify/src/purify.js",
+      "vendor/DOMPurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",

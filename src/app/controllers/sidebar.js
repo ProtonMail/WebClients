@@ -245,6 +245,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * TODO: Should be a directive? This needs to be fixed in v3.
      */
     $scope.labelScroller = function() {
+
+        $('#sidebarLabels').css('height', 'auto');
+
         var sidebarWrapHeight = $('#sidebarWrap').outerHeight();
         var sidebarMenuHeight = 0;
         var height;
