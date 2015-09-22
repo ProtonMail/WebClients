@@ -1,8 +1,8 @@
-<ng-include src="'templates/partials/header-auth.tpl.html'" id="header"></ng-include>
+<div id="pm_settings">
 
-<div id="content">
-    <div class="container-fluid">
-        <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="settings" ng-height>
 
         <h1>Key Export (Experimental)</h1>
         <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
@@ -110,6 +110,7 @@
                 direction-links="false" ></pagination>
             </div>
         </div>
+        
 
     </div>
 </div>

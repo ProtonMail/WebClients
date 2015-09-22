@@ -1,5 +1,3 @@
-
-
 .pm_button {
     text-decoration: none;
     color: #838897;
@@ -12,8 +10,10 @@
     display: inline-block;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color .25s linear, border-color .25s linear;
     &:hover {
         background-color: #fafafa;
+        transition: none;
     }
     &:active {
         background-color: #f4f4f4;
@@ -101,11 +101,13 @@
         line-height: 33px;
         display: block;
         float: left;
+        transition: background-color .25s linear, border-color .25s linear;
         &.fa-angle-down {
             padding: 0 3px;
         }
         &:hover {
             background-color: #fafafa;
+            transition: none;
         }
         &:active,
         &.active {

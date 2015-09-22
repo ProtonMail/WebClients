@@ -1,19 +1,25 @@
-
-
 #pm_settings {
     display: flex;
     flex-direction: column;
-	.row {
-		padding: 2rem 0;
-		flex-grow: 1;
-		clear:both;
-		.setting {
-			width: 50%;
-			float: left;
-			box-sizing: border-box;
-			padding: 0 2rem;
+    .pm_tabs {
+    	padding: 0 0 0 25px;
+    	margin-top: 15px;
+    }
+    .settings {
+    	padding: 0 25px;
+    	margin-right: 25px;
+		.row {
+			padding: 2rem 0;
+			flex-grow: 1;
+			clear:both;
+			.setting {
+				width: 50%;
+				float: left;
+				box-sizing: border-box;
+				padding: 0 2rem;
+			}
+			border-bottom: 1px solid #ededed;
 		}
-		border-bottom: 1px solid #ededed;
 	}
 }
 

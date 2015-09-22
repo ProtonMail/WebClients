@@ -1,8 +1,9 @@
-<ng-include src="'templates/partials/header-auth.tpl.html'" id="header"></ng-include>
+<div id="pm_settings">
 
-<div id="content">
-    <div class="container-fluid">
-        <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="settings" ng-height>
+
         <div class="form-group">
             <button class="btn btn-primary" ng-click="createLabel()"><i class="fa fa-plus"></i> {{ 'ADD_LABEL' | translate }}</button>
         </div>
@@ -29,5 +30,7 @@
                 </div>
             </li>
         </ul>
+
     </div>
+    
 </div>

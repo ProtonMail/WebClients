@@ -1,0 +1,27 @@
+.pm_tabs {
+    display: block;
+    list-style-type: none;
+    border-right: 1px solid #ededed;
+    float: left;
+    margin: 0;
+    padding: 0;
+    li {
+        display: block;
+        list-style-type: none;
+        float: left;
+        margin: 0;
+        padding: 0;
+        a {
+            background-color: #fafafa;
+            border-radius: 0;
+            border-right: none;
+        }
+        &.active {
+            a {
+                background-color: #fff;
+                border-bottom-color: transparent;
+                color: #9397cd;
+            }
+        }
+    }
+}

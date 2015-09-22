@@ -1,5 +1,3 @@
-
-
 #pm_view {
 	display: block;
 	padding-left: 15px;
@@ -8,7 +6,7 @@
 	}
     & > header {
     	display: block;
-		height: ($toolbarHeight+1);
+		min-height: ($toolbarHeight+1);
 		box-sizing: border-box;
 		margin-right: 25px;
 		border-bottom: 1px solid #ededed;

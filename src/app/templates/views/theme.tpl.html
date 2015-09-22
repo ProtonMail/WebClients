@@ -1,7 +1,9 @@
-<ng-include src="'templates/partials/header-auth.tpl.html'" id="header"></ng-include>
-<div id="content">
-    <div class="container-fluid form-group">
-        <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+<div id="pm_settings">
+
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="settings" ng-height>
+
         <div class="row" id="appearanceForm">
             <div class="col-md-4">
                 <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons" method="post">
@@ -83,5 +85,7 @@
         <form ng-submit="apiTest()" ng-if="false" method="post">
             <button type="submit" class="btn btn-sm btn-warning">API Test</button>
         </form>
+
     </div>
+
 </div>
