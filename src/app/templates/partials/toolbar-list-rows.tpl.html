@@ -71,12 +71,7 @@
     </div>
 
     <div class="mobileMain">
-        <span class="pm_checkbox">
-            <input type="checkbox">
-            <label>
-                <span class="fa fa-check"></span>
-            </label>
-        </span>
+        <input type="checkbox" class="pm_checkbox">
         <span class="pm_buttons">
             <a href="#" class="fa fa-eye-slash hidden-xs" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>

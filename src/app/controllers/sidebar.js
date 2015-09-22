@@ -264,6 +264,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         if (count===0) {
             return;
         }
+        else if (count>1000) {
+            return '(999+)';
+        }
 
         return '('+count+')';
     };

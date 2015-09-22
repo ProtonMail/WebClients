@@ -7,7 +7,7 @@
         <label>
             <i class="fa fa-search"></i>
         </label>
-        <button  type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom" ng-if="includedByState">
+        <button  type="button" class="advanced" ng-click="openSearchModal()" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
             <i class="fa fa-angle-down"></i>
         </button>
         <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />

@@ -1,5 +1,3 @@
-
-
 #pm_columns {
 	margin-left: $sidebarWidth;
 	display: flex;
@@ -21,6 +19,9 @@
 			cursor: pointer;
 			border-radius: 2px;
 			color: #666;
+			.pm_checkbox {
+				margin: 0;
+			}
 			&.selected {
 				background-color: #f6f6f6;
 				border-color: #efefef;	

@@ -5,9 +5,9 @@
     <div  ng-repeat="message in messages track by message.ID" 
     class="message" ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
         <aside>
-            <label for="pm_mobile_messageList_message{{$index}}">
-                <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
-            </label>
+            <span>
+                <input class="pm_checkbox" type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
+            </span>
             <span>
                 <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                     <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
@@ -43,12 +43,7 @@
 <div ng-if="layoutMode === 'rows'" id="pm_list" ng-height>
     <div ng-repeat="message in messages track by message.ID" 
     class="message" ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
-        <span class="pm_checkbox">
-            <input type="checkbox" id="pm_mobile_messageList_message{{$index}}" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
-            <label for="pm_mobile_messageList_message{{$index}}">
-                <span class="fa fa-check"></span>
-            </label>
-        </span>
+        <input class="pm_checkbox" type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
         <span class="star">
             <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                 <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
