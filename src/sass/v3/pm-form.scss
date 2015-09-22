@@ -41,9 +41,10 @@
         display: block;
     }
     .col {
-        display: inline-block;
-        width: 48%;
-        min-width: 48%;
+        display: block;
+        width: 50%;
+        min-width: 50%;
+        float: left;
         box-sizing: border-box;
         padding-bottom: 1rem;
     } 
