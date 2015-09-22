@@ -142,6 +142,7 @@
         }
         @include responsive(sm) {
             width: 6rem;
+            display: none;
         }
         @include responsive(md) {
             width: 18rem;
