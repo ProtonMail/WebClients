@@ -1,0 +1,35 @@
+@media (max-width: 1199px) {
+	#main {
+		padding-left: ($sidebar-width)*.9;
+		&.eo {
+			padding: 0;
+		}
+	}
+	#dragOverlay {
+		left: ($sidebar-width)*.9;
+	}
+	table.message-list {
+		.recipient {
+			width: 16rem;
+		}
+	}
+	#sidebar {
+		width: ($sidebar-width)*.9;
+		#sidebarWrap {
+			bottom: 0;
+		}
+	}
+	.message-toolbar > ul > li > a {
+		padding: 0 .75rem;
+	}
+}
+
+// CSSUA
+.cssua.ua.mobile {
+	#main.fixed,
+	#main.fixed #content,
+	#main.fixed #message-content {
+		display: block;
+		position: static;
+	}
+}

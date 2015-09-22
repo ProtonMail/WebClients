@@ -691,7 +691,7 @@ module.exports = function(grunt) {
         "ngAnnotate",
         "cssmin",
         "concat:compile_js",
-        // "uglify",
+        "uglify",
         "copy:compile_external",
         "copy:compile_editor",
         "index:compile",

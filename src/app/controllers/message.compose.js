@@ -28,6 +28,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var dragsters = [];
     var timeoutStyle;
     var dropzone;
+    var filesUploaded = [];
 
     $scope.messages = [];
     $scope.isOver = false;
@@ -211,14 +212,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
+                        filesUploaded.push(file);
                         done();
-                        if(angular.isUndefined(message.ID)) {
-                            $scope.save(message, false, false, false).then(function() {
-                                $scope.addAttachment(file, message);
-                            });
-                        } else {
-                            $scope.addAttachment(file, message);
-                        }
                     }
                 },
                 init: function(event) {
@@ -232,6 +227,23 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 }
             },
             eventHandlers: {
+                queuecomplete: function() {
+                    var process = function() {
+                        _.each(filesUploaded, function(file) {
+                            $scope.addAttachment(file, message);
+                        });
+
+                        filesUploaded = [];
+                    };
+
+                    if(angular.isUndefined(message.ID)) {
+                        $scope.save(message, false, false, false).then(function() {
+                            process();
+                        });
+                    } else {
+                        process();
+                    }
+                },
                 drop: function(event) {
                     event.preventDefault();
 
@@ -460,7 +472,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
-        // console.log('composerStyle');
         var composers = $('.composer');
 
         _.each(composers, function(composer, index) {
