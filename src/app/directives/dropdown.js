@@ -80,14 +80,24 @@ angular.module("proton.dropdown", [])
             totalItems: '=',
             itemsPerPage: '=',
             change: '=',
-            next: '@',
-            previous: '@'
+            disableNext: '=',
+            disablePrevious: '='
         },
         link: function(scope, element, attrs) {
             scope.pages = [];
 
             scope.select = function(p) {
                 scope.change(p);
+                scope.disableN = scope.disableNext();
+                scope.disableP = scope.disablePrevious();
+            };
+
+            scope.next = function() {
+                scope.select(scope.page + 1);
+            };
+
+            scope.previous = function() {
+                scope.select(scope.page - 1);
             };
 
             var buildPages = function() {
