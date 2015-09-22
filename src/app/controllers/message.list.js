@@ -257,8 +257,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.displayed = function(message) {
-        return message.ID === $stateParams.id;
+    $scope.activeMessage = function(id) {
+        _.each($scope.messages, function(message) {
+            message.Active = message.ID === id;
+        });
     };
 
     $scope.updateLabels = function () {
@@ -415,9 +417,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     messageCounts.updateUnread('mark', [message], true);
                 }
 
-                // TODO: Richard, we need to unset all of the other messages somehow?
-                message.Active = true;
-
+                $scope.activeMessage(message.ID);
                 $rootScope.scrollPosition = $('#content').scrollTop();
                 $state.go("secured." + $scope.mailbox, {
                     id: message.ID
