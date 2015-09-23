@@ -389,7 +389,12 @@ angular.module("proton.authentication", [
         // },
 
         // Removes all connection data
-        logout: function() {
+        logout: function(reload) {
+
+            if (reload===undefined) {
+                reload = true;
+            }
+            
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
 
@@ -406,7 +411,9 @@ angular.module("proton.authentication", [
 
                 this.user = null;
                 window.onbeforeunload = undefined;
-                location.reload();
+                if (reload) {
+                    location.reload();
+                }
             };
 
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
@@ -485,8 +492,7 @@ angular.module("proton.authentication", [
                     // Why are we setting this in two places?
                     $rootScope.user = user;
                     this.user = user;
-                    // TODO what the fuck is this? atob is going to break with an non-ASCII, and why would we base64 the theme?
-                    this.user.Theme = atob(user.Theme);
+                    this.user.Theme = user.Theme;
 
                     return user;
                 }.bind(this),

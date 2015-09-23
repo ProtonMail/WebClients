@@ -1,6 +1,5 @@
 angular.module("proton.contacts", [])
-    .service('contactManager', function($rootScope, Contact) {
-
+    .service('contactManager', function(authentication, Contact) {
         return {
             save: function(message) {
                 var list = message.ToList.concat(message.CCList).concat(message.BCCList);
@@ -23,16 +22,16 @@ angular.module("proton.contacts", [])
                 }.bind(this));
             },
             isItNew: function(email) {
-                return typeof _.findWhere($rootScope.user.Contacts, {Email: email.Address}) === 'undefined';
+                return typeof _.findWhere(authentication.user.Contacts, {Email: email.Address}) === 'undefined';
             },
             add: function(email) {
-                $rootScope.user.Contacts.push(email);
+                authentication.user.Contacts.push(email);
             },
             send: function(contactList) {
                 return Contact.save({Contacts: contactList});
             },
             remove: function(email) {
-                $rootScope.user.Contacts = _.without($rootScope.user.Contacts, email);
+                authentication.user.Contacts = _.without(authentication.user.Contacts, email);
             }
         };
     });

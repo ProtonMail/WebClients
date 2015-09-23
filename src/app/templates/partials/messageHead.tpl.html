@@ -1,4 +1,4 @@
-<h1 ng-init="setMessageHeadHeight()">
+<h1>
     <a href class="star" ng-click="toggleStar(message)">
         <i class="fa {{ (message.Starred === 1) ? 'fa-star' : 'fa-star-o' }}"></i>
     </a>
@@ -18,7 +18,8 @@
             !!(message.IsEncrypted == '3') ||
             !!(message.IsEncrypted == '5') ||
             !!(message.IsEncrypted == '6'),
-        'fa-unlock-alt': !!(message.IsEncrypted == '0')
+        'fa-unlock-alt': !!(message.IsEncrypted == '0'),
+        'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')        
     }"
     pt-placement="right"
     pt-tooltip="{{ message.encryptionType() }}"></i>

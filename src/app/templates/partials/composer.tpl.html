@@ -146,7 +146,7 @@
                             <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="range" min="1" max="{{maxExpiration}}" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" ng-model-options="{debounce: {'default': 50}}" />
+                            <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
                         </div>
                         <div class="form-group col-md-12 text-center" ng-show="params.expiration">
                             <h2 class="text-purple">{{params.expiration}} {{ 'HOURS' | translate }}</h2>
@@ -160,7 +160,7 @@
                     <div
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
-                    ng-show="isOver && message.focussed"></div>
+                    ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body"></squire>
                     <button
                     class="btn btn-sm attach-collapse"
@@ -181,27 +181,19 @@
                         id="attachment{{$index}}"
                         ng-repeat="attachment in message.Attachments"
                         ng-init="initAttachment(attachment, $index)">
-                            <span
-                            class="preview-name"
-                            ng-bind="attachment.filename || attachment.Name"></span>
-                            <a
-                            href=""
-                            ng-show="!!attachment.uploading"
-                            class="preview-close"
-                            ng-click="cancelAttachment(attachment, message)"><i class="fa fa-times"></i></a>
-                            <a
-                            href=""
-                            ng-show="!!!attachment.uploading"
-                            class="preview-close"
-                            ng-click="removeAttachment(attachment, message)"><i class="fa fa-times"></i></a>
+                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+                            <a href="" ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                                <i class="fa fa-times"></i>
+                            </a>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="composer-footer" ng-hide="message.minimized">
-
                 <button
-                href=""
                 class="btn btn-sm btn-default btn-add-attachment"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
@@ -248,7 +240,7 @@
                     ng-class="{ disabled: message.loading() }"
                     class="btn btn-sm btn-default"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
-                    ng-click="discard(message)"
+                    ng-click="close(message, true, false)"
                     pt-tooltip="{{ 'DISCARD' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-trash-o"></i>

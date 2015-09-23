@@ -23,7 +23,7 @@ angular.module("proton.squire", [
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
             scope.$on('$destroy', function() {
-                if(editor) {
+                if(angular.isDefined(editor)) {
                     editor.destroy();
                 }
             });
@@ -165,6 +165,10 @@ angular.module("proton.squire", [
                     }
                 });
 
+                editor.addEventListener("mscontrolselect", function(event) {
+                    event.preventDefault();
+                });
+
                 editor.addEventListener("pathChange", function() {
                     var p, ref;
 
@@ -207,7 +211,10 @@ angular.module("proton.squire", [
             loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
-            if(jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) {
+            if(
+                ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) ||
+                ( $('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
+            ) {
                 // Start timer when loaded.
                 $(iframe).load(function () {
                     loaded = true;

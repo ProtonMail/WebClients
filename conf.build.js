@@ -31,13 +31,11 @@ module.exports = {
   },
   vendor_files: (vendor_files = {
     js: [
-      "vendor/es6-promise/es6-promise.js",
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
-      "vendor/ng-file-upload/dist/angular-file-upload-shim.js",
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-bootstrap/ui-bootstrap.js",
       "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
@@ -50,8 +48,7 @@ module.exports = {
       "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
-      "vendor/openpgp/openpgp.min.js",
-      "vendor/dompurify/purify.js",
+      "vendor/DOMPurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/showdown/compressed/showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
@@ -74,7 +71,8 @@ module.exports = {
       "vendor/vcard/src/vcard.js",
       "vendor/mellt/javascript/Mellt.js",
       "vendor/mellt/javascript/common-passwords.js",
-      "vendor/dragster/lib/dragster.js"
+      "vendor/dragster/lib/dragster.js",
+      "vendor/html2canvas/build/html2canvas.js"
     ],
     bootstrap_components: [
       "affix",
@@ -104,11 +102,11 @@ module.exports = {
 
     sass_include_dirs: [
       "vendor/bourbon/dist",
-      "vendor/font-awesome/scss",
+//      "vendor/font-awesome/scss",
       "vendor/bootstrap-sass-official/assets/stylesheets"
     ],
     assets: [
-      "vendor/font-awesome/fonts"
+//      "vendor/font-awesome/fonts"
     ]
   }),
 

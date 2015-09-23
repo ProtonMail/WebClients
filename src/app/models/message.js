@@ -219,7 +219,9 @@ angular.module("proton.models.message", ["proton.constants"])
                 $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
                 $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
                 $translate.instant('STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY')
+                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
+                $translate.instant('ENCRYPTED_PGP'),
+                $translate.instant('ENCRYPTED_PGP_MIME'),
             ];
 
             return texts[this.IsEncrypted];
@@ -253,9 +255,6 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         setMsgBody: function() {
-
-            $log.debug('setMsgBody');
-
             var body;
 
             // get the message content from either the editor or textarea if its iOS
@@ -302,9 +301,20 @@ angular.module("proton.models.message", ["proton.constants"])
             this.promises = _.union(this.promises, [promise]);
 
             promise.catch(function(result) {
-                if(angular.isDefined(result.Error)) {
-                    notify({message: result.Error, classes: 'notification-danger'});
+                if(angular.isDefined(result)) {
                     $log.error(result);
+                    if ( angular.isDefined( result.message ) ) {
+                        notify({message: result.message, classes: 'notification-danger'});
+                    }
+                    else if ( angular.isDefined( result.Error ) ) {
+                        notify({message: result.Error, classes: 'notification-danger'});
+                    }
+                    else if ( angular.isDefined( result.data ) && angular.isDefined( result.data.Error ) ) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                    else if ( angular.isString( result ) ) {
+                        notify({message: result, classes: 'notification-danger'});
+                    }
                 }
             });
 
@@ -463,6 +473,9 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearImageBody: function(body) {
+            if (body===undefined) {
+                return body;
+            }
             if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
             } else {

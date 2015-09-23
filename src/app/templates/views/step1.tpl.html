@@ -49,7 +49,7 @@
         <h1 class="text-center">{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h1>
     </div>
     <div class="panel-body">
-        <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate>
+        <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate method="post">
             <div class="form-group">
                 <p class="alert alert-warning">
                 Password Managers such as <strong>LastPass</strong> may cause login issues
@@ -76,10 +76,6 @@
             </div>
             <hr>
             <div class="form-group">
-                <span
-                class="pull-right bold"
-                ng-class="{'text-success': strength(account.loginPassword).number > 100000}"
-                ng-bind="strength(account.loginPassword).word"></span>
                 <label for="password">{{ 'LOGIN_PASSWORD' | translate }}</label>
                 <input
                 id="password"

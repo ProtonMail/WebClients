@@ -9,9 +9,6 @@
                 <h4 class="modal-title">{{ 'REPORT_BUG' | translate }}</h4>
             </div>
             <div class="modal-body">
-                <p class="alert alert-danger text-center">
-                    If you are having trouble with ProtonMail 2.0, you can still use ProtonMail 1.16 for a limited time <a href="https://old.protonmail.ch" target="_blank">here</a>. However, we will be taking the old site down very soon, so please file a bug report so we can make ProtonMail 2.0 work for you!
-                </p>
                 <p class="alert alert-info text-center">
                     <strong>{{ 'HAVE_A_QUESTION?' | translate }}</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
                 </p>
@@ -49,9 +46,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="bug_email">{{ 'YOUR_EMAIL_ADDRESS' | translate }}</label>
-                            <input type="text" class="form-control" name="bug_email" id="bug_email" placeholder="{{ 'EMAIL' | translate }}" ng-model="bug.Email">
-                            <p class="help-block">Please make sure to give us a way to contact you.</p>
+                            <label for="bug_email">{{ 'EMAIL_ADDRESS' | translate }}</label>
+                            <input type="text" class="form-control" name="bug_email" id="bug_email" placeholder="Please make sure to give us a way to contact you" ng-model="bug.Email">
                         </div>
                     </div>
                     <div class="col-md-12" ng-if="false">
@@ -64,6 +60,15 @@
                         <div class="form-group">
                             <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
                             <textarea ng-model="bug.Description" class="form-control" name="bug_description" rows="6" id="bug_description" placeholder="Please describe the problem and include any error messages"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="bug_description">{{' ATTACH_SCREENSHOT' | translate }}</label>
+                            <br>
+                            <toggle-switch ng-model="attachScreenshot" on-label="{{ 'YES' | translate }}" off-label="{{ 'NO' | translate }}">
+                                </toggle-switch>
+                            <p class="alert alert-info" ng-if="attachScreenshot">A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur].</p>
                         </div>
                     </div>
                     <div class="col-md-12">

@@ -18,7 +18,7 @@
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
-                <a href="" class="email" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt;</a>
+                {{ ::message.SenderName }} &lt;{{ ::message.SenderAddress }}&gt; <a href="" class="email" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="ProtonMail Verified" ng-if="message.IsEncrypted==CONSTANTS.ENC_INTERNAL||message.IsEncrypted==CONSTANTS.ENC_OUT_ENC_REPLY"></span>
                 <span class="fa fa-check-circle verified" pt-placement="right" pt-tooltip="DKIM is Valid" ng-if="tools.is_valid_dkim(message.Header)"></span>
             </li>
@@ -26,7 +26,7 @@
                 <strong>{{ 'TO' | translate }}</strong>
                 <ul class="list-inline inline" ng-if="message.ToList.length">
                     <li ng-repeat="email in ::message.ToList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email | contact }}</a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
@@ -34,7 +34,7 @@
                 <strong>{{ 'CC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.CCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email | contact }}</a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
@@ -42,7 +42,7 @@
                 <strong>{{ 'BCC' | translate }}</strong>
                 <ul class="list-inline inline">
                     <li ng-repeat="email in ::message.BCCList">
-                        <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}">{{ email | contact }}</a>
+                        {{ email | contact }} <a href="" class="email" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"><i class="fa fa-envelope-o"></i></a>
                     </li>
                 </ul>
             </li>
@@ -68,7 +68,7 @@
 
 </div>
 
-<div ng-if="::message.Attachments.length > 0" id="attachmentArea" attachment-height attachmentCount="{{ message.Attachments.length }}">
+<div ng-if="::message.Attachments.length > 0" id="attachmentArea" ng-style="{'min-height':attHeight}">
     <span class="alert alert-info" id="safariWarning" ng-show="safariWarning" ng-click="openSafariWarning()">
         <strong>Need help</strong> downloading attachments?
     </span>

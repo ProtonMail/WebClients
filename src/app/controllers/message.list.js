@@ -2,6 +2,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
 .controller("MessageListController", function(
     $q,
+    $log,
     $rootScope,
     $scope,
     $state,
@@ -20,7 +21,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     networkActivityTracker,
     notify
 ) {
-    var watchMessages;
     var lastChecked = null;
 
     $scope.initialization = function() {
@@ -46,47 +46,24 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        $scope.updatePageName();
+        $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
+<<<<<<< HEAD
         $scope.refreshMessages().then(function() {
             watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
                 preloadMessage.set(newValue);
+=======
+        $scope.refreshMessagesCache().then(function() {
+            messageCache.watchScope($scope, "messages");
+            $scope.$watch('messages', function() {
+>>>>>>> develop
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
+        }, function(error) {
+            $log.error(error);
         });
-    };
-
-    $scope.updatePageName = function() {
-        var name;
-        var value;
-        var unread = '';
-        var counters = messageCounts.get();
-
-        if(counters) {
-            // get unread number
-            if($scope.mailbox === 'label') {
-                value = counters.Labels[$stateParams.label];
-            } else if ($scope.mailbox === 'starred'){
-                value = counters.Starred;
-            } else {
-                value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
-            }
-
-            if(angular.isDefined(value) && value > 0) {
-                unread = '(' + value + ') ';
-            }
-        }
-
-        // get name
-        if($scope.mailbox === 'label') {
-            name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
-        } else {
-            name = $scope.mailbox;
-        }
-
-        $rootScope.pageName = unread + _.string.capitalize(name);
     };
 
     $scope.startWatchingEvent = function() {
@@ -108,10 +85,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $scope.$on('discardDraft', function(event, id) {
             $scope.discardDraft(id);
-        });
-
-        $scope.$on('updatePageName', function(event) {
-            $scope.updatePageName();
         });
 
         $scope.$on('applyLabels', function(event, LabelID) {
@@ -154,7 +127,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.messageCount = function() {
-        if(angular.isDefined($stateParams.filter)) {
+        if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
             return $rootScope.Total;
         } else {
             if ($scope.mailbox === 'label') {
@@ -191,8 +164,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var ddp = [];
         var ddp2 = [];
         var makeRangeCounter = 0;
+        var count = $scope.messageCount();
 
-        for (var i = 0; i <= parseInt($scope.messageCount() - 1); i++) {
+        for (var i = 0; i <= parseInt(count - 1); i++) {
             ddp[i] = i;
         }
 
@@ -256,13 +230,40 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return params;
     };
 
+<<<<<<< HEAD
     $scope.refreshMessages = function() {
+=======
+    $scope.refreshMessages = function(silently, empty) {
+        var mailbox = $state.current.name.replace('secured.', '');
+        var params = $scope.getMessagesParameters(mailbox);
+
+        Message.query(params).$promise.then(function(result) {
+            $scope.messages = result;
+
+            if(!!!empty) {
+                $scope.emptying = false;
+            }
+        }, function(error) {
+            notify({message: 'Error during quering messages', classes: 'notification-danger'});
+            $log.error(error);
+        });
+    };
+
+    $scope.refreshMessagesCache = function () {
+>>>>>>> develop
         var deferred = $q.defer();
         var request = $scope.getMessagesParameters($scope.mailbox);
 
         cacheMessages.query(request).then(function(messages) {
             $scope.messages = messages;
+<<<<<<< HEAD
             deferred.resolve(messages);
+=======
+            deferred.resolve();
+        }, function(error) {
+            error.message = 'Error during refresh messages from cache';
+            deferred.reject(error);
+>>>>>>> develop
         });
 
         return deferred.promise;
@@ -342,6 +343,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             lastChecked = message;
         }
+
+        $scope.allSelected();
     };
 
     $scope.onStartDragging = function(event, ui, message) {
@@ -400,17 +403,26 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             if ($state.is('secured.drafts')) {
                 networkActivityTracker.track(
-                Message.get({id: message.ID}).$promise.then(function(m) {
-                    m.decryptBody(m.Body, m.Time).then(function(body) {
-                        m.Body = body;
+                    Message.get({id: message.ID}).$promise.then(
+                        function(m) {
+                            m.decryptBody(m.Body, m.Time).then(function(body) {
+                                m.Body = body;
 
-                        if(m.Attachments && m.Attachments.length > 0) {
-                            m.attachmentsToggle = true;
+                                if(m.Attachments && m.Attachments.length > 0) {
+                                    m.attachmentsToggle = true;
+                                }
+
+                                $rootScope.$broadcast('loadMessage', m);
+                            }, function(error) {
+                                notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
+                                $log.error(error); // TODO send to back-end
+                            });
+                        }, function(error) {
+                            notify({message: 'Error during the getting message', classes: 'notification-danger'});
+                            $log.error(error); // TODO send to back-end
                         }
-
-                        $rootScope.$broadcast('loadMessage', m);
-                    });
-                }));
+                    )
+                );
             } else {
                 if(message.IsRead === 0) {
                     message.IsRead = 1;
@@ -472,6 +484,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         } else {
             status = false;
         }
+
+        $scope.allSelectedCheckbox = status;
 
         return status;
     };
@@ -537,6 +551,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
+<<<<<<< HEAD
 
         var message = cacheMessages.get(id).then(function(message) {
             Message.trash({IDs: [id]});
@@ -560,6 +575,30 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
             messageCounts.updateUnread('move', movedMessages);
             messageCounts.updateTotals('move', movedMessages);
+=======
+        var message = messageCache.get(id).then(function(message) {
+            Message.trash({IDs: [id]}).$promise.then(function(result) {
+                movedMessages.push({
+                    LabelIDs: message.LabelIDs,
+                    OldLocation: message.Location,
+                    IsRead: message.IsRead,
+                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                    Starred: message.Starred
+                });
+
+                messageCounts.updateUnread('move', movedMessages);
+                messageCounts.updateTotals('move', movedMessages);
+
+                $scope.messages = _.without($scope.messages, message);
+            }, function(error) {
+                notify({message: 'Error during the trash request', classes: 'notification-danger'});
+                $log.error(error);
+            });
+
+        }, function(error) {
+            notify({message: 'Error during the getting message from the cache', classes: 'notification-danger'});
+            $log.error(error);
+>>>>>>> develop
         });
     };
 
@@ -582,7 +621,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
             };
 
+<<<<<<< HEAD
             events.push(event);
+=======
+            events.push({Action: 3, ID: message.ID, Message: message});
+
+            if(inDelete) {
+                $rootScope.$broadcast('deleteMessage', message.ID);
+            }
+>>>>>>> develop
         });
 
         if(events.length > 0) {
@@ -592,22 +639,35 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
+<<<<<<< HEAD
         var promiseAction = function(result) {
+=======
+        var promiseSuccess = function(result) {
+            if(events.length > 0) {
+                messageCache.sync();
+            }
+
+>>>>>>> develop
             if(inDelete) {
                 if(ids.length > 1) {
-                    notify($translate.instant('MESSAGES_DELETED'));
+                    notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});
                 } else {
-                    notify($translate.instant('MESSAGE_DELETED'));
+                    notify({message: $translate.instant('MESSAGE_DELETED'), classes: 'notification-success'});
                 }
             }
 
             deferred.resolve();
         };
 
+        var promiseError = function(error) {
+            error.message = 'Error during the move request';
+            deferred.reject(error);
+        };
+
         if ($scope.messages.length === 0) {
-            networkActivityTracker.track(promise.then(promiseAction));
+            networkActivityTracker.track(promise.then(promiseSuccess, promiseError));
         } else {
-            promise.then(promiseAction);
+            promise.then(promiseSuccess, promiseError);
         }
 
         return deferred.promise;
@@ -657,7 +717,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                             messageCounts.empty(location);
                             $rootScope.$broadcast('updateCounters');
                             $rootScope.$broadcast('refreshMessagesCache');
-                            notify($translate.instant('FOLDER_EMPTIED'));
+                            notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                        },
+                        function(error) {
+                            notify({message: 'Error during the empty request', classes: 'notification-danger'});
+                            $log.error(error);
                         }
                     );
 
@@ -698,8 +762,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         if(tooManyLabels) {
-            notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
-            deferred.reject();
+            deferred.reject(new Error($translate.instant('TOO_MANY_LABELS_ON_MESSAGE')));
         } else {
             _.each(toApply, function(labelID) {
                 promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
@@ -731,6 +794,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
 
                 $scope.unselectAllLabels();
+            }, function(error) {
+                error.message = 'Error during the labels request';
+                deferred.reject(error);
             });
 
             networkActivityTracker.track(deferred.promise);

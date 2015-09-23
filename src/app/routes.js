@@ -164,7 +164,7 @@ angular.module("proton.routes", [
             }
         },
         resolve: {
-            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify) {
+            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
                 $http.post(
                     url.get() + "/users/" + $stateParams.token + "/check",
                     {Username: $stateParams.user}
@@ -172,6 +172,10 @@ angular.module("proton.routes", [
                 .then(
                     function( response) {
                         if (response.data.Valid===1) {
+
+                            // clear user data if already logged in:
+                            authentication.logout(false);
+
                             $rootScope.allowedNewAccount = true;
                             $rootScope.inviteToken = $stateParams.token;
                             $rootScope.preInvited = true;
@@ -211,7 +215,12 @@ angular.module("proton.routes", [
                     function() {
                         $rootScope.pubKey = authentication.user.PublicKey;
                         $rootScope.user = authentication.user;
-                        $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                        if (authentication.user.addresses) {
+                            $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
+                        }
+                        else {
+                            $rootScope.user.DisplayName = '';
+                        }
                         if ($rootScope.pubKey === 'to be modified') {
                             $state.go('step2');
                             return;

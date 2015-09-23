@@ -50,15 +50,15 @@ angular.module("proton.event", ["proton.constants"])
 				if (angular.isDefined(contacts)) {
 					_.each(contacts, function(contact) {
 						if(contact.Action === DELETE) {
-							$rootScope.user.Contacts = _.filter($rootScope.user.Contacts, function(c) { return c.ID !== contact.ID; });
+							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.ID; });
 						} else if(contact.Action === CREATE) {
-							$rootScope.user.Contacts.push(contact.Contact);
+							authentication.user.Contacts.push(contact.Contact);
 						} else if (contact.Action === UPDATE) {
-							var index = _.findIndex($rootScope.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
-							$rootScope.user.Contacts[index] = contact.Contact;
+							var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
+							authentication.user.Contacts[index] = contact.Contact;
 						}
 						$rootScope.$broadcast('updateContacts');
-						Contact.index.updateWith($rootScope.user.Contacts);
+						Contact.index.updateWith(authentication.user.Contacts);
 					});
 				}
 			},
@@ -108,21 +108,23 @@ angular.module("proton.event", ["proton.constants"])
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manageNotices: function(notices) {
-				for(var i = 0; i<notices.length; i++) {
-					var message = notices[i];
+				if(angular.isDefined(notices)) {
+					for(var i = 0; i < notices.length; i++) {
+						var message = notices[i];
+						var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 
-					var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
-					if ( !$cookies.get( cookie_name ) ) {
-						notify({
-							message: message,
-							duration: '0'
-						});
+						if ( !$cookies.get( cookie_name ) ) {
+							notify({
+								message: message,
+								duration: '0'
+							});
 
-						// 2 week expiration
-						var now = new Date();
-						var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
+							// 2 week expiration
+							var now = new Date();
+							var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
 
-						$cookies.put(cookie_name, 'true', { expires: expires });
+							$cookies.put(cookie_name, 'true', { expires: expires });
+						}
 					}
 				}
 			},

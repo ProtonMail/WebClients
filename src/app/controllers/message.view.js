@@ -20,7 +20,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     Message,
     attachments,
     authentication,
-    contactManager,
     message,
     messageCache,
     messageCounts,
@@ -35,9 +34,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];
 
-    $timeout(function() {
-        $scope.initView();
-    }, 100);
+    $rootScope.$broadcast('updatePageName');
 
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
@@ -49,6 +46,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     function onResize() {
         $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     }
 
     $(window).on('resize', onResize);
@@ -59,6 +57,25 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
     });
+
+    $scope.attHeight = function() {
+        var rowHeight = 32;
+        var attachmentAreaHeight = (rowHeight*2);
+        var attachmentSize = message.Attachments.length;
+        if (attachmentSize) {
+            if (attachmentSize<3) {
+                attachmentAreaHeight = (rowHeight*2);
+            }
+            else if (attachmentSize<5) {
+                attachmentAreaHeight = (rowHeight*3);
+            }
+            else {
+                attachmentAreaHeight = (rowHeight*4);
+            }
+        }
+        $log.debug(attachmentAreaHeight);
+        return attachmentAreaHeight;
+    };
 
     $scope.initView = function() {
         if(message.IsRead === 0) {
@@ -132,18 +149,56 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 // for the welcome email, we need to change the path to the welcome image lock
                 content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
-                $scope.content = $sce.trustAsHtml(content);
 
-                $timeout(function() {
-                    tools.transformLinks('message-body');
-                });
+                var showMessage = function(content) {
+                    $scope.content = $sce.trustAsHtml(content);
+                    $timeout(function(){
+                        tools.transformLinks('message-body');
+                        $scope.setMessageHeadHeight();
+                        $scope.setAttachmentHeight();
+                    }, 0, false);
 
-                if(print) {
-                    setTimeout(function() {
-                        window.print();
-                        window.history.back();
-                    }, 1000);
+                    if(print) {
+                        setTimeout(function() {
+                            window.print();
+                        }, 1000);
+                    }
+                };
+
+                // PGP/MIME
+                if ( message.IsEncrypted === 8 ) {
+
+                    var mailparser = new MailParser({
+                        defaultCharset: 'UTF-8'
+                    });
+
+                    mailparser.on('end', function(mail) {
+
+                        if (mail.html) {
+                            content = mail.html;
+                        }
+                        else if (mail.text) {
+                            content = mail.text;
+                        }
+                        else {
+                            content = "Empty Message";
+                        }
+
+                        if (mail.attachments) {
+                            content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
+                        }
+
+                        showMessage(content);
+
+                    });
+
+                    mailparser.write(content);
+                    mailparser.end();
                 }
+                else {
+                    showMessage(content);
+                }
+
             },
             function(err) {
                 $scope.togglePlainHtml();
@@ -181,6 +236,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleImages = function() {
         message.toggleImages();
         $scope.displayContent();
+        $scope.setMessageHeadHeight();
+        $scope.setAttachmentHeight();
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -396,7 +453,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var br = '<br />';
         var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
-        var blockquoteStart = '<blockquote>';
+        var blockquoteStart = '<blockquote class="protonmail_quote">';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
         var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
@@ -497,7 +554,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.print = function() {
-        $state.go('secured.print', { id: message.ID });
+        var url = $state.href('secured.print', { id: message.ID });
+
+        window.open(url, '_blank');
     };
 
     $scope.viewPgp = function() {
@@ -526,4 +585,20 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
     };
+
+    $scope.setAttachmentHeight = function() {
+        var count = parseInt(message.Attachments.length);
+        var buttonHeight = 32;
+        var maxHeight = (buttonHeight * 4);
+        var element = $('#attachmentArea');
+
+        if (count > 6) {
+            element.css('minHeight', maxHeight);
+            element.css('maxHeight', maxHeight);
+        } else {
+            element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
+        }
+    };
+
+    $scope.initView();
 });

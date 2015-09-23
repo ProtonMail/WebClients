@@ -18,7 +18,7 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 7rem;
+        bottom: 0;
     }
     em {
         font-style: normal;
@@ -142,12 +142,15 @@
         }
         @include responsive(sm) {
             width: 6rem;
+            display: none;
         }
         @include responsive(md) {
             width: 18rem;
+            display: block;
         }
         @include responsive(lg) {
             width: 20rem;
+            display: block;
         }
         .sizeBar {
             margin: 5px 0;
