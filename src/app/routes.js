@@ -682,7 +682,7 @@ angular.module("proton.routes", [
             templateUrl: "templates/partials/message-view.tpl.html",
             controller: "MessageViewController as messageViewCtrl",
             resolve: {
-                message: function($stateParams, cacheMessages) {
+                message: function($stateParams, cacheMessages, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
                         return networkActivityTracker.track(cacheMessages.get($stateParams.id));
                     } else {
@@ -726,7 +726,9 @@ angular.module("proton.routes", [
     $rootScope.go = _.bind($state.go, $state);
 
     $rootScope.idDefined = function() {
-        return angular.isDefined($stateParams.id);
+        var id = $stateParams.id;
+
+        return angular.isDefined(id) && id.length > 0;
     };
 
     $rootScope.deselectAll = function() {

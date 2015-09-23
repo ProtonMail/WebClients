@@ -28,7 +28,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     pmcw,
     tools
 ) {
-    console.log('MessageViewController');
     $scope.message = message;
     $scope.tools = tools;
     $scope.isPlain = false;

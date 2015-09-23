@@ -21,7 +21,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     networkActivityTracker,
     notify
 ) {
-    console.log('MessageListController');
     var lastChecked = null;
     var watchMessages;
 
