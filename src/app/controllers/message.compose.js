@@ -618,10 +618,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.listenEditor = function(message) {
         if(message.editor) {
             message.editor.addEventListener('focus', function() {
-                message.fields = false;
-                message.recipientFieldFocussed = 0;
-                $('.typeahead-container').scrollTop(0);
-                $scope.$apply();
+                $timeout(function() {
+                    message.fields = false;
+                    message.recipientFieldFocussed = 0;
+                    $('.typeahead-container').scrollTop(0);
+                    $scope.$apply();
+                });
             });
 
             message.editor.addEventListener('input', function() {

@@ -133,7 +133,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.is_valid_dkim = function(header) {
-        if ((header.indexOf('dkim=none') === -1) && (header.indexOf('dkim=pass') !== -1)) {
+        if (header && (header.indexOf('dkim=none') === -1) && (header.indexOf('dkim=pass') !== -1)) {
             return true;
         } else {
             return false;

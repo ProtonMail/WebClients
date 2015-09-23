@@ -273,19 +273,30 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     /**
      * Manipulates the DOM height for the scrollable labels area
-     * TODO: Should be a directive?
+     * TODO: Should be a directive? This needs to be fixed in v3.
      */
     $scope.labelScroller = function() {
+
+        $('#sidebarLabels').css('height', 'auto');
+
         var sidebarWrapHeight = $('#sidebarWrap').outerHeight();
         var sidebarMenuHeight = 0;
+        var height;
 
         $('#sidebarWrap > .list-group').each( function() {
             sidebarMenuHeight += $(this).outerHeight();
         });
 
         if (sidebarMenuHeight > 0) {
-            $('#sidebarLabels').css('height', (sidebarWrapHeight - sidebarMenuHeight));
+            height = (sidebarWrapHeight - sidebarMenuHeight);
         }
+
+        if ($('.storage').is(':visible')) {
+            height -= $('.storage').outerHeight();
+        }
+        
+        $('#sidebarLabels').css('height', height);
+
     };
 
     $scope.initialization();
