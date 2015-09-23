@@ -125,6 +125,10 @@ angular.module("proton.dropdown", [])
                 var pages;
                 var temp = [];
 
+                if ( angular.isUndefined(scope.totalItems) || angular.isUndefined(scope.itemsPerPage) ) {
+                    return;
+                }
+
                 if((scope.totalItems % scope.itemsPerPage) === 0) {
                     pages = scope.totalItems / scope.itemsPerPage;
                 } else {
