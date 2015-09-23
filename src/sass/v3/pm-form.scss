@@ -1,5 +1,4 @@
-
-
+$inputHeight: 32px;
 .pm_form {
     legend {
         padding: 0;
@@ -11,33 +10,71 @@
         width: 100%;
         margin-bottom: 1rem;
     }
+    ::-webkit-input-placeholder {
+       color: #aaaabf;
+    }
+    :-moz-placeholder { 
+       color: #aaaabf;  
+    }
+
+    ::-moz-placeholder {  
+       color: #aaaabf;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #aaaabf;  
+    }    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+        line-height: $inputHeight;
+        border: 1px solid #9397cd;
+        box-sizing: border-box;
+        color: #555;
+        display: block;
+        width: 100%;
+        font-size: 1em;
+        border-radius: 2px;
+        position: relative;
+        &:focus {
+            color: #9397cd;
+            border-color: #9397cd;
+            outline: none;
+        }
+        &[disabled],
+        &.disabled {
+            color: #bbb;
+            border-color: #ededed;
+            background: #fcfcfc;
+        }
+        &.success {
+            color: #aecf96;
+            border-color: #aecf96;
+        }
+        &.error {
+            color: #cf9696;
+            border-color: #cf9696;
+        }
+        &.warning {
+            color: #d9c4a2;
+            border-color: #d9c4a2;
+        }
+    }
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-        height: 30px;
-        line-height: 30px;
         padding: 0 1rem;
-        border: 1px solid #ededed;
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-        font-size: 1em;
     }
     textarea {
-        line-height: 30px;
         padding: 1rem 1rem;
-        border: 1px solid #ededed;
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-        font-size: 1em;
     }
     .margin {
         margin-bottom: 1rem;
     }
     label {
-        height: 32px;
-        line-height: 32px;
+        height: $inputHeight;
+        line-height: $inputHeight;
         display: block;
     }
     .col {
