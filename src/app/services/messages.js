@@ -167,6 +167,7 @@ angular.module("proton.messages", ["proton.constants"])
                                 // replacing matching message excerpts with
                                 // this new detailed one.
                                 message.Selected = msg.Selected;
+                                message.Active = msg.Active;
                                 list.splice(i, 1, message);
 
                                 // Stopping iteration as soon as there's a match

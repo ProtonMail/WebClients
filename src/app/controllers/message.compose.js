@@ -902,7 +902,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $scope.saving = false;
 
                     // Add draft in message list
-                    if($state.is('secured.drafts')) {
+                    if($state.is('secured.drafts.list')) {
                         $rootScope.$broadcast('refreshMessages');
                     }
 

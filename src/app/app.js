@@ -321,7 +321,7 @@ angular.module("proton", [
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
             $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
             event.preventDefault();
-            $state.go('secured.inbox');
+            $state.go('secured.inbox.list');
             return;
         }
 
@@ -350,7 +350,7 @@ angular.module("proton", [
         if($rootScope.scrollToBottom === true) {
             setTimeout(function() {
                 $('#content').animate({
-                    scrollTop: $("#pageBottom").offset().top
+                    scrollTop: $("#pm_list").offset().top
                 }, 1);
             }, 10);
 
@@ -419,7 +419,7 @@ angular.module("proton", [
 
 .run(function($rootScope) {
     $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
-    $rootScope.layoutMode = 'rows';
+    $rootScope.layoutMode = 'columns';
     // Set build config
     $rootScope.build = {
         "version":"2.0",

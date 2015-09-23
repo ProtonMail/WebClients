@@ -22,7 +22,7 @@ angular.module("proton.controllers.Account", [
     notify,
     token
 ) {
-    
+
     // var mellt = new Mellt();
 
     $scope.initialization = function() {
@@ -91,7 +91,7 @@ angular.module("proton.controllers.Account", [
     };
 
     /**
-     * A chain of promises. Displays errors to the user. 
+     * A chain of promises. Displays errors to the user.
      * Else: resets mailbox, logs them in and redirects
      * @param form {Reference to the form submitted}
      */
@@ -133,7 +133,7 @@ angular.module("proton.controllers.Account", [
     };
 
     /**
-     * Tries to log the user in. 
+     * Tries to log the user in.
      * @return {Promise}
      */
     $scope.doLogUserIn = function() {
@@ -157,7 +157,7 @@ angular.module("proton.controllers.Account", [
             return deferred.promise;
         }
         else {
-            $scope.authResponse = response.data;            
+            $scope.authResponse = response.data;
             return pmcw.decryptPrivateKey(
                 $scope.authResponse.EncPrivateKey,
                 $scope.account.mailboxPassword
@@ -182,9 +182,9 @@ angular.module("proton.controllers.Account", [
                 .then(
                     function(resp) {
                         $scope.process.redirecting = true;
-                        $rootScope.isLoggedIn = true;                        
+                        $rootScope.isLoggedIn = true;
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                        $state.go("secured.inbox");
+                        $state.go("secured.inbox.list");
                     },
                     function(err) {
                         notify({
@@ -219,7 +219,7 @@ angular.module("proton.controllers.Account", [
                 username: $rootScope.tempUser.username,
                 token: $scope.account.resetMbCode
             })
-            .then( 
+            .then(
                 function(response) {
                     if (response.data.Code!==1000) {
                         notify({

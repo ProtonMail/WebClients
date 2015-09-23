@@ -6,6 +6,7 @@ angular.module("proton.controllers.Header", [])
     $scope,
     $state,
     $stateParams,
+    CONSTANTS,
     authentication,
     wizardModal
 ) {
@@ -40,8 +41,15 @@ angular.module("proton.controllers.Header", [])
         if($scope.params.searchMessageInput.length > 0) {
             $rootScope.$broadcast('searchMessages', $scope.params.searchMessageInput);
         } else {
-            $state.go('secured.inbox');
+            $state.go('secured.inbox.list');
         }
+    };
+
+    $scope.activeMail = function() {
+        var folders = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
+        var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+
+        return folders.indexOf(mailbox) !== -1;
     };
 
     $scope.searchContacts = function() {

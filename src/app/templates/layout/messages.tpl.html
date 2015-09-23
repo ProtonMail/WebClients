@@ -2,18 +2,9 @@
     <div class="pm_opensans list" ui-view="list" ng-if="!idDefined()"></div>
     <div id="pm_view" class="rows" ui-view="view" ng-if="idDefined()"></div>
 </section>
+
 <section id="pm_columns" ng-if="layoutMode === 'columns'">
     <div class="pm_opensans list" ui-view="list"></div>
     <div id="pm_view" class="columns" ui-view="view" ng-if="idDefined() &&  numberSelectedMessages === 0"></div>
-    <div id="pm_view" class="columns" ng-if="!idDefined() || numberSelectedMessages > 0">
-        <section id="pm_placeholder">
-        	<i class="fa fa-check-square"></i>
-        	<h2>{{ numberSelectedMessages }} Messages selected</h2>
-        	<span class="pm_buttons">
-        		<a href="" ng-click="deselectAll()">
-                    <strong>{{ 'DESELECT_ALL' | translate }}</strong>
-                </a>
-        	</span>
-        </section>
-    </div>
+    <div ng-include src="'templates/partials/message-placeholder.tpl.html'" id="pm_view" class="columns" ng-if="!idDefined() || numberSelectedMessages > 0"></div>
 </section>

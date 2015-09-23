@@ -21,13 +21,7 @@
                     <a href="#">Submenu 3</a>
                 </span>
             </span>
-            <paginator 
-            page="page" 
-            total-items="messageCount()" 
-            items-per-page="40" 
-            change="goToPage(page)" 
-            disable-next="!hasNextPage" 
-            disable-previous="page == 1" />
+            <paginator page="page" total-items="messageCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
         </div>
         <label>
             <input type="checkbox" name="selectAll" ng-model="allSelectedCheckbox" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">

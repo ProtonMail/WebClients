@@ -204,7 +204,7 @@ angular.module("proton.controllers.Auth", [
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
                             authentication.savePassword(mailboxPassword);
-                            $state.go("secured.inbox");
+                            $state.go("secured.inbox.list");
                         },
                         function(err) {
                             $log.error('tryUnlock', err);

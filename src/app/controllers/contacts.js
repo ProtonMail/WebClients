@@ -86,14 +86,6 @@ angular.module("proton.controllers.Contacts", [
         $scope.refreshContacts();
     };
 
-    $scope.disableNext = function() {
-        return Math.ceil($scope.totalItems / $scope.numPerPage) === $scope.currentPage;
-    };
-
-    $scope.disablePrevious = function() {
-        return $scope.currentPage === 1;
-    };
-
     $scope.refreshContacts = function(searching) {
         $scope.contacts = $scope.contactsFiltered(searching);
     };

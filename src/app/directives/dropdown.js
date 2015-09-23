@@ -100,17 +100,36 @@ angular.module("proton.dropdown", [])
             page: '=',
             totalItems: '=',
             itemsPerPage: '=',
-            change: '=',
-            disableNext: '=',
-            disablePrevious: '='
+            change: '='
         },
         link: function(scope, element, attrs) {
             scope.pages = [];
 
+            var disable = function() {
+                scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page;
+                scope.disableP = scope.page === 1;
+            };
+
+            var buildPages = function() {
+                var pages;
+                var temp = [];
+
+                if((scope.totalItems % scope.itemsPerPage) === 0) {
+                    pages = scope.totalItems / scope.itemsPerPage;
+                } else {
+                    pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
+                }
+
+                for (var i = 1; i < pages; ++i) {
+                    temp.push(i);
+                }
+
+                scope.pages = temp;
+            };
+
             scope.select = function(p) {
                 scope.change(p);
-                scope.disableN = scope.disableNext();
-                scope.disableP = scope.disablePrevious();
+                disable();
             };
 
             scope.next = function() {
@@ -121,28 +140,9 @@ angular.module("proton.dropdown", [])
                 scope.select(scope.page - 1);
             };
 
-            var buildPages = function() {
-                var pages;
-                var temp = [];
-
-                if ( angular.isUndefined(scope.totalItems) || angular.isUndefined(scope.itemsPerPage) ) {
-                    return;
-                }
-
-                if((scope.totalItems % scope.itemsPerPage) === 0) {
-                    pages = scope.totalItems / scope.itemsPerPage;
-                } else {
-                    pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
-                }
-
-                for (var i = 1; i !== pages; ++i) {
-                    temp.push(i);
-                }
-
-                scope.pages = temp;
-            };
-
+            // Initialization
             buildPages();
+            disable();
         }
     };
 });

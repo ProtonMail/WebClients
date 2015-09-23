@@ -19,8 +19,8 @@
         <input type="text" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
     </form>
     <ul class="navigation">
-        <li ui-sref-active="active">
-            <a href="#" ui-sref="secured.inbox">
+        <li ng-class="{'active': activeMail()}">
+            <a href="#" ui-sref="secured.inbox.list">
                 <i class="fa fa-envelope-o"></i>
                 <strong>Mailbox</strong>
             </a>

@@ -20,11 +20,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     networkActivityTracker,
     notify
 ) {
+    console.log('MessageListController');
     var lastChecked = null;
 
     $scope.initialization = function() {
         // Variables
-        $scope.mailbox = $state.current.name.replace('secured.', '');
+        $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
         $scope.messagesPerPage = $scope.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -101,12 +102,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             networkActivityTracker.track(promise);
             $scope.unselectAllMessages();
         });
-
-        $scope.$on('$destroy', $scope.stopWatchingEvent);
-    };
-
-    $scope.stopWatchingEvent = function() {
-
     };
 
     $scope.actionsDelayed = function() {
@@ -120,6 +115,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
         }
+    };
+
+    $scope.selectPage = function(page) {
+        $scope.goToPage(page, page < $scope.page);
     };
 
     $scope.messageCount = function() {
@@ -271,22 +270,22 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return (
             $scope.senderIsMe(message) &&
             (
-                !$state.is('secured.inbox') &&
-                !$state.is('secured.archive')  &&
-                !$state.is('secured.spam')  &&
-                !$state.is('secured.trash')
+                !$state.is('secured.inbox.list') &&
+                !$state.is('secured.archive.list')  &&
+                !$state.is('secured.spam.list')  &&
+                !$state.is('secured.trash.list')
             )
         ) ? true : false;
     };
 
     $scope.showFrom = function(message) {
         return ((
-                !$state.is('secured.inbox') &&
-                !$state.is('secured.drafts')  &&
-                !$state.is('secured.archive') &&
-                !$state.is('secured.sent') &&
-                !$state.is('secured.spam') &&
-                !$state.is('secured.trash')
+                !$state.is('secured.inbox.list') &&
+                !$state.is('secured.drafts.list')  &&
+                !$state.is('secured.archive.list') &&
+                !$state.is('secured.sent.list') &&
+                !$state.is('secured.spam.list') &&
+                !$state.is('secured.trash.list')
             )
         ) ? true : false;
     };
@@ -387,7 +386,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 message = _.first(messages);
             }
 
-            if ($state.is('secured.drafts')) {
+            if ($state.is('secured.drafts.list')) {
                 networkActivityTracker.track(
                     Message.get({id: message.ID}).$promise.then(
                         function(m) {
@@ -410,6 +409,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     )
                 );
             } else {
+                $scope.activeMessage(message.ID);
+
                 if(message.IsRead === 0) {
                     message.IsRead = 1;
                     Message.read({IDs: [message.ID]});
@@ -417,11 +418,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     messageCounts.updateUnread('mark', [message], true);
                 }
 
-                $scope.activeMessage(message.ID);
                 $rootScope.scrollPosition = $('#content').scrollTop();
-                $state.go("secured." + $scope.mailbox, {
-                    id: message.ID
-                });
+                $state.go('secured.' + $scope.mailbox + '.list.view', { id: message.ID });
             }
         }
     };
@@ -791,8 +789,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             if (page === 1) {
                 page = undefined;
             }
+
             $state.go($state.current.name, _.extend({}, $state.params, {
-                page: page
+                page: page,
+                id: undefined
             }));
         }
     };

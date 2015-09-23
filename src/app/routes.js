@@ -8,7 +8,6 @@ angular.module("proton.routes", [
 
     var messageParameters = function() {
       var parameters = [
-        'id',
         'page',
         'filter',
         'sort',
@@ -26,38 +25,6 @@ angular.module("proton.routes", [
       ];
 
       return parameters.join('&');
-    };
-
-    var messageListOptions = function(mailbox) {
-        var options = {
-            url: '/' + mailbox + '?' + messageParameters(),
-            views: {}
-        };
-
-        options.views["content@secured"] = {
-            templateUrl: "templates/layout/messages.tpl.html"
-        };
-
-        options.views["list@secured." + mailbox] = {
-            templateUrl: "templates/partials/message-list.tpl.html",
-            controller: "MessageListController as messageListCtrl"
-        };
-
-        options.views["view@secured." + mailbox] = {
-            templateUrl: "templates/partials/message-view.tpl.html",
-            controller: "ViewMessageController as messageViewCtrl",
-            resolve: {
-                message: function($stateParams, messageCache) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return messageCache.get($stateParams.id);
-                    } else {
-                        return true;
-                    }
-                }
-            }
-        };
-
-        return options;
     };
 
     $stateProvider
@@ -587,6 +554,7 @@ angular.module("proton.routes", [
         }
     })
 
+    // TODO enable print state
     // .state("secured.inbox", messageListOptions("/inbox", {
     //     data: {
     //         mailbox: "inbox"
@@ -608,7 +576,7 @@ angular.module("proton.routes", [
     //     onExit: function($rootScope) { $rootScope.isBlank = false; },
     //     views: {
     //         "main@": {
-    //             controller: "ViewMessageController",
+    //             controller: "MessageViewController",
     //             templateUrl: "templates/views/message.print.tpl.html"
     //         }
     //     }
@@ -684,11 +652,11 @@ angular.module("proton.routes", [
             }).$promise.then(
                 function(response) {
                     user.Theme = '';
-                    $state.go('secured.inbox');
+                    $state.go('secured.inbox.list');
                     return;
                 },
                 function(response) {
-                    $state.go('secured.inbox');
+                    $state.go('secured.inbox.list');
                     return;
                 }
             );
@@ -697,14 +665,57 @@ angular.module("proton.routes", [
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
-        var stateName = "secured." + box;
+        // $stateProvider.state(stateName, messageListOptions(box)); // old version
 
-        $stateProvider.state(stateName, messageListOptions(box));
+        var parentState = "secured." + box;
+        var listState = "secured." + box + '.list';
+        var viewState = "secured." + box + '.list.view';
+        var list = {};
+        var view = {};
+
+        list['list@secured.' + box] = {
+            templateUrl: 'templates/partials/message-list.tpl.html',
+            controller: 'MessageListController as messageListCtrl'
+        };
+
+        view['view@secured.' + box] = {
+            templateUrl: "templates/partials/message-view.tpl.html",
+            controller: "MessageViewController as messageViewCtrl",
+            resolve: {
+                message: function($stateParams, messageCache) {
+                    if(angular.isDefined($stateParams.id)) {
+                        return messageCache.get($stateParams.id);
+                    } else {
+                        return true;
+                    }
+                }
+            }
+        };
+
+        $stateProvider.state(parentState, {
+            abstract: true,
+            url: '/' + box + '?' + messageParameters(),
+            views: {
+                'content@secured': {
+                    templateUrl: 'templates/layout/messages.tpl.html'
+                }
+            }
+        });
+
+        $stateProvider.state(listState, {
+            url: '',
+            views: list
+        });
+
+        $stateProvider.state(viewState, {
+            url: '/{id}',
+            views: view
+        });
     });
 
     $urlRouterProvider.otherwise(function($injector) {
         var $state = $injector.get("$state");
-        var stateName = $injector.get("authentication").state() || "secured.inbox";
+        var stateName = $injector.get("authentication").state() || "secured.inbox.list";
         return $state.href(stateName);
     });
 
