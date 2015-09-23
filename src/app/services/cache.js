@@ -125,26 +125,35 @@ angular.module("proton.cache", [])
 
             // Messages present in the cache?
             if(angular.isDefined(cache[location])) {
-                // var total;
-                // var totalPage;
-                //
-                // switch($state.current.name) {
-                //     case 'secured.labels':
-                //         total = $rootScope.messageTotals.Locations[$stateParams.label];
-                //         break;
-                //     case 'secured.starred':
-                //         total = $rootScope.messageTotals.Starred;
-                //         break;
-                //     default:
-                //         total = $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$state.current.name.replace('secured.', '')]];
-                //         break;
-                // }
-                //
-                // totalPage = (total + CONSTANTS.MESSAGES_PER_PAGE - 1) / CONSTANTS.MESSAGES_PER_PAGE;
-                //
+                var total;
+                var number;
+                var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
 
-                // NOTE The difficult case!!!
-                if(cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) { // TODO improve
+                switch(mailbox) {
+                    case 'labels':
+                        total = $rootScope.messageTotals.Locations[$stateParams.label];
+                        break;
+                    case 'starred':
+                        total = $rootScope.messageTotals.Starred;
+                        break;
+                    default:
+                        total = $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                        break;
+                }
+
+                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
+                    number = CONSTANTS.MESSAGES_PER_PAGE;
+                } else {
+                    if(Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) === page) {
+                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        number = CONSTANTS.MESSAGES_PER_PAGE;
+                    }
+                }
+
+                console.log({total: total, number: number, cache: cache[location].slice(start, end).length});
+
+                if(cache[location].slice(start, end).length === number) {
                     deferred.resolve(cache[location].slice(start, end));
                 } else {
                     callApi();
