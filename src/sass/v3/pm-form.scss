@@ -64,13 +64,13 @@ $inputHeight: 32px;
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-        padding: 0 1rem;
+        padding: 0 20px;
     }
     textarea {
-        padding: 1rem 1rem;
+        padding: 1rem 20px;
     }
     .margin {
-        margin-bottom: 1rem;
+        margin-bottom: 10px;
     }
     label {
         height: $inputHeight;

@@ -16,8 +16,10 @@
         background-color: #fafafa;
         transition: none;
     }
-    &:active {
+    &:active,
+    &:focus {
         background-color: #f4f4f4;
+        outline: none;
     }
     &.primary {
         background-color: #9397cd;
@@ -27,9 +29,11 @@
             background-color: #7e82b4;
             border-color: #7e82b4;
         }
-        &:active {
+        &:active,
+        &:focus {
             background-color: #66669a;
             border-color: #66669a;
+            outline: none;
         }
     }
     &.link {
@@ -51,8 +55,10 @@
         &:hover {
             background-color: #fafafa;
         }
-        &:active {
+        &:active,
+        &:focus {
             background-color: #f4f4f4;
+            outline: none;
         }
     }
     &[disabled],

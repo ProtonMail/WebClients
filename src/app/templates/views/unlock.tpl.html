@@ -11,10 +11,10 @@ method="post">
 
         <img src="assets/img/logo.svg" alt="ProtonMail" class="logo" />
 
-        <h3 class="text-center">
+        <h4 class="text-center">
             <span class="fa fa-inbox title-icon"></span>
             {{ 'DECRYPT_MAILBOX' | translate }}
-        </h3>
+        </h4>
 
         <p class="text-center">{{ tempUser.username }}@protonmail.ch</p>
 
@@ -34,7 +34,7 @@ method="post">
         value="" />
 
         <div class="clearfix">
-            <a ui-sref="reset" class="login-support btn pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
+            <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
             <a class="pm_button primary pull-right" ng-click="tryDecrypt()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>    
         </div>
 

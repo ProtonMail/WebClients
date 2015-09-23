@@ -1,4 +1,3 @@
-body#login,
 body#login-unlock {
 	height: 100%;
 	background: #324d9a;
@@ -8,6 +7,14 @@ body#login-unlock {
 	background: -o-linear-gradient(140deg,  #324d9a 0%,#a2a5e0 100%);
 	background: -ms-linear-gradient(140deg,  #324d9a 0%,#a2a5e0 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#324d9a', endColorstr='#a2a5e0',GradientType=1 );
+	p.text-center {
+		margin: 0 0 2rem 0;
+		font-size: 14px		
+	}
+}
+body#login {
+	background: url('/assets/img/login.jpg') center center no-repeat;
+	background-size: cover;
 }
 
 #pm_login {
@@ -17,12 +24,14 @@ body#login-unlock {
 		border: 1px solid rgba(255,255,255,.25);
 		margin-top: 8rem;
 		margin-bottom: 2rem;
+		padding: 50px 70px 60px 70px;
 		a {
 			color: #fff;
 		}
 	}
-	h3 {
+	h4 {
 		line-height: 3em;
+		font-weight: 600;
 	}
 	a.pm_button.link {
 		text-decoration: underline;
