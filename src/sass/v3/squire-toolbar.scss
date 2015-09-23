@@ -6,7 +6,8 @@
 	list-style-type: none;
 	height: $composerRowHeight;
 	line-height: $composerRowHeight;
-	border-bottom: 1px solid #ededed;
+	border: 1px solid #ededed;
+	background-color: #fafafa;
 	li {
 		display: block;
 		flex-grow: 1;

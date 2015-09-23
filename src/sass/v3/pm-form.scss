@@ -46,7 +46,15 @@
         min-width: 50%;
         float: left;
         box-sizing: border-box;
-        padding-bottom: 1rem;
+        padding-bottom: 0;
+        &.left {
+            width: 40%;
+            min-width: 40%;
+        }
+        &.right {
+            width: 60%;
+            min-width: 60%;
+        }
     } 
     &.alt {
         .col {

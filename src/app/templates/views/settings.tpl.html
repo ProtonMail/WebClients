@@ -8,41 +8,44 @@
             <section class="setting pm_form">
                 <legend class="margin-top">{{ 'DISPLAY_NAME' | translate }}</legend>
                 <form ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate method="post">
-                    <div class="col">
+                    <div class="col left">
                         <label for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
                     </div>
-                    <div class="col">
+                    <div class="col right">
                         <input id="displayName" type="text" name="displayName" ng-model="displayName" />
                         <a href="https://support.protonmail.ch/knowledge-base/display-name/" target="_blank" class="pm_button link pull-left">{{ 'WHAT_IS_THE_DISPLAY_NAME?' | translate }}</a>                    
                     </div>
                 </form>
             </section>
-            <section class="setting pm_form">
+            <section class="setting pm_form pull-right">
                 <legend>{{ 'NOTIFICATIONS' | translate }}</legend>
                 <form name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate method="post">
 
-                    <div class="col">
-                        <label>{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label>{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <toggle-switch ng-model="dailyNotifications" ng-click="saveDailyNotifications()" on-label="{{ 'ENABLED' | translate }}" off-label="{{ 'DISABLED' | translate }}"></toggle-switch>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="noticeePassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword">
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <label for="noticeePassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword">
-                    </div>
-
-                    <div class="col">
-                        <label for="notificationEmail">{{ 'NOTIFICATION_EMAIL' | translate }} / Password Recovery Email</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="email" id="notificationEmail" name="notificationEmail" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="notificationEmail">{{ 'RECOVERY_EMAIL' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="email" id="notificationEmail" name="notificationEmail" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
+                        </div>
                     </div>
 
                     <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
@@ -50,8 +53,6 @@
                     <p class="help-block"><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</p>
 
                     <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="pm_button pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
-
-                    <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="pm_button primary pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
 
                     <button class="pm_button primary pull-right" type="submit" style="margin-left: 5px;">{{ 'SAVE' | translate }}</button>
 
@@ -64,67 +65,69 @@
                 <legend>{{ 'LOGIN_PASSWORD' | translate }}</legend>
                 <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate method="post">
 
-                    <div class="col">
-                        <label for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="Current Login Password" required="" />
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="Current Login Password" required="" />
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="New Login Password" required="" />
+                        </div>
                     </div>
 
-
-                    <div class="col">
-                        <label for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="New Login Password" required="" />
-                    </div>
-
-                    <div class="col">
-                        <label for="confirmLoginPassword">{{ 'CONFIRM_NEW_LOGIN_PASSWORD' | translate }}</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" />
+                    <div class="clearfix">
+                        <div class="col left">&nbsp;</div>
+                        <div class="col right">
+                            <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" />
+                        </div>
                     </div>
 
                 </form>            
             </section>
-            <section class="setting pm_form">
+            <section class="setting pm_form pull-right">
                 <legend>{{ 'MAILBOX_PASSWORD' | translate }}</legend>
                 <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate method="post">
 
-                    <div class="col">
-                        <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="Current Mailbox Password" required="" />
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <label for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="New Mailbox Password" required="" />
+                        </div>
                     </div>
 
-                    <div class="col">
-                        <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="Current Mailbox Password" required="" />
-                    </div>
-
-                    <div class="col">
-                        <label for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="New Mailbox Password" required="" />
-                    </div>
-
-                    <div class="col">
-                        <label for="confirmMailboxPassword">{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}</label>
-                    </div>
-
-                    <div class="col">
-                        <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" required="" />
+                    <div class="clearfix">
+                        <div class="col left">&nbsp;</div>
+                        <div class="col right">
+                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" required="" />
+                        </div>
                     </div>
 
                     <p><a href="https://support.protonmail.ch/knowledge-base/resetting-mailbox-password/" target="_blank" class="pm_button link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a></p>
@@ -134,29 +137,31 @@
         </div><!--/.row-->
 
         <div class="row">
-            <section class="settings pm_form">
+            <section class="setting pm_form">
                 <legend>{{ 'ALIASES' | translate }}</legend>
                 <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm" method="post">
-                    <div class="form-group">
-                        <label for="">{{ 'SORT_ALIASES' | translate }}</label>
-                        <div id="aliases-container">
-                            <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
-                                <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
-                                    <div as-sortable-item-handle="">
-                                        <i class="fa fa-sort"></i>
-                                        {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-star"></i>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <p class="help-block"><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</p>
-                    </div>
                     <div class="clearfix">
-                        <a href="https://support.protonmail.ch/knowledge-base/aliases-within-protonmail/" target="_blank" class="pull-left pm_button link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
+                        <div class="col left">
+                            <label for="">{{ 'SORT_ALIASES' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <div id="aliases-container">
+                                <ul class="list-group" data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
+                                    <li class="list-group-item" ng-repeat="alias in aliases" as-sortable-item="">
+                                        <div as-sortable-item-handle="">
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-check"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="help-block"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></p>
+                            <a href="https://support.protonmail.ch/knowledge-base/aliases-within-protonmail/" target="_blank" class="pull-left pm_button link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>                    
+                        </div>
                     </div>
                 </form>
             </section>
-            <section class="setting pm_form">
+            <section class="setting pm_form pull-right">
                 <legend>{{ 'AUTOSAVE_CONTACT_LIST' | translate }}</legend>
                 <label>{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
                 <div>
@@ -169,11 +174,10 @@
         </div>
 
         <div class="row">
-            <section class="settings pm_form">
+            <section class="setting pm_form">
                 <legend>{{ 'SIGNATURE' | translate }}</legend>
                 <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                        <label class="signature" for="signature">{{ 'SIGNATURE_CONTENT' | translate }}</label>
                         <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
                     </div>
                     <div class="clearfix">
@@ -181,15 +185,28 @@
                     </div>
                 </form>
             </section>
-            <section class="settings pm_form">
-                <legend>{{ 'SIGNATURE' | translate }}</legend>
-                <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate method="post">
-                    <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                        <label class="signature" for="signature">{{ 'SIGNATURE_CONTENT' | translate }}</label>
-                        <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
+            <section class="setting pm_form pull-right">
+                <legend>{{ 'EMAIL_IMAGES' | translate }}</legend>
+                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="composerMode" class="control-label">{{ 'SHOW_IMAGES' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="ShowImages" name="showImagesMode" value="1"> Enabled
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model="ShowImages" name="showImagesMode" value="0"> Disabled
+                                </label>
+                            </div>                        
+                        </div>
                     </div>
                     <div class="clearfix">
-                        <button class="pm_button primary pull-right" type="submit">{{ 'SAVE' | translate }}</button>
+                        <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
             </section>
