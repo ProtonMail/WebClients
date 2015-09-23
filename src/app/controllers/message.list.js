@@ -14,14 +14,16 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     Message,
     Label,
     authentication,
+    cacheMessages, // NEW
+    preloadMessage, // NEW
     confirmModal,
-    messageCache,
     messageCounts,
     networkActivityTracker,
     notify
 ) {
     console.log('MessageListController');
     var lastChecked = null;
+    var watchMessages;
 
     $scope.initialization = function() {
         // Variables
@@ -48,9 +50,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
-        $scope.refreshMessagesCache().then(function() {
-            messageCache.watchScope($scope, "messages");
-            $scope.$watch('messages', function() {
+        $scope.refreshMessages().then(function() {
+            watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
+                preloadMessage.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -61,8 +63,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-        $scope.$on('refreshMessages', function(event, silently, empty) {
-            $scope.refreshMessages(silently, empty);
+        $scope.$on('refreshMessages', function() {
+            $scope.refreshMessages();
         });
 
         $scope.$on('refreshMessagesCache', function(){
@@ -102,6 +104,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             networkActivityTracker.track(promise);
             $scope.unselectAllMessages();
         });
+
+        $scope.$on('$destroy', $scope.stopWatchingEvent);
+    };
+
+    $scope.stopWatchingEvent = function() {
+        watchMessages();
+        preloadMessage.reset();
     };
 
     $scope.actionsDelayed = function() {
@@ -225,35 +234,28 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return params;
     };
 
-    $scope.refreshMessages = function(silently, empty) {
-        var mailbox = $state.current.name.replace('secured.', '');
-        var params = $scope.getMessagesParameters(mailbox);
+    $scope.refreshMessages = function() {
+        var deferred = $q.defer();
+        var request = $scope.getMessagesParameters($scope.mailbox);
 
-        Message.query(params).$promise.then(function(result) {
-            $scope.messages = result;
-
-            if(!!!empty) {
-                $scope.emptying = false;
-            }
+        cacheMessages.query(request).then(function(messages) {
+            $scope.messages = messages;
+            deferred.resolve(messages);
         }, function(error) {
             notify({message: 'Error during quering messages', classes: 'notification-danger'});
             $log.error(error);
         });
+
+        return deferred.promise;
     };
 
     $scope.refreshMessagesCache = function () {
-        var deferred = $q.defer();
-        var params = $scope.getMessagesParameters($scope.mailbox);
+        var request = $scope.getMessagesParameters($scope.mailbox);
+        var cache = cacheMessages.fromCache(request);
 
-        messageCache.query(params).then(function(messages) {
-            $scope.messages = messages;
-            deferred.resolve();
-        }, function(error) {
-            error.message = 'Error during refresh messages from cache';
-            deferred.reject(error);
-        });
-
-        return deferred.promise;
+        if(cache !== false) {
+            $scope.messages = cache;
+        }
     };
 
     $scope.activeMessage = function(id) {
@@ -414,7 +416,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 if(message.IsRead === 0) {
                     message.IsRead = 1;
                     Message.read({IDs: [message.ID]});
-                    messageCache.set([{Action: 3, ID: message.ID, Message: message}], true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+                    cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
                     messageCounts.updateUnread('mark', [message], true);
                 }
 
@@ -455,7 +457,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             }
         }
 
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}], true);
+        cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
     };
 
     $scope.allSelected = function() {
@@ -530,15 +532,16 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         messageCounts.updateUnread('mark', messages, status);
-        messageCache.set(events, true);
+        cacheMessages.set(events);
 
         $scope.unselectAllMessages();
     };
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-        var message = messageCache.get(id).then(function(message) {
+        var message = cacheMessages.get(id).then(function(message) {
             Message.trash({IDs: [id]}).$promise.then(function(result) {
+
                 movedMessages.push({
                     LabelIDs: message.LabelIDs,
                     OldLocation: message.Location,
@@ -546,6 +549,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
                     Starred: message.Starred
                 });
+
+                cacheMessages.events([{
+                    Action: 3,
+                    ID: message.ID,
+                    Message: {
+                        ID: message.ID,
+                        Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
+                    }
+                }]);
 
                 messageCounts.updateUnread('move', movedMessages);
                 messageCounts.updateTotals('move', movedMessages);
@@ -571,20 +583,17 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location,
-                IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox],
-                Starred: message.Starred};
-            var index = $scope.messages.indexOf(message);
+            var event = {
+                Action: 3,
+                ID: message.ID,
+                Message: {
+                    ID: message.ID,
+                    Selected: false, // Unselect the message moved
+                    Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]
+                }
+            };
 
-            movedMessages.push(m);
-            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            message.Selected = false;
-
-            if(!$state.is('secured.label') && !$state.is('secured.starred')) {
-                $scope.messages.splice(index, 1);
-            }
-
-            events.push({Action: 3, ID: message.ID, Message: message});
+            events.push(event);
 
             if(inDelete) {
                 $rootScope.$broadcast('deleteMessage', message.ID);
@@ -592,10 +601,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         if(events.length > 0) {
-            messageCache.set(events, true, {Location: CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox], Page: $scope.page - 1});
+            cacheMessages.events(events);
         }
-
-        $scope.unselectAllMessages();
 
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);

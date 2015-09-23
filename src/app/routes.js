@@ -682,9 +682,9 @@ angular.module("proton.routes", [
             templateUrl: "templates/partials/message-view.tpl.html",
             controller: "MessageViewController as messageViewCtrl",
             resolve: {
-                message: function($stateParams, messageCache) {
+                message: function($stateParams, cacheMessages) {
                     if(angular.isDefined($stateParams.id)) {
-                        return messageCache.get($stateParams.id);
+                        return networkActivityTracker.track(cacheMessages.get($stateParams.id));
                     } else {
                         return true;
                     }

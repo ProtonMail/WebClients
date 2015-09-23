@@ -8,6 +8,7 @@ angular.module("proton.event", ["proton.constants"])
 		$cookies,
 		$log,
 		authentication,
+		cacheMessages,
 		Contact,
 		CONSTANTS,
 		Events,
@@ -23,7 +24,6 @@ angular.module("proton.event", ["proton.constants"])
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
-		var UPDATE_FLAG = 3;
 		var eventModel = {
 			get: function() {
 				return Events.get(this.ID);
@@ -95,7 +95,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessages: function(messages) {
 				if (angular.isDefined(messages)) {
-					messageCache.set(messages);
+					cacheMessages.events(messages);
 				}
 			},
 			manageStorage: function(storage) {

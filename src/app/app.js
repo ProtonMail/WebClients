@@ -40,17 +40,18 @@ angular.module("proton", [
     "proton.config",
 
     // Services
+    "proton.attachments",
     "proton.authentication",
-    "proton.pmcw",
+    "proton.cache",
+    "proton.contacts",
     "proton.errorReporter",
-    "proton.networkActivity",
+    "proton.event",
     "proton.messages",
     "proton.messages.counts",
     "proton.modals",
-    "proton.attachments",
+    "proton.networkActivity",
+    "proton.pmcw",
     "proton.tools",
-    "proton.contacts",
-    "proton.event",
 
     // Directives
     "proton.tooltip",
@@ -307,10 +308,6 @@ angular.module("proton", [
         var isUnlock = (toState.name === "login.unlock");
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));
-
-        $log.debug(toState.name);
-        $log.debug('isLoggedIn',$rootScope.isLoggedIn);
-        $log.debug('isLocked',$rootScope.isLocked);
 
         if (isUnlock && $rootScope.isLoggedIn) {
             $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');

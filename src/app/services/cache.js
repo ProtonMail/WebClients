@@ -1,21 +1,109 @@
 angular.module("proton.cache", [])
 
 .service("cacheMessages", function(
+    $q,
+    $rootScope,
+    $state,
+    $stateParams,
     CONSTANTS,
     Message,
-    $q
+    networkActivityTracker
 ) {
     var api = {};
-    var cache = {};
+    var cache = {}; // cache: { 0: [Resources], 1: [Resources]}
+    var DELETE = 0;
+    var CREATE = 1;
+    var UPDATE = 2;
+    var UPDATE_FLAG = 3;
+    // Parameters shared between api / cache / message view / message list
+    var fields = [
+        "ID",
+        "Subject",
+        "IsRead",
+        "SenderAddress",
+        "SenderName",
+        "ToList",
+        "Time",
+        "Size",
+        "Location",
+        "Starred",
+        "HasAttachment",
+        "IsEncrypted",
+        "ExpirationTime",
+        "IsReplied",
+        "IsRepliedAll",
+        "IsForwarded",
+        "AddressID",
+        "LabelIDs"
+    ];
 
     /**
      * Check if the request is in a cache context
      * @param {Object} request
      */
     var cacheContext = function(request) {
-        var result = Object.keys(request).length === 2 && angular.isDefined(request.page) && angular.isDefined(request.location);
+        var result = Object.keys(request).length === 2 && angular.isDefined(request.Page) && angular.isDefined(request.Location);
 
         return result;
+    };
+
+    /**
+     * Check if the message is located in the cache and return the location
+     * @param {Integer} id - message ID searched
+     */
+    var inCache = function(id) {
+        var keys = Object.keys(cache);
+        var result = false;
+
+        _.each(keys, function(key) {
+            if(_.where(cache[key], { ID: id }).length > 0) {
+                result = key;
+            }
+        });
+
+        return result;
+    };
+
+    /**
+     * Create the location in the cache if it not defined
+     * @param {String} location
+     */
+    var exist = function(location) {
+        if(angular.isUndefined(cache[location])) {
+            cache[location] = [];
+        }
+    };
+
+    /**
+     * Call the API to get messages
+     * @param {Object} request
+     */
+    var queryMessages = function(request) {
+        var deferred = $q.defer();
+
+        Message.query(request).$promise.then(function(messages) {
+            api.store(request, messages);
+            deferred.resolve(messages);
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
+    };
+
+    /**
+     * Call the API to get message
+     * @param {String} id
+     */
+    var getMessage = function(id) {
+        var deferred = $q.defer();
+
+        Message.get({ id: id }).$promise.then(function(message) {
+            api.update({ ID: message.ID, Message: message });
+            deferred.resolve(message);
+        });
+
+        return deferred.promise;
     };
 
     /**
@@ -23,139 +111,310 @@ angular.module("proton.cache", [])
      * @param {Object} request
      */
     api.query = function(request) {
-        console.log('cacheMessages.query');
         var deferred = $q.defer();
+        var location = request.Location;
+        var callApi = function() {
+            deferred.resolve(queryMessages(request));
+        };
 
         // In cache context?
         if(cacheContext(request)) {
-            // Messages present in cache?
-            if(angular.isDefined(cache[request.location])) {
-                var page = request.page || 0;
-                var start = page * CONSTANTS.MESSAGES_PER_PAGE;
-                var end = start + CONSTANTS.MESSAGES_PER_PAGE;
-                var messages = cache[request.location].slice(start, end);
+            var page = request.Page || 0;
+            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
+            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
-                deferred.resolve(messages);
+            // Messages present in the cache?
+            if(angular.isDefined(cache[location])) {
+                // var total;
+                // var totalPage;
+                //
+                // switch($state.current.name) {
+                //     case 'secured.labels':
+                //         total = $rootScope.messageTotals.Locations[$stateParams.label];
+                //         break;
+                //     case 'secured.starred':
+                //         total = $rootScope.messageTotals.Starred;
+                //         break;
+                //     default:
+                //         total = $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$state.current.name.replace('secured.', '')]];
+                //         break;
+                // }
+                //
+                // totalPage = (total + CONSTANTS.MESSAGES_PER_PAGE - 1) / CONSTANTS.MESSAGES_PER_PAGE;
+                //
+
+                // NOTE The difficult case!!!
+                if(cache[location].slice(start, end).length === CONSTANTS.MESSAGES_PER_PAGE) { // TODO improve
+                    deferred.resolve(cache[location].slice(start, end));
+                } else {
+                    callApi();
+                }
+            } else {
+                callApi();
             }
-            // Else we call the API
-            else {
-                deferred.resolve(Message.query(request).$promise);
-            }
-        }
-        // Else we call the API
-        else {
-            deferred.resolve(Message.query(request).$promise);
+        } else {
+            callApi();
         }
 
         return deferred.promise;
     };
 
     /**
-     * Return message specified by id
-     * @param {Integer} id
+     * Return the message specified by the id from the cache or the back-end
+     * @param {String} id
      */
     api.get = function(id) {
-        return {};
+        var deferred = $q.defer();
+        var location = inCache(id);
+
+        if(location !== false) {
+            var message = _.findWhere(cache[location], { ID: id });
+
+            if(angular.isDefined(message.Body)) {
+                deferred.resolve(message);
+            } else {
+                deferred.resolve(getMessage(id));
+            }
+        } else {
+            deferred.resolve(getMessage(id));
+        }
+
+        return deferred.promise;
     };
 
     /**
-     * Store messages in cache location
+     * Save messages in cache location
      * @param {Object} request
-     * @param {Integer} location Integer
+     * @param {Array} messages
      */
     api.store = function(request, messages) {
-        var page = request.page || 0;
+        var page = request.Page || 0;
         var index = page * CONSTANTS.MESSAGES_PER_PAGE;
         var howmany = messages.length;
-        var location = request.location;
+        var location = request.Location;
+        var context = cacheContext(request);
 
-        if(angular.isUndefined(cache[location])) {
-            cache[location] = [];
+        exist(location);
+
+        if(context && messages.length > 0) {
+            // Store messages at the correct placement
+            Array.prototype.splice.apply(cache[location], [index, howmany].concat(messages));
         }
-
-        // Store messages at the correct placement
-        cache[location].splice(index, howmany, messages);
     };
 
     /**
-     * Save message in cache
-     * @param {Object} message
+     * Delete message in the cache if the message is present
+     * @param {Object} event
      */
-    api.save = function(message) {
-        var location = message.Location;
+    api.delete = function(event) {
+        var deferred = $q.defer();
+        var keys = Object.keys(cache);
 
-        if(angular.isUndefined(cache[location])) {
-            cache[location] = [];
-        }
-
-        // Save the message at the correct placement
-        // cache[location] =
-    };
-
-    /**
-     * Delete message in each location
-     * @param {Object} message
-     */
-    api.delete = function(message) {
-        _.each(cache, function(location) {
-            cache[location] = _.without(cache[location], message);
+        _.each(keys, function(key) {
+            cache[key] = _.filter(cache[key], function(message) { return message.ID !== event.ID; });
         });
+
+        deferred.resolve();
+
+        return deferred.promise;
+    };
+
+    /**
+     * Add a new message in the cache
+     * @param {Object} event
+     */
+    api.create = function(event) {
+        var deferred = $q.defer();
+        var message = event.Message;
+        var location = message.Location;
+        var index;
+
+        exist(location);
+
+        index = _.sortedIndex(cache[location], message, function(element) {
+            return -element.Time;
+        });
+
+        cache[location].splice(index, 0, message);
+        deferred.resolve();
+
+        return deferred.promise;
+    };
+
+    /**
+     * Update only a draft message
+     * @param {Object} event
+     */
+    api.updateDraft = function(event) {
+        var drafts = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
+        var deferred = $q.defer();
+
+        if(angular.isDefined(cache[drafts])) {
+            var index = _.findIndex(cache[drafts], function(message) { return message.ID === event.ID; });
+            var currentMessage = cache[location][index];
+
+            if(index !== -1) {
+                cache[drafts][index] = _.extend(currentMessage, event.Message);
+            }
+        }
+
+        deferred.resolve();
+
+        return deferred.promise;
     };
 
     /**
      * Update message attached to the id specified
-     * @param {Integer} id
-     * @param {Object} message
-     * @param {Integer} location
+     * @param {Object} event
      */
-    api.update = function(id, message, location) {
+    api.updateFlag = function(event) {
+        var deferred = $q.defer();
+        var location = inCache(event.ID);
 
+        // Present in the current cache?
+        if(location !== false) {
+            var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
+            var sameLocation = cache[location][index].Location === event.Message.Location;
+            var currentMessage = cache[location][index];
+
+            // Manage labels
+            if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                event.Message.LabelIDs = _.uniq(currentMessage.LabelIDs.concat(event.Message.LabelIDsAdded));
+            }
+
+            if(angular.isDefined(event.Message.LabelIDsRemoved)) {
+                event.Message.LabelIDs = _.difference(currentMessage.LabelIDs, event.Message.LabelIDsRemoved);
+            }
+
+            if(sameLocation) {
+                // Just update the message
+                cache[location][index] = _.extend(currentMessage, event.Message);
+                deferred.resolve();
+            } else {
+                // NOTE The difficult case!!!
+                // Remove the message in the current location
+                api.delete(event);
+
+                // If the location exist only
+                // we avoid a problem when we will go to this new folder because the other data doesn't exist yet
+                if(angular.isDefined(cache[location])) {
+                    // Add the message in the new location
+                    event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
+                    event.Message = _.extend(currentMessage, event.Message);
+                    api.create(event);
+                }
+
+                deferred.resolve();
+            }
+        } else {
+            getMessage(event.ID).then(function(message) {
+                event.Message = message;
+                // Create a new message in the cache
+                api.create(event);
+                deferred.resolve();
+            }, function(error) {
+                deferred.reject(error);
+            });
+        }
+
+        return deferred.promise;
+    };
+
+    /**
+     * Manage the cache when a new event comes
+     */
+    api.events = function(events) {
+        var promises = [];
+
+        _.each(events, function(event) {
+            console.log(event);
+            switch (event.Action) {
+                case DELETE:
+                    promises.push(api.delete(event));
+                    break;
+                case CREATE:
+                    promises.push(api.create(event));
+                    break;
+                case UPDATE:
+                    promises.push(api.updateDraft(event));
+                    break;
+                case UPDATE_FLAG:
+                    promises.push(api.updateFlag(event));
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        $q.all(promises).then(function() {
+            console.log('All promises are complete');
+            api.callRefresh();
+        });
+    };
+
+    /**
+     * Ask to the message list controller to refresh the messages
+     * First with the cache
+     * Second with the query call
+     */
+    api.callRefresh = function() {
+        $rootScope.$broadcast('refreshMessages');
     };
 
     return api;
 })
 
-.service("preloadMessageContent", function($interval, Message) {
+.service("preloadMessage", function(
+    $interval,
+    cacheMessages
+) {
     var api = {};
-    var messages = [];
     var queue = [];
-    var interval = 15000; // 15 seconds
+    var interval = 5000; // 15 seconds // TODO edit
 
     /**
      * Set current messages viewed
      * @param {Array} messages
      */
     api.set = function(messages) {
-        messages = messages; // Set messages
-        api.add(); // Add unread messages to the queue
+        api.reset();
+        api.add(messages); // Add unread messages to the queue
+    };
+
+    /**
+     * Reset current queue
+     */
+    api.reset = function() {
+        queue = [];
     };
 
     /**
      * Add unread messages to the queue
+     * @param {Array} messages
      */
-    api.add = function() {
-        queue = _.union(queue, _.where(messages, {IsRead: 0})); // Add only unread messages to the queue
+    api.add = function(messages) {
+        // Add only unread messages to the queue
+        // Filter by message where the Body is undefined
+        queue = _.union(queue, _.where(messages, { IsRead: 0, Body: undefined }));
     };
 
     /**
      * Preload messages present in the queue
      */
     api.preload = function() {
-        // Get the first message in queue
+        // Get the first message in the queue
         var message  = _.first(queue);
 
         if(angular.isDefined(message)) {
             // Preload the first message
-
-            // Save it
-
-            // Remove first in queue
+            cacheMessages.get(message.ID);
+            // Remove the first message in the queue
             queue = _.without(queue, message);
         }
     };
 
     /**
-     * Loop around messages present in queue to preload the Body
+     * Loop around messages present in the queue to preload the Body
      */
     api.loop = function() {
         var looping = $interval(function() {
