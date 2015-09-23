@@ -15,6 +15,12 @@ header#pm_header {
     background: #515061;
     z-index: 1;
     width: $sidebarWidth;
+    display: none;
+}
+.secure {
+    #pm_background {
+        display: block;
+    }
 }
 section#pm_sidebar {
     background: #515061;

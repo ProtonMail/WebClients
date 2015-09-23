@@ -66,15 +66,14 @@ ng-class="{
     activeComposer:activeComposer}
 ">
 
-<div id="pm_background" ng-if="(isLoggedIn && !isLocked)"></div>
+<div id="pm_background"></div>
 
 <div id="loading">
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
-    <ng-include src="'templates/partials/loader.tpl.html'"></ng-include>
 </div>
 
-<div style="display:block; z-index:9999999; position: fixed; left: 0; top: 0; right: 0; bottom: 0;" ng-if="networkActivity.loading()">
-    <img src="assets/img/loader.gif" class="fa fa-spin" style="display: block; opacity: .8; position: absolute; right: 1rem; bottom: 1rem">
+<div id="pm_loader" ng-if="networkActivity.loading()">
+    <div class="spinner"></div>
 </div>
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>
