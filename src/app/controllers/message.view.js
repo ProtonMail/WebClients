@@ -154,9 +154,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                 var showMessage = function(content) {
                     $scope.content = $sce.trustAsHtml(content);
-                    tools.transformLinks('message-body');
-                    $scope.setMessageHeadHeight();
-                    $scope.setAttachmentHeight();
+                    $timeout(function(){
+                        tools.transformLinks('message-body');
+                        $scope.setMessageHeadHeight();
+                        $scope.setAttachmentHeight();
+                    }, 0, false);
 
                     // broken images
                     $("img").error(function () {
