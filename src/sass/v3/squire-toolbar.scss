@@ -1,0 +1,34 @@
+.squire-toolbar {
+	display: flex;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	height: $composerRowHeight;
+	line-height: $composerRowHeight;
+	border-bottom: 1px solid #ededed;
+	li {
+		display: block;
+		flex-grow: 1;
+		margin: 0;
+		padding: 0;
+		height: $composerRowHeight;
+		line-height: $composerRowHeight;
+		a {
+			text-align: center;
+			display: block;
+			height: $composerRowHeight;
+			line-height: $composerRowHeight;
+			color: #333;
+		}
+		&.separator {
+			width: 1px;
+			min-width: 1px;
+			flex-grow: initial;
+			background: #ededed;
+		}
+	}
+	.squire-popover {
+		display: none;
+	}
+}

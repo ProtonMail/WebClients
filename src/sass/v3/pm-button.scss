@@ -10,6 +10,7 @@
     display: inline-block;
     cursor: pointer;
     font-size: 1em;
+    background-color: transparent;
     transition: background-color .25s linear, border-color .25s linear;
     &:hover {
         background-color: #fafafa;

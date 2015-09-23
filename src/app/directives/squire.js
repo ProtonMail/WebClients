@@ -116,16 +116,19 @@ angular.module("proton.squire", [
             };
 
             updateStylesToMatch = function(doc) {
-                var head;
-                var a;
+                var head = doc.head || doc.getElementsByTagName('head')[0];
+                var style = doc.createElement('style');
+                var css = "body { padding: 1rem 10px; font-family: 'Open Sans'; font-size: 14px; line-height: 1.65em; }";
 
-                head = doc.head;
-
-                a = doc.createElement('link');
-                a.setAttribute('href', '/assets/editor.css');
-                a.setAttribute('type', 'text/css');
-                a.setAttribute('rel', 'stylesheet');
-                head.appendChild(a);
+                style.setAttribute('type', 'text/css');
+                style.setAttribute('rel', 'stylesheet');
+                if (style.styleSheet){
+                    style.styleSheet.cssText = css;
+                } 
+                else {
+                    style.appendChild(doc.createTextNode(css));
+                }                
+                head.appendChild(style);
 
                 doc.childNodes[0].className = IFRAME_CLASS + " ";
                 if (scope.editorClass) {

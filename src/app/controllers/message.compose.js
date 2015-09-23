@@ -382,6 +382,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.initMessage = function(message, save) {
+
+        $timeout( function() {
+            $rootScope.$broadcast('squireHeightChanged');
+            console.log('squireHeightChanged');
+        }, 2000);
+
         $rootScope.activeComposer = true;
 
         if (authentication.user.ComposerMode === 1) {
@@ -444,7 +450,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             ADD_ATTR: ['target'],
             FORBID_TAGS: ['style']
         });
-    };
+    };    
 
     $scope.editorStyle = function(message) {
         var styles = {};

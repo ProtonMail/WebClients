@@ -3,7 +3,7 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '2.1.0';
+var appVersion = '2.1.1';
 var apiVersion = '1';
 var dateVersion = '21 September 2015';
 var clientID = 'Angular';
@@ -278,30 +278,6 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
-            build_editor: {
-                files: [{
-                    src: ["application.css"],
-                    dest: "<%= build_dir %>/assets/",
-                    cwd: "<%= build_dir %>/assets/",
-                    rename: function(dest, src) {
-                        return dest + 'editor.css';
-                    },
-                    expand: true,
-                    nonull: true
-                }]
-            },
-            compile_editor: {
-                files: [{
-                    src: ["app.css"],
-                    dest: "<%= compile_dir %>/assets/",
-                    cwd: "<%= compile_dir %>/assets/",
-                    rename: function(dest, src) {
-                        return dest + 'editor.css';
-                    },
-                    expand: true,
-                    nonull: true
-                }]
-            },
             deploy: {
                 files: [{
                     src: [".htaccess"],
@@ -532,8 +508,7 @@ module.exports = function(grunt) {
             options: {
                 deleteOriginals: true,
                 ignorePatterns: [
-                    'openpgp.min.js',
-                    'editor.css'
+                    'openpgp.min.js'
                 ]
             },
             assets: {
@@ -677,7 +652,6 @@ module.exports = function(grunt) {
         "copy:build_vendorjs",
         "copy:build_external",
         "copy:build_fonts",
-        "copy:build_editor",
         "index:build",
         "testconfig",
         "clean:after"
@@ -693,7 +667,6 @@ module.exports = function(grunt) {
         "concat:compile_js",
         "uglify",
         "copy:compile_external",
-        "copy:compile_editor",
         "index:compile",
         "cacheBust",
         "connect:compile"

@@ -2,7 +2,7 @@
 
 .pm_dropdown {
 	position: absolute;
-	left: 0-1px;
+	left: -1px;
 	top: 100%;
 	background: #fff;
 	border: 1px solid #ededed;
@@ -11,10 +11,19 @@
 	margin-top: 5px;
 	display: none;
 	font-size: 12px;
+	width: 4rem;
+	max-height: 260px;
+	overflow: auto;
+	&.right {
+		right: -1px;
+		left: initial;
+	}
 	&.open {
 		display: block;
 	}
 	> a {
+		width: 100%;
+		text-align: left;
 		display: block;
 		line-height: 25px !important;
 		height: 25px !important;

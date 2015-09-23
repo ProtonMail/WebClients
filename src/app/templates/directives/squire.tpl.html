@@ -2,50 +2,50 @@
     <div class='editor-container'>
         <ul class="squire-toolbar">
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
+                <a href="#" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
+                <a href="#" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
+                <a href="#" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
+                <a href="#" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
+                <a href="#" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
                     <i class="fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ALIGN_LEFT' | translate }}" ng-click="action('alignLeft')">
+                <a href="#" pt-tooltip="{{ 'ALIGN_LEFT' | translate }}" ng-click="action('alignLeft')">
                     <i class="fa fa-align-left"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ALIGN_CENTER' | translate }}" ng-click="action('alignCenter')">
+                <a href="#" pt-tooltip="{{ 'ALIGN_CENTER' | translate }}" ng-click="action('alignCenter')">
                     <i class="fa fa-align-center"></i>
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'ALIGN_RIGHT' | translate }}" ng-click="action('alignRight')">
+                <a href="#" pt-tooltip="{{ 'ALIGN_RIGHT' | translate }}" ng-click="action('alignRight')">
                     <i class="fa fa-align-right"></i>
                 </a>
             </li>
             <li class="separator"></li>
             <li>
-                <a href="" class="btn btn-sm" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
+                <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
                     <i class="fa fa-link"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -53,13 +53,13 @@
                             <div class="panel">
                                 <input type="text" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
                             </div>
-                            <button class="btn btn-sm" ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')">
+                            <button ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')">
                                 {{ 'REMOVE_LINK' | translate }}
                             </button>
-                            <button class="btn btn-sm" ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
+                            <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
                                 {{ 'UPDATE_LINK' | translate }}
                             </button>
-                            <button class="btn btn-sm btn-primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
+                            <button class="btn primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
                                 {{ 'INSERT_LINK' | translate}}
                             </button>
                         </div>
@@ -68,7 +68,7 @@
                 </a>
             </li>
             <li>
-                <a href="" class="btn btn-sm" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-click="popoverShow($event)">
+                <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-click="popoverShow($event)">
                     <i class="fa fa-image"></i>
                     <div class="squire-popover">
                         <div class="arrow"></div>
@@ -76,7 +76,7 @@
                             <div class="panel">
                                 <input type="text" autocomplete="off" placeholder="{{ 'URL_TO_IMAGE' | translate }}" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" class="form-control" />
                             </div>
-                            <button class="btn btn-sm btn-primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}">
+                            <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}">
                                 {{ 'INSERT_IMAGE' | translate }}
                             </button>
                         </div>

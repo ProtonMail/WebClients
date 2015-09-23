@@ -10,24 +10,27 @@ It will conflict with email rendering if the selectors are not specific or neste
   zoom: 1;
 }
 
-.fa-paperclip {
-	color: #aba7be;
-	display: inline-block;
-	text-align: center;
-	width: 1.5rem;
-	min-width: 1.5rem;
-	opacity: 0;
-	&.show {
-		opacity: 1;
-	}
-}
-
 .text-right {
 	text-align: right;
 }
 
 .pm_opensans {
 	font-family: 'Open Sans', sans-serif;
+}
+
+#pm_rows,
+#pm_columns {
+	.fa-paperclip {
+		color: #aba7be;
+		display: inline-block;
+		text-align: center;
+		width: 1.5rem;
+		min-width: 1.5rem;
+		opacity: 0;
+		&.show {
+			opacity: 1;
+		}
+	}	
 }
 
 body.columns {

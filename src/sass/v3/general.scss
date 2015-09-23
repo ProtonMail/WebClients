@@ -1,12 +1,13 @@
-html, body {
-	height: 100%;
-}
-
-body {
-	overflow-y: hidden;
-	background: #505061;	
-}
-
-body.secure {
-	background: #fff;
+html.protonmail {
+	&, 
+	body {
+		height: 100%;
+	} 
+	body {
+		overflow-y: hidden;
+		background: #505061;
+		&.secure {
+			background: #fff;
+		}	
+	}
 }
