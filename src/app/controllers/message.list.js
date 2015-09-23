@@ -48,15 +48,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
-<<<<<<< HEAD
         $scope.refreshMessages().then(function() {
             watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
                 preloadMessage.set(newValue);
-=======
-        $scope.refreshMessagesCache().then(function() {
-            messageCache.watchScope($scope, "messages");
-            $scope.$watch('messages', function() {
->>>>>>> develop
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -230,40 +224,16 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return params;
     };
 
-<<<<<<< HEAD
     $scope.refreshMessages = function() {
-=======
-    $scope.refreshMessages = function(silently, empty) {
-        var mailbox = $state.current.name.replace('secured.', '');
-        var params = $scope.getMessagesParameters(mailbox);
-
-        Message.query(params).$promise.then(function(result) {
-            $scope.messages = result;
-
-            if(!!!empty) {
-                $scope.emptying = false;
-            }
-        }, function(error) {
-            notify({message: 'Error during quering messages', classes: 'notification-danger'});
-            $log.error(error);
-        });
-    };
-
-    $scope.refreshMessagesCache = function () {
->>>>>>> develop
         var deferred = $q.defer();
         var request = $scope.getMessagesParameters($scope.mailbox);
 
         cacheMessages.query(request).then(function(messages) {
             $scope.messages = messages;
-<<<<<<< HEAD
             deferred.resolve(messages);
-=======
-            deferred.resolve();
         }, function(error) {
-            error.message = 'Error during refresh messages from cache';
-            deferred.reject(error);
->>>>>>> develop
+            notify({message: 'Error during quering messages', classes: 'notification-danger'});
+            $log.error(error);
         });
 
         return deferred.promise;
@@ -551,33 +521,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-<<<<<<< HEAD
-
         var message = cacheMessages.get(id).then(function(message) {
-            Message.trash({IDs: [id]});
-
-            movedMessages.push({
-                LabelIDs: message.LabelIDs,
-                OldLocation: message.Location,
-                IsRead: message.IsRead,
-                Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                Starred: message.Starred
-            });
-
-            cacheMessages.events([{
-                Action: 3,
-                ID: message.ID,
-                Message: {
-                    ID: message.ID,
-                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
-                }
-            }]);
-
-            messageCounts.updateUnread('move', movedMessages);
-            messageCounts.updateTotals('move', movedMessages);
-=======
-        var message = messageCache.get(id).then(function(message) {
             Message.trash({IDs: [id]}).$promise.then(function(result) {
+
                 movedMessages.push({
                     LabelIDs: message.LabelIDs,
                     OldLocation: message.Location,
@@ -585,6 +531,15 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
                     Starred: message.Starred
                 });
+
+                cacheMessages.events([{
+                    Action: 3,
+                    ID: message.ID,
+                    Message: {
+                        ID: message.ID,
+                        Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
+                    }
+                }]);
 
                 messageCounts.updateUnread('move', movedMessages);
                 messageCounts.updateTotals('move', movedMessages);
@@ -598,7 +553,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }, function(error) {
             notify({message: 'Error during the getting message from the cache', classes: 'notification-danger'});
             $log.error(error);
->>>>>>> develop
         });
     };
 
@@ -621,15 +575,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 }
             };
 
-<<<<<<< HEAD
             events.push(event);
-=======
-            events.push({Action: 3, ID: message.ID, Message: message});
 
             if(inDelete) {
                 $rootScope.$broadcast('deleteMessage', message.ID);
             }
->>>>>>> develop
         });
 
         if(events.length > 0) {
@@ -639,15 +589,11 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         messageCounts.updateUnread('move', movedMessages);
         messageCounts.updateTotals('move', movedMessages);
 
-<<<<<<< HEAD
-        var promiseAction = function(result) {
-=======
         var promiseSuccess = function(result) {
             if(events.length > 0) {
                 messageCache.sync();
             }
 
->>>>>>> develop
             if(inDelete) {
                 if(ids.length > 1) {
                     notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});
