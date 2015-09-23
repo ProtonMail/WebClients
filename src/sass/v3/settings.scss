@@ -1,9 +1,13 @@
 #pm_settings {
     display: flex;
     flex-direction: column;
+    #settingsSave {
+    	margin: 15px 25px 15px 0;
+    }
     .pm_tabs {
     	padding: 0 0 0 25px;
     	margin-top: 15px;
+    	margin-bottom: 15px;
     }
     .settings {
     	padding: 0 25px;
