@@ -28,7 +28,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     var dragsters = [];
     var timeoutStyle;
     var dropzone;
-    var filesUploaded = [];
 
     $scope.messages = [];
     $scope.isOver = false;
@@ -194,6 +193,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 addRemoveLinks: false,
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
                 url: "/file/post",
+                autoProcessQueue: false,
                 paramName: "file", // The name that will be used to transfer the file
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
@@ -212,7 +212,23 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
-                        filesUploaded.push(file);
+
+                        var dropzone = this;
+                        var process = function() {
+                            $scope.addAttachment(file, message).finally(function () {
+                                dropzone.removeFile(file);
+                            });                            
+                        };
+
+                        if(angular.isUndefined(message.ID)) {
+                            if (angular.isUndefined(message.savePromise)) {
+                                message.savePromise = $scope.save(message, false, false, false);
+                            }
+
+                            message.savePromise.then(process);
+                        } else {
+                           process();
+                        }
                         done();
                     }
                 },
@@ -227,23 +243,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 }
             },
             eventHandlers: {
-                queuecomplete: function() {
-                    var process = function() {
-                        _.each(filesUploaded, function(file) {
-                            $scope.addAttachment(file, message);
-                        });
-
-                        filesUploaded = [];
-                    };
-
-                    if(angular.isUndefined(message.ID)) {
-                        $scope.save(message, false, false, false).then(function() {
-                            process();
-                        });
-                    } else {
-                        process();
-                    }
-                },
                 drop: function(event) {
                     event.preventDefault();
 
@@ -333,7 +332,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $scope.composerStyle();
 
-        attachments.load(file).then(
+        return attachments.load(file).then(
             function(packets) {
                 return attachments.upload(packets, message.ID, tempPacket).then(
                     function(result) {
