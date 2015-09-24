@@ -33,6 +33,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.isOver = false;
     $scope.sending = false;
     $scope.saving = false;
+    $scope.queuedSave = false;
     $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
@@ -856,11 +857,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // Functions
         var nextSave = function() {
             // Schedule this save after the in-progress one completes
+            $scope.queuedSave = false;
             return $scope.save(message, silently, forward, notification);
         };
 
         if ($scope.saving) {
-            return message.savePromise.then(nextSave, nextSave);
+            // Limit queued saves to 1
+            if ( !!!$scope.queuedSave ) {
+                $scope.queuedSave = true;
+                message.savePromise = message.savePromise.then(nextSave, nextSave);
+            }
+            return message.savePromise;
         }
 
         $scope.saving = true;
