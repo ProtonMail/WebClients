@@ -207,9 +207,11 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $scope.isOver = false;
 
                     if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                        dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
                     } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
+                        dropzone.removeFile(file);
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
@@ -332,28 +334,35 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         $scope.composerStyle();
 
+        var cleanup = function( result ) {
+            var index = message.Attachments.indexOf(tempPacket);
+
+            if ( angular.isDefined( result ) && angular.isDefined( result.AttachmentID ) ) {
+                message.Attachments.splice(index, 1, result);
+            }
+            else {
+                message.Attachments.splice(index, 1);
+            }
+
+            message.uploading--;
+            onResize();
+        };
+
         return attachments.load(file).then(
             function(packets) {
                 return attachments.upload(packets, message.ID, tempPacket).then(
                     function(result) {
-                        var index = message.Attachments.indexOf(tempPacket);
-
-                        if (result === 'aborted') {
-                            message.Attachments.splice(index, 1);
-                        } else {
-                            message.Attachments.splice(index, 1, result);
-                        }
-
-                        message.uploading--;
-                        onResize();
+                        cleanup( result );
                     },
                     function(error) {
+                        cleanup();
                         notify({message: 'Error during file upload', classes: 'notification-danger'});
                         $log.error(error);
                     }
                 );
             },
             function(error) {
+                cleanup();
                 notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
                 $log.error(error);
             }
