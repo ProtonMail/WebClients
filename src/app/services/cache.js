@@ -1,4 +1,4 @@
-angular.module("proton.cache", [])
+ angular.module("proton.cache", [])
 
 .service("cacheMessages", function(
     $q,
@@ -252,8 +252,8 @@ angular.module("proton.cache", [])
      */
     api.create = function(event) {
         var deferred = $q.defer();
-        var message = event.Message;
-        var location = message.Location;
+        var message = (event.Message) ? event.message: false;
+        var location = (message) ? ((message.Location) ? message.Location : false) : false;
         var index;
         var concatenation = [];
 
@@ -322,7 +322,7 @@ angular.module("proton.cache", [])
         // Present in the current cache?
         if(location !== false) {
             var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
-            var sameLocation = cache[location][index].Location === event.Message.Location;
+            var sameLocation = (cache[location][index]) ? (cache[location][index].Location === event.Message.Location) : false;
             var currentMessage = cache[location][index];
 
             // Manage labels
