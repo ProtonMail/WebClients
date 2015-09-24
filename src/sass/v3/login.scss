@@ -11,6 +11,19 @@ body#login-unlock {
 		margin: 0 0 2rem 0;
 		font-size: 14px		
 	}
+	#pm_loader {
+		display: none;
+	}
+	#robotLoader {
+		position: relative;
+		p {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			line-height: 3rem;
+		}
+	}
 }
 body#login {
 	background: url('/assets/img/login.jpg') center center no-repeat;
@@ -24,7 +37,9 @@ body#login {
 		border: 1px solid rgba(255,255,255,.25);
 		margin-top: 8rem;
 		margin-bottom: 2rem;
-		padding: 50px 70px 60px 70px;
+		padding: 50px 70px 0 70px;
+		box-sizing: border-box;
+		height: 390px;
 		a {
 			color: #fff;
 		}

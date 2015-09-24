@@ -46,15 +46,18 @@ SPINNER
 Inpiration from 'esjay'
 [http://codepen.io/esjay/pen/xclfz]
 */
+.spinner {
+    position: relative;
+}
 .spinner:before,
 .spinner:after {
     box-sizing: border-box;
     content: '';
     display: block;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    margin-top: -2.5em;
+    margin-top: 0;
     margin-left: -2.5em;
     width: 5em;
     height: 5em;
@@ -70,17 +73,19 @@ Inpiration from 'esjay'
     mask-size: cover; 
 }
 .spinner.large {
-    width: 17rem;
-    height: 17rem;
+    top: 0;
+    margin-top: 0;
+    width: auto;
+    height: 16rem;
     &:before,
     &:after {
-        top: 42.5%;
-        margin-top: -7.5em;
-        margin-left: -7.5em;
-        width: 15em;
-        height: 15em;
-        perspective: 15rem;
-        background-size: 15em 15em;
+        top: 1rem;
+        margin: 0;
+        margin-left: -5rem;
+        width: 10rem;
+        height: 10rem;
+        perspective: 10rem;
+        background-size: 10rem 10rem;
         background-color: #fff;
     }
 }
