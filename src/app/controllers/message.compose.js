@@ -221,7 +221,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                         if(angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
-                                $scope.save(message, true, false, false); // message, silently, forward, notification
+                                $scope.save(message, false, false, false); // message, silently, forward, notification
                             }
 
                             message.savePromise.then(process);
@@ -755,17 +755,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
      * Determine if we need to save the message
      */
     $scope.needToSave = function(message) {
-        if($scope.saving === true) { // Current backup
-            return false;
-        } else {
-            if(angular.isDefined(message.old)) {
-                var currentMessage = _.pick(message, $scope.oldProperties);
-                var oldMessage = _.pick(message.old, $scope.oldProperties);
+        if(angular.isDefined(message.old)) {
+            var currentMessage = _.pick(message, $scope.oldProperties);
+            var oldMessage = _.pick(message.old, $scope.oldProperties);
 
-                return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
-            } else {
-                return true;
-            }
+            return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
+        } else {
+            return true;
         }
     };
 
@@ -855,18 +851,16 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         };
 
         // Functions
-        var nextSave = function() {
+        var nextSave = function(result) {
             // Schedule this save after the in-progress one completes
-            $scope.queuedSave = false;
-            return $scope.save(message, silently, forward, notification);
+            if ( $scope.needToSave(message) ) {
+                return $scope.save(message, silently, forward, notification);
+            }
+            return result;
         };
 
         if ($scope.saving) {
-            // Limit queued saves to 1
-            if ( !!!$scope.queuedSave ) {
-                $scope.queuedSave = true;
-                message.savePromise = message.savePromise.then(nextSave, nextSave);
-            }
+            message.savePromise = message.savePromise.then(nextSave, nextSave);
             return message.savePromise;
         }
 
@@ -1173,7 +1167,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if(discard === true && angular.isDefined(id)) {
             // Remove message in message list controller
             $rootScope.$broadcast('discardDraft', id);
-            notify({message: 'Message Discard', classes: 'notification-success'}); // TODO translate
+            notify({message: 'Message discarded', classes: 'notification-success'}); // TODO translate
         }
 
         // Message closed and focussed?
