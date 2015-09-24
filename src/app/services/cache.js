@@ -60,17 +60,22 @@ angular.module("proton.cache", [])
 
     /**
      * Check if the message is located in the cache and return the location
-     * @param {Integer} id - message ID searched
+     * @param {String} id - message ID searched
      */
     var inCache = function(id) {
-        var keys = Object.keys(cache);
         var result = false;
 
-        _.each(keys, function(key) {
-            if(_.where(cache[key], { ID: id }).length > 0) {
-                result = key;
+        for(var location in cache) {
+            if(cache.hasOwnProperty(location)) {
+                for(var page in cache[location]) {
+                    if(cache[location].hasOwnProperty(page)) {
+                        if(_.where(cache[location][page], { ID: id }).length > 0) {
+                            result = location;
+                        }
+                    }
+                }
             }
-        });
+        }
 
         return result;
     };
@@ -186,7 +191,13 @@ angular.module("proton.cache", [])
         var location = inCache(id);
 
         if(location !== false) {
-            var message = _.findWhere(cache[location], { ID: id });
+            var message;
+
+            for(var page in cache[location]) {
+                if(cache[location].hasOwnProperty(page)) {
+                    message = _.findWhere(cache[location][page], { ID: id });
+                }
+            }
 
             if(angular.isDefined(message.Body)) {
                 deferred.resolve(message);
@@ -266,6 +277,8 @@ angular.module("proton.cache", [])
                 } else if (page === 0 && message.Time > first.Time) { // Page 0
                     messages.unshift(message);
                     messages.pop();
+                } else {
+                    // Ignore it
                 }
             }
         }
@@ -442,7 +455,7 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(message)) {
             // Preload the first message
-            cacheMessages.get(message.ID);
+            cacheMessages.get(message.ID); // Shutdown the preload
             // Remove the first message in the queue
             queue = _.without(queue, message);
         }
