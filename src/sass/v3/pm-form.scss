@@ -23,13 +23,22 @@ $inputHeight: 32px;
 
     :-ms-input-placeholder {  
        color: #aaaabf;  
-    }    
+    }
+
+    select {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        cursor: pointer;
+        background: #fff;
+    }
     input[type="text"],
     input[type="password"],
     input[type="email"],
+    select,
     textarea {
         line-height: $inputHeight;
-        border: 1px solid #9397cd;
+        border: 1px solid #e1e1ef;
         box-sizing: border-box;
         color: #555;
         display: block;
@@ -63,7 +72,8 @@ $inputHeight: 32px;
     }
     input[type="text"],
     input[type="password"],
-    input[type="email"] {
+    input[type="email"],
+    select {
         padding: 0 20px;
     }
     textarea {

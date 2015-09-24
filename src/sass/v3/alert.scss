@@ -1,0 +1,12 @@
+.alert {
+	padding: 15px 35px;
+	border-radius: 4px;
+	background: #f7f7f7;
+	a {
+		color: #9397cd;
+	}
+	&.alert-info {
+		background: #e6e6f2;
+
+	}
+}

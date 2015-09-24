@@ -27,21 +27,11 @@
         background: #fff;
         left: 50%;
         top: 5rem;
+        bottom: 5rem;
         width: 50rem;
         margin-left: -25rem;
         border: 5px solid #9397cd;
         box-sizing: border-box;
-        overflow: auto;
-        margin-bottom: 5rem;
-        .modal-header {
-            padding: 50px 50px 25px 50px;
-        }
-        .modal-body {
-            padding: 25px 50px;
-        }
-        .modal-footer {
-            padding: 0 50px 50px;
-        }
         .close {
             position: absolute;
             right: 0;
@@ -57,13 +47,31 @@
             display: block;
             outline: none;
             border: none;
-        }
-        h1, h2, h3, h4 {
-            font-size: 22px;
-            line-height: 22px;
-            font-weight: 400;
+        }        
+        .modal-content {
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            bottom: 0;
+            right: 0;
+            .modal-header {
+                padding: 50px 50px 25px 50px;
+                margin-top: -25px;
+            }
+            .modal-body {
+                padding: 25px 50px;
+            }
+            .modal-footer {
+                padding: 0 50px 50px;
+            }
+            h1, h2, h3, h4 {
+                font-size: 22px;
+                line-height: 22px;
+                font-weight: 400;
+                color: #555;
+            }
             color: #555;
         }
-        color: #555;
     }
 }
