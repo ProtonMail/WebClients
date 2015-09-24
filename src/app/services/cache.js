@@ -10,7 +10,18 @@ angular.module("proton.cache", [])
     networkActivityTracker
 ) {
     var api = {};
-    var cache = {}; // cache: { 0: [Resources], 1: [Resources]}
+    var cache = {};
+    // {
+    //     0: {
+    //         0: [Resources],
+    //         1: [Resources],
+    //         3: [Resources],
+    //     },
+    //     2: {
+    //         0: [Resources],
+    //         1: [Resources]
+    //     }
+    // }
     var DELETE = 0;
     var CREATE = 1;
     var UPDATE = 2;
@@ -124,7 +135,7 @@ angular.module("proton.cache", [])
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
             // Messages present in the cache?
-            if(angular.isDefined(cache[location])) {
+            if(angular.isDefined(cache[location]) && angular.isDefined(cache[location][page])) {
                 var total;
                 var number;
                 var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
@@ -144,17 +155,15 @@ angular.module("proton.cache", [])
                 if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                     number = CONSTANTS.MESSAGES_PER_PAGE;
                 } else {
-                    if(Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) === page) {
+                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
                         number = total % CONSTANTS.MESSAGES_PER_PAGE;
                     } else {
                         number = CONSTANTS.MESSAGES_PER_PAGE;
                     }
                 }
 
-                console.log({total: total, number: number, cache: cache[location].slice(start, end).length});
-
-                if(cache[location].slice(start, end).length === number) {
-                    deferred.resolve(cache[location].slice(start, end));
+                if(cache[location][page].length === number) {
+                    deferred.resolve(cache[location][page]);
                 } else {
                     callApi();
                 }
@@ -198,16 +207,14 @@ angular.module("proton.cache", [])
      */
     api.store = function(request, messages) {
         var page = request.Page || 0;
-        var index = page * CONSTANTS.MESSAGES_PER_PAGE;
-        var howmany = messages.length;
         var location = request.Location;
         var context = cacheContext(request);
 
         exist(location);
 
         if(context && messages.length > 0) {
-            // Store messages at the correct placement
-            Array.prototype.splice.apply(cache[location], [index, howmany].concat(messages));
+            // Store message datas at the correct placement
+            cache[location][page] = messages;
         }
     };
 
@@ -237,14 +244,29 @@ angular.module("proton.cache", [])
         var message = event.Message;
         var location = message.Location;
         var index;
+        var concatenation = [];
 
         exist(location);
 
-        index = _.sortedIndex(cache[location], message, function(element) {
+        // Regroup each messages
+        _.each(cache[location], function(messages) {
+            concatenation.concat(messages);
+        });
+
+        // Search the correct location
+        index = _.sortedIndex(concatenation, message, function(element) {
             return -element.Time;
         });
 
-        cache[location].splice(index, 0, message);
+        // Insert the message
+        concatenation.splice(index, 0, message);
+
+        // Cut
+        // NOTE cannot work
+        _.each(cache[location], function(messages, page) {
+            // messages = concatenation.splice()
+        });
+
         deferred.resolve();
 
         return deferred.promise;
@@ -258,6 +280,7 @@ angular.module("proton.cache", [])
         var drafts = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
         var deferred = $q.defer();
 
+        // Draft cache is defined?
         if(angular.isDefined(cache[drafts])) {
             var index = _.findIndex(cache[drafts], function(message) { return message.ID === event.ID; });
             var currentMessage = cache[location][index];
