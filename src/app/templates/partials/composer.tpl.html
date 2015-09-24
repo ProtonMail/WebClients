@@ -10,7 +10,9 @@
         ng-class="{'minimized': message.minimized, blur: (!!!composerIsSelected(message) || message.loading()), 'maximized': message.maximized, 'normalized': !message.maximized && !message.minimized}"
         ng-click="focusComposer(message)">
             <header>
-                <span ng-click="normalize(message);" class="subject">{{message.Subject}} &nbsp;</span>
+                <span ng-click="normalize(message);" class="subject">
+                {{message.Subject}} &nbsp;
+                </span>
                 <span class="actions text-right">
                     <a
                     href
@@ -72,8 +74,17 @@
 
                     <div class="row" ng-click="message.recipientFieldFocussed = 1">
                         <label>{{ 'TO' | translate }}</label>
-                        <div class="typeahead-container to-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
-                            <input tabindex="2" type="text" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="to-list" />
+                        <div 
+                        class="typeahead-container to-container" 
+                        ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
+                            <input 
+                            tabindex="2" 
+                            type="text" 
+                            email-field 
+                            title="{{ 'TO' | translate }}" 
+                            ng-model="message.ToList" 
+                            ng-change="saveLater(message)" 
+                            class="to-list" />
                         </div>
                         <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
                             <button class="pm_button pull-right">...</button>
@@ -82,17 +93,31 @@
                             <button class="pm_button pull-right">+{{message.numTags.CCList + message.numTags.BCCList}}</button>
                         </span>
                         <span>
-                            <button class="pm_button link pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
+                            <button 
+                            class="pm_button link pull-right" 
+                            ng-click="toggleFields(message)" 
+                            pt-tooltip="{{ 'CC_BCC' | translate }}" 
+                            pt-placement="left">
                                 <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
                             </button>
                         </span>
                     </div>
 
-                    <div class="row" ng-show="message.fields" ng-click="message.recipientFieldFocussed = 2">
+                    <div 
+                    class="row" 
+                    ng-show="message.fields" 
+                    ng-click="message.recipientFieldFocussed = 2">
 
                         <label>{{ 'CC' | translate }}</label>
                         <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
-                            <input tabindex="3" type="text" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="cc-list" />
+                            <input 
+                            tabindex="3" 
+                            type="text" 
+                            email-field 
+                            ng-model="message.CCList" 
+                            ng-change="saveLater(message)" 
+                            title="{{ 'CC' | translate }}" 
+                            class="cc-list" />
                         </div>
                         <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
                             <button class="pm_button pull-right">...</button>
@@ -100,11 +125,21 @@
 
                     </div>
 
-                    <div class="row" ng-show="message.fields" ng-click="message.recipientFieldFocussed = 3">
+                    <div 
+                    class="row" 
+                    ng-show="message.fields" 
+                    ng-click="message.recipientFieldFocussed = 3">
 
                         <label>{{ 'BCC' | translate }}</label>
                         <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
-                            <input tabindex="4" type="text" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="bcc-list" />
+                            <input 
+                            tabindex="4" 
+                            type="text" 
+                            email-field 
+                            ng-model="message.BCCList" 
+                            ng-change="saveLater(message)" 
+                            title="{{ 'BCC' | translate }}" 
+                            class="bcc-list" />
                         </div>
                         <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
                             <button class="pm_button pull-right">...</button>
@@ -113,7 +148,18 @@
                     </div>
 
                     <div class="row">
-                        <input tabindex="5" type="text" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="subject" ng-focus="message.fields = false; message.recipientFieldFocussed = 0" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                        <input 
+                        tabindex="5" 
+                        type="text" 
+                        placeholder="{{ 'SUBJECT' | translate }}" 
+                        title="{{ 'SUBJECT' | translate }}" 
+                        class="subject" 
+                        ng-focus="message.fields = false; message.recipientFieldFocussed = 0" 
+                        ng-model="message.Subject" 
+                        ng-model-options="{updateOn: 'blur'}" 
+                        ng-keydown="$event.which == 9 && focusEditor(message, $event)" 
+                        ng-change="saveLater(message)" 
+                        required />
                     </div>
 
                 </div>
@@ -127,22 +173,53 @@
                             </div>
                             <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
                                 <label class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
-                                <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder="Password" class="form-control" required="" />
+                                <input 
+                                type="password" 
+                                autocomplete="off" 
+                                name="outsidePw" 
+                                ng-model="params.password" 
+                                placeholder="Password" 
+                                class="form-control" 
+                                required="" />
                             </div>
                             <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}">
                                 <label class="control-label text-muted">{{ ' CONFIRM_MESSAGE_PASSWORD' | translate }}</label>
-                                <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm"placeholder="Confirm Password" class="form-control" required="" />
+                                <input 
+                                type="password" 
+                                autocomplete="off" 
+                                name="outsidePwConfirm" 
+                                ng-model="params.confirm" 
+                                placeholder="Confirm Password" 
+                                class="form-control" 
+                                required="" />
                             </div>
                             <div>
                                 <label class="control-label text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
-                                <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="Hint" class="form-control" />
+                                <input 
+                                type="text" 
+                                autocomplete="off" 
+                                name="outsidePwHint" 
+                                ng-model="params.hint" 
+                                placeholder="Hint" 
+                                class="form-control" />
                             </div>
                             <div>
                                 <i class="text-muted">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
                             </div>
                             <div class="text-right">
-                                <button type="button" class="pm_button" ng-click="clearEncrypt(message, params, encryptForm);">{{ 'CANCEL' | translate }}</button>
-                                <button type="submit" class="pm_button primary" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid">{{ 'SET' | translate }}</button>
+                                <button 
+                                type="button" 
+                                class="pm_button" 
+                                ng-click="clearEncrypt(message, params, encryptForm);">
+                                {{ 'CANCEL' | translate }}
+                                </button>
+                                <button 
+                                type="submit" 
+                                class="pm_button primary" 
+                                ng-click="setEncrypt(message, params)" 
+                                ng-disabled="encryptForm.$invalid">
+                                {{ 'SET' | translate }}
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -478,63 +478,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.composerStyle = function() {
-        var composers = $('.composer');
-
-        _.each(composers, function(composer, index) {
-            var margin = 20;
-            var reverseIndex = $scope.messages.length - index;
-            var message = $scope.messages[index];
-            var styles = {};
-            var widthWindow = $('#main').width();
-            var navbar = $('#navbar').outerHeight();
-            var windowHeight = $(window).height() - margin - navbar;
-            var composerHeight = $(composer).outerHeight();
-
-            if ($('html').hasClass('ua-windows_nt')) {
-                margin = 40;
-            }
-
-            if (tools.findBootstrapEnvironment() === 'xs') {
-                var marginTop = 80; // px
-                var top = marginTop;
-
-                styles.top = top + 'px';
-            } else {
-                var marginRight = margin; // px
-                var widthComposer = 480; // px
-
-                if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
-                    right = (index * (widthComposer + marginRight)) + marginRight;
-                } else {
-                    widthWindow -= margin; // margin left
-                    var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
-                    right = index * (widthComposer - overlap);
-                }
-
-                if (reverseIndex === $scope.messages.length) {
-                    right = marginRight;
-                    index = $scope.messages.length;
-                }
-
-                styles.top = '';
-                styles.right = right + 'px';
-            }
-
-			styles.overflowY = 'auto'; // TODO move this propertie to CSS
-
-        	// Height - depreciated. pure css solution - Jason
-        	// if(windowHeight < composerHeight) {
-        		// styles.height = windowHeight + 'px';
-        	// } else {
-                // styles.height = 'auto';
-            // }
-
-            $(composer).css(styles);
-
-            setTimeout(function() {
-                $(composer).find('.angular-squire').css($scope.editorStyle(message));
-            });
-        });
+        // ...
     };
 
     $scope.completedSignature = function(message) {
