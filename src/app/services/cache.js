@@ -248,26 +248,27 @@ angular.module("proton.cache", [])
 
         exist(location);
 
-        // Regroup each messages
-        _.mapObject(cache[location], function(messages, page) {
-            concatenation.concat(messages);
+        for(var page in cache[location]) {
+            if(cache[location].hasOwnProperty(page)) {
+                var messages = cache[location][page];
+                var first = _.first(messages);
+                var last = _.last(messages);
 
-            return messages;
-        });
+                if(message.Time < first.Time && message.Time > last.Time) { // Insert inside?
+                    // Search the correct location
+                    index = _.sortedIndex(concatenation, message, function(element) {
+                        return -element.Time;
+                    });
 
-        // Search the correct location
-        index = _.sortedIndex(concatenation, message, function(element) {
-            return -element.Time;
-        });
-
-        // Insert the message
-        concatenation.splice(index, 0, message);
-
-        // Cut
-        // NOTE cannot work
-        _.each(cache[location], function(messages, page) {
-            // messages = concatenation.splice()
-        });
+                    messages.splice(index, 0, message);
+                    messages.pop();
+                    cache[location][page] = messages;
+                } else if (page === 0 && message.Time > first.Time) { // Page 0
+                    messages.unshift(message);
+                    messages.pop();
+                }
+            }
+        }
 
         deferred.resolve();
 
