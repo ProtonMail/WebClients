@@ -222,7 +222,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                         if(angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
-                                message.savePromise = $scope.save(message, false, false, false);
+                                $scope.save(message, false, false, false);
                             }
 
                             message.savePromise.then(process);
@@ -846,6 +846,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
+        if ( $scope.saving ) {
+            return message.savePromise;
+        }
         $scope.saving = true;
 
         if (typeof parameters.Message.ToList === 'string') {
@@ -894,7 +897,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     message.BackupDate = new Date();
                     message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
                     $scope.saveOld(message);
-                    $scope.saving = false;
 
                     // Add draft in message list
                     if($state.is('secured.drafts')) {
@@ -932,11 +934,17 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             deferred.reject(error);
         });
 
+        message.savePromise = deferred.promise.finally(
+            function() {
+                $scope.saving = false;
+            }
+        );
+
         if(silently !== true) {
-            message.track(deferred.promise);
+            message.track(message.savePromise);
         }
 
-        return deferred.promise;
+        return message.savePromise;
     };
 
     $scope.send = function(message) {
