@@ -847,7 +847,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         };
 
         if ( $scope.saving ) {
-            return message.savePromise;
+
+            var nextSave = function() {
+                // Schedule this save after the in-progress one completes
+                return $scope.save(message,silently,forward,notification);
+            };
+
+            return message.savePromise.then(nextSave, nextSave);
         }
         $scope.saving = true;
 
