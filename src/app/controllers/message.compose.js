@@ -392,6 +392,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
+            $rootScope.maximizedComposer = true;
         }
 
         // if tablet we maximize by default
@@ -1032,6 +1033,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.minimized = true;
         message.previousMaximized = message.maximized;
         message.maximized = false;
+        $rootScope.maximizedComposer = false;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
     };
@@ -1047,11 +1049,13 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.maximize = function(message) {
         $rootScope.activeComposer = true;
         message.maximized = true;
+        $rootScope.maximizedComposer = true;
     };
 
     $scope.normalize = function(message) {
         message.minimized = false;
         message.maximized = false;
+        $rootScope.maximizedComposer = false;
     };
 
     $scope.blur = function(message) {
@@ -1081,6 +1085,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var id = message.ID;
 
         $rootScope.activeComposer = false;
+        $rootScope.maximizedComposer = false;        
 
         if (save === true) {
             $scope.save(message, true, false, false);

@@ -48,6 +48,27 @@
                 </form>
             </div>
             <div class="col-md-4">
+                <form novalidate ng-submit="saveLayoutMode(composerMode)" name="layoutMode" method="post">
+                    <legend>Layout</legend>
+                    <label for="composerMode" class="control-label">{{ 'LAYOUT_MODE' | translate }}</label><br>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="0">
+                        Column
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="1">
+                        Row
+                      </label>
+                    </div>
+                    <div class="clearfix">
+                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
+            </div>            
+            <div class="col-md-4">
                 <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
                     <legend>{{ 'EMAILS' | translate }}</legend>
                     <label for="composerMode" class="control-label">{{ 'EMAIL_IMAGES' | translate }}</label><br>

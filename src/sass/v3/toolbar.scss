@@ -12,7 +12,7 @@
 }
 
 #pm_toolbar {
-    padding: 14px 0;
+    padding: 14px 40px 0 0;
     height: $toolbarHeight;
     box-sizing: border-box;
     position: relative;
@@ -46,7 +46,7 @@
         float: left;
         padding-left: 0;
         .pm_checkbox {
-            margin-top: 12px;
+            margin-top: -2px;
             float: left;
         }
     }

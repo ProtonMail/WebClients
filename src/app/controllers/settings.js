@@ -42,6 +42,7 @@ angular.module("proton.controllers.Settings", [
     $scope.selectedLanguage = 'English';
     $scope.disabledText = $translate.instant('DISABLE');
     $scope.ComposerMode = authentication.user.ComposerMode;
+    $scope.LayoutMode = ( $rootScope.layoutMode ) ? ( ( $rootScope.layoutMode === 'rows' ) ? 1 : 0 ) : 0;
     $scope.MessageButtons = authentication.user.MessageButtons;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.isSafari = jQuery.browser.name === 'safari';
@@ -548,6 +549,18 @@ angular.module("proton.controllers.Settings", [
                 }
             )
         );
+    };
+
+    // TODO save this using an API route and remove all instances of $rootScope.layoutMode
+    $scope.saveLayoutMode = function(form) {
+        var value = parseInt($scope.LayoutMode);
+        if(value === 0) {
+            $scope.LayoutMode = value;
+            $rootScope.layoutMode = 'columns';
+        } else {
+            $scope.LayoutMode = value;
+            $rootScope.layoutMode = 'rows';
+        }
     };
 
     $scope.saveShowImages = function(form) {

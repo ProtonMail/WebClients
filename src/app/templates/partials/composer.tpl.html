@@ -12,7 +12,7 @@
             <header>
                 <span ng-click="normalize(message);" class="subject">
                 {{message.Subject}} &nbsp;
-                </span>
+                </span>            
                 <span class="actions text-right">
                     <a
                     href
@@ -58,7 +58,7 @@
                     pt-placement="top">
                         <i class="fa fa-times"></i>
                     </a>
-                </span>
+                </span>                
             </header>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="meta">
