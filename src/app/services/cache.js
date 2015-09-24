@@ -24,7 +24,7 @@ angular.module("proton.cache", [])
     // }
     var DELETE = 0;
     var CREATE = 1;
-    var UPDATE = 2;
+    var UPDATE_DRAFT = 2;
     var UPDATE_FLAG = 3;
     // Parameters shared between api / cache / message view / message list
     var fields = [
@@ -249,8 +249,10 @@ angular.module("proton.cache", [])
         exist(location);
 
         // Regroup each messages
-        _.each(cache[location], function(messages) {
+        _.mapObject(cache[location], function(messages, page) {
             concatenation.concat(messages);
+
+            return messages;
         });
 
         // Search the correct location
@@ -367,7 +369,7 @@ angular.module("proton.cache", [])
                 case CREATE:
                     promises.push(api.create(event));
                     break;
-                case UPDATE:
+                case UPDATE_DRAFT:
                     promises.push(api.updateDraft(event));
                     break;
                 case UPDATE_FLAG:
