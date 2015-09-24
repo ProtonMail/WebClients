@@ -202,6 +202,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
+                    totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
                     totalSize += file.size;
 
                     $scope.isOver = false;
@@ -222,11 +223,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     } else {
                         if ( angular.isUndefined( message.queuedFiles ) ) {
                             message.queuedFiles = 0;
+                            message.queuedFilesSize = 0;
                         }
                         message.queuedFiles++;
+                        message.queuedFilesSize += file.size;
 
                         var process = function() {
                             message.queuedFiles--;
+                            message.queuedFilesSize -= file.size;
                             $scope.addAttachment(file, message).finally(function () {
                                 dropzone.removeFile(file);
                             });
