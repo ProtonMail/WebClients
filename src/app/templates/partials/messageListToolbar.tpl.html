@@ -2,12 +2,7 @@
     <ul class="nav navbar-nav">
         <li class="seperator selectAll">
             <label>
-                <input
-                type="checkbox"
-                name="selectAll"
-                ng-model="allSelectedCheckbox"
-                ng-click="selectAllMessages()"
-                pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" />
+                <input type="checkbox" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}" />
             </label>
         </li>
         <li ng-show="!messageButtons" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
