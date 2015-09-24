@@ -1,8 +1,11 @@
 #composerFrame {
 	z-index: 999999;
 }
-.activeComposer #content {
-    display: none !important;
+.activeComposer {
+	#content,
+	#main {
+	    display: none !important;
+	}
 }
 body .composer {
 	&,
