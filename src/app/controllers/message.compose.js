@@ -226,8 +226,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         message.queuedFiles++;
 
                         var process = function() {
+                            message.queuedFiles--;
                             $scope.addAttachment(file, message).finally(function () {
-                                message.queuedFiles--;
                                 dropzone.removeFile(file);
                             });
                         };
