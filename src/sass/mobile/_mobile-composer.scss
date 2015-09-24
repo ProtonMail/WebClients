@@ -4,12 +4,22 @@
 	}
 	html .composer.normalized {
 		width: 100% !important;
-		position: static; 
 	}
 	.composer-footer .text-muted {
 		display: none;
 	}
 	#composerFrame {
 		position: static !important;
+	}
+	.composer-header {
+		display: none;
+	}
+	.angular-squire,
+	.composeEditor {
+		min-height: 35rem;
+		height: 35rem;
+	}
+	.composer {
+		position: absolute;
 	}
 }
