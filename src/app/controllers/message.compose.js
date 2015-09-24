@@ -190,7 +190,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
-                maxFiles: CONSTANTS.ATTACHMENT_NUMBER_LIMIT,
                 addRemoveLinks: false,
                 dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
                 url: "/file/post",
@@ -199,6 +198,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
                 accept: function(file, done) {
+
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -206,7 +206,12 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
                     $scope.isOver = false;
 
-                    if(angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                    var dropzone = this;
+
+                    var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
+                    total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
+
+                    if(total_num === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
@@ -215,8 +220,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
+                        if ( angular.isUndefined( message.queuedFiles ) ) {
+                            message.queuedFiles = 0;
+                        }
+                        message.queuedFiles++;
+
                         var process = function() {
                             $scope.addAttachment(file, message).finally(function () {
+                                message.queuedFiles--;
                                 dropzone.removeFile(file);
                             });
                         };
