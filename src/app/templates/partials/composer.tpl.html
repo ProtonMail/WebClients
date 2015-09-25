@@ -63,7 +63,7 @@
                     <div class="form-group fromGroup">
                         <div class="input-group">
                             <div class="input-group-addon">{{ 'FROM' | translate }}</div>
-                            <select tabindex="1" class="form-control" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
+                            <select class="form-control" ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
                         </div>
                     </div>
                     <div class="form-horizontal">
@@ -71,7 +71,7 @@
                             <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 1">
                                 <div class="input-group-addon">{{ 'TO' | translate }}</div>
                                 <div class="typeahead-container to-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
-                                    <input tabindex="2" type="text" autocomplete="off" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
+                                    <input type="text" autocomplete="off" email-field title="{{ 'TO' | translate }}" ng-model="message.ToList" ng-change="saveLater(message)" class="form-control to-list" />
                                 </div>
                                 <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
@@ -80,7 +80,7 @@
                                     <button class="btn btn-sm btn-white pull-right elf">+{{message.numTags.CCList + message.numTags.BCCList}}</button>
                                 </span>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
+                                    <button tabindex="-1" class="btn btn-sm btn-white pull-right" ng-click="toggleFields(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
                                         <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
                                     </button>
                                 </span>
@@ -90,7 +90,7 @@
                             <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 2">
                                 <div class="input-group-addon">{{ 'CC' | translate }}</div>
                                 <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
-                                    <input tabindex="3" type="text" autocomplete="off" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
+                                    <input type="text" autocomplete="off" email-field ng-model="message.CCList" ng-change="saveLater(message)" title="{{ 'CC' | translate }}" class="form-control cc-list" />
                                 </div>
                                 <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
@@ -101,7 +101,7 @@
                             <div class="input-group input-container" ng-click="message.recipientFieldFocussed = 3">
                                 <div class="input-group-addon">{{ 'BCC' | translate }}</div>
                                 <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
-                                    <input tabindex="4" type="text" autocomplete="off" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
+                                    <input type="text" autocomplete="off" email-field ng-model="message.BCCList" ng-change="saveLater(message)" title="{{ 'BCC' | translate }}" class="form-control bcc-list" />
                                 </div>
                                 <span class="input-group-btn" ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
                                     <button class="btn btn-sm btn-white pull-right elf">...</button>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input tabindex="5" type="text" autocomplete="off" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false; message.recipientFieldFocussed = 0" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                        <input type="text" autocomplete="off" placeholder="{{ 'SUBJECT' | translate }}" title="{{ 'SUBJECT' | translate }}" class="form-control subject" ng-focus="message.fields = false; message.recipientFieldFocussed = 0" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which == 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                     </div>
                 </div>
                 <div class="form-group composeEditor">
