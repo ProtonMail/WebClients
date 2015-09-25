@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" ng-if="contacts.length > 0">
+        <div class="row">
             <div class="col-md-6 form-group">
                 <div class="input-group" ng-if="'secured.contacts' | includedByState" id="contactSearchGroup">
                     <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}" ng-change="refreshContacts(true)" />
@@ -27,7 +27,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 form-group text-right">
+            <div class="col-md-6 form-group text-right" ng-if="contacts.length > 0">
                 <pagination
                     total-items="totalItems"
                     ng-model="params.currentPage"
@@ -42,7 +42,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p class="alert alert-info text-center" ng-if="contacts.length === 0">You have no contacts</p>
+                <p class="alert alert-info text-center" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">You have no contacts</p>
+                <p class="alert alert-info text-center" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">Could not find any corresponding contact</p>
                 <table class="table table-middle table-hover table-pm" id="contactsTable" ng-if="contacts.length > 0">
                     <thead>
                         <tr>
