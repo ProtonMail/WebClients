@@ -252,8 +252,8 @@
      */
     api.create = function(event) {
         var deferred = $q.defer();
-        var message = (event.Message) ? event.message: false;
-        var location = (message) ? ((message.Location) ? message.Location : false) : false;
+        var message = event.message;
+        var location = message.Location;
         var index;
         var concatenation = [];
 
@@ -271,8 +271,12 @@
                         return -element.Time;
                     });
 
+                     // Insert the new message
                     messages.splice(index, 0, message);
-                    messages.pop();
+
+                    // Remove the last message
+                    var removed = messages.pop();
+                    
                     cache[location][page] = messages;
                 } else if (page === 0 && message.Time > first.Time) { // Page 0
                     messages.unshift(message);
@@ -322,7 +326,7 @@
         // Present in the current cache?
         if(location !== false) {
             var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
-            var sameLocation = (cache[location][index]) ? (cache[location][index].Location === event.Message.Location) : false;
+            var sameLocation = cache[location][index].Location === event.Message.Location;
             var currentMessage = cache[location][index];
 
             // Manage labels
