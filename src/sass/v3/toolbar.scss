@@ -5,14 +5,20 @@
     margin-left: 0;
     margin-right: 25px;
 }
+body.rows #pm_toolbar {
+    padding-right: 15px;
+}
 
 // Columns
-#pm_view.rows #pm_toolbar {
-    margin-left: 0;
+#pm_view.columns #pm_toolbar {
+    margin-left: 0;   
+}
+body.columns #pm_toolbar {
+    padding-right: 40px;
 }
 
 #pm_toolbar {
-    padding: 14px 40px 0 0;
+    padding: 14px 0 0 0;
     height: $toolbarHeight;
     box-sizing: border-box;
     position: relative;

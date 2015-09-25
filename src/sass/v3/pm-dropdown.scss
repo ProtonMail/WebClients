@@ -1,5 +1,3 @@
-
-
 .pm_dropdown {
 	position: absolute;
 	left: -1px;
@@ -17,6 +15,11 @@
 	&.right {
 		right: -1px;
 		left: initial;
+	}
+	&.wide {
+		width: 200px;
+		max-height: none;
+		padding: 15px;
 	}
 	&.open {
 		display: block;

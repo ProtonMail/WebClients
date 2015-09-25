@@ -1,0 +1,43 @@
+.labelDropdown {
+	.wrapper {
+		max-height: 175px;
+		overflow: auto;
+		display: block;
+		clear: both;
+		padding-right: 15px;
+		ul,
+		li {
+			display: block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			clear: both;
+			text-align: left;
+			position: relative;
+		}
+		li {
+			line-height: 35px;
+			height: 35px;
+			label {
+				cursor: pointer;
+			}
+			input {
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				line-height: 35px;
+				height: 35px;
+				margin: 0;
+			}
+			.fa {
+				margin-right: 10px;
+			}
+		}
+	}
+	button {
+		margin-top: 15px;
+		display: block;
+		width: 100%;
+	}	
+}

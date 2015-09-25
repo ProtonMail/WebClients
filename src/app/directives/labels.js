@@ -34,7 +34,7 @@ angular.module("proton.labels", [])
 
         scope.color = function(label) {
             return {
-                backgroundColor: label.Color
+                color: label.Color
             };
         };
 
