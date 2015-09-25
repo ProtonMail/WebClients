@@ -20,14 +20,14 @@
                 <th class="text-center hidden-xs checkbox"></th>
                 <th class="name">
                     <span>
-                        <a href="" ng-click="setSortBy('Name')" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                        <a href="" ng-click="setSortBy('-Name')" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                        <a href="" ng-click="setSortBy('Name')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                        <a href="" ng-click="setSortBy('-Name')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
                     {{ 'NAME' | translate }}
                     </span>
                 </th>
                 <th class="email">
-                    <a href="" ng-click="setSortBy('Email')" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                    <a href="" ng-click="setSortBy('-Email')" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                    <a href="" ng-click="setSortBy('Email')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                    <a href="" ng-click="setSortBy('-Email')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
                     {{ 'EMAIL' | translate }}
                 </th>
                 <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
@@ -53,13 +53,13 @@
                     </td>
                     <td class="text-right actions">
                         <span>
-                            <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" pt-placement="left" ng-click="editContact(contact)">
+                            <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="left" class="divider" ng-click="deleteContacts(contact)">
+                            <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
                                 <i class="fa fa-trash-o"></i>
                             </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" pt-placement="left" class="divider" ng-click="sendMessageTo(contact)">
+                            <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
                                 <i class="fa fa-envelope-o"></i>
                             </a>
                         </span>
