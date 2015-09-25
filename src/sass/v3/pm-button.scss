@@ -144,4 +144,24 @@
     & > *:last-child {
         border-radius: 0 2px 2px 0;
     }
+    &.primary {
+        a {
+            background-color: #9397cd;
+            border-color: #9397cd;
+            color: #fff;
+            &:hover {
+                background-color: #7e82b4;
+                border-color: #7e82b4;
+            }
+            &:active,
+            &:focus {
+                background-color: #66669a;
+                border-color: #66669a;
+                outline: none;
+            }
+        }
+        .divider {
+            border-left: 1px solid #fff;
+        }
+    }
 }

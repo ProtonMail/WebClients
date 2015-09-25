@@ -3,49 +3,49 @@
     <div class="main">
         <div class="pull-right">
             <span class="pm_buttons">
-                <a href="#" class="pm_trigger" ng-dropdown>
+                <a href="" class="pm_trigger" ng-dropdown>
                     <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown">
-                    <a href="#">Submenu 1</a>
-                    <a href="#">Submenu 2</a>
-                    <a href="#">Submenu 3</a>
+                    <a href="">Submenu 1</a>
+                    <a href="">Submenu 2</a>
+                    <a href="">Submenu 3</a>
                 </span>
             </span>
             <span class="pm_buttons">
-                <a href="#" class="fa fa-list"></a>
-                <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+                <a href="" class="fa fa-list"></a>
+                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
                 <span class="pm_dropdown">
-                    <a href="#">Submenu 1</a>
-                    <a href="#">Submenu 2</a>
-                    <a href="#">Submenu 3</a>
+                    <a href="">Submenu 1</a>
+                    <a href="">Submenu 2</a>
+                    <a href="">Submenu 3</a>
                 </span>
             </span>
             <paginator page="page" total-items="messageCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
         </div>
         <label>
-            <input type="checkbox" name="selectAll" ng-model="allSelectedCheckbox" ng-click="selectAllMessages()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+            <input type="checkbox" name="selectAll" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+                <a href="">Submenu 1</a>
+                <a href="">Submenu 2</a>
+                <a href="">Submenu 3</a>
             </span>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">></a>
+            <a href="" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">></a>
             <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+                <a href="">Submenu 1</a>
+                <a href="">Submenu 2</a>
+                <a href="">Submenu 3</a>
             </span>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger" ng-dropdown>
+            <a href="" class="pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -60,16 +60,16 @@
             <input type="checkbox">
         </span>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-eye-slash hidden-xs" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-eye-slash hidden-xs" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')"></a>
-            <a href="#" class="fa fa-archive divider hidden-xs" ng-click="moveMessagesTo('archive')"></a>
-            <a href="#" class="fa fa-ban divider hidden-xs" ng-click=""></a>
+            <a href="" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-archive divider hidden-xs" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-ban divider hidden-xs" ng-click="moveMessagesTo('spam')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger" ng-dropdown>
+            <a href="" class="pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
@@ -81,13 +81,13 @@
 
     <div class="mobileSecondary">
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger" ng-dropdown>
+            <a href="" class="pm_trigger" ng-dropdown>
                 <strong>More</strong> <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+                <a href="">Submenu 1</a>
+                <a href="">Submenu 2</a>
+                <a href="">Submenu 3</a>
             </span>
         </span>
         <paginator page="page" total-items="messageCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />

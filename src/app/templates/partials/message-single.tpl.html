@@ -13,34 +13,34 @@
     </header>
     <div class="sub">
         <div class="actions">
-            <a href="#" class="pm_button round">
-                <i class="fa fa-mail-reply"></i>
-            </a>
-            <a href="#" class="pm_button round">
-                <i class="fa fa-mail-reply-all"></i>
-            </a>
-            <a href="#" class="pm_button round">
-                <i class="fa fa-mail-forward"></i>
-            </a>
-            <a href="#" class="pm_button round">
-                <i class="fa fa-angle-down"></i>
-            </a>
+            <span class="pm_buttons primary">
+                <a href="#" class="">
+                    <i class="fa fa-mail-reply"></i>
+                </a>
+                <a href="#" class="divider">
+                    <i class="fa fa-mail-reply-all"></i>
+                </a>
+                <a href="#" class="divider">
+                    <i class="fa fa-mail-forward"></i>
+                </a>
+                <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+            </span>
         </div>
         <i class="fa fa-mail-forward"></i>
-        {{ 'TO' | translate }} 
+        {{ 'TO' | translate }}
         <span ng-if="message.ToList.length">
             <em ng-repeat="email in ::message.ToList">{{ email | contact }}</em>
         </span>
         <div class="meta">
             <a href="#" class="fa fa-plus-square-o"></a>
             <span class="pm_labels inline">
-                <span class="pm_label">IMPORTANT</span> 
-                <span class="pm_label">PROTONMAIL</span> 
+                <span class="pm_label">IMPORTANT</span>
+                <span class="pm_label">PROTONMAIL</span>
             </span>
         </div>
-    </div>      
+    </div>
     <div class="frame">
-        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>        
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>

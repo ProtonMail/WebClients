@@ -70,8 +70,10 @@
             if(cache.hasOwnProperty(location)) {
                 for(var page in cache[location]) {
                     if(cache[location].hasOwnProperty(page)) {
-                        if(_.where(cache[location][page], { ID: id }).length > 0) {
-                            result = location;
+                        var message = _.findWhere(cache[location][page], { ID: id });
+
+                        if(angular.isDefined(message)) {
+                            result = message;
                         }
                     }
                 }
@@ -189,17 +191,9 @@
      */
     api.get = function(id) {
         var deferred = $q.defer();
-        var location = inCache(id);
+        var message = inCache(id);
 
-        if(location !== false) {
-            var message;
-
-            for(var page in cache[location]) {
-                if(cache[location].hasOwnProperty(page)) {
-                    message = _.findWhere(cache[location][page], { ID: id });
-                }
-            }
-
+        if(message !== false) {
             if(angular.isDefined(message.Body)) {
                 deferred.resolve(message);
             } else {
@@ -322,26 +316,24 @@
      */
     api.updateFlag = function(event) {
         var deferred = $q.defer();
-        var location = inCache(event.ID);
+        var message = inCache(event.ID);
 
         // Present in the current cache?
-        if(location !== false) {
-            var index = _.findIndex(cache[location], function(message) { return message.ID === event.ID; });
-            var sameLocation = cache[location][index].Location === event.Message.Location;
-            var currentMessage = cache[location][index];
+        if(message !== false) {
+            var sameLocation = message.Location === event.Message.Location;
 
             // Manage labels
             if(angular.isDefined(event.Message.LabelIDsAdded)) {
-                event.Message.LabelIDs = _.uniq(currentMessage.LabelIDs.concat(event.Message.LabelIDsAdded));
+                event.Message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
             }
 
             if(angular.isDefined(event.Message.LabelIDsRemoved)) {
-                event.Message.LabelIDs = _.difference(currentMessage.LabelIDs, event.Message.LabelIDsRemoved);
+                event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
             }
 
             if(sameLocation) {
                 // Just update the message
-                cache[location][index] = _.extend(currentMessage, event.Message);
+                message = _.extend(message, event.Message); // TODO reinsert the message at the correct placement
                 deferred.resolve();
             } else {
                 // NOTE The difficult case!!!
@@ -353,7 +345,7 @@
                 if(angular.isDefined(cache[location])) {
                     // Add the message in the new location
                     event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
-                    event.Message = _.extend(currentMessage, event.Message);
+                    event.Message = _.extend(message, event.Message);
                     api.create(event);
                 }
 
