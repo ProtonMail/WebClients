@@ -12,12 +12,12 @@
     var api = {};
     var cache = {};
     // {
-    //     0: {
-    //         0: [Resources],
-    //         1: [Resources],
-    //         3: [Resources],
+    //     0: { // inbox folder location
+    //         0: [Resources], // first page
+    //         1: [Resources], // second page
+    //         3: [Resources], // third page
     //     },
-    //     2: {
+    //     2: { // sent folder location
     //         0: [Resources],
     //         1: [Resources]
     //     }
@@ -50,6 +50,7 @@
 
     /**
      * Check if the request is in a cache context
+     * We check the existence of the Page and Location parameter
      * @param {Object} request
      */
     var cacheContext = function(request) {
@@ -115,7 +116,7 @@
         var deferred = $q.defer();
 
         Message.get({ id: id }).$promise.then(function(message) {
-            api.updateFlag({ ID: message.ID, Message: message });
+            // api.updateFlag({ ID: message.ID, Message: message });
             deferred.resolve(message);
         });
 
@@ -276,7 +277,7 @@
 
                     // Remove the last message
                     var removed = messages.pop();
-                    
+
                     cache[location][page] = messages;
                 } else if (page === 0 && message.Time > first.Time) { // Page 0
                     messages.unshift(message);
@@ -382,16 +383,16 @@
             console.log(event);
             switch (event.Action) {
                 case DELETE:
-                    promises.push(api.delete(event));
+                    // promises.push(api.delete(event));
                     break;
                 case CREATE:
-                    promises.push(api.create(event));
+                    // promises.push(api.create(event));
                     break;
                 case UPDATE_DRAFT:
-                    promises.push(api.updateDraft(event));
+                    // promises.push(api.updateDraft(event));
                     break;
                 case UPDATE_FLAG:
-                    promises.push(api.updateFlag(event));
+                    // promises.push(api.updateFlag(event));
                     break;
                 default:
                     break;
@@ -399,7 +400,6 @@
         });
 
         $q.all(promises).then(function() {
-            console.log('All promises are complete');
             api.callRefresh();
         });
     };
