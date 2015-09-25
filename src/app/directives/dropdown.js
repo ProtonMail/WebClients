@@ -91,7 +91,7 @@ angular.module("proton.dropdown", [])
     };
 })
 
-.directive('paginator', function () {
+.directive('paginator', function ($timeout) {
     return {
         restrict: 'E',
         replace: true,
@@ -106,8 +106,8 @@ angular.module("proton.dropdown", [])
             scope.pages = [];
 
             var disable = function() {
-                scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page;
-                scope.disableP = scope.page === 1;
+                scope.disableP = scope.page === 1; // Previous
+                scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page; // Next
             };
 
             var buildPages = function() {
@@ -129,7 +129,9 @@ angular.module("proton.dropdown", [])
 
             scope.select = function(p) {
                 scope.change(p);
-                disable();
+                $timeout(function() {
+                    disable();
+                }, 0 , true);
             };
 
             scope.next = function() {
