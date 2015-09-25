@@ -1,7 +1,7 @@
 section#pm_sidebar {
     display: block;
     padding: 15px 25px;
-    width: $sidebarWidth; 
+    width: $sidebarWidth;
     min-width: $sidebarWidth;
     box-sizing: border-box;
     float: left;
@@ -19,7 +19,7 @@ section#pm_sidebar {
             width: 1rem;
         }
     }
-    ul.menu { 
+    ul.menu {
         padding: 0;
         display: block;
         list-style-type: none;
@@ -80,7 +80,7 @@ section#pm_sidebar {
     }
 
     div.labels {
-        font-size: 14px;   
+        font-size: 14px;
         margin: 0 -15px 30px -15px;
         form {
             margin-bottom: .5rem;
@@ -100,7 +100,7 @@ section#pm_sidebar {
             ::-webkit-input-placeholder {
                color: #d9d9d9;
             }
-            :-moz-placeholder { 
+            :-moz-placeholder {
                color: #d9d9d9;
             }
             ::-moz-placeholder {
@@ -151,7 +151,6 @@ section#pm_sidebar {
                     }
                 }
             }
-            
         }
     }
     div.footer {
@@ -169,7 +168,7 @@ section#pm_sidebar {
             text-decoration: none;
             color: #cececf;
             font-size: 10px;
-        }        
+        }
     }
 }
 
