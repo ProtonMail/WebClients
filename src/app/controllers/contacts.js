@@ -449,15 +449,33 @@ angular.module("proton.controllers.Contacts", [
             var csvRows = [];
             var filename = 'contacts.csv';
 
+            var escape_for_csv = function(str) {
+
+                var escape = false;
+                if ( str.indexOf(',') !== -1 || str.indexOf('\n') !== -1 ) {
+                    escape = true;
+                }
+                if ( str.indexOf('"') !== -1 ) {
+                    str = str.replace(/"/g,'""');
+                    escape = true;
+                }
+
+                if ( escape ) {
+                    str = '"'+str+'"';
+                }
+
+                return str;
+            };
+
             _.forEach(authentication.user.Contacts, function(contact) {
-                contactsArray.push([contact.Name, contact.Email]);
+                contactsArray.push([escape_for_csv(contact.Name), escape_for_csv(contact.Email)]);
             });
 
             for(var i=0, l=contactsArray.length; i<l; ++i) {
                 csvRows.push(contactsArray[i].join(','));
             }
 
-            var csvString = csvRows.join("%0A");
+            var csvString = csvRows.join("\n");
             var blob = new Blob([csvString], { type: 'data:attachment/csv;' });
 
             saveAs(blob, filename);
