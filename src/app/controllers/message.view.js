@@ -149,11 +149,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
                     $scope.content = $sce.trustAsHtml(content);
-                    $timeout(function(){
+                    $scope.$$postDigest(function() {
                         tools.transformLinks('message-body');
                         $scope.setMessageHeadHeight();
                         $scope.setAttachmentHeight();
-                    }, 0, false);
+                    });
 
                     if(print) {
                         setTimeout(function() {
