@@ -142,7 +142,7 @@
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
-            // Messages present in the cache?
+            // Location and page defined?
             if(angular.isDefined(cache[location]) && angular.isDefined(cache[location][page])) {
                 var total;
                 var number;
@@ -170,6 +170,7 @@
                     }
                 }
 
+                // Supposed total equal to the total cache?
                 if(cache[location][page].length === number) {
                     deferred.resolve(cache[location][page]);
                 } else {
@@ -239,6 +240,17 @@
         deferred.resolve();
 
         return deferred.promise;
+    };
+
+    /**
+     * Remove page from cache location
+     * @param {String} location
+     * @param {String} page
+     */
+    api.clearPage = function(location, page) {
+        if(angular.isDefined(cache[location]) && angular.isDefined(cache[location][page])) {
+            delete cache[location][page];
+        }
     };
 
     /**
