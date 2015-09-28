@@ -13,16 +13,16 @@ $inputHeight: 32px;
     ::-webkit-input-placeholder {
        color: #aaaabf;
     }
-    :-moz-placeholder { 
-       color: #aaaabf;  
+    :-moz-placeholder {
+       color: #aaaabf;
     }
 
-    ::-moz-placeholder {  
-       color: #aaaabf;  
+    ::-moz-placeholder {
+       color: #aaaabf;
     }
 
-    :-ms-input-placeholder {  
-       color: #aaaabf;  
+    :-ms-input-placeholder {
+       color: #aaaabf;
     }
 
     select {
@@ -46,6 +46,7 @@ $inputHeight: 32px;
         font-size: 1em;
         border-radius: 2px;
         position: relative;
+        resize: none;
         &:focus {
             color: #9397cd;
             border-color: #9397cd;
@@ -102,7 +103,7 @@ $inputHeight: 32px;
             width: 60%;
             min-width: 60%;
         }
-    } 
+    }
     &.alt {
         .col {
             width: 25%;
@@ -112,5 +113,5 @@ $inputHeight: 32px;
                 min-width: 70%;
             }
         }
-    }     
+    }
 }
