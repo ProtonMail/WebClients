@@ -112,7 +112,7 @@ section#pm_sidebar {
             .fa-plus {
                 display: inline-block;
                 font-size: 10px;
-                color: #9397cd;
+                color: $primary;
                 width: 40px;
                 text-align: center;
             }
@@ -160,7 +160,7 @@ section#pm_sidebar {
         text-align: center;
         div.storage {
             strong {
-                color: #9397cd
+                color: $primary
             }
         }
         a {

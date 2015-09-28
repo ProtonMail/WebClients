@@ -93,12 +93,12 @@ Inpiration from 'esjay'
 .spinner:before {
     transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
     animation: 400ms rotateBefore infinite linear reverse, 800ms flash infinite linear;
-    background-color: #9397cd;
+    background-color: $primary;
 }
 .spinner:after {
     transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
     animation: 500ms rotateAfter infinite linear, 1000ms flash infinite linear;
-    background-color: #9397cd;  
+    background-color: $primary;  
 }
 @keyframes rotateBefore {
     from {

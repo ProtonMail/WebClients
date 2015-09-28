@@ -30,7 +30,7 @@
         bottom: 5rem;
         width: 50rem;
         margin-left: -25rem;
-        border: 5px solid #9397cd;
+        border: 5px solid $primary;
         box-sizing: border-box;
         .close {
             position: absolute;
@@ -42,7 +42,7 @@
             text-align: center;
             padding: 0;
             color: #fff;
-            background: #9397cd;
+            background: $primary;
             cursor: pointer;
             display: block;
             outline: none;

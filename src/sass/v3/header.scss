@@ -37,24 +37,24 @@ header#pm_header {
 		margin: 13px 0;
 		border: 1px solid #ededed;
 		border-radius: 35px;
-		color: #9397cd;
+		color: $primary;
 		width: 440px;
 		max-width: 28%;
 		margin-left: 25px;
 		box-sizing: border-box;
 		::-webkit-input-placeholder {
-		   color: #9397cd;
+		   color: $primary;
 		}
 		:-moz-placeholder { 
-		   color: #9397cd;  
+		   color: $primary;  
 		}
 
 		::-moz-placeholder {  
-		   color: #9397cd;  
+		   color: $primary;  
 		}
 
 		:-ms-input-placeholder {  
-		   color: #9397cd;  
+		   color: $primary;  
 		}		
 		label {
 			display: block;
@@ -119,11 +119,11 @@ header#pm_header {
 			}
 			&.active {
 				a {
-					border-top: 10px solid #9397cd;
+					border-top: 10px solid $primary;
 					padding-top: 0;
 					color: #3f3f3f;
 					.fa {
-						color: #9397cd;
+						color: $primary;
 					}
 					strong {
 						font-weight: 700;
@@ -153,7 +153,7 @@ header#pm_header {
 			height: 35px;
 	        line-height: 35px;
 	        border-radius: 2px;
-	        background-color: #9397cd;
+	        background-color: $primary;
 	        text-align: center;
 	        color: #fff; 
 	        text-transform: uppercase;

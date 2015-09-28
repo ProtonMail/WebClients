@@ -48,8 +48,8 @@ $inputHeight: 32px;
         position: relative;
         resize: none;
         &:focus {
-            color: #9397cd;
-            border-color: #9397cd;
+            color: $primary;
+            border-color: $primary;
             outline: none;
         }
         &[disabled],

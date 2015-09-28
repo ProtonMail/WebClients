@@ -391,6 +391,8 @@ angular.module("proton.authentication", [
         // Removes all connection data
         logout: function(reload) {
 
+            $rootScope.loggingOut = true;
+            
             if (reload===undefined) {
                 reload = true;
             }

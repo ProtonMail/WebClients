@@ -22,8 +22,8 @@
         outline: none;
     }
     &.primary {
-        background-color: #9397cd;
-        border-color: #9397cd;
+        background-color: $primary;
+        border-color: $primary;
         color: #fff;
         &:hover {
             background-color: #7e82b4;
@@ -50,7 +50,7 @@
         border-radius: 30px;
         padding: 0;
         .fa {
-            color: #9397cd;
+            color: $primary;
         }
         &:hover {
             background-color: #fafafa;
@@ -146,8 +146,8 @@
     }
     &.primary {
         a {
-            background-color: #9397cd;
-            border-color: #9397cd;
+            background-color: $primary;
+            border-color: $primary;
             color: #fff;
             &:hover {
                 background-color: #7e82b4;

@@ -165,19 +165,6 @@ module.exports = function(grunt) {
             ]
         },
 
-        aglio: {
-            build: {
-                files: {
-                    "./api/index.html": [
-                        "./api/specs/main.md",
-                        "./api/specs/messages.md",
-                        "./api/specs/contacts.md"
-                    ],
-                    theme: "default"
-                }
-            }
-        },
-
         forever: {
             mock_server: {
                 options: {
@@ -208,12 +195,6 @@ module.exports = function(grunt) {
                 }
             },
 
-            api_doc: {
-                options: {
-                    base: "./api",
-                    port: 4001
-                }
-            }
         },
 
         copy: {
@@ -345,16 +326,6 @@ module.exports = function(grunt) {
                         "<%= html2js.common.dest %>",
                     ],
                     "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
-                },
-                nonull: true
-            },
-            compile_api_spec: {
-                files: {
-                    "./api/blueprint.md": [
-                        "./api/specs/main.md",
-                        "./api/specs/messages.md",
-                        "./api/specs/contacts.md"
-                    ]
                 },
                 nonull: true
             }
@@ -564,15 +535,6 @@ module.exports = function(grunt) {
                 }
             },
 
-            api_spec: {
-                files: ["api/specs/*"],
-                tasks: [
-                    "aglio:build",
-                    "concat:compile_api_spec",
-                    "forever:mock_server:restart",
-                    "delta"
-                ]
-            }
         },
 
         shell: {
@@ -582,7 +544,7 @@ module.exports = function(grunt) {
                     "git init",
                     "git remote add origin git@github.com:ProtonMail/Angular.git",
                     "git fetch origin",
-                    "git checkout -b deploy origin/deploy",
+                    "git checkout -b deploy3 origin/deploy3",
                     "rm -rf *"
                 ].join("&&")
             },
@@ -600,7 +562,8 @@ module.exports = function(grunt) {
                     // "[ -d vendor/ ] && rm -r vendor",
                     "bower update"
                 ].join("&&")
-            }
+            },
+
         },
 
         wait: {
@@ -622,6 +585,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-uncss');
 
     grunt.renameTask("watch", "delta");
+
     grunt.registerTask("watch", [
         "notify_hooks",
         "ngconstant:dev",
@@ -629,10 +593,7 @@ module.exports = function(grunt) {
         "jshint",
         "karma:watch:start",
         "connect:watch",
-        "connect:api_doc",
-        "concat:compile_api_spec",
         "forever:mock_server:start",
-        "delta",
         "delta"
     ]);
 
@@ -684,9 +645,9 @@ module.exports = function(grunt) {
         "wait:push"
     ]);
 
+
     grunt.registerTask("bower", [
         "shell:bower"
     ]);
 
-    grunt.registerTask("default", ["watch"]);
 };

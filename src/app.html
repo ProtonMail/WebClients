@@ -73,7 +73,7 @@ ng-class="{
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
 
-<div id="pm_loader" ng-if="networkActivity.loading()">
+<div id="pm_loader" ng-if="networkActivity.loading() || loggingOut" ng-class="{ 'full': loggingOut }">
     <div class="spinner"></div>
 </div>
 <div ui-view="main" autoscroll="false" id="body"></div>
