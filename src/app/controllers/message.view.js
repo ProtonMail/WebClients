@@ -149,11 +149,11 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
                     $scope.content = $sce.trustAsHtml(content);
-                    $scope.$$postDigest(function() {
+                    $timeout(function() {
                         tools.transformLinks('message-body');
                         $scope.setMessageHeadHeight();
                         $scope.setAttachmentHeight();
-                    });
+                    },0,false);
 
                     if(print) {
                         setTimeout(function() {
@@ -186,14 +186,14 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                             content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
                         }
 
-                        showMessage(content);
+                        $scope.$evalAsync(function() { showMessage(content); });
                     });
 
                     mailparser.write(result);
                     mailparser.end();
                 }
                 else {
-                    showMessage(result);
+                    $scope.$evalAsync(function() { showMessage(result); });
                 }
 
             },
