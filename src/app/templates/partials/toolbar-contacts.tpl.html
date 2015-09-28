@@ -10,15 +10,15 @@
 
     <div class="pull-right">
 
-        <span class="pull-right">
+        <span class="pull-right" ng-show="contacts.length > 0">
             <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
         </span>
 
-        <a class="pm_button" href="" ng-class="{ disabled: contacts.length === 0 }" ng-click="deleteAllContacts()">
+        <a class="pm_button" href="" ng-click="deleteAllContacts()">
             <i class="fa fa-trash"></i> <strong>{{ 'DELETE_ALL_CONTACTS' | translate }}</strong>
         </a>
 
-        <a class="pm_button" href="" ng-class="{ disabled: contacts.length === 0 }" ng-click="downloadContacts()">
+        <a class="pm_button" href="" ng-click="downloadContacts()">
             <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_CONTACTS' | translate }}</strong>
         </a>
 

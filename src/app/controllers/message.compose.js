@@ -94,6 +94,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         }
     });
 
+    $scope.$on('squireHeightChanged', function(event) {
+        console.log('squireHeightChanged');
+    });
+
     function onResize() {
         clearTimeout(timeoutStyle);
 
@@ -405,12 +409,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.initMessage = function(message, save) {
-
-        $timeout( function() {
-            $rootScope.$broadcast('squireHeightChanged');
-            console.log('squireHeightChanged');
-        }, 2000);
-
         $rootScope.activeComposer = true;
 
         if (authentication.user.ComposerMode === 1) {
@@ -440,6 +438,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
+            $rootScope.$broadcast('squireHeightChanged');
             $scope.composerStyle();
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
@@ -474,7 +473,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
             ADD_ATTR: ['target'],
             FORBID_TAGS: ['style']
         });
-    };    
+    };
 
     $scope.editorStyle = function(message) {
         var styles = {};
@@ -1125,7 +1124,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         var id = message.ID;
 
         $rootScope.activeComposer = false;
-        $rootScope.maximizedComposer = false;        
+        $rootScope.maximizedComposer = false;
 
         if (save === true) {
             $scope.save(message, true, false, false);

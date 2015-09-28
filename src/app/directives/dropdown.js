@@ -120,7 +120,7 @@ angular.module("proton.dropdown", [])
                     pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
                 }
 
-                for (var i = 1; i < pages; ++i) {
+                for (var i = 1; i <= pages; ++i) {
                     temp.push(i);
                 }
 
