@@ -123,41 +123,38 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
         message.clearTextBody().then(
             function(result) {
-                var content;
-
-                if(print === true) {
-                    content = result;
-                } else {
-                    content = message.clearImageBody(result);
-                }
-
-                // safari warning
-                if(!$rootScope.isFileSaverSupported) {
-                    $scope.safariWarning = true;
-                }
-
-                content = DOMPurify.sanitize(content, {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style']
-                });
-
-                if (tools.isHtml(content)) {
-                    $scope.isPlain = false;
-                } else {
-                    $scope.isPlain = true;
-                }
-
-                // for the welcome email, we need to change the path to the welcome image lock
-                content = content.replace("/img/app/welcome_lock.gif", "assets/img/emails/welcome_lock.gif");
-
 
                 var showMessage = function(content) {
+
+                    if(print !== true) {
+                        content = message.clearImageBody(content);
+                    }
+
+                    // safari warning
+                    if(!$rootScope.isFileSaverSupported) {
+                        $scope.safariWarning = true;
+                    }
+
+                    content = DOMPurify.sanitize(content, {
+                        ADD_ATTR: ['target'],
+                        FORBID_TAGS: ['style']
+                    });
+
+                    // for the welcome email, we need to change the path to the welcome image lock
+                    content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
+
+                    if (tools.isHtml(content)) {
+                        $scope.isPlain = false;
+                    } else {
+                        $scope.isPlain = true;
+                    }
+
                     $scope.content = $sce.trustAsHtml(content);
-                    $timeout(function(){
+                    $scope.$$postDigest(function() {
                         tools.transformLinks('message-body');
                         $scope.setMessageHeadHeight();
                         $scope.setAttachmentHeight();
-                    }, 0, false);
+                    });
 
                     // broken images
                     $("img").error(function () {
@@ -180,6 +177,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                     mailparser.on('end', function(mail) {
 
+                        var content;
                         if (mail.html) {
                             content = mail.html;
                         }
@@ -195,14 +193,13 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                         }
 
                         showMessage(content);
-
                     });
 
-                    mailparser.write(content);
+                    mailparser.write(result);
                     mailparser.end();
                 }
                 else {
-                    showMessage(content);
+                    showMessage(result);
                 }
 
             },

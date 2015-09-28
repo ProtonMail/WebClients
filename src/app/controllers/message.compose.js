@@ -1027,10 +1027,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                     }
                                 }
 
-                                if(!!authentication.user.AutoSaveContacts) {
-                                    contactManager.save(message);
-                                }
-
                                 $scope.sending = false;
 
                                 if(angular.isDefined(result.Error)) {
