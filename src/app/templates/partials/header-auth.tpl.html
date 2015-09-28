@@ -31,7 +31,7 @@
                 <strong>{{ 'CONTACTS' | translate }}</strong>
             </a>
         </li>
-        <li ui-sref-active="active">
+        <li ng-class="{'active': activeSettings()}">
             <a href="#" ui-sref="secured.settings">
                 <i class="fa fa-cogs"></i>
                 <strong>{{ 'SETTINGS' | translate }}</strong>

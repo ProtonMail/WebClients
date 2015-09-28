@@ -52,6 +52,13 @@ angular.module("proton.controllers.Header", [])
         return folders.indexOf(mailbox) !== -1;
     };
 
+    $scope.activeSettings = function() {
+        var route = $state.current.name.replace('secured.', '');
+        var settings = ['settings', 'labels', 'security', 'theme'];
+
+        return settings.indexOf(route) !== -1;
+    };
+
     $scope.searchContacts = function() {
         if($scope.params.searchContactInput.length > 0) {
             $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);

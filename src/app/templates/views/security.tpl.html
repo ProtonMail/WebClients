@@ -7,35 +7,35 @@
         <h1>Key Export (Experimental)</h1>
         <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
         <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
-        <button ng-click="exportPublicKey($event)" class="btn btn-default" ng-disabled="isSafari">
-            <i class="fa fa-download"></i> Download PublicKey
+        <button ng-click="exportPublicKey($event)" class="pm_button" ng-disabled="isSafari">
+            <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_PUBLICKEY' | translate }}</strong>
         </button>
-
-        <hr>
 
         <h1 class="securityTitle">{{ 'AUTHENTICATION_LOGS' | translate }}</h1>
 
-        <div class="btn-group pull-right" ng-hide="doLogging == 0">
-            <a class="btn btn-default" ng-click="clearLogs()">
-                <i class="fa fa-times-circle"></i> {{ 'CLEAR_LOGS' | translate }}
+        <div class="pull-right" ng-hide="doLogging == 0">
+            <a class="pm_button" ng-click="clearLogs()">
+                <i class="fa fa-times-circle"></i> <strong>{{ 'CLEAR_LOGS' | translate }}</strong>
             </a>
-            <a ng-click="downloadLogs()" class="btn btn-default">
-                <i class="fa fa-download"></i> {{ 'DOWNLOAD_LOGS' | translate }}
+            <a class="pm_button" ng-click="downloadLogs()">
+                <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_LOGS' | translate }}</strong>
             </a>
         </div>
 
-        <a
-        href
-        class="btn btn-default btn-sm"
-        ng-class="{ 'disabled': doLogging == 0 }"
-        ng-click="initLogs()">
+        <a class="pm_button" ng-class="{ 'disabled': doLogging == 0 }" ng-click="initLogs()">
             <i class="fa fa-refresh"></i>
         </a>
 
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</button>
-            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 1}" ng-click="setLogging(1)">Basic Logging</button>
-            <button type="button" class="btn btn-default" ng-class="{'active': doLogging === 2}" ng-click="setLogging(2)">Advanced Logging</button>
+        <div class="pm_buttons">
+            <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">
+                <strong>{{ disabledText }}</strong>
+            </a>
+            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)">
+                <strong>{{ 'BASIC_LOGGING' | translate }}</strong>
+            </a>
+            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)">
+                <strong>{{ 'ADVANCED_LOOGING'}}</strong>
+            </a>
         </div>
 
         <div id="logArea" ng-show="doLogging != 0">
@@ -110,7 +110,7 @@
                 direction-links="false" ></pagination>
             </div>
         </div>
-        
+
 
     </div>
 </div>
