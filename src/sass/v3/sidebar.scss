@@ -47,7 +47,7 @@ section#pm_sidebar {
                     float: left;
                     width: 25px;
                     text-align: left;
-                    color: #ccc;
+                    color: $gray-light;
                 }
                 .fa-repeat {
                     color: #d2d2d2;
@@ -87,7 +87,7 @@ section#pm_sidebar {
             input {
                 display: inline-block;
                 border: none;
-                border-bottom: 1px solid #ededed;
+                border-bottom: 1px solid $border;
                 padding-left: 10px;
                 line-height: 30px;
                 height: 30px;

@@ -5,9 +5,9 @@ html.protonmail {
 	} 
 	body {
 		overflow-y: hidden;
-		background: #505061;
+		background: $secondary;
 		&.secure {
-			background: #fff;
+			background: $white;
 		}	
 	}
 }

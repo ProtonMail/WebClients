@@ -18,7 +18,7 @@
 			clear:both;
 			float: left;
 			width: 100%;
-			border-bottom: 1px solid #ededed;
+			border-bottom: 1px solid $border;
 			.clearfix {
 				padding: 5px;
 				margin: 0 -5px;
@@ -36,7 +36,7 @@
 					iframe {
 						width: 100%;
 						height: 10rem;
-						border: 1px solid #ededed;
+						border: 1px solid $border;
 						border-top-width: 0;
 					}
 				}
@@ -49,14 +49,14 @@
 						padding: 0;
 						margin: 0;
 						list-style-type: none;
-						border: 1px solid #ededed;
+						border: 1px solid $border;
 						border-bottom-width: 0;
 						li {
 							margin: 0;
 							padding: 0 1rem;
 							line-height: 2rem;
 							list-style-type: none;
-							border-bottom: 1px solid #ededed;
+							border-bottom: 1px solid $border;
 							position: relative;
 							.fa.fa-ellipsis-v {
 								margin-right: .5rem;
@@ -68,7 +68,7 @@
 								bottom: 0;
 								line-height: 2rem;
 								padding: 0 1rem;
-								background: #fff;
+								background: $white;
 								color: $primary;
 							}
 						}

@@ -47,7 +47,7 @@
 		}
 		th {
 			background: #f6f6f6;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid $gray-light;
 			color: #838897;
 			font-weight: 400;
 			.fa {
@@ -55,8 +55,8 @@
 			}
 		}		
 		td {
-			border-bottom: 1px solid #ededed;
-			color: #666;
+			border-bottom: 1px solid $border;
+			color: $gray;
 		}
 	}
 	.tableWrapper {}

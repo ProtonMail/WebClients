@@ -14,11 +14,11 @@
 		div.message {
 			position: relative;
 			border: 1px solid transparent;		
-			border-top-color: #ededed;
+			border-top-color: $border;
 			padding: 12px 0 12px 45px;
 			cursor: pointer;
 			border-radius: 2px;
-			color: #666;
+			color: $gray;
 			.pm_checkbox input {
 				margin: 0;
 			}
@@ -102,10 +102,10 @@
 				color: $primary
 			}
 			a.fa-star {
-				color: #e7d360
+				color: $orange
 			}
 			span.readIndicator {
-				background: #a8d24c;
+				background: $readBubble;
 				display: inline-block;
 				border-radius: 10px;
 				width: 10px;
@@ -115,7 +115,7 @@
 			header {
 				line-height: 20px;
 				height: 20px;
-				color: #666;
+				color: $gray;
 				font-size: 14px;
 				p {
 					margin: 0;
@@ -128,7 +128,7 @@
 			article {
 				line-height: 18px;
 				height: 18px;
-				color: #666;
+				color: $gray;
 				font-size: 14px;
 				.pm_labels {
 					position: absolute;

@@ -24,7 +24,7 @@
     .modal-dialog {
         position: absolute;
         z-index: 2;
-        background: #fff;
+        background: $white;
         left: 50%;
         top: 5rem;
         bottom: 5rem;
@@ -41,7 +41,7 @@
             line-height: 25px;
             text-align: center;
             padding: 0;
-            color: #fff;
+            color: $white;
             background: $primary;
             cursor: pointer;
             display: block;

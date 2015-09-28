@@ -2,8 +2,8 @@
 	position: absolute;
 	left: -1px;
 	top: 100%;
-	background: #fff;
-	border: 1px solid #ededed;
+	background: $white;
+	border: 1px solid $border;
 	padding: 5px 15px;
 	z-index: 2;
 	margin-top: 5px;
@@ -31,7 +31,7 @@
 		line-height: 25px !important;
 		height: 25px !important;
 		padding: 0 !important;
-		border-bottom: 1px solid #ededed;
+		border-bottom: 1px solid $border;
 		white-space: nowrap;
 		&:hover {
 			background-color: transparent !important;

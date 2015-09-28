@@ -14,7 +14,7 @@ body.maximizedComposer {
 		border-radius: 2px;
 		width: 480px;
 		height: 530px;
-		background: #fff;
+		background: $white;
 		float: right;
 		margin: 0 25px 25px 0;
 		display: -webkit-flex;
@@ -61,7 +61,7 @@ body.maximizedComposer {
 		}		
 		header {
 			overflow: hidden;
-			background: #515061;
+			background: $secondary;
 			border-radius: 2px 2px 0 0;
 			position: relative;
 			box-sizing: border-box;
@@ -74,7 +74,7 @@ body.maximizedComposer {
 				float: left;
 				width: 22rem;
 				display: inline-block;
-				color: #fff;
+				color: $white;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
@@ -92,7 +92,7 @@ body.maximizedComposer {
 				color: #dadae5;
 				border-color: #6b697e;
 				&:hover {
-					color: #fff;
+					color: $white;
 				}
 			}
 		}
@@ -107,7 +107,7 @@ body.maximizedComposer {
 					display: flex;
 					height: $composerRowHeight;
 					line-height: $composerRowHeight;
-					border-bottom: 1px solid #ededed;
+					border-bottom: 1px solid $border;
 					label {
 						min-width: 3.5rem;
 						width: 3.5rem;
@@ -157,7 +157,7 @@ body.maximizedComposer {
 			line-height: $composerRowHeight;
 			height: $composerRowHeight;
 			padding: 10px;
-			border-top: 1px solid #ededed;
+			border-top: 1px solid $border;
 			border-radius: 0 0 2px 2px;
 		}
 	}

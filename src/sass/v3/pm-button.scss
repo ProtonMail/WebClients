@@ -4,7 +4,7 @@
     padding: 0 10px;
     height: 35px;
     line-height: 35px;
-    border: 1px solid #ededed;
+    border: 1px solid $border;
     border-radius: 2px;
     box-sizing: border-box;
     display: inline-block;
@@ -24,15 +24,15 @@
     &.primary {
         background-color: $primary;
         border-color: $primary;
-        color: #fff;
+        color: $white;
         &:hover {
             background-color: #7e82b4;
             border-color: #7e82b4;
         }
         &:active,
         &:focus {
-            background-color: #66669a;
-            border-color: #66669a;
+            background-color: $gray69a;
+            border-color: $gray69a;
             outline: none;
         }
     }
@@ -79,7 +79,7 @@
 }
 
 .pm_buttons {
-    border: 1px solid #ededed;
+    border: 1px solid $border;
     border-radius: 2px;
     display: block;
     float: left;
@@ -136,7 +136,7 @@
         text-transform: uppercase;
     }
     .divider {
-        border-left: 1px solid #ededed;
+        border-left: 1px solid $border;
     }
     & > *:first-child {
         border-radius: 2px 0 0 2px;
@@ -148,15 +148,15 @@
         a {
             background-color: $primary;
             border-color: $primary;
-            color: #fff;
+            color: $white;
             &:hover {
                 background-color: #7e82b4;
                 border-color: #7e82b4;
             }
             &:active,
             &:focus {
-                background-color: #66669a;
-                border-color: #66669a;
+                background-color: $gray69a;
+                border-color: $gray69a;
                 outline: none;
             }
         }

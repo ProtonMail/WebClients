@@ -10,7 +10,7 @@
 		.message {
 			height: $rowHeight;
 			line-height: $rowHeight;
-			border-bottom: 1px solid #ededed;
+			border-bottom: 1px solid $border;
 			font-size: 14px;
 			padding: 0;
 			color: #777;
@@ -18,7 +18,7 @@
 			display: flex;
 			padding-right: 5px;
 			&:first-child {
-				border-top: 1px solid #ededed;
+				border-top: 1px solid $border;
 			}
 			& > * {
 				display: block;
@@ -68,13 +68,13 @@
 				color: $primary
 			}
 			a.fa-star {
-				color: #e7d360
+				color: $orange
 			}
 			.readIndicator {
 				padding-right: 5px;
 				padding-left: 20px;
 				span {
-					background: #a8d24c;
+					background: $readBubble;
 					display: inline-block;
 					border-radius: 10px;
 					width: 10px;
@@ -184,7 +184,7 @@
 			position: relative;
 			display: block;
 			box-sizing: border-box;
-			background: #fff;
+			background: $white;
 			& > * {
 				line-height: 25px;
 				height: 25px;
@@ -198,7 +198,7 @@
 			&.unread {
 				margin: 0;
 				padding: 0 15px 0 75px;
-				background-color: #fff;
+				background-color: $white;
 				color: #333;
 				.pm_labels {
 					&:before {
@@ -235,7 +235,7 @@
 				right: 15px;
 				top: 5px;
 				z-index: 2;
-				background: #fff;
+				background: $white;
 			}
 			.sender,
 			.subject {
@@ -257,7 +257,7 @@
 				margin-right: 0;
 				.pm_labels {
 					right: -10px;
-					background-color: #fff;
+					background-color: $white;
 					width: 5rem;
 					min-width: 5rem;
 					.pm_label {
@@ -278,10 +278,10 @@
 			&.unread {
 				.subject {
 					.pm_labels {
-						background-color: #fff;
+						background-color: $white;
 						.pm_label {
 							box-shadow: 0 0 0 4px #fff;
-							background-color: #fff;
+							background-color: $white;
 						}
 						&:before {
 							background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);

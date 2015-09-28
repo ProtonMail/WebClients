@@ -6,7 +6,7 @@
 	list-style-type: none;
 	height: $composerRowHeight;
 	line-height: $composerRowHeight;
-	border: 1px solid #ededed;
+	border: 1px solid $border;
 	background-color: #fafafa;
 	li {
 		display: block;
@@ -26,7 +26,7 @@
 			width: 1px;
 			min-width: 1px;
 			flex-grow: initial;
-			background: #ededed;
+			background: $border;
 		}
 	}
 	.squire-popover {

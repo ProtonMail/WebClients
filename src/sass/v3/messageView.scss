@@ -9,7 +9,7 @@
 		min-height: ($toolbarHeight+1);
 		box-sizing: border-box;
 		margin-right: 25px;
-		border-bottom: 1px solid #ededed;
+		border-bottom: 1px solid $border;
 	    h1 {
 	        font-size: 24px;
 	        font-weight: 400;
@@ -40,7 +40,7 @@
 			color: $primary
 		}
 		.fa-star {
-		 	color: #e7d360
+		 	color: $orange
 		}
     }
     #pm_thread {
@@ -53,7 +53,7 @@
     }
     article.message {
     	clear: both;
-    	border-bottom: 1px solid #ededed;
+    	border-bottom: 1px solid $border;
     	header {
     		overflow: hidden;
     		font-size: 15px;
@@ -85,7 +85,7 @@
 				color: $primary;
 			}
 			.fa-star {
-			 	color: #e7d360;
+			 	color: $orange;
 			}
     		.meta {
     			float: right;

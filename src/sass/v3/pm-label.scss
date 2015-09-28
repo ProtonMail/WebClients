@@ -5,7 +5,7 @@
 	height: 18px;
 	z-index: 3;
 	overflow: visible !important;
-	background: #fff;
+	background: $white;
 	min-width: 10rem;
 	box-sizing: border-box;
 	&:before {
@@ -45,14 +45,14 @@
 		bottom: 0;
 		top: 0;
 		left: auto;
-		background: #fff;
+		background: $white;
 		box-shadow: 0 0 0 4px #fff;
 		height: 18px;
 		line-height: 14px;
 		border-radius: 2px;
 		font-size: 8px;
 		text-transform: uppercase;
-		border: 2px solid #666;
+		border: 2px solid $gray;
 		border-color: #66c;
 		color: #66c;
 		padding: 0 .35rem;
