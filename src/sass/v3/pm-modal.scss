@@ -2,7 +2,7 @@
 
 .pm_modal {
     position: fixed;
-    z-index: 9999;  
+    z-index: 9999;
     display: none;
     box-sizing: border-box;
     left: 0;
@@ -19,7 +19,7 @@
         right: 0;
         bottom: 0;
         z-index: 1;
-        background: rgba(0,0,0,.2);       
+        background: rgba(0,0,0,.2);
     }
     .modal-dialog {
         position: absolute;
@@ -47,7 +47,7 @@
             display: block;
             outline: none;
             border: none;
-        }        
+        }
         .modal-content {
             overflow: auto;
             position: absolute;
@@ -71,7 +71,10 @@
                 font-weight: 400;
                 color: #555;
             }
-            color: #555;
+            .clearfix {
+                padding: 5px;
+                margin: 0 -5px;    
+            }
         }
     }
 }
