@@ -1,0 +1,79 @@
+.themeJason {
+    background: #505061 !important;
+    #pm_background,
+    section#pm_sidebar,
+    header#pm_header a.logo {
+        width: 20px;
+        min-width: 20px;
+        overflow: hidden;
+        box-sizing: border-box;
+            -webkit-transition: width .25s linear;
+               -moz-transition: width .25s linear;
+                -ms-transition: width .25s linear;
+                 -o-transition: width .25s linear;
+                    transition: width .25s linear;        
+        & > * {
+            visibility: hidden;
+        }
+        &:hover {
+            width: 190px;
+            min-width: 190px;
+            -webkit-transition: width .25s linear;
+               -moz-transition: width .25s linear;
+                -ms-transition: width .25s linear;
+                 -o-transition: width .25s linear;
+                    transition: width .25s linear;
+            & > * {
+                visibility: visible;
+            }
+        }
+    }
+    #pm_header {
+        height: 20px;
+        background: #505061;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: none !important;
+            -webkit-transition: width .25s linear;
+               -moz-transition: width .25s linear;
+                -ms-transition: width .25s linear;
+                 -o-transition: width .25s linear;
+                    transition: width .25s linear;        
+        & > * {
+            visibility: hidden;
+        }
+        &:hover {
+            height: 60px;
+            -webkit-transition: width .25s linear;
+               -moz-transition: width .25s linear;
+                -ms-transition: width .25s linear;
+                 -o-transition: width .25s linear;
+                    transition: width .25s linear;    
+            & > * {
+                visibility: visible;
+            }        
+        }
+    }
+    #pm_columns {
+        margin-left: 20px;
+    }
+    #pm_view {
+        background: #fafafa;
+    }
+    #pm_columns > .list {
+        box-shadow: .25rem 0 .5rem rgba(0,0,0,.25);
+        position: relative;
+        background: #fff;
+        z-index: 999;
+    }
+    #pm_columns #pm_view {
+        margin-right: 25px;
+    }    
+    #pm_toolbar {
+        background: $primary;
+        .pm_button,
+        .pm_buttons a {
+            background: #fff;
+        }
+    }
+}
