@@ -69,7 +69,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageCounter: function(json) {
 				if(angular.isDefined(json)) {
-					var counters = {Labels:{}, Locations:{}, Starred: json.Starred};
+					var counters = {Labels: {}, Locations: {}, Starred: json.Starred};
 
 					if (messageCounts.unreadChangedLocally) {
 						messageCounts.unreadChangedLocally = false;

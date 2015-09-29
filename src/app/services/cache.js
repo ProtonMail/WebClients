@@ -12,20 +12,22 @@
     var api = {};
     var cache = {};
     // {
-    //     0: { // inbox folder location
-    //         0: [Resources], // first page
-    //         1: [Resources], // second page
-    //         3: [Resources], // third page
-    //     },
-    //     2: { // sent folder location
-    //         0: [Resources],
-    //         1: [Resources]
-    //     }
+    //     0: [MsgID, MsgID, MsgID], // inbox folder
+    //     2: [MsgID, MsgID, MsgID] // sent folder
+    // }
+    var hash = {};
+    // {
+    //     MsgID: [metadata/message],
+    //     MsgID: [metadata/message],
+    //     MsgID: [metadata/message],
+    //     MsgID: [metadata/message]
     // }
     var DELETE = 0;
     var CREATE = 1;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAG = 3;
+    var METADATA = 4;
+    var MESSAGE = 5;
     // Parameters shared between api / cache / message view / message list
     var fields = [
         "ID",
@@ -50,37 +52,26 @@
 
     /**
      * Check if the request is in a cache context
-     * We check the existence of the Page and Location parameter
      * @param {Object} request
+     * @return {Boolean}
      */
     var cacheContext = function(request) {
-        var result = Object.keys(request).length === 2 && angular.isDefined(request.Page) && angular.isDefined(request.Location);
+        var two = Object.keys(request).length === 2;
+        var page = angular.isDefined(request.Page);
+        var basic = angular.isDefined(request.Location);
+        var starred = angular.isDefined(request.Starred);
+        var label = angular.isDefined(request.Label);
 
-        return result;
+        return two && page && (basic || starred || label);
     };
 
     /**
      * Check if the message is located in the cache and return the location
      * @param {String} id - message ID searched
+     * @return {Boolean}
      */
     var inCache = function(id) {
-        var result = false;
-
-        for(var location in cache) {
-            if(cache.hasOwnProperty(location)) {
-                for(var page in cache[location]) {
-                    if(cache[location].hasOwnProperty(page)) {
-                        var message = _.findWhere(cache[location][page], { ID: id });
-
-                        if(angular.isDefined(message)) {
-                            result = message;
-                        }
-                    }
-                }
-            }
-        }
-
-        return result;
+        return angular.isDefined(hash[id]);
     };
 
     /**
@@ -93,9 +84,26 @@
         }
     };
 
+    var getLocation = function(request) {
+        var location = request.Location;
+
+        // starred case
+        if(angular.isDefined(request.Starred)) {
+            location = 5;
+        }
+
+        // label case
+        if(angular.isDefined(request.Label)) {
+            location = request.Label;
+        }
+
+        return location;
+    };
+
     /**
      * Call the API to get messages
      * @param {Object} request
+     * @return {Promise}
      */
     var queryMessages = function(request) {
         var deferred = $q.defer();
@@ -113,6 +121,7 @@
     /**
      * Call the API to get message
      * @param {String} id
+     * @return {Promise}
      */
     var getMessage = function(id) {
         var deferred = $q.defer();
@@ -128,10 +137,11 @@
     /**
      * Return messages with request specified
      * @param {Object} request
+     * @return {Promise}
      */
     api.query = function(request) {
         var deferred = $q.defer();
-        var location = request.Location;
+        var location = getLocation(request);
         var callApi = function() {
             deferred.resolve(queryMessages(request));
         };
@@ -142,15 +152,15 @@
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
 
-            // Location and page defined?
-            if(angular.isDefined(cache[location]) && angular.isDefined(cache[location][page])) {
+            // Location defined?
+            if(angular.isDefined(cache[location])) {
                 var total;
                 var number;
                 var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
 
                 switch(mailbox) {
-                    case 'labels':
-                        total = $rootScope.messageTotals.Locations[$stateParams.label];
+                    case 'label':
+                        total = $rootScope.messageTotals.Labels[$stateParams.label];
                         break;
                     case 'starred':
                         total = $rootScope.messageTotals.Starred;
@@ -171,8 +181,17 @@
                 }
 
                 // Supposed total equal to the total cache?
-                if(cache[location][page].length === number) {
-                    deferred.resolve(cache[location][page]);
+                if(cache[location].slice(start, end).length === number) {
+                    var messages = [];
+                    var cached = cache[location].slice(start, end);
+
+                    for (var i = 0; i < cached.length; i++) {
+                        var id = cached[i];
+
+                        messages.push(hash[id]);
+                    }
+
+                    deferred.resolve(messages);
                 } else {
                     callApi();
                 }
@@ -189,12 +208,15 @@
     /**
      * Return the message specified by the id from the cache or the back-end
      * @param {String} id
+     * @return {Promise}
      */
     api.get = function(id) {
         var deferred = $q.defer();
-        var message = inCache(id);
+        var result = inCache(id);
 
-        if(message !== false) {
+        if(result === true) {
+            var message = hash[id];
+
             if(angular.isDefined(message.Body)) {
                 deferred.resolve(message);
             } else {
@@ -214,14 +236,24 @@
      */
     api.store = function(request, messages) {
         var page = request.Page || 0;
-        var location = request.Location;
+        var index = page * CONSTANTS.MESSAGES_PER_PAGE;
+        var howmany = messages.length;
+        var location = getLocation(request);
         var context = cacheContext(request);
+        var messageIDs = _.map(messages, function(message) { return message.ID; });
 
         exist(location);
 
         if(context && messages.length > 0) {
-            // Store message datas at the correct placement
-            cache[location][page] = messages;
+            // store message ids order in cache
+            Array.prototype.splice.apply(cache[location], [index, howmany].concat(messageIDs));
+
+            // store metadata in hash
+            for (var i = 0; i < messages.length; i++) {
+                var message = messages[i];
+
+                hash[message.ID] = message;
+            }
         }
     };
 
@@ -231,10 +263,13 @@
      */
     api.delete = function(event) {
         var deferred = $q.defer();
-        var keys = Object.keys(cache);
+        var locations = Object.keys(cache);
 
-        _.each(keys, function(key) {
-            cache[key] = _.filter(cache[key], function(message) { return message.ID !== event.ID; });
+        // delete in cache
+        _.each(locations, function(location) {
+            cache[location] = _.filter(cache[location], function(id) {
+                return id !== event.ID;
+            });
         });
 
         deferred.resolve();
@@ -245,13 +280,26 @@
     /**
      * Remove page from cache location
      * @param {String} location
-     * @param {String} page
      */
-    api.clearPage = function(location, page) {
-        if(angular.isDefined(cache[location]) && angular.isDefined(cache[location][page])) {
-            delete cache[location][page];
+    api.clearLocation = function(location) {
+        if(angular.isDefined(cache[location])) {
+            delete cache[location];
+            cache[location] = [];
         }
     };
+
+    /**
+     * We autoload on login inbox (first 2 pages) and sent (first page)
+     */
+     api.preloadInboxAndSent = function() {
+         var deferred = $q.defer();
+         var requestInbox;
+         var requestSent;
+
+         api.queryMessages();
+
+         return deferred.promise;
+     };
 
     /**
      * Add a new message in the cache
@@ -259,40 +307,56 @@
      */
     api.create = function(event) {
         var deferred = $q.defer();
-        var message = event.message;
+        var message = event.Message;
         var location = message.Location;
-        var index;
-        var concatenation = [];
+        var starred = message.Starred === 0;
+        var labels = message.LabelIDs;
+        var insert = function(location, message) {
+            if(angular.isDefined(cache[location])) {
+                var index;
+                var messages = [];
 
-        exist(location);
+                for (var i = 0; i < cache[location].length; i++) {
+                    var id = cache[location][i];
 
-        for(var page in cache[location]) {
-            if(cache[location].hasOwnProperty(page)) {
-                var messages = cache[location][page];
+                    messages.push(hash[id]);
+                }
+
                 var first = _.first(messages);
                 var last = _.last(messages);
 
-                if(message.Time < first.Time && message.Time > last.Time) { // Insert inside?
+                if(message.Time < first.Time && message.Time > last.Time) {
                     // Search the correct location
-                    index = _.sortedIndex(concatenation, message, function(element) {
+                    index = _.sortedIndex(messages, message, function(element) {
                         return -element.Time;
                     });
 
-                     // Insert the new message
-                    messages.splice(index, 0, message);
-
-                    // Remove the last message
-                    var removed = messages.pop();
-
-                    cache[location][page] = messages;
-                } else if (page === 0 && message.Time > first.Time) { // Page 0
-                    messages.unshift(message);
-                    messages.pop();
-                } else {
-                    // Ignore it
+                    // Insert the new message
+                    cache[location].splice(index, 0, message.ID);
+                } else if(message.Time > first.Time) {
+                    cache[location].unshift(message.ID);
                 }
             }
+        };
+
+        // folders
+        insert(location, message);
+
+        // starred
+        if(starred) {
+            insert(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
         }
+
+        // labels
+        if(labels.length > 0) {
+            for (var i = 0; i < labels.length; i++) {
+                var labelId = labels[i];
+
+                insert(labelId, message);
+            }
+        }
+
+        hash[message.ID] = _.extend(hash[message.ID] || {}, message);
 
         deferred.resolve();
 
@@ -328,11 +392,17 @@
      */
     api.updateFlag = function(event) {
         var deferred = $q.defer();
-        var message = inCache(event.ID);
+        var result = inCache(event.ID);
 
         // Present in the current cache?
-        if(message !== false) {
+        if(result === true) {
+            var message = hash[event.ID];
             var sameLocation = message.Location === event.Message.Location;
+            var remove = function(location, message) {
+                if(angular.isDefined(cache[location])) {
+                    cache[location] = _.without(cache[location], message.ID);
+                }
+            };
 
             // Manage labels
             if(angular.isDefined(event.Message.LabelIDsAdded)) {
@@ -341,28 +411,26 @@
 
             if(angular.isDefined(event.Message.LabelIDsRemoved)) {
                 event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
+
+                _.each(event.Message.LabelIDsRemoved, function(labelId) {
+                    remove(cache[labelId], message);
+                });
             }
 
-            if(sameLocation) {
-                // Just update the message
-                message = _.extend(message, event.Message); // TODO reinsert the message at the correct placement
-                deferred.resolve();
-            } else {
-                // NOTE The difficult case!!!
-                // Remove the message in the current location
-                api.delete(event);
+            var sameLabels = message.LabelIDs === event.Message.LabelIDs;
+            var sameStarred = message.Starred === event.Message.Starred;
 
-                // If the location exist only
-                // we avoid a problem when we will go to this new folder because the other data doesn't exist yet
-                if(angular.isDefined(cache[location])) {
-                    // Add the message in the new location
-                    event.Message = _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']);
-                    event.Message = _.extend(message, event.Message);
-                    api.create(event);
-                }
-
-                deferred.resolve();
+            if(sameLocation === false) {
+                remove(message.Location, message);
             }
+
+            if(sameStarred === false) {
+                remove(cache[CONSTANTS.MAILBOX_IDENTIFIERS.starred], message);
+            }
+
+            hash[event.ID] = _.extend(message, event.Message);
+
+            deferred.resolve();
         } else {
             getMessage(event.ID).then(function(message) {
                 event.Message = message;
@@ -387,16 +455,16 @@
             console.log(event);
             switch (event.Action) {
                 case DELETE:
-                    // promises.push(api.delete(event));
+                    promises.push(api.delete(event));
                     break;
                 case CREATE:
-                    // promises.push(api.create(event));
+                    promises.push(api.create(event));
                     break;
                 case UPDATE_DRAFT:
-                    // promises.push(api.updateDraft(event));
+                    promises.push(api.updateDraft(event));
                     break;
                 case UPDATE_FLAG:
-                    // promises.push(api.updateFlag(event));
+                    promises.push(api.updateFlag(event));
                     break;
                 default:
                     break;
@@ -415,12 +483,122 @@
      */
     api.callRefresh = function() {
         $rootScope.$broadcast('refreshMessages');
+        $rootScope.$broadcast('refreshCounters');
     };
 
     return api;
 })
 
-.service("preloadMessage", function(
+.service('cacheCounters', function(Message, CONSTANTS, $q) {
+    var api = {};
+    var counters = {};
+    // {
+    //     location: {
+    //         total: value,
+    //         unread: value
+    //     }
+    // }
+    var exist = function(location) {
+        if(angular.isUndefined(counters[location])) {
+            counters[location] = {
+                total: 0,
+                unread: 0
+            };
+        }
+    };
+
+    /**
+     * @return {Promise}
+     */
+    api.query = function() {
+        var deferred = $q.defer();
+        var promiseUnread = Message.unreaded().$promise;
+        var promiseTotal = Message.total().$promise;
+
+        $q.all({
+            unread: promiseUnread,
+            total: promiseTotal
+        }, function(result) {
+            // folders case
+            _.each(result.unread.Locations, function(obj) {
+                exist(obj.Location);
+                counters[obj.Location].unread = obj.Count;
+            });
+            _.each(result.total.Locations, function(obj) {
+                counters[obj.Location].total = obj.Count;
+            });
+            // starred case
+            exist(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].unread = result.unread.Starred;
+            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].total = result.total.Starred;
+            // labels case
+            _.each(result.unread.Labels, function(obj) {
+                exist(obj.LabelID);
+                counters[obj.LabelID].unread = obj.Count;
+            });
+            _.each(result.total.Labels, function(obj) {
+                counters[obj.LabelID].total = obj.Count;
+            });
+
+            deferred.resolve();
+        },function(error) {
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    };
+
+    /**
+     * Update the total / unread for a specific location
+     * @param {String} location
+     * @param {Integer} total
+     * @param {Integer} unread
+     */
+    api.update = function(location, total, unread) {
+        exist(location);
+
+        if(angular.isDefined(total)) {
+            counters[location].total = total;
+        }
+
+        if(angular.isDefined(unread)) {
+            counters[location].unread = unread;
+        }
+    };
+
+    /**
+     * Get the total of messages for a specific location
+     * @param {String} location
+     */
+    api.total = function(location) {
+        return counters[location] && counters[location][total];
+    };
+
+    /**
+     * Get the number of unread messages for the specific location
+     * @param {String} location
+     */
+    api.unread = function(location) {
+        return counters[location] && counters[location][unread];
+    };
+
+    /**
+     * Clear location counters
+     * @param {String} location
+     */
+    api.empty = function(location) {
+        if(angular.isDefined(counters[location])) {
+            counters[location] = {
+                total: 0,
+                unread: 0
+            };
+        }
+    };
+
+    return api;
+})
+
+.service('preloadMessage', function(
     $interval,
     cacheMessages
 ) {
