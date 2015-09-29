@@ -1,11 +1,14 @@
-<ng-include src="'templates/partials/header-auth.tpl.html'" id="header"></ng-include>
+<code>{{ isLoggedIn }}</code> 
+<ng-include src="'templates/partials/header-auth.tpl.html'" ng-if="isLoggedIn"></ng-include>
+<ng-include src="'templates/partials/header-no-auth.tpl.html'" ng-if="!isLoggedIn"></ng-include>
 
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 eo" ui-view="content"></div> 
-    </div>
-
+<div class="row">
+    <div ui-view="content"></div>
 </div>
 
-<ng-include src="'templates/partials/footer.tpl.html'"></ng-include>
+<div id="pm_footer">
+    <p>
+    &copy; 2015 ProtonMail.ch - Made globally, hosted in Switzerland. v<a href="https://blog.protonmail.ch/category/release-notes/" target="_blank">{{ app_version }}</a></p>
+</div>
+
+<ng-include src="'templates/modals/bug.tpl.html'"></ng-include>

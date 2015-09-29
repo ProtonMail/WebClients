@@ -1,20 +1,50 @@
-<div class="panel panel-default panel-medium">
-    <div class="panel-body" ng-if="tokenError === false">
-        <h1 class="text-center">{{ 'MESSAGE_PASSWORD' | translate }}</h1>
-        <form ng-submit="unlock()" novalidate method="post">
-            <fieldset class="pure-form">
-                <div class="form-group">
-                    <input class="form-control" autofocus autocomplete="off" autocapitalize="off" autocorrect="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="params.MessagePassword" placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
-                </div>
-                <button type="submit" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}">
-                    <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
-                    <span>{{ 'DECRYPT_MESSAGE' | translate }}</span>
-                </button>
-            </fieldset>
-        </form>
+<form 
+id="pm_login" 
+class="pm_panel pm_form" 
+novalidate 
+ng-keypress="keypress($event)" 
+role="form" 
+autocomplete="on" 
+ng-submit="unlock()" 
+method="post">
+
+
+    <img src="assets/img/logo.svg" alt="ProtonMail" class="logo" />
+
+    <h4 class="text-center">
+        <span class="fa fa-envelope title-icon"></span>
+        {{ 'DECRYPT_MAILBOX' | translate }}
+    </h4>
+
+    <p>&nbsp;</p>
+
+
+    <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
+
+    <input 
+    class="margin" 
+    autofocus 
+    autocomplete="off" 
+    autocapitalize="off" 
+    autocorrect="off" 
+    type="password" 
+    ng-enter="unlock()" 
+    name="MessagePassword" 
+    ng-model="params.MessagePassword" 
+    placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
+
+
+    <div class="clearfix">
+        <a href="https://support.protonmail.ch" target="_blank" class="login-support pm_button link pull-left">{{ 'NEED_HELP?' | translate }}</a>
+        <button type="submit" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}">
+            <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading()"></i>
+            <span>{{ 'UNLOCK' | translate }}</span>
+        </button>
     </div>
+
     <div class="panel-body" ng-if="tokenError === true">
         <h1 class="text-center">Error</h1>
         <p>Sorry, this message does not exist or has already expired.</p>
     </div>
-</div>
+
+</form>
