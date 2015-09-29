@@ -64,6 +64,7 @@ angular.module("proton", [
     "proton.countdown",
     "proton.dropdown",
     "proton.height",
+    "proton.heightOutside",
 
     // Filters
     "proton.filters.strings",

@@ -1,13 +1,16 @@
 <div id="outsideMessageWrap">
-    <div class="alert alert-warning" ng-if="true" id="expirationMessage">
+    <div ng-if="true" id="expirationMessage">
         This message expires in
         <strong countdown="{{message.ExpirationTime}}" outside="true">
             <i class="fa fa-spin fa-circle-o-notch"></i>
         </strong>.
     </div>
     <div class="message-head">
-        <a href ng-click="reply()" class="btn btn-primary pull-right">
-            <i class="fa fa-reply"></i> <span class="visible-md-inline-block visible-lg-inline-block">{{ 'REPLY' | translate }}</span>
+        <a href ng-click="reply()" class="pm_button pull-right">
+            <i class="fa fa-reply"></i> 
+            <span class="visible-md-inline-block visible-lg-inline-block">
+                {{ 'REPLY' | translate }}
+            </span>
         </a>
         <h1 class="no-margin-bottom">
             <span class="attachement" ng-show="message.Attachments.length > 0">
@@ -25,31 +28,29 @@
             </li>
             <li ng-if="message.ToList.length > 0">
                 <strong>{{ 'TO' | translate }}</strong>
-                <ul class="list-inline inline">
-                    <li ng-repeat="email in message.ToList">
-                        <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
-                    </li>
-                </ul>
+                <span ng-repeat="email in message.ToList">
+                    <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                </span>
             </li>
             <li ng-if="message.CCList.length > 0">
                 <strong>{{ 'CC' | translate }}</strong>
-                <ul class="list-inline inline">
-                    <li ng-repeat="email in message.CCList">
-                        {{ email.Address }}
-                    </li>
-                </ul>
+                <span ng-repeat="email in message.CCList">
+                    <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                </span>
             </li>
         </ul>
-    </div>
+    </div>    
     <div ng-show="containsImage === true" class="alert alert-warning text-center" ng-show="!!imagesHidden" id="showImages">
         <a href="" ng-click="toggleImages()">
             <span ng-show="!!imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
             <span ng-hide="!!imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
         </a>
-    </div>
-    <div id="message-body">
-        <div class="email" ng-bind-html="message.Body | purify"></div>
-    </div>
+    </div>    
+    <div id="outsideMessage" ng-height-outside>
+        <div id="message-body">
+            <div class="email" ng-bind-html="message.Body | purify"></div>
+        </div>
+    </div><!--/#outsideMessage-->
     <div class="well well-sm" ng-if="message.Attachments.length > 0" id="attachmentArea">
         <div><strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ message.sizeAttachments() | humanSize }})</div>
         <div class="list-inline no-margin-bottom">
@@ -58,9 +59,8 @@
                 <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
             </a>
         </div>
-    </div>
-    <div id="eo_footer" style="opacity: 1;">
-        <p>Encrypted with ProtonMail. <a href="/sign-up" class="bn btn-link pull-right">Sign Up</a></p>
+    </div>    
+    <div id="eo_footer">
     </div>
 </div>
 

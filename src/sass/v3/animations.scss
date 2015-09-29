@@ -49,8 +49,11 @@ Inpiration from 'esjay'
 .spinner {
     position: relative;
 }
-.spinner:before,
-.spinner:after {
+.nuc {}
+.spinner1,
+.spinner2,
+.spinner3 {
+    padding: 1rem;
     box-sizing: border-box;
     content: '';
     display: block;
@@ -77,8 +80,9 @@ Inpiration from 'esjay'
     margin-top: 0;
     width: auto;
     height: 16rem;
-    &:before,
-    &:after {
+    .spinner1,
+    .spinner2,
+    .spinner3 {
         top: 1rem;
         margin: 0;
         margin-left: -5rem;
@@ -88,32 +92,59 @@ Inpiration from 'esjay'
         background-size: 10rem 10rem;
         background-color: $white;
     }
+    .nuc {
+        position: absolute;
+        left: 50%;
+        top: 6rem;
+        width: .5rem;
+        height: .5rem;
+        margin-left: -.25rem;
+        margin-top: -.25rem;
+        border-radius: .5rem;
+        background-color: #fff;
+        box-shadow: 0 0 2rem 2rem #fff;
+        animation: 2000ms flash infinite linear;
+    }    
 }
 
-.spinner:before {
-    transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
-    animation: 600ms rotateBefore infinite linear reverse, 1000ms flash infinite linear;
+.spinner1 {
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+    animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
     background-color: $primary;
 }
-.spinner:after {
-    transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
-    animation: 800ms rotateAfter infinite linear, 1000ms flash infinite linear;
+.spinner2 {
+    transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+    animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
     background-color: $primary;  
 }
-@keyframes rotateBefore {
+.spinner3 {
+    transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+    animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
+    background-color: $primary;
+}
+
+@keyframes spin1 {
     from {
-        transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
     }
     to {
-        transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
     }
 }
-@keyframes rotateAfter {
+@keyframes spin2 {
     from {
-        transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+        transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
     }
     to {
-        transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+        transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+@keyframes spin3 {
+    from {
+        transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+    }
+    to {
+        transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
     }
 }
 @keyframes flash {
@@ -121,7 +152,7 @@ Inpiration from 'esjay'
         opacity: 1;
     }
     50% {
-        opacity: .75;
+        opacity: .25;
     }
     100% {
         opacity: 1;

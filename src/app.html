@@ -75,7 +75,12 @@ ng-class="{
 </div>
 
 <div id="pm_loader" ng-if="networkActivity.loading() || loggingOut" ng-class="{ 'full': loggingOut }">
-    <div class="spinner"></div>
+    <div class="spinner">
+        <div class="spinner1"></div>
+        <div class="spinner2"></div>
+        <div class="spinner3"></div>
+        <div class="nuc"></div>
+    </div>
 </div>
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>
