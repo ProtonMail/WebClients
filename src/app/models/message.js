@@ -36,19 +36,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: url.get() + '/messages/draft'
             },
             // GET
-            countUnread: {
-                method: 'get',
-                url: url.get() + '/messages/unread',
-                transformResponse: function(data) {
-                    var json = angular.fromJson(data);
-                    var counters = {};
-
-                    _.each(json.Labels, function(obj) { counters[obj.LabelID] = obj.Count; });
-                    _.each(json.Locations, function(obj) { counters[obj.Location] = obj.Count; });
-
-                    return counters;
-                }
-            },
             get: {
                 method: 'get',
                 url: url.get() + '/messages/:id',
@@ -57,9 +44,13 @@ angular.module("proton.models.message", ["proton.constants"])
                     return json.Message;
                 }
             },
-             totalCount: {
-                    method: 'get',
-                    url: url.get() + '/messages/total',
+            totalCount: {
+                method: 'get',
+                url: url.get() + '/messages/total',
+            },
+            unreaded: {
+                method: 'get',
+                url: url.get() + '/messages/unread'
             },
             query: {
                 method: 'get',
@@ -76,10 +67,6 @@ angular.module("proton.models.message", ["proton.constants"])
             latest: {
                 method: 'get',
                 url: url.get() + '/messages/latest/:time'
-            },
-            unreaded: {
-                method: 'get',
-                url: url.get() + '/messages/unread'
             },
             // PUT
             updateDraft: {

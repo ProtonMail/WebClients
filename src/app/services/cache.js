@@ -483,12 +483,122 @@
      */
     api.callRefresh = function() {
         $rootScope.$broadcast('refreshMessages');
+        $rootScope.$broadcast('refreshCounters');
     };
 
     return api;
 })
 
-.service("preloadMessage", function(
+.service('cacheCounters', function(Message, CONSTANTS, $q) {
+    var api = {};
+    var counters = {};
+    // {
+    //     location: {
+    //         total: value,
+    //         unread: value
+    //     }
+    // }
+    var exist = function(location) {
+        if(angular.isUndefined(counters[location])) {
+            counters[location] = {
+                total: 0,
+                unread: 0
+            };
+        }
+    };
+
+    /**
+     * @return {Promise}
+     */
+    api.query = function() {
+        var deferred = $q.defer();
+        var promiseUnread = Message.unreaded().$promise;
+        var promiseTotal = Message.total().$promise;
+
+        $q.all({
+            unread: promiseUnread,
+            total: promiseTotal
+        }, function(result) {
+            // folders case
+            _.each(result.unread.Locations, function(obj) {
+                exist(obj.Location);
+                counters[obj.Location].unread = obj.Count;
+            });
+            _.each(result.total.Locations, function(obj) {
+                counters[obj.Location].total = obj.Count;
+            });
+            // starred case
+            exist(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].unread = result.unread.Starred;
+            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].total = result.total.Starred;
+            // labels case
+            _.each(result.unread.Labels, function(obj) {
+                exist(obj.LabelID);
+                counters[obj.LabelID].unread = obj.Count;
+            });
+            _.each(result.total.Labels, function(obj) {
+                counters[obj.LabelID].total = obj.Count;
+            });
+
+            deferred.resolve();
+        },function(error) {
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    };
+
+    /**
+     * Update the total / unread for a specific location
+     * @param {String} location
+     * @param {Integer} total
+     * @param {Integer} unread
+     */
+    api.update = function(location, total, unread) {
+        exist(location);
+
+        if(angular.isDefined(total)) {
+            counters[location].total = total;
+        }
+
+        if(angular.isDefined(unread)) {
+            counters[location].unread = unread;
+        }
+    };
+
+    /**
+     * Get the total of messages for a specific location
+     * @param {String} location
+     */
+    api.total = function(location) {
+        return counters[location] && counters[location][total];
+    };
+
+    /**
+     * Get the number of unread messages for the specific location
+     * @param {String} location
+     */
+    api.unread = function(location) {
+        return counters[location] && counters[location][unread];
+    };
+
+    /**
+     * Clear location counters
+     * @param {String} location
+     */
+    api.empty = function(location) {
+        if(angular.isDefined(counters[location])) {
+            counters[location] = {
+                total: 0,
+                unread: 0
+            };
+        }
+    };
+
+    return api;
+})
+
+.service('preloadMessage', function(
     $interval,
     cacheMessages
 ) {

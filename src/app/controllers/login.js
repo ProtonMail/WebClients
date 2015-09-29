@@ -256,8 +256,7 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $rootScope,
     authentication,
-    eventManager,
-    Message
+    eventManager    
 ) {
     $scope.user = authentication.user;
     $scope.logout = $rootScope.logout;
@@ -269,13 +268,4 @@ angular.module("proton.controllers.Auth", [
     $rootScope.isSecure = function() {
         return authentication.isSecured();
     };
-
-    Message.totalCount().$promise.then(function(totals) {
-        var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
-
-        _.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-        _.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-
-        $rootScope.messageTotals = total;
-    });
 });

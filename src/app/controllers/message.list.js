@@ -17,7 +17,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     cacheMessages, // NEW
     preloadMessage, // NEW
     confirmModal,
-    messageCounts,
+    cacheCounters, // NEW
     networkActivityTracker,
     notify
 ) {
@@ -398,7 +398,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     message.IsRead = 1;
                     Message.read({IDs: [message.ID]});
                     cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
-                    messageCounts.updateUnread('mark', [message], true);
                 }
 
                 $rootScope.scrollPosition = $('#content').scrollTop();
@@ -408,34 +407,17 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.toggleStar = function(message) {
-        var inStarred = $state.is('secured.starred');
-        var index = $scope.messages.indexOf(message);
         var ids = [];
         var promise;
-        var counters = messageCounts.get();
 
         ids.push(message.ID);
 
         if(message.Starred === 1) {
-            promise = Message.unstar({IDs: ids}).$promise;
-            $rootScope.messageTotals.Starred--;
             message.Starred = 0;
-
-            if (message.IsRead === 0) {
-                counters.Starred--;
-                messageCounts.update(counters);
-            }
-            if (inStarred) {
-                $scope.messages.splice(index, 1);
-            }
+            promise = Message.unstar({IDs: ids}).$promise;
         } else {
-            promise = Message.star({IDs: ids}).$promise;
-            $rootScope.messageTotals.Starred++;
             message.Starred = 1;
-            if (message.IsRead === 0) {
-                counters.Starred++;
-                messageCounts.update(counters);
-            }
+            promise = Message.star({IDs: ids}).$promise;
         }
 
         cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
@@ -541,7 +523,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        messageCounts.updateUnread('mark', messages, status);
         cacheMessages.set(events);
 
         $scope.unselectAllMessages();
@@ -568,9 +549,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                         Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
                     }
                 }]);
-
-                messageCounts.updateUnread('move', movedMessages);
-                messageCounts.updateTotals('move', movedMessages);
 
                 $scope.messages = _.without($scope.messages, message);
             }, function(error) {
@@ -613,9 +591,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         if(events.length > 0) {
             cacheMessages.events(events);
         }
-
-        messageCounts.updateUnread('move', movedMessages);
-        messageCounts.updateTotals('move', movedMessages);
 
         var promiseSuccess = function(result) {
             if(events.length > 0) {
@@ -688,7 +663,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
                     promise.then(
                         function(result) {
-                            messageCounts.empty(location);
+                            cacheCounters.empty(location);
                             $rootScope.$broadcast('updateCounters');
                             $rootScope.$broadcast('refreshMessagesCache');
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
@@ -747,22 +722,25 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             });
 
             $q.all(promises).then(function(results) {
-                messageCounts.updateUnreadLabels($scope.selectedMessages(), toApply, toRemove);
-                messageCounts.updateTotalLabels($scope.selectedMessages(), toApply, toRemove);
+                var events = [];
+
+                _.each(selectedMessages, function(message) {
+                    if(alsoArchive === true) {
+                        message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.archive;
+                    }
+
+                    events.push({
+                        Action: 3, // UPDATE_FLAG
+                        ID: message.ID,
+                        Message: message
+                    });
+                });
+
+                cacheMessages.events(events);
 
                 if(alsoArchive === true) {
                     deferred.resolve($scope.moveMessagesTo('archive'));
-                }
-
-                if($state.is('secured.label') && toRemove.indexOf($stateParams.id) !== -1) {
-                    $scope.messages = _.difference($scope.messages, $scope.selectedMessages());
-                }
-
-                if(alsoArchive === false) {
-                    _.each($scope.selectedMessages(), function(message) {
-                        message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-                    });
-
+                } else {
                     $scope.unselectAllMessages();
                     deferred.resolve();
                 }
