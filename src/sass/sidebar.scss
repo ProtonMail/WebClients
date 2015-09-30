@@ -173,6 +173,20 @@ section#pm_sidebar {
 }
 
 @media (max-width: 1024px) {
+    body.secure #pm_background {
+        position: fixed;
+        z-index: 8;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,0,.4);
+        width: 100%;
+        display: none;
+        &.tablet {
+            display: block;
+        }
+    }
     body section#pm_sidebar {
         position: fixed;
         left: -$sidebarWidth;

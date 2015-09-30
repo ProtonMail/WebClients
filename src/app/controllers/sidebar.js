@@ -28,12 +28,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
-    // Less than 1024
-    $scope.$on('sidebarMobileToggle', function() {
-        $scope.showSidebar = !$scope.showSidebar;
-    });
     $scope.hideMobileSidebar = function() {
-        $scope.showSidebar = false;
+        $rootScope.$broadcast('sidebarMobileToggle');
     };
 
     // Listeners

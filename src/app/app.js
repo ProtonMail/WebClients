@@ -175,6 +175,11 @@ angular.module("proton", [
         }
     });
 
+    // Less than 1024 / Tablet Mode
+    $rootScope.$on('sidebarMobileToggle', function() {
+        $rootScope.showSidebar = !$rootScope.showSidebar;
+    });
+
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
