@@ -67,6 +67,50 @@
     };
 
     /**
+     * Insert message in a specific cache location, if it's possible
+     * @param {String} location
+     * @param {Object} message
+     */
+    var insert = function(location, message) {
+        if(angular.isDefined(cache[location])) {
+            var index;
+            var messages = [];
+
+            for (var i = 0; i < cache[location].length; i++) {
+                var id = cache[location][i];
+
+                messages.push(hash[id]);
+            }
+
+            var first = _.first(messages);
+            var last = _.last(messages);
+
+            if(message.Time < first.Time && message.Time > last.Time) {
+                // Search the correct location
+                index = _.sortedIndex(messages, message, function(element) {
+                    return -element.Time;
+                });
+
+                // Insert the new message
+                cache[location].splice(index, 0, message.ID);
+            } else if(message.Time > first.Time) {
+                cache[location].unshift(message.ID);
+            }
+        }
+    };
+
+    /**
+     * Remove message ID in a specific cache location
+     * @param {String} location
+     * @param {Object} message
+     */
+    var remove = function(location, message) {
+        if(angular.isDefined(cache[location])) {
+            cache[location] = _.without(cache[location], message.ID);
+        }
+    };
+
+    /**
      * Check if the message is located in the cache and return the location
      * @param {String} id - message ID searched
      * @return {Boolean}
@@ -309,33 +353,6 @@
         var location = message.Location;
         var starred = message.Starred === 0;
         var labels = message.LabelIDs;
-        var insert = function(location, message) {
-            if(angular.isDefined(cache[location])) {
-                var index;
-                var messages = [];
-
-                for (var i = 0; i < cache[location].length; i++) {
-                    var id = cache[location][i];
-
-                    messages.push(hash[id]);
-                }
-
-                var first = _.first(messages);
-                var last = _.last(messages);
-
-                if(message.Time < first.Time && message.Time > last.Time) {
-                    // Search the correct location
-                    index = _.sortedIndex(messages, message, function(element) {
-                        return -element.Time;
-                    });
-
-                    // Insert the new message
-                    cache[location].splice(index, 0, message.ID);
-                } else if(message.Time > first.Time) {
-                    cache[location].unshift(message.ID);
-                }
-            }
-        };
 
         // folders
         insert(location, message);
@@ -364,6 +381,7 @@
     /**
      * Update only a draft message
      * @param {Object} event
+     * @return {Promise}
      */
     api.updateDraft = function(event) {
         var drafts = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
@@ -387,6 +405,7 @@
     /**
      * Update message attached to the id specified
      * @param {Object} event
+     * @return {Promise}
      */
     api.updateFlag = function(event) {
         var deferred = $q.defer();
@@ -395,12 +414,10 @@
         // Present in the current cache?
         if(result === true) {
             var message = hash[event.ID];
-            var sameLocation = message.Location === event.Message.Location;
-            var remove = function(location, message) {
-                if(angular.isDefined(cache[location])) {
-                    cache[location] = _.without(cache[location], message.ID);
-                }
-            };
+            var previousLocation = message.Location;
+            var newLocation = event.Message.Location;
+            var sameLocation = previousLocation === newLocation;
+            var sameStarred = message.Starred === event.Message.Starred;
 
             // Manage labels
             if(angular.isDefined(event.Message.LabelIDsAdded)) {
@@ -411,19 +428,43 @@
                 event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
 
                 _.each(event.Message.LabelIDsRemoved, function(labelId) {
-                    remove(cache[labelId], message);
+                    remove(labelId, message);
                 });
             }
 
             var sameLabels = message.LabelIDs === event.Message.LabelIDs;
-            var sameStarred = message.Starred === event.Message.Starred;
 
             if(sameLocation === false) {
-                remove(message.Location, message);
+                var previousTotal = cacheCounters.total(previousLocation);
+                var previousUnread = cacheCounters.unread(previousLocation);
+                var newTotal = cacheCounters.total(newLocation);
+                var newUnread = cacheCounters.unread(newLocation);
+
+                // update previous location
+                cacheCounters.update(previousLocation, previousTotal - 1, previousUnread - 1);
+                // update new location
+                cacheCounters.update(newLocation, newTotal + 1, newUnread + 1);
+                // remove message in the previous location
+                remove(previousLocation, message);
+                // insert message in the new location
+                insert(newLocation, message);
             }
 
             if(sameStarred === false) {
-                remove(cache[CONSTANTS.MAILBOX_IDENTIFIERS.starred], message);
+                var currentTotal = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+                var currentUnread = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+
+                if(event.Message.Starred === 0) {
+                    // remove message in the starred folder
+                    remove(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
+                    // update starred counter
+                    cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal - 1, currentUnread - 1);
+                } else {
+                    // insert message in the starred folder
+                    insert(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
+                    // update starred counter
+                    cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal + 1, currentUnread + 1);
+                }
             }
 
             hash[event.ID] = _.extend(message, event.Message);
@@ -569,7 +610,7 @@
      * @param {String} location
      */
     api.total = function(location) {
-        return counters[location] && counters[location][total];
+        return counters[location] && counters[location].total;
     };
 
     /**
@@ -577,7 +618,7 @@
      * @param {String} location
      */
     api.unread = function(location) {
-        return counters[location] && counters[location][unread];
+        return counters[location] && counters[location].unread;
     };
 
     /**
