@@ -61,7 +61,7 @@
                 <legend>{{ 'MAILBOX_PASSWORD' | translate }}</legend>
                 <form ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate method="post">
                     <div class="form-group" ng-class="{'has-error': mailboxForm.currentLoginPassword.$touched && mailboxForm.currentLoginPassword.$error.required}">
-                        <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                        <label class="control-label" for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" class="form-control" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
                     </div>
                     <div class="form-group" ng-class="{'has-error': mailboxForm.oldMailboxPassword.$touched && mailboxForm.oldMailboxPassword.$error.required}">
