@@ -34,7 +34,7 @@ angular.module("proton.filters.strings",[])
     return function(time) {
         var m = moment.unix(time);
 
-        return m.format('LLL') + " <em>(" + m.fromNow() + ")</em>";
+        return m.format('LLL') + " (" + m.fromNow() + ")";
     };
 })
 // unused
