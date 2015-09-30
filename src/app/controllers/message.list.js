@@ -131,37 +131,22 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.messageCount = function() {
+        var result;
+
         if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
-            return $rootScope.Total;
+            result = $rootScope.Total;
         } else {
-            if ($scope.mailbox === 'label') {
-                if ($rootScope.messageTotals) {
-                    if($rootScope.messageTotals.Labels[$stateParams.label]) {
-                        return $rootScope.messageTotals.Labels[$stateParams.label];
-                    } else {
-                        return 0;
-                    }
-                } else {
-                    return $rootScope.Total;
-                }
-            } else if($scope.mailbox === 'starred'){
-                if ($rootScope.messageTotals && $rootScope.messageTotals.Starred) {
-                    return $rootScope.messageTotals.Starred;
-                } else {
-                    return $rootScope.Total;
-                }
-            } else {
-                if ($rootScope.messageTotals) {
-                    if($rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]]) {
-                        return $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]];
-                    } else {
-                        return 0;
-                    }
-                } else {
-                    return $rootScope.Total;
-                }
+            switch($scope.mailbox) {
+                case 'label':
+                    result = cacheCounters.total($stateParams.label);
+                    break;
+                default:
+                    result = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    break;
             }
         }
+
+        return result;
     };
 
     $scope.makeDropdownPages = function() {

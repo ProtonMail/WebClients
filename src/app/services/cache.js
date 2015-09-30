@@ -533,7 +533,7 @@
     return api;
 })
 
-.service('cacheCounters', function(Message, CONSTANTS, $q) {
+.service('cacheCounters', function(Message, CONSTANTS, $q, authentication) {
     var api = {};
     var counters = {};
     // {
@@ -562,22 +562,24 @@
         $q.all({
             unread: promiseUnread,
             total: promiseTotal
-        }, function(result) {
+        }).then(function(result) {
             // folders case
-            _.each(result.unread.Locations, function(obj) {
-                exist(obj.Location);
-                counters[obj.Location].unread = obj.Count;
-            });
             _.each(result.total.Locations, function(obj) {
+                exist(obj.Location);
                 counters[obj.Location].total = obj.Count;
+            });
+            _.each(result.unread.Locations, function(obj) {
+                counters[obj.Location].unread = obj.Count;
             });
             // starred case
             exist(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
             counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].unread = result.unread.Starred;
             counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].total = result.total.Starred;
             // labels case
+            _.each(authentication.user.Labels, function(label) {
+                exist(label.ID);
+            });
             _.each(result.unread.Labels, function(obj) {
-                exist(obj.LabelID);
                 counters[obj.LabelID].unread = obj.Count;
             });
             _.each(result.total.Labels, function(obj) {

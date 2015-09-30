@@ -257,12 +257,14 @@ angular.module("proton.controllers.Auth", [
     $rootScope,
     authentication,
     eventManager,
-    cacheCounters
+    cacheCounters,
+    cacheMessages
 ) {
     $scope.user = authentication.user;
     $scope.logout = $rootScope.logout;
 
     eventManager.start(authentication.user.EventID);
+    cacheMessages.preloadInboxAndSent();
     cacheCounters.query();
 
     $rootScope.isLoggedIn = true;

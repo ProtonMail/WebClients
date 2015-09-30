@@ -106,8 +106,9 @@ angular.module("proton.dropdown", [])
             scope.pages = [];
 
             var disable = function() {
+                scope.disableMain = scope.totalItems === 0; // Main
                 scope.disableP = scope.page === 1; // Previous
-                scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page; // Next
+                scope.disableN = (Math.ceil(scope.totalItems / scope.itemsPerPage) + 1) === scope.page; // Next
             };
 
             var buildPages = function() {
@@ -127,6 +128,11 @@ angular.module("proton.dropdown", [])
                 scope.pages = temp;
             };
 
+            scope.$watch('totalItems', function(newValue, oldValue) {
+                disable();
+                buildPages();
+            });
+
             scope.select = function(p) {
                 scope.change(p);
                 $timeout(function() {
@@ -141,10 +147,6 @@ angular.module("proton.dropdown", [])
             scope.previous = function() {
                 scope.select(scope.page - 1);
             };
-
-            // Initialization
-            buildPages();
-            disable();
         }
     };
 });
