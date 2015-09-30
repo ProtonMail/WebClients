@@ -556,14 +556,20 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
-            message.Selected = false;
-            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]
             var event = {
-                Action: 3,
-                ID: message.ID,
-                Message: message
+                ID: message.ID
             };
 
+            message.Selected = false;
+
+            if(inDelete) {
+                event.Action = 0; // DELETE
+            } else {
+                event.Action = 3; // UPDATE_FLAG
+                message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            }
+
+            event.Message = message;
             events.push(event);
 
             if(inDelete) {
