@@ -29,6 +29,9 @@
         <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
             <i class="fa fa-eye-slash"></i>
         </a>
+        <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+            <i class="fa fa-eye"></i>
+        </a>        
     </span>
     <span class="pm_buttons" >
         <a href="" ng-click="moveMessageTo('inbox')" ng-if="message.location() !== 'inbox'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'INBOX' | translate }}" pt-placement="bottom">

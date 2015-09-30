@@ -12,7 +12,7 @@ body.maximizedComposer {
 	z-index: 9999;
 	.composer {
 		border-radius: 2px;
-		width: 480px;
+		width: 580px;
 		height: 530px;
 		background: $white;
 		float: right;
@@ -65,6 +65,8 @@ body.maximizedComposer {
 			border-radius: 2px 2px 0 0;
 			position: relative;
 			box-sizing: border-box;
+			height: 40px;
+			min-height: 40px;
 			.actions {
 				float: right;
 				padding: 10px;
@@ -91,6 +93,8 @@ body.maximizedComposer {
 				line-height: 20px;
 				color: #dadae5;
 				border-color: #6b697e;
+				float: left;
+				margin-left: 5px;
 				&:hover {
 					color: $white;
 				}
@@ -101,6 +105,25 @@ body.maximizedComposer {
 			    -ms-flex-positive: 1;
 			        flex-grow: 1;
 			.meta {
+				color: $gray-light;
+				.tm-tag,
+				span button {
+				    padding: 0 10px;
+				    line-height: 26px;
+				    height: 26px;
+				    margin: 2px 2px 2px 0;
+				    float: left;
+				    border: none;
+				    box-shadow: none;
+				}
+				.tm-tag {
+					background: $primary;
+					color: #fff;
+				}
+				span button {
+					background-color: $border;
+					color: $gray;
+				}
 				.row {
 					display: -webkit-flex;
 					display: -ms-flexbox;

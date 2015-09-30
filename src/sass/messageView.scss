@@ -3,6 +3,7 @@
 	padding-left: 15px;
 	&.rows {
 		width: 100%;
+		padding-left: 0;
 	}
     & > header {
     	display: block;
@@ -181,4 +182,11 @@
     		}
     	}
     }
+}
+
+
+@media (max-width: $mobile) {
+	#pm_view > header {
+		margin-right: 0;
+	}
 }

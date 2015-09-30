@@ -1,6 +1,6 @@
 <header id="pm_header" class="clearfix pm_opensans" ng-controller="HeaderController">
     <a href="#" class="logo" ng-click="toggleLayoutMode()"><img src="assets/img/logo.svg"></a>
-    <a href="#" class="logoMobile" ng-click="sidebarToggle()"><img src="assets/img/logo_mobile.png"></a>
+    <a href="#" class="logoMobile" ng-click="sidebarToggle(); toggleLayoutMode();"><img src="assets/img/logo_mobile.png"></a>
     <a href="#" class="compose"><i class="fa fa-pencil"></i> <span>Compose</span></a>
     <a href="#" class="searchBtn"><i class="fa fa-search"></i></a>
     <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()">

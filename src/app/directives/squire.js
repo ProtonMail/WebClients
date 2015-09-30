@@ -118,7 +118,7 @@ angular.module("proton.squire", [
             updateStylesToMatch = function(doc) {
                 var head = doc.head || doc.getElementsByTagName('head')[0];
                 var style = doc.createElement('style');
-                var css = "body { padding: 1rem 10px; font-family: 'Open Sans'; font-size: 14px; line-height: 1.65em; }";
+                var css = "body { padding: 1rem 10px; font-family: 'Open Sans'; font-size: 14px; line-height: 1.65em; color: #555; }";
 
                 style.setAttribute('type', 'text/css');
                 style.setAttribute('rel', 'stylesheet');

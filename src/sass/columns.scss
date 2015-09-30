@@ -10,6 +10,7 @@
 		max-height: $maxHeight; 
 		#pm_list {
 			padding: 0 25px;
+		    box-sizing: border-box;
 		}
 		div.message {
 			position: relative;
@@ -170,13 +171,18 @@
     }
 }
 
-@media (max-width: 660px) {
-
-}
-
-@media (max-width: 600px) {
-    #pm_columns {
-
-    }
+@media (max-width: $mobile) {
+	#pm_columns {
+		#pm_view {
+			display: none;
+		}
+		.list {
+			width: 100%;
+			min-width: 100%;
+		}
+		#pm_toolbar {
+			padding: 14px 25px 0;
+		}
+	}
 
 }

@@ -33,9 +33,8 @@
         </span>
         <div class="meta">
             <a href="#" class="fa fa-plus-square-o"></a>
-            <span class="pm_labels inline">
-                <span class="pm_label">IMPORTANT</span>
-                <span class="pm_label">PROTONMAIL</span>
+            <span class="pm_labels inline" ng-if="message.LabelIDs.length">
+                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
             </span>
         </div>
     </div>

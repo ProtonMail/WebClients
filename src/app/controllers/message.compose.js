@@ -637,6 +637,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         $timeout(function() {
             message.recipientFieldFocussed = (message.fields) ? 4 : 0;
         });
+        $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
     };
 

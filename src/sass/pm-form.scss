@@ -35,6 +35,7 @@ $inputHeight: 32px;
     input[type="text"],
     input[type="password"],
     input[type="email"],
+    input[type="search"],
     select,
     textarea {
         line-height: $inputHeight;
@@ -74,11 +75,13 @@ $inputHeight: 32px;
     input[type="text"],
     input[type="password"],
     input[type="email"],
-    select {
+    input[type="search"],
+    select,
+    textarea {
         padding: 0 20px;
     }
     textarea {
-        padding: 1rem 20px;
+        min-height: 6rem;
     }
     .margin {
         margin-bottom: 10px;
@@ -102,6 +105,7 @@ $inputHeight: 32px;
         &.right {
             width: 60%;
             min-width: 60%;
+            float: right;
         }
     }
     &.alt {

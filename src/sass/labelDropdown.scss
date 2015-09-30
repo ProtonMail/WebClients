@@ -1,0 +1,88 @@
+.labelDropdown {
+	.pm_button.link {
+		color: $primary;
+		padding-left: 0;
+		.fa {
+			width: 30px;
+			float: left;
+			text-align: left; 
+			display: block;
+		}
+	}
+	& > span > label {
+		display: block;
+		text-align: left;
+	}
+	.labelSearch {
+		position: relative;
+		display: block;
+		clear: both;
+		float: none;
+		padding-left: 30px;
+		height: 25px;
+		line-height: 25px;
+		.fa {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 30px;
+			display: block;
+			text-align: left;
+			font-size: 1em;
+			color: $primary;
+			line-height: 25px;
+			height: 25px;
+		}
+		input {
+			float: left;
+			padding: 0;
+			border: none;			
+			border-bottom: 1px solid $border;
+			margin: 0;
+			height: 25px;
+			line-height: 25px;
+		}
+	}
+	.wrapper {
+		max-height: 175px;
+		overflow: auto;
+		display: block;
+		clear: both;
+		padding-right: 15px;
+		ul,
+		li {
+			display: block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			clear: both;
+			text-align: left;
+			position: relative;
+		}
+		li {
+			line-height: 35px;
+			height: 35px;
+			label {
+				cursor: pointer;
+			}
+			input {
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				line-height: 35px;
+				height: 35px;
+				margin: 0;
+			}
+			.fa {
+				margin-right: 10px;
+			}
+		}
+	}
+	button {
+		margin-top: 15px;
+		display: block;
+		width: 100%;
+	}	
+}

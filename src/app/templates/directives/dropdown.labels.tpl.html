@@ -1,10 +1,14 @@
 <span class="labelDropdown">
-    <span role="menu" ng-click="$event.stopPropagation()" class="pm_form">
+    <span role="menu" ng-click="$event.stopPropagation()">
         <span class="margin">
-            <a href="" class="pm_button link">{{ 'CREATE_A_NEW_LABEL' | translate }}</a>
+            <a href="" class="pm_button link">
+            <i class="fa fa-arrow-right"></i>
+            {{ 'CREATE_A_NEW_LABEL' | translate }}
+            </a>
         </span>
-        <span ng-show="labels.length > 0" class="margin">
-            <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}..." class="form-control" ng-model="searchLabels" ng-minlength="1" />
+        <span ng-show="labels.length > 0" class="margin labelSearch">
+            <i class="fa fa-search"></i>
+            <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}..." ng-model="searchLabels" ng-minlength="1" />
         </span>
 
 

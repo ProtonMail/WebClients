@@ -321,3 +321,12 @@
 		}
 	}
 }
+
+@media (max-width: $mobile) {
+	#pm_rows {
+		#pm_view {
+			padding: 0 25px;
+			box-sizing: border-box;
+		}
+	}
+}

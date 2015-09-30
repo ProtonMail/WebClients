@@ -384,11 +384,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         networkActivityTracker.track(promise);
     };
 
-    $scope.getColorLabel = function(label) {
+    $scope.getColorLabel = function(id) {
         return {
-            backgroundColor: label.Color
+            color: $scope.getLabel(id).Color,
+            borderColor: $scope.getLabel(id).Color
         };
-    };
+    };    
 
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
