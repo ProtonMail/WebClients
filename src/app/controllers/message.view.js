@@ -59,22 +59,22 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     });
 
     $scope.attHeight = function() {
-        var rowHeight = 32;
-        var attachmentAreaHeight = (rowHeight*2);
-        var attachmentSize = message.Attachments.length;
-        if (attachmentSize) {
-            if (attachmentSize<3) {
-                attachmentAreaHeight = (rowHeight*2);
-            }
-            else if (attachmentSize<5) {
-                attachmentAreaHeight = (rowHeight*3);
-            }
-            else {
-                attachmentAreaHeight = (rowHeight*4);
-            }
-        }
-        $log.debug(attachmentAreaHeight);
-        return attachmentAreaHeight;
+        // var rowHeight = 32;
+        // var attachmentAreaHeight = (rowHeight*2);
+        // var attachmentSize = message.Attachments.length;
+        // if (attachmentSize) {
+        //     if (attachmentSize<3) {
+        //         attachmentAreaHeight = (rowHeight*2);
+        //     }
+        //     else if (attachmentSize<5) {
+        //         attachmentAreaHeight = (rowHeight*3);
+        //     }
+        //     else {
+        //         attachmentAreaHeight = (rowHeight*4);
+        //     }
+        // }
+        // $log.debug(attachmentAreaHeight);
+        // return attachmentAreaHeight;
     };
 
     $scope.initView = function() {
@@ -595,17 +595,17 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.setAttachmentHeight = function() {
-        var count = parseInt(message.Attachments.length);
-        var buttonHeight = 32;
-        var maxHeight = (buttonHeight * 4);
-        var element = $('#attachmentArea');
+        // var count = parseInt(message.Attachments.length);
+        // var buttonHeight = 32;
+        // var maxHeight = (buttonHeight * 4);
+        // var element = $('#attachmentArea');
 
-        if (count > 6) {
-            element.css('minHeight', maxHeight);
-            element.css('maxHeight', maxHeight);
-        } else {
-            element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
-        }
+        // if (count > 6) {
+        //     element.css('minHeight', maxHeight);
+        //     element.css('maxHeight', maxHeight);
+        // } else {
+        //     element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
+        // }
     };
 
     $scope.initView();

@@ -1,0 +1,21 @@
+<div ng-if="message.Attachments.length > 0" id="attachmentArea">
+    <header>
+        {{message.Attachments.length}} 
+        <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
+        <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>
+        ({{ message.sizeAttachments() | humanSize }})
+    </header>
+    <section>
+        <a 
+        ng-repeat="attachment in message.Attachments" 
+        class="pm_button" 
+        ng-class="{ 'disabled': attachment.decrypting }" 
+        data-download-text="{{ 'DOWNLOAD' | translate }}" 
+        title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})"
+        href 
+        ng-click="decryptAttachment(attachment, $event)">
+            <i class="fa" ng-class="{ 'fa-cog fa-spin': attachment.decrypting }"></i>
+            <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+        </a>
+    </section>
+</div>

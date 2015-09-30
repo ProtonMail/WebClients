@@ -1,3 +1,86 @@
+body#eo-message {
+	overflow: initial;
+}
+
+body#eo-reply {
+	overflow: initial;
+	.outside .message-head {
+		border-bottom: none;
+		& > div.pull-right {
+			font-size: .9rem;
+		}
+	}
+	h1 {
+		padding-bottom: 1rem;
+		display: block;
+	}
+	ul.infos {
+		font-size: .9rem;
+		display: block;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		color: #999;
+		font-weight: 400;
+		strong {
+			font-weight: 400;
+		}
+		b, em {
+			color: $primary;
+			font-style: italic;
+			font-weight: 400;
+		}
+		li {
+			display: block;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+	#message-body {
+		margin: 0 -35px;
+		.squire-toolbar {
+			border: none;
+			padding: 0 35px;
+			height: 40px;
+			line-height: 40px;
+			box-sizing: border-box;
+			li {
+				height: 40px;
+				line-height: 40px;
+				flex-grow: initial;
+				padding: 0 1rem;
+				a {
+					height: 40px;
+					line-height: 40px;
+				}
+				&.separator {
+					padding: 0;
+				}
+			}
+		}
+		iframe {
+			width: 100%;
+			min-height: 30rem;
+			height: 30rem;
+			padding: 1rem 35px;
+			box-sizing: border-box;
+		}
+	}
+	#inputFile {
+		display: none;
+	}
+	footer {
+		padding: 1rem 35px;
+		margin: 0 -35px -35px;
+		border-top: 1px solid $border;
+		.pm_button {
+			text-transform: uppercase;
+			padding: 0 1rem;
+		}
+	}
+}
+
 .outside {
 	padding: 4rem 100px;
 	font-size: 1.2em;
@@ -12,13 +95,8 @@
 		margin: -35px -35px 0;
 	}
 	#outsideMessageWrap {
-		padding: 35px;
+		padding: 15px 35px 35px;
 		background-color: #fff;
-		position: absolute;
-		left: 100px;
-		top: 8rem;
-		right: 100px;
-		bottom: 4rem;
 	}
 	#outsideMessage {
 		overflow: auto;

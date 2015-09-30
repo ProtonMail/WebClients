@@ -2,7 +2,7 @@
 
 header#pm_header {
     position: relative;
-    z-index: 2;
+    z-index: 7;
     .logo {
         background: $secondary;
     }
@@ -27,7 +27,7 @@ section#pm_sidebar {
     padding-top: 16px; // was 15
     position: relative;
     top: -1px;
-    z-index: 3;
+    z-index: 8;
     ul.menu {
         li.active {
             a {

@@ -1,8 +1,5 @@
 <div id="outsideMessageWrap">
     <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
-        <div class="pull-right">
-            <span ng-bind-html="ago"></span>
-        </div>
         <h1>
             <span class="attachement" ng-show="message.Attachments.length > 0">
                 <i class="fa fa-paperclip"></i>
@@ -11,15 +8,18 @@
             <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
                 {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
             </span>
-          </h1>
+        </h1>
+        <div class="pull-right">
+            <span ng-bind-html="ago"></span>
+        </div>          
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}:</strong>
-                {{ message.Recipient }}
+                <b>{{ message.Recipient }}</b>
             </li>
             <li>
                 <strong>{{ 'TO' | translate }}:</strong>
-                <b>{{message.SenderName}}</b> &lt;{{message.SenderAddress}}&gt;
+                <b>{{message.SenderName}}</b> <em>&lt;{{message.SenderAddress}}&gt;</em>
             </li>
         </ul>
     </div>
@@ -34,28 +34,13 @@
         </div>
     </div>
 
-    <div class="panel panel-default" ng-if="message.Attachments.length" id="attachmentArea">
-        <div class="panel-heading">
-            <strong>{{ 'ATTACHMENTS' | translate }}</strong> ({{message.Attachments.length}} <span ng-hide="message.Attachments.length === 1">{{ 'FILES' | translate }}</span><span ng-show="message.Attachments.length === 1">{{ 'FILE' | translate }}</span>, {{ message.sizeAttachments() | humanSize }})
-        </div>
-        <div class="panel-body">
-            <ul class="list-group no-margin-bottom">
-                <li href="" ng-repeat="attachment in message.Attachments" class="list-group-item">
-                    <a href="" class="pull-right" ng-click="removeAttachment(attachment)" title="Remove attachment">
-                        <i class="fa fa-times"></i>
-                    </a>
-                    <i class="fa fa-lock"></i>
-                    <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
-                </li>
-            </ul>
-        </div>
-    </div>
+    <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
 
-    <div class="well text-right">
-        <button class="btn btn-default btn-sm pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
-        <button class="btn btn-default btn-sm" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
-        <button class="btn btn-sm btn-primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'REPLY' | translate }}</button>
-    </div>
+    <footer class="text-right"> 
+        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
+        <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
+        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'SEND' | translate }}</button>
+    </footer>
 
     <input type="file" id="inputFile" multiple />
 </div>
