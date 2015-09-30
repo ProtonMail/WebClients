@@ -27,11 +27,6 @@
 			&.unread {
 				font-weight: 700;
 				color: #000;
-				.readIndicator {
-					span {
-						opacity: 1;
-					}
-				}
 			}
 			&.selected {
 				border-color: transparent;
@@ -69,18 +64,6 @@
 			}
 			.fa-star {
 				color: $orange
-			}
-			.readIndicator {
-				padding-right: 5px;
-				padding-left: 20px;
-				span {
-					background: $readBubble;
-					display: inline-block;
-					border-radius: 10px;
-					width: 10px;
-					height: 10px;
-					opacity: 0;
-				}
 			}
 			.action {
 				padding: 0;
@@ -211,9 +194,6 @@
 				background-color: #f6f6f6;
 			}
 			.size {
-				display: none;
-			}
-			.readIndicator {
 				display: none;
 			}
 			.star,

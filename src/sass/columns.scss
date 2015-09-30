@@ -51,10 +51,6 @@
 				&.fa {
 					font-weight: 400;
 				}
-				span.readIndicator {
-					opacity: 1;
-					margin-left: 1px;
-				}
 			}
 			strong {
 				font-weight: 400;
@@ -104,14 +100,6 @@
 			}
 			.fa-star {
 				color: $orange
-			}
-			span.readIndicator {
-				background: $readBubble;
-				display: inline-block;
-				border-radius: 10px;
-				width: 10px;
-				height: 10px;
-				opacity: 0
 			}
 			header {
 				line-height: 20px;

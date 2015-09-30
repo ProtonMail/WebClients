@@ -14,7 +14,7 @@
                 </a>
             </span>
             <span>
-                <span class="readIndicator"></span>
+                <span>&nbsp;</span>
             </span>
             <span>
                 <span class="fa fa-paperclip" ng-class="{ 'show': (message.HasAttachment || message.Attachments.length > 0) }"></span>
@@ -54,7 +54,7 @@
         <span class="sender" ng-click="navigateToMessage($event, message)">
             <span>{{ message.SenderName || message.SenderAddress }}</span>
         </span>
-        <span class="readIndicator"><span></span></span>
+        <span><span>&nbsp;</span></span>
         <span class="subject" ng-click="navigateToMessage($event, message)">
             <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
