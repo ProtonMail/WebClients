@@ -634,7 +634,6 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("deploy", [
-        "bower",
         "clean:dist",
         "shell:setup_dist",
         "compile",
