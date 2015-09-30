@@ -256,12 +256,14 @@ angular.module("proton.controllers.Auth", [
     $scope,
     $rootScope,
     authentication,
-    eventManager    
+    eventManager,
+    cacheCounters
 ) {
     $scope.user = authentication.user;
     $scope.logout = $rootScope.logout;
 
     eventManager.start(authentication.user.EventID);
+    cacheCounters.query();
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;

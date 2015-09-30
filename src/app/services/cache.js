@@ -7,6 +7,7 @@
     $stateParams,
     CONSTANTS,
     Message,
+    cacheCounters,
     networkActivityTracker
 ) {
     var api = {};
@@ -160,13 +161,10 @@
 
                 switch(mailbox) {
                     case 'label':
-                        total = $rootScope.messageTotals.Labels[$stateParams.label];
-                        break;
-                    case 'starred':
-                        total = $rootScope.messageTotals.Starred;
+                        total = cacheCounters.total($stateParams.label);
                         break;
                     default:
-                        total = $rootScope.messageTotals.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                        total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                         break;
                 }
 
@@ -513,7 +511,7 @@
     api.query = function() {
         var deferred = $q.defer();
         var promiseUnread = Message.unreaded().$promise;
-        var promiseTotal = Message.total().$promise;
+        var promiseTotal = Message.totalCount().$promise;
 
         $q.all({
             unread: promiseUnread,
