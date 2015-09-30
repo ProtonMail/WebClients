@@ -1,9 +1,11 @@
 body#eo-message {
 	overflow: initial;
+	background: $dark;
 }
 
 body#eo-reply {
 	overflow: initial;
+	background: $dark;
 	.outside .message-head {
 		border-bottom: none;
 		& > div.pull-right {

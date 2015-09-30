@@ -1,12 +1,6 @@
 body#login-unlock {
 	height: 100%;
-	background: #324d9a;
-	background: -moz-linear-gradient(140deg,  #324d9a 0%, #a2a5e0 100%);
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#324d9a), color-stop(100%,#a2a5e0));
-	background: -webkit-linear-gradient(140deg,  #324d9a 0%,#a2a5e0 100%);
-	background: -o-linear-gradient(140deg,  #324d9a 0%,#a2a5e0 100%);
-	background: -ms-linear-gradient(140deg,  #324d9a 0%,#a2a5e0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#324d9a', endColorstr='#a2a5e0',GradientType=1 );
+	background: $dark;
 	p.text-center {
 		margin: 0 0 2rem 0;
 		font-size: 14px		
