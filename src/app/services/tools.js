@@ -314,7 +314,7 @@ angular.module("proton.tools", ["proton.constants"])
             // render bar in terms of MB such as "785.4 MB"
             cur = (cur/kb).toFixed(1);
 
-            if (0 < Number(cur) && Number(cur) < 1) {
+            if (0 < Number(cur) && Number(cur) < 0.01) {
                 cur = 0.01;
             }
 
@@ -322,6 +322,10 @@ angular.module("proton.tools", ["proton.constants"])
         } else {
             // render bar in terms of GB such as "15.23 GB"
             cur = (cur/kb/kb).toFixed(2);
+
+            if (0 < Number(cur) && Number(cur) < 0.01) {
+                cur = 0.01;
+            }
 
             return Number(cur) + '/' + Number(Math.round(max/kb/kb/kb)) + ' GB';
         }
