@@ -578,10 +578,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }
 
         var promiseSuccess = function(result) {
-            if(events.length > 0) {
-                messageCache.sync();
-            }
-
             if(inDelete) {
                 if(ids.length > 1) {
                     notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});

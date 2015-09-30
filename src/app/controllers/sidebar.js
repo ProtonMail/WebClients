@@ -14,7 +14,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     notify,
     CONSTANTS,
     CONFIG,
-    $timeout) 
+    $timeout)
 {
 
     // Variables
@@ -94,7 +94,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         messageCounts.refresh()
         .then(
             function() {
-                $rootScope.$broadcast('updatePageName');
                 $scope.labelScroller();
             },
             function(err) {
@@ -290,7 +289,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         if ($('.storage').is(':visible')) {
             height -= $('.storage').outerHeight();
         }
-        
+
         $('#sidebarLabels').css('height', height);
 
     };
