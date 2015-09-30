@@ -1,5 +1,7 @@
 // WARNING. ALL CLASSES HERE WILL BE APPLIED TO ALL EMAILS!!
-.message .frame > .email {
+.message .frame > .email,
+#eo-message .email,
+#eo-reply iframe {
 	img.pm_broken {
 		background-color: $gray-light;
 	}
