@@ -335,10 +335,15 @@
      */
      api.preloadInboxAndSent = function() {
          var deferred = $q.defer();
-         var requestInbox;
-         var requestSent;
+         var requestInbox = {Location: 0, Page: 0, PageSize: 100};
+         var requestSent = {Location: 2, Page: 0};
 
-         api.queryMessages();
+         $q.all({
+             inbox: queryMessages(requestInbox),
+             sent: queryMessages(requestSent)
+         }).then(function() {
+            deferred.resolve();
+         });
 
          return deferred.promise;
      };
