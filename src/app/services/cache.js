@@ -339,14 +339,18 @@ angular.module("proton.cache", [])
     api.preloadInboxAndSent = function() {
         var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
         var deferred = $q.defer();
-        var requestInbox = {Location: 0};
-        var requestSent = {Location: 2, Page: 0};
+        var requestInbox;
+        var requestSent;
 
         if(mailbox === 'inbox') {
-            requestInbox.Page = 1;
+            requestInbox = {Location: 0, Page: 1};
+            requestSent = {Location: 2, Page: 0};
+        } else if(mailbox === 'sent') {
+            requestInbox = {Location: 0, Page: 0, PageSize: 100};
+            requestSent = {};
         } else {
-            requestInbox.Page = 0;
-            requestInbox.PageSize = 100;
+            requestInbox = {Location: 0, Page: 0, PageSize: 100};
+            requestSent = {Location: 2, Page: 0};
         }
 
         $q.all({
