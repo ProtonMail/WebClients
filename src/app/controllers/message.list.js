@@ -508,7 +508,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        cacheMessages.set(events);
+        cacheMessages.events(events);
 
         $scope.unselectAllMessages();
     };
