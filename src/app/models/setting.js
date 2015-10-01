@@ -57,6 +57,10 @@ angular.module("proton.models.setting", [])
                 method: 'put',
                 url: url.get() + '/settings/showimages'
             },
+            setViewlayout: {
+                method: 'put',
+                url: url.get() + '/settings/viewlayout'
+            },
             apiTest: {
                 method: 'get',
                 url: url.get() + '/tests/error'

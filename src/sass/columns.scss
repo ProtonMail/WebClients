@@ -20,6 +20,9 @@
 			cursor: pointer;
 			border-radius: 2px;
 			color: $gray;
+			height: 64px;
+			line-height: 64px;
+			box-sizing: border-box;
 			.pm_checkbox input {
 				margin: 0;
 			}
