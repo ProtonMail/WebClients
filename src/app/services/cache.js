@@ -306,13 +306,16 @@ angular.module("proton.cache", [])
     api.delete = function(event) {
         var deferred = $q.defer();
         var locations = Object.keys(cache);
+        var result = inCache(event.ID);
 
-        // delete in cache
-        _.each(locations, function(location) {
-            cache[location] = _.filter(cache[location], function(id) {
-                return id !== event.ID;
+        if(result === true) {
+            // delete in cache
+            _.each(locations, function(location) {
+                cache[location] = _.filter(cache[location], function(id) {
+                    return id !== event.ID;
+                });
             });
-        });
+        }
 
         deferred.resolve();
 
