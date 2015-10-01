@@ -415,18 +415,19 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.toggleStar = function(message) {
         var ids = [];
         var promise;
+        var newMessage = {};
 
         ids.push(message.ID);
 
         if(message.Starred === 1) {
-            message.Starred = 0;
+            newMessage.Starred = 0;
             promise = Message.unstar({IDs: ids}).$promise;
         } else {
-            message.Starred = 1;
+            newMessage.Starred = 1;
             promise = Message.star({IDs: ids}).$promise;
         }
 
-        cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
+        cacheMessages.events([{Action: 3, ID: message.ID, Message: newMessage}]);
     };
 
     $scope.onSelectMessage = function(event, message) {
@@ -578,7 +579,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         _.forEach($scope.selectedMessages(), function (message) {
             var event = {
-                ID: message.ID
+                ID: message.ID,
+                Message: {}
             };
 
             message.Selected = false;
@@ -587,10 +589,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 event.Action = 0; // DELETE
             } else {
                 event.Action = 3; // UPDATE_FLAG
-                message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                event.Message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                event.Message.Time = message.Time;
             }
 
-            event.Message = message;
             events.push(event);
 
             if(inDelete) {
@@ -601,6 +603,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         if(events.length > 0) {
             cacheMessages.events(events);
         }
+
+        $scope.unselectAllMessages();
 
         var promiseSuccess = function(result) {
             if(inDelete) {

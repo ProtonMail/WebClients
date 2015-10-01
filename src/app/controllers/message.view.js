@@ -389,7 +389,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             color: $scope.getLabel(id).Color,
             borderColor: $scope.getLabel(id).Color
         };
-    };    
+    };
 
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
@@ -526,9 +526,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.goToMessageList = function() {
-        var mailbox = $state.current.name.replace('secured.', '');
+        var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
 
-        $state.go("secured." + mailbox, {
+        $state.go("secured." + mailbox + '.list', {
             id: null // remove ID
         });
     };
