@@ -1,6 +1,6 @@
 angular.module("proton.labels", [])
 
-.directive('dropdownLabels', function ($timeout, $q, Label) {
+.directive('dropdownLabels', function ($timeout, $q, $rootScope, Label) {
     function link(scope, element, attrs) {
         $('.open-label').click(function() {
             scope.open();
@@ -49,6 +49,10 @@ angular.module("proton.labels", [])
 
         scope.labelsSelected = function() {
             return _.where(scope.labels, {Selected: true});
+        };
+
+        scope.createLabel = function() {
+            $rootScope.$broadcast('createLabel');
         };
     }
 

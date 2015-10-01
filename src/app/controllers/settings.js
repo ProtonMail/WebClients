@@ -359,45 +359,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.createLabel = function() {
-        labelModal.activate({
-            params: {
-                title: $translate.instant('CREATE_NEW_LABEL'),
-                create: function(name, color) {
-                    // already exist?
-                    var result = _.find($scope.labels, function(label) {
-                        return label.Name === name;
-                    });
-                    
-                    if (angular.isUndefined(result)) {
-                        labelModal.deactivate();
-                        networkActivityTracker.track(
-                            Label.save({
-                                Name: name,
-                                Color: color,
-                                Display: 0
-                            }).$promise.then(function(result) {
-                                if(angular.isDefined(result.Label)) {
-                                    notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
-                                    authentication.user.Labels.push(result.Label);
-                                } else {
-                                    notify({message: result.Error, classes: 'notification-danger'});
-                                    $log.error(result);
-                                }
-                            }, function(error) {
-                                notify({message: 'Error during the label creation request', classes: 'notification-danger'});
-                                $log.error(error);
-                            })
-                        );
-                    } else {
-                        notify({message: $translate.instant('LABEL_NAME_ALREADY_EXISTS'), classes: 'notification-danger'});
-                        labelModal.deactivate();
-                    }
-                },
-                cancel: function() {
-                    labelModal.deactivate();
-                }
-            }
-        });
+        $rootScope.$broadcast('createLabel');
     };
 
     $scope.editLabel = function(label) {

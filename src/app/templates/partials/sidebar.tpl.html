@@ -57,7 +57,11 @@
     </ul>
     <div class="labels">
         <form>
-            <label class="fa fa-plus"></label>
+            <label>
+                <a href="" ng-click="createLabel()">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </label>
             <input type="text" ng-model="searchLabels" placeholder="{{ 'ADD_LABEL' | translate }}" />
         </form>
         <ul>
