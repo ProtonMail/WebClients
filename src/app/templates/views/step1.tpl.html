@@ -75,6 +75,7 @@
                 </div>
             </div>
             <hr>
+            <p class="alert alert-info">For optimal security, ProtonMail requires two passwords, a login and mailbox password.</p>
             <div class="form-group">
                 <label for="password">{{ 'LOGIN_PASSWORD' | translate }}</label>
                 <input
@@ -142,7 +143,7 @@
             </div>
             <hr />
             <div class="form-group">
-                <label for="notificationEmail">Notification / Password Recovery Email</label>
+                <label for="notificationEmail">Password Recovery Email (Optional)</label>
                 <input
                 id="notificationEmail"
                 name="notificationEmail"
@@ -150,7 +151,7 @@
                 tabindex="6"
                 type="email"
                 class="form-control"
-                placeholder="Notification {{ 'EMAIL' | translate }}"
+                placeholder="Recovery {{ 'EMAIL' | translate }}"
                 validator="!!!tools.validEmail(account.notificationEmail)"
                 ng-enter="saveContinue(step1)"
                 pt-tooltip="This is used to recover your account if you get locked out or forget your login password."
