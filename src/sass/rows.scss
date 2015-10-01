@@ -17,6 +17,11 @@
 			clear: both;
 			display: flex;
 			padding-right: 5px;
+			&.placeholder {
+				font-family: monospace;
+				word-break: break-all;
+				overflow: hidden;
+			}
 			&:first-child {
 				border-top: 1px solid $border;
 			}

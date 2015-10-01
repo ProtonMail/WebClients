@@ -23,6 +23,11 @@
 			height: 64px;
 			line-height: 64px;
 			box-sizing: border-box;
+			&.placeholder {
+				font-family: monospace;
+				word-break: break-all;
+				overflow: hidden;
+			}
 			.pm_checkbox input {
 				margin: 0;
 			}

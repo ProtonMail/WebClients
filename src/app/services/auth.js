@@ -57,6 +57,16 @@ angular.module("proton.authentication", [
 
                     var user = result.data.User;
 
+                    // Set the rows/columsn mode
+                    if (!angular.isUndefined(user.ViewLayout)) {
+                        if (user.ViewLayout===0) {
+                            $rootScope.layoutMode = 'columns';            
+                        }
+                        else {
+                            $rootScope.layoutMode = 'rows';
+                        }
+                    }                    
+
                     if (!user.EncPrivateKey) {
                         api.logout();
                         deferred.reject();

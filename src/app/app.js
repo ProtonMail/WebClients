@@ -65,6 +65,7 @@ angular.module("proton", [
     "proton.dropdown",
     "proton.height",
     "proton.heightOutside",
+    "proton.sample",
 
     // Filters
     "proton.filters.strings",
@@ -422,7 +423,6 @@ angular.module("proton", [
 
 .run(function($rootScope) {
     $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
-    $rootScope.layoutMode = 'columns';
     // Set build config
     $rootScope.build = {
         "version":"2.0",
