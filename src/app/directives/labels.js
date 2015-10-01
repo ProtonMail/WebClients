@@ -2,7 +2,7 @@ angular.module("proton.labels", [])
 
 .directive('dropdownLabels', function ($timeout, $q, Label) {
     function link(scope, element, attrs) {
-        $('#open-label').click(function() {
+        $('.open-label').click(function() {
             scope.open();
         });
 

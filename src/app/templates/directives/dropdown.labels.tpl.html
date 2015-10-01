@@ -8,34 +8,20 @@
         </span>
         <span ng-show="labels.length > 0" class="margin labelSearch">
             <i class="fa fa-search"></i>
-            <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}..." ng-model="searchLabels" ng-minlength="1" />
+            <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
         </span>
-
-
-        <!-- ############################################################ -->
-        <!-- BEGIN HARDCODED SO I CAN STYLE. CAN REMOVE LATER - JASON -->
-        <!-- ############################################################ -->
-
-        <input type="hidden" ng-init='labels = [{"ID":"bRe_1ImRewuOoyUQON9dQbnI-h8kKLV-wMQg-9PyiVraS-mJt-ZTeuEBRuHvmB4CNgTDpZgWEaHNDmIP-Ch70g==","Name":"Password","Color":"#ccf","Display":0,"Order":1},{"ID":"ksNBBvr5U-7dmHLRpaLGqUJU5AT5KR6G2JFi1bKZi5M5DgfM9-iSBEI_yUDr1aPVcoPlVgE9YOWPqgQ47s0yEg==","Name":"Info","Color":"#e6c04c","Display":0,"Order":2},{"ID":"-0bGYCZ_xBk4tnm00HacTL28ybGylp-feOnQ9U8MalzOvXsfw4oeoDs1Hv1_avbcEQW0f7fdHwOqwiQEMygcyA==","Name":"Design","Color":"#69a9d1","Display":0,"Order":3},{"ID":"UHTmx8KEXBUuZh7uMrnCvW-HR1jndosW--rPK_Y0lLT6SzyCKtjFBknxKBdB17KISEurWGXoyGCU0c_A3mBTBw==","Name":"Trello","Color":"#c793ca","Display":0,"Order":4},{"ID":"cO6RgDJwoHFScLqIkVnRD9luDVkh20EDto1aIHVHU43-dJlREzFcUjS-c7bB-_qlnxBgwAShddHZ4UDdu6RswQ==","Name":"Security","Color":"#ccc","Display":0,"Order":5},{"ID":"4_c_oE1fZWj_pRP-A_5U5Yst7eAw4x4HtohPtPzUzAyU0cOCEW6kBXloElL1LZvaoYDHrwxrX67BkVrwK6DqBg==","Name":"Administration","Color":"#cf5858","Display":0,"Order":6},{"ID":"zqXdlaZdFoaEDWMYLW-P3pp93LszB9aT0iMml1lPlaxF0UTGUMyhqkl3i5T1SP7u6-9jWfhNBbM88sXUYvB9dw==","Name":"SEO","Color":"#72bb75","Display":0,"Order":7}]'>
-
-        <!-- ############################################################ -->
-        <!-- END HARDCODED SO I CAN STYLE. CAN REMOVE LATER - JASON -->
-        <!-- ############################################################ -->
-
-
         <span class="wrapper">
             <ul class="list-group" ng-show="labels.length > 0">
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
-                    <label ng-click="label.Selected = !!!label.Selected">
+                    <label>
                         <input type="checkbox" ng-model="label.Selected" />
-                        <span class="label label-pm" title="{{ label.Name }}">
+                        <span class="label label-pm" title="{{ label.Name }}" ng-click="label.Selected = !!!label.Selected">
                             <i class="fa fa-tag" ng-style="color(label)"></i> {{ label.Name | limitTo: 20 }}
                         </span>
                     </label>
                 </li>
             </ul>
         </span>
-
         <label ng-show="labelsSelected().length > 0">
             <input type="checkbox" ng-model="alsoArchive" /> {{ 'ALSO_ARCHIVE' | translate }}
         </label>
