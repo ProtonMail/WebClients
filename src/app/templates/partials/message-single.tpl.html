@@ -5,7 +5,7 @@
         <span class="meta">
             <i class="fa fa-paperclip"></i>
             <i class="fa fa-lock"></i>
-            <span class="time">13.07.2015 03:54 pm</span>
+            <span class="time">{{ ::message.Time | longReadableTime }}</span>
         </span>
         <span class="from">
             {{ 'FROM' | translate }} <em>{{ ::message.SenderName }}</em>
