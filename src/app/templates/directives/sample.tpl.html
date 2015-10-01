@@ -1,0 +1,20 @@
+<div ng-repeat"message in messages" class="message placeholder">
+<span class="pm_checkbox">
+    <input type="checkbox">
+    </span>
+    <span class="star">
+        <a href="" class="starLink">
+            <span></span>
+        </a>
+    </span>
+    <span class="sender">
+        <span>{{ message.sender }}</span>
+    </span>
+    <span>
+        <span>&nbsp;</span>
+    </span>
+    <span class="subject">{{ message.subject }}</span>
+    <span class="size">&nbsp;</span>
+    <i class="fa fa-paperclip show"></i>
+    <span class="time">{{ message.time }}</span>
+</div>

@@ -108,6 +108,27 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.$on('$destroy', $scope.stopWatchingEvent);
     };
 
+    $scope.samples = function() {
+        function randomChars(number) {
+            var chars = '';
+            for (var i=0;i<number;i++) {
+                chars += Math.random().toString(36).slice(2);
+            }     
+            return chars;
+        }
+        var msgs = [];
+        var count = 20;
+        for (var i = 0; i < count; i++) {
+            msgs[i] = {
+                sender: randomChars(1),
+                subject: randomChars(12),
+                time: randomChars(1)
+            };
+        }
+        $log.info(msgs);
+        return msgs;   
+    };
+
     $scope.stopWatchingEvent = function() {
         watchMessages();
         preloadMessage.reset();
