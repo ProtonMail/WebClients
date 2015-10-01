@@ -88,7 +88,8 @@
             <a href="" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-inbox" ng-click="moveMessagesTo('inbox')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-trash-o divider" ng-click="moveMessagesTo('trash')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-archive divider hidden-xs" ng-click="moveMessagesTo('archive')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-ban divider hidden-xs" ng-click="moveMessagesTo('spam')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-times-circle divider hidden-xs" ng-click="moveMessagesTo('delete')" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>

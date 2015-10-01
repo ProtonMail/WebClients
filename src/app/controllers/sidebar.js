@@ -15,7 +15,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     Label,
     labelModal,
     Message,
-    messageCounts,
+    cacheCounters,
     networkActivityTracker,
     notify,
     tools
@@ -107,23 +107,18 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         var name;
         var value;
         var unread = '';
-        var counters = messageCounts.get();
         var mailbox = $state.current.data && $state.current.data.mailbox;
 
         if(mailbox) {
             // get unread number
-            if(counters) {
-                if(mailbox === 'label') {
-                    value = counters.Labels[$stateParams.label];
-                } else if (mailbox === 'starred'){
-                    value = counters.Starred;
-                } else {
-                    value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-                }
+            if(mailbox === 'label') {
+                value = cacheCounters.unread(id);
+            } else {
+                value = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+            }
 
-                if(angular.isDefined(value) && value > 0) {
-                    unread = '(' + value + ') ';
-                }
+            if(angular.isDefined(value) && value > 0) {
+                unread = '(' + value + ') ';
             }
 
             // get name
@@ -141,14 +136,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Manipulates the DOM (labelScroller), sets unread count, and updates the title of the page
      */
     $scope.refreshCounters = function() {
-        messageCounts.refresh()
-        .then(
-            function() {
-                $scope.labelScroller();
-            },
-            function(err) {
-                // TODO error handling optional here
-            });
+        $scope.labelScroller();
     };
 
     $scope.updateLabels = function () {
@@ -290,30 +278,24 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @return {Integer}
      */
     $scope.getUnread = function(mailbox, id) {
-        var count = 0;
-        var value;
-        var counters = messageCounts.get();
+        var result;
+        var count;
 
         if(mailbox === 'label') {
-            value = counters.Labels[id];
-        } else if (mailbox === 'starred') {
-            value = counters.Starred;
+            count = cacheCounters.unread(id);
         } else {
-            value = counters.Locations[CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            count = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
         }
 
-        if(angular.isDefined(value)) {
-            count = value;
+        if (count === 0) {
+            result = '';
+        } else if (count > 1000) {
+            result = '(999+)';
+        } else {
+            result = '(' + count + ')';
         }
 
-        if (count===0) {
-            return;
-        }
-        else if (count>1000) {
-            return '(999+)';
-        }
-
-        return '('+count+')';
+        return result;
     };
 
     /**

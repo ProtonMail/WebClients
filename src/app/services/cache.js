@@ -82,19 +82,23 @@ angular.module("proton.cache", [])
                 messages.push(hash[id]);
             }
 
-            var first = _.first(messages);
-            var last = _.last(messages);
+            if(messages.length > 0) {
+                var first = _.first(messages);
+                var last = _.last(messages);
 
-            if(message.Time < first.Time && message.Time > last.Time) {
-                // Search the correct location
-                index = _.sortedIndex(messages, message, function(element) {
-                    return -element.Time;
-                });
+                if(message.Time < first.Time && message.Time > last.Time) {
+                    // Search the correct location
+                    index = _.sortedIndex(messages, message, function(element) {
+                        return -element.Time;
+                    });
 
-                // Insert the new message
-                cache[location].splice(index, 0, message.ID);
-            } else if(message.Time > first.Time) {
-                cache[location].unshift(message.ID);
+                    // Insert the new message
+                    cache[location].splice(index, 0, message.ID);
+                } else if(message.Time > first.Time) {
+                    cache[location].unshift(message.ID);
+                }
+            } else {
+                cache[location].push(message.ID);
             }
         }
     };
@@ -297,6 +301,8 @@ angular.module("proton.cache", [])
     * @param {Array} messages
     */
     api.store = function(request, messages) {
+        delete request.PageSize; // Remove PageSize to valid cacheContext
+
         var page = request.Page || 0;
         var index = page * CONSTANTS.MESSAGES_PER_PAGE;
         var howmany = messages.length;
@@ -411,7 +417,7 @@ angular.module("proton.cache", [])
             }
         }
 
-        hash[message.ID] = _.extend(hash[message.ID] || {}, message);
+        _.extend(hash[message.ID], message);
 
         deferred.resolve();
 
@@ -431,7 +437,7 @@ angular.module("proton.cache", [])
             var index = cache[location].indexOf(event.ID);
 
             if(index !== -1) {
-                hash[event.ID] = _.extend(hash[event.ID], event.Message);
+                _.extend(hash[event.ID], event.Message);
                 reorder(location);
             } else {
                 insert(location, event.Message);
@@ -456,41 +462,41 @@ angular.module("proton.cache", [])
         // Present in the current cache?
         if(result === true) {
             var message = hash[event.ID];
-            var newMessage = _.extend(message, event.Message);
+            var newMessage = {};
+
+            _.extend(newMessage, message, event.Message);
 
             if(JSON.stringify(message) === JSON.stringify(newMessage)) {
                 deferred.resolve();
             } else {
                 var previousLocation = message.Location;
-                var newLocation = event.Message.Location;
+                var newLocation = newMessage.Location;
                 var sameLocation = previousLocation === newLocation;
-                var sameStarred = message.Starred === event.Message.Starred;
+                var sameStarred = message.Starred === newMessage.Starred;
 
                 // Manage labels
-                if(angular.isDefined(event.Message.LabelIDsAdded)) {
-                    event.Message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
+                if(angular.isDefined(newMessage.LabelIDsAdded)) {
+                    newMessage.LabelIDs = _.uniq(message.LabelIDs.concat(newMessage.LabelIDsAdded));
                 }
 
-                if(angular.isDefined(event.Message.LabelIDsRemoved)) {
-                    event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
+                if(angular.isDefined(newMessage.LabelIDsRemoved)) {
+                    newMessage.LabelIDs = _.difference(message.LabelIDs, newMessage.LabelIDsRemoved);
 
-                    _.each(event.Message.LabelIDsRemoved, function(labelId) {
+                    _.each(newMessage.LabelIDsRemoved, function(labelId) {
                         remove(labelId, message);
                     });
                 }
 
-                var sameLabels = message.LabelIDs === event.Message.LabelIDs;
+                var sameLabels = message.LabelIDs === newMessage.LabelIDs;
 
                 if(sameLocation === false) {
                     var previousTotal = cacheCounters.total(previousLocation);
-                    var previousUnread = cacheCounters.unread(previousLocation);
                     var newTotal = cacheCounters.total(newLocation);
-                    var newUnread = cacheCounters.unread(newLocation);
 
                     // update previous location
-                    cacheCounters.update(previousLocation, previousTotal - 1, previousUnread - 1);
+                    cacheCounters.update(previousLocation, previousTotal - 1);
                     // update new location
-                    cacheCounters.update(newLocation, newTotal + 1, newUnread + 1);
+                    cacheCounters.update(newLocation, newTotal + 1);
                     // remove message in the previous location
                     remove(previousLocation, message);
                     // insert message in the new location
@@ -501,32 +507,39 @@ angular.module("proton.cache", [])
                     var currentTotal = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
                     var currentUnread = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
 
-                    if(event.Message.Starred === 0) {
+                    if(newMessage.Starred === 0) {
                         // remove message in the starred folder
                         remove(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
                         // update starred counter
-                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal - 1, currentUnread - 1);
+                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal - 1);
                     } else {
                         // insert message in the starred folder
                         insert(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
                         // update starred counter
-                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal + 1, currentUnread + 1);
+                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal + 1);
                     }
                 }
 
-                hash[event.ID] = _.extend(message, _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']));
+                // Update unread counters
+                if(sameLocation) {
+                    if(message.IsRead === 0 && newMessage.IsRead === 1) {
+                        cacheCounters.update(newLocation, undefined, cacheCounters.unread(newLocation) + 1);
+                    } else if(message.IsRead === 1 && newMessage.IsRead === 0) {
+                        cacheCounters.update(newLocation, undefined, cacheCounters.unread(newLocation) - 1);
+                    }
+                } else if(newMessage.IsRead === 1) {
+                    cacheCounters.update(previousLocation, undefined, cacheCounters.unread(previousLocation) - 1);
+                    cacheCounters.update(newLocation, undefined, cacheCounters.unread(newLocation) + 1);
+                }
+
+                _.extend(hash[event.ID], message, _.omit(newMessage, ['LabelIDsAdded', 'LabelIDsRemoved']));
 
                 deferred.resolve();
             }
-        } else {
-            getMessage(event.ID).then(function(message) {
-                event.Message = message;
-                // Create a new message in the cache
-                api.create(event);
-                deferred.resolve();
-            }, function(error) {
-                deferred.reject(error);
-            });
+        } else if(angular.isDefined(event.Message)) {
+            // Create a new message in the cache
+            api.create(event);
+            deferred.resolve();
         }
 
         return deferred.promise;
@@ -571,6 +584,7 @@ angular.module("proton.cache", [])
     api.callRefresh = function() {
         $rootScope.$broadcast('refreshMessages');
         $rootScope.$broadcast('refreshCounters');
+        $rootScope.$broadcast('updatePageName');
     };
 
     return api;
@@ -607,6 +621,9 @@ angular.module("proton.cache", [])
             total: promiseTotal
         }).then(function(result) {
             // folders case
+            _.each([0, 1, 2, 3, 4, 5, 6], function(location) {
+                exist(location);
+            });
             _.each(result.total.Locations, function(obj) {
                 exist(obj.Location);
                 counters[obj.Location].total = obj.Count;
