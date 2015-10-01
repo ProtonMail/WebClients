@@ -100,6 +100,26 @@ angular.module("proton.cache", [])
     };
 
     /**
+     *
+     */
+    var reorder = function(location) {
+        if(angular.isDefined(cache[location])) {
+            var messages = [];
+
+            for (var i = 0; i < cache[location].length; i++) {
+                var id = cache[location][i];
+
+                messages.push(hash[id]);
+            }
+
+            var asc = _.sortBy(messages, 'Time');
+            var desc = asc.reverse();
+
+            cache[location] = _.map(desc, function(message) { return message.ID; });
+        }
+    };
+
+    /**
     * Remove message ID in a specific cache location
     * @param {String} location
     * @param {Object} message
@@ -404,16 +424,18 @@ angular.module("proton.cache", [])
     * @return {Promise}
     */
     api.updateDraft = function(event) {
-        var drafts = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
+        var location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
         var deferred = $q.defer();
 
-        // Draft cache is defined?
-        if(angular.isDefined(cache[drafts])) {
-            var index = _.findIndex(cache[drafts], function(message) { return message.ID === event.ID; });
-            var currentMessage = cache[location][index];
+        if(angular.isDefined(cache[location])) {
+            var index = cache[location].indexOf(event.ID);
 
             if(index !== -1) {
-                cache[drafts][index] = _.extend(currentMessage, event.Message);
+                hash[event.ID] = _.extend(hash[event.ID], event.Message);
+                reorder(location);
+            } else {
+                insert(location, event.Message);
+                hash[event.ID] = event.Message;
             }
         }
 
@@ -514,11 +536,10 @@ angular.module("proton.cache", [])
     * Manage the cache when a new event comes
     */
     api.events = function(events) {
-        console.log('api.events');
         var promises = [];
 
         _.each(events, function(event) {
-            // console.log(event);
+            console.log(event);
             switch (event.Action) {
                 case DELETE:
                     promises.push(api.delete(event));

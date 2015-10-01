@@ -18,7 +18,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     attachments,
     authentication,
     contactManager,
-    messageCache,
+    cacheMessages,
     notify,
     pmcw,
     tools
@@ -878,6 +878,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                 var process = function(result) {
                     message.ID = result.Message.ID;
                     message.IsRead = result.Message.IsRead;
+                    message.Time = result.Message.Time;
 
                     if(forward === true && result.Message.Attachments.length > 0) {
                         message.Attachments = result.Message.Attachments;
@@ -889,9 +890,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     $scope.saveOld(message);
 
                     // Add draft in message list
-                    if($state.is('secured.drafts.list')) {
-                        $rootScope.$broadcast('refreshMessages');
-                    }
+                    var events = [];
+
+                    events.push({Action: 2, ID: result.Message.ID, Message: result.Message});
+                    cacheMessages.events(events);
 
                     if(notification === true) {
                         notify({message: "Message saved", classes: 'notification-success'});
@@ -1017,10 +1019,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.'));
                         } else {
                             Message.send(parameters).$promise.then(function(result) {
-                                var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
+                                var events = [{Action: 1, ID: message.ID, Message: result.Sent}];
 
                                 if (result.Parent) {
-                                    updateMessages.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                    events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                     $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
                                     if(result.Parent.ID === $stateParams.id) {
                                         $state.go('^');
@@ -1032,7 +1034,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                 if(angular.isDefined(result.Error)) {
                                     deferred.reject(new Error(result.Error));
                                 } else {
-                                    messageCache.set(updateMessages);
+                                    cacheMessages.events(events);
                                     notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
                                     $scope.close(message, false, false);
                                     deferred.resolve(result);
