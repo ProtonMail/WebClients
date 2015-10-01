@@ -456,7 +456,7 @@ angular.module("proton.cache", [])
         // Present in the current cache?
         if(result === true) {
             var message = hash[event.ID];
-            var newMessage = _.extend(message, event.Message);
+            var newMessage = _.extend(message, angular.copy(event.Message));
 
             if(JSON.stringify(message) === JSON.stringify(newMessage)) {
                 deferred.resolve();
@@ -514,7 +514,7 @@ angular.module("proton.cache", [])
                     }
                 }
 
-                hash[event.ID] = _.extend(message, event.Message);
+                hash[event.ID] = _.extend(message, _.omit(event.Message, ['LabelIDsAdded', 'LabelIDsRemoved']));
 
                 deferred.resolve();
             }

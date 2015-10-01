@@ -714,6 +714,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                         message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.archive;
                     }
 
+                    message.LabelIDs = _.uniq(message.LabelIDs.concat(toApply));
+                    message.LabelIDs = _.difference(message.LabelIDs, toRemove);
+
                     events.push({
                         Action: 3, // UPDATE_FLAG
                         ID: message.ID,
