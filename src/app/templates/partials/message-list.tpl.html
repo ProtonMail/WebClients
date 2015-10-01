@@ -2,7 +2,7 @@
 <ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" ng-height>
-    <div  ng-repeat="message in messages track by message.ID" 
+    <div  ng-repeat="message in messages track by message.ID"
     class="message" ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
         <aside>
             <span class="pm_checkbox">

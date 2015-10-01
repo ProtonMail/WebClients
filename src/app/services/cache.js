@@ -427,62 +427,68 @@ angular.module("proton.cache", [])
         // Present in the current cache?
         if(result === true) {
             var message = hash[event.ID];
-            var previousLocation = message.Location;
-            var newLocation = event.Message.Location;
-            var sameLocation = previousLocation === newLocation;
-            var sameStarred = message.Starred === event.Message.Starred;
+            var newMessage = _.extend(message, event.Message);
 
-            // Manage labels
-            if(angular.isDefined(event.Message.LabelIDsAdded)) {
-                event.Message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-            }
+            if(JSON.stringify(message) === JSON.stringify(newMessage)) {
+                deferred.resolve();
+            } else {
+                var previousLocation = message.Location;
+                var newLocation = event.Message.Location;
+                var sameLocation = previousLocation === newLocation;
+                var sameStarred = message.Starred === event.Message.Starred;
 
-            if(angular.isDefined(event.Message.LabelIDsRemoved)) {
-                event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
-
-                _.each(event.Message.LabelIDsRemoved, function(labelId) {
-                    remove(labelId, message);
-                });
-            }
-
-            var sameLabels = message.LabelIDs === event.Message.LabelIDs;
-
-            if(sameLocation === false) {
-                var previousTotal = cacheCounters.total(previousLocation);
-                var previousUnread = cacheCounters.unread(previousLocation);
-                var newTotal = cacheCounters.total(newLocation);
-                var newUnread = cacheCounters.unread(newLocation);
-
-                // update previous location
-                cacheCounters.update(previousLocation, previousTotal - 1, previousUnread - 1);
-                // update new location
-                cacheCounters.update(newLocation, newTotal + 1, newUnread + 1);
-                // remove message in the previous location
-                remove(previousLocation, message);
-                // insert message in the new location
-                insert(newLocation, message);
-            }
-
-            if(sameStarred === false) {
-                var currentTotal = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
-                var currentUnread = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
-
-                if(event.Message.Starred === 0) {
-                    // remove message in the starred folder
-                    remove(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
-                    // update starred counter
-                    cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal - 1, currentUnread - 1);
-                } else {
-                    // insert message in the starred folder
-                    insert(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
-                    // update starred counter
-                    cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal + 1, currentUnread + 1);
+                // Manage labels
+                if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                    event.Message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
                 }
+
+                if(angular.isDefined(event.Message.LabelIDsRemoved)) {
+                    event.Message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
+
+                    _.each(event.Message.LabelIDsRemoved, function(labelId) {
+                        remove(labelId, message);
+                    });
+                }
+
+                var sameLabels = message.LabelIDs === event.Message.LabelIDs;
+
+                if(sameLocation === false) {
+                    var previousTotal = cacheCounters.total(previousLocation);
+                    var previousUnread = cacheCounters.unread(previousLocation);
+                    var newTotal = cacheCounters.total(newLocation);
+                    var newUnread = cacheCounters.unread(newLocation);
+
+                    // update previous location
+                    cacheCounters.update(previousLocation, previousTotal - 1, previousUnread - 1);
+                    // update new location
+                    cacheCounters.update(newLocation, newTotal + 1, newUnread + 1);
+                    // remove message in the previous location
+                    remove(previousLocation, message);
+                    // insert message in the new location
+                    insert(newLocation, message);
+                }
+
+                if(sameStarred === false) {
+                    var currentTotal = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+                    var currentUnread = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+
+                    if(event.Message.Starred === 0) {
+                        // remove message in the starred folder
+                        remove(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
+                        // update starred counter
+                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal - 1, currentUnread - 1);
+                    } else {
+                        // insert message in the starred folder
+                        insert(CONSTANTS.MAILBOX_IDENTIFIERS.starred, message);
+                        // update starred counter
+                        cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, currentTotal + 1, currentUnread + 1);
+                    }
+                }
+
+                hash[event.ID] = _.extend(message, event.Message);
+
+                deferred.resolve();
             }
-
-            hash[event.ID] = _.extend(message, event.Message);
-
-            deferred.resolve();
         } else {
             getMessage(event.ID).then(function(message) {
                 event.Message = message;
@@ -501,25 +507,26 @@ angular.module("proton.cache", [])
     * Manage the cache when a new event comes
     */
     api.events = function(events) {
+        console.log('api.events');
         var promises = [];
 
         _.each(events, function(event) {
-            console.log(event);
+            // console.log(event);
             switch (event.Action) {
                 case DELETE:
-                promises.push(api.delete(event));
-                break;
+                    promises.push(api.delete(event));
+                    break;
                 case CREATE:
-                promises.push(api.create(event));
-                break;
+                    promises.push(api.create(event));
+                    break;
                 case UPDATE_DRAFT:
-                promises.push(api.updateDraft(event));
-                break;
+                    promises.push(api.updateDraft(event));
+                    break;
                 case UPDATE_FLAG:
-                promises.push(api.updateFlag(event));
-                break;
+                    promises.push(api.updateFlag(event));
+                    break;
                 default:
-                break;
+                    break;
             }
         });
 
