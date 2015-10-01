@@ -363,7 +363,12 @@ angular.module("proton.controllers.Settings", [
             params: {
                 title: $translate.instant('CREATE_NEW_LABEL'),
                 create: function(name, color) {
-                    if (_.find($scope.labels, function(l) {return l.Name === name;}) === undefined) {
+                    // already exist?
+                    var result = _.find($scope.labels, function(label) {
+                        return label.Name === name;
+                    });
+                    
+                    if (angular.isUndefined(result)) {
                         labelModal.deactivate();
                         networkActivityTracker.track(
                             Label.save({
