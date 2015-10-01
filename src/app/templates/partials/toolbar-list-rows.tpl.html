@@ -81,7 +81,7 @@
     </div>
     <div class="mobileMain">
         <span class="pm_checkbox">
-            <input type="checkbox">
+            <input type="checkbox" name="selectAll" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </span>
         <span class="pm_buttons">
             <a href="" class="fa fa-eye-slash hidden-xs" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="setMessagesReadStatus(false)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
