@@ -6,10 +6,88 @@
                 <h3>{{ 'ADVANCED_SEARCH' | translate }}</h3>
             </div>
             <div class="modal-body">
-
+                <div class="clearfix">
+                    <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
+                    <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keywords" />
+                </div>
+                <div class="clearfix">
+                    <div class="col">
+                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>
+                        <select id="search_folder">
+                            <optgroup label="Default">
+                                <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
+                            </optgroup>
+                            <optgroup label="Folders">
+                                <option ng-repeat="(key, value) in ctrl.folders" value="{{value}}">{{key}}</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="search_label">{{ 'LABEL' | translate }}</label>
+                        <select id="search_label" class="form-control">
+                            <optgroup label="Default">
+                                <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
+                            </optgroup>
+                            <optgroup label="{{ 'LABELS' | translate }}">
+                                <option value="{{label.ID}}" ng-repeat="label in ctrl.labels">{{label.Name}}</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col">
+                        <label for="search_sender">{{ 'SENDER' | translate }}</label>
+                        <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'FROM' | translate }}" />
+                    </div>
+                    <div class="col">
+                        <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
+                        <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'TO' | translate }}" />
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col">
+                        <label for="search_start"></label>
+                        <input pikaday="ctrl.start" id="search_start" on-select="setMin()" />
+                    </div>
+                    <div class="col">
+                        <label for="search_end"></label>
+                        <input pikaday="ctrl.end" id="search_end" on-select="setMax()" />
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col">
+                        <label>{{ 'ATTACHMENTS' | translate }}</label>
+                        <div class="radio">
+                            <label for="attachments_all">
+                                <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" /> {{ 'ALL' | translate }}
+                            </label>
+                            <label for="attachments_yes">
+                                <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1" /> {{ 'YES' | translate }}
+                            </label>
+                            <label for="attachments_no">
+                                <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" /> {{ 'NO' | translate }}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>{{ 'IS_STARRED' | translate }}</label>
+                        <div class="radio">
+                            <label for="starred_all">
+                                <input id="starred_all" type="radio" ng-model="ctrl.starred" value="2" /> {{ 'ALL' | translate }}
+                            </label>
+                            <label for="starred_yes">
+                                <input id="starred_yes" type="radio" ng-model="ctrl.starred" value="1" /> {{ 'YES' | translate }}
+                            </label>
+                            <label for="starred_no">
+                                <input id="starred_no" type="radio" ng-model="ctrl.starred" value="0" /> {{ 'NO' | translate }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer text-right">
-
+                <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                <a href class="pm_button primary" ng-click="ctrl.search()">{{ 'SEARCH' | translate }}</a>
             </div>
         </div>
     </div>

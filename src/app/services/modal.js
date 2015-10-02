@@ -143,9 +143,20 @@ angular.module("proton.modals", [])
 })
 
 // Advance search modal
-.factory('searchModal', function(pmModal) {
+.factory('searchModal', function(pmModal, authentication, CONSTANTS) {
     return pmModal({
         controller: function(params) {
+            this.attachments = 2;
+            this.starred = 2;
+            this.labels = authentication.user.Labels;
+            this.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
+            delete this.folders.search;
+            delete this.folders.label;
+
+            if(angular.isDefined(params.value)) {
+                this.keywords = params.value;
+            }
+
             this.search = function() {
                 if (angular.isDefined(params.search) && angular.isFunction(params.search)) {
                     params.search();
