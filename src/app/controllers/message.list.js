@@ -95,6 +95,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.moveMessagesTo(name);
         });
 
+        $scope.$on('activeMessage', function(event, id) {
+            $scope.activeMessage(id);
+        });
+
         $scope.$on('starMessages', function(event) {
             var ids = $scope.selectedIds();
             var promise;
@@ -398,8 +402,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     )
                 );
             } else {
-                $scope.activeMessage(message.ID);
-
                 var newMessage = angular.copy(message);
 
                 if(newMessage.IsRead === 0) {

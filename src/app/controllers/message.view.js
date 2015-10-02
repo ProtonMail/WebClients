@@ -35,6 +35,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $rootScope.$broadcast('updatePageName');
+    $rootScope.$broadcast('activeMessage', message.ID);
 
     $scope.$watch('message', function() {
         messageCache.put(message.ID, message);
