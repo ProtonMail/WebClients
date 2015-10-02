@@ -7,6 +7,14 @@
 	}
 	&.alert-info {
 		background: $alert-info;
-
 	}
+    &.alert-success {
+        background: #aecf96;
+    }
+    &.alert-error {
+        background: #cf9696;
+    }
+    &.alert-warning {
+        background: #d9c4a2;
+    }	
 }

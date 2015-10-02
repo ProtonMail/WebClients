@@ -4,108 +4,113 @@
 
     <div class="settings" ng-height>
 
-        <div class="row" id="appearanceForm">
-            <div class="col-md-4">
+
+        <div class="row">
+
+            <!-- where does this go? -->
+            <section ng-if="false" class="setting pm_form">
+
                 <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons" method="post">
                     <legend>Message Buttons</legend>
                     <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
                     <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="1">
-                        <img src="assets/img/1.png">
-                      </label>
+                        <label>
+                            <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="1">
+                            <img src="assets/img/1.png">
+                        </label>
                     </div>
                     <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="0">
-                        <img src="assets/img/2.png">
-                      </label>
+                        <label>
+                            <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="0">
+                            <img src="assets/img/2.png">
+                        </label>
                     </div>
                     <div class="clearfix">
                         <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
-            </div>
-            <div class="col-md-4">
+
+            </section>
+
+            <section class="setting pm_form">
+
                 <form novalidate ng-submit="saveComposerMode(composerMode)" name="composerMode" method="post">
                     <legend>Composer</legend>
-                    <label for="composerMode" class="control-label">{{ 'DEFAULT_COMPOSER_MODE' | translate }}</label><br>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="0">
-                        Popup
-                      </label>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                    <p><a href="#" class="pm_button link">Learn more about derp</a></p>
+                    <div class="radio col left">
+                        <label>
+                            <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="0">
+                            <span>Popup</span>
+                            <br>
+                            <img src="/assets/img/settings/pop.gif">
+                        </label>
                     </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="1">
-                        Maximized
-                      </label>
-                    </div>
-                    <div class="clearfix">
-                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    <div class="radio col right">
+                        <label>
+                            <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="1">
+                            <span>Maximized</span>
+                            <br>
+                            <img src="/assets/img/settings/max.gif">
+                        </label>
                     </div>
                 </form>
-            </div>
-            <div class="col-md-4">
+
+            </section>
+            <section class="setting pm_form pull-right">
+
                 <form novalidate ng-submit="saveLayoutMode(composerMode)" name="layoutMode" method="post">
                     <legend>Layout</legend>
-                    <label for="composerMode" class="control-label">{{ 'LAYOUT_MODE' | translate }}</label><br>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="0">
-                        Column
-                      </label>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                    <p><a href="#" class="pm_button link">Learn more about derp</a></p>
+                    <div class="radio col left">
+                        <label>
+                            <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="0">
+                            <span>Column</span>
+                            <br>
+                            <img src="/assets/img/settings/col.gif">
+                        </label>
                     </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="1">
-                        Row
-                      </label>
-                    </div>
-                    <div class="clearfix">
-                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
-                    </div>
-                </form>
-            </div>            
-            <div class="col-md-4">
-                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
-                    <legend>{{ 'EMAILS' | translate }}</legend>
-                    <label for="composerMode" class="control-label">{{ 'EMAIL_IMAGES' | translate }}</label><br>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="ShowImages" name="showImagesMode" value="1">
-                        Show Images by Default
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" ng-model="ShowImages" name="showImagesMode" value="0">
-                        Hide Images by Default
-                      </label>
-                    </div>
-                    <div class="clearfix">
-                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    <div class="radio col right">
+                        <label>
+                            <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="1">
+                            <span>Row</span>
+                            <br>
+                            <img src="/assets/img/settings/row.gif">
+                        </label>
                     </div>
                 </form>
-            </div>
+
+            </section>
+
         </div>
-        <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
-            <legend>Custom Theme</legend>
-            <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
-                <p class="alert alert-warning">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
-                <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                <textarea class="form-control" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
-                <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
-            </div>
-            <div class="text-right">
-                <button type="button" class="btn btn-sm btn-default" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
-                <button type="submit" class="btn btn-sm btn-primary">{{ 'SAVE' | translate }}</button>
-            </div>
-        </form>
-        <form ng-submit="apiTest()" ng-if="false" method="post">
-            <button type="submit" class="btn btn-sm btn-warning">API Test</button>
-        </form>
+
+        <div class="row">
+
+            <section class="setting pm_form full">
+
+                <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
+                    <legend>Custom Theme</legend>
+                    <div ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
+                        <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                        <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
+                        <textarea class="form-control" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
+                        <p class="help-block">{{ 'THEMES_ARE_LIMITED' | translate }}.</p>
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="pm_button" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
+                        <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
+                <form ng-submit="apiTest()" ng-if="false" method="post">
+                    <button type="submit" class="btn btn-sm btn-warning">API Test</button>
+                </form>
+
+            </section>
+
+        </div>
 
     </div>
 

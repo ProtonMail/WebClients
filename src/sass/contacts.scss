@@ -6,59 +6,6 @@
 	.wrap {
 		flex-grow: 1;
 	}
-	table {
-		border-collapse: collapse;
-		table-layout: fixed;
-		width: 100%;
-		th, td {
-			line-height: $rowHeight;
-			padding: 0 1rem;
-			text-align: left;
-			&.checkbox {
-				width: 35px;
-				padding: 0;
-				label {
-					padding: 0 1rem 0 0;
-					line-height: $rowHeight;
-					display: block;
-					cursor: pointer;
-				}
-			}
-			&.name {
-				padding-left: 0;
-				width: 300px;
-				span {
-					width: 300px;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					display: block;
-					white-space: nowrap;
-				}
-			}
-			&.email {
-				padding-left: 0;
-			}
-			&.actions {
-				width: 120px;
-				span {
-					width: 120px;
-				}
-			}
-		}
-		th {
-			background: #f6f6f6;
-			border-bottom: 1px solid $gray-light;
-			color: #838897;
-			font-weight: 400;
-			.fa {
-				color: $primary;
-			}
-		}		
-		td {
-			border-bottom: 1px solid $border;
-			color: $gray;
-		}
-	}
 	.tableWrapper {}
 }
 

@@ -31,6 +31,9 @@
 				&.pull-right {
 					float: right;
 				}
+				&.full {
+					width: 100%;
+				}
 				.angular-squire-wrapper {
 					width: 100%;
 					iframe {
@@ -41,8 +44,18 @@
 					}
 				}
 				.radio {
-					margin-right: 1rem;
 					display: inline-block;
+				}
+				#logArea {
+					padding: 1rem 0;
+				}
+				#logActions {
+					.pm_buttons {
+						float: right !important;
+					}
+				}
+				#logRefresh {
+					margin-right: 1rem;
 				}
 				#aliases-container {
 					ul {

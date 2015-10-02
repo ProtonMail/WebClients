@@ -14,7 +14,12 @@
                     </div>
                     <div class="col right">
                         <input id="displayName" type="text" name="displayName" ng-model="displayName" />
-                        <a href="https://support.protonmail.ch/knowledge-base/display-name/" target="_blank" class="pm_button link pull-left">{{ 'WHAT_IS_THE_DISPLAY_NAME?' | translate }}</a>
+                        <p>
+                            <a href="https://support.protonmail.ch/knowledge-base/display-name/" target="_blank" class="pm_button link">
+                                {{ 'WHAT_IS_THE_DISPLAY_NAME?' | translate }}
+                            </a>
+                        </p>
+                        <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
             </section>
@@ -35,7 +40,10 @@
                             <label for="notificationEmail">{{ 'RECOVERY_EMAIL' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="email" id="notificationEmail" name="notificationEmail" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
+                            <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
+                            <p class="help-block"><small><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</small></p>
+
+                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -53,11 +61,10 @@
                                     <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="0"> Disabled
                                 </label>
                             </div>
-                            <p class="help-block"><small><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</small></p>
+                            <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                         </div>
                     </div>
                     <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
-                    <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="pm_button pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                 </form>
             </section>
 
@@ -87,7 +94,8 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" />
+                            <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" class="margin" />
+                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
                 </form>
@@ -123,7 +131,8 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" required="" />
+                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" class="margin" required="" />
+                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
                     <p><a href="https://support.protonmail.ch/knowledge-base/resetting-mailbox-password/" target="_blank" class="pm_button link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a></p>
@@ -190,9 +199,10 @@
             <section class="setting pm_form">
                 <legend>{{ 'SIGNATURE' | translate }}</legend>
                 <form ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate method="post">
-                    <div class="form-group" ng-class="{'has-error': signatureForm.signature.$error.required}">
+                    <div class="margin" ng-class="{'has-error': signatureForm.signature.$error.required}">
                         <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
                     </div>
+                    <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                 </form>
             </section>
 
