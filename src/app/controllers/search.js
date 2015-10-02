@@ -23,10 +23,6 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
     // Listeners
     $('#' + modalId).on('hide.bs.modal', hideBsModal);
 
-    $scope.$on('openSearchModal', function(event, value) {
-        $scope.open(value);
-    });
-
     $scope.$on('searchMessages', function(event, searchValue) {
         $scope.search(searchValue);
     });

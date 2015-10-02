@@ -142,6 +142,27 @@ angular.module("proton.modals", [])
     });
 })
 
+// Advance search modal
+.factory('searchModal', function(pmModal) {
+    return pmModal({
+        controller: function(params) {
+            this.search = function() {
+                if (angular.isDefined(params.search) && angular.isFunction(params.search)) {
+                    params.search();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/advanceSearch.tpl.html'
+    });
+})
+
 // login help modal
 .factory('loginModal', function(pmModal) {
     return pmModal({

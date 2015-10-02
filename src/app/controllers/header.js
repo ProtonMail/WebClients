@@ -8,7 +8,8 @@ angular.module("proton.controllers.Header", [])
     $stateParams,
     CONSTANTS,
     authentication,
-    wizardModal
+    wizardModal,
+    searchModal
 ) {
     $scope.params = {
         searchMessageInput: $stateParams.words || '',
@@ -16,6 +17,10 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.showSidebar = $rootScope.showSidebar;
+
+    $scope.$on('openSearchModal', function(event, value) {
+        $scope.openSearchModal(value);
+    });
 
     function openWizardModal(title, version) {
         wizardModal.activate({
@@ -28,6 +33,21 @@ angular.module("proton.controllers.Header", [])
             }
         });
     }
+
+    $scope.openSearchModal = function(value) {
+        console.log('openSearchModal');
+        searchModal.activate({
+            params: {
+                keywords: value,
+                search: function() {
+
+                },
+                cancel: function() {
+                    searchModal.deactivate();
+                }
+            }
+        });
+    };
 
     $scope.isContactsView = function() {
         return $state.is('secured.contacts');
@@ -73,10 +93,6 @@ angular.module("proton.controllers.Header", [])
 
     $scope.openNewMessage = function() {
         $rootScope.$broadcast('newMessage');
-    };
-
-    $scope.openSearchModal = function() {
-        $rootScope.$broadcast('openSearchModal', $scope.params.searchMessageInput);
     };
 
     $scope.openReportModal = function() {
