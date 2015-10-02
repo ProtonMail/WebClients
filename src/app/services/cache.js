@@ -32,24 +32,26 @@ angular.module("proton.cache", [])
     var MESSAGE = 5;
     // Parameters shared between api / cache / message view / message list
     var fields = [
-        "ID",
-        "Subject",
-        "IsRead",
-        "SenderAddress",
-        "SenderName",
-        "ToList",
-        "Time",
-        "Size",
-        "Location",
-        "Starred",
-        "HasAttachment",
-        "IsEncrypted",
-        "ExpirationTime",
-        "IsReplied",
-        "IsRepliedAll",
-        "IsForwarded",
-        "AddressID",
-        "LabelIDs"
+        'AddressID',
+        'Body',
+        'ExpirationTime',
+        'HasAttachment',
+        'ID',
+        'IsEncrypted',
+        'IsForwarded',
+        'IsRead',
+        'IsReplied',
+        'IsRepliedAll',
+        'LabelIDs',
+        'Location',
+        'Selected',
+        'SenderAddress',
+        'SenderName',
+        'Size',
+        'Starred',
+        'Subject',
+        'Time',
+        'ToList'
     ];
 
     /**
@@ -137,7 +139,23 @@ angular.module("proton.cache", [])
     };
 
     /**
-     *
+     * Update or create message Resource stored in hash
+     * @param {String} id
+     * @param {Object} message
+     */
+    var updateHash = function(id, message) {
+        var datas = _.omit(message, 'LabelIDsAdded', 'LabelIDsRemoved');
+
+        if(angular.isDefined(hash[id])) {
+            _.extend(hash[id], datas);
+        } else {
+            hash[id] = datas;
+        }
+    };
+
+    /**
+     * Reorder cache location by reverse time
+     * @param {String} location
      */
     var reorder = function(location) {
         if(angular.isDefined(cache[location])) {
@@ -353,7 +371,7 @@ angular.module("proton.cache", [])
             for (var i = 0; i < messages.length; i++) {
                 var message = messages[i];
 
-                hash[message.ID] = message;
+                updateHash(message.ID, message);
             }
         }
     };
@@ -450,7 +468,7 @@ angular.module("proton.cache", [])
             }
         }
 
-        _.extend(hash[message.ID], message);
+        updateHash(message.ID, message);
 
         deferred.resolve();
 
@@ -470,11 +488,11 @@ angular.module("proton.cache", [])
             var index = cache[location].indexOf(event.ID);
 
             if(index !== -1) {
-                _.extend(hash[event.ID], event.Message);
+                updateHash(event.ID, event.Message);
                 reorder(location);
             } else {
                 insert(location, event.Message);
-                hash[event.ID] = event.Message;
+                updateHash(event.ID, event.Message);
             }
         }
 
@@ -562,7 +580,7 @@ angular.module("proton.cache", [])
                     );
                 });
 
-                _.extend(hash[event.ID], message, _.omit(newMessage, ['LabelIDsAdded', 'LabelIDsRemoved']));
+                updateHash(event.ID, newMessage);
 
                 deferred.resolve();
             }
