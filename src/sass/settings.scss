@@ -28,6 +28,33 @@
 				float: left;
 				box-sizing: border-box;
 				padding: 0;
+				.as-sortable-placeholder {
+					background: $border !important;
+					box-sizing: border-box;
+				}
+				.as-sortable-dragging {
+					border: 1px solid $border;
+					line-height: 2rem;
+					background: $white;
+					box-sizing: border-box;
+					overflow: hidden;
+					padding: 0 1rem;
+					.fa-check {
+						line-height: 2rem;
+					    padding: 0 1rem;
+					    background: #fff;
+					    color: #9397cd;
+						position: absolute;
+					    right: 0;
+					    top: 0;
+					    bottom: 0;
+					}
+					.fa-ellipsis-v {
+						line-height: 2rem;
+						float: left;
+						margin-right: .5rem;
+					}
+				}
 				&.pull-right {
 					float: right;
 				}
@@ -71,6 +98,7 @@
 							list-style-type: none;
 							border-bottom: 1px solid $border;
 							position: relative;
+							background: $white;
 							.fa.fa-ellipsis-v {
 								margin-right: .5rem;
 							}

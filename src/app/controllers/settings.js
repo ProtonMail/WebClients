@@ -53,7 +53,7 @@ angular.module("proton.controllers.Settings", [
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
-        containment: "#aliases-container",
+        containment: "form[name='aliasesForm']",
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
