@@ -3,10 +3,10 @@
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" ng-height>
     <sample ng-if="!!!messages" msgs="samples()"></sample>
-    <div 
+    <div
     ng-if="messages"
     ng-repeat="message in messages track by message.ID"
-    class="message" 
+    class="message"
     ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1'}">
         <aside>
             <span class="pm_checkbox">
@@ -46,10 +46,10 @@
 
 <div ng-if="layoutMode === 'rows'" id="pm_list" ng-height>
     <sample ng-if="!!!messages" msgs="samples()"></sample>
-    <div 
+    <div
     ng-if="messages"
-    ng-repeat="message in messages track by message.ID" 
-    class="message" 
+    ng-repeat="message in messages track by message.ID"
+    class="message"
     ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
         <span class="pm_checkbox">
             <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />

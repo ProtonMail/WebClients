@@ -1,6 +1,6 @@
 angular.module("proton.sample", [])
 
-.directive('ngSample', function () {
+.directive('sample', function () {
 
     return {
         restrict : 'EA',
