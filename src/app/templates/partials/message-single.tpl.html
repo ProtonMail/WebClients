@@ -13,24 +13,36 @@
     </header>
     <div class="sub">
         <div class="actions">
-            <span class="pm_buttons primary">
-                <a href="#" class="">
+            <span class="pm_buttons">
+                <a href="#" ng-click="forward(message)" class="">
                     <i class="fa fa-mail-reply"></i>
                 </a>
-                <a href="#" class="divider">
+                <a href="#" ng-click="replyAll(message)" class="divider">
                     <i class="fa fa-mail-reply-all"></i>
                 </a>
-                <a href="#" class="divider">
+                <a href="#" ng-click="reply(message)" class="divider">
                     <i class="fa fa-mail-forward"></i>
                 </a>
                 <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
             </span>
         </div>
         <i class="fa fa-mail-forward"></i>
-        {{ 'TO' | translate }}
-        <span ng-if="message.ToList.length">
-            <em ng-repeat="email in ::message.ToList">{{ email | contact }}</em>
-        </span>
+        <div ng-if="message.ToList.length">
+            {{ 'TO' | translate }}
+            <span class="recipientsWrap">
+                <em ng-repeat="email in ::message.ToList">
+                {{ email | contact }}
+                </em>
+            </span>
+        </div>
+        <div ng-if="message.CCList.length">
+            {{ 'CC' | translate }}
+            <span class="recipientsWrap">
+                <em ng-repeat="email in ::message.CCList">
+                {{ email | contact }}
+                </em>
+            </span>
+        </div>
         <div class="meta">
             <a href="#" class="fa fa-plus-square-o"></a>
             <span class="pm_labels inline" ng-if="message.LabelIDs.length">

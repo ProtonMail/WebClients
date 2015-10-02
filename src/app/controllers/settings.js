@@ -49,6 +49,7 @@ angular.module("proton.controllers.Settings", [
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
     $scope.apiURL = url.get();
+    $scope.ViewLayout = authentication.user.ViewLayout;
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -520,7 +521,26 @@ angular.module("proton.controllers.Settings", [
 
     // TODO save this using an API route and remove all instances of $rootScope.layoutMode
     $scope.saveLayoutMode = function(form) {
+
         var value = parseInt($scope.LayoutMode);
+        networkActivityTracker.track(
+            Setting.setViewlayout({
+                "ViewLayout": value
+            }).$promise.then(
+                function(response) {
+                    if(response.Code === 1000) {
+                        authentication.user.LayoutMode = $scope.LayoutMode;
+                        notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
+                },
+                function(error) {
+                    notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
+                    $log.error(error);
+                }
+            )
+        );
         if(value === 0) {
             $scope.LayoutMode = value;
             $rootScope.layoutMode = 'columns';
@@ -528,6 +548,7 @@ angular.module("proton.controllers.Settings", [
             $scope.LayoutMode = value;
             $rootScope.layoutMode = 'rows';
         }
+        
     };
 
     $scope.saveShowImages = function(form) {

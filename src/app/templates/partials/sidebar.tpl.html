@@ -75,9 +75,11 @@
         </ul>
     </div>
     <div class="footer">
+        <a href="#" class="upgrade">{{ 'UPGRADE_PLAN' | translate }}</a>
+        <div class="bar"><em style="width: {{ storagePercentage() }}"></em></div>
         <div class="storage">
-            <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
+            <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
         </div>
-        <a href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
+        <a class="version" href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
     </div>
 </section>

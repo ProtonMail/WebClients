@@ -99,6 +99,10 @@
     			}
     		}
     	}
+    	.recipientsWrap {
+    		display: block;
+    		margin: -1.25rem 0 0 2rem;
+    	}
 		.sub {
 			padding-left: 1.5rem;
 			padding-right: 145px;
@@ -111,6 +115,7 @@
 			clear: both;
 			em {
     			color: #669;
+    			display: block;
     		}
     		.meta {
     			padding-top: 5px;
@@ -123,6 +128,10 @@
 				top: 0;
 				z-index: 2;
 				width: 145px;
+				.pm_buttons {
+					float: right;
+					margin: 0;
+				}
 			}
 			& > .fa-mail-forward,
 			& > .fa-mail-reply,
@@ -145,6 +154,8 @@
     	.frame {
     		width: 100%;
     		position: relative;
+    		clear: both;
+    		padding-top: 1rem;
     		iframe {
     			position: relative;
     			width: 100%;

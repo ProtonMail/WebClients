@@ -1,9 +1,12 @@
 <div ng-if="message.Attachments.length > 0" id="attachmentArea">
     <header>
-        {{message.Attachments.length}} 
-        <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
-        <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>
-        ({{ message.sizeAttachments() | humanSize }})
+        <span class="title">
+            {{message.Attachments.length}} 
+            <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
+            <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>
+            ({{ message.sizeAttachments() | humanSize }})
+        </span>
+        <em></em>
     </header>
     <section>
         <a 

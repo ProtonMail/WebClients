@@ -31,8 +31,8 @@ section#pm_sidebar {
     ul.menu {
         li.active {
             a {
-                border-color: rgba(0,0,0,.1); 
-                background: #4e4d5c;
+                border-color: transparent;
+                background: rgba(0,0,0,.1);
                 color: $white;
                 i.fa {
                     color: $primary;
@@ -44,6 +44,9 @@ section#pm_sidebar {
                 color: #dadae5;
                 i.fa {
                     color: $secondary-alt;
+                }
+                strong.fa-repeat {
+                    opacity: .5;
                 }
             }
         }

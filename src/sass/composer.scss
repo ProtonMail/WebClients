@@ -141,7 +141,7 @@ body.maximizedComposer {
 					display: -webkit-flex;
 					display: -ms-flexbox;
 					display: flex;
-					height: $composerRowHeight;
+					min-height: $composerRowHeight;
 					line-height: $composerRowHeight;
 					border-bottom: 1px solid $border;
 					label {
