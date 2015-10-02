@@ -100,10 +100,23 @@ body.maximizedComposer {
 				}
 			}
 		}
+		.previews {
+			background: $gray-light;
+			padding-top: 10px;
+			padding-left: 10px;
+			.pm_button {
+				margin: 0 10px 10px 0;
+				background: #fff;
+				border-color: #fff;
+				float: left;
+			}
+		}
 		section {
 			-webkit-flex-grow: 1;
-			    -ms-flex-positive: 1;
-			        flex-grow: 1;
+		    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	        overflow: auto;
+	        min-height: 300px;
 			.meta {
 				color: $gray-light;
 				.tm-tag,
@@ -179,6 +192,7 @@ body.maximizedComposer {
 			overflow: hidden;
 			line-height: $composerRowHeight;
 			height: $composerRowHeight;
+			min-height: $composerRowHeight;
 			padding: 10px;
 			border-top: 1px solid $border;
 			border-radius: 0 0 2px 2px;

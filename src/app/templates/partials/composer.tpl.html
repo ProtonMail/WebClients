@@ -255,12 +255,12 @@
                         class="fa fa-caret-down transition"
                         ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
-                    <div
-                    class="previews"
+                    <div 
+                    class="previews clearfix"
                     ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
                         <span
                         title="{{attachment.filename || attachment.Name}}"
-                        class="preview-template"
+                        class="preview-template pm_button"
                         id="attachment{{$index}}"
                         ng-repeat="attachment in message.Attachments"
                         ng-init="initAttachment(attachment, $index)">
