@@ -12,6 +12,14 @@
     .settings {
     	padding: 0 25px;
     	margin-right: 25px;
+    	&#labelContainer {
+    		.toggle-switch {
+    			margin-right: 2rem;
+    		}
+    		.fa-tag {
+    			margin: 0 .5rem;
+    		}
+    	}
 		.row {
 			padding: 2rem 0;
 			flex-grow: 1;
@@ -86,32 +94,7 @@
 				}
 				#aliases-container {
 					ul {
-						padding: 0;
-						margin: 0;
-						list-style-type: none;
-						border: 1px solid $border;
-						border-bottom-width: 0;
 						li {
-							margin: 0;
-							padding: 0 1rem;
-							line-height: 2rem;
-							list-style-type: none;
-							border-bottom: 1px solid $border;
-							position: relative;
-							background: $white;
-							.fa.fa-ellipsis-v {
-								margin-right: .5rem;
-							}
-							.fa.fa-check {
-								position: absolute;
-								right: 0;
-								top: 0;
-								bottom: 0;
-								line-height: 2rem;
-								padding: 0 1rem;
-								background: $white;
-								color: $primary;
-							}
 						}
 					}
 				}

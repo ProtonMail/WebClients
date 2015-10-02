@@ -1,27 +1,30 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="settings" ng-height>
-        <div class="form-group">
+    <div class="settings" ng-height id="labelContainer">
+        <p>
             <button type="button" class="pm_button primary" ng-click="createLabel()">
                 <i class="fa fa-plus"></i> <strong>{{ 'ADD_LABEL' | translate }}</strong>
             </button>
-        </div>
-        <ul class="list-group" data-as-sortable="labelsDragControlListeners" data-ng-model="labels" id="labelContainer">
-            <li class="list-group-item" ng-repeat="label in labels" as-sortable-item="">
-                <div as-sortable-item-handle="">
-                    <i class="fa fa-ellipsis-v"></i>
-                    <span class="label label-pm" ng-style="{ 'background-color': label.Color }">{{ label.Name }}</span>
-                    <div class="pull-right">
-                        <toggle-switch ng-click="toggleDisplayLabel(label)" ng-model="label.Display" on-label="{{ 'SHOW' | translate }}" off-label="Hide" reverse="true"></toggle-switch>
-                        <button type="button" class="pm_button round" pt-tooltip="Edit Label" ng-click="editLabel(label)">
-                            <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="pm_button round" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
-                            <i class="fa fa-trash-o"></i>
-                        </button>
+        </p><!--/.form-group-->
+        <div class="pm_sort">
+            <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
+                <li ng-repeat="label in labels" as-sortable-item="">
+                    <div as-sortable-item-handle="">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
+                        <span class="label label-pm">{{ label.Name }}</span>
+                        <div class="pull-right">
+                            <toggle-switch ng-click="toggleDisplayLabel(label)" ng-model="label.Display" on-label="{{ 'SHOW' | translate }}" off-label="Hide" reverse="true"></toggle-switch>
+                            <button type="button" class="pm_button round" pt-tooltip="Edit Label" ng-click="editLabel(label)">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button type="button" class="pm_button round" pt-tooltip="Delete Label" ng-click="deleteLabel(label)">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </div><!--/.pull-right-->
                     </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+                </li>
+            </ul>
+        </div><!--/.pm_sort-->
+    </div><!--/.settings-->
+</div><!--/#pm_settings-->
