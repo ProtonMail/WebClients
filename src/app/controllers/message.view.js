@@ -95,19 +95,20 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.toggleStar = function(message) {
         var ids = [];
         var promise;
+        var newMessage = angular.copy(message);
 
         ids.push(message.ID);
 
         if(message.Starred === 1) {
             promise = Message.unstar({IDs: ids}).$promise;
-            message.Starred = 0;
+            newMessage.Starred = 0;
         } else {
             promise = Message.star({IDs: ids}).$promise;
-            message.Starred = 1;
+            newMessage.Starred = 1;
         }
 
         networkActivityTracker.track(promise);
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+        messageCache.set([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
     };
 
     $scope.openSafariWarning = function() {
@@ -219,20 +220,23 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.markAsRead = function() {
         var promise;
+        var newMessage = angular.copy(message);
 
-        message.IsRead = 1;
+        newMessage.IsRead = 1;
         promise = Message.read({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+        messageCache.set([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
     };
 
     $scope.markAsUnread = function() {
         var promise;
+        var newMessage = angular.copy(message);
+
+        newMessage.IsRead = 0;
         messageCounts.updateUnread('mark', [message], false);
-        message.IsRead = 0;
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+        messageCache.set([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
         $scope.goToMessageList();
     };
 
@@ -378,9 +382,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.detachLabel = function(id) {
         var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
+        var newMessage = angular.copy(message);
 
-        message.LabelIDs = _.without(message.LabelIDs, id);
-        messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+        newMessage.LabelIDs = _.without(message.LabelIDs, id);
+        messageCache.set([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
         networkActivityTracker.track(promise);
     };
 
@@ -394,6 +399,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
         var messageIDs = [message.ID];
+        var newMessage = angular.copy(message);
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
@@ -403,8 +409,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
             deferred.reject();
         } else {
-            messageCounts.updateTotalLabels([message], toApply, toRemove);
-
             _.each(toApply, function(labelID) {
                 promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
             });
@@ -414,8 +418,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             });
 
             $q.all(promises).then(function() {
-                message.LabelIDs = _.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove);
-                messageCache.set([{Action: 3, ID: message.ID, Message: message}]);
+                newMessage.LabelIDs = _.difference(_.uniq(newMessage.LabelIDs.concat(toApply)), toRemove);
+                messageCache.set([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
 
                 if(alsoArchive === true) {
                     deferred.resolve($scope.moveMessageTo('archive'));
@@ -536,25 +540,23 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
-        var messages = [];
-        var movedMessages = [];
-        var m = {LabelIDs: message.LabelIDs, OldLocation: message.Location, IsRead: message.IsRead, Location: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox], Starred: message.Starred};
+        var events = [];
+        var action;
+        var newMessage = angular.copy(message);
 
-        movedMessages.push(m);
-        messageCounts.updateUnread('move', movedMessages);
-        messageCounts.updateTotals('move', movedMessages);
+        newMessage.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         if(inDelete) {
             promise = Message.delete({IDs: [message.ID]}).$promise;
+            action = 0;
         } else {
+            action = 3;
             promise = Message[mailbox]({IDs: [message.ID]}).$promise;
         }
 
         promise.then(function(result) {
-            $rootScope.$broadcast('updateCounters');
-            message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            messages.push({Action: 3, ID: message.ID, Message: message});
-            messageCache.set(messages);
+            messages.push({Action: action, ID: newMessage.ID, Message: newMessage});
+            cacheMessages.events(events);
             $scope.goToMessageList();
         });
 

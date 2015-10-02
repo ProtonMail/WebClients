@@ -113,7 +113,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             var chars = '';
             for (var i=0;i<number;i++) {
                 chars += Math.random().toString(36).slice(2);
-            }     
+            }
             return chars;
         }
         var msgs = [];
@@ -126,7 +126,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             };
         }
         $log.info(msgs);
-        return msgs;   
+        return msgs;
     };
 
     $scope.stopWatchingEvent = function() {
@@ -400,14 +400,16 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             } else {
                 $scope.activeMessage(message.ID);
 
-                if(message.IsRead === 0) {
-                    message.IsRead = 1;
-                    Message.read({IDs: [message.ID]});
-                    cacheMessages.events([{Action: 3, ID: message.ID, Message: message}]);
+                var newMessage = angular.copy(message);
+
+                if(newMessage.IsRead === 0) {
+                    newMessage.IsRead = 1;
+                    Message.read({IDs: [newMessage.ID]});
+                    cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
                 }
 
                 $rootScope.scrollPosition = $('#content').scrollTop();
-                $state.go('secured.' + $scope.mailbox + '.list.view', { id: message.ID });
+                $state.go('secured.' + $scope.mailbox + '.list.view', { id: newMessage.ID });
             }
         }
     };
@@ -526,8 +528,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var events = [];
 
         _.each(messages, function(message) {
-            message.IsRead = +status;
-            events.push({Action: 3, ID: message.ID, Message: message});
+            var newMessage = {};
+
+            newMessage.ID = message.ID;
+            newMessage.IsRead = +status;
+            newMessage.Time = message.Time;
+            events.push({Action: 3, ID: newMessage.ID, Message: newMessage});
         });
 
         cacheMessages.events(events);
@@ -735,17 +741,19 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 var events = [];
 
                 _.each(selectedMessages, function(message) {
+                    var newMessage = angular.copy(message);
+
                     if(alsoArchive === true) {
-                        message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.archive;
+                        newMessage.Location = CONSTANTS.MAILBOX_IDENTIFIERS.archive;
                     }
 
-                    message.LabelIDs = _.uniq(message.LabelIDs.concat(toApply));
-                    message.LabelIDs = _.difference(message.LabelIDs, toRemove);
+                    newMessage.LabelIDs = _.uniq(newMessage.LabelIDs.concat(toApply));
+                    newMessage.LabelIDs = _.difference(newMessage.LabelIDs, toRemove);
 
                     events.push({
                         Action: 3, // UPDATE_FLAG
-                        ID: message.ID,
-                        Message: message
+                        ID: newMessage.ID,
+                        Message: newMessage
                     });
                 });
 
