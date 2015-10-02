@@ -6,7 +6,7 @@ angular.module("proton.sample", [])
         restrict : 'EA',
         // replace: true,
         scope: {
-            messages: '=msgs'
+            // messages: '=msgs'
         },
         // transclude: true,
         templateUrl: "templates/directives/sample.tpl.html"
