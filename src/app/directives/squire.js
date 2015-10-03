@@ -78,10 +78,12 @@ angular.module("proton.squire", [
             };
 
             scope.popoverHide = function(e, name) {
+                var linkElement = angular.element(e.currentTarget);
                 var hide = function() {
                     angular.element(e.target).closest(".popover-visible").removeClass("popover-visible");
-
-                    return scope.action(name);
+                    if (name) {
+                        return scope.action(name);
+                    }
                 };
 
                 if (e.keyCode) {
@@ -91,6 +93,7 @@ angular.module("proton.squire", [
                 } else {
                     return hide();
                 }
+                linkElement.removeClass('open');
             };
 
             scope.popoverShow = function(e) {
@@ -113,6 +116,7 @@ angular.module("proton.squire", [
                 popover.css({
                     left: -1 * (popover.width() / 2) + liElement.width() / 2
                 });
+                linkElement.addClass('open');
             };
 
             updateStylesToMatch = function(doc) {

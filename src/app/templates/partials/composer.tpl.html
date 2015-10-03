@@ -63,13 +63,16 @@
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="meta">
 
-                    <div class="row">
+                    <div class="row" id="fromRow">
                         <label>{{ 'FROM' | translate }}</label>
                         <select 
                         tabindex="1" 
                         ng-model="message.From" 
                         ng-options="address.Email for address in user.Addresses" 
                         title="{{ 'FROM' | translate }}"></select>
+                        <button class="pm_button link">
+                            <i class="fa fa-angle-down"></i>
+                        </button>
                     </div>
 
                     <div class="row" ng-click="message.recipientFieldFocussed = 1">
@@ -98,7 +101,7 @@
                             ng-click="toggleFields(message)" 
                             pt-tooltip="{{ 'CC_BCC' | translate }}" 
                             pt-placement="left">
-                                <i class="fa fa-caret-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
+                                <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
                             </button>
                         </span>
                     </div>
@@ -167,46 +170,61 @@
 
                 <div class="composeEditor">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
-                        <div ng-form="encryptForm">
+                        <div ng-form="encryptForm" class="pm_form">
                             <div>
-                                <strong>Encrypt for non-ProtonMail users</strong> <a href="https://support.protonmail.ch/knowledge-base/encrypt-for-outside-users/" target="_blank"><i class="fa fa-info-circle"></i></a>
+                                <h3>Encrypt for non-ProtonMail users</h3> 
+                                <a href="https://support.protonmail.ch/knowledge-base/encrypt-for-outside-users/" target="_blank">
+                                    <i class="fa fa-info-circle"></i>
+                                </a>
                             </div>
-                            <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
-                                <label class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
-                                <input 
-                                type="password" 
-                                autocomplete="off" 
-                                name="outsidePw" 
-                                ng-model="params.password" 
-                                placeholder="Password" 
-                                class="form-control" 
-                                required="" />
+                            <p>&nbsp;</p>
+                            <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="clearfix">
+                                <div class="col left">
+                                    <label class="text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
+                                </div>
+                                <div class="col right">
+                                    <input 
+                                    type="password" 
+                                    autocomplete="off" 
+                                    name="outsidePw" 
+                                    ng-model="params.password" 
+                                    placeholder="Password" 
+                                    required="" />
+                                </div>
                             </div>
-                            <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}">
-                                <label class="control-label text-muted">{{ ' CONFIRM_MESSAGE_PASSWORD' | translate }}</label>
-                                <input 
-                                type="password" 
-                                autocomplete="off" 
-                                name="outsidePwConfirm" 
-                                ng-model="params.confirm" 
-                                placeholder="Confirm Password" 
-                                class="form-control" 
-                                required="" />
+                            <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
+                                <div class="col left">
+                                    <label class="text-muted">{{ ' CONFIRM_MESSAGE_PASSWORD' | translate }}</label>
+                                </div>
+                                <div class="col right">
+                                    <input 
+                                    type="password" 
+                                    autocomplete="off" 
+                                    name="outsidePwConfirm" 
+                                    ng-model="params.confirm" 
+                                    placeholder="Confirm Password" 
+                                    required="" />
+                                </div>
                             </div>
-                            <div>
-                                <label class="control-label text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
-                                <input 
-                                type="text" 
-                                autocomplete="off" 
-                                name="outsidePwHint" 
-                                ng-model="params.hint" 
-                                placeholder="Hint" 
-                                class="form-control" />
+                            <div class="clearfix">
+                                <div class="col left">
+                                    <label class="text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
+                                </div>
+                                <div class="col right">
+                                    <input 
+                                    type="text" 
+                                    autocomplete="off" 
+                                    name="outsidePwHint" 
+                                    ng-model="params.hint" 
+                                    placeholder="Hint" />
+                                </div>
                             </div>
-                            <div>
-                                <i class="text-muted">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
+                            <div class="clear">
+                                <p>
+                                    <i class="help-block">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
+                                    </p>
                             </div>
-                            <div class="text-right">
+                            <div class="text-right pull-left">
                                 <button 
                                 type="button" 
                                 class="pm_button" 
@@ -226,18 +244,29 @@
 
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
                         <div>
-                            <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
+                            <h3>{{ 'EXPIRATION_TIME' | translate }}</h3> 
+                            <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">
+                                <i class="fa fa-info-circle"></i>
+                            </a>
                         </div>
                         <div>
                             <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
                         </div>
                         <div class="text-center" ng-show="params.expiration">
-                            <h2 class="text-purple">{{params.expiration}} {{ 'HOURS' | translate }}</h2>
-                            <h4 class="text-muted">{{params.expiration | humanDuration:'hours'}}</h4>
+                            <h2 class="text-purple">
+                                {{params.expiration}} {{ 'HOURS' | translate }}
+                            </h2>
+                            <h4 class="text-muted">
+                                {{params.expiration | humanDuration:'hours'}}
+                            </h4>
                         </div>
-                        <div class="text-right">
-                            <button type="button" class="pm_button" ng-click="clearExpiration(message)">{{ 'CANCEL' | translate }}</button>
-                            <button type="button" class="pm_button primary" ng-click="setExpiration(message, params)">{{ 'SET' | translate }}</button>
+                        <div class="pull-left">
+                            <button type="button" class="pm_button" ng-click="clearExpiration(message)">
+                                {{ 'CANCEL' | translate }}
+                            </button>
+                            <button type="button" class="pm_button primary" ng-click="setExpiration(message, params)">
+                                {{ 'SET' | translate }}
+                            </button>
                         </div>
                     </div>
                     <div
@@ -252,7 +281,7 @@
                     pt-placement="left"
                     pt-tooltip="{{ 'TOGGLE_DISPLAY_ATTACHMENTS' | translate }}">
                         <i
-                        class="fa fa-caret-down transition"
+                        class="fa fa-angle-down transition"
                         ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
                     <div 
