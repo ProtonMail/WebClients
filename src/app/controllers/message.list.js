@@ -121,7 +121,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             return chars;
         }
         var msgs = [];
-        var count = 20;
+        var count = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
         for (var i = 0; i < count; i++) {
             msgs[i] = {
                 sender: randomChars(1),
