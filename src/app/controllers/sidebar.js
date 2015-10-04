@@ -291,8 +291,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             result = '';
         } else if (count > 1000) {
             result = '(999+)';
-        } else if (count === undefined) {
-            result = '';
         } else {
             result = '(' + count + ')';
         }
