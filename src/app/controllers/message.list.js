@@ -136,7 +136,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             msgs[i] = {
                 sender: randomChars(1),
                 subject: randomChars(12),
-                time: randomChars(1)
+                time: randomChars(1),
+                size: randomChars(1).substring(1, 4)
             };
         }
 
