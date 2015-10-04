@@ -2,7 +2,7 @@
 <ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" ng-height>
-    <sample ng-if="!!!messages" msgs="samples()"></sample>
+    <sample messages="samples"></sample>
     <div
     ng-if="messages"
     ng-repeat="message in messages track by message.ID"

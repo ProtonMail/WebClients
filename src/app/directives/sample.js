@@ -3,12 +3,13 @@ angular.module("proton.sample", [])
 .directive('sample', function () {
 
     return {
-        restrict : 'EA',
-        // replace: true,
+        restrict : 'E',
         scope: {
-            // messages: '=msgs'
+            call: '&messages'
         },
-        // transclude: true,
+        link: function(scope, element, attrs) {
+            scope.messages = scope.call();
+        },
         templateUrl: "templates/directives/sample.tpl.html"
     };
 
