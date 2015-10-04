@@ -22,3 +22,79 @@
 	width: 15rem;
 	height: 15rem;
 }
+
+#pm_loading {
+	display: block;
+	position: fixed;
+	left: 50%;
+	bottom: -50px;
+	margin-left: -70px;
+	width: 140px;
+	line-height: 40px;
+	height: 40px;
+	z-index: 9999;
+	background: $primary;
+	color: #fff;
+	text-align: center;
+		-webkit-transition: bottom .5s ease-in-out;
+		   -moz-transition: bottom .5s ease-in-out;
+		    -ms-transition: bottom .5s ease-in-out;
+		     -o-transition: bottom .5s ease-in-out;
+		        transition: bottom .5s ease-in-out;	
+	&.show {
+		bottom: 0;
+		-webkit-transition: bottom .5s ease-in-out;
+		   -moz-transition: bottom .5s ease-in-out;
+		    -ms-transition: bottom .5s ease-in-out;
+		     -o-transition: bottom .5s ease-in-out;
+		        transition: bottom .5s ease-in-out;
+	}
+	.spinner {
+	    position: absolute;
+	    top: 0;
+	    left: 50%;
+	    margin-left: -35px;
+	    width: 70px;
+	    opacity: 1;
+	    z-index: 3333;
+	    text-align: center;
+	    height: 40px;
+	    line-height: 40px;
+	    & > div {
+		    width: 10px;
+		    height: 10px;
+		    margin: 15px 3px;
+		    background-color: #fff;
+		    border-radius: 100%;
+		    display: inline-block;
+		    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+		    -o-animation: bouncedelay 1.4s infinite ease-in-out;
+		    animation: bouncedelay 1.4s infinite ease-in-out;
+		    -webkit-animation-fill-mode: both;
+		    animation-fill-mode: both;
+		}
+		.bounce1 {
+		    -webkit-animation-delay: -.32s;
+		    animation-delay: -.32s;
+		}
+		.bounce2 {
+		    -webkit-animation-delay: -.16s;
+		    animation-delay: -.16s;
+		}
+	}
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

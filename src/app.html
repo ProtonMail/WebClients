@@ -74,14 +74,14 @@ ng-class="{
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
 
-<div id="pm_loader" ng-if="networkActivity.loading() || loggingOut" ng-class="{ 'full': loggingOut }">
+<div id="pm_loading" ng-class="{ 'show': networkActivity.loading() || loggingOut }">
     <div class="spinner">
-        <div class="spinner1"></div>
-        <div class="spinner2"></div>
-        <div class="spinner3"></div>
-        <div class="nuc"></div>
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
     </div>
 </div>
+
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script>
