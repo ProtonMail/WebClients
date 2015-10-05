@@ -152,7 +152,7 @@ angular.module("proton.controllers.Auth", [
 
                         $state.go("login.unlock");
                         return;
-                    } else if (angular.isDefined(result.Error)) {
+                    } else if (angular.isDefined(result.data.Error)) {
                         // TODO: This might be buggy
 	                	var error  = (result.Code === 401) ? 'Wrong Username or Password' : (result.ErrorDescription) ? result.ErrorDescription : result.Error;
 
