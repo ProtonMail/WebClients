@@ -287,7 +287,10 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             count = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
         }
 
-        if (count <= 0 || count === 'undefined') {
+        if (count === undefined) {
+            // THIS IS A BUG. TODO: WHY IS THIS UNDEFINED!
+            result = '';
+        } else if (count <= 0) {
             result = '';
         } else if (count > 1000) {
             result = '(999+)';

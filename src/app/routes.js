@@ -638,6 +638,16 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.payments", {
+        url: "/payments",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/payments.tpl.html",
+                controller: "SettingsController"
+            }
+        }
+    })
+
     .state("secured.themeReset", {
         url: "/theme-reset",
         views: {

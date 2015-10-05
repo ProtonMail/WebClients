@@ -7,7 +7,6 @@
             </div>
             <form name="labelForm" novalidate ng-submit="ctrl.create(ctrl)" method="post">
                 <div class="modal-body pm_form">
-
                     <div class="row">
                         <span class="col narrow">
                             <label for="labelName">{{ 'NAME' | translate }}</label>
@@ -16,7 +15,6 @@
                             <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder="{{ 'LABEL_NAME' | translate }}" required="" />
                         </span>
                     </div>
-
                     <div class="row">
                         <span class="col narrow">
                             <label>{{ 'COLOR' | translate }}</label>
@@ -31,16 +29,14 @@
                             </div>
                         </span>
                     </div>
-
-                    <div class="modal-footer text-right">
-                        <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                        <button type="submit" class="pm_button primary" ng-disabled="labelForm.$invalid">
-                            <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
-                            <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
-                        </button>
-                    </div>
-                    
                 </div>
+                <div class="modal-footer text-right">
+                    <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+                    <button type="submit" class="pm_button primary" ng-disabled="labelForm.$invalid">
+                        <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
+                        <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
+                    </button>
+                </div>                
             </form>
         </div>
     </div> 
