@@ -145,51 +145,49 @@
 
             <section class="setting pm_form">
                 <legend>{{ 'ALIASES' | translate }}</legend>
-                <form novalidate ng-submit="saveAliases(aliasesForm)" name="aliasesForm" method="post">
-                    <div class="clearfix">
-                        <div class="col left">
-                            <label for="">{{ 'SORT_ALIASES' | translate }}</label>
-                        </div>
-                        <div class="col right">
-                            <div class="pm_sort">
-                                <ul data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
-                                    <li ng-repeat="alias in aliases" as-sortable-item="">
-                                        <div as-sortable-item-handle="">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                            {{alias.Email}} <i ng-show="$index == 0" class="pull-right fa fa-check"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="help-block"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></p>
-                            <a href="https://support.protonmail.ch/knowledge-base/aliases-within-protonmail/" target="_blank" class="pull-left pm_button link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
-                        </div>
+                <div class="clearfix">
+                    <div class="col left">
+                        <label for="">{{ 'SORT_ALIASES' | translate }}</label>
                     </div>
-                </form>
+                    <div class="col right">
+                        <div class="pm_sort">
+                            <ul data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
+                                <li ng-repeat="alias in aliases" as-sortable-item="">
+                                    <div as-sortable-item-handle="">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        {{ alias.Email }} <i ng-show="$index == 0" class="pull-right fa fa-check"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="help-block"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></p>
+                        <a href="https://support.protonmail.ch/knowledge-base/aliases-within-protonmail/" target="_blank" class="pull-left pm_button link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
+                    </div>
+                </div>
             </section>
 
             <section class="setting pm_form pull-right">
                 <legend>{{ 'AUTOSAVE_CONTACT_LIST' | translate }}</legend>
-                <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
-                    <div class="clearfix">
-                        <div class="col left">
-                            <label>{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
-                        </div>
-                        <div class="col right">
-                            <div class="radio">
-                                <label ng-click="saveAutosaveContacts()">
-                                    <input type="radio" ng-model="autosaveContacts" name="autosaveContacts" value="1"> Enabled
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label ng-click="saveAutosaveContacts()">
-                                    <input type="radio" ng-model="autosaveContacts" name="autosaveContacts" value="0"> Disabled
-                                </label>
-                            </div>
-                            <p><a href="https://support.protonmail.ch/knowledge-base/autosave-contact-list" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a></p>
-                        </div>
+                <div class="clearfix">
+                    <div class="col left">
+                        <label>{{ 'AUTOSAVE_CONTACTS' | translate }}</label>
                     </div>
-                </form>
+                    <div class="col right">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="autosaveContacts" value="1" ng-change="saveAutosaveContacts()" /> {{ 'ENABLED' | translate }}
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="autosaveContacts" value="0" ng-change="saveAutosaveContacts()" /> {{ 'DISABLED' | translate }}
+                            </label>
+                        </div>
+                        <p>
+                            <a href="https://support.protonmail.ch/knowledge-base/autosave-contact-list" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                        </p>
+                    </div>
+                </div>
             </section>
 
         </div><!--/.row-->
@@ -211,19 +209,22 @@
                 <form novalidate ng-submit="saveShowImages(showImages)" name="showImages" method="post">
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="composerMode" class="control-label">{{ 'SHOW_IMAGES' | translate }}</label>
+                            <label class="control-label">{{ 'SHOW_IMAGES' | translate }}</label>
                         </div>
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" name="showImagesMode" value="1"> Enabled
+                                    <input type="radio" ng-model="ShowImages" value="1" ng-change="saveShowImages(showImages)" /> {{ 'AUTO' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" name="showImagesMode" value="0"> Disabled
+                                    <input type="radio" ng-model="ShowImages" value="0" ng-change="saveShowImages(showImages)" /> {{ 'MANUAL' | translate }}
                                 </label>
                             </div>
+                            <p>
+                                <a href="" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            </p>
                         </div>
                     </div>
                 </form>
