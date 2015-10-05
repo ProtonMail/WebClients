@@ -548,7 +548,7 @@ angular.module("proton.controllers.Settings", [
             $scope.LayoutMode = value;
             $rootScope.layoutMode = 'rows';
         }
-        
+
     };
 
     $scope.saveShowImages = function(form) {

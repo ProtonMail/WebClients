@@ -7,9 +7,9 @@ angular.module("proton.toggle", [])
         templateUrl: 'templates/directives/toggle.tpl.html',
         scope: {
             status: '=', // status value
-            change: '@change', // method called when status change
-            on: '=', // text for on
-            off: '=' // text for off
+            change: '&change', // method called when status change
+            on: '@', // text for on
+            off: '@' // text for off
         },
         link: function(scope, element, attrs) {
             // Initialization
@@ -30,7 +30,7 @@ angular.module("proton.toggle", [])
                 scope.status = !scope.status;
 
                 if(angular.isDefined(scope.change) && angular.isFunction(scope.change)) {
-                    scope.change(scope.status);
+                    scope.change();
                 }
             };
         }
