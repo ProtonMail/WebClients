@@ -1,11 +1,11 @@
-<form 
-id="pm_login" 
-class="pm_panel pm_form" 
-novalidate 
-ng-keypress="keypress($event)" 
-role="form" 
-autocomplete="on" 
-ng-submit="tryLogin()" 
+<form
+id="pm_login"
+class="pm_panel pm_form"
+novalidate
+ng-keypress="keypress($event)"
+role="form"
+autocomplete="on"
+ng-submit="tryLogin()"
 method="post">
 
     <img src="assets/img/logo.svg" alt="ProtonMail" class="logo" />
@@ -45,10 +45,10 @@ method="post">
     placeholder="PASSWORD" />
 
     <div class="clearfix">
-        <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP' | translate }}</a>
-        <a class="pm_button primary pull-right" ng-click="tryLogin()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>    
+        <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP?' | translate }}</a>
+        <a class="pm_button primary pull-right" ng-click="tryLogin()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>
     </div>
 
-    <input type="hidden" id="hashed_pw" name="hashed_pw" />    
+    <input type="hidden" id="hashed_pw" name="hashed_pw" />
 
 </form>
