@@ -33,56 +33,48 @@
             </section>
 
             <section class="setting pm_form">
-
-                <form novalidate ng-submit="saveComposerMode(composerMode)" name="composerMode" method="post">
-                    <legend>Composer</legend>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-                    <p><a href="#" target="_blank" class="pm_button link">Learn more about the composer</a></p>
-                    <div class="radio col left">
-                        <label>
-                            <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="0">
-                            <span>Popup</span>
-                            <br>
-                            <img src="/assets/img/settings/pop.gif">
-                        </label>
-                    </div>
-                    <div class="radio col right">
-                        <label>
-                            <input type="radio" ng-model="ComposerMode" name="composerModeRadio" value="1">
-                            <span>Maximized</span>
-                            <br>
-                            <img src="/assets/img/settings/max.gif">
-                        </label>
-                    </div>
-                </form>
-
+                <legend>{{ 'COMPOSER' | translate }}</legend>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <p><a href="#" target="_blank" class="pm_button link">Learn more about the composer</a></p>
+                <div class="radio col left">
+                    <label>
+                        <input type="radio" ng-model="ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
+                        <span>{{ 'POPUP' | translate }}</span>
+                        <br />
+                        <img src="/assets/img/settings/pop.gif">
+                    </label>
+                </div>
+                <div class="radio col right">
+                    <label>
+                        <input type="radio" ng-model="ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
+                        <span>{{ 'MAXIMIZED' | translate }}</span>
+                        <br />
+                        <img src="/assets/img/settings/max.gif">
+                    </label>
+                </div>
             </section>
             <section class="setting pm_form pull-right">
-
-                <form novalidate ng-submit="saveLayoutMode(composerMode)" name="layoutMode" method="post">
-                    <legend>Layout</legend>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-                    <p><a href="#" target="_blank" class="pm_button link">Learn more about the layout</a></p>
-                    <div class="radio col left">
-                        <label>
-                            <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="0">
-                            <span>Column</span>
-                            <br>
-                            <img src="/assets/img/settings/col.gif">
-                        </label>
-                    </div>
-                    <div class="radio col right">
-                        <label>
-                            <input type="radio" ng-model="LayoutMode" name="layoutModeRadio" value="1">
-                            <span>Row</span>
-                            <br>
-                            <img src="/assets/img/settings/row.gif">
-                        </label>
-                    </div>
-                </form>
-
+                <legend>{{ 'LAYOUT' | translate }}</legend>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <p><a href="#" target="_blank" class="pm_button link">Learn more about the layout</a></p>
+                <div class="radio col left">
+                    <label>
+                        <input type="radio" ng-model="LayoutMode" value="0" ng-change="saveLayoutMode(composerMode)" />
+                        <span>{{ 'COLUMN' | translate }}</span>
+                        <br />
+                        <img src="/assets/img/settings/col.gif">
+                    </label>
+                </div>
+                <div class="radio col right">
+                    <label>
+                        <input type="radio" ng-model="LayoutMode" value="1" ng-change="saveLayoutMode(composerMode)" />
+                        <span>{{ 'ROW' | translate }}</span>
+                        <br />
+                        <img src="/assets/img/settings/row.gif">
+                    </label>
+                </div>
             </section>
 
         </div>
