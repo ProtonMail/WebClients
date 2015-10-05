@@ -289,7 +289,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.activeMessage = function(id) {
         _.each($scope.messages, function(message) {
-            message.Active = message.ID === id;
+            message.Active = angular.isDefined(id) && message.ID === id;
         });
     };
 
