@@ -1,73 +1,73 @@
 <div id="pm_contacts">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
+        <div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
 
-    <!-- <input type="text" class="form-control" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}" ng-change="refreshContacts(true)" /> -->
+        <!-- TODO: need styles for alerts. ui kit psd has them? -->
+        <p class="alert alert-info text-center" ng-if="contacts.length === 0">You have no contacts</p>
 
-    <!-- TODO: need styles for alerts. ui kit psd has them? -->
-    <p class="alert alert-info text-center" ng-if="contacts.length === 0">You have no contacts</p>
+        <div class="pm_list">
 
-    <div class="pm_list">
+        </div>
 
-    </div>
+        <table ng-if="contacts.length > 0" class="pm_table">
 
-    <table ng-if="contacts.length > 0" class="pm_table">
-
-        <tbody>
-            <tr>
-                <th class="text-center hidden-xs checkbox"></th>
-                <th class="name">
-                    <span>
-                        <a href="" ng-click="setSortBy('Name')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                        <a href="" ng-click="setSortBy('-Name')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
-                    {{ 'NAME' | translate }}
-                    </span>
-                </th>
-                <th class="email">
-                    <a href="" ng-click="setSortBy('Email')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                    <a href="" ng-click="setSortBy('-Email')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
-                    {{ 'EMAIL' | translate }}
-                </th>
-                <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
-            </tr>
-        </tbody>
-
-    </table>
-
-    <div class="tableWrapper" ng-height>
-        <table>
             <tbody>
-                <tr ng-repeat="contact in contacts">
-                    <td class="text-center hidden-xs checkbox">
-                        <label>
-                            <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
-                        </label>
-                    </td>
-                    <td class="name">
-                        <span title="{{ contact.Name }}">{{ contact.Name }}</span>
-                    </td>
-                    <td class="text-muted email">
-                        <span title="contact.Email">{{ contact.Email }}</span>
-                    </td>
-                    <td class="text-right actions">
+                <tr>
+                    <th class="text-center hidden-xs checkbox"></th>
+                    <th class="name">
                         <span>
-                            <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
-                                <i class="fa fa-envelope-o"></i>
-                            </a>
+                            <a href="" ng-click="setSortBy('Name')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                            <a href="" ng-click="setSortBy('-Name')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                            {{ 'NAME' | translate }}
                         </span>
-                    </td>
+                    </th>
+                    <th class="email">
+                        <a href="" ng-click="setSortBy('Email')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
+                        <a href="" ng-click="setSortBy('-Email')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                        {{ 'EMAIL' | translate }}
+                    </th>
+                    <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                 </tr>
             </tbody>
-        </table>
-    <div class="tableWrapper">
-</div>
 
+        </table>
+
+        <div class="tableWrapper" ng-height>
+            <table>
+                <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td class="text-center hidden-xs checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                            </label>
+                        </td>
+                        <td class="name">
+                            <span title="{{ contact.Name }}">{{ contact.Name }}</span>
+                        </td>
+                        <td class="text-muted email">
+                            <span title="contact.Email">{{ contact.Email }}</span>
+                        </td>
+                        <td class="text-right actions">
+                            <span>
+                                <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                                <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
+                                    <i class="fa fa-envelope-o"></i>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tableWrapper">
+            </div>
+
+        </div>
+    </div>
 </div>
