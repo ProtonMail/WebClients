@@ -150,7 +150,7 @@ angular.module("proton.controllers.Settings", [
             csvRows.push(logsArray[i].join(','));
         }
 
-        var csvString = csvRows.join("%0A");
+        var csvString = csvRows.join("\r\n");
         var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
         saveAs(blob, filename);
