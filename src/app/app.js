@@ -66,6 +66,7 @@ angular.module("proton", [
     "proton.height",
     "proton.heightOutside",
     "proton.sample",
+    "proton.toggle",
 
     // Filters
     "proton.filters.strings",
