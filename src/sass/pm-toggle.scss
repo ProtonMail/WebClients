@@ -1,0 +1,78 @@
+.pm_toggle {
+    position: relative;
+    width: $toggleWidth;
+    border-radius: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    background: $light; 
+    border: 1px solid $border;   
+    span {
+        position: absolute;
+        width: ($toggleWidth / 2);
+        display: block;
+        bottom: 0;
+        top: 0;
+        z-index: 1;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+
+-webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+
+/* Rules below not implemented in browsers yet */
+-o-user-select: none;
+user-select: none;
+
+        -webkit-transition: left .25s ease, opacity .25s ease;
+           -moz-transition: left .25s ease, opacity .25s ease;
+            -ms-transition: left .25s ease, opacity .25s ease;
+             -o-transition: left .25s ease, opacity .25s ease;
+                transition: left .25s ease, opacity .25s ease;
+        &.on,
+        &.off {
+            z-index: 3;
+            cursor: pointer;           
+        }
+        &.on {
+            border-radius: 2rem 0 0 2rem;
+            left: 0;
+            right: auto;
+        }
+        &.off {
+            border-radius: 0 2rem 2rem 0;
+            right: 0;
+            left: auto;
+        }
+        &.knob {
+            border-radius: 2rem;
+            z-index: 2;
+            background: #fff;
+            border: 1px solid $border;
+            margin: -1px;          
+        }
+    }
+    &.on {
+        .knob {
+            left: 0;
+        }
+        .on {
+            color: $primary;
+        }
+        .off {
+            opacity: .5;
+        }
+    }
+    &.off {
+        .knob {
+            left: ($toggleWidth / 2);
+        }
+        .on {
+            opacity: .5;
+        }
+        .off {
+            color: $primary;
+        }
+    }
+}

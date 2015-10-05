@@ -4,6 +4,22 @@
 
     <div class="settings" ng-height>
 
+    <!-- MAKE THIS A DIRECTIVE? :) -->
+        <div class="pm_toggle" ng-click="toggle1 = !toggle1" ng-class="{ 'on': toggle1, 'off': !toggle1 }">
+            <span class="on">Show</span>
+            <span class="off">Hide</span>
+            <span class="knob"></span>
+        </div>
+
+        <br>
+
+        <div class="pm_toggle" ng-click="toggle2 = !toggle2" ng-class="{ 'on': toggle2, 'off': !toggle2 }">
+            <span class="on">Yes</span>
+            <span class="off">No</span>
+            <span class="knob"></span>
+        </div>
+    <!-- MAKE THIS A DIRECTIVE? :) -->
+
         <div class="row">
 
             <section class="setting pm_form">

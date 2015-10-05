@@ -60,113 +60,112 @@
                     </a>
                 </span>                
             </header>
-            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
-                <div class="meta">
+            <div class="meta">
 
-                    <div class="row" id="fromRow">
-                        <label>{{ 'FROM' | translate }}</label>
-                        <select 
-                        tabindex="1" 
-                        ng-model="message.From" 
-                        ng-options="address.Email for address in user.Addresses" 
-                        title="{{ 'FROM' | translate }}"></select>
-                        <button class="pm_button link">
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                    </div>
+                <div class="row" id="fromRow">
+                    <label>{{ 'FROM' | translate }}</label>
+                    <select 
+                    tabindex="1" 
+                    ng-model="message.From" 
+                    ng-options="address.Email for address in user.Addresses" 
+                    title="{{ 'FROM' | translate }}"></select>
+                    <button class="pm_button link">
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                </div>
 
-                    <div class="row" ng-click="message.recipientFieldFocussed = 1">
-                        <label>{{ 'TO' | translate }}</label>
-                        <div 
-                        class="typeahead-container to-container" 
-                        ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
-                            <input 
-                            tabindex="2" 
-                            type="text" 
-                            email-field 
-                            title="{{ 'TO' | translate }}" 
-                            ng-model="message.ToList" 
-                            ng-change="saveLater(message)" 
-                            class="to-list" />
-                        </div>
-                        <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
-                            <button class="pm_button pull-right">...</button>
-                        </span>
-                        <span ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
-                            <button class="pm_button pull-right">+{{message.numTags.CCList + message.numTags.BCCList}}</button>
-                        </span>
-                        <span>
-                            <button 
-                            class="pm_button link pull-right" 
-                            ng-click="toggleFields(message)" 
-                            pt-tooltip="{{ 'CC_BCC' | translate }}" 
-                            pt-placement="left">
-                                <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
-                            </button>
-                        </span>
-                    </div>
-
+                <div class="row" ng-click="message.recipientFieldFocussed = 1">
+                    <label>{{ 'TO' | translate }}</label>
                     <div 
-                    class="row" 
-                    ng-show="message.fields" 
-                    ng-click="message.recipientFieldFocussed = 2">
-
-                        <label>{{ 'CC' | translate }}</label>
-                        <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
-                            <input 
-                            tabindex="3" 
-                            type="text" 
-                            email-field 
-                            ng-model="message.CCList" 
-                            ng-change="saveLater(message)" 
-                            title="{{ 'CC' | translate }}" 
-                            class="cc-list" />
-                        </div>
-                        <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
-                            <button class="pm_button pull-right">...</button>
-                        </span>
-
-                    </div>
-
-                    <div 
-                    class="row" 
-                    ng-show="message.fields" 
-                    ng-click="message.recipientFieldFocussed = 3">
-
-                        <label>{{ 'BCC' | translate }}</label>
-                        <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
-                            <input 
-                            tabindex="4" 
-                            type="text" 
-                            email-field 
-                            ng-model="message.BCCList" 
-                            ng-change="saveLater(message)" 
-                            title="{{ 'BCC' | translate }}" 
-                            class="bcc-list" />
-                        </div>
-                        <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
-                            <button class="pm_button pull-right">...</button>
-                        </span>
-
-                    </div>
-
-                    <div class="row">
+                    class="typeahead-container to-container" 
+                    ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
                         <input 
-                        tabindex="5" 
+                        tabindex="2" 
                         type="text" 
-                        placeholder="{{ 'SUBJECT' | translate }}" 
-                        title="{{ 'SUBJECT' | translate }}" 
-                        class="subject" 
-                        ng-focus="message.fields = false; message.recipientFieldFocussed = 0" 
-                        ng-model="message.Subject" 
-                        ng-model-options="{updateOn: 'blur'}" 
-                        ng-keydown="$event.which == 9 && focusEditor(message, $event)" 
+                        email-field 
+                        title="{{ 'TO' | translate }}" 
+                        ng-model="message.ToList" 
                         ng-change="saveLater(message)" 
-                        required />
+                        class="to-list" />
                     </div>
+                    <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
+                        <button class="pm_button pull-right">...</button>
+                    </span>
+                    <span ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
+                        <button class="pm_button pull-right">+{{message.numTags.CCList + message.numTags.BCCList}}</button>
+                    </span>
+                    <span>
+                        <button 
+                        class="pm_button link pull-right" 
+                        ng-click="toggleFields(message)" 
+                        pt-tooltip="{{ 'CC_BCC' | translate }}" 
+                        pt-placement="left">
+                            <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
+                        </button>
+                    </span>
+                </div>
+
+                <div 
+                class="row" 
+                ng-show="message.fields" 
+                ng-click="message.recipientFieldFocussed = 2">
+
+                    <label>{{ 'CC' | translate }}</label>
+                    <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
+                        <input 
+                        tabindex="3" 
+                        type="text" 
+                        email-field 
+                        ng-model="message.CCList" 
+                        ng-change="saveLater(message)" 
+                        title="{{ 'CC' | translate }}" 
+                        class="cc-list" />
+                    </div>
+                    <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
+                        <button class="pm_button pull-right">...</button>
+                    </span>
 
                 </div>
 
+                <div 
+                class="row" 
+                ng-show="message.fields" 
+                ng-click="message.recipientFieldFocussed = 3">
+
+                    <label>{{ 'BCC' | translate }}</label>
+                    <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
+                        <input 
+                        tabindex="4" 
+                        type="text" 
+                        email-field 
+                        ng-model="message.BCCList" 
+                        ng-change="saveLater(message)" 
+                        title="{{ 'BCC' | translate }}" 
+                        class="bcc-list" />
+                    </div>
+                    <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
+                        <button class="pm_button pull-right">...</button>
+                    </span>
+
+                </div>
+
+                <div class="row">
+                    <input 
+                    tabindex="5" 
+                    type="text" 
+                    placeholder="{{ 'SUBJECT' | translate }}" 
+                    title="{{ 'SUBJECT' | translate }}" 
+                    class="subject" 
+                    ng-focus="message.fields = false; message.recipientFieldFocussed = 0" 
+                    ng-model="message.Subject" 
+                    ng-model-options="{updateOn: 'blur'}" 
+                    ng-keydown="$event.which == 9 && focusEditor(message, $event)" 
+                    ng-change="saveLater(message)" 
+                    required />
+                </div>
+
+            </div>            
+            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
 
                 <div class="composeEditor">
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
@@ -284,26 +283,26 @@
                         class="fa fa-angle-down transition"
                         ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
                     </button>
-                    <div 
-                    class="previews clearfix"
-                    ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
-                        <span
-                        title="{{attachment.filename || attachment.Name}}"
-                        class="preview-template pm_button"
-                        id="attachment{{$index}}"
-                        ng-repeat="attachment in message.Attachments"
-                        ng-init="initAttachment(attachment, $index)">
-                            <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
-                            <a href="" ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
-                                <i class="fa fa-times"></i>
-                            </a>
-                            <a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </span>
-                    </div>
                 </div>
             </section>
+            <div 
+            class="previews clearfix"
+            ng-show="message.Attachments.length > 0 && message.attachmentsToggle === true">
+                <span
+                title="{{attachment.filename || attachment.Name}}"
+                class="preview-template pm_button"
+                id="attachment{{$index}}"
+                ng-repeat="attachment in message.Attachments"
+                ng-init="initAttachment(attachment, $index)">
+                    <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+                    <a href="" ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                        <i class="fa fa-times"></i>
+                    </a>
+                    <a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </span>
+            </div>            
             <footer ng-hide="message.minimized">
                 <button
                 class="pm_button btn-add-attachment"
