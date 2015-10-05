@@ -35,7 +35,7 @@
             <span class="pm_buttons">
                 <a href="" class="fa fa-list" pt-tooltip="{{ 'SHOW_ALL' | translate }}"></a>
                 <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
-                <span class="pm_dropdown">
+                <span class="pm_dropdown wide">
                     <a href="">{{ 'SHOW_UNREAD' | translate }}</a>
                     <a href="">{{ 'SHOW_READ' | translate }}</a>
                 </span>
@@ -48,16 +48,16 @@
         <span class="pm_buttons">
             <a href="" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="setMessagesReadStatus(true)" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <span class="pm_dropdown">
+            <span class="pm_dropdown wide">
                 <a href="" ng-click="setMessagesReadStatus(false)">
-                    <i class="fa fa-eye"></i> {{ 'MARK_AS_UNREAD' | translate }}
+                    <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
                 </a>
             </span>
         </span>
         <span class="pm_buttons">
             <a href="" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <span class="pm_dropdown">
+            <span class="pm_dropdown wide">
                 <a href="" ng-click="moveMessagesTo('archive')">
                     <i class="fa fa-archive"></i> {{ 'MOVE_TO_ARCHIVE' | translate }}
                 </a>
