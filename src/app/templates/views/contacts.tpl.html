@@ -13,7 +13,7 @@
 
         <table ng-if="contacts.length > 0" class="pm_table">
 
-            <tbody>
+            <thead>
                 <tr>
                     <th class="text-center hidden-xs checkbox"></th>
                     <th class="name">
@@ -30,44 +30,35 @@
                     </th>
                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                 </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td class="text-center hidden-xs checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                        </label>
+                    </td>
+                    <td class="name">
+                        <span title="{{ contact.Name }}">{{ contact.Name }}</span>
+                    </td>
+                    <td class="text-muted email">
+                        <span title="contact.Email">{{ contact.Email }}</span>
+                    </td>
+                    <td class="text-right actions">
+                        <span>
+                            <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                            <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
+                                <i class="fa fa-envelope-o"></i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
             </tbody>
-
         </table>
-
-        <div class="tableWrapper" ng-height>
-            <table>
-                <tbody>
-                    <tr ng-repeat="contact in contacts">
-                        <td class="text-center hidden-xs checkbox">
-                            <label>
-                                <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
-                            </label>
-                        </td>
-                        <td class="name">
-                            <span title="{{ contact.Name }}">{{ contact.Name }}</span>
-                        </td>
-                        <td class="text-muted email">
-                            <span title="contact.Email">{{ contact.Email }}</span>
-                        </td>
-                        <td class="text-right actions">
-                            <span>
-                                <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
-                                    <i class="fa fa-trash-o"></i>
-                                </a>
-                                <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
-                                    <i class="fa fa-envelope-o"></i>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="tableWrapper">
-            </div>
-
-        </div>
     </div>
 </div>
