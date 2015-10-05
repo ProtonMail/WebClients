@@ -65,7 +65,7 @@
             <input type="text" ng-model="searchLabels" placeholder="{{ 'ADD_LABEL' | translate }}" />
         </form>
         <ul>
-            <li ng-repeat="label in labels | filter: {Name: searchLabels} |orderBy: 'Order'" ng-hide="label.Display" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
+            <li ng-repeat="label in labels | filter: {Name: searchLabels} |orderBy: 'Order'" ng-show="label.Display" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>
