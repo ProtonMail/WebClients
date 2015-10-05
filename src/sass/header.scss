@@ -45,17 +45,17 @@ header#pm_header {
 		::-webkit-input-placeholder {
 		   color: $primary;
 		}
-		:-moz-placeholder { 
-		   color: $primary;  
+		:-moz-placeholder {
+		   color: $primary;
 		}
 
-		::-moz-placeholder {  
-		   color: $primary;  
+		::-moz-placeholder {
+		   color: $primary;
 		}
 
-		:-ms-input-placeholder {  
-		   color: $primary;  
-		}		
+		:-ms-input-placeholder {
+		   color: $primary;
+		}
 		label {
 			display: block;
 			width: 35px;
@@ -77,9 +77,20 @@ header#pm_header {
 			position: relative;
 			border-radius: 0 35px 35px 0;
 			flex-grow: 1;
-			text-transform: uppercase;
 			padding: 0 10px;
 			background-color: transparent;
+			&::-webkit-input-placeholder { /* WebKit browsers */
+    			text-transform: uppercase;
+			}
+			&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			    text-transform: uppercase;
+			}
+			&::-moz-placeholder { /* Mozilla Firefox 19+ */
+			    text-transform: uppercase;
+			}
+			&:-ms-input-placeholder { /* Internet Explorer 10+ */
+			    text-transform: uppercase;
+			}
 		}
 		a {
 			display: none;
@@ -112,7 +123,7 @@ header#pm_header {
 				}
 				strong {
 					display: block;
-					height: 20px; 
+					height: 20px;
 					line-height: 20px;
 					font-weight: normal;
 				}
@@ -155,7 +166,7 @@ header#pm_header {
 	        border-radius: 2px;
 	        background-color: $primary;
 	        text-align: center;
-	        color: $white; 
+	        color: $white;
 	        text-transform: uppercase;
 	        text-decoration: none;
 	        margin-bottom: 15px;
