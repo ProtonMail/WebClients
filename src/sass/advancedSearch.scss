@@ -1,0 +1,23 @@
+#advancedSearchModal {
+	display: block;
+	.row {
+		margin-bottom: 1rem;
+	}
+	.date {
+		position: relative;
+		em {
+			position: absolute;
+			right: 2rem;
+			top: 1px;
+			bottom: 1px;
+			text-align: right;
+			display: block;
+			line-height: $inputHeight;
+			height: $inputHeight;
+			color: $gray-light;
+		}
+	}
+	.last.date em {
+		right: 1rem;
+	}
+}
