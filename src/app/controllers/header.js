@@ -35,7 +35,6 @@ angular.module("proton.controllers.Header", [])
     }
 
     $scope.openSearchModal = function(value) {
-        console.log('openSearchModal');
         searchModal.activate({
             params: {
                 keywords: value,
