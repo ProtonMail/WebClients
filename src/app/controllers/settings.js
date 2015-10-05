@@ -183,7 +183,7 @@ angular.module("proton.controllers.Settings", [
     };
 
     $scope.updateLabels = function () {
-            $scope.labels = authentication.user.Labels;
+        $scope.labels = authentication.user.Labels;
     };
 
     $scope.saveNotification = function(form) {

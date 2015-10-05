@@ -46,11 +46,11 @@
                 </div>
                 <div class="clearfix">
                     <div class="col">
-                        <label for="search_start"></label>
+                        <label for="search_start">{{ 'START_DATE' | translate }}</label>
                         <input pikaday="ctrl.start" id="search_start" on-select="setMin()" />
                     </div>
                     <div class="col">
-                        <label for="search_end"></label>
+                        <label for="search_end">{{ 'END_DATE' | translate }}</label>
                         <input pikaday="ctrl.end" id="search_end" on-select="setMax()" />
                     </div>
                 </div>

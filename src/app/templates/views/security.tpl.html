@@ -38,8 +38,9 @@
                             <a class="pm_button pull-left" ng-click="downloadLogs()">
                                 <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_LOGS' | translate }}</strong>
                             </a>
-
-                            <paginator ng-show="(logCount > logItemsPerPage)" page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs()" />
+                            <span ng-show="(logCount > logItemsPerPage)">
+                                <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
+                            </span>
                         </div>
 
                         <a class="pm_button pull-left" id="logRefresh" ng-class="{ 'disabled': doLogging == 0 }" ng-click="initLogs()">
@@ -71,7 +72,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="log in logs | filter:paginate" ng-class="{ 'danger': (log.Event == 0) }">
+                                    <tr ng-repeat="log in logs | filter: paginate" ng-class="{ 'danger': (log.Event == 0) }">
                                         <td scope="row">
                                             <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle"></i> Login Failed</span>
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> Login Success</span>
