@@ -281,6 +281,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }
     };
 
+    $scope.unactiveMessages = function() {
+        _.each($scope.messages, function(message) {
+            message.Active = false;
+        });
+    };
+
     $scope.activeMessage = function(id) {
         _.each($scope.messages, function(message) {
             message.Active = message.ID === id;
