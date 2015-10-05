@@ -12,23 +12,10 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
 ) {
     // Variables
     var modalId = 'searchModal';
-    var hideBsModal = function(event) {
-        $timeout(function() {
-            $rootScope.advSearchIsOpen = false;
-        }, 100);
-    };
-
-    $scope.folders = CONSTANTS.MAILBOX_IDENTIFIERS;
 
     // Listeners
-    $('#' + modalId).on('hide.bs.modal', hideBsModal);
-
     $scope.$on('searchMessages', function(event, searchValue) {
         $scope.search(searchValue);
-    });
-
-    $scope.$on('$destroy', function() {
-        $('#' + modalId).off('hide.bs.modal', hideBsModal);
     });
 
     // Methods
@@ -105,44 +92,5 @@ angular.module("proton.controllers.Search", ["pikaday", "proton.constants"])
         $('body .modal-backdrop').removeClass('in');
         // focus on folder select
         $('#search_folder').focus();
-    };
-
-    $scope.setMin = function() {
-        if($scope.params.begin.getDate() === null) {
-            $scope.params.begin = null;
-        } else {
-            $scope.params.end.setMinDate($scope.params.begin.getDate());
-        }
-    };
-
-    $scope.setMax = function() {
-        if($scope.params.end.getDate() === null) {
-            $scope.params.end = null;
-        } else {
-            $scope.params.begin.setMaxDate($scope.params.end.getDate());
-        }
-    };
-
-    $scope.close = function() {
-        $rootScope.advSearchIsOpen = false;
-        // add dark background modal
-        $('body .modal-backdrop').removeClass('in');
-        // hide modal
-        $('#' + modalId).modal('hide');
-    };
-
-    $scope.style = function() {
-        var display = 'none';
-
-        if($scope.open) {
-            display = 'block';
-            $rootScope.advSearchIsOpen = true;
-        } else {
-            $rootScope.advSearchIsOpen = false;
-        }
-
-        return {
-            display: display
-        };
     };
 });

@@ -580,7 +580,7 @@ angular.module("proton.routes", [
     //             templateUrl: "templates/views/message.print.tpl.html"
     //         }
     //     }
-    // }))
+    // })) //
 
     .state("secured.contacts", {
         url: "/contacts",

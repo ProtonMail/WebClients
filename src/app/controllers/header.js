@@ -39,8 +39,9 @@ angular.module("proton.controllers.Header", [])
         searchModal.activate({
             params: {
                 keywords: value,
-                search: function() {
-
+                search: function(params) {
+                    searchModal.deactivate();
+                    $state.go('secured.search.list', params);
                 },
                 cancel: function() {
                     searchModal.deactivate();
@@ -59,7 +60,7 @@ angular.module("proton.controllers.Header", [])
 
     $scope.searchMessages = function() {
         if($scope.params.searchMessageInput.length > 0) {
-            $rootScope.$broadcast('searchMessages', $scope.params.searchMessageInput);
+            $state.go('secured.search.list', { words: $scope.params.searchMessageInput });
         } else {
             $state.go('secured.inbox.list');
         }

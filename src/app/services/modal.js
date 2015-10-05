@@ -157,9 +157,50 @@ angular.module("proton.modals", [])
                 this.keywords = params.value;
             }
 
+            this.setMin = function() {
+                if(this.start.getDate() === null) {
+                    this.start = null;
+                } else {
+                    this.end.setMinDate(this.start.getDate());
+                }
+            };
+
+            this.setMax = function() {
+                if(this.end.getDate() === null) {
+                    this.end = null;
+                } else {
+                    this.start.setMaxDate(this.end.getDate());
+                }
+            };
+
             this.search = function() {
                 if (angular.isDefined(params.search) && angular.isFunction(params.search)) {
-                    params.search();
+                    var parameters = {};
+
+                    parameters.words = this.keywords;
+                    parameters.from = this.from;
+                    parameters.to = this.to;
+                    parameters.subject = this.subject;
+                    parameters.attachments = parseInt(this.attachments);
+                    parameters.starred = parseInt(this.starred);
+
+                    if(parseInt($('#search_folder').val()) !== -1) {
+                        parameters.location = parseInt($('#search_folder').val());
+                    }
+
+                    if(parseInt($('#search_label').val()) !== 0) {
+                        parameters.label = $('#search_label').val();
+                    }
+
+                    if($('#search_start').val().length > 0) {
+                        parameters.begin = this.start.getMoment().unix();
+                    }
+
+                    if($('#search_end').val().length > 0) {
+                        parameters.end = this.end.getMoment().unix();
+                    }
+
+                    params.search(parameters);
                 }
             };
 
