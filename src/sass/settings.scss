@@ -30,7 +30,7 @@
 			.clearfix {
 				padding: 5px;
 				margin: 0 -5px;
-			}	
+			}
 			.setting {
 				width: 48%;
 				float: left;
@@ -85,9 +85,9 @@
 					padding: 1rem 0;
 				}
 				#logActions {
-					.pm_buttons {
-						float: right !important;
-					}
+			        .pm_button.pull-left {
+                        margin: 0 0 0 5px;
+                    }
 				}
 				#logRefresh {
 					margin-right: 1rem;
