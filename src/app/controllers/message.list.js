@@ -71,6 +71,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.refreshMessagesCache();
         });
 
+        $scope.$on('unactiveMessages', function() {
+            $scope.unactiveMessages();
+        });
+
         $scope.$on('updateLabels', function() {
             $scope.updateLabels();
         });
