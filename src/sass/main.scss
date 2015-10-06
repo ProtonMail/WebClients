@@ -125,4 +125,8 @@ body.rows {
 	html.protonmail body {
 		overflow: initial !important;
 	}
+	html, body {
+		min-height: 100%;
+		height: auto !important;
+	}
 }

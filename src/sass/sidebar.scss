@@ -260,4 +260,8 @@ section#pm_sidebar {
     body.secure #pm_background {
         // display: none !important;
     }
+    body.secure section#pm_sidebar {
+        height: 100%;
+        overflow-y: auto
+    }
 }
