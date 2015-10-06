@@ -9,11 +9,10 @@ angular.module("proton.event", ["proton.constants"])
 		$log,
 		authentication,
 		cacheMessages,
+		cacheCounters,
 		Contact,
 		CONSTANTS,
 		Events,
-		messageCache,
-		messageCounts,
 		notify
 	) {
 
@@ -67,30 +66,16 @@ angular.module("proton.event", ["proton.constants"])
 					authentication.user = angular.merge(authentication.user, user);
 				}
 			},
-			manageCounter: function(json) {
-				if(angular.isDefined(json)) {
-					var counters = {Labels: {}, Locations: {}, Starred: json.Starred};
-
-					if (messageCounts.unreadChangedLocally) {
-						messageCounts.unreadChangedLocally = false;
-					} else {
-			            _.each(json.Labels, function(obj) { counters.Labels[obj.LabelID] = obj.Count; });
-			            _.each(json.Locations, function(obj) { counters.Locations[obj.Location] = obj.Count; });
-                    	messageCounts.update(counters);
-					}
+			manageUnreads: function(unreads) {
+				if(angular.isDefined(unreads)) {
+	            	_.each(unreads.Labels, function(obj) { cacheCounters.update(obj.LabelID, undefined, obj.Count); });
+		            _.each(unreads.Locations, function(obj) { cacheCounters.update(obj.Location, undefined, obj.Count); });
 				}
 			},
 			manageTotals: function(totals) {
 				if(angular.isDefined(totals)) {
-					var total = {Labels:{}, Locations:{}, Starred: totals.Starred};
-
-					if (messageCounts.totalChangedLocally) {
-						messageCounts.totalChangedLocally = false;
-					} else {
-						_.each(totals.Labels, function(obj) { total.Labels[obj.LabelID] = obj.Count; });
-						_.each(totals.Locations, function(obj) { total.Locations[obj.Location] = obj.Count; });
-						$rootScope.messageTotals = total;
-					}
+					_.each(totals.Labels, function(obj) { cacheCounters.update(obj.LabelID, obj.Count); });
+					_.each(totals.Locations, function(obj) { cacheCounters.update(obj.Location, obj.Count); });
 				}
 			},
 			manageMessages: function(messages) {
@@ -129,14 +114,13 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			manage: function (data) {
-
 				// Check if eventID is sent
 				if (data.Error) {
 					Events.getLatestID({}).then(function(response) {
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					messageCache.reset();
+					cacheMessages.reset();
 					eventModel.manageID(data.EventID);
 				} else if (data.Reload === 1) {
 					$window.location.reload();
@@ -144,14 +128,14 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
-					this.manageCounter(data.Unread);
+					this.manageUnreads(data.Unread);
  					this.manageTotals(data.Total);
 					this.manageMessages(data.Messages);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
 				this.manageNotices(data.Notices);
-				messageCache.manageExpire();
+				cacheMessages.expiration();
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {
@@ -187,7 +171,7 @@ angular.module("proton.event", ["proton.constants"])
 					}
 				},
 				stop: function () {
-					messageCache.empty();
+					// messageCache.empty();
 					if (angular.isDefined(eventModel.promiseCancel)) {
 						$timeout.cancel(eventModel.promiseCancel);
 						eventModel.promiseCancel = undefined;

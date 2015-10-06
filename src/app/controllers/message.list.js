@@ -71,6 +71,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.refreshMessagesCache();
         });
 
+        $scope.$on('unactiveMessages', function() {
+            $scope.unactiveMessages();
+        });
+
         $scope.$on('updateLabels', function() {
             $scope.updateLabels();
         });
@@ -140,8 +144,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 size: randomChars(1).substring(1, 4)
             };
         }
-
-        $log.info(msgs);
 
         return msgs;
     };
@@ -605,12 +607,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var movedMessages = [];
 
         _.forEach($scope.selectedMessages(), function (message) {
+            message.Selected = false;
+
             var event = {
                 ID: message.ID,
-                Message: {}
+                Message: angular.copy(message)
             };
-
-            message.Selected = false;
 
             if(inDelete) {
                 event.Action = 0; // DELETE
@@ -701,7 +703,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     promise.then(
                         function(result) {
                             cacheCounters.empty(location);
-                            $rootScope.$broadcast('updateCounters');
+                            $rootScope.$broadcast('refreshCounters');
                             $rootScope.$broadcast('refreshMessagesCache');
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
                         },

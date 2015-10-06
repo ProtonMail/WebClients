@@ -44,9 +44,19 @@
             </span>
         </div>
         <div class="meta">
-            <a href="#" class="fa fa-plus-square-o"></a>
-            <span class="pm_labels inline" ng-if="message.LabelIDs.length">
-                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+            <a href="" class="pm_trigger open-label" pt-tooltip="{{ 'ADD_LABEL' | translate }}" ng-dropdown>
+                <i class="fa fa-plus-square-o"></i>
+            </a>
+            <span class="pm_dropdown wide">
+                <dropdown-labels labels="labels" messages="[message]" save="saveLabels" />
+            </span>
+            <span class="pm_labels inline" ng-if="message.labels().length > 0">
+                <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
+                    {{ label.Name }}
+                    <a href="" ng-click="detachLabel(label.ID)">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </span>
             </span>
         </div>
     </div>

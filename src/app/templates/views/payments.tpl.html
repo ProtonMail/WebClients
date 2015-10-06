@@ -5,8 +5,9 @@
     <div class="settings" ng-height>
 
         <span class="pm_buttons">
-            <a>2015</a>
-            <a class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <a href="" class="pm_trigger" ng-dropdown>
+                <strong>2015</strong><i class="fa fa-angle-down"></i>
+            </a>
             <span class="pm_dropdown">
                 <a href="">2015</a>
                 <a href="">2014</a>
@@ -29,7 +30,7 @@
                 <tr ng-repeat="payment in payments track by $index">
                     <td class="date">
                         {{ payment.Date * 1000 | date : 'medium' }}
-                    </td>                
+                    </td>
                     <td>
                         {{ payment.Event }}
                     </td>
@@ -41,7 +42,7 @@
                     </td>
                 </tr>
             </tbody>
-        </table>        
+        </table>
 
     </div>
 

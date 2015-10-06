@@ -729,7 +729,10 @@ angular.module("proton.routes", [
 
         $stateProvider.state(viewState, {
             url: '/{id}',
-            views: view
+            views: view,
+            onExit: function($rootScope) {
+                $rootScope.$broadcast('unactiveMessages');
+            }
         });
     });
 
