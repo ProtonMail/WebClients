@@ -648,6 +648,16 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.dashboard", {
+        url: "/dashboard",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/dashboard.tpl.html",
+                controller: "SettingsController"
+            }
+        }
+    })
+
     .state("secured.themeReset", {
         url: "/theme-reset",
         views: {

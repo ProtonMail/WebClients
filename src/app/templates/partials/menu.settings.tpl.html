@@ -1,4 +1,7 @@
 <ul class="pm_tabs">
+    <li role="presentation" ng-class="{'active': ('secured.dashboard.**' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.dashboard">{{ 'DASHBOARD' | translate }}</a>
+    </li>
     <li role="presentation" ng-class="{'active': ('secured.settings.**' | includedByState)}">
         <a class="pm_button" ui-sref="secured.settings">{{ 'ACCOUNT_SETTINGS' | translate }}</a>
     </li>
