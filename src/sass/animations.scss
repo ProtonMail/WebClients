@@ -96,13 +96,13 @@ Inpiration from 'esjay'
         position: absolute;
         left: 50%;
         top: 6rem;
-        width: .5rem;
-        height: .5rem;
-        margin-left: -.25rem;
-        margin-top: -.25rem;
+        width: .3rem;
+        height: .3rem;
+        margin-left: -.15rem;
+        margin-top: -.15rem;
         border-radius: .5rem;
-        background-color: #fff;
-        box-shadow: 0 0 2rem 2rem #fff;
+        background-color: rgba(255,255,255,.5);
+        box-shadow: 0 0 1rem 1rem rgba(255,255,255,.5);
         animation: 2000ms flash infinite linear;
     }    
 }
