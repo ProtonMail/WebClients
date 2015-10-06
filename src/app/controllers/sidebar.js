@@ -38,7 +38,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     // Listeners
     $scope.$on('updateLabels', function(event) { $scope.updateLabels(); });
-    $scope.$on('updateCounters', function(event) { $scope.refreshCounters(); });
+    $scope.$on('refreshCounters', function(event) { $scope.refreshCounters(); });
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
     $scope.$on('createLabel', function(event) { $scope.createLabel(); });
 

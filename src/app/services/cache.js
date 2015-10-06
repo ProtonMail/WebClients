@@ -108,32 +108,34 @@ angular.module("proton.cache", [])
     */
     var insert = function(location, message) {
         if(angular.isDefined(cache[location])) {
-            var index;
-            var messages = [];
+            if(cache[location].indexOf(message.ID) === -1) {
+                var index;
+                var messages = [];
 
-            for (var i = 0; i < cache[location].length; i++) {
-                var id = cache[location][i];
+                for (var i = 0; i < cache[location].length; i++) {
+                    var id = cache[location][i];
 
-                messages.push(hash[id]);
-            }
-
-            if(messages.length > 0) {
-                var first = _.first(messages);
-                var last = _.last(messages);
-
-                if(message.Time < first.Time && message.Time > last.Time) {
-                    // Search the correct location
-                    index = _.sortedIndex(messages, message, function(element) {
-                        return -element.Time;
-                    });
-
-                    // Insert the new message
-                    cache[location].splice(index, 0, message.ID);
-                } else if(message.Time > first.Time) {
-                    cache[location].unshift(message.ID);
+                    messages.push(hash[id]);
                 }
-            } else {
-                cache[location].push(message.ID);
+
+                if(messages.length > 0) {
+                    var first = _.first(messages);
+                    var last = _.last(messages);
+
+                    if(message.Time < first.Time && message.Time > last.Time) {
+                        // Search the correct location
+                        index = _.sortedIndex(messages, message, function(element) {
+                            return -element.Time;
+                        });
+
+                        // Insert the new message
+                        cache[location].splice(index, 0, message.ID);
+                    } else if(message.Time > first.Time) {
+                        cache[location].unshift(message.ID);
+                    }
+                } else {
+                    cache[location].push(message.ID);
+                }
             }
         }
     };
@@ -228,9 +230,18 @@ angular.module("proton.cache", [])
     var queryMessages = function(request) {
         var deferred = $q.defer();
 
-        Message.query(request).$promise.then(function(messages) {
-            api.store(request, messages);
-            deferred.resolve(messages);
+        Message.query(request).$promise.then(function(json) {
+            if(angular.isDefined(request.Location)) {
+                cacheCounters.update(request.Location, json.Total);
+            } else if(angular.isDefined(request.Starred)) {
+                cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, json.Total);
+            } else if(angular.isDefined(request.Label)) {
+                cacheCounters.update(request.Label, json.Total);
+            }
+
+            api.store(request, json.Messages);
+
+            deferred.resolve(json.Messages);
         });
 
         networkActivityTracker.track(deferred.promise);
@@ -335,7 +346,9 @@ angular.module("proton.cache", [])
             var message = hash[id];
 
             if(angular.isDefined(message.Body)) {
-                deferred.resolve(message);
+                var m = new Message(message);
+
+                deferred.resolve(m);
             } else {
                 deferred.resolve(getMessage(id));
             }
@@ -603,7 +616,6 @@ angular.module("proton.cache", [])
         var promises = [];
 
         _.each(events, function(event) {
-            console.log(event);
             switch (event.Action) {
                 case DELETE:
                     promises.push(api.delete(event));

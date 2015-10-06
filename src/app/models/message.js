@@ -7,6 +7,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $templateCache,
     $timeout,
     $q,
+    $state,
     $stateParams,
     $translate,
     $log,
@@ -41,6 +42,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 url: url.get() + '/messages/:id',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
+
                     return json.Message;
                 }
             },
@@ -54,14 +56,12 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             query: {
                 method: 'get',
-                isArray: true,
+                isArray: false,
                 url: url.get() + '/messages',
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
-                    $rootScope.Total = json.Total;
-
-                    return json.Messages;
+                    return json;
                 }
             },
             latest: {
