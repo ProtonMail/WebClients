@@ -102,3 +102,16 @@ body#login {
 		}
 	}
 }
+
+@media (max-width: $mobile) {
+	#pm_login.pm_panel {
+		margin: 0;
+		border: none;
+	}
+	body#login #pm_header {
+		overflow: visible !important;
+	}
+	#pm_footer {
+		display: none;
+	}
+}

@@ -118,4 +118,11 @@ body.rows {
 	#pm_view {
 		padding: 0 10px !important;
 	}
+	*[ng-height] {
+		overflow: initial;
+		height: initial !important;
+	}
+	html.protonmail body {
+		overflow: initial !important;
+	}
 }

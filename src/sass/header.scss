@@ -3,6 +3,9 @@ header#pm_header {
 	line-height: $headerHeight;
 	border-bottom: 1px solid $border;
 	font-size: 12px;
+	i {
+		font-style: normal;
+	}
 	.compose {
 		display: none;
 	}
@@ -218,6 +221,9 @@ header#pm_header {
 	header#pm_header {
 		.fa {
 			font-size: 18px;
+		}
+		b {
+			display: none;
 		}
 		a.logoMobile {
 			padding: 0 10px;
