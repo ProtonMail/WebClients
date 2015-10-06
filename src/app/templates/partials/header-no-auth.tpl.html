@@ -1,15 +1,15 @@
 <header id="pm_header" class="clearfix pm_opensans no-auth" ng-controller="HeaderController">
     <div class="pull-right">
         <!-- TODO:.. make this work globally using braodcast -->
-        <a href="#" ng-click="openReportModal()">
+        <a class="reportBug" href="#" ng-click="openReportModal()">
         	<i class="fa fa-bug"></b> <b>REPORT BUG</b>
         </a>
-        <a ui-sref="signup" ng-if="!isLoggedIn" class="pm_button primary">
+        <a class="signUp" ui-sref="signup" ng-if="!isLoggedIn" class="pm_button primary">
         	SIGN UP<b> FOR FREE</b>
         </a>
-        <a ng-click="logout()" ng-if="isLoggedIn" class="pm_button primary">LOG OUT</a> 
+        <a class="logOut" ng-click="logout()" ng-if="isLoggedIn" class="pm_button primary">LOG OUT</a> 
     </div>
-    <a href="https://protonmail.ch" target="_self">
+    <a class="back" href="https://protonmail.ch" target="_self">
     	<i class="fa fa-chevron-left"></i>
     	<b> &nbsp; BACK TO PROTONMAIL.CH</b>
     </a>

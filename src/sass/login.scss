@@ -104,9 +104,16 @@ body#login {
 }
 
 @media (max-width: $mobile) {
+	#pm_login {
+		input[type="text"],
+		input[type="password"] {
+			background: rgba(0,0,0,.1);
+		}
+	}
 	#pm_login.pm_panel {
 		margin: 0;
 		border: none;
+		background: transparent;
 	}
 	body#login #pm_header {
 		overflow: visible !important;

@@ -143,6 +143,10 @@ body.columns #pm_toolbar {
         .pm_buttons {
             margin: 0 5px 0 0 !important;
         }
+        .pm_buttons a,
+        .pm_button {
+            padding: 0 5px !important;
+        }
         .messageActions {
             .pm_buttons {
                 margin: 0 0 0 5px;
