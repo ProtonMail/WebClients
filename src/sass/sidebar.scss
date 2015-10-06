@@ -258,6 +258,6 @@ section#pm_sidebar {
 @media (max-width: $mobile) {
     body.secure section#pm_sidebar,
     body.secure #pm_background {
-        display: none;
+        // display: none !important;
     }
 }

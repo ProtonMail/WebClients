@@ -2,4 +2,34 @@
 	input[type="checkbox"] {
 		margin: 14px 10px 0 0;
 	}
+	em {
+		display: none;
+	}
+}
+
+@media (max-width: $mobile) {
+    label.pm_checkbox {
+        display: inline-block;
+        height: 33px !important;
+        width: 33px !important;
+        border: 1px solid $border;
+        border-radius: 2px;
+        margin: 0 !important;
+        position: relative;
+        input[type="checkbox"] {
+            display: none;
+        }
+		input[type="checkbox"]:checked + em {
+			height: 33px;
+			width: 33px;
+			line-height: 33px;
+			text-align: center;
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+    }
 }

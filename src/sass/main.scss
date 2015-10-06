@@ -107,8 +107,15 @@ body.rows {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobile) {
 	.hidden-xs {
 		display: none !important;
+	}
+	body.rows #pm_list {
+		padding: 0 25px;
+		margin: -1px -25px 0 -25px;
+	}
+	#pm_view {
+		padding: 0 10px !important;
 	}
 }

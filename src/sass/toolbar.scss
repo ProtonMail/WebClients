@@ -115,10 +115,33 @@ body.columns #pm_toolbar {
 }
 
 @media (max-width: $mobile) {
-    body.rows #pm_toolbar {
-        padding: 14px 0 0;
+    body #pm_view #pm_toolbar {
+        height: 65px !important;
+        margin: 0 -10px !important;
+        width: auto !important;
+        padding: 14px 10px !important;
+    }
+    body #pm_toolbar {
+        border-bottom: 1px solid $border;
+        padding: 14px 10px !important;
+        .pm_checkbox {
+            margin-right: 5px !important;
+        }
+        .main,
+        .desktop {
+            display: none;
+        }
+        .mobileMain,
+        .mobileSecondary {
+            display: block;
+            .pm_buttons {
+                a.fa-angle-down {
+                    padding: 0 3px;
+                }
+            }
+        }
         .pm_buttons {
-            margin: 0 5px 0 0;
+            margin: 0 5px 0 0 !important;
         }
         .messageActions {
             .pm_buttons {

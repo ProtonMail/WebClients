@@ -10,6 +10,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $timeout,
     $translate,
     $filter,
+    $window,
     CONSTANTS,
     Message,
     Label,
@@ -50,6 +51,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
+        $scope.mobileResponsive();
         $scope.refreshMessages().then(function() {
             watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
                 preloadMessage.set(newValue);
@@ -60,6 +62,16 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         }, function(error) {
             $log.error(error);
         });
+    };
+
+    $scope.$on('resized', function() {
+        $scope.mobileResponsive();
+    });
+
+    $scope.mobileResponsive = function() {
+        if ($window.outerWidth < 600) {
+            $rootScope.layoutMode = 'rows';
+        }
     };
 
     $scope.startWatchingEvent = function() {

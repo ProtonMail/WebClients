@@ -25,40 +25,75 @@
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <span class="pm_buttons">
-        <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
-            <i class="fa fa-eye-slash"></i>
-        </a>
-        <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
-            <i class="fa fa-eye"></i>
-        </a>        
-    </span>
-    <span class="pm_buttons" >
-        <a href="" ng-click="moveMessageTo('inbox')" ng-if="message.location() !== 'inbox'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'INBOX' | translate }}" pt-placement="bottom">
-            <i class="fa fa-inbox"></i>
-        </a>
-        <a href="" ng-click="moveMessageTo('delete')" ng-if="message.location() === 'spam' || message.location() === 'trash'" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
-            <i class="fa fa-times-circle"></i>
-        </a>
-        <a href="" ng-click="moveMessageTo('trash')" ng-if="message.location() !== 'trash'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'TRASH' | translate }}" pt-placement="bottom">
-            <i class="fa fa-trash-o"></i>
-        </a>
-        <a href="" ng-click="moveMessageTo('archive')" ng-if="message.location() !== 'archive'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
-            <i class="fa fa-archive"></i>
-        </a>
-        <a href="" ng-click="moveMessageTo('spam')" ng-if="message.location() !== 'spam' && message.location() !== 'sent'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'SPAM' | translate }}" pt-placement="bottom" class="divider">
-            <i class="fa fa-smile-o"></i>
-        </a>
-    </span>
-    <span class="pm_buttons">
-        <a href="#" class="pm_trigger" ng-dropdown>
-            <i class="fa fa-tag"></i>
-            <i class="fa fa-angle-down"></i>
-        </a>
-        <span class="pm_dropdown">
-            <a href="#">Submenu 1</a>
-            <a href="#">Submenu 2</a>
-            <a href="#">Submenu 3</a>
+    <div class="mobileMain pull-left">
+        <span class="pm_buttons">
+            <a href="" class="pm_trigger" ng-dropdown>
+                <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
+            </a>
+            <span class="pm_dropdown wider">
+                <a href="" ng-click="orderBy('subject')">
+                    <i class="fa fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
+                </a>
+                <a href="" ng-click="orderBy('-subject')">
+                    <i class="fa fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
+                </a>
+                <a href="" ng-click="orderBy('from')">
+                    <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
+                </a>
+                <a href="" ng-click="orderBy('-from')">
+                    <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: Z-A
+                </a>
+                <a href="" ng-click="orderBy('size')">
+                    <i class="fa fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
+                </a>
+                <a href="" ng-click="orderBy('-size')">
+                    <i class="fa fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
+                </a>
+                <a href="" ng-click="orderBy('-date')">
+                    <i class="fa fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
+                </a>
+                <a href="" ng-click="orderBy('date')">
+                    <i class="fa fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
+                </a>
+            </span>
         </span>
-    </span>
+    </div>
+    <div class="desktop pull-left">
+        <span class="pm_buttons">
+            <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+                <i class="fa fa-eye-slash"></i>
+            </a>
+            <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+                <i class="fa fa-eye"></i>
+            </a>        
+        </span>
+        <span class="pm_buttons" >
+            <a href="" ng-click="moveMessageTo('inbox')" ng-if="message.location() !== 'inbox'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'INBOX' | translate }}" pt-placement="bottom">
+                <i class="fa fa-inbox"></i>
+            </a>
+            <a href="" ng-click="moveMessageTo('delete')" ng-if="message.location() === 'spam' || message.location() === 'trash'" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
+                <i class="fa fa-times-circle"></i>
+            </a>
+            <a href="" ng-click="moveMessageTo('trash')" ng-if="message.location() !== 'trash'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'TRASH' | translate }}" pt-placement="bottom">
+                <i class="fa fa-trash-o"></i>
+            </a>
+            <a href="" ng-click="moveMessageTo('archive')" ng-if="message.location() !== 'archive'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
+                <i class="fa fa-archive"></i>
+            </a>
+            <a href="" ng-click="moveMessageTo('spam')" ng-if="message.location() !== 'spam' && message.location() !== 'sent'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'SPAM' | translate }}" pt-placement="bottom" class="divider">
+                <i class="fa fa-smile-o"></i>
+            </a>
+        </span>
+        <span class="pm_buttons">
+            <a href="#" class="pm_trigger" ng-dropdown>
+                <i class="fa fa-tag"></i>
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <span class="pm_dropdown">
+                <a href="#">Submenu 1</a>
+                <a href="#">Submenu 2</a>
+                <a href="#">Submenu 3</a>
+            </span>
+        </span>
+    </div>
 </nav>

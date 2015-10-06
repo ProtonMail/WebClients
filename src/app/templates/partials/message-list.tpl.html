@@ -12,15 +12,15 @@
             <span class="pm_checkbox">
                 <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
             </span>
-            <span>
+            <span class="starSpan">
                 <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                     <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
                 </a>
             </span>
-            <span>
+            <span class="placeholderSpan">
                 <span>&nbsp;</span>
             </span>
-            <span>
+            <span class="attachmentSpan">
                 <span class="fa fa-paperclip" ng-class="{ 'show': (message.HasAttachment || message.Attachments.length > 0) }"></span>
             </span>
         </aside>
@@ -51,9 +51,10 @@
     ng-repeat="message in messages track by message.ID"
     class="message"
     ng-class="{unread: message.IsRead === 0,selected: (message.Selected || message.Active),starred: message.Starred === 1,encrypted: message.IsEncrypted == '1', displayed: displayed(message)}">
-        <span class="pm_checkbox">
-            <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)" />
-        </span>
+        <label class="pm_checkbox">
+            <input type="checkbox" ng-model="message.Selected" ng-click="onSelectMessage($event, message)">
+            <em class="fa fa-check"></em>
+        </label>
         <span class="star">
             <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                 <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
@@ -62,7 +63,7 @@
         <span class="sender" ng-click="navigateToMessage($event, message)">
             <span>{{ message.SenderName || message.SenderAddress }}</span>
         </span>
-        <span><span>&nbsp;</span></span>
+        <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject" ng-click="navigateToMessage($event, message)">
             <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>

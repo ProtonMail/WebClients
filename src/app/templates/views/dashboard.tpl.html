@@ -3,45 +3,32 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="settings" ng-height>
+ 
+        <div class="row">
 
-        <span class="pm_buttons">
-            <a>2015</a>
-            <a class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
-            <span class="pm_dropdown">
-                <a href="">2015</a>
-                <a href="">2014</a>
-                <a href="">2013</a>
-            </span>
-        </span>
+            <section class="setting pm_form">
+                <legend>{{ 'OVERVIEW' | translate }}</legend>
+                ???
+            </section>
+            <section class="setting pm_form pull-right">
+                <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
+                ???
+            </section>
 
-        <p>&nbsp;</p>
+        </div>
 
-        <table class="pm_table hidden-xs">
-            <thead>
-                <tr>
-                    <th class="date">Date</th>
-                    <th>Event</th>
-                    <th class="invoice">Invoice</th>
-                    <th class="price">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="payment in payments track by $index">
-                    <td class="date">
-                        {{ payment.Date * 1000 | date : 'medium' }}
-                    </td>                
-                    <td>
-                        {{ payment.Event }}
-                    </td>
-                    <td class="invoice">
-                        <a class="pm_button round"><i class="fa fa-file-text"></i></a>
-                    </td>
-                    <td class="price">
-                        <kbd>{{ ::payment.Price }}</kbd>
-                    </td>
-                </tr>
-            </tbody>
-        </table>        
+        <div class="row">
+
+            <section class="setting pm_form full">
+
+                <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
+                    <legend>Plans &amp; Prices</legend>
+                    ???
+                </form>
+
+            </section>
+
+        </div>
 
     </div>
 

@@ -166,7 +166,6 @@ angular.module("proton", [
     angular.element($window).bind('resize load', function() {
         $timeout.cancel(debounce);
         $timeout(function() {
-            $rootScope.isMobile = tools.findBootstrapEnvironment() === 'xs';
             $rootScope.$broadcast('resized');
         }, 10);
     });

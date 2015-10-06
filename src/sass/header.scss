@@ -1,5 +1,3 @@
-
-
 header#pm_header {
 	height: $headerHeight;
 	line-height: $headerHeight;
@@ -216,10 +214,14 @@ header#pm_header {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobile) {
 	header#pm_header {
 		.fa {
 			font-size: 18px;
+		}
+		a.logoMobile {
+			padding: 0 10px;
+			margin: 0;
 		}
 		.compose {
 			max-width: 3rem;

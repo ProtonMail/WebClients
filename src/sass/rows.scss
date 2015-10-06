@@ -163,10 +163,14 @@
 	}
 }
 
-@media (max-width: 660px) {
+@media (max-width: $mobile) {
+	body.rows #pm_list {
+		margin-right: 0;
+		padding-right: 0;
+	}
 	#pm_rows .list {
 		.message {
-			padding: 0 15px 0 75px;
+			padding: 0 10px 0 85px;
 			height: 65px;
 			line-height: 25px;
 			position: relative;
@@ -180,12 +184,13 @@
 			}
 			.pm_checkbox {
 				position: absolute;
-				left: 15px;
-				top: 10px;
+				left: 10px;
+				top: 15px;
+				z-index: 5;
 			}
 			&.unread {
 				margin: 0;
-				padding: 0 15px 0 75px;
+				padding: 0 10px 0 85px;
 				background-color: $white;
 				color: #333;
 				.pm_labels {
@@ -197,6 +202,8 @@
 			}
 			&.selected {
 				background-color: #f6f6f6;
+				padding: 0 10px 0 85px;	
+				margin-left: 0;
 			}
 			.size {
 				display: none;
@@ -211,9 +218,11 @@
 			}
 			.star {
 				top: 5px;
+				left: 50px;
 			}
 			.fa-paperclip {
 				bottom: 5px;
+				left: 50px;
 			}
 			.time {
 				position: absolute;
@@ -305,13 +314,13 @@
 			}
 		}
 	}
-}
-
-@media (max-width: $mobile) {
 	#pm_rows {
 		#pm_view {
 			padding: 0 25px;
 			box-sizing: border-box;
+		}
+		.placeholderSpan {
+			display: none !important;
 		}
 	}
 }
