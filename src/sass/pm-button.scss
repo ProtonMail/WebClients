@@ -12,6 +12,7 @@
     font-size: 1em;
     background-color: transparent;
     transition: background-color .25s linear, border-color .25s linear;
+    cursor: pointer;
     &:hover {
         background-color: #fafafa;
         transition: none;
@@ -113,6 +114,7 @@
         line-height: 33px;
         display: block;
         float: left;
+        cursor: pointer;
         transition: background-color .25s linear, border-color .25s linear;
         &.fa-angle-down {
             padding: 0 3px;

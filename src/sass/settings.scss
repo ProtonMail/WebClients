@@ -12,12 +12,28 @@
     .settings {
     	padding: 0 25px;
     	margin-right: 25px;
+    	.pm_buttons .fa.fa-angle-down {
+    		padding: 0 .5rem;
+    	}
     	&#labelContainer {
-    		.toggle-switch {
-    			margin-right: 2rem;
-    		}
     		.fa-tag {
     			margin: 0 .5rem;
+    		}
+    		.pm_toggle {
+    			margin-right: 2rem;
+    			display: inline-block;
+    			float: left;
+    		}
+    	}
+    	table {
+    		.invoice {
+    			width: 4rem;
+    		}
+    		.price {
+    			width: 6rem;
+    		}
+    		.date {
+    			width: 12rem;
     		}
     	}
 		.row {

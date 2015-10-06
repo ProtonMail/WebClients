@@ -81,7 +81,8 @@ section#pm_sidebar {
 
     div.labels {
         font-size: 14px;
-        margin: 0 -15px 30px -15px;
+        margin: 0 -35px 30px -25px;
+        padding: 0 10px;
         form {
             margin-bottom: .5rem;
             input {
@@ -132,6 +133,16 @@ section#pm_sidebar {
                 display: block;
                 padding: 0;
                 margin: 0;
+                &.active {
+                    a {
+                        background-color: #f6f6f6;
+                        border-color: #efefef;
+                        color: #669;
+                        i.fa {
+                            color: #669;
+                        }
+                    }
+                }                
                 a {
                     display: block;
                     height: 35px;

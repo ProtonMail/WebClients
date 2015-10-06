@@ -51,6 +51,109 @@ angular.module("proton.controllers.Settings", [
     $scope.apiURL = url.get();
     $scope.ViewLayout = authentication.user.ViewLayout;
 
+    $scope.payments = [  
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month)",
+            "Price": "13 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month)",
+            "Price": "13 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month)",
+            "Price": "13 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month)",
+            "Price": "13 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 2 Addons",
+            "Price": "10 CHF"
+        },
+        {  
+            "Date": 1444079277,
+            "Event": "Business Plan Subscription (1 month) with 1 Addons",
+            "Price": "12 CHF"
+        }
+    ];
+
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: "form[name='aliasesForm']",

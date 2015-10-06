@@ -9,7 +9,7 @@
 	margin-top: 5px;
 	display: none;
 	font-size: 12px;
-	width: 4rem;
+	width: 6rem;
 	max-height: 260px;
 	overflow: auto;
 	&.right {
@@ -17,7 +17,17 @@
 		left: initial;
 	}
 	&.wide {
-		width: 200px;
+		width: 160px;
+		max-height: none;
+		padding: 15px;
+	}
+	&.wider {
+		width: 190px;
+		max-height: none;
+		padding: 15px;
+	}
+	&.widest {
+		width: 220px;
 		max-height: none;
 		padding: 15px;
 	}
@@ -28,11 +38,17 @@
 		width: 100%;
 		text-align: left;
 		display: block;
-		line-height: 25px !important;
-		height: 25px !important;
+		line-height: 35px !important;
+		height: 35px !important;
 		padding: 0 !important;
 		border-bottom: 1px solid $border;
 		white-space: nowrap;
+		.fa {
+			line-height: 35px !important;
+			height: 35px !important;
+			display: inline-block;
+			width: 1.5rem;		
+		}
 		&:hover {
 			background-color: transparent !important;
 			color: #333 !important;

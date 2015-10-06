@@ -1,0 +1,48 @@
+<div id="pm_settings">
+
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="settings" ng-height>
+
+        <span class="pm_buttons">
+            <a>2015</a>
+            <a class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+            <span class="pm_dropdown">
+                <a href="">2015</a>
+                <a href="">2014</a>
+                <a href="">2013</a>
+            </span>
+        </span>
+
+        <p>&nbsp;</p>
+
+        <table class="pm_table hidden-xs">
+            <thead>
+                <tr>
+                    <th class="date">Date</th>
+                    <th>Event</th>
+                    <th class="invoice">Invoice</th>
+                    <th class="price">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="payment in payments track by $index">
+                    <td class="date">
+                        {{ payment.Date * 1000 | date : 'medium' }}
+                    </td>                
+                    <td>
+                        {{ payment.Event }}
+                    </td>
+                    <td class="invoice">
+                        <a class="pm_button round"><i class="fa fa-file-text"></i></a>
+                    </td>
+                    <td class="price">
+                        <kbd>{{ ::payment.Price }}</kbd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>        
+
+    </div>
+
+</div>

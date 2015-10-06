@@ -1,18 +1,26 @@
-<div class="pm_modal pm_fadeIn {{this.class}}" role="dialog" style="display: block;">
+<div class="pm_modal pm_fadeIn {{this.class}}" role="dialog" id="advancedSearchModal">
     <div class="modal-dialog">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h3>{{ 'ADVANCED_SEARCH' | translate }}</h3>
             </div>
-            <div class="modal-body">
-                <div class="clearfix">
-                    <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
-                    <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keywords" />
+            <div class="modal-body pm_form">
+
+                <div class="row">
+                    <span class="col narrow">
+                        <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col full last">
+                        <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keywords" />                    
+                    </span>
                 </div>
-                <div class="clearfix">
-                    <div class="col">
-                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>
+
+                <div class="row">
+                    <span class="col narrow">
+                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>                        
+                    </span><!--/.col-->
+                    <span class="col wide">
                         <select id="search_folder">
                             <optgroup label="Default">
                                 <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
@@ -21,9 +29,11 @@
                                 <option ng-repeat="(key, value) in ctrl.folders" value="{{value}}">{{key}}</option>
                             </optgroup>
                         </select>
-                    </div>
-                    <div class="col">
+                    </span><!--/.col-->
+                   <span class="col narrow">
                         <label for="search_label">{{ 'LABEL' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide last">
                         <select id="search_label" class="form-control">
                             <optgroup label="Default">
                                 <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
@@ -32,31 +42,46 @@
                                 <option value="{{label.ID}}" ng-repeat="label in ctrl.labels">{{label.Name}}</option>
                             </optgroup>
                         </select>
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <div class="col">
+                    </span><!--/.col-->                    
+                </div><!--/.row-->
+
+                <div class="row">
+                    <span class="col narrow">
                         <label for="search_sender">{{ 'SENDER' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide">
                         <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'FROM' | translate }}" />
-                    </div>
-                    <div class="col">
+                    </span><!--/.col-->
+                    <span class="col narrow">
                         <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide last">
                         <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'TO' | translate }}" />
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <div class="col">
+                    </span><!--/.col-->
+                </div><!--/.row-->
+
+                <div class="row">
+                    <span class="col narrow">
                         <label for="search_start">{{ 'START_DATE' | translate }}</label>
-                        <input pikaday="ctrl.start" id="search_start" on-select="setMin()" />
-                    </div>
-                    <div class="col">
+                    </span><!--/.col-->
+                    <span class="col wide date">
+                        <input type="text" placeholder="dd/mm/yy" pikaday="ctrl.start" id="search_start" on-select="setMin()" />
+                        <em class="fa fa-calendar`"></em>
+                    </span><!--/.col-->
+                    <span class="col narrow">
                         <label for="search_end">{{ 'END_DATE' | translate }}</label>
-                        <input pikaday="ctrl.end" id="search_end" on-select="setMax()" />
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <div class="col">
+                    </span><!--/.col-->
+                    <span class="col wide last date">
+                        <input type="text" placeholder="dd/mm/yy" pikaday="ctrl.end" id="search_end" on-select="setMax()" />
+                        <em class="fa fa-calendar"></em>
+                    </span><!--/.col-->                    
+                </div><!--/.row-->
+
+                <div class="row">
+                    <span class="col narrow">
                         <label>{{ 'ATTACHMENTS' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide">
                         <div class="radio">
                             <label for="attachments_all">
                                 <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" /> {{ 'ALL' | translate }}
@@ -68,9 +93,11 @@
                                 <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" /> {{ 'NO' | translate }}
                             </label>
                         </div>
-                    </div>
-                    <div class="col">
+                    </span><!--/.col-->
+                    <span class="col narrow">
                         <label>{{ 'IS_STARRED' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide last">
                         <div class="radio">
                             <label for="starred_all">
                                 <input id="starred_all" type="radio" ng-model="ctrl.starred" value="2" /> {{ 'ALL' | translate }}
@@ -82,8 +109,9 @@
                                 <input id="starred_no" type="radio" ng-model="ctrl.starred" value="0" /> {{ 'NO' | translate }}
                             </label>
                         </div>
-                    </div>
-                </div>
+                    </span><!--/.col-->
+                </div><!--/.row-->
+
             </div>
             <div class="modal-footer text-right">
                 <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
@@ -91,4 +119,5 @@
             </div>
         </div>
     </div>
+    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>  
 </div>

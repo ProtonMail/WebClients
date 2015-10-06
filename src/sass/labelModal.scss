@@ -1,0 +1,47 @@
+#labelModal {
+	.row {
+		margin-bottom: 1rem;
+	}
+	.pm_button.primary {
+		padding: 0 1rem;
+	}	
+	ul.palette {
+		display: block;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li {
+			display: block;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			float: left;
+			height: 2rem;
+			width: 50%;
+			a {
+				display: block;
+				height: 2rem;
+				width: 100%;
+				cursor: pointer;
+				text-align: center;
+				.fa {
+					opacity: 0;
+					color: #fff;
+					display: inline-block;
+					line-height: 2rem;
+					height: 2rem;
+					-webkit-transition: opacity .1s linear;
+					   -moz-transition: opacity .1s linear;
+					    -ms-transition: opacity .1s linear;
+					     -o-transition: opacity .1s linear;
+					        transition: opacity .1s linear;
+				}
+				&.active {
+					.fa {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -16,4 +16,8 @@ html.protonmail {
 	.text-center {
 		text-align: center;
 	}
+	pre,
+	code {
+		white-space: pre-line;
+	}
 }
