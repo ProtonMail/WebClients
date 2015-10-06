@@ -650,6 +650,53 @@ angular.module("proton.cache", [])
         $rootScope.$broadcast('updatePageName');
     };
 
+    /**
+     * Reset cache and hash then preload inbox and sent
+     */
+    api.reset = function() {
+        cache = {};
+        hash = {};
+        api.preloadInboxAndSent();
+    };
+
+    /**
+     * Manage expiration time for messages in the cache
+     */
+    api.expiration = function() {
+        var now = Date.now() / 1000;
+        var removed = 0;
+        var locations = Object.keys(cache);
+
+        _.each(locations, function(location) {
+            var messages = [];
+
+            for (var i = 0; i < cache[location].length; i++) {
+                var id = cache[location][i];
+
+                messages.push(hash[id]);
+            }
+
+            if(messages.length > 0) {
+                messages = _.filter(messages, function(message) {
+                    var expTime = message.ExpirationTime;
+                    var response = (expTime !== 0 && expTime < now) ? false : true;
+
+                    if (!response) {
+                        removed++;
+                    }
+
+                    return response;
+                });
+
+                cache[location] = _.map(messages, function(message) { return message.ID; });
+            }
+        });
+
+        if (removed > 0) {
+            api.callRefresh();
+        }
+    };
+
     return api;
 })
 
@@ -763,53 +810,6 @@ angular.module("proton.cache", [])
                 total: 0,
                 unread: 0
             };
-        }
-    };
-
-    /**
-     * Reset cache and hash then preload inbox and sent
-     */
-    api.reset = function() {
-        cache = {};
-        hash = {};
-        api.preloadInboxAndSent();
-    };
-
-    /**
-     * Manage expiration time for messages in the cache
-     */
-    api.expiration = function() {
-        var now = Date.now() / 1000;
-        var removed = 0;
-        var locations = Object.keys(cache);
-
-        _.each(locations, function(location) {
-            var messages = [];
-
-            for (var i = 0; i < cache[location].length; i++) {
-                var id = cache[location][i];
-
-                messages.push(hash[id]);
-            }
-
-            if(messages.length > 0) {
-                messages = _.filter(messages, function(message) {
-                    var expTime = message.ExpirationTime;
-                    var response = (expTime !== 0 && expTime < now) ? false : true;
-
-                    if (!response) {
-                        removed++;
-                    }
-
-                    return response;
-                });
-
-                cache[location] = _.map(messages, function(message) { return message.ID; });
-            }
-        });
-
-        if (removed > 0) {
-            api.callRefresh();
         }
     };
 
