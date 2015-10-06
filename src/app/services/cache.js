@@ -392,6 +392,8 @@ angular.module("proton.cache", [])
                     return id !== event.ID;
                 });
             });
+            // delete hash
+            delete hash[event.ID];
         }
 
         deferred.resolve();
@@ -595,6 +597,7 @@ angular.module("proton.cache", [])
 
     /**
     * Manage the cache when a new event comes
+    * @param {Array} events
     */
     api.events = function(events) {
         var promises = [];
