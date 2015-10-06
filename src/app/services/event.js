@@ -13,7 +13,6 @@ angular.module("proton.event", ["proton.constants"])
 		Contact,
 		CONSTANTS,
 		Events,
-		messageCache,
 		notify
 	) {
 
@@ -121,7 +120,7 @@ angular.module("proton.event", ["proton.constants"])
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					messageCache.reset();
+					cacheMessages.reset();
 					eventModel.manageID(data.EventID);
 				} else if (data.Reload === 1) {
 					$window.location.reload();
@@ -136,7 +135,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageID(data.EventID);
 				}
 				this.manageNotices(data.Notices);
-				messageCache.manageExpire();
+				cacheMessages.expiration();
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {
@@ -172,7 +171,7 @@ angular.module("proton.event", ["proton.constants"])
 					}
 				},
 				stop: function () {
-					messageCache.empty();
+					// messageCache.empty();
 					if (angular.isDefined(eventModel.promiseCancel)) {
 						$timeout.cancel(eventModel.promiseCancel);
 						eventModel.promiseCancel = undefined;
