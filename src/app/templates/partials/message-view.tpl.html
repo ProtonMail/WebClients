@@ -1,7 +1,9 @@
 <ng-include src="'templates/partials/toolbar-message.tpl.html'" ng-if="layoutMode === 'rows'"></ng-include>
 
 <header>
-    <a href="#" class="fa fa-star"></a>
+    <a href="#" ng-click="toggleStar(message)">
+        <i class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></i>
+    </a>
     <h1 ng-bind="::message.Subject"></h1>
 </header>
 
