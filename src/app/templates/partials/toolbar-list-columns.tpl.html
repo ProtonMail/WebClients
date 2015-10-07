@@ -36,8 +36,12 @@
                 <a href="" class="fa fa-list" pt-tooltip="{{ 'SHOW_ALL' | translate }}"></a>
                 <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
                 <span class="pm_dropdown">
-                    <a href="">{{ 'SHOW_UNREAD' | translate }}</a>
-                    <a href="">{{ 'SHOW_READ' | translate }}</a>
+                    <a href="" ng-click="filterBy('unread')">
+                        <i class="fa fa-eye-slash"></i> {{ 'SHOW_UNREAD' | translate }}
+                    </a>
+                    <a href="" ng-click="filterBy('read')">
+                        <i class="fa fa-eye"></i> {{ 'SHOW_READ' | translate }}
+                    </a>
                 </span>
             </span>
             <paginator page="page" total-items="messageCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
