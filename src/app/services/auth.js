@@ -60,12 +60,12 @@ angular.module("proton.authentication", [
                     // Set the rows/columsn mode
                     if (!angular.isUndefined(user.ViewLayout)) {
                         if (user.ViewLayout===0) {
-                            $rootScope.layoutMode = 'columns';            
+                            $rootScope.layoutMode = 'columns';
                         }
                         else {
                             $rootScope.layoutMode = 'rows';
                         }
-                    }                    
+                    }
 
                     if (!user.EncPrivateKey) {
                         api.logout();
@@ -367,7 +367,7 @@ angular.module("proton.authentication", [
         // Redirect to a new authentication state, if required
         redirectIfNecessary: function() {
             var newState = this.state();
-            
+
             if (newState) {
                 $state.go(newState);
             }
@@ -402,11 +402,11 @@ angular.module("proton.authentication", [
         logout: function(reload) {
 
             $rootScope.loggingOut = true;
-            
+
             if (reload===undefined) {
                 reload = true;
             }
-            
+
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
 
@@ -531,6 +531,7 @@ angular.module("proton.authentication", [
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.logout = function() {
         eventManager.stop();
+        cacheMessages.clear();
         authentication.logout();
     };
 });

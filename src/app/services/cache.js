@@ -655,11 +655,18 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Clear cache and hash
+     */
+    api.clear = function() {
+        cache = {};
+        hash = {};
+    };
+
+    /**
      * Reset cache and hash then preload inbox and sent
      */
     api.reset = function() {
-        cache = {};
-        hash = {};
+        api.clear();
         api.preloadInboxAndSent();
     };
 
