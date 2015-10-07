@@ -597,8 +597,8 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("secured.settings", {
-        url: "/settings",
+    .state("secured.account", {
+        url: "/account",
         views: {
             "content@secured": {
                 templateUrl: "templates/views/settings.tpl.html",
