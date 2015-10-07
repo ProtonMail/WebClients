@@ -2,9 +2,13 @@
 
 #pm_contacts {
 	padding: 0 25px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	.wrap {
-		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		    -ms-flex-positive: 1;
+		        flex-grow: 1;
 	}
 	.tableWrapper {}
 }

@@ -1,6 +1,10 @@
 .squire-toolbar {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -11,7 +15,9 @@
 	background-color: #fafafa;
 	li {
 		display: block;
-		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		    -ms-flex-positive: 1;
+		        flex-grow: 1;
 		margin: 0;
 		padding: 0;
 		height: $composerRowHeight;
@@ -26,7 +32,9 @@
 		&.separator {
 			width: 1px;
 			min-width: 1px;
-			flex-grow: initial;
+			-webkit-flex-grow: initial;
+			    -ms-flex-positive: initial;
+			        flex-grow: initial;
 			background: $border;
 		}
 	}

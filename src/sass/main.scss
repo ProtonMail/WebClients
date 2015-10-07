@@ -36,6 +36,8 @@ It will conflict with email rendering if the selectors are not specific or neste
 
 body.columns {
 	#pm_columns {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	#pm_rows {
@@ -60,6 +62,8 @@ body.rows {
 		display: none;
 	}
 	#pm_rows {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	#pm_toolbar {

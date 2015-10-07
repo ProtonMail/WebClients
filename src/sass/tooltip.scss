@@ -2,10 +2,6 @@
 	position: absolute;
 	z-index: 99999;
 	opacity: 0;
-	-webkit-transition: opacity .1s linear;
-	-moz-transition: opacity .1s linear;
-	-ms-transition: opacity .1s linear;
-	-o-transition: opacity .1s linear;
 	transition: opacity .1s linear;
 	&.in {
 		opacity: 1;

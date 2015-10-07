@@ -36,18 +36,10 @@
 	background: $primary;
 	color: #fff;
 	text-align: center;
-		-webkit-transition: bottom .5s ease-in-out;
-		   -moz-transition: bottom .5s ease-in-out;
-		    -ms-transition: bottom .5s ease-in-out;
-		     -o-transition: bottom .5s ease-in-out;
-		        transition: bottom .5s ease-in-out;	
+		transition: bottom .5s ease-in-out;	
 	&.show {
 		bottom: 0;
-		-webkit-transition: bottom .5s ease-in-out;
-		   -moz-transition: bottom .5s ease-in-out;
-		    -ms-transition: bottom .5s ease-in-out;
-		     -o-transition: bottom .5s ease-in-out;
-		        transition: bottom .5s ease-in-out;
+		transition: bottom .5s ease-in-out;
 	}
 	.spinner {
 	    position: absolute;
@@ -68,7 +60,6 @@
 		    border-radius: 100%;
 		    display: inline-block;
 		    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-		    -o-animation: bouncedelay 1.4s infinite ease-in-out;
 		    animation: bouncedelay 1.4s infinite ease-in-out;
 		    -webkit-animation-fill-mode: both;
 		    animation-fill-mode: both;

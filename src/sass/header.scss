@@ -32,6 +32,8 @@ header#pm_header {
 		display: none;
 	}
 	form.searchForm {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		float: left;
 		line-height: 35px;
@@ -79,7 +81,9 @@ header#pm_header {
 			padding: 0;
 			position: relative;
 			border-radius: 0 35px 35px 0;
-			flex-grow: 1;
+			-webkit-flex-grow: 1;
+			    -ms-flex-positive: 1;
+			        flex-grow: 1;
 			padding: 0 10px;
 			background-color: transparent;
 			&::-webkit-input-placeholder { /* WebKit browsers */
