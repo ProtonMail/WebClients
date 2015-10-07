@@ -81,8 +81,7 @@ section#pm_sidebar {
 
     div.labels {
         font-size: 14px;
-        margin: 0 -35px 30px -25px;
-        padding: 0 10px;
+        margin: 0 -25px 30px -25px;
         form {
             margin-bottom: .5rem;
             input {
@@ -142,7 +141,7 @@ section#pm_sidebar {
                             color: #669;
                         }
                     }
-                }                
+                }
                 a {
                     display: block;
                     height: 35px;
@@ -152,6 +151,7 @@ section#pm_sidebar {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    padding: 0 15px;
                     .fa-tag {
                         display: inline-block;
                         width: 40px;
@@ -171,7 +171,7 @@ section#pm_sidebar {
     div.footer {
         text-transform: uppercase;
         text-align: center;
-        font-size: 10px;  
+        font-size: 10px;
         div.storage {
             color: #bbb;
             strong {
