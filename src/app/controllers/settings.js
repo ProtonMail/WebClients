@@ -29,6 +29,7 @@ angular.module("proton.controllers.Settings", [
 ) {
     $rootScope.pageName = "Settings";
     $scope.tools = tools;
+    $scope.logs = [];
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
@@ -51,103 +52,103 @@ angular.module("proton.controllers.Settings", [
     $scope.apiURL = url.get();
     $scope.ViewLayout = authentication.user.ViewLayout;
 
-    $scope.payments = [  
-        {  
+    $scope.payments = [
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month)",
             "Price": "13 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month)",
             "Price": "13 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month)",
             "Price": "13 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month)",
             "Price": "13 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",
             "Price": "10 CHF"
         },
-        {  
+        {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 1 Addons",
             "Price": "12 CHF"
@@ -196,8 +197,8 @@ angular.module("proton.controllers.Settings", [
 
     $scope.$on('updateLabels', $scope.updateLabels);
 
-    $scope.loadLogs = function () {
-        // ajax call here get new logs
+    $scope.loadLogs = function (page) {
+        $scope.currentLogPage = page;
     };
 
     $scope.paginate = function(value) {
@@ -765,4 +766,12 @@ angular.module("proton.controllers.Settings", [
             }
         );
     };
+})
+
+.filter('offset', function() {
+  return function(input, start) {
+    start = parseInt(start, 10);
+
+    return input.slice(start);
+  };
 });

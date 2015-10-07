@@ -9,7 +9,7 @@
             <section class="setting pm_form full">
 
                 <form>
-                    <legend>Key Export</legend>
+                    <legend>{{ 'KEY_EXPORT' | translate }}</legend>
                     <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
 
                     <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
@@ -66,17 +66,17 @@
                             <table class="pm_table hidden-xs" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                                 <thead>
                                     <tr>
-                                        <th>Event</th>
-                                        <th>Time</th>
+                                        <th>{{ 'EVENT' | translate }}</th>
+                                        <th>{{ 'TIME' | translate }}</th>
                                         <th ng-show="doLogging == 2">IP</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="log in logs | filter: paginate" ng-class="{ 'danger': (log.Event == 0) }">
+                                    <tr ng-repeat="log in logs | offset: currentLogPage*logItemsPerPage | limitTo: logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
                                         <td scope="row">
-                                            <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle"></i> Login Failed</span>
-                                            <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> Login Success</span>
-                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> Logout</span>
+                                            <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle"></i> {{ 'LOGIN_FAILED' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'LOGIN_SUCCESS' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'LOGOUT' | translate }}</span>
                                         </td>
                                         <td>
                                             {{ log.Time * 1000 | date : 'medium' }}
