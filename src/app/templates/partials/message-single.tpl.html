@@ -8,23 +8,50 @@
             <span class="time">{{ ::message.Time | longReadableTime }}</span>
         </span>
         <span class="from">
-            <i>{{ 'FROM' | translate }}</i> 
+            <i>{{ 'FROM' | translate }}</i>
             <em>{{ ::message.SenderName }}</em>
         </span>
     </header>
     <div class="sub">
         <div class="actions">
             <span class="pm_buttons">
-                <a href="#" ng-click="forward(message)" class="">
+                <a href="#" ng-click="forward(message)" pt-tooltip="{{ 'FORWARD' | translate }}">
                     <i class="fa fa-mail-reply"></i>
                 </a>
-                <a href="#" ng-click="replyAll(message)" class="divider">
+                <a href="#" ng-click="replyAll(message)" class="divider" pt-tooltip="{{ 'REPLY_ALL' | translate }}">
                     <i class="fa fa-mail-reply-all"></i>
                 </a>
-                <a href="#" ng-click="reply(message)" class="divider">
+                <a href="#" ng-click="reply(message)" class="divider" pt-tooltip="{{ 'REPLY' | translate }}">
                     <i class="fa fa-mail-forward"></i>
                 </a>
-                <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
+                <a href="#" class="divider pm_trigger" ng-dropdown pt-tooltip="{{ 'MORE' | translate }}">
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <span class="pm_dropdown">
+                    <a href="" ng-click="print()">
+                        <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
+                    </a>
+                    <a href="" ng-click="moveMessageTo('delete')">
+                        <i class="fa fa-times-circle"></i> {{ 'DELETE' | translate }}
+                    </a>
+                    <a href="" ng-click="moveMessageTo('spam')">
+                        <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
+                    </a>
+                    <a href="" ng-click="togglePlainHtml()">
+                        <span ng-show="message.viewMode === 'html'">
+                            <i class="fa fa-file-text-o"></i> {{ 'VIEW_SOURCE' | translate }}
+                        </span>
+                        <span ng-show="message.viewMode === 'plain'">
+                            <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
+                        </span>
+                    </a>
+                    <a href="" ng-click="viewPgp()" ng-if="(message.IsEncrypted != '0')">
+                        <i class="fa fa-code"></i> {{ 'VIEW_HEADERS' | translate }}
+                    </a>
+                    <a href="" ng-click="viewPgp()" ng-if="(message.IsEncrypted == '0')">
+                        <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
+                    </a>
+                </span>
             </span>
         </div><!--/.actions-->
         <div class="data">
