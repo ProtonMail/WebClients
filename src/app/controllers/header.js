@@ -34,6 +34,17 @@ angular.module("proton.controllers.Header", [])
         });
     }
 
+    $scope.mobileSearch = function() {
+        /// 
+    };
+
+    /**
+     * Call event to open new composer
+     */
+    $scope.compose = function() {
+        $rootScope.$broadcast('newMessage');
+    };
+
     $scope.openSearchModal = function(value) {
         searchModal.activate({
             params: {

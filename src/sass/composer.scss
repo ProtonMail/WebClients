@@ -41,6 +41,10 @@ body.maximizedComposer {
 			width: 100%;
 			height: 100%;
 			box-shadow: none;
+			box-sizing: border-box;
+			footer .pm_button span {
+				display: none;
+			}
 			header, footer {
 				border-radius: 0;
 			}

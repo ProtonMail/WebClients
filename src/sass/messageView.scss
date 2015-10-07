@@ -60,13 +60,19 @@
     		font-size: 15px;
     		padding: 10px 0;
     		line-height: 20px;
+    		height: 40px;
+    		box-sizing: border-box;
     		.time {
     			display: inline-block;
-    			width: 165px;
+    			white-space: nowrap;
     			text-align: right;
     		}
     		.from {
     			color: #999;
+    			i {
+    				display: inline-block;
+    				width: 3rem;
+    			}
     		}
     		em {
     			color: #669;
@@ -101,7 +107,7 @@
     	}
     	.recipientsWrap {
     		display: block;
-    		margin: -1.25rem 0 0 2rem;
+    		margin: -20px 0 0 3rem;
     	}
 		.sub {
 			padding-left: 1.5rem;
@@ -109,20 +115,46 @@
 			position: relative;
 			color: #999;
 			font-size: 14px;
-			margin-top: -5px;
 			line-height: 20px;
 			margin-bottom: 10px;
 			clear: both;
+			box-sizing: border-box;
+			.data > div > i {
+				font-style: normal;
+				width: 3rem;
+				display: inline-block;
+			}
 			em {
     			color: #669;
     			display: block;
     		}
     		.meta {
-    			padding-top: 5px;
+    			height: 35px;
+    			line-height: 35px;
+    			padding-top: 1rem;
+    			padding-left: 3rem;
+    			.pm_buttons {
+    				padding: 0;
+    				border: none;
+    			}
+    			.addLabel {
+    				margin-left: 5px;
+    				padding: 0;
+				    line-height: 1rem;
+				    height: 1rem;
+    			}
+    			.labelClose {
+    				display: block;
+    				float: right;
+    				height: 14px;
+    				line-height: 14px;
+    				color: $gray;
+    				margin-left: .25rem;
+    			}
     		}
 			.actions {
 				text-align: right;
-				padding: 5px 0;
+				padding: 0;
 				position: absolute;
 				right: 0;
 				top: 0;
@@ -149,6 +181,7 @@
 				color: #bfbfbf;
 				text-decoration: none;
 				float: left;
+				line-height: 1em;
 			}
 		}    	
     	.frame {

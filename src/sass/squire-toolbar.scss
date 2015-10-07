@@ -1,5 +1,6 @@
 .squire-toolbar {
 	display: flex;
+	flex-direction: row;
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -32,48 +33,48 @@
 	.popover-visible .squire-popover {
 		display: block;
 	}
-	.squire-popover {
-		position: absolute;
-		z-index: 5;
-		padding: 1rem;
-		background: #fff;
-		border: 1px solid $border;
-		white-space: nowrap;
-		right: 10px !important;
-		left: 10px !important;
-		margin-top: 10px;
-		text-align: right;
-		display: none;
-		input {
-	        line-height: $inputHeight;
-	        border: 1px solid #e1e1ef;
-	        box-sizing: border-box;
-	        color: #555;
-	        display: block;
-	        width: 100%;
-	        font-size: 1em;
-	        border-radius: 2px;
-	        position: relative;
-	        resize: none;
-	        margin-bottom: 10px;
-	        padding: 0 1rem;
-		}
-		button {
-		    text-decoration: none;
-		    padding: 0 10px;
-		    height: 35px;
-		    line-height: 35px;
-		    border: 1px solid $border;
-		    border-radius: 2px;
-		    box-sizing: border-box;
-		    display: inline-block;
-		    cursor: pointer;
-		    font-size: 1em;
-		    transition: background-color .25s linear, border-color .25s linear;		
-            background-color: $primary;
-	        border-color: $primary;
-	        color: $white;	
-	        margin: 0;
-		}
+}
+.squire-popover {
+	position: absolute;
+	z-index: 5;
+	padding: 1rem;
+	background: $light;
+	border: 1px solid $border;
+	white-space: nowrap;
+	right: 10px !important;
+	left: 10px !important;
+	margin-top: 10px;
+	text-align: right;
+	display: block;
+	input {
+        line-height: $inputHeight;
+        border: 1px solid #e1e1ef;
+        box-sizing: border-box;
+        color: #555;
+        display: block;
+        width: 100%;
+        font-size: 1em;
+        border-radius: 2px;
+        position: relative;
+        resize: none;
+        margin-bottom: 10px;
+        padding: 0 1rem;
+	}
+	button {
+	    text-decoration: none;
+	    padding: 0 10px;
+	    height: 35px;
+	    line-height: 35px;
+	    border: 1px solid $border;
+	    border-radius: 2px;
+	    box-sizing: border-box;
+	    display: inline-block;
+	    cursor: pointer;
+	    font-size: 1em;
+	    transition: background-color .25s linear, border-color .25s linear;		
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;	
+        margin: 0;
 	}
 }

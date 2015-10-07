@@ -3,7 +3,7 @@ header#pm_header {
 	line-height: $headerHeight;
 	border-bottom: 1px solid $border;
 	font-size: 12px;
-	i {
+	i, b {
 		font-style: normal;
 	}
 	.compose {

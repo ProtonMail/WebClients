@@ -45,44 +45,44 @@
             </li>
             <li class="separator"></li>
             <li>
-                <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-click="popoverShow($event)">
+                <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-init="insertLink = false" ng-click="insertLink = !insertLink">
                     <i class="fa fa-link"></i>
-                    <div class="squire-popover">
-                        <div class="arrow"></div>
-                        <div class="content">
-                            <div class="panel">
-                                <input type="text" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
-                            </div>
-                            <button ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')">
-                                {{ 'REMOVE_LINK' | translate }}
-                            </button>
-                            <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
-                                {{ 'UPDATE_LINK' | translate }}
-                            </button>
-                            <button class="btn primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')">
-                                {{ 'INSERT_LINK' | translate}}
-                            </button>
-                        </div>
-                    </div>
                 </a>
             </li>
             <li>
-                <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-click="popoverShow($event)">
+                <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-init="insertImage = false" ng-click="insertImage = !insertImage">
                     <i class="fa fa-image"></i>
-                    <div class="squire-popover">
-                        <div class="arrow"></div>
-                        <div class="content">
-                            <div class="panel">
-                                <input type="text" autocomplete="off" placeholder="{{ 'URL_TO_IMAGE' | translate }}" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" class="form-control" />
-                            </div>
-                            <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}">
-                                {{ 'INSERT_IMAGE' | translate }}
-                            </button>
-                        </div>
-                    </div>
                 </a>
-            </li>
+            </li>           
         </ul>
+        <div class="squire-popover" ng-show="insertLink">
+            <div class="arrow"></div>
+            <div class="content">
+                <div class="panel">
+                    <input type="text" autocomplete="off" placeholder="{{ 'LINK_URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" class="form-control" />
+                </div>
+                <button ng-show="canRemoveLink()" ng-click="insertLink = false; popoverHide($event, 'removeLink')">
+                    {{ 'REMOVE_LINK' | translate }}
+                </button>
+                <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="insertLink = false; popoverHide($event, 'makeLink')">
+                    {{ 'UPDATE_LINK' | translate }}
+                </button>
+                <button class="btn primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="insertLink = false; popoverHide($event, 'makeLink')">
+                    {{ 'INSERT_LINK' | translate}}
+                </button>
+            </div>
+        </div>            
+        <div class="squire-popover" ng-show="insertImage">
+            <div class="arrow"></div>
+            <div class="content">
+                <div class="panel">
+                    <input type="text" autocomplete="off" placeholder="{{ 'URL_TO_IMAGE' | translate }}" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" class="form-control" />
+                </div>
+                <button class="btn primary" ng-click="insertImage = false; popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}">
+                    {{ 'INSERT_IMAGE' | translate }}
+                </button>
+            </div>
+        </div>         
         <div class='angular-squire-wrapper'>
             <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" class="squireIframe"></iframe>
         </div>

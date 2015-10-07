@@ -262,6 +262,9 @@ section#pm_sidebar {
     }
     body.secure section#pm_sidebar {
         height: 100%;
-        overflow-y: auto
+        overflow-y: auto;
+        div.labels {
+            margin: 0 -25px 30px -25px !important;
+        }
     }
 }

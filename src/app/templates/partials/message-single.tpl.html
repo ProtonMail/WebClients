@@ -8,7 +8,8 @@
             <span class="time">{{ ::message.Time | longReadableTime }}</span>
         </span>
         <span class="from">
-            {{ 'FROM' | translate }} <em>{{ ::message.SenderName }}</em>
+            <i>{{ 'FROM' | translate }}</i> 
+            <em>{{ ::message.SenderName }}</em>
         </span>
     </header>
     <div class="sub">
@@ -25,40 +26,46 @@
                 </a>
                 <a href="#" class="fa fa-angle-down divider pm_trigger"></a>
             </span>
-        </div>
-        <i class="fa fa-mail-forward"></i>
-        <div ng-if="message.ToList.length">
-            {{ 'TO' | translate }}
-            <span class="recipientsWrap">
-                <em ng-repeat="email in ::message.ToList">
-                {{ email | contact }}
-                </em>
-            </span>
-        </div>
-        <div ng-if="message.CCList.length">
-            {{ 'CC' | translate }}
-            <span class="recipientsWrap">
-                <em ng-repeat="email in ::message.CCList">
-                {{ email | contact }}
-                </em>
-            </span>
-        </div>
-        <div class="meta">
-            <a href="" class="pm_trigger open-label" pt-tooltip="{{ 'ADD_LABEL' | translate }}" ng-dropdown>
-                <i class="fa fa-plus-square-o"></i>
-            </a>
-            <span class="pm_dropdown wide">
-                <dropdown-labels labels="labels" messages="[message]" save="saveLabels" />
-            </span>
-            <span class="pm_labels inline" ng-if="message.labels().length > 0">
-                <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
-                    {{ label.Name }}
-                    <a href="" ng-click="detachLabel(label.ID)">
-                        <i class="fa fa-times"></i>
-                    </a>
+        </div><!--/.actions-->
+        <div class="data">
+            <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
+            <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
+            <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
+            <div ng-if="message.ToList.length" class="toGroup">
+                <i>{{ 'TO' | translate }}</i>
+                <span class="recipientsWrap">
+                    <em ng-repeat="email in ::message.ToList">
+                    {{ email | contact }}
+                    </em>
                 </span>
-            </span>
-        </div>
+            </div>
+            <div ng-if="message.CCList.length" class="ccGroup">
+                <i>{{ 'CC' | translate }}</i>
+                <span class="recipientsWrap">
+                    <em ng-repeat="email in ::message.CCList">
+                    {{ email | contact }}
+                    </em>
+                </span>
+            </div>
+            <div class="meta">
+                <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
+                    <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
+                        {{ label.Name }}
+                        <a href="" ng-click="detachLabel(label.ID)" class="labelClose">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </span>
+                </span>
+                <span class="pm_buttons">
+                    <a href="" class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" ng-dropdown>
+                        <i class="fa fa-plus-square-o"></i>
+                    </a>
+                    <span class="pm_dropdown wide pull-left">
+                        <dropdown-labels labels="labels" messages="[message]" save="saveLabels"></dropdown-labels>
+                    </span>
+                </span>
+            </div>
+        </div><!--/.data-->
     </div>
     <div class="frame">
         <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
