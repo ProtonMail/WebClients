@@ -18,7 +18,7 @@
             <a href="" class="divider">
                 <i class="fa fa-chevron-right"></i>
             </a>
-        </span>        
+        </span>
     </div>
     <span class="pm_buttons">
         <a href="#" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
@@ -65,34 +65,32 @@
             </a>
             <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
                 <i class="fa fa-eye"></i>
-            </a>        
+            </a>
         </span>
         <span class="pm_buttons" >
-            <a href="" ng-click="moveMessageTo('inbox')" ng-if="message.location() !== 'inbox'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'INBOX' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" pt-placement="bottom">
                 <i class="fa fa-inbox"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('delete')" ng-if="message.location() === 'spam' || message.location() === 'trash'" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
                 <i class="fa fa-times-circle"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('trash')" ng-if="message.location() !== 'trash'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'TRASH' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" pt-placement="bottom">
                 <i class="fa fa-trash-o"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('archive')" ng-if="message.location() !== 'archive'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
+            <a href="" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
                 <i class="fa fa-archive"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('spam')" ng-if="message.location() !== 'spam' && message.location() !== 'sent'" pt-tooltip="{{ 'MOVE_TO' }} {{ 'SPAM' | translate }}" pt-placement="bottom" class="divider">
-                <i class="fa fa-smile-o"></i>
+            <a href="" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" pt-placement="bottom" class="divider">
+                <i class="fa fa-ban"></i>
             </a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger" ng-dropdown>
+            <a href="#" class="pm_trigger open-label" ng-dropdown>
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+                <dropdown-labels labels="labels" messages="[message]" save="saveLabels"></dropdown-labels>
             </span>
         </span>
     </div>
