@@ -222,8 +222,11 @@ header#pm_header {
 		.fa {
 			font-size: 18px;
 		}
+		a.pm_button.primary {
+			margin-right: 20px !important;
+		}
 		a.back {
-			margin-left: -20px;
+			padding: 0 20px;
 		}
 		b {
 			display: none;

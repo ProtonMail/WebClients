@@ -1,4 +1,40 @@
-section#pm_sidebar {
+section#pm_sidebarMobile {
+    display: none;
+    padding: 15px 20px;
+    width: $sidebarMobWidth;
+    min-width: $sidebarMobWidth;
+    box-sizing: border-box;
+    float: left;
+    a.logo {
+        display: inline-block;
+        img {
+            display: inline-block;
+            margin: auto;
+            max-width: 110px;
+            vertical-align: middle;
+        }
+    }
+    .pm_button.round {
+        background-color: #636270;
+        border-color: transparent;
+        .fa {
+            color: #fff;
+        }
+    }
+    ul {
+        li {
+            &.active {
+                a {
+                    background: rgba(0,0,0,.1);
+                    border-color: transparent;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+section.sidebar {
     display: block;
     padding: 15px 20px;
     width: $sidebarWidth;
@@ -229,14 +265,19 @@ section#pm_sidebar {
             display: block;
         }
     }
-    body section#pm_sidebar {
+    body.secure section.sidebar {
+        display: none;
+    }
+    body section#pm_sidebarMobile {
         position: fixed;
-        left: -$sidebarWidth;
+        left: -$sidebarMobWidth;
         top: 0;
         bottom: 0;
         z-index: 9;
         opacity: 0;
-        box-shadow: 0 1rem 1rem rgba(0,0,0,.5);
+        display: block;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0,0,0,.25);
         -webkit-transition: left .5s linear, opacity .25s;
            -moz-transition: left .5s linear, opacity .25s;
             -ms-transition: left .5s linear, opacity .25s;
@@ -251,15 +292,48 @@ section#pm_sidebar {
                  -o-transition: left .15s ease-out, opacity .15s;
                     transition: left .15s ease-out, opacity .15s;
         }
+        .userDisplay {
+            float: left;
+            clear: both;
+            height: 3em;
+            margin: 1rem 0;
+            font-size: 11px;
+            line-height: 1.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            em {
+                color: #7a7982;
+                font-style: normal;
+                float: left;
+                clear: both;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                width: ($sidebarMobWidth - 40);
+            }
+            strong {
+                color: #fff;
+                float: left;
+                clear: both;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;  
+                width: ($sidebarMobWidth - 40);
+            }
+        }
+        .menu {
+            clear: both;
+        }
     }
 }
 
 @media (max-width: $mobile) {
-    body.secure section#pm_sidebar,
+    body.secure section.sidebar,
     body.secure #pm_background {
         // display: none !important;
     }
-    body.secure section#pm_sidebar {
+    body.secure section#pm_sidebarMobile {
         height: 100%;
         overflow-y: auto;
         div.labels {

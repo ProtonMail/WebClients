@@ -92,6 +92,8 @@ body.rows {
 	#pm_list {
 		width: 100%;
 		padding: 0;
+	    margin: 0 !important;
+	    box-sizing: border-box;
 		div#pm_mobile_messageList {
 			table {
 				tr {
