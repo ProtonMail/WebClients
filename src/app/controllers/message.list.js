@@ -69,7 +69,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     });
 
     $scope.mobileResponsive = function() {
-        if ($window.outerWidth < 600) {
+        if ($window.outerWidth < 1024) {
             $rootScope.layoutMode = 'rows';
         }
     };

@@ -32,6 +32,9 @@ body.maximizedComposer {
 				}
 			}
 		}
+		.saveAt {
+			display: none;
+		}
 		&.maximized {
 			position: fixed;
 			left: 0;
