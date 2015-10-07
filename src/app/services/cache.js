@@ -648,6 +648,10 @@ angular.module("proton.cache", [])
         $rootScope.$broadcast('refreshMessages');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
+
+        if(angular.isDefined($stateParams.id)) {
+            $rootScope.$broadcast('refreshMessage');
+        }
     };
 
     /**

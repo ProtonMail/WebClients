@@ -41,6 +41,12 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.message = _.extend($scope.message, m);
     });
 
+    $scope.$on('refreshMessage', function() {
+        cacheMessages.get($scope.message.ID).then(function(result) {
+            _.extend($scope.message, result);
+        });
+    });
+
     function onResize() {
         $scope.setMessageHeadHeight();
         $scope.setAttachmentHeight();
