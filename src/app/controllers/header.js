@@ -35,7 +35,7 @@ angular.module("proton.controllers.Header", [])
     }
 
     $scope.mobileSearch = function() {
-        /// 
+        ///
     };
 
     /**
@@ -91,11 +91,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.searchContacts = function() {
-        if($scope.params.searchContactInput.length > 0) {
-            $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
-        } else {
-            $state.go('secured.contacts');
-        }
+        $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
     };
 
     $scope.closeMobileDropdown = function() {
