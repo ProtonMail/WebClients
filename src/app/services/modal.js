@@ -427,7 +427,13 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment.tpl.html',
         controller: function(params) {
+            this.submit = function() {
+                
+            };
 
+            this.cancel = function() {
+
+            };
         }
     });
 });
