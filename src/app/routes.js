@@ -601,7 +601,7 @@ angular.module("proton.routes", [
         url: "/account",
         views: {
             "content@secured": {
-                templateUrl: "templates/views/settings.tpl.html",
+                templateUrl: "templates/views/account.tpl.html",
                 controller: "SettingsController"
             }
         }
