@@ -13,16 +13,24 @@
             <thead>
                 <tr>
                     <th class="text-center hidden-xs checkbox"></th>
-                    <th class="name">
+                    <th class="name" ng-init="sortName = false">
                         <span>
-                            <a href="" ng-click="setSortBy('Name')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Name'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                            <a href="" ng-click="setSortBy('-Name')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Name'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                            <a ng-show="sortName" ng-click="setSortBy('Name'); sortName = !sortName" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}">
+                                <i class="fa fa-sort"></i>
+                            </a>
+                            <a ng-show="!sortName" ng-click="setSortBy('-Name'); sortName = !sortName" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}">
+                                <i class="fa fa-sort"></i>
+                            </a>
                             {{ 'NAME' | translate }}
                         </span>
                     </th>
-                    <th class="email">
-                        <a href="" ng-click="setSortBy('Email')" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === 'Email'}"><i class="fa fa-sort-alpha-asc"></i></a>
-                        <a href="" ng-click="setSortBy('-Email')" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}" class="text-muted" ng-class="{'text-purple': sortBy === '-Email'}"><i class="fa fa-sort-alpha-desc"></i></a>
+                    <th class="email" ng-init="sortEmail = false">
+                        <a ng-show="sortEmail" ng-click="setSortBy('Email'); sortEmail = !sortEmail" pt-tooltip="{{ 'SORT_ASCENDING' | translate }}">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                        <a ng-show="!sortEmail" ng-click="setSortBy('-Email'); sortEmail = !sortEmail" pt-tooltip="{{ 'SORT_DESCENDING' | translate }}">
+                            <i class="fa fa-sort"></i>
+                        </a>
                         {{ 'EMAIL' | translate }}
                     </th>
                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>

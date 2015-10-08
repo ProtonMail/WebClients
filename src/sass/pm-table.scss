@@ -6,6 +6,11 @@
         line-height: $rowHeight;
         padding: 0 1rem;
         text-align: left;
+        .fa.fa-sort {
+            color: $gray-light;
+            margin-right: .25rem;
+            cursor: pointer;
+        }
         &.checkbox {
             width: 35px;
             padding: 0;
