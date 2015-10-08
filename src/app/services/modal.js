@@ -428,9 +428,23 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment.tpl.html',
         controller: function(params) {
+            // Variables
+            this.number = '';
+            this.fullname = '';
+            this.month = '';
+            this.year = '';
+            this.cvc = '';
+
+            // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
+                    params.submit({
+                        number: this.number,
+                        fullname: this.fullname,
+                        month: this.month,
+                        year: this.year,
+                        cvc: this.cvc
+                    });
                 }
             };
 

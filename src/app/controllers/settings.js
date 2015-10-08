@@ -758,7 +758,8 @@ angular.module("proton.controllers.Settings", [
     $scope.openPaymentModal = function() {
         paymentModal.activate({
             params: {
-                submit: function() {
+                submit: function(datas) {
+                    
                     paymentModal.deactivate();
                 },
                 cancel: function() {

@@ -127,7 +127,7 @@ section.sidebar {
                 padding-left: 10px;
                 line-height: 30px;
                 height: 30px;
-                width: 7rem;
+                width: 9rem;
                 font-size: 12px;
                 box-sizing: border-box;
                 margin-left: -10px;
@@ -161,7 +161,7 @@ section.sidebar {
             height: 175px;
             overflow: auto;
             padding: 0 20px;
-            margin: 0 -20px;            
+            margin: 0 -20px;
             li {
                 display: block;
                 padding: 0;
@@ -301,7 +301,7 @@ section.sidebar {
                 clear: both;
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis; 
+                text-overflow: ellipsis;
                 width: ($sidebarMobWidth - 40);
             }
             strong {
@@ -310,7 +310,7 @@ section.sidebar {
                 clear: both;
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;  
+                text-overflow: ellipsis;
                 width: ($sidebarMobWidth - 40);
             }
         }

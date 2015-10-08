@@ -22,16 +22,16 @@
                 </table>
 
                 <div class="">
-                    <i class="fa fa-user"></i><input type="text" size="20" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
+                    <i class="fa fa-user"></i><input type="text" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
                 </div>
                 <div class="">
-                    <i class="fa fa-credit-card"></i><input type="text" ng-model="ctrl.cardnumber" placeholder="{{ 'CARD_NUMBER' | translate }}" />
+                    <i class="fa fa-credit-card"></i><input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
                 </div>
                 <div class="">
-                    <i class="fa fa-calendar-o"></i><input type="text" size="2" ng-model="ctrl.month" placeholder="MM" /><input type="text" size="2" ng-model="ctrl.year" placeholder="YY" />
+                    <i class="fa fa-calendar-o"></i><input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" required /><input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.year" placeholder="YY" required />
                 </div>
                 <div class="">
-                    <a href="" pt-tooltip="Card Validation Code"><i class="fa fa-lock"></i></a><input type="text" size="4" ng-model="ctrl.cvc" placeholder="CVC" />
+                    <a href="" pt-tooltip="Card Validation Code"><i class="fa fa-lock"></i></a><input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" required />
                 </div>
 
                 <p>Your credit card will be automatically charged on a {{ ctrl.total }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
@@ -42,6 +42,10 @@
                 <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
             </div>
         </form>
+        <!-- <div class="modal-content">
+            <h2>Thank you for your subscription.</h2>
+            <p>Your new features are now available</p>
+        </div> -->
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>
