@@ -9,7 +9,11 @@
         </span>
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>
-            <em>{{ ::message.SenderName }}</em>
+            <span>
+                <a href class="fa fa-pencil pm_button primary compose"></a>
+                <em>{{ ::message.SenderName }}</em> 
+                <i>&lt;{{ ::message.SenderAddress }}&gt;</i>
+            </span>
         </span>
     </header>
     <div class="sub">
@@ -61,17 +65,19 @@
             <div ng-if="message.ToList.length" class="toGroup">
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
-                    <em ng-repeat="email in ::message.ToList">
-                    {{ email | contact }}
-                    </em>
+                    <span ng-repeat="email in ::message.ToList">
+                        <a href class="fa fa-pencil pm_button primary compose"></a>
+                        <em>{{ email | contact }}</em>
+                    </span>
                 </span>
             </div>
             <div ng-if="message.CCList.length" class="ccGroup">
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
-                    <em ng-repeat="email in ::message.CCList">
-                    {{ email | contact }}
-                    </em>
+                    <span ng-repeat="email in ::message.CCList">
+                        <a href class="fa fa-pencil pm_button primary compose"></a>
+                        <em>{{ email | contact }}</em>
+                    </span>
                 </span>
             </div>
             <div class="meta">

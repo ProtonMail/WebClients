@@ -55,13 +55,24 @@
     article.message {
     	clear: both;
     	border-bottom: 1px solid $border;
+		a.compose {
+			background: $primary;
+			color: #fff;
+			padding: 0;
+		    line-height: 14px !important;
+		    height: 16px !important;
+		    padding: 0 3px;
+		    margin-right: .5rem;
+		    font-size: 10px;
+		    margin-top: 2px;
+		}     	
     	header {
     		overflow: hidden;
     		font-size: 15px;
     		padding: 10px 0;
     		line-height: 20px;
     		height: 40px;
-    		box-sizing: border-box;
+    		box-sizing: border-box;   		
     		.time {
     			display: inline-block;
     			white-space: nowrap;
@@ -69,9 +80,20 @@
     		}
     		.from {
     			color: #999;
+    			float: left;
+    			span {
+    				float: left;
+    				& > * {
+    					float: left;
+    				}
+    				i {
+	    				margin: 0 0 0 .25rem;
+    				}
+    			}
     			i {
     				display: inline-block;
     				width: 3rem;
+    				float: left;
     			}
     		}
     		em {
@@ -108,6 +130,9 @@
     	.recipientsWrap {
     		display: block;
     		margin: -20px 0 0 3rem;
+    		& span > * {
+    			float: left;
+    		}
     	}
 		.sub {
 			padding-left: 1.5rem;
@@ -126,7 +151,7 @@
 			}
 			em {
     			color: #669;
-    			display: block;
+    			display: inline-block;
     		}
     		.meta {
     			height: 35px;
