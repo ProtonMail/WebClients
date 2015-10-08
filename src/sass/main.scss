@@ -1,5 +1,3 @@
-
-
 /* 
 Be extremely careful what goes here. 
 It will conflict with email rendering if the selectors are not specific or nested properly
@@ -65,15 +63,6 @@ body.rows {
 		display: -webkit-flex;
 		display: -ms-flexbox;
 		display: flex;
-	}
-	#pm_toolbar {
-        .main {
-            display: none;
-        }
-        .mobileMain,
-        .mobileSecondary {
-            display: block;
-        }
 	}
 	#pm_list {
 		padding: 1px 25px;

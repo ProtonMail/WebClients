@@ -15,10 +15,13 @@ body.rows #pm_toolbar {
 
 // Columns
 #pm_view.columns #pm_toolbar {
-    margin-left: 0;   
+    margin-left: 0;
 }
 body.columns #pm_toolbar {
     padding-right: 40px;
+    .main > label {
+        margin-left: 25px;
+    }
 }
 
 #pm_toolbar {
@@ -42,7 +45,7 @@ body.columns #pm_toolbar {
             display: block;
             line-height: 35px;
             height: 35px;
-            padding: 0 10px 0 25px;
+            padding: 0 10px 0 0;
             input {
                 margin-left: 0;
             }

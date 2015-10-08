@@ -207,6 +207,14 @@ section.sidebar {
         text-transform: uppercase;
         text-align: center;
         font-size: 10px;
+        padding-top: 10px;
+        height: 90px;
+        .wrap {
+            background: #4c4b5a;
+            border: 1px solid #43434f;
+            padding: 5px 10px 0;
+            margin-bottom: 1rem;
+        }
         div.storage {
             color: #bbb;
             strong {
@@ -226,7 +234,7 @@ section.sidebar {
         }
         .bar {
             height: 1px;
-            background-color: rgba(255,255,255,.1);
+            background-color: $white;
             width: 100%;
             display: block;
             position: relative;
