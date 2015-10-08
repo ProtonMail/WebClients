@@ -14,7 +14,9 @@ angular.module("proton.toggle", [])
         link: function(scope, element, attrs) {
             // Initialization
             if(angular.isUndefined(scope.status)) {
-                scope.status = true;
+                scope.check = true;
+            } else {
+                scope.check = Boolean(scope.status);
             }
 
             if(angular.isUndefined(scope.on)) {
@@ -26,11 +28,20 @@ angular.module("proton.toggle", [])
             }
 
             // Functions
-            scope.click = function() {
-                scope.status = !scope.status;
+            scope.click = function(event) {
+                scope.check = !scope.check;
+
+                if(angular.isNumber(scope.status)) {
+                    scope.status = Number(scope.check);
+                } else {
+                    scope.status = scope.check;
+                }
 
                 if(angular.isDefined(scope.change) && angular.isFunction(scope.change)) {
-                    scope.change();
+                    // Need to delay the change to be sure, the model is updated
+                    setTimeout(function() {
+                        scope.change();
+                    }, 200);
                 }
             };
         }
