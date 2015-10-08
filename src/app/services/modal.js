@@ -429,11 +429,15 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment.tpl.html',
         controller: function(params) {
             this.submit = function() {
-
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit();
+                }
             };
 
             this.cancel = function() {
-
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
             };
         }
     });
