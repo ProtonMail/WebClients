@@ -524,7 +524,7 @@ angular.module("proton.authentication", [
     return api;
 })
 
-.run(function($rootScope, authentication, eventManager, CONFIG) {
+.run(function($rootScope, authentication, eventManager, cacheMessages, CONFIG) {
     authentication.detectAuthenticationState();
     //authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
