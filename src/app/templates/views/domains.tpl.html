@@ -2,4 +2,12 @@
 
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
+    <div class="settings" ng-height>
+        <div class="row">
+            <section class="setting pm_form full">
+                <legend>{{ 'YOUR_CUSTOM_DOMAINS' | translate }}</legend>
+                <button type="button" class="pm_button primary" ng-click="addCustomDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button> <span>This will allow you to send and receive mail for your domain through ProtonMail.</span>
+            </section>
+        </div>
+    </div>
 </div>
