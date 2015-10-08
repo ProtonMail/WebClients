@@ -31,8 +31,13 @@ fi
 CONTAINER_HOME=$REPO_ROOT
 STANDARD_PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+DOCKER_OPTS="--rm"
+if [ "$NO_DOCKER_RM" ]; then
+  DOCKER_OPTS=""
+fi
+
 set -x
 docker run -v $REPO_ROOT:$CONTAINER_HOME -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock \
   -e HOME=$CONTAINER_HOME -w $CONTAINER_HOME \
   -e PATH="$STANDARD_PATH:./node_modules/.bin/:./node_modules/grunt-cli/bin/" \
-  $CRUN_OPTS --rm -ti --sig-proxy=true "$image" "$@"
+  $CRUN_OPTS $DOCKER_OPTS -ti --sig-proxy=true "$image" "$@"

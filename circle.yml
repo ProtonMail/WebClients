@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+  environment:
+    NO_DOCKER_RM: true
+dependencies:
+  pre:
+    - make travis.install
+test:
+  override:
+    - make travis.script
