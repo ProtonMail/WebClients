@@ -23,6 +23,7 @@ angular.module("proton.controllers.Settings", [
     labelModal,
     networkActivityTracker,
     notify,
+    paymentModal,
     pmcw,
     tools,
     url
@@ -752,6 +753,19 @@ angular.module("proton.controllers.Settings", [
     $scope.clearTheme = function() {
         $scope.cssTheme = '';
         $scope.saveTheme();
+    };
+
+    $scope.openPaymentModal = function() {
+        paymentModal.activate({
+            params: {
+                submit: function() {
+                    paymentModal.deactivate();
+                },
+                cancel: function() {
+                    paymentModal.deactivate();
+                }
+            }
+        });
     };
 
     // This is used for general debugging for any purpose. feel free to change:

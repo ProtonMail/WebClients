@@ -422,13 +422,14 @@ angular.module("proton.modals", [])
     });
 })
 
+// Payment modal
 .factory('paymentModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment.tpl.html',
         controller: function(params) {
             this.submit = function() {
-                
+
             };
 
             this.cancel = function() {

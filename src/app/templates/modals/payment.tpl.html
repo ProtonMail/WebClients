@@ -8,22 +8,30 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Plan Addons</th>
+                            <th>{{ 'DESCRIPTION' | translate }}</th>
                             <th>{{ 'PRICE' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>Panda</td>
+                            <td>1000 EUR</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <i class="fa fa-user"></i><input type="text" size="20" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
-                <i class="fa fa-credit-card"></i><input type="text" ng-model="ctrl.cardnumber" placeholder="{{ 'CARD_NUMBER' | translate }}" />
-                <i class="fa fa-calendar-o"></i><input type="text" size="2" ng-model="ctrl.month" placeholder="MM" /><input type="text" size="2" ng-model="ctrl.year" placeholder="YY" />
-                <a href="" pt-tooltip="Card Validation Code"><i class="fa fa-lock"></i></a><input type="text" size="4" ng-model="ctrl.cvc" placeholder="CVC" />
+                <div class="">
+                    <i class="fa fa-user"></i><input type="text" size="20" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
+                </div>
+                <div class="">
+                    <i class="fa fa-credit-card"></i><input type="text" ng-model="ctrl.cardnumber" placeholder="{{ 'CARD_NUMBER' | translate }}" />
+                </div>
+                <div class="">
+                    <i class="fa fa-calendar-o"></i><input type="text" size="2" ng-model="ctrl.month" placeholder="MM" /><input type="text" size="2" ng-model="ctrl.year" placeholder="YY" />
+                </div>
+                <div class="">
+                    <a href="" pt-tooltip="Card Validation Code"><i class="fa fa-lock"></i></a><input type="text" size="4" ng-model="ctrl.cvc" placeholder="CVC" />
+                </div>
 
                 <p>Your credit card will be automatically charged on a {{ ctrl.total }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
 
