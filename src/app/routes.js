@@ -554,33 +554,27 @@ angular.module("proton.routes", [
         }
     })
 
-    // TODO enable print state
-    // .state("secured.inbox", messageListOptions("/inbox", {
-    //     data: {
-    //         mailbox: "inbox"
-    //     }
-    // }))
-    //
-    // .state("secured.inbox.relative", {
-    //     url: "/{rel:first|last}",
-    //     controller: function($scope, $stateParams) {
-    //         $scope.navigateToMessage(null, $stateParams.rel);
-    //     }
-    // })
 
-    // .state("secured.inbox.message", _.clone(messageViewOptions))
-    //
-    // .state("secured.print", _.extend(_.clone(messageViewOptions), {
-    //     url: "/print/:id",
-    //     onEnter: function($rootScope) { $rootScope.isBlank = true; },
-    //     onExit: function($rootScope) { $rootScope.isBlank = false; },
-    //     views: {
-    //         "main@": {
-    //             controller: "MessageViewController",
-    //             templateUrl: "templates/views/message.print.tpl.html"
-    //         }
-    //     }
-    // })) //
+    .state("secured.print", {
+        url: "/print/:id",
+        onEnter: function($rootScope) { $rootScope.isBlank = true; },
+        onExit: function($rootScope) { $rootScope.isBlank = false; },
+        views: {
+            "main@": {
+                controller: "MessageViewController",
+                templateUrl: "templates/views/message.print.tpl.html",
+                resolve: {
+                    message: function($stateParams, cacheMessages, networkActivityTracker) {
+                        if(angular.isDefined($stateParams.id)) {
+                            return networkActivityTracker.track(cacheMessages.get($stateParams.id));
+                        } else {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    })
 
     .state("secured.contacts", {
         url: "/contacts",
@@ -705,8 +699,6 @@ angular.module("proton.routes", [
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
-        // $stateProvider.state(stateName, messageListOptions(box)); // old version
-
         var parentState = "secured." + box;
         var listState = "secured." + box + '.list';
         var viewState = "secured." + box + '.list.view';
