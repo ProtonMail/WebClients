@@ -13,13 +13,12 @@ test: npm-install
 	bin/crun-node npm test
 
 start: npm-install
-	bin/crun-node npm start
+	DOCKER_OPTS="-p 8080:8080" bin/crun-node npm start
 
 versions:
 	make --version
 	bash --version
-	./sh/docker-compose --version
-	docker --version
+	docker version
 	docker info
 
 travis.install: versions npm-install
