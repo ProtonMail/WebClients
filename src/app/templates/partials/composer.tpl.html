@@ -13,7 +13,8 @@
         'maximized': message.maximized,
         'normalized': !message.maximized && !message.minimized,
         'toggleRecipients': message.fields,
-        'attachmentsOpen': (message.attachmentsToggle === true)
+        'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
+        'tall': (message.Attachments.length === 0)
         }"
         ng-click="focusComposer(message)">
 
@@ -199,7 +200,7 @@
                         ng-change="saveLater(message)"
                         class="to-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')">
+                    <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')" class="dotdotdot">
                         <button class="pm_button pull-right">...</button>
                     </span>
                     <span class="ccPlus" ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
@@ -259,10 +260,10 @@
                 </div>
 
                 <div class="row subjectRow">
+                    <label>{{ 'SUBJECT' | translate }}</label>
                     <input
                     tabindex="5"
                     type="text"
-                    placeholder="{{ 'SUBJECT' | translate }}"
                     title="{{ 'SUBJECT' | translate }}"
                     class="subject"
                     ng-focus="message.fields = false; message.recipientFieldFocussed = 0; toggleRecipients = false"
@@ -282,21 +283,11 @@
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body"></squire>
-                    <button
-                    class="pm_button attach-collapse link"
-                    ng-show="message.Attachments.length > 0"
-                    ng-click="slideDown(message)"
-                    pt-placement="left"
-                    pt-tooltip="{{ 'TOGGLE_DISPLAY_ATTACHMENTS' | translate }}">
-                        <i
-                        class="fa fa-angle-down transition"
-                        ng-class="{'fa-rotate-180': !!!message.attachmentsToggle}"></i>
-                    </button>
                 </div>
             </section>
             <div
-            class="previews clearfix"
-            ng-show="message.attachmentsToggle === true">
+            class="previews clearfix attachmentArea"
+            ng-show="(message.attachmentsToggle === true) && (message.Attachments.length > 0)">
                 <span
                 title="{{attachment.filename || attachment.Name}}"
                 class="preview-template pm_button"
@@ -311,30 +302,26 @@
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
-                <footer>
-                    <button class="pm_button" ng-click="attToggle(message)">Close</button>
-                    <button
-                    class="pm_button btn-add-attachment primary"
-                    ng-class="{
-                        'active': message.displayPanel && message.panelName == 'attachments',
-                        'primary': message.Attachments && message.Attachments.length > 0,
-                        disabled: message.loading()
-                    }"
-                    pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
-                    pt-placement="top"
-                    >
-                        <i class="fa fa-plus"></i>
-                        <span> {{ 'ADD_ATTACHMENTS' | translate }}</span>
-                    </button>
-                </footer>
             </div>
-            <aside class="attachmentBar" ng-click="attToggle(message)">
-                <i class="fa fa-angle-down pull-right" ng-if="(message.attachmentsToggle === true)"></i>
-                <i class="fa fa-angle-up pull-right" ng-if="!(message.attachmentsToggle === true)"></i>
-                <i class="fa fa-paperclip"></i> {{ 'ATTACHMENTS' | translate }}
-                <span ng-show="message.Attachments.length > 0">({{ message.Attachments.length }})</span>
+            <aside class="attachmentBar" ng-click="attToggle(message)" ng-show="message.Attachments.length > 0">
+                <i class="pull-right" ng-if="(message.attachmentsToggle === true)">{{ 'HIDE' | translate }}</i>
+                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
+                {{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized">
+                <button
+                class="pm_button btn-add-attachment"
+                ng-class="{
+                    'active': message.displayPanel && message.panelName == 'attachments',
+                    'primary': message.Attachments && message.Attachments.length > 0,
+                    disabled: message.loading()
+                }"
+                pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
+                pt-placement="top"
+                >
+                    <i class="fa fa-paperclip"></i>
+                    <span ng-show="!!message.maximized"> {{ 'ATTACHMENTS' | translate }}</span>
+                </button>
                 <button
                 class="pm_button"
                 ng-class="{

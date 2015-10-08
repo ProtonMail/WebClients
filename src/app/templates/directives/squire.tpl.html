@@ -45,12 +45,12 @@
             </li>
             <li class="separator"></li>
             <li>
-                <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-init="insertLink = false" ng-click="insertLink = !insertLink">
+                <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-init="insertLink = false" ng-click="insertLink = !insertLink; insertImage = false;">
                     <i class="fa fa-link"></i>
                 </a>
             </li>
             <li>
-                <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-init="insertImage = false" ng-click="insertImage = !insertImage">
+                <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-init="insertImage = false" ng-click="insertImage = !insertImage; insertLink = false;">
                     <i class="fa fa-image"></i>
                 </a>
             </li>           
