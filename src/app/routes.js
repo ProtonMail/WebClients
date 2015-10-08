@@ -628,11 +628,11 @@ angular.module("proton.routes", [
     })
 
 
-    .state("secured.theme", {
-        url: "/theme",
+    .state("secured.appearance", {
+        url: "/appearance",
         views: {
             "content@secured": {
-                templateUrl: "templates/views/theme.tpl.html",
+                templateUrl: "templates/views/appearance.tpl.html",
                 controller: "SettingsController"
             }
         }
