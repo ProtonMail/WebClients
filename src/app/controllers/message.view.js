@@ -467,7 +467,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var blockquoteStart = '<blockquote class="protonmail_quote">';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + message.Subject + '<br />';
-        var time = 'Time (UTC): ' + $filter('utcReadableTime')(message.Time) + '<br />';
+        var time = 'Local Time: ' + $filter('localReadableTime')(message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')(message.Time) + '<br />';
         var from = 'From: ' + message.SenderAddress + '<br />';
         var to = 'To: ' + tools.contactsToString(message.ToList) + '<br />';
         var cc = (message.CCList.length > 0)?('CC: ' + tools.contactsToString(message.CCList) + '<br />'):('');
