@@ -31,6 +31,54 @@ header#pm_header {
 	a.logoMobile {
 		display: none;
 	}
+	.pm_buttons {
+		border: none;
+		background: transparent !important;
+		padding: 0;
+		float: none;
+		height: initial;
+		line-height: initial;
+		float: left;
+		a {
+			background: transparent !important;
+			border: none;
+			padding: 0;
+			.fa {
+				line-height: initial;
+			}
+		}
+		p {
+			text-align: left;
+		}
+		strong {
+			font-size: 12px;
+		}
+		b {
+			font-size: 10px;
+		}
+	}
+	.pm_button.primary {
+	    background-color: #9397cd !important;
+	    border-color: #9397cd !important;
+	    color: #fff !important;
+	    margin: auto;
+	    display: block;
+	    width: 100%;
+	    &:hover {
+            background-color: #7e82b4 !important;
+            border-color: #7e82b4 !important;
+        }
+        &:active,
+        &:focus {
+            background-color: 66669a !important;
+            border-color: 66669a !important;
+            outline: none;
+        }
+	}
+	.help {
+		color: #000 !important;
+		margin: 1rem 0;
+	}
 	form.searchForm {
 		display: -webkit-flex;
 		display: -ms-flexbox;
@@ -111,6 +159,19 @@ header#pm_header {
 		li {
 			display: block;
 			float: left;
+			p {
+				margin: 0;
+				a {
+					color: $primary;
+					padding: 0;
+					margin: 0;
+				    display: inline-block;
+				    width: auto;
+				    height: auto;
+				    line-height: initial !important;
+				    float: none;
+				}
+			}			
 			a {
 				height: $headerHeight;
 				padding-top: 10px;
@@ -122,11 +183,12 @@ header#pm_header {
 				text-decoration: none;
 				color: #bfbfbf;
 				box-sizing: border-box;
-				.fa {
+				em {
 					display: block;
 					height: 20px;
 					line-height: 20px;
 					padding-top: 5px;
+					text-align: center;
 				}
 				strong {
 					display: block;

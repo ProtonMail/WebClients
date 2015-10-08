@@ -93,8 +93,8 @@
         <img src="assets/img/logo.svg">
     </a>
     <span class="userDisplay">
-        <em>professor.herpderp</em>
-        <strong>professor.herpderp@protonmail.com</strong>
+        <em>{{ user.DisplayName }}</em>
+        <strong>{{ user.Addresses[0].Email }}</strong>
     </span>
     <ul class="menu">
         <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
