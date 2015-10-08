@@ -233,8 +233,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.storagePercentage = function() {
         if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace) + '%';
-        }
-        else {
+        } else {
             // TODO: error, undefined variables
             return '';
         }

@@ -49,8 +49,11 @@ angular.module("proton.controllers.Header", [])
         searchModal.activate({
             params: {
                 keywords: value,
-                search: function(params) {
+                search: function(result) {
                     searchModal.deactivate();
+                    var params = $scope.resetSearchParameters();
+
+                    _.extend(params, result);
                     $state.go('secured.search.list', params);
                 },
                 cancel: function() {
@@ -68,9 +71,23 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
+    $scope.resetSearchParameters = function() {
+        var keys = Object.keys($stateParams);
+        var params = {};
+
+        _.each(keys, function(key) {
+            params[key] = undefined;
+        });
+
+        return params;
+    };
+
     $scope.searchMessages = function() {
         if($scope.params.searchMessageInput.length > 0) {
-            $state.go('secured.search.list', { words: $scope.params.searchMessageInput });
+            var params = $scope.resetSearchParameters();
+
+            params.words = $scope.params.searchMessageInput;
+            $state.go('secured.search.list', params);
         } else {
             $state.go('secured.inbox.list');
         }
