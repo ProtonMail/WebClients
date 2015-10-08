@@ -22,7 +22,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     attachments,
     authentication,
     message,
-    messageCounts,
     networkActivityTracker,
     notify,
     pmcw,
@@ -236,7 +235,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         var newMessage = angular.copy(message);
 
         newMessage.IsRead = 0;
-        messageCounts.updateUnread('mark', [message], false);
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
         cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
@@ -611,6 +609,20 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         // } else {
         //     element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
         // }
+    };
+
+    $scope.nextMessage = function() {
+        var current = $state.current.name;
+        var id = '?';
+
+        $state.go(current, {id: id});
+    };
+
+    $scope.previousMessage = function() {
+        var current = $state.current.name;
+        var id = '?';
+
+        $state.go(current, {id: id});
     };
 
     $scope.initView();
