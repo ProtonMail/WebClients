@@ -1,0 +1,6 @@
+language: generic
+sudo: true
+services:
+  - docker
+install: make travis.install
+script: make travis.script
