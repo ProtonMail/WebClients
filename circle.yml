@@ -3,8 +3,9 @@ machine:
     - docker
   environment:
     NO_DOCKER_RM: true
+  ruby:
 dependencies:
-  pre:
+  override:
     - make travis.install
 test:
   override:
