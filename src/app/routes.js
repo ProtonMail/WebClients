@@ -658,6 +658,26 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.users", {
+        url: "/users",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/users.tpl.html",
+                controller: "SettingsController"
+            }
+        }
+    })
+
+    .state("secured.domains", {
+        url: "/domains",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/domains.tpl.html",
+                controller: "SettingsController"
+            }
+        }
+    })
+
     .state("secured.themeReset", {
         url: "/theme-reset",
         views: {
