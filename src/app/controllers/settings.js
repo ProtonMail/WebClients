@@ -566,7 +566,7 @@ angular.module("proton.controllers.Settings", [
             id: label.ID,
             Name: label.Name,
             Color: label.Color,
-            Display: label.Display
+            Display: !label.Display
         }).$promise.then(function(result) {
             if (result.Code === 1000) {
                 notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});

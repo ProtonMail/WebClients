@@ -23,11 +23,6 @@
         -ms-user-select: none;
         -o-user-select: none;
         user-select: none;
-
-        -webkit-transition: left .25s ease, opacity .25s ease;
-        -moz-transition: left .25s ease, opacity .25s ease;
-        -ms-transition: left .25s ease, opacity .25s ease;
-        -o-transition: left .25s ease, opacity .25s ease;
         transition: left .25s ease, opacity .25s ease;
 
         &.on,

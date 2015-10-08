@@ -50,7 +50,9 @@ body#eo-reply {
 			li {
 				height: 40px;
 				line-height: 40px;
-				flex-grow: initial;
+				-webkit-flex-grow: initial;
+				    -ms-flex-positive: initial;
+				        flex-grow: initial;
 				padding: 0 1rem;
 				a {
 					height: 40px;

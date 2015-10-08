@@ -346,7 +346,7 @@
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i>
-                    <span> {{ 'ENCRYPTION' | translate }}</span>
+                    <span ng-show="!!message.maximized"> {{ 'ENCRYPTION' | translate }}</span>
                 </button>
                 <button
                 class="pm_button"
@@ -359,9 +359,9 @@
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i>
-                    <span> {{ 'EXPIRATION' | translate }}</span>
+                    <span ng-show="!!message.maximized"> {{ 'EXPIRATION' | translate }}</span>
                 </button>
-                <span class="text-muted" ng-show="message.BackupDate">
+                <span class="text-muted saveAt" ng-show="message.BackupDate">
                 {{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}
                 </span>
                 <div class="pull-right">

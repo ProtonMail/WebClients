@@ -8,14 +8,6 @@
         opacity:1; 
     } 
 }
-@-moz-keyframes fadeIn { 
-    from { 
-        opacity:0; 
-    } 
-    to { 
-        opacity:1; 
-    } 
-}
 @keyframes fadeIn { 
     from { 
         opacity:0; 
@@ -28,15 +20,12 @@
 .pm_fadeIn {
     opacity:0;  /* make things invisible upon start */
     -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-    -moz-animation:fadeIn ease-in 1;
     animation:fadeIn ease-in 1;
 
     -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-    -moz-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
 
     -webkit-animation-duration:.15s;
-    -moz-animation-duration:.15s;
     animation-duration:.15s;
 }
 
@@ -64,11 +53,16 @@ Inpiration from 'esjay'
     margin-left: -2.5em;
     width: 5em;
     height: 5em;
-    transform-style: preserve-3d;
-    transform-origin: 50%;
-    transform: rotateY(50%);
-    perspective-origin: 50% 50%;
-    perspective: 5rem;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-transform: rotateY(50%);
+            transform: rotateY(50%);
+    -webkit-perspective-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+    -webkit-perspective: 5rem;
+            perspective: 5rem;
     background-size: 5em 5em;
     -webkit-mask:  url(/assets/img/valence.svg) no-repeat 50% 50%;
     mask: url(/assets/img/valence.svg) no-repeat 50% 50%;
@@ -88,7 +82,8 @@ Inpiration from 'esjay'
         margin-left: -5rem;
         width: 10rem;
         height: 10rem;
-        perspective: 10rem;
+        -webkit-perspective: 10rem;
+                perspective: 10rem;
         background-size: 10rem 10rem;
         background-color: $white;
     }
@@ -103,48 +98,103 @@ Inpiration from 'esjay'
         border-radius: .5rem;
         background-color: rgba(255,255,255,.5);
         box-shadow: 0 0 1rem 1rem rgba(255,255,255,.5);
-        animation: 2000ms flash infinite linear;
+        -webkit-animation: 2000ms flash infinite linear;
+                animation: 2000ms flash infinite linear;
     }    
 }
 
 .spinner1 {
-    transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
-    animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
+    -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+            transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+    -webkit-animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
+            animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
     background-color: $primary;
 }
 .spinner2 {
-    transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
-    animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
+    -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+            transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+    -webkit-animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
+            animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
     background-color: $primary;  
 }
 .spinner3 {
-    transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
-    animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
+    -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+            transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+    -webkit-animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
+            animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
     background-color: $primary;
+}
+
+@-webkit-keyframes spin1 {
+    from {
+        -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+    }
+    to {
+        -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+    }
 }
 
 @keyframes spin1 {
     from {
-        transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+        -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
     }
     to {
-        transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+        -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+                transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+    }
+    to {
+        -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+                transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
     }
 }
 @keyframes spin2 {
     from {
-        transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+        -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
+                transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
     }
     to {
-        transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+        -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+                transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+@-webkit-keyframes spin3 {
+    from {
+        -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+                transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+    }
+    to {
+        -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
+                transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
     }
 }
 @keyframes spin3 {
     from {
-        transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+        -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
+                transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
     }
     to {
-        transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
+        -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
+                transform: rotateX(240deg) rotateY(180deg) rotateZ(360deg);
+    }
+}
+@-webkit-keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
     }
 }
 @keyframes flash {

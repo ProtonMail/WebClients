@@ -36,6 +36,8 @@ It will conflict with email rendering if the selectors are not specific or neste
 
 body.columns {
 	#pm_columns {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	#pm_rows {
@@ -60,6 +62,8 @@ body.rows {
 		display: none;
 	}
 	#pm_rows {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	#pm_toolbar {
@@ -91,7 +95,9 @@ body.rows {
 	}
 	#pm_list {
 		width: 100%;
-		padding: 0;
+		padding: 1px 0 !important;
+	    margin: 0 !important;
+	    box-sizing: border-box;
 		div#pm_mobile_messageList {
 			table {
 				tr {
@@ -105,6 +111,17 @@ body.rows {
 			}
 		}
 	}
+	*[ng-height] {
+		overflow: initial;
+		height: initial !important;
+	}
+	html.protonmail body {
+		overflow: initial !important;
+	}
+	html, body {
+		min-height: 100%;
+		height: auto !important;
+	}	
 }
 
 @media (max-width: $mobile) {
@@ -117,16 +134,5 @@ body.rows {
 	}
 	#pm_view {
 		padding: 0 10px !important;
-	}
-	*[ng-height] {
-		overflow: initial;
-		height: initial !important;
-	}
-	html.protonmail body {
-		overflow: initial !important;
-	}
-	html, body {
-		min-height: 100%;
-		height: auto !important;
 	}
 }

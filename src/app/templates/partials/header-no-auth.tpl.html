@@ -4,10 +4,10 @@
         <a class="reportBug" href="#" ng-click="openReportModal()">
         	<i class="fa fa-bug"></i> <b>REPORT BUG</b>
         </a>
-        <a class="signUp" ui-sref="signup" ng-if="!isLoggedIn" class="pm_button primary">
+        <a class="signUp pm_button primary" ui-sref="signup" ng-if="!isLoggedIn">
         	SIGN UP<b> FOR FREE</b>
         </a>
-        <a class="logOut" ng-click="logout()" ng-if="isLoggedIn" class="pm_button primary">LOG OUT</a> 
+        <a class="logOut pm_button primary" ng-click="logout()" ng-if="isLoggedIn">LOG OUT</a> 
     </div>
     <a class="back" href="https://protonmail.ch" target="_self">
     	<i class="fa fa-chevron-left"></i>

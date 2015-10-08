@@ -5,6 +5,7 @@ header#pm_header {
 	font-size: 12px;
 	i, b {
 		font-style: normal;
+		font-weight: normal;
 	}
 	.compose {
 		display: none;
@@ -31,6 +32,8 @@ header#pm_header {
 		display: none;
 	}
 	form.searchForm {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
 		float: left;
 		line-height: 35px;
@@ -78,7 +81,9 @@ header#pm_header {
 			padding: 0;
 			position: relative;
 			border-radius: 0 35px 35px 0;
-			flex-grow: 1;
+			-webkit-flex-grow: 1;
+			    -ms-flex-positive: 1;
+			        flex-grow: 1;
 			padding: 0 10px;
 			background-color: transparent;
 			&::-webkit-input-placeholder { /* WebKit browsers */
@@ -222,8 +227,11 @@ header#pm_header {
 		.fa {
 			font-size: 18px;
 		}
+		a.pm_button.primary {
+			margin-right: 20px !important;
+		}
 		a.back {
-			margin-left: -20px;
+			padding: 0 20px;
 		}
 		b {
 			display: none;

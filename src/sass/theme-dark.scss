@@ -20,9 +20,12 @@ header#pm_header {
         display: block;
     }
 }
-section#pm_sidebar {
+body.secure section#pm_sidebarMobile {
     background: $secondary;
-    padding-top: 16px; // was 15
+}
+section.sidebar {
+    background: $secondary;
+    padding-top: 5px;
     position: relative;
     top: -1px;
     z-index: 8;
@@ -94,11 +97,11 @@ section#pm_sidebar {
     }
 }
 
-// .ua-chrome section#pm_sidebar {
-//     ::-webkit-scrollbar {
-//         background: #3e3d4c
-//     }
-// }
+.ua-chrome section.sidebar {
+    ::-webkit-scrollbar {
+        background: #3e3d4c
+    }
+}
 
 @media (max-width: 1024px) {
     #pm_background {

@@ -7,22 +7,14 @@
         min-width: 20px;
         overflow: hidden;
         box-sizing: border-box;
-            -webkit-transition: width .25s linear;
-               -moz-transition: width .25s linear;
-                -ms-transition: width .25s linear;
-                 -o-transition: width .25s linear;
-                    transition: width .25s linear;        
+            transition: width .25s linear;        
         & > * {
             visibility: hidden;
         }
         &:hover {
             width: 190px;
             min-width: 190px;
-            -webkit-transition: width .25s linear;
-               -moz-transition: width .25s linear;
-                -ms-transition: width .25s linear;
-                 -o-transition: width .25s linear;
-                    transition: width .25s linear;
+            transition: width .25s linear;
             & > * {
                 visibility: visible;
             }
@@ -34,21 +26,13 @@
         overflow: hidden;
         box-sizing: border-box;
         border: none !important;
-            -webkit-transition: width .25s linear;
-               -moz-transition: width .25s linear;
-                -ms-transition: width .25s linear;
-                 -o-transition: width .25s linear;
-                    transition: width .25s linear;        
+            transition: width .25s linear;        
         & > * {
             visibility: hidden;
         }
         &:hover {
             height: 60px;
-            -webkit-transition: width .25s linear;
-               -moz-transition: width .25s linear;
-                -ms-transition: width .25s linear;
-                 -o-transition: width .25s linear;
-                    transition: width .25s linear;    
+            transition: width .25s linear;    
             & > * {
                 visibility: visible;
             }        

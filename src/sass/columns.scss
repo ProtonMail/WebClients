@@ -1,5 +1,7 @@
 #pm_columns {
 	margin-left: $sidebarWidth;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	.list {
 		width: 500px;
@@ -104,7 +106,7 @@
 				}
 			}
 			.fa-star-o {
-				color: $gray;
+				color: #aba9bb;
 			}
 			.fa-star {
 				color: $orange
@@ -148,7 +150,9 @@
 		}
 	}	
 	#pm_view {
-		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		    -ms-flex-positive: 1;
+		        flex-grow: 1;
 		padding: 0 25px;
 		box-sizing: border-box;
 		position: relative;

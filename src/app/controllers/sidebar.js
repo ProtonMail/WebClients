@@ -32,6 +32,10 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
+    $scope.openReportModal = function() {
+        $rootScope.$broadcast('openReportModal');
+    };
+
     $scope.hideMobileSidebar = function() {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
