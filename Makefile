@@ -1,5 +1,5 @@
-.PHONY: all npm-install test start versions
-.PHONY: travis.install travis.script
+.PHONY: all npm-install test start localurl versions
+.PHONY: circle.dependencies circle.test
 .PHONY: .FORCE
 
 all: start
@@ -15,12 +15,14 @@ test: npm-install
 start: npm-install
 	DOCKER_OPTS="-p 8080:8080" bin/crun-node npm start
 
+localurl:
+	@echo "http://$$(./bin/docker-ip):8080"
+
 versions:
 	make --version
 	bash --version
 	docker version
 	docker info
 
-travis.install: versions npm-install
-
-travis.script: test
+circle.dependencies: versions npm-install
+circle.test: test

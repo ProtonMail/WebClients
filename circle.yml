@@ -6,7 +6,7 @@ machine:
   ruby: #docker is all we need, but a language has to be chosen
 dependencies:
   override:
-    - make travis.install
+    - make circle.dependencies
 test:
   override:
-    - make travis.script
+    - make circle.test
