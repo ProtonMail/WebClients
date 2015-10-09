@@ -278,6 +278,10 @@ body.maximizedComposer {
 				position: relative;
 				padding-bottom: 7px;
 				box-sizing: border-box;
+				&.closed {
+					height: 40px;
+					overflow: hidden;
+				}
 				&.toRow,
 				&.ccRow,
 				&.bccRow {

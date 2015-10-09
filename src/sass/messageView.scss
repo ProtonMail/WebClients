@@ -59,19 +59,19 @@
 			background: $primary;
 			color: #fff;
 			padding: 0;
-		    line-height: 14px !important;
-		    height: 16px !important;
-		    padding: 0 3px;
+		    line-height: 10px !important;
+		    height: 14px !important;
+		    padding: 0 1px;
 		    margin-right: .5rem;
 		    font-size: 10px;
-		    margin-top: 2px;
+		    margin-top: 4px;
 		}     	
     	header {
     		overflow: hidden;
     		font-size: 15px;
     		padding: 10px 0;
     		line-height: 20px;
-    		height: 40px;
+    		height: 41px;
     		box-sizing: border-box;   		
     		.time {
     			display: inline-block;
@@ -130,9 +130,13 @@
     	.recipientsWrap {
     		display: block;
     		margin: -20px 0 0 3rem;
-    		& span > * {
-    			float: left;
-    		}
+            & > span {
+                clear: both;
+                display: block;
+        		& > * {
+        			float: left;
+        		}
+            }
     	}
 		.sub {
 			padding-left: 1.5rem;
@@ -144,10 +148,18 @@
 			margin-bottom: 10px;
 			clear: both;
 			box-sizing: border-box;
-			.data > div > i {
-				font-style: normal;
-				width: 3rem;
-				display: inline-block;
+			.data {
+                .toGroup,
+                .ccGroup {
+                    display: block;
+                    float: left;
+                    clear: both;
+                }
+                & > div > i {
+    				font-style: normal;
+    				width: 3rem;
+    				display: inline-block;
+                }
 			}
 			em {
     			color: #669;
@@ -155,9 +167,11 @@
     		}
     		.meta {
     			height: 35px;
+                float: left;
+                width: 100%;
+                clear: both;
     			line-height: 35px;
     			padding-top: 1rem;
-    			padding-left: 3rem;
     			.pm_buttons {
     				padding: 0;
     				border: none;

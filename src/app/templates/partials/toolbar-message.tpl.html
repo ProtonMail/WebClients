@@ -71,16 +71,16 @@
             <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" pt-placement="bottom">
                 <i class="fa fa-inbox"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
+            <a href="" class="divider" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
                 <i class="fa fa-times-circle"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" pt-placement="bottom">
+            <a href="" class="divider" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" pt-placement="bottom">
                 <i class="fa fa-trash-o"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
+            <a href="" class="divider" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
                 <i class="fa fa-archive"></i>
             </a>
-            <a href="" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" pt-placement="bottom" class="divider">
+            <a href="" class="divider" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" pt-placement="bottom" class="divider">
                 <i class="fa fa-ban"></i>
             </a>
         </span>
