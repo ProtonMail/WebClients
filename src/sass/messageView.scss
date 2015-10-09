@@ -136,6 +136,8 @@
             & > span {
                 clear: both;
                 display: block;
+                height: 20px;
+                line-height: 20px;
         		& > * {
         			float: left;
         		}

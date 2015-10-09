@@ -8,22 +8,169 @@
 
             <section class="setting pm_form">
                 <legend>{{ 'OVERVIEW' | translate }}</legend>
-                ???
+                <div class="well">
+                    <table class="pm_table plain" id="tableOverview">
+                        <tr>
+                            <th>Username: </th>
+                            <td>
+                                <strong>keven.bayrak</strong>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr> 
+                            <th>Domains: </th>
+                            <td>
+                                <strong>1 of 2 used</strong>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="#">MANAGE</a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Addresses: </th>
+                            <td>
+                                <strong>2 of 5 used</strong>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="#">MANAGE</a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Storage: </th>
+                            <td>
+                                <strong>keven.bayrak</strong>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td colspan="2">
+                                <div class="usage">
+                                    <em class="used">250 MB</em>
+                                    <em class="bar">
+                                        <div class="amount" style="width: {{ storagePercentage() }}"></div>
+                                    </em>
+                                    <em class="total">1000 MB</em>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </section>
             <section class="setting pm_form pull-right">
                 <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
-                ???
+                <div class="well">
+                    <table class="pm_table plain" id="tableSubscription">
+                        <tr>
+                            <th>Plan: </th>
+                            <td>
+                                <strong>Business Plan</strong>
+                            </td>
+                            <td>
+                                <span>10 CHF</span>
+                            </td>
+                        </tr>
+                        <tr> 
+                            <th>Addons: </th>
+                            <td>
+                                <strong>10 GB + 1 GB Extra Storage</strong>
+                                <strong>1 + 1 GB Extra Domain</strong>
+                            </td>
+                            <td>
+                                <span>1 CHF</span>
+                                <span>2 CHF</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Total Price: </th>
+                            <td>
+                                <strong>13 CHF</strong>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <th>Billing: </th>
+                            <td>
+                                <strong>monthly</strong>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <th>Payment: </th>
+                            <td>
+                                <strong><i class="fa fa-credit-card"></i> Master Card ***000</strong>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="#">EDIT</a>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </section>
 
         </div>
 
         <div class="row">
 
-            <section class="setting pm_form full">
+            <section class="setting pm_form full" id="plans">
 
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
-                    <legend>{{ 'PRICES' | translate }}</legend>
-                    ???
+                    <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
+                    <header>
+                        <div class="group">
+                            <label>Currency</label>
+                            <div class="pm_buttons">
+                                <a href="#">EURO</a>
+                                <a href="#" class="divider">USD</a>
+                                <a href="#" class="divider">CHF</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label>Billing</label>
+                            <div class="pm_buttons">
+                                <a href="#">Monthly</a>
+                                <a href="#" class="divider">Annually <em>( SAVE 25%)</em></a>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="plans">
+                        <div class="plan">
+                            <h3></h3>
+                            <div class="details"></div>
+                            <div class="price">
+                                <strong>Total:</strong> <span>0 CHF per month</span>
+                            </div>
+                            <div class="action">
+                                <a href="#">UPDATE PLAN</a>
+                            </div>
+                        </div>
+                        <div class="plan">
+                            <h3></h3>
+                            <div class="details"></div>
+                            <div class="price">
+                                <strong>Total:</strong> <span>5 CHF per month</span>
+                            </div>
+                            <div class="action">
+                                <a href="#">UPDATE PLAN</a>
+                            </div>
+                        </div>
+                        <div class="plan">
+                            <h3></h3>
+                            <div class="details"></div>
+                            <div class="price">
+                                <strong>Total:</strong> <span>10 CHF per month</span>
+                            </div>
+                            <div class="action">
+                                <a href="#">UPGRADE TO BUSINESS PLAN</a>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
             </section>

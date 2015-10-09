@@ -2,6 +2,14 @@
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+    &.plain {
+        th, td {
+            line-height: initial;
+            padding: 0;
+            text-align: left;
+            border: none;
+        }     
+    }
     th, td {
         line-height: $rowHeight;
         padding: 0 1rem;

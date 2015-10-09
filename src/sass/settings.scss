@@ -8,6 +8,90 @@
     #settingsSave {
     	margin: 15px 25px 15px 0;
     }
+    #plans {
+    	.group {
+    		display: inline-block;
+    		padding-right: 2rem;
+    		label {
+    			display: block;
+    			float: left;
+    			padding-right: 1rem;
+    		}
+    		.pm_buttons a em {
+    			font-style: normal;
+    			color: $green;
+    		}
+    	}
+    }
+    .well {
+    	padding: 25px;
+    	border: 1px solid $border;
+    }
+    .usage {
+    	position: relative;
+    	em {
+    		font-style: normal;
+    		display: block;
+    		box-sizing: border-box;
+    	}
+    	.used {
+    		left: 0;
+    		padding-right: 1rem;
+    		text-align: right;
+    	}
+    	.total {
+    		right: 0;
+    		padding-left: 1rem; 
+    	}
+    	.used,
+    	.total {
+    		color: $gray-light;
+    		position: absolute;
+    		background: #fff;
+    		height: 30px;
+    		line-height: 30px;
+    		width: 5rem;
+    	}
+    	.bar {
+    		position: absolute;
+    		left: 5rem;
+    		right: 5rem;
+    		top: 14px;
+    		height: 2px;
+    		background: $gray-light;
+    		.amount {
+    			position: absolute;
+    			left: 0;
+    			top: 0;
+    			bottom: 0;
+    			background: $primary;
+    		}
+    	}
+    }
+    .well {
+    	th {
+    		color: $gray-light;
+    		background: transparent;
+    		text-transform: none;
+    		width: 7rem;
+    	}
+    	th, td {
+    		line-height: 1.75rem;
+    		height: 1.75rem;
+    		vertical-align: top;
+    	}
+    	td strong {
+    		font-weight: 700;
+    	}
+    	td span {
+    		display: block;
+    		text-align: right;
+    	}
+    	a {
+    		color: $primary;
+    		text-decoration: none;
+    	}
+    }
     .pm_tabs {
     	padding: 0 0 0 25px;
     	margin-top: 15px;
