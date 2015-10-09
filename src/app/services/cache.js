@@ -721,13 +721,15 @@ angular.module("proton.cache", [])
 
         if(type === 'previous') {
             request.Desc = 1;
+        } else {
+            request.Desc = 0;
         }
 
         if(location.length > 1) { // label case
             request.Label = location;
         } else if (location === CONSTANTS.MAILBOX_IDENTIFIERS.starred) { // starred case
             request.Starred = 1;
-        } else {
+        } else { // others folders
             request.Location = location;
         }
 

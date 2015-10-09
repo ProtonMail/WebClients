@@ -12,16 +12,16 @@
             </a>
         </span>
         <span class="pm_buttons">
-            <a href="" ng-click="previousMessage()">
+            <a href="" ng-click="previousMessage()" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                 <i class="fa fa-chevron-left"></i>
             </a>
-            <a href="" class="divider" ng-click="nextMessage()">
+            <a href="" class="divider" ng-click="nextMessage()" pt-tooltip="{{ 'NEXT' | translate }}">
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
     </div>
     <span class="pm_buttons">
-        <a href="#" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}" pt-placement="bottom">
+        <a href="#" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}">
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
@@ -60,32 +60,32 @@
     </div>
     <div class="desktop pull-left">
         <span class="pm_buttons">
-            <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" pt-placement="bottom">
+            <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
                 <i class="fa fa-eye-slash"></i>
             </a>
-            <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" pt-placement="bottom">
+            <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
                 <i class="fa fa-eye"></i>
             </a>
         </span>
         <span class="pm_buttons" >
-            <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" pt-placement="bottom">
+            <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
                 <i class="fa fa-inbox"></i>
             </a>
-            <a href="" class="divider" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}" pt-placement="bottom">
+            <a href="" class="divider" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}">
                 <i class="fa fa-times-circle"></i>
             </a>
-            <a href="" class="divider" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" pt-placement="bottom">
+            <a href="" class="divider" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}">
                 <i class="fa fa-trash-o"></i>
             </a>
-            <a href="" class="divider" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" pt-placement="bottom" class="divider">
+            <a href="" class="divider" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" class="divider">
                 <i class="fa fa-archive"></i>
             </a>
-            <a href="" class="divider" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" pt-placement="bottom" class="divider">
+            <a href="" class="divider" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" class="divider">
                 <i class="fa fa-ban"></i>
             </a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger open-label" ng-dropdown>
+            <a href="#" class="pm_trigger open-label" ng-dropdown pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
