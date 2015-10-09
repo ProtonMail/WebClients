@@ -47,10 +47,14 @@
         border-bottom: 1px solid $gray-light;
         color: #838897;
         font-weight: 400;
+        text-transform: uppercase;
+        a {
+            text-decoration: none;
+        }
         .fa {
             color: $primary;
         }
-    }       
+    }
     td {
         border-bottom: 1px solid $border;
         color: $gray;
