@@ -68,20 +68,20 @@
             </a>
         </span>
         <span class="pm_buttons" >
-            <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
-                <i class="fa fa-inbox"></i>
-            </a>
-            <a href="" class="divider" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}">
-                <i class="fa fa-times-circle"></i>
-            </a>
             <a href="" class="divider" ng-click="moveMessageTo('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}">
                 <i class="fa fa-trash-o"></i>
+            </a>
+            <a href="" ng-click="moveMessageTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
+                <i class="fa fa-inbox"></i>
             </a>
             <a href="" class="divider" ng-click="moveMessageTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" class="divider">
                 <i class="fa fa-archive"></i>
             </a>
             <a href="" class="divider" ng-click="moveMessageTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" class="divider">
                 <i class="fa fa-ban"></i>
+            </a>
+            <a href="" class="divider" ng-click="moveMessageTo('delete')" pt-tooltip="{{ 'DELETE' | translate }}">
+                <i class="fa fa-times-circle"></i>
             </a>
         </span>
         <span class="pm_buttons">
