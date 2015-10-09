@@ -50,7 +50,7 @@ module.exports = {
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/dompurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
-      "vendor/showdown/compressed/showdown.js",
+      "vendor/showdown/compressed/Showdown.js",
       "vendor/angular-markdown-directive/markdown.js",
       "vendor/typeahead.js/dist/typeahead.bundle.js",
       "vendor/tagmanager/tagmanager.js",
