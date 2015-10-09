@@ -1,6 +1,6 @@
 <!-- for threading, `derp` will be the index of the ng-repeaet -->
-<article class="message" ng-init="derp1 = false" ng-class="{ 'collapsed': derp1 }">
-    <header ng-click="derp1 = !derp1">
+<article class="message">
+    <header>
         <a href class="fa fa-star"></a>
         <span class="meta">
             <i class="fa fa-paperclip"></i>
@@ -10,8 +10,8 @@
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>
             <span>
-                <a href class="fa fa-pencil pm_button primary compose"></a>
-                <em>{{ ::message.SenderName }}</em> 
+                <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                <em>{{ ::message.SenderName }}</em>
                 <i>&lt;{{ ::message.SenderAddress }}&gt;</i>
             </span>
         </span>
@@ -66,7 +66,7 @@
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList">
-                        <a href class="fa fa-pencil pm_button primary compose"></a>
+                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | contact }}</em>
                     </span>
                 </span>
@@ -75,7 +75,16 @@
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList">
-                        <a href class="fa fa-pencil pm_button primary compose"></a>
+                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        <em>{{ email | contact }}</em>
+                    </span>
+                </span>
+            </div>
+            <div ng-if="message.BCCList.length" class="bccGroup">
+                <i>{{ 'BCC' | translate }}</i>
+                <span class="recipientsWrap">
+                    <span ng-repeat="email in ::message.BCCList">
+                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | contact }}</em>
                     </span>
                 </span>
