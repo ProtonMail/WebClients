@@ -455,4 +455,25 @@ angular.module("proton.modals", [])
             };
         }
     });
+})
+
+.factory('userModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/user.tpl.html',
+        controller: function(params) {
+            // Functions
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
 });

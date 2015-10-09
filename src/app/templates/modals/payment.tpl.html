@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <form class="modal-content" ng-submit="submit()">
-            <div class="modal-header" ng-show="ctrl.title">
+            <div class="modal-header">
                 <h4 class="modal-title">{{ 'PAYMENT' | translate }}</h4>
             </div>
             <div class="modal-body">
@@ -41,11 +41,7 @@
         <div class="modal-footer text-right">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
             <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
-        </div>        
-        <!-- <div class="modal-content">
-            <h2>Thank you for your subscription.</h2>
-            <p>Your new features are now available</p>
-        </div> -->
+        </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>

@@ -1,0 +1,31 @@
+<div class="pm_modal pm_fadeIn {{this.class}}" role="dialog" id="advancedSearchModal">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <form class="modal-content" ng-submit="submit()">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ 'ADD_A_NEW_USER' | translate }}</h4>
+            </div>
+            <div class="modal-body">
+                <legend>{{ 'CREATE_A_LOGIN_PASSWORD' | translate }}</legend>
+                <div class="row">
+                    <div class="col">
+                        <label for="">{{ 'LOGIN_PASSWORD' | translate }}</label>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <legend>{{ 'CREATE_A_MAILBOX_PASSWORD' | translate }}</legend>
+                <div class="row">
+                    <div class="col">
+                        <label for="">{{ 'MAILBOX_PASSWORD' | translate }}</label>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </form>
+        <div class="modal-footer text-right">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+        </div>
+        </form>
+    </div>
+</div>
