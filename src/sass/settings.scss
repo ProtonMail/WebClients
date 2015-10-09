@@ -9,17 +9,108 @@
     	margin: 15px 25px 15px 0;
     }
     #plans {
-    	.group {
-    		display: inline-block;
-    		padding-right: 2rem;
-    		label {
-    			display: block;
-    			float: left;
-    			padding-right: 1rem;
+    	header {
+    		padding-bottom: 1rem;
+    		display: block;
+    		height: 35px;
+    		line-height: 35px;
+    		overflow: hidden;
+    		.link {
+    			color: $primary;
     		}
-    		.pm_buttons a em {
-    			font-style: normal;
-    			color: $green;
+	    	.group {
+	    		display: inline-block;
+	    		padding-right: 2rem;
+	    		label {
+	    			display: block;
+	    			line-height: 35px;
+	    			float: left;
+	    			padding-right: 1rem;
+	    		}
+	    		.pm_buttons a em {
+	    			font-style: normal;
+	    			color: $green;
+	    		}
+	    	}
+    	}
+    }
+    #plans {
+    	.plans {
+    		display: -webkit-flex;
+    		display: -ms-flexbox;
+    		display: flex;
+    		-webkit-flex-direction: row;
+    		    -ms-flex-direction: row;
+    		        flex-direction: row;
+    		.plan {
+    			display: -webkit-flex;
+    			display: -ms-flexbox;
+    			display: flex;
+    			box-sizing: border-box;
+    			-webkit-flex-grow: 1;
+			    -ms-flex-positive: 1;
+		        flex-grow: 1;
+    			border: 1px solid $border;
+    			-webkit-flex-direction: column;
+    		    -ms-flex-direction: column;
+		        flex-direction: column;
+		        &.selected {
+		        	border-color: $primary;
+		        }
+		        &.middle {
+		        	margin: 0 10px;
+		        }
+		        h3,
+		        .price {
+		        	line-height: 70px;
+		        	height: 70px;
+		        	display: block;
+		        	padding: 0 30px;
+		        	color: $primary;
+		        	font-weight: 400;
+		        	border-bottom: 1px solid $border;
+		        	strong {
+		        		font-weight: 700;
+		        	}
+		        }
+		        .details {
+		        	-webkit-flex-grow: 1;
+		        	    -ms-flex-positive: 1;
+		        	        flex-grow: 1;
+		        	        padding: 10px 30px;
+		        	strong {
+		        		font-weight: 700;
+		        	}
+		        }
+		        .price {
+		        	border-top: 1px solid $border;
+		        	font-weight: 700;
+		        	strong {
+		        		color: #000;
+		        		margin-right: .5rem;
+		        	}
+		        }
+		        .action {
+		        	background: $primary;
+		        	height: 45px;
+		        	line-height: 45px;
+		        	text-align: center;
+		        	font-weight: 700;
+		        	margin: 0 -1px -1px;
+		        	a {
+			        	color: $white;
+			        	text-decoration: none;
+			        	display: block;
+			        	line-height: 45px;
+		        	}
+		        	&.active {
+		        		background: lighten($border, 5%);
+		        		margin: 0;
+		        		a {
+		        			color: $gray-light;
+		        		}
+		        	}
+		        }
     		}
     	}
     }
