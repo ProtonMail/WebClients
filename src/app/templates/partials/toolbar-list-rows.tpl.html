@@ -50,55 +50,60 @@
             <input type="checkbox" name="selectAll" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
         <span class="pm_buttons">
-            <a 
-            href="" 
-            class="fa fa-eye" 
-            pt-tooltip="{{ 'MARK_AS_READ' | translate }}" 
-            ng-click="setMessagesReadStatus(true)" 
+            <a
+            href=""
+            class="fa fa-eye"
+            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
+            ng-click="setMessagesReadStatus(true)"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-eye-slash divider" 
-            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" 
-            ng-click="setMessagesReadStatus(false)" 
+            <a
+            href=""
+            class="fa fa-eye-slash divider"
+            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
+            ng-click="setMessagesReadStatus(false)"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a 
-            href="" 
-            ng-click="moveMessagesTo('trash')" 
-            ng-class="{ disabled: numberSelectedMessages === 0 }" 
+            <a
+            href=""
+            pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
+            ng-click="moveMessagesTo('trash')"
+            ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-trash-o"></a>
-            <a 
-            href="" 
-            ng-click="moveMessagesTo('inbox')" 
-            ng-hide="{{ 'secured.inbox.**' | includedByState }}" 
-            ng-class="{ disabled: numberSelectedMessages === 0 }"             
+            <a
+            href=""
+            pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
+            ng-click="moveMessagesTo('inbox')"
+            ng-hide="{{ 'secured.inbox.**' | includedByState }}"
+            ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-inbox divider"></a>
-            <a 
-            href="" 
-            ng-click="moveMessagesTo('archive')" 
-            ng-hide="{{ 'secured.archive.**' | includedByState }}" 
-            ng-class="{ disabled: numberSelectedMessages === 0 }"             
+            <a
+            href=""
+            pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
+            ng-click="moveMessagesTo('archive')"
+            ng-hide="{{ 'secured.archive.**' | includedByState }}"
+            ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-archive divider"></a>
-            <a 
-            href="" 
-            ng-click="moveMessagesTo('spam')" 
-            ng-hide="{{ 'secured.spam.**' | includedByState }}" 
-            ng-class="{ disabled: numberSelectedMessages === 0 }"             
+            <a
+            href=""
+            pt-tooltip="{{ 'MOVE_TO_SPAM' | translate }}"
+            ng-click="moveMessagesTo('spam')"
+            ng-hide="{{ 'secured.spam.**' | includedByState }}"
+            ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-ban divider"></a>
-            <a 
-            href="" 
-            ng-click="moveMessagesTo('delete')" 
-            ng-class="{ disabled: numberSelectedMessages === 0 }"             
+            <a
+            href=""
+            pt-tooltip="{{ 'DELETE' | translate }}"
+            ng-click="moveMessagesTo('delete')"
+            ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-times-circle divider"></a>
         </span>
         <span class="pm_buttons">
-            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">
+            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
-            <span class="pm_dropdown">
+            <span class="pm_dropdown wide">
                 <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels"></dropdown-labels>
             </span>
         </span>
