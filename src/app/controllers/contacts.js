@@ -91,6 +91,10 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.setSortBy = function(sort) {
+        if($scope.sortBy.charAt(0) !== '-') {
+            sort = '-' + sort;
+        }
+
         $scope.sortBy = sort;
         $scope.refreshContacts();
     };
