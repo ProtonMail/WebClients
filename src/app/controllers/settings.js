@@ -26,7 +26,8 @@ angular.module("proton.controllers.Settings", [
     paymentModal,
     pmcw,
     tools,
-    url
+    url,
+    userModal
 ) {
     $rootScope.pageName = "Settings";
     $scope.tools = tools;
@@ -772,11 +773,24 @@ angular.module("proton.controllers.Settings", [
         paymentModal.activate({
             params: {
                 submit: function(datas) {
-                    
+
                     paymentModal.deactivate();
                 },
                 cancel: function() {
                     paymentModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.openUserModal = function() {
+        userModal.activate({
+            params: {
+                submit: function(datas) {
+                    userModal.deactivate();
+                },
+                cancel: function() {
+                    userModal.deactivate();
                 }
             }
         });
