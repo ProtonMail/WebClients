@@ -3,7 +3,7 @@ machine:
     - docker
   environment:
     NO_DOCKER_RM: true
-  ruby:
+  ruby: #docker is all we need, but a language has to be chosen
 dependencies:
   override:
     - make travis.install
