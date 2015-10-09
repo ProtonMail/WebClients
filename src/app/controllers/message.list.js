@@ -23,7 +23,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     notify
 ) {
     var lastChecked = null;
-    var watchMessages;
 
     $scope.initialization = function() {
         // Variables
@@ -53,7 +52,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         $scope.refreshMessages().then(function() {
-            watchMessages = $scope.$watch('messages', function(newValue, oldValue) {
+            $scope.$watch('messages', function(newValue, oldValue) {
                 preloadMessage.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
@@ -161,7 +160,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        watchMessages();
         preloadMessage.reset();
     };
 
