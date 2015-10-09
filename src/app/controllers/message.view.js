@@ -28,6 +28,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     tools
 ) {
     $scope.message = message;
+    $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
@@ -613,16 +614,21 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
     $scope.nextMessage = function() {
         var current = $state.current.name;
-        var id = '?';
+        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        $state.go(current, {id: id});
+        cacheMessages.more(message, location, 'next').then(function(id) {
+            console.log('id', id);
+            $state.go(current, {id: id});
+        });
     };
 
     $scope.previousMessage = function() {
         var current = $state.current.name;
-        var id = '?';
+        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        $state.go(current, {id: id});
+        cacheMessages.more(message, location, 'previous').then(function(id) {
+            $state.go(current, {id: id});
+        });
     };
 
     $scope.initView();

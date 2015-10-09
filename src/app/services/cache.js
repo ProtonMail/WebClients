@@ -717,12 +717,10 @@ angular.module("proton.cache", [])
      */
     api.more = function(message, location, type) {
         var deferred = $q.defer();
-        var request = {PageSize: 50};
+        var request = {PageSize: 1, ID: message.ID};
 
-        if(type === 'next') {
-            request.Start = message.Time;
-        } else if(type === 'previous') {
-            request.End = message.Time;
+        if(type === 'previous') {
+            request.Desc = 1;
         }
 
         if(location.length > 1) { // label case
@@ -733,16 +731,17 @@ angular.module("proton.cache", [])
             request.Location = location;
         }
 
-        Message.query(request).then(function(result) {
-            // store
+        Message.query(request).$promise.then(function(result) {
+            var messages = result.Messages;
+            // TODO store messages in cache
 
-            if(result.length > 0) {
+            if(messages.length > 0) {
                 if(type === 'next') {
-                    var first = _.first(result);
+                    var first = _.first(messages);
 
                     deferred.resolve(first.ID);
                 } else if(type === 'previous') {
-                    var last = _.last(result);
+                    var last = _.last(messages);
 
                     deferred.resolve(last.ID);
                 }
