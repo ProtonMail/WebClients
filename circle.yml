@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+  environment:
+    NO_DOCKER_RM: true
+  ruby: #docker is all we need, but a language has to be chosen
+dependencies:
+  override:
+    - make circle.dependencies
+test:
+  override:
+    - make circle.test
