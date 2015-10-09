@@ -15,9 +15,9 @@ There is a very good chance you won't be able to use the app locally because of 
 We are still in Beta and will have a more refined build process, installation instructions, unit tests, and all that good stuff once we exit Beta.
 
 ### Development
-We are very open to bug reports via Issues as well as Pull Requests. 
+We are very open to bug reports via Issues as well as Pull Requests.
 
-## License
+### License
 
 Copyright (c) 2013-2015
 
@@ -26,3 +26,10 @@ Proton Technologies A.G. (Switzerland)
 Email: contact@protonmail.ch
 
 License: https://github.com/ProtonMail/WebClient/blob/master/license.md
+
+### Release Note
+
+Date of the release
+
+* FIX #1234
+* NEW #123
