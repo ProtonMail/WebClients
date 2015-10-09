@@ -7,11 +7,11 @@
             <div class="modal-body">
                 <div class="alert no-margin-bottom" ng-bind-html="ctrl.message"></div>
             </div>
-            <div class="modal-footer text-right">
-                <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
-            </div>
         </div>
+        <div class="modal-footer text-right">
+            <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
+        </div>        
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>

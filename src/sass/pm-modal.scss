@@ -32,8 +32,8 @@
         box-sizing: border-box;
         .close {
             position: absolute;
-            right: 0;
-            top: 0;
+            right: -5px;
+            top: -5px;
             width: 25px;
             height: 25px;
             line-height: 25px;
@@ -46,12 +46,20 @@
             outline: none;
             border: none;
         }
+        .modal-footer {
+            padding: 25px 50px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $white;
+        }        
         .modal-content {
             overflow: auto;
             position: absolute;
             left: 0;
             top: 25px;
-            bottom: 0;
+            bottom: 80px;
             right: 0;
             .modal-header {
                 padding: 50px 50px 25px 50px;
@@ -59,9 +67,6 @@
             }
             .modal-body {
                 padding: 25px 50px;
-            }
-            .modal-footer {
-                padding: 0 50px 50px;
             }
             h1, h2, h3, h4 {
                 font-size: 22px;

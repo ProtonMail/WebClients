@@ -115,7 +115,7 @@
                         {{' ATTACH_SCREENSHOT' | translate }}
                         </label>
                         
-                        <toggle-switch ng-model="attachScreenshot" on-label="{{ 'YES' | translate }}" off-label="{{ 'NO' | translate }}"></toggle-switch>
+                        <toggle status="attachScreenshot" on="{{ 'YES' | translate }}" off="{{ 'NO' | translate }}"></toggle>                        
 
                         <p class="alert alert-info" ng-if="attachScreenshot">A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur].</p>
 
@@ -127,11 +127,11 @@
                 </div><!--/.row-->
 
             </div>
-            <div class="modal-footer text-right">
-                <a class="pm_button" ng-click="close()">{{ 'CANCEL' | translate }}</a>
-                <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
-            </div>
         </div>
+        <div class="modal-footer text-right">
+            <a class="pm_button" ng-click="close()">{{ 'CANCEL' | translate }}</a>
+            <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+        </div>        
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>    
 </div>

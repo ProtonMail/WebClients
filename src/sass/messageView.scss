@@ -71,12 +71,12 @@
     		font-size: 15px;
     		padding: 10px 0;
     		line-height: 20px;
-    		height: 41px;
     		box-sizing: border-box;   		
     		.time {
     			display: inline-block;
     			white-space: nowrap;
     			text-align: right;
+                font-size: 14px;
     		}
     		.from {
     			color: #999;
@@ -88,12 +88,15 @@
     				}
     				i {
 	    				margin: 0 0 0 .25rem;
+                        clear: both;
+                        white-space: nowrap;
     				}
     			}
     			i {
     				display: inline-block;
     				width: 3rem;
     				float: left;
+                    font-style: normal;
     			}
     		}
     		em {
@@ -255,8 +258,14 @@
     	}
     	&.collapsed {
     		line-height: 40px;
-    		height: 40px;
+    		height: 41px;
     		padding: 0;	
+            .from span i {
+                display: none;
+            }
+            .compose {
+                display: none;
+            }
     		.sub {
     			display: none;
     		}

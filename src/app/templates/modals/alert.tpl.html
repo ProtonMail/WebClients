@@ -8,9 +8,9 @@
             <div class="modal-body">
                 <p class="alert {{ ctrl.alert }}" ng-bind-html="ctrl.message"></p>
             </div>
-            <div class="modal-footer text-right">
-                <button tabindex="1" autofocus type="button" class="pm_button primary" ng-click="ctrl.ok()">{{ 'OK' | translate }}</button>
-            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button tabindex="1" autofocus type="button" class="pm_button primary" ng-click="ctrl.ok()">{{ 'OK' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
