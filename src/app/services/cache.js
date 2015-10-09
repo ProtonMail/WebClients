@@ -708,6 +708,52 @@ angular.module("proton.cache", [])
         }
     };
 
+    /**
+     * Return previous ID of message specified
+     * @param {Object} message
+     * @param {String} location
+     * @param {String} type - 'next' or 'previous'
+     * @return {Promise}
+     */
+    api.more = function(message, location, type) {
+        var deferred = $q.defer();
+        var request = {PageSize: 50};
+
+        if(type === 'next') {
+            request.Start = message.Time;
+        } else if(type === 'previous') {
+            request.End = message.Time;
+        }
+
+        if(location.length > 1) { // label case
+            request.Label = location;
+        } else if (location === CONSTANTS.MAILBOX_IDENTIFIERS.starred) { // starred case
+            request.Starred = 1;
+        } else {
+            request.Location = location;
+        }
+
+        Message.query(request).then(function(result) {
+            // store
+
+            if(result.length > 0) {
+                if(type === 'next') {
+                    var first = _.first(result);
+
+                    deferred.resolve(first.ID);
+                } else if(type === 'previous') {
+                    var last = _.last(result);
+
+                    deferred.resolve(last.ID);
+                }
+            } else {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise;
+    };
+
     return api;
 })
 
