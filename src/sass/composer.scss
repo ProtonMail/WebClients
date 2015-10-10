@@ -102,6 +102,10 @@ body.maximizedComposer {
 				}
 			}
 		}
+		.unfocussed {
+		    max-height: 32px;
+		    overflow-y: auto;
+		}
 		.options {
         	position: absolute;
         	left: 0;
