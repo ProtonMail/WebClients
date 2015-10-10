@@ -208,7 +208,7 @@
                     </span>
                     <button
                     class="pm_button link pull-right"
-                    ng-click="toggleFields(message)"
+                    ng-click="toggleFields(message); attHide(message)"
                     pt-tooltip="{{ 'CC_BCC' | translate }}"
                     pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': !!message.fields}"></i>
@@ -231,7 +231,7 @@
                         title="{{ 'CC' | translate }}"
                         class="cc-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')">
+                    <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')" class="dotdotdot">
                         <button class="pm_button pull-right">...</button>
                     </span>
 
@@ -253,7 +253,7 @@
                         title="{{ 'BCC' | translate }}"
                         class="bcc-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')">
+                    <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')" class="dotdotdot">
                         <button class="pm_button pull-right">...</button>
                     </span>
 
@@ -282,7 +282,7 @@
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body"></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);"></squire>
                 </div>
             </section>
             <div
@@ -303,7 +303,7 @@
                     </a>
                 </span>
             </div>
-            <aside class="attachmentBar" ng-click="attToggle(message)" ng-show="message.Attachments.length > 0">
+            <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)">{{ 'HIDE' | translate }}</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
                 {{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})

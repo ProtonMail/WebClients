@@ -638,6 +638,10 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };
 
+    $scope.attHide = function(message) {
+        message.attachmentsToggle = false;
+    };
+
     $scope.toggleFields = function(message) {
         message.fields = !message.fields;
         $timeout(function() {
@@ -645,6 +649,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         });
         $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
+    };
+
+    $scope.showFields = function(message) {
+        message.fields = true;
+    };
+
+    $scope.hideFields = function(message) {
+        message.fields = false;
     };
 
     $scope.togglePanel = function(message, panelName) {

@@ -24,6 +24,26 @@ body.maximizedComposer {
 		.dotdotdot {
 			display: none;
 		}
+		.composeEditor {
+			float: left;
+			width: 100%;
+			.angular-squire {
+				float: left;
+				width: 100%;
+				.editor-container {
+					float: left;
+					width: 100%;
+					.angular-squire-wrapper {
+						float: left;
+						width: 100%;
+						iframe {
+							position: relative;
+							z-index: 4;
+						}
+					}
+				}
+			}
+		}
 		&.minimized {
 			height: auto;
 			margin-top: 490px;
@@ -57,10 +77,6 @@ body.maximizedComposer {
 		}
 		&.toggleRecipients {
 			overflow: hidden;
-			section {
-				pointer-events: none;
-				opacity: .5;
-			}
 		}
 		&.attachmentsOpen {
 			section {
@@ -203,6 +219,8 @@ body.maximizedComposer {
 		}
 		.typeahead-container {
 			line-height: 33px;
+			max-height: 99px;
+			overflow: auto;
 		}
 		.meta {
 			-webkit-flex-grow: 1;

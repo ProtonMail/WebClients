@@ -4,6 +4,11 @@ header#pm_header {
     .logo {
         background: $secondary;
     }
+    &.simple {
+        .logo {
+            background: $white;
+        }
+    }
 }
 #pm_background {
     position: fixed;
