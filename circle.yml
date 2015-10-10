@@ -5,8 +5,15 @@ machine:
     NO_DOCKER_RM: true
   ruby: #docker is all we need, but a language has to be chosen
 dependencies:
+  pre:
+    - "rm -r node_modules/"
   override:
     - make circle.dependencies
+  cache_directories:
+    - ".npm/"
+    - ".cache/bower/"
+    - ".node-gyp/"
+    - "vendor/"
 test:
   override:
     - make circle.test
