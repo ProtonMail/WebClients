@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings")
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.aliases = authentication.user.Addresses;
     $scope.ShowImages = authentication.user.ShowImages;
+    $scope.tools = tools;
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
