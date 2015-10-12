@@ -10,6 +10,10 @@ body.maximizedComposer {
 	bottom: 0;
 	right: 0;
 	z-index: 9999;
+	box-sizing: border-box;
+	& * {
+		box-sizing: border-box;
+	}
 	.composer {
 		border-radius: 2px;
 		width: 580px;
@@ -67,7 +71,6 @@ body.maximizedComposer {
 			width: 100%;
 			height: 100%;
 			box-shadow: none;
-			box-sizing: border-box;
 			footer .pm_button span {
 				display: none;
 			}
@@ -98,7 +101,6 @@ body.maximizedComposer {
 				bottom: 170px;
 				top: auto;
 				z-index: 9;
-				border-bottom: 1px solid #fff;
 			}
 			.attachmentArea {
 				background: $border;
@@ -130,7 +132,6 @@ body.maximizedComposer {
         	bottom: 0;
         	background: #fff;
         	padding: 2rem 10px;
-        	box-sizing: border-box;
         	z-index: 99;
         	footer {
         		position: absolute;
@@ -185,7 +186,6 @@ body.maximizedComposer {
 			background: $secondary;
 			border-radius: 2px 2px 0 0;
 			position: relative;
-			box-sizing: border-box;
 			height: 40px;
 			min-height: 40px;
 			.actions {
@@ -204,7 +204,6 @@ body.maximizedComposer {
 				padding: 0 0 0 10px;
 				height: 40px;
 				line-height: 40px;
-				box-sizing: border-box;
 			}
 			.pm_button {
 				width: 20px;
@@ -222,18 +221,23 @@ body.maximizedComposer {
 			}
 		}
 		.typeahead-container {
-			line-height: 33px;
+			line-height: 26px;
 			max-height: 99px;
 			overflow: auto;
+			input.tt-input {
+			}
+			.tt-hint {
+				height: 33px;
+				line-height: 33px;
+			}
 		}
 		.meta {
 			-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	        position: relative;
-	        box-sizing: border-box;
 			color: $gray-light;
-			#fromRow {
+			.row.fromRow {
 				height: 40px;
 				position: relative;
 				button {
@@ -269,11 +273,18 @@ body.maximizedComposer {
 				color: initial !important;
 			}
 			.twitter-typeahead {
-				input {
+				float: left;
+				overflow: hidden;
+				input.tt-input {
 					padding: 5px 10px !important;
 					line-height: 33px !important;
 					height: 33px !important;
 					top: 3px !important;
+					float: left;
+				    width: initial !important;
+				}
+				pre {
+					display: none;
 				}
 			}
 			.tt-dropdown-menu {
@@ -283,7 +294,6 @@ body.maximizedComposer {
 
 				.tt-suggestion {
 					padding: 1px 10px;
-					border-bottom: 1px solid #ddd;
 					color: #555;
 
 					&.tt-cursor {
@@ -294,21 +304,14 @@ body.maximizedComposer {
 			.row {
 				min-height: ($composerRowHeight - 7);
 				line-height: $composerRowHeight;
-				border-bottom: 1px solid $border;
 				float: left;
 				width: 100%;
 				position: relative;
+				border-bottom: 1px solid $border;
 				padding-bottom: 7px;
-				box-sizing: border-box;
 				&.closed {
 					height: 40px;
 					overflow: hidden;
-				}
-				&.toRow,
-				&.ccRow,
-				&.bccRow {
-					box-sizing: border-box;
-					padding-right: 6rem;
 				}
 				&.subjectRow {
 					height: 40px;
@@ -329,7 +332,6 @@ body.maximizedComposer {
 				label {
 					min-width: 4rem;
 					width: 4rem;
-					box-sizing: border-box;
 					padding-left: 10px;
 					position: absolute;
 					line-height: 40px;
@@ -352,7 +354,6 @@ body.maximizedComposer {
 					display: inline-block;
 					background: transparent;
 					font-size: 1em;
-					box-sizing: border-box;
 				}
 				select {
 					-webkit-appearance: none;
@@ -374,7 +375,6 @@ body.maximizedComposer {
 			line-height: 40px;
 			padding: 0 10px;
 			cursor: pointer;
-			box-sizing: border-box;
 			background: $border;
 			z-index: 7;
 			i {
@@ -396,7 +396,6 @@ body.maximizedComposer {
 	        bottom: 0;
 	        top: 80px;
 	        overflow: auto;
-	        box-sizing: border-box;
 	        background: $white;
 	        z-index: 9;
 	        .preview-close {
@@ -423,13 +422,11 @@ body.maximizedComposer {
 	        overflow: auto;
 	        position: relative;
 	        height: 325px;
-	        box-sizing: border-box;
 			.angular-squire-wrapper {
 				iframe {
 					width: 100%;
 					height: 280px;
 					float: left;
-					box-sizing: border-box;
 				}
 			}
 			.squire-toolbar {
@@ -444,7 +441,6 @@ body.maximizedComposer {
 			padding: 10px;
 			border-top: 1px solid $border;
 			border-radius: 0 0 2px 2px;
-			box-sizing: border-box;
 			position: absolute;
 			left: 0;
 			right: 0;
