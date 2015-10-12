@@ -15,12 +15,12 @@
         <a class="pm_button" ui-sref="secured.appearance">{{ 'APPEARANCE' | translate }}</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.domains.**' | includedByState)}">
-        <a class="pm_button" ui-sref="secured.domains">{{ 'CUSTOM_DOMAINS' | translate }}</a>
+        <a class="pm_button" ui-sref="secured.domains">{{ 'DOMAINS' | translate }}</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.users.**' | includedByState)}">
         <a class="pm_button" ui-sref="secured.users">{{ 'USERS' | translate }}</a>
     </li>
-    <li role="presentation" ng-class="{'active': ('secured.payments.**' | includedByState)}">
-        <a class="pm_button" ui-sref="secured.payments">{{ 'PAYMENTS_HISTORY' | translate }}</a>
+    <li role="presentation" ng-class="{'active': ('secured.invoices.**' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
     </li>
 </ul>

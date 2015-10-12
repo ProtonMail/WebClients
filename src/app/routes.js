@@ -596,7 +596,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/account.tpl.html",
-                controller: "SettingsController"
+                controller: "AccountController"
             }
         }
     })
@@ -606,7 +606,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/labels.tpl.html",
-                controller: "SettingsController"
+                controller: "LabelsController"
             }
         }
     })
@@ -616,7 +616,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/security.tpl.html",
-                controller: "SettingsController"
+                controller: "SecurityController"
             }
         }
     })
@@ -627,17 +627,17 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/appearance.tpl.html",
-                controller: "SettingsController"
+                controller: "AppearanceController"
             }
         }
     })
 
-    .state("secured.payments", {
-        url: "/payments",
+    .state("secured.invoices", {
+        url: "/invoices",
         views: {
             "content@secured": {
-                templateUrl: "templates/views/payments.tpl.html",
-                controller: "SettingsController"
+                templateUrl: "templates/views/invoices.tpl.html",
+                controller: "InvoicesController"
             }
         }
     })
@@ -647,7 +647,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/dashboard.tpl.html",
-                controller: "SettingsController"
+                controller: "DashboardController"
             }
         }
     })
@@ -657,7 +657,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/users.tpl.html",
-                controller: "SettingsController"
+                controller: "UsersController"
             }
         }
     })
@@ -667,7 +667,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/domains.tpl.html",
-                controller: "SettingsController"
+                controller: "DomainsController"
             }
         }
     })
