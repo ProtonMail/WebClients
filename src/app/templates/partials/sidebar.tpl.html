@@ -61,7 +61,7 @@
             <a href="" ui-sref="secured.labels">{{ 'LABEL_SETTINGS' | translate }}</a>
         </div>
         <ul>
-            <li ng-repeat="label in labels | filter: {Name: searchLabels} |orderBy: 'Order'" ng-show="label.Display" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
+            <li ng-repeat="label in labels | orderBy: 'Order'" ng-show="label.Display" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>
@@ -94,7 +94,7 @@
         <strong>{{ user.Addresses[0].Email }}</strong>
     </span>
     <ul class="menu">
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
             <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list'); spinIcon(); hideMobileSidebar();">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
@@ -116,32 +116,39 @@
                 <em ng-bind="getUnread('sent')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.starred.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
             <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="hideMobileSidebar();">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="getUnread('starred')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.archive.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
             <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list'); hideMobileSidebar();">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="getUnread('archive')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.spam.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list'); hideMobileSidebar();">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="getUnread('spam')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.trash.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
             <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list'); hideMobileSidebar();">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
                 <em ng-bind="getUnread('trash')"></em>
+            </a>
+        </li>
+        <li ng-repeat="label in labels |orderBy: 'Order'" ng-show="label.Display" ng-class="{'active': activeLabel(label)}">
+            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
+                <i class="fa fa-tag" ng-style="color(label)"></i>
+                <span>{{ label.Name }}</span>
+                <em ng-bind="getUnread('label', label.ID)"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
