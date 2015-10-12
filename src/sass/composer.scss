@@ -86,7 +86,7 @@ body.maximizedComposer {
 				height: 280px;
 				.angular-squire-wrapper {
 					iframe {
-						height: 175px;
+						height: 120px;
 					}
 				}
 			}
@@ -101,6 +101,7 @@ body.maximizedComposer {
 				bottom: 170px;
 				top: auto;
 				z-index: 9;
+				box-shadow: inset 0 -1px 0 0 #fff;
 			}
 			.attachmentArea {
 				background: $border;
@@ -115,14 +116,14 @@ body.maximizedComposer {
 				height: 370px;
 				.angular-squire-wrapper {
 					iframe {
-						height: 325px;
+						height: 270px;
 					}
 				}
 			}
 		}
 		.unfocussed {
-		    max-height: 32px;
-		    overflow-y: auto;
+		    max-height: 33px;
+		    overflow: hidden;
 		}
 		.options {
         	position: absolute;
@@ -193,18 +194,6 @@ body.maximizedComposer {
 				padding: 10px;
 				padding-left: 0;
 			}
-			.subject {
-				float: left;
-				width: 22rem;
-				display: inline-block;
-				color: $white;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				padding: 0 0 0 10px;
-				height: 40px;
-				line-height: 40px;
-			}
 			.pm_button {
 				width: 20px;
 				padding: 0;
@@ -222,8 +211,7 @@ body.maximizedComposer {
 		}
 		.typeahead-container {
 			line-height: 26px;
-			max-height: 99px;
-			overflow: auto;
+			float: left;
 			input.tt-input {
 			}
 			.tt-hint {
@@ -231,12 +219,86 @@ body.maximizedComposer {
 				line-height: 33px;
 			}
 		}
+		.row {
+			min-height: ($composerRowHeight - 7);
+			line-height: $composerRowHeight;
+			float: left;
+			width: 100%;
+			position: relative;
+			border-bottom: 1px solid $border;
+			padding-bottom: 7px;
+			&.closed {
+				height: 40px;
+				overflow: hidden;
+			}
+			&.subjectRow {
+				height: 40px;
+				border-top: 1px solid $border;
+				margin-top: -1px;
+			}
+			.pm_button.link {
+				position: absolute;
+				right: 7px;
+				top: 0;
+			}
+			.ccPlus {
+				position: absolute;
+				right: 3rem;
+				cursor: default;
+				pointer-events: none;
+				top: 0;
+				z-index: 8;
+			}
+			label {
+				min-width: 4rem;
+				width: 4rem;
+				padding-left: 10px;
+				position: absolute;
+				line-height: 40px;
+				left: 0;
+				top: 0;
+			}
+			.subject {
+				width: 520px;
+				margin-left: 4rem;
+			}
+			input,
+			select {
+				margin-left: 4rem;
+				line-height: $composerRowHeight;
+				height: $composerRowHeight;
+				padding: 0 10px;
+				margin: 0;
+				outline: none;
+				border: none;
+				display: inline-block;
+				background: transparent;
+				font-size: 1em;
+				font-size: 13px;
+			}
+			select {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 80%;
+			}
+			& > div {
+				margin-left: 4rem;
+			}
+		}		
 		.meta {
 			-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	        position: relative;
 			color: $gray-light;
+			float: left;
+			width: 100%;
+			overflow: auto;
+			max-height: 350px;
+			.row.bccRow {
+				border-bottom: none;
+			}
 			.row.fromRow {
 				height: 40px;
 				position: relative;
@@ -269,7 +331,7 @@ body.maximizedComposer {
 			}
 			.tm-tag {
 				background: $border;
-				font-size: 14px;
+				font-size: 13px;
 				color: initial !important;
 			}
 			.twitter-typeahead {
@@ -299,70 +361,6 @@ body.maximizedComposer {
 					&.tt-cursor {
 						background-color: #f6f6f6;
 					}
-				}
-			}
-			.row {
-				min-height: ($composerRowHeight - 7);
-				line-height: $composerRowHeight;
-				float: left;
-				width: 100%;
-				position: relative;
-				border-bottom: 1px solid $border;
-				padding-bottom: 7px;
-				&.closed {
-					height: 40px;
-					overflow: hidden;
-				}
-				&.subjectRow {
-					height: 40px;
-				}
-				.pm_button.link {
-					position: absolute;
-					right: 7px;
-					top: 0;
-				}
-				.ccPlus {
-					position: absolute;
-					right: 3rem;
-					cursor: default;
-					pointer-events: none;
-					top: 0;
-					z-index: 8;
-				}
-				label {
-					min-width: 4rem;
-					width: 4rem;
-					padding-left: 10px;
-					position: absolute;
-					line-height: 40px;
-					left: 0;
-					top: 0;
-				}
-				.subject {
-					width: 520px;
-					margin-left: 4rem;
-				}
-				input,
-				select {
-					margin-left: 4rem;
-					line-height: $composerRowHeight;
-					height: $composerRowHeight;
-					padding: 0 10px;
-					margin: 0;
-					outline: none;
-					border: none;
-					display: inline-block;
-					background: transparent;
-					font-size: 1em;
-				}
-				select {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					appearance: none;
-					width: 90%;
-				}
-				& > div {
-					margin-left: 4rem;
 				}
 			}
 		}
@@ -426,6 +424,7 @@ body.maximizedComposer {
 				iframe {
 					width: 100%;
 					height: 280px;
+					height: 230px;
 					float: left;
 				}
 			}
