@@ -12,7 +12,7 @@
                 <strong class="fa fa-repeat"></strong>
             </a>
         </li>
-        <li ng-class="{ active: ('secured.drafts.list.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
             <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list')">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
@@ -102,7 +102,7 @@
                 <strong class="fa fa-repeat"></strong>
             </a>
         </li>
-        <li ng-class="{ active: ('secured.drafts.list.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
             <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list'); hideMobileSidebar();">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
