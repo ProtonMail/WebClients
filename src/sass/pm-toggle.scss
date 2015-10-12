@@ -59,6 +59,9 @@
         }
         .off {
             opacity: .35;
+            &:hover {
+                opacity: 1;
+            }
         }
     }
     &.off {
@@ -67,6 +70,9 @@
         }
         .on {
             opacity: .35;
+            &:hover {
+                opacity: 1;
+            }
         }
         .off {
             background-color: $primary;
