@@ -125,3 +125,9 @@ body.rows {
 		padding: 0 10px !important;
 	}
 }
+
+@media (max-height: $short) {
+	html, body {
+		overflow: initial !important;
+	}
+}

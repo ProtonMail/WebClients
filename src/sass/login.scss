@@ -95,6 +95,11 @@ body#login {
 	right: 0;
 	color: $white;
 	text-transform: uppercase;
+	display: block;
+	padding: 1rem 0;
+	p {
+		margin: 0;
+	}
 	a {
 		color: $white;
 		text-decoration: none;
@@ -121,5 +126,12 @@ body#login {
 	}
 	#pm_footer {
 		display: none;
+	}
+}
+
+// Short resolutions
+@media (max-height: $short) {
+	#pm_footer {
+		position: static;
 	}
 }
