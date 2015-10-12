@@ -37,7 +37,9 @@
                         {{ payment.Event }}
                     </td>
                     <td class="invoice">
-                        <a class="pm_button round"><i class="fa fa-file-text"></i></a>
+                        <a class="pm_button round" ng-click="" pt-tooltip="{{ 'DOWNLOAD' | translate }}">
+                            <i class="fa fa-file-text"></i>
+                        </a>
                     </td>
                     <td class="price">
                         <kbd>{{ ::payment.Price }}</kbd>
