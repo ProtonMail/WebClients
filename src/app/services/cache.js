@@ -734,8 +734,12 @@ angular.module("proton.cache", [])
         }
 
         Message.query(request).$promise.then(function(result) {
-            var messages = result.Messages;
-            // TODO store messages in cache
+            // store metadata in hash
+            for (var i = 0; i < messages.length; i++) {
+                var message = messages[i];
+
+                updateHash(message.ID, message);
+            }
 
             if(messages.length > 0) {
                 if(type === 'next') {
