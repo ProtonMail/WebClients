@@ -426,9 +426,10 @@ angular.module("proton.modals", [])
 .factory('paymentModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/payment.tpl.html',
+        templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
+            this.step = 'payment';
             this.number = '';
             this.fullname = '';
             this.month = '';
@@ -445,6 +446,7 @@ angular.module("proton.modals", [])
                         year: this.year,
                         cvc: this.cvc
                     });
+                    this.step = 'thanks';
                 }
             };
 

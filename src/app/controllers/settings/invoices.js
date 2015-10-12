@@ -109,8 +109,8 @@ angular.module("proton.controllers.Settings")
         paymentModal.activate({
             params: {
                 submit: function(datas) {
-
-                    paymentModal.deactivate();
+                    console.log(datas);
+                    // paymentModal.deactivate();
                 },
                 cancel: function() {
                     paymentModal.deactivate();
