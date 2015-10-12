@@ -4,7 +4,7 @@
     border-radius: 2rem;
     height: 2rem;
     line-height: 2rem;
-    background: $light; 
+    background: $light;
     box-shadow: 0 0 0 1px $border;
     span {
         position: absolute;
@@ -53,7 +53,9 @@
             left: 0;
         }
         .on {
-            color: $primary;
+            background-color: $primary;
+            border-radius: 2rem;
+            color: $white;
         }
         .off {
             opacity: .35;
@@ -67,7 +69,9 @@
             opacity: .35;
         }
         .off {
-            color: $primary;
+            background-color: $primary;
+            border-radius: 2rem;
+            color: $white;
         }
     }
 }
