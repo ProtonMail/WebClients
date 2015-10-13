@@ -25,6 +25,12 @@
 			height: 64px;
 			line-height: 64px;
 			box-sizing: border-box;
+			&:hover {
+				color: #000;
+				& * {
+					color: #000;
+				}
+			}
 			&.placeholder {
 				font-family: monospace;
 				word-break: break-all;

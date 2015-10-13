@@ -23,6 +23,9 @@
 			display: -ms-flexbox;
 			display: flex;
 			padding-right: 5px;
+			&:hover {
+				color: #000;
+			}
 			&.placeholder {
 				font-family: monospace;
 				word-break: break-all;

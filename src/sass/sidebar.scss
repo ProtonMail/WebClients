@@ -77,6 +77,9 @@ section.sidebar {
                 border-top: 1px solid transparent;
                 padding: 0 20px;
                 position: relative;
+                &:hover {
+                    color: $white;
+                }
                 i.fa {
                     height: 40px;
                     line-height: 40px;
@@ -188,6 +191,9 @@ section.sidebar {
                     overflow: hidden;
                     text-overflow: ellipsis;
                     padding: 0;
+                    &:hover {
+                        color: $white;
+                    }
                     .fa-tag {
                         display: inline-block;
                         width: 25px;
