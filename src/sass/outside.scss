@@ -1,11 +1,17 @@
 body#eo-message {
 	overflow: initial;
 	background: $dark;
+	#pm_footer {
+		position: static;
+	}
 }
 
 body#eo-reply {
 	overflow: initial;
 	background: $dark;
+	#pm_footer {
+		position: static;
+	}
 	.outside .message-head {
 		border-bottom: none;
 		& > div.pull-right {
@@ -95,7 +101,7 @@ body#eo-reply {
 		line-height: 50px;
 		text-align: center;
 		color: #fff;
-		font-size: 1.2em;
+		font-size: .9em;
 		margin: -35px -35px 0;
 	}
 	#outsideMessageWrap {
@@ -113,6 +119,10 @@ body#eo-reply {
 			line-height: 35px;
 			display: inline-block;
 			font-weight: 500;
+			.attachement {
+				float: left;
+				margin: 5px .5rem 0 0;
+			}
 		}
 	}
 	.message-metadata {
@@ -132,6 +142,61 @@ body#eo-reply {
 				font-weight: normal;
 				font-style: italic;
 			}
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	#pm_login.pm_panel {
+		margin: 2rem auto;
+	}
+	.outside {
+		padding: 0;
+		#expirationMessage {
+			margin: 0 -10px;
+			border-radius: 2px;
+		}
+		#outsideMessageWrap {
+			padding: 10px;
+		}
+	}
+	body#eo-reply {
+		footer {
+		    padding: 1rem 10px;
+		    margin: 0 -10px;
+		}
+		#message-body {
+			margin: 0;
+			iframe {
+				padding: 1px;
+			}
+			.squire-toolbar {
+				padding: 0;
+				li {
+					padding: 0;
+					-webkit-flex-grow: 1;
+				    -ms-flex-positive: 1;
+			        flex-grow: 1;
+					text-align: center;
+					&.separator {
+						min-width: 1px !important;
+						width: 1px !important;
+						flex-grow: initial !important;
+					}
+				}
+			}
+		}		
+	}
+}
+
+
+@media (max-width: $mobile) {
+	.outside {
+		padding: 2rem 0;
+	}
+	body#eo-reply {
+		.outside {
+			padding: 0;
 		}
 	}
 }
