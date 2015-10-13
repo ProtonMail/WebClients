@@ -8,7 +8,13 @@
             padding: 0;
             text-align: left;
             border: none;
-        }     
+            &.text-center {
+                text-align: center;
+            }
+            &.text-right {
+                text-align: right;
+            }
+        }
     }
     th, td {
         line-height: $rowHeight;

@@ -77,12 +77,29 @@ angular.module("proton.emailField", [])
             };
 
             var setValue = function () {
+
+                console.log('setValue');
+
                 $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
                 .filter(function (data) {
                     return data && EMAIL_REGEXP.test(data.Email);
                 })
                 .unique()
                 .map(function (element) {
+
+                    if (typeof element.Name === 'undefined' || element.Name === '') {
+                        if (element.Email) {
+                            element.Name = element.Email.split('@')[0];
+                        }
+                    }
+                    if (
+                        (typeof element.Name !== 'undefined') && 
+                        (typeof element.Email !== 'undefined') && 
+                        (element.Name.trim() === element.Email.trim())
+                    ) {
+                        element.Name = element.Email.split('@')[0];   
+                    }
+
                     return {
                         Name: element.Name.trim(),
                         Address: element.Email.trim()
@@ -131,17 +148,46 @@ angular.module("proton.emailField", [])
             };
 
             var selected = function (e, d) {
+
+                console.log('selected');
+
                 if (typeof d.Name === 'undefined' || d.Name === '') {
-                    d.Name = d.Email;
+                    if (d.Email) {
+                        d.Name = d.Email.split('@')[0];
+                    }
+                }
+                if (
+                    (typeof d.Name !== 'undefined') && 
+                    (typeof d.Email !== 'undefined') && 
+                    (d.Name.trim() === d.Email.trim())
+                ) {
+                    d.Name = d.Email.split('@')[0];   
                 }
 
                 manager.tagsManager("pushTag", d);
             };
 
             $ctrl.$render = function () {
+
+                console.log('$render');
+
                 _(($ctrl.$viewValue || "").split(","))
                 .map(function (str) { return str.trim(); })
                 .each(function (email) {
+
+                    if (typeof email.Name === 'undefined' || email.Name === '') {
+                        if (email.Email) {
+                            email.Name = email.Email.split('@')[0];
+                        }
+                    }
+                    if (
+                        (typeof email.Name !== 'undefined') && 
+                        (typeof email.Email !== 'undefined') && 
+                        (email.Name.trim() === email.Email.trim())
+                    ) {
+                        email.Name = email.Email.split('@')[0];   
+                    }
+
                     manager.tagsManager('pushTag', email);
                 });
             };
@@ -210,9 +256,22 @@ angular.module("proton.emailField", [])
             $$element.autosizeInput();
 
             _.forEach($scope.message[list], function(d) {
+
+                console.log('init');
+
                 if (typeof d.Name === 'undefined' || d.Name === '') {
-                    d.Name = d.Address;
+                    if (d.Email) {
+                        d.Name = d.Email.split('@')[0];
+                    }
                 }
+                if (
+                    (typeof d.Name !== 'undefined') && 
+                    (typeof d.Email !== 'undefined') && 
+                    (d.Name.trim() === d.Email.trim())
+                ) {
+                    d.Name = d.Email.split('@')[0];   
+                }
+
                 manager.tagsManager("pushTag", {
                     Name: d.Name,
                     Email: d.Address

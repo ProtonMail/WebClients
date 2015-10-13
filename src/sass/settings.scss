@@ -84,9 +84,34 @@
 		        	    -ms-flex-positive: 1;
 		        	        flex-grow: 1;
 		        	        padding: 10px 30px;
+                    p {
+                        margin: 0;
+                        line-height: 2rem;
+                    }
 		        	strong {
 		        		font-weight: 700;
 		        	}
+                    td.amount {
+                        width: 6rem;
+                    }
+                    td.cost {
+                        width: 4rem;
+                    }
+                    td .fa.fa-info-circle {
+                        color: $primary;
+                    }
+                    td .pm_buttons {
+                        float: right;
+                        height: 26px;
+                        line-height: 26px;
+                        & > a {
+                            height: 26px;
+                            line-height: 26px;
+                        }
+                        .pm_dropdown {
+                            line-height: 26px;
+                        }
+                    }
 		        }
 		        .price {
 		        	border-top: 1px solid $border;
@@ -187,6 +212,7 @@
     	a {
     		color: $primary;
     		text-decoration: none;
+            text-transform: uppercase;
     	}
     }
     .pm_tabs {
@@ -311,4 +337,53 @@
 
 @media (max-width: 1024px) {
     #pm_settings {}
+}
+
+
+@media (max-width: $tablet) {
+    #pm_settings {
+        .settings {
+            margin-right: 0;
+            .row {
+                .setting {
+                    width: 100%;
+                    float: left;
+                    clear: both;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        #plans {
+            header {
+                height: initial;
+                .group {
+                    label {
+                        width: 5rem;
+                        display: inline-block;
+                    }
+                }
+            }
+            .plans {
+                -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                .plan {
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    box-sizing: border-box;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                    border: 1px solid $border;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    &.middle {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
 }
