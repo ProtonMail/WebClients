@@ -33,7 +33,9 @@
                 </span>
             </span>
             <span class="pm_buttons">
-                <a href="" class="fa fa-filter" pt-tooltip="{{ 'SHOW_ALL' | translate }}"></a>
+                <a href="" pt-tooltip="{{ 'SHOW_ALL' | translate }}" ng-click="clearFilter()">
+                    <i class="fa fa-filter"></i>
+                </a>
                 <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
                 <span class="pm_dropdown">
                     <a href="" ng-click="filterBy('unread')">
