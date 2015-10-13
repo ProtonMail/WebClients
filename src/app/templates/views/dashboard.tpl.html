@@ -13,14 +13,14 @@
                         <tr>
                             <th>{{ 'USERNAME' | translate }}: </th>
                             <td>
-                                <strong>keven.bayrak</strong>
+                                <strong>{{ username }}</strong>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <th>{{ 'DOMAINS' | translate }}: </th>
                             <td>
-                                <strong>1 of 2 used</strong>
+                                <strong>1 of 2 {{ 'USED' | translate }}</strong>
                             </td>
                             <td>
                                 <span>
@@ -31,7 +31,7 @@
                         <tr>
                             <th>{{ 'ADDRESSES' | translate }}: </th>
                             <td>
-                                <strong>2 of 5 used</strong>
+                                <strong>2 of 5 {{ 'USED' | translate }}</strong>
                             </td>
                             <td>
                                 <span>
@@ -42,7 +42,7 @@
                         <tr>
                             <th>{{ 'STORAGE' | translate }}: </th>
                             <td>
-                                <strong>keven.bayrak</strong>
+                                <strong>{{ storagePercentage() }} {{ 'USED' | translate }}</strong>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
@@ -127,90 +127,124 @@
                         <div class="group">
                             <label>Currency</label>
                             <div class="pm_buttons">
-                                <a href="#">EURO</a>
-                                <a href="#" class="divider">USD</a>
-                                <a href="#" class="divider">CHF</a>
+                                <a href="" ng-click="currency = 'EUR'" ng-class="{'active': currency === 'EUR'}">EUR</a>
+                                <a href="" ng-click="currency = 'USD'" class="divider" ng-class="{'active': currency === 'USD'}">USD</a>
+                                <a href="" ng-click="currency = 'CHF'" class="divider" ng-class="{'active': currency === 'CHF'}">CHF</a>
                             </div>
                         </div>
                         <div class="group">
-                            <label>Billing</label>
+                            <label>{{ 'BILLING' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="#">Monthly</a>
-                                <a href="#" class="divider">Annually <em>( SAVE 25%)</em></a>
+                                <a href="" ng-click="billing = 'monthly'" ng-class="{'active': billing === 'monthly'}">{{ 'MONTHLY' | translate }}</a>
+                                <a href="" ng-click="billing = 'yearly'" ng-class="{'active': billing === 'yearly'}" class="divider">{{ 'YEARLY' | translate }} <em>( SAVE 25%)</em></a>
                             </div>
                         </div>
                     </header>
                     <div class="plans">
-                        <div class="plan">
-                            <h3>ProtonMail <strong>Free</strong></h3>
+                        <div class="plan" ng-class="{'selected': plan === 'basic'}">
+                            <h3>ProtonMail <strong>Basic</strong> <small ng-show="plan === 'basic'">({{ 'YOUR_PLAN' | translate }})</small></h3>
                             <div class="details">
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>1000 MB Storage</strong>
                                 </p>
                             </div>
                             <div class="price">
-                                <strong>Total:</strong> <span>0 CHF per month</span>
+                                <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
                             <div class="action active">
                                 <a href="#">ALREADY INCLUDED IN YOUR PLAN</a>
                             </div>
                         </div>
-                        <div class="plan middle selected">
-                            <h3>ProtonMail <strong>Plus</strong> (YOUR PLAN)</h3>
+                        <div class="plan middle" ng-class="{'selected': plan === 'plus'}">
+                            <h3>ProtonMail <strong>Plus</strong> <small ng-show="plan === 'plus'">({{ 'YOUR_PLAN' | translate }})</small></h3>
                             <div class="details">
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>5000 MB {{ 'STORAGE' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>5 {{ 'ALIASES' | translate }}</strong>
+                                </p>
+                                <p ng-show="billing === 'yearly'">
+                                    <i class="fa fa-check"></i>
+                                    <strong class="text-green">Save 25%</strong>
                                 </p>
                                 <p>&nbsp;</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>&nbsp;</p>
+                                <p>{{ 'ADDITIONAL_PACKAGES' | translate }}</p>
+                                <p>
+                                    <input type="checkbox" /> 2 Factor Authentication <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right">+ {{ 2 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Extra Storage <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 1 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Custom Domain <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 8 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Addresses <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 2 | currency: currency }}</span>
+                                </p>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>5 CHF per month</span>
+                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 5 | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
                                 <a href="#">{{'UPDATE_PLAN' | translate }}</a>
                             </div>
                         </div>
-                        <div class="plan">
-                            <h3>ProtonMail <strong>Business</strong></h3>
+                        <div class="plan" ng-class="{'selected': plan === 'business'}">
+                            <h3>ProtonMail <strong>Business</strong> <small ng-show="plan === 'business'">({{ 'YOUR_PLAN' | translate }})</small></h3>
                             <div class="details">
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>5000 MB {{ 'STORAGE' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB Storage</strong>
+                                    <strong>5 {{ 'ALIASES' | translate }}</strong>
+                                </p>
+                                <p>
+                                    <i class="fa fa-check"></i>
+                                    <strong>2 {{ 'USERS' | translate }} ({{ 'MASTER_AND_SUB' | translate }})</strong>
+                                </p>
+                                <p ng-show="billing === 'yearly'">
+                                    <i class="fa fa-check"></i>
+                                    <strong class="text-green">Save 25%</strong>
                                 </p>
                                 <p>&nbsp;</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>5000 MB Storage</p>
-                                <p>&nbsp;</p>
+                                <p>{{ 'ADDITIONAL_PACKAGES' | translate }}</p>
+                                <p>
+                                    <input type="checkbox" /> 2 Factor Authentication <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right">+ {{ 2 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Extra Storage <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 1 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Custom Domain <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 8 | currency: currency }}</span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" /> Addresses <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    <span class="pull-right"><select></select> + {{ 2 | currency: currency }}</span>
+                                </p>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>10 CHF per month</span>
+                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 10 | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
                                 <a href="#">UPGRADE TO BUSINESS PLAN</a>

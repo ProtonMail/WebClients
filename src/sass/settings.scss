@@ -132,7 +132,7 @@
     	}
     	.total {
     		right: 0;
-    		padding-left: 1rem; 
+    		padding-left: 1rem;
     	}
     	.used,
     	.total {
@@ -224,7 +224,9 @@
 			clear:both;
 			float: left;
 			width: 100%;
-			border-bottom: 1px solid $border;
+            .border-bottom {
+                border-bottom: 1px solid $border;
+            }
 			.clearfix {
 				padding: 5px;
 				margin: 0 -5px;

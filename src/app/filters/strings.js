@@ -9,6 +9,26 @@ angular.module("proton.filters.strings",[])
     };
 })
 
+.filter('currency', function() {
+    return function(amount, currency) {
+        var result;
+
+        switch(currency) {
+            case 'EUR':
+                result = amount + ' €';
+                break;
+            case 'CHF':
+                result = amount + ' CHF';
+                break;
+            case 'USD':
+                result = '$' + amount;
+                break;
+        }
+
+        return result;
+    };
+})
+
 .filter('readableTime', function() {
     return function(time) {
         var m = moment.unix(time);

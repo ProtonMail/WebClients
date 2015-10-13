@@ -1,20 +1,32 @@
 html.protonmail {
-	&, 
+	&,
 	body {
 		height: 100%;
-	} 
+	}
 	body {
 		overflow-y: hidden;
 		background: $secondary;
 		&.secure {
 			background: $white;
-		}	
+		}
 	}
 	.clear {
 		clear: both;
 	}
 	.text-center {
 		text-align: center;
+	}
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
+	}
+	.text-green {
+		color: $green;
+	}
+	.text-purple {
+		color: $primary;
 	}
 	pre,
 	code {
