@@ -181,7 +181,7 @@
                                 <p>
                                     <label><input type="checkbox" ng-model="plus.storage.checked" /> {{ 'EXTRA_STORAGE' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
                                     <span class="pull-right">
-                                        <input type="number" ng-model="plus.storage.number" min="1" max="10" /> + {{ plus.storage.price | currency: currency }}
+                                        <input type="number" ng-model="plus.storage.number" min="1" max="10" /> GB + {{ plus.storage.price | currency: currency }}
                                     </span>
                                 </p>
                                 <p>
@@ -201,7 +201,7 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 5 + addition(plus) | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
-                                <a href="#">{{'UPDATE_PLAN' | translate }}</a>
+                                <a href="#">{{ 'UPGRADE_TO_PLUS_PLAN' | translate }}</a>
                             </div>
                         </div>
                         <div class="plan" ng-class="{'selected': plan === 'business'}">
@@ -232,7 +232,7 @@
                                 <p>
                                     <label><input type="checkbox" ng-model="business.storage.checked" /> {{ 'EXTRA_STORAGE' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
                                     <span class="pull-right">
-                                        <input type="number" ng-model="business.storage.number" min="1" max="10" /> + {{ business.storage.price | currency: currency }}
+                                        <input type="number" ng-model="business.storage.number" min="1" max="10" /> GB + {{ business.storage.price | currency: currency }}
                                     </span>
                                 </p>
                                 <p>
@@ -258,7 +258,7 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 10 + addition(business) | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
-                                <a href="#">UPGRADE TO BUSINESS PLAN</a>
+                                <a href="#">{{ 'UPGRADE_TO_BUSINESS_PLAN' | translate }}</a>
                             </div>
                         </div>
                     </div>
