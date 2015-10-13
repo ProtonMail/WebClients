@@ -58,6 +58,16 @@ angular.module("proton.controllers.Settings")
         }
     };
 
+    $scope.multiplication = function() {
+        var multiple = 1;
+
+        if($scope.billing === 'yearly') {
+            multiple = 12;
+        }
+
+        return multiple;
+    };
+
     $scope.addition = function(package) {
         var total = 0;
 
