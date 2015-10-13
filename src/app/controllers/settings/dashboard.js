@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, authentication) {
+.controller('DashboardController', function($rootScope, $scope, authentication, paymentModal) {
     var pack = {
         storage: {
             checked: false,
@@ -74,5 +74,27 @@ angular.module("proton.controllers.Settings")
         }
 
         return total;
+    };
+
+    $scope.upgrade = function(name) {
+        var plan = {};
+
+        if(name === 'plus') {
+            _.extend(plan, $scope.plus);
+        } else if(name === 'business') {
+            _.extend(plan, $scope.business);
+        }
+
+        paymentModal.activate({
+            params: {
+                submit: function(datas) {
+                    console.log(datas);
+                    paymentModal.deactivate();
+                },
+                cancel: function() {
+                    paymentModal.deactivate();
+                }
+            }
+        });
     };
 });

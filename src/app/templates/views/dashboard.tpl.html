@@ -201,7 +201,7 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ (5 + addition(plus)) * multiplication() | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
-                                <a href="#">{{ 'UPGRADE_TO_PLUS_PLAN' | translate }}</a>
+                                <a href="" ng-click="upgrade('plus')">{{ 'UPGRADE_TO_PLUS_PLAN' | translate }}</a>
                             </div>
                         </div>
                         <div class="plan" ng-class="{'selected': plan === 'business'}">
@@ -258,7 +258,7 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ (10 + addition(business)) * multiplication() | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
-                                <a href="#">{{ 'UPGRADE_TO_BUSINESS_PLAN' | translate }}</a>
+                                <a href="" ng-click="upgrade('business')">{{ 'UPGRADE_TO_BUSINESS_PLAN' | translate }}</a>
                             </div>
                         </div>
                     </div>

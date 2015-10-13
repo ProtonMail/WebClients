@@ -54,7 +54,7 @@
     			-webkit-flex-direction: column;
     		    -ms-flex-direction: column;
 		        flex-direction: column;
-		        &.selected {
+		        &:hover {
 		        	border-color: $primary;
 		        }
 		        &.middle {
