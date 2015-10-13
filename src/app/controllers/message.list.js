@@ -378,10 +378,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
-    };
-
     $scope.start = function() {
         return ($scope.page - 1) * $scope.messagesPerPage + 1;
     };
@@ -826,14 +822,9 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.goToPage = function(page, scrollToBottom) {
-        if(angular.isUndefined(page)) {
-            page = parseInt($('#page').val());
-        }
-
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllMessages();
         $scope.page = page;
-
         if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
             if (page === 1) {
                 page = undefined;
@@ -843,40 +834,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 page: page,
                 id: undefined
             }));
-        }
-    };
-
-    $scope.hasAdjacentMessage = function(message, adjacency) {
-        if (adjacency === +1) {
-            if (messages.indexOf(message) === messages.length - 1) {
-                return $scope.hasNextPage();
-            } else {
-                return true;
-            }
-        } else if (adjacency === -1) {
-            if (messages.indexOf(message) === 0) {
-                return $scope.page > 1;
-            } else {
-                return true;
-            }
-        }
-    };
-
-    $scope.goToAdjacentMessage = function(message, adjacency) {
-        var idx = messages.indexOf(message);
-
-        if (adjacency === +1 && idx === messages.length - 1) {
-            $state.go("^.relative", {
-                rel: 'first',
-                page: $scope.page + adjacency
-            });
-        } else if (adjacency === -1 && messages.indexOf(message) === 0) {
-            $state.go("^.relative", {
-                rel: 'last',
-                page: $scope.page + adjacency
-            });
-        } else if (Math.abs(adjacency) === 1) {
-            $scope.navigateToMessage(null, messages[idx + adjacency]);
         }
     };
 

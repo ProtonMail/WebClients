@@ -12,7 +12,7 @@
         'blur': (!!!composerIsSelected(message) || message.loading()),
         'maximized': message.maximized,
         'normalized': !message.maximized && !message.minimized,
-        'toggleRecipients': message.fields,
+        'expandRecipients': message.fields,
         'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
         'tall': (message.Attachments.length === 0)
         }"
@@ -20,7 +20,7 @@
 
             <header>
                 <span ng-click="normalize(message);" class="subject">
-                {{message.Subject}} &nbsp;
+                {{message.Subject}} &nbsp; {{ recipientsCollapsed }}
                 </span>
                 <span class="actions text-right">
                     <a
@@ -186,7 +186,10 @@
                     </button>
                 </div>
 
-                <div class="row toRow" ng-click="message.recipientFieldFocussed = 1">
+                <div 
+                class="row toRow" 
+                ng-click="message.recipientFieldFocussed = 1" 
+                ng-class="{ closed: recipientsCollapsed }">
                     <label>{{ 'TO' | translate }}</label>
                     <div
                     class="typeahead-container to-container"
@@ -197,6 +200,7 @@
                         email-field
                         title="{{ 'TO' | translate }}"
                         ng-model="message.ToList"
+                        ng-focus="recipientsCollapsed = false"
                         ng-change="saveLater(message)"
                         class="to-list" />
                     </div>
@@ -227,6 +231,7 @@
                         type="text"
                         email-field
                         ng-model="message.CCList"
+                        ng-focus="recipientsCollapsed = false"
                         ng-change="saveLater(message)"
                         title="{{ 'CC' | translate }}"
                         class="cc-list" />
@@ -249,6 +254,7 @@
                         type="text"
                         email-field
                         ng-model="message.BCCList"
+                        ng-focus="recipientsCollapsed = false"
                         ng-change="saveLater(message)"
                         title="{{ 'BCC' | translate }}"
                         class="bcc-list" />
@@ -266,7 +272,7 @@
                     type="text"
                     title="{{ 'SUBJECT' | translate }}"
                     class="subject"
-                    ng-focus="message.fields = false; message.recipientFieldFocussed = 0; toggleRecipients = false"
+                    ng-focus="message.fields = false; message.recipientFieldFocussed = 0; hideFields = false; recipientsCollapsed = true"
                     ng-model="message.Subject"
                     ng-model-options="{updateOn: 'blur'}"
                     ng-keydown="$event.which == 9 && focusEditor(message, $event)"
@@ -281,6 +287,7 @@
                     <div
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
+                    ng-focus="recipientsCollapsed = true"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);"></squire>
                 </div>

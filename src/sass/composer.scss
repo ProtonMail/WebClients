@@ -75,7 +75,7 @@ body.maximizedComposer {
 				border-radius: 0;
 			}
 		}
-		&.toggleRecipients {
+		&.expandRecipients {
 			overflow: hidden;
 		}
 		&.attachmentsOpen {
@@ -101,9 +101,10 @@ body.maximizedComposer {
 				border-bottom: 1px solid #fff;
 			}
 			.attachmentArea {
-				background: $border;
+				background: #eee;
 				.pm_button {
 					background: #fff;
+					color: $gray;
 					border-radius: 2px;
 				}
 			}
@@ -261,16 +262,24 @@ body.maximizedComposer {
 			}
 			.tm-tag {
 				background: $border;
+				background: #eee;
+				font-size: 13px;
 				color: initial !important;
 			}
 			.twitter-typeahead {
+				line-height: 26px;
+			    height: 26px;
+				margin: 7px 7px 0 0;
 				float: left;
 				input {
-					padding: 5px 10px !important;
-					line-height: 33px !important;
-					height: 33px !important;
-					top: 3px !important;
+					padding: 0 10px !important;
+					line-height: 26px !important;
+					height: 26px !important;
+					top: initial !important;
 					float: left;
+				}
+				pre {
+					display: none;
 				}
 			}
 			.tt-dropdown-menu {
@@ -282,6 +291,7 @@ body.maximizedComposer {
 					padding: 1px 10px;
 					border-bottom: 1px solid #ddd;
 					color: #555;
+					color: $gray;
 
 					&.tt-cursor {
 						background-color: #f6f6f6;
@@ -374,6 +384,7 @@ body.maximizedComposer {
 			cursor: pointer;
 			box-sizing: border-box;
 			background: $border;
+			background: #eee;
 			z-index: 7;
 			i {
 				color: $primary;
@@ -399,7 +410,7 @@ body.maximizedComposer {
 	        z-index: 9;
 	        .preview-close {
 	        	margin-left: .25rem;
-	        	color: $gray-light;
+	        	color: $gray;
 	        }
 	        footer {
         		position: absolute;

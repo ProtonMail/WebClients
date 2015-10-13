@@ -69,7 +69,7 @@ angular.module("proton", [
     "proton.toggle",
 
     // Filters
-    "proton.filters.strings",
+    "proton.filters",
 
     // Controllers
     "proton.controllers.Account",

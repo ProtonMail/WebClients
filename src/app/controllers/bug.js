@@ -20,7 +20,6 @@ angular.module("proton.controllers.Bug", [])
 
     // Listeners
     $scope.$on('openReportModal', function() {
-        $log.debug('openReportModal:open');
         $scope.open();
     });
 

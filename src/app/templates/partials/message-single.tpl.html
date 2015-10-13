@@ -110,6 +110,9 @@
         </div><!--/.data-->
     </div>
     <div class="frame">
+        <p ng-show="message.containsImage === true" ng-show="!!message.imagesHidden" class="display-image text-center">
+            <a href="" ng-click="toggleImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
+        </p>
         <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html';displayContent();" ng-show="message.viewMode === 'html'" ng-bind-html="content"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>

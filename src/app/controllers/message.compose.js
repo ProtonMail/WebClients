@@ -36,7 +36,8 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.saving = false;
     $scope.queuedSave = false;
     $scope.preventDropbox = false;
-    $scope.toggleRecipients = false;
+    $scope.expandRecipients = false;
+    $scope.recipientsCollapsed = true;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];

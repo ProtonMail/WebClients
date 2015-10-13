@@ -24,7 +24,7 @@
 	        padding-bottom: ( (($toolbarHeight)-25) /2 );
 	        padding-left: 0;
 	        box-sizing: border-box;
-	        overflow: auto;	        
+	        overflow: auto;
 	    }
 	    .fa-star,
 	    .fa-star-o {
@@ -48,7 +48,7 @@
     	padding-right: 25px;
     	max-height: $maxHeight;
     	overflow-y: auto;
-    	overflow-x: auto; 
+    	overflow-x: auto;
     	box-sizing: border-box;
     	width: 100%;
     }
@@ -65,13 +65,13 @@
 		    margin-right: .5rem;
 		    font-size: 10px;
 		    margin-top: 4px;
-		}     	
+		}
     	header {
     		overflow: hidden;
     		font-size: 15px;
     		padding: 10px 0;
     		line-height: 20px;
-    		box-sizing: border-box;   		
+    		box-sizing: border-box;
     		.time {
     			display: inline-block;
     			white-space: nowrap;
@@ -227,7 +227,7 @@
 				float: left;
 				line-height: 1em;
 			}
-		}    	
+		}
     	.frame {
     		width: 100%;
     		position: relative;
@@ -242,8 +242,19 @@
 	    		padding: 0;
 	    		margin: 0;
 	    		outline: none;
-	    		border: none;    			
+	    		border: none;
     		}
+			.display-image {
+				text-transform: uppercase;
+				border: 1px solid $border;
+				a {
+					color: $primary;
+					text-decoration: none;
+				}
+				a:hover, a:focus {
+					text-decoration: underline;
+				}
+			}
     		.pm_message_more {
 			    background-color: #f6f6f6;
 			    border: 1px solid #efefef;
@@ -261,7 +272,7 @@
     	&.collapsed {
     		line-height: 40px;
     		height: 41px;
-    		padding: 0;	
+    		padding: 0;
             .from span i {
                 display: none;
             }

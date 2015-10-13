@@ -734,6 +734,8 @@ angular.module("proton.cache", [])
         }
 
         Message.query(request).$promise.then(function(result) {
+            var messages = result.Messages;
+            
             // store metadata in hash
             for (var i = 0; i < messages.length; i++) {
                 var message = messages[i];
@@ -781,6 +783,7 @@ angular.module("proton.cache", [])
     };
 
     /**
+    * Query unread and total
     * @return {Promise}
     */
     api.query = function() {

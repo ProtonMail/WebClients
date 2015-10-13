@@ -1,4 +1,4 @@
-angular.module("proton.filters.strings",[])
+angular.module("proton.filters",[])
 
 .filter("capitalize", function() {
     return function(input) {
@@ -6,6 +6,26 @@ angular.module("proton.filters.strings",[])
             input = input.toLowerCase();
         }
         return input.substring(0,1).toUpperCase()+input.substring(1);
+    };
+})
+
+.filter('currency', function() {
+    return function(amount, currency) {
+        var result;
+
+        switch(currency) {
+            case 'EUR':
+                result = amount + ' €';
+                break;
+            case 'CHF':
+                result = amount + ' CHF';
+                break;
+            case 'USD':
+                result = '$' + amount;
+                break;
+        }
+
+        return result;
     };
 })
 

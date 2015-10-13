@@ -220,6 +220,13 @@ section.sidebar {
             padding: 5px 10px 0;
             margin-bottom: 1rem;
         }
+        div.link {
+            a {
+                font-weight: bold;
+                color: $primary;
+                text-decoration: none;
+            }
+        }
         div.storage {
             color: #bbb;
             strong {
