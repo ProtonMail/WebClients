@@ -61,6 +61,8 @@ angular.module("proton.models.message", ["proton.constants"])
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
+                    $rootScope.Total = json.Total;
+
                     return json;
                 }
             },
