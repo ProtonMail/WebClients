@@ -73,6 +73,12 @@
 		        		font-weight: 700;
 		        	}
 		        }
+                legend {
+                    font-size: inherit;
+                }
+                label {
+                    display: inline-block;
+                }
 		        .details {
 		        	-webkit-flex-grow: 1;
 		        	    -ms-flex-positive: 1;

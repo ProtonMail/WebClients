@@ -169,33 +169,36 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5 {{ 'ALIASES' | translate }}</strong>
+                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
                                 </p>
                                 <p ng-show="billing === 'yearly'">
                                     <i class="fa fa-check"></i>
                                     <strong class="text-green">Save 25%</strong>
                                 </p>
                                 <p>&nbsp;</p>
-                                <p>{{ 'ADDITIONAL_PACKAGES' | translate }}</p>
+                                <p>&nbsp;</p>
+                                <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
                                 <p>
-                                    <input type="checkbox" /> 2 Factor Authentication <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right">+ {{ 2 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="plus.storage.checked" /> {{ 'EXTRA_STORAGE' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="plus.storage.number" min="1" max="10" /> + {{ plus.storage.price | currency: currency }}
+                                    </span>
                                 </p>
                                 <p>
-                                    <input type="checkbox" /> Extra Storage <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 1 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="plus.domain.checked" /> {{ 'CUSTOM_DOMAIN' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="plus.domain.number" min="1" max="10" /> + {{ plus.domain.price | currency: currency }}
+                                    </span>
                                 </p>
                                 <p>
-                                    <input type="checkbox" /> Custom Domain <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 8 | currency: currency }}</span>
-                                </p>
-                                <p>
-                                    <input type="checkbox" /> Addresses <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 2 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="plus.address.checked" /> {{ 'ADDRESSES' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="plus.address.number" min="1" max="10" /> + {{ plus.address.price | currency: currency }}
+                                    </span>
                                 </p>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 5 | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
+                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 5 + addition(plus) | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
                                 <a href="#">{{'UPDATE_PLAN' | translate }}</a>
@@ -214,37 +217,45 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5 {{ 'ALIASES' | translate }}</strong>
+                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>2 {{ 'USERS' | translate }} ({{ 'MASTER_AND_SUB' | translate }})</strong>
+                                    <strong>2 {{ 'EMPLOYES' | translate }}</strong>
                                 </p>
                                 <p ng-show="billing === 'yearly'">
                                     <i class="fa fa-check"></i>
                                     <strong class="text-green">Save 25%</strong>
                                 </p>
                                 <p>&nbsp;</p>
-                                <p>{{ 'ADDITIONAL_PACKAGES' | translate }}</p>
+                                <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
                                 <p>
-                                    <input type="checkbox" /> 2 Factor Authentication <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right">+ {{ 2 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="business.storage.checked" /> {{ 'EXTRA_STORAGE' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="business.storage.number" min="1" max="10" /> + {{ business.storage.price | currency: currency }}
+                                    </span>
                                 </p>
                                 <p>
-                                    <input type="checkbox" /> Extra Storage <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 1 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="business.domain.checked" /> {{ 'CUSTOM_DOMAIN' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="business.domain.number" min="1" max="10" /> + {{ business.domain.price | currency: currency }}
+                                    </span>
                                 </p>
                                 <p>
-                                    <input type="checkbox" /> Custom Domain <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 8 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="business.address.checked" /> {{ 'ADDRESSES' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="business.address.number" min="1" max="10" /> + {{ business.address.price | currency: currency }}
+                                    </span>
                                 </p>
                                 <p>
-                                    <input type="checkbox" /> Addresses <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    <span class="pull-right"><select></select> + {{ 2 | currency: currency }}</span>
+                                    <label><input type="checkbox" ng-model="business.employee.checked" /> {{ 'EMPLOYEES' | translate }} <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a></label>
+                                    <span class="pull-right">
+                                        <input type="number" ng-model="business.employee.number" min="1" max="10" /> + {{ business.employee.price | currency: currency }}
+                                    </span>
                                 </p>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 10 | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
+                                <strong>{{ 'TOTAL' | translate }}:</strong> <span>{{ 10 + addition(business) | currency: currency }} <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span></span>
                             </div>
                             <div class="action">
                                 <a href="#">UPGRADE TO BUSINESS PLAN</a>

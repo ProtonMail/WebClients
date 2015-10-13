@@ -1,4 +1,4 @@
-angular.module("proton.filters.strings",[])
+angular.module("proton.filters",[])
 
 .filter("capitalize", function() {
     return function(input) {
