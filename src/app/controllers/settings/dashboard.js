@@ -1,11 +1,7 @@
 angular.module("proton.controllers.Settings")
 
 .controller('DashboardController', function($rootScope, $scope, authentication) {
-    $scope.currency = 'CHF';
-    $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
-    $scope.plan = 'basic';
-    $scope.billing = 'monthly';
-    $scope.plus = {
+    var pack = {
         storage: {
             checked: false,
             price: 1,
@@ -22,27 +18,17 @@ angular.module("proton.controllers.Settings")
             number: 1
         }
     };
-    $scope.business = {
-        storage: {
-            checked: false,
-            price: 1,
-            number: 1
-        },
-        domain: {
-            checked: false,
-            price: 8,
-            number: 1
-        },
-        address: {
-            checked: false,
-            price: 2,
-            number: 1
-        },
-        employee: {
-            checked: false,
-            price: 5,
-            number: 1
-        }
+
+    $scope.currency = 'CHF';
+    $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
+    $scope.plan = 'basic';
+    $scope.billing = 'monthly';
+    $scope.plus = angular.copy(pack);
+    $scope.business = angular.copy(pack);
+    $scope.business.employee = {
+        checked: false,
+        price: 5,
+        number: 1
     };
 
     /**

@@ -72,7 +72,12 @@
     </div>
     <div class="footer">
         <div class="wrap">
-            <div class="bar"><em style="width: {{ storagePercentage() }}"></em></div>
+            <div class="link">
+                <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a>
+            </div>
+            <div class="bar">
+                <em style="width: {{ storagePercentage() }}"></em>
+            </div>
             <div class="storage">
                 <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
             </div>
