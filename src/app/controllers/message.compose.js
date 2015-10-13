@@ -881,7 +881,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
             var draftPromise;
             var CREATE = 1;
-    		var UPDATE = 2;
+            var UPDATE = 2;
             var action;
 
             parameters.Message.Body = result;

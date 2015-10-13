@@ -174,7 +174,7 @@
 
             <div class="meta">
 
-                <div class="row fromRow">
+                <div class="row" id="fromRow">
                     <label>{{ 'FROM' | translate }}</label>
                     <select
                     tabindex="1"
@@ -259,23 +259,22 @@
 
                 </div>
 
-            </div>
+                <div class="row subjectRow">
+                    <label>{{ 'SUBJECT' | translate }}</label>
+                    <input
+                    tabindex="5"
+                    type="text"
+                    title="{{ 'SUBJECT' | translate }}"
+                    class="subject"
+                    ng-focus="message.fields = false; message.recipientFieldFocussed = 0; toggleRecipients = false"
+                    ng-model="message.Subject"
+                    ng-model-options="{updateOn: 'blur'}"
+                    ng-keydown="$event.which == 9 && focusEditor(message, $event)"
+                    ng-change="saveLater(message)"
+                    required />
+                </div>
 
-            <div class="row subjectRow">
-                <label>{{ 'SUBJECT' | translate }}</label>
-                <input
-                tabindex="5"
-                type="text"
-                title="{{ 'SUBJECT' | translate }}"
-                class="subject"
-                ng-focus="message.fields = false; message.recipientFieldFocussed = 0; toggleRecipients = false"
-                ng-model="message.Subject"
-                ng-model-options="{updateOn: 'blur'}"
-                ng-keydown="$event.which == 9 && focusEditor(message, $event)"
-                ng-change="saveLater(message)"
-                required />
             </div>
-                            
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
 
                 <div class="composeEditor">

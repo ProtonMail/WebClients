@@ -10,10 +10,6 @@ body.maximizedComposer {
 	bottom: 0;
 	right: 0;
 	z-index: 9999;
-	box-sizing: border-box;
-	& * {
-		box-sizing: border-box;
-	}
 	.composer {
 		border-radius: 2px;
 		width: 580px;
@@ -25,9 +21,6 @@ body.maximizedComposer {
 		box-shadow: 3px 3px 3px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);
 		position: relative;
 		padding-bottom: 60px;
-		.tt-dropdown-menu {
-			top: 0 !important;
-		}
 		.dotdotdot {
 			display: none;
 		}
@@ -74,6 +67,7 @@ body.maximizedComposer {
 			width: 100%;
 			height: 100%;
 			box-shadow: none;
+			box-sizing: border-box;
 			footer .pm_button span {
 				display: none;
 			}
@@ -89,7 +83,7 @@ body.maximizedComposer {
 				height: 280px;
 				.angular-squire-wrapper {
 					iframe {
-						height: 120px;
+						height: 175px;
 					}
 				}
 			}
@@ -104,7 +98,7 @@ body.maximizedComposer {
 				bottom: 170px;
 				top: auto;
 				z-index: 9;
-				box-shadow: inset 0 -1px 0 0 #fff;
+				border-bottom: 1px solid #fff;
 			}
 			.attachmentArea {
 				background: $border;
@@ -119,14 +113,10 @@ body.maximizedComposer {
 				height: 370px;
 				.angular-squire-wrapper {
 					iframe {
-						height: 270px;
+						height: 325px;
 					}
 				}
 			}
-		}
-		.unfocussed {
-		    max-height: 33px;
-		    overflow: hidden;
 		}
 		.options {
         	position: absolute;
@@ -136,6 +126,7 @@ body.maximizedComposer {
         	bottom: 0;
         	background: #fff;
         	padding: 2rem 10px;
+        	box-sizing: border-box;
         	z-index: 99;
         	footer {
         		position: absolute;
@@ -190,12 +181,26 @@ body.maximizedComposer {
 			background: $secondary;
 			border-radius: 2px 2px 0 0;
 			position: relative;
+			box-sizing: border-box;
 			height: 40px;
 			min-height: 40px;
 			.actions {
 				float: right;
 				padding: 10px;
 				padding-left: 0;
+			}
+			.subject {
+				float: left;
+				width: 22rem;
+				display: inline-block;
+				color: $white;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				padding: 0 0 0 10px;
+				height: 40px;
+				line-height: 40px;
+				box-sizing: border-box;
 			}
 			.pm_button {
 				width: 20px;
@@ -213,96 +218,18 @@ body.maximizedComposer {
 			}
 		}
 		.typeahead-container {
-			line-height: 26px;
-			float: left;
-			input.tt-input {
-			}
-			.tt-hint {
-				height: 33px;
-				line-height: 33px;
-			}
+			line-height: 33px;
+			max-height: 99px;
+			overflow: auto;
 		}
-		.row {
-			min-height: ($composerRowHeight - 7);
-			line-height: $composerRowHeight;
-			float: left;
-			width: 100%;
-			position: relative;
-			border-bottom: 1px solid $border;
-			padding-bottom: 7px;
-			&.closed {
-				height: 40px;
-				overflow: hidden;
-			}
-			&.subjectRow {
-				height: 40px;
-				border-top: 1px solid $border;
-				margin-top: -1px;
-			}
-			.pm_button.link {
-				position: absolute;
-				right: 7px;
-				top: 0;
-			}
-			.ccPlus {
-				position: absolute;
-				right: 3rem;
-				cursor: default;
-				pointer-events: none;
-				top: 0;
-				z-index: 8;
-			}
-			label {
-				min-width: 4rem;
-				width: 4rem;
-				padding-left: 10px;
-				position: absolute;
-				line-height: 40px;
-				left: 0;
-				top: 0;
-			}
-			.subject {
-				width: 520px;
-				margin-left: 4rem;
-			}
-			input,
-			select {
-				margin-left: 4rem;
-				line-height: $composerRowHeight;
-				height: $composerRowHeight;
-				padding: 0 10px;
-				margin: 0;
-				outline: none;
-				border: none;
-				display: inline-block;
-				background: transparent;
-				font-size: 1em;
-				font-size: 13px;
-			}
-			select {
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				width: 80%;
-			}
-			& > div {
-				margin-left: 4rem;
-			}
-		}		
 		.meta {
 			-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	        position: relative;
+	        box-sizing: border-box;
 			color: $gray-light;
-			float: left;
-			width: 100%;
-			overflow: auto;
-			max-height: 350px;
-			.row.bccRow {
-				border-bottom: none;
-			}
-			.row.fromRow {
+			#fromRow {
 				height: 40px;
 				position: relative;
 				button {
@@ -334,22 +261,16 @@ body.maximizedComposer {
 			}
 			.tm-tag {
 				background: $border;
-				font-size: 13px;
 				color: initial !important;
 			}
 			.twitter-typeahead {
 				float: left;
-				overflow: hidden;
-				input.tt-input {
+				input {
 					padding: 5px 10px !important;
 					line-height: 33px !important;
 					height: 33px !important;
 					top: 3px !important;
 					float: left;
-				    width: initial !important;
-				}
-				pre {
-					display: none;
 				}
 			}
 			.tt-dropdown-menu {
@@ -359,11 +280,86 @@ body.maximizedComposer {
 
 				.tt-suggestion {
 					padding: 1px 10px;
+					border-bottom: 1px solid #ddd;
 					color: #555;
 
 					&.tt-cursor {
 						background-color: #f6f6f6;
 					}
+				}
+			}
+			.row {
+				min-height: ($composerRowHeight - 7);
+				line-height: $composerRowHeight;
+				border-bottom: 1px solid $border;
+				float: left;
+				width: 100%;
+				position: relative;
+				padding-bottom: 7px;
+				box-sizing: border-box;
+				&.closed {
+					height: 40px;
+					overflow: hidden;
+				}
+				&.toRow,
+				&.ccRow,
+				&.bccRow {
+					box-sizing: border-box;
+					padding-right: 0;
+				}
+				&.subjectRow {
+					height: 40px;
+				}
+				.pm_button.link {
+					position: absolute;
+					right: 7px;
+					top: 0;
+				}
+				.ccPlus {
+					position: absolute;
+					right: 3rem;
+					cursor: default;
+					pointer-events: none;
+					top: 0;
+					z-index: 8;
+				}
+				label {
+					min-width: 4rem;
+					width: 4rem;
+					box-sizing: border-box;
+					padding-left: 10px;
+					position: absolute;
+					line-height: 40px;
+					left: 0;
+					top: 0;
+				}
+				.subject {
+					width: 520px;
+					margin-left: 4rem;
+				}
+				input,
+				select {
+					margin-left: 4rem;
+					line-height: $composerRowHeight;
+					height: $composerRowHeight;
+					padding: 0 10px;
+					margin: 0;
+					outline: none;
+					border: none;
+					display: inline-block;
+					background: transparent;
+					font-size: 1em;
+					box-sizing: border-box;
+					font-size: 13px;
+				}
+				select {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					width: 90%;
+				}
+				& > div {
+					margin-left: 4rem;
 				}
 			}
 		}
@@ -376,6 +372,7 @@ body.maximizedComposer {
 			line-height: 40px;
 			padding: 0 10px;
 			cursor: pointer;
+			box-sizing: border-box;
 			background: $border;
 			z-index: 7;
 			i {
@@ -397,6 +394,7 @@ body.maximizedComposer {
 	        bottom: 0;
 	        top: 80px;
 	        overflow: auto;
+	        box-sizing: border-box;
 	        background: $white;
 	        z-index: 9;
 	        .preview-close {
@@ -423,12 +421,13 @@ body.maximizedComposer {
 	        overflow: auto;
 	        position: relative;
 	        height: 325px;
+	        box-sizing: border-box;
 			.angular-squire-wrapper {
 				iframe {
 					width: 100%;
 					height: 280px;
-					height: 230px;
 					float: left;
+					box-sizing: border-box;
 				}
 			}
 			.squire-toolbar {
@@ -443,6 +442,7 @@ body.maximizedComposer {
 			padding: 10px;
 			border-top: 1px solid $border;
 			border-radius: 0 0 2px 2px;
+			box-sizing: border-box;
 			position: absolute;
 			left: 0;
 			right: 0;
