@@ -103,9 +103,10 @@ body.maximizedComposer {
 				z-index: 9;
 			}
 			.attachmentArea {
-				background: $border;
+				background: #eee;
 				.pm_button {
 					background: #fff;
+					color: $gray;
 					border-radius: 2px;
 				}
 			}
@@ -268,7 +269,7 @@ body.maximizedComposer {
 			    box-shadow: none;
 			}
 			.tm-tag {
-				background: $border;
+				background: #eee;
 				font-size: 14px;
 				color: initial !important;
 			}
@@ -294,7 +295,7 @@ body.maximizedComposer {
 
 				.tt-suggestion {
 					padding: 1px 10px;
-					color: #555;
+					color: $gray;
 
 					&.tt-cursor {
 						background-color: #f6f6f6;
@@ -375,7 +376,7 @@ body.maximizedComposer {
 			line-height: 40px;
 			padding: 0 10px;
 			cursor: pointer;
-			background: $border;
+			background: #eee;
 			z-index: 7;
 			i {
 				color: $primary;
@@ -400,7 +401,7 @@ body.maximizedComposer {
 	        z-index: 9;
 	        .preview-close {
 	        	margin-left: .25rem;
-	        	color: $gray-light;
+	        	color: $gray;
 	        }
 	        footer {
         		position: absolute;
