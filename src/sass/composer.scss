@@ -25,6 +25,9 @@ body.maximizedComposer {
 		box-shadow: 3px 3px 3px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);
 		position: relative;
 		padding-bottom: 60px;
+		.tt-dropdown-menu {
+			top: 0 !important;
+		}
 		.dotdotdot {
 			display: none;
 		}
