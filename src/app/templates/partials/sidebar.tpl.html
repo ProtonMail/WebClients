@@ -1,4 +1,4 @@
-<section id="pm_sidebar" class="pm_opensans sidebar" ng-controller="SidebarController">
+<section id="pm_sidebar" class="pm_opensans sidebar" ng-controller="SidebarController" ng-sidebar-height>
 
     <a href="" class="compose pm_button primary" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
@@ -60,8 +60,8 @@
             <i class="fa fa-cog"></i>
             <a href="" ui-sref="secured.labels">{{ 'LABEL_SETTINGS' | translate }}</a>
         </div>
-        <ul>
-            <li ng-repeat="label in labels | orderBy: 'Order'" ng-show="label.Display" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
+        <ul ng-label-height>
+            <li ng-repeat="label in labels | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>

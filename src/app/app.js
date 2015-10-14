@@ -65,6 +65,8 @@ angular.module("proton", [
     "proton.dropdown",
     "proton.height",
     "proton.heightOutside",
+    "proton.sidebarHeight",
+    "proton.labelHeight",
     "proton.sample",
     "proton.toggle",
 

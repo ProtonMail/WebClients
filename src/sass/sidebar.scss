@@ -37,10 +37,12 @@ section#pm_sidebarMobile {
 section.sidebar {
     display: block;
     padding: 15px 20px;
+    padding-bottom: 130px !important;
     width: $sidebarWidth;
     min-width: $sidebarWidth;
     box-sizing: border-box;
     float: left;
+    min-height: 100%;
     a.compose {
         margin-bottom: 20px;
         font-size: 12px;
@@ -219,7 +221,10 @@ section.sidebar {
         text-align: center;
         font-size: 10px;
         padding-top: 10px;
-        height: 90px;
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 10px;
         .wrap {
             background: #4c4b5a;
             border: 1px solid #43434f;
