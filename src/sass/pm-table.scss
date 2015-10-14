@@ -2,6 +2,9 @@
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+    thead {
+        border-top: 1px solid $border;
+    }
     &.plain {
         th, td {
             line-height: initial;
@@ -58,7 +61,7 @@
     }
     th {
         background: #f6f6f6;
-        border-bottom: 1px solid $gray-light;
+        border-bottom: 1px solid $border;
         color: #838897;
         font-weight: 400;
         text-transform: uppercase;
