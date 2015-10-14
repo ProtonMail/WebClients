@@ -8,19 +8,19 @@
                 <thead>
                     <tr>
                         <th>{{ 'DESCRIPTION' | translate }}</th>
-                        <th>{{ 'PRICE' | translate }}</th>
+                        <th class="text-right">{{ 'PRICE' | translate }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="element in ctrl.cart">
                         <td>{{ element.title }}</td>
-                        <td>{{ element.price | currency: ctrl.currency }}</td>
+                        <td class="text-right">{{ element.price | currency: ctrl.currency }}</td>
                     </tr>
                     <tr>
                         <td>
                             <strong>{{ 'TOTAL' | translate }}</strong>
                         </td>
-                        <td>
+                        <td class="text-right">
                             <strong>{{ ctrl.total() | currency: ctrl.currency }}</strong>
                         </td>
                     </tr>
