@@ -144,12 +144,15 @@ body.columns #pm_toolbar {
                 }
             }
         }
+        .mobileSecondary {
+            margin-right: 0 !important;
+        }
         .pm_buttons {
             margin: 0 5px 0 0 !important;
         }
         .pm_buttons a,
         .pm_button {
-            padding: 0 7px !important;
+            padding: 0 4px !important;
         }
         .messageActions {
             .pm_buttons {

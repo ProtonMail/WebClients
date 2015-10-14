@@ -53,6 +53,10 @@ header#pm_header {
 		}
 		strong {
 			font-size: 12px;
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+		    width: 100%;
+		    overflow: hidden;
 		}
 		b {
 			font-size: 10px;

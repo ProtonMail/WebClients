@@ -182,7 +182,7 @@
 	}
 	#pm_rows .list {
 		.message {
-			padding: 0 10px 0 85px;
+			padding: 0 10px 0 85px !important;
 			height: 65px;
 			line-height: 25px;
 			position: relative;
@@ -198,7 +198,7 @@
 				position: absolute;
 				left: 10px;
 				top: 15px;
-				z-index: 5;
+				z-index: 2;
 			}
 			&.unread {
 				margin: 0;

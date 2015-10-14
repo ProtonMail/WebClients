@@ -249,6 +249,8 @@
 				border: 1px solid $border;
 				a {
 					color: $primary;
+                    display: block;
+                    width: 100%;
 					text-decoration: none;
 				}
 				a:hover, a:focus {
@@ -300,6 +302,15 @@
 }
 @media (max-width: $mobile) {
 	#pm_view > header {
-		margin-right: 0;
+		margin: 0;
 	}
+    #pm_view #pm_thread {
+        padding: 0;
+    }
+    #pm_view #pm_toolbar {
+        .pm_buttons a,
+        .pm_button {
+            padding: 0 7px !important;
+        }
+    }
 }
