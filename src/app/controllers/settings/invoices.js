@@ -104,18 +104,4 @@ angular.module("proton.controllers.Settings")
             "Price": "12 CHF"
         }
     ];
-
-    $scope.openPaymentModal = function() {
-        paymentModal.activate({
-            params: {
-                submit: function(datas) {
-                    console.log(datas);
-                    // paymentModal.deactivate();
-                },
-                cancel: function() {
-                    paymentModal.deactivate();
-                }
-            }
-        });
-    };
 });

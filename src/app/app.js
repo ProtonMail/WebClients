@@ -86,6 +86,7 @@ angular.module("proton", [
     "proton.controllers.Messages.Compose",
     "proton.controllers.Outside",
     "proton.controllers.Search",
+    "proton.controllers.Secured",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",
     "proton.controllers.Signup",

@@ -12,13 +12,13 @@ angular.module("proton.controllers.Settings")
             checked: false,
             price: 8,
             number: 1,
-            title: $translate.instant('CUSTOM_DOMAIN')
+            title: $translate.instant('ADDITIONAL_DOMAIN')
         },
         address: {
             checked: false,
             price: 2,
             number: 1,
-            title: $translate.instant('ADDRESSES')
+            title: $translate.instant('ADDITIONAL_ADDRESS')
         }
     };
 
@@ -44,20 +44,7 @@ angular.module("proton.controllers.Settings")
         checked: false,
         price: 5,
         number: 1,
-        title: $translate.instant('EMPLOYES')
-    };
-
-    /**
-     * Returns a string for the storage bar
-     * @return {String} "12.5%"
-     */
-    $scope.storagePercentage = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace) + '%';
-        } else {
-            // TODO: error, undefined variables
-            return '';
-        }
+        title: $translate.instant('ADDITIONAL_EMPLOYES')
     };
 
     $scope.multiplication = function() {

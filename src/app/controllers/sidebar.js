@@ -215,35 +215,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
-     * Returns a string for the storage bar used for CSS
-     * @return {String} "12.5%"
-     */
-    $scope.sizeBar = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return {
-                width: (100 * authentication.user.UsedSpace / authentication.user.MaxSpace) + '%'
-            };
-        }
-        else {
-            // TODO: error, undefined variables
-            return '';
-        }
-    };
-
-    /**
-     * Returns a string for the storage bar
-     * @return {String} "12.5%"
-     */
-    $scope.storagePercentage = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace) + '%';
-        } else {
-            // TODO: error, undefined variables
-            return '';
-        }
-    };
-
-    /**
      * Returns a string for the storage bar
      * @return {String} "1.25/10 GB"
      */

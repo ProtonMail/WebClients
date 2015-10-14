@@ -76,10 +76,10 @@
                 <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a>
             </div>
             <div class="bar">
-                <em style="width: {{ storagePercentage() }}"></em>
+                <em style="width: {{ storagePercentage() }}%"></em>
             </div>
             <div class="storage">
-                <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}</strong> {{ 'STORAGE_USED' | translate }}
+                <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}%</strong> {{ 'STORAGE_USED' | translate }}
             </div>
         </div>
         <a class="version" href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>

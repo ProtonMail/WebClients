@@ -250,26 +250,4 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.initialization();
-})
-
-.controller("SecuredController", function(
-    $scope,
-    $rootScope,
-    authentication,
-    eventManager,
-    cacheCounters,
-    cacheMessages
-) {
-    $scope.user = authentication.user;
-    $scope.logout = $rootScope.logout;
-
-    eventManager.start(authentication.user.EventID);
-    cacheMessages.preloadInboxAndSent();
-    cacheCounters.query();
-
-    $rootScope.isLoggedIn = true;
-    $rootScope.isLocked = false;
-    $rootScope.isSecure = function() {
-        return authentication.isSecured();
-    };
 });

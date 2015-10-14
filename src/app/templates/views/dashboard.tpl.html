@@ -42,7 +42,7 @@
                         <tr>
                             <th>{{ 'STORAGE' | translate }}: </th>
                             <td>
-                                <strong>{{ storagePercentage() }} {{ 'USED' | translate }}</strong>
+                                <strong>{{ storagePercentage() }}% {{ 'USED' | translate }}</strong>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
@@ -52,7 +52,7 @@
                                 <div class="usage">
                                     <em class="used">250 MB</em>
                                     <em class="bar">
-                                        <div class="amount" style="width: {{ storagePercentage() }}"></div>
+                                        <div class="amount" style="width: {{ storagePercentage() }}%"></div>
                                     </em>
                                     <em class="total">1000 MB</em>
                                 </div>
@@ -217,7 +217,7 @@
                                         <td>
                                             <label>
                                             <input type="checkbox" ng-model="plus.storage.checked" />
-                                            {{ 'EXTRA_STORAGE' | translate }}
+                                            {{ 'STORAGE' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
@@ -371,7 +371,7 @@
                                         <td>
                                             <label>
                                             <input type="checkbox" ng-model="business.storage.checked" />
-                                            {{ 'EXTRA_STORAGE' | translate }}
+                                            {{ 'STORAGE' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
@@ -464,7 +464,7 @@
                                         <td>
                                             <label>
                                                 <input type="checkbox" ng-model="business.employee.checked" />
-                                                {{ 'EMPLOYEE' | translate }}
+                                                {{ 'EMPLOYES' | translate }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
