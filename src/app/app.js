@@ -35,6 +35,7 @@ angular.module("proton", [
     "proton.models.eo",
     "proton.models.logs",
     "proton.models.events",
+    "proton.models.payments",
 
     // Config
     "proton.config",
@@ -192,7 +193,7 @@ angular.module("proton", [
     $rootScope.$stateParams = $stateParams;
 
     // SVG Polyfill for Edge
-    svg4everybody(); 
+    svg4everybody();
 
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
