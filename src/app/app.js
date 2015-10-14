@@ -49,7 +49,6 @@ angular.module("proton", [
     "proton.modals",
     "proton.attachments",
     "proton.tools",
-    "proton.contacts",
     "proton.event",
 
     // Directives
