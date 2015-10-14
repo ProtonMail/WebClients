@@ -192,7 +192,7 @@ angular.module("proton", [
     $rootScope.$stateParams = $stateParams;
 
     // SVG Polyfill for Edge
-    svg4everybody();
+    svg4everybody(); 
 
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
