@@ -29,7 +29,7 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
-## License
+### License
 
 Copyright (c) 2013-2015
 
@@ -38,3 +38,10 @@ Proton Technologies A.G. (Switzerland)
 Email: contact@protonmail.ch
 
 License: https://github.com/ProtonMail/WebClient/blob/master/license.md
+
+### Release Note
+
+Date of the release
+
+* FIX #1234
+* NEW #123

@@ -61,13 +61,13 @@
                         </span>
                     </span>
                     <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom" class="recipSpan">
-                        <span class="from" title="{{ message.SenderAddress }}">
-                            From: {{ message.SenderName || message.SenderAddress }}
+                        <span class="from" title="{{ message.Sender.Address }}">
+                            From: {{ message.Sender.Name || message.Sender.Address }}
                         </span>
                     </span>
                     <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault" class="recipSpan">
-                        <span title="{{ message.SenderAddress }}">
-                            {{ message.SenderName || message.SenderAddress }}
+                        <span title="{{ message.Sender.Address }}">
+                            {{ message.Sender.Name || message.Sender.Address }}
                         </span>
                     </span>
                 </td>
@@ -128,10 +128,10 @@
                         <span class="to">To: </span>{{ message.ToList | username }}
                     </span>
                     <span ng-init="message.showFrom = (showFrom(message) && !showTo(message))" ng-show="::message.showFrom">
-                        <span class="from">From: </span>{{ message.SenderName }}
+                        <span class="from">From: </span>{{ message.Sender.Name }}
                     </span>
                     <span ng-init="message.showDefault = (!showTo(message) && !showFrom(message))" ng-show="::message.showDefault">
-                        <span>{{ message.SenderName }}</span>
+                        <span>{{ message.Sender.Name }}</span>
                     </span>
                     <span class="pull-right">{{ message.Time | readableTime }}</span>
                 </span>

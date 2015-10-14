@@ -11,7 +11,7 @@
         </h1>
         <div class="pull-right">
             <span ng-bind-html="ago"></span>
-        </div>          
+        </div>
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}:</strong>
@@ -19,7 +19,8 @@
             </li>
             <li>
                 <strong>{{ 'TO' | translate }}:</strong>
-                <b>{{message.SenderName}}</b> <em>&lt;{{message.SenderAddress}}&gt;</em>
+
+                <b>{{message.Sender.Name}}</b> <em>&lt;{{message.Sender.Address}}&gt;</em>
             </li>
         </ul>
     </div>
@@ -36,7 +37,7 @@
 
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
 
-    <footer class="text-right"> 
+    <footer class="text-right">
         <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
         <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
         <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'SEND' | translate }}</button>

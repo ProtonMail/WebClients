@@ -18,7 +18,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     User,
     attachments,
     authentication,
-    contactManager,
     cacheMessages,
     notify,
     pmcw,

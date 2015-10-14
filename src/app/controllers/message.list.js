@@ -337,7 +337,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var result = false;
 
         for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
-            if( $scope.user.Addresses[i].Email === message.SenderAddress ) {
+            if( $scope.user.Addresses[i].Email === message.Sender.Address ) {
                 result = true;
             }
         }
