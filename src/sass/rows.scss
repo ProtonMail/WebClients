@@ -164,7 +164,8 @@
 			max-height: none;
 			padding: 1px 0;
 			.message {
-				padding: 0 25px;
+				padding: 0 25px !important;
+				margin: 0 !important;
 				&.unread {
 					margin: 0;
 					padding: 0 25px;

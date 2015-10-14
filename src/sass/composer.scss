@@ -45,9 +45,11 @@ body.maximizedComposer {
 			}
 		}
 		&.minimized {
-			height: auto;
+			height: 40px;
 			margin-top: 490px;
 			background: transparent;
+			overflow: hidden;
+			padding: 0 !important;
 			header {
 				border-radius: 2px;
 				.fa.fa-minus {

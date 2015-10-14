@@ -254,7 +254,9 @@ header#pm_header {
 		}
 		form.searchForm {
 			float: none;
-			margin: 13px auto;
+			margin: 0 auto;
+			position: relative;
+			top: 13px;
 			max-width: 32%;
 			input.query {
 				width: 50%;
