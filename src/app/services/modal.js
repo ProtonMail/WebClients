@@ -435,6 +435,9 @@ angular.module("proton.modals", [])
             this.month = '';
             this.year = '';
             this.cvc = '';
+            this.cart = params.cart;
+            this.currency = params.currency;
+            this.billing = params.billing;
 
             // Functions
             this.submit = function() {
@@ -454,6 +457,16 @@ angular.module("proton.modals", [])
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            this.total = function() {
+                var total = 0;
+
+                _.each(this.cart, function(element) {
+                    total += element.price;
+                });
+
+                return total;
             };
         }
     });

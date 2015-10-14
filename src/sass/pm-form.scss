@@ -1,5 +1,6 @@
 .pm_form {
     legend {
+        color: $primary;
         padding: 0;
         margin: 0;
         font-size: 20px;
@@ -53,10 +54,13 @@
         border-radius: 2px;
         position: relative;
         resize: none;
+        &:hover {
+            border-color: $border;
+        }
         &:focus {
             color: $primary;
             border-color: $primary;
-            outline: none;    
+            outline: none;
         }
         &[disabled],
         &.disabled {
@@ -145,5 +149,5 @@
                 width: 80%;
             }
         }
-    }    
+    }
 }

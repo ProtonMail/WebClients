@@ -241,7 +241,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ plus.storage.price | currency: currency }}</strong>
+                                            <strong>+ {{ plus.storage.price * plus.storage.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -272,7 +272,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ plus.domain.price | currency: currency }}</strong>
+                                            <strong>+ {{ plus.domain.price * plus.domain.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -303,7 +303,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ plus.address.price | currency: currency }}</strong>
+                                            <strong>+ {{ plus.address.price * plus.address.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
@@ -395,7 +395,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ business.storage.price | currency: currency }}</strong>
+                                            <strong>+ {{ business.storage.price * business.storage.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -426,7 +426,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ business.domain.price | currency: currency }}</strong>
+                                            <strong>+ {{ business.domain.price * business.domain.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -457,7 +457,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ business.address.price | currency: currency }}</strong>
+                                            <strong>+ {{ business.address.price * business.address.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -488,7 +488,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ business.employee.price | currency: currency }}</strong>
+                                            <strong>+ {{ business.employee.price * business.employee.number | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>

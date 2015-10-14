@@ -12,9 +12,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr ng-repeat="element in ctrl.cart">
+                        <td>{{ element.title }}</td>
+                        <td>{{ element.price | currency: ctrl.currency }}</td>
+                    </tr>
                     <tr>
-                        <td>Panda</td>
-                        <td>1000 EUR</td>
+                        <td>
+                            <strong>{{ 'TOTAL' | translate }}</strong>
+                        </td>
+                        <td>
+                            <strong>{{ ctrl.total() | currency: ctrl.currency }}</strong>
+                        </td>
                     </tr>
                 </tbody>
             </table>
