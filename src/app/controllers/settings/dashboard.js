@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal) {
+.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, Payments) {
     var pack = {
         storage: {
             checked: false,
@@ -22,7 +22,6 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    $scope.cart = [];
     $scope.currency = 'CHF';
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'basic';
@@ -103,7 +102,8 @@ angular.module("proton.controllers.Settings")
             if($scope[name][key].checked === true) {
                 cart.push({
                     title: $scope[name][key].title,
-                    price: $scope[name][key].number * $scope[name][key].price
+                    number: $scope[name][key].number,
+                    price: $scope[name][key].number * $scope[name][key].price * $scope.multiplication()
                 });
             }
         }
