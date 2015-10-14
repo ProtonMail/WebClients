@@ -20,7 +20,7 @@
         <ul class="infos">
             <li>
                 <strong>{{ 'FROM' | translate }}</strong>
-                <b>{{ message.SenderName }}</b> &lt;{{ message.SenderAddress }}&gt;
+                <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
                 <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
             </li>
             <li ng-if="message.ToList.length > 0">
