@@ -118,6 +118,14 @@ angular.module("proton", [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
+// Load stripe script: checkout
+.config(function() {
+    var script = document.createElement('script');
+
+    script.src = 'https://checkout.stripe.com/checkout.js';
+    document.body.appendChild(script);
+})
+
 .run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {

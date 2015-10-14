@@ -48,4 +48,8 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/group');
         }
     };
+})
+
+.factory('StripeCheckout', function ($window) {
+    return $window.StripeCheckout;
 });
