@@ -147,8 +147,8 @@
                     <div class="plans">
                         <div class="plan" ng-class="{'selected': plan === 'basic'}">
                             <h3>
-                                ProtonMail 
-                                <strong>Basic</strong> 
+                                ProtonMail
+                                <strong>Basic</strong>
                                 <small ng-show="plan === 'basic'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
@@ -171,8 +171,8 @@
                         </div>
                         <div class="plan middle" ng-class="{'selected': plan === 'plus'}">
                             <h3>
-                                ProtonMail 
-                                <strong>Plus</strong> 
+                                ProtonMail
+                                <strong>Plus</strong>
                                 <small ng-show="plan === 'plus'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
@@ -204,8 +204,8 @@
                                     <tr>
                                         <td colspan="2">
                                             <label>
-                                            <input type="checkbox" ng-model="plus.twofactorauth.checked" /> 
-                                            {{ 'TWO_FACTOR_AUTH' | translate }} 
+                                            <input type="checkbox" ng-model="plus.twofactorauth.checked" />
+                                            {{ 'TWO_FACTOR_AUTH' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
@@ -216,28 +216,29 @@
                                     <tr>
                                         <td>
                                             <label>
-                                            <input type="checkbox" ng-model="plus.storage.checked" /> 
-                                            {{ 'EXTRA_STORAGE' | translate }} 
+                                            <input type="checkbox" ng-model="plus.storage.checked" />
+                                            {{ 'EXTRA_STORAGE' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ plus.storage.number }} GB <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 1">1 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 2">2 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 3">3 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 4">4 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 5">5 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 6">6 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 7">7 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 8">8 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 9">9 GB</a>
+                                                    <a href="" ng-click="plus.storage.number = 10">10 GB</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ plus.storage.price | currency: currency }}</strong>
@@ -246,28 +247,29 @@
                                     <tr>
                                         <td>
                                             <label>
-                                                <input type="checkbox" ng-model="plus.domain.checked" /> 
-                                                {{ 'CUSTOM_DOMAIN' | translate }} 
+                                                <input type="checkbox" ng-model="plus.domain.checked" />
+                                                {{ 'CUSTOM_DOMAIN' | translate }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ plus.domain.number }} <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="plus.domain.number = 1">1</a>
+                                                    <a href="" ng-click="plus.domain.number = 2">2</a>
+                                                    <a href="" ng-click="plus.domain.number = 3">3</a>
+                                                    <a href="" ng-click="plus.domain.number = 4">4</a>
+                                                    <a href="" ng-click="plus.domain.number = 5">5</a>
+                                                    <a href="" ng-click="plus.domain.number = 6">6</a>
+                                                    <a href="" ng-click="plus.domain.number = 7">7</a>
+                                                    <a href="" ng-click="plus.domain.number = 8">8</a>
+                                                    <a href="" ng-click="plus.domain.number = 9">9</a>
+                                                    <a href="" ng-click="plus.domain.number = 10">10</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ plus.domain.price | currency: currency }}</strong>
@@ -276,28 +278,29 @@
                                     <tr>
                                         <td>
                                             <label>
-                                                <input type="checkbox" ng-model="plus.address.checked" /> 
-                                                {{ 'ADDRESSES' | translate }} 
+                                                <input type="checkbox" ng-model="plus.address.checked" />
+                                                {{ 'ADDRESSES' | translate }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ plus.address.number }} <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="plus.address.number = 1">1</a>
+                                                    <a href="" ng-click="plus.address.number = 2">2</a>
+                                                    <a href="" ng-click="plus.address.number = 3">3</a>
+                                                    <a href="" ng-click="plus.address.number = 4">4</a>
+                                                    <a href="" ng-click="plus.address.number = 5">5</a>
+                                                    <a href="" ng-click="plus.address.number = 6">6</a>
+                                                    <a href="" ng-click="plus.address.number = 7">7</a>
+                                                    <a href="" ng-click="plus.address.number = 8">8</a>
+                                                    <a href="" ng-click="plus.address.number = 9">9</a>
+                                                    <a href="" ng-click="plus.address.number = 10">10</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ plus.address.price | currency: currency }}</strong>
@@ -306,9 +309,9 @@
                                 </table>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> 
+                                <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ (5 + addition(plus)) * multiplication() | currency: currency }} 
+                                    {{ (5 + addition(plus)) * multiplication() | currency: currency }}
                                     <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
@@ -319,14 +322,14 @@
                         </div>
                         <div class="plan" ng-class="{'selected': plan === 'business'}">
                             <h3>
-                                ProtonMail 
-                                <strong>Business</strong> 
+                                ProtonMail
+                                <strong>Business</strong>
                                 <small ng-show="plan === 'business'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB {{ 'STORAGE' | translate }}</strong>
+                                    <strong>10000 MB {{ 'STORAGE' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
@@ -355,8 +358,8 @@
                                     <tr>
                                         <td colspan="2">
                                             <label>
-                                            <input type="checkbox" ng-model="business.twofactorauth.checked" /> 
-                                            {{ 'TWO_FACTOR_AUTH' | translate }} 
+                                            <input type="checkbox" ng-model="business.twofactorauth.checked" />
+                                            {{ 'TWO_FACTOR_AUTH' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
@@ -367,28 +370,29 @@
                                     <tr>
                                         <td>
                                             <label>
-                                            <input type="checkbox" ng-model="business.storage.checked" /> 
-                                            {{ 'EXTRA_STORAGE' | translate }} 
+                                            <input type="checkbox" ng-model="business.storage.checked" />
+                                            {{ 'EXTRA_STORAGE' | translate }}
                                             <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ business.storage.number }} GB <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 1">1 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 2">2 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 3">3 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 4">4 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 5">5 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 6">6 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 7">7 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 8">8 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 9">9 GB</a>
+                                                    <a href="" ng-click="business.storage.number = 10">10 GB</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ business.storage.price | currency: currency }}</strong>
@@ -397,28 +401,29 @@
                                     <tr>
                                         <td>
                                             <label>
-                                                <input type="checkbox" ng-model="business.domain.checked" /> 
-                                                {{ 'CUSTOM_DOMAIN' | translate }} 
+                                                <input type="checkbox" ng-model="business.domain.checked" />
+                                                {{ 'CUSTOM_DOMAIN' | translate }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ business.domain.number }} <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="business.domain.number = 1">1</a>
+                                                    <a href="" ng-click="business.domain.number = 2">2</a>
+                                                    <a href="" ng-click="business.domain.number = 3">3</a>
+                                                    <a href="" ng-click="business.domain.number = 4">4</a>
+                                                    <a href="" ng-click="business.domain.number = 5">5</a>
+                                                    <a href="" ng-click="business.domain.number = 6">6</a>
+                                                    <a href="" ng-click="business.domain.number = 7">7</a>
+                                                    <a href="" ng-click="business.domain.number = 8">8</a>
+                                                    <a href="" ng-click="business.domain.number = 9">9</a>
+                                                    <a href="" ng-click="business.domain.number = 10">10</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ business.domain.price | currency: currency }}</strong>
@@ -427,38 +432,70 @@
                                     <tr>
                                         <td>
                                             <label>
-                                                <input type="checkbox" ng-model="business.address.checked" /> 
-                                                {{ 'ADDRESSES' | translate }} 
+                                                <input type="checkbox" ng-model="business.address.checked" />
+                                                {{ 'ADDRESSES' | translate }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
                                             <span class="pm_buttons">
-                                                <a href="">1 GB</a>
-                                                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown=""></a>
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ business.address.number }} <i class="fa fa-angle-down"></i>
+                                                </a>
                                                 <span class="pm_dropdown">
-                                                    <a>1 GB</a>
-                                                    <a>2 GB</a>
-                                                    <a>3 GB</a>
-                                                    <a>4 GB</a>
-                                                    <a>5 GB</a>
-                                                    <a>6 GB</a>
-                                                    <a>7 GB</a>
-                                                    <a>8 GB</a>
-                                                    <a>9 GB</a>
-                                                    <a>10 GB</a>
+                                                    <a href="" ng-click="business.address.number = 1">1</a>
+                                                    <a href="" ng-click="business.address.number = 2">2</a>
+                                                    <a href="" ng-click="business.address.number = 3">3</a>
+                                                    <a href="" ng-click="business.address.number = 4">4</a>
+                                                    <a href="" ng-click="business.address.number = 5">5</a>
+                                                    <a href="" ng-click="business.address.number = 6">6</a>
+                                                    <a href="" ng-click="business.address.number = 7">7</a>
+                                                    <a href="" ng-click="business.address.number = 8">8</a>
+                                                    <a href="" ng-click="business.address.number = 9">9</a>
+                                                    <a href="" ng-click="business.address.number = 10">10</a>
                                                 </span>
-                                            </span>                                            
+                                            </span>
                                         </td>
                                         <td class="text-right">
                                             <strong>+ {{ business.address.price | currency: currency }}</strong>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" ng-model="business.employee.checked" />
+                                                {{ 'EMPLOYEE' | translate }}
+                                                <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <span class="pm_buttons">
+                                                <a href="" class="pm_trigger" ng-dropdown="">
+                                                    {{ business.employee.number }} <i class="fa fa-angle-down"></i>
+                                                </a>
+                                                <span class="pm_dropdown">
+                                                    <a href="" ng-click="business.employee.number = 1">1</a>
+                                                    <a href="" ng-click="business.employee.number = 2">2</a>
+                                                    <a href="" ng-click="business.employee.number = 3">3</a>
+                                                    <a href="" ng-click="business.employee.number = 4">4</a>
+                                                    <a href="" ng-click="business.employee.number = 5">5</a>
+                                                    <a href="" ng-click="business.employee.number = 6">6</a>
+                                                    <a href="" ng-click="business.employee.number = 7">7</a>
+                                                    <a href="" ng-click="business.employee.number = 8">8</a>
+                                                    <a href="" ng-click="business.employee.number = 9">9</a>
+                                                    <a href="" ng-click="business.employee.number = 10">10</a>
+                                                </span>
+                                            </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <strong>+ {{ business.employee.price | currency: currency }}</strong>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
                             <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong> 
-                                <span>{{ (10 + addition(business)) * multiplication() | currency: currency }} 
+                                <strong>{{ 'TOTAL' | translate }}:</strong>
+                                <span>{{ (10 + addition(business)) * multiplication() | currency: currency }}
                                     <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
