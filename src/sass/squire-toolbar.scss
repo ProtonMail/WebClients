@@ -30,8 +30,9 @@
 			color: #333;
 		}
 		&.separator {
-			width: 1px;
-			min-width: 1px;
+			width: 1px !important;
+			min-width: 1px !important;
+			max-width: 1px !important;
 			-webkit-flex-grow: initial;
 			    -ms-flex-positive: initial;
 			        flex-grow: initial;
