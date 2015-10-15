@@ -5,9 +5,85 @@
     <div class="settings" ng-height>
         <div class="row">
             <section class="setting pm_form full">
-                <legend>{{ 'USERS' | translate }}</legend>
-                <button type="button" class="pm_button primary" ng-click="openUserModal()">Open User Modal</button>
+                <legend>{{ 'ORGANIZATION' | translate }}</legend>
+                <div class="pm_grid">
+	            	<div class="col-1-2">
+		            	<form>
+	            			<div class="col left">
+	            				<label for="orgName">Organization Name</label>
+	            			</div>
+	            			<div class="col right">
+	            				<input id="orgName" type="text" class="margin" placeholder="Organization Name">
+	            				<button class="pm_button primary" type="submit">Save</button>
+	            			</div>
+	            		</form>
+	            	</div>
+	            	<div class="col-1-3">
+	                    <table class="pm_table plain" id="usersTable">
+	                        <tbody>
+	                        	<tr>
+		                            <th width="7rem">Number of User: </th>
+		                            <td>
+		                                <strong>2 of 2 used</strong>
+		                            </td>
+		                            <td>
+		                            	<span>
+		                                    <a href="#">Upgrade</a>
+		                                </span>
+		                            </td>
+		                        </tr>
+		                        <tr>
+		                            <th>Organization Storage: </th>
+		                            <td>
+		                                <strong>10.000 MB</strong>
+		                            </td>
+		                            <td>
+		                                <span>
+		                                    <a href="#">Upgrade</a>
+		                                </span>
+		                            </td>
+		                        </tr>
+		                    </tbody>
+	                    </table>
+	                    <p class="help-block">
+		                    <small><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</small>
+	                    </p>
+	            	</div>
+	            </div>
             </section>
         </div>
+
+        <div class="row">
+            <section class="setting pm_form full">
+                <legend>{{ 'USERS' | translate }}</legend>
+                <table class="pm_table hidden-xs">
+		            <thead>
+		                <tr>
+		                    <th class="username">Username</th>
+		                    <th class="role">Role</th>
+		                    <th class="storage">Storage</th>
+		                    <th class="addresses">Addresses</th>
+		                    <th class="actions">Actions</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+						<tr>
+		                    <td class="username">default@emailaddresses.com</td>
+		                    <td class="role">Master</td>
+		                    <td class="storage">553 MB used</td>
+		                    <td class="addresses">address1@example.com (DEFAULT)</td>
+		                    <td class="actions">
+			                    <a href="#">MANAGE PASSWORDS</a>
+			                    <a href="#">GENERATE KEYS</a>
+			                    <a href="#">ENTER MAILBOX</a>
+							</td>
+		                </tr>
+		            </tbody>
+		        </table>
+            </section>
+        </div>
+
+        <button type="button" class="pm_button primary" ng-click="openUserModal()">Add New User</button>
+
     </div>
 </div>

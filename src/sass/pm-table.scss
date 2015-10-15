@@ -18,11 +18,35 @@
                 text-align: right;
             }
         }
+        th {
+            color: $gray-light;
+            background: transparent;
+            text-transform: none;
+            width: 7rem;
+        }
+        th, td {
+            line-height: 1.75rem;
+            height: 1.75rem;
+            vertical-align: top;
+        }
+        td strong {
+            font-weight: 700;
+        }
+        td span {
+            display: block;
+            text-align: right;
+        }
+        a {
+            color: $primary;
+            text-decoration: none;
+            text-transform: uppercase;
+        }        
     }
     th, td {
         line-height: $rowHeight;
         padding: 0 1rem;
         text-align: left;
+        vertical-align: top;
         .fa.fa-sort {
             color: $gray-light;
             margin-right: .25rem;

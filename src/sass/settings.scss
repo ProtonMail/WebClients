@@ -8,6 +8,11 @@
     #settingsSave {
     	margin: 15px 25px 15px 0;
     }
+    #usersTable {
+        th {
+            width: 10rem;
+        }
+    }
     #plans {
     	header {
     		padding-bottom: 1rem;
@@ -188,31 +193,6 @@
     			bottom: 0;
     			background: $primary;
     		}
-    	}
-    }
-    .well {
-    	th {
-    		color: $gray-light;
-    		background: transparent;
-    		text-transform: none;
-    		width: 7rem;
-    	}
-    	th, td {
-    		line-height: 1.75rem;
-    		height: 1.75rem;
-    		vertical-align: top;
-    	}
-    	td strong {
-    		font-weight: 700;
-    	}
-    	td span {
-    		display: block;
-    		text-align: right;
-    	}
-    	a {
-    		color: $primary;
-    		text-decoration: none;
-            text-transform: uppercase;
     	}
     }
     .pm_tabs {
