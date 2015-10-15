@@ -61,21 +61,20 @@ angular.module("proton.controllers.Secured", [])
             Email:          ''
         };
 
-        console.log(form);
-
-        takeScreenshot();
-        bugModal.activate({
-            params: {
-                form: form,
-                submit: function(form) {
-                    sendBugReport(form).then(function() {
+        takeScreenshot().then(function() {
+            bugModal.activate({
+                params: {
+                    form: form,
+                    submit: function(form) {
+                        sendBugReport(form).then(function() {
+                            bugModal.deactivate();
+                        });
+                    },
+                    cancel: function() {
                         bugModal.deactivate();
-                    });
-                },
-                cancel: function() {
-                    bugModal.deactivate();
+                    }
                 }
-            }
+            });
         });
     };
 
@@ -117,6 +116,8 @@ angular.module("proton.controllers.Secured", [])
      *  Take a screenshot and store it
      */
     var takeScreenshot = function() {
+        var deferred = $q.defer();
+
         if (html2canvas) {
             html2canvas(document.body, {
                 onrendered: function(canvas) {
@@ -125,9 +126,15 @@ angular.module("proton.controllers.Secured", [])
                     } catch(e) {
                         $scope.screen = canvas.toDataURL().split(',')[1];
                     }
+
+                    deferred.resolve();
                 }
             });
+        } else {
+            deferred.resolve();
         }
+
+        return deferred.promise;
     };
 
     var uploadScreenshot = function(form) {
