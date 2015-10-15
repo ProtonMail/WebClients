@@ -70,12 +70,16 @@ angular.module("proton.event", ["proton.constants"])
 				if(angular.isDefined(unreads)) {
 	            	_.each(unreads.Labels, function(obj) { cacheCounters.update(obj.LabelID, undefined, obj.Count); });
 		            _.each(unreads.Locations, function(obj) { cacheCounters.update(obj.Location, undefined, obj.Count); });
+					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, undefined, unreads.Starred);
+					$rootScope.dontUpdateNextCounter = true;
 				}
 			},
 			manageTotals: function(totals) {
 				if(angular.isDefined(totals)) {
-					_.each(totals.Labels, function(obj) { cacheCounters.update(obj.LabelID, obj.Count); });
-					_.each(totals.Locations, function(obj) { cacheCounters.update(obj.Location, obj.Count); });
+					_.each(totals.Labels, function(obj) { cacheCounters.update(obj.LabelID, obj.Count, undefined); });
+					_.each(totals.Locations, function(obj) { cacheCounters.update(obj.Location, obj.Count, undefined); });
+					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, totals.Starred, undefined);
+					$rootScope.dontUpdateNextCounter = true;
 				}
 			},
 			manageMessages: function(messages) {

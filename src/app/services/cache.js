@@ -435,6 +435,8 @@ angular.module("proton.cache", [])
             delete hash[event.ID];
         }
 
+
+
         deferred.resolve();
 
         return deferred.promise;
@@ -501,7 +503,7 @@ angular.module("proton.cache", [])
         }
 
         // labels
-        if(labels.length > 0) {
+        if(labels && labels.length > 0) {
             for (var i = 0; i < labels.length; i++) {
                 var labelId = labels[i];
 
@@ -602,7 +604,11 @@ angular.module("proton.cache", [])
                     }
                 }
 
-                manageCounters(message, newMessage);
+                if($rootScope.dontUpdateNextCounter === true) {
+                    $rootScope.dontUpdateNextCounter = false;
+                } else {
+                    manageCounters(message, newMessage);
+                }
 
                 updateHash(event.ID, newMessage);
 
