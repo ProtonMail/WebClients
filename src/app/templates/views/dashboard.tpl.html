@@ -143,8 +143,11 @@
                         </div>
                     </header>
                     <div class="plans">
+
                         <div class="plan" ng-class="{'selected': plan === 'basic'}">
                             <h3>
+                                <em></em>
+                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Basic</strong>
                                 <small ng-show="plan === 'basic'">({{ 'YOUR_PLAN' | translate }})</small>
@@ -167,8 +170,11 @@
                                 <a href="#">ALREADY INCLUDED IN YOUR PLAN</a>
                             </div>
                         </div>
+
                         <div class="plan middle" ng-class="{'selected': plan === 'plus'}">
                             <h3>
+                                <em></em>
+                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Plus</strong>
                                 <small ng-show="plan === 'plus'">({{ 'YOUR_PLAN' | translate }})</small>
@@ -318,8 +324,11 @@
                                 <a href="" ng-click="upgrade('plus')">{{ 'UPGRADE_TO_PLUS_PLAN' | translate }}</a>
                             </div>
                         </div>
+
                         <div class="plan" ng-class="{'selected': plan === 'business'}">
                             <h3>
+                                <em></em>
+                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Business</strong>
                                 <small ng-show="plan === 'business'">({{ 'YOUR_PLAN' | translate }})</small>
@@ -504,6 +513,7 @@
                                 </a>
                             </div>
                         </div>
+
                     </div>
                 </form>
 

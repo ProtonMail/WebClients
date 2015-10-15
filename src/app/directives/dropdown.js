@@ -17,25 +17,28 @@ angular.module("proton.dropdown", [])
             return false;
         });
 
-        element.parent().find('.pm_dropdown')
-        .bind('mouseleave', function() {
-            timer = $timeout(function () {
-                hideDropdown(element);
-            }, 400);
-        })
-        .bind('mouseenter', function() {
-            $timeout.cancel(timer);
-        });
+        // If there are no touch events, we can make use of mouse events
+        if (!Modernizr.touchevents) {
+            element.parent().find('.pm_dropdown')
+            .bind('mouseleave', function() {
+                timer = $timeout(function () {
+                    hideDropdown(element);
+                }, 400);
+            })
+            .bind('mouseenter', function() {
+                $timeout.cancel(timer);
+            });
 
-        element
-        .bind('mouseleave', function() {
-            timer = $timeout(function () {
-                hideDropdown(element);
-            }, 400);
-        })
-        .bind('mouseenter', function() {
-            $timeout.cancel(timer);
-        });
+            element
+            .bind('mouseleave', function() {
+                timer = $timeout(function () {
+                    hideDropdown(element);
+                }, 400);
+            })
+            .bind('mouseenter', function() {
+                $timeout.cancel(timer);
+            });
+        }
 
         function showDropdown(element) {
             var parent = element.parent();

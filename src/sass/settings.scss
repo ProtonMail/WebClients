@@ -59,12 +59,46 @@
     			-webkit-flex-direction: column;
     		    -ms-flex-direction: column;
 		        flex-direction: column;
+                transition: border-color .25s linear;
+                overflow: hidden;
 		        &:hover {
 		        	border-color: $primary;
+                    h3 em {
+                        top: 0;
+                    }
 		        }
 		        &.middle {
 		        	margin: 0 10px;
 		        }
+                h3 {
+                    position: relative;
+                    em {
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 50px 50px 0;
+                        border-color: transparent $primary transparent transparent;
+                        position: absolute;
+                        right: 0;
+                        top: -50px;
+                        -webkit-transition: top .25s ease;
+                           -moz-transition: top .25s ease;
+                            -ms-transition: top .25s ease;
+                             -o-transition: top .25s ease;
+                                transition: top .25s ease;
+                    }
+                    i {
+                        width: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        color: $white;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 2;
+                        font-size: 14px;
+                    }
+                }
 		        h3,
 		        .price {
 		        	line-height: 70px;
@@ -110,6 +144,10 @@
                         height: 26px;
                         line-height: 26px;
                         & > a {
+                            height: 26px;
+                            line-height: 26px;
+                        }
+                        .fa {
                             height: 26px;
                             line-height: 26px;
                         }

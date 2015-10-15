@@ -35,6 +35,9 @@
         td span {
             display: block;
             text-align: right;
+            &.pm_dropdown {
+                display: none;
+            }
         }
         a {
             color: $primary;
