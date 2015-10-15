@@ -187,6 +187,23 @@ angular.module("proton.filters",[])
     };
 })
 
+.filter('bytes', function() {
+	return function(bytes, precision) {
+		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) {
+            return '-';
+        } else {
+            var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
+    			number = Math.floor(Math.log(bytes) / Math.log(1024));
+
+    		if (typeof precision === 'undefined') {
+                precision = 1;
+            }
+
+    		return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
+        }
+	};
+})
+
 .filter("contrast", function () {
     return function (input, character) {
         if (!input) {
