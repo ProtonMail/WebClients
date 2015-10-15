@@ -102,6 +102,32 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Manage the updating to calcultate the total number of messages and unread messages
+     * @param {Object} oldMessage
+     * @param {Object} newMessage
+     */
+    var manageCounters = function(oldMessage, newMessage) {
+        var oldTotalVector = vector(oldMessage, false);
+        var oldUnreadVector = vector(oldMessage, true);
+        var newTotalVector = vector(newMessage, false);
+        var newUnreadVector = vector(newMessage, true);
+        var keys = Object.keys(oldTotalVector);
+
+        _.each(keys, function(location) {
+            var currentTotal = cacheCounters.total(location);
+            var currentUnread = cacheCounters.unread(location);
+            var deltaTotal = newTotalVector[location] - oldTotalVector[location];
+            var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
+
+            cacheCounters.update(
+                location,
+                currentTotal + deltaTotal,
+                currentUnread + deltaUnread
+            );
+        });
+    };
+
+    /**
     * Insert message in a specific cache location, if it's possible
     * @param {String} location
     * @param {Object} message
@@ -576,24 +602,7 @@ angular.module("proton.cache", [])
                     }
                 }
 
-                var oldTotalVector = vector(message, false);
-                var oldUnreadVector = vector(message, true);
-                var newTotalVector = vector(newMessage, false);
-                var newUnreadVector = vector(newMessage, true);
-                var keys = Object.keys(oldTotalVector);
-
-                _.each(keys, function(location) {
-                    var currentTotal = cacheCounters.total(location);
-                    var currentUnread = cacheCounters.unread(location);
-                    var deltaTotal = newTotalVector[location] - oldTotalVector[location];
-                    var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
-
-                    cacheCounters.update(
-                        location,
-                        currentTotal + deltaTotal,
-                        currentUnread + deltaUnread
-                    );
-                });
+                manageCounters(message, newMessage);
 
                 updateHash(event.ID, newMessage);
 
@@ -735,7 +744,7 @@ angular.module("proton.cache", [])
 
         Message.query(request).$promise.then(function(result) {
             var messages = result.Messages;
-            
+
             // store metadata in hash
             for (var i = 0; i < messages.length; i++) {
                 var message = messages[i];
