@@ -435,8 +435,6 @@ angular.module("proton.cache", [])
             delete hash[event.ID];
         }
 
-
-
         deferred.resolve();
 
         return deferred.promise;
