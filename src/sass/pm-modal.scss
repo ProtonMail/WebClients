@@ -81,3 +81,23 @@
         }
     }
 }
+
+
+@media (max-width: $tablet) {
+
+    .pm_modal {
+        .modal-dialog {
+            position: absolute;
+            z-index: 2;
+            background: $white;
+            left: 5%;
+            right: 5%;
+            top: 1rem;
+            bottom: 1rem;
+            width: 90%;
+            margin: 0;
+            box-sizing: border-box;  
+        }
+    }  
+
+}
