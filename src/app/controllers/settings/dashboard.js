@@ -25,7 +25,7 @@ angular.module("proton.controllers.Settings")
     $scope.currency = 'CHF';
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'basic';
-    $scope.billing = 'monthly';
+    $scope.billing = 1; // one month
     $scope.plus = angular.copy(pack);
     $scope.plus.base = {
         checked: true,
@@ -45,16 +45,6 @@ angular.module("proton.controllers.Settings")
         price: 5,
         number: 1,
         title: $translate.instant('ADDITIONAL_EMPLOYES')
-    };
-
-    $scope.multiplication = function() {
-        var multiple = 1;
-
-        if($scope.billing === 'yearly') {
-            multiple = 12;
-        }
-
-        return multiple;
     };
 
     $scope.addition = function(package) {
@@ -90,7 +80,7 @@ angular.module("proton.controllers.Settings")
                 cart.push({
                     title: $scope[name][key].title,
                     number: $scope[name][key].number,
-                    price: $scope[name][key].number * $scope[name][key].price * $scope.multiplication()
+                    price: $scope[name][key].number * $scope[name][key].price * $scope.billing
                 });
             }
         }

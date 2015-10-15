@@ -135,10 +135,10 @@
                         <div class="group">
                             <label>{{ 'BILLING' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="" ng-click="billing = 'monthly'" ng-class="{'active': billing === 'monthly'}">
+                                <a href="" ng-click="billing = 1" ng-class="{'active': billing === 1}">
                                 {{ 'MONTHLY' | translate }}
                                 </a>
-                                <a href="" ng-click="billing = 'yearly'" ng-class="{'active': billing === 'yearly'}" class="divider">
+                                <a href="" ng-click="billing = 12" ng-class="{'active': billing === 12}" class="divider">
                                 {{ 'YEARLY' | translate }} <em>( SAVE 25%)</em>
                                 </a>
                             </div>
@@ -188,7 +188,7 @@
                                     <i class="fa fa-check"></i>
                                     <strong>5 {{ 'ADDRESSES' | translate }}</strong>
                                 </p>
-                                <p ng-show="billing === 'yearly'">
+                                <p ng-show="billing === 12">
                                     <i class="fa fa-check"></i>
                                     <strong class="text-green">Save 25%</strong>
                                 </p>
@@ -311,9 +311,9 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ (5 + addition(plus)) * multiplication() | currency: currency }}
-                                    <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
+                                    {{ (5 + addition(plus)) * billing | currency: currency }}
+                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
@@ -343,7 +343,7 @@
                                     <i class="fa fa-check"></i>
                                     <strong>2 {{ 'EMPLOYES' | translate }}</strong>
                                 </p>
-                                <p ng-show="billing === 'yearly'">
+                                <p ng-show="billing === 12">
                                     <i class="fa fa-check"></i>
                                     <strong class="text-green">Save 25%</strong>
                                 </p>
@@ -495,9 +495,9 @@
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>{{ (10 + addition(business)) * multiplication() | currency: currency }}
-                                    <span ng-show="billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
+                                <span>{{ (10 + addition(business)) * billing | currency: currency }}
+                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
