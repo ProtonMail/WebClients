@@ -3,19 +3,10 @@ angular.module("proton.controllers.Secured", [])
 .controller("SecuredController", function(
     $scope,
     $rootScope,
-    $q,
-    $state,
-    $translate,
     authentication,
-    Bug,
-    bugModal,
-    CONFIG,
     eventManager,
     cacheCounters,
-    cacheMessages,
-    networkActivityTracker,
-    notify,
-    tools
+    cacheMessages
 ) {
     $scope.user = authentication.user;
 
@@ -42,11 +33,28 @@ angular.module("proton.controllers.Secured", [])
             return '';
         }
     };
+})
+
+.run(function(
+    $rootScope,
+    $q,
+    $state,
+    $translate,
+    authentication,
+    Bug,
+    bugModal,
+    CONFIG,
+    networkActivityTracker,
+    notify,
+    tools
+) {
+    var screen;
 
     /**
      * Open report modal
      */
-    $scope.openReportModal = function() {
+    $rootScope.openReportModal = function() {
+        console.log('openReportModal');
         var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
         var form = {
             OS:             tools.getOs(),
@@ -122,9 +130,9 @@ angular.module("proton.controllers.Secured", [])
             html2canvas(document.body, {
                 onrendered: function(canvas) {
                     try {
-                        $scope.screen = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+                        screen = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
                     } catch(e) {
-                        $scope.screen = canvas.toDataURL().split(',')[1];
+                        screen = canvas.toDataURL().split(',')[1];
                     }
 
                     deferred.resolve();
@@ -147,7 +155,7 @@ angular.module("proton.controllers.Secured", [])
             },
             type: 'POST',
             data: {
-                'image': $scope.screen
+                'image': screen
             },
             dataType: 'json',
             success: function(response) {
