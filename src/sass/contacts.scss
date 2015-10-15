@@ -1,5 +1,3 @@
-
-
 #pm_contacts {
 	padding: 0 25px;
 	display: -webkit-flex;
@@ -13,6 +11,12 @@
 	.tableWrapper {}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
     #pm_contacts {}
+}
+
+@media (max-width: $tablet) {
+	#pm_contacts #pm_toolbar {
+		padding: 14px 0 0;
+	}
 }

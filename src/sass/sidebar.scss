@@ -285,7 +285,7 @@ section.sidebar {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
     body.secure #pm_background {
         position: fixed;
         z-index: 8;

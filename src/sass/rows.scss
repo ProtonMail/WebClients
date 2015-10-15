@@ -155,7 +155,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
 	#pm_rows {
 		padding: 0;
 		.list {
@@ -323,6 +323,19 @@
 		}
 		.placeholderSpan {
 			display: none !important;
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	#pm_rows {
+		.list {
+			.message {
+				.pm_checkbox {
+					width: 1.5rem;
+					min-width: 1.5rem;
+				}
+			}
 		}
 	}
 }

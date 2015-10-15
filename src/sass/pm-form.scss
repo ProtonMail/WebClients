@@ -78,6 +78,9 @@
         border-radius: 2px;
         position: relative;
         resize: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
         &:hover {
             border-color: $border;
         }

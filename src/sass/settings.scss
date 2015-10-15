@@ -357,7 +357,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
     #pm_settings {}
 }
 
@@ -373,6 +373,13 @@
                     clear: both;
                     margin-bottom: 1rem;
                 }
+            }
+        }
+        #invoicesTable {
+            th, 
+            td {
+                padding: 10px 1rem;
+                line-height: 20px;
             }
         }
         #plans {

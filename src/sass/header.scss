@@ -132,6 +132,9 @@ header#pm_header {
 			display: block;
 			border: none;
 			padding: 0;
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			        appearance: none;
 			position: relative;
 			border-radius: 0 35px 35px 0;
 			-webkit-flex-grow: 1;
@@ -231,7 +234,7 @@ header#pm_header {
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
 	header#pm_header {
 		.compose {
 			display: block;

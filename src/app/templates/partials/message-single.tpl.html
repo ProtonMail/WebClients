@@ -9,10 +9,10 @@
         </span>
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>
-            <span>
+            <span class="person">
                 <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em>{{ ::message.SenderName }}</em>
-                <i>&lt;{{ ::message.SenderAddress }}&gt;</i>
+                <strong>&lt;{{ ::message.SenderAddress }}&gt;</strong>
             </span>
         </span>
     </header>
@@ -67,7 +67,8 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email | contact }}</em>
+                        <em>{{ email | username }}</em> 
+                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>
@@ -76,7 +77,8 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email | contact }}</em>
+                        <em>{{ email | username }}</em> 
+                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>
@@ -85,14 +87,16 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email | contact }}</em>
+                        <em>{{ email | username }}</em> 
+                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>
             <div class="meta">
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
-                        {{ label.Name }}
+                        <em>{{ getLabel(id).Name }}</em>
+                        <i>{{ getLabel(id).Name | three }}</i>
                         <a href="" ng-click="detachLabel(label.ID)" class="labelClose">
                             <i class="fa fa-times"></i>
                         </a>

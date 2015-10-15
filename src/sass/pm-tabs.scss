@@ -26,3 +26,14 @@
         }
     }
 }
+
+@media (max-width: $mobile) {
+    .pm_tabs {
+        li {
+            a {
+                padding: 0 5px;
+                font-size: 10px;
+            }
+        }
+    }    
+}

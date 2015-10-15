@@ -68,13 +68,14 @@
         &.name {
             padding-left: 0;
             width: 300px;
-            span {
-                width: 300px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: block;
-                white-space: nowrap;
-            }
+        }
+        span {
+            width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            white-space: nowrap;
+            max-width: 100%;
         }
         &.email {
             padding-left: 0;

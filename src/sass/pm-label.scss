@@ -53,6 +53,12 @@
 		margin-left: 5px;
 		font-weight: bold;
 		box-sizing: border-box;
+		i, em {
+			font-style: normal;
+		}
+		i {
+			display: none;
+		}
 		&:hover {
 			z-index: 99 !important;
 		}
@@ -104,6 +110,28 @@
 		&:before {
 			background: linear-gradient(to right, rgba(246,246,246,0) 0%,rgba(246,246,246,1) 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f6f6f6', endColorstr='#f6f6f6',GradientType=1 );
+		}
+	}
+}
+
+
+@media (max-width: $tablet) {
+	.pm_labels {
+		min-width: initial;
+		width: initial;
+		.pm_label {
+			position: static !important;
+			i, em {
+				font-style: normal;
+			}
+			em {
+				display: none;
+			}
+			i {
+				display: block;
+			    width: 1rem;
+			    text-align: center;
+			}
 		}
 	}
 }

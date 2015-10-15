@@ -169,7 +169,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
     #pm_columns {
     	margin: 0;
     	.main > label {

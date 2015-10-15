@@ -32,7 +32,10 @@
         </header>
         <article ng-click="navigateToMessage($event, message)">
             <p class="pm_labels" ng-if="message.LabelIDs.length">
-                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">
+                    <em>{{ getLabel(id).Name }}</em>
+                    <i>{{ getLabel(id).Name | three }}</i>
+                </span>
             </p>
             <p>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -72,7 +75,10 @@
             {{ message.Subject }}
             </span>
             <span class="pm_labels" ng-if="message.LabelIDs.length">
-                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">{{ getLabel(id).Name }}</span>
+                <span ng-repeat="id in message.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getColorLabel(id)">
+                    <em>{{ getLabel(id).Name }}</em>
+                    <i>{{ getLabel(id).Name | three }}</i>
+                </span>
             </span>
         </span>
         <span class="size">{{ message.Size | humanSize }}</span>

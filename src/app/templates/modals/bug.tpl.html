@@ -21,7 +21,6 @@
                         <select
                         ng-model="ctrl.form.OS"
                         tabindex="1"
-                        autofocus
                         name="bug_os"
                         id="bug_os"
                         class="margin">
@@ -128,7 +127,7 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <a class="pm_button" ng-click="close()">{{ 'CANCEL' | translate }}</a>
+            <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
             <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="ctrl.submit()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
         </div>
     </div>

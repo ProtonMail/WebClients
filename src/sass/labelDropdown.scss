@@ -20,6 +20,7 @@
 		float: none;
 		padding-left: 30px;
 		height: 25px;
+		max-width: 80%;
 		line-height: 25px;
 		.fa {
 			position: absolute;
@@ -42,6 +43,9 @@
 			margin: 0;
 			height: 25px;
 			line-height: 25px;
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			        appearance: none;
 		}
 	}
 	.wrapper {

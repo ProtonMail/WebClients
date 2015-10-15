@@ -140,6 +140,12 @@ angular.module("proton.filters",[])
             } else {
                 username = "";
             }
+        } else if (angular.isObject(input)) {
+            if(angular.isDefined(input.Name) && angular.isDefined(input.Address)) {
+                username = input.Name.split('@')[0];
+            } else {
+                username = "";
+            }
         } else if (angular.isString(input)) {
             username = input;
         } else {
@@ -223,6 +229,12 @@ angular.module("proton.filters",[])
 
             return "*" + _.string.trim(split[0]) + "* " + character + split[1];
         }
+    };
+})
+
+.filter('three', function() {
+    return function(string) {
+        return string.substring(0, 3);
     };
 })
 

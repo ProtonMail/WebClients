@@ -70,7 +70,7 @@ body.rows {
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
 	#pm_toolbar {
 		padding-left: 25px;
 		padding-right: 15px;

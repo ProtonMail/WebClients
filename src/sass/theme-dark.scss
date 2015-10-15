@@ -110,7 +110,7 @@ section.sidebar {
 //     }
 // }
 
-@media (max-width: 1024px) {
+@media (max-width: $tablet) {
     #pm_background {
         display: none;
     }
