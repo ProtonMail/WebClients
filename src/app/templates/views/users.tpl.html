@@ -14,7 +14,6 @@
 	            			</div>
 	            			<div class="col right">
 	            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.name" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
-                                {{ form_organization.name.$error | json }}
                                 <div ng-messages="form_organization.name.$error" ng-show="form_organization.name.$touched" role="alert">
                                     <div ng-message="required"><small>You did not enter a field</small></div>
                                     <div ng-message="minlength"><small>Your field is too short</small></div>
@@ -52,7 +51,7 @@
 		                    </tbody>
 	                    </table>
 	                    <p>
-		                    <small><i class="fa fa-info-circle"></i> Also used to reset a forgotten password.</small>
+		                    <small><i class="fa fa-info-circle text-purple"></i> ProtonMail business accounts can create subaccounts which are used by other members of your organization.</small>
 	                    </p>
 	            	</div>
 	            </div>
@@ -76,15 +75,28 @@
 		                </tr>
 		            </thead>
 		            <tbody>
-						<tr>
-		                    <td class="username">default@emailaddresses.com</td>
-		                    <td class="role">{{ 'MASTER'| translate }}</td>
-		                    <td class="storage">553 MB used</td>
-		                    <td class="addresses">address1@example.com (DEFAULT)</td>
+						<tr ng-repeat="user in users">
+		                    <td class="username" ng-bind="user.username"></td>
+		                    <td class="role">
+		                        <span ng-show="user.role === 0">{{ 'MASTER' | translate }}</span>
+		                        <span ng-show="user.role === 1">{{ 'SUB' | translate }}</span>
+		                    </td>
+		                    <td class="storage">{{ user.storage | bytes: 0 }}</td>
+		                    <td class="addresses">
+                                <div ng-repeat="address in user.addresses">
+                                    {{ address.address }} <small ng-show="address.default">(DEFAULT)</small>
+                                </div>
+                            </td>
 		                    <td class="actions">
-			                    <a href="#">{{ 'MANAGE_PASSWORDS'| translate }}</a>
-			                    <a href="#">{{ 'GENERATE_KEYS'| translate }}</a>
-			                    <a href="#">{{ 'ENTER_MAILBOX'| translate }}</a>
+			                    <button type="button" class="pm_button round" ng-click="managePasswords(user)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}">
+                                    <i class="fa fa-cog"></i>
+                                </button>
+			                    <button type="button" class="pm_button round" ng-click="generateKeys(user)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}">
+                                    <i class="fa fa-key"></i>
+                                </button>
+			                    <button type="button" class="pm_button round" ng-click="enterMailbox(user)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}">
+                                    <i class="fa fa-inbox"></i>
+                                </button>
 							</td>
 		                </tr>
 		            </tbody>
