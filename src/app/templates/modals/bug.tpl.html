@@ -1,7 +1,7 @@
-<div class="pm_modal" id="bugForm" tabindex="-1" role="dialog" aria-labelledby="bugFormLabel" aria-hidden="true" ng-controller="BugController" style="display:none">
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
-        <button type="button" ng-click="close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>    
-        <div class="modal-content pm_form">
+        <button type="button" ng-click="ctrl.cancel()" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">{{ 'REPORT_BUG' | translate }}</h3>
             </div>
@@ -11,7 +11,6 @@
                     <strong>{{ 'HAVE_A_QUESTION?' | translate }}</strong> Visit our updated <a href="https://support.protonmail.ch" target="_blank">knowledge base</a>.
                 </p>
 
-
                 <div class="row">
                     <span class="col narrow">
                         <label class="control-label" for="bug_os">
@@ -19,12 +18,12 @@
                         </label>
                     </span><!--/.col-->
                     <span class="col wide">
-                        <select 
-                        ng-model="bug.OS" 
-                        tabindex="1" 
-                        autofocus 
-                        name="bug_os" 
-                        id="bug_os" 
+                        <select
+                        ng-model="ctrl.form.OS"
+                        tabindex="1"
+                        autofocus
+                        name="bug_os"
+                        id="bug_os"
                         class="margin">
                             <option disabled value="">- {{ 'CHOOSE' | translate }} -</option>
                             <option value="osx">Mac OSX</option>
@@ -40,13 +39,13 @@
                         </label>
                     </span><!--/.col-->
                     <span class="col wide last">
-                        <input 
-                        tabindex="2" 
-                        class="margin" 
-                        placeholder="{{ 'OS_VERSION' | translate }}" 
-                        type="text" 
-                        id="bug_os_version" 
-                        ng-model="bug.OSVersion"/>
+                        <input
+                        tabindex="2"
+                        class="margin"
+                        placeholder="{{ 'OS_VERSION' | translate }}"
+                        type="text"
+                        id="bug_os_version"
+                        ng-model="ctrl.form.OSVersion"/>
                     </span><!--/.col-->
                 </div><!--/.row-->
 
@@ -57,14 +56,14 @@
                         </label>
                     </span><!--/.col-->
                     <span class="col wide">
-                        <input 
-                        tabindex="3" 
-                        class="margin" 
-                        type="text" 
-                        name="bug_browser" 
-                        id="bug_browser" 
-                        placeholder="Browser" 
-                        ng-model="bug.Browser">
+                        <input
+                        tabindex="3"
+                        class="margin"
+                        type="text"
+                        name="bug_browser"
+                        id="bug_browser"
+                        placeholder="Browser"
+                        ng-model="ctrl.form.Browser">
                     </span><!--/.col-->
                     <span class="col narrow">
                         <label class="control-label" for="bug_browser_version">
@@ -72,14 +71,14 @@
                         </label>
                     </span><!--/.col-->
                     <span class="col wide last">
-                        <input 
-                        tabindex="4" 
-                        class="margin" 
-                        type="text" 
-                        name="bug_browser_version" 
-                        id="bug_browser_version" 
-                        placeholder="Browser" 
-                        ng-model="bug.BrowserVersion">
+                        <input
+                        tabindex="4"
+                        class="margin"
+                        type="text"
+                        name="bug_browser_version"
+                        id="bug_browser_version"
+                        placeholder="Browser"
+                        ng-model="ctrl.form.BrowserVersion">
                     </span><!--/.col-->
                 </div><!--/.row-->
 
@@ -88,13 +87,13 @@
                         <label for="bug_email">{{ 'EMAIL_ADDRESS' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col full last">
-                        <input 
-                        type="text" 
-                        class="margin" 
-                        name="bug_email" 
-                        id="bug_email" 
-                        placeholder="Please make sure to give us a way to contact you" 
-                        ng-model="bug.Email">
+                        <input
+                        type="text"
+                        class="margin"
+                        name="bug_email"
+                        id="bug_email"
+                        placeholder="Please make sure to give us a way to contact you"
+                        ng-model="ctrl.form.Email">
                     </span><!--/.col-->
                 </div><!--/.row-->
                 <div class="row">
@@ -102,22 +101,22 @@
                         <label class="control-label" for="bug_description">{{' WHAT_HAPPENED?' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col full last">
-                        <textarea 
-                        ng-model="bug.Description" 
-                        class="margin" 
-                        name="bug_description" 
-                        rows="6" 
-                        id="bug_description" 
+                        <textarea
+                        ng-model="ctrl.form.Description"
+                        class="margin"
+                        name="bug_description"
+                        rows="6"
+                        id="bug_description"
                         placeholder="Please describe the problem and include any error messages">
                         </textarea>
 
                         <label class="control-label" for="bug_description">
-                        {{' ATTACH_SCREENSHOT' | translate }}
+                            {{' ATTACH_SCREENSHOT' | translate }}
                         </label>
-                        
-                        <toggle status="attachScreenshot" on="{{ 'YES' | translate }}" off="{{ 'NO' | translate }}"></toggle>                        
 
-                        <p class="alert alert-info" ng-if="attachScreenshot">A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur].</p>
+                        <toggle status="ctrl.form.attachScreenshot" on="{{ 'YES' | translate }}" off="{{ 'NO' | translate }}"></toggle>
+
+                        <p class="alert alert-info" ng-if="ctrl.form.attachScreenshot">A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur].</p>
 
                         <p> We handle these bug reports in Zendesk. If you would like to keep the report within ProtonMail, please email the above info to <a href="mailto:support@protonmail.ch">support@protonmail.ch</a>.</p>
 
@@ -130,8 +129,8 @@
         </div>
         <div class="modal-footer text-right">
             <a class="pm_button" ng-click="close()">{{ 'CANCEL' | translate }}</a>
-            <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="sendBugReport()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
-        </div>        
+            <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="ctrl.submit()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+        </div>
     </div>
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>    
+    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>

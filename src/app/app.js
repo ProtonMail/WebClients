@@ -76,7 +76,6 @@ angular.module("proton", [
     // Controllers
     "proton.controllers.Account",
     "proton.controllers.Auth",
-    "proton.controllers.Bug",
     "proton.controllers.Contacts",
     "proton.controllers.Header",
     "proton.controllers.Messages",

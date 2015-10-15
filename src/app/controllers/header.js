@@ -115,10 +115,6 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('newMessage');
     };
 
-    $scope.openReportModal = function() {
-        $rootScope.$broadcast('openReportModal');
-    };
-
     $scope.openWizard = function() {
         openWizardModal('ProtonMail Wizard', 'startWizard');
     };

@@ -495,13 +495,37 @@ angular.module("proton.modals", [])
 
 .factory('domainModal', function(pmModal) {
     return pmModal({
-        controllers: 'ctrl',
+        controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain.tpl.html',
         controller: function(params) {
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('bugModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/bug.tpl.html',
+        controller: function(params) {
+            // Variables
+            this.form = params.form;
+            this.form.attachScreenshot = true; // Attach screenshot by default
+            // Functions
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit(this.form);
                 }
             };
 
