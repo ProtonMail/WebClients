@@ -24,6 +24,19 @@ angular.module("proton.controllers.Settings")
                     default: true
                 }
             ]
+        },
+        {
+            id: 2,
+            username: 'default@emailaddresses.com',
+            role: SUB,
+            storage: 123,
+            addresses: [
+                {
+                    id: 2,
+                    address: 'qweqweqwe@qweqwe.fr',
+                    default: true
+                }
+            ]
         }
     ];
 
