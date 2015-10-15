@@ -55,11 +55,15 @@
             </a>
         </li>
     </ul>
+    <ul class="menu" id="labelSettings">
+        <li>
+            <a href="" ui-sref="secured.labels">
+                <i class="fa fa-cog"></i>
+                <span>{{ 'LABEL_SETTINGS' | translate }}</span>
+            </a>
+        </li>
+    </ul>
     <div class="labels">
-        <div>
-            <i class="fa fa-cog"></i>
-            <a href="" ui-sref="secured.labels">{{ 'LABEL_SETTINGS' | translate }}</a>
-        </div>
         <ul ng-label-height>
             <li ng-repeat="label in labels | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">

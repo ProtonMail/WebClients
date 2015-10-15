@@ -43,6 +43,9 @@ section.sidebar {
     box-sizing: border-box;
     float: left;
     min-height: 100%;
+    #labelSettings {
+        margin-bottom: 0;
+    }
     a.compose {
         margin-bottom: 20px;
         font-size: 12px;
@@ -123,6 +126,7 @@ section.sidebar {
 
     div.labels {
         font-size: 14px;
+        clear: both;
         form {
             margin-bottom: .5rem;
             input {
