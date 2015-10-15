@@ -1,6 +1,6 @@
 angular.module("proton.models.domains", [])
 
-.factory("Doamin", function($http, url) {
+.factory("Domain", function($http, url) {
     return {
         // POST
         /**
