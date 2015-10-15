@@ -100,4 +100,8 @@ angular.module("proton.controllers.Settings")
             }
         });
     };
+
+    $scope.showPaymentInformation = function(){
+
+    };
 });

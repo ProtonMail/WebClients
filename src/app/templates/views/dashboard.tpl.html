@@ -87,20 +87,23 @@
                         </tr>
                         <tr>
                             <th>{{ 'TOTAL_PRICE' | translate }}: </th>
-                            <td>
-                                <strong>13 CHF</strong>
-                            </td>
                             <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'BILLING' | translate }}: </th>
-                            <td>
-                                <strong>monthly</strong>
-                            </td>
                             <td>
                                 <span>
-                                    <a href="#">{{ 'EDIT' | translate }}</a>
+                                    <strong>13 CHF</strong>
                                 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'BILLING' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>monthly</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'PAYMENT' | translate }}:</th>
+                            <td colspan="2">
+                                <a href="" ng-click="showPaymentInformation()">{{ 'SHOW_PAYMENT_INFORMATION' | translate }}</a>
                             </td>
                         </tr>
                     </table>
