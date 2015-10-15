@@ -100,6 +100,9 @@
         line-height: 33px;
         &.fa-angle-down {
             font-size: 14px;
+            &.wide {
+                padding: 0 10px;
+            }
         }
     }
     .pm_buttons {
@@ -111,14 +114,17 @@
         text-decoration: none;
         color: #838897;
         padding: 0 10px;
-        height: 33px;
-        line-height: 33px;
+        height: 31px;
+        line-height: 31px;
         display: block;
         float: left;
         cursor: pointer;
         transition: background-color .25s linear, border-color .25s linear;
         &.fa-angle-down {
             padding: 0 3px;
+            &.wide {
+                padding: 0 10px;
+            }
         }
         &:hover {
             background-color: #fafafa;

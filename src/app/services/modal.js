@@ -475,8 +475,12 @@ angular.module("proton.modals", [])
 .factory('userModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/user.tpl.html',
+        templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
+
+            // Variables
+            this.step = 'address';
+          
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {

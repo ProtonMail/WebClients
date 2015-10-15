@@ -122,6 +122,11 @@
     label {
         line-height: $inputHeight;
         display: block;
+        &.larger {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            line-height: 135%;
+        }
     }
     .col {
         display: block;
