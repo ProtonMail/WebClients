@@ -10,11 +10,11 @@
 	            	<div class="col-1-2">
 		            	<form>
 	            			<div class="col left">
-	            				<label for="orgName">Organization Name</label>
+	            				<label for="orgName">{{ 'ORGANIZATION_NAME'| translate }}</label>
 	            			</div>
 	            			<div class="col right">
 	            				<input id="orgName" type="text" class="margin" placeholder="Organization Name">
-	            				<button class="pm_button primary" type="submit">Save</button>
+	            				<button class="pm_button primary" type="submit">{{ 'SAVE'| translate }}</button>
 	            			</div>
 	            		</form>
 	            	</div>
@@ -22,24 +22,24 @@
 	                    <table class="pm_table plain" id="usersTable">
 	                        <tbody>
 	                        	<tr>
-		                            <th width="7rem">Number of User: </th>
+		                            <th width="7rem">{{ 'NUMBER_OF_USER'| translate }}: </th>
 		                            <td>
 		                                <strong>2 of 2 used</strong>
 		                            </td>
 		                            <td>
 		                            	<span>
-		                                    <a href="#">Upgrade</a>
+		                                    <a href="#">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
 		                        <tr>
-		                            <th>Organization Storage: </th>
+		                            <th>{{ 'ORGANIZATION_STORAGE'| translate }}:</th>
 		                            <td>
 		                                <strong>10.000 MB</strong>
 		                            </td>
 		                            <td>
 		                                <span>
-		                                    <a href="#">Upgrade</a>
+		                                    <a href="#">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
@@ -56,34 +56,34 @@
         <div class="row">
             <section class="setting pm_form full">
                 <legend>{{ 'USERS' | translate }}</legend>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_NEW_USER'| translate }}</button>
+                </p>
                 <table class="pm_table hidden-xs">
 		            <thead>
 		                <tr>
-		                    <th class="username">Username</th>
-		                    <th class="role">Role</th>
-		                    <th class="storage">Storage</th>
-		                    <th class="addresses">Addresses</th>
-		                    <th class="actions">Actions</th>
+		                    <th class="username">{{ 'USERNAME'| translate }}</th>
+		                    <th class="role">{{ 'ROLE'| translate }}</th>
+		                    <th class="storage">{{ 'STORAGE'| translate }}</th>
+		                    <th class="addresses">{{ 'ADDRESSES'| translate }}</th>
+		                    <th class="actions">{{ 'ACTIONS'| translate }}</th>
 		                </tr>
 		            </thead>
 		            <tbody>
 						<tr>
 		                    <td class="username">default@emailaddresses.com</td>
-		                    <td class="role">Master</td>
+		                    <td class="role">{{ 'MASTER'| translate }}</td>
 		                    <td class="storage">553 MB used</td>
 		                    <td class="addresses">address1@example.com (DEFAULT)</td>
 		                    <td class="actions">
-			                    <a href="#">MANAGE PASSWORDS</a>
-			                    <a href="#">GENERATE KEYS</a>
-			                    <a href="#">ENTER MAILBOX</a>
+			                    <a href="#">{{ 'MANAGE_PASSWORDS'| translate }}</a>
+			                    <a href="#">{{ 'GENERATE_KEYS'| translate }}</a>
+			                    <a href="#">{{ 'ENTER_MAILBOX'| translate }}</a>
 							</td>
 		                </tr>
 		            </tbody>
 		        </table>
             </section>
         </div>
-
-        <button type="button" class="pm_button primary" ng-click="openUserModal()">Add New User</button>
-
     </div>
 </div>
