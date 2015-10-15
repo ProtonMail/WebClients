@@ -1,7 +1,6 @@
 angular.module("proton.models.payments", [])
 
-
-.factory("Payments", function($http, url) {
+.factory("Payment", function($http, url) {
     return {
         // POST
         /**

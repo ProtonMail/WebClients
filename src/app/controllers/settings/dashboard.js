@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, Payments) {
+.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, Payment) {
     var pack = {
         storage: {
             checked: false,
