@@ -38,6 +38,30 @@
             margin-right: 1rem;
         }
     }
+
+    // wrapper for placing icons inside inputs
+    .input-icon {
+        position: relative;
+        input {
+            position: relative;
+        }
+        .fa {
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
+            text-align: right;
+            display: block;
+            line-height: 32px;
+            height: 32px;
+            color: #ccc;
+            text-align: center;
+            width: 2rem;
+            color: $primary;
+            z-index: 2;
+        }
+    }
+
     input[type="text"],
     input[type="password"],
     input[type="email"],

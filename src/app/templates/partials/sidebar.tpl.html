@@ -9,7 +9,7 @@
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="getUnread('inbox')"></em>
-                <strong class="fa fa-repeat"></strong>
+                <strong class="fa fa-repeat" ng-class="{ 'spinMe': spinMe }"></strong>
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">

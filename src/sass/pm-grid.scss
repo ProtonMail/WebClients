@@ -17,7 +17,7 @@ $pad: 20px;
 	[class*='col-'] {
 		float: left;
 		padding-right: $pad;
-		.grid &:last-of-type {
+		&:last-of-type {
 			padding-right: 0;
 		}
 	}

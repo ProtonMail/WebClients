@@ -3,44 +3,62 @@
         <h4 class="modal-title">{{ 'PAYMENT' | translate }}</h4>
     </div>
     <div class="modal-body pm_form">
-        <div class="col">
-            <table class="pm_table">
-                <thead>
-                    <tr>
-                        <th>{{ 'DESCRIPTION' | translate }}</th>
-                        <th class="text-right">{{ 'PRICE' | translate }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="element in ctrl.cart">
-                        <td>{{ element.title }} <span ng-show="element.number > 1">x {{ element.number }}</span></td>
-                        <td class="text-right">{{ element.price | currency: ctrl.currency }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>
-                                {{ 'TOTAL' | translate }} <span ng-show="ctrl.billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="ctrl.billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
-                            </strong>
-                        </td>
-                        <td class="text-right">
-                            <strong>{{ ctrl.total() | currency: ctrl.currency }}</strong>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col">
-            <div class="">
-                <i class="fa fa-user"></i><input type="text" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
+        <div class="pm_grid">
+            <div class="col-1-2">
+                <table class="pm_table">
+                    <thead>
+                        <tr>
+                            <th>{{ 'DESCRIPTION' | translate }}</th>
+                            <th class="text-right">{{ 'PRICE' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="element in ctrl.cart">
+                            <td>{{ element.title }} <span ng-show="element.number > 1">x {{ element.number }}</span></td>
+                            <td class="text-right">{{ element.price | currency: ctrl.currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>
+                                    {{ 'TOTAL' | translate }} <span ng-show="ctrl.billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="ctrl.billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
+                                </strong>
+                            </td>
+                            <td class="text-right">
+                                <strong>{{ ctrl.total() | currency: ctrl.currency }}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="">
-                <i class="fa fa-credit-card"></i><input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
-            </div>
-            <div class="">
-                <i class="fa fa-calendar-o"></i><input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" required /><input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.year" placeholder="YY" required />
-            </div>
-            <div class="">
-                <a href="" pt-tooltip="Card Validation Code"><i class="fa fa-lock"></i></a><input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" required />
+            <div class="col-1-2">
+                <div class="input-icon margin">
+                    <i class="fa fa-user"></i>
+                    <input type="text" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
+                </div>
+                <div class="input-icon margin">
+                    <i class="fa fa-credit-card"></i>
+                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
+                </div>
+                <div class="pm_grid margin">
+                    <div class="col-1-3">
+                        <div class="input-icon">
+                            <i class="fa fa-calendar"></i>
+                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" required />
+                        </div>
+                    </div>
+                    <div class="col-1-3">
+                        <div class="input-icon">
+                            <i class="fa fa-calendar"></i>
+                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.year" placeholder="YY" required />
+                        </div>
+                    </div>
+                    <div class="col-1-3">
+                        <div class="input-icon">
+                            <i class="fa fa-lock"></i>
+                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" required pt-tooltip="Card Validation Code" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
