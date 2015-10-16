@@ -809,7 +809,7 @@ angular.module("proton.cache", [])
             total: promiseTotal
         }).then(function(result) {
             // folders case
-            _.each([0, 1, 2, 3, 4, 5, 6], function(location) {
+            _.each([0, 1, 2, 3, 4, 6], function(location) {
                 exist(location);
             });
             _.each(result.total.Locations, function(obj) {

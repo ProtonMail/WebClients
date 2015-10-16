@@ -68,16 +68,53 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUnreads: function(unreads) {
 				if(angular.isDefined(unreads)) {
-	            	_.each(unreads.Labels, function(obj) { cacheCounters.update(obj.LabelID, undefined, obj.Count); });
-		            _.each(unreads.Locations, function(obj) { cacheCounters.update(obj.Location, undefined, obj.Count); });
+					// Label case
+					_.each(authentication.user.Labels, function(label) {
+						var obj = _.findWhere(unreads.Labels, {LabelID: label.ID});
+
+						if(angular.isDefined(obj)) {
+							cacheCounters.update(label.ID, undefined, obj.Count);
+						} else {
+							cacheCounters.update(label.ID, undefined, 0);
+						}
+					});
+					// Folder case
+					_.each([0, 1, 2, 3, 4, 6], function(location) {
+						var obj = _.findWhere(unreads.Locations, {Location: location});
+
+						if(angular.isDefined(obj)) {
+							cacheCounters.update(location, undefined, obj.Count);
+						} else {
+							cacheCounters.update(location, undefined, 0);
+						}
+					});
+					// Starred case
 					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, undefined, unreads.Starred);
 					$rootScope.dontUpdateNextCounter = true;
 				}
 			},
 			manageTotals: function(totals) {
 				if(angular.isDefined(totals)) {
-					_.each(totals.Labels, function(obj) { cacheCounters.update(obj.LabelID, obj.Count, undefined); });
-					_.each(totals.Locations, function(obj) { cacheCounters.update(obj.Location, obj.Count, undefined); });
+					// Label case
+					_.each(authentication.user.Labels, function(label) {
+						var obj = _.findWhere(totals.Labels, {LabelID: label.ID});
+
+						if(angular.isDefined(obj)) {
+							cacheCounters.update(label.ID, obj.Count, undefined);
+						} else {
+							cacheCounters.update(label.ID, 0, undefined);
+						}
+					});
+					// Folder case
+					_.each([0, 1, 2, 3, 4, 6], function(location) {
+						var obj = _.findWhere(totals.Locations, {Location: location});
+
+						if(angular.isDefined(obj)) {
+							cacheCounters.update(location, obj.Count, undefined);
+						} else {
+							cacheCounters.update(location, 0, undefined);
+						}
+					});
 					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, totals.Starred, undefined);
 					$rootScope.dontUpdateNextCounter = true;
 				}
