@@ -99,9 +99,9 @@ angular.module("proton.dropdown", [])
         restrict: 'E',
         templateUrl: 'templates/directives/selector.tpl.html',
         scope: {
-            ngModel: '=',
-            options: '=',
-            onSelect: '@'
+            ngModel: '=', // String or Object
+            options: '=', // Array of String or Object
+            onSelect: '@' // Method called when a change appear
         },
         link: function(scope, element, attrs) {
 
