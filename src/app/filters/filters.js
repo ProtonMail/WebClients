@@ -234,7 +234,11 @@ angular.module("proton.filters",[])
 
 .filter('three', function() {
     return function(string) {
-        return string.substring(0, 3);
+        if(angular.isDefined(string)) {
+            return string.substring(0, 3);
+        } else {
+            return '';
+        }
     };
 })
 

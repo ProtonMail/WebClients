@@ -33,7 +33,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];
-    
+
     $rootScope.$broadcast('activeMessage', message.ID);
 
     $scope.$on('updateReplied', function(e, m) {
@@ -390,6 +390,10 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         newMessage.LabelIDs = _.without(message.LabelIDs, id);
         cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
         networkActivityTracker.track(promise);
+    };
+
+    $scope.getLabel = function(id) {
+        return _.where($scope.labels, {ID: id})[0];
     };
 
     $scope.getColorLabel = function(label) {

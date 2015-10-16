@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('AppearanceController', function($log, $rootScope, $scope, authentication, networkActivityTracker, Setting, notify) {
+.controller('AppearanceController', function($log, $rootScope, $scope, $translate, authentication, networkActivityTracker, Setting, notify) {
     $scope.languages = ['English', 'French', 'German', 'Spanish', 'Italian'];
     $scope.locales = {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'};
     $scope.selectedLanguage = 'English';
