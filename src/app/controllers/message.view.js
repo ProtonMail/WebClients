@@ -142,7 +142,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
 
                     content = DOMPurify.sanitize(content, {
                         ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style']
+                        FORBID_TAGS: ['style', 'input', 'form']
                     });
 
                     // for the welcome email, we need to change the path to the welcome image lock

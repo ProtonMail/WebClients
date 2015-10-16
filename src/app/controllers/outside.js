@@ -168,7 +168,7 @@ angular.module("proton.controllers.Outside", [
         $scope.imagesHidden = true;
         content = DOMPurify.sanitize(content, {
             ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style']
+            FORBID_TAGS: ['style', 'input', 'form']
         });
 
         return content;

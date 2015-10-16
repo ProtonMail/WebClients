@@ -475,7 +475,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $scope.sanitizeBody = function(message) {
         message.Body = DOMPurify.sanitize(message.Body, {
             ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style']
+            FORBID_TAGS: ['style', 'input', 'form']
         });
     };
 
@@ -512,7 +512,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         if (angular.isUndefined(message.Body)) {
             var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
                 ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style']
+                FORBID_TAGS: ['style', 'input', 'form']
             });
 
             message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
@@ -1064,7 +1064,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                             if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                                 $scope.sending = false;
                                 $log.error(message);
-                                deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.'));
+                                deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                             } else {
                                 Message.send(parameters).$promise.then(function(result) {
                                     var events = [{Action: 1, ID: message.ID, Message: result.Sent}];
