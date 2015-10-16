@@ -61,3 +61,14 @@ $pad: 20px;
 		padding-right: $pad;
 	}
 }
+
+@media (max-width: $tablet) {
+	.pm_grid {
+		[class*='col-'] {
+			float: left;
+			width: 100% !important;
+			clear: both;
+			box-sizing: border-box;
+		}
+	}
+}

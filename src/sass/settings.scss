@@ -364,6 +364,12 @@
 
 @media (max-width: $tablet) {
     #pm_settings {
+        #plans .plans .plan .details td .pm_buttons {
+            width: initial !important;
+            float: right !important;
+            display: block !important;
+            margin-left: 2rem !important;
+        }
         .settings {
             margin-right: 0;
             .row {
@@ -373,6 +379,12 @@
                     clear: both;
                     margin-bottom: 1rem;
                 }
+            }
+        }
+        #usersTable {
+            th,
+            td {
+                padding: 1rem;
             }
         }
         #invoicesTable {

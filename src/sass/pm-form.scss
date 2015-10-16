@@ -183,3 +183,13 @@
         }
     }
 }
+
+
+@media (max-width: $tablet) {
+    .pm_form {
+        .col {
+            width: 100% !important;
+            clear: both;
+        }
+    } 
+}

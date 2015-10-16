@@ -105,3 +105,31 @@
         color: $gray;
     }
 }
+
+
+@media (max-width: $tablet) {
+    .pm_table {
+        thead {
+            display: none;
+        }
+        tr {
+            display: block;
+            width: 100% !important;
+            box-sizing: border-box;
+            margin: 1rem 0;
+            border: 1px solid $border;
+            padding: 1rem;
+            th,
+            td {
+                display: block;
+                width: 100% !important;
+                box-sizing: border-box;
+                height: initial !important;
+                span {
+                    width: 100% !important;
+                    text-align: left !important;
+                }
+            }
+        }
+    }
+}
