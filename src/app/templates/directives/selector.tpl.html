@@ -1,6 +1,6 @@
 <span class="pm_buttons">
     <a href="" class="wide pm_trigger" ng-dropdown>
-        {{ ngModel }} <i class="fa fa-angle-down"></i>
+        <span ng-bind="label"></span> <i class="fa fa-angle-down"></i>
     </a>
     <span class="pm_dropdown wider">
         <a href="" ng-repeat="option in options" ng-bind="option" ng-click="select(option)"></a>

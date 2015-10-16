@@ -100,12 +100,29 @@ angular.module("proton.dropdown", [])
         templateUrl: 'templates/directives/selector.tpl.html',
         scope: {
             ngModel: '=',
-            options: '='
+            options: '=',
+            onSelect: '@'
         },
         link: function(scope, element, attrs) {
+
+            scope.labelized = function() {
+                if(angular.isString(scope.ngModel)) {
+                    scope.label = scope.ngModel;
+                } else if(angular.isObject(scope.ngModel) && angular.isDefined(scope.ngModel.label)) {
+                    scope.label = scope.ngModel.label;
+                }
+            };
+
             scope.select = function(option) {
                 scope.ngModel = angular.copy(option);
+                scope.labelized();
+
+                if(angular.isFunction(scope.onSelect)) {
+                    scope.onSelect(option);
+                }
             };
+
+            scope.labelized();
         }
     };
 })
