@@ -117,7 +117,7 @@
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
                         <div ng-form="encryptForm">
                             <div class="form-group col-md-12">
-                                <strong>Encrypt for non-ProtonMail users</strong> <a href="https://support.protonmail.ch/knowledge-base/encrypt-for-outside-users/" target="_blank"><i class="fa fa-info-circle"></i></a>
+                                <strong>Encrypt for non-ProtonMail users</strong> <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank"><i class="fa fa-info-circle"></i></a>
                             </div>
                             <div class="form-group col-md-12"  ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}">
                                 <label class="control-label text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
@@ -143,7 +143,7 @@
 
                     <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
                         <div class="form-group col-md-12">
-                            <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
+                            <strong>{{ 'EXPIRATION_TIME' | translate }}</strong> <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank"><i class="fa fa-info-circle"></i></a>
                         </div>
                         <div class="form-group col-md-12">
                             <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />

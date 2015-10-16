@@ -114,7 +114,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.displayContent = function(print) {
-        var whitelist = ['notify@protonmail.ch'];
+        var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf(message.Sender.Address) !== -1 && message.IsEncrypted === 0) {
             message.imagesHidden = false;
@@ -335,7 +335,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                         confirmModal.activate({
                             params: {
                                 title: 'Unable to decrypt attachment.',
-                                message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.ch</kbd></p>',
+                                message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.com</kbd></p>',
                                 confirm: function() {
                                     confirmModal.deactivate();
                                 },

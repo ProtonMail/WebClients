@@ -178,7 +178,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
-        return $scope.generateKeys($scope.account.Username + '@protonmail.ch', mbpw);
+        return $scope.generateKeys($scope.account.Username + '@protonmail.com', mbpw);
     };
 
     $scope.doCreateUser = function() {
@@ -195,7 +195,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 "client_id": "demoapp",
                 "client_secret": "demopass",
                 "grant_type": "password",
-                "redirect_uri": "https://protonmail.ch",
+                "redirect_uri": "https://protonmail.com",
                 "state": "random_string",
                 "Username": $scope.account.Username,
                 "Password": $scope.account.loginPassword,

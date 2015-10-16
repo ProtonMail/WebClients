@@ -1062,7 +1062,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                         if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                             $scope.sending = false;
                             $log.error(message);
-                            deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://support.protonmail.ch/knowledge-base/expiration/" target="_blank">click here</a>.'));
+                            deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                         } else {
                             Message.send(parameters).$promise.then(function(result) {
                                 var updateMessages = [{Action: 1, ID: message.ID, Message: result.Sent}];
