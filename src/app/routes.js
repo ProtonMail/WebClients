@@ -336,7 +336,7 @@ angular.module("proton.routes", [
     // SUPPORT ROUTES
     // -------------------------------------------
     .state("support", {
-        url: "/support-form",
+        url: "/support",
         views: {
             "main@": {
                 controller: "SupportController",
