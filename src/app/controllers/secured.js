@@ -9,8 +9,12 @@ angular.module("proton.controllers.Secured", [])
     eventManager,
     cacheCounters,
     cacheMessages,
-    CONSTANTS
+    CONSTANTS,
+    Stripe
 ) {
+    // Setting publishable key
+    Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+
     $scope.user = authentication.user;
 
     $rootScope.isLoggedIn = true;

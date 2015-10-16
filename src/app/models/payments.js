@@ -49,6 +49,6 @@ angular.module("proton.models.payments", [])
     };
 })
 
-.factory('StripeCheckout', function ($window) {
-    return $window.StripeCheckout;
+.factory('Stripe', function ($window) {
+    return $window.Stripe;
 });

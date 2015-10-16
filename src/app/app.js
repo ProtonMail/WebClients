@@ -117,11 +117,15 @@ angular.module("proton", [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-// Load stripe script: checkout
+/**
+ * Load stripe script
+ * https://stripe.com/docs/stripe.js
+ */
 .config(function() {
     var script = document.createElement('script');
 
-    script.src = 'https://checkout.stripe.com/checkout.js';
+    script.type= 'text/javascript';
+    script.src = 'https://js.stripe.com/v2/';
     document.body.appendChild(script);
 })
 

@@ -423,7 +423,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(pmModal) {
+.factory('paymentModal', function(notify, pmModal, Stripe) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -435,21 +435,80 @@ angular.module("proton.modals", [])
             this.month = '';
             this.year = '';
             this.cvc = '';
-            this.cart = params.cart;
             this.currency = params.currency;
             this.billing = params.billing;
+            this.process = false;
+            this.cardTypeIcon = 'fa-credit-card';
+            this.cart = [];
 
             // Functions
             this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit({
-                        number: this.number,
-                        fullname: this.fullname,
-                        month: this.month,
-                        year: this.year,
-                        cvc: this.cvc
-                    });
-                    this.step = 'thanks';
+                this.process = true;
+
+                var stripeResponseHandler = function(status, response) {
+                    this.process = false;
+
+                    if(status === 200) {
+                        console.log({
+                            GroupID: '',
+                            Amount: this.total(),
+                            Currency: this.currency,
+                            PeriodStart: new Date(),
+                            BillingCycle: this.billing,
+                            ExternalProvider: 'Stripe',
+                            Token: response.id,
+                            Order: {
+                                current: null,
+                                future: {
+                                    Use2FA: false,
+                                    MaxDomains: params.cart.domains.number,
+                                    MaxMembers: params.cart.members.member,
+                                    MaxAddresses: params.cart.addresses.member,
+                                    MaxSpace: params.cart.storage.member
+                                }
+                            }
+                        });
+                        this.step = 'thanks';
+                    } else if(angular.isDefined(response.error)) {
+                        notify({message: response.error.message, classes: 'notification-danger'});
+                    }
+                }.bind(this);
+
+                Stripe.card.createToken({
+                    name: this.fullname,
+                    number: this.number,
+                    cvc: this.cvc,
+                    exp_month: this.month,
+                    exp_year: this.year
+                }, stripeResponseHandler);
+            };
+
+            this.numberChange = function() {
+                var type = Stripe.card.cardType(this.number);
+
+                switch (type) {
+                    case 'Visa':
+                        this.cardTypeIcon = 'fa-cc-visa';
+                        break;
+                    case 'MasterCard':
+                        this.cardTypeIcon = 'fa-cc-mastercard';
+                        break;
+                    case 'Discover':
+                        this.cardTypeIcon = 'fa-cc-discover';
+                        break;
+                    case 'Diners Club':
+                        this.cardTypeIcon = 'fa-cc-diners-club';
+                        break;
+                    case 'JCB':
+                        this.cardTypeIcon = 'fa-cc-jcb';
+                        break;
+                    case 'American Express':
+                    case 'Unknown':
+                    this.cardTypeIcon = 'fa-credit-card';
+                    break;
+                    default:
+                        this.cardTypeIcon = 'fa-credit-card';
+                        break;
                 }
             };
 
@@ -477,10 +536,9 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
-
             // Variables
             this.step = 'address';
-          
+
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
