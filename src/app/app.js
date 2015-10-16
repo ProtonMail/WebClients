@@ -356,6 +356,9 @@ angular.module("proton", [
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        // Change page name
+        $rootScope.$broadcast('updatePageName');
+
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
@@ -375,6 +378,7 @@ angular.module("proton", [
         }
 
         $('#loading').remove();
+
     });
 })
 

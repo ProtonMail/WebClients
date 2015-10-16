@@ -33,8 +33,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];
-
-    $rootScope.$broadcast('updatePageName');
+    
     $rootScope.$broadcast('activeMessage', message.ID);
 
     $scope.$on('updateReplied', function(e, m) {

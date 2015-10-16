@@ -39,7 +39,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     // Listeners
     $scope.$on('updateLabels', function(event) { $scope.updateLabels(); });
     $scope.$on('refreshCounters', function(event) { $scope.refreshCounters(); });
-    $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
     $scope.$on('createLabel', function(event) { $scope.createLabel(); });
 
     /**
@@ -98,38 +97,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                 }
             }
         });
-    };
-
-    /**
-     * Update the browser title to display the current mailbox and the number of unread messages in this folder
-     */
-    $scope.updatePageName = function() {
-        var name;
-        var value;
-        var unread = '';
-        var mailbox = $state.current.data && $state.current.data.mailbox;
-
-        if(mailbox) {
-            // get unread number
-            if(mailbox === 'label') {
-                value = cacheCounters.unread(id);
-            } else {
-                value = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-            }
-
-            if(angular.isDefined(value) && value > 0) {
-                unread = '(' + value + ') ';
-            }
-
-            // get name
-            if(mailbox === 'label') {
-                name = _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
-            } else {
-                name = mailbox;
-            }
-
-            $rootScope.pageName = unread + _.string.capitalize(name);
-        }
     };
 
     /**

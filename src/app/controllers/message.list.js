@@ -48,7 +48,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             containment: "document"
         };
 
-        $rootScope.$broadcast('updatePageName');
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         $scope.refreshMessages().then(function() {

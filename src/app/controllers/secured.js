@@ -3,10 +3,13 @@ angular.module("proton.controllers.Secured", [])
 .controller("SecuredController", function(
     $scope,
     $rootScope,
+    $state,
+    $translate,
     authentication,
     eventManager,
     cacheCounters,
-    cacheMessages
+    cacheMessages,
+    CONSTANTS
 ) {
     $scope.user = authentication.user;
 
@@ -21,6 +24,9 @@ angular.module("proton.controllers.Secured", [])
         return authentication.isSecured();
     };
 
+    // Listeners
+    $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
+
     /**
      * Returns a string for the storage bar
      * @return {String} "12.5"
@@ -32,6 +38,88 @@ angular.module("proton.controllers.Secured", [])
             // TODO: error, undefined variables
             return '';
         }
+    };
+
+    /**
+     * Update the browser title to display the current mailbox and
+     * the number of unread messages in this folder
+     */
+    $scope.updatePageName = function() {
+        var name;
+        var unread = '';
+        var state = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+
+        if(state === 'label') {
+            value = cacheCounters.unread($stateParams.label);
+        } else {
+            value = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+        }
+
+        if(angular.isDefined(value) && value > 0) {
+            unread = '(' + value + ') ';
+        }
+
+        switch (state) {
+            case 'inbox':
+                name = unread + $translate.instant('INBOX');
+                break;
+            case 'drafts':
+                name = unread + $translate.instant('DRAFTS');
+                break;
+            case 'sent':
+                name = unread + $translate.instant('SENT');
+                break;
+            case 'starred':
+                name = unread + $translate.instant('STARRED');
+                break;
+            case 'archive':
+                name = unread + $translate.instant('ARCHIVE');
+                break;
+            case 'spam':
+                name = unread + $translate.instant('SPAM');
+                break;
+            case 'trash':
+                name = unread + $translate.instant('TRASH');
+                break;
+            case 'label':
+                name = unread + _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+                break;
+            case 'contacts':
+                name = $translate.instant('CONTACTS');
+                break;
+            case 'dashboard':
+                name = $translate.instant('DASHBOARD');
+                break;
+            case 'account':
+                name = $translate.instant('ACCOUNT');
+                break;
+            case 'labels':
+                name = $translate.instant('LABELS');
+                break;
+            case 'security':
+                name = $translate.instant('SECURITY');
+                break;
+            case 'appearance':
+                name = $translate.instant('APPEARANCE');
+                break;
+            case 'domains':
+                name = $translate.instant('DOMAINS');
+                break;
+            case 'users':
+                name = $translate.instant('USERS');
+                break;
+            case 'invoices':
+                name = $translate.instant('INVOICES');
+                break;
+            case 'login':
+                name = $translate.instant('LOGIN');
+                break;
+            default:
+                name = '';
+                break;
+        }
+
+        $rootScope.pageName = name;
     };
 })
 
