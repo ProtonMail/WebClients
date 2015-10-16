@@ -61,6 +61,7 @@
         <div class="row">
             <section class="setting pm_form full">
                 <legend>{{ 'USERS' | translate }}</legend>
+                <selector ng-model="selectExample" options="optionsExample"></selector>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_NEW_USER'| translate }}</button>
                 </p>

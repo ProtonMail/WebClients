@@ -94,6 +94,22 @@ angular.module("proton.dropdown", [])
     };
 })
 
+.directive('selector', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/directives/selector.tpl.html',
+        scope: {
+            ngModel: '=',
+            options: '='
+        },
+        link: function(scope, element, attrs) {
+            scope.select = function(option) {
+                scope.ngModel = angular.copy(option);
+            };
+        }
+    };
+})
+
 .directive('paginator', function ($timeout) {
     return {
         restrict: 'E',

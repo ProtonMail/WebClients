@@ -4,6 +4,9 @@ angular.module("proton.controllers.Settings")
     var MASTER = 0;
     var SUB = 1;
 
+    $scope.selectExample = 'toto';
+    $scope.optionsExample = ['qwe', 'asd', 'zxc'];
+
     $scope.organization = {
         name: ''
     };
