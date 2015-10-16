@@ -11,13 +11,12 @@
                         <input type="radio" name="addUser">
                     </div>
                     <div class="col-7-8">
-                        <label class="larger">Select an existing address:</label>
-
+                        <label class="larger">{{ 'SELECT_AN_EXISTING_ADDRESS' | translate }}:</label>
+                        
                         <span class="pm_buttons">
-                            <a href="#">
-                                address@example.com
+                            <a href="#" class="wide pm_trigger" ng-dropdown>
+                                address@example.com <i class="fa fa-angle-down"></i>
                             </a>
-                            <a href="#" class="fa fa-angle-down wide divider pm_trigger" ng-dropdown></a>
                             <span class="pm_dropdown wider">
                                 <a href="#">
                                     address@example.com
@@ -35,7 +34,7 @@
                         <input type="radio" name="addUser">
                     </div>
                     <div class="col-7-8">
-                        <label class="larger">Select a new address:</label>
+                        <label class="larger">{{ 'SELECT_A_NEW_ADDRESS' | translate }}:</label>
 
                         <div class="pm_grid">
                             <div class="col-1-3">
@@ -45,10 +44,9 @@
                             </div>
                             <div class="col-1-3">
                                 <span class="pm_buttons">
-                                    <a href="#">
-                                        @example.com
+                                    <a href="#" class="wide pm_trigger" ng-dropdown>
+                                        @example.com <i class="fa fa-angle-down"></i>
                                     </a>
-                                    <a href="#" class="fa fa-angle-down wide divider pm_trigger" ng-dropdown></a>
                                     <span class="pm_dropdown wider">
                                         <a href="#">
                                             @example.com
@@ -72,8 +70,7 @@
         </form>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+            <button type="button" class="pm_button primary"  ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
-        </form>
     </div>
 </div>
