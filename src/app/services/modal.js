@@ -473,7 +473,7 @@ angular.module("proton.modals", [])
                         this.cart.push({
                             number: element.number,
                             title: element.long,
-                            price: element.price
+                            price: element.price * element.number
                         });
                     }
                 }.bind(this));
