@@ -423,7 +423,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Payment, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -441,6 +441,52 @@ angular.module("proton.modals", [])
             this.cardTypeIcon = 'fa-credit-card';
             this.cart = [];
 
+            var count = function(type) {
+                var number = 0;
+
+                if(angular.isDefined(params.pack)) {
+                    number += params.pack[type];
+                }
+
+                if(angular.isDefined(params.additionals)) {
+                    var element = _.findWhere(params.additionals, {type: type, checked: true});
+
+                    if(angular.isDefined(element)) {
+                        number += element.number;
+                    }
+                }
+
+                return number;
+            };
+
+            if(angular.isDefined(params.pack)) {
+                var price;
+
+                if(params.billing === 12) {
+                    price = params.pack.price * params.billing * 0.75;
+                } else {
+                    price = params.pack.price * params.billing;
+                }
+
+                this.cart.push({
+                    number: params.pack.number,
+                    title: params.pack.long,
+                    price: price
+                });
+            }
+
+            if(angular.isDefined(params.additionals)) {
+                _.each(params.additionals, function(element) {
+                    if(element.checked === true) {
+                        this.cart.push({
+                            number: element.number,
+                            title: element.long,
+                            price: element.price * element.number * params.billing
+                        });
+                    }
+                }.bind(this));
+            }
+
             // Functions
             this.submit = function() {
                 this.process = true;
@@ -449,30 +495,48 @@ angular.module("proton.modals", [])
                     this.process = false;
 
                     if(status === 200) {
-                        console.log({
+                        Payment.subscribe({
                             GroupID: '',
                             Amount: this.total(),
-                            Currency: this.currency,
-                            PeriodStart: new Date(),
-                            BillingCycle: this.billing,
+                            Currency: params.currency,
+                            OrderTime: Math.floor(Date.now() / 1000), // Current timestamp in seconds
+                            BillingCycle: params.billing,
                             ExternalProvider: 'Stripe',
                             Token: response.id,
                             Order: {
                                 current: null,
                                 future: {
                                     Use2FA: false,
-                                    MaxDomains: params.cart.domains.number,
-                                    MaxMembers: params.cart.members.member,
-                                    MaxAddresses: params.cart.addresses.member,
-                                    MaxSpace: params.cart.storage.member
+                                    MaxDomains: count('domain'),
+                                    MaxMembers: count('member'),
+                                    MaxAddresses: count('address'),
+                                    MaxSpace: count('space')
                                 }
                             }
+                        }).then(function(result) {
+                            this.step = 'thanks';
+                        }, function(error) {
+                            // TODO manage error
                         });
-                        this.step = 'thanks';
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
                     }
                 }.bind(this);
+
+                if(Stripe.card.validateCardNumber(this.number) === false) {
+                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                if(Stripe.card.validateExpiry(this.month, this.year) === false) {
+                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                if(Stripe.card.validateCVC(this.cvc) === false) {
+                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
 
                 Stripe.card.createToken({
                     name: this.fullname,
@@ -570,6 +634,87 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('addressModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/address.tpl.html',
+        controller: function(params) {
+            // Functions
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('verificationModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/verification.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('spfModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/spf.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('dkimModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dkim.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('dmarcModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dmarc.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
                 }
             };
         }

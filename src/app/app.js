@@ -36,6 +36,8 @@ angular.module("proton", [
     "proton.models.logs",
     "proton.models.events",
     "proton.models.payments",
+    "proton.models.groups",
+    "proton.models.members",
 
     // Config
     "proton.config",
