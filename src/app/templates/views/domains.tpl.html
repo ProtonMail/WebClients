@@ -21,11 +21,12 @@
                             <th>SPF*</th>
                             <th>DKIM*</th>
                             <th>DMARC**</th>
+                            <th class="text-right">{{ 'ACTION' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="domain in domains">
-                            <td>{{ domain.domain }} <a href="" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE_DOMAIN' | translate }}"><i class="fa fa-trash"></i></a></td>
+                            <td>{{ domain.domain }}</td>
                             <td>
                                 <span ng-show="domain.status === true" class="text-green">
                                     <i class="fa fa-check"></i> {{ 'READY' | translate }}
@@ -64,6 +65,11 @@
                                     <strong ng-show="domain.dmarc === true" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
                                     </strong>
+                                </button>
+                            </td>
+                            <td class="text-right">
+                                <button type="button" class="pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE_DOMAIN' | translate }}">
+                                    <i class="fa fa-trash"></i>
                                 </button>
                             </td>
                         </tr>
