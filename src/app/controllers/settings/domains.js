@@ -29,6 +29,9 @@ angular.module("proton.controllers.Settings")
 
     };
 
+    /**
+     * Delete domain
+     */
     $scope.deleteDomain = function(domain) {
 
     };
@@ -40,10 +43,9 @@ angular.module("proton.controllers.Settings")
 
     };
 
-    $scope.verification = function(domain) {
-
-    };
-
+    /**
+     * Open SPF modal
+     */
     $scope.spf = function(domain) {
         spfModal.activate({
             params: {
@@ -55,6 +57,9 @@ angular.module("proton.controllers.Settings")
         });
     };
 
+    /**
+     * Open DKIM modal
+     */
     $scope.dkim = function(domain) {
         dkimModal.activate({
             params: {
@@ -66,6 +71,9 @@ angular.module("proton.controllers.Settings")
         });
     };
 
+    /**
+     * Open DMARC modal
+     */
     $scope.dmarc = function(domain) {
         dmarcModal.activate({
             params: {

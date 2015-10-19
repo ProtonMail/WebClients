@@ -25,7 +25,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="domain in domains">
-                            <td>{{ domain.domain }}</td>
+                            <td>{{ domain.domain }} <a href="" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE_DOMAIN' | translate }}"><i class="fa fa-trash"></i></a></td>
                             <td>
                                 <span ng-show="domain.status === true" class="text-green">
                                     <i class="fa fa-check"></i> {{ 'READY' | translate }}
@@ -85,7 +85,7 @@
                     <thead>
                         <tr>
                             <th>{{ 'ADDRESS' | translate }}</th>
-                            <th>{{ 'USER' | translate }}</th>
+                            <th>{{ 'USER' | translate }} <a href="" pt-tooltip="Emails for the address will be delivred to this user account"><i class="fa fa-info-circle"></i></a></th>
                             <th class="text-right">{{ 'ACTION' | translate }}</th>
                         </tr>
                     </thead>
@@ -98,7 +98,7 @@
                                 <select name="" id=""></select>
                             </td>
                             <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)">
+                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)" pt-tooltip="{{ 'DELETE_ADDRESS' | translate }}">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>
