@@ -68,8 +68,8 @@
                                 </button>
                             </td>
                             <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE_DOMAIN' | translate }}">
-                                    <i class="fa fa-trash"></i>
+                                <button type="button" class="pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                    <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>
                         </tr>
@@ -102,10 +102,10 @@
                                 <strong>{{ address.value }}</strong>@{{ domain }}
                             </td>
                             <td>
-                                <select name="" id=""></select>
+                                <!-- <select ng-init="" ng-model="" ng-options=""></select> -->
                             </td>
                             <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)" pt-tooltip="{{ 'DELETE_ADDRESS' | translate }}">
+                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)" pt-tooltip="{{ 'DELETE' | translate }}">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>

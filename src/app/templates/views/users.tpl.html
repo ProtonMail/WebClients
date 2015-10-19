@@ -33,7 +33,7 @@
 		                            </td>
 		                            <td>
 		                            	<span>
-		                                    <a href="#">{{ 'UPGRADE'| translate }}</a>
+		                                    <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
@@ -44,7 +44,7 @@
 		                            </td>
 		                            <td>
 		                                <span>
-		                                    <a href="#">{{ 'UPGRADE'| translate }}</a>
+		                                    <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
@@ -78,8 +78,10 @@
 						<tr ng-repeat="user in users">
 		                    <td class="username" ng-bind="user.username"></td>
 		                    <td class="role">
-		                        <span ng-show="user.role === 0">{{ 'MASTER' | translate }}</span>
-		                        <span ng-show="user.role === 1">{{ 'SUB' | translate }}</span>
+                                <select>
+                                    <option value="0">{{ 'MASTER' | translate }}</option>
+                                    <option value="1">{{ 'SUB' | translate }}</option>
+                                </select>
 		                    </td>
 		                    <td class="storage">{{ user.storage | bytes: 0 }}</td>
 		                    <td class="addresses">
