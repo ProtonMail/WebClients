@@ -1,0 +1,19 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ 'VERIFICATION' | translate }}</h4>
+            </div>
+            <div class="modal-body">
+                <p>For security reasons, we need to verify that you are the owner of {{ domain }}. Please add the following TXT record into the DNS for {{ domain }}. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <p class="alert alert-info">{{ txt }}</p>
+                <p>Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+        </div>
+    </div>
+    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+</div>

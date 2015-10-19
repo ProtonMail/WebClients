@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DomainsController', function($rootScope, $scope, $translate, domainModal, addressModal, spfModal, dkimModal, dmarcModal, confirmModal) {
+.controller('DomainsController', function($rootScope, $scope, $translate, domainModal, addressModal, spfModal, dkimModal, dmarcModal, confirmModal, verificationModal) {
     $scope.domains = [
         {id: 1, domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
         {id: 2, domain: 'example2.com', status: false, verification: false, spf: false, dkim: false, dmarc: false}
@@ -23,7 +23,7 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open modal process to buy a new domain
+ * Open modal process to buy a new domain
      */
     $scope.buyDomain = function() {
 
@@ -73,6 +73,17 @@ angular.module("proton.controllers.Settings")
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.verification = function(domain) {
+        verificationModal.activate({
+            params: {
+                domain: domain,
+                close: function() {
+                    verificationModal.deactivate();
                 }
             }
         });

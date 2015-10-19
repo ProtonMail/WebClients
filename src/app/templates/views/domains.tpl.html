@@ -7,7 +7,7 @@
             <section class="setting pm_form full">
                 <legend>1 {{ 'CONFIGURE_DOMAINS' | translate }}</legend>
                 <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
-                <p>{{ }} Domains are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>{{ }} Domains are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
@@ -26,7 +26,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="domain in domains">
-                            <td>{{ domain.domain }}</td>
+                            <td><strong>{{ domain.domain }}</strong></td>
                             <td>
                                 <span ng-show="domain.status === true" class="text-green">
                                     <i class="fa fa-check"></i> {{ 'READY' | translate }}
@@ -36,12 +36,14 @@
                                 </span>
                             </td>
                             <td>
-                                <span ng-show="domain.verification === true" class="text-green">
-                                    <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
-                                </span>
-                                <span ng-show="domain.verification === false" class="text-red">
-                                    <i class="fa fa-exclamation-triangle"></i> {{ 'NOT_VERIFIED' | translate }}
-                                </span>
+                                <button class="pm_button" type="button" ng-click="verification(domain)">
+                                    <strong ng-show="domain.verification === true" class="text-green">
+                                        <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
+                                    </strong>
+                                    <strong ng-show="domain.verification === false" class="text-light-gray">
+                                        <i class="fa fa-times"></i> {{ 'NOT_VERIFIED' | translate }}
+                                    </strong>
+                                </button>
                             </td>
                             <td>
                                 <button class="pm_button" type="button"  ng-click="spf(domain)">
@@ -75,7 +77,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>
+                <p class="text-light-gray">
                     <i>*{{ 'RECOMMENDED' | translate }}</i><br />
                     <i>**{{ 'OPTIONAL' | translate }}</i>
                 </p>
@@ -83,35 +85,37 @@
             </section>
             <section class="setting pm_form full">
                 <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
-                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
-                <p>
-                    <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_ADDRESS' | translate }}</button>
-                    <a href="" ui-sref="secured.users" class="pm_button primary">{{ 'ADD_USER' | translate }}</a>
-                </p>
-                <table class="pm_table">
-                    <thead>
-                        <tr>
-                            <th>{{ 'ADDRESS' | translate }}</th>
-                            <th>{{ 'USER' | translate }} <a href="" pt-tooltip="Emails for the address will be delivred to this user account"><i class="fa fa-info-circle"></i></a></th>
-                            <th class="text-right">{{ 'ACTION' | translate }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <strong>{{ address.value }}</strong>@{{ domain }}
-                            </td>
-                            <td>
-                                <!-- <select ng-init="" ng-model="" ng-options=""></select> -->
-                            </td>
-                            <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)" pt-tooltip="{{ 'DELETE' | translate }}">
-                                    <i class="fa fa-trash-o"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <div class="border-panel">
+                    <div class="margin-bottom">
+                        <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_ADDRESS' | translate }}</button>
+                        <a href="" ui-sref="secured.users" class="pm_button primary">{{ 'ADD_USER' | translate }}</a>
+                    </div>
+                    <table class="pm_table">
+                        <thead>
+                            <tr>
+                                <th>{{ 'ADDRESS' | translate }}</th>
+                                <th>{{ 'USER' | translate }} <a href="" pt-tooltip="Emails for the address will be delivred to this user account"><i class="fa fa-info-circle"></i></a></th>
+                                <th class="text-right">{{ 'ACTION' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>{{ address.value }}</strong>@{{ domain }}
+                                </td>
+                                <td>
+                                    <!-- <select ng-init="" ng-model="" ng-options=""></select> -->
+                                </td>
+                                <td class="text-right">
+                                    <button type="button" class="pm_button round" ng-click="deleteAddress(address)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p>&nbsp;</p>
             </section>
             <section class="setting pm_form full">

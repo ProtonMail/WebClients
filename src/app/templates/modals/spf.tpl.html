@@ -8,8 +8,8 @@
             <div class="modal-body">
                 <p>To avoid emails from your domain going into Spam, we recommend adding a SPF record. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
                 <p>Please use the following SPF record:</p>
-                <p class="alert alert-info">{{ spf }}</p>
-                <p>The current SPF record for {{ domain }} is:</p>
+                <p class="alert alert-info">{{ ctrl.spf }}</p>
+                <p>The current SPF record for {{ ctrl.domain }} is:</p>
                 <p class="alert alert-info">{{ currentSpf }}</p>
                 <p>If your domain already has an SPF record, you just need to add _spf.protonmail.ch to the existing record.</p>
             </div>

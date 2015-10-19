@@ -22,6 +22,12 @@ html.protonmail {
 	.text-right {
 		text-align: right;
 	}
+	.text-gray {
+		color: $gray;
+	}
+	.text-light-gray {
+		color: $gray-light;
+	}
 	.text-green {
 		color: $green;
 	}
@@ -30,6 +36,13 @@ html.protonmail {
 	}
 	.text-purple {
 		color: $primary;
+	}
+	.border-panel {
+		padding: 15px;
+		border: 1px solid $border;
+	}
+	.margin-bottom {
+		margin-bottom: 15px;
 	}
 	pre,
 	code {

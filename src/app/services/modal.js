@@ -661,11 +661,27 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('verificationModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/verification.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
 .factory('spfModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/spf.tpl.html',
         controller: function(params) {
+            this.domain = params.domain;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
@@ -680,6 +696,7 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/dkim.tpl.html',
         controller: function(params) {
+            this.domain = params.domain;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
@@ -694,6 +711,7 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/dmarc.tpl.html',
         controller: function(params) {
+            this.domain = params.domain;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
