@@ -5,9 +5,109 @@
     <div class="settings" ng-height>
         <div class="row">
             <section class="setting pm_form full">
-                <legend>{{ 'YOUR_CUSTOM_DOMAINS' | translate }}</legend>
-                <p>This will allow you to send and receive mail for your domain through ProtonMail.</p>
-                <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                <legend>{{ 'CONFIGURE_DOMAINS' | translate }}</legend>
+                <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
+                <p>{{ }} Domains are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                    <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
+                </p>
+                <table class="pm_table">
+                    <thead>
+                        <tr>
+                            <th>{{ 'DOMAIN' | translate }}</th>
+                            <th>{{ 'STATUS' | translate }}</th>
+                            <th>{{ 'VERIFICATION' | translate }}</th>
+                            <th>SPF*</th>
+                            <th>DKIM*</th>
+                            <th>DMARC**</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="domain in domains">
+                            <td>{{ domain.domain }}</td>
+                            <td>
+                                <span ng-show="domain.status === true" class="text-green">
+                                    <i class="fa fa-check"></i> {{ 'READY' | translate }}
+                                </span>
+                                <span ng-show="domain.status === false" class="text-red">
+                                    <i class="fa fa-exclamation-triangle"></i> {{ 'ERROR' | translate }}
+                                </span>
+                            </td>
+                            <td>
+                                <span ng-show="domain.verification === true" class="text-green">
+                                    <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
+                                </span>
+                                <span ng-show="domain.verification === false" class="text-red">
+                                    <i class="fa fa-exclamation-triangle"></i> {{ 'NOT_VERIFIED' | translate }}
+                                </span>
+                            </td>
+                            <td>
+                                <span ng-show="domain.spf === true" class="text-green">
+                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                </span>
+                                <button class="pm_button" type="button" ng-show="domain.spf === false" ng-click="spf(domain)">{{ 'ADD_SPF' | translate }}</button>
+                            </td>
+                            <td>
+                                <span ng-show="domain.dkim === true" class="text-green">
+                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                </span>
+                                <button class="pm_button" type="button" ng-show="domain.dkim === false" ng-click="dkim(domain)">{{ 'ADD_DKIM' | translate }}</button>
+                            </td>
+                            <td>
+                                <span ng-show="domain.dmarc === true" class="text-green">
+                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                </span>
+                                <button class="pm_button" type="button" ng-show="domain.dmarc === false" ng-click="dmarc(domain)">{{ 'ADD_DMARC' | translate }}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <i>*{{ 'RECOMMENDED' | translate }}</i><br />
+                    <i>**{{ 'OPTIONAL' | translate }}</i>
+                </p>
+                <p>&nbsp;</p>
+            </section>
+            <section class="setting pm_form full">
+                <legend>{{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
+                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_ADDRESS' | translate }}</button>
+                </p>
+                <table class="pm_table">
+                    <thead>
+                        <tr>
+                            <th>{{ 'ADDRESS' | translate }}</th>
+                            <th>{{ 'USER' | translate }}</th>
+                            <th class="text-right">{{ 'ACTION' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>{{ address.value }}</strong>@{{ domain }}
+                            </td>
+                            <td>
+                                <select name="" id=""></select>
+                            </td>
+                            <td class="text-right">
+                                <button type="button" class="pm_button round" ng-click="deleteAddress(address)">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>&nbsp;</p>
+            </section>
+            <section class="setting pm_form full">
+                <legend>MX Record</legend>
+                <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">
+                    [ our MX Record ] qwe8q6we576125e812367812tye781y2eyt7812783127ey172ye712ye712737ey1278ye7812361782ey1278367182ye8y127361782ey7812yee127ye7y12ye71
+                </p>
+                <p><strong>{{ 'IMPORTANT' | translate }}</strong> The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</p>
             </section>
         </div>
     </div>
