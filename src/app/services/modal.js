@@ -463,7 +463,7 @@ angular.module("proton.modals", [])
                 var price;
 
                 if(params.billing === 12) {
-                    price = params.pack.price * params.billing * 0.75; 
+                    price = params.pack.price * params.billing * 0.75;
                 } else {
                     price = params.pack.price * params.billing;
                 }
@@ -499,7 +499,7 @@ angular.module("proton.modals", [])
                             GroupID: '',
                             Amount: this.total(),
                             Currency: params.currency,
-                            PeriodStart: Math.floor(Date.now() / 1000), // Current timestamp in seconds
+                            OrderTime: Math.floor(Date.now() / 1000), // Current timestamp in seconds
                             BillingCycle: params.billing,
                             ExternalProvider: 'Stripe',
                             Token: response.id,
