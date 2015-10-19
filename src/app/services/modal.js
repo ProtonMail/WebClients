@@ -632,6 +632,48 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('spfModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/spf.tpl.html',
+        controller: function(params) {
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('dkimModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dkim.tpl.html',
+        controller: function(params) {
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('dmarcModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dmarc.tpl.html',
+        controller: function(params) {
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
 .factory('bugModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',

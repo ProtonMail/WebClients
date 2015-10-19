@@ -43,22 +43,28 @@
                                 </span>
                             </td>
                             <td>
-                                <span ng-show="domain.spf === true" class="text-green">
-                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                </span>
-                                <button class="pm_button" type="button" ng-show="domain.spf === false" ng-click="spf(domain)">{{ 'ADD_SPF' | translate }}</button>
+                                <button class="pm_button" type="button"  ng-click="spf(domain)">
+                                    <strong ng-show="domain.spf === false">{{ 'ADD_SPF' | translate }}</strong>
+                                    <strong ng-show="domain.spf === true" class="text-green">
+                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                    </strong>
+                                </button>
                             </td>
                             <td>
-                                <span ng-show="domain.dkim === true" class="text-green">
-                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                </span>
-                                <button class="pm_button" type="button" ng-show="domain.dkim === false" ng-click="dkim(domain)">{{ 'ADD_DKIM' | translate }}</button>
+                                <button class="pm_button" type="button" ng-click="dkim(domain)">
+                                    <strong ng-show="domain.dkim === false">{{ 'ADD_DKIM' | translate }}</strong>
+                                    <strong ng-show="domain.dkim === true" class="text-green">
+                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                    </strong>
+                                </button>
                             </td>
                             <td>
-                                <span ng-show="domain.dmarc === true" class="text-green">
-                                    <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                </span>
-                                <button class="pm_button" type="button" ng-show="domain.dmarc === false" ng-click="dmarc(domain)">{{ 'ADD_DMARC' | translate }}</button>
+                                <button class="pm_button" type="button" ng-click="dmarc(domain)">
+                                    <strong ng-show="domain.dmarc === false">{{ 'ADD_DMARC' | translate }}</strong>
+                                    <strong ng-show="domain.dmarc === true" class="text-green">
+                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
+                                    </strong>
+                                </button>
                             </td>
                         </tr>
                     </tbody>

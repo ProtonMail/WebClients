@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DomainsController', function($rootScope, $scope, domainModal) {
+.controller('DomainsController', function($rootScope, $scope, domainModal, spfModal, dkimModal, dmarcModal) {
     $scope.domains = [
         {id: 1, domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
         {id: 2, domain: 'example2.com', status: false, verification: false, spf: false, dkim: false, dmarc: false}
@@ -45,14 +45,35 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.spf = function(domain) {
-
+        spfModal.activate({
+            params: {
+                domain: domain,
+                close: function() {
+                    spfModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.dkim = function(domain) {
-
+        dkimModal.activate({
+            params: {
+                domain: domain,
+                close: function() {
+                    dkimModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.dmarc = function(domain) {
-
+        dmarcModal.activate({
+            params: {
+                domain: domain,
+                close: function() {
+                    dmarcModal.deactivate();
+                }
+            }
+        });
     };
 });
