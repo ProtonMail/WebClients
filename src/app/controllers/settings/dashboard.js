@@ -7,32 +7,38 @@ angular.module("proton.controllers.Settings")
     $scope.billing = 1; // one month
 
     var plus = {
+        title: $translate.instant('PLUS'),
+        long: $translate.instant('PLUS_PLAN'),
+        number: 1,
         price: 5,
         space: 5,
         domain: 1,
         address: 5,
-        user: 0
+        member: 0
     };
 
     var business = {
+        title: $translate.instant('BUSINESS'),
+        long: $translate.instant('BUSINESS_PLAN'),
+        number: 1,
         price: 10,
         space: 10,
         domain: 1,
         address: 5,
-        user: 2
+        member: 2
     };
 
     $scope.plusAdditionals = [
-        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE')},
-        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN')},
-        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS')}
+        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE'), long: $translate.instant('ADDITIONAL_STORAGE')},
+        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'), long: $translate.instant('ADDITIONAL_DOMAIN')},
+        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS'), long: $translate.instant('ADDITIONAL_ADDRESS')}
     ];
 
     $scope.businessAdditionals = [
-        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE')},
-        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN')},
-        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS')},
-        {checked: false, type: 'user', price: 2, number: 1, title: $translate.instant('USER')}
+        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE'), long: $translate.instant('ADDITIONAL_STORAGE')},
+        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'),long: $translate.instant('ADDITIONAL_DOMAIN')},
+        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS'), long: $translate.instant('ADDITIONAL_ADDRESS')},
+        {checked: false, type: 'member', price: 2, number: 1, title: $translate.instant('USER'), long: $translate.instant('ADDITIONAL_USER')}
     ];
 
     $scope.total = function(name) {

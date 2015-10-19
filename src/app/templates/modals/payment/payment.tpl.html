@@ -20,7 +20,7 @@
                         <tr>
                             <td>
                                 <strong>
-                                    {{ 'TOTAL' | translate }} <span ng-show="ctrl.billing === 'monthly'">{{ 'PER_MONTH' | translate }}</span><span ng-show="ctrl.billing === 'yearly'">{{ 'PER_YEAR' | translate }}</span>
+                                    {{ 'TOTAL' | translate }} <span ng-show="ctrl.billing === 1">{{ 'PER_MONTH' | translate }}</span><span ng-show="ctrl.billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </strong>
                             </td>
                             <td class="text-right">

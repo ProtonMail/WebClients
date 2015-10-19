@@ -423,7 +423,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Payment) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -441,6 +441,44 @@ angular.module("proton.modals", [])
             this.cardTypeIcon = 'fa-credit-card';
             this.cart = [];
 
+            var count = function(type) {
+                var number = 0;
+
+                if(angular.isDefined(params.pack)) {
+                    number += params.pack[type];
+                }
+
+                if(angular.isDefined(params.additionals)) {
+                    var element = _.findWhere(params.additionals, {type: type, checked: true});
+
+                    if(angular.isDefined(element)) {
+                        number += element.number;
+                    }
+                }
+
+                return number;
+            };
+
+            if(angular.isDefined(params.pack)) {
+                this.cart.push({
+                    number: params.pack.number,
+                    title: params.pack.long,
+                    price: params.pack.price
+                });
+            }
+
+            if(angular.isDefined(params.additionals)) {
+                _.each(params.additionals, function(element) {
+                    if(element.checked === true) {
+                        this.cart.push({
+                            number: element.number,
+                            title: element.long,
+                            price: element.price
+                        });
+                    }
+                }.bind(this));
+            }
+
             // Functions
             this.submit = function() {
                 this.process = true;
@@ -449,11 +487,11 @@ angular.module("proton.modals", [])
                     this.process = false;
 
                     if(status === 200) {
-                        console.log({
+                        Payment.subscribe({
                             GroupID: '',
                             Amount: this.total(),
                             Currency: this.currency,
-                            PeriodStart: new Date(),
+                            PeriodStart: Math.floor(Date.now() / 1000), // Current timestamp in seconds
                             BillingCycle: this.billing,
                             ExternalProvider: 'Stripe',
                             Token: response.id,
@@ -461,14 +499,17 @@ angular.module("proton.modals", [])
                                 current: null,
                                 future: {
                                     Use2FA: false,
-                                    MaxDomains: params.cart.domains.number,
-                                    MaxMembers: params.cart.members.member,
-                                    MaxAddresses: params.cart.addresses.member,
-                                    MaxSpace: params.cart.storage.member
+                                    MaxDomains: count('domain'),
+                                    MaxMembers: count('member'),
+                                    MaxAddresses: count('address'),
+                                    MaxSpace: count('space')
                                 }
                             }
+                        }).then(function(result) {
+                            this.step = 'thanks';
+                        }, function(error) {
+                            // TODO manage error
                         });
-                        this.step = 'thanks';
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
                     }
