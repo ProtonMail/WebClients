@@ -423,7 +423,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe, Payment) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Payment, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -514,6 +514,21 @@ angular.module("proton.modals", [])
                         notify({message: response.error.message, classes: 'notification-danger'});
                     }
                 }.bind(this);
+
+                if(Stripe.card.validateCardNumber(this.number) === false) {
+                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                if(Stripe.card.validateExpiry(this.month, this.year) === false) {
+                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                if(Stripe.card.validateCVC(this.cvc) === false) {
+                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
 
                 Stripe.card.createToken({
                     name: this.fullname,
