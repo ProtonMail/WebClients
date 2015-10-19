@@ -84,11 +84,12 @@
             <section class="setting pm_form full">
                 <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
                 <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
-                <div class="border-panel">
-                    <div class="margin-bottom">
+                <div class="border-panel" ng-repeat="domain in domains">
+                    <p><strong>{{ domain.domain }}</strong></p>
+                    <p>
                         <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_ADDRESS' | translate }}</button>
                         <a href="" ui-sref="secured.users" class="pm_button primary">{{ 'ADD_USER' | translate }}</a>
-                    </div>
+                    </p>
                     <table class="pm_table">
                         <thead>
                             <tr>
@@ -100,7 +101,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <strong>{{ address.value }}</strong>@{{ domain }}
+                                    <strong>{{ address.value }}</strong>@{{ domain.domain }}
                                 </td>
                                 <td>
                                     <!-- <select ng-init="" ng-model="" ng-options=""></select> -->
