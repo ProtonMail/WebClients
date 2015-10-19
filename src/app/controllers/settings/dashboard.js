@@ -46,20 +46,24 @@ angular.module("proton.controllers.Settings")
         var additionals = [];
 
         if(name === 'plus') {
-            total += plus.price;
+            total += plus.price * $scope.billing;
             additionals = $scope.plusAdditionals;
         } else if(name === 'business') {
-            total += business.price;
+            total += business.price * $scope.billing;
             additionals = $scope.businessAdditionals;
+        }
+
+        if($scope.billing === 12) {
+            total *= 0.75;
         }
 
         _.each(additionals, function(element) {
             if(element.checked === true) {
-                total += parseInt(element.price) * parseInt(element.number);
+                total += parseInt(element.price) * parseInt(element.number) * $scope.billing;
             }
         });
 
-        return total * $scope.billing;
+        return total;
     };
 
     $scope.upgrade = function(name) {

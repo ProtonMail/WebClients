@@ -460,10 +460,18 @@ angular.module("proton.modals", [])
             };
 
             if(angular.isDefined(params.pack)) {
+                var price;
+
+                if(params.billing === 12) {
+                    price = params.pack.price * params.billing * 0.75; 
+                } else {
+                    price = params.pack.price * params.billing;
+                }
+
                 this.cart.push({
                     number: params.pack.number,
                     title: params.pack.long,
-                    price: params.pack.price
+                    price: price
                 });
             }
 
@@ -473,7 +481,7 @@ angular.module("proton.modals", [])
                         this.cart.push({
                             number: element.number,
                             title: element.long,
-                            price: element.price * element.number
+                            price: element.price * element.number * params.billing
                         });
                     }
                 }.bind(this));
@@ -490,9 +498,9 @@ angular.module("proton.modals", [])
                         Payment.subscribe({
                             GroupID: '',
                             Amount: this.total(),
-                            Currency: this.currency,
+                            Currency: params.currency,
                             PeriodStart: Math.floor(Date.now() / 1000), // Current timestamp in seconds
-                            BillingCycle: this.billing,
+                            BillingCycle: params.billing,
                             ExternalProvider: 'Stripe',
                             Token: response.id,
                             Order: {
