@@ -25,39 +25,6 @@
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <div class="mobileMain pull-left">
-        <span class="pm_buttons">
-            <a href="" class="pm_trigger" ng-dropdown>
-                <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
-            </a>
-            <span class="pm_dropdown wider">
-                <a href="" ng-click="orderBy('subject')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
-                </a>
-                <a href="" ng-click="orderBy('-subject')">
-                    <i class="fa fa-sort-alpha-desc"></i> {{ 'SUBJECT' | translate }}: Z-A
-                </a>
-                <a href="" ng-click="orderBy('from')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: A-Z
-                </a>
-                <a href="" ng-click="orderBy('-from')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'FROM' | translate }}: Z-A
-                </a>
-                <a href="" ng-click="orderBy('size')">
-                    <i class="fa fa-sort-amount-asc"></i> {{ 'SIZE' | translate }}: {{ 'SMALL_TO_LARGE' | translate }}
-                </a>
-                <a href="" ng-click="orderBy('-size')">
-                    <i class="fa fa-sort-amount-desc"></i> {{ 'SIZE' | translate }}: {{ 'LARGE_TO_SMALL' | translate }}
-                </a>
-                <a href="" ng-click="orderBy('-date')">
-                    <i class="fa fa-clock-o"></i> {{ 'DATE' | translate }}: {{ 'NEW_TO_OLD' | translate }}
-                </a>
-                <a href="" ng-click="orderBy('date')">
-                    <i class="fa fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
-                </a>
-            </span>
-        </span>
-    </div>
     <div class="desktop pull-left">
         <span class="pm_buttons">
             <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">

@@ -169,7 +169,7 @@
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     #pm_columns {
     	margin: 0;
     	.main > label {
@@ -178,7 +178,7 @@
     }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
 	#pm_columns {
 		#pm_view {
 			display: none;

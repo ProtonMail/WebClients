@@ -11,11 +11,11 @@
 	.tableWrapper {}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     #pm_contacts {}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	#pm_contacts #pm_toolbar {
 		padding: 14px 0 0;
 	}

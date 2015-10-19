@@ -62,7 +62,7 @@ $pad: 20px;
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	.pm_grid {
 		[class*='col-'] {
 			float: left;

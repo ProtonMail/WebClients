@@ -146,7 +146,7 @@ body#eo-reply {
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	#pm_login.pm_panel {
 		margin: 2rem auto;
 	}
@@ -190,7 +190,7 @@ body#eo-reply {
 }
 
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
 	.outside {
 		padding: 2rem 0;
 	}

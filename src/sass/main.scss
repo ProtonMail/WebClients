@@ -70,7 +70,7 @@ body.rows {
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	#pm_toolbar {
 		padding-left: 25px;
 		padding-right: 15px;
@@ -113,7 +113,7 @@ body.rows {
 	}	
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
 	.hidden-xs {
 		display: none !important;
 	}

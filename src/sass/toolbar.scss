@@ -1,5 +1,3 @@
-
-
 // Single Message View
 #pm_view.rows #pm_toolbar {
     margin-left: 0;
@@ -15,13 +13,19 @@ body.rows #pm_toolbar {
 
 // Columns
 #pm_view.columns #pm_toolbar {
-    margin-left: 0;
+    display: none;
 }
 body.columns #pm_toolbar {
     padding-right: 40px;
+    margin-left: 0;
     .main > label {
         margin-left: 25px;
     }
+}
+
+// Hide Responsive toolbar by default
+#pm_toolbar_responsive {
+    display: none;
 }
 
 #pm_toolbar {
@@ -62,61 +66,44 @@ body.columns #pm_toolbar {
             }
         }
     }
-    .mobileMain,
-    .mobileSecondary {
-        display: none;
-    }
-    .mobileMain {
-        float: left;
-        padding-left: 0;
-        .pm_checkbox {
-            margin-top: -2px;
-            float: left;
-        }
-    }
-    .mobileSecondary {
-        float: right;
-        .pm_buttons {
-            margin: 0 0 0 5px;
-            a {
-                padding: 0 8px
-            }
-        }
-        .pm_dropdown {
-            left: auto;
-            right: -1px;
-        }
-    }
 }
 
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     #pm_toolbar {
+        display: none;
+    }
+    #pm_toolbar_responsive {
         display: block;
         float: none;
-        margin-right: 27px;
         width: 100%;
         box-sizing: border-box;
-        .mobileMain {
+        padding: 12px 10px;
+        float: left;
+        .main {
+            float: left;
+            padding-left: 0;
             padding-left: 0;
             position: relative;
             .pm_buttons {
+                margin: 0 0 0 10px !important;
                 a {
                     padding: 0 11px;
                 }
-                margin-right: 0 10px 0 0;
                 .pm_buttons {
                     margin: 0;
                 }
-            }            
+            }
             .pm_checkbox {
                 margin-top: -2px;
+                float: left;
             }
         }
-        .mobileSecondary {
-            margin-right: 25px;
+        .secondary {
             padding: 0;
+            float: right;
             .pm_buttons {
+                margin: 0 0 0 5px;
                 a {
                     padding: 0 11px;
                 }
@@ -124,13 +111,14 @@ body.columns #pm_toolbar {
                 .pm_buttons {
                     margin: 0;
                 }
-            }            
+            } 
+            .pm_dropdown {
+                left: auto;
+                right: -1px;
+            }
         }
     }
-}
-
-@media (max-width: $tablet) {
-    body #pm_view #pm_toolbar .mobileMain {
+    body #pm_view #pm_toolbar .main {
         display: none;
     }
     body #pm_view #pm_toolbar .messageActions a strong {
@@ -138,25 +126,24 @@ body.columns #pm_toolbar {
     }
 }
 
-@media (max-width: $mobile) {
-    body #pm_view #pm_toolbar {
+@media (max-width: $mobile-portrait) {
+    body #pm_view #pm_toolbar_responsive {
         height: 65px !important;
         margin: 0 -10px !important;
         width: auto !important;
         padding: 14px 10px !important;
     }
-    body #pm_toolbar {
+    body #pm_toolbar_responsive {
         border-bottom: 1px solid $border;
         padding: 14px 10px !important;
         .pm_checkbox {
             margin-right: 5px !important;
         }
-        .main,
-        .desktop {
+        .main {
             display: none;
         }
-        .mobileMain,
-        .mobileSecondary {
+        .main,
+        .secondary {
             display: block;
             .pm_buttons {
                 a.fa-angle-down {
@@ -164,15 +151,21 @@ body.columns #pm_toolbar {
                 }
             }
         }
-        .mobileSecondary {
+        .secondary {
             margin-right: 0 !important;
+            .pm_buttons {
+                .pm_buttons {
+                    display: none;
+                }
+            }
         }
-        .pm_buttons {
-            margin: 0 5px 0 0 !important;
-        }
-        .pm_buttons a,
-        .pm_button {
-            padding: 0 4px !important;
+        .main {
+            .pm_buttons a {
+            display: none;
+                &:first-child {
+                    display: block;
+                }
+            }
         }
         .messageActions {
             .pm_buttons {

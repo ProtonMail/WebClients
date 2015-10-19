@@ -109,7 +109,7 @@ body#login {
 	}
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
 	#pm_login {
 		input[type="text"],
 		input[type="password"] {

@@ -1,31 +1,35 @@
-$sidebarWidth: 190px;
-$sidebarMobWidth: 220px;
-$headerHeight: 61px;
-$toolbarHeight: 63px;
-$rowHeight: 40px;
+$sidebarWidth: 		190px;
+$sidebarMobWidth: 	220px;
+$headerHeight: 		61px;
+$toolbarHeight: 	63px;
+$rowHeight: 		40px;
 $composerRowHeight: 40px;
-$inputHeight: 32px;
-$toggleWidth: 8rem;
-$short: 700px;
+$inputHeight: 		32px;
+$toggleWidth: 		8rem;
+$short: 			700px;
 
 $maxHeight: auto; // was 40rem
 
 // Theme Colors
-$primary: 		#9397cd;
-$secondary: 	#505061;
-$secondary-alt:	#6e6f80;
-$alert-info: 	#e6e6f2;
-$readBubble: 	#a8d24c;
-$border: 		#dcdcdc;
-$light: 		#fafafa;
-$orange:		#e7d360;
-$white: 		#fff;
-$gray: 			#555;
-$gray-light: 	#ccc;
-$dark:			#4d4c5d;
-$green:			#aecf96;
-$red:			#C18183;
+$primary: 			#9397cd;
+$secondary: 		#505061;
+$secondary-alt:		#6e6f80;
+$alert-info: 		#e6e6f2;
+$readBubble: 		#a8d24c;
+$border: 			#dcdcdc;
+$light: 			#fafafa;
+$orange:			#e7d360;
+$white: 			#fff;
+$gray: 				#555;
+$gray-light: 		#ccc;
+$dark:				#4d4c5d;
+$green:				#aecf96;
+$red:				#C18183;
 
-// Responsive
-$mobile: 		640px;
-$tablet: 		1024px;
+// Tablet
+$tablet-landscape:	1024px;
+$tablet-portrait:	800px;
+
+// Mobile
+$mobile-landscape: 	640px;
+$mobile-portrait: 	400px;

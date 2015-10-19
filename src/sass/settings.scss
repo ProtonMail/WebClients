@@ -357,12 +357,12 @@
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     #pm_settings {}
 }
 
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     #pm_settings {
         #plans .plans .plan .details td .pm_buttons {
             width: initial !important;

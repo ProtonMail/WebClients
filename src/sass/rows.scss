@@ -155,7 +155,7 @@
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	#pm_rows {
 		padding: 0;
 		.list {
@@ -164,7 +164,7 @@
 			max-height: none;
 			padding: 1px 0;
 			.message {
-				padding: 0 25px !important;
+				padding: 0 10px !important;
 				margin: 0 !important;
 				&.unread {
 					margin: 0;
@@ -175,7 +175,7 @@
 	}
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
 	body.rows #pm_list {
 		margin-right: 0;
 		padding-right: 0;
@@ -197,7 +197,7 @@
 			.pm_checkbox {
 				position: absolute;
 				left: 10px;
-				top: 15px;
+				top: 19px;
 				z-index: 2;
 			}
 			&.unread {
@@ -262,12 +262,11 @@
 			.subject {
 				margin-right: 0;
 				.pm_labels {
-					right: -10px;
+					right: 0;
 					background-color: $white;
-					width: 5rem;
 					min-width: 5rem;
 					.pm_label {
-						margin: 4px 0 0 0;
+						margin: 4px 0 0 4px;
 					    line-height: 14px;
 					    height: 18px;
 					    width: 1.5rem;
@@ -327,7 +326,7 @@
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	#pm_rows {
 		.list {
 			.message {
@@ -336,6 +335,17 @@
 					min-width: 1.5rem;
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: $mobile-portrait) {
+	#pm_rows {
+		#pm_list {
+			padding: 0 !important;
+		}
+		.list .message:first-child {
+			border-top: none;
 		}
 	}
 }

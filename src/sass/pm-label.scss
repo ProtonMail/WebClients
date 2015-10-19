@@ -104,8 +104,16 @@
 		z-index: 10;
 	}
 }
-.rows .unread,
-.columns .active {
+.rows .unread, {
+	.pm_labels {
+		&:before {
+			background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+		}
+	}
+}
+.columns .selected,
+.rows .selected {
 	.pm_labels {
 		&:before {
 			background: linear-gradient(to right, rgba(246,246,246,0) 0%,rgba(246,246,246,1) 100%);
@@ -115,7 +123,7 @@
 }
 
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	.pm_labels {
 		min-width: initial;
 		width: initial;
@@ -129,7 +137,6 @@
 			}
 			i {
 				display: block;
-			    width: 1rem;
 			    text-align: center;
 			}
 		}

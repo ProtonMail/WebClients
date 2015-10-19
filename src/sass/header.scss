@@ -234,7 +234,7 @@ header#pm_header {
 	}
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
 	header#pm_header {
 		.compose {
 			display: block;
@@ -251,7 +251,7 @@ header#pm_header {
 	        padding-right: .5rem;
 	        width: 135px;
 	        float: right;
-	        margin: 13px 25px;
+	        margin: 13px 10px;
 	        &:hover {
 	            background-color: #7e82b4;
 	        }
@@ -277,7 +277,7 @@ header#pm_header {
 		}
 		a.logoMobile {
 			display: inline-block;
-			margin: 0 25px;
+			margin: 0 10px;
 			float: left;
 			img {
 				display: inline-block;
@@ -294,7 +294,7 @@ header#pm_header {
 	}
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-portrait) {
 	header#pm_header {
 		.fa {
 			font-size: 18px;
@@ -317,7 +317,7 @@ header#pm_header {
 			min-width: 3rem;
 			width: 3rem;
 			padding: 0;
-			margin-right: 15px;
+			margin-right: 10px;
 			margin-left: 0;
 			span {
 				display: none;

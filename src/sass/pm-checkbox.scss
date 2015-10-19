@@ -7,22 +7,23 @@
 	}
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
     label.pm_checkbox {
         display: inline-block;
-        height: 33px !important;
-        width: 33px !important;
+        height: 26px !important;
+        width: 26px !important;
         border: 1px solid $border;
         border-radius: 2px;
         margin: 0 !important;
         position: relative;
+        top: 3px;
         input[type="checkbox"] {
             display: none;
         }
 		input[type="checkbox"]:checked + em {
-			height: 33px;
-			width: 33px;
-			line-height: 33px;
+			height: 26px;
+			width: 26px;
+			line-height: 26px;
 			text-align: center;
 			display: block;
 			position: absolute;

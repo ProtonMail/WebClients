@@ -285,7 +285,7 @@ section.sidebar {
     }
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $tablet-landscape) {
     body.secure #pm_background {
         position: fixed;
         z-index: 8;
@@ -355,7 +355,7 @@ section.sidebar {
     }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile-landscape) {
     body.secure section.sidebar,
     body.secure #pm_background {
         // display: none !important;
