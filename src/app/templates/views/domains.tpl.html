@@ -5,7 +5,7 @@
     <div class="settings" ng-height>
         <div class="row">
             <section class="setting pm_form full">
-                <legend>{{ 'CONFIGURE_DOMAINS' | translate }}</legend>
+                <legend>1 {{ 'CONFIGURE_DOMAINS' | translate }}</legend>
                 <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
                 <p>{{ }} Domains are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <p>
@@ -76,10 +76,11 @@
                 <p>&nbsp;</p>
             </section>
             <section class="setting pm_form full">
-                <legend>{{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
+                <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
                 <p>{{ }} Addresses are used. <a href="" ui-sref="secured.domains">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="openDomainModal()">{{ 'ADD_ADDRESS' | translate }}</button>
+                    <a href="" ui-sref="secured.users" class="pm_button primary">{{ 'ADD_USER' | translate }}</a>
                 </p>
                 <table class="pm_table">
                     <thead>
@@ -108,7 +109,7 @@
                 <p>&nbsp;</p>
             </section>
             <section class="setting pm_form full">
-                <legend>MX Record</legend>
+                <legend>3 MX Record</legend>
                 <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p class="alert alert-info">
                     [ our MX Record ] qwe8q6we576125e812367812tye781y2eyt7812783127ey172ye712ye712737ey1278ye7812361782ey1278367182ye8y127361782ey7812yee127ye7y12ye71

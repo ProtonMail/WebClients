@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DomainsController', function($rootScope, $scope, domainModal, spfModal, dkimModal, dmarcModal) {
+.controller('DomainsController', function($rootScope, $scope, domainModal, addressModal, spfModal, dkimModal, dmarcModal) {
     $scope.domains = [
         {id: 1, domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
         {id: 2, domain: 'example2.com', status: false, verification: false, spf: false, dkim: false, dmarc: false}
@@ -34,6 +34,17 @@ angular.module("proton.controllers.Settings")
      */
     $scope.deleteDomain = function(domain) {
 
+    };
+
+    /**
+     * Open modal to add a new address
+     */
+    $scope.addAddress = function() {
+        addressModal.activate({
+            params: {
+
+            }
+        });
     };
 
     /**
