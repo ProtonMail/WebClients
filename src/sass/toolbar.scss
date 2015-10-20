@@ -78,7 +78,7 @@ body.columns #pm_toolbar {
         float: none;
         width: 100%;
         box-sizing: border-box;
-        padding: 12px 0;
+        padding: 12px 10px;
         float: left;
         .messageActions {
             .nav {
@@ -95,6 +95,9 @@ body.columns #pm_toolbar {
             padding-left: 0;
             padding-left: 0;
             position: relative;
+            .pm_checkbox {
+                padding-left: 10px;
+            }
             .pm_buttons {
                 margin: 0 0 0 10px !important;
                 a {
@@ -142,6 +145,12 @@ body.columns #pm_toolbar {
     }
     body #pm_view #pm_toolbar .messageActions a strong {
         display: none;
+    }
+}
+
+@media (max-width: $mobile-landscape) {
+    #pm_toolbar_responsive {
+        padding: 12px 0;
     }
 }
 
