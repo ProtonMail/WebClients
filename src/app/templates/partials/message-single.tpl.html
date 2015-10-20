@@ -1,7 +1,9 @@
 <!-- for threading, `derp` will be the index of the ng-repeaet -->
 <article class="message">
     <header>
-        <a href class="fa fa-star"></a>
+        <a href="#" ng-click="toggleStar(message)" class="singleStar">
+            <i class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></i>
+        </a>
         <span class="meta">
             <i class="fa fa-paperclip"></i>
             <i class="fa fa-lock"></i>
