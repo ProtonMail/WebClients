@@ -84,9 +84,6 @@ body.columns #pm_toolbar {
             padding-left: 0;
             padding-left: 0;
             position: relative;
-            .pm_checkbox {
-                padding-left: 10px;
-            }
             .pm_buttons {
                 margin: 0 0 0 10px !important;
                 a {
@@ -137,8 +134,26 @@ body.columns #pm_toolbar {
     }
 }
 
+@media (max-width: $tablet-portrait) {
+    #pm_toolbar_responsive {
+        .main {
+            .pm_checkbox {
+                // margin-left: 10px !important;
+            }
+        }
+    }
+}
+
 @media (max-width: $mobile-landscape) {
     #pm_toolbar_responsive {
+        padding: 12px 10px;
+        .main {
+            .pm_checkbox {
+                margin-left: 0 !important;
+            }
+        }
+    }
+    #pm_view #pm_toolbar_responsive {
         padding: 12px 0;
     }
 }
