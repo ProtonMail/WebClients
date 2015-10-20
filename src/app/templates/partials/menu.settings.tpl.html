@@ -27,14 +27,7 @@
 
 <span class="pm_buttons" id="settingsSelect">
     <a href="" class="pm_trigger" ng-dropdown>
-        <span ng-show="('secured.dashboard' | includedByState)">{{ 'DASHBOARD' | translate }}</span>
-        <span ng-show="('secured.account' | includedByState)">{{ 'ACCOUNT' | translate }}</span>
-        <span ng-show="('secured.labels' | includedByState)">{{ 'LABELS' | translate }}</span>
-        <span ng-show="('secured.security' | includedByState)">{{ 'SECURITY' | translate }}</span>
-        <span ng-show="('secured.appearance' | includedByState)">{{ 'APPEARANCE' | translate }}</span>
-        <span ng-show="('secured.domains' | includedByState)">{{ 'DOMAINS' | translate }}</span>
-        <span ng-show="('secured.users' | includedByState)">{{ 'USERS' | translate }}</span>
-        <span ng-show="('secured.invoices' | includedByState)">{{ 'INVOICES' | translate }}</span>
+        {{ currentSettingRoute.label }}
         <i class="fa fa-angle-down"></i>
     </a>
     <select ng-model="currentSettingRoute" ng-init="initSettingRoute()" ng-options="route.label for route in settingsRoutes" ng-change="goTo(currentSettingRoute.value)"></select>
