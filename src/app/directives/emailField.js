@@ -77,9 +77,6 @@ angular.module("proton.emailField", [])
             };
 
             var setValue = function () {
-
-                console.log('setValue');
-
                 $ctrl.$setViewValue(_(manager.tagsManager('tags').concat([$$element.val()]))
                 .filter(function (data) {
                     return data && EMAIL_REGEXP.test(data.Email);
@@ -148,9 +145,6 @@ angular.module("proton.emailField", [])
             };
 
             var selected = function (e, d) {
-
-                console.log('selected');
-
                 if (typeof d.Name === 'undefined' || d.Name === '') {
                     if (d.Email) {
                         d.Name = d.Email.split('@')[0];
@@ -168,9 +162,6 @@ angular.module("proton.emailField", [])
             };
 
             $ctrl.$render = function () {
-
-                console.log('$render');
-
                 _(($ctrl.$viewValue || "").split(","))
                 .map(function (str) { return str.trim(); })
                 .each(function (email) {
@@ -256,9 +247,6 @@ angular.module("proton.emailField", [])
             $$element.autosizeInput();
 
             _.forEach($scope.message[list], function(d) {
-
-                console.log('init');
-
                 if (typeof d.Name === 'undefined' || d.Name === '') {
                     if (d.Email) {
                         d.Name = d.Email.split('@')[0];
