@@ -9,21 +9,21 @@
                     <thead>
                         <tr>
                             <th>{{ 'DESCRIPTION' | translate }}</th>
-                            <th class="text-right">{{ 'PRICE' | translate }}</th>
+                            <th>{{ 'QUANTITY' | translate }}</th>
+                            <th>{{ 'PRICE' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="element in ctrl.cart">
-                            <td>{{ element.title }} <span ng-show="element.quantity > 1">x {{ element.quantity }}</span></td>
-                            <td class="text-right">{{ element.price | number: 2 | currency: ctrl.currency }}</td>
+                            <td>{{ element.number }} {{ element.title }}</td>
+                            <td>{{ element.quantity }}</td>
+                            <td>{{ element.price | number: 2 | currency: ctrl.currency }}</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>
-                                    {{ 'TOTAL' | translate }} <span ng-show="ctrl.billing === 1">{{ 'PER_MONTH' | translate }}</span><span ng-show="ctrl.billing === 12">{{ 'PER_YEAR' | translate }}</span>
-                                </strong>
+                            <td colspan="2">
+                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.billing === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.billing === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
-                            <td class="text-right">
+                            <td>
                                 <strong>{{ ctrl.total() | number: 2 | currency: ctrl.currency }}</strong>
                             </td>
                         </tr>

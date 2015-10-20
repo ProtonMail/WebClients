@@ -478,6 +478,7 @@ angular.module("proton.modals", [])
                 var price = params.pack.price[params.billing];
 
                 this.cart.push({
+                    number: params.pack.number,
                     quantity: params.pack.quantity,
                     title: params.pack.long,
                     price: price
@@ -490,6 +491,7 @@ angular.module("proton.modals", [])
                         var price = element.price[params.billing] * element.quantity;
 
                         this.cart.push({
+                            number: element.number,
                             quantity: element.quantity,
                             title: element.long,
                             price: price

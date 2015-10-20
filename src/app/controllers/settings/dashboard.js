@@ -52,7 +52,7 @@ angular.module("proton.controllers.Settings")
     $scope.plusAdditionals = [
         {checked: false, type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 1, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
         {checked: false, type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_DOMAIN'), long: $translate.instant('EXTRA_DOMAIN')},
-        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('5_EXTRA_ADDRESSES')}
+        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')}
     ];
 
     $scope.businessAdditionals = [
