@@ -32,6 +32,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
+    $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
     $rootScope.$broadcast('activeMessage', message.ID);
