@@ -78,8 +78,18 @@ body.columns #pm_toolbar {
         float: none;
         width: 100%;
         box-sizing: border-box;
-        padding: 12px 10px;
+        padding: 12px 0;
         float: left;
+        .messageActions {
+            .nav {
+                margin-left: 10px;
+            }
+            a {
+                strong {
+                    display: none;
+                }
+            }            
+        }
         .main {
             float: left;
             padding-left: 0;
@@ -89,6 +99,15 @@ body.columns #pm_toolbar {
                 margin: 0 0 0 10px !important;
                 a {
                     padding: 0 11px;
+                    &.createLabel {
+                        padding: 0 !important;
+                        background: transparent !important;
+                        i.fa {
+                            width: 30px;
+                            text-align: left;
+                            float: left;
+                        }
+                    }
                 }
                 .pm_buttons {
                     margin: 0;

@@ -65,7 +65,7 @@
             <div ng-if="message.ToList.length" class="toGroup">
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
-                    <span ng-repeat="email in ::message.ToList">
+                    <span ng-repeat="email in ::message.ToList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | username }}</em>
                         <strong>&lt;{{ email.Address }}&gt;</strong>
@@ -75,7 +75,7 @@
             <div ng-if="message.CCList.length" class="ccGroup">
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
-                    <span ng-repeat="email in ::message.CCList">
+                    <span ng-repeat="email in ::message.CCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | username }}</em>
                         <strong>&lt;{{ email.Address }}&gt;</strong>
@@ -85,7 +85,7 @@
             <div ng-if="message.BCCList.length" class="bccGroup">
                 <i>{{ 'BCC' | translate }}</i>
                 <span class="recipientsWrap">
-                    <span ng-repeat="email in ::message.BCCList">
+                    <span ng-repeat="email in ::message.BCCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | username }}</em>
                         <strong>&lt;{{ email.Address }}&gt;</strong>

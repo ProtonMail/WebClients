@@ -25,6 +25,7 @@
 	        padding-left: 0;
 	        box-sizing: border-box;
 	        overflow: auto;
+            float: left;
 	    }
 	    .fa-star,
 	    .fa-star-o {
@@ -51,6 +52,7 @@
     	overflow-x: auto;
     	box-sizing: border-box;
     	width: 100%;
+        clear: both;
     }
     article.message {
     	clear: both;
@@ -66,6 +68,21 @@
 		    font-size: 10px;
 		    margin-top: 4px;
 		}
+        span.person {
+            float: left;
+            & > * {
+                float: left;
+            }
+            i {
+                margin: 0 0 0 .25rem;
+                clear: both;
+                white-space: nowrap;
+            }
+            em {
+                color: #669;
+                display: inline-block;
+            }
+        }
     	header {
     		overflow: hidden;
     		font-size: 15px;
@@ -77,21 +94,10 @@
     			white-space: nowrap;
     			text-align: right;
                 font-size: 14px;
-    		}
+    		}           
     		.from {
     			color: #999;
     			float: left;
-    			span.person {
-    				float: left;
-    				& > * {
-    					float: left;
-    				}
-    				i {
-	    				margin: 0 0 0 .25rem;
-                        clear: both;
-                        white-space: nowrap;
-    				}
-    			}
     			i {
     				display: inline-block;
     				width: 3rem;
@@ -104,9 +110,6 @@
                     font-weight: 400;
                     margin-left: .5rem;
                 }
-    		}
-    		em {
-    			color: #669;
     		}
     		a {
     			text-decoration: none;
@@ -176,10 +179,6 @@
     				display: inline-block;
                 }
 			}
-			em {
-    			color: #669;
-    			display: inline-block;
-    		}
     		.meta {
     			height: 35px;
                 float: left;
@@ -187,6 +186,15 @@
                 clear: both;
     			line-height: 35px;
     			padding-top: 1rem;
+                .pm_labels.inline .pm_label {
+                    margin: 0 5px 0 0;
+                    i {
+                        display: none;
+                    }
+                    em {
+                        display: inline-block;
+                    }
+                }
     			.pm_buttons {
     				padding: 0;
     				border: none;
@@ -311,19 +319,21 @@
         }
     }
     #pm_view > header {
-        margin: 0;
-        padding: 0 25px;
+        margin: -10px 0 0 0;
+        padding: 0 10px;
         line-height: 65px;
+        float: left;
+        width: 100%;
     }
     #pm_view #pm_thread {
-        padding: 0 25px;
+        padding: 0 10px;
     }
 }
 @media (max-width: $mobile-landscape) {
-	#pm_view > header {
-		margin: 0;
-	}
     #pm_view #pm_thread {
+        padding: 0;
+    }
+    #pm_view > header {
         padding: 0;
     }
     #pm_view #pm_toolbar {
