@@ -12,7 +12,7 @@ angular.module("proton.emailField", [])
             // Variables
             var $$element = $($element[0]);
             var parent = $$element.parent();
-            var container = $(parent).closest('.input-container');
+            var container = $(parent).closest('.typeahead-container');
             var list = ($(parent).hasClass('to-container')) ? "ToList" : ($(parent).hasClass('bcc-container')) ? "BCCList" : "CCList";
             var emails = [];
             var tabbing = false;
@@ -93,11 +93,11 @@ angular.module("proton.emailField", [])
                         }
                     }
                     if (
-                        (typeof element.Name !== 'undefined') && 
-                        (typeof element.Email !== 'undefined') && 
+                        (typeof element.Name !== 'undefined') &&
+                        (typeof element.Email !== 'undefined') &&
                         (element.Name.trim() === element.Email.trim())
                     ) {
-                        element.Name = element.Email.split('@')[0];   
+                        element.Name = element.Email.split('@')[0];
                     }
 
                     return {
@@ -157,11 +157,11 @@ angular.module("proton.emailField", [])
                     }
                 }
                 if (
-                    (typeof d.Name !== 'undefined') && 
-                    (typeof d.Email !== 'undefined') && 
+                    (typeof d.Name !== 'undefined') &&
+                    (typeof d.Email !== 'undefined') &&
                     (d.Name.trim() === d.Email.trim())
                 ) {
-                    d.Name = d.Email.split('@')[0];   
+                    d.Name = d.Email.split('@')[0];
                 }
 
                 manager.tagsManager("pushTag", d);
@@ -181,11 +181,11 @@ angular.module("proton.emailField", [])
                         }
                     }
                     if (
-                        (typeof email.Name !== 'undefined') && 
-                        (typeof email.Email !== 'undefined') && 
+                        (typeof email.Name !== 'undefined') &&
+                        (typeof email.Email !== 'undefined') &&
                         (email.Name.trim() === email.Email.trim())
                     ) {
-                        email.Name = email.Email.split('@')[0];   
+                        email.Name = email.Email.split('@')[0];
                     }
 
                     manager.tagsManager('pushTag', email);
@@ -265,11 +265,11 @@ angular.module("proton.emailField", [])
                     }
                 }
                 if (
-                    (typeof d.Name !== 'undefined') && 
-                    (typeof d.Email !== 'undefined') && 
+                    (typeof d.Name !== 'undefined') &&
+                    (typeof d.Email !== 'undefined') &&
                     (d.Name.trim() === d.Email.trim())
                 ) {
-                    d.Name = d.Email.split('@')[0];   
+                    d.Name = d.Email.split('@')[0];
                 }
 
                 manager.tagsManager("pushTag", {
