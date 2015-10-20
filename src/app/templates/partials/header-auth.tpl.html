@@ -47,6 +47,7 @@
         </li>
         <li ng-class="{'active': activeSettings()}">
             <a href="" ui-sref="secured.dashboard">
+                <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
         </li>
@@ -58,7 +59,7 @@
                 </a>
                 <span class="pm_dropdown wide right">
                     <p><strong>{{ user.DisplayName }}</strong></p>
-                    <p><b>{{ user.Addresses[0].Email }}</b> <a class="fa fa-cog"></a></p>
+                    <p><b>{{ user.Addresses[0].Email }}</b> </p>
                     <a href="" class="help">
                         <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
                     </a>
