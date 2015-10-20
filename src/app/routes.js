@@ -611,6 +611,16 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.example", {
+        url: "/example",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/example.tpl.html",
+                controller: "LabelsController"
+            }
+        }
+    })
+
     .state("secured.security", {
         url: "/security",
         views: {
