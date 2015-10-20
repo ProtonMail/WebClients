@@ -335,6 +335,15 @@
     #pm_view #pm_thread {
         padding: 0 10px;
     }
+    #pm_view {
+        article.message {
+            span.person {
+                strong {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 @media (max-width: $mobile-landscape) {
     #pm_view #pm_thread {
