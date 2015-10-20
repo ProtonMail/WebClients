@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, Payment) {
+.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, stripeModal, Payment) {
     $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'basic'; // TODO need initialization
@@ -122,7 +122,13 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.showPaymentInformation = function(){
-
+        stripeModal.activate({
+            params: {
+                close: function() {
+                    stripeModal.deactivate();
+                }
+            }
+        });
     };
 
     /**

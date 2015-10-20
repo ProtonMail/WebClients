@@ -422,6 +422,21 @@ angular.module("proton.modals", [])
     });
 })
 
+// Stripe modal
+.factory('stripeModal', function(pmModal, Stripe) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/stripe.tpl.html',
+        controller: function(params) {
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
 // Payment modal
 .factory('paymentModal', function(notify, pmModal, Stripe, Payment, $translate) {
     return pmModal({

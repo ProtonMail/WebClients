@@ -91,7 +91,6 @@
                         </button>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.status === true, 'fa-exclamation-triangle text-red': domain.status === false}"></i> <strong>{{ domain.domain }}</strong>
                     </p>
-                    <p ng-show="domain.status === false">Please add first custom domain.</p>
                     <div ng-show="domain.expand === true && domain.status === true">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
