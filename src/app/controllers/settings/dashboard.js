@@ -29,16 +29,16 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.plusAdditionals = [
-        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE'), long: $translate.instant('ADDITIONAL_STORAGE')},
-        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'), long: $translate.instant('ADDITIONAL_DOMAIN')},
-        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS'), long: $translate.instant('ADDITIONAL_ADDRESS')}
+        {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('2 GB'), long: $translate.instant('ADDITIONAL_STORAGE')},
+        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'), long: $translate.instant('ADDITIONAL_DOMAINS')},
+        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('5 ADDRESSES'), long: $translate.instant('ADDITIONAL_ADDRESSES')}
     ];
 
     $scope.businessAdditionals = [
         {checked: false, type: 'space', price: 1, number: 1, title: $translate.instant('STORAGE'), long: $translate.instant('ADDITIONAL_STORAGE')},
-        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'),long: $translate.instant('ADDITIONAL_DOMAIN')},
-        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS'), long: $translate.instant('ADDITIONAL_ADDRESS')},
-        {checked: false, type: 'member', price: 2, number: 1, title: $translate.instant('USER'), long: $translate.instant('ADDITIONAL_USER')}
+        {checked: false, type: 'domain', price: 8, number: 1, title: $translate.instant('DOMAIN'),long: $translate.instant('ADDITIONAL_DOMAINS')},
+        {checked: false, type: 'address', price: 2, number: 1, title: $translate.instant('ADDRESS'), long: $translate.instant('ADDITIONAL_ADDRESSES')},
+        {checked: false, type: 'member', price: 2, number: 1, title: $translate.instant('MEMBER'), long: $translate.instant('ADDITIONAL_MEMBERS')}
     ];
 
     $scope.total = function(name) {
