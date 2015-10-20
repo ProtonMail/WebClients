@@ -79,7 +79,7 @@ angular.module("proton.controllers.Settings")
 
         _.each(additionals, function(element) {
             if(element.checked === true) {
-                total += parseInt(element.price[$scope.billing]) * parseInt(element.quantity);
+                total += element.price[$scope.billing] * element.quantity;
             }
         });
 
