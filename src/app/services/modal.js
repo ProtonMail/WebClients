@@ -645,6 +645,8 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/address.tpl.html',
         controller: function(params) {
+            // Variables
+            this.domain = params.domain;
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {

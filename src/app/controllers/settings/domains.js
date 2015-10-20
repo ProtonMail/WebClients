@@ -51,10 +51,16 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal to add a new address
      */
-    $scope.addAddress = function() {
+    $scope.addAddress = function(domain) {
         addressModal.activate({
             params: {
-
+                domain: domain,
+                submit: function() {
+                    addressModal.deactivate();
+                },
+                cancel: function() {
+                    addressModal.deactivate();
+                }
             }
         });
     };
