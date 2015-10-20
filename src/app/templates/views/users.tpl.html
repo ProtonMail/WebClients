@@ -78,10 +78,7 @@
 						<tr ng-repeat="user in users">
 		                    <td class="username" ng-bind="user.username"></td>
 		                    <td class="role">
-                                <select>
-                                    <option value="0">{{ 'MASTER' | translate }}</option>
-                                    <option value="1">{{ 'SUB' | translate }}</option>
-                                </select>
+                                <select ng-model="user.selectRole" ng-init="initRole(user)" ng-options="role.label for role in roles" ng-change="changeRole(user)"></select>
 		                    </td>
 		                    <td class="storage">{{ user.storage | bytes: 0 }}</td>
 		                    <td class="addresses">
