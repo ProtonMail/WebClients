@@ -14,7 +14,6 @@
             <span class="person">
                 <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo({Address: message.SenderAddress, Name: message.SenderName})" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em pt-tooltip="{{ ::message.SenderAddress }}" title="{{ ::message.SenderAddress }}">{{ ::message.SenderName }}</em>
-                <strong>&lt;{{ ::message.SenderAddress }}&gt;</strong>
             </span>
         </span>
     </header>
@@ -70,7 +69,6 @@
                     <span ng-repeat="email in ::message.ToList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em pt-tooltip="{{ email.Address }}" title="{{ email.Address }}">{{ email | username }}</em>
-                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>
@@ -80,7 +78,6 @@
                     <span ng-repeat="email in ::message.CCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em pt-tooltip="{{ email.Address }}" title="{{ email.Address }}">{{ email | username }}</em>
-                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>
@@ -90,7 +87,6 @@
                     <span ng-repeat="email in ::message.BCCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em pt-tooltip="{{ email.Address }}" title="{{ email.Address }}">{{ email | username }}</em>
-                        <strong>&lt;{{ email.Address }}&gt;</strong>
                     </span>
                 </span>
             </div>

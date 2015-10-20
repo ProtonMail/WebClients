@@ -34,6 +34,9 @@
             height: 32px;
             line-height: 32px;
             padding-left: 10px;
+            position: relative;
+            z-index: 3;
+            background: transparent;
         }
         .fa {
             position: absolute;
@@ -43,6 +46,7 @@
             bottom: 0;
             height: 32px;
             line-height: 32px;
+            z-index: 1;
         }
     }
 
