@@ -225,6 +225,10 @@ body.maximizedComposer {
 			max-height: 99px;
 			overflow-y: auto;
 			overflow-x: hidden;
+			&.unfocussed {
+				max-height: 33px;
+				overflow: hidden;
+			}
 		}
 		.meta {
 			-webkit-flex-grow: 1;
