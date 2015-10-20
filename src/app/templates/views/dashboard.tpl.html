@@ -132,7 +132,7 @@
                                 {{ 'MONTHLY' | translate }}
                                 </a>
                                 <a href="" ng-click="billing = 12" ng-class="{'active': billing === 12}" class="divider">
-                                {{ 'YEARLY' | translate }} <em>( SAVE 25%)</em>
+                                {{ 'YEARLY' | translate }}
                                 </a>
                             </div>
                         </div>
@@ -187,9 +187,13 @@
                                     <i class="fa fa-check"></i>
                                     <strong>5 {{ 'ADDRESSES' | translate }}</strong>
                                 </p>
-                                <p ng-show="billing === 12">
+                                <p>
                                     <i class="fa fa-check"></i>
-                                    <strong class="text-green">Save 25%</strong>
+                                    <strong>{{ 'UNLIMITED_LABELS' | translate }}</strong>
+                                </p>
+                                <p>
+                                    <i class="fa fa-check"></i>
+                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
                                 </p>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
@@ -204,31 +208,15 @@
                                         <td>
                                             <label>
                                                 <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.title }}
+                                                {{ element.number }} <small ng-show="element.type === 'space'">GB</small> {{ element.title }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
-                                            <span class="pm_buttons">
-                                                <a href="" class="pm_trigger" ng-dropdown="">
-                                                    {{ element.number }} <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <span class="pm_dropdown">
-                                                    <a href="" ng-click="element.number = 1">1</a>
-                                                    <a href="" ng-click="element.number = 2">2</a>
-                                                    <a href="" ng-click="element.number = 3">3</a>
-                                                    <a href="" ng-click="element.number = 4">4</a>
-                                                    <a href="" ng-click="element.number = 5">5</a>
-                                                    <a href="" ng-click="element.number = 6">6</a>
-                                                    <a href="" ng-click="element.number = 7">7</a>
-                                                    <a href="" ng-click="element.number = 8">8</a>
-                                                    <a href="" ng-click="element.number = 9">9</a>
-                                                    <a href="" ng-click="element.number = 10">10</a>
-                                                </span>
-                                            </span>
+                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price * element.number | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
@@ -269,11 +257,15 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>2 {{ 'EMPLOYES' | translate }}</strong>
+                                    <strong>{{ 'UNLIMITED_LABELS' | translate }}</strong>
                                 </p>
-                                <p ng-show="billing === 12">
+                                <p>
                                     <i class="fa fa-check"></i>
-                                    <strong class="text-green">Save 25%</strong>
+                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                </p>
+                                <p>
+                                    <i class="fa fa-check"></i>
+                                    <strong>2 {{ 'USERS' | translate }}</strong>
                                 </p>
                                 <p>&nbsp;</p>
                                 <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
@@ -287,31 +279,15 @@
                                         <td>
                                             <label>
                                                 <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.title }}
+                                                {{ element.quantity }} <small ng-show="element.type === 'space'">GB</small> {{ element.title }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
-                                            <span class="pm_buttons">
-                                                <a href="" class="pm_trigger" ng-dropdown="">
-                                                    {{ element.number }} <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <span class="pm_dropdown">
-                                                    <a href="" ng-click="element.number = 1">1</a>
-                                                    <a href="" ng-click="element.number = 2">2</a>
-                                                    <a href="" ng-click="element.number = 3">3</a>
-                                                    <a href="" ng-click="element.number = 4">4</a>
-                                                    <a href="" ng-click="element.number = 5">5</a>
-                                                    <a href="" ng-click="element.number = 6">6</a>
-                                                    <a href="" ng-click="element.number = 7">7</a>
-                                                    <a href="" ng-click="element.number = 8">8</a>
-                                                    <a href="" ng-click="element.number = 9">9</a>
-                                                    <a href="" ng-click="element.number = 10">10</a>
-                                                </span>
-                                            </span>
+                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price * element.number | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>

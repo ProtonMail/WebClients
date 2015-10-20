@@ -442,34 +442,28 @@ angular.module("proton.modals", [])
             this.cart = [];
 
             var count = function(type) {
-                var number = 0;
+                var quantity = 0;
 
                 if(angular.isDefined(params.pack)) {
-                    number += params.pack[type];
+                    quantity += params.pack[type];
                 }
 
                 if(angular.isDefined(params.additionals)) {
                     var element = _.findWhere(params.additionals, {type: type, checked: true});
 
                     if(angular.isDefined(element)) {
-                        number += element.number;
+                        quantity += element.quantity;
                     }
                 }
 
-                return number;
+                return quantity;
             };
 
             if(angular.isDefined(params.pack)) {
-                var price;
-
-                if(params.billing === 12) {
-                    price = params.pack.price * params.billing * 0.75;
-                } else {
-                    price = params.pack.price * params.billing;
-                }
+                var price = params.pack.price[params.billing];
 
                 this.cart.push({
-                    number: params.pack.number,
+                    quantity: params.pack.quantity,
                     title: params.pack.long,
                     price: price
                 });
@@ -478,10 +472,12 @@ angular.module("proton.modals", [])
             if(angular.isDefined(params.additionals)) {
                 _.each(params.additionals, function(element) {
                     if(element.checked === true) {
+                        var price = element.price[params.billing] * element.quantity;
+
                         this.cart.push({
-                            number: element.number,
+                            quantity: element.quantity,
                             title: element.long,
-                            price: element.price * element.number * params.billing
+                            price: price
                         });
                     }
                 }.bind(this));
@@ -506,7 +502,7 @@ angular.module("proton.modals", [])
                                 Object: 'token',
                                 Token: response.id
                             },
-                            Order: {
+                            Cart: {
                                 current: null,
                                 future: {
                                     Use2FA: false,

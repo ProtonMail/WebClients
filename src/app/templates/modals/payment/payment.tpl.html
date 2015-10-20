@@ -14,7 +14,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="element in ctrl.cart">
-                            <td>{{ element.title }} <span ng-show="element.number > 1">x {{ element.number }}</span></td>
+                            <td>{{ element.title }} <span ng-show="element.quantity > 1">x {{ element.quantity }}</span></td>
                             <td class="text-right">{{ element.price | currency: ctrl.currency }}</td>
                         </tr>
                         <tr>
