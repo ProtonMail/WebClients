@@ -26,31 +26,16 @@
 </ul>
 
 <span class="pm_buttons" id="settingsSelect">
-    <a 
-    href="" 
-    ng-init="settingMenu = dashboard"
-    class="pm_trigger" 
-    ng-dropdown 
-    ng-class="{'disabled': disableMain}" 
-    pt-tooltip="{{ 'PAGE_NUMBER' | translate }}">
-        <span ng-show="settingMenu = dashboard">{{ 'DASHBOARD' | translate }}</span>
-        <span ng-show="settingMenu = account">{{ 'ACCOUNT' | translate }}</span>
-        <span ng-show="settingMenu = labels">{{ 'LABELS' | translate }}</span>
-        <span ng-show="settingMenu = security">{{ 'SECURITY' | translate }}</span>
-        <span ng-show="settingMenu = appearance">{{ 'APPEARANCE' | translate }}</span>
-        <span ng-show="settingMenu = domains">{{ 'DOMAINS' | translate }}</span>
-        <span ng-show="settingMenu = users">{{ 'USERS' | translate }}</span>
-        <span ng-show="settingMenu = invoices">{{ 'INVOICES' | translate }}</span> 
+    <a href="" class="pm_trigger" ng-dropdown>
+        <span ng-show="('secured.dashboard' | includedByState)">{{ 'DASHBOARD' | translate }}</span>
+        <span ng-show="('secured.account' | includedByState)">{{ 'ACCOUNT' | translate }}</span>
+        <span ng-show="('secured.labels' | includedByState)">{{ 'LABELS' | translate }}</span>
+        <span ng-show="('secured.security' | includedByState)">{{ 'SECURITY' | translate }}</span>
+        <span ng-show="('secured.appearance' | includedByState)">{{ 'APPEARANCE' | translate }}</span>
+        <span ng-show="('secured.domains' | includedByState)">{{ 'DOMAINS' | translate }}</span>
+        <span ng-show="('secured.users' | includedByState)">{{ 'USERS' | translate }}</span>
+        <span ng-show="('secured.invoices' | includedByState)">{{ 'INVOICES' | translate }}</span>
         <i class="fa fa-angle-down"></i>
     </a>
-    <select ng-model="settingMenu">
-        <option value="dashboard">{{ 'DASHBOARD' | translate }}</option>
-        <option value="account">{{ 'ACCOUNT' | translate }}</option>
-        <option value="labels">{{ 'LABELS' | translate }}</option>
-        <option value="security">{{ 'SECURITY' | translate }}</option>
-        <option value="appearance">{{ 'APPEARANCE' | translate }}</option>
-        <option value="domains">{{ 'DOMAINS' | translate }}</option>
-        <option value="users">{{ 'USERS' | translate }}</option>
-        <option value="invoices">{{ 'INVOICES' | translate }}</option>
-    </select>
+    <select ng-model="currentSettingRoute" ng-init="initSettingRoute()" ng-options="route.label for route in settingsRoutes" ng-change="goTo(currentSettingRoute.value)"></select>
 </span>

@@ -19,6 +19,17 @@ angular.module("proton.controllers.Secured", [])
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
+    $scope.settingsRoutes = [
+        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
+        {value: 'secured.account', label: $translate.instant('ACCOUNT')},
+        {value: 'secured.labels', label: $translate.instant('LABELS')},
+        {value: 'secured.security', label: $translate.instant('SECURITY')},
+        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
+        {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
+        {value: 'secured.domains', label: $translate.instant('DOMAINS')},
+        {value: 'secured.users', label: $translate.instant('USERS')},
+        {value: 'secured.invoices', label: $translate.instant('INVOICES')}
+    ];
 
     eventManager.start(authentication.user.EventID);
     cacheMessages.preloadInboxAndSent();
@@ -41,6 +52,27 @@ angular.module("proton.controllers.Secured", [])
         } else {
             // TODO: error, undefined variables
             return '';
+        }
+    };
+
+    /**
+     * Go to route specified
+     */
+    $scope.goTo = function(route) {
+        if(angular.isDefined(route)) {
+            $state.go(route);
+        }
+    };
+
+    /**
+     * Initialize select
+     */
+    $scope.initSettingRoute = function() {
+        var current = $state.current.name;
+        var route = _.findWhere($scope.settingsRoutes, {value: current});
+
+        if(angular.isDefined(route)) {
+            $scope.currentSettingRoute = route;
         }
     };
 
