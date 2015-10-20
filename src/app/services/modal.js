@@ -499,10 +499,13 @@ angular.module("proton.modals", [])
                             GroupID: '',
                             Amount: this.total(),
                             Currency: params.currency,
-                            OrderTime: Math.floor(Date.now() / 1000), // Current timestamp in seconds
+                            Time: Math.floor(Date.now() / 1000), // Current timestamp in seconds
                             BillingCycle: params.billing,
                             ExternalProvider: 'Stripe',
-                            Token: response.id,
+                            Source: {
+                                Object: 'token',
+                                Token: response.id
+                            },
                             Order: {
                                 current: null,
                                 future: {
