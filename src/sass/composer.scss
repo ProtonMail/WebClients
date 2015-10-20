@@ -223,7 +223,8 @@ body.maximizedComposer {
 		.typeahead-container {
 			line-height: 33px;
 			max-height: 99px;
-			overflow: auto;
+			overflow-y: auto;
+			overflow-x: hidden;
 		}
 		.meta {
 			-webkit-flex-grow: 1;
