@@ -216,7 +216,7 @@
                                             <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
@@ -224,7 +224,7 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ total('plus') | currency: currency }}
+                                    {{ total('plus') | number: 2 | currency: currency }}
                                     <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
@@ -287,14 +287,14 @@
                                             <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>{{ total('business') | currency: currency }}
+                                <span>{{ total('business') | number: 2 | currency: currency }}
                                     <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
