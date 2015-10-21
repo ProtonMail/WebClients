@@ -229,6 +229,9 @@ body.maximizedComposer {
 				max-height: 33px;
 				overflow: hidden;
 			}
+			&.marker-width {
+				width: 80%;
+			}
 		}
 		.meta {
 			-webkit-flex-grow: 1;
