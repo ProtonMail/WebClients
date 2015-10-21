@@ -25,10 +25,9 @@
     </li>
 </ul>
 
-<span class="pm_buttons" id="settingsSelect">
-    <a href="" class="pm_trigger" ng-dropdown>
-        {{ currentSettingRoute.label }}
+<div class="pm_form" id="settingsSelect">
+    <span class="pm_select">
+        <select ng-model="currentSettingRoute" ng-init="initSettingRoute()" ng-options="route.label for route in settingsRoutes" ng-change="goTo(currentSettingRoute.value)"></select>
         <i class="fa fa-angle-down"></i>
-    </a>
-    <select ng-model="currentSettingRoute" ng-init="initSettingRoute()" ng-options="route.label for route in settingsRoutes" ng-change="goTo(currentSettingRoute.value)"></select>
-</span>
+    </span>
+</div>

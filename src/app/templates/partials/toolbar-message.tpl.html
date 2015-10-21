@@ -37,7 +37,6 @@
         <span class="pm_buttons" >
             <a 
             href="" 
-            class="divider" 
             ng-click="moveMessageTo('trash')" 
             ng-hide="{{ 'secured.trash.**' | includedByState }}" 
             pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}">
@@ -45,6 +44,7 @@
             </a>
             <a 
             href="" 
+            ng-class="{ 'divider': !('secured.trash.**' | includedByState) }"
             ng-click="moveMessageTo('inbox')" 
             ng-hide="{{ 'secured.inbox.**' | includedByState }}" 
             pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">

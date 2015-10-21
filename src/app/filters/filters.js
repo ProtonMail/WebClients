@@ -141,8 +141,22 @@ angular.module("proton.filters",[])
                 username = "";
             }
         } else if (angular.isObject(input)) {
+            console.log(input);
             if(angular.isDefined(input.Name) && angular.isDefined(input.Address)) {
-                username = input.Name.split('@')[0];
+                if (input.Name==='') {
+                    if (input.Address.indexOf('@') !== -1) {
+                        username = input.Address.split('@')[0];
+                    }
+                    else {
+                        username = input.Address;
+                    }
+                }
+                else if (input.Name.indexOf('@') !== -1) {
+                    username = input.Name.split('@')[0];
+                }
+                else {
+                    username = input.Name;
+                }
             } else {
                 username = "";
             }

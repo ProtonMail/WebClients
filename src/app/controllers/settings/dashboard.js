@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, Payment) {
+.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, stripeModal, Payment) {
     $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'basic'; // TODO need initialization
@@ -52,7 +52,7 @@ angular.module("proton.controllers.Settings")
     $scope.plusAdditionals = [
         {checked: false, type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 1, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
         {checked: false, type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_DOMAIN'), long: $translate.instant('EXTRA_DOMAIN')},
-        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('5_EXTRA_ADDRESSES')}
+        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')}
     ];
 
     $scope.businessAdditionals = [
@@ -79,7 +79,7 @@ angular.module("proton.controllers.Settings")
 
         _.each(additionals, function(element) {
             if(element.checked === true) {
-                total += parseInt(element.price[$scope.billing]) * parseInt(element.quantity);
+                total += element.price[$scope.billing] * element.quantity;
             }
         });
 
@@ -122,7 +122,13 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.showPaymentInformation = function(){
-
+        stripeModal.activate({
+            params: {
+                close: function() {
+                    stripeModal.deactivate();
+                }
+            }
+        });
     };
 
     /**

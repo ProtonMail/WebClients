@@ -296,7 +296,7 @@ angular.module("proton.routes", [
     // SUPPORT ROUTES
     // -------------------------------------------
     .state("support", {
-        url: "/support",
+        url: "/help",
         views: {
             "main@": {
                 controller: "SupportController",
@@ -323,7 +323,7 @@ angular.module("proton.routes", [
     })
 
     .state("support.reset-password", {
-        url: "/reset-password",
+        url: "/reset-login-password",
         views: {
             "panel@support": {
                 templateUrl: "templates/views/reset-password.tpl.html"
@@ -606,6 +606,16 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/labels.tpl.html",
+                controller: "LabelsController"
+            }
+        }
+    })
+
+    .state("secured.example", {
+        url: "/example",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/example.tpl.html",
                 controller: "LabelsController"
             }
         }

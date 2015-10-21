@@ -25,6 +25,35 @@
        color: #aaaabf;
     }
 
+    .pm_select {
+        position: relative;
+        margin-bottom: 1rem;
+        display: inline-block;
+        border: 1px solid $border;
+        border-radius: 2px;
+        select {
+            margin: 0;
+            height: 32px;
+            line-height: 32px;
+            padding-left: 10px;
+            position: relative;
+            z-index: 3;
+            background: transparent;
+            border: none;
+            width: 100%;
+        }
+        .fa {
+            position: absolute;
+            right: 10px;
+            display: block;
+            top: 0;
+            bottom: 0;
+            height: 32px;
+            line-height: 32px;
+            z-index: 1;
+        }
+    }
+
     select {
         -webkit-appearance: none;
            -moz-appearance: none;
@@ -115,9 +144,16 @@
     select,
     textarea {
         padding: 0 20px;
+        margin-bottom: 1rem;
     }
     textarea {
         min-height: 6rem;
+    }
+
+    select {
+        width: initial;
+        line-height: 32px;
+        height: 32px;
     }
     .margin {
         margin-bottom: 10px;

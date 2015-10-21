@@ -130,15 +130,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         var mailbox = $scope.mailbox;
         var msgs = [];
         var count;
-        var randomChars = function(number) {
-            var chars = '';
-
-            for (var i=0;i<number;i++) {
-                chars += Math.random().toString(36).slice(2);
-            }
-
-            return chars;
-        };
 
         if(mailbox === 'label') {
             mailbox = $stateParams.label;
@@ -148,10 +139,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
         for (var i = 0; i < count; i++) {
             msgs[i] = {
-                sender: randomChars(1),
-                subject: randomChars(12),
-                time: randomChars(1),
-                size: randomChars(1).substring(1, 4)
+                sender: '',
+                subject: '',
+                time: '',
+                size: ''
             };
         }
 

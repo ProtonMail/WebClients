@@ -84,6 +84,9 @@ angular.module("proton.controllers.Settings")
         });
     };
 
+    /**
+     * Open verification modal
+     */
     $scope.verification = function(domain) {
         verificationModal.activate({
             params: {
