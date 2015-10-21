@@ -29,6 +29,8 @@
         position: relative;
         margin-bottom: 1rem;
         display: inline-block;
+        border: 1px solid $border;
+        border-radius: 2px;
         select {
             margin: 0;
             height: 32px;
@@ -37,6 +39,8 @@
             position: relative;
             z-index: 3;
             background: transparent;
+            border: none;
+            width: 100%;
         }
         .fa {
             position: absolute;

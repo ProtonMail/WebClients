@@ -46,7 +46,7 @@
                             </td>
                             <td>&nbsp;</td>
                         </tr>
-                        <tr>
+                        <tr class="storage">
                             <td>&nbsp;</td>
                             <td colspan="2">
                                 <div class="usage">
@@ -70,7 +70,7 @@
                             <td>
                                 <strong>{{ 'BUSINESS_PLAN' | translate }}</strong>
                             </td>
-                            <td>
+                            <td class="price">
                                 <span>10 CHF</span>
                             </td>
                         </tr>
@@ -78,12 +78,19 @@
                             <th>Addons: </th>
                             <td>
                                 <strong>10 GB + 1 GB Extra Storage</strong>
-                                <strong>1 + 1 GB Extra Domain</strong>
                             </td>
                             <td>
                                 <span>1 CHF</span>
-                                <span>2 CHF</span>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <strong>1 + 1 GB Extra Domain</strong>
+                            </td>                        
+                            <td>
+                                <span>2 CHF</span>
+                            </td>                            
                         </tr>
                         <tr>
                             <th>{{ 'TOTAL_PRICE' | translate }}: </th>
@@ -145,7 +152,6 @@
                                 <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Basic</strong>
-                                <small ng-show="plan === 'basic'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
                                 <p>
@@ -161,8 +167,14 @@
                             <div class="price">
                                 <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
-                            <div class="action active">
-                                <a href="#">ALREADY INCLUDED IN YOUR PLAN</a>
+                            <div class="action">
+                                <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action" ng-class="{ 'active': (plan === 'basic') }">
+                                <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action">
+                                <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
 
@@ -172,7 +184,6 @@
                                 <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Plus</strong>
-                                <small ng-show="plan === 'plus'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
                                 <p>
@@ -181,11 +192,11 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                    <strong>{{ 'ADDRESSES' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
@@ -208,15 +219,18 @@
                                         <td>
                                             <label>
                                                 <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.number }} <small ng-show="element.type === 'space'">GB</small> {{ element.title }}
+                                                {{ element.title }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
-                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                            <span class="pm_select">
+                                                <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                                <i class="fa fa-angle-down"></i>
+                                            </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
@@ -224,13 +238,19 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ total('plus') | number: 2 | currency: currency }}
+                                    {{ total('plus') | number: 0 | currency: currency }}
                                     <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
-                                <a href="" ng-click="upgrade('plus')">{{ 'UPGRADE_TO_PLUS_PLAN' | translate }}</a>
+                                <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action" ng-class="{ 'active': (plan === 'plus') }">
+                                <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action">
+                                <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
 
@@ -240,7 +260,6 @@
                                 <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Business</strong>
-                                <small ng-show="plan === 'business'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
                                 <p>
@@ -249,11 +268,11 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                    <strong>{{ 'ADDRESSES' | translate }}</strong>
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
@@ -265,7 +284,7 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-check"></i>
-                                    <strong>2 {{ 'USERS' | translate }}</strong>
+                                    <strong>{{ 'USERS' | translate }}</strong>
                                 </p>
                                 <p>&nbsp;</p>
                                 <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
@@ -273,36 +292,43 @@
                                     <tr>
                                         <td></td>
                                         <td class="amount"></td>
-                                        <td class="cost"></td>
+                                        <td class="cost"></td> 
                                     </tr>
                                     <tr ng-repeat="element in businessAdditionals">
                                         <td>
                                             <label>
                                                 <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.number }} <small ng-show="element.type === 'space'">GB</small> {{ element.title }}
+                                                {{ element.title }}
                                                 <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                             </label>
                                         </td>
                                         <td>
-                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                            <span class="pm_select">
+                                                <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                                <i class="fa fa-angle-down"></i>
+                                            </span>
                                         </td>
                                         <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>{{ total('business') | number: 2 | currency: currency }}
+                                <span>{{ total('business') | number: 0 | currency: currency }}
                                     <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
-                                <a href="" ng-click="upgrade('business')">
-                                {{ 'UPGRADE_TO_BUSINESS_PLAN' | translate }}
-                                </a>
+                                <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action" ng-class="{ 'active': (plan === 'business') }">
+                                <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
+                            </div>
+                            <div class="action">
+                                <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
 

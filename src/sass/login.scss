@@ -27,18 +27,6 @@ body#login {
 
 #pm_login {
 	text-transform: uppercase;
-	&.pm_panel {
-		background: rgba(255,255,255,.1);
-		border: 1px solid rgba(255,255,255,.25);
-		margin-top: 8rem;
-		margin-bottom: 2rem;
-		padding: 50px 70px 0 70px;
-		box-sizing: border-box;
-		height: 390px;
-		a {
-			color: $white;
-		}
-	}
 	h4 {
 		line-height: 3em;
 		font-weight: 600;
@@ -56,7 +44,8 @@ body#login {
 		padding: 0 25px;
 	}
 	input[type="text"],
-	input[type="password"] {
+	input[type="password"],
+	input[type="email"] {
 		border-color: #dfdfdf;
 		background: rgba(255,255,255,.1);
 		color: #dfdfdf;

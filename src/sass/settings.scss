@@ -17,6 +17,11 @@
             width: 12rem;
         }
     }
+    #tableSubscription {
+        .price {
+            width: 4rem;
+        }
+    }
     #settingsSelect {
         display: none;
     }
@@ -24,7 +29,6 @@
         header {
             padding-bottom: 1rem;
             display: block;
-            height: 35px;
             line-height: 35px;
             overflow: hidden;
             .link {
@@ -37,7 +41,7 @@
                     display: block;
                     line-height: 35px;
                     float: left;
-                    padding-right: 1rem;
+                    width: 4rem;
                 }
                 .pm_buttons a em {
                     font-style: normal;
@@ -107,7 +111,7 @@
                     line-height: 70px;
                     height: 70px;
                     display: block;
-                    padding: 0 30px;
+                    padding: 0 20px;
                     color: $primary;
                     font-weight: 400;
                     border-bottom: 1px solid $border;
@@ -125,7 +129,7 @@
                     -webkit-flex-grow: 1;
                         -ms-flex-positive: 1;
                             flex-grow: 1;
-                            padding: 10px 30px;
+                            padding: 10px 20px;
                     p {
                         margin: 0;
                         line-height: 2rem;
@@ -134,10 +138,11 @@
                         font-weight: 700;
                     }
                     td.amount {
-                        width: 6rem;
+                        width: 3.25rem !important;
                     }
                     td.cost {
-                        width: 4rem;
+                        width: 3.75rem !important;
+                        font-size: 90%;
                     }
                     td .fa.fa-info-circle {
                         color: $primary;
@@ -357,7 +362,21 @@
 }
 
 @media (max-width: $tablet-landscape) {
-    #pm_settings {}
+    #pm_settings {
+        .settings {
+            padding: 0 10px;
+        }
+        #plans {
+            header {
+                a.link {
+                    font-size: 11px;
+                    padding: 0; 
+                    float: none !important;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
 }
 
 
@@ -430,27 +449,75 @@
 
 @media (max-width: $mobile-landscape) {
     #pm_settings {
+        .settings {
+            padding: 0 10px;
+        }
+        #plans {
+            header {
+                a.link {
+                    font-size: 11px;
+                    padding: 0;
+                    float: none !important;
+                    margin-bottom: 1rem;
+                }
+            }
+            .plans {
+                .plan {
+                    h3,
+                    .price {
+                        padding: 0 10px;
+                    }
+                    .details {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
         #settingsSelect {
             display: block;
             box-sizing: border-box;
             margin: 10px;
             border: none;
             position: relative;
-            select {
-                height: 33px;
-                line-height: 33px;
+            .pm_select {
+                width: 100%;
+                select {
+                    height: 33px;
+                    line-height: 33px;
+                }
+                .fa {
+                    position: absolute;
+                    right: 1rem;
+                    top: 0;
+                    bottom: 0;
+                    height: 33px;
+                    line-height: 33px;
+                }
             }
-            .fa {
-                position: absolute;
-                right: 1rem;
-                top: 0;
-                bottom: 0;
-                height: 33px;
-                line-height: 33px;
-            }
+        }
+        .well {
+            padding: 0;
+            border: none;
         }
         .pm_tabs {
             display: none;
+        }
+        .pm_table tr {
+            display: table-row;
+            margin: 0;
+            border: none;
+            td, th {
+                display: table-cell;
+                width: initial !important;
+                span,
+                small {
+                    text-align: right !important;
+                    float: right;
+                }
+            }
+            &.storage {
+                display: none !important;
+            }
         }
     }
 }
