@@ -186,14 +186,17 @@
                     </button>
                 </div>
 
-                <div 
-                class="row toRow" 
-                ng-click="message.recipientFieldFocussed = 1" 
+                <div
+                class="row toRow"
+                ng-click="message.recipientFieldFocussed = 1"
                 ng-class="{ closed: recipientsCollapsed }">
                     <label>{{ 'TO' | translate }}</label>
                     <div
                     class="typeahead-container to-container"
-                    ng-class="{unfocussed: (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4)}">
+                    ng-class="{
+                        'unfocussed': (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4),
+                        'marker-width': ((message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields) || (message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')
+                    }">
                         <input
                         tabindex="2"
                         type="text"
@@ -204,7 +207,7 @@
                         ng-change="saveLater(message)"
                         class="to-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList')" class="dotdotdot">
+                    <span ng-if="(message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4) && recipientFieldEllipsis(message, 'ToList') && !((message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields)" class="ccPlus">
                         <button class="pm_button pull-right">...</button>
                     </span>
                     <span class="ccPlus" ng-if="(message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields">
@@ -225,7 +228,10 @@
                 ng-click="message.recipientFieldFocussed = 2">
 
                     <label>{{ 'CC' | translate }}</label>
-                    <div class="typeahead-container cc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields}">
+                    <div class="typeahead-container cc-container" ng-class="{
+                        'unfocussed': (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields,
+                        'marker-width': (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')
+                    }">
                         <input
                         tabindex="3"
                         type="text"
@@ -236,7 +242,7 @@
                         title="{{ 'CC' | translate }}"
                         class="cc-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')" class="dotdotdot">
+                    <span ng-if="(message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'CCList')" class="ccPlus">
                         <button class="pm_button pull-right">...</button>
                     </span>
 
@@ -248,7 +254,10 @@
                 ng-click="message.recipientFieldFocussed = 3">
 
                     <label>{{ 'BCC' | translate }}</label>
-                    <div class="typeahead-container bcc-container" ng-class="{unfocussed: (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields}">
+                    <div class="typeahead-container bcc-container" ng-class="{
+                        'unfocussed': (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields,
+                        'marker-width': (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')
+                    }">
                         <input
                         tabindex="4"
                         type="text"
@@ -259,7 +268,7 @@
                         title="{{ 'BCC' | translate }}"
                         class="bcc-list" />
                     </div>
-                    <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')" class="dotdotdot">
+                    <span ng-if="(message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields && recipientFieldEllipsis(message, 'BCCList')" class="ccPlus">
                         <button class="pm_button pull-right">...</button>
                     </span>
 
