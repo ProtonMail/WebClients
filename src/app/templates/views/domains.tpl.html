@@ -7,7 +7,7 @@
             <section class="setting pm_form full">
                 <legend>1 {{ 'CONFIGURE_DOMAINS' | translate }}</legend>
                 <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
-                <p>{{ }} Domains are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>{{ }} Domains are used. <a class="pm_button link" href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
@@ -36,7 +36,7 @@
                                 </span>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="verification(domain)">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.verification === true) }" type="button" ng-click="verification(domain)">
                                     <strong ng-show="domain.verification === false">{{ 'NOT_VERIFIED' | translate }}</strong>
                                     <strong ng-show="domain.verification === true" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
@@ -44,7 +44,7 @@
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" type="button"  ng-click="spf(domain)">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.spf === true) }" type="button"  ng-click="spf(domain)">
                                     <strong ng-show="domain.spf === false">{{ 'ADD_SPF' | translate }}</strong>
                                     <strong ng-show="domain.spf === true" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
@@ -52,7 +52,7 @@
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="dkim(domain)">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.dkim === true) }" type="button" ng-click="dkim(domain)">
                                     <strong ng-show="domain.dkim === false">{{ 'ADD_DKIM' | translate }}</strong>
                                     <strong ng-show="domain.dkim === true" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
@@ -60,7 +60,7 @@
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="dmarc(domain)">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.dmarc === true) }" type="button" ng-click="dmarc(domain)">
                                     <strong ng-show="domain.dmarc === false">{{ 'ADD_DMARC' | translate }}</strong>
                                     <strong ng-show="domain.dmarc === true" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
@@ -83,7 +83,7 @@
             </section>
             <section class="setting pm_form full">
                 <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
-                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>{{ }} Addresses are used. <a class="pm_button link" href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains">
                     <p>
                         <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.status === true" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
@@ -132,11 +132,12 @@
             </section>
             <section class="setting pm_form full">
                 <legend>3 MX Record</legend>
-                <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p class="alert alert-info">
-                    [ our MX Record ] qwe8q6we576125e812367812tye781y2eyt7812783127ey172ye712ye712737ey1278ye7812361782ey1278367182ye8y127361782ey7812yee127ye7y12ye71
+                <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a class="pm_button link" href="">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>
+                    [ our MX Record ]<br>
+                    <pre>mx1.derpDNSherp.burp</pre>
                 </p>
-                <p><strong>{{ 'IMPORTANT' | translate }}</strong> The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</p>
+                <p><strong>{{ 'IMPORTANT' | translate }}</strong>: <em>The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</em></p>
             </section>
         </div>
     </div>

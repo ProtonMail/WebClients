@@ -36,3 +36,25 @@ h6 {
 	font-size: 12px;
 	font-weight: 700;
 }
+
+code {
+	display: inline;
+	font-family: monospace;
+}
+
+p a {
+	color: $primary;
+}
+
+pre {
+	white-space: pre;
+	margin: 1rem 0;
+	padding: 1rem;
+	background: $light;
+	border: 1px solid $border;
+	color: #333;
+	border-radius: 2px;
+	display: block;
+	max-width: 100%;
+	overflow: auto;
+}

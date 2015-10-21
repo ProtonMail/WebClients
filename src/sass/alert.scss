@@ -7,14 +7,30 @@
 	}
 	&.alert-info {
 		background: $alert-info;
+		a {
+			font-weight: 500;
+			color: #000;
+		}
 	}
     &.alert-success {
         background: $green;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
     }
     &.alert-error {
         background: #cf9696;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
     }
     &.alert-warning {
         background: #d9c4a2;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
     }	
 }

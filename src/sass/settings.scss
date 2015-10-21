@@ -2,6 +2,24 @@
     height: 31px;
     line-height: 31px;
 }
+#newUser{
+    .newUser {
+        padding-left: 2rem;
+        clear: both;
+        float: left;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+    label {
+        position: relative;
+        input {
+            position: absolute;
+            left: -2rem;
+            top: .5rem;
+            margin: 0;
+        }
+    }
+}
 #pm_settings {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -15,6 +33,15 @@
     #usersTable {
         th {
             width: 12rem;
+        }
+    }
+    #invoicesTable {
+        .actions {
+            width: 3.5rem;
+            text-align: right;
+        }
+        .price {
+            width: 3.5rem;
         }
     }
     #tableSubscription {
@@ -72,6 +99,7 @@
                 flex-direction: column;
                 transition: border-color .25s linear;
                 overflow: hidden;
+                min-width: 33%;
                 &:hover {
                     border-color: $primary;
                     h3 em {
@@ -137,30 +165,41 @@
                     strong {
                         font-weight: 700;
                     }
-                    td.amount {
-                        width: 3.25rem !important;
-                    }
-                    td.cost {
-                        width: 3.75rem !important;
+                    .feat {
+                        clear: both;
                         font-size: 90%;
-                    }
-                    td .fa.fa-info-circle {
-                        color: $primary;
-                    }
-                    td .pm_buttons {
-                        float: right;
-                        height: 26px;
-                        line-height: 26px;
-                        & > a {
+                        .amount {
+                            width: 3.25rem !important;
+                        }
+                        .pm_select {
+                            float: right;
+                        }
+                        .cost {
+                            width: 3.75rem !important;
+                            float: right;
+                            height: 33px;
+                            line-height: 33px;
+                            display: block;
+                            text-align: right;
+                        }
+                        .fa.fa-info-circle {
+                            color: $primary;
+                        }
+                        .pm_buttons {
+                            float: right;
                             height: 26px;
                             line-height: 26px;
-                        }
-                        .fa {
-                            height: 26px;
-                            line-height: 26px;
-                        }
-                        .pm_dropdown {
-                            line-height: 26px;
+                            & > a {
+                                height: 26px;
+                                line-height: 26px;
+                            }
+                            .fa {
+                                height: 26px;
+                                line-height: 26px;
+                            }
+                            .pm_dropdown {
+                                line-height: 26px;
+                            }
                         }
                     }
                 }
@@ -366,6 +405,12 @@
         .settings {
             padding: 0 10px;
         }
+        .pm_tabs {
+            padding-left: 10px;
+            .pm_button {
+                padding: 0 8px;
+            }
+        }
         #plans {
             header {
                 a.link {
@@ -373,6 +418,7 @@
                     padding: 0; 
                     float: none !important;
                     margin-bottom: 1rem;
+                    width: 100%;
                 }
             }
         }
@@ -396,6 +442,16 @@
                     float: left;
                     clear: both;
                     margin-bottom: 1rem;
+                }
+            }
+            .pm_table tr {
+                display: table-row;
+                width: initial;
+                border: none;
+                td,
+                th {
+                    display: table-cell;
+                    width: initial;
                 }
             }
         }
@@ -448,6 +504,17 @@
 }
 
 @media (max-width: $mobile-landscape) {
+    #newUser{
+        .newUser {
+            padding-left: 0;
+        }
+        label {
+            input {
+                position: static;
+                margin-right: .5rem;
+            }
+        }
+    }
     #pm_settings {
         .settings {
             padding: 0 10px;
@@ -517,6 +584,32 @@
             }
             &.storage {
                 display: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: $desktop) {
+    body #pm_settings {
+        #plans {
+            .plans {
+                .plan {
+                    .details {
+                        .feat {
+                            label {
+                                clear: both;
+                                width: 100%;
+                            }
+                            .pm_select {
+                                float: left;
+                            }
+                            .cost {
+                                float: left;
+                                padding-right: 1rem;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

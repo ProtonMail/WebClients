@@ -33,13 +33,6 @@
         td strong {
             font-weight: 700;
         }
-        td span {
-            display: block;
-            text-align: right;
-            &.pm_dropdown {
-                display: none;
-            }
-        }
         a {
             color: $primary;
             text-decoration: none;
@@ -55,6 +48,9 @@
             color: $gray-light;
             margin-right: .25rem;
             cursor: pointer;
+        }
+        .pm_button {
+            margin: 4px 0 2px 0; 
         }
         &.checkbox {
             width: 35px;
@@ -108,7 +104,7 @@
 }
 
 
-@media (max-width: $tablet-landscape) {
+@media (max-width: $mobile-landscape) {
     .pm_table {
         thead {
             display: none;
@@ -126,10 +122,6 @@
                 width: 100% !important;
                 box-sizing: border-box;
                 height: initial !important;
-                span {
-                    width: 100% !important;
-                    text-align: left !important;
-                }
             }
         }
     }

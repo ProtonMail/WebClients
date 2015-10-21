@@ -1,37 +1,5 @@
 <div style="margin:2rem; padding: 0 2rem;" ng-height>
 
-    <h1>This is the primary heading and there should only be one of these per page</h1>
-    <p>A small paragraph to <em>emphasis</em> and show <strong>important</strong> bits.</p>
-    <ul>
-        <li>This is a list item</li>
-        <li>So is this - there could be more</li>
-        <li>Make sure to style list items to:
-            <ul>
-                <li>Not forgetting child list items</li>
-                <li>Not forgetting child list items</li>
-                <li>Not forgetting child list items</li>
-                <li>Not forgetting child list items</li>
-            </ul></li>
-            <li>A couple more</li>
-            <li>top level list items</li>
-        </ul>
-        <p>Don't forget <strong>Ordered lists</strong>:</p>
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.
-                <ol>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                    <li>Aliquam tincidunt mauris eu risus.</li>
-                </ol>
-            </li>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-        </ol>
-        <h2>A sub heading which is not as important as the first, but is quite imporant overall</h2>
-        <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-        </p>
-
         <table summary="Top 10 downloaded movies in 2011 using BitTorrent, in descending order, listing number of downloads and worldwide cinema grosses" class="pm_table">
             <caption>
                 Most Downloaded Movies on BitTorrent, 2011
@@ -113,7 +81,7 @@
             </tbody>
         </table>
 
-        <table class="pm_table">
+        <table class="pm_table plain">
             <tr>
                 <th>
                     Table Heading
@@ -179,19 +147,20 @@
         </blockquote>
 
         <pre>
-            <code>
-                #header h1 a {
-                display: block;
-                width: 300px;
-                height: 80px;
-            }
-        </code>
-    </pre>
+        #header h1 a {
+            display: block;
+            width: 300px;
+            height: 80px;
+        }
+        </pre>
 
-    <h5>A sub heading which is not as important as the second, but should be used with consideration</h5>
-    <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-    </p>
+        <code>
+        #header h1 a {
+            display: block;
+            width: 300px;
+            height: 80px;
+        }
+        </code>
 
     <dl>
         <dt>Definition list</dt>
@@ -204,10 +173,6 @@
         </dd>
     </dl>
 
-    <h6>This heading plays a relatively small bit part role, if you use it at all</h6>
-    <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-    </p>
     <h1>
         Level 1 heading
     </h1>
@@ -336,50 +301,6 @@
         </dd>
     </dl>
 
-    <table class="pm_table">
-        <caption>
-            Table Caption
-        </caption>
-        <thead>
-            <tr>
-                <th>
-                    Table head th
-                </th>
-                <td>
-                    Table head td
-                </td>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>
-                    Table foot th
-                </th>
-                <td>
-                    Table foot td
-                </td>
-            </tr>
-        </tfoot>
-        <tbody>
-            <tr>
-                <th>
-                    Table body th
-                </th>
-                <td>
-                    Table body td
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Table body td
-                </td>
-                <td>
-                    Table body td
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
     <form action="#" class="pm_form">
         <fieldset>
             <legend>Form legend</legend>
@@ -443,26 +364,25 @@
                     <span class="small quiet">Can use &lt;button&gt; tag or &lt;a class="button"&gt;</span>
                 </label><br>
                 <button class="pm_button primary"> Save</button> 
-                <a class="button" href="#"> Change Password</a> 
                 <a href="#" class="pm_button"> Cancel</a>
             </div>
         </fieldset>
     </form>
 
     <p class="alert"> 
-        This is a paragraph with class="success" and <a href="http://www.something.com">a link</a>.
+        This is a paragraph with no other class and <a href="http://www.something.com">a link</a>.
     </p>
     <p class="alert alert-info"> 
-        This is a paragraph with class="error" and <a href="http://www.something.com">a link</a>.
+        This is a paragraph with class="info" and <a href="http://www.something.com">a link</a>.
     </p>
     <p class="alert alert-success"> 
-        This is a paragraph with class="notice" and <a href="http://www.something.com">a link</a>.
+        This is a paragraph with class="success" and <a href="http://www.something.com">a link</a>.
     </p>
     <p class="alert alert-error"> 
-        This is a paragraph with class="notice" and <a href="http://www.something.com">a link</a>.
+        This is a paragraph with class="error" and <a href="http://www.something.com">a link</a>.
     </p>
     <p class="alert alert-warning"> 
-        This is a paragraph with class="notice" and <a href="http://www.something.com">a link</a>.
+        This is a paragraph with class="warning" and <a href="http://www.something.com">a link</a>.
     </p>
 
 

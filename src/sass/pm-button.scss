@@ -41,6 +41,8 @@
     &.link {
         background-color: transparent;
         border-color: transparent;
+        color: $primary;
+        text-decoration: underline;
     }
     &.round {
         display: inline-block;
@@ -69,6 +71,10 @@
         pointer-events: none;
         cursor: default;
     }
+    &.dead {
+        pointer-events: none;
+        cursor: default;
+    }
     strong {
         font-size: 12px;
         font-weight: 400;
@@ -94,6 +100,10 @@
     [disabled] {
         color: rgba(0,0,0,.2) !important;
         pointer-events: none
+    }
+    .dead {
+        pointer-events: none;
+        cursor: default;
     }
     .fa {
         font-size: 16px;

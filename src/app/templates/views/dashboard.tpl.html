@@ -22,7 +22,7 @@
                             <td>
                                 <strong>1 of 2 {{ 'USED' | translate }}</strong>
                             </td>
-                            <td>
+                            <td class='text-right'>
                                 <span>
                                     <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
                                 </span>
@@ -33,7 +33,7 @@
                             <td>
                                 <strong>2 of 5 {{ 'USED' | translate }}</strong>
                             </td>
-                            <td>
+                            <td class='text-right'>
                                 <span>
                                     <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
                                 </span>
@@ -70,7 +70,7 @@
                             <td>
                                 <strong>{{ 'BUSINESS_PLAN' | translate }}</strong>
                             </td>
-                            <td class="price">
+                            <td class="price text-right">
                                 <span>10 CHF</span>
                             </td>
                         </tr>
@@ -79,7 +79,7 @@
                             <td>
                                 <strong>10 GB + 1 GB Extra Storage</strong>
                             </td>
-                            <td>
+                            <td class='text-right'>
                                 <span>1 CHF</span>
                             </td>
                         </tr>
@@ -88,7 +88,7 @@
                             <td>
                                 <strong>1 + 1 GB Extra Domain</strong>
                             </td>                        
-                            <td>
+                            <td class='text-right'>
                                 <span>2 CHF</span>
                             </td>                            
                         </tr>
@@ -107,7 +107,8 @@
                         <tr>
                             <th>{{ 'PAYMENT' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ 'CREDIT_CARD' | translate }}</strong> <small><a href="" ng-click="showPaymentInformation()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW_EDIT' | translate }}</a></small>
+                                <strong>{{ 'CREDIT_CARD' | translate }}</strong> 
+                                <small class="pull-right"><a href="" ng-click="showPaymentInformation()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW_EDIT' | translate }}</a></small>
                             </td>
                         </tr>
                     </table>
@@ -167,14 +168,11 @@
                             <div class="price">
                                 <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
-                            <div class="action">
+                            <div class="action" ng-show="(plan !== 'basic')">
                                 <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
-                            <div class="action" ng-class="{ 'active': (plan === 'basic') }">
+                            <div class="action active" ng-show="(plan === 'basic')">
                                 <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
-                            </div>
-                            <div class="action">
-                                <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
 
@@ -207,33 +205,23 @@
                                     <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
                                 </p>
                                 <p>&nbsp;</p>
-                                <p>&nbsp;</p>
                                 <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
-                                <table class='pm_table plain'>
-                                    <tr>
-                                        <td></td>
-                                        <td class="amount"></td>
-                                        <td class="cost"></td>
-                                    </tr>
-                                    <tr ng-repeat="element in plusAdditionals">
-                                        <td>
-                                            <label>
-                                                <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.title }}
-                                                <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <span class="pm_select">
-                                                <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
-                                                <i class="fa fa-angle-down"></i>
-                                            </span>
-                                        </td>
-                                        <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
-                                        </td>
-                                    </tr>
-                                </table>
+
+                                <div class="feat" ng-repeat="element in plusAdditionals">
+                                    <label>
+                                        <input type="checkbox" ng-model="element.checked" />
+                                        {{ element.title }}
+                                        <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    </label>
+                                    <span class="cost">
+                                        <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
+                                    </span>
+                                    <span class="pm_select">
+                                        <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
@@ -243,13 +231,13 @@
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
-                            <div class="action">
+                            <div class="action" ng-show="(plan === 'business')">
                                 <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
-                            <div class="action" ng-class="{ 'active': (plan === 'plus') }">
+                            <div class="action active" ng-show="(plan === 'plus')">
                                 <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
                             </div>
-                            <div class="action">
+                            <div class="action" ng-show="(plan === 'basic')">
                                 <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
@@ -288,31 +276,22 @@
                                 </p>
                                 <p>&nbsp;</p>
                                 <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
-                                <table class='pm_table plain'>
-                                    <tr>
-                                        <td></td>
-                                        <td class="amount"></td>
-                                        <td class="cost"></td> 
-                                    </tr>
-                                    <tr ng-repeat="element in businessAdditionals">
-                                        <td>
-                                            <label>
-                                                <input type="checkbox" ng-model="element.checked" />
-                                                {{ element.title }}
-                                                <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <span class="pm_select">
-                                                <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
-                                                <i class="fa fa-angle-down"></i>
-                                            </span>
-                                        </td>
-                                        <td class="text-right">
-                                            <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
-                                        </td>
-                                    </tr>
-                                </table>
+                                
+                                <div class="feat" ng-repeat="element in plusAdditionals">
+                                    <label>
+                                        <input type="checkbox" ng-model="element.checked" />
+                                        {{ element.title }}
+                                        <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                    </label>
+                                    <span class="cost">
+                                        <strong>+ {{ element.price[billing] * element.quantity | number: 0 | currency: currency }}</strong>
+                                    </span>
+                                    <span class="pm_select">
+                                        <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
@@ -321,13 +300,10 @@
                                     <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
-                            <div class="action">
-                                <a href="#">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</a>
-                            </div>
-                            <div class="action" ng-class="{ 'active': (plan === 'business') }">
+                            <div class="action active" ng-show="(plan === 'business')">
                                 <a href="#">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</a>
                             </div>
-                            <div class="action">
+                            <div class="action" ng-show="(plan === 'plus') || (plan === 'basic')">
                                 <a href="#">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</a>
                             </div>
                         </div>
