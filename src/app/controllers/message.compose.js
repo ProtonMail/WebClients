@@ -628,6 +628,22 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         );
     };
 
+    $scope.toUnfocussed = function(message) {
+        return message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4;
+    };
+
+    $scope.ccUnfocussed = function(message) {
+        return (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields;
+    };
+
+    $scope.bccUnfocussed = function(message) {
+        return (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields;
+    };
+
+    $scope.ccPlus = function(message) {
+        return (message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields;
+    };
+
     $scope.recipientFieldEllipsis = function(message, list) {
             if ((message.recipientFields[list].scrollHeight - message.recipientFields[list].offsetHeight) > 20) {
                 return true;
