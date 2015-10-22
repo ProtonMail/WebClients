@@ -257,14 +257,32 @@ angular.module("proton.messages", ["proton.constants"])
             // Function for dealing with message cache updates
             set: function(messages, preventRefresh, params) {
                 var promises = [];
+                var currentLabels = [];
+
+                _.each(authentication.user.Labels, function(label) {
+                    currentLabels.push(label.ID);
+                });
 
                 _.each(messages, function(message) {
+                    // Ignore everything that is not in the user’s labels
+                    if(message.Message && angular.isArray(message.Message.LabelIDsAdded)) {
+                        message.Message.LabelIDsAdded = _.filter(message.Message.LabelIDsAdded, function(labelID) {
+                            return currentLabels.indexOf(labelID) !== -1;
+                        });
+                    }
+
+                    if(message.Message && angular.isArray(message.Message.LabelIDsRemoved)) {
+                        message.Message.LabelIDsRemoved = _.filter(message.Message.LabelIDsRemoved, function(labelID) {
+                            return currentLabels.indexOf(labelID) !== -1;
+                        });
+                    }
+
                     var inInboxCache = (_.where(cachedMetadata.inbox, {ID: message.ID}).length > 0);
                     var inSentCache = (_.where(cachedMetadata.sent, {ID: message.ID}).length > 0);
                     var inInbox = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
                     var inSent = (message.Message && message.Message.Location === CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                     var hasLocation = (!inInbox && !inSent && message.Message && message.Message.Location) ? true : false;
-                    var labelsChanged = (message.Message && message.Message.LabelIDsAdded) ? 'added' : (message.Message && message.Message.LabelIDsRemoved) ? 'removed': false;
+                    var labelsChanged = (message.Message && angular.isArray(message.Message.LabelIDsAdded) && message.Message.LabelIDsAdded.length > 0) ? 'added' : (message.Message && angular.isArray(message.Message.LabelIDsRemoved) && message.Message.LabelIDsRemoved.length > 0) ? 'removed': false;
                     // False if message not in cache, otherwise value is which cache it is in
                     var cacheLoc = (inInboxCache) ? 'inbox' : (inSentCache) ? 'sent' : false;
                     // False if message is not in inbox or sent, otherwise value is which one it is in
