@@ -62,6 +62,22 @@ angular.module("proton.controllers.Settings")
         {checked: false, type: 'member', price: { 1: 5, 12: 49.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_USER'), long: $translate.instant('EXTRA_USER')}
     ];
 
+    $scope.usedSpace = authentication.user.UsedSpace;
+    $scope.maxSpace = authentication.user.MaxSpace;
+
+    /**
+     * Returns a string for the storage bar
+     * @return {String} "12.5"
+     */
+    $scope.storagePercentage = function() {
+        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
+            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
+        } else {
+            // TODO: error, undefined variables
+            return '';
+        }
+    };
+    
     /**
      * Return the amount of each plan
      */

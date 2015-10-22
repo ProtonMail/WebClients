@@ -50,11 +50,11 @@
                             <td>&nbsp;</td>
                             <td colspan="2">
                                 <div class="usage">
-                                    <em class="used">250 MB</em>
+                                    <em class="used">{{ usedSpace | humanSize }}</em>
                                     <em class="bar">
                                         <div class="amount" style="width: {{ storagePercentage() }}%"></div>
                                     </em>
-                                    <em class="total">1000 MB</em>
+                                    <em class="total">{{ maxSpace | humanSize }}</em>
                                 </div>
                             </td>
                         </tr>
@@ -146,7 +146,6 @@
                         </div>
                     </header>
                     <div class="plans">
-
                         <div class="plan" ng-class="{'selected': plan === 'basic'}">
                             <h3>
                                 <em></em>
@@ -169,10 +168,10 @@
                             <div class="price">
                                 <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
-                            <div class="action" ng-class="{'active': plan !== 'basic', 'white': plan === 'basic'}">
+                            <div class="action" ng-class="{'white': plan === 'basic'}">
                                 <a href="#">
                                     <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan !== 'basic'">{{ 'ALREADY_INCLUDED_IN_YOUR_PLAN' | translate }}</strong>
+                                    <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
@@ -234,7 +233,7 @@
                                     <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
                                 </span>
                             </div>
-                            <div class="action" ng-class="{'active': plan === 'business', 'white': plan === 'plus'}">
+                            <div class="action" ng-class="{'white': plan === 'plus'}">
                                 <a href="#" ng-click="choose('plus')">
                                     <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                     <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
@@ -304,7 +303,7 @@
                             </div>
                             <div class="action" ng-class="{'white': plan === 'business'}">
                                 <a href="#" ng-click="choose('business')">
-                                    <strong ng-show="plan === 'business'">{{ 'UPDATE_YOUR_PLAN' | translate }}</strong>
+                                    <strong ng-show="plan === 'business'">{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
                                     <strong ng-show="plan !== 'business'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
                                 </a>
                             </div>

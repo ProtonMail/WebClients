@@ -110,7 +110,7 @@
                 transition: border-color .25s linear;
                 overflow: hidden;
                 min-width: 33%;
-                &:hover {
+                &.selected {
                     border-color: $primary;
                     h3 em {
                         top: 0;
@@ -167,7 +167,7 @@
                     -webkit-flex-grow: 1;
                         -ms-flex-positive: 1;
                             flex-grow: 1;
-                            padding: 10px 20px;
+                            padding: 10px 15px;
                     p {
                         margin: 0;
                         line-height: 2rem;
@@ -185,7 +185,7 @@
                             float: right;
                         }
                         .cost {
-                            width: 3.75rem !important;
+                            width: 4.75rem !important;
                             float: right;
                             height: 33px;
                             line-height: 33px;
@@ -284,9 +284,9 @@
             position: absolute;
             left: 5rem;
             right: 5rem;
-            top: 14px;
-            height: 2px;
-            background: $gray-light;
+            top: 13px;
+            height: 4px;
+            background: $light;
             .amount {
                 position: absolute;
                 left: 0;
@@ -610,6 +610,9 @@
         #plans {
             .plans {
                 .plan {
+                    h3 {
+                        font-size: 16px;
+                    }
                     .details {
                         .feat {
                             label {
