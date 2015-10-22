@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('ProfileController', function($log, $rootScope, $scope, $timeout, authentication, networkActivityTracker, notify, Setting, tools) {
+.controller('AccountController', function($log, $rootScope, $scope, $timeout, authentication, networkActivityTracker, notify, Setting, tools) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;

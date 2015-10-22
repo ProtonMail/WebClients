@@ -1,8 +1,8 @@
-angular.module("proton.controllers.Account", [
+angular.module("proton.controllers.Setup", [
     "proton.tools"
 ])
 
-.controller("AccountController", function(
+.controller("SetupController", function(
     $scope,
     $rootScope,
     $state,

@@ -89,7 +89,7 @@ angular.module("proton.routes", [
         },
         views: {
             "main@": {
-                controller: "AccountController",
+                controller: "SetupController",
                 templateUrl: "templates/layout/auth.tpl.html"
             },
             "panel@account": {
@@ -245,7 +245,7 @@ angular.module("proton.routes", [
         url: "/reset",
         views: {
             "main@": {
-                controller: "AccountController",
+                controller: "SetupController",
                 templateUrl: "templates/layout/auth.tpl.html"
             },
             "panel@reset": {
@@ -596,7 +596,7 @@ angular.module("proton.routes", [
         views: {
             "content@secured": {
                 templateUrl: "templates/views/account.tpl.html",
-                controller: "ProfileController"
+                controller: "AccountController"
             }
         }
     })
