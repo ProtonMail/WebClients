@@ -4,7 +4,6 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $translate,
-    domains,
     domainModal,
     addressModal,
     spfModal,
@@ -14,9 +13,72 @@ angular.module("proton.controllers.Settings")
     verificationModal
 ) {
     $scope.domains = [
-        {id: 1,
-             domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
-        {id: 2, domain: 'example2.com', status: false, verification: false, spf: false, dkim: false, dmarc: false}
+        {
+            DomainID: 1, // int unsigned - PK
+            DomainName: 'panda.com', // varchar(253) - e.g. protonmail.ch, protonmail.com, ...
+            GroupID: 1, // int unsigned - the Group.GroupID owning this domain
+            State: true,
+            CheckTime: 123123123123, // - last time DNS was checked (need to recheck if more than 1 day old)
+            MX: {}, // json
+            MXStatus: true, // tinyint unsigned - encodes if PM is set with highest pref
+            SPF: {}, // json
+            SPFStatus: true, // tinyint unsigned - encodes if PM is included
+            DKIM: {}, // json
+            DKIMStatus: true, // tinyint unsigned - encodes if the protonmail selector public key is correct
+            DMARC: {}, // json
+            DMARCStatus: true // tinyint unsigned - encodes if not set, set but do nothing, quarantine, or reject
+        },
+        {
+            DomainID: 2, // int unsigned - PK
+            DomainName: 'tigre.com', // varchar(253) - e.g. protonmail.ch, protonmail.com, ...
+            GroupID: 1, // int unsigned - the Group.GroupID owning this domain
+            State: false,
+            CheckTime: 123123123123, // - last time DNS was checked (need to recheck if more than 1 day old)
+            MX: {}, // json
+            MXStatus: false, // tinyint unsigned - encodes if PM is set with highest pref
+            SPF: {}, // json
+            SPFStatus: false, // tinyint unsigned - encodes if PM is included
+            DKIM: {}, // json
+            DKIMStatus: false, // tinyint unsigned - encodes if the protonmail selector public key is correct
+            DMARC: {}, // json
+            DMARCStatus: false // tinyint unsigned - encodes if not set, set but do nothing, quarantine, or reject
+        }
+    ];
+    $scope.addresses = [
+        {
+            DomainID: 1, // int unsigned - to enable efficient counting of addresses associated with a given domain
+            CleanEmail: 'red'
+        },
+        {
+            DomainID: 2, // int unsigned - to enable efficient counting of addresses associated with a given domain
+            CleanEmail: 'blue'
+        },
+        {
+            DomainID: 1, // int unsigned - to enable efficient counting of addresses associated with a given domain
+            CleanEmail: 'yellow'
+        },
+        {
+            DomainID: 2, // int unsigned - to enable efficient counting of addresses associated with a given domain
+            CleanEmail: 'green'
+        }
+    ];
+    $scope.users = [
+        {
+            Email: 'qweqwe@qweqwe.fr',
+            MemberID: 1, // bigint unsigned - PK
+            GroupID: 1, // int unsigned - the group of which a user is a member
+            UserID: 1, // int unsigned - the said user
+            Role: 1, // tinyint unsigned - encodes user's role in the group, an owner (master account, Role=0) or a member (sub-account, Role=1)
+            MaxSpace: 12 // smallint unsigned - maximum storage in MB
+        },
+        {
+            Email: 'qweqwe@qweqwe.fr',
+            MemberID: 2, // bigint unsigned - PK
+            GroupID: 2, // int unsigned - the group of which a user is a member
+            UserID: 2, // int unsigned - the said user
+            Role: 2, // tinyint unsigned - encodes user's role in the group, an owner (master account, Role=0) or a member (sub-account, Role=2)
+            MaxSpace: 12 // smallint unsigned - maximum storage in MB
+        }
     ];
     /**
      * Open modal process to add a domain
@@ -151,5 +213,19 @@ angular.module("proton.controllers.Settings")
                 }
             }
         });
+    };
+
+    /**
+     * Initialize user model value (select)
+     */
+    $scope.initUser = function(address) {
+        address.select = $scope.users[0];
+    };
+
+    /**
+     * Change user model value (select)
+     */
+    $scope.changeUser = function(address) {
+
     };
 });

@@ -674,6 +674,19 @@ angular.module("proton.routes", [
 
     .state("secured.domains", {
         url: "/domains",
+        resolve: {
+            /*
+            domains: function(Domain) {
+                return Domain.query();
+            },
+            users: function() {
+
+            },
+            addresses: function() {
+            
+            }
+            */
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/domains.tpl.html",
