@@ -11,6 +11,7 @@ angular.module("proton.controllers.Auth", [
     $log,
     $timeout,
     $http,
+    $location,
     CONSTANTS,
     CONFIG,
     authentication,
@@ -45,6 +46,9 @@ angular.module("proton.controllers.Auth", [
             // Don't focus the input field
         } else {
             $('input.focus').focus();
+        }
+        if ($location.hash()==='help') {
+            $scope.getLoginHelp();
         }
     };
 
