@@ -1,10 +1,10 @@
-<ng-include ng-if="layoutMode === 'columns'" 
+<ng-include ng-if="layoutMode === 'columns'"
     src="'templates/partials/toolbar-list-columns.tpl.html'"></ng-include>
-    
-<ng-include ng-if="layoutMode === 'rows'" 
+
+<ng-include ng-if="layoutMode === 'rows'"
     src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-    
-<ng-include ng-if="layoutMode === 'rows'" 
+
+<ng-include ng-if="layoutMode === 'rows'"
     src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" ng-height>
@@ -22,6 +22,22 @@
                 <a href ng-click="toggleStar(message)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                     <span class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></span>
                 </a>
+            </span>
+            <span class="lockSpan">
+                <span class="fa" ng-class="{
+                    'fa-lock text-grey':
+                        !!!(message.IsEncrypted == '0'),
+                    'text-purple':
+                        !!(message.IsEncrypted == '1') ||
+                        !!(message.IsEncrypted == '3') ||
+                        !!(message.IsEncrypted == '5') ||
+                        !!(message.IsEncrypted == '6'),
+                    'fa-unlock-alt':
+                        !!(message.IsEncrypted == '0'),
+                    'fa-lock text-green': 
+                        !!(message.IsEncrypted == '7') ||
+                        !!(message.IsEncrypted == '8')
+                }"></span>
             </span>
             <span class="placeholderSpan">
                 <span>&nbsp;</span>
