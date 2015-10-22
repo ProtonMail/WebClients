@@ -9,6 +9,9 @@ html.protonmail {
 		&.secure {
 			background: $white;
 		}
+		&.scroll {
+			overflow-y: initial;
+		}
 	}
 	.clear {
 		clear: both;

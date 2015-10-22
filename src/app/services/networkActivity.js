@@ -8,6 +8,7 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
          * User to display the loading state
          */
         loading: function () {
+            // $log.error(promises);
             return !_.isEmpty(promises);
         },
         /**

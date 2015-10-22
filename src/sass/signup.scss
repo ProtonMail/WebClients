@@ -1,0 +1,86 @@
+#step1 {
+    .pm_panel {
+        margin-bottom: 2rem;
+        img {
+            margin: 2rem 0;
+        }
+    }
+    h2 {
+        text-transform: uppercase;
+        .fa {
+            margin-bottom: .5rem;
+        }
+    }
+    .header {
+        p {
+            color: $gray-light;
+            strong {
+                color: #000;
+                font-weight: normal;
+            }
+        }
+    }
+    .spinner.large {
+        height: 14rem;
+        .spinner1, .spinner2, .spinner3 {
+            background-color: $primary;
+        }
+    }
+    ol#creationList,
+    ol#creationList li {
+        display: display;
+        list-style-type: none;
+        .fa {
+            width: 1.5rem;
+            display: inline-block;
+            opacity: 0;
+            -webkit-transition: opacity 1s ease;
+               -moz-transition: opacity 1s ease;
+                -ms-transition: opacity 1s ease;
+                 -o-transition: opacity 1s ease;
+                    transition: opacity 1s ease;
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+    .pm_button.primary {
+        padding: 0 2rem;
+    }
+    .wrapper {
+        padding: 0 65px;
+        position: relative;
+        text-align: initial;
+        .usernameWrap {
+            input {
+                width: 14rem;
+                display: inline-block;
+            }
+            em {
+                font-style: normal;
+            }
+        }
+        label {
+            font-weight: 700;
+            text-align: left;
+            position: relative;
+            margin: 2rem 0 -1rem 0;
+            &.optIn {
+                font-weight: normal;
+            }
+            em.num {
+                position: absolute;
+                width: 2rem;
+                left: -65px;
+                font-weight: 700;
+                border-radius: 2rem;
+                background-color: $light;
+                text-align: center;
+                line-height: 2rem;
+                display: block;
+                height: 2rem;
+                font-style: normal;
+            }
+        }
+    }
+}

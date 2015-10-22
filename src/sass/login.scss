@@ -86,6 +86,7 @@ body#login {
 	text-transform: uppercase;
 	display: block;
 	padding: 1rem 0;
+	font-size: 90%;
 	p {
 		margin: 0;
 	}
@@ -94,6 +95,17 @@ body#login {
 		text-decoration: none;
 		&:hover {
 			color: #e5e5e5;
+		}
+	}
+	&.static {
+		position: static;
+		color: $gray;
+		a {
+			color: $gray;
+			text-decoration: none;
+			&:hover {
+				color: #000;
+			}
 		}
 	}
 }

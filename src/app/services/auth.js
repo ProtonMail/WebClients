@@ -412,16 +412,19 @@ angular.module("proton.authentication", [
 
             // HACKY ASS BUG
             var clearData = function() {
-
+                
                 // Completely clear sessionstorage
                 window.sessionStorage.clear();
-
+                
                 delete auth.data;
+                
                 delete auth.mailboxPassword;
+                
                 auth.headersSet = false;
                 // TODO clean this, up, need to reset $http headers if we hope to get rid of hack
-
+                
                 this.user = null;
+                
                 window.onbeforeunload = undefined;
                 if (reload) {
                     location.reload();
@@ -435,10 +438,10 @@ angular.module("proton.authentication", [
             }
 
             // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
-            // $rootScope.isLoggedIn = false;
-            // $rootScope.isLocked = true;
-            // $rootScope.isSecure = false;
-            // $rootScope.domoArigato = false;
+            $rootScope.isLoggedIn = false;
+            $rootScope.isLocked = true;
+            $rootScope.isSecure = false;
+            $rootScope.domoArigato = false;
 
         },
 
@@ -529,6 +532,7 @@ angular.module("proton.authentication", [
     //authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
+    $rootScope.isSecure = authentication.isSecured();
     $rootScope.logout = function() {
         eventManager.stop();
         cacheMessages.clear();

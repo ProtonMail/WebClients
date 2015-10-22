@@ -124,37 +124,32 @@ angular.module("proton.routes", [
                 templateUrl: "templates/layout/pre.tpl.html"
             }
         },
-        resolve: {
-            validate: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
-                $http.post(
-                    url.get() + "/users/" + $stateParams.token + "/check",
-                    {Username: $stateParams.user}
-                )
-                .then(
-                    function( response) {
-                        if (response.data.Valid===1) {
+        onEnter: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
 
-                            // clear user data if already logged in:
-                            authentication.logout(false);
+            // clear user data if already logged in:
+            authentication.logout(false);
+            $rootScope.loggingOut = false;
+                        
+            $http.post( url.get() + "/users/" + $stateParams.token + "/check", { Username: $stateParams.user } )
+            .then(
+                function( response ) {
+                    if (response.data.Valid===1) {
 
-                            $rootScope.allowedNewAccount = true;
-                            $rootScope.inviteToken = $stateParams.token;
-                            $rootScope.preInvited = true;
-                            $rootScope.username = $stateParams.user;
-                            $state.go('signup');
-                            return;
-                        }
-                        else {
-                            notify({
-                                message: "Invalid Invite Link.",
-                                classes: "notification-danger"
-                            });
-                            $state.go('login');
-                            return;
-                        }
+                        $rootScope.allowedNewAccount = true;
+                        $rootScope.inviteToken = $stateParams.token;
+                        $rootScope.preInvited = true;
+                        $rootScope.username = $stateParams.user;
+                        $state.go('step1');
                     }
-                );
-            }
+                    else {
+                        notify({
+                            message: "Invalid Invite Link.",
+                            classes: "notification-danger"
+                        });
+                        $state.go('login');
+                    }
+                }
+            );
         }
     })
 
@@ -169,35 +164,9 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/step1.tpl.html"
             }
         },
-        resolve: {
-            app: function(authentication, $state, $rootScope) {
-                if (authentication.isLoggedIn()) {
-                    return authentication.fetchUserInfo().then(
-                    function() {
-                        $rootScope.pubKey = authentication.user.PublicKey;
-                        $rootScope.user = authentication.user;
-                        if (authentication.user.addresses) {
-                            $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                        }
-                        else {
-                            $rootScope.user.DisplayName = '';
-                        }
-                        if ($rootScope.pubKey === 'to be modified') {
-                            $state.go('step2');
-                            return;
-                        } else {
-                            $state.go("login.unlock");
-                            return;
-                        }
-                    });
-                }
-                else {
-                    return;
-                }
-            }
-        },
-        onEnter: function($rootScope, $state) {
-            if ($rootScope.allowedNewAccount!==true) {
+        onEnter: function($rootScope, $state, $log) {
+            // This is how we currently prevent direct sign ups. Remove this to let open the flood gates.
+            if ($rootScope.allowedNewAccount!==true) { 
                 $state.go('login');
             }
         }

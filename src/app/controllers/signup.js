@@ -22,6 +22,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     // var mellt = new Mellt();
 
     $scope.initialization = function() {
+
         $log.debug('Signup:initialization');
         // Variables
         $scope.tools    = tools;
@@ -141,6 +142,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // user came from pre-invite so we can not check if it exists
         if ($rootScope.allowedNewAccount===true) {
             $scope.creating = true;
+            $rootScope.$broadcast('creating');
             deferred.resolve(200);
         }
         else {
@@ -159,6 +161,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     }
                     else {
                         $scope.creating = true;
+                        $rootScope.$broadcast('creating');
                         deferred.resolve(200);
                     }
                 }
@@ -198,7 +201,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 "redirect_uri": "https://protonmail.ch",
                 "state": "random_string",
                 "Username": $scope.account.Username,
+
                 "Password": $scope.account.loginPassword,
+                // "Password": null,
+
                 "Email": $scope.account.notificationEmail,
                 "News": !!($scope.account.optIn),
                 "PublicKey": $scope.account.PublicKey,

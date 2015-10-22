@@ -142,6 +142,7 @@
     	.recipientsWrap {
     		display: block;
     		margin: -20px 0 0 3rem;
+            min-height: 20px;
             & > span {
                 clear: both;
                 display: block;
@@ -166,6 +167,8 @@
 			margin-bottom: 10px;
 			clear: both;
 			box-sizing: border-box;
+            float: left;
+            width: 100%;
 			.data {
                 .toGroup,
                 .ccGroup {

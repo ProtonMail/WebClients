@@ -32,6 +32,9 @@
 					color: #000;
 				}
 			}
+			&:last-child {
+				border-bottom-color: $border;
+			}
 			&.placeholder {
 				font-family: monospace;
 				word-break: break-all;
