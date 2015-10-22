@@ -207,14 +207,24 @@ header#pm_header {
 			}
 			&.active {
 				a {
-					border-top: 10px solid $primary;
+					border-top: 10px solid $primary !important;
 					padding-top: 0;
-					color: #3f3f3f;
+					color: #000 !important;
 					.fa {
-						color: $primary;
+						color: $primary !important;
 					}
 					strong {
 						font-weight: 700;
+					}
+				}
+			}
+			&:hover {
+				& > a {
+					border-top: 10px solid lighten($primary, 10%);
+					padding-top: 0;
+					color: #3f3f3f;
+					.fa {
+						color: lighten($primary, 10%);
 					}
 				}
 			}

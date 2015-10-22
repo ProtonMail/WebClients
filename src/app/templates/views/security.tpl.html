@@ -68,7 +68,7 @@
                                     <tr>
                                         <th>{{ 'EVENT' | translate }}</th>
                                         <th>{{ 'TIME' | translate }}</th>
-                                        <th ng-show="doLogging == 2">IP</th>
+                                        <th ng-show="doLogging == 2" class="text-right">IP</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,7 +81,7 @@
                                         <td>
                                             {{ log.Time * 1000 | date : 'medium' }}
                                         </td>
-                                        <td ng-show="doLogging == 2">
+                                        <td ng-show="doLogging == 2" class="text-right">
                                             <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
                                             <kbd ng-show="log.IP===''">--</kbd>
                                         </td>

@@ -19,6 +19,13 @@
 	}
 }
 
+body.light { 
+	.pm_panel {
+		background: $white;
+		color: $gray;		
+	}
+}
+
 @media (max-width: $mobile-landscape) {
 	.pm_panel {
 		width: 100%;
@@ -28,7 +35,6 @@
 
 #support-reset-password .wrap {
 	width: $panel;
-	margin: auto;
-	margin-bottom: -6rem;
+	margin: 2rem auto;
 	box-sizing: border-box
 }

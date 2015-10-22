@@ -15,7 +15,7 @@
                     <div class="col right">
                         <input id="displayName" type="text" name="displayName" ng-model="displayName" />
                         <p>
-                            <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="pm_button link">
+                            <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank">
                                 {{ 'WHAT_IS_THE_DISPLAY_NAME?' | translate }}
                             </a>
                         </p>
@@ -61,7 +61,9 @@
                                     <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="0"> Disabled
                                 </label>
                             </div>
-                            <a href="https://blog.protonmail.ch/notification-emails/" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            <p>
+                                <a href="https://blog.protonmail.ch/notification-emails/" target="_blank">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            </p>
                         </div>
                     </div>
                     <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger">{{ 'INVALID_EMAIL' | translate }}.</p>
@@ -138,7 +140,9 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <a href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" target="_blank" class="pm_button link pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            <p>
+                                <a href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" target="_blank pull-left">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            </p>
                         </div>
                     </div>
                 </form>
@@ -166,7 +170,7 @@
                             </ul>
                         </div>
                         <p class="help-block"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></p>
-                        <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" class="pull-left pm_button link">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
+                        <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" class="pul">{{ 'WHAT_ARE_ALIASES?' | translate }}</a>
                     </div>
                 </div>
             </section>
@@ -189,7 +193,7 @@
                             </label>
                         </div>
                         <p>
-                            <a href="https://protonmail.com/support/knowledge-base/autosave-contact-list" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                            <a href="https://protonmail.com/support/knowledge-base/autosave-contact-list" target="_blank">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                         </p>
                     </div>
                 </div>
@@ -228,7 +232,7 @@
                                 </label>
                             </div>
                             <p>
-                                <a href="" target="_blank" class="pm_button link">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
+                                <a href="" target="_blank">{{ 'HOW_DOES_THIS_WORK?' | translate }}</a>
                             </p>
                         </div>
                     </div>

@@ -64,7 +64,7 @@
                 <p>
                     <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_NEW_USER'| translate }}</button>
                 </p>
-                <table class="pm_table hidden-xs">
+                <table class="pm_table hidden-xs" id="userTable">
 		            <thead>
 		                <tr>
 		                    <th class="username">{{ 'USERNAME'| translate }}</th>
@@ -78,7 +78,10 @@
 						<tr ng-repeat="user in users">
 		                    <td class="username" ng-bind="user.username"></td>
 		                    <td class="role">
-                                <select ng-model="user.selectRole" ng-init="initRole(user)" ng-options="role.label for role in roles" ng-change="changeRole(user)"></select>
+		                    	<span class="pm_select">
+									<select ng-model="user.selectRole" ng-init="initRole(user)" ng-options="role.label for role in roles" ng-change="changeRole(user)"></select>
+			                        <i class="fa fa-angle-down"></i>
+			                    </span>
 		                    </td>
 		                    <td class="storage">{{ user.storage | bytes: 0 }}</td>
 		                    <td class="addresses">

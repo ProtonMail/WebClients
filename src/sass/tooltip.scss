@@ -30,7 +30,8 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 
-	max-width: 200px;
+	max-width: 500px;
+	word-break: break-word;
 	color: $white;
 	text-align: center;
 	background-color: $secondary;

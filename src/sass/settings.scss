@@ -30,9 +30,19 @@
     #settingsSave {
         margin: 15px 25px 15px 0;
     }
+    #accessLog {
+        .fa {
+            margin-right: .5rem;
+        }
+    }
     #usersTable {
         th {
             width: 12rem;
+        }
+    }
+    #userTable {
+        .role {
+            width: 6rem;
         }
     }
     #invoicesTable {
