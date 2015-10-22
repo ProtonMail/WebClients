@@ -7,7 +7,7 @@
             <section class="setting pm_form full">
                 <legend>1 {{ 'CONFIGURE_DOMAINS' | translate }}</legend>
                 <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
-                <p>{{ }} Domains are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>{{ }} Domains are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
@@ -83,7 +83,7 @@
             </section>
             <section class="setting pm_form full">
                 <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
-                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dasboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains">
                     <p>
                         <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === true" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
