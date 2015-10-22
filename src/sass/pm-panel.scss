@@ -5,6 +5,7 @@
 	text-align: center;
 	box-sizing: border-box;
 	padding: 50px;
+	max-width: 100%;
 	&.alt {
 		background: rgba(255,255,255,.1);
 		border: 1px solid rgba(255,255,255,.25);
@@ -16,6 +17,9 @@
 		a {
 			color: $white;
 		}
+	}
+	&.wide {
+		width: ($panel * 1.5);
 	}
 }
 
