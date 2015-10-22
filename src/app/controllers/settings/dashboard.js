@@ -3,7 +3,7 @@ angular.module("proton.controllers.Settings")
 .controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, stripeModal, Payment) {
     $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
-    $scope.plan = 'basic'; // TODO need initialization
+    $scope.plan = 'plus'; // TODO need initialization
     $scope.billing = 1; // one month
 
     $scope.options = [
@@ -89,7 +89,7 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal to pay the plan configured
      */
-    $scope.upgrade = function(name) {
+    $scope.choose = function(name) {
         var additionals = [];
         var pack = {};
 

@@ -241,6 +241,12 @@
                             color: $gray-light;
                         }
                     }
+                    &.white {
+                        background-color: $white;
+                        a {
+                            color: $gray;
+                        }
+                    }
                 }
             }
         }
@@ -425,7 +431,7 @@
             header {
                 a.link {
                     font-size: 11px;
-                    padding: 0; 
+                    padding: 0;
                     float: none !important;
                     margin-bottom: 1rem;
                     width: 100%;
@@ -472,7 +478,7 @@
             }
         }
         #invoicesTable {
-            th, 
+            th,
             td {
                 padding: 10px 1rem;
                 line-height: 20px;
