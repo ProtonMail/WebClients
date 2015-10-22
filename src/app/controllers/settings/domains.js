@@ -1,8 +1,21 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DomainsController', function($rootScope, $scope, $translate, domainModal, addressModal, spfModal, dkimModal, dmarcModal, confirmModal, verificationModal) {
+.controller('DomainsController', function(
+    $rootScope,
+    $scope,
+    $translate,
+    domains,
+    domainModal,
+    addressModal,
+    spfModal,
+    dkimModal,
+    dmarcModal,
+    confirmModal,
+    verificationModal
+) {
     $scope.domains = [
-        {id: 1, domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
+        {id: 1,
+             domain: 'example1.com', status: true, verification: true, spf: true, dkim: true, dmarc: true},
         {id: 2, domain: 'example2.com', status: false, verification: false, spf: false, dkim: false, dmarc: false}
     ];
     /**
