@@ -801,14 +801,14 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.validate = function(message) {
-        // set msgBody input element to editor content
-        message.setMsgBody();
-
         // Check internet connection
-        if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
+        if (angular.isDefined(window.navigator.onLine) && window.navigator.onLine === false && location.hostname !== 'localhost') {
             notify({message: 'No internet connection. Please wait and try again.', classes: 'notification-danger'});
             return false;
         }
+
+        // set msgBody input element to editor content
+        message.setMsgBody();
 
         // Check if there is an attachment uploading
         if (message.uploading === true) {
