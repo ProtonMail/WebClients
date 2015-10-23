@@ -1,6 +1,6 @@
 angular.module("proton.height", [])
 
-.directive('ngHeight', ['$window', function ($window) {
+.directive('ptHeight', ['$window', function ($window) {
     return function (scope, element, attrs) {
 
         function setHeight() {
