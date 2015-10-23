@@ -18,6 +18,17 @@
         href 
         ng-click="decryptAttachment(attachment, $event)">
             <i class="fa" ng-class="{ 'fa-cog fa-spin': attachment.decrypting }"></i>
+
+<i class="fa fa-archive-o"      ng-show="(attachment.MIMEType.indexOf('zip')            != -1)"></i>
+<i class="fa fa-audio-o"        ng-show="(attachment.MIMEType.indexOf('mp3')            != -1)"></i>
+<i class="fa fa-code-o"         ng-show="(attachment.MIMEType.indexOf('javascript')     != -1)"></i>
+<i class="fa fa-excel-o"        ng-show="(attachment.MIMEType.indexOf('xls')            != -1)"></i>
+<i class="fa fa-image-o"        ng-show="(attachment.MIMEType.indexOf('image')          != -1)"></i>
+<i class="fa fa-movie-o"        ng-show="(attachment.MIMEType.indexOf('mov')            != -1)"></i>
+<i class="fa fa-pdf-o"          ng-show="(attachment.MIMEType.indexOf('pdf')            != -1)"></i>
+<i class="fa fa-powerpoint-o"   ng-show="(attachment.MIMEType.indexOf('power')          != -1)"></i>
+<i class="fa fa-word-o"         ng-show="(attachment.MIMEType.indexOf('word')           != -1)"></i>
+
             <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
         </a>
     </section>
