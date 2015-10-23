@@ -12,11 +12,10 @@
 }
 
 @media (max-width: $tablet-landscape) {
-    #pm_contacts {}
-}
-
-@media (max-width: $tablet-landscape) {
-	#pm_contacts #pm_toolbar {
-		padding: 14px 0 0;
+	#pm_contacts {
+		padding: 0;
+		#pm_toolbar {
+			padding: 14px 0 0;
+		}
 	}
 }
