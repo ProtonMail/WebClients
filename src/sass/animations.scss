@@ -1,4 +1,25 @@
-
+#exiting {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+    display: none;
+    text-align: center;
+    color: $gray;
+    font-size: 90%;
+    &.show {
+        display: block;
+    }
+    .spinner.large {
+        height: 14rem;
+        .spinner1, .spinner2, .spinner3 {
+            background-color: $primary;
+        }
+    }
+}
 
 @-webkit-keyframes fadeIn { 
     from { 

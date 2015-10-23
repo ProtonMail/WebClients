@@ -82,6 +82,17 @@ ng-class="{
     </div>
 </div>
 
+<div id="exiting" ng-show="loggingOut" ng-class="{ 'show': loggingOut }">
+    <img src="assets/img/logo.svg" height="20" alt="ProtonMail" class="logo" />
+    <div class="spinner large">
+        <div class="spinner1"></div>
+        <div class="spinner2"></div>
+        <div class="spinner3"></div>
+        <div class="nuc"></div>
+    </div>
+    <p>LOGGING OUT...</p>
+</div>
+
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>"></script>
