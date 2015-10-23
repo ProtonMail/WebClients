@@ -654,18 +654,16 @@ angular.module("proton.routes", [
         resolve: {
             group: function(Group, networkActivityTracker) {
                 return networkActivityTracker.track(Group.get());
-            }
-            /*
+            },
             domains: function(Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domains.query());
+                return networkActivityTracker.track(Domain.query());
             },
-            users: function(Members, networkActivityTracker) {
-                return networkActivityTracker.track(Members.query());
+            members: function(Member, networkActivityTracker) {
+                return networkActivityTracker.track(Member.query());
             },
-            addresses: function(Addresses, networkActivityTracker) {
-                return networkActivityTracker.track(Addresses.query());
+            addresses: function(Address, networkActivityTracker) {
+                return networkActivityTracker.track(Address.query());
             }
-            */
         },
         views: {
             "content@secured": {

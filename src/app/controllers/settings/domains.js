@@ -4,18 +4,22 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $translate,
+    addresses,
     addressModal,
     confirmModal,
     dkimModal,
     dmarcModal,
+    domains,
     domainModal,
     group,
+    members,
     spfModal,
     verificationModal
 ) {
-    console.log(group);
-    $scope.domains = group.Group.Domains;
-    $scope.members = group.Group.Members;
+    $scope.group = group;
+    $scope.domains = domains;
+    $scope.members = members;
+    $scope.addresses = addresses;
 
     /**
      * Open modal process to add a domain

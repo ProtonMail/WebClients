@@ -1,6 +1,6 @@
 angular.module("proton.models.members", [])
 
-.factory("Member", function($http, url) {
+.factory("Member", function($http, $q, url) {
     return {
         // POST
         /**
@@ -16,6 +16,43 @@ angular.module("proton.models.members", [])
             return $http.post(url.get() + '/members/auth');
         },
         //GET
+        query: function() {
+            var deferred = $q.defer();
+
+            deferred.resolve([
+                {
+                    "MemberID": "q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==",
+                    "UserName": "max.mustermann",
+                    "DisplayName": "Max Mustermann",
+                    "NotificationEmail": "max123@gmail.com",
+                    "Role": 0,
+                    "UsedSpace": 1,
+                    "MaxSpace": 1024,
+                    "Addresses": [
+                        "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
+                        "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
+                        "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
+                    ],
+                },
+                {
+                    "MemberID": "0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==",
+                    "UserName": "elliot@e-corp.com",
+                    "DisplayName": "Elliot Alderson",
+                    "NotificationEmail": "elliot.alderson@protonmail.com",
+                    "Role": 1,
+                    "UsedSpace": 1,
+                    "MaxSpace": 1024,
+                    "Addresses": [
+                        "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
+                        "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
+                        "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
+                    ]
+                }
+            ]);
+
+            return deferred.promise;
+            // return $http.get(url.get() + '/members');
+        },
         /**
          * Get member info, including UserID and key pair.
          */

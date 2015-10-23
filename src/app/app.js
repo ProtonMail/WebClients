@@ -38,6 +38,8 @@ angular.module("proton", [
     "proton.models.payments",
     "proton.models.groups",
     "proton.models.members",
+    "proton.models.addresses",
+    "proton.models.domains",
 
     // Config
     "proton.config",
