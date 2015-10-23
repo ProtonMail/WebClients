@@ -159,14 +159,14 @@ angular.module("proton.controllers.Settings")
     /**
      * Initialize user model value (select)
      */
-    $scope.initUser = function(address) {
-        address.select = $scope.users[0];
+    $scope.initMember = function(address) {
+        address.select = $scope.members[0];
     };
 
     /**
      * Change user model value (select)
      */
-    $scope.changeUser = function(address) {
+    $scope.changeMember = function(address) {
 
     };
 });

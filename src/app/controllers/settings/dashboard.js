@@ -5,10 +5,11 @@ angular.module("proton.controllers.Settings")
     $scope,
     $translate,
     authentication,
+    cardModal,
     group,
+    Payment,
     paymentModal,
-    stripeModal,
-    Payment
+    stripeModal
 ) {
     $scope.group = group.Group;
     $scope.currency = 'CHF'; // TODO we can detect localisation
@@ -145,19 +146,6 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open modal with payment information
-     */
-    $scope.showPaymentInformation = function(){
-        stripeModal.activate({
-            params: {
-                close: function() {
-                    stripeModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
      * Initialize select with the correct quantity object
      */
     $scope.initQuantity = function(element) {
@@ -173,5 +161,33 @@ angular.module("proton.controllers.Settings")
      */
     $scope.changeQuantity = function(element) {
         element.quantity = element.select.value;
+    };
+
+    /**
+     * Open modal with payment information
+     */
+    $scope.viewCard = function() {
+        cardModal.activate({
+            params: {
+                mode: 'view',
+                cancel: function() {
+                    cardModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open modal to edit payment information
+     */
+    $scope.editCard = function() {
+        cardModal.activate({
+            params: {
+                mode: 'edit',
+                cancel: function() {
+                    cardModal.deactivate();
+                }
+            }
+        });
     };
 });

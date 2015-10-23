@@ -641,6 +641,14 @@ angular.module("proton.routes", [
 
     .state("secured.users", {
         url: "/users",
+        resolve: {
+            group: function(Group, networkActivityTracker) {
+                return networkActivityTracker.track(Group.get());
+            },
+            members: function(Member, networkActivityTracker) {
+                return networkActivityTracker.track(Member.query());
+            }
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/users.tpl.html",

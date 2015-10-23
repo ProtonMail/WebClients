@@ -1,42 +1,16 @@
 <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title">{{ 'PAYMENT' | translate }}</h4>
+        <h4 class="modal-title">{{ 'PAYMENT_INFORMATION' | translate }}</h4>
     </div>
     <div class="modal-body pm_form">
         <div class="pm_grid">
-            <div class="col-1-2">
-                <table class="pm_table">
-                    <thead>
-                        <tr>
-                            <th>{{ 'DESCRIPTION' | translate }}</th>
-                            <th>{{ 'QUANTITY' | translate }}</th>
-                            <th>{{ 'PRICE' | translate }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="element in ctrl.cart">
-                            <td>{{ element.number }} {{ element.title }}</td>
-                            <td>{{ element.quantity }}</td>
-                            <td>{{ element.price | number: 2 | currency: ctrl.currency }}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.billing === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.billing === 12">{{ 'PER_YEAR' | translate }}</small>
-                            </td>
-                            <td>
-                                <strong>{{ ctrl.total() | number: 2 | currency: ctrl.currency }}</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-1-2">
+            <div class="col-1-1">
                 <div class="input-icon margin">
                     <i class="fa fa-user"></i>
                     <input type="text" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />
                 </div>
                 <div class="input-icon margin">
-                    <i class="fa {{ ctrl.cardTypeIcon }}"></i>
+                    <i class="fa fa-credit-card"></i>
                     <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-model-options="{updateOn: 'blur'}" ng-change="" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
                 </div>
                 <div class="pm_grid margin">
@@ -59,8 +33,6 @@
                         </div>
                     </div>
                 </div>
-                <p>&nbsp;</p>
-                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

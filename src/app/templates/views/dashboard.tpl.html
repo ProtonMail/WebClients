@@ -109,7 +109,9 @@
                             <th>{{ 'PAYMENT' | translate }}:</th>
                             <td colspan="2">
                                 <strong>{{ 'CREDIT_CARD' | translate }}</strong>
-                                <small class="pull-right"><a href="" ng-click="showPaymentInformation()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW_EDIT' | translate }}</a></small>
+                                <small class="pull-right">
+                                    <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                </small>
                             </td>
                         </tr>
                     </table>
