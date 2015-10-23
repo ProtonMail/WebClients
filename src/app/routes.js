@@ -129,7 +129,7 @@ angular.module("proton.routes", [
             // clear user data if already logged in:
             authentication.logout(false);
             $rootScope.loggingOut = false;
-                        
+
             $http.post( url.get() + "/users/" + $stateParams.token + "/check", { Username: $stateParams.user } )
             .then(
                 function( response ) {
@@ -166,7 +166,7 @@ angular.module("proton.routes", [
         },
         onEnter: function($rootScope, $state, $log) {
             // This is how we currently prevent direct sign ups. Remove this to let open the flood gates.
-            if ($rootScope.allowedNewAccount!==true) { 
+            if ($rootScope.allowedNewAccount!==true) {
                 $state.go('login');
             }
         }
@@ -555,7 +555,7 @@ angular.module("proton.routes", [
         },
         resolve: {
             contacts: function(Contact, networkActivityTracker) {
-                return networkActivityTracker.track(Contact.get());
+                return networkActivityTracker.track(Contact.query());
             }
         }
     })
@@ -623,6 +623,14 @@ angular.module("proton.routes", [
 
     .state("secured.dashboard", {
         url: "/dashboard",
+        resolve: {
+            group: function(Group, networkActivityTracker) {
+                return networkActivityTracker.track(Group.get());
+            },
+            payment: function(Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.status());
+            }
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/dashboard.tpl.html",
@@ -644,15 +652,18 @@ angular.module("proton.routes", [
     .state("secured.domains", {
         url: "/domains",
         resolve: {
+            group: function(Group, networkActivityTracker) {
+                return networkActivityTracker.track(Group.get());
+            }
             /*
-            domains: function(Domain) {
-                return Domain.query();
+            domains: function(Domain, networkActivityTracker) {
+                return networkActivityTracker.track(Domains.query());
             },
-            users: function() {
-
+            users: function(Members, networkActivityTracker) {
+                return networkActivityTracker.track(Members.query());
             },
-            addresses: function() {
-            
+            addresses: function(Addresses, networkActivityTracker) {
+                return networkActivityTracker.track(Addresses.query());
             }
             */
         },

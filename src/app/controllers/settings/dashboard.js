@@ -1,6 +1,16 @@
 angular.module("proton.controllers.Settings")
 
-.controller('DashboardController', function($rootScope, $scope, $translate, authentication, paymentModal, stripeModal, Payment) {
+.controller('DashboardController', function(
+    $rootScope,
+    $scope,
+    $translate,
+    authentication,
+    group,
+    paymentModal,
+    stripeModal,
+    Payment
+) {
+    $scope.group = group.Group;
     $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'plus'; // TODO need initialization
@@ -77,7 +87,7 @@ angular.module("proton.controllers.Settings")
             return '';
         }
     };
-    
+
     /**
      * Return the amount of each plan
      */

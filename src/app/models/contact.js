@@ -3,7 +3,7 @@ angular.module("proton.models.contact", [])
 .factory("Contact", function($http, url) {
 
     var Contact = {
-        get: function() {
+        query: function() {
             return $http.get(url.get() + '/contacts');
         },
         edit: function(contact) {
