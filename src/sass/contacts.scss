@@ -17,5 +17,13 @@
 		#pm_toolbar {
 			padding: 14px 0 0;
 		}
+		.pm_table th.checkbox {
+			width: 4rem;
+			label {
+				width: 4rem;
+				text-align: center;
+				box-sizing: border-box;
+			}
+		}
 	}
 }
