@@ -36,10 +36,12 @@
 	background: $primary;
 	color: #fff;
 	text-align: center;
-		transition: bottom .5s ease-in-out;	
+	opacity: 0;
+	transition: bottom .5s ease-in-out, opacity .5s linear;	
 	&.show {
 		bottom: 0;
-		transition: bottom .5s ease-in-out;
+		opacity: 1;
+		transition: bottom .5s ease-in-out, opacity .5s linear;
 	}
 	.spinner {
 	    position: absolute;
