@@ -11,11 +11,10 @@
         <fieldset class="pure-form">
             <form novalidate role="form" autocomplete="on" ng-submit="tryUnlock()" method="post">
                 <div class="form-group">
-                    <input autocomplete="on" autocapitalize="off" autocorrect="off" class="form-control dark password focus" type="password" ng-keypress="keypress($event)" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
+                    <input tabindex="1" autocomplete="on" autocapitalize="off" autocorrect="off" class="form-control dark password focus" type="password" ng-keypress="keypress($event)" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="Mailbox Password" value="" />
                 </div>
                 <div class="clearfix">
-                    <a ui-sref="reset" class="login-support btn pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-                    <button type="submit" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}">
+                    <button tabindex="2" type="submit" id="enck" class="btn btn-primary pull-right" ng-class="{disabled: networkActivity.loading()}">
                         <span>{{ 'UNLOCK' | translate }}</span>
                     </button>
                 </div>
@@ -23,3 +22,6 @@
         </fieldset>
     </div>
 </div>
+<p class="text-center">
+<a tabindex="0" ui-sref="reset" class="login-support btn white">{{ 'FORGOT_PASSWORD?' | translate }}</a>    
+</p>
