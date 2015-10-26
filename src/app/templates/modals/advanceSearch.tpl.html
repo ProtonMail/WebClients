@@ -12,37 +12,41 @@
                         <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col full last">
-                        <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keywords" />                    
+                        <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keywords" />
                     </span>
                 </div>
 
                 <div class="row">
                     <span class="col narrow">
-                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>                        
+                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col wide">
-                        <select id="search_folder">
-                            <optgroup label="Default">
-                                <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
-                            </optgroup>
-                            <optgroup label="Folders">
-                                <option ng-repeat="(key, value) in ctrl.folders" value="{{value}}">{{key}}</option>
-                            </optgroup>
-                        </select>
+                        <span class="pm_select">
+                            <select id="search_folder">
+                                <optgroup label="Default">
+                                    <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
+                                </optgroup>
+                                <optgroup label="Folders">
+                                    <option ng-repeat="(key, value) in ctrl.folders" value="{{value}}">{{key}}</option>
+                                </optgroup>
+                            </select>
+                        </span>
                     </span><!--/.col-->
                    <span class="col narrow">
                         <label for="search_label">{{ 'LABEL' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col wide last">
-                        <select id="search_label" class="form-control">
-                            <optgroup label="Default">
-                                <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
-                            </optgroup>
-                            <optgroup label="{{ 'LABELS' | translate }}">
-                                <option value="{{label.ID}}" ng-repeat="label in ctrl.labels">{{label.Name}}</option>
-                            </optgroup>
-                        </select>
-                    </span><!--/.col-->                    
+                        <span class="pm_select">
+                            <select id="search_label">
+                                <optgroup label="Default">
+                                    <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
+                                </optgroup>
+                                <optgroup label="{{ 'LABELS' | translate }}">
+                                    <option value="{{label.ID}}" ng-repeat="label in ctrl.labels">{{label.Name}}</option>
+                                </optgroup>
+                            </select>
+                        </span>
+                    </span><!--/.col-->
                 </div><!--/.row-->
 
                 <div class="row">
@@ -74,7 +78,7 @@
                     <span class="col wide last input-icon">
                         <input type="text" placeholder="dd/mm/yy" pikaday="ctrl.end" id="search_end" on-select="setMax()" />
                         <em class="fa fa-calendar"></em>
-                    </span><!--/.col-->                    
+                    </span><!--/.col-->
                 </div><!--/.row-->
 
                 <div class="row">
@@ -117,7 +121,7 @@
         <div class="modal-footer text-right">
             <a href class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
             <a href class="pm_button primary" ng-click="ctrl.search()">{{ 'SEARCH' | translate }}</a>
-        </div>  
+        </div>
     </div>
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>  
+    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>
