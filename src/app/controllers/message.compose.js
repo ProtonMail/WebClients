@@ -801,12 +801,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     };
 
     $scope.validate = function(message) {
-        // Check internet connection
-        if (angular.isDefined(window.navigator.onLine) && window.navigator.onLine === false && location.hostname !== 'localhost') {
-            notify({message: 'No internet connection. Please wait and try again.', classes: 'notification-danger'});
-            return false;
-        }
-
         // set msgBody input element to editor content
         message.setMsgBody();
 
