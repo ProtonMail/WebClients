@@ -7,7 +7,7 @@
     </div>
     <div class="message-head">
         <a href ng-click="reply()" class="pm_button pull-right">
-            <i class="fa fa-reply"></i> 
+            <i class="fa fa-reply"></i>
             <span class="visible-md-inline-block visible-lg-inline-block">
                 {{ 'REPLY' | translate }}
             </span>
@@ -39,19 +39,19 @@
                 </span>
             </li>
         </ul>
-    </div>    
-    <div ng-show="containsImage === true" class="alert alert-warning text-center" ng-show="!!imagesHidden" id="showImages">
+    </div>
+    <div class="alert alert-warning text-center" ng-show="!!imagesHidden" id="showImages">
         <a href="" ng-click="toggleImages()">
             <span ng-show="!!imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
             <span ng-hide="!!imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
         </a>
-    </div>    
+    </div>
     <div id="outsideMessage">
         <div id="message-body">
             <div class="email" ng-bind-html="message.Body | purify"></div>
         </div>
     </div><!--/#outsideMessage-->
-    <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>   
+    <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
     <div id="eo_footer">
     </div>
 </div>
