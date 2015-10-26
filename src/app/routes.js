@@ -647,6 +647,9 @@ angular.module("proton.routes", [
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
+            },
+            addresses: function(Address, networkActivityTracker) {
+                return networkActivityTracker.track(Address.query());
             }
         },
         views: {

@@ -94,7 +94,7 @@
     			white-space: nowrap;
     			text-align: right;
                 font-size: 14px;
-    		}           
+    		}
     		.from {
     			color: #999;
     			float: left;
@@ -193,6 +193,9 @@
                     margin: 0 5px 0 0;
                     i {
                         display: none;
+						&.fa-times {
+							display: inline-block;
+						}
                     }
                     em {
                         display: inline-block;

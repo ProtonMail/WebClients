@@ -1,9 +1,12 @@
 angular.module("proton.controllers.Settings")
 
-.controller('UsersController', function($rootScope, $scope, $translate, userModal) {
+.controller('UsersController', function($rootScope, $scope, $translate, userModal, group, members, addresses) {
     var MASTER = 0;
     var SUB = 1;
 
+    $scope.group = group.Group;
+    $scope.members = members.Members;
+    $scope.addresses = addresses.Addresses;
     $scope.selectExample = 'toto';
     $scope.optionsExample = ['qwe', 'asd', 'zxc'];
     $scope.roles = [
