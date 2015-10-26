@@ -8,6 +8,18 @@ angular.module("proton.models.addresses", [])
 
             deferred.resolve([
                 {
+                    "AddressID": "UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==",
+                    "Email": "boss@e-corp.com",
+                    "DisplayName": "E-Corp CEO",
+                    "Send": 0
+                },
+                {
+                    "AddressID": "fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw==",
+                    "Email": "max.mustermann@e-corp.com",
+                    "DisplayName": "Max Mustermann",
+                    "Send": 1
+                },
+                {
                     "AddressID": "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
                     "Email": "elliot@e-corp.com",
                     "DisplayName": "Elliot Alderson",

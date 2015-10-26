@@ -28,10 +28,9 @@ angular.module("proton.models.members", [])
                     "Role": 0,
                     "UsedSpace": 1,
                     "MaxSpace": 1024,
-                    "Addresses": [
-                        "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
-                        "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
-                        "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
+                    "AddressIDs": [
+                        "UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==",
+                        "fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw=="
                     ],
                 },
                 {
@@ -42,7 +41,7 @@ angular.module("proton.models.members", [])
                     "Role": 1,
                     "UsedSpace": 1,
                     "MaxSpace": 1024,
-                    "Addresses": [
+                    "AddressIDs": [
                         "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
                         "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
                         "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
