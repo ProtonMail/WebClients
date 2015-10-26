@@ -35,6 +35,9 @@
         display: block;
         border: 1px solid $border;
         border-radius: 2px;
+        select::-ms-expand {
+            display: none;
+        }
         select {
             margin: 0;
             height: 32px;
@@ -45,6 +48,9 @@
             background: transparent;
             border: none;
             width: 100%;
+            -webkit-appearance: none;
+               -moz-appearance: none;
+                    appearance: none;
         }
         .fa {
             position: absolute;

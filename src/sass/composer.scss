@@ -357,6 +357,9 @@ body.maximizedComposer {
 					width: 520px;
 					margin-left: 4rem;
 				}
+				select::-ms-expand {
+				    display: none;
+				}
 				input,
 				select {
 					margin-left: 4rem;
