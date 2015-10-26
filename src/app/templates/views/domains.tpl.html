@@ -28,41 +28,41 @@
                         <tr ng-repeat="domain in domains">
                             <td><strong>{{ domain.DomainName }}</strong></td>
                             <td>
-                                <span ng-show="domain.State === true" class="text-green">
+                                <span ng-show="domain.State === 1" class="text-green">
                                     <i class="fa fa-check"></i> {{ 'READY' | translate }}
                                 </span>
-                                <span ng-show="domain.State === false" class="text-red">
+                                <span ng-show="domain.State === 0" class="text-red">
                                     <i class="fa fa-exclamation-triangle"></i> {{ 'ERROR' | translate }}
                                 </span>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.MXStatus === true) }" type="button" ng-click="verification(domain)">
-                                    <strong ng-show="domain.MXStatus === false">{{ 'NOT_VERIFIED' | translate }}</strong>
-                                    <strong ng-show="domain.MXStatus === true" class="text-green">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.VerifyState === 1) }" type="button" ng-click="verification(domain)">
+                                    <strong ng-show="domain.VerifyState === 0">{{ 'NOT_VERIFIED' | translate }}</strong>
+                                    <strong ng-show="domain.VerifyState === 1" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
                                     </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.SPFStatus === true) }" type="button"  ng-click="spf(domain)">
-                                    <strong ng-show="domain.SPFStatus === false">{{ 'ADD_SPF' | translate }}</strong>
-                                    <strong ng-show="domain.SPFStatus === true" class="text-green">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.SpfState === 1) }" type="button"  ng-click="spf(domain)">
+                                    <strong ng-show="domain.SpfState === 0">{{ 'ADD_SPF' | translate }}</strong>
+                                    <strong ng-show="domain.SpfState === 1" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
                                     </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.DKIMStatus === true) }" type="button" ng-click="dkim(domain)">
-                                    <strong ng-show="domain.DKIMStatus === false">{{ 'ADD_DKIM' | translate }}</strong>
-                                    <strong ng-show="domain.DKIMStatus === true" class="text-green">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.DkimState === 1) }" type="button" ng-click="dkim(domain)">
+                                    <strong ng-show="domain.DkimState === 0">{{ 'ADD_DKIM' | translate }}</strong>
+                                    <strong ng-show="domain.DkimState === 1" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
                                     </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.DMARCStatus === true) }" type="button" ng-click="dmarc(domain)">
-                                    <strong ng-show="domain.DMARCStatus === false">{{ 'ADD_DMARC' | translate }}</strong>
-                                    <strong ng-show="domain.DMARCStatus === true" class="text-green">
+                                <button class="pm_button" ng-class="{ 'dead': (domain.DmarcState === 1) }" type="button" ng-click="dmarc(domain)">
+                                    <strong ng-show="domain.DmarcState === 0">{{ 'ADD_DMARC' | translate }}</strong>
+                                    <strong ng-show="domain.DmarcState === 1" class="text-green">
                                         <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
                                     </strong>
                                 </button>
@@ -86,12 +86,12 @@
                 <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains">
                     <p>
-                        <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === true" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
+                        <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === 1" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
                             <i class="fa" ng-class="{'fa-angle-down': domain.expand === true, 'fa-angle-up': domain.expand === false}"></i>
                         </button>
-                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === true, 'fa-exclamation-triangle text-red': domain.State === false}"></i> <strong>{{ domain.DomainName }}</strong>
+                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
-                    <div ng-show="domain.expand === true && domain.State === true">
+                    <div ng-show="domain.expand === true && domain.State === 1">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <a href="" ui-sref="secured.users" class="pm_button primary">{{ 'ADD_USER' | translate }}</a>
@@ -111,7 +111,7 @@
                                     </td>
                                     <td>
                                         <span class="pm_select">
-                                            <select ng-init="initMember(address)" ng-model="address.select" ng-options="member.Email for member in members" ng-change="changeMember(address)"></select>
+                                            <select ng-init="initMember(address)" ng-model="address.select" ng-options="member.UserName for member in members" ng-change="changeMember(address)"></select>
                                         </span>
                                     </td>
                                     <td class="text-right">

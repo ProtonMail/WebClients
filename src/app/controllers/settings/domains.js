@@ -160,7 +160,13 @@ angular.module("proton.controllers.Settings")
      * Initialize user model value (select)
      */
     $scope.initMember = function(address) {
-        address.select = $scope.members[0];
+        _.each($scope.members, function(member) {
+            var found = member.AddressIDs.indexOf(address.AddressID) !== -1;
+
+            if(found === true) {
+                address.select = member;
+            }
+        });
     };
 
     /**

@@ -38,11 +38,11 @@ angular.module("proton.models.domains", [])
                     "DmarcRecord": null,
                     "State": 1,
                     "CheckTime": 1445848850,
-                    "VerifyState": 0,
-                    "MxState": 0,
+                    "VerifyState": 1,
+                    "MxState": 1,
                     "SpfState": 1,
-                    "DkimState": 0,
-                    "DmarcState": 0
+                    "DkimState": 1,
+                    "DmarcState": 1
                 },
                 {
                     "ID": "FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==",
@@ -58,7 +58,7 @@ angular.module("proton.models.domains", [])
                     "CheckTime": 1445848852,
                     "VerifyState": 0,
                     "MxState": 0,
-                    "SpfState": 1,
+                    "SpfState": 0,
                     "DkimState": 0,
                     "DmarcState": 0
                 }
