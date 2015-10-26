@@ -104,4 +104,8 @@ angular.module("proton.controllers.Settings")
             "Price": "12 CHF"
         }
     ];
+
+    $scope.downloadInvoice = function(payment) {
+
+    };
 });
