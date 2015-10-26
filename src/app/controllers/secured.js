@@ -16,7 +16,7 @@ angular.module("proton.controllers.Secured", [])
     Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
     $scope.user = authentication.user;
-    $scope.user.type = 'sub'; // master or sub
+    $scope.user.type = 'master'; // master or sub
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
