@@ -105,6 +105,14 @@
     input[type="password"],
     input[type="email"],
     input[type="search"],
+    select {
+        height: 32px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"],
     select,
     textarea {
         line-height: $inputHeight;
