@@ -2,27 +2,25 @@ angular.module("proton.height", [])
 
 .directive('ptHeight', ['$window', function ($window) {
     return function (scope, element, attrs) {
-
-        function setHeight() {
-
+        var setHeight = function() {
+            var margin = 20;
             var windowHeight = angular.element($window).height();
             var elementOffset = element[0].getBoundingClientRect();
-            var height = (windowHeight - elementOffset.top - 20);
+            var height = windowHeight - elementOffset.top - margin;
 
             element.css({
-                height: height
+                height: height + 'px'
             });
+        };
 
-        }
+        // Listen resize window
+        angular.element($window).bind('resize', setHeight);
 
-        scope.$on('resized', function() {
-            setHeight();
+        // Remove listener on resize window
+        scope.$on('$destroy', function() {
+            angular.element($window).unbind('resize', setHeight);
         });
 
-        var init = setInterval( setHeight, 120);
-        setTimeout( function() {
-            clearInterval(init);
-        }, 2400);
-
+        setHeight();
     };
 }]);

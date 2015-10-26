@@ -1,5 +1,5 @@
-/* 
-Be extremely careful what goes here. 
+/*
+Be extremely careful what goes here.
 It will conflict with email rendering if the selectors are not specific or nested properly
 */
 
@@ -29,7 +29,7 @@ It will conflict with email rendering if the selectors are not specific or neste
 		&.show {
 			opacity: 1;
 		}
-	}	
+	}
 }
 
 body.columns {
@@ -100,7 +100,7 @@ body.rows {
 			}
 		}
 	}
-	*[ng-height] {
+	*[pt-height] {
 		overflow: initial;
 		height: initial !important;
 	}
@@ -110,7 +110,7 @@ body.rows {
 	html, body {
 		min-height: 100%;
 		height: auto !important;
-	}	
+	}
 }
 
 @media (max-width: $mobile-landscape) {
