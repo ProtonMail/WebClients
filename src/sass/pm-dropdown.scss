@@ -14,7 +14,7 @@
 	overflow: auto;
 	&.right {
 		right: -1px;
-		left: initial;
+		left: auto !important;
 	}
 	&.wide {
 		width: 160px;

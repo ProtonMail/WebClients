@@ -9,3 +9,14 @@
     // }
 
 }
+
+.ua-ie {
+	#pm_header {
+		.pm_dropdown {
+			top: 200%;
+		}
+	}
+    body.scroll {
+        overflow-y: auto !important; 
+    }
+}
