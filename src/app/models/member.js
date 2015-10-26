@@ -19,35 +19,38 @@ angular.module("proton.models.members", [])
         query: function() {
             var deferred = $q.defer();
 
-            deferred.resolve([
-                {
-                    "MemberID": "q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==",
-                    "UserName": "max.mustermann",
-                    "DisplayName": "Max Mustermann",
-                    "NotificationEmail": "max123@gmail.com",
-                    "Role": 0,
-                    "UsedSpace": 1,
-                    "MaxSpace": 1024,
-                    "AddressIDs": [
-                        "UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==",
-                        "fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw=="
-                    ],
-                },
-                {
-                    "MemberID": "0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==",
-                    "UserName": "elliot@e-corp.com",
-                    "DisplayName": "Elliot Alderson",
-                    "NotificationEmail": "elliot.alderson@protonmail.com",
-                    "Role": 1,
-                    "UsedSpace": 1,
-                    "MaxSpace": 1024,
-                    "AddressIDs": [
-                        "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
-                        "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
-                        "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
-                    ]
-                }
-            ]);
+            deferred.resolve({
+                "Members": [
+                    {
+                        "MemberID": "q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==",
+                        "UserName": "max.mustermann",
+                        "DisplayName": "Max Mustermann",
+                        "NotificationEmail": "max123@gmail.com",
+                        "Role": 0,
+                        "UsedSpace": 1,
+                        "MaxSpace": 1024,
+                        "AddressIDs": [
+                            "UVhawo1URvrpvbnp1FaDO2RhoaENS5Ge8bJ4PT4U4ATqZeZTNGrVD1vM2JpeQP8tMMQQ9iqDEIz2u4werNZIRw==",
+                            "fT-fHNQexHafNYev4Qz49aetYhhjFOJCD8E8GYYOMY6o0U9WwINhnI76D9k7f6WB8_GaMISfd3a_cxe6vEUGxw=="
+                        ],
+                    },
+                    {
+                        "MemberID": "0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==",
+                        "UserName": "elliot@e-corp.com",
+                        "DisplayName": "Elliot Alderson",
+                        "NotificationEmail": "elliot.alderson@protonmail.com",
+                        "Role": 1,
+                        "UsedSpace": 1,
+                        "MaxSpace": 1024,
+                        "AddressIDs": [
+                            "hCjg4nXWswD5EhdgWrKr2xP3D-99QRPot3H3hg7yBfLZ9GOrjBEJuc3-rO7u-0WevfX4WSFcfgps8O3qKJAZxQ==",
+                            "kBZYBzgHWtjW5igU33BXqwVZ66GBdJi4ycXPzZjyUmp840-O2yXyNEO0ayRveZKNnASS_btzUY-WkI_mcvNuOg==",
+                            "dRs2Vv64Vru392SbvvG1MbEt3Ep5P_EWz8WbHVAOl_6h_Ty9jItyktkVcfz9-xRvCGwFq_TW7i8FtJaGyFEq0g=="
+                        ]
+                    }
+                ],
+                "Code": 1000
+            });
 
             return deferred.promise;
             // return $http.get(url.get() + '/members');

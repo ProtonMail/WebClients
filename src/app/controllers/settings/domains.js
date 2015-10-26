@@ -16,10 +16,10 @@ angular.module("proton.controllers.Settings")
     spfModal,
     verificationModal
 ) {
-    $scope.group = group;
-    $scope.domains = domains;
-    $scope.members = members;
-    $scope.addresses = addresses;
+    $scope.group = group.Group;
+    $scope.domains = domains.Domains;
+    $scope.members = members.Members;
+    $scope.addresses = addresses.Addresses;
 
     /**
      * Open modal process to add a domain
