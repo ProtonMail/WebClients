@@ -215,7 +215,7 @@ angular.module("proton.emailField", [])
                 }
                 manager.tagsManager("pushTag", {
                     Name: d.Name,
-                    Email: d.Address
+                    Email: clean(d.Address)
                 });
             });
         }
