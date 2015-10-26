@@ -60,6 +60,7 @@ angular.module("proton.emailField", [])
                 return emails;
             };
 
+            // email is a string
             var clean = function(email) {
                 return email
                     .replace(/</g, '')
@@ -89,6 +90,7 @@ angular.module("proton.emailField", [])
                             element.Name = element.Email.split('@')[0];
                         }
                     }
+
                     if (
                         (typeof element.Name !== 'undefined') &&
                         (typeof element.Email !== 'undefined') &&
@@ -248,21 +250,21 @@ angular.module("proton.emailField", [])
 
             _.forEach($scope.message[list], function(d) {
                 if (typeof d.Name === 'undefined' || d.Name === '') {
-                    if (d.Email) {
-                        d.Name = d.Email.split('@')[0];
+                    if (d.Address) {
+                        d.Name = d.Address.split('@')[0];
                     }
                 }
                 if (
                     (typeof d.Name !== 'undefined') &&
-                    (typeof d.Email !== 'undefined') &&
-                    (d.Name.trim() === d.Email.trim())
+                    (typeof d.Address !== 'undefined') &&
+                    (d.Name.trim() === d.Address.trim())
                 ) {
-                    d.Name = d.Email.split('@')[0];
+                    d.Name = d.Address.split('@')[0];
                 }
 
                 manager.tagsManager("pushTag", {
                     Name: d.Name,
-                    Email: d.Address
+                    Email: clean(d.Address)
                 });
             });
         }
