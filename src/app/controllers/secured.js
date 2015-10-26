@@ -12,10 +12,11 @@ angular.module("proton.controllers.Secured", [])
     CONSTANTS,
     Stripe
 ) {
-    // Setting publishable key
+    // Setting publishable key for Stripe
     Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 
     $scope.user = authentication.user;
+    $scope.user.type = 'sub'; // master or sub
 
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
