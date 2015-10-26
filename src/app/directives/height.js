@@ -16,11 +16,17 @@ angular.module("proton.height", [])
         // Listen resize window
         angular.element($window).bind('resize', setHeight);
 
+        scope.$on('$stateChangeSuccess', function() {
+            setHeight();
+        });
+
         // Remove listener on resize window
         scope.$on('$destroy', function() {
             angular.element($window).unbind('resize', setHeight);
         });
 
-        setHeight();
+        setTimeout(function() {
+            setHeight();
+        });
     };
 }]);
