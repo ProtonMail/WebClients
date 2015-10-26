@@ -25,39 +25,45 @@ angular.module("proton.models.domains", [])
             var deferred = $q.defer();
 
             deferred.resolve({
-                "Domains": [
-                    {
-                        DomainID: 1, // int unsigned - PK
-                        DomainName: 'panda.com', // varchar(253) - e.g. protonmail.ch, protonmail.com, ...
-                        GroupID: 1, // int unsigned - the Group.GroupID owning this domain
-                        State: true,
-                        CheckTime: 123123123123, // - last time DNS was checked (need to recheck if more than 1 day old)
-                        MX: {}, // json
-                        MXStatus: true, // tinyint unsigned - encodes if PM is set with highest pref
-                        SPF: {}, // json
-                        SPFStatus: true, // tinyint unsigned - encodes if PM is included
-                        DKIM: {}, // json
-                        DKIMStatus: true, // tinyint unsigned - encodes if the protonmail selector public key is correct
-                        DMARC: {}, // json
-                        DMARCStatus: true // tinyint unsigned - encodes if not set, set but do nothing, quarantine, or reject
-                    },
-                    {
-                        DomainID: 2, // int unsigned - PK
-                        DomainName: 'tigre.com', // varchar(253) - e.g. protonmail.ch, protonmail.com, ...
-                        GroupID: 1, // int unsigned - the Group.GroupID owning this domain
-                        State: false,
-                        CheckTime: 123123123123, // - last time DNS was checked (need to recheck if more than 1 day old)
-                        MX: {}, // json
-                        MXStatus: false, // tinyint unsigned - encodes if PM is set with highest pref
-                        SPF: {}, // json
-                        SPFStatus: false, // tinyint unsigned - encodes if PM is included
-                        DKIM: {}, // json
-                        DKIMStatus: false, // tinyint unsigned - encodes if the protonmail selector public key is correct
-                        DMARC: {}, // json
-                        DMARCStatus: false // tinyint unsigned - encodes if not set, set but do nothing, quarantine, or reject
-                    }
-                ],
-                "Code": 1000
+            "Domains": [
+                {
+                    "ID": "BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==",
+                    "OrganizationID": "l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==",
+                    "DomainName": "DingchaoLu.com",
+                    "VerifyCode": "protonmail-verification=c701a28e2bdd3358c6dda71a3008b806e41950b0",
+                    "MxRecord": "a:1:{i:0;a:2:{s:6:\"target\";s:17:\"mx.DingchaoLu.com\";s:3:\"pri\";i:30;}}",
+                    "SpfRecord": "v=spf1 ip4:66.96.128.0/18 ?all",
+                    "DkimRecord": null,
+                    "DkimPublicKey": "v=DKIM1; k=rsa; p=lkajfelkajef",
+                    "DmarcRecord": null,
+                    "State": 1,
+                    "CheckTime": 1445848850,
+                    "VerifyState": 0,
+                    "MxState": 0,
+                    "SpfState": 1,
+                    "DkimState": 0,
+                    "DmarcState": 0
+                },
+                {
+                    "ID": "FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==",
+                    "OrganizationID": "l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==",
+                    "DomainName": "funoccupied.com",
+                    "VerifyCode": "protonmail-verification=1d439ec16a149d45b1e7b54ed57bf197b89ac1aa",
+                    "MxRecord": "a:1:{i:0;a:2:{s:6:\"target\";s:18:\"mx.funoccupied.com\";s:3:\"pri\";i:30;}}",
+                    "SpfRecord": "v=spf1 ip4:66.96.128.0/18 ?all",
+                    "DkimRecord": null,
+                    "DkimPublicKey": null,
+                    "DmarcRecord": null,
+                    "State": 0,
+                    "CheckTime": 1445848852,
+                    "VerifyState": 0,
+                    "MxState": 0,
+                    "SpfState": 1,
+                    "DkimState": 0,
+                    "DmarcState": 0
+                }
+            ],
+            "Code": 1000
             });
 
             return deferred.promise;

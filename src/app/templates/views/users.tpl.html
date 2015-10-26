@@ -75,28 +75,30 @@
 		                </tr>
 		            </thead>
 		            <tbody>
-						<tr ng-repeat="user in users">
-		                    <td class="username" ng-bind="user.username"></td>
+						<tr ng-repeat="member in members">
+		                    <td class="username">
+		                        <span ng-bind="member.DisplayName" title="{{ member.UserName }}"></span>
+		                    </td>
 		                    <td class="role">
 		                    	<span class="pm_select">
-									<select ng-model="user.selectRole" ng-init="initRole(user)" ng-options="role.label for role in roles" ng-change="changeRole(user)"></select>
+									<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 			                        <i class="fa fa-angle-down"></i>
 			                    </span>
 		                    </td>
-		                    <td class="storage">{{ user.storage | bytes: 0 }}</td>
+		                    <td class="storage">{{ member.UsedSpace | bytes: 0 }}</td>
 		                    <td class="addresses">
-                                <div ng-repeat="address in user.addresses">
-                                    {{ address.address }} <small ng-show="address.default">(DEFAULT)</small>
+                                <div ng-repeat="address in addressesOf(member) | orderBy: 'Send'">
+                                    {{ address.Email }} <small ng-show="address.Send === 0">(DEFAULT)</small>
                                 </div>
                             </td>
 		                    <td class="actions">
-			                    <button type="button" class="pm_button round" ng-click="managePasswords(user)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}">
+			                    <button type="button" class="pm_button round" ng-click="managePasswords(member)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}">
                                     <i class="fa fa-cog"></i>
                                 </button>
-			                    <button type="button" class="pm_button round" ng-click="generateKeys(user)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}">
+			                    <button type="button" class="pm_button round" ng-click="generateKeys(member)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}">
                                     <i class="fa fa-key"></i>
                                 </button>
-			                    <button type="button" class="pm_button round" ng-click="enterMailbox(user)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}">
+			                    <button type="button" class="pm_button round" ng-click="enterMailbox(member)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}">
                                     <i class="fa fa-inbox"></i>
                                 </button>
 							</td>

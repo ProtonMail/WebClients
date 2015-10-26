@@ -17,41 +17,25 @@ angular.module("proton.controllers.Settings")
         name: ''
     };
 
-    // Example
-    $scope.users = [
-        {
-            id: 1,
-            username: 'default@emailaddresses.com',
-            role: MASTER,
-            storage: 123,
-            addresses: [
-                {
-                    id: 1,
-                    address: 'qweqweqwe@qweqwe.fr',
-                    default: true
-                }
-            ]
-        },
-        {
-            id: 2,
-            username: 'default@emailaddresses.com',
-            role: SUB,
-            storage: 123,
-            addresses: [
-                {
-                    id: 2,
-                    address: 'qweqweqwe@qweqwe.fr',
-                    default: true
-                }
-            ]
-        }
-    ];
+    $scope.addressesOf = function(member) {
+        var addresses = [];
+
+        _.each(member.AddressIDs, function(addressID) {
+            var address = _.findWhere($scope.addresses, {AddressID: addressID});
+
+            if(angular.isDefined(address)) {
+                addresses.push(address);
+            }
+        });
+
+        return addresses;
+    };
 
     /**
      * Initialize select value with role user
      */
     $scope.initRole = function(user) {
-        var role = _.findWhere($scope.roles, {value: user.role});
+        var role = _.findWhere($scope.roles, {value: user.Role});
 
         if(angular.isDefined(role)) {
             user.selectRole = role;
