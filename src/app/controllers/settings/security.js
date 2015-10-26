@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('SecurityController', function($log, $rootScope, $scope, $translate, authentication, Logs, networkActivityTracker, notify) {
+.controller('SecurityController', function($log, $rootScope, $scope, $translate, authentication, Logs, networkActivityTracker, notify, confirmModal) {
     $scope.logs = [];
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
@@ -39,19 +39,34 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        networkActivityTracker.track(
-            Logs.clearLogs().then(
-                function(response) {
-                    $scope.logs = [];
-                    $scope.logCount = 0;
-                    notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
+        var title = $translate.instant('CLEAR_LOGS');
+        var message = 'Are you sure you want to clear all your logs?'; // TODO translate
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    networkActivityTracker.track(
+                        Logs.clearLogs().then(
+                            function(response) {
+                                $scope.logs = [];
+                                $scope.logCount = 0;
+                                notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
+                            },
+                            function(error) {
+                                notify({message: 'Error during the clear logs request', classes: 'notification-danger'});
+                                $log.error(error);
+                            }
+                        )
+                    );
+                    confirmModal.deactivate();
                 },
-                function(error) {
-                    notify({message: 'Error during the clear logs request', classes: 'notification-danger'});
-                    $log.error(error);
+                cancel: function() {
+                    confirmModal.deactivate();
                 }
-            )
-        );
+            }
+        });
     };
 
     $scope.downloadLogs = function () {
