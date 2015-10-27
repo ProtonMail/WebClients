@@ -178,16 +178,6 @@ angular.module("proton", [
     notify,
     tools
 ) {
-    var debounce;
-
-    // Broadcast window resize event
-    angular.element($window).bind('resize load', function() {
-        $timeout.cancel(debounce);
-        $timeout(function() {
-            $rootScope.$broadcast('resized');
-        }, 10);
-    });
-
     angular.element($window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
