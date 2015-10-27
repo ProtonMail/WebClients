@@ -320,7 +320,7 @@ angular.module("proton", [
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");
         var isUpgrade = (toState.name === "upgrade");
-        var isSupport = (toState.name.includes("support."));
+        var isSupport = (toState.name.includes("support"));
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2" || toState.name === "pre-invite");
         var isUnlock = (toState.name === "login.unlock");
@@ -402,8 +402,8 @@ angular.module("proton", [
 //
 
 .run(function($log) {
-    $log.info('Find a security bug? security@protonmail.ch');
-    $log.info('We\'re hiring! https://protonmail.ch/pages/join-us.html');
+    $log.info('Find a security bug? security@protonmail.com');
+    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
 })
 
 //

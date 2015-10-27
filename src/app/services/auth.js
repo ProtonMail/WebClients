@@ -237,7 +237,7 @@ angular.module("proton.authentication", [
                 ClientID: CONFIG.clientID,
                 GrantType: "refresh_token",
                 RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
-                RedirectURI: "https://protonmail.ch",
+                RedirectURI: "https://protonmail.com",
                 State: this.randomString(24)
             })
             .then(
@@ -292,7 +292,7 @@ angular.module("proton.authentication", [
                         ClientID: CONFIG.clientID,
                         ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
-                        RedirectURI: "https://protonmail.ch",
+                        RedirectURI: "https://protonmail.com",
                         State: this.randomString(24),
                         Scope: "full" // 'full' or 'reset'
                     })

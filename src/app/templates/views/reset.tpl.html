@@ -3,17 +3,23 @@
     <div class="panel-body" ng-hide="(showForm || showEmailMessage || process.generatingKeys)">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
 
-        <div class="alert alert-danger">
-            <div>We don't store your mailbox password for privacy reasons.</div>
+        <p>If you forget your Mailbox Password, the only way to proceed is to create a new mailbox.</p>
 
-            <p>If you forget your Mailbox Password, the only way to proceed is to create a new mailbox.</p>
+        <p class="alert alert-danger">
+            <i class="fa fa-warning"></i> All of your existing encrypted data will be lost forever!
+        </p>
 
-            <p>All of your existing encrypted data will be lost forever.</p>
+        <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
 
-            <p class="text-center bold">THIS ACTION CANNOT BE UNDONE!</p>
-        </div>
+        <p class="alert">
+            To continue, enter the word <kbd>DANGER</kbd> below:
+        </p>
+        <p>
 
-        <button class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">
+            <input type="text" class="form-control" ng-model="danger">
+        </p>
+
+        <button ng-class="{ 'disabled': danger!=='DANGER' }" class="btn pull-right btn-danger" title="Reset my Mailbox" ng-click="resetMailboxInit()">
             <span ng-if="user.NotificationEmail !== ''">{{ 'RESET' | translate }}</span>
             <span ng-if="user.NotificationEmail === ''">{{ 'RESET_NOW' | translate }}</span>
         </button>

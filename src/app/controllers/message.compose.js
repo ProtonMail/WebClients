@@ -792,12 +792,6 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
         // set msgBody input element to editor content
         message.setMsgBody();
 
-        // Check internet connection
-        if (window.navigator.onLine !== true && location.hostname !== 'localhost') {
-            notify({message: 'No internet connection. Please wait and try again.', classes: 'notification-danger'});
-            return false;
-        }
-
         // Check if there is an attachment uploading
         if (message.uploading === true) {
             notify({message: 'Wait for attachment to finish uploading or cancel upload.', classes: 'notification-danger'});

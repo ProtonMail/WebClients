@@ -119,7 +119,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     };
 
     $scope.displayContent = function(print) {
-        var whitelist = ['notify@protonmail.ch'];
+        var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf(message.Sender.Address) !== -1 && message.IsEncrypted === 0) {
             message.imagesHidden = false;
@@ -347,7 +347,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                         confirmModal.activate({
                             params: {
                                 title: 'Unable to decrypt attachment.',
-                                message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.ch</kbd></p>',
+                                message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.com</kbd></p>',
                                 confirm: function() {
                                     confirmModal.deactivate();
                                 },
@@ -494,9 +494,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
             base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
 
             if($state.is('secured.sent.message')) {
-                base.ToList = [message.ReplyTo];
+                base.ToList = message.ToList;
             } else {
-                base.ToList = [message.Sender];
+                base.ToList = [message.ReplyTo];
             }
         } else if (action === 'replyall') {
             base.Action = 1;
@@ -507,7 +507,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 base.CCList = message.CCList;
                 base.BCCList = message.BCCList;
             } else {
-                base.ToList = [message.Sender];
+                base.ToList = [message.ReplyTo];
                 base.CCList = _.union(message.ToList, message.CCList);
                 // Remove user address in CCList and ToList
                 _.each(authentication.user.Addresses, function(address) {
