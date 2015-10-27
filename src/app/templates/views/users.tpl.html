@@ -88,7 +88,7 @@
 		                    <td class="storage">{{ member.UsedSpace | bytes: 0 }}</td>
 		                    <td class="addresses">
                                 <div ng-repeat="address in addressesOf(member) | orderBy: 'Send'">
-                                    {{ address.Email }} <small ng-show="address.Send === 0">(DEFAULT)</small>
+                                    {{ address.Email }} <small ng-show="address.Send === 0">(DEFAULT)</small> <a href="" ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 0" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken"></i></a>
                                 </div>
                             </td>
 		                    <td class="actions">
