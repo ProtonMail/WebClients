@@ -13,8 +13,9 @@ angular.module("proton.controllers.Secured", [])
     Stripe
 ) {
     var format;
+    var language = window.navigator.userLanguage || window.navigator.language;
 
-    if(moment.lang() === 'en') {
+    if(language === 'en-US') {
         format = 'MM/DD/YYYY';
     } else {
         format = 'DD/MM/YYYY';
