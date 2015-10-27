@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('UsersController', function($rootScope, $scope, $translate, userModal, group, members, addresses) {
+.controller('UsersController', function($rootScope, $scope, $translate, confirmModal, userModal, group, members, addresses) {
     var MASTER = 0;
     var SUB = 1;
 
@@ -60,7 +60,22 @@ angular.module("proton.controllers.Settings")
      * Unlink address
      */
     $scope.unlinkAddress = function(user, address) {
+        var title = $translate.instant('UNLINK_ADDRESS');
+        var message = 'Are you sure you want to unlink this address?'; // TODO translate
 
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    // TODO
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
