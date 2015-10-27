@@ -411,8 +411,16 @@ angular.module("proton", [
 //
 
 .config(['pikadayConfigProvider', function(pikaday) {
+    var format;
+
+    if(moment.lang() === 'en') {
+        format = 'MM/DD/YYYY';
+    } else {
+        format = 'DD/MM/YYYY';
+    }
+
     pikaday.setConfig({
-        format: "MM/DD/YYYY"
+        format: format
     });
 }])
 
