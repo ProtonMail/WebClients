@@ -6,7 +6,7 @@ machine:
   ruby: #docker is all we need, but a language has to be chosen
 dependencies:
   pre:
-    - "rm -r node_modules/"
+    - "rm -rf node_modules/"
   override:
     - make circle.dependencies
   cache_directories:
