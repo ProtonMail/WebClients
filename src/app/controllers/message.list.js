@@ -62,9 +62,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    $scope.$on('resized', function() {
-        $scope.mobileResponsive();
-    });
+    angular.element($window).bind('resize', $scope.mobileResponsive);
 
     $scope.mobileResponsive = function() {
         if ($window.outerWidth < 1024) {
@@ -151,6 +149,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
 
     $scope.stopWatchingEvent = function() {
         preloadMessage.reset();
+        angular.element($window).unbind('resize', $scope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {

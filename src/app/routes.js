@@ -229,7 +229,7 @@ angular.module("proton.routes", [
                         ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
                         State: authentication.randomString(24),
-                        RedirectURI: "https://protonmail.ch",
+                        RedirectURI: "https://protonmail.com",
                         ResponseType: "token",
                         Scope: "reset"
                     })

@@ -73,7 +73,7 @@
                     <span class="col wide">
                         <span class="input-icon">
                             <em class="fa fa-calendar"></em>
-                            <input type="text" placeholder="dd/mm/yy" pikaday="ctrl.start" id="search_start" on-select="setMin()" />
+                            <input type="text" placeholder="{{ dateFormat }}" pikaday="ctrl.start" id="search_start" on-select="setMin()" />
                         </span>
                     </span><!--/.col-->
                     <span class="col narrow">
@@ -82,7 +82,7 @@
                     <span class="col wide last">
                         <span class="input-icon">
                             <em class="fa fa-calendar"></em>
-                            <input type="text" placeholder="dd/mm/yy" pikaday="ctrl.end" id="search_end" on-select="setMax()" />
+                            <input type="text" placeholder="{{ dateFormat }}" pikaday="ctrl.end" id="search_end" on-select="setMax()" />
                         </span>
                     </span><!--/.col-->
                 </div><!--/.row-->

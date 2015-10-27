@@ -65,7 +65,7 @@
     </ul>
     <div class="labels">
         <ul ng-label-height>
-            <li ng-repeat="label in labels | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
+            <li ng-repeat="label in labels | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}" ng-show="label.Display === 1">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>
@@ -86,7 +86,7 @@
                 <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}%</strong> {{ 'STORAGE_USED' | translate }}
             </div>
         </div>
-        <a class="version" href="https://blog.protonmail.ch/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
+        <a class="version" href="https://blog.protonmail.com/category/release-notes/" title="{{ 'BLOG' | translate }}" target="_blank">ProtonMail {{ appVersion }}</a>
     </div>
 </section>
 

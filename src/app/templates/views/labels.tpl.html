@@ -14,7 +14,7 @@
                         <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
                         <span class="label label-pm">{{ label.Name }}</span>
                         <div class="pull-right">
-                            <!-- <toggle status="label.Display" change="toggleDisplayLabel(label)" on="{{ 'SHOW' | translate }}" off="{{ 'HIDE' | translate }}"></toggle> -->
+                            <toggle status="label.Display" change="toggleDisplayLabel(label)" on="{{ 'SHOW' | translate }}" off="{{ 'HIDE' | translate }}"></toggle>
                             <button type="button" class="pm_button round" pt-tooltip="Edit Label" ng-click="editLabel(label)">
                                 <i class="fa fa-edit"></i>
                             </button>

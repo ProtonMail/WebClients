@@ -12,6 +12,16 @@ angular.module("proton.controllers.Secured", [])
     CONSTANTS,
     Stripe
 ) {
+    var format;
+    var language = window.navigator.userLanguage || window.navigator.language;
+
+    if(language === 'en-US') {
+        format = 'MM/DD/YYYY';
+    } else {
+        format = 'DD/MM/YYYY';
+    }
+
+    $rootScope.dateFormat = format;
     // Setting publishable key for Stripe
     Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
 

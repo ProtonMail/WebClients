@@ -178,16 +178,6 @@ angular.module("proton", [
     notify,
     tools
 ) {
-    var debounce;
-
-    // Broadcast window resize event
-    angular.element($window).bind('resize load', function() {
-        $timeout.cancel(debounce);
-        $timeout(function() {
-            $rootScope.$broadcast('resized');
-        }, 10);
-    });
-
     angular.element($window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
@@ -330,7 +320,7 @@ angular.module("proton", [
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         var isLogin = (toState.name === "login");
         var isUpgrade = (toState.name === "upgrade");
-        var isSupport = (toState.name.includes("support."));
+        var isSupport = (toState.name.includes("support"));
         var isAccount = (toState.name === "account");
         var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2" || toState.name === "pre-invite");
         var isUnlock = (toState.name === "login.unlock");
@@ -412,8 +402,8 @@ angular.module("proton", [
 //
 
 .run(function($log) {
-    $log.info('Find a security bug? security@protonmail.ch');
-    $log.info('We\'re hiring! https://protonmail.ch/pages/join-us.html');
+    $log.info('Find a security bug? security@protonmail.com');
+    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
 })
 
 //
@@ -421,8 +411,17 @@ angular.module("proton", [
 //
 
 .config(['pikadayConfigProvider', function(pikaday) {
+    var format;
+    var language = window.navigator.userLanguage || window.navigator.language;
+
+    if(language === 'en-US') {
+        format = 'MM/DD/YYYY';
+    } else {
+        format = 'DD/MM/YYYY';
+    }
+
     pikaday.setConfig({
-        format: "MM/DD/YYYY"
+        format: format
     });
 }])
 
