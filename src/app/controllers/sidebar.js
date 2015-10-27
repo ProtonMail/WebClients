@@ -73,7 +73,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                             Label.save({
                                 Name: name,
                                 Color: color,
-                                Display: 0
+                                Display: 1
                             }).$promise.then(function(result) {
                                 if(angular.isDefined(result.Label)) {
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
