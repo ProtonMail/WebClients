@@ -4,6 +4,14 @@ header#pm_header {
 	border-bottom: 1px solid $border;
 	background: #fff;
 	font-size: 12px;
+	#snackie {
+		position: absolute;
+		left: 50%;
+		margin-left: -142px;
+		top: 0;
+		display: block;
+		z-index: 99999;
+	}
 	i, b {
 		font-style: normal;
 		font-weight: normal;

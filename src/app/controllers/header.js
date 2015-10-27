@@ -83,7 +83,13 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-            $state.go('secured.search.list', params);
+            if (params.words==='bartsnackies') {
+                $scope.snackies = true;
+            }
+            else {
+                $scope.snackies = false;
+                $state.go('secured.search.list', params);
+            }
         } else {
             $state.go('secured.inbox.list');
         }

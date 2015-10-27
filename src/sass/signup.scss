@@ -87,3 +87,28 @@
         }
     }
 }
+
+@media (max-width: $mobile-landscape) {
+    #step1 {
+        .wrapper {
+            padding: 0;
+            label {
+                margin-top: 4rem;
+                em.num {
+                    left: 0;
+                    top: -2rem;
+                }
+            }
+        }
+        .pm_panel{
+            form {
+                .pm_button.primary {
+                    width: 100%;
+                    text-align: center;
+                    line-height: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+    }
+}
