@@ -62,6 +62,7 @@
 	.wrapper {
 		max-height: 175px;
 		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 		display: block;
 		clear: both;
 		padding-right: 15px;

@@ -94,7 +94,8 @@ hr {
     height: 0
 }
 pre {
-    overflow: auto
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 code,
 kbd,
@@ -167,7 +168,8 @@ legend {
     padding: 0
 }
 textarea {
-    overflow: auto
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 optgroup {
     font-weight: 700

@@ -108,6 +108,7 @@ body.maximizedComposer {
 				position: absolute;
 				height: 110px;
 				overflow: auto;
+				-webkit-overflow-scrolling: touch;
 				top: auto;
 				bottom: 60px;
 			}
@@ -240,6 +241,7 @@ body.maximizedComposer {
 			line-height: 33px;
 			max-height: 99px;
 			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
 			overflow-x: hidden;
 			&.unfocussed {
 				max-height: 33px;
@@ -434,6 +436,7 @@ body.maximizedComposer {
 	        bottom: 0;
 	        top: 80px;
 	        overflow: auto;
+	        -webkit-overflow-scrolling: touch;
 	        box-sizing: border-box;
 	        background: $white;
 	        z-index: 9;
@@ -459,6 +462,7 @@ body.maximizedComposer {
 			display: block;
 			clear: both;
 	        overflow: auto;
+	        -webkit-overflow-scrolling: touch;
 	        position: relative;
 	        height: 325px;
 	        box-sizing: border-box;

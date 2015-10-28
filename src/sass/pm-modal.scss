@@ -58,6 +58,7 @@
         .modal-content {
             overflow: auto;
             position: absolute;
+            -webkit-overflow-scrolling: touch;
             left: 0;
             top: 25px;
             bottom: 80px;

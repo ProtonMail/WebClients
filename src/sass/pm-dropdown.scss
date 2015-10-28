@@ -12,6 +12,7 @@
 	width: 6rem;
 	max-height: 260px;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	&.right {
 		right: -1px;
 		left: auto !important;

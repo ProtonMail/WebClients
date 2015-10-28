@@ -25,6 +25,7 @@
 	        padding-left: 0;
 	        box-sizing: border-box;
 	        overflow: auto;
+            -webkit-overflow-scrolling: touch;
             float: left;
 	    }
 	    .fa-star,
@@ -50,6 +51,7 @@
     	max-height: $maxHeight;
     	overflow-y: auto;
     	overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     	box-sizing: border-box;
     	width: 100%;
         clear: both;
@@ -263,6 +265,7 @@
     			height: 100%;
     			z-index: 2;
     			overflow: auto;
+                -webkit-overflow-scrolling: touch;
 	    		padding: 0;
 	    		margin: 0;
 	    		outline: none;

@@ -8,6 +8,7 @@
 		min-width: 500px;
 		box-sizing: border-box;		
 		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 		overflow-x: hidden;
 		max-height: $maxHeight; 
 		#pm_list {
@@ -163,6 +164,7 @@
 		z-index: 6;
 		width: 100%;
 		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }
 

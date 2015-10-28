@@ -169,6 +169,7 @@ section.sidebar {
             list-style-type: none;
             height: 175px;
             overflow: auto;
+            -webkit-overflow-scrolling: touch;
             padding: 0 20px;
             margin: 0 -20px;
             li {
@@ -363,6 +364,7 @@ section.sidebar {
     body.secure section#pm_sidebarMobile {
         height: 100%;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         div.labels {
             margin: 0 -25px 30px -25px !important;
         }
