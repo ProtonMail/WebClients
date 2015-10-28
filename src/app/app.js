@@ -40,6 +40,7 @@ angular.module("proton", [
     "proton.models.members",
     "proton.models.addresses",
     "proton.models.domains",
+    "proton.models.conversations",
 
     // Config
     "proton.config",
