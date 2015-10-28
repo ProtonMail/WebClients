@@ -77,7 +77,7 @@
             }
             .clearfix {
                 padding: 5px;
-                margin: 0 -5px;    
+                margin: 0 -5px;
             }
         }
     }
@@ -91,13 +91,24 @@
             position: absolute;
             z-index: 2;
             background: $white;
-            left: 5%;
-            right: 5%;
-            top: 1rem;
-            bottom: 1rem;
-            width: 90%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
             margin: 0;
-            box-sizing: border-box;  
+            box-sizing: border-box;
+            border: none;
+            .close {
+                top: 0;
+                right: 0;
+                height: 3rem;
+                line-height: 3rem;
+                width: 3rem;
+            }
+            .modal-content {
+                top: 3rem;
+            }
         }
     }  
 

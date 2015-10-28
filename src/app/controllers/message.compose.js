@@ -10,6 +10,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
+    $window,
     Attachment,
     CONSTANTS,
     confirmModal,
@@ -63,7 +64,9 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
 
     $scope.$on('newMessage', function() {
         var message = new Message();
-
+        if ($window.innerWidth <= 1024) {
+            message.maximized = true;
+        }
         message.saved = 0;
         $scope.initMessage(message, false);
     });
