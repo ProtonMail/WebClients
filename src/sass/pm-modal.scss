@@ -1,3 +1,7 @@
+body.modalOpen,
+body.activeComposer {
+    overflow:hidden !important;
+}
 .pm_modal {
     position: fixed;
     z-index: 9999;

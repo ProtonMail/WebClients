@@ -39,6 +39,7 @@ angular.module("proton.modals", [])
                     attach(html, locals);
                 }
                 $(body).append('<div class="modal-backdrop fade in"></div>');
+                $rootScope.modalOpen = true;
                 setTimeout(function() {
                     $('.modal').addClass('in');
                 }, 100);
@@ -78,6 +79,7 @@ angular.module("proton.modals", [])
                 scope = null;
                 element.remove();
                 element = null;
+                $rootScope.modalOpen = false;
                 $('.modal-backdrop').remove();
             });
         }

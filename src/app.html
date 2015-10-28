@@ -65,7 +65,8 @@ ng-class="{
     activeComposer:activeComposer,
     maximizedComposer:maximizedComposer,
     light: (('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState)),
-    scroll: ('step1'|isState)
+    scroll: ('step1'|isState),
+    modalOpen: modalOpen
 }">
 
 <div id="pm_background" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false"></div>
