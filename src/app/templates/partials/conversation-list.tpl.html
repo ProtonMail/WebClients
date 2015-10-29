@@ -1,0 +1,80 @@
+<ng-include ng-if="layoutMode === 'columns'" src="'templates/partials/toolbar-list-columns.tpl.html'"></ng-include>
+
+<ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
+
+<ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
+
+<div ng-if="layoutMode === 'columns'" id="pm_list" pt-height>
+    <div ng-if="conversations" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{unread: conversation.NumUnread > 0, selected: (conversation.Selected || conversation.Active), starred: starred(conversation)}">
+        <aside>
+            <span class="pm_checkbox">
+                <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)" />
+            </span>
+            <span class="starSpan">
+                <a href ng-click="toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
+                    <span class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></span>
+                </a>
+            </span>
+            <span class="attachmentSpan">
+                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments.length > 0 }"></i>
+            </span>
+        </aside>
+        <header ng-click="click(conversation)">
+            <p>
+                <strong ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders" title="{{ sender.Address }}">{{ sender.Name || sender.Address }}</strong>
+                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients" title="{{ recipient.Address }}">{{ recipient.Name || recipient.Address }}</strong>
+                <span class="time">{{ conversation.Time | readableTime }}</span>
+            </p>
+        </header>
+        <article ng-click="click(conversation)">
+            <p class="pm_labels" ng-if="conversation.LabelIDs.length > 0">
+                <span ng-repeat="id in conversation.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
+                    <em>{{ getLabel(id).Name }}</em>
+                    <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
+                </span>
+            </p>
+            <p>
+            <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
+            <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
+            <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
+            {{ conversation.Subject }}
+            </p>
+        </article>
+    </div>
+</div>
+
+<div ng-if="layoutMode === 'rows'" id="pm_list" pt-height>
+    <div ng-if="conversations" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{unread: conversation.NumUnread > 0, selected: (conversation.Selected || conversation.Active), starred: starred(conversation)}">
+        <label class="pm_checkbox">
+            <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)">
+            <em class="fa fa-check"></em>
+        </label>
+        <span class="star">
+            <a href ng-click="toggleStar(conversation)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                <span class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></span>
+            </a>
+        </span>
+        <span class="sender" ng-click="click(conversation)">
+            <span ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders">{{ sender.Name || sender.Address }}</span>
+            <span ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients">{{ recipient.Name || recipient.Address }}</span>
+        </span>
+        <span class="placeholderSpan"><span>&nbsp;</span></span>
+        <span class="subject" ng-click="click(conversation)">
+            <span>
+            <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
+            <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
+            <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
+            {{ conversation.Subject }}
+            </span>
+            <span class="pm_labels" ng-if="conversation.LabelIDs.length">
+                <span ng-repeat="id in conversation.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
+                    <em>{{ getLabel(id).Name }}</em>
+                    <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
+                </span>
+            </span>
+        </span>
+        <span class="size">{{ conversation.TotalSize | humanSize }}</span>
+        <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments.length > 0 }"></i>
+        <span class="time">{{ conversation.Time | readableTime }}</span>
+    </div>
+</div>

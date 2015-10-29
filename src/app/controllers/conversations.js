@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Messages.List", ["proton.constants"])
+angular.module("proton.controllers.Conversations", ["proton.constants"])
 
-.controller("MessageListController", function(
+.controller('ConversationsController', function(
     $q,
     $log,
     $rootScope,
@@ -12,13 +12,14 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $filter,
     $window,
     CONSTANTS,
+    Conversation,
     Message,
     Label,
     authentication,
-    cacheMessages, // NEW
-    preloadMessage, // NEW
+    cacheMessages,
+    preloadMessage,
     confirmModal,
-    cacheCounters, // NEW
+    cacheCounters,
     networkActivityTracker,
     notify
 ) {
@@ -27,7 +28,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-        $scope.messagesPerPage = $scope.user.NumMessagePerPage;
+        $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.Math = window.Math;
@@ -36,22 +37,10 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
         $scope.allSelectedCheckbox = false;
-        $scope.draggableOptions = {
-            appendTo: "html",
-            delay: 100,
-            cancel: ".starLink",
-            cursorAt: {left: 0, top: 0},
-            cursor: "move",
-            helper: function(event) {
-                return $('<span class="well well-sm draggable" id="draggableMailsHelper"><i class="fa fa-envelope-o"></i> <strong><b></b> Mails</strong></span>');
-            },
-            containment: "document"
-        };
-
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
-        $scope.refreshMessages().then(function() {
-            $scope.$watch('messages', function(newValue, oldValue) {
+        $scope.refreshConversations().then(function() {
+            $scope.$watch('conversations', function(newValue, oldValue) {
                 preloadMessage.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
@@ -62,8 +51,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
     };
 
-    angular.element($window).bind('resize', $scope.mobileResponsive);
-
     $scope.mobileResponsive = function() {
         if ($window.outerWidth < 1024) {
             $rootScope.layoutMode = 'rows';
@@ -71,16 +58,18 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-        $scope.$on('refreshMessages', function() {
-            $scope.refreshMessages();
+        angular.element($window).bind('resize', $scope.mobileResponsive);
+
+        $scope.$on('refreshConversations', function() {
+            $scope.refreshConversations();
         });
 
-        $scope.$on('refreshMessagesCache', function(){
-            $scope.refreshMessagesCache();
+        $scope.$on('refreshConversationsCache', function(){
+            $scope.refreshConversationsCache();
         });
 
-        $scope.$on('unactiveMessages', function() {
-            $scope.unactiveMessages();
+        $scope.$on('unactiveConversations', function() {
+            $scope.unactiveConversations();
         });
 
         $scope.$on('updateLabels', function() {
@@ -107,8 +96,8 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             $scope.moveMessagesTo(name);
         });
 
-        $scope.$on('activeMessage', function(event, id) {
-            $scope.activeMessage(id);
+        $scope.$on('activeConversation', function(event, id) {
+            $scope.activeConversation(id);
         });
 
         $scope.$on('starMessages', function(event) {
@@ -122,29 +111,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
-    };
-
-    $scope.samples = function() {
-        var mailbox = $scope.mailbox;
-        var msgs = [];
-        var count;
-
-        if(mailbox === 'label') {
-            mailbox = $stateParams.label;
-        }
-
-        count = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-
-        for (var i = 0; i < count; i++) {
-            msgs[i] = {
-                sender: '',
-                subject: '',
-                time: '',
-                size: ''
-            };
-        }
-
-        return msgs;
     };
 
     $scope.stopWatchingEvent = function() {
@@ -210,7 +176,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return ddp2;
     };
 
-    $scope.getMessagesParameters = function(mailbox) {
+    $scope.getConversationsParameters = function(mailbox) {
         var params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
@@ -258,12 +224,12 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return params;
     };
 
-    $scope.refreshMessages = function() {
+    $scope.refreshConversations = function() {
         var deferred = $q.defer();
-        var request = $scope.getMessagesParameters($scope.mailbox);
+        var request = $scope.getConversationsParameters($scope.mailbox);
 
-        cacheMessages.query(request).then(function(messages) {
-            $scope.messages = messages;
+        cacheMessages.queryConversations(request).then(function(messages) {
+            $scope.conversations = messages;
             deferred.resolve(messages);
         }, function(error) {
             notify({message: 'Error during quering messages', classes: 'notification-danger'});
@@ -273,53 +239,29 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.refreshMessagesCache = function () {
-        var request = $scope.getMessagesParameters($scope.mailbox);
+    $scope.refreshConversationsCache = function () {
+        var request = $scope.getConversationsParameters($scope.mailbox);
         var cache = cacheMessages.fromCache(request);
 
         if(cache !== false) {
-            $scope.messages = cache;
+            $scope.conversations = cache;
         }
     };
 
-    $scope.unactiveMessages = function() {
-        _.each($scope.messages, function(message) {
+    $scope.unactiveConversations = function() {
+        _.each($scope.conversations, function(message) {
             message.Active = false;
         });
     };
 
-    $scope.activeMessage = function(id) {
-        _.each($scope.messages, function(message) {
+    $scope.activeConversation = function(id) {
+        _.each($scope.conversations, function(message) {
             message.Active = angular.isDefined(id) && message.ID === id;
         });
     };
 
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
-    };
-
-    $scope.showTo = function(message) {
-        return (
-            $scope.senderIsMe(message) &&
-            (
-                !$state.is('secured.inbox.list') &&
-                !$state.is('secured.archive.list')  &&
-                !$state.is('secured.spam.list')  &&
-                !$state.is('secured.trash.list')
-            )
-        ) ? true : false;
-    };
-
-    $scope.showFrom = function(message) {
-        return ((
-                !$state.is('secured.inbox.list') &&
-                !$state.is('secured.drafts.list')  &&
-                !$state.is('secured.archive.list') &&
-                !$state.is('secured.sent.list') &&
-                !$state.is('secured.spam.list') &&
-                !$state.is('secured.trash.list')
-            )
-        ) ? true : false;
     };
 
     $scope.senderIsMe = function(message) {
@@ -334,10 +276,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return result;
     };
 
-    $scope.getLabel = function(id) {
-        return _.where($scope.labels, {ID: id})[0];
-    };
-
     $scope.getColorLabel = function(id) {
         return {
             color: $scope.getLabel(id).Color,
@@ -345,36 +283,14 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         };
     };
 
-    $scope.onStartDragging = function(event, ui, message) {
-        setTimeout( function() {
-            $('#draggableMailsHelper strong b').text($scope.selectedMessages().length);
-        }, 20);
-
-        $('body').addClass('dragging');
-        $('#main').append('<div id="dragOverlay"></div>');
-
-        if(message && !!!message.Selected) {
-            message.Selected = true;
-            $scope.$apply();
-        }
-    };
-
-    $scope.onEndDragging = function(event, ui, message) {
-        $('body').removeClass('dragging');
-
-        $('#dragOverlay').fadeOut(200, function() {
-            $(this).remove();
-        });
-    };
-
     $scope.start = function() {
-        return ($scope.page - 1) * $scope.messagesPerPage + 1;
+        return ($scope.page - 1) * $scope.conversationsPerPage + 1;
     };
 
     $scope.end = function() {
         var end;
 
-        end = $scope.start() + $scope.messagesPerPage - 1;
+        end = $scope.start() + $scope.conversationsPerPage - 1;
 
         if (end > $scope.messageCount()) {
             end = $scope.messageCount();
@@ -384,96 +300,14 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.hasNextPage = function() {
-        return $scope.messageCount() > ($scope.page * $scope.messagesPerPage);
-    };
-
-    $scope.navigateToMessage = function(event, message) {
-        if (!event || !$(event.target).closest("td").hasClass("actions")) {
-            if (message === 'last') {
-                message = _.last(messages);
-            } else if (message === 'first') {
-                message = _.first(messages);
-            }
-
-            if ($state.is('secured.drafts.list')) {
-                networkActivityTracker.track(
-                    Message.get({id: message.ID}).$promise.then(
-                        function(m) {
-                            m.decryptBody(m.Body, m.Time).then(function(body) {
-                                m.Body = body;
-
-                                if(m.Attachments && m.Attachments.length > 0) {
-                                    m.attachmentsToggle = true;
-                                }
-
-                                $rootScope.$broadcast('loadMessage', m);
-                            }, function(error) {
-                                notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
-                                $log.error(error); // TODO send to back-end
-                            });
-                        }, function(error) {
-                            notify({message: 'Error during the getting message', classes: 'notification-danger'});
-                            $log.error(error); // TODO send to back-end
-                        }
-                    )
-                );
-            } else {
-                var newMessage = angular.copy(message);
-
-                if(newMessage.IsRead === 0) {
-                    newMessage.IsRead = 1;
-                    Message.read({IDs: [newMessage.ID]});
-                    cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
-                }
-
-                $rootScope.scrollPosition = $('#content').scrollTop();
-                $state.go('secured.' + $scope.mailbox + '.list.view', { id: newMessage.ID });
-            }
-        }
-    };
-
-    $scope.toggleStar = function(message) {
-        var ids = [];
-        var promise;
-        var newMessage = {};
-
-        ids.push(message.ID);
-
-        if(message.Starred === 1) {
-            newMessage.Starred = 0;
-            promise = Message.unstar({IDs: ids}).$promise;
-        } else {
-            newMessage.Starred = 1;
-            promise = Message.star({IDs: ids}).$promise;
-        }
-
-        cacheMessages.events([{Action: 3, ID: message.ID, Message: newMessage}]);
-    };
-
-    $scope.onSelectMessage = function(event, message) {
-        if(!lastChecked) {
-            lastChecked = message;
-        } else {
-            if (event, event.shiftKey) {
-                var start = _.indexOf($scope.messages, message);
-                var end = _.indexOf($scope.messages, lastChecked);
-
-                _.each($scope.messages.slice(Math.min(start, end), Math.max(start, end) + 1), function(message) {
-                    message.Selected = true;
-                });
-            }
-
-            lastChecked = message;
-        }
-
-        $scope.allSelected();
+        return $scope.messageCount() > ($scope.page * $scope.conversationsPerPage);
     };
 
     $scope.allSelected = function() {
         var status = true;
 
-        if ($scope.messages && $scope.messages.length > 0) {
-            _.forEach($scope.messages, function(message) {
+        if ($scope.conversations && $scope.conversations.length > 0) {
+            _.forEach($scope.conversations, function(message) {
                 if (!!!message.Selected) {
                     status = false;
                 }
@@ -496,7 +330,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.selectAllMessages = function() {
-        _.forEach($scope.messages, function(message) {
+        _.forEach($scope.conversations, function(message) {
             message.Selected = true;
         });
 
@@ -504,7 +338,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.unselectAllMessages = function() {
-        _.forEach($scope.messages, function(message) {
+        _.forEach($scope.conversations, function(message) {
             message.Selected = false;
         });
 
@@ -512,7 +346,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
     };
 
     $scope.selectedMessages = function() {
-        return _.select($scope.messages, function(message) {
+        return _.select($scope.conversations, function(message) {
             return message.Selected === true;
         });
     };
@@ -525,18 +359,6 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         return _.select($scope.selectedMessages(), function(message) {
             return message.IsRead === +bool;
         });
-    };
-
-    $scope.messagesCanBeMovedTo = function(otherMailbox) {
-        if (otherMailbox === "inbox") {
-            return _.contains(["spam", "trash"], $scope.mailbox);
-        } else if (otherMailbox === "trash") {
-            return _.contains(["inbox", "drafts", "spam", "sent", "starred"], $scope.mailbox);
-        } else if (otherMailbox === "spam") {
-            return _.contains(["inbox", "starred", "trash"], $scope.mailbox);
-        } else if (otherMailbox === "drafts") {
-            return _.contains(["trash"], $scope.mailbox);
-        }
     };
 
     $scope.setMessagesReadStatus = function(status) {
@@ -581,7 +403,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                     }
                 }]);
 
-                $scope.messages = _.without($scope.messages, message);
+                $scope.conversations = _.without($scope.conversations, message);
             }, function(error) {
                 notify({message: 'Error during the trash request', classes: 'notification-danger'});
                 $log.error(error);
@@ -647,74 +469,13 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
             deferred.reject(error);
         };
 
-        if ($scope.messages.length === 0) {
+        if ($scope.conversations.length === 0) {
             networkActivityTracker.track(promise.then(promiseSuccess, promiseError));
         } else {
             promise.then(promiseSuccess, promiseError);
         }
 
         return deferred.promise;
-    };
-
-    $scope.filterBy = function(status) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
-            filter: status,
-            page: undefined
-        }));
-    };
-
-    $scope.clearFilter = function() {
-        $state.go($state.current.name, _.extend({}, $state.params, {
-            filter: undefined,
-            page: undefined
-        }));
-    };
-
-    $scope.orderBy = function(criterion) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
-            sort: criterion === '-date' ? undefined : criterion,
-            page: undefined
-        }));
-    };
-
-    $scope.emptyFolder = function(location) {
-        var title = "Confirmation";
-        var message = "Are you sure? This cannot be undone.";
-        var promise;
-
-        confirmModal.activate({
-            params: {
-                title: title,
-                message: message,
-                confirm: function() {
-                    if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
-                        promise = Message.emptyDraft().$promise;
-                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
-                        promise = Message.emptySpam().$promise;
-                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
-                        promise = Message.emptyTrash().$promise;
-                    }
-
-                    promise.then(
-                        function(result) {
-                            cacheCounters.empty(location);
-                            $rootScope.$broadcast('refreshCounters');
-                            $rootScope.$broadcast('refreshMessagesCache');
-                            notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
-                        },
-                        function(error) {
-                            notify({message: 'Error during the empty request', classes: 'notification-danger'});
-                            $log.error(error);
-                        }
-                    );
-
-                    confirmModal.deactivate();
-                },
-                cancel: function() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
     };
 
     $scope.unselectAllLabels = function() {
@@ -814,7 +575,7 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllMessages();
         $scope.page = page;
-        if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.messagesPerPage)) {
+        if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.conversationsPerPage)) {
             if (page === 1) {
                 page = undefined;
             }
@@ -824,6 +585,215 @@ angular.module("proton.controllers.Messages.List", ["proton.constants"])
                 id: undefined
             }));
         }
+    };
+
+    /**
+     * Return conversations selected
+     * @return {Array}
+     */
+    var conversationsSelected = function() {
+        return _.where($scope.conversations, {Selected: true});
+    };
+
+    /**
+     * Return conversations id selected
+     * @return {Array}
+     */
+    var idsSelected = function() {
+
+    };
+
+    $scope.showTo = function(message) {
+        return (
+            $scope.senderIsMe(message) &&
+            (
+                !$state.is('secured.inbox.list') &&
+                !$state.is('secured.archive.list')  &&
+                !$state.is('secured.spam.list')  &&
+                !$state.is('secured.trash.list')
+            )
+        ) ? true : false;
+    };
+
+    $scope.showFrom = function(message) {
+        return ((
+                !$state.is('secured.inbox.list') &&
+                !$state.is('secured.drafts.list')  &&
+                !$state.is('secured.archive.list') &&
+                !$state.is('secured.sent.list') &&
+                !$state.is('secured.spam.list') &&
+                !$state.is('secured.trash.list')
+            )
+        ) ? true : false;
+    };
+
+    $scope.toggleStar = function(conversation) {
+        if($scope.starred(conversation)) {
+            Conversation.unstar(conversation.ID);
+        } else {
+            Conversation.star(conversation.ID);
+        }
+
+        // TODO Generate event
+    };
+
+    $scope.starred = function(conversation) {
+        if(angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    $scope.getLabel = function(id) {
+        var label = _.findWhere($scope.labels, {ID: id});
+
+        if(angular.isDefined(label)) {
+            return label;
+        } else {
+            return {};
+        }
+    };
+
+    $scope.getStyleLabel = function(id) {
+        return {
+            color: $scope.getLabel(id).Color,
+            borderColor: $scope.getLabel(id).Color
+        };
+    };
+
+    /**
+     * Move conversation to an other location
+     */
+    $scope.moveTo = function(location) {
+        if(location === 'delete') {
+
+        } else {
+
+        }
+    };
+
+    /**
+     * Delete conversation
+     */
+    $scope.delete = function() {
+        Conversation.delete();
+    };
+
+    /**
+     * On click on a conversation
+     */
+    $scope.click = function(conversation) {
+        // Save scroll position
+        $rootScope.scrollPosition = $('#content').scrollTop();
+        // Open conversation
+        $state.go('secured.' + $scope.mailbox + '.list.view', { id: conversation.ID });
+
+        //     networkActivityTracker.track(
+        //         Message.get({id: message.ID}).$promise.then(
+        //             function(m) {
+        //                 m.decryptBody(m.Body, m.Time).then(function(body) {
+        //                     m.Body = body;
+        //
+        //                     if(m.Attachments && m.Attachments.length > 0) {
+        //                         m.attachmentsToggle = true;
+        //                     }
+        //
+        //                     $rootScope.$broadcast('loadMessage', m);
+        //                 }, function(error) {
+        //                     notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
+        //                     $log.error(error); // TODO send to back-end
+        //                 });
+        //             }, function(error) {
+        //                 notify({message: 'Error during the getting message', classes: 'notification-danger'});
+        //                 $log.error(error); // TODO send to back-end
+        //             }
+        //         )
+        //     );
+
+    };
+
+    /**
+     * On select a conversation
+     */
+    $scope.select = function(event, conversation) {
+        if(!lastChecked) {
+            lastChecked = conversation;
+        } else {
+            if (event, event.shiftKey) {
+                var start = _.indexOf($scope.conversations, conversation);
+                var end = _.indexOf($scope.conversations, lastChecked);
+
+                _.each($scope.conversations.slice(Math.min(start, end), Math.max(start, end) + 1), function(conversation) {
+                    conversation.Selected = true;
+                });
+            }
+
+            lastChecked = conversation;
+        }
+
+        // $scope.allSelected();
+    };
+
+    $scope.filterBy = function(status) {
+        $state.go($state.current.name, _.extend({}, $state.params, {
+            filter: status,
+            page: undefined
+        }));
+    };
+
+    $scope.clearFilter = function() {
+        $state.go($state.current.name, _.extend({}, $state.params, {
+            filter: undefined,
+            page: undefined
+        }));
+    };
+
+    $scope.orderBy = function(criterion) {
+        $state.go($state.current.name, _.extend({}, $state.params, {
+            sort: criterion === '-date' ? undefined : criterion,
+            page: undefined
+        }));
+    };
+
+    $scope.emptyFolder = function(location) {
+        var title = "Confirmation";
+        var message = "Are you sure? This cannot be undone.";
+        var promise;
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
+                        promise = Message.emptyDraft().$promise;
+                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
+                        promise = Message.emptySpam().$promise;
+                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+                        promise = Message.emptyTrash().$promise;
+                    }
+
+                    promise.then(
+                        function(result) {
+                            cacheCounters.empty(location);
+                            $rootScope.$broadcast('refreshCounters');
+                            $rootScope.$broadcast('refreshConversationsCache');
+                            notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                        },
+                        function(error) {
+                            notify({message: 'Error during the empty request', classes: 'notification-danger'});
+                            $log.error(error);
+                        }
+                    );
+
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.initialization();

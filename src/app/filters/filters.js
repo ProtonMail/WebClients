@@ -260,16 +260,6 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('three', function() {
-    return function(string) {
-        if(angular.isDefined(string)) {
-            return string.substring(0, 3);
-        } else {
-            return '';
-        }
-    };
-})
-
 .filter('range', function() {
     return function(val, range) {
         range = parseInt(range);

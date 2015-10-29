@@ -66,6 +66,12 @@ angular.module("proton.controllers.Secured", [])
         }
     };
 
+    $scope.getEmails = function(emails) {
+        return _.map(emails, function(email) {
+            return email.Address;
+        }).join(',');
+    };
+
     /**
      * Go to route specified
      */

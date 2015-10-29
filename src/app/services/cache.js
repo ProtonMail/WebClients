@@ -7,23 +7,14 @@ angular.module("proton.cache", [])
     $stateParams,
     authentication,
     CONSTANTS,
+    Conversation,
     Message,
     cacheCounters,
     networkActivityTracker
 ) {
     var api = {};
-    var cache = {};
-    // {
-    //     0: [MsgID, MsgID, MsgID], // inbox folder
-    //     2: [MsgID, MsgID, MsgID] // sent folder
-    // }
-    var hash = {};
-    // {
-    //     MsgID: [metadata/message],
-    //     MsgID: [metadata/message],
-    //     MsgID: [metadata/message],
-    //     MsgID: [metadata/message]
-    // }
+    var messagesCached = [];
+    var conversationsCached = [];
     var DELETE = 0;
     var CREATE = 1;
     var UPDATE_DRAFT = 2;
@@ -102,6 +93,52 @@ angular.module("proton.cache", [])
     };
 
     /**
+    * Save conversations in conversationsCached and add location in attribute
+    * @param {String} location
+    * @param {Array} conversations
+    */
+    var storeConversations = function(location, conversations) {
+        _.each(conversations, function(conversation) {
+            var current = _.findWhere(conversationsCached, {ID: conversation.ID});
+
+            conversation.locations = conversation.locations || [];
+
+            if(conversation.locations.indexOf(location) === -1) {
+                conversation.locations.push(location);
+            }
+
+            if(angular.isDefined(current)) {
+                var index = conversationsCached.indexOf(current);
+
+                _.extend(conversationsCached[index], conversation);
+            } else {
+                conversationsCached.push(conversation);
+            }
+        });
+    };
+
+    /**
+     * Save messages in cache
+     * @param {String} conversationId
+     * @param {Array} messages
+     */
+    var storeMessages = function(conversationId, messages) {
+        _.each(messages, function(message) {
+            var current = _.findWhere(messagesCached, {ID: message.ID});
+
+            message.conversationId = conversationId;
+
+            if(angular.isDefined(current)) {
+                var index = messagesCached.indexOf(current);
+
+                _.extend(messagesCached[index], message);
+            } else {
+                messagesCached.push(message);
+            }
+        });
+    };
+
+    /**
      * Manage the updating to calcultate the total number of messages and unread messages
      * @param {Object} oldMessage
      * @param {Object} newMessage
@@ -129,56 +166,28 @@ angular.module("proton.cache", [])
 
     /**
     * Insert message in a specific cache location, if it's possible
-    * @param {String} location
+    * @param {String} conversationId
     * @param {Object} message
     */
-    var insert = function(location, message) {
-        if(angular.isDefined(cache[location])) {
-            if(cache[location].indexOf(message.ID) === -1) {
-                var index;
-                var messages = [];
+    var insertMessage = function(conversationId, message) {
+        message.conversationId = conversationId;
 
-                for (var i = 0; i < cache[location].length; i++) {
-                    var id = cache[location][i];
-
-                    messages.push(hash[id]);
-                }
-
-                if(messages.length > 0) {
-                    var first = _.first(messages);
-                    var last = _.last(messages);
-
-                    if(message.Time < first.Time && message.Time > last.Time) {
-                        // Search the correct location
-                        index = _.sortedIndex(messages, message, function(element) {
-                            return -element.Time;
-                        });
-
-                        // Insert the new message
-                        cache[location].splice(index, 0, message.ID);
-                    } else if(message.Time > first.Time) {
-                        cache[location].unshift(message.ID);
-                    }
-                } else {
-                    cache[location].push(message.ID);
-                }
-            }
-        }
+        messagesCached.push(message);
     };
 
     /**
-     * Update or create message Resource stored in hash
-     * @param {String} id
-     * @param {Object} message
+     * Insert conversation in conversationsCached
+     * @param {String} location
+     * @param {Object} conversation
      */
-    var updateHash = function(id, message) {
-        var datas = _.omit(message, 'LabelIDsAdded', 'LabelIDsRemoved');
+    var insertConversation = function(location, conversation) {
+        conversation.locations = conversation.locations || [];
 
-        if(angular.isDefined(hash[id])) {
-            _.extend(hash[id], datas);
-        } else {
-            hash[id] = datas;
+        if(conversation.locations.indexOf(location) === -1) {
+            conversation.locations.push(location);
         }
+
+        conversationsCached.push(conversation);
     };
 
     /**
@@ -207,19 +216,10 @@ angular.module("proton.cache", [])
     * @param {String} location
     * @param {Object} message
     */
-    var remove = function(location, message) {
+    var removeMessage = function(location, message) {
         if(angular.isDefined(cache[location])) {
             cache[location] = _.without(cache[location], message.ID);
         }
-    };
-
-    /**
-    * Check if the message is located in the cache and return the location
-    * @param {String} id - message ID searched
-    * @return {Boolean}
-    */
-    var inCache = function(id) {
-        return angular.isDefined(hash[id]);
     };
 
     /**
@@ -232,16 +232,33 @@ angular.module("proton.cache", [])
         }
     };
 
-    var getLocation = function(request) {
-        var location = request.Location;
+    var currentLocation = function() {
+        var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+        var location;
 
-        // starred case
-        if(angular.isDefined(request.Starred)) {
-            location = 5;
+        switch(mailbox) {
+            case 'label':
+                location = $stateParams.label;
+                break;
+            default:
+                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                break;
         }
 
-        // label case
-        if(angular.isDefined(request.Label)) {
+        return location;
+    };
+
+    /**
+     * Return location specified in the request
+     */
+    var getLocation = function(request) {
+        var location;
+
+        if(angular.isDefined(request.Location)) {
+            location = request.Location;
+        } else if(angular.isDefined(request.Starred)) {
+            location = CONSTANTS.MAILBOX_IDENTIFIERS.starred;
+        } else if(angular.isDefined(request.Label)) {
             location = request.Label;
         }
 
@@ -249,30 +266,106 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Call the API to get messages
-    * @param {Object} request
-    * @return {Promise}
-    */
-    var queryMessages = function(request) {
+     * Call API to get the list of conversations
+     * @param {Object} request
+     * @return {Promise}
+     */
+    var queryConversations = function(request) {
         var deferred = $q.defer();
+        var location = getLocation(request);
 
-        Message.query(request).$promise.then(function(json) {
-            if(angular.isDefined(request.Location)) {
-                cacheCounters.update(request.Location, json.Total);
-            } else if(angular.isDefined(request.Starred)) {
-                cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, json.Total);
-            } else if(angular.isDefined(request.Label)) {
-                cacheCounters.update(request.Label, json.Total);
+        Conversation.query(request).then(function(result) {
+            var data = result.data;
+
+            if(data.Code === 1000) {
+                var location;
+                // Set total value in rootScope
+                $rootScope.Total = data.Total;
+                // Set total value in cache
+                cacheCounters.update(location, data.Total);
+                // Store conversations
+                storeConversations(location, data.Conversations);
+                // Return conversations
+                deferred.resolve(data.Conversations);
+            } else {
+                deferred.reject();
             }
-
-            api.store(request, json.Messages);
-
-            deferred.resolve(json.Messages);
         });
 
         networkActivityTracker.track(deferred.promise);
 
         return deferred.promise;
+    };
+
+    /**
+     * Get conversation from API and store it in the cache
+     * @param {String} id
+     * @return {Promise}
+     */
+    var queryMessages = function(id) {
+        var deferred = $q.defer();
+        var location = currentLocation();
+
+        Conversation.get(id).then(function(result) {
+            var data = result.data;
+
+            if(data.Code === 1000) {
+                var messages = [];
+
+                _.each(data.Messages, function(message) {
+                    messages.push(new Message(message));
+                });
+
+                storeConversations(location, [data.Conversation]);
+                storeMessages(data.Conversation.ID, messages);
+                deferred.resolve(messages);
+            } else {
+                deferred.reject();
+            }
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
+    };
+
+    var getConversation = function(id) {
+        var deferred = $q.defer();
+        var location = currentLocation();
+
+        Conversation.get(id).then(function(result) {
+            var data = result.data;
+
+            if(data.Code === 1000) {
+                storeConversations(location, [data.Conversation]);
+                storeMessages(data.Conversation.ID, data.Messages);
+                deferred.resolve(data.Conversation);
+            } else {
+                deferred.reject();
+            }
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
+    };
+
+    /**
+     * Update conversation in the cache
+     */
+    var updateConversation = function(location, conversation) {
+        var locations = Object.keys(cache);
+
+        _.each(locations, function(location) {
+            var conversations = cache[location];
+            var current = _.findWhere(conversations, {ID: conversation.ID});
+
+            if(angular.isDefined(current)) {
+                var index = conversations.indexOf(current);
+
+                _.extend(cache[location][index], conversation);
+            }
+        });
     };
 
     /**
@@ -292,15 +385,15 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Return messages with request specified
+    * Return conversation list with request specified in cache or call api
     * @param {Object} request
     * @return {Promise}
     */
-    api.query = function(request) {
+    api.queryConversations = function(request) {
         var deferred = $q.defer();
         var location = getLocation(request);
         var callApi = function() {
-            deferred.resolve(queryMessages(request));
+            deferred.resolve(queryConversations(request));
         };
 
         // In cache context?
@@ -308,47 +401,37 @@ angular.module("proton.cache", [])
             var page = request.Page || 0;
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var total;
+            var number;
+            var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+            var conversations = _.map(conversationsCached, function(conversation) {
+                return conversation.locations.indexOf(location) !== -1;
+            });
 
-            // Location defined?
-            if(angular.isDefined(cache[location])) {
-                var total;
-                var number;
-                var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-
-                switch(mailbox) {
-                    case 'label':
+            switch(mailbox) {
+                case 'label':
                     total = cacheCounters.total($stateParams.label);
                     break;
-                    default:
+                default:
                     total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
-                }
+            }
 
-                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
+            if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
+                number = CONSTANTS.MESSAGES_PER_PAGE;
+            } else {
+                if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                    number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                } else {
                     number = CONSTANTS.MESSAGES_PER_PAGE;
-                } else {
-                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                    } else {
-                        number = CONSTANTS.MESSAGES_PER_PAGE;
-                    }
                 }
+            }
 
-                // Supposed total equal to the total cache?
-                if(cache[location].slice(start, end).length === number) {
-                    var messages = [];
-                    var cached = cache[location].slice(start, end);
+            conversations = conversations.slice(start, end);
 
-                    for (var i = 0; i < cached.length; i++) {
-                        var id = cached[i];
-
-                        messages.push(hash[id]);
-                    }
-
-                    deferred.resolve(messages);
-                } else {
-                    callApi();
-                }
+            // Supposed total equal to the total cache?
+            if(conversations.length === number) {
+                deferred.resolve(conversations);
             } else {
                 callApi();
             }
@@ -360,80 +443,86 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Return the message specified by the id from the cache or the back-end
-    * @param {String} id
-    * @return {Promise}
-    */
-    api.get = function(id) {
+     * Try to find the result in the cache
+     * @param {String} conversationId
+     */
+    api.queryMessages = function(conversationId) {
         var deferred = $q.defer();
-        var result = inCache(id);
+        var conversation = _.findWhere(conversationsCached, {ID: conversationId});
+        var callApi = function() {
+            deferred.resolve(queryMessages(conversationId));
+        };
 
-        if(result === true) {
-            var message = hash[id];
+        if(angular.isDefined(conversation)) {
+            var messages = _.where(messagesCached, {conversationId: conversationId});
 
-            if(angular.isDefined(message.Body)) {
-                var m = new Message(message);
-
-                deferred.resolve(m);
+            if(conversation.NumMessages === messages.length) {
+                deferred.resolve(messages);
             } else {
-                deferred.resolve(getMessage(id));
+                callApi();
             }
         } else {
-            deferred.resolve(getMessage(id));
+            callApi();
+        }
+
+        return deferred.promise;
+    };
+
+    api.getConversation = function(conversationId) {
+        var deferred = $q.defer();
+        var conversation = _.findWhere(conversationsCached, {ID: conversationId});
+
+        if(angular.isDefined(conversation)) {
+            deferred.resolve(conversation);
+        } else {
+            deferred.resolve(getConversation(conversationId));
         }
 
         return deferred.promise;
     };
 
     /**
-    * Save messages in cache location
-    * @param {Object} request
-    * @param {Array} messages
+    * Return the message specified by the id from the cache or the back-end
+    * @param {String} ID - Message ID
+    * @return {Promise}
     */
-    api.store = function(request, messages) {
-        delete request.PageSize; // Remove PageSize to valid cacheContext
+    api.getMessage = function(ID) {
+        var deferred = $q.defer();
+        var message = _.findWhere(messagesCached, {ID: ID});
 
-        var page = request.Page || 0;
-        var index = page * CONSTANTS.MESSAGES_PER_PAGE;
-        var howmany = messages.length;
-        var location = getLocation(request);
-        var context = cacheContext(request);
-        var messageIDs = _.map(messages, function(message) { return message.ID; });
+        if(angular.isDefined(message) && angular.isDefined(message.Body)) {
+            var m = new Message(message);
 
-        exist(location);
-
-        if(context && messages.length > 0) {
-            // store message ids order in cache
-            Array.prototype.splice.apply(cache[location], [index, howmany].concat(messageIDs));
-
-            // store metadata in hash
-            for (var i = 0; i < messages.length; i++) {
-                var message = messages[i];
-
-                updateHash(message.ID, message);
-            }
+            deferred.resolve(m);
+        } else {
+            deferred.resolve(getMessage(ID));
         }
+
+        return deferred.promise;
     };
 
     /**
     * Delete message in the cache if the message is present
     * @param {Object} event
     */
-    api.delete = function(event) {
+    api.deleteMessage = function(event) {
         var deferred = $q.defer();
-        var locations = Object.keys(cache);
-        var result = inCache(event.ID);
 
-        if(result === true) {
-            // delete in cache
-            _.each(locations, function(location) {
-                cache[location] = _.filter(cache[location], function(id) {
-                    return id !== event.ID;
-                });
-            });
-            // delete hash
-            delete hash[event.ID];
-        }
+        messagesCached = _.filter(messagesCached, function(message) {
+            return message.ID !== event.ID;
+        });
+
+        deferred.resolve();
+
+        return deferred.promise;
+    };
+
+    api.deleteConversation = function(event) {
+        var deferred = $q.defer();
+
+        conversationsCached = _.filter(conversationsCached, function(conversation) {
+            return conversation.ID !== event.ID;
+        });
 
         deferred.resolve();
 
@@ -445,14 +534,25 @@ angular.module("proton.cache", [])
     * @param {String} location
     */
     api.clearLocation = function(location) {
-        if(angular.isDefined(cache[location])) {
-            delete cache[location];
-            cache[location] = [];
-        }
+        var toDelete = [];
+
+        _.each(conversationsCached, function(conversation, index) {
+            if(angular.isDefined(conversation.locations) && conversation.locations.indexOf(location)) {
+                messagesCached = _.filter(messagesCached, function(message) {
+                    return message.conversationId !== conversation.ID;
+                });
+
+                toDelete.push(index);
+            }
+        });
+
+        _.each(toDelete, function(index) {
+            delete conversationsCached[index];
+        });
     };
 
     /**
-    * We autoload on login inbox (first 2 pages) and sent (first page)
+    * Preload conversations for inbox (first 2 pages) and sent (first page)
     */
     api.preloadInboxAndSent = function() {
         var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
@@ -472,8 +572,8 @@ angular.module("proton.cache", [])
         }
 
         $q.all({
-            inbox: queryMessages(requestInbox),
-            sent: queryMessages(requestSent)
+            inbox: queryConversations(requestInbox),
+            sent: queryConversations(requestSent)
         }).then(function() {
             deferred.resolve();
         });
@@ -509,7 +609,7 @@ angular.module("proton.cache", [])
             }
         }
 
-        updateHash(message.ID, message);
+        // updateHash(message.ID, message);
 
         deferred.resolve();
 
@@ -529,11 +629,11 @@ angular.module("proton.cache", [])
             var index = cache[location].indexOf(event.ID);
 
             if(index !== -1) {
-                updateHash(event.ID, event.Message);
+                // updateHash(event.ID, event.Message);
                 reorder(location);
             } else {
                 insert(location, event.Message);
-                updateHash(event.ID, event.Message);
+                // updateHash(event.ID, event.Message);
             }
         }
 
@@ -689,31 +789,16 @@ angular.module("proton.cache", [])
     api.expiration = function() {
         var now = Date.now() / 1000;
         var removed = 0;
-        var locations = Object.keys(cache);
 
-        _.each(locations, function(location) {
-            var messages = [];
+        messagesCached = _.filter(messagesCached, function(message) {
+            var expTime = message.ExpirationTime;
+            var response = (expTime !== 0 && expTime < now) ? false : true;
 
-            for (var i = 0; i < cache[location].length; i++) {
-                var id = cache[location][i];
-
-                messages.push(hash[id]);
+            if (!response) {
+                removed++;
             }
 
-            if(messages.length > 0) {
-                messages = _.filter(messages, function(message) {
-                    var expTime = message.ExpirationTime;
-                    var response = (expTime !== 0 && expTime < now) ? false : true;
-
-                    if (!response) {
-                        removed++;
-                    }
-
-                    return response;
-                });
-
-                cache[location] = _.map(messages, function(message) { return message.ID; });
-            }
+            return response;
         });
 
         if (removed > 0) {
@@ -723,12 +808,12 @@ angular.module("proton.cache", [])
 
     /**
      * Return previous ID of message specified
-     * @param {Object} message
+     * @param {Object} conversationId
      * @param {String} location
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(message, location, type) {
+    api.more = function(conversationId, location, type) {
         var deferred = $q.defer();
         var request = {PageSize: 1, ID: message.ID};
 
@@ -746,23 +831,14 @@ angular.module("proton.cache", [])
             request.Location = location;
         }
 
-        Message.query(request).$promise.then(function(result) {
-            var messages = result.Messages;
-
-            // store metadata in hash
-            for (var i = 0; i < messages.length; i++) {
-                var message = messages[i];
-
-                updateHash(message.ID, message);
-            }
-
-            if(messages.length > 0) {
+        queryConversations(request).then(function(conversation) {
+            if(conversation) {
                 if(type === 'next') {
-                    var first = _.first(messages);
+                    var first = _.first(conversation);
 
                     deferred.resolve(first.ID);
                 } else if(type === 'previous') {
-                    var last = _.last(messages);
+                    var last = _.last(conversation);
 
                     deferred.resolve(last.ID);
                 }

@@ -5,8 +5,7 @@ angular.module("proton.routes", [
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
-
-    var messageParameters = function() {
+    var conversationParameters = function() {
       var parameters = [
         'page',
         'filter',
@@ -718,17 +717,24 @@ angular.module("proton.routes", [
         var view = {};
 
         list['list@secured.' + box] = {
-            templateUrl: 'templates/partials/message-list.tpl.html',
-            controller: 'MessageListController as messageListCtrl'
+            templateUrl: 'templates/partials/conversation-list.tpl.html',
+            controller: 'ConversationsController'
         };
 
         view['view@secured.' + box] = {
-            templateUrl: "templates/partials/message-view.tpl.html",
-            controller: "MessageViewController as messageViewCtrl",
+            templateUrl: 'templates/partials/conversation-view.tpl.html',
+            controller: 'ConversationController',
             resolve: {
-                message: function($stateParams, cacheMessages, networkActivityTracker) {
+                conversation: function($stateParams, cacheMessages, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cacheMessages.get($stateParams.id));
+                        return networkActivityTracker.track(cacheMessages.getConversation($stateParams.id));
+                    } else {
+                        return true;
+                    }
+                },
+                messages: function($stateParams, cacheMessages, networkActivityTracker) {
+                    if(angular.isDefined($stateParams.id)) {
+                        return networkActivityTracker.track(cacheMessages.queryMessages($stateParams.id));
                     } else {
                         return true;
                     }
@@ -738,10 +744,10 @@ angular.module("proton.routes", [
 
         $stateProvider.state(parentState, {
             abstract: true,
-            url: '/' + box + '?' + messageParameters(),
+            url: '/' + box + '?' + conversationParameters(),
             views: {
                 'content@secured': {
-                    templateUrl: 'templates/layout/messages.tpl.html'
+                    templateUrl: 'templates/layout/conversations.tpl.html'
                 }
             }
         });

@@ -1,10 +1,10 @@
-angular.module("proton.controllers.Messages.View", ["proton.constants"])
+angular.module("proton.controllers.Message", ["proton.constants"])
 
-.controller("MessageViewController", function(
+.controller("MessageController", function(
     $compile,
     $filter,
-    $log,
     $interval,
+    $log,
     $q,
     $rootScope,
     $sce,
@@ -14,20 +14,18 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $templateCache,
     $timeout,
     $translate,
+    attachments,
+    authentication,
     cacheMessages,
     confirmModal,
     CONSTANTS,
     Label,
     Message,
-    attachments,
-    authentication,
-    message,
     networkActivityTracker,
     notify,
     pmcw,
     tools
 ) {
-    $scope.message = message;
     $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
     $scope.tools = tools;
     $scope.isPlain = false;
@@ -35,10 +33,8 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
-    $rootScope.$broadcast('activeMessage', message.ID);
-
     $scope.$on('updateReplied', function(e, m) {
-        $scope.message = _.extend($scope.message, m);
+        _.extend($scope.message, m);
     });
 
     $scope.$on('refreshMessage', function() {
@@ -47,52 +43,28 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         });
     });
 
-    function onResize() {
-        $scope.setMessageHeadHeight();
-        $scope.setAttachmentHeight();
-    }
-
-    $(window).on('resize', onResize);
-
     $scope.$on('$destroy', function() {
-        // off resize
-        $(window).off('resize', onResize);
         // cancel timer ago
         $interval.cancel($scope.agoTimer);
     });
 
-    $scope.attHeight = function() {
-        // var rowHeight = 32;
-        // var attachmentAreaHeight = (rowHeight*2);
-        // var attachmentSize = message.Attachments.length;
-        // if (attachmentSize) {
-        //     if (attachmentSize<3) {
-        //         attachmentAreaHeight = (rowHeight*2);
-        //     }
-        //     else if (attachmentSize<5) {
-        //         attachmentAreaHeight = (rowHeight*3);
-        //     }
-        //     else {
-        //         attachmentAreaHeight = (rowHeight*4);
-        //     }
-        // }
-        // $log.debug(attachmentAreaHeight);
-        // return attachmentAreaHeight;
-    };
-
     $scope.initView = function() {
+        var last = _.last($scope.messages);
 
-        if(message.IsRead === 0) {
-            message.IsRead = 1;
-            Message.read({IDs: [message.ID]});
+        if(last.IsRead === 0) {
+            last.IsRead = 1;
+            Message.read({IDs: [last.ID]});
+            // TODO generate event
         }
 
-        // start timer ago
-        $scope.agoTimer = $interval(function() {
-            var time = $filter('longReadableTime')($scope.message.Time);
-
-            $scope.ago = time;
-        }, 1000);
+        // // start timer ago
+        // $scope.agoTimer = $interval(function() {
+        //     _.each($scope.messages, function(message) {
+        //         var time = $filter('longReadableTime')($scope.message.Time);
+        //
+        //     });
+        //     $scope.ago = time;
+        // }, 1000);
     };
 
     $scope.toggleStar = function(message) {
@@ -121,19 +93,19 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
     $scope.displayContent = function(print) {
         var whitelist = ['notify@protonmail.com'];
 
-        if (whitelist.indexOf(message.Sender.Address) !== -1 && message.IsEncrypted === 0) {
-            message.imagesHidden = false;
+        if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
+            $scope.message.imagesHidden = false;
         } else if(authentication.user.ShowImages === 1) {
-            message.imagesHidden = false;
+            $scope.message.imagesHidden = false;
         }
 
-        message.clearTextBody().then(
+        $scope.message.clearTextBody().then(
             function(result) {
 
                 var showMessage = function(content) {
 
                     if(print !== true) {
-                        content = message.clearImageBody(content);
+                        content = $scope.message.clearImageBody(content);
                     }
 
                     // safari warning
@@ -158,9 +130,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                     $scope.content = $sce.trustAsHtml(content);
                     $timeout(function() {
                         tools.transformLinks('message-body');
-                        $scope.setMessageHeadHeight();
-                        $scope.setAttachmentHeight();
-                    },0,false);
+                    }, 0, false);
 
                     // broken images
                     $("img").error(function () {
@@ -175,7 +145,7 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
                 };
 
                 // PGP/MIME
-                if ( message.IsEncrypted === 8 ) {
+                if ( $scope.message.IsEncrypted === 8 ) {
 
                     var mailparser = new MailParser({
                         defaultCharset: 'UTF-8'
@@ -217,12 +187,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         );
     };
 
-    $scope.getEmails = function(emails) {
-        return _.map(emails, function(m) {
-            return m.Address;
-        }).join(',');
-    };
-
     $scope.markAsRead = function() {
         var promise;
         var newMessage = angular.copy(message);
@@ -244,11 +208,9 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         $scope.goToMessageList();
     };
 
-    $scope.toggleImages = function() {
+    $scope.toggleImages = function(message) {
         message.toggleImages();
-        $scope.displayContent();
-        $scope.setMessageHeadHeight();
-        $scope.setAttachmentHeight();
+        $scope.displayContent(message);
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -595,45 +557,6 @@ angular.module("proton.controllers.Messages.View", ["proton.constants"])
         } else {
             message.viewMode = 'plain';
         }
-    };
-
-    $scope.setMessageHeadHeight = function() {
-        var messageHeadH1 = $('#messageHead h1').outerHeight();
-
-        $('#messageHead').css('minHeight', messageHeadH1 + 20); // 10 for top & bottom margin
-    };
-
-    $scope.setAttachmentHeight = function() {
-        // var count = parseInt(message.Attachments.length);
-        // var buttonHeight = 32;
-        // var maxHeight = (buttonHeight * 4);
-        // var element = $('#attachmentArea');
-
-        // if (count > 6) {
-        //     element.css('minHeight', maxHeight);
-        //     element.css('maxHeight', maxHeight);
-        // } else {
-        //     element.css('minHeight', ((parseInt(count / 2) + count % 2) * buttonHeight) + buttonHeight + 1);
-        // }
-    };
-
-    $scope.nextMessage = function() {
-        var current = $state.current.name;
-        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
-
-        cacheMessages.more(message, location, 'next').then(function(id) {
-            console.log('id', id);
-            $state.go(current, {id: id});
-        });
-    };
-
-    $scope.previousMessage = function() {
-        var current = $state.current.name;
-        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
-
-        cacheMessages.more(message, location, 'previous').then(function(id) {
-            $state.go(current, {id: id});
-        });
     };
 
     $scope.initView();

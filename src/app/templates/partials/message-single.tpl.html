@@ -1,7 +1,6 @@
-<!-- for threading, `derp` will be the index of the ng-repeaet -->
-<article class="message">
+<article class="message" ng-controller="MessageController">
     <header>
-        <a href="#" ng-click="toggleStar(message)" class="singleStar">
+        <a href="#" ng-click="toggleStar()" class="singleStar">
             <i class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></i>
         </a>
         <span class="meta">
@@ -94,7 +93,7 @@
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>
-                        <i>{{ getLabel(label.ID).Name | three }}</i>
+                        <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
                         <a href="" ng-click="detachLabel(label.ID)" class="labelClose">
                             <i class="fa fa-times"></i>
                         </a>
