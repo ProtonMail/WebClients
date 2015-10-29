@@ -124,6 +124,7 @@ angular.module("proton.cache", [])
         _.each(messages, function(message) {
             var current = _.findWhere(messagesCached, {ID: message.ID});
 
+            message = new Message(message);
             message.conversationId = conversationId;
 
             if(angular.isDefined(current)) {
@@ -497,9 +498,7 @@ angular.module("proton.cache", [])
         var message = _.findWhere(messagesCached, {ID: ID});
 
         if(angular.isDefined(message) && angular.isDefined(message.Body)) {
-            var m = new Message(message);
-
-            deferred.resolve(m);
+            deferred.resolve(message);
         } else {
             deferred.resolve(getMessage(ID));
         }
