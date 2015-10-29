@@ -20,7 +20,11 @@ angular.module("proton.models.conversations", [])
          * @param Unread
          */
         query: function(params) {
-            return $http.get(url.get() + '/conversations', params);
+            return $http({
+                url: url.get() + '/conversations',
+                method: 'GET',
+                params: params,
+            });
         },
         /**
         * Get conversation and associated message metadata
