@@ -87,7 +87,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.openSafariWarning = function() {
-        $('#safariAttachmentModal').modal('show');
+        alertModal.activate({
+            params: {
+                title: $translate.instant('DOWNLOAD_CONTACTS'),
+                alert: 'alert-warning',
+                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                ok: function() {
+                    alertModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.displayContent = function(print) {
