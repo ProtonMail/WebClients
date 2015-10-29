@@ -127,23 +127,26 @@ Inpiration from 'esjay'
 .spinner1 {
     -webkit-transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
             transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
-    -webkit-animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
-            animation: 600ms spin1 infinite linear reverse, 600ms flash infinite linear;
+    -webkit-animation: 300ms spin1 infinite linear reverse, 300ms flash infinite linear;
+            animation: 300ms spin1 infinite linear reverse, 300ms flash infinite linear;
     background-color: $primary;
+    animation-delay: 100ms; 
 }
 .spinner2 {
     -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
             transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
-    -webkit-animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
-            animation: 700ms spin2 infinite linear, 700ms flash infinite linear;
+    -webkit-animation: 350ms spin2 infinite linear, 350ms flash infinite linear;
+            animation: 350ms spin2 infinite linear, 350ms flash infinite linear;
     background-color: $primary;  
+    animation-delay: 200ms; 
 }
 .spinner3 {
     -webkit-transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
             transform: rotateX(240deg) rotateY(180deg) rotateZ(0);
-    -webkit-animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
-            animation: 800ms spin3 infinite linear reverse, 800ms flash infinite linear;
+    -webkit-animation: 400ms spin3 infinite linear reverse, 400ms flash infinite linear;
+            animation: 400ms spin3 infinite linear reverse, 400ms flash infinite linear;
     background-color: $primary;
+    animation-delay: 300ms; 
 }
 
 @-webkit-keyframes spin1 {
@@ -212,7 +215,7 @@ Inpiration from 'esjay'
         opacity: 1;
     }
     50% {
-        opacity: .25;
+        opacity: .5;
     }
     100% {
         opacity: 1;
@@ -223,7 +226,7 @@ Inpiration from 'esjay'
         opacity: 1;
     }
     50% {
-        opacity: .25;
+        opacity: .5;
     }
     100% {
         opacity: 1;
@@ -350,31 +353,6 @@ Copyright (c) 2015 Daniel Eden
   animation-name: bounce;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
-}
-
-@-webkit-keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-@keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.flash {
-  -webkit-animation-name: flash;
-  animation-name: flash;
 }
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */

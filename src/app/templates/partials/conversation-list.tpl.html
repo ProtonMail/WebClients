@@ -55,8 +55,8 @@
             </a>
         </span>
         <span class="sender" ng-click="click(conversation)">
-            <span ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders">{{ sender.Name || sender.Address }}</span>
-            <span ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients">{{ recipient.Name || recipient.Address }}</span>
+            <span ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders">{{ sender.Name || sender.Address }}<b ng-hide="$last">, </b></span>
+            <span ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients">{{ recipient.Name || recipient.Address }}<b ng-hide="$last">, </b></span>
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject" ng-click="click(conversation)">
