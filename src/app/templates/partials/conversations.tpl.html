@@ -37,7 +37,7 @@
             <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
             <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
             <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-            {{ conversation.Subject }}
+            {{ conversation.Subject }} ({{ conversation.NumMessages }})
             </p>
         </article>
     </div>
@@ -64,7 +64,7 @@
             <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
             <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
             <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-            {{ conversation.Subject }}
+            {{ conversation.Subject }} ({{ conversation.NumMessages }})
             </span>
             <span class="pm_labels" ng-if="conversation.LabelIDs.length">
                 <span ng-repeat="id in conversation.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">

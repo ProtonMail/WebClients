@@ -249,6 +249,7 @@ angular.module("proton.cache", [])
 
     /**
      * Return location specified in the request
+     * @param {Object} request
      */
     var getLocation = function(request) {
         var location;
@@ -328,11 +329,14 @@ angular.module("proton.cache", [])
         return deferred.promise;
     };
 
-    var getConversation = function(id) {
+    /**
+     * @param {String} conversationId
+     */
+    var getConversation = function(conversationId) {
         var deferred = $q.defer();
         var location = currentLocation();
 
-        Conversation.get(id).then(function(result) {
+        Conversation.get(conversationId).then(function(result) {
             var data = result.data;
 
             if(data.Code === 1000) {
@@ -389,6 +393,7 @@ angular.module("proton.cache", [])
     * @return {Promise}
     */
     api.queryConversations = function(request) {
+        console.log('api.queryConversations');
         var deferred = $q.defer();
         var location = getLocation(request);
         var callApi = function() {

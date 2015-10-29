@@ -17,6 +17,10 @@ RewriteRule ^(.*?)(\.html)?$ static/$1.html [NC,L]
 RewriteCond %{DOCUMENT_ROOT}/static/$1 -f
 RewriteRule ^(.*)$ static/$1 [NC,L]
 
+# FR subdir (this could be made into a generic subdir rule later)
+RewriteRule ^fr/(.*) static/fr/$1 [L]
+RewriteRule ^fr/?$ static/fr/$1 [L]
+
 # If pages, 301 redirect
 RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
 RewriteRule ^pages/(.*?)(\.html)?$ /$1 [NC,L,R=301]
