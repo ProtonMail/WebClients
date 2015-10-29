@@ -717,12 +717,12 @@ angular.module("proton.routes", [
         var view = {};
 
         list['list@secured.' + box] = {
-            templateUrl: 'templates/partials/conversation-list.tpl.html',
+            templateUrl: 'templates/partials/conversations.tpl.html',
             controller: 'ConversationsController'
         };
 
         view['view@secured.' + box] = {
-            templateUrl: 'templates/partials/conversation-view.tpl.html',
+            templateUrl: 'templates/partials/conversation.tpl.html',
             controller: 'ConversationController',
             resolve: {
                 conversation: function($stateParams, cacheMessages, networkActivityTracker) {

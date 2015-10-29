@@ -228,11 +228,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
 
-        cacheMessages.queryConversations(request).then(function(messages) {
-            $scope.conversations = messages;
-            deferred.resolve(messages);
+        cacheMessages.queryConversations(request).then(function(conversations) {
+            $scope.conversations = conversations;
+            deferred.resolve(conversations);
         }, function(error) {
-            notify({message: 'Error during quering messages', classes: 'notification-danger'});
+            notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
             $log.error(error);
         });
 
@@ -338,16 +338,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.unselectAllMessages = function() {
-        _.forEach($scope.conversations, function(message) {
-            message.Selected = false;
+        _.forEach($scope.conversations, function(conversations) {
+            conversations.Selected = false;
         });
 
         $scope.allSelectedCheckbox = false;
     };
 
     $scope.selectedMessages = function() {
-        return _.select($scope.conversations, function(message) {
-            return message.Selected === true;
+        return _.select($scope.conversations, function(conversation) {
+            return conversation.Selected === true;
         });
     };
 
