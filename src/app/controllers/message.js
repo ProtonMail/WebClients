@@ -14,6 +14,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $templateCache,
     $timeout,
     $translate,
+    alertModal,
     attachments,
     authentication,
     cacheMessages,
@@ -55,6 +56,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             last.IsRead = 1;
             Message.read({IDs: [last.ID]});
             // TODO generate event
+        }
+
+        if($scope.message === last) {
+            if(angular.isDefined($scope.message.Body)) {
+                $scope.displayContent();
+            } else {
+                cacheMessages.getMessage($scope.message.ID).then(function(message) {
+                    _.extend($scope.message, message);
+                    console.log($scope.message);
+                    $scope.displayContent();
+                });
+            }
         }
 
         // // start timer ago
@@ -108,92 +121,83 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.imagesHidden = false;
         }
 
-        $scope.message.clearTextBody().then(
-            function(result) {
+        $scope.message.clearTextBody().then(function(result) {
+            var showMessage = function(content) {
+                if(print !== true) {
+                    content = $scope.message.clearImageBody(content);
+                }
 
-                var showMessage = function(content) {
+                // safari warning
+                if(!$rootScope.isFileSaverSupported) {
+                    $scope.safariWarning = true;
+                }
 
-                    if(print !== true) {
-                        content = $scope.message.clearImageBody(content);
-                    }
+                content = DOMPurify.sanitize(content, {
+                    ADD_ATTR: ['target'],
+                    FORBID_TAGS: ['style', 'input', 'form']
+                });
 
-                    // safari warning
-                    if(!$rootScope.isFileSaverSupported) {
-                        $scope.safariWarning = true;
-                    }
+                // for the welcome email, we need to change the path to the welcome image lock
+                content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
-                    content = DOMPurify.sanitize(content, {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                if (tools.isHtml(content)) {
+                    $scope.isPlain = false;
+                } else {
+                    $scope.isPlain = true;
+                }
 
-                    // for the welcome email, we need to change the path to the welcome image lock
-                    content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
+                $scope.content = $sce.trustAsHtml(content);
+                $timeout(function() {
+                    tools.transformLinks('message-body');
+                }, 0, false);
 
-                    if (tools.isHtml(content)) {
-                        $scope.isPlain = false;
+                // broken images
+                $("img").error(function () {
+                    $(this).unbind("error").addClass("pm_broken");
+                });
+
+                if(print) {
+                    setTimeout(function() {
+                        window.print();
+                    }, 1000);
+                }
+            };
+
+            // PGP/MIME
+            if ( $scope.message.IsEncrypted === 8 ) {
+
+                var mailparser = new MailParser({
+                    defaultCharset: 'UTF-8'
+                });
+
+                mailparser.on('end', function(mail) {
+                    var content;
+
+                    if (mail.html) {
+                        content = mail.html;
+                    } else if (mail.text) {
+                        content = mail.text;
                     } else {
-                        $scope.isPlain = true;
+                        content = "Empty Message";
                     }
 
-                    $scope.content = $sce.trustAsHtml(content);
-                    $timeout(function() {
-                        tools.transformLinks('message-body');
-                    }, 0, false);
-
-                    // broken images
-                    $("img").error(function () {
-                        $(this).unbind("error").addClass("pm_broken");
-                    });
-
-                    if(print) {
-                        setTimeout(function() {
-                            window.print();
-                        }, 1000);
+                    if (mail.attachments) {
+                        content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
                     }
-                };
 
-                // PGP/MIME
-                if ( $scope.message.IsEncrypted === 8 ) {
+                    $scope.$evalAsync(function() { showMessage(content); });
+                });
 
-                    var mailparser = new MailParser({
-                        defaultCharset: 'UTF-8'
-                    });
-
-                    mailparser.on('end', function(mail) {
-
-                        var content;
-                        if (mail.html) {
-                            content = mail.html;
-                        }
-                        else if (mail.text) {
-                            content = mail.text;
-                        }
-                        else {
-                            content = "Empty Message";
-                        }
-
-                        if (mail.attachments) {
-                            content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
-                        }
-
-                        $scope.$evalAsync(function() { showMessage(content); });
-                    });
-
-                    mailparser.write(result);
-                    mailparser.end();
-                }
-                else {
-                    $scope.$evalAsync(function() { showMessage(result); });
-                }
-
-            },
-            function(err) {
-                $scope.togglePlainHtml();
-                //TODO error reporter?
-                $log.error(err);
+                mailparser.write(result);
+                mailparser.end();
+            } else {
+                $scope.$evalAsync(function() { showMessage(result); });
             }
-        );
+        }, function(err) {
+            $scope.togglePlainHtml();
+            //TODO error reporter?
+            $log.error(err);
+        });
     };
 
     $scope.markAsRead = function() {

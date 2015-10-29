@@ -377,7 +377,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
 
         Message.get({ id: id }).$promise.then(function(message) {
-            api.updateFlag({ ID: message.ID, Message: message });
+            storeMessages([message]);
             deferred.resolve(message);
         });
 
