@@ -534,7 +534,7 @@ angular.module("proton.routes", [
                 resolve: {
                     message: function($stateParams, cacheMessages, networkActivityTracker) {
                         if(angular.isDefined($stateParams.id)) {
-                            return networkActivityTracker.track(cacheMessages.get($stateParams.id));
+                            return networkActivityTracker.track(cacheMessages.getMessage($stateParams.id));
                         } else {
                             return true;
                         }

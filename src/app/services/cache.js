@@ -19,8 +19,6 @@ angular.module("proton.cache", [])
     var CREATE = 1;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAG = 3;
-    var METADATA = 4;
-    var MESSAGE = 5;
     // Parameters shared between api / cache / message view / message list
     var fields = [
         'AddressID',
@@ -447,11 +445,13 @@ angular.module("proton.cache", [])
      * @param {String} conversationId
      */
     api.queryMessages = function(conversationId) {
+        console.log('api.queryMessages');
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
             deferred.resolve(queryMessages(conversationId));
         };
+
 
         if(angular.isDefined(conversation)) {
             var messages = _.where(messagesCached, {conversationId: conversationId});
@@ -468,7 +468,12 @@ angular.module("proton.cache", [])
         return deferred.promise;
     };
 
+    /**
+     * @param {String} conversationId
+     * @return {Promise}
+     */
     api.getConversation = function(conversationId) {
+        console.log('api.getConversation');
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
 
@@ -487,6 +492,7 @@ angular.module("proton.cache", [])
     * @return {Promise}
     */
     api.getMessage = function(ID) {
+        console.log('api.getMessage');
         var deferred = $q.defer();
         var message = _.findWhere(messagesCached, {ID: ID});
 
@@ -1013,7 +1019,7 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(message)) {
             // Preload the first message
-            cacheMessages.get(message.ID); // Shutdown the preload
+            cacheMessages.getMessage(message.ID); // Shutdown the preload
             // Remove the first message in the queue
             queue = _.without(queue, message);
         }

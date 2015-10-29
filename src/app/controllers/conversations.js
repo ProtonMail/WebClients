@@ -383,7 +383,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-        var message = cacheMessages.get(id).then(function(message) {
+        var message = cacheMessages.getMessage(id).then(function(message) {
             Message.trash({IDs: [id]}).$promise.then(function(result) {
 
                 movedMessages.push({

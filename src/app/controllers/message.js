@@ -39,8 +39,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     });
 
     $scope.$on('refreshMessage', function() {
-        cacheMessages.get($scope.message.ID).then(function(result) {
-            _.extend($scope.message, result);
+        cacheMessages.getMessage($scope.message.ID).then(function(message) {
+            _.extend($scope.message, message);
         });
     });
 
@@ -64,20 +64,17 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             } else {
                 cacheMessages.getMessage($scope.message.ID).then(function(message) {
                     _.extend($scope.message, message);
-                    console.log($scope.message);
                     $scope.displayContent();
                 });
             }
         }
 
-        // // start timer ago
-        // $scope.agoTimer = $interval(function() {
-        //     _.each($scope.messages, function(message) {
-        //         var time = $filter('longReadableTime')($scope.message.Time);
-        //
-        //     });
-        //     $scope.ago = time;
-        // }, 1000);
+        // start timer ago
+        $scope.agoTimer = $interval(function() {
+            var time = $filter('longReadableTime')($scope.message.Time);
+
+            $scope.ago = time;
+        }, 1000);
     };
 
     $scope.toggleStar = function(message) {
