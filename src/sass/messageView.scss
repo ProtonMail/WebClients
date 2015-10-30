@@ -198,6 +198,8 @@
                         display: none;
 						&.fa-times {
 							display: inline-block;
+                            color: $gray-light;
+                            font-size: 10px !important;
 						}
                     }
                     em {
@@ -208,12 +210,35 @@
     				padding: 0;
     				border: none;
     			}
-    			.addLabel {
-    				margin-left: 5px;
-    				padding: 0;
-				    line-height: 1rem;
-				    height: 1rem;
-    			}
+                .addLabelButton {
+                    height: 18px;
+                    line-height: 14px;
+                    text-decoration: none;
+                    position: relative;
+                    float: left;
+                    a.addLabel {
+                        padding: 0;
+                        border-radius: 2px;
+                        text-transform: uppercase;
+                        border: 2px solid $gray-light;
+                        color: $gray-light;
+                        box-sizing: border-box;
+                        height: 18px;
+                        text-decoration: none;
+                        font-weight: 700;
+                        position: relative;
+                        .fa {
+                            font-size: 10px !important;
+                            line-height: 14px;
+                        }
+                        small {
+                            font-size: 10px !important;
+                            line-height: 14px !important;
+                            padding: 0 0.35rem;
+                            float: left;
+                        }
+                    }
+                }
     			.labelClose {
     				display: block;
     				float: right;
