@@ -151,6 +151,22 @@ body.columns #pm_toolbar {
             .pm_checkbox {
                 margin-left: 0 !important;
             }
+            .pm_buttons {
+                margin: 0 0 0 5px !important;
+                a {
+                    padding: 0 5px;
+                }
+            }
+        }
+        .secondary {
+            padding: 0;
+            float: right;
+            .pm_buttons {
+                margin: 0 0 0 5px;
+                a {
+                    padding: 0 5px;
+                }
+            }
         }
     }
     #pm_view #pm_toolbar_responsive {

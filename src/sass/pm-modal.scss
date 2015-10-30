@@ -110,6 +110,8 @@ html.protonmail body.activeComposer {
                 height: 3rem;
                 line-height: 3rem;
                 width: 3rem;
+                background-color: transparent;
+                color: $gray;
             }
             .modal-content {
                 top: 3rem;

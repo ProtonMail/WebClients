@@ -25,3 +25,16 @@
 		width: 100%;
 	}
 }
+
+@media (max-width: $mobile-landscape) {
+	#advancedSearchModal {
+		.col {
+			display: block;
+			width: 100%;
+			padding: 0;
+		}
+		.pm_form .radio label {
+			display: block;
+		}
+	}
+}

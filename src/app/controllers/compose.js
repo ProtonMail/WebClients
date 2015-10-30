@@ -422,6 +422,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment() === 'sm') {
+            message.maximized = true;
             if ($scope.messages.length > 0) {
                 notify.closeAll();
                 notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
