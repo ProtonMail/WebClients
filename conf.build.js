@@ -42,6 +42,7 @@ module.exports = {
       "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
+      "vendor/angular-touch/angular-touch.js",
       "vendor/angular-route/angular-route.js",
       "vendor/angular-toggle-switch/angular-toggle-switch.js",
       "vendor/ng-file-upload/dist/ng-file-upload-all.js",
