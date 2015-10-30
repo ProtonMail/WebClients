@@ -38,33 +38,33 @@
                             <td>
                                 <button class="pm_button" ng-class="{ 'dead': (domain.VerifyState === 1) }" type="button" ng-click="verification(domain)">
                                     <strong ng-show="domain.VerifyState === 0">{{ 'NOT_VERIFIED' | translate }}</strong>
-                                    <strong ng-show="domain.VerifyState === 1" class="text-green">
-                                        <i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}
-                                    </strong>
+                                    <strong ng-show="domain.VerifyState === 1" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.VerifyState === 2" class="text-green">{{ 'VERIFIED' | translate }}</strong>
                                 </button>
                             </td>
                             <td>
                                 <button class="pm_button" ng-class="{ 'dead': (domain.SpfState === 1) }" type="button"  ng-click="spf(domain)">
                                     <strong ng-show="domain.SpfState === 0">{{ 'ADD_SPF' | translate }}</strong>
-                                    <strong ng-show="domain.SpfState === 1" class="text-green">
-                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                    </strong>
+                                    <strong ng-show="domain.SpfState === 1" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.SpfState === 2" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.SpfState === 3" class="text-green">{{ 'ADDED' | translate }}</strong>
                                 </button>
                             </td>
                             <td>
                                 <button class="pm_button" ng-class="{ 'dead': (domain.DkimState === 1) }" type="button" ng-click="dkim(domain)">
                                     <strong ng-show="domain.DkimState === 0">{{ 'ADD_DKIM' | translate }}</strong>
-                                    <strong ng-show="domain.DkimState === 1" class="text-green">
-                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                    </strong>
+                                    <strong ng-show="domain.DkimState === 1" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.DkimState === 2" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.DkimState === 3" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.DkimState === 4" class="text-green">{{ 'ADDED' | translate }}</strong>
                                 </button>
                             </td>
                             <td>
                                 <button class="pm_button" ng-class="{ 'dead': (domain.DmarcState === 1) }" type="button" ng-click="dmarc(domain)">
                                     <strong ng-show="domain.DmarcState === 0">{{ 'ADD_DMARC' | translate }}</strong>
-                                    <strong ng-show="domain.DmarcState === 1" class="text-green">
-                                        <i class="fa fa-check"></i> {{ 'ADDED' | translate }}
-                                    </strong>
+                                    <strong ng-show="domain.DmarcState === 1" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.DmarcState === 2" class="text-red">{{ 'ERROR' | translate }}</strong>
+                                    <strong ng-show="domain.DmarcState === 3" class="text-green">{{ 'ADDED' | translate }}</strong>
                                 </button>
                             </td>
                             <td class="text-right">

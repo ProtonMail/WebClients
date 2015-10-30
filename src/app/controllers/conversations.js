@@ -135,7 +135,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.goToPage(page, page < $scope.page);
     };
 
-    $scope.messageCount = function() {
+    $scope.conversationCount = function() {
         var result;
 
         if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
@@ -158,7 +158,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var ddp = [];
         var ddp2 = [];
         var makeRangeCounter = 0;
-        var count = $scope.messageCount();
+        var count = $scope.conversationCount();
 
         for (var i = 0; i <= parseInt(count - 1); i++) {
             ddp[i] = i;
@@ -292,15 +292,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         end = $scope.start() + $scope.conversationsPerPage - 1;
 
-        if (end > $scope.messageCount()) {
-            end = $scope.messageCount();
+        if (end > $scope.conversationCount()) {
+            end = $scope.conversationCount();
         }
 
         return end;
     };
 
     $scope.hasNextPage = function() {
-        return $scope.messageCount() > ($scope.page * $scope.conversationsPerPage);
+        return $scope.conversationCount() > ($scope.page * $scope.conversationsPerPage);
     };
 
     $scope.allSelected = function() {
@@ -575,7 +575,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllMessages();
         $scope.page = page;
-        if (page > 0 && $scope.messageCount() > ((page - 1) * $scope.conversationsPerPage)) {
+        if (page > 0 && $scope.conversationCount() > ((page - 1) * $scope.conversationsPerPage)) {
             if (page === 1) {
                 page = undefined;
             }
@@ -638,7 +638,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.starred = function(conversation) {
-        if(angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1) {
+        if(conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred + '') !== -1) {
             return true;
         } else {
             return false;

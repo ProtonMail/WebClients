@@ -49,24 +49,33 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $interval.cancel($scope.agoTimer);
     });
 
-    $scope.initView = function() {
-        var last = _.last($scope.messages);
+    /**
+     * Toggle message in conversation view
+     */
+    $scope.toggle = function() {
+        if(angular.isUndefined($scope.message.expand)) {
+            $scope.initView();
+        } else if($scope.message.expand === true) {
+            $scope.message.expand = false;
+        } else if($scope.message.expand === false) {
+            $scope.message.expand = true;
+        }
+    };
 
-        if(last.IsRead === 0) {
-            last.IsRead = 1;
-            Message.read({IDs: [last.ID]});
+    $scope.initView = function() {
+        if($scope.message.IsRead === 0) {
+            $scope.message.IsRead = 1;
+            Message.read({IDs: [$scope.message.ID]});
             // TODO generate event
         }
 
-        if($scope.message === last) {
-            if(angular.isDefined($scope.message.Body)) {
+        if(angular.isDefined($scope.message.Body)) {
+            $scope.displayContent();
+        } else {
+            cacheMessages.getMessage($scope.message.ID).then(function(message) {
+                _.extend($scope.message, message);
                 $scope.displayContent();
-            } else {
-                cacheMessages.getMessage($scope.message.ID).then(function(message) {
-                    _.extend($scope.message, message);
-                    $scope.displayContent();
-                });
-            }
+            });
         }
 
         // start timer ago
@@ -75,6 +84,19 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             $scope.ago = time;
         }, 1000);
+
+        $scope.message.expand = true;
+    };
+
+    /**
+     * Method called at the initialization of this controller
+     */
+    $scope.initialization = function() {
+        var last = _.last($scope.messages);
+
+        if($scope.message === last) {
+            $scope.initView();
+        }
     };
 
     $scope.toggleStar = function(message) {
@@ -218,9 +240,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.goToMessageList();
     };
 
-    $scope.toggleImages = function(message) {
-        message.toggleImages();
-        $scope.displayContent(message);
+    $scope.toggleImages = function() {
+        $scope.message.toggleImages();
+        $scope.displayContent();
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -443,44 +465,44 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
         var blockquoteStart = '<blockquote class="protonmail_quote">';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + message.Subject + '<br />';
-        var time = 'Local Time: ' + $filter('localReadableTime')(message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')(message.Time) + '<br />';
-        var from = 'From: ' + message.Sender.Address + '<br />';
-        var to = 'To: ' + tools.contactsToString(message.ToList) + '<br />';
-        var cc = (message.CCList.length > 0)?('CC: ' + tools.contactsToString(message.CCList) + '<br />'):('');
+        var subject = 'Subject: ' + $scope.message.Subject + '<br />';
+        var time = 'Local Time: ' + $filter('localReadableTime')($scope.message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')($scope.message.Time) + '<br />';
+        var from = 'From: ' + $scope.message.Sender.Address + '<br />';
+        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + '<br />';
+        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + '<br />'):('');
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
 
-        base.ParentID = message.ID;
+        base.ParentID = $scope.message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.content + blockquoteEnd;
 
-        if(angular.isDefined(message.AddressID)) {
-            base.From = _.findWhere(authentication.user.Addresses, {ID: message.AddressID});
+        if(angular.isDefined($scope.message.AddressID)) {
+            base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
         }
 
         if (action === 'reply') {
             base.Action = 0;
-            base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
+            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
             if($state.is('secured.sent.message')) {
-                base.ToList = message.ToList;
+                base.ToList = $scope.message.ToList;
             } else {
-                base.ToList = [message.ReplyTo];
+                base.ToList = [$scope.message.ReplyTo];
             }
         } else if (action === 'replyall') {
             base.Action = 1;
-            base.Subject = (message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? message.Subject : re_prefix + ' ' + message.Subject;
+            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
-            if(_.where(authentication.user.Addresses, {Email: message.Sender.Address}).length > 0) {
-                base.ToList = message.ToList;
-                base.CCList = message.CCList;
-                base.BCCList = message.BCCList;
+            if(_.where(authentication.user.Addresses, {Email: $scope.message.Sender.Address}).length > 0) {
+                base.ToList = $scope.message.ToList;
+                base.CCList = $scope.message.CCList;
+                base.BCCList = $scope.message.BCCList;
             } else {
-                base.ToList = [message.ReplyTo];
-                base.CCList = _.union(message.ToList, message.CCList);
+                base.ToList = [$scope.message.ReplyTo];
+                base.CCList = _.union($scope.message.ToList, $scope.message.CCList);
                 // Remove user address in CCList and ToList
                 _.each(authentication.user.Addresses, function(address) {
                     base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
@@ -490,7 +512,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } else if (action === 'forward') {
             base.Action = 2;
             base.ToList = [];
-            base.Subject = (message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? message.Subject : fw_prefix + ' ' + message.Subject;
+            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? $scope.message.Subject : fw_prefix + ' ' + $scope.message.Subject;
         }
 
         return base;
@@ -569,5 +591,5 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.initView();
+    $scope.initialization();
 });

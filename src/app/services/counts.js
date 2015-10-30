@@ -2,7 +2,7 @@ angular.module("proton.messages.counts", [
     "proton.constants"
 ])
 
-.service('messageCounts', function(
+.service('conversationCounts', function(
     $q,
     Message,
     CONSTANTS,

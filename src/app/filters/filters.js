@@ -138,52 +138,6 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter("username", function() {
-    return function(input) {
-        var username;
-
-        if(angular.isArray(input)) {
-            if(input.length > 0) {
-                var firstEmail = input[0];
-
-                if (angular.isDefined(firstEmail.Name) && firstEmail.Name.length > 0) {
-                    username = firstEmail.Name;
-                } else {
-                    username = firstEmail.Address.split('@')[0];
-                }
-            } else {
-                username = "";
-            }
-        } else if (angular.isObject(input)) {
-            // console.log(input);
-            if(angular.isDefined(input.Name) && angular.isDefined(input.Address)) {
-                if (input.Name==='') {
-                    if (input.Address.indexOf('@') !== -1) {
-                        username = input.Address.split('@')[0];
-                    }
-                    else {
-                        username = input.Address;
-                    }
-                }
-                else if (input.Name.indexOf('@') !== -1) {
-                    username = input.Name.split('@')[0];
-                }
-                else {
-                    username = input.Name;
-                }
-            } else {
-                username = "";
-            }
-        } else if (angular.isString(input)) {
-            username = input;
-        } else {
-            username = "";
-        }
-
-        return username;
-    };
-})
-
 .filter("humanSize", function () {
     return function (input, withoutUnit) {
         var bytes;

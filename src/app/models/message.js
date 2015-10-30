@@ -46,9 +46,13 @@ angular.module("proton.models.message", ["proton.constants"])
                     return json.Message;
                 }
             },
+            count: {
+                method: 'get',
+                url: url.get() + '/messages/count'
+            },
             totalCount: {
                 method: 'get',
-                url: url.get() + '/messages/total',
+                url: url.get() + '/messages/total'
             },
             unreaded: {
                 method: 'get',

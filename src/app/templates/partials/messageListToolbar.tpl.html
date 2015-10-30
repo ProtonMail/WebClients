@@ -216,10 +216,10 @@
             </a>
         </li>
     </ul>
-    <ul class="nav navbar-nav pull-right navigation" ng-if="messageCount() > 0">
+    <ul class="nav navbar-nav pull-right navigation" ng-if="conversationCount() > 0">
         <li class="pageDropdown seperator">
              <a href title="{{ 'PAGINATION' | translate }}" ng-click="showPagination = !showPagination">
-                {{start()}} - {{end()}} of {{messageCount()}} <i class="fa fa-caret-down"></i>
+                {{start()}} - {{end()}} of {{conversationCount()}} <i class="fa fa-caret-down"></i>
             </a>
             <select id="page">
                 <option ng-repeat="label in makeDropdownPages()" value="{{$index + 1}}">{{ label }}</option>

@@ -46,7 +46,7 @@
                     </a>
                 </span>
             </span>
-            <paginator page="page" total-items="messageCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
+            <paginator page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
         </div>
         <label>
             <input type="checkbox" name="selectAll" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
