@@ -21,8 +21,8 @@
         </aside>
         <header>
             <p>
-                <strong ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders" title="{{ sender.Address }}">{{ sender.Name || sender.Address }}</strong>
-                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients" title="{{ recipient.Address }}">{{ recipient.Name || recipient.Address }}</strong>
+                <strong ng-hide="('secured.sent.**' | includedByState) && ('secured.draft.**' | includedByState)" ng-repeat="sender in conversation.Senders" title="{{ sender.Address }}">{{ sender.Name || sender.Address }}<b ng-hide="$last">, </b></strong>
+                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.draft.**' | includedByState)" ng-repeat="recipient in conversation.Recipients" title="{{ recipient.Address }}">{{ recipient.Name || recipient.Address }}<b ng-hide="$last">, </b></strong>
                 <span class="time">{{ conversation.Time | readableTime }}</span>
             </p>
         </header>

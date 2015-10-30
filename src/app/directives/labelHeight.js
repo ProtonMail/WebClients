@@ -4,7 +4,7 @@ angular.module("proton.labelHeight", [])
     return function (scope, element, attrs) {
         var setHeight = function() {
             var sidebarHeight = angular.element($window).height();
-            var height = (sidebarHeight - 550);
+            var height = (sidebarHeight - 620);
 
             element.css({
                 height: height + 'px'

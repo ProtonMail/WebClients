@@ -108,7 +108,7 @@ section.sidebar {
                 em {
                     font-style: normal;
                     font-weight: 400;
-                    color: #d2d2d2;
+                    color: rgba(255,255,255,.35);
                 }
             }
             &.active {
@@ -215,7 +215,7 @@ section.sidebar {
                     em {
                         font-style: normal;
                         font-weight: 400;
-                        color: #d2d2d2;
+                        color: rgba(255,255,255,.35);
                     }
                 }
             }

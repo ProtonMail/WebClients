@@ -1,63 +1,42 @@
-.themeJason {
-    background: #505061 !important;
-    #pm_background,
-    section#pm_sidebar,
-    header#pm_header a.logo {
-        width: 20px;
-        min-width: 20px;
-        overflow: hidden;
-        box-sizing: border-box;
-            transition: width .25s linear;        
-        & > * {
-            visibility: hidden;
-        }
-        &:hover {
-            width: 190px;
-            min-width: 190px;
-            transition: width .25s linear;
-            & > * {
-                visibility: visible;
+html.protonmail body.themeJason {
+    background: #f2f2f2;
+    .pm_buttons {
+        a {
+            background: #fff;
+            &:active {
+                box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
             }
         }
+        .pm_buttons {
+            box-shadow: none !important;
+        }
     }
-    #pm_header {
-        height: 20px;
-        background: #505061;
-        overflow: hidden;
-        box-sizing: border-box;
+    .pm_buttons,
+    .well,
+    .table,
+    #plans .plans .plan,
+    .pm_sort,
+    .pm_table,
+    #pm_header,
+    .frame .display-image,
+    .pm_dropdown, {
+        box-shadow: 0 1px 2px rgba(0,0,0,.1) !important;
         border: none !important;
-            transition: width .25s linear;        
-        & > * {
-            visibility: hidden;
-        }
-        &:hover {
-            height: 60px;
-            transition: width .25s linear;    
-            & > * {
-                visibility: visible;
-            }        
+        background: #fff !important;
+        color: $gray-light;
+        &.primary {
+            color: #fff !important;
+            background: $primary !important;
         }
     }
-    #pm_columns {
-        margin-left: 20px;
+    .searchForm,
+    .pm_select,
+    .pm_form input,
+    .pm_button {
+        box-shadow: 0 1px 2px rgba(0,0,0,.1) !important;
     }
-    #pm_view {
-        background: #fafafa;
-    }
-    #pm_columns > .list {
-        box-shadow: .25rem 0 .5rem rgba(0,0,0,.25);
-        position: relative;
-        background: #fff;
-        z-index: 999;
-    }
-    #pm_columns #pm_view {
-        margin-right: 25px;
-    }    
-    #pm_toolbar {
-        background: $primary;
-        .pm_button,
-        .pm_buttons a {
-            background: #fff;
-        }
+    .pm_table.plain {
+        background: transparent !important;
+        box-shadow: none !important;
     }
 }
