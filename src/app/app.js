@@ -11,6 +11,7 @@ angular.module("proton", [
     "pascalprecht.translate",
     "ui.bootstrap",
     "ngDragDrop",
+    "ngTouch",
 
     // Constant
     "proton.constants",
