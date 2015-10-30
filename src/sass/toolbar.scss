@@ -132,6 +132,9 @@ body.columns #pm_toolbar {
     body #pm_view #pm_toolbar .messageActions a strong {
         display: none;
     }
+    body #pm_view #pm_toolbar_responsive {
+        padding: 12px 10px;
+    }
 }
 
 @media (max-width: $tablet-portrait) {
@@ -168,9 +171,6 @@ body.columns #pm_toolbar {
                 }
             }
         }
-    }
-    #pm_view #pm_toolbar_responsive {
-        padding: 12px 0;
     }
 }
 

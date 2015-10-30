@@ -368,10 +368,11 @@
         }
     }
     #pm_view #pm_thread {
-        padding: 0 10px;
+        padding: 0;
     }
     #pm_view {
         article.message {
+            padding: 0 10px;
             span.person {
                 strong {
                     display: none;
