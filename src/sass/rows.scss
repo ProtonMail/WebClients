@@ -158,6 +158,7 @@
 @media (max-width: $tablet-landscape) {
 	#pm_rows {
 		padding: 0;
+		display: block !important;
 		.list {
 			display: block;
 			height: auto;
