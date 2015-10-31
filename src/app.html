@@ -16,35 +16,6 @@
     <meta name="msapplication-TileImage" content="assets/favicon_128.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
-    <script type="text/javascript">
-    function is_good_prng_available() {
-        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
-            return true;
-        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    function isSessionStorage_available() {
-        return (typeof(sessionStorage) !== 'undefined');
-    }
-
-    if(!isSessionStorage_available()) {
-        alert('Error: sessionStorage is required to use ProtonMail.');
-        setTimeout( function() {
-            window.location = 'https://protonmail.com/support/knowledge-base/sessionstorage/';
-        }, 1000);
-    }
-    if (!is_good_prng_available()) {
-        alert('Error: a PRNG is required to use ProtonMail.');
-        setTimeout( function() {
-            window.location = 'https://protonmail.com/support/knowledge-base/prng/';
-        }, 1000);
-    }
-
-    </script>
-
     <% styles.forEach(function (file) { %>
         <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
@@ -72,7 +43,8 @@ ng-class="{
 
 <div id="pm_background" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false"></div>
 
-<div id="loading">
+<div id="pm_slow">Loading ProtonMail...</div>
+<div id="loading_pm">
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
 
@@ -96,8 +68,37 @@ ng-class="{
 
 <div ui-view="main" autoscroll="false" id="body"></div>
 <% scripts.forEach(function (file) { %>
-    <script type="text/javascript" src="/<%= file %>"></script>
+    <script type="text/javascript" src="/<%= file %>" defer></script>
 <% }); %>
+
+<script type="text/javascript">
+function is_good_prng_available() {
+    if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
+        return true;
+    } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
+        return true;
+    } else {
+        return false;
+    }
+}
+function isSessionStorage_available() {
+    return (typeof(sessionStorage) !== 'undefined');
+}
+
+if(!isSessionStorage_available()) {
+    alert('Error: sessionStorage is required to use ProtonMail.');
+    setTimeout( function() {
+        window.location = 'https://protonmail.com/support/knowledge-base/sessionstorage/';
+    }, 1000);
+}
+if (!is_good_prng_available()) {
+    alert('Error: a PRNG is required to use ProtonMail.');
+    setTimeout( function() {
+        window.location = 'https://protonmail.com/support/knowledge-base/prng/';
+    }, 1000);
+}
+
+</script>
 
 </body>
 </html>

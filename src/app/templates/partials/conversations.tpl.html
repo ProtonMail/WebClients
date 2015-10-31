@@ -16,7 +16,7 @@
                 </a>
             </span>
             <span class="attachmentSpan">
-                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+                <i class="fa fa-paperclip" ng-show="conversation.NumAttachments > 0"></i>
             </span>
         </aside>
         <header>
@@ -74,7 +74,7 @@
             </span>
         </span>
         <span class="size">{{ conversation.TotalSize | humanSize }}</span>
-        <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+        <i class="fa fa-paperclip" ng-show="conversation.NumAttachments > 0"></i>
         <span class="time">{{ conversation.Time | readableTime }}</span>
     </div>
 </div>

@@ -377,7 +377,7 @@ angular.module("proton", [
             $rootScope.scrollToBottom = false;
         }
 
-        $('#loading').remove();
+        $('#loading_pm, #pm_slow').remove();
 
     });
 })

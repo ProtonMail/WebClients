@@ -300,11 +300,14 @@
 			.display-image {
 				text-transform: uppercase;
 				border: 1px solid $border;
+                border-radius: 2px;
+                width: 100%;
 				a {
 					color: $primary;
                     display: block;
                     width: 100%;
 					text-decoration: none;
+                    text-decoration: none;
 				}
 				a:hover, a:focus {
 					text-decoration: underline;

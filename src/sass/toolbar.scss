@@ -150,6 +150,9 @@ body.columns #pm_toolbar {
 @media (max-width: $mobile-landscape) {
     #pm_toolbar_responsive {
         padding: 12px 10px;
+        .pm_buttons a {
+            padding: 0 5px;
+        }
         .main {
             .pm_checkbox {
                 margin-left: 0 !important;
@@ -172,14 +175,23 @@ body.columns #pm_toolbar {
             }
         }
     }
+    body #pm_view {
+        padding: 0 !important;
+        & > header h1 {
+            padding-left: 10px;
+        }
+    }
 }
 
 @media (max-width: $mobile-portrait) {
     body #pm_view #pm_toolbar_responsive {
         height: 65px !important;
-        margin: 0 -10px !important;
-        width: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
         padding: 14px 10px !important;
+        .pm_buttons a {
+            padding: 0 6px;
+        }
     }
     body #pm_toolbar_responsive {
         border-bottom: 1px solid $border;
