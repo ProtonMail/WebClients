@@ -9,7 +9,7 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('number', function ($filter) {
+.filter('number', function () {
     return function (input, places) {
         if (isNaN(input)) {
             return input;
@@ -20,6 +20,18 @@ angular.module("proton.filters",[])
         var factor = "1" + Array(+(places > 0 && places + 1)).join("0");
 
         return Math.round(input * factor) / factor;
+    };
+})
+
+.filter('labels', function() {
+    return function(labels) {
+        return _.filter(labels, function(label) {
+            if(angular.isObject(label)) {
+                return label.ID.toString().length > 5;
+            } else {
+                return label.toString().length > 5;
+            }
+        });
     };
 })
 

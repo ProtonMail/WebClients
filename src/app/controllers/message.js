@@ -385,7 +385,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.getLabel = function(id) {
-        return _.where($scope.labels, {ID: id})[0];
+        return _.findWhere($scope.labels, {ID: id});
     };
 
     $scope.getColorLabel = function(label) {

@@ -646,13 +646,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.getLabel = function(id) {
-        var label = _.findWhere($scope.labels, {ID: id});
-
-        if(angular.isDefined(label)) {
-            return label;
-        } else {
-            return {};
-        }
+        return _.findWhere($scope.labels, {ID: id});
     };
 
     $scope.getStyleLabel = function(id) {

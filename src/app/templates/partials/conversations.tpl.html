@@ -27,8 +27,8 @@
             </p>
         </header>
         <article>
-            <p class="pm_labels" ng-if="conversation.LabelIDs.length > 0">
-                <span ng-repeat="id in conversation.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
+            <p class="pm_labels" ng-if="(conversation.LabelIDs | labels).length > 0">
+                <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
                     <em>{{ getLabel(id).Name }}</em>
                     <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
                 </span>
@@ -66,8 +66,8 @@
             <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
             {{ conversation.Subject }} <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             </span>
-            <span class="pm_labels" ng-if="conversation.LabelIDs.length">
-                <span ng-repeat="id in conversation.LabelIDs" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
+            <span class="pm_labels" ng-if="(conversation.LabelIDs | labels).length > 0">
+                <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
                     <em>{{ getLabel(id).Name }}</em>
                     <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
                 </span>
