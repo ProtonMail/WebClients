@@ -40,7 +40,6 @@ angular.module("proton.controllers.Outside", [
             _.each($scope.message.Replies, function(reply) {
                 reply.Body = $scope.clean(reply.Body);
             });
-            tools.transformLinks('message-body');
         });
     }
 

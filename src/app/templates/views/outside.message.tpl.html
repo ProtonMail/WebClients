@@ -48,7 +48,7 @@
     </div>
     <div id="outsideMessage">
         <div id="message-body">
-            <div class="email" ng-bind-html="message.Body | purify"></div>
+            <div class="email" ng-bind-html="message.Body | purify" transform-links="{{ message.Body }}" hide-first-blockquote="{{ message.Body }}"></div>
         </div>
     </div><!--/#outsideMessage-->
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>

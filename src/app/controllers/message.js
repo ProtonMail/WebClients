@@ -166,9 +166,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 }
 
                 $scope.content = $sce.trustAsHtml(content);
-                $timeout(function() {
-                    tools.transformLinks('message-body');
-                }, 0, false);
 
                 // broken images
                 $("img").error(function () {

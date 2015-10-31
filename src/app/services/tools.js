@@ -364,10 +364,6 @@ angular.module("proton.tools", ["proton.constants"])
         return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
     };
 
-    tools.transformLinks = function(id) {
-        $('#' + id).find('a[href^=http]').attr('target','_blank').attr('rel', 'noreferrer');
-    };
-
     tools.containsImage = function(content) {
         return content.match('<img') !== null;
     };
