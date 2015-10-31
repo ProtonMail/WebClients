@@ -285,6 +285,12 @@
     		position: relative;
     		clear: both;
     		padding-top: 1rem;
+            .more {
+                line-height: 1rem;
+                height: 1rem;
+                margin: 1rem 0;
+                background: $light;
+            }
     		iframe {
     			position: relative;
     			width: 100%;
