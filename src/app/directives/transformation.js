@@ -23,16 +23,21 @@ angular.module("proton.transformation", [])
                 if(done === false) {
                     $timeout(function() {
                         var blockquote = angular.element(element).find('blockquote:first');
-                        var button = angular.element('<button/>', {
-                            text: '...',
-                            click: function () {
-                                blockquote.show();
-                                button.remove();
-                            }
-                        });
 
-                        blockquote.before(button);
-                        blockquote.hide();
+                        if(blockquote.length > 0) {
+                            var button = angular.element('<button/>', {
+                                style: '', // TODO add style (for Jason)
+                                text: '...',
+                                click: function () {
+                                    blockquote.show();
+                                    button.remove();
+                                }
+                            });
+
+                            blockquote.before(button);
+                            blockquote.hide();
+                            done = true;
+                        }
                     }, 0, false);
                 }
             });
