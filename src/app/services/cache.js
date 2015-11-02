@@ -801,9 +801,10 @@ angular.module("proton.cache", [])
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(conversationId, location, type) {
+    api.more = function(conversationId, type) {
         var deferred = $q.defer();
-        var request = {PageSize: 1, ID: message.ID};
+        var request = {PageSize: 1, ID: conversationId};
+        var location = currentLocation();
 
         if(type === 'previous') {
             request.Desc = 1;
@@ -820,7 +821,7 @@ angular.module("proton.cache", [])
         }
 
         queryConversations(request).then(function(conversation) {
-            if(conversation) {
+            if(angular.isArray(conversation) && conversation.length > 0) {
                 if(type === 'next') {
                     var first = _.first(conversation);
 

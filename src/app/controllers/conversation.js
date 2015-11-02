@@ -48,9 +48,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.nextConversation = function() {
         var current = $state.current.name;
-        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        cacheMessages.more($scope.conversation.ID, location, 'next').then(function(id) {
+        cacheMessages.more($scope.conversation.ID, 'next').then(function(id) {
             $state.go(current, {id: id});
         });
     };
@@ -60,9 +59,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.previousConversation = function() {
         var current = $state.current.name;
-        var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        cacheMessages.more($scope.conversation.ID, location, 'previous').then(function(id) {
+        cacheMessages.more($scope.conversation.ID, 'previous').then(function(id) {
             $state.go(current, {id: id});
         });
     };
