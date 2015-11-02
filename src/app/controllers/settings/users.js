@@ -1,6 +1,17 @@
 angular.module("proton.controllers.Settings")
 
-.controller('UsersController', function($rootScope, $scope, $translate, confirmModal, userModal, organization, members, addresses) {
+.controller('UsersController', function(
+    $rootScope,
+    $scope,
+    $translate,
+    addresses,
+    confirmModal,
+    Member,
+    members,
+    organization,
+    Organization,
+    userModal
+) {
     var MASTER = 0;
     var SUB = 1;
 
@@ -43,14 +54,24 @@ angular.module("proton.controllers.Settings")
      * Inform the back-end to change user role
      */
     $scope.changeRole = function(user) {
-        console.log('changeRole', user);
+        Member.update(user).then(function(result) { // TODO check request
+            if(result.data && result.data.Code === 1000) {
+                notify({message: $translate.instant('ROLE_UPDATED'), classes: 'notification-success'});
+            } else if(result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else {
+                notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+        });
     };
 
     /**
      * Save the organization name
      */
     $scope.saveOrganizationName = function() {
-        Organization.update($scope.organization).then(function(result) {
+        Organization.update($scope.organization).then(function(result) { // TODO omit some parameters
             if(result.data && result.data.Code === 1000) {
                 notify({message: $translate.instant('ORGANIZATION_UPDATED'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
