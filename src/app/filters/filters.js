@@ -23,15 +23,26 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('labels', function() {
+.filter('labels', function(authentication) {
     return function(labels) {
-        return _.filter(labels, function(label) {
+        var labelsFiltered = [];
+        var currentLabels = _.map(authentication.user.Labels, function(label) {
+            return label.ID;
+        });
+
+        _.each(labels, function(label) {
+            var value = label;
+
             if(angular.isObject(label)) {
-                return label.ID.toString().length > 5;
-            } else {
-                return label.toString().length > 5;
+                value = label.ID;
+            }
+
+            if(currentLabels.indexOf(value) !== -1) {
+                labelsFiltered.push(label);
             }
         });
+
+        return labelsFiltered;
     };
 })
 

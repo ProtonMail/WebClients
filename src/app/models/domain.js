@@ -111,10 +111,8 @@ angular.module("proton.models.domains", [])
             return $http.put(url.get() + '/domains/' + id, Obj);
         },
         // DELETE
-        delete: function(Obj) {
-            var id = Obj.id;
-
-            return $http.delete(url.get() + '/domains/' + id, Obj);
+        delete: function(domainid) {
+            return $http.delete(url.get() + '/domains/' + domainid);
         }
     };
 });

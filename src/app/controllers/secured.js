@@ -4,6 +4,7 @@ angular.module("proton.controllers.Secured", [])
     $scope,
     $rootScope,
     $state,
+    $stateParams,
     $translate,
     authentication,
     eventManager,
