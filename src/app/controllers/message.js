@@ -562,13 +562,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.print = function() {
-        var url = $state.href('secured.print', { id: message.ID });
+        var url = $state.href('secured.print', { id: $scope.message.ID });
 
         window.open(url, '_blank');
     };
 
     $scope.viewPgp = function() {
-        var content = message.Header + '\n\r' + message.Body;
+        var content = $scope.message.Header + '\n\r' + $scope.message.Body;
         var filename = 'pgp.txt';
 
         if(navigator.msSaveBlob) { // IE 10+
@@ -581,10 +581,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.togglePlainHtml = function() {
-        if (message.viewMode === 'plain') {
-            message.viewMode = 'html';
+        if ($scope.message.viewMode === 'plain') {
+            $scope.message.viewMode = 'html';
         } else {
-            message.viewMode = 'plain';
+            $scope.message.viewMode = 'plain';
         }
     };
 
