@@ -27,6 +27,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $scope.scrollToMessage(_.last($scope.messages));
     };
 
+    /**
+     * Scroll to the message specified
+     * @param {Object} message
+     */
     $scope.scrollToMessage = function(message) {
         var index = $scope.messages.indexOf(message);
         var id = 'message' + index; // TODO improve it for the search case
