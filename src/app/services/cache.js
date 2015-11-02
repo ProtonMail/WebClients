@@ -478,6 +478,9 @@ angular.module("proton.cache", [])
         return deferred.promise;
     };
 
+    /**
+     * Accessible method to preload a specific conversation
+     */
     api.preloadConversation = function(conversationId) {
         return getConversation(conversationId);
     };
