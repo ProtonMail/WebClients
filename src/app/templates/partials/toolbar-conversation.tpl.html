@@ -1,16 +1,5 @@
 <nav id="pm_toolbar" class="{{ $state.name }}">
     <div class="messageActions">
-        <!-- <span class="pm_buttons">
-            <a href="" ng-click="reply(message)">
-                <i class="fa fa-reply"></i> <strong>{{ 'REPLY' | translate }}</strong>
-            </a>
-            <a href="" ng-click="replyAll(message)" class="divider">
-                <i class="fa fa-reply-all"></i> <strong>{{ 'REPLY_ALL' | translate }}</strong>
-            </a>
-            <a href="" ng-click="forward(message)" class="divider">
-                <i class="fa fa-mail-forward"></i> <strong>{{ 'FORWARD' | translate }}</strong>
-            </a>
-        </span> -->
         <span class="pm_buttons">
             <a href="" ng-click="previousConversation()" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                 <i class="fa fa-chevron-left"></i>
@@ -27,10 +16,10 @@
     </span>
     <div class="desktop pull-left">
         <span class="pm_buttons">
-            <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
+            <a href="" ng-click="unread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
                 <i class="fa fa-eye-slash"></i>
             </a>
-            <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
+            <a href="" class="divider" ng-click="read()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
                 <i class="fa fa-eye"></i>
             </a>
         </span>
@@ -52,12 +41,12 @@
             </a>
         </span>
         <span class="pm_buttons">
-            <a href="#" class="pm_trigger open-label" ng-dropdown pt-tooltip="{{ 'LABELS' | translate }}">
+            <a href="" class="pm_trigger open-label" ng-dropdown pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown wide">
-                <dropdown-labels labels="labels" messages="[message]" save="saveLabels"></dropdown-labels>
+                <dropdown-labels messages="conversationMessages" save="saveLabels"></dropdown-labels>
             </span>
         </span>
     </div>

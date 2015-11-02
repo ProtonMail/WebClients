@@ -11,15 +11,15 @@
     </div>
     <span class="pm_buttons">
         <a href="#" ng-click="back()" pt-tooltip="{{ 'BACK' | translate }}">
-            <i class="fa fa fa-level-up fa-rotate-270"></i>
+            <i class="fa fa-level-up fa-rotate-270"></i>
         </a>
     </span>
     <div class="main pull-left">
         <span class="pm_buttons">
-            <a href="" ng-class="{ disabled: !message.IsRead }" ng-click="markAsUnread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
+            <a href="" ng-click="unread()" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}">
                 <i class="fa fa-eye-slash"></i>
             </a>
-            <a href="" class="divider" ng-click="markAsRead()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
+            <a href="" class="divider" ng-click="read()" pt-tooltip="{{ 'MARK_AS_READ' | translate }}">
                 <i class="fa fa-eye"></i>
             </a>
         </span>
@@ -46,7 +46,7 @@
                 <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown wide">
-                <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels"></dropdown-labels>
+                <dropdown-labels messages="conversationMessages" save="saveLabels"></dropdown-labels>
             </span>
         </span>
     </div>

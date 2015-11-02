@@ -5,53 +5,53 @@
             <em class="fa fa-check"></em>
         </label>
         <span class="pm_buttons">
-            <a 
-            href="" 
-            class="fa fa-eye" 
-            pt-tooltip="{{ 'MARK_AS_READ' | translate }}" 
-            ng-click="setMessagesReadStatus(true)" 
+            <a
+            href=""
+            class="fa fa-eye"
+            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
+            ng-click="setMessagesReadStatus(true)"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-eye-slash divider" 
-            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" 
-            ng-click="setMessagesReadStatus(false)" 
+            <a
+            href=""
+            class="fa fa-eye-slash divider"
+            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
+            ng-click="setMessagesReadStatus(false)"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a 
-            href="" 
-            class="fa fa-trash-o" 
-            ng-click="moveMessagesTo('trash')" 
-            pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" 
+            <a
+            href=""
+            class="fa fa-trash-o"
+            ng-click="moveMessagesTo('trash')"
+            pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
             ng-hide="{{ 'secured.trash.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-inbox divider" 
-            ng-click="moveMessagesTo('inbox')" 
-            pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" 
+            <a
+            href=""
+            class="fa fa-inbox divider"
+            ng-click="moveMessagesTo('inbox')"
+            pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
             ng-hide="{{ 'secured.inbox.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-archive divider" 
-            ng-click="moveMessagesTo('archive')" 
-            pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" 
+            <a
+            href=""
+            class="fa fa-archive divider"
+            ng-click="moveMessagesTo('archive')"
+            pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-ban divider" 
-            ng-click="moveMessagesTo('spam')" 
-            pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}" 
+            <a
+            href=""
+            class="fa fa-ban divider"
+            ng-click="moveMessagesTo('spam')"
+            pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
-            <a 
-            href="" 
-            class="fa fa-times-circle divider" 
-            ng-click="moveMessagesTo('delete')" 
-            pt-tooltip="{{ 'DELETE' | translate }}" 
+            <a
+            href=""
+            class="fa fa-times-circle divider"
+            ng-click="moveMessagesTo('delete')"
+            pt-tooltip="{{ 'DELETE' | translate }}"
             ng-show="{{ ('secured.trash.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
         </span>
@@ -61,7 +61,7 @@
                 <i class="fa fa-angle-down"></i>
             </a>
             <span class="pm_dropdown wide">
-                <dropdown-labels labels="labels" messages="selectedMessages()" save="saveLabels"></dropdown-labels>
+                <dropdown-labels messages="selectedMessages" save="saveLabels"></dropdown-labels>
             </span>
         </span>
     </div>
@@ -98,5 +98,5 @@
             </span>
         </span>
         <paginator page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
-    </div>    
+    </div>
 </nav>

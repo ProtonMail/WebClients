@@ -6,6 +6,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
+    authentication,
     cacheMessages,
     CONSTANTS,
     conversation,
@@ -17,6 +18,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.conversation = conversation;
     $scope.messages = messages;
     $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+    $scope.labels = authentication.user.Labels;
 
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeConversation', conversation.ID);
@@ -25,7 +27,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.$on('refreshConversation', function(event, conversation, messages) {
         _.extend($scope.conversation, conversation);
         _.extend($scope.messages, messages);
-        // TODO lost new last message
+        // TODO display last new last message
     });
 
     /**
@@ -77,6 +79,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $scope.back();
     };
 
+    $scope.conversationMessages = function() {
+        return $scope.messages;
+    };
+
+    $scope.saveLabels = function() {
+
+    };
+
     /**
      * Scroll to the message specified
      * @param {Object} message
@@ -86,7 +96,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var id = 'message' + index; // TODO improve it for the search case
 
         $timeout(function() {
-            $('#pm_thread').animate({scrollTop: $('#' + id).offset().top}, 'slow');
+            $('#pm_thread').animate({
+                scrollTop: $('#' + id).offset().top - $('#' + id).outerHeight()
+            }, 'slow');
         }, 1000);
     };
 
