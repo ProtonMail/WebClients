@@ -99,6 +99,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
+    $scope.getMessage = function() {
+        return $scope.message;
+    };
+
     $scope.toggleStar = function(message) {
         var ids = [];
         var promise;
