@@ -418,7 +418,6 @@ angular.module("proton.cache", [])
             }
 
             conversations = conversations.slice(start, end);
-            console.log('conversations.length === number', conversations.length, number);
 
             // Supposed total equal to the total cache?
             if(conversations.length === number) {
@@ -477,6 +476,10 @@ angular.module("proton.cache", [])
         }
 
         return deferred.promise;
+    };
+
+    api.preloadConversation = function(conversationId) {
+        return getConversation(conversationId);
     };
 
     /**
@@ -980,7 +983,7 @@ angular.module("proton.cache", [])
 ) {
     var api = {};
     var queue = [];
-    var interval = 5000; // 15 seconds // TODO edit
+    var interval = 5000; // 15 seconds // TODO set 15 seconds for the release
 
     /**
     * Set current conversations viewed
@@ -1017,9 +1020,10 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(conversation)) {
             // Preload the first conversation
-            cacheMessages.getConversation(conversation.ID);
-            // Remove the first conversation in the queue
-            queue = _.without(queue, conversation);
+            cacheMessages.preloadConversation(conversation.ID).then(function() {
+                // Remove the first conversation in the queue
+                queue = _.without(queue, conversation);
+            });
         }
     };
 

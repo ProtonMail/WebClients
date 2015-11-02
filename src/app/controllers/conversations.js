@@ -40,7 +40,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
-            $scope.$watch('conversations', function(newValue, oldValue) {                
+            $scope.$watch('conversations', function(newValue, oldValue) {
                 preloadConversation.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
