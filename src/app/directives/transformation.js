@@ -20,12 +20,10 @@ angular.module("proton.transformation", [])
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote = angular.element(element).find('blockquote:first');
-                    var style = 'background-color: #f1f1f1;border: 1px solid #ddd;color: #666;clear: both;line-height: 6px;outline: none;'; // TODO add style (for Jason)
 
                     if(blockquote.length > 0) {
                         var button = angular.element('<button/>', {
-                            class: 'fa fa-ellipsis-h',
-                            style: style,
+                            class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
                                 blockquote.show();
                                 button.remove();
