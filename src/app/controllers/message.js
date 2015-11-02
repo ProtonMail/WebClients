@@ -234,7 +234,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
         cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
-        $scope.goToMessageList();
+        $scope.back();
     };
 
     $scope.toggleImages = function() {
@@ -527,14 +527,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 
-    $scope.goToMessageList = function() {
-        var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-
-        $state.go("secured." + mailbox + '.list', {
-            id: null // remove ID
-        });
-    };
-
     $scope.moveMessageTo = function(mailbox) {
         var promise;
         var inDelete = mailbox === 'delete';
@@ -555,10 +547,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         promise.then(function(result) {
             messages.push({Action: action, ID: newMessage.ID, Message: newMessage});
             cacheMessages.events(events);
-            $scope.goToMessageList();
+            $scope.back();
         });
 
         networkActivityTracker.track(promise);
+    };
+
+    $scope.back = function() {
+        $state.go("secured." + $scope.mailbox + '.list', {
+            id: null // remove ID
+        });
     };
 
     $scope.print = function() {

@@ -16,15 +16,65 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 ) {
     $scope.conversation = conversation;
     $scope.messages = messages;
+    $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
 
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeConversation', conversation.ID);
+
+    // Listeners
+    $scope.$on('refreshConversation', function(event, conversation, messages) {
+        _.extend($scope.conversation, conversation);
+        _.extend($scope.messages, messages);
+        // TODO lost new last message
+    });
 
     /**
      * Initialization call
      */
     $scope.initialization = function() {
         $scope.scrollToMessage(_.last($scope.messages));
+    };
+
+    $scope.back = function() {
+        $state.go("secured." + $scope.mailbox + '.list', {
+            id: null // remove ID
+        });
+    };
+
+    /**
+     * Mark current conversation as read
+     */
+    $scope.read = function() {
+        // TODO generate event
+        Conversation.read([$scope.conversation.ID]);
+        $scope.back();
+    };
+
+    /**
+     * Mark current conversation as unread
+     */
+    $scope.unread = function() {
+        // TODO generate event
+        Conversation.unread([$scope.conversation.ID]);
+        $scope.back();
+    };
+
+    /**
+     * Delete current conversation
+     */
+    $scope.delete = function() {
+        // TODO generate event
+        Conversation.delete([$scope.conversation.ID]);
+        $scope.back();
+    };
+
+    /**
+     * Move current conversation to a specific location
+     */
+    $scope.move = function(location) {
+        // TODO generate event
+        Conversation[location]([$scope.conversation.ID]);
+        $scope.back();
     };
 
     /**

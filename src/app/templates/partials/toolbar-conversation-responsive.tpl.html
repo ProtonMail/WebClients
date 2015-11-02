@@ -1,16 +1,5 @@
 <nav id="pm_toolbar_responsive" class="{{ $state.name }}">
     <div class="messageActions pull-right">
-        <!-- <span class="pm_buttons">
-            <a href="" ng-click="reply(message)">
-                <i class="fa fa-reply"></i> <strong>{{ 'REPLY' | translate }}</strong>
-            </a>
-            <a href="" ng-click="replyAll(message)" class="divider">
-                <i class="fa fa-reply-all"></i> <strong>{{ 'REPLY_ALL' | translate }}</strong>
-            </a>
-            <a href="" ng-click="forward(message)" class="divider">
-                <i class="fa fa-mail-forward"></i> <strong>{{ 'FORWARD' | translate }}</strong>
-            </a>
-        </span> -->
         <span class="pm_buttons nav">
             <a href="" ng-click="previousConversation()" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                 <i class="fa fa-chevron-left"></i>
@@ -21,7 +10,7 @@
         </span>
     </div>
     <span class="pm_buttons">
-        <a href="#" ng-click="goToMessageList()" pt-tooltip="{{ 'BACK' | translate }}">
+        <a href="#" ng-click="back()" pt-tooltip="{{ 'BACK' | translate }}">
             <i class="fa fa fa-level-up fa-rotate-270"></i>
         </a>
     </span>
@@ -35,44 +24,19 @@
             </a>
         </span>
         <span class="pm_buttons" >
-            <a
-            href=""
-            ng-click="moveMessageTo('trash')"
-            ng-hide="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.trash"
-            pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}">
+            <a href="" ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}">
                 <i class="fa fa-trash-o"></i>
             </a>
-            <a
-            href=""
-            class="divider"
-            ng-click="moveMessageTo('inbox')"
-            ng-hide="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.inbox"
-            pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
+            <a href="" class="divider" ng-click="move('inbox')" ng-hide="'secured.inbox.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
                 <i class="fa fa-inbox"></i>
             </a>
-            <a
-            href=""
-            class="divider"
-            ng-click="moveMessageTo('archive')"
-            ng-hide="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.archive"
-            pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
-            class="divider">
+            <a href="" class="divider" ng-click="move('archive')" ng-hide="'secured.archive.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}">
                 <i class="fa fa-archive"></i>
             </a>
-            <a
-            href=""
-            class="divider"
-            ng-click="moveMessageTo('spam')"
-            ng-hide="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.spam"
-            pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}"
-            class="divider">
+            <a href="" class="divider" ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState" pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}">
                 <i class="fa fa-ban"></i>
             </a>
-            <a
-            href=""
-            class="divider"
-            ng-click="moveMessageTo('delete')"
-            pt-tooltip="{{ 'DELETE' | translate }}">
+            <a href="" class="divider" ng-click="delete()" pt-tooltip="{{ 'DELETE' | translate }}">
                 <i class="fa fa-times-circle"></i>
             </a>
         </span>
