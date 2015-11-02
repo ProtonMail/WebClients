@@ -1,10 +1,10 @@
 angular.module("proton.controllers.Settings")
 
-.controller('UsersController', function($rootScope, $scope, $translate, confirmModal, userModal, group, members, addresses) {
+.controller('UsersController', function($rootScope, $scope, $translate, confirmModal, userModal, organization, members, addresses) {
     var MASTER = 0;
     var SUB = 1;
 
-    $scope.group = group.Group;
+    $scope.organization = organization.Organization;
     $scope.members = members.Members;
     $scope.addresses = addresses.Addresses;
     $scope.selectExample = 'toto';
@@ -13,9 +13,6 @@ angular.module("proton.controllers.Settings")
         {label: $translate.instant('MASTER'), value: MASTER},
         {label: $translate.instant('SUB'), value: SUB}
     ];
-    $scope.organization = {
-        name: ''
-    };
 
     $scope.addressesOf = function(member) {
         var addresses = [];
@@ -53,7 +50,17 @@ angular.module("proton.controllers.Settings")
      * Save the organization name
      */
     $scope.saveOrganizationName = function() {
-        // $scope.organization.name;
+        Organization.update($scope.organization).then(function(result) {
+            if(result.data && result.data.Code === 1000) {
+                notify({message: $translate.instant('ORGANIZATION_UPDATED'), classes: 'notification-success'});
+            } else if(result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else {
+                notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+        });
     };
 
     /**

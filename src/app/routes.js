@@ -623,8 +623,8 @@ angular.module("proton.routes", [
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {
-            group: function(Group, networkActivityTracker) {
-                return networkActivityTracker.track(Group.get());
+            organization: function(Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
             },
             payment: function(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.status());
@@ -641,8 +641,8 @@ angular.module("proton.routes", [
     .state("secured.users", {
         url: "/users",
         resolve: {
-            group: function(Group, networkActivityTracker) {
-                return networkActivityTracker.track(Group.get());
+            organization: function(Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
@@ -662,8 +662,8 @@ angular.module("proton.routes", [
     .state("secured.domains", {
         url: "/domains",
         resolve: {
-            group: function(Group, networkActivityTracker) {
-                return networkActivityTracker.track(Group.get());
+            organization: function(Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
             },
             domains: function(Domain, networkActivityTracker) {
                 return networkActivityTracker.track(Domain.query());
