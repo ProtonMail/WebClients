@@ -17,7 +17,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Label,
     authentication,
     cacheMessages,
-    preloadMessage,
+    preloadConversation,
     confirmModal,
     cacheCounters,
     networkActivityTracker,
@@ -40,8 +40,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
-            $scope.$watch('conversations', function(newValue, oldValue) {
-                preloadMessage.set(newValue);
+            $scope.$watch('conversations', function(newValue, oldValue) {                
+                preloadConversation.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -114,7 +114,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        preloadMessage.reset();
+        preloadConversation.reset();
         angular.element($window).unbind('resize', $scope.mobileResponsive);
     };
 

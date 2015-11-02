@@ -15,10 +15,13 @@ angular.module("proton.cache", [])
     var api = {};
     var messagesCached = [];
     var conversationsCached = [];
-    var DELETE = 0;
-    var CREATE = 1;
+    var DELETE_CONVERSATION = 0;
+    var DELETE_MESSAGE = 0;
+    var CREATE_CONVERSATION = 1;
+    var CREATE_MESSAGE = 1;
     var UPDATE_DRAFT = 2;
-    var UPDATE_FLAG = 3;
+    var UPDATE_CONVERSATION = 3;
+    var UPDATE_MESSAGE = 3;
     // Parameters shared between api / cache / message view / message list
     var fields = [
         'AddressID',
@@ -333,9 +336,13 @@ angular.module("proton.cache", [])
             var data = result.data;
 
             if(data.Code === 1000) {
-                storeConversations([data.Conversation]);
-                storeMessages(data.Conversation.ID, data.Messages);
-                deferred.resolve(data.Conversation);
+                var conversation = data.Conversation;
+                var messages = data.Messages;
+
+                conversation.preloaded = true;
+                storeConversations([conversation]);
+                storeMessages(conversation.ID, messages);
+                deferred.resolve(conversation);
             } else {
                 deferred.reject();
             }
@@ -717,16 +724,25 @@ angular.module("proton.cache", [])
 
         _.each(events, function(event) {
             switch (event.Action) {
-                case DELETE:
+                case DELETE_CONVERSATION:
                     promises.push(api.delete(event));
                     break;
-                case CREATE:
+                case DELETE_MESSAGE:
+                    promises.push(api.delete(event));
+                    break;
+                case CREATE_CONVERSATION:
+                    promises.push(api.create(event));
+                    break;
+                case CREATE_MESSAGE:
                     promises.push(api.create(event));
                     break;
                 case UPDATE_DRAFT:
                     promises.push(api.updateDraft(event));
                     break;
-                case UPDATE_FLAG:
+                case UPDATE_CONVERSATION:
+                    promises.push(api.updateFlag(event));
+                    break;
+                case UPDATE_MESSAGE:
                     promises.push(api.updateFlag(event));
                     break;
                 default:
@@ -958,7 +974,7 @@ angular.module("proton.cache", [])
     return api;
 })
 
-.service('preloadMessage', function(
+.service('preloadConversation', function(
     $interval,
     cacheMessages
 ) {
@@ -967,12 +983,12 @@ angular.module("proton.cache", [])
     var interval = 5000; // 15 seconds // TODO edit
 
     /**
-    * Set current messages viewed
-    * @param {Array} messages
+    * Set current conversations viewed
+    * @param {Array} conversations
     */
-    api.set = function(messages) {
+    api.set = function(conversations) {
         api.reset();
-        api.add(messages); // Add unread messages to the queue
+        api.add(conversations); // Add unread conversations to the queue
     };
 
     /**
@@ -983,32 +999,32 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Add unread messages to the queue
-    * @param {Array} messages
+    * Add unread conversations to the queue
+    * @param {Array} conversations
     */
-    api.add = function(messages) {
-        // Add only unread messages to the queue
-        // Filter by message where the Body is undefined
-        queue = _.union(queue, _.where(messages, { IsRead: 0, Body: undefined }));
+    api.add = function(conversations) {
+        // Add only unread conversations to the queue
+        // Filter by conversation where the Body is undefined
+        queue = _.union(queue, _.where(conversations, { preloaded: undefined }));
     };
 
     /**
-    * Preload messages present in the queue
+    * Preload conversations present in the queue
     */
     api.preload = function() {
-        // Get the first message in the queue
-        var message  = _.first(queue);
+        // Get the first conversation in the queue
+        var conversation  = _.first(queue);
 
-        if(angular.isDefined(message)) {
-            // Preload the first message
-            cacheMessages.getMessage(message.ID); // Shutdown the preload
-            // Remove the first message in the queue
-            queue = _.without(queue, message);
+        if(angular.isDefined(conversation)) {
+            // Preload the first conversation
+            cacheMessages.getConversation(conversation.ID);
+            // Remove the first conversation in the queue
+            queue = _.without(queue, conversation);
         }
     };
 
     /**
-    * Loop around messages present in the queue to preload the Body
+    * Loop around conversations present in the queue to preload the Body
     */
     api.loop = function() {
         var looping = $interval(function() {
