@@ -360,6 +360,8 @@ angular.module("proton.cache", [])
             deferred.resolve(message);
         });
 
+        networkActivityTracker.track(deferred.promise);
+
         return deferred.promise;
     };
 
