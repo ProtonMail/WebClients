@@ -5,6 +5,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope,
     $state,
     $stateParams,
+    $timeout,
     cacheMessages,
     CONSTANTS,
     conversation,
@@ -18,6 +19,22 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeConversation', conversation.ID);
+
+    /**
+     * Initialization call
+     */
+    $scope.initialization = function() {
+        $scope.scrollToMessage(_.last($scope.messages));
+    };
+
+    $scope.scrollToMessage = function(message) {
+        var index = $scope.messages.indexOf(message);
+        var id = 'message' + index; // TODO improve it for the search case
+
+        $timeout(function() {
+            $('#pm_thread').animate({scrollTop: $('#' + id).offset().top}, 'slow');
+        }, 1000);
+    };
 
     /**
      * Toggle star conversation
@@ -64,4 +81,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             $state.go(current, {id: id});
         });
     };
+
+    // Call initialization
+    $scope.initialization();
 });
