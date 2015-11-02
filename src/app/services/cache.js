@@ -612,17 +612,14 @@ angular.module("proton.cache", [])
     api.updateDraft = function(event) {
         var location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
         var deferred = $q.defer();
+        var message = _.findWhere(messagesCached, {ID: event.ID});
 
-        if(angular.isDefined(cache[location])) {
-            var index = cache[location].indexOf(event.ID);
+        if(angular.isDefined(message)) {
+            var index = messagesCached.indexOf(message);
 
-            if(index !== -1) {
-                // updateHash(event.ID, event.Message);
-                reorder(location);
-            } else {
-                insert(location, event.Message);
-                // updateHash(event.ID, event.Message);
-            }
+            _.extend(messagesCached[index], event.Message);
+        } else {
+            messagesCached.push(event.Message);
         }
 
         deferred.resolve();
