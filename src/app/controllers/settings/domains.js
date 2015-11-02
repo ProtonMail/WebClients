@@ -11,13 +11,13 @@ angular.module("proton.controllers.Settings")
     dmarcModal,
     domains,
     domainModal,
-    group,
+    organization,
     members,
     notify,
     spfModal,
     verificationModal
 ) {
-    $scope.group = group.Group;
+    $scope.organization = organization.Organization;
     $scope.domains = domains.Domains;
     $scope.members = members.Members;
     $scope.addresses = addresses.Addresses;

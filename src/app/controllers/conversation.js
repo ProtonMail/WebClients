@@ -6,6 +6,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $state,
     $stateParams,
     cacheMessages,
+    CONSTANTS,
     conversation,
     Conversation,
     messages,
@@ -15,10 +16,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.conversation = conversation;
     $scope.messages = messages;
 
+    // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeConversation', conversation.ID);
 
+    /**
+     * Toggle star conversation
+     */
     $scope.toggleStar = function() {
-        if($scope.starred($scope.conversation)) {
+        if($scope.starred()) {
             Conversation.unstar(conversation.ID);
         } else {
             Conversation.star(conversation.ID);
@@ -27,20 +32,37 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         // TODO generate event
     };
 
+    /**
+     * Return status of the star conversation
+     */
+    $scope.starred = function() {
+        if($scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred + '') !== -1) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    /**
+     * Go to the next conversation
+     */
     $scope.nextConversation = function() {
         var current = $state.current.name;
         var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        cacheMessages.more(conversation.ID, location, 'next').then(function(id) {
+        cacheMessages.more($scope.conversation.ID, location, 'next').then(function(id) {
             $state.go(current, {id: id});
         });
     };
 
+    /**
+     * Go to the previous conversation
+     */
     $scope.previousConversation = function() {
         var current = $state.current.name;
         var location = (angular.isDefined($stateParams.label))?$stateParams.label:CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        cacheMessages.more(conversation.ID, location, 'previous').then(function(id) {
+        cacheMessages.more($scope.conversation.ID, location, 'previous').then(function(id) {
             $state.go(current, {id: id});
         });
     };

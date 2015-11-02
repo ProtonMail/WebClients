@@ -6,12 +6,12 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     cardModal,
-    group,
+    organization,
     Payment,
     paymentModal,
     stripeModal
 ) {
-    $scope.group = group.Group;
+    $scope.organization = organization.Organization;
     $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.plan = 'plus'; // TODO need initialization
