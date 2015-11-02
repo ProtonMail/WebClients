@@ -547,7 +547,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                 $scope.unselectAllLabels();
             }, function(error) {
-                error.message = 'Error during the labels request';
+                error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
                 deferred.reject(error);
             });
 
@@ -682,29 +682,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Open conversation
         $state.go('secured.' + $scope.mailbox + '.list.view', { id: conversation.ID });
-
-        //     networkActivityTracker.track(
-        //         Message.get({id: message.ID}).$promise.then(
-        //             function(m) {
-        //                 m.decryptBody(m.Body, m.Time).then(function(body) {
-        //                     m.Body = body;
-        //
-        //                     if(m.Attachments && m.Attachments.length > 0) {
-        //                         m.attachmentsToggle = true;
-        //                     }
-        //
-        //                     $rootScope.$broadcast('loadMessage', m);
-        //                 }, function(error) {
-        //                     notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
-        //                     $log.error(error); // TODO send to back-end
-        //                 });
-        //             }, function(error) {
-        //                 notify({message: 'Error during the getting message', classes: 'notification-danger'});
-        //                 $log.error(error); // TODO send to back-end
-        //             }
-        //         )
-        //     );
-
     };
 
     /**
