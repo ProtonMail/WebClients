@@ -657,6 +657,22 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+
+            this.next = function() {
+                if (this.step && this.step === 'address') {
+                    // do validation
+
+                    // next step
+                    this.step = 'password';
+                }
+                else if (this.step && this.step === 'password') {
+                    // do validation
+
+                    // next step
+                    this.step = 'thanks';
+
+                }
+            };
         }
     });
 })

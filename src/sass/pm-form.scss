@@ -40,8 +40,8 @@
         }
         select {
             margin: 0;
-            height: 32px;
-            line-height: 32px;
+            height: 30px;
+            line-height: 30px;
             padding-left: 10px;
             position: relative;
             z-index: 3;
@@ -58,8 +58,8 @@
             display: block;
             top: 0;
             bottom: 0;
-            height: 32px;
-            line-height: 32px;
+            height: 30px;
+            line-height: 30px;
             z-index: 1;
         }
     }
@@ -141,6 +141,7 @@
             color: #bbb;
             border-color: $border;
             background: #fcfcfc;
+            pointer-events: none;
         }
         &.success {
             color: #aecf96;
