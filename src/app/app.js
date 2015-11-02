@@ -37,7 +37,7 @@ angular.module("proton", [
     "proton.models.logs",
     "proton.models.events",
     "proton.models.payments",
-    "proton.models.groups",
+    "proton.models.organization",
     "proton.models.members",
     "proton.models.addresses",
     "proton.models.domains",
