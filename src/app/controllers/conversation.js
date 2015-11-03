@@ -15,7 +15,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     Conversation,
     messages,
     networkActivityTracker,
-    notify
+    notify,
+    tools
 ) {
     $scope.conversation = conversation;
     $scope.messages = messages;
@@ -31,26 +32,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         _.extend($scope.messages, messages);
         // TODO display last new last message
     });
-
-    var currentMailbox = function() {
-        return $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-    };
-
-    var currentLocation = function() {
-        var mailbox = currentMailbox();
-        var location;
-
-        switch(mailbox) {
-            case 'label':
-                location = $stateParams.label;
-                break;
-            default:
-                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                break;
-        }
-
-        return location;
-    };
 
     /**
      * Initialization call
@@ -150,7 +131,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var conversation = angular.copy($scope.conversation);
 
         // cache
-        conversation.LabelIDs = _.without(conversation.LabelIDs, currentLocation()); // remove current location
+        conversation.LabelIDs = _.without(conversation.LabelIDs, tools.currentLocation()); // remove current location
         conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
         events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
         cache.events(events, 'conversation');

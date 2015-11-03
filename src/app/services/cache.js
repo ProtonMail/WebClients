@@ -10,7 +10,8 @@ angular.module("proton.cache", [])
     Conversation,
     Message,
     cacheCounters,
-    networkActivityTracker
+    networkActivityTracker,
+    tools
 ) {
     var api = {};
     var messagesCached = [];
@@ -184,26 +185,6 @@ angular.module("proton.cache", [])
         });
     };
 
-    var currentMailbox = function() {
-        return $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-    };
-
-    var currentLocation = function() {
-        var mailbox = currentMailbox();
-        var location;
-
-        switch(mailbox) {
-            case 'label':
-                location = $stateParams.label;
-                break;
-            default:
-                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                break;
-        }
-
-        return location;
-    };
-
     /**
      * Return location specified in the request
      * @param {Object} request
@@ -352,7 +333,7 @@ angular.module("proton.cache", [])
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
             var total;
             var number;
-            var mailbox = currentMailbox();
+            var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
                 return conversation.LabelIDs.indexOf(location.toString()) !== -1;
             });
@@ -525,7 +506,7 @@ angular.module("proton.cache", [])
     * Preload conversations for inbox (first 2 pages) and sent (first page)
     */
     api.preloadInboxAndSent = function() {
-        var mailbox = currentMailbox();
+        var mailbox = tools.currentMailbox();
         var deferred = $q.defer();
         var requestInbox;
         var requestSent;
@@ -827,7 +808,7 @@ angular.module("proton.cache", [])
     api.more = function(conversationId, type) {
         var deferred = $q.defer();
         var request = {PageSize: 1, ID: conversationId};
-        var location = currentLocation();
+        var location = tools.currentLocation();
 
         if(type === 'previous') {
             request.Desc = 1;

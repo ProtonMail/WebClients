@@ -25,26 +25,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 ) {
     var lastChecked = null;
 
-    var currentMailbox = function() {
-        return $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
-    };
-
-    var currentLocation = function() {
-        var mailbox = currentMailbox();
-        var location;
-
-        switch(mailbox) {
-            case 'label':
-                location = $stateParams.label;
-                break;
-            default:
-                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                break;
-        }
-
-        return location;
-    };
-
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
@@ -441,7 +421,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // cache
         _.each(conversations, function(conversation) {
-            conversation.LabelIDs = _.without(conversation.LabelIDs, currentLocation()); // remove current location
+            conversation.LabelIDs = _.without(conversation.LabelIDs, tools.currentLocation()); // remove current location
             conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
             events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
         });
