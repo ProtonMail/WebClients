@@ -243,7 +243,7 @@ angular.module("proton.cache", [])
      * @param {String} id
      * @return {Promise}
      */
-    var queryMessages = function(id) {
+    var queryConversationMessages = function(id) {
         var deferred = $q.defer();
 
         Conversation.get(id).then(function(result) {
@@ -314,10 +314,32 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Return conversation list with request specified in cache or call api
-    * @param {Object} request
-    * @return {Promise}
-    */
+     * Query api to get messages
+     * @param {Object} request
+     * @return {Promise}
+     */
+    var queryMessages = function(request) {
+        return Message.query(request).$promise;
+    };
+
+    /**
+     * Return message list
+     * @param {Object} request
+     * @return {Promise}
+     */
+    api.queryMessages = function(request) {
+        var deferred = $q.defer();
+
+        deferred.resolve(queryMessages(request));
+
+        return deferred.promise;
+    };
+
+    /**
+     * Return conversation list with request specified in cache or call api
+     * @param {Object} request
+     * @return {Promise}
+     */
     api.queryConversations = function(request) {
         var deferred = $q.defer();
         var location = getLocation(request);
@@ -378,11 +400,11 @@ angular.module("proton.cache", [])
      * Try to find the result in the cache
      * @param {String} conversationId
      */
-    api.queryMessages = function(conversationId) {
+    api.queryConversationMessages = function(conversationId) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
-            deferred.resolve(queryMessages(conversationId));
+            deferred.resolve(queryConversationMessages(conversationId));
         };
 
 

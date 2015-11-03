@@ -21,7 +21,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     confirmModal,
     cacheCounters,
     networkActivityTracker,
-    notify
+    notify,
+    tools
 ) {
     var lastChecked = null;
 
@@ -223,8 +224,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.refreshConversations = function() {
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
+        var promise;
 
-        cache.queryConversations(request).then(function(conversations) {
+        if(['sent', 'drafts', 'search'].indexOf(tools.currentMailbox()) !== -1) {
+            promise = cache.queryMessages(request);
+        } else {
+            promise = cache.queryConversations(request);
+        }
+
+        promise.then(function(conversations) {
             $scope.conversations = conversations;
             deferred.resolve(conversations);
         }, function(error) {
