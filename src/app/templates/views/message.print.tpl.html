@@ -1,20 +1,60 @@
-<div class="container">
-    <h2>{{message.Subject}}</h2>
-
-    <p>{{ 'FROM' | translate }}: <strong>{{message.Sender.Name}} {{message.Sender.Address}}</strong></p>
-    <p ng-if="message.ToList.length > 0">{{ 'TO' | translate }}: <strong>{{ getEmails(message.ToList) }}</strong></p>
-    <p ng-if="message.CCList.length > 0">{{ 'CC' | translate }}: {{ getEmails(message.CCList) }}</p>
-    <p>{{ 'DATE' | translate }}: <strong>{{ message.Time | longReadableTime }}</strong></p>
-
-    <hr />
-
-    <div ng-init="displayContent(true)" ng-bind-html="content"></div>
-
-    <hr />
-
-    <div ng-show="message.Attachments.length > 0">
-        <div class="attachment" ng-repeat="attachment in message.Attachments">
-            {{attachment.Name}} - {{attachment.MIMEType}} - {{attachment.Size | humanSize}}
-        </div>
-    </div>
-</div>
+<table class="pm_table print">
+    <tr>
+        <td colspan="2">
+            <h1 style="padding: 1rem 0;">{{ message.Subject }}</h1>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span ng-show=" message.Location != '2' ">Received: </span>
+            <span ng-show=" message.Location == '2' ">Sent: </span>
+        </th>
+        <td>
+            <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
+            <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
+            <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
+            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+            <i class="fa fa-lock"></i> 
+            {{ ::message.Time | longReadableTime }}
+        </td>
+    </tr>
+    <tr>
+        <th>{{ 'FROM' | translate }}: </th>
+        <td>{{ message.Sender.Name || message.Sender.Address }}</td>
+    </tr>
+    <tr ng-if="message.ToList.length">
+        <th>{{ 'TO' | translate }}: </th>
+        <td>
+            <span ng-repeat="email in ::message.ToList">
+            {{ email.Name }} {{ email.Address }}
+            </span>
+        </td>
+    </tr>
+    <tr ng-if="message.CCList.length">
+        <th>{{ 'CC' | translate }}: </th>
+        <td>
+            <span ng-repeat="email in ::message.CCList">
+            {{ email.Name }} {{ email.Address }}
+            </span>
+        </td>
+    </tr>
+    <tr ng-if="message.BCCList.length">
+        <th>{{ 'BCC' | translate }}: </th>
+        <td>
+            <span ng-repeat="email in ::message.BCCList">
+            {{ email.Name }} {{ email.Address }}
+            </span>
+        </td>
+    </tr>
+    <tr ng-if="message.labels().length > 0">
+        <th>Labels: </th>
+        <td>
+            <em ng-repeat="label in message.labels()">{{ label.Name }}</em>
+        </td>
+    </tr>
+</table>
+<div 
+style="padding: 1rem;" 
+ng-bind-html="content" 
+transform-links="{{ content }}" 
+hide-first-blockquote="{{ content }}"></div>

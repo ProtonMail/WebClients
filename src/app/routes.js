@@ -529,11 +529,13 @@ angular.module("proton.routes", [
         onExit: function($rootScope) { $rootScope.isBlank = false; },
         views: {
             "main@": {
-                controller: "MessageViewController",
+                controller: "PrintController",
                 templateUrl: "templates/views/message.print.tpl.html",
                 resolve: {
-                    message: function($stateParams, cacheMessages, networkActivityTracker) {
+                    message: function($stateParams, cacheMessages, networkActivityTracker, $rootScope) {
                         if(angular.isDefined($stateParams.id)) {
+                            console.log(cacheMessages.getMessage($stateParams.id));
+                            $rootScope.printMode = true;
                             return networkActivityTracker.track(cacheMessages.getMessage($stateParams.id));
                         } else {
                             return true;

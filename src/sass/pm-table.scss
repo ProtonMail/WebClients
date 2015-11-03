@@ -6,6 +6,20 @@
     thead {
         border-top: 1px solid $border;
     }
+    &.print {
+        em {
+            font-style: normal;
+            border: 1px solid $border;
+            padding: 1px 4px;
+            margin-right: 4px;
+            border-radius: 2px;
+        }
+        th {
+            width: 4rem;
+            background-color: transparent;
+            text-transform: none;
+        }
+    }
     &.plain {
         th, td {
             line-height: initial;
@@ -119,12 +133,14 @@
             margin: 1rem 0;
             border: 1px solid $border;
             padding: 1rem;
+            border-top: none;
             th,
             td {
                 display: block;
                 width: 100% !important;
                 box-sizing: border-box;
                 height: initial !important;
+                border: none;
             }
         }
     }

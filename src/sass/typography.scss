@@ -47,7 +47,7 @@ p a {
 }
 
 pre {
-	white-space: pre;
+	white-space: pre-wrap;
 	margin: 1rem 0;
 	padding: 1rem;
 	background: $light;
@@ -58,4 +58,5 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	word-break: break-all;
 }
