@@ -108,48 +108,44 @@
                 -ms-flex-direction: column;
                 flex-direction: column;
                 transition: border-color .25s linear;
-                overflow: hidden;
                 min-width: 33%;
+                margin-top: 2rem;
+                position: relative;
+                header {
+                    position: absolute;
+                    left: -1px;
+                    right: -1px;
+                    top: -2rem;
+                    display: block;
+                    background: $primary;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: 700;
+                    border: 1px solid $primary;
+                    border-radius: 2px 2px 0 0; 
+                    padding: 0;
+                    height: 2rem;
+                    line-height: 2rem;
+                    display: none;
+                }
                 &.selected {
                     border-color: $primary;
-                    h3 em {
-                        top: 0;
+                    header {
+                        display: block;
                     }
                 }
                 &.middle {
-                    margin: 0 10px;
+                    margin: 2rem 10px 0;
                 }
                 h3 {
                     position: relative;
-                    em {
-                        width: 0;
-                        height: 0;
-                        border-style: solid;
-                        border-width: 0 50px 50px 0;
-                        border-color: transparent $primary transparent transparent;
-                        position: absolute;
-                        right: 0;
-                        top: -50px;
-                        transition: top .25s ease;
-                    }
-                    i {
-                        width: 30px;
-                        line-height: 30px;
-                        text-align: center;
-                        color: $white;
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        z-index: 2;
-                        font-size: 14px;
-                    }
                 }
                 h3,
                 .price {
                     line-height: 70px;
                     height: 70px;
                     display: block;
-                    padding: 0 20px;
+                    padding: 0 30px;
                     color: $primary;
                     font-weight: 400;
                     border-bottom: 1px solid $border;
@@ -159,30 +155,91 @@
                 }
                 legend {
                     font-size: inherit;
+                    position: relative;
+                    height: 2rem;
+                    line-height: 2rem;
+                    border: none;
+                    em {
+                        height: 1px;
+                        background: $border;
+                        position: absolute;
+                        top: 1rem;
+                        z-index: 1;
+                        display: block;
+                        width: 100%;
+                    }
+                    strong {
+                        position: relative;
+                        z-index: 2;
+                        line-height: 2rem;
+                        height: 1rem;
+                        padding-right: .5rem;
+                        background: $white;
+                    }
                 }
                 label {
                     display: inline-block;
+                }
+                .features {
+                    display: block;
+                    list-style-type: none;
+                    margin: 0 0 1rem 0;
+                    padding: 20px;
+                    background: $light;
+                    border-bottom: 1px solid $border;
+                    li {
+                        display: block;
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0 10px;
+                        line-height: 2rem;
+                        height: 2rem;
+                        border-bottom: 1px solid $border;
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                        .fa {
+                            margin-right: .5rem;
+                        }
+                        .fa-check {
+                            display: inline-block;
+                        }
+                        .fa-times {
+                            display: none;
+                        }
+                        &.disabled {
+                            .fa-check {
+                                display: none;
+                            }
+                            .fa-times {
+                                display: inline-block;
+                            }
+                        }
+                    }
                 }
                 .details {
                     -webkit-flex-grow: 1;
                         -ms-flex-positive: 1;
                             flex-grow: 1;
-                            padding: 10px 15px;
-                    p {
-                        margin: 0;
-                        line-height: 2rem;
-                    }
+                            padding: 10px 30px;
                     strong {
                         font-weight: 700;
                     }
+                    p a {
+                        text-decoration: none;
+                        .fa {
+                            width: 1.5rem;
+                            display: inline-block;
+                        }
+                    }
                     .feat {
                         clear: both;
-                        font-size: 90%;
                         .amount {
                             width: 3.25rem !important;
                         }
                         .pm_select {
                             float: right;
+                            margin-bottom: 0;
                         }
                         .cost {
                             width: 4.75rem !important;
@@ -222,29 +279,21 @@
                     }
                 }
                 .action {
-                    background: $primary;
-                    height: 45px;
-                    line-height: 45px;
+                    height: 5rem;
+                    line-height: 5rem;
                     text-align: center;
                     font-weight: 700;
-                    margin: 0 -1px -1px;
+                    margin: 0;
                     a {
+                        background: $primary;
                         color: $white;
+                        border-radius: 2px;
                         text-decoration: none;
-                        display: block;
-                        line-height: 45px;
-                    }
-                    &.active {
-                        background: lighten($border, 5%);
-                        margin: 0;
-                        a {
-                            color: $gray-light;
-                        }
-                    }
-                    &.white {
-                        background-color: $white;
-                        a {
-                            color: $gray;
+                        display: inline-block;
+                        line-height: 2rem;
+                        padding: 0 1rem;
+                        strong {
+                            font-weight: 400;
                         }
                     }
                 }

@@ -63,7 +63,10 @@
                 </div>
             </section>
             <section class="setting pm_form pull-right">
-                <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
+                <legend>
+                    <strong>{{ 'MY_SUBSCRIPTION' | translate }}</strong>
+                    <em></em>
+                </legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableSubscription">
                         <tr>
@@ -149,19 +152,19 @@
                         </div>
                     </header>
                     <div class="plans">
-                        <div class="plan" ng-class="{'selected': plan === 'basic'}">
+                        <div class="plan" ng-class="{'selected': plan === 'basic'}" ng-if="false">
+                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
-                                <em></em>
-                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Basic</strong>
-                                <small ng-show="plan === 'basic'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
                             <div class="details">
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>1000 MB Storage</strong>
-                                </p>
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>1000 MB Storage</strong>
+                                    </li>
+                                </ul>
                                 <table class="pm_table plain">
                                     <tr>
                                         <td>&nbsp;</td>
@@ -179,39 +182,39 @@
                             </div>
                         </div>
 
-                        <div class="plan middle" ng-class="{'selected': plan === 'plus'}">
+                        <div class="plan" ng-class="{'selected': plan === 'plus'}">
+                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
-                                <em></em>
-                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Plus</strong>
-                                <small ng-show="plan === 'plus'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
-                            <div class="details">
-                                <p>
+                            <ul class="features">
+                                <li>
                                     <i class="fa fa-check"></i>
-                                    <strong>5000 MB {{ 'STORAGE' | translate }}</strong>
-                                </p>
-                                <p>
+                                    <i class="fa fa-times"></i>
+                                    <strong>5,000 MB {{ 'STORAGE' | translate }}</strong>
+                                </li>
+                                <li>
                                     <i class="fa fa-check"></i>
-                                    <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                </p>
-                                <p>
+                                    <i class="fa fa-times"></i>
+                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                </li>
+                                <li>
                                     <i class="fa fa-check"></i>
-                                    <strong>{{ 'ADDRESSES' | translate }}</strong>
-                                </p>
-                                <p>
+                                    <i class="fa fa-times"></i>
+                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                </li>
+                                <li class="disabled">
                                     <i class="fa fa-check"></i>
-                                    <strong>{{ 'UNLIMITED_LABELS' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
                                     <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </p>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
-
+                                </li>
+                            </ul>                            
+                            <div class="details">
+                                <legend>
+                                    <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
+                                    <em></em>
+                                </legend>
                                 <div class="feat" ng-repeat="element in plusAdditionals">
                                     <label>
                                         <input type="checkbox" ng-model="element.checked" />
@@ -236,7 +239,7 @@
                                     <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
                                 </span>
                             </div>
-                            <div class="action" ng-class="{'white': plan === 'plus'}">
+                            <div class="action">
                                 <a href="#" ng-click="choose('plus')">
                                     <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                     <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
@@ -245,46 +248,43 @@
                             </div>
                         </div>
 
-                        <div class="plan" ng-class="{'selected': plan === 'business'}">
+                        <div class="plan middle" ng-class="{'selected': plan === 'business'}">
+                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
-                                <em></em>
-                                <i class="fa fa-check"></i>
                                 ProtonMail
                                 <strong>Business</strong>
-                                <small ng-show="plan === 'business'">({{ 'YOUR_PLAN' | translate }})</small>
                             </h3>
+                            <ul class="features">
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>10,000 MB {{ 'STORAGE' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>2 {{ 'USER_MASTER_SUB' | translate }}</strong>
+                                </li>
+                            </ul>                            
                             <div class="details">
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>10000 MB {{ 'STORAGE' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'ADDRESSES' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'UNLIMITED_LABELS' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </p>
-                                <p>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'USERS' | translate }}</strong>
-                                </p>
-                                <p>&nbsp;</p>
-                                <legend>{{ 'ADDITIONAL_PACKAGES' | translate }}</legend>
-
-                                <div class="feat" ng-repeat="element in businessAdditionals">
+                                <legend>
+                                    <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
+                                    <em></em>
+                                </legend>
+                                <div class="feat" ng-repeat="element in plusAdditionals">
                                     <label>
                                         <input type="checkbox" ng-model="element.checked" />
-                                        {{ element.number }} {{ element.title }}
+                                        {{ element.number }} <small></small> {{ element.title }}
                                         <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                     </label>
                                     <span class="cost">
@@ -299,12 +299,71 @@
                             </div>
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
+                                <span>
+                                    {{ total('plus') | number: 2 | currency: currency }}
+                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
+                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
+                                </span>
+                            </div>
+                            <div class="action">
+                                <a href="#" ng-click="choose('plus')">
+                                    <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
+                                    <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="plan" ng-class="{'selected': plan === 'enterprise'}">
+                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                            <h3>
+                                ProtonMail
+                                <strong>Enterprise</strong>
+                            </h3>
+                            <ul class="features">
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>10000 MB {{ 'STORAGE' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>{{ 'DEDICATED_ACC_MGR' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>{{ 'DEDICATED_PRIORITY_SUP' | translate }}</strong>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-times"></i>
+                                    <strong>{{ 'CUST_PKG' | translate }}</strong>
+                                </li>
+                            </ul>
+                            <div class="details">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>
+                                    <a href="#"><i class="fa fa-phone"></i> +41 12 34 567 891</a>
+                                    <br>
+                                    <a href="#"><i class="fa fa-envelope"></i> sales@protonmail.com</a>
+                                </p>
+                                <p>Excepteur sint occaecat cupidatat non proident.</p>
+                            </div>
+                            <div class="price">
+                                <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>{{ total('business') | number: 2 | currency: currency }}
                                     <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
                                     <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
                                 </span>
                             </div>
-                            <div class="action" ng-class="{'white': plan === 'business'}">
+                            <div class="action">
                                 <a href="#" ng-click="choose('business')">
                                     <strong ng-show="plan === 'business'">{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
                                     <strong ng-show="plan !== 'business'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
