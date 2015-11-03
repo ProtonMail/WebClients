@@ -1,18 +1,18 @@
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.inbox" class="location label label-default" title="{{ 'INBOX' | translate }}">
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.inbox)" class="pm_label" title="{{ 'INBOX' | translate }}">
     <i class="fa fa-inbox"></i> {{ 'INBOX' | translate }}
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.drafts" class="location label label-default" title="{{ 'DRAFTS' | translate }}">
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)" class="pm_label" title="{{ 'DRAFTS' | translate }}">
     <i class="fa fa-file-text-o"></i> {{ 'DRAFTS' | translate }}
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.sent" class="location label label-default" title="{{ 'SENT' | translate }}">
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.sent)" class="pm_label" title="{{ 'SENT' | translate }}">
     <i class="fa fa-sign-out"></i> {{ 'SENT' | translate }}
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.archive" class="location label label-default" title="{{ 'ARCHIVE' | translate }}">
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.archive)" class="pm_label" title="{{ 'ARCHIVE' | translate }}">
     <i class="fa fa-archive"></i> {{ 'ARCHIVE' | translate }}
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.spam" class="location label label-default" title="{{ 'SPAM' | translate }}">
-    <i class="fa fa-spam-flame"></i> {{ 'SPAM' | translate }}
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.spam)" class="pm_label" title="{{ 'SPAM' | translate }}">
+    <i class="fa fa-ban"></i> {{ 'SPAM' | translate }}
 </span>
-<span ng-if="message.Location == CONSTANTS.MAILBOX_IDENTIFIERS.trash" class="location label label-default" title="{{ 'TRASH' | translate }}">
+<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.trash)" class="pm_label" title="{{ 'TRASH' | translate }}">
     <i class="fa fa-trash-o"></i> {{ 'TRASH' | translate }}
 </span>
