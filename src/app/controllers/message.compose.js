@@ -19,7 +19,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
     User,
     attachments,
     authentication,
-    cacheMessages,
+    cache,
     notify,
     pmcw,
     tools
@@ -926,7 +926,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                     var events = [];
 
                     events.push({Action: 2, ID: result.Message.ID, Message: result.Message});
-                    cacheMessages.events(events);
+                    cache.events(events);
 
                     if(notification === true) {
                         notify({message: "Message saved", classes: 'notification-success'});
@@ -1095,7 +1095,7 @@ angular.module("proton.controllers.Messages.Compose", ["proton.constants"])
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
                                     } else {
-                                        cacheMessages.events(events);
+                                        cache.events(events);
                                         notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);

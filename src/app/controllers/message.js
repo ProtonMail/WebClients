@@ -17,7 +17,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     alertModal,
     attachments,
     authentication,
-    cacheMessages,
+    cache,
     confirmModal,
     CONSTANTS,
     Label,
@@ -39,7 +39,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     });
 
     $scope.$on('refreshMessage', function() {
-        cacheMessages.getMessage($scope.message.ID).then(function(message) {
+        cache.getMessage($scope.message.ID).then(function(message) {
             _.extend($scope.message, message);
         });
     });
@@ -72,7 +72,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if(angular.isDefined($scope.message.Body)) {
             $scope.displayContent();
         } else {
-            cacheMessages.getMessage($scope.message.ID).then(function(message) {
+            cache.getMessage($scope.message.ID).then(function(message) {
                 _.extend($scope.message, message);
                 $scope.displayContent();
             });
@@ -119,7 +119,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         networkActivityTracker.track(promise);
-        cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
     };
 
     $scope.openSafariWarning = function() {
@@ -227,7 +227,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         newMessage.IsRead = 1;
         promise = Message.read({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
-        cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
     };
 
     $scope.markAsUnread = function() {
@@ -237,7 +237,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         newMessage.IsRead = 0;
         promise = Message.unread({IDs: [message.ID]}).$promise;
         networkActivityTracker.track(promise);
-        cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
         $scope.back();
     };
 
@@ -384,7 +384,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var newMessage = angular.copy(message);
 
         newMessage.LabelIDs = _.without(message.LabelIDs, id);
-        cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
         networkActivityTracker.track(promise);
     };
 
@@ -422,7 +422,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             $q.all(promises).then(function() {
                 newMessage.LabelIDs = _.difference(_.uniq(newMessage.LabelIDs.concat(toApply)), toRemove);
-                cacheMessages.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+                cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
 
                 if(alsoArchive === true) {
                     deferred.resolve($scope.moveMessageTo('archive'));
@@ -550,7 +550,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         promise.then(function(result) {
             messages.push({Action: action, ID: newMessage.ID, Message: newMessage});
-            cacheMessages.events(events);
+            cache.events(events);
             $scope.back();
         });
 

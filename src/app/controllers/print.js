@@ -17,7 +17,7 @@ angular.module("proton.controllers.Print", ["proton.constants"])
     alertModal,
     attachments,
     authentication,
-    cacheMessages,
+    cache,
     confirmModal,
     CONSTANTS,
     Label,
@@ -41,7 +41,7 @@ angular.module("proton.controllers.Print", ["proton.constants"])
         if(angular.isDefined($scope.message.Body)) {
             $scope.displayContent();
         } else {
-            cacheMessages.getMessage($scope.message.ID).then(function(message) {
+            cache.getMessage($scope.message.ID).then(function(message) {
                 _.extend($scope.message, message);
                 $scope.displayContent();
             });

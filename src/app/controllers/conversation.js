@@ -9,7 +9,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $timeout,
     $translate,
     authentication,
-    cacheMessages,
+    cache,
     CONSTANTS,
     conversation,
     Conversation,
@@ -32,6 +32,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         // TODO display last new last message
     });
 
+    var currentMailbox = function() {
+        return $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+    };
+
+    var currentLocation = function() {
+        var mailbox = currentMailbox();
+        var location;
+
+        switch(mailbox) {
+            case 'label':
+                location = $stateParams.label;
+                break;
+            default:
+                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                break;
+        }
+
+        return location;
+    };
+
     /**
      * Initialization call
      */
@@ -40,7 +60,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Remove the last message in conversation view
             var popped = $scope.messages.pop();
             // Open it in the composer
-            cacheMessages.getMessage(popped.ID).then(function(message) {
+            cache.getMessage(popped.ID).then(function(message) {
                 message.decryptBody(message.Body, message.Time).then(function(body) {
                     message.Body = body;
 
@@ -72,8 +92,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Mark current conversation as read
      */
     $scope.read = function() {
-        // TODO generate event
-        Conversation.read([$scope.conversation.ID]);
+        var events = [];
+        var conversation = angular.copy($scope.conversation);
+
+        // cache
+        conversation.NumUnread = 0;
+        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        cache.events(events, 'conversation');
+
+        // api
+        Conversation.read([conversation.ID]);
         $scope.back();
     };
 
@@ -81,8 +109,18 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Mark current conversation as unread
      */
     $scope.unread = function() {
-        // TODO generate event
-        Conversation.unread([$scope.conversation.ID]);
+        var events = [];
+        var conversation = angular.copy($scope.conversation);
+
+        // cache
+        conversation.NumUnread = $scope.messages.length;
+        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        cache.events(events, 'conversation');
+
+        // api
+        Conversation.unread([conversation.ID]);
+
+        // back to conversation list
         $scope.back();
     };
 
@@ -90,8 +128,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Delete current conversation
      */
     $scope.delete = function() {
-        // TODO generate event
+        var events = [];
+        var conversation = angular.copy($scope.conversation);
+
+        // cache
+        events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+        cache.events(events, 'conversation');
+
+        // api
         Conversation.delete([$scope.conversation.ID]);
+
+        // back to conversation list
         $scope.back();
     };
 
@@ -99,8 +146,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Move current conversation to a specific location
      */
     $scope.move = function(location) {
-        // TODO generate event
+        var events = [];
+        var conversation = angular.copy($scope.conversation);
+
+        // cache
+        conversation.LabelIDs = _.without(conversation.LabelIDs, currentLocation()); // remove current location
+        conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
+        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        cache.events(events, 'conversation');
+
+        // api
         Conversation[location]([$scope.conversation.ID]);
+
+        // back to conversation list
         $scope.back();
     };
 
@@ -195,7 +253,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.nextConversation = function() {
         var current = $state.current.name;
 
-        cacheMessages.more($scope.conversation.ID, 'next').then(function(id) {
+        cache.more($scope.conversation.ID, 'next').then(function(id) {
             $state.go(current, {id: id});
         });
     };
@@ -206,7 +264,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.previousConversation = function() {
         var current = $state.current.name;
 
-        cacheMessages.more($scope.conversation.ID, 'previous').then(function(id) {
+        cache.more($scope.conversation.ID, 'previous').then(function(id) {
             $state.go(current, {id: id});
         });
     };

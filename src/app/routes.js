@@ -532,11 +532,10 @@ angular.module("proton.routes", [
                 controller: "PrintController",
                 templateUrl: "templates/views/message.print.tpl.html",
                 resolve: {
-                    message: function($stateParams, cacheMessages, networkActivityTracker, $rootScope) {
+                    message: function($stateParams, cache, networkActivityTracker, $rootScope) {
                         if(angular.isDefined($stateParams.id)) {
-                            console.log(cacheMessages.getMessage($stateParams.id));
                             $rootScope.printMode = true;
-                            return networkActivityTracker.track(cacheMessages.getMessage($stateParams.id));
+                            return networkActivityTracker.track(cache.getMessage($stateParams.id));
                         } else {
                             return true;
                         }
@@ -727,16 +726,16 @@ angular.module("proton.routes", [
             templateUrl: 'templates/partials/conversation.tpl.html',
             controller: 'ConversationController',
             resolve: {
-                conversation: function($stateParams, cacheMessages, networkActivityTracker) {
+                conversation: function($stateParams, cache, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cacheMessages.getConversation($stateParams.id));
+                        return networkActivityTracker.track(cache.getConversation($stateParams.id));
                     } else {
                         return true;
                     }
                 },
-                messages: function($stateParams, cacheMessages, networkActivityTracker) {
+                messages: function($stateParams, cache, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cacheMessages.queryMessages($stateParams.id));
+                        return networkActivityTracker.track(cache.queryMessages($stateParams.id));
                     } else {
                         return true;
                     }
@@ -787,6 +786,6 @@ angular.module("proton.routes", [
     };
 
     $rootScope.deselectAll = function() {
-        $rootScope.$broadcast('unselectAllMessages');
+        $rootScope.$broadcast('unselectAllConversations');
     };
 });

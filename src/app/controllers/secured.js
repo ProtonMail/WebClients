@@ -9,7 +9,7 @@ angular.module("proton.controllers.Secured", [])
     authentication,
     eventManager,
     cacheCounters,
-    cacheMessages,
+    cache,
     CONSTANTS,
     Stripe
 ) {
@@ -44,7 +44,7 @@ angular.module("proton.controllers.Secured", [])
     ];
 
     eventManager.start(authentication.user.EventID);
-    cacheMessages.preloadInboxAndSent();
+    cache.preloadInboxAndSent();
     cacheCounters.query();
 
     $rootScope.isSecure = function() {

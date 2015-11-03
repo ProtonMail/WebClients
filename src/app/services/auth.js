@@ -527,7 +527,7 @@ angular.module("proton.authentication", [
     return api;
 })
 
-.run(function($rootScope, authentication, eventManager, cacheMessages, CONFIG) {
+.run(function($rootScope, authentication, eventManager, cache, CONFIG) {
     authentication.detectAuthenticationState();
     //authentication.refreshIfNecessary();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
@@ -535,7 +535,7 @@ angular.module("proton.authentication", [
     $rootScope.isSecure = authentication.isSecured();
     $rootScope.logout = function() {
         eventManager.stop();
-        cacheMessages.clear();
+        cache.clear();
         authentication.logout();
     };
 });

@@ -8,7 +8,7 @@ angular.module("proton.event", ["proton.constants"])
 		$cookies,
 		$log,
 		authentication,
-		cacheMessages,
+		cache,
 		cacheCounters,
 		Contact,
 		CONSTANTS,
@@ -93,35 +93,22 @@ angular.module("proton.event", ["proton.constants"])
 					$rootScope.dontUpdateNextCounter = true;
 				}
 			},
-			manageTotals: function(totals) {
-				if(angular.isDefined(totals)) {
-					// Label case
-					_.each(authentication.user.Labels, function(label) {
-						var obj = _.findWhere(totals.Labels, {LabelID: label.ID});
-
-						if(angular.isDefined(obj)) {
-							cacheCounters.update(label.ID, obj.Count, undefined);
-						} else {
-							cacheCounters.update(label.ID, 0, undefined);
-						}
+			manageCounts: function(counts) {
+				if(angular.isDefined(counts)) {
+					_.each(counts, function(count) {
+						cacheCounters.update(count.LabelID, count.Total, count.Unread);
 					});
-					// Folder case
-					_.each([0, 1, 2, 3, 4, 6], function(location) {
-						var obj = _.findWhere(totals.Locations, {Location: location});
-
-						if(angular.isDefined(obj)) {
-							cacheCounters.update(location, obj.Count, undefined);
-						} else {
-							cacheCounters.update(location, 0, undefined);
-						}
-					});
-					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, totals.Starred, undefined);
 					$rootScope.dontUpdateNextCounter = true;
 				}
 			},
 			manageMessages: function(messages) {
 				if (angular.isDefined(messages)) {
-					cacheMessages.events(messages);
+					cache.events(messages, 'message');
+				}
+			},
+			manageConversations: function(conversations) {
+				if(angular.isDefined(conversations)) {
+					cache.events(conversations, 'conversation');
 				}
 			},
 			manageStorage: function(storage) {
@@ -134,7 +121,7 @@ angular.module("proton.event", ["proton.constants"])
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manageNotices: function(notices) {
-				if(angular.isDefined(notices)) {
+				if(angular.isDefined(notices) && notices.length > 0) {
 					for(var i = 0; i < notices.length; i++) {
 						var message = notices[i];
 						var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
@@ -161,7 +148,7 @@ angular.module("proton.event", ["proton.constants"])
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					cacheMessages.reset();
+					cache.reset();
 					eventModel.manageID(data.EventID);
 				} else if (data.Reload === 1) {
 					$window.location.reload();
@@ -169,14 +156,14 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
-					this.manageUnreads(data.Unread);
- 					this.manageTotals(data.Total);
+					this.manageCounts(data.Counts);
+					this.manageConversations(data.Conversations);
 					this.manageMessages(data.Messages);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}
 				this.manageNotices(data.Notices);
-				cacheMessages.expiration();
+				cache.expiration();
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {

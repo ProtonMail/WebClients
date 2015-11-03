@@ -58,18 +58,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'get',
                 url: url.get() + '/messages/unread'
             },
-            query: {
-                method: 'get',
-                isArray: false,
-                url: url.get() + '/messages',
-                transformResponse: function(data) {
-                    var json = angular.fromJson(data);
-
-                    $rootScope.Total = json.Total;
-
-                    return json;
-                }
-            },
             latest: {
                 method: 'get',
                 url: url.get() + '/messages/latest/:time'

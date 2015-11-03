@@ -16,7 +16,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Message,
     Label,
     authentication,
-    cacheMessages,
+    cache,
     preloadConversation,
     confirmModal,
     cacheCounters,
@@ -24,6 +24,26 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     notify
 ) {
     var lastChecked = null;
+
+    var currentMailbox = function() {
+        return $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+    };
+
+    var currentLocation = function() {
+        var mailbox = currentMailbox();
+        var location;
+
+        switch(mailbox) {
+            case 'label':
+                location = $stateParams.label;
+                break;
+            default:
+                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                break;
+        }
+
+        return location;
+    };
 
     $scope.initialization = function() {
         // Variables
@@ -42,7 +62,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
                 preloadConversation.set(newValue);
-                $rootScope.numberSelectedMessages = $scope.selectedMessages().length;
+                $rootScope.numberSelectedMessages = $scope.conversationsSelected().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -64,10 +84,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.refreshConversations();
         });
 
-        $scope.$on('refreshConversationsCache', function(){
-            $scope.refreshConversationsCache();
-        });
-
         $scope.$on('unactiveConversations', function() {
             $scope.unactiveConversations();
         });
@@ -77,11 +93,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         $scope.$on('goToFolder', function(event) {
-            $scope.unselectAllMessages();
+            $scope.unselectAllConversations();
         });
 
-        $scope.$on('unselectAllMessages', function(event) {
-            $scope.unselectAllMessages();
+        $scope.$on('unselectAllConversations', function(event) {
+            $scope.unselectAllConversations();
         });
 
         $scope.$on('discardDraft', function(event, id) {
@@ -101,13 +117,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         $scope.$on('starMessages', function(event) {
-            var ids = $scope.selectedIds();
+            var ids = $scope.idsSelected();
             var promise;
 
-            _.each($scope.selectedMessages(), function(message) { message.Starred = 1; });
+            _.each($scope.conversationsSelected(), function(message) { message.Starred = 1; });
             promise = Message.star({IDs: ids}).$promise;
             networkActivityTracker.track(promise);
-            $scope.unselectAllMessages();
+            $scope.unselectAllConversations();
         });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
@@ -119,7 +135,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.actionsDelayed = function() {
-        $scope.unselectAllMessages();
+        $scope.unselectAllConversations();
         $('#page').val($scope.page);
         $('#page').change(function(event) {
             $scope.goToPage();
@@ -228,7 +244,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
 
-        cacheMessages.queryConversations(request).then(function(conversations) {
+        cache.queryConversations(request).then(function(conversations) {
             $scope.conversations = conversations;
             deferred.resolve(conversations);
         }, function(error) {
@@ -239,24 +255,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.refreshConversationsCache = function () {
-        var request = $scope.getConversationsParameters($scope.mailbox);
-        var cache = cacheMessages.fromCache(request);
-
-        if(cache !== false) {
-            $scope.conversations = cache;
-        }
-    };
-
     $scope.unactiveConversations = function() {
-        _.each($scope.conversations, function(message) {
-            message.Active = false;
+        _.each($scope.conversations, function(conversation) {
+            conversation.Active = false;
         });
     };
 
     $scope.activeConversation = function(id) {
-        _.each($scope.conversations, function(message) {
-            message.Active = angular.isDefined(id) && message.ID === id;
+        _.each($scope.conversations, function(conversation) {
+            conversation.Active = angular.isDefined(id) && conversation.ID === id;
         });
     };
 
@@ -307,8 +314,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var status = true;
 
         if ($scope.conversations && $scope.conversations.length > 0) {
-            _.forEach($scope.conversations, function(message) {
-                if (!!!message.Selected) {
+            _.forEach($scope.conversations, function(conversation) {
+                if (!!!conversation.Selected) {
                     status = false;
                 }
             });
@@ -323,67 +330,133 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var status = $scope.allSelectedCheckbox;
 
         if(status === true) {
-            $scope.unselectAllMessages();
+            $scope.unselectAllConversations();
         } else {
             $scope.selectAllMessages();
         }
     };
 
     $scope.selectAllMessages = function() {
-        _.forEach($scope.conversations, function(message) {
-            message.Selected = true;
+        _.each($scope.conversations, function(conversation) {
+            conversation.Selected = true;
         });
 
         $scope.allSelectedCheckbox = true;
     };
 
-    $scope.unselectAllMessages = function() {
-        _.forEach($scope.conversations, function(conversations) {
+    $scope.unselectAllConversations = function() {
+        _.each($scope.conversations, function(conversations) {
             conversations.Selected = false;
         });
 
         $scope.allSelectedCheckbox = false;
     };
 
-    $scope.selectedMessages = function() {
-        return _.select($scope.conversations, function(conversation) {
-            return conversation.Selected === true;
+    $scope.conversationsSelected = function() {
+        return _.where($scope.conversations, {Selected: true});
+    };
+
+    $scope.idsSelected = function() {
+        return _.map($scope.conversationsSelected(), function(conversation) { return conversation.ID; });
+    };
+
+    $scope.conversationsSelectedWithReadStatus = function(bool) {
+        return _.select($scope.conversationsSelected(), function(conversation) {
+            return conversation.IsRead === +bool;
         });
     };
 
-    $scope.selectedIds = function() {
-        return _.map($scope.selectedMessages(), function(message) { return message.ID; });
-    };
-
-    $scope.selectedMessagesWithReadStatus = function(bool) {
-        return _.select($scope.selectedMessages(), function(message) {
-            return message.IsRead === +bool;
-        });
-    };
-
-    $scope.setMessagesReadStatus = function(status) {
-        var messages = $scope.selectedMessagesWithReadStatus(!status);
-        var ids = _.map(messages, function(message) { return message.ID; });
-        var promise = (status) ? Message.read({IDs: ids}).$promise : Message.unread({IDs: ids}).$promise;
+    /**
+     * Mark conversations selected as read
+     */
+    $scope.read = function() {
+        var ids = $scope.idsSelected();
+        var conversations = angular.copy($scope.conversationsSelected());
         var events = [];
 
-        _.each(messages, function(message) {
-            var newMessage = {};
-
-            newMessage.ID = message.ID;
-            newMessage.IsRead = +status;
-            newMessage.Time = message.Time;
-            events.push({Action: 3, ID: newMessage.ID, Message: newMessage});
+        // cache
+        _.each(conversations, function(conversation) {
+            conversation.NumUnread = 0;
+            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
         });
 
-        cacheMessages.events(events);
+        cache.events(events, 'conversation');
 
-        $scope.unselectAllMessages();
+        // api
+        Conversation.read(ids);
+
+        $scope.unselectAllConversations();
+    };
+
+    /**
+     * Mark conversations selected as unread
+     */
+    $scope.unread = function() {
+        var ids = $scope.idsSelected();
+        var conversations = angular.copy($scope.conversationsSelected());
+        var events = [];
+
+        // cache
+        _.each(conversations, function(conversation) {
+            conversation.NumUnread = 1;
+            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        });
+
+        cache.events(events, 'conversation');
+
+        // api
+        Conversation.unread(ids);
+
+        $scope.unselectAllConversations();
+    };
+
+    /**
+     * Delete conversations selected
+     */
+    $scope.delete = function() {
+        var ids = $scope.idsSelected();
+        var conversations = angular.copy($scope.conversationsSelected());
+        var events = [];
+
+        // cache
+        _.each(conversations, function(conversation) {
+            events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+        });
+
+        cache.events(events, 'conversation');
+
+        // api
+        Conversation.delete(ids);
+
+        $scope.unselectAllConversations();
+    };
+
+    /**
+     * Move conversation to an other location
+     */
+    $scope.move = function(location) {
+        var ids = $scope.idsSelected();
+        var conversations = angular.copy($scope.conversationsSelected());
+        var events = [];
+
+        // cache
+        _.each(conversations, function(conversation) {
+            conversation.LabelIDs = _.without(conversation.LabelIDs, currentLocation()); // remove current location
+            conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
+            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        });
+
+        cache.events(events, 'conversation');
+
+        // api
+        Conversation[location](ids);
+
+        $scope.unselectAllConversations();
     };
 
     $scope.discardDraft = function(id) {
         var movedMessages = [];
-        var message = cacheMessages.getMessage(id).then(function(message) {
+        var message = cache.getMessage(id).then(function(message) {
             Message.trash({IDs: [id]}).$promise.then(function(result) {
 
                 movedMessages.push({
@@ -394,7 +467,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     Starred: message.Starred
                 });
 
-                cacheMessages.events([{
+                cache.events([{
                     Action: 3,
                     ID: message.ID,
                     Message: {
@@ -417,13 +490,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.moveMessagesTo = function(mailbox) {
         var deferred = $q.defer();
-        var ids = $scope.selectedIds();
+        var ids = $scope.idsSelected();
         var inDelete = mailbox === 'delete';
         var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
         var events = [];
         var movedMessages = [];
 
-        _.forEach($scope.selectedMessages(), function (message) {
+        _.forEach($scope.conversationsSelected(), function (message) {
             message.Selected = false;
 
             var event = {
@@ -447,10 +520,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         if(events.length > 0) {
-            cacheMessages.events(events);
+            cache.events(events);
         }
 
-        $scope.unselectAllMessages();
+        $scope.unselectAllConversations();
 
         var promiseSuccess = function(result) {
             if(inDelete) {
@@ -491,15 +564,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
-        var messageIDs = $scope.selectedIds();
+        var messageIDs = $scope.idsSelected();
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var tooManyLabels = false;
-        var selectedMessages = $scope.selectedMessages();
+        var conversationsSelected = $scope.conversationsSelected();
 
         // Detect if a message will have too many labels
-        _.each(selectedMessages, function(message) {
+        _.each(conversationsSelected, function(message) {
             if(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove).length > 5) {
                 tooManyLabels = true;
             }
@@ -519,7 +592,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $q.all(promises).then(function(results) {
                 var events = [];
 
-                _.each(selectedMessages, function(message) {
+                _.each(conversationsSelected, function(message) {
                     var newMessage = angular.copy(message);
 
                     if(alsoArchive === true) {
@@ -536,12 +609,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     });
                 });
 
-                cacheMessages.events(events);
+                cache.events(events);
 
                 if(alsoArchive === true) {
                     deferred.resolve($scope.moveMessagesTo('archive'));
                 } else {
-                    $scope.unselectAllMessages();
+                    $scope.unselectAllConversations();
                     deferred.resolve();
                 }
 
@@ -573,7 +646,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.goToPage = function(page, scrollToBottom) {
         $rootScope.scrollToBottom = scrollToBottom === true;
-        $scope.unselectAllMessages();
+        $scope.unselectAllConversations();
         $scope.page = page;
         if (page > 0 && $scope.conversationCount() > ((page - 1) * $scope.conversationsPerPage)) {
             if (page === 1) {
@@ -638,7 +711,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.starred = function(conversation) {
-        if(conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred + '') !== -1) {
+        if(conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1) {
             return true;
         } else {
             return false;
@@ -654,24 +727,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             color: $scope.getLabel(id).Color,
             borderColor: $scope.getLabel(id).Color
         };
-    };
-
-    /**
-     * Move conversation to an other location
-     */
-    $scope.moveTo = function(location) {
-        if(location === 'delete') {
-
-        } else {
-
-        }
-    };
-
-    /**
-     * Delete conversation
-     */
-    $scope.delete = function() {
-        Conversation.delete();
     };
 
     /**
@@ -747,9 +802,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                     promise.then(
                         function(result) {
+                            cache.clearLocation(location);
                             cacheCounters.empty(location);
                             $rootScope.$broadcast('refreshCounters');
-                            $rootScope.$broadcast('refreshConversationsCache');
+                            $rootScope.$broadcast('refreshConversations');
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
                         },
                         function(error) {
