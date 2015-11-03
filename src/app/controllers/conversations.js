@@ -724,7 +724,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Open conversation
-        $state.go('secured.' + $scope.mailbox + '.list.view', { id: conversation.ID });
+        $state.go('secured.' + $scope.mailbox + '.list.view', { id: conversation.ConversationID || conversation.ID });
     };
 
     /**

@@ -55,6 +55,12 @@ angular.module("proton.models.message", ["proton.constants"])
 
                     $rootScope.Total = json.Total;
 
+                    _.each(json.Messages, function(message) {
+                        message.NumAttachments = message.HasAttachment;
+                        message.Senders = [message.Sender];
+                        message.Recipients = [].concat(message.ToList).concat(message.CCList).concat(message.BCCList);
+                    });
+
                     return json.Messages;
                 }
             },

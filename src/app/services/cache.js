@@ -329,8 +329,55 @@ angular.module("proton.cache", [])
      */
     api.queryMessages = function(request) {
         var deferred = $q.defer();
+        var location = getLocation(request);
+        var context = cacheContext(request);
+        var callApi = function() {
+            deferred.resolve(queryMessages(request));
+        };
 
-        deferred.resolve(queryMessages(request));
+        if(context) {
+            var page = request.Page || 0;
+            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
+            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var total;
+            var number;
+            var mailbox = tools.currentMailbox();
+            var messages = _.filter(messagesCached, function(message) {
+                return message.LabelIDs.indexOf(location.toString()) !== -1;
+            });
+
+            switch(mailbox) {
+                case 'label':
+                    total = cacheCounters.total($stateParams.label);
+                    break;
+                default:
+                    total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    break;
+            }
+
+            if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
+                number = CONSTANTS.MESSAGES_PER_PAGE;
+            } else {
+                if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                    number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                } else {
+                    number = CONSTANTS.MESSAGES_PER_PAGE;
+                }
+            }
+
+            messages = messages.slice(start, end);
+
+            // Supposed total equal to the total cache?
+            if(messages.length === number) {
+                console.log('Correct number in the cache');
+                deferred.resolve(messages);
+            } else {
+                console.log('Not the correct number in the cache'); // TODO remove it
+                callApi();
+            }
+        } else {
+            callApi();
+        }
 
         return deferred.promise;
     };
