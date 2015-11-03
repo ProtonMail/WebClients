@@ -19,6 +19,12 @@
             background-color: transparent;
             text-transform: none;
         }
+        tr {
+            border: none;
+        }
+        table {
+            border-width: 0 0 1px 0;
+        }
     }
     &.plain {
         th, td {

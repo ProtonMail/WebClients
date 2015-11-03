@@ -1,0 +1,17 @@
+#secured-print {
+	* {
+		word-break: break-word;
+	}
+	table.print {
+		width: initial !important;
+		b, strong {
+			font-weight: 400;
+		}
+		i, em {
+			font-style: normal;
+		}
+		.pm_button {
+			margin: 4px 4px 0 0;
+		}
+	}
+}

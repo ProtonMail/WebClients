@@ -5,10 +5,10 @@
         </td>
     </tr>
     <tr>
-        <th>
-            <span ng-show=" message.Location != '2' ">Received: </span>
-            <span ng-show=" message.Location == '2' ">Sent: </span>
-        </th>
+        <td style="width:14rem" width="14rem">
+            <b ng-show=" message.Location != '2' ">Received: </b>
+            <b ng-show=" message.Location == '2' ">Sent: </b>
+        </td>
         <td>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
             <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
@@ -19,39 +19,65 @@
         </td>
     </tr>
     <tr>
-        <th>{{ 'FROM' | translate }}: </th>
+        <td>{{ 'FROM' | translate }}: </td>
         <td>{{ message.Sender.Name || message.Sender.Address }}</td>
     </tr>
     <tr ng-if="message.ToList.length">
-        <th>{{ 'TO' | translate }}: </th>
+        <td>{{ 'TO' | translate }}: </td>
         <td>
-            <span ng-repeat="email in ::message.ToList">
-            {{ email.Name }} {{ email.Address }}
-            </span>
+            <b ng-repeat="email in ::message.ToList">
+            {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+            </b>
         </td>
     </tr>
     <tr ng-if="message.CCList.length">
-        <th>{{ 'CC' | translate }}: </th>
+        <td>{{ 'CC' | translate }}: </td>
         <td>
-            <span ng-repeat="email in ::message.CCList">
-            {{ email.Name }} {{ email.Address }}
-            </span>
+            <b ng-repeat="email in ::message.CCList">
+            {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+            </b>
         </td>
     </tr>
     <tr ng-if="message.BCCList.length">
-        <th>{{ 'BCC' | translate }}: </th>
+        <td>{{ 'BCC' | translate }}: </td>
         <td>
-            <span ng-repeat="email in ::message.BCCList">
-            {{ email.Name }} {{ email.Address }}
-            </span>
+            <b ng-repeat="email in ::message.BCCList">
+            {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+            </b>
         </td>
     </tr>
     <tr ng-if="message.labels().length > 0">
-        <th>Labels: </th>
+        <td>Labels: </td>
         <td>
             <em ng-repeat="label in message.labels()">{{ label.Name }}</em>
         </td>
     </tr>
+
+    <tr ng-if="message.Attachments.length > 0">
+        <td>
+            {{message.Attachments.length}} 
+            <i ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </i>
+            <i ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </i>
+            ({{ message.sizeAttachments() | humanSize }})
+        </td>
+        <td>
+            <b
+            ng-repeat="attachment in message.Attachments" 
+            class="pm_button">
+                <i class="fa fa-archive-o" ng-show="(attachment.MIMEType.indexOf('zip') != -1)"></i>
+                <i class="fa fa-audio-o" ng-show="(attachment.MIMEType.indexOf('mp3') != -1)"></i>
+                <i class="fa fa-code-o" ng-show="(attachment.MIMEType.indexOf('javascript') != -1)"></i>
+                <i class="fa fa-excel-o" ng-show="(attachment.MIMEType.indexOf('xls') != -1)"></i>
+                <i class="fa fa-image-o" ng-show="(attachment.MIMEType.indexOf('image') != -1)"></i>
+                <i class="fa fa-movie-o" ng-show="(attachment.MIMEType.indexOf('mov') != -1)"></i>
+                <i class="fa fa-pdf-o" ng-show="(attachment.MIMEType.indexOf('pdf') != -1)"></i>
+                <i class="fa fa-powerpoint-o" ng-show="(attachment.MIMEType.indexOf('power') != -1)"></i>
+                <i class="fa fa-word-o" ng-show="(attachment.MIMEType.indexOf('word') != -1)"></i>
+                <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+            </b>
+        </td>
+    </tr>
+
 </table>
 <div 
 style="padding: 1rem;" 
