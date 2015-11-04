@@ -239,6 +239,28 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Query api to get messages
+     * @param {Object} request
+     * @return {Promise}
+     */
+    var queryMessages = function(request) {
+        var deferred = $q.defer();
+        var context = cacheContext(request);
+
+        Message.query(request).$promise.then(function(messages) {
+            // Only for cache context
+            if(context === true) {
+                // Store messages
+                storeMessages(messages);
+            }
+
+            deferred.resolve(messages);
+        });
+
+        return deferred.promise;
+    };
+
+    /**
      * Get conversation from API and store it in the cache
      * @param {String} id
      * @return {Promise}
@@ -306,20 +328,12 @@ angular.module("proton.cache", [])
 
         Message.get({ id: id }).$promise.then(function(message) {
             message = new Message(message);
+            message.preloaded = true;
             storeMessages([message]);
             deferred.resolve(message);
         });
 
         return deferred.promise;
-    };
-
-    /**
-     * Query api to get messages
-     * @param {Object} request
-     * @return {Promise}
-     */
-    var queryMessages = function(request) {
-        return Message.query(request).$promise;
     };
 
     /**
@@ -490,8 +504,15 @@ angular.module("proton.cache", [])
     /**
      * Accessible method to preload a specific conversation
      */
-    api.preloadConversation = function(conversationId) {
-        return getConversation(conversationId);
+    api.preloadConversation = function(id) {
+        return getConversation(id);
+    };
+
+    /**
+     * Preload message and store it
+     */
+    api.preloadMessage = function(id) {
+        return getMessage(id);
     };
 
     /**
@@ -593,7 +614,7 @@ angular.module("proton.cache", [])
 
         $q.all({
             inbox: queryConversations(requestInbox),
-            sent: queryConversations(requestSent)
+            sent: queryMessages(requestSent)
         }).then(function() {
             deferred.resolve();
         });
@@ -1071,13 +1092,21 @@ angular.module("proton.cache", [])
     */
     api.preload = function() {
         // Get the first conversation in the queue
-        var conversation  = _.first(queue);
+        var element  = _.first(queue);
 
-        if(angular.isDefined(conversation)) {
-            // Preload the first conversation
-            cache.preloadConversation(conversation.ID).then(function() {
-                // Remove the first conversation in the queue
-                queue = _.without(queue, conversation);
+        if(angular.isDefined(element)) {
+            var promise;
+
+            if(angular.isDefined(element.ConversationID)) {
+                promise = cache.preloadMessage(element.ID);
+            } else {
+                // Preload the first conversation
+                promise = cache.preloadConversation(element.ID);
+            }
+
+            promise.then(function() {
+                // Remove the first element in the queue
+                queue = _.without(queue, element);
             });
         }
     };

@@ -19,7 +19,7 @@ angular.module("proton.transformation", [])
         link: function(scope, element, attributes) {
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
-                    var blockquote = angular.element(element).find('blockquote:first');
+                    var blockquote = angular.element(element).find('blockquote.protonmail_quote:first');
 
                     if(blockquote.length > 0) {
                         var button = angular.element('<button/>', {

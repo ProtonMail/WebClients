@@ -43,7 +43,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
                 preloadConversation.set(newValue);
-                $rootScope.numberSelectedMessages = $scope.conversationsSelected().length;
+                $rootScope.numberSelectedMessages = $scope.elementsSelected().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -101,7 +101,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             var ids = $scope.idsSelected();
             var promise;
 
-            _.each($scope.conversationsSelected(), function(message) { message.Starred = 1; });
+            _.each($scope.elementsSelected(), function(message) { message.Starred = 1; });
             promise = Message.star({IDs: ids}).$promise;
             networkActivityTracker.track(promise);
             $scope.unselectAllConversations();
@@ -135,7 +135,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.conversationCount = function() {
         var result;
 
-        if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
+        if(angular.isDefined($stateParams.filter) || $state.is('secured.search') || $state.is('secured.drafts') || $state.is('secured.sent')) {
             result = $rootScope.Total;
         } else {
             switch($scope.mailbox) {
@@ -340,18 +340,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.allSelectedCheckbox = false;
     };
 
-    $scope.conversationsSelected = function() {
+    $scope.elementsSelected = function() {
         return _.where($scope.conversations, {Selected: true});
     };
 
     $scope.idsSelected = function() {
-        return _.map($scope.conversationsSelected(), function(conversation) { return conversation.ID; });
-    };
-
-    $scope.conversationsSelectedWithReadStatus = function(bool) {
-        return _.select($scope.conversationsSelected(), function(conversation) {
-            return conversation.IsRead === +bool;
-        });
+        return _.map($scope.elementsSelected(), function(conversation) { return conversation.ID; });
     };
 
     /**
@@ -359,7 +353,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.read = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.conversationsSelected());
+        var conversations = angular.copy($scope.elementsSelected());
         var events = [];
 
         // cache
@@ -381,7 +375,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.unread = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.conversationsSelected());
+        var conversations = angular.copy($scope.elementsSelected());
         var events = [];
 
         // cache
@@ -403,7 +397,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.delete = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.conversationsSelected());
+        var conversations = angular.copy($scope.elementsSelected());
         var events = [];
 
         // cache
@@ -424,7 +418,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.move = function(location) {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.conversationsSelected());
+        var conversations = angular.copy($scope.elementsSelected());
         var events = [];
 
         // cache
@@ -484,7 +478,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var events = [];
         var movedMessages = [];
 
-        _.forEach($scope.conversationsSelected(), function (message) {
+        _.forEach($scope.elementsSelected(), function (message) {
             message.Selected = false;
 
             var event = {
@@ -557,10 +551,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var tooManyLabels = false;
-        var conversationsSelected = $scope.conversationsSelected();
+        var elementsSelected = $scope.elementsSelected();
 
         // Detect if a message will have too many labels
-        _.each(conversationsSelected, function(message) {
+        _.each(elementsSelected, function(message) {
             if(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove).length > 5) {
                 tooManyLabels = true;
             }
@@ -580,7 +574,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $q.all(promises).then(function(results) {
                 var events = [];
 
-                _.each(conversationsSelected, function(message) {
+                _.each(elementsSelected, function(message) {
                     var newMessage = angular.copy(message);
 
                     if(alsoArchive === true) {
@@ -652,7 +646,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Return conversations selected
      * @return {Array}
      */
-    var conversationsSelected = function() {
+    var elementsSelected = function() {
         return _.where($scope.conversations, {Selected: true});
     };
 
@@ -698,18 +692,29 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // TODO Generate event
     };
 
-    $scope.starred = function(conversation) {
-        if(conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1) {
+    /**
+     * Check in LabelIDs to see if the conversation or message is starred
+     */
+    $scope.starred = function(element) {
+        if(element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1) {
             return true;
         } else {
             return false;
         }
     };
 
+    /**
+     * Return label object
+     * @param {String} id
+     */
     $scope.getLabel = function(id) {
-        return _.findWhere($scope.labels, {ID: id});
+        return _.findWhere(authentication.user.Labels, {ID: id});
     };
 
+    /**
+     * Return style for label element
+     * @param {String} id
+     */
     $scope.getStyleLabel = function(id) {
         return {
             color: $scope.getLabel(id).Color,
@@ -719,8 +724,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     /**
      * On click on a conversation
+     * @param {Object} element - Conversation or Message
      */
-    $scope.click = function(conversation) {
+    $scope.click = function(element) {
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Open conversation
@@ -729,6 +735,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     /**
      * On select a conversation
+     * @param {Object} event
+     * @param {Object} conversation
      */
     $scope.select = function(event, conversation) {
         if(!lastChecked) {
@@ -749,6 +757,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // $scope.allSelected();
     };
 
+    /**
+     * Filter current list
+     * @param {String}
+     */
     $scope.filterBy = function(status) {
         $state.go($state.current.name, _.extend({}, $state.params, {
             filter: status,
@@ -756,6 +768,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }));
     };
 
+    /**
+     * Clear current filter
+     */
     $scope.clearFilter = function() {
         $state.go($state.current.name, _.extend({}, $state.params, {
             filter: undefined,
@@ -771,8 +786,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.emptyFolder = function(location) {
-        var title = "Confirmation";
-        var message = "Are you sure? This cannot be undone.";
+        var title = $translate.instant('CONFIRMATION');
+        var message = $translate.instant('ARE_YOU_SURE?') + ' ' + $translate.instant('THIS_CANNOT_BE_UNDONE.');
         var promise;
 
         confirmModal.activate({
