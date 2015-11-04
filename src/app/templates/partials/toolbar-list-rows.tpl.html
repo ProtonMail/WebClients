@@ -69,34 +69,34 @@
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
-            ng-click="moveMessagesTo('trash')"
+            ng-click="move('trash')"
             ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-trash-o"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
-            ng-click="moveMessagesTo('inbox')"
+            ng-click="move('inbox')"
             ng-hide="{{ 'secured.inbox.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-inbox divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
-            ng-click="moveMessagesTo('archive')"
+            ng-click="move('archive')"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-archive divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_SPAM' | translate }}"
-            ng-click="moveMessagesTo('spam')"
+            ng-click="move('spam')"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-ban divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'DELETE' | translate }}"
-            ng-click="moveMessagesTo('delete')"
+            ng-click="move('delete')"
             ng-class="{ disabled: numberSelectedMessages === 0 }"
             class="fa fa-times-circle divider"></a>
         </span>

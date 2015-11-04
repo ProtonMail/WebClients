@@ -196,7 +196,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
             if($state.is('secured.' + name)) { // Same folder?
                 notify($translate.instant('SAME_FOLDER'));
             } else {
-                $rootScope.$broadcast('moveMessagesTo', name);
+                $rootScope.$broadcast('move', name);
             }
         } else if(name === 'starred') {
             // Just star selected messages

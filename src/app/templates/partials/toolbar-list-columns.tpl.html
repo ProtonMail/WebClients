@@ -61,19 +61,19 @@
             </span>
         </span>
         <span class="pm_buttons">
-            <a href="" class="fa fa-trash-o" ng-click="moveMessagesTo('trash')" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            <a href="" class="fa fa-trash-o" ng-click="move('trash')" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <span class="pm_dropdown wide">
-                <a href="" ng-click="moveMessagesTo('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}">
+                <a href="" ng-click="move('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}">
                     <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
                 </a>
-                <a href="" ng-click="moveMessagesTo('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}">
+                <a href="" ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}">
                     <i class="fa fa-archive"></i> {{ 'MOVE_TO_ARCHIVE' | translate }}
                 </a>
-                <a href="" ng-click="moveMessagesTo('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}">
+                <a href="" ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}">
                     <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
                 </a>
-                <a href="" ng-click="moveMessagesTo('delete')">
+                <a href="" ng-click="move('delete')">
                     <i class="fa fa-times-circle"></i> {{ 'DELETE' | translate }}
                 </a>
             </span>

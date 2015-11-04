@@ -89,8 +89,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.applyLabels(LabelID);
         });
 
-        $scope.$on('moveMessagesTo', function(event, name) {
-            $scope.moveMessagesTo(name);
+        $scope.$on('move', function(event, name) {
+            $scope.move(name);
         });
 
         $scope.$on('activeConversation', function(event, id) {
@@ -283,9 +283,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.end = function() {
-        var end;
-
-        end = $scope.start() + $scope.conversationsPerPage - 1;
+        var end = $scope.start() + $scope.conversationsPerPage - 1;
 
         if (end > $scope.conversationCount()) {
             end = $scope.conversationCount();
@@ -353,19 +351,29 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.read = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.elementsSelected());
+        var elements = angular.copy($scope.elementsSelected());
         var events = [];
+        var type = tools.typeList();
 
         // cache
-        _.each(conversations, function(conversation) {
-            conversation.NumUnread = 0;
-            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        _.each(elements, function(element) {
+            element.NumUnread = 0;
+
+            if(type === 'conversation') {
+                events.push({Action: 3, ID: element.ID, Conversation: element});
+            } else if(type === 'message') {
+                events.push({Action: 3, ID: element.ID, Message: element});
+            }
         });
 
-        cache.events(events, 'conversation');
+        cache.events(events, type);
 
         // api
-        Conversation.read(ids);
+        if(type === 'conversation') {
+            Conversation.read(ids);
+        } else if (type === 'message') {
+            Message.read({IDs: ids});
+        }
 
         $scope.unselectAllConversations();
     };
@@ -375,40 +383,61 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.unread = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.elementsSelected());
+        var elements = angular.copy($scope.elementsSelected());
         var events = [];
+        var type = tools.typeList();
 
         // cache
-        _.each(conversations, function(conversation) {
-            conversation.NumUnread = 1;
-            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        _.each(elements, function(element) {
+            element.NumUnread = 1;
+
+            if(type === 'conversation') {
+                events.push({Action: 3, ID: element.ID, Conversation: element});
+            } else if(type === 'message') {
+                events.push({Action: 3, ID: element.ID, Message: element});
+            }
         });
 
-        cache.events(events, 'conversation');
+        cache.events(events, type);
 
         // api
-        Conversation.unread(ids);
+        if(type === 'conversation') {
+            Conversation.unread(ids);
+        } else if (type === 'message') {
+            Message.unread({IDs: ids});
+        }
 
         $scope.unselectAllConversations();
     };
 
     /**
-     * Delete conversations selected
+     * Delete elements selected
      */
     $scope.delete = function() {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.elementsSelected());
+        var elements = angular.copy($scope.elementsSelected());
         var events = [];
+        var type = tools.typeList();
 
         // cache
-        _.each(conversations, function(conversation) {
-            events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+        _.each(elements, function(element) {
+            if(type === 'conversation') {
+                events.push({Action: 0, ID: element.ID, Conversation: element});
+            } else if(type === 'message') {
+                events.push({Action: 0, ID: element.ID, Message: element});
+                // Manage the case where the message is open in the composer
+                $rootScope.$broadcast('deleteMessage', element.ID);
+            }
         });
 
-        cache.events(events, 'conversation');
+        cache.events(events, type);
 
         // api
-        Conversation.delete(ids);
+        if(type === 'conversation') {
+            Conversation.delete(ids);
+        } else if (type === 'message') {
+            Message.delete({IDs: ids});
+        }
 
         $scope.unselectAllConversations();
     };
@@ -418,20 +447,30 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.move = function(location) {
         var ids = $scope.idsSelected();
-        var conversations = angular.copy($scope.elementsSelected());
+        var elements = angular.copy($scope.elementsSelected());
         var events = [];
+        var type = tools.typeList();
 
         // cache
-        _.each(conversations, function(conversation) {
-            conversation.LabelIDs = _.without(conversation.LabelIDs, tools.currentLocation()); // remove current location
-            conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
-            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        _.each(elements, function(element) {
+            element.LabelIDs = _.without(element.LabelIDs, tools.currentLocation()); // remove current location
+            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
+
+            if(type === 'conversation') {
+                events.push({Action: 3, ID: element.ID, Conversation: element});
+            } else if(type === 'message') {
+                events.push({Action: 3, ID: element.ID, Message: element});
+            }
         });
 
-        cache.events(events, 'conversation');
+        cache.events(events, type);
 
         // api
-        Conversation[location](ids);
+        if(type === 'conversation') {
+            Conversation[location](ids);
+        } else if (type === 'message') {
+            Message[location]({IDs: ids});
+        }
 
         $scope.unselectAllConversations();
     };
@@ -440,7 +479,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var movedMessages = [];
         var message = cache.getMessage(id).then(function(message) {
             Message.trash({IDs: [id]}).$promise.then(function(result) {
-
                 movedMessages.push({
                     LabelIDs: message.LabelIDs,
                     OldLocation: message.Location,
@@ -470,68 +508,68 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
     };
 
-    $scope.moveMessagesTo = function(mailbox) {
-        var deferred = $q.defer();
-        var ids = $scope.idsSelected();
-        var inDelete = mailbox === 'delete';
-        var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
-        var events = [];
-        var movedMessages = [];
-
-        _.forEach($scope.elementsSelected(), function (message) {
-            message.Selected = false;
-
-            var event = {
-                ID: message.ID,
-                Message: angular.copy(message)
-            };
-
-            if(inDelete) {
-                event.Action = 0; // DELETE
-            } else {
-                event.Action = 3; // UPDATE_FLAG
-                event.Message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                event.Message.Time = message.Time;
-            }
-
-            events.push(event);
-
-            if(inDelete) {
-                $rootScope.$broadcast('deleteMessage', message.ID);
-            }
-        });
-
-        if(events.length > 0) {
-            cache.events(events);
-        }
-
-        $scope.unselectAllConversations();
-
-        var promiseSuccess = function(result) {
-            if(inDelete) {
-                if(ids.length > 1) {
-                    notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});
-                } else {
-                    notify({message: $translate.instant('MESSAGE_DELETED'), classes: 'notification-success'});
-                }
-            }
-
-            deferred.resolve();
-        };
-
-        var promiseError = function(error) {
-            error.message = 'Error during the move request';
-            deferred.reject(error);
-        };
-
-        if ($scope.conversations.length === 0) {
-            networkActivityTracker.track(promise.then(promiseSuccess, promiseError));
-        } else {
-            promise.then(promiseSuccess, promiseError);
-        }
-
-        return deferred.promise;
-    };
+    // $scope.move = function(mailbox) {
+    //     var deferred = $q.defer();
+    //     var ids = $scope.idsSelected();
+    //     var inDelete = mailbox === 'delete';
+    //     var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
+    //     var events = [];
+    //     var movedMessages = [];
+    //
+    //     _.forEach($scope.elementsSelected(), function (message) {
+    //         message.Selected = false;
+    //
+    //         var event = {
+    //             ID: message.ID,
+    //             Message: angular.copy(message)
+    //         };
+    //
+    //         if(inDelete) {
+    //             event.Action = 0; // DELETE
+    //         } else {
+    //             event.Action = 3; // UPDATE_FLAG
+    //             event.Message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+    //             event.Message.Time = message.Time;
+    //         }
+    //
+    //         events.push(event);
+    //
+    //         if(inDelete) {
+    //             $rootScope.$broadcast('deleteMessage', message.ID);
+    //         }
+    //     });
+    //
+    //     if(events.length > 0) {
+    //         cache.events(events);
+    //     }
+    //
+    //     $scope.unselectAllConversations();
+    //
+    //     var promiseSuccess = function(result) {
+    //         if(inDelete) {
+    //             if(ids.length > 1) {
+    //                 notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});
+    //             } else {
+    //                 notify({message: $translate.instant('MESSAGE_DELETED'), classes: 'notification-success'});
+    //             }
+    //         }
+    //
+    //         deferred.resolve();
+    //     };
+    //
+    //     var promiseError = function(error) {
+    //         error.message = 'Error during the move request';
+    //         deferred.reject(error);
+    //     };
+    //
+    //     if ($scope.conversations.length === 0) {
+    //         networkActivityTracker.track(promise.then(promiseSuccess, promiseError));
+    //     } else {
+    //         promise.then(promiseSuccess, promiseError);
+    //     }
+    //
+    //     return deferred.promise;
+    // };
 
     $scope.unselectAllLabels = function() {
         _.forEach($scope.labels, function(label) {
@@ -594,7 +632,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 cache.events(events);
 
                 if(alsoArchive === true) {
-                    deferred.resolve($scope.moveMessagesTo('archive'));
+                    deferred.resolve($scope.move('archive'));
                 } else {
                     $scope.unselectAllConversations();
                     deferred.resolve();
