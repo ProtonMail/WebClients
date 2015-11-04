@@ -1,6 +1,5 @@
 .pm_form {
     legend {
-        color: $primary;
         padding: 0;
         margin: 0;
         font-size: 20px;
@@ -9,6 +8,7 @@
         display: block;
         width: 100%;
         margin-bottom: 1rem;
+        font-weight: 300;
     }
     ::-webkit-input-placeholder {
        color: #aaaabf;

@@ -48,7 +48,6 @@
     #invoicesTable {
         .actions {
             width: 3.5rem;
-            text-align: right;
         }
         .price {
             width: 3.5rem;
@@ -61,6 +60,12 @@
     }
     #settingsSelect {
         display: none;
+    }
+    #cancelTables {
+        .pm_table {
+            table-layout: initial !important;
+            margin-bottom: 0;
+        }
     }
     #plans {
         header {
@@ -213,6 +218,13 @@
                             }
                             .fa-times {
                                 display: inline-block;
+                            }
+                            strong {
+                                text-decoration: line-through;
+                            }
+                            .fa,
+                            strong {
+                                opacity: .5;
                             }
                         }
                     }
@@ -382,7 +394,7 @@
             }
         }
         .row {
-            padding: 2rem 0;
+            padding: 2rem 0 0;
             -webkit-flex-grow: 1;
                 -ms-flex-positive: 1;
                     flex-grow: 1;
@@ -404,6 +416,13 @@
                 .as-sortable-placeholder {
                     background: $border !important;
                     box-sizing: border-box;
+                }
+                .pm_table {
+                    td {
+                        strong {
+                            display: block;
+                        }
+                    }
                 }
                 .as-sortable-dragging {
                     border: 1px solid $border;

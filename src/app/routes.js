@@ -621,6 +621,16 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.cancel", {
+        url: "/cancel-subscription",
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/cancelSubscription.tpl.html",
+                controller: "SecurityController" // TODO: need a new controller for this?
+            }
+        }
+    })
+
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {

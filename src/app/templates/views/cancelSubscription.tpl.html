@@ -1,131 +1,79 @@
 <div id="pm_settings">
 
-    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-
     <div class="settings" pt-height>
 
-        <div class="row">
-            <div></div>
 
-            <section class="setting pm_form">
-                <legend>{{ 'OVERVIEW' | translate }}</legend>
-                <div class="well">
-                    <table class="pm_table plain" id="tableOverview">
-                        <tr>
-                            <th>{{ 'USERNAME' | translate }}: </th>
-                            <td>
-                                <strong>{{ username }}</strong>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'DOMAINS' | translate }}: </th>
-                            <td>
-                                <strong>1 of 2 {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>
-                                    <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'ADDRESSES' | translate }}: </th>
-                            <td>
-                                <strong>2 of 5 {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>
-                                    <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'STORAGE' | translate }}: </th>
-                            <td>
-                                <strong>{{ storagePercentage() }}% {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="storage">
-                            <td>&nbsp;</td>
-                            <td colspan="2">
-                                <div class="usage">
-                                    <em class="used">{{ usedSpace | humanSize }}</em>
-                                    <em class="bar">
-                                        <div class="amount" style="width: {{ storagePercentage() }}%"></div>
-                                    </em>
-                                    <em class="total">{{ maxSpace | humanSize }}</em>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section class="setting pm_form pull-right">
-                <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
-                <div class="well">
-                    <table class="pm_table plain" id="tableSubscription">
-                        <tr>
-                            <th>{{ 'PLAN' | translate }}: </th>
-                            <td>
-                                <strong>{{ 'BUSINESS_PLAN' | translate }}</strong>
-                            </td>
-                            <td class="price text-right">
-                                <span>10 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Addons: </th>
-                            <td>
-                                <strong>10 GB + 1 GB Extra Storage</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>1 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>
-                                <strong>1 + 1 GB Extra Domain</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>2 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'TOTAL_PRICE' | translate }}: </th>
-                            <td colspan="2">
-                                <strong>13 CHF</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'BILLING' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>monthly</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'PAYMENT' | translate }}:</th>
-                            <td colspan="2">
-                                <strong><i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}</strong>
-                                <small class="pull-right">
-                                    <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
-                                </small>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-
-        </div>
 
         <div class="row">
 
+            <section class="setting pm_form full">
+                <form>
+                    <legend>{{ 'CHANGE_SUBSCRIPTION' | translate }}</legend>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco.</p>
+                </form>
+            </section>
+        </div><!--/.row-->
+
+
+
+        <div class="row">
+            <section class="setting pm_form full">
+                <form>
+                    <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
+                    <div class="well" id="cancelTables">
+                        <table class="pm_table plain">
+                            <tr>
+                                <th style="width:6rem">{{ 'PLAN' | translate }}: </th>
+                                <td><strong>{{ 'BUSINESS_PLAN' | translate }}</strong></td>
+                                <td style="width:4rem" class="price text-right"><span>10 CHF</span></td>
+                            </tr>
+                            <tr>
+                                <th>Addons: </th>
+                                <td>
+                                    <strong>10 GB + 1 GB Extra Storage</strong>
+                                    <strong>1 + 1 GB Extra Domain</strong>
+                                </td>
+                                <td class='text-right'><span>1 CHF</span></td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'TOTAL_PRICE' | translate }}: </th>
+                                <td colspan="2"><strong>13 CHF</strong></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'MIN_TERM' | translate }}: </th>
+                                <td><strong>{{ 'BUSINESS_PLAN' | translate }}</strong></td>
+                                <td class='text-right'>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'BILLING' | translate }}:</th>
+                                <td><strong>monthly</strong></td>
+                                <td class='text-right'>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'PAYMENT' | translate }}:</th>
+                                <td><strong><i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}</strong></td>
+                                <td class='text-right'>
+                                    <small>
+                                        <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / 
+                                        <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                    </small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </section>
+        </div><!--/.row-->
+
+
+
+        <div class="row">
             <section class="setting pm_form full" id="plans">
-
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
-                    <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
+                    <legend>{{ 'SUBSCRIPTION_OPTIONS' | translate }}</legend>
                     <header>
                         <a href="#" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
                         <div class="group">
@@ -148,6 +96,7 @@
                             </div>
                         </div>
                     </header>
+
                     <div class="plans">
                         <div class="plan" ng-class="{'selected': plan === 'basic'}" ng-if="false">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
@@ -369,11 +318,14 @@
                         </div>
 
                     </div>
+
+
+
                 </form>
-
             </section>
+        </div><!--/.row-->
 
-        </div>
+
 
     </div>
 
