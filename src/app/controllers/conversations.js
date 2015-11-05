@@ -444,8 +444,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     /**
      * Move conversation to an other location
+     * @param {String} mailbox
      */
-    $scope.move = function(location) {
+    $scope.move = function(mailbox) {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
         var events = [];
@@ -454,7 +455,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // cache
         _.each(elements, function(element) {
             element.LabelIDs = _.without(element.LabelIDs, tools.currentLocation()); // remove current location
-            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
+            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]); // Add new location
 
             if(type === 'conversation') {
                 events.push({Action: 3, ID: element.ID, Conversation: element});
@@ -467,47 +468,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // api
         if(type === 'conversation') {
-            Conversation[location](ids);
+            Conversation[mailbox](ids);
         } else if (type === 'message') {
-            Message[location]({IDs: ids});
+            Message[mailbox]({IDs: ids});
         }
 
         $scope.unselectAllConversations();
     };
 
-    $scope.discardDraft = function(id) {
-        var movedMessages = [];
-        var message = cache.getMessage(id).then(function(message) {
-            Message.trash({IDs: [id]}).$promise.then(function(result) {
-                movedMessages.push({
-                    LabelIDs: message.LabelIDs,
-                    OldLocation: message.Location,
-                    IsRead: message.IsRead,
-                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                    Starred: message.Starred
-                });
-
-                cache.events([{
-                    Action: 3,
-                    ID: message.ID,
-                    Message: {
-                        ID: message.ID,
-                        Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
-                    }
-                }]);
-
-                $scope.conversations = _.without($scope.conversations, message);
-            }, function(error) {
-                notify({message: 'Error during the trash request', classes: 'notification-danger'});
-                $log.error(error);
-            });
-
-        }, function(error) {
-            notify({message: 'Error during the getting message from the cache', classes: 'notification-danger'});
-            $log.error(error);
-        });
-    };
-
+    // PREVIOUS .move function
     // $scope.move = function(mailbox) {
     //     var deferred = $q.defer();
     //     var ids = $scope.idsSelected();
@@ -570,6 +539,39 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     //
     //     return deferred.promise;
     // };
+
+    $scope.discardDraft = function(id) {
+        var movedMessages = [];
+        var message = cache.getMessage(id).then(function(message) {
+            Message.trash({IDs: [id]}).$promise.then(function(result) {
+                movedMessages.push({
+                    LabelIDs: message.LabelIDs,
+                    OldLocation: message.Location,
+                    IsRead: message.IsRead,
+                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                    Starred: message.Starred
+                });
+
+                cache.events([{
+                    Action: 3,
+                    ID: message.ID,
+                    Message: {
+                        ID: message.ID,
+                        Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
+                    }
+                }]);
+
+                $scope.conversations = _.without($scope.conversations, message);
+            }, function(error) {
+                notify({message: 'Error during the trash request', classes: 'notification-danger'});
+                $log.error(error);
+            });
+
+        }, function(error) {
+            notify({message: 'Error during the getting message from the cache', classes: 'notification-danger'});
+            $log.error(error);
+        });
+    };
 
     $scope.unselectAllLabels = function() {
         _.forEach($scope.labels, function(label) {
@@ -720,14 +722,21 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         ) ? true : false;
     };
 
-    $scope.toggleStar = function(conversation) {
-        if($scope.starred(conversation)) {
-            Conversation.unstar(conversation.ID);
+    $scope.star = function(conversation) {
+        var events = [];
+        var copy = angular.copy(conversation);
+        var type = tools.typeList();
+
+        if($scope.starred(copy)) {
+            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            Conversation.unstar([copy.ID]);
         } else {
-            Conversation.star(conversation.ID);
+            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            Conversation.star([copy.ID]);
         }
 
-        // TODO Generate event
+        events.push({ID: copy.ID, Action: 2, Conversation: copy});
+        cache.events(events, type);
     };
 
     /**
@@ -765,10 +774,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element - Conversation or Message
      */
     $scope.click = function(element) {
+        var type = tools.typeList();
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Open conversation
-        $state.go('secured.' + $scope.mailbox + '.list.view', { id: conversation.ConversationID || conversation.ID });
+        if(type === 'conversation') {
+            $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ID });
+        } else if (type === 'message') {
+            $rootScope.openMessage = element.ID;
+            $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ConversationID });
+        }
     };
 
     /**

@@ -50,7 +50,7 @@
             <a
             href=""
             class="fa fa-times-circle divider"
-            ng-click="move('delete')"
+            ng-click="delete()"
             pt-tooltip="{{ 'DELETE' | translate }}"
             ng-show="{{ ('secured.trash.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
             ng-class="{ disabled: numberSelectedMessages === 0 }"></a>

@@ -92,9 +92,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        var last = _.last($scope.messages);
+        var open;
 
-        if($scope.message === last) {
+        if(angular.isDefined($rootScope.openMessage)) {
+            open = _.where($scope.messages, {ID: $rootScope.openMessage})[0];
+            delete $rootScope.openMessage;
+        } else {
+            open = _.last($scope.messages);
+        }
+
+        if($scope.message === open) {
             $scope.initView();
         }
     };
@@ -103,23 +110,31 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         return $scope.message;
     };
 
-    $scope.toggleStar = function(message) {
-        var ids = [];
+    /**
+     * Return star status of current message
+     * @return {Boolean}
+     */
+    $scope.starred = function() {
+        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1;
+    };
+
+    /**
+     * Star / unstar the current message
+     */
+    $scope.star = function() {
         var promise;
-        var newMessage = angular.copy(message);
+        var copy = angular.copy($scope.message);
+        var ids = [copy.ID];
 
-        ids.push(message.ID);
-
-        if(message.Starred === 1) {
+        if($scope.starred()) {
+            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
             promise = Message.unstar({IDs: ids}).$promise;
-            newMessage.Starred = 0;
         } else {
+            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
             promise = Message.star({IDs: ids}).$promise;
-            newMessage.Starred = 1;
         }
 
-        networkActivityTracker.track(promise);
-        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        cache.events([{Action: 3, ID: copy.ID, Message: copy}]);
     };
 
     $scope.openSafariWarning = function() {
@@ -220,24 +235,27 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         });
     };
 
-    $scope.markAsRead = function() {
-        var promise;
-        var newMessage = angular.copy(message);
+    $scope.read = function() {
+        var  copy = angular.copy($scope.message);
+        var ids = [copy.ID];
+        var events = [];
 
-        newMessage.IsRead = 1;
-        promise = Message.read({IDs: [message.ID]}).$promise;
-        networkActivityTracker.track(promise);
-        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        copy.IsRead = 1;
+        events.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(events, 'message');
+        Message.read({IDs: ids});
+        $scope.back();
     };
 
-    $scope.markAsUnread = function() {
-        var promise;
-        var newMessage = angular.copy(message);
+    $scope.unread = function() {
+        var  copy = angular.copy($scope.message);
+        var ids = [copy.ID];
+        var events = [];
 
-        newMessage.IsRead = 0;
-        promise = Message.unread({IDs: [message.ID]}).$promise;
-        networkActivityTracker.track(promise);
-        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        copy.IsRead = 0;
+        events.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(events, 'message');
+        Message.read({IDs: ids});
         $scope.back();
     };
 
@@ -379,13 +397,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.detachLabel = function(id) {
-        var promise = Label.remove({id: id, MessageIDs: [message.ID]}).$promise;
-        var newMessage = angular.copy(message);
+    $scope.detachLabel = function(labelID) {
+        var copy = angular.copy(message);
 
-        newMessage.LabelIDs = _.without(message.LabelIDs, id);
-        cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
-        networkActivityTracker.track(promise);
+        copy.LabelIDs = _.without(copy.LabelIDs, labelID);
+        cache.events([{Action: 3, ID: copy.ID, Message: copy}]);
+        Label.remove({id: labelID, MessageIDs: [copy.ID]});
     };
 
     $scope.getLabel = function(id) {
@@ -425,7 +442,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
 
                 if(alsoArchive === true) {
-                    deferred.resolve($scope.moveMessageTo('archive'));
+                    deferred.resolve($scope.move('archive'));
                 } else {
                     if(toApply.length > 1 || toRemove.length > 1) {
                         notify($translate.instant('LABELS_APPLIED'));
@@ -531,26 +548,39 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 
-    $scope.moveMessageTo = function(mailbox) {
+    $scope.move = function(mailbox) {
         var promise;
-        var inDelete = mailbox === 'delete';
         var events = [];
-        var action;
-        var newMessage = angular.copy(message);
+        var copy = angular.copy($scope.message);
+        var current;
 
-        newMessage.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        _.each($scope.message.LabelIDs, function(labelID) {
+            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
+                current = labelID;
+            }
+        });
 
-        if(inDelete) {
-            promise = Message.delete({IDs: [message.ID]}).$promise;
-            action = 0;
-        } else {
-            action = 3;
-            promise = Message[mailbox]({IDs: [message.ID]}).$promise;
-        }
+        copy.LabelIDs.push(mailbox); // Add new location
+        copy.LabelIDs = _.without(copy.LabelIDs, current); // Remove previous location
+        events.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(events);
 
-        promise.then(function(result) {
-            messages.push({Action: action, ID: newMessage.ID, Message: newMessage});
-            cache.events(events);
+        promise = Message[mailbox]({IDs: [copy.ID]}).$promise.then(function(result) {
+            $scope.back();
+        });
+
+        networkActivityTracker.track(promise);
+    };
+
+    $scope.delete = function() {
+        var promise;
+        var events = [];
+        var copy = angular.copy($scope.message);
+
+        events.push({Action: 0, ID: copy.ID, Message: copy});
+        cache.events(events);
+
+        promise = Message.delete({IDs: [copy.ID]}).$promise.then(function(result) {
             $scope.back();
         });
 

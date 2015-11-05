@@ -27,16 +27,23 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.$broadcast('activeConversation', conversation.ID);
 
     // Listeners
-    $scope.$on('refreshConversation', function(event, conversation, messages) {
-        _.extend($scope.conversation, conversation);
-        _.extend($scope.messages, messages);
-        // TODO display last new last message
+    $scope.$on('refreshConversation', function(event) {
+        cache.getConversation($stateParams.id).then(function(conversation) {
+            _.extend($scope.conversation, conversation);
+        });
+
+        cache.queryConversationMessages($stateParams.id).then(function(messages) {
+            _.extend($scope.messages, messages);
+            // TODO display last new last message
+        });
     });
 
     /**
      * Initialization call
      */
     $scope.initialization = function() {
+        var open;
+
         if($scope.mailbox === 'drafts') {
             // Remove the last message in conversation view
             var popped = $scope.messages.pop();
@@ -60,7 +67,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             });
         }
 
-        $scope.scrollToMessage(_.last($scope.messages));
+        if(angular.isDefined($rootScope.openMessage)) {
+            open = _.where($scope.messages, {ID: $rootScope.openMessage})[0];
+        } else {
+            open = _.last($scope.messages);
+        }
+
+        $scope.scrollToMessage(open);
     };
 
     $scope.back = function() {
@@ -207,25 +220,27 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     /**
      * Toggle star conversation
      */
-    $scope.toggleStar = function() {
+    $scope.star = function() {
+        var events = [];
+        var copy = angular.copy(conversation);
+
         if($scope.starred()) {
-            Conversation.unstar(conversation.ID);
+            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            Conversation.unstar([copy.ID]);
         } else {
-            Conversation.star(conversation.ID);
+            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            Conversation.star([copy.ID]);
         }
 
-        // TODO generate event
+        events.push({ID: copy.ID, Action: 2, Conversation: copy});
+        cache.events(events, 'conversation');
     };
 
     /**
      * Return status of the star conversation
      */
     $scope.starred = function() {
-        if($scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred + '') !== -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1;
     };
 
     /**

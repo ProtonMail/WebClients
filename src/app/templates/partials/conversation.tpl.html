@@ -2,7 +2,7 @@
 <ng-include src="'templates/partials/toolbar-conversation-responsive.tpl.html'"></ng-include>
 
 <header>
-    <a href="#" ng-click="toggleStar(conversation)" class="singleStar">
+    <a href="#" ng-click="star(conversation)" class="singleStar">
         <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
     </a>
     <h1 ng-bind="conversation.Subject"></h1>

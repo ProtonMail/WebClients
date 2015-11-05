@@ -1,7 +1,7 @@
 <article class="message" ng-controller="MessageController" id="message{{ $index }}">
     <header ng-click="toggle()">
-        <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
-            <i class="fa" ng-class="{'fa-star': message.Starred, 'fa-star-o': !message.Starred}"></i>
+        <a href ng-click="$event.stopPropagation();star();" class="singleStar">
+            <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
         </a>
         <span class="meta">
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -39,10 +39,10 @@
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
-                    <a href="" ng-click="moveMessageTo('delete')">
+                    <a href="" ng-click="move('delete')">
                         <i class="fa fa-times-circle"></i> {{ 'DELETE' | translate }}
                     </a>
-                    <a href="" ng-click="moveMessageTo('spam')">
+                    <a href="" ng-click="move('spam')">
                         <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
                     </a>
                     <a href="" ng-click="togglePlainHtml()">

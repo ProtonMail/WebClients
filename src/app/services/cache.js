@@ -18,6 +18,7 @@ angular.module("proton.cache", [])
     var conversationsCached = [];
     var DELETE = 0;
     var CREATE = 1;
+    var UPDATE = 2;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAGS = 3;
     // Parameters shared between api / cache / message view / message list
@@ -144,23 +145,10 @@ angular.module("proton.cache", [])
 
     /**
      * Reorder cache location by reverse time
-     * @param {String} location
+     * @param {Array} elements - conversation or message
      */
-    var reorder = function(location) {
-        if(angular.isDefined(cache[location])) {
-            var messages = [];
-
-            for (var i = 0; i < cache[location].length; i++) {
-                var id = cache[location][i];
-
-                messages.push(hash[id]);
-            }
-
-            var asc = _.sortBy(messages, 'Time');
-            var desc = asc.reverse();
-
-            cache[location] = _.map(desc, function(message) { return message.ID; });
-        }
+    var order = function(elements) {
+        return _.sortBy(elements, 'Time').reverse();
     };
 
     /**
@@ -360,6 +348,8 @@ angular.module("proton.cache", [])
                 return message.LabelIDs.indexOf(location.toString()) !== -1;
             });
 
+            messages = order(messages);
+
             switch(mailbox) {
                 case 'label':
                     total = cacheCounters.total($stateParams.label);
@@ -420,6 +410,10 @@ angular.module("proton.cache", [])
             var conversations = _.filter(conversationsCached, function(conversation) {
                 return conversation.LabelIDs.indexOf(location.toString()) !== -1;
             });
+
+            conversations = order(conversations);
+
+            console.log(conversations);
 
             switch(mailbox) {
                 case 'label':
@@ -769,6 +763,18 @@ angular.module("proton.cache", [])
              var index = conversationsCached.indexOf(current);
 
              _.extend(conversation, current, event.Conversation);
+
+             // Manage labels
+             if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
+                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
+                 delete conversation.LabelIDsAdded;
+             }
+
+             if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
+                 conversation.LabelIDs = _.difference(conversation.LabelIDs, event.Conversation.LabelIDsRemoved);
+                 delete conversation.LabelIDsRemoved;
+             }
+
              conversationsCached[index] = conversation;
 
              deferred.resolve();
@@ -818,7 +824,7 @@ angular.module("proton.cache", [])
                         promises.push(api.createConversation(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateDraft(event));
+                        promises.push(api.updateFlagConversation(event));
                         break;
                     case UPDATE_FLAGS:
                         promises.push(api.updateFlagConversation(event));
