@@ -206,7 +206,7 @@
                                     <i class="fa fa-times"></i>
                                     <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
                                 </li>
-                            </ul>                            
+                            </ul>
                             <div class="details">
                                 <legend>
                                     <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
@@ -272,13 +272,13 @@
                                     <i class="fa fa-times"></i>
                                     <strong>2 {{ 'USER_MASTER_SUB' | translate }}</strong>
                                 </li>
-                            </ul>                            
+                            </ul>
                             <div class="details">
                                 <legend>
                                     <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
                                     <em></em>
                                 </legend>
-                                <div class="feat" ng-repeat="element in plusAdditionals">
+                                <div class="feat" ng-repeat="element in businessAdditionals">
                                     <label>
                                         <input type="checkbox" ng-model="element.checked" />
                                         {{ element.number }} <small></small> {{ element.title }}
@@ -297,13 +297,13 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ total('plus') | number: 2 | currency: currency }}
+                                    {{ total('business') | number: 2 | currency: currency }}
                                     <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
                                     <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
                                 </span>
                             </div>
                             <div class="action">
-                                <a href="#" ng-click="choose('plus')">
+                                <a href="#" ng-click="choose('business')">
                                     <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                     <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
                                     <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
@@ -353,17 +353,10 @@
                                 </p>
                                 <p>Excepteur sint occaecat cupidatat non proident.</p>
                             </div>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>{{ total('business') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
-                                </span>
-                            </div>
+                            <div class="price">&nbsp;</div>
                             <div class="action">
-                                <a href="#" ng-click="choose('business')">
-                                    <strong ng-show="plan === 'business'">{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan !== 'business'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                <a href="#" ng-click="choose('enterprise')">
+                                    <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
