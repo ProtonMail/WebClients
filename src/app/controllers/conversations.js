@@ -40,7 +40,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.allSelectedCheckbox = false;
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
-        $scope.refreshConversations().then(function() {
+        networkActivityTracker.track($scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
                 preloadConversation.set(newValue);
                 $rootScope.numberSelectedMessages = $scope.elementsSelected().length;
@@ -49,7 +49,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             // I consider this trick like a bug in the angular application
         }, function(error) {
             $log.error(error);
-        });
+        }));
     };
 
     $scope.mobileResponsive = function() {
@@ -455,7 +455,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // cache
         _.each(elements, function(element) {
             element.LabelIDs = _.without(element.LabelIDs, tools.currentLocation()); // remove current location
-            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]); // Add new location
+            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()); // Add new location
 
             if(type === 'conversation') {
                 events.push({Action: 3, ID: element.ID, Conversation: element});

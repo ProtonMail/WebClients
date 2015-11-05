@@ -117,32 +117,34 @@ angular.module("proton.controllers.Settings")
      * Open modal to pay the plan configured
      */
     $scope.choose = function(name) {
-        var additionals = [];
-        var pack = {};
+        // Payment.check().then(function() {
+            var additionals = [];
+            var pack = {};
 
-        if(name === 'plus') {
-            pack = plus;
-            additionals = $scope.plusAdditionals;
-        } else if(name === 'business') {
-            pack = business;
-            additionals = $scope.businessAdditionals;
-        }
-
-        paymentModal.activate({
-            params: {
-                currency: $scope.currency,
-                billing: $scope.billing,
-                pack: pack,
-                additionals: additionals,
-                submit: function(datas) {
-                    console.log(datas);
-                    paymentModal.deactivate();
-                },
-                cancel: function() {
-                    paymentModal.deactivate();
-                }
+            if(name === 'plus') {
+                pack = plus;
+                additionals = $scope.plusAdditionals;
+            } else if(name === 'business') {
+                pack = business;
+                additionals = $scope.businessAdditionals;
             }
-        });
+
+            paymentModal.activate({
+                params: {
+                    currency: $scope.currency,
+                    billing: $scope.billing,
+                    pack: pack,
+                    additionals: additionals,
+                    submit: function(datas) {
+                        console.log(datas);
+                        paymentModal.deactivate();
+                    },
+                    cancel: function() {
+                        paymentModal.deactivate();
+                    }
+                }
+            });
+        // });
     };
 
     /**

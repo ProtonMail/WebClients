@@ -560,7 +560,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             }
         });
 
-        copy.LabelIDs.push(mailbox); // Add new location
+        copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()); // Add new location
         copy.LabelIDs = _.without(copy.LabelIDs, current); // Remove previous location
         events.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(events);

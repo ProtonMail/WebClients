@@ -859,8 +859,8 @@ angular.module("proton.cache", [])
      * Clear cache and hash
      */
     api.clear = function() {
-        cache = {};
-        hash = {};
+        conversationsCached = [];
+        messagesCached = [];
     };
 
     /**
