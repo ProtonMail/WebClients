@@ -1094,7 +1094,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         deferred.reject(new Error(result.Error));
                                     } else {
                                         cache.events(events);
-                                        notify({ message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success' });
+                                        notify({ 
+                                            message: $translate.instant('MESSAGE_SENT'), 
+                                            duration: 6000,
+                                            classes: 'notification-success',
+                                            templateUrl: 'templates/notifications/loading.tpl.html',
+                                        });
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);
                                     }
