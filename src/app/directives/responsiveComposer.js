@@ -1,21 +1,15 @@
 angular.module("proton.responsiveComposer", [])
 
-.directive('responsiveComposer', ['$window', function ($window) {
+.directive('responsiveComposer', function ($window) {
     return {
         restrict: 'A',
-        scope: {
-            message: '='
-        },
         link: function (scope, element, attrs, message) {
-
-            console.log(message);
+            console.log(scope.message);
 
             var responsive = function() {
-
                 if ($window.innerWidth <= 1024) {
-                    scope.maximize(message);
+                    scope.maximize(scope.message);
                 }
-
             };
 
             // Listen resize window
@@ -35,4 +29,4 @@ angular.module("proton.responsiveComposer", [])
             });
         }
     };
-}]);
+});
