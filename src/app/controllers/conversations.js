@@ -751,7 +751,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var copy = angular.copy(element);
         var type = tools.typeList();
 
-        copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
 
         if(type === 'conversation') {
             events.push({ID: copy.ID, Action: 2, Conversation: copy});
@@ -777,7 +777,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var copy = angular.copy(element);
         var type = tools.typeList();
 
-        copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
 
         if(type === 'conversation') {
             events.push({ID: copy.ID, Action: 2, Conversation: copy});

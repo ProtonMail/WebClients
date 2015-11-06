@@ -232,10 +232,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var copy = angular.copy(conversation);
 
         if($scope.starred()) {
-            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
             Conversation.unstar([copy.ID]);
         } else {
-            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
             Conversation.star([copy.ID]);
         }
 

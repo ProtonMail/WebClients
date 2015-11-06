@@ -126,6 +126,19 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Update message cached
+     */
+    var updateMessage = function(message) {
+        var current = _.findWhere(messagesCached, {ID: message.ID});
+
+        if(angular.isDefined(current)) {
+            var index = messagesCached.indexOf(current);
+
+            _.extend(messagesCached[index], message);
+        }
+    };
+
+    /**
      * Insert conversation in conversationsCached
      * @param {Object} conversation
      */
@@ -772,20 +785,30 @@ angular.module("proton.cache", [])
          if(angular.isDefined(current)) {
              var conversation = {};
              var index = conversationsCached.indexOf(current);
+             var messages = _.where(messagesCached, {ConversationID: conversation.ID});
 
              _.extend(conversation, current, event.Conversation);
 
              // Manage labels
              if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
                  conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
+                 _.each(messages, function(message) {
+                     message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Conversation.LabelIDsAdded));
+                 });
                  delete conversation.LabelIDsAdded;
              }
 
              if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
                  conversation.LabelIDs = _.difference(conversation.LabelIDs, event.Conversation.LabelIDsRemoved);
+                 _.each(messages, function(message) {
+                     message.LabelIDs = _.difference(message.LabelIDs, event.Conversation.LabelIDsRemoved);
+                 });
                  delete conversation.LabelIDsRemoved;
              }
 
+             // Update messages cached
+             _.each(messages, function(message) { updateMessage(message); });
+             // Update conversation cached
              conversationsCached[index] = conversation;
 
              deferred.resolve();

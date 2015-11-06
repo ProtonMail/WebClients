@@ -127,10 +127,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var ids = [copy.ID];
 
         if($scope.starred()) {
-            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
             promise = Message.unstar({IDs: ids}).$promise;
         } else {
-            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
             promise = Message.star({IDs: ids}).$promise;
         }
 
