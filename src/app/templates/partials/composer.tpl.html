@@ -18,7 +18,7 @@
         }"
         ng-click="focusComposer(message)">
 
-            <header>
+            <header ng-responsive-composer="message">
                 <span ng-click="normalize(message);" class="subject">
                 {{message.Subject}} &nbsp;
                 </span>

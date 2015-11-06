@@ -73,6 +73,7 @@ angular.module("proton", [
     "proton.labelHeight",
     "proton.sample",
     "proton.toggle",
+    "proton.responsiveComposer",
     "proton.transformation",
 
     // Filters
