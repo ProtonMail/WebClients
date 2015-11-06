@@ -1,6 +1,6 @@
 angular.module("proton.responsiveComposer", [])
 
-.directive('ngResponsiveComposer', ['$window', function ($window) {
+.directive('responsiveComposer', ['$window', function ($window) {
     return {
         restrict: 'A',
         scope: {
