@@ -27,7 +27,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     pmcw,
     tools
 ) {
-    $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+    $scope.mailbox = tools.currentMailbox();
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
@@ -554,14 +554,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var copy = angular.copy($scope.message);
         var current;
 
-        _.each($scope.message.LabelIDs, function(labelID) {
+        _.each(copy.LabelIDs, function(labelID) {
             if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
                 current = labelID;
             }
         });
 
-        copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()); // Add new location
-        copy.LabelIDs = _.without(copy.LabelIDs, current); // Remove previous location
+        copy.LabelIDsRemoved = [current]; // Remove previous location
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
         events.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(events);
 

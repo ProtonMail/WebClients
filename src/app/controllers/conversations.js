@@ -28,7 +28,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.initialization = function() {
         // Variables
-        $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+        $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -451,11 +451,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var elements = angular.copy($scope.elementsSelected());
         var events = [];
         var type = tools.typeList();
+        var current;
 
         // cache
         _.each(elements, function(element) {
-            element.LabelIDs = _.without(element.LabelIDs, tools.currentLocation()); // remove current location
-            element.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()); // Add new location
+            // Find current location
+            _.each(element.LabelIDs, function(labelID) {
+                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
+                    current = labelID;
+                }
+            });
+
+            element.LabelIDsRemoved = [current]; // Remove current location
+            element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
 
             if(type === 'conversation') {
                 events.push({Action: 3, ID: element.ID, Conversation: element});

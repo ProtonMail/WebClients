@@ -43,8 +43,11 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.invoices', label: $translate.instant('INVOICES')}
     ];
 
+    // Set event ID
     eventManager.start(authentication.user.EventID);
+    // Preload conversations list (inbox and sent folder)
     cache.preloadInboxAndSent();
+    // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
     $rootScope.isSecure = function() {

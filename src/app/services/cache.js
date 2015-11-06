@@ -359,24 +359,28 @@ angular.module("proton.cache", [])
                     break;
             }
 
-            if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                number = CONSTANTS.MESSAGES_PER_PAGE;
-            } else {
-                if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                    number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                } else {
+            if(angular.isDefined(total)) {
+                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                     number = CONSTANTS.MESSAGES_PER_PAGE;
+                } else {
+                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        number = CONSTANTS.MESSAGES_PER_PAGE;
+                    }
                 }
-            }
 
-            messages = messages.slice(start, end);
+                messages = messages.slice(start, end);
 
-            // Supposed total equal to the total cache?
-            if(messages.length === number) {
-                console.log('Correct number in the cache');
-                deferred.resolve(messages);
+                // Supposed total equal to the total cache?
+                if(messages.length === number) {
+                    console.log('Correct number in the cache');
+                    deferred.resolve(messages);
+                } else {
+                    console.log('Not the correct number in the cache'); // TODO remove it
+                    callApi();
+                }
             } else {
-                console.log('Not the correct number in the cache'); // TODO remove it
                 callApi();
             }
         } else {
@@ -396,6 +400,7 @@ angular.module("proton.cache", [])
         var location = getLocation(request);
         var context = cacheContext(request);
         var callApi = function() {
+            // Need data from the server
             deferred.resolve(queryConversations(request));
         };
 
@@ -413,7 +418,7 @@ angular.module("proton.cache", [])
 
             conversations = order(conversations);
 
-            console.log(conversations);
+            console.info('Number of conversations cached for "' + location + '":', conversations.length);
 
             switch(mailbox) {
                 case 'label':
@@ -424,24 +429,30 @@ angular.module("proton.cache", [])
                     break;
             }
 
-            if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                number = CONSTANTS.MESSAGES_PER_PAGE;
-            } else {
-                if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                    number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                } else {
+            console.info('Value returned by the BE:', total);
+
+            if(angular.isDefined(total)) {
+                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                     number = CONSTANTS.MESSAGES_PER_PAGE;
+                } else {
+                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        number = CONSTANTS.MESSAGES_PER_PAGE;
+                    }
                 }
-            }
 
-            conversations = conversations.slice(start, end);
+                conversations = conversations.slice(start, end);
 
-            // Supposed total equal to the total cache?
-            if(conversations.length === number) {
-                console.log('Correct number in the cache');
-                deferred.resolve(conversations);
+                // Supposed total equal to the total cache?
+                if(conversations.length === number) {
+                    console.info('Correct number in the cache');
+                    deferred.resolve(conversations);
+                } else {
+                    console.info('Not the correct number in the cache'); // TODO remove it
+                    callApi();
+                }
             } else {
-                console.log('Not the correct number in the cache'); // TODO remove it
                 callApi();
             }
         } else {
@@ -966,37 +977,12 @@ angular.module("proton.cache", [])
     */
     api.query = function() {
         var deferred = $q.defer();
-        var promiseUnread = Message.unreaded().$promise;
-        var promiseTotal = Message.totalCount().$promise;
 
-        $q.all({
-            unread: promiseUnread,
-            total: promiseTotal
-        }).then(function(result) {
-            // folders case
-            _.each([0, 1, 2, 3, 4, 6], function(location) {
-                exist(location);
-            });
-            _.each(result.total.Locations, function(obj) {
-                exist(obj.Location);
-                counters[obj.Location].total = obj.Count;
-            });
-            _.each(result.unread.Locations, function(obj) {
-                counters[obj.Location].unread = obj.Count;
-            });
-            // starred case
-            exist(CONSTANTS.MAILBOX_IDENTIFIERS.starred);
-            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].unread = result.unread.Starred;
-            counters[CONSTANTS.MAILBOX_IDENTIFIERS.starred].total = result.total.Starred;
-            // labels case
-            _.each(authentication.user.Labels, function(label) {
-                exist(label.ID);
-            });
-            _.each(result.unread.Labels, function(obj) {
-                counters[obj.LabelID].unread = obj.Count;
-            });
-            _.each(result.total.Labels, function(obj) {
-                counters[obj.LabelID].total = obj.Count;
+        Message.count().$promise.then(function(result) {
+            _.each(result.Counts, function(counter) {
+                exist(counter.LabelID);
+                counters[counter.LabelID].total = counter.Total;
+                counters[counter.LabelID].unread = counter.Unread;
             });
 
             deferred.resolve();
@@ -1126,7 +1112,7 @@ angular.module("proton.cache", [])
         }, interval);
     };
 
-    api.loop(); // Start looping
+    // api.loop(); // Start looping
 
     return api;
 });

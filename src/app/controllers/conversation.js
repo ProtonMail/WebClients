@@ -20,7 +20,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 ) {
     $scope.conversation = conversation;
     $scope.messages = messages;
-    $scope.mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+    $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
 
     // Broadcast active status of this current conversation for the conversation list
@@ -140,17 +140,24 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Move current conversation to a specific location
      */
     $scope.move = function(location) {
+        var current;
         var events = [];
-        var conversation = angular.copy($scope.conversation);
+        var copy = angular.copy($scope.conversation);
+
+        _.each(copy.LabelIDs, function(labelID) {
+            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
+                current = labelID;
+            }
+        });
 
         // cache
-        conversation.LabelIDs = _.without(conversation.LabelIDs, tools.currentLocation()); // remove current location
-        conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[location]); // Add new location
-        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        copy.LabelIDsRemoved = [current]; // remove current location
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location].toString()]; // Add new location
+        events.push({Action: 3, ID: copy.ID, Conversation: copy});
         cache.events(events, 'conversation');
 
         // api
-        Conversation[location]([$scope.conversation.ID]);
+        Conversation[location]([copy.ID]);
 
         // back to conversation list
         $scope.back();
