@@ -11,7 +11,7 @@
                 <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
             </span>
             <span class="starSpan">
-                <a href ng-click="$event.stopPropagation();star(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
+                <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
                     <span class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></span>
                 </a>
             </span>
@@ -51,7 +51,7 @@
             <em class="fa fa-check"></em>
         </label>
         <span class="star" ng-click="$event.stopPropagation();">
-            <a href ng-click="star(conversation)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+            <a href ng-click="toggleStar(conversation)" class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                 <span class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></span>
             </a>
         </span>

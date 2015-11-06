@@ -722,21 +722,68 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         ) ? true : false;
     };
 
-    $scope.star = function(conversation) {
+    /**
+     * Toggle star
+     * @param {Object} element - conversation or message
+     */
+    $scope.toggleStar = function(element) {
+        if($scope.starred(element) === true) {
+            $scope.unstar(element);
+        } else {
+            $scope.star(element);
+        }
+    };
+
+    /**
+     * Star conversation or message
+     * @param {Object} element
+     */
+    $scope.star = function(element) {
         var events = [];
-        var copy = angular.copy(conversation);
+        var copy = angular.copy(element);
         var type = tools.typeList();
 
-        if($scope.starred(copy)) {
-            copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
-            Conversation.unstar([copy.ID]);
-        } else {
-            copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
-            Conversation.star([copy.ID]);
+        copy.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+
+        if(type === 'conversation') {
+            events.push({ID: copy.ID, Action: 2, Conversation: copy});
+        } else if(type === 'message') {
+            events.push({ID: copy.ID, Action: 2, Message: copy});
         }
 
-        events.push({ID: copy.ID, Action: 2, Conversation: copy});
         cache.events(events, type);
+
+        if(type === 'conversation') {
+            Conversation.star([copy.ID]);
+        } else if(type === 'message') {
+            Message.star({IDs: [copy.ID]});
+        }
+    };
+
+    /**
+     * Unstar conversation or message
+     * @param {Object} element
+     */
+    $scope.unstar = function(element) {
+        var events = [];
+        var copy = angular.copy(element);
+        var type = tools.typeList();
+
+        copy.LabelIDs = _.without(copy.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString());
+
+        if(type === 'conversation') {
+            events.push({ID: copy.ID, Action: 2, Conversation: copy});
+        } else if(type === 'message') {
+            events.push({ID: copy.ID, Action: 2, Message: copy});
+        }
+
+        cache.events(events, type);
+
+        if(type === 'conversation') {
+            Conversation.unstar([copy.ID]);
+        } else if(type === 'message') {
+            Message.unstar({IDs: [copy.ID]});
+        }
     };
 
     /**

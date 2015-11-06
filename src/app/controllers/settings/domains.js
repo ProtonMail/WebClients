@@ -6,9 +6,11 @@ angular.module("proton.controllers.Settings")
     $translate,
     addresses,
     addressModal,
+    buyDomainModal,
     confirmModal,
     dkimModal,
     dmarcModal,
+    Domain,
     domains,
     domainModal,
     organization,
@@ -17,20 +19,48 @@ angular.module("proton.controllers.Settings")
     spfModal,
     verificationModal
 ) {
-    $scope.organization = organization.Organization;
-    $scope.domains = domains.Domains;
-    $scope.members = members.Members;
-    $scope.addresses = addresses.Addresses;
+    /**
+     * Method called at the initialization of this controller
+     */
+    $scope.initialization = function() {
+        if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
+            $scope.organization = organization.data.Organization;
+        }
+
+        if(angular.isDefined(domains.data) && domains.data.Code === 1000) {
+            $scope.domains = domains.data.Domains;
+        }
+
+        if(angular.isDefined(members.data) && members.data.Code === 1000) {
+            $scope.members = members.data.Members;
+        }
+
+        if(angular.isDefined(addresses.data) && addresses.data.Code === 1000) {
+            $scope.addresses = addresses.data.Addresses;
+        }
+    };
 
     /**
-     * Open modal process to add a domain
+     * Open modal process to add a custom domain
      */
     $scope.addDomain = function() {
         domainModal.activate({
             params: {
-                submit: function(datas) {
-
-                    domainModal.deactivate();
+                submit: function(name) {
+                    Domain.create({Name: name}).then(function(result) {
+                        console.log(result);
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
+                            $scope.domains.push(result.data.Domain);
+                            domainModal.deactivate();
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                    });
                 },
                 cancel: function() {
                     domainModal.deactivate();
@@ -43,7 +73,17 @@ angular.module("proton.controllers.Settings")
  * Open modal process to buy a new domain
      */
     $scope.buyDomain = function() {
-
+        buyDomainModal.activate({
+            params: {
+                submit: function(datas) {
+                    console.log(datas);
+                    buyDomainModal.deactivate();
+                },
+                cancel: function() {
+                    buyDomainModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
@@ -186,4 +226,7 @@ angular.module("proton.controllers.Settings")
     $scope.changeMember = function(address) {
 
     };
+
+    // Call initialization
+    $scope.initialization();
 });
