@@ -3,6 +3,10 @@ angular.module("proton.labelHeight", [])
 .directive('ngLabelHeight', ['$window', function ($window) {
     return function (scope, element, attrs) {
         var setHeight = function() {
+
+            // set to zero
+            element.css({ height: 0 });
+            
             var sidebarHeight = angular.element($window).height();
             var height = (sidebarHeight - 620);
 

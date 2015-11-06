@@ -3,6 +3,10 @@ angular.module("proton.height", [])
 .directive('ptHeight', ['$window', function ($window) {
     return function (scope, element, attrs) {
         var setHeight = function() {
+
+            // set to zero
+            element.css({ height: 0 });
+
             var margin = 20;
             var windowHeight = angular.element($window).height();
             var elementOffset = element[0].getBoundingClientRect();

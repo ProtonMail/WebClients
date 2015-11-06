@@ -3,6 +3,10 @@ angular.module("proton.heightOutside", [])
 .directive('ngHeightOutside', ['$window', function ($window) {
     return function (scope, element, attrs) {
         var setHeight = function() {
+
+            // set to zero
+            element.css({ height: 0 });
+            
             var windowHeight = angular.element($window).height();
             var elementOffset = element[0].getBoundingClientRect();
             var height = (windowHeight - elementOffset.top - 200);

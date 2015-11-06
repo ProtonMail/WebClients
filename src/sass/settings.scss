@@ -41,8 +41,38 @@
         }
     }
     #userTable {
+        td {
+            padding: 10px 1rem;
+            line-height: 1.5rem;
+            .pm_button {
+                line-height: 1.5rem;
+                margin: 0;
+                height: auto;
+                text-decoration: none;
+                padding-left: 0;
+            }
+        }
+        .pm_select {
+            margin: 0;
+            line-height: 1.5rem;
+            height: 1.5rem;
+            select {
+                line-height: 1.5rem;
+                height: 1.5rem;
+            }
+            .fa {
+                line-height: 1.5rem;
+                height: 1.5rem;
+            }
+        }
         .role {
-            width: 6rem;
+            width: 5rem;
+        }
+        .storage {
+            width: 16rem;
+        }
+        .actions {
+            width: 9rem;
         }
     }
     #invoicesTable {
@@ -144,6 +174,7 @@
                 }
                 h3 {
                     position: relative;
+                    border-bottom: 1px solid $border;                    
                 }
                 h3,
                 .price {
@@ -153,7 +184,6 @@
                     padding: 0 30px;
                     color: $primary;
                     font-weight: 400;
-                    border-bottom: 1px solid $border;
                     strong {
                         font-weight: 700;
                     }
@@ -230,10 +260,11 @@
                     }
                 }
                 .details {
+                    font-size: 90%;
                     -webkit-flex-grow: 1;
                         -ms-flex-positive: 1;
                             flex-grow: 1;
-                            padding: 10px 30px;
+                            padding: 10px 20px;
                     strong {
                         font-weight: 700;
                     }
@@ -296,6 +327,7 @@
                     text-align: center;
                     font-weight: 700;
                     margin: 0;
+                    border-top: 1px solid $border;
                     a {
                         background: $primary;
                         color: $white;
@@ -422,6 +454,9 @@
                         strong {
                             display: block;
                         }
+                        small strong {
+                            display: inline-block;
+                        }
                     }
                 }
                 .as-sortable-dragging {
@@ -521,10 +556,7 @@
             }
         }
     }
-}
 
-
-@media (max-width: $tablet-landscape) {
     #pm_settings {
         #plans .plans .plan .details td .pm_buttons {
             width: initial !important;
@@ -689,11 +721,32 @@
 
 @media (max-width: $desktop) {
     body #pm_settings {
+        #usersTable {
+            th {
+                width: 12rem;
+            }
+            td {
+                padding: 10px 1rem;
+                line-height: 1.5rem;
+                .pm_button {
+                    line-height: 1.5rem;
+                    margin: 0;
+                    height: auto;
+                    text-decoration: none;
+                    padding-left: 0;
+                }
+            }
+        }
         #plans {
             .plans {
                 .plan {
                     h3 {
                         font-size: 16px;
+                    }
+                    .features {
+                        padding: 10px;
+                        font-size: 80%;
+                        white-space: nowrap;
                     }
                     .details {
                         .feat {
@@ -702,11 +755,13 @@
                                 width: 100%;
                             }
                             .pm_select {
-                                float: left;
+                                float: right;
                             }
                             .cost {
                                 float: left;
+                                text-align: left;
                                 padding-right: 1rem;
+                                margin-bottom: 1rem;
                             }
                         }
                     }
