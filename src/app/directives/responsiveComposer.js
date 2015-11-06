@@ -4,8 +4,6 @@ angular.module("proton.responsiveComposer", [])
     return {
         restrict: 'A',
         link: function (scope, element, attrs, message) {
-            console.log(scope.message);
-
             var responsive = function() {
                 if ($window.innerWidth <= 1024) {
                     scope.maximize(scope.message);
