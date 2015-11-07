@@ -747,23 +747,31 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.star = function(element) {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var copy = angular.copy(element);
         var type = tools.typeList();
 
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
 
         if(type === 'conversation') {
-            events.push({ID: copy.ID, Action: 2, Conversation: copy});
-        } else if(type === 'message') {
-            events.push({ID: copy.ID, Action: 2, Message: copy});
-        }
-
-        cache.events(events, type);
-
-        if(type === 'conversation') {
+            // Generate conversation changes with event
+            conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+            cache.events(conversationEvent, 'conversation');
+            // Generate message changes with event
+            if(angular.isDefined(copy.Messages)) {
+                _.each(copy.Messages, function(message) {
+                    message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+                    messageEvent.push({ID: message.ID, Action: 2, Message: message});
+                });
+                cache.events(messageEvent, 'message');
+            }
+            // Send request
             Conversation.star([copy.ID]);
         } else if(type === 'message') {
+            messageEvent.push({ID: copy.ID, Action: 2, Message: copy});
+            cache.events(messageEvent, 'message');
+            // Send request
             Message.star({IDs: [copy.ID]});
         }
     };
@@ -773,22 +781,34 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.unstar = function(element) {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var copy = angular.copy(element);
         var type = tools.typeList();
 
         copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
 
         if(type === 'conversation') {
-            events.push({ID: copy.ID, Action: 2, Conversation: copy});
+            // Generate conversation changes with event
+            conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+            cache.events(conversationEvent, 'conversation');
+            // Generate message changes with event
+            if(angular.isDefined(copy.Messages)) {
+                _.each(copy.Messages, function(message) {
+                    message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+                    messageEvent.push({ID: message.ID, Action: 2, Message: message});
+                });
+                cache.events(messageEvent, 'message');
+            }
+            // Send request
+            Conversation.unstar([copy.ID]);
         } else if(type === 'message') {
-            events.push({ID: copy.ID, Action: 2, Message: copy});
+            messageEvent.push({ID: copy.ID, Action: 2, Message: copy});
+            cache.events(messageEvent, 'message');
         }
 
-        cache.events(events, type);
 
         if(type === 'conversation') {
-            Conversation.unstar([copy.ID]);
         } else if(type === 'message') {
             Message.unstar({IDs: [copy.ID]});
         }

@@ -92,7 +92,7 @@
             </div>
             <div class="meta">
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
-                    <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
+                    <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>
                         <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
                         <a href="" ng-click="detachLabel(label.ID)" class="labelClose">
