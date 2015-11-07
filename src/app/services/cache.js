@@ -1135,7 +1135,7 @@ angular.module("proton.cache", [])
         }, interval);
     };
 
-    // api.loop(); // Start looping
+    api.loop(); // Start looping
 
     return api;
 });
