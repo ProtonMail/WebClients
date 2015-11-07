@@ -403,10 +403,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
                 if(angular.isDefined(element.Messages)) {
-                    _.each(element.Messages, function(message) {
-                        message.IsRead = 0;
-                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
-                    });
+                    var last = _.last(element.Messages);
+
+                    last.IsRead = 0;
+                    messageEvent.push({Action: 3, ID: last.ID, Message: last});
                 }
             } else if(type === 'message') {
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
