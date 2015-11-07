@@ -1,6 +1,6 @@
 .cg-notify-message {
-    background: $readBubble;
-    border-color: $readBubble;
+    background: #43434f;
+    border-color: #43434f;
     color: #fff !important;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
     box-shadow: none;
@@ -8,7 +8,8 @@
 
     }
     &.notification-danger {
-
+        background-color: #cc9393;
+        border-color: #cc9393;
     }
 }
 
