@@ -7,6 +7,9 @@
     &.notification-success {
 
     }
+    &.notification-danger {
+
+    }
 }
 
 .cg-notify-loading {
@@ -26,7 +29,7 @@
     -webkit-transition: top 0.5s ease-out,opacity 0.2s ease-out;
     -moz-transition: top 0.5s ease-out,opacity 0.2s ease-out;
     -o-transition: top 0.5s ease-out,opacity 0.2s ease-out;
-    transition: top 0.5s ease-out,opacity 0.2s ease-out;    
+    transition: top 0.5s ease-out,opacity 0.2s ease-out;
 
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
