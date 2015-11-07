@@ -432,21 +432,28 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.delete = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var type = tools.typeList();
 
         // cache
         _.each(elements, function(element) {
             if(type === 'conversation') {
-                events.push({Action: 0, ID: element.ID, Conversation: element});
+                conversationEvent.push({Action: 0, ID: element.ID, Conversation: element});
+                if(angular.isDefined(element.Messages)) {
+                    _.each(element.Messages, function(message) {
+                        messageEvent.push({Action: 0, ID: message.ID, Message: message});
+                    });
+                }
             } else if(type === 'message') {
-                events.push({Action: 0, ID: element.ID, Message: element});
+                messageEvent.push({Action: 0, ID: element.ID, Message: element});
                 // Manage the case where the message is open in the composer
                 $rootScope.$broadcast('deleteMessage', element.ID);
             }
         });
 
-        cache.events(events, type);
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         if(type === 'conversation') {
