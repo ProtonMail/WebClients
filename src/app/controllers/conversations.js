@@ -352,7 +352,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.read = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var type = tools.typeList();
 
         // cache
@@ -360,13 +361,20 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             element.NumUnread = 0;
 
             if(type === 'conversation') {
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
+                if(angular.isDefined(element.Messages)) {
+                    _.each(element.Messages, function(message) {
+                        message.IsRead = 1;
+                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                    });
+                }
             } else if(type === 'message') {
-                events.push({Action: 3, ID: element.ID, Message: element});
+                messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
-        cache.events(events, type);
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         if(type === 'conversation') {
@@ -384,7 +392,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.unread = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var type = tools.typeList();
 
         // cache
@@ -392,13 +401,20 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             element.NumUnread = 1;
 
             if(type === 'conversation') {
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
+                if(angular.isDefined(element.Messages)) {
+                    _.each(element.Messages, function(message) {
+                        message.IsRead = 0;
+                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                    });
+                }
             } else if(type === 'message') {
-                events.push({Action: 3, ID: element.ID, Message: element});
+                messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
-        cache.events(events, type);
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         if(type === 'conversation') {
