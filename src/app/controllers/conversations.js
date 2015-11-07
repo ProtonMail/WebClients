@@ -472,30 +472,41 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.move = function(mailbox) {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var type = tools.typeList();
-        var current;
 
         // cache
         _.each(elements, function(element) {
+            var currents = [];
+
             // Find current location
             _.each(element.LabelIDs, function(labelID) {
-                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
-                    current = labelID;
+                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID.toString())) {
+                    currents.push(labelID.toString());
                 }
             });
 
-            element.LabelIDsRemoved = [current]; // Remove current location
+            element.LabelIDsRemoved = currents; // Remove currents location
             element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
 
             if(type === 'conversation') {
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
+
+                if(angular.isDefined(element.Messages)) {
+                    _.each(element.Messages, function(message) {
+                        message.LabelIDsRemoved = currents; // Remove currents location
+                        message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
+                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                    });
+                }
             } else if(type === 'message') {
-                events.push({Action: 3, ID: element.ID, Message: element});
+                messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
-        cache.events(events, type);
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         if(type === 'conversation') {
