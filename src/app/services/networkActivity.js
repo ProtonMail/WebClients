@@ -51,6 +51,11 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
             });
 
             return promise;
+        },
+        clear: function() {
+            errorReporter.clear();
+            promises = [];
+            return promises;
         }
     };
 

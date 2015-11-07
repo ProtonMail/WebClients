@@ -319,8 +319,11 @@ angular.module("proton", [
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
-.run(function($rootScope, $location, $state, authentication, $log) {
+.run(function($rootScope, $location, $state, authentication, $log, networkActivityTracker) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+        networkActivityTracker.clear();
+
         var isLogin = (toState.name === "login");
         var isUpgrade = (toState.name === "upgrade");
         var isSupport = (toState.name.includes("support"));
