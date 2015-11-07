@@ -15,6 +15,7 @@ angular.module("proton.controllers.Settings")
     domainModal,
     organization,
     members,
+    networkActivityTracker,
     notify,
     spfModal,
     verificationModal
@@ -47,8 +48,7 @@ angular.module("proton.controllers.Settings")
         domainModal.activate({
             params: {
                 submit: function(name) {
-                    Domain.create({Name: name}).then(function(result) {
-                        console.log(result);
+                    networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
@@ -60,7 +60,7 @@ angular.module("proton.controllers.Settings")
                         }
                     }, function(error) {
                         notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
-                    });
+                    }));
                 },
                 cancel: function() {
                     domainModal.deactivate();
@@ -90,14 +90,17 @@ angular.module("proton.controllers.Settings")
      * Delete domain
      */
     $scope.deleteDomain = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_DOMAIN'),
                 message: $translate.instant('Are you sure you want to delete this domain? This action will also delete addresses linked.'),
                 confirm: function() {
-                    Domain.delete(domain.ID).then(function(result) {
+                    networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
                         if(result.data && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
+                            $scope.domains.splice(index, 1); // Remove domain in interface
                             confirmModal.deactivate();
                         } else if(result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -106,7 +109,7 @@ angular.module("proton.controllers.Settings")
                         }
                     }, function() {
                         notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
-                    });
+                    }));
                 },
                 cancel: function() {
                     confirmModal.deactivate();

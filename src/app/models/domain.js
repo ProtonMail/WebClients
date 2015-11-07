@@ -40,8 +40,8 @@ angular.module("proton.models.domains", [])
             return $http.put(url.get() + '/domains/' + id, Obj);
         },
         // DELETE
-        delete: function(domainid) {
-            return $http.delete(url.get() + '/domains/' + domainid);
+        delete: function(id) {
+            return $http.delete(url.get() + '/domains/' + id);
         }
     };
 });
