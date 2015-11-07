@@ -1,11 +1,8 @@
 html.protonmail body.themeJason {
-    background: #f2f2f2;
+    background: #e9eaed;
     .pm_buttons {
         a {
             background: #fff;
-            &:active {
-                box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-            }
         }
         .pm_buttons {
             box-shadow: none !important;
@@ -17,10 +14,10 @@ html.protonmail body.themeJason {
     #plans .plans .plan,
     .pm_sort,
     .pm_table,
-    #pm_header,
+    .secure #pm_header,
     .frame .display-image,
     .pm_dropdown, {
-        box-shadow: 0 1px 2px rgba(0,0,0,.1) !important;
+        box-shadow: 0 1px 1px rgba(0,0,0,.2) !important;
         border: none !important;
         background: #fff !important;
         color: $gray-light;
@@ -38,7 +35,7 @@ html.protonmail body.themeJason {
     .pm_button,
     .squire-toolbar,
     iframe {
-        box-shadow: 0 1px 2px rgba(0,0,0,.1) !important;
+        box-shadow: 0 1px 1px rgba(0,0,0,.2) !important;
     }
     .pm_table.plain {
         background: transparent !important;
