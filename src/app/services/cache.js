@@ -358,7 +358,12 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var messages = _.filter(messagesCached, function(message) {
-                return message.LabelIDs.indexOf(location.toString()) !== -1;
+                if (message && message.LabelIDs) {
+                    return message.LabelIDs.indexOf(location.toString()) !== -1;
+                }
+                else {
+                    return false;
+                }
             });
 
             messages = order(messages);
@@ -426,7 +431,12 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
-                return conversation.LabelIDs.indexOf(location.toString()) !== -1;
+                if (conversation && conversation.LabelIDs) {
+                    return conversation.LabelIDs.indexOf(location.toString()) !== -1;
+                }
+                else {
+                    return false;
+                }
             });
 
             conversations = order(conversations);

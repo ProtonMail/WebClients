@@ -1,4 +1,4 @@
-html.protonmail body.themeJason {
+html.protonmail body.themeJason.secure {
     background: #e9eaed;
     .pm_buttons {
         a {
@@ -7,7 +7,11 @@ html.protonmail body.themeJason {
         .pm_buttons {
             box-shadow: none !important;
         }
+        .disabled {
+            background: #fafafa;
+        }
     }
+
     .pm_buttons,
     .well,
     .table,
@@ -45,12 +49,33 @@ html.protonmail body.themeJason {
         box-shadow: none !important;
     }
     section.sidebar ul.menu {
-        border-bottom: 1px solid rgba(0,0,0,.1);
         border-top: 1px solid rgba(255,255,255,.1);
-        background: rgba(0,0,0,.04);
         li a {
-            border-top: 1px solid rgba(0,0,0,.1);
             border-bottom: 1px solid rgba(255,255,255,.1);
         }
+        li.active a {
+                box-shadow: inset 0 1px 2px rgba(0,0,0,.25);
+                border-top-color: transparent;
+        }        
+    }
+    #pm_view article.message header {
+        padding: 5px 0;
+        font-style: 100%;
+    }
+    #pm_rows #pm_list {
+        background: #fff;
+        margin: 0 -50px 0 -25px;
+    } 
+    #pm_rows .list .message:first-child {
+        border-top: 0;
+    }
+    #pm_rows .list .message:last-child {
+        border-bottom: 0;
+    }
+    #pm_view article.message .sub .meta .addLabelButton a.addLabel {
+        border-color: transparent;
+    }
+    header#pm_header .pm_buttons {
+        box-shadow: none !important;
     }
 }
