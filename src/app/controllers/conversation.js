@@ -32,7 +32,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             _.extend($scope.conversation, conversation);
         });
 
-        cache.queryConversationMessages($stateParams.id).then(function(messages) {
+        cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
             _.extend($scope.messages, messages);
             // TODO display last new last message
         });
@@ -232,10 +232,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var copy = angular.copy(conversation);
 
         if($scope.starred()) {
-            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             Conversation.unstar([copy.ID]);
         } else {
-            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             Conversation.star([copy.ID]);
         }
 
@@ -247,7 +247,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Return status of the star conversation
      */
     $scope.starred = function() {
-        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1;
+        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
     };
 
     /**
