@@ -489,13 +489,16 @@ angular.module("proton.cache", [])
      * Try to find the result in the cache
      * @param {String} conversationId
      */
-    api.queryConversationMessages = function(conversationId) {
+    api.queryConversationMessages = function(conversationId, api) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
-            deferred.resolve(queryConversationMessages(conversationId));
+            if(api === true) {
+                deferred.resolve(queryConversationMessages(conversationId));
+            } else {
+                return deferred.resolve([]);
+            }
         };
-
 
         if(angular.isDefined(conversation)) {
             var messages = _.where(messagesCached, {conversationId: conversationId});

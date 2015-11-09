@@ -786,7 +786,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var copy = angular.copy(element);
         var type = tools.typeList();
 
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
 
         if(type === 'conversation') {
             // Generate conversation changes with event
@@ -795,7 +795,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             // Generate message changes with event
             if(angular.isDefined(copy.Messages)) {
                 _.each(copy.Messages, function(message) {
-                    message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+                    message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
                     messageEvent.push({ID: message.ID, Action: 2, Message: message});
                 });
                 cache.events(messageEvent, 'message');
@@ -820,7 +820,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var copy = angular.copy(element);
         var type = tools.typeList();
 
-        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
 
         if(type === 'conversation') {
             // Generate conversation changes with event
@@ -829,7 +829,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             // Generate message changes with event
             if(angular.isDefined(copy.Messages)) {
                 _.each(copy.Messages, function(message) {
-                    message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+                    message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
                     messageEvent.push({ID: message.ID, Action: 2, Message: message});
                 });
                 cache.events(messageEvent, 'message');
@@ -852,7 +852,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Check in LabelIDs to see if the conversation or message is starred
      */
     $scope.starred = function(element) {
-        if(element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1) {
+        if(element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1) {
             return true;
         } else {
             return false;

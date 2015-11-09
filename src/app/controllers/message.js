@@ -115,7 +115,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.starred = function() {
-        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()) !== -1;
+        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
     };
 
     /**
@@ -127,10 +127,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var ids = [copy.ID];
 
         if($scope.starred()) {
-            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             promise = Message.unstar({IDs: ids}).$promise;
         } else {
-            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred.toString()];
+            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             promise = Message.star({IDs: ids}).$promise;
         }
 

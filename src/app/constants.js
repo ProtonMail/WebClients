@@ -29,14 +29,14 @@ angular.module('proton.constants', [])
     COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
     LOGIN_PW_MAX_LEN: 500,
     MAILBOX_IDENTIFIERS: {
-        "inbox": 0,
-        "drafts": 1,
-        "sent": 2, // outbox
-        "trash": 3,
-        "spam": 4,
-        "starred": 10,
-        "archive": 6,
-        "search": 7,
-        "label": 8
+        inbox: '0',
+        drafts: '1',
+        sent: '2', // outbox
+        trash: '3',
+        spam: '4',
+        starred: '10',
+        archive: '6',
+        search: '7',
+        label: '8'
     }
 });
