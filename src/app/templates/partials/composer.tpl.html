@@ -70,7 +70,7 @@
                 </span>
             </header>
 
-            <div class="options" ng-show="message.displayPanel && message.panelName == 'encrypt'">
+            <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
                 <div ng-form="encryptForm" class="pm_form">
                     <div>
                         <h3>Encrypt for non-ProtonMail users</h3>
@@ -143,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="options" ng-show="message.displayPanel && message.panelName == 'expiration'">
+            <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'expiration' }">
                 <div>
                     <h3>{{ 'EXPIRATION_TIME' | translate }}</h3>
                     <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">

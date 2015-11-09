@@ -142,14 +142,26 @@ body.maximizedComposer {
         	left: 0;
         	right: 0;
         	top: 40px;
-        	bottom: 0;
-        	background: #fff;
+        	bottom: 60px;
         	padding: 2rem 10px;
         	box-sizing: border-box;
         	z-index: 99;
+        	background: #fafafa;
+        	display: none;
+        	margin: 1rem;
+        	box-shadow: 2px 2px 2px rgba(0,0,0,.2), 0 0 2px rgba(0,0,0,.2);
+        	-webkit-transition: opacity .25s ease;
+        	   -moz-transition: opacity .25s ease;
+        	    -ms-transition: opacity .25s ease;
+        	     -o-transition: opacity .25s ease;
+        	        transition: opacity .25s ease;
+        	&.show {
+        		display: block;
+        	}
         	footer {
         		position: absolute;
         		left: 0;
+        		background: #fafafa;
         		bottom: 0;
         	}
         	.clearfix {
@@ -205,8 +217,7 @@ body.maximizedComposer {
 			min-height: 40px;
 			.actions {
 				float: right;
-				padding: 10px;
-				padding-left: 0;
+				padding: 0;
 			}
 			.subject {
 				float: left;
@@ -223,15 +234,15 @@ body.maximizedComposer {
 				box-sizing: border-box;
 			}
 			.pm_button {
-				width: 20px;
+				width: 40px;
 				padding: 0;
 				text-align: center;
-				height: 20px;
-				line-height: 20px;
+				height: 40px;
+				line-height: 40px;
 				color: #dadae5;
-				border-color: #6b697e;
+				border-color: rgba(255,255,255,.35);
+				border-width: 0 0 0 1px;
 				float: left;
-				margin-left: 5px;
 				&:hover {
 					color: $white;
 				}
