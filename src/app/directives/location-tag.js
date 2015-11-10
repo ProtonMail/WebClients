@@ -2,6 +2,7 @@ angular.module("proton.locationTag", [])
 .directive("locationTag", function(tools) {
     return {
         restrict: 'E',
+        replace: true,
         templateUrl: "templates/directives/location-tag.tpl.html",
         link: function(scope, element, attrs) {
             scope.in = function(location) {

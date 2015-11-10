@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <p>For security reasons, we need to verify that you are the owner of {{ domain }}. Please add the following TXT record into the DNS for {{ domain }}. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <p class="alert alert-info">{{ txt }}</p>
+                <pre>{{ ctrl.domain.VerifyCode }}</pre>
                 <p>Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>
             </div>
         </div>

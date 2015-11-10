@@ -1,18 +1,20 @@
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.inbox)" class="pm_label" title="{{ 'INBOX' | translate }}">
-    <i class="fa fa-inbox"></i> {{ 'INBOX' | translate }}
-</span>
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)" class="pm_label" title="{{ 'DRAFTS' | translate }}">
-    <i class="fa fa-file-text-o"></i> {{ 'DRAFTS' | translate }}
-</span>
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.sent)" class="pm_label" title="{{ 'SENT' | translate }}">
-    <i class="fa fa-sign-out"></i> {{ 'SENT' | translate }}
-</span>
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.archive)" class="pm_label" title="{{ 'ARCHIVE' | translate }}">
-    <i class="fa fa-archive"></i> {{ 'ARCHIVE' | translate }}
-</span>
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.spam)" class="pm_label" title="{{ 'SPAM' | translate }}">
-    <i class="fa fa-ban"></i> {{ 'SPAM' | translate }}
-</span>
-<span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.trash)" class="pm_label" title="{{ 'TRASH' | translate }}">
-    <i class="fa fa-trash-o"></i> {{ 'TRASH' | translate }}
+<span ng-show="('secured.starred.**' | includedByState) || ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState)">
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.inbox)" class="pm_label" title="{{ 'INBOX' | translate }}">
+        <i class="fa fa-inbox"></i> {{ 'INBOX' | translate }}
+    </span>
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)" class="pm_label" title="{{ 'DRAFTS' | translate }}">
+        <i class="fa fa-file-text-o"></i> {{ 'DRAFTS' | translate }}
+    </span>
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.sent)" class="pm_label" title="{{ 'SENT' | translate }}">
+        <i class="fa fa-sign-out"></i> {{ 'SENT' | translate }}
+    </span>
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.archive)" class="pm_label" title="{{ 'ARCHIVE' | translate }}">
+        <i class="fa fa-archive"></i> {{ 'ARCHIVE' | translate }}
+    </span>
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.spam)" class="pm_label" title="{{ 'SPAM' | translate }}">
+        <i class="fa fa-ban"></i> {{ 'SPAM' | translate }}
+    </span>
+    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.trash)" class="pm_label" title="{{ 'TRASH' | translate }}">
+        <i class="fa fa-trash-o"></i> {{ 'TRASH' | translate }}
+    </span>
 </span>

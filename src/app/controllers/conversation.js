@@ -218,29 +218,69 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var id = 'message' + index; // TODO improve it for the search case
 
         $timeout(function() {
+            var value = $('#' + id).offset().top - $('#' + id).outerHeight();
+            
             $('#pm_thread').animate({
-                scrollTop: $('#' + id).offset().top - $('#' + id).outerHeight()
+                scrollTop: value
             }, 'slow');
-        }, 1000);
+        }, 2000);
     };
 
     /**
-     * Toggle star conversation
+     * Toggle star status for current conversation
+     */
+     $scope.toggleStar = function() {
+        if($scope.starred() === true) {
+            $scope.unstar();
+        } else {
+            $scope.star();
+        }
+     };
+
+    /**
+     * Star the current conversation
      */
     $scope.star = function() {
         var events = [];
         var copy = angular.copy(conversation);
+        var messages = cache.queryMessagesCached(copy.ID);
 
-        if($scope.starred()) {
-            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            Conversation.unstar([copy.ID]);
-        } else {
-            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            Conversation.star([copy.ID]);
-        }
-
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
         events.push({ID: copy.ID, Action: 2, Conversation: copy});
         cache.events(events, 'conversation');
+
+        if(messages.length > 0) {
+            _.each(messages, function(message) {
+                message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+                messageEvent.push({ID: message.ID, Action: 3, Message: message});
+            });
+            cache.events(messageEvent, 'message');
+        }
+
+        Conversation.star([copy.ID]);
+    };
+
+    /**
+     * Unstar the current conversation
+     */
+    $scope.unstar = function() {
+        var events = [];
+        var copy = angular.copy(conversation);
+        var messages = cache.queryMessagesCached(copy.ID);
+
+        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        events.push({ID: copy.ID, Action: 2, Conversation: copy});
+        cache.events(events, 'conversation');
+
+        if(messages.length > 0) {
+            _.each(messages, function(message) {
+                message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+                messageEvent.push({ID: message.ID, Action: 3, Message: message});
+            });
+            cache.events(messageEvent, 'message');
+        }
+
+        Conversation.unstar([copy.ID]);
     };
 
     /**
