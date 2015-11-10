@@ -552,11 +552,6 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/contacts.tpl.html",
                 controller: "ContactsController"
             }
-        },
-        resolve: {
-            contacts: function(Contact, networkActivityTracker) {
-                return networkActivityTracker.track(Contact.query());
-            }
         }
     })
 
