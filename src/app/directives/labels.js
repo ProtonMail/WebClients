@@ -1,6 +1,6 @@
 angular.module("proton.labels", [])
 
-.directive('dropdownLabels', function ($timeout, $q, $rootScope, authentication) {
+.directive('dropdownLabels', function ($timeout, $q, $rootScope, $filter, authentication) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/dropdown.labels.tpl.html',
@@ -20,7 +20,7 @@ angular.module("proton.labels", [])
                     var messages = scope.getMessages();
 
                     scope.alsoArchive = false;
-                    scope.labels = angular.copy(authentication.user.Labels);
+                    scope.labels = $filter('labels')(angular.copy(authentication.user.Labels));
 
                     _.each(messages, function(message) {
                         messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {

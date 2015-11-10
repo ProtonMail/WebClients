@@ -6,11 +6,11 @@
 	.list {
 		width: 500px;
 		min-width: 500px;
-		box-sizing: border-box;		
+		box-sizing: border-box;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		overflow-x: hidden;
-		max-height: $maxHeight; 
+		max-height: $maxHeight;
 		#pm_list {
 			padding: 0 25px;
 		    box-sizing: border-box;
@@ -18,7 +18,7 @@
 		}
 		div.message {
 			position: relative;
-			border: 1px solid transparent;		
+			border: 1px solid transparent;
 			border-top-color: $border;
 			padding: 12px 0 12px 45px;
 			cursor: pointer;
@@ -40,7 +40,7 @@
 			}
 			&.selected {
 				background-color: #f6f6f6;
-				border-color: #efefef;	
+				border-color: #dcdcdc;	
 				margin: 0 -10px;
 				padding-left: 55px;
 				padding-right: 10px;
@@ -147,7 +147,7 @@
 					height: 18px;
 					line-height: 18px;
 					white-space: nowrap;
-					overflow: hidden;					
+					overflow: hidden;
 					margin: 0;
 					padding: 0;
 					display: block;
@@ -156,7 +156,7 @@
 
 			}
 		}
-	}	
+	}
 	#pm_view {
 		-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;

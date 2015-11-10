@@ -6,6 +6,7 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     cardModal,
+    notify,
     organization,
     Payment,
     paymentModal,
@@ -169,13 +170,24 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.viewCard = function() {
-        cardModal.activate({
-            params: {
-                mode: 'view',
-                cancel: function() {
-                    cardModal.deactivate();
-                }
+        Payment.source().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                var card = result.data.card;
+
+                cardModal.activate({
+                    params: {
+                        card: card,
+                        mode: 'view',
+                        cancel: function() {
+                            cardModal.deactivate();
+                        }
+                    }
+                });
+            } else {
+                notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
             }
+        }, function(error) {
+            notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
         });
     };
 

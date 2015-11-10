@@ -50,6 +50,12 @@ angular.module("proton.models.payments", [])
          */
         group: function() {
             return $http.get(url.get() + '/payments/group');
+        },
+        /**
+         * Get current payment information from Stripe
+         */
+        source: function() {
+            return $http.get(url.get() + '/payments/source');
         }
     };
 })

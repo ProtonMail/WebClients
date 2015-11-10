@@ -11,7 +11,8 @@ angular.module("proton.controllers.Secured", [])
     cacheCounters,
     cache,
     CONSTANTS,
-    Stripe
+    Stripe,
+    tools
 ) {
     var format;
     var language = window.navigator.userLanguage || window.navigator.language;
@@ -104,7 +105,7 @@ angular.module("proton.controllers.Secured", [])
     $scope.updatePageName = function() {
         var name;
         var unread = '';
-        var state = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+        var state = tools.currentMailbox();
 
         if(state === 'label') {
             value = cacheCounters.unread($stateParams.label);
@@ -139,7 +140,7 @@ angular.module("proton.controllers.Secured", [])
                 name = unread + $translate.instant('TRASH');
                 break;
             case 'label':
-                name = unread + _.findWhere(authentication.user.Labels, {ID: $stateParams.label}).Name;
+                name = $translate.instant('LABEL');
                 break;
             case 'contacts':
                 name = $translate.instant('CONTACTS');

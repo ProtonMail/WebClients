@@ -105,6 +105,9 @@ angular.module("proton.controllers.Settings")
         }
     ];
 
+    /**
+     * Download invoice file
+     */
     $scope.downloadInvoice = function(payment) {
 
     };
