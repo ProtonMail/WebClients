@@ -33,7 +33,7 @@
 	display: block;
 	position: fixed;
 	left: 50%;
-	bottom: -50px;
+	top: -50px;
 	margin-left: -70px;
 	width: 140px;
 	line-height: 40px;
@@ -43,11 +43,11 @@
 	color: #fff;
 	text-align: center;
 	opacity: 0;
-	transition: bottom .5s ease-in-out, opacity .5s linear;	
+	transition: top .5s ease-in-out, opacity .5s linear;	
 	&.show {
-		bottom: 0;
+		top: 0;
 		opacity: 1;
-		transition: bottom .5s ease-in-out, opacity .5s linear;
+		transition: top .5s ease-in-out, opacity .5s linear;
 	}
 	.spinner {
 	    position: absolute;
