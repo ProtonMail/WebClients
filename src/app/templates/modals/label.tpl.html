@@ -5,40 +5,38 @@
             <div class="modal-header" ng-show="ctrl.title">
                 <h3 class="modal-title">{{ctrl.title}}</h3>
             </div>
-            <form name="labelForm" novalidate ng-submit="ctrl.create(ctrl)" method="post">
-                <div class="modal-body pm_form">
-                    <div class="row">
-                        <span class="col narrow">
-                            <label for="labelName">{{ 'NAME' | translate }}</label>
-                        </span><!--/.col-->
-                        <span class="col full last">
-                            <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder="{{ 'LABEL_NAME' | translate }}" required="" />
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="col narrow">
-                            <label>{{ 'COLOR' | translate }}</label>
-                        </span><!--/.col-->
-                        <span class="col full last">
-                            <div class="text-center">
-                                <ul class="palette list-inline">
-                                    <li ng-repeat="c in ctrl.colors">
-                                        <a ng-click="ctrl.color = c;" class="color" ng-class="{'active': ctrl.color === c}" ng-style="{ 'background-color': c }"><i class="fa fa-check"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </span>
-                    </div>
-                </div>                
-            </form>
+            <div class="modal-body pm_form">
+                <div class="row">
+                    <span class="col narrow">
+                        <label for="labelName">{{ 'NAME' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col full last">
+                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder="{{ 'LABEL_NAME' | translate }}" required="" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="col narrow">
+                        <label>{{ 'COLOR' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col full last">
+                        <div class="text-center">
+                            <ul class="palette list-inline">
+                                <li ng-repeat="c in ctrl.colors">
+                                    <a ng-click="ctrl.color = c;" class="color" ng-class="{'active': ctrl.color === c}" ng-style="{ 'background-color': c }"><i class="fa fa-check"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="modal-footer text-right">
-            <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-            <button type="submit" class="pm_button primary" ng-disabled="labelForm.$invalid">
+            <a class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()">{{ 'CANCEL' | translate }}</a>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary" ng-disabled="networkActivity.loading()">
                 <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
                 <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
             </button>
-        </div>        
-    </div> 
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>  
+        </div>
+    </div>
+    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>

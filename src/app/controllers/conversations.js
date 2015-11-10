@@ -485,19 +485,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var messageEvent = [];
         var type = tools.typeList();
 
-        // cache
+        // Cache
         _.each(elements, function(element) {
             var currents = [];
 
             // Find current location
             _.each(element.LabelIDs, function(labelID) {
-                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID.toString())) {
+                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
                     currents.push(labelID.toString());
                 }
             });
 
             element.LabelIDsRemoved = currents; // Remove currents location
-            element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
+            element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
 
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(element.ID);
@@ -507,7 +507,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.LabelIDsRemoved = currents; // Remove currents location
-                        message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
+                        message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
                         messageEvent.push({Action: 3, ID: message.ID, Message: message});
                     });
                 }
@@ -516,114 +516,43 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
 
+        // Unselect elements
+        $scope.unselectAllConversations();
+
+        // Send events
         cache.events(conversationEvent, 'conversation');
         cache.events(messageEvent, 'message');
 
-        // api
+        // Request
         if(type === 'conversation') {
             Conversation[mailbox](ids);
         } else if (type === 'message') {
             Message[mailbox]({IDs: ids});
         }
-
-        $scope.unselectAllConversations();
     };
 
-    // PREVIOUS .move function
-    // $scope.move = function(mailbox) {
-    //     var deferred = $q.defer();
-    //     var ids = $scope.idsSelected();
-    //     var inDelete = mailbox === 'delete';
-    //     var promise = (inDelete) ? Message.delete({IDs: ids}).$promise : Message[mailbox]({IDs: ids}).$promise;
-    //     var events = [];
-    //     var movedMessages = [];
-    //
-    //     _.forEach($scope.elementsSelected(), function (message) {
-    //         message.Selected = false;
-    //
-    //         var event = {
-    //             ID: message.ID,
-    //             Message: angular.copy(message)
-    //         };
-    //
-    //         if(inDelete) {
-    //             event.Action = 0; // DELETE
-    //         } else {
-    //             event.Action = 3; // UPDATE_FLAG
-    //             event.Message.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-    //             event.Message.Time = message.Time;
-    //         }
-    //
-    //         events.push(event);
-    //
-    //         if(inDelete) {
-    //             $rootScope.$broadcast('deleteMessage', message.ID);
-    //         }
-    //     });
-    //
-    //     if(events.length > 0) {
-    //         cache.events(events);
-    //     }
-    //
-    //     $scope.unselectAllConversations();
-    //
-    //     var promiseSuccess = function(result) {
-    //         if(inDelete) {
-    //             if(ids.length > 1) {
-    //                 notify({message: $translate.instant('MESSAGES_DELETED'), classes: 'notification-success'});
-    //             } else {
-    //                 notify({message: $translate.instant('MESSAGE_DELETED'), classes: 'notification-success'});
-    //             }
-    //         }
-    //
-    //         deferred.resolve();
-    //     };
-    //
-    //     var promiseError = function(error) {
-    //         error.message = 'Error during the move request';
-    //         deferred.reject(error);
-    //     };
-    //
-    //     if ($scope.conversations.length === 0) {
-    //         networkActivityTracker.track(promise.then(promiseSuccess, promiseError));
-    //     } else {
-    //         promise.then(promiseSuccess, promiseError);
-    //     }
-    //
-    //     return deferred.promise;
-    // };
-
+    /**
+     * Move draft message to trash
+     * @param {String} id - message id
+     */
     $scope.discardDraft = function(id) {
-        var movedMessages = [];
-        var message = cache.getMessage(id).then(function(message) {
-            Message.trash({IDs: [id]}).$promise.then(function(result) {
-                movedMessages.push({
-                    LabelIDs: message.LabelIDs,
-                    OldLocation: message.Location,
-                    IsRead: message.IsRead,
-                    Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                    Starred: message.Starred
-                });
+        var events = [];
 
-                cache.events([{
-                    Action: 3,
-                    ID: message.ID,
-                    Message: {
-                        ID: message.ID,
-                        Location: CONSTANTS.MAILBOX_IDENTIFIERS.trash
-                    }
-                }]);
-
-                $scope.conversations = _.without($scope.conversations, message);
-            }, function(error) {
-                notify({message: 'Error during the trash request', classes: 'notification-danger'});
-                $log.error(error);
-            });
-
-        }, function(error) {
-            notify({message: 'Error during the getting message from the cache', classes: 'notification-danger'});
-            $log.error(error);
+        // Manage cache
+        events.push({
+            Action: 3,
+            ID: id,
+            Message: {
+                ID: id,
+                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
+                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+            }
         });
+
+        cache.events(events, 'message');
+
+        // Request
+        Message.trash({IDs: [id]});
     };
 
     $scope.unselectAllLabels = function() {

@@ -917,14 +917,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     }
 
                     message.BackupDate = new Date(); // Draft save at
-                    message.Location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
+                    message.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
                     $scope.saveOld(message);
 
                     // Add draft in message list
                     var events = [];
 
                     events.push({Action: 2, ID: result.Message.ID, Message: result.Message});
-                    cache.events(events);
+                    cache.events(events, 'message');
 
                     if(notification === true) {
                         notify({message: "Message saved", classes: 'notification-success'});
@@ -1094,8 +1094,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         deferred.reject(new Error(result.Error));
                                     } else {
                                         cache.events(events);
-                                        notify({ 
-                                            message: $translate.instant('MESSAGE_SENT'), 
+                                        notify({
+                                            message: $translate.instant('MESSAGE_SENT'),
                                             duration: 6000,
                                             classes: 'notification-success',
                                             templateUrl: 'templates/notifications/loading.tpl.html',
