@@ -98,10 +98,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    $scope.$on('squireHeightChanged', function(event) {
-        console.log('squireHeightChanged');
-    });
-
     function onResize() {
         clearTimeout(timeoutStyle);
 
@@ -1212,7 +1208,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(discard === true && angular.isDefined(id)) {
             // Remove message in message list controller
             $rootScope.$broadcast('discardDraft', id);
-            notify({message: 'Message discarded', classes: 'notification-success'}); // TODO translate
+            notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
         }
 
         // Message closed and focussed?

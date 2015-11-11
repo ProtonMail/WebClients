@@ -64,21 +64,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Check if the request is in a cache context
-    * @param {Object} request
-    * @return {Boolean}
-    */
-    var cacheContext = function(request) {
-        var two = Object.keys(request).length === 2;
-        var page = angular.isDefined(request.Page);
-        var basic = angular.isDefined(request.Location);
-        var starred = angular.isDefined(request.Starred);
-        var label = angular.isDefined(request.Label);
-
-        return two && page && (basic || starred || label);
-    };
-
-    /**
     * Save conversations in conversationsCached and add location in attribute
     * @param {Array} conversations
     */
@@ -216,7 +201,7 @@ angular.module("proton.cache", [])
     var queryConversations = function(request) {
         var deferred = $q.defer();
         var location = getLocation(request);
-        var context = cacheContext(request);
+        var context = tools.cacheContext(request);
 
         Conversation.query(request).then(function(result) {
             var data = result.data;
@@ -250,7 +235,7 @@ angular.module("proton.cache", [])
      */
     var queryMessages = function(request) {
         var deferred = $q.defer();
-        var context = cacheContext(request);
+        var context = tools.cacheContext(request);
 
         Message.query(request).$promise.then(function(messages) {
             // Only for cache context
@@ -349,7 +334,7 @@ angular.module("proton.cache", [])
     api.queryMessages = function(request) {
         var deferred = $q.defer();
         var location = getLocation(request);
-        var context = cacheContext(request);
+        var context = tools.cacheContext(request);
         var callApi = function() {
             deferred.resolve(queryMessages(request));
         };
@@ -415,7 +400,7 @@ angular.module("proton.cache", [])
     api.queryConversations = function(request) {
         var deferred = $q.defer();
         var location = getLocation(request);
-        var context = cacheContext(request);
+        var context = tools.cacheContext(request);
         var callApi = function() {
             // Need data from the server
             deferred.resolve(queryConversations(request));

@@ -64,9 +64,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     $scope.initView = function() {
         if($scope.message.IsRead === 0) {
-            $scope.message.IsRead = 1;
+            var events = [];
+
+            events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
+            cache.events(events, 'message');
             Message.read({IDs: [$scope.message.ID]});
-            // TODO generate event
         }
 
         if(angular.isDefined($scope.message.Body)) {
@@ -92,16 +94,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        var open;
-
-        if(angular.isDefined($rootScope.openMessage)) {
-            open = _.where($scope.messages, {ID: $rootScope.openMessage})[0];
-            delete $rootScope.openMessage;
-        } else {
-            open = _.last($scope.messages);
-        }
-
-        if($scope.message === open) {
+        if($rootScope.openMessage.indexOf($scope.message.ID) !== -1) {
             $scope.initView();
         }
     };

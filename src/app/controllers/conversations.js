@@ -26,6 +26,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 ) {
     var lastChecked = null;
 
+
+    var cacheContext = function() {
+
+    };
+
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = tools.currentMailbox();
@@ -97,15 +102,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.activeConversation(id);
         });
 
-        $scope.$on('starMessages', function(event) {
-            var ids = $scope.idsSelected();
-            var promise;
-
-            _.each($scope.elementsSelected(), function(message) { message.Starred = 1; });
-            promise = Message.star({IDs: ids}).$promise;
-            networkActivityTracker.track(promise);
-            $scope.unselectAllConversations();
-        });
+        // $scope.$on('starMessages', function(event) {
+        //     var ids = $scope.idsSelected();
+        //     var promise;
+        //
+        //     _.each($scope.elementsSelected(), function(message) { message.Starred = 1; });
+        //     promise = Message.star({IDs: ids}).$promise;
+        //     networkActivityTracker.track(promise);
+        //     $scope.unselectAllConversations();
+        // });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
     };
@@ -229,6 +234,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
         var promise;
+        var context = tools.cacheContext(request);
 
         if(['sent', 'drafts', 'search'].indexOf(tools.currentMailbox()) !== -1) {
             promise = cache.queryMessages(request);
@@ -243,6 +249,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
             $log.error(error);
         });
+
+        if(context === false) {
+            networkActivityTracker.track(promise);
+        }
 
         return deferred.promise;
     };
@@ -644,8 +654,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             deferred.reject(error);
         });
 
-        networkActivityTracker.track(deferred.promise);
-
         return deferred.promise;
     };
 
@@ -841,13 +849,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.click = function(element) {
         var type = tools.typeList();
+
+        delete $rootScope.openMessage;
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Open conversation
         if(type === 'conversation') {
             $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ID });
         } else if (type === 'message') {
-            $rootScope.openMessage = element.ID;
+            $rootScope.openMessage = [element.ID];
             $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ConversationID });
         }
     };

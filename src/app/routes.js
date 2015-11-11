@@ -667,20 +667,6 @@ angular.module("proton.routes", [
 
     .state("secured.domains", {
         url: "/domains",
-        resolve: {
-            organization: function(Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
-            },
-            domains: function(Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domain.query());
-            },
-            members: function(Member, networkActivityTracker) {
-                return networkActivityTracker.track(Member.query());
-            },
-            addresses: function(Address, networkActivityTracker) {
-                return networkActivityTracker.track(Address.query());
-            }
-        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/domains.tpl.html",

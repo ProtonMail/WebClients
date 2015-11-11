@@ -3,18 +3,18 @@ angular.module("proton.controllers.Settings")
 .controller('DomainsController', function(
     $rootScope,
     $scope,
+    $q,
     $translate,
-    addresses,
+    Address,
     addressModal,
     buyDomainModal,
     confirmModal,
     dkimModal,
     dmarcModal,
     Domain,
-    domains,
     domainModal,
-    organization,
-    members,
+    Organization,
+    Member,
     networkActivityTracker,
     notify,
     verificationModal,
@@ -24,21 +24,41 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
+        var promises = [];
 
-        if(angular.isDefined(domains.data) && domains.data.Code === 1000) {
-            $scope.domains = domains.data.Domains;
-        }
+        promises.push(Organization.get().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.organization = result.data.Organization;
+            } else {
+                // TODO display error
+            }
+        }));
 
-        if(angular.isDefined(members.data) && members.data.Code === 1000) {
-            $scope.members = members.data.Members;
-        }
+        promises.push(Domain.query().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.domains = result.data.Domains;
+            } else {
+                // TODO display error
+            }
+        }));
 
-        if(angular.isDefined(addresses.data) && addresses.data.Code === 1000) {
-            $scope.addresses = addresses.data.Addresses;
-        }
+        promises.push(Member.query().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.members = result.data.Members;
+            } else {
+                // TODO display error
+            }
+        }));
+
+        promises.push(Address.query().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.addresses = result.data.Addresses;
+            } else {
+                // TODO display error
+            }
+        }));
+
+        networkActivityTracker.track($q.all(promises));
     };
 
     /**

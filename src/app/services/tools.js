@@ -421,5 +421,20 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
+    /**
+     * Check if the request is in a cache context
+     * @param {Object} request
+     * @return {Boolean}
+     */
+    tools.cacheContext = function(request) {
+        var two = Object.keys(request).length === 2;
+        var page = angular.isDefined(request.Page);
+        var basic = angular.isDefined(request.Location);
+        var starred = angular.isDefined(request.Starred);
+        var label = angular.isDefined(request.Label);
+
+        return two && page && (basic || starred || label);
+    };
+
     return tools;
 });

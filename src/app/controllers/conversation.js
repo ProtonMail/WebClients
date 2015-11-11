@@ -34,7 +34,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
             _.extend($scope.messages, messages);
-            // TODO display last new last message
         });
     });
 
@@ -43,6 +42,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.initialization = function() {
         var open;
+        var unreads = _.where($scope.messages, {IsRead: 0});
 
         if($scope.mailbox === 'drafts') {
             // Remove the last message in conversation view
@@ -67,13 +67,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             });
         }
 
-        if(angular.isDefined($rootScope.openMessage)) {
-            open = _.where($scope.messages, {ID: $rootScope.openMessage})[0];
-        } else {
-            open = _.last($scope.messages);
+        if(angular.isDefined($rootScope.openMessage)) { // Open specific message
+
+        } else if(unreads.length > 0) { // Open all unread messages
+            $rootScope.openMessage = _.map(unreads, function(message) { return message.ID; });
+        } else { // Open the only lastest
+            $rootScope.openMessage = [_.last($scope.messages).ID];
         }
 
-        $scope.scrollToMessage(open);
+        // $scope.scrollToMessage(open);
     };
 
     $scope.back = function() {
@@ -202,8 +204,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
                 deferred.reject(error);
             });
-
-            networkActivityTracker.track(deferred.promise);
         }
 
         return deferred.promise;
