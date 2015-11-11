@@ -25,13 +25,6 @@ angular.module("proton.controllers.Contacts", [
     $rootScope.pageName = 'Contacts';
     $scope.currentPage = 1;
     $scope.params = { searchContactInput: ''};
-
-    var derp = Contact.query().then( function(result) {
-        $scope.contacts = result.data.Contacts;
-    });
-    networkActivityTracker.track(derp);
-
-
     $scope.editing = false;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
