@@ -170,9 +170,9 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.viewCard = function() {
-        Payment.source().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                var card = result.data.card;
+        // Payment.source().then(function(result) {
+        //     if(angular.isDefined(result.data) && result.data.Code === 1000) {
+        //         var card = result.data.card;
 
                 cardModal.activate({
                     params: {
@@ -183,12 +183,12 @@ angular.module("proton.controllers.Settings")
                         }
                     }
                 });
-            } else {
-                notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-            }
-        }, function(error) {
-            notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        });
+        //     } else {
+        //         notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
+        //     }
+        // }, function(error) {
+        //     notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
+        // });
     };
 
     /**

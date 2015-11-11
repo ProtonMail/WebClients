@@ -440,7 +440,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Stripe) {
+.factory('cardModal', function(pmModal, Stripe, Payment, notify, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card/modal.tpl.html',
@@ -449,9 +449,41 @@ angular.module("proton.modals", [])
             this.mode = params.mode;
             // Functions
             this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.form);
+                this.process = true;
+
+                var stripeResponseHandler = function(status, response) {
+                    this.process = false;
+
+                    if(status === 200) {
+                        console.log('stripeResponseHandler OK');
+                        params.cancel();
+                    } else if(angular.isDefined(response.error)) {
+                        notify({message: response.error.message, classes: 'notification-danger'});
+                    }
+                }.bind(this);
+
+                if(Stripe.card.validateCardNumber(this.number) === false) {
+                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
+                    return false;
                 }
+
+                if(Stripe.card.validateExpiry(this.month, this.year) === false) {
+                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                if(Stripe.card.validateCVC(this.cvc) === false) {
+                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
+                    return false;
+                }
+
+                Stripe.card.createToken({
+                    name: this.fullname,
+                    number: this.number,
+                    cvc: this.cvc,
+                    exp_month: this.month,
+                    exp_year: this.year
+                }, stripeResponseHandler);
             };
 
             this.cancel = function() {
