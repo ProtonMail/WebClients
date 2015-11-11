@@ -154,6 +154,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var conversationEvent = [];
         var messageEvent = [];
         var labelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        var stars = _.filter($scope.messages, function(message) {
+            return message.LabelIDs && message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
+        });
 
         // Messages
         copy.LabelIDsRemoved = labelIDsRemoved;
@@ -161,7 +164,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.events(messageEvent, 'message');
 
         // Conversation
-        // TODO
+        if(stars.length === 1) {
+            conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDsRemoved: labelIDsRemoved}});
+            cache.events(conversationEvent, 'conversation');
+        }
 
         // Request
         Message.unstar({IDs: ids});
