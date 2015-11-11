@@ -10,8 +10,12 @@
         margin-bottom: 1rem;
         font-weight: 600;
         span {
-            font-size: .9rem;
+            font-size: .8rem;
             font-weight: normal;
+            color: $gray;
+            a {
+                color: $primary;
+            }
         }
     }
     ::-webkit-input-placeholder {
