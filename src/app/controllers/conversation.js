@@ -215,14 +215,18 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.scrollToMessage = function(message) {
         var index = $scope.messages.indexOf(message);
-        var id = 'message' + index; // TODO improve it for the search case
+        var id = '#message' + index; // TODO improve it for the search case
 
         $timeout(function() {
-            var value = $('#' + id).offset().top - $('#' + id).outerHeight();
-            
-            $('#pm_thread').animate({
-                scrollTop: value
-            }, 'slow');
+            var element = angular.element(id);
+
+            if(angular.isElement(element)) {
+                var value = element.offset().top - element.outerHeight();
+
+                $('#pm_thread').animate({
+                    scrollTop: value
+                }, 'slow');
+            }
         }, 2000);
     };
 
