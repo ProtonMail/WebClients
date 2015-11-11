@@ -5,7 +5,8 @@
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
     box-shadow: none;
     &.notification-success {
-
+        background-color: $green;
+        border-color: $green;
     }
     &.notification-danger {
         background-color: #cc9393;

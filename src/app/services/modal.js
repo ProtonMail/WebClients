@@ -682,7 +682,7 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain.tpl.html',
         controller: function(params) {
-            this.name = '';
+            this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
@@ -727,6 +727,7 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.domain = params.domain;
+            this.address = params.domain.DomainName || '';
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
@@ -749,6 +750,11 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/verification.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
+            this.submit = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.submit();
+                }
+            };
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();

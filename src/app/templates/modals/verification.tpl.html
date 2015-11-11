@@ -6,9 +6,9 @@
                 <h4 class="modal-title">{{ 'VERIFICATION' | translate }}</h4>
             </div>
             <div class="modal-body">
-                <p>For security reasons, we need to verify that you are the owner of {{ domain }}. Please add the following <kbd>TXT</kbd> record into the DNS for {{ domain }}. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <p>For security reasons, we need to verify that you are the owner of {{ ctrl.domain.DomainName }}. Please add the following <kbd>TXT</kbd> record into the DNS for {{ ctrl.domain.DomainName }}. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
                 <pre>{{ ctrl.domain.VerifyCode }}</pre>
-                <p>Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>
+                <p class="alert alert-info">Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>
             </div>
         </div>
         <div class="modal-footer text-right">

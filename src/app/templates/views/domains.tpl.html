@@ -10,12 +10,13 @@
                     {{ 'DOMAINS' | translate }}
                 </legend>
                 <!-- <p>{{ }} Domains are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p> -->
-                <table class="pm_table bordered">
+                <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
                             <th class="domain">{{ 'DOMAIN' | translate }}</th>
-                            <th class="verification">{{ 'VERIFICATION' | translate }}</th>
+                            <th class="verification">{{ 'VERIFY' | translate }}</th>
                             <th class="spf">SPF</th>
+                            <th class="mx">{{ 'MX' | translate }}</th>
                             <th class="dkim">DKIM</th>
                             <th class="dmarc">DMARC</th>
                             <th class="text-right action">{{ 'ACTION' | translate }}</th>
@@ -31,82 +32,80 @@
                                 </strong>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="verification(domain)">
+                                <span class="progress">
                                     <strong ng-show="domain.VerifyState === 0">
-                                        <span> {{ 'NOT_VERIFIED' | translate }}</span>
+                                        <i class="fa fa-circle-o"></i>
                                     </strong>
                                     <strong ng-show="domain.VerifyState === 1" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.VerifyState === 2" class="text-green">
-                                        <i class="fa fa-check"></i>
-                                        <span> {{ 'VERIFIED' | translate }}</span>
+                                        <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </button>
+                                </span>
                             </td>
                             <td>
-                                <button class="pm_button" type="button"  ng-click="spf(domain)">
+                                <span class="progress">
                                     <strong ng-show="domain.SpfState === 0">
-                                        <span> {{ 'ADD_SPF' | translate }}</span>
+                                        <i class="fa fa-circle-o"></i>
                                     </strong>
                                     <strong ng-show="domain.SpfState === 1" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.SpfState === 2" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.SpfState === 3" class="text-green">
-                                        <i class="fa fa-check"></i>
-                                        <span> {{ 'ADDED' | translate }}</span>
+                                        <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </button>
+                                </span>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="dkim(domain)">
+                                <span class="progress">
+                                    <strong ng-show="true">
+                                        <i class="fa fa-circle-o"></i>
+                                    </strong>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="progress">
                                     <strong ng-show="domain.DkimState === 0">
-                                        <span> {{ 'ADD_DKIM' | translate }}</span>
+                                        <i class="fa fa-circle-o"></i>
                                     </strong>
                                     <strong ng-show="domain.DkimState === 1" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.DkimState === 2" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.DkimState === 3" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.DkimState === 4" class="text-green">
-                                        <i class="fa fa-check"></i>
-                                        <span> {{ 'ADDED' | translate }}</span>
+                                        <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </button>
+                                </span>
                             </td>
                             <td>
-                                <button class="pm_button" type="button" ng-click="dmarc(domain)">
+                                <span class="progress">
                                     <strong ng-show="domain.DmarcState === 0">
-                                        <span> {{ 'ADD_DMARC' | translate }}</span>
+                                        <i class="fa fa-circle-o"></i>
                                     </strong>
                                     <strong ng-show="domain.DmarcState === 1" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.DmarcState === 2" class="text-red">
-                                        <i class="fa fa-times"></i>
-                                        <span> {{ 'ERROR' | translate }}</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.DmarcState === 3" class="text-green">
-                                        <i class="fa fa-check"></i>
-                                        <span> {{ 'ADDED' | translate }}</span>
+                                        <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </button>
+                                </span>
                             </td>
                             <td class="text-right">
+                                <button type="button" class="pm_button round" ng-click="wizard(domain)" pt-tooltip="{{ 'EDIT' | translate }}">
+                                    <i class="fa fa-edit"></i>
+                                </button>
                                 <button type="button" class="pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE' | translate }}">
                                     <i class="fa fa-trash-o"></i>
                                 </button>

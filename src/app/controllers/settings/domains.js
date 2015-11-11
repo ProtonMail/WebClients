@@ -42,11 +42,42 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Open modal process to add a custom domain.
+     * Docs: https://github.com/ProtonMail/Slim-API/blob/develop_domain/api-spec/pm_api_domains.md
+     */
+    $scope.wizard = function(domain) {
+        // go through all steps and show the user the step they need to complete next. allow for back and next options.
+        // if domain has a name, we can skip the first step
+        if (domain.DomainName) {
+            // proceed
+            if (domain.VerifyState !== 2) {
+                // show verification step
+                $scope.verification(domain);
+            }
+            else {
+                // proceeed.
+                if (domain.SpfState !== 3) {
+                    $scope.spf(domain);
+                }
+                else {
+                    // proceed.
+                    alert('?');
+                }
+            }
+        }
+        else {
+            // show first step
+            $scope.addDomain();
+        }
+    };
+
+    /**
      * Open modal process to add a custom domain
      */
-    $scope.addDomain = function() {
+    $scope.addDomain = function(domain) {
         domainModal.activate({
             params: {
+                domain: domain,
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -163,6 +194,32 @@ angular.module("proton.controllers.Settings")
         verificationModal.activate({
             params: {
                 domain: domain,
+                submit: function() {
+                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            // check verification code
+                            if (result.data.Domain.VerifyState === 1) {
+                                notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
+                                verificationModal.deactivate();
+                            }
+                            else if (result.data.Domain.VerifyState === 2) {
+                                notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            }
+                            else if (result.data.Domain.VerifyState === 0) {
+                                notify({message: $translate.instant('TXT_RECORD_MISSING'), classes: 'notification-danger'});
+                            }
+                            // open the next step
+                            $scope.verification(result.data.Domain);
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                    }));
+                    // do stuff
+                },
                 close: function() {
                     verificationModal.deactivate();
                 }

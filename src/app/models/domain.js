@@ -9,14 +9,6 @@ angular.module("proton.models.domains", [])
         create: function(Obj) {
             return $http.post(url.get() + '/domains', Obj);
         },
-        /**
-         * Verify MX, SPF and DKIM records
-         */
-        verify: function(Obj) {
-            var id = Obj.ID;
-
-            return $http.post(url.get() + '/domains/' + id, Obj);
-        },
         // GET
         /**
          * Get all domains for this user's organization and check their DNS's

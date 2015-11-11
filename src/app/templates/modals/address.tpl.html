@@ -6,12 +6,12 @@
                 <h3 class="modal-title">Address</h3>
             </div>
             <div class="modal-body pm_form">
-                <input type="text" ng-model="ctrl.address" />
+                <input type="text" ng-model="ctrl.address" placeholder="{{ 'DOMAIN' | translate }}" />
             </div>
         </div>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>

@@ -12,20 +12,33 @@
                 width: 4.5rem;
             }
             th.verification {
-                width: 7rem;
-            }
-            th.spf {
-                width: 7rem;
-            }
-            th.dkim {
-                width: 7rem;
-            }
-            th.dmarc {
-                width: 7rem;
-            }
-            th.action {
                 width: 4rem;
             }
+            th.spf {
+                width: 4rem;
+            }
+            th.mx {
+                width: 4rem;
+            }
+            th.dkim {
+                width: 4rem;
+            }
+            th.dmarc {
+                width: 4rem;
+            }
+            th.action {
+                width: 8rem;
+                padding-right: 1rem;
+            }
+
+            th.verification,
+            th.spf,
+            th.mx,
+            th.dkim,
+            th.dmarc {
+                text-align: center;
+            }
+
             th {
                 padding-right: 0;
             }
@@ -34,12 +47,23 @@
                 .fa {
                     width: 1.5rem;
                 }
-                .pm_button {
-                    width: 7rem;
+                .fa-circle-o {
+                    color: #999;
+                }
+                .fa-circle-o,
+                .fa-check-circle,
+                .fa-times-circle {
+                    font-size: 22px;
+                    position: relative;
+                    top: 4px;
+                }
+                .progress {
+                    width: 3rem;
                     text-align: center;
                     padding: 0;
                     span {
                         display: inline;
+                        display: none;
                     }
                 }
                 span {
