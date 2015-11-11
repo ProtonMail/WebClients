@@ -298,6 +298,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var ids = [copy.ID];
         var conversationEvent = [];
         var messageEvent = [];
+        var unreads = _.where($scope.messages, {IsRead: 0});
 
         // Message
         copy.IsRead = 0;
@@ -305,11 +306,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.events(messageEvent, 'message');
 
         // Conversation
-        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: 1}});
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: unreads.length + 1}});
         cache.events(conversationEvent, 'conversation');
 
         // Request
-        Message.read({IDs: ids});
+        Message.unread({IDs: ids});
 
         // Back to elements list
         $scope.back();
