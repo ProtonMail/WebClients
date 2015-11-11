@@ -33,6 +33,9 @@ angular.module("proton.models.conversations", [])
         get: function(ConversationId) {
             return $http.get(url.get() + '/conversations/' + ConversationId);
         },
+        count: function() {
+            return $http.get(url.get() + '/conversations/count');
+        },
         // PUT
         /**
         * Mark an array of conversations as starred

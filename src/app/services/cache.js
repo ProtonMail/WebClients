@@ -223,7 +223,7 @@ angular.module("proton.cache", [])
                 // Only for cache context
                 if(context === true) {
                     // Set total value in cache
-                    cacheCounters.update(location, data.Total);
+                    cacheCounters.update(location, undefined, undefined, data.Total);
                     // Store conversations
                     storeConversations(data.Conversations);
                 }
@@ -435,10 +435,10 @@ angular.module("proton.cache", [])
 
             switch(mailbox) {
                 case 'label':
-                    total = cacheCounters.total($stateParams.label);
+                    total = cacheCounters.conversation($stateParams.label);
                     break;
                 default:
-                    total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    total = cacheCounters.conversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
 
@@ -873,10 +873,10 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Ask to the message list controller to refresh the messages
-    * First with the cache
-    * Second with the query call
-    */
+     * Ask to the message list controller to refresh the messages
+     * First with the cache
+     * Second with the query call
+     */
     api.callRefresh = function() {
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
@@ -975,7 +975,7 @@ angular.module("proton.cache", [])
     return api;
 })
 
-.service('cacheCounters', function(Message, CONSTANTS, $q, $rootScope, authentication) {
+.service('cacheCounters', function(Message, CONSTANTS, Conversation, $q, $rootScope, authentication) {
     var api = {};
     var counters = {};
     // {
@@ -988,7 +988,8 @@ angular.module("proton.cache", [])
         if(angular.isUndefined(counters[location])) {
             counters[location] = {
                 total: 0,
-                unread: 0
+                unread: 0,
+                conversation: 0
             };
         }
     };
@@ -1000,11 +1001,19 @@ angular.module("proton.cache", [])
     api.query = function() {
         var deferred = $q.defer();
 
-        Message.count().$promise.then(function(result) {
-            _.each(result.Counts, function(counter) {
+        $q.all({
+            message: Message.count().$promise,
+            conversation: Conversation.count()
+        }).then(function(result) {
+            _.each(result.message.Counts, function(counter) {
                 exist(counter.LabelID);
                 counters[counter.LabelID].total = counter.Total;
                 counters[counter.LabelID].unread = counter.Unread;
+            });
+
+            _.each(result.conversation.data.Counts, function(counter) {
+                exist(counter.LabelID);
+                counters[counter.LabelID].conversation = counter.Total;
             });
 
             deferred.resolve();
@@ -1020,8 +1029,9 @@ angular.module("proton.cache", [])
     * @param {String} location
     * @param {Integer} total
     * @param {Integer} unread
+    * @param {Integer} conversation
     */
-    api.update = function(location, total, unread) {
+    api.update = function(location, total, unread, conversation) {
         exist(location);
 
         if(angular.isDefined(total)) {
@@ -1030,6 +1040,10 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(unread)) {
             counters[location].unread = unread;
+        }
+
+        if(angular.isDefined(conversation)) {
+            counters[location].conversation = conversation;
         }
 
         $rootScope.$broadcast('updatePageName');
@@ -1049,6 +1063,13 @@ angular.module("proton.cache", [])
     */
     api.unread = function(location) {
         return counters[location] && counters[location].unread;
+    };
+
+    /**
+     * Get the number of conversations for a specific location
+     */
+    api.conversation = function(location) {
+        return counters[location] && counters[location].conversation;
     };
 
     /**

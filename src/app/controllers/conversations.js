@@ -135,15 +135,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.conversationCount = function() {
         var result;
 
-        if(angular.isDefined($stateParams.filter) || $state.is('secured.search') || $state.is('secured.drafts') || $state.is('secured.sent')) {
+        if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
             result = $rootScope.Total;
         } else {
             switch($scope.mailbox) {
+                case 'drafts':
+                case 'sent':
+                    result = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    break;
                 case 'label':
-                    result = cacheCounters.total($stateParams.label);
+                    result = cacheCounters.conversation($stateParams.label);
                     break;
                 default:
-                    result = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    result = cacheCounters.conversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
             }
         }
