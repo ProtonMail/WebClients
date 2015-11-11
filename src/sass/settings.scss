@@ -72,13 +72,12 @@
                     text-align: center;
                     padding: 0;
                     position: relative;
-                    top: 8px;  
                     .text-green .fa {
                         color: $green;
                     }
                     .text-red .fa {
                         color: $red;
-                    }                  
+                    }
                     span {
                         display: inline;
                         display: none;
@@ -86,7 +85,6 @@
                 }
                 .remove {
                     position: relative;
-                    top: 6px;
                     .fa {
                         position: relative;
                         top: 2px;
@@ -268,7 +266,7 @@
                     text-align: center;
                     font-weight: 700;
                     border: 1px solid $primary;
-                    border-radius: 2px 2px 0 0; 
+                    border-radius: 2px 2px 0 0;
                     padding: 0;
                     height: 2rem;
                     line-height: 2rem;
@@ -285,7 +283,7 @@
                 }
                 h3 {
                     position: relative;
-                    border-bottom: 1px solid $border;                    
+                    border-bottom: 1px solid $border;
                 }
                 h3,
                 .price {
@@ -877,7 +875,7 @@
                             box-sizing: border-box;
                             border-bottom: 0;
                         }
-                    }                    
+                    }
                 }
                 thead {
                     display: none;

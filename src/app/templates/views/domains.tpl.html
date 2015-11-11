@@ -36,7 +36,7 @@
                                 </strong>
                             </td>
                             <td>
-                                <span class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.VerifyState === 2) }">
+                                <button type="button" class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.VerifyState === 2) }">
                                     <strong ng-show="domain.VerifyState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -46,10 +46,10 @@
                                     <strong ng-show="domain.VerifyState === 2" class="text-green">
                                         <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </span>
+                                </button>
                             </td>
                             <td>
-                                <span class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
+                                <button type="button" class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
                                     <strong ng-show="domain.SpfState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -62,17 +62,17 @@
                                     <strong ng-show="domain.SpfState === 3" class="text-green">
                                         <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </span>
+                                </button>
                             </td>
                             <td>
-                                <span class="progress pm_button round" ng-click="mx(domain)">
+                                <button type="button" class="progress pm_button round" ng-click="mx(domain)">
                                     <strong ng-show="true">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
-                                </span>
+                                </button>
                             </td>
                             <td>
-                                <span class="progress pm_button round" ng-class="{ 'dead': (domain.DkimState === 4) }">
+                                <button type="button" class="progress pm_button round" ng-click="dkim(domain)" ng-class="{ 'dead': (domain.DkimState === 4) }">
                                     <strong ng-show="domain.DkimState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -88,10 +88,10 @@
                                     <strong ng-show="domain.DkimState === 4" class="text-green">
                                         <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </span>
+                                </button>
                             </td>
                             <td>
-                                <span class="progress pm_button round" ng-class="{ 'dead': (domain.DmarcState === 3) }">
+                                <button type="button" class="progress pm_button round" ng-click="dmarc(domain)" ng-class="{ 'dead': (domain.DmarcState === 3) }">
                                     <strong ng-show="domain.DmarcState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -104,7 +104,7 @@
                                     <strong ng-show="domain.DmarcState === 3" class="text-green">
                                         <i class="fa fa-check-circle"></i>
                                     </strong>
-                                </span>
+                                </button>
                             </td>
                             <td class="text-right">
                                 <button type="button" class="remove pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE' | translate }}">
