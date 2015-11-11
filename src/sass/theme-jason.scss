@@ -1,5 +1,5 @@
 html.protonmail body.themeJason.secure {
-    background: #e9eaed;
+    background: #fff;
     overflow: auto;
     .pm_buttons {
         a {
@@ -17,11 +17,121 @@ html.protonmail body.themeJason.secure {
         }
     }
 
+    #settingsDomains .pm_table tr td .fa-circle-o, 
+    #settingsDomains .pm_table tr td .fa-check-circle, 
+    #settingsDomains .pm_table tr td .fa-times-circle {
+        top: 4px;
+    }
+
+    header#pm_header {
+        .pm_dropdown.wide {
+            padding: 1rem;
+        }
+    }
+
+    #settingsDomains .pm_table tr td .pm_button {
+        margin: 10px;
+    }
+
+    #settingsDomains .pm_table tr td .pm_button.dead {
+        background: transparent !important;
+    }
+
+    header#pm_header form.searchForm {
+        background-color: #fafafa;
+    }
+
+    header#pm_header ul.navigation{
+        padding: 0;
+        li > a {
+            border-top: 5px solid transparent !important;
+            padding-top: 0 !important;
+        }
+    }
+
+    #pm_view.rows #pm_toolbar {
+        margin-left: -30px;
+        margin-right: 0;
+    }
+
+    #body {
+        background-color: #f2f2f2;
+        min-height: 100%;
+    }
+
+    .pm_sort ul {
+        border: none;
+    }
+
+    #pm_toolbar {
+        padding: 14px 25px 0;
+        height: 63px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 5;
+        background: #f2f2f2;
+        margin: 0 -50px 0 -25px;
+    }
+
+    header#pm_header {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+        border-bottom: none !important;
+    }
+
+    #pm_sidebar section.sidebar {
+        position: fixed;
+        padding-top: 66px;
+    }
+
+    #pm_main {
+        padding-left: $sidebarWidth;
+    }
+
+    header#pm_header ul.navigation li a {
+        border-left: 1px solid $border;
+    }
 
     *[pt-height] {
         overflow: initial;
         height: initial !important;
         -webkit-overflow-scrolling: touch;
+    }
+
+    section.sidebar div.labels li a {
+        margin: 0 -25px;
+        padding: 0 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        width: $sidebarWidth;
+    }
+
+    .pm_dropdown {
+        padding: 0;
+        & > a {
+            padding: 0 1rem !important;
+            box-sizing: border-box;
+        }
+    }
+
+    #pm_settings {
+        background: #f2f2f2;
+        padding-top: 1rem;
+    }
+
+    #pm_settings #plans .plans .plan .features {
+        background: #fafafa;
+    }
+
+    #pm_settings .settings .row .setting {
+        padding-bottom: 1rem !important;
+    }
+
+    #pm_rows .list .message {
+        color: #777 !important
+    }
+
+    #pm_rows .list .message.unread {
+        color: #000 !important
     }
 
     .pm_buttons,
@@ -37,7 +147,7 @@ html.protonmail body.themeJason.secure {
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0px 1px rgba(0,0,0,.04) !important;
         border: transparent !important;
         background: #fff !important;
-        color: $gray-light;
+        color: #777;
         &.primary {
             color: #fff !important;
             background: $primary !important;
@@ -48,7 +158,11 @@ html.protonmail body.themeJason.secure {
     }
     .searchForm,
     .pm_select,
-    .pm_form input,
+    .pm_form input[type="text"],
+    .pm_form input[type="password"],
+    .pm_form input[type="email"],
+    .pm_form input[type="search"],
+    .pm_form textarea,
     .pm_button,
     .squire-toolbar,
     iframe {
@@ -64,6 +178,7 @@ html.protonmail body.themeJason.secure {
     }
     section.sidebar ul.menu {
         border-top: 1px solid rgba(255,255,255,.1);
+        margin-bottom: 0;
         li a {
             border-bottom: 1px solid rgba(255,255,255,.1);
         }
@@ -72,6 +187,11 @@ html.protonmail body.themeJason.secure {
             border-top-color: transparent;
             background: rgba(0, 0, 0, 0.2);
         }        
+    }
+    .paginator {
+        .disabled {
+            background: #e9eaed !important;
+        }
     }
     #pm_view article.message header {
         padding: 5px 0;
@@ -96,6 +216,11 @@ html.protonmail body.themeJason.secure {
         box-shadow: none !important;
     }
 
+    #pm_toolbar .pm_buttons.page {
+        margin-left: 0;
+        border-left: 1px solid $border !important;
+    }
+
     .pm_button,
     .pm_buttons a {
         background: #ffffff;
@@ -110,6 +235,9 @@ html.protonmail body.themeJason.secure {
             background: linear-gradient(to bottom,  $primary 0%,darken($primary, 10%) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='darken($primary, 10%)',GradientType=0 );          
         }
+        &.link {
+            background: transparent !important;
+        }
     }
     header#pm_header .pm_buttons .pm_button.primary {
         background: $primary;
@@ -121,11 +249,18 @@ html.protonmail body.themeJason.secure {
 
     .pm_tabs li.active a {
         border-color: $border;
+        background: #fff !important;
     }
 
     .pm_tabs li a {
         box-shadow: none !important;
+        border: 1px solid $border !important;
         border-width: 0 0 0 1px !important;
+        float: left;
+    }
+
+    section.sidebar #labelSettings {
+        border-top: none;
     }
 
     #pm_settings .pm_tabs {
@@ -140,6 +275,11 @@ html.protonmail body.themeJason.secure {
     section.sidebar ul.menu li.active a {
         font-weight: 400;
     }
-
+    .labelDD {
+        padding: .5rem 1rem !important; 
+    }
+    .pm_table.plain th {
+        color: #777;
+    }
 
 }

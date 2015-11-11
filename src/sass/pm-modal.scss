@@ -50,6 +50,7 @@ html.protonmail body.activeComposer {
             display: block;
             outline: none;
             border: none;
+            z-index: 9999;
         }
         .modal-footer {
             padding: 25px 50px;

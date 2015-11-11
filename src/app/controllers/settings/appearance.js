@@ -31,6 +31,10 @@ angular.module("proton.controllers.Settings")
         );
     };
 
+    $scope.toggleThemeJason = function() {
+        $rootScope.themeJason = !$rootScope.themeJason;
+    };
+
     $scope.clearTheme = function() {
         $scope.cssTheme = '';
         $scope.saveTheme();

@@ -197,6 +197,8 @@ angular.module("proton", [
     $rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
 
+    $rootScope.themeJason = false;
+
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
 
