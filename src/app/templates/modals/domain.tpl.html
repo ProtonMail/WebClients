@@ -5,14 +5,14 @@
             <div class="modal-header">
                 <h4 class="modal-title">{{ 'ADD_A_CUSTOM_DOMAIN' | translate }}</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pm_form">
                 <p>Add a domain that you own to your ProtonMail account.</p>
                 <input type="text" ng-model="ctrl.name" placeholder="{{ 'DOMAIN_NAME' | translate }}" />
             </div>
         </div>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="button" class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+            <button type="button" class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="ctrl.submit()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>

@@ -358,12 +358,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var messages = _.filter(messagesCached, function(message) {
-                if (message && message.LabelIDs) {
-                    return message.LabelIDs.indexOf(location.toString()) !== -1;
-                }
-                else {
-                    return false;
-                }
+                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(location.toString()) !== -1;
             });
 
             messages = order(messages);
@@ -431,12 +426,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
-                if (conversation && conversation.LabelIDs) {
-                    return conversation.LabelIDs.indexOf(location.toString()) !== -1;
-                }
-                else {
-                    return false;
-                }
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(location.toString()) !== -1;
             });
 
             conversations = order(conversations);
@@ -489,19 +479,15 @@ angular.module("proton.cache", [])
      * Try to find the result in the cache
      * @param {String} conversationId
      */
-    api.queryConversationMessages = function(conversationId, api) {
+    api.queryConversationMessages = function(conversationId) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
-            if(api === true) {
-                deferred.resolve(queryConversationMessages(conversationId));
-            } else {
-                return deferred.resolve([]);
-            }
+            deferred.resolve(queryConversationMessages(conversationId));
         };
 
         if(angular.isDefined(conversation)) {
-            var messages = _.where(messagesCached, {conversationId: conversationId});
+            var messages = _.where(messagesCached, {ConversationID: conversationId});
 
             if(conversation.NumMessages === messages.length) {
                 deferred.resolve(messages);
@@ -513,6 +499,14 @@ angular.module("proton.cache", [])
         }
 
         return deferred.promise;
+    };
+
+    /**
+     * Return a copy of messages cached for a specific ConversationID
+     * @param {String} conversationId
+     */
+    api.queryMessagesCached = function(conversationId) {
+        return angular.copy(_.where(messagesCached, {ConversationID: conversationId}));
     };
 
     /**
@@ -753,7 +747,7 @@ angular.module("proton.cache", [])
             _.extend(message, current, event.Message);
 
             if(JSON.stringify(message) === JSON.stringify(current)) {
-                deferred.resolve();
+               deferred.resolve();
             } else {
                 // Manage labels
                 if(angular.isDefined(event.Message.LabelIDsAdded)) {
@@ -775,7 +769,7 @@ angular.module("proton.cache", [])
                 }
 
                 deferred.resolve();
-            }
+           }
         } else if(angular.isDefined(event.Message)) {
             // Create a new message in the cache
             api.createMessage(event).then(function() {
@@ -890,6 +884,7 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined($stateParams.id)) {
             $rootScope.$broadcast('refreshConversation');
+            $rootScope.$broadcast('refreshMessage');
         }
     };
 

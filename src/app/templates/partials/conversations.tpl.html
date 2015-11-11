@@ -28,7 +28,7 @@
         </header>
         <article>
             <p class="pm_labels">
-                <location-tag ng-show="'secured.starred.**' | includedByState" />
+                <location-tag />
                 <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
                     <em>{{ getLabel(id).Name }}</em>
                     <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
@@ -68,7 +68,7 @@
             {{ conversation.Subject }} <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             </span>
             <span class="pm_labels">
-                <location-tag ng-show="'secured.starred.**' | includedByState" />
+                <location-tag />
                 <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
                     <em>{{ getLabel(id).Name }}</em>
                     <i>{{ getLabel(id).Name | limitTo: 3 }}</i>

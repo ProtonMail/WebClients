@@ -552,11 +552,6 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/contacts.tpl.html",
                 controller: "ContactsController"
             }
-        },
-        resolve: {
-            contacts: function(Contact, networkActivityTracker) {
-                return networkActivityTracker.track(Contact.query());
-            }
         }
     })
 
@@ -745,7 +740,7 @@ angular.module("proton.routes", [
                 },
                 messages: function($stateParams, cache, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.queryConversationMessages($stateParams.id, true));
+                        return networkActivityTracker.track(cache.queryConversationMessages($stateParams.id));
                     } else {
                         return true;
                     }

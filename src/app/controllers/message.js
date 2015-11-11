@@ -115,26 +115,63 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.starred = function() {
-        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
     };
 
     /**
-     * Star / unstar the current message
+     * Toggle star status of the current message
+     */
+    $scope.toggleStar = function() {
+        if($scope.starred() === true) {
+            $scope.unstar();
+        } else {
+            $scope.star();
+        }
+    };
+
+    /**
+     * Star the current message
      */
     $scope.star = function() {
-        var promise;
         var copy = angular.copy($scope.message);
         var ids = [copy.ID];
+        var conversationEvent = [];
+        var messageEvent = [];
+        var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
 
-        if($scope.starred()) {
-            copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            promise = Message.unstar({IDs: ids}).$promise;
-        } else {
-            copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            promise = Message.star({IDs: ids}).$promise;
-        }
+        // Messages
+        copy.LabelIDsAdded = labelIDsAdded;
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
 
-        cache.events([{Action: 3, ID: copy.ID, Message: copy}]);
+        // Conversation
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDsAdded: labelIDsAdded}});
+        cache.events(conversationEvent, 'conversation');
+
+        // Request
+        Message.star({IDs: ids});
+    };
+
+    /**
+     * Unstar the current message
+     */
+    $scope.unstar = function() {
+        var copy = angular.copy($scope.message);
+        var ids = [copy.ID];
+        var conversationEvent = [];
+        var messageEvent = [];
+        var labelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+
+        // Messages
+        copy.LabelIDsRemoved = labelIDsRemoved;
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
+
+        // Conversation
+        // TODO
+
+        // Request
+        Message.unstar({IDs: ids});
     };
 
     $scope.openSafariWarning = function() {
@@ -238,24 +275,44 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.read = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
 
+        // Message
         copy.IsRead = 1;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-        cache.events(events, 'message');
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
+
+        // Conversation
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: 0}});
+        cache.events(conversationEvent, 'conversation');
+
+        // Request
         Message.read({IDs: ids});
+
+        // Back to elements list
         $scope.back();
     };
 
     $scope.unread = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
 
+        // Message
         copy.IsRead = 0;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-        cache.events(events, 'message');
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
+
+        // Conversation
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: 1}});
+        cache.events(conversationEvent, 'conversation');
+
+        // Request
         Message.read({IDs: ids});
+
+        // Back to elements list
         $scope.back();
     };
 
@@ -476,7 +533,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     // Return Message object to build response or forward
-    function buildMessage(action) {
+    var buildMessage = function(action) {
         var base = new Message();
         var br = '<br />';
         var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
@@ -534,7 +591,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         return base;
-    }
+    };
 
     $scope.reply = function() {
         $rootScope.$broadcast('loadMessage', buildMessage('reply'));
@@ -572,6 +629,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         networkActivityTracker.track(promise);
     };
 
+    /**
+     * Delete current message
+     */
     $scope.delete = function() {
         var promise;
         var events = [];
@@ -587,18 +647,27 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         networkActivityTracker.track(promise);
     };
 
+    /**
+     * Back to element list
+     */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox + '.list', {
             id: null // remove ID
         });
     };
 
+    /**
+     * Print current message
+     */
     $scope.print = function() {
         var url = $state.href('secured.print', { id: $scope.message.ID });
 
         window.open(url, '_blank');
     };
 
+    /**
+     * Display PGP
+     */
     $scope.viewPgp = function() {
         var content = $scope.message.Header + '\n\r' + $scope.message.Body;
         var filename = 'pgp.txt';

@@ -26,6 +26,9 @@
             border-width: 0 0 1px 0;
         }
     }
+    &.bordered {
+        border: 1px solid $border;
+    }
     &.plain {
         th, td {
             line-height: initial;
@@ -70,7 +73,9 @@
             cursor: pointer;
         }
         .pm_button {
-            margin: 4px 0 2px 0; 
+            margin: 0;
+            height: 36px;
+            line-height: 36px; 
         }
         .pm_select {
             margin: 4px 0 -11px 0;
