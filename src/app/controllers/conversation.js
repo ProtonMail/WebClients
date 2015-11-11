@@ -277,13 +277,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Star the current conversation
      */
     $scope.star = function() {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var copy = angular.copy(conversation);
         var messages = cache.queryMessagesCached(copy.ID);
 
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-        events.push({ID: copy.ID, Action: 2, Conversation: copy});
-        cache.events(events, 'conversation');
+        conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+        cache.events(conversationEvent, 'conversation');
 
         if(messages.length > 0) {
             _.each(messages, function(message) {
@@ -300,13 +301,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Unstar the current conversation
      */
     $scope.unstar = function() {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var copy = angular.copy(conversation);
         var messages = cache.queryMessagesCached(copy.ID);
 
         copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-        events.push({ID: copy.ID, Action: 2, Conversation: copy});
-        cache.events(events, 'conversation');
+        conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+        cache.events(conversationEvent, 'conversation');
 
         if(messages.length > 0) {
             _.each(messages, function(message) {

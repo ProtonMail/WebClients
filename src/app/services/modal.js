@@ -557,24 +557,6 @@ angular.module("proton.modals", [])
             this.cardTypeIcon = 'fa-credit-card';
             this.cart = [];
 
-            var count = function(type) {
-                var quantity = 0;
-
-                if(angular.isDefined(params.pack)) {
-                    quantity += params.pack[type];
-                }
-
-                if(angular.isDefined(params.additionals)) {
-                    var element = _.findWhere(params.additionals, {type: type, checked: true});
-
-                    if(angular.isDefined(element)) {
-                        quantity += element.quantity;
-                    }
-                }
-
-                return quantity;
-            };
-
             if(angular.isDefined(params.pack)) {
                 var price = params.pack.price[params.billing];
 
@@ -610,26 +592,8 @@ angular.module("proton.modals", [])
 
                     if(status === 200) {
                         Payment.subscribe({
-                            GroupID: '',
-                            Amount: this.total(),
-                            Currency: params.currency,
-                            Time: Math.floor(Date.now() / 1000), // Current timestamp in seconds
-                            BillingCycle: params.billing,
-                            ExternalProvider: 'Stripe',
-                            Source: {
-                                Object: 'token',
-                                Token: response.id
-                            },
-                            Cart: {
-                                current: null,
-                                future: {
-                                    Use2FA: false,
-                                    MaxDomains: count('domain'),
-                                    MaxMembers: count('member'),
-                                    MaxAddresses: count('address'),
-                                    MaxSpace: count('space')
-                                }
-                            }
+                            Plan: plan,
+                            Token: response.id
                         }).then(function(result) {
                             this.step = 'thanks';
                         }, function(error) {

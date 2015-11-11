@@ -31,7 +31,7 @@ angular.module("proton.controllers.Settings")
         {label: '10', value: 10}
     ];
 
-    var plus = {
+    $scope.plus = {
         title: $translate.instant('PLUS'),
         long: $translate.instant('PLUS_PLAN'),
         number: 1,
@@ -46,7 +46,7 @@ angular.module("proton.controllers.Settings")
         quantity: 1
     };
 
-    var business = {
+    $scope.business = {
         title: $translate.instant('BUSINESS'),
         long: $translate.instant('BUSINESS_PLAN'),
         number: 1,
@@ -92,6 +92,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Return the amount of each plan
+     * @param {String} name
      */
     $scope.total = function(name) {
         var total = 0;
@@ -99,10 +100,10 @@ angular.module("proton.controllers.Settings")
 
         if(name === 'plus') {
             additionals = $scope.plusAdditionals;
-            total += plus.price[$scope.billing];
+            total += $scope.plus.price[$scope.billing];
         } else if(name === 'business') {
             additionals = $scope.businessAdditionals;
-            total += business.price[$scope.billing];
+            total += $scope.business.price[$scope.billing];
         }
 
         _.each(additionals, function(element) {
@@ -114,19 +115,62 @@ angular.module("proton.controllers.Settings")
         return total;
     };
 
+    $scope.count = function(type, plan) {
+        var quantity = 0;
+        var pack;
+        var additionals;
+
+        if(plan === 'plus') {
+            pack = $scope.plus;
+            additionals = $scope.plusAdditionals;
+        } else if(plan === 'business') {
+            pack = $scope.business;
+            additionals = $scope.plusAdditionals;
+        }
+
+        if(angular.isDefined(pack)) {
+            quantity += pack[type];
+        }
+
+        if(angular.isDefined(additionals)) {
+            var element = _.findWhere(additionals, {type: type, checked: true});
+
+            if(angular.isDefined(element)) {
+                quantity += element.quantity;
+            }
+        }
+
+        return quantity;
+    };
+
     /**
      * Open modal to pay the plan configured
      */
     $scope.choose = function(name) {
-        // Payment.check().then(function() {
+        var configuration = {
+            Amount: $scope.total(name),
+            Currency: $scope.currency,
+            BillingCycle: $scope.billing,
+            Cart: {
+                Current: null,
+                Future: {
+                    Use2FA: true,
+                    MaxDomains: $scope.count('domain', name),
+                    MaxMembers: $scope.count('member', name),
+                    MaxAddresses: $scope.count('address', name),
+                    MaxSpace: $scope.count('space', name)
+                }
+            }
+        };
+        // Payment.plan(configuration).then(function() {
             var additionals = [];
             var pack = {};
 
             if(name === 'plus') {
-                pack = plus;
+                pack = $scope.plus;
                 additionals = $scope.plusAdditionals;
             } else if(name === 'business') {
-                pack = business;
+                pack = $scope.business;
                 additionals = $scope.businessAdditionals;
             }
 
