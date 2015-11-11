@@ -29,9 +29,9 @@
         <article>
             <p class="pm_labels">
                 <location-tag />
-                <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
-                    <em>{{ getLabel(id).Name }}</em>
-                    <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
+                <span ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name">
+                    <em>{{ getLabel(labelID).Name }}</em>
+                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                 </span>
             </p>
             <p>
@@ -69,9 +69,9 @@
             </span>
             <span class="pm_labels">
                 <location-tag />
-                <span ng-repeat="id in conversation.LabelIDs | labels" title="{{ getLabel(id).Name }}" class="pm_label" ng-style="getStyleLabel(id)" ng-show="getLabel(id).Name">
-                    <em>{{ getLabel(id).Name }}</em>
-                    <i>{{ getLabel(id).Name | limitTo: 3 }}</i>
+                <span ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name">
+                    <em>{{ getLabel(labelID).Name }}</em>
+                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                 </span>
             </span>
         </span>

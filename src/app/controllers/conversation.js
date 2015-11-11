@@ -8,6 +8,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
+    $q,
     authentication,
     cache,
     CONSTANTS,
@@ -78,6 +79,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         // $scope.scrollToMessage(open);
     };
 
+    /**
+     * Back to conversation / message list
+     */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox + '.list', {
             id: null // remove ID
@@ -98,6 +102,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // api
         Conversation.read([conversation.ID]);
+
+        // back to conversation list
         $scope.back();
     };
 
@@ -174,37 +180,63 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @return {Promise}
      */
     $scope.saveLabels = function(labels, alsoArchive) {
+        var REMOVE = 0;
+        var ADD = 1;
         var deferred = $q.defer();
+        var ids = [$scope.conversation.ID];
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
-        var APPLY = 1;
-        var REMOVE = 0;
+        var promises = [];
+        var conversationEvent = [];
+        var messageEvent = [];
+        var copy = angular.copy($scope.conversation);
+        var currents = [];
 
-        // Detect if a message will have too many labels
-        _.each($scope.messages, function(message) {
-            if(_.difference(_.uniq(message.LabelIDs.concat(toApply)), toRemove).length > 5) {
-                tooManyLabels = true;
+        _.each(toApply, function(labelID) {
+            promises.push(Conversation.labels(labelID, ADD, ids));
+        });
+
+        _.each(toRemove, function(labelID) {
+            promises.push(Conversation.labels(labelID, REMOVE, ids));
+        });
+
+        // Find current location
+        _.each(copy.LabelIDs, function(labelID) {
+            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
+                currents.push(labelID.toString());
             }
         });
 
-        if(tooManyLabels) {
-            deferred.reject(new Error($translate.instant('TOO_MANY_LABELS_ON_MESSAGE')));
-        } else {
-            _.each(toApply, function(labelID) {
-                promises.push(Conversation.labels(labelID, 1, [$scope.conversation.ID]));
-            });
-
-            _.each(toRemove, function(labelID) {
-                promises.push(Conversation.labels(labelID, 0, [$scope.conversation.ID]));
-            });
-
-            $q.all(promises).then(function(results) {
-                // TODO generate event
-            }, function(error) {
-                error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
-                deferred.reject(error);
-            });
+        if(alsoArchive === true) {
+            toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
+            toRemove.concat(currents); // Remove current location
         }
+
+        copy.LabelIDsAdded = toApply;
+        copy.LabelIDsRemoved = toRemove;
+        conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
+        cache.events(conversationEvent, 'conversation');
+
+        _.each($scope.messages, function(message) {
+            var copyMessage = angular.copy(message);
+
+            copyMessage.LabelIDsAdded = toApply;
+            copyMessage.LabelIDsRemoved = toRemove;
+            messageEvent.push({Action: 3, ID: copyMessage.ID, Message: copyMessage});
+        });
+
+        cache.events(messageEvent, 'message');
+
+        $q.all(promises).then(function(results) {
+            if(alsoArchive === true) {
+                deferred.resolve(Conversation.archive(ids));
+            } else {
+                deferred.resolve();
+            }
+        }, function(error) {
+            error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
+            deferred.reject(error);
+        });
 
         return deferred.promise;
     };

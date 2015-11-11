@@ -50,7 +50,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] How to delete account? (wait for design)
 * [ ] Colorize calendar in search modal with purple color (for **Jason**)
 * [ ] How to manage storage per user in users page? (wait design)
-* [ ] Decide on which criteria we preload messages / conversations (wait design)
+* [x] Decide on which criteria we preload messages / conversations (wait design)
 
 ### Test
 

@@ -92,10 +92,12 @@ angular.module("proton.cache", [])
             message = new Message(message);
 
             if(angular.isDefined(current)) {
+                // Update message
                 var index = messagesCached.indexOf(current);
 
                 _.extend(messagesCached[index], message);
             } else {
+                // Add message
                 insertMessage(message);
             }
         });
@@ -268,7 +270,7 @@ angular.module("proton.cache", [])
                 });
 
                 storeConversations([data.Conversation]);
-                storeMessages(data.Conversation.ID, messages);
+                storeMessages(messages);
                 deferred.resolve(messages);
             } else {
                 deferred.reject();
@@ -297,7 +299,7 @@ angular.module("proton.cache", [])
 
                 conversation.preloaded = true;
                 storeConversations([conversation]);
-                storeMessages(conversation.ID, messages);
+                storeMessages(messages);
                 deferred.resolve(conversation);
             } else {
                 deferred.reject();
@@ -737,7 +739,7 @@ angular.module("proton.cache", [])
             _.extend(message, current, event.Message);
 
             if(JSON.stringify(message) === JSON.stringify(current)) {
-               deferred.resolve();
+                deferred.resolve();
             } else {
                 // Manage labels
                 if(angular.isDefined(event.Message.LabelIDsAdded)) {
@@ -760,11 +762,9 @@ angular.module("proton.cache", [])
 
                 deferred.resolve();
            }
-        } else if(angular.isDefined(event.Message)) {
-            // Create a new message in the cache
-            api.createMessage(event).then(function() {
-                deferred.resolve();
-            });
+        } else {
+            // Do nothing
+            deferred.resolve();
         }
 
         return deferred.promise;
@@ -1145,7 +1145,8 @@ angular.module("proton.cache", [])
         }, interval);
     };
 
-    api.loop(); // Start looping
+    // NOTE Andy said: "We preload nothing, that's too expensive for the back-end"
+    // api.loop(); // Start looping
 
     return api;
 });
