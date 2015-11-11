@@ -161,7 +161,11 @@ angular.module("proton.cache", [])
      * @param {Array} elements - conversation or message
      */
     var order = function(elements) {
-        return _.sortBy(elements, 'Time').reverse();
+        if(angular.isArray(elements)) {
+            return _.sortBy(elements, 'Time').reverse();
+        } else {
+            return [];
+        }
     };
 
     /**
@@ -228,7 +232,7 @@ angular.module("proton.cache", [])
                     storeConversations(data.Conversations);
                 }
                 // Return conversations
-                deferred.resolve(data.Conversations);
+                deferred.resolve(order(data.Conversations)); // We order data also
             } else {
                 deferred.reject();
             }
@@ -255,7 +259,7 @@ angular.module("proton.cache", [])
                 storeMessages(messages);
             }
 
-            deferred.resolve(messages);
+            deferred.resolve(order(messages));
         });
 
         return deferred.promise;
