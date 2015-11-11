@@ -455,10 +455,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.detachLabel = function(labelID) {
-        var copy = angular.copy(message);
+        var copy = angular.copy($scope.message);
 
-        copy.LabelIDs = _.without(copy.LabelIDs, labelID);
+        // Generate event
+        copy.LabelIDsRemoved = [labelID];
         cache.events([{Action: 3, ID: copy.ID, Message: copy}]);
+
+        // Request api
         Label.remove({id: labelID, MessageIDs: [copy.ID]});
     };
 
