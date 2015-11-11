@@ -182,23 +182,6 @@ angular.module("proton.models.message", ["proton.constants"])
 
             return params;
         },
-        moveTo: function(location) {
-            // If location is given as a name ('inbox', 'sent', etc), convert it to identifier (0, 1, 2)
-            if (_.has(CONSTANTS.MAILBOX_IDENTIFIERS, location)) {
-                this.Location = CONSTANTS.MAILBOX_IDENTIFIERS[location];
-            } else {
-                this.Location = location;
-            }
-
-            this.selected = false; // unselect the message
-
-            return this.$patch({
-                action: invertedMailboxIdentifiers[this.Location]
-            });
-        },
-        numberOfAttachments: function() {
-            return this.Attachments.length;
-        },
         sizeAttachments: function() {
             var size = 0;
 
@@ -230,7 +213,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         isDraft: function() {
-            return this.Location === CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
+            return this.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
         },
 
         toggleImages: function() {
