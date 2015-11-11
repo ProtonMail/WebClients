@@ -450,18 +450,6 @@
                     font-weight: 700;
                     margin: 0;
                     border-top: 1px solid $border;
-                    a {
-                        background: $primary;
-                        color: $white;
-                        border-radius: 2px;
-                        text-decoration: none;
-                        display: inline-block;
-                        line-height: 2rem;
-                        padding: 0 1rem;
-                        strong {
-                            font-weight: 400;
-                        }
-                    }
                 }
             }
         }

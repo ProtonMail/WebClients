@@ -51,7 +51,7 @@
         <label>
             <input type="checkbox" name="selectAll" ng-checked="allSelectedCheckbox" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
-        <span class="pm_buttons">
+        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
             <a href="" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <span class="pm_dropdown wide">
@@ -60,7 +60,7 @@
                 </a>
             </span>
         </span>
-        <span class="pm_buttons">
+        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
             <a href="" class="fa fa-trash-o" ng-click="move('trash')" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
             <span class="pm_dropdown wide">
@@ -78,7 +78,7 @@
                 </a>
             </span>
         </span>
-        <span class="pm_buttons">
+        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
             <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
