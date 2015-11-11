@@ -53,6 +53,8 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
                             domainModal.deactivate();
+                            // open the next step
+                            $scope.verification(result.data.Domain);
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {

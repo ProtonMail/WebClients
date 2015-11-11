@@ -3,68 +3,107 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="settings" pt-height>
-        <div class="row">
+        <div class="row" id="settingsDomains">
             <section class="setting pm_form full">
-                <legend>1 {{ 'CONFIGURE_DOMAINS' | translate }}</legend>
-                <p>Custom Domains will allow you to send and receive mail for your domain through ProtonMail.</p>
-                <p>{{ }} Domains are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
-                <p>
-                    <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
-                    <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
-                </p>
-                <table class="pm_table">
+                <legend>
+                    <span class="pull-right">4/5 Domains used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
+                    {{ 'DOMAINS' | translate }}
+                </legend>
+                <!-- <p>{{ }} Domains are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p> -->
+                <table class="pm_table bordered">
                     <thead>
                         <tr>
-                            <th>{{ 'DOMAIN' | translate }}</th>
-                            <th>{{ 'STATUS' | translate }}</th>
-                            <th>{{ 'VERIFICATION' | translate }}</th>
-                            <th>SPF*</th>
-                            <th>DKIM*</th>
-                            <th>DMARC**</th>
-                            <th class="text-right">{{ 'ACTION' | translate }}</th>
+                            <th class="domain">{{ 'DOMAIN' | translate }}</th>
+                            <th class="verification">{{ 'VERIFICATION' | translate }}</th>
+                            <th class="spf">SPF</th>
+                            <th class="dkim">DKIM</th>
+                            <th class="dmarc">DMARC</th>
+                            <th class="text-right action">{{ 'ACTION' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="domain in domains">
-                            <td><strong>{{ domain.DomainName }}</strong></td>
                             <td>
-                                <span ng-show="domain.State === 1" class="text-green">
-                                    <i class="fa fa-check"></i> {{ 'READY' | translate }}
-                                </span>
-                                <span ng-show="domain.State === 0" class="text-red">
-                                    <i class="fa fa-exclamation-triangle"></i> {{ 'ERROR' | translate }}
-                                </span>
+                                <strong>
+                                    <i ng-show="domain.State === 1" class="fa fa-check text-green"></i>
+                                    <i ng-show="domain.State === 0" class="fa fa-exclamation-triangle text-red"></i> 
+                                    {{ domain.DomainName }}
+                                </strong>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.VerifyState === 1) }" type="button" ng-click="verification(domain)">
-                                    <strong ng-show="domain.VerifyState === 0">{{ 'NOT_VERIFIED' | translate }}</strong>
-                                    <strong ng-show="domain.VerifyState === 1" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.VerifyState === 2" class="text-green"><i class="fa fa-check"></i> {{ 'VERIFIED' | translate }}</strong>
+                                <button class="pm_button" type="button" ng-click="verification(domain)">
+                                    <strong ng-show="domain.VerifyState === 0">
+                                        <span> {{ 'NOT_VERIFIED' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.VerifyState === 1" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.VerifyState === 2" class="text-green">
+                                        <i class="fa fa-check"></i>
+                                        <span> {{ 'VERIFIED' | translate }}</span>
+                                    </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.SpfState === 1) }" type="button"  ng-click="spf(domain)">
-                                    <strong ng-show="domain.SpfState === 0">{{ 'ADD_SPF' | translate }}</strong>
-                                    <strong ng-show="domain.SpfState === 1" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.SpfState === 2" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.SpfState === 3" class="text-green"><i class="fa fa-check"></i> {{ 'ADDED' | translate }}</strong>
+                                <button class="pm_button" type="button"  ng-click="spf(domain)">
+                                    <strong ng-show="domain.SpfState === 0">
+                                        <span> {{ 'ADD_SPF' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.SpfState === 1" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.SpfState === 2" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.SpfState === 3" class="text-green">
+                                        <i class="fa fa-check"></i>
+                                        <span> {{ 'ADDED' | translate }}</span>
+                                    </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.DkimState === 1) }" type="button" ng-click="dkim(domain)">
-                                    <strong ng-show="domain.DkimState === 0">{{ 'ADD_DKIM' | translate }}</strong>
-                                    <strong ng-show="domain.DkimState === 1" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.DkimState === 2" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.DkimState === 3" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.DkimState === 4" class="text-green"><i class="fa fa-check"></i> {{ 'ADDED' | translate }}</strong>
+                                <button class="pm_button" type="button" ng-click="dkim(domain)">
+                                    <strong ng-show="domain.DkimState === 0">
+                                        <span> {{ 'ADD_DKIM' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DkimState === 1" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DkimState === 2" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DkimState === 3" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DkimState === 4" class="text-green">
+                                        <i class="fa fa-check"></i>
+                                        <span> {{ 'ADDED' | translate }}</span>
+                                    </strong>
                                 </button>
                             </td>
                             <td>
-                                <button class="pm_button" ng-class="{ 'dead': (domain.DmarcState === 1) }" type="button" ng-click="dmarc(domain)">
-                                    <strong ng-show="domain.DmarcState === 0">{{ 'ADD_DMARC' | translate }}</strong>
-                                    <strong ng-show="domain.DmarcState === 1" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.DmarcState === 2" class="text-red"><i class="fa fa-times"></i> {{ 'ERROR' | translate }}</strong>
-                                    <strong ng-show="domain.DmarcState === 3" class="text-green"><i class="fa fa-check"></i> {{ 'ADDED' | translate }}</strong>
+                                <button class="pm_button" type="button" ng-click="dmarc(domain)">
+                                    <strong ng-show="domain.DmarcState === 0">
+                                        <span> {{ 'ADD_DMARC' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DmarcState === 1" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DmarcState === 2" class="text-red">
+                                        <i class="fa fa-times"></i>
+                                        <span> {{ 'ERROR' | translate }}</span>
+                                    </strong>
+                                    <strong ng-show="domain.DmarcState === 3" class="text-green">
+                                        <i class="fa fa-check"></i>
+                                        <span> {{ 'ADDED' | translate }}</span>
+                                    </strong>
                                 </button>
                             </td>
                             <td class="text-right">
@@ -75,19 +114,21 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="text-light-gray">
-                    <i>*{{ 'RECOMMENDED' | translate }}</i><br />
-                    <i>**{{ 'OPTIONAL' | translate }}</i>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                    <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
                 </p>
-                <p>&nbsp;</p>
             </section>
+            <p>&nbsp;</p>
             <section class="setting pm_form full">
-                <legend>2 {{ 'CONFIGURE_ADDRESSES' | translate }}</legend>
-                <p>{{ }} Addresses are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p>
+                <legend>
+                    <span class="pull-right">{{ }} Addresses are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
+                    {{ 'ADDRESSES' | translate }}
+                </legend>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains">
                     <p>
                         <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === 1" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
-                            <i class="fa" ng-class="{'fa-angle-down': domain.expand === true, 'fa-angle-up': domain.expand === false}"></i>
+                            <i class="fa" ng-class="{'fa-angle-up': domain.expand === true, 'fa-angle-down': domain.expand === false}"></i>
                         </button>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
@@ -96,7 +137,7 @@
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <a href="" ui-sref="secured.users" class="pm_button">{{ 'ADD_USER' | translate }}</a>
                         </p>
-                        <table class="pm_table pm_form">
+                        <table class="pm_table pm_form bordered">
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
@@ -133,6 +174,7 @@
                 </div>
                 <p>&nbsp;</p>
             </section>
+            <p>&nbsp;</p>
             <section class="setting pm_form full">
                 <legend>3 MX Record</legend>
                 <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>

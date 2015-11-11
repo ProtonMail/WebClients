@@ -2,6 +2,61 @@
     height: 31px;
     line-height: 31px;
 }
+#settingsDomains {
+    .pm_table {
+        tr {
+            th.domain {
+                width: auto;
+            }
+            th.status {
+                width: 4.5rem;
+            }
+            th.verification {
+                width: 7rem;
+            }
+            th.spf {
+                width: 7rem;
+            }
+            th.dkim {
+                width: 7rem;
+            }
+            th.dmarc {
+                width: 7rem;
+            }
+            th.action {
+                width: 4rem;
+            }
+            th {
+                padding-right: 0;
+            }
+            td {
+                padding-right: 0;
+                .fa {
+                    width: 1.5rem;
+                }
+                .pm_button {
+                    width: 7rem;
+                    text-align: center;
+                    padding: 0;
+                    span {
+                        display: inline;
+                    }
+                }
+                span {
+                    span {
+                        display: inline;
+                    }
+                }
+                &.text-right {
+                    padding-right: 1rem;
+                    .pm_button {
+                        width: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
 #newUser{
     .newUser {
         padding-left: 2rem;
