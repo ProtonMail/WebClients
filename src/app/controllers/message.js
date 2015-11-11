@@ -100,7 +100,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.getMessage = function() {
-        return $scope.message;
+        return [$scope.message];
     };
 
     /**
@@ -456,10 +456,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     $scope.detachLabel = function(labelID) {
         var copy = angular.copy($scope.message);
+        var messageEvent = [];
 
         // Generate event
         copy.LabelIDsRemoved = [labelID];
-        cache.events([{Action: 3, ID: copy.ID, Message: copy}]);
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
 
         // Request api
         Label.remove({id: labelID, MessageIDs: [copy.ID]});
@@ -478,44 +480,47 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
-        var messageIDs = [message.ID];
-        var newMessage = angular.copy(message);
+        var copy = angular.copy($scope.message);
+        var ids = [copy.ID];
         var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
+        var messageEvent = [];
+        var currents = [];
 
-        // Detect if the current message will have too many labels
-        if(_.difference(_.uniq(angular.copy(message.LabelIDs).concat(toApply)), toRemove).length > 5) {
-            notify($translate.instant('TOO_MANY_LABELS_ON_MESSAGE'));
-            deferred.reject();
-        } else {
-            _.each(toApply, function(labelID) {
-                promises.push(Label.apply({id: labelID, MessageIDs: messageIDs}).$promise);
-            });
+        // Requests
+        _.each(toApply, function(labelID) {
+            promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+        });
 
-            _.each(toRemove, function(labelID) {
-                promises.push(Label.remove({id: labelID, MessageIDs: messageIDs}).$promise);
-            });
+        _.each(toRemove, function(labelID) {
+            promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+        });
 
-            $q.all(promises).then(function() {
-                newMessage.LabelIDs = _.difference(_.uniq(newMessage.LabelIDs.concat(toApply)), toRemove);
-                cache.events([{Action: 3, ID: newMessage.ID, Message: newMessage}]);
+        // Find current location
+        _.each(copy.LabelIDs, function(labelID) {
+            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
+                currents.push(labelID.toString());
+            }
+        });
 
-                if(alsoArchive === true) {
-                    deferred.resolve($scope.move('archive'));
-                } else {
-                    if(toApply.length > 1 || toRemove.length > 1) {
-                        notify($translate.instant('LABELS_APPLIED'));
-                    } else {
-                        notify($translate.instant('LABEL_APPLIED'));
-                    }
-
-                    deferred.resolve();
-                }
-            });
-
-            networkActivityTracker.track(deferred.promise);
+        if(alsoArchive === true) {
+            toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
+            toRemove.concat(currents); // Remove current location
         }
+
+        copy.LabelIDsAdded = toApply;
+        copy.LabelIDsRemoved = toRemove;
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
+
+        $q.all(promises).then(function() {
+            if(alsoArchive === true) {
+                deferred.resolve(Message.archive({IDs: ids}));
+            } else {
+                deferred.resolve();
+            }
+        });
 
         return deferred.promise;
     };
