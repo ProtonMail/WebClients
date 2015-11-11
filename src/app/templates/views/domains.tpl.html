@@ -10,6 +10,10 @@
                     {{ 'DOMAINS' | translate }}
                 </legend>
                 <!-- <p>{{ }} Domains are used. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></p> -->
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                    <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
+                </p>
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
@@ -27,7 +31,7 @@
                             <td class="domain">
                                 <strong>
                                     <i ng-show="domain.State === 1" class="fa fa-check text-green"></i>
-                                    <i ng-show="domain.State === 0" class="fa fa-exclamation-triangle text-red"></i> 
+                                    <i ng-show="domain.State === 0" class="fa fa-exclamation-triangle text-red"></i>
                                     {{ domain.DomainName }}
                                 </strong>
                             </td>
@@ -110,10 +114,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>
-                    <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
-                    <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
-                </p>
             </section>
             <p>&nbsp;</p>
             <section class="setting pm_form full">
