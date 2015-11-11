@@ -15,7 +15,7 @@
                 width: 4rem;
             }
             th.spf {
-                width: 4rem;
+                width: 8rem;
             }
             th.mx {
                 width: 4rem;
@@ -41,6 +41,11 @@
 
             th {
                 padding-right: 0;
+                text-align: left !important;
+                padding-left: 1rem;
+                &.text-right {
+                    text-align: right !important;
+                }
             }
             td {
                 padding-right: 0;
@@ -55,15 +60,37 @@
                 .fa-times-circle {
                     font-size: 22px;
                     position: relative;
-                    top: 4px;
+                    top: 3px;
+
+                }
+                .fa-trash-o {
+                    position: relative;
+                    top: 3px;
                 }
                 .progress {
-                    width: 3rem;
+                    width: 36px;
                     text-align: center;
                     padding: 0;
+                    position: relative;
+                    top: 8px;  
+                    .text-green .fa {
+                        color: $green;
+                    }
+                    .text-red .fa {
+                        color: $red;
+                    }                  
                     span {
                         display: inline;
                         display: none;
+                    }
+                }
+                .remove {
+                    position: relative;
+                    top: 6px;
+                    .fa {
+                        position: relative;
+                        top: 2px;
+                        font-size: 16px;
                     }
                 }
                 span {

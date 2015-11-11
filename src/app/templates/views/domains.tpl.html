@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th class="domain">{{ 'DOMAIN' | translate }}</th>
-                            <th class="verification">{{ 'VERIFY' | translate }}</th>
+                            <th class="verification">{{ 'TXT' | translate }}</th>
                             <th class="spf">SPF</th>
                             <th class="mx">{{ 'MX' | translate }}</th>
                             <th class="dkim">DKIM</th>
@@ -32,7 +32,7 @@
                                 </strong>
                             </td>
                             <td>
-                                <span class="progress">
+                                <span class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.VerifyState === 2) }">
                                     <strong ng-show="domain.VerifyState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -45,7 +45,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="progress">
+                                <span class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
                                     <strong ng-show="domain.SpfState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -61,14 +61,14 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="progress">
+                                <span class="progress pm_button round" ng-click="mx(domain)">
                                     <strong ng-show="true">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
                                 </span>
                             </td>
                             <td>
-                                <span class="progress">
+                                <span class="progress pm_button round" ng-class="{ 'dead': (domain.DkimState === 4) }">
                                     <strong ng-show="domain.DkimState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -87,7 +87,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="progress">
+                                <span class="progress pm_button round" ng-class="{ 'dead': (domain.DmarcState === 3) }">
                                     <strong ng-show="domain.DmarcState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -103,10 +103,7 @@
                                 </span>
                             </td>
                             <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="wizard(domain)" pt-tooltip="{{ 'EDIT' | translate }}">
-                                    <i class="fa fa-edit"></i>
-                                </button>
-                                <button type="button" class="pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                <button type="button" class="remove pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'DELETE' | translate }}">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>

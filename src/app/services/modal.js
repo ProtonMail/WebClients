@@ -764,10 +764,10 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('spfModal', function(pmModal) {
+.factory('mxModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/spf.tpl.html',
+        templateUrl: 'templates/modals/mx.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.close = function() {

@@ -17,8 +17,8 @@ angular.module("proton.controllers.Settings")
     members,
     networkActivityTracker,
     notify,
-    spfModal,
-    verificationModal
+    verificationModal,
+    mxModal
 ) {
     /**
      * Method called at the initialization of this controller
@@ -50,18 +50,18 @@ angular.module("proton.controllers.Settings")
         // if domain has a name, we can skip the first step
         if (domain.DomainName) {
             // proceed
-            if (domain.VerifyState !== 2) {
+            if ((domain.VerifyState !== 2) || (domain.SpfState !== 3)) {
                 // show verification step
                 $scope.verification(domain);
             }
             else {
                 // proceeed.
-                if (domain.SpfState !== 3) {
-                    $scope.spf(domain);
+                if (true) {
+                    // ..
+                    $scope.mx(domain);
                 }
                 else {
-                    // proceed.
-                    alert('?');
+                    // ...
                 }
             }
         }
@@ -228,14 +228,14 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open SPF modal
+     * Open MX modal
      */
-    $scope.spf = function(domain) {
-        spfModal.activate({
+    $scope.mx = function(domain) {
+        mxModal.activate({
             params: {
                 domain: domain,
                 close: function() {
-                    spfModal.deactivate();
+                    mxModal.deactivate();
                 }
             }
         });
