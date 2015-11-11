@@ -1,5 +1,5 @@
 html.protonmail body.themeJason.secure {
-    background: #fff;
+    background: #e9eaed;
     overflow: auto;
     .pm_buttons {
         a {
@@ -28,7 +28,8 @@ html.protonmail body.themeJason.secure {
     .pm_table,
     .secure #pm_header,
     .frame .display-image,
-    .pm_dropdown, {
+    .pm_dropdown,
+    .pm_tabs {
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0px 1px rgba(0,0,0,.04) !important;
         border: none !important;
         background: #fff !important;
@@ -47,7 +48,7 @@ html.protonmail body.themeJason.secure {
     .pm_button,
     .squire-toolbar,
     iframe {
-        box-shadow: 0 1px 1px rgba(0,0,0,.2) !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0px 1px rgba(0,0,0,.04) !important;
     }
     .pm_table.plain {
         background: transparent !important;
@@ -101,6 +102,20 @@ html.protonmail body.themeJason.secure {
             background: linear-gradient(to bottom,  $primary 0%,darken($primary, 10%) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='darken($primary, 10%)',GradientType=0 );          
         }
+    }
+
+    .pm_tabs li.active a {
+        border-color: $border;
+    }
+
+    .pm_tabs li a {
+        box-shadow: none !important;
+        border-width: 0 0 0 1px !important;
+    }
+
+    #pm_settings .pm_tabs {
+        padding-left: 0;
+        margin-left: 25px;
     }
 
 
