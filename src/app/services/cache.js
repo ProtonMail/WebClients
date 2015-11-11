@@ -83,10 +83,9 @@ angular.module("proton.cache", [])
 
     /**
      * Save messages in cache
-     * @param {String} conversationId
      * @param {Array} messages
      */
-    var storeMessages = function(conversationId, messages) {
+    var storeMessages = function(messages) {
         _.each(messages, function(message) {
             var current = _.findWhere(messagesCached, {ID: message.ID});
 
@@ -352,6 +351,8 @@ angular.module("proton.cache", [])
 
             messages = order(messages);
 
+            console.info('Number of messages in the cache', messages.length);
+
             switch(mailbox) {
                 case 'label':
                     total = cacheCounters.total($stateParams.label);
@@ -360,6 +361,8 @@ angular.module("proton.cache", [])
                     total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
+
+            console.info('Number return by API', total);
 
             if(angular.isDefined(total)) {
                 if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
@@ -376,10 +379,8 @@ angular.module("proton.cache", [])
 
                 // Supposed total equal to the total cache?
                 if(messages.length === number) {
-                    console.log('Correct number in the cache');
                     deferred.resolve(messages);
                 } else {
-                    console.log('Not the correct number in the cache'); // TODO remove it
                     callApi();
                 }
             } else {
