@@ -1,5 +1,6 @@
 html.protonmail body.themeJason.secure {
-    background: #e9eaed;
+    background: #fff;
+    overflow: auto;
     .pm_buttons {
         a {
             background: #fff;
@@ -12,6 +13,13 @@ html.protonmail body.themeJason.secure {
         }
     }
 
+
+    *[pt-height] {
+        overflow: initial;
+        height: initial !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .pm_buttons,
     .well,
     .table,
@@ -21,7 +29,7 @@ html.protonmail body.themeJason.secure {
     .secure #pm_header,
     .frame .display-image,
     .pm_dropdown, {
-        box-shadow: 0 1px 1px rgba(0,0,0,.2) !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0px 1px rgba(0,0,0,.04) !important;
         border: none !important;
         background: #fff !important;
         color: $gray-light;
@@ -78,4 +86,22 @@ html.protonmail body.themeJason.secure {
     header#pm_header .pm_buttons {
         box-shadow: none !important;
     }
+
+    .pm_button,
+    .pm_buttons a {
+        background: #ffffff;
+        background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%);
+        background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%);
+        background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 );
+        &.primary {
+            background: $primary;
+            background: -moz-linear-gradient(top,  $primary 0%, darken($primary, 10%) 100%);
+            background: -webkit-linear-gradient(top,  $primary 0%,darken($primary, 10%) 100%);
+            background: linear-gradient(to bottom,  $primary 0%,darken($primary, 10%) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='darken($primary, 10%)',GradientType=0 );          
+        }
+    }
+
+
 }
