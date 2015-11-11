@@ -447,6 +447,12 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.mode = params.mode;
+            this.number = '';
+            this.fullname = '';
+            this.month = '';
+            this.year = '';
+            this.cvc = '';
+            this.cardTypeIcon = 'fa-credit-card';
             // Functions
             this.submit = function() {
                 this.process = true;
@@ -489,6 +495,35 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
+                }
+            };
+
+            this.numberChange = function() {
+                var type = Stripe.card.cardType(this.number);
+
+                switch (type) {
+                    case 'Visa':
+                        this.cardTypeIcon = 'fa-cc-visa';
+                        break;
+                    case 'MasterCard':
+                        this.cardTypeIcon = 'fa-cc-mastercard';
+                        break;
+                    case 'Discover':
+                        this.cardTypeIcon = 'fa-cc-discover';
+                        break;
+                    case 'Diners Club':
+                        this.cardTypeIcon = 'fa-cc-diners-club';
+                        break;
+                    case 'JCB':
+                        this.cardTypeIcon = 'fa-cc-jcb';
+                        break;
+                    case 'American Express':
+                    case 'Unknown':
+                    this.cardTypeIcon = 'fa-credit-card';
+                    break;
+                    default:
+                        this.cardTypeIcon = 'fa-credit-card';
+                        break;
                 }
             };
         }
