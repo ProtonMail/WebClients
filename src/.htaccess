@@ -4,7 +4,7 @@ RewriteRule ^blog/(.*) - [L]
 RewriteRule ^blog(.*) - [L]
 
 RewriteRule ^support/(.*) - [L]
-RewriteRule ^support(.*) - [L]
+RewriteRule ^support$ - [L]
 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
