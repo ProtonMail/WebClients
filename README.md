@@ -37,7 +37,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Edit credit card (wait back-end)
 * [ ] Add address (wait back-end)
 * [ ] Add custom domain via modal (for **Jason**)
-* [ ] Buy domain with modal (wait design and back-end)
+* [x] Buy domain with modal (Andy said not yet) 
 * [x] Move the loader (for **Jason**)
 * [ ] Download invoice (wait back-end)
 * [ ] Subscribe for a plan (wait for back-end)
