@@ -173,7 +173,12 @@ angular.module("proton.controllers.Settings")
         // Payment.source().then(function(result) {
         //     if(angular.isDefined(result.data) && result.data.Code === 1000) {
         //         var card = result.data.card;
-
+                var card = {
+                    fullname: 'John Doe',
+                    number: '*****************' + 1231,
+                    month: 12,
+                    year: 15
+                };
                 cardModal.activate({
                     params: {
                         card: card,

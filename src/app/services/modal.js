@@ -447,12 +447,20 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.mode = params.mode;
-            this.number = '';
-            this.fullname = '';
-            this.month = '';
-            this.year = '';
-            this.cvc = '';
             this.cardTypeIcon = 'fa-credit-card';
+
+            if(params.mode === 'edit') {
+                this.number = '';
+                this.fullname = '';
+                this.month = '';
+                this.year = '';
+                this.cvc = '';
+            } else if(params.mode === 'view' && angular.isDefined(params.card)) {
+                this.number = params.card.number;
+                this.fullname = params.card.fullname;
+                this.month = params.card.month;
+                this.year = params.card.year;
+            }
             // Functions
             this.submit = function() {
                 this.process = true;
