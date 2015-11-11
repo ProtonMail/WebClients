@@ -3,7 +3,10 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'ADD_A_CUSTOM_DOMAIN' | translate }}</h4>
+                <h4 class="modal-title">
+                    {{ 'ADD_A_CUSTOM_DOMAIN' | translate }}
+                    <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
+                </h4>
             </div>
             <div class="modal-body pm_form">
                 <p>Add a domain that you own to your ProtonMail account.</p>

@@ -3,12 +3,15 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'ADD_A_CUSTOM_DOMAIN' | translate }}</h4>
+                <h4 class="modal-title">
+                    {{ 'TXT_AND_SPF' | translate }}
+                    <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
+                </h4>
             </div>
             <div class="modal-body">
 
                 <h3>{{ 'TXT_RECORD' | translate }}</h3>
-                <p>For security reasons, we need to verify that you are the owner of {{ ctrl.domain.DomainName }}. Please add the following <kbd>TXT</kbd> record into the DNS for {{ ctrl.domain.DomainName }}. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
                 <pre>{{ ctrl.domain.VerifyCode }}</pre>
                 <br>
                 <br>
@@ -19,7 +22,7 @@
                 <p>The current SPF record for {{ ctrl.domain.domain }} is:</p>
                 <!-- <pre>{{ currentSpf }}</pre> -->
                 <pre> v=spf1 include:herp.org ~all</pre>
-                <p>If your domain already has an SPF record, you just need to add _spf.protonmail.ch to the existing record.</p>
+                <p>If your domain already has an SPF record, you just need to add <kbd>_spf.protonmail.ch</kbd> to the existing record. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
             </div>
 
         </div>

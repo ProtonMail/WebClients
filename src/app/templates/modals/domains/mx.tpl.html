@@ -3,11 +3,13 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'MX' | translate }}</h4>
+                <h4 class="modal-title">
+                    {{ 'MX_RECORD' | translate }}
+                    <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
+                </h4>
             </div>
             <div class="modal-body">
 
-                <h3 class="modal-title">MX Record</h3>
                 <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>[ our MX Record ] <br><pre>mx1.derpDNSherp.burp</pre></p>
                 <p><strong>{{ 'IMPORTANT' | translate }}</strong>: <em>The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</em></p>

@@ -1,0 +1,6 @@
+<ul class="domainMenu pm_tabs">
+    <li><a class="pm_button" ng-class="{ 'primary dead': ctrl.step===1 }" ng-click="verification(domain)">TXT &amp; SPF</a></li>
+    <li><a class="pm_button" ng-class="{ 'primary dead': ctrl.step===2 }" ng-click="mx(domain)">MX</a></li>
+    <li><a class="pm_button" ng-class="{ 'primary dead': ctrl.step===3 }" ng-click="dkim(domain)">DKIM</a></li>
+    <li><a class="pm_button" ng-class="{ 'primary dead': ctrl.step===4 }" ng-click="dmarc(domain)">DMARC</a></li>
+</ul>

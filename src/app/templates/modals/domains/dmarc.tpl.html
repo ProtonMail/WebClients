@@ -3,16 +3,21 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">DKIM</h4>
+                <h4 class="modal-title">
+                    DMARC
+                    <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
+                </h4>
             </div>
             <div class="modal-body">
-                <p>To avoid emails from your domain going into Spam, we recommend adding a DKIM record. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <p>Please use the following DKIM record:</p>
-                <pre>k=rsa; p=G1JfMA879KJDSIK3DQF</pre>
-                <p>The current DKIM record for {{ ctrl.domain.domain }} is:</p>
-                <!-- <pre>{{ currentDkim }}</pre> -->
-                <pre>k=rsa; p=MIGfMA0GCSqGSIb3DQE</pre>
-                <p>Please overwrite any existing DKIM records.</p>
+                <p>For improved protection against spam, you can add the following DMARC record. This typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <p>Please use the following DMARC record:</p>
+                <!-- <pre>{{ dmarc }}</pre> -->
+<pre>
+v=DMARC1; p=none; 
+rua=mailto:dmarc_agg@auth.returnpath.net; 
+ruf=mailto:dmarc_afrf@auth.returnpath.net; 
+rf=afrf; pct=100
+</pre>
             </div>
         </div>
         <div class="modal-footer text-right">

@@ -755,7 +755,7 @@ angular.module("proton.modals", [])
 .factory('domainModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain.tpl.html',
+        templateUrl: 'templates/modals/domains/domain.tpl.html',
         controller: function(params) {
             this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
             // Functions
@@ -777,7 +777,7 @@ angular.module("proton.modals", [])
 .factory('buyDomainModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/buyDomain.tpl.html',
+        templateUrl: 'templates/modals/domains/buyDomain.tpl.html',
         controller: function(params) {
             // Functions
             this.submit = function() {
@@ -822,9 +822,10 @@ angular.module("proton.modals", [])
 .factory('verificationModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/verification.tpl.html',
+        templateUrl: 'templates/modals/domains/verification.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
+            this.step = params.step;
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
@@ -842,9 +843,10 @@ angular.module("proton.modals", [])
 .factory('mxModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/mx.tpl.html',
+        templateUrl: 'templates/modals/domains/mx.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
+            this.step = params.step;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
@@ -857,9 +859,10 @@ angular.module("proton.modals", [])
 .factory('dkimModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/dkim.tpl.html',
+        templateUrl: 'templates/modals/domains/dkim.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
+            this.step = params.step;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
@@ -872,9 +875,10 @@ angular.module("proton.modals", [])
 .factory('dmarcModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/dmarc.tpl.html',
+        templateUrl: 'templates/modals/domains/dmarc.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
+            this.step = params.step;
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();

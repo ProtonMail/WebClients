@@ -29,8 +29,8 @@ html.protonmail body.activeComposer {
         z-index: 2;
         background: $white;
         left: 50%;
-        top: 5rem;
-        bottom: 5rem;
+        top: 3rem;
+        bottom: 3rem;
         width: 50rem;
         margin-left: -25rem;
         border: 5px solid $primary;
@@ -60,9 +60,7 @@ html.protonmail body.activeComposer {
             background-color: $white;
         }        
         .modal-content {
-            overflow: auto;
             position: absolute;
-            -webkit-overflow-scrolling: touch;
             left: 0;
             top: 25px;
             bottom: 80px;
@@ -70,13 +68,24 @@ html.protonmail body.activeComposer {
             .modal-header {
                 padding: 50px 50px 25px 50px;
                 margin-top: -25px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
             }
             .modal-body {
                 padding: 25px 50px;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                position: absolute;
+                top: 100px;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
             h1, h2, h3, h4 {
                 font-size: 22px;
-                line-height: 22px;
+                line-height: 36px;
                 font-weight: 400;
                 color: #555;
             }

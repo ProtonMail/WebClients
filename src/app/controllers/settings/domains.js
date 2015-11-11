@@ -214,6 +214,7 @@ angular.module("proton.controllers.Settings")
         verificationModal.activate({
             params: {
                 domain: domain,
+                step: 1,
                 submit: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -254,6 +255,7 @@ angular.module("proton.controllers.Settings")
         mxModal.activate({
             params: {
                 domain: domain,
+                step: 2,
                 close: function() {
                     mxModal.deactivate();
                 }
@@ -268,6 +270,7 @@ angular.module("proton.controllers.Settings")
         dkimModal.activate({
             params: {
                 domain: domain,
+                step: 3,
                 close: function() {
                     dkimModal.deactivate();
                 }
@@ -282,6 +285,7 @@ angular.module("proton.controllers.Settings")
         dmarcModal.activate({
             params: {
                 domain: domain,
+                step: 4,
                 close: function() {
                     dmarcModal.deactivate();
                 }
