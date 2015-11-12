@@ -1078,7 +1078,7 @@ angular.module("proton.cache", [])
     return api;
 })
 
-.service('preloadConversation', function(
+.factory('preloadConversation', function(
     $interval,
     cache
 ) {
@@ -1147,6 +1147,72 @@ angular.module("proton.cache", [])
 
     // NOTE Andy said: "We preload nothing, that's too expensive for the back-end"
     // api.loop(); // Start looping
+
+    return api;
+})
+
+.factory('expiration', function($interval, cache) {
+    var api = {};
+    var interval = 5000;
+    var need = false;
+    var elements = [];
+
+    /**
+     * Delete message if expired
+     */
+    var process = function() {
+        if(need === true) {
+            if(elements.length > 0) {
+                var messages = [];
+                var type = (angular.isDefined(_.first(elements).ConversationID))?'message':'conversation';
+
+                // Set messages
+                if(type === 'message') {
+                    messages = elements;
+                } else if(type === 'conversation') {
+                    messages = cache.queryConversationMessages(_.first(elements).ConversationID);
+                }
+
+                // Get elements expired
+                var elementsExpired = _.filter(messages, function(element) {
+                    return element.ExpirationTime < moment().unix();
+                });
+
+                if(elementsExpired.length > 0) {
+                    // Generate an event to delete message expired in the cache
+                    var messageEvent = [];
+
+                    _.each(elementsExpired, function(message) {
+                        messageEvent.push({Action: 0, ID: message.ID});
+                    });
+
+                    cache.events(messageEvent, 'message');
+                }
+            }
+
+            need = false;
+        }
+    };
+
+    /**
+     * Start to loop
+     */
+    var start = function() {
+        $interval(function() {
+            process();
+        }, interval);
+    };
+
+    /**
+     * Assign new elements
+     */
+    api.check = function(elements) {
+        elements = elements;
+        need = true;
+    };
+
+    // Start looping around conversations / messages
+    start();
 
     return api;
 });

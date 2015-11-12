@@ -159,6 +159,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         });
 
         // cache
+        copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // remove current location
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location].toString()]; // Add new location
         events.push({Action: 3, ID: copy.ID, Conversation: copy});
@@ -209,7 +210,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove.concat(currents); // Remove current location
+            toRemove = toRemove.concat(currents); // Remove current location
         }
 
         copy.LabelIDsAdded = toApply;

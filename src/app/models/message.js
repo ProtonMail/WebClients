@@ -21,7 +21,6 @@ angular.module("proton.models.message", ["proton.constants"])
     notify,
     tools
 ) {
-    var invertedMailboxIdentifiers = _.invert(CONSTANTS.MAILBOX_IDENTIFIERS);
     var Message = $resource(
         url.get() + '/messages/:id',
         authentication.params({
@@ -139,49 +138,6 @@ angular.module("proton.models.message", ["proton.constants"])
 
     _.extend(Message.prototype, {
         promises: [],
-        countdown: 0,
-        parameters: function(mailbox) {
-            var params = {};
-
-            params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            params.Page = ($stateParams.page || 1) - 1;
-
-            if ($stateParams.filter) {
-                params.Unread = +($stateParams.filter === 'unread');
-            }
-
-            if ($stateParams.sort) {
-                var sort = $stateParams.sort;
-                var desc = _.string.startsWith(sort, "-");
-
-                if (desc) {
-                    sort = sort.slice(1);
-                }
-
-                params.Sort = _.string.capitalize(sort);
-                params.Desc = +desc;
-            }
-
-            if (mailbox === 'search') {
-                params.Location = $stateParams.location;
-                params.Keyword = $stateParams.words;
-                params.To = $stateParams.to;
-                params.From = $stateParams.from;
-                params.Subject = $stateParams.subject;
-                params.Begin = $stateParams.begin;
-                params.End = $stateParams.end;
-                params.Attachments = $stateParams.attachments;
-                params.Starred = $stateParams.starred;
-                params.Label = $stateParams.label;
-            } else if(mailbox === 'label') {
-                delete params.Location;
-                params.Label = $stateParams.label;
-            }
-
-            _.pick(params, _.identity);
-
-            return params;
-        },
         sizeAttachments: function() {
             var size = 0;
 
@@ -207,9 +163,6 @@ angular.module("proton.models.message", ["proton.constants"])
             ];
 
             return texts[this.IsEncrypted];
-        },
-        location: function() {
-            return invertedMailboxIdentifiers[this.Location];
         },
 
         isDraft: function() {
@@ -437,8 +390,7 @@ angular.module("proton.models.message", ["proton.constants"])
                                 deferred.reject(err);
                             }.bind(this)
                         );
-                    }
-                    catch (err) {
+                    } catch (err) {
                         this.failedDecryption = true;
                         deferred.reject(err);
                     }
@@ -455,10 +407,9 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         clearImageBody: function(body) {
-            if (body===undefined) {
-                return body;
-            }
-            if (this.containsImage === false || body.match('<img') === null) {
+            if (angular.isUndefined(body)) {
+
+            } else if (this.containsImage === false || body.match('<img') === null) {
                 this.containsImage = false;
             } else {
                 this.containsImage = true;
@@ -475,22 +426,6 @@ angular.module("proton.models.message", ["proton.constants"])
             return body;
         }
     });
-
-    if(this.ExpirationTime) {
-        var interval = 1000; // 1 sec
-        var timer;
-        var tick = function() {
-            timer = $timeout(function() {
-                if(Message.countdown > 0) {
-                    Message.countdown -= 1000;
-
-                    if(Message.countdown > 0) {
-                        tick();
-                    }
-                }
-            }, interval);
-        };
-    }
 
     return Message;
 });

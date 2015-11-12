@@ -5,9 +5,6 @@
                 <i class="fa fa-paperclip"></i>
             </span>
             {{ message.Subject }}
-            <span class="label label-pm" style="background-color: {{ getLabel(id).Color }}" ng-repeat="id in message.LabelIDs">
-                {{ getLabel(id).Name }} <a href="" ng-click="detachLabel(id)"><i class="fa fa-times"></i></a>
-            </span>
         </h1>
         <div class="pull-right">
             <span ng-bind-html="ago"></span>

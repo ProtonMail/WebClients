@@ -98,7 +98,7 @@
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>
                         <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
-                        <a href="" ng-click="detachLabel(label.ID)" class="labelClose">
+                        <a href="" ng-click="detachLabel(label)" class="labelClose">
                             <i class="fa fa-times"></i>
                         </a>
                     </span>

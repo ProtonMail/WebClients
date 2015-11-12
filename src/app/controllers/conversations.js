@@ -14,6 +14,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     CONSTANTS,
     Conversation,
     Message,
+    expiration,
     Label,
     authentication,
     cache,
@@ -42,7 +43,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.mobileResponsive();
         networkActivityTracker.track($scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
-                preloadConversation.set(newValue);
+                // Manage preload of conversations or messages
+                // Andy doesn't want to apply this for the moment, it's too expensive for the back-end
+                // preloadConversation.set(newValue);
+                // Manage expiration time
+                expiration.check(newValue);
                 $rootScope.numberSelectedMessages = $scope.elementsSelected().length;
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -505,6 +510,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 }
             });
 
+            element.Selected = false;
             element.LabelIDsRemoved = currents; // Remove currents location
             element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
 
@@ -515,6 +521,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
+                        message.Selected = false;
                         message.LabelIDsRemoved = currents; // Remove currents location
                         message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
                         messageEvent.push({Action: 3, ID: message.ID, Message: message});
@@ -524,9 +531,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
-
-        // Unselect elements
-        $scope.unselectAllConversations();
 
         // Send events
         cache.events(conversationEvent, 'conversation');
@@ -617,7 +621,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             if(alsoArchive === true) {
                 toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                toRemove.concat(currents);
+                toRemove = toRemove.concat(currents);
             }
 
             copy.LabelIDsAdded = toApply;

@@ -454,19 +454,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.detachLabel = function(labelID) {
-        var copy = angular.copy($scope.message);
-        var messageEvent = [];
-
-        // Generate event
-        copy.LabelIDsRemoved = [labelID];
-        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
-        cache.events(messageEvent, 'message');
-
-        // Request api
-        Label.remove({id: labelID, MessageIDs: [copy.ID]});
-    };
-
     $scope.getLabel = function(id) {
         return _.findWhere($scope.labels, {ID: id});
     };
@@ -478,6 +465,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         };
     };
 
+    /**
+     * Method call when the user submit some labels to apply to this message
+     * @param {Array} labels
+     * @param {Boolean} alsoArchive
+     */
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
         var copy = angular.copy($scope.message);
@@ -486,7 +478,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var messageEvent = [];
+        var conversationEvent = [];
         var currents = [];
+        var labelIDs = [];
 
         // Requests
         _.each(toApply, function(labelID) {
@@ -506,13 +500,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove.concat(currents); // Remove current location
+            toRemove = toRemove.concat(currents); // Remove current location
         }
 
         copy.LabelIDsAdded = toApply;
         copy.LabelIDsRemoved = toRemove;
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
+
+        _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
+            labelIDs = labelIDs.concat(message.LabelIDs);
+        });
+
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
+        cache.events(conversationEvent, 'conversation');
 
         $q.all(promises).then(function() {
             if(alsoArchive === true) {
@@ -523,6 +524,28 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         });
 
         return deferred.promise;
+    };
+
+    /**
+     * Detach label to the current message
+     * @param {Object} label
+     */
+    $scope.detachLabel = function(label) {
+        var messageEvent = [];
+        var conversationEvent = [];
+        var copy = angular.copy($scope.message);
+        var labelIDs = [];
+
+        copy.LabelIDsRemoved = [label.ID];
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
+
+        _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
+            labelIDs = labelIDs.concat(message.LabelIDs);
+        });
+
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
+        cache.events(conversationEvent, 'conversation');
     };
 
     $scope.sendMessageTo = function(email) {
@@ -625,6 +648,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             }
         });
 
+        copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // Remove previous location
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
         events.push({Action: 3, ID: copy.ID, Message: copy});

@@ -19,13 +19,13 @@
             !!(message.IsEncrypted == '5') ||
             !!(message.IsEncrypted == '6'),
         'fa-unlock-alt': !!(message.IsEncrypted == '0'),
-        'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')        
+        'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
     }"
     pt-placement="right"
     pt-tooltip="{{ message.encryptionType() }}"></i>
     <i class="fa fa-paperclip" ng-show="::message.Attachments.length > 0"></i>
     <span class="subject" ng-bind="::message.Subject"></span>
     <span class="label label-pm" ng-style="getColorLabel(label)" ng-repeat="label in message.labels()">
-        {{ label.Name }} <a href="" ng-click="detachLabel(label.ID)"><i class="fa fa-times"></i></a>
+        {{ label.Name }} <a href="" ng-click="detachLabel(label)"><i class="fa fa-times"></i></a>
     </span>
 </h1>
