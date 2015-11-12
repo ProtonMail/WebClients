@@ -75,6 +75,7 @@ angular.module("proton", [
     "proton.toggle",
     "proton.responsiveComposer",
     "proton.transformation",
+    "proton.loader",
 
     // Filters
     "proton.filters",

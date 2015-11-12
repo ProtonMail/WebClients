@@ -5,15 +5,15 @@
             <div class="modal-header">
                 <h4 class="modal-title">
                     DMARC
-                    <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
+                    <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
                 </h4>
             </div>
             <div class="modal-body pm_form">
 
                 <p>For improved protection against spam, you can add the following DMARC record. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <textarea style="height: 12rem" readonly>v=DMARC1; p=none; 
-rua=mailto:dmarc_agg@auth.returnpath.net; 
-ruf=mailto:dmarc_afrf@auth.returnpath.net; 
+                <textarea style="height: 12rem" readonly>v=DMARC1; p=none;
+rua=mailto:dmarc_agg@auth.returnpath.net;
+ruf=mailto:dmarc_afrf@auth.returnpath.net;
 rf=afrf; pct=100</textarea>
                 <div ng-show="dmarc">
                     <p>The current DMARC record for {{ ctrl.domain.domain }} is:</p>

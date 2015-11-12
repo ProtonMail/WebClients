@@ -100,10 +100,9 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal process to add a custom domain
      */
-    $scope.addDomain = function(domain) {
+    $scope.addDomain = function() {
         domainModal.activate({
             params: {
-                domain: domain,
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -129,7 +128,7 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
- * Open modal process to buy a new domain
+     * Open modal process to buy a new domain
      */
     $scope.buyDomain = function() {
         buyDomainModal.activate({
@@ -147,6 +146,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Delete domain
+     * @param {Object} domain
      */
     $scope.deleteDomain = function(domain) {
         var index = $scope.domains.indexOf(domain);
@@ -196,6 +196,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Delete address
+     * @param {Object} domain
      */
     $scope.deleteAddress = function(address) {
         confirmModal.activate({
@@ -215,6 +216,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open verification modal
+     * @param {Object} domain
      */
     $scope.verification = function(domain) {
         verificationModal.activate({
@@ -225,18 +227,22 @@ angular.module("proton.controllers.Settings")
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check verification code
-                            if (result.data.Domain.VerifyState === 1) {
-                                notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
-                                verificationModal.deactivate();
+                            switch (result.data.Domain.VerifyState) {
+                                case 0:
+                                    notify({message: $translate.instant('DEFAULT'), classes: 'notification-danger'});
+                                    break;
+                                case 1:
+                                    notify({message: $translate.instant('HAS_CODE_BUT_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 2:
+                                    notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
+                                    verificationModal.deactivate();
+                                    // open the next step
+                                    $scope.mx(result.data.Domain);
+                                    break;
+                                default:
+                                    break;
                             }
-                            else if (result.data.Domain.VerifyState === 2) {
-                                notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
-                            }
-                            else if (result.data.Domain.VerifyState === 0) {
-                                notify({message: $translate.instant('TXT_RECORD_MISSING'), classes: 'notification-danger'});
-                            }
-                            // open the next step
-                            $scope.verification(result.data.Domain);
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -245,7 +251,6 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
-                    // do stuff
                 },
                 close: function() {
                     verificationModal.deactivate();
@@ -256,12 +261,43 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open SPF modal
+     * @param {Object} domain
      */
     $scope.spf = function(domain) {
         spfModal.activate({
             params: {
                 domain: domain,
                 step: 3,
+                submit: function() {
+                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            // check verification code
+                            switch (result.data.Domain.SpfState) {
+                                case 0:
+                                    notify({message: $translate.instant('DEFAULT'), classes: 'notification-danger'});
+                                    break;
+                                case 1:
+                                case 2:
+                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 3:
+                                    notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
+                                    spfModal.deactivate();
+                                    // open the next step
+                                    $scope.dkim(result.data.Domain);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                    }));
+                },
                 close: function() {
                     spfModal.deactivate();
                 }
@@ -271,12 +307,43 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open MX modal
+     * @param {Object} domain
      */
     $scope.mx = function(domain) {
         mxModal.activate({
             params: {
                 domain: domain,
                 step: 2,
+                submit: function() {
+                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            // check verification code
+                            switch (result.data.Domain.MxState) {
+                                case 0:
+                                    notify({message: $translate.instant('DEFAULT'), classes: 'notification-danger'});
+                                    break;
+                                case 1:
+                                case 2:
+                                    notify({message: $translate.instant('PRIORITY_IS_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 3:
+                                    notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
+                                    mxModal.deactivate();
+                                    // open the next step
+                                    $scope.spf(result.data.Domain);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                    }));
+                },
                 close: function() {
                     mxModal.deactivate();
                 }
@@ -286,12 +353,46 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open DKIM modal
+     * @param {Object} domain
      */
     $scope.dkim = function(domain) {
         dkimModal.activate({
             params: {
                 domain: domain,
                 step: 4,
+                submit: function() {
+                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            // check dkim code
+                            switch (result.data.Domain.DkimState) {
+                                case 0:
+                                    notify({message: $translate.instant('DEFAULT'), classes: 'notification-danger'});
+                                    break;
+                                case 1:
+                                case 2:
+                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 3:
+                                    notify({message: $translate.instant('KEY_IS_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 4:
+                                    notify({message: $translate.instant('DKIM_VERIFIED'), classes: 'notification-success'});
+                                    dkimModal.deactivate();
+                                    // open the next step
+                                    $scope.dmarc(result.data.Domain);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                    }));
+                },
                 close: function() {
                     dkimModal.deactivate();
                 }
@@ -301,12 +402,41 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open DMARC modal
+     * @param {Object} domain
      */
     $scope.dmarc = function(domain) {
         dmarcModal.activate({
             params: {
                 domain: domain,
                 step: 5,
+                submit: function() {
+                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            // check dmarc code
+                            switch (result.data.Domain.DmarcState) {
+                                case 0:
+                                    notify({message: $translate.instant('DEFAULT'), classes: 'notification-danger'});
+                                    break;
+                                case 1:
+                                case 2:
+                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
+                                    break;
+                                case 3:
+                                    notify({message: $translate.instant('DMARC_VERIFIED'), classes: 'notification-danger'});
+                                    dmarcModal.deactivate();
+                                    break;
+                                default:
+                                    break;
+                            }
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                    }));
+                },
                 close: function() {
                     dmarcModal.deactivate();
                 }
