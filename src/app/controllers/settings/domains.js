@@ -219,6 +219,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.verification = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         verificationModal.activate({
             params: {
                 domain: domain,
@@ -236,6 +238,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 2:
                                     notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
+                                    $scope.domains[index] = result.data.Domain;
                                     verificationModal.deactivate();
                                     // open the next step
                                     $scope.mx(result.data.Domain);
@@ -264,6 +267,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.spf = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         spfModal.activate({
             params: {
                 domain: domain,
@@ -282,6 +287,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 3:
                                     notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
+                                    $scope.domains[index] = result.data.Domain;
                                     spfModal.deactivate();
                                     // open the next step
                                     $scope.dkim(result.data.Domain);
@@ -310,6 +316,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.mx = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         mxModal.activate({
             params: {
                 domain: domain,
@@ -328,6 +336,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 3:
                                     notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
+                                    $scope.domains[index] = result.data.Domain;
                                     mxModal.deactivate();
                                     // open the next step
                                     $scope.spf(result.data.Domain);
@@ -356,6 +365,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.dkim = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         dkimModal.activate({
             params: {
                 domain: domain,
@@ -377,6 +388,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 4:
                                     notify({message: $translate.instant('DKIM_VERIFIED'), classes: 'notification-success'});
+                                    $scope.domains[index] = result.data.Domain;
                                     dkimModal.deactivate();
                                     // open the next step
                                     $scope.dmarc(result.data.Domain);
@@ -405,6 +417,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.dmarc = function(domain) {
+        var index = $scope.domains.indexOf(domain);
+
         dmarcModal.activate({
             params: {
                 domain: domain,
@@ -423,6 +437,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 3:
                                     notify({message: $translate.instant('DMARC_VERIFIED'), classes: 'notification-danger'});
+                                    $scope.domains[index] = result.data.Domain;
                                     dmarcModal.deactivate();
                                     break;
                                 default:
