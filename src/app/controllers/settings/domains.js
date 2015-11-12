@@ -64,6 +64,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open modal process to add a custom domain.
+     * @param {Object} domain
      * Docs: https://github.com/ProtonMail/Slim-API/blob/develop_domain/api-spec/pm_api_domains.md
      */
     $scope.wizard = function(domain) {
