@@ -648,30 +648,11 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var message = event.Message;
         var currentMessage = _.findWhere(messagesCached, {ID: event.ID});
-        var currentConversation = _.findWhere(conversationsCached, {ID: event.Message.ConversationID});
-        var conversation = {
-            ExpirationTime: event.Message.ExpirationTime,
-            ID: event.Message.ConversationID,
-            LabelIDs: event.Message.LabelIDs,
-            NumAttachments: event.Message.NumAttachments,
-            NumMessages: 1,
-            NumUnread: event.Message.IsRead,
-            Recipients: event.Message.ToList,
-            Senders: [event.Message.Sender],
-            Subject: event.Message.Subject,
-            Time: event.Message.Time,
-            TotalSize: event.Message.Size
-        };
 
         if(angular.isUndefined(currentMessage)) {
             insertMessage(message);
-        }
-
-        // Need to create a new conversation?
-        if(angular.isUndefined(currentConversation)) {
-            insertConversation(conversation);
         } else {
-            updateConversation(conversation);
+            updateMessage(message);
         }
 
         deferred.resolve();

@@ -64,7 +64,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.$on('newMessage', function() {
         var message = new Message();
 
-        message.saved = 0;
         $scope.initMessage(message, false);
     });
 
@@ -73,7 +72,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
 
         mess.attachmentsToggle = false;
-        mess.saved = 2;
         $scope.initMessage(mess, save);
     });
 
@@ -844,8 +842,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} notification - Add a notification when the saving is complete
      */
     $scope.save = function(message, silently, forward, notification) {
-        message.saved++;
-
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -885,7 +881,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         parameters.Message.AddressID = message.From.ID;
 
-        savePromise = message.encryptBody(authentication.user.PublicKey).then(function(result) {
+        message.encryptBody(authentication.user.PublicKey).then(function(result) {
             var draftPromise;
             var CREATE = 1;
             var UPDATE = 2;
@@ -913,8 +909,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     }
 
                     message.BackupDate = new Date(); // Draft save at
-                    message.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
                     $scope.saveOld(message);
+
+                    result.Message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
+                    result.Message.LabelIDs = message.LabelIDs || [];
+                    result.Message.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
 
                     // Add draft in message list
                     var events = [];
@@ -923,7 +922,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     cache.events(events, 'message');
 
                     if(notification === true) {
-                        notify({message: "Message saved", classes: 'notification-success'});
+                        notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
                     }
 
                     deferred.resolve(result);
@@ -964,6 +963,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return message.savePromise;
     };
 
+    /**
+     * Check if the subject of this message is empty
+     * And ask the user to send anyway
+     * @param {Object} message
+     */
     $scope.checkSubject = function(message) {
         var deferred = $q.defer();
         var title = $translate.instant('NO_SUBJECT');
@@ -991,6 +995,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return deferred.promise;
     };
 
+    /**
+     * Try to send message specified
+     * @param {Object} message
+     */
     $scope.send = function(message) {
         var deferred = $q.defer();
         var validate = $scope.validate(message);
