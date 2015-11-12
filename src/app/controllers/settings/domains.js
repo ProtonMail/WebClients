@@ -69,8 +69,8 @@ angular.module("proton.controllers.Settings")
     $scope.wizard = function(domain) {
         // go through all steps and show the user the step they need to complete next. allow for back and next options.
         // if domain has a name, we can skip the first step
-        /* steps: 
-            1. verify ownership with txt record 
+        /* steps:
+            1. verify ownership with txt record
             2. add addresses
             3. add mx
             4. add spf
@@ -80,22 +80,18 @@ angular.module("proton.controllers.Settings")
         if (domain.DomainName) {
             if ((domain.VerifyState !== 2)) {
                 $scope.verification(domain);
-            }
-            else {
+            } else {
                 if (domain.MxState !== 3) {
                     $scope.mx(domain);
-                }
-                else {
+                } else {
                     if ((domain.SpfState !== 3)) {
                         $scope.spf(domain);
-                    }
-                    else {
+                    } else {
                         // ...
                     }
                 }
             }
-        }
-        else {
+        } else {
             // show first step
             $scope.addDomain();
         }

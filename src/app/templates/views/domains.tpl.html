@@ -15,10 +15,6 @@
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
                 </p>
 
-                <div ng-repeat="domain in domains">
-                    <pre>{{ domain }}</pre>
-                </div>
-
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
@@ -28,7 +24,7 @@
                             <th class="spf">3. SPF</th>
                             <th class="dkim">4. DKIM</th>
                             <th class="dmarc">5. DMARC</th>
-                            <th class="text-right action">{{ 'ACTION' | translate }}</th>
+                            <th class="text-right action">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
