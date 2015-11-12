@@ -1,17 +1,17 @@
 <ul class="domainMenu pm_tabs">
     <li ng-class="{ 'active': ctrl.step === 1 }">
-        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 1 }" ng-click="verification(domain)">1. VERIFY</a>
+        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 1 }" ng-click="ctrl.verification()">1. VERIFY</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 2 }">
-        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 2 }" ng-click="mx(domain)">2. MX</a>
+        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 2 }" ng-click="ctrl.mx()">2. MX</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 3 }">
-        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 3 }" ng-click="spf(domain)">3. SPF</a>
+        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 3 }" ng-click="ctrl.spf()">3. SPF</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 4 }">
-        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 4 }" ng-click="dkim(domain)">4. DKIM</a>
+        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 4 }" ng-click="ctrl.dkim()">4. DKIM</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 5 }">
-        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 5 }" ng-click="dmarc(domain)">5. DMARC</a>
+        <a class="pm_button" ng-class="{ 'dead': ctrl.step === 5 }" ng-click="ctrl.dmarc()">5. DMARC</a>
     </li>
 </ul>

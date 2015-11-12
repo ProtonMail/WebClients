@@ -804,13 +804,16 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('spfModal', function(pmModal) {
+.factory('spfModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/spf.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
+            this.mx = function() {
+                $rootScope.$broadcast('mx', params.domain);
+            };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();

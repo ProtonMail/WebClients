@@ -21,6 +21,11 @@ angular.module("proton.controllers.Settings")
     mxModal,
     spfModal
 ) {
+
+    $scope.$on('mx', function(event, domain) {
+        $scope.mx(domain);
+    });
+
     /**
      * Method called at the initialization of this controller
      */
