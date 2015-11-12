@@ -22,8 +22,30 @@ angular.module("proton.controllers.Settings")
     spfModal
 ) {
 
+    // Listeners
+    $scope.$on('spf', function(event, domain) {
+        $scope.closeModals();
+        $scope.spf(domain);
+    });
+
     $scope.$on('mx', function(event, domain) {
+        $scope.closeModals();
         $scope.mx(domain);
+    });
+
+    $scope.$on('dkim', function(event, domain) {
+        $scope.closeModals();
+        $scope.dkim(domain);
+    });
+
+    $scope.$on('verification', function(event, domain) {
+        $scope.closeModals();
+        $scope.verification(domain);
+    });
+
+    $scope.$on('dmarc', function(event, domain) {
+        $scope.closeModals();
+        $scope.dmarc(domain);
     });
 
     /**
@@ -463,6 +485,17 @@ angular.module("proton.controllers.Settings")
                 }
             }
         });
+    };
+
+    /**
+     * Close all verification modals
+     */
+    $scope.closeModals = function() {
+        verificationModal.deactivate();
+        dkimModal.deactivate();
+        dmarcModal.deactivate();
+        spfModal.deactivate();
+        mxModal.deactivate();
     };
 
     /**

@@ -783,13 +783,16 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('verificationModal', function(pmModal) {
+.factory('verificationModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/verification.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
@@ -811,8 +814,8 @@ angular.module("proton.modals", [])
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
-            this.mx = function() {
-                $rootScope.$broadcast('mx', params.domain);
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
             };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
@@ -828,13 +831,16 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('mxModal', function(pmModal) {
+.factory('mxModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/mx.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
@@ -849,13 +855,16 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('dkimModal', function(pmModal) {
+.factory('dkimModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/dkim.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
@@ -870,13 +879,16 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('dmarcModal', function(pmModal) {
+.factory('dmarcModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/dmarc.tpl.html',
         controller: function(params) {
             this.domain = params.domain;
             this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
