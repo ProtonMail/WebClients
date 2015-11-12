@@ -2,7 +2,7 @@ angular.module("proton.controllers.Settings")
 
 .controller('InvoicesController', function($rootScope, $scope, paymentModal) {
     $rootScope.pageName = "Invoices";
-    $scope.payments = [
+    $scope.invoices = [
         {
             "Date": 1444079277,
             "Event": "Business Plan Subscription (1 month) with 2 Addons",

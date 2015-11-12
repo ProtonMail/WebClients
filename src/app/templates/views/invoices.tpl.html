@@ -1,11 +1,6 @@
 <div id="pm_settings">
-
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-
     <div class="settings" pt-height>
-
-        <a ui-sref="secured.cancel" class="pm_button pull-right">{{ 'CANCEL_SUBSCRIPTION' | translate }}</a>
-
         <span class="pm_buttons">
             <a href="" class="pm_trigger" ng-dropdown>
                 <strong>2015</strong><i class="fa fa-angle-down"></i>
@@ -16,9 +11,7 @@
                 <a href="">2013</a>
             </span>
         </span>
-
         <p>&nbsp;</p>
-
         <table class="pm_table hidden-xs" id="invoicesTable">
             <thead>
                 <tr>
@@ -29,25 +22,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="payment in payments track by $index">
+                <tr ng-repeat="invoice in invoices track by $index">
                     <td class="date">
-                        {{ payment.Date * 1000 | date : 'medium' }}
+                        {{ invoice.Date * 1000 | date : 'medium' }}
                     </td>
                     <td>
-                        {{ payment.Event }}
+                        {{ invoice.Event }}
                     </td>
                     <td class="actions">
-                        <a class="pm_button round" ng-click="downloadInvoice(payment)" pt-tooltip="{{ 'DOWNLOAD_INVOICE' | translate }}">
+                        <a class="pm_button round" ng-click="downloadInvoice(invoice)" pt-tooltip="{{ 'DOWNLOAD_INVOICE' | translate }}">
                             <i class="fa fa-file-text"></i>
                         </a>
                     </td>
                     <td class="price">
-                        <kbd>{{ ::payment.Price }}</kbd>
-                    </td>                    
+                        {{ ::invoice.Price }}
+                    </td>
                 </tr>
             </tbody>
         </table>
-
     </div>
-
 </div>
