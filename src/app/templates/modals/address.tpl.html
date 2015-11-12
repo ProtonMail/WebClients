@@ -3,10 +3,19 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Address</h3>
+                <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
+                <h4 class="modal-title">3. {{ 'ADDRESS' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <input type="text" ng-model="ctrl.address" placeholder="{{ 'DOMAIN' | translate }}" />
+                <p>Add an address to <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <input type="text" ng-model="ctrl.address" placeholder="Address" />
+                    </div>
+                    <div class="col-1-2">
+                        <input type="text" value="@{{ ctrl.domain.DomainName }}" readonly class="noBorder" />
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-footer text-right">

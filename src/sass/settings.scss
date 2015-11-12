@@ -2,12 +2,34 @@
     height: 31px;
     line-height: 31px;
 }
-.domainMenu {
+.pm_tabs.domainMenu {
     font-size: 1rem;
-    float: right !important;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
     li {
+        -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+                float: none;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
         a {
-            padding: 0 1rem;
+            padding: .5rem 1rem;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            line-height: 1rem;
+            &.disabled {
+                opacity: .5;
+                pointer-events: none;
+            }
         }
     }
 }
@@ -20,23 +42,16 @@
             th.status {
                 width: 4.5rem;
             }
-            th.verification {
-                width: 4rem;
-            }
-            th.spf {
-                width: 4rem;
-            }
-            th.mx {
-                width: 4rem;
-            }
-            th.dkim {
-                width: 4rem;
-            }
+            th.verification,
+            th.spf,
+            th.mx,
+            th.addresses,
+            th.dkim,
             th.dmarc {
-                width: 4rem;
+                width: 5rem;
             }
             th.action {
-                width: 8rem;
+                width: 6rem;
                 padding-right: 1rem;
             }
 
@@ -59,11 +74,16 @@
             }
             td {
                 padding-right: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 .fa {
                     width: 1.5rem;
                 }
                 .fa-circle-o {
                     color: #999;
+                }
+                .domain {
+                    line-height: 60px;
                 }
                 .fa-circle-o,
                 .fa-check-circle,
@@ -286,7 +306,9 @@
                     .col1,
                     .col2,
                     .col3 {
-                        flex-grow: 1;
+                        -webkit-flex-grow: 1;
+                            -ms-flex-positive: 1;
+                                flex-grow: 1;
                         box-sizing: border-box;
                         padding: 1rem;
                     }
@@ -299,7 +321,9 @@
                         -ms-flex-direction: column;
                         flex-direction: column;                        
                         & > * {
-                            flex-grow: 1;
+                            -webkit-flex-grow: 1;
+                                -ms-flex-positive: 1;
+                                    flex-grow: 1;
                             padding: 1rem;
                             box-sizing: border-box;
                         }

@@ -17,12 +17,13 @@
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
-                            <th class="domain">{{ 'DOMAIN' | translate }}</th>
-                            <th class="verification">1. {{ 'VERIFY' | translate }}</th>
-                            <th class="mx">2. {{ 'MX' | translate }}</th>
-                            <th class="spf">3. SPF</th>
-                            <th class="dkim">4. DKIM</th>
-                            <th class="dmarc">5. DMARC</th>
+                            <th class="domain">1. {{ 'DOMAIN' | translate }}</th>
+                            <th class="verification">2. {{ 'VERIFY' | translate }}</th>
+                            <th class="addresses">3. {{ 'ADDRESS' | translate }}</th>
+                            <th class="mx">4. {{ 'MX' | translate }}</th>
+                            <th class="spf">5. SPF</th>
+                            <th class="dkim">6. DKIM</th>
+                            <th class="dmarc">7. DMARC</th>
                             <th class="text-right action">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
@@ -44,6 +45,23 @@
                                         <i class="fa fa-times-circle"></i>
                                     </strong>
                                     <strong ng-show="domain.VerifyState === 2" class="text-green">
+                                        <i class="fa fa-check-circle"></i>
+                                    </strong>
+                                </button>
+                            </td>
+                            <td>
+                                <!-- TODO: change logic to use address routes -->
+                                <button type="button" class="progress pm_button round" ng-click="addAddress(domain)" ng-class="{ 'dead': (domain.MxState === 3) }">
+                                    <strong ng-show="domain.MxState === 0">
+                                        <i class="fa fa-circle-o"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 1" class="text-red">
+                                        <i class="fa fa-times-circle"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 2" class="text-red">
+                                        <i class="fa fa-times-circle"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 3" class="text-green">
                                         <i class="fa fa-check-circle"></i>
                                     </strong>
                                 </button>

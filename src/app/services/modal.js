@@ -716,28 +716,6 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('domainModal', function(pmModal) {
-    return pmModal({
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/domain.tpl.html',
-        controller: function(params) {
-            this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
-            // Functions
-            this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.name);
-                }
-            };
-
-            this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-        }
-    });
-})
-
 .factory('buyDomainModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
@@ -759,18 +737,47 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal) {
+.factory('addressModal', function(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/address.tpl.html',
         controller: function(params) {
             // Variables
             this.domain = params.domain;
-            this.address = params.domain.DomainName || '';
+            this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('domainModal', function(pmModal, $rootScope) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/domain/domain.tpl.html',
+        controller: function(params) {
+            this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
+            this.step = params.step;
+            this.open = function(name) {
+                $rootScope.$broadcast(name, params.domain);
+            };
+            // Functions
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit(this.name);
                 }
             };
 

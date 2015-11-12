@@ -3,14 +3,13 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    {{ 'NEXT' | translate }}
-                    <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                </h4>
+                <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
+                <h4 class="modal-title">2. {{ 'VERIFY' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
                 <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
                 <textarea readonly>{{ ctrl.domain.VerifyCode }}</textarea>
+                <p class="alert alert-info">Note, it can take up to an hour after updating your DNS record before verification succeeds.</p>                
             </div>
 
         </div>

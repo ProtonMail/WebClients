@@ -172,6 +172,9 @@
     textarea {
         padding: 0 20px;
         margin-bottom: 1rem;
+        &.noBorder {
+            border-color: transparent !important;
+        }
     }
     textarea {
         min-height: 6rem;
