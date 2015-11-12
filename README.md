@@ -47,10 +47,10 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] Improve add domain modal (for **Jason**)
 * [x] Fix labels display in conversations/messages list (for **Jason**)
 * [x] How to delete account? (wait for design)
-* [ ] Colorize calendar in search modal with purple color (for **Jason**)
+* [x] Colorize calendar in search modal with purple color (for **Jason**)
 * [ ] How to manage storage per user in users page? (wait design)
 * [x] Decide on which criteria we preload messages / conversations (wait design)
-* [ ] Fix twitter link on the blog (for **Jason**)
+* [x] Fix twitter link on the blog (for **Jason**)
 
 ### Test
 
