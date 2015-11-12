@@ -1,3 +1,6 @@
+.locTag {
+	// ...
+}
 .pm_labels {
 	position: relative;
 	height: 18px;
@@ -50,6 +53,7 @@
 		margin-left: 5px;
 		font-weight: bold;
 		box-sizing: border-box;
+		white-space: nowrap;
 		i, em {
 			font-style: normal;
 		}
