@@ -8,14 +8,15 @@
                     <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
                 </h4>
             </div>
-            <div class="modal-body">
-                <p>To avoid emails from your domain going into Spam, we recommend adding a DKIM record. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <p>Please use the following DKIM record:</p>
-                <pre>k=rsa; p=G1JfMA879KJDSIK3DQF</pre>
-                <p>The current DKIM record for {{ ctrl.domain.domain }} is:</p>
-                <!-- <pre>{{ currentDkim }}</pre> -->
-                <pre>k=rsa; p=MIGfMA0GCSqGSIb3DQE</pre>
-                <p>Please overwrite any existing DKIM records.</p>
+            <div class="modal-body pm_form">
+
+                <p>To avoid emails from your domain going into Spam, we recommend adding a DKIM record. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <textarea readonly>k=rsa; p=G1JfMA879KJDSIK3DQF</textarea>
+                <div ng-show="currentDkim">
+                    <p>The current DKIM record for {{ ctrl.domain.domain }} is:</p>
+                    <textarea readonly>{{ currentDkim }}</textarea>
+                </div>
+                <p class="alert alert-info">Please overwrite any existing DKIM records.</p>
             </div>
         </div>
         <div class="modal-footer text-right">

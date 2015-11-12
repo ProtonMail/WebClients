@@ -4,25 +4,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
-                    {{ 'TXT_AND_SPF' | translate }}
+                    {{ 'VERIFY' | translate }}
                     <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
                 </h4>
             </div>
-            <div class="modal-body">
-
-                <h3>{{ 'TXT_RECORD' | translate }}</h3>
+            <div class="modal-body pm_form">
                 <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <pre>{{ ctrl.domain.VerifyCode }}</pre>
-                <br>
-                <br>
-                <h3 class="modal-title">SPF</h3>
-                <p>To avoid emails from your domain going into Spam, we recommend adding a SPF record. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
-                <p>Please use the following SPF record:</p>
-                <pre> v=spf1 include:derp.net ~all</pre>
-                <p>The current SPF record for {{ ctrl.domain.domain }} is:</p>
-                <!-- <pre>{{ currentSpf }}</pre> -->
-                <pre> v=spf1 include:herp.org ~all</pre>
-                <p>If your domain already has an SPF record, you just need to add <kbd>_spf.protonmail.ch</kbd> to the existing record. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+                <textarea readonly>{{ ctrl.domain.VerifyCode }}</textarea>
             </div>
 
         </div>

@@ -40,7 +40,8 @@ h6 {
 code,
 kbd,
 pre,
-samp {
+samp,
+body .pm_form textarea[readonly] {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -71,7 +72,8 @@ kbd kbd {
           box-shadow: none;
 }
 
-pre {
+pre,
+body .pm_form textarea[readonly] {
 	white-space: pre-wrap;
 	margin: 1rem 0;
 	padding: 1rem;
@@ -84,4 +86,5 @@ pre {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	word-break: break-all;
+	min-height: initial !important;
 }

@@ -804,6 +804,22 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('spfModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/domains/spf.tpl.html',
+        controller: function(params) {
+            this.domain = params.domain;
+            this.step = params.step;
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
 .factory('mxModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',

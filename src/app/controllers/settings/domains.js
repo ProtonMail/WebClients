@@ -18,7 +18,8 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify,
     verificationModal,
-    mxModal
+    mxModal,
+    spfModal
 ) {
     /**
      * Method called at the initialization of this controller
@@ -68,20 +69,29 @@ angular.module("proton.controllers.Settings")
     $scope.wizard = function(domain) {
         // go through all steps and show the user the step they need to complete next. allow for back and next options.
         // if domain has a name, we can skip the first step
+        /* steps: 
+            1. verify ownership with txt record 
+            2. add addresses
+            3. add mx
+            4. add spf
+            5. add dkim
+            6. add dmarc
+        */
         if (domain.DomainName) {
-            // proceed
-            if ((domain.VerifyState !== 2) || (domain.SpfState !== 3)) {
-                // show verification step
+            if ((domain.VerifyState !== 2)) {
                 $scope.verification(domain);
             }
             else {
-                // proceeed.
-                if (true) {
-                    // ..
+                if (domain.MxState !== 3) {
                     $scope.mx(domain);
                 }
                 else {
-                    // ...
+                    if ((domain.SpfState !== 3)) {
+                        $scope.spf(domain);
+                    }
+                    else {
+                        // ...
+                    }
                 }
             }
         }
@@ -249,6 +259,21 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Open SPF modal
+     */
+    $scope.spf = function(domain) {
+        spfModal.activate({
+            params: {
+                domain: domain,
+                step: 3,
+                close: function() {
+                    spfModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Open MX modal
      */
     $scope.mx = function(domain) {
@@ -270,7 +295,7 @@ angular.module("proton.controllers.Settings")
         dkimModal.activate({
             params: {
                 domain: domain,
-                step: 3,
+                step: 4,
                 close: function() {
                     dkimModal.deactivate();
                 }
@@ -285,7 +310,7 @@ angular.module("proton.controllers.Settings")
         dmarcModal.activate({
             params: {
                 domain: domain,
-                step: 4,
+                step: 5,
                 close: function() {
                     dmarcModal.deactivate();
                 }

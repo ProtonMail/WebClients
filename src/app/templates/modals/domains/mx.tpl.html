@@ -8,10 +8,12 @@
                     <ng-include src="'templates/modals/domains/_menu.tpl.html'"></ng-include>
                 </h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pm_form">
 
-                <p>Before you can receive emails for your domains at ProtonMail, you need to change the MX record of your domain to the following. <a href="">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>[ our MX Record ] <br><pre>mx1.derpDNSherp.burp</pre></p>
+                <p>Before you can receive emails for your domains at ProtonMail, you need to add the following <kbd>MX</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a href="">{{ 'LEARN_HOW' | translate }}</a></p>
+
+                <textarea readonly>mail.protonmail.ch</textarea>
+                
                 <p><strong>{{ 'IMPORTANT' | translate }}</strong>: <em>The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</em></p>
 
                 <p class="alert alert-info">Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>

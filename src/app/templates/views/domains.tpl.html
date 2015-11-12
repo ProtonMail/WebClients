@@ -14,15 +14,20 @@
                     <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
                 </p>
+
+                <div ng-repeat="domain in domains">
+                    <pre>{{ domain }}</pre>
+                </div>
+
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
                             <th class="domain">{{ 'DOMAIN' | translate }}</th>
-                            <th class="verification">{{ 'TXT' | translate }}</th>
-                            <th class="spf">SPF</th>
-                            <th class="mx">{{ 'MX' | translate }}</th>
-                            <th class="dkim">DKIM</th>
-                            <th class="dmarc">DMARC</th>
+                            <th class="verification">1. {{ 'VERIFY' | translate }}</th>
+                            <th class="mx">2. {{ 'MX' | translate }}</th>
+                            <th class="spf">3. SPF</th>
+                            <th class="dkim">4. DKIM</th>
+                            <th class="dmarc">5. DMARC</th>
                             <th class="text-right action">{{ 'ACTION' | translate }}</th>
                         </tr>
                     </thead>
@@ -49,7 +54,23 @@
                                 </button>
                             </td>
                             <td>
-                                <button type="button" class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
+                                <button type="button" class="progress pm_button round" ng-click="mx(domain)" ng-class="{ 'dead': (domain.MxState === 3) }">
+                                    <strong ng-show="domain.MxState === 0">
+                                        <i class="fa fa-circle-o"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 1" class="text-red">
+                                        <i class="fa fa-times-circle"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 2" class="text-red">
+                                        <i class="fa fa-times-circle"></i>
+                                    </strong>
+                                    <strong ng-show="domain.MxState === 3" class="text-green">
+                                        <i class="fa fa-check-circle"></i>
+                                    </strong>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="progress pm_button round" ng-click="spf(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
                                     <strong ng-show="domain.SpfState === 0">
                                         <i class="fa fa-circle-o"></i>
                                     </strong>
@@ -61,13 +82,6 @@
                                     </strong>
                                     <strong ng-show="domain.SpfState === 3" class="text-green">
                                         <i class="fa fa-check-circle"></i>
-                                    </strong>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="mx(domain)">
-                                    <strong ng-show="true">
-                                        <i class="fa fa-circle-o"></i>
                                     </strong>
                                 </button>
                             </td>
