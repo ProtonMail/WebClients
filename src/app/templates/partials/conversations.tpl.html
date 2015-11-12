@@ -16,7 +16,7 @@
                 </a>
             </span>
             <span class="attachmentSpan">
-                <i class="fa fa-paperclip" ng-show="conversation.NumAttachments > 0"></i>
+                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
             </span>
         </aside>
         <header>
@@ -67,7 +67,7 @@
                 <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
                 {{ conversation.Subject }} <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             </span>
-            <span class="pm_labels">
+            <span class="pm_labels inline">
                 <location-tag class="locTag"></location-tag>
                 <span ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name">
                     <em>{{ getLabel(labelID).Name }}</em>
@@ -76,7 +76,7 @@
             </span>
         </span>
         <span class="size">{{ conversation.TotalSize | humanSize }}</span>
-        <i class="fa fa-paperclip" ng-show="conversation.NumAttachments > 0"></i>
+        <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
         <span class="time">{{ conversation.Time | readableTime }}</span>
     </div>
 </div>

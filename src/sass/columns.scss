@@ -71,6 +71,10 @@
 			}
 			.fa-paperclip {
 				color: #bababa !important;
+				opacity: 0;
+				&.show {
+					opacity: 1;
+				}
 			}
 			aside {
 				display: inline-block;

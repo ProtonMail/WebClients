@@ -144,6 +144,10 @@
 			}
 			.fa-paperclip {
 				margin-left: 10px;
+				opacity: 0;
+				&.show {
+					opacity: 1;
+				}
 			}
 			.time {
 				text-align: right;
