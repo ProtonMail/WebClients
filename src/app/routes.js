@@ -618,10 +618,18 @@ angular.module("proton.routes", [
 
     .state("secured.cancel", {
         url: "/cancel-subscription",
+        resolve: {
+            organization: function(Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
+            },
+            payment: function(Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.status());
+            }
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/cancelSubscription.tpl.html",
-                controller: "SecurityController" // TODO: need a new controller for this?
+                controller: "DashboardController" // TODO: need a new controller for this?
             }
         }
     })

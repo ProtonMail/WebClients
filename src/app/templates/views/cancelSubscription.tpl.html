@@ -72,251 +72,191 @@
 
 
         <div class="row">
-            <section class="setting pm_form full" id="plans">
+            <section class="setting pm_form full horizontal" id="plans">
+
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
-                    <legend>{{ 'SUBSCRIPTION_OPTIONS' | translate }}</legend>
-                    <header>
-                        <a href="#" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
-                        <div class="group">
-                            <label>Currency</label>
-                            <div class="pm_buttons">
-                                <a href="" ng-click="currency = 'EUR'" ng-class="{'active': currency === 'EUR'}">EUR</a>
-                                <a href="" ng-click="currency = 'USD'" class="divider" ng-class="{'active': currency === 'USD'}">USD</a>
-                                <a href="" ng-click="currency = 'CHF'" class="divider" ng-class="{'active': currency === 'CHF'}">CHF</a>
-                            </div>
-                        </div>
-                        <div class="group">
-                            <label>{{ 'BILLING' | translate }}</label>
-                            <div class="pm_buttons">
-                                <a href="" ng-click="billing = 1" ng-class="{'active': billing === 1}">
-                                {{ 'MONTHLY' | translate }}
-                                </a>
-                                <a href="" ng-click="billing = 12" ng-class="{'active': billing === 12}" class="divider">
-                                {{ 'YEARLY' | translate }}
-                                </a>
-                            </div>
-                        </div>
-                    </header>
 
                     <div class="plans">
-                        <div class="plan" ng-class="{'selected': plan === 'basic'}" ng-if="false">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Basic</strong>
-                            </h3>
-                            <div class="details">
+
+                        <div class="plan" ng-class="{'selected': plan === 'basic'}">
+                            <div class="message"><strong>Derp herp burp furp kurt cobain:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="col1">
+                                <h3>ProtonMail Basic</h3>
+                                <div class="price">Total: {{ 'FREE' | translate }}</div>
+                                <div class="action" ng-class="{'white': plan === 'basic'}">
+                                    <a href="#" class="pm_button primary">
+                                        <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
+                                        <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    </a>
+                                </div>
+                            </div><!--/.col1-->
+                            <div class="col2">
                                 <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
-                                        <strong>1000 MB Storage</strong>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5,000 MB {{ 'STORAGE' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
                                     </li>
                                 </ul>
-                                <table class="pm_table plain">
-                                    <tr>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="price">
-                                <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
-                            </div>
-                            <div class="action" ng-class="{'white': plan === 'basic'}">
-                                <a href="#">
-                                    <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="plan" ng-class="{'selected': plan === 'plus'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Plus</strong>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>5,000 MB {{ 'STORAGE' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </li>
-                            </ul>                            
-                            <div class="details">
-                                <legend>
-                                    <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
-                                    <em></em>
-                                </legend>
-                                <div class="feat" ng-repeat="element in plusAdditionals">
-                                    <label>
-                                        <input type="checkbox" ng-model="element.checked" />
-                                        {{ element.number }} <small></small> {{ element.title }}
-                                        <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    </label>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
-                                    </span>
-                                    <span class="pm_select">
-                                        <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
+                            </div><!--/.col2-->
+                            <div class="col3">
+                                <div class="details">
+                                    <legend>
+                                        <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
+                                        <em></em>
+                                    </legend>
+                                    <div class="feat" ng-repeat="element in plusAdditionals">
+                                        <label>
+                                            <input type="checkbox" ng-model="element.checked" />
+                                            {{ element.number }} <small></small> {{ element.title }}
+                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                        </label>
+                                        <span class="cost">
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                        </span>
+                                        <span class="pm_select">
+                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                    </div>
                                 </div>
+                            </div><!--/.col3-->
+                        </div><!--/.plan-->
 
-                            </div>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>
-                                    {{ total('plus') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
-                                </span>
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="choose('plus')">
-                                    <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                    <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="plan middle" ng-class="{'selected': plan === 'business'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Business</strong>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>10,000 MB {{ 'STORAGE' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>5 {{ 'ADDRESSES' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>2 {{ 'USER_MASTER_SUB' | translate }}</strong>
-                                </li>
-                            </ul>                            
-                            <div class="details">
-                                <legend>
-                                    <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
-                                    <em></em>
-                                </legend>
-                                <div class="feat" ng-repeat="element in plusAdditionals">
-                                    <label>
-                                        <input type="checkbox" ng-model="element.checked" />
-                                        {{ element.number }} <small></small> {{ element.title }}
-                                        <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
-                                    </label>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
-                                    </span>
-                                    <span class="pm_select">
-                                        <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
+                        <div class="plan" ng-class="{'selected': plan === 'basic'}">
+                            <div class="message"><strong>Derp herp burp furp kurt cobain:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="col1">
+                                <h3>ProtonMail Basic</h3>
+                                <div class="price">Total: {{ 'FREE' | translate }}</div>
+                                <div class="action" ng-class="{'white': plan === 'basic'}">
+                                    <a href="#" class="pm_button primary">
+                                        <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
+                                        <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    </a>
                                 </div>
+                            </div><!--/.col1-->
+                            <div class="col2">
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5,000 MB {{ 'STORAGE' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    </li>
+                                </ul>
+                            </div><!--/.col2-->
+                            <div class="col3">
+                                <div class="details">
+                                    <legend>
+                                        <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
+                                        <em></em>
+                                    </legend>
+                                    <div class="feat" ng-repeat="element in plusAdditionals">
+                                        <label>
+                                            <input type="checkbox" ng-model="element.checked" />
+                                            {{ element.number }} <small></small> {{ element.title }}
+                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                        </label>
+                                        <span class="cost">
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                        </span>
+                                        <span class="pm_select">
+                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div><!--/.col3-->
+                        </div><!--/.plan-->
 
-                            </div>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>
-                                    {{ total('plus') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
-                                </span>
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="choose('plus')">
-                                    <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                    <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="plan" ng-class="{'selected': plan === 'enterprise'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Enterprise</strong>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>10000 MB {{ 'STORAGE' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'DEDICATED_ACC_MGR' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'DEDICATED_PRIORITY_SUP' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'CUST_PKG' | translate }}</strong>
-                                </li>
-                            </ul>
-                            <div class="details">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>
-                                    <a href="#"><i class="fa fa-phone"></i> +41 12 34 567 891</a>
-                                    <br>
-                                    <a href="#"><i class="fa fa-envelope"></i> sales@protonmail.com</a>
-                                </p>
-                                <p>Excepteur sint occaecat cupidatat non proident.</p>
-                            </div>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>{{ total('business') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
-                                </span>
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="choose('business')">
-                                    <strong ng-show="plan === 'business'">{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan !== 'business'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                </a>
-                            </div>
-                        </div>
+                        <div class="plan error" ng-class="{'selected': plan === 'basic'}">
+                            <div class="message"><strong>Derp herp burp furp kurt cobain:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            <div class="col1">
+                                <h3>ProtonMail Basic</h3>
+                                <div class="price">Total: {{ 'FREE' | translate }}</div>
+                                <div class="action" ng-class="{'white': plan === 'basic'}">
+                                    <a href="#" class="pm_button primary">
+                                        <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
+                                        <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    </a>
+                                </div>
+                            </div><!--/.col1-->
+                            <div class="col2">
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5,000 MB {{ 'STORAGE' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>1 {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>5 {{ 'ADDRESSES' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    </li>
+                                </ul>
+                            </div><!--/.col2-->
+                            <div class="col3">
+                                <div class="details">
+                                    <legend>
+                                        <strong>{{ 'ADDITIONAL_PACKAGES' | translate }}</strong>
+                                        <em></em>
+                                    </legend>
+                                    <div class="feat" ng-repeat="element in businessAdditionals">
+                                        <label>
+                                            <input type="checkbox" ng-model="element.checked" />
+                                            {{ element.number }} <small></small> {{ element.title }}
+                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                        </label>
+                                        <span class="cost">
+                                            <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                        </span>
+                                        <span class="pm_select">
+                                            <select ng-model="element.select" ng-init="initQuantity(element)" ng-options="option.label for option in options" ng-change="changeQuantity(element)"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div><!--/.col3-->
+                        </div><!--/.plan-->
 
                     </div>
 

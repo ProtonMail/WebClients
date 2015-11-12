@@ -23,6 +23,9 @@
     <li role="presentation" ng-show="user.type === 'master'" ng-class="{'active': ('secured.invoices' | includedByState)}">
         <a class="pm_button" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
     </li>
+    <li role="presentation" ng-show="user.type === 'master'" ng-class="{'active': ('secured.cancel' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.cancel">DOWNGRADE</a>
+    </li>
 </ul>
 
 <div class="pm_form" id="settingsSelect">
