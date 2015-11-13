@@ -42,8 +42,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] "Delete all contact" icon seems not appear in contacts page (for **Jason**)
+* [ ] Fix problem with large subject on conversation view (for **Jason**)
 
-### Test
+### QA
 
 * [x] star from conversations
 * [x] star from conversation
@@ -63,6 +64,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] move message
 * [ ] move conversation
 * [ ] search messages
+* [ ] next page of conversations
+* [ ] next page of messages
 
 ### Bugs
 
