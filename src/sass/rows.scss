@@ -187,7 +187,7 @@
 	}
 	#pm_rows .list {
 		.message {
-			padding: 0 10px 0 85px !important;
+			padding: 0 10px 0 75px !important;
 			height: 65px;
 			line-height: 25px;
 			position: relative;
@@ -207,7 +207,7 @@
 			}
 			&.unread {
 				margin: 0;
-				padding: 0 10px 0 85px;
+				padding: 0 10px 0 75px;
 				background-color: $white;
 				color: #333;
 				.pm_labels {
@@ -219,7 +219,7 @@
 			}
 			&.selected {
 				background-color: #f6f6f6;
-				padding: 0 10px 0 85px;	
+				padding: 0 10px 0 75px;	
 				margin-left: 0;
 			}
 			.size {
@@ -235,11 +235,11 @@
 			}
 			.star {
 				top: 5px;
-				left: 50px;
+				left: 40px;
 			}
 			.fa-paperclip {
 				bottom: 5px;
-				left: 50px;
+				left: 40px;
 			}
 			.time {
 				position: absolute;

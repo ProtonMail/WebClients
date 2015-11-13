@@ -9,17 +9,6 @@
 			display: block;
 		}
 	}
-    .createLabel {
-        padding: 0 !important;
-        line-height: 35px;
-        height: 35px;
-        background: transparent !important;
-        .fa {
-            width: 30px;
-            float: left;
-            text-align: left;
-        }
-    }
 	& > span > label {
 		display: block;
 		text-align: left;
@@ -51,7 +40,7 @@
 			padding: 0;
 			border: none;			
 			border-bottom: 1px solid $border;
-			margin: 0;
+			margin: 0 0 1rem 0;
 			height: 25px;
 			line-height: 25px;
 			-webkit-appearance: none;
@@ -100,8 +89,6 @@
 		}
 	}
 	button {
-		margin-top: 15px;
 		display: block;
-		width: 100%;
 	}	
 }

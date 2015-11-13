@@ -1,3 +1,12 @@
+#pm_columns #pm_view > header {
+    position: relative;
+    padding-right: 3rem;
+    .singleStar {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
 #pm_view {
 	display: block;
 	padding-left: 15px;
@@ -11,11 +20,12 @@
 		box-sizing: border-box;
 		margin-right: 25px;
 		border-bottom: 1px solid $border;
+        clear: both;
 	    h1 {
 	        font-size: 24px;
 	        font-weight: 400;
 	        color: #333;
-	        line-height: 25px;
+	        line-height: 1.25em;
 	        margin: 0;
 	        letter-spacing: .04rem;
 	        display: block;
@@ -26,7 +36,6 @@
 	        box-sizing: border-box;
 	        overflow: auto;
             -webkit-overflow-scrolling: touch;
-            float: left;
 	    }
 	    .fa-star,
 	    .fa-star-o {
@@ -403,4 +412,19 @@
             padding: 0 7px !important;
         }
     }
+    #pm_view article.message {
+        .sub {
+            padding-left: 0;
+        }
+        .recipientsWrap {
+            margin: 0;
+        }
+    }
+    #pm_view .message .pm_labels .pm_label {
+        width: initial !important;
+    }
+}
+
+@media (max-width:  $mobile-portrait) {
+    #pm_view article.message .sub {}
 }

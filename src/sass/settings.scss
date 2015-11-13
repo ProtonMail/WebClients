@@ -858,6 +858,15 @@
                     width: 100%;
                 }
             }
+            .plans.vertical {
+                -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                        .plan {
+                            width: 100%;
+                            min-width: 100%;
+                        }
+            }
         }
     }
     #newUser{

@@ -1,10 +1,5 @@
 <span class="labelDropdown">
     <span role="menu" ng-click="$event.stopPropagation()">
-        <span class="margin">
-            <a href="" class="createLabel" ng-click="createLabel()">
-                <i class="fa fa-arrow-right"></i> {{ 'CREATE_A_NEW_LABEL' | translate }}
-            </a>
-        </span>
         <span ng-show="labels.length > 0" class="margin labelSearch">
             <i class="fa fa-search"></i>
             <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
@@ -24,6 +19,8 @@
         <label ng-show="labelsSelected().length > 0">
             <input type="checkbox" ng-model="alsoArchive" /> {{ 'ALSO_ARCHIVE' | translate }}
         </label>
-        <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY_LABEL' | translate }}</button>
+        <p></p>
+        <a href="" class="createLabel fa fa-plus pull-left pm_button" ng-click="createLabel()"></a>
+        <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY_LABEL' | translate }}</button>
     </span>
 </span>
