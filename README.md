@@ -63,8 +63,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] send message
 * [ ] move message
 * [ ] move conversation
-* [ ] search messages
-* [ ] next page of conversations
+* [x] search messages
+* [x] next page of conversations
 * [ ] next page of messages
 
 ### Bugs
