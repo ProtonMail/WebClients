@@ -208,6 +208,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         Message.unstar({IDs: ids});
     };
 
+    /**
+     * Open modal to alert the user that he cannot download
+     */
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
@@ -221,6 +224,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         });
     };
 
+    /**
+     * Decrypt the content of the current message and store it in '$scope.content'
+     * @param {Boolean} print
+     */
     $scope.displayContent = function(print) {
         var whitelist = ['notify@protonmail.com'];
 
@@ -685,7 +692,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.move = function(mailbox) {
-        var promise;
         var messageEvent = [];
         var copy = angular.copy($scope.message);
         var current;
@@ -711,7 +717,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Delete current message
      */
     $scope.delete = function() {
-        var promise;
         var messageEvent = [];
         var copy = angular.copy($scope.message);
 

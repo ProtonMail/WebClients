@@ -1232,23 +1232,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {String} id - message id
      */
     $scope.discard = function(id) {
-        var events = [];
+        var messageEvent = [];
 
-        // Manage cache
-        events.push({
-            Action: 3,
-            ID: id,
-            Message: {
-                ID: id,
-                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
-                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-            }
-        });
+        messageEvent.push({Action: 0, ID: id});
+        cache.events(messageEvent);
 
-        cache.events(events, 'message');
-
-        // Request
-        Message.trash({IDs: [id]});
+        Message.delete({IDs: [id]});
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});

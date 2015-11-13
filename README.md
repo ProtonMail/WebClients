@@ -37,9 +37,11 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Add address (wait back-end)
 * [ ] Download invoice (wait back-end)
 * [ ] Subscribe for a plan (wait for back-end)
-* [ ] Add condition to display large toolbar button on large screen (for **Jason**)
 * [ ] How to manage storage per user in users page? (wait design)
-* [ ] See with Keven to design draft label (for **Jason**)
+* [ ] Add condition to display large toolbar button on large screen (for **Jason**)
+* [ ] Design draft label for message AND conversation (for **Jason**)
+* [ ] Fix problems with fonts when we load the page (for **Jason**)
+* [ ] "Delete all contact" icon seems not appear in contacts page (for **Jason**)
 
 ### Test
 
@@ -47,7 +49,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] star from conversation
 * [x] star from message
 * [x] unstar from conversations
-* [ ] unstar from conversation (https://www.dropbox.com/s/l09c2d8jj4pfkjq/starr.mov?dl=0)
+* [x] unstar from conversation
 * [x] unstar from message
 * [ ] read from conversations
 * [ ] read from message
@@ -56,16 +58,16 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] apply labels from conversations
 * [ ] apply labels from message
 * [ ] save draft message
+* [ ] discard draft message
 * [ ] send message
 * [ ] move message
 * [ ] move conversation
+* [ ] search messages
 
 ### Bugs
 
 * [ ] Select conversation, click on next page
-* [ ] Delete all contact icon seems not appear
-* [ ] Remove active element in list
-* [ ] Problem with fonts (for **Jason**)
+
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0
 > inbox:1 OTS parsing error: invalid version tag

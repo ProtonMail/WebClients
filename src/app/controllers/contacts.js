@@ -440,6 +440,9 @@ angular.module("proton.controllers.Contacts", [
         });
     };
 
+    /**
+     * Open modal to alert the user that he cannot download
+     */
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {

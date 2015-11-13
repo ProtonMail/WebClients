@@ -668,12 +668,43 @@ angular.module("proton.cache", [])
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
         if(angular.isUndefined(current)) {
-            insertConversation(event.Conversation);
+            var mailbox = tools.currentMailbox();
+            var request = {Conversation: event.ID};
+
+            switch (mailbox) {
+                case 'label':
+                    request.Label = $stateParams.label;
+                    break;
+                case 'starred':
+                    request.Starred = 1;
+                    break;
+                default:
+                    request.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                    break;
+            }
+
+            Conversation.query(request).then(function(result) {
+                var data = result.data;
+
+                if(data.Code === 1000) {
+                    // Set total value in rootScope
+                    $rootScope.Total = data.Total;
+
+                    // Set total value in cache
+                    cacheCounters.update(location, undefined, undefined, data.Total);
+
+                    // Store conversations
+                    storeConversations(data.Conversations);
+
+                    deferred.resolve();
+                } else {
+                    deferred.reject();
+                }
+            });
         } else {
             updateConversation(event.Conversation);
+            deferred.resolve();
         }
-
-        deferred.resolve();
 
         return deferred.promise;
     };

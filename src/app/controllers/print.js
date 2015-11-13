@@ -60,7 +60,7 @@ angular.module("proton.controllers.Print", ["proton.constants"])
     $scope.getLabel = function(id) {
         return _.findWhere($scope.labels, {ID: id});
     };
-    
+
     $scope.displayContent = function(print) {
         var whitelist = ['notify@protonmail.com'];
 
@@ -97,7 +97,7 @@ angular.module("proton.controllers.Print", ["proton.constants"])
 
                 $scope.content = $sce.trustAsHtml(content);
 
-                // broken images
+                // Manage broken images
                 $("img").error(function () {
                     $(this).unbind("error").addClass("pm_broken");
                 });
