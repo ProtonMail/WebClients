@@ -99,7 +99,7 @@ angular.module("proton.filters",[])
     return function(time) {
         var m = moment.unix(time);
 
-        return m.format('LLL') + " (" + m.fromNow() + ")";
+        return m.format('l') + " (" + m.fromNow() + ")";
     };
 })
 // unused
