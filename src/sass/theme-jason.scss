@@ -1,4 +1,61 @@
 html.protonmail body.themeJason.secure {
+    .pm_button {
+        background: #ffffff;
+        background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%);
+        background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%);
+        background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 );
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+        border-color: #f2f2f2 !important;
+         &.primary {
+            background: $primary;
+            background: -moz-linear-gradient(top,  $primary 0%, darken($primary, 5%) 100%);
+            background: -webkit-linear-gradient(top,  $primary 0%,darken($primary, 5%) 100%);
+            background: linear-gradient(to bottom,  $primary 0%,darken($primary, 5%) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='darken($primary, 10%)',GradientType=0 );
+            border-color: darken($primary, 5%) !important;
+        }
+        &.link {
+            background: transparent !important;
+        }
+    }
+    .pm_buttons {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+        border-color: #f2f2f2 !important;
+        a {
+            background: #ffffff;
+            background: -moz-linear-gradient(top,  #ffffff 0%, #f2f2f2 100%);
+            background: -webkit-linear-gradient(top,  #ffffff 0%,#f2f2f2 100%);
+            background: linear-gradient(to bottom,  #ffffff 0%,#f2f2f2 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 );
+            height: 34px !important;
+            line-height: 34px !important;
+        }
+        &.disabled {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) !important; 
+            a {}
+        }
+    }
+    .pm_tabs {
+        li {
+            a {
+                box-shadow: none !important;
+                border: 1px solid #dcdcdc !important;
+                border-width: 1px 0 1px 1px !important;
+            }
+            &.active {
+                position: relative;
+                z-index: 2;
+                a {
+                    background: transparent !important;
+                    border-bottom-color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+Xhtml.protonmail body.themeJason.secure {
     background: #fff;
     overflow: auto;
     .pm_buttons {

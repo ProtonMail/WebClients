@@ -26,6 +26,19 @@
 	}
 }
 
+body .is-selected .pika-button {
+	background: $primary;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,.25);
+	color: #fff !important;
+}
+body .is-today .pika-button {
+	color: $primary;
+}
+
+body .pika-button:hover {
+	background: rgba(0,0,0,.25);
+}
+
 @media (max-width: $mobile-landscape) {
 	#advancedSearchModal {
 		.col {

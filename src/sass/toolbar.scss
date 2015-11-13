@@ -237,3 +237,18 @@ body.columns #pm_toolbar {
         }
     }
 }
+
+@media (min-width: $wide) {
+    #pm_toolbar {
+        height: 70px;
+        .pm_buttons {
+            line-height: 40px;
+            height: 40px;
+            a {
+                padding: 0 1rem;
+                line-height: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
