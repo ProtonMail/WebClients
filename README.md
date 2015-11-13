@@ -54,12 +54,12 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### Test
 
-* [ ] star from conversations
-* [ ] star from conversation
-* [ ] star from message
-* [ ] unstar from conversations
-* [ ] unstar from conversation
-* [ ] unstar from message
+* [x] star from conversations
+* [x] star from conversation
+* [x] star from message
+* [x] unstar from conversations
+* [ ] unstar from conversation (https://www.dropbox.com/s/l09c2d8jj4pfkjq/starr.mov?dl=0)
+* [x] unstar from message
 * [ ] read from conversations
 * [ ] read from message
 * [ ] unread from conversations
