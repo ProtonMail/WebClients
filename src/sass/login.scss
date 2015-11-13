@@ -11,6 +11,9 @@ body#login-unlock {
 	#pm_loader {
 		display: none;
 	}
+	#pm_login img.logo {
+		margin-bottom: 2rem;
+	}
 }
 body#login {
 	background-color: #667cbd;

@@ -21,7 +21,8 @@ rf=afrf; pct=100</textarea>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button pull-left" ng-click="ctrl.close()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'FINISH' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

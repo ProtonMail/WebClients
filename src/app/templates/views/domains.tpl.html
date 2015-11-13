@@ -14,6 +14,8 @@
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
                 </p>
 
+                <loader-tag ng-show="!domains"></loader-tag>
+
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>

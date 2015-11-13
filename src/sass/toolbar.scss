@@ -8,6 +8,10 @@ body.rows #pm_toolbar {
     padding-right: 0;
     .pm_buttons {
         margin: 0 0 0 5px;
+        .pm_buttons {
+            margin-left: 0;
+            border-left: 1px solid $border !important;
+        }
     }
 }
 
@@ -239,15 +243,18 @@ body.columns #pm_toolbar {
 }
 
 @media (min-width: $wide) {
-    #pm_toolbar {
+    .rows #pm_toolbar {
         height: 70px;
+        .main > label.pm_checkbox input {
+            margin-top: 16px;
+        }
         .pm_buttons {
             line-height: 40px;
             height: 40px;
             a {
                 padding: 0 1rem;
-                line-height: 40px;
-                height: 40px;
+                line-height: 40px !important;
+                height: 40px !important;
             }
         }
     }
