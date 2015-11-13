@@ -61,7 +61,7 @@
         </span>
         <span class="sender">
             <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders">
-                {{ contact.Name || contact.Address }}<b ng-hide="contact.$last">, </b>
+                {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
             </span>
             <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
