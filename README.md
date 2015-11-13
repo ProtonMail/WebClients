@@ -38,7 +38,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (wait back-end)
 * [ ] Subscribe for a plan (wait for back-end)
 * [ ] How to manage storage per user in users page? (wait design)
-* [ ] Add condition to display large toolbar button on large screen (for **Jason**)
+* [x] Add condition to display large toolbar button on large screen (for **Jason**)
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] "Delete all contact" icon seems not appear in contacts page (for **Jason**)
