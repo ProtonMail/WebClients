@@ -70,8 +70,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.$on('loadMessage', function(event, message, save) {
         var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
 
-
-        mess.attachmentsToggle = false;
+        if(mess.Attachments && mess.Attachments.length > 0) {
+            mess.attachmentsToggle = true;
+        }
+    
         $scope.initMessage(mess, save);
     });
 

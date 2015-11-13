@@ -27,6 +27,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeConversation', conversation.ID);
 
+    // Unactive conversations when this controller is destroyed
+    $scope.$on("$destroy", function() {
+        $rootScope.$broadcast('unactiveConversations');
+    });
+
     // Listeners
     $scope.$on('refreshConversation', function(event) {
         cache.getConversation($stateParams.id).then(function(conversation) {
@@ -39,40 +44,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     });
 
     /**
-     * Initialization call
+     * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
         var open;
         var unreads = _.where($scope.messages, {IsRead: 0});
 
-        if($scope.mailbox === 'drafts') {
-            // Remove the last message in conversation view
-            var popped = $scope.messages.pop();
-            // Open it in the composer
-            cache.getMessage(popped.ID).then(function(message) {
-                message.decryptBody(message.Body, message.Time).then(function(body) {
-                    message.Body = body;
-
-                    if(message.Attachments && message.Attachments.length > 0) {
-                        message.attachmentsToggle = true;
-                    }
-
-                    $rootScope.$broadcast('loadMessage', message);
-                }, function(error) {
-                    notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
-                    $log.error(error); // TODO send to back-end
-                });
-            }, function(error) {
-                notify({message: 'Error during the getting message', classes: 'notification-danger'});
-                $log.error(error); // TODO send to back-end
-            });
-        }
-
         if(angular.isDefined($rootScope.openMessage)) { // Open specific message
-
-        } else if(unreads.length > 0) { // Open all unread messages
+            // 'openMessage' already initialized when the user click
+        } else if(unreads.length > 0) {
+            // Open all unread messages
             $rootScope.openMessage = _.map(unreads, function(message) { return message.ID; });
-        } else { // Open the only lastest
+        } else {
+            // Open the only lastest
             $rootScope.openMessage = [_.last($scope.messages).ID];
         }
 
@@ -170,10 +154,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // back to conversation list
         $scope.back();
-    };
-
-    $scope.conversationMessages = function() {
-        return $scope.messages;
     };
 
     /**
@@ -324,6 +304,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     /**
      * Return status of the star conversation
+     * @return {Boolean}
      */
     $scope.starred = function() {
         return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;

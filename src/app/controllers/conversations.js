@@ -568,6 +568,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         Message.trash({IDs: [id]});
     };
 
+    /**
+     * Check if the current message is a draft
+     * @param {Object} element
+     * @return {Boolean}
+     */
+    $scope.draft = function(element) {
+        return element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+    };
+
     $scope.unselectAllLabels = function() {
         _.forEach($scope.labels, function(label) {
             label.Selected = false;
@@ -820,6 +829,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     /**
      * Check in LabelIDs to see if the conversation or message is starred
+     * @param {Object} element
      */
     $scope.starred = function(element) {
         if(element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1) {

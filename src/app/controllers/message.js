@@ -62,32 +62,71 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
+    /**
+     * Check if the current message is a draft
+     * @return {Boolean}
+     */
+    $scope.draft = function() {
+        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+    };
+
+    /**
+     * Method called to display message content
+     */
     $scope.initView = function() {
-        if($scope.message.IsRead === 0) {
-            var events = [];
-
-            events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
-            cache.events(events, 'message');
-            Message.read({IDs: [$scope.message.ID]});
-        }
-
-        if(angular.isDefined($scope.message.Body)) {
-            $scope.displayContent();
+        // If the message is a draft
+        if($scope.draft() === true) {
+            // Open the message in composer if it's a draft
+            $scope.openComposer($scope.message.ID);
         } else {
-            cache.getMessage($scope.message.ID).then(function(message) {
-                _.extend($scope.message, message);
+            // Read message open
+            if($scope.message.IsRead === 0) {
+                var events = [];
+
+                events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
+                cache.events(events, 'message');
+                Message.read({IDs: [$scope.message.ID]});
+            }
+
+            // Display content
+            if(angular.isDefined($scope.message.Body)) {
                 $scope.displayContent();
-            });
+            } else {
+                cache.getMessage($scope.message.ID).then(function(message) {
+                    _.extend($scope.message, message);
+                    $scope.displayContent();
+                });
+            }
+
+            // Start timer ago
+            $scope.agoTimer = $interval(function() {
+                var time = $filter('longReadableTime')($scope.message.Time);
+
+                $scope.ago = time;
+            }, 1000);
+
+            // Mark message as expanded
+            $scope.message.expand = true;
         }
+    };
 
-        // start timer ago
-        $scope.agoTimer = $interval(function() {
-            var time = $filter('longReadableTime')($scope.message.Time);
-
-            $scope.ago = time;
-        }, 1000);
-
-        $scope.message.expand = true;
+    /**
+     * Open the message in composer window
+     * @param {String} id
+     */
+    $scope.openComposer = function(id) {
+        cache.getMessage(id).then(function(message) {
+            message.decryptBody(message.Body, message.Time).then(function(body) {
+                message.Body = body;
+                $rootScope.$broadcast('loadMessage', message);
+            }, function(error) {
+                notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
+                $log.error(error); // TODO send to back-end
+            });
+        }, function(error) {
+            notify({message: 'Error during the getting message', classes: 'notification-danger'});
+            $log.error(error); // TODO send to back-end
+        });
     };
 
     /**
@@ -636,9 +675,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
 
+    /**
+     * Move current message
+     * @param {String} mailbox
+     */
     $scope.move = function(mailbox) {
         var promise;
-        var events = [];
+        var messageEvent = [];
         var copy = angular.copy($scope.message);
         var current;
 
@@ -650,15 +693,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // Remove previous location
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox].toString()]; // Add new location
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-        cache.events(events);
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
+        messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        cache.events(messageEvent, 'message');
 
-        promise = Message[mailbox]({IDs: [copy.ID]}).$promise.then(function(result) {
-            $scope.back();
-        });
+        Message[mailbox]({IDs: [copy.ID]});
 
-        networkActivityTracker.track(promise);
+        $scope.back();
     };
 
     /**
@@ -666,17 +707,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.delete = function() {
         var promise;
-        var events = [];
+        var messageEvent = [];
         var copy = angular.copy($scope.message);
 
-        events.push({Action: 0, ID: copy.ID, Message: copy});
-        cache.events(events);
+        messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
+        cache.events(messageEvent);
 
-        promise = Message.delete({IDs: [copy.ID]}).$promise.then(function(result) {
-            $scope.back();
-        });
+        Message.delete({IDs: [copy.ID]});
 
-        networkActivityTracker.track(promise);
+        $scope.back();
     };
 
     /**

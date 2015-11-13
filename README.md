@@ -51,6 +51,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] How to manage storage per user in users page? (wait design)
 * [x] Decide on which criteria we preload messages / conversations (wait design)
 * [x] Fix twitter link on the blog (for **Jason**)
+* [ ] See with Keven to design draft label (for **Jason**)
 
 ### Test
 

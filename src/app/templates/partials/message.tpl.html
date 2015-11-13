@@ -10,7 +10,8 @@
             <i class="fa fa-paperclip" ng-show="conversation.NumAttachments > 0"></i>
             <i class="fa fa-lock"></i>
             <!-- <pre class="time">{{ conversation.NumAttachments }}</pre> -->
-            <span class="time">{{ ::message.Time | longReadableTime }}</span>
+            <span class="time" ng-hide="draft()">{{ ::message.Time | longReadableTime }}</span>
+            <span class="time text-red" ng-show="draft()">draft</span>
         </span>
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>

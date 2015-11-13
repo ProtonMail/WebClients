@@ -93,9 +93,7 @@ angular.module("proton.cache", [])
 
             if(angular.isDefined(current)) {
                 // Update message
-                var index = messagesCached.indexOf(current);
-
-                _.extend(messagesCached[index], message);
+                updateMessage(message);
             } else {
                 // Add message
                 insertMessage(message);
