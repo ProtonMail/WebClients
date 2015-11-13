@@ -56,8 +56,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] read from message
 * [ ] unread from conversations
 * [ ] unread from message
-* [ ] apply labels from conversations
-* [ ] apply labels from message
+* [x] apply labels from conversations
+* [x] apply labels from message
 * [ ] save draft message
 * [ ] discard draft message
 * [ ] send message
