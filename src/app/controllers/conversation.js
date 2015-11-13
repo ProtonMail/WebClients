@@ -28,7 +28,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.$broadcast('activeConversation', conversation.ID);
 
     // Unactive conversations when this controller is destroyed
-    $scope.$on("$destroy", function() {
+    $scope.$on('$destroy', function() {
         $rootScope.$broadcast('unactiveConversations');
     });
 
@@ -55,6 +55,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else if(unreads.length > 0) {
             // Open all unread messages
             $rootScope.openMessage = _.map(unreads, function(message) { return message.ID; });
+            console.log($rootScope.openMessage);
         } else {
             // Open the only lastest
             $rootScope.openMessage = [_.last($scope.messages).ID];

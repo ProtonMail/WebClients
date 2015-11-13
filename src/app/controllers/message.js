@@ -79,15 +79,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Open the message in composer if it's a draft
             $scope.openComposer($scope.message.ID);
         } else {
-            // Read message open
-            if($scope.message.IsRead === 0) {
-                var events = [];
-
-                events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
-                cache.events(events, 'message');
-                Message.read({IDs: [$scope.message.ID]});
-            }
-
             // Display content
             if(angular.isDefined($scope.message.Body)) {
                 $scope.displayContent();
@@ -111,14 +102,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
-     * Open the message in composer window
+     * Open the message in the composer window
      * @param {String} id
      */
     $scope.openComposer = function(id) {
         cache.getMessage(id).then(function(message) {
-            message.decryptBody(message.Body, message.Time).then(function(body) {
-                message.Body = body;
-                $rootScope.$broadcast('loadMessage', message);
+            var copy = angular.copy(message);
+
+            copy.decryptBody(copy.Body, copy.Time).then(function(content) {
+                copy.Body = content;
+                $rootScope.$broadcast('loadMessage', copy);
             }, function(error) {
                 notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
                 $log.error(error); // TODO send to back-end
@@ -133,8 +126,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        if($rootScope.openMessage.indexOf($scope.message.ID) !== -1) {
+        var index = $rootScope.openMessage.indexOf($scope.message.ID);
+
+        if(index !== -1) {
             $scope.initView();
+            $rootScope.openMessage.splice(index, 1);
         }
     };
 
@@ -260,6 +256,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 }
 
                 $scope.content = $sce.trustAsHtml(content);
+
+                // Read message open
+                if($scope.message.IsRead === 0) {
+                    var events = [];
+
+                    events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
+                    cache.events(events, 'message');
+                    Message.read({IDs: [$scope.message.ID]});
+                }
 
                 // broken images
                 $("img").error(function () {

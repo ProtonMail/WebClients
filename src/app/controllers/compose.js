@@ -68,13 +68,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
-        var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'attachmentsToggle', 'IsRead'));
+        var current = _.findWhere($scope.messages, {ID: message.ID});
+        var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
         if(mess.Attachments && mess.Attachments.length > 0) {
             mess.attachmentsToggle = true;
+        } else {
+            mess.attachmentsToggle = false;
         }
-    
-        $scope.initMessage(mess, save);
+
+        if(angular.isUndefined(current)) {
+            $scope.initMessage(mess, save);
+        }
     });
 
     $scope.$on('deleteMessage', function(event, id) {
@@ -408,6 +413,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
+    /**
+     * Add message in composer list
+     * @param {Object} message
+     * @param {Boolean} save
+     */
     $scope.initMessage = function(message, save) {
         $rootScope.activeComposer = true;
 
@@ -773,6 +783,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
+    /**
+     * Delay the saving
+     */
     $scope.saveLater = function(message) {
         if(angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
@@ -889,18 +902,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var UPDATE = 2;
             var action;
 
+            // Set encrypted body
             parameters.Message.Body = result;
 
-            if(angular.isUndefined(message.ID)) {
-                draftPromise = Message.createDraft(parameters).$promise;
-                action = CREATE;
-            } else {
+            if(angular.isDefined(message.ID)) {
                 draftPromise = Message.updateDraft(parameters).$promise;
                 action = UPDATE;
+            } else {
+                draftPromise = Message.createDraft(parameters).$promise;
+                action = CREATE;
             }
 
+            // Save draft before to send
             draftPromise.then(function(result) {
-                var process = function(result) {
+                if(result.Code === 1000) {
                     message.ID = result.Message.ID;
                     message.IsRead = result.Message.IsRead;
                     message.Time = result.Message.Time;
@@ -910,37 +925,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.attachmentsToggle = true;
                     }
 
-                    message.BackupDate = new Date(); // Draft save at
                     $scope.saveOld(message);
 
-                    result.Message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
-                    result.Message.LabelIDs = message.LabelIDs || [];
-                    result.Message.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-
                     // Add draft in message list
-                    var events = [];
+                    var messageEvent = [];
 
-                    events.push({Action: 2, ID: result.Message.ID, Message: result.Message});
-                    cache.events(events, 'message');
+                    messageEvent.push({Action: 2, ID: result.Message.ID, Message: result.Message});
+                    cache.events(messageEvent, 'message');
 
                     if(notification === true) {
                         notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
                     }
 
                     deferred.resolve(result);
-                };
-
-                if(result.Code === 1000) {
-                    process(result);
-                } else if(result.Code === 15034 || result.Code === 15033) { // Draft ID does not correspond to a draft
-                    var saveMePromise = Message.createDraft(parameters).$promise;
-
-                    saveMePromise.then(function(result) {
-                        process(result);
-                    }, function(error) {
-                        error.message = 'Error creating draft';
-                        deferred.reject(error);
-                    });
                 } else {
                     $log.error(result);
                     deferred.reject(result);
@@ -1216,9 +1213,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $('.tooltip').not(this).hide();
 
         if(discard === true && angular.isDefined(id)) {
-            // Remove message in message list controller
-            $rootScope.$broadcast('discardDraft', id);
-            notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
+            $scope.discard(id);
         }
 
         // Message closed and focussed?
@@ -1230,6 +1225,33 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout(function () {
             $scope.composerStyle();
         }, 250);
+    };
+
+    /**
+     * Move draft message to trash
+     * @param {String} id - message id
+     */
+    $scope.discard = function(id) {
+        var events = [];
+
+        // Manage cache
+        events.push({
+            Action: 3,
+            ID: id,
+            Message: {
+                ID: id,
+                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
+                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+            }
+        });
+
+        cache.events(events, 'message');
+
+        // Request
+        Message.trash({IDs: [id]});
+
+        // Notification
+        notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
     };
 
     $scope.focusEditor = function(message, event) {

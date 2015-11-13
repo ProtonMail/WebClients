@@ -363,8 +363,8 @@
                     <i class="fa fa-clock-o"></i>
                     <span ng-show="!!message.maximized"> {{ 'EXPIRATION' | translate }}</span>
                 </button>
-                <span class="text-muted saveAt" ng-show="message.BackupDate">
-                {{ 'SAVED_AT' | translate }} {{ message.BackupDate.getTime() | date : 'shortTime' }}
+                <span class="text-muted saveAt" ng-show="message.Time">
+                {{ 'SAVED_AT' | translate }} {{ message.Time | date : 'shortTime' }}
                 </span>
                 <div class="pull-right">
                     <button

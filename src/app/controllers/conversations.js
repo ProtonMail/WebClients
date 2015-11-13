@@ -86,10 +86,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.unselectAllConversations();
         });
 
-        $scope.$on('discardDraft', function(event, id) {
-            $scope.discardDraft(id);
-        });
-
         $scope.$on('applyLabels', function(event, LabelID) {
             $scope.applyLabels(LabelID);
         });
@@ -542,30 +538,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else if (type === 'message') {
             Message[mailbox]({IDs: ids});
         }
-    };
-
-    /**
-     * Move draft message to trash
-     * @param {String} id - message id
-     */
-    $scope.discardDraft = function(id) {
-        var events = [];
-
-        // Manage cache
-        events.push({
-            Action: 3,
-            ID: id,
-            Message: {
-                ID: id,
-                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
-                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-            }
-        });
-
-        cache.events(events, 'message');
-
-        // Request
-        Message.trash({IDs: [id]});
     };
 
     /**
