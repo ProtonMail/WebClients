@@ -42,19 +42,20 @@ angular.module("proton.controllers.Settings")
     /**
      * Initialize select value with role user
      */
-    $scope.initRole = function(user) {
-        var role = _.findWhere($scope.roles, {value: user.Role});
+    $scope.initRole = function(member) {
+        var role = _.findWhere($scope.roles, {value: member.Role});
 
         if(angular.isDefined(role)) {
-            user.selectRole = role;
+            member.selectRole = role;
         }
     };
 
     /**
-     * Inform the back-end to change user role
+     * Inform the back-end to change member role
+     * @param {Object} member
      */
-    $scope.changeRole = function(user) {
-        Member.update(user).then(function(result) { // TODO check request
+    $scope.changeRole = function(member) {
+        Member.update(member).then(function(result) { // TODO check request
             if(result.data && result.data.Code === 1000) {
                 notify({message: $translate.instant('ROLE_UPDATED'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
@@ -86,8 +87,10 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Unlink address
+     * @param {Object} member
+     * @param {Object} address
      */
-    $scope.unlinkAddress = function(user, address) {
+    $scope.unlinkAddress = function(member, address) {
         var title = $translate.instant('UNLINK_ADDRESS');
         var message = 'Are you sure you want to unlink this address?'; // TODO translate
 
@@ -108,23 +111,43 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Manage user's passwords
+     * @param {Object} member
      */
-    $scope.managePasswords = function(user) {
+    $scope.managePasswords = function(member) {
 
     };
 
     /**
      * Generate keys
+     * @param {Object} member
      */
-    $scope.generateKeys = function(user) {
+    $scope.generateKeys = function(member) {
 
     };
 
     /**
      * Open a new tab to access to a specific user's inbox
+     * @param {Object} member
      */
-    $scope.enterMailbox = function(user) {
+    $scope.enterMailbox = function(member) {
 
+    };
+
+    /**
+     * Open modal to manage member's storage
+     * @param {Object} member
+     */
+    $scope.manageStorage = function(member) {
+        // storageModal.activate({
+        //     params: {
+        //         submit: function() {
+        //             storageModal.deactivate();
+        //         },
+        //         cancel: function() {
+        //             storageModal.deactivate();
+        //         }
+        //     }
+        // });
     };
 
     /**
