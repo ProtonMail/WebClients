@@ -18,7 +18,7 @@
 
                 <div class="row">
                     <span class="col narrow">
-                        <label for="search_folder">{{ 'FOLDER' | translate }}</label>
+                        <label for="search_folder">{{ 'LOCATION' | translate }}</label>
                     </span><!--/.col-->
                     <span class="col wide">
                         <span class="pm_select">
@@ -29,25 +29,28 @@
                                 <optgroup label="Folders">
                                     <option ng-repeat="(key, value) in ctrl.folders" value="{{value}}">{{key}}</option>
                                 </optgroup>
-                            </select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
-                    </span><!--/.col-->
-                   <span class="col narrow">
-                        <label for="search_label">{{ 'LABEL' | translate }}</label>
-                    </span><!--/.col-->
-                    <span class="col wide last">
-                        <span class="pm_select">
-                            <select id="search_label">
-                                <optgroup label="Default">
-                                    <option value="0">{{ 'ALL_MESSAGES' | translate }}</option>
-                                </optgroup>
                                 <optgroup label="{{ 'LABELS' | translate }}">
                                     <option value="{{label.ID}}" ng-repeat="label in ctrl.labels">{{label.Name}}</option>
                                 </optgroup>
                             </select>
                             <i class="fa fa-angle-down"></i>
                         </span>
+                    </span><!--/.col-->
+                    <span class="col narrow">
+                        <label>{{ 'ATTACHMENTS' | translate }}</label>
+                    </span><!--/.col-->
+                    <span class="col wide">
+                        <div class="radio">
+                            <label for="attachments_all">
+                                <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" /> {{ 'ALL' | translate }}
+                            </label>
+                            <label for="attachments_yes">
+                                <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1" /> {{ 'YES' | translate }}
+                            </label>
+                            <label for="attachments_no">
+                                <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" /> {{ 'NO' | translate }}
+                            </label>
+                        </div>
                     </span><!--/.col-->
                 </div><!--/.row-->
 
@@ -86,42 +89,6 @@
                         </span>
                     </span><!--/.col-->
                 </div><!--/.row-->
-
-                <div class="row">
-                    <span class="col narrow">
-                        <label>{{ 'ATTACHMENTS' | translate }}</label>
-                    </span><!--/.col-->
-                    <span class="col wide">
-                        <div class="radio">
-                            <label for="attachments_all">
-                                <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" /> {{ 'ALL' | translate }}
-                            </label>
-                            <label for="attachments_yes">
-                                <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1" /> {{ 'YES' | translate }}
-                            </label>
-                            <label for="attachments_no">
-                                <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" /> {{ 'NO' | translate }}
-                            </label>
-                        </div>
-                    </span><!--/.col-->
-                    <span class="col narrow">
-                        <label>{{ 'IS_STARRED' | translate }}</label>
-                    </span><!--/.col-->
-                    <span class="col wide last">
-                        <div class="radio">
-                            <label for="starred_all">
-                                <input id="starred_all" type="radio" ng-model="ctrl.starred" value="2" /> {{ 'ALL' | translate }}
-                            </label>
-                            <label for="starred_yes">
-                                <input id="starred_yes" type="radio" ng-model="ctrl.starred" value="1" /> {{ 'YES' | translate }}
-                            </label>
-                            <label for="starred_no">
-                                <input id="starred_no" type="radio" ng-model="ctrl.starred" value="0" /> {{ 'NO' | translate }}
-                            </label>
-                        </div>
-                    </span><!--/.col-->
-                </div><!--/.row-->
-
             </div>
         </div>
         <div class="modal-footer text-right">

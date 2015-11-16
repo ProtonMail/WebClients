@@ -135,12 +135,12 @@ angular.module("proton.cache", [])
 
     /**
      * Manage the updating to calcultate the total number of messages and unread messages
-     * @param {Object} oldMessage
-     * @param {Object} newMessage
+     * @param {Object} oldList
+     * @param {Object} newList
      */
-    var manageCounters = function(oldMessage, newMessage) {
-        var oldUnreadVector = vector(oldMessage);
-        var newUnreadVector = vector(newMessage);
+    var manageCounters = function(oldList, newList) {
+        var oldUnreadVector = vector(oldList);
+        var newUnreadVector = vector(newList);
         var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
         _.each(locations, function(location) {
@@ -161,17 +161,7 @@ angular.module("proton.cache", [])
      * @return {String} location
      */
     var getLocation = function(request) {
-        var location;
-
-        if(angular.isDefined(request.Location)) {
-            location = request.Location;
-        } else if(angular.isDefined(request.Starred)) {
-            location = CONSTANTS.MAILBOX_IDENTIFIERS.starred;
-        } else if(angular.isDefined(request.Label)) {
-            location = request.Label;
-        }
-
-        return location;
+        return request.Label;
     };
 
     /**
@@ -605,14 +595,14 @@ angular.module("proton.cache", [])
         var requestSent;
 
         if(mailbox === 'inbox') {
-            requestInbox = {Location: 0, Page: 1};
-            requestSent = {Location: 2, Page: 0};
+            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 1};
+            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
         } else if(mailbox === 'sent') {
-            requestInbox = {Location: 0, Page: 0, PageSize: 100};
+            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
             requestSent = {};
         } else {
-            requestInbox = {Location: 0, Page: 0, PageSize: 100};
-            requestSent = {Location: 2, Page: 0};
+            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
+            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
         }
 
         $q.all({
@@ -658,11 +648,8 @@ angular.module("proton.cache", [])
                 case 'label':
                     request.Label = $stateParams.label;
                     break;
-                case 'starred':
-                    request.Starred = 1;
-                    break;
                 default:
-                    request.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                    request.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
                     break;
             }
 
@@ -912,21 +899,13 @@ angular.module("proton.cache", [])
      */
     api.more = function(conversationId, type) {
         var deferred = $q.defer();
-        var request = {PageSize: 1, ID: conversationId};
         var location = tools.currentLocation();
+        var request = {PageSize: 1, Label: location};
 
         if(type === 'previous') {
-            request.Desc = 1;
+            request.EndID = conversationId;
         } else {
-            request.Desc = 0;
-        }
-
-        if(location.length > 1) { // label case
-            request.Label = location;
-        } else if (location === CONSTANTS.MAILBOX_IDENTIFIERS.starred) { // starred case
-            request.Starred = 1;
-        } else { // others folders
-            request.Location = location;
+            request.BeginID = conversationId;
         }
 
         queryConversations(request).then(function(conversation) {
