@@ -93,33 +93,14 @@ angular.module("proton.cache", [])
 
             if(angular.isDefined(current)) {
                 // Update message
-                updateMessage(message);
+                var index = messagesCached.indexOf(current);
+
+                _.extend(messagesCached[index], message);
             } else {
                 // Add message
-                insertMessage(message);
+                messagesCached.push(message);
             }
         });
-    };
-
-    /**
-    * Insert message in a specific cache location, if it's possible
-    * @param {Object} message
-    */
-    var insertMessage = function(message) {
-        messagesCached.push(message);
-    };
-
-    /**
-     * Update message cached
-     */
-    var updateMessage = function(message) {
-        var current = _.findWhere(messagesCached, {ID: message.ID});
-
-        if(angular.isDefined(current)) {
-            var index = messagesCached.indexOf(current);
-
-            _.extend(messagesCached[index], message);
-        }
     };
 
     /**
@@ -177,6 +158,7 @@ angular.module("proton.cache", [])
     /**
      * Return location specified in the request
      * @param {Object} request
+     * @return {String} location
      */
     var getLocation = function(request) {
         var location;
@@ -567,6 +549,11 @@ angular.module("proton.cache", [])
         return deferred.promise;
     };
 
+    /**
+     * Delete conversation
+     * @param {Object} event
+     * @return {Promise}
+     */
     api.deleteConversation = function(event) {
         var deferred = $q.defer();
 
@@ -609,6 +596,7 @@ angular.module("proton.cache", [])
 
     /**
     * Preload conversations for inbox (first 2 pages) and sent (first page)
+    * @return {Promise}
     */
     api.preloadInboxAndSent = function() {
         var mailbox = tools.currentMailbox();
@@ -644,14 +632,9 @@ angular.module("proton.cache", [])
     */
     api.createMessage = function(event) {
         var deferred = $q.defer();
-        var message = event.Message;
-        var currentMessage = _.findWhere(messagesCached, {ID: event.ID});
+        var messages = [event.Message];
 
-        if(angular.isUndefined(currentMessage)) {
-            insertMessage(message);
-        } else {
-            updateMessage(message);
-        }
+        storeMessages(messages);
 
         deferred.resolve();
 
@@ -715,17 +698,10 @@ angular.module("proton.cache", [])
     * @return {Promise}
     */
     api.updateDraft = function(event) {
-        var location = CONSTANTS.MAILBOX_IDENTIFIERS.drafts;
         var deferred = $q.defer();
-        var message = _.findWhere(messagesCached, {ID: event.ID});
+        var messages = [event.Message];
 
-        if(angular.isDefined(message)) {
-            var index = messagesCached.indexOf(message);
-
-            _.extend(messagesCached[index], event.Message);
-        } else {
-            insertMessage(event.Message);
-        }
+        storeMessages(messages);
 
         deferred.resolve();
 

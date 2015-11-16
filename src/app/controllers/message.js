@@ -702,8 +702,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.move = function(mailbox) {
         var messageEvent = [];
+        var conversationEvent = [];
         var copy = angular.copy($scope.message);
         var current;
+        var labelIDs = [];
 
         _.each(copy.LabelIDs, function(labelID) {
             if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
@@ -716,6 +718,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
+
+        _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
+            labelIDs = labelIDs.concat(message.LabelIDs);
+        });
+        conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {
+            ID: copy.ConversationID,
+            LabelIDs: labelIDs
+        }});
+        cache.events(conversationEvent, 'conversation');
 
         Message[mailbox]({IDs: [copy.ID]});
 

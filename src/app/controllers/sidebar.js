@@ -145,11 +145,14 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }
     };
 
+    /**
+     * Open folder
+     * @param {String} route
+     */
     $scope.goTo = function(route) {
         var sameFolder = $state.current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
 
-        $rootScope.$broadcast('goToFolder');
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
         if(sameFolder === true && firstPage === true) {
             // Do nothing
@@ -162,12 +165,13 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
-     * Go to label folder + reset parameters
+     * Open label folder
+     * @param {Object} label
      */
     $scope.goToLabel = function(label) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
 
-        $state.go('secured.label', params);
+        $state.go('secured.label.list', params);
     };
 
     /**

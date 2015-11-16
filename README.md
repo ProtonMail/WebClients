@@ -31,18 +31,19 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### Todo
 
-* [ ] Add member (wait back-end)
-* [ ] View credit card (wait back-end)
-* [ ] Edit credit card (wait back-end)
-* [ ] Add address (wait back-end)
-* [ ] Download invoice (wait back-end)
-* [ ] Subscribe for a plan (wait for back-end)
-* [ ] How to manage storage per user in users page? (wait design)
-* [x] Add condition to display large toolbar button on large screen (for **Jason**)
+* [ ] Add member (for back-end)
+* [ ] View credit card (for back-end)
+* [ ] Edit credit card (for back-end)
+* [ ] Add address (for back-end)
+* [ ] Download invoice (for back-end)
+* [ ] Subscribe for a plan (for for back-end)
+* [ ] How to manage storage per user in users page? (for design)
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
-* [x] "Delete all contact" icon seems not appear in contacts page (for **Jason**)
-* [x] Fix problem with large subject on conversation view (for **Jason**)
+* [ ] Print message (for **Richard**)
+* [x] Click on label (for **Richard**)
+* [ ] Think about hover style (for design)
+* [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 
 ### QA
 
@@ -65,11 +66,11 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] move conversation
 * [x] search messages
 * [x] next page of conversations
-* [ ] next page of messages
+* [ ] next page of messages (need **Bart**)
 
 ### Bugs
 
-* [ ] Select conversation, click on next page
+* [x] Select conversation, click on next page
 
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0

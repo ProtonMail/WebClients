@@ -78,10 +78,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.updateLabels();
         });
 
-        $scope.$on('goToFolder', function(event) {
-            $scope.unselectAllConversations();
-        });
-
         $scope.$on('unselectAllConversations', function(event) {
             $scope.unselectAllConversations();
         });
@@ -658,6 +654,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.goToPage = function(page, scrollToBottom) {
+        var route = 'secured.' + $scope.mailbox + '.list';
+
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllConversations();
         $scope.page = page;
@@ -666,7 +664,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 page = undefined;
             }
 
-            $state.go($state.current.name, _.extend({}, $state.params, {
+            $state.go(route, _.extend({}, $state.params, {
                 page: page,
                 id: undefined
             }));
@@ -828,6 +826,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             color: $scope.getLabel(id).Color,
             borderColor: $scope.getLabel(id).Color
         };
+    };
+
+    /**
+     * Go to label folder + reset parameters
+     */
+    $scope.goToLabel = function(labelID) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
+
+        $state.go('secured.label.list', params);
     };
 
     /**
