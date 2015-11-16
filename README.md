@@ -69,7 +69,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### Bugs
 
-* [ ] Select conversation, click on next page
+* [x] Select conversation, click on next page
 
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0

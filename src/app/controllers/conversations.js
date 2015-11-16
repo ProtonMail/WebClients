@@ -658,6 +658,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.goToPage = function(page, scrollToBottom) {
+        var route = 'secured.' + $scope.mailbox + '.list';
+
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllConversations();
         $scope.page = page;
@@ -666,7 +668,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 page = undefined;
             }
 
-            $state.go($state.current.name, _.extend({}, $state.params, {
+            $state.go(route, _.extend({}, $state.params, {
                 page: page,
                 id: undefined
             }));
