@@ -50,6 +50,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     });
 
     /**
+     * Open a message if its the only one
+     */
+    $scope.defaultOpen = function(first, last) {
+        if(first && last && (first===last)) {
+            $scope.message.expand = true;
+        }
+    };
+
+    /**
      * Toggle message in conversation view
      */
     $scope.toggle = function() {

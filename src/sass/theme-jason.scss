@@ -5,6 +5,14 @@ html.protonmail body.themeJason.secure {
         border-left-color: $border !important;
     }
 
+    #pm_view article.message .sub .meta .addLabelButton a.addLabel {
+        line-height: 24px !important;
+        height: 24px !important;
+        small {
+            line-height: 20px !important;
+            height: 20px !important;
+        }
+    }
     .pm_dropdown {
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25) !important;
         a {
@@ -26,6 +34,9 @@ html.protonmail body.themeJason.secure {
             background: linear-gradient(to bottom,  $primary 0%,darken($primary, 5%) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primary', endColorstr='darken($primary, 10%)',GradientType=0 );
             border-color: darken($primary, 5%) !important;
+            &.jason {
+                border-color: $primary !important;
+            }
         }
         &.link {
             background: transparent !important;
