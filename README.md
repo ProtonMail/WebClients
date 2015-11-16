@@ -41,7 +41,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Print message (for **Richard**)
-* [ ] Click on label (for **Richard**)
+* [x] Click on label (for **Richard**)
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 

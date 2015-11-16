@@ -10,6 +10,7 @@ angular.module("proton.controllers.Settings")
     members,
     organization,
     Organization,
+    storageModal,
     userModal
 ) {
     var MASTER = 0;
@@ -138,16 +139,17 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.manageStorage = function(member) {
-        // storageModal.activate({
-        //     params: {
-        //         submit: function() {
-        //             storageModal.deactivate();
-        //         },
-        //         cancel: function() {
-        //             storageModal.deactivate();
-        //         }
-        //     }
-        // });
+        storageModal.activate({
+            params: {
+                member: member,
+                submit: function() {
+                    storageModal.deactivate();
+                },
+                cancel: function() {
+                    storageModal.deactivate();
+                }
+            }
+        });
     };
 
     /**

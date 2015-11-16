@@ -68,7 +68,7 @@ angular.module("proton.controllers.Settings")
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 $scope.organization = result.data.Organization;
             } else {
-                // TODO display error
+                notify({message: $translate.instant('ERROR_WITH_ORGANIZATION'), classes: 'notification-danger'});
             }
         }));
 
@@ -76,7 +76,7 @@ angular.module("proton.controllers.Settings")
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 $scope.domains = result.data.Domains;
             } else {
-                // TODO display error
+                notify({message: $translate.instant('ERROR_WITH_DOMAIN'), classes: 'notification-danger'});
             }
         }));
 
@@ -84,7 +84,7 @@ angular.module("proton.controllers.Settings")
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 $scope.members = result.data.Members;
             } else {
-                // TODO display error
+                notify({message: $translate.instant('ERROR_WITH_MEMBER'), classes: 'notification-danger'});
             }
         }));
 

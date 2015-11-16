@@ -78,10 +78,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.updateLabels();
         });
 
-        $scope.$on('goToFolder', function(event) {
-            $scope.unselectAllConversations();
-        });
-
         $scope.$on('unselectAllConversations', function(event) {
             $scope.unselectAllConversations();
         });
@@ -830,6 +826,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             color: $scope.getLabel(id).Color,
             borderColor: $scope.getLabel(id).Color
         };
+    };
+
+    /**
+     * Go to label folder + reset parameters
+     */
+    $scope.goToLabel = function(labelID) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
+
+        $state.go('secured.label.list', params);
     };
 
     /**
