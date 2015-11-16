@@ -158,6 +158,7 @@ angular.module("proton.cache", [])
     /**
      * Return location specified in the request
      * @param {Object} request
+     * @return {String} location
      */
     var getLocation = function(request) {
         var location;
@@ -548,6 +549,11 @@ angular.module("proton.cache", [])
         return deferred.promise;
     };
 
+    /**
+     * Delete conversation
+     * @param {Object} event
+     * @return {Promise}
+     */
     api.deleteConversation = function(event) {
         var deferred = $q.defer();
 
@@ -590,6 +596,7 @@ angular.module("proton.cache", [])
 
     /**
     * Preload conversations for inbox (first 2 pages) and sent (first page)
+    * @return {Promise}
     */
     api.preloadInboxAndSent = function() {
         var mailbox = tools.currentMailbox();
