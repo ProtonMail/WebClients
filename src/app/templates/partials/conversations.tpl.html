@@ -83,7 +83,7 @@
                 </span>
             </span>
         </span>
-        <span class="size">{{ conversation.TotalSize | humanSize }}</span>
+        <span class="size">{{ conversation.TotalSize || conversation.Size | humanSize }}</span>
         <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
         <span class="time">{{ conversation.Time | readableTime }}</span>
     </div>
