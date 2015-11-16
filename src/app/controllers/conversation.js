@@ -37,10 +37,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         cache.getConversation($stateParams.id).then(function(conversation) {
             _.extend($scope.conversation, conversation);
         });
-
-        cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
-            _.extend($scope.messages, messages);
-        });
     });
 
     /**

@@ -38,11 +38,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (wait back-end)
 * [ ] Subscribe for a plan (wait for back-end)
 * [ ] How to manage storage per user in users page? (wait design)
-* [x] Add condition to display large toolbar button on large screen (for **Jason**)
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
-* [x] "Delete all contact" icon seems not appear in contacts page (for **Jason**)
-* [x] Fix problem with large subject on conversation view (for **Jason**)
+* [ ] Print message (for **Richard**)
 
 ### QA
 
@@ -65,7 +63,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] move conversation
 * [x] search messages
 * [x] next page of conversations
-* [ ] next page of messages
+* [ ] next page of messages (need **Bart**)
 
 ### Bugs
 
