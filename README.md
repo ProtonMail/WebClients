@@ -31,16 +31,19 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### Todo
 
-* [ ] Add member (wait back-end)
-* [ ] View credit card (wait back-end)
-* [ ] Edit credit card (wait back-end)
-* [ ] Add address (wait back-end)
-* [ ] Download invoice (wait back-end)
-* [ ] Subscribe for a plan (wait for back-end)
-* [ ] How to manage storage per user in users page? (wait design)
+* [ ] Add member (for back-end)
+* [ ] View credit card (for back-end)
+* [ ] Edit credit card (for back-end)
+* [ ] Add address (for back-end)
+* [ ] Download invoice (for back-end)
+* [ ] Subscribe for a plan (for for back-end)
+* [ ] How to manage storage per user in users page? (for design)
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Print message (for **Richard**)
+* [ ] Click on label (for **Richard**)
+* [ ] Think about hover style (for design)
+* [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 
 ### QA
 

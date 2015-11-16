@@ -35,7 +35,18 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     // Listeners
     $scope.$on('refreshConversation', function(event) {
         cache.getConversation($stateParams.id).then(function(conversation) {
-            _.extend($scope.conversation, conversation);
+            _.extend($scope.conversation, conversation); //
+        });
+
+        cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
+            _.each(messages, function(message) {
+                var current = _.findWhere($scope.messages, {ID: message.ID});
+
+                if(angular.isUndefined(current)) {
+                    // Add message
+                    $scope.messages.push(message);
+                }
+            });
         });
     });
 
