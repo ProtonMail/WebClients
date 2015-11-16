@@ -68,6 +68,9 @@
     article.message {
     	clear: both;
     	border-bottom: 1px solid $border;
+        &.open.last {
+            border-bottom: none;
+        }
 		a.compose {
 			background: $primary;
 			color: #fff;
