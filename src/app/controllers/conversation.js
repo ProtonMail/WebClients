@@ -73,6 +73,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
+     * Return messages data for dropdown labels
+     */
+    $scope.getMessages = function() {
+        return $scope.messages;
+    };
+
+    /**
      * Mark current conversation as read
      */
     $scope.read = function() {
