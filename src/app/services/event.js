@@ -66,39 +66,18 @@ angular.module("proton.event", ["proton.constants"])
 					authentication.user = angular.merge(authentication.user, user);
 				}
 			},
-			manageUnreads: function(unreads) {
-				if(angular.isDefined(unreads)) {
-					// Label case
-					_.each(authentication.user.Labels, function(label) {
-						var obj = _.findWhere(unreads.Labels, {LabelID: label.ID});
-
-						if(angular.isDefined(obj)) {
-							cacheCounters.update(label.ID, undefined, obj.Count);
-						} else {
-							cacheCounters.update(label.ID, undefined, 0);
-						}
-					});
-					// Folder case
-					_.each([0, 1, 2, 3, 4, 6], function(location) {
-						var obj = _.findWhere(unreads.Locations, {Location: location});
-
-						if(angular.isDefined(obj)) {
-							cacheCounters.update(location, undefined, obj.Count);
-						} else {
-							cacheCounters.update(location, undefined, 0);
-						}
-					});
-					// Starred case
-					cacheCounters.update(CONSTANTS.MAILBOX_IDENTIFIERS.starred, undefined, unreads.Starred);
-					$rootScope.dontUpdateNextCounter = true;
-				}
-			},
-			manageCounts: function(counts) {
+			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
 					_.each(counts, function(count) {
 						cacheCounters.update(count.LabelID, count.Total, count.Unread);
 					});
-					$rootScope.dontUpdateNextCounter = true;
+				}
+			},
+			manageConversationCounts: function(counts) {
+				if(angular.isDefined(counts)) {
+					_.each(counts, function(count) {
+						cacheCounters.update(count.LabelID, undefined, undefined, count.Total);
+					});
 				}
 			},
 			manageMessages: function(messages) {
@@ -156,7 +135,8 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
-					this.manageCounts(data.Counts);
+					this.manageMessageCounts(data.MessageCounts);
+					this.manageConversationCounts(data.ConversationCounts);
 					this.manageConversations(data.Conversations);
 					this.manageMessages(data.Messages);
 					this.manageStorage(data.UsedSpace);

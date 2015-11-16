@@ -94,16 +94,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.activeConversation(id);
         });
 
-        // $scope.$on('starMessages', function(event) {
-        //     var ids = $scope.idsSelected();
-        //     var promise;
-        //
-        //     _.each($scope.elementsSelected(), function(message) { message.Starred = 1; });
-        //     promise = Message.star({IDs: ids}).$promise;
-        //     networkActivityTracker.track(promise);
-        //     $scope.unselectAllConversations();
-        // });
-
         $scope.$on('$destroy', $scope.stopWatchingEvent);
     };
 
@@ -196,7 +186,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         if (mailbox === 'search') {
-            params.Location = $stateParams.location;
+            params.Label = $stateParams.location;
             params.Keyword = $stateParams.words;
             params.To = $stateParams.to;
             params.From = $stateParams.from;
@@ -204,17 +194,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             params.Begin = $stateParams.begin;
             params.End = $stateParams.end;
             params.Attachments = $stateParams.attachments;
-            params.Starred = $stateParams.starred;
             params.Label = $stateParams.label;
         } else if(mailbox === 'label') {
             params.Label = $stateParams.label;
         } else {
-            params.Location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-        }
-
-        if(parseInt(params.Location) === CONSTANTS.MAILBOX_IDENTIFIERS.starred) {
-            params.Starred = 1;
-            delete params.Location;
+            params.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         }
 
         _.pick(params, _.identity);
@@ -738,7 +722,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(type === 'conversation') {
             var messages = cache.queryMessagesCached(copy.ID);
             // Generate conversation changes with event
-            conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+            conversationEvent.push({ID: copy.ID, Action: 3, Conversation: copy});
             cache.events(conversationEvent, 'conversation');
             // Generate message changes with event
             if(messages.length > 0) {
@@ -773,7 +757,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(type === 'conversation') {
             var messages = cache.queryMessagesCached(copy.ID);
             // Generate conversation changes with event
-            conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
+            conversationEvent.push({ID: copy.ID, Action: 3, Conversation: copy});
             cache.events(conversationEvent, 'conversation');
             // Generate message changes with event
             if(messages.length > 0) {
@@ -782,17 +766,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     messageEvent.push({ID: message.ID, Action: 3, Message: message});
                 });
                 cache.events(messageEvent, 'message');
-
             }
             // Send request
             Conversation.unstar([copy.ID]);
         } else if(type === 'message') {
             messageEvent.push({ID: copy.ID, Action: 3, Message: copy});
             cache.events(messageEvent, 'message');
-        }
-
-        if(type === 'conversation') {
-        } else if(type === 'message') {
+            // Send request
             Message.unstar({IDs: [copy.ID]});
         }
     };
