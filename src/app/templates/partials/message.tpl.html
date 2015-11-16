@@ -17,7 +17,7 @@
             <i>{{ 'FROM' | translate }}</i>
             <span class="person">
                 <a href class="fa fa-pencil pm_button primary compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                <em pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender.Name || message.Sender.Address }}</em>
+                <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
             </span>
         </span>
     </header>

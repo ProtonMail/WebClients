@@ -102,6 +102,16 @@ angular.module("proton.filters",[])
         return m.format('l') + " (" + m.fromNow() + ")";
     };
 })
+
+.filter('displayName', function() {
+    return function(value) {
+        value = value.replace(/</g, "");
+        value = value.replace(/>/g, "");
+        value = value.replace(/\@/g, "");
+        return value;
+    };
+})
+
 // unused
 .filter('purify', function($sce) {
     // var dirty = $sce.trustAsHtml(value);

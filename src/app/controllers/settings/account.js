@@ -125,22 +125,30 @@ angular.module("proton.controllers.Settings")
     $scope.saveDisplayName = function(form) {
         var displayName = $scope.displayName;
 
-        networkActivityTracker.track(
-            Setting.display({
-                "DisplayName": displayName
-            }).$promise.then(function(response) {
-                if(response.Code === 1000) {
-                    notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
-                    authentication.user.DisplayName = displayName;
-                    $scope.displayName = displayName;
-                } else if(angular.isDefined(response.Error)) {
-                    notify({message: response.Error, classes: 'notification-danger'});
-                }
-            }, function(error) {
-                notify({message: 'Error during the display name request', classes: 'notification-danger'});
-                $log.error(error);
-            })
-        );
+        // to avoid basic name spoofing such as "Security <secutity@protonmail.ch>, "
+        if ( (displayName.indexOf("<") > -1) || (displayName.indexOf(">") > -1) || (displayName.indexOf("@") > -1) ) {
+            notify({message: "Invalid Display Name. '<', '>', '@' are not allowed.", classes: 'notification-danger'});
+        }
+        else {
+
+            networkActivityTracker.track(
+                Setting.display({
+                    "DisplayName": displayName
+                }).$promise.then(function(response) {
+                    if(response.Code === 1000) {
+                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
+                        authentication.user.DisplayName = displayName;
+                        $scope.displayName = displayName;
+                    } else if(angular.isDefined(response.Error)) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
+                }, function(error) {
+                    notify({message: 'Error during the display name request', classes: 'notification-danger'});
+                    $log.error(error);
+                })
+            );
+
+        }
     };
 
     $scope.saveSignature = function(form) {
