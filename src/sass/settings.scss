@@ -36,33 +36,12 @@
 #settingsDomains {
     .pm_table {
         tr {
-            th.domain {
+            td.domain {
                 width: auto;
             }
             th.status {
-                width: 4.5rem;
+                width: 30rem;
             }
-            th.verification,
-            th.spf,
-            th.mx,
-            th.addresses,
-            th.dkim,
-            th.dmarc {
-                width: 5rem;
-            }
-            th.action {
-                width: 6rem;
-                padding-right: 1rem;
-            }
-
-            th.verification,
-            th.spf,
-            th.mx,
-            th.dkim,
-            th.dmarc {
-                text-align: center;
-            }
-
             th {
                 padding-right: 0;
                 text-align: left !important;
@@ -70,6 +49,8 @@
                 font-size: .8rem;
                 &.text-right {
                     text-align: right !important;
+                    padding-right: 1rem;
+                    width: 6.5rem;
                 }
             }
             td {
@@ -91,17 +72,15 @@
                     font-size: 22px;
                     position: relative;
                     top: 3px;
-
                 }
                 .fa-trash-o {
                     position: relative;
                     top: 3px;
                 }
                 .progress {
-                    width: 36px;
                     text-align: center;
-                    padding: 0;
                     position: relative;
+                    margin-right: .5rem;
                     .text-green .fa {
                         color: $green;
                     }
@@ -112,9 +91,17 @@
                         display: inline;
                         display: none;
                     }
-                    &.dead {
-                        border: none;
+                    &.success {
+                        background-color: $green;
+                        border-color: darken($green, 10%);
+                        color: $white;
                     }
+                    &.error {
+                        background-color: $red;
+                        border-color: darken($red, 10%);
+                        color: $white;
+                    }
+                    &.dead {}
                 }
                 .remove {
                     position: relative;
@@ -133,6 +120,7 @@
                     padding-right: 1rem;
                     .pm_button {
                         width: 36px;
+                        margin-left: .5rem;
                     }
                 }
             }

@@ -13,17 +13,13 @@
                     <button type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button primary" ng-click="buyDomain()">{{ 'BUY_A_NEW_DOMAIN' | translate }}</button>
                 </p>
-                <loader-tag ng-show="!domains" />
+                <!-- <pre>{{ domains }}</pre> -->
+                <loader-tag ng-show="!domains"></loader-tag>
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
-                            <th class="domain">1. {{ 'DOMAIN' | translate }}</th>
-                            <th class="verification">2. {{ 'VERIFY' | translate }}</th>
-                            <th class="addresses">3. {{ 'ADDRESS' | translate }}</th>
-                            <th class="mx">4. {{ 'MX' | translate }}</th>
-                            <th class="spf">5. SPF</th>
-                            <th class="dkim">6. DKIM</th>
-                            <th class="dmarc">7. DMARC</th>
+                            <th class="domain">{{ 'DOMAIN' | translate }}</th>
+                            <th class="status">{{ 'STATUS' | translate }}</th>
                             <th class="text-right action">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
@@ -36,102 +32,63 @@
                                     {{ domain.DomainName }}
                                 </strong>
                             </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="verification(domain)" ng-class="{ 'dead': (domain.VerifyState === 2) }">
-                                    <strong ng-show="domain.VerifyState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.VerifyState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.VerifyState === 2" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+                            <td class="status">
+
+                                <button type="button" class="progress pm_button" ng-click="verification(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.VerifyState === 2),
+                                'success': (domain.VerifyState === 2),
+                                'error': ( (domain.VerifyState === 1) )
+                                }">
+                                Verify
                                 </button>
-                            </td>
-                            <td>
+
                                 <!-- TODO: change logic to use address routes -->
-                                <button type="button" class="progress pm_button round" ng-click="addAddress(domain)" ng-class="{ 'dead': (domain.MxState === 3) }">
-                                    <strong ng-show="domain.MxState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 2" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 3" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.MxState === 3),
+                                'success': (domain.MxState === 3),
+                                'error': ( (domain.MxState === 2) || (domain.MxState === 1) )
+                                }">
+                                Address
                                 </button>
-                            </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="mx(domain)" ng-class="{ 'dead': (domain.MxState === 3) }">
-                                    <strong ng-show="domain.MxState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 2" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.MxState === 3" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+
+                                <button type="button" class="progress pm_button" ng-click="mx(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.MxState === 3),
+                                'success': (domain.MxState === 3),
+                                'error': ( (domain.MxState === 2) || (domain.MxState === 1) )
+                                }">
+                                MX
                                 </button>
-                            </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="spf(domain)" ng-class="{ 'dead': (domain.SpfState === 3) }">
-                                    <strong ng-show="domain.SpfState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.SpfState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.SpfState === 2" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.SpfState === 3" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+
+                                <button type="button" class="progress pm_button" ng-click="spf(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.SpfState === 3),
+                                'success': (domain.SpfState === 3),
+                                'error': ( (domain.SpfState === 2) || (domain.SpfState === 1) )
+                                }">
+                                SPF
                                 </button>
-                            </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="dkim(domain)" ng-class="{ 'dead': (domain.DkimState === 4) }">
-                                    <strong ng-show="domain.DkimState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DkimState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DkimState === 2" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DkimState === 3" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DkimState === 4" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+
+                                <button type="button" class="progress pm_button" ng-click="dkim(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.SpfState === 4),
+                                'success': (domain.SpfState === 4),
+                                'error': ( (domain.SpfState === 3) || (domain.SpfState === 2) || (domain.SpfState === 1) )
+                                }">
+                                DKIM
                                 </button>
-                            </td>
-                            <td>
-                                <button type="button" class="progress pm_button round" ng-click="dmarc(domain)" ng-class="{ 'dead': (domain.DmarcState === 3) }">
-                                    <strong ng-show="domain.DmarcState === 0">
-                                        <i class="fa fa-circle-o"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DmarcState === 1" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DmarcState === 2" class="text-red">
-                                        <i class="fa fa-times-circle"></i>
-                                    </strong>
-                                    <strong ng-show="domain.DmarcState === 3" class="text-green">
-                                        <i class="fa fa-check-circle"></i>
-                                    </strong>
+
+                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" 
+                                ng-class="{ 
+                                'dead': (domain.DmarcState === 3),
+                                'success': (domain.DmarcState === 3),
+                                'error': ( (domain.DmarcState === 2) || (domain.DmarcState === 1) )
+                                }">
+                                DMARC
                                 </button>
+
                             </td>
                             <td class="text-right">
                                 <button type="button" class="remove pm_button round" ng-click="wizard(domain)" pt-tooltip="{{ 'SETUP' | translate }}">
