@@ -172,20 +172,18 @@ angular.module("proton.event", ["proton.constants"])
 		};
 
 		var api = _.bindAll({
-				start: function () {
-					if (angular.isUndefined(eventModel.promiseCancel)) {
-						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
-						eventModel.promiseCancel = $timeout(eventModel.interval, 0);
-					}
-				},
-				stop: function () {
-					// messageCache.empty();
-					if (angular.isDefined(eventModel.promiseCancel)) {
-						$timeout.cancel(eventModel.promiseCancel);
-						eventModel.promiseCancel = undefined;
-					}
+			start: function () {
+				if (angular.isUndefined(eventModel.promiseCancel)) {
+					eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
+					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
-
+			},
+			stop: function () {
+				if (angular.isDefined(eventModel.promiseCancel)) {
+					$timeout.cancel(eventModel.promiseCancel);
+					eventModel.promiseCancel = undefined;
+				}
+			}
 		});
 
 		return api;

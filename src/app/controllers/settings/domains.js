@@ -61,7 +61,7 @@ angular.module("proton.controllers.Settings")
     /**
      * Method called at the initialization of this controller
      */
-    $scope.initialization = function() {
+    $scope.initialization = function() { //
         var promises = [];
 
         promises.push(Organization.get().then(function(result) {
@@ -85,14 +85,6 @@ angular.module("proton.controllers.Settings")
                 $scope.members = result.data.Members;
             } else {
                 notify({message: $translate.instant('ERROR_WITH_MEMBER'), classes: 'notification-danger'});
-            }
-        }));
-
-        promises.push(Domain.query().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.addresses = result.data.Addresses;
-            } else {
-                // TODO display error
             }
         }));
 

@@ -73,7 +73,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 * [x] Select conversation, click on next page
 * [x] Unstar conversation in starred folder (for **Jason**)
-* [ ] Bug with last message `,` (for **Richard**)
+* [x] Bug with last message `,` (for **Richard**)
 
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0

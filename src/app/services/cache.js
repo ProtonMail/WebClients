@@ -21,29 +21,6 @@ angular.module("proton.cache", [])
     var UPDATE = 2;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAGS = 3;
-    // Parameters shared between api / cache / message view / message list
-    var fields = [
-        'AddressID',
-        'Body',
-        'ExpirationTime',
-        'HasAttachment',
-        'ID',
-        'IsEncrypted',
-        'IsForwarded',
-        'IsRead',
-        'IsReplied',
-        'IsRepliedAll',
-        'LabelIDs',
-        'Location',
-        'Selected',
-        'SenderAddress',
-        'SenderName',
-        'Size',
-        'Starred',
-        'Subject',
-        'Time',
-        'ToList'
-    ];
 
     /**
      * Return a vector to calculate the counters

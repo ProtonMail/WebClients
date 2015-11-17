@@ -143,7 +143,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             var promise = cache.getMessage($stateParams.id);
 
             promise.then(function(message) {
-                console.log(message);
                 $scope.message = message;
                 $scope.initView();
             });

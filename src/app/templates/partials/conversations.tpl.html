@@ -22,7 +22,7 @@
         <header>
             <p>
                 <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders" title="{{ contact.Address }}">
-                    {{ contact.Name || contact.Address }}<b ng-hide="recipient.$last">, </b>
+                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
                 <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
