@@ -661,11 +661,8 @@ angular.module("proton.routes", [
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
             },
-            domain: function(Address, networkActivityTracker) {
+            domain: function(Domain, networkActivityTracker) {
                 return networkActivityTracker.track(Domain.query());
-            },
-            addresses: function() {
-                return ''; // use domain for this. remove this!!
             }
         },
         views: {

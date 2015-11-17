@@ -4,7 +4,6 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $translate,
-    addresses,
     confirmModal,
     Member,
     members,
@@ -16,15 +15,17 @@ angular.module("proton.controllers.Settings")
     var MASTER = 0;
     var SUB = 1;
 
-    $scope.organization = organization.Organization;
-    $scope.members = members.Members;
-    $scope.addresses = addresses.Addresses;
     $scope.selectExample = 'toto';
     $scope.optionsExample = ['qwe', 'asd', 'zxc'];
     $scope.roles = [
         {label: $translate.instant('MASTER'), value: MASTER},
         {label: $translate.instant('SUB'), value: SUB}
     ];
+
+    $scope.initialization = function() {
+        $scope.organization = organization.Organization;
+        $scope.members = members.Members;
+    };
 
     $scope.addressesOf = function(member) {
         var addresses = [];
@@ -167,4 +168,7 @@ angular.module("proton.controllers.Settings")
             }
         });
     };
+
+    // Call initialization
+    $scope.initialization();
 });
