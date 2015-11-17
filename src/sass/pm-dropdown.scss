@@ -10,7 +10,7 @@
 	margin-top: 5px;
 	display: none;
 	font-size: 12px;
-	width: 6rem;
+	width: 8rem;
 	max-height: 260px;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
@@ -19,17 +19,17 @@
 		left: auto !important;
 	}
 	&.wide {
-		width: 160px;
+		width: 200px;
 		max-height: none;
 		padding: 15px;
 	}
-	&.wider {
-		width: 190px;
+	&.wider { 
+		width: 240px;
 		max-height: none;
 		padding: 15px;
 	}
 	&.widest {
-		width: 220px;
+		width: 280px;
 		max-height: none;
 		padding: 15px;
 	}
