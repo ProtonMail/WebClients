@@ -206,6 +206,8 @@
     			padding-top: 1rem;
                 .pm_labels.inline .pm_label {
                     margin: 0 5px 0 0;
+                    width: auto;
+                    max-width: initial;
                     i {
                         display: none;
 						&.fa-times {
