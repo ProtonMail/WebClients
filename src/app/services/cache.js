@@ -51,13 +51,17 @@ angular.module("proton.cache", [])
      * @param {Boolean} unread - true if unread case
      * @return {Object}
      */
-    var vector = function(message) {
+    var vector = function(element, unread) {
         var result = {};
-        var condition = message.IsRead === 0;
+        var condition = true;
         var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
+        if(unread === true) {
+            condition = element.IsRead === 0 || element.NumUnread > 0;
+        }
+
         _.each(locations, function(location) {
-            result[location] = Number(message.LabelIDs.indexOf(location) !== -1 && condition);
+            result[location] = Number(element.LabelIDs.indexOf(location) !== -1 && condition);
         });
 
         return result;
@@ -137,21 +141,31 @@ angular.module("proton.cache", [])
      * Manage the updating to calcultate the total number of messages and unread messages
      * @param {Object} oldList
      * @param {Object} newList
+     * @param {String} type
      */
-    var manageCounters = function(oldList, newList) {
-        var oldUnreadVector = vector(oldList);
-        var newUnreadVector = vector(newList);
+    var manageCounters = function(oldList, newList, type) {
+        var oldUnreadVector = vector(oldList, true);
+        var newUnreadVector = vector(newList, true);
+        var newTotalVector = vector(newList, false);
+        var oldTotalVector = vector(oldList, false);
+
         var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
         _.each(locations, function(location) {
             var currentUnread = cacheCounters.unread(location);
             var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
+            var currentTotal;
+            var deltaTotal;
 
-            cacheCounters.update(
-                location,
-                undefined,
-                currentUnread + deltaUnread
-            );
+            if(type === 'message') {
+                currentTotal = cacheCounters.total(location);
+                deltaTotal = newTotalVector[location] - oldTotalVector[location];
+                cacheCounters.update(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
+            } else if(type === 'conversation') {
+                currentTotal = cacheCounters.conversation(location);
+                deltaTotal = newTotalVector[location] - oldTotalVector[location];
+                cacheCounters.update(location, undefined, undefined, currentTotal + deltaTotal);
+            }
         });
     };
 
@@ -730,7 +744,7 @@ angular.module("proton.cache", [])
                 if($rootScope.dontUpdateNextCounter === true) {
                     $rootScope.dontUpdateNextCounter = false;
                 } else {
-                    manageCounters(current, messagesCached[index]);
+                    manageCounters(current, messagesCached[index], 'message');
                 }
 
                 deferred.resolve();
@@ -771,6 +785,12 @@ angular.module("proton.cache", [])
 
              // Update conversation cached
              conversationsCached[index] = conversation;
+
+             if($rootScope.dontUpdateNextCounter === true) {
+                 $rootScope.dontUpdateNextCounter = false;
+             } else {
+                 manageCounters(current, conversationsCached[index], 'conversation');
+             }
 
              deferred.resolve();
          } else if(angular.isDefined(event.Conversation)) {
