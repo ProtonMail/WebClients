@@ -899,6 +899,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     title: title,
                     message: message,
                     confirm: function() {
+                        cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                        cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                        
                         if (mailbox === 'drafts') {
                             promise = Message.emptyDraft().$promise;
                         } else if (mailbox === 'spam') {
@@ -908,8 +911,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         }
 
                         promise.then(function(result) {
-                            cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                            cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
                         }, function(error) {
                             notify({message: 'Error during the empty request', classes: 'notification-danger'});

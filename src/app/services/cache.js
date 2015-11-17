@@ -141,7 +141,7 @@ angular.module("proton.cache", [])
      * Manage the updating to calcultate the total number of messages and unread messages
      * @param {Object} oldList
      * @param {Object} newList
-     * @param {String} type
+     * @param {String} type - 'message' or 'conversation'
      */
     var manageCounters = function(oldList, newList, type) {
         var oldUnreadVector = vector(oldList, true);
@@ -421,13 +421,17 @@ angular.module("proton.cache", [])
             console.info('Value returned by the BE:', total);
 
             if(angular.isDefined(total)) {
-                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                    number = CONSTANTS.MESSAGES_PER_PAGE;
+                if(total === 0) {
+                    number = 0;
                 } else {
-                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                    } else {
+                    if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                         number = CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                            number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                        } else {
+                            number = CONSTANTS.MESSAGES_PER_PAGE;
+                        }
                     }
                 }
 
@@ -581,20 +585,20 @@ angular.module("proton.cache", [])
     * @param {String} location
     */
     api.empty = function(location) {
-        var toDelete = [];
+        var toRemove = [];
 
         _.each(conversationsCached, function(conversation, index) {
-            if(conversation.LabelIDs.indexOf(location + '')) {
+            if(conversation.LabelIDs.indexOf(location) !== -1) {
                 messagesCached = _.filter(messagesCached, function(message) {
                     return message.ConversationID !== conversation.ID;
                 });
 
-                toDelete.push(index);
+                toRemove.push(index);
             }
         });
 
-        _.each(toDelete, function(index) {
-            delete conversationsCached[index];
+        _.each(toRemove, function(index) {
+            conversationsCached[index].LabelIDs = _.without(conversationsCached[index].LabelIDs, location);
         });
 
         api.callRefresh();
@@ -1058,7 +1062,8 @@ angular.module("proton.cache", [])
         if(angular.isDefined(counters[location])) {
             counters[location] = {
                 total: 0,
-                unread: 0
+                unread: 0,
+                conversation: 0
             };
         }
     };
