@@ -1,0 +1,76 @@
+$rangeThickness: 6px;
+$rangeHandle: 16px;
+
+input[type=range].pm_range {
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+}
+input[type=range].pm_range:focus {
+  outline: none;
+}
+input[type=range].pm_range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $rangeThickness;
+  cursor: pointer;
+  animate: 0.2s;
+  border-radius: $rangeThickness;
+  background: $border;
+}
+input[type=range].pm_range::-webkit-slider-thumb {
+  height: $rangeHandle;
+  width: $rangeHandle;
+  border-radius: $rangeHandle;
+  background: $primary;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+input[type=range].pm_range:focus::-webkit-slider-runnable-track {
+  background: $border;
+}
+input[type=range].pm_range::-moz-range-track {
+  width: 100%;
+  height: $rangeThickness;
+  cursor: pointer;
+  animate: 0.2s;
+  background: $primary;
+  border-radius: $rangeThickness;
+}
+input[type=range].pm_range::-moz-range-thumb {
+  height: $rangeHandle;
+  width: $rangeHandle;
+  border-radius: $rangeHandle;
+  background: $primary;
+  cursor: pointer;
+}
+input[type=range].pm_range::-ms-track {
+  width: 100%;
+  height: $rangeThickness;
+  cursor: pointer;
+  animate: 0.2s;
+  background: $primary;
+  border-width: $rangeThickness;
+  color: transparent;
+}
+input[type=range].pm_range::-ms-fill-lower {
+  background: $border;
+  border-radius: $rangeThickness;
+}
+input[type=range].pm_range::-ms-fill-upper {
+  background: $primary;
+  border-radius: $rangeThickness;
+}
+input[type=range].pm_range::-ms-thumb {
+  height: $rangeHandle;
+  width: $rangeHandle;
+  border-radius: $rangeHandle;
+  background: $primary;
+  cursor: pointer;
+}
+input[type=range].pm_range:focus::-ms-fill-lower {
+  background: $border;
+}
+input[type=range].pm_range:focus::-ms-fill-upper {
+  background: $primary;
+}
