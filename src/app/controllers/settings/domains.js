@@ -88,7 +88,7 @@ angular.module("proton.controllers.Settings")
             }
         }));
 
-        promises.push(Address.query().then(function(result) {
+        promises.push(Domain.query().then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 $scope.addresses = result.data.Addresses;
             } else {
@@ -242,6 +242,14 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Refresh status for a domain
+     * @param {Object} domain
+     */
+    $scope.refreshStatus = function(domains) {
+        $scope.initialization();
+    };
+
+    /**
      * Open verification modal
      * @param {Object} domain
      */
@@ -269,7 +277,7 @@ angular.module("proton.controllers.Settings")
                                     $scope.domains[index] = result.data.Domain;
                                     verificationModal.deactivate();
                                     // open the next step
-                                    $scope.mx(result.data.Domain);
+                                    $scope.addAddress(result.data.Domain);
                                     break;
                                 default:
                                     break;
@@ -294,14 +302,35 @@ angular.module("proton.controllers.Settings")
      * Open modal to add a new address
      */
     $scope.addAddress = function(domain) {
+
         var index = $scope.domains.indexOf(domain);
 
         addressModal.activate({
             params: {
                 step: 3,
                 domain: domain,
-                submit: function() {
-                    addressModal.deactivate();
+                submit: function(address) {
+
+                    networkActivityTracker.track(
+                        Address.create({
+                            "Local": address,                  // local part
+                            "Domain": domain.DomainName,    // either you custom domain or a protonmail domain
+                            "UserID": ""                    // UserID of the User who should own this address
+                        })
+                    ).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('DOMAIN_ADDED'), classes: 'notification-success'});
+                            $scope.refreshStatus();
+                        } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
+                            notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    });
                 },
                 cancel: function() {
                     addressModal.deactivate();
@@ -321,7 +350,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 4,
-                submit: function() {
+                verify: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check verification code
@@ -337,7 +366,6 @@ angular.module("proton.controllers.Settings")
                                 case 3:
                                     notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
-                                    mxModal.deactivate();
                                     // open the next step
                                     $scope.spf(result.data.Domain);
                                     break;
@@ -352,6 +380,9 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
+                },
+                submit: function() {
+                    mxModal.deactivate();
                 },
                 close: function() {
                     mxModal.deactivate();
@@ -371,7 +402,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 5,
-                submit: function() {
+                verify: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check verification code
@@ -387,7 +418,6 @@ angular.module("proton.controllers.Settings")
                                 case 3:
                                     notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
-                                    spfModal.deactivate();
                                     // open the next step
                                     $scope.dkim(result.data.Domain);
                                     break;
@@ -402,6 +432,9 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
+                },
+                submit: function() {
+                    spfModal.deactivate();
                 },
                 close: function() {
                     spfModal.deactivate();
@@ -421,7 +454,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 6,
-                submit: function() {
+                verify: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check dkim code
@@ -440,7 +473,6 @@ angular.module("proton.controllers.Settings")
                                 case 4:
                                     notify({message: $translate.instant('DKIM_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
-                                    dkimModal.deactivate();
                                     // open the next step
                                     $scope.dmarc(result.data.Domain);
                                     break;
@@ -455,6 +487,9 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
+                },
+                submit: function() {
+                    dkimModal.deactivate();
                 },
                 close: function() {
                     dkimModal.deactivate();
@@ -474,7 +509,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 7,
-                submit: function() {
+                verify: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check dmarc code
@@ -490,7 +525,6 @@ angular.module("proton.controllers.Settings")
                                 case 3:
                                     notify({message: $translate.instant('DMARC_VERIFIED'), classes: 'notification-danger'});
                                     $scope.domains[index] = result.data.Domain;
-                                    dmarcModal.deactivate();
                                     break;
                                 default:
                                     break;
@@ -503,6 +537,9 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
+                },
+                submit: function() {
+                    dmarcModal.deactivate();
                 },
                 close: function() {
                     dmarcModal.deactivate();

@@ -66,17 +66,6 @@
                 .domain {
                     line-height: 60px;
                 }
-                .fa-circle-o,
-                .fa-check-circle,
-                .fa-times-circle {
-                    font-size: 22px;
-                    position: relative;
-                    top: 3px;
-                }
-                .fa-trash-o {
-                    position: relative;
-                    top: 3px;
-                }
                 .progress {
                     text-align: center;
                     position: relative;
@@ -90,16 +79,6 @@
                     span {
                         display: inline;
                         display: none;
-                    }
-                    &.success {
-                        background-color: $green;
-                        border-color: darken($green, 10%);
-                        color: $white;
-                    }
-                    &.error {
-                        background-color: $red;
-                        border-color: darken($red, 10%);
-                        color: $white;
                     }
                     &.dead {}
                 }

@@ -22,15 +22,6 @@ angular.module("proton.models.domains", [])
         get: function(id) {
             return $http.get(url.get() + '/domains/' + id);
         },
-        // PUT
-        /**
-         * Update the domain name, add and delete addresses, set forwarding / MX record use
-         */
-        update: function(Obj) {
-            var id = Obj.ID;
-
-            return $http.put(url.get() + '/domains/' + id, Obj);
-        },
         // DELETE
         delete: function(id) {
             return $http.delete(url.get() + '/domains/' + id);

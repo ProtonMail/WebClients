@@ -66,6 +66,24 @@
             outline: none;
         }
     }
+    &.success {
+        background-color: $green;
+        border-color: darken($green, 10%);
+        color: $white;
+        &:hover {
+            background-color: darken($green, 10%);
+            border-color: darken($green, 10%);
+        }
+    }
+    &.error {
+        background-color: $red;
+        border-color: darken($red, 10%);
+        color: $white;
+        &:hover {
+            background-color: darken($red, 10%);
+            border-color: darken($red, 10%);
+        }
+    }
     &[disabled],
     &.disabled {
         opacity: .5;
