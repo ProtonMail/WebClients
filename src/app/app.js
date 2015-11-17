@@ -97,7 +97,6 @@ angular.module("proton", [
     "proton.controllers.Signup",
     "proton.controllers.Support",
     "proton.controllers.Upgrade",
-    "proton.controllers.Print",
     "proton.controllers.Wizard",
 
     // Translations

@@ -50,15 +50,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     });
 
     /**
-     * Open a message if its the only one
-     */
-    $scope.defaultOpen = function(first, last) {
-        if(first && last && (first===last)) {
-            $scope.message.expand = true;
-        }
-    };
-
-    /**
      * Toggle message in conversation view
      */
     $scope.toggle = function() {
@@ -130,7 +121,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.getMessage(id).then(function(message) {
             var copy = angular.copy(message);
 
-            copy.decryptBody(copy.Body, copy.Time).then(function(content) {
+            copy.decryptBody().then(function(content) {
                 copy.Body = content;
                 $rootScope.$broadcast('loadMessage', copy);
             }, function(error) {
@@ -147,11 +138,24 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        var index = $rootScope.openMessage.indexOf($scope.message.ID);
+        // Print case
+        if($rootScope.printMode === true) {
+            var promise = cache.getMessage($stateParams.id);
 
-        if(index !== -1) {
-            $scope.initView();
-            $rootScope.openMessage.splice(index, 1);
+            promise.then(function(message) {
+                console.log(message);
+                $scope.message = message;
+                $scope.initView();
+            });
+
+            networkActivityTracker.track(promise);
+        } else {
+            var index = $rootScope.openMessage.indexOf($scope.message.ID);
+
+            if(index !== -1) {
+                $scope.initView();
+                $rootScope.openMessage.splice(index, 1);
+            }
         }
     };
 
@@ -249,7 +253,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Decrypt the content of the current message and store it in '$scope.content'
      * @param {Boolean} print
      */
-    $scope.displayContent = function(print) {
+    $scope.displayContent = function() {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -258,89 +262,92 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.imagesHidden = false;
         }
 
-        $scope.message.clearTextBody().then(function(result) {
-            var showMessage = function(content) {
-                if(print !== true) {
-                    content = $scope.message.clearImageBody(content);
-                }
+        if(angular.isUndefined($scope.message.DecryptedBody)) {
+            $scope.message.clearTextBody().then(function(result) {
+                var showMessage = function(content) {
+                    if($rootScope.printMode !== true) {
+                        content = $scope.message.clearImageBody(content);
+                    }
 
-                // safari warning
-                if(!$rootScope.isFileSaverSupported) {
-                    $scope.safariWarning = true;
-                }
+                    // Safari warning
+                    if(!$rootScope.isFileSaverSupported) {
+                        $scope.safariWarning = true;
+                    }
 
-                content = DOMPurify.sanitize(content, {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                    // Clear content with DOMPurify
+                    content = DOMPurify.sanitize(content, {
+                        ADD_ATTR: ['target'],
+                        FORBID_TAGS: ['style', 'input', 'form']
+                    });
 
-                // for the welcome email, we need to change the path to the welcome image lock
-                content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
+                    // For the welcome email, we need to change the path to the welcome image lock
+                    content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
-                if (tools.isHtml(content)) {
-                    $scope.isPlain = false;
-                } else {
-                    $scope.isPlain = true;
-                }
-
-                $scope.content = $sce.trustAsHtml(content);
-
-                // Read message open
-                if($scope.message.IsRead === 0) {
-                    var events = [];
-
-                    events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
-                    cache.events(events, 'message');
-                    Message.read({IDs: [$scope.message.ID]});
-                }
-
-                // broken images
-                $("img").error(function () {
-                    $(this).unbind("error").addClass("pm_broken");
-                });
-
-                if(print) {
-                    setTimeout(function() {
-                        window.print();
-                    }, 1000);
-                }
-            };
-
-            // PGP/MIME
-            if ( $scope.message.IsEncrypted === 8 ) {
-
-                var mailparser = new MailParser({
-                    defaultCharset: 'UTF-8'
-                });
-
-                mailparser.on('end', function(mail) {
-                    var content;
-
-                    if (mail.html) {
-                        content = mail.html;
-                    } else if (mail.text) {
-                        content = mail.text;
+                    // Detect type of content
+                    if (tools.isHtml(content)) {
+                        $scope.isPlain = false;
                     } else {
-                        content = "Empty Message";
+                        $scope.isPlain = true;
                     }
 
-                    if (mail.attachments) {
-                        content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
+                    $scope.message.DecryptedBody = $sce.trustAsHtml(content);
+
+                    // Broken images
+                    $(".email img").error(function () {
+                        $(this).unbind("error").addClass("pm_broken");
+                    });
+
+                    // Read message open
+                    if($scope.message.IsRead === 0) {
+                        var events = [];
+
+                        events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
+                        cache.events(events, 'message');
+                        Message.read({IDs: [$scope.message.ID]});
                     }
 
-                    $scope.$evalAsync(function() { showMessage(content); });
-                });
+                    if($rootScope.printMode) {
+                        setTimeout(function() {
+                            window.print();
+                        }, 1000);
+                    }
+                };
 
-                mailparser.write(result);
-                mailparser.end();
-            } else {
-                $scope.$evalAsync(function() { showMessage(result); });
-            }
-        }, function(err) {
-            $scope.togglePlainHtml();
-            //TODO error reporter?
-            $log.error(err);
-        });
+                // PGP/MIME
+                if ( $scope.message.IsEncrypted === 8 ) {
+                    var mailparser = new MailParser({
+                        defaultCharset: 'UTF-8'
+                    });
+
+                    mailparser.on('end', function(mail) {
+                        var content;
+
+                        if (mail.html) {
+                            content = mail.html;
+                        } else if (mail.text) {
+                            content = mail.text;
+                        } else {
+                            content = "Empty Message";
+                        }
+
+                        if (mail.attachments) {
+                            content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
+                        }
+
+                        $scope.$evalAsync(function() { showMessage(content); });
+                    });
+
+                    mailparser.write(result);
+                    mailparser.end();
+                } else {
+                    $scope.$evalAsync(function() { showMessage(result); });
+                }
+            }, function(err) {
+                $scope.togglePlainHtml();
+                //TODO error reporter?
+                $log.error(err);
+            });
+        }
     };
 
     $scope.read = function() {

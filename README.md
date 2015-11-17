@@ -44,6 +44,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 * [ ] Empty trash / spam / drafts folder (for **Richard**)
+* [ ] Fix style when we print a message (for **Jason**)
 
 ### QA
 
@@ -72,6 +73,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 * [x] Select conversation, click on next page
 * [x] Unstar conversation in starred folder (for **Jason**)
+* [ ] Bug with last message `,` (for **Richard**)
 
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0

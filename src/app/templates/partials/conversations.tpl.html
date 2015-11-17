@@ -27,6 +27,7 @@
                 <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
+                <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 <span class="time">{{ conversation.Time | readableTime }}</span>
             </p>
         </header>
@@ -42,7 +43,7 @@
             <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
             <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
             <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-            {{ conversation.Subject }} <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+            {{ conversation.Subject }}
             </p>
         </article>
     </div>
@@ -66,6 +67,7 @@
             <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
             </span>
+            <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
@@ -73,7 +75,7 @@
                 <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
                 <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                {{ conversation.Subject }} <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                {{ conversation.Subject }}
             </span>
             <span class="pm_labels inline">
                 <location-tag class="locTag"></location-tag>

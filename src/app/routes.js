@@ -200,8 +200,7 @@ angular.module("proton.routes", [
                         return;
                     }
                 });
-            }
-            else {
+            } else {
                 $log.debug('step2.onEnter:1');
                 $state.go('login');
                 return;
@@ -525,22 +524,18 @@ angular.module("proton.routes", [
 
     .state("secured.print", {
         url: "/print/:id",
-        onEnter: function($rootScope) { $rootScope.isBlank = true; },
-        onExit: function($rootScope) { $rootScope.isBlank = false; },
+        onEnter: function($rootScope) {
+            $rootScope.isBlank = true;
+            $rootScope.printMode = true;
+        },
+        onExit: function($rootScope) {
+            $rootScope.isBlank = false;
+            $rootScope.printMode = false;
+        },
         views: {
             "main@": {
-                controller: "PrintController",
+                controller: "MessageController",
                 templateUrl: "templates/views/message.print.tpl.html",
-                resolve: {
-                    message: function($stateParams, cache, networkActivityTracker, $rootScope) {
-                        if(angular.isDefined($stateParams.id)) {
-                            $rootScope.printMode = true;
-                            return networkActivityTracker.track(cache.getMessage($stateParams.id));
-                        } else {
-                            return true;
-                        }
-                    }
-                }
             }
         }
     })

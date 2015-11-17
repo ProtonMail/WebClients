@@ -1,4 +1,4 @@
-<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand }" ng-init="defaultOpen($first, $last)">
+<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand }">
     <header ng-click="toggle()">
         <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
             <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
@@ -57,10 +57,10 @@
                             <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
                         </span>
                     </a>
-                    <a href="" ng-click="viewPgp()" ng-if="(message.IsEncrypted != '0')">
+                    <a href="" ng-click="viewPgp()" ng-if="message.IsEncrypted !== 0">
                         <i class="fa fa-code"></i> {{ 'VIEW_HEADERS' | translate }}
                     </a>
-                    <a href="" ng-click="viewPgp()" ng-if="(message.IsEncrypted == '0')">
+                    <a href="" ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
                         <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
                     </a>
                 </span>
@@ -119,7 +119,7 @@
         <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
             <a href="" ng-click="toggleImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
         </p>
-        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html'" ng-bind-html="content" transform-links="{{ content }}" hide-first-blockquote="{{ content }}"></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>

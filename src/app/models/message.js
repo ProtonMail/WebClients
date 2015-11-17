@@ -264,14 +264,14 @@ angular.module("proton.models.message", ["proton.constants"])
             return pmcw.encryptMessage(this.Body, key);
         },
 
-        decryptBody: function(body, time) {
+        decryptBody: function() {
             var deferred = $q.defer();
 
             authentication.getPrivateKey().then(function(key) {
-                pmcw.decryptMessageRSA(body, key, time).then(function(result) {
+                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
                     deferred.resolve(result);
                 });
-            });
+            }.bind(this));
 
             return deferred.promise;
         },
@@ -364,13 +364,12 @@ angular.module("proton.models.message", ["proton.constants"])
             var body;
             var deferred = $q.defer();
 
-            if (this.isDraft() || (!_.isUndefined(this.IsEncrypted) && parseInt(this.IsEncrypted))) {
-                if (_.isUndefined(this.DecryptedBody) && !!!this.decrypting) {
+            if (this.isDraft() || this.IsEncrypted > 0) {
+                if (angular.isUndefined(this.DecryptedBody) && this.decrypting !== true) {
                     this.decrypting = true;
 
                     try {
-                        authentication.getPrivateKey()
-                        .then(
+                        authentication.getPrivateKey().then(
                             function(key) {
                                 pmcw.decryptMessageRSA(this.Body, key, this.Time)
                                 .then(
@@ -403,6 +402,7 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             this.decrypting = false;
+
             return deferred.promise;
         },
 
