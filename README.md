@@ -42,8 +42,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
-* [ ] Print message (for **Richard**)
-* [ ] Empty trash / spam / drafts folder (for **Richard**)
+* [x] Print message (for **Richard**)
+* [x] Empty trash / spam / drafts folder (for **Richard**)
 * [ ] Fix style when we print a message (for **Jason**)
 * [ ] Build search modal with select location (for **Richard**)
 
