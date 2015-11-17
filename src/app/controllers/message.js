@@ -63,7 +63,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.toggle = function() {
         if(angular.isUndefined($scope.message.expand)) {
-            $scope.initView();
+            networkActivityTracker.track($scope.initView());
         } else if($scope.message.expand === true) {
             $scope.message.expand = false;
         } else if($scope.message.expand === false) {
@@ -81,22 +81,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called to display message content
+     * @return {Promise}
      */
     $scope.initView = function() {
-        // If the message is a draft
-        if($scope.draft() === true) {
-            // Open the message in composer if it's a draft
-            $scope.openComposer($scope.message.ID);
-        } else {
+        var deferred = $q.defer();
+        var process = function() {
             // Display content
-            if(angular.isDefined($scope.message.Body)) {
-                $scope.displayContent();
-            } else {
-                cache.getMessage($scope.message.ID).then(function(message) {
-                    _.extend($scope.message, message);
-                    $scope.displayContent();
-                });
-            }
+            $scope.displayContent();
 
             // Start timer ago
             $scope.agoTimer = $interval(function() {
@@ -107,7 +98,28 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             // Mark message as expanded
             $scope.message.expand = true;
+        };
+
+        // If the message is a draft
+        if($scope.draft() === true) {
+            // Open the message in composer if it's a draft
+            $scope.openComposer($scope.message.ID);
+            deferred.resolve();
+        } else {
+            // Display content
+            if(angular.isDefined($scope.message.Body)) {
+                process();
+                deferred.resolve();
+            } else {
+                cache.getMessage($scope.message.ID).then(function(message) {
+                    _.extend($scope.message, message);
+                    process();
+                    deferred.resolve();
+                });
+            }
         }
+
+        return deferred.promise;
     };
 
     /**
