@@ -4,12 +4,11 @@
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
     </a>
     <ul class="menu">
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'inbox\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list'); spinIcon();">
+        <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
+            <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list');">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="getUnread('inbox')"></em>
-                <!-- <strong class="fa fa-repeat" ng-class="{ 'spinMe': spinMe }"></strong> -->
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
@@ -26,28 +25,28 @@
                 <em ng-bind="getUnread('sent')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'starred\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="{{ 'STARRED' | translate }}">
+        <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
+            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred.list')">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="getUnread('starred')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'archive\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.archive.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
             <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list')">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="getUnread('archive')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'spam\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.spam.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list')">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="getUnread('spam')"></em>
             </a>
         </li>
-        <li data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'trash\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{ active: ('secured.trash.**' | includedByState) }">
+        <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
             <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list')">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
@@ -65,7 +64,7 @@
     </ul>
     <div class="labels">
         <ul ng-label-height>
-            <li ng-repeat="label in labels | orderBy: 'Order'" data-drop="true" jqyoui-droppable="{onDrop: 'onDropMessage(\'{{label.ID}}\')'}" data-jqyoui-options="droppableOptions" ng-model="droppedMessages" ng-class="{'active': activeLabel(label)}">
+            <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>

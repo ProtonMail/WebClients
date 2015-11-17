@@ -12,6 +12,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     authentication,
     CONFIG,
     CONSTANTS,
+    eventManager,
     Label,
     labelModal,
     Message,
@@ -121,6 +122,13 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
+     * Send request to get the last event
+     */
+    $scope.lastEvent = function() {
+        eventManager.call();
+    };
+
+    /**
      * Call event to open new composer
      */
     $scope.compose = function() {
@@ -152,6 +160,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.goTo = function(route) {
         var sameFolder = $state.current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
+
+        $scope.hideMobileSidebar();
 
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
         if(sameFolder === true && firstPage === true) {

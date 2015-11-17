@@ -147,20 +147,18 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {
-
 					// Check for force upgrade
-					if ( angular.isDefined(result.data) && angular.isDefined(result.data.Code) && parseInt(result.data.Code) === 5003 ) {
+					if (angular.isDefined(result.data) && result.data.Code === 5003) {
 						// Force upgrade, kill event loop
 						eventModel.promiseCancel = undefined;
-						return;
-					}
+					} else {
+						// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
+						if ( angular.isDefined(eventModel.promiseCancel) ) {
+							eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+						}
 
-					// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
-					if ( angular.isDefined(eventModel.promiseCancel) ) {
-						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+						eventModel.manage(result.data);
 					}
-
-					eventModel.manage(result.data);
 				},
 				function(err) {
 					// Try again later
@@ -177,6 +175,9 @@ angular.module("proton.event", ["proton.constants"])
 					eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
+			},
+			call: function() {
+				eventModel.interval();
 			},
 			stop: function () {
 				if (angular.isDefined(eventModel.promiseCancel)) {

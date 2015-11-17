@@ -11,50 +11,49 @@
     </span>
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list'); spinIcon(); hideMobileSidebar();">
+            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list')">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="getUnread('inbox')"></em>
-                <strong class="fa fa-repeat"></strong>
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list'); hideMobileSidebar();">
+            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list')">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
                 <em ng-bind="getUnread('drafts')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list'); hideMobileSidebar();">
+            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list')">
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
                 <em ng-bind="getUnread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="hideMobileSidebar();">
+            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred.list')">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="getUnread('starred')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list'); hideMobileSidebar();">
+            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list')">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="getUnread('archive')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list'); hideMobileSidebar();">
+            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list')">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="getUnread('spam')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list'); hideMobileSidebar();">
+            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list')">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
                 <em ng-bind="getUnread('trash')"></em>
@@ -68,13 +67,13 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
-            <a href="#" title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar();">
+            <a href="#" title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
                 <i class="fa fa-users"></i>
                 <span>{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
         <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
-            <a href="#" title="{{ 'SETTINGS' | translate }}" ui-sref='secured.dashboard' ng-click="hideMobileSidebar();">
+            <a href="#" title="{{ 'SETTINGS' | translate }}" ui-sref='secured.dashboard' ng-click="hideMobileSidebar()">
                 <i class="fa fa-cogs"></i>
                 <span>{{ 'SETTINGS' | translate }}</span>
             </a>
