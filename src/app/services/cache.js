@@ -577,10 +577,10 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Remove page from cache location
+    * Remove conversations from cache location
     * @param {String} location
     */
-    api.clearLocation = function(location) {
+    api.empty = function(location) {
         var toDelete = [];
 
         _.each(conversationsCached, function(conversation, index) {
@@ -596,6 +596,8 @@ angular.module("proton.cache", [])
         _.each(toDelete, function(index) {
             delete conversationsCached[index];
         });
+
+        api.callRefresh();
     };
 
     /**
@@ -912,36 +914,37 @@ angular.module("proton.cache", [])
 
     /**
      * Return previous ID of message specified
-     * @param {Object} conversationId
-     * @param {String} location
+     * @param {Object} conversation
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(conversationId, type) {
+    api.more = function(conversation, type) {
         var deferred = $q.defer();
         var location = tools.currentLocation();
         var request = {PageSize: 1, Label: location};
 
         if(type === 'previous') {
-            request.EndID = conversationId;
+            request.End = conversation.Time;
         } else {
-            request.BeginID = conversationId;
+            request.Begin = conversation.Time;
         }
 
         queryConversations(request).then(function(conversation) {
-            if(angular.isArray(conversation) && conversation.length > 0) {
-                if(type === 'next') {
-                    var first = _.first(conversation);
-
-                    deferred.resolve(first.ID);
-                } else if(type === 'previous') {
-                    var last = _.last(conversation);
-
-                    deferred.resolve(last.ID);
-                }
-            } else {
-                deferred.reject();
-            }
+            console.log(conversation);
+            deferred.resolve();
+            // if(angular.isArray(conversation) && conversation.length > 0) {
+            //     if(type === 'next') {
+            //         var first = _.first(conversation);
+            //
+            //         deferred.resolve(first.ID);
+            //     } else if(type === 'previous') {
+            //         var last = _.last(conversation);
+            //
+            //         deferred.resolve(last.ID);
+            //     }
+            // } else {
+            //     deferred.reject();
+            // }
         });
 
         return deferred.promise;

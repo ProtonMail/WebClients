@@ -888,45 +888,42 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }));
     };
 
-    $scope.emptyFolder = function(location) {
+    $scope.empty = function(mailbox) {
         var title = $translate.instant('CONFIRMATION');
         var message = $translate.instant('ARE_YOU_SURE?') + ' ' + $translate.instant('THIS_CANNOT_BE_UNDONE.');
         var promise;
 
-        confirmModal.activate({
-            params: {
-                title: title,
-                message: message,
-                confirm: function() {
-                    if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.drafts) {
-                        promise = Message.emptyDraft().$promise;
-                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.spam) {
-                        promise = Message.emptySpam().$promise;
-                    } else if (parseInt(location) === CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
-                        promise = Message.emptyTrash().$promise;
-                    }
+        if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
+            confirmModal.activate({
+                params: {
+                    title: title,
+                    message: message,
+                    confirm: function() {
+                        if (mailbox === 'drafts') {
+                            promise = Message.emptyDraft().$promise;
+                        } else if (mailbox === 'spam') {
+                            promise = Message.emptySpam().$promise;
+                        } else if (mailbox === 'trash') {
+                            promise = Message.emptyTrash().$promise;
+                        }
 
-                    promise.then(
-                        function(result) {
-                            cache.clearLocation(location);
-                            cacheCounters.empty(location);
-                            $rootScope.$broadcast('refreshCounters');
-                            $rootScope.$broadcast('refreshConversations');
+                        promise.then(function(result) {
+                            cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                            cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
-                        },
-                        function(error) {
+                        }, function(error) {
                             notify({message: 'Error during the empty request', classes: 'notification-danger'});
                             $log.error(error);
-                        }
-                    );
+                        });
 
-                    confirmModal.deactivate();
-                },
-                cancel: function() {
-                    confirmModal.deactivate();
+                        confirmModal.deactivate();
+                    },
+                    cancel: function() {
+                        confirmModal.deactivate();
+                    }
                 }
-            }
-        });
+            });
+        }
     };
 
     $scope.initialization();

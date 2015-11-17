@@ -327,22 +327,22 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     /**
      * Go to the next conversation
      */
-    $scope.nextConversation = function() {
+    $scope.next = function() {
         var current = $state.current.name;
 
-        cache.more($scope.conversation.ID, 'next').then(function(id) {
-            $state.go(current, {id: id});
+        cache.more($scope.conversation, 'next').then(function(id) {
+            // $state.go(current, {id: id});
         });
     };
 
     /**
      * Go to the previous conversation
      */
-    $scope.previousConversation = function() {
+    $scope.previous = function() {
         var current = $state.current.name;
 
-        cache.more($scope.conversation.ID, 'previous').then(function(id) {
-            $state.go(current, {id: id});
+        cache.more($scope.conversation, 'previous').then(function(id) {
+            // $state.go(current, {id: id});
         });
     };
 

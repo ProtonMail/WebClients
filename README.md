@@ -41,10 +41,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Design draft label for message AND conversation (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Print message (for **Richard**)
-* [x] Click on label (for **Richard**)
-* [x] Manage request.Label (for **Richard**)
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
+* [ ] Empty trash / spam / drafts folder (for **Richard**)
 
 ### QA
 
@@ -72,7 +71,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 ### Bugs
 
 * [x] Select conversation, click on next page
-* [ ] Unstar conversation in starred folder (for **Jason**)
+* [x] Unstar conversation in starred folder (for **Jason**)
 
 
 > Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0

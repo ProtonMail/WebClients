@@ -6,6 +6,15 @@
                     <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wider">
+                    <a href="" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
+                        <i class="fa fa-times-circle-o"></i> {{ 'EMPTY_DRAFTS' | translate }}
+                    </a>
+                    <a href="" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
+                        <i class="fa fa-times-circle-o"></i> {{ 'EMPTY_SPAM' | translate }}
+                    </a>
+                    <a href="" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
+                        <i class="fa fa-times-circle-o"></i> {{ 'EMPTY_TRASH' | translate }}
+                    </a>
                     <a href="" ng-click="orderBy('subject')">
                         <i class="fa fa-sort-alpha-asc"></i> {{ 'SUBJECT' | translate }}: A-Z
                     </a>
