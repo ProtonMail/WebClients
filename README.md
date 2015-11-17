@@ -37,14 +37,15 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Add address (for back-end)
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
-* [ ] How to manage storage per user in users page? (for design)
-* [ ] Design draft label for message AND conversation (for **Jason**)
-* [ ] Fix problems with fonts when we load the page (for **Jason**)
-* [ ] Print message (for **Richard**)
+* [x] How to manage storage per user in users page? (for design)
+* [x] Design draft label for message AND conversation (for design)
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
+* [ ] Fix problems with fonts when we load the page (for **Jason**)
+* [ ] Print message (for **Richard**)
 * [ ] Empty trash / spam / drafts folder (for **Richard**)
 * [ ] Fix style when we print a message (for **Jason**)
+* [ ] Build search modal with select location (for **Richard**)
 
 ### QA
 
