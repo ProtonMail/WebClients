@@ -162,6 +162,10 @@ angular.module("proton.squire", [
                     element.addClass('focus').triggerHandler('focus');
                 });
 
+                editor.addEventListener('startPaste', function(event) {
+                    event.string = DOMPurify.sanitize(event.string);
+                });                 
+
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
 
