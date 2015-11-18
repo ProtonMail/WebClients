@@ -138,23 +138,31 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        // Print case
+        var promise;
+
         if($rootScope.printMode === true) {
-            var promise = cache.getMessage($stateParams.id);
+            promise = cache.getMessage($stateParams.id);
 
             promise.then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             });
 
+            // Track promise for the print case
             networkActivityTracker.track(promise);
         } else {
             var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
-            if(index !== -1) {
-                $scope.initView();
-                $rootScope.openMessage.splice(index, 1);
-            }
+            promise = cache.getMessage($scope.message.ID);
+
+            promise.then(function(message) {
+                _.extend($scope.message, message);
+
+                if(index !== -1) {
+                    $scope.initView();
+                    $rootScope.openMessage.splice(index, 1);
+                }
+            });
         }
     };
 

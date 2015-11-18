@@ -69,6 +69,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] search messages
 * [x] next page of conversations
 * [ ] next page of messages (need **Bart**)
+* [ ] print message
 
 ### Bugs
 
