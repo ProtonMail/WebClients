@@ -911,7 +911,6 @@ angular.module("proton.cache", [])
         }
 
         queryConversations(request).then(function(conversation) {
-            console.log(conversation);
             deferred.resolve();
             // if(angular.isArray(conversation) && conversation.length > 0) {
             //     if(type === 'next') {

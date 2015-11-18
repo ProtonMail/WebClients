@@ -580,22 +580,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var conversationEvent = [];
         var messageEvent = [];
 
-        _.each(toApply, function(labelID) {
-            if(type === 'conversation') {
-                promises.push(Conversation.labels(labelID, ADD, ids));
-            } else if(type === 'message') {
-                promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
-            }
-        });
-
-        _.each(toRemove, function(labelID) {
-            if(type === 'conversation') {
-                promises.push(Conversation.labels(labelID, REMOVE, ids));
-            } else if(type === 'message') {
-                promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
-            }
-        });
-
         _.each(elementsSelected, function(element) {
             var copy = angular.copy(element);
             var currents = [];
@@ -614,6 +598,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             copy.LabelIDsAdded = toApply;
             copy.LabelIDsRemoved = toRemove;
+            copy.Selected = false;
 
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(copy.ID);
@@ -632,6 +617,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         cache.events(conversationEvent, 'conversation');
         cache.events(messageEvent, 'message');
+
+        _.each(toApply, function(labelID) {
+            if(type === 'conversation') {
+                promises.push(Conversation.labels(labelID, ADD, ids));
+            } else if(type === 'message') {
+                promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+            }
+        });
+
+        _.each(toRemove, function(labelID) {
+            if(type === 'conversation') {
+                promises.push(Conversation.labels(labelID, REMOVE, ids));
+            } else if(type === 'message') {
+                promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+            }
+        });
 
         $q.all(promises).then(function(results) {
             if(alsoArchive === true) {

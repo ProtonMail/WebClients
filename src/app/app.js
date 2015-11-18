@@ -272,7 +272,7 @@ angular.module("proton", [
             return response || $q.when(response);
         },
         responseError: function(rejection) {
-            if(rejection.status === 0) {
+            if(rejection.status === 0 || rejection.status === -1) {
                 $injector.get('notify')({
                     message: 'You are not connected to the Internet.',
                     classes: 'notification-danger',
