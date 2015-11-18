@@ -29,6 +29,7 @@ angular.module("proton.squire", [
             });
 
             updateModel = function(value) {
+                value = DOMPurify.sanitize(value);
                 $timeout.cancel(debounce);
                 debounce = $timeout(function() {
                     ngModel.$setViewValue(value);
@@ -128,10 +129,10 @@ angular.module("proton.squire", [
                 style.setAttribute('rel', 'stylesheet');
                 if (style.styleSheet){
                     style.styleSheet.cssText = css;
-                } 
+                }
                 else {
                     style.appendChild(doc.createTextNode(css));
-                }                
+                }
                 head.appendChild(style);
 
                 doc.childNodes[0].className = IFRAME_CLASS + " ";
@@ -164,7 +165,7 @@ angular.module("proton.squire", [
 
                 editor.addEventListener('startPaste', function(event) {
                     event.string = DOMPurify.sanitize(event.string);
-                });                 
+                });
 
                 editor.addEventListener("blur", function() {
                     element.removeClass('focus').triggerHandler('blur');
