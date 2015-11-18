@@ -37,13 +37,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Add address (for back-end)
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
-* [x] How to manage storage per user in users page? (for design)
-* [x] Design draft label for message AND conversation (for design)
 * [ ] Think about hover style (for design)
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
-* [x] Print message (for **Richard**)
-* [x] Empty trash / spam / drafts folder (for **Richard**)
 * [ ] Fix style when we print a message (for **Jason**)
 * [ ] Build search modal with select location (for **Richard**)
 
@@ -73,13 +69,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### Bugs
 
-* [x] Select conversation, click on next page
-* [x] Unstar conversation in starred folder (for **Jason**)
-* [x] Bug with last message `,` (for **Richard**)
-
-
-> Failed to decode downloaded font: http://localhost:8080/assets/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0
-> inbox:1 OTS parsing error: invalid version tag
+* [ ] Move all elements, the main checkbox stay checked (for **Richard**) 
 
 ### License
 
