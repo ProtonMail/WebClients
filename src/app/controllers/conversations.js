@@ -559,7 +559,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Close all label dropdown
      */
     $scope.closeLabels = function() {
-        $('[data-toggle="dropdown"]').parent().removeClass('open');
+        var animationDuration = 120;
+        
+        $('.pm_dropdown')
+        .stop(1, 1)
+        .css('opacity', 1)
+        .slideUp( (animationDuration*2) )
+        .animate(
+            { opacity: 0 },
+            { queue: false, duration: (animationDuration*2) }
+        );
     };
 
     /**
@@ -645,6 +654,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
             deferred.reject(error);
         });
+
+        // Close dropdown labels
+        $scope.closeLabels();
 
         return deferred.promise;
     };
@@ -831,6 +843,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         delete $rootScope.openMessage;
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
+        // Unselect all elements
+        $scope.unselectAllElements();
         // Open conversation
         if(type === 'conversation') {
             $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ID });
