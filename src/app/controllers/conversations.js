@@ -27,6 +27,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 ) {
     var lastChecked = null;
 
+    /**
+     * Method called at the initialization of this controller
+     */
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = tools.currentMailbox();
@@ -70,16 +73,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.refreshConversations();
         });
 
-        $scope.$on('unactiveConversations', function() {
-            $scope.unactiveConversations();
+        $scope.$on('unactiveElements', function() {
+            $scope.unactiveElements();
         });
 
         $scope.$on('updateLabels', function() {
             $scope.updateLabels();
         });
 
-        $scope.$on('unselectAllConversations', function(event) {
-            $scope.unselectAllConversations();
+        $scope.$on('unselectAllElements', function(event) {
+            $scope.unselectAllElements();
         });
 
         $scope.$on('applyLabels', function(event, LabelID) {
@@ -90,8 +93,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.move(name);
         });
 
-        $scope.$on('activeConversation', function(event, id) {
-            $scope.activeConversation(id);
+        $scope.$on('activeElement', function(event, id) {
+            $scope.activeElement(id);
         });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
@@ -103,7 +106,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.actionsDelayed = function() {
-        $scope.unselectAllConversations();
+        $scope.unselectAllElements();
         $('#page').val($scope.page);
         $('#page').change(function(event) {
             $scope.goToPage();
@@ -233,34 +236,36 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.unactiveConversations = function() {
+    /**
+     * Unactive each elements
+     */
+    $scope.unactiveElements = function() {
         _.each($scope.conversations, function(conversation) {
             conversation.Active = false;
         });
     };
 
-    $scope.activeConversation = function(id) {
+    /**
+     * Active specific element
+     */
+    $scope.activeElement = function(id) {
         _.each($scope.conversations, function(conversation) {
             conversation.Active = angular.isDefined(id) && conversation.ID === id;
         });
     };
 
+    /**
+     * Update labels for the view
+     */
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
     };
 
-    $scope.senderIsMe = function(message) {
-        var result = false;
-
-        for( var i = 0, len = $scope.user.Addresses.length; i < len; i++ ) {
-            if( $scope.user.Addresses[i].Email === message.Sender.Address ) {
-                result = true;
-            }
-        }
-
-        return result;
-    };
-
+    /**
+     * Return style to color tag label
+     * @param {String} id - label id
+     * @return {Object} style
+     */
     $scope.getColorLabel = function(id) {
         return {
             color: $scope.getLabel(id).Color,
@@ -268,10 +273,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         };
     };
 
+    /**
+     *
+     * @return {}
+     */
     $scope.start = function() {
         return ($scope.page - 1) * $scope.conversationsPerPage + 1;
     };
 
+    /**
+     *
+     * @return {} end
+     */
     $scope.end = function() {
         var end = $scope.start() + $scope.conversationsPerPage - 1;
 
@@ -282,10 +295,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return end;
     };
 
-    $scope.hasNextPage = function() {
-        return $scope.conversationCount() > ($scope.page * $scope.conversationsPerPage);
-    };
-
+    /**
+     *
+     */
     $scope.allSelected = function() {
         var status = true;
 
@@ -306,13 +318,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var status = $scope.allSelectedCheckbox;
 
         if(status === true) {
-            $scope.unselectAllConversations();
+            $scope.unselectAllElements();
         } else {
-            $scope.selectAllMessages();
+            $scope.selectAllElements();
         }
     };
 
-    $scope.selectAllMessages = function() {
+    /**
+     * Select all elements
+     */
+    $scope.selectAllElements = function() {
         _.each($scope.conversations, function(conversation) {
             conversation.Selected = true;
         });
@@ -320,7 +335,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.allSelectedCheckbox = true;
     };
 
-    $scope.unselectAllConversations = function() {
+    /**
+     * Unselect all elements
+     */
+    $scope.unselectAllElements = function() {
         _.each($scope.conversations, function(conversations) {
             conversations.Selected = false;
         });
@@ -328,10 +346,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.allSelectedCheckbox = false;
     };
 
+    /**
+     * Return [Element]
+     * @return {Array}
+     */
     $scope.elementsSelected = function() {
         return _.where($scope.conversations, {Selected: true});
     };
 
+    /**
+     * Return [IDs]
+     * @return {Array}
+     */
     $scope.idsSelected = function() {
         return _.map($scope.elementsSelected(), function(conversation) { return conversation.ID; });
     };
@@ -376,7 +402,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             Message.read({IDs: ids});
         }
 
-        $scope.unselectAllConversations();
+        $scope.unselectAllElements();
     };
 
     /**
@@ -419,7 +445,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             Message.unread({IDs: ids});
         }
 
-        $scope.unselectAllConversations();
+        $scope.unselectAllElements();
     };
 
     /**
@@ -461,7 +487,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             Message.delete({IDs: ids});
         }
 
-        $scope.unselectAllConversations();
+        $scope.unselectAllElements();
     };
 
     /**
@@ -529,17 +555,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
-    $scope.unselectAllLabels = function() {
-        _.forEach($scope.labels, function(label) {
-            label.Selected = false;
-        });
-    };
-
+    /**
+     * Close all label dropdown
+     */
     $scope.closeLabels = function() {
-        $scope.unselectAllLabels();
         $('[data-toggle="dropdown"]').parent().removeClass('open');
     };
 
+    /**
+     * Complex method to apply labels on element selected
+     * @param {Array} labels
+     * @param {Boolean} alsoArchive
+     */
     $scope.saveLabels = function(labels, alsoArchive) {
         var REMOVE = 0;
         var ADD = 1;
@@ -610,11 +637,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(alsoArchive === true) {
                 deferred.resolve(Conversation.archive(ids));
             } else {
-                $scope.unselectAllConversations();
+                $scope.unselectAllElements();
                 deferred.resolve();
             }
-
-            $scope.unselectAllLabels();
         }, function(error) {
             error.message = $translate.instant('ERROR_DURING_THE_LABELS_REQUEST');
             deferred.reject(error);
@@ -623,11 +648,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return deferred.promise;
     };
 
-    $scope.applyLabels = function(LabelID) {
+    /**
+     * Emulate labels array for the drag and drop
+     * @param {String} labelID
+     */
+    $scope.applyLabels = function(labelID) {
         var labels = [];
 
         _.each($scope.labels, function(label) {
-            if(label.ID === LabelID) {
+            if(label.ID === labelID) {
                 label.Selected = true;
             }
 
@@ -637,11 +666,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.saveLabels(labels, true);
     };
 
+    /**
+     * Switch to an other page
+     * @param {Integer} page
+     * @param {Boolean} scrollToBottom
+     */
     $scope.goToPage = function(page, scrollToBottom) {
         var route = 'secured.' + $scope.mailbox + '.list';
 
         $rootScope.scrollToBottom = scrollToBottom === true;
-        $scope.unselectAllConversations();
+        $scope.unselectAllElements();
         $scope.page = page;
         if (page > 0 && $scope.conversationCount() > ((page - 1) * $scope.conversationsPerPage)) {
             if (page === 1) {
@@ -661,38 +695,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     var elementsSelected = function() {
         return _.where($scope.conversations, {Selected: true});
-    };
-
-    /**
-     * Return conversations id selected
-     * @return {Array}
-     */
-    var idsSelected = function() {
-
-    };
-
-    $scope.showTo = function(message) {
-        return (
-            $scope.senderIsMe(message) &&
-            (
-                !$state.is('secured.inbox.list') &&
-                !$state.is('secured.archive.list')  &&
-                !$state.is('secured.spam.list')  &&
-                !$state.is('secured.trash.list')
-            )
-        ) ? true : false;
-    };
-
-    $scope.showFrom = function(message) {
-        return ((
-                !$state.is('secured.inbox.list') &&
-                !$state.is('secured.drafts.list')  &&
-                !$state.is('secured.archive.list') &&
-                !$state.is('secured.sent.list') &&
-                !$state.is('secured.spam.list') &&
-                !$state.is('secured.trash.list')
-            )
-        ) ? true : false;
     };
 
     /**
@@ -810,6 +812,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     /**
      * Go to label folder + reset parameters
+     * @param {String} labelID
      */
     $scope.goToLabel = function(labelID) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
@@ -881,6 +884,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }));
     };
 
+    /**
+     * Order the list by a specific parameter
+     * @param {String} criterion
+     */
     $scope.orderBy = function(criterion) {
         $state.go($state.current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
@@ -888,6 +895,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }));
     };
 
+    /**
+     * Empty specific location
+     * @param {String} mailbox
+     */
     $scope.empty = function(mailbox) {
         var title = $translate.instant('CONFIRMATION');
         var message = $translate.instant('ARE_YOU_SURE?') + ' ' + $translate.instant('THIS_CANNOT_BE_UNDONE.');
@@ -899,9 +910,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     title: title,
                     message: message,
                     confirm: function() {
+                        // Generate event to empty folder
                         cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                         cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                        
+
                         if (mailbox === 'drafts') {
                             promise = Message.emptyDraft().$promise;
                         } else if (mailbox === 'spam') {
@@ -927,5 +939,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
     };
 
+    // Call initialization
     $scope.initialization();
 });

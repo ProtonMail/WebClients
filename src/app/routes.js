@@ -780,6 +780,6 @@ angular.module("proton.routes", [
     };
 
     $rootScope.deselectAll = function() {
-        $rootScope.$broadcast('unselectAllConversations');
+        $rootScope.$broadcast('unselectAllElements');
     };
 });

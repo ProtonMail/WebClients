@@ -25,11 +25,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
 
     // Broadcast active status of this current conversation for the conversation list
-    $rootScope.$broadcast('activeConversation', conversation.ID);
+    $rootScope.$broadcast('activeElement', conversation.ID);
 
     // Unactive conversations when this controller is destroyed
     $scope.$on('$destroy', function() {
-        $rootScope.$broadcast('unactiveConversations');
+        $rootScope.$broadcast('unactiveElements');
     });
 
     // Listeners
