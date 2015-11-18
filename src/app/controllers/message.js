@@ -257,7 +257,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
-     * Decrypt the content of the current message and store it in '$scope.content'
+     * Decrypt the content of the current message and store it in 'message.DecryptedBody'
      * @param {Boolean} print
      */
     $scope.displayContent = function() {
@@ -669,7 +669,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var fw_length = fw_prefix.length;
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.content + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.DecryptedBody + blockquoteEnd;
 
         if(angular.isDefined($scope.message.AddressID)) {
             base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
