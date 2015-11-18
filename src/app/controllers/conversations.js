@@ -559,16 +559,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Close all label dropdown
      */
     $scope.closeLabels = function() {
-        var animationDuration = 120;
-        
-        $('.pm_dropdown')
-        .stop(1, 1)
-        .css('opacity', 1)
-        .slideUp( (animationDuration*2) )
-        .animate(
-            { opacity: 0 },
-            { queue: false, duration: (animationDuration*2) }
-        );
+        $('.pm_dropdown').removeClass('active');
     };
 
     /**
