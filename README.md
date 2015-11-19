@@ -44,6 +44,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] Build search modal with select location (for **Richard**)
 * [x] Manage attachments (for **Richard**)
 * [x] Review payment (for **Richard**)
+* [ ] Drag and drop element (conversation and message)
 
 ### QA
 
