@@ -1,6 +1,19 @@
 angular.module("proton.controllers.Settings")
 
-.controller('AccountController', function($log, $rootScope, $scope, $timeout, $translate, authentication, networkActivityTracker, notify, Setting, tools, confirmModal) {
+.controller('AccountController', function(
+    $log,
+    $rootScope,
+    $scope,
+    $timeout,
+    $translate,
+    authentication,
+    confirmModal,
+    deleteAccountModal,
+    networkActivityTracker,
+    notify,
+    Setting,
+    tools
+) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
@@ -197,19 +210,14 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.deleteAccount = function() {
-        var title = $translate.instant('DELETE_ACCOUNT');
-        var message = 'Are you sure you want to delete your current account?';
-
-        confirmModal.activate({
+        deleteAccountModal.activate({
             params: {
-                title: title,
-                message: message,
                 confirm: function() {
                     // TODO call request
-                    confirmModal.deactivate();
+                    deleteAccountModal.deactivate();
                 },
                 cancel: function() {
-                    confirmModal.deactivate();
+                    deleteAccountModal.deactivate();
                 }
             }
         });

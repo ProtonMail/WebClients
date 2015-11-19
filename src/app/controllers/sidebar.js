@@ -125,6 +125,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Send request to get the last event
      */
     $scope.lastEvent = function() {
+        $scope.spinIcon();
         eventManager.call();
     };
 
@@ -165,8 +166,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
         // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
         if(sameFolder === true && firstPage === true) {
-            // Do nothing
-            // Chut...
+            $scope.lastEvent();
         } else {
             var params = {page: undefined, filter: undefined, sort: undefined};
 

@@ -10,15 +10,14 @@ angular.module("proton.controllers.Settings")
     organization,
     Payment,
     paymentModal,
-    stripeModal
+    payment
 ) {
-    $scope.organization = organization.Organization;
-    $scope.currency = 'CHF'; // TODO we can detect localisation
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
-    $scope.plan = 'plus'; // TODO need initialization
-    $scope.billing = 1; // one month
+    $scope.usedSpace = authentication.user.UsedSpace;
+    $scope.maxSpace = authentication.user.MaxSpace;
 
     $scope.options = [
+        {label: '0', value: 0},
         {label: '1', value: 1},
         {label: '2', value: 2},
         {label: '3', value: 3},
@@ -62,20 +61,28 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.plusAdditionals = [
-        {checked: false, type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 1, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
-        {checked: false, type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_DOMAIN'), long: $translate.instant('EXTRA_DOMAIN')},
-        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')}
+        {type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 0, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
+        {type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_DOMAIN'), long: $translate.instant('EXTRA_DOMAIN')},
+        {type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 0, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')}
     ];
 
     $scope.businessAdditionals = [
-        {checked: false, type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 1, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
-        {checked: false, type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_DOMAIN'),long: $translate.instant('EXTRA_DOMAIN')},
-        {checked: false, type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 1, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')},
-        {checked: false, type: 'member', price: { 1: 5, 12: 49.99 }, number: 1, quantity: 1, title: $translate.instant('EXTRA_USER'), long: $translate.instant('EXTRA_USER')}
+        {type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 0, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
+        {type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_DOMAIN'),long: $translate.instant('EXTRA_DOMAIN')},
+        {type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 0, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')},
+        {type: 'member', price: { 1: 5, 12: 49.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_USER'), long: $translate.instant('EXTRA_USER')}
     ];
 
-    $scope.usedSpace = authentication.user.UsedSpace;
-    $scope.maxSpace = authentication.user.MaxSpace;
+    /**
+     * Method called at the initialization of this controller
+     */
+    $scope.initialization = function() {
+        $scope.organization = organization.Organization; // TODO need initialization
+        $scope.current = payment.Payment; // TODO need initialization
+        $scope.currency = 'CHF'; // TODO need initialization
+        $scope.plan = 'plus'; // TODO need initialization
+        $scope.billing = 1; // TODO need initialization
+    };
 
     /**
      * Returns a string for the storage bar
@@ -107,7 +114,7 @@ angular.module("proton.controllers.Settings")
         }
 
         _.each(additionals, function(element) {
-            if(element.checked === true) {
+            if(element.quantity > 0) {
                 total += element.price[$scope.billing] * element.quantity;
             }
         });
@@ -133,7 +140,9 @@ angular.module("proton.controllers.Settings")
         }
 
         if(angular.isDefined(additionals)) {
-            var element = _.findWhere(additionals, {type: type, checked: true});
+            var element = _.filter(additionals, function(additional) {
+                return additional.type === type && additional.quantity > 0;
+            });
 
             if(angular.isDefined(element)) {
                 quantity += element.quantity;
@@ -145,14 +154,21 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open modal to pay the plan configured
+     * @param {String} name
      */
     $scope.choose = function(name) {
+        var current = new Date();
         var configuration = {
-            Amount: $scope.total(name),
-            Currency: $scope.currency,
-            BillingCycle: $scope.billing,
+            Subscription: {
+                Amount: $scope.total(name),
+                Currency: $scope.currency,
+                BillingCycle: $scope.billing,
+                Time: current.getTime(),
+                PeriodStart: current.getTime(),
+                ExternalProvider: "Stripe"
+            },
             Cart: {
-                Current: null,
+                Current: $scope.current,
                 Future: {
                     Use2FA: true,
                     MaxDomains: $scope.count('domain', name),
@@ -162,34 +178,41 @@ angular.module("proton.controllers.Settings")
                 }
             }
         };
-        // Payment.plan(configuration).then(function() {
-            var additionals = [];
-            var pack = {};
 
-            if(name === 'plus') {
-                pack = $scope.plus;
-                additionals = $scope.plusAdditionals;
-            } else if(name === 'business') {
-                pack = $scope.business;
-                additionals = $scope.businessAdditionals;
-            }
+        // Check configuration choosed
+        Payment.plan(configuration).then(function(result) {
+            if(result.data && result.data.Code === 1000) {
+                var additionals = [];
+                var pack = {};
 
-            paymentModal.activate({
-                params: {
-                    currency: $scope.currency,
-                    billing: $scope.billing,
-                    pack: pack,
-                    additionals: additionals,
-                    submit: function(datas) {
-                        console.log(datas);
-                        paymentModal.deactivate();
-                    },
-                    cancel: function() {
-                        paymentModal.deactivate();
-                    }
+                if(name === 'plus') {
+                    pack = $scope.plus;
+                    additionals = $scope.plusAdditionals;
+                } else if(name === 'business') {
+                    pack = $scope.business;
+                    additionals = $scope.businessAdditionals;
                 }
-            });
-        // });
+
+                paymentModal.activate({
+                    params: {
+                        configuration: configuration,
+                        currency: $scope.currency,
+                        billing: $scope.billing,
+                        pack: pack,
+                        additionals: additionals,
+                        submit: function(datas) {
+                            console.log(datas);
+                            paymentModal.deactivate();
+                        },
+                        cancel: function() {
+                            paymentModal.deactivate();
+                        }
+                    }
+                });
+            } else {
+                // TODO notify
+            }
+        });
     };
 
     /**
@@ -214,30 +237,26 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.viewCard = function() {
-        // Payment.source().then(function(result) {
-        //     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-        //         var card = result.data.card;
-                var card = {
-                    fullname: 'John Doe',
-                    number: '*****************' + 1231,
-                    month: 12,
-                    year: 15
-                };
+        Payment.sources().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                // Array of credit card information
+                var cards = result.data.Source;
+
                 cardModal.activate({
                     params: {
-                        card: card,
+                        card: _.first(cards), // We take only the first
                         mode: 'view',
                         cancel: function() {
                             cardModal.deactivate();
                         }
                     }
                 });
-        //     } else {
-        //         notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        //     }
-        // }, function(error) {
-        //     notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        // });
+            } else {
+                notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
+        });
     };
 
     /**
@@ -253,4 +272,7 @@ angular.module("proton.controllers.Settings")
             }
         });
     };
+
+    // Call initialization
+    $scope.initialization();
 });

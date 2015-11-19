@@ -424,21 +424,6 @@ angular.module("proton.modals", [])
     });
 })
 
-// Stripe modal
-.factory('stripeModal', function(pmModal, Stripe) {
-    return pmModal({
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/stripe.tpl.html',
-        controller: function(params) {
-            this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
-            };
-        }
-    });
-})
-
 // Card modal
 .factory('cardModal', function(pmModal, Stripe, Payment, notify, $translate) {
     return pmModal({
@@ -456,23 +441,38 @@ angular.module("proton.modals", [])
                 this.year = '';
                 this.cvc = '';
             } else if(params.mode === 'view' && angular.isDefined(params.card)) {
-                this.number = params.card.number;
-                this.fullname = params.card.fullname;
-                this.month = params.card.month;
-                this.year = params.card.year;
+                this.status = params.card.Status;
+                this.brand = params.card.Brand;
+                this.number = '**** **** **** ' + params.card.Last4;
+                this.fullname = params.card.Name;
+                this.month = params.card.ExpMonth;
+                this.year = params.card.ExpYear;
             }
             // Functions
             this.submit = function() {
                 this.process = true;
 
                 var stripeResponseHandler = function(status, response) {
-                    this.process = false;
-
                     if(status === 200) {
-                        console.log('stripeResponseHandler OK');
-                        params.cancel();
+                        // Send request to change credit card
+                        Payment.change({
+                            Source: {
+                                Object: 'token',
+                                Token: response.id
+                            }
+                        }).then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
+                                params.cancel();
+                            } else {
+                                this.process = false;
+                            }
+                        }.bind(this), function(error) {
+                            this.process = false;
+                        }.bind(this));
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
+                        this.process = false;
                     }
                 }.bind(this);
 
@@ -539,7 +539,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe, Payment, $translate) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -570,7 +570,7 @@ angular.module("proton.modals", [])
 
             if(angular.isDefined(params.additionals)) {
                 _.each(params.additionals, function(element) {
-                    if(element.checked === true) {
+                    if(element.quantity > 0) {
                         var price = element.price[params.billing] * element.quantity;
 
                         this.cart.push({
@@ -588,19 +588,33 @@ angular.module("proton.modals", [])
                 this.process = true;
 
                 var stripeResponseHandler = function(status, response) {
-                    this.process = false;
-
                     if(status === 200) {
-                        Payment.subscribe({
-                            Plan: plan,
+                        // Add data from Stripe
+                        params.configuration.Source = {
+                            Object: 'token',
                             Token: response.id
-                        }).then(function(result) {
-                            this.step = 'thanks';
+                        };
+                        // Send request to subscribe
+                        Organization.create(params.configuration).then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                this.process = false;
+                                this.step = 'thanks';
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                this.process = false;
+                                // TODO notify
+                            } else {
+                                this.process = false;
+                                // TODO notify
+                            }
                         }, function(error) {
-                            // TODO manage error
+                            this.process = false;
+                            // TODO notify
                         });
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
+                        this.process = false;
+                    } else {
+                        this.process = false;
                     }
                 }.bind(this);
 
@@ -944,6 +958,30 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit(this.form);
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+// Modal to delete account
+.factory('deleteAccountModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/deleteAccount.tpl.html',
+        controller: function(params) {
+            // Variables
+
+            // Functions
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit();
                 }
             };
 

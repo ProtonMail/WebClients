@@ -43,6 +43,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Fix style when we print a message (for **Jason**)
 * [ ] Build search modal with select location (for **Richard**)
 * [ ] Manage attachments (for **Richard**)
+* [ ] Review payment (for **Richard**)
 
 ### QA
 

@@ -60,8 +60,14 @@ angular.module("proton.models.payments", [])
         /**
          * Get current payment information from Stripe
          */
-        source: function() {
+        sources: function() {
             return $http.get(url.get() + '/payments/source');
+        },
+        /**
+         * Send a new credit card information
+         */
+        change: function(Obj) {
+            return $http.post(url.get() + '/payments/source', Obj);
         }
     };
 })
