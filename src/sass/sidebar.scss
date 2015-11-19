@@ -117,6 +117,9 @@ section.sidebar {
                     &:hover {
                         color: #fff;
                     }
+                    &:focus {
+                        outline: 0;
+                    }
                 }
                 em {
                     font-style: normal;
