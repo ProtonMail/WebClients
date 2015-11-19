@@ -11,7 +11,6 @@
             <i class="fa fa-lock"></i>
             <!-- <pre class="time">{{ conversation.NumAttachments }}</pre> -->
             <span class="time" ng-hide="draft()">{{ ::message.Time | longReadableTime }}</span>
-            <span class="time text-red" ng-show="draft()">draft</span>
         </span>
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>
@@ -96,7 +95,7 @@
             </div>
             <div class="meta">
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
-                    <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)">
+                    <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>
                         <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
                         <a href="" ng-click="detachLabel(label)" class="labelClose">

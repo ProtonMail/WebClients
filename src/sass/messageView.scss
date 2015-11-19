@@ -173,7 +173,8 @@
             }
     	}
 		.sub {
-			padding-left: 1.5rem;
+            border-bottom: 1px solid $border;
+            padding-left: 1.5rem;
 			padding-right: 145px;
 			position: relative;
 			color: #999;

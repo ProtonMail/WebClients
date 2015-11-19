@@ -540,15 +540,33 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
+    /**
+     * Return label
+     * @param {String} id
+     */
     $scope.getLabel = function(id) {
         return _.findWhere($scope.labels, {ID: id});
     };
 
+    /**
+     * Return style for label
+     * @param {Object} label
+     */
     $scope.getColorLabel = function(label) {
         return {
             borderColor: label.Color,
             color: label.Color
         };
+    };
+
+    /**
+     * Go to label folder + reset parameters
+     * @param {Object} label
+     */
+    $scope.goToLabel = function(label) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
+
+        $state.go('secured.label.list', params);
     };
 
     /**

@@ -58,7 +58,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var unreads = _.where($scope.messages, {IsRead: 0});
 
         if(angular.isDefined($rootScope.openMessage)) { // Open specific message
-            // 'openMessage' already initialized when the user click
+            // '$rootScope.openMessage' already initialized when the user click
         } else if(unreads.length > 0) {
             // Open all unread messages
             $rootScope.openMessage = _.map(unreads, function(message) { return message.ID; });
@@ -67,7 +67,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             $rootScope.openMessage = [_.last($scope.messages).ID];
         }
 
-        // $scope.scrollToMessage(open);
+        $scope.scrollToMessage($rootScope.openMessage[0]);
     };
 
     /**
@@ -238,10 +238,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     /**
      * Scroll to the message specified
-     * @param {Object} message
+     * @param {String} ID
      */
-    $scope.scrollToMessage = function(message) {
-        var index = $scope.messages.indexOf(message);
+    $scope.scrollToMessage = function(ID) {
+        var index = _.findIndex($scope.messages, {ID: ID});
         var id = '#message' + index; // TODO improve it for the search case
 
         $timeout(function() {
