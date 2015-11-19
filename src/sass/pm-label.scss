@@ -17,6 +17,9 @@
 		width: 2rem;
 		display: block;
 	}
+	&:hover {
+		background-color: $light;
+	}
 	&.inline {
 		position: relative;
 		display: inline-block;

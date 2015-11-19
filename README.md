@@ -73,6 +73,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 * [ ] Move all elements, the main checkbox stay checked (for **Richard**)
 * [ ] Next / previous conversation (for **Richard**)
+* [ ] Next / previous conversations on search (for **Richard**)
 
 ### License
 

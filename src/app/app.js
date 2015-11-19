@@ -320,7 +320,7 @@ angular.module("proton", [
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
-.run(function($rootScope, $location, $state, authentication, $log, networkActivityTracker) {
+.run(function($rootScope, $location, $state, authentication, $log, $timeout, networkActivityTracker) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
         networkActivityTracker.clear();
@@ -373,11 +373,13 @@ angular.module("proton", [
         $rootScope.toState = toState.name.replace(".", "-");
 
         if($rootScope.scrollToBottom === true) {
-            setTimeout(function() {
-                $('#content').animate({
-                    scrollTop: $("#pm_list").offset().top
-                }, 1);
-            }, 10);
+            if($("#pm_list")) {
+                $timeout(function() {
+                    $('#content').animate({
+                        scrollTop: $("#pm_list").offset().top
+                    }, 1);
+                }, 100);
+            }
 
             $rootScope.scrollToBottom = false;
         }

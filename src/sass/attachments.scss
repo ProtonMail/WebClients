@@ -71,6 +71,9 @@
 			strong {
 				text-transform: initial;
 			}
+			&:hover {
+				background-color: $light;
+			}
 			.fa {
 				color: $gray;
 			}
