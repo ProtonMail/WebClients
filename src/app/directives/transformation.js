@@ -13,7 +13,7 @@ angular.module("proton.transformation", [])
     };
 })
 
-.directive('hideFirstBlockquote', function($timeout) {
+.directive('hideFirstBlockquote', function($timeout, $translate) {
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
@@ -23,6 +23,7 @@ angular.module("proton.transformation", [])
 
                     if(blockquote.length > 0) {
                         var button = angular.element('<button/>', {
+                            title: $translate.instant('SHOW_PREVIOUS'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
                                 blockquote.show();
