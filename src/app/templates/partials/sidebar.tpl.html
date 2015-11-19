@@ -6,7 +6,7 @@
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
             <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list');">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('inbox')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('inbox')>-1"></button>
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="getUnread('inbox')"></em>
@@ -14,7 +14,7 @@
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
             <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('drafts')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('drafts')>-1"></button>
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
                 <em ng-bind="getUnread('drafts')"></em>
@@ -22,7 +22,7 @@
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
             <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('sent')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('sent')>-1"></button>
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
                 <em ng-bind="getUnread('sent')"></em>
@@ -30,7 +30,7 @@
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
             <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('starred')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('starred')>-1"></button>
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="getUnread('starred')"></em>
@@ -38,7 +38,7 @@
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
             <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('archive')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('archive')>-1"></button>
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="getUnread('archive')"></em>
@@ -46,7 +46,7 @@
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('inbox')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('inbox')>-1"></button>
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="getUnread('spam')"></em>
@@ -54,7 +54,7 @@
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
             <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list')">
-                <button class="fa fa-repeat pull-right hidden-xs refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('trash')>-1"></button>
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="getUnread('trash')>-1"></button>
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
                 <em ng-bind="getUnread('trash')"></em>
