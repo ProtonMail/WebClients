@@ -107,6 +107,16 @@ section.sidebar {
                     position: absolute;
                     right: 0;
                     top: 0;
+                    cursor: pointer;
+                    z-index: 4;
+                    background: transparent;
+                    -webkit-appearance: none;
+                       -moz-appearance: none;
+                            appearance: none;
+                            border: none;
+                    &:hover {
+                        color: #fff;
+                    }
                 }
                 em {
                     font-style: normal;
