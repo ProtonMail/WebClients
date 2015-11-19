@@ -41,9 +41,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Fix style when we print a message (for **Jason**)
-* [ ] Build search modal with select location (for **Richard**)
-* [ ] Manage attachments (for **Richard**)
-* [ ] Review payment (for **Richard**)
+* [x] Build search modal with select location (for **Richard**)
+* [x] Manage attachments (for **Richard**)
+* [x] Review payment (for **Richard**)
 
 ### QA
 

@@ -10,7 +10,6 @@ angular.module("proton.routes", [
         'page',
         'filter',
         'sort',
-        'location',
         'label',
         'from',
         'to',

@@ -184,14 +184,9 @@ angular.module("proton.modals", [])
                     parameters.to = this.to;
                     parameters.subject = this.subject;
                     parameters.attachments = parseInt(this.attachments);
-                    parameters.starred = parseInt(this.starred);
 
                     if(parseInt($('#search_folder').val()) !== -1) {
-                        parameters.location = parseInt($('#search_folder').val());
-                    }
-
-                    if(parseInt($('#search_label').val()) !== 0) {
-                        parameters.label = $('#search_label').val();
+                        parameters.label = $('#search_folder').val();
                     }
 
                     if($('#search_start').val().length > 0) {

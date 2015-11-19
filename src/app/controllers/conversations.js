@@ -189,7 +189,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         if (mailbox === 'search') {
-            params.Label = $stateParams.location;
+            params.Label = $stateParams.label;
             params.Keyword = $stateParams.words;
             params.To = $stateParams.to;
             params.From = $stateParams.from;
@@ -197,7 +197,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             params.Begin = $stateParams.begin;
             params.End = $stateParams.end;
             params.Attachments = $stateParams.attachments;
-            params.Label = $stateParams.label;
         } else if(mailbox === 'label') {
             params.Label = $stateParams.label;
         } else {
