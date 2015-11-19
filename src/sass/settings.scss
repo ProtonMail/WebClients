@@ -329,6 +329,8 @@
                                 line-height: 2rem;
                                 height: 2rem;
                                 border-bottom: 1px solid $border;
+                                float: left;
+                                width: 100%;
                                 &:last-child {
                                     border-bottom: 0;
                                 }
@@ -512,18 +514,44 @@
                 .features {
                     display: block;
                     list-style-type: none;
-                    margin: 0 0 1rem 0;
+                    margin: 0;
                     padding: 20px;
                     background: $light;
-                    border-bottom: 1px solid $border;
                     li {
                         display: block;
                         list-style-type: none;
                         margin: 0;
                         padding: 0 10px;
-                        line-height: 2rem;
-                        height: 2rem;
+                        line-height: 2.5rem;
+                        height: 2.5rem;
                         border-bottom: 1px solid $border;
+                        strong {
+                            font-weight: 400;
+                        }
+                        .pm_select {
+                            display: inline-block;
+                            padding-right: 0;
+                            background: #fff;
+                            height: 25px;
+                            line-height: 25px;
+                            margin: 0 .5rem;
+                            select {
+                                padding-right: 2rem;
+                                height: 25px;
+                                line-height: 25px;
+                            }
+                            .fa-angle-down {
+                                right: 5px;
+                                height: 25px;
+                                line-height: 25px;
+                            }
+                        }
+                        .cost {
+                            float: right;
+                            strong {
+                                font-weight: 700;
+                            }
+                        }
                         &:last-child {
                             border-bottom: 0;
                         }
@@ -613,6 +641,9 @@
                     strong {
                         color: #000;
                         margin-right: .5rem;
+                    }
+                    small {
+                        font-size: 1rem;
                     }
                 }
                 .action {
