@@ -90,7 +90,6 @@ angular.module("proton", [
     "proton.controllers.Message",
     "proton.controllers.Compose",
     "proton.controllers.Outside",
-    "proton.controllers.Search",
     "proton.controllers.Secured",
     "proton.controllers.Settings",
     "proton.controllers.Sidebar",

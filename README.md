@@ -72,7 +72,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 ### Bugs
 
 * [ ] Move all elements, the main checkbox stay checked (for **Richard**)
-* [ ] Next / previous conversation
+* [ ] Next / previous conversation (for **Richard**)
 
 ### License
 
