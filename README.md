@@ -38,7 +38,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
 * [ ] Think about hover style (for design)
-* [ ] How display spam / archive / trash / drafts tag in conversations list? (for design)
+* [ ] Update dashboard (for **Jason**)
+* [ ] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
 * [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Fix style when we print a message (for **Jason**)
 * [x] Build search modal with select location (for **Richard**)
@@ -69,6 +70,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] next page of conversations
 * [ ] next page of messages (need **Bart**)
 * [ ] print message
+* [ ] message expired
 
 ### Bugs
 
