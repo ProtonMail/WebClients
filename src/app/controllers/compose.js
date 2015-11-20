@@ -872,7 +872,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             return result;
         };
 
-        if ($scope.saving) {
+        if ($scope.saving && message.savePromise) {
             message.savePromise = message.savePromise.then(nextSave, nextSave);
             return message.savePromise;
         }
