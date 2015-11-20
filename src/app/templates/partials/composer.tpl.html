@@ -128,7 +128,7 @@
                     <footer class="text-right">
                         <button
                         type="button"
-                        class="pm_button"
+                        class="pm_button pull-left"
                         ng-click="clearEncrypt(message, params, encryptForm);">
                         {{ 'CANCEL' | translate }}
                         </button>
@@ -163,7 +163,7 @@
                     </h4>
                 </div>
                 <footer class="text-right">
-                    <button type="button" class="pm_button" ng-click="clearExpiration(message)">
+                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)">
                         {{ 'CANCEL' | translate }}
                     </button>
                     <button type="button" class="pm_button primary" ng-click="setExpiration(message, params)">
@@ -323,7 +323,7 @@
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
                 {{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
-            <footer ng-hide="message.minimized" ng-class="{ 'disabled': displayPanel }">
+            <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button
                 class="pm_button btn-add-attachment"
                 ng-class="{
