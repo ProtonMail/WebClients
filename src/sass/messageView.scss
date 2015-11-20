@@ -75,7 +75,7 @@
 			background: $primary;
 			color: #fff;
 			padding: 0;
-		    line-height: 10px !important;
+		    line-height: 12px !important;
 		    height: 14px !important;
 		    padding: 0 1px;
 		    margin-right: .5rem;
@@ -93,9 +93,14 @@
                 white-space: nowrap;
             }
             em {
-                color: #669;
-				font-style: normal;
+                color: #555;
                 display: inline-block;
+                font-weight: 700;
+            }
+            em.draftTag {
+                color: $primary;
+                margin-left: 1rem;
+                font-weight: 400;
             }
         }
     	header {
