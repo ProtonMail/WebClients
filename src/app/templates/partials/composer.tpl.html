@@ -372,7 +372,7 @@
                     class="pm_button"
                     ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
                     ng-click="close(message, true, false)"
-                    pt-tooltip="{{ 'DISCARD' | translate }}"
+                    pt-tooltip="{{ 'DELETE_THE_DRAFT' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="!!message.maximized"> {{ 'DISCARD' | translate }}</span>

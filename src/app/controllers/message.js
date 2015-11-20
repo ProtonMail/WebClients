@@ -728,14 +728,23 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         return base;
     };
 
+    /**
+     * Compose a reply to a specific message in the thread
+     */
     $scope.reply = function() {
         $rootScope.$broadcast('loadMessage', buildMessage('reply'));
     };
 
+    /**
+     * Compose reply all
+     */
     $scope.replyAll = function() {
         $rootScope.$broadcast('loadMessage', buildMessage('replyall'));
     };
 
+    /**
+     * Compose forward
+     */
     $scope.forward = function() {
         $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
     };
