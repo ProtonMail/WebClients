@@ -38,13 +38,10 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
 * [ ] Think about hover style (for design)
-* [ ] Update dashboard (for **Jason**)
+* [ ] Implement the dashboard logic (for **Richard**)
 * [ ] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
-* [ ] Fix problems with fonts when we load the page (for **Jason**)
 * [ ] Fix style when we print a message (for **Jason**)
-* [x] Build search modal with select location (for **Richard**)
-* [x] Manage attachments (for **Richard**)
-* [x] Review payment (for **Richard**)
+* [ ] Enable drag and drop for labels (for **Jason**)
 * [ ] Drag and drop element (conversation and message)
 
 ### QA
@@ -77,6 +74,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Move all elements, the main checkbox stay checked (for **Richard**)
 * [ ] Next / previous conversation (for **Richard**)
 * [ ] Next / previous conversations on search (for **Richard**)
+* [ ] Upload large file (more than 2 mb) (for **Jason**)
 
 ### License
 
