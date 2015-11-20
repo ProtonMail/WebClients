@@ -323,7 +323,7 @@
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
                 {{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
-            <footer ng-hide="message.minimized">
+            <footer ng-hide="message.minimized" ng-class="{ 'disabled': displayPanel }">
                 <button
                 class="pm_button btn-add-attachment"
                 ng-class="{

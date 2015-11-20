@@ -24,6 +24,12 @@ body.maximizedComposer {
 		.dotdotdot {
 			display: none;
 		}
+		footer.disabled {
+			.pm_button {
+				pointer-events: none;
+				opacity: .5;
+			}
+		}
 		.composeEditor {
 			float: left;
 			width: 100%;

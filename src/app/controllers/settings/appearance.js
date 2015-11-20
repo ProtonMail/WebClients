@@ -41,7 +41,12 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveComposerMode = function(form) {
+
         var value = parseInt($scope.ComposerMode);
+
+        if (value === parseInt(authentication.user.ComposerMode) ) {
+            return;
+        }
 
         networkActivityTracker.track(
             Setting.setComposerMode({
@@ -67,6 +72,11 @@ angular.module("proton.controllers.Settings")
     $scope.saveLayoutMode = function(form) {
 
         var value = parseInt($scope.LayoutMode);
+
+        if (value === parseInt(authentication.user.LayoutMode) ) {
+            return;
+        }
+
         networkActivityTracker.track(
             Setting.setViewlayout({
                 "ViewLayout": value
