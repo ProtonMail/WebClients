@@ -67,7 +67,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] next page of conversations
 * [ ] next page of messages (need **Bart**)
 * [ ] print message
-* [ ] message expired
+* [ ] message expired (**Jason**)
 
 ### Bugs
 
