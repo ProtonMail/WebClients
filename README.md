@@ -69,15 +69,16 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] print message
 * [ ] message expired (**Jason**)
 
-    Read from conversation
-    Row view
-    Click a message that is unread
-    The counter remains unchanged in the sidebar
-    Click back in the toolbar
-    The counter remains unchanged in the sidebar
-    The message is still unread
-    5 seconds later, the counter in the sidebar and message are marked read
- 
+```
+Read from conversation
+Row view
+Click a message that is unread
+The counter remains unchanged in the sidebar
+Click back in the toolbar
+The counter remains unchanged in the sidebar
+The message is still unread
+5 seconds later, the counter in the sidebar and message are marked read
+```
  
 ### Bugs
 
