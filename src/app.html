@@ -19,6 +19,21 @@
     <% styles.forEach(function (file) { %>
         <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
+
+    <style type="text/css">
+    @media print {
+        * {
+          word-break: break-word;
+        }
+        blockquote {
+            margin-left: 1rem !important;
+            padding: 0 !important;
+        }
+        blockquote blockquote blockquote {
+            margin-left: 0 !important;
+        }
+    }
+    </style>
     <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
 <body
