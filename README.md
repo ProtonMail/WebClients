@@ -52,7 +52,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] unstar from conversations
 * [x] unstar from conversation
 * [x] unstar from message
-* [ ] read from conversations
+* [ ] read from conversations (Bug)
 * [ ] read from message
 * [ ] unread from conversations
 * [ ] unread from message
@@ -69,6 +69,16 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] print message
 * [ ] message expired (**Jason**)
 
+ Read from conversation
+ Row view
+ Click a message that is unread
+ The counter remains unchanged in the sidebar
+ Click back in the toolbar
+ The counter remains unchanged in the sidebar
+ The message is still unread
+ 5 seconds later, the counter in the sidebar and message are marked read
+ 
+ 
 ### Bugs
 
 * [ ] Move all elements, the main checkbox stay checked (for **Richard**)
