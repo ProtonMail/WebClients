@@ -16,62 +16,99 @@ angular.module("proton.controllers.Settings")
     $scope.usedSpace = authentication.user.UsedSpace;
     $scope.maxSpace = authentication.user.MaxSpace;
 
-    $scope.options = [
-        {label: '0', value: 0},
-        {label: '1', value: 1},
-        {label: '2', value: 2},
-        {label: '3', value: 3},
-        {label: '4', value: 4},
-        {label: '5', value: 5},
-        {label: '6', value: 6},
-        {label: '7', value: 7},
-        {label: '8', value: 8},
-        {label: '9', value: 9},
-        {label: '10', value: 10}
+    // Prices
+    $scope.plusPrice = {1: 5, 12: 47};
+    $scope.businessPrice = {1: 10, 12: 97};
+    $scope.spacePrice = {1: 1, 12: 9.99};
+    $scope.domainPrice = {1: 2, 12: 19.99};
+    $scope.addressPrice = {1: 1, 12: 9.99};
+    $scope.memberPrice = {1: 5, 12: 49.99 };
+
+    // Options
+    $scope.spacePlusOptions = [
+        {label: '5.000 MB', value: 5000 * 1000 * 1000, index: 0},
+        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 1},
+        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 2},
+        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 3},
+        {label: '25.000 MB', value: 25000 * 1000 * 1000, index: 4},
+        {label: '30.000 MB', value: 30000 * 1000 * 1000, index: 5}
     ];
 
-    $scope.plus = {
-        title: $translate.instant('PLUS'),
-        long: $translate.instant('PLUS_PLAN'),
-        number: 1,
-        price: {
-            1: 5,
-            12: 49.99
-        },
-        space: 5,
-        domain: 1,
-        address: 5,
-        member: 0,
-        quantity: 1
-    };
-
-    $scope.business = {
-        title: $translate.instant('BUSINESS'),
-        long: $translate.instant('BUSINESS_PLAN'),
-        number: 1,
-        price: {
-            1: 10,
-            12: 99.99
-        },
-        space: 10,
-        domain: 1,
-        address: 5,
-        member: 2,
-        quantity: 1
-    };
-
-    $scope.plusAdditionals = [
-        {type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 0, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
-        {type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_DOMAIN'), long: $translate.instant('EXTRA_DOMAIN')},
-        {type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 0, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')}
+    $scope.spaceBusinessOptions = [
+        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 0},
+        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 1},
+        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 2},
+        {label: '25.000 MB', value: 25000 * 1000 * 1000, index: 3},
+        {label: '30.000 MB', value: 30000 * 1000 * 1000, index: 4}
     ];
 
-    $scope.businessAdditionals = [
-        {type: 'space', price: { 1: 1, 12: 9.99 }, number: 2, quantity: 0, title: $translate.instant('EXTRA_STORAGE'), long: $translate.instant('EXTRA_STORAGE')},
-        {type: 'domain', price: { 1: 2, 12: 19.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_DOMAIN'),long: $translate.instant('EXTRA_DOMAIN')},
-        {type: 'address', price: { 1: 1, 12: 9.99 }, number: 5, quantity: 0, title: $translate.instant('EXTRA_ADDRESSES'), long: $translate.instant('EXTRA_ADDRESSES')},
-        {type: 'member', price: { 1: 5, 12: 49.99 }, number: 1, quantity: 0, title: $translate.instant('EXTRA_USER'), long: $translate.instant('EXTRA_USER')}
+    $scope.domainPlusOptions = [
+        {label: '1', value: 1, index: 0},
+        {label: '2', value: 2, index: 1},
+        {label: '3', value: 3, index: 2},
+        {label: '4', value: 4, index: 3},
+        {label: '5', value: 5, index: 4},
+        {label: '6', value: 6, index: 5},
+        {label: '7', value: 7, index: 6},
+        {label: '8', value: 8, index: 7},
+        {label: '9', value: 9, index: 8},
+        {label: '10', value: 10, index: 9}
     ];
+
+    $scope.domainBusinessOptions = [
+        {label: '1', value: 1, index: 0},
+        {label: '2', value: 2, index: 1},
+        {label: '3', value: 3, index: 2},
+        {label: '4', value: 4, index: 3},
+        {label: '5', value: 5, index: 4},
+        {label: '6', value: 6, index: 5},
+        {label: '7', value: 7, index: 6},
+        {label: '8', value: 8, index: 7},
+        {label: '9', value: 9, index: 8},
+        {label: '10', value: 10, index: 9}
+    ];
+
+    $scope.addressPlusOptions = [
+        {label: '5', value: 5, index: 0},
+        {label: '10', value: 10, index: 1},
+        {label: '15', value: 15, index: 2},
+        {label: '20', value: 20, index: 3},
+        {label: '25', value: 25, index: 4},
+        {label: '30', value: 30, index: 5}
+    ];
+
+    $scope.addressBusinessOptions = [
+        {label: '5', value: 5, index: 0},
+        {label: '10', value: 10, index: 1},
+        {label: '15', value: 15, index: 2},
+        {label: '20', value: 20, index: 3},
+        {label: '25', value: 25, index: 4},
+        {label: '30', value: 30, index: 5}
+    ];
+
+    $scope.memberBusinessOptions = [
+        {label: '2', value: 2, index: 0},
+        {label: '3', value: 3, index: 1},
+        {label: '4', value: 4, index: 2},
+        {label: '5', value: 5, index: 3},
+        {label: '6', value: 6, index: 4},
+        {label: '7', value: 7, index: 5},
+        {label: '8', value: 8, index: 6},
+        {label: '9', value: 9, index: 7},
+        {label: '10', value: 10, index: 8}
+    ];
+
+    // Selects
+    $scope.spacePlus = $scope.spacePlusOptions[0];
+    $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
+
+    $scope.domainPlus = $scope.domainPlusOptions[0];
+    $scope.domainBusiness = $scope.domainBusinessOptions[0];
+
+    $scope.addressPlus = $scope.addressPlusOptions[0];
+    $scope.addressBusiness = $scope.addressBusinessOptions[0];
+
+    $scope.memberBusiness = $scope.memberBusinessOptions[0];
 
     /**
      * Method called at the initialization of this controller
@@ -80,8 +117,8 @@ angular.module("proton.controllers.Settings")
         $scope.organization = organization.Organization; // TODO need initialization
         $scope.current = payment.Payment; // TODO need initialization
         $scope.currency = 'CHF'; // TODO need initialization
-        $scope.plan = 'plus'; // TODO need initialization
         $scope.billing = 1; // TODO need initialization
+        $scope.plan = 'plus'; // TODO need initialization
     };
 
     /**
@@ -103,53 +140,21 @@ angular.module("proton.controllers.Settings")
      */
     $scope.total = function(name) {
         var total = 0;
-        var additionals = [];
 
         if(name === 'plus') {
-            additionals = $scope.plusAdditionals;
-            total += $scope.plus.price[$scope.billing];
+            total += $scope.plusPrice[$scope.billing];
+            total += $scope.spacePlus.index * $scope.spacePrice[$scope.billing];
+            total += $scope.domainPlus.index * $scope.domainPrice[$scope.billing];
+            total += $scope.addressPlus.index * $scope.addressPrice[$scope.billing];
         } else if(name === 'business') {
-            additionals = $scope.businessAdditionals;
-            total += $scope.business.price[$scope.billing];
+            total += $scope.businessPrice[$scope.billing];
+            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.billing];
+            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.billing];
+            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.billing];
+            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.billing];
         }
-
-        _.each(additionals, function(element) {
-            if(element.quantity > 0) {
-                total += element.price[$scope.billing] * element.quantity;
-            }
-        });
 
         return total;
-    };
-
-    $scope.count = function(type, plan) {
-        var quantity = 0;
-        var pack;
-        var additionals;
-
-        if(plan === 'plus') {
-            pack = $scope.plus;
-            additionals = $scope.plusAdditionals;
-        } else if(plan === 'business') {
-            pack = $scope.business;
-            additionals = $scope.plusAdditionals;
-        }
-
-        if(angular.isDefined(pack)) {
-            quantity += pack[type];
-        }
-
-        if(angular.isDefined(additionals)) {
-            var element = _.filter(additionals, function(additional) {
-                return additional.type === type && additional.quantity > 0;
-            });
-
-            if(angular.isDefined(element)) {
-                quantity += element.quantity;
-            }
-        }
-
-        return quantity;
     };
 
     /**
@@ -158,6 +163,10 @@ angular.module("proton.controllers.Settings")
      */
     $scope.choose = function(name) {
         var current = new Date();
+        var domains = ($scope.billing === 1) ? $scope.domainPlus.value : $scope.domainBusiness.value;
+        var addresses = ($scope.billing === 1) ? $scope.addressPlus.value : $scope.addressBusiness.value;
+        var space = ($scope.billing === 1) ? $scope.spacePlus.value : $scope.spaceBusiness.value;
+        var members = ($scope.billing === 1) ? 1 : $scope.memberBusiness.value;
         var configuration = {
             Subscription: {
                 Amount: $scope.total(name),
@@ -170,11 +179,12 @@ angular.module("proton.controllers.Settings")
             Cart: {
                 Current: $scope.current,
                 Future: {
+                    Plan: name,
                     Use2FA: true,
-                    MaxDomains: $scope.count('domain', name),
-                    MaxMembers: $scope.count('member', name),
-                    MaxAddresses: $scope.count('address', name),
-                    MaxSpace: $scope.count('space', name)
+                    MaxDomains: domains,
+                    MaxMembers: members,
+                    MaxAddresses: addresses,
+                    MaxSpace: space
                 }
             }
         };
@@ -182,24 +192,9 @@ angular.module("proton.controllers.Settings")
         // Check configuration choosed
         Payment.plan(configuration).then(function(result) {
             if(result.data && result.data.Code === 1000) {
-                var additionals = [];
-                var pack = {};
-
-                if(name === 'plus') {
-                    pack = $scope.plus;
-                    additionals = $scope.plusAdditionals;
-                } else if(name === 'business') {
-                    pack = $scope.business;
-                    additionals = $scope.businessAdditionals;
-                }
-
                 paymentModal.activate({
                     params: {
                         configuration: configuration,
-                        currency: $scope.currency,
-                        billing: $scope.billing,
-                        pack: pack,
-                        additionals: additionals,
                         submit: function(datas) {
                             console.log(datas);
                             paymentModal.deactivate();

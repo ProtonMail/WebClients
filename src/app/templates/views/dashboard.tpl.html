@@ -128,7 +128,7 @@
                     <header>
                         <a href="#" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
                         <div class="group">
-                            <label>Currency</label>
+                            <label>{{ 'CURRENCY' | translate }}</label>
                             <div class="pm_buttons">
                                 <a href="" ng-click="currency = 'EUR'" ng-class="{'active': currency === 'EUR'}">EUR</a>
                                 <a href="" ng-click="currency = 'USD'" class="divider" ng-class="{'active': currency === 'USD'}">USD</a>
@@ -189,59 +189,47 @@
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
-                                    <strong> MB {{ 'STORAGE' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <strong>{{ 'STORAGE' | translate }}</strong>
+                                    <span class="cost" ng-show="(spacePrice[billing] * spacePlus.index) > 0">
+                                        <strong>+ {{ spacePrice[billing] * spacePlus.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="domainPlus" ng-options="option.label for option in domainPlusOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="(domainPrice[billing] * domainPlus.index) > 0">
+                                        <strong>+ {{ domainPrice[billing] * domainPlus.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="addressPlus" ng-options="option.label for option in addressPlusOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'ADDRESSES' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="(addressPrice[billing] * addressPlus.index) > 0">
+                                        <strong>+ {{ addressPrice[billing] * addressPlus.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li class="disabled">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
                                 </li>
                                 <li class="disabled">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
                                 </li>
                                 <li class="disabled">
                                     <i class="fa fa-check"></i>
@@ -253,12 +241,13 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
                                     {{ total('plus') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
+                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
                                 <a href="#" ng-click="choose('plus')" class="pm_button primary">
+                                    <strong ng-show="plan === 'enterprise'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                     <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
                                     <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
                                     <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
@@ -277,59 +266,54 @@
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="spaceBusiness" ng-options="option.label for option in spaceBusinessOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
-                                    <strong> MB {{ 'STORAGE' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <strong>{{ 'STORAGE' | translate }}</strong>
+                                    <span class="cost" ng-show="spaceBusiness.index > 0">
+                                        <strong>+ {{ spacePrice[billing] * spaceBusiness.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="domainBusiness" ng-options="option.label for option in domainBusinessOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="domainBusiness.index > 0">
+                                        <strong>+ {{ spacePrice[billing] * spaceBusiness.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select">
-                                        <select>
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
+                                        <select ng-model="addressBusiness" ng-options="option.label for option in addressBusinessOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'ADDRESSES' | translate }}</strong>
-                                    <span class="cost">
-                                        <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="addressBusiness.index > 0">
+                                        <strong>+ {{ addressPrice[billing] * addressBusiness.index | number: 2 | currency: currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>2 {{ 'USER_MASTER_SUB' | translate }}</strong>
+                                    <span class="pm_select">
+                                        <select ng-model="memberBusiness" ng-options="option.label for option in memberBusinessOptions"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                    <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
+                                    <span class="cost" ng-show="memberBusiness.index > 0">
+                                        <strong>+ {{ memberPrice[billing] * memberBusiness.index | number: 2 | currency: currency }}</strong>
+                                    </span>
                                 </li>
                                 <li class="disabled">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
                                 </li>
                                 <li class="disabled">
                                     <i class="fa fa-check"></i>
@@ -341,8 +325,8 @@
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
                                     {{ total('business') | number: 2 | currency: currency }}
-                                    <small ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</small>
-                                    <small ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</small>
+                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">

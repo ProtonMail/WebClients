@@ -14,17 +14,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="element in ctrl.cart">
-                            <td>{{ element.number }} {{ element.title }}</td>
-                            <td>{{ element.quantity }}</td>
-                            <td>{{ element.price | number: 2 | currency: ctrl.currency }}</td>
+                        <tr>
+                            <td>{{ 'STORAGE' }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxSpace / 1000 / 1000 }} MB</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'DOMAINS' }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxDomains }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'ADDRESSES' }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxAddresses }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'USERS' }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxMembers }}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.billing === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.billing === 12">{{ 'PER_YEAR' | translate }}</small>
+                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td>
-                                <strong>{{ ctrl.total() | number: 2 | currency: ctrl.currency }}</strong>
+                                <strong>{{ ctrl.config.Subscription.Amount | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -59,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>Your credit card will be automatically charged on a {{ ctrl.config.Subscription.Amount | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

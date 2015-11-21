@@ -93,9 +93,10 @@
                 white-space: nowrap;
             }
             em {
-                color: #555;
+                color: $gray;
                 display: inline-block;
-                font-weight: 700;
+                font-weight: 600;
+                font-style: normal;
             }
             em.draftTag {
                 color: $primary;
