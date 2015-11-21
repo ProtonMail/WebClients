@@ -38,9 +38,10 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
 * [ ] Think about hover style (for design)
-* [ ] Implement the dashboard logic (for **Richard**)
-* [ ] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
-* [ ] Fix style when we print a message (for **Jason**)
+* [x] Implement the dashboard logic (for **Richard**)
+* [x] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
+* [x] Fix style when we print a message (for **Jason**)
+* [ ] Implement expire logic (for **Richard**)
 * [ ] Enable drag and drop for labels (for **Jason**)
 * [ ] Drag and drop element (conversation and message)
 
@@ -65,9 +66,9 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] move conversation
 * [x] search messages
 * [x] next page of conversations
-* [ ] next page of messages (need **Bart**)
+* [ ] next page of messages
 * [ ] print message
-* [ ] message expired (**Jason**)
+* [ ] message expired
 
 #### Read from conversation (Bug)
 ```
@@ -79,7 +80,7 @@ The counter remains unchanged in the sidebar
 The message is still unread
 5 seconds later, the counter in the sidebar and message are marked read
 ```
- 
+
 ### Bugs
 
 * [ ] Move all elements, the main checkbox stay checked (for **Richard**)
