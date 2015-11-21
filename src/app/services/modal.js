@@ -540,43 +540,15 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
+            this.process = false;
             this.step = 'payment';
             this.number = '';
             this.fullname = '';
             this.month = '';
             this.year = '';
             this.cvc = '';
-            this.currency = params.currency;
-            this.billing = params.billing;
-            this.process = false;
             this.cardTypeIcon = 'fa-credit-card';
-            this.cart = [];
-
-            if(angular.isDefined(params.pack)) {
-                var price = params.pack.price[params.billing];
-
-                this.cart.push({
-                    number: params.pack.number,
-                    quantity: params.pack.quantity,
-                    title: params.pack.long,
-                    price: price
-                });
-            }
-
-            if(angular.isDefined(params.additionals)) {
-                _.each(params.additionals, function(element) {
-                    if(element.quantity > 0) {
-                        var price = element.price[params.billing] * element.quantity;
-
-                        this.cart.push({
-                            number: element.number,
-                            quantity: element.quantity,
-                            title: element.long,
-                            price: price
-                        });
-                    }
-                }.bind(this));
-            }
+            this.config = params.configuration;
 
             // Functions
             this.submit = function() {
@@ -585,12 +557,12 @@ angular.module("proton.modals", [])
                 var stripeResponseHandler = function(status, response) {
                     if(status === 200) {
                         // Add data from Stripe
-                        params.configuration.Source = {
+                        this.config.Source = {
                             Object: 'token',
                             Token: response.id
                         };
                         // Send request to subscribe
-                        Organization.create(params.configuration).then(function(result) {
+                        Organization.create(this.config).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 this.process = false;
                                 this.step = 'thanks';
@@ -670,16 +642,6 @@ angular.module("proton.modals", [])
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
-            };
-
-            this.total = function() {
-                var total = 0;
-
-                _.each(this.cart, function(element) {
-                    total += element.price;
-                });
-
-                return total;
             };
         }
     });
