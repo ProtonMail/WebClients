@@ -69,7 +69,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] print message
 * [ ] message expired (**Jason**)
 
-#### Read from conversation
+#### Read from conversation (Bug)
 ```
 Row view
 Click a message that is unread
