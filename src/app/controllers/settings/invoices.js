@@ -131,7 +131,7 @@ angular.module("proton.controllers.Settings")
         Payment.history(timestamp).then(function(result) {
             if(angular.isDefined(result.data)) {
                 console.log(result.data);
-                $scope.invoices;
+                // $scope.invoices;
             }
         });
     };
