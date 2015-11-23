@@ -45,9 +45,25 @@ angular.module("proton.models.payments", [])
         },
         /**
          *  Get payments corresponding to the given user.
+         * @param {Integer} timestamp
          */
-        user: function() {
-            return $http.get(url.get() + '/payments/user');
+        user: function(timestamp) {
+            return $http.get(url.get() + '/payments/user', {
+                params: {
+                    Time: timestamp
+                }
+            });
+        },
+        /**
+         *  Get payments corresponding to the given organization.
+         * @param {Integer} timestamp
+         */
+        organization: function(timestamp) {
+            return $http.get(url.get() + '/payments/organization', {
+                params: {
+                    Time: timestamp
+                }
+            });
         },
         /**
          * Get payments corresponding to the given group.
@@ -66,17 +82,6 @@ angular.module("proton.models.payments", [])
          */
         change: function(Obj) {
             return $http.post(url.get() + '/payments/source', Obj);
-        },
-        /**
-         * Get invoice list
-         * @param {Integer} timestamp
-         */
-        history: function(timestamp) {
-            return $http.get(url.get() + '/payments/history', {
-                params: {
-                    Time: timestamp
-                }
-            });
         }
     };
 })

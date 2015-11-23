@@ -128,12 +128,16 @@ angular.module("proton.controllers.Settings")
      * @param {Integer} timestamp
      */
     $scope.loadInvoices = function(timestamp) {
-        Payment.history(timestamp).then(function(result) {
+        var promise = Payment.organization(timestamp);
+
+        promise.then(function(result) {
             if(angular.isDefined(result.data)) {
                 console.log(result.data);
                 // $scope.invoices;
             }
         });
+
+        networkActivityTracker.track(promise);
     };
 
     /**
