@@ -10,6 +10,7 @@ angular.module("proton", [
     "toggle-switch",
     "pascalprecht.translate",
     "ui.bootstrap",
+    "ui.sortable",
     "ngDragDrop",
     "ngTouch",
 
