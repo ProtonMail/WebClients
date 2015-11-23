@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('InvoicesController', function($rootScope, $scope, paymentModal) {
+.controller('InvoicesController', function($rootScope, $scope) {
     $rootScope.pageName = "Invoices";
     $scope.invoices = [
         {

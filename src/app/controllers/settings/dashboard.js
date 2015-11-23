@@ -199,22 +199,22 @@ angular.module("proton.controllers.Settings")
 
         // Check configuration choosed
         Payment.plan(configuration).then(function(result) {
-            if(result.data && result.data.Code === 1000) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 paymentModal.activate({
                     params: {
                         configuration: configuration,
-                        submit: function(datas) {
-                            console.log(datas);
-                            paymentModal.deactivate();
-                        },
                         cancel: function() {
                             paymentModal.deactivate();
                         }
                     }
                 });
+            } else if(angular.isDefined(result.data) && result.data.Status) {
+                // TODO need to complete with Martin
             } else {
-                // TODO notify
+                notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
             }
+        }, function() {
+            notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
         });
     };
 
