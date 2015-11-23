@@ -1,15 +1,9 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height>
-        <span class="pm_buttons">
-            <a href="" class="pm_trigger" ng-dropdown>
-                <strong>2015</strong><i class="fa fa-angle-down"></i>
-            </a>
-            <span class="pm_dropdown">
-                <a href="">2015</a>
-                <a href="">2014</a>
-                <a href="">2013</a>
-            </span>
+        <span class="pm_select">
+            <select ng-model="range" ng-options="option.label for option in years" ng-change="loadInvoices(range.value)"></select>
+            <i class="fa fa-angle-down"></i>
         </span>
         <p>&nbsp;</p>
         <table class="pm_table hidden-xs" id="invoicesTable">

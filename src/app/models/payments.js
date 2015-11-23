@@ -69,9 +69,14 @@ angular.module("proton.models.payments", [])
         },
         /**
          * Get invoice list
+         * @param {Integer} timestamp
          */
-        history: function() {
-            return $http.get(url.get() + '/payments/history');
+        history: function(timestamp) {
+            return $http.get(url.get() + '/payments/history', {
+                params: {
+                    Time: timestamp
+                }
+            });
         }
     };
 })
