@@ -27,7 +27,7 @@
                     href
                     ng-show="!!!message.minimized"
                     class="pm_button link minimize-button hidden-xs"
-                    ng-click="minimize(message)"
+                    ng-click="minimize(message)"ƒ<<<
                     pt-tooltip="{{ 'MINIMIZE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
@@ -123,7 +123,7 @@
                     <div class="clear">
                         <p>
                             <i class="help-block">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
-                            </p>
+                        </p>
                     </div>
                     <footer class="text-right">
                         <button
@@ -152,64 +152,19 @@
                 </div>
                 <p></p>
                 <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
-                <div class="pm_form alert text-center">
+                <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationWeeks" 
-                        ng-init="params.expirationWeeks = 0">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
+                        <select ng-model="params.expirationWeeks" ng-options="option.label for option in weekOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'WEEKS' | translate }}
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationDays" 
-                        ng-init="params.expirationDays = 0">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                        </select>
+                        <select ng-model="params.expirationDays" ng-options="option.label for option in dayOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'DAYS' | translate }}
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationHours" 
-                        ng-init="params.expirationHours = 0">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                        </select>
+                        <select ng-model="params.expirationHours" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'HOURS' | translate }}
+                    </span> {{ 'HOURS' | translate }}ß
                     <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
                 </div>
                 <div class="text-center" ng-show="params.expiration">

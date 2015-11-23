@@ -41,6 +41,49 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
+    $scope.weekOptions = [
+        {label: '0', value: 0},
+        {label: '1', value: 1},
+        {label: '2', value: 2},
+        {label: '3', value: 3},
+        {label: '4', value: 4}
+    ];
+    $scope.dayOptions = [
+        {label: '0', value: 0},
+        {label: '1', value: 1},
+        {label: '2', value: 2},
+        {label: '3', value: 3},
+        {label: '4', value: 4},
+        {label: '5', value: 5},
+        {label: '6', value: 6}
+     
+    ];
+    $scope.hourOptions = [
+        {'0', value: 0},
+        {'1', value: 1},
+        {'2', value: 2},
+        {'3', value: 3},
+        {'4', value: 4},
+        {'5', value: 5},
+        {'6', value: 6},
+        {'7', value: 7},
+        {'8', value: 8},
+        {'9', value: 9},
+        {'10', value: 10},
+        {'11', value: 11},
+        {'12', value: 12},
+        {'13', value: 13},
+        {'14', value: 14},
+        {'15', value: 15},
+        {'16', value: 16},
+        {'17', value: 17},
+        {'18', value: 18},
+        {'19', value: 19},
+        {'20', value: 20},
+        {'21', value: 21},
+        {'22', value: 22},
+        {'23', value: 23}
+    ];
 
     Contact.index.updateWith($scope.user.Contacts);
 
@@ -726,31 +769,58 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.closePanel(message);
     };
 
+    /**
+     * Intialize the expiration panel
+     * @param {Object} message
+     * @param {Object} params
+     */
     $scope.initExpiration = function(message, params) {
-        var expiration;
+        var hours = 0;
+        var days = 0;
+        var weeks = 0;
 
-        if(message.ExpirationTime) {
-            expiration = message.ExpirationTime / 3600;
+        if(angular.isDefined(message.ExpirationTime)) {
+            hours = message.ExpirationTime / 3600;
+            days = Math.floor(hours / 24);
+            hours = hours % 24;
+            weeks = Math.floor(days / 7);
+            days = days % 7;
         }
 
-        params.expiration = expiration || 42;
+        params.expirationWeeks = _.findWhere($scope.weekOptions, {value: weeks});
+        params.expirationDays = _.findWhere($scope.dayOptions, {value: days});
+        params.expirationHours = _.findWhere($scope.hourOptions, {value: hours});
     };
 
+    /**
+     * Set expiration time if valid value
+     * @param {Object} message
+     * @param {Object} params
+     */
     $scope.setExpiration = function(message, params) {
-        if (parseInt(params.expiration) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
+        var hours = params.expirationHours.value + params.expirationDays.value * 24 + params.expirationWeeks.value * 24 * 7;
+        var error = false;
+
+        if (parseInt(hours) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
             notify({message: 'The maximum expiration is 4 weeks.', classes: 'notification-danger'});
-            return false;
+            error = true;
         }
 
-        if (isNaN(params.expiration)) {
+        if (isNaN(hours)) {
             notify({message: 'Invalid expiration time.', classes: 'notification-danger'});
-            return false;
+             error = true;
         }
 
-        message.ExpirationTime = params.expiration * 3600; // seconds
-        $scope.closePanel(message);
+        if(error === false) {
+            message.ExpirationTime = hours * 3600; // seconds
+            $scope.closePanel(message);
+        }
     };
 
+    /**
+     * Remove expiration time value
+     * @param {Object} message
+     */
     $scope.clearExpiration = function(message) {
         delete message.ExpirationTime;
         $scope.closePanel(message);

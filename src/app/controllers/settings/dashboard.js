@@ -97,19 +97,7 @@ angular.module("proton.controllers.Settings")
         {label: '9', value: 9, index: 7},
         {label: '10', value: 10, index: 8}
     ];
-
-    // Selects
-    $scope.spacePlus = $scope.spacePlusOptions[0];
-    $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
-
-    $scope.domainPlus = $scope.domainPlusOptions[0];
-    $scope.domainBusiness = $scope.domainBusinessOptions[0];
-
-    $scope.addressPlus = $scope.addressPlusOptions[0];
-    $scope.addressBusiness = $scope.addressBusinessOptions[0];
-
-    $scope.memberBusiness = $scope.memberBusinessOptions[0];
-
+    
     /**
      * Method called at the initialization of this controller
      */
@@ -119,6 +107,13 @@ angular.module("proton.controllers.Settings")
         $scope.currency = 'CHF'; // TODO need initialization
         $scope.billing = 1; // TODO need initialization
         $scope.plan = 'plus'; // TODO need initialization
+        $scope.spacePlus = $scope.spacePlusOptions[0]; // TODO need initialization
+        $scope.spaceBusiness = $scope.spaceBusinessOptions[0]; // TODO need initialization
+        $scope.domainPlus = $scope.domainPlusOptions[0]; // TODO need initialization
+        $scope.domainBusiness = $scope.domainBusinessOptions[0]; // TODO need initialization
+        $scope.addressPlus = $scope.addressPlusOptions[0]; // TODO need initialization
+        $scope.addressBusiness = $scope.addressBusinessOptions[0]; // TODO need initialization
+        $scope.memberBusiness = $scope.memberBusinessOptions[0]; // TODO need initialization
     };
 
     /**
@@ -163,10 +158,23 @@ angular.module("proton.controllers.Settings")
      */
     $scope.choose = function(name) {
         var current = new Date();
-        var domains = ($scope.billing === 1) ? $scope.domainPlus.value : $scope.domainBusiness.value;
-        var addresses = ($scope.billing === 1) ? $scope.addressPlus.value : $scope.addressBusiness.value;
-        var space = ($scope.billing === 1) ? $scope.spacePlus.value : $scope.spaceBusiness.value;
-        var members = ($scope.billing === 1) ? 1 : $scope.memberBusiness.value;
+        var domains;
+        var addresses;
+        var space;
+        var members;
+
+        if($scope.billing === 1) {
+            domains = $scope.domainPlus.value;
+            addresses = $scope.addressPlus.value;
+            space = $scope.spacePlus.value;
+            members = 1;
+        } else if($scope.billing === 12) {
+            domains = $scope.domainBusiness.value;
+            addresses = $scope.addressBusiness.value;
+            space = $scope.spaceBusiness.value;
+            members = $scope.memberBusiness.value;
+        }
+
         var configuration = {
             Subscription: {
                 Amount: $scope.total(name),
@@ -191,22 +199,22 @@ angular.module("proton.controllers.Settings")
 
         // Check configuration choosed
         Payment.plan(configuration).then(function(result) {
-            if(result.data && result.data.Code === 1000) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 paymentModal.activate({
                     params: {
                         configuration: configuration,
-                        submit: function(datas) {
-                            console.log(datas);
-                            paymentModal.deactivate();
-                        },
                         cancel: function() {
                             paymentModal.deactivate();
                         }
                     }
                 });
+            } else if(angular.isDefined(result.data) && result.data.Status) {
+                // TODO need to complete with Martin
             } else {
-                // TODO notify
+                notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
             }
+        }, function() {
+            notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
         });
     };
 

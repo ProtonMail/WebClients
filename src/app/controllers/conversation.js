@@ -90,13 +90,22 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Mark current conversation as read
      */
     $scope.read = function() {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var conversation = angular.copy($scope.conversation);
 
         // cache
         conversation.NumUnread = 0;
-        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-        cache.events(events, 'conversation');
+        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        
+        _.each(cache.queryMessagesCached(conversation.ID), function(message) {
+            message.IsRead = 1;
+            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+        });
+
+
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         Conversation.read([conversation.ID]);
@@ -109,13 +118,21 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Mark current conversation as unread
      */
     $scope.unread = function() {
-        var events = [];
+        var conversationEvent = [];
+        var messageEvent = [];
         var conversation = angular.copy($scope.conversation);
 
         // cache
         conversation.NumUnread = $scope.messages.length;
-        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-        cache.events(events, 'conversation');
+        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+        
+        _.each(cache.queryMessagesCached(conversation.ID), function(message) {
+            message.IsRead = 0;
+            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+        });
+
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         Conversation.unread([conversation.ID]);

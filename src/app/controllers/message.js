@@ -306,11 +306,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                     // Read message open
                     if($scope.message.IsRead === 0) {
-                        var events = [];
-
-                        events.push({Action: 3, ID: $scope.message.ID, Message: {ID: $scope.message.ID, IsRead: 1}});
-                        cache.events(events, 'message');
-                        Message.read({IDs: [$scope.message.ID]});
+                       $scope.read();
                     }
 
                     if($rootScope.printMode) {
@@ -357,6 +353,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
+    /**
+     * Mark current message as read
+     */
     $scope.read = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
@@ -379,6 +378,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.back();
     };
 
+    /**
+     * Mark current message as unread
+     */
     $scope.unread = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
