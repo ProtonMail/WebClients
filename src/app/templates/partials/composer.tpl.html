@@ -123,7 +123,7 @@
                     <div class="clear">
                         <p>
                             <i class="help-block">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
-                            </p>
+                        </p>
                     </div>
                     <footer class="text-right">
                         <button
@@ -154,9 +154,7 @@
                 <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
                 <div class="pm_form alert text-center">
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationWeeks" 
-                        ng-init="params.expirationWeeks = 0">
+                        <select ng-model="params.expirationWeeks" ng-init="params.expirationWeeks = 0">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -166,9 +164,7 @@
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'WEEKS' | translate }}
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationDays" 
-                        ng-init="params.expirationDays = 0">
+                        <select ng-model="params.expirationDays" ng-init="params.expirationDays = 0">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -180,9 +176,7 @@
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'DAYS' | translate }}
                     <span class="pm_select">
-                        <select 
-                        ng-model="params.expirationHours" 
-                        ng-init="params.expirationHours = 0">
+                        <select ng-model="params.expirationHours" ng-init="params.expirationHours = 0">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
