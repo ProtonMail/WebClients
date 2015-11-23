@@ -817,6 +817,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
+    /**
+     * Remove expiration time value
+     * @param {Object} message
+     */
     $scope.clearExpiration = function(message) {
         delete message.ExpirationTime;
         $scope.closePanel(message);
