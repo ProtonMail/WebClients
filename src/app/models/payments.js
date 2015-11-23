@@ -2,7 +2,6 @@ angular.module("proton.models.payments", [])
 
 .factory("Payment", function($http, $q, url) {
     return {
-        // POST
         /**
          * Donate for perks. Does not require authentication.
          */
@@ -33,7 +32,6 @@ angular.module("proton.models.payments", [])
         // events: function(Obj) {
         //     return $http.post(url.get() + '/payments/events', Obj);
         // },
-        // GET
         /**
          * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
          */
@@ -68,6 +66,12 @@ angular.module("proton.models.payments", [])
          */
         change: function(Obj) {
             return $http.post(url.get() + '/payments/source', Obj);
+        },
+        /**
+         * Get invoice list
+         */
+        history: function() {
+            return $http.get(url.get() + '/payments/history');
         }
     };
 })
