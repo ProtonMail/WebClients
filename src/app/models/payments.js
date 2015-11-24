@@ -1,6 +1,6 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, $q, url) {
+.factory("Payment", function($http, url) {
     return {
         /**
          * Donate for perks. Does not require authentication.
@@ -36,12 +36,11 @@ angular.module("proton.models.payments", [])
          * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
          */
         status: function() {
-            var deferred = $q.defer();
-
-            deferred.resolve({});
-
-            return deferred.promise;
-            // return $http.get(url.get() + '/payments/status');
+            return $http.get(url.get() + '/payments/status', {
+                params: {
+                    ExternalProvider: 'Stripe'
+                }
+            });
         },
         /**
          *  Get payments corresponding to the given user.
