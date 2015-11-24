@@ -97,7 +97,7 @@ angular.module("proton.controllers.Settings")
         {label: '9', value: 9, index: 7},
         {label: '10', value: 10, index: 8}
     ];
-    
+
     /**
      * Method called at the initialization of this controller
      */

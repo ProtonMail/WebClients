@@ -1,116 +1,14 @@
 angular.module("proton.controllers.Settings")
 
-.controller('InvoicesController', function($rootScope, $scope, $translate) {
+.controller('InvoicesController', function($rootScope, $scope, $translate, Payment, networkActivityTracker) {
     var YEAR_2015 = 1420070401;
     var YEAR_2016 = 1451606401;
 
-    $rootScope.pageName = "Invoices";
+    $rootScope.pageName = $translate.instant('INVOICES');
     $scope.years = [
         {label: $translate.instant('ALL'), value: undefined},
         {label: '2015', value: YEAR_2015},
         {label: '2016', value: YEAR_2016}
-    ];
-    $scope.invoices = [
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month)",
-            "Price": "13 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month)",
-            "Price": "13 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month)",
-            "Price": "13 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month)",
-            "Price": "13 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 2 Addons",
-            "Price": "10 CHF"
-        },
-        {
-            "Date": 1444079277,
-            "Event": "Business Plan Subscription (1 month) with 1 Addons",
-            "Price": "12 CHF"
-        }
     ];
 
     /**
