@@ -427,11 +427,17 @@ angular.module("proton.tools", ["proton.constants"])
      * @return {Boolean}
      */
     tools.cacheContext = function(request) {
-        var two = Object.keys(request).length === 2;
         var page = angular.isDefined(request.Page);
         var label = angular.isDefined(request.Label);
+        var size = angular.isDefined(request.PageSize);
 
-        return two && page && label;
+        if(Object.keys(request).length === 2) {
+            return page && label;
+        } else if(Object.keys(request).length === 3) {
+            return page && label && size;
+        } else {
+            return false;
+        }
     };
 
     return tools;

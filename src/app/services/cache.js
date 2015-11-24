@@ -171,6 +171,7 @@ angular.module("proton.cache", [])
             if(data.Code === 1000) {
                 // Set total value in rootScope
                 $rootScope.Total = data.Total;
+
                 // Only for cache context
                 if(context === true) {
                     // Set total value in cache
@@ -591,10 +592,10 @@ angular.module("proton.cache", [])
         var requestInbox;
         var requestSent;
 
-        if(mailbox === 'inbox') {
+        if(mailbox === 'inbox' && angular.isUndefined($stateParams.id)) {
             requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 1};
             requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
-        } else if(mailbox === 'sent') {
+        } else if(mailbox === 'sent' && angular.isUndefined($stateParams.id)) {
             requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
             requestSent = {};
         } else {
