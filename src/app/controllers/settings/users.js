@@ -15,14 +15,14 @@ angular.module("proton.controllers.Settings")
     var MASTER = 0;
     var SUB = 1;
 
-    $scope.selectExample = 'toto';
-    $scope.optionsExample = ['qwe', 'asd', 'zxc'];
     $scope.roles = [
         {label: $translate.instant('MASTER'), value: MASTER},
         {label: $translate.instant('SUB'), value: SUB}
     ];
 
     $scope.initialization = function() {
+        console.log(organization);
+        console.log(members);
         $scope.organization = organization.Organization;
         $scope.members = members.Members;
     };

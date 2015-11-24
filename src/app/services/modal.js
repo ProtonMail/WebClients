@@ -534,7 +534,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate, Payment) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -562,7 +562,8 @@ angular.module("proton.modals", [])
                             Token: response.id
                         };
                         // Send request to subscribe
-                        Organization.create(this.config).then(function(result) {
+                        // Organization.create(this.config).then(function(result) {
+                        Payment.subscribe(this.config).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 this.process = false;
                                 this.step = 'thanks';
@@ -918,6 +919,23 @@ angular.module("proton.modals", [])
                 }
             };
 
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('supportModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/support.tpl.html',
+        controller: function(params) {
+            // Variables
+
+            // Functions
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();

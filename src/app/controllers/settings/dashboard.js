@@ -10,7 +10,8 @@ angular.module("proton.controllers.Settings")
     organization,
     Payment,
     paymentModal,
-    payment
+    supportModal
+    // payment
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
@@ -27,19 +28,25 @@ angular.module("proton.controllers.Settings")
     // Options
     $scope.spacePlusOptions = [
         {label: '5.000 MB', value: 5000 * 1000 * 1000, index: 0},
-        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 1},
-        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 2},
-        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 3},
-        {label: '25.000 MB', value: 25000 * 1000 * 1000, index: 4},
-        {label: '30.000 MB', value: 30000 * 1000 * 1000, index: 5}
+        {label: '6.000 MB', value: 6000 * 1000 * 1000, index: 1},
+        {label: '7.000 MB', value: 7000 * 1000 * 1000, index: 2},
+        {label: '8.000 MB', value: 8000 * 1000 * 1000, index: 3},
+        {label: '9.000 MB', value: 9000 * 1000 * 1000, index: 4},
+        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 5}
     ];
 
     $scope.spaceBusinessOptions = [
         {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 0},
-        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 1},
-        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 2},
-        {label: '25.000 MB', value: 25000 * 1000 * 1000, index: 3},
-        {label: '30.000 MB', value: 30000 * 1000 * 1000, index: 4}
+        {label: '11.000 MB', value: 11000 * 1000 * 1000, index: 1},
+        {label: '12.000 MB', value: 12000 * 1000 * 1000, index: 2},
+        {label: '13.000 MB', value: 13000 * 1000 * 1000, index: 3},
+        {label: '14.000 MB', value: 14000 * 1000 * 1000, index: 4},
+        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 5},
+        {label: '16.000 MB', value: 16000 * 1000 * 1000, index: 6},
+        {label: '17.000 MB', value: 17000 * 1000 * 1000, index: 7},
+        {label: '18.000 MB', value: 18000 * 1000 * 1000, index: 8},
+        {label: '19.000 MB', value: 19000 * 1000 * 1000, index: 9},
+        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 10}
     ];
 
     $scope.domainPlusOptions = [
@@ -103,7 +110,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initialization = function() {
         $scope.organization = organization.Organization; // TODO need initialization
-        $scope.current = payment.Payment; // TODO need initialization
+        $scope.current = null;
         $scope.currency = 'CHF'; // TODO need initialization
         $scope.billing = 1; // TODO need initialization
         $scope.plan = 'plus'; // TODO need initialization
@@ -153,69 +160,127 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Prepare amount for the request
+     * @param {String} name
+     */
+    $scope.amount = function(name) {
+        return $scope.total(name) * 100;
+    };
+
+    /**
      * Open modal to pay the plan configured
      * @param {String} name
      */
     $scope.choose = function(name) {
-        var current = new Date();
-        var domains;
-        var addresses;
-        var space;
-        var members;
-
-        if($scope.billing === 1) {
-            domains = $scope.domainPlus.value;
-            addresses = $scope.addressPlus.value;
-            space = $scope.spacePlus.value;
-            members = 1;
-        } else if($scope.billing === 12) {
-            domains = $scope.domainBusiness.value;
-            addresses = $scope.addressBusiness.value;
-            space = $scope.spaceBusiness.value;
-            members = $scope.memberBusiness.value;
-        }
-
+        var now = moment().unix();
+        var future;
         var configuration = {
             Subscription: {
-                Amount: $scope.total(name),
+                Amount: $scope.amount(name),
                 Currency: $scope.currency,
                 BillingCycle: $scope.billing,
-                Time: current.getTime(),
-                PeriodStart: current.getTime(),
+                Time: now,
+                PeriodStart: now,
                 ExternalProvider: "Stripe"
             },
             Cart: {
-                Current: $scope.current,
-                Future: {
-                    Plan: name,
-                    Use2FA: true,
-                    MaxDomains: domains,
-                    MaxMembers: members,
-                    MaxAddresses: addresses,
-                    MaxSpace: space
-                }
+                Current: $scope.current
             }
         };
 
-        // Check configuration choosed
-        Payment.plan(configuration).then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                paymentModal.activate({
-                    params: {
-                        configuration: configuration,
-                        cancel: function() {
-                            paymentModal.deactivate();
-                        }
+        switch (name) {
+            case 'free':
+                future = null;
+                break;
+            case 'plus':
+                future = {
+                    Plan: name,
+                    Use2FA: true,
+                    MaxDomains: $scope.domainPlus.value,
+                    MaxMembers: 1,
+                    MaxAddresses: $scope.addressPlus.value,
+                    MaxSpace: $scope.spacePlus.value
+                };
+                break;
+            case 'business':
+                future = {
+                    Plan: name,
+                    Use2FA: true,
+                    MaxDomains: $scope.domainBusiness.value,
+                    MaxMembers: $scope.memberBusiness.value,
+                    MaxAddresses: $scope.addressBusiness.value,
+                    MaxSpace: $scope.spaceBusiness.value
+                };
+                break;
+            case 'enterprise':
+                future = {}; // TODO need Martin to complete
+                break;
+            default:
+                break;
+        }
+
+        configuration.Cart.Future = future;
+
+        if(['free', 'plus', 'business'].indexOf(name) !== -1) {
+            // Check configuration choosed
+            Payment.plan(configuration).then(function(result) {
+                if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                    if(['plus', 'business'].indexOf(name) !== -1) {
+                        paymentModal.activate({
+                            params: {
+                                configuration: configuration,
+                                cancel: function() {
+                                    paymentModal.deactivate();
+                                }
+                            }
+                        });
+                    } else if(name === 'free') {
+                        var title = $translate.instant('');
+                        var message = "Are you sure?";
+
+                        confirmModal.activate({
+                            params: {
+                                title: title,
+                                message: message,
+                                confirm: function() {
+                                    Payment.subscribe(configuration).then(function(result) {
+                                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                            confirmModal.deactivate();
+                                            // TODO notify
+                                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                            // TODO notify
+                                        } else {
+                                            // TODO notify
+                                        }
+                                    }, function(error) {
+                                        // TODO notify
+                                    });
+                                },
+                                cancel: function() {
+                                    confirmModal.deactivate();
+                                }
+                            }
+                        });
                     }
-                });
-            } else if(angular.isDefined(result.data) && result.data.Status) {
-                // TODO need to complete with Martin
-            } else {
+                } else if(angular.isDefined(result.data) && result.data.Status) {
+                    // TODO need to complete with Martin
+                    // notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
+                } else {
+                    notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
+                }
+            }, function() {
                 notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-            }
-        }, function() {
-            notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-        });
+            });
+        } else if(name === 'enterprise') {
+            // TODO Open modal to contact support
+            supportModal.activate({
+                params: {
+                    cancel: function() {
+                        supportModal.deactivate();
+                    }
+                }
+            });
+        }
     };
 
     /**

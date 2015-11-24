@@ -4,18 +4,21 @@ angular.module("proton.models.payments", [])
     return {
         /**
          * Donate for perks. Does not require authentication.
+         * @param {Object} Obj
          */
         donate: function(Obj) {
             return $http.post(url.get() + '/payments/donate', Obj);
         },
         /**
          * Subscription for a service given a subscription set up as Order JSON above.
+         * @param {Object} Obj
          */
         subscribe: function(Obj) {
             return $http.post(url.get() + '/payments/subscribe', Obj);
         },
         /**
          * Cancel given subscription.
+         * @param {Object} Obj
          */
         unsubscribe: function(Obj) {
             return $http.post(url.get() + '/payments/unsubscribe', Obj);
@@ -24,6 +27,7 @@ angular.module("proton.models.payments", [])
          * Check the plan configured by the user to see if it's correct
          */
         plan: function(configuration) {
+            console.log(configuration);
             return $http.post(url.get() + '/payments/plan', configuration);
         },
         /**
@@ -78,6 +82,7 @@ angular.module("proton.models.payments", [])
         },
         /**
          * Send a new credit card information
+         * @param {Object} Obj
          */
         change: function(Obj) {
             return $http.post(url.get() + '/payments/source', Obj);

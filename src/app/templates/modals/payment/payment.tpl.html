@@ -39,7 +39,7 @@
                                 <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td>
-                                <strong>{{ ctrl.config.Subscription.Amount | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
+                                <strong>{{ ctrl.config.Subscription.Amount / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.config.Subscription.Amount | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>Your credit card will be automatically charged on a {{ ctrl.config.Subscription.Amount / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

@@ -381,6 +381,9 @@
                         </div>
                     </div>
                 </form>
+                <p ng-hide="current.Plan === 'free'">
+                    <a href="" ng-click="choose('free')">{{ 'FREE_PLAN' | translate }}</a>
+                </p>
             </section>
         </div>
     </div>
