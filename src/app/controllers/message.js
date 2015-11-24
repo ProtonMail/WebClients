@@ -80,6 +80,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Display content
             $scope.displayContent();
 
+            // Mark message as read
+            if($scope.message.IsRead === 0) {
+                $scope.read(false);
+            }
+
             // Start timer ago
             $scope.agoTimer = $interval(function() {
                 var time = $filter('longReadableTime')($scope.message.Time);
@@ -263,6 +268,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.displayContent = function() {
         var whitelist = ['notify@protonmail.com'];
 
+        $scope.message.viewMode = 'html';
+
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
             $scope.message.imagesHidden = false;
         } else if(authentication.user.ShowImages === 1) {
@@ -303,11 +310,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     $(".email img").error(function () {
                         $(this).unbind("error").addClass("pm_broken");
                     });
-
-                    // Read message open
-                    if($scope.message.IsRead === 0) {
-                       $scope.read(false);
-                    }
 
                     if($rootScope.printMode) {
                         setTimeout(function() {
@@ -355,6 +357,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as read
+     * @param {Boolean} back
      */
     $scope.read = function(back) {
         var  copy = angular.copy($scope.message);
@@ -362,14 +365,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var conversationEvent = [];
         var messageEvent = [];
 
-        // Message
         copy.IsRead = 1;
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
-        cache.events(messageEvent, 'message');
-
-        // Conversation
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: 0}});
+
         cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // Request
         Message.read({IDs: ids});
@@ -382,6 +383,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as unread
+     * @param {Boolean} back
      */
     $scope.unread = function(back) {
         var  copy = angular.copy($scope.message);

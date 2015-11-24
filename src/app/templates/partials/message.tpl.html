@@ -119,7 +119,7 @@
         <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
             <a href="" ng-click="toggleImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
         </p>
-        <div class="email" ng-class="{'plain': isPlain}" ng-init="message.viewMode = 'html'" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>
