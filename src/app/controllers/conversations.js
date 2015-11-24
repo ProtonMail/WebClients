@@ -125,7 +125,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.conversationCount = function() {
         var result;
 
-        if(angular.isDefined($stateParams.filter) || $state.is('secured.search')) {
+        if(angular.isDefined($stateParams.filter) || $scope.mailbox === 'search') {
             result = $rootScope.Total;
         } else {
             switch($scope.mailbox) {
@@ -680,6 +680,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();
         $scope.page = page;
+
         if (page > 0 && $scope.conversationCount() > ((page - 1) * $scope.conversationsPerPage)) {
             if (page === 1) {
                 page = undefined;

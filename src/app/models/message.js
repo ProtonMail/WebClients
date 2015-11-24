@@ -71,14 +71,6 @@ angular.module("proton.models.message", ["proton.constants"])
                 method: 'get',
                 url: url.get() + '/messages/total'
             },
-            unreaded: {
-                method: 'get',
-                url: url.get() + '/messages/unread'
-            },
-            latest: {
-                method: 'get',
-                url: url.get() + '/messages/latest/:time'
-            },
             // PUT
             updateDraft: {
                 method: 'put',
