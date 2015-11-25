@@ -88,7 +88,7 @@ angular.module("proton.models.payments", [])
          * @param {Object} Obj
          */
         change: function(Obj) {
-            return $http.post(url.get() + '/payments/source', Obj);
+            return $http.put(url.get() + '/payments/sources', Obj);
         }
     };
 })
