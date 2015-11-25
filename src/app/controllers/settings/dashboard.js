@@ -374,14 +374,14 @@ angular.module("proton.controllers.Settings")
      * Open modal with payment information
      */
     $scope.card = function() {
-        networkActivityTracker.track(Payment.source().then(function(result) {
+        networkActivityTracker.track(Payment.sources().then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 // Array of credit card information
-                var card = result.data.Source;
+                var cards = result.data.Sources;
 
                 cardModal.activate({
                     params: {
-                        card: card,
+                        card: _.first(cards),
                         cancel: function() {
                             cardModal.deactivate();
                         }

@@ -76,8 +76,8 @@ angular.module("proton.models.payments", [])
         /**
          * Get current payment information from Stripe
          */
-        source: function() {
-            return $http.get(url.get() + '/payments/source', {
+        sources: function() {
+            return $http.get(url.get() + '/payments/sources', {
                 params: {
                     ExternalProvider: 'Stripe'
                 }

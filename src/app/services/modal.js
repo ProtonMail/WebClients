@@ -445,7 +445,8 @@ angular.module("proton.modals", [])
                         Payment.change({
                             Source: {
                                 Object: 'token',
-                                Token: response.id
+                                Token: response.id,
+                                SourceID: params.card
                             }
                         }).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
