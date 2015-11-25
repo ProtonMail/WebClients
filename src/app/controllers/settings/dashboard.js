@@ -220,14 +220,6 @@ angular.module("proton.controllers.Settings")
         return total;
     };
 
-    $scope.price = function(plan, additional) {
-        var price = 0;
-
-
-
-        return price;
-    };
-
     /**
      * Prepare amount for the request
      * @param {String} name
