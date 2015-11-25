@@ -613,12 +613,9 @@ angular.module("proton.routes", [
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {
-            organization: function(Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
-            },
-            // payment: function(Payment, networkActivityTracker) {
-            //     return networkActivityTracker.track(Payment.status());
-            // }
+            payment: function(Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.status());
+            }
         },
         views: {
             "content@secured": {

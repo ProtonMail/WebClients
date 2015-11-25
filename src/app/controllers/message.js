@@ -119,6 +119,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Scroll to the message
+     */
+    $scope.scrollToMe = function() {
+        var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
+        var id = '#message' + index; // TODO improve it for the search case
+        var element = angular.element(id);
+        var value = element.offset().top - element.outerHeight();
+
+        $('#pm_thread').animate({
+            scrollTop: value
+        }, 'slow');
+    };
+
+    /**
      * Open the message in the composer window
      * @param {String} id
      */

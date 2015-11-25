@@ -64,10 +64,10 @@
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
                             <td>
-                                <strong>{{ 'BUSINESS_PLAN' | translate }}</strong>
+                                <strong>{{ current.Plan }} {{ 'PLAN' | translate }}</strong>
                             </td>
                             <td class="price text-right">
-                                <span>10 CHF</span>
+                                <span>{{ payment.Amount | currency: payment.Currency }}</span>
                             </td>
                         </tr>
                         <tr>
@@ -382,7 +382,7 @@
                     </div>
                 </form>
                 <p ng-hide="current.Plan === 'free'">
-                    <a href="" ng-click="choose('free')">{{ 'FREE_PLAN' | translate }}</a>
+                    <a href="" ng-click="choose('free')" pt-tooltip="{{ 'SWITCH_TO_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
                 </p>
             </section>
         </div>
