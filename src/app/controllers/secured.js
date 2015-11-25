@@ -25,7 +25,7 @@ angular.module("proton.controllers.Secured", [])
 
     $rootScope.dateFormat = format;
     // Setting publishable key for Stripe
-    Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+    Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
     $scope.user.type = 'master'; // master or sub

@@ -44,6 +44,8 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Implement expire logic (for **Richard**)
 * [ ] Enable drag and drop for labels (for **Jason**)
 * [ ] Drag and drop element (conversation and message)
+* [ ] Prepare storage modal (**Jason**) -> storageModal
+* [ ] Prepare support modal (**Jason**) -> supportModal
 
 ### QA
 

@@ -6,12 +6,12 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     cardModal,
+    networkActivityTracker,
     notify,
-    organization,
     Payment,
     paymentModal,
-    supportModal
-    // payment
+    supportModal,
+    payment
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
@@ -109,18 +109,75 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        $scope.organization = organization.Organization; // TODO need initialization
-        $scope.current = null;
-        $scope.currency = 'CHF'; // TODO need initialization
-        $scope.billing = 1; // TODO need initialization
-        $scope.plan = 'plus'; // TODO need initialization
-        $scope.spacePlus = $scope.spacePlusOptions[0]; // TODO need initialization
-        $scope.spaceBusiness = $scope.spaceBusinessOptions[0]; // TODO need initialization
-        $scope.domainPlus = $scope.domainPlusOptions[0]; // TODO need initialization
-        $scope.domainBusiness = $scope.domainBusinessOptions[0]; // TODO need initialization
-        $scope.addressPlus = $scope.addressPlusOptions[0]; // TODO need initialization
-        $scope.addressBusiness = $scope.addressBusinessOptions[0]; // TODO need initialization
-        $scope.memberBusiness = $scope.memberBusinessOptions[0]; // TODO need initialization
+        if(angular.isDefined(payment.data) && payment.data.Code === 1000) {
+            var month = 60 * 60 * 24 * 30; // Time for a month in second
+
+            $scope.current = payment.data.Cart.Future;
+            $scope.payment = payment.data.Payment;
+
+            if(angular.isDefined($scope.payment)) {
+                $scope.currency = $scope.payment.Currency;
+
+                if(parseInt(($scope.payment.PeriodEnd - $scope.payment.PeriodStart) / month) === 1) {
+                    $scope.billing = 12;
+                } else {
+                    $scope.billing = 1;
+                }
+            } else {
+                $scope.currency = 'CHF';
+                $scope.billing = 1;
+            }
+
+            var spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.current.MaxSpace});
+            var spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.current.MaxSpace});
+            var domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.current.MaxDomains});
+            var domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.current.MaxDomains});
+            var addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.current.MaxAddresses});
+            var addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.current.MaxAddresses});
+            var memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.current.MaxMembers});
+
+            if(angular.isDefined(spacePlus)) {
+                $scope.spacePlus = spacePlus;
+            } else {
+                $scope.spacePlus = $scope.spacePlusOptions[0];
+            }
+
+            if(angular.isDefined(spaceBusiness)) {
+                $scope.spaceBusiness = spaceBusiness;
+            } else {
+                $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
+            }
+
+            if(angular.isDefined(domainPlus)) {
+                $scope.domainPlus = domainPlus;
+            } else {
+                $scope.domainPlus = $scope.domainPlusOptions[0];
+            }
+
+            if(angular.isDefined(domainBusiness)) {
+                $scope.domainBusiness = domainBusiness;
+            } else {
+                $scope.domainBusiness = $scope.domainBusinessOptions[0];
+            }
+
+            if(angular.isDefined(addressPlus)) {
+                $scope.addressPlus = addressPlus;
+            } else {
+                $scope.addressPlus = $scope.addressPlusOptions[0];
+            }
+
+            if(angular.isDefined(addressBusiness)) {
+                $scope.addressBusiness = addressBusiness;
+            } else {
+                $scope.addressBusiness = $scope.addressBusinessOptions[0];
+            }
+
+            if(angular.isDefined(memberBusiness)) {
+                $scope.memberBusiness = memberBusiness;
+            } else {
+                $scope.memberBusiness = $scope.memberBusinessOptions[0];
+            }
+        }
     };
 
     /**
@@ -223,7 +280,7 @@ angular.module("proton.controllers.Settings")
 
         if(['free', 'plus', 'business'].indexOf(name) !== -1) {
             // Check configuration choosed
-            Payment.plan(configuration).then(function(result) {
+            networkActivityTracker.track(Payment.plan(configuration).then(function(result) {
                 if(angular.isDefined(result.data) && result.data.Code === 1000) {
                     if(['plus', 'business'].indexOf(name) !== -1) {
                         paymentModal.activate({
@@ -270,7 +327,7 @@ angular.module("proton.controllers.Settings")
                 }
             }, function() {
                 notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-            });
+            }));
         } else if(name === 'enterprise') {
             // TODO Open modal to contact support
             supportModal.activate({

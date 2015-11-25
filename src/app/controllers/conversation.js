@@ -66,8 +66,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Open the only lastest
             $rootScope.openMessage = [_.last($scope.messages).ID];
         }
-
-        $scope.scrollToMessage($rootScope.openMessage[0]);
     };
 
     /**
@@ -97,7 +95,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         // cache
         conversation.NumUnread = 0;
         conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-        
+
         _.each(cache.queryMessagesCached(conversation.ID), function(message) {
             message.IsRead = 1;
             messageEvent.push({Action: 3, ID: message.ID, Message: message});
@@ -125,7 +123,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         // cache
         conversation.NumUnread = $scope.messages.length;
         conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-        
+
         _.each(cache.queryMessagesCached(conversation.ID), function(message) {
             message.IsRead = 0;
             messageEvent.push({Action: 3, ID: message.ID, Message: message});

@@ -64,10 +64,10 @@
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
                             <td>
-                                <strong>{{ 'BUSINESS_PLAN' | translate }}</strong>
+                                <strong>{{ current.Plan }} {{ 'PLAN' | translate }}</strong>
                             </td>
                             <td class="price text-right">
-                                <span>10 CHF</span>
+                                <span>{{ payment.Amount | currency: payment.Currency }}</span>
                             </td>
                         </tr>
                         <tr>
@@ -172,8 +172,7 @@
                             </div>
                             <div class="action" ng-class="{'white': plan === 'basic'}">
                                 <a href="#">
-                                    <strong ng-show="plan === 'basic'">{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan !== 'basic'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    <strong>{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
@@ -247,10 +246,7 @@
                             </div>
                             <div class="action">
                                 <a href="#" ng-click="choose('plus')" class="pm_button primary">
-                                    <strong ng-show="plan === 'enterprise'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                    <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                    <strong ng-show="plan === 'plus'">{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    <strong>{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
@@ -331,9 +327,7 @@
                             </div>
                             <div class="action">
                                 <a href="#" ng-click="choose('business')" class="pm_button primary">
-                                    <strong ng-show="plan === 'business'">{{ 'DOWNGRADE_TO_THIS_PLAN' | translate }}</strong>
-                                    <strong ng-show="plan === 'plus'">{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
-                                    <strong ng-show="plan === 'basic'">{{ 'UPGRADE_TO_THIS_PLAN' | translate }}</strong>
+                                    <strong>{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
@@ -382,7 +376,7 @@
                     </div>
                 </form>
                 <p ng-hide="current.Plan === 'free'">
-                    <a href="" ng-click="choose('free')">{{ 'FREE_PLAN' | translate }}</a>
+                    <a href="" ng-click="choose('free')" pt-tooltip="{{ 'SWITCH_TO_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
                 </p>
             </section>
         </div>
