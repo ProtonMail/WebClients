@@ -175,7 +175,7 @@ angular.module("proton.filters",[])
     return function (input, withoutUnit) {
         var bytes;
         var unit = "";
-        var kb = 1024;
+        var kb = 1000;
         var mb = kb*kb;
         var gb = mb*kb;
 
@@ -190,19 +190,19 @@ angular.module("proton.filters",[])
             if (!!!withoutUnit) {
                 unit = " KB";
             }
-            return (bytes/1024).toFixed(1) + unit;
+            return (bytes/kb).toFixed(1) + unit;
         }
         else if (bytes < gb) {
             if (!!!withoutUnit) {
                 unit = " MB";
             }
-            return (bytes/1024/1024).toFixed(2) + unit;
+            return (bytes/kb/kb).toFixed(2) + unit;
         }
         else {
             if (!!!withoutUnit) {
                 unit = " GB";
             }
-            return (bytes/1024/1024/1024).toFixed(2) + unit;
+            return (bytes/kb/kb/kb).toFixed(2) + unit;
         }
 
     };
@@ -213,14 +213,15 @@ angular.module("proton.filters",[])
 		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) {
             return '-';
         } else {
+            var kb = 1000;
             var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
-    			number = Math.floor(Math.log(bytes) / Math.log(1024));
+    			number = Math.floor(Math.log(bytes) / Math.log(kb));
 
     		if (typeof precision === 'undefined') {
                 precision = 1;
             }
 
-    		return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
+    		return (bytes / Math.pow(kb, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
         }
 	};
 })

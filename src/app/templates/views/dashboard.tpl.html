@@ -63,54 +63,51 @@
                     <table class="pm_table plain" id="tableSubscription">
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
-                            <td>
-                                <strong>{{ current.Plan }} {{ 'PLAN' | translate }}</strong>
-                            </td>
-                            <td class="price text-right">
-                                <span>{{ payment.Amount | currency: payment.Currency }}</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Addons: </th>
-                            <td>
-                                <strong>10 GB + 1 GB Extra Storage</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>1 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>
-                                <strong>1 + 1 GB Extra Domain</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>2 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'TOTAL_PRICE' | translate }}: </th>
                             <td colspan="2">
-                                <strong>13 CHF</strong>
+                                <strong>{{ current.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
                             </td>
                         </tr>
                         <tr>
+                            <th>{{ 'CUSTOM_DOMAIN' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxDomains }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'ADDRESSES' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxAddresses }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'STORAGE' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxSpace | humanSize }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'USERS' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxMembers }}</strong>
+                            </td>
+                        </tr>
+                        <tr ng-hide="current.Plan === 'free'">
+                            <th>{{ 'PRICE' | translate }}: </th>
+                            <td colspan="2">
+                                <strong>{{ status.Amount / 100 | currency: status.Currency }}</strong>
+                            </td>
+                        </tr>
+                        <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'BILLING' | translate }}:</th>
                             <td colspan="2">
-                                <strong>monthly</strong>
+                                <strong ng-show="billing === 1">{{ 'MONTHLY' | translate }}</strong>
+                                <strong ng-show="billing === 12">{{ 'YEARLY' | translate }}</strong>
                             </td>
                         </tr>
-                        <tr>
+                        <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'PAYMENT' | translate }}:</th>
-                            <td>
-                                <strong><i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}</strong>
-                            </td>
-                            <td>
-                                <span>
-                                    <small class="pull-right">
-                                        <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
-                                    </small>
-                                </span>
+                            <td colspan="2">
+                                <a href="" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a>
                             </td>
                         </tr>
                     </table>

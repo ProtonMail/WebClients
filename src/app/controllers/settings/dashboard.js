@@ -8,10 +8,11 @@ angular.module("proton.controllers.Settings")
     cardModal,
     networkActivityTracker,
     notify,
+    // organization,
     Payment,
     paymentModal,
-    supportModal,
-    payment
+    status,
+    supportModal
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
@@ -109,16 +110,20 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        if(angular.isDefined(payment.data) && payment.data.Code === 1000) {
+        // if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
+        //     $scope.organization =
+        // }
+
+        if(angular.isDefined(status.data) && status.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
 
-            $scope.current = payment.data.Cart.Future;
-            $scope.payment = payment.data.Payment;
+            $scope.current = status.data.Cart.Future;
+            $scope.status = status.data.Payment;
 
-            if(angular.isDefined($scope.payment)) {
-                $scope.currency = $scope.payment.Currency;
+            if(angular.isDefined($scope.status)) {
+                $scope.currency = $scope.status.Currency;
 
-                if(parseInt(($scope.payment.PeriodEnd - $scope.payment.PeriodStart) / month) === 1) {
+                if(parseInt(($scope.status.PeriodEnd - $scope.status.PeriodStart) / month) === 1) {
                     $scope.billing = 12;
                 } else {
                     $scope.billing = 1;
@@ -361,16 +366,15 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal with payment information
      */
-    $scope.viewCard = function() {
-        Payment.sources().then(function(result) {
+    $scope.card = function() {
+        networkActivityTracker.track(Payment.source().then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 // Array of credit card information
-                var cards = result.data.Source;
+                var card = result.data.Source;
 
                 cardModal.activate({
                     params: {
-                        card: _.first(cards), // We take only the first
-                        mode: 'view',
+                        card: card,
                         cancel: function() {
                             cardModal.deactivate();
                         }
@@ -381,21 +385,7 @@ angular.module("proton.controllers.Settings")
             }
         }, function(error) {
             notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        });
-    };
-
-    /**
-     * Open modal to edit payment information
-     */
-    $scope.editCard = function() {
-        cardModal.activate({
-            params: {
-                mode: 'edit',
-                cancel: function() {
-                    cardModal.deactivate();
-                }
-            }
-        });
+        }));
     };
 
     // Call initialization

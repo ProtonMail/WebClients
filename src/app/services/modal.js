@@ -423,26 +423,18 @@ angular.module("proton.modals", [])
 .factory('cardModal', function(pmModal, Stripe, Payment, notify, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/card/modal.tpl.html',
+        templateUrl: 'templates/modals/card.tpl.html',
         controller: function(params) {
             // Variables
-            this.mode = params.mode;
             this.cardTypeIcon = 'fa-credit-card';
-
-            if(params.mode === 'edit') {
-                this.number = '';
-                this.fullname = '';
-                this.month = '';
-                this.year = '';
-                this.cvc = '';
-            } else if(params.mode === 'view' && angular.isDefined(params.card)) {
-                this.status = params.card.Status;
-                this.brand = params.card.Brand;
-                this.number = '**** **** **** ' + params.card.Last4;
-                this.fullname = params.card.Name;
-                this.month = params.card.ExpMonth;
-                this.year = params.card.ExpYear;
-            }
+            this.status = params.card.Status;
+            this.brand = params.card.Brand;
+            this.number = '**** **** **** ' + params.card.Last4;
+            this.fullname = params.card.Name;
+            this.month = params.card.ExpMonth;
+            this.year = params.card.ExpYear;
+            this.cvc = '***';
+            this.change = false;
             // Functions
             this.submit = function() {
                 this.process = true;

@@ -27,7 +27,6 @@ angular.module("proton.models.payments", [])
          * Check the plan configured by the user to see if it's correct
          */
         plan: function(configuration) {
-            console.log(configuration);
             return $http.post(url.get() + '/payments/plan', configuration);
         },
         /**
@@ -77,8 +76,12 @@ angular.module("proton.models.payments", [])
         /**
          * Get current payment information from Stripe
          */
-        sources: function() {
-            return $http.get(url.get() + '/payments/source');
+        source: function() {
+            return $http.get(url.get() + '/payments/source', {
+                params: {
+                    ExternalProvider: 'Stripe'
+                }
+            });
         },
         /**
          * Send a new credit card information
