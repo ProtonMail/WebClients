@@ -267,9 +267,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(angular.isElement(element)) {
                 var value = element.offset().top - element.outerHeight();
 
-                $('#pm_thread').animate({
+                $('#pm_thread')
+                .animate({
                     scrollTop: value
-                }, 'slow');
+                }, 10, function() {
+                    $(this).animate({
+                        opacity: 1
+                    }, 200);
+                });
             }
         }, 2000);
     };

@@ -20,7 +20,7 @@
     }
     &:active,
     &:focus {
-        background-color: #f4f4f4;
+        background-color: lighten($border, 5%);
         outline: none;
     }
     &.primary {
@@ -33,8 +33,8 @@
         }
         &:active,
         &:focus {
-            background-color: 66669a;
-            border-color: 66669a;
+            background-color: #66669a;
+            border-color: #66669a;
             outline: none;
         }
     }
@@ -89,6 +89,7 @@
         opacity: .5;
         pointer-events: none;
         cursor: default;
+        background: lighten($border, 5%);
     }
     &.dead {
         pointer-events: none;
@@ -117,7 +118,7 @@
     position: relative;
     .disabled,
     [disabled] {
-        color: rgba(0,0,0,.2) !important;
+        background: lighten($border, 5%);
         pointer-events: none
     }
     .dead {
@@ -161,7 +162,7 @@
         }
         &:active,
         &.active {
-            background: #fff !important;
+            background: lighten($border, 5%) !important;
         }
         &.secondary {
             // white background
