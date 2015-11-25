@@ -77,6 +77,7 @@ angular.module("proton.authentication", [
                             $http.get(url.get() + "/labels")
                         ]).then(
                             function(result) {
+                                user.Role = 'master'; // TODO need back-end initialization
                                 user.Contacts = result[0].data.Contacts;
                                 user.Labels = result[1].data.Labels;
                                 return deferred.resolve(user);
@@ -412,19 +413,19 @@ angular.module("proton.authentication", [
 
             // HACKY ASS BUG
             var clearData = function() {
-                
+
                 // Completely clear sessionstorage
                 window.sessionStorage.clear();
-                
+
                 delete auth.data;
-                
+
                 delete auth.mailboxPassword;
-                
+
                 auth.headersSet = false;
                 // TODO clean this, up, need to reset $http headers if we hope to get rid of hack
-                
+
                 this.user = null;
-                
+
                 window.onbeforeunload = undefined;
                 if (reload) {
                     location.reload();

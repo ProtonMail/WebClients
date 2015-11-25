@@ -28,8 +28,6 @@ angular.module("proton.controllers.Secured", [])
     Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
-    $scope.user.type = 'master'; // master or sub
-
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $scope.settingsRoutes = [
