@@ -4,18 +4,19 @@ angular.module("proton.authentication", [
 ])
 
 .factory('authentication', function(
-    pmcw,
-    CONSTANTS,
-    $state,
-    $rootScope,
-    $q,
     $http,
-    $timeout,
     $log,
+    $q,
+    $rootScope,
+    $state,
+    $timeout,
+    CONFIG,
+    CONSTANTS,
     errorReporter,
-    url,
+    networkActivityTracker,
     notify,
-    CONFIG
+    pmcw,
+    url
 ) {
 
     // PRIVATE FUNCTIONS
@@ -35,8 +36,7 @@ angular.module("proton.authentication", [
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
-            }
-            else {
+            } else {
                 // we need the old stuff for now
                 $log.debug('setAuthHeaders:2');
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
@@ -45,7 +45,6 @@ angular.module("proton.authentication", [
         },
 
         fetchUserInfo: function(uid) {
-
             var deferred = $q.defer();
 
             $http.get(url.get() + "/users", {
@@ -54,53 +53,65 @@ angular.module("proton.authentication", [
                 }
             }).then(
                 function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        var user = result.data.User;
 
-                    var user = result.data.User;
+                        if (!user.EncPrivateKey) {
+                            deferred.reject({message: 'Error with EncPrivateKey'});
+                            api.logout();
+                        } else {
+                            $q.all([
+                                $http.get(url.get() + "/contacts"),
+                                $http.get(url.get() + "/labels")
+                            ]).then(
+                                function(result) {
+                                    if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
+                                        user.Contacts = result[0].data.Contacts;
+                                        user.Labels = result[1].data.Labels;
+                                        user.Role = 'master'; // TODO need back-end initialization
 
-                    // Set the rows/columsn mode
-                    if (!angular.isUndefined(user.ViewLayout)) {
-                        if (user.ViewLayout===0) {
-                            $rootScope.layoutMode = 'columns';
+                                        // Set the rows / columns mode
+                                        if (angular.isDefined(user.ViewLayout)) {
+                                            if (user.ViewLayout === 0) {
+                                                $rootScope.layoutMode = 'columns';
+                                            } else {
+                                                $rootScope.layoutMode = 'rows';
+                                            }
+                                        }
+
+                                        deferred.resolve(user);
+                                    } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
+                                        deferred.reject({message: result[0].data.Error});
+                                        api.logout();
+                                    } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
+                                        deferred.reject({message: result[1].data.Error});
+                                        api.logout();
+                                    } else {
+                                        deferred.reject({message: 'Error during label / contact request'});
+                                        api.logout();
+                                    }
+                                },
+                                function() {
+                                    deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
+                                    api.logout();
+                                }
+                            );
                         }
-                        else {
-                            $rootScope.layoutMode = 'rows';
-                        }
-                    }
-
-                    if (!user.EncPrivateKey) {
+                    } else if(angular.isDefined(result.data) && result.data.Error) {
+                        deferred.reject({message: result.data.Error});
                         api.logout();
-                        deferred.reject();
-                    }
-                    else {
-                        $q.all([
-                            $http.get(url.get() + "/contacts"),
-                            $http.get(url.get() + "/labels")
-                        ]).then(
-                            function(result) {
-                                user.Role = 'master'; // TODO need back-end initialization
-                                user.Contacts = result[0].data.Contacts;
-                                user.Labels = result[1].data.Labels;
-                                return deferred.resolve(user);
-                            },
-                            function() {
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: 'Sorry, but we were unable to fully log you in.'
-                                });
-                                api.logout();
-                            }
-                        );
+                    } else {
+                        deferred.reject({message: 'Error during user request'});
+                        api.logout();
                     }
                 },
                 function(err) {
-                    console.log(err);
-                    notify({
-                        classes: 'notification-danger',
-                        message: 'Sorry, but we were unable to log you in.'
-                    });
+                    deferred.reject({message: 'Sorry, but we were unable to log you in.'});
                     api.logout();
                 }
             );
+
+            networkActivityTracker.track(deferred.promise);
 
             return deferred.promise;
         },
@@ -270,7 +281,7 @@ angular.module("proton.authentication", [
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    deferred.reject({ message: "Error setting authentication cookies." });
+                    deferred.reject({message: "Error setting authentication cookies."});
                 }
             );
 
@@ -404,7 +415,7 @@ angular.module("proton.authentication", [
 
             $rootScope.loggingOut = true;
 
-            if (reload===undefined) {
+            if(angular.isUndefined(reload)) {
                 reload = true;
             }
 
@@ -495,11 +506,9 @@ angular.module("proton.authentication", [
 
         fetchUserInfo: function(uid) {
             var promise = auth.fetchUserInfo(uid);
+
             return promise.then(
                 function(user) {
-
-                    // console.log(user);
-
                     if (user.DisplayName.length === 0) {
                         user.DisplayName = user.Name;
                     }
