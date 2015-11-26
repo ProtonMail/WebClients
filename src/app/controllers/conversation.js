@@ -23,6 +23,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.messages = messages;
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
+    $scope.currentState = $state.$current.name;
 
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeElement', conversation.ID);
@@ -323,7 +324,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Go to the next conversation
      */
     $scope.next = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
 
         cache.more($scope.conversation, 'next').then(function(id) {
             // $state.go(current, {id: id});
@@ -334,7 +335,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Go to the previous conversation
      */
     $scope.previous = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
 
         cache.more($scope.conversation, 'previous').then(function(id) {
             // $state.go(current, {id: id});

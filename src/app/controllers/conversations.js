@@ -874,7 +874,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String}
      */
     $scope.filterBy = function(status) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: status,
             page: undefined
         }));
@@ -884,7 +884,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Clear current filter
      */
     $scope.clearFilter = function() {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: undefined,
             page: undefined
         }));
@@ -895,7 +895,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} criterion
      */
     $scope.orderBy = function(criterion) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
             page: undefined
         }));

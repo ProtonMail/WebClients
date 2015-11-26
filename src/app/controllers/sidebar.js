@@ -159,7 +159,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param {String} route
      */
     $scope.goTo = function(route) {
-        var sameFolder = $state.current.name === route;
+        var sameFolder = $state.$current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
 
         $scope.hideMobileSidebar();

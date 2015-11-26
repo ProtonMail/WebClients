@@ -84,7 +84,7 @@ angular.module("proton.controllers.Secured", [])
      * Initialize select
      */
     $scope.initSettingRoute = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
         var route = _.findWhere($scope.settingsRoutes, {value: current});
 
         if(angular.isDefined(route)) {
