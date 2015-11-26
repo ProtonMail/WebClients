@@ -21,10 +21,9 @@ angular.module("proton.authentication", [
 
     // PRIVATE FUNCTIONS
     var auth = {
-
+        headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
         setAuthHeaders: function() {
-
             this.headersSet = true;
             // API version
             if ( auth.data.SessionToken ) {
@@ -121,13 +120,13 @@ angular.module("proton.authentication", [
             if ( data.SessionToken ) {
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"] = pmcw.encode_base64(data.SessionToken);
                 auth.data = data;
-            }
-            else {
+            } else {
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
                 auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             }
+
             auth.setAuthHeaders();
         },
 
@@ -138,25 +137,21 @@ angular.module("proton.authentication", [
 
     // RUN-TIME PUBLIC FUNCTIONS
     var api = {
+        user: null,
         detectAuthenticationState: function() {
             var session = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"];
+
             if (session) {
                 auth.data = {
                     SessionToken: pmcw.decode_base64(session)
                 };
-
-                auth.mailboxPassword = this.getPassword();
-
-                if (auth.mailboxPassword) {
-                    pmcw.setMailboxPassword(auth.mailboxPassword);
-                }
             }
         },
 
         savePassword: function(pwd) {
-            // Why is this saved in three different places?
+            // Save password in session storage
             window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_utf8_base64(pwd);
-            auth.mailboxPassword = pwd;
+            // Set pmcrypto.mailboxPassword
             pmcw.setMailboxPassword(pwd);
         },
 
@@ -329,22 +324,6 @@ angular.module("proton.authentication", [
             return deferred.promise;
         },
 
-        // Whether a user is logged in at all
-        isLoggedIn: function() {
-            // $log.debug('isLoggedIn');
-            // console.log(auth);
-            // console.log(auth.data);
-            // console.log(this.refreshTokenIsDefined());
-
-            var loggedIn = auth.data && this.sessionTokenIsDefined();
-
-            if (loggedIn && !!!auth.headersSet) {
-                auth.setAuthHeaders();
-            }
-            // $log.debug('isLoggedIn:',loggedIn);
-            return loggedIn;
-        },
-
         sessionTokenIsDefined: function() {
             var isDefined = false;
 
@@ -355,15 +334,24 @@ angular.module("proton.authentication", [
             return isDefined;
         },
 
-        // Whether the mailbox' password is accessible, or if the user needs to re-enter it
-        isLocked: function() {
-            return !this.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
+        // Whether a user is logged in at all
+        isLoggedIn: function() {
+            var loggedIn = this.sessionTokenIsDefined();
+
+            if (loggedIn === true && auth.headersSet === false) {
+                auth.setAuthHeaders();
+            }
+
+            return loggedIn;
         },
 
-        // TODO, aren't isLocked and isSecured exact opposites of one another? Why do they both exist?
-        // Logged in and MBPW is set
+        // Whether the mailbox' password is accessible, or if the user needs to re-enter it
+        isLocked: function() {
+            return this.isLoggedIn() === false || angular.isUndefined(this.getPassword());
+        },
+
         isSecured: function() {
-            return this.isLoggedIn() && !this.isLocked();
+            return this.isLoggedIn() && angular.isDefined(this.getPassword());
         },
 
         // Return a state name to be in in case some user authentication step is required.
@@ -412,67 +400,52 @@ angular.module("proton.authentication", [
 
         // Removes all connection data
         logout: function(reload) {
-
-            $rootScope.loggingOut = true;
-
-            if(angular.isUndefined(reload)) {
-                reload = true;
-            }
-
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
-
-            // HACKY ASS BUG
             var clearData = function() {
-
                 // Completely clear sessionstorage
                 window.sessionStorage.clear();
-
+                // Delete data key
                 delete auth.data;
-
-                delete auth.mailboxPassword;
-
                 auth.headersSet = false;
-                // TODO clean this, up, need to reset $http headers if we hope to get rid of hack
-
+                // Remove all user information
                 this.user = null;
-
+                // Clean onbeforeunload listener
                 window.onbeforeunload = undefined;
-                if (reload) {
-                    location.reload();
+                // Disable animation
+                $rootScope.loggingOut = false;
+                // Re-initialize variables
+                $rootScope.isLoggedIn = this.isLoggedIn();
+                $rootScope.isLocked = this.isLocked();
+                $rootScope.isSecure = this.isSecured();
+                $rootScope.domoArigato = false;
+
+                if(reload === true) {
+                    $state.go('login');
                 }
-            };
+            }.bind(this);
+
+            reload = (angular.isDefined(reload)) ? reload : true;
+            $rootScope.loggingOut = true;
 
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
-                $http.delete(url.get() + "/auth").then( clearData, clearData );
+                $http.delete(url.get() + "/auth").then(clearData, clearData);
             } else {
                 clearData();
             }
-
-            // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
-            $rootScope.isLoggedIn = false;
-            $rootScope.isLocked = true;
-            $rootScope.isSecure = false;
-            $rootScope.domoArigato = false;
-
         },
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
         unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
-
-            // console.log(epk, pwd, accessToken, TemporaryAccessData);
-
             var req = $q.defer();
             var self = this;
 
             if (pwd) {
-
                 pmcw.checkMailboxPassword(epk, pwd, accessToken)
                 .then(
                     function(response) {
                         this.savePassword(pwd);
-                        auth.mailboxPassword = pwd;
                         this.receivedCredentials({
                             "AccessToken": response,
                             "RefreshToken": TemporaryAccessData.RefreshToken,
@@ -530,16 +503,12 @@ angular.module("proton.authentication", [
         }
     };
 
-    // Initialization
-    api.user = null;
-    auth.headersSet = false;
-
     return api;
 })
 
 .run(function($rootScope, authentication, eventManager, cache, CONFIG) {
     authentication.detectAuthenticationState();
-    //authentication.refreshIfNecessary();
+
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();

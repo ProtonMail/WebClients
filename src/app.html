@@ -50,9 +50,9 @@ ng-class="{
     columns: (layoutMode==='columns'),
     activeComposer:activeComposer,
     maximizedComposer:maximizedComposer,
-    light: (('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState)),
-    scroll: (('step1'|isState) || ('secured.print'|isState)),
-    modalOpen: modalOpen, 
+    light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState),
+    scroll: ('step1'|isState) || ('secured.print'|isState),
+    modalOpen: modalOpen,
     themeJason: themeJason
 }">
 
@@ -76,7 +76,7 @@ ng-class="{
         <div class="spinner1"></div>
         <div class="spinner2"></div>
         <div class="spinner3"></div>
-        
+
     </div>
     <p>LOGGING OUT...</p>
 </div>

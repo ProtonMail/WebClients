@@ -123,7 +123,6 @@ angular.module("proton.routes", [
             }
         },
         onEnter: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
-
             // clear user data if already logged in:
             authentication.logout(false);
             $rootScope.loggingOut = false;

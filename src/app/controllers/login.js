@@ -36,6 +36,11 @@ angular.module("proton.controllers.Auth", [
         }
     }
 
+    var clearErrors = function() {
+        $scope.error = null;
+        notify.closeAll();
+    };
+
     $scope.initialization = function() {
         var ua = window.navigator.userAgent;
         var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
@@ -47,11 +52,16 @@ angular.module("proton.controllers.Auth", [
         } else {
             $('input.focus').focus();
         }
-        if ($location.hash()==='help') {
+
+        // If #help
+        if ($location.hash() === 'help') {
             $scope.getLoginHelp();
         }
     };
 
+    /**
+     * Open login modal to help the user
+     */
     $scope.getLoginHelp = function() {
         loginModal.activate({
             params: {
@@ -60,11 +70,6 @@ angular.module("proton.controllers.Auth", [
                 }
             }
         });
-    };
-
-    var clearErrors = function() {
-        $scope.error = null;
-        notify.closeAll();
     };
 
     // this does not add security and was only active for less than a day in 2013.
@@ -80,7 +85,7 @@ angular.module("proton.controllers.Auth", [
         return pmcrypto.getHashedPassword(salt+password);
     };
 
-    $rootScope.tryLogin = function() {
+    $scope.login = function() {
         $('input').blur();
         clearErrors();
 
@@ -150,11 +155,12 @@ angular.module("proton.controllers.Auth", [
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.AccessToken)) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
-                        $rootScope.tempUser = {};
-                        $rootScope.tempUser.username = $scope.username;
-                        $rootScope.tempUser.password = $scope.password;
+                        $rootScope.tempUser = {
+                            username: $scope.username,
+                            password: $scope.password
+                        };
 
-                        $state.go("login.unlock");
+                        $state.go('login.unlock');
                         return;
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                         // TODO: This might be buggy
@@ -187,7 +193,7 @@ angular.module("proton.controllers.Auth", [
         );
     };
 
-    $scope.tryUnlock = function() {
+    $scope.unlock = function() {
         // Make local so extensions (or Angular) can't mess with it by clearing the form too early
         var mailboxPassword = $scope.mailboxPassword;
 
@@ -208,10 +214,13 @@ angular.module("proton.controllers.Auth", [
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
                             authentication.savePassword(mailboxPassword);
+                            $rootScope.isLoggedIn = authentication.isLoggedIn();
+                            $rootScope.isLocked = authentication.isLocked();
+                            $rootScope.isSecure = authentication.isSecured();
                             $state.go("secured.inbox.list");
                         },
                         function(err) {
-                            $log.error('tryUnlock', err);
+                            $log.error('unlock', err);
                             notify({
                                 classes: 'notification-danger',
                                 message: err.message
@@ -221,7 +230,7 @@ angular.module("proton.controllers.Auth", [
                     );
                 },
                 function(err) {
-                    $log.error('tryUnlock', err);
+                    $log.error('unlock', err);
 
                     // clear password for user
                     $scope.selectPassword();
@@ -239,9 +248,9 @@ angular.module("proton.controllers.Auth", [
         if (event.keyCode === 13) {
             event.preventDefault();
             if ($state.is("login.unlock")) {
-                $scope.tryUnlock.call(this);
+                $scope.unlock();
             } else {
-                $scope.tryLogin.call(this);
+                $scope.login();
             }
         }
     };

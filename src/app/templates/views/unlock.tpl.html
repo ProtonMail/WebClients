@@ -4,7 +4,7 @@ class="pm_panel pm_form alt"
 novalidate
 role="form"
 autocomplete="on"
-ng-submit="tryUnlock()"
+ng-submit="unlock()"
 method="post">
 
     <div ng-hide="domoArigato">
@@ -35,7 +35,7 @@ method="post">
 
         <div class="clearfix">
             <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-            <a class="pm_button primary pull-right" ng-click="tryUnlock()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>
+            <a class="pm_button primary pull-right" ng-click="unlock()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>
         </div>
 
     </div>

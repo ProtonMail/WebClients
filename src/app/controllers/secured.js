@@ -49,10 +49,6 @@ angular.module("proton.controllers.Secured", [])
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
-    $rootScope.isSecure = function() {
-        return authentication.isSecured();
-    };
-
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 

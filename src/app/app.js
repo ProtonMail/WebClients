@@ -196,11 +196,10 @@ angular.module("proton", [
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
-
     $rootScope.themeJason = false;
-
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
+    $rootScope.isLoggedIn = authentication.isLoggedIn();
+    $rootScope.isLocked = authentication.isLocked();
+    $rootScope.isSecure = authentication.isSecured();
 
     // SVG Polyfill for Edge
     svg4everybody();
