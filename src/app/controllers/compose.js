@@ -56,7 +56,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         {label: '4', value: 4},
         {label: '5', value: 5},
         {label: '6', value: 6}
-     
+
     ];
     $scope.hourOptions = [
         {label: '0', value: 0},
@@ -1167,12 +1167,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         deferred.reject(new Error(result.Error));
                                     } else {
                                         cache.events(events);
-                                        notify({
-                                            message: $translate.instant('MESSAGE_SENT'),
-                                            duration: 6000,
-                                            classes: 'notification-success',
-                                            templateUrl: 'templates/notifications/loading.tpl.html',
-                                        });
+                                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);
                                     }
