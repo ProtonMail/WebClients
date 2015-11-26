@@ -47,7 +47,11 @@
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
-            <a href="" ui-sref="secured.dashboard">
+            <a href="" ui-sref="secured.dashboard" ng-show="user.Role === 'master'">
+                <em><i class="fa fa-cogs"></i></em>
+                <strong>{{ 'SETTINGS' | translate }}</strong>
+            </a>
+            <a href="" ui-sref="secured.account" ng-hide="user.Role === 'master'">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>

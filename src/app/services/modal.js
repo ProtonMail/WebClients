@@ -579,6 +579,7 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this);
 
+                // 
                 if(Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
                     return false;
@@ -594,6 +595,7 @@ angular.module("proton.modals", [])
                     return false;
                 }
 
+                // Generate token with Stripe Api
                 Stripe.card.createToken({
                     name: this.fullname,
                     number: this.number,
@@ -603,6 +605,9 @@ angular.module("proton.modals", [])
                 }, stripeResponseHandler);
             };
 
+            /**
+             * Change cc icon depending upon number
+             */
             this.numberChange = function() {
                 var type = Stripe.card.cardType(this.number);
 
@@ -624,18 +629,28 @@ angular.module("proton.modals", [])
                         break;
                     case 'American Express':
                     case 'Unknown':
-                    this.cardTypeIcon = 'fa-credit-card';
-                    break;
+                        this.cardTypeIcon = 'fa-credit-card';
+                        break;
                     default:
                         this.cardTypeIcon = 'fa-credit-card';
                         break;
                 }
             };
 
+            /**
+             * Close payment modal
+             */
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            /**
+             * Toggle
+             */
+            this.toggle = function() {
+
             };
         }
     });
