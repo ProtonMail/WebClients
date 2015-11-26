@@ -233,8 +233,16 @@ angular.module("proton", [
 // Redirection if not authentified
 //
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
+    var notification = false;
+
     return {
         response: function(response) {
+            // Close notification if Internet wake up
+            if(notification) {
+                notification.close();
+                notification = false;
+            }
+
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code === 5003) {
@@ -273,12 +281,11 @@ angular.module("proton", [
         },
         responseError: function(rejection) {
             if(rejection.status === 0 || rejection.status === -1) {
-                $injector.get('notify')({
+                notification = $injector.get('notify')({
                     message: 'Could not connect to server.',
                     classes: 'notification-danger',
                     duration: '0'
                 });
-                // TODO setup here internet test connectivity
             } else if (rejection.status === 401) {
                 if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;
