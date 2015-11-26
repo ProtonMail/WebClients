@@ -80,11 +80,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Display content
             $scope.displayContent();
 
-            // Mark message as read
-            if($scope.message.IsRead === 0) {
-                $scope.read(false);
-            }
-
             // Start timer ago
             $scope.agoTimer = $interval(function() {
                 var time = $filter('longReadableTime')($scope.message.Time);
@@ -371,9 +366,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as read
-     * @param {Boolean} back
      */
-    $scope.read = function(back) {
+    $scope.read = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
@@ -389,17 +383,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         // Request
         Message.read({IDs: ids});
 
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
+        // Back to elements list
+        $scope.back();
     };
 
     /**
      * Mark current message as unread
-     * @param {Boolean} back
      */
-    $scope.unread = function(back) {
+    $scope.unread = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
@@ -418,10 +409,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         // Request
         Message.unread({IDs: ids});
 
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
+
+        // Back to elements list
+        $scope.back();
     };
 
     $scope.toggleImages = function() {

@@ -66,6 +66,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Open the only lastest
             $rootScope.openMessage = [_.last($scope.messages).ID];
         }
+
+        // Mark conversation as read
+        if($scope.conversation.NumUnread > 0) {
+            $scope.read();
+        }
     };
 
     /**
@@ -86,6 +91,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     /**
      * Mark current conversation as read
+     * @param {Boolean} back
      */
     $scope.read = function() {
         var conversationEvent = [];
@@ -107,15 +113,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // api
         Conversation.read([conversation.ID]);
-
-        // back to conversation list
-        $scope.back();
     };
 
     /**
      * Mark current conversation as unread
+     * @param {Boolean} back
      */
-    $scope.unread = function() {
+    $scope.unread = function(back) {
         var conversationEvent = [];
         var messageEvent = [];
         var conversation = angular.copy($scope.conversation);
@@ -134,9 +138,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // api
         Conversation.unread([conversation.ID]);
-
-        // back to conversation list
-        $scope.back();
     };
 
     /**
