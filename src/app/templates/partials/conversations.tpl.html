@@ -39,11 +39,11 @@
                     <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                 </a>
             </p>
-            <p>
-            <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
-            <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
-            <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-            {{ conversation.Subject }}
+            <p title="{{ conversation.Subject }}">
+                <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
+                <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
+                <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
+                {{ conversation.Subject }}
             </p>
         </article>
     </div>
@@ -71,7 +71,7 @@
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
-            <span>
+            <span title="{{ conversation.Subject }}">
                 <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
                 <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>

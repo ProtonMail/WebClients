@@ -2,9 +2,7 @@ angular.module("proton.dropdown", [])
 
 .directive('ngDropdown', function ($timeout) {
     return function (scope, element, attrs) {
-
-        // lower is faster. 1000 = 1 second.
-        var animationDuration = 120;
+        var animationDuration = 50;
         var timer;
 
         element.bind("click", function (event) {

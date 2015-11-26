@@ -238,7 +238,7 @@ angular.module("proton", [
         response: function(response) {
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
-                if (response.data.Code===5003) {
+                if (response.data.Code === 5003) {
                     if ($rootScope.updateMessage===false) {
                         $rootScope.updateMessage = true;
                         $injector.get('notify')({
@@ -248,36 +248,38 @@ angular.module("proton", [
                         });
                     }
                 }
-                else if(response.data.Code===5004) {
+                else if(response.data.Code === 5004) {
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Non-integer API version requested.'
                     });
                 }
                 // unsupported api
-                else if (response.data.Code===5005) {
+                else if (response.data.Code === 5005) {
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Unsupported API version.'
                     });
                 }
                 // site offline
-                else if (response.data.Code===7001) {
+                else if (response.data.Code === 7001) {
                     $injector.get('notify')({
                         classes: 'notification-info',
                         message: 'The ProtonMail API is offline: '+response.data.ErrorDescription
                     });
                 }
             }
+
             return response || $q.when(response);
         },
         responseError: function(rejection) {
             if(rejection.status === 0 || rejection.status === -1) {
                 $injector.get('notify')({
-                    message: 'You are not connected to the Internet.',
+                    message: 'Could not connect to server.',
                     classes: 'notification-danger',
-                    duration: 0
+                    duration: '0'
                 });
+                // TODO setup here internet test connectivity
             } else if (rejection.status === 401) {
                 if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;
