@@ -67,6 +67,7 @@
 			display: none;
 		}
 		&:hover {
+			background-color: $light;
 			z-index: 99 !important;
 		}
 	}
