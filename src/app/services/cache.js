@@ -105,10 +105,11 @@ angular.module("proton.cache", [])
     /**
      * Reorder cache location by reverse time
      * @param {Array} elements - conversation or message
+     * @param {String} parameter - ordered with this parameter
      */
-    var order = function(elements) {
+    var order = function(elements, parameter) {
         if(angular.isArray(elements)) {
-            return _.sortBy(elements, 'Time').reverse();
+            return _.sortBy(elements, parameter).reverse();
         } else {
             return [];
         }
@@ -180,7 +181,7 @@ angular.module("proton.cache", [])
                     storeConversations(data.Conversations);
                 }
                 // Return conversations
-                deferred.resolve(order(data.Conversations)); // We order data also
+                deferred.resolve(order(data.Conversations, 'Time')); // We order data also
             } else {
                 deferred.reject();
             }
@@ -207,7 +208,7 @@ angular.module("proton.cache", [])
                 storeMessages(messages);
             }
 
-            deferred.resolve(order(messages));
+            deferred.resolve(order(messages, 'Time'));
         });
 
         return deferred.promise;
@@ -313,7 +314,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(location.toString()) !== -1;
             });
 
-            messages = order(messages);
+            messages = order(messages, 'Time');
 
             console.info('Number of messages in the cache', messages.length);
 
@@ -383,7 +384,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(location.toString()) !== -1;
             });
 
-            conversations = order(conversations);
+            conversations = order(conversations, 'Time');
 
             console.info('Number of conversations cached for "' + location + '":', conversations.length);
 
@@ -448,7 +449,7 @@ angular.module("proton.cache", [])
             var messages = _.where(messagesCached, {ConversationID: conversationId});
 
             if(conversation.NumMessages === messages.length) {
-                deferred.resolve(messages);
+                deferred.resolve(order(messages, 'Time'));
             } else {
                 callApi();
             }
