@@ -25,7 +25,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 ) {
     // Variables
     var promiseComposerStyle;
-    var dragsters = [];
     var timeoutStyle;
     var dropzone;
 

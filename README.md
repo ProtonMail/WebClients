@@ -42,7 +42,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [x] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
 * [x] Fix style when we print a message (for **Jason**)
 * [ ] Implement expire logic (for **Richard**)
-* [ ] Enable drag and drop for labels (for **Jason**)
+* [x] Enable drag and drop for labels (for **Jason**)
 * [ ] Drag and drop element (conversation and message)
 * [ ] Prepare storage modal (**Jason**) -> storageModal
 * [ ] Prepare support modal (**Jason**) -> supportModal

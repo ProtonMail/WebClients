@@ -199,29 +199,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
 
-
-    /**
-     * "jqyoui-droppable" event handler. Moves or labels messages when drag & dropped
-     */
-    $scope.onDropMessage = function(event, ui, name) {
-        var folders = ['inbox', 'archive', 'spam', 'trash'];
-
-        if(_.contains(folders, name)) { // Is it a folder?
-            if($state.is('secured.' + name)) { // Same folder?
-                notify($translate.instant('SAME_FOLDER'));
-            } else {
-                $rootScope.$broadcast('move', name);
-            }
-        } else if(name === 'starred') {
-            // Just star selected messages
-            $rootScope.$broadcast('starMessages');
-        } else {
-            var LabelID = name;
-            // Apply label
-            $rootScope.$broadcast('applyLabels', LabelID);
-        }
-    };
-
     /**
      * Returns the number of unread messages in a location
      * @param mailbox {String} name indentifier for folder

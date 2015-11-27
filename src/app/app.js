@@ -1,18 +1,14 @@
 angular.module("proton", [
-    // "ngAnimate", // We can't use the `ngAnimate`, it causes delays on application and also a problem with the iframe sandbox.
-    "ngSanitize",
-    "ngResource",
-    "ngCookies",
-    "btford.markdown",
-    "ngFileUpload",
     "cgNotify",
-    "pikaday",
-    "toggle-switch",
-    "pascalprecht.translate",
-    "ui.bootstrap",
-    "ui.sortable",
-    "ngDragDrop",
+    "ngCookies",
+    "ngFileUpload",
+    "ngResource",
+    "ngSanitize",
     "ngTouch",
+    "pascalprecht.translate",
+    "pikaday",
+    // "ui.bootstrap",
+    "ui.sortable",
 
     // Constant
     "proton.constants",
