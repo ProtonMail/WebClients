@@ -23,33 +23,6 @@ angular.module("proton.cache", [])
     var UPDATE_FLAGS = 3;
 
     /**
-     * Return a vector to calculate the counters
-     * @param {Object} element - element to analyse (conversation or message)
-     * @param {Boolean} unread - true if unread case
-     * @return {Object}
-     */
-    var vector = function(element, unread) {
-        var result = {};
-        var type = (angular.isDefined(element.IsRead)) ? 'message' : 'conversation';
-        var condition = true;
-        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
-
-        if(unread === true) {
-            if(type === 'message') {
-                condition = element.IsRead === 0;
-            } else if(type === 'conversation') {
-                condition = element.NumUnread > 0;
-            }
-        }
-
-        _.each(locations, function(location) {
-            result[location] = Number(element.LabelIDs.indexOf(location) !== -1 && condition);
-        });
-
-        return result;
-    };
-
-    /**
     * Save conversations in conversationsCached and add location in attribute
     * @param {Array} conversations
     */
@@ -121,16 +94,51 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Return a vector to calculate the counters
+     * @param {Object} element - element to analyse (conversation or message)
+     * @param {Boolean} unread - true if unread case
+     * @param {String} type = conversation or message
+     * @return {Object}
+     */
+    var vector = function(element, unread, type) {
+        var result = {};
+        var condition = true;
+        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+        if(unread === true) {
+            if(type === 'message') {
+                condition = element.IsRead === 0;
+            } else if(type === 'conversation') {
+                condition = element.NumUnread > 0;
+            }
+        }
+
+        _.each(locations, function(location) {
+            if(element.LabelIDs.indexOf(location) !== -1 && condition) {
+                if(type === 'message') {
+                    result[location] = 1;
+                } else if(type === 'conversation') {
+                    result[location] = element.NumUnread;
+                }
+            } else {
+                result[location] = 0;
+            }
+        });
+
+        return result;
+    };
+
+    /**
      * Manage the updating to calcultate the total number of messages and unread messages
      * @param {Object} oldElement
      * @param {Object} newElement
      * @param {String} type - 'message' or 'conversation'
      */
     var manageCounters = function(oldElement, newElement, type) {
-        var oldUnreadVector = vector(oldElement, true);
-        var newUnreadVector = vector(newElement, true);
-        var newTotalVector = vector(newElement, false);
-        var oldTotalVector = vector(oldElement, false);
+        var oldUnreadVector = vector(oldElement, true, type);
+        var newUnreadVector = vector(newElement, true, type);
+        var newTotalVector = vector(newElement, false, type);
+        var oldTotalVector = vector(oldElement, false, type);
         var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
         _.each(locations, function(location) {
@@ -996,7 +1004,7 @@ angular.module("proton.cache", [])
             _.each(result.conversation.data.Counts, function(counter) {
                 exist(counter.LabelID);
                 counters[counter.LabelID].conversation.total = counter.Total;
-                counters[counter.LabelID].conversation.unread = counter.Total;
+                counters[counter.LabelID].conversation.unread = counter.Unread;
             });
 
             deferred.resolve();
