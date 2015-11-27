@@ -40,6 +40,10 @@ angular.module("proton.routes", [
                 controller: "LoginController",
                 templateUrl: "templates/views/login.tpl.html"
             }
+        },
+        onEnter: function(authentication) {
+            // We automatically logout the user when he comes to login page
+            authentication.logout(false);
         }
     })
 
@@ -51,13 +55,11 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        onEnter: function($rootScope, $state, authentication, $log) {
-            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
-                $log.debug('login.unlock.onEnter:1');
-                $rootScope.isLoggedIn = false;
-                authentication.logout();
-                $state.go('login');
+        onEnter: function($rootScope, $state, authentication) {
+            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge === undefined) {
+                authentication.logout(true);
             }
+
             setTimeout( function() {
                 $( "[type=password]" ).focus();
             }, 200);

@@ -57,7 +57,7 @@ angular.module("proton.authentication", [
 
                         if (!user.EncPrivateKey) {
                             deferred.reject({message: 'Error with EncPrivateKey'});
-                            api.logout();
+                            api.logout(true);
                         } else {
                             $q.all([
                                 $http.get(url.get() + "/contacts"),
@@ -81,32 +81,32 @@ angular.module("proton.authentication", [
                                         deferred.resolve(user);
                                     } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
                                         deferred.reject({message: result[0].data.Error});
-                                        api.logout();
+                                        api.logout(true);
                                     } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
                                         deferred.reject({message: result[1].data.Error});
-                                        api.logout();
+                                        api.logout(true);
                                     } else {
                                         deferred.reject({message: 'Error during label / contact request'});
-                                        api.logout();
+                                        api.logout(true);
                                     }
                                 },
                                 function() {
                                     deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
-                                    api.logout();
+                                    api.logout(true);
                                 }
                             );
                         }
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         deferred.reject({message: result.data.Error});
-                        api.logout();
+                        api.logout(true);
                     } else {
                         deferred.reject({message: 'Error during user request'});
-                        api.logout();
+                        api.logout(true);
                     }
                 },
                 function(err) {
                     deferred.reject({message: 'Sorry, but we were unable to log you in.'});
-                    api.logout();
+                    api.logout(true);
                 }
             );
 
@@ -398,41 +398,47 @@ angular.module("proton.authentication", [
         //     }
         // },
 
-        // Removes all connection data
-        logout: function(reload) {
+        /**
+         * Removes all connection data
+         * @param {Boolean} redirect - Redirect at the end the user to the login page
+         */
+        logout: function(redirect) {
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
-            var clearData = function() {
-                // Completely clear sessionstorage
-                window.sessionStorage.clear();
-                // Delete data key
-                delete auth.data;
-                auth.headersSet = false;
-                // Remove all user information
-                this.user = null;
-                // Clean onbeforeunload listener
-                window.onbeforeunload = undefined;
-                // Disable animation
-                $rootScope.loggingOut = false;
-                // Re-initialize variables
-                $rootScope.isLoggedIn = this.isLoggedIn();
-                $rootScope.isLocked = this.isLocked();
-                $rootScope.isSecure = this.isSecured();
-                $rootScope.domoArigato = false;
+            var process = function() {
+                this.clearData();
 
-                if(reload === true) {
+                if(redirect === true) {
                     $state.go('login');
                 }
             }.bind(this);
 
-            reload = (angular.isDefined(reload)) ? reload : true;
             $rootScope.loggingOut = true;
 
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
-                $http.delete(url.get() + "/auth").then(clearData, clearData);
+                $http.delete(url.get() + "/auth").then(process, process);
             } else {
-                clearData();
+                process();
             }
+        },
+
+        clearData: function() {
+            // Completely clear sessionstorage
+            window.sessionStorage.clear();
+            // Delete data key
+            delete auth.data;
+            auth.headersSet = false;
+            // Remove all user information
+            this.user = null;
+            // Clean onbeforeunload listener
+            window.onbeforeunload = undefined;
+            // Disable animation
+            $rootScope.loggingOut = false;
+            // Re-initialize variables
+            $rootScope.isLoggedIn = this.isLoggedIn();
+            $rootScope.isLocked = this.isLocked();
+            $rootScope.isSecure = this.isSecured();
+            $rootScope.domoArigato = false;
         },
 
         // Returns an async promise that will be successful only if the mailbox password
@@ -506,15 +512,19 @@ angular.module("proton.authentication", [
     return api;
 })
 
-.run(function($rootScope, authentication, eventManager, cache, CONFIG) {
+.run(function($rootScope, $state, authentication, eventManager, cache, CONFIG) {
     authentication.detectAuthenticationState();
 
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();
+
+    /**
+     * Logout current session
+     */
     $rootScope.logout = function() {
         eventManager.stop();
         cache.clear();
-        authentication.logout();
+        $state.go('login');
     };
 });

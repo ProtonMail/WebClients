@@ -294,13 +294,11 @@ angular.module("proton", [
                             return $http(rejection.config);
                         },
                         function() {
-                            $injector.get('authentication').logout();
-                            $injector.get('$state').go('login');
+                            $injector.get('authentication').logout(true);
                         }
                     );
                 } else {
-                    $injector.get('authentication').logout();
-                    $injector.get('$state').go('login');
+                    $injector.get('authentication').logout(true);
                 }
             }
 

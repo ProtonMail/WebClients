@@ -24,7 +24,7 @@ angular.module("proton.cache", [])
 
     /**
      * Return a vector to calculate the counters
-     * @param {Object} message - message to analyse
+     * @param {Object} element - element to analyse (conversation or message)
      * @param {Boolean} unread - true if unread case
      * @return {Object}
      */
