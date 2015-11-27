@@ -131,13 +131,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             switch($scope.mailbox) {
                 case 'drafts':
                 case 'sent':
-                    result = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    result = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
                 case 'label':
-                    result = cacheCounters.conversation($stateParams.label);
+                    result = cacheCounters.totalConversation($stateParams.label);
                     break;
                 default:
-                    result = cacheCounters.conversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    result = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
             }
         }

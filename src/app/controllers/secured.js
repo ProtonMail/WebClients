@@ -101,10 +101,17 @@ angular.module("proton.controllers.Secured", [])
         var unread = '';
         var state = tools.currentMailbox();
 
-        if(state === 'label') {
-            value = cacheCounters.unread($stateParams.label);
-        } else {
-            value = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+        switch (state) {
+            case 'drafts':
+            case 'sent':
+                value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+                break;
+            case 'label':
+                value = cacheCounters.unreadConversation($stateParams.label);
+                break;
+            default:
+                value = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+                break;
         }
 
         if(angular.isDefined(value) && value > 0) {

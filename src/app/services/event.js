@@ -69,14 +69,14 @@ angular.module("proton.event", ["proton.constants"])
 			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
 					_.each(counts, function(count) {
-						cacheCounters.update(count.LabelID, count.Total, count.Unread);
+						cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
 					});
 				}
 			},
 			manageConversationCounts: function(counts) {
 				if(angular.isDefined(counts)) {
 					_.each(counts, function(count) {
-						cacheCounters.update(count.LabelID, undefined, undefined, count.Total);
+						cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
 					});
 				}
 			},

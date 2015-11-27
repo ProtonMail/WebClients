@@ -209,10 +209,17 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         var result;
         var count;
 
-        if(mailbox === 'label') {
-            count = cacheCounters.unread(id);
-        } else {
-            count = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+        switch (mailbox) {
+            case 'drafts':
+            case 'sent':
+                count = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                break;
+            case 'label':
+                count = cacheCounters.unreadConversation(id);
+                break;
+            default:
+                count = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                break;
         }
 
         if (count === undefined) {
