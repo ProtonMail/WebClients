@@ -118,7 +118,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.scrollToMe = function() {
         var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
-        var id = '#message' + index; // TODO improve it for the search case
+        var id = '#message' + index;
         var element = angular.element(id);
         var value = element.offset().top - element.outerHeight();
 
@@ -314,6 +314,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     }
 
                     $scope.message.DecryptedBody = $sce.trustAsHtml(content);
+
+                    // Scroll to first message open
+                    if($rootScope.scrollToFirst === $scope.message.ID) {
+                        $scope.scrollToMe();
+                    }
 
                     // Broken images
                     $(".email img").error(function () {

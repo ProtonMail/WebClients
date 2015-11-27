@@ -666,7 +666,7 @@ angular.module("proton.cache", [])
                     $rootScope.Total = data.Total;
 
                     // Set total value in cache
-                    _.each(data.Conversations[0].LabelIDs, function(labelID) {
+                    _.each(_.first(data.Conversations).LabelIDs, function(labelID) {
                         var total = cacheCounters.totalConversation(labelID);
                         var unread = cacheCounters.unreadConversation(labelID);
 

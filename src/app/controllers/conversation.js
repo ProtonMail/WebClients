@@ -68,6 +68,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             $rootScope.openMessage = [_.last($scope.messages).ID];
         }
 
+        $rootScope.scrollToFirst = _.first($rootScope.openMessage);
+
         // Mark conversation as read
         if($scope.conversation.NumUnread > 0) {
             $scope.read();
