@@ -417,6 +417,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // cache
         _.each(elements, function(element) {
             element.NumUnread = 1;
+            element.Selected = false;
 
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(element.ID);
