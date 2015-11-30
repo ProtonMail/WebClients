@@ -68,6 +68,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
+					console.log('message count', counts);
 					_.each(counts, function(count) {
 						cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
 					});
@@ -75,6 +76,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageConversationCounts: function(counts) {
 				if(angular.isDefined(counts)) {
+					console.log('conversation count', counts);
 					_.each(counts, function(count) {
 						cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
 					});

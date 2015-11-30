@@ -30,8 +30,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.messages = [];
     $scope.isOver = false;
-    $scope.sending = false;
-    $scope.saving = false;
     $scope.queuedSave = false;
     $scope.preventDropbox = false;
     $scope.expandRecipients = false;
@@ -933,102 +931,107 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
 
         // Functions
+        // Schedule this save after the in-progress one completes
         var nextSave = function(result) {
-            // Schedule this save after the in-progress one completes
-            if ( $scope.needToSave(message) ) {
-                return $scope.save(message, silently, forward, notification);
-            }
-            return result;
+            return $scope.save(message, silently, forward, notification);
         };
 
-        if ($scope.saving && message.savePromise) {
+        if($scope.saving === true && message.savePromise) {
             message.savePromise = message.savePromise.then(nextSave, nextSave);
-            return message.savePromise;
-        }
-
-        $scope.saving = true;
-
-        if (typeof parameters.Message.ToList === 'string') {
-            parameters.Message.ToList = [];
-        }
-
-        if(angular.isDefined(message.ParentID)) {
-            parameters.ParentID = message.ParentID;
-            parameters.Action = message.Action;
-        }
-
-        if(angular.isDefined(message.ID)) {
-            parameters.id = message.ID;
+            deferred.resolve(message.savePromise);
         } else {
-            parameters.Message.IsRead = 1;
-        }
+            message.sending = false;
+            message.saving = true;
 
-        parameters.Message.AddressID = message.From.ID;
-
-        message.encryptBody(authentication.user.PublicKey).then(function(result) {
-            var draftPromise;
-            var CREATE = 1;
-            var UPDATE = 2;
-            var action;
-
-            // Set encrypted body
-            parameters.Message.Body = result;
-
-            if(angular.isDefined(message.ID)) {
-                draftPromise = Message.updateDraft(parameters).$promise;
-                action = UPDATE;
-            } else {
-                draftPromise = Message.createDraft(parameters).$promise;
-                action = CREATE;
+            if (typeof parameters.Message.ToList === 'string') {
+                parameters.Message.ToList = [];
             }
 
-            // Save draft before to send
-            draftPromise.then(function(result) {
-                if(result.Code === 1000) {
-                    message.ID = result.Message.ID;
-                    message.IsRead = result.Message.IsRead;
-                    message.Time = result.Message.Time;
+            if (typeof parameters.Message.CCList === 'string') {
+                parameters.Message.CCList = [];
+            }
 
-                    if(forward === true && result.Message.Attachments.length > 0) {
-                        message.Attachments = result.Message.Attachments;
-                        message.attachmentsToggle = true;
-                    }
+            if (typeof parameters.Message.BCCList === 'string') {
+                parameters.Message.BCCList = [];
+            }
 
-                    $scope.saveOld(message);
+            if(angular.isDefined(message.ParentID)) {
+                parameters.ParentID = message.ParentID;
+                parameters.Action = message.Action;
+            }
 
-                    // Add draft in message list
-                    var messageEvent = [];
+            if(angular.isDefined(message.ID)) {
+                parameters.id = message.ID;
+            } else {
+                parameters.Message.IsRead = 1;
+            }
 
-                    messageEvent.push({Action: 2, ID: result.Message.ID, Message: result.Message});
-                    cache.events(messageEvent, 'message');
+            parameters.Message.AddressID = message.From.ID;
 
-                    if(notification === true) {
-                        notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
-                    }
+            message.encryptBody(authentication.user.PublicKey).then(function(result) {
+                var draftPromise;
+                var CREATE = 1;
+                var UPDATE = 2;
 
-                    deferred.resolve(result);
+                // Set encrypted body
+                parameters.Message.Body = result;
+
+                if(angular.isDefined(message.ID)) {
+                    draftPromise = Message.updateDraft(parameters).$promise;
+                    action = UPDATE;
                 } else {
-                    $log.error(result);
-                    deferred.reject(result);
+                    draftPromise = Message.createDraft(parameters).$promise;
+                    action = CREATE;
                 }
+
+                // Save draft before to send
+                draftPromise.then(function(result) {
+                    if(result.Code === 1000) {
+                        message.ID = result.Message.ID;
+                        message.IsRead = result.Message.IsRead;
+                        message.Time = result.Message.Time;
+
+                        if(forward === true && result.Message.Attachments.length > 0) {
+                            message.Attachments = result.Message.Attachments;
+                            message.attachmentsToggle = true;
+                        }
+
+                        $scope.saveOld(message);
+
+                        // Add draft in message list
+                        var messageEvent = [];
+
+                        messageEvent.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        cache.events(messageEvent, 'message');
+
+                        if(notification === true) {
+                            notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
+                        }
+
+                        deferred.resolve(result);
+                    } else {
+                        $log.error(result);
+                        deferred.reject(result);
+                    }
+                }, function(error) {
+                    error.message = 'Error during the draft request';
+                    deferred.reject(error);
+                });
             }, function(error) {
-                error.message = 'Error during the draft request';
+                error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
-        }, function(error) {
-            error.message = 'Error encrypting message';
-            deferred.reject(error);
-        });
 
-        message.savePromise = deferred.promise.finally(function() {
-            $scope.saving = false;
-        });
+            message.savePromise = deferred.promise.finally(function() {
+                message.saving = false;
+            });
 
-        if(silently !== true) {
-            message.track(message.savePromise);
+            if(silently !== true) {
+                message.track(deferred.promise);
+            }
+
+            return deferred.promise;
         }
-
-        return message.savePromise;
     };
 
     /**
@@ -1071,9 +1074,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var deferred = $q.defer();
         var validate = $scope.validate(message);
 
-        $scope.saving = false;
-        $scope.sending = true;
-
         if(validate) {
             $scope.save(message, false).then(function() {
                 $scope.checkSubject(message).then(function() {
@@ -1114,7 +1114,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             return message.encryptPackets('', message.Password).then(function(result) {
                                                 var keyPackets = result;
 
-                                                $scope.sending = false;
                                                 return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                             }, function(error) {
                                                 $log.error(error);
@@ -1136,7 +1135,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             if(message.Attachments.length > 0) {
                                  promises.push(message.clearPackets().then(function(packets) {
                                      parameters.AttachmentKeys = packets;
-                                     $scope.sending = false;
                                 }, function(error) {
                                     $log.error(error);
                                 }));
@@ -1145,10 +1143,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         $q.all(promises).then(function() {
                             if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
-                                $scope.sending = false;
                                 $log.error(message);
                                 deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                             } else {
+                                message.sending = true;
                                 Message.send(parameters).$promise.then(function(result) {
                                     var events = [{Action: 1, ID: message.ID, Message: result.Sent}];
 
@@ -1160,7 +1158,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }
                                     }
 
-                                    $scope.sending = false;
+                                    message.sending = false;
 
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
@@ -1171,34 +1169,29 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         deferred.resolve(result);
                                     }
                                 }, function(error) {
-                                    $scope.sending = false;
+                                    message.sending = false;
                                     error.message = 'Error during the sending';
                                     deferred.reject(error);
                                 });
                             }
                         }, function(error) {
-                            $scope.sending = false;
                             error.message = 'Error during the promise preparation';
                             deferred.reject(error);
                         });
                     }, function(error) {
-                        $scope.sending = false;
                         error.message = 'Error during the getting of the public key';
                         deferred.reject(error);
                     });
                 }, function(error) {
-                    $scope.sending = false;
                     deferred.reject();
                 });
             }, function(error) {
-                $scope.sending = false;
                 deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
             });
 
             message.track(deferred.promise);
 
         } else {
-            $scope.sending = false;
             deferred.reject();
         }
 

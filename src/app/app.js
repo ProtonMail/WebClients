@@ -277,11 +277,17 @@ angular.module("proton", [
         },
         responseError: function(rejection) {
             if(rejection.status === 0 || rejection.status === -1) {
-                notification = $injector.get('notify')({
-                    message: 'Could not connect to server.',
-                    classes: 'notification-danger',
-                    duration: '0'
-                });
+                if(navigator.onLine === true) {
+                    notification = $injector.get('notify')({
+                        message: 'Could not connect to server.',
+                        classes: 'notification-danger'
+                    });
+                } else {
+                    notification = $injector.get('notify')({
+                        message: 'Not connected to Internet.',
+                        classes: 'notification-danger'
+                    });
+                }
             } else if (rejection.status === 401) {
                 if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;
