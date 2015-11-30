@@ -967,14 +967,14 @@ angular.module("proton.cache", [])
         }).then(function(result) {
             _.each(result.message.Counts, function(counter) {
                 exist(counter.LabelID);
-                counters[counter.LabelID].message.total = counter.Total;
-                counters[counter.LabelID].message.unread = counter.Unread;
+                counters[counter.LabelID].message.total = counter.Total || 0;
+                counters[counter.LabelID].message.unread = counter.Unread || 0;
             });
 
             _.each(result.conversation.data.Counts, function(counter) {
                 exist(counter.LabelID);
-                counters[counter.LabelID].conversation.total = counter.Total;
-                counters[counter.LabelID].conversation.unread = counter.Unread;
+                counters[counter.LabelID].conversation.total = counter.Total || 0;
+                counters[counter.LabelID].conversation.unread = counter.Unread || 0;
             });
 
             deferred.resolve();
