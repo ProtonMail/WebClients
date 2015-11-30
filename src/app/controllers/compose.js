@@ -1148,6 +1148,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             } else {
                                 message.sending = true;
                                 Message.send(parameters).$promise.then(function(result) {
+                                    result.Sent.Senders = [result.Sent.Sender];
+
                                     var events = [{Action: 1, ID: message.ID, Message: result.Sent}];
 
                                     if (result.Parent) {
