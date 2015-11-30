@@ -115,11 +115,7 @@ angular.module("proton.cache", [])
 
         _.each(locations, function(location) {
             if(element.LabelIDs.indexOf(location) !== -1 && condition) {
-                if(type === 'message') {
-                    result[location] = 1;
-                } else if(type === 'conversation') {
-                    result[location] = element.NumUnread;
-                }
+                result[location] = 1;
             } else {
                 result[location] = 0;
             }
@@ -634,7 +630,9 @@ angular.module("proton.cache", [])
         var messages = [event.Message];
         var conversation = {ID: event.Message.ConversationID, Time: event.Message.Time};
 
+        // Update conversation with Time
         updateConversation(conversation);
+        // Save new messages
         storeMessages(messages);
 
         deferred.resolve();
