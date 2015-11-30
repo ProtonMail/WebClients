@@ -474,6 +474,10 @@ angular.module("proton.cache", [])
         return angular.copy(_.where(messagesCached, {ConversationID: conversationId}));
     };
 
+    api.getConversationCached = function(conversationId) {
+        return _.findWhere(conversationsCached, {ID: conversationId});
+    };
+
     /**
      * @param {String} conversationId
      * @return {Promise}

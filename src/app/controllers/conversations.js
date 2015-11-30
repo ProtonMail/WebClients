@@ -373,9 +373,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // cache
         _.each(elements, function(element) {
-            element.NumUnread = 0;
-
             if(type === 'conversation') {
+                element.NumUnread = 0;
                 var messages = cache.queryMessagesCached(element.ID);
 
                 conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
@@ -387,6 +386,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     });
                 }
             } else if(type === 'message') {
+                var conversation = cache.getConversationCached(element.ConversationID);
+
+                if(angular.isDefined(conversation)) {
+                    conversation.NumUnread--;
+                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                }
+
+                element.IsRead = 1;
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
@@ -416,10 +423,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // cache
         _.each(elements, function(element) {
-            element.NumUnread = 1;
             element.Selected = false;
 
             if(type === 'conversation') {
+                element.NumUnread = element.NumMessages;
                 var messages = cache.queryMessagesCached(element.ID);
 
                 conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
@@ -431,6 +438,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     messageEvent.push({Action: 3, ID: last.ID, Message: last});
                 }
             } else if(type === 'message') {
+                var conversation = cache.getConversationCached(element.ConversationID);
+
+                if(angular.isDefined(conversation)) {
+                    conversation.NumUnread++;
+                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                }
+
+                element.IsRead = 0;
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
