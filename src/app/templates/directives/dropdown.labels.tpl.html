@@ -2,7 +2,7 @@
     <span role="menu" ng-click="$event.stopPropagation()">
         <span ng-show="labels.length > 0" class="margin labelSearch">
             <i class="fa fa-search"></i>
-            <input type="search" id="searchLabels" placeholder="{{ 'SEARCH_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
+            <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
         </span>
         <span class="wrapper">
             <ul class="list-group" ng-show="labels.length > 0">
