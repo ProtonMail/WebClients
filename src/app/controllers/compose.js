@@ -1152,7 +1152,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                     message.sending = false;
                                     result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                    result.Sent.Recipients = message.ToList.concat(message.CCList).concat(message.BCCList); // The back-end doesn't return Recipients
+                                    result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                     messageEvent.push({Action: 1, ID: message.ID, Message: result.Sent});
 
                                     if (result.Parent) {
@@ -1167,7 +1167,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
                                     } else {
-                                        cache.events(messageEvent);
+                                        cache.events(messageEvent, 'message');
                                         notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);

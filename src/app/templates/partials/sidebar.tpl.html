@@ -9,7 +9,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
-                <em ng-bind="getUnread('inbox')"></em>
+                <em ng-bind="unread('inbox')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
@@ -17,7 +17,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.drafts.**' | includedByState"></button>
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
-                <em ng-bind="getUnread('drafts')"></em>
+                <em ng-bind="unread('drafts')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
@@ -25,7 +25,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
-                <em ng-bind="getUnread('sent')"></em>
+                <em ng-bind="unread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
@@ -33,7 +33,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.starred.**' | includedByState"></button>
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
-                <em ng-bind="getUnread('starred')"></em>
+                <em ng-bind="unread('starred')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
@@ -41,7 +41,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.archive.**' | includedByState"></button>
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
-                <em ng-bind="getUnread('archive')"></em>
+                <em ng-bind="unread('archive')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
@@ -49,7 +49,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.spam.**' | includedByState"></button>
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
-                <em ng-bind="getUnread('spam')"></em>
+                <em ng-bind="unread('spam')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
@@ -57,7 +57,7 @@
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.trash.**' | includedByState"></button>
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
-                <em ng-bind="getUnread('trash')"></em>
+                <em ng-bind="unread('trash')"></em>
             </a>
         </li>
     </ul>
@@ -75,7 +75,7 @@
                 <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
                     <i class="fa fa-tag" ng-style="color(label)"></i>
                     <span>{{ label.Name }}</span>
-                    <em ng-bind="getUnread('label', label.ID)"></em>
+                    <em ng-bind="unread('label', label.ID)"></em>
                 </a>
             </li>
         </ul>

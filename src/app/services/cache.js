@@ -139,19 +139,17 @@ angular.module("proton.cache", [])
 
         _.each(locations, function(location) {
             var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
+            var deltaTotal = newTotalVector[location] - oldTotalVector[location];
             var currentUnread;
             var currentTotal;
-            var deltaTotal;
 
             if(type === 'message') {
                 currentUnread = cacheCounters.unreadMessage(location);
                 currentTotal = cacheCounters.totalMessage(location);
-                deltaTotal = newTotalVector[location] - oldTotalVector[location];
                 cacheCounters.updateMessage(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
             } else if(type === 'conversation') {
                 currentUnread = cacheCounters.unreadConversation(location);
                 currentTotal = cacheCounters.totalConversation(location);
-                deltaTotal = newTotalVector[location] - oldTotalVector[location];
                 cacheCounters.updateConversation(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
             }
         });

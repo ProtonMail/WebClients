@@ -205,7 +205,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param id {Integer} labelID for a label
      * @return {Integer}
      */
-    $scope.getUnread = function(mailbox, id) {
+    $scope.unread = function(mailbox, id) {
         var result;
         var count;
 
