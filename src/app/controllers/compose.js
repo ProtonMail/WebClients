@@ -1148,24 +1148,26 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             } else {
                                 message.sending = true;
                                 Message.send(parameters).$promise.then(function(result) {
-                                    result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                    var messageEvent = [];
 
-                                    var events = [{Action: 1, ID: message.ID, Message: result.Sent}];
+                                    message.sending = false;
+                                    result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                    result.Sent.Recipients = message.ToList.concat(message.CCList).concat(message.BCCList); // The back-end doesn't return Recipients
+                                    messageEvent.push({Action: 1, ID: message.ID, Message: result.Sent});
 
                                     if (result.Parent) {
-                                        events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
-                                        $rootScope.$broadcast('updateReplied', _.pick(result.Parent, 'IsReplied', 'IsRepliedAll', 'IsForwarded'));
+                                        messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+
+                                        // Go back
                                         if(result.Parent.ID === $stateParams.id) {
                                             $state.go('^');
                                         }
                                     }
 
-                                    message.sending = false;
-
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
                                     } else {
-                                        cache.events(events);
+                                        cache.events(messageEvent);
                                         notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);

@@ -34,10 +34,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
-    $scope.$on('updateReplied', function(e, m) {
-        _.extend($scope.message, m);
-    });
-
     $scope.$on('refreshMessage', function() {
         cache.getMessage($scope.message.ID).then(function(message) {
             _.extend($scope.message, message);
