@@ -71,7 +71,7 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email.Name }} {{ email.Address }}</em>
+                        <em>{{ email | contact }}</em>
                     </span>
                 </span>
             </div>
@@ -80,7 +80,7 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email.Name }} {{ email.Address }}</em>
+                        <em>{{ email | contact }}</em>
                     </span>
                 </span>
             </div>
@@ -89,7 +89,7 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList" class="person">
                         <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email.Name }} {{ email.Address }}</em>
+                        <em>{{ email | contact }}</em>
                     </span>
                 </span>
             </div>
