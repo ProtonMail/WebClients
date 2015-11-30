@@ -137,8 +137,8 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageUser(data.User);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
-					this.manageConversations(data.Conversations);
 					this.manageMessages(data.Messages);
+					this.manageConversations(data.Conversations);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}

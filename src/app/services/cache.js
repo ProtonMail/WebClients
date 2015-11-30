@@ -400,8 +400,6 @@ angular.module("proton.cache", [])
 
             conversations = order(conversations, 'Time');
 
-            console.info('Number of conversations cached for "' + location + '":', conversations.length);
-
             switch(mailbox) {
                 case 'label':
                     total = cacheCounters.totalConversation($stateParams.label);
@@ -410,8 +408,6 @@ angular.module("proton.cache", [])
                     total = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
-
-            console.info('Value returned by the BE:', total);
 
             if(angular.isDefined(total)) {
                 if(total === 0) {
@@ -653,44 +649,16 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        if(angular.isUndefined(current)) {
-            var mailbox = tools.currentMailbox();
-            var request = {Conversation: event.ID};
-
-            switch (mailbox) {
-                case 'label':
-                    request.Label = $stateParams.label;
-                    break;
-                default:
-                    request.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                    break;
-            }
-
-            Conversation.query(request).then(function(result) {
-                var data = result.data;
-
-                if(data.Code === 1000) {
-                    // Set total value in rootScope
-                    $rootScope.Total = data.Total;
-
-                    // Set total value in cache
-                    _.each(_.first(data.Conversations).LabelIDs, function(labelID) {
-                        var total = cacheCounters.totalConversation(labelID);
-                        var unread = cacheCounters.unreadConversation(labelID);
-
-                        cacheCounters.updateConversation(labelID, total + 1, unread + 1);
-                    });
-
-                    // Store conversations
-                    storeConversations(data.Conversations);
-
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-            });
-        } else {
+        if(angular.isDefined(current)) {
             updateConversation(event.Conversation);
+            deferred.resolve();
+        } else {
+            var messages = api.queryMessagesCached(event.ID);
+            var message = _.max(messages, function(message){ return message.Time; });
+
+            event.Conversation.Time = message.Time;
+            event.Conversation.LabelIDs = message.LabelIDs;
+            insertConversation(event.Conversation);
             deferred.resolve();
         }
 
