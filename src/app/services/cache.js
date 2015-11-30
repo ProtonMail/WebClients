@@ -632,7 +632,9 @@ angular.module("proton.cache", [])
     api.createMessage = function(event) {
         var deferred = $q.defer();
         var messages = [event.Message];
+        var conversation = {ID: event.Message.ConversationID, Time: event.Message.Time};
 
+        updateConversation(conversation);
         storeMessages(messages);
 
         deferred.resolve();
