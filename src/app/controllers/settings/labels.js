@@ -4,20 +4,6 @@ angular.module("proton.controllers.Settings")
     $scope.labels = authentication.user.Labels;
 
     // Drag and Drop configuration
-    $scope.aliasDragControlListeners = {
-        containment: "form[name='aliasesForm']",
-        accept: function(sourceItemHandleScope, destSortableScope) {
-            return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
-        },
-        orderChanged: function() {
-          aliasOrder = [];
-          _.forEach($scope.aliases, function(d,i) {
-            aliasOrder[i] = d.Send;
-          });
-          $scope.saveAliases(aliasOrder);
-        }
-    };
-
     $scope.labelsDragControlListeners = {
         containment: "#labelContainer",
         accept: function(sourceItemHandleScope, destSortableScope) {

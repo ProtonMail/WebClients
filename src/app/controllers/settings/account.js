@@ -22,6 +22,21 @@ angular.module("proton.controllers.Settings")
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
 
+    // Drag and Drop configuration
+    $scope.aliasDragControlListeners = {
+        containment: "form[name='aliasesForm']",
+        accept: function(sourceItemHandleScope, destSortableScope) {
+            return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        orderChanged: function() {
+          aliasOrder = [];
+          _.forEach($scope.aliases, function(d,i) {
+            aliasOrder[i] = d.Send;
+          });
+          $scope.saveAliases(aliasOrder);
+        }
+    };
+
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
             $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
