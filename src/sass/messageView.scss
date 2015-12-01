@@ -81,9 +81,14 @@
 		    margin-right: .5rem;
 		    font-size: 10px;
 		    margin-top: 4px;
+            position: absolute;
+            left: 0;
+            top: 0;
 		}
         span.person {
-            float: left;
+            position: relative;
+            white-space: nowrap;
+            padding-left: 1.5rem;
             & > * {
                 float: left;
             }
@@ -125,6 +130,11 @@
     				float: left;
                     font-style: normal;
     			}
+                .person {
+                    position: relative;
+                    padding-left: 1.5rem;
+                    float: left;
+                }
                 strong {
                     float: left;
                     display: block;
@@ -191,6 +201,9 @@
             float: left;
             width: 100%;
 			.data {
+                overflow: hidden;
+                float: left;
+                width: 100%;
                 .toGroup,
                 .ccGroup {
                     display: block;
@@ -276,6 +289,7 @@
 				top: 0;
 				z-index: 2;
 				width: 145px;
+                background: #fff;
 				.pm_buttons {
 					float: right;
 					margin: 0;
