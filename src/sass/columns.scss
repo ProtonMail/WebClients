@@ -59,6 +59,12 @@
 						}
 					}
 				}
+				header {
+					span.time {
+						right: 10px;
+						background: #f6f6f6;
+					}
+				}
 			}
 			&.unread * {
 				font-weight: 700;
@@ -131,9 +137,16 @@
 				    overflow: hidden;
 				    text-overflow: ellipsis;
 				    width: 100%;
+				    padding-right: 6rem;
+				    box-sizing: border-box;
 				}
 				span.time {
-					float: right;
+					position: absolute;
+					right: 0;
+					top: 12px;
+					z-index: 3;
+					background: #fff;
+					padding-left: 1rem;
 				}
 			}
 			article {

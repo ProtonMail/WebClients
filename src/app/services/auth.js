@@ -67,7 +67,7 @@ angular.module("proton.authentication", [
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
-                                        user.Role = 'master'; // TODO need back-end initialization
+                                        user.Role = 'panda'; // TODO need back-end initialization
 
                                         // Set the rows / columns mode
                                         if (angular.isDefined(user.ViewLayout)) {
