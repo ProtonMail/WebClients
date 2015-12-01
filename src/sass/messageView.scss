@@ -30,7 +30,7 @@
 	        letter-spacing: .04rem;
 	        display: block;
 	        padding-top: ( (($toolbarHeight)-25) /2 );
-	        padding-right: 0;
+	        padding-right: 3rem;
 	        padding-bottom: ( (($toolbarHeight)-25) /2 );
 	        padding-left: 0;
 	        box-sizing: border-box;
@@ -407,8 +407,11 @@
         padding-right: 4rem;
         .singleStar {
             position: absolute;
-            right: 10px;
+            right: 0;
             top: 0;
+            padding-right: 10px;
+            background: #fff;
+            width: 2rem;
         }
     }
     #pm_view #pm_thread {
@@ -451,6 +454,20 @@
     }
 }
 
-@media (max-width:  $mobile-portrait) {
-    #pm_view article.message .sub {}
+@media (max-width:  $tablet-portrait) {
+    #pm_view article.message .sub {
+        padding-left: 0;
+        padding-right: 0;
+        .actions {
+            position: static;
+            float: right;
+        }
+        .data {
+            clear: both;
+        }
+        .recipientsWrap {
+            display: inline-block;
+            margin: 0;
+        }
+    }
 }

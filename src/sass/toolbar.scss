@@ -154,8 +154,11 @@ body.columns #pm_toolbar {
 @media (max-width: $mobile-landscape) {
     #pm_toolbar_responsive {
         padding: 12px 10px;
+        & > .pm_buttons {
+            display: none;
+        }
         .pm_buttons a {
-            padding: 0 5px;
+            padding: 0 10px;
         }
         .main {
             .pm_checkbox {
@@ -164,7 +167,7 @@ body.columns #pm_toolbar {
             .pm_buttons {
                 margin: 0 0 0 5px !important;
                 a {
-                    padding: 0 5px;
+                    padding: 0 10px;
                 }
             }
         }
@@ -174,7 +177,7 @@ body.columns #pm_toolbar {
             .pm_buttons {
                 margin: 0 0 0 5px;
                 a {
-                    padding: 0 5px;
+                    padding: 0 10px;
                 }
             }
         }
