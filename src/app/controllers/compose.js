@@ -439,13 +439,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         Attachment.remove({
             "MessageID": message.ID,
             "AttachmentID": attachment.AttachmentID || attachment.ID
-        }).$promise.then(function(response) {
-            if (response.Error) {
-                notify({message: response.Error, classes: 'notification-danger'});
-                message.Attachments.push(attachment);
+        }).then(function(result) {
+            var data = result.data;
+
+            if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
 
+                message.Attachments.push(attachment);
                 dropzone.options.addedfile.call(dropzone, mockFile);
+                notify({message: data.Error, classes: 'notification-danger'});
+            } else {
+                notify({message: 'Error during the remove request', classes: 'notification-danger'});
+                $log.error(result);
             }
         }, function(error) {
             notify({message: 'Error during the remove request', classes: 'notification-danger'});
