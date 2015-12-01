@@ -270,6 +270,7 @@
 					right: 0;
 					background-color: $white;
 					min-width: 5rem;
+					text-align: right;
 					.pm_label {
 						margin: 4px 0 0 4px;
 					    line-height: 14px;
@@ -279,6 +280,7 @@
 					    box-sizing: border-box;
 					    text-align: center;
 					    overflow: hidden;
+					    float: none;
 					}
 					&:before {
 						height: 25px;

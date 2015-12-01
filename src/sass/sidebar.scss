@@ -72,6 +72,12 @@ section.sidebar {
             height: 40px;
             line-height: 40px;
             display: block;
+            &.divider {
+                height: 1px;
+                line-height: 1px;
+                margin: 10px 0;
+                background: rgba(255,255,255,.1);
+            }
             a {
                 text-decoration: none;
                 height: 40px;

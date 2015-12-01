@@ -59,13 +59,7 @@
                 <em ng-bind="unread('trash')"></em>
             </a>
         </li>
-        <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
-                <i class="fa fa-tag" ng-style="color(label)"></i>
-                <span>{{ label.Name }}</span>
-                <em ng-bind="unread('label', label.ID)"></em>
-            </a>
-        </li>
+        <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
             <a href="#" title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
                 <i class="fa fa-users"></i>
@@ -88,6 +82,14 @@
             <a href="#" ng-click="logout(); hideMobileSidebar();">
                 <i class="fa fa-power-off"></i>
                 <span>{{ 'LOGOUT' | translate }}</span>
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
+                <i class="fa fa-tag" ng-style="color(label)"></i>
+                <span>{{ label.Name }}</span>
+                <em ng-bind="unread('label', label.ID)"></em>
             </a>
         </li>
     </ul>

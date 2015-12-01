@@ -17,12 +17,29 @@
 		#pm_toolbar {
 			padding: 14px 0 0;
 		}
-		.pm_table th.checkbox {
-			width: 4rem;
-			label {
+		.pm_table {
+			tr {
+				margin: 0;
+			}
+			th.checkbox {
 				width: 4rem;
-				text-align: center;
-				box-sizing: border-box;
+				label {
+					width: 4rem;
+					text-align: center;
+					box-sizing: border-box;
+				}
+			}
+			td.text-right {
+				padding: .5rem 0;
+			}
+			td.actions {
+				span {
+					width: 100%;
+					.pm_button.round {
+						float: left;
+						margin-right: 1rem;
+					}
+				}
 			}
 		}
 	}
