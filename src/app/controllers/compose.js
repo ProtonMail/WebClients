@@ -998,6 +998,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 // Save draft before to send
                 draftPromise.then(function(result) {
                     if(result.Code === 1000) {
+                        var messageEvent = [];
+                        var conversationEvent = [];
+                        var conversation = cache.getConversationCached($stateParams.id);
+
                         message.ID = result.Message.ID;
                         message.IsRead = result.Message.IsRead;
                         message.Time = result.Message.Time;
@@ -1008,12 +1012,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         $scope.saveOld(message);
+                        conversation.Time = result.Message.Time;
+
+                        if(action === CREATE) {
+                            conversation.NumMessages++;
+                        }
 
                         // Add draft in message list
-                        var messageEvent = [];
-
                         messageEvent.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        // Update conversation
+                        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+
                         cache.events(messageEvent, 'message');
+                        cache.events(conversationEvent, 'conversation');
 
                         if(notification === true) {
                             notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
@@ -1160,26 +1171,34 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             } else {
                                 message.sending = true;
                                 Message.send(parameters).$promise.then(function(result) {
-                                    var messageEvent = [];
-
-                                    message.sending = false;
-                                    result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                    result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                    messageEvent.push({Action: 1, ID: message.ID, Message: result.Sent});
-
-                                    if (result.Parent) {
-                                        messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
-
-                                        // Go back
-                                        if(result.Parent.ID === $stateParams.id) {
-                                            $state.go('^');
-                                        }
-                                    }
-
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
                                     } else {
+                                        var messageEvent = [];
+                                        var conversationEvent = [];
+                                        var conversation = cache.getConversationCached(result.Sent.ConversationID);
+                                        var messages = cache.queryMessagesCached(result.Sent.ConversationID);
+
+                                        message.sending = false;
+                                        result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                        result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                                        result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                                        result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                                        conversation.Time = result.Sent.Time; // Update Time parameter of the conversation
+                                        messageEvent.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
+                                        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+
+                                        if (result.Parent) {
+                                            messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+
+                                            // Go back
+                                            if(result.Parent.ID === $stateParams.id) {
+                                                $state.go('^');
+                                            }
+                                        }
+
                                         cache.events(messageEvent, 'message');
+                                        cache.events(conversationEvent, 'conversation');
                                         notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);
