@@ -442,7 +442,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }).then(function(result) {
             var data = result.data;
 
-            if (angular.isDefined(data) && angular.isDefined(data.Error)) {
+            if(angular.isDefined(data) && data.Code === 1000) {
+                
+            } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
 
                 message.Attachments.push(attachment);
@@ -640,6 +642,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.listenEditor = function(message) {
         if(message.editor) {
+            var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
+
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.fields = false;
@@ -658,12 +662,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
 
-            // This part of code is false -- START
-            _.each($('.composer-dropzone'), function(dropzone) {
-                dropzone.removeEventListener('dragover', dragover);
-                dropzone.addEventListener('dragover', dragover);
-            });
-            // This part of code is false -- END
+            dropzone.addEventListener('dragover', dragover);
 
             $scope.saveOld(message);
         }
@@ -1254,6 +1253,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
+        var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
+
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });
@@ -1262,6 +1263,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.editor.removeEventListener('dragover', onDragOver);
         message.editor.removeEventListener('dragstart', onDragStart);
         message.editor.removeEventListener('dragend', onDragEnd);
+
+        dropzone.removeEventListener('dragover', dragover);
 
         $scope.close(message, false, true);
     };
