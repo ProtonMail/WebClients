@@ -639,7 +639,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 promises.push(Conversation.labels(labelID, ADD, ids));
             } else if(type === 'message') {
-                promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+                promises.push(Label.apply(labelID, ids));
             }
         });
 
@@ -647,7 +647,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 promises.push(Conversation.labels(labelID, REMOVE, ids));
             } else if(type === 'message') {
-                promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+                promises.push(Label.remove(labelID, ids));
             }
         });
 

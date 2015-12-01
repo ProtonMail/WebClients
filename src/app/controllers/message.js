@@ -601,11 +601,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // Requests
         _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+            promises.push(Label.apply(labelID, ids));
         });
 
         _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+            promises.push(Label.remove(labelID, ids));
         });
 
         // Find current location
@@ -632,7 +632,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
         cache.events(conversationEvent, 'conversation');
 
-        $q.all(promises).then(function() {
+        $q.all(promises).then(function(result) {
             if(alsoArchive === true) {
                 deferred.resolve(Message.archive({IDs: ids}));
             } else {

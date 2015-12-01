@@ -64,23 +64,23 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                 title: $translate.instant('CREATE_NEW_LABEL'),
                 create: function(name, color) {
                     // already exist?
-                    var result = _.find(authentication.user.Labels, function(label) {
-                        return label.Name === name;
-                    });
+                    var exist = _.findWhere(authentication.user.Labels, {Name: name});
 
-                    if (angular.isUndefined(result)) {
-                        labelModal.deactivate();
+                    if(angular.isUndefined(exist)) {
                         networkActivityTracker.track(
-                            Label.save({
+                            Label.create({
                                 Name: name,
                                 Color: color,
                                 Display: 1
-                            }).$promise.then(function(result) {
-                                if(angular.isDefined(result.Label)) {
+                            }).then(function(result) {
+                                var data = result.data;
+
+                                if(angular.isDefined(data) && data.Code === 1000) {
+                                    authentication.user.Labels.push(data.Label);
+                                    labelModal.deactivate();
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
-                                    authentication.user.Labels.push(result.Label);
-                                } else {
-                                    notify({message: result.Error, classes: 'notification-danger'});
+                                } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
+                                    notify({message: data.Error, classes: 'notification-danger'});
                                     $log.error(result);
                                 }
                             }, function(error) {

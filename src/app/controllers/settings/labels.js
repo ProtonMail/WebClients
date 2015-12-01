@@ -40,22 +40,28 @@ angular.module("proton.controllers.Settings")
                 title: $translate.instant('EDIT_LABEL'),
                 label: label,
                 create: function(name, color) {
-                    labelModal.deactivate();
                     networkActivityTracker.track(
                         Label.update({
-                            id: label.ID,
+                            ID: label.ID,
                             Name: name,
                             Color: color,
                             Display: label.Display
-                        }).$promise.then(function(result) {
-                            if (result.Error) {
-                                notify({message: result.Error, classes: 'notification-danger'});
+                        }).then(function(result) {
+                            var data = result.data;
+
+                            if(angular.isDefined(data) && data.Code === 1000) {
+                                label.Color = data.Label.Color;
+                                label.Name = data.Label.Name;
+                                labelModal.deactivate();
+                                notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});
+                            } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                 label.Name = origName;
                                 label.Color = origColor;
+                                notify({message: data.Error, classes: 'notification-danger'});
                             } else {
-                                label.Color = color;
-                                label.Name = name;
-                                notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});
+                                label.Name = origName;
+                                label.Color = origColor;
+                                notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
                             }
                         }, function(error) {
                             notify({message: 'Error during the label edition request', classes: 'notification-danger'});
@@ -64,8 +70,6 @@ angular.module("proton.controllers.Settings")
                     );
                 },
                 cancel: function() {
-                    label.Name = origName;
-                    label.Color = origColor;
                     labelModal.deactivate();
                 }
             }
@@ -79,17 +83,22 @@ angular.module("proton.controllers.Settings")
                 message: 'Are you sure you want to delete this label?', // TODO translate
                 confirm: function() {
                     networkActivityTracker.track(
-                        Label.delete({id: label.ID}).$promise
+                        Label.delete(label.ID)
                         .then(
                             function(result) {
-                                if (result.Code === 1000) {
+                                var data = result.data;
+
+                                if(angular.isDefined(data) && data.Code === 1000) {
                                     confirmModal.deactivate();
                                     notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
                                     authentication.user.Labels = _.without(authentication.user.Labels, label);
                                     $scope.labels = authentication.user.Labels;
                                     $rootScope.$broadcast('updateLabels');
-                                } else if(result.Error) {
-                                    notify({message: result.Error, classes: 'notification-danger'});
+                                } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
+                                    notify({message: data.Error, classes: 'notification-danger'});
+                                    $log.error(data);
+                                } else {
+                                    notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
                                     $log.error(result);
                                 }
                             },
@@ -111,12 +120,17 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track(
             Label.order({
                 "Order": labelOrder
-            }).$promise.then(function(response) {
-                if (response.Code === 1000) {
+            }).then(function(result) {
+                var data = result.data;
+
+                if (angular.isDefined(data) && data.Code === 1000) {
                     notify({message: $translate.instant('LABEL_ORDER_SAVED'), classes: 'notification-success'});
-                } else if (response.Error) {
-                    notify({message: response.Error, classes: 'notification-danger'});
-                    $log.error(response);
+                } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
+                    notify({message: data.Error, classes: 'notification-danger'});
+                    $log.error(result);
+                } else {
+                    notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
+                    $log.error(result);
                 }
             }, function(error) {
                 notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
@@ -127,15 +141,21 @@ angular.module("proton.controllers.Settings")
 
     $scope.toggleDisplayLabel = function(label) {
         Label.update({
-            id: label.ID,
+            ID: label.ID,
             Name: label.Name,
             Color: label.Color,
             Display: Number(label.Display)
-        }).$promise.then(function(result) {
-            if (result.Code === 1000) {
+        }).then(function(result) {
+            var data = result.data;
+
+            if (angular.isDefined(data) && data.Code === 1000) {
                 notify({message: $translate.instant('LABEL_EDITED'), classes: 'notification-success'});
-            } else if (result.Error) {
-                notify({message: result.Error, classes: 'notification-danger'});
+            } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
+                notify({message: data.Error, classes: 'notification-danger'});
+                $log.error(result);
+            } else {
+                notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
+                $log.error(result);
             }
         }, function(error) {
             notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
