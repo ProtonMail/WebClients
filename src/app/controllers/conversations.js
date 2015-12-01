@@ -561,6 +561,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else if (type === 'message') {
             Message[mailbox]({IDs: ids});
         }
+
+        // Back to element list
+        $scope.back();
+    };
+
+    /**
+     * Back to conversation / message list
+     */
+    $scope.back = function() {
+        $state.go("secured." + $scope.mailbox + '.list', {
+            id: null // remove ID
+        });
     };
 
     /**

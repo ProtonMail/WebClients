@@ -324,8 +324,6 @@ angular.module("proton.cache", [])
 
             messages = order(messages, 'Time');
 
-            console.info('Number of messages in the cache', messages.length);
-
             switch(mailbox) {
                 case 'label':
                     total = cacheCounters.totalMessage($stateParams.label);
@@ -334,8 +332,6 @@ angular.module("proton.cache", [])
                     total = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
-
-            console.info('Number return by API', total);
 
             if(angular.isDefined(total)) {
                 if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
