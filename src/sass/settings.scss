@@ -1,3 +1,12 @@
+#settingsAppearance.row {
+    .setting {
+        .radio.col {
+            width: 50%;
+            min-width: 50%;
+        }
+    }
+}
+
 #addUserModal .pm_buttons a {
     height: 31px;
     line-height: 31px;
@@ -812,6 +821,9 @@
                 }
                 .radio {
                     display: inline-block;
+                    img {
+                        max-width: 100%;
+                    }
                 }
                 #logArea {
                     padding: 1rem 0;
@@ -917,14 +929,6 @@
         }
         .settings {
             margin-right: 0;
-            .row {
-                .setting {
-                    width: 100%;
-                    float: left;
-                    clear: both;
-                    margin-bottom: 1rem;
-                }
-            }
             .pm_table tr {
                 display: table-row;
                 width: initial;
@@ -985,6 +989,16 @@
 }
 
 @media (max-width: $mobile-landscape) {
+
+    #settingsAppearance.row {
+        .setting {
+            .radio.col {
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+
     #newUser{
         .newUser {
             padding-left: 0;
