@@ -1012,19 +1012,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         $scope.saveOld(message);
-                        conversation.Time = result.Message.Time;
 
-                        if(action === CREATE) {
-                            conversation.NumMessages++;
+                        if(angular.isDefined(conversation)) {
+                            conversation.Time = result.Message.Time;
+
+                            if(action === CREATE) {
+                                conversation.NumMessages++;
+                            }
+
+                            conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                            // Update conversation
+                            cache.events(conversationEvent, 'conversation');
                         }
 
                         // Add draft in message list
                         messageEvent.push({Action: action, ID: result.Message.ID, Message: result.Message});
-                        // Update conversation
-                        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-
                         cache.events(messageEvent, 'message');
-                        cache.events(conversationEvent, 'conversation');
 
                         if(notification === true) {
                             notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
