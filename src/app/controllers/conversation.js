@@ -35,11 +35,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
-        cache.getConversation($stateParams.id).then(function(conversation) {
-            _.extend($scope.conversation, conversation); //
-        });
+        var conversation = cache.getConversationCached($stateParams.id);
+        var messages = cache.queryMessagesCached($stateParams.id);
 
-        cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
+        if(angular.isDefined(conversation)) {
+            _.extend($scope.conversation, conversation);
+        }
+
+        if(angular.isDefined(messages)) {
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
 
@@ -48,7 +51,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     $scope.messages.push(message);
                 }
             });
-        });
+
+            _.each($scope.messages, function(message) {
+                var current = _.findWhere(messages, {ID: message.ID});
+
+                if(angular.isUndefined(current)) {
+                    var index = $scope.messages.indexOf(current);
+                    // Delete message
+                    $scope.messages.slice(index, 1);
+                }
+            });
+        }
     });
 
     /**

@@ -114,7 +114,7 @@ angular.module("proton.cache", [])
         }
 
         _.each(locations, function(location) {
-            if(element.LabelIDs.indexOf(location) !== -1 && condition) {
+            if(angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(location) !== -1 && condition) {
                 result[location] = 1;
             } else {
                 result[location] = 0;

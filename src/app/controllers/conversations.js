@@ -374,7 +374,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // cache
         _.each(elements, function(element) {
             element.Selected = false;
-            
+
             if(type === 'conversation') {
                 element.NumUnread = 0;
                 var messages = cache.queryMessagesCached(element.ID);
@@ -569,7 +569,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.draft = function(element) {
-        return element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+        return angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**

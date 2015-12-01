@@ -105,9 +105,14 @@ angular.module("proton.filters",[])
 
 .filter('displayName', function() {
     return function(value) {
-        value = value.replace(/</g, "");
-        value = value.replace(/>/g, "");
-        value = value.replace(/\@/g, "");
+        if(angular.isDefined(value)) {
+            value = value.replace(/</g, "");
+            value = value.replace(/>/g, "");
+            value = value.replace(/\@/g, "");
+        } else {
+            value = '';
+        }
+
         return value;
     };
 })

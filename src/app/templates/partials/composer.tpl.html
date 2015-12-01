@@ -399,7 +399,7 @@
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
                     <button class="pm_button primary" ng-disabled="message.loading() || composerIsSelected(message) === false || message.uploading || message.saving || message.sending" ng-click="send(message)">
-                        <i class="fa" ng-class="{ 'fa-send': message.loading() === false, 'fa-circle-o-notch fa-spin': message.loading() === true }"></i>
+                        <i class="fa" ng-class="{ 'fa-send': message.sending === false && message.saving === false, 'fa-circle-o-notch fa-spin': message.sending === true || message.saving === true }"></i>
                         <span ng-hide="message.sending || message.saving || message.loading()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.sending">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.saving">{{ 'SAVING' | translate }}</span>

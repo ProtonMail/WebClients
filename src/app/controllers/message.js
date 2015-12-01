@@ -63,7 +63,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.draft = function() {
-        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**

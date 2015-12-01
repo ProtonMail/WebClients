@@ -653,10 +653,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
 
+            // This part of code is false -- START
             _.each($('.composer-dropzone'), function(dropzone) {
                 dropzone.removeEventListener('dragover', dragover);
                 dropzone.addEventListener('dragover', dragover);
             });
+            // This part of code is false -- END
 
             $scope.saveOld(message);
         }
@@ -852,6 +854,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     /**
      * Delay the saving
+     * @param {Object} message
      */
     $scope.saveLater = function(message) {
         if(angular.isDefined(message.timeoutSaving)) {
@@ -935,6 +938,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var nextSave = function(result) {
             return $scope.save(message, silently, forward, notification);
         };
+
+        if(angular.isDefined(message.timeoutSaving)) {
+            $timeout.cancel(message.timeoutSaving);
+        }
 
         if($scope.saving === true && message.savePromise) {
             message.savePromise = message.savePromise.then(nextSave, nextSave);
@@ -1075,6 +1082,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
+            console.log('save from send');
             $scope.save(message, false).then(function() {
                 $scope.checkSubject(message).then(function() {
                     var parameters = {};
@@ -1274,7 +1282,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $('.tooltip').not(this).hide();
 
         if(discard === true && angular.isDefined(id)) {
-            $scope.discard(id);
+            $scope.discard(message);
         }
 
         // Message closed and focussed?
@@ -1290,15 +1298,28 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     /**
      * Move draft message to trash
-     * @param {String} id - message id
+     * @param {Object} message
      */
-    $scope.discard = function(id) {
+    $scope.discard = function(message) {
         var messageEvent = [];
+        var conversationEvent = [];
+        var conversation = cache.getConversationCached(message.ConversationID);
 
-        messageEvent.push({Action: 0, ID: id});
-        cache.events(messageEvent);
+        if(conversation.isDefined(conversation)) {
+            if(conversation.NumMessages === 1) {
+                // Delete conversation
+                conversationEvent.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+            } else if(conversation.NumMessages > 1) {
+                // Decrease the number of message
+                conversation.NumMessages--;
+                conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+            }
+        }
 
-        Message.delete({IDs: [id]});
+        messageEvent.push({Action: 0, ID: message.ID});
+        cache.events(messageEvent, 'message');
+        cache.events(conversationEvent, 'conversation');
+        Message.delete({IDs: [message.ID]});
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
