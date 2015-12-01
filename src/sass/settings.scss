@@ -837,6 +837,35 @@
 
 @media (max-width: $tablet-landscape) {
     #pm_settings {
+
+        #logActions {
+            float: left;
+            margin: 0 0 1rem -5px;
+            clear: both;
+        }
+
+        #logArea {
+            padding-top: 2rem;
+        }
+
+        #accessLog tr {
+            margin-bottom: 1rem;
+            padding: 0;
+            border: 1px solid $border;
+            display: block;
+            td {
+                display: block;
+                padding: 0 1rem;
+                span {
+                    float: none;
+                    text-align: left !important;
+                }
+            }
+            td.text-right {
+                text-align: left;
+            }
+        }
+
         .settings {
             padding: 0 10px;
         }
@@ -998,20 +1027,8 @@
             margin: 10px;
             border: none;
             position: relative;
-            .pm_select {
-                width: 100%;
-                select {
-                    height: 33px;
-                    line-height: 33px;
-                }
-                .fa {
-                    position: absolute;
-                    right: 1rem;
-                    top: 0;
-                    bottom: 0;
-                    height: 33px;
-                    line-height: 33px;
-                }
+            .pm_button {
+                margin-bottom: 1rem;
             }
         }
         .well {
