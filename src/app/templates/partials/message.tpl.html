@@ -9,7 +9,7 @@
             <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
             <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
             <i class="fa fa-lock"></i>
-            <span class="time">{{ ::message.Time | longReadableTime }}</span>
+            <span class="time">{{ message.Time | longReadableTime }}</span>
         </span>
         <span class="from">
             <i>{{ 'FROM' | translate }}</i>

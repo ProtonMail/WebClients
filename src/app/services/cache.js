@@ -668,22 +668,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Update only a draft message
-    * @param {Object} event
-    * @return {Promise}
-    */
-    api.updateDraft = function(event) {
-        var deferred = $q.defer();
-        var messages = [event.Message];
-
-        storeMessages(messages);
-
-        deferred.resolve();
-
-        return deferred.promise;
-    };
-
-    /**
     * Update message attached to the id specified
     * @param {Object} event
     * @return {Promise}
@@ -714,13 +698,7 @@ angular.module("proton.cache", [])
                 }
 
                 messagesCached[index] = message;
-
-                if($rootScope.dontUpdateNextCounter === true) {
-                    $rootScope.dontUpdateNextCounter = false;
-                } else {
-                    manageCounters(current, messagesCached[index], 'message');
-                }
-
+                manageCounters(current, messagesCached[index], 'message');
                 deferred.resolve();
            }
         } else {
@@ -759,13 +737,7 @@ angular.module("proton.cache", [])
 
              // Update conversation cached
              conversationsCached[index] = conversation;
-
-             if($rootScope.dontUpdateNextCounter === true) {
-                 $rootScope.dontUpdateNextCounter = false;
-             } else {
-                 manageCounters(current, conversationsCached[index], 'conversation');
-             }
-
+             manageCounters(current, conversationsCached[index], 'conversation');
              deferred.resolve();
          } else if(angular.isDefined(event.Conversation)) {
             // Create a new conversation in the cache
@@ -796,7 +768,7 @@ angular.module("proton.cache", [])
                         promises.push(api.createMessage(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateDraft(event));
+                        promises.push(api.updateFlagMessage(event));
                         break;
                     case UPDATE_FLAGS:
                         promises.push(api.updateFlagMessage(event));
