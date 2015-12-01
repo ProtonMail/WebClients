@@ -530,14 +530,13 @@ angular.module("proton.cache", [])
     * @param {Object} event
     */
     api.deleteMessage = function(event) {
+        console.log('deleteMessage');
         var deferred = $q.defer();
 
         // Delete message
-        messagesCached = _.filter(messagesCached, function(message) {
-            return message.ID !== event.ID;
+        messagesCached = _.reject(messagesCached, function(message) {
+            return message.ID === event.ID;
         });
-
-        // Delete conversation
 
         deferred.resolve();
 
@@ -553,13 +552,13 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
 
         // Delete messages
-        messagesCached = _.filter(messagesCached, function(message) {
-            return message.ConversationID !== event.ID;
+        messagesCached = _.reject(messagesCached, function(message) {
+            return message.ConversationID === event.ID;
         });
 
         // Delete conversation
-        conversationsCached = _.filter(conversationsCached, function(conversation) {
-            return conversation.ID !== event.ID;
+        conversationsCached = _.reject(conversationsCached, function(conversation) {
+            return conversation.ID === event.ID;
         });
 
         deferred.resolve();
@@ -576,8 +575,8 @@ angular.module("proton.cache", [])
 
         _.each(conversationsCached, function(conversation, index) {
             if(conversation.LabelIDs.indexOf(location) !== -1) {
-                messagesCached = _.filter(messagesCached, function(message) {
-                    return message.ConversationID !== conversation.ID;
+                messagesCached = _.reject(messagesCached, function(message) {
+                    return message.ConversationID === conversation.ID;
                 });
 
                 toRemove.push(index);

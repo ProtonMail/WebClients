@@ -443,7 +443,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var data = result.data;
 
             if(angular.isDefined(data) && data.Code === 1000) {
-                
+
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
 
@@ -1313,7 +1313,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var conversationEvent = [];
         var conversation = cache.getConversationCached(message.ConversationID);
 
-        if(conversation.isDefined(conversation)) {
+        if(angular.isDefined(conversation)) {
             if(conversation.NumMessages === 1) {
                 // Delete conversation
                 conversationEvent.push({Action: 0, ID: conversation.ID, Conversation: conversation});

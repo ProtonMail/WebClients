@@ -51,14 +51,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     $scope.messages.push(message);
                 }
             });
-
+    
             _.each($scope.messages, function(message) {
                 var current = _.findWhere(messages, {ID: message.ID});
 
                 if(angular.isUndefined(current)) {
                     var index = $scope.messages.indexOf(current);
                     // Delete message
-                    $scope.messages.slice(index, 1);
+                    $scope.messages.splice(index, 1);
                 }
             });
         }
