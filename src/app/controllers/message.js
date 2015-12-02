@@ -270,21 +270,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
-     * Hide message if it's in trash
-     */
-    $scope.show = function() {
-        if($scope.mailbox === 'trash') {
-            return true;
-        } else {
-            if(angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    };
-
-    /**
      * Decrypt the content of the current message and store it in 'message.DecryptedBody'
      * @param {Boolean} print
      */

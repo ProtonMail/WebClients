@@ -440,6 +440,7 @@ angular.module("proton.cache", [])
      */
     api.queryConversationMessages = function(conversationId) {
         var deferred = $q.defer();
+        var mailbox = tools.currentMailbox();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
             deferred.resolve(queryConversationMessages(conversationId));
@@ -447,6 +448,12 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(conversation)) {
             var messages = _.where(messagesCached, {ConversationID: conversationId});
+
+            if(mailbox !== 'trash') {
+                messages = _.reject(messages, function(message) {
+                    return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+                });
+            }
 
             if(conversation.NumMessages === messages.length) {
                 deferred.resolve(order(messages, 'Time'));
@@ -465,7 +472,16 @@ angular.module("proton.cache", [])
      * @param {String} conversationId
      */
     api.queryMessagesCached = function(conversationId) {
-        return angular.copy(_.where(messagesCached, {ConversationID: conversationId}));
+        var mailbox = tools.currentMailbox();
+        var messages = _.where(messagesCached, {ConversationID: conversationId});
+
+        if(mailbox !== 'trash') {
+            messages = _.reject(messages, function(message) {
+                return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+            });
+        }
+
+        return angular.copy(messages);
     };
 
     api.getConversationCached = function(conversationId) {
