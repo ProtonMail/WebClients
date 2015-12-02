@@ -1177,8 +1177,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         deferred.reject(new Error(result.Error));
                                     } else {
                                         var messageEvent = [];
-                                        var conversationEvent = [];
-                                        var conversation = cache.getConversationCached(result.Sent.ConversationID);
                                         var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
                                         message.sending = false;
@@ -1187,12 +1185,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                                         result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
                                         messageEvent.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
-
-                                        if(angular.isDefined(conversation)) {
-                                            conversation.Time = result.Sent.Time; // Update Time parameter of the conversation
-                                            conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                                            cache.events(conversationEvent, 'conversation');
-                                        }
 
                                         if (result.Parent) {
                                             messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
