@@ -151,20 +151,20 @@
                     </a>
                 </div>
                 <p></p>
-                <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
+                <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime | PANDA_FILTER }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
                 <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
-                        <select ng-model="params.expirationWeeks" ng-options="option.label for option in weekOptions"></select>
+                        <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'WEEKS' | translate }}
                     <span class="pm_select">
-                        <select ng-model="params.expirationDays" ng-options="option.label for option in dayOptions"></select>
+                        <select ng-model="params.expirationDays" ng-change="setExpiration(message, params)" ng-options="option.label for option in dayOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'DAYS' | translate }}
                     <span class="pm_select">
-                        <select ng-model="params.expirationHours" ng-options="option.label for option in hourOptions"></select>
+                        <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'HOURS' | translate }}ß
+                    </span> {{ 'HOURS' | translate }}
                     <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
                 </div>
                 <div class="text-center" ng-show="params.expiration">
@@ -179,7 +179,7 @@
                     <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)">
                         {{ 'CANCEL' | translate }}
                     </button>
-                    <button type="button" class="pm_button primary" ng-click="setExpiration(message, params)">
+                    <button type="button" class="pm_button primary" ng-click="setExpiration(message, params, 1)">
                         {{ 'SET' | translate }}
                     </button>
                 </footer>
