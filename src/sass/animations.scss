@@ -2,6 +2,14 @@ $spinnerWidth: 6rem;
 $spinnerSpeed: 600ms;
 $spinnerSize: 10rem;
 
+.loader {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    width: 14rem;
+    height: auto;
+}
+
 #exiting {
     position: fixed;
     left: 0;

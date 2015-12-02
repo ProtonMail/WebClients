@@ -8,6 +8,7 @@
         background: $border;
 		border-radius: 2px;
         width: 8px;
+        box-shadow: inset 0 0 0 2px #fff;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -24,6 +25,7 @@
 	        background: #43434f;
 			border-radius: 2px;
 	        width: 8px;
+            box-shadow: inset 0 0 0 2px #505061;
 	    }
 
 	    ::-webkit-scrollbar-thumb {
