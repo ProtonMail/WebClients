@@ -23,7 +23,7 @@ angular.module("proton.cache", [])
     var UPDATE_FLAGS = 3;
 
     /**
-    * Save conversations in conversationsCached and add location in attribute
+    * Save conversations in conversationsCached and add loc in attribute
     * @param {Array} conversations
     */
     var storeConversations = function(conversations) {
@@ -81,7 +81,7 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Reorder cache location by reverse time
+     * Reorder cache loc by reverse time
      * @param {Array} elements - conversation or message
      * @param {String} parameter - ordered with this parameter
      */
@@ -103,7 +103,7 @@ angular.module("proton.cache", [])
     var vector = function(element, unread, type) {
         var result = {};
         var condition = true;
-        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+        var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
         if(unread === true) {
             if(type === 'message') {
@@ -113,11 +113,11 @@ angular.module("proton.cache", [])
             }
         }
 
-        _.each(locations, function(location) {
-            if(angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(location) !== -1 && condition) {
-                result[location] = 1;
+        _.each(locs, function(loc) {
+            if(angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
+                result[loc] = 1;
             } else {
-                result[location] = 0;
+                result[loc] = 0;
             }
         });
 
@@ -135,30 +135,30 @@ angular.module("proton.cache", [])
         var newUnreadVector = vector(newElement, true, type);
         var newTotalVector = vector(newElement, false, type);
         var oldTotalVector = vector(oldElement, false, type);
-        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+        var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
-        _.each(locations, function(location) {
-            var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
-            var deltaTotal = newTotalVector[location] - oldTotalVector[location];
+        _.each(locs, function(loc) {
+            var deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
+            var deltaTotal = newTotalVector[loc] - oldTotalVector[loc];
             var currentUnread;
             var currentTotal;
 
             if(type === 'message') {
-                currentUnread = cacheCounters.unreadMessage(location);
-                currentTotal = cacheCounters.totalMessage(location);
-                cacheCounters.updateMessage(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
+                currentUnread = cacheCounters.unreadMessage(loc);
+                currentTotal = cacheCounters.totalMessage(loc);
+                cacheCounters.updateMessage(loc, currentTotal + deltaTotal, currentUnread + deltaUnread);
             } else if(type === 'conversation') {
-                currentUnread = cacheCounters.unreadConversation(location);
-                currentTotal = cacheCounters.totalConversation(location);
-                cacheCounters.updateConversation(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
+                currentUnread = cacheCounters.unreadConversation(loc);
+                currentTotal = cacheCounters.totalConversation(loc);
+                cacheCounters.updateConversation(loc, currentTotal + deltaTotal, currentUnread + deltaUnread);
             }
         });
     };
 
     /**
-     * Return location specified in the request
+     * Return loc specified in the request
      * @param {Object} request
-     * @return {String} location
+     * @return {String} loc
      */
     var getLocation = function(request) {
         return request.Label;
@@ -171,7 +171,7 @@ angular.module("proton.cache", [])
      */
     var queryConversations = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
         Conversation.query(request).then(function(result) {
@@ -184,7 +184,7 @@ angular.module("proton.cache", [])
                 // Only for cache context
                 if(context === true) {
                     // Set total value in cache
-                    cacheCounters.updateConversation(location, data.Total, data.Unread);
+                    cacheCounters.updateConversation(loc, data.Total, data.Unread);
                     // Store conversations
                     storeConversations(data.Conversations);
                 }
@@ -305,7 +305,7 @@ angular.module("proton.cache", [])
      */
     api.queryMessages = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
         var callApi = function() {
             deferred.resolve(queryMessages(request));
@@ -319,7 +319,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var messages = _.filter(messagesCached, function(message) {
-                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(location.toString()) !== -1;
+                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
             messages = order(messages, 'Time');
@@ -369,7 +369,7 @@ angular.module("proton.cache", [])
      */
     api.queryConversations = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
         var callApi = function() {
             // Need data from the server
@@ -385,7 +385,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
-                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(location.toString()) !== -1;
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
             conversations = order(conversations, 'Time');
@@ -562,14 +562,14 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Remove conversations from cache location
-    * @param {String} location
+    * Remove conversations from cache loc
+    * @param {String} loc
     */
-    api.empty = function(location) {
+    api.empty = function(loc) {
         var toRemove = [];
 
         _.each(conversationsCached, function(conversation, index) {
-            if(conversation.LabelIDs.indexOf(location) !== -1) {
+            if(conversation.LabelIDs.indexOf(loc) !== -1) {
                 messagesCached = _.reject(messagesCached, function(message) {
                     return message.ConversationID === conversation.ID;
                 });
@@ -579,7 +579,7 @@ angular.module("proton.cache", [])
         });
 
         _.each(toRemove, function(index) {
-            conversationsCached[index].LabelIDs = _.without(conversationsCached[index].LabelIDs, location);
+            conversationsCached[index].LabelIDs = _.without(conversationsCached[index].LabelIDs, loc);
         });
 
         api.callRefresh();
@@ -858,8 +858,8 @@ angular.module("proton.cache", [])
      */
     api.more = function(conversation, type) {
         var deferred = $q.defer();
-        var location = tools.currentLocation();
-        var request = {PageSize: 1, Label: location};
+        var loc = tools.currentLocation();
+        var request = {PageSize: 1, Label: loc};
 
         if(type === 'previous') {
             request.End = conversation.Time;
@@ -894,7 +894,7 @@ angular.module("proton.cache", [])
     var api = {};
     var counters = {};
     // {
-    //     location: {
+    //     loc: {
     //         message: {
     //             total: value,
     //             unread: value
@@ -905,9 +905,9 @@ angular.module("proton.cache", [])
     //         }
     //     }
     // }
-    var exist = function(location) {
-        if(angular.isUndefined(counters[location])) {
-            counters[location] = {
+    var exist = function(loc) {
+        if(angular.isUndefined(counters[loc])) {
+            counters[loc] = {
                 message: {
                     total: 0,
                     unread: 0
@@ -952,84 +952,84 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Update the total / unread for a specific location
-    * @param {String} location
+    * Update the total / unread for a specific loc
+    * @param {String} loc
     * @param {Integer} total
     * @param {Integer} unread
     */
-    api.updateMessage = function(location, total, unread) {
-        exist(location);
+    api.updateMessage = function(loc, total, unread) {
+        exist(loc);
 
         if(angular.isDefined(total)) {
-            counters[location].message.total = total;
+            counters[loc].message.total = total;
         }
 
         if(angular.isDefined(unread)) {
-            counters[location].message.unread = unread;
+            counters[loc].message.unread = unread;
         }
 
         $rootScope.$broadcast('updatePageName');
     };
 
     /**
-     * Update the total / unread for a specific location
-     * @param {String} location
+     * Update the total / unread for a specific loc
+     * @param {String} loc
      * @param {Integer} total
      * @param {Integer} unread
      */
-    api.updateConversation = function(location, total, unread) {
-        exist(location);
+    api.updateConversation = function(loc, total, unread) {
+        exist(loc);
 
         if(angular.isDefined(total)) {
-            counters[location].conversation.total = total;
+            counters[loc].conversation.total = total;
         }
 
         if(angular.isDefined(unread)) {
-            counters[location].conversation.unread = unread;
+            counters[loc].conversation.unread = unread;
         }
 
         $rootScope.$broadcast('updatePageName');
     };
 
     /**
-    * Get the total of messages for a specific location
-    * @param {String} location
+    * Get the total of messages for a specific loc
+    * @param {String} loc
     */
-    api.totalMessage = function(location) {
-        return counters[location] && counters[location].message && counters[location].message.total;
+    api.totalMessage = function(loc) {
+        return counters[loc] && counters[loc].message && counters[loc].message.total;
     };
 
     /**
-    * Get the total of conversation for a specific location
-    * @param {String} location
+    * Get the total of conversation for a specific loc
+    * @param {String} loc
     */
-    api.totalConversation = function(location) {
-        return counters[location] && counters[location].conversation && counters[location].conversation.total;
+    api.totalConversation = function(loc) {
+        return counters[loc] && counters[loc].conversation && counters[loc].conversation.total;
     };
 
     /**
-    * Get the number of unread messages for the specific location
-    * @param {String} location
+    * Get the number of unread messages for the specific loc
+    * @param {String} loc
     */
-    api.unreadMessage = function(location) {
-        return counters[location] && counters[location].message && counters[location].message.unread;
+    api.unreadMessage = function(loc) {
+        return counters[loc] && counters[loc].message && counters[loc].message.unread;
     };
 
     /**
-    * Get the number of unread conversation for the specific location
-    * @param {String} location
+    * Get the number of unread conversation for the specific loc
+    * @param {String} loc
     */
-    api.unreadConversation = function(location) {
-        return counters[location] && counters[location].conversation && counters[location].conversation.unread;
+    api.unreadConversation = function(loc) {
+        return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
     };
 
     /**
-    * Clear location counters
-    * @param {String} location
+    * Clear loc counters
+    * @param {String} loc
     */
-    api.empty = function(location) {
-        if(angular.isDefined(counters[location])) {
-            counters[location] = {
+    api.empty = function(loc) {
+        if(angular.isDefined(counters[loc])) {
+            counters[loc] = {
                 message: {
                     total: 0,
                     unread: 0

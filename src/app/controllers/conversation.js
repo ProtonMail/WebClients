@@ -178,20 +178,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Move current conversation to a specific location
      */
     $scope.move = function(location) {
-        var current;
+        var current = tools.currentLocation();
         var events = [];
         var copy = angular.copy($scope.conversation);
-
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
-                current = labelID;
-            }
-        });
 
         // cache
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // remove current location
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location].toString()]; // Add new location
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]]; // Add new location
         events.push({Action: 3, ID: copy.ID, Conversation: copy});
         cache.events(events, 'conversation');
 

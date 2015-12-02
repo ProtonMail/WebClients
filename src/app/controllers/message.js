@@ -788,14 +788,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messageEvent = [];
         var conversationEvent = [];
         var copy = angular.copy($scope.message);
-        var current;
+        var current = tools.currentLocation();
         var labelIDs = [];
-
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
-                current = labelID;
-            }
-        });
 
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // Remove previous location
@@ -825,7 +819,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
-        // cache.events(conversationEvent, 'conversation');
 
         Message.delete({IDs: [copy.ID]});
     };

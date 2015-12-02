@@ -506,20 +506,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var conversationEvent = [];
         var messageEvent = [];
         var type = tools.typeList();
+        var current = tools.currentLocation();
 
         // Cache
         _.each(elements, function(element) {
-            var currents = [];
-
-            // Find current location
-            _.each(element.LabelIDs, function(labelID) {
-                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
-                    currents.push(labelID.toString());
-                }
-            });
-
             element.Selected = false;
-            element.LabelIDsRemoved = currents; // Remove currents location
+            element.LabelIDsRemoved = [current]; // Remove current location
             element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
 
             if(type === 'conversation') {
@@ -530,7 +522,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.Selected = false;
-                        message.LabelIDsRemoved = currents; // Remove currents location
+                        message.LabelIDsRemoved = [current]; // Remove current location
                         message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
                         messageEvent.push({Action: 3, ID: message.ID, Message: message});
                     });

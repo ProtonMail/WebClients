@@ -1,5 +1,5 @@
 angular.module("proton.tools", ["proton.constants"])
-.factory("tools", function($log, $state, $compile, $templateCache, $q, CONSTANTS) {
+.factory("tools", function($log, $state, $stateParams, $compile, $templateCache, $q, CONSTANTS) {
     var tools = {};
 
     tools.hasSessionStorage = function() {
@@ -390,17 +390,18 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.currentLocation = function() {
         var mailbox = tools.currentMailbox();
+        var loc; // Don't choose location
 
         switch(mailbox) {
             case 'label':
-                location = $stateParams.label;
+                loc = $stateParams.label;
                 break;
             default:
-                location = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
                 break;
         }
 
-        return location;
+        return loc;
     };
 
     tools.currentMailbox = function() {
