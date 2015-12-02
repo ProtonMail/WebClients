@@ -84,8 +84,9 @@ angular.module("proton.cache", [])
      * Reorder cache loc by reverse time
      * @param {Array} elements - conversation or message
      * @param {String} parameter - ordered with this parameter
+     * @return {Array} don't miss this array is reversed
      */
-    var order = function(elements, parameter) {
+    var order = function(elements, parameter, reverse) {
         if(angular.isArray(elements)) {
             return _.sortBy(elements, parameter).reverse();
         } else {
@@ -242,7 +243,7 @@ angular.module("proton.cache", [])
 
                 storeConversations([data.Conversation]);
                 storeMessages(messages);
-                deferred.resolve(messages);
+                deferred.resolve(order(messages, 'Time'));
             } else {
                 deferred.reject();
             }
