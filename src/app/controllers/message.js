@@ -116,11 +116,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
         var id = '#message' + index;
         var element = angular.element(id);
-        var value = element.offset().top - element.outerHeight();
 
-        $('#pm_thread').animate({
-            scrollTop: value
-        }, 'slow');
+        if(angular.isDefined(element)) {
+            var value = element.offset().top - element.outerHeight();
+
+            $('#pm_thread').animate({
+                scrollTop: value
+            }, 'slow');
+        }
     };
 
     /**
