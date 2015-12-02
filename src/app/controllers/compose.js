@@ -1186,9 +1186,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                         result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                                         result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
-                                        conversation.Time = result.Sent.Time; // Update Time parameter of the conversation
                                         messageEvent.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
-                                        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+
+                                        if(angular.isDefined(conversation)) {
+                                            conversation.Time = result.Sent.Time; // Update Time parameter of the conversation
+                                            conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                                            cache.events(conversationEvent, 'conversation');
+                                        }
 
                                         if (result.Parent) {
                                             messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
@@ -1200,7 +1204,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }
 
                                         cache.events(messageEvent, 'message');
-                                        cache.events(conversationEvent, 'conversation');
                                         notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);
