@@ -14,6 +14,7 @@
         'normalized': !message.maximized && !message.minimized,
         'expandRecipients': message.fields,
         'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
+        'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
         'tall': (message.Attachments.length === 0)
         }"
         ng-click="focusComposer(message)">

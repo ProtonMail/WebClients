@@ -30,6 +30,15 @@ body.maximizedComposer {
 				opacity: .5;
 			}
 		}
+		&.attachmentsOpen.moreAttachments {
+			.previews {
+				height: 111px;
+				overflow: auto;
+			}
+			.attachmentBar {
+				bottom: 170px;
+			}
+		}
 		.composeEditor {
 			float: left;
 			width: 100%;
@@ -101,25 +110,34 @@ body.maximizedComposer {
 		&.expandRecipients {
 			overflow: hidden;
 		}
-		&.attachmentsOpen {
+		&.attachmentsOpen.moreAttachments {
 			section {
-				height: 280px;
 				.angular-squire-wrapper {
 					iframe {
 						height: 175px;
 					}
 				}
 			}
+		}
+		&.attachmentsOpen {
+			section {
+				height: 280px;
+				.angular-squire-wrapper {
+					iframe {
+						height: 225px;
+					}
+				}
+			}
 			.previews {
 				position: absolute;
-				height: 110px;
-				overflow: auto;
+				height: 61px;
+				overflow: hidden;
 				-webkit-overflow-scrolling: touch;
 				top: auto;
 				bottom: 60px;
 			}
 			.attachmentBar {
-				bottom: 170px;
+				bottom: 120px;
 				top: auto;
 				z-index: 9;
 				border-bottom: 1px solid #fff;
@@ -130,6 +148,24 @@ body.maximizedComposer {
 					background: #fff;
 					color: $gray;
 					border-radius: 2px;
+					width: 45%;
+					box-sizing: border-box;
+					white-space: nowrap;
+					position: relative;
+					.preview-name {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						padding-right: 1.25rem;
+						display: block;
+					}
+					.preview-close {
+						position: absolute;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						cursor: pointer;
+						padding: 0 .5rem;
+					}
 				}
 			}
 		}
