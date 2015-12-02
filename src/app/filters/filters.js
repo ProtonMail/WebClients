@@ -1,5 +1,11 @@
 angular.module("proton.filters",[])
 
+.filter('PANDA_FILTER', function () {
+    return function (input) {
+        return input;
+    };
+})
+
 .filter("capitalize", function() {
     return function(input) {
         if (input!==null) {

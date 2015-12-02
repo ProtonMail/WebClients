@@ -1,0 +1,38 @@
+// Each browser has its own limitations and possibilities for scrollbar styling.
+// Chrome / Webkit: http://cssdeck.com/labs/css3-webkit-vertical-scrollbars/
+
+.ua-chrome {
+
+	// Default
+    ::-webkit-scrollbar {
+        background: $border;
+		border-radius: 2px;
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 1px solid darken($border, 10%);
+        background: #fff;
+		border-radius: 2px;
+        width: 8px;
+	}
+
+	// Darker for sidebar
+	#pm_sidebar {
+
+	    ::-webkit-scrollbar {
+	        background: #43434f;
+			border-radius: 2px;
+	        width: 8px;
+	    }
+
+	    ::-webkit-scrollbar-thumb {
+	        border: 1px solid darken(#43434f, 10%);
+	        background: #505061;
+			border-radius: 2px;
+	        width: 8px;
+		}
+
+	}
+
+}
