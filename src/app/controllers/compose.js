@@ -1278,7 +1278,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message, save) {
-        var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
+        var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
@@ -1289,7 +1289,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.editor.removeEventListener('dragstart', onDragStart);
         message.editor.removeEventListener('dragend', onDragEnd);
 
-        dropzone.removeEventListener('dragover', dragover);
+        // We need to manage step by step the dropzone in the case where the composer is collapsed
+        if(angular.isDefined(dropzones) && angular.isDefined(_.first(dropzones))) {
+            _.first(dropzones).removeEventListener('dragover', dragover);
+        }
 
         $scope.close(message, false, true);
     };
