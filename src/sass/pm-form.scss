@@ -141,7 +141,7 @@
             border-color: $border;
         }
         &:focus {
-            color: $primary;
+            color: #000;
             border-color: $primary;
             outline: none;
         }
@@ -153,15 +153,15 @@
             pointer-events: none;
         }
         &.success {
-            color: #aecf96;
+            color: darken(#aecf96, 10%);
             border-color: #aecf96;
         }
         &.error {
-            color: #cf9696;
+            color: darken(#cf9696, 10%);
             border-color: #cf9696;
         }
         &.warning {
-            color: #d9c4a2;
+            color: darken(#d9c4a2, 10%);
             border-color: #d9c4a2;
         }
     }
@@ -175,6 +175,9 @@
         margin: 0;
         &.noBorder {
             border-color: transparent !important;
+        }
+        &.margin {
+            margin-bottom: 10px;
         }
     }
     textarea {
