@@ -24,6 +24,9 @@ header#pm_header {
     #pm_background {
         display: block;
     }
+    &.locked #pm_background {
+        display: none;
+    }
 }
 body.secure section#pm_sidebarMobile {
     background: $secondary;
