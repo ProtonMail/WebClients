@@ -124,12 +124,13 @@ header#pm_header {
 			display: block;
 			width: 35px;
 			text-align: center;
+			cursor: pointer;
 		}
 		button.advanced {
 			padding: 0;
 			border: none;
 			display: block;
-			width: 25px;
+			width: 50px;
 			background-color: transparent;
 			cursor: pointer;
 		}

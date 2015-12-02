@@ -13,13 +13,13 @@
     </a>
     <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()">
         <img src="assets/img/snackie.png" ng-show="snackies" id="snackie" class="animated infinite rubberBand">
-        <label>
-            <i class="fa fa-search"></i>
-        </label>
         <button  type="button" class="advanced" ng-click="openSearchModal(params.searchMessageInput)" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
             <i class="fa fa-angle-down"></i>
         </button>
         <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
+        <label ng-click="searchMessages()">
+            <i class="fa fa-search"></i>
+        </label>        
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
         <label>
