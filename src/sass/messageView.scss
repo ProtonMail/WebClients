@@ -87,7 +87,7 @@
 		}
         span.person {
             position: relative;
-            white-space: nowrap;
+            word-break: break-word;
             padding-left: 1.5rem;
             & > * {
                 float: left;
@@ -201,7 +201,6 @@
             float: left;
             width: 100%;
 			.data {
-                overflow: hidden;
                 float: left;
                 width: 100%;
                 .toGroup,
