@@ -41,7 +41,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
-        $scope.allSelectedCheckbox = false;
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         networkActivityTracker.track($scope.refreshConversations().then(function() {
@@ -295,26 +294,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     *
+     * Return if all elements are selected
+     * @return {Boolean}
      */
     $scope.allSelected = function() {
-        var status = true;
-
         if ($scope.conversations && $scope.conversations.length > 0) {
-            _.forEach($scope.conversations, function(conversation) {
-                if (!!!conversation.Selected) {
-                    status = false;
-                }
-            });
+            return $scope.conversations.length === $scope.elementsSelected().length;
         } else {
-            status = false;
+            return false;
         }
-
-        $scope.allSelectedCheckbox = status;
     };
 
+    /**
+     * Select or unselect all elements
+     */
     $scope.toggleAllSelected = function() {
-        var status = $scope.allSelectedCheckbox;
+        var status = $scope.allSelected();
 
         if(status === true) {
             $scope.unselectAllElements();
@@ -330,8 +325,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         _.each($scope.conversations, function(conversation) {
             conversation.Selected = true;
         });
-
-        $scope.allSelectedCheckbox = true;
     };
 
     /**
@@ -341,8 +334,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         _.each($scope.conversations, function(conversations) {
             conversations.Selected = false;
         });
-
-        $scope.allSelectedCheckbox = false;
     };
 
     /**
