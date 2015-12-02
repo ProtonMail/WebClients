@@ -481,6 +481,8 @@ angular.module("proton.cache", [])
             });
         }
 
+        messages = order(messages, 'Time');
+
         return angular.copy(messages);
     };
 
