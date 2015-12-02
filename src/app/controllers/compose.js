@@ -1000,7 +1000,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                 // Save draft before to send
                 draftPromise.then(function(result) {
-                    if(result.Code === 1000) {
+                    if(angular.isDefined(result) && result.Code === 1000) {
                         var messageEvent = [];
                         var conversationEvent = [];
                         var conversation = cache.getConversationCached($stateParams.id);
@@ -1037,6 +1037,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         deferred.resolve(result);
+                    } else if(angular.isDefined(result) && result.Code === 15033) {
+                        // Case where the user delete draft in an other terminal
+                        delete message.ID;
+                        deferred.resolve($scope.save(message, silently, forward, notification));
                     } else {
                         $log.error(result);
                         deferred.reject(result);
