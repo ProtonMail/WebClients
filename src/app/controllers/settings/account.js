@@ -76,6 +76,13 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveDailyNotifications = function(form) {
+
+        var value = parseInt($scope.dailyNotifications);
+
+        if (value === parseInt(authentication.user.Notify) ) {
+            return;
+        }
+        
         networkActivityTracker.track(
           Setting.notify({
               "Notify": +$scope.dailyNotifications
@@ -211,6 +218,13 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveAutosaveContacts = function(form) {
+
+        var value = parseInt($scope.autosaveContacts);
+
+        if (value === parseInt(authentication.user.autosaveContacts) ) {
+            return;
+        }
+
         networkActivityTracker.track(
             Setting.autosave({
                 "AutoSaveContacts": +$scope.autosaveContacts
@@ -221,6 +235,34 @@ angular.module("proton.controllers.Settings")
                 notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
                 $log.error(error);
             })
+        );
+    };
+
+    $scope.saveShowImages = function(form) {
+
+        var value = parseInt($scope.ShowImages);
+
+        if (value === parseInt(authentication.user.ShowImages) ) {
+            return;
+        }
+
+        networkActivityTracker.track(
+            Setting.setShowImages({
+                "ShowImages": parseInt($scope.ShowImages)
+            }).$promise.then(
+                function(response) {
+                    if(response.Code === 1000) {
+                        authentication.user.ShowImages = $scope.ShowImages;
+                        notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
+                },
+                function(error) {
+                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
+                    $log.error(error);
+                }
+            )
         );
     };
 

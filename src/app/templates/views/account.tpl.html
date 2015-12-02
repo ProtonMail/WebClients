@@ -46,6 +46,7 @@
                             <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
+                    <div class="clearfix">&nbsp;</div>
                     <div class="clearfix">
                         <div class="col left">
                             <label>{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
@@ -233,12 +234,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" value="1" ng-change="saveShowImages(showImages)" /> {{ 'AUTO' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="1" /> {{ 'AUTO' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" value="0" ng-change="saveShowImages(showImages)" /> {{ 'MANUAL' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="0" /> {{ 'MANUAL' | translate }}
                                 </label>
                             </div>
                             <p>

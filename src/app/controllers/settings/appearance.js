@@ -104,27 +104,7 @@ angular.module("proton.controllers.Settings")
         }
 
     };
-
-    $scope.saveShowImages = function(form) {
-        networkActivityTracker.track(
-            Setting.setShowImages({
-                "ShowImages": parseInt($scope.ShowImages)
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        authentication.user.ShowImages = $scope.ShowImages;
-                        notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    }
-                },
-                function(error) {
-                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
-                    $log.error(error);
-                }
-            )
-        );
-    };
+    
 
     // Not used
     $scope.saveDefaultLanguage = function() {
