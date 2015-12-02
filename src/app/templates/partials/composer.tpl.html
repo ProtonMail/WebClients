@@ -151,7 +151,7 @@
                     </a>
                 </div>
                 <p></p>
-                <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime | PANDA_FILTER }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
+                <p class="alert alert-info">This message will expire in:</p>
                 <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
                         <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
@@ -165,15 +165,6 @@
                         <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'HOURS' | translate }}
-                    <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
-                </div>
-                <div class="text-center" ng-show="params.expiration">
-                    <h2 class="text-purple">
-                        {{params.expiration}} {{ 'HOURS' | translate }}
-                    </h2>
-                    <h4 class="text-muted">
-                        {{params.expiration | humanDuration:'hours'}}
-                    </h4>
                 </div>
                 <footer class="text-right">
                     <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)">

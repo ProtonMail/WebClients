@@ -1,8 +1,34 @@
 angular.module("proton.filters",[])
 
-.filter('PANDA_FILTER', function () {
+.filter('delay', function ($translate) {
     return function (input) {
-        return input;
+        // get the current moment
+        var now = moment(),
+        then = moment(input),
+        // get the difference from now to then in ms
+        ms = then.diff(now, 'milliseconds', true);
+
+        // update the duration in ms
+        ms = then.diff(now, 'milliseconds', true);
+        days = Math.floor(moment.duration(ms).asDays());
+
+        then = then.subtract(days, 'days');
+        // update the duration in ms
+        ms = then.diff(now, 'milliseconds', true);
+        hours = Math.floor(moment.duration(ms).asHours());
+
+        then = then.subtract(hours,'hours');
+        // update the duration in ms
+        ms = then.diff(now, 'milliseconds', true);
+        minutes = Math.floor(moment.duration(ms).asMinutes());
+
+        then = then.subtract(minutes, 'minutes');
+        // update the duration in ms
+        ms = then.diff(now, 'milliseconds', true);
+        seconds = Math.floor(moment.duration(ms).asSeconds());
+
+        // concatonate the variables
+        return days + ' ' + $translate.instant('DAYS') + ' ' + hours + ' ' + $translate.instant('HOURS') + ' ' + minutes + ' ' + $translate.instant('MINUTES') + ' ' + seconds + ' ' + $translate.instant('SECONDS');
     };
 })
 
