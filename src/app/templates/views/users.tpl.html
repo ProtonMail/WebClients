@@ -13,13 +13,17 @@
 	            				<label for="orgName">{{ 'ORGANIZATION_NAME'| translate }}</label>
 	            			</div>
 	            			<div class="col right">
-	            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
+	            				<div class="clearfix">
+		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
+	            				</div>
+			            		<p class="text-right clearfix">
+				            		<button class="pm_button primary" type="submit">{{ 'SAVE'| translate }}</button>
+			            		</p>
                                 <!-- <div ng-messages="form_organization.name.$error" ng-show="form_organization.name.$touched" role="alert">
                                     <div ng-message="required"><small>You did not enter a field</small></div>
                                     <div ng-message="minlength"><small>Your field is too short</small></div>
                                     <div ng-message="maxlength"><small>Your field is too long</small></div>
                                 </div> -->
-                                <button class="pm_button primary" type="submit">{{ 'SAVE'| translate }}</button>
 	            			</div>
 	            		</form>
 	            	</div>

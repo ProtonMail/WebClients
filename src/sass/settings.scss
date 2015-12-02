@@ -231,10 +231,10 @@
                 display: inline-block;
                 padding-right: 2rem;
                 label {
-                    display: block;
+                    display: inline-block;
                     line-height: 35px;
                     float: left;
-                    width: 5rem;
+                    padding-right: 1rem;
                 }
                 .pm_buttons a em {
                     font-style: normal;

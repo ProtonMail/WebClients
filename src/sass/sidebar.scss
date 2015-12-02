@@ -49,7 +49,7 @@ section.sidebar {
     a.compose {
         margin-bottom: 20px;
         font-size: 12px;
-        padding-right: 1rem;
+        padding-right: 11px;
         width: 100%;
         text-align: center;
         text-transform: uppercase;
@@ -263,6 +263,9 @@ section.sidebar {
                 font-weight: bold;
                 color: $primary;
                 text-decoration: none;
+                &:hover {
+                    color: #fff;
+                }
             }
         }
         div.storage {
@@ -304,6 +307,9 @@ section.sidebar {
             letter-spacing: 2px;
             text-decoration: none;
             color: #6e6f80;
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }

@@ -71,6 +71,11 @@
         &.open.last {
             border-bottom: none;
         }
+        &.open {
+            header {
+                cursor: initial;
+            }
+        }
 		a.compose {
 			background: $primary;
 			color: #fff;
@@ -115,6 +120,7 @@
     		padding: 10px 0;
     		line-height: 20px;
     		box-sizing: border-box;
+            cursor: pointer;
     		.time {
     			display: inline-block;
     			white-space: nowrap;
