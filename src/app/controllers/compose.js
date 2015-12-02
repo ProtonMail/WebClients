@@ -792,7 +792,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      * @param {Object} params
      */
-    $scope.setExpiration = function(message, params, close) {
+    $scope.setExpiration = function(message, params) {
         var hours = params.expirationHours.value + params.expirationDays.value * 24 + params.expirationWeeks.value * 24 * 7;
         var error = false;
 
@@ -808,10 +808,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if(error === false) {
             message.ExpirationTime = hours * 3600; // seconds
-        }
-
-        if (close !== undefined) {
-            $scope.closePanel(message);
         }
     };
 
@@ -1099,7 +1095,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
-            console.log('save from send');
             $scope.save(message, false).then(function() {
                 $scope.checkSubject(message).then(function() {
                     var parameters = {};
