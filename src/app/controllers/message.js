@@ -85,6 +85,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             // Mark message as expanded
             $scope.message.expand = true;
+
+            if($scope.message.IsRead === 0) {
+                $scope.read();
+            }
         };
 
         // If the message is a draft
