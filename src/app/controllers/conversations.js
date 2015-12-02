@@ -480,8 +480,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 }
             } else if(type === 'message') {
                 messageEvent.push({Action: 0, ID: element.ID, Message: element});
-                // Manage the case where the message is open in the composer
-                $rootScope.$broadcast('deleteMessage', element.ID);
             }
         });
 

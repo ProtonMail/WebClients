@@ -526,7 +526,6 @@ angular.module("proton.cache", [])
     * @param {Object} event
     */
     api.deleteMessage = function(event) {
-        console.log('deleteMessage');
         var deferred = $q.defer();
 
         // Delete message

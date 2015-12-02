@@ -270,6 +270,21 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Hide message if it's in trash
+     */
+    $scope.show = function() {
+        if($scope.mailbox === 'trash') {
+            return true;
+        } else {
+            if(angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    };
+
+    /**
      * Decrypt the content of the current message and store it in 'message.DecryptedBody'
      * @param {Boolean} print
      */
@@ -798,8 +813,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.events(conversationEvent, 'conversation');
 
         Message[mailbox]({IDs: [copy.ID]});
-
-        $scope.back();
     };
 
     /**
@@ -807,14 +820,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.delete = function() {
         var messageEvent = [];
+        var conversationEvent = [];
         var copy = angular.copy($scope.message);
 
         messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
-        cache.events(messageEvent);
+        cache.events(messageEvent, 'message');
+        // cache.events(conversationEvent, 'conversation');
 
         Message.delete({IDs: [copy.ID]});
-
-        $scope.back();
     };
 
     /**

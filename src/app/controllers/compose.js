@@ -122,14 +122,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    $scope.$on('deleteMessage', function(event, id) {
-        _.each($scope.messages, function(message) {
-            if(message.ID === id) {
-                $scope.close(message, false, false);
-            }
-        });
-    });
-
     $scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);

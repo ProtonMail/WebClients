@@ -1,4 +1,4 @@
-<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand }">
+<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand }" ng-show="show()">
     <header ng-click="toggle()">
         <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
             <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
@@ -39,8 +39,8 @@
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
-                    <a href="" ng-click="move('delete')">
-                        <i class="fa fa-times-circle"></i> {{ 'DELETE' | translate }}
+                    <a href="" ng-click="move('trash')">
+                        <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
                     </a>
                     <a href="" ng-click="unread()">
                         <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
