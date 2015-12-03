@@ -961,14 +961,19 @@ angular.module("proton.cache", [])
             message: Message.count().$promise,
             conversation: Conversation.count()
         }).then(function(result) {
+            var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+            // Initialize locations
+            _.each(locs, function(loc) {
+                exist(loc);
+            });
+
             _.each(result.message.Counts, function(counter) {
-                exist(counter.LabelID);
                 counters[counter.LabelID].message.total = counter.Total || 0;
                 counters[counter.LabelID].message.unread = counter.Unread || 0;
             });
 
             _.each(result.conversation.data.Counts, function(counter) {
-                exist(counter.LabelID);
                 counters[counter.LabelID].conversation.total = counter.Total || 0;
                 counters[counter.LabelID].conversation.unread = counter.Unread || 0;
             });
