@@ -87,7 +87,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.expand = true;
 
             if($scope.message.IsRead === 0) {
-                $scope.read();
+                $scope.read(false);
             }
         };
 
@@ -374,8 +374,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as read
+     * @param {Boolean} back - return to element list view at the end of the process
      */
-    $scope.read = function() {
+    $scope.read = function(back) {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
@@ -391,14 +392,17 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         // Request
         Message.read({IDs: ids});
 
-        // Back to elements list
-        $scope.back();
+        if(back === true) {
+            // Back to elements list
+            $scope.back();
+        }
     };
 
     /**
      * Mark current message as unread
+     * @param {Boolean} back - return to element list view at the end of the process
      */
-    $scope.unread = function() {
+    $scope.unread = function(back) {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
@@ -417,9 +421,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         // Request
         Message.unread({IDs: ids});
 
-
-        // Back to elements list
-        $scope.back();
+        if(back === true) {
+            // Back to elements list
+            $scope.back();
+        }
     };
 
     $scope.toggleImages = function() {
