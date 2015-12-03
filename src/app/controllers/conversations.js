@@ -576,6 +576,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Complex method to apply labels on element selected
      * @param {Array} labels
      * @param {Boolean} alsoArchive
+     * @return {Promise}
      */
     $scope.saveLabels = function(labels, alsoArchive) {
         var REMOVE = 0;
@@ -658,6 +659,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // Close dropdown labels
         $scope.closeLabels();
+
+        // Back to the current message list if we archive element selected
+        if(alsoArchive === true) {
+            $scope.back();
+        }
 
         return deferred.promise;
     };
