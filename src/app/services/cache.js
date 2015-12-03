@@ -487,8 +487,22 @@ angular.module("proton.cache", [])
         return angular.copy(messages);
     };
 
+    /**
+     * Return conversation cached
+     * @param {String} conversationId
+     * @return {Object}
+     */
     api.getConversationCached = function(conversationId) {
-        return _.findWhere(conversationsCached, {ID: conversationId});
+        return angular.copy(_.findWhere(conversationsCached, {ID: conversationId}));
+    };
+
+    /**
+     * Return message cached
+     * @param {String} messageId
+     * @return {Object}
+     */
+    api.getMessageCached = function(messageId) {
+        return angular.copy(_.findWhere(messagesCached, {ID: messageId}));
     };
 
     /**
@@ -823,11 +837,8 @@ angular.module("proton.cache", [])
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
-
-        if(angular.isDefined($stateParams.id)) {
-            $rootScope.$broadcast('refreshConversation');
-            $rootScope.$broadcast('refreshMessage');
-        }
+        $rootScope.$broadcast('refreshConversation');
+        $rootScope.$broadcast('refreshMessage');
     };
 
     /**

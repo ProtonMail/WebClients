@@ -101,6 +101,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     });
 
+    // When a message is updated we try to update the message
+    $scope.$on('refreshMessage', function(event) {
+        _.each($scope.messages, function(message) {
+            if(angular.isDefined(message.ID)) {
+                var messageCached = cache.getMessageCached(message.ID);
+
+                message.Time = messageCached.Time;
+                message.ConversationID = messageCached.ConversationID;
+            }
+        });
+    });
+
     $scope.$on('newMessage', function() {
         var message = new Message();
 
