@@ -555,8 +555,7 @@ angular.module("proton.modals", [])
                             Token: response.id
                         };
                         // Send request to subscribe
-                        // Organization.create(this.config).then(function(result) {
-                        Payment.subscribe(this.config).then(function(result) {
+                        Organization.create(this.config).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 this.process = false;
                                 this.step = 'thanks';
@@ -579,7 +578,7 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this);
 
-                // 
+                //
                 if(Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
                     return false;

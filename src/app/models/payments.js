@@ -39,11 +39,7 @@ angular.module("proton.models.payments", [])
          * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
          */
         status: function() {
-            return $http.get(url.get() + '/payments/status', {
-                params: {
-                    ExternalProvider: 'Stripe'
-                }
-            });
+            return $http.get(url.get() + '/payments/status');
         },
         /**
          *  Get payments corresponding to the given user.
@@ -77,11 +73,7 @@ angular.module("proton.models.payments", [])
          * Get current payment information from Stripe
          */
         sources: function() {
-            return $http.get(url.get() + '/payments/sources', {
-                params: {
-                    ExternalProvider: 'Stripe'
-                }
-            });
+            return $http.get(url.get() + '/payments/sources');
         },
         /**
          * Send a new credit card information

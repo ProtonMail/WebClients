@@ -9,6 +9,7 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify,
     organization,
+    Organization,
     Payment,
     paymentModal,
     status,
@@ -304,7 +305,7 @@ angular.module("proton.controllers.Settings")
                                 title: title,
                                 message: message,
                                 confirm: function() {
-                                    Payment.subscribe(configuration).then(function(result) {
+                                    Organization.create(configuration).then(function(result) {
                                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                             confirmModal.deactivate();
                                             // TODO notify
