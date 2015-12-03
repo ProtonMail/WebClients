@@ -21,13 +21,13 @@
         </aside>
         <header>
             <p>
+                <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
                 <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
-                <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 <span class="time">{{ conversation.Time | readableTime }}</span>
             </p>
         </header>
@@ -61,13 +61,13 @@
             </a>
         </span>
         <span class="sender">
+            <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
             </span>
             <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
             </span>
-            <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
