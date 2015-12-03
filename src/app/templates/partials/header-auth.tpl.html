@@ -17,9 +17,9 @@
             <i class="fa fa-angle-down"></i>
         </button>
         <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
-        <label ng-click="searchMessages()">
+        <button type="submit">
             <i class="fa fa-search"></i>
-        </label>        
+        </button>
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
         <label>
