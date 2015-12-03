@@ -1,4 +1,4 @@
-<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand, 'read': message.IsRead, 'unread': !message.IsRead }">
+<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand, 'read': message.IsRead === 1, 'unread': message.IsRead === 0 }">
     <header ng-click="toggle()">
         <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
             <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
