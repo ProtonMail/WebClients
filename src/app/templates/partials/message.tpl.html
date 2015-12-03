@@ -84,15 +84,6 @@
                     </span>
                 </span>
             </div>
-            <div ng-if="message.BCCList.length" class="bccGroup">
-                <i>{{ 'BCC' | translate }}</i>
-                <span class="recipientsWrap">
-                    <span ng-repeat="email in ::message.BCCList" class="person">
-                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email | contact }}</em>
-                    </span>
-                </span>
-            </div>
             <div class="meta">
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
