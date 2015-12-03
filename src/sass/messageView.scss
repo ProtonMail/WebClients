@@ -90,6 +90,21 @@
             left: 0;
             top: 0;
 		}
+        &.unread {
+            span.person {
+                em {
+                    color: #000;
+                    font-weight: 700;
+                }
+            }
+        }
+        &.read {
+            span.person {
+                em {
+                    color: #999
+                }
+            }
+        }
         span.person {
             position: relative;
             word-break: break-word;
@@ -103,9 +118,8 @@
                 white-space: nowrap;
             }
             em {
-                color: $gray;
                 display: inline-block;
-                font-weight: 600;
+                font-weight: 400;
                 font-style: normal;
             }
             em.draftTag {
@@ -195,7 +209,6 @@
             }
     	}
 		.sub {
-            border-bottom: 1px solid $border;
             padding-left: 1.5rem;
 			padding-right: 145px;
 			position: relative;
