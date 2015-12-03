@@ -11,6 +11,7 @@ angular.module("proton.controllers.Settings")
     deleteAccountModal,
     networkActivityTracker,
     notify,
+    pmcw,
     Setting,
     tools
 ) {
@@ -82,7 +83,7 @@ angular.module("proton.controllers.Settings")
         if (value === parseInt(authentication.user.Notify) ) {
             return;
         }
-        
+
         networkActivityTracker.track(
           Setting.notify({
               "Notify": +$scope.dailyNotifications
