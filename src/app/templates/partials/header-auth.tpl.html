@@ -22,10 +22,10 @@
         </button>
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
-        <label>
-            <i class="fa fa-search"></i>
-        </label>
         <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
+        <button type="submit">
+            <i class="fa fa-search"></i>
+        </button>
     </form>
     <ul class="navigation">
         <!-- <li ng-class="{'active': activeMail()}">
