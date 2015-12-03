@@ -181,15 +181,25 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.move = function(location) {
         var current = tools.currentLocation();
-        var events = [];
+        var messageEvent = [];
+        var conversationEvent = [];
         var copy = angular.copy($scope.conversation);
+        var messages = cache.queryMessagesCached($scope.conversation.ID);
 
         // cache
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // remove current location
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]]; // Add new location
-        events.push({Action: 3, ID: copy.ID, Conversation: copy});
-        cache.events(events, 'conversation');
+
+        _.each(messages, function(message) {
+            message.LabelIDsRemoved = [current];
+            message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]];
+            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+        });
+
+        conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         Conversation[location]([copy.ID]);
