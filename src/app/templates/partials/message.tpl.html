@@ -33,6 +33,9 @@
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
+                    <a href="" ng-click="reply(message)" ng-show="(message.ToList.length + message.CCList.length) > 1">
+                        <i class="fa fa-mail-reply"></i> {{ 'REPLY' | translate }}
+                    </a>
                     <a href="" ng-click="forward(message)">
                         <i class="fa fa-mail-forward"></i> {{ 'FORWARD' | translate }}
                     </a>
