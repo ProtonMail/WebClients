@@ -1005,8 +1005,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         $scope.saveOld(message);
 
                         if(angular.isDefined(conversation)) {
-                            conversation.Time = result.Message.Time;
-
                             if(action === CREATE) {
                                 conversation.NumMessages++;
                             }
