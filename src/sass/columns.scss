@@ -34,7 +34,7 @@
 		overflow-x: hidden;
 		max-height: $maxHeight;
 		#pm_list {
-			padding: 0 25px;
+			padding: 0;
 		    box-sizing: border-box;
 		    box-shadow: inset -1px 0 $border;
 		}
@@ -42,13 +42,18 @@
 			position: relative;
 			border: 1px solid transparent;
 			border-top-color: $border;
-			padding: 12px 0 12px 45px;
+			padding: 12px 25px 12px 70px;
 			cursor: pointer;
-			border-radius: 2px;
+			border-radius: 0;
 			color: $gray;
 			height: 64px;
 			line-height: 64px;
 			box-sizing: border-box;
+			margin: 0;
+			overflow: hidden;
+			&.active {
+				border-left: 5px solid darken($border, 10%);
+			}
 			&:last-child {
 				border-bottom-color: $border;
 			}
@@ -62,18 +67,11 @@
 			}
 			&.selected {
 				background-color: #f6f6f6;
-				border-color: #dcdcdc;	
-				margin: 0 -10px;
-				padding-left: 55px;
-				padding-right: 10px;
-				box-shadow: 0 1px 0 #fff;
+				margin: 0;
 				z-index: 2;
-				aside {
-					left: 10px;
-				}
+				border-left: 5px solid $primary;
 				article {
 					.pm_labels {
-						margin-right: 0;
 						background-color: #f6f6f6;
 						.pm_label {
 							background-color: #f6f6f6;
@@ -83,13 +81,11 @@
 				}
 				header {
 					span.time {
-						right: 10px;
 						background: #f6f6f6;
 					}
 				}
 			}
 			&.unread * {
-				font-weight: 700;
 				&.fa {
 					font-weight: 400;
 				}
@@ -108,7 +104,7 @@
 				display: inline-block;
 				width: 40px;
 				position: absolute;
-				left: 0;
+				left: 25px;
 				top: 12px;
 				bottom: 12px;
 				right: auto;
@@ -164,11 +160,12 @@
 				}
 				span.time {
 					position: absolute;
-					right: 0;
+					right: 25px;
 					top: 12px;
 					z-index: 3;
 					background: #fff;
 					padding-left: 1rem;
+					font-size: 90%;
 				}
 			}
 			article {
@@ -176,9 +173,13 @@
 				height: 18px;
 				color: $gray;
 				font-size: 14px;
+				strong {
+					font-weight: 700;
+					font-size: 90%;
+				}
 				.pm_labels {
 					position: absolute;
-					right: 0;
+					right: 25px;
 					bottom: 12px;
 					margin-right: -10px;
 				}
