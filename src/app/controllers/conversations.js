@@ -172,20 +172,23 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         params.Page = ($stateParams.page || 1) - 1;
 
-        if ($stateParams.filter) {
-            params.Unread = +($stateParams.filter === 'unread');
+        if (angular.isDefined($stateParams.filter)) {
+            params.Unread = parseInt($stateParams.filter === 'unread');
         }
 
-        if ($stateParams.sort) {
+        if (angular.isDefined($stateParams.sort)) {
             var sort = $stateParams.sort;
-            var desc = _.string.startsWith(sort, "-");
+            var desc = sort.charAt(0) === '-';
 
-            if (desc) {
+            if (desc === true) {
                 sort = sort.slice(1);
             }
 
             params.Sort = _.string.capitalize(sort);
-            params.Desc = +desc;
+
+            // if(sort === 'date') {
+                params.Desc = +desc;
+            // }
         }
 
         if (mailbox === 'search') {
