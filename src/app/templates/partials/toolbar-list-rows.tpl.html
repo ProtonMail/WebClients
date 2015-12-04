@@ -60,57 +60,57 @@
         <label class="pm_checkbox">
             <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
-        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a
             href=""
             class="fa fa-eye"
             pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
             ng-click="read()"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-eye-slash divider"
             pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
             ng-click="unread()"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
-        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
             ng-click="move('trash')"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
+            ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-trash-o"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
             ng-click="move('inbox')"
             ng-hide="{{ 'secured.inbox.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
+            ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-inbox divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
             ng-click="move('archive')"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
+            ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-archive divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'MOVE_TO_SPAM' | translate }}"
             ng-click="move('spam')"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
+            ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-ban divider"></a>
             <a
             href=""
             pt-tooltip="{{ 'DELETE' | translate }}"
             ng-click="delete()"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"
+            ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-times-circle divider"></a>
         </span>
-        <span class="pm_buttons" ng-class="{ disabled: numberSelectedMessages === 0 }">
-            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>

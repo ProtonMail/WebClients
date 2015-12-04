@@ -10,13 +10,13 @@
             class="fa fa-eye"
             pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
             ng-click="read()"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-eye-slash divider"
             pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
             ng-click="unread()"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons">
             <a
@@ -25,38 +25,38 @@
             ng-click="move('trash')"
             pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
             ng-hide="{{ 'secured.trash.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-inbox divider"
             ng-click="move('inbox')"
             pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
             ng-hide="{{ 'secured.inbox.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-archive divider"
             ng-click="move('archive')"
             pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-ban divider"
             ng-click="move('spam')"
             pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
             href=""
             class="fa fa-times-circle divider"
             ng-click="delete()"
             pt-tooltip="{{ 'DELETE' | translate }}"
             ng-show="{{ ('secured.trash.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
-            ng-class="{ disabled: numberSelectedMessages === 0 }"></a>
+            ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons">
-            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }">
+            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>

@@ -50,7 +50,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
-                $rootScope.numberSelectedMessages = $scope.elementsSelected().length;
+                $rootScope.numberElementSelected = $scope.elementsSelected().length;
+                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
