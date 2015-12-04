@@ -416,9 +416,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         Message.unread({IDs: ids});
     };
 
-    $scope.toggleImages = function() {
+    /**
+     * Get the decrypted content and fix images inside
+     */
+    $scope.displayImages = function() {
+        var content = $scope.message.DecryptedBody;
+
         $scope.message.toggleImages();
-        $scope.displayContent();
+        content = $scope.message.clearImageBody(content);
+        $scope.message.DecryptedBody = $sce.trustAsHtml(content);
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
