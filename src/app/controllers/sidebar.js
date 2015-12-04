@@ -161,17 +161,17 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $scope.goTo = function(route) {
         var sameFolder = $state.$current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
+        var params = {page: null, filter: null, sort: null};
 
+        // Hide sidebar for mobile
         $scope.hideMobileSidebar();
 
-        // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
+        // Call last event if first page and same folder
         if(sameFolder === true && firstPage === true) {
             $scope.lastEvent();
-        } else {
-            var params = {page: undefined, filter: undefined, sort: undefined};
-
-            $state.go(route, params); // remove the older parameters
         }
+
+        $state.go(route, params); // remove the older parameters
     };
 
     /**
