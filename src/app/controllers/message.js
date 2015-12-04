@@ -87,7 +87,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.expand = true;
 
             if($scope.message.IsRead === 0) {
-                $scope.read(false);
+                $scope.read();
             }
         };
 
@@ -374,7 +374,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as read
-     * @param {Boolean} back - return to element list view at the end of the process
      */
     $scope.read = function(back) {
         var  copy = angular.copy($scope.message);
@@ -391,40 +390,30 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // Request
         Message.read({IDs: ids});
-
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
     };
 
     /**
      * Mark current message as unread
-     * @param {Boolean} back - return to element list view at the end of the process
      */
-    $scope.unread = function(back) {
+    $scope.unread = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
         var messageEvent = [];
         var unreads = _.where($scope.messages, {IsRead: 0});
 
-        // Message
+        // Generate message event
         copy.IsRead = 0;
+        copy.expand = undefined; // Trick to close message and force to pass in iniView after
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
 
-        // Conversation
+        // Generate conversation event
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: unreads.length + 1}});
         cache.events(conversationEvent, 'conversation');
 
         // Request
         Message.unread({IDs: ids});
-
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
     };
 
     $scope.toggleImages = function() {
