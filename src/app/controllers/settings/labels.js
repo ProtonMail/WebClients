@@ -1,6 +1,16 @@
 angular.module("proton.controllers.Settings")
 
-.controller('LabelsController', function($rootScope, $scope, $translate, authentication, labelModal, Label, notify, networkActivityTracker) {
+.controller('LabelsController', function(
+    $rootScope,
+    $scope,
+    $translate,
+    authentication,
+    confirmModal,
+    Label,
+    labelModal,
+    networkActivityTracker,
+    notify
+) {
     $scope.labels = authentication.user.Labels;
 
     // Drag and Drop configuration
