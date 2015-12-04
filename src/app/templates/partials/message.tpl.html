@@ -59,7 +59,10 @@
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
-                    <a href="" ng-click="move('trash')">
+                    <a href="" ng-click="move('inbox')" ng-show="'secured.trash.**' | includedByState">
+                        <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
+                    </a>
+                    <a href="" ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState">
                         <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
                     </a>
                     <a href="" ng-click="unread()">
