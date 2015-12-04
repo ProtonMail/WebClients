@@ -601,18 +601,26 @@ angular.module("proton.cache", [])
     api.empty = function(loc) {
         var toRemove = [];
 
-        _.each(conversationsCached, function(conversation, index) {
-            if(conversation.LabelIDs.indexOf(loc) !== -1) {
+        _.each(conversationsCached, function(conversation) {
+            if(angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1) {
                 messagesCached = _.reject(messagesCached, function(message) {
                     return message.ConversationID === conversation.ID;
                 });
 
-                toRemove.push(index);
+                toRemove.push(conversation);
             }
         });
 
-        _.each(toRemove, function(index) {
-            conversationsCached[index].LabelIDs = _.without(conversationsCached[index].LabelIDs, loc);
+        _.each(toRemove, function(conversation) {
+            var index = conversationsCached.indexOf(conversation);
+
+            if(angular.isArray(conversation.LabelIDs)) {
+                if(conversation.LabelIDs.length === 1) {
+                    conversationsCached.splice(index, 1);
+                } else if(conversation.LabelIDs.length > 1) {
+                    conversationsCached[index].LabelIDs = _.without(conversation.LabelIDs, loc);
+                }
+            }
         });
 
         api.callRefresh();

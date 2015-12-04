@@ -288,7 +288,7 @@
                     ng-focus="hideFields(message); message.recipientFieldFocussed = 0; recipientsCollapsed = true"
                     ng-model="message.Subject"
                     ng-model-options="{updateOn: 'blur'}"
-                    ng-keydown="$event.which == 9 && focusEditor(message, $event)"
+                    ng-keydown="$event.which === 9 && focusEditor(message, $event)"
                     ng-change="saveLater(message)"
                     required />
                 </div>
