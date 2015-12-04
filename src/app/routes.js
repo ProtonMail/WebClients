@@ -801,6 +801,9 @@ angular.module("proton.routes", [
                     } else {
                         return true;
                     }
+                },
+                loc: function($stateParams) {
+                    return $stateParams.id;
                 }
             }
         };

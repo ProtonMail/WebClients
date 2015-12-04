@@ -5,6 +5,17 @@
 <ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height>
+
+    <table ng-if="conversations.length === 0" id="nothingToSeeHere">
+        <tr>
+            <td>
+                <i class="fa fa-inbox"></i>
+                <span>Inbox</span> <!-- PANDA: this needs to be dynamic --> 
+                <h3>{{ 'NO_MESSAGES' | translate }}</h3>
+            </td>
+        </tr>
+    </table>
+
     <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{unread: conversation.NumUnread > 0 || conversation.IsRead === 0, selected: conversation.Selected,  active: conversation.Active, starred: starred(conversation)}">
         <aside>
             <span class="pm_checkbox">
