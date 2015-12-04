@@ -17,6 +17,23 @@
                 <a ng-show="message.expand === true" href class="fa fa-pencil pm_button primary compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
                 <em class="draftTag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
+                <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
+                    <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
+                        <em>{{ getLabel(label.ID).Name }}</em>
+                        <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
+                        <a href="" ng-click="detachLabel(label)" class="labelClose">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </span>
+                </span>
+                <span class="addLabelButton pm_buttons" ng-show="false">
+                    <a href="" class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" ng-dropdown>
+                        <small><i class="fa fa-tag"></i> {{ 'ADD_LABEL' | translate }}</small>
+                    </a>
+                    <span class="pm_dropdown wide pull-left labelDD">
+                        <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
+                    </span>
+                </span><!-- this needs to re-be styled -->
             </span>
         </span>
     </header>
@@ -87,25 +104,7 @@
                     </span>
                 </span>
             </div>
-            <div class="meta">
-                <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
-                    <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
-                        <em>{{ getLabel(label.ID).Name }}</em>
-                        <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
-                        <a href="" ng-click="detachLabel(label)" class="labelClose">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </span>
-                </span>
-                <span class="addLabelButton pm_buttons">
-                    <a href="" class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" ng-dropdown>
-                        <small><i class="fa fa-tag"></i> {{ 'ADD_LABEL' | translate }}</small>
-                    </a>
-                    <span class="pm_dropdown wide pull-left labelDD">
-                        <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
-                    </span>
-                </span>
-            </div>
+            <div class="meta"></div>
         </div><!--/.data-->
     </div>
     <div class="frame" ng-show="message.expand === true">

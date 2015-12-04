@@ -101,7 +101,7 @@
         &.read {
             span.person {
                 em {
-                    color: #999
+                    // color: #999
                 }
             }
         }
@@ -144,6 +144,12 @@
     		.from {
     			color: #999;
     			float: left;
+                .pm_labels {
+                    top: 1px;
+                    em {
+                        font-weight: 700;
+                    }
+                }
     			i {
     				display: inline-block;
     				width: 3rem;

@@ -18,7 +18,7 @@
 		display: block;
 	}
 	&:hover {
-		background-color: $light;
+		// background-color: $light;
 	}
 	&.inline {
 		position: relative;
@@ -70,7 +70,7 @@
 			font-size: 14px;
 		}
 		&:hover {
-			background-color: $light;
+			// background-color: $light;
 			z-index: 99 !important;
 		}
 	}
