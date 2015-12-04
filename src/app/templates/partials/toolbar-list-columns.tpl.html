@@ -70,7 +70,8 @@
             </span>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-            <a href="" class="fa fa-trash-o" ng-click="move('trash')" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="" class="fa fa-trash-o" ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="" class="fa fa-inbox" ng-click="move('inbox')" ng-show="'secured.trash.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <span class="pm_dropdown wide">
                 <a href="" ng-click="move('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}">

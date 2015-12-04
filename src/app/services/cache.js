@@ -722,14 +722,14 @@ angular.module("proton.cache", [])
                 deferred.resolve();
             } else {
                 // Manage labels
-                if(angular.isDefined(event.Message.LabelIDsAdded)) {
-                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-                    delete message.LabelIDsAdded;
-                }
-
                 if(angular.isDefined(event.Message.LabelIDsRemoved)) {
                     message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
                     delete message.LabelIDsRemoved;
+                }
+
+                if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
+                    delete message.LabelIDsAdded;
                 }
 
                 messagesCached[index] = message;
@@ -760,14 +760,14 @@ angular.module("proton.cache", [])
              _.extend(conversation, current, event.Conversation);
 
              // Manage labels
-             if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
-                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
-                 delete conversation.LabelIDsAdded;
-             }
-
              if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
                  conversation.LabelIDs = _.difference(conversation.LabelIDs, event.Conversation.LabelIDsRemoved);
                  delete conversation.LabelIDsRemoved;
+             }
+
+             if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
+                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
+                 delete conversation.LabelIDsAdded;
              }
 
              // Update conversation cached
