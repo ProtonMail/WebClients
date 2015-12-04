@@ -13,7 +13,8 @@ angular.module("proton.controllers.Settings")
     notify,
     pmcw,
     Setting,
-    tools
+    tools,
+    User
 ) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
