@@ -1,4 +1,29 @@
-<section id="pm_placeholder">
+<section id="pm_latest" ng-show="numberSelectedMessages === 0">
+    <header>Welcome Jason Stockman</header>
+    <section id="storageStatus">
+    	<p class="text-center">You have <strong>3 unread</strong> messages</p>
+    	<div class="wrap">
+            <div class="storageArea">
+	            <span class="current">{{ organization.UsedSpace | humanSize }}</span> <!-- PANDA: need to get access to this info outside of organization route -->
+	            <div class="bar">
+	                <em style="width: {{ storagePercentage() }}%"></em>
+	            </div>
+	            <span class="total">{{ organization.UsedSpace | humanSize }}</span> <!-- PANDA: need to get access to this info outside of organization route -->
+            </div>
+			<div class="link">
+                <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a>
+            </div>
+        </div>
+    </section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<section id="pm_placeholder" ng-show="numberSelectedMessages > 0">
     <i class="fa fa-check-square"></i>
     <h2>{{ numberSelectedMessages }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <span class="pm_buttons">
