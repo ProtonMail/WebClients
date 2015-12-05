@@ -71,7 +71,7 @@
     	clear: both;
     	border-bottom: 1px solid $border;
         &.read {
-            background: #ececec;
+            background: $read;
         }
         &.open.last {
             border-bottom: none;

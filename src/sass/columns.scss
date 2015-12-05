@@ -51,7 +51,7 @@
 			box-sizing: border-box;
 			margin: 0;
 			overflow: hidden;
-			background: #ececec;
+			background: $read;
 			margin-left: -6px;
 			.starLink {
 				position: absolute;
@@ -114,8 +114,14 @@
 				z-index: 2;
 				border-left-color: $primary;
 				padding-left: calc(40px - 6px);
+				background: $selected;
 				aside {
 					left: calc(15px - 6px);
+				}
+				header {
+					span.time {
+						background: $selected;
+					}
 				}
 			}
 			&.unread {
@@ -218,7 +224,7 @@
 					right: 0;
 					top: 12px;
 					z-index: 3;
-					background: #ececec;
+					background: $read;
 					width: 6rem;
 					text-align: right;
 					font-size: 80%;
@@ -246,8 +252,8 @@
 					bottom: 12px;
 					margin-right: -20px;
 					.pm_label {
-						box-shadow: 0 0 0 4px #ececec;
-						background: #ececec;
+						box-shadow: 0 0 0 4px $read;
+						background: $read;
 					}
 				}
 				p {

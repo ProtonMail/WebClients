@@ -1,12 +1,16 @@
+body, html {
+	max-width: 100%;
+	overflow-x: hidden;
+}
 #pm_rows {
-	padding: 0 25px;
+	padding: 0;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 
 	.list {
 		max-height: $maxHeight;
-		padding: 0 25px 0 0;
+		padding: 0;
 		position: relative;
 		-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
@@ -14,15 +18,14 @@
 		.message {
 			height: $rowHeight;
 			line-height: $rowHeight;
-			border-bottom: 1px solid $border;
 			font-size: 14px;
-			padding: 0;
-			color: #999;
+			padding: 0 15px;
 			clear: both;
 			display: -webkit-flex;
 			display: -ms-flexbox;
 			display: flex;
-			padding-right: 5px;
+			background: $read;
+			box-shadow: inset 0 -1px $border;
 			&:hover {
 				color: #000;
 			}
@@ -41,16 +44,19 @@
 			&.unread {
 				font-weight: 700;
 				color: #000;
+				background: #fff;
 			}
 			&.selected {
-				border-color: transparent;
-				background: #f6f6f6;
+				background: $selected;
 				position: relative;
 				z-index: 2;
 				margin: 0 -9px 0 -14px;
 				padding: 0 14px;
-				box-shadow: 0 0 0 1px #efefef;
-				border-radius: 2px;
+				border-radius: 0;
+				border-left: 5px solid $primary;
+			    padding-left: 10px;
+			    padding-right: 24px;
+			    margin-left: 0;
 				.subject {
 					.pm_labels {
 						background-color: #f6f6f6;
@@ -93,7 +99,8 @@
 				min-width: 220px;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				white-space: nowrap;				
+				white-space: nowrap;	
+				font-size: 90%;			
 				span {
 					display: inline;
 					width: auto;
@@ -141,6 +148,7 @@
 				text-align: right;
 				width: 75px;
 				min-width: 75px;
+				font-size: 90%;
 			}
 			.fa-paperclip {
 				margin-left: 10px;
@@ -154,6 +162,7 @@
 				width: 110px;
 				min-width: 110px;
 				float: right;
+				font-size: 90%;
 			}
 		}
 	}

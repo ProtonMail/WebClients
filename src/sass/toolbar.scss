@@ -5,13 +5,15 @@
     height: 50px;
 }
 body.rows #pm_toolbar {
-    padding-right: 0;
+    padding-right: 15px;
     .pm_buttons {
         margin: 0 0 0 5px;
         .pm_buttons {
             margin-left: 0;
             border-left: 1px solid $border !important;
         }
+    }.main > label {
+        padding-left: 15px;
     }
 }
 
