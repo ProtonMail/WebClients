@@ -185,10 +185,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
 
             params.Sort = _.string.capitalize(sort);
-
-            // if(sort === 'date') {
-                params.Desc = +desc;
-            // }
+            params.Desc = +desc;
         }
 
         if (mailbox === 'search') {

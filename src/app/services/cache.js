@@ -188,9 +188,11 @@ angular.module("proton.cache", [])
                     cacheCounters.updateConversation(loc, data.Total, data.Unread);
                     // Store conversations
                     storeConversations(data.Conversations);
+                    // Return conversations
+                    deferred.resolve(order(data.Conversations, 'Time'));
+                } else {
+                    deferred.resolve(data.Conversations);
                 }
-                // Return conversations
-                deferred.resolve(order(data.Conversations, 'Time')); // We order data also
             } else {
                 deferred.reject();
             }
