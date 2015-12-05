@@ -28,8 +28,6 @@ angular.module("proton.controllers.Secured", [])
     Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
-    $scope.user.type = 'master'; // master or sub
-
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $scope.settingsRoutes = [
@@ -50,10 +48,6 @@ angular.module("proton.controllers.Secured", [])
     cache.preloadInboxAndSent();
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
-
-    $rootScope.isSecure = function() {
-        return authentication.isSecured();
-    };
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
@@ -90,7 +84,7 @@ angular.module("proton.controllers.Secured", [])
      * Initialize select
      */
     $scope.initSettingRoute = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
         var route = _.findWhere($scope.settingsRoutes, {value: current});
 
         if(angular.isDefined(route)) {
@@ -107,10 +101,17 @@ angular.module("proton.controllers.Secured", [])
         var unread = '';
         var state = tools.currentMailbox();
 
-        if(state === 'label') {
-            value = cacheCounters.unread($stateParams.label);
-        } else {
-            value = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+        switch (state) {
+            case 'drafts':
+            case 'sent':
+                value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+                break;
+            case 'label':
+                value = cacheCounters.unreadConversation($stateParams.label);
+                break;
+            default:
+                value = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
+                break;
         }
 
         if(angular.isDefined(value) && value > 0) {

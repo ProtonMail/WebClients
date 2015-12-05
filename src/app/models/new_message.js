@@ -1,9 +1,9 @@
-angular.module("proton.models.message", ["proton.constants"])
+angular.module("proton.models.newmessage", ["proton.constants"])
 
-.factory("Message", function(
-    $resource,
+.factory("NewMessage", function(
     $rootScope,
     $compile,
+    $http,
     $templateCache,
     $timeout,
     $q,
@@ -21,34 +21,42 @@ angular.module("proton.models.message", ["proton.constants"])
     notify,
     tools
 ) {
-    var Message = $resource(
-        url.get() + '/messages/:id',
-        authentication.params({
-            id: '@id'
-        }), {
-            // POST
-            send: {
-                method: 'post',
-                url: url.get() + '/messages/send/:id'
-            },
-            createDraft: {
-                method: 'post',
-                url: url.get() + '/messages/draft'
-            },
-            // GET
-            get: {
-                method: 'get',
-                url: url.get() + '/messages/:id',
-                transformResponse: function(data) {
-                    var json = angular.fromJson(data);
-
-                    return json.Message;
-                }
-            },
-            query: {
-                method: 'get',
-                isArray: true,
-                url: url.get() + '/messages',
+    var api = {
+        promises: [], // This array the list of promises
+        // POST
+        /**
+         * Send message
+         * @param {Object} message
+         * @return {Promise}
+         */
+        send: function(message) {
+            return $http.post(url.get() + '/messages/send/' + message.ID, message);
+        },
+        /**
+         * Create a new draft message
+         * @param {Object} message
+         * @return {Promise}
+         */
+        createDraft: function(message) {
+            return $http.post(url.get() + '/messages/draft', message);
+        },
+        // GET
+        /**
+         * Get data from a specific message
+         * @param {String} id - Message ID encrypted
+         * @return {Promise}
+         */
+        get: function(id) {
+            return $http.get(url.get() + '/messages/' + id);
+        },
+        /**
+         * Get metadata of a list of messages
+         * @param {Object} request
+         * @return {Promise}
+         */
+        query: function(request) {
+            return $http.get(url.get() + '/messages', {
+                params: request,
                 transformResponse: function(data) {
                     var json = angular.fromJson(data);
 
@@ -62,78 +70,127 @@ angular.module("proton.models.message", ["proton.constants"])
 
                     return json.Messages;
                 }
-            },
-            count: {
-                method: 'get',
-                url: url.get() + '/messages/count'
-            },
-            totalCount: {
-                method: 'get',
-                url: url.get() + '/messages/total'
-            },
-            // PUT
-            updateDraft: {
-                method: 'put',
-                url: url.get() + '/messages/draft/:id'
-            },
-            star: {
-                method: 'put',
-                url: url.get() + '/messages/star'
-            },
-            unstar: {
-                method: 'put',
-                url: url.get() + '/messages/unstar'
-            },
-            read: {
-                method: 'put',
-                url: url.get() + '/messages/read'
-            },
-            unread: {
-                method: 'put',
-                url: url.get() + '/messages/unread'
-            },
-            trash: {
-                method: 'put',
-                url: url.get() + '/messages/trash'
-            },
-            inbox: {
-                method: 'put',
-                url: url.get() + '/messages/inbox'
-            },
-            spam: {
-                method: 'put',
-                url: url.get() + '/messages/spam'
-            },
-            archive: {
-                method: 'put',
-                url: url.get() + '/messages/archive'
-            },
-            delete: {
-                method: 'put',
-                url: url.get() + '/messages/delete'
-            },
-            // DELETE
-            emptyDraft: {
-                method: 'delete',
-                url: url.get() + '/messages/draft'
-            },
-            emptySpam: {
-                method: 'delete',
-                url: url.get() + '/messages/spam'
-            },
-            emptyTrash: {
-                method: 'delete',
-                url: url.get() + '/messages/trash'
-            },
-        }
-    );
-
-    _.extend(Message.prototype, {
-        promises: [],
-        sizeAttachments: function() {
+            });
+        },
+        /**
+         * Return the total and the number of message unread in each location
+         * @return {Promise}
+         */
+        count: function() {
+            return $http.get(url.get() + '/messages/count');
+        },
+        // PUT
+        /**
+         * Update data of an existing draft
+         * @param {Object} message
+         * @return {Promise}
+         */
+        updateDraft: function(message) {
+            return $http.put(url.get() + '/messages/draft/' + message.ID, message);
+        },
+        /**
+         * Star a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        star: function(IDs) {
+            return $http.put(url.get() + '/messages/star', IDs);
+        },
+        /**
+         * Unstar a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        unstar: function(IDs) {
+            return $http.put(url.get() + '/messages/unstar', IDs);
+        },
+        /**
+         * Mark as read a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        read: function(IDs) {
+            return $http.put(url.get() + '/messages/read', IDs);
+        },
+        /**
+         * Mark as unread a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        unread: function(IDs) {
+            return $http.put(url.get() + '/messages/unread', IDs);
+        },
+        /**
+         * Move to trash a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        trash: function(IDs) {
+            return $http.put(url.get() + '/messages/trash', IDs);
+        },
+        /**
+         * Move to inbox a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        inbox: function(IDs) {
+            return $http.put(url.get() + '/messages/inbox', IDs);
+        },
+        /**
+         * Move to spam a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        spam: function(IDs) {
+            return $http.put(url.get() + '/messages/spam', IDs);
+        },
+        /**
+         * Move to archive a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        archive: function(IDs) {
+            return $http.put(url.get() + '/messages/archive', IDs);
+        },
+        /**
+         * Delete a list of message
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        delete: function(IDs) {
+            return $http.put(url.get() + '/messages/delete', IDs);
+        },
+        // DELETE
+        /**
+         * Empty draft folder
+         * @return {Promise}
+         */
+        emptyDraft: function() {
+            return $http.delete(url.get() + '/messages/draft');
+        },
+        /**
+         * Empty spam folder
+         * @return {Promise}
+         */
+        emptySpam: function() {
+            return $http.delete(url.get() + '/messages/spam');
+        },
+        /**
+         * Empty trash folder
+         * @return {Promise}
+         */
+        emptyTrash: function() {
+            return $http.delete(url.get() + '/messages/trash');
+        },
+        /**
+         * Return the total of attachment
+         * @param {Object} message
+         * @return {Integer} size
+         */
+        sizeAttachments: function(message) {
             var size = 0;
 
-            angular.forEach(this.Attachments, function(attachment) {
+            _.each(message.Attachments, function(attachment) {
                 if (angular.isDefined(attachment.Size)) {
                     size += parseInt(attachment.Size);
                 }
@@ -141,7 +198,12 @@ angular.module("proton.models.message", ["proton.constants"])
 
             return size;
         },
-        encryptionType: function() {
+        /**
+         * Return the type of encryption
+         * @param {Object} message
+         * @return {String}
+         */
+        encryptionType: function(message) {
             var texts = [
                 $translate.instant('UNENCRYPTED_MESSAGE'),
                 $translate.instant('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
@@ -154,23 +216,34 @@ angular.module("proton.models.message", ["proton.constants"])
                 $translate.instant('ENCRYPTED_PGP_MIME'),
             ];
 
-            return texts[this.IsEncrypted];
+            return texts[message.IsEncrypted];
         },
-
-        isDraft: function() {
-            return this.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+        /**
+         * Check if the message is located in draft
+         * @param {Object} message
+         * @return {Boolean}
+         */
+        isDraft: function(message) {
+            return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
         },
-
-        toggleImages: function() {
-            this.imagesHidden = !!!this.imagesHidden;
+        /**
+         * Toggle imagesHidden parameter
+         * @param {Object} message
+         */
+        toggleImages: function(message) {
+            message.imagesHidden = !!!message.imagesHidden;
         },
-
+        /**
+         * Return
+         */
         plainText: function() {
-            var body = this.DecryptedBody || this.Body;
+            var body = message.DecryptedBody || message.Body;
 
             return body;
         },
-
+        /**
+         *
+         */
         labels: function() {
             var labels = [];
 
@@ -421,7 +494,7 @@ angular.module("proton.models.message", ["proton.constants"])
 
             return body;
         }
-    });
+    };
 
-    return Message;
+    return api;
 });

@@ -5,7 +5,7 @@ novalidate
 ng-keypress="keypress($event)"
 role="form"
 autocomplete="on"
-ng-submit="tryLogin()"
+ng-submit="login()"
 method="post">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
@@ -46,7 +46,7 @@ method="post">
 
     <div class="clearfix">
         <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP?' | translate }}</a>
-        <a class="pm_button primary pull-right" ng-click="tryLogin()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>
+        <a class="pm_button primary pull-right" ng-click="login()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>
     </div>
 
     <input type="hidden" id="hashed_pw" name="hashed_pw" />

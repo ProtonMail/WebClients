@@ -11,8 +11,10 @@ angular.module("proton.controllers.Settings")
     deleteAccountModal,
     networkActivityTracker,
     notify,
+    pmcw,
     Setting,
-    tools
+    tools,
+    User
 ) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
@@ -21,6 +23,21 @@ angular.module("proton.controllers.Settings")
     $scope.aliases = authentication.user.Addresses;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
+
+    // Drag and Drop configuration
+    $scope.aliasDragControlListeners = {
+        containment: "form[name='aliasesForm']",
+        accept: function(sourceItemHandleScope, destSortableScope) {
+            return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        orderChanged: function() {
+          aliasOrder = [];
+          _.forEach($scope.aliases, function(d,i) {
+            aliasOrder[i] = d.Send;
+          });
+          $scope.saveAliases(aliasOrder);
+        }
+    };
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
@@ -61,6 +78,13 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveDailyNotifications = function(form) {
+
+        var value = parseInt($scope.dailyNotifications);
+
+        if (value === parseInt(authentication.user.Notify) ) {
+            return;
+        }
+
         networkActivityTracker.track(
           Setting.notify({
               "Notify": +$scope.dailyNotifications
@@ -196,6 +220,13 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveAutosaveContacts = function(form) {
+
+        var value = parseInt($scope.autosaveContacts);
+
+        if (value === parseInt(authentication.user.autosaveContacts) ) {
+            return;
+        }
+
         networkActivityTracker.track(
             Setting.autosave({
                 "AutoSaveContacts": +$scope.autosaveContacts
@@ -206,6 +237,34 @@ angular.module("proton.controllers.Settings")
                 notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
                 $log.error(error);
             })
+        );
+    };
+
+    $scope.saveShowImages = function(form) {
+
+        var value = parseInt($scope.ShowImages);
+
+        if (value === parseInt(authentication.user.ShowImages) ) {
+            return;
+        }
+
+        networkActivityTracker.track(
+            Setting.setShowImages({
+                "ShowImages": parseInt($scope.ShowImages)
+            }).$promise.then(
+                function(response) {
+                    if(response.Code === 1000) {
+                        authentication.user.ShowImages = $scope.ShowImages;
+                        notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
+                },
+                function(error) {
+                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
+                    $log.error(error);
+                }
+            )
         );
     };
 

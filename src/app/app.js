@@ -1,18 +1,14 @@
 angular.module("proton", [
-    // "ngAnimate", // We can't use the `ngAnimate`, it causes delays on application and also a problem with the iframe sandbox.
-    "ngSanitize",
-    "ngResource",
-    "ngCookies",
-    "btford.markdown",
-    "ngFileUpload",
     "cgNotify",
-    "pikaday",
-    "toggle-switch",
-    "pascalprecht.translate",
-    "ui.bootstrap",
-    "ui.sortable",
-    "ngDragDrop",
+    "ngCookies",
+    "ngFileUpload",
+    "ngResource",
+    "ngSanitize",
     "ngTouch",
+    "pascalprecht.translate",
+    "pikaday",
+    // "ui.bootstrap",
+    "ui.sortable",
 
     // Constant
     "proton.constants",
@@ -40,6 +36,7 @@ angular.module("proton", [
     "proton.models.payments",
     "proton.models.organization",
     "proton.models.members",
+    "proton.models.memberKeys",
     "proton.models.addresses",
     "proton.models.domains",
     "proton.models.conversations",
@@ -196,11 +193,10 @@ angular.module("proton", [
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
-
     $rootScope.themeJason = false;
-
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
+    $rootScope.isLoggedIn = authentication.isLoggedIn();
+    $rootScope.isLocked = authentication.isLocked();
+    $rootScope.isSecure = authentication.isSecured();
 
     // SVG Polyfill for Edge
     svg4everybody();
@@ -234,11 +230,19 @@ angular.module("proton", [
 // Redirection if not authentified
 //
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
+    var notification = false;
+
     return {
         response: function(response) {
+            // Close notification if Internet wake up
+            if(notification) {
+                notification.close();
+                notification = false;
+            }
+
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
-                if (response.data.Code===5003) {
+                if (response.data.Code === 5003) {
                     if ($rootScope.updateMessage===false) {
                         $rootScope.updateMessage = true;
                         $injector.get('notify')({
@@ -248,36 +252,43 @@ angular.module("proton", [
                         });
                     }
                 }
-                else if(response.data.Code===5004) {
+                else if(response.data.Code === 5004) {
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Non-integer API version requested.'
                     });
                 }
                 // unsupported api
-                else if (response.data.Code===5005) {
+                else if (response.data.Code === 5005) {
                     $injector.get('notify')({
                         classes: 'notification-danger',
                         message: 'Unsupported API version.'
                     });
                 }
                 // site offline
-                else if (response.data.Code===7001) {
+                else if (response.data.Code === 7001) {
                     $injector.get('notify')({
                         classes: 'notification-info',
                         message: 'The ProtonMail API is offline: '+response.data.ErrorDescription
                     });
                 }
             }
+
             return response || $q.when(response);
         },
         responseError: function(rejection) {
             if(rejection.status === 0 || rejection.status === -1) {
-                $injector.get('notify')({
-                    message: 'You are not connected to the Internet.',
-                    classes: 'notification-danger',
-                    duration: 0
-                });
+                if(navigator.onLine === true) {
+                    notification = $injector.get('notify')({
+                        message: 'Could not connect to server.',
+                        classes: 'notification-danger'
+                    });
+                } else {
+                    notification = $injector.get('notify')({
+                        message: 'Not connected to Internet.',
+                        classes: 'notification-danger'
+                    });
+                }
             } else if (rejection.status === 401) {
                 if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;
@@ -290,13 +301,11 @@ angular.module("proton", [
                             return $http(rejection.config);
                         },
                         function() {
-                            $injector.get('authentication').logout();
-                            $injector.get('$state').go('login');
+                            $injector.get('authentication').logout(true);
                         }
                     );
                 } else {
-                    $injector.get('authentication').logout();
-                    $injector.get('$state').go('login');
+                    $injector.get('authentication').logout(true);
                 }
             }
 

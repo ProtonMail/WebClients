@@ -10,7 +10,6 @@ section#pm_sidebarMobile {
         img {
             display: inline-block;
             margin: auto;
-            max-width: 110px;
             vertical-align: middle;
         }
     }
@@ -49,7 +48,7 @@ section.sidebar {
     a.compose {
         margin-bottom: 20px;
         font-size: 12px;
-        padding-right: 1rem;
+        padding-right: 11px;
         width: 100%;
         text-align: center;
         text-transform: uppercase;
@@ -72,6 +71,12 @@ section.sidebar {
             height: 40px;
             line-height: 40px;
             display: block;
+            &.divider {
+                height: 1px;
+                line-height: 1px;
+                margin: 10px 0;
+                background: rgba(255,255,255,.1);
+            }
             a {
                 text-decoration: none;
                 height: 40px;
@@ -187,7 +192,7 @@ section.sidebar {
             overflow: auto;
             -webkit-overflow-scrolling: touch;
             padding: 0 20px;
-            margin: 0 -20px;
+            margin: 0 -10px 0 -20px;
             li {
                 display: block;
                 padding: 0;
@@ -257,6 +262,9 @@ section.sidebar {
                 font-weight: bold;
                 color: $primary;
                 text-decoration: none;
+                &:hover {
+                    color: #fff;
+                }
             }
         }
         div.storage {
@@ -298,6 +306,9 @@ section.sidebar {
             letter-spacing: 2px;
             text-decoration: none;
             color: #6e6f80;
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }

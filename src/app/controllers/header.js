@@ -97,13 +97,13 @@ angular.module("proton.controllers.Header", [])
 
     $scope.activeMail = function() {
         var folders = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
-        var mailbox = $state.current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+        var mailbox = $state.$current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
 
         return folders.indexOf(mailbox) !== -1;
     };
 
     $scope.activeSettings = function() {
-        var route = $state.current.name.replace('secured.', '');
+        var route = $state.$current.name.replace('secured.', '');
         var settings = ['dashboard', 'account', 'labels', 'security', 'appearance', 'invoices', 'domains', 'users'];
 
         return settings.indexOf(route) !== -1;

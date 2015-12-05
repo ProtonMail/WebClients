@@ -1,16 +1,11 @@
 angular.module("proton.models.attachment", [])
 
-.factory("Attachment", function($resource, $injector, url) {
-    var authentication = $injector.get("authentication");
-
-    return $resource(
-        url.get() + "/attachments/:id",
-        authentication.params({ id: "@id" }),
-        {
-            remove: {
-                method: 'put',
-                url: url.get() + '/attachments/remove'
-            }
+.factory("Attachment", function($http, url) {
+    var api = {
+        remove: function(params) {
+            return $http.put(url.get() + '/attachments/remove', params);
         }
-    );
+    };
+
+    return api;
 });

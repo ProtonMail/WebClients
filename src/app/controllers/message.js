@@ -34,10 +34,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
-    $scope.$on('updateReplied', function(e, m) {
-        _.extend($scope.message, m);
-    });
-
     $scope.$on('refreshMessage', function() {
         cache.getMessage($scope.message.ID).then(function(message) {
             _.extend($scope.message, message);
@@ -67,7 +63,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.draft = function() {
-        return $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**
@@ -80,11 +76,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Display content
             $scope.displayContent();
 
-            // Mark message as read
-            if($scope.message.IsRead === 0) {
-                $scope.read(false);
-            }
-
             // Start timer ago
             $scope.agoTimer = $interval(function() {
                 var time = $filter('longReadableTime')($scope.message.Time);
@@ -94,6 +85,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             // Mark message as expanded
             $scope.message.expand = true;
+
+            if($scope.message.IsRead === 0) {
+                $scope.read();
+            }
         };
 
         // If the message is a draft
@@ -123,13 +118,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.scrollToMe = function() {
         var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
-        var id = '#message' + index; // TODO improve it for the search case
+        var id = '#message' + index;
         var element = angular.element(id);
-        var value = element.offset().top - element.outerHeight();
 
-        $('#pm_thread').animate({
-            scrollTop: value
-        }, 'slow');
+        if(angular.isDefined(element)) {
+            var value = element.offset().top - element.outerHeight();
+
+            $('#pm_thread').animate({
+                scrollTop: value
+            }, 'slow');
+        }
     };
 
     /**
@@ -320,6 +318,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                     $scope.message.DecryptedBody = $sce.trustAsHtml(content);
 
+                    // Scroll to first message open
+                    if($rootScope.scrollToFirst === $scope.message.ID) {
+                        $scope.scrollToMe();
+                    }
+
                     // Broken images
                     $(".email img").error(function () {
                         $(this).unbind("error").addClass("pm_broken");
@@ -371,7 +374,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Mark current message as read
-     * @param {Boolean} back
      */
     $scope.read = function(back) {
         var  copy = angular.copy($scope.message);
@@ -388,45 +390,41 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // Request
         Message.read({IDs: ids});
-
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
     };
 
     /**
      * Mark current message as unread
-     * @param {Boolean} back
      */
-    $scope.unread = function(back) {
+    $scope.unread = function() {
         var  copy = angular.copy($scope.message);
         var ids = [copy.ID];
         var conversationEvent = [];
         var messageEvent = [];
         var unreads = _.where($scope.messages, {IsRead: 0});
 
-        // Message
+        // Generate message event
         copy.IsRead = 0;
+        copy.expand = undefined; // Trick to close message and force to pass in iniView after
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
 
-        // Conversation
+        // Generate conversation event
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, NumUnread: unreads.length + 1}});
         cache.events(conversationEvent, 'conversation');
 
         // Request
         Message.unread({IDs: ids});
-
-        if(back === true) {
-            // Back to elements list
-            $scope.back();
-        }
     };
 
-    $scope.toggleImages = function() {
+    /**
+     * Get the decrypted content and fix images inside
+     */
+    $scope.displayImages = function() {
+        var content = $scope.message.DecryptedBody;
+
         $scope.message.toggleImages();
-        $scope.displayContent();
+        content = $scope.message.clearImageBody(content);
+        $scope.message.DecryptedBody = $sce.trustAsHtml(content);
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -610,11 +608,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // Requests
         _.each(toApply, function(labelID) {
-            promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+            promises.push(Label.apply(labelID, ids));
         });
 
         _.each(toRemove, function(labelID) {
-            promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+            promises.push(Label.remove(labelID, ids));
         });
 
         // Find current location
@@ -641,7 +639,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
         cache.events(conversationEvent, 'conversation');
 
-        $q.all(promises).then(function() {
+        $q.all(promises).then(function(result) {
             if(alsoArchive === true) {
                 deferred.resolve(Message.archive({IDs: ids}));
             } else {
@@ -779,14 +777,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messageEvent = [];
         var conversationEvent = [];
         var copy = angular.copy($scope.message);
-        var current;
+        var current = tools.currentLocation();
         var labelIDs = [];
-
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
-                current = labelID;
-            }
-        });
 
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // Remove previous location
@@ -804,8 +796,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.events(conversationEvent, 'conversation');
 
         Message[mailbox]({IDs: [copy.ID]});
-
-        $scope.back();
     };
 
     /**
@@ -813,14 +803,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.delete = function() {
         var messageEvent = [];
+        var conversationEvent = [];
         var copy = angular.copy($scope.message);
 
         messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
-        cache.events(messageEvent);
+        cache.events(messageEvent, 'message');
 
         Message.delete({IDs: [copy.ID]});
-
-        $scope.back();
     };
 
     /**

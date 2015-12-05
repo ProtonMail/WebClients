@@ -14,66 +14,60 @@
             <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list')">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
-                <em ng-bind="getUnread('inbox')"></em>
+                <em ng-bind="unread('inbox')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
             <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list')">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
-                <em ng-bind="getUnread('drafts')"></em>
+                <em ng-bind="unread('drafts')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
             <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list')">
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
-                <em ng-bind="getUnread('sent')"></em>
+                <em ng-bind="unread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
             <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred.list')">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
-                <em ng-bind="getUnread('starred')"></em>
+                <em ng-bind="unread('starred')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
             <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list')">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
-                <em ng-bind="getUnread('archive')"></em>
+                <em ng-bind="unread('archive')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list')">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
-                <em ng-bind="getUnread('spam')"></em>
+                <em ng-bind="unread('spam')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
             <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list')">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
-                <em ng-bind="getUnread('trash')"></em>
+                <em ng-bind="unread('trash')"></em>
             </a>
         </li>
-        <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
-                <i class="fa fa-tag" ng-style="color(label)"></i>
-                <span>{{ label.Name }}</span>
-                <em ng-bind="getUnread('label', label.ID)"></em>
-            </a>
-        </li>
+        <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
             <a href="#" title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
                 <i class="fa fa-users"></i>
                 <span>{{ 'CONTACTS' | translate }}</span>
             </a>
         </li>
-        <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
-            <a href="#" title="{{ 'SETTINGS' | translate }}" ui-sref='secured.dashboard' ng-click="hideMobileSidebar()">
+        <li ng-class="{ active: ('secured.account.**' | includedByState) }">
+            <a href="#" title="{{ 'SETTINGS' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
                 <i class="fa fa-cogs"></i>
                 <span>{{ 'SETTINGS' | translate }}</span>
             </a>
@@ -88,6 +82,14 @@
             <a href="#" ng-click="logout(); hideMobileSidebar();">
                 <i class="fa fa-power-off"></i>
                 <span>{{ 'LOGOUT' | translate }}</span>
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
+                <i class="fa fa-tag" ng-style="color(label)"></i>
+                <span>{{ label.Name }}</span>
+                <em ng-bind="unread('label', label.ID)"></em>
             </a>
         </li>
     </ul>

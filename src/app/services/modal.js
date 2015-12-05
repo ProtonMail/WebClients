@@ -423,26 +423,18 @@ angular.module("proton.modals", [])
 .factory('cardModal', function(pmModal, Stripe, Payment, notify, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/card/modal.tpl.html',
+        templateUrl: 'templates/modals/card.tpl.html',
         controller: function(params) {
             // Variables
-            this.mode = params.mode;
             this.cardTypeIcon = 'fa-credit-card';
-
-            if(params.mode === 'edit') {
-                this.number = '';
-                this.fullname = '';
-                this.month = '';
-                this.year = '';
-                this.cvc = '';
-            } else if(params.mode === 'view' && angular.isDefined(params.card)) {
-                this.status = params.card.Status;
-                this.brand = params.card.Brand;
-                this.number = '**** **** **** ' + params.card.Last4;
-                this.fullname = params.card.Name;
-                this.month = params.card.ExpMonth;
-                this.year = params.card.ExpYear;
-            }
+            this.status = params.card.Status;
+            this.brand = params.card.Brand;
+            this.number = '**** **** **** ' + params.card.Last4;
+            this.fullname = params.card.Name;
+            this.month = params.card.ExpMonth;
+            this.year = params.card.ExpYear;
+            this.cvc = '***';
+            this.change = false;
             // Functions
             this.submit = function() {
                 this.process = true;
@@ -453,7 +445,8 @@ angular.module("proton.modals", [])
                         Payment.change({
                             Source: {
                                 Object: 'token',
-                                Token: response.id
+                                Token: response.id,
+                                SourceID: params.card
                             }
                         }).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -562,8 +555,7 @@ angular.module("proton.modals", [])
                             Token: response.id
                         };
                         // Send request to subscribe
-                        // Organization.create(this.config).then(function(result) {
-                        Payment.subscribe(this.config).then(function(result) {
+                        Organization.create(this.config).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 this.process = false;
                                 this.step = 'thanks';
@@ -586,6 +578,7 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this);
 
+                //
                 if(Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
                     return false;
@@ -601,6 +594,7 @@ angular.module("proton.modals", [])
                     return false;
                 }
 
+                // Generate token with Stripe Api
                 Stripe.card.createToken({
                     name: this.fullname,
                     number: this.number,
@@ -610,6 +604,9 @@ angular.module("proton.modals", [])
                 }, stripeResponseHandler);
             };
 
+            /**
+             * Change cc icon depending upon number
+             */
             this.numberChange = function() {
                 var type = Stripe.card.cardType(this.number);
 
@@ -631,18 +628,28 @@ angular.module("proton.modals", [])
                         break;
                     case 'American Express':
                     case 'Unknown':
-                    this.cardTypeIcon = 'fa-credit-card';
-                    break;
+                        this.cardTypeIcon = 'fa-credit-card';
+                        break;
                     default:
                         this.cardTypeIcon = 'fa-credit-card';
                         break;
                 }
             };
 
+            /**
+             * Close payment modal
+             */
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            /**
+             * Toggle
+             */
+            this.toggle = function() {
+
             };
         }
     });

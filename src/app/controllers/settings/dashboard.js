@@ -8,10 +8,12 @@ angular.module("proton.controllers.Settings")
     cardModal,
     networkActivityTracker,
     notify,
+    organization,
+    Organization,
     Payment,
     paymentModal,
-    supportModal,
-    payment
+    status,
+    supportModal
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
@@ -109,23 +111,31 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        if(angular.isDefined(payment.data) && payment.data.Code === 1000) {
+        if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
+            $scope.organization = organization.data.Organization;
+        }
+
+        if(angular.isDefined(status.data) && status.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
 
-            $scope.current = payment.data.Cart.Future;
-            $scope.payment = payment.data.Payment;
+            $scope.current = {};
+            $scope.future = {};
 
-            if(angular.isDefined($scope.payment)) {
-                $scope.currency = $scope.payment.Currency;
+            if(angular.isDefined(status.data) && status.data.Code === 1000) {
+                $scope.status = status.data.Payment;
+                $scope.current = status.data.Cart.Future;
+                $scope.future.Currency = $scope.status.Currency;
 
-                if(parseInt(($scope.payment.PeriodEnd - $scope.payment.PeriodStart) / month) === 1) {
-                    $scope.billing = 12;
+                if(parseInt(($scope.status.PeriodEnd - $scope.status.PeriodStart) / month) === 1) {
+                    $scope.future.BillingCycle = 12;
                 } else {
-                    $scope.billing = 1;
+                    $scope.future.BillingCycle = 1;
                 }
             } else {
-                $scope.currency = 'CHF';
-                $scope.billing = 1;
+                $scope.current.Currency = 'CHF';
+                $scope.future.Currency = 'CHF';
+                $scope.current.BillingCycle = 1;
+                $scope.future.BillingCycle = 1;
             }
 
             var spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.current.MaxSpace});
@@ -184,13 +194,8 @@ angular.module("proton.controllers.Settings")
      * Returns a string for the storage bar
      * @return {String} "12.5"
      */
-    $scope.storagePercentage = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
-        } else {
-            // TODO: error, undefined variables
-            return '';
-        }
+    $scope.percentage = function() {
+        return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
     };
 
     /**
@@ -201,16 +206,16 @@ angular.module("proton.controllers.Settings")
         var total = 0;
 
         if(name === 'plus') {
-            total += $scope.plusPrice[$scope.billing];
-            total += $scope.spacePlus.index * $scope.spacePrice[$scope.billing];
-            total += $scope.domainPlus.index * $scope.domainPrice[$scope.billing];
-            total += $scope.addressPlus.index * $scope.addressPrice[$scope.billing];
+            total += $scope.plusPrice[$scope.future.BillingCycle];
+            total += $scope.spacePlus.index * $scope.spacePrice[$scope.future.BillingCycle];
+            total += $scope.domainPlus.index * $scope.domainPrice[$scope.future.BillingCycle];
+            total += $scope.addressPlus.index * $scope.addressPrice[$scope.future.BillingCycle];
         } else if(name === 'business') {
-            total += $scope.businessPrice[$scope.billing];
-            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.billing];
-            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.billing];
-            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.billing];
-            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.billing];
+            total += $scope.businessPrice[$scope.future.BillingCycle];
+            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.future.BillingCycle];
+            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.future.BillingCycle];
+            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.future.BillingCycle];
+            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.future.BillingCycle];
         }
 
         return total;
@@ -234,8 +239,8 @@ angular.module("proton.controllers.Settings")
         var configuration = {
             Subscription: {
                 Amount: $scope.amount(name),
-                Currency: $scope.currency,
-                BillingCycle: $scope.billing,
+                Currency: $scope.future.Currency,
+                BillingCycle: $scope.future.BillingCycle,
                 Time: now,
                 PeriodStart: now,
                 ExternalProvider: "Stripe"
@@ -300,7 +305,7 @@ angular.module("proton.controllers.Settings")
                                 title: title,
                                 message: message,
                                 confirm: function() {
-                                    Payment.subscribe(configuration).then(function(result) {
+                                    Organization.create(configuration).then(function(result) {
                                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                             confirmModal.deactivate();
                                             // TODO notify
@@ -361,16 +366,15 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal with payment information
      */
-    $scope.viewCard = function() {
-        Payment.sources().then(function(result) {
+    $scope.card = function() {
+        networkActivityTracker.track(Payment.sources().then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 // Array of credit card information
-                var cards = result.data.Source;
+                var cards = result.data.Sources;
 
                 cardModal.activate({
                     params: {
-                        card: _.first(cards), // We take only the first
-                        mode: 'view',
+                        card: _.first(cards),
                         cancel: function() {
                             cardModal.deactivate();
                         }
@@ -381,21 +385,7 @@ angular.module("proton.controllers.Settings")
             }
         }, function(error) {
             notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        });
-    };
-
-    /**
-     * Open modal to edit payment information
-     */
-    $scope.editCard = function() {
-        cardModal.activate({
-            params: {
-                mode: 'edit',
-                cancel: function() {
-                    cardModal.deactivate();
-                }
-            }
-        });
+        }));
     };
 
     // Call initialization

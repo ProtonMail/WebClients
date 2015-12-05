@@ -23,29 +23,7 @@ angular.module("proton.cache", [])
     var UPDATE_FLAGS = 3;
 
     /**
-     * Return a vector to calculate the counters
-     * @param {Object} message - message to analyse
-     * @param {Boolean} unread - true if unread case
-     * @return {Object}
-     */
-    var vector = function(element, unread) {
-        var result = {};
-        var condition = true;
-        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
-
-        if(unread === true) {
-            condition = element.IsRead === 0 || element.NumUnread > 0;
-        }
-
-        _.each(locations, function(location) {
-            result[location] = Number(element.LabelIDs.indexOf(location) !== -1 && condition);
-        });
-
-        return result;
-    };
-
-    /**
-    * Save conversations in conversationsCached and add location in attribute
+    * Save conversations in conversationsCached and add loc in attribute
     * @param {Array} conversations
     */
     var storeConversations = function(conversations) {
@@ -103,53 +81,85 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Reorder cache location by reverse time
+     * Reorder cache loc by reverse time
      * @param {Array} elements - conversation or message
+     * @param {String} parameter - ordered with this parameter
+     * @return {Array} don't miss this array is reversed
      */
-    var order = function(elements) {
+    var order = function(elements, parameter, reverse) {
         if(angular.isArray(elements)) {
-            return _.sortBy(elements, 'Time').reverse();
+            return _.sortBy(elements, parameter).reverse();
         } else {
             return [];
         }
     };
 
     /**
+     * Return a vector to calculate the counters
+     * @param {Object} element - element to analyse (conversation or message)
+     * @param {Boolean} unread - true if unread case
+     * @param {String} type = conversation or message
+     * @return {Object}
+     */
+    var vector = function(element, unread, type) {
+        var result = {};
+        var condition = true;
+        var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+        if(unread === true) {
+            if(type === 'message') {
+                condition = element.IsRead === 0;
+            } else if(type === 'conversation') {
+                condition = element.NumUnread > 0;
+            }
+        }
+
+        _.each(locs, function(loc) {
+            if(angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
+                result[loc] = 1;
+            } else {
+                result[loc] = 0;
+            }
+        });
+
+        return result;
+    };
+
+    /**
      * Manage the updating to calcultate the total number of messages and unread messages
-     * @param {Object} oldList
-     * @param {Object} newList
+     * @param {Object} oldElement
+     * @param {Object} newElement
      * @param {String} type - 'message' or 'conversation'
      */
-    var manageCounters = function(oldList, newList, type) {
-        var oldUnreadVector = vector(oldList, true);
-        var newUnreadVector = vector(newList, true);
-        var newTotalVector = vector(newList, false);
-        var oldTotalVector = vector(oldList, false);
+    var manageCounters = function(oldElement, newElement, type) {
+        var oldUnreadVector = vector(oldElement, true, type);
+        var newUnreadVector = vector(newElement, true, type);
+        var newTotalVector = vector(newElement, false, type);
+        var oldTotalVector = vector(oldElement, false, type);
+        var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
-        var locations = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
-
-        _.each(locations, function(location) {
-            var currentUnread = cacheCounters.unread(location);
-            var deltaUnread = newUnreadVector[location] - oldUnreadVector[location];
+        _.each(locs, function(loc) {
+            var deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
+            var deltaTotal = newTotalVector[loc] - oldTotalVector[loc];
+            var currentUnread;
             var currentTotal;
-            var deltaTotal;
 
             if(type === 'message') {
-                currentTotal = cacheCounters.total(location);
-                deltaTotal = newTotalVector[location] - oldTotalVector[location];
-                cacheCounters.update(location, currentTotal + deltaTotal, currentUnread + deltaUnread);
+                currentUnread = cacheCounters.unreadMessage(loc);
+                currentTotal = cacheCounters.totalMessage(loc);
+                cacheCounters.updateMessage(loc, currentTotal + deltaTotal, currentUnread + deltaUnread);
             } else if(type === 'conversation') {
-                currentTotal = cacheCounters.conversation(location);
-                deltaTotal = newTotalVector[location] - oldTotalVector[location];
-                cacheCounters.update(location, undefined, undefined, currentTotal + deltaTotal);
+                currentUnread = cacheCounters.unreadConversation(loc);
+                currentTotal = cacheCounters.totalConversation(loc);
+                cacheCounters.updateConversation(loc, currentTotal + deltaTotal, currentUnread + deltaUnread);
             }
         });
     };
 
     /**
-     * Return location specified in the request
+     * Return loc specified in the request
      * @param {Object} request
-     * @return {String} location
+     * @return {String} loc
      */
     var getLocation = function(request) {
         return request.Label;
@@ -162,7 +172,7 @@ angular.module("proton.cache", [])
      */
     var queryConversations = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
         Conversation.query(request).then(function(result) {
@@ -175,12 +185,14 @@ angular.module("proton.cache", [])
                 // Only for cache context
                 if(context === true) {
                     // Set total value in cache
-                    cacheCounters.update(location, undefined, undefined, data.Total);
+                    cacheCounters.updateConversation(loc, data.Total, data.Unread);
                     // Store conversations
                     storeConversations(data.Conversations);
+                    // Return conversations
+                    deferred.resolve(order(data.Conversations, 'Time'));
+                } else {
+                    deferred.resolve(data.Conversations);
                 }
-                // Return conversations
-                deferred.resolve(order(data.Conversations)); // We order data also
             } else {
                 deferred.reject();
             }
@@ -207,7 +219,7 @@ angular.module("proton.cache", [])
                 storeMessages(messages);
             }
 
-            deferred.resolve(order(messages));
+            deferred.resolve(order(messages, 'Time'));
         });
 
         return deferred.promise;
@@ -233,7 +245,7 @@ angular.module("proton.cache", [])
 
                 storeConversations([data.Conversation]);
                 storeMessages(messages);
-                deferred.resolve(messages);
+                deferred.resolve(order(messages, 'Time'));
             } else {
                 deferred.reject();
             }
@@ -296,7 +308,7 @@ angular.module("proton.cache", [])
      */
     api.queryMessages = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
         var callApi = function() {
             deferred.resolve(queryMessages(request));
@@ -310,23 +322,19 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var messages = _.filter(messagesCached, function(message) {
-                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(location.toString()) !== -1;
+                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            messages = order(messages);
-
-            console.info('Number of messages in the cache', messages.length);
+            messages = order(messages, 'Time');
 
             switch(mailbox) {
                 case 'label':
-                    total = cacheCounters.total($stateParams.label);
+                    total = cacheCounters.totalMessage($stateParams.label);
                     break;
                 default:
-                    total = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    total = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
-
-            console.info('Number return by API', total);
 
             if(angular.isDefined(total)) {
                 if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
@@ -364,7 +372,7 @@ angular.module("proton.cache", [])
      */
     api.queryConversations = function(request) {
         var deferred = $q.defer();
-        var location = getLocation(request);
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
         var callApi = function() {
             // Need data from the server
@@ -380,23 +388,19 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
-                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(location.toString()) !== -1;
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            conversations = order(conversations);
-
-            console.info('Number of conversations cached for "' + location + '":', conversations.length);
+            conversations = order(conversations, 'Time');
 
             switch(mailbox) {
                 case 'label':
-                    total = cacheCounters.conversation($stateParams.label);
+                    total = cacheCounters.totalConversation($stateParams.label);
                     break;
                 default:
-                    total = cacheCounters.conversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    total = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
-
-            console.info('Value returned by the BE:', total);
 
             if(angular.isDefined(total)) {
                 if(total === 0) {
@@ -439,6 +443,7 @@ angular.module("proton.cache", [])
      */
     api.queryConversationMessages = function(conversationId) {
         var deferred = $q.defer();
+        var mailbox = tools.currentMailbox();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
         var callApi = function() {
             deferred.resolve(queryConversationMessages(conversationId));
@@ -447,8 +452,14 @@ angular.module("proton.cache", [])
         if(angular.isDefined(conversation)) {
             var messages = _.where(messagesCached, {ConversationID: conversationId});
 
+            if(mailbox !== 'trash') {
+                messages = _.reject(messages, function(message) {
+                    return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+                });
+            }
+
             if(conversation.NumMessages === messages.length) {
-                deferred.resolve(messages);
+                deferred.resolve(order(messages, 'Time'));
             } else {
                 callApi();
             }
@@ -464,7 +475,36 @@ angular.module("proton.cache", [])
      * @param {String} conversationId
      */
     api.queryMessagesCached = function(conversationId) {
-        return angular.copy(_.where(messagesCached, {ConversationID: conversationId}));
+        var mailbox = tools.currentMailbox();
+        var messages = _.where(messagesCached, {ConversationID: conversationId});
+
+        if(mailbox !== 'trash') {
+            messages = _.reject(messages, function(message) {
+                return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+            });
+        }
+
+        messages = order(messages, 'Time');
+
+        return angular.copy(messages);
+    };
+
+    /**
+     * Return conversation cached
+     * @param {String} conversationId
+     * @return {Object}
+     */
+    api.getConversationCached = function(conversationId) {
+        return angular.copy(_.findWhere(conversationsCached, {ID: conversationId}));
+    };
+
+    /**
+     * Return message cached
+     * @param {String} messageId
+     * @return {Object}
+     */
+    api.getMessageCached = function(messageId) {
+        return angular.copy(_.findWhere(messagesCached, {ID: messageId}));
     };
 
     /**
@@ -524,11 +564,9 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
 
         // Delete message
-        messagesCached = _.filter(messagesCached, function(message) {
-            return message.ID !== event.ID;
+        messagesCached = _.reject(messagesCached, function(message) {
+            return message.ID === event.ID;
         });
-
-        // Delete conversation
 
         deferred.resolve();
 
@@ -544,13 +582,13 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
 
         // Delete messages
-        messagesCached = _.filter(messagesCached, function(message) {
-            return message.ConversationID !== event.ID;
+        messagesCached = _.reject(messagesCached, function(message) {
+            return message.ConversationID === event.ID;
         });
 
         // Delete conversation
-        conversationsCached = _.filter(conversationsCached, function(conversation) {
-            return conversation.ID !== event.ID;
+        conversationsCached = _.reject(conversationsCached, function(conversation) {
+            return conversation.ID === event.ID;
         });
 
         deferred.resolve();
@@ -559,24 +597,32 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Remove conversations from cache location
-    * @param {String} location
+    * Remove conversations from cache loc
+    * @param {String} loc
     */
-    api.empty = function(location) {
+    api.empty = function(loc) {
         var toRemove = [];
 
-        _.each(conversationsCached, function(conversation, index) {
-            if(conversation.LabelIDs.indexOf(location) !== -1) {
-                messagesCached = _.filter(messagesCached, function(message) {
-                    return message.ConversationID !== conversation.ID;
+        _.each(conversationsCached, function(conversation) {
+            if(angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1) {
+                messagesCached = _.reject(messagesCached, function(message) {
+                    return message.ConversationID === conversation.ID;
                 });
 
-                toRemove.push(index);
+                toRemove.push(conversation);
             }
         });
 
-        _.each(toRemove, function(index) {
-            conversationsCached[index].LabelIDs = _.without(conversationsCached[index].LabelIDs, location);
+        _.each(toRemove, function(conversation) {
+            var index = conversationsCached.indexOf(conversation);
+
+            if(angular.isArray(conversation.LabelIDs)) {
+                if(conversation.LabelIDs.length === 1) {
+                    conversationsCached.splice(index, 1);
+                } else if(conversation.LabelIDs.length > 1) {
+                    conversationsCached[index].LabelIDs = _.without(conversation.LabelIDs, loc);
+                }
+            }
         });
 
         api.callRefresh();
@@ -621,7 +667,11 @@ angular.module("proton.cache", [])
     api.createMessage = function(event) {
         var deferred = $q.defer();
         var messages = [event.Message];
+        var conversation = {ID: event.Message.ConversationID, Time: event.Message.Time};
 
+        // Update conversation with Time
+        updateConversation(conversation);
+        // Save new messages
         storeMessages(messages);
 
         deferred.resolve();
@@ -638,57 +688,18 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        if(angular.isUndefined(current)) {
-            var mailbox = tools.currentMailbox();
-            var request = {Conversation: event.ID};
-
-            switch (mailbox) {
-                case 'label':
-                    request.Label = $stateParams.label;
-                    break;
-                default:
-                    request.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                    break;
-            }
-
-            Conversation.query(request).then(function(result) {
-                var data = result.data;
-
-                if(data.Code === 1000) {
-                    // Set total value in rootScope
-                    $rootScope.Total = data.Total;
-
-                    // Set total value in cache
-                    cacheCounters.update(location, undefined, undefined, data.Total);
-
-                    // Store conversations
-                    storeConversations(data.Conversations);
-
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-            });
-        } else {
+        if(angular.isDefined(current)) {
             updateConversation(event.Conversation);
             deferred.resolve();
+        } else {
+            var messages = api.queryMessagesCached(event.ID);
+            var message = _.max(messages, function(message){ return message.Time; });
+
+            event.Conversation.Time = message.Time;
+            event.Conversation.LabelIDs = message.LabelIDs;
+            insertConversation(event.Conversation);
+            deferred.resolve();
         }
-
-        return deferred.promise;
-    };
-
-    /**
-    * Update only a draft message
-    * @param {Object} event
-    * @return {Promise}
-    */
-    api.updateDraft = function(event) {
-        var deferred = $q.defer();
-        var messages = [event.Message];
-
-        storeMessages(messages);
-
-        deferred.resolve();
 
         return deferred.promise;
     };
@@ -713,24 +724,18 @@ angular.module("proton.cache", [])
                 deferred.resolve();
             } else {
                 // Manage labels
-                if(angular.isDefined(event.Message.LabelIDsAdded)) {
-                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-                    delete message.LabelIDsAdded;
-                }
-
                 if(angular.isDefined(event.Message.LabelIDsRemoved)) {
                     message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
                     delete message.LabelIDsRemoved;
                 }
 
-                messagesCached[index] = message;
-
-                if($rootScope.dontUpdateNextCounter === true) {
-                    $rootScope.dontUpdateNextCounter = false;
-                } else {
-                    manageCounters(current, messagesCached[index], 'message');
+                if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
+                    delete message.LabelIDsAdded;
                 }
 
+                messagesCached[index] = message;
+                manageCounters(current, messagesCached[index], 'message');
                 deferred.resolve();
            }
         } else {
@@ -757,25 +762,19 @@ angular.module("proton.cache", [])
              _.extend(conversation, current, event.Conversation);
 
              // Manage labels
-             if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
-                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
-                 delete conversation.LabelIDsAdded;
-             }
-
              if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
                  conversation.LabelIDs = _.difference(conversation.LabelIDs, event.Conversation.LabelIDsRemoved);
                  delete conversation.LabelIDsRemoved;
              }
 
-             // Update conversation cached
-             conversationsCached[index] = conversation;
-
-             if($rootScope.dontUpdateNextCounter === true) {
-                 $rootScope.dontUpdateNextCounter = false;
-             } else {
-                 manageCounters(current, conversationsCached[index], 'conversation');
+             if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
+                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
+                 delete conversation.LabelIDsAdded;
              }
 
+             // Update conversation cached
+             conversationsCached[index] = conversation;
+             manageCounters(current, conversationsCached[index], 'conversation');
              deferred.resolve();
          } else if(angular.isDefined(event.Conversation)) {
             // Create a new conversation in the cache
@@ -806,7 +805,7 @@ angular.module("proton.cache", [])
                         promises.push(api.createMessage(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateDraft(event));
+                        promises.push(api.updateFlagMessage(event));
                         break;
                     case UPDATE_FLAGS:
                         promises.push(api.updateFlagMessage(event));
@@ -848,11 +847,8 @@ angular.module("proton.cache", [])
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
-
-        if(angular.isDefined($stateParams.id)) {
-            $rootScope.$broadcast('refreshConversation');
-            $rootScope.$broadcast('refreshMessage');
-        }
+        $rootScope.$broadcast('refreshConversation');
+        $rootScope.$broadcast('refreshMessage');
     };
 
     /**
@@ -902,8 +898,8 @@ angular.module("proton.cache", [])
      */
     api.more = function(conversation, type) {
         var deferred = $q.defer();
-        var location = tools.currentLocation();
-        var request = {PageSize: 1, Label: location};
+        var loc = tools.currentLocation();
+        var request = {PageSize: 1, Label: loc};
 
         if(type === 'previous') {
             request.End = conversation.Time;
@@ -938,17 +934,28 @@ angular.module("proton.cache", [])
     var api = {};
     var counters = {};
     // {
-    //     location: {
-    //         total: value,
-    //         unread: value
+    //     loc: {
+    //         message: {
+    //             total: value,
+    //             unread: value
+    //         },
+    //         conversation: {
+    //             total: value,
+    //             unread: value
+    //         }
     //     }
     // }
-    var exist = function(location) {
-        if(angular.isUndefined(counters[location])) {
-            counters[location] = {
-                total: 0,
-                unread: 0,
-                conversation: 0
+    var exist = function(loc) {
+        if(angular.isUndefined(counters[loc])) {
+            counters[loc] = {
+                message: {
+                    total: 0,
+                    unread: 0
+                },
+                conversation: {
+                    total: 0,
+                    unread: 0
+                }
             };
         }
     };
@@ -964,15 +971,21 @@ angular.module("proton.cache", [])
             message: Message.count().$promise,
             conversation: Conversation.count()
         }).then(function(result) {
+            var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+            // Initialize locations
+            _.each(locs, function(loc) {
+                exist(loc);
+            });
+
             _.each(result.message.Counts, function(counter) {
-                exist(counter.LabelID);
-                counters[counter.LabelID].total = counter.Total;
-                counters[counter.LabelID].unread = counter.Unread;
+                counters[counter.LabelID].message.total = counter.Total || 0;
+                counters[counter.LabelID].message.unread = counter.Unread || 0;
             });
 
             _.each(result.conversation.data.Counts, function(counter) {
-                exist(counter.LabelID);
-                counters[counter.LabelID].conversation = counter.Total;
+                counters[counter.LabelID].conversation.total = counter.Total || 0;
+                counters[counter.LabelID].conversation.unread = counter.Unread || 0;
             });
 
             deferred.resolve();
@@ -984,63 +997,92 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Update the total / unread for a specific location
-    * @param {String} location
+    * Update the total / unread for a specific loc
+    * @param {String} loc
     * @param {Integer} total
     * @param {Integer} unread
-    * @param {Integer} conversation
     */
-    api.update = function(location, total, unread, conversation) {
-        exist(location);
+    api.updateMessage = function(loc, total, unread) {
+        exist(loc);
 
         if(angular.isDefined(total)) {
-            counters[location].total = total;
+            counters[loc].message.total = total;
         }
 
         if(angular.isDefined(unread)) {
-            counters[location].unread = unread;
-        }
-
-        if(angular.isDefined(conversation)) {
-            counters[location].conversation = conversation;
+            counters[loc].message.unread = unread;
         }
 
         $rootScope.$broadcast('updatePageName');
     };
 
     /**
-    * Get the total of messages for a specific location
-    * @param {String} location
-    */
-    api.total = function(location) {
-        return counters[location] && counters[location].total;
-    };
-
-    /**
-    * Get the number of unread messages for the specific location
-    * @param {String} location
-    */
-    api.unread = function(location) {
-        return counters[location] && counters[location].unread;
-    };
-
-    /**
-     * Get the number of conversations for a specific location
+     * Update the total / unread for a specific loc
+     * @param {String} loc
+     * @param {Integer} total
+     * @param {Integer} unread
      */
-    api.conversation = function(location) {
-        return counters[location] && counters[location].conversation;
+    api.updateConversation = function(loc, total, unread) {
+        exist(loc);
+
+        if(angular.isDefined(total)) {
+            counters[loc].conversation.total = total;
+        }
+
+        if(angular.isDefined(unread)) {
+            counters[loc].conversation.unread = unread;
+        }
+
+        $rootScope.$broadcast('updatePageName');
     };
 
     /**
-    * Clear location counters
-    * @param {String} location
+    * Get the total of messages for a specific loc
+    * @param {String} loc
     */
-    api.empty = function(location) {
-        if(angular.isDefined(counters[location])) {
-            counters[location] = {
-                total: 0,
-                unread: 0,
-                conversation: 0
+    api.totalMessage = function(loc) {
+        return counters[loc] && counters[loc].message && counters[loc].message.total;
+    };
+
+    /**
+    * Get the total of conversation for a specific loc
+    * @param {String} loc
+    */
+    api.totalConversation = function(loc) {
+        return counters[loc] && counters[loc].conversation && counters[loc].conversation.total;
+    };
+
+    /**
+    * Get the number of unread messages for the specific loc
+    * @param {String} loc
+    */
+    api.unreadMessage = function(loc) {
+        return counters[loc] && counters[loc].message && counters[loc].message.unread;
+    };
+
+    /**
+    * Get the number of unread conversation for the specific loc
+    * @param {String} loc
+    */
+    api.unreadConversation = function(loc) {
+        return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
+    };
+
+    /**
+    * Clear loc counters
+    * @param {String} loc
+    */
+    api.empty = function(loc) {
+        if(angular.isDefined(counters[loc])) {
+            counters[loc] = {
+                message: {
+                    total: 0,
+                    unread: 0
+                },
+                conversation: {
+                    total: 0,
+                    unread: 0
+                }
             };
         }
     };

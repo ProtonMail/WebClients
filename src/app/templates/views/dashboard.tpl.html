@@ -2,21 +2,28 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height>
         <div class="row">
-            <section class="setting pm_form">
+            <section class="setting pm_form" ng-hide="organization === null">
                 <legend>{{ 'OVERVIEW' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableOverview">
                         <tr>
-                            <th>{{ 'USERNAME' | translate }}: </th>
+                            <th>{{ 'ORGANIZATION' | translate }}:</th>
+                            <td>
+                                <strong>{{ organization.DisplayName }}</strong>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'USERNAME' | translate }}:</th>
                             <td>
                                 <strong>{{ username }}</strong>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <th>{{ 'DOMAINS' | translate }}: </th>
+                            <th>{{ 'DOMAINS' | translate }}:</th>
                             <td>
-                                <strong>1 of 2 {{ 'USED' | translate }}</strong>
+                                <strong>{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }} {{ 'USED' | translate }}</strong>
                             </td>
                             <td class='text-right'>
                                 <span>
@@ -25,9 +32,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>{{ 'ADDRESSES' | translate }}: </th>
+                            <th>{{ 'ADDRESSES' | translate }}:</th>
                             <td>
-                                <strong>2 of 5 {{ 'USED' | translate }}</strong>
+                                <strong>{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }} {{ 'USED' | translate }}</strong>
                             </td>
                             <td class='text-right'>
                                 <span>
@@ -36,23 +43,37 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>{{ 'STORAGE' | translate }}: </th>
+                            <th>{{ 'USERS' | translate }}:</th>
                             <td>
-                                <strong>{{ storagePercentage() }}% {{ 'USED' | translate }}</strong>
+                                <strong>{{ organization.UsedMembers }} {{ 'OF' | translate }} {{ organization.MaxMembers }} {{ 'USED' | translate }}</strong>
+                            </td>
+                            <td class='text-right'>
+                                <span>
+                                    <a href="" ui-sref="secured.users">{{ 'MANAGE' | translate }}</a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'STORAGE' | translate }}:</th>
+                            <td>
+                                <strong>{{ percentage() }}% {{ 'USED' | translate }}</strong>
                             </td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr class="storage">
                             <td>&nbsp;</td>
-                            <td colspan="2">
+                            <td colspan="2" rowspan="2">
                                 <div class="usage">
-                                    <em class="used">{{ usedSpace | humanSize }}</em>
+                                    <em class="used">{{ organization.UsedSpace | humanSize }}</em>
                                     <em class="bar">
-                                        <div class="amount" style="width: {{ storagePercentage() }}%"></div>
+                                        <div class="amount" style="width: {{ percentage() }}%"></div>
                                     </em>
-                                    <em class="total">{{ maxSpace | humanSize }}</em>
+                                    <em class="total">{{ organization.MaxSpace | humanSize }}</em>
                                 </div>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
                         </tr>
                     </table>
                 </div>
@@ -63,54 +84,56 @@
                     <table class="pm_table plain" id="tableSubscription">
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
-                            <td>
-                                <strong>{{ current.Plan }} {{ 'PLAN' | translate }}</strong>
-                            </td>
-                            <td class="price text-right">
-                                <span>{{ payment.Amount | currency: payment.Currency }}</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Addons: </th>
-                            <td>
-                                <strong>10 GB + 1 GB Extra Storage</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>1 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>
-                                <strong>1 + 1 GB Extra Domain</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>2 CHF</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'TOTAL_PRICE' | translate }}: </th>
                             <td colspan="2">
-                                <strong>13 CHF</strong>
+                                <strong>{{ current.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
                             </td>
                         </tr>
                         <tr>
+                            <th>{{ 'DOMAINS' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxDomains }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'ADDRESSES' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxAddresses }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'STORAGE' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxSpace | humanSize }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'USERS' | translate }}:</th>
+                            <td colspan="2">
+                                <strong>{{ current.MaxMembers }}</strong>
+                            </td>
+                        </tr>
+                        <tr ng-hide="current.Plan === 'free'">
+                            <th>{{ 'PRICE' | translate }}: </th>
+                            <td colspan="2">
+                                <strong>{{ status.Amount / 100 | currency: status.Currency }}</strong>
+                            </td>
+                        </tr>
+                        <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'BILLING' | translate }}:</th>
                             <td colspan="2">
-                                <strong>monthly</strong>
+                                <strong ng-show="future.BillingCycle === 1">{{ 'MONTHLY' | translate }}</strong>
+                                <strong ng-show="future.BillingCycle === 12">{{ 'YEARLY' | translate }}</strong>
                             </td>
                         </tr>
-                        <tr>
+                        <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'PAYMENT' | translate }}:</th>
                             <td>
-                                <strong><i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}</strong>
+                                <strong>
+                                    <i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}
+                                </strong>
                             </td>
-                            <td>
-                                <span>
-                                    <small class="pull-right">
-                                        <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
-                                    </small>
-                                </span>
+                            <td class="text-right">
+                                <a href="" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
                             </td>
                         </tr>
                     </table>
@@ -130,25 +153,25 @@
                         <div class="group">
                             <label>{{ 'CURRENCY' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="" ng-click="currency = 'EUR'" ng-class="{'active': currency === 'EUR'}">EUR</a>
-                                <a href="" ng-click="currency = 'USD'" class="divider" ng-class="{'active': currency === 'USD'}">USD</a>
-                                <a href="" ng-click="currency = 'CHF'" class="divider" ng-class="{'active': currency === 'CHF'}">CHF</a>
+                                <a href="" ng-click="future.Currency = 'EUR'" ng-class="{'active': future.Currency === 'EUR'}">EUR</a>
+                                <a href="" ng-click="future.Currency = 'USD'" class="divider" ng-class="{'active': future.Currency === 'USD'}">USD</a>
+                                <a href="" ng-click="future.Currency = 'CHF'" class="divider" ng-class="{'active': future.Currency === 'CHF'}">CHF</a>
                             </div>
                         </div>
                         <div class="group">
                             <label>{{ 'BILLING' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="" ng-click="billing = 1" ng-class="{'active': billing === 1}">
+                                <a href="" ng-click="future.BillingCycle = 1" ng-class="{'active': future.BillingCycle === 1}">
                                 {{ 'MONTHLY' | translate }}
                                 </a>
-                                <a href="" ng-click="billing = 12" ng-class="{'active': billing === 12}" class="divider">
+                                <a href="" ng-click="future.BillingCycle = 12" ng-class="{'active': future.BillingCycle === 12}" class="divider">
                                 {{ 'YEARLY' | translate }}
                                 </a>
                             </div>
                         </div>
                     </header>
                     <div class="plans vertical">
-                        <div class="plan" ng-class="{'selected': plan === 'basic'}" ng-if="false">
+                        <div class="plan" ng-class="{'selected': current.Plan === 'basic'}" ng-if="false">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -170,14 +193,14 @@
                             <div class="price">
                                 <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
-                            <div class="action" ng-class="{'white': plan === 'basic'}">
+                            <div class="action" ng-class="{'white': current.Plan === 'basic'}">
                                 <a href="#">
                                     <strong>{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="plan" ng-class="{'selected': plan === 'plus'}">
+                        <div class="plan" ng-class="{'selected': current.Plan === 'plus'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -192,8 +215,8 @@
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong>{{ 'STORAGE' | translate }}</strong>
-                                    <span class="cost" ng-show="(spacePrice[billing] * spacePlus.index) > 0">
-                                        <strong>+ {{ spacePrice[billing] * spacePlus.index | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="(spacePrice[future.BillingCycle] * spacePlus.index) > 0">
+                                        <strong>+ {{ spacePrice[future.BillingCycle] * spacePlus.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
@@ -204,8 +227,8 @@
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                    <span class="cost" ng-show="(domainPrice[billing] * domainPlus.index) > 0">
-                                        <strong>+ {{ domainPrice[billing] * domainPlus.index | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="(domainPrice[future.BillingCycle] * domainPlus.index) > 0">
+                                        <strong>+ {{ domainPrice[future.BillingCycle] * domainPlus.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
@@ -216,8 +239,8 @@
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <strong> {{ 'ADDRESSES' | translate }}</strong>
-                                    <span class="cost" ng-show="(addressPrice[billing] * addressPlus.index) > 0">
-                                        <strong>+ {{ addressPrice[billing] * addressPlus.index | number: 2 | currency: currency }}</strong>
+                                    <span class="cost" ng-show="(addressPrice[future.BillingCycle] * addressPlus.index) > 0">
+                                        <strong>+ {{ addressPrice[future.BillingCycle] * addressPlus.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li class="disabled">
@@ -239,9 +262,9 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ total('plus') | number: 2 | currency: currency }}
-                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
+                                    {{ total('plus') | number: 2 | currency: future.Currency }}
+                                    <span ng-show="future.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="future.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
@@ -251,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="plan middle" ng-class="{'selected': plan === 'business'}">
+                        <div class="plan middle" ng-class="{'selected': current.Plan === 'business'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -267,7 +290,7 @@
                                     </span>
                                     <strong>{{ 'STORAGE' | translate }}</strong>
                                     <span class="cost" ng-show="spaceBusiness.index > 0">
-                                        <strong>+ {{ spacePrice[billing] * spaceBusiness.index | number: 2 | currency: currency }}</strong>
+                                        <strong>+ {{ spacePrice[future.BillingCycle] * spaceBusiness.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
@@ -279,7 +302,7 @@
                                     </span>
                                     <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
                                     <span class="cost" ng-show="domainBusiness.index > 0">
-                                        <strong>+ {{ spacePrice[billing] * spaceBusiness.index | number: 2 | currency: currency }}</strong>
+                                        <strong>+ {{ domainPrice[future.BillingCycle] * domainBusiness.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
@@ -291,7 +314,7 @@
                                     </span>
                                     <strong> {{ 'ADDRESSES' | translate }}</strong>
                                     <span class="cost" ng-show="addressBusiness.index > 0">
-                                        <strong>+ {{ addressPrice[billing] * addressBusiness.index | number: 2 | currency: currency }}</strong>
+                                        <strong>+ {{ addressPrice[future.BillingCycle] * addressBusiness.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li>
@@ -303,7 +326,7 @@
                                     </span>
                                     <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
                                     <span class="cost" ng-show="memberBusiness.index > 0">
-                                        <strong>+ {{ memberPrice[billing] * memberBusiness.index | number: 2 | currency: currency }}</strong>
+                                        <strong>+ {{ memberPrice[future.BillingCycle] * memberBusiness.index | number: 2 | currency: future.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li class="disabled">
@@ -320,9 +343,9 @@
                             <div class="price">
                                 <strong>{{ 'TOTAL' | translate }}:</strong>
                                 <span>
-                                    {{ total('business') | number: 2 | currency: currency }}
-                                    <span ng-show="billing === 1">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="billing === 12">{{ 'PER_YEAR' | translate }}</span>
+                                    {{ total('business') | number: 2 | currency: future.Currency }}
+                                    <span ng-show="future.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
+                                    <span ng-show="future.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
                                 </span>
                             </div>
                             <div class="action">
@@ -332,7 +355,7 @@
                             </div>
                         </div>
 
-                        <div class="plan" ng-class="{'selected': plan === 'enterprise'}">
+                        <div class="plan" ng-class="{'selected': current.Plan === 'enterprise'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail

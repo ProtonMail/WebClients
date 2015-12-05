@@ -13,19 +13,19 @@
     </a>
     <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()">
         <img src="assets/img/snackie.png" ng-show="snackies" id="snackie" class="animated infinite rubberBand">
-        <label>
-            <i class="fa fa-search"></i>
-        </label>
         <button  type="button" class="advanced" ng-click="openSearchModal(params.searchMessageInput)" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
             <i class="fa fa-angle-down"></i>
         </button>
         <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
+        <button type="submit">
+            <i class="fa fa-search"></i>
+        </button>
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
-        <label>
-            <i class="fa fa-search"></i>
-        </label>
         <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
+        <button type="submit">
+            <i class="fa fa-search"></i>
+        </button>
     </form>
     <ul class="navigation">
         <!-- <li ng-class="{'active': activeMail()}">
@@ -47,7 +47,11 @@
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
-            <a href="" ui-sref="secured.dashboard">
+            <a href="" ui-sref="secured.dashboard" ng-show="user.Role === 'master'">
+                <em><i class="fa fa-cogs"></i></em>
+                <strong>{{ 'SETTINGS' | translate }}</strong>
+            </a>
+            <a href="" ui-sref="secured.account" ng-hide="user.Role === 'master'">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>

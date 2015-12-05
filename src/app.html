@@ -50,9 +50,9 @@ ng-class="{
     columns: (layoutMode==='columns'),
     activeComposer:activeComposer,
     maximizedComposer:maximizedComposer,
-    light: (('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState)),
-    scroll: (('step1'|isState) || ('secured.print'|isState)),
-    modalOpen: modalOpen, 
+    light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState),
+    scroll: ('step1'|isState) || ('secured.print'|isState),
+    modalOpen: modalOpen,
     themeJason: themeJason
 }">
 
@@ -72,12 +72,7 @@ ng-class="{
 </div>
 
 <div id="exiting" ng-class="{ 'show': loggingOut }">
-    <div class="spinner large">
-        <div class="spinner1"></div>
-        <div class="spinner2"></div>
-        <div class="spinner3"></div>
-        
-    </div>
+    <img src="/assets/img/loader-alt.gif" class="loader">
     <p>LOGGING OUT...</p>
 </div>
 

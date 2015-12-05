@@ -1,6 +1,17 @@
 angular.module("proton.controllers.Settings")
 
-.controller('SecurityController', function($log, $rootScope, $scope, $translate, authentication, Logs, networkActivityTracker, notify, confirmModal) {
+.controller('SecurityController', function(
+    $log,
+    $rootScope,
+    $scope,
+    $translate,
+    authentication,
+    confirmModal,
+    Logs,
+    networkActivityTracker,
+    notify,
+    Setting
+) {
     $scope.logs = [];
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;

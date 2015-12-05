@@ -85,7 +85,7 @@ header#pm_header {
 	            border-color: 66669a !important;
 	            outline: none;
 	        }
-		}		
+		}
 	}
 	.help {
 		color: #000 !important;
@@ -120,16 +120,11 @@ header#pm_header {
 		:-ms-input-placeholder {
 		   color: $primary;
 		}
-		label {
-			display: block;
-			width: 35px;
-			text-align: center;
-		}
-		button.advanced {
+		button {
 			padding: 0;
 			border: none;
 			display: block;
-			width: 25px;
+			width: 50px;
 			background-color: transparent;
 			cursor: pointer;
 		}
@@ -186,7 +181,7 @@ header#pm_header {
 				    line-height: initial !important;
 				    float: none;
 				}
-			}			
+			}
 			a {
 				height: $headerHeight;
 				padding-top: 10px;

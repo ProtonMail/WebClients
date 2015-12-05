@@ -27,7 +27,6 @@ angular.module("proton.models.payments", [])
          * Check the plan configured by the user to see if it's correct
          */
         plan: function(configuration) {
-            console.log(configuration);
             return $http.post(url.get() + '/payments/plan', configuration);
         },
         /**
@@ -40,11 +39,7 @@ angular.module("proton.models.payments", [])
          * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
          */
         status: function() {
-            return $http.get(url.get() + '/payments/status', {
-                params: {
-                    ExternalProvider: 'Stripe'
-                }
-            });
+            return $http.get(url.get() + '/payments/status');
         },
         /**
          *  Get payments corresponding to the given user.
@@ -78,14 +73,14 @@ angular.module("proton.models.payments", [])
          * Get current payment information from Stripe
          */
         sources: function() {
-            return $http.get(url.get() + '/payments/source');
+            return $http.get(url.get() + '/payments/sources');
         },
         /**
          * Send a new credit card information
          * @param {Object} Obj
          */
         change: function(Obj) {
-            return $http.post(url.get() + '/payments/source', Obj);
+            return $http.put(url.get() + '/payments/sources', Obj);
         }
     };
 })

@@ -1,3 +1,12 @@
+#settingsAppearance.row {
+    .setting {
+        .radio.col {
+            width: 50%;
+            min-width: 50%;
+        }
+    }
+}
+
 #addUserModal .pm_buttons a {
     height: 31px;
     line-height: 31px;
@@ -144,6 +153,9 @@
             margin-right: .5rem;
         }
     }
+    .editor-container {
+        position: relative;
+    }
     #usersTable {
         th {
             width: 12rem;
@@ -219,10 +231,10 @@
                 display: inline-block;
                 padding-right: 2rem;
                 label {
-                    display: block;
+                    display: inline-block;
                     line-height: 35px;
                     float: left;
-                    width: 5rem;
+                    padding-right: 1rem;
                 }
                 .pm_buttons a em {
                     font-style: normal;
@@ -812,6 +824,9 @@
                 }
                 .radio {
                     display: inline-block;
+                    img {
+                        max-width: 100%;
+                    }
                 }
                 #logArea {
                     padding: 1rem 0;
@@ -837,6 +852,35 @@
 
 @media (max-width: $tablet-landscape) {
     #pm_settings {
+
+        #logActions {
+            float: left;
+            margin: 0 0 1rem -5px;
+            clear: both;
+        }
+
+        #logArea {
+            padding-top: 2rem;
+        }
+
+        #accessLog tr {
+            margin-bottom: 1rem;
+            padding: 0;
+            border: 1px solid $border;
+            display: block;
+            td {
+                display: block;
+                padding: 0 1rem;
+                span {
+                    float: none;
+                    text-align: left !important;
+                }
+            }
+            td.text-right {
+                text-align: left;
+            }
+        }
+
         .settings {
             padding: 0 10px;
         }
@@ -888,14 +932,6 @@
         }
         .settings {
             margin-right: 0;
-            .row {
-                .setting {
-                    width: 100%;
-                    float: left;
-                    clear: both;
-                    margin-bottom: 1rem;
-                }
-            }
             .pm_table tr {
                 display: table-row;
                 width: initial;
@@ -956,6 +992,16 @@
 }
 
 @media (max-width: $mobile-landscape) {
+
+    #settingsAppearance.row {
+        .setting {
+            .radio.col {
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+
     #newUser{
         .newUser {
             padding-left: 0;
@@ -998,20 +1044,8 @@
             margin: 10px;
             border: none;
             position: relative;
-            .pm_select {
-                width: 100%;
-                select {
-                    height: 33px;
-                    line-height: 33px;
-                }
-                .fa {
-                    position: absolute;
-                    right: 1rem;
-                    top: 0;
-                    bottom: 0;
-                    height: 33px;
-                    line-height: 33px;
-                }
+            .pm_button {
+                margin-bottom: 1rem;
             }
         }
         .well {

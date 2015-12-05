@@ -41,7 +41,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
-        $scope.allSelectedCheckbox = false;
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         networkActivityTracker.track($scope.refreshConversations().then(function() {
@@ -51,7 +50,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
-                $rootScope.numberSelectedMessages = $scope.elementsSelected().length;
+                $rootScope.numberElementSelected = $scope.elementsSelected().length;
+                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -131,13 +131,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             switch($scope.mailbox) {
                 case 'drafts':
                 case 'sent':
-                    result = cacheCounters.total(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    result = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
                 case 'label':
-                    result = cacheCounters.conversation($stateParams.label);
+                    result = cacheCounters.totalConversation($stateParams.label);
                     break;
                 default:
-                    result = cacheCounters.conversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
+                    result = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
             }
         }
@@ -172,15 +172,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         params.Page = ($stateParams.page || 1) - 1;
 
-        if ($stateParams.filter) {
-            params.Unread = +($stateParams.filter === 'unread');
+        if (angular.isDefined($stateParams.filter)) {
+            params.Unread = parseInt($stateParams.filter === 'unread');
         }
 
-        if ($stateParams.sort) {
+        if (angular.isDefined($stateParams.sort)) {
             var sort = $stateParams.sort;
-            var desc = _.string.startsWith(sort, "-");
+            var desc = sort.charAt(0) === '-';
 
-            if (desc) {
+            if (desc === true) {
                 sort = sort.slice(1);
             }
 
@@ -295,26 +295,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     *
+     * Return if all elements are selected
+     * @return {Boolean}
      */
     $scope.allSelected = function() {
-        var status = true;
-
         if ($scope.conversations && $scope.conversations.length > 0) {
-            _.forEach($scope.conversations, function(conversation) {
-                if (!!!conversation.Selected) {
-                    status = false;
-                }
-            });
+            return $scope.conversations.length === $scope.elementsSelected().length;
         } else {
-            status = false;
+            return false;
         }
-
-        $scope.allSelectedCheckbox = status;
     };
 
+    /**
+     * Select or unselect all elements
+     */
     $scope.toggleAllSelected = function() {
-        var status = $scope.allSelectedCheckbox;
+        var status = $scope.allSelected();
 
         if(status === true) {
             $scope.unselectAllElements();
@@ -330,8 +326,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         _.each($scope.conversations, function(conversation) {
             conversation.Selected = true;
         });
-
-        $scope.allSelectedCheckbox = true;
     };
 
     /**
@@ -341,8 +335,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         _.each($scope.conversations, function(conversations) {
             conversations.Selected = false;
         });
-
-        $scope.allSelectedCheckbox = false;
     };
 
     /**
@@ -373,9 +365,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // cache
         _.each(elements, function(element) {
-            element.NumUnread = 0;
+            element.Selected = false;
 
             if(type === 'conversation') {
+                element.NumUnread = 0;
                 var messages = cache.queryMessagesCached(element.ID);
 
                 conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
@@ -387,6 +380,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     });
                 }
             } else if(type === 'message') {
+                var conversation = cache.getConversationCached(element.ConversationID);
+
+                if(angular.isDefined(conversation)) {
+                    conversation.NumUnread--;
+                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                }
+
+                element.IsRead = 1;
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
@@ -416,9 +417,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // cache
         _.each(elements, function(element) {
-            element.NumUnread = 1;
+            element.Selected = false;
 
             if(type === 'conversation') {
+                element.NumUnread = element.NumMessages;
                 var messages = cache.queryMessagesCached(element.ID);
 
                 conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
@@ -430,6 +432,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     messageEvent.push({Action: 3, ID: last.ID, Message: last});
                 }
             } else if(type === 'message') {
+                var conversation = cache.getConversationCached(element.ConversationID);
+
+                if(angular.isDefined(conversation)) {
+                    conversation.NumUnread++;
+                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                }
+
+                element.IsRead = 0;
                 messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
@@ -471,8 +481,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 }
             } else if(type === 'message') {
                 messageEvent.push({Action: 0, ID: element.ID, Message: element});
-                // Manage the case where the message is open in the composer
-                $rootScope.$broadcast('deleteMessage', element.ID);
             }
         });
 
@@ -499,20 +507,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var conversationEvent = [];
         var messageEvent = [];
         var type = tools.typeList();
+        var current = tools.currentLocation();
 
         // Cache
         _.each(elements, function(element) {
-            var currents = [];
-
-            // Find current location
-            _.each(element.LabelIDs, function(labelID) {
-                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
-                    currents.push(labelID.toString());
-                }
-            });
-
             element.Selected = false;
-            element.LabelIDsRemoved = currents; // Remove currents location
+            element.LabelIDsRemoved = [current]; // Remove current location
             element.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
 
             if(type === 'conversation') {
@@ -523,7 +523,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.Selected = false;
-                        message.LabelIDsRemoved = currents; // Remove currents location
+                        message.LabelIDsRemoved = [current]; // Remove current location
                         message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
                         messageEvent.push({Action: 3, ID: message.ID, Message: message});
                     });
@@ -543,6 +543,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else if (type === 'message') {
             Message[mailbox]({IDs: ids});
         }
+
+        // Back to element list
+        $scope.back();
+    };
+
+    /**
+     * Back to conversation / message list
+     */
+    $scope.back = function() {
+        $state.go("secured." + $scope.mailbox + '.list', {
+            id: null // remove ID
+        });
     };
 
     /**
@@ -551,7 +563,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.draft = function(element) {
-        return element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+        return angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**
@@ -565,6 +577,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Complex method to apply labels on element selected
      * @param {Array} labels
      * @param {Boolean} alsoArchive
+     * @return {Promise}
      */
     $scope.saveLabels = function(labels, alsoArchive) {
         var REMOVE = 0;
@@ -621,7 +634,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 promises.push(Conversation.labels(labelID, ADD, ids));
             } else if(type === 'message') {
-                promises.push(Label.apply({id: labelID, MessageIDs: ids}).$promise);
+                promises.push(Label.apply(labelID, ids));
             }
         });
 
@@ -629,7 +642,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 promises.push(Conversation.labels(labelID, REMOVE, ids));
             } else if(type === 'message') {
-                promises.push(Label.remove({id: labelID, MessageIDs: ids}).$promise);
+                promises.push(Label.remove(labelID, ids));
             }
         });
 
@@ -647,6 +660,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         // Close dropdown labels
         $scope.closeLabels();
+
+        // Back to the current message list if we archive element selected
+        if(alsoArchive === true) {
+            $scope.back();
+        }
 
         return deferred.promise;
     };
@@ -874,7 +892,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String}
      */
     $scope.filterBy = function(status) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: status,
             page: undefined
         }));
@@ -884,7 +902,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Clear current filter
      */
     $scope.clearFilter = function() {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: undefined,
             page: undefined
         }));
@@ -895,7 +913,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} criterion
      */
     $scope.orderBy = function(criterion) {
-        $state.go($state.current.name, _.extend({}, $state.params, {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
             page: undefined
         }));
@@ -916,10 +934,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     title: title,
                     message: message,
                     confirm: function() {
-                        // Generate event to empty folder
-                        cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                        cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-
                         if (mailbox === 'drafts') {
                             promise = Message.emptyDraft().$promise;
                         } else if (mailbox === 'spam') {
@@ -929,13 +943,17 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         }
 
                         promise.then(function(result) {
+                            // Generate event to empty folder
+                            cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                            cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                            // Close modal
+                            confirmModal.deactivate();
+                            // Notify user
                             notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
                         }, function(error) {
                             notify({message: 'Error during the empty request', classes: 'notification-danger'});
                             $log.error(error);
                         });
-
-                        confirmModal.deactivate();
                     },
                     cancel: function() {
                         confirmModal.deactivate();

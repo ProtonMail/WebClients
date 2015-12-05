@@ -64,23 +64,23 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                 title: $translate.instant('CREATE_NEW_LABEL'),
                 create: function(name, color) {
                     // already exist?
-                    var result = _.find(authentication.user.Labels, function(label) {
-                        return label.Name === name;
-                    });
+                    var exist = _.findWhere(authentication.user.Labels, {Name: name});
 
-                    if (angular.isUndefined(result)) {
-                        labelModal.deactivate();
+                    if(angular.isUndefined(exist)) {
                         networkActivityTracker.track(
-                            Label.save({
+                            Label.create({
                                 Name: name,
                                 Color: color,
                                 Display: 1
-                            }).$promise.then(function(result) {
-                                if(angular.isDefined(result.Label)) {
+                            }).then(function(result) {
+                                var data = result.data;
+
+                                if(angular.isDefined(data) && data.Code === 1000) {
+                                    authentication.user.Labels.push(data.Label);
+                                    labelModal.deactivate();
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
-                                    authentication.user.Labels.push(result.Label);
-                                } else {
-                                    notify({message: result.Error, classes: 'notification-danger'});
+                                } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
+                                    notify({message: data.Error, classes: 'notification-danger'});
                                     $log.error(result);
                                 }
                             }, function(error) {
@@ -159,19 +159,19 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param {String} route
      */
     $scope.goTo = function(route) {
-        var sameFolder = $state.current.name === route;
+        var sameFolder = $state.$current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
+        var params = {page: null, filter: null, sort: null};
 
+        // Hide sidebar for mobile
         $scope.hideMobileSidebar();
 
-        // I used this instead of ui-sref because ui-sref-options is not synchronized when user click on it.
+        // Call last event if first page and same folder
         if(sameFolder === true && firstPage === true) {
             $scope.lastEvent();
-        } else {
-            var params = {page: undefined, filter: undefined, sort: undefined};
-
-            $state.go(route, params); // remove the older parameters
         }
+
+        $state.go(route, params); // remove the older parameters
     };
 
     /**
@@ -199,43 +199,27 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
 
-
-    /**
-     * "jqyoui-droppable" event handler. Moves or labels messages when drag & dropped
-     */
-    $scope.onDropMessage = function(event, ui, name) {
-        var folders = ['inbox', 'archive', 'spam', 'trash'];
-
-        if(_.contains(folders, name)) { // Is it a folder?
-            if($state.is('secured.' + name)) { // Same folder?
-                notify($translate.instant('SAME_FOLDER'));
-            } else {
-                $rootScope.$broadcast('move', name);
-            }
-        } else if(name === 'starred') {
-            // Just star selected messages
-            $rootScope.$broadcast('starMessages');
-        } else {
-            var LabelID = name;
-            // Apply label
-            $rootScope.$broadcast('applyLabels', LabelID);
-        }
-    };
-
     /**
      * Returns the number of unread messages in a location
      * @param mailbox {String} name indentifier for folder
      * @param id {Integer} labelID for a label
      * @return {Integer}
      */
-    $scope.getUnread = function(mailbox, id) {
+    $scope.unread = function(mailbox, id) {
         var result;
         var count;
 
-        if(mailbox === 'label') {
-            count = cacheCounters.unread(id);
-        } else {
-            count = cacheCounters.unread(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+        switch (mailbox) {
+            // case 'drafts':
+            // case 'sent':
+            //     count = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+            //     break;
+            case 'label':
+                count = cacheCounters.unreadConversation(id);
+                break;
+            default:
+                count = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                break;
         }
 
         if (count === undefined) {

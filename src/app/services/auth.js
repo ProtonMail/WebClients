@@ -4,26 +4,26 @@ angular.module("proton.authentication", [
 ])
 
 .factory('authentication', function(
-    pmcw,
-    CONSTANTS,
-    $state,
-    $rootScope,
-    $q,
     $http,
-    $timeout,
     $log,
+    $q,
+    $rootScope,
+    $state,
+    $timeout,
+    CONFIG,
+    CONSTANTS,
     errorReporter,
-    url,
+    networkActivityTracker,
     notify,
-    CONFIG
+    pmcw,
+    url
 ) {
 
     // PRIVATE FUNCTIONS
     var auth = {
-
+        headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
         setAuthHeaders: function() {
-
             this.headersSet = true;
             // API version
             if ( auth.data.SessionToken ) {
@@ -35,8 +35,7 @@ angular.module("proton.authentication", [
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
-            }
-            else {
+            } else {
                 // we need the old stuff for now
                 $log.debug('setAuthHeaders:2');
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
@@ -45,7 +44,6 @@ angular.module("proton.authentication", [
         },
 
         fetchUserInfo: function(uid) {
-
             var deferred = $q.defer();
 
             $http.get(url.get() + "/users", {
@@ -54,52 +52,65 @@ angular.module("proton.authentication", [
                 }
             }).then(
                 function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        var user = result.data.User;
 
-                    var user = result.data.User;
+                        if (!user.EncPrivateKey) {
+                            deferred.reject({message: 'Error with EncPrivateKey'});
+                            api.logout(true);
+                        } else {
+                            $q.all([
+                                $http.get(url.get() + "/contacts"),
+                                $http.get(url.get() + "/labels")
+                            ]).then(
+                                function(result) {
+                                    if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
+                                        user.Contacts = result[0].data.Contacts;
+                                        user.Labels = result[1].data.Labels;
+                                        user.Role = 'panda'; // TODO need back-end initialization
 
-                    // Set the rows/columsn mode
-                    if (!angular.isUndefined(user.ViewLayout)) {
-                        if (user.ViewLayout===0) {
-                            $rootScope.layoutMode = 'columns';
+                                        // Set the rows / columns mode
+                                        if (angular.isDefined(user.ViewLayout)) {
+                                            if (user.ViewLayout === 0) {
+                                                $rootScope.layoutMode = 'columns';
+                                            } else {
+                                                $rootScope.layoutMode = 'rows';
+                                            }
+                                        }
+
+                                        deferred.resolve(user);
+                                    } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
+                                        deferred.reject({message: result[0].data.Error});
+                                        api.logout(true);
+                                    } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
+                                        deferred.reject({message: result[1].data.Error});
+                                        api.logout(true);
+                                    } else {
+                                        deferred.reject({message: 'Error during label / contact request'});
+                                        api.logout(true);
+                                    }
+                                },
+                                function() {
+                                    deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
+                                    api.logout(true);
+                                }
+                            );
                         }
-                        else {
-                            $rootScope.layoutMode = 'rows';
-                        }
-                    }
-
-                    if (!user.EncPrivateKey) {
-                        api.logout();
-                        deferred.reject();
-                    }
-                    else {
-                        $q.all([
-                            $http.get(url.get() + "/contacts"),
-                            $http.get(url.get() + "/labels")
-                        ]).then(
-                            function(result) {
-                                user.Contacts = result[0].data.Contacts;
-                                user.Labels = result[1].data.Labels;
-                                return deferred.resolve(user);
-                            },
-                            function() {
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: 'Sorry, but we were unable to fully log you in.'
-                                });
-                                api.logout();
-                            }
-                        );
+                    } else if(angular.isDefined(result.data) && result.data.Error) {
+                        deferred.reject({message: result.data.Error});
+                        api.logout(true);
+                    } else {
+                        deferred.reject({message: 'Error during user request'});
+                        api.logout(true);
                     }
                 },
                 function(err) {
-                    console.log(err);
-                    notify({
-                        classes: 'notification-danger',
-                        message: 'Sorry, but we were unable to log you in.'
-                    });
-                    api.logout();
+                    deferred.reject({message: 'Sorry, but we were unable to log you in.'});
+                    api.logout(true);
                 }
             );
+
+            networkActivityTracker.track(deferred.promise);
 
             return deferred.promise;
         },
@@ -109,13 +120,13 @@ angular.module("proton.authentication", [
             if ( data.SessionToken ) {
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"] = pmcw.encode_base64(data.SessionToken);
                 auth.data = data;
-            }
-            else {
+            } else {
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
                 auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             }
+
             auth.setAuthHeaders();
         },
 
@@ -126,25 +137,21 @@ angular.module("proton.authentication", [
 
     // RUN-TIME PUBLIC FUNCTIONS
     var api = {
+        user: null,
         detectAuthenticationState: function() {
             var session = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"];
+
             if (session) {
                 auth.data = {
                     SessionToken: pmcw.decode_base64(session)
                 };
-
-                auth.mailboxPassword = this.getPassword();
-
-                if (auth.mailboxPassword) {
-                    pmcw.setMailboxPassword(auth.mailboxPassword);
-                }
             }
         },
 
         savePassword: function(pwd) {
-            // Why is this saved in three different places?
+            // Save password in session storage
             window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_utf8_base64(pwd);
-            auth.mailboxPassword = pwd;
+            // Set pmcrypto.mailboxPassword
             pmcw.setMailboxPassword(pwd);
         },
 
@@ -269,7 +276,7 @@ angular.module("proton.authentication", [
                 },
                 function(err) {
                     $log.error('setAuthCookie2', err);
-                    deferred.reject({ message: "Error setting authentication cookies." });
+                    deferred.reject({message: "Error setting authentication cookies."});
                 }
             );
 
@@ -317,22 +324,6 @@ angular.module("proton.authentication", [
             return deferred.promise;
         },
 
-        // Whether a user is logged in at all
-        isLoggedIn: function() {
-            // $log.debug('isLoggedIn');
-            // console.log(auth);
-            // console.log(auth.data);
-            // console.log(this.refreshTokenIsDefined());
-
-            var loggedIn = auth.data && this.sessionTokenIsDefined();
-
-            if (loggedIn && !!!auth.headersSet) {
-                auth.setAuthHeaders();
-            }
-            // $log.debug('isLoggedIn:',loggedIn);
-            return loggedIn;
-        },
-
         sessionTokenIsDefined: function() {
             var isDefined = false;
 
@@ -343,15 +334,24 @@ angular.module("proton.authentication", [
             return isDefined;
         },
 
-        // Whether the mailbox' password is accessible, or if the user needs to re-enter it
-        isLocked: function() {
-            return !this.isLoggedIn() || _.isUndefined(auth.mailboxPassword);
+        // Whether a user is logged in at all
+        isLoggedIn: function() {
+            var loggedIn = this.sessionTokenIsDefined();
+
+            if (loggedIn === true && auth.headersSet === false) {
+                auth.setAuthHeaders();
+            }
+
+            return loggedIn;
         },
 
-        // TODO, aren't isLocked and isSecured exact opposites of one another? Why do they both exist?
-        // Logged in and MBPW is set
+        // Whether the mailbox' password is accessible, or if the user needs to re-enter it
+        isLocked: function() {
+            return this.isLoggedIn() === false || angular.isUndefined(this.getPassword());
+        },
+
         isSecured: function() {
-            return this.isLoggedIn() && !this.isLocked();
+            return this.isLoggedIn() && angular.isDefined(this.getPassword());
         },
 
         // Return a state name to be in in case some user authentication step is required.
@@ -398,69 +398,60 @@ angular.module("proton.authentication", [
         //     }
         // },
 
-        // Removes all connection data
-        logout: function(reload) {
+        /**
+         * Removes all connection data
+         * @param {Boolean} redirect - Redirect at the end the user to the login page
+         */
+        logout: function(redirect) {
+            var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
+            var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
+            var process = function() {
+                this.clearData();
+
+                if(redirect === true) {
+                    $state.go('login');
+                }
+            }.bind(this);
 
             $rootScope.loggingOut = true;
 
-            if (reload===undefined) {
-                reload = true;
-            }
-
-            var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
-            var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
-
-            // HACKY ASS BUG
-            var clearData = function() {
-                
-                // Completely clear sessionstorage
-                window.sessionStorage.clear();
-                
-                delete auth.data;
-                
-                delete auth.mailboxPassword;
-                
-                auth.headersSet = false;
-                // TODO clean this, up, need to reset $http headers if we hope to get rid of hack
-                
-                this.user = null;
-                
-                window.onbeforeunload = undefined;
-                if (reload) {
-                    location.reload();
-                }
-            };
-
             if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
-                $http.delete(url.get() + "/auth").then( clearData, clearData );
+                $http.delete(url.get() + "/auth").then(process, process);
             } else {
-                clearData();
+                process();
             }
+        },
 
-            // THIS SHOULD BE RE-ENABLED WHEN WE FIX THE BUG
-            $rootScope.isLoggedIn = false;
-            $rootScope.isLocked = true;
-            $rootScope.isSecure = false;
+        clearData: function() {
+            // Completely clear sessionstorage
+            window.sessionStorage.clear();
+            // Delete data key
+            delete auth.data;
+            auth.headersSet = false;
+            // Remove all user information
+            this.user = null;
+            // Clean onbeforeunload listener
+            window.onbeforeunload = undefined;
+            // Disable animation
+            $rootScope.loggingOut = false;
+            // Re-initialize variables
+            $rootScope.isLoggedIn = this.isLoggedIn();
+            $rootScope.isLocked = this.isLocked();
+            $rootScope.isSecure = this.isSecured();
             $rootScope.domoArigato = false;
-
         },
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
         unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
-
-            // console.log(epk, pwd, accessToken, TemporaryAccessData);
-
             var req = $q.defer();
             var self = this;
 
             if (pwd) {
-
                 pmcw.checkMailboxPassword(epk, pwd, accessToken)
                 .then(
                     function(response) {
                         this.savePassword(pwd);
-                        auth.mailboxPassword = pwd;
                         this.receivedCredentials({
                             "AccessToken": response,
                             "RefreshToken": TemporaryAccessData.RefreshToken,
@@ -494,11 +485,9 @@ angular.module("proton.authentication", [
 
         fetchUserInfo: function(uid) {
             var promise = auth.fetchUserInfo(uid);
+
             return promise.then(
                 function(user) {
-
-                    // console.log(user);
-
                     if (user.DisplayName.length === 0) {
                         user.DisplayName = user.Name;
                     }
@@ -520,22 +509,22 @@ angular.module("proton.authentication", [
         }
     };
 
-    // Initialization
-    api.user = null;
-    auth.headersSet = false;
-
     return api;
 })
 
-.run(function($rootScope, authentication, eventManager, cache, CONFIG) {
+.run(function($rootScope, $state, authentication, eventManager, cache, CONFIG) {
     authentication.detectAuthenticationState();
-    //authentication.refreshIfNecessary();
+
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();
+
+    /**
+     * Logout current session
+     */
     $rootScope.logout = function() {
         eventManager.stop();
         cache.clear();
-        authentication.logout();
+        $state.go('login');
     };
 });

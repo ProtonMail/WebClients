@@ -7,7 +7,7 @@ angular.module("proton.height", [])
             // set to zero
             element.css({ height: 0 });
 
-            var margin = 20;
+            var margin = 0;
             var windowHeight = angular.element($window).height();
             var elementOffset = element[0].getBoundingClientRect();
             var height = windowHeight - elementOffset.top - margin;

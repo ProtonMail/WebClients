@@ -1,4 +1,4 @@
-<nav id="pm_toolbar_responsive" class="{{ $state.name }}">
+<nav id="pm_toolbar_responsive" class="{{ currentState }}">
     <div class="messageActions pull-right">
         <span class="pm_buttons nav">
             <a href="" ng-click="previous()" pt-tooltip="{{ 'PREVIOUS' | translate }}">
@@ -41,7 +41,7 @@
             </a>
         </span>
         <span class="pm_buttons">
-            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberSelectedMessages === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
+            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>

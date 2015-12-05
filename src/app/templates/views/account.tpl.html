@@ -46,6 +46,7 @@
                             <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
+                    <div class="clearfix">&nbsp;</div>
                     <div class="clearfix">
                         <div class="col left">
                             <label>{{ 'DAILY_EMAIL_NOTIFICATIONS' | translate }}</label>
@@ -97,6 +98,11 @@
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" class="margin" />
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col left">&nbsp;</div>
+                        <div class="col right">
                             <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
@@ -134,6 +140,11 @@
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" class="margin" required="" />
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col left">&nbsp;</div>
+                        <div class="col right">
                             <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
@@ -223,12 +234,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" value="1" ng-change="saveShowImages(showImages)" /> {{ 'AUTO' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="1" /> {{ 'AUTO' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" ng-model="ShowImages" value="0" ng-change="saveShowImages(showImages)" /> {{ 'MANUAL' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="0" /> {{ 'MANUAL' | translate }}
                                 </label>
                             </div>
                             <p>

@@ -68,15 +68,17 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
+					console.log('message count', counts);
 					_.each(counts, function(count) {
-						cacheCounters.update(count.LabelID, count.Total, count.Unread);
+						cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
 					});
 				}
 			},
 			manageConversationCounts: function(counts) {
 				if(angular.isDefined(counts)) {
+					console.log('conversation count', counts);
 					_.each(counts, function(count) {
-						cacheCounters.update(count.LabelID, undefined, undefined, count.Total);
+						cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
 					});
 				}
 			},
@@ -137,8 +139,8 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageUser(data.User);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
-					this.manageConversations(data.Conversations);
 					this.manageMessages(data.Messages);
+					this.manageConversations(data.Conversations);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}

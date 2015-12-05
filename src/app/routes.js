@@ -40,6 +40,10 @@ angular.module("proton.routes", [
                 controller: "LoginController",
                 templateUrl: "templates/views/login.tpl.html"
             }
+        },
+        onEnter: function(authentication) {
+            // We automatically logout the user when he comes to login page
+            authentication.logout(false);
         }
     })
 
@@ -51,13 +55,11 @@ angular.module("proton.routes", [
                 templateUrl: "templates/views/unlock.tpl.html"
             }
         },
-        onEnter: function($rootScope, $state, authentication, $log) {
-            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge===undefined) {
-                $log.debug('login.unlock.onEnter:1');
-                $rootScope.isLoggedIn = false;
-                authentication.logout();
-                $state.go('login');
+        onEnter: function($rootScope, $state, authentication) {
+            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge === undefined) {
+                authentication.logout(true);
             }
+
             setTimeout( function() {
                 $( "[type=password]" ).focus();
             }, 200);
@@ -123,7 +125,6 @@ angular.module("proton.routes", [
             }
         },
         onEnter: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
-
             // clear user data if already logged in:
             authentication.logout(false);
             $rootScope.loggingOut = false;
@@ -501,20 +502,22 @@ angular.module("proton.routes", [
             // Contains also labels and contacts
             user: function(authentication, $log, $http, pmcw) {
                 $log.debug('user:resolve:');
-                if(angular.isDefined(authentication.user) && authentication.user) {
+
+                if(angular.isObject(authentication.user)) {
                     return authentication.user;
-                }
-                else {
+                } else {
                     $log.debug('user:resolve:fetchUserInfo');
                     $log.debug(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
-                    if (window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')!==undefined) {
+
+                    if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
                         $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
+
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }
             }
         },
-        onEnter: function(authentication, $state, $log) {
+        onEnter: function(authentication) {
             // This will redirect to a login step if necessary
             authentication.redirectIfNecessary();
         }
@@ -602,6 +605,28 @@ angular.module("proton.routes", [
 
     .state("secured.invoices", {
         url: "/invoices",
+        resolve: {
+            master: function(authentication) {
+                var deferred = $q.defer();
+                var process = function() {
+                    if(authentication.user.Role === 'master') {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                };
+
+                if(angular.isObject(authentication.user)) {
+                    process();
+                } else {
+                    authentication.fetchUserInfo().then(function() {
+                        process();
+                    });
+                }
+
+                return deferred.promise;
+            }
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/invoices.tpl.html",
@@ -613,7 +638,30 @@ angular.module("proton.routes", [
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {
-            payment: function(Payment, networkActivityTracker) {
+            master: function(authentication, $q) {
+                var deferred = $q.defer();
+                var process = function() {
+                    if(authentication.user.Role === 'master') {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                };
+
+                if(angular.isObject(authentication.user)) {
+                    process();
+                } else {
+                    authentication.fetchUserInfo().then(function() {
+                        process();
+                    });
+                }
+
+                return deferred.promise;
+            },
+            organization: function(Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
+            },
+            status: function(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.status());
             }
         },
@@ -628,6 +676,26 @@ angular.module("proton.routes", [
     .state("secured.users", {
         url: "/users",
         resolve: {
+            master: function(authentication, $q) {
+                var deferred = $q.defer();
+                var process = function() {
+                    if(authentication.user.Role === 'master') {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                };
+
+                if(angular.isObject(authentication.user)) {
+                    process();
+                } else {
+                    authentication.fetchUserInfo().then(function() {
+                        process();
+                    });
+                }
+
+                return deferred.promise;
+            },
             organization: function(Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
@@ -648,6 +716,28 @@ angular.module("proton.routes", [
 
     .state("secured.domains", {
         url: "/domains",
+        resolve: {
+            master: function(authentication) {
+                var deferred = $q.defer();
+                var process = function() {
+                    if(authentication.user.Role === 'master') {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                };
+
+                if(angular.isObject(authentication.user)) {
+                    process();
+                } else {
+                    authentication.fetchUserInfo().then(function() {
+                        process();
+                    });
+                }
+
+                return deferred.promise;
+            }
+        },
         views: {
             "content@secured": {
                 templateUrl: "templates/views/domains.tpl.html",
@@ -711,6 +801,9 @@ angular.module("proton.routes", [
                     } else {
                         return true;
                     }
+                },
+                loc: function($stateParams) {
+                    return $stateParams.id;
                 }
             }
         };

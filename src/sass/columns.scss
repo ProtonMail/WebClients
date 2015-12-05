@@ -3,6 +3,28 @@
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	#nothingToSeeHere {
+		vertical-align: middle;
+		text-align: center;
+		width: 100%;
+		height: 90%;
+		.fa {
+			font-size: 3rem;
+			display: block;
+			color: $border;
+		}
+		span {
+			display: block;
+			color: $border;
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+		h3 {
+			font-size: 2rem;
+			color: $border;
+			font-weight: 400;
+		}
+	}
 	.list {
 		width: 500px;
 		min-width: 500px;
@@ -12,21 +34,70 @@
 		overflow-x: hidden;
 		max-height: $maxHeight;
 		#pm_list {
-			padding: 0 25px;
+			padding: 0;
 		    box-sizing: border-box;
 		    box-shadow: inset -1px 0 $border;
 		}
 		div.message {
 			position: relative;
-			border: 1px solid transparent;
-			border-top-color: $border;
-			padding: 12px 0 12px 45px;
+			box-shadow: inset 0 1px 0 0 $border;
+			padding: 12px 15px 6px 40px;
+			border-left: 6px solid transparent;
 			cursor: pointer;
-			border-radius: 2px;
+			border-radius: 0;
 			color: $gray;
 			height: 64px;
 			line-height: 64px;
 			box-sizing: border-box;
+			margin: 0;
+			overflow: hidden;
+			background: $read;
+			margin-left: -6px;
+			.starLink {
+				position: absolute;
+				right: 6rem;
+				top: 12px;
+				display: block;
+				text-align: center;
+				z-index: 3;
+				width: 1rem;
+				text-align: center;
+			}
+			.fa-paperclip {
+				position: absolute;
+				right: 7rem;
+				top: 12px;
+				display: block;
+				text-align: center;
+				z-index: 3;
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				width: 1rem;
+			}
+			&.active {
+				background: #828896;
+				header {
+					color: #fff;
+					span {
+						color: #fff;
+						&.time {
+							background: #828896;
+						}
+					}
+				}
+				article {
+					color: #fff;
+				}
+				article {
+					.pm_labels {
+						.pm_label {
+							box-shadow: 0 0 0 4px #828896;
+							background: #828896;
+						}
+					}
+				}
+			}
 			&:last-child {
 				border-bottom-color: $border;
 			}
@@ -39,31 +110,43 @@
 				margin: 0;
 			}
 			&.selected {
-				background-color: #f6f6f6;
-				border-color: #dcdcdc;	
-				margin: 0 -10px;
-				padding-left: 55px;
-				padding-right: 10px;
-				box-shadow: 0 1px 0 #fff;
+				margin: 0;
 				z-index: 2;
+				border-left-color: $primary;
+				padding-left: calc(40px - 6px);
+				background: $selected;
 				aside {
-					left: 10px;
+					left: calc(15px - 6px);
 				}
-				article {
-					.pm_labels {
-						margin-right: 0;
-						background-color: #f6f6f6;
-						.pm_label {
-							background-color: #f6f6f6;
-							box-shadow: 0 0 0 4px #f6f6f6;
-						}
+				header {
+					span.time {
+						background: $selected;
 					}
 				}
 			}
-			&.unread * {
-				font-weight: 700;
-				&.fa {
-					font-weight: 400;
+			&.unread {
+				background: #fff;
+				header p span {
+					font-weight: 700;
+					&.time {
+						font-weight: 400;
+					}
+				}
+				header span.time {
+					background: #fff;
+				}
+				* {
+					&.fa {
+						font-weight: 400;
+					}
+				}
+				article {
+					.pm_labels {
+						.pm_label {
+							box-shadow: 0 0 0 4px #fff;
+							background: #fff;
+						}
+					}
 				}
 			}
 			strong {
@@ -80,7 +163,7 @@
 				display: inline-block;
 				width: 40px;
 				position: absolute;
-				left: 0;
+				left: 15px;
 				top: 12px;
 				bottom: 12px;
 				right: auto;
@@ -131,9 +214,27 @@
 				    overflow: hidden;
 				    text-overflow: ellipsis;
 				    width: 100%;
+				    padding-right: 7rem;
+				    box-sizing: border-box;
 				}
 				span.time {
-					float: right;
+					position: absolute;
+					padding-right: 15px;
+					box-sizing: border-box;
+					right: 0;
+					top: 12px;
+					z-index: 3;
+					background: $read;
+					width: 6rem;
+					text-align: right;
+					font-size: 80%;
+				}
+			}
+			&.attachments {
+				header {
+					p {
+						padding-right: 8rem;
+					}
 				}
 			}
 			article {
@@ -141,11 +242,19 @@
 				height: 18px;
 				color: $gray;
 				font-size: 14px;
+				strong {
+					font-weight: 700;
+					font-size: 80%;
+				}
 				.pm_labels {
 					position: absolute;
-					right: 0;
+					right: 25px;
 					bottom: 12px;
-					margin-right: -10px;
+					margin-right: -20px;
+					.pm_label {
+						box-shadow: 0 0 0 4px $read;
+						background: $read;
+					}
 				}
 				p {
 					height: 18px;
@@ -165,7 +274,7 @@
 		-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
 		        flex-grow: 1;
-		padding: 0 25px;
+		padding: 0;
 		box-sizing: border-box;
 		position: relative;
 		z-index: 6;

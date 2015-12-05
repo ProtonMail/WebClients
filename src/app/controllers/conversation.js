@@ -20,9 +20,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     tools
 ) {
     $scope.conversation = conversation;
-    $scope.messages = messages;
+    $scope.messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
+    $scope.currentState = $state.$current.name;
 
     // Broadcast active status of this current conversation for the conversation list
     $rootScope.$broadcast('activeElement', conversation.ID);
@@ -34,11 +35,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
-        cache.getConversation($stateParams.id).then(function(conversation) {
-            _.extend($scope.conversation, conversation); //
-        });
+        var conversation = cache.getConversationCached($stateParams.id);
+        var messages = cache.queryMessagesCached($stateParams.id);
 
-        cache.queryConversationMessages($stateParams.id, true).then(function(messages) {
+        if(angular.isDefined(conversation)) {
+            _.extend($scope.conversation, conversation);
+        }
+
+        if(angular.isDefined(messages)) {
+            messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
+
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
 
@@ -47,7 +53,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     $scope.messages.push(message);
                 }
             });
-        });
+
+            _.each($scope.messages, function(message) {
+                var current = _.findWhere(messages, {ID: message.ID});
+
+                if(angular.isUndefined(current)) {
+                    var index = $scope.messages.indexOf(current);
+                    // Delete message
+                    $scope.messages.splice(index, 1);
+                }
+            });
+        }
     });
 
     /**
@@ -65,6 +81,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             // Open the only lastest
             $rootScope.openMessage = [_.last($scope.messages).ID];
+        }
+
+        $rootScope.scrollToFirst = _.first($rootScope.openMessage);
+
+        // Mark conversation as read
+        if($scope.conversation.NumUnread > 0) {
+            $scope.read();
         }
     };
 
@@ -86,6 +109,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     /**
      * Mark current conversation as read
+     * @param {Boolean} back
      */
     $scope.read = function() {
         var conversationEvent = [];
@@ -107,15 +131,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // api
         Conversation.read([conversation.ID]);
-
-        // back to conversation list
-        $scope.back();
     };
 
     /**
      * Mark current conversation as unread
+     * @param {Boolean} back
      */
-    $scope.unread = function() {
+    $scope.unread = function(back) {
         var conversationEvent = [];
         var messageEvent = [];
         var conversation = angular.copy($scope.conversation);
@@ -134,9 +156,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         // api
         Conversation.unread([conversation.ID]);
-
-        // back to conversation list
-        $scope.back();
     };
 
     /**
@@ -161,22 +180,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Move current conversation to a specific location
      */
     $scope.move = function(location) {
-        var current;
-        var events = [];
+        var current = tools.currentLocation();
+        var messageEvent = [];
+        var conversationEvent = [];
         var copy = angular.copy($scope.conversation);
-
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID)) {
-                current = labelID;
-            }
-        });
+        var messages = cache.queryMessagesCached($scope.conversation.ID);
 
         // cache
         copy.Selected = false;
         copy.LabelIDsRemoved = [current]; // remove current location
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location].toString()]; // Add new location
-        events.push({Action: 3, ID: copy.ID, Conversation: copy});
-        cache.events(events, 'conversation');
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]]; // Add new location
+
+        _.each(messages, function(message) {
+            message.LabelIDsRemoved = [current];
+            message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]];
+            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+        });
+
+        conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
+        cache.events(conversationEvent, 'conversation');
+        cache.events(messageEvent, 'message');
 
         // api
         Conversation[location]([copy.ID]);
@@ -348,7 +371,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Go to the next conversation
      */
     $scope.next = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
 
         cache.more($scope.conversation, 'next').then(function(id) {
             // $state.go(current, {id: id});
@@ -359,7 +382,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Go to the previous conversation
      */
     $scope.previous = function() {
-        var current = $state.current.name;
+        var current = $state.$current.name;
 
         cache.more($scope.conversation, 'previous').then(function(id) {
             // $state.go(current, {id: id});

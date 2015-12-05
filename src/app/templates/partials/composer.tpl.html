@@ -14,13 +14,14 @@
         'normalized': !message.maximized && !message.minimized,
         'expandRecipients': message.fields,
         'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
+        'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
         'tall': (message.Attachments.length === 0)
         }"
         ng-click="focusComposer(message)">
 
             <header responsive-composer="message">
                 <span ng-click="normalize(message);" class="subject">
-                {{message.Subject}} &nbsp;
+                    {{ message.Subject || 'NEW_MESSAGE' | translate }}
                 </span>
                 <span class="actions text-right">
                     <a
@@ -151,35 +152,26 @@
                     </a>
                 </div>
                 <p></p>
-                <p class="alert alert-info">This message will expire in <strong>{{ message.ExpirationTime }}</strong>, on <strong>December 5th, 2015 at 6:14pm (GMT)</strong>.</p>
+                <p class="alert alert-info">This message will expire in:</p>
                 <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
-                        <select ng-model="params.expirationWeeks" ng-options="option.label for option in weekOptions"></select>
+                        <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'WEEKS' | translate }}
                     <span class="pm_select">
-                        <select ng-model="params.expirationDays" ng-options="option.label for option in dayOptions"></select>
+                        <select ng-model="params.expirationDays" ng-change="setExpiration(message, params)" ng-options="option.label for option in dayOptions"></select>
                         <i class="fa fa-angle-down"></i>
                     </span> {{ 'DAYS' | translate }}
                     <span class="pm_select">
-                        <select ng-model="params.expirationHours" ng-options="option.label for option in hourOptions"></select>
+                        <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'HOURS' | translate }}ß
-                    <input type="range" min="1" max="{{maxExpiration}}" step="1" name="ExpirationTime" ng-init="initExpiration(message, params)" ng-model="params.expiration" />
-                </div>
-                <div class="text-center" ng-show="params.expiration">
-                    <h2 class="text-purple">
-                        {{params.expiration}} {{ 'HOURS' | translate }}
-                    </h2>
-                    <h4 class="text-muted">
-                        {{params.expiration | humanDuration:'hours'}}
-                    </h4>
+                    </span> {{ 'HOURS' | translate }}
                 </div>
                 <footer class="text-right">
                     <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)">
                         {{ 'CANCEL' | translate }}
                     </button>
-                    <button type="button" class="pm_button primary" ng-click="setExpiration(message, params)">
+                    <button type="button" class="pm_button primary" ng-click="closePanel(message)">
                         {{ 'SET' | translate }}
                     </button>
                 </footer>
@@ -296,7 +288,7 @@
                     ng-focus="hideFields(message); message.recipientFieldFocussed = 0; recipientsCollapsed = true"
                     ng-model="message.Subject"
                     ng-model-options="{updateOn: 'blur'}"
-                    ng-keydown="$event.which == 9 && focusEditor(message, $event)"
+                    ng-keydown="$event.which === 9 && focusEditor(message, $event)"
                     ng-change="saveLater(message)"
                     required />
                 </div>
@@ -342,7 +334,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'primary': message.Attachments && message.Attachments.length > 0,
-                    disabled: message.loading()
+                    'disabled': message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -355,7 +347,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'encrypt',
                     'primary': message.IsEncrypted === 1,
-                    disabled: message.loading()
+                    'disabled': message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
@@ -368,7 +360,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'expiration',
                     'primary': message.ExpirationTime > 0,
-                    disabled: message.loading()
+                    'disabled': message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
@@ -381,9 +373,8 @@
                 </span>
                 <div class="pull-right">
                     <button
-                    ng-class="{ disabled: message.loading() }"
                     class="pm_button"
-                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
+                    ng-disabled="message.loading() || composerIsSelected(message) === false"
                     ng-click="close(message, true, false)"
                     pt-tooltip="{{ 'DELETE_THE_DRAFT' | translate }}"
                     pt-placement="top">
@@ -391,34 +382,19 @@
                         <span ng-show="!!message.maximized"> {{ 'DISCARD' | translate }}</span>
                     </button>
                     <button
-                    ng-class="{ disabled: message.loading() }"
                     class="pm_button"
-                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message)"
+                    ng-disabled="message.loading() || composerIsSelected(message) === false"
                     ng-click="save(message, false, false, true)"
                     pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
-                        <span ng-show="!!message.maximized"> {{ 'SAVE' | translate }}</span>
+                        <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
-                    <button
-                    ng-hide="message.loading()"
-                    class="pm_button primary"
-                    ng-disabled="networkActivity.loading() || !!!composerIsSelected(message) || message.uploading"
-                    ng-click="send(message)">
-                        <i class="fa fa-send"></i>
-                        {{ 'SEND' | translate }}
-                    </button>
-                    <button
-                    ng-show="message.loading() && sending"
-                    class="pm_button primary disabled">
-                        <i class="fa fa-circle-o-notch fa-spin"></i>
-                        {{ 'SENDING' | translate }}
-                    </button>
-                    <button
-                    ng-show="message.loading() && saving && !sending"
-                    class="pm_button primary disabled">
-                        <i class="fa fa-circle-o-notch fa-spin"></i>
-                        {{ 'SAVING' | translate }}
+                    <button class="pm_button primary" ng-disabled="message.loading() || composerIsSelected(message) === false || message.uploading || message.saving || message.sending" ng-click="send(message)">
+                        <i class="fa" ng-class="{ 'fa-send': message.sending !== true && message.saving !== true, 'fa-circle-o-notch fa-spin': message.sending === true || message.saving === true }"></i>
+                        <span ng-hide="message.sending || message.saving || message.loading()">{{ 'SEND' | translate }}</span>
+                        <span ng-show="message.sending">{{ 'SENDING' | translate }}</span>
+                        <span ng-show="message.saving">{{ 'SAVING' | translate }}</span>
                     </button>
                 </div>
             </footer>
