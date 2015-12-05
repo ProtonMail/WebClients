@@ -1,21 +1,19 @@
 <article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand, 'read': message.IsRead === 1, 'unread': message.IsRead === 0 }">
     <header ng-click="toggle()">
-        <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
-            <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
-        </a>
         <span class="meta">
-            <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
-            <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
-            <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-            <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
-            <i class="fa fa-lock"></i>
+            <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
+                <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
+            </a>
             <span class="time">{{ message.Time | longReadableTime }}</span>
         </span>
         <span class="from">
-            <i>{{ 'FROM' | translate }}</i>
             <span class="person">
-                <a ng-show="message.expand === true" href class="fa fa-pencil pm_button primary compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
+                <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
+                <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
+                <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>            
                 <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
+                <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="draftTag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
                 <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
@@ -90,8 +88,9 @@
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
-                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        <em>{{ email | contact }}</em>
+                        <strong>{{ email | contact }}</strong>
+                        <em>&lt;{{ email | contact }}&gt;</em>
+                        <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
             </div>
@@ -99,8 +98,8 @@
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
-                        <a href class="fa fa-pencil pm_button primary compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                         <em>{{ email | contact }}</em>
+                        <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
             </div>

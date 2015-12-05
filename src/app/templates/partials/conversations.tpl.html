@@ -34,18 +34,17 @@
         </tr>
     </table>
 
-    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{unread: conversation.NumUnread > 0 || conversation.IsRead === 0, selected: conversation.Selected,  active: conversation.Active, starred: starred(conversation)}">
+    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" 
+    ng-class="{
+        unread: conversation.NumUnread > 0 || conversation.IsRead === 0, 
+        selected: conversation.Selected, 
+        active: conversation.Active, 
+        starred: starred(conversation),
+        attachments: (conversation.NumAttachments > 0)
+    }">
         <aside>
             <span class="pm_checkbox">
                 <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
-            </span>
-            <span class="starSpan">
-                <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
-                    <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
-                </a>
-            </span>
-            <span class="attachmentSpan">
-                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
             </span>
         </aside>
         <header>
@@ -59,7 +58,10 @@
                     <i class="fa fa-clock-o" ng-show="conversation.ExpirationTime > 0"></i>
                     {{ conversation.Subject }}
                 </span>
-
+                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>                
+                <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
+                    <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
+                </a>
                 <span class="time">{{ conversation.Time | readableTime }}</span>
             </p>
         </header>

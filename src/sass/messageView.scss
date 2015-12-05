@@ -1,15 +1,19 @@
 #pm_columns #pm_view > header {
     position: relative;
-    padding-right: 3rem;
+    padding-right: 45px;
+    padding-left: 40px;
     .singleStar {
         position: absolute;
-        right: 0;
+        right: 15px;
         top: 0;
+        width: 20px;
+        display: block;
+        text-align: right;
     }
 }
 #pm_view {
 	display: block;
-	padding-left: 15px;
+    padding: 0 15px 0 40px;
 	&.rows {
 		width: 100%;
 		padding-left: 0;
@@ -18,7 +22,6 @@
     	display: block;
 		min-height: ($toolbarHeight+1);
 		box-sizing: border-box;
-		margin-right: 25px;
 		border-bottom: 1px solid $border;
         clear: both;
 	    h1 {
@@ -56,7 +59,6 @@
 		}
     }
     #pm_thread {
-    	padding-right: 25px;
     	max-height: $maxHeight;
     	overflow-y: auto;
     	overflow-x: auto;
@@ -68,27 +70,32 @@
     article.message {
     	clear: both;
     	border-bottom: 1px solid $border;
+        &.read {
+            background: #ececec;
+        }
         &.open.last {
             border-bottom: none;
         }
         &.open {
+            background: #fff;
+            &.read {
+                background: #fff; 
+            }
             header {
                 cursor: initial;
             }
         }
 		a.compose {
-			background: $primary;
-			color: #fff;
+			color: $primary;
 			padding: 0;
 		    line-height: 12px !important;
 		    height: 14px !important;
-		    padding: 0 1px;
-		    margin-right: .5rem;
-		    font-size: 10px;
-		    margin-top: 4px;
-            position: absolute;
+		    margin-left: 5px;
+		    font-size: 90%;
+            position: relative;
             left: 0;
             top: 0;
+            text-decoration: none;
 		}
         &.unread {
             span.person {
@@ -109,9 +116,6 @@
             position: relative;
             word-break: break-word;
             padding-left: 1.5rem;
-            & > * {
-                float: left;
-            }
             i {
                 margin: 0 0 0 .25rem;
                 clear: both;
@@ -135,31 +139,43 @@
     		line-height: 20px;
     		box-sizing: border-box;
             cursor: pointer;
+            font-size: 90%;
+            padding-right: 15px;
     		.time {
     			display: inline-block;
     			white-space: nowrap;
     			text-align: right;
-                font-size: 14px;
     		}
     		.from {
     			color: #999;
     			float: left;
                 .pm_labels {
-                    top: 1px;
+                    top: 2px;
                     em {
                         font-weight: 700;
                     }
                 }
     			i {
-    				display: inline-block;
-    				width: 3rem;
-    				float: left;
+    				display: block;
+    				width: 1.5rem;
+                    line-height: 20px;
+                    height: 20px;
+                    text-align: left;
                     font-style: normal;
+                    float: left;
     			}
                 .person {
                     position: relative;
-                    padding-left: 1.5rem;
+                    padding-left: 40px;
                     float: left;
+                    i.fa {
+                        position: absolute;
+                        left: 15px;
+                        top: 0;
+                        display: block;
+                        height: 20px;
+                        line-height: 20px;
+                    }
                 }
                 strong {
                     float: left;
@@ -198,24 +214,23 @@
     	}
     	.recipientsWrap {
     		display: block;
-    		margin: -20px 0 0 3rem;
-            min-height: 20px;
             & > span {
                 clear: both;
                 display: block;
-                height: 20px;
                 line-height: 20px;
-        		& > * {
-        			float: left;
-        		}
-            }
-            strong {
-                font-weight: 400;
-                margin-left: .5rem;
+                margin-bottom: 10px;
+                strong {
+                    display: block;
+                    font-weight: 700;
+                    color: #555;
+                }
+                em {
+                    font-style: italic;
+                }
             }
     	}
 		.sub {
-            padding-left: 1.5rem;
+            padding-left: 15px;
 			padding-right: 145px;
 			position: relative;
 			color: #999;
@@ -228,11 +243,19 @@
 			.data {
                 float: left;
                 width: 100%;
+                font-size: 90%;
                 .toGroup,
                 .ccGroup {
                     display: block;
                     float: left;
                     clear: both;
+                    position: relative;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        text-transform: lowercase;
+                    }
                 }
                 & > div > i {
     				font-style: normal;
@@ -309,7 +332,7 @@
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 0;
+				right: 15px;
 				top: 0;
 				z-index: 2;
 				width: 145px;
