@@ -173,7 +173,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         params.Page = ($stateParams.page || 1) - 1;
 
         if (angular.isDefined($stateParams.filter)) {
-            params.Unread = parseInt($stateParams.filter === 'unread');
+            params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
         }
 
         if (angular.isDefined($stateParams.sort)) {
