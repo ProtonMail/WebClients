@@ -378,6 +378,11 @@ angular.module("proton", [
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
 
+        // Sidebar?
+        setTimeout( function() {
+            $('.perfectScroller').perfectScrollbar();
+        }, 1000);
+
         // Close navbar on mobile
         $(".navbar-toggle").click();
 

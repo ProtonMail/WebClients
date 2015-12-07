@@ -69,16 +69,18 @@
             </a>
         </li>
     </ul>
-    <div class="labels">
-        <ul ng-label-height>
-            <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-                <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
-                    <i class="fa fa-tag" ng-style="color(label)"></i>
-                    <span>{{ label.Name }}</span>
-                    <em ng-bind="unread('label', label.ID)"></em>
-                </a>
-            </li>
-        </ul>
+    <div id="sidebarLabels" class="perfectScroller" ng-label-height>
+        <div class="labels">
+            <ul>
+                <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+                    <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
+                        <i class="fa fa-tag" ng-style="color(label)"></i>
+                        <span>{{ label.Name }}</span>
+                        <em ng-bind="unread('label', label.ID)"></em>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="footer">
         <div class="wrap">

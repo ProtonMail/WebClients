@@ -144,7 +144,10 @@ section.sidebar {
             }
         }
     }
-
+    #sidebarLabels {
+        position: relative;
+        overflow: hidden;
+    }
     div.labels {
         font-size: 14px;
         clear: both;
@@ -189,10 +192,13 @@ section.sidebar {
             display: block;
             list-style-type: none;
             height: 175px;
-            overflow: auto;
+            overflow: hidden !important;
+            position: relative;
             -webkit-overflow-scrolling: touch;
             padding: 0 20px;
-            margin: 0 -10px 0 -20px;
+            margin: 0 -20px;
+            box-sizing: border-box;
+            width: 100%;
             li {
                 display: block;
                 padding: 0;
