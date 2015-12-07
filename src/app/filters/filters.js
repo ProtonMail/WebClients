@@ -196,14 +196,20 @@ angular.module("proton.filters",[])
 })
 
 .filter('contact', function() {
-    return function(contact) {
+    return function(contact, parameter) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
 
-        if(same || alone) {
-            return contact.Address;
+        if(parameter === 'Address') {
+            return '<' + contact.Address + '>';
+        } else if(parameter === 'Name') {
+            return contact.Name;
         } else {
-            return contact.Name + ' <' + contact.Address + '>';
+            if(same || alone) {
+                return contact.Address;
+            } else {
+                return contact.Name + ' <' + contact.Address + '>';
+            }
         }
     };
 })

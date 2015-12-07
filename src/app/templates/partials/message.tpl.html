@@ -91,8 +91,8 @@
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
-                        <strong>{{ email | contact }}</strong>
-                        <em>&lt;{{ email | contact }}&gt;</em>
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em>{{ email | contact:'Address' }}</em>
                         <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
@@ -101,7 +101,8 @@
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
-                        <em>{{ email | contact }}</em>
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em>{{ email | contact:'Address' }}</em>
                         <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
@@ -110,7 +111,8 @@
                 <i>{{ 'BCC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList" class="person">
-                        <em>{{ email | contact }}</em>
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em>{{ email | contact:'Address' }}</em>
                         <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
