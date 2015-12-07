@@ -86,7 +86,7 @@ angular.module("proton.cache", [])
      * @param {String} parameter - ordered with this parameter
      * @return {Array} don't miss this array is reversed
      */
-    var order = function(elements, parameter, reverse) {
+    var order = function(elements, parameter) {
         if(angular.isArray(elements)) {
             return _.sortBy(elements, parameter).reverse();
         } else {

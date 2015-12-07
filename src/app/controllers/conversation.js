@@ -165,6 +165,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var events = [];
         var conversation = angular.copy($scope.conversation);
 
+        $rootScope.$broadcast('deleteConversation', $scope.conversation.ID); // Close composer
+
         // cache
         events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
         cache.events(events, 'conversation');

@@ -101,14 +101,26 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     });
 
+    // When the user delete a conversation and a message is a part of this conversation
+    $scope.$on('deleteConversation', function(event, ID) {
+        _.each($scope.messages, function(message) {
+            if(ID === message.ID) {
+                // Close the composer
+                $scope.close(message, false, false);
+            }
+        });
+    });
+
     // When a message is updated we try to update the message
     $scope.$on('refreshMessage', function(event) {
         _.each($scope.messages, function(message) {
             if(angular.isDefined(message.ID)) {
                 var messageCached = cache.getMessageCached(message.ID);
 
-                message.Time = messageCached.Time;
-                message.ConversationID = messageCached.ConversationID;
+                if(angular.isDefined(messageCached)) {
+                    message.Time = messageCached.Time;
+                    message.ConversationID = messageCached.ConversationID;
+                }
             }
         });
     });
@@ -968,6 +980,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if (typeof parameters.Message.BCCList === 'string') {
                 parameters.Message.BCCList = [];
             }
+
+            console.log(message);
 
             if(angular.isDefined(message.ParentID)) {
                 parameters.ParentID = message.ParentID;

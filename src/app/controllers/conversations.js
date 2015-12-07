@@ -25,7 +25,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     notify,
     tools
 ) {
-    var lastChecked = null;
+    var lastChecked = null; //
 
     /**
      * Method called at the initialization of this controller
@@ -472,6 +472,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(element.ID);
 
+                $rootScope.$broadcast('deleteConversation', element.ID); // Close composer
                 conversationEvent.push({Action: 0, ID: element.ID, Conversation: element});
 
                 if(messages.length > 0) {
@@ -483,6 +484,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 messageEvent.push({Action: 0, ID: element.ID, Message: element});
             }
         });
+
 
         cache.events(conversationEvent, 'conversation');
         cache.events(messageEvent, 'message');
