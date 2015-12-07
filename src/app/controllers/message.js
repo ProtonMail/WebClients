@@ -799,17 +799,21 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         copy.LabelIDsRemoved = [current]; // Remove previous location
         copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+        // Generate message event
         cache.events(messageEvent, 'message');
 
         _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
             labelIDs = labelIDs.concat(message.LabelIDs);
         });
+
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {
             ID: copy.ConversationID,
             LabelIDs: labelIDs
         }});
-        cache.events(conversationEvent, 'conversation');
 
+        // Generate conversation event
+        cache.events(conversationEvent, 'conversation');
+        // Send move request
         Message[mailbox]({IDs: [copy.ID]});
     };
 
@@ -820,9 +824,23 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messageEvent = [];
         var conversationEvent = [];
         var copy = angular.copy($scope.message);
+        var conversation = cache.getConversationCached($scope.message.ID);
 
         messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
+
+        if(angular.isDefined(conversation)) {
+            if(conversation.NumMessages === 1) {
+                // Delete conversation
+                conversationEvent.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+            } else if(conversation.NumMessages > 1) {
+                // Decrease the number of message
+                conversation.NumMessages--;
+                conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+            }
+
+            cache.events(conversationEvent, 'conversation');
+        }
 
         Message.delete({IDs: [copy.ID]});
     };
