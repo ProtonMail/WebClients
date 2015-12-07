@@ -1,6 +1,7 @@
-
-
 *[pt-height] {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	&#pm_list {
+		overflow-y: scroll; // always show scrollbar
+	}
 }

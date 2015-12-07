@@ -119,7 +119,8 @@
     .disabled,
     [disabled] {
         background: lighten($border, 5%);
-        pointer-events: none
+        pointer-events: none;
+        opacity: .5;
     }
     .dead {
         pointer-events: none;

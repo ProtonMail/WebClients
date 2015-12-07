@@ -369,6 +369,9 @@
     		clear: both;
     		padding-top: 1rem;
     		padding-bottom: 1rem;
+            padding-left: calc(15px + 1.5rem);
+            padding-right: calc(15px + 1.5rem);
+            box-sizing: border-box;
             .more {
                 line-height: 1rem;
                 height: 1rem;

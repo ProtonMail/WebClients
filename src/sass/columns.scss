@@ -37,12 +37,10 @@
 		width: 500px;
 		min-width: 500px;
 		box-sizing: border-box;
-		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		overflow-x: hidden;
 		max-height: $maxHeight;
 		position: relative;
-		overflow-y: auto;
 		#pm_list {
 			padding: 62px 0 0 0;
 		    box-sizing: border-box;
@@ -124,14 +122,8 @@
 				z-index: 2;
 				border-left-color: $primary;
 				padding-left: calc(40px - 6px);
-				background: $alt;
 				aside {
 					left: calc(15px - 6px);
-				}
-				header {
-					span.time {
-						background: $alt;
-					}
 				}
 			}
 			&.unread {

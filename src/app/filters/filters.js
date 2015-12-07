@@ -203,7 +203,7 @@ angular.module("proton.filters",[])
         if(parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if(parameter === 'Name') {
-            if(angular.isDefined(contact.Name)) {
+            if(angular.isDefined(contact.Name) && contact.Name !== '') {
                 return contact.Name;
             } else {
                 return contact.Address;
