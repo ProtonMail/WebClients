@@ -66,8 +66,11 @@
                     <a href="" ng-click="unread()">
                         <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
                     </a>
-                    <a href="" ng-click="move('spam')">
+                    <a href="" ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
                         <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
+                    </a>
+                    <a href="" ng-click="delete()" ng-show="'secured.trash.**' | includedByState">
+                        <i class="fa fa-times"></i> {{ 'DELETE' | translate }}
                     </a>
                     <a href="" ng-click="togglePlainHtml()">
                         <span ng-show="message.viewMode === 'html'">
