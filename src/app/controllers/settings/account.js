@@ -104,15 +104,17 @@ angular.module("proton.controllers.Settings")
                 OldPassword: $scope.oldLoginPassword,
                 OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
                 NewPassword: $scope.newLoginPassword
-            }).$promise.then(function(response) {
-                if (response.Error) {
-                    notify({message: response.Error, classes: 'notification-danger'});
-                } else {
+            }).$promise.then(function(result) {
+                if(result.Code === 1000) {
                     notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
                     $scope.oldLoginPassword = '';
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
+                } else if(result.Error) {
+                    notify({message: result.Error, classes: 'notification-danger'});
+                } else {
+                    notify({message: 'Login password invalid', classes: 'notification-danger'});
                 }
             }, function(error) {
                 notify({message: 'Error during the login password request', classes: 'notification-danger'});
@@ -138,10 +140,8 @@ angular.module("proton.controllers.Settings")
                     "Password": currentLoginPassword,
                     "PublicKey": authentication.user.PublicKey,
                     "PrivateKey": newEncPrivateKey
-                }).$promise.then(function(response) {
-                    if(response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    } else {
+                }).$promise.then(function(result) {
+                    if(result.Code === 1000) {
                         notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
                         $scope.oldMailboxPassword = '';
                         $scope.newMailboxPassword = '';
@@ -150,6 +150,10 @@ angular.module("proton.controllers.Settings")
                         authentication.user.EncPrivateKey = newEncPrivateKey;
                         authentication.savePassword(newMailPwd);
                         form.$setUntouched();
+                    } else if(result.Error) {
+                        notify({message: result.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
                     }
                 }, function(error) {
                     notify({message: 'Error during the mailbox password request', classes: 'notification-danger'});
