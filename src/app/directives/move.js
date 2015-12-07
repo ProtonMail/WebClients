@@ -33,7 +33,7 @@ angular.module("proton.move", [])
              * Apply label and archive
              * @param {Object} label
              */
-            $scope.applyAndArchive = function(label) {
+            scope.applyAndArchive = function(label) {
                 console.log(label.ID);
             };
         }
