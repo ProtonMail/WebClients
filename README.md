@@ -38,11 +38,6 @@ We are very open to bug reports via Issues as well as Pull Requests.
 * [ ] Download invoice (for back-end)
 * [ ] Subscribe for a plan (for for back-end)
 * [ ] Think about hover style (for design)
-* [x] Implement the dashboard logic (for **Richard**)
-* [x] How display spam / archive / trash / drafts tag in conversations list (for **Jason**)
-* [x] Fix style when we print a message (for **Jason**)
-* [ ] Implement expire logic (for **Richard**)
-* [x] Enable drag and drop for labels (for **Jason**)
 * [ ] Drag and drop element (conversation and message)
 * [ ] Prepare storage modal (**Jason**) -> storageModal
 * [ ] Prepare support modal (**Jason**) -> supportModal

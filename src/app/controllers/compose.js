@@ -1014,11 +1014,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             message.attachmentsToggle = true;
                         }
 
+                        if(angular.isArray(result.Message.Attachments)) {
+                            result.Message.NumAttachments = result.Message.Attachments.length;
+                        }
+
                         $scope.saveOld(message);
 
                         if(angular.isDefined(conversation)) {
                             if(action === CREATE) {
                                 conversation.NumMessages++;
+                            }
+
+                            if(angular.isArray(result.Message.Attachments)) {
+                                conversation.NumAttachments = result.Message.Attachments.length;
                             }
 
                             conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
