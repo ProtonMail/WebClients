@@ -26,8 +26,11 @@ angular.module("proton.transformation", [])
                             title: $translate.instant('SHOW_PREVIOUS'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
-                                blockquote.show();
-                                button.remove();
+                                if($(blockquote).is(':visible')) {
+                                    blockquote.hide();
+                                } else {
+                                    blockquote.show();
+                                }
                             }
                         });
 
