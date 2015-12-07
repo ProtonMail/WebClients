@@ -29,7 +29,8 @@
                 <span ng-show="mailbox === 'archive'">{{ 'ARCHIVE' | translate }}</span>
                 <span ng-show="mailbox === 'search'">{{ 'SEARCH' | translate }}</span>
                 <span ng-show="mailbox === 'label'">{{ 'LABEL' | translate }}</span>
-                <h3>{{ 'NO_MESSAGES' | translate }}</h3>
+                <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_MESSAGES' | translate }}</h3>
+                <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_CONVERSATIONS' | translate }}</h3>
             </td>
         </tr>
     </table>
