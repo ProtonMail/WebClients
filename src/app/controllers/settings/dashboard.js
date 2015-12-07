@@ -127,8 +127,10 @@ angular.module("proton.controllers.Settings")
                 $scope.future.Currency = $scope.status.Currency;
 
                 if(parseInt(($scope.status.PeriodEnd - $scope.status.PeriodStart) / month) === 1) {
+                    $scope.current.BillingCycle = 12;
                     $scope.future.BillingCycle = 12;
                 } else {
+                    $scope.current.BillingCycle = 1;
                     $scope.future.BillingCycle = 1;
                 }
             } else {

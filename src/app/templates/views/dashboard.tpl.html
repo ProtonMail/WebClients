@@ -121,8 +121,17 @@
                         <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'BILLING' | translate }}:</th>
                             <td colspan="2">
-                                <strong ng-show="future.BillingCycle === 1">{{ 'MONTHLY' | translate }}</strong>
-                                <strong ng-show="future.BillingCycle === 12">{{ 'YEARLY' | translate }}</strong>
+                                <strong ng-show="current.BillingCycle === 1">{{ 'MONTHLY' | translate }}</strong>
+                                <strong ng-show="current.BillingCycle === 12">{{ 'YEARLY' | translate }}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'DURATION' | translate }}:</th>
+                            <td>
+                                <strong>{{ status.PeriodStart * 1000 | date }}</strong>
+                            </td>
+                            <td>
+                                <strong>{{ status.PeriodEnd * 1000 | date }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
