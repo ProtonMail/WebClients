@@ -63,6 +63,7 @@ angular.module("proton", [
     "proton.locationTag",
     "proton.dropzone",
     "proton.labels",
+    "proton.move",
     "proton.countdown",
     "proton.dropdown",
     "proton.height",

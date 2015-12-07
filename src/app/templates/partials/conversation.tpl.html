@@ -2,9 +2,23 @@
 <ng-include src="'templates/partials/toolbar-conversation-responsive.tpl.html'"></ng-include>
 
 <header>
-    <a href="#" ng-click="toggleStar(conversation)" class="singleStar">
-        <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
-    </a>
+    <span class="pm_buttons">
+        <a href="" ng-click="toggleStar(conversation)">
+            <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
+        </a>
+        <a href="" class="divider" ng-dropdown>
+            <i class="fa fa-folder-open"></i>
+        </a>
+        <span class="pm_dropdown wide">
+            <dropdown-move></dropdown-move>
+        </span>
+        <!-- <a href="" class="divider" ng-click="move('trash')">
+            <i class="fa fa-trash-o"></i>
+        </a>
+        <a href="" class="divider" ng-click="">
+            <i class="fa fa-tag"></i>
+        </a> -->
+    </span>
     <h1 ng-bind="conversation.Subject"></h1>
 </header>
 

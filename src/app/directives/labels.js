@@ -3,7 +3,7 @@ angular.module("proton.labels", [])
 .directive('dropdownLabels', function ($timeout, $q, $rootScope, $filter, authentication) {
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/dropdown.labels.tpl.html',
+        templateUrl: 'templates/directives/labels.tpl.html',
         replace: true,
         scope: {
             getMessages: '=messages',
