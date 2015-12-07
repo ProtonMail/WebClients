@@ -768,6 +768,23 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Check if the sender is the current user
+     * @param {Object} message
+     * @return {Boolean} result
+     */
+    $scope.senderIsMe = function(message) {
+        var result = false;
+
+        _.each(authentication.user.Addresses, function(address) {
+            if(address.Email === message.Sender.Address) {
+                result = true;
+            }
+        });
+
+        return result;
+    };
+
+    /**
      * Move current message
      * @param {String} mailbox
      */
