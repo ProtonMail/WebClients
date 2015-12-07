@@ -339,8 +339,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var size = 0;
 
         angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.fileSize)) {
-                size += parseInt(attachment.fileSize);
+            if (angular.isDefined(attachment.Size)) {
+                size += parseInt(attachment.Size);
             }
         });
         return size;
@@ -406,7 +406,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
-        tempPacket.fileSize = file.size;
+        tempPacket.Size = file.size;
 
         message.uploading++;
         message.Attachments.push(tempPacket);

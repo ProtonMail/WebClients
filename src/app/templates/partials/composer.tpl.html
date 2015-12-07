@@ -326,7 +326,7 @@
             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)">{{ 'HIDE' | translate }}</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
-                {{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})
+                {{ message.Attachments.length }} {{ 'FILES_ATTACHED' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button
