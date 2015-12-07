@@ -58,6 +58,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }, function(error) {
             $log.error(error);
         }));
+
+        $scope.toolbarOffset();
+        $rootScope.$watch('layoutMode', function() {
+            $scope.toolbarOffset();
+        });
+    };
+
+    $scope.toolbarOffset = function() {
+        // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
+        function getScrollBarWidth () {
+            var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+            widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+            $outer.remove();
+            return 100 - widthWithScroll;
+        }
+        $('#pm_columns #pm_toolbar').css('right', getScrollBarWidth());
     };
 
     $scope.mobileResponsive = function() {

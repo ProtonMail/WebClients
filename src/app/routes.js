@@ -659,10 +659,12 @@ angular.module("proton.routes", [
                 return deferred.promise;
             },
             organization: function(Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+                return '{"Organization": {"DisplayName": "My Organization","MaxDomains": 1,"MaxMembers": 5,"MaxAddresses": 5,"MaxSpace": 5120,"Use2FA": 1,"UsedDomains": 1,"UsedMembers": 2,"UsedAddresses": 5,"UsedSpace": 314,"BillingCycle": 12,"NextPaymentTime": 1234567890,"BillingStatus": 1,"MemberIDs": ["q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==","0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw=="],"DomainIDs": ["dw-RwOdh4DWxBXnVoGO48PV_qEfG5T_j0fph6fSEBYetVdpX4v9ReAlusIcj7GUazufLnMTa0cOTvWCF7qWX3g=="]},"Code": 1000}';
+                // return networkActivityTracker.track(Organization.get()); // PANDA
             },
             status: function(Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.status());
+                return "";
+                // return networkActivityTracker.track(Payment.status()); // PANDA
             }
         },
         views: {

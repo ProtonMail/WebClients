@@ -47,7 +47,7 @@ body, html {
 				background: #fff;
 			}
 			&.selected {
-				background: $selected;
+				background: $alt;
 				position: relative;
 				z-index: 2;
 				margin: 0 -9px 0 -14px;

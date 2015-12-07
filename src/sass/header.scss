@@ -2,7 +2,7 @@ header#pm_header {
 	height: $headerHeight;
 	line-height: $headerHeight;
 	border-bottom: 1px solid $border;
-	background: #fff;
+	background: $alt;
 	font-size: 12px;
 	#snackie {
 		position: absolute;
@@ -99,33 +99,45 @@ header#pm_header {
 		line-height: 35px;
 		height: 35px;
 		margin: 13px 0;
-		border: 1px solid $border;
 		border-radius: 35px;
-		color: $primary;
+		color: #fff;
 		width: 440px;
 		max-width: 28%;
 		margin-left: 25px;
 		box-sizing: border-box;
+		background-color: #777c8a;
 		::-webkit-input-placeholder {
-		   color: $primary;
+		   color: #acb1c1;
 		}
 		:-moz-placeholder {
-		   color: $primary;
+		   color: #acb1c1;
 		}
 
 		::-moz-placeholder {
-		   color: $primary;
+		   color: #acb1c1;
 		}
 
 		:-ms-input-placeholder {
-		   color: $primary;
+		   color: #acb1c1;
 		}
-		button {
+		button[type="button"] {
 			padding: 0;
 			border: none;
 			display: block;
-			width: 50px;
+			width: 35px;
+			color: #fff;
+			background-color: #8b909e;
+			border-radius: 35px 0 0 35px;
+			cursor: pointer;
+		}
+		button[type="submit"] {
+			padding: 0;
+			border: none;
+			display: block;
+			width: 35px;
+			color: #fff;
 			background-color: transparent;
+			border-radius: 0 35px 35px 0;
 			cursor: pointer;
 		}
 		input.query {
@@ -138,12 +150,13 @@ header#pm_header {
 			   -moz-appearance: none;
 			        appearance: none;
 			position: relative;
-			border-radius: 0 35px 35px 0;
+			border-radius: 0;
 			-webkit-flex-grow: 1;
 			    -ms-flex-positive: 1;
 			        flex-grow: 1;
 			padding: 0 10px;
-			background-color: transparent;
+			background: transparent;
+			color: #fff;
 			&::-webkit-input-placeholder { /* WebKit browsers */
     			text-transform: uppercase;
 			}
@@ -184,49 +197,58 @@ header#pm_header {
 			}
 			a {
 				height: $headerHeight;
-				padding-top: 10px;
+				padding-bottom: 10px;
 				float: left;
 				display: block;
 				width: 115px;
 				text-align: center;
 				text-transform: uppercase;
 				text-decoration: none;
-				color: #bfbfbf;
+				color: #c1c7d8;
 				box-sizing: border-box;
-				em {
+				border-top: 10px solid transparent;
+				-webkit-transition: color .25s ease, border .25s ease;
+				   -moz-transition: color .25s ease, border .25s ease;
+				    -ms-transition: color .25s ease, border .25s ease;
+				     -o-transition: color .25s ease, border .25s ease;
+				        transition: color .25s ease, border .25s ease;
+				.fa {
 					display: block;
 					height: 20px;
 					line-height: 20px;
 					padding-top: 5px;
 					text-align: center;
+					color: #c1c7d8;
+					-webkit-transition: color .25s ease, border .25s ease;
+					   -moz-transition: color .25s ease, border .25s ease;
+					    -ms-transition: color .25s ease, border .25s ease;
+					     -o-transition: color .25s ease, border .25s ease;
+					        transition: color .25s ease, border .25s ease;
 				}
 				strong {
 					display: block;
 					height: 20px;
 					line-height: 20px;
 					font-weight: normal;
+					color: #c1c7d8;
+					-webkit-transition: color .25s ease, border .25s ease;
+					   -moz-transition: color .25s ease, border .25s ease;
+					    -ms-transition: color .25s ease, border .25s ease;
+					     -o-transition: color .25s ease, border .25s ease;
+					        transition: color .25s ease, border .25s ease;
 				}
 			}
-			&.active {
+			&.active,
+			&:hover {
 				a {
-					border-top: 10px solid $primary !important;
-					padding-top: 0;
-					color: #000 !important;
+					border-top-color: #505061 !important;
+					color: #fff !important;
 					.fa {
-						color: $primary !important;
+						color: #fff !important;
 					}
 					strong {
-						font-weight: 700;
-					}
-				}
-			}
-			&:hover {
-				& > a {
-					border-top: 10px solid lighten($primary, 10%);
-					padding-top: 0;
-					color: #3f3f3f;
-					.fa {
-						color: lighten($primary, 10%);
+						font-weight: 400;
+						color: #fff;
 					}
 				}
 			}

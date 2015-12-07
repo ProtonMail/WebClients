@@ -25,6 +25,14 @@
 			font-weight: 400;
 		}
 	}
+	#pm_toolbar {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 15px;
+		background: #fff;
+		border-bottom: 1px solid $border;
+	}
 	.list {
 		width: 500px;
 		min-width: 500px;
@@ -33,8 +41,10 @@
 		-webkit-overflow-scrolling: touch;
 		overflow-x: hidden;
 		max-height: $maxHeight;
+		position: relative;
+		overflow-y: auto;
 		#pm_list {
-			padding: 0;
+			padding: 62px 0 0 0;
 		    box-sizing: border-box;
 		    box-shadow: inset -1px 0 $border;
 		}
@@ -76,13 +86,13 @@
 				width: 1rem;
 			}
 			&.active {
-				background: #828896;
+				background: $alt;
 				header {
 					color: #fff;
 					span {
 						color: #fff;
 						&.time {
-							background: #828896;
+							background: $alt;
 						}
 					}
 				}
@@ -92,8 +102,8 @@
 				article {
 					.pm_labels {
 						.pm_label {
-							box-shadow: 0 0 0 4px #828896;
-							background: #828896;
+							box-shadow: 0 0 0 4px $alt;
+							background: $alt;
 						}
 					}
 				}
@@ -114,13 +124,13 @@
 				z-index: 2;
 				border-left-color: $primary;
 				padding-left: calc(40px - 6px);
-				background: $selected;
+				background: $alt;
 				aside {
 					left: calc(15px - 6px);
 				}
 				header {
 					span.time {
-						background: $selected;
+						background: $alt;
 					}
 				}
 			}
