@@ -918,8 +918,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} criterion
      */
     $scope.orderBy = function(criterion) {
+        if(criterion === '-date') {
+            criterion = undefined;
+        }
+
         $state.go($state.$current.name, _.extend({}, $state.params, {
-            sort: criterion === '-date' ? undefined : criterion,
+            sort: criterion,
             page: undefined
         }));
     };

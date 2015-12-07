@@ -188,7 +188,7 @@ angular.module("proton.cache", [])
                     cacheCounters.updateConversation(loc, data.Total, data.Unread);
                     // Store conversations
                     storeConversations(data.Conversations);
-                    // Return conversations
+                    // Return conversations ordered
                     deferred.resolve(order(data.Conversations, 'Time'));
                 } else {
                     deferred.resolve(data.Conversations);
@@ -217,9 +217,11 @@ angular.module("proton.cache", [])
             if(context === true) {
                 // Store messages
                 storeMessages(messages);
+                // Return messages ordered
+                deferred.resolve(order(messages, 'Time'));
+            } else {
+                deferred.resolve(messages);
             }
-
-            deferred.resolve(order(messages, 'Time'));
         });
 
         return deferred.promise;
