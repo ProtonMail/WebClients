@@ -495,6 +495,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         $scope.unselectAllElements();
+
+        // Back to element list
+        $scope.back();
     };
 
     /**
