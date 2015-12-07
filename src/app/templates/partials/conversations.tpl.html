@@ -41,7 +41,8 @@
         selected: conversation.Selected,
         active: conversation.Active,
         starred: starred(conversation),
-        attachments: conversation.NumAttachments > 0
+        attachments: conversation.NumAttachments > 0,
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <aside>
             <span class="pm_checkbox">
@@ -85,7 +86,13 @@
 </div>
 
 <div ng-if="layoutMode === 'rows'" id="pm_list" pt-height>
-    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{unread: conversation.NumUnread > 0 || conversation.IsRead === 0, selected: conversation.Selected, active: conversation.Active, starred: starred(conversation)}">
+    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{
+        unread: conversation.NumUnread > 0 || conversation.IsRead === 0, 
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1, 
+        selected: conversation.Selected, 
+        active: conversation.Active, 
+        starred: starred(conversation)
+    }">
         <label class="pm_checkbox" ng-click="$event.stopPropagation();">
             <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)" />
             <em class="fa fa-check"></em>

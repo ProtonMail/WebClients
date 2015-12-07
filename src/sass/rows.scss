@@ -46,8 +46,16 @@ body, html {
 				color: #000;
 				background: #fff;
 			}
+			&.read {
+				.pm_labels {
+					background-color: $read;
+					.pm_label {
+						box-shadow: 0 0 0 4px $read;
+						background: $read;
+					}
+				}
+			}
 			&.selected {
-				background: $alt;
 				position: relative;
 				z-index: 2;
 				margin: 0 -9px 0 -14px;
