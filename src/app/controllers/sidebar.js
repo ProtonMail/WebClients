@@ -33,7 +33,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
-    // Scrollbar PANDA
+    // Scrollbar
     $('.perfectScroller').perfectScrollbar();
 
     $scope.hideMobileSidebar = function() {
