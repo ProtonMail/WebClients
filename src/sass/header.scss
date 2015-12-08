@@ -128,6 +128,14 @@ header#pm_header {
 			background-color: #8b909e;
 			border-radius: 35px 0 0 35px;
 			cursor: pointer;
+			-webkit-transition: background-color .25s ease;
+			   -moz-transition: background-color .25s ease;
+			    -ms-transition: background-color .25s ease;
+			     -o-transition: background-color .25s ease;
+			        transition: background-color .25s ease;
+			&:hover {
+				background: lighten(#8b909e, 5%);
+			}
 		}
 		button[type="submit"] {
 			padding: 0;

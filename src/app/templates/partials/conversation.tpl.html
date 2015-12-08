@@ -2,6 +2,7 @@
 <ng-include src="'templates/partials/toolbar-conversation-responsive.tpl.html'"></ng-include>
 
 <header>
+
     <span class="pm_buttons">
         <a href="" ng-click="toggleStar(conversation)">
             <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
@@ -19,7 +20,7 @@
             <i class="fa fa-tag"></i>
         </a> -->
     </span>
-    <h1 ng-bind="conversation.Subject"></h1>
+    <h1 ng-bind=" ( conversation.NumMessages > 1 ) ? '(' + conversation.NumMessages + ') ' + conversation.Subject : conversation.Subject"></h1>
 </header>
 
 <div id="pm_thread" pt-height>
