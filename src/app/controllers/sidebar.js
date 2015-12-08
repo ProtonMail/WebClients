@@ -26,6 +26,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
     $scope.labels = authentication.user.Labels;
     $scope.appVersion = CONFIG.app_version;
+    $scope.dateVersion = CONFIG.date_version
     $scope.droppedMessages = [];
     $scope.droppableOptions = {
         accept: '.ui-draggable',
