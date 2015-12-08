@@ -635,6 +635,38 @@ angular.module("proton.routes", [
         }
     })
 
+    .state("secured.keys", {
+        url: "/keys",
+        resolve: {
+            master: function(authentication, $q) {
+                var deferred = $q.defer();
+                var process = function() {
+                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
+                        deferred.resolve();
+                    } else {
+                        deferred.reject();
+                    }
+                };
+
+                if(angular.isObject(authentication.user)) {
+                    process();
+                } else {
+                    authentication.fetchUserInfo().then(function() {
+                        process();
+                    });
+                }
+
+                return deferred.promise;
+            }
+        },
+        views: {
+            "content@secured": {
+                templateUrl: "templates/views/keys.tpl.html",
+                controller: "KeysController"
+            }
+        }
+    })
+
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {

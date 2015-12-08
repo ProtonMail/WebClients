@@ -14,7 +14,8 @@
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
                 <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
                 <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                <em class="draftTag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
+                <em class="tag fa fa-file-text" ng-show="draft() === true"></em>
+                <em class="tag fa fa-trash" ng-show="trash() === true"></em>
                 <span class="pm_labels inline" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>

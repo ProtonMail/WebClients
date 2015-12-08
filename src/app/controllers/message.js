@@ -67,6 +67,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Check if the current message is in trash
+     * @return {Boolean}
+     */
+    $scope.trash = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+    };
+
+    /**
      * Method called to display message content
      * @return {Promise}
      */
