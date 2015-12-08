@@ -210,11 +210,24 @@ angular.module("proton.cache", [])
      */
     var queryMessages = function(request) {
         var deferred = $q.defer();
+        var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
-        Message.query(request).$promise.then(function(messages) {
+        Message.query(request).$promise.then(function(result) {
+            var messages = result.Messages;
+
+            $rootScope.Total = result.Total;
+
+            _.each(messages, function(message) {
+                message.NumAttachments = message.HasAttachment;
+                message.Senders = [message.Sender];
+                message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
+            });
+
             // Only for cache context
             if(context === true) {
+                // Set total value in cache
+                cacheCounters.updateMessage(loc, result.Total);
                 // Store messages
                 storeMessages(messages);
                 // Return messages ordered

@@ -48,21 +48,7 @@ angular.module("proton.models.message", ["proton.constants"])
             },
             query: {
                 method: 'get',
-                isArray: true,
-                url: url.get() + '/messages',
-                transformResponse: function(data) {
-                    var json = angular.fromJson(data);
-
-                    $rootScope.Total = json.Total;
-
-                    _.each(json.Messages, function(message) {
-                        message.NumAttachments = message.HasAttachment;
-                        message.Senders = [message.Sender];
-                        message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
-                    });
-
-                    return json.Messages;
-                }
+                url: url.get() + '/messages'
             },
             count: {
                 method: 'get',
