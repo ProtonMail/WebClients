@@ -609,7 +609,7 @@ angular.module("proton.routes", [
             master: function(authentication) {
                 var deferred = $q.defer();
                 var process = function() {
-                    if(authentication.user.Role === 'master') {
+                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
                         deferred.resolve();
                     } else {
                         deferred.reject();
@@ -641,7 +641,7 @@ angular.module("proton.routes", [
             master: function(authentication, $q) {
                 var deferred = $q.defer();
                 var process = function() {
-                    if(authentication.user.Role === 'master') {
+                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
                         deferred.resolve();
                     } else {
                         deferred.reject();
@@ -679,7 +679,7 @@ angular.module("proton.routes", [
             master: function(authentication, $q) {
                 var deferred = $q.defer();
                 var process = function() {
-                    if(authentication.user.Role === 'master') {
+                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
                         deferred.resolve();
                     } else {
                         deferred.reject();
@@ -720,7 +720,7 @@ angular.module("proton.routes", [
             master: function(authentication) {
                 var deferred = $q.defer();
                 var process = function() {
-                    if(authentication.user.Role === 'master') {
+                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
                         deferred.resolve();
                     } else {
                         deferred.reject();
