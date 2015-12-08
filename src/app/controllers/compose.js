@@ -1033,6 +1033,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             result.Message.NumAttachments = result.Message.Attachments.length;
                         }
 
+                        result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
+                        result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
+
                         $scope.saveOld(message);
 
                         if(angular.isDefined(conversation)) {
@@ -1049,7 +1052,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             cache.events(conversationEvent, 'conversation');
                         }
 
-                        // Add draft in message list
+                        // Update draft in message list
                         messageEvent.push({Action: action, ID: result.Message.ID, Message: result.Message});
                         cache.events(messageEvent, 'message');
 

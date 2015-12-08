@@ -870,6 +870,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.click = function(element) {
         var type = tools.typeList();
+        var id;
 
         delete $rootScope.openMessage;
         // Save scroll position
@@ -878,11 +879,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.unselectAllElements();
         // Open conversation
         if(type === 'conversation') {
-            $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ID });
+            id = element.ID;
         } else if (type === 'message') {
+            id = element.ConversationID;
             $rootScope.openMessage = [element.ID];
-            $state.go('secured.' + $scope.mailbox + '.list.view', { id: element.ConversationID });
         }
+
+        $state.go('secured.' + $scope.mailbox + '.list.view', { id: id }, {reload: id === $state.params.id});
     };
 
     /**
