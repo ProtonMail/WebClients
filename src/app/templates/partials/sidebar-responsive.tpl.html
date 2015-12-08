@@ -28,7 +28,6 @@
             <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list')">
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
-                <em ng-bind="unread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">

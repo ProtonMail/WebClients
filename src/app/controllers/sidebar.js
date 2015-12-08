@@ -214,10 +214,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         var count;
 
         switch (mailbox) {
-            // case 'drafts':
-            // case 'sent':
-            //     count = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-            //     break;
+            case 'drafts':
+                count = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                break;
             case 'label':
                 count = cacheCounters.unreadConversation(id);
                 break;
