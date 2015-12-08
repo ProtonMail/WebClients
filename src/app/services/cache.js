@@ -234,6 +234,7 @@ angular.module("proton.cache", [])
      */
     var queryConversationMessages = function(id) {
         var deferred = $q.defer();
+        var mailbox = tools.currentMailbox();
 
         Conversation.get(id).then(function(result) {
             var data = result.data;
@@ -247,6 +248,13 @@ angular.module("proton.cache", [])
 
                 storeConversations([data.Conversation]);
                 storeMessages(messages);
+
+                if(mailbox !== 'trash') {
+                    messages = _.reject(messages, function(message) {
+                        return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+                    });
+                }
+
                 deferred.resolve(order(messages, 'Time'));
             } else {
                 deferred.reject();
