@@ -45,16 +45,13 @@
                 <a href="" class="divider" ng-click="replyAll(message)" pt-tooltip="{{ 'REPLY_ALL' | translate }}">
                     <i class="fa fa-mail-reply-all"></i>
                 </a>
-                <a href="" class="divider" ng-click="forward(message)">
+                <a href="" class="divider" ng-click="forward(message)" pt-tooltip="{{ 'FORWARD' | translate }}">
                     <i class="fa fa-mail-forward"></i>
                 </a>
                 <a href="#" class="divider pm_trigger" ng-dropdown pt-tooltip="{{ 'MORE' | translate }}">
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
-                    <a href="" ng-click="reply(message)" ng-show="(message.ToList.length + message.CCList.length) > 1">
-                        <i class="fa fa-mail-reply"></i> {{ 'REPLY' | translate }}
-                    </a>
                     <a href="" ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
