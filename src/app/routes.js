@@ -606,7 +606,7 @@ angular.module("proton.routes", [
     .state("secured.invoices", {
         url: "/invoices",
         resolve: {
-            master: function(authentication) {
+            master: function(authentication, $q) {
                 var deferred = $q.defer();
                 var process = function() {
                     if(authentication.user.Role === 0 || authentication.user.Role === 2) {
