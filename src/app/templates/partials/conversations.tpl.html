@@ -44,6 +44,7 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <aside>
             <span class="pm_checkbox">
                 <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
@@ -52,12 +53,10 @@
         <header>
             <p>
                 <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-
                 <span title="{{ conversation.Subject }}">
                     <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                    <i class="fa fa-clock-o" ng-show="conversation.ExpirationTime > 0"></i>
                     {{ conversation.Subject }}
                 </span>
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>

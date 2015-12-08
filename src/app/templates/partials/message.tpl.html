@@ -15,7 +15,7 @@
                 <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
                 <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="draftTag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
-                <span class="pm_labels inline pull-left" ng-if="message.labels().length > 0">
+                <span class="pm_labels inline" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>
                         <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
@@ -34,6 +34,7 @@
                 </span><!-- this needs to re-be styled -->
             </span>
         </span>
+        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
     <div class="sub" ng-show="message.expand === true">
         <div class="actions">

@@ -7,6 +7,9 @@
 	}
 	* {
 		word-break: break-word;
+		&:not(.fa) {
+			font-family: 'Open Sans', Arial, sans-serif !important;
+		}
 	}
 	blockquote {
 		padding: 0 0 0 1rem;
