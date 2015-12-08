@@ -13,8 +13,8 @@
                 <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
                 <em pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</em>
-                <em ng-show="message.expand === true">{{ message.Sender | contact:'Address' }}</em>
-                <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                <em ng-show="message.expand === true && message.details === true">{{ message.Sender | contact:'Address' }}</em>
+                <a ng-show="message.expand === true && message.details === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="tag fa fa-file-text" ng-show="draft() === true"></em>
                 <em class="tag fa fa-trash" ng-show="trash() === true"></em>
                 <span class="pm_labels inline" ng-if="message.labels().length > 0">
@@ -95,8 +95,8 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
                         <strong>{{ email | contact:'Name' }}</strong>
-                        <em>{{ email | contact:'Address' }}</em>
-                        <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        <em ng-show="message.details === true">{{ email | contact:'Address' }}</em>
+                        <a href ng-show="message.details === true" class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
             </div>
@@ -105,8 +105,8 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
                         <strong>{{ email | contact:'Name' }}</strong>
-                        <em>{{ email | contact:'Address' }}</em>
-                        <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        <em ng-show="message.details === true">{{ email | contact:'Address' }}</em>
+                        <a href ng-show="message.details === true" class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
             </div>
@@ -115,12 +115,17 @@
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList" class="person">
                         <strong>{{ email | contact:'Name' }}</strong>
-                        <em>{{ email | contact:'Address' }}</em>
-                        <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        <em ng-show="message.details === true">{{ email | contact:'Address' }}</em>
+                        <a href ng-show="message.details === true" class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                     </span>
                 </span>
             </div>
-            <div class="meta"></div>
+            <div class="meta">
+                <a href="" ng-init="message.details = false" ng-click="message.details = !message.details">
+                    <span ng-show="message.details === true">{{ 'HIDE_DETAILS' | translate }}</span>
+                    <span ng-hide="message.details === true">{{ 'SHOW_DETAILS' | translate }}</span>
+                </a>
+            </div>
         </div><!--/.data-->
     </div>
     <div class="frame" ng-show="message.expand === true">
