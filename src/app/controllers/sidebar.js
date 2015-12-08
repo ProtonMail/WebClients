@@ -34,9 +34,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
-    // Scrollbar
-    $('.perfectScroller').perfectScrollbar();
-
     $scope.hideMobileSidebar = function() {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
@@ -57,6 +54,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $scope.$on("$destroy", function() {
             $(window).unbind('resize', $scope.labelScroller );
         });
+
+        // Scrollbar
+        $('.perfectScroller').perfectScrollbar();
     };
 
     /**
