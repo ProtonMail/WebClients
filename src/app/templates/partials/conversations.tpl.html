@@ -92,6 +92,7 @@
         active: conversation.Active,
         starred: starred(conversation)
     }">
+
         <label class="pm_checkbox" ng-click="$event.stopPropagation();">
             <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)" />
             <em class="fa fa-check"></em>
@@ -119,7 +120,7 @@
                 <i class="fa fa-clock-o" ng-show="conversation.ExpirationTime > 0"></i>
                 {{ conversation.Subject }}
             </span>
-            <span class="pm_labels inline">
+            <span class="pm_labels inline" ng-show="(conversation.LabelIDs | showLabels)">
                 <location-tag class="locTag"></location-tag>
                 <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>

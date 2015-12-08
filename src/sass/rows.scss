@@ -210,7 +210,6 @@ body, html {
 			position: relative;
 			display: block;
 			box-sizing: border-box;
-			background: $white;
 			& > * {
 				line-height: 25px;
 				height: 25px;
@@ -234,9 +233,20 @@ body, html {
 					}
 				}
 			}
+			&.read {
+				.time,
+				.subject .pm_labels {
+					background: $read;
+				}
+			}
 			&.selected {
-				background-color: #f6f6f6;
-				padding: 0 10px 0 75px;	
+				padding-left: 70px !important;
+				.star {
+					left: 35px !important;
+				}
+				.pm_checkbox {
+					left: 5px !important
+				}
 				margin-left: 0;
 			}
 			.size {
@@ -333,6 +343,23 @@ body, html {
 						&:before {
 							background: linear-gradient(to right, rgba(246,246,246,0) 0%,rgba(246,246,246,1) 100%);
 							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+						}
+					}
+				}
+			}
+			&.unread.selected {
+				.time {
+					background-color: #fff;
+				}
+				.subject {
+					.pm_labels {
+						background-color: #fff;
+						.pm_label {
+							box-shadow: 0 0 0 4px #fff;
+							background-color: #fff;
+						}
+						&:before {
+							background: #fff;
 						}
 					}
 				}
