@@ -262,12 +262,6 @@ angular.module("proton.cache", [])
                 storeConversations([data.Conversation]);
                 storeMessages(messages);
 
-                if(mailbox !== 'trash') {
-                    messages = _.reject(messages, function(message) {
-                        return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
-                    });
-                }
-
                 deferred.resolve(order(messages, 'Time'));
             } else {
                 deferred.reject();
@@ -475,12 +469,6 @@ angular.module("proton.cache", [])
         if(angular.isDefined(conversation)) {
             var messages = _.where(messagesCached, {ConversationID: conversationId});
 
-            if(mailbox !== 'trash') {
-                messages = _.reject(messages, function(message) {
-                    return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
-                });
-            }
-
             if(conversation.NumMessages === messages.length) {
                 deferred.resolve(order(messages, 'Time'));
             } else {
@@ -500,12 +488,6 @@ angular.module("proton.cache", [])
     api.queryMessagesCached = function(conversationId) {
         var mailbox = tools.currentMailbox();
         var messages = _.where(messagesCached, {ConversationID: conversationId});
-
-        if(mailbox !== 'trash') {
-            messages = _.reject(messages, function(message) {
-                return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
-            });
-        }
 
         messages = order(messages, 'Time');
 
