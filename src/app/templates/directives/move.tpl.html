@@ -9,7 +9,7 @@
         <li class="separator"></li>
         <li ng-repeat="label in labels | filter: {name: search} | orderBy: 'Order'">
             <a href="" ng-click="applyAndArchive(label)">
-                <i class="fa fa-tag"></i> <span ng-bind="label.name"></span>
+                <i class="fa fa-tag" ng-style="style(label)"></i> <span ng-bind="label.name"></span>
             </a>
         </li>
     </ul>

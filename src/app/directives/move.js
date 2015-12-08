@@ -22,6 +22,17 @@ angular.module("proton.move", [])
             });
 
             /**
+             * Return style object to colorize tag icon
+             * @param label
+             * @return {Object} style
+             */
+            scope.style = function(label) {
+                return {
+                    color: label.Color
+                };
+            };
+
+            /**
              * Move conversation to a specific location
              * @param {Object} loc
              */
