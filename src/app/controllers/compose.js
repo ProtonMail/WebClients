@@ -396,9 +396,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.cancelAttachment = function(attachment, message) {
         // Cancel the request
-        attachment.cancel();
-        // Remove the attachment in the view
-        message.Attachments = _.without(message.Attachments, attachment);
+        attachment.cancel(); // Also remove the attachment in the UI
     };
 
     $scope.addAttachment = function(file, message) {
@@ -450,7 +448,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.removeAttachment = function(attachment, message) {
-        message.Attachments = _.without(message.Attachments, attachment);
+        var index = message.Attachments.indexOf(attachment);
+
+        // Remove attachment in UI
+        message.Attachments.splice(index, 1);
 
         Attachment.remove({
             "MessageID": message.ID,
@@ -459,7 +460,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var data = result.data;
 
             if(angular.isDefined(data) && data.Code === 1000) {
-
+                // Attachment removed
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
 
