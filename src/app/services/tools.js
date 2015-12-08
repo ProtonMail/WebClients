@@ -415,7 +415,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.typeList = function() {
-        if(['search', 'drafts', 'sent'].indexOf(tools.currentMailbox()) !== -1) {
+        if(['search', 'drafts'].indexOf(tools.currentMailbox()) !== -1) {
             return 'message';
         } else {
             return 'conversation';

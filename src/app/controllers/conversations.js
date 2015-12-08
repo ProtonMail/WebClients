@@ -146,7 +146,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else {
             switch($scope.mailbox) {
                 case 'drafts':
-                case 'sent':
                     result = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
                     break;
                 case 'label':
@@ -230,7 +229,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var promise;
         var context = tools.cacheContext(request);
 
-        if(['sent', 'drafts', 'search'].indexOf(tools.currentMailbox()) !== -1) {
+        if(['drafts', 'search'].indexOf(tools.currentMailbox()) !== -1) {
             promise = cache.queryMessages(request);
         } else {
             promise = cache.queryConversations(request);

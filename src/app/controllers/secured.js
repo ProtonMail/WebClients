@@ -103,7 +103,6 @@ angular.module("proton.controllers.Secured", [])
 
         switch (state) {
             case 'drafts':
-            case 'sent':
                 value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
                 break;
             case 'label':
