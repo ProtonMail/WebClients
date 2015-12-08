@@ -605,28 +605,29 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var ADD = 1;
         var deferred = $q.defer();
         var ids = $scope.idsSelected();
-        var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var elementsSelected = $scope.elementsSelected();
         var type = tools.typeList();
         var conversationEvent = [];
         var messageEvent = [];
+        var current = tools.currentLocation();
 
         _.each(elementsSelected, function(element) {
             var copy = angular.copy(element);
-            var currents = [];
-
-            // Find current location
-            _.each(copy.LabelIDs, function(labelID) {
-                if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
-                    currents.push(labelID.toString());
-                }
+            var toApply = _.map(_.filter(labels, function(label) {
+                return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
+            }), function(label) {
+                return label.ID;
+            });
+            var toRemove = _.map(_.filter(labels, function(label) {
+                return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
+            }), function(label) {
+                return label.ID;
             });
 
             if(alsoArchive === true) {
                 toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                toRemove = toRemove.concat(currents);
+                toRemove = toRemove.push(current);
             }
 
             copy.LabelIDsAdded = toApply;
@@ -646,26 +647,26 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             } else if (type === 'message') {
                 messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
             }
+
+            _.each(toApply, function(labelID) {
+                if(type === 'conversation') {
+                    promises.push(Conversation.labels(labelID, ADD, ids));
+                } else if(type === 'message') {
+                    promises.push(Message.updateLabels(labelID, ADD, ids));
+                }
+            });
+
+            _.each(toRemove, function(labelID) {
+                if(type === 'conversation') {
+                    promises.push(Conversation.labels(labelID, REMOVE, ids));
+                } else if(type === 'message') {
+                    promises.push(Message.updateLabels(labelID, REMOVE, ids));
+                }
+            });
         });
 
         cache.events(conversationEvent, 'conversation');
         cache.events(messageEvent, 'message');
-
-        _.each(toApply, function(labelID) {
-            if(type === 'conversation') {
-                promises.push(Conversation.labels(labelID, ADD, ids));
-            } else if(type === 'message') {
-                promises.push(Label.apply(labelID, ids));
-            }
-        });
-
-        _.each(toRemove, function(labelID) {
-            if(type === 'conversation') {
-                promises.push(Conversation.labels(labelID, REMOVE, ids));
-            } else if(type === 'message') {
-                promises.push(Label.remove(labelID, ids));
-            }
-        });
 
         $q.all(promises).then(function(results) {
             if(alsoArchive === true) {

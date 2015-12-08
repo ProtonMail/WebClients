@@ -219,13 +219,21 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var ADD = 1;
         var deferred = $q.defer();
         var ids = [$scope.conversation.ID];
-        var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var conversationEvent = [];
         var messageEvent = [];
         var copy = angular.copy($scope.conversation);
-        var currents = [];
+        var current = tools.currentLocation();
+        var toApply = _.map(_.filter(labels, function(label) {
+            return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
+        }), function(label) {
+            return label.ID;
+        });
+        var toRemove = _.map(_.filter(labels, function(label) {
+            return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
+        }), function(label) {
+            return label.ID;
+        });
 
         _.each(toApply, function(labelID) {
             promises.push(Conversation.labels(labelID, ADD, ids));
@@ -235,16 +243,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             promises.push(Conversation.labels(labelID, REMOVE, ids));
         });
 
-        // Find current location
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
-                currents.push(labelID.toString());
-            }
-        });
-
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove = toRemove.concat(currents); // Remove current location
+            toRemove = toRemove.push(current); // Remove current location
         }
 
         copy.LabelIDsAdded = toApply;

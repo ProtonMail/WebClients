@@ -1,25 +1,26 @@
 angular.module("proton.models.message", ["proton.constants"])
 
 .factory("Message", function(
+    $compile,
+    $http,
+    $log,
+    $q,
     $resource,
     $rootScope,
-    $compile,
-    $templateCache,
-    $timeout,
-    $q,
     $state,
     $stateParams,
+    $templateCache,
+    $timeout,
     $translate,
-    $log,
     authentication,
-    url,
-    User,
-    pmcw,
-    CONSTANTS,
     CONFIG,
+    CONSTANTS,
     networkActivityTracker,
     notify,
-    tools
+    pmcw,
+    tools,
+    url,
+    User
 ) {
     var Message = $resource(
         url.get() + '/messages/:id',
@@ -169,6 +170,16 @@ angular.module("proton.models.message", ["proton.constants"])
             var body = this.DecryptedBody || this.Body;
 
             return body;
+        },
+
+        /**
+         * Label/unlabel an array of messages
+         * @param {String} labelID
+         * @param {Integer} action - 0 for remove or 1 for add
+         * @param {Array} messageIDs
+         */
+        updateLabels: function(labelID, action, messageIDs) {
+            return $http.put(url.get() + '/messages/label', {LabelID: labelID, Action: action, MessageIDs: messageIDs});
         },
 
         labels: function() {

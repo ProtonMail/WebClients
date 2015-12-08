@@ -594,37 +594,41 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.saveLabels = function(labels, alsoArchive) {
         var deferred = $q.defer();
+        var REMOVE = 0;
+        var ADD = 1;
         var copy = angular.copy($scope.message);
         var ids = [copy.ID];
-        var toApply = _.map(_.where(labels, {Selected: true}), function(label) { return label.ID; });
-        var toRemove = _.map(_.where(labels, {Selected: false}), function(label) { return label.ID; });
         var promises = [];
         var messageEvent = [];
         var conversationEvent = [];
-        var currents = [];
+        var current = tools.currentLocation();
         var labelIDs = [];
+        var toApply = _.map(_.filter(labels, function(label) {
+            return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
+        }), function(label) {
+            return label.ID;
+        });
+        var toRemove = _.map(_.filter(labels, function(label) {
+            return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
+        }), function(label) {
+            return label.ID;
+        });
 
         // Requests
         _.each(toApply, function(labelID) {
-            promises.push(Label.apply(labelID, ids));
+            promises.push(Message.updateLabels(labelID, ADD, ids));
         });
 
         _.each(toRemove, function(labelID) {
-            promises.push(Label.remove(labelID, ids));
-        });
-
-        // Find current location
-        _.each(copy.LabelIDs, function(labelID) {
-            if(['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1) {
-                currents.push(labelID.toString());
-            }
+            promises.push(Message.updateLabels(labelID, REMOVE, ids));
         });
 
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove = toRemove.concat(currents); // Remove current location
+            toRemove = toRemove.push(current); // Remove current location
         }
 
+        // Generate cache event
         copy.LabelIDsAdded = toApply;
         copy.LabelIDsRemoved = toRemove;
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
@@ -639,7 +643,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         $q.all(promises).then(function(result) {
             if(alsoArchive === true) {
-                deferred.resolve(Message.archive({IDs: ids}));
+                deferred.resolve(Message.archive({IDs: ids}).$promise);
             } else {
                 deferred.resolve();
             }
