@@ -23,6 +23,12 @@
 	.col .input-icon {
 		float: left;
 		width: 100%;
+		em {
+			pointer-events: none;
+		}
+	}
+	.pm_select {
+		margin-bottom: 0;
 	}
 }
 

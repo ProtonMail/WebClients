@@ -15,6 +15,9 @@
 	    box-sizing: border-box;
 	    border-bottom: 1px solid $border;
 	}
+	& > p {
+		padding: calc(15px + 1.5rem);
+	}
 	section {
 		border-bottom: 1px solid $border;	
 	}
@@ -31,7 +34,7 @@
 	    }
     }
     .storageArea {
-    	padding: 0 6rem;
+    	padding: 0 8rem;
     	position: relative;
     	height: 2rem;
     	line-height: 2rem;
@@ -42,6 +45,7 @@
     		display: block;
     		height: 2rem;
     		line-height: 2rem;
+    		padding-left: calc(15px + 1.5rem);
     	}
     	.total {
     		position: absolute;
@@ -50,6 +54,7 @@
     		display: block;
     		height: 2rem;
     		line-height: 2rem;
+    		padding-right: calc(15px + 1.5rem);
     	}
 	    div.storage {
 	        color: #bbb;

@@ -37,6 +37,10 @@
             border-color: #66669a;
             outline: none;
         }
+        &[disabled],
+        &.disabled {
+            background: lighten($primary, 5%);
+        }
     }
     &.link {
         background-color: transparent;
@@ -74,6 +78,10 @@
             background-color: darken($green, 10%);
             border-color: darken($green, 10%);
         }
+        &[disabled],
+        &.disabled {
+            background: lighten($green, 5%);
+        }
     }
     &.error {
         background-color: $red;
@@ -82,6 +90,10 @@
         &:hover {
             background-color: darken($red, 10%);
             border-color: darken($red, 10%);
+        }
+        &[disabled],
+        &.disabled {
+            background: lighten($red, 5%);
         }
     }
     &[disabled],
