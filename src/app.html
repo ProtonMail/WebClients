@@ -76,35 +76,5 @@
 <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>" defer></script>
 <% }); %>
-
-<script type="text/javascript">
-function is_good_prng_available() {
-    if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
-        return true;
-    } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
-        return true;
-    } else {
-        return false;
-    }
-}
-function isSessionStorage_available() {
-    return (typeof(sessionStorage) !== 'undefined');
-}
-
-if(!isSessionStorage_available()) {
-    alert('Error: sessionStorage is required to use ProtonMail.');
-    setTimeout( function() {
-        window.location = 'https://protonmail.com/support/knowledge-base/sessionstorage/';
-    }, 1000);
-}
-if (!is_good_prng_available()) {
-    alert('Error: a PRNG is required to use ProtonMail.');
-    setTimeout( function() {
-        window.location = 'https://protonmail.com/support/knowledge-base/prng/';
-    }, 1000);
-}
-
-</script>
-
 </body>
 </html>

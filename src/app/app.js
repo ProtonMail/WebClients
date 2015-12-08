@@ -101,6 +101,39 @@ angular.module("proton", [
     "proton.translations"
 ])
 
+/**
+ * Check if the current browser owns some requirements
+ */
+.config(function() {
+    var is_good_prng_available = function() {
+        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
+            return true;
+        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    var isSessionStorage_available = function() {
+        return (typeof(sessionStorage) !== 'undefined');
+    };
+
+    if(isSessionStorage_available() === false) {
+        alert('Error: sessionStorage is required to use ProtonMail.');
+        setTimeout( function() {
+            window.location = 'https://protonmail.com/support/knowledge-base/sessionstorage/';
+        }, 1000);
+    }
+
+    if(is_good_prng_available() === false) {
+        alert('Error: a PRNG is required to use ProtonMail.');
+        setTimeout( function() {
+            window.location = 'https://protonmail.com/support/knowledge-base/prng/';
+        }, 1000);
+    }
+})
+
 // Set base url from grunt config
 .provider('url', function urlProvider() {
     var base;
@@ -377,7 +410,7 @@ angular.module("proton", [
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
-        
+
         // Close navbar on mobile
         $(".navbar-toggle").click();
 
