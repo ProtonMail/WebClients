@@ -12,7 +12,8 @@
                 <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
-                <em pt-tooltip="{{ message.Sender.Address }}">{{ (message.Sender.Name || message.Sender.Address) | displayName }}</em>
+                <em pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</em>
+                <em ng-show="message.expand === true">{{ message.Sender | contact:'Address' }}</em>
                 <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="tag fa fa-file-text" ng-show="draft() === true"></em>
                 <em class="tag fa fa-trash" ng-show="trash() === true"></em>

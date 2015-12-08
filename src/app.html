@@ -36,11 +36,7 @@
     </style>
     <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
-<body
-class=""
-ontouchstart
-id="{{ toState }}"
-ng-class="{
+<body class="" id="{{ toState }}" ng-class="{
     locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState) || ('reset'|isState),
     login:!isLoggedIn,
     unlock:isLocked,
