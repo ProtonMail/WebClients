@@ -55,6 +55,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     $scope.messages.splice(index, 1);
                 }
             });
+
+            if($scope.messages.length === 0) {
+                $scope.back();
+            }
         }
     });
 

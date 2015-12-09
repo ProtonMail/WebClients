@@ -12,21 +12,21 @@ angular.module("proton.countdown", [])
                 var newTitle = $filter('delay')($attrs.countdown * 1000);
 
                 // Show how many days, hours, minutes and seconds are left
-                if($attrs.outside) {
+                // if($attrs.outside) {
                     $($element).text(newTitle);
-                } else {
-                    $($element).attr('data-original-title', newTitle);
-
-                    if(angular.isDefined($($element).data('bs.tooltip').$tip)) {
-                        $($element).data('bs.tooltip').$tip.find('.tooltip-inner').text(newTitle);
-                    }
-                }
+                // } else {
+                //     $($element).attr('data-original-title', newTitle);
+                //
+                //     if(angular.isDefined($($element).data('bs.tooltip').$tip)) {
+                //         $($element).data('bs.tooltip').$tip.find('.tooltip-inner').text(newTitle);
+                //     }
+                // }
             }
 
-            $($element[0]).tooltip({
-                container: 'body',
-                placement: 'top'
-            });
+            // $($element[0]).tooltip({
+            //     container: 'body',
+            //     placement: 'top'
+            // });
 
             $element.bind('$destroy', function() {
                 $interval.cancel(intervalCountdown);

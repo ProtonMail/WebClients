@@ -85,6 +85,6 @@ angular.module("proton.models.payments", [])
     };
 })
 
-.factory('Stripe', function ($window) {
-    return $window.Stripe;
+.factory('Stripe', function() {
+    return window.Stripe;
 });
