@@ -90,7 +90,7 @@
             </span>
         </div><!--/.actions-->
         <div class="data">
-            <div ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true && message.details === true">
+            <div ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true">
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
@@ -100,7 +100,7 @@
                     </span>
                 </span>
             </div>
-            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true && message.details === true">
+            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
@@ -110,7 +110,7 @@
                     </span>
                 </span>
             </div>
-            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true && message.details === true">
+            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
                 <i>{{ 'BCC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList" class="person">
