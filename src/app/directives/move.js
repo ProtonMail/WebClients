@@ -5,6 +5,7 @@ angular.module("proton.move", [])
         restrict: 'E',
         templateUrl: 'templates/directives/move.tpl.html',
         replace: true,
+        scope: {},
         link: function(scope, element, attrs) {
             scope.filter = '';
             scope.locs = [];
