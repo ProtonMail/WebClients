@@ -97,6 +97,12 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="border-panel margin-bottom" ng-show="domains.length === 0">
+                    <p>
+                        <i class="fa fa-exclamation-triangle text-red"></i> <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
+                    </p>
+                    <p>Please add first a custom domain to configure addresses.</p>
+                </div>
             </section>
             <p>&nbsp;</p>
             <section class="setting pm_form full">
@@ -152,7 +158,6 @@
                     </p>
                     <p>Please add first a custom domain to configure addresses.</p>
                 </div>
-                <p>&nbsp;</p>
             </section>
             <p>&nbsp;</p>
             <section class="setting pm_form full">

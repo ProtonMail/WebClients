@@ -19,11 +19,6 @@
 			            		<p class="text-right clearfix">
 				            		<button class="pm_button primary" type="submit">{{ 'SAVE'| translate }}</button>
 			            		</p>
-                                <!-- <div ng-messages="form_organization.name.$error" ng-show="form_organization.name.$touched" role="alert">
-                                    <div ng-message="required"><small>You did not enter a field</small></div>
-                                    <div ng-message="minlength"><small>Your field is too short</small></div>
-                                    <div ng-message="maxlength"><small>Your field is too long</small></div>
-                                </div> -->
 	            			</div>
 	            		</form>
 	            	</div>
@@ -33,7 +28,7 @@
 	                        	<tr>
 		                            <th width="7rem">{{ 'NUMBER_OF_USER'| translate }}: </th>
 		                            <td>
-		                                <strong>2 of 2 used</strong>
+		                                <strong>{{ organization.UsedMembers }} {{ 'OF' | translate }} {{ organization.MaxMembers }} {{ 'USED' | translate }}</strong>
 		                            </td>
 		                            <td class="text-right">
 		                            	<span>
@@ -44,7 +39,7 @@
 		                        <tr>
 		                            <th>{{ 'ORGANIZATION_STORAGE'| translate }}:</th>
 		                            <td>
-		                                <strong>10.000 MB</strong>
+		                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
 		                            </td>
 		                            <td class="text-right">
 		                                <span>
@@ -81,7 +76,7 @@
 		            <tbody>
 						<tr ng-repeat="member in members">
 		                    <td class="username">
-		                        <span ng-bind="member.DisplayName" title="{{ member.UserName }}"></span>
+		                        <span ng-bind="member.NickName"></span>
 		                    </td>
 		                    <td class="role">
 		                    	<span class="pm_select">
@@ -91,7 +86,7 @@
 		                    </td>
 		                    <td class="storage">{{ member.UsedSpace | bytes: 0 }}9999 out of 10000 MB used <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link"></a></td>
 		                    <td class="addresses">
-                                <div ng-repeat="address in addressesOf(member) | orderBy: 'Send'">
+                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'">
                                     {{ address.Email }} <small ng-show="address.Send === 0"><strong>(DEFAULT)</strong></small>
                                     <a href="" ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 0" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>

@@ -10,10 +10,12 @@ angular.module("proton.controllers.Settings")
     organization,
     Organization,
     storageModal,
-    userModal
+    userModal,
+    notify
 ) {
-    var MASTER = 0;
+    var MASTER = 2;
     var SUB = 1;
+    var NORMAL = 0;
 
     $scope.roles = [
         {label: $translate.instant('MASTER'), value: MASTER},
@@ -21,10 +23,13 @@ angular.module("proton.controllers.Settings")
     ];
 
     $scope.initialization = function() {
-        console.log(organization);
-        console.log(members);
-        $scope.organization = organization.Organization;
-        $scope.members = members.Members;
+        if(organization.data.Code === 1000) {
+            $scope.organization = organization.data.Organization;
+        }
+
+        if(members.data.Code === 1000) {
+            $scope.members = members.data.Members;
+        }
     };
 
     $scope.addressesOf = function(member) {
