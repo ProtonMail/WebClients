@@ -62,7 +62,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.changeRole = function(member) {
-        Member.update(member).then(function(result) { // TODO check request
+        Member.role(member.ID, member.Role).then(function(result) { // TODO check request
             if(result.data && result.data.Code === 1000) {
                 notify({message: $translate.instant('ROLE_UPDATED'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
@@ -79,7 +79,11 @@ angular.module("proton.controllers.Settings")
      * Save the organization name
      */
     $scope.saveOrganizationName = function() {
-        Organization.update($scope.organization).then(function(result) { // TODO omit some parameters
+        Organization.update({
+            Organization: {
+                DisplayName: $scope.organization.DisplayName
+            }
+        }).then(function(result) { // TODO omit some parameters
             if(result.data && result.data.Code === 1000) {
                 notify({message: $translate.instant('ORGANIZATION_UPDATED'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
