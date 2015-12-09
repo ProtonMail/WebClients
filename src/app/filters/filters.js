@@ -3,32 +3,37 @@ angular.module("proton.filters",[])
 .filter('delay', function ($translate) {
     return function (input) {
         // get the current moment
-        var now = moment(),
-        then = moment(input),
-        // get the difference from now to then in ms
-        ms = then.diff(now, 'milliseconds', true);
+        var now = moment();
+        var then = moment(input);
 
-        // update the duration in ms
-        ms = then.diff(now, 'milliseconds', true);
-        days = Math.floor(moment.duration(ms).asDays());
+        if(then.isAfter(now)) {
+            // get the difference from now to then in ms
+            var ms = then.diff(now, 'milliseconds', true);
 
-        then = then.subtract(days, 'days');
-        // update the duration in ms
-        ms = then.diff(now, 'milliseconds', true);
-        hours = Math.floor(moment.duration(ms).asHours());
+            // update the duration in ms
+            ms = then.diff(now, 'milliseconds', true);
+            days = Math.floor(moment.duration(ms).asDays());
 
-        then = then.subtract(hours,'hours');
-        // update the duration in ms
-        ms = then.diff(now, 'milliseconds', true);
-        minutes = Math.floor(moment.duration(ms).asMinutes());
+            then = then.subtract(days, 'days');
+            // update the duration in ms
+            ms = then.diff(now, 'milliseconds', true);
+            hours = Math.floor(moment.duration(ms).asHours());
 
-        then = then.subtract(minutes, 'minutes');
-        // update the duration in ms
-        ms = then.diff(now, 'milliseconds', true);
-        seconds = Math.floor(moment.duration(ms).asSeconds());
+            then = then.subtract(hours,'hours');
+            // update the duration in ms
+            ms = then.diff(now, 'milliseconds', true);
+            minutes = Math.floor(moment.duration(ms).asMinutes());
 
-        // concatonate the variables
-        return days + ' ' + $translate.instant('DAYS') + ' ' + hours + ' ' + $translate.instant('HOURS') + ' ' + minutes + ' ' + $translate.instant('MINUTES') + ' ' + seconds + ' ' + $translate.instant('SECONDS');
+            then = then.subtract(minutes, 'minutes');
+            // update the duration in ms
+            ms = then.diff(now, 'milliseconds', true);
+            seconds = Math.floor(moment.duration(ms).asSeconds());
+
+            // concatonate the variables
+            return days + ' ' + $translate.instant('DAYS') + ' ' + hours + ' ' + $translate.instant('HOURS') + ' ' + minutes + ' ' + $translate.instant('MINUTES') + ' ' + seconds + ' ' + $translate.instant('SECONDS');
+        } else {
+            return '';
+        }
     };
 })
 
