@@ -165,7 +165,7 @@
                         }
                     }
                     b {
-                        display: block;
+                        display: inline-block;
                     }
                 }
             }
@@ -175,7 +175,6 @@
 			padding: 0;
 		    line-height: 12px !important;
 		    height: 14px !important;
-		    margin-left: 5px;
 		    font-size: 90%;
             position: relative;
             left: 0;
@@ -200,7 +199,6 @@
         span.person {
             position: relative;
             word-break: break-word;
-            padding-left: 1.5rem;
             i {
                 margin: 0 0 0 .25rem;
                 clear: both;
@@ -225,6 +223,7 @@
             cursor: pointer;
             font-size: 90%;
             padding-right: 25px;
+            background: $read;
             position: relative;
     		.time {
     			display: inline-block;
@@ -257,7 +256,7 @@
     			color: #999;
     			float: left;
                 .pm_labels {
-                    margin: -6px 0;
+                    margin: -6px 0 -6px 1rem;
                     em {
                         font-weight: 700;
                     }
@@ -324,18 +323,23 @@
     	}
     	.recipientsWrap {
     		display: block;
+            padding-left: 1.5rem;
             & > span {
                 clear: both;
-                display: block;
+                display: inline-block;
                 line-height: 20px;
                 margin-bottom: 10px;
                 strong {
-                    display: block;
                     font-weight: 700;
                     color: #555;
                 }
                 em {
                     font-style: italic;
+                }
+                .spacer {
+                    display: inline-block;
+                    position: static;
+                    width: .5rem;
                 }
             }
     	}
@@ -350,6 +354,8 @@
 			box-sizing: border-box;
             float: left;
             width: 100%;
+            border-bottom: 1px solid $border;
+            background: $read;
 			.data {
                 float: left;
                 width: 100%;
@@ -486,10 +492,7 @@
     		width: 100%;
     		position: relative;
     		clear: both;
-    		padding-top: 1rem;
-    		padding-bottom: 1rem;
-            padding-left: calc(15px + 1.5rem);
-            padding-right: calc(15px + 1.5rem);
+            padding: calc(15px + 1.5rem);
             box-sizing: border-box;
             .more {
                 line-height: 1rem;

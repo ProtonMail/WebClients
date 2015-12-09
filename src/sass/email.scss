@@ -9,6 +9,8 @@
 		word-break: break-word;
 		&:not(.fa) {
 			font-family: 'Open Sans', Arial, sans-serif !important;
+			font-size: 15px;
+			color: #000;
 		}
 	}
 	blockquote {
