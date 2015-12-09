@@ -501,14 +501,9 @@ angular.module("proton.routes", [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication, $log, $http, pmcw) {
-                $log.debug('user:resolve:');
-
                 if(angular.isObject(authentication.user)) {
                     return authentication.user;
                 } else {
-                    $log.debug('user:resolve:fetchUserInfo');
-                    $log.debug(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
-
                     if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
                         $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
@@ -522,7 +517,6 @@ angular.module("proton.routes", [
             authentication.redirectIfNecessary();
         }
     })
-
 
     .state("secured.print", {
         url: "/print/:id",
@@ -606,22 +600,13 @@ angular.module("proton.routes", [
     .state("secured.invoices", {
         url: "/invoices",
         resolve: {
-            master: function(authentication, $q) {
+            access: function(user, $q) {
                 var deferred = $q.defer();
-                var process = function() {
-                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
-                        deferred.resolve();
-                    } else {
-                        deferred.reject();
-                    }
-                };
 
-                if(angular.isObject(authentication.user)) {
-                    process();
+                if(user.Role === 2) {
+                    deferred.resolve();
                 } else {
-                    authentication.fetchUserInfo().then(function() {
-                        process();
-                    });
+                    deferred.reject();
                 }
 
                 return deferred.promise;
@@ -638,22 +623,13 @@ angular.module("proton.routes", [
     .state("secured.keys", {
         url: "/keys",
         resolve: {
-            master: function(authentication, $q) {
+            access: function(user, $q) {
                 var deferred = $q.defer();
-                var process = function() {
-                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
-                        deferred.resolve();
-                    } else {
-                        deferred.reject();
-                    }
-                };
 
-                if(angular.isObject(authentication.user)) {
-                    process();
+                if(user.Role === 2) {
+                    deferred.resolve();
                 } else {
-                    authentication.fetchUserInfo().then(function() {
-                        process();
-                    });
+                    deferred.reject();
                 }
 
                 return deferred.promise;
@@ -670,27 +646,18 @@ angular.module("proton.routes", [
     .state("secured.dashboard", {
         url: "/dashboard",
         resolve: {
-            master: function(authentication, $q) {
+            access: function(user, $q) {
                 var deferred = $q.defer();
-                var process = function() {
-                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
-                        deferred.resolve();
-                    } else {
-                        deferred.reject();
-                    }
-                };
 
-                if(angular.isObject(authentication.user)) {
-                    process();
+                if(user.Role === 0 || user.Role === 2) {
+                    deferred.resolve();
                 } else {
-                    authentication.fetchUserInfo().then(function() {
-                        process();
-                    });
+                    deferred.reject();
                 }
 
                 return deferred.promise;
             },
-            organization: function(Organization, networkActivityTracker) {
+            organization: function(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
             status: function(Payment, networkActivityTracker) {
@@ -708,27 +675,18 @@ angular.module("proton.routes", [
     .state("secured.users", {
         url: "/users",
         resolve: {
-            master: function(authentication, $q) {
+            access: function(user, $q) {
                 var deferred = $q.defer();
-                var process = function() {
-                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
-                        deferred.resolve();
-                    } else {
-                        deferred.reject();
-                    }
-                };
 
-                if(angular.isObject(authentication.user)) {
-                    process();
+                if(user.Role === 2) {
+                    deferred.resolve();
                 } else {
-                    authentication.fetchUserInfo().then(function() {
-                        process();
-                    });
+                    deferred.reject();
                 }
 
                 return deferred.promise;
             },
-            organization: function(Organization, networkActivityTracker) {
+            organization: function(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
             members: function(Member, networkActivityTracker) {
@@ -749,22 +707,13 @@ angular.module("proton.routes", [
     .state("secured.domains", {
         url: "/domains",
         resolve: {
-            master: function(authentication, $q) {
+            access: function(user, $q) {
                 var deferred = $q.defer();
-                var process = function() {
-                    if(authentication.user.Role === 0 || authentication.user.Role === 2) {
-                        deferred.resolve();
-                    } else {
-                        deferred.reject();
-                    }
-                };
 
-                if(angular.isObject(authentication.user)) {
-                    process();
+                if(user.Role === 2) {
+                    deferred.resolve();
                 } else {
-                    authentication.fetchUserInfo().then(function() {
-                        process();
-                    });
+                    deferred.reject();
                 }
 
                 return deferred.promise;
