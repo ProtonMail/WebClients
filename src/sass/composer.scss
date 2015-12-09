@@ -10,14 +10,16 @@ body.maximizedComposer {
 	bottom: 0;
 	right: 0;
 	z-index: 9999;
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
 	.composer {
 		border-radius: 2px;
+		display: inline-block;
 		width: 580px;
 		height: 530px;
 		background: $white;
-		float: right;
 		margin: 0 25px 25px 0;
-		display: block;
 		box-shadow: 3px 3px 3px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);
 		position: relative;
 		padding-bottom: 60px;
@@ -62,7 +64,6 @@ body.maximizedComposer {
 		&.minimized {
 			height: 40px;
 			margin-top: 490px;
-			background: transparent;
 			overflow: hidden;
 			padding: 0 !important;
 			header {
@@ -70,6 +71,10 @@ body.maximizedComposer {
 				.fa.fa-minus {
 					top: -5px;
 				}
+			}
+			& > div,
+			& > footer {
+				display: none;
 			}
 		}
 		.saveAt {
