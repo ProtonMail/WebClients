@@ -680,6 +680,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
         cache.events(conversationEvent, 'conversation');
+
     };
 
     $scope.sendMessageTo = function(email) {

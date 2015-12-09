@@ -127,9 +127,41 @@
                 }
                 .from {
                     .pm_labels {
+                        background: #fff;
                         .pm_label {
                             box-shadow: 0 0 0 4px #fff !important;
                             background: #fff !important;
+                            padding-right: calc(.15rem + 1rem);
+                            position: relative;
+                            right: initial !important;
+                            box-sizing: border-box;
+                            a {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 1rem;
+                                text-align: center;
+                                cursor: pointer;
+                                bottom: 0;
+                                display: block;
+                                z-index: 2;
+                                .fa {
+                                    position: static;
+                                    display: block !important;
+                                    font-size: 10px;
+                                    color: $gray-light;
+                                    line-height: 12px;
+                                    height: 12px;
+                                    -webkit-transition: color .25s ease;
+                                       -moz-transition: color .25s ease;
+                                        -ms-transition: color .25s ease;
+                                         -o-transition: color .25s ease;
+                                            transition: color .25s ease;
+                                    &:hover {
+                                        color: $gray;
+                                    }
+                                }
+                            }
                         }
                     }
                     b {
