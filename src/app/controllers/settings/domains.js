@@ -558,9 +558,9 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initMember = function(address) {
         _.each($scope.members, function(member) {
-            var found = member.AddressIDs.indexOf(address.AddressID) !== -1;
+            var found = _.findWhere(member.Addresses, {ID: address.AddressID});
 
-            if(found === true) {
+            if(angular.isDefined(found)) {
                 address.select = member;
             }
         });

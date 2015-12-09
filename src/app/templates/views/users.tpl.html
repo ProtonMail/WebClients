@@ -76,10 +76,11 @@
 		            <tbody>
 						<tr ng-repeat="member in members">
 		                    <td class="username">
-		                        <strong ng-bind="member.NickName"></strong>
+		                        <span ng-bind="member.NickName"></span>
 		                    </td>
 		                    <td class="role">
-		                    	<span class="pm_select">
+                                <span ng-show="member.Role">{{ 'MASTER' | translate }}</span>
+		                    	<span class="pm_select" ng-hide="member.Role === 2">
 									<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 			                        <i class="fa fa-angle-down"></i>
 			                    </span>
