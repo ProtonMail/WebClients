@@ -204,7 +204,6 @@ angular.module("proton", [
     $document,
     $rootScope,
     $state,
-    $stateParams,
     $timeout,
     $window,
     authentication,

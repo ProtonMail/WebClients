@@ -15,8 +15,8 @@
                 <b pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</b>
                 <em ng-show="message.expand === true && message.details === true">{{ message.Sender | contact:'Address' }}</em>
                 <a ng-show="message.expand === true && message.details === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                <em class="tag fa fa-file-text" ng-show="draft() === true"></em>
-                <em class="tag fa fa-trash" ng-show="trash() === true"></em>
+                <em class="tag fa fa-file-text" ng-show="draft() === true" pt-tooltip="{{ 'DRAFT' | translate }}"></em>
+                <em class="tag fa fa-trash" ng-show="trash() === true" pt-tooltip="{{ 'MESSAGE_IN_TRASH' | translate }}"></em>
                 <span class="pm_labels inline" ng-if="message.labels().length > 0">
                     <span ng-repeat="label in message.labels() | labels" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
                         <em>{{ getLabel(label.ID).Name }}</em>

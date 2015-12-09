@@ -89,10 +89,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.refreshConversations();
         });
 
-        $scope.$on('unactiveElements', function() {
-            $scope.unactiveElements();
-        });
-
         $scope.$on('updateLabels', function() {
             $scope.updateLabels();
         });
@@ -107,10 +103,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('move', function(event, name) {
             $scope.move(name);
-        });
-
-        $scope.$on('activeElement', function(event, id) {
-            $scope.activeElement(id);
         });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
@@ -251,21 +243,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * Unactive each elements
+     * Return if the current element is active
+     * @param {Object} element
+     * @return {Boolean}
      */
-    $scope.unactiveElements = function() {
-        _.each($scope.conversations, function(conversation) {
-            conversation.Active = false;
-        });
-    };
-
-    /**
-     * Active specific element
-     */
-    $scope.activeElement = function(id) {
-        _.each($scope.conversations, function(conversation) {
-            conversation.Active = angular.isDefined(id) && conversation.ID === id;
-        });
+    $scope.active = function(element) {
+        if(angular.isDefined($state.params.id)) {
+            return $state.params.id === element.ConversationID || $state.params.id === element.ID;
+        } else {
+            return false;
+        }
     };
 
     /**
