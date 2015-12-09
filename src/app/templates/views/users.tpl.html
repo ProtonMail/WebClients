@@ -84,7 +84,7 @@
 			                        <i class="fa fa-angle-down"></i>
 			                    </span>
 		                    </td>
-		                    <td class="storage">{{ member.UsedSpace | bytes: 0 }}9999 out of 10000 MB used <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link"></a></td>
+		                    <td class="storage">{{ member.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ member.MaxSpace | humanSize }} {{ 'USED' | translate }} <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link"></a></td>
 		                    <td class="addresses">
                                 <div ng-repeat="address in member.Addresses | orderBy: 'Send'">
                                     {{ address.Email }} <small ng-show="address.Send === 0"><strong>(DEFAULT)</strong></small>
