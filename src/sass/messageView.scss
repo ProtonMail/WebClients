@@ -14,6 +14,15 @@
 #pm_rows #pm_view article.message header {
     padding-right: 10px;
 }
+#pm_columns {
+    #pm_view {
+        & > header {
+            h1 {
+                padding-left: 0;
+            }
+        }
+    }
+}
 #pm_view {
 	display: block;
     padding: 0 15px 0 40px;
@@ -119,8 +128,8 @@
                 .from {
                     .pm_labels {
                         .pm_label {
-                            box-shadow: 0 0 0 4px #fff;
-                            background: #fff;
+                            box-shadow: 0 0 0 4px #fff !important;
+                            background: #fff !important;
                         }
                     }
                     b {

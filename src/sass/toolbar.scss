@@ -10,6 +10,9 @@
 body.rows #pm_toolbar {
     padding-right: 15px;
     border-bottom: 1px solid $border;
+    float: left;
+    width: 100%;
+    clear: both;
     .pm_buttons {
         margin: 0 10px 0 0;
         .pm_buttons {
@@ -32,7 +35,7 @@ body.rows #pm_toolbar {
     display: none;
 }
 body.columns #pm_toolbar {
-    padding-right: 25px;
+    padding-right: 10px;
     margin-left: 0;
     .main > label {
         margin-left: 15px;
@@ -45,8 +48,7 @@ body.columns #pm_toolbar {
 }
 
 #pm_toolbar {
-    padding: 14px 0 0 0;
-    height: $toolbarHeight;
+    padding: 10px 0;
     box-sizing: border-box;
     position: relative;
     z-index: 5;
@@ -101,7 +103,7 @@ body.columns #pm_toolbar {
             padding-left: 0;
             position: relative;
             .pm_buttons {
-                margin: 0 0 0 6px !important;
+                margin: 0 0 0 10px !important;
                 a {
                     padding: 0 11px;
                     &.createLabel {
@@ -259,7 +261,9 @@ body.columns #pm_toolbar {
 
 @media (min-width: $wide) {
     .rows #pm_toolbar {
-        height: 70px;
+        height: auto;
+        float: left;
+        width: 100%;
         .main > label.pm_checkbox input {
             margin-top: 16px;
         }

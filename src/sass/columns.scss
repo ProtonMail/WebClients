@@ -34,15 +34,15 @@
 		border-bottom: 1px solid $border;
 	}
 	.list {
-		width: 500px;
-		min-width: 500px;
+		width: 520px;
+		min-width: 520px;
 		box-sizing: border-box;
 		-webkit-overflow-scrolling: touch;
 		overflow-x: hidden;
 		max-height: $maxHeight;
 		position: relative;
 		#pm_list {
-			padding: 62px 0 0 0;
+			padding: 55px 0 0 0;
 		    box-sizing: border-box;
 		    box-shadow: inset -1px 0 $border;
 		}
