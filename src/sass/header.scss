@@ -345,43 +345,38 @@ header#pm_header {
 		& > a.logoMobile {
 			max-width: 3rem;
 			min-width: 3rem;
-			width: 3rem;
+			width: auto;
 			height: 35px;
 			line-height: 35px;
 			box-sizing: border-box;
-			padding: 0;
-			margin-right: 10px;
-			margin-left: 0;
-			text-align: center;
-			border: 1px solid #fff;
-			border-radius: 2px;	
+			padding: 0 10px;
+			margin: 0;
+			text-align: center;	
 			display: inline-block;
 			color: #fff;
-			margin: 13px 10px 0 0;
+			margin: 13px 0;
+			width: auto;
 		}
-		a.pm_button.primary {
-			margin-right: 20px !important;
-		}
-		a.back {
-			padding: 0 20px;
+		.searchBtn {
+			display: inline-block;
+			float: right;
 		}
 		b {
 			display: none;
 		}
 		a.compose {
-			padding: 0;
-			border-color: $primary; 
+			padding: 0 10px;
+			background: transparent;
+			margin: 13px 0;
+			&:hover {
+				background: transparent;
+			}
 			span {
 				display: none;
 			}
 		}
-		.searchBtn {
-			float: right;
-			display: inline-block;
-			margin-right: 10px;
-		}
 		a.logoMobile {
-			margin: 13px 0 0 10px;
+			margin: 13px 0;
 		}
 		form.searchForm {
 			display: none;

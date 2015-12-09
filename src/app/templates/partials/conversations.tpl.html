@@ -85,7 +85,13 @@
 </div>
 
 <div ng-if="layoutMode === 'rows'" id="pm_list" pt-height>
-    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-class="{
+    <div 
+    class="message" 
+    ng-click="click(conversation)" 
+    ng-repeat="conversation in conversations track by conversation.ID" 
+    ng-swipe-left="swipeLeft()"
+    ng-swipe-right="swipeRight()"
+    ng-class="{
         unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1,
         selected: conversation.Selected,

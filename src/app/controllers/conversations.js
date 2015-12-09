@@ -912,6 +912,24 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
+     * Swipe gesture for a message
+     * @param {Object} event
+     * @param {Object} conversation
+     */
+    $scope.swipeLeft = function(event, conversation) {
+        alert('Move to trash');
+    };
+
+    /**
+     * Swipe gesture for a message
+     * @param {Object} event
+     * @param {Object} conversation
+     */
+    $scope.swipeRight = function(event, conversation) {
+        alert('Move to spam');
+    };
+
+    /**
      * Filter current list
      * @param {String}
      */

@@ -219,7 +219,8 @@ body, html {
 				position: absolute;
 				left: 10px;
 				top: 19px;
-				z-index: 2;
+				z-index: 6;
+				cursor: pointer;
 			}
 			&.unread {
 				margin: 0;

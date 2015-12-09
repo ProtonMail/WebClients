@@ -243,6 +243,10 @@ angular.module("proton", [
         "ProtonMail"
     );
 
+    // FastClick polyfill for mobile devices
+    // https://github.com/ftlabs/fastclick
+    FastClick.attach(document.body);
+
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         $document.find("title").text(pageTitleTemplate({ pageName: newVal }));
     });

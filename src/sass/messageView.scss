@@ -11,22 +11,26 @@
         text-align: right;
     }
 }
+#pm_rows #pm_view article.message header {
+    padding-right: 10px;
+}
 #pm_view {
 	display: block;
     padding: 0 15px 0 40px;
 	&.rows {
 		width: 100%;
-		padding-left: 0;
+		padding: 0;
 	}
     & > header {
     	display: block;
-		min-height: ($toolbarHeight+1);
+		min-height: 35px;
 		box-sizing: border-box;
 		border-bottom: 1px solid $border;
         clear: both;
         .pm_buttons {
             float: right;
-            margin-top: ( (($toolbarHeight)-30) /2 );
+            margin-top: 10px;
+            margin-right: 10px;
             a {
                 box-sizing: border-box;
                 i {
@@ -41,14 +45,14 @@
 	        font-size: 24px;
 	        font-weight: 400;
 	        color: #333;
-	        line-height: 1.25em;
+	        line-height: 35px;
 	        margin: 0;
 	        letter-spacing: .04rem;
 	        display: block;
-	        padding-top: ( (($toolbarHeight)-30) /2 );
+	        padding-top: 10px;
 	        padding-right: 3rem;
-	        padding-bottom: ( (($toolbarHeight)-30) /2 );
-	        padding-left: 0;
+	        padding-bottom: 10px;
+	        padding-left: 40px;
 	        box-sizing: border-box;
 	        overflow: auto;
             -webkit-overflow-scrolling: touch;
@@ -109,8 +113,8 @@
             header {
                 cursor: initial;
                 .person > em {
-                    font-weight: 700;
-                    color: #555;
+                    // font-weight: 700;
+                    // color: #555;
                 }
                 .from {
                     .pm_labels {
@@ -118,6 +122,9 @@
                             box-shadow: 0 0 0 4px #fff;
                             background: #fff;
                         }
+                    }
+                    b {
+                        display: block;
                     }
                 }
             }
@@ -214,6 +221,9 @@
                         font-weight: 700;
                     }
                 }
+                b {
+                    color: #555;
+                }
     			i {
     				display: block;
     				width: 1.5rem;
@@ -280,7 +290,7 @@
                 margin-bottom: 10px;
                 strong {
                     display: block;
-                    font-weight: 400;
+                    font-weight: 700;
                     color: #555;
                 }
                 em {
@@ -330,6 +340,16 @@
                 clear: both;
     			line-height: 35px;
     			padding-top: 1rem;
+                padding-left: 25px;
+                display: block;
+                box-sizing: border-box;
+                & > a {
+                    text-decoration: none;
+                    span {
+                        color: $primary;
+                        font-weight: 700;
+                    }
+                }
                 .pm_labels.inline .pm_label {
                     margin: 0 5px 0 0;
                     width: auto;
@@ -392,7 +412,7 @@
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 15px;
+				right: 10px;
 				top: 0;
 				z-index: 2;
 				width: 145px;
@@ -507,14 +527,66 @@
             margin-left: 0;
         }
     }
+    #pm_view article.message header {
+        padding-right: 0;
+    }
+    #pm_view article.message header .from .person {
+        padding-left: 1.5rem;
+        i.fa {
+            margin: 0;
+            text-align: center;
+            position: static;
+        }
+        & > em {
+            display: inline-block;
+        }
+        & > b {
+            display: block;
+        }
+    }
+    #pm_view article.message.open {
+        position: relative;
+        padding-top: 45px;
+        .sub {
+            position: static;
+            padding-left: 0;
+            .actions {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+            .meta {
+                padding-left: 25px;
+            }
+        }
+    }
+    #pm_view article.message .frame {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #pm_view article.message header .meta {
+        float: none;
+        display: block;
+        .fa {
+            text-align: left;
+        }
+    }
+    #pm_view article.message header .from {
+        float: none;
+        display: block;
+        .person {
+            float: none;
+            display: block;
+        }
+    }
     #pm_view > header {
-        margin: -10px 0 0 0;
+        margin: 0;
         padding: 0 10px;
         line-height: 65px;
         float: left;
         width: 100%;
         position: relative;
-        padding-right: 4rem;
+        padding-right: 0;
         .singleStar {
             position: absolute;
             right: 0;
@@ -522,6 +594,10 @@
             padding-right: 10px;
             background: #fff;
             width: 2rem;
+        }
+        h1 {
+            padding-right: 10px;
+            padding-left: 10px;
         }
     }
     #pm_view #pm_thread {
@@ -532,7 +608,7 @@
             padding: 0 10px;
             span.person {
                 strong {
-                    display: none;
+                    font-weight: 700;
                 }
             }
         }

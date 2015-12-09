@@ -2,18 +2,27 @@
 #pm_view.rows #pm_toolbar {
     margin-left: 0;
     margin-right: 25px;
-    height: 50px;
+    padding: 10px;
+    height: initial !important;
+    float: left;
+    width: 100%;
 }
 body.rows #pm_toolbar {
     padding-right: 15px;
     border-bottom: 1px solid $border;
     .pm_buttons {
-        margin: 0 0 0 5px;
+        margin: 0 10px 0 0;
         .pm_buttons {
             margin-left: 0;
             border-left: 1px solid $border !important;
         }
-    }.main > label {
+    }
+    .messageActions {
+        .pm_buttons {
+            margin: 0 0 0 10px;
+        }
+    }
+    .main > label {
         padding-left: 15px;
     }
 }
@@ -198,7 +207,7 @@ body.columns #pm_toolbar {
         height: 65px !important;
         margin: 0 !important;
         width: 100% !important;
-        padding: 14px 10px !important;
+        padding: 10px !important;
         .pm_buttons a {
             padding: 0 11px;
         }
@@ -261,6 +270,24 @@ body.columns #pm_toolbar {
                 padding: 0 1rem;
                 line-height: 40px !important;
                 height: 40px !important;
+            }
+        }
+    }
+    .rows #pm_view > header {
+        h1 {
+            line-height: 42px;
+        }
+        .pm_buttons {
+            line-height: 40px !important;
+            height: 40px !important;
+            a {
+                line-height: 40px !important;
+                height: 40px !important;
+                padding: 0 1rem;
+                .fa {
+                    line-height: 40px !important;
+                    height: 40px !important;
+                }
             }
         }
     }

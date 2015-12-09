@@ -12,7 +12,7 @@
                 <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                 <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
-                <em pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</em>
+                <b pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</b>
                 <em ng-show="message.expand === true && message.details === true">{{ message.Sender | contact:'Address' }}</em>
                 <a ng-show="message.expand === true && message.details === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="tag fa fa-file-text" ng-show="draft() === true"></em>
@@ -90,7 +90,7 @@
             </span>
         </div><!--/.actions-->
         <div class="data">
-            <div ng-if="message.ToList.length" class="toGroup">
+            <div ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true && message.details === true">
                 <i>{{ 'TO' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.ToList" class="person">
@@ -100,7 +100,7 @@
                     </span>
                 </span>
             </div>
-            <div ng-if="message.CCList.length" class="ccGroup">
+            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true && message.details === true">
                 <i>{{ 'CC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.CCList" class="person">
@@ -110,7 +110,7 @@
                     </span>
                 </span>
             </div>
-            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup">
+            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true && message.details === true">
                 <i>{{ 'BCC' | translate }}</i>
                 <span class="recipientsWrap">
                     <span ng-repeat="email in ::message.BCCList" class="person">

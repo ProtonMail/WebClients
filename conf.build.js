@@ -69,7 +69,8 @@ module.exports = {
       "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
-      "vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js"
+      "vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
+      "vendor/fastclick/lib/fastclick.js"
     ],
     bootstrap_components: [
       "affix",
