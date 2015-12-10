@@ -25,7 +25,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     notify,
     tools
 ) {
-    var lastChecked = null; //
+    var lastChecked = null;
 
     /**
      * Method called at the initialization of this controller
@@ -883,19 +883,17 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(!lastChecked) {
             lastChecked = conversation;
         } else {
-            if (event, event.shiftKey) {
+            if (event.shiftKey) {
                 var start = _.indexOf($scope.conversations, conversation);
                 var end = _.indexOf($scope.conversations, lastChecked);
 
                 _.each($scope.conversations.slice(Math.min(start, end), Math.max(start, end) + 1), function(conversation) {
-                    conversation.Selected = true;
+                    conversation.Selected = lastChecked.Selected;
                 });
             }
 
             lastChecked = conversation;
         }
-
-        // $scope.allSelected();
     };
 
     /**

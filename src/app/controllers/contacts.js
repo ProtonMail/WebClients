@@ -22,6 +22,8 @@ angular.module("proton.controllers.Contacts", [
     notify
 ) {
     // Variables
+    var lastChecked = null;
+
     $rootScope.pageName = 'Contacts';
     $scope.currentPage = 1;
     $scope.params = { searchContactInput: ''};
@@ -264,15 +266,19 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.onSelectContact = function(event, contact) {
-        var contactsSelected = $scope.contactsSelected();
+        if(!lastChecked) {
+            lastChecked = contact;
+        } else {
+            if (event.shiftKey) {
+                var start = _.indexOf($scope.contacts, contact);
+                var end = _.indexOf($scope.contacts, lastChecked);
 
-        if (event.shiftKey) {
-            var start = authentication.user.Contacts.indexOf(_.first(contactsSelected));
-            var end = authentication.user.Contacts.indexOf(_.last(contactsSelected));
-
-            for (var i = start; i < end; i++) {
-                authentication.user.Contacts[i].selected = true;
+                _.each($scope.contacts.slice(Math.min(start, end), Math.max(start, end) + 1), function(contact) {
+                    contact.selected = lastChecked.selected;
+                });
             }
+
+            lastChecked = contact;
         }
     };
 
