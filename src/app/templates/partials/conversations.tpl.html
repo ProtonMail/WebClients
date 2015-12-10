@@ -99,6 +99,8 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <div class="dumpstered" ng-show="conversation.dumpstered === true">Moved to Trash</div>
+        <div class="spamified" ng-show="conversation.spamified === true">Moved to Spam</div>
         <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <label class="pm_checkbox" ng-click="$event.stopPropagation();select($event, conversation)">
             <input type="checkbox" ng-model="conversation.Selected" />

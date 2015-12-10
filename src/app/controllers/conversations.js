@@ -904,7 +904,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation
      */
     $scope.swipeLeft = function(event, conversation) {
-        alert('Move to trash');
+        conversation.dumpstered = true;
     };
 
     /**
@@ -913,7 +913,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation
      */
     $scope.swipeRight = function(event, conversation) {
-        alert('Move to spam');
+        conversation.spamified = true;
     };
 
     /**
