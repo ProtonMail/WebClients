@@ -976,15 +976,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.sending = false;
             message.saving = true;
 
-            if (typeof parameters.Message.ToList === 'string') {
+            if(angular.isUndefined(parameters.Message.Subject)) {
+                parameters.Message.Subject = '';
+            }
+
+            if(angular.isString(parameters.Message.ToList)) {
                 parameters.Message.ToList = [];
             }
 
-            if (typeof parameters.Message.CCList === 'string') {
+            if(angular.isString(parameters.Message.CCList)) {
                 parameters.Message.CCList = [];
             }
 
-            if (typeof parameters.Message.BCCList === 'string') {
+            if(angular.isString(parameters.Message.BCCList)) {
                 parameters.Message.BCCList = [];
             }
 
@@ -1104,7 +1108,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var title = $translate.instant('NO_SUBJECT');
         var text = $translate.instant('NO_SUBJECT_SEND_ANYWAY?');
 
-        if(message.Subject.length === 0) {
+        if(angular.isUndefined(message.Subject) || message.Subject.length === 0) {
+            message.Subject = '';
             confirmModal.activate({
                 params: {
                     title: title,
