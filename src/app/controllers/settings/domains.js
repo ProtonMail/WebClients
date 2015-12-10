@@ -274,7 +274,6 @@ angular.module("proton.controllers.Settings")
      * Open modal to add a new address
      */
     $scope.addAddress = function(domain) {
-
         var index = $scope.domains.indexOf(domain);
 
         addressModal.activate({

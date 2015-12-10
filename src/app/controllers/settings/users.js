@@ -145,6 +145,41 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Remove member
+     * @param {Object} member
+     */
+    $scope.remove = function(member) {
+        var title = $translate.instant('REMOVE_MEMBER');
+        var message = $translate.instant('ARE_YOU_SURE?');
+        var index = $scope.members.indexOf(member);
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    networkActivityTracker.track(Member.delete(member.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            $scope.members.splice(index, 1); // Remove member in the members list
+                            confirmModal.deactivate(); // Close the modal
+                            notify({message: $translate.instant('USER_REMOVED'), classes: 'notification-success'}); // Display notification
+                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        }
+                    }, function() {
+                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                    }));
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Open modal to manage member's storage
      * @param {Object} member
      */

@@ -95,13 +95,24 @@
                             </td>
 		                    <td class="actions">
 			                    <div>
-			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}"><i class="fa fa-cog"></i> {{ 'MANAGE_PASSWORD' | translate }}</button>
+			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}">
+                                        <i class="fa fa-cog"></i> {{ 'MANAGE_PASSWORD' | translate }}
+                                    </button>
                                 </div>
 			                    <div>
-			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}"><i class="fa fa-key"></i> {{ 'GENERATE_KEYS' | translate }}</button>
+			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}">
+                                        <i class="fa fa-key"></i> {{ 'GENERATE_KEYS' | translate }}
+                                    </button>
                                 </div>
 			                    <div>
-			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}"><i class="fa fa-inbox"></i> {{ 'ENTER_MAILBOX' | translate }}</button>
+			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}">
+                                        <i class="fa fa-inbox"></i> {{ 'ENTER_MAILBOX' | translate }}
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="button" class="pm_button link" ng-click="remove(member)">
+                                        <i class="fa fa-trash-o"></i> {{ 'REMOVE_USER' | translate }}
+                                    </button>
                                 </div>
 							</td>
 		                </tr>
