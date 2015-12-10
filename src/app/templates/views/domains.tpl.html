@@ -16,8 +16,6 @@
                         <i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}
                     </button>
                 </p>
-                <!-- <pre>{{ domains }}</pre> -->
-                <loader-tag ng-show="!domains"></loader-tag>
                 <table class="pm_table bordered" ng-show="domains.length > 0">
                     <thead>
                         <tr>
@@ -36,55 +34,15 @@
                                 </strong>
                             </td>
                             <td class="status">
-
-                                <button type="button" class="progress pm_button" ng-click="verification(domain)"
-                                ng-class="{
-                                'success': (domain.VerifyState === 2),
-                                'error': ( (domain.VerifyState === 1) )
-                                }">
-                                Verify
-                                </button>
-
+                                <button type="button" class="progress pm_button" ng-click="verification(domain)" ng-class="{'success': domain.VerifyState === 2, 'error': domain.VerifyState === 1}">Verify</button>
                                 <!-- TODO: change logic to use address routes -->
-                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)"
-                                ng-class="{
-                                'success': (domain.Addresses.length > 0),
-                                }">
-                                <code>{{ domain.Addresses.length }}</code> Addresses
+                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-class="{'success': domain.Addresses.length > 0}">
+                                    <code>{{ domain.Addresses.length }}</code> Addresses
                                 </button>
-
-                                <button type="button" class="progress pm_button" ng-click="mx(domain)"
-                                ng-class="{
-                                'success': (domain.MxState === 3),
-                                'error': ( (domain.MxState === 2) || (domain.MxState === 1) )
-                                }">
-                                MX
-                                </button>
-
-                                <button type="button" class="progress pm_button" ng-click="spf(domain)"
-                                ng-class="{
-                                'success': (domain.SpfState === 3),
-                                'error': ( (domain.SpfState === 2) || (domain.SpfState === 1) )
-                                }">
-                                SPF
-                                </button>
-
-                                <button type="button" class="progress pm_button" ng-click="dkim(domain)"
-                                ng-class="{
-                                'success': (domain.SpfState === 4),
-                                'error': ( (domain.SpfState === 3) || (domain.SpfState === 2) || (domain.SpfState === 1) )
-                                }">
-                                DKIM
-                                </button>
-
-                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)"
-                                ng-class="{
-                                'success': (domain.DmarcState === 3),
-                                'error': ( (domain.DmarcState === 2) || (domain.DmarcState === 1) )
-                                }">
-                                DMARC
-                                </button>
-
+                                <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-class="{'success': domain.MxState === 3, 'error': domain.MxState === 2 || domain.MxState === 1}">MX</button>
+                                <button type="button" class="progress pm_button" ng-click="spf(domain)" ng-class="{'success': domain.SpfState === 3, 'error': domain.SpfState === 2 || domain.SpfState === 1}">SPF</button>
+                                <button type="button" class="progress pm_button" ng-click="dkim(domain)" ng-class="{'success': domain.SpfState === 4, 'error': domain.SpfState === 3 || domain.SpfState === 2 || domain.SpfState === 1}">DKIM</button>
+                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" ng-class="{'success': domain.DmarcState === 3, 'error': domain.DmarcState === 2 || domain.DmarcState === 1}">DMARC</button>
                             </td>
                             <td class="text-right">
                                 <button type="button" class="remove pm_button round" ng-click="wizard(domain)" pt-tooltip="{{ 'SETUP' | translate }}">
@@ -110,7 +68,6 @@
                     <span class="pull-right">{{ organization.UsedAddresses }}/{{ organization.MaxAddresses }} {{ 'ADDRESSES_USED' | translate }}. <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
                     {{ 'ADDRESSES' | translate }}
                 </legend>
-                <loader-tag ng-show="!domains"></loader-tag>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains" ng-show="domains.length > 0">
                     <p>
                         <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === 1" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
@@ -138,7 +95,7 @@
                                     </td>
                                     <td>
                                         <span class="pm_select">
-                                            <select ng-init="initMember(address)" ng-model="address.select" ng-options="member.UserName for member in members" ng-change="changeMember(address)" value="address.Name"></select>
+                                            <select ng-init="initMember(address)" ng-model="address.select" ng-options="member.NickName for member in members" ng-change="changeMember(address)"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                     </td>

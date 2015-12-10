@@ -1,9 +1,9 @@
 angular.module("proton.controllers.Settings")
 
 .controller('DomainsController', function(
+    $q,
     $rootScope,
     $scope,
-    $q,
     $translate,
     Address,
     addressModal,
@@ -13,14 +13,21 @@ angular.module("proton.controllers.Settings")
     dmarcModal,
     Domain,
     domainModal,
-    Organization,
+    domains,
     Member,
+    members,
+    mxModal,
     networkActivityTracker,
     notify,
-    verificationModal,
-    mxModal,
-    spfModal
+    organization,
+    Organization,
+    spfModal,
+    verificationModal
 ) {
+    // Variables
+    $scope.organization = organization.data.Organization;
+    $scope.domains = domains.data.Domains;
+    $scope.members = members.data.Members;
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
@@ -57,39 +64,6 @@ angular.module("proton.controllers.Settings")
         $scope.closeModals();
         $scope.dmarc(domain);
     });
-
-    /**
-     * Method called at the initialization of this controller
-     */
-    $scope.initialization = function() { //
-        var promises = [];
-
-        promises.push(Organization.get().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.organization = result.data.Organization;
-            } else {
-                notify({message: $translate.instant('ERROR_WITH_ORGANIZATION'), classes: 'notification-danger'});
-            }
-        }));
-
-        promises.push(Domain.query().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.domains = result.data.Domains;
-            } else {
-                notify({message: $translate.instant('ERROR_WITH_DOMAIN'), classes: 'notification-danger'});
-            }
-        }));
-
-        promises.push(Member.query().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.members = result.data.Members;
-            } else {
-                notify({message: $translate.instant('ERROR_WITH_MEMBER'), classes: 'notification-danger'});
-            }
-        }));
-
-        networkActivityTracker.track($q.all(promises));
-    };
 
     /**
      * Open modal process to add a custom domain.
@@ -238,7 +212,13 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.refreshStatus = function(domains) {
-        $scope.initialization();
+        networkActivityTracker.track(Domain.query().then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.domains = result.data.Domains;
+            } else {
+                notify({message: $translate.instant('ERROR_WITH_DOMAIN'), classes: 'notification-danger'});
+            }
+        }));
     };
 
     /**
@@ -302,12 +282,11 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 submit: function(address) {
-
                     networkActivityTracker.track(
                         Address.create({
-                            "Local": address,                  // local part
-                            "Domain": domain.DomainName,    // either you custom domain or a protonmail domain
-                            "UserID": ""                    // UserID of the User who should own this address
+                            Local: address, // local part
+                            Domain: domain.DomainName, // either you custom domain or a protonmail domain
+                            UserID: '' // UserID of the User who should own this address
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -555,12 +534,14 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Initialize user model value (select)
+     * @param {Object} address
      */
     $scope.initMember = function(address) {
         _.each($scope.members, function(member) {
             var found = _.findWhere(member.Addresses, {ID: address.AddressID});
 
             if(angular.isDefined(found)) {
+                console.log('found', found);
                 address.select = member;
             }
         });
@@ -572,7 +553,4 @@ angular.module("proton.controllers.Settings")
     $scope.changeMember = function(address) {
 
     };
-
-    // Call initialization
-    $scope.initialization();
 });

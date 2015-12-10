@@ -691,9 +691,6 @@ angular.module("proton.routes", [
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
-            },
-            domain: function(Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domain.query());
             }
         },
         views: {
@@ -717,6 +714,15 @@ angular.module("proton.routes", [
                 }
 
                 return deferred.promise;
+            },
+            organization: function(user, Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
+            },
+            members: function(Member, networkActivityTracker) {
+                return networkActivityTracker.track(Member.query());
+            },
+            domains: function(Domain, networkActivityTracker) {
+                return networkActivityTracker.track(Domain.query());
             }
         },
         views: {
