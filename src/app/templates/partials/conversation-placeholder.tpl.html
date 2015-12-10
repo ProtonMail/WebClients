@@ -1,4 +1,4 @@
-<section id="pm_latest" ng-show="numberElementSelected === 0">
+<section id="pm_latest" ng-show="showWelcome === true">
     <header>Welcome, {{ user.DisplayName }}</header>
     <section id="storageStatus">
     	<p class="text-center" ng-show="numberElementUnread > 0">You have <strong>{{ numberElementUnread }} unread</strong> conversation</p>
@@ -23,7 +23,7 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 
-<section id="pm_placeholder" ng-show="numberElementSelected > 0">
+<section id="pm_placeholder" ng-show="showWelcome === false">
     <i class="fa fa-check-square"></i>
     <h2>{{ numberElementSelected }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <span class="pm_buttons">

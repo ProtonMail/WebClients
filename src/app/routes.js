@@ -842,6 +842,9 @@ angular.module('proton.routes', [
         $stateProvider.state(parentState, {
             abstract: true,
             url: '/' + box + '?' + conversationParameters(),
+            onExit: function($rootScope) {
+                $rootScope.showWelcome = false;
+            },
             views: {
                 'content@secured': {
                     templateUrl: 'templates/layout/conversations.tpl.html'

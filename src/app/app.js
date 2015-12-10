@@ -222,6 +222,7 @@ angular.module("proton", [
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
+    $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     $rootScope.updateMessage = false;
