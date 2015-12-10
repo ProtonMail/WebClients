@@ -224,7 +224,7 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('contact', function() {
+.filter('contact', function(authentication) {
     return function(contact, parameter) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
@@ -235,7 +235,13 @@ angular.module("proton.filters",[])
             if(angular.isDefined(contact.Name) && contact.Name !== '') {
                 return contact.Name;
             } else {
-                return contact.Address;
+                var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
+
+                if(angular.isDefined(found)) {
+                    return found.Name;
+                } else {
+                    return contact.Address;
+                }
             }
         } else {
             if(same || alone) {
