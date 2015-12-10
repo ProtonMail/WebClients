@@ -5,18 +5,37 @@ angular.module("proton.models.addresses", [])
         // POST
         /**
          * Add an address to a domain, returns {address_id} if successful, group address limit and usage
+         * @param {Object} address
+         * @return {Promise}
          */
-        create: function(Obj) {
-            return $http.post(url.get() + '/addresses', Obj);
+        create: function(address) {
+            return $http.post(url.get() + '/addresses', address);
+        },
+        // PUT
+        /**
+         * Enable address
+         * @param {String} addressID
+         * @return {Promise}
+         */
+        enable: function(addressID) {
+            return $http.put(url.get() + '/addresses/' + addressID + '/enable');
+        },
+        /**
+         * Disable address
+         * @param {String} addressID
+         * @return {Promise}
+         */
+        disable: function(addressID) {
+            return $http.put(url.get() + '/addresses/' + addressID + '/disable');
         },
         // DELETE
         /**
          * Delete an address (alias), returns group address limit and usage
+         * @param {String} addressID
+         * @return {Promise}
          */
-        delete: function(Obj) {
-            var id = Obj.id;
-
-            return $http.delete(url.get() + '/addresses/' + id, Obj);
+        delete: function(addressID) {
+            return $http.delete(url.get() + '/addresses/' + addressID);
         }
     };
 });

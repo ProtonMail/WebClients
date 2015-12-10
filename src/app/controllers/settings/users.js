@@ -150,7 +150,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.remove = function(member) {
         var title = $translate.instant('REMOVE_MEMBER');
-        var message = $translate.instant('ARE_YOU_SURE?');
+        var message = $translate.instant('Are you sure you want to remove this user?');
         var index = $scope.members.indexOf(member);
 
         confirmModal.activate({

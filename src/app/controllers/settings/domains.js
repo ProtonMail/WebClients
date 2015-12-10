@@ -136,16 +136,16 @@ angular.module("proton.controllers.Settings")
                 message: $translate.instant('Are you sure you want to delete this domain? This action will also delete addresses linked.'),
                 confirm: function() {
                     networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
-                        if(result.data && result.data.Code === 1000) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
                             confirmModal.deactivate();
-                        } else if(result.data && result.data.Error) {
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
                             notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
-                    }, function() {
+                    }, function(error) {
                         notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                     }));
                 },
@@ -160,14 +160,27 @@ angular.module("proton.controllers.Settings")
      * Delete address
      * @param {Object} domain
      */
-    $scope.deleteAddress = function(address) {
+    $scope.deleteAddress = function(address, domain) {
+        var index = domain.Addresses.indexOf(address);
+
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_ADDRESS'),
                 message: $translate.instant('Are you sure you want to delete this address?'),
                 confirm: function() {
-                    confirmModal.deactivate();
-                    // TODO send delete address request
+                    networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
+                            domain.Addresses.splice(index, 1); // Remove address in interface
+                            confirmModal.deactivate();
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                    }));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
