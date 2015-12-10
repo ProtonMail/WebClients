@@ -17,8 +17,8 @@
     <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.domains' | includedByState)}">
         <a class="pm_button" ui-sref="secured.domains">{{ 'DOMAINS' | translate }}</a>
     </li>
-    <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.users' | includedByState)}">
-        <a class="pm_button" ui-sref="secured.users">{{ 'USERS' | translate }}</a>
+    <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.members' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.members">{{ 'USERS' | translate }}</a>
     </li>
     <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.invoices' | includedByState)}">
         <a class="pm_button" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
@@ -36,7 +36,7 @@
     <a class="pm_button" ui-sref="secured.security">{{ 'SECURITY' | translate }}</a>
     <a class="pm_button" ui-sref="secured.appearance">{{ 'APPEARANCE' | translate }}</a>
     <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.domains">{{ 'DOMAINS' | translate }}</a>
-    <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.users">{{ 'USERS' | translate }}</a>
+    <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.members">{{ 'USERS' | translate }}</a>
     <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
 
 <!--     <span class="pm_select">

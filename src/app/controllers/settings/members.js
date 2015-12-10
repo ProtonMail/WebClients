@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Settings")
 
-.controller('UsersController', function(
+.controller('MembersController', function(
     $rootScope,
     $scope,
     $translate,

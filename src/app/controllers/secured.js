@@ -38,7 +38,7 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
         {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
         {value: 'secured.domains', label: $translate.instant('DOMAINS')},
-        {value: 'secured.users', label: $translate.instant('USERS')},
+        {value: 'secured.members', label: $translate.instant('USERS')},
         {value: 'secured.invoices', label: $translate.instant('INVOICES')}
     ];
 

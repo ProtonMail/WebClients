@@ -672,8 +672,8 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("secured.users", {
-        url: "/users",
+    .state("secured.members", {
+        url: "/members",
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -695,8 +695,8 @@ angular.module("proton.routes", [
         },
         views: {
             "content@secured": {
-                templateUrl: "templates/views/users.tpl.html",
-                controller: "UsersController"
+                templateUrl: "templates/views/members.tpl.html",
+                controller: "MembersController"
             }
         }
     })
