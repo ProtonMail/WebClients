@@ -217,6 +217,23 @@ body, html {
 				}
 			}
 		}
+		header .from .pm_labels {
+			height: initial !important;
+			clear: both;
+			margin: 6px 0 !important;
+			.pm_label {
+				margin-bottom: 5px;
+				position: relative !important;
+				& > i {
+					display: none !important;
+				}
+				a .fa-times {
+					left: initial !important;
+					width: 1rem !important;
+					float: right !important;
+				}
+			}
+		}
 	}
 }
 
@@ -227,7 +244,7 @@ body, html {
 	}
 	#pm_rows .list {
 		.message {
-			padding: 0 10px 0 55px !important;
+			padding: 0 10px 0 75px !important;
 			height: 65px;
 			line-height: 25px;
 			position: relative;

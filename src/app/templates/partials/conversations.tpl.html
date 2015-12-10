@@ -100,8 +100,8 @@
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <label class="pm_checkbox" ng-click="$event.stopPropagation();">
-            <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)" />
+        <label class="pm_checkbox" ng-click="$event.stopPropagation();select($event, conversation)">
+            <input type="checkbox" ng-model="conversation.Selected" />
             <em class="fa fa-check"></em>
         </label>
         <span class="star" ng-click="$event.stopPropagation();toggleStar(conversation)">
