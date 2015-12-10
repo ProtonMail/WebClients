@@ -93,12 +93,13 @@
     ng-swipe-right="swipeRight()"
     ng-class="{
         unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
-        read: conversation.NumUnread === 0 || conversation.IsRead === 1,
         selected: conversation.Selected,
         active: active(conversation),
-        starred: starred(conversation)
+        starred: starred(conversation),
+        attachments: conversation.NumAttachments > 0,
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
-
+        <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <label class="pm_checkbox" ng-click="$event.stopPropagation();">
             <input type="checkbox" ng-model="conversation.Selected" ng-click="select($event, conversation)" />
             <em class="fa fa-check"></em>
@@ -120,10 +121,6 @@
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
             <span title="{{ conversation.Subject }}">
-                <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
-                <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
-                <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                <i class="fa fa-clock-o" ng-show="conversation.ExpirationTime > 0"></i>
                 {{ conversation.Subject }}
             </span>
             <span class="pm_labels inline" ng-show="conversation.LabelIDs | labels">

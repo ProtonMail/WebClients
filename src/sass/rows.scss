@@ -26,6 +26,29 @@ body, html {
 			display: flex;
 			background: $read;
 			box-shadow: inset 0 -1px $border;
+			span.expiration {
+				position: absolute;
+				z-index: 5;
+				right: 0;
+				top: 0;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 2rem 2rem 0;
+				border-color: transparent $exp transparent transparent;
+				color: #fff;
+				overflow: visible;
+				.fa {
+					position: absolute;
+					right: -2rem;
+					top: 0;
+					display: block;
+					text-align: center;
+					line-height: 1.25rem;
+					height: 1.25rem;
+					width: 1.25rem;
+				}
+			}			
 			&:hover {
 				color: #000;
 			}
@@ -204,7 +227,7 @@ body, html {
 	}
 	#pm_rows .list {
 		.message {
-			padding: 0 10px 0 75px !important;
+			padding: 0 10px 0 55px !important;
 			height: 65px;
 			line-height: 25px;
 			position: relative;
