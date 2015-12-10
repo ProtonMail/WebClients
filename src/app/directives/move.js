@@ -1,11 +1,17 @@
 angular.module("proton.move", [])
 
-.directive('dropdownMove', function(authentication, $translate, CONSTANTS) {
+.directive('dropdownMove', function(
+    authentication,
+    cache,
+    tools,
+    $translate,
+    CONSTANTS
+) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/move.tpl.html',
         replace: true,
-        scope: {},
+        scope: { conversation: '=' },
         link: function(scope, element, attrs) {
             scope.filter = '';
             scope.locs = [];
@@ -34,11 +40,55 @@ angular.module("proton.move", [])
             };
 
             /**
+             * Back to conversation / message list
+             */
+            $scope.back = function() {
+                var mailbox = tools.currentMailbox();
+
+                $state.go("secured." + mailbox + '.list', {
+                    id: null // remove ID
+                });
+            };
+
+            /**
              * Move conversation to a specific location
              * @param {Object} loc
              */
             scope.move = function(loc) {
-                console.log(loc.ID);
+                var current = tools.currentLocation();
+                var messageEvent = [];
+                var conversationEvent = [];
+                var messages = cache.queryMessagesCached($scope.conversation.ID);
+
+                // Generate message event
+                _.each(messages, function(message) {
+                    message.LabelIDsRemoved = [current];
+                    message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[loc.ID]];
+                    messageEvent.push({Action: 3, ID: message.ID, Message: {
+                        ID: message.ID,
+                        Selected: false,
+                        LabelIDsAdded: [loc.ID],
+                        LabelIDsRemoved: [current]
+                    }});
+                });
+
+                cache.events(messageEvent, 'message');
+
+                // Generate conversation event
+                conversationEvent.push({Action: 3, ID: copy.ID, Conversation: {
+                    ID: conversation.ID,
+                    Selected: false,
+                    LabelIDsAdded: [loc.ID],
+                    LabelIDsRemoved: [current]
+                }});
+
+                cache.events(conversationEvent, 'conversation');
+
+                // Send request
+                Conversation[location]([copy.ID]);
+
+                // Back to conversation list
+                $scope.back();
             };
 
             /**
