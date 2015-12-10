@@ -669,11 +669,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var conversationEvent = [];
         var copy = angular.copy($scope.message);
         var labelIDs = [];
+        var REMOVE = 0;
 
+        // Generate event for the message
         copy.LabelIDsRemoved = [label.ID];
         messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
         cache.events(messageEvent, 'message');
 
+        // Generate event for the conversation
         _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
             labelIDs = labelIDs.concat(message.LabelIDs);
         });
@@ -681,6 +684,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         conversationEvent.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
         cache.events(conversationEvent, 'conversation');
 
+        // Send request to detach the label
+        Message.updateLabels(label.ID, REMOVE, [copy.ID]);
     };
 
     $scope.sendMessageTo = function(email) {
