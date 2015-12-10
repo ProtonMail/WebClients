@@ -702,7 +702,11 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             organization: function(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+                if(user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                } else {
+                    return true;
+                }
             },
             status: function(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.status());
@@ -731,7 +735,11 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             organization: function(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+                if(user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                } else {
+                    return true;
+                }
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
@@ -760,7 +768,11 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             organization: function(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+                if(user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                } else {
+                    return true;
+                }
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
