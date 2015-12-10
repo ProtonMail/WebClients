@@ -83,6 +83,30 @@ angular.module("proton.filters",[])
     };
 })
 
+/* Returns boolean */
+.filter('showLabels', function(authentication) {
+    return function(labels) {
+        var labelsFiltered = [];
+        var currentLabels = _.map(authentication.user.Labels, function(label) {
+            return label.ID;
+        });
+
+        _.each(labels, function(label) {
+            var value = label;
+
+            if(angular.isObject(label)) {
+                value = label.ID;
+            }
+
+            if(currentLabels.indexOf(value) !== -1) {
+                labelsFiltered.push(label);
+            }
+        });
+
+        return labelsFiltered.length > 0 ? 1 : 0;
+    };
+})
+
 .filter('currency', function() {
     return function(amount, currency) {
         var result;
