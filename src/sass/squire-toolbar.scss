@@ -22,6 +22,7 @@
 		padding: 0;
 		height: $composerRowHeight;
 		line-height: $composerRowHeight;
+		max-width: 3rem; // ~ 40px
 		a {
 			text-align: center;
 			display: block;

@@ -1,10 +1,3 @@
-body.maximizedComposer {
-	#pm_main,
-	#pm_header,
-	#pm_sidebar {
-		display: none;
-	}
-}
 #pm_composer {
 	position: fixed;
 	bottom: 0;
@@ -82,34 +75,20 @@ body.maximizedComposer {
 		}
 		&.maximized {
 			position: fixed;
-			left: 0;
-			top: 0;
+			top: $headerHeight;
+			left: $sidebarWidth;
 			bottom: 0;
 			right: 0;
-			width: 100%;
-			height: 100%;
+			width: initial;
+			height: initial;
 			box-shadow: none;
 			box-sizing: border-box;
+			margin: 0;
 			footer .pm_button span {
 				display: none;
 			}
 			header, footer {
 				border-radius: 0;
-			}
-			header {
-				.actions {
-					padding: 0;
-					a {
-						line-height: 40px;
-						height: 40px;
-						width: 60px;
-						text-align: center;
-						border: none;
-						margin-left: 0;
-						border-left: 1px solid rgba(255,255,255,.5);
-						border-radius: 0;
-					}
-				}
 			}
 			.meta .row .subject {
 				width: 95%;
@@ -148,12 +127,9 @@ body.maximizedComposer {
 				bottom: 120px;
 				top: auto;
 				z-index: 9;
-				border-bottom: 1px solid #fff;
 			}
 			.attachmentArea {
-				background: #eee;
 				.pm_button {
-					background: #fff;
 					color: $gray;
 					border-radius: 2px;
 					width: 45%;
@@ -288,15 +264,15 @@ body.maximizedComposer {
 				box-sizing: border-box;
 			}
 			.pm_button {
-				width: 40px;
+				width: 28px;
 				padding: 0;
 				text-align: center;
-				height: 40px;
-				line-height: 40px;
+				height: 28px;
+				line-height: 28px;
 				color: #dadae5;
-				border-color: rgba(255,255,255,.35);
-				border-width: 0 0 0 1px;
 				float: left;
+				margin: 6px 6px 0 0 ;
+				box-shadow: inset 0 0 1px rgba(255,255,255,.35);
 				&:hover {
 					color: $white;
 				}
@@ -335,7 +311,7 @@ body.maximizedComposer {
 				}
 				select {
 					position: absolute;
-					left: 4rem;
+					left: 5rem;
 					right: 0;
 					top: 0;
 					bottom: 0;
@@ -427,7 +403,7 @@ body.maximizedComposer {
 					z-index: 8;
 				}
 				label {
-					min-width: 4rem;
+					min-width: 4.5rem;
 					width: 4rem;
 					box-sizing: border-box;
 					padding-left: 10px;
@@ -435,17 +411,44 @@ body.maximizedComposer {
 					line-height: 40px;
 					left: 0;
 					top: 0;
+					background: #fafafa;
+					border-right: 1px solid $border;
+					box-shadow: inset 0 -1px 0 0 $border;
+					&:after, 
+					&:before {
+						left: 100%;
+						top: 50%;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+					}
+
+					&:after {
+						border-color: rgba(250, 250, 250, 0);
+						border-left-color: #fafafa;
+						border-width: 5px;
+						margin-top: -5px;
+					}
+					&:before {
+						border-color: rgba(220, 220, 220, 0);
+						border-left-color: #dcdcdc;
+						border-width: 6px;
+						margin-top: -6px;
+					}
 				}
 				.subject {
-					width: 520px;
-					margin-left: 4rem;
+					width: 510px;
+					margin-left: 5rem;
 				}
 				select::-ms-expand {
 				    display: none;
 				}
 				input,
 				select {
-					margin-left: 4rem;
+					margin-left: 5rem;
 					line-height: $composerRowHeight;
 					height: $composerRowHeight;
 					padding: 0 10px;
@@ -465,7 +468,7 @@ body.maximizedComposer {
 					width: 90%;
 				}
 				& > div {
-					margin-left: 4rem;
+					margin-left: 5rem;
 				}
 			}
 		}
@@ -479,9 +482,8 @@ body.maximizedComposer {
 			padding: 0 10px;
 			cursor: pointer;
 			box-sizing: border-box;
-			background: $border;
-			background: #eee;
 			z-index: 7;
+			border-top: 1px solid $border;			
 			i {
 				color: $primary;
 				font-style: normal;
@@ -540,7 +542,7 @@ body.maximizedComposer {
 				}
 			}
 			.squire-toolbar {
-				border-width: 0 0 1px 0;
+				border-width: 0;
 			}
 		}
 		footer {
@@ -607,6 +609,13 @@ body.maximizedComposer {
 		    -webkit-overflow-scrolling: touch;
 		    height: 700px;
 		    min-height: 700px;
+		}
+	}
+	body.maximizedComposer {
+		#pm_main,
+		#pm_header,
+		#pm_sidebar {
+			display: none;
 		}
 	}
 }
