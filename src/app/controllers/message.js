@@ -842,15 +842,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messageEvent = [];
         var conversationEvent = [];
         var copy = angular.copy($scope.message);
-        var conversation = cache.getConversationCached($scope.message.ID);
-
-        messageEvent.push({Action: 0, ID: copy.ID, Message: copy});
-        cache.events(messageEvent, 'message');
+        var conversation = cache.getConversationCached(copy.ConversationID);
 
         if(angular.isDefined(conversation)) {
-            if(conversation.NumMessages === 1) {
+            if(conversation.NumMessages <= 1) {
                 // Delete conversation
-                conversationEvent.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+                conversationEvent.push({Action: 0, ID: conversation.ID});
             } else if(conversation.NumMessages > 1) {
                 // Decrease the number of message
                 conversation.NumMessages--;
@@ -859,6 +856,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             cache.events(conversationEvent, 'conversation');
         }
+
+        messageEvent.push({Action: 0, ID: copy.ID});
+        cache.events(messageEvent, 'message');
 
         Message.delete({IDs: [copy.ID]});
     };

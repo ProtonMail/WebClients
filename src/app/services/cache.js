@@ -586,11 +586,6 @@ angular.module("proton.cache", [])
     api.deleteConversation = function(event) {
         var deferred = $q.defer();
 
-        // Delete messages
-        messagesCached = _.reject(messagesCached, function(message) {
-            return message.ConversationID === event.ID;
-        });
-
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {
             return conversation.ID === event.ID;

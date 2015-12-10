@@ -42,7 +42,7 @@ angular.module("proton.move", [])
             /**
              * Back to conversation / message list
              */
-            $scope.back = function() {
+            scope.back = function() {
                 var mailbox = tools.currentMailbox();
 
                 $state.go("secured." + mailbox + '.list', {
@@ -58,7 +58,7 @@ angular.module("proton.move", [])
                 var current = tools.currentLocation();
                 var messageEvent = [];
                 var conversationEvent = [];
-                var messages = cache.queryMessagesCached($scope.conversation.ID);
+                var messages = cache.queryMessagesCached(scope.conversation.ID);
 
                 // Generate message event
                 _.each(messages, function(message) {
@@ -88,7 +88,7 @@ angular.module("proton.move", [])
                 Conversation[location]([copy.ID]);
 
                 // Back to conversation list
-                $scope.back();
+                scope.back();
             };
 
             /**

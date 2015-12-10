@@ -32,6 +32,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         if(angular.isDefined(conversation)) {
             _.extend($scope.conversation, conversation);
+        } else {
+            $scope.back();
         }
 
         if(angular.isDefined(messages)) {
