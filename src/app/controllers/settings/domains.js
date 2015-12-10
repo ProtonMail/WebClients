@@ -168,7 +168,7 @@ angular.module("proton.controllers.Settings")
                 title: $translate.instant('DELETE_ADDRESS'),
                 message: $translate.instant('Are you sure you want to delete this address?'),
                 confirm: function() {
-                    networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
+                    networkActivityTracker.track(Address.delete(address.AddressID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface

@@ -80,7 +80,7 @@
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <a href="" ui-sref="secured.users" class="pm_button">{{ 'ADD_USER' | translate }}</a>
                         </p>
-                        <table class="pm_table pm_form bordered">
+                        <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>

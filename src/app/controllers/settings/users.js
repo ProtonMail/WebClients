@@ -103,7 +103,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.unlinkAddress = function(member, address) {
         var title = $translate.instant('UNLINK_ADDRESS');
-        var message = 'Are you sure you want to unlink this address?'; // TODO translate
+        var message = $translate.instant('Are you sure you want to unlink this address?');
 
         confirmModal.activate({
             params: {
@@ -125,7 +125,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.managePasswords = function(member) {
-
+        // TODO
     };
 
     /**
@@ -133,7 +133,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.generateKeys = function(member) {
-
+        // TODO
     };
 
     /**
@@ -141,7 +141,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.enterMailbox = function(member) {
-
+        // TODO
     };
 
     /**
@@ -188,6 +188,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 member: member,
                 submit: function() {
+                    // TODO
                     storageModal.deactivate();
                 },
                 cancel: function() {
@@ -204,6 +205,7 @@ angular.module("proton.controllers.Settings")
         userModal.activate({
             params: {
                 submit: function(datas) {
+                    // TODO
                     userModal.deactivate();
                 },
                 cancel: function() {
