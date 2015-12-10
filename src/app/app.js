@@ -234,6 +234,11 @@ angular.module("proton", [
     // SVG Polyfill for Edge
     svg4everybody();
 
+    // FastClick polyfill for mobile devices
+    // https://github.com/ftlabs/fastclick
+    FastClick.attach(document.body);
+
+    // Manage page title
     var pageTitleTemplate = _.template(
         "<% if (pageName) { %>" +
         "${ pageName }" +
@@ -241,10 +246,6 @@ angular.module("proton", [
         "<% } %>" +
         "ProtonMail"
     );
-
-    // FastClick polyfill for mobile devices
-    // https://github.com/ftlabs/fastclick
-    FastClick.attach(document.body);
 
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         $document.find("title").text(pageTitleTemplate({ pageName: newVal }));

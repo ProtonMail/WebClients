@@ -134,7 +134,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var message = new Message();
             $scope.initMessage(message, false);
         }
-        
+
     });
 
     $scope.$on('loadMessage', function(event, message, save) {
@@ -987,8 +987,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if (typeof parameters.Message.BCCList === 'string') {
                 parameters.Message.BCCList = [];
             }
-
-            console.log(message);
 
             if(angular.isDefined(message.ParentID)) {
                 parameters.ParentID = message.ParentID;

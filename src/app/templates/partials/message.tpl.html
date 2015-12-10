@@ -13,7 +13,7 @@
                 <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
                 <b pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</b>
-                <em ng-show="message.expand === true">{{ message.Sender | contact:'Address' }}</em>
+                <em ng-show="message.expand === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
                 <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
                 <em class="tag fa fa-file-text" ng-show="draft() === true" pt-tooltip="{{ 'DRAFT' | translate }}"></em>
                 <em class="tag fa fa-trash" ng-show="trash() === true" pt-tooltip="{{ 'MESSAGE_IN_TRASH' | translate }}"></em>
