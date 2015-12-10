@@ -1,6 +1,7 @@
 <article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand, 'read': message.IsRead === 1, 'unread': message.IsRead === 0 }">
     <header ng-click="toggle()">
         <span class="meta">
+            <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>        
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
@@ -11,7 +12,6 @@
                 <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
                 <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
                 <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-                <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
                 <b pt-tooltip="{{ message.Sender.Address }}">{{ message.Sender | contact:'Name' }}</b>
                 <em ng-show="message.expand === true">{{ message.Sender | contact:'Address' }}</em>
                 <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
