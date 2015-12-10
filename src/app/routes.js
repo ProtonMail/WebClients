@@ -1,7 +1,7 @@
-angular.module("proton.routes", [
-    "ui.router",
-    "proton.authentication",
-    "proton.constants"
+angular.module('proton.routes', [
+    'ui.router',
+    'proton.authentication',
+    'proton.constants'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
@@ -30,15 +30,15 @@ angular.module("proton.routes", [
     // ------------
     // LOGIN ROUTES
     // ------------
-    .state("login", {
-        url: "/login",
+    .state('login', {
+        url: '/login',
         views: {
-            "main@": {
-                templateUrl: "templates/layout/login.tpl.html"
+            'main@': {
+                templateUrl: 'templates/layout/login.tpl.html'
             },
-            "panel@login": {
-                controller: "LoginController",
-                templateUrl: "templates/views/login.tpl.html"
+            'panel@login': {
+                controller: 'LoginController',
+                templateUrl: 'templates/views/login.tpl.html'
             }
         },
         onEnter: function(authentication) {
@@ -47,12 +47,12 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("login.unlock", {
-        url: "/unlock",
+    .state('login.unlock', {
+        url: '/unlock',
         views: {
-            "panel@login": {
-                controller: "LoginController",
-                templateUrl: "templates/views/unlock.tpl.html"
+            'panel@login': {
+                controller: 'LoginController',
+                templateUrl: 'templates/views/unlock.tpl.html'
             }
         },
         onEnter: function($rootScope, $state, authentication) {
@@ -61,7 +61,7 @@ angular.module("proton.routes", [
             }
 
             setTimeout( function() {
-                $( "[type=password]" ).focus();
+                $( '[type=password]' ).focus();
             }, 200);
         }
     })
@@ -69,8 +69,8 @@ angular.module("proton.routes", [
     // -------------------------------------------
     // ACCOUNT ROUTES
     // -------------------------------------------
-    .state("account", {
-        url: "/account/:username/:token",
+    .state('account', {
+        url: '/account/:username/:token',
         resolve: {
             app: function($stateParams, $state, $q, User) {
                 var defer = $q.defer();
@@ -88,26 +88,26 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "main@": {
-                controller: "SetupController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SetupController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@account": {
-                templateUrl: "templates/views/sign-up.tpl.html"
+            'panel@account': {
+                templateUrl: 'templates/views/sign-up.tpl.html'
             }
         }
     })
 
     // DISBALED FOR NOW :)
-    .state("signup", {
-        url: "/signup",
+    .state('signup', {
+        url: '/signup',
         views: {
-            "main@": {
-                controller: "SignupController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SignupController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@signup": {
-                templateUrl: "templates/views/sign-up.tpl.html"
+            'panel@signup': {
+                templateUrl: 'templates/views/sign-up.tpl.html'
             }
         },
         onEnter: function($rootScope, $state) {
@@ -117,11 +117,11 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("pre-invite", {
-        url: "/pre-invite/:user/:token",
+    .state('pre-invite', {
+        url: '/pre-invite/:user/:token',
         views: {
-            "main@": {
-                templateUrl: "templates/layout/pre.tpl.html"
+            'main@': {
+                templateUrl: 'templates/layout/pre.tpl.html'
             }
         },
         onEnter: function($http, url, CONFIG, $state, $stateParams, $rootScope, notify, authentication) {
@@ -129,7 +129,7 @@ angular.module("proton.routes", [
             authentication.logout(false);
             $rootScope.loggingOut = false;
 
-            $http.post( url.get() + "/users/" + $stateParams.token + "/check", { Username: $stateParams.user } )
+            $http.post( url.get() + '/users/' + $stateParams.token + '/check', { Username: $stateParams.user } )
             .then(
                 function( response ) {
                     if (response.data.Valid===1) {
@@ -142,8 +142,8 @@ angular.module("proton.routes", [
                     }
                     else {
                         notify({
-                            message: "Invalid Invite Link.",
-                            classes: "notification-danger"
+                            message: 'Invalid Invite Link.',
+                            classes: 'notification-danger'
                         });
                         $state.go('login');
                     }
@@ -152,15 +152,15 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("step1", {
-        url: "/create/new",
+    .state('step1', {
+        url: '/create/new',
         views: {
-            "main@": {
-                controller: "SignupController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SignupController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@step1": {
-                templateUrl: "templates/views/step1.tpl.html"
+            'panel@step1': {
+                templateUrl: 'templates/views/step1.tpl.html'
             }
         },
         onEnter: function($rootScope, $state, $log) {
@@ -171,15 +171,15 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("step2", {
-        url: "/create/mbpw",
+    .state('step2', {
+        url: '/create/mbpw',
         views: {
-            "main@": {
-                controller: "SignupController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SignupController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@step2": {
-                templateUrl: "templates/views/step2.tpl.html"
+            'panel@step2': {
+                templateUrl: 'templates/views/step2.tpl.html'
             }
         },
         onEnter: function(authentication, $state, $rootScope, $log) {
@@ -196,7 +196,7 @@ angular.module("proton.routes", [
                     if ($rootScope.pubKey === 'to be modified') {
                         return;
                     } else {
-                        $state.go("login.unlock");
+                        $state.go('login.unlock');
                         return;
                     }
                 });
@@ -208,28 +208,28 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("reset", {
-        url: "/reset",
+    .state('reset', {
+        url: '/reset',
         views: {
-            "main@": {
-                controller: "SetupController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SetupController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@reset": {
-                templateUrl: "templates/views/reset.tpl.html"
+            'panel@reset': {
+                templateUrl: 'templates/views/reset.tpl.html'
             }
         },
         resolve: {
             token: function($http, $rootScope, authentication, url, CONFIG) {
-                return $http.post(url.get() + "/auth",
-                    _.extend(_.pick($rootScope.creds, "Username", "Password", "HashedPassword"), {
+                return $http.post(url.get() + '/auth',
+                    _.extend(_.pick($rootScope.creds, 'Username', 'Password', 'HashedPassword'), {
                         ClientID: CONFIG.clientID,
                         ClientSecret: CONFIG.clientSecret,
-                        GrantType: "password",
+                        GrantType: 'password',
                         State: authentication.randomString(24),
-                        RedirectURI: "https://protonmail.com",
-                        ResponseType: "token",
-                        Scope: "reset"
+                        RedirectURI: 'https://protonmail.com',
+                        ResponseType: 'token',
+                        Scope: 'reset'
                     })
                 );
             }
@@ -246,15 +246,15 @@ angular.module("proton.routes", [
     // -------------------------------------------
     // UPGRADE ROUTES
     // -------------------------------------------
-    .state("upgrade", {
-        url: "/upgrade",
+    .state('upgrade', {
+        url: '/upgrade',
         views: {
-            "main@": {
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                templateUrl: 'templates/layout/auth.tpl.html'
             },
-            "panel@upgrade": {
-                controller: "UpgradeController",
-                templateUrl: "templates/views/upgrade.tpl.html"
+            'panel@upgrade': {
+                controller: 'UpgradeController',
+                templateUrl: 'templates/views/upgrade.tpl.html'
             }
         }
     })
@@ -262,44 +262,44 @@ angular.module("proton.routes", [
     // -------------------------------------------
     // SUPPORT ROUTES
     // -------------------------------------------
-    .state("support", {
-        url: "/help",
+    .state('support', {
+        url: '/help',
         views: {
-            "main@": {
-                controller: "SupportController",
-                templateUrl: "templates/layout/auth.tpl.html"
+            'main@': {
+                controller: 'SupportController',
+                templateUrl: 'templates/layout/auth.tpl.html'
             }
         }
     })
 
-    .state("support.message", {
+    .state('support.message', {
         params: {
             data: null
         }, // Tip to avoid passing parameters in the URL
-        url: "/message",
+        url: '/message',
         onEnter: function($state, $stateParams) {
             if ($stateParams.data === null) {
                 $state.go('login');
             }
         },
         views: {
-            "panel@support": {
-                templateUrl: "templates/views/support-message.tpl.html"
+            'panel@support': {
+                templateUrl: 'templates/views/support-message.tpl.html'
             }
         }
     })
 
-    .state("support.reset-password", {
-        url: "/reset-login-password",
+    .state('support.reset-password', {
+        url: '/reset-login-password',
         views: {
-            "panel@support": {
-                templateUrl: "templates/views/reset-password.tpl.html"
+            'panel@support': {
+                templateUrl: 'templates/views/reset-password.tpl.html'
             }
         }
     })
 
-    .state("support.confirm-new-password", {
-        url: "/confirm-new-password/:token",
+    .state('support.confirm-new-password', {
+        url: '/confirm-new-password/:token',
         onEnter: function($stateParams, $state, Reset) {
             var token = $stateParams.token;
 
@@ -310,36 +310,36 @@ angular.module("proton.routes", [
                 function(response) {
                     // console.log(response.data);
                     if (response.data.Error) {
-                        $state.go("support.message", {
+                        $state.go('support.message', {
                             data: {
                                 title: response.data.Error,
                                 content: response.data.Error,
-                                type: "alert-danger"
+                                type: 'alert-danger'
                             }
                         });
                     }
                 },
                 function() {
-                    $state.go("support.message", {
+                    $state.go('support.message', {
                         data: {
                             title: 'Reset Error',
                             content: 'Sorry, we are unable to reset your password right now. Please try the link again in a few minutes.',
-                            type: "alert-danger"
+                            type: 'alert-danger'
                         }
                     });
                 }
             );
         },
         views: {
-            "panel@support": {
-                templateUrl: "templates/views/confirm-new-password.tpl.html"
+            'panel@support': {
+                templateUrl: 'templates/views/confirm-new-password.tpl.html'
             }
         }
     })
 
     // Deprecated?
-    .state("support.reset-mailbox", {
-        url: "/reset-mailbox/:token",
+    .state('support.reset-mailbox', {
+        url: '/reset-mailbox/:token',
         onEnter: function($stateParams, $state, $rootScope, authentication) {
             $rootScope.resetMailboxToken = $stateParams.token;
             if (!!!authentication.isLoggedIn()) {
@@ -351,8 +351,8 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "panel@support": {
-                templateUrl: "templates/views/confirm-new-password.tpl.html"
+            'panel@support': {
+                templateUrl: 'templates/views/confirm-new-password.tpl.html'
             }
         }
     })
@@ -360,25 +360,25 @@ angular.module("proton.routes", [
     // -------------------------------------------
     // ENCRYPTION OUTSIDE
     // -------------------------------------------
-    .state("eo", {
+    .state('eo', {
         abstract: true,
         views: {
-            "main@": {
-                templateUrl: "templates/layout/outside.tpl.html"
+            'main@': {
+                templateUrl: 'templates/layout/outside.tpl.html'
             }
         }
     })
 
-    .state("eo.unlock", {
-        url: "/eo/:tag",
+    .state('eo.unlock', {
+        url: '/eo/:tag',
         resolve: {
             encryptedToken: function(Eo, $stateParams) {
                 return Eo.token($stateParams.tag);
             }
         },
         views: {
-            "content": {
-                templateUrl: "templates/views/outside.unlock.tpl.html",
+            'content': {
+                templateUrl: 'templates/views/outside.unlock.tpl.html',
                 controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify) {
                     $scope.params = {};
                     $scope.params.MessagePassword = '';
@@ -394,8 +394,8 @@ angular.module("proton.routes", [
                         var promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
 
                         promise.then(function(decryptedToken) {
-                            window.sessionStorage["proton:decrypted_token"] = decryptedToken;
-                            window.sessionStorage["proton:encrypted_password"] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
+                            window.sessionStorage['proton:decrypted_token'] = decryptedToken;
+                            window.sessionStorage['proton:encrypted_password'] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
                             $state.go('eo.message', {tag: $stateParams.tag});
                         }, function(err) {
                             notify({message: err.message, classes: 'notification-danger'});
@@ -406,14 +406,14 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("eo.message", {
-        url: "/eo/message/:tag",
+    .state('eo.message', {
+        url: '/eo/message/:tag',
         resolve: {
             message: function($stateParams, $q, Eo, Message, pmcw) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
-                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
-                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+                var decrypted_token = window.sessionStorage['proton:decrypted_token'];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
 
                 Eo.message(decrypted_token, token_id)
                 .then(function(result) {
@@ -440,21 +440,21 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content": {
-                controller: "OutsideController",
-                templateUrl: "templates/views/outside.message.tpl.html"
+            'content': {
+                controller: 'OutsideController',
+                templateUrl: 'templates/views/outside.message.tpl.html'
             }
         }
     })
 
-    .state("eo.reply", {
-        url: "/eo/reply/:tag",
+    .state('eo.reply', {
+        url: '/eo/reply/:tag',
         resolve: {
             message: function($stateParams, $q, Eo, Message, pmcw) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
-                var decrypted_token = window.sessionStorage["proton:decrypted_token"];
-                var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+                var decrypted_token = window.sessionStorage['proton:decrypted_token'];
+                var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
 
                 Eo.message(decrypted_token, token_id)
                 .then(
@@ -477,9 +477,9 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content": {
-                controller: "OutsideController",
-                templateUrl: "templates/views/outside.reply.tpl.html"
+            'content': {
+                controller: 'OutsideController',
+                templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         }
     })
@@ -489,13 +489,13 @@ angular.module("proton.routes", [
     // this includes everything after login/unlock
     // -------------------------------------------
 
-    .state("secured", {
+    .state('secured', {
         // This is included in every secured.* sub-controller
         abstract: true,
         views: {
-            "main@": {
-                controller: "SecuredController",
-                templateUrl: "templates/layout/secured.tpl.html"
+            'main@': {
+                controller: 'SecuredController',
+                templateUrl: 'templates/layout/secured.tpl.html'
             }
         },
         resolve: {
@@ -505,7 +505,7 @@ angular.module("proton.routes", [
                     return authentication.user;
                 } else {
                     if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
-                        $http.defaults.headers.common["x-pm-session"] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
+                        $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
 
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
@@ -518,8 +518,8 @@ angular.module("proton.routes", [
         }
     })
 
-    .state("secured.print", {
-        url: "/print/:id",
+    .state('secured.print', {
+        url: '/print/:id',
         onEnter: function($rootScope) {
             $rootScope.isBlank = true;
             $rootScope.printMode = true;
@@ -529,76 +529,120 @@ angular.module("proton.routes", [
             $rootScope.printMode = false;
         },
         views: {
-            "main@": {
-                controller: "MessageController",
-                templateUrl: "templates/views/message.print.tpl.html",
+            'main@': {
+                controller: 'MessageController',
+                templateUrl: 'templates/views/message.print.tpl.html',
             }
         }
     })
 
-    .state("secured.contacts", {
-        url: "/contacts",
+    .state('secured.contacts', {
+        url: '/contacts',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/contacts.tpl.html",
-                controller: "ContactsController"
+            'content@secured': {
+                templateUrl: 'templates/views/contacts.tpl.html',
+                controller: 'ContactsController'
             }
         }
     })
 
-    .state("secured.account", {
-        url: "/account",
+    .state('secured.account', {
+        url: '/account',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/account.tpl.html",
-                controller: "AccountController"
+            'content@secured': {
+                templateUrl: 'templates/views/account.tpl.html',
+                controller: 'AccountController'
             }
         }
     })
 
-    .state("secured.labels", {
-        url: "/labels",
+    .state('secured.labels', {
+        url: '/labels',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/labels.tpl.html",
-                controller: "LabelsController"
+            'content@secured': {
+                templateUrl: 'templates/views/labels.tpl.html',
+                controller: 'LabelsController'
             }
         }
     })
 
-    .state("secured.example", {
-        url: "/example",
+    .state('secured.example', {
+        url: '/example',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/example.tpl.html",
-                controller: "LabelsController"
+            'content@secured': {
+                templateUrl: 'templates/views/example.tpl.html',
+                controller: 'LabelsController'
             }
         }
     })
 
-    .state("secured.security", {
-        url: "/security",
+    .state('secured.security', {
+        url: '/security',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/security.tpl.html",
-                controller: "SecurityController"
+            'content@secured': {
+                templateUrl: 'templates/views/security.tpl.html',
+                controller: 'SecurityController'
             }
         }
     })
 
 
-    .state("secured.appearance", {
-        url: "/appearance",
+    .state('secured.appearance', {
+        url: '/appearance',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/appearance.tpl.html",
-                controller: "AppearanceController"
+            'content@secured': {
+                templateUrl: 'templates/views/appearance.tpl.html',
+                controller: 'AppearanceController'
             }
         }
     })
 
-    .state("secured.invoices", {
-        url: "/invoices",
+    .state('secured.invoice', {
+        url: '/invoice/:time',
+        onEnter: function($rootScope) {
+            $rootScope.isBlank = true;
+            $rootScope.printMode = true;
+        },
+        onExit: function($rootScope) {
+            $rootScope.isBlank = false;
+            $rootScope.printMode = false;
+        },
+        resolve: {
+            invoice: function(user, $stateParams, $q, Payment) {
+                var deferred = $q.defer();
+                var time = $stateParams.time;
+                var limit = 1;
+
+                Payment.organization(time, limit).then(function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        deferred.resolve(_.first(result.data.Payments));
+                    } else {
+                        deferred.reject();
+                    }
+                }, function() {
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            }
+        },
+        views: {
+            'main@': {
+                templateUrl: 'templates/views/invoice.print.tpl.html',
+                controller: function($scope, invoice) {
+                    $scope.invoice = invoice;
+
+                    // Print current invoice
+                    $scope.print = function() {
+                        window.print();
+                    };
+                },
+            }
+        }
+    })
+
+    .state('secured.invoices', {
+        url: '/invoices',
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -613,15 +657,15 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/invoices.tpl.html",
-                controller: "InvoicesController"
+            'content@secured': {
+                templateUrl: 'templates/views/invoices.tpl.html',
+                controller: 'InvoicesController'
             }
         }
     })
 
-    .state("secured.keys", {
-        url: "/keys",
+    .state('secured.keys', {
+        url: '/keys',
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -636,15 +680,15 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/keys.tpl.html",
-                controller: "KeysController"
+            'content@secured': {
+                templateUrl: 'templates/views/keys.tpl.html',
+                controller: 'KeysController'
             }
         }
     })
 
-    .state("secured.dashboard", {
-        url: "/dashboard",
+    .state('secured.dashboard', {
+        url: '/dashboard',
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -665,15 +709,15 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/dashboard.tpl.html",
-                controller: "DashboardController"
+            'content@secured': {
+                templateUrl: 'templates/views/dashboard.tpl.html',
+                controller: 'DashboardController'
             }
         }
     })
 
-    .state("secured.members", {
-        url: "/members",
+    .state('secured.members', {
+        url: '/members',
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -694,15 +738,15 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/members.tpl.html",
-                controller: "MembersController"
+            'content@secured': {
+                templateUrl: 'templates/views/members.tpl.html',
+                controller: 'MembersController'
             }
         }
     })
 
-    .state("secured.domains", {
-        url: "/domains",
+    .state('secured.domains', {
+        url: '/domains',
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -726,24 +770,24 @@ angular.module("proton.routes", [
             }
         },
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/domains.tpl.html",
-                controller: "DomainsController"
+            'content@secured': {
+                templateUrl: 'templates/views/domains.tpl.html',
+                controller: 'DomainsController'
             }
         }
     })
 
-    .state("secured.themeReset", {
-        url: "/theme-reset",
+    .state('secured.themeReset', {
+        url: '/theme-reset',
         views: {
-            "content@secured": {
-                templateUrl: "templates/views/theme-reset.tpl.html",
-                controller: "SettingsController"
+            'content@secured': {
+                templateUrl: 'templates/views/theme-reset.tpl.html',
+                controller: 'SettingsController'
             }
         },
         onEnter: function(Setting, user, $state) {
             Setting.theme({
-              "Theme": ''
+              'Theme': ''
             }).$promise.then(
                 function(response) {
                     user.Theme = '';
@@ -760,9 +804,9 @@ angular.module("proton.routes", [
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
-        var parentState = "secured." + box;
-        var listState = "secured." + box + '.list';
-        var viewState = "secured." + box + '.list.view';
+        var parentState = 'secured.' + box;
+        var listState = 'secured.' + box + '.list';
+        var viewState = 'secured.' + box + '.list.view';
         var list = {};
         var view = {};
 
@@ -820,8 +864,8 @@ angular.module("proton.routes", [
     });
 
     $urlRouterProvider.otherwise(function($injector) {
-        var $state = $injector.get("$state");
-        var stateName = $injector.get("authentication").state() || "secured.inbox.list";
+        var $state = $injector.get('$state');
+        var stateName = $injector.get('authentication').state() || 'secured.inbox.list';
         return $state.href(stateName);
     });
 

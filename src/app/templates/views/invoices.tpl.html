@@ -16,20 +16,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="invoice in invoices track by $index">
+                <tr ng-repeat="invoice in invoices">
                     <td class="date">
-                        {{ invoice.Date * 1000 | date : 'medium' }}
+                        {{ invoice.Payment.Date * 1000 | date : 'medium' }}
                     </td>
                     <td>
-                        {{ invoice.Event }}
+                        {{ invoice.Cart.Plan | capitalize }} {{ 'PLAN_SUBSCRIPTION' | translate }} (<small ng-show="invoice.Payment.BillingCycle === 1">{{ 'MONTLY' | translate }}</small><small ng-show="invoice.Payment.BillingCycle === 12">{{ 'YEARLY' | translate }}</small>)
                     </td>
                     <td class="actions">
-                        <a class="pm_button round" ng-click="downloadInvoice(invoice)" pt-tooltip="{{ 'DOWNLOAD_INVOICE' | translate }}">
+                        <a class="pm_button round" ng-click="display(invoice)" pt-tooltip="{{ 'DISPLAY_INVOICE' | translate }}">
                             <i class="fa fa-file-text"></i>
                         </a>
                     </td>
                     <td class="price">
-                        {{ ::invoice.Price }}
+                        {{ invoice.Payment.Amount | currency: invoice.Payment.Currency }}
                     </td>
                 </tr>
             </tbody>

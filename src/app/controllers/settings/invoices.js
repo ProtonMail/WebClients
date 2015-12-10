@@ -1,6 +1,14 @@
 angular.module("proton.controllers.Settings")
 
-.controller('InvoicesController', function($rootScope, $scope, $translate, Payment, networkActivityTracker) {
+.controller('InvoicesController', function(
+    $rootScope,
+    $scope,
+    $translate,
+    $state,
+    networkActivityTracker,
+    notify,
+    Payment
+) {
     var YEAR_2015 = 1420070401;
     var YEAR_2016 = 1451606401;
 
@@ -27,11 +35,23 @@ angular.module("proton.controllers.Settings")
      */
     $scope.loadInvoices = function(timestamp) {
         var promise = Payment.organization(timestamp);
+        var month = 60 * 60 * 24 * 30; // Time for a month in second
 
         promise.then(function(result) {
             if(angular.isDefined(result.data)) {
-                console.log(result.data);
-                // $scope.invoices;
+                if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                    $scope.invoices = result.data.Payments;
+
+                    _.each($scope.invoices, function(invoice) {
+                        if(parseInt((invoice.Payment.PeriodEnd - invoice.Payment.PeriodStart) / month) === 1) {
+                            invoice.Payment.BillingCycle = 12;
+                        } else {
+                            invoice.Payment.BillingCycle = 1;
+                        }
+                    });
+                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
             }
         });
 
@@ -39,11 +59,13 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Download invoice file
-     * @param {Object} payment
+     * Open a new tab whith the details of invoice
+     * @param {Object} invoice
      */
-    $scope.downloadInvoice = function(payment) {
+    $scope.display = function(invoice) {
+        var url = $state.href('secured.invoice', { time: invoice.Payment.Time });
 
+        window.open(url, '_blank');
     };
 
     // Call initialization

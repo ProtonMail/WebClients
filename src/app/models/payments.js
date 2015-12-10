@@ -44,22 +44,26 @@ angular.module("proton.models.payments", [])
         /**
          *  Get payments corresponding to the given user.
          * @param {Integer} timestamp
+         * @param {Integer} limit
          */
-        user: function(timestamp) {
+        user: function(timestamp, limit) {
             return $http.get(url.get() + '/payments/user', {
                 params: {
-                    Time: timestamp
+                    Time: timestamp,
+                    Limit: limit
                 }
             });
         },
         /**
          *  Get payments corresponding to the given organization.
          * @param {Integer} timestamp
+         * @param {Integer} limit
          */
-        organization: function(timestamp) {
+        organization: function(timestamp, limit) {
             return $http.get(url.get() + '/payments/organization', {
                 params: {
-                    Time: timestamp
+                    Time: timestamp,
+                    Limit: limit
                 }
             });
         },
