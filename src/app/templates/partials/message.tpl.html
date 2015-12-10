@@ -121,12 +121,7 @@
                     </span>
                 </span>
             </div>
-            <div class="meta" ng-if="false"> <!-- disabled for now -->
-                <a href="" ng-init="message.details = false" ng-click="message.details = !message.details">
-                    <span ng-show="message.details === true">{{ 'HIDE_DETAILS' | translate }}</span>
-                    <span ng-hide="message.details === true">{{ 'SHOW_DETAILS' | translate }}</span>
-                </a>
-            </div>
+            <div class="meta"> </div>
         </div><!--/.data-->
     </div>
     <div class="frame" ng-show="message.expand === true">
