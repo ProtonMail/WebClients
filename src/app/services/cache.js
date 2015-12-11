@@ -18,7 +18,6 @@ angular.module("proton.cache", [])
     var conversationsCached = [];
     var DELETE = 0;
     var CREATE = 1;
-    var UPDATE = 2;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAGS = 3;
 
@@ -668,9 +667,13 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var messages = [event.Message];
         var conversation = {ID: event.Message.ConversationID, Time: event.Message.Time};
+        var found = _.findWhere(authentication.user.Addresses, {Email: event.Message.Sender.Address});
 
-        // Update conversation with Time
-        updateConversation(conversation);
+        // Update conversation with Time if the message is from outside
+        if(angular.isUndefined(found)) {
+            updateConversation(conversation);
+        }
+
         // Save new messages
         storeMessages(messages);
 
@@ -773,6 +776,7 @@ angular.module("proton.cache", [])
              }
 
              // Update conversation cached
+             console.log('update conversation', conversation);
              conversationsCached[index] = conversation;
              manageCounters(current, conversationsCached[index], 'conversation');
              deferred.resolve();

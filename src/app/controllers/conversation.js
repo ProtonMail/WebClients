@@ -44,6 +44,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                 if(angular.isUndefined(current)) {
                     // Add message
+                    $rootScope.openMessage.push(message.ID);
                     $scope.messages.push(message);
                 }
             });

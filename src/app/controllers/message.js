@@ -717,7 +717,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var br = '<br />';
         var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
         var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
-        var blockquoteStart = '<blockquote class="protonmail_quote">';
+        var blockquoteStart = '<blockquote class="protonmail_quote" type="cite">';
         var originalMessage = '-------- Original Message --------<br />';
         var subject = 'Subject: ' + $scope.message.Subject + '<br />';
         var time = 'Local Time: ' + $filter('localReadableTime')($scope.message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')($scope.message.Time) + '<br />';
