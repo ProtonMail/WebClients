@@ -18,6 +18,8 @@ angular.module("proton.controllers.Settings")
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
     $scope.maxSpace = authentication.user.MaxSpace;
+    $scope.organization = null;
+    $scope.status = null;
 
     // Prices
     $scope.plusPrice = {1: 5, 12: 47};
@@ -118,26 +120,25 @@ angular.module("proton.controllers.Settings")
         if(angular.isDefined(status.data) && status.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
 
-            $scope.current = {};
-            $scope.future = {};
+            $scope.current = status.data.Cart.Current;
+            $scope.future = status.data.Cart.Future;
 
-            if(angular.isDefined(status.data) && status.data.Code === 1000) {
-                $scope.status = status.data.Payment;
-                $scope.current = status.data.Cart.Future;
-                $scope.future.Currency = $scope.status.Currency;
+            if(status.data.Payment) {
+                $scope.currentCurrency = status.data.Payment.Currency;
+                $scope.futureCurrency = status.data.Payment.Currency;
 
-                if(parseInt(($scope.status.PeriodEnd - $scope.status.PeriodStart) / month) === 1) {
-                    $scope.current.BillingCycle = 12;
-                    $scope.future.BillingCycle = 12;
+                if(parseInt((status.data.Payment.PeriodEnd - status.data.Payment.PeriodStart) / month) === 1) {
+                    $scope.currentBillingCycle = 12;
+                    $scope.futureBillingCycle = 12;
                 } else {
-                    $scope.current.BillingCycle = 1;
-                    $scope.future.BillingCycle = 1;
+                    $scope.currentBillingCycle = 1;
+                    $scope.futureBillingCycle = 1;
                 }
             } else {
-                $scope.current.Currency = 'CHF';
-                $scope.future.Currency = 'CHF';
-                $scope.current.BillingCycle = 1;
-                $scope.future.BillingCycle = 1;
+                $scope.currentCurrency = 'CHF';
+                $scope.futureCurrency = 'CHF';
+                $scope.currentBillingCycle = 1;
+                $scope.futureBillingCycle = 1;
             }
 
             var spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.current.MaxSpace});
@@ -208,16 +209,16 @@ angular.module("proton.controllers.Settings")
         var total = 0;
 
         if(name === 'plus') {
-            total += $scope.plusPrice[$scope.future.BillingCycle];
-            total += $scope.spacePlus.index * $scope.spacePrice[$scope.future.BillingCycle];
-            total += $scope.domainPlus.index * $scope.domainPrice[$scope.future.BillingCycle];
-            total += $scope.addressPlus.index * $scope.addressPrice[$scope.future.BillingCycle];
+            total += $scope.plusPrice[$scope.futureBillingCycle];
+            total += $scope.spacePlus.index * $scope.spacePrice[$scope.futureBillingCycle];
+            total += $scope.domainPlus.index * $scope.domainPrice[$scope.futureBillingCycle];
+            total += $scope.addressPlus.index * $scope.addressPrice[$scope.futureBillingCycle];
         } else if(name === 'business') {
-            total += $scope.businessPrice[$scope.future.BillingCycle];
-            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.future.BillingCycle];
-            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.future.BillingCycle];
-            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.future.BillingCycle];
-            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.future.BillingCycle];
+            total += $scope.businessPrice[$scope.futureBillingCycle];
+            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.futureBillingCycle];
+            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.futureBillingCycle];
+            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.futureBillingCycle];
+            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.futureBillingCycle];
         }
 
         return total;
@@ -241,8 +242,8 @@ angular.module("proton.controllers.Settings")
         var configuration = {
             Subscription: {
                 Amount: $scope.amount(name),
-                Currency: $scope.future.Currency,
-                BillingCycle: $scope.future.BillingCycle,
+                Currency: $scope.futureCurrency,
+                BillingCycle: $scope.futureBillingCycle,
                 Time: now,
                 PeriodStart: now,
                 ExternalProvider: "Stripe"
