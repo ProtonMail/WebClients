@@ -68,7 +68,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-        var open;
         var unreads = _.where($scope.messages, {IsRead: 0});
 
         if(angular.isDefined($rootScope.openMessage)) { // Open specific message

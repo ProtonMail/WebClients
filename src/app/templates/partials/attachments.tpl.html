@@ -1,7 +1,7 @@
 <div ng-if="message.Attachments.length > 0" id="attachmentArea">
     <header>
         <span class="title">
-            {{message.Attachments.length}} 
+            {{ message.Attachments.length }}
             <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
             <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>
             ({{ message.sizeAttachments() | humanSize }})
@@ -9,27 +9,18 @@
         <em></em>
     </header>
     <section>
-        <a 
-        ng-repeat="attachment in message.Attachments" 
-        class="pm_button" 
-        ng-class="{ 'disabled': attachment.decrypting }" 
-        data-download-text="{{ 'DOWNLOAD' | translate }}" 
-        title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})"
-        href 
-        ng-click="decryptAttachment(attachment, $event)">
-            <i class="fa" ng-class="{ 'fa-cog fa-spin': attachment.decrypting }"></i>
-
-<i class="fa fa-archive-o"      ng-show="(attachment.MIMEType.indexOf('zip')            != -1)"></i>
-<i class="fa fa-audio-o"        ng-show="(attachment.MIMEType.indexOf('mp3')            != -1)"></i>
-<i class="fa fa-code-o"         ng-show="(attachment.MIMEType.indexOf('javascript')     != -1)"></i>
-<i class="fa fa-excel-o"        ng-show="(attachment.MIMEType.indexOf('xls')            != -1)"></i>
-<i class="fa fa-image-o"        ng-show="(attachment.MIMEType.indexOf('image')          != -1)"></i>
-<i class="fa fa-movie-o"        ng-show="(attachment.MIMEType.indexOf('mov')            != -1)"></i>
-<i class="fa fa-pdf-o"          ng-show="(attachment.MIMEType.indexOf('pdf')            != -1)"></i>
-<i class="fa fa-powerpoint-o"   ng-show="(attachment.MIMEType.indexOf('power')          != -1)"></i>
-<i class="fa fa-word-o"         ng-show="(attachment.MIMEType.indexOf('word')           != -1)"></i>
-
-            <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+        <a href ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'disabled': attachment.decrypting }" data-download-text="{{ 'DOWNLOAD' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event)">
+            <i class="fa" ng-class="{ 'fa-cog fa-spin': attachment.decrypting, 'fa-download': attachment.decrypted }"></i>
+            <!-- <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1"></i>
+            <i class="fa fa-audio-o"        ng-show="attachment.MIMEType.indexOf('mp3')            !== -1"></i>
+            <i class="fa fa-code-o"         ng-show="attachment.MIMEType.indexOf('javascript')     !== -1"></i>
+            <i class="fa fa-excel-o"        ng-show="attachment.MIMEType.indexOf('xls')            !== -1"></i>
+            <i class="fa fa-image-o"        ng-show="attachment.MIMEType.indexOf('image')          !== -1"></i>
+            <i class="fa fa-movie-o"        ng-show="attachment.MIMEType.indexOf('mov')            !== -1"></i>
+            <i class="fa fa-pdf-o"          ng-show="attachment.MIMEType.indexOf('pdf')            !== -1"></i>
+            <i class="fa fa-powerpoint-o"   ng-show="attachment.MIMEType.indexOf('power')          !== -1"></i>
+            <i class="fa fa-word-o"         ng-show="attachment.MIMEType.indexOf('word')           !== -1"></i> -->
+            <strong>{{ attachment.Name }}</strong> ({{ attachment.Size | humanSize }})
         </a>
     </section>
 </div>
