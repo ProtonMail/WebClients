@@ -20,7 +20,7 @@
     }
     &:active,
     &:focus {
-        background-color: lighten($border, 5%);
+        background-color: lighten($border, 2%);
         outline: none;
     }
     &.primary {
@@ -39,7 +39,7 @@
         }
         &[disabled],
         &.disabled {
-            background: lighten($primary, 5%);
+            background: lighten($primary, 2%);
         }
     }
     &.link {
@@ -80,7 +80,7 @@
         }
         &[disabled],
         &.disabled {
-            background: lighten($green, 5%);
+            background: lighten($green, 2%);
         }
     }
     &.error {
@@ -93,7 +93,7 @@
         }
         &[disabled],
         &.disabled {
-            background: lighten($red, 5%);
+            background: lighten($red, 2%);
         }
     }
     &[disabled],
@@ -101,7 +101,6 @@
         opacity: .5;
         pointer-events: none;
         cursor: default;
-        background: lighten($border, 5%);
     }
     &.dead {
         pointer-events: none;
@@ -130,7 +129,6 @@
     position: relative;
     .disabled,
     [disabled] {
-        background: lighten($border, 5%);
         pointer-events: none;
         opacity: .5;
     }
