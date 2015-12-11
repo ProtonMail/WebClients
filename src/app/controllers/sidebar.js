@@ -48,15 +48,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      */
     $scope.initialization = function() {
         $scope.refreshCounters();
-
-        $(window).bind('resize', $scope.labelScroller );
-
-        $scope.$on("$destroy", function() {
-            $(window).unbind('resize', $scope.labelScroller );
-        });
-
-        // Scrollbar
-        $('.perfectScroller').perfectScrollbar();
     };
 
     /**
@@ -107,9 +98,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Manipulates the DOM (labelScroller), sets unread count, and updates the title of the page
      */
-    $scope.refreshCounters = function() {
-        $scope.labelScroller();
-    };
+    $scope.refreshCounters = function() {};
 
     $scope.updateLabels = function () {
         $scope.labels = authentication.user.Labels;
@@ -237,34 +226,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         }
 
         return result;
-    };
-
-    /**
-     * Manipulates the DOM height for the scrollable labels area
-     * TODO: Should be a directive? This needs to be fixed in v3.
-     */
-    $scope.labelScroller = function() {
-
-        $('#sidebarLabels').css('height', 'auto');
-
-        var sidebarWrapHeight = $('#sidebarWrap').outerHeight();
-        var sidebarMenuHeight = 0;
-        var height;
-
-        $('#sidebarWrap > .list-group').each( function() {
-            sidebarMenuHeight += $(this).outerHeight();
-        });
-
-        if (sidebarMenuHeight > 0) {
-            height = (sidebarWrapHeight - sidebarMenuHeight);
-        }
-
-        if ($('.storage').is(':visible')) {
-            height -= $('.storage').outerHeight();
-        }
-
-        $('#sidebarLabels').css('height', height);
-
     };
 
     $scope.initialization();

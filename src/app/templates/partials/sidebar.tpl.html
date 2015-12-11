@@ -68,7 +68,7 @@
             </a>
         </li>
     </ul>
-    <div id="sidebarLabels" class="perfectScroller" ng-label-height>
+    <div id="sidebarLabels" ng-label-height>
         <div class="labels">
             <ul>
                 <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
@@ -90,7 +90,8 @@
                 <em style="width: {{ storagePercentage() }}%"></em>
             </div>
             <div class="storage">
-                <i class="fa fa-hdd-o"></i> <strong>{{ storagePercentage() }}%</strong> {{ 'STORAGE_USED' | translate }}
+                <strong class="pull-right">{{ storagePercentage() }}%</strong>
+                <i class="fa fa-hdd-o"></i> {{ 'STORAGE' | translate }}:
             </div>
         </div>
         <a class="version" href="https://blog.protonmail.com/category/release-notes/" title="{{ dateVersion }}" target="_blank">

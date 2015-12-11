@@ -402,7 +402,7 @@ angular.module("proton", [
             return; // no need to redirect
         }
 
-        // now, redirect only not authenticated
+        // now, redirect only not authenticated 
         if (!!!authentication.isLoggedIn()) {
             event.preventDefault(); // stop current execution
             $state.go('login'); // go to login
