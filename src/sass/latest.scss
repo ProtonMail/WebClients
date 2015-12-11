@@ -1,4 +1,5 @@
 #pm_latest {
+	padding: 20px 40px;
 	header {
 	    font-size: 24px;
 	    font-weight: 400;
@@ -10,20 +11,40 @@
 	    padding-top: ( (($toolbarHeight)-30) /2 );
 	    padding-right: 3rem;
 	    padding-bottom: ( (($toolbarHeight)-30) /2 );
-	    padding-left: calc(15px + 1.5rem);
-	    padding-right: calc(15px + 1.5rem);
+	    padding-left: 40px;
+	    padding-right: 40px;
 	    box-sizing: border-box;
 	    border-bottom: 1px solid $border;
+	    margin: 0 -40px;
+	}
+	#storageStatus {
+		.wrap {
+			span {
+				color: $gray;
+				strong {
+					color: $primary;
+				}
+			}
+		}
 	}
 	& > p {
-		padding: calc(15px + 1.5rem);
+		margin: 2rem 0;
 	}
 	section {
-		border-bottom: 1px solid $border;	
+		border: 1px solid $border;
+		margin: 0 0 20px 0;
+		padding: 1rem;
+		border-radius: 2px;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
     .link {
     	padding-bottom: 1rem;
     	display: block;
+    	float: right;
     	a {
 	    	display: block;
 	    	text-align: center;
@@ -34,10 +55,11 @@
 	    }
     }
     .storageArea {
-    	padding: 0 8rem;
+    	padding: 0 6rem;
     	position: relative;
     	height: 2rem;
     	line-height: 2rem;
+    	margin-bottom: 1rem;
     	.current {
     		position: absolute;
     		left: 0;
@@ -45,7 +67,6 @@
     		display: block;
     		height: 2rem;
     		line-height: 2rem;
-    		padding-left: calc(15px + 1.5rem);
     	}
     	.total {
     		position: absolute;
@@ -54,7 +75,6 @@
     		display: block;
     		height: 2rem;
     		line-height: 2rem;
-    		padding-right: calc(15px + 1.5rem);
     	}
 	    div.storage {
 	        color: #bbb;
