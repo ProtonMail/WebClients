@@ -1,26 +1,8 @@
 <span ng-show="('secured.starred.**' | includedByState) || ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState)">
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.inbox)" class="pm_label" title="{{ 'INBOX' | translate }}">
-        <i class="fa fa-inbox"></i> 
-        <em>{{ 'INBOX' | translate }}</em>
-    </span>
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)" class="pm_label" title="{{ 'DRAFTS' | translate }}">
-        <i class="fa fa-file-text-o"></i> 
-        <em>{{ 'DRAFTS' | translate }}</em>
-    </span>
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.sent)" class="pm_label" title="{{ 'SENT' | translate }}">
-        <i class="fa fa-sign-out"></i> 
-        <em>{{ 'SENT' | translate }}</em>
-    </span>
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.archive)" class="pm_label" title="{{ 'ARCHIVE' | translate }}">
-        <i class="fa fa-archive"></i> 
-        <em>{{ 'ARCHIVE' | translate }}</em>
-    </span>
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.spam)" class="pm_label" title="{{ 'SPAM' | translate }}">
-        <i class="fa fa-ban"></i> 
-        <em>{{ 'SPAM' | translate }}</em>
-    </span>
-    <span ng-if="in(CONSTANTS.MAILBOX_IDENTIFIERS.trash)" class="pm_label" title="{{ 'TRASH' | translate }}">
-        <i class="fa fa-trash-o"></i> 
-        <em>{{ 'TRASH' | translate }}</em>
-    </span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('0') !== -1 && ('secured.search.**' | includedByState)">{{ 'INBOX' | translate }}</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('1') !== -1 && ('secured.search.**' | includedByState)">{{ 'DRAFT' | translate }}</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('2') !== -1 && ('secured.search.**' | includedByState)">{{ 'SENT' | translate }}</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('3') !== -1 && ('secured.search.**' | includedByState)">{{ 'TRASH' | translate }}</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('4') !== -1 && ('secured.search.**' | includedByState)">{{ 'SPAM' | translate }}</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('5') !== -1 && ('secured.search.**' | includedByState)">{{ 'ARCHIVE' | translate }}</span>
 </span>
