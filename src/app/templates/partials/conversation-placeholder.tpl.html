@@ -1,6 +1,6 @@
 <section id="pm_latest" ng-show="showWelcome === true">
     <header>Welcome, {{ user.DisplayName }}</header>
-    <p ng-show="numberElementUnread > 0">You have <a href>{{ numberElementUnread }} unread</a> conversation</p>
+    <p>You have <a href>{{ numberElementUnread }} unread</a> conversations.</p>
     <section id="storageStatus">
     	<div class="wrap">
             <div class="storageArea">
@@ -17,17 +17,17 @@
         </div>
     </section>
     <section>
-        <img src="/assets/img/welcome/a.jpg">
+        <a href><img src="/assets/img/welcome/a.jpg"></a>
     </section>
     <div class="pm_grid">
         <div class="col-1-2">
             <section>
-                <img src="/assets/img/welcome/b.jpg">
+                <a href><img src="/assets/img/welcome/b.jpg"></a>
             </section>
         </div>
         <div class="col-1-2">
             <section>
-                <img src="/assets/img/welcome/c.jpg">
+                <a href><img src="/assets/img/welcome/c.jpg"></a>
             </section>
         </div>
     </div>
