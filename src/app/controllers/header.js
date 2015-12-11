@@ -23,7 +23,7 @@ angular.module("proton.controllers.Header", [])
     });
 
     function openWizardModal(title, version) {
-        wizardModal.activate({
+        wizardModal.activate({ 
             params: {
                 title: title,
                 version: version,
