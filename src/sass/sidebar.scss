@@ -66,10 +66,10 @@ section.sidebar {
         display: block;
         list-style-type: none;
         font-size: 14px;
-        margin: 0 -20px 30px -20px;
+        margin: 0 -20px 20px -20px;
         li {
-            height: 40px;
-            line-height: 40px;
+            height: $sidebarRowHeight;
+            line-height: $sidebarRowHeight;
             display: block;
             &.divider {
                 height: 1px;
@@ -79,8 +79,8 @@ section.sidebar {
             }
             a {
                 text-decoration: none;
-                height: 40px;
-                line-height: 40px;
+                height: $sidebarRowHeight;
+                line-height: $sidebarRowHeight;
                 color: #7a7982;
                 display: block;
                 border-bottom: 1px solid transparent;
@@ -94,8 +94,8 @@ section.sidebar {
                     color: $white;
                 }
                 i.fa {
-                    height: 40px;
-                    line-height: 40px;
+                    height: $sidebarRowHeight;
+                    line-height: $sidebarRowHeight;
                     display: block;
                     float: left;
                     width: 25px;
@@ -106,8 +106,8 @@ section.sidebar {
                     color: #d2d2d2;
                     float: right;
                     display: block;
-                    line-height: 40px;
-                    height: 40px;
+                    line-height: $sidebarRowHeight;
+                    height: $sidebarRowHeight;
                     margin-right: .5rem;
                     position: absolute;
                     right: 0;
@@ -220,7 +220,7 @@ section.sidebar {
                     height: 35px;
                     line-height: 35px;
                     text-decoration: none;
-                    color: #7a7982;
+                    color: $gray-light;;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;

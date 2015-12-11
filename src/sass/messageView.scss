@@ -97,19 +97,34 @@
     article.message {
     	clear: both;
     	border-bottom: 1px solid $border;
+        .toggleDetails {
+            color: $primary;
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .tag {
+            font-style: normal;
+            background: $border;
+            padding: 0 .35rem;
+            display: inline-block;
+            margin: 0 .5rem;
+            border-radius: 2px;
+        }
+        .where,
+        .contact {
+            color: #777;
+            em {
+                color: #777;
+                font-style: normal;
+            }
+            strong {
+                font-weight: 400;
+                color: $gray;
+            }
+        }
         &.read {
             background: $read;
-            header {
-                .from {
-                    .pm_labels {
-                        background: $read;
-                        .pm_label {
-                            box-shadow: 0 0 0 4px $read;
-                            background: $read;
-                        }
-                    }
-                }
-            }
         }
         &.open.last {
             border-bottom: none;
@@ -120,52 +135,44 @@
                 background: #fff;
             }
             header {
-                cursor: initial;
-                .person > em {
-                    // font-weight: 700;
-                    // color: #555;
-                }
-                .from {
-                    .pm_labels {
-                        background: #fff;
-                        .pm_label {
-                            box-shadow: 0 0 0 4px #fff !important;
-                            background: #fff !important;
-                            padding-right: calc(.15rem + 1rem);
-                            position: relative;
-                            right: initial !important;
-                            box-sizing: border-box;
-                            a {
-                                position: absolute;
-                                right: 0;
-                                top: 0;
-                                width: 1rem;
-                                text-align: center;
-                                cursor: pointer;
-                                bottom: 0;
-                                display: block;
-                                z-index: 2;
-                                .fa {
-                                    position: static;
-                                    display: block !important;
-                                    font-size: 10px;
-                                    color: $gray-light;
-                                    line-height: 12px;
-                                    height: 12px;
-                                    -webkit-transition: color .25s ease;
-                                       -moz-transition: color .25s ease;
-                                        -ms-transition: color .25s ease;
-                                         -o-transition: color .25s ease;
-                                            transition: color .25s ease;
-                                    &:hover {
-                                        color: $gray;
-                                    }
+                margin-bottom: -10px;
+                .pm_labels {
+                    background: $read;
+                    .pm_label {
+                        box-shadow: 0 0 0 4px $read !important;
+                        background: $read !important;
+                        padding-right: calc(.15rem + 1rem);
+                        position: relative;
+                        right: initial !important;
+                        box-sizing: border-box;
+                        max-width: initial !important;
+                        a {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 1rem;
+                            text-align: center;
+                            cursor: pointer;
+                            bottom: 0;
+                            display: block;
+                            z-index: 2;
+                            .fa {
+                                position: static;
+                                display: block !important;
+                                font-size: 10px;
+                                color: $gray-light;
+                                line-height: 12px;
+                                height: 12px;
+                                -webkit-transition: color .25s ease;
+                                   -moz-transition: color .25s ease;
+                                    -ms-transition: color .25s ease;
+                                     -o-transition: color .25s ease;
+                                        transition: color .25s ease;
+                                &:hover {
+                                    color: $gray;
                                 }
                             }
                         }
-                    }
-                    b {
-                        display: inline-block;
                     }
                 }
             }
@@ -196,40 +203,43 @@
                 }
             }
         }
-        span.person {
-            position: relative;
-            word-break: break-word;
-            i {
-                margin: 0 0 0 .25rem;
-                clear: both;
-                white-space: nowrap;
-            }
-            em {
-                display: inline-block;
-                font-weight: 400;
-                font-style: normal;
-            }
-            em.tag {
-                color: $primary;
-                margin-left: 1rem;
-            }
-        }
     	header {
     		overflow: hidden;
     		font-size: 15px;
-    		padding: 10px 0;
+    		padding: 10px 40px;
     		line-height: 20px;
     		box-sizing: border-box;
             cursor: pointer;
             font-size: 90%;
-            padding-right: 25px;
-            background: $read;
             position: relative;
+            cursor: pointer;
+            & > .meta {
+                float: right;
+            }
+            .pm_labels {
+                top: 1px;
+                float: right;
+                background: $read;
+                .pm_label {
+                    box-shadow: 0 0 0 4px $read;
+                    background: $read;
+                }
+            }
     		.time {
     			display: inline-block;
     			white-space: nowrap;
     			text-align: right;
     		}
+            .history {
+                position: absolute;
+                left: 0;
+                width: 40px;
+                text-align: center;
+                top: 0;
+                line-height: 40px;
+                display: block;
+                height: 40px;
+            }
             span.expiration {
                 position: absolute;
                 z-index: 5;
@@ -252,47 +262,6 @@
                     width: 1.25rem;
                 }
             }
-    		.from {
-    			color: #999;
-    			float: left;
-                .pm_labels {
-                    margin: -6px 0 -6px 1rem;
-                    em {
-                        font-weight: 700;
-                    }
-                }
-                b {
-                    color: #555;
-                }
-    			i {
-    				display: block;
-    				width: 1.5rem;
-                    line-height: 20px;
-                    height: 20px;
-                    text-align: left;
-                    font-style: normal;
-                    float: left;
-    			}
-                .person {
-                    position: relative;
-                    padding-left: 40px;
-                    float: left;
-                    i.fa {
-                        position: absolute;
-                        left: 15px;
-                        top: 0;
-                        display: block;
-                        height: 20px;
-                        line-height: 20px;
-                    }
-                }
-                strong {
-                    float: left;
-                    display: block;
-                    font-weight: 400;
-                    margin-left: .5rem;
-                }
-    		}
     		a {
     			text-decoration: none;
     		}
@@ -310,166 +279,37 @@
 			.fa-star {
 			 	color: $orange;
 			}
-    		.meta {
-    			float: right;
-    			color: #555;
-    			.fa {
-    				color: #aba7be;
-    				display: inline-block;
-    				text-align: center;
-    				width: 1.5rem;
-    			}
-                .fa-paperclip {
-                    float: left;
-                    height: 20px;
-                    line-height: 20px;
-                }
-    		}
-    	}
-    	.recipientsWrap {
-    		display: block;
-            padding-left: 1.5rem;
-            & > span {
-                clear: both;
-                display: inline-block;
-                line-height: 20px;
-                margin-bottom: 10px;
-                strong {
-                    font-weight: 700;
-                    color: #555;
-                }
-                em {
-                    font-style: italic;
-                }
-                .spacer {
-                    display: inline-block;
-                    position: static;
-                    width: .5rem;
-                }
-            }
     	}
 		.sub {
-            padding-left: 15px;
-			padding-right: 175px;
+            margin-left: 40px;
+            margin-right: 40px;
+			padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
 			font-size: 14px;
 			line-height: 20px;
 			clear: both;
 			box-sizing: border-box;
-            float: left;
-            width: 100%;
             border-bottom: 1px solid $border;
-            background: $read;
+            min-height: 55px;
 			.data {
                 float: left;
                 width: 100%;
                 font-size: 90%;
-                .toGroup,
-                .bccGroup,
-                .ccGroup {
-                    display: block;
-                    float: left;
-                    clear: both;
-                    position: relative;
-                    i {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        text-transform: lowercase;
-                    }
-                }
-                & > div > i {
-    				font-style: normal;
-    				width: 3rem;
-    				display: inline-block;
+                .where {
+                    display: inline-block;
                 }
 			}
-    		.meta {
-    			height: 35px;
-                float: left;
-                width: 100%;
-                clear: both;
-    			line-height: 35px;
-    			padding-top: 1rem;
-                padding-left: 25px;
-                display: block;
-                box-sizing: border-box;
-                & > a {
-                    text-decoration: none;
-                    span {
-                        color: $primary;
-                        font-weight: 700;
-                    }
-                }
-                .pm_labels.inline .pm_label {
-                    margin: 0 5px 0 0;
-                    width: auto;
-                    max-width: initial;
-                    i {
-                        display: none;
-						&.fa-times {
-							display: inline-block;
-                            color: $gray-light;
-                            font-size: 10px !important;
-						}
-                    }
-                    em {
-                        display: inline-block;
-                    }
-                }
-    			.pm_buttons {
-    				padding: 0;
-    				border: none;
-    			}
-                .addLabelButton {
-                    height: 18px;
-                    line-height: 14px;
-                    text-decoration: none;
-                    position: relative;
-                    float: left;
-                    a.addLabel {
-                        padding: 0;
-                        border-radius: 2px;
-                        text-transform: uppercase;
-                        border: 2px solid $gray-light;
-                        color: $gray-light;
-                        box-sizing: border-box;
-                        height: 18px;
-                        text-decoration: none;
-                        font-weight: 700;
-                        position: relative;
-                        .fa {
-                            font-size: 10px !important;
-                            line-height: 14px;
-                        }
-                        small {
-                            font-size: 10px !important;
-                            line-height: 14px !important;
-                            padding: 0 0.35rem;
-                            float: left;
-                        }
-                    }
-                }
-    			.labelClose {
-    				display: block;
-    				float: right;
-    				height: 14px;
-    				line-height: 14px;
-    				color: $gray;
-    				margin-left: .25rem;
-    			}
-    		}
-			.actions {
+    		.actions {
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 10px;
-				top: 0;
+				right: 0;
+				top: 10px;
 				z-index: 2;
 				width: 145px;
-                background: #fff;
 				.pm_buttons {
+                    background: #fff;
 					float: right;
 					margin: 0;
 				}
@@ -553,9 +393,6 @@
     		line-height: 40px;
     		height: 41px;
     		padding: 0;
-            .from span i {
-                display: none;
-            }
             .compose {
                 display: none;
             }
@@ -581,20 +418,6 @@
     #pm_view article.message header {
         padding-right: 0;
     }
-    #pm_view article.message header .from .person {
-        padding-left: 1.5rem;
-        i.fa {
-            margin: 0;
-            text-align: center;
-            position: static;
-        }
-        & > em {
-            display: inline-block;
-        }
-        & > b {
-            display: block;
-        }
-    }
     #pm_view article.message.open {
         position: relative;
         padding-top: 45px;
@@ -606,29 +429,11 @@
                 left: 10px;
                 top: 10px;
             }
-            .meta {
-                padding-left: 25px;
-            }
         }
     }
     #pm_view article.message .frame {
         padding-left: 0;
         padding-right: 0;
-    }
-    #pm_view article.message header .meta {
-        float: none;
-        display: block;
-        .fa {
-            text-align: left;
-        }
-    }
-    #pm_view article.message header .from {
-        float: none;
-        display: block;
-        .person {
-            float: none;
-            display: block;
-        }
     }
     #pm_view > header {
         margin: 0;
@@ -701,10 +506,6 @@
         }
         .data {
             clear: both;
-        }
-        .recipientsWrap {
-            display: inline-block;
-            margin: 0;
         }
     }
 }
