@@ -19,7 +19,7 @@ angular.module("proton.controllers.Settings")
     $scope.usedSpace = authentication.user.UsedSpace;
     $scope.maxSpace = authentication.user.MaxSpace;
     $scope.organization = null;
-    $scope.status = null;
+    $scope.payment = null;
 
     // Prices
     $scope.plusPrice = {1: 5, 12: 47};
@@ -120,10 +120,11 @@ angular.module("proton.controllers.Settings")
         if(angular.isDefined(status.data) && status.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
 
-            $scope.current = status.data.Cart.Current;
+            $scope.current = status.data.Cart.Future;
             $scope.future = status.data.Cart.Future;
 
             if(status.data.Payment) {
+                $scope.payment = status.data.Payment;
                 $scope.currentCurrency = status.data.Payment.Currency;
                 $scope.futureCurrency = status.data.Payment.Currency;
 

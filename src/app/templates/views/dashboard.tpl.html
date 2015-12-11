@@ -78,7 +78,7 @@
                     </table>
                 </div>
             </section>
-            <section class="setting pm_form pull-right" ng-hide="status === null">
+            <section class="setting pm_form pull-right" ng-hide="payment === null">
                 <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableSubscription">
@@ -115,7 +115,7 @@
                         <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'PRICE' | translate }}: </th>
                             <td colspan="2">
-                                <strong>{{ status.Amount / 100 | currency: status.Currency }}</strong>
+                                <strong>{{ payment.Amount / 100 | currency: payment.Currency }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
@@ -128,7 +128,7 @@
                         <tr>
                             <th>{{ 'DURATION' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ status.PeriodStart * 1000 | date }} - {{ status.PeriodEnd * 1000 | date }}</strong>
+                                <strong>{{ payment.PeriodStart * 1000 | date }} - {{ payment.PeriodEnd * 1000 | date }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
