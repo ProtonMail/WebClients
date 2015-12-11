@@ -75,6 +75,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Check if the current message is in spam
+     * @return {Boolean}
+     */
+    $scope.spam = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1;
+    };
+
+    /**
      * Method called to display message content
      * @return {Promise}
      */

@@ -13,11 +13,12 @@
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span pt-tooltip="{{ message.Sender.Address }}" class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
-            <em ng-show="message.expand === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>            
+            <em ng-show="message.expand === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-        <em class="tag" ng-show="draft() === true">DRAFT</em>
-        <em class="tag" ng-show="trash() === true">TRASH</em>
+        <em class="tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
+        <em class="tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
+        <em class="tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>
         <span class="pm_labels" ng-if="message.labels().length > 0">
             <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
                 <em>{{ getLabel(label.ID).Name }}</em>
@@ -114,7 +115,7 @@
                 </span>
             </div>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
-            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>            
+            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
         </div><!--/.data-->
         <div class="clear"></div>
     </div>
