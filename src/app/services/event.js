@@ -84,11 +84,11 @@ angular.module("proton.event", ["proton.constants"])
 				var events = [];
 
 				if(angular.isArray(messages)) {
-					events.concat(messages);
+					events = events.concat(messages);
 				}
 
 				if(angular.isArray(conversations)) {
-					events.concat(conversations);
+					events = events.concat(conversations);
 				}
 
 				if(events.length > 0) {
