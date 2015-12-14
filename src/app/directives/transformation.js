@@ -19,8 +19,14 @@ angular.module("proton.transformation", [])
         link: function(scope, element, attributes) {
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
+                    var blockquote;
                     var blockquotes = angular.element(element).find('.protonmail_quote, .gmail_extra, .gmail_quote, .yahoo_quoted, #isForwardContent, #isReplyContent, #mailcontent, #origbody, #reply139content, #oriMsgHtmlSeperator, blockquote[type="cite"]');
-                    var blockquote = _.first(blockquote);
+
+                    if(blockquotes.length === 0) {
+                        // TODO detect certain strings
+                    }
+
+                    blockquote = _.first(blockquote);
 
                     if(angular.isDefined(blockquote)) {
                         var button = angular.element('<button/>', {
