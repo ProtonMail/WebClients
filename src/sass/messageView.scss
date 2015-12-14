@@ -102,6 +102,7 @@
             cursor: pointer;
             display: inline-block;
             padding: 10px 0;
+            font-weight: 700;
         }
         .where,
         .contact {
@@ -115,8 +116,37 @@
                 color: $gray;
             }
         }
+        .data .toGroup .contact:not(:last-child)::after,
+        .data .ccGroup .contact:not(:last-child)::after,
+        .data .bccGroup .contact:not(:last-child)::after {
+            content: ",";
+        }
+        .data table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            padding: 0;
+            td {
+                vertical-align: top;
+                padding: 0 .25rem 0 0;
+            }
+        }
+        .where {
+            display: none;
+        }
         &.read {
             background: $read;
+        }
+        &.details {
+            .data {
+                .toGroup .contact:not(:last-child)::after,
+                .ccGroup .contact:not(:last-child)::after,
+                .bccGroup .contact:not(:last-child)::after {
+                    content: "";
+                }
+                .contact {
+                    display: block;
+                }
+            }
         }
         &.open.last {
             border-bottom: none;
@@ -126,8 +156,16 @@
             &.read {
                 background: #fff;
             }
+            .where {
+                display: inline-block;
+            }
             header {
                 margin-bottom: -10px;
+                .contact {
+                    strong {
+                        font-weight: 700;
+                    }
+                }
                 .pm_labels {
                     background: $read;
                     .pm_label {

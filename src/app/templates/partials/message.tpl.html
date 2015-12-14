@@ -1,4 +1,14 @@
-<article class="message" ng-controller="MessageController" id="message{{ $index }}" ng-class="{ 'last': $last, 'open': message.expand, 'read': message.IsRead === 1, 'unread': message.IsRead === 0 }">
+<article 
+class="message" 
+ng-controller="MessageController" 
+id="message{{ $index }}" 
+ng-class="{ 
+    'last': $last, 
+    'open': message.expand, 
+    'read': message.IsRead === 1, 
+    'unread': message.IsRead === 0,
+    'details': toggleDetails === true
+}">
     <header ng-click="toggle()">
         <span class="meta">
             <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
@@ -13,7 +23,7 @@
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span pt-tooltip="{{ message.Sender.Address }}" class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
-            <em ng-show="message.expand === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
+            <em ng-show="toggleDetails === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
         <em class="pm_tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
@@ -90,30 +100,45 @@
             </span>
         </div><!--/.actions-->
         <div class="data">
-            <div ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true">
-                <span class="where">{{ 'TO' | translate }}: </span>
-                <span class="contact" ng-repeat="email in ::message.ToList">
-                    <strong>{{ email | contact:'Name' }}</strong>
-                    <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                    <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                </span>
-            </div>
-            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
-                <span class="where">{{ 'CC' | translate }}: </span>
-                <span class="contact" ng-repeat="email in ::message.CCList">
-                    <strong>{{ email | contact:'Name' }}</strong>
-                    <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                    <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                </span>
-            </div>
-            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
-                <span class="where">{{ 'BCC' | translate }}: </span>
-                <span class="contact" ng-repeat="email in ::message.BCCList">
-                    <strong>{{ email | contact:'Name' }}</strong>
-                    <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                    <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                </span>
-            </div>
+            <table>
+                <tr ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true">
+                    <td>
+                        <span class="where">{{ 'TO' | translate }}: </span>
+                    </td>
+                    <td>
+                        <span class="contact" ng-repeat="email in ::message.ToList">
+                            <strong>{{ email | contact:'Name' }}</strong>
+                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
+                            <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
+                    <td>
+                        <span class="where">{{ 'CC' | translate }}: </span>
+                    </td>
+                    <td>
+                       <span class="contact" ng-repeat="email in ::message.CCList">
+                            <strong>{{ email | contact:'Name' }}</strong>
+                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
+                            <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </span> 
+                    </td>
+                </tr>
+                <tr ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
+                    <td>
+                        <span class="where">{{ 'BCC' | translate }}: </span>
+                    </td>
+                    <td>
+                       <span class="contact" ng-repeat="email in ::message.BCCList">
+                            <strong>{{ email | contact:'Name' }}</strong>
+                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
+                            <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </span> 
+                    </td>
+                </tr>
+                <tr></tr>
+            </table>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
         </div><!--/.data-->
