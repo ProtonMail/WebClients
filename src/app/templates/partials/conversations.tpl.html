@@ -1,11 +1,8 @@
 <ng-include ng-if="layoutMode === 'columns'" src="'templates/partials/toolbar-list-columns.tpl.html'"></ng-include>
-
 <ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-
 <ng-include ng-if="layoutMode === 'rows'" src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
 
 <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height>
-
     <table ng-if="conversations.length === 0" id="nothingToSeeHere">
         <tr>
             <td>
@@ -58,13 +55,13 @@
                     <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                    {{ conversation.Subject }} 
+                    {{ conversation.Subject }}
                 </span>
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
                 <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
                     <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
                 </a>
-                <span class="time">{{ conversation.Time | readableTime }}</span>
+                <span class="time">{{ time(conversation) | readableTime }}</span>
             </p>
         </header>
         <article>
@@ -125,7 +122,7 @@
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
             <span title="{{ conversation.Subject }}">
-                {{ conversation.Subject }} 
+                {{ conversation.Subject }}
                 <location-tag class="locTag"></location-tag>
             </span>
             <span class="pm_labels inline" ng-show="conversation.LabelIDs | showLabels">
@@ -137,6 +134,6 @@
         </span>
         <span class="size">{{ conversation.TotalSize || conversation.Size | humanSize }}</span>
         <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-        <span class="time">{{ conversation.Time | readableTime }}</span>
+        <span class="time">{{ time(conversation) | readableTime }}</span>
     </div>
 </div>

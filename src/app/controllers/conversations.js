@@ -256,6 +256,21 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
+     * Manage time displaying
+     * @param {Object} conversation or message
+     * @return {Integer}
+     */
+    $scope.time = function(element) {
+        if(angular.isObject(element.Times)) {
+            var loc = tools.currentLocation();
+
+            return element.Times[loc];
+        } else {
+            return element.Time;
+        }
+    };
+
+    /**
      * Update labels for the view
      */
     $scope.updateLabels = function () {

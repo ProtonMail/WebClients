@@ -97,7 +97,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 var time = $filter('longReadableTime')($scope.message.Time);
 
                 $scope.ago = time;
-            }, 1000);
+            }, 60 * 1000);
 
             // Mark message as expanded
             $scope.message.expand = true;

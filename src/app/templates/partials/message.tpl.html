@@ -120,7 +120,7 @@
         <div class="clear"></div>
     </div>
     <div class="frame" ng-show="message.expand === true">
-        <p ng-show="message.ExpirationTime > 0" class="text-red">
+        <p ng-if="message.ExpirationTime > 0" class="text-red">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span countdown="{{ message.ExpirationTime }}"></span>
         </p>
         <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">

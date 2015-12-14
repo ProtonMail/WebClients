@@ -23,7 +23,7 @@ angular.module("proton.models.conversations", [])
             return $http({
                 url: url.get() + '/conversations',
                 method: 'GET',
-                params: params,
+                params: params
             });
         },
         /**

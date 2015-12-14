@@ -29,6 +29,12 @@ angular.module("proton.cache", [])
         _.each(conversations, function(conversation) {
             var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
+            conversation.Times = {};
+
+            _.each(conversation.LabelIDs, function(labelID) {
+                conversation.Times[labelID] = conversation.Time;
+            });
+
             if(angular.isDefined(current)) {
                 var index = conversationsCached.indexOf(current);
 
@@ -90,6 +96,28 @@ angular.module("proton.cache", [])
             return _.sortBy(elements, parameter).reverse();
         } else {
             return [];
+        }
+    };
+
+    /**
+     * Manage time per conversation and location
+     */
+    var time = function(message) {
+        var conversation = api.getConversationCached(message.ConversationID);
+
+        if(angular.isDefined(conversation)) {
+            var found = _.findWhere(authentication.user.Addresses, {Email: message.Sender.Address});
+            var index = conversationsCached.indexOf(conversation);
+
+            _.each(message.LabelIDs, function(labelID) {
+                if(angular.isDefined(found)) {
+                    conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.sent] = message.Time;
+                } else {
+                    conversation.Times[labelID] = message.Time;
+                }
+            });
+
+            conversationsCached[index] = conversation;
         }
     };
 
@@ -387,7 +415,6 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
     api.queryConversations = function(request) {
-        console.log('api.queryConversations');
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
@@ -657,13 +684,8 @@ angular.module("proton.cache", [])
     api.createMessage = function(event) {
         var deferred = $q.defer();
         var messages = [event.Message];
-        var conversation = {ID: event.Message.ConversationID, Time: event.Message.Time};
-        var found = _.findWhere(authentication.user.Addresses, {Email: event.Message.Sender.Address});
 
-        // Update conversation with Time if the message is from outside
-        if(angular.isUndefined(found)) {
-            updateConversation(conversation);
-        }
+        time(event.Message);
 
         // Save new messages
         storeMessages(messages);
@@ -728,6 +750,8 @@ angular.module("proton.cache", [])
                     delete message.LabelIDsAdded;
                 }
 
+                time(message);
+
                 messagesCached[index] = message;
                 manageCounters(current, messagesCached[index], 'message');
                 deferred.resolve();
@@ -746,7 +770,6 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
      api.updateFlagConversation = function(event) {
-         console.log('updateFlagConversation');
          var deferred = $q.defer();
          var current = _.findWhere(conversationsCached, {ID: event.ID});
 
@@ -838,7 +861,6 @@ angular.module("proton.cache", [])
      * Second with the query call
      */
     api.callRefresh = function() {
-        console.log('callRefresh');
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
