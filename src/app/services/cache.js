@@ -29,11 +29,13 @@ angular.module("proton.cache", [])
         _.each(conversations, function(conversation) {
             var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
-            conversation.Times = {};
+            if(angular.isDefined(conversation.Time)) {
+                conversation.Times = conversation.Times || {};
 
-            _.each(conversation.LabelIDs, function(labelID) {
-                conversation.Times[labelID] = conversation.Time;
-            });
+                _.each(conversation.LabelIDs, function(labelID) {
+                    conversation.Times[labelID] = conversation.Time;
+                });
+            }
 
             if(angular.isDefined(current)) {
                 var index = conversationsCached.indexOf(current);
