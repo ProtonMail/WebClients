@@ -116,6 +116,7 @@ angular.module("proton.cache", [])
             _.each(message.LabelIDs, function(labelID) {
                 if(angular.isDefined(found)) {
                     conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.sent] = message.Time;
+                    conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.drafts] = message.Time;
                 } else {
                     conversation.Times[labelID] = message.Time;
                 }
