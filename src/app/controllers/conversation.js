@@ -110,22 +110,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {Boolean} back
      */
     $scope.read = function() {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var conversation = angular.copy($scope.conversation);
-
-        // cache
-        conversation.NumUnread = 0;
-        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
 
         _.each(cache.queryMessagesCached(conversation.ID), function(message) {
             message.IsRead = 1;
-            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: message});
         });
 
+        // cache
+        conversation.NumUnread = 0;
+        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
 
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         // api
         Conversation.read([conversation.ID]);
@@ -136,21 +133,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {Boolean} back
      */
     $scope.unread = function(back) {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var conversation = angular.copy($scope.conversation);
-
-        // cache
-        conversation.NumUnread = $scope.messages.length;
-        conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
 
         _.each(cache.queryMessagesCached(conversation.ID), function(message) {
             message.IsRead = 0;
-            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        // cache
+        conversation.NumUnread = $scope.messages.length;
+        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+
+        cache.events(events);
 
         // api
         Conversation.unread([conversation.ID]);
@@ -166,8 +161,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $rootScope.$broadcast('deleteConversation', $scope.conversation.ID); // Close composer
 
         // cache
-        events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
-        cache.events(events, 'conversation');
+        events.push({Action: 0, ID: conversation.ID});
+        cache.events(events);
 
         // api
         Conversation.delete([$scope.conversation.ID]);
@@ -181,8 +176,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.move = function(location) {
         var current = tools.currentLocation();
-        var messageEvent = [];
-        var conversationEvent = [];
+        var events = [];
         var copy = angular.copy($scope.conversation);
         var messages = cache.queryMessagesCached($scope.conversation.ID);
 
@@ -194,12 +188,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         _.each(messages, function(message) {
             message.LabelIDsRemoved = [current];
             message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[location]];
-            messageEvent.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: message});
         });
 
-        conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        events.push({Action: 3, ID: copy.ID, Conversation: copy});
+        cache.events(events);
 
         // api
         Conversation[location]([copy.ID]);
@@ -218,8 +211,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var deferred = $q.defer();
         var ids = [$scope.conversation.ID];
         var promises = [];
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var copy = angular.copy($scope.conversation);
         var current = tools.currentLocation();
         var toApply = _.map(_.filter(labels, function(label) {
@@ -246,20 +238,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             toRemove = toRemove.push(current); // Remove current location
         }
 
-        copy.LabelIDsAdded = toApply;
-        copy.LabelIDsRemoved = toRemove;
-        conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
-        cache.events(conversationEvent, 'conversation');
-
         _.each($scope.messages, function(message) {
             var copyMessage = angular.copy(message);
 
             copyMessage.LabelIDsAdded = toApply;
             copyMessage.LabelIDsRemoved = toRemove;
-            messageEvent.push({Action: 3, ID: copyMessage.ID, Message: copyMessage});
+            events.push({Action: 3, ID: copyMessage.ID, Message: copyMessage});
         });
 
-        cache.events(messageEvent, 'message');
+        copy.LabelIDsAdded = toApply;
+        copy.LabelIDsRemoved = toRemove;
+        events.push({Action: 3, ID: copy.ID, Conversation: copy});
+
+        cache.events(events);
 
         $q.all(promises).then(function(results) {
             if(alsoArchive === true) {
@@ -316,23 +307,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Star the current conversation
      */
     $scope.star = function() {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var copy = angular.copy(conversation);
         var messages = cache.queryMessagesCached(copy.ID);
 
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-        conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
-        cache.events(conversationEvent, 'conversation');
-
+        // Generate message event
         if(messages.length > 0) {
             _.each(messages, function(message) {
                 message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                messageEvent.push({ID: message.ID, Action: 3, Message: message});
+                events.push({ID: message.ID, Action: 3, Message: message});
             });
-            cache.events(messageEvent, 'message');
         }
 
+        // Generate conversation event
+        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        events.push({ID: copy.ID, Action: 2, Conversation: copy});
+
+        // Send events to cache manager
+        cache.events(events);
+
+        // Send star request
         Conversation.star([copy.ID]);
     };
 
@@ -340,23 +334,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Unstar the current conversation
      */
     $scope.unstar = function() {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var copy = angular.copy(conversation);
         var messages = cache.queryMessagesCached(copy.ID);
 
-        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-        conversationEvent.push({ID: copy.ID, Action: 2, Conversation: copy});
-        cache.events(conversationEvent, 'conversation');
-
+        // Generate message event
         if(messages.length > 0) {
             _.each(messages, function(message) {
                 message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                messageEvent.push({ID: message.ID, Action: 3, Message: message});
+                events.push({ID: message.ID, Action: 3, Message: message});
             });
-            cache.events(messageEvent, 'message');
         }
 
+        // Generate conversation event
+        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        events.push({ID: copy.ID, Action: 2, Conversation: copy});
+
+        // Send events to cache manager
+        cache.events(events);
+
+        // Send unstar request
         Conversation.unstar([copy.ID]);
     };
 

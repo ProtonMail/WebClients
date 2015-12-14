@@ -1024,8 +1024,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 // Save draft before to send
                 draftPromise.then(function(result) {
                     if(angular.isDefined(result) && result.Code === 1000) {
-                        var messageEvent = [];
-                        var conversationEvent = [];
+                        var events = [];
                         var conversation = cache.getConversationCached($stateParams.id);
 
                         message.ID = result.Message.ID;
@@ -1055,14 +1054,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 conversation.NumAttachments = result.Message.Attachments.length;
                             }
 
-                            conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                            // Update conversation
-                            cache.events(conversationEvent, 'conversation');
+                            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                         }
 
                         // Update draft in message list
-                        messageEvent.push({Action: action, ID: result.Message.ID, Message: result.Message});
-                        cache.events(messageEvent, 'message');
+                        events.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        cache.events(events);
 
                         if(notification === true) {
                             notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
@@ -1216,7 +1213,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     if(angular.isDefined(result.Error)) {
                                         deferred.reject(new Error(result.Error));
                                     } else {
-                                        var messageEvent = [];
+                                        var events = [];
                                         var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
                                         message.sending = false;
@@ -1224,10 +1221,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                         result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                                         result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
-                                        messageEvent.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
+                                        events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
 
                                         if (result.Parent) {
-                                            messageEvent.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                            events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
 
                                             // Go back
                                             if(result.Parent.ID === $stateParams.id) {
@@ -1235,7 +1232,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             }
                                         }
 
-                                        cache.events(messageEvent, 'message');
+                                        cache.events(events);
                                         notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
                                         $scope.close(message, false, false);
                                         deferred.resolve(result);
@@ -1368,24 +1365,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.discard = function(message) {
-        var messageEvent = [];
-        var conversationEvent = [];
+        var events = [];
         var conversation = cache.getConversationCached(message.ConversationID);
 
         if(angular.isDefined(conversation)) {
             if(conversation.NumMessages === 1) {
                 // Delete conversation
-                conversationEvent.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+                events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
             } else if(conversation.NumMessages > 1) {
                 // Decrease the number of message
                 conversation.NumMessages--;
-                conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
             }
         }
 
-        messageEvent.push({Action: 0, ID: message.ID});
-        cache.events(messageEvent, 'message');
-        cache.events(conversationEvent, 'conversation');
+        events.push({Action: 0, ID: message.ID});
+        cache.events(events);
         Message.delete({IDs: [message.ID]});
 
         // Notification

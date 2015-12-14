@@ -68,7 +68,6 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
-					console.log('message count', counts);
 					_.each(counts, function(count) {
 						cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
 					});
@@ -76,20 +75,24 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageConversationCounts: function(counts) {
 				if(angular.isDefined(counts)) {
-					console.log('conversation count', counts);
 					_.each(counts, function(count) {
 						cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
 					});
 				}
 			},
-			manageMessages: function(messages) {
-				if (angular.isDefined(messages)) {
-					cache.events(messages, 'message');
+			manageThreadings: function(messages, conversations) {
+				var events = [];
+
+				if(angular.isArray(messages)) {
+					events.concat(messages);
 				}
-			},
-			manageConversations: function(conversations) {
-				if(angular.isDefined(conversations)) {
-					cache.events(conversations, 'conversation');
+
+				if(angular.isArray(conversations)) {
+					events.concat(conversations);
+				}
+
+				if(events.length > 0) {
+					cache.events(events);
 				}
 			},
 			manageStorage: function(storage) {
@@ -139,8 +142,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageUser(data.User);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
-					this.manageMessages(data.Messages);
-					this.manageConversations(data.Conversations);
+					this.manageThreadings(data.Messages, data.Conversations);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}

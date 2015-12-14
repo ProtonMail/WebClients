@@ -55,16 +55,15 @@ angular.module("proton.move", [])
              * @param {Object} loc
              */
             scope.move = function(loc) {
+                var events = [];
                 var current = tools.currentLocation();
-                var messageEvent = [];
-                var conversationEvent = [];
                 var messages = cache.queryMessagesCached(scope.conversation.ID);
 
                 // Generate message event
                 _.each(messages, function(message) {
                     message.LabelIDsRemoved = [current];
                     message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[loc.ID]];
-                    messageEvent.push({Action: 3, ID: message.ID, Message: {
+                    events.push({Action: 3, ID: message.ID, Message: {
                         ID: message.ID,
                         Selected: false,
                         LabelIDsAdded: [loc.ID],
@@ -72,17 +71,16 @@ angular.module("proton.move", [])
                     }});
                 });
 
-                cache.events(messageEvent, 'message');
-
                 // Generate conversation event
-                conversationEvent.push({Action: 3, ID: copy.ID, Conversation: {
+                events.push({Action: 3, ID: copy.ID, Conversation: {
                     ID: conversation.ID,
                     Selected: false,
                     LabelIDsAdded: [loc.ID],
                     LabelIDsRemoved: [current]
                 }});
 
-                cache.events(conversationEvent, 'conversation');
+                // Send to cache manager
+                cache.events(events);
 
                 // Send request
                 Conversation[location]([copy.ID]);

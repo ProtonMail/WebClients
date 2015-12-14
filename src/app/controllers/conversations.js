@@ -361,8 +361,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.read = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var type = tools.typeList();
 
         // cache
@@ -373,29 +372,28 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 element.NumUnread = 0;
                 var messages = cache.queryMessagesCached(element.ID);
 
-                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
-
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.IsRead = 1;
-                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                        events.push({Action: 3, ID: message.ID, Message: message});
                     });
                 }
+
+                events.push({Action: 3, ID: element.ID, Conversation: element});
             } else if(type === 'message') {
                 var conversation = cache.getConversationCached(element.ConversationID);
 
+                element.IsRead = 1;
+                events.push({Action: 3, ID: element.ID, Message: element});
+
                 if(angular.isDefined(conversation)) {
                     conversation.NumUnread--;
-                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
-
-                element.IsRead = 1;
-                messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         // api
         if(type === 'conversation') {
@@ -413,8 +411,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.unread = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var type = tools.typeList();
 
         // cache
@@ -422,32 +419,32 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             element.Selected = false;
 
             if(type === 'conversation') {
-                element.NumUnread = element.NumMessages;
                 var messages = cache.queryMessagesCached(element.ID);
 
-                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
+                element.NumUnread = element.NumMessages;
 
                 if(messages.length > 0) {
                     var last = _.last(messages); // Unread only the latest
 
                     last.IsRead = 0;
-                    messageEvent.push({Action: 3, ID: last.ID, Message: last});
+                    events.push({Action: 3, ID: last.ID, Message: last});
                 }
+
+                events.push({Action: 3, ID: element.ID, Conversation: element});
             } else if(type === 'message') {
                 var conversation = cache.getConversationCached(element.ConversationID);
 
+                element.IsRead = 0;
+                events.push({Action: 3, ID: element.ID, Message: element});
+
                 if(angular.isDefined(conversation)) {
                     conversation.NumUnread++;
-                    conversationEvent.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
-
-                element.IsRead = 0;
-                messageEvent.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         // api
         if(type === 'conversation') {
@@ -465,8 +462,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.delete = function() {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var type = tools.typeList();
 
         // cache
@@ -475,21 +471,20 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 var messages = cache.queryMessagesCached(element.ID);
 
                 $rootScope.$broadcast('deleteConversation', element.ID); // Close composer
-                conversationEvent.push({Action: 0, ID: element.ID, Conversation: element});
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        messageEvent.push({Action: 0, ID: message.ID, Message: message});
+                        events.push({Action: 0, ID: message.ID, Message: message});
                     });
                 }
+
+                events.push({Action: 0, ID: element.ID, Conversation: element});
             } else if(type === 'message') {
-                messageEvent.push({Action: 0, ID: element.ID, Message: element});
+                events.push({Action: 0, ID: element.ID, Message: element});
             }
         });
 
-
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         // api
         if(type === 'conversation') {
@@ -511,8 +506,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.move = function(mailbox) {
         var ids = $scope.idsSelected();
         var elements = angular.copy($scope.elementsSelected());
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var type = tools.typeList();
         var current = tools.currentLocation();
 
@@ -525,24 +519,23 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(element.ID);
 
-                conversationEvent.push({Action: 3, ID: element.ID, Conversation: element});
-
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.Selected = false;
                         message.LabelIDsRemoved = [current]; // Remove current location
                         message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
-                        messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                        events.push({Action: 3, ID: message.ID, Message: message});
                     });
                 }
+
+                events.push({Action: 3, ID: element.ID, Conversation: element});
             } else if(type === 'message') {
-                messageEvent.push({Action: 3, ID: element.ID, Message: element});
+                events.push({Action: 3, ID: element.ID, Message: element});
             }
         });
 
         // Send events
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         // Request
         if(type === 'conversation') {
@@ -594,8 +587,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var promises = [];
         var elementsSelected = $scope.elementsSelected();
         var type = tools.typeList();
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var current = tools.currentLocation();
 
         _.each(elementsSelected, function(element) {
@@ -623,15 +615,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if(type === 'conversation') {
                 var messages = cache.queryMessagesCached(copy.ID);
 
-                conversationEvent.push({Action: 3, ID: copy.ID, Conversation: copy});
-
                 _.each(messages, function(message) {
                     message.LabelIDsAdded = toApply;
                     message.LabelIDsRemoved = toRemove;
-                    messageEvent.push({Action: 3, ID: message.ID, Message: message});
+                    events.push({Action: 3, ID: message.ID, Message: message});
                 });
+
+                events.push({Action: 3, ID: copy.ID, Conversation: copy});
             } else if (type === 'message') {
-                messageEvent.push({Action: 3, ID: copy.ID, Message: copy});
+                events.push({Action: 3, ID: copy.ID, Message: copy});
             }
 
             _.each(toApply, function(labelID) {
@@ -651,8 +643,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             });
         });
 
-        cache.events(conversationEvent, 'conversation');
-        cache.events(messageEvent, 'message');
+        cache.events(events);
 
         $q.all(promises).then(function(results) {
             if(alsoArchive === true) {
@@ -744,8 +735,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.star = function(element) {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var copy = angular.copy(element);
         var type = tools.typeList();
 
@@ -753,22 +743,30 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         if(type === 'conversation') {
             var messages = cache.queryMessagesCached(copy.ID);
-            // Generate conversation changes with event
-            conversationEvent.push({ID: copy.ID, Action: 3, Conversation: copy});
-            cache.events(conversationEvent, 'conversation');
+
             // Generate message changes with event
             if(messages.length > 0) {
                 _.each(messages, function(message) {
                     message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                    messageEvent.push({ID: message.ID, Action: 3, Message: message});
+                    events.push({ID: message.ID, Action: 3, Message: message});
                 });
-                cache.events(messageEvent, 'message');
             }
+
+            // Generate conversation changes with event
+            events.push({ID: copy.ID, Action: 3, Conversation: copy});
+
+            // Send to cache manager
+            cache.events(events);
+
             // Send request
             Conversation.star([copy.ID]);
         } else if(type === 'message') {
-            messageEvent.push({ID: copy.ID, Action: 3, Message: copy});
-            cache.events(messageEvent, 'message');
+            // Generate message changes with event
+            events.push({ID: copy.ID, Action: 3, Message: copy});
+
+            // Send to cache manager
+            cache.events(events);
+
             // Send request
             Message.star({IDs: [copy.ID]});
         }
@@ -779,8 +777,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.unstar = function(element) {
-        var conversationEvent = [];
-        var messageEvent = [];
+        var events = [];
         var copy = angular.copy(element);
         var type = tools.typeList();
 
@@ -788,22 +785,29 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         if(type === 'conversation') {
             var messages = cache.queryMessagesCached(copy.ID);
-            // Generate conversation changes with event
-            conversationEvent.push({ID: copy.ID, Action: 3, Conversation: copy});
-            cache.events(conversationEvent, 'conversation');
+
             // Generate message changes with event
             if(messages.length > 0) {
                 _.each(messages, function(message) {
                     message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                    messageEvent.push({ID: message.ID, Action: 3, Message: message});
+                    events.push({ID: message.ID, Action: 3, Message: message});
                 });
-                cache.events(messageEvent, 'message');
             }
+
+            // Generate conversation changes with event
+            events.push({ID: copy.ID, Action: 3, Conversation: copy});
+
+            // Send to cache manager
+            cache.events(events);
             // Send request
             Conversation.unstar([copy.ID]);
         } else if(type === 'message') {
-            messageEvent.push({ID: copy.ID, Action: 3, Message: copy});
-            cache.events(messageEvent, 'message');
+            // Generate message changes with event
+            events.push({ID: copy.ID, Action: 3, Message: copy});
+
+            // Send to cache manager
+            cache.events(events);
+
             // Send request
             Message.unstar({IDs: [copy.ID]});
         }

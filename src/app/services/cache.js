@@ -387,6 +387,7 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
     api.queryConversations = function(request) {
+        console.log('api.queryConversations');
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
@@ -499,7 +500,9 @@ angular.module("proton.cache", [])
      * @return {Object}
      */
     api.getConversationCached = function(conversationId) {
-        return angular.copy(_.findWhere(conversationsCached, {ID: conversationId}));
+        var result = _.findWhere(conversationsCached, {ID: conversationId});
+
+        return angular.copy(result);
     };
 
     /**
@@ -561,29 +564,17 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Delete message in the cache if the message is present
+    * Delete message or conversation in the cache if the element is present
     * @param {Object} event
+    * @return {Promise}
     */
-    api.deleteMessage = function(event) {
+    api.delete = function(event) {
         var deferred = $q.defer();
 
         // Delete message
         messagesCached = _.reject(messagesCached, function(message) {
             return message.ID === event.ID;
         });
-
-        deferred.resolve();
-
-        return deferred.promise;
-    };
-
-    /**
-     * Delete conversation
-     * @param {Object} event
-     * @return {Promise}
-     */
-    api.deleteConversation = function(event) {
-        var deferred = $q.defer();
 
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {
@@ -650,7 +641,7 @@ angular.module("proton.cache", [])
 
         $q.all({
             inbox: queryConversations(requestInbox),
-            sent: queryMessages(requestSent)
+            sent: queryConversations(requestSent)
         }).then(function() {
             deferred.resolve();
         });
@@ -755,6 +746,7 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
      api.updateFlagConversation = function(event) {
+         console.log('updateFlagConversation');
          var deferred = $q.defer();
          var current = _.findWhere(conversationsCached, {ID: event.ID});
 
@@ -762,7 +754,8 @@ angular.module("proton.cache", [])
              var conversation = {};
              var index = conversationsCached.indexOf(current);
 
-             _.extend(conversation, current, event.Conversation);
+             _.extend(conversation, current);
+             _.extend(conversation, event.Conversation);
 
              // Manage labels
              if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
@@ -776,9 +769,8 @@ angular.module("proton.cache", [])
              }
 
              // Update conversation cached
-             console.log('update conversation', conversation);
              conversationsCached[index] = conversation;
-             manageCounters(current, conversationsCached[index], 'conversation');
+             manageCounters(current, conversation, 'conversation');
              deferred.resolve();
          } else if(angular.isDefined(event.Conversation)) {
             // Create a new conversation in the cache
@@ -794,17 +786,18 @@ angular.module("proton.cache", [])
     * Manage the cache when a new event comes
     * @param {Array} events
     */
-    api.events = function(events, type) {
+    api.events = function(events) {
         var promises = [];
 
-        console.log(events, type);
+        console.log(events);
 
         _.each(events, function(event) {
-            if(type === 'message') {
+            var type;
+
+            if(event.Action === DELETE) {
+                promises.delete(event);
+            } else if(angular.isDefined(event.Message)) {
                 switch (event.Action) {
-                    case DELETE:
-                        promises.push(api.deleteMessage(event));
-                        break;
                     case CREATE:
                         promises.push(api.createMessage(event));
                         break;
@@ -817,11 +810,8 @@ angular.module("proton.cache", [])
                     default:
                         break;
                 }
-            } else if(type === 'conversation') {
+            } else if(angular.isDefined(event.Conversation)) {
                 switch (event.Action) {
-                    case DELETE:
-                        promises.push(api.deleteConversation(event));
-                        break;
                     case CREATE:
                         promises.push(api.createConversation(event));
                         break;
@@ -848,6 +838,7 @@ angular.module("proton.cache", [])
      * Second with the query call
      */
     api.callRefresh = function() {
+        console.log('callRefresh');
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
@@ -1196,13 +1187,13 @@ angular.module("proton.cache", [])
 
                 if(elementsExpired.length > 0) {
                     // Generate an event to delete message expired in the cache
-                    var messageEvent = [];
+                    var events = [];
 
                     _.each(elementsExpired, function(message) {
-                        messageEvent.push({Action: 0, ID: message.ID});
+                        events.push({Action: 0, ID: message.ID});
                     });
 
-                    cache.events(messageEvent, 'message');
+                    cache.events(events);
                 }
             }
 
