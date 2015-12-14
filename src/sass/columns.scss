@@ -130,14 +130,17 @@
 			}
 			&.unread {
 				background: #fff;
-				header p span {
-					font-weight: 700;
-					&.time {
-						font-weight: 400;
+				header {
+					p {
+						color: #000;
 					}
-				}
-				header span.time {
-					background: #fff;
+					span {
+						font-weight: 700;
+						&.time {
+							font-weight: 400;
+							background: #fff;
+						}
+					}
 				}
 				* {
 					&.fa {
@@ -265,6 +268,7 @@
 				    width: 100%;
 				    padding-right: 7rem;
 				    box-sizing: border-box;
+				    color: #777;
 				}
 				span.time {
 					position: absolute;
