@@ -109,6 +109,8 @@ angular.module("proton.cache", [])
             var found = _.findWhere(authentication.user.Addresses, {Email: message.Sender.Address});
             var index = conversationsCached.indexOf(conversation);
 
+            conversation.Times = conversation.Times || {};
+
             _.each(message.LabelIDs, function(labelID) {
                 if(angular.isDefined(found)) {
                     conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.sent] = message.Time;
