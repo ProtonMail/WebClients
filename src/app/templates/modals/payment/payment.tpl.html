@@ -46,6 +46,10 @@
                 </table>
             </div>
             <div class="col-1-2">
+                <div class="input-icon margin" ng-show="ctrl.config.Cart.Future.Plan === 'business'">
+                    <i class="fa fa-briefcase"></i>
+                    <input type="text" ng-disabled="ctrl.process" ng-model="ctrl.name" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
+                </div>
                 <div class="input-icon margin">
                     <i class="fa fa-user"></i>
                     <input type="text" ng-disabled="ctrl.process" ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" />

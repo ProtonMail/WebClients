@@ -6,13 +6,13 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     cardModal,
+    confirmModal,
     networkActivityTracker,
     notify,
     organization,
     Organization,
     Payment,
     paymentModal,
-    status,
     supportModal
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
@@ -114,21 +114,18 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initialization = function() {
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
-
-        if(angular.isDefined(status.data) && status.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
+            
+            $scope.organization = organization.data.Organization;
+            $scope.current = organization.data.Cart.Future;
+            $scope.future = organization.data.Cart.Future;
 
-            $scope.current = status.data.Cart.Future;
-            $scope.future = status.data.Cart.Future;
+            if(organization.data.Payment) {
+                $scope.payment = organization.data.Payment;
+                $scope.currentCurrency = organization.data.Payment.Currency;
+                $scope.futureCurrency = organization.data.Payment.Currency;
 
-            if(status.data.Payment) {
-                $scope.payment = status.data.Payment;
-                $scope.currentCurrency = status.data.Payment.Currency;
-                $scope.futureCurrency = status.data.Payment.Currency;
-
-                if(parseInt((status.data.Payment.PeriodEnd - status.data.Payment.PeriodStart) / month) === 1) {
+                if(parseInt((organization.data.Payment.PeriodEnd - organization.data.Payment.PeriodStart) / month) === 1) {
                     $scope.currentBillingCycle = 12;
                     $scope.futureBillingCycle = 12;
                 } else {
@@ -234,12 +231,58 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Open a modal to confirm to switch to the free plan
+     */
+    $scope.free = function() {
+        var title = $translate.instant('FREE_PLAN');
+        var message = $translate.instant("Are you sure to come back to the Free Plan?");
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    Organization.delete().then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            $scope.organization = null;
+                            confirmModal.deactivate();
+                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR'), classes: 'notification-danger'});
+                    });
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open modal to display information about how contact the support team to setup the enterprise plan
+     */
+    $scope.enterprise = function() {
+        supportModal.activate({
+            params: {
+                cancel: function() {
+                    supportModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Open modal to pay the plan configured
      * @param {String} name
      */
     $scope.choose = function(name) {
         var now = moment().unix();
         var future;
+        var current = $scope.current;
         var configuration = {
             Subscription: {
                 Amount: $scope.amount(name),
@@ -247,21 +290,20 @@ angular.module("proton.controllers.Settings")
                 BillingCycle: $scope.futureBillingCycle,
                 Time: now,
                 PeriodStart: now,
-                ExternalProvider: "Stripe"
+                ExternalProvider: 'Stripe'
             },
-            Cart: {
-                Current: $scope.current
-            }
+            Cart: {}
         };
 
+        if($scope.current.Plan === 'free') {
+            current = null;
+        }
+
         switch (name) {
-            case 'free':
-                future = null;
-                break;
             case 'plus':
                 future = {
                     Plan: name,
-                    Use2FA: true,
+                    Use2FA: false,
                     MaxDomains: $scope.domainPlus.value,
                     MaxMembers: 1,
                     MaxAddresses: $scope.addressPlus.value,
@@ -271,82 +313,43 @@ angular.module("proton.controllers.Settings")
             case 'business':
                 future = {
                     Plan: name,
-                    Use2FA: true,
+                    Use2FA: false,
                     MaxDomains: $scope.domainBusiness.value,
                     MaxMembers: $scope.memberBusiness.value,
                     MaxAddresses: $scope.addressBusiness.value,
                     MaxSpace: $scope.spaceBusiness.value
                 };
                 break;
-            case 'enterprise':
-                future = {}; // TODO need Martin to complete
-                break;
             default:
                 break;
         }
 
+        configuration.Cart.Current = current;
         configuration.Cart.Future = future;
 
-        if(['free', 'plus', 'business'].indexOf(name) !== -1) {
-            // Check configuration choosed
-            networkActivityTracker.track(Payment.plan(configuration).then(function(result) {
-                if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                    if(['plus', 'business'].indexOf(name) !== -1) {
-                        paymentModal.activate({
-                            params: {
-                                configuration: configuration,
-                                cancel: function() {
-                                    paymentModal.deactivate();
-                                }
-                            }
-                        });
-                    } else if(name === 'free') {
-                        var title = $translate.instant('');
-                        var message = "Are you sure?";
-
-                        confirmModal.activate({
-                            params: {
-                                title: title,
-                                message: message,
-                                confirm: function() {
-                                    Organization.create(configuration).then(function(result) {
-                                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                            confirmModal.deactivate();
-                                            // TODO notify
-                                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                            // TODO notify
-                                        } else {
-                                            // TODO notify
-                                        }
-                                    }, function(error) {
-                                        // TODO notify
-                                    });
-                                },
-                                cancel: function() {
-                                    confirmModal.deactivate();
-                                }
-                            }
-                        });
+        // Check configuration choosed
+        networkActivityTracker.track(Payment.plan(configuration).then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                // Open payment modal
+                paymentModal.activate({
+                    params: {
+                        configuration: configuration,
+                        change: function(organization) {
+                            _.extend($scope.organization, organization);
+                        },
+                        cancel: function() {
+                            paymentModal.deactivate();
+                        }
                     }
-                } else if(angular.isDefined(result.data) && result.data.Status) {
-                    // TODO need to complete with Martin
-                    // notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-                } else {
-                    notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-                }
-            }, function() {
+                });
+            } else if(angular.isDefined(result.data) && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else {
                 notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-            }));
-        } else if(name === 'enterprise') {
-            // TODO Open modal to contact support
-            supportModal.activate({
-                params: {
-                    cancel: function() {
-                        supportModal.deactivate();
-                    }
-                }
-            });
-        }
+            }
+        }, function() {
+            notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
+        }));
     };
 
     /**

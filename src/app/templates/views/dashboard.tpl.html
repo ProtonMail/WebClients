@@ -2,7 +2,7 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height>
         <div class="row">
-            <section class="setting pm_form" ng-hide="organization === null">
+            <section class="setting pm_form" ng-if="organization !== null">
                 <legend>{{ 'OVERVIEW' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableOverview">
@@ -78,7 +78,7 @@
                     </table>
                 </div>
             </section>
-            <section class="setting pm_form pull-right" ng-hide="payment === null">
+            <section class="setting pm_form pull-right" ng-if="payment !== null">
                 <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableSubscription">
@@ -397,7 +397,7 @@
                                 {{ 'CONTACT_US_FOR_MORE_INFORMATION' | translate }}
                             </div>
                             <div class="action">
-                                <a href="#" ng-click="choose('enterprise')" class="pm_button primary">
+                                <a href="#" ng-click="enterprise()" class="pm_button primary">
                                     <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
                                 </a>
                             </div>
@@ -405,7 +405,7 @@
                     </div>
                 </form>
                 <p ng-hide="current.Plan === 'free'">
-                    <a href="" ng-click="choose('free')" pt-tooltip="{{ 'SWITCH_TO_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
+                    <a href="" ng-click="free()" pt-tooltip="{{ 'SWITCH_TO_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
                 </p>
             </section>
         </div>
