@@ -110,10 +110,10 @@ body, html {
 			    margin-left: 0;
 				.subject {
 					.pm_labels {
-						background-color: #f6f6f6;
+						background-color: $read;
 						.pm_label {
-							box-shadow: 0 0 0 4px #f6f6f6;
-							background-color: #f6f6f6;
+							box-shadow: 0 0 0 4px $read;
+							background-color: $read;
 						}
 					}
 				}
@@ -392,14 +392,14 @@ body, html {
 			}
 			&.selected {
 				.time {
-					background-color: #f6f6f6;
+					background-color: $read;
 				}
 				.subject {
 					.pm_labels {
-						background-color: #f6f6f6;
+						background-color: $read;
 						.pm_label {
-							box-shadow: 0 0 0 4px #f6f6f6;
-							background-color: #f6f6f6;
+							box-shadow: 0 0 0 4px $read;
+							background-color: $read;
 						}
 						&:before {
 							background: linear-gradient(to right, rgba(246,246,246,0) 0%,rgba(246,246,246,1) 100%);

@@ -67,7 +67,7 @@ section.sidebar {
         list-style-type: none;
         font-size: 14px;
         margin: 0 -20px 20px -20px;
-        li {
+        li { 
             height: $sidebarRowHeight;
             line-height: $sidebarRowHeight;
             display: block;
@@ -81,7 +81,6 @@ section.sidebar {
                 text-decoration: none;
                 height: $sidebarRowHeight;
                 line-height: $sidebarRowHeight;
-                color: #7a7982;
                 display: block;
                 border-bottom: 1px solid transparent;
                 border-top: 1px solid transparent;
@@ -134,7 +133,7 @@ section.sidebar {
             }
             &.active {
                 a {
-                    background-color: #f6f6f6;
+                    background-color: $read;
                     border-color: #efefef;
                     color: #669;
                     i.fa {
@@ -207,7 +206,7 @@ section.sidebar {
                     a {
                         padding: 0 20px;
                         margin: 0 -20px;
-                        background-color: #f6f6f6;
+                        background-color: $read;
                         border-color: #efefef;
                         color: #669;
                         i.fa {
@@ -220,7 +219,7 @@ section.sidebar {
                     height: 25px;
                     line-height: 25px;
                     text-decoration: none;
-                    color: $gray-light;;
+                    color: rgba(255, 255, 255, 0.35); 
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
