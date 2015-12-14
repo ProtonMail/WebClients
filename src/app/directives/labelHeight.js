@@ -8,10 +8,10 @@ angular.module("proton.labelHeight", [])
             element.css({ height: 0 });
             
             var sidebarHeight = angular.element($window).height();
-            var height = (sidebarHeight - 620);
+            var height = (sidebarHeight - 540);
 
             element.css({
-                height: height + 'px'
+                height: height
             });
         };
 

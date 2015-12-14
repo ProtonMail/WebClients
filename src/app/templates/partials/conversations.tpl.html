@@ -44,6 +44,7 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <!-- <pre>{{ conversation }}</pre> -->
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <aside>
             <span class="pm_checkbox">
@@ -57,7 +58,7 @@
                     <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
                     <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
                     <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                    {{ conversation.Subject }}
+                    {{ conversation.Subject }} 
                 </span>
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
                 <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
@@ -68,7 +69,6 @@
         </header>
         <article>
             <p class="pm_labels">
-                <location-tag class="locTag"></location-tag>
                 <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
                     <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
@@ -80,6 +80,7 @@
             <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
             </strong>
+            <location-tag class="locTag"></location-tag>
         </article>
     </div>
 </div>
@@ -99,6 +100,7 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <!-- <pre>{{ conversation }}</pre>  -->
         <div class="dumpstered" ng-show="conversation.dumpstered === true">Moved to Trash</div>
         <div class="spamified" ng-show="conversation.spamified === true">Moved to Spam</div>
         <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
@@ -123,10 +125,10 @@
         <span class="placeholderSpan"><span>&nbsp;</span></span>
         <span class="subject">
             <span title="{{ conversation.Subject }}">
-                {{ conversation.Subject }}
+                {{ conversation.Subject }} 
+                <location-tag class="locTag"></location-tag>
             </span>
             <span class="pm_labels inline" ng-show="conversation.LabelIDs | showLabels">
-                <location-tag class="locTag"></location-tag>
                 <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
                     <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>

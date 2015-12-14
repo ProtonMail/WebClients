@@ -23,7 +23,7 @@ angular.module("proton.controllers.Header", [])
     });
 
     function openWizardModal(title, version) {
-        wizardModal.activate({
+        wizardModal.activate({ 
             params: {
                 title: title,
                 version: version,
@@ -33,6 +33,17 @@ angular.module("proton.controllers.Header", [])
             }
         });
     }
+
+    /* TEMPORARY */
+    $scope.testToggleLayout = function() {
+        if ($rootScope.layoutMode === 'rows') {
+            $rootScope.layoutMode = 'columns';
+        }
+        else {
+            $rootScope.layoutMode = 'rows';
+        }
+    };
+    /* END TEMPORARY */
 
     /**
      * Call event to open new composer

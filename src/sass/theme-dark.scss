@@ -65,17 +65,13 @@ section.sidebar {
         ul {
             li {
                 a {
-                    color: #dadae5;
+                    color: $secondary-alt;
                 }
                 &.active {
                     a {
-                        border-color: transparent;
-                        background: rgba(0,0,0,.1);
                         color: $white;
                         font-weight: 700;
-                        i.fa {
-                            color: $primary;
-                        }
+                        background: transparent;
                     }
                 }                
             }

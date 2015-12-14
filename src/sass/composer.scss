@@ -75,13 +75,12 @@
 		}
 		&.maximized {
 			position: fixed;
-			top: $headerHeight;
-			left: $sidebarWidth;
-			bottom: 0;
-			right: 0;
+			top: ($headerHeight + 20);
+			left: ($sidebarWidth + 20);
+			bottom: 20px;
+			right: 20px;
 			width: initial;
 			height: initial;
-			box-shadow: none;
 			box-sizing: border-box;
 			margin: 0;
 			footer .pm_button span {

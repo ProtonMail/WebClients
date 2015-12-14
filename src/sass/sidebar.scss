@@ -146,7 +146,7 @@ section.sidebar {
     }
     #sidebarLabels {
         position: relative;
-        overflow: hidden;
+        overflow: auto;
     }
     div.labels {
         font-size: 14px;
@@ -195,8 +195,8 @@ section.sidebar {
             overflow: hidden !important;
             position: relative;
             -webkit-overflow-scrolling: touch;
-            padding: 0 20px;
-            margin: 0 -20px;
+            padding: 0;
+            margin: 0;
             box-sizing: border-box;
             width: 100%;
             li {
@@ -217,14 +217,15 @@ section.sidebar {
                 }
                 a {
                     display: block;
-                    height: 35px;
-                    line-height: 35px;
+                    height: 25px;
+                    line-height: 25px;
                     text-decoration: none;
                     color: $gray-light;;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     padding: 0;
+                    font-size: .8rem;
                     &:hover {
                         color: $white;
                     }
@@ -232,7 +233,7 @@ section.sidebar {
                         display: inline-block;
                         width: 25px;
                         float: left;
-                        line-height: 35px;
+                        line-height: 25px;
                     }
                     strong {
                         float: left;
@@ -258,8 +259,6 @@ section.sidebar {
         right: 15px;
         bottom: 10px;
         .wrap {
-            background: #4c4b5a;
-            border: 1px solid #43434f;
             padding: 5px 10px 0;
             margin-bottom: 1rem;
         }
@@ -275,6 +274,7 @@ section.sidebar {
         }
         div.storage {
             color: #bbb;
+            text-align: left;
             strong {
                 color: $primary
             }
