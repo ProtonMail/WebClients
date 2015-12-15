@@ -1,7 +1,9 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" novalidate>
         <div
-        ng-squire-height
+        ng-squire-height 
+        draggable 
+        drag-keep-size="true" 
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
@@ -17,7 +19,8 @@
         'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
         'tall': (message.Attachments.length === 0)
         }"
-        ng-click="focusComposer(message)">
+        ng-click="focusComposer(message)"
+        ng-mousedown="focusComposer(message)">
 
             <header responsive-composer="message">
                 <span ng-click="normalize(message);" class="subject">

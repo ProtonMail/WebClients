@@ -1,28 +1,24 @@
 #pm_composer {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	z-index: 8888;
-	display: block;
-	.as-sortable-placeholder {
-		display: none !important;
-	}
 	.composer {
 		border-radius: 2px;
 		display: inline-block;
 		width: 580px;
-		height: 530px;
-		background: $white;
+		height: 530px !important; // the drag directive tries to override this.
+		background-color: #fff;
 		margin: 0 25px 25px 0;
 		box-shadow: 3px 3px 3px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);
-		position: relative;
+		position: absolute;
 		padding-bottom: 60px;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 8888;
 		.dotdotdot {
 			display: none;
 		}
 		&.blur {
 			& > * {
-				opacity: .5;
+			opacity: .8;
+			pointer-events: none;
 			}
 		}
 		footer.disabled {
