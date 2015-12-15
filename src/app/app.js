@@ -7,7 +7,6 @@ angular.module("proton", [
     "ngTouch",
     "pascalprecht.translate",
     "pikaday",
-    "ui.drop",
     // "ui.bootstrap",
     "ui.sortable",
 
