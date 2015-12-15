@@ -823,7 +823,7 @@ angular.module("proton.cache", [])
             var type;
 
             if(event.Action === DELETE) {
-                promises.delete(event);
+                promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) {
                 switch (event.Action) {
                     case CREATE:
