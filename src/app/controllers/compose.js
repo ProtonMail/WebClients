@@ -1371,6 +1371,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var events = [];
         var conversation = cache.getConversationCached(message.ConversationID);
 
+        // Generate message event to delete the message
+        events.push({Action: 0, ID: message.ID});
+
+        // Generate conversation event
         if(angular.isDefined(conversation)) {
             if(conversation.NumMessages === 1) {
                 // Delete conversation
@@ -1382,8 +1386,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
         }
 
-        events.push({Action: 0, ID: message.ID});
+        // Send events
         cache.events(events);
+
+        // Send request
         Message.delete({IDs: [message.ID]});
 
         // Notification

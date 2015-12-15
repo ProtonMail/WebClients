@@ -4,9 +4,10 @@ angular.module("proton.transformation", [])
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
-            attributes.$observe('transformLinks', function(interpolatedValue) {
+            var stopObserving = attributes.$observe('transformLinks', function(interpolatedValue) {
                 $timeout(function() {
                     angular.element(element).find('a[href^=http]').attr('target','_blank').attr('rel', 'noreferrer');
+                    stopObserving();
                 }, 0, false);
             });
         }
