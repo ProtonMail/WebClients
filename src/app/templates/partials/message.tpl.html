@@ -1,11 +1,11 @@
-<article 
-class="message" 
-ng-controller="MessageController" 
-id="message{{ $index }}" 
-ng-class="{ 
-    'last': $last, 
-    'open': message.expand, 
-    'read': message.IsRead === 1, 
+<article
+class="message"
+ng-controller="MessageController"
+id="message{{ $index }}"
+ng-class="{
+    'last': $last,
+    'open': message.expand,
+    'read': message.IsRead === 1,
     'unread': message.IsRead === 0,
     'details': toggleDetails === true
 }">
@@ -122,7 +122,7 @@ ng-class="{
                             <strong>{{ email | contact:'Name' }}</strong>
                             <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
                             <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        </span> 
+                        </span>
                     </td>
                 </tr>
                 <tr ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
@@ -134,7 +134,7 @@ ng-class="{
                             <strong>{{ email | contact:'Name' }}</strong>
                             <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
                             <a href class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        </span> 
+                        </span>
                     </td>
                 </tr>
                 <tr></tr>

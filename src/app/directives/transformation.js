@@ -20,29 +20,29 @@ angular.module("proton.transformation", [])
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote;
-                    var blockquotes = angular.element(element).find('.protonmail_quote, .gmail_extra, .gmail_quote, .yahoo_quoted, #isForwardContent, #isReplyContent, #mailcontent, #origbody, #reply139content, #oriMsgHtmlSeperator, blockquote[type="cite"]');
+                    var blockquotes = angular.element(element).find('.protonmail_quote, div.gmail_extra, div.gmail_quote, .yahoo_quoted, #isForwardContent, #isReplyContent, #mailcontent, #origbody, #reply139content, #oriMsgHtmlSeperator, blockquote[type="cite"]');
 
                     if(blockquotes.length === 0) {
-                        // TODO detect certain strings
+                        // TODO detect specific strings
                     }
 
-                    blockquote = _.first(blockquote);
+                    blockquote = _.first(blockquotes);
 
                     if(angular.isDefined(blockquote)) {
                         var button = angular.element('<button/>', {
-                            title: $translate.instant('SHOW_PREVIOUS'),
+                            title: $translate.instant('SHOW_PREVIOUS_MESSAGE'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
-                                if($(blockquote).is(':visible')) {
-                                    blockquote.hide();
+                                if(angular.element(blockquote).is(':visible')) {
+                                    angular.element(blockquote).hide();
                                 } else {
-                                    blockquote.show();
+                                    angular.element(blockquote).show();
                                 }
                             }
                         });
 
-                        blockquote.before(button);
-                        blockquote.hide();
+                        angular.element(blockquote).before(button);
+                        angular.element(blockquote).hide();
                         stopObserving();
                     }
                 }, 0, false);
