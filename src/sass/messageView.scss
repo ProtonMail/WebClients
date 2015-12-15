@@ -103,6 +103,7 @@
             display: inline-block;
             padding: 10px 0;
             font-weight: 700;
+            margin-bottom: -1rem;
         }
         .where,
         .contact {
@@ -161,6 +162,7 @@
             }
             header {
                 margin-bottom: -10px;
+                padding-top: 20px;
                 .contact {
                     strong {
                         font-weight: 700;
@@ -323,6 +325,7 @@
 			box-sizing: border-box;
             box-shadow: 0 1px 0 0 $border;
             min-height: 55px;
+            padding-bottom: 20px;
 			.data {
                 float: left;
                 width: 100%;

@@ -1,17 +1,19 @@
 #attachmentArea {
 	position: relative;
+	padding: 1rem 40px;
 	header {
 		height: 40px;
 		line-height: 40px !important;
 		position: relative;
 		box-sizing: border-box;
 		padding: 0 !important;
+		margin-bottom: 0 !important;
 	}
 	.title {
 		position: relative;
 		z-index: 2;
 		display: inline-block;
-		background-color: #fff;
+		// background-color: #fff;
 		padding-right: 1rem;
 	}
 	em {
@@ -20,7 +22,7 @@
 		right: 0;
 		top: 20px;
 		height: 1px;
-		background: $border;
+		// background: $border;
 		width: 100%;
 		display: block;
 		z-index: 1;
