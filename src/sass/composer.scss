@@ -402,41 +402,14 @@
 					z-index: 8;
 				}
 				label {
-					min-width: 4.5rem;
-					width: 4rem;
+					min-width: 4.25rem;
+					width: 4.25rem;
 					box-sizing: border-box;
 					padding-left: 10px;
 					position: absolute;
 					line-height: 40px;
 					left: 0;
 					top: 0;
-					background: #fafafa;
-					border-right: 1px solid $border;
-					box-shadow: inset 0 -1px 0 0 $border;
-					&:after, 
-					&:before {
-						left: 100%;
-						top: 50%;
-						border: solid transparent;
-						content: " ";
-						height: 0;
-						width: 0;
-						position: absolute;
-						pointer-events: none;
-					}
-
-					&:after {
-						border-color: rgba(250, 250, 250, 0);
-						border-left-color: #fafafa;
-						border-width: 5px;
-						margin-top: -5px;
-					}
-					&:before {
-						border-color: rgba(220, 220, 220, 0);
-						border-left-color: #dcdcdc;
-						border-width: 6px;
-						margin-top: -6px;
-					}
 				}
 				.subject {
 					width: 510px;
@@ -539,9 +512,6 @@
 					float: left;
 					box-sizing: border-box;
 				}
-			}
-			.squire-toolbar {
-				border-width: 0;
 			}
 		}
 		footer {

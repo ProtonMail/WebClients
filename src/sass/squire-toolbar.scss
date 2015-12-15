@@ -13,6 +13,7 @@
 	line-height: $composerRowHeight;
 	border: 1px solid $border;
 	background-color: #fafafa;
+	border-width: 0 0 1px 0;
 	li {
 		display: block;
 		-webkit-flex-grow: 1;
