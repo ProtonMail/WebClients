@@ -1025,7 +1025,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 draftPromise.then(function(result) {
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
-                        var conversation = cache.getConversationCached($stateParams.id);
+                        var conversation = cache.getConversationCached(result.Message.ConversationID);
 
                         message.ID = result.Message.ID;
                         message.IsRead = result.Message.IsRead;
@@ -1045,6 +1045,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         $scope.saveOld(message);
 
+                        // Update draft in message list
+                        events.push({Action: action, ID: result.Message.ID, Message: result.Message});
+
+                        // Generate conversation event
                         if(angular.isDefined(conversation)) {
                             if(action === CREATE) {
                                 conversation.NumMessages++;
@@ -1057,8 +1061,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                         }
 
-                        // Update draft in message list
-                        events.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        // Send events
                         cache.events(events);
 
                         if(notification === true) {

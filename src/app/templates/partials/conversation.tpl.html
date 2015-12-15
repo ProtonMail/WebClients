@@ -7,13 +7,16 @@
         <a href="" ng-click="toggleStar(conversation)">
             <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
         </a>
-        <a href="" class="divider" ng-dropdown>
+        <!--<a href="" class="divider" ng-dropdown>
             <i class="fa fa-folder-open"></i>
         </a>
         <span class="pm_dropdown right wide">
             <dropdown-move conversation="conversation"></dropdown-move>
-        </span>
+        </span> -->
         <!-- <a href="" class="divider" ng-click="move('trash')">
+            <i class="fa fa-trash-o"></i>
+        </a>
+        <a href="" class="divider" ng-click="move('archive')">
             <i class="fa fa-trash-o"></i>
         </a>
         <a href="" class="divider" ng-click="">
