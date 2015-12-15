@@ -101,8 +101,8 @@
         <div class="dumpstered" ng-show="conversation.dumpstered === true">Moved to Trash</div>
         <div class="spamified" ng-show="conversation.spamified === true">Moved to Spam</div>
         <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <label class="pm_checkbox" ng-click="$event.stopPropagation();select($event, conversation)">
-            <input type="checkbox" ng-model="conversation.Selected" />
+        <label class="pm_checkbox">
+            <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
             <em class="fa fa-check"></em>
         </label>
         <span class="star" ng-click="$event.stopPropagation();toggleStar(conversation)">

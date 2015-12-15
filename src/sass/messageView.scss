@@ -465,20 +465,14 @@
             margin-left: 0;
         }
     }
-    #pm_view article.message header {
+    #pm_rows #pm_view article.message header {
         padding-right: 0;
+        padding-left: 0;
     }
     #pm_view article.message.open {
         position: relative;
-        padding-top: 45px;
         .sub {
-            position: static;
-            padding-left: 0;
-            .actions {
-                position: absolute;
-                left: 10px;
-                top: 10px;
-            }
+            margin: 0;
         }
     }
     #pm_view article.message .frame {
