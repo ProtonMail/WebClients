@@ -527,16 +527,16 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate, Payment, authentication, pmcw) {
+.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate, Payment, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
+            this.cardExist = false;
             this.process = false;
             this.step = 'payment';
             this.number = '';
-            this.name = ''; // Organization name
             this.fullname = '';
             this.month = '';
             this.year = '';
@@ -544,59 +544,63 @@ angular.module("proton.modals", [])
             this.cardTypeIcon = 'fa-credit-card';
             this.config = params.configuration;
 
-            // Functions
-            this.submit = function() {
-                this.process = true;
+            if(params.card.data.Code === 1000) {
+                var card = _.first(params.card.data.Sources);
 
-                var stripeResponseHandler = function(status, response) {
-                    if(status === 200) {
-                        // Add organization name
-                        this.config.Organization = {
-                            DisplayName: this.name,
-                            EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
-                        };
-                        // Add data from Stripe
-                        this.config.Source = {
-                            Object: 'token',
-                            Token: response.id
-                        };
-                        // Send request to subscribe
-                        Organization.create(this.config).then(function(result) {
-                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                params.change(result.data.Organization);
-                                this.process = false;
-                                this.step = 'thanks';
-                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                this.process = false;
-                                // TODO notify
-                            } else {
-                                this.process = false;
-                                // TODO notify
-                            }
-                        }.bind(this), function(error) {
-                            this.process = false;
-                            // TODO notify
-                        }.bind(this));
-                    } else if(angular.isDefined(response.error)) {
-                        notify({message: response.error.message, classes: 'notification-danger'});
+                this.cardExist = true;
+                this.number = '**** **** **** ' + card.Last4;
+                this.fullname = card.Name;
+                this.month = card.ExpMonth;
+                this.year = card.ExpYear;
+                this.cvc = '***';
+            }
+
+            // Functions
+            var saveOrganization = function() {
+                var promise;
+
+                if(params.create === true) {
+                    // Create
+                    promise = Organization.create(this.config);
+                } else {
+                    // Update
+                    promise = Organization.update(this.config);
+                }
+
+                promise.then(function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
                         this.process = false;
+                        this.step = 'thanks';
+                        params.change(result.data.Organization);
+                    } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                        this.process = false;
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
                         this.process = false;
+                        notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
                     }
-                }.bind(this);
+                }.bind(this), function(error) {
+                    this.process = false;
+                    // TODO notify
+                }.bind(this));
+            }.bind(this);
 
+            var generateStripeToken = function() {
                 if(Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
                 if(Stripe.card.validateExpiry(this.month, this.year) === false) {
                     notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
                 if(Stripe.card.validateCVC(this.cvc) === false) {
                     notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
@@ -608,6 +612,34 @@ angular.module("proton.modals", [])
                     exp_month: this.month,
                     exp_year: this.year
                 }, stripeResponseHandler);
+            }.bind(this);
+
+            var stripeResponseHandler = function(status, response) {
+                if(status === 200) {
+                    // Add data from Stripe
+                    this.config.Source = {
+                        Object: 'token',
+                        Token: response.id
+                    };
+                    // Send request to subscribe
+                    saveOrganization();
+                } else if(angular.isDefined(response.error)) {
+                    notify({message: response.error.message, classes: 'notification-danger'});
+                    this.process = false;
+                } else {
+                    this.process = false;
+                }
+            }.bind(this);
+
+            this.submit = function() {
+                // Change status
+                this.process = true;
+
+                if(this.cardExist === true) {
+                    saveOrganization();
+                } else {
+                    generateStripeToken();
+                }
             };
 
             /**

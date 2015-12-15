@@ -42,6 +42,13 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/status');
         },
         /**
+         * Call Stripe to get some information
+         * @return {Promise}
+         */
+        subscriptions: function() {
+            return $http.get(url.get() + '/payments/subscriptions');
+        },
+        /**
          *  Get payments corresponding to the given user.
          * @param {Integer} timestamp
          * @param {Integer} limit

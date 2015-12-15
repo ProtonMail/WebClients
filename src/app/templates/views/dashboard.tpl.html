@@ -78,44 +78,44 @@
                     </table>
                 </div>
             </section>
-            <section class="setting pm_form pull-right" ng-if="payment !== null">
-                <legend>{{ 'MY_SUBSCRIPTION' | translate }}</legend>
+            <section class="setting pm_form pull-right" ng-if="subscription !== null">
+                <legend>{{ 'CURRENT_SUBSCRIPTION' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableSubscription">
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
                             <td colspan="2">
-                                <strong>{{ current.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
+                                <strong>{{ subscription.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
                             </td>
                         </tr>
                         <tr>
                             <th>{{ 'DOMAINS' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ current.MaxDomains }}</strong>
+                                <strong>{{ organization.MaxDomains }}</strong>
                             </td>
                         </tr>
                         <tr>
                             <th>{{ 'ADDRESSES' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ current.MaxAddresses }}</strong>
+                                <strong>{{ organization.MaxAddresses }}</strong>
                             </td>
                         </tr>
                         <tr>
                             <th>{{ 'STORAGE' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ current.MaxSpace | humanSize }}</strong>
+                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
                             </td>
                         </tr>
                         <tr>
                             <th>{{ 'USERS' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ current.MaxMembers }}</strong>
+                                <strong>{{ organization.MaxMembers }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
                             <th>{{ 'PRICE' | translate }}: </th>
                             <td colspan="2">
-                                <strong>{{ payment.Amount / 100 | currency: payment.Currency }}</strong>
+                                <strong>{{ subscription.Amount / 100 | currency: subscription.Currency }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
@@ -128,7 +128,7 @@
                         <tr>
                             <th>{{ 'DURATION' | translate }}:</th>
                             <td colspan="2">
-                                <strong>{{ payment.PeriodStart * 1000 | date }} - {{ payment.PeriodEnd * 1000 | date }}</strong>
+                                <strong>{{ subscription.PeriodStart * 1000 | date }} - {{ subscription.PeriodEnd * 1000 | date }}</strong>
                             </td>
                         </tr>
                         <tr ng-hide="current.Plan === 'free'">
