@@ -26,7 +26,7 @@ angular.module("proton.controllers.Settings")
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
-        containment: "form[name='aliasesForm']",
+        containment: ".pm_form",
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },

@@ -3,9 +3,10 @@
 	bottom: 0;
 	right: 0;
 	z-index: 8888;
-	display: flex;
-	align-items: flex-end;
-	flex-wrap: wrap;
+	display: block;
+	.as-sortable-placeholder {
+		display: none !important;
+	}
 	.composer {
 		border-radius: 2px;
 		display: inline-block;
@@ -18,6 +19,11 @@
 		padding-bottom: 60px;
 		.dotdotdot {
 			display: none;
+		}
+		&.blur {
+			& > * {
+				opacity: .5;
+			}
 		}
 		footer.disabled {
 			.pm_button {
