@@ -141,15 +141,15 @@ ng-class="{
             </table>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
+            <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
+                <a href="" ng-click="displayImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
+            </p>
         </div><!--/.data-->
         <div class="clear"></div>
     </div>
     <div class="frame" ng-show="message.expand === true">
         <p ng-if="message.ExpirationTime > 0" class="text-red">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span countdown="{{ message.ExpirationTime }}"></span>
-        </p>
-        <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
-            <a href="" ng-click="displayImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
         </p>
         <div class="email" ng-class="{'plain': isPlain}" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">

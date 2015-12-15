@@ -168,9 +168,10 @@
                 }
                 .pm_labels {
                     background: $read;
+                    right: 1rem;
                     .pm_label {
-                        box-shadow: 0 0 0 4px $read !important;
-                        background: $read !important;
+                        box-shadow: 0 0 0 4px $white !important;
+                        background: $white !important;
                         padding-right: calc(.15rem + 1rem);
                         position: relative;
                         right: initial !important;
@@ -320,7 +321,7 @@
 			line-height: 20px;
 			clear: both;
 			box-sizing: border-box;
-            border-bottom: 1px solid $border;
+            box-shadow: 0 1px 0 0 $border;
             min-height: 55px;
 			.data {
                 float: left;
@@ -328,6 +329,29 @@
                 font-size: 90%;
                 .where {
                     display: inline-block;
+                }
+                .display-image {
+                    position: absolute;
+                    left: 50%;
+                    bottom: -1px;
+                    margin: 0 0 0 -5rem;
+                    width: 10rem;
+                    border-radius: 4px 4px 0 0;
+                    border-bottom-color: #fff;
+                    background: #fff;
+                    box-sizing: initial;
+                    -webkit-transition: padding .1s ease;
+                       -moz-transition: padding .1s ease;
+                        -ms-transition: padding .1s ease;
+                         -o-transition: padding .1s ease;
+                            transition: padding .1s ease;
+                    &:hover {
+                        background: #fff;
+                        padding-top: 4px;
+                    }
+                    a {
+                        background-color: #fff !important;
+                    }
                 }
 			}
     		.actions {
