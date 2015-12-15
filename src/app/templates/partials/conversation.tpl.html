@@ -8,7 +8,14 @@
         <a href="" ng-click="move('inbox')" ng-show="'secured.trash.**' | includedByState" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}">
             <i class="fa fa-inbox"></i>
         </a>
-        <a href="" class="divider" ng-click="toggleStar(conversation)">
+        <a href="" class="divider pm_trigger open-label" ng-dropdown pt-tooltip="{{ 'LABELS' | translate }}">
+            <i class="fa fa-tag"></i>
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <span class="pm_dropdown wide right">
+            <dropdown-labels messages="messages" save="saveLabels"></dropdown-labels>
+        </span>
+        <a href="" class="divider" ng-click="toggleStar(conversation)" pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}">
             <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
         </a>
         <a href="" class="divider pm_trigger" ng-dropdown pt-tooltip="{{ 'MORE' | translate }}">
