@@ -232,7 +232,7 @@ angular.module("proton.filters",[])
         if(parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if(parameter === 'Name') {
-            if(angular.isDefined(contact.Name) && contact.Name !== '') {
+            if(angular.isDefined(contact.Name) && contact.Name.length > 0) {
                 return contact.Name;
             } else {
                 var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});

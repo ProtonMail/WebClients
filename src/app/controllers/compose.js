@@ -1300,14 +1300,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.maximizedComposer = false;
     };
 
-    $scope.blur = function(message) {
-        message.blur = true;
-    };
-
-    $scope.focus = function(message) {
-        message.blur = false;
-    };
-
     $scope.openCloseModal = function(message, save) {
         var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
@@ -1328,6 +1320,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.close(message, false, true);
     };
 
+    /**
+     * Close the composer window
+     * @param {Object} message
+     * @param {Boolean} discard
+     * @param {Boolean} save
+     */
     $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
@@ -1396,6 +1394,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
     };
 
+    /**
+     * Give the focus inside the content editor
+     * @param {Object} message
+     * @param {Object} event
+     */
     $scope.focusEditor = function(message, event) {
         event.preventDefault();
         message.editor.focus();

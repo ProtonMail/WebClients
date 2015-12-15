@@ -21,7 +21,7 @@ angular.module("proton.transformation", [])
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote;
-                    var blockquotes = angular.element(element).find('.protonmail_quote, div.gmail_extra, div.gmail_quote, .yahoo_quoted, #isForwardContent, #isReplyContent, #mailcontent, #origbody, #reply139content, #oriMsgHtmlSeperator, blockquote[type="cite"]');
+                    var blockquotes = angular.element(element).find('.protonmail_quote, div.gmail_extra, div.gmail_quote, div.gmail_signature, .yahoo_quoted, #isForwardContent, #isReplyContent, #mailcontent, #origbody, #reply139content, #oriMsgHtmlSeperator, blockquote[type="cite"]');
 
                     if(blockquotes.length === 0) {
                         // TODO detect specific strings
