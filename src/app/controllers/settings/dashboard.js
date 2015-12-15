@@ -4,6 +4,7 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $translate,
+    $q,
     authentication,
     cardModal,
     confirmModal,
@@ -13,13 +14,33 @@ angular.module("proton.controllers.Settings")
     Organization,
     Payment,
     paymentModal,
+    pmcw,
+    subscriptions,
     supportModal
 ) {
     $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
     $scope.usedSpace = authentication.user.UsedSpace;
     $scope.maxSpace = authentication.user.MaxSpace;
     $scope.organization = null;
-    $scope.payment = null;
+    $scope.subscription = null;
+
+    // Initialize default currency
+    $scope.currentCurrency = 'CHF';
+    $scope.futureCurrency = 'CHF';
+
+    // Initialize default billing cycle
+    $scope.currentBillingCycle = 1;
+    $scope.futureBillingCycle = 1;
+
+    // Initialize default values for the current object
+    $scope.current = {
+        Plan: 'free',
+        Use2FA: false,
+        MaxDomains: 1,
+        MaxMembers: 1,
+        MaxAddresses: 1,
+        MaxSpace: 1000 * 1000 * 1000
+    };
 
     // Prices
     $scope.plusPrice = {1: 5, 12: 47};
@@ -113,81 +134,79 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
+        var spacePlus, spaceBusiness, domainPlus, domainBusiness, addressPlus, addressBusiness, memberBusiness;
+
+        if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
+            $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
+        }
+
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
-            
+
             $scope.organization = organization.data.Organization;
-            $scope.current = organization.data.Cart.Future;
-            $scope.future = organization.data.Cart.Future;
+            $scope.current = _.pick(organization.data.Organization, 'MaxSpace', 'MaxDomains', 'MaxAddresses', 'MaxMembers', 'Use2FA', 'Plan');
+            $scope.future = _.pick(organization.data.Organization, 'MaxSpace', 'MaxDomains', 'MaxAddresses', 'MaxMembers', 'Use2FA', 'Plan');
 
-            if(organization.data.Payment) {
-                $scope.payment = organization.data.Payment;
-                $scope.currentCurrency = organization.data.Payment.Currency;
-                $scope.futureCurrency = organization.data.Payment.Currency;
+            $scope.currentCurrency = organization.data.Payment.Currency;
+            $scope.futureCurrency = organization.data.Payment.Currency;
 
-                if(parseInt((organization.data.Payment.PeriodEnd - organization.data.Payment.PeriodStart) / month) === 1) {
-                    $scope.currentBillingCycle = 12;
-                    $scope.futureBillingCycle = 12;
-                } else {
-                    $scope.currentBillingCycle = 1;
-                    $scope.futureBillingCycle = 1;
-                }
+            if(parseInt((organization.data.Payment.PeriodEnd - organization.data.Payment.PeriodStart) / month) === 1) {
+                $scope.currentBillingCycle = 12;
+                $scope.futureBillingCycle = 12;
             } else {
-                $scope.currentCurrency = 'CHF';
-                $scope.futureCurrency = 'CHF';
                 $scope.currentBillingCycle = 1;
                 $scope.futureBillingCycle = 1;
             }
 
-            var spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.current.MaxSpace});
-            var spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.current.MaxSpace});
-            var domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.current.MaxDomains});
-            var domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.current.MaxDomains});
-            var addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.current.MaxAddresses});
-            var addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.current.MaxAddresses});
-            var memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.current.MaxMembers});
+            spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
+            spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
+            domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
+            domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
+            addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
+            addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
+            memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
+        }
 
-            if(angular.isDefined(spacePlus)) {
-                $scope.spacePlus = spacePlus;
-            } else {
-                $scope.spacePlus = $scope.spacePlusOptions[0];
-            }
+        if(angular.isDefined(spacePlus)) {
+            $scope.spacePlus = spacePlus;
+        } else {
+            $scope.spacePlus = $scope.spacePlusOptions[0];
+        }
 
-            if(angular.isDefined(spaceBusiness)) {
-                $scope.spaceBusiness = spaceBusiness;
-            } else {
-                $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
-            }
+        if(angular.isDefined(spaceBusiness)) {
+            $scope.spaceBusiness = spaceBusiness;
+        } else {
+            $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
+        }
 
-            if(angular.isDefined(domainPlus)) {
-                $scope.domainPlus = domainPlus;
-            } else {
-                $scope.domainPlus = $scope.domainPlusOptions[0];
-            }
+        if(angular.isDefined(domainPlus)) {
+            $scope.domainPlus = domainPlus;
+        } else {
+            $scope.domainPlus = $scope.domainPlusOptions[0];
+        }
 
-            if(angular.isDefined(domainBusiness)) {
-                $scope.domainBusiness = domainBusiness;
-            } else {
-                $scope.domainBusiness = $scope.domainBusinessOptions[0];
-            }
+        if(angular.isDefined(domainBusiness)) {
+            $scope.domainBusiness = domainBusiness;
+        } else {
+            $scope.domainBusiness = $scope.domainBusinessOptions[0];
+        }
 
-            if(angular.isDefined(addressPlus)) {
-                $scope.addressPlus = addressPlus;
-            } else {
-                $scope.addressPlus = $scope.addressPlusOptions[0];
-            }
+        if(angular.isDefined(addressPlus)) {
+            $scope.addressPlus = addressPlus;
+        } else {
+            $scope.addressPlus = $scope.addressPlusOptions[0];
+        }
 
-            if(angular.isDefined(addressBusiness)) {
-                $scope.addressBusiness = addressBusiness;
-            } else {
-                $scope.addressBusiness = $scope.addressBusinessOptions[0];
-            }
+        if(angular.isDefined(addressBusiness)) {
+            $scope.addressBusiness = addressBusiness;
+        } else {
+            $scope.addressBusiness = $scope.addressBusinessOptions[0];
+        }
 
-            if(angular.isDefined(memberBusiness)) {
-                $scope.memberBusiness = memberBusiness;
-            } else {
-                $scope.memberBusiness = $scope.memberBusinessOptions[0];
-            }
+        if(angular.isDefined(memberBusiness)) {
+            $scope.memberBusiness = memberBusiness;
+        } else {
+            $scope.memberBusiness = $scope.memberBusinessOptions[0];
         }
     };
 
@@ -282,8 +301,13 @@ angular.module("proton.controllers.Settings")
     $scope.choose = function(name) {
         var now = moment().unix();
         var future;
+        var promises = [];
         var current = $scope.current;
         var configuration = {
+            Organization: {
+                DisplayName: (angular.isDefined($scope.organization.DisplayName)) ? $scope.organization.DisplayName : authentication.user.DisplayName,
+                EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
+            },
             Subscription: {
                 Amount: $scope.amount(name),
                 Currency: $scope.futureCurrency,
@@ -327,12 +351,20 @@ angular.module("proton.controllers.Settings")
         configuration.Cart.Current = current;
         configuration.Cart.Future = future;
 
+        promises.push(Payment.plan(configuration));
+        promises.push(Payment.sources());
+
         // Check configuration choosed
-        networkActivityTracker.track(Payment.plan(configuration).then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+        networkActivityTracker.track($q.all(promises).then(function(results) {
+            var plan = results[0];
+            var card = results[1];
+
+            if(angular.isDefined(plan.data) && plan.data.Code === 1000) {
                 // Open payment modal
                 paymentModal.activate({
                     params: {
+                        create: organization === true,
+                        card: card,
                         configuration: configuration,
                         change: function(organization) {
                             _.extend($scope.organization, organization);
@@ -342,8 +374,8 @@ angular.module("proton.controllers.Settings")
                         }
                     }
                 });
-            } else if(angular.isDefined(result.data) && result.data.Error) {
-                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else if(angular.isDefined(plan.data) && plan.data.Error) {
+                notify({message: plan.data.Error, classes: 'notification-danger'});
             } else {
                 notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
             }

@@ -12,13 +12,10 @@ angular.module("proton.models.organization", [])
         //GET
         /**
          * Get group info: group name, token IDs, members (ids, names, roles, addresses, used space, space limit), domains (ids, names, verification status for MX, SPF, DKIM), usage and limits (for domains, members, addresses and space), billing info (status, billing cycle, next billing time). Only available for the group admin.
+         * @param {Object}
          */
-        get: function(status) {
-            if(status === true) {
-                return $http.get(url.get() + '/organizations?Status');
-            } else {
-                return $http.get(url.get() + '/organizations');
-            }
+        get: function(params) {
+            return $http.get(url.get() + '/organizations', {params: params});
         },
         // PUT
         /**

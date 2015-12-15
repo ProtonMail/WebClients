@@ -703,10 +703,13 @@ angular.module('proton.routes', [
             },
             organization: function(user, Organization, networkActivityTracker) {
                 if(user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get(true)); // true to get status payment history
+                    return networkActivityTracker.track(Organization.get({Status: true})); // Get also the status payment history
                 } else {
                     return true;
                 }
+            },
+            subscriptions: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.subscriptions());
             }
         },
         views: {
