@@ -160,7 +160,10 @@ angular.module("proton.controllers.Settings")
             $scope.domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
             $scope.addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
             $scope.addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
-            $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
+
+            if($scope.organization.MaxMembers > 1) {
+                $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
+            }
         }
     };
 
@@ -260,7 +263,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Open modal to pay the plan configured
-     * @param {String} name
+     * @param {String} name ('plus' or 'business')
      */
     $scope.choose = function(name) {
         var now = moment().unix();

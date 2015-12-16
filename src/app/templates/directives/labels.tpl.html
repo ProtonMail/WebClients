@@ -1,5 +1,6 @@
 <span class="labelDropdown">
     <span role="menu" ng-click="$event.stopPropagation()">
+        <p ng-show="labels.length === 0" class="alert alert-info">{{ 'NO_LABELS' | translate }}</p>
         <span ng-show="labels.length > 1" class="margin labelSearch">
             <i class="fa fa-search"></i>
             <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
