@@ -18,9 +18,7 @@ angular.module("proton.controllers.Settings")
     subscriptions,
     supportModal
 ) {
-    $scope.username = authentication.user.Addresses[0].Email.split('@')[0];
-    $scope.usedSpace = authentication.user.UsedSpace;
-    $scope.maxSpace = authentication.user.MaxSpace;
+    // Default values for organization and subscription
     $scope.organization = null;
     $scope.subscription = null;
 
@@ -137,7 +135,9 @@ angular.module("proton.controllers.Settings")
         var spacePlus, spaceBusiness, domainPlus, domainBusiness, addressPlus, addressBusiness, memberBusiness;
 
         if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-            $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
+            if(angular.isArray(subscriptions.data.Subscriptions)) {
+                $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
+            }
         }
 
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
