@@ -9,8 +9,8 @@ angular.module("proton.controllers.Settings")
     notify,
     Payment
 ) {
-    var YEAR_2015 = 1420070401;
-    var YEAR_2016 = 1451606401;
+    var YEAR_2015 = moment({year: 2016, millisecond: 1}).unix();
+    var YEAR_2016 = moment({year: 2017, millisecond: 1}).unix();
 
     $rootScope.pageName = $translate.instant('INVOICES');
     $scope.years = [
@@ -24,9 +24,9 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initialize = function() {
         // Initial select
-        $scope.range = _.findWhere($scope.years, {value: undefined});
+        $scope.range = _.findWhere($scope.years, {value: YEAR_2015});
         // Load invoices
-        $scope.loadInvoices(undefined);
+        $scope.loadInvoices(YEAR_2015);
     };
 
     /**

@@ -148,20 +148,20 @@ angular.module("proton.controllers.Settings")
             $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
             $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
             $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-            $scope.current = subscriptions.data.Subscriptions[0].Cart.Future;
-            $scope.future = subscriptions.data.Subscriptions[0].Cart.Future;
+            $scope.current = subscriptions.data.Subscriptions[0].Cart.Next;
+            $scope.future = subscriptions.data.Subscriptions[0].Cart.Next;
         }
 
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
             $scope.organization = organization.data.Organization;
             $scope.spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
-            $scope.spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
             $scope.domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
             $scope.domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
             $scope.addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
             $scope.addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
 
             if($scope.organization.MaxMembers > 1) {
+                $scope.spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
                 $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
             }
         }
@@ -222,8 +222,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             confirmModal.deactivate();
                             notify({message: 'You are currently unsubscribed, your features will be disabled on ' + $filter('date')($scope.subscription.PeriodEnd * 1000, 'date', 'medium'), classes: 'notification-success'});
-                            $scope.organization = null;
-                            $scope.subscription = null;
+                            _.extend($scope.subscription, result.data.Subscriptions[0]);
                             $scope.current = {
                                 Plan: 'free',
                                 Use2FA: false,
@@ -315,8 +314,8 @@ angular.module("proton.controllers.Settings")
                 break;
         }
 
-        configuration.Cart.Current = current;
-        configuration.Cart.Future = future;
+        configuration.Cart.Previous = current;
+        configuration.Cart.Next = future;
 
         promises.push(Payment.plan(configuration));
         promises.push(Payment.sources());
@@ -341,11 +340,10 @@ angular.module("proton.controllers.Settings")
                                     $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
                                     $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
                                     $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-                                    $scope.current = subscriptions.data.Subscriptions[0].Cart.Future;
-                                    $scope.future = subscriptions.data.Subscriptions[0].Cart.Future;
+                                    $scope.current = subscriptions.data.Subscriptions[0].Cart.Next;
+                                    $scope.future = subscriptions.data.Subscriptions[0].Cart.Next;
+                                    $scope.organization = organization;
                                 }
-
-                                _.extend($scope.organization, organization);
                             });
                         },
                         cancel: function() {

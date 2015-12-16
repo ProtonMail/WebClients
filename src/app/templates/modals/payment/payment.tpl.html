@@ -5,7 +5,7 @@
     <div class="modal-body pm_form">
         <div class="pm_grid">
             <div class="col-1-1">
-                <p class="alert alert-info">You’re upgrading to the {{ ctrl.config.Cart.Future.Plan | capitalize }} plan. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
+                <p class="alert alert-info">You’re upgrading to the {{ ctrl.config.Cart.Next.Plan | capitalize }} plan. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
             </div>
             <div class="col-1-2">
                 <table class="pm_table">
@@ -19,22 +19,22 @@
                     <tbody>
                         <tr>
                             <td>{{ 'STORAGE' }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxSpace / 1000 / 1000 }} MB</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxSpace / 1000 / 1000 }} MB</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{{ 'DOMAINS' }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxDomains }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxDomains }}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{{ 'ADDRESSES' }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxAddresses }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxAddresses }}</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{{ 'USERS' }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Future.MaxMembers }}</td>
+                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxMembers }}</td>
                             <td></td>
                         </tr>
                         <tr>
@@ -49,7 +49,7 @@
                 </table>
             </div>
             <div class="col-1-2">
-                <div class="input-icon margin" ng-show="ctrl.config.Cart.Future.Plan === 'business'">
+                <div class="input-icon margin" ng-show="ctrl.config.Cart.Next.Plan === 'business'">
                     <i class="fa fa-briefcase"></i>
                     <input type="text" ng-disabled="ctrl.process" ng-model="ctrl.config.Organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
                 </div>
