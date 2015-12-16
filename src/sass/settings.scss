@@ -853,6 +853,10 @@
 @media (max-width: $tablet-landscape) {
     #pm_settings {
 
+        .settings .row .setting {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
         #logActions {
             float: left;
             margin: 0 0 1rem -5px;

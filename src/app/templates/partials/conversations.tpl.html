@@ -32,7 +32,9 @@
         </tr>
     </table>
 
-    <div ng-click="click(conversation)" ng-repeat="conversation in conversations track by conversation.ID" class="message"
+    <div 
+    ng-repeat="conversation in conversations track by conversation.ID" 
+    class="message"
     ng-class="{
         unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
         selected: conversation.Selected,
@@ -48,7 +50,7 @@
                 <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
             </span>
         </aside>
-        <header>
+        <header ng-click="click(conversation)">
             <p>
                 <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 <span title="{{ conversation.Subject }}">
@@ -64,7 +66,7 @@
                 <span class="time">{{ time(conversation) | readableTime }}</span>
             </p>
         </header>
-        <article>
+        <article ng-click="click(conversation)">
             <p class="pm_labels">
                 <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
@@ -85,7 +87,6 @@
 <div ng-if="layoutMode === 'rows'" id="pm_list" pt-height>
     <div
     class="message"
-    ng-click="click(conversation)"
     ng-repeat="conversation in conversations track by conversation.ID"
     ng-swipe-left="swipeLeft()"
     ng-swipe-right="swipeRight()"
@@ -110,7 +111,7 @@
                 <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
             </a>
         </span>
-        <span class="sender">
+        <span class="sender" ng-click="click(conversation)">
             <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
@@ -120,7 +121,7 @@
             </span>
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
-        <span class="subject">
+        <span class="subject" ng-click="click(conversation)">
             <span title="{{ conversation.Subject }}">
                 {{ conversation.Subject }}
                 <location-tag class="locTag"></location-tag>
@@ -134,6 +135,6 @@
         </span>
         <span class="size">{{ conversation.TotalSize || conversation.Size | humanSize }}</span>
         <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-        <span class="time">{{ time(conversation) | readableTime }}</span>
+        <span class="time" ng-click="click(conversation)">{{ time(conversation) | readableTime }}</span>
     </div>
 </div>
