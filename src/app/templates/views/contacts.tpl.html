@@ -4,9 +4,8 @@
 
         <div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
 
-        <!-- TODO: need styles for alerts. ui kit psd has them? -->
-        <p class="alert alert-info text-center" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">You have no contacts.</p>
-        <p class="alert alert-info text-center" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">No results for "{{ params.searchContactInput }}" in your contacts.</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">You have no contacts, you can add contact with the above button "ADD CONTACT".</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">No results for "{{ params.searchContactInput }}" in your contacts.</p>
 
         <table ng-if="contacts.length > 0" class="pm_table">
 
