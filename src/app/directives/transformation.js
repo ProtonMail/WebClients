@@ -6,8 +6,12 @@ angular.module("proton.transformation", [])
         link: function(scope, element, attributes) {
             var stopObserving = attributes.$observe('transformLinks', function(interpolatedValue) {
                 $timeout(function() {
-                    angular.element(element).find('a[href^=http]').attr('target','_blank').attr('rel', 'noreferrer');
-                    stopObserving();
+                    var links = angular.element(element).find('a[href^=http]');
+
+                    if(links.length > 0) {
+                        links.attr('target','_blank').attr('rel', 'noreferrer');
+                        stopObserving();
+                    }
                 }, 0, false);
             });
         }
