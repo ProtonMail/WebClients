@@ -41,11 +41,19 @@ angular.module("proton.dropdown", [])
         function showDropdown(element) {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
+            var next = element.next();
+
+            console.log(next);
 
             element.addClass('active');
+
             dropdown
             .stop(1,1)
-            .css('opacity', 0)
+            .css('opacity', 0);
+
+            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
+
+            dropdown
             .slideDown(animationDuration)
             .animate(
                 { opacity: 1 },
@@ -56,11 +64,17 @@ angular.module("proton.dropdown", [])
         function hideDropdown(element) {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
+            var next = element.next();
 
             element.removeClass('active');
+
             dropdown
             .stop(1,1)
-            .css('opacity', 1)
+            .css('opacity', 1);
+
+            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
+
+            dropdown
             .slideUp( (animationDuration*2) )
             .animate(
                 { opacity: 0 },
