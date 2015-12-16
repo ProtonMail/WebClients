@@ -611,16 +611,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
             }), function(label) {
                 return label.ID;
-            });
+            }) || [];
             var toRemove = _.map(_.filter(labels, function(label) {
                 return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
             }), function(label) {
                 return label.ID;
-            });
+            }) || [];
 
             if(alsoArchive === true) {
                 toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                toRemove = toRemove.push(current);
+                toRemove.push(current);
             }
 
             copy.LabelIDsAdded = toApply;

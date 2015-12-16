@@ -218,12 +218,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
         }), function(label) {
             return label.ID;
-        });
+        }) || [];
         var toRemove = _.map(_.filter(labels, function(label) {
             return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
         }), function(label) {
             return label.ID;
-        });
+        }) || [];
 
         _.each(toApply, function(labelID) {
             promises.push(Conversation.labels(labelID, ADD, ids));
@@ -235,7 +235,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove = toRemove.push(current); // Remove current location
+            toRemove.push(current); // Remove current location
         }
 
         _.each($scope.messages, function(message) {

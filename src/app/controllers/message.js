@@ -632,12 +632,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
         }), function(label) {
             return label.ID;
-        });
+        }) || [];
         var toRemove = _.map(_.filter(labels, function(label) {
             return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
         }), function(label) {
             return label.ID;
-        });
+        }) || [];
 
         // Requests
         _.each(toApply, function(labelID) {
@@ -650,7 +650,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if(alsoArchive === true) {
             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove = toRemove.push(current); // Remove current location
+            toRemove.push(current); // Remove current location
         }
 
         // Generate cache event
