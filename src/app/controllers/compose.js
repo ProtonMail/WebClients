@@ -556,6 +556,66 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
+    $scope.composerStyle = function() {
+        var composers = $('.composer');
+        var composerWidth = $('.composer').eq(0).outerWidth();
+
+        _.each(composers, function(composer, index) {
+
+            var margin = 20;
+            var reverseIndex = $scope.messages.length - index;
+            var message = $scope.messages[index];
+            var styles = {};
+            var widthWindow = $('body').outerWidth();
+            var windowHeight = $(window).height() - margin;
+            var composerHeight = $(composer).outerHeight();
+
+            if ($('html').hasClass('ua-windows_nt')) {
+                margin = 40;
+            }
+
+            if (tools.findBootstrapEnvironment() === 'xs') {
+                var marginTop = 80; // px
+                var top = marginTop;
+
+                styles.top = top + 'px';
+            } else {
+                var marginRight = margin; // px
+                var widthComposer = composerWidth; // px
+
+                if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
+                    right = (index * (widthComposer + marginRight)) + marginRight;
+                } else {
+                    widthWindow -= margin; // margin left
+                    var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
+                    right = index * (widthComposer - ( overlap + margin ));
+                }
+
+                if (reverseIndex === $scope.messages.length) {
+                    right = marginRight;
+                    index = $scope.messages.length;
+                }
+
+                styles.top = '';
+                styles.right = right + 'px';
+                styles.opacity = 1;
+            }
+
+            // Height - depreciated. pure css solution - Jason
+            // if(windowHeight < composerHeight) {
+                // styles.height = windowHeight + 'px';
+            // } else {
+                // styles.height = 'auto';
+            // }
+
+            $(composer).css(styles);
+
+            setTimeout(function() {
+                $(composer).find('.angular-squire').css($scope.editorStyle(message));
+            });
+        });
+    };
+
     $scope.editorStyle = function(message) {
         var styles = {};
         var composer = $('.composer:visible');
@@ -579,10 +639,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         return styles;
-    };
-
-    $scope.composerStyle = function() {
-        // ...
     };
 
     $scope.completedSignature = function(message) {

@@ -6,16 +6,23 @@
 		height: 530px !important; // the drag directive tries to override this.
 		background-color: #fff;
 		margin: 0 25px 25px 0;
-		box-shadow: 3px 3px 3px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);
+		box-shadow: 1px 1px 3px rgba(0,0,0,.5), 0 0 2px rgba(0,0,0,.5);
 		position: absolute;
 		padding-bottom: 60px;
 		right: 1rem;
 		bottom: 1rem;
 		z-index: 8888;
+		opacity: 0;
+		-webkit-transition: opacity .25s ease, right .25s ease;
+		   -moz-transition: opacity .25s ease, right .25s ease;
+		    -ms-transition: opacity .25s ease, right .25s ease;
+		     -o-transition: opacity .25s ease, right .25s ease;
+		        transition: opacity .25s ease, right .25s ease;
 		.dotdotdot {
 			display: none;
 		}
 		&.blur {
+			box-shadow: 1px 2px 3px rgba(0,0,0,.25), 0 0 3px rgba(0,0,0,.25);
 			& > * {
 			opacity: .8;
 			pointer-events: none;
@@ -57,8 +64,7 @@
 			}
 		}
 		&.minimized {
-			height: 40px;
-			margin-top: 490px;
+			height: 40px !important;
 			overflow: hidden;
 			padding: 0 !important;
 			header {
@@ -82,7 +88,7 @@
 			bottom: 20px;
 			right: 20px;
 			width: initial;
-			height: initial;
+			height: initial !important;
 			box-sizing: border-box;
 			margin: 0;
 			footer .pm_button span {
