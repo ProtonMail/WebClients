@@ -78,7 +78,7 @@
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
                             <td colspan="2">
-                                <strong>{{ subscription.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
+                                <strong>{{ current.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
                             </td>
                         </tr>
                         <tr>
@@ -147,9 +147,10 @@
 
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
                     <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
+                    <p class="alert alert-info" ng-show="subscription.Status === 'cancelled'">You are currently unsubscribed, your features will be disabled on {{ subscription.PeriodEnd * 1000 | date: 'medium' }}</p>
                     <header>
                         <a href="#" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
-                        <div class="group">
+                        <div class="group" ng-show="organization === null">
                             <label>{{ 'CURRENCY' | translate }}</label>
                             <div class="pm_buttons">
                                 <a href="" ng-click="futureCurrency = 'EUR'" ng-class="{'active': futureCurrency === 'EUR'}">EUR</a>

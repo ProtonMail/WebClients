@@ -446,17 +446,22 @@ angular.module("proton.modals", [])
                             Source: {
                                 Object: 'token',
                                 Token: response.id,
-                                SourceID: params.card
+                                ExternalSourceID: params.card.ExternalSourceID
                             }
                         }).then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
                                 params.cancel();
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                this.process = false;
+                                notify({message: result.data.Error, classes: 'notification-danger'});
                             } else {
                                 this.process = false;
+                                notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
                             }
                         }.bind(this), function(error) {
                             this.process = false;
+                            notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
                         }.bind(this));
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
@@ -493,35 +498,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
-            this.numberChange = function() {
-                var type = Stripe.card.cardType(this.number);
-
-                switch (type) {
-                    case 'Visa':
-                        this.cardTypeIcon = 'fa-cc-visa';
-                        break;
-                    case 'MasterCard':
-                        this.cardTypeIcon = 'fa-cc-mastercard';
-                        break;
-                    case 'Discover':
-                        this.cardTypeIcon = 'fa-cc-discover';
-                        break;
-                    case 'Diners Club':
-                        this.cardTypeIcon = 'fa-cc-diners-club';
-                        break;
-                    case 'JCB':
-                        this.cardTypeIcon = 'fa-cc-jcb';
-                        break;
-                    case 'American Express':
-                    case 'Unknown':
-                    this.cardTypeIcon = 'fa-credit-card';
-                    break;
-                    default:
-                        this.cardTypeIcon = 'fa-credit-card';
-                        break;
-                }
-            };
         }
     });
 })
@@ -533,7 +509,6 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.cardExist = false;
             this.process = false;
             this.step = 'payment';
             this.number = '';
@@ -547,12 +522,15 @@ angular.module("proton.modals", [])
             if(params.card.data.Code === 1000) {
                 var card = _.first(params.card.data.Sources);
 
-                this.cardExist = true;
+                this.source = card.ExternalSourceID;
                 this.number = '**** **** **** ' + card.Last4;
                 this.fullname = card.Name;
                 this.month = card.ExpMonth;
                 this.year = card.ExpYear;
                 this.cvc = '***';
+                this.change = false;
+            } else {
+                this.change = true;
             }
 
             // Functions
@@ -621,6 +599,11 @@ angular.module("proton.modals", [])
                         Object: 'token',
                         Token: response.id
                     };
+
+                    if(angular.isDefined(this.source)) {
+                        this.config.Source.ExternalSourceID = this.source;
+                    }
+
                     // Send request to subscribe
                     saveOrganization();
                 } else if(angular.isDefined(response.error)) {
@@ -635,42 +618,10 @@ angular.module("proton.modals", [])
                 // Change status
                 this.process = true;
 
-                if(this.cardExist === true) {
-                    saveOrganization();
-                } else {
+                if(this.change === true) {
                     generateStripeToken();
-                }
-            };
-
-            /**
-             * Change cc icon depending upon number
-             */
-            this.numberChange = function() {
-                var type = Stripe.card.cardType(this.number);
-
-                switch (type) {
-                    case 'Visa':
-                        this.cardTypeIcon = 'fa-cc-visa';
-                        break;
-                    case 'MasterCard':
-                        this.cardTypeIcon = 'fa-cc-mastercard';
-                        break;
-                    case 'Discover':
-                        this.cardTypeIcon = 'fa-cc-discover';
-                        break;
-                    case 'Diners Club':
-                        this.cardTypeIcon = 'fa-cc-diners-club';
-                        break;
-                    case 'JCB':
-                        this.cardTypeIcon = 'fa-cc-jcb';
-                        break;
-                    case 'American Express':
-                    case 'Unknown':
-                        this.cardTypeIcon = 'fa-credit-card';
-                        break;
-                    default:
-                        this.cardTypeIcon = 'fa-credit-card';
-                        break;
+                } else {
+                    saveOrganization();
                 }
             };
 

@@ -30,12 +30,6 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/plan', configuration);
         },
         /**
-         * Route for events from payment providers (i.e. Stripe events like charge.success). Instead of accepting POST data, we will respond to the event by querying the API ourselves. The hook only acts as an asynchronous trigger.
-         */
-        // events: function(Obj) {
-        //     return $http.post(url.get() + '/payments/events', Obj);
-        // },
-        /**
          * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
          */
         status: function() {
@@ -92,6 +86,9 @@ angular.module("proton.models.payments", [])
          */
         change: function(Obj) {
             return $http.put(url.get() + '/payments/sources', Obj);
+        },
+        delete: function(params) {
+            return $http.delete(url.get() + '/payments/subscriptions', {params: params});
         }
     };
 })

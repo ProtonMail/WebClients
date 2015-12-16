@@ -24,9 +24,9 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initialize = function() {
         // Initial select
-        $scope.range = _.findWhere($scope.years, {value: YEAR_2015}); // TODO each year, need to change the initialization
+        $scope.range = _.findWhere($scope.years, {value: undefined});
         // Load invoices
-        $scope.loadInvoices(YEAR_2015); // TODO each year, need to change the initialization
+        $scope.loadInvoices(undefined);
     };
 
     /**

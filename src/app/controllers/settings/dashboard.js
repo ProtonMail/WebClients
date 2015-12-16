@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Settings")
 
 .controller('DashboardController', function(
+    $filter,
     $rootScope,
     $scope,
     $translate,
@@ -135,29 +136,19 @@ angular.module("proton.controllers.Settings")
         var spacePlus, spaceBusiness, domainPlus, domainBusiness, addressPlus, addressBusiness, memberBusiness;
 
         if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-            if(angular.isArray(subscriptions.data.Subscriptions)) {
-                $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
-            }
+            $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
+            $scope.currentCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
+            $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
+            $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
+            $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
+            $scope.current = subscriptions.data.Subscriptions[0].Cart.Future;
+            $scope.future = subscriptions.data.Subscriptions[0].Cart.Future;
         }
 
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
             var month = 60 * 60 * 24 * 30; // Time for a month in second
 
             $scope.organization = organization.data.Organization;
-            $scope.current = _.pick(organization.data.Organization, 'MaxSpace', 'MaxDomains', 'MaxAddresses', 'MaxMembers', 'Use2FA', 'Plan');
-            $scope.future = _.pick(organization.data.Organization, 'MaxSpace', 'MaxDomains', 'MaxAddresses', 'MaxMembers', 'Use2FA', 'Plan');
-
-            $scope.currentCurrency = organization.data.Payment.Currency;
-            $scope.futureCurrency = organization.data.Payment.Currency;
-
-            if(parseInt((organization.data.Payment.PeriodEnd - organization.data.Payment.PeriodStart) / month) === 1) {
-                $scope.currentBillingCycle = 12;
-                $scope.futureBillingCycle = 12;
-            } else {
-                $scope.currentBillingCycle = 1;
-                $scope.futureBillingCycle = 1;
-            }
-
             spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
             spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
             domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
@@ -261,10 +252,20 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    Organization.delete().then(function(result) {
+                    Payment.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            $scope.organization = null;
                             confirmModal.deactivate();
+                            notify({message: 'You are currently unsubscribed, your features will be disabled on ' + $filter('date')($scope.subscription.PeriodEnd * 1000, 'date', 'medium'), classes: 'notification-success'});
+                            $scope.organization = null;
+                            $scope.subscription = null;
+                            $scope.current = {
+                                Plan: 'free',
+                                Use2FA: false,
+                                MaxDomains: 1,
+                                MaxMembers: 1,
+                                MaxAddresses: 1,
+                                MaxSpace: 1000 * 1000 * 1000
+                            };
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -305,7 +306,7 @@ angular.module("proton.controllers.Settings")
         var current = $scope.current;
         var configuration = {
             Organization: {
-                DisplayName: (angular.isDefined($scope.organization.DisplayName)) ? $scope.organization.DisplayName : authentication.user.DisplayName,
+                DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName,
                 EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
             },
             Subscription: {
@@ -367,7 +368,19 @@ angular.module("proton.controllers.Settings")
                         card: card,
                         configuration: configuration,
                         change: function(organization) {
-                            _.extend($scope.organization, organization);
+                            Payment.subscriptions().then(function(subscriptions) {
+                                if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
+                                    $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
+                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
+                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
+                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
+                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
+                                    $scope.current = subscriptions.data.Subscriptions[0].Cart.Future;
+                                    $scope.future = subscriptions.data.Subscriptions[0].Cart.Future;
+                                }
+
+                                _.extend($scope.organization, organization);
+                            });
                         },
                         cancel: function() {
                             paymentModal.deactivate();
