@@ -26,6 +26,7 @@ body, html {
 			display: flex;
 			background: $read;
 			box-shadow: inset 0 -1px $border;
+			position: relative;
 			.dumpstered,
 			.spamified {
 				position: absolute;
@@ -33,12 +34,12 @@ body, html {
 				top: 0;
 				right: 0;
 				bottom: 0;
+				width: 100%;
 				color: $white;
 				z-index: 7;
-				height: 65px;
-				line-height: 65px;
+				height: initial;
+				line-height: $rowHeight;
 				text-align: center;
-				display: none;
 			}
 			.dumpstered {
 				background: $red;
@@ -270,6 +271,10 @@ body, html {
 			position: relative;
 			display: block;
 			box-sizing: border-box;
+			.dumpstered,
+			.spamified {
+				line-height: 65px;
+			}
 			& > * {
 				line-height: 25px;
 				height: 25px;

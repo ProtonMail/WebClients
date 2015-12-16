@@ -920,8 +920,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} event
      * @param {Object} conversation
      */
-    $scope.swipeLeft = function(event, conversation) {
+    $scope.swipeLeft = function(conversation) {
+        console.log(conversation);
         conversation.dumpstered = true;
+        // PANDA!
     };
 
     /**
@@ -929,8 +931,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} event
      * @param {Object} conversation
      */
-    $scope.swipeRight = function(event, conversation) {
+    $scope.swipeRight = function(conversation) {
+        console.log(conversation);
         conversation.spamified = true;
+        // PANDA!
     };
 
     /**
