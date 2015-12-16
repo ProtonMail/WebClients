@@ -1061,6 +1061,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             parameters.Message.AddressID = message.From.ID;
 
+            // Encrypt message body with the user's plublic key
             message.encryptBody(authentication.user.PublicKey).then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
@@ -1146,10 +1147,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.saving = false;
             });
 
-            if(silently !== true) {
-                message.track(deferred.promise);
-            }
-
             return deferred.promise;
         }
     };
@@ -1198,6 +1195,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(validate) {
             $scope.save(message, false).then(function() {
                 $scope.checkSubject(message).then(function() {
+                    message.encrypting = true;
                     var parameters = {};
                     var emails = message.emailsToString();
 
@@ -1267,6 +1265,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 $log.error(message);
                                 deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                             } else {
+                                message.encrypting = false;
                                 message.sending = true;
                                 Message.send(parameters).$promise.then(function(result) {
                                     if(angular.isDefined(result.Error)) {
@@ -1303,10 +1302,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 });
                             }
                         }, function(error) {
+                            message.encrypting = false;
                             error.message = 'Error during the promise preparation';
                             deferred.reject(error);
                         });
                     }, function(error) {
+                        message.encrypting = false;
                         error.message = 'Error during the getting of the public key';
                         deferred.reject(error);
                     });
@@ -1316,9 +1317,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }, function(error) {
                 deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
             });
-
-            message.track(deferred.promise);
-
         } else {
             deferred.reject();
         }

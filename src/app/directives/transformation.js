@@ -60,8 +60,11 @@ angular.module("proton.transformation", [])
                             }
                         });
 
+                        // Add button to toggle the blockquote part
                         angular.element(blockquote).before(button);
+                        // Hide blockquote part
                         angular.element(blockquote).hide();
+                        // Stop searching of blockquotes
                         stopObserving();
                     }
                 }, 0, false);

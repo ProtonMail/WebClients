@@ -222,35 +222,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         loading: function() {
-            return !_.isEmpty(this.promises);
-        },
-
-        track: function (promise) {
-            this.promises = _.union(this.promises, [promise]);
-
-            promise.catch(function(result) {
-                if(angular.isDefined(result)) {
-                    $log.error(result);
-                    if ( angular.isDefined( result.message ) ) {
-                        notify({message: result.message, classes: 'notification-danger'});
-                    }
-                    else if ( angular.isDefined( result.Error ) ) {
-                        notify({message: result.Error, classes: 'notification-danger'});
-                    }
-                    else if ( angular.isDefined( result.data ) && angular.isDefined( result.data.Error ) ) {
-                        notify({message: result.data.Error, classes: 'notification-danger'});
-                    }
-                    else if ( angular.isString( result ) ) {
-                        notify({message: result, classes: 'notification-danger'});
-                    }
-                }
-            });
-
-            promise.finally(function () {
-                this.promises = _.without(this.promises, promise);
-            }.bind(this));
-
-            return promise;
+            return this.uploading || this.saving || this.sending || this.encrypting;
         },
 
         encryptBody: function(key) {

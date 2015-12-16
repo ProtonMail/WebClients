@@ -1,7 +1,7 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" novalidate>
         <div
-        ng-squire-height 
+        ng-squire-height
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
@@ -391,11 +391,12 @@
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
-                    <button class="pm_button primary" ng-disabled="message.loading() || composerIsSelected(message) === false || message.uploading || message.saving || message.sending" ng-click="send(message)">
-                        <i class="fa" ng-class="{ 'fa-send': message.sending !== true && message.saving !== true, 'fa-circle-o-notch fa-spin': message.sending === true || message.saving === true }"></i>
-                        <span ng-hide="message.sending || message.saving || message.loading()">{{ 'SEND' | translate }}</span>
-                        <span ng-show="message.sending">{{ 'SENDING' | translate }}</span>
-                        <span ng-show="message.saving">{{ 'SAVING' | translate }}</span>
+                    <button class="pm_button primary" ng-disabled="message.loading() || composerIsSelected(message) === false" ng-click="send(message)">
+                        <i class="fa" ng-class="{ 'fa-send': !message.loading(), 'fa-circle-o-notch fa-spin': message.loading() }"></i>
+                        <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
+                        <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
+                        <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
+                        <span ng-show="message.saving === true">{{ 'SAVING' | translate }}</span>
                     </button>
                 </div>
             </footer>
