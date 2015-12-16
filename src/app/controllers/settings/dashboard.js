@@ -129,12 +129,19 @@ angular.module("proton.controllers.Settings")
         {label: '10', value: 10, index: 8}
     ];
 
+    // Set default values for selects
+    $scope.spacePlus = $scope.spacePlusOptions[0];
+    $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
+    $scope.domainPlus = $scope.domainPlusOptions[0];
+    $scope.domainBusiness = $scope.domainBusinessOptions[0];
+    $scope.addressPlus = $scope.addressPlusOptions[0];
+    $scope.addressBusiness = $scope.addressBusinessOptions[0];
+    $scope.memberBusiness = $scope.memberBusinessOptions[0];
+
     /**
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        var spacePlus, spaceBusiness, domainPlus, domainBusiness, addressPlus, addressBusiness, memberBusiness;
-
         if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
             $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
             $scope.currentCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
@@ -146,58 +153,14 @@ angular.module("proton.controllers.Settings")
         }
 
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
-            var month = 60 * 60 * 24 * 30; // Time for a month in second
-
             $scope.organization = organization.data.Organization;
-            spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
-            spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
-            domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
-            domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
-            addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
-            addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
-            memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
-        }
-
-        if(angular.isDefined(spacePlus)) {
-            $scope.spacePlus = spacePlus;
-        } else {
-            $scope.spacePlus = $scope.spacePlusOptions[0];
-        }
-
-        if(angular.isDefined(spaceBusiness)) {
-            $scope.spaceBusiness = spaceBusiness;
-        } else {
-            $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
-        }
-
-        if(angular.isDefined(domainPlus)) {
-            $scope.domainPlus = domainPlus;
-        } else {
-            $scope.domainPlus = $scope.domainPlusOptions[0];
-        }
-
-        if(angular.isDefined(domainBusiness)) {
-            $scope.domainBusiness = domainBusiness;
-        } else {
-            $scope.domainBusiness = $scope.domainBusinessOptions[0];
-        }
-
-        if(angular.isDefined(addressPlus)) {
-            $scope.addressPlus = addressPlus;
-        } else {
-            $scope.addressPlus = $scope.addressPlusOptions[0];
-        }
-
-        if(angular.isDefined(addressBusiness)) {
-            $scope.addressBusiness = addressBusiness;
-        } else {
-            $scope.addressBusiness = $scope.addressBusinessOptions[0];
-        }
-
-        if(angular.isDefined(memberBusiness)) {
-            $scope.memberBusiness = memberBusiness;
-        } else {
-            $scope.memberBusiness = $scope.memberBusinessOptions[0];
+            $scope.spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
+            $scope.spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
+            $scope.domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
+            $scope.domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
+            $scope.addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
+            $scope.addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
+            $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
         }
     };
 
@@ -269,10 +232,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('ERROR'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {
