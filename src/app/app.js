@@ -56,25 +56,25 @@ angular.module("proton", [
     "proton.tools",
 
     // Directives
-    "proton.tooltip",
+    "proton.dropdown",
+    "proton.dropzone",
     "proton.emailField",
     "proton.enter",
-    "proton.squire",
-    "proton.locationTag",
-    "proton.dropzone",
-    "proton.labels",
-    "proton.move",
-    "proton.countdown",
-    "proton.dropdown",
     "proton.height",
     "proton.heightOutside",
-    "proton.sidebarHeight",
     "proton.labelHeight",
-    "proton.sample",
-    "proton.toggle",
-    "proton.responsiveComposer",
-    "proton.transformation",
+    "proton.labels",
     "proton.loaderTag",
+    "proton.locationTag",
+    "proton.move",
+    "proton.responsiveComposer",
+    "proton.sample",
+    "proton.sidebarHeight",
+    "proton.squire",
+    "proton.time",
+    "proton.toggle",
+    "proton.tooltip",
+    "proton.transformation",
 
     // Filters
     "proton.filters",
@@ -402,7 +402,7 @@ angular.module("proton", [
             return; // no need to redirect
         }
 
-        // now, redirect only not authenticated 
+        // now, redirect only not authenticated
         if (!!!authentication.isLoggedIn()) {
             event.preventDefault(); // stop current execution
             $state.go('login'); // go to login

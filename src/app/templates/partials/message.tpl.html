@@ -15,7 +15,7 @@ ng-class="{
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
-            <span class="time" ng-hide="toggleDetails === true">{{ message.Time | longReadableTime }}</span>
+            <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
         <i class="history fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -150,7 +150,7 @@ ng-class="{
     </div>
     <div class="frame" ng-show="message.expand === true">
         <p ng-if="message.ExpirationTime > 0" class="text-red">
-            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span countdown="{{ message.ExpirationTime }}"></span>
+            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime * 1000 }}" filter="delay" interval="1000"></span>
         </p>
         <div class="email" ng-class="{'plain': isPlain}" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
