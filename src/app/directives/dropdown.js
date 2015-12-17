@@ -43,8 +43,6 @@ angular.module("proton.dropdown", [])
             var dropdown = parent.find('.pm_dropdown');
             var next = element.next();
 
-            console.log(next);
-
             element.addClass('active');
 
             dropdown

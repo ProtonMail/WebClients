@@ -13,7 +13,7 @@
             <i class="fa fa-angle-down"></i>
         </a>
         <span class="pm_dropdown wide right labelDD">
-            <dropdown-labels messages="messages" save="saveLabels"></dropdown-labels>
+            <dropdown-labels messages="getMessages" save="saveLabels"></dropdown-labels>
         </span>
         <a href="" class="divider" ng-click="toggleStar(conversation)" pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}">
             <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
