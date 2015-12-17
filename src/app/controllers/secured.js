@@ -28,6 +28,7 @@ angular.module("proton.controllers.Secured", [])
     Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
+    $rootScope.discarded = []; // Store ID of message discarded
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $scope.settingsRoutes = [

@@ -41,8 +41,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
+                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
-                if(angular.isUndefined(current)) {
+                if(angular.isUndefined(current) && index === -1) {
                     // Add message
                     $rootScope.openMessage.push(message.ID);
                     $scope.messages.push(message);
