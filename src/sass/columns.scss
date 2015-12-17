@@ -341,6 +341,15 @@
 	}
 }
 
+@media (min-width: $wide) {
+	#pm_columns {
+		.list {
+			width: 620px;
+			min-width: 620px;
+		}
+	}
+}
+
 @media (max-width: $tablet-landscape) {
     #pm_columns {
     	margin: 0;
