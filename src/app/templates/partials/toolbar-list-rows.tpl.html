@@ -2,7 +2,7 @@
     <div class="main">
         <div class="pull-right">
             <span class="pm_buttons">
-                <a href="" class="pm_trigger" ng-dropdown>
+                <a href="" class="pm_trigger" dropdown>
                     <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wider">
@@ -45,7 +45,7 @@
                 <a href="" pt-tooltip="{{ 'SHOW_ALL' | translate }}" ng-click="clearFilter()">
                     <i class="fa fa-list"></i>
                 </a>
-                <a href="" class="fa fa-angle-down divider pm_trigger" ng-dropdown></a>
+                <a href="" class="fa fa-angle-down divider pm_trigger" dropdown></a>
                 <span class="pm_dropdown wide">
                     <a href="" ng-click="filterBy('unread')">
                         <i class="fa fa-eye-slash"></i> {{ 'SHOW_UNREAD' | translate }}
@@ -72,7 +72,7 @@
             <a href="" pt-tooltip="{{ 'DELETE' | translate }}" ng-click="delete()" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle divider"></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-            <a href="" class="pm_trigger open-label" ng-dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
+            <a href="" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>

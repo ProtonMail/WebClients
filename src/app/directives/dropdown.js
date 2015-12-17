@@ -1,6 +1,6 @@
 angular.module("proton.dropdown", [])
 
-.directive('ngDropdown', function ($timeout) {
+.directive('dropdown', function ($timeout) {
     return function (scope, element, attrs) {
         var animationDuration = 50;
         var timer;
