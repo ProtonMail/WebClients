@@ -39,28 +39,7 @@ angular.module("proton.transformation", [])
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote;
-                    var blockquotes = angular.element(element).find(quotes.join(', '));
-
-                    if(blockquotes.length === 0) {
-                        // Sort element according to their position in the DOM
-                        blockquotes.sort(function(a,b) {
-                            if(a === b) {
-                                return 0;
-                            }
-
-                            if(!a.compareDocumentPosition) {
-                                // support for IE8 and below
-                                return a.sourceIndex - b.sourceIndex;
-                            }
-
-                            if(a.compareDocumentPosition(b) & 2) {
-                                // b comes before a
-                                return 1;
-                            }
-
-                            return -1;
-                        });
-                    }
+                    var blockquotes = jQuery(element).find(quotes.join(', ')).first();
 
                     blockquote = _.first(blockquotes);
 
