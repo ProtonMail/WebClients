@@ -7,8 +7,7 @@
     </div>
     <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate method="post" class="pm_form">
         <p class="alert">
-        Password Managers such as <strong>LastPass</strong> may cause login issues
-        and are not recommended for use during our Beta.
+        Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.
         </p>
         <div class="wrapper">
             <div ng-if="!preInvited">
@@ -28,10 +27,18 @@
                     ng-readonly="readOnlyUsername"
                     id="Username"
                     class="dead"
+                    ng-change="checkAvailability(true)"
+                    ng-model-options="{ debounce: 600 }"
                     pt-tooltip="You can switch to protonmail.ch after account creation."
                     pt-placement="bottom">
                     <em class="usernameDomain">@protonmail.com</em>
                 </div>
+            </div>
+            <div ng-show="goodUsername">
+                <p class="alert alert-success"><i class="fa fa-check"></i> Email available!</p>
+            </div>
+            <div ng-show="badUsername">
+                <p class="alert alert-error"><i class="fa fa-times"></i> Email already taken.</p>
             </div>
             <label for="password">
                 <em class="num" ng-if="preInvited">1</em>
@@ -45,7 +52,7 @@
             ng-model="account.loginPassword"
             tabindex="2"
             type="password"
-            class="form-control"
+            class="form-control margin"
             placeholder="CHOOSE A LOGIN PASSWORD"
             maxlength="{{ maxPW }}"
             required />
@@ -77,7 +84,7 @@
             ng-model="account.mailboxPassword"
             tabindex="4"
             type="password"
-            class="form-control"
+            class="form-control margin"
             placeholder="CHOOSE A MAILBOX PASSWORD"
             required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
@@ -117,7 +124,8 @@
                 <p class="alert alert-error">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
         </div><!--/.wrapper-->
-        <div class="checkbox">
+        <p>&nbsp;</p>
+        <div class="checkbox" ng-show="false">
             <label for="optIn" class="optIn">
                 <input
                 tabindex="7"
@@ -125,15 +133,15 @@
                 name="optIn"
                 ng-init="account.optIn = true"
                 ng-model="account.optIn"
-                type="checkbox" /> Keep me updated about new features such as mobile apps!
+                type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
         </div>
         <p>&nbsp;</p>
         <button
         tabindex="8"
         type="submit"
-        class="pm_button primary"
-        ng-class="{ disabled: (networkActivity.loading() || !step1.$valid) }">{{ 'FINISH' | translate }}</button>
+        class="pm_button primary large"
+        ng-class="{ disabled: (networkActivity.loading() || !step1.$valid) }">{{ 'COMPLETE_SETUP' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">Already have an account?</a></p>
     </form>

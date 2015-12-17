@@ -107,12 +107,20 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
             'panel@signup': {
-                templateUrl: 'templates/views/sign-up.tpl.html'
+                templateUrl: 'templates/views/sign-up.tpl.html' // this doesnt exist.
             }
         },
         onEnter: function($rootScope, $state) {
+
+            // This to enables anyone to create an account. 
+            // Disable or remove to activate Waiting List
+            $rootScope.allowedNewAccount = true;
+
             if ($rootScope.allowedNewAccount!==true) {
                 $state.go('login');
+            }
+            else {
+                $state.go('step1');
             }
         }
     })

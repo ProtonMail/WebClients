@@ -133,14 +133,19 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         return deferred.promise;
     };
 
-    $scope.checkAvailability = function() {
+    /* manual means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually */
+    $scope.checkAvailability = function( manual ) {
 
         var deferred = $q.defer();
 
         $log.debug('checkAvailability');
 
+        // reset
+        $scope.goodUsername = undefined;
+        $scope.badUsername = undefined;
+
         // user came from pre-invite so we can not check if it exists
-        if ($rootScope.allowedNewAccount===true) {
+        if ($rootScope.allowedNewAccount===true && manual !== true ) {
             $scope.creating = true;
             $rootScope.$broadcast('creating');
             deferred.resolve(200);
@@ -155,14 +160,26 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                         deferred.reject(error_message);
                     }
                     else if (parseInt(response.Available)===0) {
-                        $('#Username').focus();
-                        deferred.reject('Username already taken.');
-                        $log.debug('username taken');
+                        if ( manual === true ) {
+                            $scope.badUsername = true;
+                            deferred.resolve(200);
+                        }
+                        else {
+                            $('#Username').focus();
+                            deferred.reject('Username already taken.');
+                            $log.debug('username taken');
+                        }
                     }
                     else {
-                        $scope.creating = true;
-                        $rootScope.$broadcast('creating');
-                        deferred.resolve(200);
+                        if ( manual === true ) {
+                            $scope.goodUsername = true;
+                            deferred.resolve(200);
+                        }
+                        else {
+                            $scope.creating = true;
+                            $rootScope.$broadcast('creating');
+                            deferred.resolve(200);
+                        }
                     }
                 }
             );
