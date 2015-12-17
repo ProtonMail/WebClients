@@ -143,11 +143,13 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // reset
         $scope.goodUsername = undefined;
         $scope.badUsername = undefined;
+        $scope.checkingUsername = true;
 
         // user came from pre-invite so we can not check if it exists
         if ($rootScope.allowedNewAccount===true && manual !== true ) {
             $scope.creating = true;
             $rootScope.$broadcast('creating');
+            $scope.checkingUsername = false;
             deferred.resolve(200);
         }
         else {
@@ -162,6 +164,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     else if (parseInt(response.Available)===0) {
                         if ( manual === true ) {
                             $scope.badUsername = true;
+                            $scope.checkingUsername = false;
                             deferred.resolve(200);
                         }
                         else {
@@ -173,17 +176,21 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     else {
                         if ( manual === true ) {
                             $scope.goodUsername = true;
+                            $scope.checkingUsername = false;
                             deferred.resolve(200);
                         }
                         else {
                             $scope.creating = true;
                             $rootScope.$broadcast('creating');
+                            $scope.checkingUsername = false;
                             deferred.resolve(200);
                         }
                     }
                 }
             );
         }
+
+        // $scope.checkingUsername = false;
 
         return deferred.promise;
     };

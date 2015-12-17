@@ -27,18 +27,23 @@
                     ng-readonly="readOnlyUsername"
                     id="Username"
                     class="dead"
+                    ng-class="{ 
+                        'success':goodUsername,
+                        'error':badUsername
+                    }"
                     ng-change="checkAvailability(true)"
                     ng-model-options="{ debounce: 600 }"
                     pt-tooltip="You can switch to protonmail.ch after account creation."
                     pt-placement="bottom">
                     <em class="usernameDomain">@protonmail.com</em>
+                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em> 
                 </div>
             </div>
             <div ng-show="goodUsername">
-                <p class="alert alert-success"><i class="fa fa-check"></i> Email available!</p>
+                <p class="alert alert-success animated tada"><i class="fa fa-check"></i> Email available!</p>
             </div>
             <div ng-show="badUsername">
-                <p class="alert alert-error"><i class="fa fa-times"></i> Email already taken.</p>
+                <p class="alert alert-error animated shake"><i class="fa fa-times"></i> Email already taken.</p>
             </div>
             <label for="password">
                 <em class="num" ng-if="preInvited">1</em>
