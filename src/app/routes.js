@@ -112,7 +112,7 @@ angular.module('proton.routes', [
         },
         onEnter: function($rootScope, $state) {
 
-            // This to enables anyone to create an account. 
+            // This to enables anyone to create an account.
             // Disable or remove to activate Waiting List
             $rootScope.allowedNewAccount = true;
 
@@ -717,11 +717,7 @@ angular.module('proton.routes', [
                 }
             },
             subscriptions: function(user, Payment, networkActivityTracker) {
-                if(user.Role === 2) {
-                    return networkActivityTracker.track(Payment.subscriptions());
-                } else {
-                    return true;
-                }
+                return networkActivityTracker.track(Payment.subscriptions());
             }
         },
         views: {

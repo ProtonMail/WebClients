@@ -21,7 +21,6 @@ angular.module("proton.controllers.Settings")
 ) {
     // Default values for organization and subscription
     $scope.organization = null;
-    $scope.subscription = null;
 
     // Initialize default currency
     $scope.currentCurrency = 'CHF';
@@ -32,14 +31,7 @@ angular.module("proton.controllers.Settings")
     $scope.futureBillingCycle = 1;
 
     // Initialize default values for the current object
-    $scope.current = {
-        Plan: 'free',
-        Use2FA: false,
-        MaxDomains: 1,
-        MaxMembers: 1,
-        MaxAddresses: 1,
-        MaxSpace: 1000 * 1000 * 1000
-    };
+    $scope.current = null;
 
     // Prices
     $scope.plusPrice = {1: 5, 12: 47};
@@ -56,7 +48,17 @@ angular.module("proton.controllers.Settings")
         {label: '7.000 MB', value: 7000 * 1000 * 1000, index: 2},
         {label: '8.000 MB', value: 8000 * 1000 * 1000, index: 3},
         {label: '9.000 MB', value: 9000 * 1000 * 1000, index: 4},
-        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 5}
+        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 5},
+        {label: '11.000 MB', value: 11000 * 1000 * 1000, index: 6},
+        {label: '12.000 MB', value: 12000 * 1000 * 1000, index: 7},
+        {label: '13.000 MB', value: 13000 * 1000 * 1000, index: 8},
+        {label: '14.000 MB', value: 14000 * 1000 * 1000, index: 9},
+        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 10},
+        {label: '16.000 MB', value: 16000 * 1000 * 1000, index: 11},
+        {label: '17.000 MB', value: 17000 * 1000 * 1000, index: 12},
+        {label: '18.000 MB', value: 18000 * 1000 * 1000, index: 13},
+        {label: '19.000 MB', value: 19000 * 1000 * 1000, index: 14},
+        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 15}
     ];
 
     $scope.spaceBusinessOptions = [
@@ -142,18 +144,10 @@ angular.module("proton.controllers.Settings")
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-            $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
-            $scope.currentCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
-            $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
-            $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-            $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-            $scope.current = subscriptions.data.Subscriptions[0].Cart.Next;
-            $scope.future = subscriptions.data.Subscriptions[0].Cart.Next;
-        }
-
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
             $scope.organization = organization.data.Organization;
+            $scope.current = _.pick(organization.data.Organization, 'Use2FA', 'MaxDomains', 'MaxMembers', 'MaxAddresses', 'MaxSpace');
+            $scope.future = _.pick(organization.data.Organization, 'Use2FA', 'MaxDomains', 'MaxMembers', 'MaxAddresses', 'MaxSpace');
             $scope.spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
             $scope.domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
             $scope.domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
@@ -163,6 +157,19 @@ angular.module("proton.controllers.Settings")
             if($scope.organization.MaxMembers > 1) {
                 $scope.spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
                 $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
+            }
+        }
+
+        if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
+            $scope.subscription = subscriptions.data.Subscriptions[0];
+            $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
+            $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
+            $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+            $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+
+            if($scope.current) {
+                $scope.current.Plan = subscriptions.data.Subscriptions[0].Plan;
+                $scope.future.Plan = subscriptions.data.Subscriptions[0].Plan;
             }
         }
     };
@@ -221,16 +228,8 @@ angular.module("proton.controllers.Settings")
                     Payment.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             confirmModal.deactivate();
-                            notify({message: 'You are currently unsubscribed, your features will be disabled on ' + $filter('date')($scope.subscription.PeriodEnd * 1000, 'date', 'medium'), classes: 'notification-success'});
+                            notify({message: 'You are currently unsubscribed, your features will be disabled on ' + $filter('date')($scope.subscription.PeriodEnd * 1000, 'medium'), classes: 'notification-success'});
                             _.extend($scope.subscription, result.data.Subscriptions[0]);
-                            $scope.current = {
-                                Plan: 'free',
-                                Use2FA: false,
-                                MaxDomains: 1,
-                                MaxMembers: 1,
-                                MaxAddresses: 1,
-                                MaxSpace: 1000 * 1000 * 1000
-                            };
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -266,28 +265,10 @@ angular.module("proton.controllers.Settings")
      */
     $scope.choose = function(name) {
         var now = moment().unix();
-        var future;
-        var promises = [];
         var current = $scope.current;
-        var configuration = {
-            Organization: {
-                DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName,
-                EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
-            },
-            Subscription: {
-                Amount: $scope.amount(name),
-                Currency: $scope.futureCurrency,
-                BillingCycle: $scope.futureBillingCycle,
-                Time: now,
-                PeriodStart: now,
-                ExternalProvider: 'Stripe'
-            },
-            Cart: {}
-        };
-
-        if($scope.current.Plan === 'free') {
-            current = null;
-        }
+        var promises = [];
+        var future;
+        var configuration;
 
         switch (name) {
             case 'plus':
@@ -314,8 +295,24 @@ angular.module("proton.controllers.Settings")
                 break;
         }
 
-        configuration.Cart.Previous = current;
-        configuration.Cart.Next = future;
+        configuration = {
+            Organization: {
+                DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName,
+                EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
+            },
+            Subscription: {
+                Amount: $scope.amount(name),
+                Currency: $scope.futureCurrency,
+                BillingCycle: $scope.futureBillingCycle,
+                Time: now,
+                PeriodStart: now,
+                ExternalProvider: 'Stripe'
+            },
+            Cart: {
+                Previous: current,
+                Next: future
+            }
+        };
 
         promises.push(Payment.plan(configuration));
         promises.push(Payment.sources());
@@ -329,19 +326,17 @@ angular.module("proton.controllers.Settings")
                 // Open payment modal
                 paymentModal.activate({
                     params: {
-                        create: organization === true,
+                        create: organization === true, // new?
                         card: card,
                         configuration: configuration,
                         change: function(organization) {
                             Payment.subscriptions().then(function(subscriptions) {
                                 if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-                                    $scope.subscription = subscriptions.data.Subscriptions[0].Subscription;
-                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
-                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Subscription.Currency;
-                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].Subscription.BillingCycle;
-                                    $scope.current = subscriptions.data.Subscriptions[0].Cart.Next;
-                                    $scope.future = subscriptions.data.Subscriptions[0].Cart.Next;
+                                    $scope.subscription = subscriptions.data.Subscriptions[0];
+                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
                                     $scope.organization = organization;
                                 }
                             });

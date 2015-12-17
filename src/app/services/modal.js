@@ -429,11 +429,11 @@ angular.module("proton.modals", [])
             this.cardTypeIcon = 'fa-credit-card';
             this.status = params.card.Status;
             this.brand = params.card.Brand;
-            this.number = '**** **** **** ' + params.card.Last4;
+            this.number = '•••• •••• •••• ' + params.card.Last4;
             this.fullname = params.card.Name;
             this.month = params.card.ExpMonth;
             this.year = params.card.ExpYear;
-            this.cvc = '***';
+            this.cvc = '•••';
             this.change = false;
             // Functions
             this.submit = function() {
@@ -471,16 +471,19 @@ angular.module("proton.modals", [])
 
                 if(Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
                 if(Stripe.card.validateExpiry(this.month, this.year) === false) {
                     notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
                 if(Stripe.card.validateCVC(this.cvc) === false) {
                     notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
+                    this.process = false;
                     return false;
                 }
 
@@ -523,11 +526,11 @@ angular.module("proton.modals", [])
                 var card = _.first(params.card.data.Sources);
 
                 this.source = card.ExternalSourceID;
-                this.number = '**** **** **** ' + card.Last4;
+                this.number = '•••• •••• •••• ' + card.Last4;
                 this.fullname = card.Name;
                 this.month = card.ExpMonth;
                 this.year = card.ExpYear;
-                this.cvc = '***';
+                this.cvc = '•••';
                 this.change = false;
             } else {
                 this.change = true;

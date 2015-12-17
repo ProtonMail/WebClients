@@ -71,14 +71,14 @@
                     </table>
                 </div>
             </section>
-            <section class="setting pm_form pull-right" ng-if="subscription !== null">
+            <section class="setting pm_form pull-right" ng-if="subscription.Plan !== 'free'">
                 <legend>{{ 'CURRENT_SUBSCRIPTION' | translate }}</legend>
                 <div class="well">
                     <table class="pm_table plain" id="tableSubscription">
                         <tr>
                             <th>{{ 'PLAN' | translate }}: </th>
                             <td colspan="2">
-                                <strong>{{ current.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
+                                <strong>{{ subscription.Plan | capitalize }} {{ 'PLAN' | translate }}</strong>
                             </td>
                         </tr>
                         <tr>
@@ -105,13 +105,13 @@
                                 <strong>{{ organization.MaxMembers }}</strong>
                             </td>
                         </tr>
-                        <tr ng-hide="current.Plan === 'free'">
+                        <tr>
                             <th>{{ 'PRICE' | translate }}: </th>
                             <td colspan="2">
                                 <strong>{{ subscription.Amount / 100 | currency: subscription.Currency }}</strong>
                             </td>
                         </tr>
-                        <tr ng-hide="current.Plan === 'free'">
+                        <tr>
                             <th>{{ 'BILLING' | translate }}:</th>
                             <td colspan="2">
                                 <strong ng-show="currentBillingCycle === 1">{{ 'MONTHLY' | translate }}</strong>
@@ -124,7 +124,7 @@
                                 <strong>{{ subscription.PeriodStart * 1000 | date }} - {{ subscription.PeriodEnd * 1000 | date }}</strong>
                             </td>
                         </tr>
-                        <tr ng-hide="current.Plan === 'free'">
+                        <tr>
                             <th>{{ 'PAYMENT' | translate }}:</th>
                             <td>
                                 <strong>
@@ -171,7 +171,7 @@
                         </div>
                     </header>
                     <div class="plans vertical">
-                        <div class="plan" ng-class="{'selected': current.Plan === 'basic'}" ng-if="false">
+                        <div class="plan" ng-class="{'selected': subscription.Plan === 'basic'}" ng-if="false">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -193,14 +193,14 @@
                             <div class="price">
                                 <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
                             </div>
-                            <div class="action" ng-class="{'white': current.Plan === 'basic'}">
+                            <div class="action" ng-class="{'white': subscription.Plan === 'basic'}">
                                 <a href="#">
                                     <strong>{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="plan" ng-class="{'selected': current.Plan === 'plus'}">
+                        <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -274,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="plan middle" ng-class="{'selected': current.Plan === 'business'}">
+                        <div class="plan middle" ng-class="{'selected': subscription.Plan === 'business'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -355,7 +355,7 @@
                             </div>
                         </div>
 
-                        <div class="plan" ng-class="{'selected': current.Plan === 'enterprise'}">
+                        <div class="plan" ng-class="{'selected': subscription.Plan === 'enterprise'}">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <h3>
                                 ProtonMail
@@ -398,7 +398,7 @@
                         </div>
                     </div>
                 </form>
-                <p ng-hide="current.Plan === 'free'">
+                <p ng-hide="subscription.Plan === 'free'">
                     <a href="" ng-click="free()" pt-tooltip="{{ 'SWITCH_TO_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
                 </p>
             </section>
