@@ -103,24 +103,27 @@ angular.module("proton.cache", [])
 
     /**
      * Manage time per conversation and location
+     * @param {Object} message
      */
     var time = function(message) {
         var conversation = api.getConversationCached(message.ConversationID);
 
         if(angular.isDefined(conversation)) {
-            var found = _.findWhere(authentication.user.Addresses, {Email: message.Sender.Address});
             var index = conversationsCached.indexOf(conversation);
 
             conversation.Times = conversation.Times || {};
 
-            _.each(message.LabelIDs, function(labelID) {
-                if(angular.isDefined(found)) {
-                    conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.sent] = message.Time;
-                    conversation.Times[CONSTANTS.MAILBOX_IDENTIFIERS.drafts] = message.Time;
-                } else {
+            if(angular.isArray(message.LabelIDs)) {
+                _.each(message.LabelIDsAdded, function(labelID) {
                     conversation.Times[labelID] = message.Time;
-                }
-            });
+                });
+            }
+
+            if(angular.isArray(message.LabelIDsAdded)) {
+                _.each(message.LabelIDsAdded, function(labelID) {
+                    conversation.Times[labelID] = message.Time;
+                });
+            }
 
             conversationsCached[index] = conversation;
         }
@@ -739,7 +742,8 @@ angular.module("proton.cache", [])
             var index = messagesCached.indexOf(current);
             var message = new Message();
 
-            _.extend(message, current, event.Message);
+            _.extend(message, current);
+            _.extend(message, event.Message);
 
             if(JSON.stringify(message) === JSON.stringify(current)) {
                 deferred.resolve();
@@ -755,10 +759,9 @@ angular.module("proton.cache", [])
                     delete message.LabelIDsAdded;
                 }
 
-                time(message);
-
                 messagesCached[index] = message;
                 manageCounters(current, messagesCached[index], 'message');
+                time(message);
                 deferred.resolve();
            }
         } else {

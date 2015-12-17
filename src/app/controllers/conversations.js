@@ -264,7 +264,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(angular.isObject(element.Times)) {
             var loc = tools.currentLocation();
 
-            return element.Times[loc];
+            return element.Times[loc] || element.Time;
         } else {
             return element.Time;
         }
