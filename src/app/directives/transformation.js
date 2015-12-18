@@ -39,7 +39,7 @@ angular.module("proton.transformation", [])
             var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote;
-                    var blockquotes = jQuery(element).find(quotes.join(', ')).first();
+                    var blockquotes = jQuery(element).find(quotes.join(', ')).first(); // Reduce the set of matched elements to the first in the set.
 
                     blockquote = _.first(blockquotes);
 

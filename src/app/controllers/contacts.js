@@ -30,6 +30,10 @@ angular.module("proton.controllers.Contacts", [
     $scope.editing = false;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
+    $scope.example = [
+        authentication.user.Contacts[0],
+        authentication.user.Contacts[1]
+    ];
 
     // Listeners
     $scope.$on('updateContacts', $scope.updateContacts);
