@@ -10,9 +10,9 @@ angular.module("proton.time", [])
             }, interval, false); // don't invoke apply
 
             function updateTime() {
-                var newTitle = $filter(filter)($attrs.time);
+                var text = $filter(filter)($attrs.time);
 
-                angular.element($element).text(newTitle);
+                angular.element($element).text(text);
             }
 
             updateTime();

@@ -4,7 +4,7 @@ angular.module("proton.filters",[])
     return function (input) {
         // get the current moment
         var now = moment();
-        var then = moment(input);
+        var then = moment.unix(input);
 
         if(then.isAfter(now)) {
             // get the difference from now to then in ms

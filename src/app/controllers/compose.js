@@ -11,17 +11,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $timeout,
     $translate,
     Attachment,
-    CONSTANTS,
-    confirmModal,
-    Contact,
-    Message,
-    User,
     attachments,
     authentication,
     cache,
+    confirmModal,
+    CONSTANTS,
+    Contact,
+    Message,
+    networkActivityTracker,
     notify,
     pmcw,
-    tools
+    tools,
+    User
 ) {
     // Variables
     var promiseComposerStyle;
@@ -1275,6 +1276,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         var events = [];
                                         var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
+                                        $rootScope.openMessage = $rootScope.openMessage || [];
                                         $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
                                         message.sending = false; // Change status
                                         result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
