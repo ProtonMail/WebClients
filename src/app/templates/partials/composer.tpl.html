@@ -9,7 +9,7 @@
         ng-style="{'z-index': message.zIndex}"
         ng-class="{
         'minimized': message.minimized,
-        'blur': (!!!composerIsSelected(message) || message.loading()),
+        'blur': (!!!composerIsSelected(message)),
         'maximized': message.maximized,
         'normalized': !message.maximized && !message.minimized,
         'expandRecipients': message.fields,
@@ -334,7 +334,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'primary': message.Attachments && message.Attachments.length > 0,
-                    'disabled': message.loading()
+                    'dead': message.loading()
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -347,7 +347,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'encrypt',
                     'primary': message.IsEncrypted === 1,
-                    'disabled': message.loading()
+                    'dead': message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
@@ -360,7 +360,7 @@
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'expiration',
                     'primary': message.ExpirationTime > 0,
-                    'disabled': message.loading()
+                    'dead': message.loading()
                 }"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
@@ -374,7 +374,7 @@
                 <div class="pull-right">
                     <button
                     class="pm_button"
-                    ng-disabled="message.loading() || composerIsSelected(message) === false"
+                    ng-class="{ 'dead': message.loading() || composerIsSelected(message) === false }"
                     ng-click="close(message, true, false)"
                     pt-tooltip="{{ 'DELETE_THE_DRAFT' | translate }}"
                     pt-placement="top">
@@ -383,15 +383,14 @@
                     </button>
                     <button
                     class="pm_button"
-                    ng-disabled="message.loading() || composerIsSelected(message) === false"
+                    ng-class="{ 'dead': message.loading() || composerIsSelected(message) === false }"                    
                     ng-click="save(message, false, false, true)"
-                    pt-tooltip="{{ 'SAVE' | translate }}"
+                    pt-tooltip="{{ 'SAVE' | translate }}" 
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
                     <button class="pm_button primary" ng-disabled="message.loading() || composerIsSelected(message) === false" ng-click="send(message)">
-                        <i class="fa" ng-class="{ 'fa-send': !message.loading(), 'fa-circle-o-notch fa-spin': message.loading() }"></i>
                         <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>

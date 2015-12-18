@@ -33,6 +33,9 @@
 				pointer-events: none;
 				opacity: .5;
 			}
+			.dead {
+				pointer-events: none;
+			}
 		}
 		&.attachmentsOpen.moreAttachments {
 			.previews {
