@@ -55,6 +55,7 @@
 <div id="pm_background" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false" ng-hide="printMode"></div>
 
 <div id="pm_slow">Loading ProtonMail...</div>
+<div id="pm_slow2" style="display:none;">Loading Message...</div>
 <div id="loading_pm">
     <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
@@ -76,5 +77,16 @@
 <% scripts.forEach(function (file) { %>
     <script type="text/javascript" src="/<%= file %>" defer></script>
 <% }); %>
+
+<script type="text/javascript">
+    if(window.location.href.indexOf("/eo/") > -1) {
+        document.getElementById('pm_slow').style.display = 'none';
+        document.getElementById('pm_slow2').style.display = 'block';
+    }
+    else {
+        document.getElementById('pm_slow').style.display = 'block';
+        document.getElementById('pm_slow2').style.display = 'none';
+    }
+</script>
 </body>
 </html>

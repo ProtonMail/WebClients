@@ -434,7 +434,7 @@ angular.module('proton', [
             $rootScope.scrollToBottom = false;
         }
 
-        $('#loading_pm, #pm_slow').remove();
+        $('#loading_pm, #pm_slow, #pm_slow2').remove();
 
     });
 })
