@@ -11,15 +11,94 @@
     <a href="#" class="searchBtn" ng-click="openSearchModal();">
         <i class="fa fa-search"></i>
     </a>
-    <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()">
-        <img src="assets/img/snackie.png" ng-show="snackies" id="snackie" class="animated infinite rubberBand">
-        <button  type="button" class="advanced" ng-click="openSearchModal(params.searchMessageInput)" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
-            <i class="fa fa-angle-down"></i>
-        </button>
-        <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
-        <button type="submit">
-            <i class="fa fa-search"></i>
-        </button>
+    <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }">
+        <fieldset>
+            <img src="assets/img/snackie.png" ng-show="snackies" id="snackie" class="animated infinite rubberBand">
+            <button  type="button" class="advanced" ng-click="advancedSearch = !advancedSearch;" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+                <i class="fa fa-angle-down" ng-show="!advancedSearch"></i>
+                <i class="fa fa-angle-up" ng-show="advancedSearch"></i>
+            </button>
+            <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
+            <button type="submit" ng-show="advancedSearch !== true">
+                <i class="fa fa-search"></i>
+            </button>
+            <button id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="advancedSearch = false">
+                <i class="fa fa-times"></i>
+            </button>
+        </fieldset>
+        <div class="pm_form pm_grid" id="advancedSearchDropdown" ng-show="advancedSearch === true">
+
+            <div class="row">
+                <div class="col-1-2">
+                    <label for="search_keywords" class="ng-binding">Keywords</label>
+                    <input id="search_keywords" type="text" placeholder="Keywords" ng-model="params.searchMessageInput" class="ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-1-2">
+                    <label for="search_folder" class="ng-binding">Location</label>
+                    <span class="pm_select">
+                        <select id="search_folder">
+                            <optgroup label="Default">
+                                <option value="-1" selected="selected" class="ng-binding">All</option>
+                            </optgroup>
+                            <optgroup label="Folders">
+                                <!-- ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="0" class="ng-binding ng-scope">inbox</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="1" class="ng-binding ng-scope">drafts</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="2" class="ng-binding ng-scope">sent</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="3" class="ng-binding ng-scope">trash</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="4" class="ng-binding ng-scope">spam</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="10" class="ng-binding ng-scope">starred</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="6" class="ng-binding ng-scope">archive</option><!-- end ngRepeat: (key, value) in ctrl.folders -->
+                            </optgroup>
+                            <optgroup label="Labels">
+                                <!-- ngRepeat: label in ctrl.labels --><option value="bRe_1ImRewuOoyUQON9dQbnI-h8kKLV-wMQg-9PyiVraS-mJt-ZTeuEBRuHvmB4CNgTDpZgWEaHNDmIP-Ch70g==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Password</option><!-- end ngRepeat: label in ctrl.labels --><option value="UHTmx8KEXBUuZh7uMrnCvW-HR1jndosW--rPK_Y0lLT6SzyCKtjFBknxKBdB17KISEurWGXoyGCU0c_A3mBTBw==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Trello</option><!-- end ngRepeat: label in ctrl.labels --><option value="-0bGYCZ_xBk4tnm00HacTL28ybGylp-feOnQ9U8MalzOvXsfw4oeoDs1Hv1_avbcEQW0f7fdHwOqwiQEMygcyA==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Design</option><!-- end ngRepeat: label in ctrl.labels --><option value="cO6RgDJwoHFScLqIkVnRD9luDVkh20EDto1aIHVHU43-dJlREzFcUjS-c7bB-_qlnxBgwAShddHZ4UDdu6RswQ==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Security</option><!-- end ngRepeat: label in ctrl.labels --><option value="ksNBBvr5U-7dmHLRpaLGqUJU5AT5KR6G2JFi1bKZi5M5DgfM9-iSBEI_yUDr1aPVcoPlVgE9YOWPqgQ47s0yEg==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Info</option><!-- end ngRepeat: label in ctrl.labels --><option value="4_c_oE1fZWj_pRP-A_5U5Yst7eAw4x4HtohPtPzUzAyU0cOCEW6kBXloElL1LZvaoYDHrwxrX67BkVrwK6DqBg==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Administration</option><!-- end ngRepeat: label in ctrl.labels --><option value="zqXdlaZdFoaEDWMYLW-P3pp93LszB9aT0iMml1lPlaxF0UTGUMyhqkl3i5T1SP7u6-9jWfhNBbM88sXUYvB9dw==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">SEO</option><!-- end ngRepeat: label in ctrl.labels --><option value="0qYKXNxYlV-X6z7_rqqncyMAkgsI05ILjYRfh8rpCwn9MMmgWjbs4OTjd5aOOsC9WsZhZZOJxz2zOsNbxtF9IA==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">DDOS</option><!-- end ngRepeat: label in ctrl.labels -->
+                            </optgroup>
+                        </select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="ng-binding">Attachments</label>
+                <div class="radio">
+                    <label for="attachments_all" class="ng-binding">
+                        <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" class="ng-pristine ng-untouched ng-valid" name="1651"> All
+                    </label>
+                    <label for="attachments_yes" class="ng-binding">
+                        <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1" class="ng-pristine ng-untouched ng-valid" name="1652"> Yes
+                    </label>
+                    <label for="attachments_no" class="ng-binding">
+                        <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" class="ng-pristine ng-untouched ng-valid" name="1653"> No
+                    </label>
+                </div>
+            </div>
+
+            <div class="row margin">
+                <div class="col-1-2">
+                    <label for="search_sender" class="ng-binding">Sender</label>
+                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="From" class="ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-1-2">
+                    <label for="search_recipient" class="ng-binding">Recipient</label>
+                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="To" class="ng-pristine ng-untouched ng-valid">
+                </div>
+            </div>
+
+            <div class="row margin">
+                <div class="col-1-2">
+                    <label for="search_start" class="ng-binding">Start Date</label>
+                    <span class="input-icon">
+                        <em class="fa fa-calendar"></em>
+                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
+                    </span>
+                </div>
+                <div class="col-1-2">
+                    <label for="search_end" class="ng-binding">End Date</label>
+                    <span class="input-icon">
+                        <em class="fa fa-calendar"></em>
+                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
+                    </span>
+                </div>
+            </div>
+
+            <button type="submit" class="pm_button primary pull-right">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>        
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
         <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
