@@ -399,16 +399,33 @@ angular.module('proton.routes', [
                         encryptedToken = encryptedToken.data.Token;
                     }
 
-                    $scope.unlock = function() {
-                        var promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
+                    $scope.trying = false;
+                    $scope.tryPass = '';
 
-                        promise.then(function(decryptedToken) {
-                            window.sessionStorage['proton:decrypted_token'] = decryptedToken;
-                            window.sessionStorage['proton:encrypted_password'] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
-                            $state.go('eo.message', {tag: $stateParams.tag});
-                        }, function(err) {
-                            notify({message: err.message, classes: 'notification-danger'});
-                        });
+                    $scope.unlock = function() {
+
+                        if ($scope.trying !== true) {
+                            
+                            $scope.trying = true;
+
+                            clearTimeout($scope.tryPass);
+
+                            $scope.tryPass = setTimeout( function() {
+                                var promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
+
+                                promise.then(function(decryptedToken) {
+                                    window.sessionStorage['proton:decrypted_token'] = decryptedToken;
+                                    window.sessionStorage['proton:encrypted_password'] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
+                                    $state.go('eo.message', {tag: $stateParams.tag});
+                                    $scope.trying = false;
+                                }, function(err) {
+                                    notify({message: err.message, classes: 'notification-danger'});
+                                    $scope.trying = false;
+                                });
+                            }, 600);
+
+                        }
+                        
                     };
                 }
             }

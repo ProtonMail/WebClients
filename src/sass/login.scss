@@ -14,19 +14,25 @@ body#login-unlock {
 	#pm_loader {
 		display: none;
 	}
-	#pm_login img.logo {
-		margin-bottom: 2rem;
-	}
 }
 body#login {
 	background-color: #667cbd;
 	background: url('/assets/img/login.jpg') #667cbd center center no-repeat;
 	background-size: cover;
+}
+
+body#login-unlock,
+body#login,
+body#eo-unlock {
 	#pm_login {
 		img.logo {
 			margin-bottom: 2rem;
 		}
 	}
+}
+
+body#eo-unlock {
+	background: $dark;
 }
 
 #pm_login,
