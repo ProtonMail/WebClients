@@ -1271,26 +1271,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         var events = [];
                                         var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
-                                        message.sending = false;
+                                        $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
+                                        message.sending = false; // Change status
                                         result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                         result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                        result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
-                                        result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
-                                        events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent});
+                                        result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
+                                        result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
+                                        events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
-                                        if (result.Parent) {
+                                        if(result.Parent) {
                                             events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
-
-                                            // Go back
-                                            if(result.Parent.ID === $stateParams.id) {
-                                                $state.go('^');
-                                            }
                                         }
 
-                                        cache.events(events);
-                                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
-                                        $scope.close(message, false, false);
-                                        deferred.resolve(result);
+                                        cache.events(events); // Send events to the cache manager
+                                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
+                                        $scope.close(message, false, false); // Close the composer window
+                                        deferred.resolve(result); // Resolve finally the promise
                                     }
                                 }, function(error) {
                                     message.sending = false;

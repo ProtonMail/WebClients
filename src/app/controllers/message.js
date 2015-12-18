@@ -35,8 +35,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $scope.$on('refreshMessage', function() {
+        var index = $rootScope.openMessage.indexOf($scope.message.ID);
+
         cache.getMessage($scope.message.ID).then(function(message) {
             _.extend($scope.message, message);
+
+            if(index !== -1) {
+                $scope.initView();
+                $rootScope.openMessage.splice(index, 1);
+            }
         });
     });
 
@@ -171,31 +178,21 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Method called at the initialization of this controller
      */
     $scope.initialization = function() {
-        var promise;
-
         if($rootScope.printMode === true) {
-            promise = cache.getMessage($stateParams.id);
-
-            promise.then(function(message) {
+            networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
-            });
-
-            // Track promise for the print case
-            networkActivityTracker.track(promise);
+            }));
         } else {
             var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
-            promise = cache.getMessage($scope.message.ID);
-
-            promise.then(function(message) {
-                _.extend($scope.message, message);
-
-                if(index !== -1) {
+            if(index !== -1) {
+                cache.getMessage($scope.message.ID).then(function(message) {
+                    _.extend($scope.message, message);
                     $scope.initView();
                     $rootScope.openMessage.splice(index, 1);
-                }
-            });
+                });
+            }
         }
     };
 
