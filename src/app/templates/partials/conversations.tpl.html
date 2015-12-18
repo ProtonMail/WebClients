@@ -32,9 +32,7 @@
         </tr>
     </table>
 
-    <div 
-    ng-repeat="conversation in conversations track by conversation.ID" 
-    class="message"
+    <div ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-click="click(conversation)"
     ng-class="{
         unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
         selected: conversation.Selected,
@@ -43,14 +41,13 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
-        <!-- <pre>{{ conversation }}</pre> -->
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <aside>
             <span class="pm_checkbox">
                 <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
             </span>
         </aside>
-        <header ng-click="click(conversation)">
+        <header>
             <p>
                 <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 <span title="{{ conversation.Subject }}">
@@ -66,7 +63,7 @@
                 <span class="time">{{ time(conversation) | readableTime }}</span>
             </p>
         </header>
-        <article ng-click="click(conversation)">
+        <article>
             <p class="pm_labels">
                 <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
@@ -88,8 +85,7 @@
     <div
     class="message"
     ng-repeat="conversation in conversations track by conversation.ID"
-    ng-swipe-left="swipeLeft(conversation)"
-    ng-swipe-right="swipeRight(conversation)"
+    ng-click="click(conversation)"
     ng-class="{
         unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
         selected: conversation.Selected,
@@ -98,7 +94,6 @@
         attachments: conversation.NumAttachments > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
-        <!-- <pre>{{ conversation }}</pre>  -->
         <div class="dumpstered" ng-show="conversation.dumpstered === true">Moved to Trash</div>
         <div class="spamified" ng-show="conversation.spamified === true">Moved to Spam</div>
         <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
@@ -111,7 +106,7 @@
                 <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
             </a>
         </span>
-        <span class="sender" ng-click="click(conversation)">
+        <span class="sender">
             <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders">
                 {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
@@ -121,7 +116,7 @@
             </span>
         </span>
         <span class="placeholderSpan"><span>&nbsp;</span></span>
-        <span class="subject" ng-click="click(conversation)">
+        <span class="subject">
             <span title="{{ conversation.Subject }}">
                 {{ conversation.Subject }}
                 <location-tag class="locTag"></location-tag>
@@ -135,6 +130,6 @@
         </span>
         <span class="size">{{ conversation.TotalSize || conversation.Size | humanSize }}</span>
         <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-        <span class="time" ng-click="click(conversation)">{{ time(conversation) | readableTime }}</span>
+        <span class="time">{{ time(conversation) | readableTime }}</span>
     </div>
 </div>
