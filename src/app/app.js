@@ -8,6 +8,7 @@ angular.module('proton', [
     'pascalprecht.translate',
     'pikaday',
     'ui.sortable',
+    'doubleScrollBars',
 
     // Constant
     'proton.constants',

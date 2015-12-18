@@ -70,7 +70,8 @@ module.exports = {
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
-      "vendor/fastclick/lib/fastclick.js"
+      "vendor/fastclick/lib/fastclick.js",
+      "vendor/double-scroll-bars/double-scroll-bars.js"
     ],
     bootstrap_components: [
       "affix",
