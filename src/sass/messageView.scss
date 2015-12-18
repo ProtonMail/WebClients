@@ -66,17 +66,17 @@
 	        overflow: auto;
             -webkit-overflow-scrolling: touch;
 	    }
-	    .fa-star,
-	    .fa-star-o {
-	    	text-decoration: none;
-	    }
-	    .fa-star-o {
-			color: $gray
-		}
-		.fa-star {
-		 	color: $orange
-		}
     }
+    .fa-star,
+    .fa-star-o {
+        text-decoration: none;
+    }
+    .fa-star-o {
+        color: $gray
+    }
+    .fa-star {
+        color: $orange
+    }    
     #pm_thread {
     	max-height: $maxHeight;
     	overflow-y: auto;

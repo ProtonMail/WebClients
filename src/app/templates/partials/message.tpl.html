@@ -65,8 +65,10 @@ ng-class="{
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
-                    <a href="" ng-click="print()">
-                        <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
+                    <a href="" ng-click="$event.stopPropagation();toggleStar();">
+                        <i class="fa" ng-class="{'fa-star': !starred(), 'fa-star-o': starred()}"></i> 
+                        <span ng-show="!starred()">{{ 'STAR_MESSAGE' | translate }}</span>
+                        <span ng-show="starred()">{{ 'UNSTAR_MESSAGE' | translate }}</span>
                     </a>
                     <a href="" ng-click="move('inbox')" ng-show="'secured.trash.**' | includedByState">
                         <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
@@ -96,6 +98,9 @@ ng-class="{
                     </a>
                     <a href="" ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
                         <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
+                    </a>
+                    <a href="" ng-click="print()">
+                        <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
                 </span>
             </span>
