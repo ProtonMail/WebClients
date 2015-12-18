@@ -322,8 +322,10 @@ angular.module("proton.cache", [])
             if(data.Code === 1000) {
                 var conversation = data.Conversation;
                 var messages = data.Messages;
+                var message = _.max(messages, function(message){ return message.Time; });
 
                 conversation.preloaded = true;
+                conversation.Time = message.Time;
                 storeConversations([conversation]);
                 storeMessages(messages);
                 deferred.resolve(conversation);
@@ -803,9 +805,9 @@ angular.module("proton.cache", [])
              conversationsCached[index] = conversation;
              manageCounters(current, conversation, 'conversation');
              deferred.resolve();
-         } else if(angular.isDefined(event.Conversation)) {
-            // Create a new conversation in the cache
-            api.createConversation(event).then(function() {
+         } else {
+            // Get conversation from API to get all informations
+            getConversation(event.ID).then(function() {
                 deferred.resolve();
             });
          }

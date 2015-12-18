@@ -1026,7 +1026,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.savePromise = message.savePromise.then(nextSave, nextSave);
             deferred.resolve(message.savePromise);
         } else {
-            message.sending = false;
             message.saving = true;
 
             if(angular.isUndefined(parameters.Message.Subject)) {
@@ -1132,10 +1131,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         deferred.reject(result);
                     }
                 }, function(error) {
+                    message.saving = false;
                     error.message = 'Error during the draft request';
                     deferred.reject(error);
                 });
             }, function(error) {
+                message.saving = false;
                 error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
@@ -1232,12 +1233,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                                 return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                             }, function(error) {
+                                                message.encrypting = false;
                                                 $log.error(error);
                                             });
                                         }, function(error) {
+                                            message.encrypting = false;
                                             $log.error(error);
                                         });
                                     }, function(error) {
+                                        message.encrypting = false;
                                         $log.error(error);
                                     }));
                                 }
@@ -1313,6 +1317,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         } else {
             deferred.reject();
         }
+
+        networkActivityTracker.track(deferred.promise);
 
         return deferred.promise;
     };
