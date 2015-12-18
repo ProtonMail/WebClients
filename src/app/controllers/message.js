@@ -25,7 +25,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     networkActivityTracker,
     notify,
     pmcw,
-    tools
+    tools,
+    ical
 ) {
     $scope.mailbox = tools.currentMailbox();
     $scope.tools = tools;
@@ -560,24 +561,35 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     $scope.downloadAttachment = function(attachment) {
-        try {
-            var blob = new Blob([attachment.data], {type: attachment.MIMEType});
-            var link = $(attachment.el);
 
-            if($rootScope.isFileSaverSupported) {
-                saveAs(blob, attachment.Name);
-            } else {
-                // Bad blob support, make a data URI, don't click it
-                var reader = new FileReader();
+        if (attachment.MIMEType.indexOf('calendar')) {
+            console.log(attachment);
+            var iCalendarData = attachment.data; // attachment.data is not ready. need to convert first.. HELP BART!
+            var jcalData = ICAL.parse(iCalendarData);
+            console.log(jcalData);
+        }
+        else {
 
-                reader.onloadend = function () {
-                    link.attr('href',reader.result);
-                };
+            try {
+                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+                var link = $(attachment.el);
 
-                reader.readAsDataURL(blob);
+                if($rootScope.isFileSaverSupported) {
+                    saveAs(blob, attachment.Name);
+                } else {
+                    // Bad blob support, make a data URI, don't click it
+                    var reader = new FileReader();
+
+                    reader.onloadend = function () {
+                        link.attr('href',reader.result);
+                    };
+
+                    reader.readAsDataURL(blob);
+                }
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
+
         }
     };
 
