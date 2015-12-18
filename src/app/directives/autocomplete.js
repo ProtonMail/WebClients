@@ -90,7 +90,7 @@ angular.module('proton.autocomplete', [])
                             var arrayValue = tempValue.split(email);
                             var label = clean(arrayValue[0]);
                             var contact = {
-                                Address: buildValue(label, email),
+                                Address: email,
                                 Name: buildLabel(label, email),
                                 edit: false
                             };
@@ -201,9 +201,13 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onAddEmail = function(email) {
-                scope.emails.push(email);
-                scope.params.newValue = '';
-                scope.onChange();
+                var index = scope.emails.indexOf(email);
+
+                if(index === -1) {
+                    scope.emails.push(email);
+                    scope.params.newValue = '';
+                    scope.onChange();
+                }    
             };
 
             scope.onClose = function() {
