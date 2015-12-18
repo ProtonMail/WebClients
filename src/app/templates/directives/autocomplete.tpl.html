@@ -2,7 +2,7 @@
     <div class="input-email" ng-mousedown="onMouseDown($event)">
         <span ng-repeat="email in emails" class="email">
             <span class="label-email" ng-attr-title="{{ email | contact: 'Email'}}" ng-dblclick="onEdit(email)" ng-if="!!!email.edit">
-                <span>{{ email | contact: 'Name' }}</span>
+                <span ng-bind="email | contact: 'Name'"></span>
                 <a ng-click="onRemove($index)">
                     <i class="fa fa-times"></i>
                 </a>
@@ -14,7 +14,7 @@
     </div>
     <ul class="autocomplete-email" ng-show="params.contactsFiltered.length > 0">
         <li ng-repeat="email in params.contactsFiltered">
-            <a href="" ng-mousedown="onAddEmail(email)" ng-class="{'selected': $index === params.selected}">{{ email | contact }}</a>
+            <a href="" ng-mousedown="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind="email | contact"></a>
         </li>
     </ul>
     <style>
