@@ -115,6 +115,7 @@ angular.module('proton.routes', [
             // This to enables anyone to create an account.
             // Disable or remove to activate Waiting List
             $rootScope.allowedNewAccount = true;
+            $rootScope.allowedNewAccount = false;
 
             if ($rootScope.allowedNewAccount!==true) {
                 $state.go('login');
