@@ -150,7 +150,7 @@ angular.module('proton.autocomplete', [])
              */
             scope.onSubmit = function(email) {
                 var index = scope.emails.indexOf(email);
-                var newValue = angular.copy(scope.params.newValue);
+                var newValue = scope.params.newValue;
                 var length = scope.emails.length;
                 var emails = getEmails(newValue, index);
 
@@ -181,7 +181,11 @@ angular.module('proton.autocomplete', [])
 
             scope.onEdit = function(email) {
                 email.edit = true;
-                scope.params.newValue = angular.copy(email.Address);
+                if(email.Name.length > 0) {
+                    scope.params.newValue = email.Name + ' <' + email.Address + '>';
+                } else {
+                    scope.params.newValue = email.Address;
+                }
             };
 
             scope.onRemove = function(index) {
@@ -207,7 +211,7 @@ angular.module('proton.autocomplete', [])
                     scope.emails.push(email);
                     scope.params.newValue = '';
                     scope.onChange();
-                }    
+                }
             };
 
             scope.onClose = function() {
