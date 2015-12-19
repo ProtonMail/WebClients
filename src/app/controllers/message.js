@@ -568,13 +568,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     $scope.downloadAttachment = function(attachment) {
 
-        if (attachment.MIMEType.indexOf('calendar')) {
-            console.log(attachment);
-            var iCalendarData = attachment.data; // attachment.data is not ready. need to convert first.. HELP BART!
-            var jcalData = ICAL.parse(iCalendarData);
-            console.log(jcalData);
-        }
-        else {
+        // if (attachment.MIMEType.indexOf('calendar')) {
+        //     console.log(attachment);
+        //     var iCalendarData = attachment.data; // attachment.data is not ready. need to convert first.. HELP BART!
+        //     var jcalData = ICAL.parse(iCalendarData);
+        //     console.log(jcalData);
+        // }
+        // else {
 
             try {
                 var blob = new Blob([attachment.data], {type: attachment.MIMEType});
@@ -596,7 +596,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 console.log(error);
             }
 
-        }
+        // }
     };
 
     /**
