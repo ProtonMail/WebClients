@@ -6,6 +6,7 @@ ng-keypress="keypress($event)"
 role="form" 
 autocomplete="on" 
 ng-submit="unlock()" 
+ng-if="tokenError !== true"
 method="post">
 
 
@@ -43,9 +44,12 @@ method="post">
         </button>
     </div>
 
-    <div class="panel-body" ng-if="tokenError === true">
-        <h1 class="text-center">Error</h1>
-        <p>Sorry, this message does not exist or has already expired.</p>
-    </div>
+</form>
 
+<form 
+id="pm_login" 
+class="pm_panel alt pm_form error" 
+ng-if="tokenError === true">
+    <h1 class="text-center">Error</h1>
+    <p>Sorry, this message does not exist or has already expired.</p>
 </form>
