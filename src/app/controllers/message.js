@@ -36,16 +36,22 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $scope.$on('refreshMessage', function() {
-        var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
-        cache.getMessage($scope.message.ID).then(function(message) {
-            _.extend($scope.message, message);
+        if (angular.isDefined($rootScope.openMessage)) {
+            
+            var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
-            if(index !== -1) {
-                $scope.initView();
-                $rootScope.openMessage.splice(index, 1);
-            }
-        });
+            cache.getMessage($scope.message.ID).then(function(message) {
+                _.extend($scope.message, message);
+
+                if(index !== -1) {
+                    $scope.initView();
+                    $rootScope.openMessage.splice(index, 1);
+                }
+            });
+
+        }
+
     });
 
     $scope.$on('$destroy', function() {

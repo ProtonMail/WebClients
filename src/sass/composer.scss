@@ -94,8 +94,9 @@
 			height: initial !important;
 			box-sizing: border-box;
 			margin: 0;
-			footer .pm_button span {
-				display: none;
+			section {
+				height: initial !important;
+			    overflow: initial !important;
 			}
 			header, footer {
 				border-radius: 0;
@@ -165,7 +166,8 @@
 		}
 		&.tall {
 			section {
-				height: 370px;
+				height: initial !important;
+				overflow: initial !important;
 				.angular-squire-wrapper {
 					iframe {
 						height: 325px;
@@ -309,6 +311,8 @@
 	        position: relative;
 	        box-sizing: border-box;
 			color: $gray-light;
+			float: left;
+			width: 100%;
 			#fromRow {
 				height: 40px;
 				position: relative;

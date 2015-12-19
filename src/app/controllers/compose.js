@@ -1333,6 +1333,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.maximizedComposer = false;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.unminimize = function(message) {
@@ -1341,18 +1342,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.maximized = message.previousMaximized;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.maximize = function(message) {
         $rootScope.activeComposer = true;
         message.maximized = true;
         $rootScope.maximizedComposer = true;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.normalize = function(message) {
         message.minimized = false;
         message.maximized = false;
         $rootScope.maximizedComposer = false;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.openCloseModal = function(message, save) {
