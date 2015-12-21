@@ -290,20 +290,6 @@
 				}
 			}
 		}
-		.typeahead-container {
-			line-height: 33px;
-			max-height: 99px;
-			overflow-y: auto;
-			-webkit-overflow-scrolling: touch;
-			overflow-x: hidden;
-			&.unfocussed {
-				max-height: 33px;
-				overflow: hidden;
-			}
-			&.marker-width {
-				width: 80%;
-			}
-		}
 		.meta {
 			-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
@@ -313,7 +299,7 @@
 			color: $gray-light;
 			float: left;
 			width: 100%;
-			#fromRow {
+			.fromRow {
 				height: 40px;
 				position: relative;
 				button {
@@ -388,7 +374,6 @@
 				float: left;
 				width: 100%;
 				position: relative;
-				padding-bottom: 6px;
 				box-sizing: border-box;
 				&.closed {
 					height: 40px;
@@ -470,7 +455,7 @@
 			cursor: pointer;
 			box-sizing: border-box;
 			z-index: 7;
-			border-top: 1px solid $border;			
+			border-top: 1px solid $border;
 			i {
 				color: $primary;
 				font-style: normal;
@@ -581,12 +566,12 @@
 			height: 620px;
 		}
 		.composer.tall section {
-			height: 670px; 
+			height: 670px;
 		}
 	}
 	html.protonmail {
 	    overflow: auto !important;
-	    -webkit-overflow-scrolling: touch;	
+	    -webkit-overflow-scrolling: touch;
 		body.modalOpen,
 		body.activeComposer {
 		    overflow: auto !important;

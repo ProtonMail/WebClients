@@ -20,37 +20,5 @@ angular.module("proton.models.contact", [])
         }
     };
 
-    Contact.index = new Bloodhound({
-        name: "contacts",
-        local: [],
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        datumTokenizer: function(datum) {
-            var datas = _.union(
-                Bloodhound.tokenizers.whitespace(datum.Email),
-                Bloodhound.tokenizers.whitespace(datum.Name)
-            );
-
-            _.each(datas, function(data) {
-                    var i = 0;
-
-                    while((i + 1) < data.length) {
-                        datas.push(data.substr(i, data.length));
-                        i++;
-                    }
-            });
-
-            return datas;
-        }
-    });
-
-    _.extend(Contact.index, {
-        updateWith: function(list) {
-            Contact.index.clear();
-            Contact.index.add(list);
-        }
-    });
-
-    Contact.index.initialize();
-
     return Contact;
 });

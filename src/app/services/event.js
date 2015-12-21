@@ -57,7 +57,6 @@ angular.module("proton.event", ["proton.constants"])
 							authentication.user.Contacts[index] = contact.Contact;
 						}
 						$rootScope.$broadcast('updateContacts');
-						Contact.index.updateWith(authentication.user.Contacts);
 					});
 				}
 			},

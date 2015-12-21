@@ -36,9 +36,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $scope.$on('refreshMessage', function() {
-
-        if (angular.isDefined($rootScope.openMessage)) {
-
+        if(angular.isDefined($rootScope.openMessage)) {
             var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
             cache.getMessage($scope.message.ID).then(function(message) {
@@ -49,9 +47,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     $rootScope.openMessage.splice(index, 1);
                 }
             });
-
         }
-
     });
 
     /**

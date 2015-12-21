@@ -60,7 +60,6 @@ angular.module('proton', [
     'proton.autocomplete',
     'proton.dropdown',
     'proton.dropzone',
-    'proton.emailField',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',

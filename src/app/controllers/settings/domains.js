@@ -553,7 +553,6 @@ angular.module("proton.controllers.Settings")
             var found = _.findWhere(member.Addresses, {ID: address.AddressID});
 
             if(angular.isDefined(found)) {
-                console.log('found', found);
                 address.select = member;
             }
         });

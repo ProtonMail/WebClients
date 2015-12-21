@@ -19,7 +19,6 @@ angular.module('proton.autocomplete', [])
             var SPACE_KEY = 32;
 
             // Variables
-            scope.emails = scope.emails || [];
             scope.params = {
                 contactsFiltered: [],
                 newValue: '',
@@ -75,12 +74,11 @@ angular.module('proton.autocomplete', [])
                 return emails;
             };
 
-            var getEmails = function(value, index) {
+            var getEmails = function(value) {
                 var values = matchEmail(value);
                 var emails = [];
 
                 if(values) {
-                    console.log(values);
                     var tempValue = value;
 
                     emails = scope.emails;
@@ -92,16 +90,10 @@ angular.module('proton.autocomplete', [])
                             var label = clean(arrayValue[0]);
                             var contact = {
                                 Address: email,
-                                Name: buildLabel(label, email),
-                                edit: false
+                                Name: buildLabel(label, email)
                             };
 
-                            if(i === 0 && index >= 0) {
-                                emails[index] = contact;
-                            } else {
-                                emails.push(contact);
-                            }
-
+                            emails.push(contact);
                             tempValue = arrayValue[1];
                         }
                     }
@@ -123,69 +115,36 @@ angular.module('proton.autocomplete', [])
                 $timeout(function() {
                     scope.params.newValue = '';
                     scope.onChange();
-
-                    if(scope.emails.length > 0 && _.last(scope.emails).edit === false) {
-                        scope.emails.push({
-                            value: '',
-                            label: '',
-                            edit: true
-                        });
-                    } else {
-                        scope.emails.push({
-                            value: '',
-                            label: '',
-                            edit: true
-                        });
-                    }
-
                 });
 
                 $timeout(function() {
-                    angular.element(element).find('input:last').focus();
+                    angular.element(element).find('input.new-value-email').focus();
                 });
             };
 
             // Functions
             /**
+             * Function called at the initialization of this directive
+             */
+            scope.initialization = function() {
+                scope.emails = scope.emails || [];
+                createNewInput();
+            };
+            /**
              * Submit a new address
              */
-            scope.onSubmit = function(email) {
-                var index = scope.emails.indexOf(email);
-                var newValue = scope.params.newValue;
-                var length = scope.emails.length;
-                var emails = getEmails(newValue, index);
+            scope.onSubmit = function() {
+                if(scope.params.selected !== null) {
+                    scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
+                } else if(scope.params.newValue.length > 0) {
+                    var emails = getEmails(scope.params.newValue);
 
-                if(emails.length > 0) {
-                    scope.emails = emails;
-                } else {
-                    scope.onRemove(scope.emails.indexOf(email));
-                }
-            };
-
-            /**
-             * Blur
-             */
-            scope.onBlur = function(email) {
-                var emails = matchEmail(scope.params.newValue);
-
-                if(emails.length > 0) {
-                    if(scope.params.selected !== null) {
-                        scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
-                        scope.onRemove(scope.emails.indexOf(email));
-                    } else {
-                        scope.onSubmit(email, false);
+                    if(emails.length > 0) {
+                        scope.emails = _.union(scope.emails, emails);
                     }
-                } else {
-                    scope.onRemove(scope.emails.indexOf(email));
-                }
-            };
 
-            scope.onEdit = function(email) {
-                email.edit = true;
-                if(email.Name.length > 0) {
-                    scope.params.newValue = email.Name + ' <' + email.Address + '>';
-                } else {
-                    scope.params.newValue = email.Address;
+                    scope.params.newValue = '';
+                    scope.onChange();
                 }
             };
 
@@ -224,11 +183,15 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onChange = function() {
-                var byName = $filter('filter')(authentication.user.Contacts, {Name: scope.params.newValue});
-                var byEmail = $filter('filter')(authentication.user.Contacts, {Email: scope.params.newValue});
+                var contacts = _.map(authentication.user.Contacts, function(contact) {
+                    return { Name: contact.Name, Address: contact.Email };
+                });
+                var byName = $filter('filter')(contacts, {Name: scope.params.newValue});
+                var byAddress = $filter('filter')(contacts, {Address: scope.params.newValue});
+                var list = $filter('limitTo')(_.union(byName, byAddress), 10); // We limit the number of contact by 10
 
                 if(scope.params.newValue.length > 0) {
-                    scope.params.contactsFiltered = _.union(byName, byEmail);
+                    scope.params.contactsFiltered = list;
                 } else {
                     scope.params.contactsFiltered = [];
                 }
@@ -247,7 +210,7 @@ angular.module('proton.autocomplete', [])
                         var emails = scope.emails;
 
                         if(value.length === 0 && emails.length > 0) {
-                            this.onRemove(emails.length - 2);
+                            this.onRemove(emails.length - 1);
                         }
                         break;
                     case DOWN_KEY:
@@ -265,15 +228,15 @@ angular.module('proton.autocomplete', [])
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
                     case ENTER_KEY:
+                        scope.onSubmit();
+                        break;
                     case TAB_KEY:
-                        if(scope.params.selected !== null) {
-                            scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
-                            scope.onRemove(scope.emails.indexOf(email));
+                        if(scope.params.newValue.length > 0) {
+                            scope.onSubmit();
                         } else {
-                            scope.onSubmit(email, true);
+                            // Focus next input (autocomplete or subject)
+                            angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
                         }
-
-                        createNewInput();
                         break;
                     case DOWN_KEY:
                         if(scope.params.contactsFiltered.length > 0) {
@@ -297,6 +260,8 @@ angular.module('proton.autocomplete', [])
                         break;
                 }
             };
+            // Initialization
+            scope.initialization();
         }
     };
 });

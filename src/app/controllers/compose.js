@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Compose", ["proton.constants"])
 
 .controller("ComposeMessageController", function(
+    $filter,
     $interval,
     $log,
     $q,
@@ -33,8 +34,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.isOver = false;
     $scope.queuedSave = false;
     $scope.preventDropbox = false;
-    $scope.expandRecipients = false;
-    $scope.recipientsCollapsed = true;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
@@ -82,8 +81,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         {label: '22', value: 22},
         {label: '23', value: 23}
     ];
-
-    Contact.index.updateWith($scope.user.Contacts);
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -159,7 +156,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor = editor;
             $scope.listenEditor(message);
             $scope.focusComposer(message);
-            message.recipientFieldFocussed = 1;
         }
     });
 
@@ -510,7 +506,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
@@ -724,7 +719,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.fields = false;
-                    message.recipientFieldFocussed = 0;
                     $('.typeahead-container').scrollTop(0);
                     $scope.$apply();
                 });
@@ -758,30 +752,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         );
     };
 
-    $scope.toUnfocussed = function(message) {
-        return message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4;
-    };
-
-    $scope.ccUnfocussed = function(message) {
-        return (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields;
-    };
-
-    $scope.bccUnfocussed = function(message) {
-        return (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields;
-    };
-
-    $scope.ccPlus = function(message) {
-        return (message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields;
-    };
-
-    $scope.recipientFieldEllipsis = function(message, list) {
-            if ((message.recipientFields[list].scrollHeight - message.recipientFields[list].offsetHeight) > 20) {
-                return true;
-            } else {
-                return false;
-            }
-    };
-
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };
@@ -790,11 +760,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.attachmentsToggle = false;
     };
 
-    $scope.toggleFields = function(message) {
-        message.fields = !message.fields;
-        $timeout(function() {
-            message.recipientFieldFocussed = (message.fields) ? 4 : 0;
-        });
+    $scope.toggleCcBcc = function(message) {
+        message.ccbcc = !message.ccbcc;
         $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
     };
@@ -1455,6 +1422,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
+    };
+
+    /**
+     * Transform the recipients list to a string
+     * @param {Object} message
+     * @return {String}
+     */
+    $scope.recipients = function(message) {
+        var recipients = [];
+
+        recipients = recipients.concat(_.map(message.ToList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = recipients.concat(_.map(message.CCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = recipients.concat(_.map(message.BCCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = _.uniq(recipients);
+
+        return recipients.join(', ');
+    };
+
+    /**
+     * Display fields (To, Cc, Bcc) and focus the input in the To field.
+     * @param {Object} message
+     */
+    $scope.focusTo = function(message) {
+        message.fields = true;
+        $rootScope.$broadcast('squireHeightChanged');
+        $scope.composerStyle();
+        // Focus input
+        $timeout(function() {
+            $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
+        });
     };
 
     /**

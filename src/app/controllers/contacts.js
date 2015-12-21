@@ -30,10 +30,6 @@ angular.module("proton.controllers.Contacts", [
     $scope.editing = false;
     $scope.numPerPage = 40;
     $scope.sortBy = 'Name';
-    $scope.example = [
-        authentication.user.Contacts[0],
-        authentication.user.Contacts[1]
-    ];
 
     // Listeners
     $scope.$on('updateContacts', $scope.updateContacts);
@@ -132,7 +128,6 @@ angular.module("proton.controllers.Contacts", [
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
                             notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
-                            Contact.index.updateWith($scope.contacts);
                         }, function(response) {
                             $log.error(response);
                         })
@@ -185,7 +180,6 @@ angular.module("proton.controllers.Contacts", [
                             });
                             notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
                             confirmModal.deactivate();
-                            Contact.index.updateWith($scope.contacts);
                         }, function(error) {
                             notify({message: error, classes: 'notification-danger'});
                             $log.error(error);
@@ -221,7 +215,6 @@ angular.module("proton.controllers.Contacts", [
                             authentication.user.Contacts.push(response.data.Responses[0].Response.Contact);
                             $scope.contacts = $scope.contactsFiltered();
                             notify({message: $translate.instant('CONTACT_ADDED'), classes: 'notification-success'});
-                            Contact.index.updateWith(authentication.user.Contacts);
                             contactModal.deactivate();
                         } else {
                             notify({message: response.data.Responses[0].Error, classes: 'notification-danger'});
@@ -255,7 +248,6 @@ angular.module("proton.controllers.Contacts", [
                         if(response.data.Code === 1000) {
                             contactModal.deactivate();
                             notify({message: $translate.instant('CONTACT_EDITED'), classes: 'notification-success'});
-                            Contact.index.updateWith(authentication.user.Contacts);
                         } else {
                             notify({message: response.data.Error, classes: 'notification-danger'});
                         }
@@ -434,7 +426,6 @@ angular.module("proton.controllers.Contacts", [
                                 });
 
                                 $scope.contacts = $scope.contactsFiltered();
-                                Contact.index.updateWith(authentication.user.Contacts);
                             }, function(error) {
                                 $log.error(error);
                             })
