@@ -16,8 +16,6 @@ angular.module("proton.controllers.Header", [])
         searchContactInput: ''
     };
 
-    $scope.showSidebar = $rootScope.showSidebar;
-
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });

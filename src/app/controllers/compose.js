@@ -263,7 +263,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
                 accept: function(file, done) {
-
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 

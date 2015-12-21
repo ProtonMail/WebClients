@@ -135,7 +135,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var id = '#message' + index;
         var element = angular.element(id);
 
-        if(angular.isDefined(element)) {
+        if(angular.isDefined(element) && angular.isDefined(element.offset())) {
             var value = element.offset().top - element.outerHeight();
 
             $('#pm_thread').animate({
