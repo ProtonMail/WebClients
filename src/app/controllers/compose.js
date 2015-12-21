@@ -1024,8 +1024,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             parameters.Message.AddressID = message.From.ID;
 
-            // Encrypt message body with the user's plublic key
-            message.encryptBody(authentication.user.PublicKey).then(function(result) {
+            // Encrypt message body with the first public key for the From address
+            message.encryptBody(message.From.Keys[0].PublicKey).then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
@@ -1167,38 +1167,43 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     parameters.id = message.ID;
                     parameters.ExpirationTime = message.ExpirationTime;
                     message.getPublicKeys(emails).then(function(result) {
-                        var keys = result;
-                        var outsiders = false;
-                        var promises = [];
+                        if(result.Code === 1000) {
+                            var keys = result;
+                            var outsiders = false;
+                            var promises = [];
 
-                        parameters.Packages = [];
+                            parameters.Packages = [];
 
-                        _.each(emails, function(email) {
-                            if(keys[email].length > 0) { // inside user
-                                var key = keys[email];
+                            _.each(emails, function(email) {
+                                if(keys[email].length > 0) { // inside user
+                                    var key = keys[email];
 
-                                promises.push(message.encryptBody(key).then(function(result) {
-                                    var body = result;
+                                    promises.push(message.encryptBody(key).then(function(result) {
+                                        var body = result;
 
-                                    return message.encryptPackets(key).then(function(keyPackets) {
-                                        return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
-                                    });
-                                }));
-                            } else { // outside user
-                                outsiders = true;
+                                        return message.encryptPackets(key).then(function(keyPackets) {
+                                            return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
+                                        });
+                                    }));
+                                } else { // outside user
+                                    outsiders = true;
 
-                                if(message.IsEncrypted === 1) {
-                                    var replyToken = message.generateReplyToken();
-                                    var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
+                                    if(message.IsEncrypted === 1) {
+                                        var replyToken = message.generateReplyToken();
+                                        var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
-                                    promises.push(replyTokenPromise.then(function(encryptedToken) {
-                                        return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-                                            var body = result;
+                                        promises.push(replyTokenPromise.then(function(encryptedToken) {
+                                            return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                                var body = result;
 
-                                            return message.encryptPackets('', message.Password).then(function(result) {
-                                                var keyPackets = result;
+                                                return message.encryptPackets('', message.Password).then(function(result) {
+                                                    var keyPackets = result;
 
-                                                return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                                    return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                                }, function(error) {
+                                                    message.encrypting = false;
+                                                    $log.error(error);
+                                                });
                                             }, function(error) {
                                                 message.encrypting = false;
                                                 $log.error(error);
@@ -1206,71 +1211,72 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }, function(error) {
                                             message.encrypting = false;
                                             $log.error(error);
-                                        });
+                                        }));
+                                    }
+                                }
+                            });
+
+                            if(outsiders === true && message.IsEncrypted === 0) {
+                                parameters.AttachmentKeys = [];
+                                parameters.ClearBody = message.Body;
+
+                                if(message.Attachments.length > 0) {
+                                    promises.push(message.clearPackets().then(function(packets) {
+                                        parameters.AttachmentKeys = packets;
                                     }, function(error) {
-                                        message.encrypting = false;
                                         $log.error(error);
                                     }));
                                 }
                             }
-                        });
 
-                        if(outsiders === true && message.IsEncrypted === 0) {
-                            parameters.AttachmentKeys = [];
-                            parameters.ClearBody = message.Body;
+                            $q.all(promises).then(function() {
+                                if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
+                                    $log.error(message);
+                                    deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
+                                } else {
+                                    message.encrypting = false;
+                                    message.sending = true;
+                                    Message.send(parameters).$promise.then(function(result) {
+                                        if(angular.isDefined(result.Error)) {
+                                            deferred.reject(new Error(result.Error));
+                                        } else {
+                                            var events = [];
+                                            var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
-                            if(message.Attachments.length > 0) {
-                                 promises.push(message.clearPackets().then(function(packets) {
-                                     parameters.AttachmentKeys = packets;
-                                }, function(error) {
-                                    $log.error(error);
-                                }));
-                            }
-                        }
+                                            $rootScope.openMessage = $rootScope.openMessage || [];
+                                            $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
+                                            message.sending = false; // Change status
+                                            result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                            result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                                            result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
+                                            result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
+                                            events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
-                        $q.all(promises).then(function() {
-                            if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
-                                $log.error(message);
-                                deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
-                            } else {
-                                message.encrypting = false;
-                                message.sending = true;
-                                Message.send(parameters).$promise.then(function(result) {
-                                    if(angular.isDefined(result.Error)) {
-                                        deferred.reject(new Error(result.Error));
-                                    } else {
-                                        var events = [];
-                                        var messages = cache.queryMessagesCached(result.Sent.ConversationID);
+                                            if(result.Parent) {
+                                                events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                            }
 
-                                        $rootScope.openMessage = $rootScope.openMessage || [];
-                                        $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
-                                        message.sending = false; // Change status
-                                        result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                        result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                        result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
-                                        result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
-                                        events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
-
-                                        if(result.Parent) {
-                                            events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                            cache.events(events); // Send events to the cache manager
+                                            notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
+                                            $scope.close(message, false, false); // Close the composer window
+                                            deferred.resolve(result); // Resolve finally the promise
                                         }
-
-                                        cache.events(events); // Send events to the cache manager
-                                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
-                                        $scope.close(message, false, false); // Close the composer window
-                                        deferred.resolve(result); // Resolve finally the promise
-                                    }
-                                }, function(error) {
-                                    message.sending = false;
-                                    error.message = 'Error during the sending';
-                                    deferred.reject(error);
-                                });
-                            }
-                        }, function(error) {
+                                    }, function(error) {
+                                        message.sending = false;
+                                        error.message = 'Error during the sending';
+                                        deferred.reject(error);
+                                    });
+                                }
+                            }, function(error) {
+                                message.encrypting = false;
+                                error.message = 'Error during the promise preparation';
+                                deferred.reject(error);
+                            });
+                        } else {
                             message.encrypting = false;
-                            error.message = 'Error during the promise preparation';
+                            error.message = 'Error during get public keys user request';
                             deferred.reject(error);
-                        });
+                        }
                     }, function(error) {
                         message.encrypting = false;
                         error.message = 'Error during the getting of the public key';
