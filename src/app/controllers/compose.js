@@ -1167,25 +1167,30 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     parameters.id = message.ID;
                     parameters.ExpirationTime = message.ExpirationTime;
                     message.getPublicKeys(emails).then(function(result) {
-                        if(result.Code === 1000) {
-                            var keys = result;
-                            var outsiders = false;
+                        if(angular.isDefined(result) && result.Code === 1000) {
+                            var keys = result; // Save result in keys variables
+                            var outsiders = false; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
                             var promises = [];
 
                             parameters.Packages = [];
 
                             _.each(emails, function(email) {
-                                if(keys[email].length > 0) { // inside user
+                                // Inside user
+                                if(keys[email].length > 0) {
                                     var key = keys[email];
 
+                                    // Encrypt content body in with the public key user
                                     promises.push(message.encryptBody(key).then(function(result) {
                                         var body = result;
 
+                                        // Encrypt attachments with the public key
                                         return message.encryptPackets(key).then(function(keyPackets) {
                                             return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
                                         });
                                     }));
-                                } else { // outside user
+                                }
+                                // Outside user
+                                else {
                                     outsiders = true;
 
                                     if(message.IsEncrypted === 1) {
@@ -1216,11 +1221,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 }
                             });
 
+                            // If there are some outsiders
                             if(outsiders === true && message.IsEncrypted === 0) {
                                 parameters.AttachmentKeys = [];
-                                parameters.ClearBody = message.Body;
+                                parameters.ClearBody = message.Body; // Add a clear body in parameter
 
                                 if(message.Attachments.length > 0) {
+                                    // Add clear attachments packet in parameter
                                     promises.push(message.clearPackets().then(function(packets) {
                                         parameters.AttachmentKeys = packets;
                                     }, function(error) {
@@ -1229,6 +1236,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 }
                             }
 
+                            // When all promises are complete
                             $q.all(promises).then(function() {
                                 if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                                     $log.error(message);
