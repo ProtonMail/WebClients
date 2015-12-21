@@ -8,24 +8,15 @@ angular.module("proton.maxComposerHeight", [])
             // Set to zero
             element.find('iframe').css({ height: 0 });
 
-            var height =    parent.outerHeight();
-                $log.debug(height);
+            var height = parent.outerHeight();
 
-                height -=   parent.find('header').outerHeight();
-                $log.debug(height);
-
-                height -=   parent.find('.meta').outerHeight();
-                $log.debug(height);
-
-                height -=   parent.find('.squire-toolbar').outerHeight();
-                $log.debug(height);
-
-                height -=   parent.find('footer').outerHeight();
-                $log.debug(height);
-
-                element.find('iframe').css({
-                    height: height
-                });
+            height -= parent.find('header').outerHeight();
+            height -= parent.find('.meta').outerHeight();
+            height -= parent.find('.squire-toolbar').outerHeight();
+            height -= parent.find('footer').outerHeight();
+            element.find('iframe').css({
+                height: height
+            });
         };
 
         // Listen resize window
