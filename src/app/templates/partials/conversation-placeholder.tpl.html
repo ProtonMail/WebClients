@@ -36,7 +36,7 @@
 <section id="pm_placeholder" ng-show="showWelcome === false">
     <i class="fa fa-check-square"></i>
     <h2>{{ numberElementSelected }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
-    <span class="pm_buttons">
+    <span class="pm_buttons" ng-show="numberElementSelected > 0">
         <a href="" ng-click="deselectAll()">
             <strong>{{ 'DESELECT_ALL' | translate }}</strong>
         </a>
