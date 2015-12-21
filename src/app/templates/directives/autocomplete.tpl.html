@@ -1,7 +1,7 @@
 <div class="container-email">
     <div class="input-email" ng-mousedown="onMouseDown($event)">
         <span ng-repeat="email in emails" class="email">
-            <span class="label-email" title="{{ email | contact: 'Address'}}">
+            <span class="label-email" title="{{ email | contact }}">
                 <span ng-bind="email | contact: 'Name'"></span>
                 <a ng-click="onRemove($index)" title="{{ 'REMOVE' | translate }}">
                     <i class="fa fa-times"></i>
