@@ -294,14 +294,14 @@
                 </div>
 
             </div>
-            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" ng-max-composer-height>
+            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
                 <div class="composeEditor">
                     <div
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-focus="recipientsCollapsed = true"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-max-composer-height></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" max-composer-height></squire>
                 </div>
             </section>
             <div
@@ -382,9 +382,9 @@
                     </button>
                     <button
                     class="pm_button"
-                    ng-class="{ 'dead': message.loading() || composerIsSelected(message) === false }"                    
+                    ng-class="{ 'dead': message.loading() || composerIsSelected(message) === false }"
                     ng-click="save(message, false, false, true)"
-                    pt-tooltip="{{ 'SAVE' | translate }}" 
+                    pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>

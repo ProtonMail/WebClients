@@ -1,13 +1,11 @@
 angular.module("proton.maxComposerHeight", [])
 
-.directive('ngMaxComposerHeight', ['$window', '$log', function ($window, $log) {
+.directive('maxComposerHeight', function ($window, $timeout, $log) {
     return function (scope, element, attrs) {
-
         var setHeight = function() {
-
             var parent = element.closest('.composer');
 
-            // set to zero
+            // Set to zero
             element.find('iframe').css({ height: 0 });
 
             var height =    parent.outerHeight();
@@ -33,24 +31,25 @@ angular.module("proton.maxComposerHeight", [])
         // Listen resize window
         angular.element($window).bind('resize', setHeight);
 
+        // Listen state change
         scope.$on('$stateChangeSuccess', function() {
             setHeight();
         });
 
-        scope.$on('composerModeChange', function() { // TODO PANDA RICHARD HELP!!!!
+        // Listen composer mode change
+        scope.$on('composerModeChange', function() {
             setHeight();
         });
-
-        $rootScope.$broadcast('editorLoaded', element, editor);
 
         // Remove listener on resize window
         scope.$on('$destroy', function() {
             angular.element($window).unbind('resize', setHeight);
         });
 
-        setTimeout(function() {
+        // Delay the first call
+        $timeout(function() {
             setHeight();
         });
 
     };
-}]);
+});
