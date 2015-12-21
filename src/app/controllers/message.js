@@ -38,7 +38,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.$on('refreshMessage', function() {
 
         if (angular.isDefined($rootScope.openMessage)) {
-            
+
             var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
             cache.getMessage($scope.message.ID).then(function(message) {
@@ -52,11 +52,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         }
 
-    });
-
-    $scope.$on('$destroy', function() {
-        // cancel timer ago
-        $interval.cancel($scope.agoTimer);
     });
 
     /**
@@ -105,13 +100,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
-
-            // Start timer ago
-            $scope.agoTimer = $interval(function() {
-                var time = $filter('longReadableTime')($scope.message.Time);
-
-                $scope.ago = time;
-            }, 60 * 1000);
 
             // Mark message as expanded
             $scope.message.expand = true;

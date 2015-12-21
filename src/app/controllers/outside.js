@@ -58,14 +58,10 @@ angular.module("proton.controllers.Outside", [
 
     // start timer ago
     $scope.agoTimer = $interval(function() {
-        var time = $filter('longReadableTime')($scope.message.Time);
-
+        // Redirect to unlock view if the message is expired
         if($scope.isExpired()) {
-            // Redirect to unlock view if the message is expired
             $state.go('eo.unlock', {tag: $stateParams.tag});
         }
-
-        $scope.ago = time;
     }, 1000);
 
     $scope.$on('$destroy', function() {
