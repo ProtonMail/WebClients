@@ -44,9 +44,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
                 if(angular.isUndefined(current) && index === -1) {
+                    // If the message is not a draft, open it
+                    if(message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) === -1) {
+                        $rootScope.openMessage = $rootScope.openMessage || [];
+                        $rootScope.openMessage.push(message.ID);
+                    }
                     // Add message
-                    $rootScope.openMessage = $rootScope.openMessage || [];
-                    $rootScope.openMessage.push(message.ID);
                     $scope.messages.push(message);
                 }
             });

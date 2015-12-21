@@ -27,7 +27,6 @@
             </button>
         </fieldset>
         <div class="pm_form pm_grid" id="advancedSearchDropdown" ng-show="advancedSearch === true">
-
             <div class="row">
                 <div class="col-1-2">
                     <label for="search_keywords" class="ng-binding">Keywords</label>
@@ -51,7 +50,6 @@
                     </span>
                 </div>
             </div>
-
             <div class="row">
                 <label class="ng-binding">Attachments</label>
                 <div class="radio">
@@ -66,7 +64,6 @@
                     </label>
                 </div>
             </div>
-
             <div class="row margin">
                 <div class="col-1-2">
                     <label for="search_sender" class="ng-binding">Sender</label>
@@ -77,7 +74,6 @@
                     <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="To" class="ng-pristine ng-untouched ng-valid">
                 </div>
             </div>
-
             <div class="row margin">
                 <div class="col-1-2">
                     <label for="search_start" class="ng-binding">Start Date</label>
@@ -94,11 +90,10 @@
                     </span>
                 </div>
             </div>
-
             <button type="submit" class="pm_button primary pull-right">
                 <i class="fa fa-search"></i> Search
             </button>
-        </div>        
+        </div>
     </form>
     <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
         <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
@@ -107,12 +102,6 @@
         </button>
     </form>
     <ul class="navigation">
-        <!-- <li ng-class="{'active': activeMail()}">
-            <a href="#" ui-sref="secured.inbox.list">
-                <em><i class="fa fa-envelope-o"></i></em>
-                <strong>Mailbox</strong>
-            </a>
-        </li> -->
         <li>
             <a href="" ng-click="openReportModal()">
                 <em><i class="fa fa-bug"></i></em>
