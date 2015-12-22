@@ -160,29 +160,26 @@ angular.module("proton.authentication", [
             return pmcw.decode_utf8_base64(pwd);
         },
 
-        randomString: function(length)
-        {
+        randomString: function(length) {
             var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var i;
             var result = "";
             var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
-            if(window.crypto && window.crypto.getRandomValues)
-            {
+
+            if(window.crypto && window.crypto.getRandomValues) {
                 values = new Uint32Array(length);
                 window.crypto.getRandomValues(values);
-                for(i=0; i<length; i++)
-                {
+
+                for(i=0; i<length; i++) {
                     result += charset[values[i] % charset.length];
                 }
+
                 return result;
-            }
-            else if(isOpera)
-            {
-                //Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
-                for(i=0; i<length; i++)
-                {
+            } else if(isOpera) { //Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+                for(i=0; i<length; i++) {
                     result += charset[Math.floor(Math.random()*charset.length)];
                 }
+
                 return result;
             } else {
                 return this.semiRandomString(length);
@@ -208,6 +205,11 @@ angular.module("proton.authentication", [
                 $log.error( this.user.EncPrivateKey );
                 throw err;
             }.bind(this));
+        },
+
+        getPrivateKeys: function() {
+            // authentication.user.
+            // TODO need Bart
         },
 
         getRefreshCookie: function() {
