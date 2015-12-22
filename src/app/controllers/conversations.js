@@ -262,13 +262,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Integer}
      */
     $scope.time = function(element) {
-        if(angular.isObject(element.Times)) {
+        var type = tools.typeList();
+        var time;
+
+        if(type === 'conversation') {
             var loc = tools.currentLocation();
 
-            return element.Times[loc] || element.Time;
-        } else {
-            return element.Time;
+            time = cache.getTime(element.ID, loc);
+        } else if(type === 'message') {
+            time = element.Time;
         }
+
+        return time;
     };
 
     /**
