@@ -523,7 +523,7 @@ angular.module('proton.actions', [])
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
                     conversation.NumUnread = 0;
-                    events.push({Action: 3, ID: copy.ConversationID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
             });
 
@@ -563,7 +563,7 @@ angular.module('proton.actions', [])
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
                     conversation.NumUnread = unreads.length + 1;
-                    events.push({Action: 3, ID: copy.ConversationID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
             });
 
