@@ -368,8 +368,8 @@
 				}
 			}
 			.row {
-				min-height: ($composerRowHeight - 7);
-				line-height: $composerRowHeight;
+				min-height: ($composerRowHeight)+1;
+				line-height: $composerRowHeight+1;
 				border-bottom: 1px solid $border;
 				float: left;
 				width: 100%;
@@ -441,6 +441,9 @@
 				}
 				& > div {
 					margin-left: 5rem;
+				}
+				&.placeholder > div {
+					padding-left: 10px;
 				}
 			}
 		}

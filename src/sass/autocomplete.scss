@@ -9,18 +9,17 @@
         color: #555;
         vertical-align: middle;
         position: relative;
+        form input {
+            width: 2rem !important;
+        }
     }
 
     .label-email {
         background-color: #EEE;
-        border: 1px solid #CCC;
-        color: #333;
         margin-top: 5px;
         text-shadow: none;
         border-radius: 2px;
         padding-left: 5px;
-        font-weight: bold;
-        font-size: 12px;
         margin-right: 5px;
     }
 
@@ -41,7 +40,7 @@
     .input-email input[type="text"] {
         border: none;
         resize: none;
-        padding: 0;
+        padding: 0 5px !important;
         outline: none;
         margin-bottom: 0;
         box-shadow: none;
