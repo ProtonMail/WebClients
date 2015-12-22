@@ -489,7 +489,7 @@ angular.module('proton.actions', [])
             }
 
             // Send request
-            promise = Message.star({IDs: ids}).$promise;
+            promise = Message.unstar({IDs: ids}).$promise;
 
             if(context === true) {
                 // Send to cache manager
