@@ -60,9 +60,9 @@
     }
 
     .autocomplete-email {
-        z-index: 1;
+        z-index: 999;
         list-style-type: none;
-        border: 1px solid #CCC;
+        border: 1px solid $border;
         position: absolute;
         background-color: white;
         max-height: 150px;
@@ -70,8 +70,6 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
     }
 
     .autocomplete-email ul {
@@ -88,19 +86,21 @@
     .autocomplete-email a {
         cursor: pointer;
         line-height: 30px;
-        padding-left: 7px;
-        padding-right: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
         display: block;
         text-decoration: none;
-        color: #333;
+        color: #555;
+        font-size: 13px;
     }
 
     .autocomplete-email a.selected,
     .autocomplete-email a:hover.selected {
-        background-color: #D9EDF7;
+        background-color: $primary;
+        color: #fff;
     }
 
     .autocomplete-email a:hover {
-        background-color: #EEE;
+        background-color: #e5e5e5;
     }
 }
