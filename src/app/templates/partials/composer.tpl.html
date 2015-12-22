@@ -206,17 +206,7 @@
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
-                    <label>{{ 'SUBJECT' | translate }}</label>
-                    <input
-                    type="text"
-                    title="{{ 'SUBJECT' | translate }}"
-                    class="subject"
-                    ng-focus="hideFields(message)"
-                    ng-model="message.Subject"
-                    ng-model-options="{updateOn: 'blur'}"
-                    ng-keydown="$event.which === 9 && focusEditor(message, $event)"
-                    ng-change="saveLater(message)"
-                    required />
+                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
