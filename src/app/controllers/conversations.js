@@ -537,7 +537,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.star = function(element) {
-        action.starConversation(element.ID);
+        var type = tools.typeList();
+
+        if(type === 'conversation') {
+            action.starConversation(element.ID);
+        } else if(type === 'message') {
+            action.starMessage(element.ID);
+        }
     };
 
     /**
@@ -545,55 +551,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element
      */
     $scope.unstar = function(element) {
-        var events = [];
-        var copy = angular.copy(element);
         var type = tools.typeList();
-        var context = tools.cacheContext();
-
-        copy.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
 
         if(type === 'conversation') {
-            var messages = cache.queryMessagesCached(copy.ID);
-
-            // Generate message changes with event
-            if(messages.length > 0) {
-                _.each(messages, function(message) {
-                    message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                    events.push({ID: message.ID, Action: 3, Message: message});
-                });
-            }
-
-            // Generate conversation changes with event
-            events.push({ID: copy.ID, Action: 3, Conversation: copy});
-
-            if(context === true) {
-                // Send to cache manager
-                cache.events(events);
-                // Send request
-                Conversation.unstar([copy.ID]);
-            } else {
-                // Send request
-                Conversation.unstar([copy.ID]).then(function() {
-                    // Send to cache manager
-                    cache.events(events);
-                });
-            }
+            action.unstarConversation(element.ID);
         } else if(type === 'message') {
-            // Generate message changes with event
-            events.push({ID: copy.ID, Action: 3, Message: copy});
-
-            if(context === true) {
-                // Send to cache manager
-                cache.events(events);
-
-                // Send request
-                Message.unstar({IDs: [copy.ID]});
-            } else {
-                Message.unstar({IDs: [copy.ID]}).$promise.then(function() {
-                    // Send to cache manager
-                    cache.events(events);
-                });
-            }
+            action.unstarMessage(element.ID);
         }
     };
 
