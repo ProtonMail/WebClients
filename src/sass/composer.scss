@@ -444,6 +444,12 @@
 				}
 				&.placeholder > div {
 					padding-left: 10px;
+					margin: 0;
+					color: initial !important;
+					font-size: 13px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 		}
