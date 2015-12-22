@@ -237,7 +237,7 @@ angular.module("proton.filters",[])
             } else {
                 var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
 
-                if(angular.isDefined(found)) {
+                if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
                     return found.Name;
                 } else {
                     return contact.Address;
