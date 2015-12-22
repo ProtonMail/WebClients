@@ -71,12 +71,8 @@ module.exports = {
     bootstrap_components: [
       "affix",
       "alert",
-      "collapse",
       "tooltip",
-      "dropdown",
-      "modal",
-      "transition",
-      "popover"
+      "transition"
     ],
 
     required_js: [],
@@ -84,12 +80,8 @@ module.exports = {
     included_js: [],
 
     css: [
-      "vendor/tagmanager/tagmanager.css",
       "vendor/ng-sortable/dist/ng-sortable.css",
       "vendor/angular-notify/dist/angular-notify.css",
-      "vendor/angular-modal/modal.css",
-      "vendor/angular-toggle-switch/angular-toggle-switch.css",
-      "vendor/angular-toggle-switch/angular-toggle-switch-bootstrap.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
       "vendor/open-sans-fontface/open-sans.css"
