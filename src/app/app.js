@@ -46,6 +46,7 @@ angular.module('proton', [
     'proton.config',
 
     // Services
+    'proton.actions',
     'proton.attachments',
     'proton.authentication',
     'proton.cache',

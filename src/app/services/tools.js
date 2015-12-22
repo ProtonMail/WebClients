@@ -428,16 +428,20 @@ angular.module("proton.tools", ["proton.constants"])
      * @return {Boolean}
      */
     tools.cacheContext = function(request) {
-        var page = angular.isDefined(request.Page);
-        var label = angular.isDefined(request.Label);
-        var size = angular.isDefined(request.PageSize);
+        if(angular.isDefined(request)) {
+            var page = angular.isDefined(request.Page);
+            var label = angular.isDefined(request.Label);
+            var size = angular.isDefined(request.PageSize);
 
-        if(Object.keys(request).length === 2) {
-            return page && label;
-        } else if(Object.keys(request).length === 3) {
-            return page && label && size;
+            if(Object.keys(request).length === 2) {
+                return page && label;
+            } else if(Object.keys(request).length === 3) {
+                return page && label && size;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            return this.currentMailbox() !== 'search' && angular.isUndefined($stateParams.filter);
         }
     };
 

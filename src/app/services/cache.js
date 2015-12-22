@@ -818,8 +818,10 @@ angular.module("proton.cache", [])
     /**
     * Manage the cache when a new event comes
     * @param {Array} events
+    * @return {Promise}
     */
     api.events = function(events) {
+        var deferred = $q.defer();
         var promises = [];
 
         console.log(events);
@@ -862,7 +864,12 @@ angular.module("proton.cache", [])
 
         $q.all(promises).then(function() {
             api.callRefresh();
+            deferred.resolve();
+        }, function() {
+            deferred.reject();
         });
+
+        return deferred.promise;
     };
 
     /**
