@@ -1467,6 +1467,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
+    $scope.focusNextInput = function(event) {
+        angular.element(event.target).parent().find('input.new-value-email:first').focus();
+    };
+
     /**
      * Give the focus inside the content editor
      * @param {Object} message

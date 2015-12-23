@@ -191,18 +191,18 @@
                     <div>{{ recipients(message) }}</div>
                 </div>
                 <div class="row toRow" ng-show="message.fields === true">
-                    <label>{{ 'TO' | translate }}</label>
+                    <label ng-click="focusNextInput($event)">{{ 'TO' | translate }}</label>
                     <autocomplete emails="message.ToList" />
                     <button class="pm_button link pull-right" ng-init="message.ccbcc = false" ng-click="toggleCcBcc(message); attHide(message)" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label>{{ 'CC' | translate }}</label>
+                    <label ng-click="focusNextInput($event)">{{ 'CC' | translate }}</label>
                     <autocomplete emails="message.CCList" />
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label>{{ 'BCC' | translate }}</label>
+                    <label ng-click="focusNextInput($event)">{{ 'BCC' | translate }}</label>
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
