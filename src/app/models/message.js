@@ -336,18 +336,14 @@ angular.module("proton.models.message", ["proton.constants"])
                     try {
                         authentication.getPrivateKey().then(
                             function(key) {
-                                pmcw.decryptMessageRSA(this.Body, key, this.Time)
-                                .then(
-                                    function(result) {
-                                        this.DecryptedBody = result;
-                                        this.failedDecryption = false;
-                                        deferred.resolve(result);
-                                    }.bind(this),
-                                    function(err) {
-                                        this.failedDecryption = true;
-                                        deferred.reject(err);
-                                    }.bind(this)
-                                );
+                                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
+                                    this.DecryptedBody = result;
+                                    this.failedDecryption = false;
+                                    deferred.resolve(result);
+                                }.bind(this), function(err) {
+                                    this.failedDecryption = true;
+                                    deferred.reject(err);
+                                }.bind(this));
                             }.bind(this),
                             function(err) {
                                 this.failedDecryption = true;

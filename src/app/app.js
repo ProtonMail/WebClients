@@ -45,6 +45,7 @@ angular.module('proton', [
     'proton.config',
 
     // Services
+    'proton.actions',
     'proton.attachments',
     'proton.authentication',
     'proton.cache',
@@ -59,7 +60,6 @@ angular.module('proton', [
     'proton.autocomplete',
     'proton.dropdown',
     'proton.dropzone',
-    'proton.emailField',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',

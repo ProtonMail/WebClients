@@ -14,6 +14,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $templateCache,
     $timeout,
     $translate,
+    action,
     alertModal,
     attachments,
     authentication,
@@ -36,9 +37,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $scope.$on('refreshMessage', function() {
-
-        if (angular.isDefined($rootScope.openMessage)) {
-            
+        if(angular.isDefined($rootScope.openMessage)) {
             var index = $rootScope.openMessage.indexOf($scope.message.ID);
 
             cache.getMessage($scope.message.ID).then(function(message) {
@@ -49,14 +48,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     $rootScope.openMessage.splice(index, 1);
                 }
             });
-
         }
-
-    });
-
-    $scope.$on('$destroy', function() {
-        // cancel timer ago
-        $interval.cancel($scope.agoTimer);
     });
 
     /**
@@ -106,13 +98,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Display content
             $scope.displayContent();
 
-            // Start timer ago
-            $scope.agoTimer = $interval(function() {
-                var time = $filter('longReadableTime')($scope.message.Time);
-
-                $scope.ago = time;
-            }, 60 * 1000);
-
             // Mark message as expanded
             $scope.message.expand = true;
 
@@ -151,7 +136,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var id = '#message' + index;
         var element = angular.element(id);
 
-        if(angular.isDefined(element)) {
+        if(angular.isDefined(element) && angular.isDefined(element.offset())) {
             var value = element.offset().top - element.outerHeight();
 
             $('#pm_thread').animate({
@@ -230,51 +215,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Star the current message
      */
     $scope.star = function() {
-        var copy = angular.copy($scope.message);
-        var ids = [copy.ID];
-        var events = [];
-        var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-
-        // Messages
-        copy.LabelIDsAdded = labelIDsAdded;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        // Conversation
-        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDsAdded: labelIDsAdded}});
-
-        // Send to cache manager
-        cache.events(events);
-
-        // Request
-        Message.star({IDs: ids});
+        action.starMessage($scope.message.ID);
     };
 
     /**
      * Unstar the current message
      */
     $scope.unstar = function() {
-        var copy = angular.copy($scope.message);
-        var ids = [copy.ID];
-        var events = [];
-        var labelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-        var stars = _.filter($scope.messages, function(message) {
-            return message.LabelIDs && message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
-        });
-
-        // Messages
-        copy.LabelIDsRemoved = labelIDsRemoved;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        // Conversation
-        if(stars.length === 1) {
-            events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDsRemoved: labelIDsRemoved}});
-        }
-
-        // Send to cache manager
-        cache.events(events);
-
-        // Request
-        Message.unstar({IDs: ids});
+        action.unstarMessage($scope.message.ID);
     };
 
     /**
@@ -404,55 +352,19 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     /**
      * Mark current message as read
      */
-    $scope.read = function(back) {
-        var  copy = angular.copy($scope.message);
-        var conversation = cache.getConversationCached(copy.ConversationID);
-        var ids = [copy.ID];
-        var events = [];
+    $scope.read = function() {
+        var ids = [$scope.message.ID];
 
-        // Generate message event
-        copy.IsRead = 1;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        // Generate conversation event
-        if(angular.isDefined(conversation)) {
-            conversation.NumUnread = 0;
-            events.push({Action: 3, ID: copy.ConversationID, Conversation: conversation});
-        }
-
-        // Send to cache manager
-        cache.events(events);
-
-        // Request
-        Message.read({IDs: ids});
+        action.readMessage(ids);
     };
 
     /**
      * Mark current message as unread
      */
     $scope.unread = function() {
-        var  copy = angular.copy($scope.message);
-        var conversation = cache.getConversationCached(copy.ConversationID);
-        var ids = [copy.ID];
-        var events = [];
-        var unreads = _.where($scope.messages, {IsRead: 0});
+        var ids = [$scope.message.ID];
 
-        // Generate message event
-        copy.IsRead = 0;
-        copy.expand = undefined; // Trick to close message and force to pass in iniView after
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        // Generate conversation event
-        if(angular.isDefined(conversation)) {
-            conversation.NumUnread = unreads.length + 1;
-            events.push({Action: 3, ID: copy.ConversationID, Conversation: conversation});
-        }
-
-        // Send to cache manager
-        cache.events(events);
-
-        // Request
-        Message.unread({IDs: ids});
+        action.unreadMessage(ids);
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
@@ -634,63 +546,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {Boolean} alsoArchive
      */
     $scope.saveLabels = function(labels, alsoArchive) {
-        var deferred = $q.defer();
-        var REMOVE = 0;
-        var ADD = 1;
-        var copy = angular.copy($scope.message);
-        var ids = [copy.ID];
-        var promises = [];
-        var events = [];
-        var current = tools.currentLocation();
-        var labelIDs = [];
-        var toApply = _.map(_.filter(labels, function(label) {
-            return label.Selected === true && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) === -1;
-        }), function(label) {
-            return label.ID;
-        }) || [];
-        var toRemove = _.map(_.filter(labels, function(label) {
-            return label.Selected === false && angular.isArray(copy.LabelIDs) && copy.LabelIDs.indexOf(label.ID) !== -1;
-        }), function(label) {
-            return label.ID;
-        }) || [];
+        var messages = [$scope.message];
 
-        // Requests
-        _.each(toApply, function(labelID) {
-            promises.push(Message.updateLabels(labelID, ADD, ids));
-        });
-
-        _.each(toRemove, function(labelID) {
-            promises.push(Message.updateLabels(labelID, REMOVE, ids));
-        });
-
-        if(alsoArchive === true) {
-            toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive); // Add in archive
-            toRemove.push(current); // Remove current location
-        }
-
-        // Generate cache event
-        copy.LabelIDsAdded = toApply;
-        copy.LabelIDsRemoved = toRemove;
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
-            labelIDs = labelIDs.concat(message.LabelIDs);
-        });
-
-        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
-
-        // Send to cache manager
-        cache.events(events);
-
-        $q.all(promises).then(function(result) {
-            if(alsoArchive === true) {
-                deferred.resolve(Message.archive({IDs: ids}).$promise);
-            } else {
-                deferred.resolve();
-            }
-        });
-
-        return deferred.promise;
+        action.labelMessage(messages, labels, alsoArchive);
     };
 
     /**
@@ -843,60 +701,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.move = function(mailbox) {
-        var events = [];
-        var copy = angular.copy($scope.message);
-        var current = tools.currentLocation();
-        var labelIDs = [];
+        var ids = [$scope.message.ID];
 
-        copy.Selected = false;
-        copy.LabelIDsRemoved = [current]; // Remove previous location
-        copy.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
-
-        // Generate message event
-        events.push({Action: 3, ID: copy.ID, Message: copy});
-
-        _.each(cache.queryMessagesCached(copy.ConversationID), function(message) {
-            labelIDs = labelIDs.concat(message.LabelIDs);
-        });
-
-        // Generate conversation event
-        events.push({Action: 3, ID: copy.ConversationID, Conversation: {
-            ID: copy.ConversationID,
-            LabelIDs: labelIDs
-        }});
-
-        // Send to cache manager
-        cache.events(events);
-
-        // Send move request
-        Message[mailbox]({IDs: [copy.ID]});
+        action.moveMessage(ids, mailbox);
     };
 
     /**
      * Delete current message
      */
     $scope.delete = function() {
-        var events = [];
-        var copy = angular.copy($scope.message);
-        var conversation = cache.getConversationCached(copy.ConversationID);
+        var ids = [$scope.message.ID];
 
-        if(angular.isDefined(conversation)) {
-            if(conversation.NumMessages <= 1) {
-                // Delete conversation
-                events.push({Action: 0, ID: conversation.ID});
-            } else if(conversation.NumMessages > 1) {
-                // Decrease the number of message
-                conversation.NumMessages--;
-                events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-            }
-        }
-
-        events.push({Action: 0, ID: copy.ID});
-
-        // Send to cache manager
-        cache.events(events);
-
-        Message.delete({IDs: [copy.ID]});
+        action.deleteMessage(ids);
     };
 
     /**

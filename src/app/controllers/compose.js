@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Compose", ["proton.constants"])
 
 .controller("ComposeMessageController", function(
+    $filter,
     $interval,
     $log,
     $q,
@@ -33,8 +34,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.isOver = false;
     $scope.queuedSave = false;
     $scope.preventDropbox = false;
-    $scope.expandRecipients = false;
-    $scope.recipientsCollapsed = true;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
@@ -82,8 +81,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         {label: '22', value: 22},
         {label: '23', value: 23}
     ];
-
-    Contact.index.updateWith($scope.user.Contacts);
 
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
@@ -159,7 +156,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor = editor;
             $scope.listenEditor(message);
             $scope.focusComposer(message);
-            message.recipientFieldFocussed = 1;
         }
     });
 
@@ -267,7 +263,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
                 accept: function(file, done) {
-
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -510,7 +505,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.fields = message.CCList.length > 0 || message.BCCList.length > 0;
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
@@ -724,7 +718,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.fields = false;
-                    message.recipientFieldFocussed = 0;
                     $('.typeahead-container').scrollTop(0);
                     $scope.$apply();
                 });
@@ -758,30 +751,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         );
     };
 
-    $scope.toUnfocussed = function(message) {
-        return message.recipientFieldFocussed !== 1 && message.recipientFieldFocussed !== 4;
-    };
-
-    $scope.ccUnfocussed = function(message) {
-        return (message.recipientFieldFocussed !== 2 && message.recipientFieldFocussed !== 4) && message.fields;
-    };
-
-    $scope.bccUnfocussed = function(message) {
-        return (message.recipientFieldFocussed !== 3 && message.recipientFieldFocussed !== 4) && message.fields;
-    };
-
-    $scope.ccPlus = function(message) {
-        return (message.numTags.CCList > 0 || message.numTags.BCCList > 0) && !message.fields;
-    };
-
-    $scope.recipientFieldEllipsis = function(message, list) {
-            if ((message.recipientFields[list].scrollHeight - message.recipientFields[list].offsetHeight) > 20) {
-                return true;
-            } else {
-                return false;
-            }
-    };
-
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };
@@ -790,11 +759,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.attachmentsToggle = false;
     };
 
-    $scope.toggleFields = function(message) {
-        message.fields = !message.fields;
-        $timeout(function() {
-            message.recipientFieldFocussed = (message.fields) ? 4 : 0;
-        });
+    $scope.toggleCcBcc = function(message) {
+        message.ccbcc = !message.ccbcc;
         $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
     };
@@ -1058,8 +1024,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             parameters.Message.AddressID = message.From.ID;
 
-            // Encrypt message body with the user's plublic key
-            message.encryptBody(authentication.user.PublicKey).then(function(result) {
+            // Encrypt message body with the first public key for the From address
+            message.encryptBody(authentication.user.PublicKey).then(function(result) { //
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
@@ -1201,38 +1167,48 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     parameters.id = message.ID;
                     parameters.ExpirationTime = message.ExpirationTime;
                     message.getPublicKeys(emails).then(function(result) {
-                        var keys = result;
-                        var outsiders = false;
-                        var promises = [];
+                        if(angular.isDefined(result) && result.Code === 1000) {
+                            var keys = result; // Save result in keys variables
+                            var outsiders = false; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
+                            var promises = [];
 
-                        parameters.Packages = [];
+                            parameters.Packages = [];
 
-                        _.each(emails, function(email) {
-                            if(keys[email].length > 0) { // inside user
-                                var key = keys[email];
+                            _.each(emails, function(email) {
+                                // Inside user
+                                if(keys[email].length > 0) {
+                                    var key = keys[email];
 
-                                promises.push(message.encryptBody(key).then(function(result) {
-                                    var body = result;
+                                    // Encrypt content body in with the public key user
+                                    promises.push(message.encryptBody(key).then(function(result) {
+                                        var body = result;
 
-                                    return message.encryptPackets(key).then(function(keyPackets) {
-                                        return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
-                                    });
-                                }));
-                            } else { // outside user
-                                outsiders = true;
+                                        // Encrypt attachments with the public key
+                                        return message.encryptPackets(key).then(function(keyPackets) {
+                                            return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
+                                        });
+                                    }));
+                                }
+                                // Outside user
+                                else {
+                                    outsiders = true;
 
-                                if(message.IsEncrypted === 1) {
-                                    var replyToken = message.generateReplyToken();
-                                    var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
+                                    if(message.IsEncrypted === 1) {
+                                        var replyToken = message.generateReplyToken();
+                                        var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
-                                    promises.push(replyTokenPromise.then(function(encryptedToken) {
-                                        return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-                                            var body = result;
+                                        promises.push(replyTokenPromise.then(function(encryptedToken) {
+                                            return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                                var body = result;
 
-                                            return message.encryptPackets('', message.Password).then(function(result) {
-                                                var keyPackets = result;
+                                                return message.encryptPackets('', message.Password).then(function(result) {
+                                                    var keyPackets = result;
 
-                                                return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                                    return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
+                                                }, function(error) {
+                                                    message.encrypting = false;
+                                                    $log.error(error);
+                                                });
                                             }, function(error) {
                                                 message.encrypting = false;
                                                 $log.error(error);
@@ -1240,71 +1216,75 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }, function(error) {
                                             message.encrypting = false;
                                             $log.error(error);
-                                        });
+                                        }));
+                                    }
+                                }
+                            });
+
+                            // If there are some outsiders
+                            if(outsiders === true && message.IsEncrypted === 0) {
+                                parameters.AttachmentKeys = [];
+                                parameters.ClearBody = message.Body; // Add a clear body in parameter
+
+                                if(message.Attachments.length > 0) {
+                                    // Add clear attachments packet in parameter
+                                    promises.push(message.clearPackets().then(function(packets) {
+                                        parameters.AttachmentKeys = packets;
                                     }, function(error) {
-                                        message.encrypting = false;
                                         $log.error(error);
                                     }));
                                 }
                             }
-                        });
 
-                        if(outsiders === true && message.IsEncrypted === 0) {
-                            parameters.AttachmentKeys = [];
-                            parameters.ClearBody = message.Body;
+                            // When all promises are complete
+                            $q.all(promises).then(function() {
+                                if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
+                                    $log.error(message);
+                                    deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
+                                } else {
+                                    message.encrypting = false;
+                                    message.sending = true;
+                                    Message.send(parameters).$promise.then(function(result) {
+                                        if(angular.isDefined(result.Error)) {
+                                            deferred.reject(new Error(result.Error));
+                                        } else {
+                                            var events = [];
+                                            var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
-                            if(message.Attachments.length > 0) {
-                                 promises.push(message.clearPackets().then(function(packets) {
-                                     parameters.AttachmentKeys = packets;
-                                }, function(error) {
-                                    $log.error(error);
-                                }));
-                            }
-                        }
+                                            $rootScope.openMessage = $rootScope.openMessage || [];
+                                            $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
+                                            message.sending = false; // Change status
+                                            result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                            result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                                            result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
+                                            result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
+                                            events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
-                        $q.all(promises).then(function() {
-                            if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
-                                $log.error(message);
-                                deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
-                            } else {
-                                message.encrypting = false;
-                                message.sending = true;
-                                Message.send(parameters).$promise.then(function(result) {
-                                    if(angular.isDefined(result.Error)) {
-                                        deferred.reject(new Error(result.Error));
-                                    } else {
-                                        var events = [];
-                                        var messages = cache.queryMessagesCached(result.Sent.ConversationID);
+                                            if(result.Parent) {
+                                                events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                            }
 
-                                        $rootScope.openMessage = $rootScope.openMessage || [];
-                                        $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
-                                        message.sending = false; // Change status
-                                        result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                        result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                        result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
-                                        result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
-                                        events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
-
-                                        if(result.Parent) {
-                                            events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
+                                            cache.events(events); // Send events to the cache manager
+                                            notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
+                                            $scope.close(message, false, false); // Close the composer window
+                                            deferred.resolve(result); // Resolve finally the promise
                                         }
-
-                                        cache.events(events); // Send events to the cache manager
-                                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
-                                        $scope.close(message, false, false); // Close the composer window
-                                        deferred.resolve(result); // Resolve finally the promise
-                                    }
-                                }, function(error) {
-                                    message.sending = false;
-                                    error.message = 'Error during the sending';
-                                    deferred.reject(error);
-                                });
-                            }
-                        }, function(error) {
+                                    }, function(error) {
+                                        message.sending = false;
+                                        error.message = 'Error during the sending';
+                                        deferred.reject(error);
+                                    });
+                                }
+                            }, function(error) {
+                                message.encrypting = false;
+                                error.message = 'Error during the promise preparation';
+                                deferred.reject(error);
+                            });
+                        } else {
                             message.encrypting = false;
-                            error.message = 'Error during the promise preparation';
+                            error.message = 'Error during get public keys user request';
                             deferred.reject(error);
-                        });
+                        }
                     }, function(error) {
                         message.encrypting = false;
                         error.message = 'Error during the getting of the public key';
@@ -1455,6 +1435,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
+    };
+
+    /**
+     * Transform the recipients list to a string
+     * @param {Object} message
+     * @return {String}
+     */
+    $scope.recipients = function(message) {
+        var recipients = [];
+
+        recipients = recipients.concat(_.map(message.ToList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = recipients.concat(_.map(message.CCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = recipients.concat(_.map(message.BCCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
+        recipients = _.uniq(recipients);
+
+        return recipients.join(', ');
+    };
+
+    /**
+     * Display fields (To, Cc, Bcc) and focus the input in the To field.
+     * @param {Object} message
+     */
+    $scope.focusTo = function(message) {
+        message.fields = true;
+        $rootScope.$broadcast('squireHeightChanged');
+        $scope.composerStyle();
+        // Focus input
+        $timeout(function() {
+            $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
+        });
     };
 
     /**

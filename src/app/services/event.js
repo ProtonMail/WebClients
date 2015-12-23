@@ -57,7 +57,6 @@ angular.module("proton.event", ["proton.constants"])
 							authentication.user.Contacts[index] = contact.Contact;
 						}
 						$rootScope.$broadcast('updateContacts');
-						Contact.index.updateWith(authentication.user.Contacts);
 					});
 				}
 			},
@@ -140,9 +139,9 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageLabels(data.Labels);
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
+					this.manageThreadings(data.Messages, data.Conversations);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
-					this.manageThreadings(data.Messages, data.Conversations);
 					this.manageStorage(data.UsedSpace);
 					this.manageID(data.EventID);
 				}

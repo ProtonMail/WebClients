@@ -16,6 +16,7 @@ angular.module("proton.cache", [])
     var api = {};
     var messagesCached = [];
     var conversationsCached = [];
+    var timeCached = {};
     var DELETE = 0;
     var CREATE = 1;
     var UPDATE_DRAFT = 2;
@@ -28,14 +29,6 @@ angular.module("proton.cache", [])
     var storeConversations = function(conversations) {
         _.each(conversations, function(conversation) {
             var current = _.findWhere(conversationsCached, {ID: conversation.ID});
-
-            if(angular.isDefined(conversation.Time)) {
-                conversation.Times = conversation.Times || {};
-
-                _.each(conversation.LabelIDs, function(labelID) {
-                    conversation.Times[labelID] = conversation.Time;
-                });
-            }
 
             if(angular.isDefined(current)) {
                 var index = conversationsCached.indexOf(current);
@@ -70,6 +63,17 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Store time for conversation per location
+     * @param {String} conversationId
+     * @param {String} loc
+     * @param {Integer} time
+     */
+    var storeTime = function(conversationId, loc, time) {
+        timeCached[conversationId] = timeCached[conversationId] || {};
+        timeCached[conversationId][loc] = time;
+    };
+
+    /**
      * Insert conversation in conversationsCached
      * @param {Object} conversation
      */
@@ -88,44 +92,31 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Reorder cache loc by reverse time
-     * @param {Array} elements - conversation or message
-     * @param {String} parameter - ordered with this parameter
-     * @return {Array} don't miss this array is reversed
+     * Return a list of messages reordered by Time
+     * @param {Array} messages
+     * @return {Array}
      */
-    var order = function(elements, parameter) {
-        if(angular.isArray(elements)) {
-            return _.sortBy(elements, parameter).reverse();
+    var orderMessage = function(messages) {
+        if(angular.isArray(messages)) {
+            return _.sortBy(messages, 'Time');
         } else {
             return [];
         }
     };
 
     /**
-     * Manage time per conversation and location
-     * @param {Object} message
+     * Return a list of conversations reordered by Time for a specific location
+     * @param {Array} conversations
+     * @param {String} loc
+     * @return {Array} don't miss this array is reversed
      */
-    var time = function(message) {
-        var conversation = api.getConversationCached(message.ConversationID);
-
-        if(angular.isDefined(conversation)) {
-            var index = conversationsCached.indexOf(conversation);
-
-            conversation.Times = conversation.Times || {};
-
-            if(angular.isArray(message.LabelIDs)) {
-                _.each(message.LabelIDsAdded, function(labelID) {
-                    conversation.Times[labelID] = message.Time;
-                });
-            }
-
-            if(angular.isArray(message.LabelIDsAdded)) {
-                _.each(message.LabelIDsAdded, function(labelID) {
-                    conversation.Times[labelID] = message.Time;
-                });
-            }
-
-            conversationsCached[index] = conversation;
+    var orderConversation = function(conversations, loc) {
+        if(angular.isArray(conversations)) {
+            return _.sortBy(conversations, function(conversation) {
+                return api.getTime(conversation.ID, loc);
+            }).reverse();
+        } else {
+            return [];
         }
     };
 
@@ -158,6 +149,18 @@ angular.module("proton.cache", [])
         });
 
         return result;
+    };
+
+    /**
+     * Update time for conversation
+     * @param {Object} message
+     */
+    var manageTimes = function(message) {
+        if(angular.isArray(message.LabelIDs)) {
+            _.each(message.LabelIDs, function(labelID) {
+                storeTime(message.ConversationID, labelID, message.Time);
+            });
+        }
     };
 
     /**
@@ -217,6 +220,11 @@ angular.module("proton.cache", [])
                 // Set total value in rootScope
                 $rootScope.Total = data.Total;
 
+                // Store time value
+                _.each(data.Conversations, function(conversation) {
+                    storeTime(conversation.ID, loc, conversation.Time);
+                });
+
                 // Only for cache context
                 if(context === true) {
                     // Set total value in cache
@@ -224,7 +232,7 @@ angular.module("proton.cache", [])
                     // Store conversations
                     storeConversations(data.Conversations);
                     // Return conversations ordered
-                    deferred.resolve(order(data.Conversations, 'Time'));
+                    deferred.resolve(orderConversation(data.Conversations, loc));
                 } else {
                     deferred.resolve(data.Conversations);
                 }
@@ -266,7 +274,7 @@ angular.module("proton.cache", [])
                 // Store messages
                 storeMessages(messages);
                 // Return messages ordered
-                deferred.resolve(order(messages, 'Time'));
+                deferred.resolve(orderMessage(messages));
             } else {
                 deferred.resolve(messages);
             }
@@ -297,7 +305,7 @@ angular.module("proton.cache", [])
                 storeConversations([data.Conversation]);
                 storeMessages(messages);
 
-                deferred.resolve(order(messages, 'Time'));
+                deferred.resolve(orderMessage(messages));
             } else {
                 deferred.reject();
             }
@@ -356,6 +364,19 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Return time for a specific conversation and location
+     */
+    api.getTime = function(conversationId, loc) {
+        if(angular.isDefined(timeCached[conversationId]) && angular.isNumber(timeCached[conversationId][loc])) {
+            return timeCached[conversationId][loc];
+        } else {
+            var conversation = api.getConversationCached(conversationId);
+
+            return conversation.Time;
+        }
+    };
+
+    /**
      * Return message list
      * @param {Object} request
      * @return {Promise}
@@ -379,7 +400,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            messages = order(messages, 'Time');
+            messages = orderMessage(messages);
 
             switch(mailbox) {
                 case 'label':
@@ -445,7 +466,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            conversations = order(conversations, 'Time');
+            conversations = orderConversation(conversations, loc);
 
             switch(mailbox) {
                 case 'label':
@@ -507,7 +528,7 @@ angular.module("proton.cache", [])
             var messages = _.where(messagesCached, {ConversationID: conversationId});
 
             if(conversation.NumMessages === messages.length) {
-                deferred.resolve(order(messages, 'Time'));
+                deferred.resolve(orderMessage(messages));
             } else {
                 callApi();
             }
@@ -526,7 +547,7 @@ angular.module("proton.cache", [])
         var mailbox = tools.currentMailbox();
         var messages = _.where(messagesCached, {ConversationID: conversationId});
 
-        messages = order(messages, 'Time');
+        messages = orderMessage(messages);
 
         return angular.copy(messages);
     };
@@ -695,7 +716,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var messages = [event.Message];
 
-        time(event.Message);
+        manageTimes(event.Message);
 
         // Save new messages
         storeMessages(messages);
@@ -718,11 +739,6 @@ angular.module("proton.cache", [])
             updateConversation(event.Conversation);
             deferred.resolve();
         } else {
-            var messages = api.queryMessagesCached(event.ID);
-            var message = _.max(messages, function(message){ return message.Time; });
-
-            event.Conversation.Time = message.Time;
-            event.Conversation.LabelIDs = message.LabelIDs;
             insertConversation(event.Conversation);
             deferred.resolve();
         }
@@ -763,7 +779,7 @@ angular.module("proton.cache", [])
 
                 messagesCached[index] = message;
                 manageCounters(current, messagesCached[index], 'message');
-                time(message);
+                manageTimes(event.Message);
                 deferred.resolve();
            }
         } else {
@@ -818,8 +834,10 @@ angular.module("proton.cache", [])
     /**
     * Manage the cache when a new event comes
     * @param {Array} events
+    * @return {Promise}
     */
     api.events = function(events) {
+        var deferred = $q.defer();
         var promises = [];
 
         console.log(events);
@@ -862,7 +880,12 @@ angular.module("proton.cache", [])
 
         $q.all(promises).then(function() {
             api.callRefresh();
+            deferred.resolve();
+        }, function() {
+            deferred.reject();
         });
+
+        return deferred.promise;
     };
 
     /**

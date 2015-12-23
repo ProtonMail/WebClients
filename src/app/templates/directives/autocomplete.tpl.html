@@ -1,130 +1,20 @@
 <div class="container-email">
     <div class="input-email" ng-mousedown="onMouseDown($event)">
         <span ng-repeat="email in emails" class="email">
-            <span class="label-email" ng-attr-title="{{ email | contact: 'Email'}}" ng-dblclick="onEdit(email)" ng-if="!!!email.edit">
+            <span class="label-email" title="{{ email | contact }}">
                 <span ng-bind="email | contact: 'Name'"></span>
-                <a ng-click="onRemove($index)">
+                <a ng-click="onRemove($index)" title="{{ 'REMOVE' | translate }}">
                     <i class="fa fa-times"></i>
                 </a>
             </span>
-            <form class="form-email" ng-submit="onSubmit(email, true)" ng-if="!!email.edit">
-                <input type="text" ng-focus="email.edit === true" ng-model="params.newValue" ng-blur="onBlur(email)" ng-keydown="onKeyDown($event, email)" ng-keyup="onKeyUp($event, email)" ng-change="onChange()" class="edit-email" spellcheck="false" autocapitalize="off" autocomplete="false" role="combobox" />
-            </form>
         </span>
+        <form class="form-email" ng-submit="onSubmit()">
+            <input type="text" class="new-value-email" ng-model="params.newValue" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 150, 'blur': 0 } }" ng-blur="onSubmit()" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)" ng-change="onChange()" class="edit-email" spellcheck="false" autocapitalize="off" autocomplete="false" role="combobox" />
+        </form>
     </div>
     <ul class="autocomplete-email" ng-show="params.contactsFiltered.length > 0">
         <li ng-repeat="email in params.contactsFiltered">
             <a href="" ng-mousedown="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind="email | contact"></a>
         </li>
     </ul>
-    <style>
-    .container-email {
-        position: relative;
-    }
-
-    .input-email {
-        cursor: text;
-        background-color: #FFF;
-        border: 1px solid #CCC;
-        min-height: 30px;
-        line-height: 30px;
-        padding: 0 6px;
-        font-size: 13px;
-        color: #555;
-        vertical-align: middle;
-        position: relative;
-    }
-
-    .label-email {
-        background-color: #EEE;
-        border: 1px solid #CCC;
-        color: #333;
-        cursor: pointer;
-        margin-top: 5px;
-        text-shadow: none;
-        border-radius: 2px;
-        padding-left: 5px;
-        font-weight: bold;
-        font-size: 12px;
-        margin-right: 5px;
-    }
-
-    .label-email:hover {
-        border-color: #AAA;
-    }
-
-    .label-email a {
-        font-weight: normal;
-        color: #aaa;
-        margin-right: 5px;
-    }
-
-    .label-email a:hover {
-        color: #666;
-    }
-
-    .input-email input[type="text"] {
-        border: none;
-        resize: none;
-        padding: 0;
-        outline: none;
-        margin-bottom: 0;
-        box-shadow: none;
-        height: 30px;
-        line-height: 30px;
-        width: 330px;
-        overflow: hidden;
-        white-space: nowrap;
-        transition: none;
-    }
-
-    .input-email form {
-        margin-bottom: 0;
-        display: inline;
-    }
-
-    .autocomplete-email {
-        z-index: 1;
-        list-style-type: none;
-        border: 1px solid #CCC;
-        position: absolute;
-        background-color: white;
-        max-height: 150px;
-        overflow-y: auto;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .autocomplete-email ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .autocomplete-email li {
-        padding: 0;
-        margin: 0;
-    }
-
-    .autocomplete-email a {
-        line-height: 30px;
-        padding-left: 7px;
-        padding-right: 7px;
-        display: block;
-        text-decoration: none;
-        color: #333;
-    }
-
-    .autocomplete-email a.selected,
-    .autocomplete-email a:hover.selected {
-        background-color: #D9EDF7;
-    }
-
-    .autocomplete-email a:hover {
-        background-color: #EEE;
-    }
-    </style>
 </div>

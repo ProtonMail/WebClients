@@ -38,8 +38,6 @@ module.exports = {
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-resource/angular-resource.js",
-      // "vendor/angular-bootstrap/ui-bootstrap.js",
-      // "vendor/angular-bootstrap/ui-bootstrap-tpls.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-touch/angular-touch.js",
@@ -50,10 +48,6 @@ module.exports = {
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/dompurify/purify.js",
       "vendor/papaparse/papaparse.min.js",
-      "vendor/typeahead.js/dist/typeahead.bundle.js",
-      "vendor/tagmanager/tagmanager.js",
-      "vendor/autosize-input/jquery.autosize.input.js",
-      "vendor/mousetrap/mousetrap.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
@@ -69,7 +63,6 @@ module.exports = {
       "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
-      "vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
       "vendor/fastclick/lib/fastclick.js",
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js"
@@ -77,12 +70,8 @@ module.exports = {
     bootstrap_components: [
       "affix",
       "alert",
-      "collapse",
       "tooltip",
-      "dropdown",
-      "modal",
-      "transition",
-      "popover"
+      "transition"
     ],
 
     required_js: [],
@@ -90,12 +79,8 @@ module.exports = {
     included_js: [],
 
     css: [
-      "vendor/tagmanager/tagmanager.css",
       "vendor/ng-sortable/dist/ng-sortable.css",
       "vendor/angular-notify/dist/angular-notify.css",
-      "vendor/angular-modal/modal.css",
-      "vendor/angular-toggle-switch/angular-toggle-switch.css",
-      "vendor/angular-toggle-switch/angular-toggle-switch-bootstrap.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
       "vendor/open-sans-fontface/open-sans.css"

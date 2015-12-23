@@ -290,20 +290,6 @@
 				}
 			}
 		}
-		.typeahead-container {
-			line-height: 33px;
-			max-height: 99px;
-			overflow-y: auto;
-			-webkit-overflow-scrolling: touch;
-			overflow-x: hidden;
-			&.unfocussed {
-				max-height: 33px;
-				overflow: hidden;
-			}
-			&.marker-width {
-				width: 80%;
-			}
-		}
 		.meta {
 			-webkit-flex-grow: 1;
 		    -ms-flex-positive: 1;
@@ -313,7 +299,7 @@
 			color: $gray-light;
 			float: left;
 			width: 100%;
-			#fromRow {
+			.fromRow {
 				height: 40px;
 				position: relative;
 				button {
@@ -382,13 +368,12 @@
 				}
 			}
 			.row {
-				min-height: ($composerRowHeight - 7);
-				line-height: $composerRowHeight;
+				min-height: ($composerRowHeight)+1;
+				line-height: $composerRowHeight+1;
 				border-bottom: 1px solid $border;
 				float: left;
 				width: 100%;
 				position: relative;
-				padding-bottom: 6px;
 				box-sizing: border-box;
 				&.closed {
 					height: 40px;
@@ -427,8 +412,7 @@
 					top: 0;
 				}
 				.subject {
-					width: 510px;
-					margin-left: 5rem;
+					width: 580px;
 				}
 				select::-ms-expand {
 				    display: none;
@@ -457,6 +441,16 @@
 				& > div {
 					margin-left: 5rem;
 				}
+				&.placeholder > div {
+					padding-left: 10px;
+					margin: 0;
+					color: initial !important;
+					font-size: 13px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					width: 95%;
+				}
 			}
 		}
 		.attachmentBar {
@@ -470,7 +464,7 @@
 			cursor: pointer;
 			box-sizing: border-box;
 			z-index: 7;
-			border-top: 1px solid $border;			
+			border-top: 1px solid $border;
 			i {
 				color: $primary;
 				font-style: normal;
@@ -581,12 +575,12 @@
 			height: 620px;
 		}
 		.composer.tall section {
-			height: 670px; 
+			height: 670px;
 		}
 	}
 	html.protonmail {
 	    overflow: auto !important;
-	    -webkit-overflow-scrolling: touch;	
+	    -webkit-overflow-scrolling: touch;
 		body.modalOpen,
 		body.activeComposer {
 		    overflow: auto !important;

@@ -16,14 +16,18 @@ angular.module("proton.controllers.Header", [])
         searchContactInput: ''
     };
 
-    $scope.showSidebar = $rootScope.showSidebar;
-
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });
 
+    $scope.$on('$stateChangeSuccess', function(event) {
+        if($state.is('secured.search.list') === false) {
+            $scope.params.searchMessageInput = '';
+        }
+    });
+
     function openWizardModal(title, version) {
-        wizardModal.activate({ 
+        wizardModal.activate({
             params: {
                 title: title,
                 version: version,
