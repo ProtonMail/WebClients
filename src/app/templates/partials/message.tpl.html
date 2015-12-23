@@ -27,6 +27,7 @@ ng-class="{
             <em ng-show="toggleDetails === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+        <em class="pm_tag" ng-show="sent() === true">{{ 'SENT' | translate }}</em>
         <em class="pm_tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
         <em class="pm_tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
         <em class="pm_tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>

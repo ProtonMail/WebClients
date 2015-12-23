@@ -66,6 +66,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Check if the current message is a sent
+     * @return {Boolean}
+     */
+    $scope.sent = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.sent) !== -1;
+    };
+
+    /**
      * Check if the current message is a draft
      * @return {Boolean}
      */
