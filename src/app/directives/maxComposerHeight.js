@@ -1,46 +1,48 @@
-angular.module("proton.maxComposerHeight", [])
+angular.module('proton.maxComposerHeight', [])
 
-.directive('maxComposerHeight', function ($window, $timeout, $log) {
-    return function (scope, element, attrs) {
-        var setHeight = function() {
-            var parent = element.closest('.composer');
+.directive('maxComposerHeight', function ($window, $timeout) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var setHeight = function() {
+                var parent = angular.element(element).closest('.composer');
 
-            // Set to zero
-            element.find('iframe').css({ height: 0 });
+                // Set to zero
+                angular.element(element).find('iframe').css({ height: 0 });
 
-            var height = parent.outerHeight();
+                var height = parent.outerHeight();
 
-            height -= parent.find('header').outerHeight();
-            height -= parent.find('.meta').outerHeight();
-            height -= parent.find('.squire-toolbar').outerHeight();
-            height -= parent.find('footer').outerHeight();
-            element.find('iframe').css({
-                height: height
+                height -= parent.find('header').outerHeight();
+                height -= parent.find('.meta').outerHeight();
+                height -= parent.find('.squire-toolbar').outerHeight();
+                height -= parent.find('footer').outerHeight();
+                angular.element(element).find('iframe').css({
+                    height: height
+                });
+            };
+
+            // Listen resize window
+            angular.element($window).bind('resize', setHeight);
+
+            // Listen state change
+            scope.$on('$stateChangeSuccess', function() {
+                setHeight();
             });
-        };
 
-        // Listen resize window
-        angular.element($window).bind('resize', setHeight);
+            // Listen composer mode change
+            scope.$on('composerModeChange', function() {
+                setHeight();
+            });
 
-        // Listen state change
-        scope.$on('$stateChangeSuccess', function() {
-            setHeight();
-        });
+            // Remove listener on resize window
+            scope.$on('$destroy', function() {
+                angular.element($window).unbind('resize', setHeight);
+            });
 
-        // Listen composer mode change
-        scope.$on('composerModeChange', function() {
-            setHeight();
-        });
-
-        // Remove listener on resize window
-        scope.$on('$destroy', function() {
-            angular.element($window).unbind('resize', setHeight);
-        });
-
-        // Delay the first call
-        $timeout(function() {
-            setHeight();
-        });
-
+            // Delay the first call
+            $timeout(function() {
+                setHeight();
+            });
+        }
     };
 });
