@@ -1251,9 +1251,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var events = [];
                                             var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
-                                            $rootScope.openMessage = $rootScope.openMessage || [];
-                                            $rootScope.openMessage.push(message.ID); // Ask the front-end to open the message sent
                                             message.sending = false; // Change status
+                                            result.Sent.expanded = undefined; // Trick to ask the front-end to open the message sent
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                             result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message

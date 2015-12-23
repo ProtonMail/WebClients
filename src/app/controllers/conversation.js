@@ -25,6 +25,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
+    $rootScope.draftOpen = false;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -45,13 +46,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
                 if(angular.isUndefined(current) && index === -1) {
-                    // If the message is not a draft, open it
-                    if(message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) === -1) {
-                        $rootScope.openMessage = $rootScope.openMessage || [];
-                        $rootScope.openMessage.push(message.ID);
+                    if(angular.isDefined(message.Body)) {
+                        $scope.messages.push(message);
+                    } else {
+                        cache.getMessage(message.ID).then(function(result) {
+                            _.extend(message, result);
+                            $scope.messages.push(message);
+                        });
                     }
-                    // Add message
-                    $scope.messages.push(message);
                 }
             });
 
@@ -75,24 +77,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-        var unreads = _.where($scope.messages, {IsRead: 0});
 
-        if(angular.isDefined($rootScope.openMessage)) { // Open specific message
-            // '$rootScope.openMessage' already initialized when the user click
-        } else if(unreads.length > 0) {
-            // Open all unread messages
-            $rootScope.openMessage = _.map(unreads, function(message) { return message.ID; });
-        } else {
-            // Open the only lastest
-            $rootScope.openMessage = [_.last($scope.messages).ID];
-        }
-
-        $rootScope.scrollToFirst = _.first($rootScope.openMessage);
-
-        // Mark conversation as read
-        if($scope.conversation.NumUnread > 0) {
-            $scope.read();
-        }
     };
 
     /**

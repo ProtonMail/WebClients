@@ -617,7 +617,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var type = tools.typeList();
         var id;
 
-        delete $rootScope.openMessage;
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
@@ -627,7 +626,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             id = element.ID;
         } else if (type === 'message') {
             id = element.ConversationID;
-            $rootScope.openMessage = [element.ID];
         }
 
         $state.go('secured.' + $scope.mailbox + '.list.view', { id: id }, {reload: id === $state.params.id});

@@ -37,17 +37,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
 
     $scope.$on('refreshMessage', function() {
-        if(angular.isDefined($rootScope.openMessage)) {
-            var index = $rootScope.openMessage.indexOf($scope.message.ID);
+        var message = cache.getMessageCached($scope.message.ID);
 
-            cache.getMessage($scope.message.ID).then(function(message) {
-                _.extend($scope.message, message);
+        if(angular.isDefined(message)) {
+            _.extend($scope.message, message);
 
-                if(index !== -1) {
-                    $scope.initView();
-                    $rootScope.openMessage.splice(index, 1);
-                }
-            });
+            if(angular.isUndefined($scope.message.expand) && angular.isDefined($scope.message.Body)) {
+                $scope.initView();
+            }
         }
     });
 
@@ -55,6 +52,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Toggle message in conversation view
      */
     $scope.toggle = function() {
+        if($scope.draft() === true) {
+            $rootScope.draftOpen = false;
+        }
+
         if(angular.isUndefined($scope.message.expand)) {
             networkActivityTracker.track($scope.initView());
         } else if($scope.message.expand === true) {
@@ -108,8 +109,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // If the message is a draft
         if($scope.draft() === true) {
-            // Open the message in composer if it's a draft
-            $scope.openComposer($scope.message.ID);
+            if($rootScope.draftOpen === false) {
+                // Open the message in composer if it's a draft
+                $scope.openComposer($scope.message.ID);
+                $rootScope.draftOpen = true;
+            }
             deferred.resolve();
         } else {
             // Display content
@@ -176,14 +180,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.initView();
             }));
         } else {
-            var index = $rootScope.openMessage.indexOf($scope.message.ID);
-
-            if(index !== -1) {
-                cache.getMessage($scope.message.ID).then(function(message) {
-                    _.extend($scope.message, message);
-                    $scope.initView();
-                    $rootScope.openMessage.splice(index, 1);
-                });
+            if(angular.isDefined($scope.message.Body)) {
+                $scope.initView();
             }
         }
     };

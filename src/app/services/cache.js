@@ -496,10 +496,8 @@ angular.module("proton.cache", [])
 
                 // Supposed total equal to the total cache?
                 if(conversations.length === number) {
-                    console.info('Correct number in the cache');
                     deferred.resolve(conversations);
                 } else {
-                    console.info('Not the correct number in the cache'); // TODO remove it
                     callApi();
                 }
             } else {
