@@ -2,6 +2,7 @@ angular.module('proton.actions', [])
 
 .factory('action', function(
     $q,
+    $rootScope,
     tools,
     cache,
     Conversation,
