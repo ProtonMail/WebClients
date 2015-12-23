@@ -153,7 +153,7 @@ ng-class="{
         </div><!--/.data-->
         <div class="clear"></div>
     </div>
-    <div class="frame" ng-show="message.expand === true" data-double-scroll-bar-horizontal>
+    <div class="frame" ng-show="message.expand === true">
         <p ng-if="message.ExpirationTime > 0" class="text-red">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime }}"></span>
         </p>
