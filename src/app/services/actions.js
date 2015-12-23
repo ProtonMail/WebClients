@@ -568,7 +568,7 @@ angular.module('proton.actions', [])
 
                 // Generate message event
                 message.IsRead = 0;
-                message.expand = undefined; // Trick to close message and force to pass in iniView after
+                message.expand = false; // Trick to close message and force to pass in iniView after
                 events.push({Action: 3, ID: message.ID, Message: message});
 
                 // Generate conversation event
