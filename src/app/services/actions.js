@@ -22,22 +22,27 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var context = tools.cacheContext();
             var promise;
+            var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            var labelIDsRemoved = _.reject([current], function(labelID) {
+                // Remove starred and label
+                return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
+            });
 
             // Generate cache events
             _.each(ids, function(id) {
                 var element = {
                     ID: id,
                     Selected: false,
-                    LabelIDsRemoved: [current], // Remove current location
-                    LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]] // Add new location
+                    LabelIDsRemoved: labelIDsRemoved, // Remove current location
+                    LabelIDsAdded: labelIDsAdded // Add new location
                 };
                 var messages = cache.queryMessagesCached(element.ID);
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         message.Selected = false;
-                        message.LabelIDsRemoved = [current]; // Remove current location
-                        message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]]; // Add new location
+                        message.LabelIDsRemoved = labelIDsRemoved; // Remove current location
+                        message.LabelIDsAdded = labelIDsAdded; // Add new location
                         events.push({Action: 3, ID: message.ID, Message: message});
                     });
                 }
@@ -336,6 +341,11 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var context = tools.cacheContext();
             var promise;
+            var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            var labelIDsRemoved = _.reject([current], function(labelID) {
+                // Remove starred and label
+                return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
+            });
 
             // Generate cache events
             _.each(ids, function(id) {
@@ -344,8 +354,8 @@ angular.module('proton.actions', [])
                 var element = {
                     ID: id,
                     Selected: false,
-                    LabelIDsRemoved: [current], // Remove current location
-                    LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]] // Add new location
+                    LabelIDsRemoved: labelIDsRemoved, // Remove current location
+                    LabelIDsAdded: labelIDsAdded // Add new location
                 };
 
                 events.push({Action: 3, ID: element.ID, Message: element});
