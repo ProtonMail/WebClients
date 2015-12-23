@@ -20,12 +20,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     notify,
     tools
 ) {
-    $scope.conversation = conversation;
-    $scope.messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
     $rootScope.draftOpen = false;
+    $scope.conversation = conversation;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -77,7 +76,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
+        var messages = cache.queryMessagesCached($scope.conversation.ID).reverse();
+        var messageWithBody = _.find(messages, function(message) { return angular.isDefined(message.Body); });
 
+        $scope.messages = messages; // We reverse the array because the new message appear to the bottom of the list
+        $scope.scrollToMessage(messageWithBody.ID); // Scroll to the first message with Body
     };
 
     /**
@@ -157,8 +160,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(angular.isElement(element)) {
                 var value = element.offset().top - element.outerHeight();
 
-                $('#pm_thread')
-                .animate({
+                $('#pm_thread').animate({
                     scrollTop: value
                 }, 10, function() {
                     $(this).animate({
