@@ -696,7 +696,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var composer = $('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
-                $(composer).find('.to-list').focus();
+                $scope.focusTo(message);
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else {
