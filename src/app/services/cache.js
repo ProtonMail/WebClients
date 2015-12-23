@@ -737,6 +737,19 @@ angular.module("proton.cache", [])
             updateConversation(event.Conversation);
             deferred.resolve();
         } else {
+            // NOTE When we send a message to yourself, the LabelIDs parameter is undefined
+            // Probably a back-end bug
+            if(angular.isUndefined(event.Conversation.LabelIDs)) {
+                var messages = api.queryMessagesCached(event.Conversation.ID);
+                var labelIDs = [];
+
+                _.each(messages, function(message) {
+                    labelIDs = labelIDs.concat(message.LabelIDs);
+                });
+
+                event.Conversation.LabelIDs = _.uniq(labelIDs);
+            }
+
             insertConversation(event.Conversation);
             deferred.resolve();
         }
