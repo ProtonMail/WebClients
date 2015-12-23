@@ -4,6 +4,7 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $translate,
+    $log,
     authentication,
     confirmModal,
     Label,
