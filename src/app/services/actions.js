@@ -119,7 +119,7 @@ angular.module('proton.actions', [])
             if(context === true) {
                 cache.events(events);
             } else {
-                $q.all(promises).then(function(results) {
+                networkActivityTracker.track($q.all(promises).then(function(results) {
                     if(context === false) {
                         cache.events(events);
                     }
@@ -127,7 +127,7 @@ angular.module('proton.actions', [])
                     if(alsoArchive === true) {
                         Conversation.archive(ids); // Send request to archive conversations
                     }
-                });
+                }));
             }
         },
         /**
@@ -367,20 +367,20 @@ angular.module('proton.actions', [])
         },
         /**
          * Apply labels on a list of messages
-         * @param {Array} ids
+         * @param {Array} messages
          * @param {Array} labels
          * @param {Boolean} alsoArchive
          */
-        labelMessage: function(ids, labels, alsoArchive) {
+        labelMessage: function(messages, labels, alsoArchive) {
             var REMOVE = 0;
             var ADD = 1;
             var promises = [];
             var events = [];
             var current = tools.currentLocation();
             var context = tools.cacheContext();
+            var ids =  _.map(messages, function(message) { return message.ID; });
 
-            _.each(ids, function(id) {
-                var message = cache.getMessageCached(id);
+            _.each(messages, function(message) {
                 var toApply = _.map(_.filter(labels, function(label) {
                     return label.Selected === true && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) === -1;
                 }), function(label) {
@@ -398,7 +398,7 @@ angular.module('proton.actions', [])
                 }
 
                 var element = {
-                    ID: id,
+                    ID: message.ID,
                     Selected: false,
                     LabelIDsAdded: toApply,
                     LabelIDsRemoved: toRemove
@@ -407,18 +407,18 @@ angular.module('proton.actions', [])
                 events.push({Action: 3, ID: element.ID, Message: element});
 
                 _.each(toApply, function(labelID) {
-                    promises.push(Message.updateLabels(labelID, ADD, ids));
+                    promises.push(new Message().updateLabels(labelID, ADD, ids));
                 });
 
                 _.each(toRemove, function(labelID) {
-                    promises.push(Message.updateLabels(labelID, REMOVE, ids));
+                    promises.push(new Message().updateLabels(labelID, REMOVE, ids));
                 });
             });
 
             if(context === true) {
                 cache.events(events);
             } else {
-                $q.all(promises).then(function(results) {
+                networkActivityTracker.track($q.all(promises).then(function(results) {
                     if(context === false) {
                         cache.events(events);
                     }
@@ -426,7 +426,7 @@ angular.module('proton.actions', [])
                     if(alsoArchive === true) {
                         Message.archive({IDs: ids}); // Send request to archive conversations
                     }
-                });
+                }));
             }
         },
         /**

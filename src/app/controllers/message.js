@@ -546,9 +546,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {Boolean} alsoArchive
      */
     $scope.saveLabels = function(labels, alsoArchive) {
-        var ids = [$scope.message.ID];
+        var messages = [$scope.message];
 
-        action.labelMessage(ids, labels, alsoArchive);
+        action.labelMessage(messages, labels, alsoArchive);
     };
 
     /**

@@ -446,7 +446,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(type === 'conversation') {
             action.labelConversation(ids, labels, alsoArchive);
         } else if(type === 'message') {
-            action.labelMessage(ids, labels, alsoArchive);
+            var messages = $scope.elementsSelected();
+
+            action.labelMessage(messages, labels, alsoArchive);
         }
     };
 
