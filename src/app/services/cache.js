@@ -94,11 +94,11 @@ angular.module("proton.cache", [])
     /**
      * Return a list of messages reordered by Time
      * @param {Array} messages
-     * @return {Array}
+     * @return {Array} don't miss this array is reversed
      */
     var orderMessage = function(messages) {
         if(angular.isArray(messages)) {
-            return _.sortBy(messages, 'Time');
+            return _.sortBy(messages, 'Time').reverse();
         } else {
             return [];
         }

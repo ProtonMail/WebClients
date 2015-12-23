@@ -21,7 +21,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     tools
 ) {
     $scope.conversation = conversation;
-    $scope.messages = messages; // We reverse the array because the new message appear to the bottom of the list
+    $scope.messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
@@ -30,6 +30,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.$on('refreshConversation', function(event) {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);
+
+        messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
 
         if(angular.isDefined(conversation)) {
             _.extend($scope.conversation, conversation);
