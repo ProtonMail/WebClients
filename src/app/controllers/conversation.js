@@ -45,14 +45,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
                 if(angular.isUndefined(current) && index === -1) {
-                    if(angular.isDefined(message.Body)) {
-                        $scope.messages.push(message);
-                    } else {
-                        cache.getMessage(message.ID).then(function(result) {
-                            _.extend(message, result);
-                            $scope.messages.push(message);
-                        });
-                    }
+                    $scope.messages.push(message);
                 }
             });
 
@@ -76,10 +69,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-        var messages = cache.queryMessagesCached($scope.conversation.ID).reverse();
+        var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
         var messageWithBody = _.find(messages, function(message) { return angular.isDefined(message.Body); });
 
-        $scope.messages = messages; // We reverse the array because the new message appear to the bottom of the list
+        $scope.messages = messages;
         $scope.scrollToMessage(messageWithBody.ID); // Scroll to the first message with Body
     };
 
