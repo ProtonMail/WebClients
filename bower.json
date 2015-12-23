@@ -22,6 +22,7 @@
     "angular-dragdrop": "~1.0.12",
     "angular-drop": "~0.0.1",
     "angular-ical": "~1.1.0",
+    "angular-ical": "~1.1.0",
     "angular-loader": "~1.4.8",
     "angular-mocks": "~1.4.8",
     "angular-notify": "~2.5.0",
@@ -45,7 +46,9 @@
     "dropzone": "~4.0.1",
     "es6-promise": "https://github.com/jakearchibald/es6-promise.git",
     "fastclick": "~1.0.6",
+    "fastclick": "~1.0.6",
     "html2canvas": "~0.4.1",
+    "ical.js": "~1.1.2",
     "ical.js": "~1.1.2",
     "jquery-ui": "~1.10.0",
     "jquery": "https://github.com/jquery/jquery.git",
@@ -66,17 +69,5 @@
   },
   "resolutions": {
     "angular": "~1.4.x"
-<<<<<<< HEAD
-  },
-  "devDependencies": {
-    "nanoscroller": "~0.8.7",
-    "perfect-scrollbar": "~0.6.7",
-    "fastclick": "~1.0.6",
-    "bower": "*",
-    "install": "~1.0.4",
-    "angular-ical": "~1.1.0",
-    "ical.js": "~1.1.2"
-=======
->>>>>>> b10b41cd01066df0b8e350866dbc863c237d250a
   }
 }
