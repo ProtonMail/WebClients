@@ -405,7 +405,7 @@ angular.module('proton.routes', [
                     $scope.unlock = function() {
 
                         if ($scope.trying !== true) {
-                            
+
                             $scope.trying = true;
 
                             clearTimeout($scope.tryPass);
@@ -425,7 +425,7 @@ angular.module('proton.routes', [
                             }, 600);
 
                         }
-                        
+
                     };
                 }
             }
@@ -843,14 +843,13 @@ angular.module('proton.routes', [
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
         var parentState = 'secured.' + box;
-        var listState = 'secured.' + box + '.list';
-        var viewState = 'secured.' + box + '.list.view';
-        var list = {};
+        var childState = 'secured.' + box + '.view';
         var view = {};
+        var list = {};
 
-        list['list@secured.' + box] = {
-            templateUrl: 'templates/partials/conversations.tpl.html',
-            controller: 'ConversationsController'
+        list['content@secured'] = {
+            controller: 'ConversationsController',
+            templateUrl: 'templates/partials/conversations.tpl.html'
         };
 
         view['view@secured.' + box] = {
@@ -864,13 +863,6 @@ angular.module('proton.routes', [
                         return true;
                     }
                 },
-                messages: function($stateParams, cache, networkActivityTracker) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.queryConversationMessages($stateParams.id));
-                    } else {
-                        return true;
-                    }
-                },
                 loc: function($stateParams) {
                     return $stateParams.id;
                 }
@@ -878,24 +870,14 @@ angular.module('proton.routes', [
         };
 
         $stateProvider.state(parentState, {
-            abstract: true,
             url: '/' + box + '?' + conversationParameters(),
+            views: list,
             onExit: function($rootScope) {
                 $rootScope.showWelcome = false;
-            },
-            views: {
-                'content@secured': {
-                    templateUrl: 'templates/layout/conversations.tpl.html'
-                }
             }
         });
 
-        $stateProvider.state(listState, {
-            url: '',
-            views: list
-        });
-
-        $stateProvider.state(viewState, {
+        $stateProvider.state(childState, {
             url: '/{id}',
             views: view,
             onExit: function($rootScope) {
@@ -906,7 +888,8 @@ angular.module('proton.routes', [
 
     $urlRouterProvider.otherwise(function($injector) {
         var $state = $injector.get('$state');
-        var stateName = $injector.get('authentication').state() || 'secured.inbox.list';
+        var stateName = $injector.get('authentication').state() || 'secured.inbox';
+
         return $state.href(stateName);
     });
 

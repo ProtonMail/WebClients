@@ -15,17 +15,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     CONSTANTS,
     conversation,
     Conversation,
-    messages,
     networkActivityTracker,
     notify,
     tools
 ) {
-    $scope.conversation = conversation;
-    $scope.messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
     $rootScope.draftOpen = false;
+    $scope.conversation = conversation;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -77,7 +75,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-
+        cache.queryConversationMessages(conversation.ID).then(function(messages) {
+            messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
+            $scope.messages = messages;
+        });
     };
 
     /**
