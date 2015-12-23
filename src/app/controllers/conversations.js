@@ -220,17 +220,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
         var context = tools.cacheContext(request);
+        var type = tools.typeList();
         var promise;
 
-        if(['drafts', 'search'].indexOf(tools.currentMailbox()) !== -1) {
+        if(type === 'message') {
             promise = cache.queryMessages(request);
-        } else {
+        } else if(type === 'conversation') {
             promise = cache.queryConversations(request);
         }
 
-        promise.then(function(conversations) {
-            $scope.conversations = conversations;
-            deferred.resolve(conversations);
+        promise.then(function(elements) {
+            $scope.conversations = elements;
+            deferred.resolve(elements);
         }, function(error) {
             notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
             $log.error(error);

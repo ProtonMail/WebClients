@@ -24,7 +24,7 @@ angular.module('proton.actions', [])
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var labelIDsRemoved = _.reject([current], function(labelID) {
-                // Remove starred and label
+                // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
             });
 
@@ -343,7 +343,7 @@ angular.module('proton.actions', [])
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var labelIDsRemoved = _.reject([current], function(labelID) {
-                // Remove starred and label
+                // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
             });
 

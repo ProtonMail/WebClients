@@ -779,7 +779,7 @@ angular.module("proton.cache", [])
 
                 messagesCached[index] = message;
                 manageCounters(current, messagesCached[index], 'message');
-                manageTimes(event.Message);
+                manageTimes(message);
                 deferred.resolve();
            }
         } else {
