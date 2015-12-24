@@ -16,6 +16,15 @@ angular.module("proton.controllers.Header", [])
         searchContactInput: ''
     };
 
+    $scope.ctrl = {};
+    $scope.ctrl.attachments = 2;
+    $scope.starred = 2;
+    $scope.labels = authentication.user.Labels;
+    console.log($scope.labels);
+    $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
+    delete $scope.folders.search;
+    delete $scope.folders.label;
+
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });
@@ -107,6 +116,57 @@ angular.module("proton.controllers.Header", [])
             }
         } else {
             $state.go('secured.inbox.list');
+        }
+    };
+
+    $scope.searchAdvanced = function() {
+        var parameters = {};
+
+        parameters.words = $scope.params.searchMessageInput;
+        parameters.from = $scope.params.from;
+        parameters.to = $scope.to;
+        parameters.subject = $scope.subject;
+        parameters.attachments = parseInt($scope.ctrl.attachments);
+
+        if(parseInt($('#search_folder').val()) !== -1) {
+            parameters.label = $('#search_folder').val();
+        } else {
+            parameters.label = null;
+        }
+
+        if($('#search_start').val().length > 0) {
+            parameters.begin = $scope.ctrl.start.getMoment().unix();
+        }
+
+        if($('#search_end').val().length > 0) {
+            parameters.end = $scope.ctrl.end.getMoment().unix();
+        }
+
+        console.log(parameters);
+        $state.go('secured.search.list', parameters);
+    };
+
+    $scope.setMin = function() {
+        console.log($scope.ctrl.end, $scope.ctrl.start);
+        if($scope.ctrl.start.getDate() === null) {
+            $scope.ctrl.start = null;
+        } else {
+            $scope.ctrl.end.setMinDate($scope.ctrl.start.getDate());
+        }
+    };
+
+    $scope.setMax = function() {
+        console.log($scope.ctrl.start, $scope.ctrl.end);
+        if($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
+            $scope.ctrl.end = null;
+        } else {
+            $scope.ctrl.start.setMaxDate($scope.ctrl.end.getDate());
+        }
+    };
+
+    $scope.cancel = function() {
+        if (angular.isDefined($scope.params.cancel) && angular.isFunction($scope.params.cancel)) {
+            $scope.params.cancel();
         }
     };
 
