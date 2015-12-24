@@ -1,8 +1,8 @@
-<!-- <ng-include src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-<ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include> -->
+<ng-include src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
+<ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
 
 <section id="pm_columns">
-    <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height>
+    <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height class="list">
         <table ng-if="conversations.length === 0" id="nothingToSeeHere">
             <tr>
                 <td>
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <div ng-if="layoutMode === 'rows'" id="pm_list" pt-height>
+    <div ng-if="layoutMode === 'rows'" id="pm_list" pt-height class="list">
         <div
         class="message"
         ng-repeat="conversation in conversations track by conversation.ID"
