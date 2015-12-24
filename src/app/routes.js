@@ -829,11 +829,11 @@ angular.module('proton.routes', [
             }).$promise.then(
                 function(response) {
                     user.Theme = '';
-                    $state.go('secured.inbox.list');
+                    $state.go('secured.inbox');
                     return;
                 },
                 function(response) {
-                    $state.go('secured.inbox.list');
+                    $state.go('secured.inbox');
                     return;
                 }
             );

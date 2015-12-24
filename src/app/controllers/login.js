@@ -217,7 +217,7 @@ angular.module("proton.controllers.Auth", [
                             $rootScope.isLoggedIn = authentication.isLoggedIn();
                             $rootScope.isLocked = authentication.isLocked();
                             $rootScope.isSecure = authentication.isSecured();
-                            $state.go("secured.inbox.list");
+                            $state.go("secured.inbox");
                         },
                         function(err) {
                             $log.error('unlock', err);

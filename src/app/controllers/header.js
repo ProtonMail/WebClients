@@ -106,7 +106,7 @@ angular.module("proton.controllers.Header", [])
                 $state.go('secured.search.list', params);
             }
         } else {
-            $state.go('secured.inbox.list');
+            $state.go('secured.inbox');
         }
     };
 

@@ -11,7 +11,7 @@
     </span>
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list')">
+            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox')">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="unread('inbox')"></em>

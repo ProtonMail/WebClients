@@ -296,7 +296,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     function(resp) {
                         $log.debug('setAuthCookie:resp'+resp);
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                        $state.go("secured.inbox.list");
+                        $state.go("secured.inbox");
                     }
                 );
             }

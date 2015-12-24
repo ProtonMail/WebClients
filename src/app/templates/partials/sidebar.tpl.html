@@ -5,7 +5,7 @@
     </a>
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox.list');">
+            <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
