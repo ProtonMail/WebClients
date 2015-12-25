@@ -20,7 +20,6 @@ angular.module("proton.controllers.Header", [])
     $scope.ctrl.attachments = 2;
     $scope.starred = 2;
     $scope.labels = authentication.user.Labels;
-    console.log($scope.labels);
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
@@ -142,12 +141,10 @@ angular.module("proton.controllers.Header", [])
             parameters.end = $scope.ctrl.end.getMoment().unix();
         }
 
-        console.log(parameters);
         $state.go('secured.search.list', parameters);
     };
 
     $scope.setMin = function() {
-        console.log($scope.ctrl.end, $scope.ctrl.start);
         if($scope.ctrl.start.getDate() === null) {
             $scope.ctrl.start = null;
         } else {
@@ -156,7 +153,6 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.setMax = function() {
-        console.log($scope.ctrl.start, $scope.ctrl.end);
         if($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
             $scope.ctrl.end = null;
         } else {
