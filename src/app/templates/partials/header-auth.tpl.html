@@ -22,7 +22,7 @@
             <button type="submit" ng-show="advancedSearch !== true">
                 <i class="fa fa-search"></i>
             </button>
-            <button id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="advancedSearch = false">
+            <button type="button" id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="advancedSearch = false">
                 <i class="fa fa-times"></i>
             </button>
         </fieldset>
@@ -40,10 +40,10 @@
                                 <option value="-1" selected="selected" class="ng-binding">All</option>
                             </optgroup>
                             <optgroup label="Folders">
-                                <!-- ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="0" class="ng-binding ng-scope">inbox</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="1" class="ng-binding ng-scope">drafts</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="2" class="ng-binding ng-scope">sent</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="3" class="ng-binding ng-scope">trash</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="4" class="ng-binding ng-scope">spam</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="10" class="ng-binding ng-scope">starred</option><!-- end ngRepeat: (key, value) in ctrl.folders --><option ng-repeat="(key, value) in ctrl.folders" value="6" class="ng-binding ng-scope">archive</option><!-- end ngRepeat: (key, value) in ctrl.folders -->
+                                <!-- ngRepeat: (key, value) in folders --><option ng-repeat="(key, value) in folders" value="{{value}}" class="ng-binding ng-scope">{{key | capitalize}}</option><!-- end ngRepeat: (key, value) in folders -->
                             </optgroup>
                             <optgroup label="Labels">
-                                <!-- ngRepeat: label in ctrl.labels --><option value="bRe_1ImRewuOoyUQON9dQbnI-h8kKLV-wMQg-9PyiVraS-mJt-ZTeuEBRuHvmB4CNgTDpZgWEaHNDmIP-Ch70g==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Password</option><!-- end ngRepeat: label in ctrl.labels --><option value="UHTmx8KEXBUuZh7uMrnCvW-HR1jndosW--rPK_Y0lLT6SzyCKtjFBknxKBdB17KISEurWGXoyGCU0c_A3mBTBw==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Trello</option><!-- end ngRepeat: label in ctrl.labels --><option value="-0bGYCZ_xBk4tnm00HacTL28ybGylp-feOnQ9U8MalzOvXsfw4oeoDs1Hv1_avbcEQW0f7fdHwOqwiQEMygcyA==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Design</option><!-- end ngRepeat: label in ctrl.labels --><option value="cO6RgDJwoHFScLqIkVnRD9luDVkh20EDto1aIHVHU43-dJlREzFcUjS-c7bB-_qlnxBgwAShddHZ4UDdu6RswQ==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Security</option><!-- end ngRepeat: label in ctrl.labels --><option value="ksNBBvr5U-7dmHLRpaLGqUJU5AT5KR6G2JFi1bKZi5M5DgfM9-iSBEI_yUDr1aPVcoPlVgE9YOWPqgQ47s0yEg==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Info</option><!-- end ngRepeat: label in ctrl.labels --><option value="4_c_oE1fZWj_pRP-A_5U5Yst7eAw4x4HtohPtPzUzAyU0cOCEW6kBXloElL1LZvaoYDHrwxrX67BkVrwK6DqBg==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">Administration</option><!-- end ngRepeat: label in ctrl.labels --><option value="zqXdlaZdFoaEDWMYLW-P3pp93LszB9aT0iMml1lPlaxF0UTGUMyhqkl3i5T1SP7u6-9jWfhNBbM88sXUYvB9dw==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">SEO</option><!-- end ngRepeat: label in ctrl.labels --><option value="0qYKXNxYlV-X6z7_rqqncyMAkgsI05ILjYRfh8rpCwn9MMmgWjbs4OTjd5aOOsC9WsZhZZOJxz2zOsNbxtF9IA==" ng-repeat="label in ctrl.labels" class="ng-binding ng-scope">DDOS</option><!-- end ngRepeat: label in ctrl.labels -->
+                                <!-- ngRepeat: label in labels --><option ng-repeat="label in labels" value="{{label.ID}}" class="ng-binding ng-scope">{{label.Name}}</option><!-- end ngRepeat: label in labels -->
                             </optgroup>
                         </select>
                         <i class="fa fa-angle-down"></i>
@@ -90,7 +90,7 @@
                     </span>
                 </div>
             </div>
-            <button type="submit" class="pm_button primary pull-right">
+            <button type="button" ng-click="searchAdvanced(); advancedSearch = false;" class="pm_button primary pull-right">
                 <i class="fa fa-search"></i> Search
             </button>
         </div>
