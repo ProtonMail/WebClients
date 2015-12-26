@@ -333,6 +333,7 @@ angular.module("proton.squire", [
                 } else if(action === 'insertImage') {
                     if(scope.data.image.length > 0) {
                         editor.insertImage(scope.data.image);
+                        scope.data.image = '';
                     }
 
                     editor.focus();
