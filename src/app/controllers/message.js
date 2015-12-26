@@ -48,6 +48,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    $scope.$on('$destroy', function(event) {
+        $scope.message.expand = false;
+    });
+
     /**
      * Toggle message in conversation view
      */
@@ -187,10 +191,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else {
-            if(angular.isDefined($scope.message.Body)) {
-                $scope.initView();
-            }
+        } else if($rootScope.targetID === $scope.message.ID) {
+            $scope.initView();
         }
     };
 

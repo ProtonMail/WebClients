@@ -45,6 +45,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
                 if(angular.isUndefined(current) && index === -1) {
+                    // Add message
                     $scope.messages.push(message);
                 }
             });
@@ -65,15 +66,41 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
     });
 
+    $scope.$on('$destroy', function(event) {
+        delete $rootScope.targetID;
+    });
+
     /**
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
         var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
-        var messageWithBody = _.find(messages, function(message) { return angular.isDefined(message.Body); });
+        var latest = _.last(messages);
+
+        if(angular.isDefined($rootScope.targetID)) {
+            // Do nothing, target initialized
+        } else {
+            if(latest.IsRead === 1) {
+                latest.open = true;
+                $rootScope.targetID = latest.ID;
+            } else {
+                var loop = true;
+                var index = messages.indexOf(latest);
+
+                while(loop === true && index > 0) {
+                    if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
+                        index--;
+                    } else {
+                        loop = false;
+                    }
+                }
+
+                $rootScope.targetID = messages[index].ID;
+            }
+        }
 
         $scope.messages = messages;
-        $scope.scrollToMessage(messageWithBody.ID); // Scroll to the first message with Body
+        $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
     };
 
     /**

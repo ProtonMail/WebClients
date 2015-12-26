@@ -626,6 +626,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             id = element.ID;
         } else if (type === 'message') {
             id = element.ConversationID;
+            $rootScope.targetID = id;
         }
 
         $state.go('secured.' + $scope.mailbox + '.list.view', { id: id }, {reload: id === $state.params.id});
