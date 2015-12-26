@@ -78,6 +78,13 @@ angular.module('proton.actions', [])
             var events = [];
             var current = tools.currentLocation();
             var context = tools.cacheContext();
+            var process = function() {
+                cache.events(events);
+
+                if(alsoArchive === true) {
+                    Conversation.archive(ids); // Send request to archive conversations
+                }
+            };
 
             _.each(ids, function(id) {
                 var elementCached = cache.getConversationCached(id);
@@ -123,16 +130,10 @@ angular.module('proton.actions', [])
             });
 
             if(context === true) {
-                cache.events(events);
+                process();
             } else {
                 networkActivityTracker.track($q.all(promises).then(function(results) {
-                    if(context === false) {
-                        cache.events(events);
-                    }
-
-                    if(alsoArchive === true) {
-                        Conversation.archive(ids); // Send request to archive conversations
-                    }
+                    process();
                 }));
             }
         },
@@ -390,6 +391,13 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var context = tools.cacheContext();
             var ids =  _.map(messages, function(message) { return message.ID; });
+            var process = function() {
+                cache.events(events);
+
+                if(alsoArchive === true) {
+                    Message.archive({IDs: ids}); // Send request to archive conversations
+                }
+            };
 
             _.each(messages, function(message) {
                 var toApply = _.map(_.filter(labels, function(label) {
@@ -427,16 +435,10 @@ angular.module('proton.actions', [])
             });
 
             if(context === true) {
-                cache.events(events);
+                process();
             } else {
                 networkActivityTracker.track($q.all(promises).then(function(results) {
-                    if(context === false) {
-                        cache.events(events);
-                    }
-
-                    if(alsoArchive === true) {
-                        Message.archive({IDs: ids}); // Send request to archive conversations
-                    }
+                    process();
                 }));
             }
         },
