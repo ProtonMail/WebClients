@@ -1058,6 +1058,14 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Add a new location
+     * @param {String} loc
+     */
+    api.add = function(loc) {
+        exist(loc)
+    };
+
+    /**
     * Update the total / unread for a specific loc
     * @param {String} loc
     * @param {Integer} total
