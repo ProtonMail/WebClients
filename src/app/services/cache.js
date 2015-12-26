@@ -634,6 +634,15 @@ angular.module("proton.cache", [])
 
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {
+            if(conversation.ID === event.ID && conversation.NumUnread > 0) {
+                _.each(conversation.LabelIDs, function(labelID) {
+                    var unread = cacheCounters.unreadConversation(labelID);
+                    var total = cacheCounters.totalConversation(labelID);
+
+                    cacheCounters.updateConversation(labelID, total - 1, unread - 1);
+                });
+            }
+
             return conversation.ID === event.ID;
         });
 
@@ -670,6 +679,8 @@ angular.module("proton.cache", [])
                 }
             }
         });
+
+        cacheCounters.updateConversation(loc, 0, 0);
 
         api.callRefresh();
     };
