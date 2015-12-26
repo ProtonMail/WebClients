@@ -19,7 +19,6 @@ angular.module("proton.controllers.Header", [])
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
     $scope.starred = 2;
-    $scope.labels = authentication.user.Labels;
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
@@ -65,6 +64,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function(value) {
+        $scope.labels = authentication.user.Labels;
         searchModal.activate({
             params: {
                 keywords: value,

@@ -1062,7 +1062,7 @@ angular.module("proton.cache", [])
      * @param {String} loc
      */
     api.add = function(loc) {
-        exist(loc)
+        exist(loc);
     };
 
     /**
