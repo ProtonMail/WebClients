@@ -339,18 +339,17 @@ angular.module('proton.actions', [])
         // Message actions
         moveMessage: function(ids, mailbox) {
             var events = [];
-            var current = tools.currentLocation();
             var context = tools.cacheContext();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-            var labelIDsRemoved = _.reject([current], function(labelID) {
-                // Remove starred and labels
-                return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
-            });
 
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
+                var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
+                    // Remove starred and labels
+                    return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
+                });
                 var conversation = cache.getConversationCached(message.ConversationID);
                 var element = {
                     ID: id,
@@ -363,7 +362,7 @@ angular.module('proton.actions', [])
             });
 
             // Send request
-            promise = Message[mailbox](ids).$promise;
+            promise = Message[mailbox]({IDs: ids}).$promise;
 
             if(context === true) {
                 // Send cache events
