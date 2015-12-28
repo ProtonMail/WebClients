@@ -230,18 +230,22 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         /**
-         * Decrypt the body 
+         * Decrypt the body
          * @return {Promise}
          */
         decryptBody: function() {
             var deferred = $q.defer();
             var keys = authentication.getPrivateKeys(this.AddressID);
 
+            this.decrypting = true;
+
             pmcw.decryptMessageRSA(this.Body, keys, this.Time).then(function(result) {
+                this.decrypting = false;
                 deferred.resolve(result);
-            }, function(error) {
+            }.bind(this), function(error) {
+                this.decrypting = false;
                 deferred.reject(error);
-            });
+            }.bind(this));
 
             return deferred.promise;
         },
@@ -335,9 +339,7 @@ angular.module("proton.models.message", ["proton.constants"])
             var deferred = $q.defer();
 
             if (this.isDraft() || this.IsEncrypted > 0) {
-                if (angular.isUndefined(this.DecryptedBody) && this.decrypting !== true) {
-                    this.decrypting = true;
-
+                if (angular.isUndefined(this.DecryptedBody)) {
                     try {
                         this.decryptBody().then(function(result) {
                             this.DecryptedBody = result;
@@ -358,8 +360,6 @@ angular.module("proton.models.message", ["proton.constants"])
             } else {
                 deferred.resolve(this.Body);
             }
-
-            this.decrypting = false;
 
             return deferred.promise;
         },
