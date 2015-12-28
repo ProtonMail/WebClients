@@ -281,6 +281,8 @@ angular.module("proton.cache", [])
             }
         });
 
+        networkActivityTracker.track(deferred.promise);
+
         return deferred.promise;
     };
 
