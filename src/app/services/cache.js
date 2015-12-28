@@ -267,18 +267,21 @@ angular.module("proton.cache", [])
                 message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
             });
 
+            // Store messages
+            storeMessages(messages);
+
             // Only for cache context
             if(context === true) {
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, result.Total);
-                // Store messages
-                storeMessages(messages);
                 // Return messages ordered
                 deferred.resolve(orderMessage(messages));
             } else {
                 deferred.resolve(messages);
             }
         });
+
+        networkActivityTracker.track(deferred.promise);
 
         return deferred.promise;
     };
