@@ -158,8 +158,11 @@ angular.module("proton.tools", ["proton.constants"])
         return html.replace(/data-url\(/g,  "url(");
     };
 
-    tools.isHtml = function($string) {
-        return $string.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/);
+    /**
+     * Detect if the content is type of HTML
+     */
+    tools.isHtml = function(content) {
+        return content.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/);
     };
 
     // Squire does this funny thing where it takes style tags, i.e.

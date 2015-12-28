@@ -254,18 +254,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.displayImages = function() {
         $scope.message.toggleImages();
-        $scope.message.DecryptedBody = undefined; // Reset decrypted body
+        $scope.message.decryptedBody = undefined; // Reset decrypted body
         $scope.displayContent();
     };
 
     /**
-     * Decrypt the content of the current message and store it in 'message.DecryptedBody'
+     * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} print
      */
     $scope.displayContent = function() {
         var whitelist = ['notify@protonmail.com'];
-
-        $scope.message.viewMode = 'html';
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
             $scope.message.imagesHidden = false;
@@ -273,7 +271,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.imagesHidden = false;
         }
 
-        if(angular.isUndefined($scope.message.DecryptedBody)) {
+        if(angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     if($rootScope.printMode !== true) {
@@ -297,11 +295,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     // Detect type of content
                     if (tools.isHtml(content)) {
                         $scope.isPlain = false;
+                        $scope.message.viewMode = 'html';
+                        // Assign decrypted content
+                        $scope.message.decryptedBody = $sce.trustAsHtml(content);
                     } else {
                         $scope.isPlain = true;
+                        $scope.message.viewMode = 'plain';
                     }
-
-                    $scope.message.DecryptedBody = $sce.trustAsHtml(content);
 
                     // Scroll to first message open
                     if($rootScope.scrollToFirst === $scope.message.ID) {
@@ -625,7 +625,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var fw_length = fw_prefix.length;
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.DecryptedBody + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
         if(angular.isDefined($scope.message.AddressID)) {
             base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
