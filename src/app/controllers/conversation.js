@@ -30,10 +30,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.$on('refreshConversation', function(event) {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);
+        var loc = tools.currentLocation();
 
         messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
 
-        if(angular.isDefined(conversation)) {
+        if(angular.isDefined(conversation) && conversation.LabelIDs.indexOf(loc) !== -1) {
             _.extend($scope.conversation, conversation);
         } else {
             $scope.back();
@@ -74,37 +75,43 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-        var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
-        var latest = _.last(messages);
+        var loc = tools.currentLocation();
 
-        if($state.is('secured.sent.list.view')) {
-            var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+        if(angular.isDefined(conversation) && conversation.LabelIDs.indexOf(loc) !== -1) {
+            var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
+            var latest = _.last(messages);
 
-            $rootScope.targetID = _.last(sents).ID;
-        } else if(angular.isDefined($rootScope.targetID)) {
-            // Do nothing, target initialized
-        } else {
-            if(latest.IsRead === 1) {
-                latest.open = true;
-                $rootScope.targetID = latest.ID;
+            if($state.is('secured.sent.list.view')) {
+                var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+
+                $rootScope.targetID = _.last(sents).ID;
+            } else if(angular.isDefined($rootScope.targetID)) {
+                // Do nothing, target initialized
             } else {
-                var loop = true;
-                var index = messages.indexOf(latest);
+                if(latest.IsRead === 1) {
+                    latest.open = true;
+                    $rootScope.targetID = latest.ID;
+                } else {
+                    var loop = true;
+                    var index = messages.indexOf(latest);
 
-                while(loop === true && index > 0) {
-                    if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
-                        index--;
-                    } else {
-                        loop = false;
+                    while(loop === true && index > 0) {
+                        if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
+                            index--;
+                        } else {
+                            loop = false;
+                        }
                     }
+
+                    $rootScope.targetID = messages[index].ID;
                 }
-
-                $rootScope.targetID = messages[index].ID;
             }
-        }
 
-        $scope.messages = messages;
-        $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+            $scope.messages = messages;
+            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+        } else {
+            $scope.back();
+        }
     };
 
     /**
