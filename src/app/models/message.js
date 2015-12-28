@@ -229,14 +229,19 @@ angular.module("proton.models.message", ["proton.constants"])
             return pmcw.encryptMessage(this.Body, key);
         },
 
+        /**
+         * Decrypt the body 
+         * @return {Promise}
+         */
         decryptBody: function() {
             var deferred = $q.defer();
+            var keys = authentication.getPrivateKeys(this.AddressID);
 
-            authentication.getPrivateKey().then(function(key) {
-                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
-                    deferred.resolve(result);
-                });
-            }.bind(this));
+            pmcw.decryptMessageRSA(this.Body, keys, this.Time).then(function(result) {
+                deferred.resolve(result);
+            }, function(error) {
+                deferred.reject(error);
+            });
 
             return deferred.promise;
         },
@@ -334,22 +339,14 @@ angular.module("proton.models.message", ["proton.constants"])
                     this.decrypting = true;
 
                     try {
-                        authentication.getPrivateKey().then(
-                            function(key) {
-                                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
-                                    this.DecryptedBody = result;
-                                    this.failedDecryption = false;
-                                    deferred.resolve(result);
-                                }.bind(this), function(err) {
-                                    this.failedDecryption = true;
-                                    deferred.reject(err);
-                                }.bind(this));
-                            }.bind(this),
-                            function(err) {
-                                this.failedDecryption = true;
-                                deferred.reject(err);
-                            }.bind(this)
-                        );
+                        this.decryptBody().then(function(result) {
+                            this.DecryptedBody = result;
+                            this.failedDecryption = false;
+                            deferred.resolve(result);
+                        }.bind(this), function(err) {
+                            this.failedDecryption = true;
+                            deferred.reject(err);
+                        }.bind(this));
                     } catch (err) {
                         this.failedDecryption = true;
                         deferred.reject(err);

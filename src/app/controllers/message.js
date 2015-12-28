@@ -168,7 +168,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openComposer = function(id) {
         cache.getMessage(id).then(function(message) {
             var copy = angular.copy(message);
-
+        
             copy.decryptBody().then(function(content) {
                 copy.Body = content;
                 $rootScope.$broadcast('loadMessage', copy);
