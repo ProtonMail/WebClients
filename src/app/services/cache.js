@@ -868,8 +868,6 @@ angular.module("proton.cache", [])
         console.log(events);
 
         _.each(events, function(event) {
-            var type;
-
             if(event.Action === DELETE) {
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) {

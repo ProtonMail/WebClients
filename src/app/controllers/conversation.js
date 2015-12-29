@@ -33,8 +33,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
 
-        if(angular.isDefined(conversation) && conversation.LabelIDs.indexOf(loc) !== -1) {
-            _.extend($scope.conversation, conversation);
+        if(angular.isDefined(conversation)) {
+            var labels = conversation.LabelIDs;
+
+            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
+
+            if(labels.indexOf(loc) !== -1) {
+                _.extend($scope.conversation, conversation);
+            } else {
+                $scope.back();
+            }
         } else {
             $scope.back();
         }
