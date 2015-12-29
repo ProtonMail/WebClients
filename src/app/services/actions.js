@@ -279,10 +279,11 @@ angular.module('proton.actions', [])
                 element.NumUnread = elementCached.NumMessages;
 
                 if(messages.length > 0) {
-                    var last = _.last(messages); // Unread only the latest
-
-                    last.IsRead = 0;
-                    events.push({Action: 3, ID: last.ID, Message: last});
+                    _.each(messages, function(message) {
+                        message.IsRead = 0;
+                        message.expand = false;
+                        events.push({Action: 3, ID: message.ID, Message: message});
+                    });
                 }
 
                 events.push({Action: 3, ID: element.ID, Conversation: element});
