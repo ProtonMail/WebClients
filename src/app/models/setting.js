@@ -57,9 +57,19 @@ angular.module("proton.models.setting", [])
                 method: 'put',
                 url: url.get() + '/settings/showimages'
             },
+            /**
+             * Update view layout flag
+             */
             setViewlayout: {
                 method: 'put',
                 url: url.get() + '/settings/viewlayout'
+            },
+            /**
+             * Update view mode flag
+             */
+            setViewMode: {
+                method: 'put',
+                url: url.get() + '/settings/viewmode'
             },
             apiTest: {
                 method: 'get',

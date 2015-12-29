@@ -1,5 +1,5 @@
 <header id="pm_header" class="pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo" ui-sref="secured.inbox.list" ng-click="testToggleLayout()">
+    <a href="#" class="logo" ui-sref="secured.inbox.list">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
     <a href="#" class="logoMobile" ng-click="sidebarToggle();">
@@ -11,12 +11,10 @@
     <a href="#" class="searchBtn" ng-click="openSearchModal();">
         <i class="fa fa-search"></i>
     </a>
-    <form class="searchForm" ng-submit="searchMessages()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }">
+    <form class="searchForm" ng-submit="searchAdvanced()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }">
         <fieldset>
-            <img src="assets/img/snackie.png" ng-show="snackies" id="snackie" class="animated infinite rubberBand">
-            <button  type="button" class="advanced" ng-click="advancedSearch = !advancedSearch;" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
-                <i class="fa fa-angle-down" ng-show="!advancedSearch"></i>
-                <i class="fa fa-angle-up" ng-show="advancedSearch"></i>
+            <button  type="button" class="advanced" ng-click="openSearchModal();" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+                <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
             </button>
             <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
             <button type="submit" ng-show="advancedSearch !== true">
@@ -29,21 +27,21 @@
         <div class="pm_form pm_grid" id="advancedSearchDropdown" ng-show="advancedSearch === true">
             <div class="row">
                 <div class="col-1-2">
-                    <label for="search_keywords" class="ng-binding">Keywords</label>
-                    <input id="search_keywords" type="text" placeholder="Keywords" ng-model="params.searchMessageInput" class="ng-pristine ng-untouched ng-valid">
+                    <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
+                    <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="params.searchMessageInput" />
                 </div>
                 <div class="col-1-2">
-                    <label for="search_folder" class="ng-binding">Location</label>
+                    <label for="search_folder">{{ 'LOCATION' | translate }}</label>
                     <span class="pm_select">
                         <select id="search_folder">
                             <optgroup label="Default">
-                                <option value="-1" selected="selected" class="ng-binding">All</option>
+                                <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
                             </optgroup>
-                            <optgroup label="Folders">
-                                <!-- ngRepeat: (key, value) in folders --><option ng-repeat="(key, value) in folders" value="{{value}}" class="ng-binding ng-scope">{{key | capitalize}}</option><!-- end ngRepeat: (key, value) in folders -->
+                            <optgroup label="{{ 'FOLDERS' | translate }}">
+                                <option ng-repeat="(key, value) in folders" value="{{ value }}">{{ key | capitalize }}</option>
                             </optgroup>
-                            <optgroup label="Labels">
-                                <!-- ngRepeat: label in labels --><option ng-repeat="label in labels" value="{{label.ID}}" class="ng-binding ng-scope">{{label.Name}}</option><!-- end ngRepeat: label in labels -->
+                            <optgroup label="{{ 'LABELS' | translate }}">
+                                <option ng-repeat="label in labels" value="{{ label.ID }}">{{ label.Name }}</option>
                             </optgroup>
                         </select>
                         <i class="fa fa-angle-down"></i>
@@ -51,47 +49,47 @@
                 </div>
             </div>
             <div class="row">
-                <label class="ng-binding">Attachments</label>
+                <label>{{ 'ATTACHMENTS' | translate }}</label>
                 <div class="radio">
-                    <label for="attachments_all" class="ng-binding">
-                        <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2" class="ng-pristine ng-untouched ng-valid" name="1651"> All
+                    <label for="attachments_all">
+                        <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2"> {{ 'ALL' | translate }}
                     </label>
-                    <label for="attachments_yes" class="ng-binding">
-                        <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1" class="ng-pristine ng-untouched ng-valid" name="1652"> Yes
+                    <label for="attachments_yes">
+                        <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1"> {{ 'YES' | translate }}
                     </label>
-                    <label for="attachments_no" class="ng-binding">
-                        <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0" class="ng-pristine ng-untouched ng-valid" name="1653"> No
+                    <label for="attachments_no">
+                        <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0"> {{ 'NO' | translate }}
                     </label>
                 </div>
             </div>
             <div class="row margin">
                 <div class="col-1-2">
-                    <label for="search_sender" class="ng-binding">Sender</label>
-                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="From" class="ng-pristine ng-untouched ng-valid">
+                    <label for="search_sender">{{ 'SENDER' | translate }}</label>
+                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'FROM' | translate }}">
                 </div>
                 <div class="col-1-2">
-                    <label for="search_recipient" class="ng-binding">Recipient</label>
-                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="To" class="ng-pristine ng-untouched ng-valid">
+                    <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
+                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'TO' | translate }}">
                 </div>
             </div>
             <div class="row margin">
                 <div class="col-1-2">
-                    <label for="search_start" class="ng-binding">Start Date</label>
+                    <label for="search_start">{{ 'START_DATE' | translate }}</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
                     </span>
                 </div>
                 <div class="col-1-2">
-                    <label for="search_end" class="ng-binding">End Date</label>
+                    <label for="search_end">{{ 'END_DATE' | translate }}</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
                     </span>
                 </div>
             </div>
-            <button type="button" ng-click="searchAdvanced(); advancedSearch = false;" class="pm_button primary pull-right">
-                <i class="fa fa-search"></i> Search
+            <button type="submit" class="pm_button primary pull-right">
+                <i class="fa fa-search"></i> {{ 'SEARCH' | translate }}
             </button>
         </div>
     </form>

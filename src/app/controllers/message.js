@@ -41,10 +41,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if(angular.isDefined(message)) {
             _.extend($scope.message, message);
-
-            if(angular.isUndefined($scope.message.expand) && angular.isDefined($scope.message.Body)) {
-                $scope.initView();
-            }
         }
     });
 
@@ -60,12 +56,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $rootScope.draftOpen = false;
         }
 
-        if(angular.isUndefined($scope.message.expand)) {
+        if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
+
             networkActivityTracker.track($scope.initView());
-        } else if($scope.message.expand === true) {
+        } else {
             $scope.message.expand = false;
-        } else if($scope.message.expand === false) {
-            $scope.message.expand = true;
         }
     };
 
@@ -110,13 +105,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
-
-            // Mark message as expanded
-            $scope.message.expand = true;
-
-            if($scope.message.IsRead === 0) {
-                $scope.read();
-            }
         };
 
         // If the message is a draft
@@ -271,6 +259,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.imagesHidden = false;
         }
 
+        // Mark message as expanded
+        $scope.message.expand = true;
+
+        // Mark message as read
+        if($scope.message.IsRead === 0) {
+            $scope.read();
+        }
+
         if(angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
@@ -363,6 +359,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.read = function() {
         var ids = [$scope.message.ID];
 
+        $scope.message.expand = true;
+
         action.readMessage(ids);
     };
 
@@ -371,6 +369,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.unread = function() {
         var ids = [$scope.message.ID];
+
+        $scope.message.expand = false;
 
         action.unreadMessage(ids);
     };

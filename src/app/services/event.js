@@ -63,6 +63,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
+					user.Role = 1; // Overwrite Role user for the test release
 					authentication.user = angular.merge(authentication.user, user);
 				}
 			},

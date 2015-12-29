@@ -405,7 +405,7 @@ angular.module('proton.routes', [
                     $scope.unlock = function() {
 
                         if ($scope.trying !== true) {
-                            
+
                             $scope.trying = true;
 
                             clearTimeout($scope.tryPass);
@@ -425,7 +425,7 @@ angular.module('proton.routes', [
                             }, 600);
 
                         }
-                        
+
                     };
                 }
             }
@@ -860,13 +860,6 @@ angular.module('proton.routes', [
                 conversation: function($stateParams, cache, networkActivityTracker) {
                     if(angular.isDefined($stateParams.id)) {
                         return networkActivityTracker.track(cache.getConversation($stateParams.id));
-                    } else {
-                        return true;
-                    }
-                },
-                messages: function($stateParams, cache, networkActivityTracker) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.queryConversationMessages($stateParams.id));
                     } else {
                         return true;
                     }

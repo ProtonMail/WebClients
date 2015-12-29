@@ -329,6 +329,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     $scope.isOver = false;
                     $scope.$apply();
+                },
+                error: function(event) {
+                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+                    if(event.size > sizeLimit * 1024 * 1024) {
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                    }
                 }
             }
         };

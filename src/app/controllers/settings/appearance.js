@@ -41,12 +41,7 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveComposerMode = function(form) {
-
         var value = parseInt($scope.ComposerMode);
-
-        if (value === parseInt(authentication.user.ComposerMode) ) {
-            return;
-        }
 
         networkActivityTracker.track(
             Setting.setComposerMode({
@@ -68,14 +63,8 @@ angular.module("proton.controllers.Settings")
         );
     };
 
-    // TODO save this using an API route and remove all instances of $rootScope.layoutMode
     $scope.saveLayoutMode = function(form) {
-
         var value = parseInt($scope.LayoutMode);
-
-        if (value === parseInt(authentication.user.LayoutMode) ) {
-            return;
-        }
 
         networkActivityTracker.track(
             Setting.setViewlayout({
@@ -83,7 +72,13 @@ angular.module("proton.controllers.Settings")
             }).$promise.then(
                 function(response) {
                     if(response.Code === 1000) {
-                        authentication.user.LayoutMode = $scope.LayoutMode;
+                        if(value === 0) {
+                            $rootScope.layoutMode = 'columns';
+                        } else {
+                            $rootScope.layoutMode = 'rows';
+                        }
+
+                        authentication.user.LayoutMode = value;
                         notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
                     } else if (response.Error) {
                         notify({message: response.Error, classes: 'notification-danger'});
@@ -95,16 +90,7 @@ angular.module("proton.controllers.Settings")
                 }
             )
         );
-        if(value === 0) {
-            $scope.LayoutMode = value;
-            $rootScope.layoutMode = 'columns';
-        } else {
-            $scope.LayoutMode = value;
-            $rootScope.layoutMode = 'rows';
-        }
-
     };
-    
 
     // Not used
     $scope.saveDefaultLanguage = function() {

@@ -581,7 +581,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
 
-        if(angular.isDefined(conversation)) {
+        if(angular.isDefined(conversation) && conversation.preloaded === true) {
             deferred.resolve(conversation);
         } else {
             deferred.resolve(getConversation(conversationId));
@@ -868,8 +868,6 @@ angular.module("proton.cache", [])
         console.log(events);
 
         _.each(events, function(event) {
-            var type;
-
             if(event.Action === DELETE) {
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) {

@@ -67,7 +67,7 @@ section.sidebar {
         list-style-type: none;
         font-size: 14px;
         margin: 0 -20px 20px -20px;
-        li { 
+        li {
             height: $sidebarRowHeight;
             line-height: $sidebarRowHeight;
             display: block;
@@ -190,7 +190,6 @@ section.sidebar {
         ul {
             display: block;
             list-style-type: none;
-            height: 175px;
             overflow: hidden !important;
             position: relative;
             -webkit-overflow-scrolling: touch;
@@ -219,7 +218,7 @@ section.sidebar {
                     height: 25px;
                     line-height: 25px;
                     text-decoration: none;
-                    color: rgba(255, 255, 255, 0.35); 
+                    color: rgba(255, 255, 255, 0.35);
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
