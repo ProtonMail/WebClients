@@ -69,6 +69,10 @@ angular.module("proton.controllers.Header", [])
         $scope.advancedSearch = !$scope.advancedSearch;
     };
 
+    $scope.closeSearchModal = function() {
+        $scope.advancedSearch = !$scope.advancedSearch;
+    };
+    
     $scope.isContactsView = function() {
         return $state.is('secured.contacts');
     };
