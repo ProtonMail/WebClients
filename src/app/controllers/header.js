@@ -18,6 +18,7 @@ angular.module("proton.controllers.Header", [])
 
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
+    $scope.advancedSearch = false;
     $scope.starred = 2;
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
@@ -63,23 +64,9 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('newMessage');
     };
 
-    $scope.openSearchModal = function(value) {
+    $scope.openSearchModal = function() {
         $scope.labels = authentication.user.Labels;
-        searchModal.activate({
-            params: {
-                keywords: value,
-                search: function(result) {
-                    searchModal.deactivate();
-                    var params = $scope.resetSearchParameters();
-
-                    _.extend(params, result);
-                    $state.go('secured.search.list', params);
-                },
-                cancel: function() {
-                    searchModal.deactivate();
-                }
-            }
-        });
+        $scope.advancedSearch = !$scope.advancedSearch;
     };
 
     $scope.isContactsView = function() {
@@ -106,13 +93,7 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-            if (params.words==='bartsnackies') {
-                $scope.snackies = true;
-            }
-            else {
-                $scope.snackies = false;
-                $state.go('secured.search.list', params);
-            }
+            $state.go('secured.search.list', params);
         } else {
             $state.go('secured.inbox.list');
         }
@@ -142,6 +123,7 @@ angular.module("proton.controllers.Header", [])
         }
 
         $state.go('secured.search.list', parameters);
+        $scope.advancedSearch = false;
     };
 
     $scope.setMin = function() {
