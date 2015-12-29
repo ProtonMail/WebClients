@@ -240,6 +240,29 @@ var pmcrypto = (function() {
                 _encMessage = openpgp.message.readArmored(encMessage.trim());
             }
 
+            if ( Array.isArray( key ) ) {
+                // Pick correct key
+                if ( key.length  == 0 ) {
+                    reject(new Error('Empty key array'));
+                }
+
+                var encryptionKeyIds = _encMessage.getEncryptionKeyIds();
+                if (!encryptionKeyIds.length) {
+                    reject(new Error('Nothing to decrypt'));
+                }
+                var privateKeyPacket = null;
+                for( var i = 0; i<key.length; i++ ) {
+                    privateKeyPacket = key[i].getKeyPacket(encryptionKeyIds);
+                    if ( privateKeyPacket !== null ) {
+                        key = key[i];
+                        break;
+                    }
+                }
+                if ( privateKeyPacket == null ) {
+                    reject(new Error('No appropriate private key found.'));
+                }
+            }
+
             var params = {
                 binary: binary,
                 sessionKeyAlgorithm: sessionKeyAlgorithm
