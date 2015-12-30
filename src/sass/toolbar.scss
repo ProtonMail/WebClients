@@ -45,11 +45,11 @@ body.columns #pm_toolbar {
 }
 
 #pm_toolbar {
-    padding: 10px 0;
+    padding: 15px 0;
     box-sizing: border-box;
     position: relative;
     z-index: 5;
-    height: 55px;
+    height: 64px;
     box-shadow: 0 1px 0 $border;
     .messageActions {
         float: right;
