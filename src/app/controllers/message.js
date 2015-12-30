@@ -57,7 +57,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
-
             networkActivityTracker.track($scope.initView());
         } else {
             $scope.message.expand = false;
