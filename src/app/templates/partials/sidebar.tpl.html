@@ -83,8 +83,10 @@
     </div>
     <div class="footer">
         <div class="wrap">
-            <div class="link">
-                <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a>
+            <div class="link" ng-show="user.Role === 0 || user.Role === 2">
+                <a href="" ui-sref="secured.dashboard">
+                    {{ 'UPGRADE_STORAGE' | translate }}
+                </a>
             </div>
             <div class="bar">
                 <em style="width: {{ storagePercentage() }}%"></em>

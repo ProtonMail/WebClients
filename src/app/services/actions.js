@@ -78,6 +78,13 @@ angular.module('proton.actions', [])
             var events = [];
             var current = tools.currentLocation();
             var context = tools.cacheContext();
+            var process = function() {
+                cache.events(events);
+
+                if(alsoArchive === true) {
+                    Conversation.archive(ids); // Send request to archive conversations
+                }
+            };
 
             _.each(ids, function(id) {
                 var elementCached = cache.getConversationCached(id);
@@ -123,16 +130,10 @@ angular.module('proton.actions', [])
             });
 
             if(context === true) {
-                cache.events(events);
+                process();
             } else {
                 networkActivityTracker.track($q.all(promises).then(function(results) {
-                    if(context === false) {
-                        cache.events(events);
-                    }
-
-                    if(alsoArchive === true) {
-                        Conversation.archive(ids); // Send request to archive conversations
-                    }
+                    process();
                 }));
             }
         },
@@ -278,10 +279,11 @@ angular.module('proton.actions', [])
                 element.NumUnread = elementCached.NumMessages;
 
                 if(messages.length > 0) {
-                    var last = _.last(messages); // Unread only the latest
-
-                    last.IsRead = 0;
-                    events.push({Action: 3, ID: last.ID, Message: last});
+                    _.each(messages, function(message) {
+                        message.IsRead = 0;
+                        message.expand = false;
+                        events.push({Action: 3, ID: message.ID, Message: message});
+                    });
                 }
 
                 events.push({Action: 3, ID: element.ID, Conversation: element});
@@ -338,18 +340,17 @@ angular.module('proton.actions', [])
         // Message actions
         moveMessage: function(ids, mailbox) {
             var events = [];
-            var current = tools.currentLocation();
             var context = tools.cacheContext();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-            var labelIDsRemoved = _.reject([current], function(labelID) {
-                // Remove starred and labels
-                return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
-            });
 
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
+                var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
+                    // Remove starred and labels
+                    return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
+                });
                 var conversation = cache.getConversationCached(message.ConversationID);
                 var element = {
                     ID: id,
@@ -362,7 +363,7 @@ angular.module('proton.actions', [])
             });
 
             // Send request
-            promise = Message[mailbox](ids).$promise;
+            promise = Message[mailbox]({IDs: ids}).$promise;
 
             if(context === true) {
                 // Send cache events
@@ -390,6 +391,13 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var context = tools.cacheContext();
             var ids =  _.map(messages, function(message) { return message.ID; });
+            var process = function() {
+                cache.events(events);
+
+                if(alsoArchive === true) {
+                    Message.archive({IDs: ids}); // Send request to archive conversations
+                }
+            };
 
             _.each(messages, function(message) {
                 var toApply = _.map(_.filter(labels, function(label) {
@@ -427,16 +435,10 @@ angular.module('proton.actions', [])
             });
 
             if(context === true) {
-                cache.events(events);
+                process();
             } else {
                 networkActivityTracker.track($q.all(promises).then(function(results) {
-                    if(context === false) {
-                        cache.events(events);
-                    }
-
-                    if(alsoArchive === true) {
-                        Message.archive({IDs: ids}); // Send request to archive conversations
-                    }
+                    process();
                 }));
             }
         },
@@ -568,7 +570,6 @@ angular.module('proton.actions', [])
 
                 // Generate message event
                 message.IsRead = 0;
-                message.expand = undefined; // Trick to close message and force to pass in iniView after
                 events.push({Action: 3, ID: message.ID, Message: message});
 
                 // Generate conversation event

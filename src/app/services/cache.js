@@ -267,18 +267,21 @@ angular.module("proton.cache", [])
                 message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
             });
 
+            // Store messages
+            storeMessages(messages);
+
             // Only for cache context
             if(context === true) {
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, result.Total);
-                // Store messages
-                storeMessages(messages);
                 // Return messages ordered
                 deferred.resolve(orderMessage(messages));
             } else {
                 deferred.resolve(messages);
             }
         });
+
+        networkActivityTracker.track(deferred.promise);
 
         return deferred.promise;
     };
@@ -578,7 +581,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
 
-        if(angular.isDefined(conversation)) {
+        if(angular.isDefined(conversation) && conversation.preloaded === true) {
             deferred.resolve(conversation);
         } else {
             deferred.resolve(getConversation(conversationId));
@@ -634,6 +637,15 @@ angular.module("proton.cache", [])
 
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {
+            if(conversation.ID === event.ID && conversation.NumUnread > 0) {
+                _.each(conversation.LabelIDs, function(labelID) {
+                    var unread = cacheCounters.unreadConversation(labelID);
+                    var total = cacheCounters.totalConversation(labelID);
+
+                    cacheCounters.updateConversation(labelID, total - 1, unread - 1);
+                });
+            }
+
             return conversation.ID === event.ID;
         });
 
@@ -670,6 +682,8 @@ angular.module("proton.cache", [])
                 }
             }
         });
+
+        cacheCounters.updateConversation(loc, 0, 0);
 
         api.callRefresh();
     };
@@ -854,8 +868,6 @@ angular.module("proton.cache", [])
         console.log(events);
 
         _.each(events, function(event) {
-            var type;
-
             if(event.Action === DELETE) {
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) {
@@ -1055,6 +1067,14 @@ angular.module("proton.cache", [])
         });
 
         return deferred.promise;
+    };
+
+    /**
+     * Add a new location
+     * @param {String} loc
+     */
+    api.add = function(loc) {
+        exist(loc);
     };
 
     /**

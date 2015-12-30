@@ -41,11 +41,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if(angular.isDefined(message)) {
             _.extend($scope.message, message);
-
-            if(angular.isUndefined($scope.message.expand) && angular.isDefined($scope.message.Body)) {
-                $scope.initView();
-            }
         }
+    });
+
+    $scope.$on('$destroy', function(event) {
+        $scope.message.expand = false;
     });
 
     /**
@@ -56,13 +56,19 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $rootScope.draftOpen = false;
         }
 
-        if(angular.isUndefined($scope.message.expand)) {
+        if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
             networkActivityTracker.track($scope.initView());
-        } else if($scope.message.expand === true) {
+        } else {
             $scope.message.expand = false;
-        } else if($scope.message.expand === false) {
-            $scope.message.expand = true;
         }
+    };
+
+    /**
+     * Check if the current message is a sent
+     * @return {Boolean}
+     */
+    $scope.sent = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.sent) !== -1;
     };
 
     /**
@@ -98,13 +104,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
-
-            // Mark message as expanded
-            $scope.message.expand = true;
-
-            if($scope.message.IsRead === 0) {
-                $scope.read();
-            }
         };
 
         // If the message is a draft
@@ -179,10 +178,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else {
-            if(angular.isDefined($scope.message.Body)) {
-                $scope.initView();
-            }
+        } else if($rootScope.targetID === $scope.message.ID) {
+            $scope.initView();
         }
     };
 
@@ -244,18 +241,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.displayImages = function() {
         $scope.message.toggleImages();
-        $scope.message.DecryptedBody = undefined; // Reset decrypted body
+        $scope.message.decryptedBody = undefined; // Reset decrypted body
         $scope.displayContent();
     };
 
     /**
-     * Decrypt the content of the current message and store it in 'message.DecryptedBody'
+     * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} print
      */
     $scope.displayContent = function() {
         var whitelist = ['notify@protonmail.com'];
-
-        $scope.message.viewMode = 'html';
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
             $scope.message.imagesHidden = false;
@@ -263,7 +258,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.imagesHidden = false;
         }
 
-        if(angular.isUndefined($scope.message.DecryptedBody)) {
+        // Mark message as expanded
+        $scope.message.expand = true;
+
+        // Mark message as read
+        if($scope.message.IsRead === 0) {
+            $scope.read();
+        }
+
+        if(angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     if($rootScope.printMode !== true) {
@@ -287,11 +290,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     // Detect type of content
                     if (tools.isHtml(content)) {
                         $scope.isPlain = false;
+                        $scope.message.viewMode = 'html';
+                        // Assign decrypted content
+                        $scope.message.decryptedBody = $sce.trustAsHtml(content);
                     } else {
                         $scope.isPlain = true;
+                        $scope.message.viewMode = 'plain';
                     }
-
-                    $scope.message.DecryptedBody = $sce.trustAsHtml(content);
 
                     // Scroll to first message open
                     if($rootScope.scrollToFirst === $scope.message.ID) {
@@ -353,6 +358,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.read = function() {
         var ids = [$scope.message.ID];
 
+        $scope.message.expand = true;
+
         action.readMessage(ids);
     };
 
@@ -361,6 +368,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.unread = function() {
         var ids = [$scope.message.ID];
+
+        $scope.message.expand = false;
 
         action.unreadMessage(ids);
     };
@@ -615,7 +624,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var fw_length = fw_prefix.length;
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.DecryptedBody + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
         if(angular.isDefined($scope.message.AddressID)) {
             base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});

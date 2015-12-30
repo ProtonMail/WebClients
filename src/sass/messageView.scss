@@ -76,7 +76,7 @@
     }
     .fa-star {
         color: $orange
-    }    
+    }
     #pm_thread {
     	max-height: $maxHeight;
     	overflow-y: auto;
@@ -384,12 +384,13 @@
 			}
 		}
     	.frame {
-    		width: 100%;
             max-width: 100%;
             overflow: auto;
     		position: relative;
     		clear: both;
             box-sizing: border-box;
+            margin-left: 40px;
+            margin-right: 40px;
             & > div > div:nth-child(2) {
                 padding: calc(15px + 1.5rem);
             }

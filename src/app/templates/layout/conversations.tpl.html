@@ -1,18 +1,3 @@
-<!-- <section id="pm_rows" ng-if="layoutMode === 'rows'">
-    <ng-include src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-    <ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
-    <div class="pm_opensans list" ui-view="list" ng-if="!idDefined()"></div>
-    <div id="pm_view" class="rows" ui-view="view" ng-if="idDefined()"></div>
-</section>
-
-<section id="pm_columns" ng-if="layoutMode === 'columns'">
-    <ng-include src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-    <ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
-    <div class="pm_opensans list" ui-view="list"></div>
-    <div id="pm_view" class="columns" ui-view="view" ng-if="idDefined() &&  numberElementSelected === 0"></div>
-    <div ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-if="!idDefined() || numberElementSelected > 0"></div>
-</section> -->
-
 <!-- column mode -->
 <section ui-view="list">
     <toolbar></toolbar>
@@ -30,4 +15,6 @@
 <section ui-view="list">
     <toolbar></toolbar>
     <conversation ui-view="view"></conversation>
+    <div id="pm_view" class="columns" ui-view="view" ng-if="idDefined()"></div>
+    <div ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-if="!idDefined()"></div>
 </section>

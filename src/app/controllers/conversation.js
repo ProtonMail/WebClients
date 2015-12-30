@@ -29,11 +29,20 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.$on('refreshConversation', function(event) {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);
+        var loc = tools.currentLocation();
 
         messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
 
         if(angular.isDefined(conversation)) {
-            _.extend($scope.conversation, conversation);
+            var labels = conversation.LabelIDs;
+
+            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
+
+            if(labels.indexOf(loc) !== -1) {
+                _.extend($scope.conversation, conversation);
+            } else {
+                $scope.back();
+            }
         } else {
             $scope.back();
         }
@@ -44,14 +53,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
                 if(angular.isUndefined(current) && index === -1) {
-                    if(angular.isDefined(message.Body)) {
-                        $scope.messages.push(message);
-                    } else {
-                        cache.getMessage(message.ID).then(function(result) {
-                            _.extend(message, result);
-                            $scope.messages.push(message);
-                        });
-                    }
+                    // Add message
+                    $scope.messages.push(message);
                 }
             });
 
@@ -71,14 +74,61 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
     });
 
+    $scope.$on('$destroy', function(event) {
+        delete $rootScope.targetID;
+    });
+
     /**
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-        cache.queryConversationMessages(conversation.ID).then(function(messages) {
-            messages = messages.reverse(); // We reverse the array because the new message appear to the bottom of the list
-            $scope.messages = messages;
-        });
+
+        var loc = tools.currentLocation();
+
+        if(angular.isDefined(conversation)) {
+            var labels = conversation.LabelIDs;
+
+            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
+
+            if(labels.indexOf(loc) !== -1) {
+                var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
+                var latest = _.last(messages);
+
+                if($state.is('secured.sent.list.view')) {
+                    var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+
+                    $rootScope.targetID = _.last(sents).ID;
+                } else if(angular.isDefined($rootScope.targetID)) {
+                    // Do nothing, target initialized
+                } else {
+                    if(latest.IsRead === 1) {
+                        latest.open = true;
+                        $rootScope.targetID = latest.ID;
+                    } else {
+                        var loop = true;
+                        var index = messages.indexOf(latest);
+
+                        while(loop === true && index > 0) {
+                            if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
+                                index--;
+                            } else {
+                                loop = false;
+                            }
+                        }
+
+                        $rootScope.targetID = messages[index].ID;
+                    }
+                }
+
+                $scope.messages = messages;
+                $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+            } else {
+                $scope.back();
+            }
+        } else {
+            $scope.back();
+        }
+
     };
 
     /**
@@ -158,8 +208,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(angular.isElement(element)) {
                 var value = element.offset().top - element.outerHeight();
 
-                $('#pm_thread')
-                .animate({
+                $('#pm_thread').animate({
                     scrollTop: value
                 }, 10, function() {
                     $(this).animate({

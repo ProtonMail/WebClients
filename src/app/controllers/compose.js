@@ -329,6 +329,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     $scope.isOver = false;
                     $scope.$apply();
+                },
+                error: function(event) {
+                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+                    if(event.size > sizeLimit * 1024 * 1024) {
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                    }
                 }
             }
         };
@@ -696,7 +703,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var composer = $('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
-                $(composer).find('.to-list').focus();
+                $scope.focusTo(message);
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else {
@@ -1252,7 +1259,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
                                             message.sending = false; // Change status
-                                            result.Sent.expanded = undefined; // Trick to ask the front-end to open the message sent
+                                            result.Sent.expand = undefined; // Trick to ask the front-end to open the message sent
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                             result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message

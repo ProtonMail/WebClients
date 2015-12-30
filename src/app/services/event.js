@@ -38,6 +38,7 @@ angular.module("proton.event", ["proton.constants"])
 							$rootScope.$broadcast('updateLabels');
 						} else if(label.Action === CREATE) {
 							authentication.user.Labels.push(label.Label);
+							cacheCounters.add(label.Label.ID);
 						} else if(label.Action === UPDATE) {
 							var index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
 							authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
@@ -62,6 +63,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
+					user.Role = 1; // Overwrite Role user for the test release
 					authentication.user = angular.merge(authentication.user, user);
 				}
 			},

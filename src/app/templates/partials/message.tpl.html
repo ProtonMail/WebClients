@@ -27,6 +27,7 @@ ng-class="{
             <em ng-show="toggleDetails === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+        <em class="pm_tag" ng-show="sent() === true">{{ 'SENT' | translate }}</em>
         <em class="pm_tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
         <em class="pm_tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
         <em class="pm_tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>
@@ -152,13 +153,13 @@ ng-class="{
         <p ng-if="message.ExpirationTime > 0" class="text-red">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime }}"></span>
         </p>
-        <div class="email" ng-class="{'plain': isPlain}" ng-show="message.viewMode === 'html'" ng-bind-html="message.DecryptedBody" transform-links="{{ message.DecryptedBody }}" hide-first-blockquote="{{ message.DecryptedBody }}"></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links="{{ message.decryptedBody }}" hide-first-blockquote="{{ message.decryptedBody }}"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>
             <br> Decryption of this message's content failed.
         </div>
-        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+        <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
 </article>

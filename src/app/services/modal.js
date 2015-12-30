@@ -147,67 +147,6 @@ angular.module("proton.modals", [])
 // Advance search modal
 .factory('searchModal', function(pmModal, authentication, CONSTANTS) {
     return pmModal({
-        controller: function(params) {
-            this.attachments = 2;
-            this.starred = 2;
-            this.labels = authentication.user.Labels;
-            this.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
-            delete this.folders.search;
-            delete this.folders.label;
-
-            if(angular.isDefined(params.value)) {
-                this.keywords = params.value;
-            }
-
-            this.setMin = function() {
-                if(this.start.getDate() === null) {
-                    this.start = null;
-                } else {
-                    this.end.setMinDate(this.start.getDate());
-                }
-            };
-
-            this.setMax = function() {
-                if(this.end.getDate() === null) {
-                    this.end = null;
-                } else {
-                    this.start.setMaxDate(this.end.getDate());
-                }
-            };
-
-            this.search = function() {
-                if (angular.isDefined(params.search) && angular.isFunction(params.search)) {
-                    var parameters = {};
-
-                    parameters.words = this.keywords;
-                    parameters.from = this.from;
-                    parameters.to = this.to;
-                    parameters.subject = this.subject;
-                    parameters.attachments = parseInt(this.attachments);
-
-                    if(parseInt($('#search_folder').val()) !== -1) {
-                        parameters.label = $('#search_folder').val();
-                    }
-
-                    if($('#search_start').val().length > 0) {
-                        parameters.begin = this.start.getMoment().unix();
-                    }
-
-                    if($('#search_end').val().length > 0) {
-                        parameters.end = this.end.getMoment().unix();
-                    }
-
-                    params.search(parameters);
-                }
-            };
-
-            this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-        },
-        controllerAs: 'ctrl',
         templateUrl: 'templates/modals/advanceSearch.tpl.html'
     });
 })

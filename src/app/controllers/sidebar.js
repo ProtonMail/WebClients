@@ -72,6 +72,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
                                 if(angular.isDefined(data) && data.Code === 1000) {
                                     authentication.user.Labels.push(data.Label);
+                                    cacheCounters.add(data.Label.ID);
                                     labelModal.deactivate();
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
                                 } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {

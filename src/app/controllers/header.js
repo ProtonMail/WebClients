@@ -16,6 +16,14 @@ angular.module("proton.controllers.Header", [])
         searchContactInput: ''
     };
 
+    $scope.ctrl = {};
+    $scope.ctrl.attachments = 2;
+    $scope.advancedSearch = false;
+    $scope.starred = 2;
+    $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
+    delete $scope.folders.search;
+    delete $scope.folders.label;
+
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });
@@ -56,24 +64,15 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('newMessage');
     };
 
-    $scope.openSearchModal = function(value) {
-        searchModal.activate({
-            params: {
-                keywords: value,
-                search: function(result) {
-                    searchModal.deactivate();
-                    var params = $scope.resetSearchParameters();
-
-                    _.extend(params, result);
-                    $state.go('secured.search.list', params);
-                },
-                cancel: function() {
-                    searchModal.deactivate();
-                }
-            }
-        });
+    $scope.openSearchModal = function() {
+        $scope.labels = authentication.user.Labels;
+        $scope.advancedSearch = !$scope.advancedSearch;
     };
 
+    $scope.closeSearchModal = function() {
+        $scope.advancedSearch = !$scope.advancedSearch;
+    };
+    
     $scope.isContactsView = function() {
         return $state.is('secured.contacts');
     };
@@ -98,15 +97,58 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-            if (params.words==='bartsnackies') {
-                $scope.snackies = true;
-            }
-            else {
-                $scope.snackies = false;
-                $state.go('secured.search.list', params);
-            }
+            $state.go('secured.search.list', params);
         } else {
             $state.go('secured.inbox');
+        }
+    };
+
+    $scope.searchAdvanced = function() {
+        var parameters = {};
+
+        parameters.words = $scope.params.searchMessageInput;
+        parameters.from = $scope.params.from;
+        parameters.to = $scope.to;
+        parameters.subject = $scope.subject;
+        parameters.attachments = parseInt($scope.ctrl.attachments);
+
+        if(parseInt($('#search_folder').val()) !== -1) {
+            parameters.label = $('#search_folder').val();
+        } else {
+            parameters.label = null;
+        }
+
+        if($('#search_start').val().length > 0) {
+            parameters.begin = $scope.ctrl.start.getMoment().unix();
+        }
+
+        if($('#search_end').val().length > 0) {
+            parameters.end = $scope.ctrl.end.getMoment().unix();
+        }
+
+        $state.go('secured.search.list', parameters);
+        $scope.advancedSearch = false;
+    };
+
+    $scope.setMin = function() {
+        if($scope.ctrl.start.getDate() === null) {
+            $scope.ctrl.start = null;
+        } else {
+            $scope.ctrl.end.setMinDate($scope.ctrl.start.getDate());
+        }
+    };
+
+    $scope.setMax = function() {
+        if($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
+            $scope.ctrl.end = null;
+        } else {
+            $scope.ctrl.start.setMaxDate($scope.ctrl.end.getDate());
+        }
+    };
+
+    $scope.cancel = function() {
+        if (angular.isDefined($scope.params.cancel) && angular.isFunction($scope.params.cancel)) {
+            $scope.params.cancel();
         }
     };
 
