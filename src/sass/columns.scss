@@ -154,10 +154,13 @@
 			}
 			&.unread.active {
 				background-color: $alt;
-				header p span {
-					font-weight: 700;
-					&.time {
-						font-weight: 400;
+				header p {
+					color: #fff;
+						span {
+						font-weight: 700;
+						&.time {
+							font-weight: 400;
+						}
 					}
 				}
 				header span.time {
