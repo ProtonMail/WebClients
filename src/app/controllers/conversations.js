@@ -74,7 +74,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $outer.remove();
             return 100 - widthWithScroll;
         }
-        $('#pm_columns #pm_toolbar').css('right', getScrollBarWidth());
+        $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
     };
 
     $scope.mobileResponsive = function() {

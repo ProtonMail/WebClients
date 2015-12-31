@@ -1,4 +1,4 @@
-#pm_columns #pm_view > header {
+#pm_conversations #pm_view > header {
     position: relative;
     padding-right: 25px;
     padding-left: 40px;
@@ -14,7 +14,7 @@
 #pm_rows #pm_view article.message header {
     padding-right: 10px;
 }
-#pm_columns {
+#pm_conversations {
     #pm_view {
         & > header {
             h1 {

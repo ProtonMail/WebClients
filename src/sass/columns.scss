@@ -1,4 +1,4 @@
-#pm_columns {
+#pm_conversations {
 	#nothingToSeeHere {
 		vertical-align: middle;
 		text-align: center;
@@ -341,7 +341,7 @@
 }
 
 @media (min-width: $wide) {
-	#pm_columns {
+	#pm_conversations {
 		.list {
 			width: 620px;
 			min-width: 620px;
@@ -350,7 +350,7 @@
 }
 
 @media (max-width: $tablet-landscape) {
-    #pm_columns {
+    #pm_conversations {
     	margin: 0;
     	.main > label {
     		padding-left: 0;
@@ -359,7 +359,7 @@
 }
 
 @media (max-width: $mobile-landscape) {
-	#pm_columns {
+	#pm_conversations {
 		#pm_view {
 			display: none;
 		}

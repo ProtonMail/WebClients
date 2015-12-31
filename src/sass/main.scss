@@ -19,7 +19,7 @@ It will conflict with email rendering if the selectors are not specific or neste
 }
 
 #pm_rows,
-#pm_columns {
+#pm_conversations {
 	.fa-paperclip {
 		color: #aba7be;
 		display: inline-block;
@@ -30,7 +30,7 @@ It will conflict with email rendering if the selectors are not specific or neste
 }
 
 body.columns {
-	#pm_columns {
+	#pm_conversations {
 		display: -webkit-flex;
 		display: -ms-flexbox;
 		display: flex;
@@ -53,7 +53,7 @@ body.columns {
 }
 
 body.rows {
-	#pm_columns {
+	#pm_conversations {
 		// display: none;
 	}
 	#pm_rows {
@@ -64,9 +64,8 @@ body.rows {
 	#pm_list {
 		padding: 0;
 		margin: -1px 0 0 0;
-		float: left;
-		clear: both;
-		width: 100%;
+		float: none;
+		width: initial !important;
 	}
 }
 
