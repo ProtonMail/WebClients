@@ -244,7 +244,7 @@ angular.module("proton.filters",[])
             if(same || alone) {
                 return contact.Address;
             } else if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
-                return found.Name + ' <' + found.Address + '>';
+                return found.Name + ' <' + contact.Address + '>';
             } else {
                 return contact.Name + ' <' + contact.Address + '>';
             }

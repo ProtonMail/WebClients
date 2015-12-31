@@ -996,7 +996,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $timeout.cancel(message.timeoutSaving);
         }
 
-        if($scope.saving === true && message.savePromise) {
+        if(message.saving === true && message.savePromise) {
             message.savePromise = message.savePromise.then(nextSave, nextSave);
             deferred.resolve(message.savePromise);
         } else {
@@ -1095,13 +1095,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
                         }
 
+                        message.saving = false;
+
                         deferred.resolve(result);
                     } else if(angular.isDefined(result) && result.Code === 15033) {
                         // Case where the user delete draft in an other terminal
                         delete message.ID;
+                        message.saving = false;
                         deferred.resolve($scope.save(message, silently, forward, notification));
                     } else {
                         $log.error(result);
+                        message.saving = false;
                         deferred.reject(result);
                     }
                 }, function(error) {
