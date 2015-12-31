@@ -1032,7 +1032,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             parameters.Message.AddressID = message.From.ID;
 
             // Encrypt message body with the first public key for the From address
-            message.encryptBody(authentication.user.PublicKey).then(function(result) { //
+            message.encryptBody(authentication.user.PublicKey).then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;

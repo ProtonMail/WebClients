@@ -228,24 +228,23 @@ angular.module("proton.filters",[])
     return function(contact, parameter) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
+        var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
 
         if(parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if(parameter === 'Name') {
-            if(angular.isDefined(contact.Name) && contact.Name.length > 0) {
+            if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+                return found.Name;
+            } else if(angular.isDefined(contact.Name) && contact.Name.length > 0) {
                 return contact.Name;
             } else {
-                var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
-
-                if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
-                    return found.Name;
-                } else {
-                    return contact.Address;
-                }
+                return contact.Address;
             }
         } else {
             if(same || alone) {
                 return contact.Address;
+            } else if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+                return found.Name + ' <' + found.Address + '>';
             } else {
                 return contact.Name + ' <' + contact.Address + '>';
             }
