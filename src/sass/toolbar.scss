@@ -9,7 +9,7 @@
 }
 body.rows #pm_toolbar {
     padding-right: 15px;
-    border-bottom: 1px solid $border;
+    background: #fff;
     .pm_buttons {
         margin: 0 10px 0 0;
         .pm_buttons {
@@ -256,9 +256,6 @@ body.columns #pm_toolbar {
 
 @media (min-width: $wide) {
     .rows #pm_toolbar {
-        height: auto;
-        float: left;
-        width: 100%;
         .main > label.pm_checkbox input {
             margin-top: 16px;
         }

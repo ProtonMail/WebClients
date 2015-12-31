@@ -122,33 +122,18 @@
                     {{ conversation.Subject }}
                     <location-tag class="locTag"></location-tag>
                 </span>
-                <span class="pm_labels inline" ng-show="conversation.LabelIDs | showLabels">
-                    <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    </a>
-                </span>
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-                <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
-                    <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
-                </a>
-                <span class="time" time="{{ time(conversation) }}" filter="readableTime" interval="3600000"></span><!-- refresh every hour -->
-            </p>
-            <article>
-                <p class="pm_labels">
-                    <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    </a>
-                </p>
-                <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders" title="{{ contact.Address }}">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </strong>
-                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </strong>
-                <location-tag class="locTag"></location-tag>
-            </article>
+                <article>
+                    <p class="pm_labels">
+                        <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
+                            <em>{{ getLabel(labelID).Name }}</em>
+                            <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                        </a>
+                    </p>
+                    <location-tag class="locTag"></location-tag>
+                </article>
+            </span>
+            <span class="time" time="{{ time(conversation) }}" filter="readableTime" interval="3600000"></span><!-- refresh every hour -->
         </div>
     </div>
 
