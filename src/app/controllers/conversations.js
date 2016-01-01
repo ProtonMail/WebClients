@@ -461,7 +461,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Back to conversation / message list
      */
     $scope.back = function() {
-        $state.go("secured." + $scope.mailbox + '.list', {
+        $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
     };
