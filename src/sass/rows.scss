@@ -7,6 +7,7 @@ body, html {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	width: 100%;
 
 	.list {
 		max-height: $maxHeight;
@@ -269,7 +270,7 @@ body, html {
 		margin-right: 0;
 		padding-right: 0;
 	}
-	#pm_rows .list {
+	#pm_conversations.rows .list {
 		.message {
 			padding: 0 10px 0 75px !important;
 			height: 65px;
@@ -438,7 +439,7 @@ body, html {
 			}
 		}
 	}
-	#pm_rows {
+	#pm_conversations.rows {
 		#pm_view {
 			padding: 0;
 			box-sizing: border-box;
@@ -450,7 +451,7 @@ body, html {
 }
 
 @media (max-width: $tablet-landscape) {
-	#pm_rows {
+	#pm_conversations.rows {
 		.list {
 			.message {
 				.pm_checkbox {
@@ -463,7 +464,7 @@ body, html {
 }
 
 @media (max-width: $mobile-portrait) {
-	#pm_rows {
+	#pm_conversations.rows {
 		#pm_list {
 			padding: 0 !important;
 		}
