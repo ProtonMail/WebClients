@@ -98,6 +98,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                     if(sents.length > 0) {
                         $rootScope.targetID = _.last(sents).ID;
+                    } else {
+                        $rootScope.targetID = _.last(messages).ID;
                     }
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized
