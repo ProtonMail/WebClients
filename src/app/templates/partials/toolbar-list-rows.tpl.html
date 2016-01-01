@@ -3,7 +3,12 @@
         <div class="pull-right">
             <paginator page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
         </div>
-        <label class="pm_checkbox">
+        <span class="pm_buttons back" ng-if="idDefined()">
+            <a href="#" ng-click="back()" pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
+                <i class="fa fa-level-up fa-rotate-270"></i>
+            </a>
+        </span>
+        <label class="pm_checkbox" ng-if="!idDefined()">
             <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">

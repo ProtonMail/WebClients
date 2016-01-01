@@ -17,6 +17,9 @@ body.rows #pm_toolbar {
             border-left: 1px solid $border !important;
         }
     }
+    .back {
+        margin-left: 10px;
+    }
     .messageActions {
         .pm_buttons {
             margin: 0 0 0 10px;
@@ -99,6 +102,9 @@ body.columns #pm_toolbar {
             position: relative;
             .pm_buttons {
                 margin: 0 0 0 6px !important;
+                &.back {
+                    margin-left: 0 !important;
+                }
                 a {
                     padding: 0 11px;
                     &.createLabel {
@@ -255,6 +261,9 @@ body.columns #pm_toolbar {
 }
 
 @media (min-width: $wide) {
+    #pm_toolbar {
+        padding: 11px 0;
+    }
     .rows #pm_toolbar {
         .main > label.pm_checkbox input {
             margin-top: 16px;
