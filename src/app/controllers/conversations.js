@@ -610,7 +610,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.goToLabel = function(labelID) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
 
-        $state.go('secured.label.list', params);
+        $state.go('secured.label', params);
     };
 
     /**

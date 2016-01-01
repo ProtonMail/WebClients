@@ -408,7 +408,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.currentMailbox = function() {
-        var mailbox = $state.$current.name.replace('secured.', '').replace('.list', '').replace('.view', '');
+        var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
 
         if(_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
             return mailbox;
