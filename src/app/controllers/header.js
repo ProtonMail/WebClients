@@ -20,6 +20,7 @@ angular.module("proton.controllers.Header", [])
     $scope.ctrl.attachments = 2;
     $scope.advancedSearch = false;
     $scope.starred = 2;
+
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
@@ -29,7 +30,7 @@ angular.module("proton.controllers.Header", [])
     });
 
     $scope.$on('$stateChangeSuccess', function(event) {
-        if($state.is('secured.search.list') === false) {
+        if($state.is('secured.search') === false) {
             $scope.params.searchMessageInput = '';
         }
     });
@@ -97,7 +98,7 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-            $state.go('secured.search.list', params);
+            $state.go('secured.search', params);
         } else {
             $state.go('secured.inbox');
         }
@@ -126,7 +127,7 @@ angular.module("proton.controllers.Header", [])
             parameters.end = $scope.ctrl.end.getMoment().unix();
         }
 
-        $state.go('secured.search.list', parameters);
+        $state.go('secured.search', parameters);
         $scope.advancedSearch = false;
     };
 
