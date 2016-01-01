@@ -506,7 +506,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean} scrollToBottom
      */
     $scope.goToPage = function(page, scrollToBottom) {
-        var route = 'secured.' + $scope.mailbox + '.list';
+        var route = 'secured.' + $scope.mailbox + '.view';
 
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();

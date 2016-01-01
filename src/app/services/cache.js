@@ -335,11 +335,17 @@ angular.module("proton.cache", [])
                 var messages = data.Messages;
                 var message = _.max(messages, function(message){ return message.Time; });
 
-                conversation.preloaded = true;
-                conversation.Time = message.Time;
-                storeConversations([conversation]);
-                storeMessages(messages);
-                deferred.resolve(conversation);
+                if (conversation) {
+                    conversation.preloaded = true;
+                    conversation.Time = message.Time;
+                    storeConversations([conversation]);
+                    storeMessages(messages);
+                    deferred.resolve(conversation);
+                }
+                else {
+                    console.log('Jason Error: conversation is undefined in getConversation in cache.js');                    
+                    deferred.reject();
+                }
             } else {
                 deferred.reject();
             }
