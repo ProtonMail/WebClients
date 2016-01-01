@@ -97,7 +97,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if($state.is('secured.sent.list.view')) {
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
-                    $rootScope.targetID = _.last(sents).ID;
+                    if(sents.length > 0) {
+                        $rootScope.targetID = _.last(sents).ID;
+                    } else {
+                        $rootScope.targetID = _.last(messages).ID;
+                    }
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized
                 } else {

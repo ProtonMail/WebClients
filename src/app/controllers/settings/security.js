@@ -37,7 +37,7 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track(
             Logs.getLogs().then(
                 function(response) {
-                    $scope.logs = response.data.Logs;
+                    $scope.logs = _.sortBy(response.data.Logs, 'Time');
                     $scope.logCount = $scope.logs.length;
                     $scope.currentLogPage = 1;
                 },

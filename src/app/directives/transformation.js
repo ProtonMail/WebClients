@@ -24,7 +24,6 @@ angular.module("proton.transformation", [])
         link: function(scope, element, attributes) {
             var quotes = [
                 '.protonmail_quote:first',
-                '.gmail_extra:first',
                 '.gmail_quote:first',
                 '.gmail_signature:first',
                 '.yahoo_quoted:first',
