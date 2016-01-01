@@ -7,7 +7,6 @@ body, html {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	width: 100%;
 
 	.list {
 		max-height: $maxHeight;
@@ -452,6 +451,7 @@ body, html {
 
 @media (max-width: $tablet-landscape) {
 	#pm_conversations.rows {
+		width: 100%;
 		.list {
 			.message {
 				.pm_checkbox {
