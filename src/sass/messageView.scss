@@ -307,9 +307,11 @@
 			}
     	}
 		.sub {
-            margin-left: 40px;
-            margin-right: 40px;
-			padding-right: calc(175px - 40px);
+            // margin-left: 40px;
+            // margin-right: 40px;
+            padding-left: 40px;
+            padding-right: 175px;
+			// padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
 			font-size: 14px;
@@ -391,6 +393,7 @@
             box-sizing: border-box;
             margin-left: 40px;
             margin-right: 40px;
+            margin-bottom: 1rem;
             & > div > div:nth-child(2) {
                 padding: calc(15px + 1.5rem);
             }
