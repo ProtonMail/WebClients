@@ -85,7 +85,7 @@
         </li>
         <li class="divider"></li>
         <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-            <a ui-sref="secured.label.list({label: '{{label.ID}}' })" title="{{ label.Name }}">
+            <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}">
                 <i class="fa fa-tag" ng-style="color(label)"></i>
                 <span>{{ label.Name }}</span>
                 <em ng-bind="unread('label', label.ID)"></em>
