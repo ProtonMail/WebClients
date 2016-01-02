@@ -544,7 +544,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.goToLabel = function(label) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
 
-        $state.go('secured.label.list', params);
+        $state.go('secured.label', params);
     };
 
     /**
@@ -726,7 +726,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Back to element list
      */
     $scope.back = function() {
-        $state.go("secured." + $scope.mailbox + '.list', {
+        $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
     };

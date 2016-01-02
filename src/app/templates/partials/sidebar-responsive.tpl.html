@@ -18,41 +18,41 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts.list')">
+            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts')">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
                 <em ng-bind="unread('drafts')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent.list')">
+            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
                 <i class="fa fa-sign-out"></i>
                 <span>{{ 'SENT' | translate }}</span>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred.list')">
+            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred')">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="unread('starred')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive.list')">
+            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive')">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="unread('archive')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam.list')">
+            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="unread('spam')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash.list')">
+            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash')">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
                 <em ng-bind="unread('trash')"></em>
