@@ -477,6 +477,7 @@
 			box-sizing: border-box;
 			z-index: 7;
 			border-top: 1px solid $border;
+			background: #fff;
 			i {
 				color: $primary;
 				font-style: normal;
@@ -606,6 +607,19 @@
 		#pm_header,
 		#pm_sidebar {
 			display: none;
+		}
+	}
+}
+
+
+@media (max-height: 700px) {
+	#pm_composer {
+		.composer {
+			header {
+				.pm_button.maximize-button {
+					display: none; 
+				}
+			}
 		}
 	}
 }

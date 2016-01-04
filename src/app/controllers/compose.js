@@ -760,10 +760,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.attHide = function(message) {
         message.attachmentsToggle = false;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.toggleCcBcc = function(message) {

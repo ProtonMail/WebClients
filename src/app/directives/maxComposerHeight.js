@@ -16,6 +16,8 @@ angular.module('proton.maxComposerHeight', [])
                 height -= parent.find('.meta').outerHeight();
                 height -= parent.find('.squire-toolbar').outerHeight();
                 height -= parent.find('footer').outerHeight();
+                height -= parent.find('.attachmentBar').outerHeight();
+                height -= parent.find('.attachmentArea').outerHeight();
                 angular.element(element).find('iframe').css({
                     height: height
                 });
