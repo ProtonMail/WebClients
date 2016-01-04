@@ -861,9 +861,15 @@ angular.module("proton.cache", [])
     * @param {Array} events
     * @return {Promise}
     */
-    api.events = function(events) {
+    api.events = function(events, fromBackend) {
         var deferred = $q.defer();
         var promises = [];
+
+        if(fromBackend === true) {
+            console.log('events from the back-end');
+        } else {
+            console.log('events from the front-end');
+        }
 
         console.log(events);
 
