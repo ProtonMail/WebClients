@@ -20,3 +20,26 @@
 		}
 	}
 }
+
+#nothingToSeeHere {
+	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+	height: 90%;
+	.fa {
+		font-size: 3rem;
+		display: block;
+		color: $border;
+	}
+	span {
+		display: block;
+		color: $border;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+	h3 {
+		font-size: 2rem;
+		color: $border;
+		font-weight: 400;
+	}
+}

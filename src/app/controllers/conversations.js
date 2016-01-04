@@ -660,28 +660,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * Swipe gesture for a message
-     * @param {Object} event
-     * @param {Object} conversation
-     */
-    $scope.swipeLeft = function(conversation) {
-        console.log(conversation);
-        conversation.dumpstered = true;
-        // PANDA!
-    };
-
-    /**
-     * Swipe gesture for a message
-     * @param {Object} event
-     * @param {Object} conversation
-     */
-    $scope.swipeRight = function(conversation) {
-        console.log(conversation);
-        conversation.spamified = true;
-        // PANDA!
-    };
-
-    /**
      * Filter current list
      * @param {String}
      */
