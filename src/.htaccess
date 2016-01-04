@@ -12,3 +12,4 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^(.*) /app.html [NC,L]
+RewriteRule ^$ /app.html [NC,L]
