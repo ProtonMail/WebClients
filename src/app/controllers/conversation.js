@@ -103,7 +103,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                         $rootScope.targetID = _.last(messages).ID;
                     }
                 } else if(angular.isDefined($rootScope.targetID)) {
-                    // Do nothing, target initialized
+                    // Do nothing, target initialized by click
                 } else {
                     if(latest.IsRead === 1) {
                         latest.open = true;

@@ -397,14 +397,36 @@ angular.module('proton.actions', [])
             var context = tools.cacheContext();
             var ids =  _.map(messages, function(message) { return message.ID; });
             var process = function() {
-                cache.events(events);
+                cache.events(events).then(function() {
+                    var events2 = [];
 
-                if(alsoArchive === true) {
-                    Message.archive({IDs: ids}); // Send request to archive conversations
-                }
+                    _.each(messages, function(message) {
+                        var conversationID = message.ConversationID;
+                        var conversation = cache.getConversationCached(conversationID);
+
+                        if(angular.isDefined(conversation)) { // In the draft folder, conversation can be undefined
+                            var messages = cache.queryMessagesCached(conversationID);
+                            var labelIDs = [];
+
+                            _.each(messages, function(message) {
+                                labelIDs = labelIDs.concat(message.LabelIDs);
+                            });
+
+                            conversation.LabelIDs = _.uniq(labelIDs);
+                            events2.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                        }
+                    });
+
+                    cache.events(events2);
+
+                    if(alsoArchive === true) {
+                        Message.archive({IDs: ids}); // Send request to archive conversations
+                    }
+                });
             };
 
             _.each(messages, function(message) {
+
                 var toApply = _.map(_.filter(labels, function(label) {
                     return label.Selected === true && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) === -1;
                 }), function(label) {
@@ -423,6 +445,7 @@ angular.module('proton.actions', [])
 
                 var element = {
                     ID: message.ID,
+                    ConversationID: message.ConversationID,
                     Selected: false,
                     LabelIDsAdded: toApply,
                     LabelIDsRemoved: toRemove
