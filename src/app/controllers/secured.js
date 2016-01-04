@@ -66,6 +66,32 @@ angular.module("proton.controllers.Secured", [])
         }
     };
 
+    /**
+     * Returns a string for the storage bar
+     * @return {String} "123/456 [MB/GB]"
+     */
+    $scope.storageUsed = function() {
+        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
+            var gb = 1073741824;
+            var mb = 1048576;
+            var units = (authentication.user.MaxSpace >= gb) ? 'GB' : 'MB';
+            var total = authentication.user.MaxSpace;
+            var used = authentication.user.UsedSpace;
+            if (units === 'GB') {
+                used = (used / gb);
+                total = (total / gb);
+            }
+            else {
+                used = (used / mb);
+                total = (total / mb);
+            }
+            return used.toFixed(1) + '/' + total + ' ' + units;
+        } else {
+            // TODO: error, undefined variables
+            return '';
+        }
+    };
+
     $scope.getEmails = function(emails) {
         return _.map(emails, function(email) {
             return email.Address;
