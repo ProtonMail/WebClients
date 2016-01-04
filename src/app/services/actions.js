@@ -310,21 +310,26 @@ angular.module('proton.actions', [])
             var promise;
 
             // Generate cache event
-            _.each(ids, function(id) {
-                var messages = cache.queryMessagesCached(id);
+            _.each(ids, function(conversationID) {
+                var conversation = cache.getConversationCached(conversationID); // Get conversation cached
+                var messages = cache.queryMessagesCached(conversationID); // Get messages cached for this conversation
+                var counter = 0; // Initialize counter, count the number of message deleted
 
-                $rootScope.$broadcast('deleteConversation', id); // Close composer
+                $rootScope.$broadcast('deleteConversation', conversationID); // Close composer
 
-                if(messages.length > 0) {
-                    _.each(messages, function(message) {
+                _.each(messages, function(message) {
+                    if(message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash)) {
+                        counter++;
                         events.push({Action: 0, ID: message.ID});
-                    });
-                }
+                    }
+                });
 
-                events.push({Action: 0, ID: id});
+                if(counter === conversation.NumMessages) { // If all messages in the conversation are deleted, we can delete the conversation
+                    events.push({Action: 0, ID: conversationID});
+                }
             });
 
-            // Send request
+            // Send the request
             promise = Conversation.delete(ids);
 
             if(context === true) {
@@ -607,7 +612,7 @@ angular.module('proton.actions', [])
                 var conversation = cache.getConversationCached(message.ConversationID);
 
                 if(angular.isDefined(conversation)) {
-                    if(conversation.NumMessages <= 1) {
+                    if(conversation.NumMessages === 1) {
                         // Delete conversation
                         events.push({Action: 0, ID: conversation.ID});
                     } else if(conversation.NumMessages > 1) {

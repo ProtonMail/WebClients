@@ -45,7 +45,7 @@ angular.module("proton.move", [])
             scope.back = function() {
                 var mailbox = tools.currentMailbox();
 
-                $state.go("secured." + mailbox + '.list', {
+                $state.go("secured." + mailbox, {
                     id: null // remove ID
                 });
             };

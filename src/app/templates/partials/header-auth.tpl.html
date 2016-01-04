@@ -1,5 +1,5 @@
 <header id="pm_header" class="pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo" ui-sref="secured.inbox.list">
+    <a href="#" class="logo" ui-sref="secured.inbox">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
     <a href="#" class="logoMobile" ng-click="sidebarToggle();">
@@ -20,7 +20,7 @@
             <button type="submit" ng-show="advancedSearch !== true">
                 <i class="fa fa-search"></i>
             </button>
-            <button type="button" id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="advancedSearch = false">
+            <button type="button" id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="closeSearchModal()">
                 <i class="fa fa-times"></i>
             </button>
         </fieldset>

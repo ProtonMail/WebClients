@@ -74,7 +74,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $outer.remove();
             return 100 - widthWithScroll;
         }
-        $('#pm_columns #pm_toolbar').css('right', getScrollBarWidth());
+        $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
     };
 
     $scope.mobileResponsive = function() {
@@ -362,11 +362,24 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * Return [Element]
-     * @return {Array}
+     * Return [Element] selected
+     * @return {Array} elements
      */
     $scope.elementsSelected = function() {
-        return _.where($scope.conversations, {Selected: true});
+        var elements = _.where($scope.conversations, {Selected: true});
+        var conversationID = $state.params.id;
+
+        if(elements.length === 0 && angular.isDefined(conversationID)) {
+            var type = tools.typeList();
+
+            if(type === 'message') {
+                elements = _.where($scope.conversations, {ConversationID: conversationID});
+            } else if(type === 'conversation') {
+                elements = _.where($scope.conversations, {ID: conversationID});
+            }
+        }
+
+        return elements;
     };
 
     /**
@@ -457,7 +470,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Back to conversation / message list
      */
     $scope.back = function() {
-        $state.go("secured." + $scope.mailbox + '.list', {
+        $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
     };
@@ -502,7 +515,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean} scrollToBottom
      */
     $scope.goToPage = function(page, scrollToBottom) {
-        var route = 'secured.' + $scope.mailbox + '.list';
+        var route = 'secured.' + $scope.mailbox;
 
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();
@@ -518,14 +531,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 id: undefined
             }));
         }
-    };
-
-    /**
-     * Return conversations selected
-     * @return {Array}
-     */
-    var elementsSelected = function() {
-        return _.where($scope.conversations, {Selected: true});
     };
 
     /**
@@ -606,7 +611,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.goToLabel = function(labelID) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
 
-        $state.go('secured.label.list', params);
+        $state.go('secured.label', params);
     };
 
     /**
@@ -629,7 +634,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.targetID = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.list.view', { id: id }, {reload: id === $state.params.id});
+        $state.go('secured.' + $scope.mailbox + '.view', { id: id }, {reload: id === $state.params.id});
     };
 
     /**

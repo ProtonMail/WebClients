@@ -1,6 +1,7 @@
 #attachmentArea {
 	position: relative;
-	padding: 1rem 40px;
+	padding: 1rem 40px 0;
+	border-bottom: 1px solid $border;
 	header {
 		height: 40px;
 		line-height: 40px !important;
