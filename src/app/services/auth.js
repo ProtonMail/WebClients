@@ -69,12 +69,11 @@ angular.module("proton.authentication", [
                                         var mailboxPassword = api.getPassword();
                                         var promises = [];
 
-                                        user.Role = 1; // Override Role value for the release
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
 
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                        console.log(user.Addresses); // TODO remove it
+                                        console.log('user.Addresses', user.Addresses); // TODO remove it
                                         _.each(user.Addresses, function(address) { // For each addresses
                                             _.each(address.Keys, function(key, index) { // For each keys
                                                 promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
@@ -90,7 +89,6 @@ angular.module("proton.authentication", [
                                         });
 
                                         $q.all(promises).then(function() {
-                                            console.log(keys); // TODO remove it
                                             deferred.resolve(user);
                                         });
                                     } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
