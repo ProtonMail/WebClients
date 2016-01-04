@@ -86,16 +86,16 @@ angular.module('proton.actions', [])
                 }
             };
 
-            _.each(ids, function(id) {
-                var elementCached = cache.getConversationCached(id);
-                var messages = cache.queryMessagesCached(elementCached.ID);
+            _.each(ids, function(conversationID) {
+                var conversation = cache.getConversationCached(conversationID);
+                var messages = cache.queryMessagesCached(conversationID);
                 var toApply = _.map(_.filter(labels, function(label) {
-                    return label.Selected === true && angular.isArray(elementCached.LabelIDs) && elementCached.LabelIDs.indexOf(label.ID) === -1;
+                    return label.Selected === true && angular.isArray(conversation.LabelIDs);
                 }), function(label) {
                     return label.ID;
                 }) || [];
                 var toRemove = _.map(_.filter(labels, function(label) {
-                    return label.Selected === false && angular.isArray(elementCached.LabelIDs) && elementCached.LabelIDs.indexOf(label.ID) !== -1;
+                    return label.Selected === false && angular.isArray(conversation.LabelIDs);
                 }), function(label) {
                     return label.ID;
                 }) || [];
@@ -106,19 +106,21 @@ angular.module('proton.actions', [])
                 }
 
                 var element = {
-                    ID: id,
+                    ID: conversationID,
                     Selected: false,
                     LabelIDsAdded: toApply,
                     LabelIDsRemoved: toRemove
                 };
 
                 _.each(messages, function(message) {
-                    message.LabelIDsAdded = toApply;
-                    message.LabelIDsRemoved = toRemove;
-                    events.push({Action: 3, ID: message.ID, Message: message});
+                    events.push({Action: 3, ID: message.ID, Message: {
+                        ID: message.ID,
+                        LabelIDsAdded: toApply,
+                        LabelIDsRemoved: toRemove
+                    }});
                 });
 
-                events.push({Action: 3, ID: elementCached.ID, Conversation: element});
+                events.push({Action: 3, ID: conversationID, Conversation: element});
 
                 _.each(toApply, function(labelID) {
                     promises.push(Conversation.labels(labelID, ADD, ids));
