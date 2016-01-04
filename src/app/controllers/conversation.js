@@ -207,7 +207,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $timeout(function() {
             var element = angular.element(id);
 
-            if(angular.isElement(element)) {
+            if(angular.isElement(element) && angular.isDefined(element.offset())) {
                 var value = element.offset().top - element.outerHeight();
 
                 $('#pm_thread').animate({
