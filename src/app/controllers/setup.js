@@ -184,7 +184,7 @@ angular.module("proton.controllers.Setup", [
                         $scope.process.redirecting = true;
                         $rootScope.isLoggedIn = true;
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                        $state.go("secured.inbox.list");
+                        $state.go("secured.inbox");
                     },
                     function(err) {
                         notify({

@@ -394,7 +394,7 @@ angular.module('proton', [
         else if ($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock) {
             $log.debug('appjs:($rootScope.isLoggedIn && !$rootScope.isLocked && isUnlock)');
             event.preventDefault();
-            $state.go('secured.inbox.list');
+            $state.go('secured.inbox');
             return;
         }
 

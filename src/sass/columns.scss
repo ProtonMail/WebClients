@@ -1,8 +1,4 @@
-#pm_columns {
-	margin-left: $sidebarWidth;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+#pm_conversations.columns {
 	#nothingToSeeHere {
 		vertical-align: middle;
 		text-align: center;
@@ -158,10 +154,13 @@
 			}
 			&.unread.active {
 				background-color: $alt;
-				header p span {
-					font-weight: 700;
-					&.time {
-						font-weight: 400;
+				header p {
+					color: #fff;
+						span {
+						font-weight: 700;
+						&.time {
+							font-weight: 400;
+						}
 					}
 				}
 				header span.time {
@@ -342,7 +341,7 @@
 }
 
 @media (min-width: $wide) {
-	#pm_columns {
+	#pm_conversations {
 		.list {
 			width: 620px;
 			min-width: 620px;
@@ -351,7 +350,7 @@
 }
 
 @media (max-width: $tablet-landscape) {
-    #pm_columns {
+    #pm_conversations {
     	margin: 0;
     	.main > label {
     		padding-left: 0;
@@ -360,10 +359,8 @@
 }
 
 @media (max-width: $mobile-landscape) {
-	#pm_columns {
-		#pm_view {
-			display: none;
-		}
+	#pm_conversations {
+
 		.list {
 			width: 100%;
 			min-width: 100%;

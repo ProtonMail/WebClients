@@ -40,8 +40,8 @@ ng-class="{
                 </a>
             </span>
         </span>
-        <span class="addLabelButton pm_buttons" ng-show="false">
-            <a href="" class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown>
+        <span class="addLabelButton pm_buttons" ng-class="{ open: DDopen }">
+            <a href="" class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="DDopen = true; $event.stopPropagation();" ng-blur="DDopen = false">
                 <small><i class="fa fa-tag"></i> {{ 'ADD_LABEL' | translate }}</small>
             </a>
             <span class="pm_dropdown wide pull-left labelDD">
@@ -149,6 +149,7 @@ ng-class="{
         </div><!--/.data-->
         <div class="clear"></div>
     </div>
+    <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
         <p ng-if="message.ExpirationTime > 0" class="text-red">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime }}"></span>
@@ -161,5 +162,4 @@ ng-class="{
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
-    <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
 </article>
