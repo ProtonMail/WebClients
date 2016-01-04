@@ -370,7 +370,20 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Array}
      */
     $scope.elementsSelected = function() {
-        return _.where($scope.conversations, {Selected: true});
+        var elements = _.where($scope.conversations, {Selected: true});
+        var conversationID = $state.params.id;
+
+        if(elements.length === 0 && angular.isDefined(conversationID)) {
+            var type = tools.typeList();
+
+            if(type === 'message') {
+                elements = _.where($scope.conversations, {ConversationID: conversationID});
+            } else if(type === 'conversation') {
+                elements = _.where($scope.conversations, {ID: conversationID});
+            }
+        }
+
+        return elements;
     };
 
     /**
@@ -522,14 +535,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 id: undefined
             }));
         }
-    };
-
-    /**
-     * Return conversations selected
-     * @return {Array}
-     */
-    var elementsSelected = function() {
-        return _.where($scope.conversations, {Selected: true});
     };
 
     /**
