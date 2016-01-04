@@ -619,7 +619,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var styles = {};
         var composer = $('.composer:visible');
 
-        if (message.maximized === true) {
+        if (message && message.maximized === true) {
             var composerHeight = composer.outerHeight();
             var composerHeader = composer.find('.composer-header').outerHeight();
             var composerFooter = composer.find('.composer-footer').outerHeight();
