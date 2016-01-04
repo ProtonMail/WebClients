@@ -5,12 +5,16 @@ angular.module("proton.height", [])
         var setHeight = function() {
 
             // set to zero
-            element.css({ height: 0 });
+            element.css({ height: '1px' });
 
             var margin = 0;
             var windowHeight = angular.element($window).height();
             var elementOffset = element[0].getBoundingClientRect();
             var height = windowHeight - elementOffset.top - margin;
+
+            // console.log('windowHeight: '+windowHeight);
+            // console.log('elementOffset.top: '+elementOffset.top);
+            // console.log('height: '+height);
 
             element.css({
                 height: height + 'px'

@@ -183,18 +183,6 @@ header#pm_header {
 				right: 0;
 				bottom: 0;
 				width: 80%;
-				&::-webkit-input-placeholder { /* WebKit browsers */
-	    			text-transform: uppercase;
-				}
-				&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-				    text-transform: uppercase;
-				}
-				&::-moz-placeholder { /* Mozilla Firefox 19+ */
-				    text-transform: uppercase;
-				}
-				&:-ms-input-placeholder { /* Internet Explorer 10+ */
-				    text-transform: uppercase;
-				}
 			}
 			& > * {
 				line-height: 35px;

@@ -82,6 +82,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
+
         var loc = tools.currentLocation();
 
         if(angular.isDefined(conversation)) {
@@ -93,7 +94,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
                 var latest = _.last(messages);
 
-                if($state.is('secured.sent.list.view')) {
+                if($state.is('secured.sent.view')) {
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
                     if(sents.length > 0) {
@@ -131,13 +132,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             $scope.back();
         }
+
     };
 
     /**
      * Back to conversation / message list
      */
     $scope.back = function() {
-        $state.go("secured." + $scope.mailbox + '.list', {
+        $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
     };

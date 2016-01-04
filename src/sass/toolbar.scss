@@ -9,16 +9,16 @@
 }
 body.rows #pm_toolbar {
     padding-right: 15px;
-    border-bottom: 1px solid $border;
-    float: left;
-    width: 100%;
-    clear: both;
+    background: #fff;Ï
     .pm_buttons {
         margin: 0 10px 0 0;
         .pm_buttons {
             margin-left: 0;
             border-left: 1px solid $border !important;
         }
+    }
+    .back {
+        margin-left: 10px;
     }
     .messageActions {
         .pm_buttons {
@@ -30,13 +30,15 @@ body.rows #pm_toolbar {
     }
 }
 
-// Columns
-#pm_view.columns #pm_toolbar {
-    display: none;
-}
 body.columns #pm_toolbar {
     padding-right: 10px;
+    padding-left: 10px;
     margin-left: 0;
+    .pm_buttons.back {
+        overflow: hidden;
+        width: 5px;
+        visibility: hidden;
+    }
     .main > label {
         margin-left: 15px;
     }
@@ -48,10 +50,12 @@ body.columns #pm_toolbar {
 }
 
 #pm_toolbar {
-    padding: 10px 0;
+    padding: 15px 0;
     box-sizing: border-box;
     position: relative;
-    z-index: 5;
+    z-index: 55;
+    height: 64px;
+    box-shadow: 0 1px 0 $border;
     .messageActions {
         float: right;
     }
@@ -104,6 +108,9 @@ body.columns #pm_toolbar {
             position: relative;
             .pm_buttons {
                 margin: 0 0 0 6px !important;
+                &.back {
+                    margin-left: 0 !important;
+                }
                 a {
                     padding: 0 11px;
                     &.createLabel {
@@ -260,10 +267,10 @@ body.columns #pm_toolbar {
 }
 
 @media (min-width: $wide) {
+    #pm_toolbar {
+        padding: 11px 0;
+    }
     .rows #pm_toolbar {
-        height: auto;
-        float: left;
-        width: 100%;
         .main > label.pm_checkbox input {
             margin-top: 16px;
         }

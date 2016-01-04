@@ -1,4 +1,4 @@
-#pm_columns #pm_view > header {
+#pm_conversations #pm_view > header {
     position: relative;
     padding-right: 25px;
     padding-left: 40px;
@@ -14,7 +14,7 @@
 #pm_rows #pm_view article.message header {
     padding-right: 10px;
 }
-#pm_columns {
+#pm_conversations {
     #pm_view {
         & > header {
             h1 {
@@ -46,7 +46,8 @@
                     line-height: 33px;
                     height: 33px;
                     text-align: center;
-                    width: auto;
+                    width: 1.5rem;
+                    display: inline-block;
                 }
             }
         }
@@ -161,8 +162,38 @@
                         font-weight: 700;
                     }
                 }
+                .addLabelButton {
+                    float: right;
+                    border: none;
+                    height: 18px;
+                    line-height: 18px;
+                    display: block;
+                    position: relative;
+                    z-index: 10;
+                    right: 5px;
+                    &.open {
+                        z-index: 11;
+                    }
+                    .labelDD {
+                        z-index: 9;
+                    }
+                    a {
+                        height: 18px;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        box-shadow: none !important;
+                        background: #fff !important;
+                        .fa {
+                            height: 18px;
+                            line-height: 18px;
+                            font-size: 14px;
+                            position: relative;
+                            top: 1px;
+                        }
+                    }
+                }
                 .pm_labels {
-                    background: $read;
+                    background: $white;
                     right: 1rem;
                     .pm_label {
                         box-shadow: 0 0 0 4px $white !important;
@@ -230,7 +261,6 @@
             }
         }
     	header {
-    		overflow: hidden;
     		font-size: 15px;
     		padding: 10px 40px;
     		line-height: 20px;
@@ -239,6 +269,9 @@
             font-size: 90%;
             position: relative;
             cursor: pointer;
+            .addLabelButton {
+                display: none;
+            }
             & > .meta {
                 float: right;
             }
@@ -307,9 +340,11 @@
 			}
     	}
 		.sub {
-            margin-left: 40px;
-            margin-right: 40px;
-			padding-right: calc(175px - 40px);
+            // margin-left: 40px;
+            // margin-right: 40px;
+            padding-left: 40px;
+            padding-right: 175px;
+			// padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
 			font-size: 14px;
@@ -354,7 +389,7 @@
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 0;
+				right: 40px; 
 				top: 10px;
 				z-index: 2;
 				width: 145px;
@@ -391,6 +426,7 @@
             box-sizing: border-box;
             margin-left: 40px;
             margin-right: 40px;
+            margin-top: 1rem;
             & > div > div:nth-child(2) {
                 padding: calc(15px + 1.5rem);
             }

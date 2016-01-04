@@ -74,12 +74,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $outer.remove();
             return 100 - widthWithScroll;
         }
-        $('#pm_columns #pm_toolbar').css('right', getScrollBarWidth());
+        $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
     };
 
     $scope.mobileResponsive = function() {
         if ($window.outerWidth < 1024) {
+            console.log('rows');
             $rootScope.layoutMode = 'rows';
+        }
+        else {
+            console.log('no-rows');
         }
     };
 
@@ -457,7 +461,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Back to conversation / message list
      */
     $scope.back = function() {
-        $state.go("secured." + $scope.mailbox + '.list', {
+        $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
     };
@@ -502,7 +506,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean} scrollToBottom
      */
     $scope.goToPage = function(page, scrollToBottom) {
-        var route = 'secured.' + $scope.mailbox + '.list';
+        var route = 'secured.' + $scope.mailbox;
 
         $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();
@@ -606,7 +610,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.goToLabel = function(labelID) {
         var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
 
-        $state.go('secured.label.list', params);
+        $state.go('secured.label', params);
     };
 
     /**
@@ -629,7 +633,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.targetID = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.list.view', { id: id }, {reload: id === $state.params.id});
+        $state.go('secured.' + $scope.mailbox + '.view', { id: id }, {reload: id === $state.params.id});
     };
 
     /**
