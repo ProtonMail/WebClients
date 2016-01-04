@@ -51,7 +51,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
-                $rootScope.numberElementSelected = $scope.elementsSelected().length;
                 $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -378,6 +377,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 elements = _.where($scope.conversations, {ID: conversationID});
             }
         }
+
+        $rootScope.numberElementSelected = elements.length;
 
         return elements;
     };
