@@ -520,17 +520,19 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Return label
-     * @param {String} id
+     * @param {String} labelID
      */
-    $scope.getLabel = function(id) {
-        return _.findWhere($scope.labels, {ID: id});
+    $scope.getLabel = function(labelID) {
+        return _.findWhere(authentication.user.Labels, {ID: labelID});
     };
 
     /**
      * Return style for label
-     * @param {Object} label
+     * @param {String} labelID
      */
-    $scope.getColorLabel = function(label) {
+    $scope.getColorLabel = function(labelID) {
+        var label = _.findWhere(authentication.user.Labels, {ID: labelID});
+
         return {
             borderColor: label.Color,
             color: label.Color
@@ -539,10 +541,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Go to label folder + reset parameters
-     * @param {Object} label
+     * @param {String} labelID
      */
-    $scope.goToLabel = function(label) {
-        var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
+    $scope.goToLabel = function(labelID) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
 
         $state.go('secured.label', params);
     };
@@ -562,7 +564,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Detach label to the current message
      * @param {Object} label
      */
-    $scope.detachLabel = function(label) {
+    $scope.detachLabel = function(labelID) {
         var events = [];
         var copy = angular.copy($scope.message);
         var labelIDs = [];
@@ -570,15 +572,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messages = cache.queryMessagesCached(copy.ConversationID);
 
         // Generate event for the message
-        copy.LabelIDsRemoved = [label.ID];
-        events.push({Action: 3, ID: copy.ID, Message: copy});
+        events.push({Action: 3, ID: copy.ID, Message: {ID: copy.ID, LabelIDsRemoved: [labelID]}});
 
         // Generate event for the conversation
         _.each(messages, function(message) {
             labelIDs = labelIDs.concat(message.LabelIDs);
         });
 
-        labelIDs.splice(labelIDs.indexOf(label.ID), 1); // Remove one labelID
+        labelIDs.splice(labelIDs.indexOf(labelID), 1); // Remove one labelID
 
         events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
 
@@ -586,7 +587,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         cache.events(events);
 
         // Send request to detach the label
-        copy.updateLabels(label.ID, REMOVE, [copy.ID]);
+        copy.updateLabels(labelID, REMOVE, [copy.ID]);
     };
 
     $scope.sendMessageTo = function(email) {

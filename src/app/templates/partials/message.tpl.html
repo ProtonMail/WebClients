@@ -32,10 +32,10 @@ ng-class="{
         <em class="pm_tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
         <em class="pm_tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>
         <span class="pm_labels" ng-if="message.labels().length > 0">
-            <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
-                <em>{{ getLabel(label.ID).Name }}</em>
-                <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
-                <a href="" ng-click="detachLabel(label); $event.stopPropagation();" class="labelClose">
+            <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                <em>{{ getLabel(labelID).Name }}</em>
+                <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                <a href="" ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
                     <i class="fa fa-times"></i>
                 </a>
             </span>

@@ -68,10 +68,12 @@ angular.module("proton.filters",[])
         });
 
         _.each(labels, function(label) {
-            var value = label;
+            var value;
 
             if(angular.isObject(label)) {
                 value = label.ID;
+            } else if(angular.isString(label)) {
+                value = label;
             }
 
             if(currentLabels.indexOf(value) !== -1) {
