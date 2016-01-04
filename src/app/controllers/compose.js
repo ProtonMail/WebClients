@@ -667,9 +667,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
-                        $(element).css('z-index', ($scope.messages.length + (iteratee - index))*10);
+                        $(element).css('z-index', ($scope.messages.length + (iteratee - index))*100);
                     } else {
-                        $(element).css('z-index', ($scope.messages.length)*10);
+                        $(element).css('z-index', ($scope.messages.length)*100);
                     }
                 });
 
@@ -692,9 +692,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             } else {
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
-                        element.zIndex = ($scope.messages.length - (iteratee - index))*10;
+                        element.zIndex = ($scope.messages.length - (iteratee - index))*100;
                     } else {
-                        element.zIndex = ($scope.messages.length)*10;
+                        element.zIndex = ($scope.messages.length)*100;
                     }
                 });
             }
