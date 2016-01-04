@@ -581,7 +581,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         labelIDs.splice(labelIDs.indexOf(labelID), 1); // Remove one labelID
 
-        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
+        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: _.uniq(labelIDs)}});
 
         // Send to cache manager
         cache.events(events);
