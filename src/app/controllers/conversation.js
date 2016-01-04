@@ -41,10 +41,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(labels.indexOf(loc) !== -1) {
                 _.extend($scope.conversation, conversation);
             } else {
-                $scope.back();
+                return $scope.back();
             }
         } else {
-            $scope.back();
+            return $scope.back();
         }
 
         if(angular.isDefined(messages)) {

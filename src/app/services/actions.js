@@ -563,8 +563,7 @@ angular.module('proton.actions', [])
 
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
-                    conversation.NumUnread = 0;
-                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {ID: conversation.ID, NumUnread: 0}});
                 }
             });
 
@@ -602,8 +601,7 @@ angular.module('proton.actions', [])
 
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
-                    conversation.NumUnread = unreads.length + 1;
-                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {ID: conversation.ID, NumUnread: unreads.length + 1}});
                 }
             });
 
@@ -637,23 +635,22 @@ angular.module('proton.actions', [])
                 if(angular.isDefined(conversation)) {
                     if(conversation.NumMessages === 1) {
                         // Delete conversation
-                        events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+                        events.push({Action: 0, ID: conversation.ID});
                     } else if(conversation.NumMessages > 1) {
                         var messages = cache.queryMessagesCached(conversation.ID);
                         var labelIDs = [];
 
-                        // Decrease the number of message
-                        conversation.NumMessages--;
-
-                        // Forge LabelIDs
                         _.each(messages, function(message) {
                             if(message.ID !== id) {
                                 labelIDs = labelIDs.concat(message.LabelIDs);
                             }
                         });
 
-                        conversation.LabelIDs = _.uniq(labelIDs);
-                        events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                        events.push({Action: 3, ID: conversation.ID, Conversation: {
+                            ID: conversation.ID,
+                            LabelIDs: _.uniq(labelIDs), // Forge LabelIDs
+                            NumMessages: conversation.NumMessages - 1 // Decrease the number of message
+                        }});
                     }
                 }
 
