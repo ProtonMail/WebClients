@@ -96,21 +96,25 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
                 var latest = _.last(messages);
 
-                if($state.is('secured.sent.view')) {
+                if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
                     if(sents.length > 0) {
+                        // We try to open the last sent message
                         $rootScope.targetID = _.last(sents).ID;
                     } else {
+                        // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized by click
                 } else {
+                    // If the latest message is read, we open it
                     if(latest.IsRead === 1) {
                         latest.open = true;
                         $rootScope.targetID = latest.ID;
                     } else {
+                        // Else we open the first message unread beginning to the end list
                         var loop = true;
                         var index = messages.indexOf(latest);
 
