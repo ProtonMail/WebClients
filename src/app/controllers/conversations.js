@@ -51,6 +51,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
+                $scope.elementsSelected();
                 $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -323,7 +324,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.allSelected = function() {
         if ($scope.conversations && $scope.conversations.length > 0) {
-            return $scope.conversations.length === $scope.elementsSelected().length;
+            return $scope.conversations.length === $rootScope.numberElementChecked;
         } else {
             return false;
         }
@@ -346,8 +347,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Select all elements
      */
     $scope.selectAllElements = function() {
-        _.each($scope.conversations, function(conversation) {
-            conversation.Selected = true;
+        _.each($scope.conversations, function(element) {
+            element.Selected = true;
         });
     };
 
@@ -355,8 +356,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Unselect all elements
      */
     $scope.unselectAllElements = function() {
-        _.each($scope.conversations, function(conversations) {
-            conversations.Selected = false;
+        _.each($scope.conversations, function(element) {
+            element.Selected = false;
         });
     };
 
@@ -367,6 +368,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.elementsSelected = function() {
         var elements = _.where($scope.conversations, {Selected: true});
         var conversationID = $state.params.id;
+
+        $rootScope.numberElementChecked = elements.length;
 
         if(elements.length === 0 && angular.isDefined(conversationID)) {
             var type = tools.typeList();
