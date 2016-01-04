@@ -1457,10 +1457,35 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.recipients = function(message) {
         var recipients = [];
 
-        recipients = recipients.concat(_.map(message.ToList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = recipients.concat(_.map(message.CCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = recipients.concat(_.map(message.BCCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = _.uniq(recipients);
+        if(message.ToList.length > 0) {
+            recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('TO') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
+
+        if(message.CCList.length > 0) {
+            recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('CC') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
+
+        if(message.BCCList.length > 0) {
+            recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('BCC') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
 
         return recipients.join(', ');
     };
