@@ -637,15 +637,27 @@ angular.module('proton.actions', [])
                 if(angular.isDefined(conversation)) {
                     if(conversation.NumMessages === 1) {
                         // Delete conversation
-                        events.push({Action: 0, ID: conversation.ID});
+                        events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
                     } else if(conversation.NumMessages > 1) {
+                        var messages = cache.queryMessagesCached(conversation.ID);
+                        var labelIDs = [];
+
                         // Decrease the number of message
                         conversation.NumMessages--;
+
+                        // Forge LabelIDs
+                        _.each(messages, function(message) {
+                            if(message.ID !== id) {
+                                labelIDs = labelIDs.concat(message.LabelIDs);
+                            }
+                        });
+
+                        conversation.LabelIDs = _.uniq(labelIDs);
                         events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                     }
                 }
 
-                events.push({Action: 0, ID: message.ID});
+                events.push({Action: 0, ID: message.ID, Message: message});
             });
 
             promise = Message.delete({IDs: ids}).$promise;

@@ -71,6 +71,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if($scope.messages.length === 0) {
                 $scope.back();
             }
+        } else {
+            $scope.back();
         }
     });
 
