@@ -9,8 +9,12 @@ angular.module("proton.controllers.Settings")
     $scope.LayoutMode = ( $rootScope.layoutMode ) ? ( ( $rootScope.layoutMode === 'rows' ) ? 1 : 0 ) : 0;
     $scope.ViewLayout = authentication.user.ViewLayout;
 
-    $scope.theme_contrast = false;
-    $scope.theme_onyx = false;
+    $scope.toggleThemeHC = function() {
+        $rootScope.themeHC = !$rootScope.themeHC;
+    };
+    $scope.toggleThemeOnyx = function() {
+        $rootScope.themeOnyx = !$rootScope.themeOnyx;
+    };
 
     $scope.saveTheme = function(form) {
         networkActivityTracker.track(
