@@ -27,25 +27,46 @@ angular.module('proton.actions', [])
                 // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
             });
+            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+            var inTrash = labelIDsRemoved.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash);
 
             // Generate cache events
             _.each(ids, function(id) {
+                var messages = cache.queryMessagesCached(element.ID);
                 var element = {
                     ID: id,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
                 };
-                var messages = cache.queryMessagesCached(element.ID);
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        message.LabelIDsRemoved = labelIDsRemoved; // Remove current location
-                        message.LabelIDsAdded = labelIDsAdded; // Add new location
+                        var copyLabelIDsAdded = labelIDsAdded;
+                        var copyLabelIDsRemoved = labelIDsRemoved;
+                        
+                        if(inInbox === true && inTrash === true) {
+                            var index;
+
+                            if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+
+                                copyLabelIDsAdded.splice(index, 1);
+                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
+                            } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
+                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+
+                                copyLabelIDsAdded.splice(index, 1);
+                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                            } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                            }
+                        }
+
                         events.push({Action: 3, ID: message.ID, Message: {
                             ID: message.ID,
-                            LabelIDsRemoved: labelIDsRemoved, // Remove current location
-                            LabelIDsAdded: labelIDsAdded // Add new location
+                            LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
+                            LabelIDsAdded: copyLabelIDsAdded // Add new location
                         }});
                     });
                 }
@@ -359,15 +380,36 @@ angular.module('proton.actions', [])
             var events = [];
             var context = tools.cacheContext();
             var promise;
-            var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
 
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
+                var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                var inInbox = mailbox === 'inbox';
                 var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
+                var inTrash = labelIDsRemoved.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+
+                if(inInbox === true && inTrash === true) {
+                    var index;
+
+                    if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                        index = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+
+                        labelIDsAdded.splice(index, 1);
+                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
+                    } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
+                        index = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+
+                        labelIDsAdded.splice(index, 1);
+                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                    } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                    }
+                }
+
                 var conversation = cache.getConversationCached(message.ConversationID);
                 var element = {
                     ID: id,

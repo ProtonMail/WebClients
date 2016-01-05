@@ -74,7 +74,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Toggle message in conversation view
      */
     $scope.toggle = function() {
-        if($scope.draft() === true) {
+        // If message is a draft
+        if($scope.message.Type === 1) {
             $rootScope.draftOpen = false;
         }
 
@@ -137,7 +138,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         };
 
         // If the message is a draft
-        if($scope.draft() === true) {
+        if($scope.message.Type === 1) {
             if($rootScope.draftOpen === false) {
                 // Open the message in composer if it's a draft
                 $scope.openComposer($scope.message.ID);
