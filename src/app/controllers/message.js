@@ -94,6 +94,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Check if the current message is a archive
+     * @return {Boolean}
+     */
+    $scope.archive = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.archive) !== -1;
+    };
+
+    /**
      * Check if the current message is a draft
      * @return {Boolean}
      */
