@@ -124,6 +124,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                                 index--;
                             } else {
                                 loop = false;
+                                index--;
                             }
                         }
                         if (loop === true) {
@@ -221,17 +222,18 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var value = element.offset().top - 180;
+                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                var value = element.offset().top - headerOffset;
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 10, function() {
+                }, 250, function() {
                     $(this).animate({
                         opacity: 1
                     }, 200);
                 });
             }
-        }, 2000);
+        }, 500);
     };
 
     /**
