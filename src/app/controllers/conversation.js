@@ -213,10 +213,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {String} ID
      */
     $scope.scrollToMessage = function(ID) {
+        $timeout.cancel($rootScope.scroll);
         var index = _.findIndex($scope.messages, {ID: ID});
         var id = '#message' + index; // TODO improve it for the search case
 
-        $timeout(function() {
+        $rootScope.scroll = $timeout(function() {
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
