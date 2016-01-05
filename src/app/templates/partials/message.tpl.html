@@ -27,7 +27,7 @@ ng-class="{
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
-            <em ng-show="toggleDetails === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
+            <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
         <em class="pm_tag" ng-show="sent() === true">{{ 'SENT' | translate }}</em>
