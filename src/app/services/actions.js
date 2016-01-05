@@ -702,8 +702,33 @@ angular.module('proton.actions', [])
         sendMessage: function() {
 
         },
-        discardMessage: function() {
+        discardMessage: function(message) {
+            var events = [];
+            var conversation = cache.getConversationCached(message.ConversationID);
 
+            // Store ID of message discarded
+            $rootScope.discarded.push(message.ID);
+
+            // Generate message event to delete the message
+            events.push({Action: 0, ID: message.ID});
+
+            // Generate conversation event
+            if(angular.isDefined(conversation)) {
+                if(conversation.NumMessages === 1) {
+                    // Delete conversation
+                    events.push({Action: 0, ID: conversation.ID});
+                } else if(conversation.NumMessages > 1) {
+                    // Decrease the number of message
+                    conversation.NumMessages--;
+                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
+                }
+            }
+
+            // Send events
+            cache.events(events);
+
+            // Send request
+            Message.delete({IDs: [message.ID]});
         }
     };
 });
