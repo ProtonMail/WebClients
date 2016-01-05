@@ -923,6 +923,7 @@ angular.module("proton.cache", [])
      * Second with the query call
      */
     api.callRefresh = function() {
+        console.log('callRefresh');
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
