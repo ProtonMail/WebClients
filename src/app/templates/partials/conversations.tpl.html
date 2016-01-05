@@ -112,7 +112,7 @@
                 </td>
             </tr>
         </table>
-        
+
         <div
         class="message"
         ng-repeat="conversation in conversations track by conversation.ID"
@@ -164,8 +164,8 @@
         </div>
     </div>
 
-    <div id="pm_view" ng-class="{'rows': layoutMode === 'rows', 'columns': layoutMode === 'columns'}" ui-view="view" ng-if="idDefined() === true"></div>
+    <div id="pm_view" ng-class="{'rows': layoutMode === 'rows', 'columns': layoutMode === 'columns'}" ui-view="view" ng-if="idDefined() === true && numberElementChecked === 0"></div>
 
-    <div ng-if="layoutMode === 'columns' && idDefined() === false" ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns"></div>
+    <div ng-if="layoutMode === 'columns' && (numberElementChecked > 0 || idDefined() === false)" ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns"></div>
 
 </section>
