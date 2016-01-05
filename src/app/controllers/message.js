@@ -40,7 +40,29 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var message = cache.getMessageCached($scope.message.ID);
 
         if(angular.isDefined(message)) {
-            _.extend($scope.message, message);
+            $scope.message.AddressID = message.AddressID;
+            $scope.message.BCCList = message.BCCList;
+            $scope.message.CCList = message.CCList;
+            $scope.message.ConversationID = message.ConversationID;
+            $scope.message.ExpirationTime = message.ExpirationTime;
+            $scope.message.HasAttachment = message.HasAttachment;
+            $scope.message.ID = message.ID;
+            $scope.message.IsEncrypted = message.IsEncrypted;
+            $scope.message.IsForwarded = message.IsForwarded;
+            $scope.message.IsRead = message.IsRead;
+            $scope.message.IsReplied = message.IsReplied;
+            $scope.message.IsRepliedAll = message.IsRepliedAll;
+            $scope.message.LabelIDs = message.LabelIDs;
+            $scope.message.Location = message.Location;
+            $scope.message.NumAttachments = message.NumAttachments;
+            $scope.message.Sender = message.Sender;
+            $scope.message.SenderAddress = message.SenderAddress;
+            $scope.message.SenderName = message.SenderName;
+            $scope.message.Size = message.Size;
+            $scope.message.Starred = message.Starred;
+            $scope.message.Subject = message.Subject;
+            $scope.message.Time = message.Time;
+            $scope.message.ToList = message.ToList;
         }
     });
 
