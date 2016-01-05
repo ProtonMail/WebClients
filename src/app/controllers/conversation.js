@@ -109,21 +109,25 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized by click
                 } else {
-                    // If the latest message is read, we open it
-                    if(latest.IsRead === 1) {
+                    // If the latest message is unread, we open it
+                    if(latest.IsRead === 0) {
                         latest.open = true;
                         $rootScope.targetID = latest.ID;
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var index = messages.indexOf(latest);
+                        var latestIndex = messages.indexOf(latest);
+                        var index = latestIndex;
 
                         while(loop === true && index > 0) {
-                            if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
+                            if(angular.isDefined(messages[(index - 1)]) && messages[(index - 1)].IsRead === 1) {
                                 index--;
                             } else {
                                 loop = false;
                             }
+                        }
+                        if (loop === true) {
+                            index = latestIndex;
                         }
 
                         $rootScope.targetID = messages[index].ID;
@@ -216,7 +220,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var value = element.offset().top - element.outerHeight();
+                var value = element.offset().top - 180;
 
                 $('#pm_thread').animate({
                     scrollTop: value
