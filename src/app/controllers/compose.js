@@ -159,13 +159,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    function onResize() { // PANDA
+    function onResize() {
+        $timeout.cancel(timeoutStyle);
 
-        clearTimeout(timeoutStyle);
-
-        timeoutStyle = setTimeout(function() {
+        timeoutStyle = $timeout(function() {
             $scope.composerStyle();
-        }, 60);
+        }, 50);
     }
 
     function onDragOver(event) {

@@ -1,32 +1,28 @@
 angular.module("proton.responsiveComposer", [])
 
-.directive('responsiveComposer', function ($window) {
+.directive('responsiveComposer', function ($window, $rootScope, authentication) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs, message) {
             var responsive = function() {
-                
                 // small
                 if ($window.innerHeight < 700) {
-                    scope.message.small = true;
-                }
-                else {
-                    scope.message.small = false;
+                    $rootScope.small = true;
+                } else {
+                    $rootScope.small = false;
                 }
 
                 // mini
                 if ($window.innerHeight < 600) {
-                    scope.message.mini = true;
-                }
-                else {
-                    scope.message.mini = false;
+                    $rootScope.mini = true;
+                } else {
+                    $rootScope.mini = false;
                 }
 
                 // max
                 if ( ($window.innerWidth <= 1024) || ($window.innerHeight <= 500) ) {
                     scope.maximize(scope.message);
-                }
-                else {
+                } else {
 
                 }
             };
