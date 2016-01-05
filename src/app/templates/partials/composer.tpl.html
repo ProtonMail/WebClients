@@ -12,7 +12,8 @@
         'blur': (!!!composerIsSelected(message)),
         'maximized': message.maximized,
         'normalized': !message.maximized && !message.minimized,
-        'expandRecipients': message.fields,
+        'expandRecipients': (message.ccbcc === true),
+        'hasAttachment': (message.Attachments.length > 0),
         'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
         'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
         'tall': (message.Attachments.length === 0)

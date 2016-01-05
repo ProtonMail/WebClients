@@ -60,9 +60,6 @@
 				width: 100%;
 				z-index: 99;
 				border: 1rem solid rgba(0,0,0,.05);
-				// testing
-				display: block !important;
-				// testing
 			}
 			.angular-squire {
 				float: left;
@@ -127,8 +124,38 @@
 			section {
 				.angular-squire-wrapper {
 					iframe {
-						height: 175px;
+						height: 325px;
 					}
+				}
+			}
+		}
+		&.normalized.hasAttachment {
+			.composeEditor .dropzone {
+				height: 169px !important;
+			}
+		}
+		&.normalized {
+			.composeEditor .dropzone {
+				height: 369px !important;
+			}
+			&.expandRecipients {
+				.composeEditor .dropzone {
+					height: 287px !important;
+				}
+			}
+		}
+		&.normalized.attachmentsOpen {
+			.composeEditor .dropzone {
+				height: 269px !important;
+			}
+			&.expandRecipients {
+				.composeEditor .dropzone {
+					height: 187px !important;
+				}
+			}
+			&.moreAttachments {
+				.composeEditor .dropzone {
+					height: 219px !important;
 				}
 			}
 		}
