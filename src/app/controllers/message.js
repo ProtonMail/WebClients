@@ -344,6 +344,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                             window.print();
                         }, 1000);
                     }
+
+                    $rootScope.$broadcast('messageLoaded');
                 };
 
                 // PGP/MIME

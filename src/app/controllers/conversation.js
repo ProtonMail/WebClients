@@ -80,6 +80,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         delete $rootScope.targetID;
     });
 
+    $scope.$on('messageLoaded', function() {
+        if (!$scope.loaded) {
+            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+            $scope.loaded = true;
+        }
+    });
+
     /**
      * Method call at the initialization of this controller
      */
@@ -136,7 +143,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 }
 
                 $scope.messages = messages;
-                $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+                $scope.loaded = false;
             } else {
                 $scope.back();
             }
@@ -233,7 +240,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     }, 200);
                 });
             }
-        }, 500);
+        }, 100);
     };
 
     /**
