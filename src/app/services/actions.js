@@ -23,12 +23,11 @@ angular.module('proton.actions', [])
             var context = tools.cacheContext();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1;
             var labelIDsRemoved = _.reject([current], function(labelID) {
                 // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
             });
-            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
-            var inTrash = labelIDsRemoved.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash);
 
             // Generate cache events
             _.each(ids, function(id) {
@@ -45,7 +44,7 @@ angular.module('proton.actions', [])
                         var copyLabelIDsAdded = labelIDsAdded;
                         var copyLabelIDsRemoved = labelIDsRemoved;
 
-                        if(inInbox === true && inTrash === true) {
+                        if(inInbox === true) {
                             var index;
 
                             if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
@@ -390,9 +389,8 @@ angular.module('proton.actions', [])
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
-                var inTrash = labelIDsRemoved.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
 
-                if(inInbox === true && inTrash === true) {
+                if(inInbox === true) {
                     var index;
 
                     if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
