@@ -40,6 +40,13 @@
             float: right;
             margin-top: 10px;
             margin-right: 10px;
+            &.starButton {
+                border: none;
+                margin-right: 0;
+                a {
+                    background: transparent !important;
+                }
+            }
             a {
                 box-sizing: border-box;
                 i {
