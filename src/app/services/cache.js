@@ -96,9 +96,9 @@ angular.module("proton.cache", [])
      * @param {Array} messages
      * @return {Array} don't miss this array is reversed
      */
-    var orderMessage = function(messages) {
+    var orderMessage = function(messages, parameter) {
         if(angular.isArray(messages)) {
-            return _.sortBy(messages, 'Time').reverse();
+            return _.sortBy(messages, parameter).reverse();
         } else {
             return [];
         }
@@ -275,42 +275,9 @@ angular.module("proton.cache", [])
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, result.Total);
                 // Return messages ordered
-                deferred.resolve(orderMessage(messages));
+                deferred.resolve(orderMessage(messages, 'Time'));
             } else {
                 deferred.resolve(messages);
-            }
-        });
-
-        networkActivityTracker.track(deferred.promise);
-
-        return deferred.promise;
-    };
-
-    /**
-     * Get conversation from API and store it in the cache
-     * @param {String} id
-     * @return {Promise}
-     */
-    var queryConversationMessages = function(id) {
-        var deferred = $q.defer();
-        var mailbox = tools.currentMailbox();
-
-        Conversation.get(id).then(function(result) {
-            var data = result.data;
-
-            if(data.Code === 1000) {
-                var messages = [];
-
-                _.each(data.Messages, function(message) {
-                    messages.push(new Message(message));
-                });
-
-                storeConversations([data.Conversation]);
-                storeMessages(messages);
-
-                deferred.resolve(orderMessage(messages));
-            } else {
-                deferred.reject();
             }
         });
 
@@ -403,7 +370,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            messages = orderMessage(messages);
+            messages = orderMessage(messages, 'Time');
 
             switch(mailbox) {
                 case 'label':
@@ -514,33 +481,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Try to find the result in the cache
-     * @param {String} conversationId
-     */
-    api.queryConversationMessages = function(conversationId) {
-        var deferred = $q.defer();
-        var mailbox = tools.currentMailbox();
-        var conversation = _.findWhere(conversationsCached, {ID: conversationId});
-        var callApi = function() {
-            deferred.resolve(queryConversationMessages(conversationId));
-        };
-
-        if(angular.isDefined(conversation)) {
-            var messages = _.where(messagesCached, {ConversationID: conversationId});
-
-            if(conversation.NumMessages === messages.length) {
-                deferred.resolve(orderMessage(messages));
-            } else {
-                callApi();
-            }
-        } else {
-            callApi();
-        }
-
-        return deferred.promise;
-    };
-
-    /**
      * Return a copy of messages cached for a specific ConversationID
      * @param {String} conversationId
      */
@@ -548,7 +488,7 @@ angular.module("proton.cache", [])
         var mailbox = tools.currentMailbox();
         var messages = _.where(messagesCached, {ConversationID: conversationId});
 
-        messages = orderMessage(messages);
+        messages = orderMessage(messages, 'Order');
 
         return angular.copy(messages);
     };
@@ -1270,7 +1210,7 @@ angular.module("proton.cache", [])
                 if(type === 'message') {
                     messages = elements;
                 } else if(type === 'conversation') {
-                    messages = cache.queryConversationMessages(_.first(elements).ConversationID);
+                    messages = cache.queryMessagesCached(_.first(elements).ConversationID);
                 }
 
                 // Get elements expired
