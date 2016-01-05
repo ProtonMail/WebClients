@@ -217,6 +217,12 @@
 				}
 			}
 		}
+		&.small {
+			height: 430px !important;
+		}
+		&.mini {
+			height: 330px !important;
+		}
 		.options {
         	position: absolute;
         	left: 0;

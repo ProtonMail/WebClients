@@ -5,8 +5,29 @@ angular.module("proton.responsiveComposer", [])
         restrict: 'A',
         link: function (scope, element, attrs, message) {
             var responsive = function() {
-                if ( ($window.innerWidth <= 1024) || ($window.innerHeight <= 700) ) {
+                
+                // small
+                if ($window.innerHeight < 700) {
+                    scope.message.small = true;
+                }
+                else {
+                    scope.message.small = false;
+                }
+
+                // mini
+                if ($window.innerHeight < 600) {
+                    scope.message.mini = true;
+                }
+                else {
+                    scope.message.mini = false;
+                }
+
+                // max
+                if ( ($window.innerWidth <= 1024) || ($window.innerHeight <= 500) ) {
                     scope.maximize(scope.message);
+                }
+                else {
+
                 }
             };
 

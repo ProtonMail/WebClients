@@ -16,7 +16,9 @@
         'hasAttachment': (message.Attachments.length > 0),
         'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
         'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
-        'tall': (message.Attachments.length === 0)
+        'tall': (message.Attachments.length === 0),
+        'mini': (message.mini === true),
+        'small': (message.small === true)
         }"
         ng-click="focusComposer(message)"
         ng-mousedown="focusComposer(message)">

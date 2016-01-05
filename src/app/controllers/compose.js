@@ -159,7 +159,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    function onResize() {
+    function onResize() { // PANDA
 
         clearTimeout(timeoutStyle);
 
