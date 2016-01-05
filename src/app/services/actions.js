@@ -32,19 +32,19 @@ angular.module('proton.actions', [])
 
             // Generate cache events
             _.each(ids, function(id) {
-                var messages = cache.queryMessagesCached(element.ID);
                 var element = {
                     ID: id,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
                 };
+                var messages = cache.queryMessagesCached(element.ID);
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
                         var copyLabelIDsAdded = labelIDsAdded;
                         var copyLabelIDsRemoved = labelIDsRemoved;
-                        
+
                         if(inInbox === true && inTrash === true) {
                             var index;
 
