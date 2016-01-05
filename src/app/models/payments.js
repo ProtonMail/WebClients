@@ -91,8 +91,4 @@ angular.module("proton.models.payments", [])
             return $http.delete(url.get() + '/payments/subscriptions', {params: params});
         }
     };
-})
-
-.factory('Stripe', function() {
-    return window.Stripe;
 });
