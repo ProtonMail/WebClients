@@ -23,6 +23,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
     $rootScope.draftOpen = false;
+    $scope.scrolled = false;
     $scope.conversation = conversation;
 
     // Listeners
@@ -80,10 +81,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         delete $rootScope.targetID;
     });
 
-    $scope.$on('messageLoaded', function() {
-        if (!$scope.loaded) {
+    $scope.$on('targetLoaded', function(event) {
+        if ($scope.scrolled === false) {
+            $scope.scrolled = true;
             $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
-            $scope.loaded = true;
         }
     });
 
@@ -91,7 +92,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-
         var loc = tools.currentLocation();
 
         if(angular.isDefined(conversation)) {
@@ -143,7 +143,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 }
 
                 $scope.messages = messages;
-                $scope.loaded = false;
             } else {
                 $scope.back();
             }

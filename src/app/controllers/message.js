@@ -163,23 +163,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
-     * Scroll to the message
-     */
-    $scope.scrollToMe = function() {
-        var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
-        var id = '#message' + index;
-        var element = angular.element(id);
-
-        if(angular.isDefined(element) && angular.isDefined(element.offset())) {
-            var value = element.offset().top - element.outerHeight();
-
-            $('#pm_thread').animate({
-                scrollTop: value
-            }, 'slow');
-        }
-    };
-
-    /**
      * Open the message in the composer window
      * @param {String} id
      */
@@ -329,11 +312,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $scope.message.viewMode = 'plain';
                     }
 
-                    // Scroll to first message open
-                    if($rootScope.scrollToFirst === $scope.message.ID) {
-                        $scope.scrollToMe();
-                    }
-
                     // Broken images
                     $(".email img").error(function () {
                         $(this).unbind("error").addClass("pm_broken");
@@ -345,10 +323,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         }, 1000);
                     }
 
-                    $rootScope.$broadcast('messageLoaded');
+                    if($rootScope.targetID === $scope.message.ID) {
+                        $rootScope.$broadcast('targetLoaded');
+                    }
                 };
 
-                // PGP/MIME
+                // PGP/MIME case
                 if ( $scope.message.IsEncrypted === 8 ) {
                     var mailparser = new MailParser({
                         defaultCharset: 'UTF-8'
@@ -369,13 +349,17 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                             content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
                         }
 
-                        $scope.$evalAsync(function() { showMessage(content); });
+                        $scope.$evalAsync(function() {
+                            showMessage(content);
+                        });
                     });
 
                     mailparser.write(result);
                     mailparser.end();
                 } else {
-                    $scope.$evalAsync(function() { showMessage(result); });
+                    $scope.$evalAsync(function() {
+                        showMessage(result);
+                    });
                 }
             }, function(err) {
                 $scope.togglePlainHtml();
