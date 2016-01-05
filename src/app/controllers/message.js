@@ -63,6 +63,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.Subject = message.Subject;
             $scope.message.Time = message.Time;
             $scope.message.ToList = message.ToList;
+            $scope.message.Type = message.Type;
         }
     });
 
