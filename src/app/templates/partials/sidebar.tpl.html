@@ -23,7 +23,7 @@
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
             <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
-                <i class="fa fa-sign-out"></i>
+                <i class="fa fa-send"></i>
                 <span>{{ 'SENT' | translate }}</span>
             </a>
         </li>
