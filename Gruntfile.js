@@ -12,7 +12,7 @@ var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 var API_TARGETS = {
     blue: "https://52.32.164.147/api",
     prod: "https://protonmail.com/api",
-    dev: "https://v2.protonmail.com/api",
+    dev: "https://dev.protonmail.com/api",
     build: "/api"
 };
 

@@ -1064,6 +1064,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 conversation.NumAttachments = result.Message.Attachments.length;
                             }
 
+                            conversation.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+
                             events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                         }
 
@@ -1409,7 +1411,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(angular.isDefined(conversation)) {
             if(conversation.NumMessages === 1) {
                 // Delete conversation
-                events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
+                events.push({Action: 0, ID: conversation.ID});
             } else if(conversation.NumMessages > 1) {
                 // Decrease the number of message
                 conversation.NumMessages--;
