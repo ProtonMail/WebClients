@@ -353,7 +353,7 @@
 				}
 				select {
 					position: absolute;
-					left: 5rem;
+					left: 3.5rem;
 					right: 0;
 					top: 0;
 					bottom: 0;
@@ -444,8 +444,8 @@
 					z-index: 8;
 				}
 				label {
-					min-width: 4.25rem;
-					width: 4.25rem;
+					min-width: 4.5rem;
+					width: 4.5rem;
 					box-sizing: border-box;
 					padding-left: 10px;
 					position: absolute;
@@ -461,7 +461,7 @@
 				}
 				input,
 				select {
-					margin-left: 5rem;
+					margin-left: 3.5rem;
 					line-height: $composerRowHeight;
 					height: $composerRowHeight;
 					padding: 0 10px;
@@ -481,7 +481,7 @@
 					width: 90%;
 				}
 				& > div {
-					margin-left: 5rem;
+					margin-left: 3.5rem;
 				}
 				&.placeholder > div {
 					padding-left: 10px;
