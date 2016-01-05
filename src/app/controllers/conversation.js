@@ -22,6 +22,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
+    $scope.scrolled = false;
     $scope.conversation = conversation;
 
     // Listeners
@@ -79,11 +80,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         delete $rootScope.targetID;
     });
 
+    $scope.$on('targetLoaded', function(event) {
+        if ($scope.scrolled === false) {
+            $scope.scrolled = true;
+            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+        }
+    });
+
     /**
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-
         var loc = tools.currentLocation();
 
         if(angular.isDefined(conversation)) {
@@ -108,21 +115,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized by click
                 } else {
-                    // If the latest message is read, we open it
-                    if(latest.IsRead === 1) {
+                    // If the latest message is unread, we open it
+                    if(latest.IsRead === 0) {
                         latest.open = true;
                         $rootScope.targetID = latest.ID;
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var index = messages.indexOf(latest);
+                        var latestIndex = messages.indexOf(latest);
+                        var index = latestIndex;
 
                         while(loop === true && index > 0) {
-                            if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
+                            if(angular.isDefined(messages[(index - 1)]) && messages[(index - 1)].IsRead === 1) {
                                 index--;
                             } else {
                                 loop = false;
+                                index--;
                             }
+                        }
+                        if (loop === true) {
+                            index = latestIndex;
                         }
 
                         $rootScope.targetID = messages[index].ID;
@@ -130,7 +142,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 }
 
                 $scope.messages = messages;
-                $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
             } else {
                 $scope.back();
             }
@@ -208,24 +219,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {String} ID
      */
     $scope.scrollToMessage = function(ID) {
+        $timeout.cancel($rootScope.scroll);
         var index = _.findIndex($scope.messages, {ID: ID});
         var id = '#message' + index; // TODO improve it for the search case
 
-        $timeout(function() {
+        $rootScope.scroll = $timeout(function() {
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var value = element.offset().top - element.outerHeight();
+                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                var value = element.offset().top - headerOffset;
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 10, function() {
+                }, 250, function() {
                     $(this).animate({
                         opacity: 1
                     }, 200);
                 });
             }
-        }, 2000);
+        }, 100);
     };
 
     /**
