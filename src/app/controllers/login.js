@@ -57,6 +57,12 @@ angular.module("proton.controllers.Auth", [
         if ($location.hash() === 'help') {
             $scope.getLoginHelp();
         }
+
+        notify({
+            message: 'This is a preview of ProtonMail 3.0. Report feedback and bugs using the "Report Bug" link.', 
+            classes: 'notification-success',
+            duration: 20000
+        });
     };
 
     /**
