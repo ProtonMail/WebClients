@@ -355,7 +355,6 @@
 			line-height: 20px;
 			clear: both;
 			box-sizing: border-box;
-            box-shadow: 0 1px 0 0 $border;
             min-height: 55px;
             padding-bottom: 20px;
 			.data {
@@ -393,7 +392,7 @@
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 40px; 
+				right: 40px;
 				top: 10px;
 				z-index: 2;
 				width: 145px;

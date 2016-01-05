@@ -20,15 +20,15 @@ angular.module('proton.maxComposerHeight', [])
                 height -= parent.find('.attachmentBar:visible').outerHeight();
                 height -= parent.find('.attachmentArea:visible').outerHeight();
 
-                console.log(
-                    parent.outerHeight(),
-                    parent.find('header').outerHeight(), 
-                    parent.find('.meta').outerHeight(), 
-                    parent.find('.squire-toolbar').outerHeight(), 
-                    parent.find('footer').outerHeight(), 
-                    parent.find('.attachmentBar:visible').outerHeight(), 
-                    parent.find('.attachmentArea:visible').outerHeight()
-                );
+                // console.log(
+                //     parent.outerHeight(),
+                //     parent.find('header').outerHeight(),
+                //     parent.find('.meta').outerHeight(),
+                //     parent.find('.squire-toolbar').outerHeight(),
+                //     parent.find('footer').outerHeight(),
+                //     parent.find('.attachmentBar:visible').outerHeight(),
+                //     parent.find('.attachmentArea:visible').outerHeight()
+                // );
 
                 angular.element(element).find('iframe').css({
                     height: height
@@ -45,7 +45,6 @@ angular.module('proton.maxComposerHeight', [])
 
             // Listen composer mode change
             scope.$on('composerModeChange', function() {
-                console.log('composerModeChange');
                 $timeout( setHeight, 100);
             });
 
