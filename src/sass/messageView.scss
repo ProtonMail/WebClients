@@ -269,7 +269,7 @@
         }
     	header {
     		font-size: 15px;
-    		padding: 10px 40px;
+    		padding: 10px 40px 10px 15px;
     		line-height: 20px;
     		box-sizing: border-box;
             cursor: pointer;
@@ -297,14 +297,11 @@
     			text-align: right;
     		}
             .history {
-                position: absolute;
-                left: 0;
-                width: 40px;
-                text-align: center;
-                top: 0;
-                line-height: 40px;
-                display: block;
-                height: 40px;
+                width: 25px;
+                line-height: 20px;
+                display: inline-block;
+                height: 20px;
+                float: left;
             }
             span.expiration {
                 position: absolute;
