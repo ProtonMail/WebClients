@@ -96,9 +96,9 @@ angular.module("proton.cache", [])
      * @param {Array} messages
      * @return {Array} don't miss this array is reversed
      */
-    var orderMessage = function(messages, parameter) {
+    var orderMessage = function(messages) {
         if(angular.isArray(messages)) {
-            return _.sortBy(messages, parameter).reverse();
+            return _.sortBy(messages, 'Time').reverse();
         } else {
             return [];
         }
@@ -275,7 +275,7 @@ angular.module("proton.cache", [])
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, result.Total);
                 // Return messages ordered
-                deferred.resolve(orderMessage(messages, 'Time'));
+                deferred.resolve(orderMessage(messages));
             } else {
                 deferred.resolve(messages);
             }
@@ -370,7 +370,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
             });
 
-            messages = orderMessage(messages, 'Time');
+            messages = orderMessage(messages);
 
             switch(mailbox) {
                 case 'label':
@@ -488,7 +488,7 @@ angular.module("proton.cache", [])
         var mailbox = tools.currentMailbox();
         var messages = _.where(messagesCached, {ConversationID: conversationId});
 
-        messages = orderMessage(messages, 'Order');
+        messages = orderMessage(messages);
 
         return angular.copy(messages);
     };

@@ -22,7 +22,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
-    $rootScope.draftOpen = false;
     $scope.conversation = conversation;
 
     // Listeners
