@@ -82,6 +82,20 @@
 
             <section class="setting pm_form full">
 
+                <p>
+                    <label>
+                        <input type="checkbox" ng-model="theme_contrast"> 
+                        <strong>High Contrast Mode</strong> (Default Theme)
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" ng-model="theme_onyx"> 
+                        <strong>Onyx Theme</strong>
+                    </label>
+                </p>
+
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
                     <legend>Custom Theme</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">

@@ -11,7 +11,7 @@ ng-class="{
 }">
     <header ng-click="toggle()">
         <span class="meta">
-            <i class="fa fa-paperclip" ng-show="message.Attachments.length > 0"></i>
+            <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
@@ -52,7 +52,7 @@ ng-class="{
                 <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
             </span>
         </span><!-- this needs to re-be styled -->
-        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
+        <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
     <div class="sub" ng-show="message.expand === true">
         <div class="actions">

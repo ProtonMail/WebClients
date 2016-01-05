@@ -63,6 +63,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.Subject = message.Subject;
             $scope.message.Time = message.Time;
             $scope.message.ToList = message.ToList;
+            $scope.message.Type = message.Type;
         }
     });
 
@@ -74,15 +75,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Toggle message in conversation view
      */
     $scope.toggle = function() {
-        // If message is a draft
+        // If this message is a draft
         if($scope.message.Type === 1) {
-            $rootScope.draftOpen = false;
-        }
-
-        if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
-            networkActivityTracker.track($scope.initView());
+            // Open the message in composer if it's a draft
+            $scope.openComposer($scope.message.ID);
         } else {
-            $scope.message.expand = false;
+            if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
+                networkActivityTracker.track($scope.initView());
+            } else {
+                $scope.message.expand = false;
+            }
         }
     };
 
@@ -139,11 +141,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         // If the message is a draft
         if($scope.message.Type === 1) {
-            if($rootScope.draftOpen === false) {
-                // Open the message in composer if it's a draft
-                $scope.openComposer($scope.message.ID);
-                $rootScope.draftOpen = true;
-            }
             deferred.resolve();
         } else {
             // Display content

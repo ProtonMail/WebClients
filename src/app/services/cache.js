@@ -287,39 +287,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Get conversation from API and store it in the cache
-     * @param {String} id
-     * @return {Promise}
-     */
-    var queryConversationMessages = function(id) {
-        var deferred = $q.defer();
-        var mailbox = tools.currentMailbox();
-
-        Conversation.get(id).then(function(result) {
-            var data = result.data;
-
-            if(data.Code === 1000) {
-                var messages = [];
-
-                _.each(data.Messages, function(message) {
-                    messages.push(new Message(message));
-                });
-
-                storeConversations([data.Conversation]);
-                storeMessages(messages);
-
-                deferred.resolve(orderMessage(messages));
-            } else {
-                deferred.reject();
-            }
-        });
-
-        networkActivityTracker.track(deferred.promise);
-
-        return deferred.promise;
-    };
-
-    /**
      * Get conversation from back-end and store it in the cache
      * @param {String} id
      * @return {Promise}
@@ -503,33 +470,6 @@ angular.module("proton.cache", [])
                 } else {
                     callApi();
                 }
-            } else {
-                callApi();
-            }
-        } else {
-            callApi();
-        }
-
-        return deferred.promise;
-    };
-
-    /**
-     * Try to find the result in the cache
-     * @param {String} conversationId
-     */
-    api.queryConversationMessages = function(conversationId) {
-        var deferred = $q.defer();
-        var mailbox = tools.currentMailbox();
-        var conversation = _.findWhere(conversationsCached, {ID: conversationId});
-        var callApi = function() {
-            deferred.resolve(queryConversationMessages(conversationId));
-        };
-
-        if(angular.isDefined(conversation)) {
-            var messages = _.where(messagesCached, {ConversationID: conversationId});
-
-            if(conversation.NumMessages === messages.length) {
-                deferred.resolve(orderMessage(messages));
             } else {
                 callApi();
             }
@@ -1270,7 +1210,7 @@ angular.module("proton.cache", [])
                 if(type === 'message') {
                     messages = elements;
                 } else if(type === 'conversation') {
-                    messages = cache.queryConversationMessages(_.first(elements).ConversationID);
+                    messages = cache.queryMessagesCached(_.first(elements).ConversationID);
                 }
 
                 // Get elements expired

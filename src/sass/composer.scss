@@ -217,6 +217,12 @@
 				}
 			}
 		}
+		&.small {
+			height: 430px !important;
+		}
+		&.mini {
+			height: 330px !important;
+		}
 		.options {
         	position: absolute;
         	left: 0;
@@ -544,6 +550,7 @@
 			.pm_button {
 				margin: 0 10px 10px 0;
 				float: left;
+				text-transform: initial;
 			}
 		}
 		pre {
