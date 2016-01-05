@@ -40,10 +40,13 @@ angular.module('proton.actions', [])
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        message.Selected = false;
                         message.LabelIDsRemoved = labelIDsRemoved; // Remove current location
                         message.LabelIDsAdded = labelIDsAdded; // Add new location
-                        events.push({Action: 3, ID: message.ID, Message: message});
+                        events.push({Action: 3, ID: message.ID, Message: {
+                            ID: message.ID,
+                            LabelIDsRemoved: labelIDsRemoved, // Remove current location
+                            LabelIDsAdded: labelIDsAdded // Add new location
+                        }});
                     });
                 }
 
@@ -156,8 +159,10 @@ angular.module('proton.actions', [])
             // Generate message changes with event
             if(messages.length > 0) {
                 _.each(messages, function(message) {
-                    message.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                    events.push({ID: message.ID, Action: 3, Message: message});
+                    events.push({ID: message.ID, Action: 3, Message: {
+                        ID: message.ID,
+                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                    }});
                 });
             }
 
@@ -196,8 +201,10 @@ angular.module('proton.actions', [])
             // Generate message changes with event
             if(messages.length > 0) {
                 _.each(messages, function(message) {
-                    message.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-                    events.push({ID: message.ID, Action: 3, Message: message});
+                    events.push({ID: message.ID, Action: 3, Message: {
+                        ID: message.ID,
+                        LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                    }});
                 });
             }
 
@@ -240,8 +247,10 @@ angular.module('proton.actions', [])
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        message.IsRead = 1;
-                        events.push({Action: 3, ID: message.ID, Message: message});
+                        events.push({Action: 3, ID: message.ID, Message: {
+                            ID: message.ID,
+                            IsRead: 1
+                        }});
                     });
                 }
 
@@ -282,9 +291,10 @@ angular.module('proton.actions', [])
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        message.IsRead = 0;
-                        message.expand = false;
-                        events.push({Action: 3, ID: message.ID, Message: message});
+                        events.push({Action: 3, ID: message.ID, Message: {
+                            ID: message.ID,
+                            IsRead: 0
+                        }});
                     });
                 }
 
@@ -485,8 +495,10 @@ angular.module('proton.actions', [])
             var promise;
 
             // Messages
-            message.LabelIDsAdded = labelIDsAdded;
-            events.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: {
+                ID: message.ID,
+                LabelIDsAdded: labelIDsAdded
+            }});
 
             // Conversation
             events.push({Action: 3, ID: message.ConversationID, Conversation: {ID: message.ConversationID, LabelIDsAdded: labelIDsAdded}});
@@ -523,8 +535,10 @@ angular.module('proton.actions', [])
             var promise;
 
             // Messages
-            message.LabelIDsRemoved = labelIDsRemoved;
-            events.push({Action: 3, ID: message.ID, Message: message});
+            events.push({Action: 3, ID: message.ID, Message: {
+                ID: message.ID,
+                LabelIDsRemoved: labelIDsRemoved
+            }});
 
             // Conversation
             if(stars.length === 1) {
@@ -560,12 +574,17 @@ angular.module('proton.actions', [])
                 var conversation = cache.getConversationCached(message.ConversationID);
 
                 // Generate message event
-                message.IsRead = 1;
-                events.push({Action: 3, ID: message.ID, Message: message});
+                events.push({Action: 3, ID: message.ID, Message: {
+                    ID: message.ID,
+                    ConversationID: message.ConversationID,
+                    IsRead: 1
+                }});
 
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
-                    events.push({Action: 3, ID: conversation.ID, Conversation: {ID: conversation.ID, NumUnread: 0}});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {
+                        ID: conversation.ID, NumUnread: 0
+                    }});
                 }
             });
 
@@ -598,12 +617,18 @@ angular.module('proton.actions', [])
                 var unreads = _.where(messages, {IsRead: 0});
 
                 // Generate message event
-                message.IsRead = 0;
-                events.push({Action: 3, ID: message.ID, Message: message});
+                events.push({Action: 3, ID: message.ID, Message: {
+                    ID: message.ID,
+                    ConversationID: message.ConversationID,
+                    IsRead: 0
+                }});
 
                 // Generate conversation event
                 if(angular.isDefined(conversation)) {
-                    events.push({Action: 3, ID: conversation.ID, Conversation: {ID: conversation.ID, NumUnread: unreads.length + 1}});
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {
+                        ID: conversation.ID,
+                        NumUnread: unreads.length + 1
+                    }});
                 }
             });
 
@@ -656,7 +681,7 @@ angular.module('proton.actions', [])
                     }
                 }
 
-                events.push({Action: 0, ID: message.ID, Message: message});
+                events.push({Action: 0, ID: message.ID});
             });
 
             promise = Message.delete({IDs: ids}).$promise;
