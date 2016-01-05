@@ -1,6 +1,6 @@
 angular.module("proton.responsiveComposer", [])
 
-.directive('responsiveComposer', function ($window) {
+.directive('responsiveComposer', function ($window, authentication) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs, message) {
@@ -27,7 +27,9 @@ angular.module("proton.responsiveComposer", [])
                     scope.maximize(scope.message);
                 }
                 else {
-
+                    if (authentication.user.ComposerMode === 0) {
+                        scope.normalize(scope.message);
+                    }
                 }
             };
 
