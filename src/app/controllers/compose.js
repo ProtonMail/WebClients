@@ -160,11 +160,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     });
 
     function onResize() {
+
         clearTimeout(timeoutStyle);
 
         timeoutStyle = setTimeout(function() {
             $scope.composerStyle();
-        }, 250);
+        }, 60);
     }
 
     function onDragOver(event) {
@@ -609,35 +610,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             $(composer).css(styles);
 
-            setTimeout(function() {
-                $(composer).find('.angular-squire').css($scope.editorStyle(message));
-            });
         });
     };
 
     $scope.editorStyle = function(message) {
-        var styles = {};
-        var composer = $('.composer:visible');
 
-        if (message && message.maximized === true) {
-            var composerHeight = composer.outerHeight();
-            var composerHeader = composer.find('.composer-header').outerHeight();
-            var composerFooter = composer.find('.composer-footer').outerHeight();
-            var composerMeta = composer.find('.composerMeta').outerHeight();
-
-            styles.height = composerHeight - (composerHeader + composerFooter + composerFooter + composerMeta);
-        } else {
-            var bcc = composer.find('.bcc-container').outerHeight();
-            var cc = composer.find('.cc-container').outerHeight();
-            var preview = composer.find('.previews').outerHeight();
-            var height = 300 - bcc - cc - preview;
-
-            height = (height < 130) ? 130 : height;
-
-            styles.height = height + 'px';
-        }
-
-        return styles;
     };
 
     $scope.completedSignature = function(message) {
@@ -770,7 +747,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !message.ccbcc;
-        $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
     };
 
