@@ -1,0 +1,24 @@
+body.themeBubble {
+    #pm_conversations #pm_view > header {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: none;
+    }
+    #pm_view article.message {
+        margin: 1px 10px 1rem;
+        border-radius: 4px;
+        box-shadow: 0 0 0 1px $border, inset 0 0 1px $border;
+        &.open {
+            header,
+            .sub {
+                background: lighten($read, 5%);
+            }
+            .sub {
+                border-bottom: 1px solid $border;
+            }
+        }
+        header {
+            border-radius: 4px 4px 0 0;
+        }
+    }
+}

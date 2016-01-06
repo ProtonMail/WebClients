@@ -1,27 +1,27 @@
 @media (max-height: 800px) {
     html.protonmail {
-        // #pm_conversations.rows .list .message {
-        //     height: 32px;
-        //     line-height: 32px;
-        //     & > * {
-        //         height: 32px;
-        //         line-height: 32px;
-        //     }
-        //     .subject > span {
-        //         height: 32px;
-        //         line-height: 32px;
-        //     }
-        //     .subject .pm_labels .pm_label {
-        //         margin-top: 7px;
-        //     }
-        //     span.expiration {
-        //         height: 0;
-        //     }
-        // }
-        // #pm_conversations.columns .list div.message {
-        //     padding: 10px 15px 0px 40px;
-        //     height: 58px;
-        //     line-height: 58px;
-        // }
+        #pm_conversations.rows .list .message {
+            height: 36px;
+            line-height: 36px;
+            & > * {
+                height: 36px;
+                line-height: 36px;
+            }
+            .subject > span {
+                height: 36px;
+                line-height: 36px;
+            }
+            .subject .pm_labels .pm_label {
+                margin-top: 9px;
+            }
+            span.expiration {
+                height: 0;
+            }
+        }
+        #pm_conversations.columns .list div.message {
+            padding: 10px 15px 0px 40px;
+            height: 58px;
+            line-height: 58px;
+        }
     }
 }

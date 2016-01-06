@@ -21,6 +21,19 @@
 		.dotdotdot {
 			display: none;
 		}
+		::-webkit-input-placeholder {
+		   color: $gray-light;
+		}
+		:-moz-placeholder {
+		   color: $gray-light;
+		}
+
+		::-moz-placeholder {
+		   color: $gray-light;
+		}
+		:-ms-input-placeholder {
+		   color: $gray-light;
+		}
 		&.blur {
 			box-shadow: 0 5px 5px rgba(0,0,0,.1);
 			& > * {
@@ -383,7 +396,7 @@
 			.tm-tag {
 				background: $border;
 				background: #eee;
-				font-size: 13px;
+				font-size: 14px;
 				color: initial !important;
 			}
 			.twitter-typeahead {
@@ -410,9 +423,7 @@
 				.tt-suggestion {
 					padding: 1px 10px;
 					border-bottom: 1px solid #ddd;
-					color: #555;
-					color: $gray;
-
+					color: $text;
 					&.tt-cursor {
 						background-color: $read;
 					}
@@ -482,7 +493,7 @@
 					background: transparent;
 					font-size: 1em;
 					box-sizing: border-box;
-					font-size: 13px;
+					font-size: 14px;
 				}
 				select {
 					-webkit-appearance: none;
@@ -497,7 +508,7 @@
 					padding-left: 10px;
 					margin: 0;
 					color: initial !important;
-					font-size: 13px;
+					font-size: 14px;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;

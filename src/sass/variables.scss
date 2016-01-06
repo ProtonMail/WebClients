@@ -18,7 +18,7 @@ $secondary: 		#505061;
 $secondary-alt:		#6e6f80;
 $alert-info: 		#e6e6f2;
 $readBubble: 		#a8d24c;
-$border: 			#dcdcdc;
+$border: 			darken(#dcdcdc, 5%);
 $light: 			#f4f4f4;
 $orange:			#e7d360;
 $white: 			#fff;
@@ -32,6 +32,7 @@ $yellow:			#cfcd95;
 $read:				#ececec;
 $alt:				#838897;
 $exp:				#ec6446;
+$text:				#222;
 
 // Desktop 
 $wide:				1400px;

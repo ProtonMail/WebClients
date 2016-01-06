@@ -3,14 +3,6 @@ header#pm_header {
 	line-height: $headerHeight;
 	background: $alt;
 	font-size: 12px;
-	#snackie {
-		position: absolute;
-		left: 50%;
-		margin-left: -142px;
-		top: 0;
-		display: block;
-		z-index: 99999;
-	}
 	i, b {
 		font-style: normal;
 		font-weight: normal;
@@ -253,7 +245,7 @@ header#pm_header {
 				text-align: center;
 				text-transform: uppercase;
 				text-decoration: none;
-				color: #c1c7d8;
+				color: lighten(#c1c7d8, 10%);
 				box-sizing: border-box;
 				border-top: 10px solid transparent;
 				transition: color .25s ease, border .25s ease;
@@ -263,7 +255,7 @@ header#pm_header {
 					line-height: 20px;
 					padding-top: 5px;
 					text-align: center;
-					color: #c1c7d8;
+					color: lighten(#c1c7d8, 10%);
 					transition: color .25s ease, border .25s ease;
 				}
 				strong {
@@ -271,7 +263,7 @@ header#pm_header {
 					height: 20px;
 					line-height: 20px;
 					font-weight: normal;
-					color: #c1c7d8;
+					color: lighten(#c1c7d8, 10%);
 					transition: color .25s ease, border .25s ease;
 				}
 			}

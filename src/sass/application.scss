@@ -45,9 +45,6 @@
 @import "latest.scss";
 @import "autocomplete.scss";
 
-// Responsive (Height)
-@import "short.scss";
-
 // @import "print.scss";
 
 // Global Classes
@@ -73,3 +70,5 @@
 // Dark Sidebar Theme
 @import "theme-dark.scss"; // enabled
 @import "theme-jason.scss";
+@import "short.scss";
+@import "bubble.scss";
