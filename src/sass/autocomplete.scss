@@ -1,12 +1,12 @@
 .container-email {
     position: relative;
+    color: $gray;
+    font-size: 13px;
     .input-email {
         cursor: text;
         min-height: 30px;
         line-height: 30px;
         padding: 0 6px;
-        font-size: 13px;
-        color: #555;
         vertical-align: middle;
         position: relative;
         form input {
@@ -15,28 +15,22 @@
     }
 
     .label-email {
-        background-color: #EEE;
+        border: 1px solid $gray-light;
+        background-color: $light;
         margin-top: 5px;
         text-shadow: none;
         border-radius: 2px;
         padding-left: 5px;
         margin-right: 5px;
-        display: inline-block;
-        font-size: 13px;
     }
 
     .label-email:hover {
-        border-color: #AAA;
+        border-color: $gray;
     }
 
     .label-email a {
         font-weight: normal;
-        color: #aaa;
         margin-right: 5px;
-    }
-
-    .label-email a:hover {
-        color: #666;
     }
 
     .input-email input[type="text"] {
@@ -84,23 +78,21 @@
     }
 
     .autocomplete-email a {
+        color: $gray;
         cursor: pointer;
         line-height: 30px;
         padding-left: 10px;
         padding-right: 10px;
         display: block;
         text-decoration: none;
-        color: #555;
-        font-size: 13px;
     }
 
     .autocomplete-email a.selected,
     .autocomplete-email a:hover.selected {
-        background-color: $primary;
-        color: #fff;
+        background-color: $gray-light;
     }
 
     .autocomplete-email a:hover {
-        background-color: #e5e5e5;
+        background-color: $light;
     }
 }
