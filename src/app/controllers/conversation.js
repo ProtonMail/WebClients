@@ -31,8 +31,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var messages = cache.queryMessagesCached($stateParams.id);
         var loc = tools.currentLocation();
 
-        messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
-
         if(angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
@@ -99,7 +97,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
 
             if(labels.indexOf(loc) !== -1) {
-                var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
+                var messages = cache.queryMessagesCached($scope.conversation.ID);
                 var latest = _.last(messages);
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
