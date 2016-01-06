@@ -81,27 +81,6 @@
 		.saveAt {
 			display: none;
 		}
-		&.maximized {
-			position: fixed;
-			top: ($headerHeight + 20);
-			left: ($sidebarWidth + 20);
-			bottom: 20px;
-			right: 20px;
-			width: auto;
-			height: auto !important;
-			box-sizing: border-box;
-			margin: 0;
-			section {
-				height: initial !important;
-			    overflow: initial !important;
-			}
-			header, footer {
-				border-radius: 0;
-			}
-			.meta .row .subject {
-				width: 95%;
-			}
-		}
 		&.expandRecipients {
 			overflow: hidden;
 		}
@@ -221,6 +200,27 @@
 			& > div,
 			& > footer {
 				display: none;
+			}
+		}
+		&.maximized {
+			position: fixed;
+			top: ($headerHeight + 20);
+			left: ($sidebarWidth + 20);
+			bottom: 20px;
+			right: 20px;
+			width: auto;
+			height: auto !important;
+			box-sizing: border-box;
+			margin: 0;
+			section {
+				height: initial !important;
+			    overflow: initial !important;
+			}
+			header, footer {
+				border-radius: 0;
+			}
+			.meta .row .subject {
+				width: 95%;
 			}
 		}
 		.options {
