@@ -12,11 +12,11 @@ ng-class="{
     <header ng-click="toggle()">
         <span class="meta">
             <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
-            <i class="fa fa-send" ng-show="sent() === true"></i>
-            <i class="fa fa-archive" ng-show="archive() === true"></i>
-            <i class="fa fa-file-text-o" ng-show="draft() === true"></i>
-            <i class="fa fa-trash-o" ng-show="trash() === true"></i>
-            <i class="fa fa-ban" ng-show="spam() === true"></i>
+            <i class="fa fa-send" ng-show="sent() === true" pt-tooltip="{{ 'IN_SENT' | translate }}"></i>
+            <i class="fa fa-archive" ng-show="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+            <i class="fa fa-file-text-o" ng-show="draft() === true" pt-tooltip="{{ 'IN_DRAFTS' | translate }}"></i>
+            <i class="fa fa-trash-o" ng-show="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+            <i class="fa fa-ban" ng-show="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
