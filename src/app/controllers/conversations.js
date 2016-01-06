@@ -230,7 +230,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         promise.then(function(elements) {
+            var page = $stateParams.page || 0;
+
             $scope.conversations = elements;
+
+
+            if($scope.conversations.length === 0 && page > 0) {
+                $scope.back();
+            }
+
             deferred.resolve(elements);
         }, function(error) {
             notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
@@ -475,7 +483,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox, {
-            id: null // remove ID
+            id: null, // remove ID
+            page: null // remove page (= 0) 
         });
     };
 
