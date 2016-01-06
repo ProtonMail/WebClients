@@ -6,27 +6,31 @@
 		height: 460px !important; // the drag directive tries to override this.
 		background-color: #fff;
 		margin: 0 10px 0 0;
-		box-shadow: 1px 1px 3px rgba(0,0,0,.5), 0 0 2px rgba(0,0,0,.5);
+		box-shadow: 0 3px 6px rgba(0,0,0,.35), 0 0 10px rgba(0,0,0,.15);
 		position: absolute;
 		padding-bottom: 60px;
 		right: 1rem;
 		bottom: 1rem;
 		z-index: 8888;
 		opacity: 0;
-		-webkit-transition: opacity .25s ease, right .25s ease;
-		   -moz-transition: opacity .25s ease, right .25s ease;
-		    -ms-transition: opacity .25s ease, right .25s ease;
-		     -o-transition: opacity .25s ease, right .25s ease;
-		        transition: opacity .25s ease, right .25s ease;
+		-webkit-transition: opacity .25s linear, right .25s linear;
+		   -moz-transition: opacity .25s linear, right .25s linear;
+		    -ms-transition: opacity .25s linear, right .25s linear;
+		     -o-transition: opacity .25s linear, right .25s linear;
+		        transition: opacity .25s linear, right .25s linear;
 		.dotdotdot {
 			display: none;
 		}
 		&.blur {
-			box-shadow: 1px 2px 3px rgba(0,0,0,.25), 0 0 3px rgba(0,0,0,.25);
+			box-shadow: 0 5px 5px rgba(0,0,0,.1);
 			& > * {
-			opacity: .8;
-			pointer-events: none;
+				opacity: .75;
 			}
+			-webkit-transition: opacity .25s linear;
+			   -moz-transition: opacity .25s linear;
+			    -ms-transition: opacity .25s linear;
+			     -o-transition: opacity .25s linear;
+			        transition: opacity .25s linear;
 		}
 		footer.disabled {
 			.pm_button {
@@ -236,11 +240,11 @@
         	display: none;
         	margin: 1rem;
         	box-shadow: 2px 2px 2px rgba(0,0,0,.2), 0 0 2px rgba(0,0,0,.2);
-        	-webkit-transition: opacity .25s ease;
-        	   -moz-transition: opacity .25s ease;
-        	    -ms-transition: opacity .25s ease;
-        	     -o-transition: opacity .25s ease;
-        	        transition: opacity .25s ease;
+        	-webkit-transition: opacity .25s linear;
+        	   -moz-transition: opacity .25s linear;
+        	    -ms-transition: opacity .25s linear;
+        	     -o-transition: opacity .25s linear;
+        	        transition: opacity .25s linear;
         	&.show {
         		display: block;
         	}
@@ -324,15 +328,14 @@
 				box-sizing: border-box;
 			}
 			.pm_button {
-				width: 28px;
+				width: $composerRowHeight;
 				padding: 0;
 				text-align: center;
-				height: 28px;
-				line-height: 28px;
+				height: $composerRowHeight;
+				line-height: $composerRowHeight;
 				color: #dadae5;
 				float: left;
-				margin: 6px 6px 0 0 ;
-				box-shadow: inset 0 0 1px rgba(255,255,255,.35);
+				margin: 0 ;
 				&:hover {
 					color: $white;
 				}
@@ -418,6 +421,7 @@
 			.row {
 				min-height: $composerRowHeight;
 				line-height: $composerRowHeight;
+				height: $composerRowHeight;
 				border-bottom: 1px solid $border;
 				float: left;
 				width: 100%;
