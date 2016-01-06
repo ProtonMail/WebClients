@@ -58,7 +58,6 @@ angular.module('proton.autocomplete', [])
                     .replace(/</g, '')
                     .replace(/>/g, '')
                     .replace(/"/g, '')
-                    .replace(/'/g, '')
                     .replace(/,/g, '')
                     .trim();
             };
