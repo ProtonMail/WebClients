@@ -2,10 +2,10 @@
 	.composer {
 		border-radius: 2px;
 		display: inline-block;
-		width: 580px;
-		height: 530px !important; // the drag directive tries to override this.
+		width: 500px;
+		height: 460px !important; // the drag directive tries to override this.
 		background-color: #fff;
-		margin: 0 25px 25px 0;
+		margin: 0 10px 0 0;
 		box-shadow: 1px 1px 3px rgba(0,0,0,.5), 0 0 2px rgba(0,0,0,.5);
 		position: absolute;
 		padding-bottom: 60px;
@@ -188,7 +188,7 @@
 			height: 330px !important;
 		}
 		&.minimized {
-			height: 40px !important;
+			height: $composerRowHeight !important;
 			overflow: hidden;
 			padding: 0 !important;
 			header {
@@ -303,8 +303,8 @@
 			border-radius: 2px 2px 0 0;
 			position: relative;
 			box-sizing: border-box;
-			height: 40px;
-			min-height: 40px;
+			height: $composerRowHeight;
+			min-height: $composerRowHeight;
 			.actions {
 				float: right;
 				padding: 0;
@@ -319,8 +319,8 @@
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				padding: 0 0 0 10px;
-				height: 40px;
-				line-height: 40px;
+				height: $composerRowHeight;
+				line-height: $composerRowHeight;
 				box-sizing: border-box;
 			}
 			.pm_button {
@@ -348,7 +348,7 @@
 			float: left;
 			width: 100%;
 			.fromRow {
-				height: 40px;
+				height: $composerRowHeight;
 				position: relative;
 				button {
 					position: absolute;
@@ -424,7 +424,7 @@
 				position: relative;
 				box-sizing: border-box;
 				&.closed {
-					height: 40px;
+					height: $composerRowHeight;
 					overflow: hidden;
 				}
 				&.toRow,
@@ -434,7 +434,7 @@
 					padding-right: 0;
 				}
 				&.subjectRow {
-					height: 40px;
+					height: $composerRowHeight;
 				}
 				.pm_button.link {
 					position: absolute;
@@ -455,7 +455,7 @@
 					box-sizing: border-box;
 					padding-left: 10px;
 					position: absolute;
-					line-height: 40px;
+					line-height: $composerRowHeight;
 					left: 0;
 					top: 0;
 				}
@@ -506,8 +506,8 @@
 			bottom: 60px;
 			left: 0;
 			right: 0;
-			height: 40px;
-			line-height: 40px;
+			height: $composerRowHeight;
+			line-height: $composerRowHeight;
 			padding: 0 10px;
 			cursor: pointer;
 			box-sizing: border-box;
@@ -520,8 +520,8 @@
 			}
 			.fa {
 				display: inline-block;
-				line-height: 40px;
-				height: 40px;
+				line-height: $composerRowHeight;
+				height: $composerRowHeight;
 			}
 		}
 		.previews {
