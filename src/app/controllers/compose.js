@@ -11,7 +11,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
-    actions,
+    action,
     Attachment,
     attachments,
     authentication,
@@ -1398,7 +1398,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @return {Promise}
      */
     $scope.discard = function(message) {
-        actions.discardMessage(message);
+        action.discardMessage(message);
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
