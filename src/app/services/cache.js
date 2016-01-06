@@ -98,7 +98,7 @@ angular.module("proton.cache", [])
      */
     var orderMessage = function(messages) {
         if(angular.isArray(messages)) {
-            return _.sortBy(messages, 'Time').reverse();
+            return _.sortBy(messages, '-Time');
         } else {
             return [];
         }
