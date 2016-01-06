@@ -12,29 +12,29 @@ ng-class="{
     <header ng-click="toggle()">
         <span class="meta">
             <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
+            <i class="fa fa-send" ng-show="sent() === true"></i>
+            <i class="fa fa-archive" ng-show="archive() === true"></i>
+            <i class="fa fa-file-text-o" ng-show="draft() === true"></i>
+            <i class="fa fa-trash-o" ng-show="trash() === true"></i>
+            <i class="fa fa-ban" ng-show="spam() === true"></i>
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
             <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
-        <i class="history fa fa-placeholder" ng-hide="message.IsReplied === 1 || message.IsRepliedAll === 1 || message.IsForwarded === 1 || message.Type !== 0"></i>
+        <i class="history fa fa-placeholder" ng-hide="message.IsReplied === 1 || message.IsRepliedAll === 1 || message.IsForwarded === 1"></i>
         <i class="history fa fa-reply" ng-show="message.IsReplied === 1"></i>
         <i class="history fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
         <i class="history fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
-        <i class="history fa fa-file-text-o" ng-show="message.Type === 1"></i>
-        <i class="history fa fa-send" ng-show="message.Type === 2 || message.Type === 3"></i>
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
             <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-        <em class="pm_tag" ng-show="sent() === true">{{ 'SENT' | translate }}</em>
-        <em class="pm_tag" ng-show="archive() === true">{{ 'ARCHIVE' | translate }}</em>
-        <em class="pm_tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
-        <em class="pm_tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
-        <em class="pm_tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>
+        <i class="pm_tag" ng-show="message.Type === 1">{{ 'DRAFT' | translate }}</i>
+        <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
         <span class="pm_labels" ng-if="message.labels().length > 0">
             <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                 <em>{{ getLabel(labelID).Name }}</em>
