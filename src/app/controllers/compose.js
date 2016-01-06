@@ -11,6 +11,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
+    actions,
     Attachment,
     attachments,
     authentication,
