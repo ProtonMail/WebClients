@@ -1,9 +1,10 @@
 angular.module("proton.responsiveComposer", [])
 
-.directive('responsiveComposer', function ($window, $rootScope, authentication) {
+.directive('responsiveComposer', function ($window, $rootScope, $timeout, authentication) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs, message) {
+            var responsiveTimeout;
             var responsive = function() {
                 // small
                 if ($window.innerHeight < 700) {
@@ -40,9 +41,10 @@ angular.module("proton.responsiveComposer", [])
             // Remove listener on resize window
             scope.$on('$destroy', function() {
                 angular.element($window).unbind('resize', responsive);
+                $timeout.cancel(responsiveTimeout);
             });
 
-            setTimeout(function() {
+            responsiveTimeout = $timeout(function() {
                 responsive();
             });
         }
