@@ -78,21 +78,6 @@
 				}
 			}
 		}
-		&.minimized {
-			height: 40px !important;
-			overflow: hidden;
-			padding: 0 !important;
-			header {
-				border-radius: 2px;
-				.fa.fa-minus {
-					top: -5px;
-				}
-			}
-			& > div,
-			& > footer {
-				display: none;
-			}
-		}
 		.saveAt {
 			display: none;
 		}
@@ -222,6 +207,21 @@
 		}
 		&.mini {
 			height: 330px !important;
+		}
+		&.minimized {
+			height: 40px !important;
+			overflow: hidden;
+			padding: 0 !important;
+			header {
+				border-radius: 2px;
+				.fa.fa-minus {
+					top: -5px;
+				}
+			}
+			& > div,
+			& > footer {
+				display: none;
+			}
 		}
 		.options {
         	position: absolute;
@@ -654,7 +654,7 @@
 		.composer {
 			header {
 				.pm_button.maximize-button {
-					display: none; 
+					display: none;
 				}
 			}
 		}
