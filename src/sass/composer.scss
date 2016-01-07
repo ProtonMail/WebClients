@@ -6,7 +6,7 @@
 		height: 460px !important; // the drag directive tries to override this.
 		background-color: #fff;
 		margin: 0 10px 0 0;
-		box-shadow: 0 3px 6px rgba(0,0,0,.35), 0 0 10px rgba(0,0,0,.15);
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.25);
 		position: absolute;
 		padding-bottom: 60px;
 		right: 1rem;
@@ -35,7 +35,7 @@
 		   color: $gray-light;
 		}
 		&.blur {
-			box-shadow: 0 5px 5px rgba(0,0,0,.1);
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.1);
 			& > * {
 				opacity: .75;
 			}
