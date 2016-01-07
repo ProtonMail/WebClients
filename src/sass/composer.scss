@@ -475,7 +475,7 @@
 					top: 0;
 				}
 				.subject {
-					width: 580px;
+					width: 100%;
 				}
 				select::-ms-expand {
 				    display: none;
@@ -627,7 +627,7 @@
 			margin: 0;
 			padding: 0;
 			float: none;
-			opacity: 1; 
+			opacity: 1;
 			.meta {
 				display: block;
 				float: left;
