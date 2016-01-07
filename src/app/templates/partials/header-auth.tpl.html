@@ -130,10 +130,23 @@
             </a>
         </li>
         <li>
-            <a href="" ng-click="logout();">
-                <em><i class="fa fa-power-off"></i></em>
-                <strong>{{ 'LOGOUT' | translate }}</strong>
-            </a>
+            <span class="pm_buttons">
+                <a href class="pm_trigger" dropdown>
+                    <em><i class="fa fa-user"></i> <i class="fa fa-angle-down"></i></em>
+                    <strong>{{ user.DisplayName }}</strong>
+                </a>
+                <span class="pm_dropdown wide right">
+                    <p><strong>{{ user.DisplayName }}</strong></p>
+                    <p><b>{{ user.Addresses[0].Email }}</b></p>
+                    <a href="" class="help">
+                        <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
+                    </a>
+                    <a href="" ng-click="logout();" class="pm_button primary">
+                    {{ 'LOGOUT' | translate }}
+                    </a>
+                </span>
+            </span>
+
         </li>
     </ul>
 </header>

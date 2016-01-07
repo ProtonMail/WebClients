@@ -66,6 +66,7 @@ header#pm_header {
 		    margin: auto;
 		    display: block;
 		    width: 100%;
+		    border-top: none;
 		    &:hover {
 	            background-color: #7e82b4 !important;
 	            border-color: #7e82b4 !important;
@@ -249,6 +250,26 @@ header#pm_header {
 				    float: none;
 				}
 			}
+			&:hover {
+				.pm_dropdown {
+					color: #000 !important;
+					a.help {
+						color: #000 !important;
+						i {
+							color: #000 !important;
+						}
+					}
+				}
+			}
+			.pm_dropdown {
+				a {
+					border-top: initial !important;
+					color: $primary;
+					i {
+						display: inline-block;
+					}
+				}
+			}
 			a {
 				height: $headerHeight;
 				padding-bottom: 10px;
@@ -270,6 +291,18 @@ header#pm_header {
 					text-align: center;
 					color: lighten(#c1c7d8, 10%);
 					transition: color .25s ease, border .25s ease;
+				}
+				&.pm_trigger {
+					em {
+						float: left;
+						width: 100%;
+						display: block;
+						height: 25px;
+						.fa-user,
+						.fa-angle-down {
+							display: inline-block;
+						}
+					}
 				}
 				strong {
 					display: block;
