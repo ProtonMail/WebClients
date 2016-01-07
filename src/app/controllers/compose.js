@@ -160,6 +160,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
+    $scope.$on('editorFocussed', function(event, element, editor) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        if(message.editor === editor) {
+            $scope.focusComposer(message);
+        }
+    });
+
     function onResize() {
         $timeout.cancel(timeoutStyle);
 

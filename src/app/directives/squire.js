@@ -161,6 +161,7 @@ angular.module("proton.squire", [
 
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
+                    $rootScope.$broadcast('editorFocussed', element, editor);
                 });
 
                 editor.addEventListener('startPaste', function(event) {
