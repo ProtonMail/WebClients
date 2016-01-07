@@ -44,11 +44,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.page = parseInt($stateParams.page || 1);
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
-        networkActivityTracker.track($scope.refreshConversations().then(function() {
+        $scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
-                // Manage preload of conversations or messages
-                // Andy doesn't want to apply this for the moment, it's too expensive for the back-end
-                // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
                 $scope.elementsSelected();
@@ -58,7 +55,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             // I consider this trick like a bug in the angular application
         }, function(error) {
             $log.error(error);
-        }));
+        });
 
         $scope.toolbarOffset();
         $rootScope.$watch('layoutMode', function() {
@@ -233,7 +230,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             var page = $stateParams.page || 0;
 
             $scope.conversations = elements;
-
 
             if($scope.conversations.length === 0 && page > 0) {
                 $scope.back();

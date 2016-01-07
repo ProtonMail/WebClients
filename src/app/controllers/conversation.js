@@ -24,6 +24,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
+    $rootScope.numberElementSelected = 1;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {

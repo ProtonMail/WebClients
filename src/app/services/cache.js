@@ -382,13 +382,17 @@ angular.module("proton.cache", [])
             }
 
             if(angular.isDefined(total)) {
-                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                    number = CONSTANTS.MESSAGES_PER_PAGE;
+                if(total === 0) {
+                    number = 0;
                 } else {
-                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                    } else {
+                    if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                         number = CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                            number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                        } else {
+                            number = CONSTANTS.MESSAGES_PER_PAGE;
+                        }
                     }
                 }
 
@@ -398,8 +402,10 @@ angular.module("proton.cache", [])
                 if(messages.length === number) {
                     deferred.resolve(messages);
                 } else {
-                    queryMessages(request).then(function() {
-                        api.callRefresh();
+                    queryMessages(request).then(function(messages) {
+                        if(messages.length > 0) {
+                            api.callRefresh();
+                        }
                     });
                     // We return the messages cached waiting for the server to respond
                     deferred.resolve(messages);
@@ -429,7 +435,7 @@ angular.module("proton.cache", [])
         };
 
         // In cache context?
-        if(context) {
+        if(context === true) {
             var page = request.Page || 0;
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
@@ -472,8 +478,10 @@ angular.module("proton.cache", [])
                 if(conversations.length === number) {
                     deferred.resolve(conversations);
                 } else {
-                    queryConversations(request).then(function() {
-                        api.callRefresh();
+                    queryConversations(request).then(function(conversations) {
+                        if(conversations.length > 0) {
+                            api.callRefresh();
+                        }
                     });
                     // We return the conversations cached waiting for the server to respond
                     deferred.resolve(conversations);
