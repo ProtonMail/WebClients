@@ -429,7 +429,7 @@ angular.module("proton.cache", [])
         };
 
         // In cache context?
-        if(context) {
+        if(context === true) {
             var page = request.Page || 0;
             var start = page * CONSTANTS.MESSAGES_PER_PAGE;
             var end = start + CONSTANTS.MESSAGES_PER_PAGE;
