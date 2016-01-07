@@ -814,9 +814,9 @@ angular.module("proton.cache", [])
         console.log(events);
 
         _.each(events, function(event) {
-            if(event.Action === DELETE) {
+            if(event.Action === DELETE) { // Can be for message or conversation
                 promises.push(api.delete(event));
-            } else if(angular.isDefined(event.Message)) {
+            } else if(angular.isDefined(event.Message)) { // Manage message action
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createMessage(event));
@@ -830,7 +830,7 @@ angular.module("proton.cache", [])
                     default:
                         break;
                 }
-            } else if(angular.isDefined(event.Conversation)) {
+            } else if(angular.isDefined(event.Conversation)) { // Manage conversation action
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createConversation(event));
