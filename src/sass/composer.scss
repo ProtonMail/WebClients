@@ -627,6 +627,7 @@
 			margin: 0;
 			padding: 0;
 			float: none;
+			opacity: 1; 
 			.meta {
 				display: block;
 				float: left;
@@ -637,10 +638,21 @@
 			}
 		}
 		.composer.tall section .angular-squire-wrapper iframe {
-			height: 620px;
+			height: 620px !important;
 		}
 		.composer.tall section {
-			height: 670px;
+			height: 670px !important;
+		}
+		footer .pm_button {
+			padding: 0 10px;
+			span {
+				display: none;
+			}
+			&.primary {
+				span {
+					display: block;
+				}
+			}
 		}
 	}
 	html.protonmail {

@@ -481,5 +481,24 @@ body, html {
 		.list .message:first-child {
 			border-top: none;
 		}
+		.list {
+			.message {
+				height: auto !important;
+				line-height: initial !important;
+				.star {
+					display: none;
+				}
+				label {
+					height: 30px !important;
+					line-height: 30px !important;
+					padding: 0;
+					width: 36px !important;
+					.pm_checkbox {
+						width: 1.5rem;
+						min-width: 1.5rem;
+					}
+				}
+			}
+		}
 	}
 }
