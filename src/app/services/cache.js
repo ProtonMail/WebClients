@@ -382,13 +382,17 @@ angular.module("proton.cache", [])
             }
 
             if(angular.isDefined(total)) {
-                if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                    number = CONSTANTS.MESSAGES_PER_PAGE;
+                if(total === 0) {
+                    number = 0;
                 } else {
-                    if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                        number = total % CONSTANTS.MESSAGES_PER_PAGE;
-                    } else {
+                    if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
                         number = CONSTANTS.MESSAGES_PER_PAGE;
+                    } else {
+                        if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
+                            number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                        } else {
+                            number = CONSTANTS.MESSAGES_PER_PAGE;
+                        }
                     }
                 }
 
