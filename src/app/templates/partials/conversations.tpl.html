@@ -151,7 +151,7 @@
                 </span>
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
                 <article>
-                    <p class="pm_labels">
+                    <p class="pm_labels" ng-if="hasLabels(conversation)">
                         <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
                             <em>{{ getLabel(labelID).Name }}</em>
                             <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>

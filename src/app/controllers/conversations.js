@@ -618,6 +618,51 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
+     * Return style for label element
+     * @param {String} id
+     */
+    $scope.hasLabels = function(conversation) {
+        if (!Array.prototype.remove) {
+            Array.prototype.remove = function(val, all) {
+                var i, removedItems = [];
+                if (all) {
+                    for(i = this.length; i--;){
+                        if (this[i] === val) {
+                            removedItems.push(this.splice(i, 1));
+                        }
+                    }
+                }
+                else {
+                    i = this.indexOf(val);
+                    if(i>-1) {
+                        removedItems = this.splice(i, 1);
+                    }
+                }
+                return removedItems;
+            };
+        }
+        var labels = conversation.LabelIDs;
+
+
+        labels.remove('0');
+        labels.remove('1');
+        labels.remove('2');
+        labels.remove('3');
+        labels.remove('4');
+        labels.remove('5');
+        labels.remove('6');
+        labels.remove('7');
+        labels.remove('8');
+        labels.remove('9');
+        labels.remove('10');
+
+        var result = (labels.length > 0) ? true : false;
+
+        return result;
+      
+    };
+
+    /**
      * Go to label folder + reset parameters
      * @param {String} labelID
      */

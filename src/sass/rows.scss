@@ -483,19 +483,37 @@ body, html {
 		}
 		.list {
 			.message {
-				height: auto !important;
+				height: 60px !important;
 				line-height: initial !important;
+				& > *,
+				.subject > span {
+					height: auto !important;
+					line-height: initial !important;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
 				.star {
 					display: none;
 				}
 				label {
 					height: 30px !important;
 					line-height: 30px !important;
-					padding: 0;
+					padding: 0 !important;
 					width: 36px !important;
+					text-align: center;
 					.pm_checkbox {
 						width: 1.5rem;
 						min-width: 1.5rem;
+					}
+				}
+				.time {
+					top: 10px;
+				}
+				.pm_labels {
+					.pm_label {
+						margin-top: 0 !important;
+						display: inline-block;
 					}
 				}
 			}
