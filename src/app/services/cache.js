@@ -367,7 +367,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var messages = _.filter(messagesCached, function(message) {
-                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc.toString()) !== -1;
+                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc) !== -1;
             });
 
             messages = orderMessage(messages);
@@ -433,7 +433,7 @@ angular.module("proton.cache", [])
             var number;
             var mailbox = tools.currentMailbox();
             var conversations = _.filter(conversationsCached, function(conversation) {
-                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc.toString()) !== -1;
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
             });
 
             conversations = orderConversation(conversations, loc);
