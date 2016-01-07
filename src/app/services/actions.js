@@ -18,6 +18,7 @@ angular.module('proton.actions', [])
          * @param {String} mailbox
          */
         moveConversation: function(ids, mailbox) {
+            var context = tools.cacheContext();
             var events = [];
             var current = tools.currentLocation();
             var promise;
@@ -75,12 +76,16 @@ angular.module('proton.actions', [])
             // Send request
             promise = Conversation[mailbox](ids);
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Apply labels on a list of conversations
@@ -89,9 +94,11 @@ angular.module('proton.actions', [])
          * @param {Boolean} alsoArchive
          */
         labelConversation: function(ids, labels, alsoArchive) {
+            var context = tools.cacheContext();
             var REMOVE = 0;
             var ADD = 1;
             var promises = [];
+            var promise;
             var events = [];
             var current = tools.currentLocation();
             var process = function() {
@@ -147,15 +154,24 @@ angular.module('proton.actions', [])
                 });
             });
 
-            networkActivityTracker.track($q.all(promises).then(function(results) {
+            promise = $q.all(promises);
+
+            if(context === true) {
                 process();
-            }));
+            } else {
+                promise.then(function(results) {
+                    process();
+                });
+
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Star conversation
          * @param {String} id - conversation id
          */
         starConversation: function(id) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
             var element = {
@@ -180,18 +196,23 @@ angular.module('proton.actions', [])
             // Send conversation request
             promise = Conversation.star([element.ID]);
 
-            promise.then(function() {
-                // Send to cache manager
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send to cache manager
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Unstar conversation
          * @param {String} id - conversation id
          */
         unstarConversation: function(id) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
             var element = {
@@ -216,18 +237,23 @@ angular.module('proton.actions', [])
             // Send request
             promise = Conversation.unstar([element.ID]);
 
-            promise.then(function() {
-                // Send to cache manager
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send to cache manager
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Mark as read a list of conversation
          * @param {Array} ids
          */
         readConversation: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -256,17 +282,22 @@ angular.module('proton.actions', [])
             // Send request
             promise = Conversation.read(ids);
 
-            promise.then(function() {
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Mark as unread a list of conversation
          * @param {Array} ids
          */
         unreadConversation: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -297,17 +328,22 @@ angular.module('proton.actions', [])
             // Send request
             promise = Conversation.unread(ids);
 
-            promise.then(function() {
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Delete a list of conversations
          * @param {ids}
          */
         deleteConversation: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -334,15 +370,20 @@ angular.module('proton.actions', [])
             // Send the request
             promise = Conversation.delete(ids);
 
-            promise.then(function() {
-                // Send cache event
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache event
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         // Message actions
         moveMessage: function(ids, mailbox) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -389,12 +430,16 @@ angular.module('proton.actions', [])
             promise = Message[mailbox]({IDs: ids}).$promise;
 
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Apply labels on a list of messages
@@ -403,9 +448,11 @@ angular.module('proton.actions', [])
          * @param {Boolean} alsoArchive
          */
         labelMessage: function(messages, labels, alsoArchive) {
+            var context = tools.cacheContext();
             var REMOVE = 0;
             var ADD = 1;
             var promises = [];
+            var promise;
             var events = [];
             var current = tools.currentLocation();
             var ids =  _.map(messages, function(message) { return message.ID; });
@@ -475,15 +522,24 @@ angular.module('proton.actions', [])
                 });
             });
 
-            networkActivityTracker.track($q.all(promises).then(function(results) {
+            promise = $q.all(promises);
+
+            if(context === true) {
                 process();
-            }));
+            } else {
+                promise.then(function(results) {
+                    process();
+                });
+
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Star a message
          * @param {String} id
          */
         starMessage: function(id) {
+            var context = tools.cacheContext();
             var ids = [id];
             var events = [];
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
@@ -502,18 +558,23 @@ angular.module('proton.actions', [])
             // Send request
             promise = Message.star({IDs: ids}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Unstar a message
          * @param {String} id
          */
         unstarMessage: function(id) {
+            var context = tools.cacheContext();
             var ids = [id];
             var events = [];
             var labelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
@@ -538,18 +599,23 @@ angular.module('proton.actions', [])
             // Send request
             promise = Message.unstar({IDs: ids}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Mark as read a list of messages
          * @param {Array} ids
          */
         readMessage: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -575,18 +641,23 @@ angular.module('proton.actions', [])
             // Send request
             promise = Message.read({IDs: ids}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Mark as unread a list of messages
          * @param {Array} ids
          */
         unreadMessage: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -615,18 +686,23 @@ angular.module('proton.actions', [])
             // Send request
             promise = Message.unread({IDs: ids}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         /**
          * Delete a list of messages
          * @param {Array} ids
          */
         deleteMessage: function(ids) {
+            var context = tools.cacheContext();
             var events = [];
             var promise;
 
@@ -662,12 +738,16 @@ angular.module('proton.actions', [])
 
             promise = Message.delete({IDs: ids}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         },
         saveMessage: function() {
 
@@ -676,6 +756,7 @@ angular.module('proton.actions', [])
 
         },
         discardMessage: function(message) {
+            var context = tools.cacheContext();
             var events = [];
             var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
@@ -701,12 +782,16 @@ angular.module('proton.actions', [])
             // Send request
             promise = Message.delete({IDs: [message.ID]}).$promise;
 
-            promise.then(function() {
-                // Send cache events
+            if(context === true) {
                 cache.events(events);
-            });
+            } else {
+                promise.then(function() {
+                    // Send cache events
+                    cache.events(events);
+                });
 
-            networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
+            }
         }
     };
 });

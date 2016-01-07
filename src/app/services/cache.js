@@ -398,7 +398,11 @@ angular.module("proton.cache", [])
                 if(messages.length === number) {
                     deferred.resolve(messages);
                 } else {
-                    callApi();
+                    queryMessages(request).then(function() {
+                        api.callRefresh();
+                    });
+                    // We return the messages cached waiting for the server to respond 
+                    deferred.resolve(messages);
                 }
             } else {
                 callApi();
@@ -468,7 +472,11 @@ angular.module("proton.cache", [])
                 if(conversations.length === number) {
                     deferred.resolve(conversations);
                 } else {
-                    callApi();
+                    queryConversations(request).then(function() {
+                        api.callRefresh();
+                    });
+                    // We return the conversations cached waiting for the server to respond
+                    deferred.resolve(conversations);
                 }
             } else {
                 callApi();
