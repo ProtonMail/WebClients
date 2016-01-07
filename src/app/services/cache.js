@@ -401,7 +401,7 @@ angular.module("proton.cache", [])
                     queryMessages(request).then(function() {
                         api.callRefresh();
                     });
-                    // We return the messages cached waiting for the server to respond 
+                    // We return the messages cached waiting for the server to respond
                     deferred.resolve(messages);
                 }
             } else {
@@ -806,7 +806,8 @@ angular.module("proton.cache", [])
 
     /**
     * Manage the cache when a new event comes
-    * @param {Array} events
+    * @param {Array} events - Object managing interaction with messages and conversations stored
+    * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
     api.events = function(events, fromBackend) {
@@ -814,12 +815,10 @@ angular.module("proton.cache", [])
         var promises = [];
 
         if(fromBackend === true) {
-            console.log('events from the back-end');
+            console.log('events from the back-end', events);
         } else {
-            console.log('events from the front-end');
+            console.log('events from the front-end', events);
         }
-
-        console.log(events);
 
         _.each(events, function(event) {
             if(event.Action === DELETE) { // Can be for message or conversation
@@ -871,7 +870,6 @@ angular.module("proton.cache", [])
      * Second with the query call
      */
     api.callRefresh = function() {
-        console.log('callRefresh');
         $rootScope.$broadcast('refreshConversations');
         $rootScope.$broadcast('refreshCounters');
         $rootScope.$broadcast('updatePageName');
