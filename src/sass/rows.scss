@@ -19,7 +19,7 @@ body, html {
 			height: $rowHeight;
 			line-height: $rowHeight;
 			font-size: 14px;
-			padding: 0 15px;
+			padding: 0 15px 0 0;
 			clear: both;
 			display: -webkit-flex;
 			display: -ms-flexbox;
@@ -27,6 +27,15 @@ body, html {
 			background: $read;
 			box-shadow: inset 0 -1px $border;
 			position: relative;
+			label {
+				padding: 0 15px;
+				text-align: center;
+				display: block;
+				cursor: pointer;
+				.pm_checkbox input[type="checkbox"] {
+					margin-right: 0;
+				}
+			}
 			.starLink {
 				min-width: 1rem;
 				width: 1rem;
@@ -108,11 +117,9 @@ body, html {
 				position: relative;
 				z-index: 2;
 				margin: 0 -9px 0 -14px;
-				padding: 0 14px;
+				padding: 0 24px 0 0;
 				border-radius: 0;
 				border-left: 5px solid $primary;
-			    padding-left: 10px;
-			    padding-right: 24px;
 			    margin-left: 0;
 				.subject {
 					.pm_labels {
@@ -122,6 +129,9 @@ body, html {
 							background-color: $read;
 						}
 					}
+				}
+				label {
+					padding-left: 10px;
 				}
 			}
 			.spacer {
