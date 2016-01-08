@@ -179,9 +179,8 @@ body, html {
 				    -ms-flex-positive: 1;
 				        flex-grow: 1;
 				position: relative;
-				height: 38px;
+				height: 36px;
 				position: relative;
-				top: 1px;
 				overflow: hidden;
 				& > span {
 					display: inline-block;
@@ -346,9 +345,14 @@ body, html {
 				top: 5px;
 				left: 40px;
 			}
+			.subject {
+				overflow: initial !important;
+			}
 			.fa-paperclip {
-				bottom: 5px;
-				left: 40px;
+				bottom: 0;
+				left: -35px;
+				height: 25px !important;
+				line-height: 25px !important;
 			}
 			.time {
 				position: absolute;
@@ -390,6 +394,7 @@ body, html {
 					    text-align: center;
 					    overflow: hidden;
 					    float: none;
+					    display: inline-block;
 					}
 					&:before {
 						height: 25px;
@@ -465,6 +470,7 @@ body, html {
 		.list {
 			.message {
 				.pm_checkbox {
+					padding: 0;
 					width: 1.5rem;
 					min-width: 1.5rem;
 				}
