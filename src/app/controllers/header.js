@@ -110,15 +110,15 @@ angular.module("proton.controllers.Header", [])
                     params.words = '';
                     return;
                 }
-                else if (params.words === '$$shadows') {
-                    notify({
-                        message: 'Shadows Activated', 
-                        classes: 'notification-success'
-                    });
-                    $rootScope.themeShadow = true;
-                    params.words = '';
-                    return;
-                }
+                // else if (params.words === '$$shadows') {
+                //     notify({
+                //         message: 'Shadows Activated', 
+                //         classes: 'notification-success'
+                //     });
+                //     $rootScope.themeShadow = true;
+                //     params.words = '';
+                //     return;
+                // }
             }
 
             $state.go('secured.search', params);

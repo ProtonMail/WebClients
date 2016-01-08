@@ -87,7 +87,7 @@
 	text-align: center;
 	opacity: 0;
 	border-radius: $pm_loading;
-	box-shadow: 0 5px 15px rgba(0,0,0,.1);
+	box-shadow: $box-shadow;
 	transition: top .5s ease-in-out, opacity .5s linear;	
 	img {
 		display: block;
