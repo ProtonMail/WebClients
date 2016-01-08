@@ -9,6 +9,7 @@ angular.module('proton', [
     'pikaday',
     'ui.sortable',
     'ngIcal',
+    'SmoothScrollbar',
 
     // Constant
     'proton.constants',
