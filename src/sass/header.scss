@@ -183,6 +183,10 @@ header#pm_header {
 				right: 0;
 				bottom: 0;
 				width: 80%;
+				&.searchInput {
+					left: 0;
+					width: 85%;
+				}
 			}
 			& > * {
 				line-height: 35px;

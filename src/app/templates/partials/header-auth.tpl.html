@@ -100,11 +100,13 @@
             </div>
         </div>
     </form>
-    <form class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
-        <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query" />
-        <button type="submit">
-            <i class="fa fa-search"></i>
-        </button>
+    <form class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
+        <fieldset>
+            <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </fieldset>
     </form>
     <ul class="navigation">
         <li>
