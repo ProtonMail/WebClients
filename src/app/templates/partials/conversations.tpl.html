@@ -45,9 +45,9 @@
         }">
             <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
             <aside>
-                <span class="pm_checkbox">
-                    <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
-                </span>
+                <label class="pm_checkbox" ng-click="$event.stopPropagation();select($event, conversation)">
+                    <input type="checkbox" ng-model="conversation.Selected" />
+                </label>
             </aside>
             <header>
                 <p>

@@ -221,8 +221,13 @@
 				}
 				label {
 					position: relative;
-					top: -1px;
+					top: -13px;
+				    text-align: left;
+				    display: block;
+				    padding: 10px;
+				    left: -10px;
 					text-align: left;
+					cursor: pointer;
 					input {
 						margin-left: 0;
 					}
