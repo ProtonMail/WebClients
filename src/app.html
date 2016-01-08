@@ -78,6 +78,17 @@
     <script type="text/javascript" src="/<%= file %>" defer></script>
 <% }); %>
 
+<div id="pm_feedback" ng-if="pmFeedback" class="animated fadeIn">
+    <a class="close" ng-click="closePmFeedBack()"><i class="fa fa-times"></i></a>
+    <form class="pm_form" ng-submit="sendPmFeedBack()">
+        <label for="bug_description"><h3>Feedback Form</h3></label>
+        <p>What do you think of ProtonMail version 3.0?</p>
+        <textarea rows="6" ng-model="fdbckTxt" placeholder="Your thoughts..."></textarea>
+        <button type="submit" class="pm_button primary pull-right">Send Feedback</button>
+        <button type="button" class="pm_button" ng-click="closePmFeedBack()">Close</button>
+    </form>
+</div>
+
 <script type="text/javascript">
     if(window.location.href.indexOf("/eo/") > -1) {
         document.getElementById('pm_slow').style.display = 'none';
