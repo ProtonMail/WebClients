@@ -209,8 +209,6 @@ angular.module('proton', [
     $state,
     $timeout,
     $window,
-    $cookies,
-    Bug,
     authentication,
     networkActivityTracker,
     notify,
@@ -236,57 +234,6 @@ angular.module('proton', [
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();
-    $rootScope.pmFeedback = false;
-
-
-
-    // ===================================
-    // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
-    $timeout( function() {
-        if ( !$cookies.get( 'v3_feedback' ) ) {
-            $cookies.put('v3_feedback', 'true');
-            $rootScope.pmFeedback = true;
-        }
-    }, 120000); // 2 mins
-
-    $rootScope.closePmFeedBack = function() {
-        $rootScope.pmFeedback = false;
-    };
-    $rootScope.sendPmFeedBack = function() {
-        data = {};
-        data.OS = '--';
-        data.OSVersion = '--';
-        data.Browser = '--';
-        data.BrowserVersion = '--';
-        data.BrowserExtensions = '--';
-        data.Client = '--';
-        data.ClientVersion = '--';
-        data.Title = '[FEEDBACK v3]';
-        data.Description = '--';
-        data.Username = '--';
-        data.Email = '--';
-        data.Description = this.fdbckTxt;
-        console.log(data);
-        var feedbackPromise = Bug.report(data);
-        feedbackPromise.then(
-            function(response) {
-                if(response.data.Code === 1000) {
-                    notify({message: 'Thanks for the feedback!', classes: 'notification-success'});
-                } else if (angular.isDefined(response.data.Error)) {
-                    notify({message: response.data.Error, classes: 'notification-danger'});
-                }
-                $rootScope.pmFeedback = false;
-            },
-            function(err) {
-                error.message = 'Error during the sending feedback';
-                $rootScope.pmFeedback = false;
-            }
-        );
-    };
-    // END FEEDBACK
-    // ===================================
-
-
 
     // SVG Polyfill for Edge
     svg4everybody();
