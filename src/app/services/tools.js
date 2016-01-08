@@ -145,8 +145,9 @@ angular.module("proton.tools", ["proton.constants"])
         html = html.replace(/xlink:href=/g, "data-xlink:href=");
         html = html.replace(/poster=/g, " data-poster=");
         html = html.replace(/background=/g, " data-background=");
+        html = html.replace(/url\(/g, "data-url(");
 
-        return html.replace(/url\(/g, "data-url(");
+        return html;
     };
 
     tools.fixImages = function(html) {
@@ -154,8 +155,9 @@ angular.module("proton.tools", ["proton.constants"])
         html = html.replace(/data-xlink:href=/g, "xlink:href=");
         html = html.replace(/data-poster=/g, " poster=");
         html = html.replace(/data-background=/g, " background=");
+        html = html.replace(/data-url\(/g,  "url(");
 
-        return html.replace(/data-url\(/g,  "url(");
+        return html;
     };
 
     /**

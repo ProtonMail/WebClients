@@ -4,14 +4,15 @@ angular.module("proton.transformation", [])
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
-            var stopObserving = attributes.$observe('transformLinks', function(interpolatedValue) {
+            var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
                 $timeout(function() {
                     var links = angular.element(element).find('a[href^=http]');
 
                     if(links.length > 0) {
                         links.attr('target','_blank').attr('rel', 'noreferrer');
-                        stopObserving();
                     }
+
+                    stopObserving();
                 }, 0, false);
             });
         }
@@ -36,7 +37,7 @@ angular.module("proton.transformation", [])
                 '#oriMsgHtmlSeperator:first',
                 'blockquote[type="cite"]:first'
             ];
-            var stopObserving = attributes.$observe('hideFirstBlockquote', function(interpolatedValue) {
+            var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
                 $timeout(function() {
                     var blockquote;
                     var blockquotes = jQuery(element).find(quotes.join(', ')).first(); // Reduce the set of matched elements to the first in the set.
