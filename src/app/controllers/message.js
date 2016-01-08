@@ -287,6 +287,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if(angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
+                    // NOTE Plain text detection doesn't work. Check #1701
+                    // var isHtml = tools.isHtml(content);
+
                     if($rootScope.printMode !== true) {
                         content = $scope.message.clearImageBody(content);
                     }
@@ -306,15 +309,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
                     // Detect type of content
-                    if (tools.isHtml(content)) {
+                    // if (isHtml === true) {
                         $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
                         // Assign decrypted content
                         $scope.message.decryptedBody = $sce.trustAsHtml(content);
-                    } else {
-                        $scope.isPlain = true;
-                        $scope.message.viewMode = 'plain';
-                    }
+                    // } else {
+                    //     $scope.isPlain = true;
+                    //     $scope.message.viewMode = 'plain';
+                    // }
 
                     // Broken images
                     $(".email img").error(function () {
