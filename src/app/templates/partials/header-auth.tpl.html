@@ -11,7 +11,7 @@
     <a href="#" class="searchBtn" ng-click="openSearchModal();">
         <i class="fa fa-search"></i>
     </a>
-    <form class="searchForm" ng-submit="searchAdvanced()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }">
+    <form class="searchForm" ng-submit="searchAdvanced()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }" adv-search>
         <fieldset>
             <button  type="button" class="advanced" ng-click="openSearchModal();" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
                 <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
