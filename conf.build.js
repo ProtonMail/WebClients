@@ -65,7 +65,9 @@ module.exports = {
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/fastclick/lib/fastclick.js",
       "vendor/ical.js/build/ical.js",
-      "vendor/angular-ical/dist/js/angular-ical.js"
+      "vendor/angular-ical/dist/js/angular-ical.js",
+      "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
+      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js"
     ],
     bootstrap_components: [
       "affix",
@@ -83,7 +85,8 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
-      "vendor/open-sans-fontface/open-sans.css"
+      "vendor/open-sans-fontface/open-sans.css",
+      "vendor/smooth-scrollbar/dist/smooth-scrollbar.css"
     ],
 
     sass_include_dirs: [
