@@ -643,7 +643,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.targetID = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.view', { id: id }, {reload: id === $state.params.id});
+        $state.go('secured.' + $scope.mailbox + '.view', { id: id });
+
+        if(id === $state.params.id) {
+            $rootScope.$broadcast('initMessage', element.ID);
+        }
     };
 
     /**

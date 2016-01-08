@@ -36,7 +36,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
-    $scope.$on('refreshMessage', function() {
+    $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
         if(angular.isDefined(message)) {
@@ -67,8 +67,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;
+    });
+
+    $scope.$on('initMessage', function(event, ID) {
+        if($scope.message.ID === ID) {
+            $scope.initialization();
+        }
     });
 
     /**
