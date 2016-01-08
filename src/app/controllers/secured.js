@@ -1,14 +1,17 @@
 angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
+    $cookies,
     $scope,
     $rootScope,
     $state,
     $stateParams,
+    $timeout,
     $translate,
     $window,
     authentication,
     eventManager,
+    feedbackModal,
     cacheCounters,
     cache,
     CONSTANTS,
@@ -52,6 +55,24 @@ angular.module("proton.controllers.Secured", [])
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
+
+    // ===================================
+    // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
+    $timeout( function() {
+        if(!$cookies.get('v3_feedback')) {
+            $cookies.put('v3_feedback', 'true');
+            // Open feedback modal
+            feedbackModal.activate({
+                params: {
+                    close: function() {
+                        feedbackModal.deactivate();
+                    }
+                }
+            });
+        }
+    }, 2 * 60 * 1000); // 2 mins
+    // END FEEDBACK
+    // ===================================
 
     /**
      * Returns a string for the storage bar

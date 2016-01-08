@@ -1,32 +1,7 @@
-#pm_feedback {
-	position: fixed;
-	z-index: 99999;
-	right: 1rem;
-	bottom: 1rem;
-	padding: 1rem;
-	border-radius: 4px;
-	box-shadow: $box-shadow;
-	background: #fff;
-	width: 22rem;
-	border: 4px solid $border;
+.feedback {
 	textarea {
 		width: 100%;
 		height: 8rem;
-		margin-bottom: 1rem;
 		padding: 0 .5rem;
-	}
-	label {
-		margin-bottom: 1rem;
-	}
-	.close {
-		float: right;
-		display: block;
-		padding: 0 10px;
-		line-height: 20px;
-		height: 20px;
-		position: relative;
-		top: -5px;
-		right: -10px;
-		cursor: pointer;
 	}
 }
