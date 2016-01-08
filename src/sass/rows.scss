@@ -322,11 +322,14 @@ body, html {
 			}
 			&.selected {
 				padding-left: 70px !important;
+				box-sizing: border-box;
+				width: 100%;
 				.star {
 					left: 35px !important;
 				}
 				.pm_checkbox {
-					left: 5px !important
+					left: 5px !important;
+					padding: 0 !important
 				}
 				margin-left: 0;
 			}
