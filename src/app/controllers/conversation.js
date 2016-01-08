@@ -47,6 +47,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
 
         if(angular.isDefined(messages)) {
+            messages = _.sortBy(messages, 'Time');
+
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
@@ -100,6 +102,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(labels.indexOf(loc) !== -1) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
                 var latest = _.last(messages);
+
+                messages = _.sortBy(messages, 'Time');
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
