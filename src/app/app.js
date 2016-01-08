@@ -436,7 +436,6 @@ angular.module('proton', [
         }
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-
     });
 })
 
