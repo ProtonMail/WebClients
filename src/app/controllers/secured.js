@@ -59,8 +59,14 @@ angular.module("proton.controllers.Secured", [])
     // ===================================
     // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
     $timeout( function() {
+
+        now = new Date();
+        exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
+
         if(!$cookies.get('v3_feedback')) {
-            $cookies.put('v3_feedback', 'true');
+            $cookies.put('v3_feedback', 'true', {
+                'expires': exp
+            });
             // Open feedback modal
             feedbackModal.activate({
                 params: {
@@ -70,7 +76,7 @@ angular.module("proton.controllers.Secured", [])
                 }
             });
         }
-    }, 2 * 60 * 1000); // 2 mins
+    }, 1 * 60 * 1000); // 2 mins
     // END FEEDBACK
     // ===================================
 

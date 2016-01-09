@@ -110,6 +110,15 @@ angular.module("proton.controllers.Header", [])
                     params.words = '';
                     return;
                 }
+                else if (params.words === '$$resize') {
+                    notify({
+                        message: 'Column Resizing Activated', 
+                        classes: 'notification-success'
+                    });
+                    $rootScope.enableResize = true;
+                    params.words = '';
+                    return;
+                }
                 // else if (params.words === '$$shadows') {
                 //     notify({
                 //         message: 'Shadows Activated', 

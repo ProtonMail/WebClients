@@ -79,6 +79,7 @@ angular.module('proton', [
     'proton.transformation',
     'proton.maxComposerHeight', 
     'proton.advSearch',
+    'proton.resizer',
 
     // Filters
     'proton.filters',
@@ -235,6 +236,10 @@ angular.module('proton', [
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();
+
+    $rootScope.toggleResizer = function() {
+        $rootScope.resizeList = !$rootScope.resizeList;
+    };
 
     // SVG Polyfill for Edge
     svg4everybody();
