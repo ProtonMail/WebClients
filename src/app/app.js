@@ -8,6 +8,8 @@ angular.module('proton', [
     'pascalprecht.translate',
     'pikaday',
     'ui.sortable',
+    'ui.router',
+    'ngRoute',
     'ngIcal',
     'SmoothScrollbar',
 
@@ -77,7 +79,7 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
-    'proton.maxComposerHeight', 
+    'proton.maxComposerHeight',
     'proton.advSearch',
     'proton.resizer',
 
