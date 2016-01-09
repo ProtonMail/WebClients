@@ -82,20 +82,6 @@
 
             <section class="setting pm_form full">
 
-                <p>
-                    <label>
-                        <input type="checkbox" ng-click="toggleThemeHC()"> 
-                        <strong>High Contrast Mode</strong> (Default Theme)
-                    </label>
-                </p>
-
-                <p>
-                    <label>
-                        <input type="checkbox" ng-click="toggleThemeOnyx()"> 
-                        <strong>Onyx Theme (Disabled for now)</strong>
-                    </label>
-                </p>
-
                 <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow" method="post">
                     <legend>Custom Theme</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
@@ -111,6 +97,16 @@
                 <form ng-submit="apiTest()" ng-if="false" method="post">
                     <button type="submit" class="btn btn-sm btn-warning">API Test</button>
                 </form>
+
+
+                <legend>Additional Themes (Experimental)</legend>
+                <p>
+                    <label>
+                        <input type="checkbox" ng-click="toggleThemeOnyx()"> 
+                        <strong>Onyx</strong>
+                    </label>
+                </p>
+                
             </section>
         </div>
     </div>

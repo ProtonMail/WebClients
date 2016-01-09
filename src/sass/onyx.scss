@@ -1,3 +1,93 @@
+// Secondary
 body.themeOnyx {
-	
+
+	font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+	font-size: 14px;
+
+	.pm_opensans {
+		font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+	}
+
+	.composer {
+		header,
+		.meta {
+			.pm_button {
+				background: transparent !important;
+				box-shadow: none !important;
+			}
+		}
+	}
+
+	.pm_dropdown > a {
+		background: transparent !important;
+		box-shadow: none !important;
+	}
+
+	.pm_button {
+	    background-image: -webkit-linear-gradient(#fff,#e6e6e6);
+	    background-image: linear-gradient(#fff,#e6e6e6);
+	    background: -moz-linear-gradient(#fff,#e6e6e6);
+	    box-shadow: 0 1px 1px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1);
+	    &.primary {
+    	    background: #7575a3;
+		    background-image: -webkit-linear-gradient(#7575a3,#669);
+		    background-image: linear-gradient(#7575a3,#669);
+		    text-shadow: none;
+		    color: #fff;
+		    border-color: transparent;
+	    }
+	}
+
+	.pm_buttons a {
+	    background-image: -webkit-linear-gradient(#fff,#e6e6e6);
+	    background-image: linear-gradient(#fff,#e6e6e6);
+	    background: -moz-linear-gradient(#fff,#e6e6e6);
+	    box-shadow: 0 1px 1px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1);	
+	}
+
+	#pm_composer .composer header,
+	html.protonmail body,
+	header#pm_header.no-auth,
+	header#pm_header .logo,	
+	section.sidebar,
+	body.secure section#pm_sidebarMobile {
+		background: #333;
+	}
+
+	header#pm_header form.searchForm fieldset {
+		background-color: #404040;
+	}
+	header#pm_header form.searchForm fieldset button[type="button"] {
+		background: #666;
+	}
+	header#pm_header ul.navigation li.active a, header#pm_header ul.navigation li:hover a {
+		border-top-color: #333 !important;
+	}
+}
+
+@media (max-width: $mobile-portrait) {
+	body.themeOnyx {
+		header#pm_header form.searchForm {
+			background: #333;
+		}
+	}
+}
+
+// Alt
+body.themeOnyx {
+	header#pm_header,
+	#pm_conversations.columns .list div.message.active,
+	#pm_conversations.columns .list div.message.unread.active,
+	#pm_conversations.columns .list div.message.unread.active header span.time,
+	#pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label,
+	#pm_conversations.columns .list div.message.active header span.time,
+	#pm_conversations.columns .list div.message.active article .pm_labels .pm_label {
+		background: #555;
+	}
+	#pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label {
+		box-shadow: 0 0 0 4px #555;
+	}
+	.pm_table th {
+		color: #555;
+	}
 }
