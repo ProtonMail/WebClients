@@ -5,15 +5,6 @@
 
     <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height class="list">
 
-        <div ng-show="resizeList" id="list-resizer" 
-            resizer="vertical" 
-            resizer-width="6" 
-            resizer-left="#pm_list" 
-            resizer-right="#pm_view"
-            resizer-min="400"
-            resizer-max="1000">
-        </div>
-
         <table ng-if="conversations.length === 0" id="nothingToSeeHere">
             <tr>
                 <td>
