@@ -897,7 +897,7 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.form = params.form;
-            this.form.attachScreenshot = true; // Attach screenshot by default
+            this.form.attachScreenshot = false; // Do not attach screenshot by default
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
