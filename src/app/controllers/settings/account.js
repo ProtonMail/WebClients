@@ -99,28 +99,34 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveLoginPassword = function(form) {
-        networkActivityTracker.track(
-            Setting.password({
-                OldPassword: $scope.oldLoginPassword,
-                OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
-                NewPassword: $scope.newLoginPassword
-            }).$promise.then(function(result) {
-                if(result.Code === 1000) {
-                    notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
-                    $scope.oldLoginPassword = '';
-                    $scope.newLoginPassword = '';
-                    $scope.confirmLoginPassword = '';
-                    form.$setUntouched();
-                } else if(result.Error) {
-                    notify({message: result.Error, classes: 'notification-danger'});
-                } else {
-                    notify({message: 'Login password invalid', classes: 'notification-danger'});
-                }
-            }, function(error) {
-                notify({message: 'Error during the login password request', classes: 'notification-danger'});
-                $log.error(error);
-            })
-        );
+
+        if ($scope.newLoginPassword!==confirmLoginPassword) {
+            notify({message: 'Passwords do not match', classes: 'notification-danger'});
+        }
+        else {
+            networkActivityTracker.track(
+                Setting.password({
+                    OldPassword: $scope.oldLoginPassword,
+                    OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
+                    NewPassword: $scope.newLoginPassword
+                }).$promise.then(function(result) {
+                    if(result.Code === 1000) {
+                        notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
+                        $scope.oldLoginPassword = '';
+                        $scope.newLoginPassword = '';
+                        $scope.confirmLoginPassword = '';
+                        form.$setUntouched();
+                    } else if(result.Error) {
+                        notify({message: result.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: 'Login password invalid', classes: 'notification-danger'});
+                    }
+                }, function(error) {
+                    notify({message: 'Error during the login password request', classes: 'notification-danger'});
+                    $log.error(error);
+                })
+            );
+        }
     };
 
     $scope.saveMailboxPassword = function(form) {
