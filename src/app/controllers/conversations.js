@@ -67,8 +67,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
         function getScrollBarWidth () {
             var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+
             widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
             $outer.remove();
+
             return 100 - widthWithScroll;
         }
         $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
@@ -254,7 +256,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.active = function(element) {
-        if(angular.isDefined($state.params.id)) {
+        if($rootScope.numberElementChecked === 0 && angular.isDefined($state.params.id)) {
             return $state.params.id === element.ConversationID || $state.params.id === element.ID;
         } else {
             return false;
