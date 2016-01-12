@@ -119,24 +119,24 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized by click
                 } else {
-                    // If the latest message is unread, we open it
-                    if(latest.IsRead === 0) {
-                        latest.open = true;
+                    // If the latest message is read, we open it
+                    if(latest.IsRead === 1) {
                         $rootScope.targetID = latest.ID;
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var latestIndex = messages.indexOf(latest);
+                        var latestIndex = messages.length - 1;
                         var index = latestIndex;
 
                         while(loop === true && index > 0) {
-                            if(angular.isDefined(messages[(index - 1)]) && messages[(index - 1)].IsRead === 1) {
+                            if(angular.isDefined(messages[(index - 1)]) && messages[(index - 1)].IsRead === 0) {
                                 index--;
                             } else {
                                 loop = false;
                                 index--;
                             }
                         }
+
                         if (loop === true) {
                             index = latestIndex;
                         }
