@@ -1377,7 +1377,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
-        var id = message.ID;
+
+        if(discard === true && angular.isDefined(message.ID)) {
+            $scope.discard(message);
+        }
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
@@ -1393,10 +1396,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
-
-        if(discard === true && angular.isDefined(id)) {
-            $scope.discard(message);
-        }
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
