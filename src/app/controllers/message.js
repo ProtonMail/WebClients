@@ -88,7 +88,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.openComposer($scope.message.ID);
         } else {
             if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
-                networkActivityTracker.track($scope.initView());
+                networkActivityTracker.track($scope.initView(true));
             } else {
                 $scope.message.expand = false;
             }
@@ -137,13 +137,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called to display message content
+     * @param {Boolean} scroll
      * @return {Promise}
      */
-    $scope.initView = function() {
+    $scope.initView = function(scroll) {
         var deferred = $q.defer();
         var process = function() {
             // Display content
-            $scope.displayContent();
+            $scope.displayContent(scroll);
         };
 
         // If the message is a draft
@@ -239,6 +240,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Order to the conversation controller to scroll to this message
+     */
+    $scope.scrollToMe = function() {
+        $scope.scrollToMessage($scope.message.ID);
+    };
+
+    /**
      * Open modal to alert the user that he cannot download
      */
     $scope.openSafariWarning = function() {
@@ -267,7 +275,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} print
      */
-    $scope.displayContent = function() {
+    $scope.displayContent = function(scroll) {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -333,6 +341,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     if($rootScope.targetID === $scope.message.ID) {
                         $rootScope.$broadcast('targetLoaded');
                     }
+
+                    if(scroll === true) {
+                        $scope.scrollToMe();
+                    }
                 };
 
                 // PGP/MIME case
@@ -373,6 +385,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 //TODO error reporter?
                 $log.error(err);
             });
+        } else if(scroll === true) {
+            $scope.scrollToMe();
         }
     };
 

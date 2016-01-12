@@ -19,6 +19,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     notify,
     tools
 ) {
+    var scrollPromise;
+
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
@@ -77,6 +79,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     });
 
     $scope.$on('$destroy', function(event) {
+        $timeout.cancel(scrollPromise);
         delete $rootScope.targetID;
     });
 
@@ -221,11 +224,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {String} ID
      */
     $scope.scrollToMessage = function(ID) {
-        $timeout.cancel($rootScope.scroll);
+        $timeout.cancel(scrollPromise);
         var index = _.findIndex($scope.messages, {ID: ID});
         var id = '#message' + index; // TODO improve it for the search case
 
-        $rootScope.scroll = $timeout(function() {
+        scrollPromise = $timeout(function() {
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
@@ -234,7 +237,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 250, function() {
+                }, 200, function() {
                     $(this).animate({
                         opacity: 1
                     }, 200);
