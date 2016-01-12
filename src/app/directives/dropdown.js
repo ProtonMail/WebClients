@@ -83,27 +83,6 @@ angular.module("proton.dropdown", [])
     };
 })
 
-.directive('actionsButton', function() {
-    return {
-        restrict: 'E',
-        replace: true,
-        scope: {
-            disable: '=',
-            actions: '=' // List of actions available
-        },
-        templateUrl: 'templates/directives/actions-button.tpl.html',
-        link: function(scope, element, attrs) {
-            // Initialization of the primary action with the first action
-            scope.primary = scope.actions[0];
-
-            scope.select = function(action) {
-                scope.primary = action;
-                action.action();
-            };
-        }
-    };
-})
-
 .directive('selector', function() {
     return {
         restrict: 'E',
