@@ -1,21 +1,3 @@
-#list-resizer {
-	background-color: rgba($primary, .5);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 1rem;
-    cursor: col-resize;
-    z-index: 111;
-    &:hover {
-    	background-color: $primary;
-    	-webkit-transition: background-color .25s ease;
-    	   -moz-transition: background-color .25s ease;
-    	    -ms-transition: background-color .25s ease;
-    	     -o-transition: background-color .25s ease;
-    	        transition: background-color .25s ease;
-    }
-}
 #pm_conversations.columns {
 	#pm_toolbar {
 		position: absolute;

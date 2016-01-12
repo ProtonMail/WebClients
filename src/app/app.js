@@ -2,14 +2,16 @@ angular.module('proton', [
     'cgNotify',
     'ngCookies',
     'ngFileUpload',
+    'ngIcal',
     'ngResource',
+    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
     'pikaday',
-    'ui.sortable',
-    'ngIcal',
     'SmoothScrollbar',
+    'ui.router',
+    'ui.sortable',
 
     // Constant
     'proton.constants',
@@ -77,9 +79,8 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
-    'proton.maxComposerHeight', 
+    'proton.maxComposerHeight',
     'proton.advSearch',
-    'proton.resizer',
 
     // Filters
     'proton.filters',
@@ -236,10 +237,6 @@ angular.module('proton', [
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
     $rootScope.isSecure = authentication.isSecured();
-
-    $rootScope.toggleResizer = function() {
-        $rootScope.resizeList = !$rootScope.resizeList;
-    };
 
     // SVG Polyfill for Edge
     svg4everybody();

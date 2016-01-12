@@ -260,8 +260,7 @@ angular.module('proton.actions', [])
             // Generate cache events
             _.each(ids, function(id) {
                 var element = {
-                    ID: id,
-                    Selected: false
+                    ID: id
                 };
                 var messages = cache.queryMessagesCached(element.ID);
 
@@ -305,8 +304,7 @@ angular.module('proton.actions', [])
             _.each(ids, function(id) {
                 var elementCached;
                 var element = {
-                    ID: id,
-                    Selected: false
+                    ID: id
                 };
                 var messages = cache.queryMessagesCached(element.ID);
 
@@ -362,9 +360,7 @@ angular.module('proton.actions', [])
                     }
                 });
 
-                if(counter === conversation.NumMessages) { // If all messages in the conversation are deleted, we can delete the conversation
-                    events.push({Action: 0, ID: conversationID});
-                }
+                events.push({Action: 0, ID: conversationID});
             });
 
             // Send the request

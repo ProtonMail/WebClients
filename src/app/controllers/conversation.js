@@ -25,6 +25,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.scrolled = false;
     $scope.conversation = conversation;
     $rootScope.numberElementSelected = 1;
+    $rootScope.showWelcome = false;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -101,9 +102,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if(labels.indexOf(loc) !== -1) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
-                var latest = _.last(messages);
-
                 messages = _.sortBy(messages, 'Time');
+                var latest = _.last(messages);
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
@@ -118,26 +118,27 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 } else if(angular.isDefined($rootScope.targetID)) {
                     // Do nothing, target initialized by click
                 } else {
-                    // If the latest message is unread, we open it
-                    if(latest.IsRead === 0) {
-                        latest.open = true;
+                    // If the latest message is read, we open it
+                    if(latest.IsRead === 1) {
                         $rootScope.targetID = latest.ID;
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var latestIndex = messages.indexOf(latest);
-                        var index = latestIndex;
+                        var latestIndex = messages.length - 1; // Last index
+                        var index = latestIndex - 1; // Start with the previous message
 
                         while(loop === true && index > 0) {
-                            if(angular.isDefined(messages[(index - 1)]) && messages[(index - 1)].IsRead === 1) {
-                                index--;
-                            } else {
+                            if(messages[index].IsRead === 1) { // Is read
                                 loop = false;
-                                index--;
+                            } else {
+                                index--; // Keep going
                             }
                         }
-                        if (loop === true) {
-                            index = latestIndex;
+
+                        if (loop === true) { // No message read found
+                            index = 0;
+                        } else {
+                            index++; // If reach a read message, backtrack one message and send the that one, which is the first unread message in the unread block at the end of the convo.
                         }
 
                         $rootScope.targetID = messages[index].ID;
@@ -187,6 +188,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var ids = [$scope.conversation.ID];
 
         action.unreadConversation(ids);
+
+        $scope.back();
     };
 
     /**

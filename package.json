@@ -43,8 +43,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install --allow-root --config.interactive=false",
+    "postinstall": "bower install",
     "test": "grunt compile",
-    "start": "grunt watch --prod"
+    "start": "grunt watch --dev"
   }
 }
