@@ -260,8 +260,7 @@ angular.module('proton.actions', [])
             // Generate cache events
             _.each(ids, function(id) {
                 var element = {
-                    ID: id,
-                    Selected: false
+                    ID: id
                 };
                 var messages = cache.queryMessagesCached(element.ID);
 
@@ -305,8 +304,7 @@ angular.module('proton.actions', [])
             _.each(ids, function(id) {
                 var elementCached;
                 var element = {
-                    ID: id,
-                    Selected: false
+                    ID: id
                 };
                 var messages = cache.queryMessagesCached(element.ID);
 
