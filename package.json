@@ -45,7 +45,6 @@
   "scripts": {
     "postinstall": "bower install",
     "test": "grunt compile",
-    "start": "grunt watch --prod",
-    "dev": "grunt watch --dev"
+    "start": "grunt watch --dev"
   }
 }
