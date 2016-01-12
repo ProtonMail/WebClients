@@ -23,7 +23,7 @@
         ng-mousedown="focusComposer(message)">
 
             <header responsive-composer="message">
-                <span ng-click="normalize(message);" class="subject">{{ message.Subject || ('NEW_MESSAGE' | translate) }}</span>
+                <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
                 <span class="actions text-right">
                     <a
                     href
