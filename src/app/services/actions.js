@@ -771,6 +771,10 @@ angular.module('proton.actions', [])
         sendMessage: function() {
 
         },
+        /**
+         * Discard draft
+         * @param {Object} message
+         */
         discardMessage: function(message) {
             var context = tools.cacheContext();
             var events = [];
@@ -789,8 +793,19 @@ angular.module('proton.actions', [])
                     // Delete conversation
                     events.push({Action: 0, ID: conversation.ID});
                 } else if(conversation.NumMessages > 1) {
+                     var messages = cache.queryMessagesCached(conversation.ID);
+                     var labelIDs = [];
+
+                     _.each(messages, function(message) {
+                         labelIDs = labelIDs.concat(message.LabelIDs);
+                     });
+
+                     // Remove one draft label
+                     labelIDs.splice(labelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts), 1);
+
                     // Decrease the number of message
                     conversation.NumMessages--;
+                    conversation.LabelIDs = _.uniq(labelIDs);
                     events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
             }
