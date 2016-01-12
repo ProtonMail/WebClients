@@ -237,7 +237,7 @@
 				border-radius: 0;
 			}
 			.meta .row .subject {
-				width: 95%;
+				width: 90%;
 			}
 		}
 		.options {
@@ -432,7 +432,6 @@
 			.row {
 				min-height: $composerRowHeight;
 				line-height: $composerRowHeight;
-				height: $composerRowHeight;
 				border-bottom: 1px solid $border;
 				float: left;
 				width: 100%;
@@ -512,7 +511,7 @@
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					width: 95%;
+					width: 90%;
 				}
 			}
 		}
