@@ -153,13 +153,27 @@ angular.module("proton.cache", [])
 
     /**
      * Update time for conversation
-     * @param {Object} message
+     * @param {String} conversationID
      */
-    var manageTimes = function(message) {
-        if(angular.isArray(message.LabelIDs)) {
-            _.each(message.LabelIDs, function(labelID) {
-                storeTime(message.ConversationID, labelID, message.Time);
-            });
+    var manageTimes = function(conversationID) {
+        if (angular.isDefined(conversationID)) {
+            var conversation = api.conversationsCached(conversationID);
+            var messages = api.messagesCached(conversationID);
+
+            if (angular.isDefined(conversation) && messages.length > 0) {
+                // Order messages by Time
+                messages = _.sortBy(messages, 'Time');
+
+                _.each(conversation.LabelIDs, function(labelID) {
+                    // Get the last message with a specific label
+                    var message = _.chain(messages)
+                        .filter(function(message) { return message.LabelIDs.indexOf(labelID) !== -1; })
+                        .last()
+                        .value();
+
+                    storeTime(conversationID, labelID, message.Time);
+                });
+            }
         }
     };
 
@@ -684,10 +698,11 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var messages = [event.Message];
 
-        manageTimes(event.Message);
-
         // Save new messages
         storeMessages(messages);
+
+        // Manage time
+        manageTimes(event.Message.ConversationID);
 
         deferred.resolve();
 
@@ -760,7 +775,7 @@ angular.module("proton.cache", [])
 
                 messagesCached[index] = message;
                 manageCounters(current, messagesCached[index], 'message');
-                manageTimes(message);
+                manageTimes(message.ConversationID);
                 deferred.resolve();
            }
         } else {
