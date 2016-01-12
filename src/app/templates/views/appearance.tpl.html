@@ -87,7 +87,7 @@
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
                         <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                        <textarea class="form-control" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
+                        <textarea class="code" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
@@ -100,11 +100,11 @@
 
 
                 <legend>Additional Themes (Experimental)</legend>
+                <p class="alert alert-danger">Loading themes will override your current theme!</p>
                 <p>
-                    <label>
-                        <input type="checkbox" ng-click="toggleThemeOnyx()"> 
-                        <strong>Onyx</strong>
-                    </label>
+                    <button class="pm_button" ng-click="enableThemeOnyx()">
+                    {{ 'LOAD' }} Onyx Theme
+                    </button>
                 </p>
                 
             </section>

@@ -87,6 +87,16 @@
         }
     }
 
+    textarea.code {
+        font-family: monospace;
+        white-space: pre;
+        word-break: none;
+        line-height: 1rem;
+        resize: vertical;
+        height: 10rem;
+        padding: 1rem;
+    }
+
     // wrapper for placing icons inside inputs
     .input-icon {
         position: relative;
