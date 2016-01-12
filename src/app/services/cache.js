@@ -157,8 +157,8 @@ angular.module("proton.cache", [])
      */
     var manageTimes = function(conversationID) {
         if (angular.isDefined(conversationID)) {
-            var conversation = api.conversationsCached(conversationID);
-            var messages = api.messagesCached(conversationID);
+            var conversation = api.getConversationCached(conversationID);
+            var messages = api.queryMessagesCached(conversationID);
 
             if (angular.isDefined(conversation) && messages.length > 0) {
                 // Order messages by Time

@@ -36,9 +36,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         if(angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
-            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
-
-            if(labels.indexOf(loc) !== -1) {
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 _.extend($scope.conversation, conversation);
             } else {
                 return $scope.back();
@@ -98,9 +96,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         if(angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
-            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
-
-            if(labels.indexOf(loc) !== -1) {
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
                 messages = _.sortBy(messages, 'Time');
                 var latest = _.last(messages);
