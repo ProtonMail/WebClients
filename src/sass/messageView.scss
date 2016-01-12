@@ -34,7 +34,6 @@
     	display: block;
 		min-height: 35px;
 		box-sizing: border-box;
-		border-bottom: 1px solid $border;
         clear: both;
         .pm_buttons {
             float: right;
@@ -97,7 +96,9 @@
     }
     article.message {
     	clear: both;
-    	border-bottom: 1px solid $border;
+    	border: 1px solid $border;
+        margin: 0 1rem .5rem;
+        border-radius: 2px;
         .toggleDetails {
             color: $primary;
             cursor: pointer;
@@ -106,6 +107,22 @@
             font-weight: 700;
             margin-bottom: -1rem;
         }
+        .display-image {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: block;
+            border-width: 1px 0 0;
+            border-radius: 0;
+            width: 100%;
+            float: none;
+            text-align: center;
+            clear: both;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0;
+        } 
         .where,
         .contact {
             color: #777;
@@ -147,11 +164,8 @@
                 }
                 .contact {
                     display: block;
-                }
+                } 
             }
-        }
-        &.open.last {
-            border-bottom: none;
         }
         &.open {
             background: #fff;
@@ -161,9 +175,18 @@
             .where {
                 display: inline-block;
             }
+            header,
+            .sub {
+                background: $read; 
+            }
+            .sub {
+                border-bottom: 1px solid $border;
+            }
             header {
                 margin-bottom: -10px;
                 padding-top: 20px;
+                float: left;
+                width: 100%;
                 .contact {
                     strong {
                         font-weight: 700;
@@ -189,7 +212,7 @@
                         line-height: 18px;
                         text-transform: uppercase;
                         box-shadow: none !important;
-                        background: #fff !important;
+                        background: transparent !important;
                         .fa {
                             height: 18px;
                             line-height: 18px;
@@ -200,11 +223,11 @@
                     }
                 }
                 .pm_labels {
-                    background: $white;
+                    background: $read;
                     right: 1rem;
                     .pm_label {
-                        box-shadow: 0 0 0 4px $white !important;
-                        background: $white !important;
+                        box-shadow: 0 0 0 4px $read !important;
+                        background: $read !important;
                         padding-right: calc(.15rem + 1rem);
                         position: relative;
                         right: initial !important;
@@ -259,6 +282,9 @@
                     font-weight: 700;
                 }
             }
+            .contact strong {
+                font-weight: 700;
+            }
         }
         &.read {
             span.person {
@@ -266,7 +292,7 @@
                     // color: #999
                 }
             }
-        }
+        }      
     	header {
     		font-size: 15px;
     		padding: 10px 40px 10px 15px;
@@ -357,35 +383,15 @@
 			box-sizing: border-box;
             min-height: 55px;
             padding-bottom: 20px;
+            &.images {
+                padding-bottom: 2.5rem;
+            }
 			.data {
                 float: left;
                 width: 100%;
                 font-size: 90%;
                 .where {
                     display: inline-block;
-                }
-                .display-image {
-                    position: absolute;
-                    left: 50%;
-                    bottom: -1px;
-                    margin: 0 0 0 -5rem;
-                    width: 10rem;
-                    border-radius: 4px 4px 0 0;
-                    border-bottom-color: #fff;
-                    background: #fff;
-                    box-sizing: initial;
-                    -webkit-transition: padding .1s ease;
-                       -moz-transition: padding .1s ease;
-                        -ms-transition: padding .1s ease;
-                         -o-transition: padding .1s ease;
-                            transition: padding .1s ease;
-                    &:hover {
-                        background: #fff;
-                        padding-top: 4px;
-                    }
-                    a {
-                        background-color: #fff !important;
-                    }
                 }
 			}
     		.actions {
@@ -451,7 +457,6 @@
     		}
 			.display-image {
 				text-transform: uppercase;
-				border: 1px solid $border;
                 border-radius: 2px;
                 width: 100%;
 				a {

@@ -101,6 +101,7 @@ angular.module("proton.controllers.Header", [])
             params.words = $scope.params.searchMessageInput;
 
             if (params.words.substring(0,2) === '$$') {
+                /*
                 if (params.words === '$$bubble') {
                     notify({
                         message: 'Bubble Mode Activated', 
@@ -110,24 +111,7 @@ angular.module("proton.controllers.Header", [])
                     params.words = '';
                     return;
                 }
-                else if (params.words === '$$resize') {
-                    notify({
-                        message: 'Column Resizing Activated', 
-                        classes: 'notification-success'
-                    });
-                    $rootScope.enableResize = true;
-                    params.words = '';
-                    return;
-                }
-                // else if (params.words === '$$shadows') {
-                //     notify({
-                //         message: 'Shadows Activated', 
-                //         classes: 'notification-success'
-                //     });
-                //     $rootScope.themeShadow = true;
-                //     params.words = '';
-                //     return;
-                // }
+                */
             }
 
             $state.go('secured.search', params);
