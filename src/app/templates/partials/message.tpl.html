@@ -54,7 +54,7 @@ ng-class="{
         </span><!-- this needs to re-be styled -->
         <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
-    <div class="sub" ng-show="message.expand === true" ng-class="{ 'images': !!message.imagesHidden }">
+    <div class="sub" ng-show="message.expand === true" ng-class="{ 'images': !!message.imagesHidden, 'expiring': (message.ExpirationTime > 0) }">
         <div class="actions">
             <span class="pm_buttons">
                 <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
@@ -148,16 +148,16 @@ ng-class="{
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
         </div><!--/.data-->
+        <p ng-if="message.ExpirationTime > 0" class="text-red exp-block">
+            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
+        </p>        
         <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
-            <a href="" ng-click="displayImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
+            <a href="" ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
         </p>        
         <div class="clear"></div>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
-        <p ng-if="message.ExpirationTime > 0" class="text-red">
-            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime }}"></span>
-        </p>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
