@@ -187,11 +187,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.unread = function() {
         var ids = [$scope.conversation.ID];
 
-        action.unreadConversation(ids).then(function() {
-            if(angular.isDefined($stateParams.id)) {
-                $scope.back();
-            }
-        });
+        action.unreadConversation(ids);
+
+        $scope.back();
     };
 
     /**

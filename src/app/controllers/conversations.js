@@ -424,6 +424,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else if(type === 'message') {
             action.unreadMessage(ids);
         }
+
+        if(angular.isDefined($state.params.id)) {
+            $scope.back();
+        }
     };
 
     /**
