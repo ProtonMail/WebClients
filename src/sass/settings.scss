@@ -138,6 +138,7 @@
         cursor: pointer;
     }
 }
+
 #pm_settings {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -715,9 +716,31 @@
         }
     }
     .pm_tabs {
-        padding: 0 0 0 25px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        padding: 3px 10px 0;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        background: $alt;
+        li {
+            a.pm_button {
+                border-color: $alt;
+                background: $alt-light;
+                color: #fff;
+                border-bottom: none;
+                padding: 0 1rem;
+                height: 41px;
+                line-height: 41px;
+                &:hover {
+                    background: lighten($alt-light, 5%);
+                }
+            }
+        }
+        li.active {
+            a.pm_button {
+                background: #fff !important;
+                color: $primary;
+            }
+        }
     }
     .settings {
         padding: 0 25px;

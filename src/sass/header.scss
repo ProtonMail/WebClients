@@ -139,13 +139,13 @@ header#pm_header {
 				display: block;
 				width: 35px;
 				color: #fff;
-				background-color: #8b909e;
+				background-color: $alt-light;
 				border-radius: 35px 0 0 35px;
 				cursor: pointer;
 				transition: background-color .25s ease;
 				float: left;
 				&:hover {
-					background: lighten(#8b909e, 5%);
+					background: lighten($alt-light, 5%);
 				}
 			}
 			button[type="submit"],
