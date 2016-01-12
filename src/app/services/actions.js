@@ -348,7 +348,6 @@ angular.module('proton.actions', [])
          * @param {ids}
          */
         deleteConversation: function(ids) {
-            console.log('deleteConversation', ids);
             var context = tools.cacheContext();
             var events = [];
             var promise;

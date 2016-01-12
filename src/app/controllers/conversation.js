@@ -129,9 +129,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                         while(loop === true && index > 0) {
                             if(messages[index].IsRead === 1) { // Is read
-                                index--; // Keep going
-                            } else {
                                 loop = false;
+                            } else {
+                                index--; // Keep going
                             }
                         }
 
