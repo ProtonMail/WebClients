@@ -341,6 +341,7 @@ angular.module('proton.actions', [])
          * @param {ids}
          */
         deleteConversation: function(ids) {
+            console.log('deleteConversation', ids);
             var context = tools.cacheContext();
             var events = [];
             var promise;
@@ -360,9 +361,7 @@ angular.module('proton.actions', [])
                     }
                 });
 
-                if(counter === conversation.NumMessages) { // If all messages in the conversation are deleted, we can delete the conversation
-                    events.push({Action: 0, ID: conversationID});
-                }
+                events.push({Action: 0, ID: conversationID});
             });
 
             // Send the request
