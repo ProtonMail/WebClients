@@ -296,9 +296,14 @@ angular.module('proton.actions', [])
          * @param {Array} ids
          */
         unreadConversation: function(ids) {
+            var deferred = $q.defer();
             var context = tools.cacheContext();
             var events = [];
             var promise;
+            var process = function() {
+                cache.events(events);
+                deferred.resolve();
+            };
 
             // Generate cache events
             _.each(ids, function(id) {
@@ -327,14 +332,16 @@ angular.module('proton.actions', [])
             promise = Conversation.unread(ids);
 
             if(context === true) {
-                cache.events(events);
+                process();
             } else {
                 promise.then(function() {
-                    cache.events(events);
+                    process();
                 });
 
                 networkActivityTracker.track(promise);
             }
+
+            return deferred.promise;
         },
         /**
          * Delete a list of conversations
