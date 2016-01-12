@@ -614,22 +614,33 @@ angular.module('proton.actions', [])
             var context = tools.cacheContext();
             var events = [];
             var promise;
+            var conversationIDs = [];
 
+            // Generate message event
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
-                var conversation = cache.getConversationCached(message.ConversationID);
 
-                // Generate message event
+                conversationIDs.push(message.ConversationID);
+
                 events.push({Action: 3, ID: message.ID, Message: {
                     ID: message.ID,
                     ConversationID: message.ConversationID,
                     IsRead: 1
                 }});
+            });
 
-                // Generate conversation event
+            // Generate conversation event
+            _.each(_.uniq(conversationIDs), function(conversationID) {
+                var conversation = cache.getConversationCached(conversationID);
+                var messages = cache.queryMessagesCached(conversationID);
+                var filtered = _.filter(messages, function(message) {
+                    return ids.indexOf(message.ID) !== -1;
+                });
+
                 if(angular.isDefined(conversation)) {
                     events.push({Action: 3, ID: conversation.ID, Conversation: {
-                        ID: conversation.ID, NumUnread: 0
+                        ID: conversation.ID,
+                        NumUnread: conversation.NumUnread - filtered.length
                     }});
                 }
             });
@@ -638,6 +649,7 @@ angular.module('proton.actions', [])
             promise = Message.read({IDs: ids}).$promise;
 
             if(context === true) {
+                // Send cache events
                 cache.events(events);
             } else {
                 promise.then(function() {
@@ -656,25 +668,33 @@ angular.module('proton.actions', [])
             var context = tools.cacheContext();
             var events = [];
             var promise;
+            var conversationIDs = [];
 
+            // Generate message event
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
-                var conversation = cache.getConversationCached(message.ConversationID);
-                var messages = cache.queryMessagesCached(message.ConversationID);
-                var unreads = _.where(messages, {IsRead: 0});
 
-                // Generate message event
+                conversationIDs.push(message.ConversationID);
+
                 events.push({Action: 3, ID: message.ID, Message: {
                     ID: message.ID,
                     ConversationID: message.ConversationID,
                     IsRead: 0
                 }});
+            });
 
-                // Generate conversation event
+            // Generate conversation event
+            _.each(_.uniq(conversationIDs), function(conversationID) {
+                var conversation = cache.getConversationCached(conversationID);
+                var messages = cache.queryMessagesCached(conversationID);
+                var filtered = _.filter(messages, function(message) {
+                    return ids.indexOf(message.ID) !== -1;
+                });
+
                 if(angular.isDefined(conversation)) {
                     events.push({Action: 3, ID: conversation.ID, Conversation: {
                         ID: conversation.ID,
-                        NumUnread: unreads.length + 1
+                        NumUnread: conversation.NumUnread + filtered.length
                     }});
                 }
             });
