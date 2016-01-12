@@ -86,10 +86,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
+            $rootScope.activeComposer = true;
             window.onbeforeunload = function() {
                 return $translate.instant('MESSAGE_LEAVE_WARNING');
             };
         } else {
+            $rootScope.activeComposer = false;
             window.onbeforeunload = undefined;
         }
     });
@@ -500,8 +502,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
-        $rootScope.activeComposer = true;
-
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;
@@ -1030,10 +1030,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                 if(angular.isDefined(message.ID)) {
                     draftPromise = Message.updateDraft(parameters).$promise;
-                    action = UPDATE;
+                    actionType = UPDATE;
                 } else {
                     draftPromise = Message.createDraft(parameters).$promise;
-                    action = CREATE;
+                    actionType = CREATE;
                 }
 
                 // Save draft before to send
@@ -1062,11 +1062,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         $scope.saveOld(message);
 
                         // Update draft in message list
-                        events.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
                         // Generate conversation event
                         if(angular.isDefined(conversation)) {
-                            if(action === CREATE) {
+                            if(actionType === CREATE) {
                                 conversation.NumMessages++;
                             }
 
@@ -1315,7 +1315,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.minimize = function(message) {
-        $rootScope.activeComposer = false;
         message.minimized = true;
         message.previousMaximized = message.maximized;
         message.maximized = false;
@@ -1326,7 +1325,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.unminimize = function(message) {
-        $rootScope.activeComposer = true;
         message.minimized = false;
         message.maximized = message.previousMaximized;
         // Hide all the tooltip
@@ -1335,7 +1333,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.maximize = function(message) {
-        $rootScope.activeComposer = true;
         message.maximized = true;
         $rootScope.maximizedComposer = true;
         $rootScope.$broadcast('composerModeChange');
