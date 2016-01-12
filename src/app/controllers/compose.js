@@ -1119,6 +1119,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     /**
+     * Return the subject title of the composer
+     */
+     $scope.subject = function(message) {
+        return message.Subject || $translate.instant('NEW_MESSAGE');
+     };
+
+    /**
      * Check if the subject of this message is empty
      * And ask the user to send anyway
      * @param {Object} message
