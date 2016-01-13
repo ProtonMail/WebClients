@@ -38,11 +38,12 @@ angular.module("proton.filters",[])
 })
 
 .filter("capitalize", function() {
-    return function(input) {
-        if (input!==null) {
-            input = input.toLowerCase();
+    return function(value) {
+        if (value !== null) {
+            value = angular.lowercase(value);
         }
-        return input.substring(0,1).toUpperCase()+input.substring(1);
+
+        return angular.uppercase(value.substring(0,1)) + value.substring(1);
     };
 })
 
