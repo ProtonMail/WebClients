@@ -247,16 +247,12 @@ angular.module('proton', [
     FastClick.attach(document.body);
 
     // Manage page title
-    var pageTitleTemplate = _.template(
-        "<% if (pageName) { %>" +
-        "${ pageName }" +
-        " - " +
-        "<% } %>" +
-        "ProtonMail"
-    );
-
     $rootScope.$watch('pageName', function(newVal, oldVal) {
-        $document.find("title").text(pageTitleTemplate({ pageName: newVal }));
+        if(newVal) {
+            $document.find("title").text(newVal + ' - ProtonMail');
+        } else {
+            $document.find("title").text('ProtonMail');
+        }
     });
 
     $rootScope.networkActivity = networkActivityTracker;
