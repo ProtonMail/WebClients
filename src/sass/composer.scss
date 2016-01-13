@@ -621,6 +621,12 @@
 	}
 }
 
+@media (max-width: $tablet-landscape) {
+	#pm_composer .composer footer .pm_button span {
+		display: none !important;
+	}
+}
+
 @media (max-width: $mobile-landscape) {
 	.activeComposer {
 		#pm_composer {
