@@ -39,11 +39,11 @@ angular.module("proton.filters",[])
 
 .filter("capitalize", function() {
     return function(value) {
-        if (value !== null) {
-            value = angular.lowercase(value);
+        if (value) {
+            return angular.uppercase(value).substring(0, 1) + angular.lowercase(value).substring(1);
+        } else {
+            return value;
         }
-
-        return angular.uppercase(value.substring(0,1)) + value.substring(1);
     };
 })
 
