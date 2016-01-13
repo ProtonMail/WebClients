@@ -163,7 +163,7 @@ angular.module("proton.cache", [])
             if (angular.isDefined(conversation) && messages.length > 0) {
                 // Order messages by Time
                 messages = _.sortBy(messages, 'Time');
-                
+
                 _.each(conversation.LabelIDs, function(labelID) {
                     // Get the last message with a specific label
                     var message = _.chain(messages)
@@ -719,6 +719,9 @@ angular.module("proton.cache", [])
     api.createConversation = function(event) {
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
+
+        // Manage time
+        manageTimes(event.ID);
 
         if(angular.isDefined(current)) {
             updateConversation(event.Conversation);
