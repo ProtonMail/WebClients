@@ -32,9 +32,8 @@ module.exports = {
   vendor_files: (vendor_files = {
     js: [
       "vendor/jquery/dist/jquery.js",
-      "vendor/jquery-ui/ui/jquery-ui.js",
+      "vendor/jquery-ui/jquery-ui.js",
       "vendor/angular/angular.js",
-      "vendor/modernizr/modernizr.js",
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-resource/angular-resource.js",
@@ -42,17 +41,16 @@ module.exports = {
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-touch/angular-touch.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/ng-file-upload/dist/ng-file-upload-all.js",
-      "vendor/lodash/lodash.js",
+      "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
-      "vendor/underscore.string/lib/underscore.string.js",
-      "vendor/dompurify/purify.js",
+      "vendor/underscore/underscore.js",
+      "vendor/DOMPurify/dist/purify.min.js",
       "vendor/papaparse/papaparse.min.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
       "vendor/pikaday-angular/pikaday-angular.js",
-      "vendor/squire-rte/build/squire.js",
+      "vendor/Squire/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
       "vendor/angular-translate/angular-translate.js",
       "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
@@ -67,7 +65,8 @@ module.exports = {
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js"
+      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
+      "vendor/angular-ui-sortable/sortable.js"
     ],
     bootstrap_components: [
       "affix",
@@ -107,7 +106,8 @@ module.exports = {
 };
 
 vendor_files.js = vendor_files.js.concat(vendor_files.bootstrap_components.map(function (cmp){
-  return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
+  // return "vendor/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
+  return "vendor/bootstrap-sass/assets/javascripts/bootstrap.js"
 }));
 
 vendor_files.included_js = vendor_files.js.filter(function (file) {

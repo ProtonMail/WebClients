@@ -189,7 +189,7 @@ angular.module("proton.event", ["proton.constants"])
 					eventModel.promiseCancel = undefined;
 				}
 			}
-		});
+		}, 'start', 'call', 'stop');
 
 		return api;
 	});
