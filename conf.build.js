@@ -32,7 +32,7 @@ module.exports = {
   vendor_files: (vendor_files = {
     js: [
       "vendor/jquery/dist/jquery.js",
-      "vendor/jquery-ui/jquery-ui.js",
+      "vendor/jquery-ui/ui/jquery-ui.js",
       "vendor/angular/angular.js",
       "vendor/modernizr/modernizr.js",
       "vendor/autofill-event/src/autofill-event.js",
