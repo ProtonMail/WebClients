@@ -1,7 +1,6 @@
 angular.module('proton', [
     'cgNotify',
     'ngCookies',
-    'ngFileUpload',
     'ngIcal',
     'ngResource',
     'ngRoute',
