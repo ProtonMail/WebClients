@@ -423,8 +423,6 @@ angular.module("proton.cache", [])
                             api.callRefresh();
                         }
                     });
-                    // We return the messages cached waiting for the server to respond
-                    deferred.resolve(messages);
                 }
             } else {
                 callApi();
@@ -499,8 +497,6 @@ angular.module("proton.cache", [])
                             api.callRefresh();
                         }
                     });
-                    // We return the conversations cached waiting for the server to respond
-                    deferred.resolve(conversations);
                 }
             } else {
                 callApi();
