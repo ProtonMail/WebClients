@@ -43,7 +43,7 @@ module.exports = {
       "vendor/angular-touch/angular-touch.js",
       "vendor/angular-route/angular-route.js",
       "vendor/ng-file-upload/dist/ng-file-upload-all.js",
-      "vendor/lodash/dist/lodash.js",
+      "vendor/lodash/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore.string/lib/underscore.string.js",
       "vendor/dompurify/purify.js",

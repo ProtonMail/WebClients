@@ -357,22 +357,6 @@ module.exports = function(grunt) {
             }
         },
 
-        karma: {
-            options: {
-                configFile: "<%= build_dir %>/conf.unit.js",
-            },
-            watch: {
-                autoWatch: true,
-                background: true,
-                browsers: browsers()
-            },
-            once: {
-                singleRun: true,
-                browsers: ["PhantomJS"]
-            }
-        },
-
-
         testconfig: {
             unit: {
                 src: [
@@ -583,9 +567,7 @@ module.exports = function(grunt) {
         "ngconstant:dev",
         "build",
         "jshint",
-        "karma:watch:start",
         "connect:watch",
-        "forever:mock_server:start",
         "delta"
     ]);
 
