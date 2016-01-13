@@ -8,7 +8,7 @@
 		margin: 0 10px 0 0;
 		box-shadow: $box-shadow;
 		position: absolute;
-		padding-bottom: 60px;
+		padding-bottom: 51px;
 		right: 1rem;
 		bottom: 1rem;
 		z-index: 8888;
@@ -60,7 +60,7 @@
 				overflow: auto;
 			}
 			.attachmentBar {
-				bottom: 170px;
+				bottom: 163px;
 			}
 		}
 		.composeEditor {
@@ -155,7 +155,7 @@
 				overflow: hidden;
 				-webkit-overflow-scrolling: touch;
 				top: auto;
-				bottom: 60px;
+				bottom: 52px;
 			}
 			.attachmentBar {
 				bottom: 120px;
@@ -248,7 +248,7 @@
         	left: 0;
         	right: 0;
         	top: 40px;
-        	bottom: 60px;
+        	bottom: 52px;
         	padding: 2rem 10px;
         	box-sizing: border-box;
         	z-index: 99;
@@ -521,7 +521,7 @@
 		}
 		.attachmentBar {
 			position: absolute;
-			bottom: 60px;
+			bottom: 52px;
 			left: 0;
 			right: 0;
 			height: $composerRowHeight;
@@ -531,7 +531,7 @@
 			box-sizing: border-box;
 			z-index: 7;
 			border-top: 1px solid $border;
-			background: #fff;
+			background: $read;
 			i {
 				color: $primary;
 				font-style: normal;
@@ -553,7 +553,7 @@
 	        overflow: auto;
 	        -webkit-overflow-scrolling: touch;
 	        box-sizing: border-box;
-	        background: $white;
+	        background: $read;
 	        z-index: 9;
 	        .preview-close {
 	        	margin-left: .25rem;
@@ -569,6 +569,7 @@
 				margin: 0 10px 10px 0;
 				float: left;
 				text-transform: initial;
+				background: $white;
 			}
 		}
 		pre {
@@ -604,10 +605,17 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background: $white;
+			background: $read;
 			z-index: 5;
 			.pm_button {
 				padding: 0 1rem;
+				background: $white;
+				&.primary {
+					background: $primary;
+				}
+				&.disabled {
+					background: black;
+				}
 			}
 		}
 	}

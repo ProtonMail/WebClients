@@ -35,6 +35,7 @@
 			overflow: hidden;
 			background: $read;
 			margin-left: -6px;
+			max-width: 100%;
 			span.expiration {
 				position: absolute;
 				z-index: 5;

@@ -27,6 +27,8 @@ body, html {
 			background: $read;
 			box-shadow: inset 0 -1px $border;
 			position: relative;
+			max-width: 100%;
+			box-sizing: border-box;
 			label {
 				padding: 0 15px;
 				text-align: center;
