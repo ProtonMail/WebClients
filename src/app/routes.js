@@ -41,7 +41,11 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/login.tpl.html'
             }
         },
-        onEnter: function(authentication) {
+        onEnter: function(authentication, eventManager, cache) {
+            // Stop event manager request
+            eventManager.stop();
+            // Clear cache
+            cache.clear();
             // We automatically logout the user when he comes to login page
             authentication.logout(false);
         }

@@ -1,17 +1,20 @@
 angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
+    $cookies,
     $scope,
     $rootScope,
     $state,
     $stateParams,
+    $timeout,
     $translate,
+    $window,
     authentication,
     eventManager,
+    feedbackModal,
     cacheCounters,
     cache,
     CONSTANTS,
-    Stripe,
     tools
 ) {
     var format;
@@ -25,7 +28,7 @@ angular.module("proton.controllers.Secured", [])
 
     $rootScope.dateFormat = format;
     // Setting publishable key for Stripe
-    Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
     $rootScope.discarded = []; // Store ID of message discarded
@@ -62,6 +65,30 @@ angular.module("proton.controllers.Secured", [])
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
+    // ===================================
+    // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
+    $timeout( function() {
+
+        now = new Date();
+        exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
+
+        if(!$cookies.get('v3_feedback')) {
+            $cookies.put('v3_feedback', 'true', {
+                'expires': exp
+            });
+            // Open feedback modal
+            feedbackModal.activate({
+                params: {
+                    close: function() {
+                        feedbackModal.deactivate();
+                    }
+                }
+            });
+        }
+    }, 1 * 60 * 1000); // 2 mins
+    // END FEEDBACK
+    // ===================================
+
     /**
      * Returns a string for the storage bar
      * @return {String} "12.5"
@@ -69,6 +96,32 @@ angular.module("proton.controllers.Secured", [])
     $scope.storagePercentage = function() {
         if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
+        } else {
+            // TODO: error, undefined variables
+            return '';
+        }
+    };
+
+    /**
+     * Returns a string for the storage bar
+     * @return {String} "123/456 [MB/GB]"
+     */
+    $scope.storageUsed = function() {
+        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
+            var gb = 1073741824;
+            var mb = 1048576;
+            var units = (authentication.user.MaxSpace >= gb) ? 'GB' : 'MB';
+            var total = authentication.user.MaxSpace;
+            var used = authentication.user.UsedSpace;
+            if (units === 'GB') {
+                used = (used / gb);
+                total = (total / gb);
+            }
+            else {
+                used = (used / mb);
+                total = (total / mb);
+            }
+            return used.toFixed(1) + '/' + total + ' ' + units;
         } else {
             // TODO: error, undefined variables
             return '';
@@ -188,145 +241,5 @@ angular.module("proton.controllers.Secured", [])
         }
 
         $rootScope.pageName = name;
-    };
-})
-
-.run(function(
-    $rootScope,
-    $q,
-    $state,
-    $translate,
-    authentication,
-    Bug,
-    bugModal,
-    CONFIG,
-    networkActivityTracker,
-    notify,
-    tools
-) {
-    var screen;
-
-    /**
-     * Open report modal
-     */
-    $rootScope.openReportModal = function() {
-        console.log('openReportModal');
-        var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
-        var form = {
-            OS:             tools.getOs(),
-            OSVersion:      '',
-            Browser:         tools.getBrowser(),
-            BrowserVersion:  tools.getBrowserVersion(),
-            Client:         'Angular',
-            ClientVersion:  CONFIG.app_version,
-            Title:          '[Angular] Bug [' + $state.$current.name + ']',
-            Description:    '',
-            Username:        username,
-            Email:          ''
-        };
-
-        takeScreenshot().then(function() {
-            bugModal.activate({
-                params: {
-                    form: form,
-                    submit: function(form) {
-                        sendBugReport(form).then(function() {
-                            bugModal.deactivate();
-                        });
-                    },
-                    cancel: function() {
-                        bugModal.deactivate();
-                    }
-                }
-            });
-        });
-    };
-
-    var sendBugReport = function(form) {
-        var deferred = $q.defer();
-
-        function sendReport() {
-            var bugPromise = Bug.report(form);
-
-            bugPromise.then(
-                function(response) {
-                    if(response.data.Code === 1000) {
-                        deferred.resolve(response);
-                        notify({message: $translate.instant('BUG_REPORTED'), classes: 'notification-success'});
-                    } else if (angular.isDefined(response.data.Error)) {
-                        response.message = response.data.Error;
-                        deferred.reject(response);
-                    }
-                },
-                function(err) {
-                    error.message = 'Error during the sending request';
-                    deferred.reject(error);
-                }
-            );
-        }
-
-        if (form.attachScreenshot) {
-            uploadScreenshot(form).then(sendReport);
-        } else {
-            sendReport();
-        }
-
-        networkActivityTracker.track(deferred.promise);
-
-        return deferred.promise;
-    };
-
-    /**
-     *  Take a screenshot and store it
-     */
-    var takeScreenshot = function() {
-        var deferred = $q.defer();
-
-        if (html2canvas) {
-            html2canvas(document.body, {
-                onrendered: function(canvas) {
-                    try {
-                        screen = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
-                    } catch(e) {
-                        screen = canvas.toDataURL().split(',')[1];
-                    }
-
-                    deferred.resolve();
-                }
-            });
-        } else {
-            deferred.resolve();
-        }
-
-        return deferred.promise;
-    };
-
-    var uploadScreenshot = function(form) {
-        var deferred = $q.defer();
-
-        $.ajax({
-            url: 'https://api.imgur.com/3/image',
-            headers: {
-                'Authorization': 'Client-ID 864920c2f37d63f'
-            },
-            type: 'POST',
-            data: {
-                'image': screen
-            },
-            dataType: 'json',
-            success: function(response) {
-                if (response && response.data && response.data.link) {
-                    form.Description = form.Description+'\n\n\n\n'+response.data.link;
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-            },
-            error: function() {
-                deferred.reject();
-            }
-        });
-
-        return deferred.promise;
     };
 });

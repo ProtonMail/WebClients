@@ -1,6 +1,7 @@
 #attachmentArea {
 	position: relative;
 	padding: 1rem 40px 0;
+	background: $read;
 	border-bottom: 1px solid $border;
 	header {
 		height: 40px;
@@ -29,33 +30,33 @@
 		z-index: 1;
 	}
 
-.fa.fa-archive-o:before {
-    content: "\f187;";
-}
-.fa.fa-audio-o:before {
-    content: "\f1c7";
-}
-.fa.fa-code-o:before {
-    content: "\f1c9";
-}
-.fa.fa-excel-o:before {
-    content: "\f1c3";
-}
-.fa.fa-image-o:before {
-    content: "\f1c5";
-}
-.fa.fa-movie-o:before {
-    content: "\f1c8";
-}
-.fa.fa-pdf-o:before {
-    content: "\f1c1";
-}
-.fa.fa-powerpoint-o:before {
-    content: "\f1c4";
-}
-.fa.fa-word-o:before {
-    content: "\f1c2";
-}
+	.fa.fa-archive-o:before {
+	    content: "\f187;";
+	}
+	.fa.fa-audio-o:before {
+	    content: "\f1c7";
+	}
+	.fa.fa-code-o:before {
+	    content: "\f1c9";
+	}
+	.fa.fa-excel-o:before {
+	    content: "\f1c3";
+	}
+	.fa.fa-image-o:before {
+	    content: "\f1c5";
+	}
+	.fa.fa-movie-o:before {
+	    content: "\f1c8";
+	}
+	.fa.fa-pdf-o:before {
+	    content: "\f1c1";
+	}
+	.fa.fa-powerpoint-o:before {
+	    content: "\f1c4";
+	}
+	.fa.fa-word-o:before {
+	    content: "\f1c2";
+	}
 
 	section {
 		// overflow: auto;
@@ -71,6 +72,7 @@
 			white-space: nowrap;
 			margin: 5px 5px 0 0;
 			color: $gray;
+			background: #fff;
 			strong {
 				text-transform: initial;
 			}

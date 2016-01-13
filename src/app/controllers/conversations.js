@@ -44,21 +44,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.page = parseInt($stateParams.page || 1);
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
-        networkActivityTracker.track($scope.refreshConversations().then(function() {
+        $scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
-                // Manage preload of conversations or messages
-                // Andy doesn't want to apply this for the moment, it's too expensive for the back-end
-                // preloadConversation.set(newValue);
                 // Manage expiration time
                 expiration.check(newValue);
-                $rootScope.numberElementSelected = $scope.elementsSelected().length;
+                $scope.elementsSelected();
                 $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, function(error) {
             $log.error(error);
-        }));
+        });
 
         $scope.toolbarOffset();
         $rootScope.$watch('layoutMode', function() {
@@ -70,8 +67,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
         function getScrollBarWidth () {
             var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+
             widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
             $outer.remove();
+
             return 100 - widthWithScroll;
         }
         $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
@@ -230,7 +229,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         promise.then(function(elements) {
+            var page = $stateParams.page || 0;
+
             $scope.conversations = elements;
+
+            if($scope.conversations.length === 0 && page > 0) {
+                $scope.back();
+            }
+
             deferred.resolve(elements);
         }, function(error) {
             notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
@@ -250,7 +256,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.active = function(element) {
-        if(angular.isDefined($state.params.id)) {
+        if($rootScope.numberElementChecked === 0 && angular.isDefined($state.params.id)) {
             return $state.params.id === element.ConversationID || $state.params.id === element.ID;
         } else {
             return false;
@@ -324,7 +330,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.allSelected = function() {
         if ($scope.conversations && $scope.conversations.length > 0) {
-            return $scope.conversations.length === $scope.elementsSelected().length;
+            return $scope.conversations.length === $rootScope.numberElementChecked;
         } else {
             return false;
         }
@@ -347,8 +353,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Select all elements
      */
     $scope.selectAllElements = function() {
-        _.each($scope.conversations, function(conversation) {
-            conversation.Selected = true;
+        _.each($scope.conversations, function(element) {
+            element.Selected = true;
         });
     };
 
@@ -356,8 +362,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Unselect all elements
      */
     $scope.unselectAllElements = function() {
-        _.each($scope.conversations, function(conversations) {
-            conversations.Selected = false;
+        _.each($scope.conversations, function(element) {
+            element.Selected = false;
         });
     };
 
@@ -369,6 +375,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var elements = _.where($scope.conversations, {Selected: true});
         var conversationID = $state.params.id;
 
+        $rootScope.numberElementChecked = elements.length;
+
         if(elements.length === 0 && angular.isDefined(conversationID)) {
             var type = tools.typeList();
 
@@ -378,6 +386,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 elements = _.where($scope.conversations, {ID: conversationID});
             }
         }
+
+        $rootScope.numberElementSelected = elements.length;
 
         return elements;
     };
@@ -415,6 +425,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             action.unreadConversation(ids);
         } else if(type === 'message') {
             action.unreadMessage(ids);
+        }
+
+        if(angular.isDefined($state.params.id)) {
+            $scope.back();
         }
     };
 
@@ -471,7 +485,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox, {
-            id: null // remove ID
+            id: null, // remove ID
+            page: null // remove page (= 0)
         });
     };
 
@@ -634,7 +649,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.targetID = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.view', { id: id }, {reload: id === $state.params.id});
+        $state.go('secured.' + $scope.mailbox + '.view', { id: id });
+
+        if(id === $state.params.id) {
+            $rootScope.$broadcast('initMessage', element.ID);
+        }
     };
 
     /**
@@ -657,28 +676,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             lastChecked = conversation;
         }
-    };
-
-    /**
-     * Swipe gesture for a message
-     * @param {Object} event
-     * @param {Object} conversation
-     */
-    $scope.swipeLeft = function(conversation) {
-        console.log(conversation);
-        conversation.dumpstered = true;
-        // PANDA!
-    };
-
-    /**
-     * Swipe gesture for a message
-     * @param {Object} event
-     * @param {Object} conversation
-     */
-    $scope.swipeRight = function(conversation) {
-        console.log(conversation);
-        conversation.spamified = true;
-        // PANDA!
     };
 
     /**

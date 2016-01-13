@@ -1,4 +1,8 @@
+// global variables
 @import "variables";
+
+// other themes
+@import "high-contrast.scss";
 
 // Fonts
 @import "fonts.scss";
@@ -39,6 +43,8 @@
 @import "scrollbars.scss";
 @import "latest.scss";
 @import "autocomplete.scss";
+@import "feedback.scss";
+
 // @import "print.scss";
 
 // Global Classes
@@ -64,3 +70,5 @@
 // Dark Sidebar Theme
 @import "theme-dark.scss"; // enabled
 @import "theme-jason.scss";
+@import "short.scss";
+@import "shadow.scss";

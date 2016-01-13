@@ -11,6 +11,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
+    action,
     Attachment,
     attachments,
     authentication,
@@ -85,10 +86,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     // Listeners
     $scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
+            $rootScope.activeComposer = true;
             window.onbeforeunload = function() {
                 return $translate.instant('MESSAGE_LEAVE_WARNING');
             };
         } else {
+            $rootScope.activeComposer = false;
             window.onbeforeunload = undefined;
         }
     });
@@ -159,12 +162,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    function onResize() {
-        clearTimeout(timeoutStyle);
+    $scope.$on('editorFocussed', function(event, element, editor) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
 
-        timeoutStyle = setTimeout(function() {
+        if(message.editor === editor) {
+            $scope.focusComposer(message);
+        }
+    });
+
+    function onResize() {
+        $timeout.cancel(timeoutStyle);
+
+        timeoutStyle = $timeout(function() {
             $scope.composerStyle();
-        }, 250);
+        }, 50);
     }
 
     function onDragOver(event) {
@@ -489,8 +502,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
-        $rootScope.activeComposer = true;
-
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;
@@ -609,35 +620,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             $(composer).css(styles);
 
-            setTimeout(function() {
-                $(composer).find('.angular-squire').css($scope.editorStyle(message));
-            });
         });
     };
 
     $scope.editorStyle = function(message) {
-        var styles = {};
-        var composer = $('.composer:visible');
 
-        if (message.maximized === true) {
-            var composerHeight = composer.outerHeight();
-            var composerHeader = composer.find('.composer-header').outerHeight();
-            var composerFooter = composer.find('.composer-footer').outerHeight();
-            var composerMeta = composer.find('.composerMeta').outerHeight();
-
-            styles.height = composerHeight - (composerHeader + composerFooter + composerFooter + composerMeta);
-        } else {
-            var bcc = composer.find('.bcc-container').outerHeight();
-            var cc = composer.find('.cc-container').outerHeight();
-            var preview = composer.find('.previews').outerHeight();
-            var height = 300 - bcc - cc - preview;
-
-            height = (height < 130) ? 130 : height;
-
-            styles.height = height + 'px';
-        }
-
-        return styles;
     };
 
     $scope.completedSignature = function(message) {
@@ -667,9 +654,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
-                        $(element).css('z-index', ($scope.messages.length + (iteratee - index))*10);
+                        $(element).css('z-index', ($scope.messages.length + (iteratee - index))*100);
                     } else {
-                        $(element).css('z-index', ($scope.messages.length)*10);
+                        $(element).css('z-index', ($scope.messages.length)*100);
                     }
                 });
 
@@ -692,9 +679,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             } else {
                 _.each($scope.messages, function(element, iteratee) {
                     if (iteratee > index) {
-                        element.zIndex = ($scope.messages.length - (iteratee - index))*10;
+                        element.zIndex = ($scope.messages.length - (iteratee - index))*100;
                     } else {
-                        element.zIndex = ($scope.messages.length)*10;
+                        element.zIndex = ($scope.messages.length)*100;
                     }
                 });
             }
@@ -760,15 +747,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.attHide = function(message) {
         message.attachmentsToggle = false;
+        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !message.ccbcc;
-        $rootScope.$broadcast('squireHeightChanged');
         $scope.composerStyle();
     };
 
@@ -1042,10 +1030,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                 if(angular.isDefined(message.ID)) {
                     draftPromise = Message.updateDraft(parameters).$promise;
-                    action = UPDATE;
+                    actionType = UPDATE;
                 } else {
                     draftPromise = Message.createDraft(parameters).$promise;
-                    action = CREATE;
+                    actionType = CREATE;
                 }
 
                 // Save draft before to send
@@ -1064,6 +1052,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         if(angular.isArray(result.Message.Attachments)) {
+                            result.Message.HasAttachment = (result.Message.Attachments.length > 0)?1:0;
                             result.Message.NumAttachments = result.Message.Attachments.length;
                         }
 
@@ -1073,17 +1062,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         $scope.saveOld(message);
 
                         // Update draft in message list
-                        events.push({Action: action, ID: result.Message.ID, Message: result.Message});
+                        events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
                         // Generate conversation event
                         if(angular.isDefined(conversation)) {
-                            if(action === CREATE) {
+                            if(actionType === CREATE) {
                                 conversation.NumMessages++;
                             }
 
                             if(angular.isArray(result.Message.Attachments)) {
                                 conversation.NumAttachments = result.Message.Attachments.length;
                             }
+
+                            conversation.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
 
                             events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                         }
@@ -1126,6 +1117,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             return deferred.promise;
         }
     };
+
+    /**
+     * Return the subject title of the composer
+     */
+     $scope.subject = function(message) {
+        return message.Subject || $translate.instant('NEW_MESSAGE');
+     };
 
     /**
      * Check if the subject of this message is empty
@@ -1260,7 +1258,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             deferred.reject(new Error(result.Error));
                                         } else {
                                             var events = [];
-                                            var messages = cache.queryMessagesCached(result.Sent.ConversationID);
 
                                             message.sending = false; // Change status
                                             result.Sent.expand = undefined; // Trick to ask the front-end to open the message sent
@@ -1268,6 +1265,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                             result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
                                             result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
+                                            result.Sent.HasAttachment = (result.Sent.Attachments.length > 0)?1:0;
+                                            result.Sent.NumAttachments = result.Sent.Attachments.length;
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
                                             if(result.Parent) {
@@ -1316,7 +1315,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.minimize = function(message) {
-        $rootScope.activeComposer = false;
         message.minimized = true;
         message.previousMaximized = message.maximized;
         message.maximized = false;
@@ -1327,7 +1325,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.unminimize = function(message) {
-        $rootScope.activeComposer = true;
         message.minimized = false;
         message.maximized = message.previousMaximized;
         // Hide all the tooltip
@@ -1336,7 +1333,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.maximize = function(message) {
-        $rootScope.activeComposer = true;
         message.maximized = true;
         $rootScope.maximizedComposer = true;
         $rootScope.$broadcast('composerModeChange');
@@ -1378,7 +1374,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
         var messageFocussed = !!message.focussed;
-        var id = message.ID;
+
+        if(discard === true && angular.isDefined(message.ID)) {
+            $scope.discard(message);
+        }
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
@@ -1394,10 +1393,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
-
-        if(discard === true && angular.isDefined(id)) {
-            $scope.discard(message);
-        }
 
         // Message closed and focussed?
         if(messageFocussed && $scope.messages.length > 0) {
@@ -1416,32 +1411,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @return {Promise}
      */
     $scope.discard = function(message) {
-        var events = [];
-        var conversation = cache.getConversationCached(message.ConversationID);
-
-        // Store ID of message discarded
-        $rootScope.discarded.push(message.ID);
-
-        // Generate message event to delete the message
-        events.push({Action: 0, ID: message.ID});
-
-        // Generate conversation event
-        if(angular.isDefined(conversation)) {
-            if(conversation.NumMessages === 1) {
-                // Delete conversation
-                events.push({Action: 0, ID: conversation.ID, Conversation: conversation});
-            } else if(conversation.NumMessages > 1) {
-                // Decrease the number of message
-                conversation.NumMessages--;
-                events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-            }
-        }
-
-        // Send events
-        cache.events(events);
-
-        // Send request
-        Message.delete({IDs: [message.ID]});
+        action.discardMessage(message);
 
         // Notification
         notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
@@ -1455,10 +1425,35 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.recipients = function(message) {
         var recipients = [];
 
-        recipients = recipients.concat(_.map(message.ToList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = recipients.concat(_.map(message.CCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = recipients.concat(_.map(message.BCCList, function(contact) { return $filter('contact')(contact, 'Name'); }));
-        recipients = _.uniq(recipients);
+        if(message.ToList.length > 0) {
+            recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('TO') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
+
+        if(message.CCList.length > 0) {
+            recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('CC') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
+
+        if(message.BCCList.length > 0) {
+            recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
+                if(index === 0) {
+                    return $translate.instant('BCC') + ': ' + $filter('contact')(contact, 'Name');
+                } else {
+                    return $filter('contact')(contact, 'Name');
+                }
+            }));
+        }
 
         return recipients.join(', ');
     };

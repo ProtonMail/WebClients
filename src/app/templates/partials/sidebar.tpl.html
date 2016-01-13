@@ -3,6 +3,7 @@
     <a href="" class="compose pm_button primary" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
     </a>
+
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
             <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
@@ -23,7 +24,7 @@
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
             <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
-                <i class="fa fa-sign-out"></i>
+                <i class="fa fa-send"></i>
                 <span>{{ 'SENT' | translate }}</span>
             </a>
         </li>
@@ -60,6 +61,7 @@
             </a>
         </li>
     </ul>
+
     <ul class="menu" id="labelSettings">
         <li>
             <a href="" ui-sref="secured.labels">
@@ -68,19 +70,23 @@
             </a>
         </li>
     </ul>
-    <div id="sidebarLabels" ng-label-height>
-        <div class="labels">
-            <ul>
-                <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-                    <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
-                        <i class="fa fa-tag" ng-style="color(label)"></i>
-                        <span>{{ label.Name }}</span>
-                        <em ng-bind="unread('label', label.ID)"></em>
-                    </a>
-                </li>
-            </ul>
+
+    <scrollbar name="scrollbarName" ng-label-height>
+        <div id="sidebarLabels">
+            <div class="labels">
+                <ul>
+                    <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+                        <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
+                            <i class="fa fa-tag" ng-style="color(label)"></i>
+                            <span>{{ label.Name }}</span>
+                            <em ng-bind="unread('label', label.ID)"></em>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </scrollbar>
+
     <div class="footer">
         <div class="wrap">
             <div class="link" ng-show="user.Role === 0 || user.Role === 2">
@@ -92,14 +98,15 @@
                 <em style="width: {{ storagePercentage() }}%"></em>
             </div>
             <div class="storage">
-                <strong class="pull-right">{{ storagePercentage() }}%</strong>
+                <strong class="pull-right">{{ storageUsed() }}</strong>
                 <i class="fa fa-hdd-o"></i> {{ 'STORAGE' | translate }}:
             </div>
         </div>
-        <a class="version" href="https://blog.protonmail.com/category/release-notes/" title="{{ dateVersion }}" target="_blank">
+        <a class="version" title="{{ dateVersion }}" target="_blank">
             ProtonMail {{ appVersion }}
         </a>
     </div>
+
 </section>
 
 <ng-include src="'templates/partials/sidebar-responsive.tpl.html'"></ng-include>

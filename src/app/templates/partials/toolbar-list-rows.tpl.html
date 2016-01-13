@@ -16,10 +16,11 @@
             <a href="" class="fa fa-eye-slash divider" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-            <a href="" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-click="move('trash')" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>
+            <a href="" pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>
             <a href="" pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}" ng-click="move('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-inbox divider"></a>
             <a href="" pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}" ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-archive divider"></a>
             <a href="" pt-tooltip="{{ 'MOVE_TO_SPAM' | translate }}" ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-ban divider"></a>
+            <a href="" pt-tooltip="{{ 'DELETE' | translate }}" ng-click="delete()" ng-show="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle-o divider"></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a href="" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
@@ -77,7 +78,9 @@
                 <a href="" ng-click="filterBy('read')">
                     <i class="fa fa-eye"></i> {{ 'SHOW_READ' | translate }}
                 </a>
+            </span>
         </span>
+
     </div>
     <div class="clear"></div>
 </nav>

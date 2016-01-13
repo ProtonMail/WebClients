@@ -78,52 +78,25 @@
 	position: fixed;
 	left: 50%;
 	top: -50px;
-	margin-left: -70px;
-	width: 140px;
-	line-height: 40px;
-	height: 40px;
+	margin-left: -($pm_loading / 2);
+	width: $pm_loading;
+	line-height: $pm_loading;
+	height: $pm_loading;
 	z-index: 9999;
-	background: $primary;
-	color: #fff;
+	background: $white;
 	text-align: center;
 	opacity: 0;
+	border-radius: $pm_loading;
+	box-shadow: $box-shadow;
 	transition: top .5s ease-in-out, opacity .5s linear;	
+	img {
+		display: block;
+		float: left;
+	}
 	&.show {
-		top: 0;
+		top: 35px;
 		opacity: 1;
 		transition: top .5s ease-in-out, opacity .5s linear;
-	}
-	.spinner {
-	    position: absolute;
-	    top: 0;
-	    left: 50%;
-	    margin-left: -35px;
-	    width: 70px;
-	    opacity: 1;
-	    z-index: 3333;
-	    text-align: center;
-	    height: 40px;
-	    line-height: 40px;
-	    & > div {
-		    width: 10px;
-		    height: 10px;
-		    margin: 15px 2px;
-		    background-color: #fff;
-		    border-radius: 100%;
-		    display: inline-block;
-		    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-		    animation: bouncedelay 1.4s infinite ease-in-out;
-		    -webkit-animation-fill-mode: both;
-		    animation-fill-mode: both;
-		}
-		.bounce1 {
-		    -webkit-animation-delay: -.32s;
-		    animation-delay: -.32s;
-		}
-		.bounce2 {
-		    -webkit-animation-delay: -.16s;
-		    animation-delay: -.16s;
-		}
 	}
 }
 

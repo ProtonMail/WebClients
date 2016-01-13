@@ -22,7 +22,6 @@
     "angular-dragdrop": "~1.0.12",
     "angular-drop": "~0.0.1",
     "angular-ical": "~1.1.0",
-    "angular-ical": "~1.1.0",
     "angular-loader": "~1.4.8",
     "angular-mocks": "~1.4.8",
     "angular-notify": "~2.5.0",
@@ -34,7 +33,7 @@
     "angular-translate-loader-static-files": "~2.7.0",
     "angular-translate-storage-local": "~2.7.0",
     "angular-translate": "~2.7.0",
-    "angular-ui-router": "~0.2.0",
+    "angular-ui-router": "~0.2.15",
     "angular": "~1.4.8",
     "autofill-event": "https://github.com/tbosch/autofill-event.git",
     "bootstrap-sass-official": "https://github.com/ProtonMail/bootstrap-sass.git",
@@ -46,13 +45,11 @@
     "dropzone": "~4.0.1",
     "es6-promise": "https://github.com/jakearchibald/es6-promise.git",
     "fastclick": "~1.0.6",
-    "fastclick": "~1.0.6",
     "html2canvas": "~0.4.1",
-    "ical.js": "~1.1.2",
     "ical.js": "~1.1.2",
     "jquery-ui": "~1.10.0",
     "jquery": "https://github.com/jquery/jquery.git",
-    "lodash": "~2.4.1",
+    "lodash": "~3.0.0",
     "mellt": "https://github.com/ProtonMail/Mellt.git",
     "modernizr": "~2.8.3",
     "moment": "~2.6.0",
@@ -65,7 +62,9 @@
     "squire-rte": "https://github.com/ProtonMail/Squire.git#master",
     "svg4everybody": "~2.0.0",
     "underscore.string": "~2.3.3",
-    "vcard": "https://github.com/ProtonMail/vcard.git#master"
+    "vcard": "https://github.com/ProtonMail/vcard.git#master",
+    "angular-smooth-scrollbar": "~2.1.0",
+    "ngSmoothScroll": "~2.0.0"
   },
   "resolutions": {
     "angular": "~1.4.x"

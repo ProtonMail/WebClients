@@ -37,7 +37,7 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track(
             Logs.getLogs().then(
                 function(response) {
-                    $scope.logs = _.sortBy(response.data.Logs, 'Time');
+                    $scope.logs = _.sortBy(response.data.Logs, '-Time');
                     $scope.logCount = $scope.logs.length;
                     $scope.currentLogPage = 1;
                 },
@@ -106,6 +106,7 @@ angular.module("proton.controllers.Settings")
                     message: 'This will delete all access logs, do you want to continue?', // TODO translate
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
+                        $scope.doLogging = 0;
                         authentication.user.LogAuth = 0;
                         notify({message: 'Logging Preference Updated', classes: 'notification-success'});
                         confirmModal.deactivate();

@@ -1,26 +1,4 @@
 #pm_conversations.columns {
-	#nothingToSeeHere {
-		vertical-align: middle;
-		text-align: center;
-		width: 100%;
-		height: 90%;
-		.fa {
-			font-size: 3rem;
-			display: block;
-			color: $border;
-		}
-		span {
-			display: block;
-			color: $border;
-			text-transform: uppercase;
-			margin-bottom: 1rem;
-		}
-		h3 {
-			font-size: 2rem;
-			color: $border;
-			font-weight: 400;
-		}
-	}
 	#pm_toolbar {
 		position: absolute;
 		left: 0;
@@ -30,7 +8,7 @@
 		border-bottom: 1px solid $border;
 	}
 	.list {
-		width: 520px;
+		width: 50%;
 		min-width: 520px;
 		box-sizing: border-box;
 		-webkit-overflow-scrolling: touch;
@@ -105,6 +83,9 @@
 				background: $alt;
 				header {
 					color: #fff;
+					p {
+						color: #fff;
+					}
 					span {
 						color: #fff;
 						&.time {
@@ -240,8 +221,13 @@
 				}
 				label {
 					position: relative;
-					top: -1px;
+					top: -13px;
+				    text-align: left;
+				    display: block;
+				    padding: 10px;
+				    left: -10px;
 					text-align: left;
+					cursor: pointer;
 					input {
 						margin-left: 0;
 					}
@@ -274,7 +260,7 @@
 					padding-right: 15px;
 					box-sizing: border-box;
 					right: 0;
-					top: 12px;
+					top: 10px;
 					z-index: 3;
 					background: $read;
 					width: 6rem;
@@ -305,7 +291,7 @@
 				.pm_labels {
 					position: absolute;
 					right: 25px;
-					bottom: 12px;
+					bottom: 10px;
 					margin-right: -20px;
 					.pm_label {
 						box-shadow: 0 0 0 4px $read;
@@ -371,3 +357,4 @@
 	}
 
 }
+

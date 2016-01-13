@@ -1,7 +1,7 @@
 #pm_conversations #pm_view > header {
     position: relative;
-    padding-right: 25px;
-    padding-left: 40px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     .singleStar {
         position: absolute;
         right: 15px;
@@ -34,12 +34,18 @@
     	display: block;
 		min-height: 35px;
 		box-sizing: border-box;
-		border-bottom: 1px solid $border;
         clear: both;
         .pm_buttons {
             float: right;
             margin-top: 10px;
             margin-right: 10px;
+            &.starButton {
+                border: none;
+                margin-right: 0;
+                a {
+                    background: transparent !important;
+                }
+            }
             a {
                 box-sizing: border-box;
                 i {
@@ -90,7 +96,9 @@
     }
     article.message {
     	clear: both;
-    	border-bottom: 1px solid $border;
+    	border: 1px solid $border;
+        margin: 0 1rem .5rem;
+        border-radius: 2px;
         .toggleDetails {
             color: $primary;
             cursor: pointer;
@@ -98,6 +106,46 @@
             padding: 10px 0;
             font-weight: 700;
             margin-bottom: -1rem;
+        }
+        .display-image {
+            position: absolute;
+            left: 0;
+            bottom: -2rem;
+            right: 0;
+            display: block;
+            border-width: 1px 0;
+            border-radius: 0;
+            width: 100%;
+            float: none;
+            text-align: center;
+            clear: both;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 0;
+            background: $read;
+            box-shadow: 0 1px 0 $read;
+            z-index: 9;
+            a {
+                display: block;
+                text-decoration: none;
+                text-transform: initial;
+            }
+        } 
+        .exp-block {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 2rem;
+            line-height: 2rem;
+            overflow: hidden;
+            display: block;
+            margin: 0;
+            background: $exp;
+            color: #fff;
+            text-align: center;
+            z-index: 11;
+            box-shadow: 0 1px 0 $exp;
         }
         .where,
         .contact {
@@ -140,11 +188,8 @@
                 }
                 .contact {
                     display: block;
-                }
+                } 
             }
-        }
-        &.open.last {
-            border-bottom: none;
         }
         &.open {
             background: #fff;
@@ -154,9 +199,18 @@
             .where {
                 display: inline-block;
             }
+            header,
+            .sub {
+                background: $read; 
+            }
+            .sub {
+                border-bottom: 1px solid $border;
+            }
             header {
                 margin-bottom: -10px;
                 padding-top: 20px;
+                float: left;
+                width: 100%;
                 .contact {
                     strong {
                         font-weight: 700;
@@ -182,7 +236,7 @@
                         line-height: 18px;
                         text-transform: uppercase;
                         box-shadow: none !important;
-                        background: #fff !important;
+                        background: transparent !important;
                         .fa {
                             height: 18px;
                             line-height: 18px;
@@ -193,11 +247,11 @@
                     }
                 }
                 .pm_labels {
-                    background: $white;
+                    background: $read;
                     right: 1rem;
                     .pm_label {
-                        box-shadow: 0 0 0 4px $white !important;
-                        background: $white !important;
+                        box-shadow: 0 0 0 4px $read !important;
+                        background: $read !important;
                         padding-right: calc(.15rem + 1rem);
                         position: relative;
                         right: initial !important;
@@ -252,6 +306,9 @@
                     font-weight: 700;
                 }
             }
+            .contact strong {
+                font-weight: 700;
+            }
         }
         &.read {
             span.person {
@@ -259,10 +316,10 @@
                     // color: #999
                 }
             }
-        }
+        }      
     	header {
     		font-size: 15px;
-    		padding: 10px 40px;
+    		padding: 10px 40px 10px 15px;
     		line-height: 20px;
     		box-sizing: border-box;
             cursor: pointer;
@@ -290,14 +347,11 @@
     			text-align: right;
     		}
             .history {
-                position: absolute;
-                left: 0;
-                width: 40px;
-                text-align: center;
-                top: 0;
-                line-height: 40px;
-                display: block;
-                height: 40px;
+                width: 25px;
+                line-height: 20px;
+                display: inline-block;
+                height: 20px;
+                float: left;
             }
             span.expiration {
                 position: absolute;
@@ -343,7 +397,7 @@
             // margin-left: 40px;
             // margin-right: 40px;
             padding-left: 40px;
-            padding-right: 175px;
+            padding-right: 185px;
 			// padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
@@ -351,9 +405,14 @@
 			line-height: 20px;
 			clear: both;
 			box-sizing: border-box;
-            box-shadow: 0 1px 0 0 $border;
             min-height: 55px;
             padding-bottom: 20px;
+            &.images {
+                margin-bottom: 2rem;
+            }
+            &.expiring {
+                padding-bottom: 2.5rem;
+            }
 			.data {
                 float: left;
                 width: 100%;
@@ -361,35 +420,12 @@
                 .where {
                     display: inline-block;
                 }
-                .display-image {
-                    position: absolute;
-                    left: 50%;
-                    bottom: -1px;
-                    margin: 0 0 0 -5rem;
-                    width: 10rem;
-                    border-radius: 4px 4px 0 0;
-                    border-bottom-color: #fff;
-                    background: #fff;
-                    box-sizing: initial;
-                    -webkit-transition: padding .1s ease;
-                       -moz-transition: padding .1s ease;
-                        -ms-transition: padding .1s ease;
-                         -o-transition: padding .1s ease;
-                            transition: padding .1s ease;
-                    &:hover {
-                        background: #fff;
-                        padding-top: 4px;
-                    }
-                    a {
-                        background-color: #fff !important;
-                    }
-                }
 			}
     		.actions {
 				text-align: right;
 				padding: 0;
 				position: absolute;
-				right: 40px; 
+				right: 40px;
 				top: 10px;
 				z-index: 2;
 				width: 145px;
@@ -427,9 +463,7 @@
             margin-left: 40px;
             margin-right: 40px;
             margin-top: 1rem;
-            & > div > div:nth-child(2) {
-                padding: calc(15px + 1.5rem);
-            }
+            margin-bottom: 1rem;
             .more {
                 line-height: 1rem;
                 height: 1rem;
@@ -450,7 +484,6 @@
     		}
 			.display-image {
 				text-transform: uppercase;
-				border: 1px solid $border;
                 border-radius: 2px;
                 width: 100%;
 				a {
@@ -550,6 +583,15 @@
                     font-weight: 700;
                 }
             }
+        }
+    }
+    #pm_view article.message {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        &.open header,
+        &.open .sub {
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
 }

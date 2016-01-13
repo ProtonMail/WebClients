@@ -74,6 +74,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                                     authentication.user.Labels.push(data.Label);
                                     cacheCounters.add(data.Label.ID);
                                     labelModal.deactivate();
+                                    $rootScope.$broadcast('updateLabels');
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
                                 } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});

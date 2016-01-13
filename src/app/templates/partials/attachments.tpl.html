@@ -1,6 +1,7 @@
 <div ng-if="message.Attachments.length > 0" id="attachmentArea">
     <header>
         <span class="title">
+            <i class="fa fa-paperclip"></i> 
             {{ message.Attachments.length }}
             <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
             <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>

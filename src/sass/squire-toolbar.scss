@@ -12,7 +12,7 @@
 	height: $composerRowHeight;
 	line-height: $composerRowHeight;
 	border: 1px solid $border;
-	background-color: #fafafa;
+	background-color: $read;
 	border-width: 0 0 1px 0;
 	li {
 		display: block;
@@ -60,7 +60,7 @@
         line-height: $inputHeight;
         border: 1px solid #e1e1ef;
         box-sizing: border-box;
-        color: #555;
+        color: $text;
         display: block;
         width: 100%;
         font-size: 1em;

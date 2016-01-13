@@ -2,13 +2,16 @@ angular.module('proton', [
     'cgNotify',
     'ngCookies',
     'ngFileUpload',
+    'ngIcal',
     'ngResource',
+    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
     'pikaday',
+    'SmoothScrollbar',
+    'ui.router',
     'ui.sortable',
-    'ngIcal',
 
     // Constant
     'proton.constants',
@@ -77,6 +80,7 @@ angular.module('proton', [
     'proton.tooltip',
     'proton.transformation',
     'proton.maxComposerHeight',
+    'proton.advSearch',
 
     // Filters
     'proton.filters',
@@ -221,6 +225,7 @@ angular.module('proton', [
 
     // Less than 1024 / Tablet Mode
     $rootScope.$on('sidebarMobileToggle', function() {
+        console.log('sidebarMobileToggle');
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
@@ -436,7 +441,6 @@ angular.module('proton', [
         }
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-
     });
 })
 

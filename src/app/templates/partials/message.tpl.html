@@ -12,30 +12,34 @@ ng-class="{
     <header ng-click="toggle()">
         <span class="meta">
             <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
+            <i class="fa fa-send" ng-show="sent() === true" pt-tooltip="{{ 'IN_SENT' | translate }}"></i>
+            <i class="fa fa-archive" ng-show="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+            <i class="fa fa-file-text-o" ng-show="draft() === true" pt-tooltip="{{ 'IN_DRAFTS' | translate }}"></i>
+            <i class="fa fa-trash-o" ng-show="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+            <i class="fa fa-ban" ng-show="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
             <a href ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
             <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
+        <i class="history fa fa-placeholder" ng-hide="message.IsReplied === 1 || message.IsRepliedAll === 1 || message.IsForwarded === 1"></i>
         <i class="history fa fa-reply" ng-show="message.IsReplied === 1"></i>
         <i class="history fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
         <i class="history fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
-            <em ng-show="toggleDetails === true" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
+            <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
         <a ng-show="message.expand === true" href class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-        <em class="pm_tag" ng-show="sent() === true">{{ 'SENT' | translate }}</em>
-        <em class="pm_tag" ng-show="draft() === true">{{ 'DRAFT' | translate }}</em>
-        <em class="pm_tag" ng-show="trash() === true">{{ 'TRASH' | translate }}</em>
-        <em class="pm_tag" ng-show="spam() === true">{{ 'SPAM' | translate }}</em>
+        <i class="pm_tag" ng-show="message.Type === 1">{{ 'DRAFT' | translate }}</i>
+        <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
         <span class="pm_labels" ng-if="message.labels().length > 0">
-            <span ng-repeat="label in message.labels()" title="{{ label.Name }}" class="pm_label" ng-style="getColorLabel(label)" ng-click="goToLabel(label)">
-                <em>{{ getLabel(label.ID).Name }}</em>
-                <i>{{ getLabel(label.ID).Name | limitTo: 3 }}</i>
-                <a href="" ng-click="detachLabel(label); $event.stopPropagation();" class="labelClose">
+            <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                <em>{{ getLabel(labelID).Name }}</em>
+                <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                <a href="" ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
                     <i class="fa fa-times"></i>
                 </a>
             </span>
@@ -48,9 +52,9 @@ ng-class="{
                 <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
             </span>
         </span><!-- this needs to re-be styled -->
-        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
+        <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
-    <div class="sub" ng-show="message.expand === true">
+    <div class="sub" ng-show="message.expand === true" ng-class="{ 'images': !!message.imagesHidden, 'expiring': (message.ExpirationTime > 0) }">
         <div class="actions">
             <span class="pm_buttons">
                 <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
@@ -66,7 +70,7 @@ ng-class="{
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
-                    <a href="" ng-click="move('inbox')" ng-show="'secured.trash.**' | includedByState">
+                    <a href="" ng-click="move('inbox')" ng-hide="'secured.inbox.**' | includedByState">
                         <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
                     </a>
                     <a href="" ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState">
@@ -143,19 +147,19 @@ ng-class="{
             </table>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
-            <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
-                <a href="" ng-click="displayImages()">{{ 'DISPLAY_IMAGES' | translate }}</a>
-            </p>
         </div><!--/.data-->
+        <p ng-if="message.ExpirationTime > 0" class="text-red exp-block">
+            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
+        </p>
+        <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
+            <a href="" ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
+        </p>
         <div class="clear"></div>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
-        <p ng-if="message.ExpirationTime > 0" class="text-red">
-            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN'}} <span time="{{ message.ExpirationTime }}"></span>
-        </p>
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
-        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links="{{ message.decryptedBody }}" hide-first-blockquote="{{ message.decryptedBody }}"></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>

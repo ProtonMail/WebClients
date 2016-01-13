@@ -6,10 +6,6 @@
   "name": "protonmail-web",
   "author": "ProtonMail, Inc.",
   "description": "Angular frontend for protonmail.com",
-  "engines": {
-    "node": "0.12.2",
-    "npm": "2.9.1"
-  },
   "devDependencies": {
     "bower": "^1.7.2",
     "findup-sync": "^0.3.0",
@@ -29,13 +25,11 @@
     "grunt-forever": "^0.4.4",
     "grunt-git": "^0.2.14",
     "grunt-html2js": "^0.2.8",
-    "grunt-karma": "^0.11.0",
     "grunt-ng-annotate": "^0.3.0",
     "grunt-ng-constant": "~1.1.0",
     "grunt-notify": "~0.4.1",
     "grunt-sass": "^1.1.0",
     "grunt-shell": "^1.1.1",
-    "grunt-uncss": "^0.4.3",
     "grunt-wait": "^0.1.0",
     "http-proxy": "^1.2.0",
     "jshint": "^2.5.2",
@@ -44,8 +38,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install --allow-root --config.interactive=false",
+    "postinstall": "bower install",
     "test": "grunt compile",
-    "start": "grunt watch --prod"
+    "start": "grunt watch --dev"
   }
 }

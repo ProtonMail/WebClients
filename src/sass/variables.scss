@@ -3,22 +3,23 @@ $sidebarMobWidth: 	220px;
 $sidebarRowHeight:	35px;
 $headerHeight: 		61px;
 $toolbarHeight: 	63px;
-$rowHeight: 		40px;
-$composerRowHeight: 40px;
+$rowHeight: 		36px;
+$composerRowHeight: 32px;
 $inputHeight: 		32px;
 $toggleWidth: 		8rem;
 $short: 			700px;
 $panel:				400px;
-
+$pm_loading: 		50px;
 $maxHeight: auto; // was 40rem
+$box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.25);
 
 // Theme Colors
-$primary: 			#9397cd;
+$primary: 			darken(#9397cd, 5%);
 $secondary: 		#505061;
 $secondary-alt:		#6e6f80;
 $alert-info: 		#e6e6f2;
 $readBubble: 		#a8d24c;
-$border: 			#dcdcdc;
+$border: 			darken(#dcdcdc, 5%);
 $light: 			#f4f4f4;
 $orange:			#e7d360;
 $white: 			#fff;
@@ -29,9 +30,11 @@ $blue: 				#95bbcf;
 $green:				#aecf96;
 $red:				#C18183;
 $yellow:			#cfcd95;
-$read:				#f0f0f0;
+$read:				#ececec;
 $alt:				#838897;
+$alt-light:			lighten($alt, 5%);
 $exp:				#ec6446;
+$text:				#222;
 
 // Desktop 
 $wide:				1400px;

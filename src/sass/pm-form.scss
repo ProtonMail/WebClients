@@ -87,6 +87,16 @@
         }
     }
 
+    textarea.code {
+        font-family: monospace;
+        white-space: pre;
+        word-break: none;
+        line-height: 1rem;
+        resize: vertical;
+        height: 10rem;
+        padding: 1rem;
+    }
+
     // wrapper for placing icons inside inputs
     .input-icon {
         position: relative;
@@ -127,7 +137,7 @@
         line-height: $inputHeight;
         border: 1px solid #e1e1ef;
         box-sizing: border-box;
-        color: #555;
+        color: $text;
         display: block;
         width: 100%;
         font-size: 1em;

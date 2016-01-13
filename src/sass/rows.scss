@@ -19,7 +19,7 @@ body, html {
 			height: $rowHeight;
 			line-height: $rowHeight;
 			font-size: 14px;
-			padding: 0 15px;
+			padding: 0 15px 0 0;
 			clear: both;
 			display: -webkit-flex;
 			display: -ms-flexbox;
@@ -27,6 +27,15 @@ body, html {
 			background: $read;
 			box-shadow: inset 0 -1px $border;
 			position: relative;
+			label {
+				padding: 0 15px;
+				text-align: center;
+				display: block;
+				cursor: pointer;
+				.pm_checkbox input[type="checkbox"] {
+					margin-right: 0;
+				}
+			}
 			.starLink {
 				min-width: 1rem;
 				width: 1rem;
@@ -108,11 +117,9 @@ body, html {
 				position: relative;
 				z-index: 2;
 				margin: 0 -9px 0 -14px;
-				padding: 0 14px;
+				padding: 0 24px 0 0;
 				border-radius: 0;
 				border-left: 5px solid $primary;
-			    padding-left: 10px;
-			    padding-right: 24px;
 			    margin-left: 0;
 				.subject {
 					.pm_labels {
@@ -122,6 +129,9 @@ body, html {
 							background-color: $read;
 						}
 					}
+				}
+				label {
+					padding-left: 10px;
 				}
 			}
 			.spacer {
@@ -169,9 +179,8 @@ body, html {
 				    -ms-flex-positive: 1;
 				        flex-grow: 1;
 				position: relative;
-				height: 38px;
+				height: 36px;
 				position: relative;
-				top: 1px;
 				overflow: hidden;
 				& > span {
 					display: inline-block;
@@ -313,11 +322,14 @@ body, html {
 			}
 			&.selected {
 				padding-left: 70px !important;
+				box-sizing: border-box;
+				width: 100%;
 				.star {
 					left: 35px !important;
 				}
 				.pm_checkbox {
-					left: 5px !important
+					left: 5px !important;
+					padding: 0 !important
 				}
 				margin-left: 0;
 			}
@@ -336,9 +348,14 @@ body, html {
 				top: 5px;
 				left: 40px;
 			}
+			.subject {
+				overflow: initial !important;
+			}
 			.fa-paperclip {
-				bottom: 5px;
-				left: 40px;
+				bottom: 0;
+				left: -35px;
+				height: 25px !important;
+				line-height: 25px !important;
 			}
 			.time {
 				position: absolute;
@@ -380,6 +397,7 @@ body, html {
 					    text-align: center;
 					    overflow: hidden;
 					    float: none;
+					    display: inline-block;
 					}
 					&:before {
 						height: 25px;
@@ -455,6 +473,7 @@ body, html {
 		.list {
 			.message {
 				.pm_checkbox {
+					padding: 0;
 					width: 1.5rem;
 					min-width: 1.5rem;
 				}
@@ -470,6 +489,45 @@ body, html {
 		}
 		.list .message:first-child {
 			border-top: none;
+		}
+		.list {
+			.message {
+				height: 60px !important;
+				line-height: initial !important;
+				& > *,
+				.subject > span {
+					height: auto !important;
+					line-height: initial !important;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: 100%;
+				}
+				.star {
+					display: none;
+				}
+				label {
+					height: 28px !important;
+					line-height: 28px !important;
+					padding: 0 !important;
+					width: 28px !important;
+					min-width: 28px !important;
+					text-align: center;
+					.pm_checkbox {
+						width: 28px;
+						min-width: 28px; 
+					}
+				}
+				.time {
+					top: 10px;
+				}
+				.pm_labels {
+					.pm_label {
+						margin-top: 0 !important;
+						display: inline-block;
+					}
+				}
+			}
 		}
 	}
 }

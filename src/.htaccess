@@ -1,47 +1,13 @@
 RewriteEngine On
 
-RewriteRule ^blog/(.*) - [L]
-RewriteRule ^blog(.*) - [L]
-
-RewriteRule ^support/(.*) - [L]
-RewriteRule ^support$ - [L]
-
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Take care of index
-RewriteRule ^$ static/index.html [L]
-
-# HTML files
-RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
-RewriteRule ^(.*?)(\.html)?$ static/$1.html [NC,L]
-
-# Simple static prepend for non-HTML files
-RewriteCond %{DOCUMENT_ROOT}/static/$1 -f
-RewriteRule ^(.*)$ static/$1 [NC,L]
-
-# FR subdir (this could be made into a generic subdir rule later)
-RewriteRule ^fr/(.*) static/fr/$1 [L]
-RewriteRule ^fr/?$ static/fr/$1 [L]
-
-# If pages, 301 redirect
-RewriteCond %{DOCUMENT_ROOT}/static/$1.html -f
-RewriteRule ^pages/(.*?)(\.html)?$ /$1 [NC,L,R=301]
-
-Redirect 301 /create-account /invite
-Redirect 301 /pages/join-us /careers
-
-Redirect 301 /webby /why-protonmail
-Redirect 301 /swissnex /why-protonmail
-Redirect 301 /blogsofwar /why-protonmail
-Redirect 301 /bolehvpn /why-protonmail
-Redirect 301 /privacyforall /why-protonmail
+# Redirect nothing to app
+RewriteRule ^$ /app.html [NC,L]
 
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /app.html [NC,L]
-
-# Hide static, doesn't work
-#RewriteRule ^static.* /app.html [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]

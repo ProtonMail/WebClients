@@ -43,7 +43,7 @@
                 <p class="alert alert-success animated tada"><i class="fa fa-check"></i> Email available!</p>
             </div>
             <div ng-show="badUsername">
-                <p class="alert alert-error animated shake"><i class="fa fa-times"></i> Email already taken.</p>
+                <p class="alert alert-danger animated shake"><i class="fa fa-times"></i> Email already taken.</p>
             </div>
             <label for="password">
                 <em class="num" ng-if="preInvited">1</em>
@@ -62,7 +62,7 @@
             maxlength="{{ maxPW }}"
             required />
             <div ng-show="step1.$submitted || step1.password.$touched">
-                <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-error">Login password is required.</p>
+                <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger">Login password is required.</p>
             </div>
             <input
             id="passwordc"
@@ -75,7 +75,7 @@
             required
             validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
-                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-error">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
+                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
             <label for="password">
                 <em class="num" ng-if="preInvited">2</em>
@@ -93,7 +93,7 @@
             placeholder="CHOOSE A MAILBOX PASSWORD"
             required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
-                <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-error">Mailbox password is required.</p>
+                <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger">Mailbox password is required.</p>
             </div>
             <input
             id="MBpasswordc"
@@ -107,7 +107,7 @@
             required
             ng-enter="finish(step1)" />
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
-                <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-error">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
+                <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
             <label for="notificationEmail">
                 <em class="num" ng-if="preInvited">3</em>
@@ -126,7 +126,7 @@
             validator="!!!tools.validEmail(account.notificationEmail)"
             ng-enter="saveContinue(step1)" />
             <div ng-show="step1.notificationEmail.$error.email">
-                <p class="alert alert-error">{{ 'INVALID_EMAIL' | translate }}l.</p>
+                <p class="alert alert-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
         </div><!--/.wrapper-->
         <p>&nbsp;</p>
@@ -166,7 +166,7 @@
         <h2 class="text-center" ng-show="!signupError">Creating Account</h2>
         <h2 class="text-center" ng-show="signupError">Sign Up Failed</h2>
     </div>
-    <p class="alert alert-error" ng-show="signupError">An error occured while trying to create your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
+    <p class="alert alert-danger" ng-show="signupError">An error occured while trying to create your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
     <div class="wrapper text-left">
         <ol id="creationList">
             <li ng-class="{ 'done': genNewKeys }">

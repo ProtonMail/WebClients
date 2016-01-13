@@ -123,7 +123,7 @@ angular.module("proton.squire", [
             updateStylesToMatch = function(doc) {
                 var head = doc.head || doc.getElementsByTagName('head')[0];
                 var style = doc.createElement('style');
-                var css = "body { padding: 1rem 10px; font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.65em; color: #555; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; }";
+                var css = "body { padding: 1rem 10px; font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; }";
 
                 style.setAttribute('type', 'text/css');
                 style.setAttribute('rel', 'stylesheet');
@@ -161,6 +161,7 @@ angular.module("proton.squire", [
 
                 editor.addEventListener("focus", function() {
                     element.addClass('focus').triggerHandler('focus');
+                    $rootScope.$broadcast('editorFocussed', element, editor);
                 });
 
                 editor.addEventListener('startPaste', function(event) {

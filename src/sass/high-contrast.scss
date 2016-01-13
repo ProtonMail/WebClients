@@ -1,0 +1,54 @@
+// Secondary
+body.themeHC {
+	#pm_composer .composer header,
+	html.protonmail body,
+	header#pm_header.no-auth,
+	header#pm_header .logo,	
+	section.sidebar,
+	body.secure section#pm_sidebarMobile {
+		background: darken($secondary, 15%);
+	}
+}
+
+@media (max-width: $mobile-portrait) {
+	body.themeHC {
+		header#pm_header form.searchForm {
+			background: darken($secondary, 15%);
+		}
+	}
+}
+
+// Alt
+body.themeHC {
+	header#pm_header,
+	#pm_conversations.columns .list div.message.active,
+	#pm_conversations.columns .list div.message.unread.active,
+	#pm_conversations.columns .list div.message.unread.active header span.time,
+	#pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label,
+	#pm_conversations.columns .list div.message.active header span.time,
+	#pm_conversations.columns .list div.message.active article .pm_labels .pm_label {
+		background: darken($alt, 15%);
+	}
+	#pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label {
+		box-shadow: 0 0 0 4px darken($alt, 15%);
+	}
+	.pm_table th {
+		color: darken($alt, 15%);
+	}
+}
+
+// Read
+body.themeHC {
+	#pm_conversations.columns .list div.message,
+	#pm_conversations.columns .list div.message header span.time, 
+	#pm_conversations.columns .list div.message article .pm_labels .pm_label,
+	#pm_conversations.columns .list div.message header span.time article .pm_labels .pm_label {
+		background: darken($read, 15%);	
+	}
+	#pm_conversations.columns .list div.message.unread,
+	#pm_conversations.columns .list div.message.unread header span.time, 
+	#pm_conversations.columns .list div.message.unread article .pm_labels .pm_label,
+	#pm_conversations.columns .list div.message.unread header span.time article .pm_labels .pm_label {
+		background: #fff;
+	}
+}

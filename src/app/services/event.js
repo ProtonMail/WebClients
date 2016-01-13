@@ -92,7 +92,7 @@ angular.module("proton.event", ["proton.constants"])
 				}
 
 				if(events.length > 0) {
-					cache.events(events);
+					cache.events(events, true);
 				}
 			},
 			manageStorage: function(storage) {

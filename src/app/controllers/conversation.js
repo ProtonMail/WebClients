@@ -19,11 +19,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     notify,
     tools
 ) {
+    var scrollPromise;
+
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
-    $rootScope.draftOpen = false;
+    $scope.scrolled = false;
     $scope.conversation = conversation;
+    $rootScope.numberElementSelected = 1;
+    $rootScope.showWelcome = false;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -31,23 +35,21 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var messages = cache.queryMessagesCached($stateParams.id);
         var loc = tools.currentLocation();
 
-        messages = messages.reverse();  // We reverse the array because the new message appear to the bottom of the list
-
         if(angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
-            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
-
-            if(labels.indexOf(loc) !== -1) {
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 _.extend($scope.conversation, conversation);
             } else {
-                $scope.back();
+                return $scope.back();
             }
         } else {
-            $scope.back();
+            return $scope.back();
         }
 
         if(angular.isDefined(messages)) {
+            messages = _.sortBy(messages, 'Time');
+
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
                 var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
@@ -71,53 +73,71 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if($scope.messages.length === 0) {
                 $scope.back();
             }
+        } else {
+            $scope.back();
         }
     });
 
     $scope.$on('$destroy', function(event) {
+        $timeout.cancel(scrollPromise);
         delete $rootScope.targetID;
+    });
+
+    $scope.$on('targetLoaded', function(event) {
+        if ($scope.scrolled === false) {
+            $scope.scrolled = true;
+            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
+        }
     });
 
     /**
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
-
         var loc = tools.currentLocation();
 
         if(angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
-            labels.push(CONSTANTS.MAILBOX_IDENTIFIERS.search); // tricks
-
-            if(labels.indexOf(loc) !== -1) {
-                var messages = cache.queryMessagesCached($scope.conversation.ID).reverse(); // We reverse the array because the new message appear to the bottom of the list
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
+                var messages = cache.queryMessagesCached($scope.conversation.ID);
+                messages = _.sortBy(messages, 'Time');
                 var latest = _.last(messages);
 
-                if($state.is('secured.sent.view')) {
+                if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
                     if(sents.length > 0) {
+                        // We try to open the last sent message
                         $rootScope.targetID = _.last(sents).ID;
                     } else {
+                        // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
                 } else if(angular.isDefined($rootScope.targetID)) {
-                    // Do nothing, target initialized
+                    // Do nothing, target initialized by click
                 } else {
+                    // If the latest message is read, we open it
                     if(latest.IsRead === 1) {
-                        latest.open = true;
                         $rootScope.targetID = latest.ID;
                     } else {
+                        // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var index = messages.indexOf(latest);
+                        var latestIndex = messages.length - 1; // Last index
+                        var index = latestIndex - 1; // Start with the previous message
 
                         while(loop === true && index > 0) {
-                            if(angular.isDefined(messages[index - 1]) && messages[index - 1].IsRead === 0) {
-                                index--;
-                            } else {
+                            if(messages[index].IsRead === 1) { // Is read
                                 loop = false;
+                            } else {
+                                index--; // Keep going
                             }
+                        }
+
+                        if (loop === true) { // No message read found
+                            index = 0;
+                        } else {
+                            index++; // If reach a read message, backtrack one message and send the that one, which is the first unread message in the unread block at the end of the convo.
                         }
 
                         $rootScope.targetID = messages[index].ID;
@@ -125,7 +145,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 }
 
                 $scope.messages = messages;
-                $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
             } else {
                 $scope.back();
             }
@@ -168,6 +187,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var ids = [$scope.conversation.ID];
 
         action.unreadConversation(ids);
+
+        $scope.back();
     };
 
     /**
@@ -203,24 +224,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @param {String} ID
      */
     $scope.scrollToMessage = function(ID) {
+        $timeout.cancel(scrollPromise);
         var index = _.findIndex($scope.messages, {ID: ID});
         var id = '#message' + index; // TODO improve it for the search case
 
-        $timeout(function() {
+        scrollPromise = $timeout(function() {
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var value = element.offset().top - element.outerHeight();
+                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                var value = element.offset().top - headerOffset;
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 10, function() {
+                }, 200, function() {
                     $(this).animate({
                         opacity: 1
                     }, 200);
                 });
             }
-        }, 2000);
+        }, 100);
     };
 
     /**

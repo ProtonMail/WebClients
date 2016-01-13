@@ -359,7 +359,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Stripe, Payment, notify, $translate) {
+.factory('cardModal', function(pmModal, Payment, notify, $translate, $window) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -408,25 +408,25 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this);
 
-                if(Stripe.card.validateCardNumber(this.number) === false) {
+                if($window.Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
-                if(Stripe.card.validateExpiry(this.month, this.year) === false) {
+                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
                     notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
-                if(Stripe.card.validateCVC(this.cvc) === false) {
+                if($window.Stripe.card.validateCVC(this.cvc) === false) {
                     notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
-                Stripe.card.createToken({
+                $window.Stripe.card.createToken({
                     name: this.fullname,
                     number: this.number,
                     cvc: this.cvc,
@@ -445,7 +445,7 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Stripe, Organization, $translate, Payment, authentication) {
+.factory('paymentModal', function(notify, pmModal, Organization, $translate, $window, Payment, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -506,26 +506,26 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var generateStripeToken = function() {
-                if(Stripe.card.validateCardNumber(this.number) === false) {
+                if($window.Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
-                if(Stripe.card.validateExpiry(this.month, this.year) === false) {
+                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
                     notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
-                if(Stripe.card.validateCVC(this.cvc) === false) {
+                if($window.Stripe.card.validateCVC(this.cvc) === false) {
                     notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
                     this.process = false;
                     return false;
                 }
 
                 // Generate token with Stripe Api
-                Stripe.card.createToken({
+                $window.Stripe.card.createToken({
                     name: this.fullname,
                     number: this.number,
                     cvc: this.cvc,
@@ -700,6 +700,54 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('feedbackModal', function(pmModal, $cookies, Bug, notify) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/feedback.tpl.html',
+        controller: function(params) {
+            this.fdbckTxt = '';
+
+            this.submit = function() {
+                var description = this.fdbckTxt;
+                var data = {
+                    OS: '--',
+                    OSVersion: '--',
+                    Browser: '--',
+                    BrowserVersion: '--',
+                    BrowserExtensions: '--',
+                    Client: '--',
+                    ClientVersion: '--',
+                    Title: '[FEEDBACK v3]',
+                    Username: '--',
+                    Email: '--',
+                    Description: description
+                };
+
+                var feedbackPromise = Bug.report(data);
+
+                feedbackPromise.then(
+                    function(response) {
+                        if(response.data.Code === 1000) {
+                            notify({message: 'Thanks for your feedback!', classes: 'notification-success'});
+                        } else if (angular.isDefined(response.data.Error)) {
+                            notify({message: response.data.Error, classes: 'notification-danger'});
+                        }
+                        params.close();
+                    },
+                    function(err) {
+                        error.message = 'Error during the sending feedback';
+                        params.close();
+                    }
+                );
+            };
+
+            this.close = function() {
+                params.close();
+            };
+        }
+    });
+})
+
 .factory('storageModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
@@ -849,7 +897,7 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.form = params.form;
-            this.form.attachScreenshot = true; // Attach screenshot by default
+            this.form.attachScreenshot = false; // Do not attach screenshot by default
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {

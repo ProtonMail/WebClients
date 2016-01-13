@@ -36,30 +36,62 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
 
-    $scope.$on('refreshMessage', function() {
+    $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
         if(angular.isDefined(message)) {
-            _.extend($scope.message, message);
+            $scope.message.AddressID = message.AddressID;
+            $scope.message.BCCList = message.BCCList;
+            $scope.message.CCList = message.CCList;
+            $scope.message.ConversationID = message.ConversationID;
+            $scope.message.ExpirationTime = message.ExpirationTime;
+            $scope.message.HasAttachment = message.HasAttachment;
+            $scope.message.ID = message.ID;
+            $scope.message.IsEncrypted = message.IsEncrypted;
+            $scope.message.IsForwarded = message.IsForwarded;
+            $scope.message.IsRead = message.IsRead;
+            $scope.message.IsReplied = message.IsReplied;
+            $scope.message.IsRepliedAll = message.IsRepliedAll;
+            $scope.message.LabelIDs = message.LabelIDs;
+            $scope.message.Location = message.Location;
+            $scope.message.NumAttachments = message.NumAttachments;
+            $scope.message.Sender = message.Sender;
+            $scope.message.SenderAddress = message.SenderAddress;
+            $scope.message.SenderName = message.SenderName;
+            $scope.message.Size = message.Size;
+            $scope.message.Starred = message.Starred;
+            $scope.message.Subject = message.Subject;
+            $scope.message.Time = message.Time;
+            $scope.message.ToList = message.ToList;
+            $scope.message.Type = message.Type;
         }
     });
 
+    // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;
+    });
+
+    $scope.$on('initMessage', function(event, ID) {
+        if($scope.message.ID === ID) {
+            $scope.initialization();
+        }
     });
 
     /**
      * Toggle message in conversation view
      */
     $scope.toggle = function() {
-        if($scope.draft() === true) {
-            $rootScope.draftOpen = false;
-        }
-
-        if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
-            networkActivityTracker.track($scope.initView());
+        // If this message is a draft
+        if($scope.message.Type === 1) {
+            // Open the message in composer if it's a draft
+            $scope.openComposer($scope.message.ID);
         } else {
-            $scope.message.expand = false;
+            if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
+                networkActivityTracker.track($scope.initView(true));
+            } else {
+                $scope.message.expand = false;
+            }
         }
     };
 
@@ -69,6 +101,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.sent = function() {
         return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.sent) !== -1;
+    };
+
+    /**
+     * Check if the current message is a archive
+     * @return {Boolean}
+     */
+    $scope.archive = function() {
+        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.archive) !== -1;
     };
 
     /**
@@ -97,22 +137,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called to display message content
+     * @param {Boolean} scroll
      * @return {Promise}
      */
-    $scope.initView = function() {
+    $scope.initView = function(scroll) {
         var deferred = $q.defer();
         var process = function() {
             // Display content
-            $scope.displayContent();
+            $scope.displayContent(scroll);
         };
 
         // If the message is a draft
-        if($scope.draft() === true) {
-            if($rootScope.draftOpen === false) {
-                // Open the message in composer if it's a draft
-                $scope.openComposer($scope.message.ID);
-                $rootScope.draftOpen = true;
-            }
+        if($scope.message.Type === 1) {
             deferred.resolve();
         } else {
             // Display content
@@ -129,23 +165,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         return deferred.promise;
-    };
-
-    /**
-     * Scroll to the message
-     */
-    $scope.scrollToMe = function() {
-        var index = _.findIndex($scope.messages, {ID: $scope.message.ID});
-        var id = '#message' + index;
-        var element = angular.element(id);
-
-        if(angular.isDefined(element) && angular.isDefined(element.offset())) {
-            var value = element.offset().top - element.outerHeight();
-
-            $('#pm_thread').animate({
-                scrollTop: value
-            }, 'slow');
-        }
     };
 
     /**
@@ -221,6 +240,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     /**
+     * Order to the conversation controller to scroll to this message
+     */
+    $scope.scrollToMe = function() {
+        $scope.scrollToMessage($scope.message.ID);
+    };
+
+    /**
      * Open modal to alert the user that he cannot download
      */
     $scope.openSafariWarning = function() {
@@ -249,7 +275,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} print
      */
-    $scope.displayContent = function() {
+    $scope.displayContent = function(scroll) {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -269,6 +295,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if(angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
+                    // NOTE Plain text detection doesn't work. Check #1701
+                    // var isHtml = tools.isHtml(content);
+
                     if($rootScope.printMode !== true) {
                         content = $scope.message.clearImageBody(content);
                     }
@@ -288,20 +317,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
                     // Detect type of content
-                    if (tools.isHtml(content)) {
+                    // if (isHtml === true) {
                         $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
                         // Assign decrypted content
                         $scope.message.decryptedBody = $sce.trustAsHtml(content);
-                    } else {
-                        $scope.isPlain = true;
-                        $scope.message.viewMode = 'plain';
-                    }
-
-                    // Scroll to first message open
-                    if($rootScope.scrollToFirst === $scope.message.ID) {
-                        $scope.scrollToMe();
-                    }
+                    // } else {
+                    //     $scope.isPlain = true;
+                    //     $scope.message.viewMode = 'plain';
+                    // }
 
                     // Broken images
                     $(".email img").error(function () {
@@ -313,9 +337,17 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                             window.print();
                         }, 1000);
                     }
+
+                    if($rootScope.targetID === $scope.message.ID) {
+                        $rootScope.$broadcast('targetLoaded');
+                    }
+
+                    if(scroll === true) {
+                        $scope.scrollToMe();
+                    }
                 };
 
-                // PGP/MIME
+                // PGP/MIME case
                 if ( $scope.message.IsEncrypted === 8 ) {
                     var mailparser = new MailParser({
                         defaultCharset: 'UTF-8'
@@ -336,19 +368,25 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                             content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
                         }
 
-                        $scope.$evalAsync(function() { showMessage(content); });
+                        $scope.$evalAsync(function() {
+                            showMessage(content);
+                        });
                     });
 
                     mailparser.write(result);
                     mailparser.end();
                 } else {
-                    $scope.$evalAsync(function() { showMessage(result); });
+                    $scope.$evalAsync(function() {
+                        showMessage(result);
+                    });
                 }
             }, function(err) {
                 $scope.togglePlainHtml();
                 //TODO error reporter?
                 $log.error(err);
             });
+        } else if(scroll === true) {
+            $scope.scrollToMe();
         }
     };
 
@@ -520,17 +558,19 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Return label
-     * @param {String} id
+     * @param {String} labelID
      */
-    $scope.getLabel = function(id) {
-        return _.findWhere($scope.labels, {ID: id});
+    $scope.getLabel = function(labelID) {
+        return _.findWhere(authentication.user.Labels, {ID: labelID});
     };
 
     /**
      * Return style for label
-     * @param {Object} label
+     * @param {String} labelID
      */
-    $scope.getColorLabel = function(label) {
+    $scope.getColorLabel = function(labelID) {
+        var label = _.findWhere(authentication.user.Labels, {ID: labelID});
+
         return {
             borderColor: label.Color,
             color: label.Color
@@ -539,10 +579,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Go to label folder + reset parameters
-     * @param {Object} label
+     * @param {String} labelID
      */
-    $scope.goToLabel = function(label) {
-        var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
+    $scope.goToLabel = function(labelID) {
+        var params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
 
         $state.go('secured.label', params);
     };
@@ -562,7 +602,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Detach label to the current message
      * @param {Object} label
      */
-    $scope.detachLabel = function(label) {
+    $scope.detachLabel = function(labelID) {
         var events = [];
         var copy = angular.copy($scope.message);
         var labelIDs = [];
@@ -570,23 +610,22 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var messages = cache.queryMessagesCached(copy.ConversationID);
 
         // Generate event for the message
-        copy.LabelIDsRemoved = [label.ID];
-        events.push({Action: 3, ID: copy.ID, Message: copy});
+        events.push({Action: 3, ID: copy.ID, Message: {ID: copy.ID, LabelIDsRemoved: [labelID]}});
 
         // Generate event for the conversation
         _.each(messages, function(message) {
             labelIDs = labelIDs.concat(message.LabelIDs);
         });
 
-        labelIDs.splice(labelIDs.indexOf(label.ID), 1); // Remove one labelID
+        labelIDs.splice(labelIDs.indexOf(labelID), 1); // Remove one labelID
 
-        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: labelIDs}});
+        events.push({Action: 3, ID: copy.ConversationID, Conversation: {ID: copy.ConversationID, LabelIDs: _.uniq(labelIDs)}});
 
         // Send to cache manager
         cache.events(events);
 
         // Send request to detach the label
-        copy.updateLabels(label.ID, REMOVE, [copy.ID]);
+        copy.updateLabels(labelID, REMOVE, [copy.ID]);
     };
 
     $scope.sendMessageTo = function(email) {

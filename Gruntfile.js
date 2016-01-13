@@ -12,7 +12,7 @@ var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 var API_TARGETS = {
     blue: "https://52.32.164.147/api",
     prod: "https://protonmail.com/api",
-    dev: "https://v2.protonmail.com/api",
+    dev: "https://dev.protonmail.com/api",
     build: "/api"
 };
 
@@ -339,14 +339,6 @@ module.exports = function(grunt) {
             }
         },
 
-        uncss: {
-            dist: {
-                files: {
-                    "<%= compile_dir %>/assets/app.css": "<%= compile_dir %>/assets/app.css"
-                }
-            }
-        },
-
         html2js: {
             app: {
                 options: {
@@ -364,22 +356,6 @@ module.exports = function(grunt) {
                 dest: "<%= build_dir %>/templates-common.js"
             }
         },
-
-        karma: {
-            options: {
-                configFile: "<%= build_dir %>/conf.unit.js",
-            },
-            watch: {
-                autoWatch: true,
-                background: true,
-                browsers: browsers()
-            },
-            once: {
-                singleRun: true,
-                browsers: ["PhantomJS"]
-            }
-        },
-
 
         testconfig: {
             unit: {
@@ -583,7 +559,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-translate');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
-    grunt.loadNpmTasks('grunt-uncss');
 
     grunt.renameTask("watch", "delta");
 
@@ -592,9 +567,7 @@ module.exports = function(grunt) {
         "ngconstant:dev",
         "build",
         "jshint",
-        "karma:watch:start",
         "connect:watch",
-        "forever:mock_server:start",
         "delta"
     ]);
 

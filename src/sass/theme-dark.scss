@@ -51,7 +51,7 @@ section.sidebar {
         }
         li {
             a {
-                color: #dadae5;
+                color: lighten(#dadae5, 5%);
                 i.fa {
                     color: $secondary-alt;
                 }
@@ -65,7 +65,7 @@ section.sidebar {
         ul {
             li {
                 a {
-                    color: rgba(255,255,255,.35);
+                    color: rgba(255,255,255,.5);
                 }
                 &.active {
                     a {

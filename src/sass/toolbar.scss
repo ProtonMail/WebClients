@@ -99,7 +99,7 @@ body.columns #pm_toolbar {
                 strong {
                     display: none;
                 }
-            }            
+            }
         }
         .main {
             float: left;
@@ -144,7 +144,7 @@ body.columns #pm_toolbar {
                 .pm_buttons {
                     margin: 0;
                 }
-            } 
+            }
             .pm_dropdown {
                 left: auto;
                 right: -1px;
@@ -260,44 +260,6 @@ body.columns #pm_toolbar {
                 margin: 0 0 0 5px;
                 strong {
                     display: none;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: $wide) {
-    #pm_toolbar {
-        padding: 11px 0;
-    }
-    .rows #pm_toolbar {
-        .main > label.pm_checkbox input {
-            margin-top: 16px;
-        }
-        .pm_buttons {
-            line-height: 40px;
-            height: 40px;
-            a {
-                padding: 0 1rem;
-                line-height: 40px !important;
-                height: 40px !important;
-            }
-        }
-    }
-    .rows #pm_view > header {
-        h1 {
-            line-height: 42px;
-        }
-        .pm_buttons {
-            line-height: 40px !important;
-            height: 40px !important;
-            a {
-                line-height: 40px !important;
-                height: 40px !important;
-                padding: 0 1rem;
-                .fa {
-                    line-height: 40px !important;
-                    height: 40px !important;
                 }
             }
         }

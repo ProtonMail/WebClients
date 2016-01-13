@@ -77,7 +77,7 @@
 
             <section class="setting pm_form">
                 <legend>{{ 'LOGIN_PASSWORD' | translate }}</legend>
-                <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate method="post">
+                <form ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
                             <label for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
@@ -97,7 +97,10 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <input type="password" id="confirmLoginPassword" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" class="margin" />
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" class="margin" />
+                            <div ng-show="loginForm.$submitted || loginForm.confirmLoginPassword.$touched">
+                                <span class="text-red" ng-show="newLoginPassword !== confirmLoginPassword">Passwords do not match.</span>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">

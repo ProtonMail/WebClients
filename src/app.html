@@ -34,6 +34,7 @@
         }
     }
     </style>
+
     <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
 </head>
 <body class="" id="{{ toState }}" ng-class="{
@@ -49,7 +50,8 @@
     light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState),
     scroll: ('step1'|isState) || ('secured.print'|isState),
     modalOpen: modalOpen,
-    themeJason: themeJason
+    themeJason: themeJason,
+    themeHC: themeHC
 }">
 
 <div id="pm_background" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false" ng-hide="printMode"></div>
@@ -61,11 +63,7 @@
 </div>
 
 <div id="pm_loading" ng-class="{ 'show': networkActivity.loading() || loggingOut }">
-    <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-    </div>
+    <img src="/assets/small-spinner.gif">
 </div>
 
 <div id="exiting" ng-class="{ 'show': loggingOut }">
