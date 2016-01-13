@@ -380,6 +380,7 @@ angular.module('proton.actions', [])
         // Message actions
         moveMessage: function(ids, mailbox) {
             var context = tools.cacheContext();
+            var conversationIDs = [];
             var events = [];
             var promise;
 
@@ -392,6 +393,8 @@ angular.module('proton.actions', [])
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
+
+                conversationIDs.push(message.ConversationID);
 
                 if(inInbox === true) {
                     var index;
@@ -411,20 +414,34 @@ angular.module('proton.actions', [])
                     }
                 }
 
-                var conversation = cache.getConversationCached(message.ConversationID);
-                var element = {
+                events.push({Action: 3, ID: id, Message: {
                     ID: id,
                     Selected: false,
-                    LabelIDsRemoved: labelIDsRemoved, // Remove current location
-                    LabelIDsAdded: labelIDsAdded // Add new location
-                };
+                    LabelIDsAddeds: labelIDsAdded,
+                    LabelIDsRemoved: labelIDsRemoved
+                }});
+            });
 
-                events.push({Action: 3, ID: element.ID, Message: element});
+            _.each(conversationIDs, function(conversationID) {
+                var conversation = cache.getConversationCached(conversationID);
+                var messages = cache.queryMessagesCached(conversationID);
+                var labelIDs = [];
+
+                _.each(messages, function(message) {
+                    labelIDs = labelIDs.concat(message.LabelIDs);
+                });
+
+                labelIDs.splice(_.findIndex(labelIDs, function(labelID) { return ['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1; }), 1); // Remove current location
+                labelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]); // Add new location
+
+                events.push({Action: 3, ID: conversationID, Conversation: {
+                    ID: conversationID,
+                    LabelIDs: _.uniq(labelIDs)
+                }});
             });
 
             // Send request
             promise = Message[mailbox]({IDs: ids}).$promise;
-
 
             if(context === true) {
                 cache.events(events);
