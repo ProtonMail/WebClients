@@ -225,6 +225,7 @@ angular.module('proton', [
 
     // Less than 1024 / Tablet Mode
     $rootScope.$on('sidebarMobileToggle', function() {
+        console.log('sidebarMobileToggle');
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 

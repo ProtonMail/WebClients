@@ -585,6 +585,15 @@
             }
         }
     }
+    #pm_view article.message {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        &.open header,
+        &.open .sub {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
 }
 @media (max-width: $mobile-landscape) {
     #pm_view #pm_thread {

@@ -448,7 +448,7 @@ header#pm_header {
 				background: transparent;
 			}
 			span {
-				display: none;
+				display: none !important;
 			}
 		}
 		a.logoMobile {
