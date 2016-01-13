@@ -42,10 +42,10 @@ angular.module('proton.routes', [
             }
         },
         onEnter: function(authentication, eventManager, cache) {
-            // Clear cache
-            // cache.clear();
             // Stop event manager request
             eventManager.stop();
+            // Clear cache
+            cache.clear();
             // We automatically logout the user when he comes to login page
             authentication.logout(false);
         }
