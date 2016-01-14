@@ -1261,11 +1261,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var events = [];
 
                                             message.sending = false; // Change status
-                                            result.Sent.expand = undefined; // Trick to ask the front-end to open the message sent
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                            result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
-                                            result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
                                             result.Sent.HasAttachment = (result.Sent.Attachments.length > 0)?1:0;
                                             result.Sent.NumAttachments = result.Sent.Attachments.length;
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
@@ -1277,6 +1274,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
                                             $scope.close(message, false, false); // Close the composer window
+
+                                            $timeout(function() {
+                                                $rootScope.targetID = result.Sent.ID; // Define target ID
+                                                $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
+                                            }, 100);
+
                                             deferred.resolve(result); // Resolve finally the promise
                                         }
                                     }, function(error) {

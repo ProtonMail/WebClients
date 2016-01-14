@@ -42,6 +42,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if(angular.isDefined(message)) {
             $scope.message.AddressID = message.AddressID;
             $scope.message.BCCList = message.BCCList;
+            $scope.message.Body = message.Body;
             $scope.message.CCList = message.CCList;
             $scope.message.ConversationID = message.ConversationID;
             $scope.message.ExpirationTime = message.ExpirationTime;
@@ -72,9 +73,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = false;
     });
 
-    $scope.$on('initMessage', function(event, ID) {
+    $scope.$on('initMessage', function(event, ID, scroll) {
         if($scope.message.ID === ID) {
-            $scope.initialization();
+            $scope.initialization(scroll);
         }
     });
 
@@ -190,15 +191,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called at the initialization of this controller
+     * @param {Boolean} scroll
      */
-    $scope.initialization = function() {
+    $scope.initialization = function(scroll) {
         if($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             }));
         } else if($rootScope.targetID === $scope.message.ID) {
-            $scope.initView();
+            $scope.initView(scroll);
         }
     };
 
