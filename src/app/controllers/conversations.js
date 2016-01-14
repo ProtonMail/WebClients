@@ -46,10 +46,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
             $scope.$watch('conversations', function(newValue, oldValue) {
+                $rootScope.numberElement = newValue.length;
+                $rootScope.numberElementSelected = $scope.elementsSelected().length;
+                $rootScope.numberElementChecked = $scope.elementsChecked().length;
+                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
                 // Manage expiration time
                 expiration.check(newValue);
-                $scope.elementsSelected();
-                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
             }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -233,6 +235,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             $scope.conversations = elements;
 
+
             if($scope.conversations.length === 0 && page > 0) {
                 $scope.back();
             }
@@ -322,8 +325,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.allSelected = function() {
-        if ($scope.conversations && $scope.conversations.length > 0) {
-            return $scope.conversations.length === $rootScope.numberElementChecked;
+        if(angular.isDefined($scope.conversations)) {
+            var numberElement = $scope.conversations.length;
+            var numberElementChecked = _.where($scope.conversations, {Selected: true}).length;
+
+            if (numberElement > 0) {
+                return numberElement === numberElementChecked;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
@@ -368,8 +378,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var elements = _.where($scope.conversations, {Selected: true});
         var conversationID = $state.params.id;
 
-        $rootScope.numberElementChecked = elements.length;
-
         if(elements.length === 0 && angular.isDefined(conversationID)) {
             var type = tools.typeList();
 
@@ -380,9 +388,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         }
 
-        $rootScope.numberElementSelected = elements.length;
-
         return elements;
+    };
+
+    $scope.elementsChecked = function() {
+        return _.where($scope.conversations, {Selected: true});
     };
 
     /**
