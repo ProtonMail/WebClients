@@ -73,9 +73,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = false;
     });
 
-    $scope.$on('initMessage', function(event, ID) {
+    $scope.$on('initMessage', function(event, ID, scroll) {
         if($scope.message.ID === ID) {
-            $scope.initialization();
+            $scope.initialization(scroll);
         }
     });
 
@@ -191,15 +191,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called at the initialization of this controller
+     * @param {Boolean} scroll
      */
-    $scope.initialization = function() {
+    $scope.initialization = function(scroll) {
         if($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             }));
         } else if($rootScope.targetID === $scope.message.ID) {
-            $scope.initView();
+            $scope.initView(scroll);
         }
     };
 

@@ -1274,6 +1274,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
                                             $scope.close(message, false, false); // Close the composer window
+
+                                            $timeout(function() {
+                                                $rootScope.targetID = result.Sent.ID; // Define target ID
+                                                $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
+                                            }, 100);
+
                                             deferred.resolve(result); // Resolve finally the promise
                                         }
                                     }, function(error) {
