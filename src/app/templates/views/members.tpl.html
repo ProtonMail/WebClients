@@ -32,7 +32,7 @@
 		                            </td>
 		                            <td class="text-right">
 		                            	<span>
-		                                    <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
+		                                    <a ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
@@ -43,7 +43,7 @@
 		                            </td>
 		                            <td class="text-right">
 		                                <span>
-		                                    <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
+		                                    <a ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
 		                                </span>
 		                            </td>
 		                        </tr>
@@ -89,7 +89,7 @@
 		                    <td class="addresses">
                                 <div ng-repeat="address in member.Addresses | orderBy: 'Send'">
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong>(DEFAULT)</strong></small>
-                                    <a href="" ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
+                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>
                                 <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_ADDRESS' | translate }}</button>
                             </td>

@@ -59,7 +59,7 @@
                         {{ conversation.Subject }}
                     </span>
                     <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-                    <a href ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
+                    <a ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
                         <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
                     </a>
                     <span class="time">{{ time(conversation) | readableTime }}</span>
@@ -130,7 +130,7 @@
                 <em class="fa fa-check"></em>
             </label>
             <span class="star" ng-click="$event.stopPropagation();toggleStar(conversation)">
-                <a href class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
+                <a class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                     <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
                 </a>
             </span>

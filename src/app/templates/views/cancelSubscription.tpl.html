@@ -58,8 +58,8 @@
                                 <td><strong><i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}</strong></td>
                                 <td class='text-right'>
                                     <small>
-                                        <a href="" ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / 
-                                        <a href="" ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                        <a ng-click="viewCard()" pt-tooltip="{{ 'SHOW_PAYMENT_INFORMATION' | translate }}">{{ 'VIEW' | translate }}</a> / 
+                                        <a ng-click="editCard()" pt-tooltip="{{ 'EDIT_PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
                                     </small>
                                 </td>
                             </tr>
@@ -124,7 +124,7 @@
                                         <label>
                                             <input type="checkbox" ng-model="element.checked" />
                                             {{ element.number }} <small></small> {{ element.title }}
-                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                            <a pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                         </label>
                                         <span class="cost">
                                             <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
@@ -184,7 +184,7 @@
                                         <label>
                                             <input type="checkbox" ng-model="element.checked" />
                                             {{ element.number }} <small></small> {{ element.title }}
-                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                            <a pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                         </label>
                                         <span class="cost">
                                             <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>
@@ -244,7 +244,7 @@
                                         <label>
                                             <input type="checkbox" ng-model="element.checked" />
                                             {{ element.number }} <small></small> {{ element.title }}
-                                            <a href="" pt-tooltip=""><i class="fa fa-info-circle"></i></a>
+                                            <a pt-tooltip=""><i class="fa fa-info-circle"></i></a>
                                         </label>
                                         <span class="cost">
                                             <strong>+ {{ element.price[billing] * element.quantity | number: 2 | currency: currency }}</strong>

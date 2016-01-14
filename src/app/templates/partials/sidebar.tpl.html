@@ -1,12 +1,12 @@
 <section class="pm_opensans sidebar" ng-controller="SidebarController" ng-sidebar-height>
 
-    <a href="" class="compose pm_button primary" ng-click="compose()">
+    <a class="compose pm_button primary" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
     </a>
 
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
+            <a title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
@@ -64,7 +64,7 @@
 
     <ul class="menu" id="labelSettings">
         <li>
-            <a href="" ui-sref="secured.labels">
+            <a ui-sref="secured.labels">
                 <i class="fa fa-cog"></i>
                 <span>{{ 'LABEL_SETTINGS' | translate }}</span>
             </a>
@@ -90,7 +90,7 @@
     <div class="footer">
         <div class="wrap">
             <div class="link" ng-show="user.Role === 0 || user.Role === 2">
-                <a href="" ui-sref="secured.dashboard">
+                <a ui-sref="secured.dashboard">
                     {{ 'UPGRADE_STORAGE' | translate }}
                 </a>
             </div>

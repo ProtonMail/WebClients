@@ -2,13 +2,13 @@
     <input type="search" placeholder="Filter" ng-model="filter" />
     <ul>
         <li ng-repeat="loc in locs | filter: {name: search}">
-            <a href="" ng-click="move(loc)">
+            <a ng-click="move(loc)">
                 <i class="fa fa-folder"></i> <span ng-bind="loc.name"></span>
             </a>
         </li>
         <li class="separator"></li>
         <li ng-repeat="label in labels | filter: {name: search} | orderBy: 'Order'">
-            <a href="" ng-click="applyAndArchive(label)">
+            <a ng-click="applyAndArchive(label)">
                 <i class="fa fa-tag" ng-style="style(label)"></i> <span ng-bind="label.name"></span>
             </a>
         </li>

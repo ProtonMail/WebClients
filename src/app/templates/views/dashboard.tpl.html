@@ -20,7 +20,7 @@
                             </td>
                             <td class='text-right'>
                                 <span>
-                                    <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
+                                    <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
                                 </span>
                             </td>
                         </tr>
@@ -31,7 +31,7 @@
                             </td>
                             <td class='text-right'>
                                 <span>
-                                    <a href="" ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
+                                    <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
                                 </span>
                             </td>
                         </tr>
@@ -42,7 +42,7 @@
                             </td>
                             <td class='text-right'>
                                 <span>
-                                    <a href="" ui-sref="secured.members">{{ 'MANAGE' | translate }}</a>
+                                    <a ui-sref="secured.members">{{ 'MANAGE' | translate }}</a>
                                 </span>
                             </td>
                         </tr>
@@ -132,7 +132,7 @@
                                 </strong>
                             </td>
                             <td class="text-right">
-                                <a href="" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                <a ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
                             </td>
                         </tr>
                     </table>
@@ -153,18 +153,18 @@
                         <div class="group" ng-show="organization === null">
                             <label>{{ 'CURRENCY' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="" ng-click="futureCurrency = 'EUR'" ng-class="{'active': futureCurrency === 'EUR'}">EUR</a>
-                                <a href="" ng-click="futureCurrency = 'USD'" class="divider" ng-class="{'active': futureCurrency === 'USD'}">USD</a>
-                                <a href="" ng-click="futureCurrency = 'CHF'" class="divider" ng-class="{'active': futureCurrency === 'CHF'}">CHF</a>
+                                <a ng-click="futureCurrency = 'EUR'" ng-class="{'active': futureCurrency === 'EUR'}">EUR</a>
+                                <a ng-click="futureCurrency = 'USD'" class="divider" ng-class="{'active': futureCurrency === 'USD'}">USD</a>
+                                <a ng-click="futureCurrency = 'CHF'" class="divider" ng-class="{'active': futureCurrency === 'CHF'}">CHF</a>
                             </div>
                         </div>
                         <div class="group">
                             <label>{{ 'BILLING' | translate }}</label>
                             <div class="pm_buttons">
-                                <a href="" ng-click="futureBillingCycle = 1" ng-class="{'active': futureBillingCycle === 1}">
+                                <a ng-click="futureBillingCycle = 1" ng-class="{'active': futureBillingCycle === 1}">
                                 {{ 'MONTHLY' | translate }}
                                 </a>
-                                <a href="" ng-click="futureBillingCycle = 12" ng-class="{'active': futureBillingCycle === 12}" class="divider">
+                                <a ng-click="futureBillingCycle = 12" ng-class="{'active': futureBillingCycle === 12}" class="divider">
                                 {{ 'YEARLY' | translate }}
                                 </a>
                             </div>
@@ -399,7 +399,7 @@
                     </div>
                 </form>
                 <p ng-hide="subscription.Plan === 'free'">
-                    <a href="" ng-click="free()" pt-tooltip="{{ 'SWITCH_TO_THE_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
+                    <a ng-click="free()" pt-tooltip="{{ 'SWITCH_TO_THE_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
                 </p>
             </section>
         </div>
