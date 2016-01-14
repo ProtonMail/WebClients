@@ -74,27 +74,24 @@ angular.module('proton.autocomplete', [])
             };
 
             var getEmails = function(value) {
-                var values = matchEmail(value);
                 var emails = [];
+                var separators = [',', ';'];
+                var split = value.split(new RegExp(separators.join('|'), 'g'));
 
-                if(values) {
-                    var tempValue = value;
+                for (var i = 0; i < split.length; i++) {
+                    var block = split[i];
+                    var match = block.match(regexEmail);
 
-                    emails = scope.emails;
+                    if (match !== null) {
+                        console.log(match);
+                        var email = clean(match[0]);
+                        var label = clean(block.split(email)[0]);
+                        var contact = {
+                            Address: email,
+                            Name: buildLabel(label, email)
+                        };
 
-                    for (var i = 0; i < values.length; i++) {
-                        if(tempValue) {
-                            var email = clean(values[i]);
-                            var arrayValue = tempValue.split(email);
-                            var label = clean(arrayValue[0]);
-                            var contact = {
-                                Address: email,
-                                Name: buildLabel(label, email)
-                            };
-
-                            emails.push(contact);
-                            tempValue = arrayValue[1];
-                        }
+                        emails.push(contact);
                     }
                 }
 
