@@ -1267,6 +1267,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     message.sending = true;
                                     Message.send(parameters).$promise.then(function(result) {
                                         if(angular.isDefined(result.Error)) {
+                                            message.sending = false;
                                             deferred.reject(new Error(result.Error));
                                         } else {
                                             var events = [];
