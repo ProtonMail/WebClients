@@ -1260,6 +1260,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             $q.all(promises).then(function() {
                                 if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                                     $log.error(message);
+                                    message.encrypting = false;
                                     deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                                 } else {
                                     message.encrypting = false;
