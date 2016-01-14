@@ -300,10 +300,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
-                    } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
+                    } else if(totalSize >= (sizeLimit * CONSTANTS>BASE_SIZE * CONSTANTS>BASE_SIZE)) {
                         dropzone.removeFile(file);
-                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
-                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
+                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS>BASE_SIZE/CONSTANTS>BASE_SIZE)/10 + ' MB.');
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS>BASE_SIZE/CONSTANTS>BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
                         if ( angular.isUndefined( message.queuedFiles ) ) {
                             message.queuedFiles = 0;
@@ -353,7 +353,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 error: function(event) {
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
-                    if(event.size > sizeLimit * 1024 * 1024) {
+                    if(event.size > sizeLimit * CONSTANTS>BASE_SIZE * CONSTANTS>BASE_SIZE) {
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
                     }
                 }

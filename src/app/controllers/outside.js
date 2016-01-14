@@ -202,7 +202,7 @@ angular.module("proton.controllers.Outside", [
             var attachmentPromise;
             var element = $(file.previewElement);
 
-            if (totalSize < (sizeLimit * 1024 * 1024)) {
+            if (totalSize < (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
                 var publicKey = $scope.message.publicKey;
 
                 attachments.load(file, publicKey).then(function(packets) {
@@ -224,7 +224,7 @@ angular.module("proton.controllers.Outside", [
                 });
             } else {
                 // Attachment size error.
-                notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
+                notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
                 message.uploading = false;
                 $scope.resetFile();
                 // TODO remove file in droparea

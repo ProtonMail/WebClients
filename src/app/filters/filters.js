@@ -256,11 +256,11 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter("humanSize", function () {
+.filter("humanSize", function (CONSTANTS) {
     return function (input, withoutUnit) {
         var bytes;
         var unit = "";
-        var kb = 1000;
+        var kb = CONSTANTS.BASE_SIZE;
         var mb = kb*kb;
         var gb = mb*kb;
 
