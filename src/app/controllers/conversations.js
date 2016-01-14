@@ -191,7 +191,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 sort = sort.slice(1);
             }
 
-            params.Sort = _.string.capitalize(sort);
+            params.Sort = $filter('capitalize')(sort);
             params.Desc = +desc;
         }
 

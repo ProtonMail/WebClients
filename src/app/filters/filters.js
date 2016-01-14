@@ -40,10 +40,10 @@ angular.module("proton.filters",[])
 .filter("capitalize", function() {
     return function(value) {
         if (value !== null) {
-            value = angular.lowercase(value);
+            return angular.uppercase(value.substring(0, 1)) + angular.lowercase(value).substring(1);
+        } else {
+            return value;
         }
-
-        return angular.uppercase(value.substring(0,1)) + value.substring(1);
     };
 })
 
@@ -308,28 +308,6 @@ angular.module("proton.filters",[])
     		return (bytes / Math.pow(kb, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
         }
 	};
-})
-
-.filter("contrast", function () {
-    return function (input, character) {
-        if (!input) {
-            return input;
-        }
-
-        var split = input.split(character);
-
-        if (split.length === 1) {
-            return "*" + input + "*";
-
-        } else {
-            if (character === '<') {
-                character = '&lt;';
-                split[1].replace('>', '&gt;');
-            }
-
-            return "*" + _.string.trim(split[0]) + "* " + character + split[1];
-        }
-    };
 })
 
 .filter('range', function() {
