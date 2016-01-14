@@ -39,16 +39,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     // Listeners
-    $scope.$on('updateLabels', function(event) { $scope.updateLabels(); });
-    $scope.$on('refreshCounters', function(event) { $scope.refreshCounters(); });
     $scope.$on('createLabel', function(event) { $scope.createLabel(); });
-
-    /**
-     * Called at the beginning
-     */
-    $scope.initialization = function() {
-        $scope.refreshCounters();
-    };
 
     /**
      * Open modal to create a new label
@@ -73,9 +64,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                                 if(angular.isDefined(data) && data.Code === 1000) {
                                     authentication.user.Labels.push(data.Label);
                                     cacheCounters.add(data.Label.ID);
-                                    labelModal.deactivate();
-                                    $rootScope.$broadcast('updateLabels');
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
+                                    labelModal.deactivate();
                                 } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});
                                     $log.error(result);
@@ -95,15 +85,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                 }
             }
         });
-    };
-
-    /**
-     * Manipulates the DOM (labelScroller), sets unread count, and updates the title of the page
-     */
-    $scope.refreshCounters = function() {};
-
-    $scope.updateLabels = function () {
-        $scope.labels = authentication.user.Labels;
     };
 
     /**
@@ -229,6 +210,4 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
         return result;
     };
-
-    $scope.initialization();
 });

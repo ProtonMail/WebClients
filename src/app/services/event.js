@@ -33,15 +33,23 @@ angular.module("proton.event", ["proton.constants"])
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
 					_.each(labels, function(label) {
+						var index;
+
 						if(label.Action === DELETE) {
-							authentication.user.Labels = _.filter(authentication.user.Labels, function(l) { return l.ID !== label.ID; });
-							$rootScope.$broadcast('updateLabels');
+							index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.ID; });
+
+							if(index !== -1) {
+								authentication.user.Labels.splice(index, 1);
+							}
 						} else if(label.Action === CREATE) {
 							authentication.user.Labels.push(label.Label);
 							cacheCounters.add(label.Label.ID);
 						} else if(label.Action === UPDATE) {
-							var index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
-							authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
+							index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
+
+							if(index !== -1) {
+								authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
+							}
 						}
 					});
 				}
