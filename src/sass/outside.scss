@@ -7,11 +7,21 @@ body#eo-message {
 	#pm_footer {
 		position: static;
 	}
+	#attachmentArea {
+		margin: 0 -35px -35px;
+	}
+	.message-head {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
 }
 
 body#eo-reply {
 	overflow: initial;
 	background: $dark;
+	#attachmentArea {
+		margin: 0 -35px;
+	}
 	#pm_footer {
 		position: static;
 	}
@@ -51,10 +61,11 @@ body#eo-reply {
 	#message-body {
 		margin: 0 -35px;
 		.squire-toolbar {
-			border: none;
+			border-top: 1px solid $border;
+			border-bottom: 1px solid $border;
 			padding: 0 35px;
-			height: 40px;
-			line-height: 40px;
+			height: 42px;
+			line-height: 42px;
 			box-sizing: border-box;
 			li {
 				height: 40px;
@@ -76,7 +87,7 @@ body#eo-reply {
 			width: 100%;
 			min-height: 30rem;
 			height: 30rem;
-			padding: 1rem 35px;
+			padding: 1rem 25px;
 			box-sizing: border-box;
 		}
 	}
@@ -99,7 +110,7 @@ body#eo-reply {
 	font-size: 1em;
 	line-height: 1.6em;
 	#expirationMessage {
-		background-color: $primary;
+		background-color: $exp;
 		height: 50px;
 		line-height: 50px;
 		text-align: center;
@@ -116,9 +127,11 @@ body#eo-reply {
 		-webkit-overflow-scrolling: touch;
 	}
 	.message-head {
-		padding: 20px 0;
+		padding: 20px 35px;
 		border-bottom: 1px solid $border;
 		margin-bottom: 10px;
+		margin-left: -35px;
+		margin-right: -35px;
 		h1 {
 			line-height: 35px;
 			display: inline-block;
@@ -129,9 +142,15 @@ body#eo-reply {
 			}
 		}
 	}
+	#attachmentArea {
+		border-top: 1px solid $border;
+		border-bottom: none;
+		padding-left: 35px;
+		padding-right: 35px;
+	}
 	.display-image {
 	    position: absolute;
-	    right: 0;
+	    right: 35px;
 	    bottom: -1px;
 	    margin: 0 0 0 -5rem;
 	    width: initial;
@@ -168,6 +187,10 @@ body#eo-reply {
 		padding-bottom: 1rem;
 		border-bottom: 1px solid $border;
 		position: relative;
+		margin-left: -35px;
+		margin-right: -35px;
+		padding-left: 35px;
+		padding-right: 35px;
 		ul.infos,
 		ul.infos li {
 			display: block;
@@ -198,22 +221,34 @@ body#eo-reply {
 	.outside {
 		padding: 0;
 		#expirationMessage {
-			margin: 0 -25px;
+			margin: 0;
 			border-radius: 0;
 		}
 		#outsideMessageWrap {
-			padding: 0 25px;
+			padding: 0;
 		}
 	}
 	body#eo-reply {
 		footer {
-		    padding: 1rem 10px;
-		    margin: 0 -10px;
+		    padding: 1rem 25px;
+		    margin: 0;
+		}
+		.message-head {
+			padding-left: 25px;
+			padding-right: 25px;
+			margin: 0;
+		}
+		#attachmentArea {
+			margin: 0;
+			padding-left: 25px;
+			padding-right: 25px;
 		}
 		#message-body {
 			margin: 0;
+			padding: 1rem 0;
 			iframe {
-				padding: 1px;
+				padding: 1px 25px;
+				background: #fff;
 			}
 			.squire-toolbar {
 				padding: 0;
@@ -231,6 +266,26 @@ body#eo-reply {
 				}
 			}
 		}		
+	}
+	body#eo-message {
+		.message-head,
+		#attachmentArea,
+		.message-metadata {
+			margin: 0;
+		}
+		.message-metadata {
+			padding-top: 1rem;
+		}
+		#outsideMessage {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+		.message-metadata,
+		#outsideMessage,
+		#attachmentArea {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
 	}
 }
 

@@ -33,15 +33,16 @@ body.secure section#pm_sidebarMobile {
 }
 section.sidebar {
     background: $secondary;
-    padding-top: 5px;
+    padding-top: 0;
     position: relative;
     top: -1px;
     z-index: 88;
     ul.menu {
         li.active {
+            background: rgba(255,255,255,.1);
             a {
+                background: transparent;
                 border-color: transparent;
-                background: rgba(255,255,255,.1);
                 color: $white;
                 font-weight: 700;
                 i.fa {

@@ -30,14 +30,6 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    // Listeners
-    $scope.$on('updateLabels', $scope.updateLabels);
-
-    // Functions
-    $scope.updateLabels = function () {
-        $scope.labels = authentication.user.Labels;
-    };
-
     $scope.createLabel = function() {
         $rootScope.$broadcast('createLabel');
     };
@@ -102,9 +94,7 @@ angular.module("proton.controllers.Settings")
                                 if(angular.isDefined(data) && data.Code === 1000) {
                                     confirmModal.deactivate();
                                     notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
-                                    authentication.user.Labels = _.without(authentication.user.Labels, label);
-                                    $scope.labels = authentication.user.Labels;
-                                    $rootScope.$broadcast('updateLabels');
+                                    authentication.user.Labels.splice(authentication.user.Labels.indexOf(label), 1);
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});
                                     $log.error(data);

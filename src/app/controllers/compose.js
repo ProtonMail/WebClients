@@ -180,6 +180,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }, 50);
     }
 
+    function onOrientationChange() {
+        _.each($scope.messages, function(message) {
+            $scope.focusComposer(message);
+        });
+    }
+
     function onDragOver(event) {
         event.preventDefault();
         $interval.cancel($scope.intervalComposer);
@@ -217,6 +223,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     $(window).on('resize', onResize);
+    $(window).on('orientationchange', onOrientationChange);
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
@@ -666,6 +673,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 var clicked = $('.composer').eq(index);
                 var clickedTop = clicked.css('top');
                 var clickedZ = clicked.css('zIndex');
+
+                if (clickedZ==='auto') {
+                    clickedZ = 100; // fix for mobile safari issue
+                }
 
                 // TODO: swap ???
                 bottom.css({
@@ -1249,22 +1260,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             $q.all(promises).then(function() {
                                 if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                                     $log.error(message);
+                                    message.encrypting = false;
                                     deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                                 } else {
                                     message.encrypting = false;
                                     message.sending = true;
                                     Message.send(parameters).$promise.then(function(result) {
                                         if(angular.isDefined(result.Error)) {
+                                            message.sending = false;
                                             deferred.reject(new Error(result.Error));
                                         } else {
                                             var events = [];
 
                                             message.sending = false; // Change status
-                                            result.Sent.expand = undefined; // Trick to ask the front-end to open the message sent
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                            result.Sent.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.sent]; // Add sent label to this message
-                                            result.Sent.LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]; // Remove draft label on this message
                                             result.Sent.HasAttachment = (result.Sent.Attachments.length > 0)?1:0;
                                             result.Sent.NumAttachments = result.Sent.Attachments.length;
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
@@ -1273,9 +1283,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
+                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID}}); // Tricks to force the download of the new conversation if it is
+
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
                                             $scope.close(message, false, false); // Close the composer window
+
+                                            $timeout(function() {
+                                                $rootScope.targetID = result.Sent.ID; // Define target ID
+                                                $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
+                                            }, 100);
+
                                             deferred.resolve(result); // Resolve finally the promise
                                         }
                                     }, function(error) {

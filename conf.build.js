@@ -41,7 +41,6 @@ module.exports = {
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-touch/angular-touch.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/lodash/dist/lodash.js",
       "vendor/moment/moment.js",
       "vendor/underscore/underscore.js",
       "vendor/DOMPurify/dist/purify.min.js",

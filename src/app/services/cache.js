@@ -358,7 +358,11 @@ angular.module("proton.cache", [])
         } else {
             var conversation = api.getConversationCached(conversationId);
 
-            return conversation.Time;
+            if(angular.isDefined(conversation)) {
+                return conversation.Time;
+            } else {
+                return '';
+            }
         }
     };
 
@@ -423,8 +427,6 @@ angular.module("proton.cache", [])
                             api.callRefresh();
                         }
                     });
-                    // We return the messages cached waiting for the server to respond
-                    deferred.resolve(messages);
                 }
             } else {
                 callApi();
@@ -499,8 +501,6 @@ angular.module("proton.cache", [])
                             api.callRefresh();
                         }
                     });
-                    // We return the conversations cached waiting for the server to respond
-                    deferred.resolve(conversations);
                 }
             } else {
                 callApi();
@@ -720,12 +720,8 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        // Manage time
-        manageTimes(event.ID);
-
         if(angular.isDefined(current)) {
             updateConversation(event.Conversation);
-            deferred.resolve();
         } else {
             // NOTE When we send a message to yourself, the LabelIDs parameter is undefined
             // Probably a back-end bug
@@ -741,8 +737,12 @@ angular.module("proton.cache", [])
             }
 
             insertConversation(event.Conversation);
-            deferred.resolve();
         }
+
+        // Manage time
+        manageTimes(event.ID);
+
+        deferred.resolve();
 
         return deferred.promise;
     };

@@ -211,6 +211,9 @@
                 padding-top: 20px;
                 float: left;
                 width: 100%;
+                .fa-lock {
+                    top: 10px;
+                }
                 .contact {
                     strong {
                         font-weight: 700;
@@ -326,6 +329,26 @@
             font-size: 90%;
             position: relative;
             cursor: pointer;
+            .fa-lock {
+                opacity: .33;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                line-height: 40px;
+                height: 40px;
+                width: 40px;
+                display: block;
+                font-size: 14px;
+                text-align: center;
+                &.text-purple {
+                    opacity: 1;
+                }
+                &.pgp {
+                    color: $pgp;
+                    opacity: 1;
+                }
+            }
             .addLabelButton {
                 display: none;
             }
@@ -462,8 +485,7 @@
             box-sizing: border-box;
             margin-left: 40px;
             margin-right: 40px;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            padding: 1rem 0;
             .more {
                 line-height: 1rem;
                 height: 1rem;

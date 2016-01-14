@@ -24,7 +24,6 @@
 			position: relative;
 			box-shadow: inset 0 1px 0 0 $border;
 			padding: 14px 15px 4px 40px;
-			border-left: 6px solid transparent;
 			cursor: pointer;
 			border-radius: 0;
 			color: $gray;
@@ -34,7 +33,6 @@
 			margin: 0;
 			overflow: hidden;
 			background: $read;
-			margin-left: -6px;
 			max-width: 100%;
 			span.expiration {
 				position: absolute;
@@ -163,7 +161,8 @@
 				}
 			}
 			&:last-child {
-				border-bottom-color: $border;
+				border-bottom-color: transparent;
+				box-shadow: inset 0 1px 0 0 #cfcfcf, inset 0 -1px 0 0 #cfcfcf;
 			}
 			&.placeholder {
 				font-family: monospace;
@@ -176,7 +175,7 @@
 			&.selected {
 				margin: 0;
 				z-index: 2;
-				border-left-color: $primary;
+				border-left: 6px solid $primary;
 				padding-left: calc(40px - 6px);
 				aside {
 					left: calc(15px - 6px);

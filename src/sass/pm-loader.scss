@@ -88,7 +88,7 @@
 	opacity: 0;
 	border-radius: $pm_loading;
 	box-shadow: $box-shadow;
-	transition: top .5s ease-in-out, opacity .5s linear;	
+	transition: opacity .5s linear;	
 	img {
 		display: block;
 		float: left;
@@ -96,7 +96,7 @@
 	&.show {
 		top: 35px;
 		opacity: 1;
-		transition: top .5s ease-in-out, opacity .5s linear;
+		transition: opacity .5s linear;
 	}
 }
 

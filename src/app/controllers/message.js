@@ -42,6 +42,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if(angular.isDefined(message)) {
             $scope.message.AddressID = message.AddressID;
             $scope.message.BCCList = message.BCCList;
+            $scope.message.Body = message.Body;
             $scope.message.CCList = message.CCList;
             $scope.message.ConversationID = message.ConversationID;
             $scope.message.ExpirationTime = message.ExpirationTime;
@@ -72,9 +73,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = false;
     });
 
-    $scope.$on('initMessage', function(event, ID) {
+    $scope.$on('initMessage', function(event, ID, scroll) {
         if($scope.message.ID === ID) {
-            $scope.initialization();
+            $scope.initialization(scroll);
         }
     });
 
@@ -190,15 +191,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called at the initialization of this controller
+     * @param {Boolean} scroll
      */
-    $scope.initialization = function() {
+    $scope.initialization = function(scroll) {
         if($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             }));
         } else if($rootScope.targetID === $scope.message.ID) {
-            $scope.initView();
+            $scope.initView(scroll);
         }
     };
 
@@ -296,7 +298,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     // NOTE Plain text detection doesn't work. Check #1701
-                    // var isHtml = tools.isHtml(content);
+                    var isHtml = tools.isHtml(content);
 
                     if($rootScope.printMode !== true) {
                         content = $scope.message.clearImageBody(content);
@@ -317,15 +319,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
                     // Detect type of content
-                    // if (isHtml === true) {
+                    if (isHtml === true) {
                         $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
                         // Assign decrypted content
                         $scope.message.decryptedBody = $sce.trustAsHtml(content);
-                    // } else {
-                    //     $scope.isPlain = true;
-                    //     $scope.message.viewMode = 'plain';
-                    // }
+                    } else {
+                        $scope.isPlain = true;
+                        $scope.message.viewMode = 'plain';
+                    }
 
                     // Broken images
                     $(".email img").error(function () {

@@ -123,21 +123,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
-                        var latestIndex = messages.length - 1; // Last index
-                        var index = latestIndex - 1; // Start with the previous message
+                        var index = messages.length - 1;
 
                         while(loop === true && index > 0) {
+                            index--;
+
                             if(messages[index].IsRead === 1) { // Is read
                                 loop = false;
-                            } else {
-                                index--; // Keep going
+                                index++;
                             }
                         }
 
                         if (loop === true) { // No message read found
                             index = 0;
-                        } else {
-                            index++; // If reach a read message, backtrack one message and send the that one, which is the first unread message in the unread block at the end of the convo.
                         }
 
                         $rootScope.targetID = messages[index].ID;
@@ -233,7 +231,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
                 var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
-                var value = element.offset().top - headerOffset;
+                var amountScrolled = $('#pm_thread').scrollTop();
+                var value = element.offset().top + amountScrolled - headerOffset;
 
                 $('#pm_thread').animate({
                     scrollTop: value

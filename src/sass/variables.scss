@@ -1,6 +1,6 @@
 $sidebarWidth: 		190px;
 $sidebarMobWidth: 	220px;
-$sidebarRowHeight:	35px;
+$sidebarRowHeight:	36px;
 $headerHeight: 		61px;
 $toolbarHeight: 	63px;
 $rowHeight: 		36px;
@@ -11,7 +11,7 @@ $short: 			700px;
 $panel:				400px;
 $pm_loading: 		50px;
 $maxHeight: auto; // was 40rem
-$box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.25);
+$box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.33), 0 0 2px rgba(0, 0, 0, 0.33);
 
 // Theme Colors
 $primary: 			darken(#9397cd, 5%);
@@ -35,6 +35,7 @@ $alt:				#838897;
 $alt-light:			lighten($alt, 5%);
 $exp:				#ec6446;
 $text:				#222;
+$pgp:				#090;
 
 // Desktop 
 $wide:				1400px;

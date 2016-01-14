@@ -18,7 +18,7 @@ body.rows #pm_toolbar {
         }
     }
     .back {
-        margin-left: 10px;
+        margin-left: 1rem;
     }
     .messageActions {
         .pm_buttons {
@@ -50,11 +50,11 @@ body.columns #pm_toolbar {
 }
 
 #pm_toolbar {
-    padding: 15px 0;
+    padding: 10px 0;
     box-sizing: border-box;
     position: relative;
     z-index: 55;
-    height: 64px;
+    height: 55px;
     box-shadow: 0 1px 0 $border;
     .messageActions {
         float: right;
