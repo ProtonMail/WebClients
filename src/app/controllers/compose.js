@@ -180,6 +180,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }, 50);
     }
 
+    function onOrientationChange() {
+        _.each($scope.messages, function(message) {
+            $scope.focusComposer(message);
+        });
+    }
+
     function onDragOver(event) {
         event.preventDefault();
         $interval.cancel($scope.intervalComposer);
@@ -217,7 +223,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     $(window).on('resize', onResize);
-    $(window).on('orientationchange', onResize);
+    $(window).on('orientationchange', onOrientationChange);
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
@@ -667,6 +673,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 var clicked = $('.composer').eq(index);
                 var clickedTop = clicked.css('top');
                 var clickedZ = clicked.css('zIndex');
+
+                if (clickedZ==='auto') {
+                    clickedZ = 100; // fix for mobile safari issue
+                }
 
                 // TODO: swap ???
                 bottom.css({
