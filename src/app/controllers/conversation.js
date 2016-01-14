@@ -233,7 +233,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
                 var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
-                var value = element.offset().top - headerOffset;
+                var amountScrolled = $('#pm_thread').scrollTop();
+                var value = element.offset().top + amountScrolled - headerOffset;
 
                 $('#pm_thread').animate({
                     scrollTop: value
