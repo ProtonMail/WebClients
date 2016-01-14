@@ -11,6 +11,7 @@ angular.module('proton', [
     'SmoothScrollbar',
     'ui.router',
     'ui.sortable',
+    'as.sortable',
 
     // Constant
     'proton.constants',
