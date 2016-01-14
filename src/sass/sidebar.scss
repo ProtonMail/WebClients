@@ -46,7 +46,7 @@ section.sidebar {
         margin-bottom: 0;
     }
     a.compose {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         font-size: 12px;
         padding: 0 0 0 25px;
         width: 100%;
@@ -68,8 +68,8 @@ section.sidebar {
         font-size: 14px;
         margin: 0 -20px 20px -20px;
         li {
-            height: $sidebarRowHeight;
-            line-height: $sidebarRowHeight;
+            height: ($sidebarRowHeight);
+            line-height: ($sidebarRowHeight );
             display: block;
             &.divider {
                 height: 1px;
@@ -79,8 +79,8 @@ section.sidebar {
             }
             a {
                 text-decoration: none;
-                height: $sidebarRowHeight;
-                line-height: $sidebarRowHeight;
+                height: ($sidebarRowHeight - 2);
+                line-height: ($sidebarRowHeight - 2);
                 display: block;
                 border-bottom: 1px solid transparent;
                 border-top: 1px solid transparent;
