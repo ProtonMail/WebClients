@@ -358,7 +358,11 @@ angular.module("proton.cache", [])
         } else {
             var conversation = api.getConversationCached(conversationId);
 
-            return conversation.Time;
+            if(angular.isDefined(conversation)) {
+                return conversation.Time;
+            } else {
+                return '';
+            }
         }
     };
 
