@@ -217,6 +217,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     $(window).on('resize', onResize);
+    $(window).on('orientationchange', onResize);
     $(window).on('dragover', onDragOver);
     $(window).on('dragstart', onDragStart);
     $(window).on('dragend', onDragEnd);
