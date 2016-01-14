@@ -14,6 +14,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $templateCache,
     $timeout,
     $translate,
+    $window,
     action,
     alertModal,
     attachments,
@@ -334,9 +335,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $(this).unbind("error").addClass("pm_broken");
                     });
 
-                    if($rootScope.printMode) {
-                        setTimeout(function() {
-                            window.print();
+                    if($rootScope.printMode === true) {
+                        $timeout(function() {
+                            $window.print();
                         }, 1000);
                     }
 

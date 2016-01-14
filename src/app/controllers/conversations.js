@@ -27,6 +27,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     tools
 ) {
     var lastChecked = null;
+    var unbindWatcherElements;
 
     /**
      * Method called at the initialization of this controller
@@ -45,14 +46,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.startWatchingEvent();
         $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
-            $scope.$watch('conversations', function(newValue, oldValue) {
-                $rootScope.numberElement = newValue.length;
-                $rootScope.numberElementSelected = $scope.elementsSelected().length;
-                $rootScope.numberElementChecked = $scope.elementsChecked().length;
-                $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
-                // Manage expiration time
-                expiration.check(newValue);
-            }, true);
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, function(error) {
@@ -63,6 +56,21 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.$watch('layoutMode', function() {
             $scope.toolbarOffset();
         });
+    };
+
+    $scope.watchElements = function() {
+        if(angular.isDefined(unbindWatcherElements)) {
+            unbindWatcherElements();
+        }
+
+        unbindWatcherElements = $scope.$watch('conversations', function(newValue, oldValue) {
+            $rootScope.numberElement = newValue.length;
+            $rootScope.numberElementSelected = $scope.elementsSelected().length;
+            $rootScope.numberElementChecked = $scope.elementsChecked().length;
+            $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
+            // Manage expiration time
+            expiration.check(newValue);
+        }, true);
     };
 
     $scope.toolbarOffset = function() {
@@ -234,7 +242,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             var page = $stateParams.page || 0;
 
             $scope.conversations = elements;
-
+            $scope.watchElements();
 
             if($scope.conversations.length === 0 && page > 0) {
                 $scope.back();

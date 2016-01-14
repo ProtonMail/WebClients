@@ -231,10 +231,10 @@
                 ng-repeat="attachment in message.Attachments"
                 ng-init="initAttachment(attachment, $index)">
                     <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
-                    <a href="" ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                    <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
-                    <a href="" ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                    <a ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
@@ -311,7 +311,7 @@
                         <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
-                        <span ng-show="(message.saving === true) || (message.loading())">{{ 'SAVING' | translate }}</span>
+                        <span ng-show="message.saving === true">{{ 'SAVING' | translate }}</span>
                     </button>
                 </div>
             </footer>

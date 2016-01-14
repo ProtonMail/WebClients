@@ -11,7 +11,7 @@
 	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
             </div>
 			<div class="link">
-                <!-- <a href="" ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a> -->
+                <!-- <a ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a> -->
             </div>
             <span>You have used <strong>{{ storagePercentage() }}%</strong> of your current storage space.</span>
         </div>
@@ -37,7 +37,7 @@
     <i class="fa fa-check-square"></i>
     <h2>{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <span class="pm_buttons" ng-show="numberElementChecked > 0">
-        <a href="" ng-click="deselectAll()">
+        <a ng-click="deselectAll()">
             <strong>{{ 'DESELECT_ALL' | translate }}</strong>
         </a>
     </span>

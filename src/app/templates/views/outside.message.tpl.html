@@ -6,7 +6,7 @@
         </strong>.
     </div>
     <div class="message-head">
-        <a href ng-click="reply()" class="pm_button pull-right">
+        <a ng-click="reply()" class="pm_button pull-right">
             <i class="fa fa-reply"></i>
             <span class="visible-md-inline-block visible-lg-inline-block">
                 {{ 'REPLY' | translate }}
@@ -40,7 +40,7 @@
             </li>
         </ul>
         <p class="display-image text-center pm_button" ng-show="!!imagesHidden" id="showImages">
-            <a href="" ng-click="toggleImages()">
+            <a ng-click="toggleImages()">
                 <span ng-show="!!imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
                 <span ng-hide="!!imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
             </a>
