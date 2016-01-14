@@ -104,8 +104,8 @@ section.sidebar {
                 .fa-repeat {
                     float: right;
                     display: block;
-                    line-height: $sidebarRowHeight;
-                    height: $sidebarRowHeight;
+                    line-height: ($sidebarRowHeight - 4);
+                    height: ($sidebarRowHeight - 4);
                     margin-right: .5rem;
                     position: absolute;
                     right: 0;

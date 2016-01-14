@@ -19,7 +19,7 @@
 
     .label-email {
         border: 1px solid $gray-light;
-        background-color: $light;
+        background-color: $gray-light;
         margin-top: 5px;
         text-shadow: none;
         border-radius: 2px;
@@ -37,6 +37,7 @@
     .label-email a {
         font-weight: normal;
         margin-right: 5px;
+        cursor: pointer;
     }
 
     .input-email input[type="text"] {
