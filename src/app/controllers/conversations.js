@@ -93,10 +93,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.refreshConversations();
         });
 
-        $scope.$on('updateLabels', function() {
-            $scope.updateLabels();
-        });
-
         $scope.$on('unselectAllElements', function(event) {
             $scope.unselectAllElements();
         });
@@ -285,13 +281,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         return time;
-    };
-
-    /**
-     * Update labels for the view
-     */
-    $scope.updateLabels = function () {
-        $scope.labels = authentication.user.Labels;
     };
 
     /**
