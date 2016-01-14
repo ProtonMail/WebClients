@@ -9,7 +9,7 @@
             </a>
         </span>
         <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a href="" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>

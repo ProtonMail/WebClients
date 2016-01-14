@@ -6,7 +6,7 @@
             </a>
         </span>
         <label class="pm_checkbox" ng-if="!idDefined()">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
             <em class="fa fa-check"></em>
         </label>
         <span class="pm_buttons">
