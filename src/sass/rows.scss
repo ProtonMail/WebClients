@@ -474,6 +474,7 @@ body, html {
 
 @media (max-width: $tablet-landscape) {
 	#pm_conversations.rows {
+		clear: both;
 		width: 100%;
 		.list {
 			.message {
