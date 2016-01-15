@@ -184,6 +184,9 @@ body, html {
 				height: 36px;
 				position: relative;
 				overflow: hidden;
+				.fa-paperclip {
+					display: none !important;
+				}
 				& > span {
 					display: inline-block;
 					overflow: hidden;
@@ -201,7 +204,7 @@ body, html {
 				}
 				.pm_labels {
 					position: absolute;
-					right: 0;
+					right: -10px;
 					top: 0;
 					margin: 0;
 					line-height: 18px;
@@ -355,6 +358,9 @@ body, html {
 			}
 			.subject {
 				overflow: initial !important;
+				.fa-paperclip {
+					display: block !important;
+				}
 			}
 			.fa-paperclip {
 				bottom: 0;

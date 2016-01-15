@@ -159,6 +159,10 @@
                     </p>
                 </article>
             </span>
+            <span class="size">{{ conversation.TotalSize | bytes }}</span><!-- refresh every hour -->
+            <span class="hasAttachments">
+                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+            </span>
             <span class="time" time="{{ time(conversation) }}" filter="readableTime" interval="3600000"></span><!-- refresh every hour -->
         </div>
     </div>
