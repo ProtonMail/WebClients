@@ -73,6 +73,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }, true);
     };
 
+    $scope.senders = function(element) {
+        if (angular.isDefined(element.Senders)) {
+            return element.Senders;
+        } else {
+            return [element.Sender];
+        }
+    };
+
+    $scope.recipients = function(element) {
+        if (angular.isDefined(element.Recipients)) {
+            return element.Recipients;
+        } else {
+            return [[].concat(element.ToList).concat(element.CCList).concat(element.BCCList)];
+        }
+    };
+
     $scope.toolbarOffset = function() {
         // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
         function getScrollBarWidth () {
