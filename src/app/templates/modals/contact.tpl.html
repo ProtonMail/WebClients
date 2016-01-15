@@ -12,7 +12,7 @@
                             <label class="control-label" for="contactName">{{ 'NAME' | translate }}*</label>
                         </span>
                         <span class="col wide right">
-                            <input tabindex="1" type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
+                            <input type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder="{{ 'CONTACT_NAME' | translate }}" required />
                         </span>
                     </div>
                     <div class="clearfix">
@@ -20,7 +20,7 @@
                             <label class="control-label" for="contactEmail">{{ 'EMAIL' | translate }}*</label>
                         </span>
                         <span class="col wide right">
-                            <input tabindex="2" type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="{{ 'CONTACT_EMAIL' | translate }}" required />
+                            <input type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder="{{ 'CONTACT_EMAIL' | translate }}" required />
                         </span>
                     </div>
                     <!-- <div class="clearfix">
@@ -43,7 +43,7 @@
             </div>
             <div class="modal-footer text-right">
                 <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                <button tabindex="3" type="submit" class="pm_button primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
+                <button type="submit" class="pm_button primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
                     <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
                     <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
                 </button>
