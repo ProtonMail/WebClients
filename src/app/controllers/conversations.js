@@ -85,7 +85,21 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if (angular.isDefined(element.Recipients)) {
             return element.Recipients;
         } else {
-            return [[].concat(element.ToList).concat(element.CCList).concat(element.BCCList)];
+            var recipients = [];
+
+            if (element.ToList) {
+                recipients = recipients.concat(element.ToList);
+            }
+
+            if (element.CCList) {
+                recipients = recipients.concat(element.CCList);
+            }
+
+            if (element.BCCList) {
+                recipients = recipients.concat(element.BCCList);
+            }
+
+            return recipients;
         }
     };
 
@@ -689,6 +703,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation
      */
     $scope.select = function(event, conversation) {
+        $rootScope.showWelcome = false;
+        
         if(!lastChecked) {
             lastChecked = conversation;
         } else {
