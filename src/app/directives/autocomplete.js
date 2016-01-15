@@ -51,15 +51,15 @@ angular.module('proton.autocomplete', [])
             };
 
             /**
-             * Clean new value submited
-             */
+            * Clean new value submited
+            */
             var clean = function(value) {
                 return value
-                    .replace(/</g, '')
-                    .replace(/>/g, '')
-                    .replace(/"/g, '')
-                    .replace(/,/g, '')
-                    .trim();
+                .replace(/</g, '')
+                .replace(/>/g, '')
+                .replace(/"/g, '')
+                .replace(/,/g, '')
+                .trim();
             };
 
             var matchEmail = function(value) {
@@ -99,13 +99,13 @@ angular.module('proton.autocomplete', [])
             };
 
             /**
-             * Highlight value searched in the autocompletion
-             */
+            * Highlight value searched in the autocompletion
+            */
             var highlight = function(string, word) {
-        		var regex = new RegExp('(' + word + ')', 'gi');
+                var regex = new RegExp('(' + word + ')', 'gi');
 
-        		return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, "<strong>$1</strong>");
-        	};
+                return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, "<strong>$1</strong>");
+            };
 
             var createNewInput = function() {
                 $timeout(function() {
@@ -120,15 +120,15 @@ angular.module('proton.autocomplete', [])
 
             // Functions
             /**
-             * Function called at the initialization of this directive
-             */
+            * Function called at the initialization of this directive
+            */
             scope.initialization = function() {
                 scope.emails = scope.emails || [];
                 createNewInput();
             };
             /**
-             * Submit a new address
-             */
+            * Submit a new address
+            */
             scope.onSubmit = function() {
                 if(scope.params.selected !== null) {
                     scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
@@ -202,62 +202,112 @@ angular.module('proton.autocomplete', [])
             scope.onKeyDown = function(event, email) {
                 switch (event.keyCode) {
                     case BACKSPACE_KEY:
-                        var value = scope.params.newValue;
-                        var emails = scope.emails;
+                    var value = scope.params.newValue;
+                    var emails = scope.emails;
 
-                        if(value.length === 0 && emails.length > 0) {
-                            this.onRemove(emails.length - 1);
-                        }
-                        break;
+                    if(value.length === 0 && emails.length > 0) {
+                        this.onRemove(emails.length - 1);
+                    }
+                    break;
                     case DOWN_KEY:
                     case UP_KEY:
                     case TAB_KEY:
                     case ENTER_KEY:
-                        event.preventDefault();
-                        event.stopPropagation();
-                        break;
+                    event.preventDefault();
+                    event.stopPropagation();
+                    break;
                     default:
-                        break;
+                    break;
                 }
             };
 
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
                     case ENTER_KEY:
-                        scope.onSubmit();
-                        break;
+                    scope.onSubmit();
+                    break;
                     case TAB_KEY:
-                        if(scope.params.newValue.length > 0) {
-                            scope.onSubmit();
-                        } else {
-                            // Focus next input (autocomplete or subject)
-                            angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
-                        }
-                        break;
+                    if(scope.params.newValue.length > 0) {
+                        scope.onSubmit();
+                    } else {
+                        // Focus next input (autocomplete or subject)
+                        angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
+                    }
+                    break;
                     case DOWN_KEY:
-                        if(scope.params.contactsFiltered.length > 0) {
-                            if(scope.params.selected === null) {
-                                 scope.params.selected = 0;
-                            } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
-                                  scope.params.selected++;
-                            }
+                    if(scope.params.contactsFiltered.length > 0) {
+                        if(scope.params.selected === null) {
+                            scope.params.selected = 0;
+                        } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
+                            scope.params.selected++;
                         }
-                        break;
+                    }
+                    break;
                     case UP_KEY:
-                        if(scope.params.contactsFiltered.length > 0) {
-                            if(scope.params.selected > 1) {
-                                scope.params.selected--;
-                            } else {
-                                scope.params.selected = 0;
-                            }
+                    if(scope.params.contactsFiltered.length > 0) {
+                        if(scope.params.selected > 1) {
+                            scope.params.selected--;
+                        } else {
+                            scope.params.selected = 0;
                         }
-                        break;
+                    }
+                    break;
                     default:
-                        break;
+                    break;
                 }
             };
             // Initialization
             scope.initialization();
+        }
+    };
+})
+
+.directive('autosize', function($document) {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attrs, ctrl) {
+            var span, resize;
+
+            span = angular.element('<span></span>');
+            span.css('display', 'none')
+            .css('visibility', 'hidden')
+            .css('width', 'auto');
+
+            element.parent().append(span);
+
+            resize = function(value) {
+                var style = getComputedStyle(element[0]);
+                span.css('font', style.font)
+                .css('letter-spacing', style.letterSpacing)
+                .css('word-spacing', style.wordSpacing)
+                .css('padding', style.padding);
+
+                if (value !== null && value.length === 0) {
+                    value = element.attr('placeholder') || '';
+                }
+
+                span.text(value);
+                span.css('display', '');
+
+                try {
+                    element.css('width', span.prop('offsetWidth') + 'px');
+                }
+                finally {
+                    span.css('display', 'none');
+                }
+            };
+
+            ctrl.$parsers.unshift(function(value) {
+                resize(value);
+
+                return value;
+            });
+
+            ctrl.$formatters.unshift(function(value) {
+                resize(value);
+
+                return value;
+            });
         }
     };
 });
