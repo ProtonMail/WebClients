@@ -271,6 +271,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.displayImages = function() {
         $scope.message.toggleImages();
         $scope.message.decryptedBody = undefined; // Reset decrypted body
+        $scope.showingMessages = true;
         $scope.displayContent();
     };
 

@@ -282,7 +282,7 @@ body, html {
 	}
 	#pm_conversations.rows .list {
 		.message {
-			padding: 0 10px 0 75px !important;
+			padding: 0 10px 0 85px !important;
 			height: 65px;
 			line-height: 25px;
 			position: relative;
@@ -299,7 +299,7 @@ body, html {
 			}
 			.pm_checkbox {
 				position: absolute;
-				left: 5px;
+				left: 10px;
 				top: 14px;
 				height: 35px !important;
 				line-height: 35px !important;
@@ -326,14 +326,14 @@ body, html {
 				}
 			}
 			&.selected {
-				padding-left: 70px !important;
+				padding-left: 80px !important;
 				box-sizing: border-box;
 				width: 100%;
 				.star {
-					left: 35px !important;
+					left: 45px !important;
 				}
 				.pm_checkbox {
-					left: 0 !important;
+					left: 5px !important;
 					padding: 0 !important
 				}
 				margin-left: 0;
@@ -351,7 +351,7 @@ body, html {
 			}
 			.star {
 				top: 5px;
-				left: 40px;
+				left: 50px;
 			}
 			.subject {
 				overflow: initial !important;
