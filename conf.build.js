@@ -64,8 +64,7 @@ module.exports = {
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
-      "vendor/angular-ui-sortable/sortable.js"
+      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js"
     ],
     bootstrap_components: [
       "affix",
