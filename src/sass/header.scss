@@ -412,7 +412,7 @@ header#pm_header {
 	}
 }
 
-@media (max-width: $mobile-portrait) {
+@media (max-width: $mobile-medium) {
 	header#pm_header {
 		.fa {
 			font-size: 18px;
