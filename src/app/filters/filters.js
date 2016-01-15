@@ -135,7 +135,7 @@ angular.module("proton.filters",[])
         var m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
-            return m.format('h:mm a');
+            return m.format('LT');
         } else {
             return m.format('ll');
         }
@@ -146,7 +146,7 @@ angular.module("proton.filters",[])
     return function(time) {
         var m = moment.unix(time);
 
-        return m.utc().format('LL h:mm a');
+        return m.utc().format('LL LT');
     };
 })
 
@@ -163,9 +163,13 @@ angular.module("proton.filters",[])
         var m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
-            return m.fromNow();
+            if (m.isSame(moment(), 'hour')) {
+                return m.fromNow();
+            } else {
+                return m.format('LT');
+            }
         } else {
-            return m.format('l');
+            return m.format('l LT');
         }
     };
 })
