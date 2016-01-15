@@ -73,6 +73,36 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }, true);
     };
 
+    $scope.senders = function(element) {
+        if (angular.isDefined(element.Senders)) {
+            return element.Senders;
+        } else {
+            return [element.Sender];
+        }
+    };
+
+    $scope.recipients = function(element) {
+        if (angular.isDefined(element.Recipients)) {
+            return element.Recipients;
+        } else {
+            var recipients = [];
+
+            if (element.ToList) {
+                recipients = recipients.concat(element.ToList);
+            }
+
+            if (element.CCList) {
+                recipients = recipients.concat(element.CCList);
+            }
+
+            if (element.BCCList) {
+                recipients = recipients.concat(element.BCCList);
+            }
+
+            return recipients;
+        }
+    };
+
     $scope.toolbarOffset = function() {
         // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
         function getScrollBarWidth () {
@@ -673,6 +703,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation
      */
     $scope.select = function(event, conversation) {
+        $rootScope.showWelcome = false;
+        
         if(!lastChecked) {
             lastChecked = conversation;
         } else {
