@@ -21,7 +21,7 @@ angular.module("proton.responsiveComposer", [])
                 }
 
                 // max
-                if ( ($window.innerWidth <= 1024) || ($window.innerHeight <= 500) ) {
+                if ( ($window.innerWidth <= 640) || ($window.innerHeight <= 500) ) {
                     scope.maximize(scope.message);
                 } else {
                     if (authentication.user.ComposerMode === 0) {

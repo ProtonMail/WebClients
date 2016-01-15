@@ -700,12 +700,12 @@
 }
 
 
-@media (max-height: 700px) {
+@media (max-height: 700px) and (max-width: $tablet-landscape) {
 	#pm_composer {
 		.composer {
 			header {
 				.pm_button.maximize-button {
-					display: none;
+					// display: none;
 				}
 			}
 			&.maximized {
@@ -726,7 +726,7 @@
 		.composer {
 			header {
 				.pm_button.maximize-button {
-					display: none;
+					// display: none;
 				}
 			}
 			&.maximized {
@@ -734,7 +734,7 @@
 				right: 0;
 				top:0;
 				width: 100%;
-				position: relative !important;
+				position: absolute !important;
 			}
 		}
 	}
