@@ -725,6 +725,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.fields = false;
+                    message.ccbcc = false;
                     $('.typeahead-container').scrollTop(0);
                     $scope.$apply();
                 });
@@ -769,7 +770,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.toggleCcBcc = function(message) {
-        message.ccbcc = !message.ccbcc;
+        message.ccbcc = !!!message.ccbcc;
+
+        if(message.ccbcc === true) {
+            message.fields = true;
+        }
+
         $scope.composerStyle();
     };
 
@@ -779,6 +785,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.hideFields = function(message) {
         message.fields = false;
+        message.ccbcc = false;
     };
 
     $scope.togglePanel = function(message, panelName) {
