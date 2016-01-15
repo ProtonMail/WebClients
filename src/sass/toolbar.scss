@@ -107,12 +107,15 @@ body.columns #pm_toolbar {
             padding-left: 0;
             position: relative;
             .pm_buttons {
+                height: 45px;
                 margin: 0 0 0 6px !important;
                 &.back {
                     margin-left: 0 !important;
                 }
                 a {
-                    padding: 0 11px;
+                    height: 45px;
+                    line-height: 45px;
+                    padding: 0 20px;
                     &.createLabel {
                         padding: 0 !important;
                         background: transparent !important;
@@ -136,9 +139,12 @@ body.columns #pm_toolbar {
             padding: 0;
             float: right;
             .pm_buttons {
+                height: 45px;
                 margin: 0 0 0 5px;
                 a {
-                    padding: 0 11px;
+                    height: 45px;
+                    line-height: 45px;
+                    padding: 0 20px;
                 }
                 margin: 0 0 0 6px;
                 .pm_buttons {
@@ -210,6 +216,63 @@ body.columns #pm_toolbar {
 //         }
 //     }
 // }
+
+
+@media (max-width: $tablet-portrait) {
+    #pm_toolbar_responsive {
+        .main {
+            .pm_buttons {
+                height: 40px;
+                a {
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 15px;
+                }
+            }
+        }
+        .secondary {
+            .pm_buttons {
+                height: 40px;
+                a {
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $mobile-medium) {
+    #pm_toolbar_responsive {
+        .main {
+            .pm_buttons {
+                height: 40px;
+                a {
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 12px;
+                }
+            }
+        }
+        .secondary {
+            .pm_buttons {
+                height: 40px;
+                a {
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 12px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
 
 @media (max-width: $mobile-landscape) {
     body #pm_view #pm_toolbar_responsive {

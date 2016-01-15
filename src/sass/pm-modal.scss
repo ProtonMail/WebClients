@@ -15,6 +15,29 @@ html.protonmail body.activeComposer {
     bottom: 0;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    &.small {
+        .modal-dialog {
+            width: 30rem;
+            max-width: 100%;
+            bottom: initial !important;
+            height: 20rem;
+            margin-left: -15rem;
+            .modal-content {
+                .modal-header,
+                .modal-body {
+                    position: static;
+                }
+                .modal-header {
+                    padding: 25px 50px;
+                }
+                .modal-body {
+                    padding: 0 50px;
+                    overflow: auto;
+                    height: 200px;
+                }
+            }            
+        }
+    }
     .modal-overlay {
         content: "";
         display: block;
@@ -104,6 +127,29 @@ html.protonmail body.activeComposer {
 @media (max-width: $tablet-landscape) {
 
     .pm_modal {
+        &.small {
+            .modal-dialog {
+                width: 50%;
+                bottom: initial !important;
+                margin-left: -25%;
+                left: 50%;
+                top: 2rem;
+                .modal-content {
+                    .modal-header,
+                    .modal-body {
+                        position: static;
+                    }
+                    .modal-header {
+                        padding: 25px 50px;
+                    }
+                    .modal-body {
+                        padding: 0 50px;
+                        overflow: auto;
+                        height: 200px;
+                    }
+                }            
+            }
+        }        
         .modal-dialog {
             position: absolute;
             z-index: 2;
@@ -145,4 +191,19 @@ html.protonmail body.activeComposer {
 
         }
     }  
+}
+
+
+@media (max-width: $mobile-landscape) {
+    .pm_modal {
+        &.small {
+            .modal-dialog {
+                width: 100%;
+                bottom: initial !important;
+                margin-left: 0;
+                left: 0;
+                top: 0;          
+            }
+        } 
+    }
 }

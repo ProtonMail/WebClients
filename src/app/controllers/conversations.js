@@ -15,6 +15,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     CONSTANTS,
     Conversation,
     Message,
+    eventManager,
     expiration,
     Label,
     authentication,
@@ -71,6 +72,36 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             // Manage expiration time
             expiration.check(newValue);
         }, true);
+    };
+
+    $scope.senders = function(element) {
+        if (angular.isDefined(element.Senders)) {
+            return element.Senders;
+        } else {
+            return [element.Sender];
+        }
+    };
+
+    $scope.recipients = function(element) {
+        if (angular.isDefined(element.Recipients)) {
+            return element.Recipients;
+        } else {
+            var recipients = [];
+
+            if (element.ToList) {
+                recipients = recipients.concat(element.ToList);
+            }
+
+            if (element.CCList) {
+                recipients = recipients.concat(element.CCList);
+            }
+
+            if (element.BCCList) {
+                recipients = recipients.concat(element.BCCList);
+            }
+
+            return recipients;
+        }
     };
 
     $scope.toolbarOffset = function() {
@@ -673,6 +704,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation
      */
     $scope.select = function(event, conversation) {
+        $rootScope.showWelcome = false;
+
         if(!lastChecked) {
             lastChecked = conversation;
         } else {
@@ -749,9 +782,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         }
 
                         promise.then(function(result) {
-                            // Generate event to empty folder
-                            cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                            cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                            // Call event log manager to refresh the datas (conversations, messages, counters)
+                            eventManager.call();
                             // Close modal
                             confirmModal.deactivate();
                             // Notify user

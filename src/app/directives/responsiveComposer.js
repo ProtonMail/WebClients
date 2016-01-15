@@ -23,8 +23,7 @@ angular.module("proton.responsiveComposer", [])
                 // max
                 if ( ($window.innerWidth <= 1024) || ($window.innerHeight <= 500) ) {
                     scope.maximize(scope.message);
-                }
-                else {
+                } else {
                     if (authentication.user.ComposerMode === 0) {
                         scope.normalize(scope.message);
                     }
@@ -33,10 +32,6 @@ angular.module("proton.responsiveComposer", [])
 
             // Listen resize window
             angular.element($window).bind('resize', responsive);
-
-            scope.$on('$stateChangeSuccess', function() {
-                responsive();
-            });
 
             // Remove listener on resize window
             scope.$on('$destroy', function() {

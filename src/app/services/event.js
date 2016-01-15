@@ -76,15 +76,31 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageMessageCounts: function(counts) {
 				if(angular.isDefined(counts)) {
-					_.each(counts, function(count) {
-						cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
+					var labelIDs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+					_.each(labelIDs, function(labelID) {
+						var count = _.findWhere(counts, {LabelID: labelID});
+
+						if(angular.isDefined(count)) {
+							cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
+						} else {
+							cacheCounters.updateMessage(labelID, 0, 0);
+						}
 					});
 				}
 			},
 			manageConversationCounts: function(counts) {
 				if(angular.isDefined(counts)) {
-					_.each(counts, function(count) {
-						cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
+					var labelIDs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+
+					_.each(labelIDs, function(labelID) {
+						var count = _.findWhere(counts, {LabelID: labelID});
+
+						if(angular.isDefined(count)) {
+							cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
+						} else {
+							cacheCounters.updateConversation(labelID, 0, 0);
+						}
 					});
 				}
 			},

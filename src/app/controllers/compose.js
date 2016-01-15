@@ -37,6 +37,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
+    $scope.isAppleDevice = navigator.userAgent.match(/(iPod|iPhone|iPad)/); // Determine if user navigated from Apple device
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
     $scope.weekOptions = [
@@ -170,6 +171,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.editor === editor) {
             $scope.focusComposer(message);
         }
+
+        $rootScope.$broadcast('composerModeChange');
     });
 
     function onResize() {
@@ -723,6 +726,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.fields = false;
+                    message.ccbcc = false;
                     $('.typeahead-container').scrollTop(0);
                     $scope.$apply();
                 });
@@ -767,7 +771,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.toggleCcBcc = function(message) {
-        message.ccbcc = !message.ccbcc;
+        message.ccbcc = !!!message.ccbcc;
+
+        if(message.ccbcc === true) {
+            message.fields = true;
+        }
+
         $scope.composerStyle();
     };
 
@@ -777,6 +786,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.hideFields = function(message) {
         message.fields = false;
+        message.ccbcc = false;
     };
 
     $scope.togglePanel = function(message, panelName) {

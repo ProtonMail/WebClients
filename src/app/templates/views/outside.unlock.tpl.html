@@ -1,13 +1,12 @@
-<form 
-id="pm_login" 
-class="pm_panel alt pm_form" 
-novalidate 
-ng-keypress="keypress($event)" 
-role="form" 
-autocomplete="on" 
-ng-submit="unlock()" 
-ng-if="tokenError !== true"
-method="post">
+<form
+id="pm_login"
+class="pm_panel alt pm_form"
+novalidate
+ng-keypress="keypress($event)"
+role="form"
+autocomplete="on"
+ng-submit="unlock()"
+ng-if="tokenError !== true">
 
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
@@ -21,16 +20,16 @@ method="post">
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <input 
-    class="margin" 
-    autofocus 
-    autocomplete="off" 
-    autocapitalize="off" 
-    autocorrect="off" 
-    type="password" 
-    ng-enter="unlock()" 
-    name="MessagePassword" 
-    ng-model="params.MessagePassword" 
+    <input
+    class="margin"
+    autofocus
+    autocomplete="off"
+    autocapitalize="off"
+    autocorrect="off"
+    type="password"
+    ng-enter="unlock()"
+    name="MessagePassword"
+    ng-model="params.MessagePassword"
     placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
 
     <p></p>
@@ -46,9 +45,9 @@ method="post">
 
 </form>
 
-<form 
-id="pm_login" 
-class="pm_panel alt pm_form error" 
+<form
+id="pm_login"
+class="pm_panel alt pm_form error"
 ng-if="tokenError === true">
     <h1 class="text-center">Error</h1>
     <p>Sorry, this message does not exist or has already expired.</p>

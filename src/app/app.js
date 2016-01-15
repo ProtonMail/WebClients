@@ -10,7 +10,6 @@ angular.module('proton', [
     'pikaday',
     'SmoothScrollbar',
     'ui.router',
-    'ui.sortable',
     'as.sortable',
 
     // Constant

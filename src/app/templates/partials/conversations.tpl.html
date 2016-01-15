@@ -72,10 +72,10 @@
                         <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                     </a>
                 </p>
-                <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders" title="{{ contact.Address }}">
+                <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
-                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients" title="{{ contact.Address }}">
+                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in recipients(conversation)" title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </strong>
                 <location-tag class="locTag"></location-tag>
@@ -136,10 +136,10 @@
             </span>
             <span class="sender" ng-click="click(conversation)">
                 <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Senders">
+                <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </span>
-                <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in conversation.Recipients">
+                <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in recipients(conversation)">
                     {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
                 </span>
             </span>

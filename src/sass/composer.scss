@@ -622,8 +622,13 @@
 }
 
 @media (max-width: $tablet-landscape) {
-	#pm_composer .composer footer .pm_button span {
-		display: none !important;
+	#pm_composer .composer {
+		footer .pm_button span {
+			display: none !important;
+		}
+		&.maximized {
+			left: 20px;
+		}
 	}
 }
 
@@ -703,7 +708,7 @@
 			}
 			&.maximized {
 				left: 20px;
-				top: 20px;
+				top: 80px;
 			}
 		}
 	}
