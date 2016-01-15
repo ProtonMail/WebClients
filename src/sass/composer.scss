@@ -633,7 +633,7 @@
 	}
 }
 
-@media (max-width: $mobile-landscape) {
+@media screen and (max-width: $mobile-landscape) {
 	.activeComposer {
 		#pm_composer {
 			display: block;
@@ -651,6 +651,7 @@
 			padding: 0;
 			float: none;
 			opacity: 1;
+			width: 100% !important;
 			.meta {
 				display: block;
 				float: left;
@@ -708,8 +709,32 @@
 				}
 			}
 			&.maximized {
-				left: 20px;
+				left: 2%;
+				right: 2%;
 				top: 80px;
+				width: 96%;
+			}
+		}
+	}
+}
+
+@media (max-height: 500px) {
+	html.protonmail, html.protonmail body {
+	    height: initial !important;
+	}
+	#pm_composer {
+		.composer {
+			header {
+				.pm_button.maximize-button {
+					display: none;
+				}
+			}
+			&.maximized {
+				left: 0;
+				right: 0;
+				top:0;
+				width: 100%;
+				position: relative !important;
 			}
 		}
 	}
