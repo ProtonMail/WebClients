@@ -170,6 +170,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.editor === editor) {
             $scope.focusComposer(message);
         }
+
+        $rootScope.$broadcast('composerModeChange');
     });
 
     function onResize() {
