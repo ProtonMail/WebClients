@@ -113,12 +113,12 @@ angular.module('proton.actions', [])
                 var conversation = cache.getConversationCached(conversationID);
                 var messages = cache.queryMessagesCached(conversationID);
                 var toApply = _.map(_.filter(labels, function(label) {
-                    return label.Selected === true && angular.isArray(conversation.LabelIDs);
+                    return label.Selected === true && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) === -1;
                 }), function(label) {
                     return label.ID;
                 }) || [];
                 var toRemove = _.map(_.filter(labels, function(label) {
-                    return label.Selected === false && angular.isArray(conversation.LabelIDs);
+                    return label.Selected === false && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) !== -1;
                 }), function(label) {
                     return label.ID;
                 }) || [];

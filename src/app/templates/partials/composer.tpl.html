@@ -247,6 +247,7 @@
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button
                 class="pm_button btn-add-attachment"
+                ng-disabled="isAppleDevice"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'primary': message.Attachments && message.Attachments.length > 0,
