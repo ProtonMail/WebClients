@@ -158,9 +158,10 @@
 				bottom: 52px;
 			}
 			.attachmentBar {
-				bottom: 120px;
+				bottom: 113px;
 				top: auto;
 				z-index: 9;
+				box-shadow: 0 1px 0 $border;
 			}
 			.attachmentArea {
 				.pm_button {
