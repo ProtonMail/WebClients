@@ -697,10 +697,6 @@
     #pm_view article.message .sub {
         padding-left: 0;
         padding-right: 0;
-        .actions {
-            position: static;
-            float: right;
-        }
         .data {
             clear: both;
         }
