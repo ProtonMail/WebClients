@@ -164,7 +164,11 @@ angular.module("proton.filters",[])
         var m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
-            return m.fromNow();
+            if (m.isSame(moment(), 'hour')) {
+                return m.fromNow();
+            } else {
+                return m.format('h:mm a');
+            }
         } else {
             return m.format('l');
         }
