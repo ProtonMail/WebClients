@@ -229,6 +229,8 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
+        request.PageSize = 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
+
         Conversation.query(request).then(function(result) {
             var data = result.data;
 
@@ -271,6 +273,8 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
+
+        request.PageSize = 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
 
         Message.query(request).$promise.then(function(result) {
             var messages = result.Messages;
