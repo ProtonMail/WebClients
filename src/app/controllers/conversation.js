@@ -57,6 +57,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if(angular.isUndefined(current) && index === -1) {
                     // Add message
                     $scope.messages.push(message);
+
+                    // Display notification
+                    if(message.Type === 0) {
+                        notify({
+                            message: $translate.instant('NEW_MESSAGE'),
+                            classes: 'notification-success'
+                        });
+                    }
                 }
             });
 
