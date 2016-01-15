@@ -422,11 +422,7 @@ angular.module("proton.cache", [])
                 if(messages.length === number) {
                     deferred.resolve(messages);
                 } else {
-                    queryMessages(request).then(function(messages) {
-                        if(messages.length > 0) {
-                            api.callRefresh();
-                        }
-                    });
+                    callApi();
                 }
             } else {
                 callApi();
@@ -444,6 +440,7 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
     api.queryConversations = function(request) {
+        console.log('api.queryConversations');
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
@@ -496,11 +493,7 @@ angular.module("proton.cache", [])
                 if(conversations.length === number) {
                     deferred.resolve(conversations);
                 } else {
-                    queryConversations(request).then(function(conversations) {
-                        if(conversations.length > 0) {
-                            api.callRefresh();
-                        }
-                    });
+                    callApi();
                 }
             } else {
                 callApi();
