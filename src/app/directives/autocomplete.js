@@ -262,7 +262,7 @@ angular.module('proton.autocomplete', [])
     };
 })
 
-.directive('autosize', function($document) {
+.directive('autosize', function() {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, ctrl) {
