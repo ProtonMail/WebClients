@@ -26,7 +26,6 @@
                 <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
                 <span class="actions text-right">
                     <a
-                    href
                     ng-show="!!!message.minimized"
                     class="pm_button link minimize-button hidden-xs"
                     ng-click="minimize(message)"
@@ -35,7 +34,6 @@
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
-                    href
                     ng-show="!!message.minimized"
                     class="pm_button link expand-button hidden-xs"
                     ng-click="unminimize(message)"
@@ -44,7 +42,6 @@
                         <i class="fa fa-minus"></i>
                     </a>
                     <a
-                    href
                     ng-show="!!!message.maximized"
                     class="pm_button link maximize-button hidden-xs hidden-sm"
                     ng-click="normalize(message);maximize(message)"
@@ -53,7 +50,6 @@
                         <i class="fa fa-expand"></i>
                     </a>
                     <a
-                    href
                     ng-show="!!message.maximized"
                     class="pm_button link maximize-button hidden-xs"
                     ng-click="normalize(message)"
@@ -62,7 +58,6 @@
                         <i class="fa fa-compress"></i>
                     </a>
                     <a
-                    href
                     class="pm_button link close-button"
                     ng-click="openCloseModal(message, true)"
                     pt-tooltip="{{ 'CLOSE' | translate }}"
