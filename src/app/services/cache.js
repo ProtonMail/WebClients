@@ -603,9 +603,9 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
 
         // Delete message
-        messagesCached = _.reject(messagesCached, function(message) {
+        messagesCached.splice(_.findIndex(messagesCached, function(message) {
             return message.ID === event.ID;
-        });
+        }), 1);
 
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {
@@ -624,40 +624,6 @@ angular.module("proton.cache", [])
         deferred.resolve();
 
         return deferred.promise;
-    };
-
-    /**
-    * Remove conversations from cache loc
-    * @param {String} loc
-    */
-    api.empty = function(loc) {
-        var toRemove = [];
-
-        _.each(conversationsCached, function(conversation) {
-            if(angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1) {
-                messagesCached = _.reject(messagesCached, function(message) {
-                    return message.ConversationID === conversation.ID;
-                });
-
-                toRemove.push(conversation);
-            }
-        });
-
-        _.each(toRemove, function(conversation) {
-            var index = conversationsCached.indexOf(conversation);
-
-            if(angular.isArray(conversation.LabelIDs)) {
-                if(conversation.LabelIDs.length === 1) {
-                    conversationsCached.splice(index, 1);
-                } else if(conversation.LabelIDs.length > 1) {
-                    conversationsCached[index].LabelIDs = _.without(conversation.LabelIDs, loc);
-                }
-            }
-        });
-
-        cacheCounters.updateConversation(loc, 0, 0);
-
-        api.callRefresh();
     };
 
     /**
@@ -1129,25 +1095,6 @@ angular.module("proton.cache", [])
     */
     api.unreadConversation = function(loc) {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
-    };
-
-    /**
-    * Clear loc counters
-    * @param {String} loc
-    */
-    api.empty = function(loc) {
-        if(angular.isDefined(counters[loc])) {
-            counters[loc] = {
-                message: {
-                    total: 0,
-                    unread: 0
-                },
-                conversation: {
-                    total: 0,
-                    unread: 0
-                }
-            };
-        }
     };
 
     return api;

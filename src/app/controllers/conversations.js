@@ -15,6 +15,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     CONSTANTS,
     Conversation,
     Message,
+    eventManager,
     expiration,
     Label,
     authentication,
@@ -704,7 +705,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.select = function(event, conversation) {
         $rootScope.showWelcome = false;
-        
+
         if(!lastChecked) {
             lastChecked = conversation;
         } else {
@@ -781,9 +782,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         }
 
                         promise.then(function(result) {
-                            // Generate event to empty folder
-                            cacheCounters.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                            cache.empty(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                            // Call event log manager to refresh the datas (conversations, messages, counters)
+                            eventManager.call();
                             // Close modal
                             confirmModal.deactivate();
                             // Notify user
