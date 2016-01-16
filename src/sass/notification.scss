@@ -6,6 +6,10 @@ body .cg-notify-message {
     box-shadow: none;
     padding: .5rem 1rem;
     &.notification-success {
+        background-color: $green;
+        border-color: $green;
+    }
+    &.notification-info {
         background-color: $blue;
         border-color: $blue;
     }

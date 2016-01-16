@@ -923,6 +923,7 @@ angular.module("proton.cache", [])
         if(type === 'previous') {
             request.End = conversation.Time;
             request.EndID = conversation.ID;
+            request.Desc = 1;
         } else {
             request.Begin = conversation.Time;
             request.BeginID = conversation.ID;
