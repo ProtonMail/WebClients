@@ -623,37 +623,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-    * Preload conversations for inbox (first 2 pages) and sent (first page)
-    * @return {Promise}
-    */
-    api.preloadInboxAndSent = function() {
-        var mailbox = tools.currentMailbox();
-        var deferred = $q.defer();
-        var requestInbox;
-        var requestSent;
-
-        if(mailbox === 'inbox' && angular.isUndefined($stateParams.id)) {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 1};
-            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
-        } else if(mailbox === 'sent' && angular.isUndefined($stateParams.id)) {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
-            requestSent = {};
-        } else {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
-            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
-        }
-
-        $q.all({
-            inbox: queryConversations(requestInbox),
-            sent: queryConversations(requestSent)
-        }).then(function() {
-            deferred.resolve();
-        });
-
-        return deferred.promise;
-    };
-
-    /**
     * Add a new message in the cache
     * @param {Object} event
     * @return {Promise}
@@ -881,7 +850,6 @@ angular.module("proton.cache", [])
      */
     api.reset = function() {
         api.clear();
-        api.preloadInboxAndSent();
     };
 
     /**
