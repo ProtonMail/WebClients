@@ -99,7 +99,7 @@
             </div>
             <div class="storage">
                 <strong class="pull-right">{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}</strong>
-                <i class="fa fa-hdd-o"></i> {{ 'STORAGE' | translate }}:
+                <i class="fa fa-hdd-o" title="{{ 'STORAGE' | translate }}"></i>
             </div>
         </div>
         <a class="version" title="{{ dateVersion }}" target="_blank">
