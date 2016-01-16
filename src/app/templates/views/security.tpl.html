@@ -8,7 +8,7 @@
 
             <section class="setting pm_form full">
 
-                <form>
+                <form method="post">
                     <legend>{{ 'KEY_EXPORT' | translate }}</legend>
                     <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
 
@@ -28,7 +28,7 @@
 
             <section class="setting pm_form full">
 
-                <form>
+                <form method="post">
                     <legend>{{ 'AUTHENTICATION_LOGS' | translate }}</legend>
 
                         <div class="pull-right" id="logActions" ng-hide="doLogging == 0">
