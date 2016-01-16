@@ -14,26 +14,3 @@ body .cg-notify-message {
         border-color: #cc9393;
     }
 }
-
-.cg-notify-loading {
-    position:fixed;
-    bottom:0px;
-    top: inherit !important;
-    z-index: 9999;
-    max-width:400px;
-    text-align: center;
-
-    background-color: $primary;
-    color: $white;
-    padding: 15px 2rem;
-    border: none !important;
-    border-radius: 4px 4px 0 0;
-
-    -webkit-transition: top 0.5s ease-out,opacity 0.2s ease-out;
-    -moz-transition: top 0.5s ease-out,opacity 0.2s ease-out;
-    -o-transition: top 0.5s ease-out,opacity 0.2s ease-out;
-    transition: top 0.5s ease-out,opacity 0.2s ease-out;
-
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
