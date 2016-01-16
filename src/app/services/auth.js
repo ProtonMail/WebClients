@@ -74,7 +74,6 @@ angular.module("proton.authentication", [
                                         user.Labels = result[1].data.Labels;
 
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                        console.log('user.Addresses', user.Addresses); // TODO remove it
                                         _.each(user.Addresses, function(address) { // For each addresses
                                             _.each(address.Keys, function(key, index) { // For each keys
                                                 promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password

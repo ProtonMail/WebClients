@@ -20,18 +20,32 @@ angular.module("proton.controllers.Settings")
     subscriptions,
     supportModal
 ) {
+    // Setting publishable key for Stripe
+    var setPublishableKey = function() {
+        $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    };
     /**
-     * Load stripe script
-     * https://stripe.com/docs/stripe.js
-     */
+    * Load stripe script
+    * https://stripe.com/docs/stripe.js
+    */
     var script = $window.document.createElement('script');
 
     script.type= 'text/javascript';
     script.src = 'https://js.stripe.com/v2/';
     $window.document.body.appendChild(script);
 
-    // Setting publishable key for Stripe
-    $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    if(script.readyState) { // IE
+        script.onreadystatechange = function() {
+            if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+                script.onreadystatechange = null;
+                setPublishableKey();
+            }
+        };
+    } else { // Others
+        script.onload = function() {
+            setPublishableKey();
+        };
+    }
 
     // Default values for organization and subscription
     $scope.organization = null;
@@ -155,8 +169,8 @@ angular.module("proton.controllers.Settings")
     $scope.memberBusiness = $scope.memberBusinessOptions[0];
 
     /**
-     * Method called at the initialization of this controller
-     */
+    * Method called at the initialization of this controller
+    */
     $scope.initialization = function() {
         if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
             $scope.organization = organization.data.Organization;
@@ -189,17 +203,17 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Returns a string for the storage bar
-     * @return {String} "12.5"
-     */
+    * Returns a string for the storage bar
+    * @return {String} "12.5"
+    */
     $scope.percentage = function() {
         return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
     };
 
     /**
-     * Return the amount of each plan
-     * @param {String} name
-     */
+    * Return the amount of each plan
+    * @param {String} name
+    */
     $scope.total = function(name) {
         var total = 0;
 
@@ -220,16 +234,16 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Prepare amount for the request
-     * @param {String} name
-     */
+    * Prepare amount for the request
+    * @param {String} name
+    */
     $scope.amount = function(name) {
         return $scope.total(name) * 100;
     };
 
     /**
-     * Open a modal to confirm to switch to the free plan
-     */
+    * Open a modal to confirm to switch to the free plan
+    */
     $scope.free = function() {
         var title = $translate.instant('FREE_PLAN');
         var message = $translate.instant("Are you sure to come back to the Free Plan?");
@@ -261,8 +275,8 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open modal to display information about how contact the support team to setup the enterprise plan
-     */
+    * Open modal to display information about how contact the support team to setup the enterprise plan
+    */
     $scope.enterprise = function() {
         supportModal.activate({
             params: {
@@ -274,9 +288,9 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open modal to pay the plan configured
-     * @param {String} name ('plus' or 'business')
-     */
+    * Open modal to pay the plan configured
+    * @param {String} name ('plus' or 'business')
+    */
     $scope.choose = function(name) {
         var now = moment().unix();
         var current = $scope.current;
@@ -286,27 +300,27 @@ angular.module("proton.controllers.Settings")
 
         switch (name) {
             case 'plus':
-                future = {
-                    Plan: name,
-                    Use2FA: false,
-                    MaxDomains: $scope.domainPlus.value,
-                    MaxMembers: 1,
-                    MaxAddresses: $scope.addressPlus.value,
-                    MaxSpace: $scope.spacePlus.value
-                };
-                break;
+            future = {
+                Plan: name,
+                Use2FA: false,
+                MaxDomains: $scope.domainPlus.value,
+                MaxMembers: 1,
+                MaxAddresses: $scope.addressPlus.value,
+                MaxSpace: $scope.spacePlus.value
+            };
+            break;
             case 'business':
-                future = {
-                    Plan: name,
-                    Use2FA: false,
-                    MaxDomains: $scope.domainBusiness.value,
-                    MaxMembers: $scope.memberBusiness.value,
-                    MaxAddresses: $scope.addressBusiness.value,
-                    MaxSpace: $scope.spaceBusiness.value
-                };
-                break;
+            future = {
+                Plan: name,
+                Use2FA: false,
+                MaxDomains: $scope.domainBusiness.value,
+                MaxMembers: $scope.memberBusiness.value,
+                MaxAddresses: $scope.addressBusiness.value,
+                MaxSpace: $scope.spaceBusiness.value
+            };
+            break;
             default:
-                break;
+            break;
         }
 
         configuration = {
@@ -371,8 +385,8 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Initialize select with the correct quantity object
-     */
+    * Initialize select with the correct quantity object
+    */
     $scope.initQuantity = function(element) {
         var option = _.findWhere($scope.options, {value: element.quantity});
 
@@ -382,15 +396,15 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Method called when the quantity selector change
-     */
+    * Method called when the quantity selector change
+    */
     $scope.changeQuantity = function(element) {
         element.quantity = element.select.value;
     };
 
     /**
-     * Open modal with payment information
-     */
+    * Open modal with payment information
+    */
     $scope.card = function() {
         networkActivityTracker.track(Payment.sources().then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
